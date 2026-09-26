@@ -2,10 +2,10 @@ import { createRef } from 'react';
 import { act, renderHook } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { useDictionaryLookup } from '../useDictionaryLookup';
-import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../../lib/dictionaryShards';
-import type { SegmentFile } from '../../lib/corpus';
+import { lookupHeadword, peekHeadword, prefetchHeadwordShard } from '../../lib/corpus/dictionaryShards';
+import type { SegmentFile } from '../../lib/corpus/corpus';
 
-vi.mock('../../lib/dictionaryShards', () => ({
+vi.mock('../../lib/corpus/dictionaryShards', () => ({
   lookupHeadword: vi.fn(),
   peekHeadword: vi.fn(),
   prefetchHeadwordShard: vi.fn(),

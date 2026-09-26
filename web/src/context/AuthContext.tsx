@@ -4,12 +4,12 @@ import { App } from '@capacitor/app';
 import { authApi } from '../lib/api';
 import { isRetryable, retryWithBackoff, statusOf } from '../lib/retry';
 import { readLastUser, writeLastUser } from '../lib/lastUser';
-import { localUserId, resetLocalUserId } from '../lib/localAccount';
-import { deleteMirror } from '../lib/mirrorDb';
+import { localUserId, resetLocalUserId } from '../lib/sync/localAccount';
+import { deleteMirror } from '../lib/sync/mirrorDb';
 import { clearRecentSearches } from '../lib/recentSearches';
 import { API_BASE, isNativeApp } from '../lib/platform';
-import { AppleSignIn } from '../lib/appleSignIn';
-import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/nativeAuth';
+import { AppleSignIn } from '../lib/native/appleSignIn';
+import { clearNativeToken, hydrateNativeToken, setNativeToken } from '../lib/native/nativeAuth';
 import { transitionPage } from '../lib/motion';
 import type { User } from '../lib/types';
 
@@ -31,7 +31,7 @@ interface AuthState {
   // Whether there is a real session behind `user`; read it where the call needs the server.
   isSignedIn: boolean;
   // Whose data the app reads and writes: the signed-in account, or this device's local id
-  // (lib/localAccount.ts). Never null.
+  // (lib/sync/localAccount.ts). Never null.
   dataUserId: string;
   // This device's signed-out id, whether or not it is the one in use — sign-in looks for the mirror
   // it left behind (UserDataContext's adoption) after `dataUserId` has moved on to the account.

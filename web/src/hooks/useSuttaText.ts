@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { loadSuttaText, peekSuttaText, type SegmentFile } from '../lib/corpus';
+import { loadSuttaText, peekSuttaText, type SegmentFile } from '../lib/corpus/corpus';
 import { retryWithBackoff } from '../lib/retry';
 
 // Loads one sutta's segments, with a retry. Text already in loadSuttaText's cache — read earlier

@@ -1,7 +1,7 @@
 import { useEffect, useState, type RefObject } from 'react';
 import { getUiScale } from '../lib/uiPrefs';
 import { highlightPaint } from '../lib/theme';
-import type { SegmentFile } from '../lib/corpus';
+import type { SegmentFile } from '../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../lib/types';
 import { computeGutterLayout, markHitAreas, type GutterMark, type GutterTrack } from '../lib/highlightGutterLayout';
 

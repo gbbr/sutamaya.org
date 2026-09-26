@@ -3,13 +3,13 @@ import { shapeList } from './listShape.js';
 import { repairListTree } from './listTree.js';
 
 // Ids of the three synthesized auto-lists, never written to the `lists` table. Duplicated in
-// web/src/lib/autoLists.ts, no module being shared between the two workspaces.
+// web/src/lib/lists/autoLists.ts, no module being shared between the two workspaces.
 export const RECENT_AUTO_LIST_ID = 'auto-recent';
 export const HIGHLIGHTS_AUTO_LIST_ID = 'auto-highlights';
 export const NOTES_AUTO_LIST_ID = 'auto-notes';
 
 // Most items the Highlights and Notes lists carry, each saying "Showing 300 of N" past it.
-// Duplicated in web/src/lib/autoLists.ts — see the note on the ids above.
+// Duplicated in web/src/lib/lists/autoLists.ts — see the note on the ids above.
 export const AUTO_LIST_CAP = 300;
 
 // Most items the Visited list carries.

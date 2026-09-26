@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { SuttaRowChips } from '../SuttaRowChips';
 import { HIGHLIGHT_COLORS, highlightPaint, READER_THEMES } from '../../lib/theme';
-import type { SuttaRowChip } from '../../lib/lists';
+import type { SuttaRowChip } from '../../lib/lists/lists';
 
 const chips: SuttaRowChip[] = [
   { id: 'l1', label: 'Favorites', breadcrumb: 'Favorites' },

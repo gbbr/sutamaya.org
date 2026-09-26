@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { UserRound } from 'lucide-react';
-import { isIosBrowserTab } from '../lib/localAccount';
+import { isIosBrowserTab } from '../lib/sync/localAccount';
 import { transitionPage } from '../lib/motion';
 import { isNativeApp } from '../lib/platform';
 import type { User } from '../lib/types';

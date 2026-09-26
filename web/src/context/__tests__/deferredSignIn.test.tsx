@@ -27,8 +27,8 @@ vi.mock('../../lib/api', () => ({
     requestEmailCode: vi.fn(),
     verifyEmailCode: vi.fn(),
   },
-  // The flush's pull answers in full from `dataApiAll`, untagged; lib/__tests__/sync.test.ts covers
-  // the tag.
+  // The flush's pull answers in full from `dataApiAll`, untagged; lib/sync/__tests__/sync.test.ts
+  // covers the tag.
   dataApi: {
     all: () => dataApiAll(),
     pull: async () => ({ changed: true, snapshot: await dataApiAll(), tag: null }),
@@ -47,8 +47,8 @@ const ACCOUNT: User = { id: 'account-1', email: 'a@b.com', name: 'A', picture: n
 const emptyData: UserData = { lists: [], membership: {}, notes: {}, highlights: {}, visited: {} };
 
 // The fake server keeps what was pushed to it, because the flush pulls a full snapshot straight
-// after pushing and `applySnapshot` keeps only what is still dirty (lib/mirror.ts). A snapshot that
-// forgot the note it had just accepted would blank it one render after adoption produced it —
+// after pushing and `applySnapshot` keeps only what is still dirty (lib/sync/mirror.ts). A snapshot
+// that forgot the note it had just accepted would blank it one render after adoption produced it —
 // making an assertion on the note a race against a single frame rather than a check of the result.
 let serverNotes: UserData['notes'] = {};
 

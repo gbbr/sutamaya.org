@@ -1,5 +1,5 @@
 import { API_BASE, isNativeApp } from './platform';
-import { getNativeToken, setNativeToken } from './nativeAuth';
+import { getNativeToken, setNativeToken } from './native/nativeAuth';
 import type { HlSpan } from './highlights';
 import type { Highlight, ListDef, ListKind, Membership, HighlightsMap, VisitedMap, User } from './types';
 
@@ -28,7 +28,8 @@ type ApiInit = Omit<RequestInit, 'headers' | 'signal'> & { headers?: Record<stri
 async function exchange<T>(path: string, init: ApiInit, read: (res: Response) => Promise<T>): Promise<T> {
   try {
     // The cookie authenticates the web app; a Capacitor build has no cookie cross-origin and
-    // sends a bearer token instead (lib/nativeAuth.ts). Both are inert on the other platform.
+    // sends a bearer token instead (lib/native/nativeAuth.ts). Both are inert on the other
+    // platform.
     const token = getNativeToken();
     const res = await fetch(`${API_BASE}/api${path}`, {
       credentials: 'include',
@@ -144,7 +145,7 @@ export const dataApi = {
   all: () => request<UserData>('/data'),
   // The snapshot, unless `tag` — the one the mirror's last full pull came with — still names the
   // account's data, which the server answers with a 304 before building anything. Only a flush that
-  // pushed nothing sends one (lib/sync.ts).
+  // pushed nothing sends one (lib/sync/sync.ts).
   pull: (tag: string | null) =>
     exchange<Pulled>('/data', { cache: 'no-store', ...(tag ? { headers: { 'If-None-Match': tag } } : {}) }, async (res) =>
       res.status === 304
@@ -159,7 +160,7 @@ export const dataApi = {
   exportUrl: `${API_BASE}/api/data/export`,
   // The same payload `exportUrl` downloads, fetched rather than navigated to — for the native
   // build, which has to authenticate the request and hand the file to the OS itself
-  // (lib/exportData.ts). The browser uses the link.
+  // (lib/native/exportData.ts). The browser uses the link.
   exportPayload: () => request<unknown>('/data/export'),
 };
 

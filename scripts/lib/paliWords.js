@@ -1,11 +1,12 @@
 // The build's copy of what the reader does with a tapped Pali word: the tokenizer from
-// web/src/lib/dictionary.ts and the shard binary search from web/src/lib/dictionaryShards.ts,
-// in plain JS because nothing is shared across the two npm workspaces.
+// web/src/lib/corpus/dictionary.ts and the shard binary search from
+// web/src/lib/corpus/dictionaryShards.ts, in plain JS because nothing is shared across the two npm
+// workspaces.
 //
 // build-corpus.mjs ships only the headwords one of these tokens can reach, so splitting differently
 // from the reader would silently drop entries a tap can still ask for.
-// web/src/lib/__tests__/paliWordsParity.test.ts runs both copies over the same inputs and diffs
-// them.
+// web/src/lib/corpus/__tests__/paliWordsParity.test.ts runs both copies over the same inputs and
+// diffs them.
 
 export const PUNCT = /[.,;:""''"'?!­‘’“”…()]/g;
 

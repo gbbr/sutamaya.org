@@ -9,7 +9,7 @@ import {
   subscribeUpdateReports,
   updateReport,
   type UpdateStatus,
-} from '../lib/otaUpdate';
+} from '../lib/native/otaUpdate';
 import { platformName } from '../lib/platform';
 
 // This app's page in its platform's store, and the words of the link to it.

@@ -8,7 +8,7 @@ import { isTypingTarget } from '../lib/shortcuts';
 import { MOBILE_TOP_INSET } from '../lib/layout';
 import { transitionPage } from '../lib/motion';
 import { isNativeApp } from '../lib/platform';
-import { hasNativeAppleSignIn } from '../lib/appleSignIn';
+import { hasNativeAppleSignIn } from '../lib/native/appleSignIn';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
 import libraryItemsShot from '../assets/help/library-items-mobile.webp';

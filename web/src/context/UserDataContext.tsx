@@ -18,23 +18,24 @@ import {
   syncCounts,
   writeHighlightRecord,
   type MirrorState,
-} from '../lib/mirror';
-import { deriveUserData } from '../lib/mirrorView';
-import type { SegmentFile } from '../lib/corpus';
+} from '../lib/sync/mirror';
+import { deriveUserData } from '../lib/sync/mirrorView';
+import type { SegmentFile } from '../lib/corpus/corpus';
 import type { HlSpan } from '../lib/highlights';
-import { isLocalUserId } from '../lib/localAccount';
-import { deleteMirror, loadMirror, saveMirror } from '../lib/mirrorDb';
-import { hydrateNativeToken } from '../lib/nativeAuth';
-import { flushWithLock } from '../lib/sync';
+import { isLocalUserId } from '../lib/sync/localAccount';
+import { deleteMirror, loadMirror, saveMirror } from '../lib/sync/mirrorDb';
+import { hydrateNativeToken } from '../lib/native/nativeAuth';
+import { flushWithLock } from '../lib/sync/sync';
 import { randomId } from '../lib/ids';
 import { LIST_NAME_MAX_LENGTH, NOTE_MAX_LENGTH } from '../lib/textLimits';
 import { useAuth } from './AuthContext';
 
 // The user's lists, notes, highlights and visits, as a view over the offline mirror
-// (lib/mirror.ts). Every mutator writes to the mirror and returns; a flush (lib/sync.ts) pushes
-// what the server hasn't seen and folds the merged result back in, on the triggers below. A reader
-// who hasn't signed in has a mirror of their own under a local id (lib/localAccount.ts), which
-// sign-in adopts onto the account (adoptMirror); everything else is identical either way.
+// (lib/sync/mirror.ts). Every mutator writes to the mirror and returns; a flush (lib/sync/sync.ts)
+// pushes what the server hasn't seen and folds the merged result back in, on the triggers below. A
+// reader who hasn't signed in has a mirror of their own under a local id
+// (lib/sync/localAccount.ts), which sign-in adopts onto the account (adoptMirror); everything else
+// is identical either way.
 
 // How long after a mutation the flush runs, so a burst of edits becomes one flush.
 const FLUSH_DEBOUNCE_MS = 2000;
@@ -330,7 +331,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   // Tombstones a list, its contents going with it — which the mirror's tree repair
-  // (lib/listTree.ts) works out on read, as the server does.
+  // (lib/lists/listTree.ts) works out on read, as the server does.
   const removeList = useCallback(
     async (id: string) => {
       mutate((s) => removeListRecord(s, id));
@@ -381,7 +382,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   );
 
   // Writes a highlight over a span. Highlights are immutable, so this mints a new one and
-  // tombstones those the span displaces (lib/mirror.ts's writeHighlightRecord); an erase
+  // tombstones those the span displaces (lib/sync/mirror.ts's writeHighlightRecord); an erase
   // (color === null) is the tombstones alone.
   const setHighlightSpan = useCallback(
     async (suttaId: string, span: HlSpan, color: string | null) => {

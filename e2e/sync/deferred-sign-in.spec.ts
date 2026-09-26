@@ -2,8 +2,8 @@ import { test, expect, selectWithinSegment, segmentText, waitForLocalWrites, wri
 import { signIn } from '../session';
 
 // Reading, highlighting and note-taking all work signed out, against a `local-…` account of this
-// device's own (lib/localAccount.ts). Signing in later has to keep that work: the local mirror is
-// adopted onto the account (adoptMirror) and the ordinary flush carries it up.
+// device's own (lib/sync/localAccount.ts). Signing in later has to keep that work: the local mirror
+// is adopted onto the account (adoptMirror) and the ordinary flush carries it up.
 //
 // `adoptMirror` is thoroughly unit-tested as a state transition. What is only true in a browser is
 // the journey around it — data written to a real IndexedDB under one account id, a sign-in that

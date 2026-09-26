@@ -22,22 +22,23 @@ export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
 export const RECENT_SEARCHES_KEY = 'sutamaya.recentSearches';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';
 // The corpus dataVersion/dictionaryVersion this device last completed a full offline download at
-// (see lib/offline.ts) — compared against the live corpus to spot a stale offline copy.
+// (see lib/corpus/offline.ts) — compared against the live corpus to spot a stale offline copy.
 export const OFFLINE_DATA_VERSION_KEY = 'sutamaya.offlineDataVersion';
 export const OFFLINE_DICTIONARY_VERSION_KEY = 'sutamaya.offlineDictionaryVersion';
 // The dataVersion whose "updated text available" nudge was dismissed. Stores the version rather
 // than a boolean, so dismissing one update doesn't silence every later one.
 export const OFFLINE_UPDATE_DISMISSED_KEY = 'sutamaya.offlineUpdateDismissed';
-// How much of the canon this device last measured as cached (see lib/offline.ts), so Settings can
-// say what it holds on its first paint.
+// How much of the canon this device last measured as cached (see lib/corpus/offline.ts), so
+// Settings can say what it holds on its first paint.
 export const OFFLINE_STATUS_KEY = 'sutamaya.offlineStatus';
-// This device's own id — the tiebreak half of every mtime this client stamps (see lib/mtime.ts).
+// This device's own id — the tiebreak half of every mtime this client stamps (see
+// lib/sync/mtime.ts).
 export const DEVICE_ID_KEY = 'sutamaya.deviceId';
 // The last signed-in user, so a cold start with no network still knows whose mirror to open
 // (see lib/lastUser.ts).
 export const LAST_USER_KEY = 'sutamaya.lastUser';
-// The id a signed-out user's lists, notes and highlights are filed under (see lib/localAccount.ts),
-// kept until a sign-in adopts it or a sign-out retires it.
+// The id a signed-out user's lists, notes and highlights are filed under (see
+// lib/sync/localAccount.ts), kept until a sign-in adopts it or a sign-out retires it.
 export const LOCAL_USER_KEY = 'sutamaya.localUserId';
 // The local user id whose "sign in to keep this safe" banner was dismissed. Stores the id rather
 // than a boolean, so signing out — which mints a fresh local id — offers the prompt again.

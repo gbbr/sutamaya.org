@@ -13,12 +13,12 @@ import { AppleSignInButton } from '../components/AppleSignInButton';
 import { GoogleSignInButton } from '../components/GoogleSignInButton';
 import { EmailCodeSignIn } from '../components/EmailCodeSignIn';
 import { dataApi } from '../lib/api';
-import { shareUserDataExport } from '../lib/exportData';
-import { flatSuttaOrder } from '../lib/corpus';
+import { shareUserDataExport } from '../lib/native/exportData';
+import { flatSuttaOrder } from '../lib/corpus/corpus';
 import { isTypingTarget } from '../lib/shortcuts';
 import { MOBILE_TOP_INSET } from '../lib/layout';
 import { statusOf } from '../lib/retry';
-import { isIosBrowserTab } from '../lib/localAccount';
+import { isIosBrowserTab } from '../lib/sync/localAccount';
 import { isNativeApp } from '../lib/platform';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { transitionPage } from '../lib/motion';
@@ -32,7 +32,7 @@ import {
   prefetchHelpImages,
   recordCachedCorpusVersion,
   type OfflineStatus,
-} from '../lib/offline';
+} from '../lib/corpus/offline';
 import type { Theme } from '../lib/types';
 
 const UI_SCALE_MIN = 0.85;
@@ -128,8 +128,8 @@ const LINK_DANGER =
   'inline-flex items-center gap-1.5 font-sans text-ui-base text-danger-text underline decoration-danger-text/40 hover:text-danger-text';
 
 // Downloads the account export. In the browser it is what it looks like — a link to the export
-// route, which the browser saves. The native build has no such download (lib/exportData.ts), so
-// there it is a button that fetches the file and passes it to the system's "Save as" picker or
+// route, which the browser saves. The native build has no such download (lib/native/exportData.ts),
+// so there it is a button that fetches the file and passes it to the system's "Save as" picker or
 // share sheet, saying so while it works. Appears twice: beside Sign out, and beside the account
 // deletion it is the way out of.
 function ExportAction() {
@@ -335,7 +335,7 @@ export function SettingsPage() {
   }
 
   const [offlineStatus, setOfflineStatus] = useState<'idle' | 'downloading'>('idle');
-  // Progress of the offline download, shown as a percentage (see lib/offline.ts).
+  // Progress of the offline download, shown as a percentage (see lib/corpus/offline.ts).
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   // Seeded from the last measured count, so the card states what is available immediately and the
   // fresh estimate below only corrects the number (see lastOfflineStatus).

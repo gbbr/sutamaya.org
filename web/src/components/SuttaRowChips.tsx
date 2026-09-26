@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import { Plus } from 'lucide-react';
-import type { SuttaRowChip } from '../lib/lists';
+import type { SuttaRowChip } from '../lib/lists/lists';
 import type { ThemeColors } from '../lib/types';
 import { HighlightCountBadge } from './HighlightCountBadge';
 import { MatchedText } from './MatchedText';

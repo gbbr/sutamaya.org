@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { loadCorpus } from '../lib/corpus';
+import { loadCorpus } from '../lib/corpus/corpus';
 import type { Corpus } from '../lib/types';
 
 interface CorpusState {
@@ -13,7 +13,7 @@ interface CorpusState {
 const CorpusContext = createContext<CorpusState | null>(null);
 
 // Holds the browse tree and sutta index (corpus.json). Not the dictionary, which is fetched one
-// range shard at a time by the tap that needs it (lib/dictionaryShards.ts).
+// range shard at a time by the tap that needs it (lib/corpus/dictionaryShards.ts).
 export function CorpusProvider({ children }: { children: ReactNode }) {
   const [corpus, setCorpus] = useState<Corpus | null>(null);
   const [error, setError] = useState(false);

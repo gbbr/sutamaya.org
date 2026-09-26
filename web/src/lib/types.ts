@@ -16,7 +16,7 @@ export interface ChapterRow {
   sub?: string;
   count: number;
   // Bhikkhu Sujato's description of this group, where the source data has one; may contain inline
-  // HTML. Read it with nodeBlurb() (lib/corpus.ts), which handles the inconsistent depths.
+  // HTML. Read it with nodeBlurb() (lib/corpus/corpus.ts), which handles the inconsistent depths.
   blurb?: string;
   // This row's children, at whatever depth the collection nests to. A row with them expands
   // further; one without is where suttas live.
@@ -68,8 +68,8 @@ export interface Highlight {
   k1: string;
   o1: number;
   c: string;
-  // The mtime (lib/mtime.ts), which with `id` decides which of two overlapping highlights paints
-  // the characters they contest.
+  // The mtime (lib/sync/mtime.ts), which with `id` decides which of two overlapping highlights
+  // paints the characters they contest.
   m: string;
 }
 
@@ -85,7 +85,7 @@ export interface ListDef {
   // The list's suttas, in the order the reader put them in. Always empty for a group.
   items: string[];
   // True for an auto-managed list, which can't be renamed, deleted, reparented or reordered. See
-  // lib/autoLists.ts.
+  // lib/lists/autoLists.ts.
   auto?: boolean;
   // Auto-lists only: how many suttas qualify, before the cap trimmed `items` to the most recent.
   // Equal to `items.length` until the cap bites, and what ListPane's "Showing 100 of 340" reads.

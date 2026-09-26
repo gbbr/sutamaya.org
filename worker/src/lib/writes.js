@@ -156,7 +156,7 @@ async function reorderSiblings(db, userId, item) {
   const posted = orderOf(item);
   // The parent row, read once and asked both questions, rather than through
   // invalidReparentReason's wrappers, which would read it and the live-list set twice. A parent
-  // with no row at all is 404 rather than 400, so lib/sync.ts retires the queued op instead of
+  // with no row at all is 404 rather than 400, so lib/sync/sync.ts retires the queued op instead of
   // re-refusing it on every flush.
   if (parentId) {
     const parent = await db.prepare('SELECT kind FROM lists WHERE id = ? AND user_id = ?').bind(parentId, userId).first();

@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import type { Corpus } from '../../lib/types';
 
-vi.mock('../../lib/corpus', () => ({ loadCorpus: vi.fn() }));
+vi.mock('../../lib/corpus/corpus', () => ({ loadCorpus: vi.fn() }));
 
 function Probe({ useCorpusHook }: { useCorpusHook: () => ReturnType<typeof import('../CorpusContext').useCorpus> }) {
   const { corpus, loading, error, retry } = useCorpusHook();
@@ -19,7 +19,8 @@ function Probe({ useCorpusHook }: { useCorpusHook: () => ReturnType<typeof impor
 const testCorpus = { nikayas: [], suttas: {} } as unknown as Corpus;
 
 // The dictionary isn't part of this provider — it's fetched per word tap, one shard at a time (see
-// lib/dictionaryShards.ts), so what's left here is only corpus.json's own load/error/retry cycle.
+// lib/corpus/dictionaryShards.ts), so what's left here is only corpus.json's own load/error/retry
+// cycle.
 describe('CorpusContext', () => {
   beforeEach(() => {
     vi.useFakeTimers();
@@ -41,7 +42,7 @@ describe('CorpusContext', () => {
   }
 
   it('exposes the corpus once it loads, and stops reporting loading', async () => {
-    const { loadCorpus } = await import('../../lib/corpus');
+    const { loadCorpus } = await import('../../lib/corpus/corpus');
     vi.mocked(loadCorpus).mockResolvedValue(testCorpus);
 
     await act(async () => {
@@ -54,7 +55,7 @@ describe('CorpusContext', () => {
   });
 
   it('surfaces a failed corpus load as an error rather than loading forever', async () => {
-    const { loadCorpus } = await import('../../lib/corpus');
+    const { loadCorpus } = await import('../../lib/corpus/corpus');
     vi.mocked(loadCorpus).mockRejectedValue(new Error('offline'));
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
 
@@ -70,7 +71,7 @@ describe('CorpusContext', () => {
   });
 
   it('retry() re-fetches the corpus and clears the error on success', async () => {
-    const { loadCorpus } = await import('../../lib/corpus');
+    const { loadCorpus } = await import('../../lib/corpus/corpus');
     vi.mocked(loadCorpus).mockRejectedValueOnce(new Error('offline')).mockResolvedValue(testCorpus);
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
 

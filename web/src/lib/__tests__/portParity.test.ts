@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { repairListTree } from '../listTree';
-import { deriveUserData } from '../mirrorView';
-import { emptyMirror, type ListRecord, type MirrorState, type Stored } from '../mirror';
+import { repairListTree } from '../lists/listTree';
+import { deriveUserData } from '../sync/mirrorView';
+import { emptyMirror, type ListRecord, type MirrorState, type Stored } from '../sync/mirror';
 // @ts-expect-error -- plain-JS worker modules, no .d.ts across the workspace boundary
 import { repairListTree as workerRepairListTree } from '../../../../worker/src/lib/listTree.js';
 // @ts-expect-error -- ditto
 import { assembleUserData } from '../../../../worker/src/lib/userData.js';
 
-// web/src/lib/listTree.ts and mirrorView.ts are ports of worker/src/lib/listTree.js and
+// web/src/lib/{lists/listTree,sync/mirrorView}.ts are ports of worker/src/lib/listTree.js and
 // userData.js — the same algorithms written twice because nothing shares a module between the two
 // npm workspaces. docs/offline-sync.md's invariant 12 says a fix to one belongs in both, and both
 // sides have thorough tests of their own, but each is written against its own fixtures: they can

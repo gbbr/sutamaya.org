@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
 import { HighlightGutter } from '../HighlightGutter';
-import type { SegmentFile } from '../../lib/corpus';
+import type { SegmentFile } from '../../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../../lib/types';
 
 vi.mock('../../lib/uiPrefs', () => ({ getUiScale: vi.fn(() => 1) }));

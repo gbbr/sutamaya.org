@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ApiError, dataApi } from '../api';
-import { getNativeToken, setNativeToken } from '../nativeAuth';
+import { getNativeToken, setNativeToken } from '../native/nativeAuth';
 
-vi.mock('../nativeAuth', () => ({
+vi.mock('../native/nativeAuth', () => ({
   getNativeToken: vi.fn(() => null),
   setNativeToken: vi.fn(async () => {}),
 }));

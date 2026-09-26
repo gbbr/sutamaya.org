@@ -13,7 +13,7 @@ vi.mock('../../lib/api', () => ({
 }));
 // Retiring an identity's mirror is the observable half of a sign-out or a deletion, and IndexedDB
 // is not what these tests are about.
-vi.mock('../../lib/mirrorDb', () => ({ deleteMirror: vi.fn(async () => {}) }));
+vi.mock('../../lib/sync/mirrorDb', () => ({ deleteMirror: vi.fn(async () => {}) }));
 
 // AuthContext.tsx is imported dynamically (not statically at the top of this file) so each test
 // can `vi.resetModules()` first — the provider reads ?auth_error=1 off the URL as it initialises,
@@ -272,7 +272,7 @@ describe('AuthContext', () => {
     localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../../lib/api');
-    const { deleteMirror } = await import('../../lib/mirrorDb');
+    const { deleteMirror } = await import('../../lib/sync/mirrorDb');
     vi.mocked(authApi.me).mockResolvedValue({ user: testUser });
     vi.mocked(authApi.deleteAccount).mockResolvedValue({ ok: true });
 
@@ -311,7 +311,7 @@ describe('AuthContext', () => {
     localStorage.setItem(LAST_USER_KEY, JSON.stringify(testUser));
     const { AuthProvider, useAuth } = await loadAuthContext();
     const { authApi } = await import('../../lib/api');
-    const { deleteMirror } = await import('../../lib/mirrorDb');
+    const { deleteMirror } = await import('../../lib/sync/mirrorDb');
     // What a deleted account's own /auth/me answers: the cookie still verifies, the row is gone.
     vi.mocked(authApi.me).mockResolvedValue({ user: null });
 

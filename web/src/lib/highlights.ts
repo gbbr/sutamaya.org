@@ -1,5 +1,5 @@
-import type { SegmentFile } from './corpus';
-import { compareSegmentKeys, segmentIndex } from './segmentKeys';
+import type { SegmentFile } from './corpus/corpus';
+import { compareSegmentKeys, segmentIndex } from './corpus/segmentKeys';
 import { HIGHLIGHT_COLORS } from './theme';
 import type { Highlight } from './types';
 

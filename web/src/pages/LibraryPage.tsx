@@ -10,7 +10,7 @@ import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { useLatest } from '../hooks/useLatest';
 import { forgetScrollPosition } from '../hooks/useScrollMemory';
-import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus';
+import { findNode, isExpandable, nodeBlurb, nodeLabel, normalizeBrowseNodeId, normalizeRouteId } from '../lib/corpus/corpus';
 import { LIST_RESULTS_CAP, SEARCH_RESULTS_CAP, listBlockCounts, listBlockHeading, type SearchHit } from '../lib/search/metadata';
 import { saveRecentSearch } from '../lib/recentSearches';
 import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib/shortcuts';

@@ -10,8 +10,8 @@ import { READER_SEARCH_PLACEHOLDER, SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type Se
 import { clearRecentSearches, removeRecentSearch, saveRecentSearch } from '../lib/recentSearches';
 import { searchNoMatches, windowOnMatch } from '../lib/search/text';
 import { beginTextSearchLoad } from '../lib/search/textClient';
-import { prefetchSuttaText } from '../lib/suttaPrefetch';
-import { flattenListTree, suttaRowMeta } from '../lib/lists';
+import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
+import { flattenListTree, suttaRowMeta } from '../lib/lists/lists';
 import { MatchedText } from './MatchedText';
 import { RecentSearches } from './RecentSearches';
 import { SuttaRowChips } from './SuttaRowChips';

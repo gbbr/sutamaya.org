@@ -149,10 +149,11 @@ export default defineConfig({
           '**/*-latin-ext.woff2',
           'data/corpus.json',
           // Small (tens of KB) shard index for Settings' bulk offline download — see
-          // web/src/lib/offline.ts. Precached alongside corpus.json so "X% available offline" can
-          // be computed on first load without a network round trip, same reasoning as corpus.json
-          // itself. The shard bundles it points to are fetched only by that download, which unpacks
-          // them into the per-sutta text cache rather than caching them under their own names.
+          // web/src/lib/corpus/offline.ts. Precached alongside corpus.json so "X% available
+          // offline" can be computed on first load without a network round trip, same reasoning as
+          // corpus.json itself. The shard bundles it points to are fetched only by that download,
+          // which unpacks them into the per-sutta text cache rather than caching them under their
+          // own names.
           'data/text-shards/manifest.json',
           // Which shard covers a given headword (~6KB). Precached because it is on the path of
           // every single word tap, and because without it an offline device can't even work out
@@ -215,11 +216,12 @@ export default defineConfig({
           {
             // The help page's screenshots (see pages/HelpPage.tsx) — ~630KB that most installs
             // never open, so they are not precached; they land here on first view of /help, and
-            // Settings' bulk offline download fills them in (prefetchHelpImages in lib/offline.ts)
-            // so a device that has "downloaded all content" can still read the guide in airplane
-            // mode. CacheFirst is right here, rather than the revalidation the /data/ paths above
-            // need, because Vite content-hashes these filenames: a re-captured screenshot arrives
-            // as a new URL rather than a stale hit, so there is nothing to revalidate against.
+            // Settings' bulk offline download fills them in (prefetchHelpImages in
+            // lib/corpus/offline.ts) so a device that has "downloaded all content" can still read
+            // the guide in airplane mode. CacheFirst is right here, rather than the revalidation
+            // the /data/ paths above need, because Vite content-hashes these filenames: a
+            // re-captured screenshot arrives as a new URL rather than a stale hit, so there is
+            // nothing to revalidate against.
             urlPattern: /\/assets\/.*\.webp$/,
             handler: 'CacheFirst',
             options: { cacheName: 'help-images', expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 365 } },

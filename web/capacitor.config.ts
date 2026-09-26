@@ -24,7 +24,7 @@ const config: CapacitorConfig = {
       splashFullScreen: true,
       splashImmersive: true,
     },
-    // Style is driven from the app theme at runtime (lib/statusBar.ts). Edge-to-edge is the
+    // Style is driven from the app theme at runtime (lib/native/statusBar.ts). Edge-to-edge is the
     // platform default on this Android target and matches iOS under viewport-fit=cover; the shell
     // feeds the safe-area insets the app CSS reads (--safe-* in index.css).
     StatusBar: {

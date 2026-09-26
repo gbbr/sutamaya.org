@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/react';
 import { SegmentedText, type SegmentMarks } from '../SegmentedText';
-import type { SegmentFile } from '../../lib/corpus';
+import type { SegmentFile } from '../../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../../lib/types';
 
 const theme: ThemeColors = { bg: '#fff', fg: '#000', dim: '#888', rule: '#ccc', panel: '#fff', pali: '#333', tint: '#eee', paliTint: '#e8dcc8', focusTint: '#f5f5f5', highlightPalette: null, selection: '#ddd' };
