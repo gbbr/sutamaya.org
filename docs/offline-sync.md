@@ -179,7 +179,7 @@ the reader to decide.
     re-pulls rather than migrating, which loses everything a signed-out reader has.
 14. **Every table the snapshot reads raises the account's data version** on insert, update and
     delete, with a trigger for each. Without them a device is told "not modified" over a change it
-    never saw; `routes/data.test.js` fails for a table missing one.
+    never saw; `routes/__tests__/data.test.js` fails for a table missing one.
 
 ## Accepted losses
 

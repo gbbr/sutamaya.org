@@ -3,7 +3,7 @@
 // in this order, so the reader can decide what a highlight overlaps from the keys alone — see
 // docs/offline-sync.md's "Anchored on segment keys".
 //
-// Change one, change the other; web/src/lib/segmentKeys.test.ts is the tripwire.
+// Change one, change the other; web/src/lib/__tests__/segmentKeys.test.ts is the tripwire.
 
 const SEGMENT_RUN_RE = /\d+|\D+/g;
 const DIGITS_RE = /^\d+$/;

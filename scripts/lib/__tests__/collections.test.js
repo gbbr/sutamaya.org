@@ -1,0 +1,445 @@
+import { describe, expect, it } from 'vitest';
+import {
+  flattenLeaves,
+  findLeafGroups,
+  findChapterNodes,
+  findNodeByKey,
+  suttaNumRange,
+  rangeNote,
+  chapterSpanNote,
+  headerTitle,
+  roleFor,
+  cleanNote,
+  stripHtmlTags,
+  buildBodySegments,
+} from '../collections.js';
+
+// A miniature stand-in for SN's shape: chapters (sn1, sn2) nested under a super-vagga, each
+// chapter split into vagga-level "leaf groups" (plain arrays of uids) wrapped in an unnamed
+// "fifty" grouping layer that should be walked through, never surfaced as its own row.
+const snLikeTree = {
+  'sn-somevagga': {
+    sn1: {
+      'sn1-fifty-1': {
+        'sn1-vagga-a': ['sn1.1', 'sn1.2'],
+        'sn1-vagga-b': ['sn1.3'],
+      },
+    },
+    sn2: {
+      'sn2-vagga-a': ['sn2.1', 'sn2.2', 'sn2.3'],
+    },
+  },
+};
+
+describe('flattenLeaves', () => {
+  it('collects every leaf uid regardless of nesting depth', () => {
+    expect(flattenLeaves(snLikeTree).sort()).toEqual(['sn1.1', 'sn1.2', 'sn1.3', 'sn2.1', 'sn2.2', 'sn2.3'].sort());
+  });
+});
+
+describe('findLeafGroups', () => {
+  it('finds only terminal groups (arrays of leaf uids), passing through non-terminal wrappers', () => {
+    const groups = findLeafGroups(snLikeTree);
+    const keys = groups.map((g) => g.key).sort();
+    // The "fifty" wrapper ('sn1-fifty-1') and the chapter keys ('sn1', 'sn2') are not
+    // themselves arrays of uids, so they must not appear as their own rows.
+    expect(keys).toEqual(['sn1-vagga-a', 'sn1-vagga-b', 'sn2-vagga-a']);
+    expect(groups.find((g) => g.key === 'sn1-vagga-a').leaves).toEqual(['sn1.1', 'sn1.2']);
+  });
+});
+
+describe('findChapterNodes', () => {
+  it('locates chapter keys at whatever depth they occur, with their flattened leaves', () => {
+    const chapters = findChapterNodes(snLikeTree, /^sn\d+$/);
+    const byKey = Object.fromEntries(chapters.map((c) => [c.key, c.leaves.sort()]));
+    expect(byKey).toEqual({
+      sn1: ['sn1.1', 'sn1.2', 'sn1.3'],
+      sn2: ['sn2.1', 'sn2.2', 'sn2.3'],
+    });
+  });
+});
+
+describe('findNodeByKey', () => {
+  it('finds a named group by exact key at whatever depth it occurs', () => {
+    expect(findNodeByKey(snLikeTree, 'sn1-vagga-b')).toEqual(['sn1.3']);
+    expect(findNodeByKey(snLikeTree, 'sn2')).toEqual(snLikeTree['sn-somevagga'].sn2);
+  });
+
+  it('returns null when the key is not present anywhere in the tree', () => {
+    expect(findNodeByKey(snLikeTree, 'sn99')).toBeNull();
+  });
+
+  it('matches the shorter of two keys that share a prefix ("sn1" vs "sn1-vagga-a")', () => {
+    expect(findNodeByKey(snLikeTree, 'sn1')).toEqual(snLikeTree['sn-somevagga'].sn1);
+  });
+
+  it('descends through array-of-siblings nodes, not just keyed objects', () => {
+    const withArraySiblings = [{ 'sn-a': { target: ['x.1'] } }, { 'sn-b': { other: ['y.1'] } }];
+    expect(findNodeByKey(withArraySiblings, 'target')).toEqual(['x.1']);
+  });
+});
+
+describe('suttaNumRange', () => {
+  it('reads the trailing number for a single, undotted uid', () => {
+    expect(suttaNumRange('mn1')).toEqual([1, 1]);
+  });
+
+  it('reads the number after the last dot for a chaptered uid', () => {
+    expect(suttaNumRange('sn22.11')).toEqual([11, 11]);
+  });
+
+  it('reads a dotted (chapter.n-n) batched range as [start, end]', () => {
+    expect(suttaNumRange('an1.1-10')).toEqual([1, 10]);
+  });
+
+  it('reads an undotted (nikaya-number-only) batched range as [start, end]', () => {
+    expect(suttaNumRange('dhp1-20')).toEqual([1, 20]);
+  });
+});
+
+describe('rangeNote', () => {
+  it('formats a single-sutta range without a dash', () => {
+    expect(rangeNote('SN35', ['sn35.1'], true)).toBe('SN35.1');
+  });
+
+  it('formats a multi-sutta dotted range', () => {
+    expect(rangeNote('SN35', ['sn35.1', 'sn35.2', 'sn35.12'], true)).toBe('SN35.1–12');
+  });
+
+  it('formats a multi-sutta undotted range', () => {
+    expect(rangeNote('MN', ['mn1', 'mn2', 'mn10'], false)).toBe('MN1–10');
+  });
+});
+
+describe('chapterSpanNote', () => {
+  it('formats a single-chapter span without a dash', () => {
+    expect(chapterSpanNote('SN', 'sn1', 'sn1')).toBe('SN1');
+  });
+
+  it('formats a multi-chapter span by chapter number, not sutta number', () => {
+    expect(chapterSpanNote('SN', 'sn1', 'sn11')).toBe('SN1–11');
+  });
+});
+
+describe('headerTitle', () => {
+  it('returns the highest "0.N" segment for a single-document uid', () => {
+    const map = new Map([
+      ['dn1:0.1', 'Long Discourses '],
+      ['dn1:0.2', ' The Root Sequence '],
+    ]);
+    expect(headerTitle(map, 'dn1')).toBe('The Root Sequence');
+  });
+
+  it('returns null when the uid has no "0.N" segments at all', () => {
+    const map = new Map([['dn1:1.1', 'Some body text']]);
+    expect(headerTitle(map, 'dn1')).toBeNull();
+  });
+
+  it('does not match a batched-range document, whose keys are prefixed by inner sub-uids', () => {
+    // "an1.1-10" batches an1.1..an1.10 — its segment keys are prefixed by the inner uids
+    // (an1.1:0.1), never by the batch id itself, so headerTitle('an1.1-10') must find nothing.
+    const map = new Map([['an1.1:0.1', 'The First'], ['an1.2:0.1', 'The Second']]);
+    expect(headerTitle(map, 'an1.1-10')).toBeNull();
+  });
+
+  it('does not match a different uid that merely shares a numeric prefix', () => {
+    const map = new Map([['dn10:0.1', 'Wrong sutta']]);
+    expect(headerTitle(map, 'dn1')).toBeNull();
+  });
+
+  it('skips a "~" segment (SuttaCentral\'s "unchanged from above" marker) for the next-highest real one', () => {
+    const map = new Map([
+      ['an11.502-981:0.1', 'Aṅguttara Nikāya 11 '],
+      ['an11.502-981:0.2', 'Paṭhamapaṇṇāsaka '],
+      ['an11.502-981:0.3', 'Sāmaññavagga '],
+      ['an11.502-981:0.4', '~ '],
+    ]);
+    expect(headerTitle(map, 'an11.502-981')).toBe('Sāmaññavagga');
+  });
+
+  it('returns null when every "0.N" segment is "~"', () => {
+    const map = new Map([
+      ['an5.303:0.1', '~ '],
+      ['an5.303:0.2', '~ '],
+    ]);
+    expect(headerTitle(map, 'an5.303')).toBeNull();
+  });
+});
+
+describe('roleFor', () => {
+  it('returns undefined for an empty/missing template', () => {
+    expect(roleFor(undefined)).toBeUndefined();
+    expect(roleFor('')).toBeUndefined();
+  });
+
+  it('detects a heading and its level, down to h5', () => {
+    expect(roleFor('<h2>{}</h2>')).toEqual({ role: 'heading', headingLevel: 2 });
+    expect(roleFor('<h3>{}</h3>')).toEqual({ role: 'heading', headingLevel: 3 });
+    expect(roleFor('<h4>{}</h4>')).toEqual({ role: 'heading', headingLevel: 4 });
+    expect(roleFor('<h5>{}</h5>')).toEqual({ role: 'heading', headingLevel: 5 });
+  });
+
+  it('detects an inner sutta\'s title opening its article in a batched document', () => {
+    expect(roleFor("<article id='an2.33'><h2 class='sutta-title'>{}</h2>")).toEqual({ role: 'heading', headingLevel: 2 });
+  });
+
+  it('does not treat <h1> as an in-body heading (it is the document title, stripped elsewhere)', () => {
+    expect(roleFor('<h1>{}</h1>')).toBeUndefined();
+  });
+
+  it('detects a verse line', () => {
+    expect(roleFor("<span class='verse-line'>{}</span>")).toEqual({ role: 'verse' });
+  });
+
+  it('detects a colophon end marker, including the uddana-intro variant', () => {
+    expect(roleFor("<p class='endsutta'>{}</p>")).toEqual({ role: 'end' });
+    expect(roleFor("<p class='uddana-intro'>{}</p>")).toEqual({ role: 'end' });
+  });
+
+  it('detects a speaker attribution', () => {
+    expect(roleFor("<span class='speaker'>{}</span>")).toEqual({ role: 'speaker' });
+  });
+
+  it('returns undefined for plain prose', () => {
+    expect(roleFor('<p>{}</p>')).toBeUndefined();
+  });
+
+  it('detects an ordered-list item, at any position in the <ol>', () => {
+    expect(roleFor("<ol><li>{}</li>")).toEqual({ role: 'list-item' });
+    expect(roleFor('<li>{}</li>')).toEqual({ role: 'list-item' });
+    expect(roleFor('<li>{}</li></ol>')).toEqual({ role: 'list-item' });
+  });
+});
+
+describe('cleanNote', () => {
+  it('strips a suttacentral.net cross-reference link down to its plain text', () => {
+    expect(cleanNote("See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a> for more.")).toBe(
+      'See SN 1.2 for more.'
+    );
+  });
+
+  it('keeps other inline HTML as-is', () => {
+    expect(cleanNote('An <i>emphasized</i> word.')).toBe('An <i>emphasized</i> word.');
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(cleanNote('  padded  ')).toBe('padded');
+  });
+
+  it('strips multiple links in the same note', () => {
+    expect(cleanNote("<a href='#a'>One</a> and <a href='#b'>Two</a>")).toBe('One and Two');
+  });
+});
+
+describe('stripHtmlTags', () => {
+  it('strips emphasis/bold/lang-tagged inline tags, keeping their text', () => {
+    expect(stripHtmlTags('<em>That</em> self')).toBe('That self');
+    expect(stripHtmlTags('a <b>bold</b> word')).toBe('a bold word');
+    expect(stripHtmlTags("<i lang='pi' translate='no'>dukkha</i> arises")).toBe('dukkha arises');
+  });
+
+  it('strips a link tag down to its plain text', () => {
+    expect(stripHtmlTags("See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a> for more.")).toBe(
+      'See SN 1.2 for more.'
+    );
+  });
+
+  it('trims surrounding whitespace', () => {
+    expect(stripHtmlTags('  padded  ')).toBe('padded');
+  });
+});
+
+describe('buildBodySegments', () => {
+  function maps({ pali = [], en = [], html = [], notes = [] } = {}) {
+    return [new Map(pali), new Map(en), new Map(html), new Map(notes)];
+  }
+
+  it('skips title ("0"/"0.*") segments', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['sn1.1:0', 'Title line'],
+        ['sn1.1:0.1', 'Subtitle line'],
+        ['sn1.1:1.1', 'Body text'],
+      ],
+      en: [['sn1.1:1.1', 'Body text (en)']],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs).toEqual([{ key: 'sn1.1:1.1', pali: 'Body text', en: 'Body text (en)' }]);
+  });
+
+  it('skips a segment with neither pali nor english text', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', '   ']],
+      en: [['sn1.1:1.1', '']],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('orders by the pali map when present, falling back to the sujato map otherwise', () => {
+    const [pali, en, html, notes] = maps({
+      en: [
+        ['sn1.1:1.2', 'second'],
+        ['sn1.1:1.1', 'first'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.key)).toEqual(['sn1.1:1.2', 'sn1.1:1.1']);
+  });
+
+  it('attaches role/headingLevel derived from the html structure map', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Heading text']],
+      en: [['sn1.1:1.1', 'Heading text (en)']],
+      html: [['sn1.1:1.1', '<h2>{}</h2>']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg).toMatchObject({ role: 'heading', headingLevel: 2 });
+  });
+
+  it('drops an "end" (colophon) segment with no english translation', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.9', 'Suttaṁ niṭṭhitaṁ.']],
+      html: [['sn1.1:9.9', "<p class='endsutta'>{}</p>"]],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('keeps a translated colophon, as its "end" role', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.9', 'Paṭhamo bhāṇavāro niṭṭhito.']],
+      en: [['sn1.1:9.9', 'The first recitation section is complete.']],
+      html: [['sn1.1:9.9', "<p class='endsutta'>{}</p>"]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('The first recitation section is complete.');
+    expect(seg.role).toBe('end');
+  });
+
+  it('drops a non-"end" segment missing english rather than falling back to its pali', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali only']],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('keeps a segment whose english arrives later, the test being the english itself', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali only']],
+      en: [['sn1.1:1.1', 'Translated at last.']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('Translated at last.');
+  });
+
+  it('drops an uddana, its intro line and the verses under it alike', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['sn1.1:9.1', 'Vaggo paṭhamo.'],
+        ['sn1.1:9.2', 'Tassuddānaṁ'],
+        ['sn1.1:9.3', 'Oghaṁ nimokkho upaneyyaṁ,'],
+        ['sn1.1:9.4', 'accenti katichindi ca.'],
+      ],
+      en: [['sn1.1:9.1', 'The first chapter is complete.']],
+      html: [
+        ['sn1.1:9.1', "<p class='endsection'>{}</p>"],
+        ['sn1.1:9.2', "<p class='uddana-intro'>{}</p>"],
+        ['sn1.1:9.3', "<blockquote class='uddanagatha'><p>{}"],
+        ['sn1.1:9.4', '{}</p></blockquote>'],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes).map((s) => s.key)).toEqual(['sn1.1:9.1']);
+  });
+
+  it('drops an uddana even where it has been translated', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:9.2', 'Tassuddānaṁ'], ['sn1.1:9.3', 'Oghaṁ nimokkho upaneyyaṁ,']],
+      en: [['sn1.1:9.3', 'A flood, liberation, and one to be led,']],
+      html: [
+        ['sn1.1:9.2', "<p class='uddana-intro'>{}</p>"],
+        ['sn1.1:9.3', "<blockquote class='uddanagatha'><p>{}</p></blockquote>"],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes)).toEqual([]);
+  });
+
+  it('strips inline HTML from the english text (unlike a note, en is sliced by character offset for highlighting)', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'Pali']],
+      en: [['sn1.1:1.1', "'<em>That</em> self of which you speak does exist."]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe("'That self of which you speak does exist.");
+  });
+
+  it('marks a gatha stanza as verse even when only the opening line carries the blockquote/class marker (an7.63-style data)', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['x:5.1', 'line one'],
+        ['x:5.2', 'line two'],
+        ['x:5.3', 'line three'],
+      ],
+      en: [
+        ['x:5.1', 'line one (en)'],
+        ['x:5.2', 'line two (en)'],
+        ['x:5.3', 'line three (en)'],
+      ],
+      html: [
+        ['x:5.1', "<blockquote class='gatha'><p data-counter='1'>{}<br>"],
+        ['x:5.2', '{}<br>'],
+        ['x:5.3', '{}</p></blockquote>'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.role)).toEqual(['verse', 'verse', 'verse']);
+  });
+
+  it('stops treating segments as verse once the gatha blockquote actually closes', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['x:5.1', 'verse line'],
+        ['x:5.2', 'closing verse line'],
+        ['x:6.1', 'ordinary prose'],
+      ],
+      en: [
+        ['x:5.1', 'verse line (en)'],
+        ['x:5.2', 'closing verse line (en)'],
+        ['x:6.1', 'ordinary prose (en)'],
+      ],
+      html: [
+        ['x:5.1', "<blockquote class='gatha'><p data-counter='1'>{}<br>"],
+        ['x:5.2', '{}</p></blockquote>'],
+        ['x:6.1', '<p>{}</p>'],
+      ],
+    });
+    const segs = buildBodySegments(pali, en, html, notes);
+    expect(segs.map((s) => s.role)).toEqual(['verse', 'verse', undefined]);
+  });
+
+  it('attaches a cleaned note when one exists for the segment', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'text (en)']],
+      notes: [['sn1.1:1.1', "See <a href='https://suttacentral.net/sn1.2'>SN 1.2</a>."]],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.note).toBe('See SN 1.2.');
+  });
+
+  it('omits `note` entirely when there is no note for the segment', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'text (en)']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.note).toBeUndefined();
+  });
+
+  it('strips a verse enjambment "<j>" marker out of the english text', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [['sn1.1:1.1', 'text']],
+      en: [['sn1.1:1.1', 'comprehending Gopaka, <j>they were struck with urgency.']],
+    });
+    const [seg] = buildBodySegments(pali, en, html, notes);
+    expect(seg.en).toBe('comprehending Gopaka, they were struck with urgency.');
+  });
+});

@@ -4,7 +4,7 @@
 ALTER TABLE users ADD COLUMN data_version INTEGER NOT NULL DEFAULT 0;
 
 -- Raise it on every insert, update and delete in each table the snapshot reads, whatever made the
--- change. routes/data.test.js fails for a table the snapshot reads without all three.
+-- change. routes/__tests__/data.test.js fails for a table the snapshot reads without all three.
 
 CREATE TRIGGER lists_data_version_insert AFTER INSERT ON lists
 BEGIN

@@ -4,7 +4,8 @@
 //
 // build-corpus.mjs ships only the headwords one of these tokens can reach, so splitting differently
 // from the reader would silently drop entries a tap can still ask for.
-// web/src/lib/paliWordsParity.test.ts runs both copies over the same inputs and diffs them.
+// web/src/lib/__tests__/paliWordsParity.test.ts runs both copies over the same inputs and diffs
+// them.
 
 export const PUNCT = /[.,;:""''"'?!­‘’“”…()]/g;
 
