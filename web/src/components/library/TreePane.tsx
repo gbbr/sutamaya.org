@@ -32,7 +32,6 @@ import { ancestorsOfList, flattenListTree, suttaRowMeta } from '../../lib/lists/
 import { hasLocalWorkWorthKeeping } from '../../lib/keepSafe';
 import { MOBILE_TOP_INSET } from '../../lib/ui/layout';
 import { derivePaneViewSync } from '../../lib/paneView';
-import { transitionPage } from '../../lib/ui/motion';
 import { opensHere } from '../../lib/navigation/linkClick';
 import { readLink } from '../../lib/navigation/passageLink';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../../lib/storageKeys';
@@ -738,43 +737,14 @@ export function TreePane({
         className={`flex-none px-[22px] pt-5 border-b border-ink/10 ${searching || showRecent ? 'pb-4' : ''}`}
         style={{ paddingTop: mobile ? MOBILE_TOP_INSET : 'calc(1.25rem + var(--safe-top))' }}
       >
-        {/* The wordmark and the destinations away from the two trees: help, search, the account.
+        {/* The wordmark and the destinations away from the two trees: search and the account.
             The Library/My lists switch gets its own row below rather than joining them, being the
             navigation the app lives behind rather than more chrome. */}
         <div className="flex items-center gap-2">
           <div className="text-ui-3xl font-semibold tracking-[-.01em] flex-1 truncate" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>sutamaya</div>
-          {/* The three controls, sized alike so they share a vertical centre. Their spacing is set
-              per gap rather than by the row: the two icons are transparent boxes around a glyph
-              with air either side, and the badge a circle filling its box, so an even gap reads as
-              uneven. A glyph of a different ink width means re-checking those two numbers. */}
+          {/* The two controls, sized alike so they share a vertical centre. */}
           <button
             className="flex-none rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
-            style={mobile ? { width: 44, height: 44 } : { width: 38, height: 38 }}
-            aria-label="Help"
-            title="Help"
-            onClick={() => transitionPage('push', () => navigate('/help', { flushSync: true }))}
-          >
-            {/* A typeset question mark in a drawn ring, in the shell's own face. `currentColor`
-                puts both on the button's own hover. */}
-            <span
-              className="flex items-center justify-center rounded-full border-[1.75px] border-current"
-              style={{ width: mobile ? 22 : 20, height: mobile ? 22 : 20 }}
-            >
-              <span
-                className="block"
-                style={{
-                  fontFamily: 'Inter, system-ui, sans-serif',
-                  fontWeight: 600,
-                  fontSize: mobile ? 15 : 14,
-                  lineHeight: 1,
-                }}
-              >
-                ?
-              </span>
-            </span>
-          </button>
-          <button
-            className="flex-none -ml-1 rounded-full flex items-center justify-center text-ink-3 hover:bg-ink/[.06]"
             style={mobile ? { width: 44, height: 44 } : { width: 38, height: 38 }}
             aria-label={searchOpen ? 'Close search' : 'Search'}
             title={searchOpen ? 'Close search (Esc)' : 'Search (/)'}

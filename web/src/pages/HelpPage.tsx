@@ -79,14 +79,12 @@ const SECTIONS: HelpSection[] = [
         marks: [
           [81.5, 30.3],
           [44.0, 11.6],
-          [56.7, 2.1],
           [69.8, 2.1],
           [82.4, 2.1],
         ],
         steps: [
           'Tap any node to see its contents.',
           'Switch between the Canon and your own Lists.',
-          'Display this help page',
           'Search by number, title, summary, your own notes, or the name of a list or collection.',
           'Your account, and every setting.',
         ],
