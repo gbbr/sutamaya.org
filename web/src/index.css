@@ -552,7 +552,7 @@ a {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 70%, transparent);
   text-underline-offset: 2px;
 }
 
