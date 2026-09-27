@@ -33,12 +33,11 @@ describe('SignedInBadge', () => {
     expect(navigate).toHaveBeenCalledWith('/settings', expect.anything());
   });
 
-  it('signed in with a picture: renders the image instead of the initial', () => {
+  it('signed in with a picture: still shows the initial, not the picture', () => {
     render(<SignedInBadge user={{ ...user, picture: 'https://example.com/p.jpg' }} size={26} />);
-    expect(screen.getByLabelText('Signed in as reader@example.com').querySelector('img')).toHaveAttribute(
-      'src',
-      'https://example.com/p.jpg'
-    );
+    const badge = screen.getByLabelText('Signed in as reader@example.com');
+    expect(badge.querySelector('img')).toBeNull();
+    expect(badge).toHaveTextContent('R');
   });
 
   it('signed out: shows a neutral badge that also navigates to /settings', async () => {

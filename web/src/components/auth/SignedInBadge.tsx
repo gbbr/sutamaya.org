@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { UserRound } from 'lucide-react';
 import { isIosBrowserTab } from '../../lib/sync/localAccount';
@@ -16,30 +15,17 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
   const dim = { width: size, height: size };
   // Whether the signed-out badge shows the at-risk dot and label.
   const showAtRisk = atRisk && !isNativeApp();
-  // Whether the avatar has loaded; until it has, and if it never does — the URL is unreachable
-  // offline — the initials show rather than the browser's broken-image glyph.
-  const [loaded, setLoaded] = useState(false);
   return user ? (
+    // Signed in: the email's initial, never the provider's photo.
     <button
       data-component="SignedInBadge"
-      className="flex-none rounded-full overflow-hidden border border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
+      className="flex-none rounded-full border border-ink/25 flex items-center justify-center bg-accent/15 font-sans font-semibold text-accent"
       style={{ ...dim, fontSize: Math.round(size * 0.42) }}
       aria-label={`Signed in as ${user.email}`}
       title={`Signed in as ${user.email}`}
       onClick={openSettings}
     >
-      {user.picture && (
-        <img
-          key={user.picture}
-          src={user.picture}
-          alt=""
-          className="w-full h-full object-cover"
-          style={{ display: loaded ? undefined : 'none' }}
-          referrerPolicy="no-referrer"
-          onLoad={() => setLoaded(true)}
-        />
-      )}
-      {(!user.picture || !loaded) && user.email[0]?.toUpperCase()}
+      {user.email[0]?.toUpperCase()}
     </button>
   ) : (
     // Signed out: a neutral account glyph, which providers are on offer being the sign-in screen's
