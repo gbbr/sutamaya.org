@@ -10,6 +10,8 @@ import {
   headerTitle,
   roleFor,
   cleanNote,
+  suttaCentralTarget,
+  uidDocuments,
   stripHtmlTags,
   buildBodySegments,
 } from '../collections.js';
@@ -228,6 +230,51 @@ describe('cleanNote', () => {
 
   it('strips multiple links in the same note', () => {
     expect(cleanNote("<a href='#a'>One</a> and <a href='#b'>Two</a>")).toBe('One and Two');
+  });
+
+  it('points a link the app can follow at its reader, and strips the rest', () => {
+    const readPath = (href) => (href.includes('mn141') ? '/read/mn141' : null);
+    const note =
+      "From <a href='https://suttacentral.net/mn141/en/sujato'>MN 141</a> and " +
+      "<a href='https://suttacentral.net/pli-tv-kd1/en/sujato'>Kd 1</a>.";
+    expect(cleanNote(note, readPath)).toBe('From <a href="/read/mn141">MN 141</a> and Kd 1.');
+  });
+});
+
+describe('uidDocuments', () => {
+  it('names each document under its own uid, and each sutta of a batch under its', () => {
+    expect(uidDocuments(['mn10', 'dhp1-3'])).toEqual(
+      new Map([
+        ['mn10', 'mn10'],
+        ['dhp1-3', 'dhp1-3'],
+        ['dhp1', 'dhp1-3'],
+        ['dhp2', 'dhp1-3'],
+        ['dhp3', 'dhp1-3'],
+      ])
+    );
+    expect(uidDocuments(['an1.1-2']).get('an1.2')).toBe('an1.1-2');
+  });
+});
+
+describe('suttaCentralTarget', () => {
+  it('reads the uid, and the line from the hash', () => {
+    expect(suttaCentralTarget('https://suttacentral.net/sn46.53/en/sujato#15.4')).toEqual({ uid: 'sn46.53', line: '15.4' });
+    expect(suttaCentralTarget('https://suttacentral.net/dn22/en/sujato')).toEqual({ uid: 'dn22' });
+  });
+
+  it('takes the Pali edition and a bare uid as the same text', () => {
+    expect(suttaCentralTarget('https://suttacentral.net/mn10/pli/ms#2.1')).toEqual({ uid: 'mn10', line: '2.1' });
+    expect(suttaCentralTarget('https://suttacentral.net/an4.10')).toEqual({ uid: 'an4.10' });
+  });
+
+  it('keeps the text but drops a hash that names no one line', () => {
+    expect(suttaCentralTarget('https://suttacentral.net/mn9/en/sujato#24-26.7')).toEqual({ uid: 'mn9' });
+    expect(suttaCentralTarget('https://suttacentral.net/iti100/en/sujato#2.2.')).toEqual({ uid: 'iti100' });
+  });
+
+  it('is null for another edition, and for anywhere else', () => {
+    expect(suttaCentralTarget('https://suttacentral.net/sf1/san/gbm#sc1')).toBeNull();
+    expect(suttaCentralTarget('https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1/')).toBeNull();
   });
 });
 

@@ -24,10 +24,36 @@ function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof
     showNotes: false,
     openNotes: {},
     onToggleNote: vi.fn(),
+    onNoteLink: vi.fn(),
     activeWord: null,
     ...overrides,
   };
 }
+
+describe('SegmentedText — links in a translator note', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn10:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard.', note: 'Compare <a href="/read/sn46.53?at=15.4">SN 46.53:15.4</a>.' },
+  ];
+  const noteLink = (container: HTMLElement) => container.querySelector('[data-reveal="note"] a')!;
+
+  it('hands a tapped link to the reader rather than navigating', () => {
+    const onNoteLink = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { showNotes: true, openNotes: { 0: true }, onNoteLink })} />);
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true });
+    noteLink(container).dispatchEvent(click);
+    expect(onNoteLink).toHaveBeenCalledWith('/read/sn46.53?at=15.4');
+    expect(click.defaultPrevented).toBe(true);
+  });
+
+  it('leaves a modified click to the browser, for a new tab', () => {
+    const onNoteLink = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { showNotes: true, openNotes: { 0: true }, onNoteLink })} />);
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true, metaKey: true });
+    noteLink(container).dispatchEvent(click);
+    expect(onNoteLink).not.toHaveBeenCalled();
+    expect(click.defaultPrevented).toBe(false);
+  });
+});
 
 // Regression coverage for a real bug: SuttaCentral joins some Pali words with a bare "—" (em
 // dash), no surrounding space (e.g. MN17's "samudānetabbā—cīvara...parikkhārā—te", three separate

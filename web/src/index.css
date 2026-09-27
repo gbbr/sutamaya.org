@@ -546,6 +546,24 @@ a {
   }
 }
 
+/* A link in a translator's note: the note's own colour, with a thin, faint underline. */
+[data-reveal='note'] a,
+[data-reveal='note'] a:hover {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 2px;
+}
+
+/* A note's link in the native apps: a long press neither offers nor lifts it, there being no tabs
+   to open it in. */
+[data-platform='ios'] [data-reveal='note'] a,
+[data-platform='android'] [data-reveal='note'] a {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
 /* `.sutta-row`, a sutta in a list: a link that keeps the row's own colours. */
 .sutta-row,
 .sutta-row:hover {

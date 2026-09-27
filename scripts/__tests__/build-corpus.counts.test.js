@@ -4,7 +4,8 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { KN_BOOKS } from '../lib/collections.js';
+import { KN_BOOKS, uidDocuments } from '../lib/collections.js';
+import { compareSegmentKeys } from '../lib/segmentKeys.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..', '..');
@@ -100,4 +101,55 @@ describe('build-corpus text shards (real data)', () => {
       }
     }
   }, 30_000);
+});
+
+// The links the build writes into translator notes, over whatever notes the last data refresh
+// brought in: a link may only open a sutta the app holds, and land on a line of it.
+describe('build-corpus note links (real data)', () => {
+  // Each built segment's note, by key.
+  const notes = new Map();
+  // Each document's segment keys.
+  const keysOf = new Map();
+  // Every uid the reader opens, with the document holding it.
+  let documents;
+
+  beforeAll(() => {
+    documents = uidDocuments(Object.keys(corpus.suttas));
+    for (const doc of Object.keys(corpus.suttas)) {
+      const segs = JSON.parse(fs.readFileSync(path.join(dataDir, 'text', `${doc}.json`), 'utf8'));
+      keysOf.set(doc, segs.map((s) => s.key));
+      for (const s of segs) if (s.note) notes.set(s.key, s.note);
+    }
+  });
+
+  // A line the text doesn't show lands on the next one of its sutta (web's segmentAt).
+  it('opens only suttas the app holds, at a line each has or a later one of the same sutta', () => {
+    const broken = [];
+    for (const [key, note] of notes) {
+      for (const [, uid, line] of note.matchAll(/<a href="\/read\/([^"?]+)(?:\?at=([^"]+))?">/g)) {
+        const doc = documents.get(uid);
+        const wanted = `${uid}:${line}`;
+        const lands = (k) => k.startsWith(`${uid}:`) && compareSegmentKeys(k, wanted) >= 0;
+        if (!doc || (line && !keysOf.get(doc).some(lands))) broken.push(`${key} → ${line ? wanted : uid}`);
+      }
+    }
+    expect(broken).toEqual([]);
+  });
+
+  // What catches the source changing how it writes a link, which the build would otherwise quietly
+  // reduce to plain text.
+  it('makes every suttacentral.net link to a text the app holds one of its own', () => {
+    const lost = [];
+    for (const file of fs.readdirSync(path.join(ROOT, 'data', 'sujato.post', 'notes'), { recursive: true })) {
+      if (!file.endsWith('.json')) continue;
+      const source = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'sujato.post', 'notes', file), 'utf8'));
+      for (const [key, raw] of Object.entries(source)) {
+        if (!notes.has(key)) continue;
+        const held = [...raw.matchAll(/href=['"]https?:\/\/suttacentral\.net\/([a-z][a-z0-9.-]*)/g)].filter(([, uid]) => documents.has(uid));
+        const made = notes.get(key).match(/<a href="\/read\//g) ?? [];
+        if (made.length !== held.length) lost.push(`${key}: ${made.length} of ${held.length}`);
+      }
+    }
+    expect(lost).toEqual([]);
+  });
 });

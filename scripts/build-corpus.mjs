@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import {
   NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR, RESTATED_CHAPTERS,
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
-  headerTitle, buildBodySegments,
+  headerTitle, buildBodySegments, suttaCentralTarget, uidDocuments,
 } from './lib/collections.js';
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
 import { compareSegmentKeys } from './lib/segmentKeys.js';
@@ -118,6 +118,35 @@ const notesFiles = buildFileIndex(path.join(SUJATO, 'notes'));
 detail(
   `${paliFiles.size} pali files, ${sujatoFiles.size} sujato files, ${htmlFiles.size} html structure files, ${notesFiles.size} note files`
 );
+
+// Every uid the reader opens, with the document holding it.
+const readable = uidDocuments(sujatoFiles.keys());
+
+// Each linked document's segment keys, worked out the first time a note links to it.
+const linkedKeys = new Map();
+
+// Returns the segment keys document `doc` is built with.
+function keysOf(doc) {
+  let keys = linkedKeys.get(doc);
+  if (!keys) {
+    const segs = buildBodySegments(loadSegMap(paliFiles.get(doc)), loadSegMap(sujatoFiles.get(doc)), loadSegMap(htmlFiles.get(doc)), new Map());
+    linkedKeys.set(doc, (keys = new Set(segs.map((s) => s.key))));
+  }
+  return keys;
+}
+
+// Returns the reader path a note's link opens, or null for a link to anything the corpus doesn't
+// hold. It names the link's line where the text has that line or a later one of its sutta to land
+// on (ReaderPage's segmentAt), and otherwise opens the sutta at the top.
+function notePath(href) {
+  const target = suttaCentralTarget(href);
+  const doc = target && readable.get(target.uid);
+  if (!doc) return null;
+  const key = `${target.uid}:${target.line}`;
+  const keys = target.line ? keysOf(doc) : null;
+  const lands = keys && (keys.has(key) || [...keys].some((k) => k.startsWith(`${target.uid}:`) && compareSegmentKeys(k, key) > 0));
+  return `/read/${target.uid}${lands ? `?at=${target.line}` : ''}`;
+}
 
 const nameIndexCache = new Map();
 function nameIndexFor(collection) {
@@ -245,7 +274,7 @@ function buildLeaf(uid, nodeId, collection) {
   const sujatoMap = loadSegMap(sujatoPath);
   const htmlMap = loadSegMap(htmlFiles.get(uid));
   const notesMap = loadSegMap(notesFiles.get(uid));
-  const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap);
+  const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap, notePath);
   // A highlight is stored as the keys of the segments it starts and ends on, and the reader decides
   // what a new selection overlaps by comparing those keys alone — it has no text loaded in the
   // offline mirror, only the highlights. That only works while a document's keys ascend in the
