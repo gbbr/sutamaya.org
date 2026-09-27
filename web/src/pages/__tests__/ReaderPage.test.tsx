@@ -144,11 +144,12 @@ describe('ReaderPage sutta header chips', () => {
   // Opening at /read/dn1 is a return, so the page is held back while its text loads — which in
   // this suite is forever. The header is rendered all the same, but a held-back button has no
   // accessible name, so the chips below are found by their text.
-  it('holds the page back on a return while its text loads, showing only the loading note', async () => {
+  it('holds the page back on a return while its text loads, showing only the loading note and not scrolling', async () => {
     const { container } = renderReader();
     const title = await screen.findByText('Brahmajala', { selector: 'h1' });
     expect(title.closest<HTMLElement>('[style*="visibility: hidden"]')).toBeTruthy();
-    expect(screen.getByText('Loading…').style.visibility).toBe('visible');
+    expect(screen.getByText('Loading…').closest('[style*="visibility: hidden"]')).toBeNull();
+    expect(container.querySelector<HTMLElement>('.sc')?.style.overflowY).toBe('hidden');
     expect(container.querySelector('[data-segroot]')).toBeNull();
   });
 
