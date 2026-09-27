@@ -14,6 +14,7 @@ import {
   SEARCH_RESULTS_CAP,
   listBlockCounts,
   listBlockHeading,
+  opensAtPassage,
   searchCorpus,
   searchGroups,
   searchLists,
@@ -327,6 +328,43 @@ describe('searchCorpus', () => {
     };
     const [hit] = searchCorpus(batched, 'dhp320', {});
     expect(hit).toMatchObject({ id: 'dhp320-333', matchedId: 'dhp320' });
+  });
+
+  describe('a query that is a reference', () => {
+    // SN4.10 comes first in build order, and its title line holds both "an" (in "span") and "4.10".
+    const numbered: Corpus = {
+      ...meta,
+      nikayas: [],
+      suttas: {
+        'sn4.10': { ref: 'SN4.10', node: 'sn', en: 'Life Span', pali: 'Āyusutta', blurb: '', min: 1 },
+        'an4.10': { ref: 'AN4.10', node: 'an', en: 'Attachments', pali: 'Yogasutta', blurb: '', min: 1 },
+        'an4.100': { ref: 'AN4.100', node: 'an', en: 'Wanderers', pali: 'Paribbājakasutta', blurb: '', min: 1 },
+        'dhp21-32': { ref: 'Dhp21–32', node: 'dhp', en: '2. Diligence', pali: 'Appamādavagga', blurb: '', min: 2 },
+      },
+    };
+
+    it('puts the sutta it names first, written with a space or without', () => {
+      expect(searchCorpus(numbered, 'AN 4.10', {})[0].id).toBe('an4.10');
+      expect(searchCorpus(numbered, 'an4.10', {})[0].id).toBe('an4.10');
+    });
+
+    it('names a sutta inside a batch, written with a space too', () => {
+      expect(searchCorpus(numbered, 'Dhp 25', {})[0]).toMatchObject({ id: 'dhp21-32', matchedId: 'dhp25' });
+    });
+
+    it('carries the line it names, which the row opens at', () => {
+      const [hit] = searchCorpus(numbered, 'AN 4.10:2.1', {});
+      expect(hit).toMatchObject({ id: 'an4.10', matchedLine: 'an4.10:2.1' });
+      expect(opensAtPassage(hit)).toBe(true);
+      expect(searchCorpus(numbered, 'dhp 25:1', {})[0]).toMatchObject({ id: 'dhp21-32', matchedId: 'dhp25', matchedLine: 'dhp25:1' });
+    });
+
+    it('carries no line where what follows the colon is not one', () => {
+      const [hit] = searchCorpus(numbered, 'an4.10:', {});
+      expect(hit.id).toBe('an4.10');
+      expect(hit.matchedLine).toBeUndefined();
+      expect(opensAtPassage(hit)).toBe(false);
+    });
   });
 
   describe('matching against list/group names', () => {

@@ -9,9 +9,12 @@
 // corpus's build order. The boost never crosses buckets, so a title match always beats a blurb
 // match.
 //
-// A query naming one sutta of a batched document ("dhp325" inside "dhp320-333") matches the batch
-// and carries the inner uid as `matchedId`, since the corpus has no entry of its own for it.
+// A query that is a sutta's reference, spaces aside — "an 4.10", "dhp 325", "sn 46.53:15.4" — names
+// that sutta, which ranks above every bucket. One naming a sutta of a batched document ("dhp325"
+// inside "dhp320-333") matches the batch and carries the inner uid as `matchedId`, since the corpus
+// has no entry of its own for it; one naming a line carries its key as `matchedLine`.
 import { rangesFor, RANGE_QUERY, suttaEntries } from '../corpus/corpus';
+import { isKeyLine, keyLine, keySutta } from '../corpus/segmentKeys';
 import { flattenListTree } from '../lists/lists';
 import type { ChapterRow, Corpus, HighlightsMap, ListDef, Nikaya, Sutta } from '../types';
 import type { Mark } from './match';
@@ -22,6 +25,8 @@ export interface SearchHit {
   // The inner sutta the query named within a batched document, which the caller opens instead of
   // `id`. Unset for a match the data can't attribute to one inner sutta.
   matchedId?: string;
+  // The line the query named by its segment key ("sn46.53:15.4"), which the row quotes and opens at.
+  matchedLine?: string;
   // True when the query reached this sutta only through the name of a list holding it.
   listOnly?: boolean;
   // The bucket this hit ranked in, so lib/search/text.ts can extend the ladder past bucket 3.
@@ -35,11 +40,11 @@ export interface SearchHit {
   // `query` is what the line is marked with, which is not always what was typed: where the
   // expansion table is what matched, it carries both.
   explains?: { line: 'note' | 'blurb'; query: string };
-  // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
-  // what the search matched in each, the keys of the first and last segment it was drawn from,
-  // where it was Pali those of the segments holding a match, and what the marks were made with.
-  // Filled in by lib/search/text.ts for the hits that render, and kept only on the rows that open
-  // at it (opensAtPassage).
+  // The paragraph of sutta text the query was found in, or the line it named, its English where
+  // that paragraph was Pali, what the search matched in each, the keys of the first and last
+  // segment it was drawn from, where it was Pali those of the segments holding a match, and what
+  // the marks were made with. Filled in by lib/search/text.ts for the hits that render, and kept
+  // only on the rows that open at it (opensAtPassage).
   snippet?: {
     text: string;
     marks: Mark[];
@@ -143,10 +148,12 @@ function savedIds(lists: ListDef[], notes: Record<string, string>, highlights: H
 }
 
 // Rank buckets, best first — see the search rules at the top of this file.
+//   named           – the sutta the query is the reference of, above the buckets numbered from 0
 //   phrase in title – the query as typed, in the ref, title or Pali
 //   words in title  – every word there, apart
 //   phrase          – the query as typed in a blurb, note or list name
 //   words           – every word, anywhere search reads
+export const RANK_NAMED = -1;
 const RANK_PHRASE_IN_TITLE = 0;
 const RANK_WORDS_IN_TITLE = 1;
 const RANK_PHRASE = 2;
@@ -155,10 +162,19 @@ const RANK_WORDS = 3;
 // Whether a row shows the passage the query was found in and opens the sutta there. A hit reached
 // through the row's own lines — its number, title, Pali title, summary, the reader's note — answers
 // with the sutta itself and opens at the top instead; one reached through the name of a list, or
-// through the text alone, says nothing about itself and the passage is its answer.
-// See docs/search.md's "Snippets".
+// through the text alone, says nothing about itself and the passage is its answer, as the line is
+// for a query naming one. See docs/search.md's "Snippets".
 export function opensAtPassage(hit: SearchHit): boolean {
-  return hit.rank > RANK_WORDS || !!hit.listOnly;
+  return hit.rank > RANK_WORDS || !!hit.listOnly || !!hit.matchedLine;
+}
+
+// Returns the folded query `q` read as a reference, spaces aside: the uid it names, and the line
+// after a colon where that is one — "sn 46.53:15.4" is sn46.53 at 15.4.
+export function referenceOf(q: string): { id: string; line?: string } {
+  const ref = q.replace(/\s+/g, '');
+  if (!ref.includes(':')) return { id: ref };
+  const line = keyLine(ref);
+  return isKeyLine(line) ? { id: keySutta(ref), line } : { id: keySutta(ref) };
 }
 
 // Returns every sutta matching `query`, best first.
@@ -175,7 +191,9 @@ export function searchCorpus(
   // two: title, then everything else.
   const words = q.split(/\s+/);
   const staticHaystacks = staticHaystacksFor(corpus);
-  const rangeQuery = q.match(RANGE_QUERY);
+  // The sutta the query is the reference of, and the batch holding it where it is an inner one.
+  const named = referenceOf(q);
+  const rangeQuery = named.id.match(RANGE_QUERY);
   const ranges = rangeQuery ? rangesFor(corpus) : null;
   const listPathsById = listHaystacks(lists);
   const saved = savedIds(lists, notes, highlights);
@@ -190,8 +208,9 @@ export function searchCorpus(
     const { title, blurb } = staticHaystacks.get(id)!;
     const note = notes[id] ? searchKey(notes[id]) : '';
     const listPaths = listPathsById.get(id) ?? '';
-    let rank = -1;
-    if (title.includes(q)) rank = RANK_PHRASE_IN_TITLE;
+    let rank: number | undefined;
+    if (id === named.id) rank = RANK_NAMED;
+    else if (title.includes(q)) rank = RANK_PHRASE_IN_TITLE;
     else if (words.every((w) => title.includes(w))) rank = RANK_WORDS_IN_TITLE;
     else if (blurb.includes(q) || note.includes(q) || listPaths.includes(q)) rank = RANK_PHRASE;
     else if (words.every((w) => title.includes(w) || blurb.includes(w) || note.includes(w) || listPaths.includes(w))) rank = RANK_WORDS;
@@ -202,11 +221,12 @@ export function searchCorpus(
       const range = ranges!.get(id);
       const num = Number(rangeQuery[2]);
       if (range && range.prefix === rangeQuery[1] && num >= range.start && num <= range.end) {
-        rank = RANK_PHRASE_IN_TITLE;
-        matchedId = `${rangeQuery[1]}${rangeQuery[2]}`;
+        rank = RANK_NAMED;
+        matchedId = named.id;
       }
     }
-    if (rank < 0) continue;
+    if (rank === undefined) continue;
+    const matchedLine = rank === RANK_NAMED && named.line ? `${named.id}:${named.line}` : undefined;
     // Strict and word-level: a sutta sharing even one query word with its own text got here on its
     // own merits.
     const listOnly =
@@ -216,7 +236,7 @@ export function searchCorpus(
     // this call's own query; searchCorpusVariants widens it where an expansion is what matched.
     const line: 'note' | 'blurb' | undefined = carries(note) ? 'note' : carries(blurb) ? 'blurb' : undefined;
     const explains = line ? { line, query: q } : undefined;
-    hits.push({ id, sutta: s, matchedId, listOnly, rank, saved: saved.has(id), explains });
+    hits.push({ id, sutta: s, matchedId, matchedLine, listOnly, rank, saved: saved.has(id), explains });
   }
   hits.sort((a, b) => a.rank - b.rank || Number(b.saved) - Number(a.saved));
   return hits;
