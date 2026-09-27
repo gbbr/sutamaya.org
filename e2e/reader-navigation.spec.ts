@@ -159,12 +159,13 @@ test('Prev/Next starts the next sutta at the top instead of resuming it', async 
 });
 
 // The other half of that distinction: leaving by a jump from the reader's search and coming back by
-// its return arrow is a *return*, so the position is resumed — with a Next step and a second jump on
-// the way, both of which keep dn1 as the one way back. It is also the only spec that exercises
-// persisting on a key change rather than on a page unload — the reader's scroll container is not
-// remounted between suttas, so what dn1 remembers is written by the hook's teardown as the key
-// changes, from the value it last knew rather than a fresh scrollTop read (see useScrollMemory's
-// lastKnownScrollTopRef). The refresh spec above never changes the key, so it never runs that path.
+// its return arrow is a *return*, so the position is resumed — with a Next step on the way, which
+// keeps dn1 as the way back, and a second jump, which the arrow retraces first. It is also the only
+// spec that exercises persisting on a key change rather than on a page unload — the reader's scroll
+// container is not remounted between suttas, so what dn1 remembers is written by the hook's teardown
+// as the key changes, from the value it last knew rather than a fresh scrollTop read (see
+// useScrollMemory's lastKnownScrollTopRef). The refresh spec above never changes the key, so it
+// never runs that path.
 test('a sutta left by a search jump resumes where it was when the return arrow goes back to it', async ({ page }) => {
   await page.goto('/read/dn1');
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
@@ -192,6 +193,9 @@ test('a sutta left by a search jump resumes where it was when the return arrow g
     .first()
     .click();
   await expect(page).toHaveURL(/\/read\/dn5$/);
+
+  await page.getByRole('button', { name: 'Back to DN3', exact: true }).click();
+  await expect(page).toHaveURL(/\/read\/dn3$/);
 
   await page.getByRole('button', { name: 'Back to DN1', exact: true }).click();
   await expect(page).toHaveURL(/\/read\/dn1$/);

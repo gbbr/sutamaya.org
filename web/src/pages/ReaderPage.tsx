@@ -522,9 +522,8 @@ export function ReaderPage() {
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
-  // The header's first button, and where Escape and the native apps' Back end up: back to the sutta
-  // the reader first searched from while there is one, arriving from the left as Prev does;
-  // otherwise out of the reader.
+  // The header's back arrow, and where Escape and the native apps' Back end up: back one jump while
+  // there is a way back, arriving from the left as Prev does; otherwise out of the reader.
   function backOrClose() {
     if (!backTo) {
       closeReader();
@@ -678,23 +677,32 @@ export function ReaderPage() {
       onMouseUp={onTextUp}
       onTouchEnd={onTextUp}
     >
-      {/* The header: close on the left — back, after a search jump — search and menu on the right,
-          and the title absolutely centred on the page rather than between them, since the two
-          sides carry different numbers of buttons. A 44px bar starting on the safe-area line, the
-          platform's own top-bar geometry, with its controls centred in it. */}
+      {/* The header: close on the left, with back beside it after a jump from within the reader;
+          search and menu on the right; and the title absolutely centred on the page rather than
+          between them, since the two sides carry different numbers of buttons. A 44px bar starting
+          on the safe-area line, the platform's own top-bar geometry, with its controls centred in
+          it. */}
       <header
         className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
         style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
       >
-        {/* `p-3.5 -m-3.5`: a 47px touch area around the 19px icon, with the negative margin
-            collapsing the button's layout box back to the icon. */}
-        <button
-          className="flex items-center p-3.5 -m-3.5"
-          title={backTo ? `Back to ${corpus.suttas[backTo]?.ref ?? backTo}` : 'Close'}
-          onClick={backOrClose}
-        >
-          {backTo ? <Undo2 size={19} strokeWidth={1.75} /> : <X size={19} strokeWidth={1.75} />}
-        </button>
+        {/* `p-[12.5px] -m-[12.5px]`: a 44px touch area around each 19px icon, the platform
+            minimum, with the negative margin collapsing the button's layout box back to the icon;
+            `gap-[25px]` puts the touch areas edge to edge. */}
+        <div className="flex items-center gap-[25px]">
+          <button className="flex items-center p-[12.5px] -m-[12.5px]" title="Close" onClick={closeReader}>
+            <X size={19} strokeWidth={1.75} />
+          </button>
+          {backTo && (
+            <button
+              className="flex items-center p-[12.5px] -m-[12.5px]"
+              title={`Back to ${corpus.suttas[backTo]?.ref ?? backTo}`}
+              onClick={backOrClose}
+            >
+              <Undo2 size={19} strokeWidth={1.75} />
+            </button>
+          )}
+        </div>
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
         <button
@@ -707,12 +715,11 @@ export function ReaderPage() {
               English title. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* Share, Search and Menu, on a smaller 43px touch area (`p-3 -m-3`) so they can sit closer;
-            `gap-6` puts the hit areas edge to edge. */}
-        <div className="flex items-center gap-6">
+        {/* Share, Search and Menu, on the same 44px touch areas, edge to edge, as Close and Back. */}
+        <div className="flex items-center gap-[25px]">
           {SHAREABLE && (
             <button
-              className="flex items-center p-3 -m-3"
+              className="flex items-center p-[12.5px] -m-[12.5px]"
               aria-label="Share"
               title="Share"
               onClick={(e) => {
@@ -724,7 +731,7 @@ export function ReaderPage() {
             </button>
           )}
           <button
-            className="flex items-center p-3 -m-3"
+            className="flex items-center p-[12.5px] -m-[12.5px]"
             aria-label="Search"
             title="Search (/)"
             onClick={(e) => {
@@ -735,7 +742,7 @@ export function ReaderPage() {
             <Search size={19} strokeWidth={1.75} />
           </button>
           <button
-            className="flex items-center p-3 -m-3"
+            className="flex items-center p-[12.5px] -m-[12.5px]"
             aria-label="Menu"
             title="Menu"
             onClick={(e) => {
