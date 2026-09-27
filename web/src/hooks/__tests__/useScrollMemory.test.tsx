@@ -14,16 +14,14 @@ function TestBox({
   scrollKey,
   active,
   restore,
-  skipRestore,
   readyToRestore,
 }: {
   scrollKey: string | null;
   active?: boolean;
   restore?: ScrollRestore;
-  skipRestore?: boolean;
   readyToRestore?: boolean;
 }) {
-  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, { restore, skipRestore, readyToRestore });
+  const ref = useScrollMemory<HTMLDivElement>(scrollKey, active, { restore, readyToRestore });
   return <div ref={ref} data-testid="box" />;
 }
 
@@ -58,16 +56,16 @@ describe('useScrollMemory', () => {
     expect(second.getByTestId('box').scrollTop).toBe(240);
   });
 
-  it('skipRestore leaves scrollTop untouched even when a remembered position exists', () => {
+  it("restore='placed' leaves scrollTop untouched even when a remembered position exists", () => {
     const key = freshKey();
     const first = render(<TestBox scrollKey={key} />);
     scrollTo(first.getByTestId('box'), 300);
     first.unmount();
 
-    // Same key still has 300 remembered — a caller passing skipRestore (ReaderPage's deep-link
-    // case, so its own jump-to-segment is the only scroll write on this mount) must not have that
-    // position silently applied underneath it.
-    const second = render(<TestBox scrollKey={key} skipRestore />);
+    // Same key still has 300 remembered — a caller placing the page itself (ReaderPage's arrival
+    // at a named line, so its own jump-to-segment is the only scroll write on this mount) must not
+    // have that position silently applied underneath it.
+    const second = render(<TestBox scrollKey={key} restore="placed" />);
     expect(second.getByTestId('box').scrollTop).toBe(0);
   });
 
@@ -78,7 +76,7 @@ describe('useScrollMemory', () => {
     first.unmount();
 
     // A fresh entry to a sutta (row tap / search hit / Prev/Next) starts at the top even though
-    // 300 is remembered for it — and, unlike skipRestore, actively *writes* 0 rather than leaving
+    // 300 is remembered for it — and, unlike 'placed', actively *writes* 0 rather than leaving
     // the container wherever it was. That write is what the reader depends on: the same scroll
     // container is reused across Prev/Next, so without it the next sutta would open at the
     // previous one's offset. Modelled here as a key change on a mounted container, which is

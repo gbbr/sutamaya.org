@@ -63,17 +63,18 @@ export function clearScrollMemory() {
 
 // Where a mount opens. None of the options affect recording: a container always remembers where it
 // is left.
-export type ScrollRestore = 'stored' | 'top';
+export type ScrollRestore = 'stored' | 'top' | 'placed';
 
 export interface ScrollMemoryOptions {
   /**
-   * Where this mount opens: 'stored' at the remembered offset for `key`, 'top' at 0. Both write,
-   * so a container reused across documents can't keep the previous one's offset. Read once per
-   * key-mount, so it must change only together with `key`.
+   * Where this mount opens:
+   *   stored – at the remembered offset for `key`
+   *   top    – at 0
+   *   placed – wherever the caller scrolls it, to a target of its own; nothing is written
+   * 'stored' and 'top' both write, so a container reused across documents can't keep the previous
+   * one's offset. Read once per key-mount, so it must change only together with `key`.
    */
   restore?: ScrollRestore;
-  /** Don't write at all — the caller has its own target to scroll to. Read once, like `restore`. */
-  skipRestore?: boolean;
   /** Hold the restore until the caller's async content has all landed. */
   readyToRestore?: boolean;
 }
@@ -84,7 +85,7 @@ export interface ScrollMemoryOptions {
 export function useScrollMemory<T extends HTMLElement>(
   key: string | null | undefined,
   active = true,
-  { restore = 'stored', skipRestore = false, readyToRestore = true }: ScrollMemoryOptions = {}
+  { restore = 'stored', readyToRestore = true }: ScrollMemoryOptions = {}
 ) {
   const ref = useRef<T>(null);
   const readyRef = useRef(readyToRestore);
@@ -124,7 +125,7 @@ export function useScrollMemory<T extends HTMLElement>(
     doRestoreRef.current = () => {
       if (restoreState.restored) return;
       restoreState.restored = true;
-      if (skipRestore) return;
+      if (restore === 'placed') return;
       const desired = restore === 'stored' ? positions.get(key) ?? 0 : 0;
       el.scrollTop = desired;
       lastKnownScrollTopRef.current = desired;

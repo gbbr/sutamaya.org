@@ -17,14 +17,14 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   suttaId: string | undefined,
   // Namespaces the remembered scroll position, as `{prefix}:{suttaId}`.
   scrollKeyPrefix: string,
-  { restore = 'stored', skipRestore = false }: { restore?: ScrollRestore; skipRestore?: boolean } = {}
+  { restore = 'stored' }: { restore?: ScrollRestore } = {}
 ) {
   const { highlights, ready: userDataReady, anchorHighlights } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
   // Whether this opening is at a place rather than the top — one remembered on a return, or one the
-  // arrival names (`skipRestore`) — whose offset is right only on the text's final layout, so it
-  // also waits for the text's fonts.
-  const placing = restore === 'stored' || skipRestore;
+  // arrival names — whose offset is right only on the text's final layout, so it also waits for the
+  // text's fonts.
+  const placing = restore !== 'top';
   const fontsLoaded = useFontsLoaded(placing ? segments : null);
   // Whether the page is held back until then, so the first thing seen is that place.
   const holdingPlace = placing && !fontsLoaded;
@@ -52,7 +52,6 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   // return the text's fonts too.
   const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
     restore,
-    skipRestore,
     readyToRestore: !!segments && !holdingPlace && userDataReady,
   });
   const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
