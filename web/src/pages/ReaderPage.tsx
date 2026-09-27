@@ -182,18 +182,22 @@ export function ReaderPage() {
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
-  // Where this sutta opens, sampled once per sutta id: 'stored' on a return — back or forward, a
-  // refresh, a relaunch (lib/navigation/entryKind.ts) — 'top' otherwise, and no restore at all when
-  // the route names an inner sutta to scroll to.
-  const restoreRef = useRef<{ id?: string; restore: ScrollRestore; skipRestore: boolean }>({
-    restore: 'stored',
-    skipRestore: false,
-  });
+  // Where this sutta opens, sampled once per sutta id:
+  //   placed – at the line the arrival names, or the inner sutta the route names, which the Reader
+  //            scrolls to itself
+  //   stored – where the reader left it, on a return: back or forward, a refresh, a relaunch
+  //            (lib/navigation/entryKind.ts)
+  //   top    – otherwise
+  const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
   if (restoreRef.current.id !== suttaId) {
     restoreRef.current = {
       id: suttaId,
-      restore: enteredByReturn(navigationType, location.state) ? 'stored' : 'top',
-      skipRestore: !!requestedSubUid || arrivalKeys !== undefined,
+      restore:
+        requestedSubUid || arrivalKeys !== undefined
+          ? 'placed'
+          : enteredByReturn(navigationType, location.state)
+            ? 'stored'
+            : 'top',
     };
   }
   // The sutta openSegs and openNotes belong to.
@@ -202,8 +206,7 @@ export function ReaderPage() {
   // so a return's scroll offset is restored with them already open.
   if (openLinesOf !== suttaId) {
     setOpenLinesOf(suttaId);
-    const { restore, skipRestore } = restoreRef.current;
-    const kept = suttaId && restore === 'stored' && !skipRestore ? keptOpenLines(suttaId) : undefined;
+    const kept = suttaId && restoreRef.current.restore === 'stored' ? keptOpenLines(suttaId) : undefined;
     setOpenSegs(kept?.pali ?? {});
     setOpenNotes(kept?.notes ?? {});
   }
