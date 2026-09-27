@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildTextIndex, searchCorpusAndText, type TextIndex, type SearchMap } from '../text';
+import { buildTextIndex, searchCorpusAndText, segmentKeys, type TextIndex, type SearchMap } from '../text';
 import type { Corpus } from '../../types';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..', '..', '..');
@@ -46,6 +46,8 @@ const golden = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'search-gol
 
 let corpus: Corpus;
 let index: TextIndex;
+// Each sutta's segment keys, as its text file lists them.
+const textKeys = new Map<string, string[]>();
 
 beforeAll(() => {
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'search-golden-'));
@@ -60,6 +62,10 @@ beforeAll(() => {
   const read = (name: string) => fs.readFileSync(path.join(search, `${name}.${corpus.searchVersion}.txt`), 'utf8');
   const map = JSON.parse(fs.readFileSync(path.join(search, `map.${corpus.searchVersion}.json`), 'utf8')) as SearchMap;
   index = buildTextIndex(read('en'), read('pa'), map);
+  for (const uid of index.uids) {
+    const segs = JSON.parse(fs.readFileSync(path.join(out, 'text', `${uid}.json`), 'utf8')) as Array<{ key: string }>;
+    textKeys.set(uid, segs.map((s) => s.key));
+  }
   fs.rmSync(out, { recursive: true, force: true });
 }, 60000);
 
@@ -107,5 +113,14 @@ describe('golden query set — pending', () => {
     // The list is what the expansion table has earned so far; adding to it is the point, losing
     // one is a regression.
     expect(reached).toEqual(expect.arrayContaining(REACHED));
+  });
+});
+
+// The search map's keys are written by scripts/build-corpus.mjs's searchKeys and read back by
+// text.ts's expandKeys, one format on two sides of the workspace line.
+describe('the search map (real data)', () => {
+  it("gives back every sutta's segment keys as its text lists them", () => {
+    const differing = index.uids.filter((uid, doc) => segmentKeys(index, doc).join(' ') !== textKeys.get(uid)!.join(' '));
+    expect(differing).toEqual([]);
   });
 });

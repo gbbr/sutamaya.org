@@ -50,7 +50,9 @@ behaviour components share, and `components/` the pieces the pages are built fro
   So closing a search result returns to the results, and a relaunch returns to the last place.
 - Router state carries what an arrival *means* — the pane it came from, the search behind it, a line
   to jump to and the lines whose Pali opens there. It survives a refresh, so each is used exactly
-  once.
+  once. The address names the lines as well, by segment key — `/read/sn46.53?at=15.4` — so a copied
+  address, or a link opened anywhere else, lands there too. Lines in a batch are named under the
+  inner sutta they belong to: `/read/dhp274?at=4`, not `/read/dhp273-289`.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search is a detour.** The Reader's close becomes a return

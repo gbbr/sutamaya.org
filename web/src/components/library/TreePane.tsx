@@ -34,7 +34,7 @@ import { MOBILE_TOP_INSET } from '../../lib/ui/layout';
 import { derivePaneViewSync } from '../../lib/paneView';
 import { transitionPage } from '../../lib/ui/motion';
 import { opensHere } from '../../lib/navigation/linkClick';
-import { passageSearch } from '../../lib/navigation/passageLink';
+import { readLink } from '../../lib/navigation/passageLink';
 import { TREE_VIEW_KEY, TREE_EXPANDED_KEY } from '../../lib/storageKeys';
 import { RECENT_AUTO_LIST_ID, HIGHLIGHTS_AUTO_LIST_ID, NOTES_AUTO_LIST_ID } from '../../lib/lists/autoLists';
 import { SHORTCUTS, isShortcut } from '../../lib/shortcuts';
@@ -966,7 +966,7 @@ export function TreePane({
                     <Link
                       key={id}
                       ref={setHitRowRef(navIndex)}
-                      to={`/read/${encodeURIComponent(matchedId ?? id)}${passageSearch(snippet)}`}
+                      to={readLink(matchedId ?? id, snippet)}
                       className={`row sutta-row flex flex-col w-full text-left gap-[2px] px-[22px] py-[14px] border-b border-ink/[.07] ${navIndex === searchActiveIndex ? 'bg-ink/[.06]' : ''}`}
                       onClick={(e) => {
                         if (!opensHere(e)) return;

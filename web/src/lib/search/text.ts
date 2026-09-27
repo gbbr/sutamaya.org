@@ -1,7 +1,7 @@
 // Full-text search over the sutta text — see docs/search.md, which is the spec.
 //
-// The corpus ships as two line-per-segment blobs, one per language, and a map of sutta offsets;
-// there is no index, no stemmer and nothing to keep in step with the build. **The text is the
+// The corpus ships as two line-per-segment blobs, one per language, and a map of sutta offsets and
+// segment keys; there is no index, no stemmer and nothing to keep in step with the build. **The text is the
 // index**: a brute-force regular-expression scan of the whole canon costs a few milliseconds, so
 // the whole of matching and ranking is done on the keystroke, synchronously, once the blobs are in
 // memory.
@@ -29,6 +29,7 @@ import {
 import { expandQuery } from './expansion';
 import { matchRuns, type Mark } from './match';
 import { boldRuns } from '../noteFormat';
+import { keySutta } from '../corpus/segmentKeys';
 import type { Corpus, HighlightsMap, ListDef } from '../types';
 
 // Opens each paragraph, and each sutta, on a line of its own — see build-corpus.mjs. Being neither
@@ -182,10 +183,14 @@ export interface TextIndex {
   // Every paragraph-opening offset, ascending, per blob.
   enParas: number[];
   paParas: number[];
+  // Each sutta's segment keys, in reading order.
+  keys: string[][];
 }
 
-// One entry per sutta: its uid and its offset into each blob.
-export type SearchMap = Array<[string, number, number]>;
+// One entry per sutta: its uid, its offset into each blob, and its segment keys in reading order,
+// space-separated, each after the first of its sutta cut to what follows its colon — "sn46.53:1.1
+// 1.2 2.1".
+export type SearchMap = Array<[string, number, number, string]>;
 
 function paragraphStarts(text: string): number[] {
   const out: number[] = [];
@@ -202,7 +207,26 @@ export function buildTextIndex(en: string, pa: string, map: SearchMap): TextInde
     pa,
     enParas: paragraphStarts(en),
     paParas: paragraphStarts(pa),
+    keys: map.map((m) => expandKeys(m[3] ?? '')),
   };
+}
+
+// Returns the segment keys a search map entry carries, each written out whole.
+function expandKeys(keys: string): string[] {
+  let uid = '';
+  return keys
+    .split(' ')
+    .filter(Boolean)
+    .map((key) => {
+      if (!key.includes(':')) return `${uid}:${key}`;
+      uid = keySutta(key);
+      return key;
+    });
+}
+
+// Returns the keys of sutta `doc`'s segments, in reading order.
+export function segmentKeys(index: TextIndex, doc: number): string[] {
+  return index.keys[doc];
 }
 
 export function searchTextUrls(searchVersion: string): string[] {
@@ -477,12 +501,12 @@ export interface Snippet {
   under?: string;
   // The same, in `under`.
   underMarks?: Mark[];
-  // The first and last segment this line was drawn from, indexing the array in text/{uid}.json —
-  // what the reader opens at, and washes, when the row is clicked.
-  segments: [number, number];
-  // The segments whose Pali holds what `text` marks, which the reader opens with their Pali
-  // showing. Set only where `text` is Pali.
-  paliSegments?: number[];
+  // The keys of the first and last segment this line was drawn from — what the reader opens at,
+  // and washes, when the row is clicked.
+  segments: [string, string];
+  // The keys of the segments whose Pali holds what `text` marks, which the reader opens with their
+  // Pali showing. Set only where `text` is Pali.
+  paliSegments?: string[];
   // What `marks` were made with, which the reader marks the same words by in the lines it opens at.
   markedBy: MarkedBy;
 }
@@ -598,6 +622,9 @@ function noteStart(text: string, at: number): number {
 // the row: the Pali line is windowed on the query that found it, the English line on what was
 // typed, and both are marked with the two.
 export function snippetOf(index: TextIndex, score: TextScore, typed: string): Snippet | null {
+  const keys = segmentKeys(index, score.doc);
+  // A map without keys names no segment to open at.
+  if (!keys.length) return null;
   const pali = score.lang === 'pa';
   const blob = pali ? index.pa : index.en;
   const paras = pali ? index.paParas : index.enParas;
@@ -610,7 +637,10 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   const suttaStart = (pali ? index.paStarts : index.enStarts)[score.doc];
   const segmentOf = (offset: number) => segmentAt(blob, suttaStart, paras, score.para, para.start + offset);
   // `end` is exclusive, so the last segment is the one holding the character before it.
-  const segments: [number, number] = [segmentOf(window.start), segmentOf(Math.max(window.start, window.end - 1))];
+  const segments: [string, string] = [
+    keys[segmentOf(window.start)],
+    keys[segmentOf(Math.max(window.start, window.end - 1))],
+  ];
   const text = window.text;
   const marks = marksOf(text, queries, score.lang, false);
   const markedBy = { queries, anywhere: false };
@@ -619,7 +649,9 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   // The segments holding a mark, marked afresh in the paragraph's own text, since offsets into the
   // tidied window don't map back to a segment.
   const paliMarks = marksOf(para.text.slice(window.start, window.end), queries, 'pa', false);
-  const paliSegments = [...new Set(paliMarks.map(([start]) => segmentOf(window.start + start)))].sort((a, b) => a - b);
+  const paliSegments = [...new Set(paliMarks.map(([start]) => segmentOf(window.start + start)))]
+    .sort((a, b) => a - b)
+    .map((i) => keys[i]);
   const english = paragraphAt(index.en, index.enParas, score.para);
   if (!english.text.trim()) return { text, marks, segments, paliSegments, markedBy };
   const enAt = firstMatch(english.text, typed, 'en');
@@ -665,6 +697,9 @@ export function passagesOf(index: TextIndex, doc: number, typed: string, score?:
     re.lastIndex = 0;
     return re.test(text);
   };
+  const keys = segmentKeys(index, doc);
+  // A map without keys names no segment to open at.
+  if (!keys.length) return [];
   // Paragraphs run together so far, by language and number.
   const paragraphs = new Map<string, { text: string; start: number }>();
   const out: Snippet[] = [];
@@ -684,10 +719,10 @@ export function passagesOf(index: TextIndex, doc: number, typed: string, score?:
       const passage: Snippet = {
         text: window.text,
         marks: marksOf(window.text, queriesMarked, lang, true),
-        segments: [seg, seg],
+        segments: [keys[seg], keys[seg]],
         markedBy: { queries: queriesMarked, anywhere: true },
       };
-      if (lang === 'pa') passage.paliSegments = [seg];
+      if (lang === 'pa') passage.paliSegments = [keys[seg]];
       const under = lang === 'pa' ? english[line].text.trim() : '';
       out.push(under ? { ...passage, under, underMarks: marksOf(under, queriesMarked, 'en', true) } : passage);
       break;

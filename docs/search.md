@@ -23,7 +23,7 @@ The build writes three files for it ([corpus.md](corpus.md)):
 |---|---|
 | `search/en.<version>.txt` | every segment's English, one per line, in canonical order |
 | `search/pa.<version>.txt` | the same segments' Pali, line for line |
-| `search/map.<version>.json` | where each sutta starts in each file |
+| `search/map.<version>.json` | where each sutta starts in each file, and its segments' keys |
 
 A marker line opens each paragraph and each sutta, so a match can't run from one into the next.
 About 120,000 segments make 18 MB of text, 2.7 MB over the wire. The file names carry a hash of
@@ -118,9 +118,10 @@ row takes the Reader straight to that passage, and a Pali hit arrives with the P
 holding a marked word open, as find-in-page opens a collapsed section it finds a match in.
 
 The row is a link, and the link carries the passage — its lines, the Pali to open and the words to
-mark — so opened in a new tab it lands the same way. Its lines are positions in the sutta's text,
-which is what search knows, so a link kept past a text update can land a few lines off. The Reader
-lands on such a link once: a reload keeps the reader's place.
+mark — so opened in a new tab it lands the same way, and opened in place it leaves the passage in
+the Reader's address ([web-app.md](web-app.md)'s "Routing"). Its lines are named by their segment
+keys, so a link kept past a text update lands on the same lines, or on the next one where the update
+removed a line. The Reader lands on such a link once: a reload keeps the reader's place.
 
 A row shows what it opens. Where the query reached a sutta through the row's own lines — its number,
 title, Pali title, description or the reader's note — that line is the answer: the row shows no

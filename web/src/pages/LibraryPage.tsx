@@ -17,6 +17,7 @@ import { SHORTCUTS, shortcutsForScope, isShortcut, isTypingTarget } from '../lib
 import { LIBRARY_VIEW_KEY, READER_ORIGIN_KEY, ROUTE_INTENT_KEY } from '../lib/storageKeys';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
 import { takeAddressArrival } from '../lib/navigation/entryKind';
+import { readLink } from '../lib/navigation/passageLink';
 import { transitionPage } from '../lib/ui/motion';
 import { TreePane, type ActiveSearchRow } from '../components/library/TreePane';
 import { ListPane } from '../components/lists/ListPane';
@@ -324,7 +325,7 @@ export function LibraryPage() {
       transitionPage('fade', () => {
         // Saved inside the swap, once the fade has captured this page.
         saveRecentSearch(query);
-        return navigate(`/read/${encodeURIComponent(id)}`, { state, flushSync: true });
+        return navigate(readLink(id, snippet), { state, flushSync: true });
       });
     },
     [nodeId, view, query, resultsShown, corpus, hits, navigate]

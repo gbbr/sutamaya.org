@@ -77,14 +77,25 @@ describe('useReaderOrigin', () => {
 
     // A hit naming a passage in the first sutta opens it there, leaving no way back.
     const markedBy = { queries: ['sati'], anywhere: false };
-    result.current.jumpTo('sn1.1', { segments: [3, 4], paliSegments: [4], markedBy }, 'an4.10');
-    expect(navigate).toHaveBeenLastCalledWith('/read/sn1.1', {
-      state: expect.objectContaining({ segments: [3, 4], paliSegments: [4], markedBy, backTo: undefined }),
+    result.current.jumpTo('sn1.1', { segments: ['sn1.1:3.1', 'sn1.1:3.2'], paliSegments: ['sn1.1:3.2'], markedBy }, 'an4.10');
+    expect(navigate).toHaveBeenLastCalledWith('/read/sn1.1?at=3.1-3.2&pali=3.2&q=sati', {
+      state: expect.objectContaining({
+        segments: ['sn1.1:3.1', 'sn1.1:3.2'],
+        paliSegments: ['sn1.1:3.2'],
+        markedBy,
+        backTo: undefined,
+      }),
       replace: true,
     });
 
     result.current.turnTo('sn1.1');
     expect(navigate).toHaveBeenLastCalledWith(-1);
+  });
+
+  it('a jump to a passage in a batch names the inner sutta its lines belong to', () => {
+    const { result } = renderHook(() => useReaderOrigin({ from: '/browse/dhp' }));
+    result.current.jumpTo('dhp273-289', { segments: ['dhp274:4', 'dhp274:4'] }, 'mn10');
+    expect(navigate).toHaveBeenLastCalledWith('/read/dhp274?at=4', expect.anything());
   });
 
   it('closeToOrigin prefers router state (from) when present', () => {

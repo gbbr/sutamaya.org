@@ -61,7 +61,7 @@ function Harness({
   onOpenSutta,
 }: {
   saved: { current: ReaderSearchView | null };
-  onOpenSutta: (id: string, passage?: { segments: [number, number] }) => void;
+  onOpenSutta: (id: string, passage?: { segments: [string, string] }) => void;
 }) {
   const [open, setOpen] = useState(true);
   if (!open) return <button onClick={() => setOpen(true)}>Search</button>;
@@ -79,13 +79,13 @@ function Harness({
   );
 }
 
-// passage returns a passage of dn1 holding "divine", at segment `n`.
+// passage returns a passage of dn1 holding "divine", at segment dn1:n.1.
 function passage(n: number) {
   const marks: Array<[number, number]> = [[4, 10]];
   return {
     text: `the divine net, passage ${n}`,
     marks,
-    segments: [n, n] as [number, number],
+    segments: [`dn1:${n}.1`, `dn1:${n}.1`] as [string, string],
     markedBy: { queries: ['divine'], anywhere: true },
   };
 }
@@ -121,7 +121,7 @@ describe('ReaderSearchOverlay focus on opening', () => {
     await waitFor(() => expect(container.querySelectorAll('button.row')).toHaveLength(3));
     fireEvent.keyDown(document.activeElement!, { key: 'ArrowDown' });
     fireEvent.keyDown(document.activeElement!, { key: 'Enter' });
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: ['dn1:2.1', 'dn1:2.1'] }));
   });
 
   it('focuses the field on a touch screen when there is no query', () => {
@@ -149,13 +149,13 @@ describe('ReaderSearchOverlay reopening after a row is opened', () => {
 
     await waitFor(() => expect(rows()).toHaveLength(3));
     fireEvent.click(rows()[1]);
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: ['dn1:2.1', 'dn1:2.1'] }));
 
     // Enter opens the row the cursor is on.
     fireEvent.click(screen.getByText('Search'));
     await waitFor(() => expect(rows()).toHaveLength(3));
     fireEvent.keyDown(screen.getByPlaceholderText(READER_SEARCH_PLACEHOLDER), { key: 'Enter' });
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: ['dn1:2.1', 'dn1:2.1'] }));
   });
 });
 
@@ -178,7 +178,7 @@ describe('ReaderSearchOverlay "more" under the passages', () => {
     await screen.findByRole('button', { name: /Fewer/ });
 
     fireEvent.keyDown(input, { key: 'Enter' });
-    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: [2, 2] }));
+    expect(onOpenSutta).toHaveBeenLastCalledWith('dn1', expect.objectContaining({ segments: ['dn1:2.1', 'dn1:2.1'] }));
   });
 
   it('collapses on Enter at "Fewer", the cursor staying on the toggle', async () => {

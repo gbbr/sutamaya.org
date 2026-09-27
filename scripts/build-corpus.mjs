@@ -172,7 +172,8 @@ function flushShard() {
 
 // Full-text search reads two line-per-segment blobs of the whole canon rather than an index — see
 // docs/search.md. Both carry the same lines in the same order, so an offset in one addresses the
-// same segment in the other, and `searchMap` resolves an offset to its sutta.
+// same segment in the other, and `searchMap` resolves an offset to its sutta and names its
+// segments.
 //
 // Line holding nothing else that opens each paragraph and each sutta.
 const PARA_MARK = '\x1e';
@@ -205,9 +206,24 @@ function paragraphOf(key) {
   return key.slice(0, colon + 1) + (dot === -1 ? afterColon : afterColon.slice(0, dot));
 }
 
-// Adds one sutta's segments to the search blobs, and records where it starts in each.
+// Returns a sutta's segment keys as the search map carries them: space-separated, and each after
+// the first of its sutta cut to what follows its colon — "sn46.53:1.1 1.2 2.1". lib/search/text.ts's
+// expandKeys reads them back.
+function searchKeys(segs) {
+  let uid;
+  return segs
+    .map(({ key }) => {
+      const colon = key.indexOf(':');
+      if (key.slice(0, colon) === uid) return key.slice(colon + 1);
+      uid = key.slice(0, colon);
+      return key;
+    })
+    .join(' ');
+}
+
+// Adds one sutta's segments to the search blobs, and records where it starts in each and its keys.
 function addToSearchBlobs(uid, segs) {
-  searchMap.push([uid, searchEnChars, searchPaChars]);
+  searchMap.push([uid, searchEnChars, searchPaChars, searchKeys(segs)]);
   pushSearchLine(PARA_MARK, PARA_MARK);
   let para = segs.length ? paragraphOf(segs[0].key) : null;
   for (const seg of segs) {
