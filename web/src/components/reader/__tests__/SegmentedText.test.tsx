@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { SegmentedText, type SegmentMarks } from '../SegmentedText';
 import type { SegmentFile } from '../../../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../../../lib/types';
@@ -25,6 +25,7 @@ function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof
     openNotes: {},
     onToggleNote: vi.fn(),
     onNoteLink: vi.fn(),
+    onNoteLinkPress: vi.fn(),
     activeWord: null,
     ...overrides,
   };
@@ -43,6 +44,13 @@ describe('SegmentedText — links in a translator note', () => {
     noteLink(container).dispatchEvent(click);
     expect(onNoteLink).toHaveBeenCalledWith('/read/sn46.53?at=15.4');
     expect(click.defaultPrevented).toBe(true);
+  });
+
+  it('hands a link to the reader as it is pressed, before the tap completes', () => {
+    const onNoteLinkPress = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { showNotes: true, openNotes: { 0: true }, onNoteLinkPress })} />);
+    fireEvent.pointerDown(noteLink(container));
+    expect(onNoteLinkPress).toHaveBeenCalledWith('/read/sn46.53?at=15.4');
   });
 
   it('leaves a modified click to the browser, for a new tab', () => {

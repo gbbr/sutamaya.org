@@ -465,6 +465,37 @@ describe('the passage a search hit was drawn from', () => {
     expect(washed(container)).toEqual([]);
   });
 
+  it('holds a sutta whose text is still coming back until it can open at the line it arrives at', async () => {
+    vi.mocked(useCorpus).mockReturnValue({
+      corpus: { ...corpus, suttas: { ...corpus.suttas, dn3: { ref: 'DN 3', node: 'dn', en: 'With Ambaṭṭha', pali: 'Ambaṭṭha', blurb: '', min: 5 } } },
+      loading: false,
+      error: false,
+      retry: vi.fn(),
+    });
+    let arrive!: () => void;
+    const text = new Promise<void>((resolve) => (arrive = resolve));
+    const segments3 = [
+      { key: 'dn3:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard' },
+      { key: 'dn3:1.2', pali: 'Tena kho pana', en: 'At that time Ambaṭṭha was studying' },
+    ];
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url: string) =>
+        url.includes('dn3.json')
+          ? text.then(() => ({ ok: true, json: async () => segments3 }))
+          : Promise.reject(new Error(`unexpected fetch: ${url}`))
+      )
+    );
+    const heldBack = () => !!screen.getByText('With Ambaṭṭha').closest('[style*="visibility: hidden"]');
+
+    const { container } = renderRoutes(routes, { pathname: '/read/dn3', state: tagIntent({ segments: ['dn3:1.2', 'dn3:1.2'] }) });
+    expect(heldBack()).toBe(true);
+
+    await act(async () => arrive());
+    await waitFor(() => expect(washed(container)).toEqual([1]));
+    expect(heldBack()).toBe(false);
+  });
+
   it('follows a link in a translator’s note to the line it names, with the way back', async () => {
     const { container, router } = renderRoutes(routes, '/read/dn1');
     fireEvent.click(await screen.findByTitle('The king appears at DN 2:1.3.'));
