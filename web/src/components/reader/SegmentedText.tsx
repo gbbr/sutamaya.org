@@ -201,6 +201,7 @@ interface SegmentRowProps {
   noteOpen: boolean;
   onToggleNote: (i: number) => void;
   onNoteLink: (href: string) => void;
+  onNoteLinkPress: (href: string) => void;
   // The word the DictionaryDock is showing, when it is in this segment.
   activeWordIndex: number | null;
 }
@@ -232,6 +233,7 @@ const SegmentRow = memo(function SegmentRow({
   noteOpen,
   onToggleNote,
   onNoteLink,
+  onNoteLinkPress,
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
@@ -396,6 +398,10 @@ const SegmentRow = memo(function SegmentRow({
             e.preventDefault();
             onNoteLink(link.getAttribute('href') ?? '');
           }}
+          onPointerDown={(e) => {
+            const link = (e.target as Element).closest('a');
+            if (link) onNoteLinkPress(link.getAttribute('href') ?? '');
+          }}
           // A note's inline formatting is static build-time data (build-corpus.mjs's cleanNote()),
           // never user or runtime content.
           dangerouslySetInnerHTML={{ __html: seg.note }}
@@ -428,6 +434,8 @@ interface SegmentedTextProps {
   onToggleNote: (i: number) => void;
   // Called with the href of a link tapped in a note.
   onNoteLink: (href: string) => void;
+  // Called with the href of a link in a note as it is pressed, before the tap completes.
+  onNoteLinkPress: (href: string) => void;
   // The word currently shown in the DictionaryDock, or null.
   activeWord: { segIndex: number; wordIndex: number } | null;
   // The first and last segment of the passage the reader arrived at, washed and then faded out.
@@ -459,6 +467,7 @@ function SegmentedTextInner({
   openNotes,
   onToggleNote,
   onNoteLink,
+  onNoteLinkPress,
   activeWord,
   washRange,
   washId,
@@ -513,6 +522,7 @@ function SegmentedTextInner({
         noteOpen={!!openNotes[i]}
         onToggleNote={onToggleNote}
         onNoteLink={onNoteLink}
+        onNoteLinkPress={onNoteLinkPress}
         activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
       />
     );

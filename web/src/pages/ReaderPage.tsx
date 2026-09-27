@@ -16,6 +16,7 @@ import { useLatest } from '../hooks/useLatest';
 import { animateScrollBy, animateScrollTop } from '../lib/reader/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus/corpus';
 import { segmentAt } from '../lib/corpus/segmentKeys';
+import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists/lists';
 import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
 import { setReaderThemeColor } from '../lib/ui/themeColor';
@@ -80,6 +81,16 @@ function arrivalOf(location: Location | undefined, uid: string | undefined): (Se
   if (state?.navId || !location || !uid) return state;
   const passage = passageFromSearch(location.search, uid);
   return passage ? { ...passage, navId: `${location.key}${location.search}` } : state;
+}
+
+// noteLinkTarget returns the sutta a link in a translator's note names and the passage its query
+// string carries, for a /read path the build wrote, else undefined.
+function noteLinkTarget(href: string): { uid: string; passage?: Passage } | undefined {
+  const url = new URL(href, window.location.origin);
+  const id = /^\/read\/([^/]+)$/.exec(url.pathname)?.[1];
+  if (!id) return undefined;
+  const uid = normalizeRouteId(decodeURIComponent(id));
+  return { uid, passage: passageFromSearch(url.search, uid) };
 }
 
 export function ReaderPage() {
@@ -283,7 +294,8 @@ export function ReaderPage() {
     return () => window.clearTimeout(timer);
   }, [suttaId, sutta, markVisited]);
 
-  // The text on screen as of the last commit, which tells a sutta just arrived from one already open.
+  // The text last shown on screen, never text held back (holdingPlace), which tells a sutta just
+  // arrived from one already open.
   const shownSegmentsRef = useRef<typeof segments>(null);
 
   // The first and last segment of the arrival's passage once the text loads (segmentAt). Unset where
@@ -303,9 +315,9 @@ export function ReaderPage() {
   const innerUid = searchSegments ? undefined : requestedSubUid;
   // Opens a sutta just arrived at the top where its arrival names a line it can't land on.
   useLayoutEffect(() => {
-    if (!arrivalKeys || !segments || searchSegments || requestedSubUid) return;
+    if (!arrivalKeys || !segments || holdingPlace || searchSegments || requestedSubUid) return;
     if (segments !== shownSegmentsRef.current && scrollRef.current) scrollRef.current.scrollTop = 0;
-  }, [arrivalKeys, segments, searchSegments, requestedSubUid, scrollRef]);
+  }, [arrivalKeys, segments, holdingPlace, searchSegments, requestedSubUid, scrollRef]);
 
   // The first and last segment of the requested inner sutta, whose segments run consecutively.
   const subRange = useMemo<[number, number] | undefined>(() => {
@@ -318,14 +330,14 @@ export function ReaderPage() {
     return [first, last];
   }, [innerUid, segments]);
 
-  // Scrolls to the requested inner sutta's first segment before the batch's text first paints, and
+  // Scrolls to the requested inner sutta's first segment before the batch's text first shows, and
   // again on each new arrival there: at once on a batch just arrived, gliding within one already
   // open.
   useLayoutEffect(() => {
-    if (!subRange) return;
+    if (!subRange || holdingPlace) return;
     const behavior = segments === shownSegmentsRef.current ? 'smooth' : 'instant';
     scrollToSegment(subRange[0], 'start', undefined, behavior);
-  }, [subRange, segments, scrollToSegment, arrivalId]);
+  }, [subRange, holdingPlace, segments, scrollToSegment, arrivalId]);
 
   // Whether the words a search hit was found by are still marked.
   const [marking, setMarking] = useState(false);
@@ -333,11 +345,11 @@ export function ReaderPage() {
   // once on a sutta just arrived, gliding within one already open.
   const [landing, setLanding] = useState<{ seg: number; behavior: 'smooth' | 'instant' }>();
 
-  // The segments the arrival wash covers: the passage the arrival names, or the requested inner
-  // sutta. Derived rather than held, so it leaves with the arrival it belongs to in that same
-  // render: a Prev/Next step lands on text that is often already fetched, and a range held a commit
-  // longer paints over it.
-  const washRange = searchSegments ?? subRange;
+  // The segments the arrival wash covers once the text shows: the passage the arrival names, or the
+  // requested inner sutta. Derived rather than held, so it leaves with the arrival it belongs to in
+  // that same render: a Prev/Next step lands on text that is often already fetched, and a range held
+  // a commit longer paints over it.
+  const washRange = holdingPlace ? undefined : searchSegments ?? subRange;
 
   // The words a search hit was found by, marked in the passage it lands on as its row marked them:
   // in each line's English, and in the Pali of the lines whose Pali it matched. Found in the lines
@@ -355,15 +367,15 @@ export function ReaderPage() {
     return marks;
   }, [marking, searchMarkedBy, searchSegments, searchPali, segments]);
 
-  // Lands on the passage the arrival names, so the line the reader picked out of the results or
-  // followed a link to is what they see: marks the words a search hit was found by, and opens the
-  // Pali of the lines a hit in the Pali matched. Before paint, as the scroll below is.
+  // Lands on the passage the arrival names once the text shows, so the line the reader picked out of
+  // the results or followed a link to is what they see: marks the words a search hit was found by,
+  // and opens the Pali of the lines a hit in the Pali matched. Before paint, as the scroll below is.
   useLayoutEffect(() => {
-    if (!searchSegments || !segments) return;
+    if (!searchSegments || !segments || holdingPlace) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
     setLanding({ seg: searchSegments[0], behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
     setMarking(true);
-  }, [searchSegments, searchPali, segments]);
+  }, [searchSegments, searchPali, segments, holdingPlace]);
 
   // Ends the marks on the reader's next click or tap, anywhere, as a found word stays marked in an
   // e-reader until the page is touched: once that click has been handled, since ending them
@@ -391,10 +403,11 @@ export function ReaderPage() {
     if (landing) scrollToSegment(landing.seg, 'center', undefined, landing.behavior);
   }, [landing, scrollToSegment]);
 
-  // Records the text on screen, after the effects above have compared it with the last commit's.
+  // Records the text on screen once it shows, after the effects above have compared it with the last
+  // commit's.
   useEffect(() => {
-    shownSegmentsRef.current = segments;
-  }, [segments]);
+    if (!holdingPlace) shownSegmentsRef.current = segments;
+  }, [segments, holdingPlace]);
 
   // The whole corpus in canonical browse order, which Prev/Next steps through across category
   // boundaries.
@@ -547,15 +560,20 @@ export function ReaderPage() {
     openFromReader(id, snippet);
   }
 
-  // Follows a link in a translator's note, a /read path the build wrote. Stable across renders.
+  // Follows a link in a translator's note. Stable across renders.
   const noteLinkRef = useLatest((href: string) => {
-    const url = new URL(href, window.location.origin);
-    const id = /^\/read\/([^/]+)$/.exec(url.pathname)?.[1];
-    if (!id) return;
-    const uid = normalizeRouteId(decodeURIComponent(id));
-    openFromReader(uid, passageFromSearch(url.search, uid));
+    const target = noteLinkTarget(href);
+    if (target) openFromReader(target.uid, target.passage);
   });
   const onNoteLink = useCallback((href: string) => noteLinkRef.current(href), [noteLinkRef]);
+  // Starts loading the text a note's link names as it is pressed, as a search result does.
+  const onNoteLinkPress = useCallback(
+    (href: string) => {
+      const target = noteLinkTarget(href);
+      if (target) prefetchSuttaText(corpus, target.uid);
+    },
+    [corpus]
+  );
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
   // is clipped. `scrollIntoView({ block: 'nearest' })` by hand, since that isn't aware of the CSS
@@ -960,6 +978,7 @@ export function ReaderPage() {
               openNotes={openNotes}
               onToggleNote={onToggleNote}
               onNoteLink={onNoteLink}
+              onNoteLinkPress={onNoteLinkPress}
               activeWord={activeWord}
               washRange={washRange}
               washId={arrivalId}

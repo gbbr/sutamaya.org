@@ -21,12 +21,13 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
 ) {
   const { highlights, ready: userDataReady, anchorHighlights } = useUserData();
   const { segments, error, retry } = useSuttaText(suttaId);
-  // Whether this opening returns to a remembered place, whose offset is right only on the text's
-  // final layout, so it also waits for the text's fonts.
-  const returning = restore === 'stored' && !skipRestore;
-  const fontsLoaded = useFontsLoaded(returning ? segments : null);
+  // Whether this opening is at a place rather than the top — one remembered on a return, or one the
+  // arrival names (`skipRestore`) — whose offset is right only on the text's final layout, so it
+  // also waits for the text's fonts.
+  const placing = restore === 'stored' || skipRestore;
+  const fontsLoaded = useFontsLoaded(placing ? segments : null);
   // Whether the page is held back until then, so the first thing seen is that place.
-  const holdingPlace = returning && !fontsLoaded;
+  const holdingPlace = placing && !fontsLoaded;
   // Re-anchors any highlight addressed by segment position, this being the moment the device holds
   // both those positions and the text they name. A no-op for a sutta whose highlights are keyed,
   // which is every sutta once read. Before paint rather than after, so a converted highlight is
