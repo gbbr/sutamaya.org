@@ -44,8 +44,8 @@ function persistReaderOrigin(
 // Tracks where the reader was opened from and navigates back there. `from` is the pane and node to
 // return to (LibraryPage's onOpen), `fromView` which pane to show on mobile, `searchIds` the hits a
 // library search opened this sutta from; all survive a Prev/Next run and a hard refresh. `backTo`
-// is the sutta the reader first jumped from with the reader's own search: the one way back, however
-// far they go from there (docs/web-app.md's "Routing"). It lasts as long as the history entry does.
+// is the sutta the last jump from within the reader left: the way back, one jump at a time
+// (docs/web-app.md's "Routing"). It lasts as long as the history entry does.
 export function useReaderOrigin(
   locationState: { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string } | undefined
 ) {
@@ -73,10 +73,9 @@ export function useReaderOrigin(
   // Opens a hit from the reader's own search, or a link in a translator's note, leaving the library
   // search's run behind. `passage` is where the reader opens: the segments a hit's snippet was drawn
   // from or a link names, those whose Pali shows open, and what its words were marked by. `leaving`
-  // is the sutta a jump to another one leaves, which becomes the way back unless there is one
-  // already: a single step, however far the reader goes from there. Landing back on that sutta ends
-  // the detour, returning to it where the reader left it — unless the jump names a passage there to
-  // open instead.
+  // is the sutta a jump to another one leaves, which becomes the way back: each such jump is a step
+  // in the history. A jump onto the sutta the way back leads to is that way back, returning to it
+  // where the reader left it — unless the jump names a passage there to open instead.
   function jumpTo(
     nextSuttaId: string,
     passage?: Passage,
@@ -87,7 +86,7 @@ export function useReaderOrigin(
       return;
     }
     persistReaderOrigin(nextSuttaId, from, fromView, undefined);
-    const state = { from, fromView, backTo: nextSuttaId === backTo ? undefined : backTo ?? leaving };
+    const state = { from, fromView, backTo: leaving ?? backTo };
     navigate(readLink(nextSuttaId, passage), {
       // A fresh arrival every time, so a jump to where the reader already is scrolls and washes again.
       state: tagIntent(
@@ -95,11 +94,11 @@ export function useReaderOrigin(
           ? { ...state, segments: passage.segments, paliSegments: passage.paliSegments, markedBy: passage.markedBy }
           : state
       ),
-      replace: backTo !== undefined || !leaving,
+      replace: !leaving,
     });
   }
 
-  // Returns to `backTo`, the history entry behind this one: only the first jump adds an entry.
+  // Returns to `backTo`, the history entry behind this one.
   function goBack() {
     navigate(-1);
   }

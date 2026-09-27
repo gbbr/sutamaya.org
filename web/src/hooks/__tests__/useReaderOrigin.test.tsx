@@ -52,7 +52,7 @@ describe('useReaderOrigin', () => {
     });
   });
 
-  it('the first jump adds the one step back, which later moves keep, or take when they land there', () => {
+  it('each jump adds a step back to the sutta it left, which turning keeps and landing there takes', () => {
     const initialProps: Parameters<typeof useReaderOrigin>[0] = { from: '/browse/sn1', searchIds: ['sn1.1', 'sn1.2'] };
     const { result, rerender } = renderHook((state) => useReaderOrigin(state), { initialProps });
     result.current.jumpTo('mn10', undefined, 'sn1.1');
@@ -68,27 +68,32 @@ describe('useReaderOrigin', () => {
       replace: true,
     });
 
-    // A later jump takes the current sutta's place too, still returning to the first.
+    // A later jump adds a step of its own, back to the sutta it left.
     result.current.jumpTo('an4.10', undefined, 'mn11');
     expect(navigate).toHaveBeenLastCalledWith('/read/an4.10', {
-      state: { from: '/browse/sn1', backTo: 'sn1.1', navId: expect.any(String) },
-      replace: true,
+      state: { from: '/browse/sn1', backTo: 'mn11', navId: expect.any(String) },
+      replace: false,
     });
 
-    // A hit naming a passage in the first sutta opens it there, leaving no way back.
+    // A hit naming a passage in the sutta the way back leads to opens it there, as a step of its own.
+    rerender({ from: '/browse/sn1', backTo: 'mn11' });
     const markedBy = { queries: ['sati'], anywhere: false };
-    result.current.jumpTo('sn1.1', { segments: ['sn1.1:3.1', 'sn1.1:3.2'], paliSegments: ['sn1.1:3.2'], markedBy }, 'an4.10');
-    expect(navigate).toHaveBeenLastCalledWith('/read/sn1.1?at=3.1-3.2&pali=3.2&q=sati', {
+    result.current.jumpTo('mn11', { segments: ['mn11:3.1', 'mn11:3.2'], paliSegments: ['mn11:3.2'], markedBy }, 'an4.10');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn11?at=3.1-3.2&pali=3.2&q=sati', {
       state: expect.objectContaining({
-        segments: ['sn1.1:3.1', 'sn1.1:3.2'],
-        paliSegments: ['sn1.1:3.2'],
+        segments: ['mn11:3.1', 'mn11:3.2'],
+        paliSegments: ['mn11:3.2'],
         markedBy,
-        backTo: undefined,
+        backTo: 'an4.10',
       }),
-      replace: true,
+      replace: false,
     });
 
-    result.current.turnTo('sn1.1');
+    // Without a passage, a jump or a turn onto it is the way back.
+    result.current.jumpTo('mn11', undefined, 'an4.10');
+    expect(navigate).toHaveBeenLastCalledWith(-1);
+    navigate.mockClear();
+    result.current.turnTo('mn11');
     expect(navigate).toHaveBeenLastCalledWith(-1);
   });
 
