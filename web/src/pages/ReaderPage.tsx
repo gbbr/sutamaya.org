@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { useLocation, useNavigate, useNavigationType, useParams, type Location } from 'react-router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Search, Share, Share2, Undo2 } from 'lucide-react';
+import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Loader2, Search, Share, Share2, Undo2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -672,6 +672,26 @@ export function ReaderPage() {
 
   const faceFamily = READER_FACES[face];
   const measureWidth = fs * 34;
+  // The note that the text is still loading.
+  const loadingNote = (
+    <div className="delayed-appear flex items-center gap-[9px] font-sans text-ui-base" style={{ color: theme.dim }}>
+      <Loader2 size={16} strokeWidth={2.25} className="flex-none animate-spin" aria-hidden />
+      Loading…
+    </div>
+  );
+  // The notice that the text failed to load, with its Retry.
+  const textErrorNotice = textError && (
+    <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0' }}>
+      <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
+      <button
+        className="text-ui-base px-3 py-1.5 rounded-md hover:opacity-70"
+        style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
+        onClick={retryText}
+      >
+        Retry
+      </button>
+    </div>
+  );
 
   return (
     <div
@@ -781,14 +801,14 @@ export function ReaderPage() {
         </div>
       </header>
 
-      {/* The scrolling pane, focusable so the keyboard scrolls it. `overflowX: hidden` keeps the
-          step animation's translateX from making it horizontally scrollable, which `.sc` alone
-          doesn't cover. */}
+      {/* The scrolling pane, focusable so the keyboard scrolls it, and still while the page is held
+          back. `overflowX: hidden` keeps the step animation's translateX from making it
+          horizontally scrollable, which `.sc` alone doesn't cover. */}
       <div
         ref={scrollRef}
         tabIndex={-1}
         className="sc under-nav-bar flex-1"
-        style={{ padding: '32px 22px 120px', overflowX: 'hidden', outline: 'none' }}
+        style={{ padding: '32px 22px 120px', overflowX: 'hidden', overflowY: holdingPlace ? 'hidden' : undefined, outline: 'none' }}
       >
         {/* The measure column. A Prev/Next step animates it out and the next sutta in, driven
             imperatively from `step` above, since this element never unmounts. */}
@@ -957,12 +977,7 @@ export function ReaderPage() {
             </div>
           )}
 
-          {/* Visible through a page held back for its place, as is the error below. */}
-          {(!segments || holdingPlace) && !textError && (
-            <div className="delayed-appear font-sans text-sm opacity-50" style={{ visibility: 'visible' }}>
-              Loading…
-            </div>
-          )}
+          {!segments && !holdingPlace && !textError && loadingNote}
           {segments ? (
             <SegmentedText
               segments={segments}
@@ -988,18 +1003,7 @@ export function ReaderPage() {
               marks={searchMarks}
             />
           ) : (
-            textError && (
-              <div className="flex flex-col items-center gap-3 font-sans text-sm text-center" style={{ padding: '24px 0', visibility: 'visible' }}>
-                <div style={{ color: theme.fg, opacity: 0.7 }}>Couldn't load this sutta. Check your connection and try again.</div>
-                <button
-                  className="text-ui-base px-3 py-1.5 rounded-md hover:opacity-70"
-                  style={{ border: `1px solid ${theme.rule}`, color: theme.fg }}
-                  onClick={retryText}
-                >
-                  Retry
-                </button>
-              </div>
-            )
+            !holdingPlace && textErrorNotice
           )}
 
           {/* Prev/Next at the foot of the text, shown once the text itself is on screen. */}
@@ -1080,6 +1084,14 @@ export function ReaderPage() {
           )}
         </div>
       </div>
+
+      {/* The loading note, or the load error, of a page held back for its place, centred on the
+          screen. */}
+      {holdingPlace && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ padding: '0 22px' }}>
+          {textError ? <div className="pointer-events-auto">{textErrorNotice}</div> : loadingNote}
+        </div>
+      )}
 
       {dict && (
         <DictionaryDock
