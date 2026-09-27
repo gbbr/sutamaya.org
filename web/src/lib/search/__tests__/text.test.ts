@@ -3,7 +3,7 @@
 // The golden query set (golden.test.ts) runs the same code against the real corpus and says
 // whether the results are good; these say which rule broke when they stop being good.
 import { describe, expect, it } from 'vitest';
-import { SEARCH_RESULTS_CAP } from '../metadata';
+import { RANK_NAMED, SEARCH_RESULTS_CAP } from '../metadata';
 import {
   buildTextIndex,
   mergeSearchHits,
@@ -30,8 +30,9 @@ const marked = (text: string, marks: Mark[] = []) => runsOf(text, marks).filter(
 
 // Builds the two blobs the way scripts/build-corpus.mjs does: a marker line opening each sutta and
 // each paragraph, one line per segment, the two languages line-aligned. The segments are keyed by
-// paragraph and place, from 1: "a:2.1" is the first of sutta a's second paragraph.
-function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>> }>) {
+// paragraph and place, from 1 — "a:2.1" is the first of sutta a's second paragraph — unless `keys`
+// gives them as the map carries them.
+function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>>; keys?: string }>) {
   const en: string[] = [];
   const pa: string[] = [];
   const map: SearchMap = [];
@@ -45,7 +46,7 @@ function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>> 
   };
   for (const doc of docs) {
     const lines = doc.paras.flatMap((para, i) => para.map((_, j) => `${i + 1}.${j + 1}`));
-    map.push([doc.uid, enChars, paChars, [`${doc.uid}:${lines[0]}`, ...lines.slice(1)].join(' ')]);
+    map.push([doc.uid, enChars, paChars, doc.keys ?? [`${doc.uid}:${lines[0]}`, ...lines.slice(1)].join(' ')]);
     push(MARK, MARK);
     doc.paras.forEach((para, i) => {
       if (i > 0) push(MARK, MARK);
@@ -349,6 +350,51 @@ describe('snippetOf', () => {
     // Both queries mark: the Pali line carries the one that found the row, the English the typed one.
     expect(marked(snippet.text, snippet.marks)).toEqual(['ariyasaccā']);
     expect(marked(snippet.under!, snippet.underMarks)).toEqual(['noble truths']);
+  });
+});
+
+describe('a query naming a line by its key', () => {
+  const X = index([
+    {
+      uid: 'mn10',
+      paras: [
+        [['So I have heard.', 'Evaṁ me sutaṁ.']],
+        [
+          ['This is the path to convergence.', 'Ekāyano ayaṁ maggo.'],
+          ['For the purification of beings.', 'Sattānaṁ visuddhiyā.'],
+        ],
+      ],
+    },
+  ]);
+
+  it('quotes that line, ranked with the sutta the reference names', () => {
+    const score = searchTextVariants(X, 'MN 10:2.2').get('mn10')!;
+    expect(score.bucket).toBe(RANK_NAMED);
+    expect(snippetOf(X, score, 'mn 10:2.2')).toEqual({
+      text: 'For the purification of beings.',
+      marks: [],
+      segments: ['mn10:2.2', 'mn10:2.2'],
+      markedBy: { queries: [], anywhere: false },
+    });
+  });
+
+  it('finds a line of a sutta inside a batch, by that sutta’s own key', () => {
+    const Y = index([
+      {
+        uid: 'dhp21-32',
+        paras: [
+          [['Heedfulness is the state free of death.', 'Appamādo amatapadaṁ.']],
+          [['Knowing this distinction.', 'Evaṁ visesato ñatvā.']],
+        ],
+        keys: 'dhp21:1 dhp22:1',
+      },
+    ]);
+    const score = searchTextVariants(Y, 'dhp 22:1').get('dhp21-32')!;
+    expect(snippetOf(Y, score, 'dhp 22:1')?.segments).toEqual(['dhp22:1', 'dhp22:1']);
+  });
+
+  it('finds nothing for a line the sutta doesn’t have', () => {
+    expect(searchTextVariants(X, 'mn10:9.9').has('mn10')).toBe(false);
   });
 });
 

@@ -20,12 +20,15 @@
 // state and never learns which side of the message boundary it is running on.
 import {
   contentWords,
+  referenceOf,
   searchCorpus,
   searchKey,
+  RANK_NAMED,
   SEARCH_RESULTS_CAP,
   SEARCH_SCOPE_NOTE,
   type SearchHit,
 } from './metadata';
+import { uidHolds } from '../corpus/corpus';
 import { expandQuery } from './expansion';
 import { matchRuns, type Mark } from './match';
 import { boldRuns } from '../noteFormat';
@@ -412,6 +415,9 @@ export interface TextScore {
   lang: 'en' | 'pa';
   // The query that found it, which may be one the expansion table added rather than what was typed.
   query: string;
+  // The line a query naming one by its key found, which the snippet quotes (namedLine): its key,
+  // and where its English starts in the blob. Unset where words found the sutta.
+  line?: { key: string; at: number };
 }
 
 // Every sutta whose text answers `query`, keyed by uid. English and Pali are scanned and scored
@@ -622,6 +628,7 @@ function noteStart(text: string, at: number): number {
 // the row: the Pali line is windowed on the query that found it, the English line on what was
 // typed, and both are marked with the two.
 export function snippetOf(index: TextIndex, score: TextScore, typed: string): Snippet | null {
+  if (score.line) return lineSnippet(index, score.line);
   const keys = segmentKeys(index, score.doc);
   // A map without keys names no segment to open at.
   if (!keys.length) return null;
@@ -657,6 +664,15 @@ export function snippetOf(index: TextIndex, score: TextScore, typed: string): Sn
   const enAt = firstMatch(english.text, typed, 'en');
   const under = windowAround(english.text, Math.max(0, enAt >= 0 ? enAt : firstMatch(english.text, score.query, 'en'))).text;
   return { text, marks, under, underMarks: marksOf(under, queries, 'en', false), segments, paliSegments, markedBy };
+}
+
+// lineSnippet returns the snippet for a query naming a line, the one keyed `key` whose English
+// starts at `at`: that English, cut as a paragraph is, with nothing marked.
+function lineSnippet(index: TextIndex, { key, at }: { key: string; at: number }): Snippet | null {
+  const end = index.en.indexOf('\n', at);
+  const text = index.en.slice(at, end === -1 ? undefined : end);
+  if (!text.trim()) return null;
+  return { text: windowAround(text, 0).text, marks: [], segments: [key, key], markedBy: { queries: [], anywhere: false } };
 }
 
 // suttaLines returns the lines of sutta `doc` in one blob, each with its offset there, the paragraph
@@ -789,7 +805,24 @@ export function searchTextVariants(index: TextIndex, query: string): Map<string,
   // One cache for the query and its expansions, which repeat each other's words.
   const cache: ScanCache = new Map();
   for (const variant of variantsOf(query, q)) keepBest(text, searchSuttaText(index, variant, cache));
+  const named = namedLine(index, q);
+  if (named) text.set(index.uids[named.doc], named);
   return text;
+}
+
+// namedLine returns the result for a query naming one line by its segment key — "sn 46.53:15.4",
+// "dhp5:2" — which ranks with the sutta searchCorpus names and quotes the line; null for any other
+// query, or a line the sutta doesn't have.
+function namedLine(index: TextIndex, q: string): TextScore | null {
+  const { id, line } = referenceOf(q);
+  if (!line) return null;
+  const doc = index.uids.findIndex((uid) => uidHolds(uid, id));
+  if (doc < 0) return null;
+  const key = `${id}:${line}`;
+  const seg = segmentKeys(index, doc).indexOf(key);
+  if (seg < 0) return null;
+  const at = suttaLines(index.en, index.enStarts, doc).filter((l) => l.text !== PARA_MARK)[seg].at;
+  return { bucket: RANK_NAMED, count: 0, para: slotOf(index.enParas, at), doc, lang: 'en', query: q, line: { key, at } };
 }
 
 // A hit as the merge orders it, with no corpus behind it — everything ranking and rendering need,

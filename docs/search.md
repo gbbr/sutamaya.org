@@ -45,6 +45,9 @@ their contents, so a cached copy is never stale.
   English shows.
 - **The sutta being read** matches a word anywhere, inside a longer one too — see
   [The sutta being read](#the-sutta-being-read).
+- **References.** A query that is a sutta's reference, spaces aside — `an 4.10`, `dhp 274` — names
+  that sutta, which comes before every other hit. Given a line as the notes write one,
+  `sn 46.53:15.4`, the row shows that line and opens the Reader at it.
 
 Searching the Pali matters because the editorial layer moved the English away from words readers
 type: the text says "extinguishment" and "deeds", never "nibbana" or "karma".
@@ -55,6 +58,7 @@ Every hit lands in one bucket, best first:
 
 | | Bucket |
 |---|---|
+| −1 | the sutta the query is the reference of |
 | 0 | the query as typed, in the reference, title or Pali title |
 | 1 | every word, in the title |
 | 2 | the query as typed, in a description, note or list name |
