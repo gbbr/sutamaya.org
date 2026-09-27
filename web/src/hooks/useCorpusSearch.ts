@@ -85,6 +85,8 @@ export function useCorpusSearch(
       ? { meta, hits: lastCompleted.hits }
       : null
   );
+  // An emptied box ends the search, so the next one waits for its own answer rather than this one's.
+  if (!searching && merged) setMerged(null);
   useEffect(() => {
     if (!corpus || !searching || status !== 'ready') return;
     let live = true;
