@@ -148,6 +148,22 @@ describe('a search that has already been answered', () => {
     }
   });
 
+  it('is not held over the next search once the box is emptied', async () => {
+    const seen: Result[] = [];
+    const view = render(<Probe query="prime" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    expect(seen.at(-1)!.hits.map((hit) => hit.id)).toContain('dn1');
+
+    // The search closed, then another run from the recent searches.
+    view.rerender(<Probe query="" onRender={(r) => seen.push(r)} />);
+    const next = seen.length;
+    view.rerender(<Probe query="fruits" onRender={(r) => seen.push(r)} />);
+    await waitFor(() => expect(seen.at(-1)!.hitsSettled).toBe(true));
+    for (const render of seen.slice(next)) {
+      expect(render.hits.map((hit) => hit.id)).not.toContain('dn1');
+    }
+  });
+
   it('leaves a mount on a different query to wait for its own answer', async () => {
     const first: Result[] = [];
     const one = render(<Probe query="long" onRender={(r) => first.push(r)} />);
