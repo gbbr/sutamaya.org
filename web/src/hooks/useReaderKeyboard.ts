@@ -43,17 +43,17 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     closeDict,
     panel,
     setPanel,
-    backOrClose,
     setTab,
     setNoteFocusSignal,
     toggleShowNotes,
     toggleShowHighlights,
     cycleTheme,
   } = opts;
-  // Read through latest refs, since both are rebuilt on every ReaderPage render while this
-  // listener subscribes once.
+  // Read through latest refs, since each is rebuilt on every ReaderPage render while this listener
+  // subscribes once.
   const step = useLatest(opts.step);
   const goToAdjacentWord = useLatest(opts.goToAdjacentWord);
+  const backOrClose = useLatest(opts.backOrClose);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -73,7 +73,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
         if (pop) closePop();
         else if (dict) closeDict();
         else if (panel) setPanel(false);
-        else backOrClose();
+        else backOrClose.current();
         return;
       }
       if (isTypingTarget(e)) return;

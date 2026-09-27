@@ -61,7 +61,7 @@ const corpus: Corpus = {
 };
 
 const segments = [
-  { key: 'dn1:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard' },
+  { key: 'dn1:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard', note: 'The king appears at <a href="/read/dn2?at=1.3">DN 2:1.3</a>.' },
   { key: 'dn1:1.2', pali: 'Atha kho', en: 'A wanderer was walking' },
   { key: 'dn1:1.3', pali: 'Tena kho pana', en: 'They spoke in dispraise of the Buddha' },
 ];
@@ -314,6 +314,21 @@ describe('the passage a search hit was drawn from', () => {
     expect(measured.every(Boolean)).toBe(true);
   });
 
+  // A frame's wait would paint the text at the top first, and then jump.
+  it('is scrolled to before the text first paints', async () => {
+    vi.stubGlobal('requestAnimationFrame', () => 0);
+    let measured = false;
+    const measure = Element.prototype.getBoundingClientRect;
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      if (this === document.querySelector('[data-seg="2"]')?.parentElement) measured = true;
+      return measure.call(this);
+    });
+
+    renderRoutes(routes, '/read/dn2?at=1.3');
+    await screen.findByText('Then the king spoke');
+    expect(measured).toBe(true);
+  });
+
   // A return restores the scroll offset the reader left, which was measured with these lines open.
   it('has its Pali open again when the reader comes back, before the reading returns to its place', async () => {
     const { container, router } = renderRoutes(routes, {
@@ -448,6 +463,26 @@ describe('the passage a search hit was drawn from', () => {
     const { container } = renderRoutes(routes, '/read/dn1?at=1.25');
     await screen.findByText('They spoke in dispraise of the Buddha');
     expect(washed(container)).toEqual([]);
+  });
+
+  it('follows a link in a translator’s note to the line it names, with the way back', async () => {
+    const { container, router } = renderRoutes(routes, '/read/dn1');
+    fireEvent.click(await screen.findByTitle('The king appears at DN 2:1.3.'));
+    fireEvent.click(within(container.querySelector('[data-reveal="note"]') as HTMLElement).getByText('DN 2:1.3'));
+
+    await waitFor(() => expect(router.state.location.pathname).toBe('/read/dn2'));
+    await waitFor(() => expect(washed(container)).toEqual([2]));
+    expect(screen.getByTitle('Back to DN 1')).toBeTruthy();
+  });
+
+  it('takes Escape back to the sutta a note’s link was followed from, as the back arrow does', async () => {
+    const { container, router } = renderRoutes(routes, '/read/dn1');
+    fireEvent.click(await screen.findByTitle('The king appears at DN 2:1.3.'));
+    fireEvent.click(within(container.querySelector('[data-reveal="note"]') as HTMLElement).getByText('DN 2:1.3'));
+    await waitFor(() => expect(router.state.location.pathname).toBe('/read/dn2'));
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    await waitFor(() => expect(router.state.location.pathname).toBe('/read/dn1'));
   });
 
   it('lands on a link’s passage once, not again on a reload', async () => {

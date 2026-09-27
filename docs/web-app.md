@@ -55,11 +55,11 @@ behaviour components share, and `components/` the pieces the pages are built fro
   inner sutta they belong to: `/read/dhp274?at=4`, not `/read/dhp273-289`.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
-- **A sutta opened from the Reader's own search is a detour.** The Reader's close becomes a return
-  arrow, back to the sutta the reader first searched from, however many suttas they open or turn to
-  after it; Escape and Back in the native apps do the same. The jump slides the text in from the right and
-  the return from the left, as Next and Prev do. Only the first jump adds a step to the history, so
-  the browser's Back returns there too.
+- **A sutta opened from the Reader's own search, or from a link in a translator's note, is a
+  detour.** The Reader's close becomes a return arrow, back to the sutta the reader first left,
+  however many suttas they open or turn to after it; Escape and Back in the native apps do the same.
+  The jump slides the text in from the right and the return from the left, as Next and Prev do. Only
+  the first jump adds a step to the history, so the browser's Back returns there too.
 - Only a bottom-level group opens a list of suttas. A row with children expands in place, so an id
   like `dn` or `sn12` is never a destination ([corpus.md](corpus.md)).
 - Static segments match exactly, which is what lets `/<sutta>` sit last without catching

@@ -41,6 +41,19 @@ attach to their lines.
 The build refuses a document whose segment keys are out of order, because highlights compare keys
 to work out what overlaps ([offline-sync.md](offline-sync.md#anchored-on-segment-keys)).
 
+## Links in the notes
+
+A translator's note cites other suttas as links to SuttaCentral's reader. The build points each one
+at a text the app holds at its own Reader, at the line it names — `/read/sn46.53?at=15.4` — and
+reduces the rest, the Vinaya, the Jātakas and other texts outside the corpus, to their words. A
+batch's inner sutta keeps its own uid, `/read/dhp274`, which the Reader resolves.
+
+A line the text doesn't show — a title, a line whose English elides a repetition, a line a refresh
+renumbered — lands on the next line of that sutta. Where there is none, the build leaves the line
+out and the link opens the sutta at the top. A test over the real data checks every link opens a
+sutta the app holds at a line it can land on, and that no link to one was lost to a change in how
+the source writes them.
+
 ## How the library is arranged
 
 How the canon is grouped is a product decision, made in the build (`scripts/lib/collections.js`)
@@ -99,7 +112,8 @@ anywhere and show as a bare headword.
 | Where | What |
 |---|---|
 | `scripts/build-corpus.mjs` | the build |
-| `scripts/lib/collections.js` | how the library is grouped, and how a segment is assembled |
+| `scripts/lib/collections.js` | how the library is grouped, how a segment is assembled, and a note's links |
+| `scripts/__tests__/build-corpus.counts.test.js` | the checks over the real data, the note links among them |
 | `scripts/lib/paliWords.js` | the build's copy of the app's word splitting and shard lookup |
 | `scripts/update-data-dictionary.mjs` | the DPD import |
 | `web/src/lib/corpus/corpus.ts`, `dictionaryShards.ts` | the app's side: loading text, finding groups, looking words up |

@@ -70,12 +70,13 @@ export function useReaderOrigin(
     });
   }
 
-  // Opens a hit from the reader's own search, leaving the library search's run behind. `passage`
-  // is where its snippet was drawn from, where the reader opens: its segments, those whose Pali
-  // shows open, and what its words were marked by. `leaving` is the sutta a jump to another one
-  // leaves, which becomes the way back unless there is one already: a single step, however far the
-  // reader goes from there. Landing back on that sutta ends the detour, returning to it where the
-  // reader left it — unless the hit names a passage there to open instead.
+  // Opens a hit from the reader's own search, or a link in a translator's note, leaving the library
+  // search's run behind. `passage` is where the reader opens: the segments a hit's snippet was drawn
+  // from or a link names, those whose Pali shows open, and what its words were marked by. `leaving`
+  // is the sutta a jump to another one leaves, which becomes the way back unless there is one
+  // already: a single step, however far the reader goes from there. Landing back on that sutta ends
+  // the detour, returning to it where the reader left it — unless the jump names a passage there to
+  // open instead.
   function jumpTo(
     nextSuttaId: string,
     passage?: Passage,

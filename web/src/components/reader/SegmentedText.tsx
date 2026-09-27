@@ -5,6 +5,7 @@ import { highlightPaint } from '../../lib/ui/theme';
 import { expandHighlights, paintSegmentRanges, type SegmentRange } from '../../lib/highlights';
 import { WORD_BOUNDARY, isWordBoundary } from '../../lib/corpus/dictionary';
 import { runsOf, type Mark } from '../../lib/search/match';
+import { opensHere } from '../../lib/navigation/linkClick';
 
 interface Part {
   text: string;
@@ -199,6 +200,7 @@ interface SegmentRowProps {
   showNotes: boolean;
   noteOpen: boolean;
   onToggleNote: (i: number) => void;
+  onNoteLink: (href: string) => void;
   // The word the DictionaryDock is showing, when it is in this segment.
   activeWordIndex: number | null;
 }
@@ -229,6 +231,7 @@ const SegmentRow = memo(function SegmentRow({
   showNotes,
   noteOpen,
   onToggleNote,
+  onNoteLink,
   activeWordIndex,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
@@ -385,6 +388,14 @@ const SegmentRow = memo(function SegmentRow({
           data-reveal="note"
           data-reveal-seg={i}
           style={{ margin: '0 0 6px', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
+          // A link to another sutta opens it in the reader, unless a modifier asks the browser for
+          // a new tab.
+          onClick={(e) => {
+            const link = (e.target as Element).closest('a');
+            if (!link || !opensHere(e)) return;
+            e.preventDefault();
+            onNoteLink(link.getAttribute('href') ?? '');
+          }}
           // A note's inline formatting is static build-time data (build-corpus.mjs's cleanNote()),
           // never user or runtime content.
           dangerouslySetInnerHTML={{ __html: seg.note }}
@@ -415,6 +426,8 @@ interface SegmentedTextProps {
   // Which notes are expanded inline, by segment index.
   openNotes: Record<number, boolean>;
   onToggleNote: (i: number) => void;
+  // Called with the href of a link tapped in a note.
+  onNoteLink: (href: string) => void;
   // The word currently shown in the DictionaryDock, or null.
   activeWord: { segIndex: number; wordIndex: number } | null;
   // The first and last segment of the passage the reader arrived at, washed and then faded out.
@@ -445,6 +458,7 @@ function SegmentedTextInner({
   showNotes,
   openNotes,
   onToggleNote,
+  onNoteLink,
   activeWord,
   washRange,
   washId,
@@ -498,6 +512,7 @@ function SegmentedTextInner({
         showNotes={showNotes}
         noteOpen={!!openNotes[i]}
         onToggleNote={onToggleNote}
+        onNoteLink={onNoteLink}
         activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
       />
     );

@@ -239,11 +239,48 @@ export function roleFor(template) {
   return undefined;
 }
 
-const NOTE_LINK_RE = /<a\b[^>]*>(.*?)<\/a>/gis;
-// Returns a translator note with its suttacentral.net links reduced to their text. The rest of its
-// inline HTML stays: a note is rendered as markup, with no character offsets to desync.
-export function cleanNote(text) {
-  return text.replace(NOTE_LINK_RE, '$1').trim();
+const NOTE_LINK_RE = /<a\b([^>]*)>(.*?)<\/a>/gis;
+const HREF_RE = /\bhref=(['"])(.*?)\1/i;
+// A link into SuttaCentral's reader, in the English or the Pali edition, with the line in its hash.
+const SUTTACENTRAL_LINK_RE = /^https:\/\/suttacentral\.net\/([a-z][a-z0-9.-]*)(?:\/en\/sujato|\/pli\/ms)?\/?(?:#(.*))?$/;
+// What follows the colon of a segment key: digits and dots.
+const LINE_RE = /^\d+(?:\.\d+)*$/;
+
+// Returns every uid the reader opens among the documents `docs`, each with the document holding it:
+// a document under its own uid, and each sutta of a batched one ("an1.5" in "an1.1-10") under its.
+export function uidDocuments(docs) {
+  const documents = new Map();
+  for (const doc of docs) {
+    documents.set(doc, doc);
+    const batch = /^(.*?)(\d+)-(\d+)$/.exec(doc);
+    if (batch) for (let n = Number(batch[2]); n <= Number(batch[3]); n++) documents.set(`${batch[1]}${n}`, doc);
+  }
+  return documents;
+}
+
+// Returns the text a suttacentral.net reader link opens — its uid, and the line its hash names
+// where that is one ("sn46.53/en/sujato#15.4" is sn46.53 at 15.4) — or null for any other link.
+export function suttaCentralTarget(href) {
+  const m = SUTTACENTRAL_LINK_RE.exec(href);
+  if (!m) return null;
+  return m[2] && LINE_RE.test(m[2]) ? { uid: m[1], line: m[2] } : { uid: m[1] };
+}
+
+// Returns a translator note with each link the app can follow pointed at its own reader, and every
+// other link reduced to its text. The rest of its inline HTML stays: a note is rendered as markup,
+// with no character offsets to desync.
+export function cleanNote(
+  text,
+  // The reader path a link opens, or null where the app doesn't hold what it links to.
+  readPath = () => null
+) {
+  return text
+    .replace(NOTE_LINK_RE, (_, attrs, label) => {
+      const href = HREF_RE.exec(attrs)?.[2];
+      const path = href && readPath(href);
+      return path ? `<a href="${path}">${label}</a>` : label;
+    })
+    .trim();
 }
 
 const HTML_TAG_RE = /<[^>]+>/g;
@@ -256,7 +293,14 @@ export function stripHtmlTags(text) {
 // One document's body segments, in Pali key order, each with its English, role and note. Title
 // lines, uddāna verses and anything with no English are left out — a colophon counts as translated,
 // standing in the English column as its own Pali.
-export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
+export function buildBodySegments(
+  paliMap,
+  sujatoMap,
+  htmlMap,
+  notesMap,
+  // The reader path a note's link opens (cleanNote).
+  readPath
+) {
   const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
   const segs = [];
   // Whether this segment falls inside an unclosed gatha blockquote, for the stanzas whose
@@ -302,7 +346,7 @@ export function buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap) {
       if (roleInfo.headingLevel) seg.headingLevel = roleInfo.headingLevel;
     }
     const rawNote = notesMap.get(key);
-    if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote);
+    if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote, readPath);
     segs.push(seg);
   }
   return segs;
