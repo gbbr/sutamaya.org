@@ -57,10 +57,12 @@ and `worker/src/lib/{writes,listTree,userData}.js`.
   - the automatic lists' ids and caps — `web/src/lib/lists/autoLists.ts`;
   - the segment-key comparator and the Pali word splitter — `scripts/lib/` and
     `web/src/lib/corpus/`;
+  - the segment keys in the search map, written by `scripts/build-corpus.mjs` and read by
+    `web/src/lib/search/text.ts`;
   - the corpus lookups behind link previews — `worker/src/shareMeta.js` and
     `web/src/lib/corpus/corpus.ts`.
 
-  Parity tests catch drift in the first three.
+  Parity tests catch drift in all but the last.
 - **`APP_PATHS` (`worker/src/index.js`) and `assets.run_worker_first` (`wrangler.jsonc`) change
   together**, or an app path skips the Worker ([docs/backend.md](docs/backend.md)).
 - **`WEB_ORIGIN` is always the app's origin**, never the landing page's: sign-in builds its redirects

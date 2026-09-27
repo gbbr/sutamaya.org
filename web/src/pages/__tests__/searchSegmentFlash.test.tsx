@@ -14,7 +14,7 @@ vi.mock('../../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
 // LibraryPage reads it only for the Shift+D theme toggle; the real provider isn't mounted here.
 vi.mock('../../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
-// The text search's answer to any query: dn1's second paragraph, found in its third line's Pali.
+// The text search's answer to any query: dn1's second and third lines, found in the third's Pali.
 vi.mock('../../lib/search/textClient', () => ({
   subscribeTextSearch: () => () => {},
   textSearchStatus: () => 'ready',
@@ -28,8 +28,8 @@ vi.mock('../../lib/search/textClient', () => ({
         text: 'Atha kho Tena kho pana',
         marks: [[18, 22]],
         under: 'A wanderer, in dispraise',
-        segments: [1, 2],
-        paliSegments: [2],
+        segments: ['dn1:1.2', 'dn1:1.3'],
+        paliSegments: ['dn1:1.3'],
         markedBy: { queries: ['pana'], anywhere: false },
       },
     },
@@ -200,7 +200,7 @@ describe('the passage a search hit was drawn from', () => {
   it('is washed on arrival', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: ['dn1:1.2', 'dn1:1.3'] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
@@ -218,7 +218,7 @@ describe('the passage a search hit was drawn from', () => {
   it('does not follow a Prev/Next step into the next sutta', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: ['dn1:1.2', 'dn1:1.3'] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
@@ -234,11 +234,11 @@ describe('the passage a search hit was drawn from', () => {
   it('is replaced by a later jump rather than held behind it', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: ['dn1:1.2', 'dn1:1.3'] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
-    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: [0, 0] }) }));
+    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: ['dn2:1.1', 'dn2:1.1'] }) }));
     await screen.findByText('Then the king spoke');
 
     // Not the passage the reader arrived on, which names nothing in this sutta.
@@ -249,13 +249,13 @@ describe('the passage a search hit was drawn from', () => {
   it('is washed again when the reader jumps to the same passage again', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: [1, 2] }),
+      state: tagIntent({ from: '/browse/dn/dn1?q=dispraise', fromView: 'list', segments: ['dn1:1.2', 'dn1:1.3'] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
     await waitFor(() => expect(washed(container)).toEqual([1, 2]));
     const first = container.querySelector('[data-wash-block]');
 
-    await act(() => router.navigate('/read/dn1', { state: tagIntent({ segments: [1, 2] }) }));
+    await act(() => router.navigate('/read/dn1', { state: tagIntent({ segments: ['dn1:1.2', 'dn1:1.3'] }) }));
 
     await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBe(first));
     expect(washed(container)).toEqual([1, 2]);
@@ -264,7 +264,7 @@ describe('the passage a search hit was drawn from', () => {
   it('opens the Pali of the lines a hit in the Pali matched, and keeps it open past the wash', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ from: '/browse/dn/dn1?q=pana', fromView: 'list', segments: [1, 2], paliSegments: [2] }),
+      state: tagIntent({ from: '/browse/dn/dn1?q=pana', fromView: 'list', segments: ['dn1:1.2', 'dn1:1.3'], paliSegments: ['dn1:1.3'] }),
     });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
@@ -307,7 +307,7 @@ describe('the passage a search hit was drawn from', () => {
       return measure.call(this);
     });
 
-    renderRoutes(routes, { pathname: '/read/dn1', state: tagIntent({ segments: [2, 2], paliSegments: [2] }) });
+    renderRoutes(routes, { pathname: '/read/dn1', state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], paliSegments: ['dn1:1.3'] }) });
     await screen.findByText('They spoke in dispraise of the Buddha');
 
     await waitFor(() => expect(measured).not.toHaveLength(0));
@@ -318,7 +318,7 @@ describe('the passage a search hit was drawn from', () => {
   it('has its Pali open again when the reader comes back, before the reading returns to its place', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [2, 2], paliSegments: [2] }),
+      state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], paliSegments: ['dn1:1.3'] }),
     });
     await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
     // And a line whose Pali the reader opened with a tap.
@@ -343,7 +343,7 @@ describe('the passage a search hit was drawn from', () => {
   it('has its Pali closed when the reader chooses the sutta anew', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [2, 2], paliSegments: [2] }),
+      state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], paliSegments: ['dn1:1.3'] }),
     });
     await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
     await act(() => router.navigate('/read/dn2'));
@@ -384,7 +384,7 @@ describe('the passage a search hit was drawn from', () => {
   it('marks the words it was found by, in the passage it lands on, until the next tap', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [1, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+      state: tagIntent({ segments: ['dn1:1.2', 'dn1:1.3'], markedBy: { queries: ['dispraise'], anywhere: false } }),
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
 
@@ -398,7 +398,7 @@ describe('the passage a search hit was drawn from', () => {
   it('marks the Pali words of the lines it opened', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [1, 2], paliSegments: [2], markedBy: { queries: ['pana'], anywhere: false } }),
+      state: tagIntent({ segments: ['dn1:1.2', 'dn1:1.3'], paliSegments: ['dn1:1.3'], markedBy: { queries: ['pana'], anywhere: false } }),
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['pana']));
     expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
@@ -407,24 +407,55 @@ describe('the passage a search hit was drawn from', () => {
   // A link opened in a new tab carries the passage in its address (lib/navigation/passageLink.ts)
   // rather than in the app's own navigation.
   it('lands the same way from a link carrying the passage', async () => {
-    const { container } = renderRoutes(routes, '/read/dn1?at=1-2&pali=2&q=pana');
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.2-1.3&pali=1.3&q=pana');
     await waitFor(() => expect(washed(container)).toEqual([1, 2]));
     expect(markTexts(container)).toEqual(['pana']);
     expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
   });
 
   it('washes the lines a link names, with no words to mark', async () => {
-    const { container } = renderRoutes(routes, '/read/dn1?at=2');
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.3');
     await waitFor(() => expect(washed(container)).toEqual([2]));
     expect(markTexts(container)).toEqual([]);
   });
 
+  // A title, a line with no English, a line a text refresh renumbered.
+  it('lands on the next line of the sutta where the text doesn’t show the one named', async () => {
+    const title = renderRoutes(routes, '/read/dn1?at=0.3');
+    await waitFor(() => expect(washed(title.container)).toEqual([0]));
+    title.unmount();
+
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.2.5');
+    await waitFor(() => expect(washed(container)).toEqual([2]));
+  });
+
+  it('opens the Pali of the next line where the one named is gone', async () => {
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.3&pali=1.2.5');
+    await waitFor(() => expect(paliLine(container, 2)).not.toBeNull());
+  });
+
+  it('opens at the top when arriving from another sutta at a line it can’t land on', async () => {
+    const { container, router } = renderRoutes(routes, '/read/dn1');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    const pane = container.querySelector('.sc.under-nav-bar') as HTMLElement;
+    pane.scrollTop = 300;
+    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: ['dn2:9.9', 'dn2:9.9'] }) }));
+    await screen.findByText('Then the king spoke');
+    expect(pane.scrollTop).toBe(0);
+  });
+
+  it('opens at the top for a line past the sutta’s last', async () => {
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.25');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    expect(washed(container)).toEqual([]);
+  });
+
   it('lands on a link’s passage once, not again on a reload', async () => {
-    const first = renderRoutes(routes, '/read/dn1?at=1-2');
+    const first = renderRoutes(routes, '/read/dn1?at=1.2-1.3');
     await waitFor(() => expect(washed(first.container)).toEqual([1, 2]));
     first.unmount();
 
-    const { container } = renderRoutes(routes, '/read/dn1?at=1-2');
+    const { container } = renderRoutes(routes, '/read/dn1?at=1.2-1.3');
     await screen.findByText('They spoke in dispraise of the Buddha');
     expect(washed(container)).toEqual([]);
   });
@@ -434,7 +465,7 @@ describe('the passage a search hit was drawn from', () => {
   it('does what a tap on a marked word always does, as it ends the marks', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+      state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], markedBy: { queries: ['dispraise'], anywhere: false } }),
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
 
@@ -449,7 +480,7 @@ describe('the passage a search hit was drawn from', () => {
   it('keeps the marks through a click that finishes selecting text', async () => {
     const { container } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+      state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], markedBy: { queries: ['dispraise'], anywhere: false } }),
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
 
@@ -465,12 +496,16 @@ describe('the passage a search hit was drawn from', () => {
   it('keeps the marks of the jump a tap makes', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
-      state: tagIntent({ segments: [2, 2], markedBy: { queries: ['dispraise'], anywhere: false } }),
+      state: tagIntent({ segments: ['dn1:1.3', 'dn1:1.3'], markedBy: { queries: ['dispraise'], anywhere: false } }),
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['dispraise']));
 
     fireEvent.click(document.body);
-    await act(() => router.navigate('/read/dn2', { state: tagIntent({ segments: [2, 2], markedBy: { queries: ['king'], anywhere: false } }) }));
+    await act(() =>
+      router.navigate('/read/dn2', {
+        state: tagIntent({ segments: ['dn2:1.3', 'dn2:1.3'], markedBy: { queries: ['king'], anywhere: false } }),
+      })
+    );
     await act(async () => {
       vi.advanceTimersByTime(10);
     });

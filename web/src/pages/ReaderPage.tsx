@@ -14,12 +14,13 @@ import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { animateScrollBy, animateScrollTop } from '../lib/reader/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus/corpus';
+import { segmentAt } from '../lib/corpus/segmentKeys';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists/lists';
 import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
 import { setReaderThemeColor } from '../lib/ui/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
-import { passageFromSearch } from '../lib/navigation/passageLink';
+import { passageFromSearch, type Passage } from '../lib/navigation/passageLink';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn } from '../lib/navigation/entryKind';
 import { getUiScale } from '../lib/ui/uiPrefs';
@@ -31,7 +32,7 @@ import { keepOpenLines, keptOpenLines } from '../lib/reader/openLines';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
 import type { SearchHit } from '../lib/search/metadata';
-import { marksOf, type MarkedBy } from '../lib/search/text';
+import { marksOf } from '../lib/search/text';
 import { SegmentedText, type SegmentMarks } from '../components/reader/SegmentedText';
 import { HighlightPopup } from '../components/reader/HighlightPopup';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
@@ -65,17 +66,18 @@ const searchRunLabel = (query: string) => `Results for: “${query}”`;
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
-// Where a search hit lands the reader: the segments its snippet was drawn from, those whose Pali it
-// matched, and what its words were marked by.
-type SearchArrival = { segments?: [number, number]; paliSegments?: number[]; markedBy?: MarkedBy };
+// Where a search hit or a link lands the reader: the keys of the segments it opens at, and of those
+// whose Pali it opens, and what its words were marked by.
+type SearchArrival = Partial<Passage>;
 
 // arrivalOf returns the arrival a navigation carries: in router state, from a click within the app,
 // else in the address, from a link opened in a new tab or anywhere else (lib/navigation/passageLink.ts)
-// — keyed then by its history entry, so a reload doesn't land on it again.
-function arrivalOf(location: Location | undefined): (SearchArrival & RouteIntent) | null | undefined {
+// — keyed then by its history entry, so a reload doesn't land on it again. `uid` is the sutta the
+// address names.
+function arrivalOf(location: Location | undefined, uid: string | undefined): (SearchArrival & RouteIntent) | null | undefined {
   const state = location?.state as (SearchArrival & RouteIntent) | null | undefined;
-  if (state?.navId || !location) return state;
-  const passage = passageFromSearch(location.search);
+  if (state?.navId || !location || !uid) return state;
+  const passage = passageFromSearch(location.search, uid);
   return passage ? { ...passage, navId: `${location.key}${location.search}` } : state;
 }
 
@@ -122,13 +124,13 @@ export function ReaderPage() {
   const readerLocationState = location?.state as
     | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string }
     | undefined;
-  // The segments a search hit's snippet was drawn from, those whose Pali it matched and what its
-  // words were marked by, sampled once per navigation rather than once per mount: this page never
-  // unmounts between suttas, so a value held for its lifetime would fire again on every later one
-  // and leave a new jump no way in. consumeIntent hands a navId back a single time, which is what
-  // keeps a same-tab refresh from jumping twice; a Prev/Next step carries no intent at all and so
-  // clears this.
-  const arrivalState = arrivalOf(location);
+  // The segments a search hit's snippet was drawn from or a link names, those whose Pali it opens
+  // and what its words were marked by, sampled once per navigation rather than once per mount: this
+  // page never unmounts between suttas, so a value held for its lifetime would fire again on every
+  // later one and leave a new jump no way in. consumeIntent hands a navId back a single time, which
+  // is what keeps a same-tab refresh from jumping twice; a Prev/Next step carries no intent at all
+  // and so clears this.
+  const arrivalState = arrivalOf(location, requestedId);
   const arrivalRef = useRef<SearchArrival & { navId?: string }>({});
   if (arrivalRef.current.navId !== arrivalState?.navId) {
     const intent = consumeIntent(arrivalState, READER_INTENT_KEY);
@@ -141,8 +143,8 @@ export function ReaderPage() {
   }
   // This navigation's arrival id, when it carries one.
   const arrivalId = arrivalRef.current.navId;
-  const searchSegments = arrivalRef.current.segments;
-  const searchPali = arrivalRef.current.paliSegments;
+  const arrivalKeys = arrivalRef.current.segments;
+  const arrivalPaliKeys = arrivalRef.current.paliSegments;
   const searchMarkedBy = arrivalRef.current.markedBy;
   const { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader } =
     useReaderOrigin(readerLocationState);
@@ -179,7 +181,7 @@ export function ReaderPage() {
     restoreRef.current = {
       id: suttaId,
       restore: enteredByReturn(navigationType, location.state) ? 'stored' : 'top',
-      skipRestore: !!requestedSubUid || searchSegments !== undefined,
+      skipRestore: !!requestedSubUid || arrivalKeys !== undefined,
     };
   }
   // The sutta openSegs and openNotes belong to.
@@ -283,16 +285,37 @@ export function ReaderPage() {
   // The text on screen as of the last commit, which tells a sutta just arrived from one already open.
   const shownSegmentsRef = useRef<typeof segments>(null);
 
+  // The first and last segment of the arrival's passage once the text loads (segmentAt). Unset where
+  // the text has neither the first line nor a later one of its sutta.
+  const searchSegments = useMemo<[number, number] | undefined>(() => {
+    if (!arrivalKeys || !segments) return undefined;
+    const first = segmentAt(segments, arrivalKeys[0]);
+    if (first === -1) return undefined;
+    return [first, Math.max(first, segmentAt(segments, arrivalKeys[1]))];
+  }, [arrivalKeys, segments]);
+  // The segments whose Pali the arrival opens, found likewise.
+  const searchPali = useMemo(() => {
+    if (!arrivalPaliKeys || !segments) return undefined;
+    return arrivalPaliKeys.map((key) => segmentAt(segments, key)).filter((i) => i !== -1);
+  }, [arrivalPaliKeys, segments]);
+  // The inner sutta asked for, unless the arrival names a passage of it to open at instead.
+  const innerUid = searchSegments ? undefined : requestedSubUid;
+  // Opens a sutta just arrived at the top where its arrival names a line it can't land on.
+  useLayoutEffect(() => {
+    if (!arrivalKeys || !segments || searchSegments || requestedSubUid) return;
+    if (segments !== shownSegmentsRef.current && scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [arrivalKeys, segments, searchSegments, requestedSubUid, scrollRef]);
+
   // The first and last segment of the requested inner sutta, whose segments run consecutively.
   const subRange = useMemo<[number, number] | undefined>(() => {
-    if (!requestedSubUid || !segments) return undefined;
-    const held = (s: SegmentFile) => uidHolds(s.key.split(':')[0], requestedSubUid);
+    if (!innerUid || !segments) return undefined;
+    const held = (s: SegmentFile) => uidHolds(s.key.split(':')[0], innerUid);
     const first = segments.findIndex(held);
     if (first === -1) return undefined;
     let last = first;
     while (last + 1 < segments.length && held(segments[last + 1])) last++;
     return [first, last];
-  }, [requestedSubUid, segments]);
+  }, [innerUid, segments]);
 
   // Scrolls to the requested inner sutta's first segment, a frame after the batch's text loads and
   // again on each new arrival there: at once on a batch just arrived, gliding within one already
@@ -309,44 +332,37 @@ export function ReaderPage() {
   // once on a sutta just arrived, gliding within one already open.
   const [landing, setLanding] = useState<{ seg: number; behavior: 'smooth' | 'instant' }>();
 
-  // The segments the arrival wash covers: the requested inner sutta, or the passage a search hit
-  // was drawn from, clamped to the text that has loaded. Derived rather than held, so it leaves
-  // with the arrival it belongs to in that same render: a Prev/Next step lands on text that is
-  // often already fetched, and a range held a commit longer paints over it.
-  const washRange = useMemo<[number, number] | undefined>(() => {
-    if (requestedSubUid) return subRange;
-    if (!searchSegments || !segments) return undefined;
-    const [first, last] = searchSegments;
-    return first >= segments.length ? undefined : [first, Math.min(last, segments.length - 1)];
-  }, [requestedSubUid, subRange, searchSegments, segments]);
+  // The segments the arrival wash covers: the passage the arrival names, or the requested inner
+  // sutta. Derived rather than held, so it leaves with the arrival it belongs to in that same
+  // render: a Prev/Next step lands on text that is often already fetched, and a range held a commit
+  // longer paints over it.
+  const washRange = searchSegments ?? subRange;
 
   // The words a search hit was found by, marked in the passage it lands on as its row marked them:
   // in each line's English, and in the Pali of the lines whose Pali it matched. Found in the lines
   // as displayed, by segment index. Derived like washRange, for the same reason.
   const searchMarks = useMemo(() => {
-    if (!marking || !searchMarkedBy || !searchSegments || requestedSubUid || !segments) return undefined;
+    if (!marking || !searchMarkedBy || !searchSegments || !segments) return undefined;
     const { queries, anywhere } = searchMarkedBy;
     const [first, last] = searchSegments;
     const marks = new Map<number, SegmentMarks>();
-    for (let i = first; i <= Math.min(last, segments.length - 1); i += 1) {
+    for (let i = first; i <= last; i += 1) {
       const en = marksOf(segments[i].en, queries, 'en', anywhere);
       const pa = searchPali?.includes(i) ? marksOf(segments[i].pali, queries, 'pa', anywhere) : [];
       if (en.length || pa.length) marks.set(i, { en, pa });
     }
     return marks;
-  }, [marking, searchMarkedBy, searchSegments, searchPali, requestedSubUid, segments]);
+  }, [marking, searchMarkedBy, searchSegments, searchPali, segments]);
 
-  // Lands on the passage a search hit's snippet was drawn from, so the line the reader picked out of
-  // the results is what they see: marks the words it was found by, and opens the Pali of the lines
-  // a hit in the Pali matched.
+  // Lands on the passage the arrival names, so the line the reader picked out of the results or
+  // followed a link to is what they see: marks the words a search hit was found by, and opens the
+  // Pali of the lines a hit in the Pali matched.
   useEffect(() => {
-    if (searchSegments === undefined || requestedSubUid || !segments) return;
-    const [first] = searchSegments;
-    if (first >= segments.length) return;
+    if (!searchSegments || !segments) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
-    setLanding({ seg: first, behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
+    setLanding({ seg: searchSegments[0], behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
     setMarking(true);
-  }, [searchSegments, searchPali, requestedSubUid, segments]);
+  }, [searchSegments, searchPali, segments]);
 
   // Ends the marks on the reader's next click or tap, anywhere, as a found word stays marked in an
   // e-reader until the page is touched: once that click has been handled, since ending them

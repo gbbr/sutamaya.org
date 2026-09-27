@@ -36,17 +36,17 @@ export interface SearchHit {
   // expansion table is what matched, it carries both.
   explains?: { line: 'note' | 'blurb'; query: string };
   // The paragraph of sutta text the query was found in, its English where that paragraph was Pali,
-  // what the search matched in each, the first and last segment it was drawn from, where it was
-  // Pali the segments holding a match, and what the marks were made with. Filled in by
-  // lib/search/text.ts for the hits that render, and kept only on the rows that open at it
-  // (opensAtPassage).
+  // what the search matched in each, the keys of the first and last segment it was drawn from,
+  // where it was Pali those of the segments holding a match, and what the marks were made with.
+  // Filled in by lib/search/text.ts for the hits that render, and kept only on the rows that open
+  // at it (opensAtPassage).
   snippet?: {
     text: string;
     marks: Mark[];
     under?: string;
     underMarks?: Mark[];
-    segments: [number, number];
-    paliSegments?: number[];
+    segments: [string, string];
+    paliSegments?: string[];
     markedBy: { queries: string[]; anywhere: boolean };
   };
   // Every passage holding the query, on the sutta being read, in reading order.

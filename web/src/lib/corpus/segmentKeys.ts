@@ -8,6 +8,24 @@ import type { SegmentFile } from './corpus';
 // which is what lets the offline mirror decide what a new selection overlaps while holding nothing
 // but the highlights themselves.
 
+// What follows a segment key's colon: digits and dots.
+const LINE_RE = /^\d+(?:\.\d+)*$/;
+
+// Returns whether `line` is one a segment key can end in, as "15.4" is.
+export function isKeyLine(line: string): boolean {
+  return LINE_RE.test(line);
+}
+
+// Returns the sutta a segment key belongs to: "sn46.53" of "sn46.53:15.4".
+export function keySutta(key: string): string {
+  return key.slice(0, key.indexOf(':'));
+}
+
+// Returns a segment key's line within its sutta: "15.4" of "sn46.53:15.4".
+export function keyLine(key: string): string {
+  return key.slice(key.indexOf(':') + 1);
+}
+
 // Document order over two segment keys, comparing digit runs as numbers so `1.10` follows `1.2`
 // rather than preceding it. build-corpus.mjs asserts every document it emits is in this order —
 // see scripts/lib/segmentKeys.js, the build's copy of this function.
@@ -43,4 +61,12 @@ export function segmentIndex(segments: SegmentFile[]): Map<string, number> {
   const index = new Map<string, number>();
   for (let i = 0; i < segments.length; i++) index.set(segments[i].key, i);
   return index;
+}
+
+// Returns where in `segments` the line `key` names sits or, where they don't have it — a title, a
+// line with no English, a line a text refresh renumbered — the next line of the same sutta; -1
+// where they have neither.
+export function segmentAt(segments: SegmentFile[], key: string): number {
+  const sutta = `${keySutta(key)}:`;
+  return segments.findIndex((s) => s.key.startsWith(sutta) && compareSegmentKeys(s.key, key) >= 0);
 }

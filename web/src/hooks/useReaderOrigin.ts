@@ -1,7 +1,7 @@
 import { useNavigate, type NavigateOptions } from 'react-router';
 import { transitionPage } from '../lib/ui/motion';
 import { tagIntent } from '../lib/navigation/routeIntent';
-import type { MarkedBy } from '../lib/search/text';
+import { readLink, type Passage } from '../lib/navigation/passageLink';
 import { READER_ORIGIN_KEY } from '../lib/storageKeys';
 
 interface PersistedReaderOrigin {
@@ -78,7 +78,7 @@ export function useReaderOrigin(
   // reader left it — unless the hit names a passage there to open instead.
   function jumpTo(
     nextSuttaId: string,
-    passage?: { segments: [number, number]; paliSegments?: number[]; markedBy?: MarkedBy },
+    passage?: Passage,
     leaving?: string
   ) {
     if (nextSuttaId === backTo && !passage) {
@@ -87,7 +87,7 @@ export function useReaderOrigin(
     }
     persistReaderOrigin(nextSuttaId, from, fromView, undefined);
     const state = { from, fromView, backTo: nextSuttaId === backTo ? undefined : backTo ?? leaving };
-    navigate(`/read/${encodeURIComponent(nextSuttaId)}`, {
+    navigate(readLink(nextSuttaId, passage), {
       // A fresh arrival every time, so a jump to where the reader already is scrolls and washes again.
       state: tagIntent(
         passage

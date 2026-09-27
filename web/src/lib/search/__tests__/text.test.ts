@@ -29,7 +29,8 @@ const MARK = '\x1e';
 const marked = (text: string, marks: Mark[] = []) => runsOf(text, marks).filter((r) => r.hit).map((r) => r.text);
 
 // Builds the two blobs the way scripts/build-corpus.mjs does: a marker line opening each sutta and
-// each paragraph, one line per segment, the two languages line-aligned.
+// each paragraph, one line per segment, the two languages line-aligned. The segments are keyed by
+// paragraph and place, from 1: "a:2.1" is the first of sutta a's second paragraph.
 function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>> }>) {
   const en: string[] = [];
   const pa: string[] = [];
@@ -43,7 +44,8 @@ function index(docs: Array<{ uid: string; paras: Array<Array<[string, string]>> 
     paChars += p.length + 1;
   };
   for (const doc of docs) {
-    map.push([doc.uid, enChars, paChars]);
+    const lines = doc.paras.flatMap((para, i) => para.map((_, j) => `${i + 1}.${j + 1}`));
+    map.push([doc.uid, enChars, paChars, [`${doc.uid}:${lines[0]}`, ...lines.slice(1)].join(' ')]);
     push(MARK, MARK);
     doc.paras.forEach((para, i) => {
       if (i > 0) push(MARK, MARK);
@@ -216,11 +218,10 @@ describe('snippetOf', () => {
 
   it('returns the paragraph the query was found in, its segments run together', () => {
     const score = searchSuttaText(X, 'radiant').get('a')!;
-    // Segments 1 and 2: the sutta's second and third, the first paragraph holding only segment 0.
     expect(snip(X, score)).toEqual({
       text: 'The mind is radiant. So it is said.',
       marks: [[12, 19]],
-      segments: [1, 2],
+      segments: ['a:2.1', 'a:2.2'],
       markedBy: { queries: ['radiant'], anywhere: false },
     });
   });
@@ -232,8 +233,8 @@ describe('snippetOf', () => {
       marks: [[0, 10]],
       under: 'The mind is radiant. So it is said.',
       underMarks: [],
-      segments: [1, 2],
-      paliSegments: [1],
+      segments: ['a:2.1', 'a:2.2'],
+      paliSegments: ['a:2.1'],
       markedBy: { queries: ['pabhassara'], anywhere: false },
     });
   });
@@ -252,8 +253,8 @@ describe('snippetOf', () => {
         ],
       },
     ]);
-    // Not segment 2, which the snippet spans but marks nothing in.
-    expect(snip(Y, searchSuttaText(Y, 'pabhassara').get('a')!)?.paliSegments).toEqual([1, 3]);
+    // Not a:2.2, which the snippet spans but marks nothing in.
+    expect(snip(Y, searchSuttaText(Y, 'pabhassara').get('a')!)?.paliSegments).toEqual(['a:2.1', 'a:2.3']);
     expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.paliSegments).toBeUndefined();
   });
 
@@ -275,7 +276,7 @@ describe('snippetOf', () => {
     expect(marked(compound.text, compound.marks)).toEqual(['mahākassapa']);
   });
 
-  it('names the segments its text spans, counted from the sutta rather than the paragraph', () => {
+  it('names the segments its text spans by key, wherever in the sutta its paragraph is', () => {
     const Y = index([
       {
         uid: 'a',
@@ -289,7 +290,7 @@ describe('snippetOf', () => {
         ],
       },
     ]);
-    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segments).toEqual([1, 3]);
+    expect(snip(Y, searchSuttaText(Y, 'radiant').get('a')!)?.segments).toEqual(['a:2.1', 'a:2.3']);
   });
 
   it('windows a long paragraph around the match, so the marked word is inside the clamp', () => {
@@ -428,12 +429,16 @@ describe('passagesOf', () => {
         ],
       },
     ]);
-    expect(passages(Y, 'greed').map((p) => p.segments)).toEqual([[0, 0], [2, 2], [3, 3]]);
+    expect(passages(Y, 'greed').map((p) => p.segments)).toEqual([
+      ['a:1.1', 'a:1.1'],
+      ['a:2.1', 'a:2.1'],
+      ['a:2.2', 'a:2.2'],
+    ]);
   });
 
   it('falls back to the one snippet where no segment holds every word', () => {
     const Y = index([{ uid: 'a', paras: one([['Greed is a fire.', 'p1'], ['Hatred too.', 'p2']]) }]);
-    expect(passages(Y, 'greed hatred').map((p) => p.segments)).toEqual([[0, 1]]);
+    expect(passages(Y, 'greed hatred').map((p) => p.segments)).toEqual([['a:1.1', 'a:1.2']]);
   });
 
   it('gives a Pali passage its English line underneath', () => {
@@ -461,7 +466,11 @@ describe('passagesOf', () => {
       },
     ]);
     const found = passages(Y, 'sampajan');
-    expect(found.map((p) => p.segments)).toEqual([[0, 0], [1, 1], [2, 2]]);
+    expect(found.map((p) => p.segments)).toEqual([
+      ['a:1.1', 'a:1.1'],
+      ['a:2.1', 'a:2.1'],
+      ['a:3.1', 'a:3.1'],
+    ]);
     expect(found.map((p) => marked(p.text, p.marks))).toEqual([['Sampajān'], ['sampajān'], ['sampajañ']]);
     // Where nothing opens a word with it, the search of the whole text finds nothing to fall back on.
     const inside = index([{ uid: 'a', paras: one([['With awareness.', 'Satisampajaññena.']]) }]);
@@ -489,7 +498,7 @@ describe('passagesOf', () => {
       ['Buddhena vuttaṁ.', 'So it was said.'],
     ]);
     // The line shown in Pali is the one whose Pali opens.
-    expect(passages(Y, 'buddh').map((p) => p.paliSegments)).toEqual([undefined, [1]]);
+    expect(passages(Y, 'buddh').map((p) => p.paliSegments)).toEqual([undefined, ['a:2.1']]);
     // Both are marked as they were matched, anywhere, so the reader marks the same.
     expect(passages(Y, 'buddh').map((p) => p.markedBy)).toEqual([
       { queries: ['buddh'], anywhere: true },
