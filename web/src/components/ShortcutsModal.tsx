@@ -47,12 +47,12 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
     <div className="fixed inset-0 z-50 flex items-center justify-center animate-fadeIn" style={{ background: 'rgba(0,0,0,.35)' }} onClick={onClose}>
       <div
         data-component="ShortcutsModal"
-        className={`w-full mx-4 shadow-popup overflow-hidden animate-fadeUp ${theme ? 'rounded-2xl' : 'rounded-sheet bg-paper border border-ink/10'}`}
-        style={{ background: theme?.panel, maxWidth: 400 }}
+        className={`flex flex-col w-full max-w-[400px] sm:max-w-[760px] max-h-[calc(100dvh-2rem)] mx-4 shadow-popup overflow-hidden animate-fadeUp ${theme ? 'rounded-2xl' : 'rounded-sheet bg-paper border border-ink/10'}`}
+        style={{ background: theme?.panel }}
         onClick={(e) => e.stopPropagation()}
       >
         <header
-          className={`flex items-center justify-between px-5 py-4 ${theme ? '' : 'border-b border-ink/10'}`}
+          className={`flex flex-none items-center justify-between px-5 py-4 ${theme ? '' : 'border-b border-ink/10'}`}
           style={theme ? { borderBottom: `1px solid ${theme.rule}` } : undefined}
         >
           <div className="font-sans text-ui-lg font-semibold" style={theme ? { color: theme.fg } : undefined}>
@@ -67,7 +67,7 @@ export function ShortcutsModal({ shortcuts, onClose, theme }: ShortcutsModalProp
             Esc
           </button>
         </header>
-        <ul className="py-2">
+        <ul className="grid sm:grid-cols-2 py-2 overflow-y-auto">
           {shortcuts.map((s) => (
             <li key={s.label} className="flex items-center justify-between gap-4 px-5 py-2">
               <span className={`font-sans text-ui-base ${theme ? '' : 'text-ink-2'}`} style={theme ? { color: theme.fg } : undefined}>
