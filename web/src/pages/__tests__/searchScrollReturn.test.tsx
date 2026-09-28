@@ -180,7 +180,7 @@ describe('a search result opened and closed', () => {
       timeout: 5000,
     });
 
-    fireEvent.click(screen.getByTitle('Home'));
+    fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
     revealed = [];
     // The same budget the reader mount above takes: this test opens and closes a whole reader, and
@@ -260,7 +260,7 @@ describe('a search result opened and closed', () => {
     await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy(), {
       timeout: 5000,
     });
-    fireEvent.click(screen.getByTitle('Home'));
+    fireEvent.click(screen.getByTitle('Close'));
     await screen.findByText('sutamaya');
     // The same budget the reader mount above takes, this test opening and closing a whole reader.
     await waitFor(() => expect(treeScroller().scrollTop).toBe(900), { timeout: 5000 });
