@@ -1,12 +1,13 @@
-// The title and description a link preview shows when someone shares a sutta or a browse group,
-// written into the served HTML — a crawler never runs the app, so the tags
+// The title and description a link preview shows when someone shares a sutta, lines of one, or a
+// browse group, written into the served HTML — a crawler never runs the app, so the tags
 // web/src/hooks/useDocumentMeta.ts writes at mount arrive too late.
 //
 // Only /read/* and /browse/* are rewritten; /index.html is left as the build produced it, since the
 // service worker precaches that path and serves it for every in-app navigation.
 //
-// The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId) and the trim in
-// web/src/lib/navigation/documentMeta.ts, and the titles match what ReaderPage and LibraryPage pass
+// The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId), the trim in
+// web/src/lib/navigation/documentMeta.ts and the reading of `at` in
+// web/src/lib/navigation/passageLink.ts, and the titles match what ReaderPage and LibraryPage pass
 // to useDocumentMeta. No module is shared between the two workspaces — change one, change the
 // other.
 
@@ -21,6 +22,9 @@ const MAX_LENGTH = 155;
 // the batch holding it.
 const RANGE_UID = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)-(\d+)$/;
 const RANGE_QUERY = /^([a-z][a-z-]*(?:\d+\.)?)(\d+)$/;
+
+// What follows a segment key's colon, as a /read link's `at` names a line: "15.4".
+const KEY_LINE = /^\d+(?:\.\d+)*$/;
 
 // The shell's own description tag, rewritten or removed per page.
 const DESCRIPTION_META = 'meta[name="description"]';
@@ -57,8 +61,52 @@ export function loadCorpus(env, url) {
 // untouched when the path names nothing in the corpus.
 export async function withShareMeta(shell, url, env) {
   if (!SHAREABLE.test(url.pathname)) return shell;
-  const meta = shareMetaFor(await loadCorpus(env, url), url.pathname);
-  return meta ? applyShareMeta(shell, meta, url) : shell;
+  const corpus = await loadCorpus(env, url);
+  const meta = shareMetaFor(corpus, url.pathname);
+  if (!meta) return shell;
+  return applyShareMeta(shell, (await linesMetaFor(corpus, url, env)) ?? meta, url);
+}
+
+// Returns the title and description of the lines a /read link's `at` names — "15.4", or a run,
+// "15.4-15.6" — read from its sutta's text, or null when it names none the text holds. `at` is kept
+// for the card's own link.
+async function linesMetaFor(corpus, url, env) {
+  const at = url.searchParams.get('at')?.split('-');
+  const match = /^\/read\/([^/]+)/.exec(url.pathname);
+  if (!at || !match || at.length > 2 || !at.every((line) => KEY_LINE.test(line))) return null;
+  let uid;
+  try {
+    uid = decodeURIComponent(match[1]).toLowerCase();
+  } catch {
+    return null;
+  }
+  const docId = resolveSuttaId(corpus, uid);
+  const sutta = corpus.suttas[docId];
+  const segments = sutta ? await loadText(env, url, docId) : null;
+  if (!segments) return null;
+  const first = segments.findIndex((s) => s.key === `${uid}:${at[0]}`);
+  const last = segments.findIndex((s) => s.key === `${uid}:${at[at.length - 1]}`);
+  if (first === -1 || last < first) return null;
+  const description = summarize(segments.slice(first, last + 1).map((s) => s.en).join(' '));
+  if (!description) return null;
+  return { title: `${citedRef(sutta, docId, uid)}:${at.join('–')} · ${sutta.en}`, description, at: at.join('-') };
+}
+
+// Returns a document's segments from the assets binding, or null if they can't be read.
+async function loadText(env, url, docId) {
+  try {
+    const res = await env.ASSETS.fetch(new URL(`/data/text/${encodeURIComponent(docId)}.json`, url));
+    return res.ok ? await res.json() : null;
+  } catch {
+    return null;
+  }
+}
+
+// Returns the reference a sutta's lines are cited under: its own, or for one batched with others,
+// the batch's narrowed to its number — "Dhp 321" of "Dhp 320–333".
+function citedRef(sutta, docId, uid) {
+  const num = docId === uid ? null : RANGE_QUERY.exec(uid)?.[2];
+  return num ? sutta.ref.replace(/\d+–\d+$/, num) : sutta.ref;
 }
 
 // Writes one page's title and description into the shell as it streams past.
@@ -66,7 +114,7 @@ export function applyShareMeta(shell, meta, url) {
   const tags = [
     ['og:type', 'website'],
     ['og:site_name', 'sutamaya'],
-    ['og:url', `${url.origin}${url.pathname}`],
+    ['og:url', `${url.origin}${url.pathname}${meta.at ? `?at=${meta.at}` : ''}`],
     ['og:title', meta.title],
     ...(meta.description ? [['og:description', meta.description]] : []),
     // Square and declared, so a crawler picks the thumbnail layout without fetching the file.

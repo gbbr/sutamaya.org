@@ -127,6 +127,10 @@ A shared link to a sutta or a library group gets its own title, description and 
 written into the page as it's served, because link-preview crawlers don't run the app. The Worker
 looks them up in the corpus with its own copy of the app's lookups — change one, change the other.
 
+A link naming lines (`?at=15.4`, or a run) previews the lines themselves, read from the sutta's
+text and cited in the title — `SN 46.53:15.4 · The Fire`. Lines the text doesn't hold preview the
+sutta instead.
+
 ## Staging
 
 Staging runs the production build. The Worker rewrites what differs on the way out, decided by
