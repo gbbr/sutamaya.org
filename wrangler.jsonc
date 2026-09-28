@@ -110,8 +110,8 @@
     // The over-the-air bundle the native apps should be running, and the SHA-256 (hex) of its zip.
     // `npm run release:ota` rewrites both and redeploys; empty means nothing is published and the
     // check endpoint tells devices there is no update.
-    "OTA_VERSION": "0.1.0-a3b30631",
-    "OTA_CHECKSUM": "5543e983eff9ced03fbce8b7eddc0bb19970357c87b1d6ba8b15b1c3b3498c13",
+    "OTA_VERSION": "0.1.0-e7f42241",
+    "OTA_CHECKSUM": "cf1bfe8f91e87de6322c638877414f67f194e53136b8241b4c7dbf425be230e3",
     // Each platform's native build number below which the current OTA bundle is withheld. Written
     // by `release:ota` from that platform's "minNative" in native-release.json. Empty means no
     // minimum. See docs/native-apps.md's "The minimum native build".
