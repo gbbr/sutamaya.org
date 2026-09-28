@@ -433,7 +433,7 @@ describe('a collection found by search', () => {
 
       fireEvent.click(await inPane('ListPane').findByText('Ambapālī'));
 
-      await screen.findByTitle('Home');
+      await screen.findByTitle('Close');
       expect(screen.queryByText(/Results for/)).toBeNull();
     });
 
@@ -448,7 +448,7 @@ describe('a collection found by search', () => {
       search('ambapali');
       fireEvent.click(await inPane('TreePane').findByRole('button', { name: /SN47\.1\s*In Ambap/ }));
       fireEvent.click(await inPane('ListPane').findByText('Ambapālī'));
-      fireEvent.click(await screen.findByTitle('Home'));
+      fireEvent.click(await screen.findByTitle('Close'));
       fireEvent.click(await inPane('ListPane').findByRole('button', { name: 'Back' }));
       scrolls.length = 0;
       fireEvent.click(await inPane('TreePane').findByRole('button', { name: 'Clear search' }));

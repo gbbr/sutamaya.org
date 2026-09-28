@@ -222,7 +222,7 @@ describe('a link opened in the phone app', () => {
 
   it("opens a sutta's collection on its contents from the Reader", async () => {
     const { container, router } = openApp('/read/mn1');
-    await screen.findByTitle('Home');
+    await screen.findByTitle('Close');
 
     await tapLink('/browse/dn-silakkhandhavagga/dn1');
     await waitFor(() => expect(paneShown(container, 'ListPane')).toBe(true));
@@ -268,7 +268,7 @@ describe('a link opened in the phone app', () => {
   it('opens the collection last browsed in the tree from the Reader, after it was closed there', async () => {
     localStorage.setItem(TREE_EXPANDED_KEY, JSON.stringify({ corpus: [], lists: [], node: 'dn' }));
     const { container } = openApp('/read/mn1');
-    await screen.findByTitle('Home');
+    await screen.findByTitle('Close');
 
     await tapLink('/browse/dn');
     await waitFor(() => expect(paneShown(container, 'TreePane')).toBe(true));
@@ -278,7 +278,7 @@ describe('a link opened in the phone app', () => {
 
   it('opens a shared sutta while the Reader shows another', async () => {
     openApp('/read/mn1');
-    await screen.findByTitle('Home');
+    await screen.findByTitle('Close');
 
     await tapLink('/read/dn1');
     await waitFor(() => expect(document.title).toContain('DN 1'));
