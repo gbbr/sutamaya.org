@@ -132,7 +132,8 @@ export function isPermitted(rule, sidecar, segmentId) {
   return !(segmentId in sidecar.deny); // mode === 'deny'
 }
 
-// A rule's forms, longest first, so "situational awareness" is tried before "awareness".
+// A rule's forms, longest first, so "kinds of mindfulness meditation" is tried before
+// "mindfulness meditation".
 export function sortedForms(rule) {
   return [...rule.forms].sort((a, b) => b[0].length - a[0].length);
 }
