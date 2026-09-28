@@ -535,6 +535,40 @@ describe('the passage a search hit was drawn from', () => {
     await waitFor(() => expect(router.state.location.pathname).toBe('/read/dn1'));
   });
 
+  // A sutta of its own, since dn1's text is already cached without this note.
+  it('follows a note’s link to another line of the same sutta as a step of its own, with the way back', async () => {
+    vi.mocked(useCorpus).mockReturnValue({
+      corpus: { ...corpus, suttas: { ...corpus.suttas, dn4: { ref: 'DN 4', node: 'dn', en: 'With Soṇadaṇḍa', pali: 'Soṇadaṇḍa', blurb: '', min: 5 } } },
+      loading: false,
+      error: false,
+      retry: vi.fn(),
+    });
+    const segments4 = [
+      { key: 'dn4:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard' },
+      { key: 'dn4:1.2', pali: 'Tena kho pana', en: 'At that time Soṇadaṇḍa was living in Campā' },
+      { key: 'dn4:1.3', pali: 'Assosuṁ kho', en: 'The brahmins heard', note: 'He is named at <a href="/read/dn4?at=1.2">DN 4:1.2</a>.' },
+    ];
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url: string) =>
+        url.includes('dn4.json')
+          ? Promise.resolve({ ok: true, json: async () => segments4 })
+          : Promise.reject(new Error(`unexpected fetch: ${url}`))
+      )
+    );
+    const { container, router } = renderRoutes(routes, '/read/dn4');
+    fireEvent.click(await screen.findByTitle('He is named at DN 4:1.2.'));
+    fireEvent.click(within(container.querySelector('[data-reveal="note"]') as HTMLElement).getByText('DN 4:1.2'));
+
+    await waitFor(() => expect(washed(container)).toEqual([1]));
+    expect(router.state.location.search).toBe('?at=1.2');
+
+    fireEvent.click(screen.getByTitle('Back to DN 4'));
+    await waitFor(() => expect(router.state.location.search).toBe(''));
+    expect(router.state.location.pathname).toBe('/read/dn4');
+    expect(washed(container)).toEqual([]);
+  });
+
   it('lands on a link’s passage once, not again on a reload', async () => {
     const first = renderRoutes(routes, '/read/dn1?at=1.2-1.3');
     await waitFor(() => expect(washed(first.container)).toEqual([1, 2]));

@@ -93,6 +93,27 @@ test('a refresh resumes the reading, even as notes and highlights land after the
   await expect(marker).toBeInViewport();
 });
 
+// Opening a sutta's address again — a link, a bookmark, the short form — is a fresh start, unlike a
+// refresh, however far down it was read before.
+test('a sutta opened by its address starts at the top, even where it was read before', async ({ page }) => {
+  const pane = page.locator('div.sc').first();
+  // Where DN 1 was left, as the Reader records it: 0 once it has opened at the top.
+  const place = () =>
+    page.evaluate(() => JSON.parse(localStorage.getItem('sutamaya.scrollPositions') ?? '{}')['reader:dn1']);
+
+  await page.goto('/read/dn1');
+  await expect.poll(place).toBe(0);
+  for (const address of ['/read/dn1', '/dn1']) {
+    await page.locator('[data-seg="43"]').evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    const readTo = await pane.evaluate((el) => el.scrollTop);
+    await expect.poll(place).toBe(readTo);
+
+    await page.goto(address);
+    await expect.poll(place, { message: `${address} opens at the top` }).toBe(0);
+    expect(await pane.evaluate((el) => el.scrollTop)).toBe(0);
+  }
+});
+
 // A jump made while the document is still settling has to stick: the scroll restore is still
 // watching at that point, and a correction arriving late would drag the reader off the heading they
 // just asked for. Nothing about this is visible without layout.
@@ -201,6 +222,33 @@ test('a sutta left by a search jump resumes where it was when the return arrow g
   await expect(page).toHaveURL(/\/read\/dn1$/);
   await expect
     .poll(async () => Math.abs(((await marker.boundingBox())?.y ?? 1e6) - before))
+    .toBeLessThan(8);
+});
+
+// The same return within one sutta, which the scroll memory can't make: it keeps a place per sutta,
+// and here the sutta never changes. dn9:21.1's note links back to dn9:6.4, a long way up.
+test('a note’s link to another line of its own sutta comes back to where it was followed from', async ({ page }) => {
+  await page.goto('/read/dn9');
+  await expect(page.locator('[data-seg="1"]')).toBeVisible();
+  await page.keyboard.press('c');
+
+  const line = page.locator('[id="dn9:21.1"]');
+  await line.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+  await line.locator('sup[data-seg-ignore]').click();
+  const link = line.locator('[data-reveal="note"] a', { hasText: 'DN 9:6.4' });
+  await expect(link).toBeVisible();
+  // The note's fade-in, finished first: a click during it has Playwright scroll the link to the top.
+  await link.evaluate((a) => Promise.all(a.closest('p')!.getAnimations().map((fade) => fade.finished)));
+  const before = (await line.boundingBox())?.y ?? 0;
+
+  await link.click();
+  await expect(page).toHaveURL(/\/read\/dn9\?at=6\.4$/);
+  await expect(line).not.toBeInViewport();
+
+  await page.getByRole('button', { name: 'Back to DN9', exact: true }).click();
+  await expect(page).toHaveURL(/\/read\/dn9$/);
+  await expect
+    .poll(async () => Math.abs(((await line.boundingBox())?.y ?? 1e6) - before))
     .toBeLessThan(8);
 });
 

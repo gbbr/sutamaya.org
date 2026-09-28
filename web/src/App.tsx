@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { createBrowserRouter, useLocation, useNavigate, useParams, type RouteObject } from 'react-router';
 import { AppProviders } from './context/AppProviders';
 import { ErrorBoundary, ErrorFallback } from './components/ErrorBoundary';
@@ -9,7 +9,7 @@ import { useNativeLinks } from './hooks/useNativeLinks';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation, rememberLocation } from './lib/navigation/lastLocation';
 import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus/corpus';
-import { RETURN_STATE } from './lib/navigation/entryKind';
+import { RETURN_STATE, takeAddressArrival } from './lib/navigation/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -64,14 +64,17 @@ function RedirectToReader() {
   const { suttaId } = useParams();
   const { corpus } = useCorpus();
   const navigate = useNavigate();
+  const location = useLocation();
   // Case-folded, since such a link is usually copied from a reference the app displays in caps.
   const id = suttaId ? normalizeRouteId(suttaId) : suttaId;
   const known = Boolean(id && corpus?.suttas[id]);
+  // Whether the page loaded on this address, typed, pasted or followed from another site.
+  const [addressArrival] = useState(() => takeAddressArrival(location.key));
   useEffect(() => {
-    // The redirect finishes the arrival it came in on, so it inherits that entry kind rather than
-    // counting as a fresh in-app navigation.
-    if (known) navigate(`/read/${id}`, { replace: true, state: RETURN_STATE });
-  }, [known, id, navigate]);
+    // The redirect finishes the arrival it came in on, so it inherits that entry kind: fresh for an
+    // address opened in the browser, a return otherwise.
+    if (known) navigate(`/read/${id}`, { replace: true, state: addressArrival ? undefined : RETURN_STATE });
+  }, [known, id, navigate, addressArrival]);
   if (!known) return <NotFoundPage />;
   return null;
 }
