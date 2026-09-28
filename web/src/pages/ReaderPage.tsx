@@ -283,17 +283,17 @@ export function ReaderPage() {
     if (suttaId) keepOpenLines(suttaId, { pali: allPali ? {} : openSegs, notes: showNotes ? openNotes : {} });
   }, [suttaId, openSegs, openNotes, allPali, showNotes]);
 
-  // The reading pane's width, its padding in and its scroll bar out, while segment numbers show.
+  // The reading pane's width, its padding in and its scroll bar out.
   const [paneWidth, setPaneWidth] = useState<number>();
   useLayoutEffect(() => {
     const pane = scrollRef.current;
-    if (!showSegmentNumbers || !pane) return;
+    if (!pane) return;
     const measure = () => setPaneWidth(pane.clientWidth);
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(pane);
     return () => observer.disconnect();
-  }, [showSegmentNumbers, scrollRef, suttaId]);
+  }, [scrollRef, suttaId]);
 
   // The reading takes focus as each sutta arrives, so Space, Page Down and the arrow keys scroll it
   // without a click first, as they do on any page a browser loads.
