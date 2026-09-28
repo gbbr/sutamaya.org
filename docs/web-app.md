@@ -65,8 +65,8 @@ behaviour components share, and `components/` the pieces the pages are built fro
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search, or from a link in a translator's note, is a step
-  in the history.** A return arrow appears beside the Reader's close and goes back one step at a
-  time, as the browser's Back does; Escape and Back in the native apps do the same, while close
+  in the history.** A return arrow appears beside the Reader's home button and goes back one step
+  at a time, as the browser's Back does; Escape and Back in the native apps do the same, while home
   leaves the Reader from any depth. Turning with Next and Prev adds no step. The jump slides the
   text in from the right and the return from the left, as Next and Prev do.
 - Only a bottom-level group opens a list of suttas. A row with children expands in place, so an id
@@ -89,7 +89,7 @@ screen moves in a native app; opening a collection slides its sutta list in over
 way. Nothing else animates between screens: tree rows open in place, and the Library/Lists tabs only
 slide their underline.
 
-- **A transition starts from the app's own control** — a row, Back, the Reader's close — never from
+- **A transition starts from the app's own control** — a row, Back, the Reader's home — never from
   the browser's Back and Forward, which Safari's swipe back already animates.
 - **They are the browser's view transitions**, so a browser without them changes screens instantly
   (iOS before 18).
