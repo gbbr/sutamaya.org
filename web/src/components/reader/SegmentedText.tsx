@@ -438,8 +438,11 @@ interface SegmentedTextProps {
   onNoteLinkPress: (href: string) => void;
   // The word currently shown in the DictionaryDock, or null.
   activeWord: { segIndex: number; wordIndex: number } | null;
-  // The first and last segment of the passage the reader arrived at, washed and then faded out.
+  // The first and last segment of the passage the reader arrived at, washed.
   washRange?: [number, number];
+  // Whether the reader's tap has lifted the wash, which fades out; its block stays, so the rows
+  // inside aren't remounted.
+  washLifted?: boolean;
   // The arrival the wash belongs to, so arriving again at the same passage washes it again.
   washId?: string;
   // What an arriving search hit marks, by segment index.
@@ -470,6 +473,7 @@ function SegmentedTextInner({
   onNoteLinkPress,
   activeWord,
   washRange,
+  washLifted,
   washId,
   marks,
 }: SegmentedTextProps) {
@@ -533,14 +537,14 @@ function SegmentedTextInner({
         <>
           {rows.slice(0, washRange[0])}
           {/* The arrival wash, tinted out to the reading pane's edges, which clip the shadow; keyed
-              by its arrival and range, so each new arrival starts its fade over. */}
+              by its arrival and range, so each new arrival washes afresh. */}
           <div
             key={`${washId}:${washRange.join('-')}`}
             className="arrival-wash"
-            data-wash-block
+            data-wash-block={!washLifted || undefined}
             style={{
-              background: theme.focusTint,
-              boxShadow: `0 0 0 100vmax ${theme.focusTint}`,
+              backgroundColor: washLifted ? 'transparent' : theme.focusTint,
+              boxShadow: `0 0 0 100vmax ${washLifted ? 'transparent' : theme.focusTint}`,
               clipPath: 'inset(0 -100vmax)',
             }}
           >

@@ -2,10 +2,10 @@ import { describe, expect, it, vi, beforeEach, afterEach } from 'vitest';
 import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
 
-// The wash on the passage a search hit's snippet was drawn from: on while the reader arrives, off a
-// moment later. It is an orientation cue, not an annotation — a passage that stayed washed would
-// read as one of the reader's own highlights. The words the hit was found by stay marked there
-// until the reader's next tap.
+// The wash on the passage a search hit's snippet was drawn from, or a link names: on while the
+// reader arrives, lifted by their next tap with the words the hit was found by. It is an orientation
+// cue, not an annotation — a passage that stayed washed would read as one of the reader's own
+// highlights.
 
 vi.mock('../../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));
@@ -245,7 +245,7 @@ describe('the passage a search hit was drawn from', () => {
     await waitFor(() => expect(washed(container)).toEqual([0]));
   });
 
-  // A wash that has faded is still in place; a new one there starts over.
+  // A new arrival at a washed passage washes it afresh.
   it('is washed again when the reader jumps to the same passage again', async () => {
     const { container, router } = renderRoutes(routes, {
       pathname: '/read/dn1',
@@ -408,6 +408,7 @@ describe('the passage a search hit was drawn from', () => {
       vi.advanceTimersByTime(10);
     });
     expect(markTexts(container)).toEqual([]);
+    expect(washed(container)).toEqual([]);
   });
 
   it('marks the Pali words of the lines it opened', async () => {
@@ -428,10 +429,19 @@ describe('the passage a search hit was drawn from', () => {
     expect(paliLine(container, 2)!.querySelector('mark')?.textContent).toBe('pana');
   });
 
-  it('washes the lines a link names, with no words to mark', async () => {
+  it('washes the lines a link names, with no words to mark, until the next tap', async () => {
     const { container } = renderRoutes(routes, '/read/dn1?at=1.3');
     await waitFor(() => expect(washed(container)).toEqual([2]));
     expect(markTexts(container)).toEqual([]);
+    const line = container.querySelector('[data-seg="2"]');
+
+    fireEvent.click(document.body);
+    await act(async () => {
+      vi.advanceTimersByTime(10);
+    });
+    expect(washed(container)).toEqual([]);
+    // Lifted without remounting the lines.
+    expect(container.querySelector('[data-seg="2"]')).toBe(line);
   });
 
   // A title, a line with no English, a line a text refresh renumbered.
