@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyShareMeta, shareMetaFor } from '../shareMeta.js';
+import { applyShareMeta, shareMetaFor, withShareMeta } from '../shareMeta.js';
 
 // A corpus small enough to read, carrying one of every shape the real one has: MN's two levels,
 // SN's four with the description on the saṁyutta rather than the vagga that displays it, AN's
@@ -227,5 +227,56 @@ describe('applyShareMeta', () => {
   it('escapes a title that would otherwise close its own attribute', async () => {
     const html = await rendered({ title: 'Mendicants & "Friends"', description: null });
     expect(html).toContain('<meta property="og:title" content="Mendicants &amp; &quot;Friends&quot;" />');
+  });
+});
+
+describe('withShareMeta, for a link naming lines', () => {
+  // The texts the assets binding serves, by document.
+  const texts = {
+    dn16: [
+      { key: 'dn16:5.1', pali: '', en: 'Then the Buddha addressed Ānanda.' },
+      { key: 'dn16:5.2', pali: '', en: '“Ānanda, the twin sal trees are in full blossom.”' },
+    ],
+    'dhp320-333': [{ key: 'dhp321:1', pali: '', en: 'They lead the tamed to the assembly.' }],
+  };
+  const env = {
+    ASSETS: {
+      async fetch(input) {
+        const { pathname } = new URL(input instanceof Request ? input.url : input);
+        if (pathname === '/data/corpus.json') return Response.json(corpus);
+        const text = texts[decodeURIComponent(/^\/data\/text\/(.+)\.json$/.exec(pathname)?.[1] ?? '')];
+        return text ? Response.json(text) : new Response('', { status: 404 });
+      },
+    },
+  };
+  const preview = async (link) =>
+    (await withShareMeta(new Response(SHELL, { headers: { 'Content-Type': 'text/html' } }), new URL(link), env)).text();
+
+  it('previews the line, under its citation, and links the card to it', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?at=5.1');
+    expect(html).toContain('<title>DN 16:5.1 · The Great Discourse on the Buddha’s Extinguishment</title>');
+    expect(html).toContain('<meta property="og:description" content="Then the Buddha addressed Ānanda." />');
+    expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?at=5.1" />');
+  });
+
+  it('previews a run of lines as one passage', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?at=5.1-5.2');
+    expect(html).toContain('<title>DN 16:5.1–5.2 · The Great Discourse on the Buddha’s Extinguishment</title>');
+    expect(html).toContain(
+      '<meta property="og:description" content="Then the Buddha addressed Ānanda. “Ānanda, the twin sal trees are in full blossom.”" />'
+    );
+  });
+
+  it('cites a line of a batched sutta under the sutta’s own number', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dhp321?at=1');
+    expect(html).toContain('<title>Dhp 321:1 · The Elephant</title>');
+    expect(html).toContain('<meta property="og:description" content="They lead the tamed to the assembly." />');
+  });
+
+  it('previews the sutta itself for a line its text doesn’t hold', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?at=9.9');
+    expect(html).toContain('<title>DN 16 · The Great Discourse on the Buddha’s Extinguishment</title>');
+    expect(html).toContain('<meta property="og:description" content="The Buddha’s last days." />');
+    expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16" />');
   });
 });
