@@ -399,7 +399,7 @@ describe('a query naming a line by its key', () => {
 });
 
 describe('searchCorpusVariants', () => {
-  // Nothing here says "satipatthana" — the expansion table's "establishment of awareness" is the
+  // Nothing here says "satipatthana" — the expansion table's "establishment of mindfulness" is the
   // only way in, which is the case the marking rule exists for.
   const corpus: Corpus = {
     nikayas: [],
@@ -409,7 +409,7 @@ describe('searchCorpusVariants', () => {
         node: 'x',
         en: 'Mindfulness Meditation',
         pali: 'Kāyagatāsatisutta',
-        blurb: 'On the establishment of awareness.',
+        blurb: 'On the establishment of mindfulness.',
         min: 20,
       },
     },
@@ -425,7 +425,7 @@ describe('searchCorpusVariants', () => {
     // Both, as a snippet's own query carries both: the typed word marks nothing here, and the row
     // would otherwise show a description with nothing marked in it. "of" is left out — it is in
     // every line, and the matching didn't require it either.
-    expect(hit.explains?.query).toBe('satipatthana establishment awareness');
+    expect(hit.explains?.query).toBe('satipatthana establishment mindfulness');
   });
 });
 
