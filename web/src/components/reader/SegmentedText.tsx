@@ -1,4 +1,4 @@
-import { Fragment, memo, useMemo, type CSSProperties, type ReactNode } from 'react';
+import { Fragment, memo, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
 import type { SegmentFile, SegmentRole } from '../../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../../lib/types';
 import { highlightPaint } from '../../lib/ui/theme';
@@ -23,6 +23,9 @@ export interface SegmentMarks {
 }
 
 const NO_MARKS: Mark[] = [];
+
+/** Where a segment's number shows: hanging in the left margin, or at the start of its line. */
+export type SegmentNumberPlacement = 'margin' | 'inline';
 
 /** Returns the paragraph a segment key belongs to — its uid plus the digits before the first dot. */
 function paragraphOf(key: string): string {
@@ -204,6 +207,10 @@ interface SegmentRowProps {
   onNoteLinkPress: (href: string) => void;
   // The word the DictionaryDock is showing, when it is in this segment.
   activeWordIndex: number | null;
+  // Where the segment's number shows: hanging in the left margin, at the start of the line, or not
+  // at all.
+  segmentNumber?: SegmentNumberPlacement;
+  onSegmentNumber: (i: number) => void;
 }
 
 /** One sutta segment — a paragraph, verse line, heading — as its English and Pali lines. */
@@ -235,6 +242,8 @@ const SegmentRow = memo(function SegmentRow({
   onNoteLink,
   onNoteLinkPress,
   activeWordIndex,
+  segmentNumber,
+  onSegmentNumber,
 }: SegmentRowProps) {
   const parts = buildParts(seg.en, rangesForSeg);
   const enMarks = marks ? mergedMarks(seg.en, marks.en) : NO_MARKS;
@@ -254,9 +263,57 @@ const SegmentRow = memo(function SegmentRow({
       {listIndex}.
     </span>
   );
+  const noteShown = showNotes && !!seg.note && noteOpen;
+  // Whether the Pali line and the note fade in: as they open, never when the row mounts with them
+  // open — a sutta returned to, or the row rebuilt inside the arrival wash.
+  const [paliFades, setPaliFades] = useState(!open);
+  if (!open && !paliFades) setPaliFades(true);
+  const [noteFades, setNoteFades] = useState(!noteShown);
+  if (!noteShown && !noteFades) setNoteFades(true);
+  // How far the segment's lines sit in from the column's edge: a verse's rule and indent, kept by a
+  // speaker following it.
+  const lineIndent = seg.role === 'verse' ? 16 : seg.role === 'speaker' && afterVerse ? 30 : 0;
+  // The segment's number, for whichever of its lines comes first, set at `lineSize` px.
+  const segmentNumberMark = (lineSize: number) =>
+    segmentNumber && (
+      <span
+        // Rendered text that isn't part of `seg.en`, as the list marker above.
+        data-seg-ignore
+        className="font-sans"
+        style={{
+          fontSize: 12,
+          fontWeight: 500,
+          fontStyle: 'normal',
+          fontVariantNumeric: 'tabular-nums',
+          color: theme.dim,
+          opacity: 0.75,
+          cursor: 'pointer',
+          whiteSpace: 'nowrap',
+          ...UNSELECTABLE,
+          // Placement, each with padding that grows the tap target past the glyphs:
+          //   margin – left of the line and any verse rule, centred on its first row
+          //   inline – leading the first row
+          ...(segmentNumber === 'margin'
+            ? {
+                position: 'absolute',
+                top: 0,
+                right: `calc(100% + ${lineIndent + 14}px)`,
+                padding: '0 4px',
+                lineHeight: `${(lineSize * lineHeight) / 100}px`,
+              }
+            : { display: 'inline-block', lineHeight: 1, padding: '8px 4px', margin: '-8px 0.55em -8px -4px' }),
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onSegmentNumber(i);
+        }}
+      >
+        {seg.key.slice(seg.key.indexOf(':') + 1)}
+      </span>
+    );
   const paliLine = open && (
     <p
-      className="animate-fadeUp"
+      className={paliFades ? 'animate-fadeUp' : undefined}
       // The pair ReaderPage's revealIntoView scrolls to, named as the word spans above are.
       data-reveal="pali"
       data-reveal-seg={i}
@@ -278,16 +335,19 @@ const SegmentRow = memo(function SegmentRow({
           //   list-item – the hanging indent the marker sits in
           ...(above && seg.role === 'heading' ? { marginTop: afterHeading ? 0 : headingGapTop } : null),
           ...(above && seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
+          ...(above && segmentNumber === 'margin' ? { position: 'relative' } : null),
         } as CSSProperties
       }
     >
       {above && listMarker}
+      {above && segmentNumberMark(fontSize)}
       {paliWordSpans(seg.pali, i, activeWordIndex, paMarks, theme, onWordClick)}
     </p>
   );
   // True when a Pali line is actually rendered above the English, not merely requested.
   const paliLeads = above && !!paliLine;
   const enFontSize = paliLeads ? glossFontSize : fontSize;
+  const enRoleStyle = roleStyle(seg.role, enFontSize, theme, seg.headingLevel);
   return (
     <div
       id={seg.key}
@@ -313,7 +373,8 @@ const SegmentRow = memo(function SegmentRow({
           lineHeight: lineHeight / 100,
           color: theme.fg,
           ...(seg.role === 'heading' ? null : { fontFamily: face }),
-          ...roleStyle(seg.role, enFontSize, theme, seg.headingLevel),
+          ...enRoleStyle,
+          ...(segmentNumber === 'margin' ? { position: 'relative' } : null),
           ...(seg.role === 'heading'
             ? { marginTop: paliLeads || afterHeading ? 0 : headingGapTop, marginBottom: headingGapBottom }
             : null),
@@ -323,6 +384,7 @@ const SegmentRow = memo(function SegmentRow({
         } as CSSProperties}
       >
         {!paliLeads && listMarker}
+        {!paliLeads && segmentNumberMark((enRoleStyle.fontSize as number | undefined) ?? enFontSize)}
         {parts.map((p, j) =>
           p.c ? (
             <span
@@ -386,7 +448,7 @@ const SegmentRow = memo(function SegmentRow({
       {!above && paliLine}
       {showNotes && seg.note && noteOpen && (
         <p
-          className="animate-fadeUp"
+          className={noteFades ? 'animate-fadeUp' : undefined}
           data-reveal="note"
           data-reveal-seg={i}
           style={{ margin: '0 0 6px', fontSize: Math.max(11, fontSize - 3), lineHeight: 1.5, fontFamily: face, color: theme.dim }}
@@ -447,6 +509,10 @@ interface SegmentedTextProps {
   washId?: string;
   // What an arriving search hit marks, by segment index.
   marks?: Map<number, SegmentMarks>;
+  // Where each segment's number shows, when segment numbers are on.
+  segmentNumbers?: SegmentNumberPlacement;
+  // Called with the segment whose number was tapped.
+  onSegmentNumber: (i: number) => void;
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];
@@ -476,6 +542,8 @@ function SegmentedTextInner({
   washLifted,
   washId,
   marks,
+  segmentNumbers,
+  onSegmentNumber,
 }: SegmentedTextProps) {
   // One line box at the current size and leading; every gap below is a fraction of it.
   const line = (fontSize * lineHeight) / 100;
@@ -528,6 +596,8 @@ function SegmentedTextInner({
         onNoteLink={onNoteLink}
         onNoteLinkPress={onNoteLinkPress}
         activeWordIndex={activeWord && activeWord.segIndex === i ? activeWord.wordIndex : null}
+        segmentNumber={segmentNumbers}
+        onSegmentNumber={onSegmentNumber}
       />
     );
   });

@@ -15,6 +15,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const setNoteFocusSignal = vi.fn();
   const toggleShowNotes = vi.fn();
   const toggleShowHighlights = vi.fn();
+  const toggleShowSegmentNumbers = vi.fn();
   const cycleTheme = vi.fn();
 
   const opts: Parameters<typeof useReaderKeyboard>[0] = {
@@ -35,6 +36,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setNoteFocusSignal,
     toggleShowNotes,
     toggleShowHighlights,
+    toggleShowSegmentNumbers,
     cycleTheme,
     ...overrides,
   };
@@ -55,6 +57,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setNoteFocusSignal,
     toggleShowNotes,
     toggleShowHighlights,
+    toggleShowSegmentNumbers,
     cycleTheme,
   };
 }
@@ -207,6 +210,14 @@ describe('useReaderKeyboard', () => {
       const { toggleShowNotes } = setup();
       press('c');
       expect(toggleShowNotes).toHaveBeenCalled();
+    });
+
+    it('Shift+S toggles segment numbers, and a plain "s" does not', () => {
+      const { toggleShowSegmentNumbers } = setup();
+      press('s');
+      expect(toggleShowSegmentNumbers).not.toHaveBeenCalled();
+      press('S', { shiftKey: true });
+      expect(toggleShowSegmentNumbers).toHaveBeenCalled();
     });
 
     it('ignores a shortcut chorded with Ctrl/Cmd/Alt (e.g. leaves Cmd+/ to the browser)', () => {

@@ -20,6 +20,7 @@ interface UseReaderKeyboardOptions {
   setNoteFocusSignal: (updater: (s: number) => number) => void;
   toggleShowNotes: () => void;
   toggleShowHighlights: () => void;
+  toggleShowSegmentNumbers: () => void;
   cycleTheme: () => void;
 }
 
@@ -47,6 +48,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     setNoteFocusSignal,
     toggleShowNotes,
     toggleShowHighlights,
+    toggleShowSegmentNumbers,
     cycleTheme,
   } = opts;
   // Read through latest refs, since each is rebuilt on every ReaderPage render while this listener
@@ -113,6 +115,9 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
       } else if (isShortcut(e, SHORTCUTS.readerNotesToggle)) {
         e.preventDefault();
         toggleShowNotes();
+      } else if (isShortcut(e, SHORTCUTS.readerSegmentNumbersToggle)) {
+        e.preventDefault();
+        toggleShowSegmentNumbers();
       } else if (isShortcut(e, SHORTCUTS.readerTheme)) {
         e.preventDefault();
         setTab('text');

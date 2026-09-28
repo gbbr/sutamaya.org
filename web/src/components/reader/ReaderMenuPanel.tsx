@@ -207,6 +207,8 @@ export function ReaderMenuPanel({
     toggleShowNotes,
     showHighlights,
     toggleShowHighlights,
+    showSegmentNumbers,
+    toggleShowSegmentNumbers,
   } = useReaderPrefs();
 
   // The Pali position row, scrolled into view when turning Pali on reveals it below the fold.
@@ -590,6 +592,26 @@ export function ReaderMenuPanel({
                 theme={theme}
                 onChange={(id) => {
                   if ((id === 'shown') !== showNotes) toggleShowNotes();
+                }}
+              />
+            </div>
+
+            <div className={settingRow} style={hairline}>
+              <span className="flex items-center gap-1.5">
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Segment numbers
+                </span>
+                {rowKey(SHORTCUTS.readerSegmentNumbersToggle.keys[0])}
+              </span>
+              <Segmented
+                value={showSegmentNumbers ? 'shown' : 'hidden'}
+                options={[
+                  { id: 'hidden', label: 'Hidden' },
+                  { id: 'shown', label: 'Shown' },
+                ]}
+                theme={theme}
+                onChange={(id) => {
+                  if ((id === 'shown') !== showSegmentNumbers) toggleShowSegmentNumbers();
                 }}
               />
             </div>

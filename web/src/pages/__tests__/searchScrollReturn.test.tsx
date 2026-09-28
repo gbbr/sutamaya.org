@@ -151,6 +151,8 @@ describe('a search result opened and closed', () => {
       togglePaliAbove: vi.fn(),
       toggleShowNotes: vi.fn(),
       toggleShowHighlights: vi.fn(),
+      showSegmentNumbers: false,
+      toggleShowSegmentNumbers: vi.fn(),
       revealHighlights: vi.fn(),
       cycleTheme: vi.fn(),
     });

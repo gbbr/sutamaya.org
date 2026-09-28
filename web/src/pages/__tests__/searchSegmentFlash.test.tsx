@@ -14,6 +14,12 @@ vi.mock('../../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
 // LibraryPage reads it only for the Shift+D theme toggle; the real provider isn't mounted here.
 vi.mock('../../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
+// Sharing as the installed apps do, where the Reader has a Share button.
+vi.mock('../../lib/native/share', () => ({
+  canShareLink: () => true,
+  shareLink: vi.fn(async () => {}),
+  shareUrl: (path: string) => `https://app.sutamaya.org${path}`,
+}));
 // The text search's answer to any query: dn1's second and third lines, found in the third's Pali.
 vi.mock('../../lib/search/textClient', () => ({
   subscribeTextSearch: () => () => {},
@@ -45,6 +51,7 @@ import { ReaderPage } from '../ReaderPage';
 import { LibraryPage } from '../LibraryPage';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
 import { tagIntent } from '../../lib/navigation/routeIntent';
+import { shareLink } from '../../lib/native/share';
 import { OPEN_LINES_KEY } from '../../lib/storageKeys';
 import type { Corpus } from '../../lib/types';
 
@@ -186,6 +193,8 @@ describe('the passage a search hit was drawn from', () => {
       togglePaliAbove: vi.fn(),
       toggleShowNotes: vi.fn(),
       toggleShowHighlights: vi.fn(),
+      showSegmentNumbers: false,
+      toggleShowSegmentNumbers: vi.fn(),
       revealHighlights: vi.fn(),
       cycleTheme: vi.fn(),
     });
@@ -586,5 +595,111 @@ describe('the passage a search hit was drawn from', () => {
       vi.advanceTimersByTime(10);
     });
     await waitFor(() => expect(markTexts(container)).toEqual(['king']));
+  });
+
+  describe('picked by its segment number', () => {
+    // A segment's number, as it shows beside its English line.
+    const segmentNumber = (container: HTMLElement, i: number) =>
+      container.querySelector(`[data-seg="${i}"] [data-seg-ignore]`) as HTMLElement | null;
+
+    beforeEach(() => {
+      vi.mocked(useReaderPrefs).mockReturnValue({ ...vi.mocked(useReaderPrefs)(), showSegmentNumbers: true });
+    });
+
+    it('is named in the address, in place of the entry there, and washed where it stands', async () => {
+      const { container, router } = renderRoutes(routes, {
+        pathname: '/read/dn1',
+        state: { from: '/browse/dn/dn1', fromView: 'list' },
+      });
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      // Whether the jump to a passage measured this one, as it does to scroll it into view.
+      let measured = false;
+      const measure = Element.prototype.getBoundingClientRect;
+      vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+        if (this === document.querySelector('[data-seg="2"]')?.parentElement) measured = true;
+        return measure.call(this);
+      });
+
+      fireEvent.click(segmentNumber(container, 2)!);
+
+      await waitFor(() => expect(washed(container)).toEqual([2]));
+      expect(router.state.location.pathname + router.state.location.search).toBe('/read/dn1?at=1.3');
+      expect(router.state.historyAction).toBe('REPLACE');
+      expect(router.state.location.state).toMatchObject({ from: '/browse/dn/dn1', fromView: 'list' });
+      expect(measured).toBe(false);
+      // The tap names the line, and leaves its Pali as it was.
+      expect(paliLine(container, 2)).toBeNull();
+    });
+
+    it('keeps its open Pali still as the wash wraps it', async () => {
+      const { container } = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      fireEvent.click(container.querySelector('[data-seg="2"]')!);
+
+      fireEvent.click(segmentNumber(container, 2)!);
+
+      await waitFor(() => expect(washed(container)).toEqual([2]));
+      expect(paliLine(container, 2)!.classList).not.toContain('animate-fadeUp');
+    });
+
+    // In the installed apps, which have no address bar to copy it from.
+    it('is what the Share button shares', async () => {
+      const { container } = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      fireEvent.click(segmentNumber(container, 2)!);
+      await waitFor(() => expect(washed(container)).toEqual([2]));
+
+      fireEvent.click(screen.getByTitle('Share'));
+
+      expect(shareLink).toHaveBeenCalledWith('https://app.sutamaya.org/read/dn1?at=1.3');
+    });
+
+    it('names a second number tapped, which lifts the first one’s wash', async () => {
+      const { container, router } = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      fireEvent.click(segmentNumber(container, 2)!);
+      await waitFor(() => expect(washed(container)).toEqual([2]));
+
+      fireEvent.click(segmentNumber(container, 0)!);
+      await act(async () => {
+        vi.advanceTimersByTime(10);
+      });
+
+      expect(router.state.location.search).toBe('?at=1.1');
+      expect(washed(container)).toEqual([0]);
+    });
+
+    it('is washed again by another tap on the same number', async () => {
+      const { container } = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      fireEvent.click(segmentNumber(container, 2)!);
+      await waitFor(() => expect(washed(container)).toEqual([2]));
+      const first = container.querySelector('[data-wash-block]');
+
+      fireEvent.click(segmentNumber(container, 2)!);
+      await act(async () => {
+        vi.advanceTimersByTime(10);
+      });
+
+      await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBe(first));
+      expect(washed(container)).toEqual([2]);
+    });
+
+    // At 18px the column is 612px wide, so the margin holds a number from a pane of 612 + 2 × 96.
+    it('hangs in the margin where the pane leaves room, and leads its line where it doesn’t', async () => {
+      let paneWidth = 804;
+      vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockImplementation(function (this: HTMLElement) {
+        return this.classList.contains('sc') ? paneWidth : 0;
+      });
+      const wide = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      expect(segmentNumber(wide.container, 2)!.style.position).toBe('absolute');
+      wide.unmount();
+
+      paneWidth = 803;
+      const narrow = renderRoutes(routes, '/read/dn1');
+      await screen.findByText('They spoke in dispraise of the Buddha');
+      expect(segmentNumber(narrow.container, 2)!.style.position).toBe('');
+    });
   });
 });
