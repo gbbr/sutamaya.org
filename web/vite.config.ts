@@ -133,6 +133,15 @@ export default defineConfig({
           { src: 'icons/icon-512-v2.png', sizes: '512x512', type: 'image/png' },
           { src: 'icons/icon-512-maskable-v2.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
+        // The Google Play app, which Chrome offers in place of installing the web app.
+        related_applications: [
+          {
+            platform: 'play',
+            url: 'https://play.google.com/store/apps/details?id=org.sutamaya.app',
+            id: 'org.sutamaya.app',
+          },
+        ],
+        prefer_related_applications: true,
       },
       workbox: {
         // The corpus index (corpus.json, under 1 MB) is precached with the app shell so browsing

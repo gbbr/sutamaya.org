@@ -2,7 +2,9 @@
 
 `web/` is a single-page React app in TypeScript, styled with Tailwind, built with Vite and routed
 with React Router. It installs as a PWA, and the native apps wrap the same build
-([native-apps.md](native-apps.md)).
+([native-apps.md](native-apps.md)). Browsers are pointed to the store apps instead: Safari shows the
+App Store's banner, and the manifest prefers the Google Play app, so Chrome offers that on Android
+and no install at all on a computer.
 
 ## The screens
 
