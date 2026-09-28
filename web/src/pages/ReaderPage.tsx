@@ -342,8 +342,6 @@ export function ReaderPage() {
     scrollToSegment(subRange[0], 'start', undefined, behavior);
   }, [subRange, holdingPlace, segments, scrollToSegment, arrivalId]);
 
-  // Whether the words a search hit was found by are still marked.
-  const [marking, setMarking] = useState(false);
   // The segment a search hit lands the reader on, scrolled to once the Pali it opens is showing: at
   // once on a sutta just arrived, gliding within one already open.
   const [landing, setLanding] = useState<{ seg: number; behavior: 'smooth' | 'instant' }>();
@@ -353,12 +351,17 @@ export function ReaderPage() {
   // that same render: a Prev/Next step lands on text that is often already fetched, and a range held
   // a commit longer paints over it.
   const washRange = holdingPlace ? undefined : searchSegments ?? subRange;
+  // The arrival wash's identity, new with each arrival, even at the same passage.
+  const washKey = washRange && `${arrivalId}:${washRange.join('-')}`;
+  // The wash the reader's tap lifted, with the words it marked.
+  const [liftedWash, setLiftedWash] = useState<string>();
+  const washLifted = !washKey || washKey === liftedWash;
 
   // The words a search hit was found by, marked in the passage it lands on as its row marked them:
   // in each line's English, and in the Pali of the lines whose Pali it matched. Found in the lines
   // as displayed, by segment index. Derived like washRange, for the same reason.
   const searchMarks = useMemo(() => {
-    if (!marking || !searchMarkedBy || !searchSegments || !segments) return undefined;
+    if (washLifted || !searchMarkedBy || !searchSegments || !segments) return undefined;
     const { queries, anywhere } = searchMarkedBy;
     const [first, last] = searchSegments;
     const marks = new Map<number, SegmentMarks>();
@@ -368,37 +371,36 @@ export function ReaderPage() {
       if (en.length || pa.length) marks.set(i, { en, pa });
     }
     return marks;
-  }, [marking, searchMarkedBy, searchSegments, searchPali, segments]);
+  }, [washLifted, searchMarkedBy, searchSegments, searchPali, segments]);
 
   // Lands on the passage the arrival names once the text shows, so the line the reader picked out of
-  // the results or followed a link to is what they see: marks the words a search hit was found by,
-  // and opens the Pali of the lines a hit in the Pali matched. Before paint, as the scroll below is.
+  // the results or followed a link to is what they see, and opens the Pali of the lines a hit in the
+  // Pali matched. Before paint, as the scroll below is.
   useLayoutEffect(() => {
     if (!searchSegments || !segments || holdingPlace) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
     setLanding({ seg: searchSegments[0], behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
-    setMarking(true);
   }, [searchSegments, searchPali, segments, holdingPlace]);
 
-  // Ends the marks on the reader's next click or tap, anywhere, as a found word stays marked in an
-  // e-reader until the page is touched: once that click has been handled, since ending them
-  // replaces the word it landed on, and not if the click lands the reader on new marks or finishes
-  // a selection, whose text ending them would replace too. Capture phase, so a control that stops
-  // the click still ends them, and the click that opened the hit, dispatched before this listens,
-  // never does.
+  // Lifts the wash and its marks on the reader's next click or tap, anywhere, as a found word stays
+  // marked in an e-reader until the page is touched: once that click has been handled, since ending
+  // the marks replaces the word it landed on, and not if the click lands the reader on a new arrival
+  // or finishes a selection, whose text ending them would replace too. Capture phase, so a control
+  // that stops the click still lifts it, and the click that made the arrival, dispatched before this
+  // listens, never does.
   useEffect(() => {
-    if (!searchMarks) return;
+    if (washLifted) return;
     let timer: number | undefined;
-    const stop = () => {
+    const lift = () => {
       if (String(window.getSelection())) return;
-      timer = window.setTimeout(() => setMarking(false));
+      timer = window.setTimeout(() => setLiftedWash(washKey));
     };
-    window.addEventListener('click', stop, { capture: true });
+    window.addEventListener('click', lift, { capture: true });
     return () => {
-      window.removeEventListener('click', stop, { capture: true });
+      window.removeEventListener('click', lift, { capture: true });
       window.clearTimeout(timer);
     };
-  }, [searchMarks]);
+  }, [washLifted, washKey]);
 
   // Scrolls to the passage the arrival lands on, before it paints. Centred rather than at the top: a
   // snippet is a fragment, and the passage around it is what makes it read as an answer.
@@ -999,6 +1001,7 @@ export function ReaderPage() {
               onNoteLinkPress={onNoteLinkPress}
               activeWord={activeWord}
               washRange={washRange}
+              washLifted={washLifted}
               washId={arrivalId}
               marks={searchMarks}
             />

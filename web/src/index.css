@@ -737,20 +737,11 @@ textarea {
   }
 }
 
-/* The reader's arrival wash: held long enough for the eye to find the passage, then faded out. */
+/* The reader's arrival wash, faded out as the reader's tap lifts it. */
 .arrival-wash {
-  animation: arrival-wash-fade 600ms ease-out 1600ms forwards;
-}
-@keyframes arrival-wash-fade {
-  to {
-    background-color: transparent;
-    box-shadow: 0 0 0 100vmax transparent;
-  }
-}
-/* Paused while the page is hidden (main.tsx), so a sutta opened in a background tab keeps its wash
-   for when the reader turns to it. */
-[data-hidden] .arrival-wash {
-  animation-play-state: paused;
+  transition:
+    background-color 300ms ease-out,
+    box-shadow 300ms ease-out;
 }
 
 /* A loading message hidden for the first 150ms of a wait: a shorter one reads as a stutter rather
@@ -764,8 +755,8 @@ textarea {
   }
 }
 
-/* Settings' arrival flash on the section it was opened at: outlined and tinted in the accent for as
-   long as the reader's wash holds, then faded back to the card's own border and fill. */
+/* Settings' arrival flash on the section it was opened at: outlined and tinted in the accent for a
+   moment, then faded back to the card's own border and fill. */
 .arrival-flash-card {
   animation: arrival-flash-card 2800ms ease-out;
 }
