@@ -19,6 +19,8 @@ export interface ReaderPrefs {
   showNotes: boolean;
   // Paint the reader's highlights over the text.
   showHighlights: boolean;
+  // Show each segment's number, the part of its key after the colon, for citing it.
+  showSegmentNumbers: boolean;
 }
 
 interface ReaderPrefsState extends ReaderPrefs {
@@ -33,6 +35,7 @@ interface ReaderPrefsState extends ReaderPrefs {
   togglePaliAbove: () => void;
   toggleShowNotes: () => void;
   toggleShowHighlights: () => void;
+  toggleShowSegmentNumbers: () => void;
   // Turns highlights on, whatever the current setting.
   revealHighlights: () => void;
 }
@@ -55,6 +58,7 @@ const DEFAULTS: ReaderPrefs = {
   paliAbove: false,
   showNotes: false,
   showHighlights: true,
+  showSegmentNumbers: false,
 };
 
 const ReaderPrefsContext = createContext<ReaderPrefsState | null>(null);
@@ -80,6 +84,7 @@ export function ReaderPrefsProvider({ children }: { children: ReactNode }) {
       togglePaliAbove: () => setPrefs((p) => ({ ...p, paliAbove: !p.paliAbove })),
       toggleShowNotes: () => setPrefs((p) => ({ ...p, showNotes: !p.showNotes })),
       toggleShowHighlights: () => setPrefs((p) => ({ ...p, showHighlights: !p.showHighlights })),
+      toggleShowSegmentNumbers: () => setPrefs((p) => ({ ...p, showSegmentNumbers: !p.showSegmentNumbers })),
       revealHighlights: () => setPrefs((p) => (p.showHighlights ? p : { ...p, showHighlights: true })),
     }),
     [prefs, resolvedTheme, setTheme, cycleTheme, setPrefs]

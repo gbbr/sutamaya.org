@@ -50,6 +50,7 @@ export const SHORTCUTS = {
   readerTheme: { match: ['t'], keys: ['T'], label: 'Open the appearance panel', scope: 'reader' },
   readerThemeCycle: { match: ['d'], keys: ['⇧D'], label: 'Light / sepia / dark', scope: 'reader', shift: true },
   readerNotesToggle: { match: ['c'], keys: ['C'], label: 'Toggle translator notes', scope: 'reader' },
+  readerSegmentNumbersToggle: { match: ['s'], keys: ['⇧S'], label: 'Show / hide segment numbers', scope: 'reader', shift: true },
   readerHelp: { match: ['?'], keys: ['?'], label: 'Show keyboard shortcuts', scope: 'reader' },
 } satisfies Record<string, Shortcut>;
 

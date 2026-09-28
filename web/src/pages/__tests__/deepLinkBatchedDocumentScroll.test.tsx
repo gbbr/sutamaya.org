@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { act, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
 import { tagIntent } from '../../lib/navigation/routeIntent';
 
@@ -138,6 +138,8 @@ describe('reader deep links into a batched document', () => {
       togglePaliAbove: vi.fn(),
       toggleShowNotes: vi.fn(),
       toggleShowHighlights: vi.fn(),
+      showSegmentNumbers: false,
+      toggleShowSegmentNumbers: vi.fn(),
       revealHighlights: vi.fn(),
       cycleTheme: vi.fn(),
     });
@@ -185,6 +187,15 @@ describe('reader deep links into a batched document', () => {
 
     await waitFor(() => expect(container.querySelector('[data-wash-block]')).not.toBe(first));
     await waitFor(() => expect(scrollBox.scrollTop).not.toBe(900));
+  });
+
+  it('names a tapped segment number’s line under its inner sutta', async () => {
+    vi.mocked(useReaderPrefs).mockReturnValue({ ...vi.mocked(useReaderPrefs)(), showSegmentNumbers: true });
+    const { router, container } = renderReaderAt('/read/dhp1-20');
+    await screen.findByText('As a well-roofed house');
+
+    fireEvent.click(container.querySelector('[data-seg="1"] [data-seg-ignore]')!);
+    await waitFor(() => expect(router.state.location.pathname + router.state.location.search).toBe('/read/dhp14?at=1'));
   });
 
   it('opens a capitalized deep link, and rewrites the URL to the canonical id', async () => {

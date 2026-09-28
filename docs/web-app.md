@@ -15,6 +15,12 @@ a setting), and a dictionary on every Pali word. The reader can highlight text i
 write a note, and file the sutta into lists. A side panel holds the sutta's highlights, its lists,
 and the display settings: theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
 
+**Segment numbers** — SuttaCentral's line references, `15.4` in `SN 46.53:15.4` — are a setting,
+off by default, for citing a line. They hang in the left margin where the reading pane, measured
+inside a landscape phone's safe area, leaves room for the widest, and otherwise lead their line, so
+they never narrow the text. They are never selectable, so copied text leaves them out. Tapping one
+names its line in the address.
+
 **Settings** holds the account — sign-in, sync status, export and deletion — the offline download
 and the app's own display settings. The theme is one setting, changed from either place; sepia
 tints only the Reader, and the rest of the app shows it as light. **Help** is a page of annotated screenshots.
@@ -29,7 +35,7 @@ One provider per concern wraps every page:
 | Corpus | the browse tree and the sutta index (`corpus.json`) |
 | UserData | lists, notes, highlights and visits — a view over the offline mirror ([offline-sync.md](offline-sync.md)) |
 | UiPrefs | the theme, one for the whole app, and the UI scale |
-| ReaderPrefs | the Reader's typeface, size, spacing and Pali display |
+| ReaderPrefs | the Reader's typeface, size, spacing, Pali display and segment numbers |
 | Layout | the window width, phone or not, the pane widths |
 
 Pages fetch what they need themselves. `lib/` holds the logic with no React in it, `hooks/` the
@@ -53,6 +59,9 @@ behaviour components share, and `components/` the pieces the pages are built fro
   once. The address names the lines as well, by segment key — `/read/sn46.53?at=15.4` — so a copied
   address, or a link opened anywhere else, lands there too. Lines in a batch are named under the
   inner sutta they belong to: `/read/dhp274?at=4`, not `/read/dhp273-289`.
+- **A tapped segment number replaces the address** with its line's, adding no step to the history.
+  The line is washed where it stands, as an arrival washes it, but not scrolled to. The installed
+  apps have no address bar, so their Share button shares the line the address names.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search, or from a link in a translator's note, is a step

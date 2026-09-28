@@ -27,6 +27,7 @@ function baseProps(segments: SegmentFile[], overrides: Partial<Parameters<typeof
     onNoteLink: vi.fn(),
     onNoteLinkPress: vi.fn(),
     activeWord: null,
+    onSegmentNumber: vi.fn(),
     ...overrides,
   };
 }
@@ -393,5 +394,69 @@ describe('SegmentedText — the words an arriving search hit marks', () => {
     expect(inHighlight.style.background).toContain('color-mix');
     inHighlight.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     expect(onSpanClick).toHaveBeenCalledWith('h1', expect.anything(), highlight.c);
+  });
+});
+
+describe('SegmentedText — segment numbers', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn10:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard.' },
+    { key: 'mn10:1.2', pali: 'Ekaṁ samayaṁ', en: 'At one time,', role: 'verse' },
+  ];
+  // A segment's number, as it shows beside its English line.
+  const segmentNumber = (container: HTMLElement, i: number) =>
+    container.querySelector(`[data-seg="${i}"] [data-seg-ignore]`) as HTMLElement | null;
+
+  it('shows none while they are off', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {} })} />);
+    expect(segmentNumber(container, 0)).toBeNull();
+  });
+
+  // Outside `seg.en`, so a highlight's offsets and copied text leave it out.
+  it('shows each segment’s number, the part of its key after the colon, apart from its text', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, segmentNumbers: 'inline' })} />);
+    expect(segmentNumber(container, 0)!.textContent).toBe('1.1');
+    expect(segmentNumber(container, 0)!.style.userSelect).toBe('none');
+  });
+
+  it('hands a tapped number to the reader, and leaves the Pali closed', () => {
+    const onSegmentNumber = vi.fn();
+    const onToggleSeg = vi.fn();
+    const { container } = render(
+      <SegmentedText {...baseProps(segments, { openSegs: {}, segmentNumbers: 'inline', onSegmentNumber, onToggleSeg })} />
+    );
+    fireEvent.click(segmentNumber(container, 1)!);
+    expect(onSegmentNumber).toHaveBeenCalledWith(1);
+    expect(onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it('hangs a verse’s number in the margin past its rule, and a prose line’s beside the text', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, segmentNumbers: 'margin' })} />);
+    expect(segmentNumber(container, 0)!.style.right).toBe('calc(100% + 14px)');
+    expect(segmentNumber(container, 1)!.style.right).toBe('calc(100% + 30px)');
+  });
+
+  it('goes with the Pali when the Pali leads', () => {
+    const { container } = render(
+      <SegmentedText {...baseProps(segments, { allPali: true, paliAbove: true, segmentNumbers: 'inline' })} />
+    );
+    expect(container.querySelector('[data-reveal="pali"][data-reveal-seg="0"] [data-seg-ignore]')?.textContent).toBe('1.1');
+    expect(segmentNumber(container, 0)).toBeNull();
+  });
+});
+
+describe('SegmentedText — a Pali line opening', () => {
+  const segments: SegmentFile[] = [{ key: 'mn10:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard.' }];
+  const paliLine = (container: HTMLElement) => container.querySelector('[data-reveal="pali"]')!;
+
+  it('fades in as it opens', () => {
+    const { container, rerender } = render(<SegmentedText {...baseProps(segments, { openSegs: {} })} />);
+    rerender(<SegmentedText {...baseProps(segments, { openSegs: { 0: true } })} />);
+    expect(paliLine(container).classList).toContain('animate-fadeUp');
+  });
+
+  // A row the arrival wash wraps is mounted afresh, with its Pali already open.
+  it('just shows on a row that mounts with it open', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: { 0: true } })} />);
+    expect(paliLine(container).classList).not.toContain('animate-fadeUp');
   });
 });

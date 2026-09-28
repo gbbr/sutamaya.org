@@ -22,7 +22,7 @@ import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
 import { setReaderThemeColor } from '../lib/ui/themeColor';
 import { shortcutsForScope } from '../lib/shortcuts';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
-import { passageFromSearch, type Passage } from '../lib/navigation/passageLink';
+import { passageFromSearch, readLink, type Passage } from '../lib/navigation/passageLink';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn } from '../lib/navigation/entryKind';
 import { getUiScale } from '../lib/ui/uiPrefs';
@@ -35,7 +35,7 @@ import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
 import type { SearchHit } from '../lib/search/metadata';
 import { marksOf } from '../lib/search/text';
-import { SegmentedText, type SegmentMarks } from '../components/reader/SegmentedText';
+import { SegmentedText, type SegmentNumberPlacement, type SegmentMarks } from '../components/reader/SegmentedText';
 import { HighlightPopup } from '../components/reader/HighlightPopup';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
 import { DictionaryDock } from '../components/reader/DictionaryDock';
@@ -64,13 +64,18 @@ const ShareIcon = platformName() === 'android' ? Share2 : Share;
 // breadcrumb and at the foot of the sutta.
 const searchRunLabel = (query: string) => `Results for: “${query}”`;
 
+// Width of the left margin a hanging segment number needs: the widest, beside a verse's rule, with
+// room to spare at the pane's edge.
+const SEGMENT_NUMBER_MARGIN = 96;
+
 // The highlights SegmentedText gets while they are hidden: none, and a stable identity so the
 // segments don't re-render.
 const NO_HIGHLIGHTS: Highlight[] = [];
 
 // Where a search hit or a link lands the reader: the keys of the segments it opens at, and of those
-// whose Pali it opens, and what its words were marked by.
-type SearchArrival = Partial<Passage>;
+// whose Pali it opens, and what its words were marked by. `inPlace` marks a segment picked by its
+// number, which is washed where it stands rather than scrolled to.
+type SearchArrival = Partial<Passage> & { inPlace?: boolean };
 
 // arrivalOf returns the arrival a navigation carries: in router state, from a click within the app,
 // else in the address, from a link opened in a new tab or anywhere else (lib/navigation/passageLink.ts)
@@ -127,6 +132,8 @@ export function ReaderPage() {
     toggleShowNotes,
     showHighlights,
     toggleShowHighlights,
+    showSegmentNumbers,
+    toggleShowSegmentNumbers,
     revealHighlights,
     cycleTheme,
   } = useReaderPrefs();
@@ -151,6 +158,7 @@ export function ReaderPage() {
       segments: intent?.segments,
       paliSegments: intent?.paliSegments,
       markedBy: intent?.markedBy,
+      inPlace: intent?.inPlace,
     };
   }
   // This navigation's arrival id, when it carries one.
@@ -275,6 +283,18 @@ export function ReaderPage() {
     if (suttaId) keepOpenLines(suttaId, { pali: allPali ? {} : openSegs, notes: showNotes ? openNotes : {} });
   }, [suttaId, openSegs, openNotes, allPali, showNotes]);
 
+  // The reading pane's width, its padding in and its scroll bar out, while segment numbers show.
+  const [paneWidth, setPaneWidth] = useState<number>();
+  useLayoutEffect(() => {
+    const pane = scrollRef.current;
+    if (!showSegmentNumbers || !pane) return;
+    const measure = () => setPaneWidth(pane.clientWidth);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(pane);
+    return () => observer.disconnect();
+  }, [showSegmentNumbers, scrollRef, suttaId]);
+
   // The reading takes focus as each sutta arrives, so Space, Page Down and the arrow keys scroll it
   // without a click first, as they do on any page a browser loads.
   useEffect(() => {
@@ -379,6 +399,7 @@ export function ReaderPage() {
   useLayoutEffect(() => {
     if (!searchSegments || !segments || holdingPlace) return;
     if (searchPali) setOpenSegs((s) => ({ ...s, ...Object.fromEntries(searchPali.map((i) => [i, true])) }));
+    if (arrivalRef.current.inPlace) return;
     setLanding({ seg: searchSegments[0], behavior: segments === shownSegmentsRef.current ? 'smooth' : 'instant' });
   }, [searchSegments, searchPali, segments, holdingPlace]);
 
@@ -579,6 +600,24 @@ export function ReaderPage() {
     },
     [corpus]
   );
+  // Names the segment whose number was tapped in the address, replacing the history entry, and washes
+  // it where it stands, as a link to it washes it on arrival.
+  const segmentNumberRef = useLatest((i: number) => {
+    const key = segments?.[i]?.key;
+    if (!key || !suttaId) return;
+    navigate(readLink(suttaId, { segments: [key, key] }), {
+      replace: true,
+      // Keeps where the reader was opened from, and drops whatever an earlier arrival carried.
+      state: tagIntent({
+        ...(location.state as object | null),
+        segments: [key, key],
+        paliSegments: undefined,
+        markedBy: undefined,
+        inPlace: true,
+      }),
+    });
+  });
+  const onSegmentNumber = useCallback((i: number) => segmentNumberRef.current(i), [segmentNumberRef]);
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
   // is clipped. `scrollIntoView({ block: 'nearest' })` by hand, since that isn't aware of the CSS
@@ -653,6 +692,7 @@ export function ReaderPage() {
     setNoteFocusSignal,
     toggleShowNotes,
     toggleShowHighlights,
+    toggleShowSegmentNumbers,
     cycleTheme,
   });
 
@@ -674,6 +714,13 @@ export function ReaderPage() {
 
   const faceFamily = READER_FACES[face];
   const measureWidth = fs * 34;
+  // Where segment numbers show: hanging in the margin where the column leaves room for them, else at
+  // the start of each line, so they never narrow the text.
+  const segmentNumbers: SegmentNumberPlacement | undefined = !showSegmentNumbers
+    ? undefined
+    : paneWidth !== undefined && (paneWidth - measureWidth) / 2 >= SEGMENT_NUMBER_MARGIN
+      ? 'margin'
+      : 'inline';
   // The note that the text is still loading.
   const loadingNote = (
     <div className="delayed-appear flex items-center gap-[9px] font-sans text-ui-base" style={{ color: theme.dim }}>
@@ -767,7 +814,9 @@ export function ReaderPage() {
               title="Share"
               onClick={(e) => {
                 e.stopPropagation();
-                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}`)).catch(() => {});
+                // The segment the address names, when a tapped segment number or a link put one there.
+                const at = new URLSearchParams(location.search).get('at');
+                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}${at ? `?at=${at}` : ''}`)).catch(() => {});
               }}
             >
               <ShareIcon size={19} strokeWidth={1.75} />
@@ -1004,6 +1053,8 @@ export function ReaderPage() {
               washLifted={washLifted}
               washId={arrivalId}
               marks={searchMarks}
+              segmentNumbers={segmentNumbers}
+              onSegmentNumber={onSegmentNumber}
             />
           ) : (
             !holdingPlace && textErrorNotice
