@@ -16,6 +16,9 @@ export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
 export const READER_PANEL_TAB_KEY = 'sutamaya.readerPanelTab';
 // The Pali lines and notes left open in each sutta (see lib/reader/openLines.ts).
 export const OPEN_LINES_KEY = 'sutamaya.openLines';
+// The scroll offset each history entry was left at for another line of its sutta, in
+// sessionStorage (see lib/reader/stepPlaces.ts).
+export const STEP_PLACES_KEY = 'sutamaya.stepPlaces';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
 // The reader's recent searches, newest first (see lib/search/recentSearches.ts).

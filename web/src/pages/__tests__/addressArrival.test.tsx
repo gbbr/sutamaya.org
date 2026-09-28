@@ -1,16 +1,17 @@
 import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, screen, within } from '@testing-library/react';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
 import { RouterView } from '../../components/RouterView';
 
 // Covers an address opened in the browser — typed, pasted or followed from another site — naming
-// the collection the library was last left on.
+// the collection the library was last left on, or a sutta read before.
 
 vi.mock('../../context/CorpusContext', () => ({ useCorpus: vi.fn() }));
 vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 vi.mock('../../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
+vi.mock('../../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
 vi.mock('../../lib/navigation/entryKind', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../../lib/navigation/entryKind')>()),
   takeAddressArrival: vi.fn(() => true),
@@ -20,8 +21,10 @@ import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useAuth } from '../../context/AuthContext';
 import { useLayout } from '../../context/LayoutContext';
+import { useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { takeAddressArrival } from '../../lib/navigation/entryKind';
 import { LibraryPage } from '../LibraryPage';
+import { ReaderPage } from '../ReaderPage';
 import { TREE_EXPANDED_KEY } from '../../lib/storageKeys';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
 import type { Corpus } from '../../lib/types';
@@ -192,5 +195,65 @@ describe('an address naming the collection last browsed', () => {
     mockUserData(true);
     rerender(<RouterView router={router} />);
     expect(container.querySelector<HTMLElement>('[data-component="TreePane"] .sc')!.scrollTop).toBe(432);
+  });
+});
+
+describe('an address naming a sutta read before', () => {
+  // Opens DN 1, the page having loaded as `addressArrival` says, and returns its reading pane.
+  async function openDn1(addressArrival: boolean) {
+    vi.mocked(takeAddressArrival).mockReturnValue(addressArrival);
+    const view = renderRoutes([{ path: '/read/:suttaId', element: <ReaderPage /> }], '/read/dn1');
+    await screen.findByText('So I have heard.');
+    return { ...view, pane: view.container.querySelector<HTMLElement>('[data-component="ReaderPage"] .sc')! };
+  }
+
+  beforeEach(async () => {
+    // DN 1's text; nothing else the Reader asks for arrives.
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url: string) =>
+        url.includes('dn1.json')
+          ? Promise.resolve({ ok: true, json: async () => [{ key: 'dn1:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard.' }] })
+          : new Promise(() => {})
+      )
+    );
+    vi.mocked(useReaderPrefs).mockReturnValue({
+      resolvedTheme: 'light',
+      fs: 18,
+      lh: 165,
+      face: 'serif',
+      allPali: false,
+      paliAbove: false,
+      showNotes: true,
+      showHighlights: true,
+      setTheme: vi.fn(),
+      setFs: vi.fn(),
+      setLh: vi.fn(),
+      setFace: vi.fn(),
+      toggleAllPali: vi.fn(),
+      togglePaliAbove: vi.fn(),
+      toggleShowNotes: vi.fn(),
+      toggleShowHighlights: vi.fn(),
+      showSegmentNumbers: false,
+      toggleShowSegmentNumbers: vi.fn(),
+      revealHighlights: vi.fn(),
+      cycleTheme: vi.fn(),
+    });
+
+    // Read 900px down on an earlier visit, and left there.
+    const earlier = await openDn1(false);
+    earlier.pane.scrollTop = 900;
+    earlier.pane.dispatchEvent(new Event('scroll'));
+    earlier.unmount();
+  });
+
+  it('opens it at the top', async () => {
+    const { pane } = await openDn1(true);
+    expect(pane.scrollTop).toBe(0);
+  });
+
+  it('opens it where it was left on a refresh', async () => {
+    const { pane } = await openDn1(false);
+    await waitFor(() => expect(pane.scrollTop).toBe(900));
   });
 });

@@ -4,10 +4,10 @@ import { NavigationType } from 'react-router';
 // whether to resume a scroll position or open at the top, and the library tree whether to reveal
 // the node an address names.
 //
-// A return is the reader coming back somewhere they already were: back or forward, a refresh, a
-// bookmarked load, the app relaunching into its last location. A fresh entry is them choosing this
-// destination now — a library row, a search hit, Prev/Next — which opens at the top, the way
-// following a link does. The library panes never ask about their scroll: a group or list opens at
+// A return is the reader coming back somewhere they already were: back or forward, a refresh, the
+// app relaunching into its last location. A fresh entry is them choosing this destination now — a
+// library row, a search hit, Prev/Next, an address opened in the browser — which opens at the top,
+// the way following a link does. The library panes never ask about their scroll: a group or list opens at
 // the top when picked there, and restores otherwise.
 
 /**
@@ -19,7 +19,8 @@ export const RETURN_STATE = { returning: true } as const;
 
 /**
  * Whether the location on screen was arrived at by return, from the router's navigation type and
- * the state the location carries. A page load is a POP, so it counts as one.
+ * the state the location carries. A page load is a POP, so it counts as one, an address opened in
+ * the browser included: takeAddressArrival tells that apart.
  */
 export function enteredByReturn(navigationType: NavigationType, state: unknown): boolean {
   return navigationType === NavigationType.Pop || (state as { returning?: boolean } | null)?.returning === true;

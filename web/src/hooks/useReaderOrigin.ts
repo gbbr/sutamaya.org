@@ -73,9 +73,10 @@ export function useReaderOrigin(
   // Opens a hit from the reader's own search, or a link in a translator's note, leaving the library
   // search's run behind. `passage` is where the reader opens: the segments a hit's snippet was drawn
   // from or a link names, those whose Pali shows open, and what its words were marked by. `leaving`
-  // is the sutta a jump to another one leaves, which becomes the way back: each such jump is a step
-  // in the history. A jump onto the sutta the way back leads to is that way back, returning to it
-  // where the reader left it — unless the jump names a passage there to open instead.
+  // is the sutta the jump leaves, which becomes the way back: each jump is a step in the history,
+  // one to another line of the same sutta included. A jump onto the sutta the way back leads to is
+  // that way back, returning to it where the reader left it — unless the jump names a passage there
+  // to open instead.
   function jumpTo(
     nextSuttaId: string,
     passage?: Passage,

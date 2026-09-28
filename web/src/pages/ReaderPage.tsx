@@ -24,13 +24,14 @@ import { shortcutsForScope } from '../lib/shortcuts';
 import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/routeIntent';
 import { passageFromSearch, readLink, type Passage } from '../lib/navigation/passageLink';
 import { READER_INTENT_KEY } from '../lib/storageKeys';
-import { enteredByReturn } from '../lib/navigation/entryKind';
+import { enteredByReturn, takeAddressArrival } from '../lib/navigation/entryKind';
 import { getUiScale } from '../lib/ui/uiPrefs';
 import type { Highlight } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/ui/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/reader/readerPanelTab';
 import { keepOpenLines, keptOpenLines } from '../lib/reader/openLines';
+import { keepStepPlace, stepPlace } from '../lib/reader/stepPlaces';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
 import type { SearchHit } from '../lib/search/metadata';
@@ -195,15 +196,17 @@ export function ReaderPage() {
   //            scrolls to itself
   //   stored – where the reader left it, on a return: back or forward, a refresh, a relaunch
   //            (lib/navigation/entryKind.ts)
-  //   top    – otherwise
+  //   top    – otherwise, an address opened in the browser included
   const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
   if (restoreRef.current.id !== suttaId) {
+    // Taken on every opening, placed ones too, so the page load's is the one that answers.
+    const addressArrival = takeAddressArrival(location.key);
     restoreRef.current = {
       id: suttaId,
       restore:
         requestedSubUid || arrivalKeys !== undefined
           ? 'placed'
-          : enteredByReturn(navigationType, location.state)
+          : enteredByReturn(navigationType, location.state) && !addressArrival
             ? 'stored'
             : 'top',
     };
@@ -513,8 +516,8 @@ export function ReaderPage() {
 
   // The measure column the step animation runs on, inside the scrolling pane.
   const articleRef = useRef<HTMLDivElement>(null);
-  // The sutta a Prev/Next step is heading to and the direction it travels, consumed once by the
-  // render that lands on it.
+  // The sutta a step by the Reader's own controls is heading to — Prev/Next, a jump or back — and the
+  // direction it travels, consumed once by the render that lands on it.
   const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
 
   // Steps one sutta forward or back, carrying the reader's origin along (turnTo).
@@ -550,6 +553,19 @@ export function ReaderPage() {
     if (to && to.id === suttaId) animateStep(el, to.dir);
   }, [suttaId]);
 
+  // Returns the reader to where they left an entry of the sutta on screen (openFromReader), on a Back
+  // or Forward to it: gliding for the Reader's own back, as the step out glided, and at once for the
+  // browser's (docs/web-app.md's "Screen transitions").
+  useLayoutEffect(() => {
+    const el = scrollRef.current;
+    const top = navigationType === NavigationType.Pop ? stepPlace(location.key) : undefined;
+    if (!el || top === undefined || !segments || segments !== shownSegmentsRef.current) return;
+    const glide = enterOnArrival.current?.id === suttaId;
+    enterOnArrival.current = null;
+    if (glide) animateScrollTop(el, top);
+    else jumpScrollBy(el, top - el.scrollTop);
+  }, [location.key]);
+
   // Scrolls to a highlight, closing the panel and turning highlights back on if they were hidden.
   function jumpToHighlight(segIndex: number, highlightId?: string) {
     setPanel(false);
@@ -562,7 +578,8 @@ export function ReaderPage() {
   }
 
   // The header's back arrow, and where Escape and the native apps' Back end up: back one jump while
-  // there is a way back, arriving from the left as Prev does; otherwise out of the reader.
+  // there is a way back, arriving from the left as Prev does, or gliding back within the sutta on
+  // screen; otherwise out of the reader.
   function backOrClose() {
     if (!backTo) {
       closeReader();
@@ -572,13 +589,19 @@ export function ReaderPage() {
     goBack();
   }
 
-  // Opens sutta `id` at `passage` from within the Reader: another sutta arrives from the right as
-  // Next does, a detour with the way back to this one; a passage of the one open only scrolls it.
+  // Opens sutta `id` at `passage` from within the Reader, a step with the way back to where the
+  // reader is: another sutta arrives from the right as Next does; a line of the one open is glided
+  // to, the place it leaves kept for the way back (lib/reader/stepPlaces.ts).
   function openFromReader(id: string, passage?: Passage) {
     const target = corpus ? resolveCanonicalSuttaId(corpus, id) : id;
-    const elsewhere = target !== suttaId;
-    if (elsewhere) enterOnArrival.current = { id: target, dir: 1 };
-    jumpTo(id, passage, elsewhere ? suttaId : undefined);
+    if (target !== suttaId) {
+      enterOnArrival.current = { id: target, dir: 1 };
+    } else {
+      // Nowhere to go: the sutta on screen, named without a line of it.
+      if (!passage && id === target) return;
+      if (scrollRef.current) keepStepPlace(location.key, scrollRef.current.scrollTop);
+    }
+    jumpTo(id, passage, suttaId);
   }
 
   function onSearchOpenSutta(id: string, snippet?: SearchHit['snippet']) {
