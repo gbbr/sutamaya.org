@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { useLocation, useNavigate, useNavigationType, useParams, type Location } from 'react-router';
-import { X, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Loader2, Search, Share, Share2, Undo2 } from 'lucide-react';
+import { NavigationType, useLocation, useNavigate, useNavigationType, useParams, type Location } from 'react-router';
+import { House, Menu as MenuIcon, ChevronLeft, ChevronRight, Library, List as ListIcon, Loader2, Search, Share, Share2, Undo2 } from 'lucide-react';
 import { useCorpus } from '../context/CorpusContext';
 import { useUserData } from '../context/UserDataContext';
 import { useReaderPrefs } from '../context/ReaderPrefsContext';
@@ -13,7 +13,7 @@ import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useLatest } from '../hooks/useLatest';
-import { animateScrollBy, animateScrollTop } from '../lib/reader/segmentScroll';
+import { animateScrollBy, animateScrollTop, jumpScrollBy } from '../lib/reader/segmentScroll';
 import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus/corpus';
 import { segmentAt } from '../lib/corpus/segmentKeys';
 import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
@@ -767,7 +767,7 @@ export function ReaderPage() {
       onMouseUp={onTextUp}
       onTouchEnd={onTextUp}
     >
-      {/* The header: close on the left, with back beside it after a jump from within the reader;
+      {/* The header: home on the left, with back beside it after a jump from within the reader;
           search and menu on the right; and the title absolutely centred on the page rather than
           between them, since the two sides carry different numbers of buttons. A 44px bar starting
           on the safe-area line, the platform's own top-bar geometry, with its controls centred in
@@ -780,8 +780,8 @@ export function ReaderPage() {
             minimum, with the negative margin collapsing the button's layout box back to the icon;
             `gap-[25px]` puts the touch areas edge to edge. */}
         <div className="flex items-center gap-[25px]">
-          <button className="flex items-center p-[12.5px] -m-[12.5px]" title="Close" onClick={closeReader}>
-            <X size={19} strokeWidth={1.75} />
+          <button className="flex items-center p-[12.5px] -m-[12.5px]" title="Home" onClick={closeReader}>
+            <House size={19} strokeWidth={1.75} />
           </button>
           {backTo && (
             <button
@@ -805,7 +805,7 @@ export function ReaderPage() {
               English title. */}
           {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
         </button>
-        {/* Share, Search and Menu, on the same 44px touch areas, edge to edge, as Close and Back. */}
+        {/* Share, Search and Menu, on the same 44px touch areas, edge to edge, as Home and Back. */}
         <div className="flex items-center gap-[25px]">
           {SHAREABLE && (
             <button

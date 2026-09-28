@@ -177,10 +177,10 @@ describe('mobile search -> reader -> close flow', () => {
     // Now in the reader for mn1.
     // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
     // query would pass before the route had changed.
-    await screen.findByTitle('Close');
+    await screen.findByTitle('Home');
 
     // Close the reader.
-    fireEvent.click(screen.getByTitle('Close'));
+    fireEvent.click(screen.getByTitle('Home'));
 
     // Should land back on DN — the collection being browsed when the search started, which the
     // search itself never moved. Opening MN 1 from the results doesn't re-scope the tree to MN.
@@ -240,12 +240,12 @@ describe('mobile search -> reader -> close flow', () => {
     fireEvent.click(await tree().findByText('Mulapariyaya'));
     // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
     // query would pass before the route had changed.
-    await screen.findByTitle('Close');
+    await screen.findByTitle('Home');
 
     // Close the reader — should land back on "My lists", not get bounced to the corpus tree just
     // because the reopened sutta's own node ('mn') happens to be a real corpus category. The
     // results come back with the close, so the tabs are behind them until the search is cleared.
-    fireEvent.click(screen.getByTitle('Close'));
+    fireEvent.click(screen.getByTitle('Home'));
     await screen.findByText('sutamaya');
     fireEvent.click(tree().getByRole('button', { name: 'Clear search' }));
     expect(tree().getByText('Favorites')).toBeTruthy();
@@ -262,9 +262,9 @@ describe('mobile search -> reader -> close flow', () => {
     fireEvent.click(await tree().findByText('Mulapariyaya'));
     // Waited for on the reader's own chrome: the hit row behind it carries "MN 1" too, so a text
     // query would pass before the route had changed.
-    await screen.findByTitle('Close');
+    await screen.findByTitle('Home');
 
-    fireEvent.click(screen.getByTitle('Close'));
+    fireEvent.click(screen.getByTitle('Home'));
     await screen.findByText('sutamaya');
 
     // The query is in the address bar and back in the box, with the results below it.
@@ -302,7 +302,7 @@ describe('mobile search -> reader -> close flow', () => {
     // Not `getByText(/DN 1/)` — the list row just clicked already shows that same ref text, so
     // that assertion would pass without ever waiting for the reader to actually open.
     await waitFor(() => expect(container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
-    fireEvent.click(screen.getByTitle('Close'));
+    fireEvent.click(screen.getByTitle('Home'));
     await screen.findByText('sutamaya');
     expect(isPaneVisible(container, 'ListPane')).toBe(true); // back on the list pane
 
@@ -342,7 +342,7 @@ describe('mobile search -> reader -> close flow', () => {
     const remounted = renderRoutes(routes, '/read/dn1');
     await waitFor(() => expect(remounted.container.querySelector('[data-component="ReaderPage"]')).toBeTruthy());
 
-    fireEvent.click(remounted.getByTitle('Close'));
+    fireEvent.click(remounted.getByTitle('Home'));
 
     // Falls back to the persisted origin (list pane, dn1's own row) rather than the coarser
     // /browse/{node}/{suttaId} default.

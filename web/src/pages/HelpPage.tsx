@@ -142,7 +142,7 @@ const SECTIONS: HelpSection[] = [
           [70.9, 38.9],
         ],
         steps: [
-          'Close the Reader.',
+          'Return to the library.',
           'Open the panel.',
           'Your Highlights & Notes.',
           'List management.',
