@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import {
   NIKAYA_META, AN_BOOK_NAMES, KN_BOOKS, SN_GROUPS, REF_ABBR, RESTATED_CHAPTERS,
   formatRef, stripTitlePrefix, flattenLeaves, findChapterNodes, findNodeByKey, findLeafGroups, rangeNote, chapterSpanNote,
-  headerTitle, buildBodySegments, suttaCentralTarget, uidDocuments,
+  headerTitle, buildBodySegments, paragraphOf, suttaCentralTarget, uidDocuments,
 } from './lib/collections.js';
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
 import { compareSegmentKeys } from './lib/segmentKeys.js';
@@ -224,15 +224,6 @@ function pushSearchLine(en, pa) {
 // Returns `s` with the separators that would break the line-per-segment structure replaced.
 function searchLine(s) {
   return s.replace(/[\r\n\x1e]+/g, ' ');
-}
-
-// The paragraph a segment key names, qualified by the sutta it belongs to — "mn10:2.1" is
-// "mn10:2". A batched document's inner suttas each restart at paragraph 1.
-function paragraphOf(key) {
-  const colon = key.indexOf(':');
-  const afterColon = key.slice(colon + 1);
-  const dot = afterColon.indexOf('.');
-  return key.slice(0, colon + 1) + (dot === -1 ? afterColon : afterColon.slice(0, dot));
 }
 
 // Returns a sutta's segment keys as the search map carries them: space-separated, and each after

@@ -378,6 +378,66 @@ describe('buildBodySegments', () => {
     expect(seg.en).toBe('Translated at last.');
   });
 
+  it('joins a lone untranslated line’s pali to the line above it', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['sn22.57:3.1', 'Yaṁ rūpaṁ paṭicca uppajjati sukhaṁ somanassaṁ—'],
+        ['sn22.57:3.2', 'ayaṁ rūpassa assādo.'],
+        ['sn22.57:3.3', 'Yaṁ rūpaṁ aniccaṁ dukkhaṁ vipariṇāmadhammaṁ—'],
+      ],
+      en: [
+        ['sn22.57:3.1', 'The pleasure and happiness that arise from form: this is its gratification.'],
+        ['sn22.57:3.3', 'That form is impermanent, suffering, and perishable: this is its drawback.'],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes).map((s) => [s.key, s.pali])).toEqual([
+      ['sn22.57:3.1', 'Yaṁ rūpaṁ paṭicca uppajjati sukhaṁ somanassaṁ— ayaṁ rūpassa assādo.'],
+      ['sn22.57:3.3', 'Yaṁ rūpaṁ aniccaṁ dukkhaṁ vipariṇāmadhammaṁ—'],
+    ]);
+  });
+
+  it('leaves out a run of untranslated lines, pali and all', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['mn1:1.1', 'One'],
+        ['mn1:1.2', 'Two'],
+        ['mn1:1.3', 'Three'],
+        ['mn1:1.4', 'Four'],
+      ],
+      en: [
+        ['mn1:1.1', 'One (en)'],
+        ['mn1:1.4', 'Four (en)'],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes).map((s) => s.pali)).toEqual(['One', 'Four']);
+  });
+
+  it('joins no untranslated line that opens a paragraph, closes the text, or is a colophon or heading', () => {
+    const [pali, en, html, notes] = maps({
+      pali: [
+        ['mn1:1.1', 'A'],
+        ['mn1:2.1', 'opens a paragraph'],
+        ['mn1:2.2', 'B'],
+        ['mn1:2.3', 'colophon'],
+        ['mn1:2.4', 'C'],
+        ['mn1:2.5', 'heading'],
+        ['mn1:2.6', 'D'],
+        ['mn1:2.7', 'closes the text'],
+      ],
+      en: [
+        ['mn1:1.1', 'A (en)'],
+        ['mn1:2.2', 'B (en)'],
+        ['mn1:2.4', 'C (en)'],
+        ['mn1:2.6', 'D (en)'],
+      ],
+      html: [
+        ['mn1:2.3', "<p class='endsutta'>{}</p>"],
+        ['mn1:2.5', '<h2>{}</h2>'],
+      ],
+    });
+    expect(buildBodySegments(pali, en, html, notes).map((s) => s.pali)).toEqual(['A', 'B', 'C', 'D']);
+  });
+
   it('drops an uddana, its intro line and the verses under it alike', () => {
     const [pali, en, html, notes] = maps({
       pali: [

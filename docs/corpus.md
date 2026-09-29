@@ -35,8 +35,14 @@ when its offline copy is out of date.
 
 Each line joins three aligned sources: the Pali, Bhikkhu Sujato's English, and SuttaCentral's HTML
 templates, which say whether a line is prose, verse, a heading, a speaker or a closing line. Lines
-follow the Pali's order, lines empty in both languages are dropped, and the translator's notes
-attach to their lines.
+follow the Pali's order, and the translator's notes attach to their lines.
+
+A line with no English is left out, Pali and all. Most are repetitions the translator elides, where
+the Pali alone would put a wall of it mid-page, and closing lines that only number the sutta or end
+its chapter. A lone one between two translated lines of a paragraph usually has its meaning carried
+by the line above, so its Pali joins that line and the Pali shown for it is whole. What counts as
+translated is read from the English itself, so a line translated upstream appears on the next
+refresh.
 
 The build refuses a document whose segment keys are out of order, because highlights compare keys
 to work out what overlaps ([offline-sync.md](offline-sync.md#anchored-on-segment-keys)).
