@@ -65,13 +65,8 @@ export const RULES = [
   {
     id: 'jhana-pali',
     why: 'Bhikkhu Sujato renders jhāna as "absorption" and the verb jhāyati as "practice ' +
-      'absorption"; this app keeps the Pali, as it does for bhikkhu, Dhamma and saṅkhāra. No sutta ' +
-      'glosses jhāna with a synonym — it is defined by the formula it stands in ("quite secluded ' +
-      'from sensual pleasures … rapture and bliss born of seclusion, with thought and examination"), ' +
-      'so every English candidate names what the translator takes the state to be like rather than ' +
-      'what the texts say it is. Bodhi, Ñāṇamoli and Thanissaro all leave the word untranslated; ' +
-      'with inline Pali and a docked dictionary on the page, so does this app. The verb goes with ' +
-      'the noun — iti78 and thag16.7 name "the four jhānas" and end lines with "who practice ' +
+      'absorption"; this app keeps the Pali, as it does for bhikkhu, Dhamma and saṅkhāra. The verb ' +
+      'goes with the noun — iti78 and thag16.7 name "the four jhānas" and end lines with "who practice ' +
       'absorption" otherwise — and takes the noun rather than "meditate", which the corpus already ' +
       'spends some 2,000 times on viharati and others. The plural is anglicised (jhānas, not ' +
       'jhānā) because the corpus needs "the four jhānas" and "these jhānas", determiners the Pali ' +
@@ -110,8 +105,7 @@ export const RULES = [
   {
     id: 'patisambhida-analytical-knowledge',
     why: 'Bhikkhu Sujato renders paṭisambhidā as "textual analysis"; this app prefers "analytical ' +
-      'knowledge" — the four paṭisambhidās are of meaning, text, terminology and eloquence, so ' +
-      '"textual" names only the second of them. Open with an empty deny list: every occurrence of ' +
+      'knowledge". Open with an empty deny list: every occurrence of ' +
       'the phrase is the term, and it is always a noun, so one form covers it. AN 1.593-595’s ' +
       'anekadhātupaṭisambhidā, which he gives as a bare "analysis", is left alone — no form can ' +
       'claim "analysis" without taking the ~150 unrelated uses of the word with it.',
@@ -123,9 +117,8 @@ export const RULES = [
   },
   {
     id: 'dhamma-the-dhamma',
-    why: 'Six segments where Bhikkhu Sujato renders dhamma as "text"; this app prefers "the Dhamma", ' +
-      'since the Early Buddhist Texts were transmitted orally and "text" imports a written artifact ' +
-      'the passages do not have. Closed, and necessarily so: "text" is otherwise ordinary English ' +
+    why: 'Six segments where Bhikkhu Sujato renders dhamma as "text"; this app prefers "the Dhamma". ' +
+      'Closed, and necessarily so: "text" is otherwise ordinary English ' +
       'throughout the corpus — 265 "Abbreviated Texts" chapter headings (peyyāla), DN 27’s ganthe ' +
       'karontā, DN 30’s nimittakovidā — none of which is dhamma. The first form rebuilds the ' +
       'four-paṭisambhidā list rather than swapping one word, because "the Dhamma" cannot sit as a ' +
@@ -140,8 +133,8 @@ export const RULES = [
   },
   {
     id: 'atapi-ardent',
-    why: 'Bhikkhu Sujato renders ātāpī as "keen"; this app prefers "ardent", which keeps the literal ' +
-      'sense of heat (ā + √tap, "burning") that "keen" loses. The abstract noun ātappa takes "ardor" ' +
+    why: 'Bhikkhu Sujato renders ātāpī as "keen"; this app prefers "ardent". ' +
+      'The abstract noun ātappa takes "ardor" ' +
       '(US spelling, as the corpus uses throughout) and the adverb "ardently". Open: the denials are ' +
       'the 52 segments where "keen" is ordinary English, two stock idioms rather than a scattering — ' +
       'tibba- ("keen enthusiasm") and tikkha- ("keen faculties"). AN 3.49’s "keen to <verb>" for ' +
@@ -162,9 +155,8 @@ export const RULES = [
   {
     id: 'satipatthana-establishment-of-mindfulness',
     why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
-      '"establishment of mindfulness", the compound read literally (sati-upaṭṭhāna) and the ' +
-      'standard scholarly rendering — Bhikkhu Bodhi\'s in the Connected and Numerical Discourses, ' +
-      'and Anālayo\'s. Open with an empty deny list: all 382 segments carrying the phrase are the ' +
+      '"establishment of mindfulness". ' +
+      'Open with an empty deny list: all 382 segments carrying the phrase are the ' +
       'term. The plural form absorbs "kinds of" rather than reading "the four kinds of ' +
       'establishments of mindfulness"; the bare singular carries its own article, and the two ' +
       'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
@@ -183,17 +175,14 @@ export const RULES = [
   // ── Breakthrough ────────────────────────────────────────────────────────────
   {
     id: 'abhisamaya-breakthrough',
-    why: 'Bhikkhu Sujato renders abhisamaya as "comprehension"; this app uses "breakthrough", Bhikkhu ' +
-      'Bodhi’s rendering in SN ("Connected Discourses on the Breakthrough") and Thanissaro’s. The DPD ' +
-      'glosses the verb "completely realizes; fully grasps; makes a breakthrough (to)", and SN 13.1 ' +
-      'pairs dhammābhisamaya with gaining the vision of the Dhamma — stream-entry, a single event. ' +
+    why: 'Bhikkhu Sujato renders abhisamaya as "comprehension"; this app uses "breakthrough". ' +
       'The forms follow Bodhi slot by slot: the noun is "breakthrough (to)", the present and gerund ' +
       '"break through to", the past "made the breakthrough to", abhisametāvī "who has made the ' +
       'breakthrough", and conceit and contact take no "to" ("breaking through conceit", SN 36.3). ' +
       'Closed, and limited to the breakthrough itself — the Dhamma, the noble truths, conceit, the ' +
       'Buddha’s awakening. The denials are his "comprehend" for other terms (pajānāti, paṭivedha, ' +
       'pariññā) and the abhisamaya lines about understanding a meaning (AN 10.27–28, atthābhisamayā, ' +
-      'MN 37) or in AN 9.13’s list of negatives, where "breakthrough" reads badly. His other ' +
+      'MN 37) or in AN 9.13’s list of negatives. His other ' +
       'renderings of the term stay too: Vipassī’s "penetrated with wisdom" (DN 14, SN 12) and the ' +
       'Metta Sutta’s "to realize the state of peace".',
     mode: 'allow',
@@ -220,9 +209,9 @@ export const RULES = [
   // ── Arising and passing away ────────────────────────────────────────────────
   // One doctrinal pair across four Pali terms, which Bhikkhu Sujato renders with four different
   // English words: samudaya "origin", vaya "vanishing", atthaṅgama "disappearance", udayabbaya
-  // "rise and fall". They land on "arising" and "passing away"/"disappearing" here, so the pair
-  // reads as a pair. vaya runs before atthangama because both can claim "disappearance"; the rest
-  // match different words and are order-independent.
+  // "rise and fall". They land on "arising" and "passing away"/"disappearing" here. vaya runs
+  // before atthangama because both can claim "disappearance"; the rest match different words and
+  // are order-independent.
   {
     id: 'samudaya-arising',
     why: 'Bhikkhu Sujato renders samudaya as "origin" (and as the verb "originates"); this app prefers ' +
@@ -271,7 +260,7 @@ export const RULES = [
   {
     id: 'udayabbaya-arising-passing-away',
     why: 'Bhikkhu Sujato renders udayabbaya as "rise and fall"; this app prefers "arising and passing ' +
-      'away", his own wording for the near-synonym udayatthagāminī. Closed: "rise and fall" is ' +
+      'away". Closed: "rise and fall" is ' +
       'ordinary English, and within this corpus it also renders uppādavaya in a verbal construction ' +
       '("their nature is to rise and fall") the noun phrase can\'t replace.',
     mode: 'allow',
@@ -292,8 +281,8 @@ export const RULES = [
   {
     id: 'viparinama-annathatta-change-unstable',
     why: 'Bhikkhu Sujato renders the vipariṇāma/aññathā doublet as "decays and perishes"; this app ' +
-      'prefers "changes and becomes otherwise", since neither Pali term carries the destruction ' +
-      '"perish" implies. Aññathā-bhāva reads "becoming otherwise" wherever English will take a ' +
+      'prefers "changes and becomes otherwise". ' +
+      'Aññathā-bhāva reads "becoming otherwise" wherever English will take a ' +
       'participle; the nominal slot takes "alteration" instead, since a gerund will not stand where ' +
       '"their decay and perishing give rise to sorrow" puts a noun. Open with an empty deny list: ' +
       'every form is a multi-word phrase only this doublet produces — the bare words are another ' +
@@ -343,7 +332,7 @@ export const RULES = [
   {
     id: 'paritassati-agitated',
     why: 'Bhikkhu Sujato renders paritassati as "anxious"/"anxiety"; this app prefers "agitated"/' +
-      '"agitation", since "anxiety" reads as the modern affliction. Open: the English word means ' +
+      '"agitation". Open: the English word means ' +
       'something else in only five segments — utrasta (sn2.17, snp5.1), ubbigga (thag16.8), and ' +
       'an8.23\'s blurb, where "anxious to know" is ordinary English for eager. Leaves the term\'s ' +
       'four contextual renderings alone as a separate decision: "worry" (an4.28, dn33, sn16.1), ' +
@@ -364,9 +353,8 @@ export const RULES = [
   {
     id: 'vitakka-vicara-thought-examination',
     why: 'Bhikkhu Sujato renders the jhāna pair vitakka/vicāra as "placing the mind"/"keeping it ' +
-      'connected", reading them as movements of attention rather than as thinking; this app prefers ' +
-      '"thought"/"examination". It also unifies him with himself: outside this formula he already ' +
-      'gives vitakka as "thought" in 440 segments. Open with an empty deny list — all 254 segments ' +
+      'connected"; this app prefers "thought"/"examination". ' +
+      'Open with an empty deny list — all 254 segments ' +
       'carrying this wording are the formula — and scoped to sutta, since name/blurb never carry it. ' +
       'The pair is one interleaved English idiom, so the forms are phrases rather than words and ' +
       'both terms live in one rule; splitting them would leave "while thought and examination". The ' +
@@ -409,9 +397,8 @@ export const RULES = [
     id: 'yoniso-proper-attention',
     why: 'Bhikkhu Sujato renders yoniso/ayoniso as "rational"/"irrational" and the compound ' +
       'yoniso manasikāra as "rational application of mind"; this app prefers "properly"/' +
-      '"improperly" and "proper attention"/"improper attention". Yoniso is literally "according to ' +
-      'the source/origin" — attending to a thing the right way round, not reasoning — so "rational" ' +
-      'is the wrong register. Open with a small deny list: four segments of ordinary English. The ' +
+      '"improperly" and "proper attention"/"improper attention". ' +
+      'Open with a small deny list: four segments of ordinary English. The ' +
       'compound is a noun and cannot fill the verb slots, so the forms split by grammatical slot — ' +
       '"apply the mind rationally" becomes "attend properly", inflected for each of the four slots ' +
       'and listed in both of his word orders, which he uses interchangeably (mn2). The bare adverb ' +
@@ -497,12 +484,8 @@ export const RULES = [
   {
     id: 'sankhara-pali',
     why: 'Bhikkhu Sujato renders saṅkhāra as "choices" in the aggregate and dependent-origination ' +
-      'senses; this app keeps the Pali, as it does for bhikkhu and Dhamma. Every English candidate ' +
-      'takes one of the term\'s senses and drops the rest: "choices" is selective where saṁ + √kar ' +
-      'is productive, and cannot cover the breath or the life force; "volitional formations" and ' +
-      '"constructions" cover those but say nothing to a reader who has not already read Bhikkhu ' +
-      'Bodhi. The reader has inline Pali and a docked dictionary, so the untranslated word gives ' +
-      'them the whole range instead of one sense of it. Only that sense moves; his other ' +
+      'senses; this app keeps the Pali, as it does for bhikkhu and Dhamma. ' +
+      'Only those senses move; his other ' +
       'renderings of the word are left alone and this rule never reaches them — ' +
       '"conditions"/"conditioned phenomena" for sabbe saṅkhārā, "physical process" for ' +
       'kāyasaṅkhāra, "life force" for āyusaṅkhāra, "intentions" for manosaṅkhāra. The plural is ' +

@@ -56,8 +56,8 @@ rather than the whole paragraph.
 
 ### What every rule has
 
-An `id`, which names its segment list and its diff, and a `why`: which Pali term, and why this app
-departs from upstream.
+An `id`, which names its segment list and its diff, and a `why`: which Pali term, and working notes
+on where the rule applies and what it leaves alone — never an argument for the rendering.
 
 **Translator's notes are never rewritten.** A note is Sujato writing *about* his renderings, and a
 rule right for the text would be wrong in the note that quotes it. So a note can read in his terms
