@@ -290,9 +290,18 @@ export function stripHtmlTags(text) {
   return text.replace(HTML_TAG_RE, '').trim();
 }
 
-// One document's body segments, in Pali key order, each with its English, role and note. Title
-// lines, uddāna verses and anything with no English are left out — a colophon counts as translated,
-// standing in the English column as its own Pali.
+// The paragraph a segment key names, qualified by the sutta it belongs to — "mn10:2.1" is
+// "mn10:2". A batched document's inner suttas each restart at paragraph 1.
+export function paragraphOf(key) {
+  const colon = key.indexOf(':');
+  const afterColon = key.slice(colon + 1);
+  const dot = afterColon.indexOf('.');
+  return key.slice(0, colon + 1) + (dot === -1 ? afterColon : afterColon.slice(0, dot));
+}
+
+// Returns one document's body segments, in Pali key order, each with its English, role and note.
+// Title lines, uddāna verses and lines with no English are left out, but a lone untranslated line's
+// Pali joins the line above it.
 export function buildBodySegments(
   paliMap,
   sujatoMap,
@@ -307,9 +316,17 @@ export function buildBodySegments(
   // continuation lines carry no marker of their own.
   let insideGathaBlockquote = false;
   let insideUddana = false;
+  // The segment the line before became, or null where that line was left out.
+  let above = null;
+  // An untranslated line's Pali and the segment above it, joined if the next line is translated.
+  let pendingJoin = null;
   for (const key of orderedKeys) {
     const segId = key.slice(key.indexOf(':') + 1);
-    if (segId === '0' || segId.startsWith('0.')) continue; // nikaya/book/vagga/sutta title lines
+    // nikaya/book/vagga/sutta title lines
+    if (segId === '0' || segId.startsWith('0.')) {
+      above = pendingJoin = null;
+      continue;
+    }
     const pali = (paliMap.get(key) || '').trim();
     // "<j>" is Bhikkhu Sujato's enjambment placeholder, not markup, and nothing renders it as a
     // line break.
@@ -322,24 +339,27 @@ export function buildBodySegments(
     if (template && UDDANA_OPEN_RE.test(template)) insideUddana = true;
     const uddana = insideUddana || (template && UDDANA_INTRO_RE.test(template));
     if (template && BLOCKQUOTE_CLOSE_RE.test(template)) insideUddana = false;
-    if (uddana) continue;
+    if (uddana) {
+      above = pendingJoin = null;
+      continue;
+    }
     let roleInfo = roleFor(template);
     if (!roleInfo && stillInsideGatha) roleInfo = { role: 'verse' };
-    // Nothing untranslated ships. Bhikkhu Sujato leaves a segment's English empty where he elides a
-    // passage the Pali repeats in full — dn32 restates its whole first recitation section, mn15 the
-    // clause before each refrain — and the English above such a run already says so ("repeating all
-    // the verses spoken"). Shipping the Pali alone put a wall of it mid-page for a reader who asked
-    // for English; hiding it while keeping it left search hits that scrolled nowhere.
-    //
-    // The test is the English itself, not a list of known passages, so nothing has to be revisited
-    // when upstream translates one: the segment reappears in the reader, in search and in the
-    // dictionary on the next data refresh, by having become translated.
-    //
-    // Colophons go with the rest. A Pali-only one is scribal bookkeeping rather than teaching —
-    // 3,040 are the bare ordinal ("Paṭhamaṁ.", the sutta's number within its chapter, which the ref
-    // above the text already gives) and the remainder close a vagga or saṁyutta the library tree
-    // already draws.
-    if (!en) continue;
+    // Lines with no English: left out, a lone one's Pali joining the line above in its paragraph
+    // (docs/corpus.md's "A segment").
+    if (!en) {
+      if (!pali) continue;
+      const joinsAbove =
+        above &&
+        roleInfo?.role !== 'heading' &&
+        roleInfo?.role !== 'end' &&
+        paragraphOf(key) === paragraphOf(above.key);
+      pendingJoin = joinsAbove ? { seg: above, pali } : null;
+      above = null;
+      continue;
+    }
+    if (pendingJoin) pendingJoin.seg.pali = `${pendingJoin.seg.pali} ${pendingJoin.pali}`.trim();
+    pendingJoin = null;
     const seg = { key, pali, en };
     if (roleInfo) {
       seg.role = roleInfo.role;
@@ -348,6 +368,7 @@ export function buildBodySegments(
     const rawNote = notesMap.get(key);
     if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote, readPath);
     segs.push(seg);
+    above = seg;
   }
   return segs;
 }
