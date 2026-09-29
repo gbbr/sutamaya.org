@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useUserData } from '../context/UserDataContext';
 import { useLatest } from './useLatest';
-import { spansOverlap, type HlSpan } from '../lib/highlights';
-import { platformName } from '../lib/platform';
+import { isNonEmpty, spansOverlap, type HlSpan } from '../lib/highlights';
+import { isAndroid, platformName } from '../lib/platform';
 import type { SegmentFile } from '../lib/corpus/corpus';
 import type { Highlight } from '../lib/types';
 
@@ -122,6 +122,21 @@ function popFromSelection(sel: Selection, highlights: Highlight[], segments: Seg
   return { span, x: anchorX, top: box.top, bottom: box.bottom, on: null };
 }
 
+// Returns the span of a selection with just one end in the text, its other end taken from `kept`,
+// or null when there is no such span.
+function spanKeepingEnd(range: Range, segments: SegmentFile[], kept: HlSpan): HlSpan | null {
+  const a = closestSeg(range.startContainer);
+  const b = closestSeg(range.endContainer);
+  const seg = a ?? b;
+  if (!seg || (a && b)) return null;
+  const key = segments[Number(seg.dataset.seg)]?.key;
+  if (!key) return null;
+  const span = a
+    ? { k0: key, o0: offsetWithin(seg, range.startContainer, range.startOffset), k1: kept.k1, o1: kept.o1 }
+    : { k0: kept.k0, o0: kept.o0, k1: key, o1: offsetWithin(seg, range.endContainer, range.endOffset) };
+  return isNonEmpty(span) ? span : null;
+}
+
 export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null) {
   const { setHighlightSpan } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
@@ -193,6 +208,35 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
       window.removeEventListener('pointerup', onUp, true);
       window.removeEventListener('pointercancel', onUp, true);
     };
+  }, [latest]);
+
+  // Keeps a selection end that jumps off the text where it was, in the open popup's span. Android
+  // only, where dragging one selection handle can move the other end, once it is out of view, off
+  // the text (https://issues.chromium.org/issues/499476149).
+  useEffect(() => {
+    if (!isAndroid()) return;
+    // The span the current selection last gave.
+    let kept: HlSpan | null = null;
+    const onChange = () => {
+      const { highlights: hl, segments: segs } = latest.current;
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || !segs) {
+        kept = null;
+        return;
+      }
+      const whole = popFromSelection(sel, hl, segs);
+      if (whole) {
+        kept = whole.span;
+        return;
+      }
+      // Dropped when the selection makes no span with it, as when Android moves the end being kept to
+      // the other side of the text.
+      const span = kept && spanKeepingEnd(sel.getRangeAt(0), segs, kept);
+      kept = span;
+      if (span) setPop((p) => p && { ...p, span, on: null });
+    };
+    document.addEventListener('selectionchange', onChange);
+    return () => document.removeEventListener('selectionchange', onChange);
   }, [latest]);
 
   const pick = useCallback(
