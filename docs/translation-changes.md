@@ -52,6 +52,6 @@ each line for context.
 
 For the nitty-gritty, every change on this page is declared in one file:
 [`scripts/update-data/retranslation.mjs`](../scripts/update-data/retranslation.mjs). Each rule
-there carries the reasoning for its own term — the dictionary glosses, what other translators use,
-which occurrences are deliberately left alone and why — in far more detail than this summary.
+there notes where it applies and which occurrences are left alone, in far more detail than this
+summary.
 [`docs/retranslation.md`](retranslation.md) describes how the machinery works.

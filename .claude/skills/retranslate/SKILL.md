@@ -20,6 +20,10 @@ upstream) and writes `data/sujato.post/` (generated).
   `update-data counts` is the one to run after a rule edit — see step 9.
 - **Don't list what you don't have to.** Take the shorter of `allow`/`deny`: a term with no homonym
   problem (`mendicant`) is an open rule with an empty deny list, not 10,588 ids.
+- **Don't argue for a rendering** — not in a `why`, a comment, a denial's reason or a doc: no
+  etymology, dictionary glosses, other translators or doctrinal readings offered as the reason for a
+  term's English. Working notes are fine anywhere: where a change applies, what it leaves alone, and
+  the grammar, collisions and matching behind a form.
 
 ## Adding a term rule
 
@@ -39,11 +43,12 @@ upstream) and writes `data/sujato.post/` (generated).
    - **Other translators** — what Bodhi, Anālayo, Thanissaro and Ñāṇamoli use, and where they
      disagree. These aren't in the repo, so say when you're unsure rather than asserting.
 
-   Report it as its own short block. It belongs in the rule's `why` afterwards.
+   Report it as its own short block. It informs the user's decision and stays out of the rule.
 
 2. **Draft the rule** with `forms`, a `predicate` regex over the Pali, `mode: 'allow'`, and an empty
-   sidecar. Write the `why` now. Place it under the right `// ── Family ──` banner group rather than
-   appending to the array — group and array order settle same-word collisions.
+   sidecar. Write the `why` now, as working notes (see Never). Place it under the right
+   `// ── Family ──` banner group rather than appending to the array — group and array order settle
+   same-word collisions.
 
 3. **Run `npm run update-data triage <rule-id>`.** With an empty list the whole footprint is
    untriaged, so this run *is* the enumeration. Work every case into `allow` or into `deny` with a
@@ -98,9 +103,9 @@ upstream) and writes `data/sujato.post/` (generated).
 
 10. **Update the table in `docs/translation-changes.md`** — the plain-language summary written for a
     reader, not a maintainer. A term rule earns a row (Pali, his word, ours) and nothing else; a
-    segment override earns nothing at all. **Add no prose.** The reasoning belongs in the rule's own
-    comment in `retranslation.mjs`, and the full footprint in `data/diff/` — this page is a list of
-    what changed, deliberately kept to the table and the few paragraphs already framing it. Nothing
+    segment override earns nothing at all. **Add no prose.** Working notes belong in the rule's
+    `why` and comments in `retranslation.mjs`, and the full footprint in `data/diff/` — this page is a
+    list of what changed, deliberately kept to the table and the few paragraphs already framing it. Nothing
     tests or anchors this file, so it goes in the same commit as the rule.
 
     **The rows are ordered by doctrinal weight and how often the term occurs, not by the order of
