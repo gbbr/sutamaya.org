@@ -28,6 +28,11 @@ function before(kA: string, oA: number, kB: string, oB: number): boolean {
   return seg < 0 || (seg === 0 && oA < oB);
 }
 
+// True when a span covers at least one character, its start before its end.
+export function isNonEmpty(span: HlSpan): boolean {
+  return before(span.k0, span.o0, span.k1, span.o1);
+}
+
 // True when two spans share at least one character. Edge-touching isn't overlap: a selection that
 // starts exactly where a highlight ends displaces nothing.
 export function spansOverlap(a: HlSpan, b: HlSpan): boolean {

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, renderHook } from '@testing-library/react';
 import { useHighlightPopup } from '../useHighlightPopup';
 import type { SegmentFile } from '../../lib/corpus/corpus';
@@ -6,6 +6,12 @@ import type { Highlight } from '../../lib/types';
 
 vi.mock('../../context/UserDataContext', () => ({ useUserData: vi.fn() }));
 import { useUserData } from '../../context/UserDataContext';
+
+vi.mock('../../lib/platform', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../../lib/platform')>()),
+  isAndroid: vi.fn(() => false),
+}));
+import { isAndroid } from '../../lib/platform';
 
 const MTIME = '2026-01-01T00:00:00.000Z|dev';
 
@@ -56,6 +62,23 @@ async function triggerTextUp(onTextUp: () => void) {
     onTextUp();
     await new Promise((resolve) => setTimeout(resolve, 10));
   });
+}
+
+// Fires the `selectionchange` a browser queues for a selection made or moved, which jsdom doesn't.
+async function fireSelectionChange() {
+  await act(async () => {
+    document.dispatchEvent(new Event('selectionchange'));
+  });
+}
+
+// Adds a bar with some text of its own, before the text or after it, as the reader's top bar and
+// the colour bar are.
+function addBar(where: 'before' | 'after') {
+  const bar = document.createElement('div');
+  bar.textContent = 'MN 1';
+  if (where === 'before') document.body.prepend(bar);
+  else document.body.append(bar);
+  return bar;
 }
 
 afterEach(() => {
@@ -176,6 +199,98 @@ describe('useHighlightPopup', () => {
       // Nothing of the second segment is covered — highlightRanges drops that empty tail when it
       // paints (see lib/highlights.ts).
       expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 0, k1: key(1), o1: 0 });
+    });
+  });
+
+  // Android moves the end the reader isn't dragging, once it is out of view, off the text.
+  describe('an end that jumps off the text', () => {
+    beforeEach(() => {
+      vi.mocked(isAndroid).mockReturnValue(true);
+    });
+    afterEach(() => {
+      vi.mocked(isAndroid).mockReturnValue(false);
+    });
+
+    it('keeps the start where it was when the start jumps to the top of the page', async () => {
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Alpha beta', 'Gamma delta', 'Epsilon zeta']);
+      const bar = addBar('before');
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+
+      selectAcross(segs[0], 6, segs[1], 5); // "beta" through "Gamma"
+      await triggerTextUp(result.current.onTextUp);
+      await fireSelectionChange();
+      selectAcross(bar, 0, segs[2], 7); // the end dragged on to "Epsilon", the start on the bar
+      await fireSelectionChange();
+
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 6, k1: key(2), o1: 7 });
+    });
+
+    it('keeps the end where it was when the end jumps past the text', async () => {
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Alpha beta', 'Gamma delta', 'Epsilon zeta']);
+      const bar = addBar('after');
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+
+      selectAcross(segs[1], 6, segs[2], 7); // "delta" through "Epsilon"
+      await triggerTextUp(result.current.onTextUp);
+      await fireSelectionChange();
+      selectAcross(segs[0], 0, bar, 2); // the start dragged back to "Alpha", the end on the bar
+      await fireSelectionChange();
+
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 0, k1: key(2), o1: 7 });
+    });
+
+    // Dragging the start with the end out of view, Android moves the end to the top of the page, so
+    // the selection flips to run from there to the start handle.
+    it('leaves the popup as it was when the selection flips', async () => {
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Alpha beta', 'Gamma delta', 'Epsilon zeta']);
+      const bar = addBar('before');
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+
+      selectAcross(segs[1], 6, segs[2], 7); // "delta" through "Epsilon"
+      await triggerTextUp(result.current.onTextUp);
+      await fireSelectionChange();
+      selectAcross(bar, 0, segs[1], 6); // flipped, the start handle not yet moved
+      await fireSelectionChange();
+      selectAcross(bar, 0, segs[1], 9); // the start handle dragged down into "delta"
+      await fireSelectionChange();
+
+      expect(result.current.pop?.span).toEqual({ k0: key(1), o0: 6, k1: key(2), o1: 7 });
+    });
+
+    it('keeps nothing of a selection once it is gone', async () => {
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Alpha beta', 'Gamma delta', 'Epsilon zeta']);
+      const bar = addBar('before');
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+
+      selectAcross(segs[0], 6, segs[1], 5);
+      await triggerTextUp(result.current.onTextUp);
+      await fireSelectionChange();
+      window.getSelection()?.removeAllRanges();
+      await fireSelectionChange();
+      selectAcross(bar, 0, segs[2], 7);
+      await fireSelectionChange();
+
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 6, k1: key(1), o1: 5 });
+    });
+
+    it('keeps no end anywhere but Android', async () => {
+      vi.mocked(isAndroid).mockReturnValue(false);
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Alpha beta', 'Gamma delta', 'Epsilon zeta']);
+      const bar = addBar('before');
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+
+      selectAcross(segs[0], 6, segs[1], 5);
+      await triggerTextUp(result.current.onTextUp);
+      await fireSelectionChange();
+      selectAcross(bar, 0, segs[2], 7);
+      await fireSelectionChange();
+
+      expect(result.current.pop?.span).toEqual({ k0: key(0), o0: 6, k1: key(1), o1: 5 });
     });
   });
 
