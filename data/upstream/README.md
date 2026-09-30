@@ -113,16 +113,19 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    text, which `cuts.json` keeps beside the settled cuts. With `--keep-settled`, `--answers` leaves
    out an answer for a line a later review has settled, as when a band's answers come back after a
    round of places.
+7. **Read every line**: `scripts/review-rounds.py <translator> read` writes the whole translation
+   beside Sujato's to `review/read/`, and a reader saves each batch's findings beside it: where a
+   line should start, or that it should hold none. `--findings` tries them, a group of findings on
+   neighbouring lines at a time, together with `review/closing-lines.findings`, and writes
+   `review/findings.json`: each group's lines before and after, and whether it passes, which it
+   does if each of its findings takes effect and the text still reads whole. Opus judges 50 passing
+   groups at random; `--keep-findings` keeps the passing groups in `cuts.json`.
 
 ## What's left
 
-- Review the cuts the segmenter is least sure of, in bands by margin: under 0.1 and 0.1–0.3 are
-  done, 0.3–1.0 is left. Each band takes a Sonnet pass; then Opus, with both lines whole, on the
-  cuts Sonnet couldn't place and on 50 of its moves at random; then a neighbour round, in which
-  Opus re-checks the cuts beside those it found stuck on a wrong neighbour, and then the stuck ones.
-  Cloud sessions answer the batches, in folders under `data/<translator>/review/`, as
-  [cloud-review.md](cloud-review.md) says; `scripts/review-rounds.py` puts a round's batches in its
-  folder and keeps the answers that come back.
+- Read the rest of Thanissaro's translation line by line, from batch 024 of `review/read/`, as
+  [cloud-review.md](cloud-review.md)'s "Reading through" says, and take the findings in (step 7
+  above). Bodhi's is read in full.
 - Give more lines English of their own: some lines Sujato translates are empty here because the
   translator's English for them sits inside a neighbour's line, with no place to cut it apart.
   `empty.html` shows them, before any change to the segmenter.
@@ -138,10 +141,10 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
   - **Verse line breaks.** A Pali verse line often holds two or more of the translator's lines, and
     the segmenter runs them together: over a third of the verse lines in Thanissaro, about a tenth
     in Bodhi.
-  - **Text on closing and summary lines.** The last words of a sutta sometimes land on the Pali's
-    closing line ("Dutiyaṁ") or its chapter summary, which the app styles as an ending or leaves
-    out: a few hundred lines across both. Those lines should take only a translator's closing
-    words, such as Bodhi's "The Book of the Tens is finished."
+  - **Text on closing and summary lines.** The Pali's closing line ("Dutiyaṁ") and its chapter
+    summary, which the app styles as an ending or leaves out, should take only a translator's
+    closing words, such as Bodhi's "The Book of the Tens is finished." Nine of Bodhi's still hold
+    the last words of the sutta, where the read-through's fix doesn't take effect.
 - Where a translator points to another passage instead of translating it ("identical with 8:42",
   "The rest as in the preceding sutta"), show the passage itself in its place, with a link to it.
 - Once these translations ship, each source needs a credit on the Help page.

@@ -5,6 +5,7 @@
 //   node scripts/segment-translations.mjs <bodhi|thanissaro> [--only name,…] [--review name,…]
 //                                        [--items <margin>] [--whole] [--recheck key,…] [--places]
 //                                        [--answers] [--keep-settled] [--overview]
+//                                        [--findings] [--keep-findings]
 //
 // Reads data/upstream/<translator>/ and writes data/<translator>/, in data/sujato's layout:
 //   sutta/…_translation-en-<translator>.json  every Pali key of a document, its English or ""
@@ -54,6 +55,12 @@ const keepSettled = args.includes('--keep-settled');
 // --overview: writes two pages over every text: review/moves.html, the cuts the review moved, and
 // review/empty.html, the lines left empty whose English is likely next door.
 const overview = args.includes('--overview');
+// --findings: tries the read-through's findings (review/read/*.findings and
+// review/closing-lines.findings), and writes review/findings.json: what each group of them changes,
+// and whether it passes.
+const weighing = args.includes('--findings') || args.includes('--keep-findings');
+// --keep-findings: as --findings, and keeps the findings that pass in cuts.json.
+const keepFindings = args.includes('--keep-findings');
 
 const UPSTREAM = path.join(DATA, 'upstream', translator);
 const OUT = path.join(DATA, translator);
@@ -1083,6 +1090,9 @@ for (const file of pages) {
     units.push(unit);
   }
 }
+// The text each line's English is written from: the last to cover it.
+const writer = new Map();
+for (const unit of units) for (const line of unit.body) writer.set(line.key, unit);
 
 // The words this translator uses for Sujato's, learned from the lines a first pass aligns surely:
 // a pair seen together often enough, and seldom apart, is taken as one rendering of the other.
@@ -1160,20 +1170,46 @@ if (applyAnswers) {
   process.exit(1);
 }
 
+// The read-through's findings, by line: the words the line should start with, or null for none. A
+// line two findings disagree on is left out.
+const findings = new Map();
+if (weighing) {
+  const dir = path.join(REVIEW, 'read');
+  const files = [path.join(REVIEW, 'closing-lines.findings')];
+  if (fs.existsSync(dir)) files.push(...fs.readdirSync(dir).filter((f) => f.endsWith('.findings')).map((f) => path.join(dir, f)));
+  const torn = new Set();
+  for (const file of files.filter((f) => fs.existsSync(f))) {
+    for (const line of fs.readFileSync(file, 'utf8').split('\n')) {
+      const m = /^(\S+:\S+) (?:starts: (.+)|none)$/.exec(line.trim());
+      if (!m) continue;
+      const starts = m[2]?.trim() ?? null;
+      if (findings.has(m[1]) && findings.get(m[1]) !== starts) torn.add(m[1]);
+      findings.set(m[1], starts);
+    }
+  }
+  for (const key of torn) findings.delete(key);
+}
+
 // Moves each cut a review settled to where the text before it ends with the settled words, nearest
 // the cut the alignment made, as a formula can repeat them; one that no longer fits the text is
-// reported as stale. It goes over the cuts twice, since a settled cut can pass where the alignment
-// put the next one only once that one has moved. Each line is marked with what the review did to
-// the cut above it, for the review page.
+// reported as stale. It goes over the cuts until none moves, since a settled cut can pass where the
+// alignment put the next one only once that one has moved. Each line is marked with what the review
+// did to the cut above it, for the review page.
 //
 // Before the cuts, a line the review emptied gives its text to the line above that has some, from
-// where the cut below takes it back if the review put it there, and a line it filled becomes a
-// piece of no length, which the cuts around it give its text.
-function applyDecisions(results, text, entry) {
+// where the cut below takes it back if the review put it there, and a line it filled, empty or
+// joined to the line above, becomes a piece of no length, which the cuts around it give its text.
+function applyDecisions(
+  results,
+  text,
+  entry,
+  // What's settled for each line: cuts.json's, or those with a group of findings added.
+  decided = decisions,
+) {
   const aligned = results.map((r) => r.start);
   const holdsText = (r) => !r.empty && !r.merged;
   results.forEach((r, i) => {
-    const d = decisions[r.key];
+    const d = decided[r.key];
     if (!d || typeof d !== 'object') return;
     if (holdsText(r) && (d.empty === 'up' || d.empty === 'down')) {
       const above = results.findLast((o, x) => x < i && holdsText(o));
@@ -1188,16 +1224,20 @@ function applyDecisions(results, text, entry) {
       if (d.empty === 'up') r.merged = true;
       else r.empty = true;
       r.margin = null;
-    } else if (r.empty && d.own) {
-      r.empty = false;
-      r.filled = true;
+    } else if (!holdsText(r) && d.own) {
+      r.filled = { empty: r.empty, merged: r.merged };
+      r.empty = r.merged = false;
     }
   });
-  for (const last of [false, true]) {
+  let moving = true;
+  let unplaced = [];
+  for (let pass = 0; moving && pass <= results.length; pass++) {
+    moving = false;
+    unplaced = [];
     let prev = -1;
     results.forEach((r, i) => {
       if (r.empty || r.merged) return;
-      const before = anchorOf(decisions[r.key]);
+      const before = anchorOf(decided[r.key]);
       if (before !== undefined && prev !== -1) {
         const p = results[prev];
         let at = -1;
@@ -1207,9 +1247,9 @@ function applyDecisions(results, text, entry) {
           const ends = next > end || /[—–]$/.test(before);
           if (ends && next > p.start && next < r.end && (at === -1 || Math.abs(next - r.start) < Math.abs(at - r.start))) at = next;
         }
-        if (at === -1) {
-          if (last) (entry.stale ??= []).push(r.key);
-        } else {
+        if (at === -1) unplaced.push(r.key);
+        else {
+          if (r.start !== at) moving = true;
           p.end = at;
           r.start = at;
           r.margin = null;
@@ -1219,8 +1259,9 @@ function applyDecisions(results, text, entry) {
       prev = i;
     });
   }
-  // A filled line the cuts gave no text is empty as before.
-  for (const r of results) if (r.filled && r.end <= r.start) r.empty = true;
+  if (unplaced.length) (entry.stale ??= []).push(...unplaced);
+  // A filled line the cuts gave no text is as the alignment left it.
+  for (const r of results) if (r.filled && r.end <= r.start) Object.assign(r, r.filled);
   // The words each moved cut carried across it, kept on the line that gained them.
   let prev = -1;
   results.forEach((r, i) => {
@@ -1245,6 +1286,135 @@ function anchorBefore(text, at) {
     anchor = text.slice(from, at).trimEnd();
   }
   return anchor;
+}
+
+// Returns each line's segment of `text`, whether it ends right after a dash, and the segments
+// joined as they are written: a space after each but one ending right after a dash.
+function segmentsOf(results, text) {
+  const segText = results.map((r) => text.slice(r.start, r.end).replace(/\s+/g, ' ').trim());
+  const endsAtDash = results.map((r) => /[—–]$/.test(text.slice(r.start, r.end)));
+  const joined = segText.map((s, i) => (s ? `${s}${endsAtDash[i] ? '' : ' '}` : '')).join('').trim();
+  return { segText, endsAtDash, joined };
+}
+
+// Returns the places in `text`, after `lo` and before `hi`, where a line can start with the words a
+// finding quotes: at their first word, taking in an opening quote or bracket the finding leaves out.
+function quotedAt(text, words, lo, hi) {
+  const re = new RegExp(words.split(/\s+/).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+'), 'g');
+  const places = [];
+  for (const m of text.slice(lo, hi).matchAll(re)) {
+    let at = lo + m.index;
+    while (at > lo + 1 && /[“‘"'([]/.test(text[at - 1])) at--;
+    if (at > lo && /[\s—–]/.test(text[at - 1])) places.push(at);
+  }
+  return places;
+}
+
+// Returns a place for each finding, or null for one left out: the places rise from one finding to
+// the next, as a text's lines start in its order, and lie nearest their lines in all.
+function rising(
+  // Each finding in line order: { places, near }, near being where its line starts now.
+  found,
+  // What leaving a finding out costs: more than any distance.
+  leftOut,
+) {
+  // The cheapest choices so far, by the place the last finding took.
+  let best = new Map([[-1, { cost: 0, chosen: [] }]]);
+  for (const { places, near } of found) {
+    const next = new Map();
+    const keep = (last, cost, chosen) => {
+      if (!next.has(last) || cost < next.get(last).cost) next.set(last, { cost, chosen });
+    };
+    for (const [last, { cost, chosen }] of best) {
+      keep(last, cost + leftOut, [...chosen, null]);
+      for (const p of places) if (p > last) keep(p, cost + Math.abs(p - near), [...chosen, p]);
+    }
+    best = next;
+  }
+  return [...best.values()].reduce((a, b) => (b.cost < a.cost ? b : a)).chosen;
+}
+
+// Returns a text's findings: those that change its lines, in groups, each tried, and the others. A
+// group is the findings whose lines share a neighbour with text; it passes if each of its findings
+// takes effect and the text still reads whole. The words a finding quotes are looked for between
+// the lines around it that keep their start: those with text and no finding.
+//   groups – { text, verdict, findings, lines }: the lines around the group, before and after
+//   others – { key, starts, status }: 'already so', or 'not found' where its line can start
+function weigh(unit, aligned) {
+  const { body, stream, want } = unit;
+  const { text } = stream;
+  const run = (decided) => {
+    const results = aligned.map((r) => ({ ...r }));
+    applyDecisions(results, text, {}, decided);
+    return { results, ...segmentsOf(results, text) };
+  };
+  const holds = (t, x) => !!t.segText[x] && !t.results[x].empty && !t.results[x].merged;
+  const now = run(decisions);
+  // Returns the nearest line with text from line x, a step at a time.
+  const near = (x, step) => {
+    do x += step;
+    while (x >= 0 && x < body.length && !holds(now, x));
+    return Math.min(Math.max(x, -1), body.length);
+  };
+  const others = [];
+  const moves = [];
+  // The findings saying where a line starts, since the last line that keeps its start.
+  let pending = [];
+  let from = 0;
+  const place = (to) => {
+    const chosen = rising(pending.map((m) => ({ places: quotedAt(text, m.starts, from, to), near: now.results[m.i].start })), text.length);
+    pending.forEach((m, x) => {
+      const at = chosen[x];
+      if (holds(now, m.i) && at === now.results[m.i].start) others.push({ key: m.key, starts: m.starts, status: 'already so' });
+      else if (at === null) others.push({ key: m.key, starts: m.starts, status: 'not found' });
+      else {
+        const settles = { after: anchorBefore(text, at), placed: true };
+        if (aligned[m.i].empty || aligned[m.i].merged) settles.own = true;
+        moves.push({ ...m, at, settles });
+      }
+    });
+    pending = [];
+  };
+  body.forEach((line, i) => {
+    const starts = writer.get(line.key) === unit ? findings.get(line.key) : undefined;
+    if (starts === undefined) {
+      if (!holds(now, i)) return;
+      place(now.results[i].start);
+      from = now.results[i].start;
+    } else if (starts !== null) pending.push({ key: line.key, starts, i });
+    else if (holds(now, i)) moves.push({ key: line.key, starts, i, settles: { empty: 'up' } });
+    else others.push({ key: line.key, starts, status: 'already so' });
+  });
+  place(text.length);
+  moves.sort((a, b) => a.i - b.i);
+  // A line emptied whose text the next line takes gives it down.
+  for (const m of moves) {
+    const below = moves.find((o) => o.i === near(m.i, 1));
+    if (m.starts === null && below?.at <= now.results[m.i].start) m.settles.empty = 'down';
+  }
+
+  const spans = [];
+  for (const m of moves) {
+    const [lo, hi] = [Math.max(near(m.i, -1), 0), Math.min(near(m.i, 1), body.length - 1)];
+    if (spans.length && lo <= spans.at(-1).hi) {
+      spans.at(-1).hi = Math.max(spans.at(-1).hi, hi);
+      spans.at(-1).moves.push(m);
+    } else spans.push({ lo, hi, moves: [m] });
+  }
+  const groups = spans.map(({ lo, hi, moves: group }) => {
+    const decided = { ...decisions };
+    for (const m of group) decided[m.key] = m.settles;
+    const t = run(decided);
+    const took = group.every((m) => (m.starts === null ? !holds(t, m.i) : holds(t, m.i) && t.results[m.i].start === m.at));
+    const verdict = t.joined !== want.join(' ') ? 'breaks the text' : took ? 'passes' : 'takes no effect';
+    const lines = [];
+    for (let x = lo; x <= hi; x++) {
+      const said = body[x].en ? { sujato: body[x].en } : { pali: body[x].pali };
+      lines.push({ key: body[x].key, ...said, before: now.segText[x], after: t.segText[x] });
+    }
+    return { text: unit.name, verdict, findings: group.map(({ key, starts, settles }) => ({ key, starts, settles })), lines };
+  });
+  return { groups, others };
 }
 
 // Returns a review item for the cut between pieces `pi` and `i`: Sujato's English on each side (the
@@ -1446,6 +1616,9 @@ const SENTENCE_END = String.raw`(?<!\b(?:Ven|Mr|Mrs|Dr|St|cf|vs|etc|e\.g|i\.e))[
 // What the places put up for review count.
 const placed = { openings: 0, above: 0, below: 0, later: 0 };
 const items = [];
+// The findings tried: the groups that change lines, and the findings that change none.
+const weighed = [];
+const unmoved = [];
 
 for (const unit of units) {
   {
@@ -1468,13 +1641,17 @@ for (const unit of units) {
       continue;
     }
     const { results } = aligned;
+    if (weighing) {
+      const { groups, others } = weigh(unit, results);
+      weighed.push(...groups);
+      unmoved.push(...others);
+      if (keepFindings) for (const g of groups) if (g.verdict === 'passes') for (const f of g.findings) decisions[f.key] = f.settles;
+    }
     applyDecisions(results, stream.text, entry);
-    const segText = results.map((r) => stream.text.slice(r.start, r.end).replace(/\s+/g, ' ').trim());
+    const { segText, endsAtDash, joined: got } = segmentsOf(results, stream.text);
 
     // The text check: the segments, joined as they are written — a space after each but one ending
     // right after a dash — are character for character the page's text read the second way.
-    const endsAtDash = results.map((r) => /[—–]$/.test(stream.text.slice(r.start, r.end)));
-    const got = segText.map((s, i) => (s ? `${s}${endsAtDash[i] ? '' : ' '}` : '')).join('').trim();
     const page = want.join(' ');
     if (got !== page) {
       let at = 0;
@@ -1714,6 +1891,19 @@ if (itemsBelow !== null || places) {
 }
 const stale = report.flatMap((r) => r.stale ?? []);
 if (stale.length) console.log(`${stale.length} settled cuts no longer fit: ${stale.slice(0, 10).join(' ')}`);
+if (weighing) {
+  const seen = new Set([...weighed.flatMap((g) => g.findings.map((f) => f.key)), ...unmoved.map((f) => f.key)]);
+  const others = [...unmoved, ...[...findings].filter(([key]) => !seen.has(key)).map(([key, starts]) => ({ key, starts, status: 'not weighed' }))];
+  fs.mkdirSync(REVIEW, { recursive: true });
+  fs.writeFileSync(path.join(REVIEW, 'findings.json'), `${JSON.stringify({ groups: weighed, others }, null, 1)}\n`);
+  const verdicts = [...new Set(weighed.map((g) => g.verdict))].map((v) => {
+    const gs = weighed.filter((g) => g.verdict === v);
+    return `${gs.reduce((a, g) => a + g.findings.length, 0)} in ${gs.length} groups: ${v}`;
+  });
+  const statuses = [...new Set(others.map((f) => f.status))].map((s) => `${others.filter((f) => f.status === s).length} ${s}`);
+  console.log(`findings: ${findings.size} lines; ${[...verdicts, ...statuses].join('; ')}`);
+}
+if (keepFindings) fs.writeFileSync(CUTS_FILE, `${JSON.stringify(decisions, null, 1)}\n`);
 if (reviewUnits.length) fs.writeFileSync(path.join(REVIEW, 'review.html'), reviewPage(reviewUnits));
 if (overview) {
   fs.mkdirSync(REVIEW, { recursive: true });

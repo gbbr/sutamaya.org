@@ -1,7 +1,7 @@
 # Reviewing cuts in a cloud session
 
-Instructions for a Claude Code cloud session asked to review one translation's cuts, `bodhi` or
-`thanissaro`. [README.md](README.md) explains what the cuts are. The session only hands batches to
+Instructions for a Claude Code session, in the cloud or on the developer's machine, asked to review
+one translation's cuts, `bodhi` or `thanissaro`. [README.md](README.md) explains what the cuts are. The session only hands batches to
 subagents and saves their answers; it judges nothing itself.
 
 ## The batches
@@ -130,10 +130,25 @@ Once those answers are kept, what is still open comes back in two folders, run t
 ## Reading through
 
 The last check reads every line. `data/<translator>/review/read/` holds the whole translation beside
-Sujato's, a text after another, the least settled texts first. Give each batch to one subagent,
-model `sonnet`, four at a time, with the prompt below; each saves `batch-NNN.findings` beside its
-batch. Commit and push as they come. Stop when the batches are done or a usage limit is near, and
-say how many lines were reported in all.
+Sujato's, a text after another, the least settled texts first. A batch is read once its
+`batch-NNN.findings` is saved beside it, so a session carries on wherever the last one stopped.
+
+1. Take the batches with no `.findings` file, in number order. This lists them:
+   `for b in data/<translator>/review/read/batch-*.txt; do [ -e "${b%.txt}.findings" ] || echo "$b"; done`.
+   For `thanissaro`, 038, 059 and 062 come first: they hold DN 15, MN 31 and MN 128, where whole
+   runs of lines are a line or two off.
+2. Give each batch to one subagent, four at a time, with the prompt below: the Agent tool, type
+   `line-reader`, which runs `sonnet` at effort high. Where that type isn't available, as in a cloud
+   session, use type `general-purpose` with model `sonnet`.
+3. Every ten batches, say in one line how many batches are read and how many are left, and how many
+   lines the last ten reported. `grep -c : <findings file>` counts a batch's lines.
+4. Stop when the last ten batches reported five lines or fewer on average: the texts left are the
+   least likely to be off, so reading on finds little. Say so, with the figures, and carry on only
+   if asked. Stop as well when the batches are done or a usage limit is near.
+5. On stopping, say how many lines were reported in all, and which batch comes next.
+
+On the developer's machine the saved findings are the progress: commit nothing unless asked. In a
+cloud session, commit and push them as they come, as the other rounds do.
 
 ```
 You are checking a Buddhist sutta translation (by <name>) that has been cut into lines to match
