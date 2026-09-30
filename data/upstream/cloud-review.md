@@ -44,8 +44,8 @@ done
 ## Rules
 
 - Work on the session's own branch, and never push to `main`.
-- Only answers files are added, and only under `band3/`. Nothing else in the repository changes, and
-  no script is run.
+- Only answers files are added, and only in the folder of the round in hand. Nothing else in the
+  repository changes, and no script is run.
 - Never read a batch or an answers file yourself: they are large, and the listing above says all
   that is needed.
 - A batch left short of answers goes to one more subagent, whose share starts after the last
@@ -96,4 +96,67 @@ your final reply, one per line.
 
 When done, reply with a single line: items answered, how many you moved to a different mark, and
 how many "?".
+```
+
+## More rounds
+
+Three more rounds follow the middle band, in this order. Each runs as above — every batch of its
+folder in number order, one subagent a batch, four at a time, the answers committed and pushed as
+they come — with these differences:
+
+| Round | Batches in | Subagent's model | Prompt | Answers saved as |
+|---|---|---|---|---|
+| Places | `data/<translator>/review/places/` | `opus` | the places prompt below | `batch-NNN.answers.N` |
+| A second look at the cuts the weak bands settled | `data/<translator>/review/recheck/` | `opus` | the prompt above | `batch-NNN.answers.N` |
+| A second opinion on the middle band | `data/<translator>/review/band3/` | `opus` | the prompt above | `batch-NNN.opus.N` |
+
+- The second opinion is independent: its subagents never read the answers files already in
+  `band3/`, and a batch is done when its `.opus` files hold one line for each of its cuts. The
+  listing above counts them with `.opus.*` in place of `.answers.*`.
+- In the second look an item shows both its lines whole, so it may be long. It is still 5 lines of
+  the file.
+- When a usage limit is near, finish the round in hand, push, and stop.
+
+### The places prompt
+
+The prompt above, with its first four paragraphs, down to the list of answers, replaced by these:
+
+```
+You are reviewing where a Buddhist sutta translation (by <name>) is cut into lines that match the
+Pali original's lines. Each item is a place where a line may be cut wrongly: a line left with only
+a sentence's opening word or two, or a line left with no English though the translation has it
+next door.
+
+Each item is 5 lines of the batch file:
+
+    <key>   the item's name
+    S1: …   Bhikkhu Sujato's English for the line or lines before the cut, or their Pali
+    S2: …   his English for the line after it, or its Pali
+    T: …    the other translation's text for those lines: the places it may be cut are numbered
+            [1], [2] …, the current one starred [n*]; ¶ is a paragraph or verse-line break
+    (a blank line)
+
+T is cut at one mark: the text before it goes on S1's line, the text after it on S2's. Answer with
+the number of the mark where the meaning of S2 begins. Judge by meaning, not wording: the
+translations word things differently and sometimes order them differently.
+
+- A mark before all of T gives S1's line none of it. Choose it only when nothing in T is S1's: the
+  translator leaves S1 out, or has rendered it earlier.
+- A mark after all of T gives S2's line none of it. Choose it when nothing in T is S2's own, or when
+  T renders S1 and S2 as one sentence that has no mark where S2 begins.
+- A line is never left with only a sentence's opening word or two ("When," "But, Ānanda,") while
+  the sentence goes on across the mark: the opening stays with its sentence. If the sentence is
+  S2's, choose the mark before the opening. If it is S1's, choose the mark where it ends.
+- Words that close S1's line in Sujato stay on S1's line: a lead-in such as "that is," or
+  "namely:", and the last of a pair or a list that S1 holds ("It's amazing, lord. It's
+  astounding,").
+- A speaker's name ("The Blessed One:") or a heading goes with the words after it. The translation
+  has bracketed numbers of its own, such as "(9)" or "[11]"; the marks are the ones that count up
+  [1], [2], [3]… in order, one of them starred.
+
+Answers, one line per item, in the batch's order:
+
+    <key> <n>   the cut belongs at mark n
+    <key> =     the starred mark is right
+    <key> ?     you truly can't tell
 ```
