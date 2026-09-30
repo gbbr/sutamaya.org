@@ -106,10 +106,13 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    couldn't place, `--whole` shows both lines of each cut whole rather than 300 characters either
    side, and `--recheck key,…` puts settled cuts up again. `--overview` writes two pages over every
    text: `moves.html`, the cuts the review moved, and `empty.html`, the lines with no English of
-   their own whose English is likely next door. `--tidy` tries two rules without writing them and
-   shows each change on `tidy.html`: a sentence's opening word or two left at the end of a line moves
-   down to where the sentence goes on, and an empty line takes its English back from the line above
-   or below.
+   their own whose English is likely next door.
+6. **Review the places a moved cut can't mend**: `--places` writes them in batches the same way: a
+   line left with only a sentence's opening word or two, and a line left empty whose English is
+   likely next door. An answer there may also leave a line without text or give an empty line its
+   text, which `cuts.json` keeps beside the settled cuts. With `--keep-settled`, `--answers` leaves
+   out an answer for a line a later review has settled, as when a band's answers come back after a
+   round of places.
 
 ## What's left
 

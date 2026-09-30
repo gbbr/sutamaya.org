@@ -3,14 +3,14 @@
 // data/sujato is split, so each line of the translation sits on the Pali line it translates.
 //
 //   node scripts/segment-translations.mjs <bodhi|thanissaro> [--only name,…] [--review name,…]
-//                                        [--items <margin>] [--whole] [--recheck key,…] [--answers]
-//                                        [--overview] [--tidy]
+//                                        [--items <margin>] [--whole] [--recheck key,…] [--places]
+//                                        [--answers] [--keep-settled] [--overview]
 //
 // Reads data/upstream/<translator>/ and writes data/<translator>/, in data/sujato's layout:
 //   sutta/…_translation-en-<translator>.json  every Pali key of a document, its English or ""
 //   notes/…_comment-en-<translator>.json      the translator's notes; the introduction and "see also"
 //                                             sit on the sutta's title line
-//   cuts.json                                 cuts a review settled, kept across runs
+//   cuts.json                                 what a review settled for a line, kept across runs
 //   learned.json                              the translator's words learned for Sujato's
 //   report.json                               each text's alignment and how sure it is
 //   review/                                   the review pages and the cuts put up for review
@@ -44,14 +44,16 @@ const itemsBelow = valueArg('--items') === null ? null : Number(valueArg('--item
 const whole = args.includes('--whole');
 // --recheck key,…: puts these settled cuts up for review as well.
 const recheck = listArg('--recheck') ?? new Set();
+// --places: puts up for review the places a moved cut can't mend: a line left with only a sentence's
+// opening word or two, and a line left empty whose English is likely next door.
+const places = args.includes('--places');
 // --answers: keeps the review's answers so far in cuts.json, and clears the batches they answer.
 const applyAnswers = args.includes('--answers');
+// --keep-settled: with --answers, leaves out an answer for a line a review has settled since.
+const keepSettled = args.includes('--keep-settled');
 // --overview: writes two pages over every text: review/moves.html, the cuts the review moved, and
 // review/empty.html, the lines left empty whose English is likely next door.
 const overview = args.includes('--overview');
-// --tidy: tries the two tidying rules without writing their result, and shows on review/tidy.html
-// each line they would change.
-const tidy = args.includes('--tidy');
 
 const UPSTREAM = path.join(DATA, 'upstream', translator);
 const OUT = path.join(DATA, translator);
@@ -1113,8 +1115,15 @@ if (!only) {
 }
 for (const [s, ts] of Object.entries(readJson(LEARNED_FILE))) learned.set(idOf(s), ts.map(idOf));
 
-// Cuts a review has settled, by the key of the line after each: the words that end the line before.
+// What a review has settled, by line: the words that end the line before it, or
+//   after  – those words
+//   empty  – the line holds no text: 'up', its English is inside the line above's; 'down', its text
+//            is the line below's; 'stay', the translation leaves it out
+//   own    – the alignment leaves the line empty, and the review gave it text
+//   placed – its place has been reviewed, so it isn't put up as a place again
 const CUTS_FILE = path.join(OUT, 'cuts.json');
+// Returns the words a settled line starts after, if any.
+const anchorOf = (decision) => (typeof decision === 'string' ? decision : decision?.after);
 // Batches of cuts up for review: batch-NN.txt to read, batch-NN.json to resolve its marks, and
 // batch-NN.answers as the review writes them.
 const BATCHES = path.join(REVIEW, 'batches');
@@ -1132,8 +1141,12 @@ if (applyAnswers) {
         const [key, answer] = line.trim().split(/\s+/);
         const item = items[key];
         const mark = answer === '=' ? item?.current : Number(answer);
-        if (item?.candidates[mark - 1] === undefined) continue;
-        decisions[key] = item.candidates[mark - 1];
+        const chosen = item?.candidates[mark - 1];
+        if (chosen === undefined) continue;
+        // A candidate is the words before a cut, or what choosing it settles, by line.
+        const settles = typeof chosen === 'string' ? { [key]: chosen } : chosen;
+        if (keepSettled && Object.keys(settles).some((k) => decisions[k] !== undefined)) continue;
+        Object.assign(decisions, settles);
         kept++;
       }
       fs.rmSync(path.join(BATCHES, file));
@@ -1142,7 +1155,7 @@ if (applyAnswers) {
   }
   fs.writeFileSync(CUTS_FILE, `${JSON.stringify(decisions, null, 1)}\n`);
   console.log(`${kept} answers kept in cuts.json`);
-} else if (itemsBelow !== null && answered().length) {
+} else if ((itemsBelow !== null || places) && answered().length) {
   console.error('Answers are waiting in review/batches: keep them first with --answers.');
   process.exit(1);
 }
@@ -1152,13 +1165,39 @@ if (applyAnswers) {
 // reported as stale. It goes over the cuts twice, since a settled cut can pass where the alignment
 // put the next one only once that one has moved. Each line is marked with what the review did to
 // the cut above it, for the review page.
+//
+// Before the cuts, a line the review emptied gives its text to the line above that has some, from
+// where the cut below takes it back if the review put it there, and a line it filled becomes a
+// piece of no length, which the cuts around it give its text.
 function applyDecisions(results, text, entry) {
   const aligned = results.map((r) => r.start);
+  const holdsText = (r) => !r.empty && !r.merged;
+  results.forEach((r, i) => {
+    const d = decisions[r.key];
+    if (!d || typeof d !== 'object') return;
+    if (holdsText(r) && (d.empty === 'up' || d.empty === 'down')) {
+      const above = results.findLast((o, x) => x < i && holdsText(o));
+      const below = results.find((o, x) => x > i && holdsText(o));
+      if (above) {
+        above.end = r.end;
+        r.start = r.end;
+      } else if (below) {
+        below.start = r.start;
+        r.end = r.start;
+      } else return;
+      if (d.empty === 'up') r.merged = true;
+      else r.empty = true;
+      r.margin = null;
+    } else if (r.empty && d.own) {
+      r.empty = false;
+      r.filled = true;
+    }
+  });
   for (const last of [false, true]) {
     let prev = -1;
     results.forEach((r, i) => {
       if (r.empty || r.merged) return;
-      const before = decisions[r.key];
+      const before = anchorOf(decisions[r.key]);
       if (before !== undefined && prev !== -1) {
         const p = results[prev];
         let at = -1;
@@ -1180,11 +1219,13 @@ function applyDecisions(results, text, entry) {
       prev = i;
     });
   }
+  // A filled line the cuts gave no text is empty as before.
+  for (const r of results) if (r.filled && r.end <= r.start) r.empty = true;
   // The words each moved cut carried across it, kept on the line that gained them.
   let prev = -1;
   results.forEach((r, i) => {
     if (r.empty || r.merged) return;
-    if (r.settled && r.start !== aligned[i]) {
+    if (r.settled && r.start !== aligned[i] && prev !== -1) {
       const words = text.slice(Math.min(r.start, aligned[i]), Math.max(r.start, aligned[i])).replace(/\s+/g, ' ').trim();
       if (r.start < aligned[i]) r.gainedAbove = words;
       else results[prev].gainedBelow = words;
@@ -1236,6 +1277,132 @@ function reviewItem(stream, body, results, pi, i) {
   };
 }
 
+// Most characters of a piece that a place's item shows.
+const PLACE_SPAN = 600;
+
+// Returns a review item over the stream's text from `lo` to `hi`, with the places it may be cut
+// numbered and the current one starred.
+//   key          – the item's name
+//   s1, s2       – the lines before the cut, and those after it
+//   marks        – the places in order: where each stands, and what choosing it settles, by line
+//   now          – where the current place stands
+//   clippedStart – the text goes on before `lo`
+//   clippedEnd   – the text goes on after `hi`
+function itemOf(stream, { key, s1, s2, lo, hi, marks, now, clippedStart = false, clippedEnd = false }) {
+  const { text } = stream;
+  const side = (ls) => ls.map((l) => l.en || `(Pali) ${l.pali}`).join(' ');
+  let shown = clippedStart ? '…' : '';
+  let from = lo;
+  marks.forEach((m, n) => {
+    shown += `${text.slice(from, m.at)}[${n + 1}${m.at === now ? '*' : ''}] `;
+    from = m.at;
+  });
+  shown += text.slice(from, hi) + (clippedEnd ? '…' : '');
+  return {
+    key,
+    text: `${key}\nS1: ${side(s1)}\nS2: ${side(s2)}\nT: ${shown.trim().replace(/\s*\n\s*/g, ' ¶ ')}`,
+    current: marks.findIndex((m) => m.at === now) + 1,
+    candidates: marks.map((m) => m.settles),
+  };
+}
+
+// Returns the item for a sentence's opening left at the end of piece `pi`, whose sentence goes on in
+// piece `i`: the cut between them, which may also leave either line without text.
+//   alone – the opening is all of its piece, so its line may go empty
+function openerItem(stream, body, results, pi, i, alone) {
+  const { text, cuts } = stream;
+  const p = results[pi];
+  const r = results[i];
+  const lo = r.start - p.start <= PLACE_SPAN ? p.start : r.start - PLACE_SPAN;
+  const hi = r.end - r.start <= PLACE_SPAN ? r.end : r.start + PLACE_SPAN;
+  const marks = [];
+  // Before all the text: the opening's line goes empty, and the line below starts where it did.
+  if (alone && !results[pi + 1].merged) {
+    const starts = p.start ? { after: anchorBefore(text, p.start), placed: true } : { placed: true };
+    marks.push({ at: p.start, settles: { [p.key]: { empty: 'down' }, [r.key]: starts } });
+  }
+  for (const { at } of cuts) {
+    if (at <= p.start || at >= r.end || at < lo || at > hi) continue;
+    marks.push({ at, settles: { [r.key]: { after: anchorBefore(text, at), placed: true } } });
+  }
+  // After all the text: the line below has none, its English being inside the line above's.
+  if (hi === r.end) marks.push({ at: r.end, settles: { [r.key]: { empty: 'up' } } });
+  return itemOf(stream, { key: r.key, s1: body.slice(pi, i), s2: [body[i]], lo, hi, marks, now: r.start, clippedStart: lo > p.start, clippedEnd: hi < r.end });
+}
+
+// Returns the item for line `i`, left empty, whose English is likely the end of piece `pi` above it:
+// where that piece may be cut to give the line its text.
+function tailItem(stream, body, results, pi, i) {
+  const { text, cuts } = stream;
+  const p = results[pi];
+  const { key } = body[i];
+  const lo = Math.max(p.start, p.end - PLACE_SPAN);
+  const marks = [];
+  for (const { at } of cuts) {
+    if (at <= p.start || at >= p.end || at < lo) continue;
+    marks.push({ at, settles: { [key]: { after: anchorBefore(text, at), own: true } } });
+  }
+  marks.push({ at: p.end, settles: { [key]: { empty: 'stay' } } });
+  return itemOf(stream, { key, s1: body.slice(pi, i), s2: [body[i]], lo, hi: p.end, marks, now: p.end, clippedStart: lo > p.start });
+}
+
+// Returns the item for line `i`, left empty, whose English is likely the start of piece `ni` below
+// it: where that piece may be cut to give the line its text.
+function headItem(stream, body, results, i, ni) {
+  const { text, cuts } = stream;
+  const next = results[ni];
+  const { key } = body[i];
+  const hi = Math.min(next.end, next.start + PLACE_SPAN);
+  // The filled line starts where the piece below did.
+  const starts = next.start ? { after: anchorBefore(text, next.start), own: true } : { own: true };
+  const marks = [{ at: next.start, settles: { [key]: { empty: 'stay' } } }];
+  for (const { at } of cuts) {
+    if (at <= next.start || at >= next.end || at > hi) continue;
+    marks.push({ at, settles: { [key]: starts, [next.key]: { after: anchorBefore(text, at), placed: true } } });
+  }
+  return itemOf(stream, { key, s1: [body[i]], s2: [body[ni]], lo: next.start, hi, marks, now: next.start, clippedEnd: hi < next.end });
+}
+
+// What a reviewer reads before a batch of places.
+const PLACE_INSTRUCTIONS = `# Reviewing places
+
+Each item is a place where a translation may be cut wrongly between two lines of the Pali: a line
+left with only a sentence's opening word or two, or a line left with no English though the
+translation has it next door.
+
+    <key>   the item's name
+    S1: …   Bhikkhu Sujato's English for the line or lines before the cut, or their Pali
+    S2: …   his English for the line after it, or its Pali
+    T: …    the other translation's text for those lines: the places it may be cut are numbered
+            [1], [2] …, the current one starred [n*]; ¶ is a paragraph or verse-line break
+
+T is cut at one mark: the text before it goes on S1's line, the text after it on S2's. Answer with
+the number of the mark where the meaning of S2 begins. Judge by meaning, not wording: the
+translations word things differently and sometimes order them differently.
+
+- A mark before all of T gives S1's line none of it. Choose it only when nothing in T is S1's: the
+  translator leaves S1 out, or has rendered it earlier.
+- A mark after all of T gives S2's line none of it. Choose it when nothing in T is S2's own, or when
+  T renders S1 and S2 as one sentence that has no mark where S2 begins.
+- A line is never left with only a sentence's opening word or two ("When," "But, Ānanda,") while
+  the sentence goes on across the mark: the opening stays with its sentence. If the sentence is
+  S2's, choose the mark before the opening. If it is S1's, choose the mark where it ends.
+- Words that close S1's line in Sujato stay on S1's line: a lead-in such as "that is," or "namely:",
+  and the last of a pair or a list that S1 holds ("It's amazing, lord. It's astounding,").
+- A speaker's name ("The Blessed One:") or a heading goes with the words after it.
+
+Answer each item on its own line, in order:
+
+    <key> <n>   the cut belongs at mark n
+    <key> =     the starred mark is right
+    <key> ?     you can't tell
+
+Work 25 items at a time: read the next 25, answer them, and save those answers with the Write tool
+as a new file beside the batch, batch-NN.answers.1 for the first 25, .2 for the next, and so on,
+never rewriting an earlier one. If some are there already, carry on after the last answered item.
+That way work survives an interruption.
+`;
+
 // What a reviewer reads before a batch.
 const REVIEW_INSTRUCTIONS = `# Reviewing cuts
 
@@ -1274,15 +1441,10 @@ const tally = { moved: 0, joined: 0, nextDoor: 0, otherEmpty: 0 };
 // Share of an empty line's words (Sujato's) that a neighbouring piece holds beyond the lines it
 // translates, from which the line's English is likely inside that piece.
 const NEXT_DOOR = 0.6;
-// Share of an empty line's words (Sujato's) the part the tidying gives it must hold.
-const SURE_FILL = 0.8;
-// The texts the tidying rules would change, and what they count.
-const tidyUnits = [];
-const tidied = { fragments: 0, emptied: 0, grey: 0, broken: 0 };
-// Each change the tidying rules would make, with its lines as they are and as they would be.
-const tidyChanges = [];
 // A sentence's end: its closing mark and any quotes or brackets after it, not an abbreviation's.
 const SENTENCE_END = String.raw`(?<!\b(?:Ven|Mr|Mrs|Dr|St|cf|vs|etc|e\.g|i\.e))[.?!;:…][”’"')\]]*`;
+// What the places put up for review count.
+const placed = { openings: 0, above: 0, below: 0, later: 0 };
 const items = [];
 
 for (const unit of units) {
@@ -1459,98 +1621,62 @@ for (const unit of units) {
       if (empties.size) emptyUnits.push({ ...shown, rows: [...empties].sort((a, b) => a - b), flags });
     }
 
-    if (tidy) {
-      // The tidying rules, tried on a copy of the pieces.
-      const text = stream.text;
-      const t = results.map((r) => ({ ...r }));
-      const piece = (x) => text.slice(t[x].start, t[x].end).replace(/\s+/g, ' ').trim();
+    if (places) {
+      const { text } = stream;
       const words = (s) => s.split(/\s+/).filter(Boolean).length;
-      const hasText = (x) => t[x].end > t[x].start && !t[x].merged;
-      // Sujato's English for the lines a piece translates: its own and those joined to it.
-      const heldBy = (p) => {
-        let held = body[p].en;
-        for (let x = p + 1; x < t.length && t[x].merged; x++) held += ` ${body[x].en}`;
-        return held;
+      const ownBefore = (i) => {
+        let x = i - 1;
+        while (x >= 0 && !own[x]) x--;
+        return x;
       };
-      const kinds = new Map();
-      const changes = [];
-      // A sentence's opening word or two, ending in a comma or dash, at the end of a piece moves
-      // down to the next piece, where its sentence goes on; a piece of nothing else goes empty,
-      // unless Sujato's line is itself that short.
-      let prev = -1;
-      for (let i = 0; i < t.length; i++) {
-        if (!hasText(i)) continue;
-        let j = i + 1;
-        while (j < t.length && !hasText(j)) j++;
-        if (j === t.length) break;
-        const ends = [...text.slice(t[i].start, t[i].end).matchAll(new RegExp(`${SENTENCE_END}\\s+`, 'g'))];
-        const from = ends.length ? t[i].start + ends.at(-1).index + ends.at(-1)[0].length : t[i].start;
-        const frag = text.slice(from, t[i].end).trim();
-        const whole = from === t[i].start;
-        const opens = !whole || prev === -1 || new RegExp(`${SENTENCE_END}$`).test(piece(prev));
+      const ownAfter = (i) => {
+        let x = i + 1;
+        while (x < body.length && !own[x]) x++;
+        return x;
+      };
+      // A sentence's opening word or two, ending in a comma or dash, at the end of a piece, where
+      // the sentence goes on in the next. Verse lines end at commas and hold a few words by
+      // nature, and a piece of nothing else may sit on a line Sujato keeps as short.
+      const openings = new Set();
+      let before = -1;
+      for (let i = 0; i < body.length; i++) {
+        if (!own[i]) continue;
+        const j = ownAfter(i);
+        if (j === body.length) break;
+        const r = results[i];
+        const ends = [...text.slice(r.start, r.end).matchAll(new RegExp(`${SENTENCE_END}\\s+`, 'g'))];
+        const from = ends.length ? r.start + ends.at(-1).index + ends.at(-1)[0].length : r.start;
+        const opening = text.slice(from, r.end).trim();
+        const alone = from === r.start;
+        const opens = !alone || before === -1 || new RegExp(`${SENTENCE_END}$`).test(segText[before]);
         const short = body[i].en && words(body[i].en) < 5;
-        // Verse lines end at commas and hold a few words by nature, so they are left as they are.
-        if (!body[i].verse && frag && words(frag) <= 2 && /[,—–-]$/.test(frag) && opens && !(whole && short)) {
-          t[i].end = from;
-          t[j].start = from;
-          kinds.set(i, 'fragment').set(j, 'fragment');
-          changes.push({ kind: 'fragment', lines: [i, j] });
-          tidied.fragments++;
-          if (whole) tidied.emptied++;
-        }
-        if (hasText(i)) prev = i;
+        before = i;
+        if (body[i].verse || !opening || words(opening) > 2 || !/[,—–-]$/.test(opening) || !opens || (alone && short)) continue;
+        if (decisions[results[j].key]?.placed) continue;
+        openings.add(i);
+        items.push(openerItem(stream, body, results, i, j, alone));
+        placed.openings++;
       }
-      // An empty line whose words are mostly in the piece right above or below it takes that
-      // piece's tail or head, cut where both lines fit best, unless either part would be two words
-      // or fewer.
-      for (let i = 0; i < t.length; i++) {
-        if (hasText(i) || t[i].merged || !body[i].en || words(body[i].en) < 3) continue;
-        for (const [p, above] of [[i - 1, true], [i + 1, false]]) {
-          if (p < 0 || p >= t.length || !hasText(p) || fit(body[i].en, piece(p), heldBy(p)) < NEXT_DOOR) continue;
-          let best = null;
-          for (const c of stream.cuts) {
-            if (c.at <= t[p].start || c.at >= t[p].end) continue;
-            const head = text.slice(t[p].start, c.at);
-            const tail = text.slice(c.at, t[p].end);
-            if (words(head) <= 2 || words(tail) <= 2) continue;
-            // The part the empty line takes must hold most of its words.
-            // Only a sure fill: the empty line's part matches it very well, and the neighbour's part
-            // matches the neighbour as well as its whole piece did.
-            if (fit(body[i].en, above ? tail : head) < SURE_FILL) continue;
-            if (fit(heldBy(p), above ? head : tail) < fit(heldBy(p), piece(p))) continue;
-            const score = above ? fit(heldBy(p), head) + fit(body[i].en, tail) : fit(body[i].en, head) + fit(heldBy(p), tail);
-            // Of equal fits, the one giving the empty line the least text: the last cut when it
-            // takes a tail, the first when it takes a head.
-            if (!best || score > best.score || (above && score === best.score)) best = { at: c.at, score };
-          }
-          if (!best) continue;
-          if (above) {
-            t[i].start = best.at;
-            t[i].end = t[p].end;
-            t[p].end = best.at;
-          } else {
-            t[i].start = t[p].start;
-            t[i].end = best.at;
-            t[p].start = best.at;
-          }
-          kinds.set(i, 'grey').set(p, 'grey');
-          changes.push({ kind: 'grey', lines: [Math.min(i, p), Math.max(i, p)] });
-          tidied.grey++;
-          break;
+      // A line of three words or more in Sujato, left empty, whose words are mostly in the piece
+      // above or below it. One beside an opening put up above, or with another of his lines lying
+      // empty between it and that piece, waits for a later round.
+      body.forEach((line, i) => {
+        if (own[i] || results[i].merged || !line.en || decisions[line.key]?.empty || ids(line.en).length < 3) return;
+        const above = ownBefore(i);
+        const below = ownAfter(i);
+        const up = share(i, above);
+        const down = share(i, below);
+        if (Math.max(up, down) < NEXT_DOOR) return;
+        const fromAbove = up >= down;
+        let waits = openings.has(above);
+        for (let x = fromAbove ? above + 1 : i + 1; x < (fromAbove ? i : below); x++) if (body[x].en && !results[x].merged) waits = true;
+        if (waits) {
+          placed.later++;
+          return;
         }
-      }
-      // The text check, as for the pieces written.
-      const after = t.map((r) => text.slice(r.start, r.end).replace(/\s+/g, ' ').trim());
-      const dash = t.map((r) => /[—–]$/.test(text.slice(r.start, r.end)));
-      const joinedText = after.map((s, i) => (s ? `${s}${dash[i] ? '' : ' '}` : '')).join('').trim();
-      if (joinedText !== page) tidied.broken++;
-      else if (kinds.size) {
-        tidyUnits.push({ name, body, before: segText, after, kinds });
-        for (const c of changes) {
-          const lines = c.lines.map((x) => ({ key: body[x].key, sujato: body[x].en, now: segText[x], tidied: after[x] }));
-          tidyChanges.push({ kind: c.kind, lines });
-        }
-      }
+        items.push(fromAbove ? tailItem(stream, body, results, above, i) : headItem(stream, body, results, i, below));
+        placed[fromAbove ? 'above' : 'below']++;
+      });
     }
   }
 }
@@ -1567,8 +1693,8 @@ for (const [doc, out] of outDocs) {
   }
 }
 if (!only) fs.writeFileSync(path.join(OUT, 'report.json'), `${JSON.stringify(report, null, 1)}\n`);
-if (itemsBelow !== null || reviewUnits.length) fs.mkdirSync(REVIEW, { recursive: true });
-if (itemsBelow !== null) {
+if (itemsBelow !== null || places || reviewUnits.length) fs.mkdirSync(REVIEW, { recursive: true });
+if (itemsBelow !== null || places) {
   fs.rmSync(BATCHES, { recursive: true, force: true });
   fs.mkdirSync(BATCHES, { recursive: true });
   for (let b = 0; b * BATCH_SIZE < items.length; b++) {
@@ -1577,8 +1703,14 @@ if (itemsBelow !== null) {
     fs.writeFileSync(`${batch}.txt`, `${chunk.map((it) => it.text).join('\n\n')}\n`);
     fs.writeFileSync(`${batch}.json`, `${JSON.stringify(Object.fromEntries(chunk.map((it) => [it.key, { current: it.current, candidates: it.candidates }])))}\n`);
   }
-  fs.writeFileSync(path.join(BATCHES, 'INSTRUCTIONS.md'), REVIEW_INSTRUCTIONS);
-  console.log(`${items.length} cuts up for review, in ${Math.ceil(items.length / BATCH_SIZE)} batches`);
+  fs.writeFileSync(path.join(BATCHES, 'INSTRUCTIONS.md'), places ? PLACE_INSTRUCTIONS : REVIEW_INSTRUCTIONS);
+  console.log(`${items.length} ${places ? 'places' : 'cuts'} up for review, in ${Math.ceil(items.length / BATCH_SIZE)} batches`);
+  if (places) {
+    console.log(
+      `places: ${placed.openings} openings left at a line's end; ${placed.above} empty lines with their English above, ` +
+        `${placed.below} below, ${placed.later} waiting for a later round`,
+    );
+  }
 }
 const stale = report.flatMap((r) => r.stale ?? []);
 if (stale.length) console.log(`${stale.length} settled cuts no longer fit: ${stale.slice(0, 10).join(' ')}`);
@@ -1600,15 +1732,6 @@ if (overview) {
   fs.writeFileSync(path.join(REVIEW, 'moves.html'), moves);
   fs.writeFileSync(path.join(REVIEW, 'empty.html'), empty);
   console.log(`overview: ${tally.moved} moved cuts; ${tally.joined} joined lines, ${tally.nextDoor} empty lines likely next door, ${tally.otherEmpty} others`);
-}
-if (tidy) {
-  fs.mkdirSync(REVIEW, { recursive: true });
-  fs.writeFileSync(path.join(REVIEW, 'tidy.html'), tidyPage(tidyUnits));
-  fs.writeFileSync(path.join(REVIEW, 'tidy.json'), `${JSON.stringify(tidyChanges, null, 1)}\n`);
-  console.log(
-    `tidy (dry run): ${tidied.fragments} fragments moved down, ${tidied.emptied} of them emptying their line; ` +
-      `${tidied.grey} empty lines given English; ${tidied.broken} texts left alone, failing the text check`,
-  );
 }
 
 const ok = report.filter((r) => !r.error && !r.empty);
@@ -1683,35 +1806,6 @@ ${lead ? `<p><strong>${lead}</strong></p>` : ''}
 <p>Yellow: a cut the script is unsure of (its margin under the line number). Blue: a line whose English is in the piece above, so its Pali joins that piece's. Grey: a line Sujato translates that this translation leaves out. Red: text sharing no words with its line. A thick rule starts a Pali paragraph.</p>
 <p>A green line number: the review settled the cut above that line. Darker green: it moved the cut, and the marked words are the ones that changed lines.${lead ? '' : ' <label><input type="checkbox" id="changed"> Only the lines beside a moved cut</label>'}</p>
 ${lead ? '' : `<nav>${units.map((u) => `<a href="#${u.name}">${u.name}</a>`).join('')}</nav>`}
-${sections}
-</body></html>`;
-}
-
-// Returns the tidying dry run's page: each line the rules would change, as it is and as it would be.
-function tidyPage(units) {
-  const sections = units
-    .map((u) => {
-      const shown = [...u.kinds.keys()].sort((a, b) => a - b);
-      const rows = shown
-        .map((i, n) => {
-          const skipped = n && i > shown[n - 1] + 1 ? '<tr class="skip"><td colspan="4">⋯</td></tr>\n' : '';
-          const key = u.body[i].key;
-          return `${skipped}<tr class="${u.kinds.get(i)}"><td class="k">${key.slice(key.indexOf(':') + 1)}</td><td>${escapeHtml(u.body[i].en)}</td><td>${escapeHtml(u.before[i]) || '–'}</td><td>${escapeHtml(u.after[i]) || '–'}</td></tr>`;
-        })
-        .join('\n');
-      return `<h2 id="${u.name}">${u.name}</h2><table><thead><tr><th>Line</th><th>Sujato</th><th>Now</th><th>Tidied</th></tr></thead><tbody>${rows}</tbody></table>`;
-    })
-    .join('\n');
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tidy: ${translator}</title>
-<style>
-:root{color-scheme:light dark;--bg:#fff;--fg:#1a1a1a;--muted:#777;--line:#ddd;--fragment:#fff3cd;--grey:#dfeefb}
-@media (prefers-color-scheme:dark){:root{--bg:#161616;--fg:#e8e8e8;--muted:#999;--line:#333;--fragment:#4a3d10;--grey:#15314a}}
-body{background:var(--bg);color:var(--fg);font:15px/1.45 Georgia,serif;margin:0 auto;max-width:1400px;padding:16px}
-table{border-collapse:collapse;width:100%;margin-bottom:48px}td,th{border-top:1px solid var(--line);padding:4px 8px;vertical-align:top;text-align:left;width:31%}
-td.k{width:auto;white-space:nowrap;color:var(--muted);font:12px ui-monospace,monospace}tr.fragment td.k{background:var(--fragment)}tr.grey td.k{background:var(--grey)}
-tr.skip td{color:var(--muted);text-align:center;padding:0}
-</style></head><body>
-<p><strong>A dry run: nothing here is written yet. Yellow line number: a sentence's opening word or two moves down to the line where the sentence goes on. Blue: an empty line takes its English from the line above or below.</strong></p>
 ${sections}
 </body></html>`;
 }
