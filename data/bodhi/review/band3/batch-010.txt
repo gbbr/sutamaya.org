@@ -1,0 +1,499 @@
+an3.5:2.4
+S1: They ask a question rationally. They answer a question rationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they agree with it.
+S2: These are the three things by which an astute person is known.
+T: (1) He formulates a question carefully; [1] (2) he replies to a question carefully; [2] (3) when another person replies to a question carefully, [3] with well-rounded and coherent words and phrases, [4] he approves of it. [5*] One who possesses these three qualities should be known as a wise person. ¶ 
+
+an3.50:1.3
+S1: What three?
+S2: A master thief relies on uneven ground, on thick cover, and on the powerful.
+T: What three? [1*] Here, [2] a master thief depends on the uneven, [3] on thickets, [4] and on powerful people. ¶ 
+
+an3.50:1.5
+S1: And how does a master thief rely on uneven ground?
+S2: It’s when a master thief relies on inaccessible riverlands or rugged mountains.
+T: (1) [1] “And how does a master thief depend on the uneven? [2*] Here, [3] a master thief depends on rivers that are hard to cross and rugged mountains. 
+
+an3.50:3.2
+S1: And how does a master thief rely on the powerful?
+S2: It’s when a master thief relies on rulers or their chief ministers.
+T: (3) [1] “And how does a master thief depend on powerful people? [2*] Here, [3] a master thief depends on kings or royal ministers. 
+
+an3.50:4.3
+S1: What three?
+S2: A bad mendicant relies on uneven ground, on thick cover, and on the powerful.
+T: What three? [1*] Here, [2] an evil bhikkhu depends on the uneven, [3] on thickets, [4] and on powerful people. ¶ 
+
+an3.50:5.2
+S1: And how does a bad mendicant rely on uneven ground?
+S2: It’s when a bad mendicant has unethical conduct by way of body, speech, and mind.
+T: (1) [1] “And how does an evil bhikkhu depend on the uneven? [2*] Here, [3] an evil bhikkhu engages in unrighteous bodily, [4] verbal, [5] and mental action. 
+
+an3.50:6.2
+S1: And how does a bad mendicant rely on thick cover?
+S2: It’s when a bad mendicant has wrong view, he’s attached to an extremist view.
+T: (2) [1] “And how does an evil bhikkhu depend on thickets? [2*] Here, [3] an evil bhikkhu holds wrong view, [4] adopts an extremist view. 
+
+an3.50:7.2
+S1: And how does a bad mendicant rely on the powerful?
+S2: It’s when a bad mendicant relies on rulers or their chief ministers.
+T: (3) [1] “And how does an evil bhikkhu depend on powerful people? [2*] Here, [3] an evil bhikkhu depends on kings or royal ministers. 
+
+an3.51:2.4
+S1: This world is led onward by old age, sickness, and death.
+S2: But restraint here by way of body, speech, and mind is the shelter, asylum, island, refuge, and final haven for the departed.
+T: Indeed, [1] this world is swept away by old age, [2] illness, [3] and death. [4] But though the world is swept away by old age, [5] illness, [6] and death, [7*] when one has departed, [8] bodily, [9] verbal, [10] and mental self-control will provide a shelter, [11] a harbor, [12] an island, [13] a refuge, [14] and a support.” ¶ 
+
+an3.53:4.3
+S1: When delusion has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness.
+S2: This, too, is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.”
+T: But when delusion is abandoned, [1] he does not intend for his own affliction, [2] for the affliction of others, [3] or for the affliction of both, [4] and he does not experience mental suffering and dejection. [5*] It is in this way, [6] too, [7] that the Dhamma is directly visible, [8] immediate, [9] inviting one to come and see, [10] applicable, [11] to be personally experienced by the wise.” ¶ 
+
+an3.54:3.1
+S1: When greed has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness.
+S2: A greedy person does bad things by way of body, speech, and mind.
+T: But when lust is abandoned, [1] he does not intend for his own affliction, [2] for the affliction of others, [3] or for the affliction of both, [4] and he does not experience mental suffering and dejection. [5] One excited by lust, [6] overcome by lust, [7*] with mind obsessed by it, [8] engages in misconduct by body, [9] speech, [10] and mind. 
+
+an3.54:3.2
+S1: A greedy person does bad things by way of body, speech, and mind.
+S2: When greed has been given up, they don’t do bad things by way of body, speech, and mind.
+T: with mind obsessed by it, [1] engages in misconduct by body, [2] speech, [3] and mind. [4*] But when lust is abandoned, [5] he does not engage in misconduct by body, [6] speech, [7] and mind. [8] One excited by lust, [9] overcome by lust, [10] with mind obsessed by it, 
+
+an3.54:4.3
+S1: When greed has been given up, they truly understand what’s for their own good, the good of another, or the good of both.
+S2: This is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.
+T: But when lust is abandoned, [1] he understands as it really is his own good, [2] the good of others, [3] and the good of both. [4*] It is in this way, [5] brahmin, [6] that the Dhamma is directly visible … [7] to be personally experienced by the wise. ¶ 
+
+an3.54:7.3
+S1: When delusion has been given up, they truly understand what’s for their own good, the good of another, or the good of both.
+S2: This, too, is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.”
+T: But when delusion is abandoned, [1] he understands as it really is his own good, [2] the good of others, [3] and the good of both. [4*] It is in this way, [5] too, [6] that the Dhamma is directly visible, [7] immediate, [8] inviting one to come and see, [9] applicable, [10] to be personally experienced by the wise.” ¶ 
+
+an3.56:1.3
+S1: “Worthy Gotama, I have heard that brahmins of the past who were elderly and senior, the tutors of tutors, said:
+S2: ‘In the old days this world was so full of humans you’d think they were squashed together. The villages, towns, and capital cities were no more than a chicken’s flight apart.’
+T: “Master Gotama, [1] I have heard older brahmins who are aged, [2] burdened with years, [3] teachers of teachers, [4] saying: [5*] ‘In the past this world was so thickly populated one would think there was no space between people. [6] The villages, [7] towns, [8] and capital cities were so close that cocks could fly between them.’ 
+
+an3.56:1.4
+S1: ‘In the old days this world was so full of humans you’d think they were squashed together. The villages, towns, and capital cities were no more than a chicken’s flight apart.’
+S2: What is the cause, worthy Gotama, what is the reason why these days human numbers have dwindled, a decline in population is evident, and whole villages, towns, cities, and countries have disappeared?”
+T: ‘In the past this world was so thickly populated one would think there was no space between people. [1] The villages, [2] towns, [3] and capital cities were so close that cocks could fly between them.’ [4*] Why is it, [5] Master Gotama, [6] that at present the number of people has declined, [7] depopulation is seen, [8] and villages, [9] towns, [10] cities, [11] and districts have vanished?” ¶ 
+
+an3.56:2.2
+S1: “These days, brahmin, humans just love illicit desire. They’re overcome by immoral greed, and mired in wrong religious teachings.
+S2: Taking up sharp knives, they murder each other. And so many people perish.
+T: (1) [1] “At present, [2] brahmin, [3] people are excited by illicit lust, [4] overcome by unrighteous greed, [5] afflicted by wrong Dhamma. [6*] As a result, [7] they take up weapons and slay one another. [8] Hence many people die. 
+
+an3.56:3.2
+S1: Furthermore, because these days humans just love illicit desire …
+S2: the heavens don’t provide enough rain,
+T: (2) [1] “Again, [2] at present people are excited by illicit lust, [3] overcome by unrighteous greed, [4] afflicted by wrong Dhamma. [5*] When this happens, [6] sufficient rain does not fall. 
+
+an3.56:3.3
+S1: the heavens don’t provide enough rain,
+S2: so there’s famine, a bad harvest, with crops blighted and turned to straw.
+T: When this happens, [1] sufficient rain does not fall. [2*] As a result, [3] there is a famine, [4] a scarcity of grain; [5] the crops become blighted and turn to straw. 
+
+an3.56:4.2
+S1: Furthermore, because these days humans just love illicit desire …
+S2: native spirits let vicious monsters loose. And so many humans perish.
+T: (3) [1] “Again, [2] at present people are excited by illicit lust, [3] overcome by unrighteous greed, [4] afflicted by wrong Dhamma. [5*] When this happens, [6] the yakkhas release wild spirits. [7] Hence many people die. 
+
+an3.58:1.2
+S1: Then Tikaṇṇa the brahmin went up to the Buddha, and exchanged greetings with him.
+S2: Seated to one side, in front of the Buddha, Tikaṇṇa praised the brahmins who were proficient in the three Vedas,
+T: Then the brahmin Tikaṇṇa approached the Blessed One and exchanged greetings with him…. [1*] Then, [2] sitting to one side, [3] the brahmin Tikaṇṇa, [4] in the presence of the Blessed One, [5] spoke praise of the brahmins who had mastered the threefold knowledge: 
+
+an3.60:1.2
+S1: Then Saṅgārava the brahmin went up to the Buddha, and exchanged greetings with him.
+S2: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha:
+T: Then the brahmin Saṅgārava approached the Blessed One and exchanged greetings with him…. [1*] Then, [2] sitting to one side, [3] the brahmin Saṅgārava said this to the Blessed One: ¶ 
+
+an3.60:2.3
+S1: What do you think, brahmin?
+S2: A Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.
+T: What do you think, [1] brahmin? [2*] Here, [3] a Tathāgata arises in the world, [4] an arahant, [5] perfectly enlightened, [6] accomplished in true knowledge and conduct, [7] fortunate, [8] knower of the world, [9] unsurpassed trainer of persons to be tamed, [10] teacher of devas and humans, [11] an Enlightened One, [12] a Blessed One. 
+
+an3.60:7.8
+S1: ‘Formerly, it seems, there were fewer mendicants, but more of them displayed superhuman demonstrations of psychic power;
+S2: while these days, there are more mendicants, but fewer display superhuman demonstrations of psychic power.’
+T: ‘Formerly there were fewer bhikkhus, [1] but more who displayed superhuman wonders of psychic potency. [2*] But now there are more bhikkhus, [3] but fewer who display superhuman wonders of psychic potency.’ 
+
+an3.60:8.5
+S1: And what is the demonstration of psychic power?
+S2: It’s when someone wields the many kinds of psychic power: multiplying themselves and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful. They control the body as far as the realm of divinity.
+T: (1) [1] “And what, [2] brahmin, [3] is the wonder of psychic potency? [4*] Here, [5] a bhikkhu wields the various kinds of psychic potency: [6] having been one, [7] he becomes many; [8] having been many, [9] he becomes one; [10] he appears and vanishes; [11] he goes unhindered through a wall, [12] through a rampart, [13] through a mountain as though through space; [14] he dives in and out of the earth as though it we…
+
+an3.60:9.3
+S1: In one case, someone reveals by means of a sign:
+S2: ‘This is what you’re thinking, such is your thought, and thus is your state of mind.’
+T: There is one who, [1] by means of some clue, [2] declares: [3*] ‘Your thought is thus, [4] such is what you are thinking, [5] your mind is in such and such a state.’ 
+
+an3.60:13.2
+S1: And what is a demonstration of instruction?
+S2: It’s when someone instructs others like this:
+T: (3) [1] “And what, [2] brahmin, [3] is the wonder of instruction? [4*] Here, [5] someone instructs others thus: 
+
+an3.60:15.8
+S1: is also experienced only by the one who performs it, occurring only to them.
+S2: This also seems to me like an illusion.
+T: again, [1] only the one who performs this wonder experiences it and it occurs only to him. [2*] This wonder, [3] too, [4] seems to me like a magical trick. ¶ 
+
+an3.61:13.6
+S1: When it is conceived, there are name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling.
+S2: It’s for one who feels that I declare: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’.
+T: When the descent takes place, [1] there is name-and-form; [2] with name-and-form as condition, [3] there are the six sense bases; [4] with the six sense bases as condition, [5] there is contact; [6] with contact as condition, [7] there is feeling. [8*] Now it is for one who feels that I proclaim: [9] ‘This is suffering,’ [10] and [11] ‘This is the origin of suffering,’ [12] and [13] ‘This is the cessation of suffering,’ [14] and [15] ‘This is the way leading to the cessation of suffering.’ ¶ 
+
+an3.61:17.5
+S1: This is called the noble truth of the practice that leads to the cessation of suffering.
+S2: ‘“These are the four noble truths”: this is the Dhamma I’ve taught that is irrefutable, uncorrupted, beyond reproach, and is not scorned by sensible ascetics and brahmins.’
+T: This is called the noble truth of the way leading to the cessation of suffering. ¶ [1*] “When it was said: [2] ‘“These are the four noble truths”: [3] this, [4] bhikkhus, [5] is the Dhamma taught by me that is unrefuted, [6] undefiled, [7] irreproachable, [8] and uncensured by wise ascetics and brahmins,’ 
+
+an3.63:6.5
+S1: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present.
+S2: Quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected.
+T: I collect some grass or leaves that I find there into a pile and then sit down. [1] Having folded my legs crosswise and straightened my body, [2] I establish mindfulness in front of me. [3*] Then, [4] secluded from sensual pleasures, [5] secluded from unwholesome states, [6] I enter and dwell in the first jhāna, [7] which consists of rapture and pleasure born of seclusion, [8] accompanied by thought and examination. 
+
+an3.63:9.2
+S1: “It’s incredible, worthy Gotama, it’s amazing!
+S2: Who but the worthy Gotama could get such a divine high and luxurious bed when he wants, without trouble or difficulty?
+T: “It is astounding and amazing, [1] Master Gotama! [2*] Who else, [3] apart from Master Gotama, [4] can gain at will, [5] without trouble or difficulty, [6] such a high and luxurious bed? ¶ 
+
+an3.63:12.2
+S1: Excellent, worthy Gotama! Excellent!
+S2: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways.
+T: “Excellent, [1] Master Gotama! [2] Excellent, [3*] Master Gotama! [4] Master Gotama has made the Dhamma clear in many ways, [5] as though he were turning upright what had been overthrown, [6] revealing what was hidden, [7] showing the way to one who was lost, [8] or holding up a lamp in the darkness so those with good eyesight can see forms. 
+
+an3.64:5.2
+S1: For a third time, the Buddha said to Sarabha,
+S2: “Sarabha, the teachings of the ascetics who follow the Sakyan are clear to me. What exactly have you learned of the teachings of the ascetics who follow the Sakyan?
+T: A third time the Blessed One said to the wanderer Sarabha: [1*] “Tell me, [2] Sarabha, [3] how have you learned the Dhamma of the ascetics who follow the Sakyan son? 
+
+an3.64:8.3
+S1: ‘You claim to be a fully awakened Buddha, but you don’t understand these things.’ Then I’d carefully pursue, press, and grill them on that point.
+S2: When grilled by me, they would, without a doubt, fall into one of these three categories. They’d dodge the issue, distracting the discussion with irrelevant points. They’d display annoyance, hate, and bitterness. Or they’d sit silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, like Sarabha.
+T: ‘Though you claim to be perfectly enlightened, [1] you are not fully enlightened about these things,’ [2] I might question him closely about this matter, [3] interrogate him, [4] and cross-examine him. [5*] When he is being closely questioned by me, [6] interrogated, [7] and cross-examined, [8] it is impossible and inconceivable that he would not incur one or another of three consequences: [9] he would either answer evasively and divert the discussion to an irrelevant subject; [10] or display anger, [11] hatred, [12] and bitterness;…
+
+an3.64:9.3
+S1: ‘You claim to have ended all defilements, but you still have these defilements.’ Then I’d carefully pursue, press, and grill them on that point.
+S2: When grilled by me, they would, without a doubt, fall into one of these three categories. They’d dodge the issue, distracting the discussion with irrelevant points. They’d display annoyance, hate, and bitterness. Or they’d sit silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, like Sarabha.
+T: ‘Though you claim to be one whose taints are destroyed, [1] you have not fully destroyed these taints,’ [2] I might question him closely about this matter, [3] interrogate him, [4] and cross-examine him. [5*] When he is being closely questioned by me, [6] interrogated, [7] and cross-examined, [8] it is impossible and inconceivable that he would not incur one or another of three consequences: [9] he would either answer evasively and divert the discussion to an irrelevant subject; [10] or display anger, [11] hatred, [12] and bitterness;…
+
+an3.64:10.3
+S1: ‘Regardless of your goal in teaching the Dhamma, it does not deliver one who applies it to the complete ending of suffering.’ Then I’d carefully pursue, press, and grill them on that point.
+S2: When grilled by me, they would, without a doubt, fall into one of these three categories. They’d dodge the issue, distracting the discussion with irrelevant points. They’d display annoyance, hate, and bitterness. Or they’d sit silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, like Sarabha.”
+T: ‘The Dhamma does not lead one who practices it to the complete destruction of suffering, [1] the goal for the sake of which you teach it,’ [2] I might question him closely about this matter, [3] interrogate him, [4] and cross-examine him. [5*] When he is being closely questioned by me, [6] interrogated, [7] and cross-examined, [8] it is impossible and inconceivable that he would not incur one or another of three consequences: [9] he would either answer evasively and divert the discussion to an irrelevant subject, [10] or display anger, [11] hatred, [12] and bitterness,…
+
+an3.64:11.4
+S1: In the same way, when the ascetic Gotama wasn’t here you said ‘I’ll roar a lion’s roar!’ but you only managed to squeal and yelp like a jackal.
+S2: You’re just like a marsh hen who thinks, ‘I’ll cry like a cuckoo!’ but they still only manage to cry like a marsh hen.
+T: claiming in the absence of the ascetic Gotama: [1] ‘I will roar a lion’s roar,’ [2] you only howled and yelped like a jackal. [3*] Just as, [4] friend Sarabha, [5] a chick might think: [6] ‘I will sing like a cock,’ [7] and yet would only sing like a chick, 
+
+an4.10:5.5
+S1: And what is unyoking from sensual pleasures?
+S2: It’s when you truly understand sensual pleasures’ origin, disappearance, gratification, drawback, and escape.
+T: (1) [1] “And what, [2] bhikkhus, [3] is the severance of the bond of sensuality? [4*] Here, [5] someone understands as they really are the origin and the passing away, [6] the gratification, [7] the danger, [8] and the escape in regard to sensual pleasures. [9] When one understands these things as they really are, 
+
+an4.10:6.2
+S1: And what is unyoking from future lives?
+S2: It’s when you truly understand future lives’ origin, disappearance, gratification, drawback, and escape.
+T: And how is there the severance of the bond of existence? [1*] Here, [2] someone understands as they really are the origin and the passing away, [3] the gratification, [4] the danger, [5] and the escape in regard to states of existence. [6] When one understands these things as they really are, 
+
+an4.10:7.2
+S1: And what is unyoking from views?
+S2: It’s when you truly understand views’ origin, disappearance, gratification, drawback, and escape.
+T: And how is there the severance of the bond of views? [1*] Here, [2] someone understands as they really are the origin and the passing away, [3] the gratification, [4] the danger, [5] and the escape in regard to views. [6] When one understands these things as they really are, 
+
+an4.10:8.2
+S1: And what is unyoking from ignorance?
+S2: It’s when you truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape,
+T: And how is there the severance of the bond of ignorance? [1*] Here, [2] someone understands as they really are the origin and the passing away, [3] the gratification, [4] the danger, [5] and the escape in regard to the six bases for contact. [6] When one understands these things as they really are, 
+
+an4.13:1.3
+S1: What four?
+S2: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise.
+T: What four? [1*] (1) Here, [2] a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states; [3] he makes an effort, [4] arouses energy, [5] applies his mind, [6] and strives. 
+
+an4.13:1.4
+S1: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise.
+S2: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities that have arisen are given up.
+T: (1) Here, [1] a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states; [2] he makes an effort, [3] arouses energy, [4] applies his mind, [5] and strives. [6*] (2) He generates desire for the abandoning of arisen bad unwholesome states; [7] he makes an effort, [8] arouses energy, [9] applies his mind, [10] and strives. 
+
+an4.13:1.5
+S1: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities that have arisen are given up.
+S2: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities arise.
+T: (2) He generates desire for the abandoning of arisen bad unwholesome states; [1] he makes an effort, [2] arouses energy, [3] applies his mind, [4] and strives. [5*] (3) He generates desire for the arising of unarisen wholesome states; [6] he makes an effort, [7] arouses energy, [8] applies his mind, [9] and strives. 
+
+an4.13:1.6
+S1: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities arise.
+S2: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed.
+T: (3) He generates desire for the arising of unarisen wholesome states; [1] he makes an effort, [2] arouses energy, [3] applies his mind, [4] and strives. [5*] (4) He generates desire for the persistence of arisen wholesome states, [6] for their non-decline, [7] increase, [8] expansion, [9] and fulfillment by development; [10] he makes an effort, [11] arouses energy, [12] applies his mind, [13] and strives. 
+
+an4.14:1.5
+S1: And what, mendicants, is the effort to restrain?
+S2: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details.
+T: (1) [1] “And what, [2] bhikkhus, [3] is striving by restraint? [4*] Here, [5] having seen a form with the eye, [6] a bhikkhu does not grasp its marks and features. 
+
+an4.14:1.6
+S1: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details.
+S2: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint.
+T: Here, [1] having seen a form with the eye, [2] a bhikkhu does not grasp its marks and features. [3*] Since, [4] if he left the eye faculty unrestrained, [5] bad unwholesome states of longing and dejection might invade him, [6] he practices restraint over it, [7] he guards the eye faculty, [8] he undertakes the restraint of the eye faculty. 
+
+an4.14:1.12
+S1: When they know an idea with their mind, they don’t get caught up in the features and details.
+S2: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint.
+T: Having cognized a mental phenomenon with the mind, [1] a bhikkhu does not grasp its marks and features. [2*] Since, [3] if he left the mind faculty unrestrained, [4] bad unwholesome states of longing and dejection might invade him, [5] he practices restraint over it, [6] he guards the mind faculty, [7] he undertakes the restraint of the mind faculty. 
+
+an4.14:2.2
+S1: And what, mendicants, is the effort to give up?
+S2: It’s when a mendicant doesn’t tolerate a sensual,
+T: (2) [1] “And what is striving by abandonment? [2*] Here, [3] a bhikkhu does not tolerate an arisen sensual thought; 
+
+an4.16:1.3
+S1: What four?
+S2: A mendicant has ultimate subtlety of form.
+T: What four? [1*] (1) Here, [2] a bhikkhu possesses supreme exquisiteness of form. 
+
+an4.21:2.2
+S1: “Mendicants, this one time, when I was first awakened, I was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River.
+S2: As I was in private retreat this thought came to mind:
+T: “Bhikkhus, [1] on one occasion I was dwelling at Uruvelā, [2] by the goatherds’ banyan tree on the bank of the Neranjarā River, [3] just after I had attained full enlightenment. [4*] Then, [5] while I was alone in seclusion, [6] a course of thought arose in my mind thus: 
+
+an4.21:3.3
+S1: ‘I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of ethics, if it were incomplete.
+S2: But I don’t see any other ascetic or brahmin in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who is more accomplished than myself in ethics, who I should honor and respect and rely on.
+T: (1) [1] ‘If my aggregate of virtuous behavior were incomplete, [2] for the sake of completing it I would honor, [3] respect, [4] and dwell in dependence on another ascetic or brahmin. [5*] However, [6] in this world with its devas, [7] Māra, [8] and Brahmā, [9] among this population with its ascetics and brahmins, [10] its devas and humans, [11] I do not see another ascetic or brahmin more accomplished in virtuous behavior than myself whom I could honor, [12] respect, [13] and dwell in dependence on. ¶ 
+
+an4.21:6.2
+S1: I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of freedom, if it were incomplete.
+S2: But I don’t see any other ascetic or brahmin in this world … who is more accomplished than myself in freedom …’
+T: (4) [1] “‘If my aggregate of liberation were incomplete, [2] for the sake of completing it I would honor, [3] respect, [4] and dwell in dependence on another ascetic or brahmin. [5*] However, [6] in this world with its devas, [7] Māra, [8] and Brahmā, [9] among this population with its ascetics and brahmins, [10] its devas and humans, [11] I do not see another ascetic or brahmin more accomplished in liberation than myself whom I could honor, [12] respect, [13] and dwell in dependence on. ¶ 
+
+an4.21:8.3
+S1: He arranged his robe over one shoulder, knelt on his right knee, raised his cupped palms toward me, and said:
+S2: ‘That’s so true, Blessed One! That’s so true, Holy One!
+T: He arranged his upper robe over one shoulder, [1] bent down with his right knee on the ground, [2] reverently saluted me, [3] and said: [4*] ‘So it is, [5] Blessed One! [6] So it is, [7] Fortunate One! 
+
+an4.21:8.5
+S1: All the perfected ones, the fully awakened Buddhas who lived in the past honored and respected and relied on this same teaching.
+S2: All the perfected ones, the fully awakened Buddhas who will live in the future will honor and respect and rely on this same teaching.
+T: Bhante, [1] those who were the Arahants, [2] the Perfectly Enlightened Ones in the past—[3] those Blessed Ones, [4] too, [5] honored, [6] respected, [7*] and dwelled in dependence only on the Dhamma. [8] Those who will be the Arahants, [9] the Perfectly Enlightened Ones in the future—[10] those Blessed Ones, [11] too, [12] will honor, [13] respect, [14] and dwell in dependence only on the Dhamma. 
+
+an4.21:12.3
+S1: Then he bowed and respectfully circled me, keeping me on his right side, before vanishing right there.
+S2: Then, knowing the request of the Divinity and what was suitable for myself, I honored and respected and relied on the same teaching to which I was awakened.
+T: He then paid homage to me, [1] and keeping me on his right, [2] he disappeared right there. [3*] Then, [4] having acknowledged Brahmā’s request and what was proper for myself, [5] I honored, [6] respected, [7] and dwelled in dependence only on the Dhamma to which I had become fully enlightened. 
+
+an4.22:1.5
+S1: ‘Worthy Gotama, we have heard this:
+S2: “The ascetic Gotama does not bow to old brahmins, elderly and senior, who are advanced in years and have reached the final stage of life; nor does he rise in their presence or offer them a seat.”
+T: “‘We have heard, [1] Master Gotama: [2*] “The ascetic Gotama does not pay homage to brahmins who are old, [3] aged, [4] burdened with years, [5] advanced in life, [6] come to the last stage; [7] nor does he stand up for them or offer them a seat.” 
+
+an4.23:4.2
+S1: The Realized One does as he says, and says as he does.
+S2: Since this is so,
+T: (3) [1] “Bhikkhus, [2] as the Tathāgata speaks, [3] so he does; [4] as he does, [5] so he speaks. [6*] Since he does as he speaks and speaks as he does, 
+
+an4.24:7.6
+S1: Since a Realized One is unaffected in the midst of things that ought be seen, heard, thought, and known, he is the unaffected one.
+S2: And I say that there is no better or finer poise than this.
+T: “Thus, [1] bhikkhus, [2] being ever stable among things seen, [3] heard, [4] sensed, [5] and cognized, [6] the Tathāgata is a stable one. [7*] And, [8] I say, [9] there is no stable one more excellent or sublime than that stable one.” ¶ 
+
+an4.27:1.5
+S1: A lump of almsfood …
+S2: Lodgings at the root of a tree …
+T: (2) A lump of almsfood is a trifle among meals, [1] easily gained and blameless. [2*] (3) The foot of a tree is a trifle among lodgings, [3] easily gained and blameless. 
+
+an4.27:1.7
+S1: Rancid urine as medicine …
+S2: These four trifles are easy to find and are blameless.
+T: (4) Putrid urine is a trifle among medicines, [1] easily gained and blameless. ¶ [2*] “These are the four trifles, [3] easily gained and blameless. 
+
+an4.274:1.3
+S1: What four?
+S2: Firstly, a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world.
+T: What four? [1*] (1) Here, [2] a bhikkhu dwells contemplating the body in the body, [3] ardent, [4] clearly comprehending, [5] mindful, [6] having removed longing and dejection in regard to the world. 
+
+an4.275:1.3
+S1: What four?
+S2: Firstly, a mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise.
+T: What four? [1*] (1) Here, [2] a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states; [3] he makes an effort, [4] arouses energy, [5] applies his mind, [6] and strives. 
+
+an4.276:1.3
+S1: What four?
+S2: It’s when a mendicant develops the basis of psychic power that has immersion due to enthusiasm, and active effort.
+T: What four? [1*] (1) Here, [2] a bhikkhu develops the basis for psychic potency that possesses concentration due to desire and activities of striving. 
+
+an4.28:4.2
+S1: Furthermore, a mendicant enjoys meditation and loves to meditate. They enjoy giving up and love to give up.
+S2: But they don’t glorify themselves or put down others on account of their love for meditation and giving up.
+T: (4) [1] “Again, [2] a bhikkhu finds delight in development, [3] is delighted with development, [4] finds delight in abandoning, [5] is delighted with abandoning. [6*] Yet he does not extol himself or disparage others because of this. 
+
+an4.30:5.2
+S1: If someone should say:
+S2: ‘I’ll deny this Dhamma footprint of right mindfulness, and describe a true ascetic or brahmin who is unmindful, with no situational awareness.’ Then I’d say to them:
+T: (3) [1] “If anyone should say: [2*] ‘I will reject this Dhamma factor of right mindfulness and point out a real ascetic or brahmin who is muddled in mind and lacks clear comprehension,’ [3] I would respond to him thus: 
+
+an4.32:2.5
+S1: as they deserve in each case.
+S2: These ways of being inclusive in the world
+T: as is suitable to fit each case: [1] these means ¶ [2*] of sustaining a favorable relationship ¶ 
+
+an4.33:2.5
+S1: ‘Oh no! It turns out we’re impermanent, though we thought we were permanent!
+S2: It turns out we don’t last, though we thought we were everlasting!
+T: ‘It seems that we are actually impermanent, [1] though we thought ourselves permanent; [2*] it seems that we are actually transient, [3] though we thought ourselves everlasting; 
+
+an4.35:2.3
+S1: What four?
+S2: They are very learned in diverse fields of learning.
+T: What four? [1*] (1) Here, [2] someone is highly learned in the various fields of learning. 
+
+an4.35:3.2
+S1: “Brahmin, I neither agree nor disagree with you,
+S2: but when someone has four qualities I describe him as a great man with great wisdom.
+T: “I neither approve of your statement, [1] brahmin, [2] nor do I reject it. [3*] Rather, [4] I describe one who possesses four other qualities as a great man with great wisdom. 
+
+an4.35:4.2
+S1: “It’s incredible, worthy Gotama, it’s amazing!
+S2: How well said this was by the worthy Gotama!
+T: “It is astounding and amazing, [1] Master Gotama, [2*] how well this has been stated by Master Gotama. 
+
+an4.36:3.9
+S1: (Pali) ‘na kho ahaṁ, brāhmaṇa, manusso bhavissāmī’ti vadesi.
+S2: So what then might you be?”
+T: you say: [1] ‘I will not be a human being, [2] brahmin.’ [3*] What, [4] then, [5] could you be, [6] sir?” ¶ 
+
+an4.37:1.3
+S1: What four?
+S2: A mendicant is accomplished in ethics, guards the sense doors, eats in moderation, and is dedicated to wakefulness.
+T: What four? [1*] Here, [2] a bhikkhu is accomplished in virtuous behavior, [3] guards the doors of the sense faculties, [4] observes moderation in eating, [5] and is intent on wakefulness. ¶ 
+
+an4.37:2.2
+S1: And how is a mendicant accomplished in ethics?
+S2: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken.
+T: (1) [1] “And how is a bhikkhu accomplished in virtuous behavior? [2*] Here, [3] a bhikkhu is virtuous; [4] he dwells restrained by the Pātimokkha, [5] possessed of good conduct and resort, [6] seeing danger in minute faults. [7] Having undertaken the training rules, [8] he trains in them. 
+
+an4.37:3.2
+S1: And how does a mendicant guard the sense doors?
+S2: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details.
+T: (2) [1] “And how does a bhikkhu guard the doors of the sense faculties? [2*] Here, [3] having seen a form with the eye, [4] a bhikkhu does not grasp its marks and features. 
+
+an4.37:3.3
+S1: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details.
+S2: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint.
+T: Here, [1] having seen a form with the eye, [2] a bhikkhu does not grasp its marks and features. [3*] Since, [4] if he left the eye faculty unrestrained, [5] bad unwholesome states of longing and dejection might invade him, [6] he practices restraint over it; [7] he guards the eye faculty, [8] he undertakes the restraint of the eye faculty. 
+
+an4.37:3.9
+S1: Knowing an idea with their mind, they don’t get caught up in the features and details.
+S2: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint.
+T: Having cognized a mental phenomenon with the mind, [1] a bhikkhu does not grasp its marks and features. [2*] Since, [3] if he left the mind faculty unrestrained, [4] bad unwholesome states of longing and dejection might invade him, [5] he practices restraint over it; [6] he guards the mind faculty, [7] he undertakes the restraint of the mind faculty. 
+
+an4.37:4.2
+S1: And how does a mendicant eat in moderation?
+S2: It’s when a mendicant reflects rationally on the food that they eat:
+T: (3) [1] “And how does a bhikkhu observe moderation in eating? [2*] Here, [3] reflecting carefully, [4] a bhikkhu consumes food neither for amusement nor for intoxication nor for the sake of physical beauty and attractiveness, 
+
+an4.37:5.2
+S1: And how is a mendicant dedicated to wakefulness?
+S2: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles.
+T: (4) [1] “And how is a bhikkhu intent on wakefulness? [2*] Here, [3] during the day, [4] while walking back and forth and sitting, [5] a bhikkhu purifies his mind of obstructive qualities. 
+
+an4.38:1.3
+S1: And how has a mendicant cast aside idiosyncratic interpretations of the truth?
+S2: Different ascetics and brahmins have different idiosyncratic interpretations of the truth. For example:
+T: (1) [1] “And how, [2] bhikkhus, [3] has a bhikkhu dispelled personal truths? [4*] Here, [5] whatever ordinary personal truths may be held by ordinary ascetics and brahmins—[6] that is, 
+
+an4.38:2.2
+S1: And how has a mendicant totally given up searching?
+S2: It’s when they’ve given up searching for sensual pleasures, for continued existence, and for a spiritual path.
+T: (2) [1] “And how has a bhikkhu totally renounced seeking? [2*] Here, [3] a bhikkhu has abandoned the search for sensual pleasures and the search for existence and has allayed the search for a spiritual life. 
+
+an4.38:3.2
+S1: And how has a mendicant stilled the physical process?
+S2: It’s when, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness.
+T: (3) [1] “And how has a bhikkhu tranquilized bodily activity? [2*] Here, [3] with the abandoning of pleasure and pain, [4] and with the previous passing away of joy and dejection, [5] a bhikkhu enters and dwells in the fourth jhāna, [6] neither painful nor pleasant, [7] which has purification of mindfulness by equanimity. 
+
+an4.38:4.2
+S1: And how is a mendicant withdrawn?
+S2: It’s when they’ve given up the conceit ‘I am’, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future.
+T: (4) [1] “And how has a bhikkhu drawn back? [2*] Here, [3] a bhikkhu has abandoned the conceit [4] ‘I am,’ [5] cut it off at the root, [6] made it like a palm stump, [7] obliterated it so that it is no longer subject to future arising. 
+
+an4.5:1.5
+S1: And who is the individual who goes with the stream?
+S2: It’s an individual who indulges in sensual pleasures and does bad deeds.
+T: (1) [1] “And what is the person who goes along with the stream? [2*] Here, [3] someone indulges in sensual pleasures and performs bad deeds. 
+
+an4.5:2.2
+S1: And who is the individual who goes against the stream?
+S2: It’s an individual who doesn’t indulge in sensual pleasures or do bad deeds. They live the full and pure spiritual life in pain and sadness, weeping, with tearful faces.
+T: (2) [1] “And what is the person who goes against the stream? [2*] Here, [3] someone does not indulge in sensual pleasures or perform bad deeds. [4] Even with pain and dejection, [5] weeping with a tearful face, [6] he lives the complete and purified spiritual life. 
+
+an4.5:3.2
+S1: And who is the steadfast individual?
+S2: It’s an individual who, with the ending of the five lower fetters, is reborn spontaneously. They’re extinguished there, and are not liable to return from that world.
+T: (3) [1] “And what is the person who is inwardly firm? [2*] Here, [3] with the utter destruction of the five lower fetters, [4] some person is of spontaneous birth, [5] due to attain final nibbāna there without ever returning from that world. 
+
+an4.5:4.2
+S1: And who is a brahmin who has crossed over, gone to the far shore, and stands on solid ground?
+S2: It’s an individual who realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements.
+T: (4) [1] “And what is the one who has crossed over and gone beyond, [2] the brahmin who stands on high ground? [3*] Here, [4] with the destruction of the taints, [5] some person has realized for himself with direct knowledge, [6] in this very life, [7] the taintless liberation of mind, [8] liberation by wisdom, [9] and having entered upon it, [10] he dwells in it. 
+
+an4.5:8.3
+S1: cleared them and ended them, so they are no more;
+S2: they’ve completed the spiritual journey <j>and gone to the end of the world,
+T: burnt them up, [1] so they’re gone and exist no more: ¶ [2*] that sage who has lived the spiritual life, ¶ [3] reached the world’s end, 
+
+an4.51:7.4
+S1: all reach the great deep, the boundless ocean,
+S2: the cruel sea that’s home to precious gems.
+T: flowing downstream, [1] reach the ocean, ¶ [2] the great mass of water, [3] the boundless sea, ¶ [4*] the fearsome receptacle of heaps of gems; ¶ 
+
+an4.53:3.2
+S1: And how does a male zombie live with a female zombie?
+S2: It’s when the husband kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. He’s unethical, of bad character, living at home with his heart full of the stain of stinginess, abusing and insulting ascetics and brahmins.
+T: (1) [1] “And how, [2] householders, [3] does a wretch live together with a wretch? [4*] Here, [5] the husband is one who destroys life, [6] takes what is not given, [7] engages in sexual misconduct, [8] speaks falsely, [9] and indulges in liquor, [10] wine, [11] and intoxicants, [12] the basis for heedlessness; [13] he is immoral, [14] of bad character; [15] he dwells at home with a heart obsessed by the stain of miserliness; [16] he insul…
+
+an4.53:4.2
+S1: And how does a male zombie live with a goddess?
+S2: It’s when the husband … is unethical, of bad character …
+T: (2) [1] “And how does a wretch live together with a female deva? [2*] Here, [3] the husband is one who destroys life … 
+
+an4.53:5.2
+S1: And how does a god live with a female zombie?
+S2: It’s when the husband … is ethical, of good character …
+T: (3) [1] “And how does a deva live together with a wretch? [2*] Here, [3] the husband is one who abstains from the destruction of life … [4] he does not insult or revile ascetics and brahmins. 
+
+an4.53:6.2
+S1: And how does a god live with a goddess?
+S2: It’s when the husband … is ethical, of good character …
+T: (4) [1] “And how does a deva live together with a female deva? [2*] Here, [3] the husband is one who abstains from the destruction of life … [4] he does not insult or revile ascetics and brahmins. 
+
+an4.55:1.3
+S1: At one time the Buddha was staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood.
+S2: Then the Buddha robed up in the morning and, taking his bowl and robe, went to the home of the householder Nakula’s father, where he sat down on the seat spread out.
+T: On one occasion the Blessed One was dwelling among the Bhaggas in Suṁsumāragira in the deer park at Bhesakalā Grove. [1*] Then, [2] in the morning, [3] the Blessed One dressed, [4] took his bowl and robe, [5] and went to the residence of the householder Nakulapitā, [6] where he sat down in the prepared seat. 
+
+an4.57:1.2
+S1: At one time the Buddha was staying in the land of the Koliyans, where they have a town named Pajjanika.
+S2: Then the Buddha robed up in the morning and, taking his bowl and robe, went to the home of Suppavāsā the Koliyan, where he sat down on the seat spread out.
+T: On one occasion the Blessed One was dwelling among the Koliyans near the Koliyan town named Sajjanela. [1*] Then, [2] in the morning, [3] the Blessed One dressed, [4] took his bowl and robe, [5] and went to the residence of the Koliyan daughter Suppavāsā, [6] where he sat down in the prepared seat. [7] Then the Koliyan daughter Suppavāsā, 
+
+an4.6:1.8
+S1: And how has an individual learned little and not got the point of learning?
+S2: It’s when an individual has learned little of the
+T: (1) [1] “And how is a person one of little learning who is not intent on what he has learned? [2*] Here, [3] someone has learned little—[4] that is, 
+
+an4.6:2.2
+S1: And how has an individual learned little but has got the point of learning?
+S2: It’s when an individual has learned little of the
+T: (2) [1] “And how is a person one of little learning who is intent on what he has learned? [2*] Here, [3] someone has learned little—[4] that is, 
+
+an4.6:3.2
+S1: And how has an individual learned much but hasn’t got the point of learning?
+S2: It’s when an individual has learned much of the
+T: (3) [1] “And how is a person one of much learning who is not intent on what he has learned? [2*] Here, [3] someone has learned much—[4] that is, 
+
+an4.6:4.2
+S1: And how has an individual learned much and has got the point of learning?
+S2: It’s when an individual has learned much of the
+T: (4) [1] “And how is a person one of much learning who is intent on what he has learned? [2*] Here, [3] someone has learned much—[4] that is, 

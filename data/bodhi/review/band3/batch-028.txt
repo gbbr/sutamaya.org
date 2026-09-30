@@ -1,0 +1,499 @@
+dn1:2.24.5
+S1: If I were to declare that something was skillful or unskillful I might be wrong.
+S2: That would be stressful for me,
+T: I were to declare something to be wholesome or unwholesome, [1] my declaration might be false. [2*] If my declaration should be false, [3] that would distress me, 
+
+dn1:2.26.9
+S1: I’d be stumped by such a grilling.
+S2: That would be stressful for me,
+T: If they should do so, [1] I might not be able to reply. [2*] If I could not reply, [3] that would distress me, 
+
+dn1:2.27.7
+S1: Suppose you were to ask me whether there is no other world …
+S2: whether there both is and is not another world …
+T: when asked any of the following questions, [1] he resorts to the same evasive statements and to endless equivocation: ¶ [2*] Is there no world beyond? ¶ [3] Is it that there both is and is not a world beyond? ¶ 
+
+dn1:2.29.1
+S1: Any ascetics and brahmins who resort to verbal flip-flops and endless flip-flops do so on one or other of these four grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins there may be who resort to evasive statements and to endless equivocation, [1] all of them do so on these four grounds or on a certain one of them. [2] Outside of these there is none. ¶ [3] “This, [4] bhikkhus, [5*] the Tathāgata understands …. 
+
+dn1:2.31.6
+S1: By dint of keen, resolute, committed, and diligent effort, and right application of mind, they experience an immersion of the heart of such a kind that they recollect the arising of perception, but no further.
+S2: They say:
+T: by means of ardour, [1] endeavour, [2] application, [3] diligence, [4] and right reflection, [5] he attains to such a degree of mental concentration that with his mind thus concentrated he recollects the arising of perception, [6] but nothing previous to that. [7*] He speaks thus: 
+
+dn1:2.34.1
+S1: Any ascetics and brahmins who speculate and theorize about anomalous origination do so on one or other of these two grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: all of them do so on these two grounds or on a certain one of them. [1] Outside of these there is none. ¶ [2] “This, [3] bhikkhus, [4*] the Tathāgata understands … 
+
+dn1:2.38.5
+S1: formless …
+S2: both formed and formless …
+T: material ¶ [1] immaterial ¶ [2*] both material and immaterial ¶ 
+
+dn1:2.40.1
+S1: Any ascetics and brahmins who assert that the self lives on after death in a percipient form do so on one or other of these sixteen grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins maintain a doctrine of percipient immortality, [1] all of them do so on these sixteen grounds or on a certain one of them. [2] Outside of these there is none. ¶ [3] “This, [4] bhikkhus, [5*] the Tathāgata understand … 
+
+dn1:3.2.3
+S1: formless …
+S2: both formed and formless …
+T: material ¶ [1] immaterial ¶ [2*] both material and immaterial ¶ 
+
+dn1:3.4.1
+S1: Any ascetics and brahmins who assert that the self lives on after death in a non-percipient form do so on one or other of these eight grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins maintain a doctrine of non—[1] percipient immortality, [2] all of them do so on these eight grounds or on a certain one of them. [3] Outside of these there is none. ¶ [4] “This, [5] bhikkhus, [6*] the Tathāgata understands … 
+
+dn1:3.6.3
+S1: formless …
+S2: both formed and formless …
+T: material ¶ [1] immaterial ¶ [2*] both material and immaterial ¶ 
+
+dn1:3.8.1
+S1: Any ascetics and brahmins who assert that the self lives on after death in a neither percipient nor non-percipient form do so on one or other of these eight grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins maintain a doctrine of neither percipient nor non-percipient immortality, [1] all of them do so on these eight grounds or on a certain one of them. [2] Outside of these there is none. ¶ [3] “This, [4] bhikkhus, [5*] the Tathāgata understands … 
+
+dn1:3.18.1
+S1: Any ascetics and brahmins who assert the annihilation, eradication, and nonexistence of an existing being do so on one or other of these seven grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins proclaim the annihilation, [1] destruction, [2] and extermination of an existent being, [3] all of them do so on these seven grounds or on a certain one of them. [4] Outside of these there is none. ¶ [5] “This, [6] bhikkhus, [7*] the Tathāgata understands … 
+
+dn1:3.26.1
+S1: Any ascetics and brahmins who assert ultimate extinguishment for an existing being in this life do so on one or other of these five grounds. Outside of this there is none.
+S2: The Realized One understands this …
+T: Whatever recluses or brahmins proclaim supreme Nibbāna here and now for an existent being, [1] all of them do so on these five grounds or on a certain one of them. [2] Outside of these there is none. ¶ [3] “This, [4] bhikkhus, [5*] the Tathāgata understands … 
+
+dn1:3.27.2
+S1: These are the forty-four grounds on which those ascetics and brahmins who speculate and theorize about the final end propose various hypotheses concerning the final end.
+S2: Any ascetics and brahmins who speculate and theorize about the final end do so on one or other of these forty-four grounds. Outside of this there is none.
+T: “It is on these forty-four grounds, [1] bhikkhus, [2] that those recluses and brahmins who are speculators about the future and hold settled views about the future assert various conceptual theorems referring to the future. [3] Whatever recluses or brahmins, [4] bhikkhus, [5] are speculators about the future, [6*] hold settled views about the future, [7] and assert various conceptual theorems referring to the future, [8] all of them do so on these forty-four grounds or on a certain one of them. [9] Outside of these there is none. ¶ 
+
+dn1:3.70.1
+S1: When those ascetics and brahmins speculate and theorize about the first beginning and the final end on these sixty-two grounds, that too is dependent on contact. 4.3. Not Possible (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā sassatavādā sassataṁ attānañca lokañca paññapenti catūhi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā ekaccasassatikā ekaccaasassatikā ekaccaṁ sassataṁ ekaccaṁ asassataṁ attānañca lokañca paññapenti catūhi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā antānantikā antānantaṁ lokassa paññapenti catūhi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā amarāvikkhepikā tattha tattha pañhaṁ puṭṭhā samānā vācāvikkhepaṁ āpajjanti amarāvikkhepaṁ catūhi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā adhiccasamuppannikā adhiccasamuppannaṁ attānañca lokañca paññapenti dvīhi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā pubbantakappikā pubbantānudiṭṭhino pubbantaṁ ārabbha anekavihitāni adhimuttipadāni abhivadanti aṭṭhārasahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā uddhamāghātanikā saññīvādā uddhamāghātanaṁ saññiṁ attānaṁ paññapenti soḷasahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā uddhamāghātanikā asaññīvādā, uddhamāghātanaṁ asaññiṁ attānaṁ paññapenti aṭṭhahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā uddhamāghātanikā nevasaññīnāsaññīvādā uddhamāghātanaṁ nevasaññīnāsaññiṁ attānaṁ paññapenti aṭṭhahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā ucchedavādā sato sattassa ucchedaṁ vināsaṁ vibhavaṁ paññapenti sattahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā diṭṭhadhammanibbānavādā sato sattassa paramadiṭṭhadhammanibbānaṁ paññapenti pañcahi vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. (Pali) Tatra, bhikkhave, ye te samaṇabrāhmaṇā aparantakappikā aparantānudiṭṭhino aparantaṁ ārabbha anekavihitāni adhimuttipadāni abhivadanti catucattārīsāya vatthūhi, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati.
+S2: Now, when those ascetics and brahmins speculate and theorize about the first beginning and the final end on these sixty-two grounds, it is not possible that they should experience these things without contact.
+T: that too is conditioned by contact. [1*] That they can experience that feeling without contact—[2] such a case is impossible. ¶ [3] “When those recluses and brahmins who are speculators about the past, [4] speculators about the future, [5] speculators about the past and the future together, [6] who hold settled views about the past and the future, [7] assert on six…
+
+dn1:3.72.3
+S1: All of these ascetics and brahmins who speculate and theorize about the first beginning or the final end are trapped in the net of these sixty-two grounds, so that wherever they emerge they are caught and trapped in this very net.
+S2: Suppose a deft fisherman or his apprentice were to cast a fine-meshed net over a small pond. They’d think: ‘Any sizable creatures in this pond will be trapped in the net. Wherever they emerge they are caught and trapped in this very net.’
+T: …ut the past, [1] speculators about the future, [2] speculators about the past and the future together, [3] hold settled views about the past and the future and assert various conceptual theorems referring to the past and the future—[4] all are trapped in this net with its sixty-two divisions. [5] Whenever they emerge, [6*] they emerge caught within this net, [7] trapped and contained within this very net. ¶ [8] “Just as, [9] bhikkhus, [10] a skillful fisherman or a fisherman’s apprentice, [11] after spreading a fine-meshed net over a small pool of water, [12] might think: [13] ‘Whatever sizeable creatures there are in this pool, [14] all are trapped within…
+
+dn15:9.2
+S1: So it is, Ānanda, that feeling gives rise to craving. Craving gives rise to searching. Searching gives rise to gaining material things. Gaining material things gives rise to evaluation. Evaluation gives rise to desire and lust. Desire and lust gives rise to attachment. Attachment gives rise to ownership. Ownership gives rise to stinginess. Stinginess gives rise to safeguarding.
+S2: Owing to safeguarding, many bad, unskillful things come to be: taking up the rod and the sword, quarrels, arguments, and disputes, accusations, backbiting, and lies.
+T: …is decision-making; [1] in dependence upon decision-making there is desire and lust; [2] in dependence upon desire and lust there is attachment; [3] in dependence upon attachment there is possessiveness; [4] in dependence upon possessiveness there is stinginess; [5] in dependence upon stinginess there is safeguarding; [6*] and because of safeguarding, [7] various evil unwholesome phenomena originate—[8] the taking up of clubs and weapons, [9] conflicts, [10] quarrels, [11] and disputes, [12] insulting speech, [13] slander, [14] and falsehoods. ¶ 
+
+dn15:29.9
+S1: When feeling a neutral feeling they think: ‘This is my self.’
+S2: When their neutral feeling ceases they think: ‘My self has expired.’
+T: If, [1] when experiencing a neither-painful-nor-pleasant feeling, [2] one thinks: [3*] ‘This is my self,’ [4] then with the ceasing of that neither-painful-nor-pleasant feeling one thinks: [5] ‘My self has disappeared.’ ¶ 
+
+dn15:32.3
+S1: not regarding in this way, they don’t grasp at anything in the world.
+S2: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished.
+T: then, [1] being without such considerations, [2] he does not cling to anything in the world. [3*] Not clinging, [4] he is not agitated. [5] Not being agitated, [6] he personally attains nibbāna. 
+
+dn2:11.2
+S1: Then King Ajātasattu rode on the elephant as far as the terrain allowed, then descended and approached the pavilion door on foot, where he asked Jīvaka,
+S2: “But my dear Jīvaka, where is the Buddha?”
+T: Then King Ajātasattu, [1] having gone by elephant as far as he could, [2] dismounted and approached the door of the pavilion hall on foot. [3] Having approached, [4] he asked Jīvaka: [5*] “But where, [6] Jīvaka, [7] is the Exalted One?” ¶ 
+
+dn2:20.8
+S1: There are 1.4 million main wombs, and 6,000, and 600; 500 deeds, and five, and three; deeds and half-deeds; 62 paths of practice, 62 sub-eons, six classes of rebirth, and eight stages in a person’s life; 4,900 Ājīvaka ascetics, 4,900 wanderers, and 4,900 dragon abodes; 2,000 lordships, 3,000 hells, and 36 realms of dusky sky; seven percipient embryos, seven non-percipient embryos, seven knotless embryos, seven gods, seven mental heavens, seven goblins, seven streams, seven castoff incarnations and 700 castoff incarnations, seven downfalls and 700 downfalls, seven dreams and 700 dreams, and 8.4 million great eons—through all of which the foolish and the astute transmigrate before making an end of suffering.
+S2: And here there is no such thing as this: “By this precept or observance or fervent austerity or spiritual practice I shall force unripened deeds to bear their fruit, or eliminate old deeds by experiencing their results little by little,” for that cannot be.
+T: … hundred minor kinds of knots, [1] seven major precipices, [2] seven hundred minor precipices, [3] seven major kinds of dreams, [4] seven hundred minor kinds of dreams, [5] eighty-four hundred thousand great aeons. [6] The foolish and the wise, [7] having roamed and wandered through these, [8] will alike make an end to suffering. ¶ [9*] ‘Though one might think: [10] “By this moral discipline or observance or austerity or holy life I will ripen unripened kamma and eliminate ripened kamma whenever it comes up”—[11] that cannot be. 
+
+dn2:21.3
+S1: It was like someone who, when asked about a mango, answered with a breadfruit, or when asked about a breadfruit, answered with a mango.
+S2: (Pali) evameva kho me, bhante, makkhali gosālo sandiṭṭhikaṁ sāmaññaphalaṁ puṭṭho samāno saṁsārasuddhiṁ byākāsi.
+T: just as if one asked about a mango would speak about a breadfruit, [1] or as if one asked about a breadfruit would speak about a mango, [2*] in the same way, [3] when I asked Makkhali Gosāla about a visible fruit of recluseship, [4] he explained to me (his doctrine of) purification through wandering in saṁsāra. 
+
+dn2:24.3
+S1: It was like someone who, when asked about a mango, answered with a breadfruit, or when asked about a breadfruit, answered with a mango.
+S2: (Pali) evameva kho me, bhante, ajito kesakambalo sandiṭṭhikaṁ sāmaññaphalaṁ puṭṭho samāno ucchedaṁ byākāsi.
+T: just as if one asked about a mango would speak about a breadfruit, [1] or as if one asked about a breadfruit would speak about a mango, [2*] in the same way, [3] when I asked Ajita Kesakambala about a visible fruit of recluseship, [4] he explained to me (his doctrine of) annihilation. 
+
+dn2:27.3
+S1: It was like someone who, when asked about a mango, answered with a breadfruit, or when asked about a breadfruit, answered with a mango.
+S2: (Pali) evameva kho me, bhante, pakudho kaccāyano sandiṭṭhikaṁ sāmaññaphalaṁ puṭṭho samāno aññena aññaṁ byākāsi.
+T: just as if one asked about a mango would speak about a breadfruit, [1] or as if one asked about a breadfruit would speak about a mango, [2*] in the same way, [3] when I asked Pakudha Kaccāyana about a visible fruit of recluseship, [4] he answered me in a completely irrelevant way. 
+
+dn2:30.3
+S1: It was like someone who, when asked about a mango, answered with a breadfruit, or when asked about a breadfruit, answered with a mango.
+S2: (Pali) evameva kho me, bhante, nigaṇṭho nāṭaputto sandiṭṭhikaṁ sāmaññaphalaṁ puṭṭho samāno cātuyāmasaṁvaraṁ byākāsi.
+T: just as if one asked about a mango would speak about a breadfruit, [1] or as if one asked about a breadfruit would speak about a mango, [2*] in the same way, [3] when I asked Nigaṇṭha Nātaputta about a visible fruit of recluseship, [4] he explained to me the fourfold restraint. 
+
+dn2:35.8
+S1: Whereas I’m his bondservant, his worker. I get up before him and go to bed after him, and am obliging, behaving nicely and speaking politely, and gazing up at his face.
+S2: I really should do good deeds.
+T: while I am his slave, [1] his workman—[2] rising before him, [3] retiring after him, [4] doing whatever he wants, [5] acting always for his pleasure, [6] speaking politely to him, [7] ever on the lookout to see that he is satisfied. [8*] I could be like him if I were to do meritorious deeds. 
+
+dn2:74.2
+S1: In the same way, as long as these five hindrances are not given up inside themselves, a mendicant regards them as a debt, a disease, a prison, slavery, and a desert crossing.
+S2: But when these five hindrances are given up inside themselves, a mendicant regards this as freedom from debt, good health, release from prison, emancipation, and a place of sanctuary at last.
+T: “In the same way, [1] great king, [2] when a bhikkhu sees that these five hindrances are unabandoned within himself, [3] he regards that as a debt, [4] as a sickness, [5] as confinement in prison, [6] as slavery, [7] as a desert road. ¶ [8] “But when he sees that these five hindrances have been abandoned within himself, [9*] he regards that as freedom from debt, [10] as good health, [11] as release from prison, [12] as freedom from slavery, [13] as a place of safety. ¶ [14] “When he sees that these five hindrances have been abandoned within himself, 
+
+dn2:102.3
+S1: “The king is broken, mendicants,
+S2: he is ruined.
+T: “This king, [1] bhikkhus, [2*] has ruined himself; [3] he has injured himself. 
+
+thag8.1:8.5
+S1: though you have strength, be as if feeble.
+S2: And when issues come up
+T: One with strength as if feeble. ¶ [1*] Then, [2] when the goal has been attained, ¶ 
+
+mn103:2.10
+S1: “We think of you this way:
+S2: ‘The Buddha is sympathetic and wants what’s best for us.
+T: “Venerable sir, [1] we think thus about the Blessed One: [2*] ‘The Blessed One is compassionate and seeks our welfare; 
+
+mn103:10.3
+S1: ‘I won’t be troubled and the other individual won’t be hurt, for they’re not irritable and acrimonious. They don’t hold fast to their views, but let them go easily. I can draw them away from the unskillful and establish them in the skillful.’
+S2: If that’s what you think, then it’s appropriate to speak to them.
+T: ‘I shall not be troubled and the other person will not be hurt; [1] for the other person is not given to anger and resentment, [2] he is not firmly attached to his view and he relinquishes easily, [3] and I can make that person emerge from the unwholesome and establish him in the wholesome. [4*] ’ If such occurs to you, [5] bhikkhus, [6] it is proper to speak. ¶ 
+
+mn104:4.6
+S1: Then Ānanda and Cunda went to the Buddha, bowed, sat down to one side, and Ānanda informed him of what Cunda had said. He went on to say,
+S2: (Pali) “ayaṁ, bhante, cundo samaṇuddeso evamāha:
+T: Then the venerable Ānanda and the novice Cunda went together to the Blessed One. [1] After paying homage to him, [2] they sat down at one side, [3] and the venerable Ānanda said to the Blessed One: [4] “This novice Cunda, [5*] venerable sir, [6] says thus: 
+
+mn104:17.6
+S1: ‘No, reverend, I don’t recall committing such an offense.’
+S2: But though they try to get out of it, the mendicant pursues the issue:
+T: ‘I do not, [1] friends, [2] remember having committed such and such a grave offence, [3] one involving defeat or bordering on defeat.’ [4*] Despite the denial, [5] the former presses the latter further: 
+
+mn104:19.6
+S1: ‘No, reverend, I don’t recall committing such an offense.’
+S2: But though they try to get out of it, the mendicant pursues the issue:
+T: ‘I do not, [1] friends, [2] remember having committed such and such a grave offence, [3] one involving defeat or bordering on defeat.’ [4*] Despite the denial, [5] the former presses the latter further: 
+
+mn104:19.10
+S1: ‘Reverend, I don’t recall committing a heavy offense of that nature.
+S2: But I do recall committing a light offense.’
+T: ‘I do not, [1] friends, [2] remember having committed such and such a grave offence, [3] one involving defeat or bordering on defeat. [4] But, [5] friends, [6*] I remember having committed such and such a minor offence.’ 
+
+mn104:19.11
+S1: But I do recall committing a light offense.’
+S2: But though they try to get out of it, the mendicant pursues the issue:
+T: I remember having committed such and such a minor offence.’ [1*] Despite the denial, [2] the former presses the latter further: 
+
+mn104:20.9
+S1: Then a competent mendicant of the other party, having risen from their seat, arranged their robe over one shoulder, and raising their cupped palms, should inform the Saṅgha:
+S2: ‘Sir, let the Saṅgha listen to me.
+T: “Then a wise bhikkhu among the bhikkhus who side together on the other part should rise from his seat, [1] and after arranging his robe on one shoulder, [2] he should raise his hands, [3] palms together, [4] and call for an enactment of the Sangha thus: [5*] ‘Let the venerable Sangha hear me. 
+
+mn108:25.6
+S1: “Indeed it is, brahmin. And it is like that owing to such protectors and guardians as yourself.”
+S2: “Surely, worthy Ānanda, it is owing to the good fellows who meditate, making a habit of meditating.
+T: favourable for retreat is because of such guardian protectors as yourself.” ¶ [1*] “Indeed, [2] Master Ānanda, [3] that the Bamboo Grove is pleasant…favourable for retreat is because of the worthy ones who are meditators and cultivate meditation. [4] The worthy ones are meditators and cultivate meditation. 
+
+mn108:26.13
+S1: Hiding doubt within, they meditate and concentrate and contemplate and ruminate.
+S2: The Buddha didn’t praise this kind of meditation.
+T: While he harbours doubt within, [1] he meditates, [2] premeditates, [3] out-meditates, [4] and mismeditates. [5*] The Blessed One did not praise that kind of meditation. ¶ 
+
+mn11:5.2
+S1: You should say to them:
+S2: ‘Well, reverends, is the goal one or many?’
+T: “Wanderers of other sects who ask thus may be answered in this way: [1*] ‘How then, [2] friends, [3] is the goal one or many?’ 
+
+mn11:5.5
+S1: ‘The goal is one, reverends, not many.’
+S2: ‘But is that goal for the greedy or for those free of greed?’
+T: ‘Friends, [1] the goal is one, [2] not many.’—[3] ‘But, [4] friends, [5*] is that goal for one affected by lust or free from lust?’ 
+
+mn11:6.4
+S1: Any ascetics or brahmins who resort to, draw near to, and cling to a view favoring existence will oppose a view favoring nonexistence.
+S2: Any ascetics or brahmins who resort to, draw near to, and cling to a view favoring nonexistence will oppose a view favoring existence.
+T: Any recluses or brahmins who rely on the view of being, [1] adopt the view of being, [2] accept the view of being, [3] are opposed to the view of non-being. [4*] Any recluses or brahmins who rely on the view of non-being, [5] adopt the view of non-being, [6] accept the view of non-being, [7] are opposed to the view of being. ¶ 
+
+mn117:35.14
+S1: For one of right knowledge, wrong knowledge is worn away. …
+S2: For one of right freedom, wrong freedom is worn away.
+T: wrong concentration is abolished…In one of right knowledge, [1] wrong knowledge is abolished…In one of right deliverance, [2*] wrong deliverance is abolished, 
+
+mn118:9.1
+S1: An assembly such as this is worth traveling many leagues to see, even if you have to carry your own provisions in a knapsack.
+S2: For in this Saṅgha there are perfected mendicants who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment.
+T: Such an assembly as would be worth journeying many leagues with a travel-bag to see—[1*] such is this Sangha of bhikkhus, [2] such is this assembly. ¶ [3] “In this Sangha of bhikkhus there are bhikkhus who are arahants with taints destroyed, [4] who have lived the holy life, [5] done what had to be done, [6] laid down the burden, [7] reached their own goal, [8] destroyed the fetters of being, [9] and are completely libe…
+
+mn118:18.3
+S1: Breathing in lightly they know: ‘I’m breathing in lightly.’ Breathing out lightly they know: ‘I’m breathing out lightly.’
+S2: They practice like this: ‘I’ll breathe in experiencing the whole body.’ They practice like this: ‘I’ll breathe out experiencing the whole body.’
+T: Breathing in short, [1] he understands: [2] ‘I breathe in short’; [3] or breathing out short, [4] he understands: [5] ‘I breathe out short.’ [6*] He trains thus: [7] ‘I shall breathe in experiencing the whole body of breath’; [8] he trains thus: [9] ‘I shall breathe out experiencing the whole body of breath.’ 
+
+mn118:26.1
+S1: That’s why at that time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world.
+S2: Whenever a mendicant practices breathing while experiencing the mind,
+T: That is why on that occasion a bhikkhu abides contemplating feelings as feelings, [1] ardent, [2] fully aware, [3] and mindful, [4] having put away covetousness and grief for the world. ¶ [5*] “Bhikkhus, [6] on whatever occasion a bhikkhu trains thus: [7] ‘I shall breathe in experiencing the mind’; [8] trains thus: [9] ‘I shall breathe out experiencing the mind’; [10] trains thus: 
+
+mn118:26.5
+S1: or freeing the mind—
+S2: at that time they meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world.
+T: trains thus: [1] ‘I shall breathe in liberating the mind’; [2] trains thus: [3] ‘I shall breathe out liberating the mind’—[4*] on that occasion a bhikkhu abides contemplating mind as mind, [5] ardent, [6] fully aware, [7] and mindful, [8] having put away covetousness and grief for the world. 
+
+mn12:26.2
+S1: I see no reason for anyone—whether ascetic, brahmin, god, Māra, or the Divinity, or anyone else in the world—to legitimately scold me, saying: ‘Regardless of your goal in teaching the Dhamma, it does not deliver one who applies it to the complete ending of suffering.’
+S2: Since I see no such reason, I live secure, fearless, and self-assured.
+T: “I see no ground on which any recluse…or anyone at all could accuse me thus: [1] ‘When you teach the Dhamma to someone, [2] it does not lead him when he practises it to the complete destruction of suffering.’ [3*] And seeing no ground for that, [4] I abide in safety, [5] fearlessness, 
+
+mn12:39.8
+S1: ‘This person is proceeding in such a way and is riding upon such a path that they will arrive at that very tree.’
+S2: Some time later they see them sitting or lying under that tree, where they experience mostly painful feelings. …
+T: ‘This person so behaves… [1] that he will come to this same tree’; [2*] and then later on he sees that he is sitting or lying in the shade of that tree experiencing much painful feeling. [3] So too, [4] by encompassing mind with mind …much painful feeling. ¶ 
+
+mn12:48.4
+S1: When I saw a cowherd or a shepherd, or someone gathering grass or sticks, or a lumberjack, I’d flee from forest to forest, from thicket to thicket, from valley to valley, from uplands to uplands.
+S2: Why is that?
+T: And when I saw a cowherd or a shepherd or someone gathering grass or sticks, [1] or a woodsman, [2] I would flee from grove to grove, [3] from thicket to thicket, [4] from hollow to hollow, [5] from hillock to hillock. [6*] Why was that? 
+
+mn13:3.4
+S1: The ascetic Gotama advocates the complete understanding of feelings, and so do we.
+S2: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?”
+T: the recluse Gotama describes the full understanding of feelings, [1] and we do so too. [2*] What then is the distinction here, [3] friends, [4] what is the variance, [5] what is the difference between the recluse Gotama’s teaching of the Dhamma and ours, [6] between his instructions and ours?” ¶ 
+
+mn13:6.4
+S1: What’s the gratification, the drawback, and the escape when it comes to forms?
+S2: What’s the gratification, the drawback, and the escape when it comes to feelings?’
+T: What is the gratification, [1] what is the danger, [2] and what is the escape in the case of material form? [3*] What is the gratification, [4] what is the danger, [5] and what is the escape in the case of feelings?’ 
+
+mn13:7.9
+S1: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing.
+S2: These are the five kinds of sensual stimulation.
+T: desired, [1] agreeable and likeable, [2] connected with sensual desire, [3] and provocative of lust. [4*] These are the five cords of sensual pleasure. 
+
+mn13:15.1
+S1: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures.
+S2: Furthermore, for the sake of sensual pleasures, they conduct themselves badly by way of body, speech, and mind.
+T: Now this too is a danger in the case of sensual pleasures, [1] a mass of suffering here and now…the cause being simply sensual pleasures. ¶ [2*] “Again, [3] with sensual pleasures as the cause, [4] sensual pleasures as the source, [5] sensual pleasures as the basis, [6] the cause being simply sensual pleasures, [7] people indulge in misconduct of body, [8] speech, [9] and mind. 
+
+mn13:21.3
+S1: Furthermore, suppose that you were to see that same sister as a corpse discarded in a charnel ground. And it had been dead for one, two, or three days, bloated, livid, and festering. (Pali) ekāhamataṁ vā dvīhamataṁ vā tīhamataṁ vā, uddhumātakaṁ vinīlakaṁ vipubbakajātaṁ.
+S2: What do you think, mendicants?
+T: “Again, [1] one might see that same woman as a corpse thrown aside in a charnel ground, [2] one, [3] two, [4] or three days dead, [5] bloated, [6] livid, [7] and oozing matter. [8*] What do you think, [9] bhikkhus? 
+
+mn13:30.2
+S1: And what is the escape from forms?
+S2: Removing and giving up desire and greed for forms: this is the escape from forms.
+T: iii [1] “And what, [2] bhikkhus, [3] is the escape in the case of material form? [4*] It is the removal of desire and lust, [5] the abandonment of desire and lust for material form. [6] This is the escape in the case of material form. ¶ 
+
+mn135:5.3
+S1: Because of undertaking such deeds, when their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell.
+S2: If they’re not reborn in a place of loss, but return to the human realm, then wherever they’re reborn they’re short-lived.
+T: …ing and undertaking such action, [1] on the dissolution of the body, [2] after death, [3] he reappears in a state of deprivation, [4] in an unhappy destination, [5] in perdition, [6] even in hell. [7] But if on the dissolution of the body, [8] after death, [9] he does not reappear in a state of deprivation, [10] in an unhappy destination, [11*] in perdition, [12] in hell, [13] but instead comes back to the human state, [14] then wherever he is reborn he is short-lived. 
+
+mn135:6.1
+S1: (Pali) pāṇātipātī hoti luddo lohitapāṇi hatapahate niviṭṭho adayāpanno pāṇabhūtesu.
+S2: But take some woman or man who gives up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings.
+T: bloody-handed, [1] given to blows and violence, [2] merciless to living beings. ¶ [3*] “But here, [4] student, [5] some man or woman, [6] abandoning the killing of living beings, [7] abstains from killing living beings; [8] with rod and weapon laid aside, [9] gentle and kindly, [10] he abides compassionate to all living beings. 
+
+mn135:17.11
+S1: (Pali) Duppaññasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— (Pali) samaṇaṁ vā brāhmaṇaṁ vā upasaṅkamitvā na paripucchitā hoti: (Pali) ‘kiṁ, bhante, kusalaṁ, kiṁ akusalaṁ;
+S2: (Pali) kiṁ sāvajjaṁ, kiṁ anavajjaṁ;
+T: then wherever he is reborn he is stupid. [1] This is the way, [2] student, [3] that leads to stupidity, [4*] namely, 
+
+mn135:21.2
+S1: When he had spoken, Subha said to him,
+S2: “Excellent, worthy Gotama! Excellent!
+T: When this was said, [1] the brahmin student Subha, [2] Todeyya’s son, [3] said to the Blessed One: [4*] “Magnificent, [5] Master Gotama! [6] Magnificent, [7] Master Gotama! 
+
+mn140:2.4
+S1: But there’s a renunciate already staying there.
+S2: If he allows it, sir, you may stay as long as you please.”
+T: but there is a homeless one already staying there. [1*] If he agrees, [2] then stay as long as you like, [3] venerable sir.” ¶ 
+
+mn140:3.4
+S1: Then the Buddha approached Venerable Pukkusāti and said,
+S2: “Mendicant, if it is no trouble, I’d like to spend a single night in the workshop.”
+T: Then the Blessed One went to the venerable Pukkusāti and said to him: [1*] “If it is not inconvenient for you, [2] bhikkhu, [3] I will stay one night in the workshop.” ¶ 
+
+mn140:11.1
+S1: ‘This person has eighteen mental preoccupations.’ That’s what I said, and this is why I said it.
+S2: ‘This person has four foundations.’
+T: ‘Bhikkhu, [1] this person consists of eighteen kinds of mental exploration.’ ¶ [2*] “‘Bhikkhu, [3] this person has four foundations.’ 
+
+mn140:14.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the earth element and makes the mind dispassionate towards the earth element. ¶ 
+
+mn140:15.2
+S1: And what is the water element?
+S2: The water element may be interior or exterior.
+T: “What, [1] bhikkhu, [2] is the water element? [3*] The water element may be either internal or external. 
+
+mn140:15.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the water element and makes the mind dispassionate towards the water element. ¶ 
+
+mn140:16.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the fire element, detaching the mind from the fire element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the fire element and makes the mind dispassionate towards the fire element. ¶ 
+
+mn140:17.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the air element, detaching the mind from the air element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the air element and makes the mind dispassionate towards the air element. ¶ 
+
+mn140:18.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the space element, detaching the mind from the space element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the space element and makes the mind dispassionate towards the space element. ¶ 
+
+mn140:19.8
+S1: Painful feeling arises dependent on a contact to be experienced as painful.
+S2: When they feel a painful feeling, they know: ‘I feel a painful feeling.’
+T: In dependence on a contact to be felt as painful there arises a painful feeling. [1*] When one feels a painful feeling, [2] one understands: [3] ‘I feel a painful feeling.’ 
+
+mn140:24.5
+S1: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’
+S2: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’
+T: When he feels a feeling terminating with the body, [1] he understands: [2] ‘I feel a feeling terminating with the body.’ [3] When he feels a feeling terminating with life, [4] he understands: [5] ‘I feel a feeling terminating with life.’ [6*] He understands: [7] ‘On the dissolution of the body, [8] with the ending of life, [9] all that is felt, [10] not being delighted in, [11] will become cool right here.’ 
+
+mn140:24.9
+S1: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’
+S2: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’
+T: so too when he feels a feeling terminating with the body…a feeling terminating with life, [1] he understands: [2] ‘I feel a feeling terminating with life.’ [3*] He understands: [4] ‘On the dissolution of the body, [5] with the ending of life, [6] all that is felt, [7] not being delighted in, [8] will become cool right here.’ ¶ 
+
+mn146:6.5
+S1: “But if it’s impermanent, is it suffering or happiness?”
+S2: “Suffering, sir.”
+T: “Is what is impermanent suffering or happiness?”—[1*] “Suffering, [2] venerable sir.”—
+
+mn146:6.21
+S1: “But if it’s impermanent, is it suffering or happiness?”
+S2: “Suffering, sir.”
+T: “Is what is impermanent suffering or happiness?”—[1*] “Suffering, [2] venerable sir.”—
+
+mn146:8.20
+S1: “But if it’s impermanent, is it suffering or happiness?”
+S2: “Suffering, sir.”
+T: “Is what is impermanent suffering or happiness?”—[1*] “Suffering, [2] venerable sir.”— 
+
+mn148:11.3
+S1: ‘the nose is self’ …
+S2: ‘the tongue is self’ …
+T: …nsciousness is self,’ [1] …‘Nose-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, [2] ‘Craving is self.’ [3] Thus the nose is not self, [4] odours are not self, [5] nose-consciousness is not self, [6] nose-contact is not self, [7] feeling is not self, [8] craving is not self. ¶ [9*] iv [10] “If anyone says, [11] ‘The tongue is self,’ [12] that is not tenable. [13] The rise and fall of the tongue are discerned, [14] and since its rise and fall are discerned, [15] it would follow: [16] ‘My self rises and falls.’ [17] That is why it is not tenable for anyone to say, [18] ‘The tongue is self.’ [19] Thus the tongue is not self. ¶ [20] “If…
+
+mn148:11.4
+S1: ‘the tongue is self’ …
+S2: ‘the body is self’ …
+T: …ss is self,’…‘Tongue-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, [1] ‘Craving is self.’ [2] Thus the tongue is not self, [3] flavours are not self, [4] tongue-consciousness is not self, [5] tongue-contact is not self, [6] feeling is not self, [7] craving is not self. ¶ [8*] v [9] “If anyone says, [10] ‘The body is self,’ [11] that is not tenable. [12] The rise and fall of the body are discerned, [13] and since its rise and fall are discerned, [14] it would follow: [15] ‘My self rises and falls.’ [16] That is why it is not tenable for anyone to say, [17] ‘The body is self.’ [18] Thus the body is not self. ¶ [19] “If anyone s…
+
+mn148:11.5
+S1: ‘the body is self’ …
+S2: ‘the mind is self,’ that is not tenable.
+T: …ciousness is self,’…‘Body-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, [1] ‘Craving is self.’ [2] Thus the body is not self, [3] tangibles are not self, [4] body-consciousness is not self, [5] body-contact is not self, [6] feeling is not self, [7] craving is not self. ¶ [8*] vi [9] “If anyone says, [10] ‘The mind is self,’ [11] that is not tenable. 
+
+mn148:34.1
+S1: Mendicants, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life.
+S2: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for the arising of what is felt as pleasant, painful, or neutral.
+T: that one should here and now make an end of suffering without abandoning the underlying tendency to lust for pleasant feeling…without abandoning ignorance and arousing true knowledge—[1] this is impossible. ¶ [2] The Abandonment of the Underlying Tendencies ¶ [3] i [4] “Bhikkhus, [5*] dependent on the eye and forms, [6] eye-consciousness arises; [7] the meeting of the three is contact; [8] with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant. 
+
+mn149:12-18.3
+S1: nose …
+S2: tongue …
+T: “When one knows and sees the nose as it actually is… [1] These are the things that should be realised by direct knowledge. ¶ [2*] “When one knows and sees the tongue as it actually is…These are the things that should be realised by direct knowledge. ¶ 
+
+mn19:3.9
+S1: When I reflected that it blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment, it went away.
+S2: So I gave up, dispelled, and eliminated any sensual thoughts that arose.
+T: when I considered: [1] ‘This obstructs wisdom, [2] causes difficulties, [3] and leads away from Nibbāna,’ [4] it subsided in me. [5*] Whenever a thought of sensual desire arose in me, [6] I abandoned it, [7] removed it, [8] did away with it. ¶ 
+
+mn20:4.2
+S1: Now, suppose that mendicant is focusing on some other subject connected with the skillful, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. They should examine the drawbacks of those thoughts:
+S2: ‘So these thoughts are unskillful, they’re blameworthy, and they result in suffering.’
+T: ii [1] “If, [2] while he is giving attention to some other sign connected with what is wholesome, [3] there still arise in him evil unwholesome thoughts connected with desire, [4] with hate, [5] and with delusion, [6] then he should examine the danger in those thoughts thus: [7*] ‘These thoughts are unwholesome, [8] they are reprehensible, [9] they result in suffering.’ 
+
+mn20:5.2
+S1: Now, suppose that mendicant is examining the drawbacks of those thoughts, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. They should try to forget and ignore them.
+S2: As they do so, those bad thoughts are given up and come to an end.
+T: …wholesome thoughts connected with desire, [1] with hate, [2] and with delusion, [3] then he should try to forget those thoughts and should not give attention to them. [4] When he tries to forget those thoughts and does not give attention to them, [5] then any evil unwholesome thoughts connected with desire, [6] with hate, [7*] and with delusion are abandoned in him and subside. 
+
+mn20:5.7
+S1: In the same way, a mendicant … those bad thoughts are given up and come to an end …
+S2: (Pali) Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati.
+T: so too…when a bhikkhu tries to forget those thoughts and does not give attention to them … [1*] his mind becomes steadied internally, [2] quieted, [3] brought to singleness, [4] and concentrated. ¶ 
+
+mn22:13.18
+S1: What do you think, mendicants?
+S2: Would that person be doing what should be done with that raft?”
+T: Now, [1] bhikkhus, [2] what do you think? [3*] By doing so, [4] would that man be doing what should be done with that raft?” ¶ 
+
+mn22:23.5
+S1: “Good, mendicants!
+S2: I also can’t see any such theory of self.
+T: “Good, [1] bhikkhus. [2*] I too do not see any doctrine of self that would not arouse sorrow, 
+
+mn22:24.5
+S1: “Good, mendicants!
+S2: I also can’t see any such view to rely on.
+T: “Good, [1] bhikkhus. [2*] I too do not see any support of views that would not arouse sorrow, [3] lamentation, [4] pain, [5] grief, [6] and despair in one who takes it as a support. ¶ 
+
+mn22:38.1
+S1: This being so, if others abuse, attack, harass, and trouble the Realized One, he doesn’t get resentful, bitter, and emotionally exasperated.
+S2: Or if others honor, respect, revere, or venerate him, he doesn’t get thrilled, elated, and emotionally excited.
+T: If others abuse, [1] revile, [2] scold, [3] and harass the Tathāgata for that, [4] the Tathāgata on that account feels no annoyance, [5] bitterness, [6] or dejection of the heart. [7*] And if others honour, [8] respect, [9] revere, [10] and venerate the Tathāgata for that, [11] the Tathāgata on that account feels no delight, [12] joy, [13] or elation of the heart. [14] If others honour, [15] respect, [16] revere, [17] and venerate the Tathāgata for that, 
+
+mn26:3.9
+S1: So the Buddha went with Ānanda to the eastern gate to bathe.
+S2: When he had bathed and emerged from the water he stood in one robe drying his limbs.
+T: Then the Blessed One went with the venerable Ānanda to the Eastern Bathing Place to bathe. [1*] When he was finished, [2] he came up out of the water and stood in one robe drying his limbs. 
+
+mn26:15.36
+S1: ‘This teaching doesn’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. It only leads as far as rebirth in the dimension of nothingness.’
+S2: Realizing that this teaching was inadequate, I left disappointed.
+T: ‘This Dhamma does not lead to disenchantment, [1] to dispassion, [2] to cessation, [3] to peace, [4] to direct knowledge, [5] to enlightenment, [6] to Nibbāna, [7] but only to reappearance in the base of nothingness. [8*] Not being satisfied with that Dhamma, [9] disappointed with it, [10] I left.’ ¶ 
+
+mn26:16.36
+S1: ‘This teaching doesn’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. It only leads as far as rebirth in the dimension of neither perception nor non-perception.’
+S2: Realizing that this teaching was inadequate, I left disappointed.
+T: ‘This Dhamma does not lead to disenchantment, [1] to dispassion, [2] to cessation, [3] to peace, [4] to direct knowledge, [5] to enlightenment, [6] to Nibbāna, [7] but only to reappearance in the base of neither-perception-nor-non-perception.’ [8*] Not being satisfied with that Dhamma, [9] disappointed with it, [10] I left. ¶ 
+
+mn26:31.8
+S1: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing.
+S2: These are the five kinds of sensual stimulation.
+T: desired, [1] agreeable and likeable, [2] connected with sensual desire, [3] and provocative of lust. [4*] These are the five cords of sensual pleasure. ¶ 
+
+mn27:8.2
+S1: When he had spoken, Jānussoṇi got down from his chariot, arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and expressed this heartfelt sentiment three times:
+S2: “Homage to that Blessed One, the perfected one, the fully awakened Buddha!
+T: When this was said, [1] the brahmin Jāṇussoṇi got down from his all-white chariot drawn by white mares, [2] and arranging his upper robe on one shoulder, [3] he extended his hands in reverential salutation towards the Blessed One and uttered this exclamation three times: [4*] “Honour to the Blessed One, [5] accomplished and fully enlightened! 
+
+mn27:10.8
+S1: Because in an elephant wood there are dwarf cow elephants with big footprints, and this footprint might be one of theirs. (Pali) So tamanugacchati.
+S2: They keep following the track until they see a big footprint, long and broad, and traces high up.
+T: In an elephant wood there are small she-elephants that leave a big footprint, [1] and this might be one of their footprints. [2*] He follows it and sees in the elephant wood a big elephant’s footprint, [3] long in extent and broad across, [4] and some scrapings high up. 
+
+mn27:10.14
+S1: Because in an elephant wood there are tall lofty cow elephants with big footprints, and this footprint might be one of theirs. (Pali) So tamanugacchati.
+S2: They keep following the track until they see a big footprint, long and broad, and traces and tusk-marks high up.
+T: In an elephant wood there are tall she-elephants that have prominent teeth and leave a big footprint, [1] and this might be one of their footprints. [2*] He follows it further and sees in the elephant wood a big elephant’s footprint, [3] long in extent and broad across, [4] and some scrapings high up, [5] and marks made by tusks. 
+
+mn27:27.2
+S1: When he had spoken, the brahmin Jānussoṇi said to the Buddha,
+S2: “Excellent, worthy Gotama! Excellent!
+T: When this was said, [1] the brahmin Jāṇussoṇi said to the Blessed One: [2*] “Magnificent, [3] Master Gotama! [4] Magnificent, [5] Master Gotama! 
+
+mn28:6.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the earth element and makes the mind dispassionate toward the earth element. ¶ 
+
+mn28:11.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the water element and makes the mind dispassionate toward the water element. ¶ 
+
+mn28:16.9
+S1: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’
+S2: When you truly see with right understanding, you grow disillusioned with the fire element, detaching the mind from the fire element.
+T: And that should be seen as it actually is with proper wisdom thus: [1] ‘This is not mine, [2] this I am not, [3] this is not my self.’ [4*] When one sees it thus as it actually is with proper wisdom, [5] one becomes disenchanted with the fire element and makes the mind dispassionate toward the fire element. ¶ 

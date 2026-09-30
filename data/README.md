@@ -13,6 +13,9 @@ data/
   html/            SuttaCentral's per-line markup, used only to give each line its role
   tree/            each collection's structure: DN, MN, SN, AN and the six KN books
   diff/            what the editorial rules change, as diffs (rewritten on every run, checked in)
+  upstream/        Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations as published; see its README
+  bodhi/           Bodhi's, cut onto the Pali's lines; not built into the corpus
+  thanissaro/      Ṭhānissaro's, the same
   pli2en_dpd.json  the dictionary, generated from DPD and trimmed to this corpus
   manifest.json    which sc-data commit the texts were last copied from
 ```

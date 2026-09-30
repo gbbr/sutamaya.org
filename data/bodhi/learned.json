@@ -1,0 +1,7223 @@
+{
+ "84": [
+  "000"
+ ],
+ "time": [
+  "occasion",
+  "dwell"
+ ],
+ "stay": [
+  "occasion",
+  "dwell",
+  "jeta",
+  "grov",
+  "anathapindika",
+  "park"
+ ],
+ "near": [
+  "occasion",
+  "dwell",
+  "jeta",
+  "grov",
+  "anathapindika",
+  "park"
+ ],
+ "grov": [
+  "occasion",
+  "savatthi",
+  "jeta",
+  "anathapindika",
+  "park",
+  "bamboo",
+  "rajagaha",
+  "squirrel",
+  "sanctuary"
+ ],
+ "monastery": [
+  "occasion",
+  "savatthi",
+  "jeta",
+  "grov",
+  "anathapindika",
+  "park"
+ ],
+ "jeta": [
+  "savatthi",
+  "grov",
+  "anathapindika",
+  "park"
+ ],
+ "anathapindika": [
+  "savatthi",
+  "jeta",
+  "grov",
+  "park"
+ ],
+ "savatthi": [
+  "jeta",
+  "grov",
+  "anathapindika",
+  "park"
+ ],
+ "went": [
+  "approach",
+  "paid",
+  "homag",
+  "him",
+  "sat",
+  "side"
+ ],
+ "bow": [
+  "approach",
+  "paid",
+  "homag",
+  "sat",
+  "side",
+  "pay"
+ ],
+ "sat": [
+  "approach",
+  "paid",
+  "homag",
+  "side"
+ ],
+ "side": [
+  "approach",
+  "paid",
+  "homag",
+  "sat"
+ ],
+ "him": [
+  "approach",
+  "paid",
+  "homag",
+  "sat",
+  "side"
+ ],
+ "said": [
+  "bhagava"
+ ],
+ "bhagava": [
+  "said"
+ ],
+ "goal": [
+  "purpos"
+ ],
+ "benefit": [
+  "purpos"
+ ],
+ "sila": [
+  "behavior"
+ ],
+ "tru": [
+  "real"
+ ],
+ "viraga": [
+  "nibbida"
+ ],
+ "nibbida": [
+  "viraga",
+  "toward"
+ ],
+ "knowledg": [
+  "vision",
+  "true"
+ ],
+ "faithful": [
+  "endow"
+ ],
+ "law": [
+  "expert",
+  "brother"
+ ],
+ "recollect": [
+  "manifold",
+  "aspect",
+  "fifty"
+ ],
+ "asava": [
+  "destruction"
+ ],
+ "live": [
+  "dwell"
+ ],
+ "assuranc": [
+  "assembly"
+ ],
+ "clairvoyanc": [
+  "divin",
+  "fare",
+  "surpass",
+  "ugly",
+  "fortunat",
+  "unfortunat",
+  "revil",
+  "undertook",
+  "fair"
+ ],
+ "sentient": [
+  "being"
+ ],
+ "quality": [
+  "possess",
+  "akusala",
+  "kusala"
+ ],
+ "lodging": [
+  "lodg",
+  "almsfood",
+  "remot",
+  "jungl",
+  "medicinal"
+ ],
+ "insight": [
+  "direct",
+  "knowledg",
+  "enter",
+  "realis"
+ ],
+ "undefil": [
+  "taintless",
+  "supramundan"
+ ],
+ "due": [
+  "taintless"
+ ],
+ "ful": [
+  "arahant",
+  "enlighten",
+  "accomplish"
+ ],
+ "bodhi": [
+  "enlighten",
+  "seven",
+  "factor"
+ ],
+ "knower": [
+  "accomplish",
+  "trainer",
+  "tam",
+  "leader",
+  "incomparabl"
+ ],
+ "holy": [
+  "fortunat",
+  "knower",
+  "tam",
+  "leader"
+ ],
+ "accomplish": [
+  "knower",
+  "tam"
+ ],
+ "guid": [
+  "knower",
+  "tam",
+  "leader"
+ ],
+ "fit": [
+  "knower",
+  "tam"
+ ],
+ "suprem": [
+  "unsurpass"
+ ],
+ "gods": [
+  "deva",
+  "human"
+ ],
+ "rare": [
+  "seldom"
+ ],
+ "themselv": [
+  "himself"
+ ],
+ "sensibl": [
+  "wise"
+ ],
+ "companion": [
+  "fellow"
+ ],
+ "rous": [
+  "arous",
+  "viriya",
+  "slacken",
+  "tireless",
+  "unremitt",
+  "overwrought",
+  "uncalm"
+ ],
+ "giv": [
+  "abandon"
+ ],
+ "kusala": [
+  "akusala"
+ ],
+ "akusala": [
+  "kusala"
+ ],
+ "staunch": [
+  "cast"
+ ],
+ "vigorou": [
+  "cast"
+ ],
+ "slack": [
+  "cast"
+ ],
+ "develop": [
+  "cultivat"
+ ],
+ "night": [
+  "day"
+ ],
+ "day": [
+  "night"
+ ],
+ "fly": [
+  "mosquito",
+  "sun",
+  "travel",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty"
+ ],
+ "wind": [
+  "mosquito",
+  "cold"
+ ],
+ "reptil": [
+  "mosquito"
+ ],
+ "medicin": [
+  "almsfood",
+  "provision",
+  "medicinal",
+  "requisit"
+ ],
+ "supply": [
+  "almsfood",
+  "medicin",
+  "provision",
+  "lodging",
+  "medicinal",
+  "requisit"
+ ],
+ "senior": [
+  "elder",
+  "aged"
+ ],
+ "reveal": [
+  "disclos"
+ ],
+ "clarify": [
+  "disclos",
+  "guid",
+  "recours"
+ ],
+ "given": [
+  "abandon"
+ ],
+ "drowsi": [
+  "dull",
+  "restless",
+  "remors",
+  "sloth",
+  "torpor"
+ ],
+ "dull": [
+  "drowsi",
+  "restless",
+  "remors",
+  "sloth",
+  "torpor"
+ ],
+ "rid": [
+  "remov",
+  "comprehend",
+  "ardent",
+  "covetous",
+  "domanassa"
+ ],
+ "fetter": [
+  "lower"
+ ],
+ "lower": [
+  "fetter"
+ ],
+ "misapprehension": [
+  "observanc",
+  "adherenc"
+ ],
+ "precept": [
+  "observanc",
+  "rule"
+ ],
+ "desir": [
+  "raga"
+ ],
+ "luminou": [
+  "formless"
+ ],
+ "hearted": [
+  "barren"
+ ],
+ "sever": [
+  "eradicat",
+  "rack",
+  "pierc"
+ ],
+ "shackl": [
+  "eradicat",
+  "bondag"
+ ],
+ "expect": [
+  "growth"
+ ],
+ "declin": [
+  "growth"
+ ],
+ "growth": [
+  "expect",
+  "declin"
+ ],
+ "uncertain": [
+  "perplex"
+ ],
+ "toward": [
+  "inclin",
+  "concentrat",
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright"
+ ],
+ "commitment": [
+  "ardor",
+  "perseveranc"
+ ],
+ "striv": [
+  "perseveranc"
+ ],
+ "sukha": [
+  "sensual"
+ ],
+ "sensual": [
+  "sukha"
+ ],
+ "fond": [
+  "affection",
+  "unity"
+ ],
+ "thirst": [
+  "affection",
+  "infatuation",
+  "hunger"
+ ],
+ "spiritual": [
+  "life",
+  "liv",
+  "holy"
+ ],
+ "grow": [
+  "increas"
+ ],
+ "non": [
+  "percipient"
+ ],
+ "best": [
+  "foremost"
+ ],
+ "bungalow": [
+  "peak",
+  "hous",
+  "roof",
+  "plaster"
+ ],
+ "peak": [
+  "roof",
+  "mount",
+  "vultur",
+  "vesali",
+  "hall"
+ ],
+ "turn": [
+  "wheel",
+  "roar",
+  "assembly"
+ ],
+ "worth": [
+  "amount",
+  "sixteenth",
+  "junior",
+  "fraction"
+ ],
+ "firmament": [
+  "sky"
+ ],
+ "dazzl": [
+  "shin",
+  "beam"
+ ],
+ "shin": [
+  "beam"
+ ],
+ "gang": [
+  "river",
+  "bank"
+ ],
+ "river": [
+  "gang",
+  "bank"
+ ],
+ "slop": [
+  "slant",
+  "inclin"
+ ],
+ "inclin": [
+  "slant",
+  "slop"
+ ],
+ "slant": [
+  "slop",
+  "inclin"
+ ],
+ "individual": [
+  "person"
+ ],
+ "offering": [
+  "hospitality",
+  "salutation"
+ ],
+ "dedicat": [
+  "hospitality",
+  "offering",
+  "reverential",
+  "salutation"
+ ],
+ "religiou": [
+  "hospitality",
+  "offering",
+  "salutation",
+  "famou"
+ ],
+ "donation": [
+  "hospitality",
+  "offering",
+  "reverential",
+  "salutation"
+ ],
+ "greet": [
+  "hospitality",
+  "offering",
+  "reverential",
+  "salutation",
+  "pair",
+  "type",
+  "individual"
+ ],
+ "cupp": [
+  "hospitality",
+  "offering",
+  "reverential",
+  "salutation",
+  "arrang",
+  "shoulder",
+  "join",
+  "rais"
+ ],
+ "hospitality": [
+  "offering",
+  "reverential",
+  "salutation",
+  "pair",
+  "type",
+  "individual"
+ ],
+ "palm": [
+  "reverential",
+  "salutation",
+  "cut",
+  "root",
+  "stump",
+  "obliterat"
+ ],
+ "suitabl": [
+  "restrain",
+  "patimokkha",
+  "minut",
+  "fault"
+ ],
+ "slightest": [
+  "restrain",
+  "patimokkha",
+  "minut",
+  "fault",
+  "undertaken"
+ ],
+ "fault": [
+  "restrain",
+  "patimokkha",
+  "minut"
+ ],
+ "monastic": [
+  "patimokkha"
+ ],
+ "code": [
+  "patimokkha",
+  "minut"
+ ],
+ "resort": [
+  "patimokkha",
+  "minut",
+  "endless",
+  "equivocator",
+  "evasiv",
+  "equivocation"
+ ],
+ "rule": [
+  "patimokkha"
+ ],
+ "undertaken": [
+  "patimokkha",
+  "incontrovertibl",
+  "exclud",
+  "alternativ"
+ ],
+ "theoretical": [
+  "accumulat",
+  "retain",
+  "penetrat"
+ ],
+ "middl": [
+  "beginn"
+ ],
+ "meaningful": [
+  "beginn",
+  "middl",
+  "phras",
+  "reveal"
+ ],
+ "phras": [
+  "beginn",
+  "differ",
+  "agre"
+ ],
+ "beginn": [
+  "middl",
+  "phras"
+ ],
+ "practic": [
+  "nirodha",
+  "lead",
+  "way"
+ ],
+ "scrutiniz": [
+  "investigat"
+ ],
+ "friend": [
+  "companion",
+  "relativ",
+  "kinsmen"
+ ],
+ "admonish": [
+  "instruction",
+  "respectful"
+ ],
+ "almsfood": [
+  "content"
+ ],
+ "sampajanna": [
+  "mindful",
+  "clear",
+  "comprehend",
+  "ardent",
+  "remov",
+  "covetous",
+  "domanassa"
+ ],
+ "advis": [
+  "junior",
+  "exhort"
+ ],
+ "cast": [
+  "dispell"
+ ],
+ "asid": [
+  "dispell"
+ ],
+ "idiosyncratic": [
+  "dispell"
+ ],
+ "interpretation": [
+  "dispell"
+ ],
+ "search": [
+  "seek"
+ ],
+ "process": [
+  "tranquiliz"
+ ],
+ "physical": [
+  "bodi"
+ ],
+ "tranquil": [
+  "rapturou",
+  "tireless",
+  "unremitt"
+ ],
+ "immers": [
+  "concentrat",
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright"
+ ],
+ "samadhi": [
+  "concentrat"
+ ],
+ "far": [
+  "near"
+ ],
+ "land": [
+  "among"
+ ],
+ "kammasadamma": [
+  "kuru"
+ ],
+ "hear": [
+  "sound"
+ ],
+ "sound": [
+  "ear"
+ ],
+ "odor": [
+  "smell",
+  "odour",
+  "smelt"
+ ],
+ "smell": [
+  "nose",
+  "sound",
+  "odour"
+ ],
+ "flavor": [
+  "tast",
+  "colour",
+  "bronz",
+  "cup",
+  "aroma",
+  "savour"
+ ],
+ "tast": [
+  "tongu",
+  "sound"
+ ],
+ "touch": [
+  "tactil",
+  "object"
+ ],
+ "idea": [
+  "cogniz",
+  "mental",
+  "phenomenon",
+  "phenomena"
+ ],
+ "mindful": [
+  "clear",
+  "comprehend",
+  "establishment"
+ ],
+ "domanassa": [
+  "comprehend",
+  "sorrow",
+  "lamentation",
+  "pain",
+  "ardent",
+  "remov",
+  "despair",
+  "covetous"
+ ],
+ "lion": [
+  "roar",
+  "claim",
+  "assembly",
+  "sets",
+  "wheel"
+ ],
+ "roar": [
+  "lion",
+  "claim",
+  "bull",
+  "assembly",
+  "sets",
+  "motion",
+  "wheel",
+  "herd",
+  "roll"
+ ],
+ "term": [
+  "designation"
+ ],
+ "bull": [
+  "claim",
+  "chief",
+  "roar",
+  "lion",
+  "assembly",
+  "sets",
+  "wheel",
+  "elephant",
+  "roll",
+  "herd"
+ ],
+ "assembly": [
+  "claim",
+  "roar",
+  "lion",
+  "sets",
+  "motion",
+  "wheel",
+  "herd"
+ ],
+ "divin": [
+  "claim",
+  "roar",
+  "lion",
+  "assembly",
+  "sets",
+  "motion",
+  "wheel",
+  "herd"
+ ],
+ "wheel": [
+  "claim",
+  "roar",
+  "lion",
+  "assembly",
+  "sets",
+  "motion",
+  "roll"
+ ],
+ "claim": [
+  "roar",
+  "lion",
+  "assembly",
+  "sets",
+  "wheel"
+ ],
+ "kamma": [
+  "result"
+ ],
+ "twenty": [
+  "recollect",
+  "manifold",
+  "thirty",
+  "forty",
+  "fifty",
+  "eons",
+  "evolution",
+  "appearanc",
+  "elsewher",
+  "aspect",
+  "aeon",
+  "contraction"
+ ],
+ "forty": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "thirty",
+  "fifty",
+  "appearanc",
+  "elsewher",
+  "aspect"
+ ],
+ "fifty": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "thirty",
+  "forty",
+  "thousand",
+  "eons",
+  "evolution",
+  "clan",
+  "appearanc",
+  "span",
+  "elsewher",
+  "aspect",
+  "aeon",
+  "contraction",
+  "particular"
+ ],
+ "eons": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "thousand",
+  "evolution",
+  "clan",
+  "appearanc",
+  "span",
+  "elsewher",
+  "aspect",
+  "aeon",
+  "contraction",
+  "particular"
+ ],
+ "contract": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "forty",
+  "fifty",
+  "appearanc",
+  "elsewher",
+  "aspect",
+  "arm",
+  "draw"
+ ],
+ "expand": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "thousand",
+  "eons",
+  "evolution",
+  "clan",
+  "appearanc",
+  "span",
+  "elsewher",
+  "aspect",
+  "aeon",
+  "contraction",
+  "particular"
+ ],
+ "felt": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "forty",
+  "fifty",
+  "eons",
+  "evolution",
+  "appearanc",
+  "elsewher",
+  "aspect"
+ ],
+ "somewher": [
+  "recollect",
+  "manifold",
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "thousand",
+  "eons",
+  "evolution",
+  "clan",
+  "appearanc",
+  "span",
+  "elsewher",
+  "aspect"
+ ],
+ "featur": [
+  "recollect",
+  "manifold",
+  "fifty",
+  "aspect",
+  "sign"
+ ],
+ "thirty": [
+  "manifold",
+  "twenty",
+  "forty",
+  "tavatimsa"
+ ],
+ "thousand": [
+  "manifold",
+  "fifty",
+  "span"
+ ],
+ "clan": [
+  "manifold"
+ ],
+ "rebirth": [
+  "birth"
+ ],
+ "hundr": [
+  "twenty",
+  "year"
+ ],
+ "purifi": [
+  "divin",
+  "surpass",
+  "concentrat",
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright"
+ ],
+ "superhuman": [
+  "divin",
+  "purifi",
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "distinction"
+ ],
+ "beautiful": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "undertook"
+ ],
+ "ugly": [
+  "surpass",
+  "beautiful",
+  "unfortunat",
+  "undertook",
+  "fair"
+ ],
+ "accord": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "dispensation"
+ ],
+ "denounc": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "fare",
+  "revil",
+  "held",
+  "undertook",
+  "misery"
+ ],
+ "chos": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "fare",
+  "revil",
+  "held",
+  "undertook",
+  "misery"
+ ],
+ "brok": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "fare",
+  "revil",
+  "held",
+  "undertook",
+  "misery"
+ ],
+ "however": [
+  "surpass",
+  "ugly",
+  "unfortunat",
+  "revil",
+  "undertook"
+ ],
+ "superior": [
+  "inferior",
+  "ugly",
+  "unfortunat",
+  "gross",
+  "subtl",
+  "near",
+  "whatsoever"
+ ],
+ "inferior": [
+  "superior",
+  "unfortunat",
+  "gross",
+  "subtl",
+  "near",
+  "whatsoever"
+ ],
+ "dear": [
+  "ugly",
+  "unfortunat",
+  "belov"
+ ],
+ "underworld": [
+  "ugly",
+  "unfortunat",
+  "plan",
+  "misery",
+  "destination",
+  "hell",
+  "perdition",
+  "dissolution",
+  "deprivation",
+  "unhappy",
+  "nether"
+ ],
+ "act": [
+  "unfortunat"
+ ],
+ "loss": [
+  "unfortunat",
+  "plan",
+  "misery",
+  "destination",
+  "hell",
+  "reappear",
+  "deprivation",
+  "perdition"
+ ],
+ "never": [
+  "unfortunat"
+ ],
+ "death": [
+  "after",
+  "ag"
+ ],
+ "after": [
+  "death"
+ ],
+ "reborn": [
+  "destination"
+ ],
+ "realm": [
+  "destination",
+  "reappear"
+ ],
+ "deliver": [
+  "deposit",
+  "hell",
+  "brought"
+ ],
+ "violent": [
+  "murderou",
+  "bloody",
+  "blow",
+  "violenc",
+  "merciless"
+ ],
+ "bloody": [
+  "murderou",
+  "blow",
+  "violenc",
+  "merciless"
+ ],
+ "harden": [
+  "murderou",
+  "bloody",
+  "blow",
+  "violenc",
+  "merciless"
+ ],
+ "killer": [
+  "murderou",
+  "bloody",
+  "violenc",
+  "merciless",
+  "murderer"
+ ],
+ "merciless": [
+  "murderou",
+  "bloody",
+  "blow",
+  "violenc"
+ ],
+ "steal": [
+  "given",
+  "tak"
+ ],
+ "wilder": [
+  "forest",
+  "remot",
+  "jungl",
+  "thicket"
+ ],
+ "misconduct": [
+  "sexual"
+ ],
+ "sexual": [
+  "misconduct",
+  "brother"
+ ],
+ "guardian": [
+  "protect",
+  "brother"
+ ],
+ "violation": [
+  "protect",
+  "brother"
+ ],
+ "punishabl": [
+  "protect",
+  "brother"
+ ],
+ "token": [
+  "protect",
+  "brother"
+ ],
+ "betrothal": [
+  "protect",
+  "brother"
+ ],
+ "father": [
+  "mother"
+ ],
+ "mother": [
+  "father"
+ ],
+ "relation": [
+  "brother"
+ ],
+ "sister": [
+  "brother"
+ ],
+ "brother": [
+  "sister"
+ ],
+ "lie": [
+  "falsehood"
+ ],
+ "summon": [
+  "falsehood",
+  "guild",
+  "court",
+  "wit",
+  "ends"
+ ],
+ "council": [
+  "falsehood",
+  "summon",
+  "guild",
+  "court",
+  "wit",
+  "ends",
+  "trifl"
+ ],
+ "guild": [
+  "falsehood",
+  "summon",
+  "court",
+  "wit",
+  "ends"
+ ],
+ "court": [
+  "falsehood",
+  "summon",
+  "guild",
+  "wit",
+  "ends"
+ ],
+ "bear": [
+  "falsehood",
+  "summon",
+  "guild",
+  "court",
+  "wit",
+  "ends"
+ ],
+ "wit": [
+  "falsehood",
+  "summon",
+  "guild",
+  "court",
+  "ends"
+ ],
+ "deliberat": [
+  "falsehood",
+  "summon",
+  "guild",
+  "court",
+  "wit",
+  "ends"
+ ],
+ "trivial": [
+  "falsehood",
+  "summon",
+  "guild",
+  "court",
+  "wit",
+  "ends",
+  "trifl"
+ ],
+ "royal": [
+  "summon",
+  "guild",
+  "court"
+ ],
+ "backbit": [
+  "divisiv",
+  "repeat",
+  "elsewher",
+  "divid",
+  "promoter",
+  "maliciou"
+ ],
+ "divid": [
+  "repeat",
+  "elsewher",
+  "speaker",
+  "promoter"
+ ],
+ "lov": [
+  "repeat",
+  "elsewher",
+  "divid"
+ ],
+ "promot": [
+  "repeat",
+  "elsewher",
+  "divid",
+  "speaker",
+  "promoter"
+ ],
+ "repeat": [
+  "elsewher",
+  "divid",
+  "promoter",
+  "misrepresent",
+  "contrary",
+  "fact",
+  "explain",
+  "reasonabl",
+  "criticism",
+  "consequenc",
+  "assertion"
+ ],
+ "delight": [
+  "elsewher",
+  "divid"
+ ],
+ "nonsens": [
+  "idle",
+  "chatter",
+  "worth",
+  "gossip"
+ ],
+ "beneficial": [
+  "unbeneficial",
+  "benefit",
+  "brilliant",
+  "pervasiv",
+  "fundamental"
+ ],
+ "slaughter": [
+  "slain"
+ ],
+ "destroy": [
+  "annihilat",
+  "deficient",
+  "proximat",
+  "perish"
+ ],
+ "afterlif": [
+  "sacrific",
+  "spontaneous"
+ ],
+ "comport": [
+  "sacrific",
+  "spontaneous"
+ ],
+ "brahmana": [
+  "samana"
+ ],
+ "samana": [
+  "brahmana"
+ ],
+ "give": [
+  "abandon"
+ ],
+ "renounc": [
+  "rod",
+  "weapon",
+  "laid",
+  "asid",
+  "conscientiou",
+  "compassionat"
+ ],
+ "sword": [
+  "rod",
+  "weapon",
+  "laid",
+  "asid",
+  "conscientiou",
+  "compassionat"
+ ],
+ "scrupulou": [
+  "rod",
+  "weapon",
+  "laid",
+  "asid",
+  "conscientiou",
+  "compassionat"
+ ],
+ "rod": [
+  "weapon",
+  "laid",
+  "asid",
+  "conscientiou",
+  "compassionat"
+ ],
+ "sympathy": [
+  "compassionat",
+  "compassion"
+ ],
+ "instead": [
+  "repeat",
+  "elsewher",
+  "divid",
+  "promoter"
+ ],
+ "reconcil": [
+  "repeat",
+  "elsewher",
+  "divid",
+  "promoter",
+  "concord"
+ ],
+ "unit": [
+  "repeat",
+  "elsewher",
+  "divid",
+  "promoter",
+  "concord"
+ ],
+ "harmony": [
+  "unity",
+  "concord"
+ ],
+ "mellow": [
+  "harsh",
+  "gentl",
+  "courteou"
+ ],
+ "endear": [
+  "harsh",
+  "gentl",
+  "courteou"
+ ],
+ "harsh": [
+  "gentl"
+ ],
+ "likabl": [
+  "pleas",
+  "agreeabl",
+  "cognizabl",
+  "desirabl",
+  "love",
+  "entic",
+  "tantaliz"
+ ],
+ "agreeabl": [
+  "pleas",
+  "cognizabl",
+  "desirabl",
+  "love",
+  "entic",
+  "tantaliz"
+ ],
+ "polit": [
+  "courteou",
+  "conclud",
+  "greeting",
+  "cordial",
+  "talk",
+  "sat",
+  "side",
+  "amiabl"
+ ],
+ "valuabl": [
+  "beneficial",
+  "worth",
+  "record"
+ ],
+ "reasonabl": [
+  "beneficial",
+  "worth",
+  "record"
+ ],
+ "succinct": [
+  "beneficial",
+  "worth",
+  "record"
+ ],
+ "line": [
+  "reasonabl",
+  "accordanc",
+  "misrepresent",
+  "contrary",
+  "fact",
+  "explain",
+  "criticism",
+  "consequenc"
+ ],
+ "laywoman": [
+  "femal"
+ ],
+ "assur": [
+  "confident",
+  "fearless",
+  "enterer"
+ ],
+ "creepy": [
+  "creep"
+ ],
+ "app": [
+  "listen",
+  "attend",
+  "clos"
+ ],
+ "listen": [
+  "attend",
+  "clos"
+ ],
+ "speak": [
+  "clos"
+ ],
+ "repli": [
+  "yes"
+ ],
+ "yes": [
+  "repli"
+ ],
+ "speech": [
+  "verbal"
+ ],
+ "absolut": [
+  "exclusiv"
+ ],
+ "heir": [
+  "owner"
+ ],
+ "womb": [
+  "owner",
+  "heir"
+ ],
+ "owner": [
+  "heir"
+ ],
+ "wealthy": [
+  "affluent",
+  "rich"
+ ],
+ "aristocrat": [
+  "khattiya"
+ ],
+ "affluent": [
+  "rich"
+ ],
+ "silver": [
+  "gold"
+ ],
+ "gold": [
+  "silver"
+ ],
+ "money": [
+  "silver"
+ ],
+ "intentional": [
+  "termination",
+  "accumulat"
+ ],
+ "perform": [
+  "termination",
+  "accumulat",
+  "obstruct"
+ ],
+ "accumulat": [
+  "termination"
+ ],
+ "subsequent": [
+  "next",
+  "rebirth"
+ ],
+ "period": [
+  "next",
+  "rebirth",
+  "subsequent"
+ ],
+ "failur": [
+  "threefold",
+  "corruption",
+  "outcom"
+ ],
+ "bodi": [
+  "threefold",
+  "failur",
+  "outcom"
+ ],
+ "intention": [
+  "volition"
+ ],
+ "verbal": [
+  "fourfold",
+  "endless",
+  "evasiv",
+  "equivocation"
+ ],
+ "bad": [
+  "akusala",
+  "evil"
+ ],
+ "break": [
+  "breakup",
+  "destination",
+  "dissolution"
+ ],
+ "successful": [
+  "success"
+ ],
+ "discipl": [
+  "nobl"
+ ],
+ "nobl": [
+  "discipl",
+  "eightfold",
+  "path"
+ ],
+ "spread": [
+  "pervad"
+ ],
+ "direction": [
+  "pervad",
+  "quarter",
+  "imbu",
+  "likewis",
+  "below",
+  "everywher"
+ ],
+ "below": [
+  "pervad",
+  "quarter",
+  "imbu",
+  "likewis",
+  "abov",
+  "across",
+  "everywher"
+ ],
+ "across": [
+  "pervad",
+  "quarter",
+  "imbu",
+  "likewis",
+  "abov",
+  "below",
+  "everywher"
+ ],
+ "everywher": [
+  "pervad",
+  "quarter",
+  "imbu",
+  "likewis",
+  "below"
+ ],
+ "abundant": [
+  "pervad",
+  "imbu",
+  "everywher",
+  "vast"
+ ],
+ "expansiv": [
+  "pervad",
+  "quarter",
+  "imbu",
+  "likewis",
+  "below",
+  "everywher",
+  "vast",
+  "exalt",
+  "measureless"
+ ],
+ "enmity": [
+  "pervad",
+  "imbu",
+  "likewis",
+  "everywher"
+ ],
+ "abov": [
+  "quarter",
+  "imbu",
+  "below",
+  "across"
+ ],
+ "fourth": [
+  "imbu"
+ ],
+ "around": [
+  "imbu"
+ ],
+ "whol": [
+  "imbu",
+  "entir"
+ ],
+ "limitless": [
+  "imbu",
+  "below",
+  "measureless"
+ ],
+ "rejoic": [
+  "altruistic"
+ ],
+ "offens": [
+  "committ",
+  "reprov",
+  "offenc",
+  "involv",
+  "border"
+ ],
+ "stingi": [
+  "miserli",
+  "generou"
+ ],
+ "nasty": [
+  "envy"
+ ],
+ "jealousy": [
+  "envy"
+ ],
+ "bondservant": [
+  "slav",
+  "worker",
+  "servant",
+  "children",
+  "goat",
+  "sheep",
+  "fowl",
+  "pigs",
+  "mare"
+ ],
+ "unethical": [
+  "immoral",
+  "substitut"
+ ],
+ "unmindful": [
+  "muddl"
+ ],
+ "master": [
+  "overcom",
+  "persist"
+ ],
+ "ugli": [
+  "unattractiv"
+ ],
+ "dissatisfaction": [
+  "unattractiv",
+  "repulsiv"
+ ],
+ "away": [
+  "viraga"
+ ],
+ "purpos": [
+  "intention"
+ ],
+ "reverend": [
+  "friend"
+ ],
+ "rich": [
+  "wealthy",
+  "utilization"
+ ],
+ "vanity": [
+  "intoxication",
+  "intoxicat"
+ ],
+ "negligenc": [
+  "heedless",
+  "negligent"
+ ],
+ "religion": [
+  "wanderer",
+  "sect"
+ ],
+ "wanderer": [
+  "sect"
+ ],
+ "greeting": [
+  "exchang",
+  "conclud",
+  "cordial",
+  "talk",
+  "sat",
+  "side"
+ ],
+ "exchang": [
+  "greeting"
+ ],
+ "conversation": [
+  "conclud",
+  "greeting",
+  "cordial",
+  "talk",
+  "sat",
+  "side"
+ ],
+ "differenc": [
+  "distinction",
+  "disparity",
+  "between"
+ ],
+ "between": [
+  "distinction",
+  "differenc"
+ ],
+ "seat": [
+  "rose"
+ ],
+ "rose": [
+  "seat",
+  "depart"
+ ],
+ "meal": [
+  "alms",
+  "return",
+  "round"
+ ],
+ "return": [
+  "alms",
+  "meal"
+ ],
+ "almsround": [
+  "alms",
+  "meal",
+  "return",
+  "round"
+ ],
+ "recital": [
+  "concis",
+  "synopsi"
+ ],
+ "addition": [
+  "rep"
+ ],
+ "frustrat": [
+  "rep",
+  "reap",
+  "vexation"
+ ],
+ "divinity": [
+  "brahma"
+ ],
+ "population": [
+  "brahma",
+  "generation"
+ ],
+ "limit": [
+  "delimitation"
+ ],
+ "comprehend": [
+  "break",
+  "breakthrough"
+ ],
+ "sens": [
+  "six",
+  "ayatana"
+ ],
+ "ayatana": [
+  "six",
+  "sens"
+ ],
+ "interior": [
+  "internal"
+ ],
+ "six": [
+  "sens",
+  "ayatana"
+ ],
+ "plan": [
+  "station",
+  "intend",
+  "maintenanc"
+ ],
+ "several": [
+  "number"
+ ],
+ "follower": [
+  "lay",
+  "today",
+  "refug"
+ ],
+ "lay": [
+  "follower",
+  "forth",
+  "homeless",
+  "home"
+ ],
+ "kajangalika": [
+  "kajangala"
+ ],
+ "maam": [
+  "lady"
+ ],
+ "meditation": [
+  "establishment"
+ ],
+ "factor": [
+  "seven",
+  "bodhi"
+ ],
+ "seven": [
+  "factor",
+  "bodhi"
+ ],
+ "eightfold": [
+  "nobl",
+  "path"
+ ],
+ "path": [
+  "nobl",
+  "eightfold"
+ ],
+ "mean": [
+  "detail",
+  "brief"
+ ],
+ "brief": [
+  "detail"
+ ],
+ "detail": [
+  "brief"
+ ],
+ "approv": [
+  "delight",
+  "word",
+  "satisfi"
+ ],
+ "agre": [
+  "rejoic",
+  "rose"
+ ],
+ "respectful": [
+  "rose",
+  "keep",
+  "depart"
+ ],
+ "circl": [
+  "rose",
+  "keep",
+  "depart"
+ ],
+ "astut": [
+  "wise"
+ ],
+ "question": [
+  "ask"
+ ],
+ "answer": [
+  "ask"
+ ],
+ "pasenadi": [
+  "kosala"
+ ],
+ "kosala": [
+  "pasenadi"
+ ],
+ "decay": [
+  "alteration",
+  "chang",
+  "alter"
+ ],
+ "perish": [
+  "alteration",
+  "chang",
+  "alter"
+ ],
+ "learn": [
+  "instruct"
+ ],
+ "moon": [
+  "sun",
+  "dive",
+  "legg",
+  "strok",
+  "powerful"
+ ],
+ "sun": [
+  "moon"
+ ],
+ "extend": [
+  "bright",
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability"
+ ],
+ "joyful": [
+  "tusita"
+ ],
+ "remain": [
+  "raptur",
+  "enter",
+  "jhana"
+ ],
+ "radiant": [
+  "luminou",
+  "malleabl",
+  "wieldy",
+  "brittl"
+ ],
+ "luminosity": [
+  "radianc"
+ ],
+ "universal": [
+  "kasina",
+  "refulgent"
+ ],
+ "dimension": [
+  "ayatana",
+  "nothing",
+  "infinity",
+  "spac",
+  "surmount",
+  "infinit"
+ ],
+ "perceiv": [
+  "percipient"
+ ],
+ "external": [
+  "internal",
+  "gross",
+  "subtl",
+  "near"
+ ],
+ "internal": [
+  "external"
+ ],
+ "pretty": [
+  "ugly"
+ ],
+ "color": [
+  "hue",
+  "tint",
+  "colour"
+ ],
+ "appearanc": [
+  "hue",
+  "tint",
+  "luminosity"
+ ],
+ "varanasi": [
+  "baranasi",
+  "deer",
+  "isipatana"
+ ],
+ "ultimat": [
+  "suprem"
+ ],
+ "purity": [
+  "purification"
+ ],
+ "lack": [
+  "deficient"
+ ],
+ "vital": [
+  "deficient",
+  "proximat"
+ ],
+ "condition": [
+  "proximat"
+ ],
+ "foliag": [
+  "branch"
+ ],
+ "branch": [
+  "foliag",
+  "bark",
+  "heartwood",
+  "twig"
+ ],
+ "bark": [
+  "shoot",
+  "softwood",
+  "heartwood",
+  "sapwood",
+  "inner",
+  "twig"
+ ],
+ "softwood": [
+  "shoot",
+  "bark",
+  "heartwood",
+  "sapwood",
+  "inner",
+  "twig"
+ ],
+ "shoot": [
+  "bark",
+  "softwood",
+  "heartwood",
+  "twig"
+ ],
+ "heartwood": [
+  "bark",
+  "softwood",
+  "sapwood"
+ ],
+ "terrain": [
+  "dismount"
+ ],
+ "allow": [
+  "dismount",
+  "permission"
+ ],
+ "descend": [
+  "dismount"
+ ],
+ "foot": [
+  "dismount",
+  "postur",
+  "overlapp"
+ ],
+ "utmost": [
+  "show",
+  "honor"
+ ],
+ "deferenc": [
+  "show",
+  "honor"
+ ],
+ "convey": [
+  "show",
+  "honor"
+ ],
+ "manifest": [
+  "show",
+  "honor"
+ ],
+ "system": [
+  "method"
+ ],
+ "remot": [
+  "jungl",
+  "thicket"
+ ],
+ "forest": [
+  "jungl",
+  "thicket"
+ ],
+ "difficulty": [
+  "troubl",
+  "constitut",
+  "dwelling",
+  "luxuriou"
+ ],
+ "troubl": [
+  "difficulty",
+  "constitut"
+ ],
+ "blissful": [
+  "constitut",
+  "dwelling"
+ ],
+ "belong": [
+  "constitut"
+ ],
+ "befor": [
+  "keep"
+ ],
+ "recit": [
+  "patimokkha"
+ ],
+ "comfort": [
+  "ease",
+  "relief"
+ ],
+ "restrain": [
+  "restraint"
+ ],
+ "expulsion": [
+  "committ",
+  "grav",
+  "offenc",
+  "involv",
+  "defeat",
+  "border"
+ ],
+ "unfinish": [
+  "discussion"
+ ],
+ "nuns": [
+  "bhikkhuni"
+ ],
+ "persuad": [
+  "convinc",
+  "opposition",
+  "disparagement",
+  "several"
+ ],
+ "brim": [
+  "generat",
+  "much",
+  "maim",
+  "injur",
+  "reproach",
+  "demerit"
+ ],
+ "sanctuary": [
+  "security",
+  "bondag"
+ ],
+ "bhante": [
+  "venerabl"
+ ],
+ "adornment": [
+  "youthful",
+  "fond",
+  "ornament",
+  "mirror",
+  "assist"
+ ],
+ "reflection": [
+  "youthful",
+  "fond",
+  "ornament",
+  "facial",
+  "mirror",
+  "sight"
+ ],
+ "mirror": [
+  "youthful",
+  "fond",
+  "ornament",
+  "facial",
+  "clean"
+ ],
+ "youthful": [
+  "fond",
+  "ornament",
+  "facial",
+  "clean",
+  "mirror"
+ ],
+ "check": [
+  "facial",
+  "review"
+ ],
+ "clean": [
+  "mirror"
+ ],
+ "dirt": [
+  "dust"
+ ],
+ "corrupt": [
+  "defil"
+ ],
+ "enthusiasm": [
+  "extraordinary",
+  "effort",
+  "zeal",
+  "indefatigability"
+ ],
+ "zeal": [
+  "extraordinary",
+  "enthusiasm",
+  "indefatigability"
+ ],
+ "vigor": [
+  "extraordinary",
+  "zeal",
+  "enthusiasm",
+  "indefatigability"
+ ],
+ "perseveranc": [
+  "extraordinary",
+  "zeal",
+  "enthusiasm",
+  "indefatigability"
+ ],
+ "situational": [
+  "extraordinary",
+  "enthusiasm",
+  "sampajanna"
+ ],
+ "extraordinary": [
+  "zeal",
+  "enthusiasm",
+  "indefatigability"
+ ],
+ "serenity": [
+  "insight"
+ ],
+ "principl": [
+  "phenomena",
+  "covetous"
+ ],
+ "town": [
+  "villag"
+ ],
+ "villag": [
+  "town"
+ ],
+ "country": [
+  "region"
+ ],
+ "liabl": [
+  "subject"
+ ],
+ "cultivat": [
+  "develop"
+ ],
+ "fruitful": [
+  "fruit",
+  "benefit",
+  "brilliant",
+  "pervasiv",
+  "extraordinari"
+ ],
+ "objectiv": [
+  "culminat",
+  "deathless",
+  "consummation"
+ ],
+ "culmination": [
+  "culminat",
+  "withdrawn",
+  "clansmen",
+  "goal"
+ ],
+ "application": [
+  "attention",
+  "careful",
+  "unarisen",
+  "frequent"
+ ],
+ "nonexistenc": [
+  "extermination"
+ ],
+ "disappearanc": [
+  "pass"
+ ],
+ "infinit": [
+  "infinity",
+  "spac",
+  "surmount",
+  "finit"
+ ],
+ "spac": [
+  "infinity",
+  "surmount",
+  "infinit"
+ ],
+ "nothing": [
+  "infinity",
+  "surmount"
+ ],
+ "sublim": [
+  "peaceful",
+  "comprehensibl",
+  "propound"
+ ],
+ "attachment": [
+  "acquisition"
+ ],
+ "lett": [
+  "viraga",
+  "relinquishment",
+  "bas",
+  "seclusion",
+  "matur"
+ ],
+ "grav": [
+  "sick",
+  "afflict"
+ ],
+ "sick": [
+  "grav",
+  "ill"
+ ],
+ "meditat": [
+  "contemplat"
+ ],
+ "observ": [
+  "contemplat"
+ ],
+ "sight": [
+  "eye",
+  "form"
+ ],
+ "nose": [
+  "ear"
+ ],
+ "tongu": [
+  "ear"
+ ],
+ "exterior": [
+  "external",
+  "simp"
+ ],
+ "skin": [
+  "teeth",
+  "flesh",
+  "sinew",
+  "bone",
+  "blood"
+ ],
+ "sinew": [
+  "skin",
+  "flesh",
+  "bone",
+  "blood"
+ ],
+ "bone": [
+  "skin",
+  "flesh",
+  "sinew",
+  "blood"
+ ],
+ "blood": [
+  "skin",
+  "flesh",
+  "sinew",
+  "bone"
+ ],
+ "phlegm": [
+  "bile"
+ ],
+ "bile": [
+  "phlegm"
+ ],
+ "irrational": [
+  "careless",
+  "expansion"
+ ],
+ "rain": [
+  "thick"
+ ],
+ "lake": [
+  "pool"
+ ],
+ "pool": [
+  "lake"
+ ],
+ "rational": [
+  "careful",
+  "attention",
+  "frequent"
+ ],
+ "meditativ": [
+  "peaceful",
+  "transcend",
+  "immaterial"
+ ],
+ "transcend": [
+  "peaceful",
+  "immaterial"
+ ],
+ "peaceful": [
+  "transcend"
+ ],
+ "draft": [
+  "plaster",
+  "shutter"
+ ],
+ "fasten": [
+  "plaster",
+  "shutter",
+  "shut"
+ ],
+ "window": [
+  "plaster",
+  "shutter"
+ ],
+ "shutter": [
+  "plaster"
+ ],
+ "plaster": [
+  "shutter"
+ ],
+ "shun": [
+  "avoid"
+ ],
+ "jealou": [
+  "enviou"
+ ],
+ "stingy": [
+  "miser"
+ ],
+ "aristocratic": [
+  "anoint"
+ ],
+ "anoint": [
+  "khattiya"
+ ],
+ "hair": [
+  "shav",
+  "beard"
+ ],
+ "beard": [
+  "shav",
+  "hair",
+  "put",
+  "homeless",
+  "saffron",
+  "puts",
+  "yellow"
+ ],
+ "dress": [
+  "shav",
+  "hair",
+  "beard",
+  "put",
+  "homeless",
+  "saffron",
+  "yellow"
+ ],
+ "ocher": [
+  "shav",
+  "hair",
+  "beard",
+  "put",
+  "homeless",
+  "saffron",
+  "yellow"
+ ],
+ "homeless": [
+  "shav",
+  "hair",
+  "beard",
+  "forth",
+  "household",
+  "clansmen",
+  "home"
+ ],
+ "shav": [
+  "hair",
+  "beard",
+  "put",
+  "saffron",
+  "yellow"
+ ],
+ "forth": [
+  "homeless",
+  "gone",
+  "home"
+ ],
+ "hopeless": [
+  "expectation"
+ ],
+ "fragranc": [
+  "garland",
+  "scent",
+  "unguent",
+  "beautify",
+  "embellish"
+ ],
+ "makeup": [
+  "garland",
+  "scent",
+  "unguent",
+  "beautify",
+  "embellish"
+ ],
+ "garland": [
+  "scent",
+  "unguent",
+  "beautify",
+  "embellish"
+ ],
+ "honor": [
+  "respect",
+  "venerat",
+  "rever",
+  "honour"
+ ],
+ "banner": [
+  "standard"
+ ],
+ "roll": [
+  "motion"
+ ],
+ "deer": [
+  "baranasi",
+  "isipatana"
+ ],
+ "park": [
+  "baranasi",
+  "deer",
+  "isipatana",
+  "gosinga",
+  "sala",
+  "illuminat"
+ ],
+ "isipatana": [
+  "baranasi",
+  "deer"
+ ],
+ "maker": [
+  "chariotmaker"
+ ],
+ "crook": [
+  "crooked",
+  "defect"
+ ],
+ "flaw": [
+  "crooked",
+  "defect"
+ ],
+ "defect": [
+  "fault",
+  "hors"
+ ],
+ "door": [
+  "guard"
+ ],
+ "guard": [
+  "door"
+ ],
+ "caught": [
+  "featur"
+ ],
+ "fun": [
+  "assist"
+ ],
+ "indulgenc": [
+  "assist"
+ ],
+ "decoration": [
+  "assist"
+ ],
+ "sustain": [
+  "assist"
+ ],
+ "discomfort": [
+  "assist"
+ ],
+ "comfortabl": [
+  "assist"
+ ],
+ "abid": [
+  "assist"
+ ],
+ "eats": [
+  "moderation"
+ ],
+ "wakeful": [
+  "intent"
+ ],
+ "hurt": [
+  "affliction"
+ ],
+ "horrifi": [
+  "repell",
+  "humiliat",
+  "disgust"
+ ],
+ "disgust": [
+  "repell",
+  "humiliat"
+ ],
+ "repell": [
+  "humiliat",
+  "disgust"
+ ],
+ "lifespan": [
+  "celestial",
+  "span"
+ ],
+ "beauty": [
+  "glory"
+ ],
+ "sovereignty": [
+  "authority"
+ ],
+ "satisfi": [
+  "elat",
+  "word"
+ ],
+ "indefatigabl": [
+  "responsibl"
+ ],
+ "children": [
+  "wife",
+  "peril",
+  "separat"
+ ],
+ "told": [
+  "report"
+ ],
+ "discuss": [
+  "conversation"
+ ],
+ "perfection": [
+  "arahantship",
+  "consummation",
+  "thereby"
+ ],
+ "categorical": [
+  "definitiv"
+ ],
+ "carer": [
+  "attendant"
+ ],
+ "capabl": [
+  "suitabl"
+ ],
+ "hurtful": [
+  "afflictiv",
+  "unafflictiv"
+ ],
+ "painful": [
+  "feel",
+  "pleasant"
+ ],
+ "display": [
+  "bitter"
+ ],
+ "annoyanc": [
+  "bitter"
+ ],
+ "accompany": [
+  "associat",
+  "follow",
+  "serv"
+ ],
+ "attend": [
+  "associat",
+  "serv"
+ ],
+ "associat": [
+  "serv"
+ ],
+ "flow": [
+  "smooth"
+ ],
+ "reputation": [
+  "report",
+  "circulat",
+  "effect"
+ ],
+ "blameless": [
+  "blameworthy"
+ ],
+ "blameworthy": [
+  "blameless"
+ ],
+ "legitimat": [
+  "righteous",
+  "misrepresent",
+  "contrary",
+  "fact",
+  "reasonabl",
+  "criticism",
+  "energetic",
+  "assertion",
+  "consequenc"
+ ],
+ "plac": [
+  "stat"
+ ],
+ "widespread": [
+  "wide"
+ ],
+ "parent": [
+  "father"
+ ],
+ "tendency": [
+  "underly"
+ ],
+ "underly": [
+  "tendency"
+ ],
+ "consciou": [
+  "conceit"
+ ],
+ "sign": [
+  "conceit"
+ ],
+ "old": [
+  "birth",
+  "age",
+  "death",
+  "ag"
+ ],
+ "age": [
+  "birth",
+  "death",
+  "ag"
+ ],
+ "delusion": [
+  "dosa"
+ ],
+ "dosa": [
+  "delusion"
+ ],
+ "emerg": [
+  "fashion"
+ ],
+ "result": [
+  "ripen"
+ ],
+ "sown": [
+  "seed"
+ ],
+ "productiv": [
+  "seed"
+ ],
+ "seed": [
+  "damag",
+  "sown"
+ ],
+ "root": [
+  "cut",
+  "palm",
+  "stump",
+  "tree"
+ ],
+ "stump": [
+  "cut",
+  "root",
+  "made",
+  "palm",
+  "obliterat",
+  "futur"
+ ],
+ "obliterat": [
+  "cut",
+  "root",
+  "made",
+  "palm",
+  "stump",
+  "futur",
+  "tolerat"
+ ],
+ "unabl": [
+  "cut",
+  "root",
+  "palm",
+  "stump",
+  "obliterat"
+ ],
+ "cut": [
+  "root",
+  "palm",
+  "stump",
+  "obliterat"
+ ],
+ "made": [
+  "palm",
+  "stump",
+  "creat"
+ ],
+ "reduc": [
+  "ashe"
+ ],
+ "ashe": [
+  "winnow",
+  "swift",
+  "current"
+ ],
+ "swift": [
+  "winnow",
+  "ashe",
+  "carri",
+  "current"
+ ],
+ "mat": [
+  "spread"
+ ],
+ "alavi": [
+  "hatthaka"
+ ],
+ "hatthaka": [
+  "alavi"
+ ],
+ "ease": [
+  "sleep"
+ ],
+ "woolen": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "cover": [
+  "couch",
+  "rugs",
+  "antelop"
+ ],
+ "shag": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "pil": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "embroider": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "flower": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "fine": [
+  "couch",
+  "rugs"
+ ],
+ "hide": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "cow"
+ ],
+ "canopy": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "red": [
+  "couch",
+  "rugs",
+  "blue"
+ ],
+ "pillow": [
+  "couch",
+  "spread"
+ ],
+ "ends": [
+  "couch",
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "couch": [
+  "spread",
+  "rugs",
+  "antelop",
+  "hide"
+ ],
+ "whit": [
+  "red",
+  "blue"
+ ],
+ "lamp": [
+  "oil",
+  "wick"
+ ],
+ "oil": [
+  "lamp",
+  "wick"
+ ],
+ "pursu": [
+  "interrogat"
+ ],
+ "press": [
+  "interrogat"
+ ],
+ "grill": [
+  "interrogat"
+ ],
+ "negligent": [
+  "heedless"
+ ],
+ "colleagu": [
+  "companion",
+  "relativ",
+  "kinsmen"
+ ],
+ "kin": [
+  "companion",
+  "relativ",
+  "kinsmen",
+  "treat"
+ ],
+ "sharp": [
+  "rack",
+  "pierc",
+  "knif",
+  "lacerat"
+ ],
+ "acut": [
+  "rack",
+  "pierc",
+  "harrow"
+ ],
+ "glow": [
+  "blaz",
+  "charcoal",
+  "pit",
+  "coal",
+  "lacerat"
+ ],
+ "toss": [
+  "throw",
+  "cowdung"
+ ],
+ "sabbath": [
+  "observ",
+  "uposatha",
+  "imitat"
+ ],
+ "mak": [
+  "meritoriou"
+ ],
+ "merit": [
+  "meritoriou"
+ ],
+ "spok": [
+  "recit",
+  "vers",
+  "presenc"
+ ],
+ "vers": [
+  "recit",
+  "presenc"
+ ],
+ "complet": [
+  "destroy"
+ ],
+ "journey": [
+  "destroy",
+  "liv",
+  "birth",
+  "holy"
+ ],
+ "lamentation": [
+  "sorrow",
+  "pain",
+  "grief",
+  "despair",
+  "domanassa"
+ ],
+ "pain": [
+  "sorrow",
+  "lamentation",
+  "despair"
+ ],
+ "sorrow": [
+  "lamentation",
+  "pain",
+  "despair"
+ ],
+ "home": [
+  "residenc"
+ ],
+ "pond": [
+  "lotu"
+ ],
+ "lotu": [
+  "pond"
+ ],
+ "lily": [
+  "blue",
+  "red"
+ ],
+ "pink": [
+  "blue",
+  "red"
+ ],
+ "blue": [
+  "red",
+  "whit",
+  "yellow"
+ ],
+ "stilt": [
+  "mansion",
+  "eastern"
+ ],
+ "longhous": [
+  "mansion",
+  "eastern",
+  "palac"
+ ],
+ "season": [
+  "rainy",
+  "rain"
+ ],
+ "summer": [
+  "season",
+  "hot"
+ ],
+ "rainy": [
+  "season",
+  "rain"
+ ],
+ "worker": [
+  "slav",
+  "servant"
+ ],
+ "staff": [
+  "worker",
+  "servant",
+  "makkhali",
+  "gosala"
+ ],
+ "rice": [
+  "boil"
+ ],
+ "unlearn": [
+  "uninstruct",
+  "puthujjana"
+ ],
+ "puthujjana": [
+  "uninstruct"
+ ],
+ "recogniz": [
+  "transgression",
+  "amend",
+  "recognis"
+ ],
+ "mistak": [
+  "transgression",
+  "amend",
+  "confess",
+  "overcam",
+  "confus",
+  "blunder",
+  "pardon"
+ ],
+ "accept": [
+  "transgression"
+ ],
+ "charg": [
+  "authority"
+ ],
+ "putt": [
+  "authority",
+  "opposition",
+  "convinc",
+  "disparagement",
+  "several"
+ ],
+ "hopeful": [
+  "perhap"
+ ],
+ "entir": [
+  "mass",
+  "whol"
+ ],
+ "unflagg": [
+  "slacken",
+  "tranquil",
+  "tireless",
+  "unremitt",
+  "although",
+  "overwrought",
+  "uncalm"
+ ],
+ "lucid": [
+  "slacken",
+  "tranquil",
+  "unremitt",
+  "tireless",
+  "although",
+  "overwrought",
+  "uncalm"
+ ],
+ "undisturb": [
+  "slacken",
+  "tranquil"
+ ],
+ "gone": [
+  "forth"
+ ],
+ "psychic": [
+  "potency",
+  "wield",
+  "mastery",
+  "dive",
+  "strok",
+  "supernormal"
+ ],
+ "gentleman": [
+  "clansman"
+ ],
+ "explain": [
+  "expound"
+ ],
+ "apparent": [
+  "visibl",
+  "applicabl",
+  "recluseship"
+ ],
+ "present": [
+  "visibl"
+ ],
+ "immediat": [
+  "visibl",
+  "invit",
+  "applicabl"
+ ],
+ "effectiv": [
+  "visibl",
+  "immediat",
+  "invit",
+  "applicabl"
+ ],
+ "inspection": [
+  "visibl",
+  "immediat",
+  "invit",
+  "applicabl"
+ ],
+ "invit": [
+  "immediat",
+  "applicabl"
+ ],
+ "relevant": [
+  "immediat",
+  "invit",
+  "applicabl",
+  "beneficial",
+  "fundamental",
+  "unbeneficial",
+  "irrelevant"
+ ],
+ "terminator": [
+  "maker",
+  "your",
+  "defeat"
+ ],
+ "committ": [
+  "devot"
+ ],
+ "chang": [
+  "vanish",
+  "alteration"
+ ],
+ "persist": [
+  "vanish",
+  "alteration"
+ ],
+ "evident": [
+  "alteration",
+  "bear",
+  "gett",
+  "better"
+ ],
+ "partner": [
+  "wife",
+  "children",
+  "goat",
+  "sheep",
+  "fowl",
+  "pigs",
+  "mare"
+ ],
+ "disagreeabl": [
+  "rack",
+  "harrow",
+  "unwish",
+  "diminish"
+ ],
+ "unpleasant": [
+  "disagreeabl",
+  "repell",
+  "displeas",
+  "phenomenon"
+ ],
+ "isolat": [
+  "plunder",
+  "commit",
+  "ambush",
+  "highway"
+ ],
+ "building": [
+  "plunder",
+  "commit",
+  "ambush",
+  "highway"
+ ],
+ "highway": [
+  "plunder",
+  "commit",
+  "ambush"
+ ],
+ "robbery": [
+  "plunder",
+  "commit",
+  "ambush",
+  "highway"
+ ],
+ "plunder": [
+  "commit",
+  "ambush",
+  "highway",
+  "mutilat"
+ ],
+ "thief": [
+  "depend"
+ ],
+ "ruler": [
+  "royal",
+  "minister"
+ ],
+ "chief": [
+  "royal",
+  "minister"
+ ],
+ "minister": [
+  "royal"
+ ],
+ "broken": [
+  "maim",
+  "injur",
+  "blameworthy",
+  "reproach",
+  "demerit",
+  "incompetent"
+ ],
+ "damag": [
+  "maim",
+  "injur",
+  "blameworthy",
+  "reproach",
+  "demerit",
+  "incompetent"
+ ],
+ "deserv": [
+  "maim",
+  "injur",
+  "reproach",
+  "generat",
+  "demerit",
+  "unmaim",
+  "uninjur"
+ ],
+ "blam": [
+  "maim",
+  "injur",
+  "reproach",
+  "generat",
+  "demerit"
+ ],
+ "wicked": [
+  "maim",
+  "injur",
+  "blameworthy",
+  "reproach",
+  "demerit",
+  "incompetent"
+ ],
+ "criticiz": [
+  "reproach",
+  "censur"
+ ],
+ "elder": [
+  "old",
+  "aged",
+  "burden",
+  "year",
+  "advanc",
+  "last",
+  "stag"
+ ],
+ "advanc": [
+  "aged",
+  "burden",
+  "year",
+  "last",
+  "stag"
+ ],
+ "year": [
+  "aged",
+  "advanc",
+  "hundr"
+ ],
+ "reach": [
+  "aged",
+  "advanc",
+  "stag"
+ ],
+ "final": [
+  "aged",
+  "advanc"
+ ],
+ "stag": [
+  "aged",
+  "burden",
+  "year",
+  "advanc",
+  "last"
+ ],
+ "arahant": [
+  "master",
+  "gotama"
+ ],
+ "gotama": [
+  "master"
+ ],
+ "overcom": [
+  "obsess"
+ ],
+ "refug": [
+  "today"
+ ],
+ "immoral": [
+  "unrighteou"
+ ],
+ "untruth": [
+  "misrepresent",
+  "contrary",
+  "fact",
+  "explain",
+  "reasonabl",
+  "criticism",
+  "consequenc",
+  "assertion"
+ ],
+ "rebuttal": [
+  "misrepresent",
+  "contrary",
+  "fact",
+  "explain",
+  "incur",
+  "reasonabl",
+  "criticism",
+  "censur",
+  "assertion",
+  "consequenc"
+ ],
+ "criticism": [
+  "misrepresent",
+  "contrary",
+  "fact",
+  "explain",
+  "reasonabl",
+  "assertion",
+  "consequenc"
+ ],
+ "misrepresent": [
+  "contrary",
+  "fact",
+  "explain",
+  "reasonabl",
+  "criticism",
+  "consequenc",
+  "assertion"
+ ],
+ "trust": [
+  "criticism",
+  "hope"
+ ],
+ "giver": [
+  "donor",
+  "munificent"
+ ],
+ "remors": [
+  "restless"
+ ],
+ "restless": [
+  "remors"
+ ],
+ "quit": [
+  "seclud"
+ ],
+ "seclusion": [
+  "seclud",
+  "bas",
+  "matur"
+ ],
+ "connect": [
+  "seclud",
+  "jhana",
+  "raptur",
+  "accompani",
+  "thought",
+  "examination",
+  "sustain",
+  "appli"
+ ],
+ "enter": [
+  "jhana",
+  "raptur"
+ ],
+ "raptur": [
+  "jhana"
+ ],
+ "jhana": [
+  "raptur"
+ ],
+ "seclud": [
+  "accompani",
+  "quit",
+  "appli"
+ ],
+ "clarity": [
+  "placidity",
+  "unification",
+  "appli"
+ ],
+ "equanimou": [
+  "jhana",
+  "announc"
+ ],
+ "bright": [
+  "concentrat",
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "pure"
+ ],
+ "flawless": [
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright",
+  "defect",
+  "imperfection"
+ ],
+ "corruption": [
+  "concentrat",
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright"
+ ],
+ "pliabl": [
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "brittl",
+  "bright",
+  "imperfection"
+ ],
+ "workabl": [
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "brittl",
+  "bright",
+  "imperfection"
+ ],
+ "steady": [
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "imperturbability",
+  "bright",
+  "imperfection"
+ ],
+ "imperturbabl": [
+  "concentrat",
+  "unblemish",
+  "rid",
+  "malleabl",
+  "wieldy",
+  "steady",
+  "imperturbability",
+  "bright",
+  "defect",
+  "imperfection"
+ ],
+ "recollection": [
+  "unblemish",
+  "malleabl",
+  "wieldy",
+  "imperturbability"
+ ],
+ "banish": [
+  "dispell",
+  "dark",
+  "light",
+  "happen",
+  "resolut"
+ ],
+ "meditator": [
+  "dispell",
+  "dark",
+  "light",
+  "happen",
+  "resolut",
+  "banish"
+ ],
+ "dark": [
+  "happen"
+ ],
+ "keen": [
+  "appamada",
+  "ardent",
+  "resolut",
+  "comprehend",
+  "remov",
+  "covetous",
+  "domanassa"
+ ],
+ "resolut": [
+  "appamada",
+  "ardent",
+  "withdrawn"
+ ],
+ "appamada": [
+  "ardent",
+  "resolut"
+ ],
+ "noth": [
+  "destroy",
+  "birth",
+  "holy"
+ ],
+ "further": [
+  "destroy",
+  "birth",
+  "holy"
+ ],
+ "sixteenth": [
+  "worth"
+ ],
+ "demonstration": [
+  "wonder",
+  "psychic",
+  "potency"
+ ],
+ "incredibl": [
+  "astound",
+  "amaz",
+  "wonderful"
+ ],
+ "amaz": [
+  "astound",
+  "wonderful"
+ ],
+ "controll": [
+  "wield",
+  "mastery"
+ ],
+ "wield": [
+  "exercis",
+  "mastery",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "supernormal"
+ ],
+ "neutral": [
+  "neither",
+  "pleasant",
+  "painful"
+ ],
+ "reason": [
+  "caus"
+ ],
+ "caus": [
+  "condition"
+ ],
+ "nonsensical": [
+  "harsh"
+ ],
+ "genuin": [
+  "apprehend",
+  "comprehensibl",
+  "propound",
+  "concern",
+  "reality"
+ ],
+ "fact": [
+  "apprehend"
+ ],
+ "uncorrupt": [
+  "undefil",
+  "primal",
+  "traditional",
+  "ancient",
+  "unadulterat",
+  "adulterat",
+  "repudiat"
+ ],
+ "requirement": [
+  "condition"
+ ],
+ "mass": [
+  "whol"
+ ],
+ "fade": [
+  "remainderless"
+ ],
+ "residu": [
+  "remainderless"
+ ],
+ "left": [
+  "remainderless"
+ ],
+ "behind": [
+  "remainderless"
+ ],
+ "simp": [
+  "eightfold"
+ ],
+ "tear": [
+  "peril",
+  "separat",
+  "reconnect"
+ ],
+ "peril": [
+  "separat",
+  "reconnect"
+ ],
+ "child": [
+  "son"
+ ],
+ "held": [
+  "kept"
+ ],
+ "announc": [
+  "kept",
+  "refusal",
+  "comp"
+ ],
+ "kept": [
+  "silent"
+ ],
+ "deft": [
+  "skill",
+  "apprentic",
+  "fashion"
+ ],
+ "complexion": [
+  "skin"
+ ],
+ "luxuriou": [
+  "high",
+  "beds",
+  "difficulty",
+  "bed"
+ ],
+ "high": [
+  "luxuriou"
+ ],
+ "bedd": [
+  "luxuriou"
+ ],
+ "bed": [
+  "luxuriou"
+ ],
+ "robe": [
+  "morn",
+  "dress",
+  "bowl"
+ ],
+ "tak": [
+  "morn",
+  "dress",
+  "bowl"
+ ],
+ "bowl": [
+  "morn",
+  "dress",
+  "robe",
+  "outer"
+ ],
+ "alms": [
+  "morn",
+  "dress",
+  "bowl"
+ ],
+ "morn": [
+  "dress",
+  "bowl",
+  "robe",
+  "tak"
+ ],
+ "gather": [
+  "collect"
+ ],
+ "legg": [
+  "fold",
+  "legs",
+  "crosswis",
+  "front",
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "travel",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "straight": [
+  "fold",
+  "legs",
+  "crosswis",
+  "front"
+ ],
+ "bring": [
+  "fold",
+  "legs",
+  "crosswis"
+ ],
+ "vultur": [
+  "mount",
+  "peak"
+ ],
+ "mountain": [
+  "mount",
+  "vultur",
+  "peak"
+ ],
+ "rob": [
+  "morn",
+  "dress",
+  "bowl",
+  "robe",
+  "tak",
+  "outer"
+ ],
+ "bank": [
+  "river",
+  "uruvela",
+  "goatherd",
+  "banyan",
+  "neranjara",
+  "gang"
+ ],
+ "silenc": [
+  "consent"
+ ],
+ "consent": [
+  "silenc"
+ ],
+ "late": [
+  "emerg",
+  "advanc"
+ ],
+ "afternoon": [
+  "emerg"
+ ],
+ "retreat": [
+  "emerg",
+  "seclusion"
+ ],
+ "kesamutta": [
+  "kesaputta"
+ ],
+ "transmission": [
+  "oral",
+  "tradition",
+  "acceptanc",
+  "ponder",
+  "preferenc"
+ ],
+ "lineag": [
+  "oral"
+ ],
+ "testament": [
+  "oral"
+ ],
+ "canonical": [
+  "oral"
+ ],
+ "authority": [
+  "oral"
+ ],
+ "acceptanc": [
+  "oral",
+  "tradition",
+  "ponder",
+  "preferenc"
+ ],
+ "deliberation": [
+  "oral",
+  "tradition",
+  "acceptanc",
+  "ponder",
+  "reflectiv",
+  "preferenc"
+ ],
+ "oral": [
+  "tradition",
+  "acceptanc",
+  "ponder",
+  "preferenc"
+ ],
+ "adultery": [
+  "falsehood"
+ ],
+ "consolation": [
+  "won",
+  "assuranc"
+ ],
+ "won": [
+  "assuranc"
+ ],
+ "incompetent": [
+  "foolish",
+  "maim",
+  "injur",
+  "blameworthy",
+  "reproach",
+  "demerit"
+ ],
+ "foolish": [
+  "incompetent",
+  "transgression",
+  "overcam",
+  "unskilful",
+  "confus"
+ ],
+ "untru": [
+  "maim"
+ ],
+ "competent": [
+  "unmaim",
+  "uninjur",
+  "intelligent"
+ ],
+ "transmigrat": [
+  "roam"
+ ],
+ "therell": [
+  "renew",
+  "unshakabl"
+ ],
+ "yoke": [
+  "bond",
+  "bondag",
+  "security"
+ ],
+ "infatuation": [
+  "affection",
+  "thirst",
+  "attachment",
+  "lie"
+ ],
+ "affection": [
+  "infatuation",
+  "thirst",
+  "lie"
+ ],
+ "linger": [
+  "infatuation",
+  "attachment",
+  "lie",
+  "residual"
+ ],
+ "unyok": [
+  "severanc",
+  "bond",
+  "sensuality"
+ ],
+ "eradicat": [
+  "uproot",
+  "extirpat",
+  "residual"
+ ],
+ "dispel": [
+  "tolerat",
+  "obliterat"
+ ],
+ "eliminat": [
+  "tolerat"
+ ],
+ "tolerat": [
+  "dispel",
+  "terminat",
+  "obliterat"
+ ],
+ "prudent": [
+  "dread",
+  "constant",
+  "continuous",
+  "wrongdo"
+ ],
+ "vanquish": [
+  "conquer"
+ ],
+ "legion": [
+  "conquer"
+ ],
+ "ripen": [
+  "bas",
+  "seclusion",
+  "matur"
+ ],
+ "rely": [
+  "matur"
+ ],
+ "subtlety": [
+  "exquisit"
+ ],
+ "finer": [
+  "excellent",
+  "sublim",
+  "previou"
+ ],
+ "decision": [
+  "cours"
+ ],
+ "unprincipl": [
+  "unrighteou"
+ ],
+ "goatherd": [
+  "uruvela",
+  "banyan",
+  "bank",
+  "neranjara"
+ ],
+ "banyan": [
+  "uruvela",
+  "goatherd",
+  "neranjara"
+ ],
+ "neranjara": [
+  "uruvela",
+  "goatherd",
+  "banyan",
+  "bank"
+ ],
+ "uruvela": [
+  "goatherd",
+  "banyan",
+  "bank",
+  "neranjara"
+ ],
+ "vanish": [
+  "disappear"
+ ],
+ "easi": [
+  "extend",
+  "drawn",
+  "arm",
+  "draw"
+ ],
+ "arm": [
+  "drawn",
+  "draw"
+ ],
+ "front": [
+  "arm",
+  "draw"
+ ],
+ "shoulder": [
+  "arrang",
+  "upper"
+ ],
+ "rais": [
+  "arrang",
+  "upper",
+  "shoulder",
+  "reverential",
+  "salutation",
+  "join"
+ ],
+ "arrang": [
+  "upper",
+  "shoulder",
+  "rais",
+  "salutation",
+  "join"
+ ],
+ "young": [
+  "youth"
+ ],
+ "prim": [
+  "youth",
+  "black"
+ ],
+ "youth": [
+  "black",
+  "prim"
+ ],
+ "pristin": [
+  "black",
+  "prim"
+ ],
+ "black": [
+  "prim"
+ ],
+ "understood": [
+  "ful"
+ ],
+ "aspect": [
+  "contemplat",
+  "feeling"
+ ],
+ "covetous": [
+  "phenomena",
+  "ardent",
+  "clear",
+  "comprehend",
+  "remov",
+  "domanassa"
+ ],
+ "custom": [
+  "lineag",
+  "ancient"
+ ],
+ "primordial": [
+  "primal",
+  "traditional",
+  "ancient",
+  "unadulterat",
+  "adulterat",
+  "repudiat"
+ ],
+ "customary": [
+  "primal",
+  "traditional",
+  "ancient",
+  "unadulterat",
+  "adulterat",
+  "repudiat"
+ ],
+ "traditional": [
+  "primal",
+  "ancient",
+  "unadulterat",
+  "adulterat",
+  "repudiat"
+ ],
+ "content": [
+  "contentment"
+ ],
+ "escap": [
+  "adinava",
+  "assada"
+ ],
+ "adinava": [
+  "escap",
+  "assada",
+  "case"
+ ],
+ "glorify": [
+  "disparag",
+  "disparagement",
+  "opposition",
+  "convinc",
+  "several"
+ ],
+ "put": [
+  "disparag"
+ ],
+ "account": [
+  "disparag"
+ ],
+ "prevail": [
+  "vanquish",
+  "discontent",
+  "steadfast"
+ ],
+ "discontent": [
+  "vanquish",
+  "steadfast"
+ ],
+ "attentiv": [
+  "steadfast"
+ ],
+ "footprint": [
+  "repudiat"
+ ],
+ "los": [
+  "unlucky",
+  "throw"
+ ],
+ "powerful": [
+  "mighty",
+  "unhinder",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "strok"
+ ],
+ "deny": [
+  "reject"
+ ],
+ "reject": [
+  "censur",
+  "repudiat"
+ ],
+ "inaction": [
+  "proponent"
+ ],
+ "terror": [
+  "fear",
+  "trepidation"
+ ],
+ "fear": [
+  "terror",
+  "trepidation"
+ ],
+ "elephant": [
+  "bull"
+ ],
+ "city": [
+  "capital"
+ ],
+ "defecat": [
+  "urinat"
+ ],
+ "urinat": [
+  "defecat"
+ ],
+ "mighty": [
+  "powerful",
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "mastery",
+  "supernormal"
+ ],
+ "remov": [
+  "removal",
+  "abandonment"
+ ],
+ "community": [
+  "group",
+  "famou"
+ ],
+ "consist": [
+  "pair",
+  "type",
+  "individual",
+  "hospitality",
+  "offering"
+ ],
+ "bamboo": [
+  "rajagaha",
+  "squirrel",
+  "sanctuary"
+ ],
+ "squirrel": [
+  "rajagaha",
+  "bamboo",
+  "sanctuary"
+ ],
+ "feed": [
+  "rajagaha",
+  "bamboo",
+  "squirrel",
+  "sanctuary"
+ ],
+ "rajagaha": [
+  "bamboo",
+  "squirrel",
+  "sanctuary"
+ ],
+ "vassakara": [
+  "magadha"
+ ],
+ "road": [
+  "highway",
+  "travell"
+ ],
+ "tree": [
+  "foot"
+ ],
+ "centaur": [
+  "gandhabba"
+ ],
+ "spirit": [
+  "yakkha"
+ ],
+ "sprout": [
+  "blue"
+ ],
+ "sky": [
+  "travel",
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "cant": [
+  "incapabl"
+ ],
+ "watch": [
+  "night",
+  "obstructiv"
+ ],
+ "top": [
+  "postur",
+  "overlapp"
+ ],
+ "focus": [
+  "postur",
+  "overlapp",
+  "sensory",
+  "diversity"
+ ],
+ "postur": [
+  "overlapp"
+ ],
+ "moderation": [
+  "moderat"
+ ],
+ "goat": [
+  "cattl",
+  "rams",
+  "pigs",
+  "sheep",
+  "fowl",
+  "mare"
+ ],
+ "sheep": [
+  "cattl",
+  "goat",
+  "pigs",
+  "fowl",
+  "mare"
+ ],
+ "chicken": [
+  "cattl",
+  "goat",
+  "pigs",
+  "cock",
+  "hen",
+  "eggs",
+  "sheep",
+  "fowl",
+  "mare"
+ ],
+ "pigs": [
+  "cattl",
+  "goat",
+  "children",
+  "slav",
+  "sheep",
+  "fowl",
+  "mare"
+ ],
+ "cattl": [
+  "goat",
+  "pigs",
+  "sheep",
+  "fowl",
+  "mare"
+ ],
+ "overflow": [
+  "stream"
+ ],
+ "desirabl": [
+  "agreeabl",
+  "cognizabl",
+  "love",
+  "pleas",
+  "entic",
+  "tantaliz"
+ ],
+ "incalculabl": [
+  "simp"
+ ],
+ "immeasurabl": [
+  "incalculabl"
+ ],
+ "person": [
+  "man"
+ ],
+ "experiential": [
+  "unwaver"
+ ],
+ "confidenc": [
+  "unwaver"
+ ],
+ "male": [
+  "wretch",
+  "slav",
+  "goat",
+  "sheep",
+  "fowl",
+  "pigs",
+  "mare"
+ ],
+ "zombi": [
+  "wretch"
+ ],
+ "femal": [
+  "wretch",
+  "slav",
+  "goat",
+  "sheep",
+  "fowl",
+  "pigs",
+  "mare"
+ ],
+ "abus": [
+  "revil"
+ ],
+ "insult": [
+  "revil"
+ ],
+ "consum": [
+  "liquor",
+  "wine",
+  "intoxicant"
+ ],
+ "beer": [
+  "liquor",
+  "wine",
+  "intoxicant"
+ ],
+ "wine": [
+  "liquor",
+  "intoxicant"
+ ],
+ "intoxicant": [
+  "liquor",
+  "wine"
+ ],
+ "liquor": [
+  "wine",
+  "intoxicant"
+ ],
+ "bountiful": [
+  "generou",
+  "brilliant",
+  "pervasiv",
+  "extraordinari"
+ ],
+ "crocodil": [
+  "bhagga",
+  "sumsumaragira",
+  "bhesakala"
+ ],
+ "bellow": [
+  "bhagga",
+  "sumsumaragira",
+  "bhesakala"
+ ],
+ "bhesakala": [
+  "bhagga",
+  "sumsumaragira"
+ ],
+ "bhagga": [
+  "sumsumaragira",
+  "bhesakala"
+ ],
+ "nakula": [
+  "nakulapita"
+ ],
+ "betray": [
+  "transgress"
+ ],
+ "bandit": [
+  "thiev"
+ ],
+ "secur": [
+  "fearless"
+ ],
+ "acts": [
+  "obstruct"
+ ],
+ "obstruction": [
+  "obstruct"
+ ],
+ "transmigration": [
+  "samsara"
+ ],
+ "conscienc": [
+  "moral",
+  "sham",
+  "dread"
+ ],
+ "prudenc": [
+  "sham",
+  "dread",
+  "wrongdo"
+ ],
+ "disrespectful": [
+  "irreverent",
+  "undeferential"
+ ],
+ "irreverent": [
+  "undeferential"
+ ],
+ "reverent": [
+  "reverential",
+  "deferential"
+ ],
+ "attain": [
+  "consummation",
+  "perfection"
+ ],
+ "consummation": [
+  "perfection",
+  "thereby",
+  "reach"
+ ],
+ "nativ": [
+  "gold"
+ ],
+ "brittl": [
+  "malleabl",
+  "wieldy"
+ ],
+ "multiply": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "materializ": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "moon",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "dematerializ": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "moon",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "unobstruct": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "moon",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "wall": [
+  "wield",
+  "unhinder",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "rampart": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "div": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "strok",
+  "moon",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "strok": [
+  "wield",
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "bird",
+  "powerful",
+  "mighty",
+  "mastery",
+  "supernormal"
+ ],
+ "bird": [
+  "unhinder",
+  "wall",
+  "dive",
+  "sink",
+  "legg",
+  "travel",
+  "strok",
+  "powerful",
+  "mighty"
+ ],
+ "rang": [
+  "capabl",
+  "suitabl"
+ ],
+ "every": [
+  "suitabl"
+ ],
+ "clairaudienc": [
+  "divin",
+  "surpass"
+ ],
+ "constrict": [
+  "contract",
+  "distract"
+ ],
+ "unexpansiv": [
+  "unexalt"
+ ],
+ "spring": [
+  "joyful"
+ ],
+ "bath": [
+  "powder",
+  "knead"
+ ],
+ "powder": [
+  "knead"
+ ],
+ "steep": [
+  "drench",
+  "saturat",
+  "suffus",
+  "unpervad"
+ ],
+ "fill": [
+  "drench",
+  "steep"
+ ],
+ "drench": [
+  "steep",
+  "pervad",
+  "cool",
+  "saturat",
+  "suffus",
+  "unpervad"
+ ],
+ "west": [
+  "east",
+  "north",
+  "south"
+ ],
+ "north": [
+  "east",
+  "west",
+  "south"
+ ],
+ "south": [
+  "east",
+  "west",
+  "north"
+ ],
+ "east": [
+  "west",
+  "north",
+  "south"
+ ],
+ "cool": [
+  "drench",
+  "steep"
+ ],
+ "part": [
+  "drench",
+  "steep"
+ ],
+ "soak": [
+  "steep",
+  "immers"
+ ],
+ "sit": [
+  "sits"
+ ],
+ "goad": [
+  "chariot",
+  "trainer",
+  "wild",
+  "colt",
+  "told",
+  "forward",
+  "spurr",
+  "incit",
+  "similar"
+ ],
+ "chariot": [
+  "charioteer"
+ ],
+ "immaculat": [
+  "stainless"
+ ],
+ "oblig": [
+  "retir"
+ ],
+ "behav": [
+  "retir"
+ ],
+ "respect": [
+  "esteem"
+ ],
+ "rever": [
+  "venerat",
+  "honour"
+ ],
+ "protect": [
+  "guard"
+ ],
+ "lady": [
+  "woman"
+ ],
+ "company": [
+  "breakup",
+  "companionship"
+ ],
+ "domestic": [
+  "manag",
+  "help"
+ ],
+ "manag": [
+  "domestic",
+  "help"
+ ],
+ "wood": [
+  "vesali",
+  "hall",
+  "peak",
+  "roof"
+ ],
+ "hall": [
+  "vesali",
+  "peak",
+  "roof",
+  "wood"
+ ],
+ "roof": [
+  "vesali",
+  "hall",
+  "peak",
+  "wood"
+ ],
+ "vesali": [
+  "hall",
+  "peak",
+  "roof"
+ ],
+ "general": [
+  "siha"
+ ],
+ "siha": [
+  "general"
+ ],
+ "belov": [
+  "dear"
+ ],
+ "laywomen": [
+  "male"
+ ],
+ "laymen": [
+  "male"
+ ],
+ "sauc": [
+  "rice",
+  "curry"
+ ],
+ "inde": [
+  "sure"
+ ],
+ "bhadda": [
+  "queen"
+ ],
+ "queen": [
+  "bhadda"
+ ],
+ "piyaka": [
+  "munda",
+  "treasurer"
+ ],
+ "pay": [
+  "visit"
+ ],
+ "homag": [
+  "visit"
+ ],
+ "arrow": [
+  "dart"
+ ],
+ "majesty": [
+  "sire"
+ ],
+ "distinction": [
+  "superhuman"
+ ],
+ "hard": [
+  "difficult"
+ ],
+ "appreciat": [
+  "concord"
+ ],
+ "residenc": [
+  "rain"
+ ],
+ "arous": [
+  "tantaliz",
+  "agreeabl",
+  "cognizabl",
+  "desirabl",
+  "love",
+  "pleas",
+  "entic"
+ ],
+ "infatuat": [
+  "tied",
+  "committ"
+ ],
+ "attach": [
+  "tied",
+  "infatuat"
+ ],
+ "tied": [
+  "infatuat",
+  "committ"
+ ],
+ "proteg": [
+  "pupil"
+ ],
+ "advic": [
+  "exhortation"
+ ],
+ "often": [
+  "them",
+  "reflect"
+ ],
+ "review": [
+  "them",
+  "often",
+  "reflect"
+ ],
+ "subject": [
+  "them",
+  "often"
+ ],
+ "advantag": [
+  "often",
+  "exempt"
+ ],
+ "least": [
+  "them",
+  "diminish"
+ ],
+ "express": [
+  "inspir",
+  "utteranc",
+  "hammer"
+ ],
+ "heartfelt": [
+  "inspir",
+  "utteranc"
+ ],
+ "sentiment": [
+  "inspir",
+  "utteranc"
+ ],
+ "uses": [
+  "mahanama",
+  "amass",
+  "arms",
+  "sweat",
+  "brow",
+  "righteous"
+ ],
+ "essential": [
+  "absorb",
+  "essenc"
+ ],
+ "baby": [
+  "infant",
+  "tender",
+  "pron",
+  "notion"
+ ],
+ "consolidat": [
+  "vehicl"
+ ],
+ "accus": [
+  "reprov",
+  "offens"
+ ],
+ "useless": [
+  "chaff",
+  "trash"
+ ],
+ "trash": [
+  "chaff"
+ ],
+ "gutless": [
+  "retir"
+ ],
+ "regeneration": [
+  "production"
+ ],
+ "new": [
+  "production"
+ ],
+ "twelv": [
+  "hen",
+  "eggs"
+ ],
+ "eggs": [
+  "hen",
+  "twelv"
+ ],
+ "warm": [
+  "incubat",
+  "principl",
+  "cordiality",
+  "conduc",
+  "unity"
+ ],
+ "aros": [
+  "light",
+  "unheard"
+ ],
+ "jain": [
+  "nigantha",
+  "nataputta"
+ ],
+ "natika": [
+  "nigantha",
+  "nataputta"
+ ],
+ "annihilation": [
+  "annihilationist",
+  "extermination",
+  "existent"
+ ],
+ "educat": [
+  "inspir",
+  "gladden",
+  "exhort"
+ ],
+ "fir": [
+  "inspir",
+  "gladden",
+  "exhort"
+ ],
+ "encourag": [
+  "gladden",
+  "exhort"
+ ],
+ "inspir": [
+  "gladden",
+  "exhort"
+ ],
+ "talk": [
+  "gladden"
+ ],
+ "total": [
+  "surmount",
+  "absolut",
+  "anywher"
+ ],
+ "beyond": [
+  "surmount"
+ ],
+ "impingement": [
+  "surmount",
+  "sensory",
+  "diversity"
+ ],
+ "diversity": [
+  "sensory"
+ ],
+ "colt": [
+  "wild",
+  "forward",
+  "spurr",
+  "incit",
+  "trainer"
+ ],
+ "wild": [
+  "colt",
+  "forward",
+  "spurr",
+  "incit",
+  "trainer"
+ ],
+ "trainer": [
+  "wild",
+  "colt",
+  "told",
+  "forward",
+  "spurr",
+  "incit",
+  "similar"
+ ],
+ "giddyup": [
+  "wild",
+  "colt",
+  "told",
+  "forward",
+  "spurr",
+  "incit",
+  "trainer",
+  "similar"
+ ],
+ "spur": [
+  "wild",
+  "colt",
+  "told",
+  "forward",
+  "spurr",
+  "incit",
+  "trainer",
+  "similar"
+ ],
+ "says": [
+  "spurr",
+  "incit"
+ ],
+ "comparabl": [
+  "similar",
+  "wild",
+  "colt",
+  "forward",
+  "spurr",
+  "incit",
+  "trainer"
+ ],
+ "rehears": [
+  "hymn",
+  "period",
+  "recur"
+ ],
+ "titan": [
+  "asura",
+  "battl"
+ ],
+ "treasur": [
+  "preciou",
+  "gem"
+ ],
+ "dragon": [
+  "naga"
+ ],
+ "unity": [
+  "esteem"
+ ],
+ "esteem": [
+  "unity"
+ ],
+ "migara": [
+  "migaramata",
+  "mansion",
+  "eastern"
+ ],
+ "eastern": [
+  "mansion"
+ ],
+ "distanc": [
+  "saw",
+  "com"
+ ],
+ "saw": [
+  "distanc"
+ ],
+ "uggata": [
+  "ugga",
+  "hatthigama"
+ ],
+ "kapilavatthu": [
+  "sakyan"
+ ],
+ "sakyan": [
+  "kapilavatthu"
+ ],
+ "pit": [
+  "charcoal",
+  "coal",
+  "leper"
+ ],
+ "coal": [
+  "charcoal",
+  "pit",
+  "leper"
+ ],
+ "opportunity": [
+  "inopportun",
+  "moment",
+  "access"
+ ],
+ "shroud": [
+  "hinder"
+ ],
+ "dislik": [
+  "displeas",
+  "intent",
+  "repell"
+ ],
+ "admir": [
+  "fellow",
+  "esteem"
+ ],
+ "rafter": [
+  "ceti",
+  "eastern"
+ ],
+ "ceti": [
+  "eastern"
+ ],
+ "reappear": [
+  "drawn",
+  "arm",
+  "draw"
+ ],
+ "enjoyment": [
+  "relief",
+  "ease"
+ ],
+ "alight": [
+  "relief",
+  "ease"
+ ],
+ "relief": [
+  "ease"
+ ],
+ "lodg": [
+  "straw",
+  "seclud"
+ ],
+ "withdrawn": [
+  "alon",
+  "resolut",
+  "clansmen"
+ ],
+ "soon": [
+  "withdrawn",
+  "clansmen"
+ ],
+ "gentlemen": [
+  "withdrawn",
+  "clansmen",
+  "household"
+ ],
+ "brilliant": [
+  "pervasiv",
+  "extraordinari"
+ ],
+ "degre": [
+  "meritoriou",
+  "activity",
+  "consist",
+  "superlativ"
+ ],
+ "greater": [
+  "superlativ"
+ ],
+ "surpass": [
+  "superlativ"
+ ],
+ "ghost": [
+  "repeated",
+  "conduciv",
+  "animal",
+  "realm",
+  "spher",
+  "spirit"
+ ],
+ "animal": [
+  "realm"
+ ],
+ "refrain": [
+  "abstain"
+ ],
+ "dependabl": [
+  "trustworthy",
+  "reliabl"
+ ],
+ "show": [
+  "danc",
+  "sing",
+  "music",
+  "unsuitabl"
+ ],
+ "sing": [
+  "danc",
+  "instrumental",
+  "music"
+ ],
+ "music": [
+  "danc",
+  "sing",
+  "instrumental",
+  "show"
+ ],
+ "danc": [
+  "sing",
+  "instrumental",
+  "music",
+  "show"
+ ],
+ "attir": [
+  "beautify",
+  "wear",
+  "garland",
+  "scent",
+  "unguent",
+  "embellish"
+ ],
+ "adorn": [
+  "beautify",
+  "garland",
+  "scent",
+  "unguent",
+  "embellish"
+ ],
+ "cot": [
+  "bed"
+ ],
+ "referr": [
+  "kingship",
+  "concis",
+  "twofold"
+ ],
+ "ghosita": [
+  "kosambi"
+ ],
+ "kosambi": [
+  "ghosita"
+ ],
+ "win": [
+  "victory",
+  "succeed"
+ ],
+ "succeed": [
+  "victory"
+ ],
+ "fame": [
+  "disreput"
+ ],
+ "disgrac": [
+  "disreput",
+  "fame",
+  "blam"
+ ],
+ "perishabl": [
+  "subject",
+  "chang",
+  "fit"
+ ],
+ "favor": [
+  "attract",
+  "repell",
+  "favour",
+  "oppos"
+ ],
+ "oppos": [
+  "attract",
+  "repell",
+  "favour"
+ ],
+ "failing": [
+  "review"
+ ],
+ "success": [
+  "achievement"
+ ],
+ "fundamental": [
+  "beneficial",
+  "unbeneficial",
+  "relevant",
+  "irrelevant"
+ ],
+ "travel": [
+  "travell"
+ ],
+ "student": [
+  "youth"
+ ],
+ "dawn": [
+  "ris",
+  "forerunner",
+  "precursor"
+ ],
+ "discussion": [
+  "conversation"
+ ],
+ "upset": [
+  "angry"
+ ],
+ "plant": [
+  "seed"
+ ],
+ "abstain": [
+  "refrain"
+ ],
+ "currency": [
+  "silver"
+ ],
+ "errand": [
+  "runn",
+  "messag"
+ ],
+ "messag": [
+  "runn",
+  "errand",
+  "deliver"
+ ],
+ "runn": [
+  "messag",
+  "errand",
+  "run",
+  "circl"
+ ],
+ "enjoy": [
+  "wherea",
+  "offer",
+  "faithful"
+ ],
+ "engag": [
+  "wherea",
+  "offer",
+  "faithful"
+ ],
+ "battl": [
+  "array"
+ ],
+ "low": [
+  "wherea",
+  "faithful",
+  "earn",
+  "livelihood",
+  "debas",
+  "arts"
+ ],
+ "topic": [
+  "consistent",
+  "inconsistent",
+  "refut",
+  "disentangl"
+ ],
+ "disprov": [
+  "consistent",
+  "inconsistent",
+  "refut",
+  "disentangl"
+ ],
+ "refut": [
+  "consistent",
+  "inconsistent",
+  "disentangl"
+ ],
+ "save": [
+  "consistent",
+  "inconsistent",
+  "refut",
+  "disentangl"
+ ],
+ "trapp": [
+  "consistent",
+  "inconsistent",
+  "refut",
+  "disentangl"
+ ],
+ "chas": [
+  "pursu"
+ ],
+ "earn": [
+  "wherea",
+  "faithful",
+  "livelihood",
+  "debas",
+  "arts"
+ ],
+ "lore": [
+  "wherea",
+  "faithful",
+  "earn",
+  "livelihood",
+  "debas",
+  "arts"
+ ],
+ "livelihood": [
+  "debas",
+  "arts"
+ ],
+ "ears": [
+  "mouth"
+ ],
+ "comprehensibl": [
+  "difficult",
+  "spher",
+  "propound",
+  "reality"
+ ],
+ "scop": [
+  "spher",
+  "comprehensibl",
+  "propound",
+  "reality",
+  "pathway",
+  "languag"
+ ],
+ "logic": [
+  "comprehensibl",
+  "propound",
+  "hammer"
+ ],
+ "speculat": [
+  "speculator",
+  "settl",
+  "assert",
+  "conceptual",
+  "theorem",
+  "referr",
+  "sixty"
+ ],
+ "theoriz": [
+  "speculator",
+  "settl",
+  "assert",
+  "conceptual",
+  "theorem",
+  "referr",
+  "sixty"
+ ],
+ "propos": [
+  "speculator",
+  "conceptual",
+  "theorem",
+  "referr"
+ ],
+ "hypothes": [
+  "speculator",
+  "conceptual",
+  "theorem",
+  "referr"
+ ],
+ "assert": [
+  "proclaim",
+  "maintain",
+  "existent"
+ ],
+ "cosmo": [
+  "eternal",
+  "finit"
+ ],
+ "dint": [
+  "ardour",
+  "endeavour",
+  "application",
+  "degre"
+ ],
+ "barren": [
+  "pillar"
+ ],
+ "firm": [
+  "pillar"
+ ],
+ "eternity": [
+  "re",
+  "itself"
+ ],
+ "rearis": [
+  "re",
+  "eternity"
+ ],
+ "eternal": [
+  "eternity",
+  "stabl"
+ ],
+ "inquiry": [
+  "hammer"
+ ],
+ "perspectiv": [
+  "hammer"
+ ],
+ "none": [
+  "outsid"
+ ],
+ "outsid": [
+  "none"
+ ],
+ "assada": [
+  "escap",
+  "adinava",
+  "case"
+ ],
+ "partial": [
+  "eternalist"
+ ],
+ "host": [
+  "plan",
+  "excessiv"
+ ],
+ "creator": [
+  "maker"
+ ],
+ "everlast": [
+  "permanent",
+  "stabl",
+  "eternal",
+  "eternity",
+  "itself"
+ ],
+ "imperishabl": [
+  "permanent",
+  "stabl",
+  "eternal",
+  "eternity",
+  "itself",
+  "everlast"
+ ],
+ "finit": [
+  "infinit"
+ ],
+ "flip": [
+  "endless",
+  "equivocation",
+  "equivocator",
+  "evasiv"
+ ],
+ "endless": [
+  "equivocation",
+  "equivocator",
+  "evasiv"
+ ],
+ "flop": [
+  "endless",
+  "equivocator",
+  "evasiv",
+  "equivocation"
+ ],
+ "anomalous": [
+  "fortuitous",
+  "creat",
+  "oneself",
+  "kotthita"
+ ],
+ "percipient": [
+  "immortality",
+  "surviv",
+  "nonpercipient"
+ ],
+ "formless": [
+  "immaterial"
+ ],
+ "principal": [
+  "compos"
+ ],
+ "sixty": [
+  "speculator",
+  "conceptual",
+  "theorem",
+  "referr"
+ ],
+ "anxiety": [
+  "agitation",
+  "existent",
+  "nonagitation"
+ ],
+ "dependent": [
+  "condition",
+  "contact"
+ ],
+ "reed": [
+  "rush"
+ ],
+ "str": [
+  "reed"
+ ],
+ "utter": [
+  "absolut",
+  "anywher",
+  "absenc"
+ ],
+ "anywher": [
+  "absolut",
+  "absenc"
+ ],
+ "evaluation": [
+  "decision"
+ ],
+ "ownership": [
+  "possessiv"
+ ],
+ "quarrel": [
+  "disput",
+  "brawl"
+ ],
+ "label": [
+  "description"
+ ],
+ "definition": [
+  "pathway",
+  "languag",
+  "description"
+ ],
+ "founder": [
+  "group",
+  "famou"
+ ],
+ "tutor": [
+  "famou"
+ ],
+ "belatthiputta": [
+  "sanjaya",
+  "belatthaputta"
+ ],
+ "sanjaya": [
+  "belatthaputta"
+ ],
+ "tortur": [
+  "mutilat"
+ ],
+ "mutilat": [
+  "tortur",
+  "lacerat",
+  "blaz",
+  "glow"
+ ],
+ "gosala": [
+  "makkhali"
+ ],
+ "blanket": [
+  "ajita"
+ ],
+ "annihilat": [
+  "perish"
+ ],
+ "kaccayana": [
+  "pakudha"
+ ],
+ "pakudha": [
+  "kaccayana"
+ ],
+ "shell": [
+  "polish"
+ ],
+ "pertain": [
+  "moral"
+ ],
+ "cleans": [
+  "purify",
+  "degradation",
+  "renunciation"
+ ],
+ "joy": [
+  "glad"
+ ],
+ "apprentic": [
+  "skill",
+  "fashion"
+ ],
+ "project": [
+  "bright",
+  "unblemish",
+  "defect",
+  "malleabl",
+  "wieldy",
+  "imperturbability",
+  "inclin"
+ ],
+ "transparent": [
+  "limpid"
+ ],
+ "uncloud": [
+  "limpid"
+ ],
+ "yellow": [
+  "blue",
+  "red"
+ ],
+ "clear": [
+  "sight"
+ ],
+ "eyes": [
+  "sight"
+ ],
+ "snak": [
+  "pull"
+ ],
+ "prepar": [
+  "fashion"
+ ],
+ "stupid": [
+  "transgression",
+  "overcam",
+  "confus",
+  "blunder"
+ ],
+ "dealt": [
+  "amend"
+ ],
+ "sal": [
+  "sala",
+  "gosinga"
+ ],
+ "skill": [
+  "unskill"
+ ],
+ "disagre": [
+  "differ",
+  "agre"
+ ],
+ "amenabl": [
+  "whichever",
+  "reasonabl",
+  "opposit"
+ ],
+ "whichever": [
+  "reasonabl",
+  "opposit"
+ ],
+ "party": [
+  "whichever",
+  "opposit"
+ ],
+ "minor": [
+  "mere",
+  "trifl"
+ ],
+ "irritabl": [
+  "hurt",
+  "resentment",
+  "attach",
+  "emerg"
+ ],
+ "acrimoniou": [
+  "hurt",
+  "resentment",
+  "attach",
+  "emerg"
+ ],
+ "fast": [
+  "hurt",
+  "resentment",
+  "attach",
+  "emerg"
+ ],
+ "draw": [
+  "resentment"
+ ],
+ "refus": [
+  "difficulty"
+ ],
+ "cunda": [
+  "novic"
+ ],
+ "fulfill": [
+  "fulfil"
+ ],
+ "disciplinary": [
+  "litigation"
+ ],
+ "issu": [
+  "litigation"
+ ],
+ "resolution": [
+  "litigation",
+  "insanity"
+ ],
+ "insanity": [
+  "litigation"
+ ],
+ "entail": [
+  "grav",
+  "offenc",
+  "involv",
+  "defeat",
+  "border"
+ ],
+ "moggallana": [
+  "gopaka"
+ ],
+ "com": [
+  "distanc"
+ ],
+ "venerat": [
+  "honour",
+  "rever"
+ ],
+ "observanc": [
+  "rule"
+ ],
+ "theory": [
+  "observanc"
+ ],
+ "anxiou": [
+  "agitat"
+ ],
+ "context": [
+  "therein"
+ ],
+ "accompani": [
+  "affect",
+  "partak",
+  "ripen",
+  "acquisition"
+ ],
+ "partak": [
+  "ripen"
+ ],
+ "transcendent": [
+  "taintless",
+  "supramundan"
+ ],
+ "worn": [
+  "abolish"
+ ],
+ "junior": [
+  "new",
+  "ordain"
+ ],
+ "destin": [
+  "enterer"
+ ],
+ "tranquility": [
+  "tranquillity",
+  "equanimity"
+ ],
+ "futil": [
+  "misguid"
+ ],
+ "used": [
+  "former"
+ ],
+ "reproduction": [
+  "generation"
+ ],
+ "height": [
+  "deeper"
+ ],
+ "deeper": [
+  "height"
+ ],
+ "struggl": [
+  "scorch",
+  "weather",
+  "weary",
+  "parch",
+  "thirsty"
+ ],
+ "oppressiv": [
+  "scorch",
+  "exhaust",
+  "weather",
+  "weary",
+  "parch",
+  "thirsty"
+ ],
+ "weary": [
+  "scorch",
+  "exhaust",
+  "weather",
+  "parch",
+  "thirsty",
+  "reap"
+ ],
+ "thirsty": [
+  "scorch",
+  "exhaust",
+  "weather",
+  "weary",
+  "parch"
+ ],
+ "parch": [
+  "scorch",
+  "exhaust",
+  "weather",
+  "weary",
+  "thirsty"
+ ],
+ "heat": [
+  "weather",
+  "weary",
+  "parch",
+  "thirsty"
+ ],
+ "proceed": [
+  "behav"
+ ],
+ "cow": [
+  "cowdung"
+ ],
+ "dung": [
+  "cowdung",
+  "timber"
+ ],
+ "mortify": [
+  "pursu",
+  "torment",
+  "tortur"
+ ],
+ "month": [
+  "season"
+ ],
+ "jujub": [
+  "kola"
+ ],
+ "tri": [
+  "fell"
+ ],
+ "stimulation": [
+  "cord"
+ ],
+ "known": [
+  "cognizabl"
+ ],
+ "pleasant": [
+  "agreeabl"
+ ],
+ "cold": [
+  "mosquito"
+ ],
+ "hunger": [
+  "thirst"
+ ],
+ "wail": [
+  "griev",
+  "lament",
+  "weep",
+  "beat",
+  "breast",
+  "distraught"
+ ],
+ "lament": [
+  "griev",
+  "weep",
+  "beat",
+  "breast",
+  "distraught"
+ ],
+ "beat": [
+  "griev",
+  "lament",
+  "weep",
+  "breast",
+  "distraught"
+ ],
+ "breast": [
+  "griev",
+  "lament",
+  "weep",
+  "beat",
+  "distraught"
+ ],
+ "confusion": [
+  "griev",
+  "lament",
+  "weep",
+  "beat",
+  "breast",
+  "distraught"
+ ],
+ "fist": [
+  "clod"
+ ],
+ "ston": [
+  "clod"
+ ],
+ "dead": [
+  "incur"
+ ],
+ "mouth": [
+  "ears",
+  "stopp"
+ ],
+ "devour": [
+  "worm",
+  "leper",
+  "sore",
+  "blister",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail"
+ ],
+ "undertak": [
+  "perform",
+  "instead"
+ ],
+ "possession": [
+  "honour",
+  "renown"
+ ],
+ "arriv": [
+  "eventual"
+ ],
+ "personal": [
+  "clung"
+ ],
+ "appropriat": [
+  "clung"
+ ],
+ "stop": [
+  "correspond"
+ ],
+ "boil": [
+  "diseas",
+  "tumour",
+  "excis"
+ ],
+ "dart": [
+  "diseas",
+  "tumour"
+ ],
+ "diseas": [
+  "tumour"
+ ],
+ "ordination": [
+  "receiv",
+  "admission",
+  "probation"
+ ],
+ "receiv": [
+  "admission"
+ ],
+ "nandaka": [
+  "advis"
+ ],
+ "meat": [
+  "butcher"
+ ],
+ "cleaver": [
+  "butcher",
+  "knif"
+ ],
+ "stainless": [
+  "spotless",
+  "clean"
+ ],
+ "substantial": [
+  "identity"
+ ],
+ "reality": [
+  "identity"
+ ],
+ "welcom": [
+  "remain",
+  "seek"
+ ],
+ "dispell": [
+  "extirpat"
+ ],
+ "unawaken": [
+  "bodhisatta"
+ ],
+ "intent": [
+  "bodhisatta"
+ ],
+ "sordid": [
+  "degradation",
+  "renunciation",
+  "aspect",
+  "cleans"
+ ],
+ "renunciation": [
+  "degradation"
+ ],
+ "disaster": [
+  "calamity",
+  "met"
+ ],
+ "arisen": [
+  "unarisen",
+  "fulfilment"
+ ],
+ "forever": [
+  "eternal",
+  "eternity",
+  "stabl",
+  "itself"
+ ],
+ "ever": [
+  "eternity"
+ ],
+ "twist": [
+  "contortion",
+  "vacillation"
+ ],
+ "dodg": [
+  "contortion",
+  "vacillation"
+ ],
+ "feverish": [
+  "vexation",
+  "fever"
+ ],
+ "grab": [
+  "seiz"
+ ],
+ "harmful": [
+  "perniciou"
+ ],
+ "misconception": [
+  "perniciou"
+ ],
+ "arittha": [
+  "vultur",
+  "killer"
+ ],
+ "dissuad": [
+  "perniciou"
+ ],
+ "insist": [
+  "adher"
+ ],
+ "cobra": [
+  "snak"
+ ],
+ "dry": [
+  "land",
+  "piec"
+ ],
+ "solid": [
+  "gross",
+  "subtl",
+  "inferior",
+  "superior",
+  "near",
+  "whatsoever"
+ ],
+ "subtl": [
+  "gross",
+  "inferior",
+  "superior",
+  "near",
+  "whatsoever"
+ ],
+ "em": [
+  "gross",
+  "subtl",
+  "inferior",
+  "superior",
+  "near",
+  "whatsoever",
+  "correct"
+ ],
+ "kalama": [
+  "alara"
+ ],
+ "alara": [
+  "kalama"
+ ],
+ "son": [
+  "uddaka",
+  "ramaputta"
+ ],
+ "rama": [
+  "uddaka",
+  "ramaputta"
+ ],
+ "uddaka": [
+  "ramaputta"
+ ],
+ "calamity": [
+  "met",
+  "disaster"
+ ],
+ "met": [
+  "calamity",
+  "disaster"
+ ],
+ "wick": [
+  "evil",
+  "mara"
+ ],
+ "blind": [
+  "blindfold"
+ ],
+ "mara": [
+  "evil"
+ ],
+ "tracker": [
+  "woodsman"
+ ],
+ "popularity": [
+  "honour",
+  "renown"
+ ],
+ "generat": [
+  "renown"
+ ],
+ "indulgent": [
+  "intoxicat",
+  "negligent",
+  "negligenc"
+ ],
+ "kimbila": [
+  "nandiya"
+ ],
+ "nandiya": [
+  "kimbila"
+ ],
+ "gosinga": [
+  "sala"
+ ],
+ "vajji": [
+  "vajjian"
+ ],
+ "grac": [
+  "illuminat",
+  "gosinga",
+  "sala"
+ ],
+ "rag": [
+  "eater",
+  "wearer",
+  "wear",
+  "contentment"
+ ],
+ "wear": [
+  "rag",
+  "disintegration"
+ ],
+ "saccaka": [
+  "nigantha"
+ ],
+ "occupy": [
+  "invad"
+ ],
+ "green": [
+  "wet",
+  "sappy",
+  "piec"
+ ],
+ "sappy": [
+  "wet",
+  "piec"
+ ],
+ "log": [
+  "wet",
+  "sappy",
+  "piec",
+  "ly",
+  "dry",
+  "land"
+ ],
+ "drill": [
+  "upper"
+ ],
+ "eventual": [
+  "reap"
+ ],
+ "wither": [
+  "dry"
+ ],
+ "disturb": [
+  "although",
+  "tireless",
+  "unremitt",
+  "overwrought",
+  "uncalm"
+ ],
+ "push": [
+  "although",
+  "tireless",
+  "unremitt",
+  "overwrought",
+  "uncalm",
+  "exhaust"
+ ],
+ "breathless": [
+  "breathingless"
+ ],
+ "regular": [
+  "constant"
+ ],
+ "sati": [
+  "fisherman"
+ ],
+ "maintain": [
+  "maintenanc",
+  "already",
+  "assistanc"
+ ],
+ "help": [
+  "maintenanc",
+  "assistanc"
+ ],
+ "remainder": [
+  "wherein"
+ ],
+ "statement": [
+  "brief"
+ ],
+ "sala": [
+  "kosalan"
+ ],
+ "moral": [
+  "righteou"
+ ],
+ "unlikabl": [
+  "unwish",
+  "disagreeabl",
+  "diminish"
+ ],
+ "undesirabl": [
+  "unwish",
+  "disagreeabl",
+  "diminish"
+ ],
+ "decreas": [
+  "unwish",
+  "diminish"
+ ],
+ "recoil": [
+  "die"
+ ],
+ "poison": [
+  "mix"
+ ],
+ "mix": [
+  "poison"
+ ],
+ "aroma": [
+  "colour",
+  "bronz",
+  "cup",
+  "beverag"
+ ],
+ "goblet": [
+  "bronz",
+  "cup",
+  "beverag",
+  "colour"
+ ],
+ "beverag": [
+  "bronz",
+  "cup",
+  "colour"
+ ],
+ "nice": [
+  "bronz",
+  "cup",
+  "beverag",
+  "natur"
+ ],
+ "bronz": [
+  "cup",
+  "beverag",
+  "colour",
+  "fine"
+ ],
+ "beluva": [
+  "beluvagamaka"
+ ],
+ "busi": [
+  "affair",
+  "cutt"
+ ],
+ "cutt": [
+  "affair"
+ ],
+ "punna": [
+  "koliyan"
+ ],
+ "seniya": [
+  "duty",
+  "nak",
+  "dog"
+ ],
+ "nak": [
+  "seniya",
+  "dog"
+ ],
+ "behavior": [
+  "behaviour"
+ ],
+ "spend": [
+  "probation"
+ ],
+ "monkhood": [
+  "probation"
+ ],
+ "sure": [
+  "incontrovertibl"
+ ],
+ "bet": [
+  "incontrovertibl",
+  "undertaken",
+  "exclud",
+  "alternativ"
+ ],
+ "contradict": [
+  "oppos",
+  "opposition",
+  "convinc",
+  "disparagement",
+  "several"
+ ],
+ "moreover": [
+  "ii"
+ ],
+ "grant": [
+  "assum",
+  "conced"
+ ],
+ "count": [
+  "throw"
+ ],
+ "positiv": [
+  "undertaken",
+  "incontrovertibl",
+  "exclud",
+  "alternativ"
+ ],
+ "premis": [
+  "undertaken",
+  "incontrovertibl",
+  "exclud",
+  "alternativ"
+ ],
+ "outcom": [
+  "incontrovertibl",
+  "exclud",
+  "alternativ"
+ ],
+ "actual": [
+  "causality"
+ ],
+ "relativ": [
+  "kinsmen"
+ ],
+ "surgeon": [
+  "kinsmen",
+  "treat",
+  "physician"
+ ],
+ "arent": [
+  "unbeneficial"
+ ],
+ "peac": [
+  "fundamental"
+ ],
+ "substantialist": [
+  "identity"
+ ],
+ "concept": [
+  "tender",
+  "infant",
+  "pron",
+  "notion"
+ ],
+ "possib": [
+  "tender",
+  "infant",
+  "pron",
+  "notion"
+ ],
+ "contemplat": [
+  "void",
+  "inspect",
+  "hollow",
+  "insubstantial",
+  "substanc"
+ ],
+ "attempt": [
+  "refusal",
+  "comp"
+ ],
+ "instruction": [
+  "dispensation"
+ ],
+ "vacuou": [
+  "hollow",
+  "inspect",
+  "void",
+  "insubstantial",
+  "substanc"
+ ],
+ "enlighten": [
+  "fewer"
+ ],
+ "appear": [
+  "manifest"
+ ],
+ "attention": [
+  "eager",
+  "ears",
+  "vital",
+  "apply"
+ ],
+ "concentrat": [
+  "eager",
+  "vital"
+ ],
+ "wholehearted": [
+  "eager",
+  "ears",
+  "vital",
+  "apply"
+ ],
+ "activ": [
+  "eager",
+  "ears",
+  "apply",
+  "vital"
+ ],
+ "duck": [
+  "contortion",
+  "vacillation"
+ ],
+ "affect": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail",
+  "charcoal",
+  "pit"
+ ],
+ "leprosy": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail",
+  "charcoal",
+  "pit"
+ ],
+ "sore": [
+  "leper",
+  "blister",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail"
+ ],
+ "blister": [
+  "leper",
+  "sore",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail"
+ ],
+ "worm": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "scratch",
+  "scab",
+  "opening",
+  "wound",
+  "nail"
+ ],
+ "scratch": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "worm",
+  "scab",
+  "opening",
+  "wound",
+  "nail"
+ ],
+ "nail": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "wound"
+ ],
+ "wound": [
+  "leper",
+  "sore",
+  "blister",
+  "devour",
+  "worm",
+  "scratch",
+  "scab",
+  "opening",
+  "nail"
+ ],
+ "attractiv": [
+  "spotless",
+  "clean"
+ ],
+ "loyal": [
+  "honour",
+  "rever",
+  "venerat",
+  "commend",
+  "contentment"
+ ],
+ "use": [
+  "udayin"
+ ],
+ "mastery": [
+  "transcendenc"
+ ],
+ "rough": [
+  "uneven"
+ ],
+ "smooth": [
+  "uneven"
+ ],
+ "downward": [
+  "upward"
+ ],
+ "upward": [
+  "downward"
+ ],
+ "thullakotthika": [
+  "thullakotthita"
+ ],
+ "uncoin": [
+  "coin",
+  "bullion"
+ ],
+ "coin": [
+  "bullion"
+ ],
+ "kapatika": [
+  "kapathika"
+ ],
+ "endorsement": [
+  "oral",
+  "tradition",
+  "acceptanc",
+  "personal",
+  "preferenc",
+  "ponder"
+ ],
+ "attainment": [
+  "arrival"
+ ],
+ "deva": [
+  "presenc"
+ ],
+ "presenc": [
+  "recit"
+ ],
+ "sway": [
+  "control"
+ ],
+ "network": [
+  "line"
+ ],
+ "recent": [
+  "new",
+  "ordain"
+ ],
+ "shield": [
+  "rein"
+ ],
+ "ties": [
+  "knot"
+ ],
+ "try": [
+  "foster",
+  "intimacy"
+ ],
+ "gloom": [
+  "misery"
+ ],
+ "bond": [
+  "bondag"
+ ],
+ "unbother": [
+  "endur",
+  "manner"
+ ],
+ "analyz": [
+  "analys"
+ ],
+ "seer": [
+  "character"
+ ],
+ "fought": [
+  "array",
+  "battl"
+ ],
+ "handler": [
+  "charioteer",
+  "matali"
+ ],
+ "matali": [
+  "charioteer"
+ ],
+ "citadel": [
+  "city"
+ ],
+ "cogent": [
+  "valid"
+ ],
+ "deem": [
+  "asceticism",
+  "brahminhood"
+ ],
+ "uncertainty": [
+  "perplexity"
+ ],
+ "avoid": [
+  "veer",
+  "extrem"
+ ],
+ "extrem": [
+  "veer"
+ ],
+ "oneself": [
+  "creat",
+  "fortuitous"
+ ],
+ "duality": [
+  "dyad"
+ ],
+ "efficacy": [
+  "proponent"
+ ],
+ "penetrativ": [
+  "squar"
+ ],
+ "differ": [
+  "identical"
+ ],
+ "continuation": [
+  "intend",
+  "plan",
+  "maintenanc"
+ ],
+ "intend": [
+  "maintenanc"
+ ],
+ "realization": [
+  "unheard",
+  "nonobstruction",
+  "nonhindranc",
+  "noncorruption"
+ ],
+ "quell": [
+  "fearful",
+  "animosity"
+ ],
+ "spad": [
+  "bring",
+  "shovel",
+  "basket"
+ ],
+ "basket": [
+  "bring",
+  "shovel"
+ ],
+ "bite": [
+  "expos",
+  "creatur",
+  "nibbl"
+ ],
+ "prob": [
+  "exploration"
+ ],
+ "dangerou": [
+  "fearful"
+ ],
+ "boy": [
+  "youngster"
+ ],
+ "outer": [
+  "patch"
+ ],
+ "concern": [
+  "indifferent"
+ ],
+ "obsess": [
+  "notion"
+ ],
+ "pillar": [
+  "post"
+ ],
+ "post": [
+  "pillar"
+ ],
+ "bastion": [
+  "roam"
+ ],
+ "migrant": [
+  "roam"
+ ],
+ "involv": [
+  "sprinkl"
+ ],
+ "matur": [
+  "sprinkl"
+ ],
+ "increas": [
+  "expansion"
+ ],
+ "delay": [
+  "immediat"
+ ],
+ "designation": [
+  "label",
+  "description",
+  "apply"
+ ],
+ "description": [
+  "label",
+  "apply"
+ ],
+ "sour": [
+  "bland"
+ ],
+ "bitter": [
+  "bland"
+ ],
+ "pungent": [
+  "bland"
+ ],
+ "sweet": [
+  "bland"
+ ],
+ "hot": [
+  "bland"
+ ],
+ "mild": [
+  "bland"
+ ],
+ "salty": [
+  "bland"
+ ],
+ "bitten": [
+  "devour"
+ ],
+ "terribl": [
+  "bear",
+  "gett"
+ ],
+ "rock": [
+  "black",
+  "isigili",
+  "quak"
+ ],
+ "isigili": [
+  "black",
+  "rock"
+ ],
+ "suicid": [
+  "used",
+  "knif"
+ ],
+ "khemaka": [
+  "dasaka"
+ ],
+ "dasaka": [
+  "khemaka"
+ ],
+ "hollow": [
+  "inspect",
+  "void",
+  "insubstantial",
+  "substanc"
+ ],
+ "insubstantial": [
+  "inspect",
+  "void",
+  "hollow",
+  "substanc"
+ ],
+ "essenc": [
+  "inspect",
+  "void",
+  "hollow",
+  "insubstantial",
+  "substanc"
+ ],
+ "000": [
+  "84"
+ ],
+ "foremost": [
+  "84",
+  "000"
+ ],
+ "conqueror": [
+  "universal"
+ ],
+ "dug": [
+  "tumour",
+  "excis"
+ ],
+ "exposition": [
+  "them"
+ ],
+ "wors": [
+  "equal"
+ ],
+ "summary": [
+  "synopsi"
+ ],
+ "pupil": [
+  "student",
+  "comfort"
+ ],
+ "unestablish": [
+  "displeas"
+ ],
+ "stunt": [
+  "displeas"
+ ],
+ "conduciv": [
+  "suitabl",
+  "conceiving"
+ ],
+ "resident": [
+  "student",
+  "comfort"
+ ],
+ "latex": [
+  "sap"
+ ],
+ "blaz": [
+  "lacerat",
+  "glow"
+ ],
+ "forget": [
+  "lacerat",
+  "blaz",
+  "glow"
+ ],
+ "venomou": [
+  "viper",
+  "fierc",
+  "heat",
+  "dead",
+  "venom"
+ ],
+ "viper": [
+  "fierc",
+  "heat",
+  "dead",
+  "venom"
+ ],
+ "trunk": [
+  "log"
+ ],
+ "taken": [
+  "nonhuman"
+ ],
+ "vulnerability": [
+  "access"
+ ],
+ "parrot": [
+  "kimsuka"
+ ],
+ "arch": [
+  "lute"
+ ],
+ "harp": [
+  "lute"
+ ],
+ "territory": [
+  "domain",
+  "stray",
+  "resort",
+  "ancestral"
+ ],
+ "uproot": [
+  "conceiving"
+ ],
+ "anyth": [
+  "conceiv"
+ ],
+ "deplet": [
+  "exhaustion"
+ ],
+ "knowabl": [
+  "description"
+ ],
+ "graciou": [
+  "sunaparanta"
+ ],
+ "knif": [
+  "sunaparanta"
+ ],
+ "tranquiliz": [
+  "tranquilliz"
+ ],
+ "pancakanga": [
+  "carpenter"
+ ],
+ "udayi": [
+  "pancakanga"
+ ],
+ "flesh": [
+  "carnal"
+ ],
+ "abyss": [
+  "bottomless"
+ ],
+ "beaten": [
+  "your",
+  "defeat",
+  "maker"
+ ],
+ "miserabl": [
+  "disappear",
+  "disappoint"
+ ],
+ "goosebump": [
+  "trepidation",
+  "terror"
+ ],
+ "pull": [
+  "confound"
+ ],
+ "wool": [
+  "confound"
+ ],
+ "malignancy": [
+  "daughter",
+  "tanha",
+  "arati"
+ ],
+ "daughter": [
+  "tanha",
+  "arati"
+ ],
+ "contradiction": [
+  "coincid",
+  "agre",
+  "diverg"
+ ],
+ "produc": [
+  "spring"
+ ],
+ "laypeopl": [
+  "layperson"
+ ],
+ "renunciat": [
+  "layperson"
+ ],
+ "harbinger": [
+  "forerunner",
+  "precursor",
+  "ris",
+  "dawn"
+ ],
+ "sunris": [
+  "forerunner",
+  "precursor",
+  "ris",
+  "dawn"
+ ],
+ "forerunner": [
+  "precursor",
+  "ris",
+  "dawn"
+ ],
+ "investigation": [
+  "equanimity"
+ ],
+ "frequent": [
+  "giv",
+  "attention",
+  "unarisen"
+ ],
+ "obstacl": [
+  "nonobstruction",
+  "nonhindranc",
+  "noncorruption",
+  "realization"
+ ],
+ "starv": [
+  "denourishment",
+  "prevent",
+  "expand"
+ ],
+ "twofold": [
+  "concis"
+ ],
+ "concis": [
+  "method",
+  "twofold"
+ ],
+ "destination": [
+  "culmination"
+ ],
+ "apex": [
+  "culmination"
+ ],
+ "spr": [
+  "hymn",
+  "period",
+  "recur"
+ ],
+ "hymn": [
+  "period",
+  "recur"
+ ],
+ "mir": [
+  "hymn",
+  "period",
+  "recur"
+ ],
+ "unrehears": [
+  "hymn",
+  "period",
+  "recur"
+ ],
+ "convergenc": [
+  "purification"
+ ],
+ "cry": [
+  "purification"
+ ],
+ "discover": [
+  "purification"
+ ],
+ "observation": [
+  "contemplation"
+ ],
+ "quail": [
+  "hawk"
+ ],
+ "hawk": [
+  "quail"
+ ],
+ "roam": [
+  "stray",
+  "domain"
+ ],
+ "domain": [
+  "stray",
+  "resort",
+  "ancestral"
+ ],
+ "hint": [
+  "pick"
+ ],
+ "hole": [
+  "yoke"
+ ],
+ "eyed": [
+  "turtl",
+  "surfac",
+  "every"
+ ],
+ "turtl": [
+  "surfac",
+  "every"
+ ]
+}
