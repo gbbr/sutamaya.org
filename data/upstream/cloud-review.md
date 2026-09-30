@@ -117,6 +117,16 @@ they come — with these differences:
   the file.
 - When a usage limit is near, finish the round in hand, push, and stop.
 
+## Last rounds
+
+Once those answers are kept, what is still open comes back in two folders, run the same way with
+`opus` subagents, the answers saved as `batch-NNN.answers.N`:
+
+| Round | Batches in | Prompt |
+|---|---|---|
+| A final look at the cuts still open | `data/<translator>/review/final/` | the first prompt; each item shows both its lines whole |
+| The places left | `data/<translator>/review/places2/` | the places prompt below |
+
 ### The places prompt
 
 The prompt above, with its first four paragraphs, down to the list of answers, replaced by these:
