@@ -1,0 +1,334 @@
+## iti21
+iti21:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti21:2.1 | S: “Mendicants, when I’ve comprehended the mind of an individual whose mind is pure, I understand: | T: “Monks, there is the case where a certain person is clear-minded. Having encompassed that mind with [my] awareness, I discern,
+iti21:2.2 | S: ‘If this individual were to die right now, they would be placed in heaven as if delivered there.’ | T: ‘If this person were to die at this instant, then as if he were to be carried off, he would thus be placed in heaven.’
+iti21:2.3 | S: Why is that? | T: Why is that?
+iti21:2.4 | S: Because their mind is pure. | T: Because his mind is clear.
+iti21:2.5 | S: Purity of mind is the reason why some sentient beings, when their body breaks up, after death, are reborn in a good place, a heavenly realm.” | T: It’s because of clear-mindedness that there are cases where some beings–at the break-up of the body, after death–reappear in a heavenly world.”
+iti21:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti21:2.7 | S: On this it is said: | T: (none)
+iti21:3.1 | S: “Knowing an individual’s | T: Knowing the case
+iti21:3.2 | S: pure mind, | T: of a clear-minded person,
+iti21:3.3 | S: the Buddha explained this matter | T: the One Awakened explained its meaning
+iti21:3.4 | S: in the mendicants’ presence. | T: in the presence of the monks.
+iti21:4.1 | S: If that individual | T: If that person
+iti21:4.2 | S: were to die at this time, | T: were to die at this instant,
+iti21:4.3 | S: they’d be reborn in heaven, | T: he’d reappear in heaven
+iti21:4.4 | S: for their mind is pure. | T: because his mind is clear–
+iti21:5.1 | S: That sort is raised up as surely | T: (none)
+iti21:5.2 | S: as if they’d been carried and put there. | T: as if he were carried off
+iti21:5.3 | S: For purity of mind is the reason | T: (none)
+iti21:5.4 | S: sentient beings go to a good place.” | T: and placed there. It’s because of clear-mindedness that beings go to a good destination.
+iti21:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti74
+iti74:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti74:2.1 | S: “These three kinds of children are found in the world. | T: “Monks, there are these three types of sons & daughters existing in the world.
+iti74:2.2 | S: What three? | T: Which three?
+iti74:2.3 | S: One who betters their birth, one who equals their birth, one who fails their birth. | T: One of heightened birth, one of similar birth, one of lowered birth.
+iti74:3.1 | S: And how does a child better their birth? | T: “And how is a son or daughter of heightened birth?
+iti74:3.2 | S: It’s when a child’s parents | T: (none)
+iti74:3.3 | S: have not gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: There is the case where a son or daughter’s parents have not gone to the Buddha for refuge, have not gone to the Dhamma for refuge, have not gone to the Saṅgha for refuge.
+iti74:3.4 | S: They kill living creatures, steal, commit sexual misconduct, lie, and consume intoxicants of beer, wine, and liquor. They’re immoral, of bad character. | T: They do not abstain from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. They are unprincipled & evil by nature.
+iti74:3.5 | S: But their child | T: However,
+iti74:3.6 | S: has gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: their son or daughter has gone to the Buddha for refuge, has gone to the Dhamma for refuge, has gone to the Saṅgha for refuge.
+iti74:3.7 | S: They don’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. They’re ethical, of good character. | T: He/she abstains from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. He/she is principled & admirable by nature.
+iti74:3.8 | S: That’s how a child betters their birth. | T: This is called a son or daughter of heightened birth.
+iti74:4.1 | S: And how does a child equal their birth? | T: “And how is a son or daughter of similar birth?
+iti74:4.2 | S: It’s when a child’s parents | T: (none)
+iti74:4.3 | S: have gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: There is the case where a son or daughter’s parents have gone to the Buddha for refuge, have gone to the Dhamma for refuge, have gone to the Saṅgha for refuge.
+iti74:4.4 | S: They don’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. They’re ethical, of good character. | T: They abstain from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. They are principled & admirable by nature.
+iti74:4.5 | S: And their child | T: (none)
+iti74:4.6 | S: has gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: Their son or daughter has also gone to the Buddha for refuge, has gone to the Dhamma for refuge, has gone to the Saṅgha for refuge.
+iti74:4.7 | S: They don’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. They’re ethical, of good character. | T: He/she abstains from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. He/she is principled & admirable by nature.
+iti74:4.8 | S: That’s how a child equals their birth. | T: This is called a son or daughter of similar birth.
+iti74:5.1 | S: And how does a child fail their birth? | T: “And how is a son or daughter of lowered birth?
+iti74:5.2 | S: It’s when a child’s parents | T: (none)
+iti74:5.3 | S: have gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: There is the case where a son or daughter’s parents have gone to the Buddha for refuge, have gone to the Dhamma for refuge, have gone to the Saṅgha for refuge.
+iti74:5.4 | S: They don’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. They’re ethical, of good character. | T: They abstain from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. They are principled & admirable by nature. However,
+iti74:5.5 | S: But their child | T: (none)
+iti74:5.6 | S: has not gone for refuge to the Buddha, the teaching, and the Saṅgha. | T: their son or daughter has not gone to the Buddha for refuge, has not gone to the Dhamma for refuge, has not gone to the Saṅgha for refuge.
+iti74:5.7 | S: They kill living creatures, steal, commit sexual misconduct, lie, and consume intoxicants of beer, wine, and liquor. They’re immoral, of bad character. | T: He/she does not abstain from taking life, from stealing, from sexual misconduct, from false speech, from fermented & distilled liquors that cause heedlessness. He/she is unprincipled & evil by nature.
+iti74:5.8 | S: That’s how a child fails their birth. | T: This is called a son or daughter of lowered birth.”
+iti74:5.9 | S: These are the three kinds of children found in the world.” | T: (none)
+iti74:5.10 | S: The Buddha spoke this matter. | T: (none)
+iti74:5.11 | S: On this it is said: | T: (none)
+iti74:6.1 | S: “The astute wish for a child | T: The wise hope for a child
+iti74:6.2 | S: who betters or equals their birth; | T: of heightened or similar birth,
+iti74:6.3 | S: not one who fails their birth, | T: not for one of lowered birth,
+iti74:6.4 | S: disgracing their family. | T: a destroyer of the family.
+iti74:7.1 | S: These are the children in the world | T: These children in the world,
+iti74:7.2 | S: who become lay devotees; | T: lay followers
+iti74:7.3 | S: faithful, accomplished in ethics, | T: –consummate in virtue, conviction;
+iti74:7.4 | S: bountiful, rid of stinginess. | T: generous, free from stinginess–
+iti74:7.5 | S: Like the moon freed from clouds, | T: shine forth in any gathering like the moon when freed from a cloud.
+iti74:7.6 | S: they dazzle in the assemblies.” | T: (none)
+iti74:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## an4.79
+an4.79:1.1 | S: Then Venerable Sāriputta went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Sāriputta went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+an4.79:1.2 | S: “Sir, what is the cause, what is the reason why for different people the same kind of business undertaking might fail, | T: “What is the reason, lord, what is the cause why a certain trade, when engaged in by some people, turns out a failure? What is the reason, what is the cause why the same sort of trade, when engaged in by other people, turns out not as intended? What is the reason, what is the cause why the same sort of trade, when engaged in by other people, turns out as intended? What is the reason, what is the cause why the same sort of trade, when engaged in by other people,
+an4.79:1.3 | S: while another doesn’t meet expectations, | T: (none)
+an4.79:1.4 | S: another meets expectations, | T: (none)
+an4.79:1.5 | S: and another exceeds expectations?” | T: turns out better than intended?”
+an4.79:2.1 | S: “Sāriputta, take a case where someone goes to an ascetic or brahmin and invites them to ask for what they need. But they fail to give what’s requested. | T: “There is the case, Sāriputta, where a certain person, having gone to a contemplative or brahman, makes him an offer: ‘Tell me, sir, what you need in terms of the (four) requisites.’ But he doesn’t give what he offered.
+an4.79:2.2 | S: When they’ve passed away from that life, if they’re reborn in this place, whatever business they undertake fails. | T: If he passes away from there and comes here, then whatever trade he engages in, it turns out a failure.
+an4.79:3.1 | S: Take a case where someone goes to an ascetic or brahmin and invites them to ask for what they need. They give what’s requested, but don’t meet expectations. | T: “Then there is the case where a certain person, having gone to a contemplative or brahman, makes him an offer: ‘Tell me, sir, what you need in terms of the (four) requisites.’ But he gives him something other than what he intended by his offer.
+an4.79:3.2 | S: When they’ve passed away from that life, if they’re reborn in this place, whatever business they undertake doesn’t meet expectations. | T: If he passes away from there and comes here, then whatever trade he engages in, it turns out not as intended.
+an4.79:4.1 | S: Take a case where someone goes to an ascetic or brahmin and invites them to ask for what they need. They give what’s requested, meeting expectations. | T: “Then there is the case where a certain person, having gone to a contemplative or brahman, makes him an offer: ‘Tell me, sir, what you need in terms of the (four) requisites.’ He gives him what he intended by his offer.
+an4.79:4.2 | S: When they’ve passed away from that life, if they’re reborn in this place, whatever business they undertake meets expectations. | T: If he passes away from there and comes here, then whatever trade he engages in, it turns out as intended.
+an4.79:5.1 | S: Take a case where someone goes to an ascetic or brahmin and invites them to ask for what they need. They give what’s requested, exceeding expectations. | T: “Then there is the case where a certain person, having gone to a contemplative or brahman, makes him an offer: ‘Tell me, sir, what you need in terms of the (four) requisites.’ He gives him more than what he intended by his offer.
+an4.79:5.2 | S: When they’ve passed away from that life, if they’re reborn in this place, whatever business they undertake exceeds expectations. | T: If he passes away from there and comes here, then whatever trade he engages in, it turns out better than intended.
+an4.79:6.1 | S: This is the cause, this is the reason why for different people the same kind of business undertaking might fail, | T: “This is the reason, Sāriputta, this is the cause why a certain trade, when engaged in by some people, turns out a failure; why the same sort of trade, when engaged in by other people, turns out not as intended; why the same sort of trade, when engaged in by other people, turns out as intended; why the same sort of trade, when engaged in by other people,
+an4.79:6.2 | S: while another doesn’t meet expectations, | T: (none)
+an4.79:6.3 | S: another meets expectations, | T: (none)
+an4.79:6.4 | S: and another exceeds expectations.” | T: turns out better than intended.”
+
+## iti31
+iti31:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti31:2.1 | S: “These two things, mendicants, are not mortifying. | T: “Monks, there are these two things that cause no remorse.
+iti31:2.2 | S: What two? | T: Which two?
+iti31:2.3 | S: It’s when someone has done good and skillful things that keep them safe, but has not done bad things, violence and sin. | T: There is the case of the person who has done what is admirable, has done what is skillful, has given protection to those in fear, and has done nothing that is evil, savage, or cruel.
+iti31:2.4 | S: Thinking, ‘I have done good things’, they’re not mortified. Thinking, ‘I haven’t done bad things’, they’re not mortified. | T: Thinking, ‘I have done what is admirable,’ he feels no remorse. Thinking, ‘I have not done what is evil,’ he feels no remorse.
+iti31:2.5 | S: These are the two things that are not mortifying.” | T: These are the two things that cause no remorse.”
+iti31:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti31:2.7 | S: On this it is said: | T: (none)
+iti31:3.1 | S: “Having given up bad conduct | T: Having abandoned bodily misconduct,
+iti31:3.2 | S: by way of body, | T: verbal misconduct,
+iti31:3.3 | S: speech, and mind, | T: misconduct of mind,
+iti31:3.4 | S: and whatever else is corrupt; | T: & whatever else is flawed,
+iti31:4.1 | S: not having done bad deeds, | T: (none)
+iti31:4.2 | S: and having done many good, | T: not having done what’s not skillful, having done much that is,
+iti31:4.3 | S: when their body breaks up, that wise person | T: at the break-up of the body, the discerning one reappears
+iti31:4.4 | S: is reborn in heaven.” | T: in heaven.
+iti31:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## mn64
+mn64:1.1 | S: So I have heard. | T: (none)
+mn64:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn64:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn64:1.4 | S: “Mendicants!” | T: “Monks!”
+mn64:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn64:1.6 | S: The Buddha said this: | T: (none)
+mn64:2.1 | S: “Mendicants, do you remember the five lower fetters taught by me?” | T: “Monks, do you remember the five lower fetters as taught by me?”
+mn64:2.2 | S: When he said this, Venerable Māluṅkyaputta said to him, | T: When this was said, Ven. Māluṅkyaputta said to the Blessed One,
+mn64:2.3 | S: “Sir, I remember them.” | T: “Lord, I remember the five lower fetters as taught by the Blessed One.”
+mn64:2.4 | S: “But how do you remember them?” | T: “And how, Māluṅkyaputta, do you remember the five lower fetters as taught by me?”
+mn64:2.5 | S: “I remember the lower fetters taught by the Buddha as follows: substantialist view, | T: “Lord, I remember self-identification view as a lower fetter taught by the Blessed One.
+mn64:2.6 | S: doubt, | T: I remember uncertainty as a lower fetter taught by the Blessed One.
+mn64:2.7 | S: misapprehension of precepts and observances, | T: I remember grasping at habits & practices as a lower fetter taught by the Blessed One.
+mn64:2.8 | S: sensual desire, | T: I remember sensual desire as a lower fetter taught by the Blessed One.
+mn64:2.9 | S: and ill will. | T: I remember ill will as a lower fetter taught by the Blessed One.
+mn64:2.10 | S: That’s how I remember the five lower fetters taught by the Buddha.” | T: That’s how I remember the five lower fetters as taught by the Blessed One.”
+mn64:3.1 | S: “Who on earth do you remember being taught the five lower fetters in that way? | T: “And to whom, Māluṅkyaputta, do you remember my having taught the five lower fetters in that way?
+mn64:3.2 | S: Wouldn’t the wanderers of other religions fault you using the simile of the infant? | T: Wouldn’t the wanderers of other sects make a rebuttal with the simile of the youngster?
+mn64:3.3 | S: For a little baby doesn’t even have a concept of ‘substantial reality’, so how could substantialist view possibly arise in them? | T: For even the thought ‘self-identification’ doesn’t occur to a stupid baby boy lying on its back, so from where would self-identification view arise in it,
+mn64:3.4 | S: Yet the underlying tendency to substantialist view still lies within them. | T: even though a latent tendency to self-identification view lies latent within it?
+mn64:3.5 | S: A little baby doesn’t even have a concept of ‘teachings’, so how could doubt about the teachings possibly arise in them? | T: Even the thought ‘dhammas’ doesn’t occur to a stupid baby boy lying on its back, so from where would uncertainty about dhammas arise in it,
+mn64:3.6 | S: Yet the underlying tendency to doubt still lies within them. | T: even though a latent tendency to uncertainty lies latent within it?
+mn64:3.7 | S: A little baby doesn’t even have a concept of ‘precepts’, so how could misapprehension of precepts and observances possibly arise in them? | T: Even the thought ‘habits’ doesn’t occur to a stupid baby boy lying on its back, so from where would grasping at habits & practices arise in it,
+mn64:3.8 | S: Yet the underlying tendency to misapprehension of precepts and observances still lies within them. | T: even though a latent tendency to grasping at habits & practices lies latent within it?
+mn64:3.9 | S: A little baby doesn’t even have a concept of ‘sensual pleasures’, so how could desire for sensual pleasures possibly arise in them? | T: Even the thought ‘sensuality’ doesn’t occur to a stupid baby boy lying on its back, so from where would sensual desire for sensuality arise in it,
+mn64:3.10 | S: Yet the underlying tendency to sensual desire still lies within them. | T: even though a latent tendency to sensual passion lies latent within it?
+mn64:3.11 | S: A little baby doesn’t even have a concept of ‘sentient beings’, so how could ill will for sentient beings possibly arise in them? | T: Even the thought ‘beings’ doesn’t occur to a stupid baby boy lying on its back, so from where would ill will for beings arise in it,
+mn64:3.12 | S: Yet the underlying tendency to ill will still lies within them. | T: even though a latent tendency to ill will lies latent within it?”
+mn64:3.13 | S: Wouldn’t the wanderers of other religions fault you using the simile of the infant?” | T: (none)
+mn64:4.1 | S: When he said this, Venerable Ānanda said to the Buddha, | T: When this was said, Ven. Ānanda said to the Blessed One,
+mn64:4.2 | S: “Now is the time, Blessed One! Now is the time, Holy One! | T: “This is the time, O Blessed One. This is the time, O One Well-Gone,
+mn64:4.3 | S: May the Buddha teach the five lower fetters. The mendicants will listen and remember it.” | T: for the Blessed One to teach the five lower fetters. Having heard the Blessed One, the monks will remember it.”
+mn64:4.4 | S: “Well then, Ānanda, listen and apply your mind well, I will speak.” | T: “In that case, Ānanda, listen and pay close attention. I will speak.”
+mn64:4.5 | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+mn64:4.6 | S: The Buddha said this: | T: The Blessed One said,
+mn64:5.1 | S: “Ānanda, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “There is the case, Ānanda, where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+mn64:5.2 | S: Their heart is overcome and mired in substantialist view, | T: remains with his awareness possessed by self-identification view, overcome by self-identification view.
+mn64:5.3 | S: and they don’t truly understand the escape from substantialist view that has arisen. | T: He doesn’t discern, as it has come to be, the escape from an arisen self-identification view.
+mn64:5.4 | S: That substantialist view is entrenched in them, not eliminated: it is a lower fetter. | T: For him, that self-identification view—fixed & unsubdued in him—is a lower fetter.
+mn64:5.5 | S: Their heart is overcome and mired in doubt, | T: “He remains with his awareness possessed by uncertainty…
+mn64:5.6 | S: and they don’t truly understand the escape from doubt that has arisen. | T: (none)
+mn64:5.7 | S: That doubt is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.8 | S: Their heart is overcome and mired in misapprehension of precepts and observances, | T: “He remains with his awareness possessed by grasping at habits & practices…
+mn64:5.9 | S: and they don’t truly understand the escape from misapprehension of precepts and observances that has arisen. | T: (none)
+mn64:5.10 | S: That misapprehension of precepts and observances is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.11 | S: Their heart is overcome and mired in sensual desire, | T: “He remains with his awareness possessed by sensual passion…
+mn64:5.12 | S: and they don’t truly understand the escape from sensual desire that has arisen. | T: (none)
+mn64:5.13 | S: That sensual desire is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.14 | S: Their heart is overcome and mired in ill will, | T: “He remains with his awareness possessed by ill will, overcome by ill will.
+mn64:5.15 | S: and they don’t truly understand the escape from ill will that has arisen. | T: He doesn’t discern, as it has come to be, the escape from arisen ill will.
+mn64:5.16 | S: That ill will is entrenched in them, not eliminated: it is a lower fetter. | T: For him, that ill will—fixed & unsubdued in him—is a lower fetter.
+mn64:6.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. Their heart is not overcome and mired in substantialist view, | T: “But there is the case where a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma— remains with his awareness not possessed by self-identification view, not overcome by self-identification view.
+mn64:6.2 | S: and they truly understand the escape from substantialist view that has arisen. | T: He discerns, as it has come to be, the escape from an arisen self-identification view.
+mn64:6.3 | S: That substantialist view, along with any underlying tendency to it, is given up in them. | T: For him, that self-identification view—together with its latent tendency—is abandoned.
+mn64:6.4 | S: Their heart is not overcome and mired in doubt, | T: “He remains with his awareness not possessed by uncertainty…
+mn64:6.5 | S: and they truly understand the escape from doubt that has arisen. | T: (none)
+mn64:6.6 | S: That doubt, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.7 | S: Their heart is not overcome and mired in misapprehension of precepts and observances, | T: “He remains with his awareness not possessed by grasping at habits & practices…
+mn64:6.8 | S: and they truly understand the escape from misapprehension of precepts and observances that has arisen. | T: (none)
+mn64:6.9 | S: That misapprehension of precepts and observances, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.10 | S: Their heart is not overcome and mired in sensual desire, | T: “He remains with his awareness not possessed by sensual passion…
+mn64:6.11 | S: and they truly understand the escape from sensual desire that has arisen. | T: (none)
+mn64:6.12 | S: That sensual desire, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.13 | S: Their heart is not overcome and mired in ill will, | T: “He remains with his awareness not possessed by ill will, not overcome by ill will.
+mn64:6.14 | S: and they truly understand the escape from ill will that has arisen. | T: He discerns, as it has come to be, the escape from arisen ill will.
+mn64:6.15 | S: That ill will, along with any underlying tendency to it, is given up in them. | T: For him, that ill will—together with its latent tendency—is abandoned.
+mn64:6.16 | S: There is a path and a practice for giving up the five lower fetters. It’s not possible to know or see or give up the five lower fetters without relying on that path and that practice. | T: “For one who has not followed the path, the practice, for the abandoning of the five lower fetters to know, to see, or to abandon the five lower fetters: That is impossible.
+mn64:6.17 | S: Suppose there was a large tree standing with heartwood. It’s not possible to cut out the heartwood without having cut through the bark and the softwood. | T: It’s just as if there were a great tree standing, possessed of heartwood. For its heartwood to be cut without first cutting through the bark, without cutting through the sapwood:
+mn64:6.18 | P: netaṁ ṭhānaṁ vijjati; | T: That is impossible.
+mn64:6.19 | S: In the same way, there is a path and a practice for giving up the five lower fetters. It’s not possible to know or see or give up the five lower fetters without relying on that path and that practice. | T: In the same way, for one who has not followed the path, the practice, for the abandoning of the five lower fetters to know, to see, or to abandon the five lower fetters: That is impossible.
+mn64:7.1 | S: But it is possible to know and see and give up the five lower fetters by relying on that path and that practice. | T: “For one who has followed the path, the practice, for the abandoning of the five lower fetters to know, to see, or to abandon the five lower fetters: That is possible.
+mn64:8.1 | S: Suppose there was a large tree standing with heartwood. It is possible to cut out the heartwood after having cut through the bark and the softwood. | T: It’s just as if there were a great tree standing, possessed of heartwood. For its heartwood to be cut after first cutting through the bark and cutting through the sapwood: That is possible.
+mn64:8.2 | S: In the same way, there is a path and a practice for giving up the five lower fetters. It is possible to know and see and give up the five lower fetters by relying on that path and that practice. | T: In the same way, for one who has followed the path, the practice, for the abandoning of the five lower fetters to know, to see, or to abandon the five lower fetters: That is possible.
+mn64:8.3 | S: Suppose the Ganges River was full to the brim so a crow could drink from it. | T: “Suppose that the River Ganges were full of water up to the brim so that crows could drink out of it,
+mn64:8.4 | S: Then along comes a feeble person, who thinks: | T: and a weak man were to come along, (thinking,)
+mn64:8.5 | S: ‘By swimming with my arms I’ll safely cross over to the far shore of the Ganges.’ | T: ‘I will go across this River Ganges, cutting the current with my arms, safely to the further shore.’
+mn64:8.6 | S: But they’re not able to do so. | T: He would not be able to go across the River Ganges, cutting the current with his arms, safely to the further shore.
+mn64:8.7 | S: In the same way, when the Dhamma is being taught to them for the cessation of substantial reality, those whose mind does not leap forth, gain confidence, settle down, and become decided | T: So it is with anyone whose mind, when the cessation of self-identification is being taught, doesn’t take to it, isn’t calmed by it, doesn’t resolve on it, and isn’t released in it:
+mn64:8.8 | S: should be regarded as being like that feeble person. | T: That person is to be seen as like the weak man.
+mn64:8.9 | S: Suppose the Ganges River was full to the brim so a crow could drink from it. | T: “But suppose that the River Ganges were full of water up to the brim so that crows could drink out of it,
+mn64:8.10 | S: Then along comes a strong person, who thinks: | T: and a strong man were to come along, (thinking,)
+mn64:8.11 | S: ‘By swimming with my arms I’ll safely cross over to the far shore of the Ganges.’ | T: ‘I will go across this River Ganges, cutting the current with my arms, safely to the further shore.’
+mn64:8.12 | S: And they are able to do so. | T: He would be able to go across the River Ganges, cutting the current with his arms, safely to the further shore.
+mn64:8.13 | S: In the same way, when the Dhamma is being taught to them for the cessation of substantial reality, those whose mind leaps forth, gains confidence, settles down, and becomes decided | T: So it is with anyone whose mind, when the cessation of self-identification is being taught, takes to it, is calmed by it, resolves on it, and is released in it:
+mn64:8.14 | S: should be regarded as being like that strong person. | T: That person is to be seen as like the strong man.
+mn64:9.1 | S: And what, Ānanda, is the path and the practice for giving up the five lower fetters? | T: “And what, Ānanda, is the path, what is the practice, for the abandoning of the five lower fetters?
+mn64:9.2 | S: It’s when a mendicant—due to the seclusion from attachments, the giving up of unskillful qualities, and the complete settling of physical discomforts—quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: There is the case where a monk—from being secluded from acquisitions, from the abandoning of unskillful qualities, from the entire calming of bodily discomfort, quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+mn64:9.3 | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: He regards whatever phenomena there that are connected with form, feeling, perception, fabrications, & consciousness, as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self.
+mn64:9.4 | S: They turn their mind away from those things, | T: He turns his mind away from those phenomena and, having done so,
+mn64:9.5 | S: and apply it to the element free of death: | T: inclines his mind to the property of deathlessness:
+mn64:9.6 | S: ‘This is peaceful; this is sublime—that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment.’ | T: ‘This is peace, this is exquisite—the pacification of all fabrications; the relinquishment of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’
+mn64:9.7 | S: Abiding in that they attain the ending of defilements. | T: “Staying right there, he reaches the ending of the effluents.
+mn64:9.8 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total ending of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.
+mn64:9.9 | S: This is the path and the practice for giving up the five lower fetters. | T: “This, Ānanda, is the path, this is the practice, for the abandoning of the five lower fetters.
+mn64:10-12.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption … | T: [Similarly with the second,
+mn64:10-12.2 | S: third absorption … | T: third,
+mn64:10-12.3 | S: fourth absorption. | T: and fourth jhāna.]
+mn64:10-12.4 | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent … | T: (none)
+mn64:10-12.5 | S: They turn their mind away from those things … | T: (none)
+mn64:10-12.6 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:10-12.7 | S: This too is the path and the practice for giving up the five lower fetters. | T: (none)
+mn64:13.1 | S: Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “And further, Ānanda, the monk—with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space’—enters & remains in the dimension of the infinitude of space.
+mn64:13.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: He regards whatever phenomena there that are connected with feeling, perception, fabrications, & consciousness, as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self.
+mn64:13.3 | S: They turn their mind away from those things … | T: He turns his mind away from those phenomena and, having done so, inclines his mind to the property of deathlessness: ‘This is peace, this is exquisite—the pacification of all fabrications; the relinquishment of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’
+mn64:13.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: “Staying right there, he reaches the ending of the effluents. Or, if not, then—through this very Dhamma-passion, this very Dhamma-delight, and from the total ending of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.
+mn64:13.5 | S: This too is the path and the practice for giving up the five lower fetters. | T: “This, Ānanda, is the path, this is the practice, for the abandoning of the five lower fetters.”
+mn64:14.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: (none)
+mn64:14.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: (none)
+mn64:14.3 | S: They turn their mind away from those things … | T: (none)
+mn64:14.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:14.5 | S: This too is the path and the practice for giving up the five lower fetters. | T: (none)
+mn64:15.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: [Similarly with the dimension of the infinitude of consciousness and the dimension of nothingness.]
+mn64:15.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: (none)
+mn64:15.3 | S: They turn their mind away from those things … | T: (none)
+mn64:15.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:15.5 | S: This too is the path and the practice for giving up the five lower fetters.” | T: (none)
+mn64:16.1 | S: “Sir, if this is the path and the practice for giving up the five lower fetters, how then are some mendicants here released in heart while others are released by wisdom?” | T: “But, lord, if this is the path, if this is the practice, for the abandoning of the five lower fetters, then why are some monks (said to be) ‘released through awareness,’ and some monks are (said to be) ‘released through discernment’?”
+mn64:16.2 | S: “In that case, I say it is the disparity of their faculties.” | T: “I tell you, Ānanda: That is the difference in their faculties.”
+mn64:16.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn64:16.4 | S: Satisfied, Venerable Ānanda approved what the Buddha said. | T: Gratified, Ven. Ānanda delighted in the Blessed One’s words.
+
+## an4.73
+an4.73:1.1 | S: “Mendicants, an untrue person can be known by four qualities. | T: “Monks, a person endowed with these four qualities can be known as ‘a person of no integrity.’
+an4.73:1.2 | S: What four? | T: Which four?
+an4.73:1.3 | S: To start with, an untrue person speaks ill of another even when not asked, let alone when asked. | T: “There is the case where a person of no integrity, when unasked, reveals another person’s bad points, to say nothing of when asked.
+an4.73:1.4 | S: But when summoned for questioning they speak ill of another in full detail, not leaving anything out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of another person’s bad points in full & in detail, without omission, without holding back.
+an4.73:1.5 | S: That’s how to know that this is an untrue person. | T: Of this person you may know, ‘This venerable one is a person of no integrity.’
+an4.73:2.1 | S: Furthermore, an untrue person doesn’t speak well of another even when asked, let alone when not asked. | T: “And further, a person of no integrity, when asked, doesn’t reveal another person’s good points, to say nothing of when unasked.
+an4.73:2.2 | S: But when summoned for questioning they speak well of another without giving the full details, leaving many things out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of another person’s good points not in full, not in detail, with omissions, holding back.
+an4.73:2.3 | S: That’s how to know that this is an untrue person. | T: Of this person you may know, ‘This venerable one is a person of no integrity.’
+an4.73:3.1 | S: Furthermore, an untrue person doesn’t speak ill of themselves even when asked, let alone when not asked. | T: “And further, a person of no integrity, when asked, doesn’t reveal his own bad points, to say nothing of when unasked.
+an4.73:3.2 | S: But when summoned for questioning they speak ill of themselves without giving the full details, leaving many things out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of his own bad points not in full, not in detail, with omissions, holding back.
+an4.73:3.3 | S: That’s how to know that this is an untrue person. | T: Of this person you may know, ‘This venerable one is a person of no integrity.’
+an4.73:4.1 | S: Furthermore, an untrue person speaks well of themselves even when not asked, let alone when asked. | T: “And further, a person of no integrity, when unasked, reveals his own good points, to say nothing of when asked.
+an4.73:4.2 | S: But when summoned for questioning they speak well of themselves in full detail, not leaving anything out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of his own good points in full & in detail, without omissions, without holding back.
+an4.73:4.3 | S: That’s how to know that this is an untrue person. | T: Of this person you may know, ‘This venerable one is a person of no integrity.’
+an4.73:4.4 | S: An untrue person can be known by these four qualities. | T: “Monks, a person endowed with these four qualities can be known as ‘a person of no integrity.’
+an4.73:5.1 | S: A true person can be known by four qualities. | T: “Now, a person endowed with these four qualities can be known as ‘a person of integrity.’
+an4.73:5.2 | S: What four? | T: Which four?
+an4.73:5.3 | S: To start with, a true person doesn’t speak ill of another even when asked, let alone when not asked. | T: “There is the case where a person of integrity, when asked, doesn’t reveal another person’s bad points, to say nothing of when unasked.
+an4.73:5.4 | S: But when summoned for questioning they speak ill of another without giving the full details, leaving many things out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of another person’s bad points not in full, not in detail, with omissions, holding back.
+an4.73:5.5 | S: That’s how to know that this is a true person. | T: Of this person you may know, ‘This venerable one is a person of integrity.’
+an4.73:6.1 | S: Furthermore, a true person speaks well of another even when not asked, let alone when asked. | T: “And further, a person of integrity, when unasked, reveals another person’s good points, to say nothing of when asked.
+an4.73:6.2 | S: But when summoned for questioning they speak well of another in full detail, not leaving anything out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of another person’s good points in full & in detail, without omissions, without holding back.
+an4.73:6.3 | S: That’s how to know that this is a true person. | T: Of this person you may know, ‘This venerable one is a person of integrity.’
+an4.73:7.1 | S: Furthermore, a true person speaks ill of themselves even when not asked, let alone when asked. | T: “And further, a person of integrity, when unasked, reveals his own bad points, to say nothing of when asked.
+an4.73:7.2 | S: But when led on by questions they speak ill of themselves in full detail, not leaving anything out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of his own bad points in full & in detail, without omissions, without holding back.
+an4.73:7.3 | S: That’s how to know that this is a true person. | T: Of this person you may know, ‘This venerable one is a person of integrity.’
+an4.73:8.1 | S: Furthermore, a true person doesn’t speak well of themselves even when asked, let alone when not asked. | T: “And further, a person of integrity, when asked, doesn’t reveal his own good points, to say nothing of when unasked.
+an4.73:8.2 | S: But when summoned for questioning they speak well of themselves without giving the full details, leaving many things out. | T: Furthermore, when asked, when pressed with questions, he is one who speaks of his own good points not in full, not in detail, with omissions, holding back.
+an4.73:8.3 | S: That’s how to know that this is a true person. | T: Of this person you may know, ‘This venerable one is a person of integrity.’
+an4.73:8.4 | S: A true person can be known by these four qualities. | T: “Monks, a person endowed with these four qualities can be known as ‘a person of integrity.’”
+an4.73:9.1 | S: It’s like a bride on the day or night she’s first brought to her husband’s home. Right away she sets up a keen sense of conscience and prudence for her mother and father in law, her husband, and even the bondservants, workers, and staff. | T: (none)
+an4.73:9.2 | S: But after some time, because of living together and familiarity, she’ll even say to her mother and father in law, or to her husband: | T: (none)
+an4.73:9.3 | S: ‘Go away! What would you know?’ | T: (none)
+an4.73:9.4 | S: In the same way, on the day or night a mendicant first goes forth from the lay life to homelessness, right away they set up a keen sense of conscience and prudence for the monks, nuns, laymen, and laywomen, and even the monastery workers and novices. | T: (none)
+an4.73:9.5 | S: But after some time, because of living together and familiarity, they’ll even say to their tutor or mentor: | T: (none)
+an4.73:9.6 | S: ‘Go away! What would you know?’ | T: (none)
+an4.73:9.7 | S: So you should train like this: | T: (none)
+an4.73:9.8 | S: ‘We will live with hearts like that of a newly wedded bride.’ | T: (none)
+an4.73:9.9 | S: That’s how you should train.” | T: (none)
+
+## iti29
+iti29:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti29:2.1 | S: “Mendicants, when a mendicant has two qualities they live happily in this very life—without distress, anguish, and fever— | T: “Endowed with two things, monks, a monk lives in ease in the present life–untroubled, undistressed, & unfeverish–
+iti29:2.2 | S: and when the body breaks up, after death, they can expect a good rebirth. | T: and at the break-up of the body, after death, a good destination can be expected.
+iti29:2.3 | S: What two? | T: Which two?
+iti29:2.4 | S: Guarding the sense doors and moderation in eating. | T: A guarding of the doors of the sense faculties, and knowing moderation in food.
+iti29:2.5 | S: When a mendicant possesses these two qualities they live happily in this very life—without distress, anguish, and fever— | T: Endowed with these two things, a monk lives in ease in the present life–untroubled, undistressed, & unfeverish–
+iti29:2.6 | S: and when the body breaks up, after death, they can expect a good rebirth.” | T: and at the break-up of the body, after death, a good destination can be expected.”
+iti29:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti29:2.8 | S: On this it is said: | T: (none)
+iti29:3.1 | S: “Eye, ear, nose, | T: Eye & ear & nose,
+iti29:3.2 | S: tongue, body, and likewise mind: | T: tongue, body, & mind:
+iti29:3.3 | S: a mendicant who makes these | T: (none)
+iti29:3.4 | S: sense doors well guarded— | T: when a monk has these doors well guarded
+iti29:4.1 | S: eating in moderation, | T: –knowing moderation in food,
+iti29:4.2 | S: restrained in the sense faculties— | T: restraining his senses–
+iti29:4.3 | S: reaps happiness | T: (none)
+iti29:4.4 | S: both physical and mental. | T: he experiences ease: ease in body, ease in mind.
+iti29:5.1 | S: Not burning in body, | T: Not burning in body,
+iti29:5.2 | S: not burning in mind, | T: not burning in mind,
+iti29:5.3 | S: by day or by night | T: whether by day or by night,
+iti29:5.4 | S: such a person lives in happiness.” | T: one like this lives in ease.
+iti29:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## ud6.5
+ud6.5:1.1 | S: So I have heard. | T: (none)
+ud6.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud6.5:1.3 | S: Now at that time several ascetics, brahmins, and wanderers who followed various other religions were residing in Sāvatthī, holding different views, beliefs, and opinions, relying on different views. | T: And on that occasion there were many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views.
+ud6.5:2.1 | S: There were some ascetics and brahmins who had this doctrine and view: | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.5:2.2 | S: “The self and the cosmos are eternal. This is the only truth, anything else is futile.” | T: “The self & the cosmos are eternal. Only this is true; anything otherwise is worthless.”
+ud6.5:3.1 | S: Others held views such as the following, each regarding their own view as true and others as silly. | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.5:3.2 | S: “The self and the cosmos are not eternal.” | T: “The self & the cosmos are not eternal” …
+ud6.5:4.2 | S: “The self and the cosmos are both eternal and not eternal.” | T: “The self & the cosmos are both eternal and not eternal” …
+ud6.5:5.2 | S: “The self and the cosmos are neither eternal nor not eternal.” | T: “The self & the cosmos are neither eternal nor not eternal” …
+ud6.5:6.2 | S: “The self and the cosmos are made by oneself.” | T: “The self & the cosmos are self-made” …
+ud6.5:7.2 | S: “The self and the cosmos are made by another.” | T: “The self & the cosmos are other-made” …
+ud6.5:8.2 | S: “The self and the cosmos are made by both oneself and another.” | T: “The self & the cosmos are both self-made & other-made” …
+ud6.5:9.2 | S: “The self and the cosmos have arisen anomalously, not made by oneself or another.” | T: “The self & the cosmos–without self-making, without other-making–are spontaneously arisen” …
+ud6.5:10.2 | S: “Pleasure and pain are eternal, and the self and the cosmos.” | T: (none)
+ud6.5:11.2 | S: “Pleasure and pain are not eternal, and the self and the cosmos.” | T: (none)
+ud6.5:12.2 | S: “Pleasure and pain are both eternal and not eternal, and the self and the cosmos.” | T: (none)
+ud6.5:13.2 | S: “Pleasure and pain are neither eternal nor not eternal, and the self and the cosmos.” | T: (none)
+ud6.5:14.2 | S: “Pleasure and pain are made by oneself, and the self and the cosmos.” | T: “Pleasure & pain, the self & the cosmos are self-made” …
+ud6.5:15.2 | S: “Pleasure and pain are made by another, and the self and the cosmos.” | T: “other-made” …
+ud6.5:16.2 | S: “Pleasure and pain are made by both oneself and another, and the self and the cosmos.” | T: “both self-made & other-made” …
+ud6.5:17.2 | S: “Pleasure and pain have arisen anomalously, not made by oneself or another, and the self and the cosmos.” | T: “Pleasure & pain, the self & the cosmos–without self-making, without other-making–are spontaneously arisen. Only this is true; anything otherwise is worthless.”
+ud6.5:18.1 | S: They were fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: And they kept on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.5:18.2 | S: “Such is Truth, such is not Truth! | T: “The Dhamma is like this, it’s not like that.
+ud6.5:18.3 | S: Such is not Truth, such is Truth!” | T: The Dhamma’s not like that, it’s like this.”
+ud6.5:19.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and–carrying their bowls & robes–went into Sāvatthī for alms.
+ud6.5:19.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One,
+ud6.5:20.1 | P: “Idha, bhante, sambahulā nānātitthiyasamaṇabrāhmaṇaparibbājakā sāvatthiyaṁ paṭivasanti nānādiṭṭhikā nānākhantikā nānārucikā nānādiṭṭhinissayanissitā. | T: “Lord, there are many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views….
+ud6.5:21.3 | P: te bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: And they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.5:21.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.5:21.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.5:22.1 | P: “Aññatitthiyā, bhikkhave, paribbājakā andhā acakkhukā; | T: “Monks, the wanderers of other sects are blind & eyeless.
+ud6.5:22.2 | P: atthaṁ na jānanti anatthaṁ na jānanti, dhammaṁ na jānanti adhammaṁ na jānanti. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma.
+ud6.5:22.3 | P: Te atthaṁ ajānantā anatthaṁ ajānantā, dhammaṁ ajānantā adhammaṁ ajānantā bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: Not knowing what is beneficial and what is harmful, not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.5:22.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.5:22.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.5:23.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.5:24.1 | S: “Some ascetics and brahmins, it seems, | T: (none)
+ud6.5:24.2 | S: cling to these things. | T: With regard to these things they’re attached– some contemplatives & brahmans.
+ud6.5:24.3 | S: They founder in mid-stream, | T: Not reaching the footing, they sink in mid-stream.
+ud6.5:24.4 | S: without reaching that objective.” | T: (none)
+
