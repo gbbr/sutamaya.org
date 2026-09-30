@@ -120,9 +120,9 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
   done, 0.3–1.0 is left. Each band takes a Sonnet pass; then Opus, with both lines whole, on the
   cuts Sonnet couldn't place and on 50 of its moves at random; then a neighbour round, in which
   Opus re-checks the cuts beside those it found stuck on a wrong neighbour, and then the stuck ones.
-  The last band's cuts are in `data/<translator>/review/band3/`, for cloud sessions to answer as
-  [cloud-review.md](cloud-review.md) says; an answered batch, copied with its answers into
-  `review/batches/`, is kept with `--answers`.
+  Cloud sessions answer the batches, in folders under `data/<translator>/review/`, as
+  [cloud-review.md](cloud-review.md) says; `scripts/review-rounds.py` puts a round's batches in its
+  folder and keeps the answers that come back.
 - Give more lines English of their own: some lines Sujato translates are empty here because the
   translator's English for them sits inside a neighbour's line, with no place to cut it apart.
   `empty.html` shows them, before any change to the segmenter.
