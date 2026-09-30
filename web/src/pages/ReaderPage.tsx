@@ -950,14 +950,14 @@ export function ReaderPage() {
               which is tuned for larger menu labels; it is the lightest that clears 4.5:1 there. */}
           <div className="font-sans" style={{ fontSize: fs - 6, marginTop: 9, color: resolvedTheme === 'light' ? '#7A7168' : theme.dim }}>
             {sutta.min} min read ·{' '}
-            Source:{' '}
+            Translation:{' '}
             <a
               href={`https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md`}
               target="_blank"
               rel="noreferrer"
               style={{ color: 'inherit', textDecoration: 'none' }}
             >
-              SuttaCentral, modified
+              Bhikkhu Sujato (edited)
             </a>
           </div>
           {sutta.blurb && (
