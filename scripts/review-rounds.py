@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Moves review batches between the segmenter and the folders cloud sessions answer.
+"""Moves review batches between the segmenter and the folders reviewers answer.
 
 Run from the repository's root:
 
@@ -10,13 +10,15 @@ Run from the repository's root:
       keeps the answers in each review/<folder>/ in cuts.json, one folder after another
   scripts/review-rounds.py <translator> keep-agreed <folder>
       keeps the answers a first pass (.answers) and a second opinion (.opus) agree on
-  scripts/review-rounds.py <translator> read
-      writes every line beside Sujato's to review/read/, for a read-through: the texts with the
-      most lines left empty first, about 60,000 characters to a file
+  scripts/review-rounds.py <translator> read [<folder> <text>…]
+      writes each text's lines beside Sujato's to review/<folder>/ (read/ by default), for a
+      read-through: the texts named, or every one, those with the most lines left empty first,
+      about 60,000 characters to a file
 """
 import glob
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -95,6 +97,7 @@ elif command == 'keep-agreed':
     print(f'{left} left for a final look')
     segment('--answers')
 elif command == 'read':
+    folder, *only = rest or ['read']
     texts = []
     for path in sorted(glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True)):
         theirs = json.load(open(path))
@@ -106,22 +109,24 @@ elif command == 'read':
             # Title lines hold the translator's title and introduction, which no line of Sujato's matches.
             if key.split(':')[1].startswith('0.'):
                 continue
-            by_text.setdefault(key.split(':')[0], []).append((key, his.get(key, '').strip(), text.strip()))
+            # A reader sees the words alone: without their markup, and on one line.
+            words = re.sub(r'<[^>]+>', '', text).replace('\n', ' ').strip()
+            by_text.setdefault(key.split(':')[0], []).append((key, his.get(key, '').strip(), words))
         for uid, lines in by_text.items():
-            if not any(text for _, _, text in lines):
+            if (only and uid not in only) or not any(text for _, _, text in lines):
                 continue
             shown = [f'{key} | {"S: " + s if s else "P: " + pali.get(key, "").strip()} | T: {text or "(none)"}' for key, s, text in lines if s or text]
             wanted = [text for _, s, text in lines if s]
             texts.append((wanted.count('') / max(1, len(wanted)), uid, shown))
     texts.sort(key=lambda t: -t[0])
-    os.makedirs(f'{REVIEW}/read')
+    os.makedirs(f'{REVIEW}/{folder}')
     batch, size, n = [], 0, 0
 
     def flush():
         global batch, size, n
         if batch:
             n += 1
-            open(f'{REVIEW}/read/batch-{n:03d}.txt', 'w').write('\n'.join(batch) + '\n')
+            open(f'{REVIEW}/{folder}/batch-{n:03d}.txt', 'w').write('\n'.join(batch) + '\n')
         batch, size = [], 0
 
     for _, uid, shown in texts:
@@ -136,6 +141,6 @@ elif command == 'read':
         if size > 50000:
             flush()
     flush()
-    print(f'read: {len(texts)} texts in {n} files')
+    print(f'{folder}: {len(texts)} texts in {n} files')
 else:
     sys.exit(__doc__)

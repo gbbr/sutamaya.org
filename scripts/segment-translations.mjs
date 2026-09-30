@@ -61,7 +61,7 @@ const keepSettled = args.includes('--keep-settled');
 // --overview: writes two pages over every text: review/moves.html, the cuts the review moved, and
 // review/empty.html, the lines left empty whose English is likely next door.
 const overview = args.includes('--overview');
-// --findings: tries the read-through's findings (review/read/*.findings and
+// --findings: tries the read-throughs' findings (review/*/*.findings and
 // review/closing-lines.findings), and writes review/findings.json: what each group of them changes,
 // and whether it passes.
 const weighing = args.includes('--findings') || args.includes('--keep-findings');
@@ -1176,13 +1176,11 @@ if (applyAnswers) {
   process.exit(1);
 }
 
-// The read-through's findings, by line: the words the line should start with, or null for none. A
+// The read-throughs' findings, by line: the words the line should start with, or null for none. A
 // line two findings disagree on is left out.
 const findings = new Map();
 if (weighing) {
-  const dir = path.join(REVIEW, 'read');
-  const files = [path.join(REVIEW, 'closing-lines.findings')];
-  if (fs.existsSync(dir)) files.push(...fs.readdirSync(dir).filter((f) => f.endsWith('.findings')).map((f) => path.join(dir, f)));
+  const files = [path.join(REVIEW, 'closing-lines.findings'), ...fs.globSync(path.join(REVIEW, '*', '*.findings'))];
   const torn = new Set();
   for (const file of files.filter((f) => fs.existsSync(f))) {
     for (const line of fs.readFileSync(file, 'utf8').split('\n')) {

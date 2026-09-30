@@ -6,6 +6,7 @@
 !.claude/commands/
 !.claude/agents/
 node_modules/
+__pycache__/
 web/dist/
 web/dev-dist/
 web/ota/

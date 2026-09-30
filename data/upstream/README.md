@@ -1,8 +1,9 @@
-# Bodhi and Thanissaro translations, as published
+# Bodhi and Thanissaro translations
 
-Two more English translations of suttas the app carries, collected as their sources publish them.
-`scripts/segment-translations.mjs` splits each text into the app's segments, in `data/sujato/`'s
-layout, and writes them to `data/bodhi/` and `data/thanissaro/`. Nothing in the app uses them yet.
+Two more English translations of the suttas the app carries, Bhikkhu Bodhi's and Ṭhānissaro
+Bhikkhu's. This folder keeps them as their sources publish them. `scripts/segment-translations.mjs`
+cuts each text onto the Pali's lines, in `data/sujato/`'s layout, and writes them to `data/bodhi/`
+and `data/thanissaro/`, where reviews settle the cuts it is unsure of.
 
 ## What's here
 
@@ -81,7 +82,8 @@ saved under every sutta it holds, and only the section a file is named for is re
 | Thanissaro, dhammatalks.org | CC BY-NC 4.0; the author counts any sale as commercial |
 | Thanissaro, older copies | CC BY-NC 4.0, or Access to Insight's free-distribution terms |
 
-The app's wording rules are not meant to apply to either translation.
+The editorial rules over Sujato's English ([docs/retranslation.md](../../docs/retranslation.md))
+are not meant for either translation.
 
 ## Pulling updates
 
@@ -96,45 +98,70 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    carries belong here.
 3. **SuttaCentral's files** (Bodhi, and Thanissaro's older copies): copy them again from sc-data's
    `html_text/en/pli/sutta/`, and update the commit above.
-4. **Segment again**: `node scripts/segment-translations.mjs thanissaro` (or `bodhi`). It keeps the
-   cuts a review settled (`data/<translator>/cuts.json`) and leaves unwritten any text whose segments
-   aren't word for word its page. A line's English carries a little markup, which the script's
-   header lists: the translator's verse line breaks inside the line, his headings inside it, and his
-   references to other suttas, in the app's form and linked.
-5. **Review the cuts it is least sure of**: `--items 0.3` writes them in batches to
-   `data/<translator>/review/batches/`, with the instructions for Claude, who writes the answers
-   beside each batch. `--answers` keeps the answers so far in `cuts.json`. After an interruption,
-   run `--answers --items 0.3`: only the cuts still undecided come back. For the cuts a first pass
-   couldn't place, `--whole` shows both lines of each cut whole rather than 300 characters either
-   side, and `--recheck key,…` puts settled cuts up again. `--overview` writes two pages over every
-   text: `moves.html`, the cuts the review moved, and `empty.html`, the lines with no English of
-   their own whose English is likely next door.
-6. **Review the places a moved cut can't mend**: `--places` writes them in batches the same way: a
-   line left with only a sentence's opening word or two, and a line left empty whose English is
-   likely next door. An answer there may also leave a line without text or give an empty line its
-   text, which `cuts.json` keeps beside the settled cuts. With `--keep-settled`, `--answers` leaves
-   out an answer for a line a later review has settled, as when a band's answers come back after a
-   round of places.
-7. **Read every line**: `scripts/review-rounds.py <translator> read` writes the whole translation
-   beside Sujato's to `review/read/`, and a reader saves each batch's findings beside it: where a
-   line should start, or that it should hold none. `--findings` tries them, a group of findings on
-   neighbouring lines at a time, together with `review/closing-lines.findings`, and writes
-   `review/findings.json`: each group's lines before and after, and whether it passes, which it
-   does if each of its findings takes effect and the text still reads whole. Opus judges 50 passing
-   groups at random; `--keep-findings` keeps the passing groups in `cuts.json`.
+4. **Segment**: `node scripts/segment-translations.mjs thanissaro` (or `bodhi`). A new text comes
+   out with the segmenter's own cuts. A revised one keeps every settled cut that still fits, and the
+   run names those that don't.
+5. **Review** the new and revised texts, as "Reviewing new and revised texts" says.
+
+## Segmenting
+
+The segmenter aligns each text with the Pali's lines, reading what each line says from Sujato's
+English and the dictionary, and scores how sure it is of every cut. It writes `data/<translator>/`
+in `data/sujato/`'s layout:
+
+| Path | Holds |
+|---|---|
+| `sutta/`, `notes/` | each Pali line's English, and the translator's notes; a sutta's title line also holds his introduction and "See also" |
+| `cuts.json` | what the reviews settled, by line, kept across runs |
+| `learned.json` | the translator's words learned for Sujato's |
+| `report.json` | each text's alignment and how sure it is |
+| `review/` | the review rounds, the read-throughs and the list of references |
+
+- **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
+  and not written.
+- **Markup**: a line's English carries a newline where a verse line of the translator's starts
+  inside it, `<span class="heading">` round a heading of his that no Pali heading line holds, and
+  `<a href>` round a reference in his text to another sutta, written the app's way ("as in 3:2"
+  becomes "as in AN3.2"), from `review/references.json`.
+
+## Reviewing new and revised texts
+
+The segmenter's unsure cuts, and the places a cut can't mend, go to reviewers in rounds, and
+`cuts.json` keeps what they settle. `scripts/review-rounds.py <translator> put <folder> <segmenter
+options>` puts a round up in batches in `review/<folder>/`; reviewers answer beside them, as
+[review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every text here has been
+through the rounds, so a round takes only the texts in hand: `--only <page>,…` names them, as their
+files here are named.
+
+1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
+   on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with
+   both lines whole: `put final --items 1.0 --whole`, then `keep final`. `--recheck <key>,…` adds a
+   revised text's settled cuts that no longer fit.
+2. **Places**: `put places --places` puts up each line left with only a sentence's opening word or
+   two, and each line left empty whose English sits next door. Opus answers; `keep places`.
+3. **Read-through**: `read <folder> <text ID>…` writes the texts line by line beside Sujato's.
+   Sonnet reads each batch and saves its findings beside it: where a line should start, or that it
+   should hold none. The segmenter's `--findings` tries them, a group on neighbouring lines at a
+   time, and writes `review/findings.json`: each group before and after, and whether it passes,
+   which it does when each of its findings takes effect and the text still reads whole. Opus judges
+   the passing groups, or 50 of them at random where there are more. A group it finds worse comes
+   out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
+4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
+5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
+   that no longer fits. Then commit.
 
 ## What's left
 
-- Read the rest of Thanissaro's translation line by line, from batch 024 of `review/read/`, as
-  [cloud-review.md](cloud-review.md)'s "Reading through" says, and take the findings in (step 7
-  above). Bodhi's is read in full.
-- Decide how the app offers a second translation, keeping every Pali line as reachable as with
-  Sujato: a line whose English sits on its neighbour opens its Pali with that neighbour's, and a
-  line the translator leaves out, such as Bodhi's "as in AN8.42" and Thanissaro's excerpts, shows
-  its Pali on its own. A line's role — heading, verse, closing line — comes from `data/html`,
-  whichever English sits on it, and the app shows the markup a line carries (step 4): a heading of
-  the translator's as a small heading, his verse lines as he breaks them, and his references as
-  links.
-- Once these translations ship, each source needs a credit on the Help page.
+- Take in the rest of Thanissaro's read-through, batches 024 on in `review/read/`, as step 3 of
+  "Reviewing new and revised texts" says.
 - The Buddhist Publication Society's online library (bps.lk) was down on 29 September 2026; it may
   hold more of Bodhi's translations with notes.
+
+## Where to look
+
+| What | Where |
+|---|---|
+| The segmenter and its options | `scripts/segment-translations.mjs` |
+| Putting rounds up and keeping their answers | `scripts/review-rounds.py` |
+| How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
+| The reader a read-through runs | `.claude/agents/line-reader.md` |

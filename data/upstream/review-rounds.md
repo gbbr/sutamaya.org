@@ -1,57 +1,61 @@
-# Reviewing cuts in a cloud session
+# Answering a review round
 
-Instructions for a Claude Code session, in the cloud or on the developer's machine, asked to review
-one translation's cuts, `bodhi` or `thanissaro`. [README.md](README.md) explains what the cuts are. The session only hands batches to
-subagents and saves their answers; it judges nothing itself.
+Instructions for a Claude Code session asked to answer a review round of one translation, `bodhi` or
+`thanissaro`. [README.md](README.md) says what the rounds are and puts them up. The session only
+hands batches to subagents and saves their answers; it judges nothing itself.
 
 ## The batches
 
-`data/<translator>/review/band3/` holds the cuts the segmenter is unsure of, 100 to a batch, the
-least sure first:
+`data/<translator>/review/<folder>/` holds a round's items, 100 to a batch. A batch is two files:
+`batch-NNN.txt`, which a reviewer reads, and `batch-NNN.json`, which the segmenter uses to resolve
+the answers. A reviewer saves its answers beside them as `batch-NNN.answers.1`, `.2` and so on, 25
+items to a file. A batch is done when its answers files hold one line for each of its items.
 
-| Margin | Bodhi | Thanissaro |
-|---|---|---|
-| 0.3–0.5 | batches 001–007 | batches 001–015 |
-| 0.5–0.7 | batches 008–025 | batches 016–043 |
-| 0.7–1.0 | batches 026–034 | batches 044–060 |
-
-A batch is two files: `batch-NNN.txt`, which a reviewer reads, and `batch-NNN.json`, which the
-segmenter uses to resolve the answers. A reviewer saves its answers beside them as
-`batch-NNN.answers.1`, `.2` and so on, 25 cuts to a file. A batch is done when its answers files
-hold one line for each of its cuts.
-
-This lists each batch with its number of cuts and of answers so far:
+This lists each batch with its number of items and of answers so far:
 
 ```
-for b in data/<translator>/review/band3/batch-*.txt; do
+for b in data/<translator>/review/<folder>/batch-*.txt; do
   echo "$b $(grep -c '^S1: ' "$b") $(cat "${b%.txt}".answers.* 2>/dev/null | grep -c .)"
 done
 ```
 
+## Rounds
+
+| Round | Folder | Subagent's model | Prompt | Answers saved as |
+|---|---|---|---|---|
+| Unsure cuts, first pass | `cuts/` | `sonnet` | the cuts prompt | `batch-NNN.answers.N` |
+| Unsure cuts, second opinion | `cuts/` | `opus` | the cuts prompt | `batch-NNN.opus.N` |
+| Final look | `final/` | `opus` | the cuts prompt; each item shows both its lines whole | `batch-NNN.answers.N` |
+| Places | `places/` | `opus` | the places prompt | `batch-NNN.answers.N` |
+| Read-through | see "Reading through" | `sonnet` | the reading prompt | `batch-NNN.findings` |
+| References | — | `opus` | the references prompt | `references.json` |
+
+The second opinion is independent: its subagents never read the `.answers` files, and a batch is
+done when its `.opus` files hold one line for each of its items (the listing above counts them with
+`.opus.*` in place of `.answers.*`).
+
 ## What to do
 
 1. Take the batches in number order, leaving out those already done.
-2. Give each batch to one subagent: the Agent tool, type `general-purpose`, model `sonnet`, with the
-   prompt below. Run four at a time.
-3. When the four have finished, commit the new answers files and push the session's branch:
-   `git add data/<translator>/review/band3`, then
-   `git commit -m "Review answers: <translator>, batches NNN–NNN"`.
-4. Carry on with the next four. After the last batch of each margin row, say how many cuts were
-   answered, how many were moved to another mark and how many got "?", from the subagents' replies.
-5. Stop when every batch is done, or when a usage limit stops the subagents. Commit and push what is
-   saved, and say which batch comes next.
+2. Give each batch to one subagent: the Agent tool, type `general-purpose`, the round's model, with
+   its prompt. Run four at a time.
+3. As they finish, say how many items were answered, how many were moved to another mark and how
+   many got "?", from the subagents' replies.
+4. Stop when every batch is done, or when a usage limit stops the subagents, and say which batch
+   comes next.
+
+The saved answers are the progress: commit nothing unless asked.
 
 ## Rules
 
-- Work on the session's own branch, and never push to `main`.
-- Only answers files are added, and only in the folder of the round in hand. Nothing else in the
-  repository changes, and no script is run.
+- Only the round's answers are saved: files in its folder, or `references.json`. Nothing else in
+  the repository changes, and no script is run.
 - Never read a batch or an answers file yourself: they are large, and the listing above says all
   that is needed.
 - A batch left short of answers goes to one more subagent, whose share starts after the last
-  answered cut: cut 51 is on line 251 of the file, and its answers go in the next unused file.
+  answered item: item 51 is on line 251 of the file, and its answers go in the next unused file.
 
-## The subagent's prompt
+## The cuts prompt
 
 Fill in the translator's name (Bhikkhu Bodhi or Ṭhānissaro Bhikkhu), the batch's absolute path, and
 its number of cuts and lines. A batch of 100 cuts has the offsets and answers files shown; a shorter
@@ -98,48 +102,18 @@ When done, reply with a single line: items answered, how many you moved to a dif
 how many "?".
 ```
 
-## More rounds
-
-Three more rounds follow the middle band, in this order. Each runs as above — every batch of its
-folder in number order, one subagent a batch, four at a time, the answers committed and pushed as
-they come — with these differences:
-
-| Round | Batches in | Subagent's model | Prompt | Answers saved as |
-|---|---|---|---|---|
-| Places | `data/<translator>/review/places/` | `opus` | the places prompt below | `batch-NNN.answers.N` |
-| A second look at the cuts the weak bands settled | `data/<translator>/review/recheck/` | `opus` | the prompt above | `batch-NNN.answers.N` |
-| A second opinion on the middle band | `data/<translator>/review/band3/` | `opus` | the prompt above | `batch-NNN.opus.N` |
-
-- The second opinion is independent: its subagents never read the answers files already in
-  `band3/`, and a batch is done when its `.opus` files hold one line for each of its cuts. The
-  listing above counts them with `.opus.*` in place of `.answers.*`.
-- In the second look an item shows both its lines whole, so it may be long. It is still 5 lines of
-  the file.
-- When a usage limit is near, finish the round in hand, push, and stop.
-
-## Last rounds
-
-Once those answers are kept, what is still open comes back in two folders, run the same way with
-`opus` subagents, the answers saved as `batch-NNN.answers.N`:
-
-| Round | Batches in | Prompt |
-|---|---|---|
-| A final look at the cuts still open | `data/<translator>/review/final/` | the first prompt; each item shows both its lines whole |
-| The places left | `data/<translator>/review/places2/` | the places prompt below |
-
 ## Reading through
 
-The last check reads every line. `data/<translator>/review/read/` holds the whole translation beside
-Sujato's, a text after another, the least settled texts first. A batch is read once its
-`batch-NNN.findings` is saved beside it, so a session carries on wherever the last one stopped.
+The last round reads every line of its texts, each beside Sujato's, the least settled texts first:
+`data/<translator>/review/read/` for a whole translation, or the folder the round was put up in. A
+batch is read once its `batch-NNN.findings` is saved beside it, so a session carries on wherever the
+last one stopped.
 
 1. Take the batches with no `.findings` file, in number order. This lists them:
-   `for b in data/<translator>/review/read/batch-*.txt; do [ -e "${b%.txt}.findings" ] || echo "$b"; done`.
-   For `thanissaro`, 038, 059 and 062 come first: they hold DN 15, MN 31 and MN 128, where whole
-   runs of lines are a line or two off.
-2. Give each batch to one subagent, four at a time, with the prompt below: the Agent tool, type
-   `line-reader`, which runs `sonnet` at effort high. Where that type isn't available, as in a cloud
-   session, use type `general-purpose` with model `sonnet`.
+   `for b in data/<translator>/review/<folder>/batch-*.txt; do [ -e "${b%.txt}.findings" ] || echo "$b"; done`.
+2. Give each batch to one subagent, four at a time, with the reading prompt below: the Agent tool,
+   type `line-reader`, which runs `sonnet` at effort high, or type `general-purpose` with model
+   `sonnet` where that type isn't available.
 3. Every ten batches, say in one line how many batches are read and how many are left, and how many
    lines the last ten reported. `grep -c : <findings file>` counts a batch's lines.
 4. Stop when the last ten batches reported five lines or fewer on average: the texts left are the
@@ -147,8 +121,9 @@ Sujato's, a text after another, the least settled texts first. A batch is read o
    if asked. Stop as well when the batches are done or a usage limit is near.
 5. On stopping, say how many lines were reported in all, and which batch comes next.
 
-On the developer's machine the saved findings are the progress: commit nothing unless asked. In a
-cloud session, commit and push them as they come, as the other rounds do.
+The saved findings are the progress: commit nothing unless asked.
+
+### The reading prompt
 
 ```
 You are checking a Buddhist sutta translation (by <name>) that has been cut into lines to match
@@ -189,9 +164,9 @@ no commands, and keep your reasoning brief.
 When done, reply with one line: how many lines you reported.
 ```
 
-### The places prompt
+## The places prompt
 
-The prompt above, with its first four paragraphs, down to the list of answers, replaced by these:
+The cuts prompt, with its first four paragraphs, down to the list of answers, replaced by these:
 
 ```
 You are reviewing where a Buddhist sutta translation (by <name>) is cut into lines that match the
@@ -231,4 +206,25 @@ Answers, one line per item, in the batch's order:
     <key> <n>   the cut belongs at mark n
     <key> =     the starred mark is right
     <key> ?     you truly can't tell
+```
+
+## The references prompt
+
+For one subagent, with the texts in hand named by their IDs:
+
+```
+Add to data/<translator>/review/references.json every place in the texts <IDs> where <name>'s
+translation points to another passage instead of giving it, or cites one: in the text, the
+introductions, the notes and the "See also" lists, as data/<translator>/sutta/ and notes/ hold
+them. Each is an object with:
+
+    key      the line's key
+    where    "text", "introduction", "note" or "see-also"
+    words    the words that point or cite, copied exactly
+    kind     "stands-in" where they stand in for text, "cites" where they only cite
+    target   the sutta they point to, as the app's ID (as data/sujato/sutta names its files), or
+             null if unsure
+
+dhammatalks.org numbers some suttas differently from the app; data/upstream/thanissaro/sources.json
+maps its pages to the app's IDs. Change nothing else.
 ```

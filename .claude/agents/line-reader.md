@@ -1,6 +1,6 @@
 ---
 name: line-reader
-description: Reads one batch of a translation's read-through and saves the lines whose text is in the wrong place, as its prompt from data/upstream/cloud-review.md's "Reading through" says.
+description: Reads one batch of a translation's read-through and saves the lines whose text is in the wrong place, as its prompt from data/upstream/review-rounds.md's "Reading through" says.
 model: sonnet
 effort: high
 tools: Read, Write
