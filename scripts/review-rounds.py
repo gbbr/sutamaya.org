@@ -10,6 +10,9 @@ Run from the repository's root:
       keeps the answers in each review/<folder>/ in cuts.json, one folder after another
   scripts/review-rounds.py <translator> keep-agreed <folder>
       keeps the answers a first pass (.answers) and a second opinion (.opus) agree on
+  scripts/review-rounds.py <translator> read
+      writes every line beside Sujato's to review/read/, for a read-through: the texts with the
+      most lines left empty first, about 60,000 characters to a file
 """
 import glob
 import json
@@ -91,5 +94,48 @@ elif command == 'keep-agreed':
         open(f'{BATCHES}/{folder}-{name}.answers.1', 'w').write('\n'.join(agreed) + '\n')
     print(f'{left} left for a final look')
     segment('--answers')
+elif command == 'read':
+    texts = []
+    for path in sorted(glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True)):
+        theirs = json.load(open(path))
+        beside = path.replace(f'data/{translator}/', 'data/sujato/').replace(f'-en-{translator}.json', '-en-sujato.json')
+        his = json.load(open(beside)) if os.path.exists(beside) else {}
+        pali = json.load(open(path.replace(f'data/{translator}/', 'data/pali/').replace(f'_translation-en-{translator}.json', '_root-pli-ms.json')))
+        by_text = {}
+        for key, text in theirs.items():
+            # Title lines hold the translator's title and introduction, which no line of Sujato's matches.
+            if key.split(':')[1].startswith('0.'):
+                continue
+            by_text.setdefault(key.split(':')[0], []).append((key, his.get(key, '').strip(), text.strip()))
+        for uid, lines in by_text.items():
+            if not any(text for _, _, text in lines):
+                continue
+            shown = [f'{key} | {"S: " + s if s else "P: " + pali.get(key, "").strip()} | T: {text or "(none)"}' for key, s, text in lines if s or text]
+            wanted = [text for _, s, text in lines if s]
+            texts.append((wanted.count('') / max(1, len(wanted)), uid, shown))
+    texts.sort(key=lambda t: -t[0])
+    os.makedirs(f'{REVIEW}/read')
+    batch, size, n = [], 0, 0
+
+    def flush():
+        global batch, size, n
+        if batch:
+            n += 1
+            open(f'{REVIEW}/read/batch-{n:03d}.txt', 'w').write('\n'.join(batch) + '\n')
+        batch, size = [], 0
+
+    for _, uid, shown in texts:
+        batch.append(f'## {uid}')
+        for line in shown:
+            if size > 60000:
+                flush()
+                batch.append(f'## {uid}, continued')
+            batch.append(line)
+            size += len(line)
+        batch.append('')
+        if size > 50000:
+            flush()
+    flush()
+    print(f'read: {len(texts)} texts in {n} files')
 else:
     sys.exit(__doc__)

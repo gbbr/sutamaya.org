@@ -1,0 +1,338 @@
+## an5.13
+an5.13:1.1 | S: “Mendicants, there are these five powers. | T: “Bhikkhus, there are these five powers.
+an5.13:1.2 | S: What five? | T: What five?
+an5.13:1.3 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.13:1.4 | S: These are the five powers.” | T: These are the five powers.”
+
+## an5.14
+an5.14:1.1 | S: “Mendicants, there are these five powers. | T: “Bhikkhus, there are these five powers.
+an5.14:1.2 | S: What five? | T: What five?
+an5.14:1.3 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.14:2.1 | S: And what is the power of faith? | T: (1) “And what, bhikkhus, is the power of faith?
+an5.14:2.2 | S: It’s when a noble disciple has faith in the Realized One’s awakening: | T: Here, a noble disciple is endowed with faith. He places faith in the enlightenment of the Tathāgata thus:
+an5.14:2.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘The Blessed One is an arahant, perfectly enlightened … as in 5:2 … the Enlightened One, the Blessed One.’
+an5.14:2.4 | S: This is called the power of faith. | T: This is called the power of faith.
+an5.14:3.1 | S: And what is the power of energy? | T: (2) “And what is the power of energy?
+an5.14:3.2 | S: It’s when a noble disciple lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: Here, a noble disciple has aroused energy for abandoning unwholesome qualities and acquiring wholesome qualities; he is strong, firm in exertion, not casting off the duty of cultivating wholesome qualities.
+an5.14:3.3 | S: This is called the power of energy. | T: This is called the power of energy.
+an5.14:4.1 | S: And what is the power of mindfulness? | T: (3) “And what is the power of mindfulness?
+an5.14:4.2 | S: It’s when a noble disciple is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: Here, the noble disciple is mindful, possessing supreme mindfulness and alertness, one who remembers and recollects what was done and said long ago.
+an5.14:4.3 | S: This is called the power of mindfulness. | T: This is called the power of mindfulness.
+an5.14:5.1 | S: And what is the power of immersion? | T: (4) “And what is the power of concentration?
+an5.14:5.2 | S: It’s when a noble disciple, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Here, secluded from sensual pleasures, secluded from unwholesome states, a bhikkhu enters and dwells in the first jhāna, which consists of rapture and pleasure born of seclusion, accompanied by thought and examination.
+an5.14:5.3 | S: As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the subsiding of thought and examination, he enters and dwells in the second jhāna, which has internal placidity and unification of mind and consists of rapture and pleasure born of concentration, without thought and examination.
+an5.14:5.4 | S: And with the fading away of rapture, they enter and remain in the third absorption, where they meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading away as well of rapture, he dwells equanimous and, mindful and clearly comprehending, he experiences pleasure with the body; he enters and dwells in the third jhāna of which the noble ones declare: ‘He is equanimous, mindful, one who dwells happily.’
+an5.14:5.5 | S: With the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: With the abandoning of pleasure and pain, and with the previous passing away of joy and dejection, he enters and dwells in the fourth jhāna, neither painful nor pleasant, which has purification of mindfulness by equanimity.
+an5.14:5.6 | S: This is called the power of immersion. | T: This is called the power of concentration.
+an5.14:6.1 | S: And what is the power of wisdom? | T: (5) “And what is the power of wisdom?
+an5.14:6.2 | S: It’s when a noble disciple is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: Here, a noble disciple is wise; he possesses the wisdom that discerns arising and passing away, which is noble and penetrative and leads to the complete destruction of suffering.
+an5.14:6.3 | S: This is called the power of wisdom. | T: This is called the power of wisdom.
+an5.14:6.4 | S: These are the five powers.” | T: “These, bhikkhus, are the five powers.”
+
+## an5.15
+an5.15:1.1 | S: “Mendicants, there are these five powers. | T: “Bhikkhus, there are these five powers.
+an5.15:1.2 | S: What five? | T: What five?
+an5.15:1.3 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.15:1.4 | S: And where should the power of faith be seen? | T: (1) “And where, bhikkhus, is the power of faith to be seen?
+an5.15:1.5 | S: In the four factors of stream-entry. | T: The power of faith is to be seen in the four factors of stream-entry.
+an5.15:1.7 | S: And where should the power of energy be seen? | T: (2) And where is the power of energy to be seen?
+an5.15:1.8 | S: In the four right efforts. | T: The power of energy is to be seen in the four right strivings.
+an5.15:1.10 | S: And where should the power of mindfulness be seen? | T: (3) And where is the power of mindfulness to be seen?
+an5.15:1.11 | S: In the four kinds of mindfulness meditation. | T: The power of mindfulness is to be seen in the four establishments of mindfulness.
+an5.15:1.13 | S: And where should the power of immersion be seen? | T: (4) And where is the power of concentration to be seen?
+an5.15:1.14 | S: In the four absorptions. | T: The power of concentration is to be seen in the four jhānas.
+an5.15:1.16 | S: And where should the power of wisdom be seen? | T: (5) And where is the power of wisdom to be seen?
+an5.15:1.17 | S: In the four noble truths. | T: The power of wisdom is to be seen in the four noble truths.
+an5.15:1.19 | S: These are the five powers.” | T: “These, bhikkhus, are the five powers.”
+
+## an5.16
+an5.16:1.1 | S: “Mendicants, there are these five powers. | T: “Bhikkhus, there are these five powers.
+an5.16:1.2 | S: What five? | T: What five?
+an5.16:1.3 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.16:1.4 | S: These are the five powers. | T: These are the five powers.
+an5.16:1.5 | S: Of these five powers, the power of wisdom is the chief. It holds and binds everything together. | T: Among these five powers, the power of wisdom is foremost, the one that holds all in place, the one that unifies them.
+an5.16:1.6 | S: It’s like a bungalow. The roof-peak is the chief point, which holds and binds everything together. | T: Just as the peak is the chief part of a peaked-roof house, the part that that holds all in place, that unifies them,
+an5.16:1.7 | S: In the same way, of these five powers, the power of wisdom is the chief. It holds and binds everything together.” | T: so among these five powers, the power of wisdom is foremost, the one that holds all in place, the one that unifies them.”
+
+## an5.17
+an5.17:1.1 | S: “Mendicants, a mendicant with five qualities is practicing for their own welfare, but not that of others. | T: “Bhikkhus, possessing five qualities, a bhikkhu is practicing for his own welfare but not for the welfare of others.
+an5.17:1.2 | S: What five? | T: What five?
+an5.17:1.3 | S: It’s when a mendicant is personally accomplished in ethics, immersion, wisdom, freedom, and the knowledge and vision of freedom. But they don’t encourage others in these qualities. | T: (1) Here, a bhikkhu is himself accomplished in virtuous behavior but does not encourage others to become accomplished in virtuous behavior; (2) he is himself accomplished in concentration but does not encourage others to become accomplished in concentration; (3) he is himself accomplished in wisdom but does not encourage others to become accomplished in wisdom; (4) he is himself accomplished in liberation but does not encourage others to become accomplished in liberation; (5) he is himself accomplished in the knowledge and vision of liberation but does not encourage others to become accomplished in the knowledge and vision of liberation.
+an5.17:1.8 | S: A mendicant with these five qualities is practicing for their own welfare, but not that of others.” | T: Possessing these five qualities, a bhikkhu is practicing for his own welfare but not for the welfare of others.”
+
+## an5.18
+an5.18:1.1 | S: “Mendicants, a mendicant with five qualities is practicing for the welfare of others, but not their own. | T: “Bhikkhus, possessing five qualities, a bhikkhu is practicing for the welfare of others but not for his own welfare.
+an5.18:1.2 | S: What five? | T: What five?
+an5.18:1.3 | S: It’s when a mendicant is not personally accomplished in ethics, immersion, wisdom, freedom, or the knowledge and vision of freedom. But they encourage others in these qualities. | T: (1) Here, a bhikkhu is not accomplished in virtuous behavior himself but he encourages others to become accomplished in virtuous behavior; (2) he is not accomplished in concentration himself but he encourages others to become accomplished in concentration; (3) he is not accomplished in wisdom himself but he encourages others to become accomplished in wisdom; (4) he is not accomplished in liberation himself but he encourages others to become accomplished in liberation; (5) he is not accomplished in the knowledge and vision of liberation himself but he encourages others to become accomplished in the knowledge and vision of liberation.
+an5.18:1.8 | S: A mendicant with these five qualities is practicing for the welfare of others, but not their own.” | T: Possessing these five qualities, a bhikkhu is practicing for the welfare of others but not for his own welfare.”
+
+## an5.19
+an5.19:1.1 | S: “Mendicants, a mendicant with five qualities is practicing neither for their own welfare, nor that of others. | T: “Bhikkhus, possessing five qualities, a bhikkhu is practicing neither for his own welfare nor for the welfare of others.
+an5.19:1.2 | S: What five? | T: What five?
+an5.19:1.3 | S: It’s when a mendicant is not personally accomplished in ethics, immersion, wisdom, freedom, or the knowledge and vision of freedom. Nor do they encourage others in these qualities. | T: (1) Here, a bhikkhu is not accomplished in virtuous behavior himself and does not encourage others to become accomplished in virtuous behavior; (2) he is not accomplished in concentration himself and does not encourage others to become accomplished in concentration; (3) he is not accomplished in wisdom himself and does not encourage others to become accomplished in wisdom; (4) he is not accomplished in liberation himself and does not encourage others to become accomplished in liberation; (5) he is not accomplished in the knowledge and vision of liberation himself and does not encourage others to become accomplished in the knowledge and vision of liberation.
+an5.19:1.8 | S: A mendicant with these five qualities is practicing neither for their own welfare, nor that of others.” | T: Possessing these five qualities, a bhikkhu is practicing neither for his own welfare nor for the welfare of others.”
+
+## an5.1
+an5.1:1.1 | S: So I have heard. | T: Thus have I heard.
+an5.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an5.1:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an5.1:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+an5.1:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an5.1:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+an5.1:2.1 | S: “Mendicants, there are these five powers of a trainee. | T: “Bhikkhus, there are these five trainee’s powers.
+an5.1:2.2 | S: What five? | T: What five?
+an5.1:2.3 | S: The powers of faith, conscience, prudence, energy, and wisdom. | T: The power of faith, the power of moral shame, the power of moral dread, the power of energy, and the power of wisdom.
+an5.1:2.4 | S: These are the five powers of a trainee. | T: These are the five trainee’s powers.
+an5.1:3.1 | S: So you should train like this: | T: Therefore, bhikkhus, you should train yourselves thus:
+an5.1:3.2 | S: ‘We will have the trainee’s powers of faith, conscience, prudence, energy, and wisdom.’ | T: ‘We will possess the power of faith, a trainee’s power; we will possess the power of moral shame, a trainee’s power; we will possess the power of moral dread, a trainee’s power; we will possess the power of energy, a trainee’s power; we will possess the power of wisdom, a trainee’s power.’
+an5.1:3.3 | S: That’s how you should train.” | T: Thus, bhikkhus, should you train yourselves.”
+an5.1:3.4 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+an5.1:3.5 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+
+## an5.20
+an5.20:1.1 | S: “Mendicants, a mendicant with five qualities is practicing for both their own welfare and that of others. | T: “Bhikkhus, possessing five qualities, a bhikkhu is practicing both for his own welfare and for the welfare of others.
+an5.20:1.2 | S: What five? | T: What five?
+an5.20:1.3 | S: It’s when a mendicant is personally accomplished in ethics, immersion, wisdom, freedom, and the knowledge and vision of freedom. And they encourage others in these qualities. | T: (1) Here, a bhikkhu is himself accomplished in virtuous behavior and encourages others to become accomplished in virtuous behavior; (2) he is himself accomplished in concentration and encourages others to become accomplished in concentration; (3) he is himself accomplished in wisdom and encourages others to become accomplished in wisdom; (4) he is himself accomplished in liberation and encourages others to become accomplished in liberation; (5) he is himself accomplished in the knowledge and vision of liberation and encourages others to become accomplished in the knowledge and vision of liberation.
+an5.20:1.7 | S: A mendicant with these five qualities is practicing both for their own welfare and that of others.” | T: Possessing these five qualities, a bhikkhu is practicing both for his own welfare and for the welfare of others.”
+
+## an5.21
+an5.21:1.1 | S: “Mendicants, it is quite impossible for a disrespectful and irreverent mendicant with incompatible lifestyle to fulfill the practice dealing with supplementary regulations regarding their spiritual companions. | T: “(1) Bhikkhus, when a bhikkhu is irreverent and undeferential, and his behavior is uncongenial to his fellow monks, it is impossible for him to fulfill the factor of proper conduct.
+an5.21:1.2 | S: Without fulfilling the practice dealing with supplementary regulations, it’s impossible to fulfill the practice of a trainee. | T: (2) Without fulfilling the factor of proper conduct, it is impossible for him to fulfill the factor of a trainee.
+an5.21:1.3 | S: Without fulfilling the practice of a trainee, it’s impossible to fulfill ethics. | T: (3) Without fulfilling the factor of a trainee, it is impossible for him to fulfill virtuous behavior.
+an5.21:1.4 | S: Without fulfilling ethics, it’s impossible to fulfill right view. | T: (4) Without fulfilling virtuous behavior, it is impossible for him to fulfill right view.
+an5.21:1.5 | S: Without fulfilling right view, it’s impossible to fulfill right immersion. | T: (5) Without fulfilling right view, it is impossible for him to fulfill right concentration.
+an5.21:2.1 | S: But it is quite possible for a respectful and reverent mendicant with compatible lifestyle to fulfill the practice dealing with supplementary regulations regarding their spiritual companions. | T: “(1) But, bhikkhus, when a bhikkhu is reverential and deferential, and his behavior is congenial to his fellow monks, it is possible for him to fulfill the duty of proper conduct.
+an5.21:2.2 | S: Having fulfilled the practice dealing with supplementary regulations, it’s possible to fulfill the practice of a trainee. | T: (2) Having fulfilled the duty of proper conduct, it is possible for him to fulfill the duty of a trainee.
+an5.21:2.3 | S: Having fulfilled the practice of a trainee, it’s possible to fulfill ethics. | T: (3) Having fulfilled the duty of a trainee, it is possible for him to fulfill virtuous behavior.
+an5.21:2.4 | S: Having fulfilled ethics, it’s possible to fulfill right view. | T: (4) Having fulfilled virtuous behavior, it is possible for him to fulfill right view.
+an5.21:2.5 | S: Having fulfilled right view, it’s possible to fulfill right immersion.” | T: (5) Having fulfilled right view, it is possible for him to fulfill right concentration.”
+
+## an5.22
+an5.22:1.1 | S: “Mendicants, it is quite impossible for a disrespectful and irreverent mendicant with incompatible lifestyle to fulfill the practice dealing with supplementary regulations regarding their spiritual companions. | T: “(1) Bhikkhus, when a bhikkhu is irreverent and undeferential, and his behavior is uncongenial to his fellow monks, it is impossible for him to fulfill the factor of proper conduct.
+an5.22:1.2 | S: Without fulfilling the practice dealing with supplementary regulations, it’s impossible to fulfill the practice of a trainee. | T: (2) Without fulfilling the factor of proper conduct, it is impossible for him to fulfill the factor of a trainee.
+an5.22:1.3 | S: Without fulfilling the practice of a trainee, it’s impossible to fulfill the entire spectrum of ethics. | T: (3) Without fulfilling the factor of a trainee, it is impossible for him to fulfill the aggregate of virtuous behavior.
+an5.22:1.4 | S: Without fulfilling the entire spectrum of ethics, it’s impossible to fulfill the entire spectrum of immersion. | T: (4) Without fulfilling the aggregate of virtuous behavior, it is impossible for him to fulfill the aggregate of concentration.
+an5.22:1.5 | S: Without fulfilling the entire spectrum of immersion, it’s impossible to fulfill the entire spectrum of wisdom. | T: (5) Without fulfilling the aggregate of concentration, it is impossible for him to fulfill the aggregate of wisdom.
+an5.22:2.1 | S: But it is quite possible for a respectful and reverent mendicant with compatible lifestyle to fulfill the practice dealing with supplementary regulations regarding their spiritual companions. | T: “(1) But, bhikkhus, when a bhikkhu is reverential and deferential, and his behavior is congenial to his fellow monks, it is possible for him to fulfill the factor of proper conduct.
+an5.22:2.2 | S: Having fulfilled the practice dealing with supplementary regulations, it’s possible to fulfill the practice of a trainee. | T: (2) Having fulfilled the factor of proper conduct, it is possible for him to fulfill the factor of a trainee.
+an5.22:2.3 | S: Having fulfilled the practice of a trainee, it’s possible to fulfill the entire spectrum of ethics. | T: (3) Having fulfilled the factor of a trainee, it is possible for him to fulfill the aggregate of virtuous behavior.
+an5.22:2.4 | S: Having fulfilled the entire spectrum of ethics, it’s possible to fulfill the entire spectrum of immersion. | T: (4) Having fulfilled the aggregate of virtuous behavior, it is possible for him to fulfill the aggregate of concentration.
+an5.22:2.5 | S: Having fulfilled the entire spectrum of immersion, it’s possible to fulfill the entire spectrum of wisdom.” | T: (5) Having fulfilled the aggregate of concentration, it is possible for him to fulfill the aggregate of wisdom.”
+
+## an5.25
+an5.25:1.1 | S: “Mendicants, when right view is supported by five factors it has freedom of heart and freedom by wisdom as its fruit and benefit. | T: “Bhikkhus, when right view is assisted by five factors, it has liberation of mind as its fruit, liberation of mind as its fruit and benefit; it has liberation by wisdom as its fruit, liberation by wisdom as its fruit and benefit.
+an5.25:2.1 | S: What five? | T: What five?
+an5.25:2.2 | S: It’s when right view is supported by ethics, learning, discussion, serenity, and discernment. | T: Here, right view is assisted by virtuous behavior, learning, discussion, calm, and insight.
+an5.25:2.3 | S: When right view is supported by these five factors it has freedom of heart and freedom by wisdom as its fruit and benefit.” | T: When right view is assisted by these five factors, it has liberation of mind as its fruit, liberation of mind as its fruit and benefit; it has liberation by wisdom as its fruit, liberation by wisdom as its fruit and benefit.”
+
+## an5.29
+an5.29:1.1 | S: “Mendicants, there are five benefits of walking meditation. | T: “Bhikkhus, there are these five benefits of walking meditation.
+an5.29:1.2 | S: What five? | T: What five?
+an5.29:1.3 | S: You get fit for traveling, fit for striving in meditation, and healthy. What’s eaten, drunk, chewed, and tasted is properly digested. And immersion gained while walking lasts long. | T: One becomes capable of journeys; one becomes capable of striving; one becomes healthy; what one has eaten, drunk, consumed, and tasted is properly digested; the concentration attained through walking meditation is long lasting.
+an5.29:1.4 | S: These are the five benefits of walking meditation.” | T: These are the five benefits of walking meditation.”
+
+## an5.2
+an5.2:1.1 | S: “Mendicants, there are these five powers of a trainee. | T: At Sāvatthī. “Bhikkhus, there are these five trainee’s powers.
+an5.2:1.2 | S: What five? | T: What five?
+an5.2:1.3 | S: The powers of faith, conscience, prudence, energy, and wisdom. | T: The power of faith, the power of moral shame, the power of moral dread, the power of energy, and the power of wisdom.
+an5.2:2.1 | S: And what is the power of faith? | T: (1) “And what, bhikkhus, is the power of faith?
+an5.2:2.2 | S: It’s when a noble disciple has faith in the Realized One’s awakening: | T: Here, a noble disciple is endowed with faith. He places faith in the enlightenment of the Tathāgata thus:
+an5.2:2.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘The Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.’
+an5.2:2.4 | S: This is called the power of faith. | T: This is called the power of faith.
+an5.2:3.1 | S: And what is the power of conscience? | T: (2) “And what is the power of moral shame?
+an5.2:3.2 | S: It’s when a noble disciple has a conscience. They’re conscientious about bad conduct by way of body, speech, and mind, and conscientious about having any bad, unskillful qualities. | T: Here, a noble disciple has a sense of moral shame; he is ashamed of bodily, verbal, and mental misconduct; he is ashamed of acquiring evil, unwholesome qualities.
+an5.2:3.3 | S: This is called the power of conscience. | T: This is called the power of moral shame.
+an5.2:4.1 | S: And what is the power of prudence? | T: (3) “And what is the power of moral dread?
+an5.2:4.2 | S: It’s when a noble disciple is prudent. They’re prudent when it comes to bad conduct by way of body, speech, and mind, and prudent when it comes to acquiring any bad, unskillful qualities. | T: Here, a noble disciple dreads wrongdoing; he dreads bodily, verbal, and mental misconduct; he dreads acquiring evil, unwholesome qualities.
+an5.2:4.3 | S: This is called the power of prudence. | T: This is called the power of moral dread.
+an5.2:5.1 | S: And what is the power of energy? | T: (4) “And what is the power of energy?
+an5.2:5.2 | S: It’s when a noble disciple lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: Here, a noble disciple has aroused energy for abandoning unwholesome qualities and acquiring wholesome qualities; he is strong, firm in exertion, not casting off the duty of cultivating wholesome qualities.
+an5.2:5.3 | S: This is called the power of energy. | T: This is called the power of energy.
+an5.2:6.1 | S: And what is the power of wisdom? | T: (5) “And what is the power of wisdom?
+an5.2:6.2 | S: It’s when a noble disciple is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: Here, a noble disciple is wise; he possesses the wisdom that discerns arising and passing away, which is noble and penetrative and leads to the complete destruction of suffering.
+an5.2:6.3 | S: This is called the power of wisdom. | T: This is called the power of wisdom.
+an5.2:6.4 | S: These are the five powers of a trainee. | T: “These are the five trainee’s powers.
+an5.2:7.1 | S: So you should train like this: | T: Therefore, bhikkhus, you should train yourselves thus:
+an5.2:7.2 | S: ‘We will have the trainee’s powers of faith, conscience, prudence, energy, and wisdom.’ | T: ‘We will possess the power of faith, a trainee’s power; we will possess the power of moral shame, a trainee’s power; we will possess the power of moral dread, a trainee’s power; we will possess the power of energy, a trainee’s power; we will possess the power of wisdom, a trainee’s power.’
+an5.2:7.3 | S: That’s how you should train.” | T: Thus, bhikkhus, should you train yourselves.”
+
+## an5.303
+an5.303:1.1 | S: “For insight into greed, five things should be developed. | T: “Bhikkhus, for direct knowledge of lust, five things are to be developed.
+an5.303:1.2 | S: What five? | T: What five?
+an5.303:1.3 | S: The perceptions of ugliness, death, drawbacks, repulsiveness of food, and dissatisfaction with the whole world. | T: The perception of unattractiveness, the perception of death, the perception of danger, the perception of the repulsiveness of food, and the perception of non-delight in the entire world.
+an5.303:1.4 | S: For insight into greed, these five things should be developed.” | T: For direct knowledge of lust, these five things are to be developed.”
+
+## an5.304
+an5.304:1.1 | S: “For insight into greed, five things should be developed. | T: “Bhikkhus, for direct knowledge of lust, five things are to be developed.
+an5.304:1.2 | S: What five? | T: What five?
+an5.304:1.3 | S: The perceptions of impermanence, not-self, death, repulsiveness of food, and dissatisfaction with the whole world. | T: The perception of impermanence, the perception of non-self, the perception of death, the perception of the repulsiveness of food, and the perception of non-delight in the entire world.
+an5.304:1.4 | S: For insight into greed, these five things should be developed.” | T: For direct knowledge of lust, these five things are to be developed.”
+
+## an5.305
+an5.305:1.1 | S: “For insight into greed, five things should be developed. | T: “Bhikkhus, for direct knowledge of lust, five things are to be developed.
+an5.305:1.2 | S: What five? | T: What five?
+an5.305:1.3 | S: The perception of impermanence, the perception of suffering in impermanence, the perception of not-self in suffering, the perception of giving up, and the perception of fading away. | T: The perception of impermanence, the perception of suffering in what is impermanent, the perception of non-self in what is suffering, the perception of abandoning, and the perception of dispassion.
+an5.305:1.4 | S: For insight into greed, these five things should be developed.” | T: For direct knowledge of lust, these five things are to be developed.”
+
+## an5.306
+an5.306:1.1 | S: “For insight into greed, five things should be developed. | T: “Bhikkhus, for direct knowledge of lust, five things are to be developed.
+an5.306:1.2 | S: What five? | T: What five?
+an5.306:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of faith, the faculty of energy, the faculty of mindfulness, the faculty of concentration, and the faculty of wisdom.
+an5.306:1.4 | S: For insight into greed, these five things should be developed.” | T: For direct knowledge of lust, these five things are to be developed.”
+
+## an5.307
+an5.307:1.1 | S: “For insight into greed, five things should be developed. | T: “Bhikkhus, for direct knowledge of lust, five things are to be developed.
+an5.307:1.2 | S: What five? | T: What five?
+an5.307:1.3 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.307:1.4 | S: For insight into greed, these five things should be developed.” | T: For direct knowledge of lust, these five things are to be developed.”
+
+## an5.308-1152
+an5.308-1152:1.1 | S: “For the complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go of greed, five things should be developed.” | T: “Bhikkhus, for full understanding of lust … for the utter destruction … for the abandoning … for the destruction … for the vanishing … for the fading away … for the cessation … for the giving up … for the relinquishment of lust, five things are to be developed. What five? The perception of unattractiveness … all five sets of five as above, down to … The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom. For the relinquishment of lust, these five things are to be developed.”
+an5.308-1152:1.2 | S: “Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go … five things should be developed. | T: “Bhikkhus, for direct knowledge … for full understanding … for the utter destruction … for the abandoning … for the destruction … for the vanishing … for the fading away … for the cessation … for the giving up … for the relinquishment of hatred … of delusion … of anger … of hostility … of denigration … of insolence … of envy … of miserliness … of deceitfulness … of craftiness … of obstinacy … of vehemence … of conceit … of arrogance … of intoxication … of heedlessness, five things are to be developed.
+an5.308-1152:2.1 | S: What five? | T: What five? The perception of unattractiveness … all five sets of five as above, down to …
+an5.308-1152:2.2 | S: The powers of faith, energy, mindfulness, immersion, and wisdom. | T: The power of faith, the power of energy, the power of mindfulness, the power of concentration, and the power of wisdom.
+an5.308-1152:2.3 | S: For the letting go of negligence, these five things should be developed.” | T: For the relinquishment of heedlessness, these five things are to be developed.”
+an5.308-1152:4.2 | P: Pañcaṅgikañca sumanaṁ; | T: This is what the Blessed One said.
+an5.308-1152:4.7 | P: Gilānarājatikaṇḍaṁ, | T: Elated,
+an5.308-1152:4.10 | P: Kimilakkosakaṁ tathā; | T: those bhikkhus delighted in the Blessed One’s statement.
+an5.308-1152:4.13 | S: The Book of the Fives is finished. | T: The Book of the Fives is finished.
+
+## an5.30
+an5.30:1.1 | S: So I have heard. | T: Thus have I heard.
+an5.30:1.2 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants when he arrived at a village of the Kosalan brahmins named Icchānaṅgala. | T: On one occasion the Blessed One was wandering on tour among the Kosalans together with a large Saṅgha of bhikkhus when he reached the Kosalan brahmin village named Icchānaṅgala.
+an5.30:1.3 | S: He stayed in a forest near Icchānaṅgala. | T: There the Blessed One dwelled in the Icchānaṅgala woodland thicket.
+an5.30:1.4 | S: The brahmins and householders of Icchānaṅgala heard: | T: The brahmin householders of Icchānaṅgala heard:
+an5.30:1.5 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Icchānaṅgala. He is staying in a forest near Icchānaṅgala. | T: “It is said that the ascetic Gotama, the son of the Sakyans who went forth from a Sakyan family, has arrived at Icchānaṅgala and is now dwelling in the Icchānaṅgala woodland thicket.
+an5.30:1.6 | S: He has this good reputation: | T: Now a good report about that Master Gotama has circulated thus:
+an5.30:1.7 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘That Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed leader of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.
+an5.30:1.8 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: Having realized by his own direct knowledge this world with its devas, Māra, and Brahmā, this population with its ascetics and brahmins, its devas and humans, he makes it known to others.
+an5.30:1.9 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: He teaches a Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; he reveals a spiritual life that is perfectly complete and pure.’
+an5.30:1.10 | S: It’s good to see such perfected ones.” | T: Now it is good to see such arahants.”
+an5.30:1.11 | S: Then, when the night had passed, they took abundant fresh and cooked foods and went to the forest near Icchānaṅgala, where they stood outside the gates making a colossal racket. | T: Then, when the night had passed, the brahmin householders of Icchānaṅgala took abundant food of various kinds and went to the Icchānaṅgala woodland thicket. They stood outside the entrance making an uproar and a racket.
+an5.30:2.1 | S: Now, at that time Venerable Nāgita was the Buddha’s attendant. | T: Now on that occasion the Venerable Nāgita was the Blessed One’s attendant.
+an5.30:2.2 | S: Then the Buddha said to Nāgita, | T: The Blessed One addressed the Venerable Nāgita:
+an5.30:2.3 | S: “Nāgita, who’s making that colossal racket? You’d think it was fishermen hauling in a catch!” | T: “Who is making such an uproar and a racket, Nāgita? One would think it was fishermen at a haul of fish.”
+an5.30:2.4 | S: “Sir, it’s these brahmins and householders of Icchānaṅgala. They’ve brought many fresh and cooked foods, and they’re standing outside the gates wanting to offer it specially to the Buddha and the mendicant Saṅgha.” | T: “Bhante, these are the brahmin householders of Icchānaṅgala who have brought abundant food of various kinds. They are standing outside the entrance, wishing to offer it to the Blessed One and the Saṅgha of bhikkhus.”
+an5.30:2.5 | S: “Nāgita, may I never become famous. May fame not come to me. | T: “Let me never come upon fame, Nāgita, and may fame never catch up with me.
+an5.30:2.6 | S: There are those who can’t get the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of awakening when they want, without trouble or difficulty like I can. | T: One who does not gain at will, without trouble or difficulty, this bliss of renunciation, bliss of solitude, bliss of peace, bliss of enlightenment that I gain at will, without trouble or difficulty,
+an5.30:2.7 | S: Let them enjoy the filthy, lazy pleasure of possessions, honor, and popularity.” | T: might accept that vile pleasure, that slothful pleasure, the pleasure of gain, honor, and praise.”
+an5.30:3.1 | S: “Sir, may the Blessed One please relent now! May the Holy One relent! | T: “Let the Blessed One now consent, Bhante, let the Fortunate One consent.
+an5.30:3.2 | S: Now is the time for the Buddha to relent. | T: This is now the time for the Blessed One to consent.
+an5.30:3.3 | S: Wherever the Buddha now goes, the brahmins and householders, and people of town and country will incline the same way. | T: Wherever the Blessed One will go now, the brahmin householders of town and countryside will incline in the same direction.
+an5.30:3.4 | S: It’s like when the heavens rain heavily and the water flows downhill. | T: Just as, when thick drops of rain are pouring down, the water flows down along the slope,
+an5.30:3.5 | S: In the same way, wherever the Buddha now goes, the brahmins and householders, and people of town and country will incline the same way. | T: so too, wherever the Blessed One will go now, the brahmin householders of town and country will incline in the same direction.
+an5.30:3.6 | S: Why is that? | T: For what reason?
+an5.30:3.7 | S: Because of the Buddha’s ethics and wisdom.” | T: Because of the Blessed One’s virtuous behavior and wisdom.”
+an5.30:4.1 | S: “Nāgita, may I never become famous. May fame not come to me. | T: “Let me never come upon fame, Nāgita, and may fame never catch up with me.
+an5.30:4.2 | S: There are those who can’t get the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of awakening when they want, without trouble or difficulty like I can. | T: One who does not gain at will, without trouble or difficulty, this bliss of renunciation …
+an5.30:4.3 | S: Let them enjoy the filthy, lazy pleasure of possessions, honor, and popularity. | T: might accept that vile pleasure, that slothful pleasure, the pleasure of gain, honor, and praise.
+an5.30:4.4 | S: What you eat, drink, chew, and taste ends up as excrement and urine. | T: (1) “Nāgita, what is eaten, drunk, consumed, and tasted winds up as feces and urine:
+an5.30:4.5 | S: This is its outcome. | T: this is its outcome.
+an5.30:4.6 | S: When loved ones decay and perish, sorrow, lamentation, pain, sadness, and distress arise. | T: (2) From the change and alteration of things that are dear arise sorrow, lamentation, pain, dejection, and anguish:
+an5.30:4.7 | S: This is its outcome. | T: this is its outcome.
+an5.30:4.8 | S: When you pursue meditation on the feature of ugliness, revulsion at the feature of beauty becomes stabilized. | T: (3) For one devoted to practicing meditation on the mark of unattractiveness, revulsion toward the mark of the beautiful becomes established:
+an5.30:4.9 | S: This is its outcome. | T: this is its outcome.
+an5.30:4.10 | S: When you meditate observing impermanence in the six fields of contact, revulsion at contact becomes stabilized. | T: (4) For one who dwells contemplating impermanence in the six bases for contact, revulsion toward contact becomes established:
+an5.30:4.11 | S: This is its outcome. | T: this is its outcome.
+an5.30:4.12 | S: When you meditate observing rise and fall in the five grasping aggregates, revulsion at grasping becomes stabilized. | T: (5) For one who dwells contemplating arising and vanishing in the five aggregates subject to clinging, revulsion toward clinging becomes established:
+an5.30:4.13 | S: This is its outcome.” | T: this is its outcome.”
+
+## an5.36
+an5.36:1.1 | S: “Mendicants, there are these five timely gifts. | T: “Bhikkhus, there are these five timely gifts.
+an5.36:1.2 | S: What five? | T: What five?
+an5.36:1.3 | S: A gift to a visitor. | T: (1) One gives a gift to a visitor.
+an5.36:1.4 | S: A gift to someone setting out on a journey. | T: (2) One gives a gift to one setting out on a journey.
+an5.36:1.5 | S: A gift to someone who is sick. | T: (3) One gives a gift to a patient.
+an5.36:1.6 | S: A gift at a time of famine. | T: (4) One gives a gift during a famine.
+an5.36:1.7 | S: Presenting the freshly harvested grains and fruits first to those who are ethical. | T: (5) One first presents the newly harvested crops and fruits to the virtuous ones.
+an5.36:1.8 | S: These are the five timely gifts. | T: These are the five timely gifts.”
+an5.36:2.1 | S: The wise give at the right time, | T: At the proper time, those wise,
+an5.36:2.2 | S: being bountiful and rid of stinginess. | T: charitable, and generous folk
+an5.36:2.3 | S: A religious donation at the right time | T: give a timely gift to the noble ones,
+an5.36:2.4 | S: to the noble ones, upright and unaffected, | T: who are stable and upright;
+an5.36:3.1 | S: given with a clear and confident mind, | T: given with a clear mind,
+an5.36:3.2 | S: is indeed abundant. | T: one’s offering is vast.
+an5.36:3.3 | S: Those who rejoice at that, | T: Those who rejoice in such deeds
+an5.36:3.4 | S: or do other services, | T: or who provide other service
+an5.36:3.5 | S: don’t miss out on the offering; | T: do not miss out on the offering;
+an5.36:3.6 | S: they too have a share in the merit. | T: they too partake of the merit.
+an5.36:4.1 | S: So you should give without holding back, | T: Therefore, with a non-regressing mind,
+an5.36:4.2 | S: where a gift is very fruitful. | T: one should give a gift where it yields great fruit.
+an5.36:4.3 | S: The good deeds of sentient beings | T: Merits are the support of living beings
+an5.36:4.4 | S: support them in the next world.” | T: when they arise in the other world.
+
+## an5.37
+an5.37:1.1 | S: “Mendicants, when a giver gives food, they give the recipients five things. | T: “Bhikkhus, a donor who gives food gives the recipients five things.
+an5.37:1.2 | S: What five? | T: What five?
+an5.37:1.3 | S: Long life, beauty, happiness, strength, and eloquence. | T: One gives life, beauty, happiness, strength, and discernment.
+an5.37:1.4 | S: Giving long life, they have long life as a god or human. | T: (1) Having given life, one partakes of life, whether celestial or human.
+an5.37:1.5 | S: Giving beauty, they have beauty as a god or human. | T: (2) Having given beauty, one partakes of beauty, whether celestial or human.
+an5.37:1.6 | S: Giving happiness, they have happiness as a god or human. | T: (3) Having given happiness, one partakes of happiness, whether celestial or human.
+an5.37:1.7 | S: Giving strength, they have strength as a god or human. | T: (4) Having given strength, one partakes of strength, whether celestial or human.
+an5.37:1.8 | S: Giving eloquence, they are eloquent as a god or human. | T: (5) Having given discernment, one partakes of discernment, whether celestial or human.
+an5.37:1.9 | S: When a giver gives food, they give the recipients five things. | T: A donor who gives food gives the recipients these five things.”
+an5.37:2.1 | S: Being attentive, one is a giver of life, strength, | T: The wise one is a giver of life, strength,
+an5.37:2.2 | S: beauty, and eloquence. | T: beauty, and discernment.
+an5.37:2.3 | S: An intelligent giver of happiness | T: The intelligent one is a donor of happiness
+an5.37:2.4 | S: gains happiness in return. | T: and in turn acquires happiness.
+an5.37:3.1 | S: Giving life, strength, beauty, | T: Having given life, strength, beauty,
+an5.37:3.2 | S: happiness, and eloquence, | T: happiness, and discernment,
+an5.37:3.3 | S: they’re long-lived and famous | T: one is long-lived and famous
+an5.37:3.4 | S: wherever they’re reborn.” | T: wherever one is reborn.
+
+## an5.39
+an5.39:1.1 | S: “Mendicants, parents see five reasons to wish for the birth of a child in the family. | T: “Bhikkhus, considering five prospects, mother and father wish for a son to be born in their family.
+an5.39:1.2 | S: What five? | T: What five?
+an5.39:1.3 | S: Since we looked after them, they’ll look after us. | T: (1) ‘Having been supported by us, he will support us.
+an5.39:1.4 | S: They’ll do their duty for us. | T: (2) Or he will do work for us.
+an5.39:1.5 | S: The family customs will last. | T: (3) Our family lineage will be extended.
+an5.39:1.6 | S: They’ll take care of the inheritance. | T: (4) He will manage the inheritance,
+an5.39:1.7 | S: Or else when we have passed away they’ll give an offering on our behalf. | T: (5) or else, when we have passed on, he will give an offering on our behalf.’
+an5.39:1.8 | S: Parents see these five reasons to wish for the birth of a child in the family. | T: Considering these five prospects, mother and father wish for a son to be born in their family.”
+an5.39:2.1 | S: Seeing five reasons, | T: Considering the five prospects,
+an5.39:2.2 | S: astute people wish for a child. | T: wise people wish for a son.
+an5.39:2.3 | S: Since we looked after them, they’ll look after us. | T: “Supported by us, he will support us,
+an5.39:2.4 | S: They’ll do their duty for us. | T: or he will do work for us.
+an5.39:3.1 | S: The family customs will last. | T: The family lineage will be extended,
+an5.39:3.2 | S: They’ll take care of the inheritance. | T: he will manage the inheritance,
+an5.39:3.3 | S: Or else when we have passed away | T: or else, when we have passed on,
+an5.39:3.4 | S: they’ll give an offering on our behalf. | T: he will make an offering on our behalf.”
+an5.39:4.1 | S: Seeing these five reasons | T: Considering these prospects,
+an5.39:4.2 | S: astute people wish for a child. | T: wise people wish for a son.
+an5.39:4.3 | S: And so true persons, | T: Therefore good persons,
+an5.39:4.4 | S: grateful and thankful, | T: grateful and appreciative,
+an5.39:5.1 | S: look after their parents, | T: support their mother and father,
+an5.39:5.2 | S: remembering past deeds. | T: recalling how they helped one in the past;
+an5.39:5.3 | S: They do for their parents, | T: they do what is necessary for them
+an5.39:5.4 | S: as their parents did for them in the past. | T: as they did for oneself in the past.
+an5.39:6.1 | S: Following their advice, <j>looking after those who raised them, | T: Following their advice, nurturing those who brought him up,
+an5.39:6.2 | S: the family customs are not lost. | T: continuing the family lineage,
+an5.39:6.3 | S: Faithful, accomplished in ethics, | T: endowed with faith, virtuous:
+an5.39:6.4 | S: such a child is praiseworthy.” | T: this son is worthy of praise.
+
+## an5.3
+an5.3:1.1 | S: “Mendicants, when a mendicant has five qualities they live unhappily in this very life—with distress, anguish, and fever—and when the body breaks up, after death, they can expect a bad rebirth. | T: “Bhikkhus, possessing five qualities, a bhikkhu dwells in suffering in this very life—with distress, anguish, and fever—and with the breakup of the body, after death, a bad destination can be expected for him.
+an5.3:1.2 | S: What five? | T: What five?
+an5.3:1.3 | S: It’s when a mendicant is faithless, shameless, imprudent, lazy, and witless. | T: Here, a bhikkhu is devoid of faith, morally shameless, morally reckless, lazy, and unwise.
+an5.3:1.4 | S: When a mendicant possesses these five qualities they live unhappily in this very life—with distress, anguish, and fever—and when the body breaks up, after death, they can expect a bad rebirth. | T: Possessing these five qualities, a bhikkhu dwells in suffering in this very life—with distress, anguish, and fever—and with the breakup of the body, after death, he can expect a bad destination.
+an5.3:2.1 | S: When a mendicant has five qualities they live happily in this very life—without distress, anguish, or fever—and when the body breaks up, after death, they can expect a good rebirth. | T: “Bhikkhus, possessing five other qualities, a bhikkhu dwells happily in this very life—without distress, anguish, and fever—and with the breakup of the body, after death, a good destination can be expected for him.
+an5.3:2.2 | S: What five? | T: What five?
+an5.3:2.3 | S: It’s when a mendicant is faithful, conscientious, prudent, energetic, and wise. | T: Here, a bhikkhu is endowed with faith, has a sense of moral shame, has moral dread, and is energetic and wise.
+an5.3:2.4 | S: When a mendicant possesses these five qualities they live happily in this very life—without distress, anguish, or fever—and when the body breaks up, after death, they can expect a good rebirth.” | T: Possessing these five qualities, a bhikkhu dwells happily in this very life—without distress, anguish, and fever—and with the breakup of the body, after death, a good destination can be expected for him.”
+
+## an5.46
+an5.46:1.1 | S: “Mendicants, there are five accomplishments. | T: “Bhikkhus, there are these five accomplishments.
+an5.46:1.2 | S: What five? | T: What five?
+an5.46:1.3 | S: Accomplishment in faith, ethics, learning, generosity, and wisdom. | T: Accomplishment in faith, accomplishment in virtuous behavior, accomplishment in learning, accomplishment in generosity, and accomplishment in wisdom.
+an5.46:1.4 | S: These are the five accomplishments.” | T: These are the five accomplishments.”
+
+## an5.4
+an5.4:1.1 | S: “Mendicants, a mendicant with five qualities is placed in hell as if delivered there. | T: “Bhikkhus, possessing five qualities, a bhikkhu is deposited in hell as if brought there.
+an5.4:1.2 | S: What five? | T: What five?
+an5.4:1.3 | S: It’s when a mendicant is faithless, shameless, imprudent, lazy, and witless. | T: Here, a bhikkhu is devoid of faith, morally shameless, morally reckless, lazy, and unwise.
+an5.4:1.4 | S: A mendicant with these five qualities is placed in hell as if delivered there. | T: Possessing these five qualities, a bhikkhu is deposited in hell as if brought there.
+an5.4:2.1 | S: A mendicant with five qualities is placed in heaven as if delivered there. | T: “Bhikkhus, possessing five other qualities, a bhikkhu is deposited in heaven as if brought there.
+an5.4:2.2 | S: What five? | T: What five?
+an5.4:2.3 | S: It’s when a mendicant is faithful, conscientious, prudent, energetic, and wise. | T: Here, a bhikkhu is endowed with faith, has a sense of moral shame, has moral dread, and is energetic and wise.
+an5.4:2.4 | S: A mendicant with these five qualities is placed in heaven as if delivered there.” | T: Possessing these five qualities, a bhikkhu is deposited in heaven as if brought there.”
+

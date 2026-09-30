@@ -1,0 +1,363 @@
+## mn29
+mn29:1.1 | S: So I have heard. | T: Thus have I heard.
+mn29:1.2 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain, not long after Devadatta had left. | T: On one occasion the Blessed One was living at Rājagaha on the mountain Vulture Peak; it was soon after Devadatta had left.
+mn29:1.3 | S: There the Buddha spoke to the mendicants about Devadatta: | T: There, referring to Devadatta, the Blessed One addressed the bhikkhus thus:
+mn29:2.1 | S: “Mendicants, take the case of a gentleman who has gone forth out of faith from the lay life to homelessness, thinking, | T: “Bhikkhus, here some clansman goes forth out of faith from the home life into homelessness, considering:
+mn29:2.2 | S: ‘I’m swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. I’m swamped by suffering, mired in suffering. | T: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering.
+mn29:2.3 | S: Hopefully I can make an end to this entire mass of suffering.’ | T: Surely an ending of this whole mass of suffering can be known.’
+mn29:2.4 | S: When they’ve gone forth they generate possessions, honor, and popularity. | T: When he has gone forth thus, he acquires gain, honour, and renown. He is pleased with that gain, honour, and renown,
+mn29:2.5 | S: They’re happy with that, and they’ve got all they wished for. | T: and his intention is fulfilled.
+mn29:2.6 | S: And they glorify themselves and put others down because of that: | T: On account of it he lauds himself and disparages others thus:
+mn29:2.7 | S: ‘I’m the one with possessions, honor, and popularity. These other mendicants are obscure and insignificant.’ | T: ‘I am one who gets gain and renown, but these other bhikkhus are unknown,
+mn29:2.8 | S: And so they become indulgent and fall into negligence on account of those possessions, honor, and popularity. And being negligent they live in suffering. | T: of no account.’ He becomes intoxicated with that gain, honour, and renown, grows negligent, falls into negligence, and being negligent, he lives in suffering.
+mn29:2.9 | S: Suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But, passing over the heartwood, softwood, bark, and shoots, he’d cut off the branches and leaves and leave imagining they were heartwood. | T: “Suppose a man needing heartwood, seeking heartwood, wandering in search of heartwood, came to a great tree standing possessed of heartwood. Passing over its heartwood, its sapwood, its inner bark, and its outer bark, he would cut off its twigs and leaves and take them away thinking they were heartwood.
+mn29:2.10 | S: If a person with clear eyes saw him they’d say, | T: Then a man with good sight, seeing him, might say:
+mn29:2.11 | S: ‘This gentleman doesn’t know what heartwood, softwood, bark, shoots, or branches and leaves are. | T: ‘This good man did not know the heartwood, the sapwood, the inner bark, the outer bark, or the twigs and leaves.
+mn29:2.12 | S: That’s why he passed them over, cut off the branches and leaves, and left imagining they were heartwood. | T: Thus, while needing heartwood, seeking heartwood, wandering in search of heartwood, he came to a great tree standing possessed of heartwood, and passing over its heartwood, its sapwood, its inner bark, and its outer bark, he cut off its twigs and leaves and took them away thinking they were heartwood.
+mn29:2.13 | S: Whatever he needs to make from heartwood, he won’t succeed.’ … | T: Whatever it was this good man had to make with heartwood, his purpose will not be served.’
+mn29:2.14 | P: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: | T: So too, bhikkhus, here some clansman goes forth out of faith…
+mn29:2.20 | P: So tena lābhasakkārasilokena majjati pamajjati pamādaṁ āpajjati, pamatto samāno dukkhaṁ viharati. | T: …he lives in suffering.
+mn29:2.21 | S: This is called a mendicant who has grabbed the branches and leaves of the spiritual life | T: This bhikkhu is called one who has taken the twigs and leaves of the holy life and stopped short with that.
+mn29:2.22 | S: and stopped short with that. | T: (none)
+mn29:3.1 | S: Next, take a gentleman who has gone forth out of faith from the lay life to homelessness … | T: “Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering:
+mn29:3.2 | P: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, | T: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering.
+mn29:3.3 | P: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. | T: Surely an ending of this whole mass of suffering can be known.’
+mn29:3.4 | S: When they’ve gone forth they generate possessions, honor, and popularity. | T: When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown,
+mn29:3.5 | S: They’re not happy with that, and haven’t got all they wished for. | T: and his intention is not fulfilled.
+mn29:3.6 | S: They don’t glorify themselves and put others down on account of that. | T: He does not, on account of it, laud himself and disparage others.
+mn29:3.7 | S: Nor do they become indulgent and fall into negligence on account of those possessions, honor, and popularity. | T: He does not become intoxicated with that gain, honour, and renown; he does not grow negligent and fall into negligence.
+mn29:3.8 | S: Being diligent, they achieve accomplishment in ethics. | T: Being diligent, he achieves the attainment of virtue.
+mn29:3.9 | S: They’re happy with that, and they’ve got all they wished for. | T: He is pleased with that attainment of virtue and his intention is fulfilled.
+mn29:3.10 | S: And they glorify themselves and put others down on account of that: | T: On account of it he lauds himself and disparages others thus:
+mn29:3.11 | S: ‘I’m the one who is ethical, of good character. These other mendicants are unethical, of bad character.’ | T: ‘I am virtuous, of good character, but these other bhikkhus are immoral, of evil character.’
+mn29:3.12 | S: And so they become indulgent and fall into negligence regarding their accomplishment in ethics. And being negligent they live in suffering. | T: He becomes intoxicated with that attainment of virtue, grows negligent, falls into negligence, and being negligent, he lives in suffering.
+mn29:3.13 | S: Suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But, passing over the heartwood, softwood, and bark, he’d cut off the shoots and leave imagining they were heartwood. | T: “Suppose a man needing heartwood, seeking heartwood, wandering in search of heartwood, came to a great tree standing possessed of heartwood. Passing over its heartwood, its sapwood, and its inner bark, he would cut off its outer bark and take it away thinking it was heartwood.
+mn29:3.14 | S: If a person with clear eyes saw him they’d say, | T: Then a man with good sight, seeing him, might say:
+mn29:3.15 | S: ‘This gentleman doesn’t know what heartwood, softwood, bark, shoots, or branches and leaves are. | T: ‘This good man did not know the heartwood…or the twigs and leaves.
+mn29:3.16 | S: That’s why he passed them over, cut off the shoots, and left imagining they were heartwood. | T: Thus, while needing heartwood…he cut off its outer bark and took it away thinking it was heartwood.
+mn29:3.17 | S: Whatever he needs to make from heartwood, he won’t succeed.’ … | T: Whatever it was this good man had to make with heartwood, his purpose will not be served.’
+mn29:4.1 | P: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: | T: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering.
+mn29:4.13 | S: This is called a mendicant who has grabbed the shoots of the spiritual life | T: This bhikkhu is called one who has taken the outer bark of the holy life and stopped short with that.
+mn29:4.14 | S: and stopped short with that. | T: (none)
+mn29:4.15 | S: Next, take a gentleman who has gone forth out of faith from the lay life to homelessness … | T: “Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering:
+mn29:4.16 | P: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, | T: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering.
+mn29:4.17 | P: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. | T: Surely an ending of this whole mass of suffering can be known.’
+mn29:4.18 | S: When they’ve gone forth they generate possessions, honor, and popularity. … | T: When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown,
+mn29:4.19 | P: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. | T: and his intention is not fulfilled…Being diligent,
+mn29:4.21 | P: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno sīlasampadaṁ ārādheti. | T: he achieves the attainment of virtue.
+mn29:4.22 | P: So tāya sīlasampadāya attamano hoti no ca kho paripuṇṇasaṅkappo. | T: He is pleased with that attainment of virtue, but his intention is not fulfilled.
+mn29:4.23 | P: So tāya sīlasampadāya na attānukkaṁseti, na paraṁ vambheti. | T: He does not, on account of it, laud himself and disparage others.
+mn29:4.24 | P: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati. | T: He does not become intoxicated with that attainment of virtue; he does not grow negligent and fall into negligence.
+mn29:4.25 | S: Being diligent, they achieve accomplishment in immersion. | T: Being diligent, he achieves the attainment of concentration.
+mn29:4.26 | S: They’re happy with that, and they’ve got all they wished for. | T: He is pleased with that attainment of concentration and his intention is fulfilled.
+mn29:4.27 | S: And they glorify themselves and put others down on account of that: | T: On account of it he lauds himself and disparages others thus:
+mn29:4.28 | S: ‘I’m the one with immersion and unified mind. These other mendicants lack immersion, they have straying minds.’ | T: ‘I am concentrated, my mind is unified, but these other bhikkhus are unconcentrated, with their minds astray.’
+mn29:4.29 | S: And so they become indulgent and fall into negligence regarding that accomplishment in immersion. And being negligent they live in suffering. | T: He becomes intoxicated with that attainment of concentration, grows negligent, falls into negligence, and being negligent, he lives in suffering.
+mn29:4.30 | S: Suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But, passing over the heartwood and softwood, he’d cut off the bark and leave imagining it was heartwood. | T: “Suppose a man needing heartwood, seeking heartwood, wandering in search of heartwood, came to a great tree standing possessed of heartwood. Passing over its heartwood and its sapwood, he would cut off its inner bark and take it away thinking it was heartwood.
+mn29:4.31 | S: If a person with clear eyes saw him they’d say: ‘This gentleman doesn’t know what heartwood, softwood, bark, shoots, or branches and leaves are. | T: Then a man with good sight, seeing him, might say: ‘This good man did not know the heartwood…or the twigs and leaves.
+mn29:4.32 | S: That’s why he passed them over, cut off the bark, and left imagining it was heartwood. | T: Thus, while needing heartwood…he cut off its inner bark and took it away thinking it was hear twood.
+mn29:4.33 | S: Whatever he needs to make from heartwood, he won’t succeed.’ … | T: Whatever it was this good man had to make with heartwood, his purpose will not be served.’
+mn29:4.34 | P: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: | T: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering.
+mn29:4.48 | S: This is called a mendicant who has grabbed the bark of the spiritual life | T: This bhikkhu is called one who has taken the inner bark of the holy life and stopped short with that.
+mn29:4.49 | S: and stopped short with that. | T: (none)
+mn29:5.1 | S: Next, take a gentleman who has gone forth out of faith from the lay life to homelessness … | T: “Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering:
+mn29:5.2 | P: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, | T: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering.
+mn29:5.3 | P: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. | T: Surely an ending of this whole mass of suffering can be known.’
+mn29:5.4 | S: When they’ve gone forth they generate possessions, honor, and popularity. … | T: When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown,
+mn29:5.5 | P: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. | T: and his intention is not fulfilled…Being diligent,
+mn29:5.7 | P: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati. | T: he achieves the attainment of virtue.
+mn29:5.9 | P: So tāya sīlasampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. | T: He is pleased with that attainment of virtue, but his intention is not fulfilled…Being diligent,
+mn29:5.11 | P: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno samādhisampadaṁ ārādheti. | T: he achieves the attainment of concentration.
+mn29:5.12 | P: So tāya samādhisampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. | T: He is pleased with that attainment of concentration, but his intention is not fulfilled.
+mn29:5.13 | P: So tāya samādhisampadāya na attānukkaṁseti, na paraṁ vambheti. | T: He does not, on account of it, laud himself and disparage others.
+mn29:5.14 | S: Being diligent, they achieve knowledge and vision. | T: He does not become intoxicated with that attainment of concentration; he does not grow negligent and fall into negligence. Being diligent, he achieves knowledge and vision.
+mn29:5.15 | S: They’re happy with that, and they’ve got all they wished for. | T: He is pleased with that knowledge and vision and his intention is fulfilled.
+mn29:5.16 | S: And they glorify themselves and put others down on account of that, | T: On account of it he lauds himself and disparages others thus:
+mn29:5.17 | S: ‘I’m the one who meditates knowing and seeing. | T: ‘I live knowing and seeing,
+mn29:5.18 | S: These other mendicants meditate without knowing and seeing.’ | T: (none)
+mn29:5.19 | S: And so they become indulgent and fall into negligence regarding that knowledge and vision. And being negligent they live in suffering. | T: but these other bhikkhus live unknowing and unseeing.’ He becomes intoxicated with that knowledge and vision, grows negligent, falls into negligence, and being negligent, he lives in suffering.
+mn29:5.20 | S: Suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But, passing over the heartwood, he’d cut out the softwood and leave imagining it was heartwood. | T: “Suppose a man needing heartwood, seeking heartwood, wandering in search of heartwood, came to a great tree standing possessed of heartwood. Passing over its heartwood, he would cut off its sapwood and take it away thinking it was heartwood.
+mn29:5.21 | S: If a person with clear eyes saw him they’d say, | T: Then a man with good sight, seeing him, might say:
+mn29:5.22 | S: ‘This gentleman doesn’t know what heartwood, softwood, bark, shoots, or branches and leaves are. | T: ‘This good man did not know the heartwood…or the twigs and leaves.
+mn29:5.23 | S: That’s why he passed them over, cut out the softwood, and left imagining it was heartwood. | T: Thus, while needing heartwood…he cut off its sapwood and took it away thinking it was heartwood.
+mn29:5.24 | S: Whatever he needs to make from heartwood, he won’t succeed.’ … | T: Whatever it was this good man had to make with heartwood, his purpose will not be served.’
+mn29:5.25 | P: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: | T: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering.
+mn29:5.42 | S: This is called a mendicant who has grabbed the softwood of the spiritual life | T: This bhikkhu is called one who has taken the sapwood of the holy life and stopped short with that.
+mn29:5.43 | S: and stopped short with that. | T: (none)
+mn29:6.1 | S: Next, take a gentleman who has gone forth out of faith from the lay life to homelessness, thinking, | T: “Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering:
+mn29:6.2 | S: ‘I’m swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. I’m swamped by suffering, mired in suffering. | T: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering.
+mn29:6.3 | S: Hopefully I can make an end to this entire mass of suffering.’ | T: Surely an ending of this whole mass of suffering can be known.’
+mn29:6.4 | S: When they’ve gone forth they generate possessions, honor, and popularity. | T: When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown,
+mn29:6.5 | S: They’re not happy with that, and haven’t got all they wished for. | T: (none)
+mn29:6.6 | S: They don’t glorify themselves and put others down on account of that. | T: (none)
+mn29:6.7 | S: Nor do they become indulgent and fall into negligence on account of those possessions, honor, and popularity. Being diligent, they achieve accomplishment in ethics. | T: and his intention is not fulfilled …When he is diligent, he achieves the attainment of virtue. He is pleased with that attainment of virtue,
+mn29:6.8 | S: They’re happy with that, but they haven’t got all they wished for. | T: (none)
+mn29:6.9 | S: They don’t glorify themselves and put others down on account of that. | T: (none)
+mn29:6.10 | S: Nor do they become indulgent and fall into negligence regarding that accomplishment in ethics. Being diligent, they achieve accomplishment in immersion. | T: but his intention is not fulfilled…When he is diligent,
+mn29:6.11 | S: They’re happy with that, but they haven’t got all they wished for. | T: (none)
+mn29:6.12 | S: They don’t glorify themselves and put others down on account of that. | T: (none)
+mn29:6.13 | S: Nor do they become indulgent and fall into negligence regarding that accomplishment in immersion. Being diligent, they achieve knowledge and vision. | T: he achieves the attainment of concentration. He is pleased with that attainment of concentration, but his intention is not fulfilled…When he is diligent, he achieves knowledge and vision. He is pleased with that knowledge and vision,
+mn29:6.14 | S: They’re happy with that, but they haven’t got all they wished for. | T: but his intention is not fulfilled.
+mn29:6.15 | S: They don’t glorify themselves and put others down on account of that. | T: He does not, on account of it, laud himself and disparage others.
+mn29:6.16 | S: Nor do they become indulgent and fall into negligence regarding that knowledge and vision. Being diligent, they achieve irreversible freedom. | T: He does not become intoxicated with that knowledge and vision; he does not grow negligent and fall into negligence. Being diligent, he attains perpetual liberation.
+mn29:6.17 | S: And it’s impossible for that mendicant to fall away from that irreversible freedom. | T: And it is impossible for that bhikkhu to fall away from that perpetual deliverance.
+mn29:6.18 | S: Suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. He’d cut out just the heartwood and leave knowing it was heartwood. | T: “Suppose a man needing heartwood, seeking heartwood, wandering in search of heartwood, came to a great tree standing possessed of heartwood, and cutting off only its heartwood, he would take it away knowing it was heartwood.
+mn29:6.19 | S: If a person with clear eyes saw him they’d say, | T: Then a man with good sight, seeing him, might say:
+mn29:6.20 | S: ‘This gentleman knows what heartwood, softwood, bark, shoots, and branches and leaves are. | T: ‘This good man knew the heartwood, the sapwood, the inner bark, the outer bark, and the twigs and leaves.
+mn29:6.21 | S: That’s why he cut out just the heartwood and left knowing it was heartwood. | T: Thus, while needing heartwood, seeking heartwood, wandering in search of heartwood, he came to a great tree standing possessed of heartwood, and cutting off only its heartwood, he took it away knowing it was heartwood.
+mn29:6.22 | S: Whatever he needs to make from heartwood, he will succeed.’ … | T: Whatever it was this good man had to make with heartwood, his purpose will be served.’
+mn29:6.23 | P: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: | T: So too, bhikkhus, here some clansman goes forth out of faith…When he is diligent,
+mn29:6.39 | S: It’s impossible for that mendicant to fall away from that irreversible freedom. | T: he attains perpetual liberation. And it is impossible for that bhikkhu to fall away from that perpetual deliverance.
+mn29:7.1 | S: And so, mendicants, this spiritual life is not lived for the sake of possessions, honor, and popularity, or for accomplishment in ethics, or for accomplishment in immersion, or for knowledge and vision. | T: “So this holy life, bhikkhus, does not have gain, honour, and renown for its benefit, or the attainment of virtue for its benefit, or the attainment of concentration for its benefit, or knowledge and vision for its benefit.
+mn29:7.2 | S: It is this unshakable freedom of heart | T: (none)
+mn29:7.3 | S: that is the goal of the spiritual life, the core and the final end.” | T: But it is this unshakeable deliverance of mind that is the goal of this holy life, its heartwood, and its end.”
+mn29:7.4 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn29:7.5 | S: Satisfied, the mendicants approved what the Buddha said. | T: The bhikkhus were satisfied and delighted in the Blessed One’s words.
+
+## sn4.25
+sn4.25:1.1 | S: And then Māra the Wicked, after reciting these verses of disillusionment in the Buddha’s presence, left that place. He sat cross-legged on the ground not far from the Buddha, silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, scratching the ground with a stick. | T: Then Mara the Evil One, having spoken these verses of disappointment in the presence of the Blessed One, went away from that spot and sat down cross-legged on the ground not far from the Blessed One, silent, dismayed, with his shoulders drooping, downcast, brooding, unable to speak, scratching the ground with a stick.
+sn4.25:1.2 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked, and addressed him in verse: | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached Mara the Evil One and addressed him in verse:
+sn4.25:2.1 | S: “Why so downhearted, dad? | T: “Why are you despondent, father?
+sn4.25:2.2 | S: What man are you upset about? | T: Who’s the man for whom you grieve?
+sn4.25:2.3 | S: We’ll catch him with the snare of lust, | T: We’ll catch him with the snare of lust
+sn4.25:2.4 | S: like an elephant in the wild. | T: As they catch the forest elephant.
+sn4.25:2.5 | S: We’ll tie him up and bring him back— | T: We’ll bind him tightly and bring him back,
+sn4.25:2.6 | S: he’ll fall under your sway!” | T: And he’ll be under your control.”
+sn4.25:3.1 | S: “In this world he is the perfected one, the Holy One. | T: Mara: “The Arahant, the Fortunate One in the world,
+sn4.25:3.2 | S: He’s not easily seduced by lust. | T: Is not easily drawn by means of lust.
+sn4.25:3.3 | S: He has slipped free of Māra’s dominion; | T: He has gone beyond Mara’s realm:
+sn4.25:3.4 | S: that’s why I’m so upset.” | T: Therefore I sorrow so bitterly.”
+sn4.25:4.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and said to him, | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached the Blessed One and said to him:
+sn4.25:4.2 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:4.3 | S: But the Buddha ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:5.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—went off to the side and took counsel:
+sn4.25:5.2 | S: “Men have a diverse spectrum of tastes. | T: “Men’s tastes are diverse.
+sn4.25:5.3 | S: Why don’t we each manifest in the form of a hundred young maidens?” | T: Suppose we each manifest ourselves in the form of a hundred maidens.” Then Mara’s three daughters, each manifesting herself in the form of a hundred maidens,
+sn4.25:5.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: approached the Blessed One and said to him:
+sn4.25:5.5 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:5.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:6.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: Then Mara’s daughters went off to the side and again took counsel:
+sn4.25:6.2 | S: “Men have a diverse spectrum of tastes. | T: “Men’s tastes are diverse.
+sn4.25:6.3 | S: Why don’t we each manifest in the form of a hundred women who have never given birth?” | T: Suppose we each manifest ourselves in the form of a hundred women who have never given birth.” Then Mara’s three daughters, each manifesting herself in the form of a hundred women who have never given birth … in the form of a hundred women who have given birth once … … in the form of a hundred women who have given birth twice … in the form of a hundred women of middle age … in the form of a hundred old women,
+sn4.25:6.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: approached the Blessed One and said to him:
+sn4.25:6.5 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:6.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:7.1 | S: Then Craving, Malignancy, and Lust … | T: (none)
+sn4.25:7.4 | S: each manifested in the form of a hundred women who have given birth once … | T: (none)
+sn4.25:8.4 | S: women who have given birth twice … | T: (none)
+sn4.25:8.9 | S: middle-aged women … | T: (none)
+sn4.25:9.4 | S: old women … | T: (none)
+sn4.25:9.5 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: (none)
+sn4.25:9.6 | S: Then Craving, Malignancy, and Lust withdrew to one side and said, | T: Then Mara’s daughters—Taṇha, Arati, and Raga—went off to the side and said:
+sn4.25:9.7 | S: “What our father said is true: | T: “What our father told us is true:
+sn4.25:10.1 | S: ‘In this world he is the perfected one, the Holy One. | T: “‘The Arahant, the Fortunate One in the world …
+sn4.25:10.2 | S: He’s not easily seduced by lust. | T: (none)
+sn4.25:10.3 | S: He has slipped free of Māra’s dominion; | T: (none)
+sn4.25:10.4 | S: that’s why I’m so upset.’ | T: Therefore I sorrow so bitterly.’
+sn4.25:11.1 | S: For if we had come on to any ascetic or brahmin like this who was not free of lust, his heart would explode, or he’d spew hot blood from his mouth, or he’d go mad or lose his mind. | T: “If we had assailed with such tactics any ascetic or brahmin who was not devoid of lust, either his heart would have burst, or he would have vomited hot blood from his mouth, or he would have gone mad or become mentally deranged;
+sn4.25:11.2 | S: He’d dry up, wither away, and shrivel up like a green reed that was mowed down.” | T: or else he would have dried up and withered away and become shrivelled, just as a green reed that has been mowed down would dry up and wither away and become shrivelled.”
+sn4.25:12.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and stood to one side. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached the Blessed One and stood to one side.
+sn4.25:12.2 | S: Māra’s daughter Craving addressed the Buddha in verse: | T: Standing to one side, Mara’s daughter Taṇha addressed the Blessed One in verse:
+sn4.25:13.1 | S: “Are you swamped by sorrow <j>that you meditate in the forest? | T: “Is it because you are sunk in sorrow That you meditate in the woods?
+sn4.25:13.2 | S: Have you lost a fortune, or do you long for one? | T: Because you’ve lost wealth or pine for it,
+sn4.25:13.3 | S: Or perhaps you’ve committed <j>some crime in the village? | T: Or committed some crime in the village?
+sn4.25:13.4 | S: Why don’t you get too close to people? | T: Why don’t you make friends with people? Why don’t you form any intimate ties?”
+sn4.25:13.5 | S: And why does no one get close to you?” | T: The Blessed One:
+sn4.25:14.1 | S: “I’ve reached the goal, peace of heart. | T: (none)
+sn4.25:14.2 | S: Having conquered the army <j>of the likable and pleasant, | T: “Having conquered the army of the pleasant and agreeable,
+sn4.25:14.3 | S: alone, practicing absorption, I awakened to bliss. | T: Meditating alone, I discovered bliss, The attainment of the goal, the peace of the heart.
+sn4.25:14.4 | S: That’s why I don’t get too close to people, | T: Therefore I don’t make friends with people,
+sn4.25:14.5 | S: and no one gets too close to me.” | T: Nor will I form any intimate ties.”
+sn4.25:15.1 | S: Then Māra’s daughter Malignancy addressed the Buddha in verse: | T: Then Mara’s daughter Arati addressed the Blessed One in verse:
+sn4.25:16.1 | S: “How does a mendicant who has crossed five floods | T: “How does a bhikkhu here often dwell That, five floods crossed,
+sn4.25:16.2 | S: usually meditate here while crossing the sixth? | T: he here has crossed the sixth?
+sn4.25:16.3 | S: How do they usually practice absorption <j>so that sensual perceptions | T: How does he meditate so sensual perceptions
+sn4.25:16.4 | S: are blocked out and don’t get hold of them?” | T: Are kept at bay and fail to grip him?”
+sn4.25:17.1 | S: “With tranquil body and mind well freed, | T: The Blessed One: “Tranquil in body, in mind well liberated,
+sn4.25:17.2 | S: without making choices, mindful, homeless; | T: Not generating, mindful, homeless,
+sn4.25:17.3 | S: understanding the teaching, <j>they practice absorption without placing the mind; | T: Knowing Dhamma, meditating thought-free,
+sn4.25:17.4 | S: they’re not shaking or drifting or rigid. | T: He does not erupt, or drift, or stiffen.
+sn4.25:18.1 | S: That’s how a mendicant who has crossed five floods | T: “When a bhikkhu here often dwells thus, With five floods crossed,
+sn4.25:18.2 | S: usually meditates here while crossing the sixth. | T: he here has crossed the sixth. When he meditates thus,
+sn4.25:18.3 | S: That’s how they usually practice absorption <j>so that sensual perceptions | T: sensual perceptions
+sn4.25:18.4 | S: are blocked out and don’t get hold of them.” | T: Are kept at bay and fail to grip him.”
+sn4.25:19.1 | S: Then Māra’s daughter Lust addressed the Buddha in verse: | T: Then Mara’s daughter Raga addressed the Blessed One in verse:
+sn4.25:20.1 | S: “He lives with his community after cutting off craving, | T: “He has cut off craving, faring with his group and order;
+sn4.25:20.2 | S: and many of the faithful will cross over for sure. | T: Surely many other beings will cross.
+sn4.25:20.3 | S: Alas, this homeless one will snatch many men away, | T: Alas, this homeless one will snatch many people
+sn4.25:20.4 | S: and lead them past the King of Death!” | T: And lead them away beyond the King of Death.”
+sn4.25:21.1 | S: “The great heroes they lead | T: The Blessed One: “Truly the Tathagatas, the great heroes,
+sn4.25:21.2 | S: by means of the true teaching. | T: Lead by means of the true Dhamma.
+sn4.25:21.3 | S: When the Realized Ones are leading by the teaching, | T: When they are leading by means of the Dhamma,
+sn4.25:21.4 | S: how could anyone who knows be jealous?” | T: What envy can there be in those who understand?”
+sn4.25:22.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached Mara the Evil One.
+sn4.25:22.2 | S: Māra the Wicked saw them coming off in the distance, | T: Mara saw them coming in the distance and addressed them in verses:
+sn4.25:22.3 | S: and addressed them in verse: | T: (none)
+sn4.25:23.1 | S: “Fools! You drill into a mountain | T: “Fools! You tried to batter a mountain
+sn4.25:23.2 | S: with lotus stalks! | T: With the stalks of lotus flowers,
+sn4.25:23.3 | S: You dig up a hill with your nails! | T: To dig up a mountain with your nails,
+sn4.25:23.4 | S: You chew iron with your teeth! | T: To chew iron with your teeth.
+sn4.25:24.1 | S: You seek a footing in the abyss, as it were, | T: (none)
+sn4.25:24.2 | S: while lifting a rock with your head! | T: “As if, having lifted a rock with your head, You sought a foothold in the abyss;
+sn4.25:24.3 | S: After attacking a stump with your breast, as it were, | T: As if you struck a stump with your breast,
+sn4.25:24.4 | S: you leave Gotama disappointed.” | T: You part from Gotama disappointed.”
+sn4.25:25.1 | S: They came dazzling— | T: They had come to him glittering with beauty—
+sn4.25:25.2 | S: Craving, Malignancy, and Lust. | T: Taṇha, Arati, and Raga—
+sn4.25:25.3 | S: But the Teacher brushed them off right there, | T: But the Teacher swept them away right there
+sn4.25:25.4 | S: like the gale, a fallen tuft. | T: As the wind, a fallen cotton tuft.
+sn4.25:26.5 | S: The Linked Discourses with Māra are complete. | T: (none)
+
+## an8.7
+an8.7:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain, not long after Devadatta had left. | T: On one occasion the Blessed One was dwelling at Rājagaha on Mount Vulture Peak not long after Devadatta had left.
+an8.7:1.2 | S: There the Buddha spoke to the mendicants about Devadatta: | T: There the Blessed One addressed the bhikkhus with reference to Devadatta:
+an8.7:1.3 | S: “Mendicants, it’s good for a mendicant to check their own failings from time to time. | T: “Bhikkhus, it is good for a bhikkhu from time to time to review his own failings.
+an8.7:1.4 | S: It’s good for a mendicant to check the failings of others from time to time. | T: It is good for him from time to time to review the failings of others.
+an8.7:1.5 | S: It’s good for a mendicant to check their own successes from time to time. | T: It is good for him from time to time to review his own achievements.
+an8.7:1.6 | S: It’s good for a mendicant to check the successes of others from time to time. | T: It is good for him from time to time to review the achievements of others.
+an8.7:1.7 | S: Overcome and overwhelmed by eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: Because he was over come and obsessed by eight bad conditions, Devadatta is bound for the plane of misery, bound for hell, and he will remain there for an eon, unredeemable. What eight? “(1) Because he was overcome and obsessed by gain, Devadatta is bound for the plane of misery, bound for hell, and he will remain there for an eon,
+an8.7:2.1 | S: What eight? | T: unredeemable.
+an8.7:2.2 | S: Overcome and overwhelmed by gain … | T: (2) Because he was overcome and obsessed by loss …
+an8.7:2.3 | S: loss … | T: (none)
+an8.7:2.4 | S: fame … | T: (3) … by fame …
+an8.7:2.5 | S: disgrace … | T: (4) … by disrepute …
+an8.7:2.6 | S: honor … | T: (5) … by honor … (6) … by lack of honor …
+an8.7:2.7 | S: dishonor … | T: (7) …
+an8.7:2.8 | S: corrupt wishes … | T: (none)
+an8.7:2.9 | S: bad friendship, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: by evil desires … (8) … by bad friendship, Devadatta is bound for the plane of misery, bound for hell, and he will remain there for an eon, unredeemable.
+an8.7:2.10 | S: Overcome and overwhelmed by these eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: Because he was overcome and obsessed by these eight bad conditions, Devadatta is bound for the plane of misery, bound for hell, and he will remain there for an eon, unredeemable.
+an8.7:3.1 | S: It’s good for a mendicant, whenever they encounter it, to overcome gain … | T: “It is good for a bhikkhu to overcome gain whenever it arises. It is good for him to overcome loss whenever it arises …
+an8.7:3.2 | S: loss … | T: (none)
+an8.7:3.3 | S: fame … | T: to overcome fame …
+an8.7:3.4 | S: disgrace … | T: disrepute …
+an8.7:3.5 | S: honor … | T: honor … lack of honor …
+an8.7:3.6 | S: dishonor … | T: (none)
+an8.7:3.7 | S: corrupt wishes … | T: evil desires …
+an8.7:3.8 | S: bad friendship. | T: bad friendship whenever it arises.
+an8.7:4.1 | S: What advantage does a mendicant gain by overcoming these eight things? | T: “And for what reason should a bhikkhu overcome gain whenever it arises? For what reason should he overcome loss …
+an8.7:4.3 | P: uppannaṁ yasaṁ … | T: fame …
+an8.7:4.4 | P: uppannaṁ ayasaṁ … | T: disrepute …
+an8.7:4.5 | P: uppannaṁ sakkāraṁ … | T: honor …
+an8.7:4.6 | P: uppannaṁ asakkāraṁ … | T: lack of honor …
+an8.7:4.7 | P: uppannaṁ pāpicchataṁ … | T: evil desires …
+an8.7:5.1 | S: The distressing and feverish defilements that might arise in someone who lives without overcoming these eight things do not arise when they have overcome them. | T: bad friendship whenever it arises? Those taints, distressful and feverish, that might arise in one who has not overcome arisen gain do not occur in one who has overcome it. Those taints, distressful and feverish, that might arise in one who has not overcome arisen loss …
+an8.7:5.3 | P: uppannaṁ yasaṁ … | T: arisen fame …
+an8.7:5.4 | P: uppannaṁ ayasaṁ … | T: arisen disrepute …
+an8.7:5.5 | P: uppannaṁ sakkāraṁ … | T: arisen honor …
+an8.7:5.6 | P: uppannaṁ asakkāraṁ … | T: arisen lack of honor …
+an8.7:5.7 | P: uppannaṁ pāpicchataṁ … | T: arisen evil desires …
+an8.7:5.8 | P: uppannaṁ pāpamittataṁ anabhibhuyya viharato uppajjeyyuṁ āsavā vighātapariḷāhā, uppannaṁ pāpamittataṁ abhibhuyya viharato evaṁsa te āsavā vighātapariḷāhā na honti. | T: arisen bad friendship do not occur in one who has overcome it.
+an8.7:5.9 | S: This is the advantage that a mendicant gains by overcoming these eight things. | T: For this reason a bhikkhu should overcome gain whenever it arises. He should overcome loss …
+an8.7:5.11 | P: uppannaṁ yasaṁ … | T: fame …
+an8.7:5.12 | P: uppannaṁ ayasaṁ … | T: disrepute …
+an8.7:5.13 | P: uppannaṁ sakkāraṁ … | T: honor …
+an8.7:5.14 | P: uppannaṁ asakkāraṁ … | T: lack of honor …
+an8.7:5.15 | P: uppannaṁ pāpicchataṁ … | T: evil desires …
+an8.7:5.16 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya. | T: bad friendship whenever it arises.
+an8.7:6.1 | S: So, mendicants, you should train like this: | T: “Therefore, bhikkhus, you should train yourselves thus:
+an8.7:6.2 | S: ‘Whenever we encounter it, we will overcome gain … | T: ‘We will overcome gain whenever it arises.
+an8.7:6.3 | S: loss … | T: We will overcome loss …
+an8.7:6.4 | S: fame … | T: fame …
+an8.7:6.5 | S: disgrace … | T: disrepute …
+an8.7:6.6 | S: honor … | T: honor … lack of honor …
+an8.7:6.7 | S: dishonor … | T: (none)
+an8.7:6.8 | S: corrupt wishes … | T: evil desires …
+an8.7:6.9 | S: bad friendship.’ | T: bad friendship whenever it arises.’
+an8.7:6.10 | S: That’s how you should train.” | T: It is in such a way that you should train yourselves.”
+
+## sn45.12
+sn45.12:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.12:1.2 | S: “Mendicants, I wish to go on retreat for three months. | T: “Bhikkhus, I wish to go into seclusion for three months.
+sn45.12:1.3 | S: No-one should approach me, except the one who brings my almsfood.” | T: I should not be approached by anyone except the one who brings me almsfood.”
+sn45.12:1.4 | S: “Yes, sir,” replied those mendicants. And no-one approached him, except the one who brought the almsfood. | T: “Yes, venerable sir,” those bhikkhus replied, and no one approached the Blessed One except the one who brought him almsfood.
+sn45.12:2.1 | S: Then after three months had passed, the Buddha came out of retreat and addressed the mendicants: | T: Then, when those three months had passed, the Blessed One emerged from seclusion and addressed the bhikkhus thus:
+sn45.12:2.2 | S: “Mendicants, I’ve been practicing part of the meditation I practiced when I was first awakened. | T: “Bhikkhus, I have been dwelling in part of the abode in which I dwelt just after I became fully enlightened.
+sn45.12:2.3 | S: I understand that | T: I have understood thus:
+sn45.12:2.4 | S: there’s feeling conditioned by wrong view | T: ‘There is feeling with wrong view as condition,
+sn45.12:2.5 | S: and by the settling of wrong view, | T: also feeling with the subsiding of wrong view as condition.
+sn45.12:2.6 | S: by right view | T: There is feeling with right view as condition,
+sn45.12:2.7 | S: and by the settling of right view. … | T: also feeling with the subsiding of right view as condition….
+sn45.12:2.8 | S: There’s feeling conditioned by wrong immersion | T: There is feeling with wrong concentration as condition, also feeling with the subsiding of wrong concentration as condition.
+sn45.12:2.9 | S: and by the settling of wrong immersion, by right immersion | T: There is feeling with right concentration as condition,
+sn45.12:2.10 | S: and by the settling of right immersion. | T: also feeling with the subsiding of right concentration as condition.
+sn45.12:2.11 | S: There’s feeling conditioned by desire | T: There is feeling with desire as condition,
+sn45.12:2.12 | S: and by the settling of desire. | T: also feeling with the subsiding of desire as condition.
+sn45.12:2.13 | S: There’s feeling conditioned by thought, | T: (none)
+sn45.12:2.14 | S: and by the settling of thought. | T: There is feeling with thought as condition,
+sn45.12:2.15 | S: There’s feeling conditioned by perception, | T: (none)
+sn45.12:2.16 | S: and by the settling of perception. | T: (none)
+sn45.12:2.17 | S: As long as desire, thought, and perception are not stilled, there is feeling conditioned by that. | T: also feeling with the subsiding of thought as condition. There is feeling with perception as condition, also feeling with the subsiding of perception as condition. “‘When desire has not subsided, and thought has not subsided, and perception has not subsided, there is feeling with that as condition.
+sn45.12:2.18 | S: When desire, thought, and perception are stilled, there is feeling conditioned by that. | T: When desire has subsided, and thoughts have not subsided, and perceptions have not subsided, there is also feeling with that as condition. When desire has subsided, and thoughts have subsided, and perceptions have not subsided, there is also feeling with that as condition. When desire has subsided, and thought has subsided, and perception has subsided, there is also feeling with that as condition.
+sn45.12:2.19 | S: There is effort to attain the unattained. When that state has been attained, there is also feeling conditioned by that.” | T: There is effort for the attainment of the as-yet-unattained. When that stage has been reached, there is also feeling with that as condition.’”
+
+## an10.27
+an10.27:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an10.27:1.2 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then, in the morning, a number of bhikkhus dressed, took their bowls and robes, and entered Sāvatthī for alms.
+an10.27:1.3 | S: Then it occurred to him, | T: Then it occurred to those bhikkhus:
+an10.27:1.4 | S: “It’s too early to wander for alms in Sāvatthī. | T: “It is still too early to walk for alms in Sāvatthī.
+an10.27:1.5 | S: Why don’t we visit the monastery for the wanderers of other religions?” | T: Let us go to the park of the wanderers of other sects.”
+an10.27:2.1 | S: Then they went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: Then those bhikkhus went to the park of the wanderers of other sects. They exchanged greetings with those wanderers and,
+an10.27:2.2 | S: When the greetings and polite conversation were over, they sat down to one side. The wanderers said to them: | T: when they had concluded their greetings and cordial talk, sat down to one side. Those wanderers then said to them:
+an10.27:3.1 | S: “Reverends, the ascetic Gotama teaches his disciples like this: | T: “Friends, the ascetic Gotama teaches the Dhamma to his disciples in such a way as this:
+an10.27:3.2 | S: ‘Please, mendicants, directly know all things. Meditate having directly known all things.’ | T: ‘Come, bhikkhus, directly know all phenomena. Dwell having directly known all phenomena.’
+an10.27:3.3 | S: We too teach our disciples: | T: We too teach the Dhamma to our disciples in such a way as this:
+an10.27:3.4 | S: ‘Please, reverends, directly know all things. Live having directly known all things.’ | T: ‘Come, friends, directly know all phenomena. Dwell having directly known all phenomena.’
+an10.27:3.5 | S: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?” | T: What now is the distinction, the disparity, the difference between the ascetic Gotama’s teaching of the Dhamma and our teaching, between his instruction and our instruction?”
+an10.27:4.1 | S: Those mendicants neither approved nor rejected that statement of the wanderers of other religions. | T: Then those bhikkhus neither applauded nor rejected the statement of those wanderers. Without applauding it, without rejecting it,
+an10.27:4.2 | S: They rose from their seats, thinking, | T: they rose from their seats and left, thinking:
+an10.27:4.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We shall find out what the Blessed One has to say about this statement.”
+an10.27:5.1 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then, when those bhikkhus had walked for alms in Sāvatthī, after their meal, on returning from their alms round, they approached the Blessed One, paid homage to him, sat down to one side, and said:
+an10.27:6.1 | P: “Idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pavisimhā. | T: “Here, Bhante, in the morning, we dressed, took our bowls and robes, and entered Sāvatthī for alms….
+an10.27:6.6 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimhā. Ekamantaṁ nisinne kho, bhante, aññatitthiyā paribbājakā amhe etadavocuṁ: | T: They here report the entire course of events,
+an10.27:8.2 | P: Anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimhā: | T: down to: We rose from our seats and left, thinking:
+an10.27:8.3 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: ‘We shall find out what the Blessed One has to say about this statement.’”
+an10.27:9.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Bhikkhus, when wanderers of other sects speak thus,
+an10.27:9.2 | S: ‘One thing: question, summary recital, and answer. Two … Three … Four … Five … Six … Seven … Eight … Nine … Ten things: question, summary recital, and answer.’ | T: they should be answered in this way: ‘A question about one, a concise statement about one, an explanation of one. A question about two, a concise statement about two, an explanation of two. A question about three, a concise statement about three, an explanation of three. A question about four, a concise statement about four, an explanation of four. A question about five, a concise statement about five, an explanation of five. A question about six, a concise statement about six, an explanation of six. A question about seven, a concise statement about seven, an explanation of seven. A question about eight, a concise statement about eight, an explanation of eight. A question about nine, a concise statement about nine, an explanation of nine. A question about ten, a concise statement about ten, an explanation of ten.
+an10.27:9.3 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: If wanderers of other sects were questioned thus, they would not be able to reply and, further, they would meet with distress.
+an10.27:9.4 | S: Why is that? | T: For what reason?
+an10.27:9.5 | S: Because they’re out of their element. | T: Because that would not be within their domain.
+an10.27:9.6 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: I do not see anyone, bhikkhus, in the world with its devas, Māra, and Brahmā, in this population with its ascetics and brahmins, its devas and humans, who could satisfy the mind with an answer to these questions apart from the Tathāgata or a disciple of the Tathāgata or one who has heard it from them.
+an10.27:10.1 | S: ‘One thing: question, summary recital, and answer.’ | T: (1) “When it was said: ‘A question about one, a concise statement about one, an explanation of one,’
+an10.27:10.2 | S: That’s what I said, but why did I say it? | T: with reference to what was this said?
+an10.27:10.3 | S: Becoming completely disillusioned, dispassionate, and freed regarding one thing, seeing its limits and fully comprehending its meaning, a mendicant makes an end of suffering in this very life. | T: When a bhikkhu is completely disenchanted with one thing, completely dispassionate toward it, completely liberated from it, completely sees its delimitations, and completely breaks through its meaning, in this very life he makes an end of suffering.
+an10.27:10.4 | S: What one thing? | T: What one thing?
+an10.27:10.5 | S: ‘All sentient beings are sustained by food.’ | T: All beings exist through nutriment.
+an10.27:10.6 | S: Becoming completely disillusioned, dispassionate, and freed regarding this one thing, seeing its limits and fully comprehending its meaning, a mendicant makes an end of suffering in this very life. | T: When a bhikkhu is completely disenchanted with this one thing, completely dispassionate toward it, completely liberated from it, completely sees its delimitations, and completely breaks through its meaning, in this very life he makes an end of suffering. “When it was said: ‘A question about one, a concise statement about one, an explanation of one,’ it is with reference to this that this was said. (2) “When it was said: ‘A question about two, a concise statement about two, an explanation of two,’ with reference to what was this said? When a bhikkhu is completely disenchanted with two things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering. What two things? Name and form. When a bhikkhu is completely disenchanted with these two things … in this very life he makes an end of suffering.
+an10.27:10.7 | S: ‘One thing: question, summary recital, and answer.’ | T: (none)
+an10.27:10.8 | S: That’s what I said, and this is why I said it. | T: “When it was said:
+an10.27:11.4 | S: What two? | T: ‘A question about two, a concise statement about two, an explanation of two,’
+an10.27:11.5 | S: Name and form. … | T: (none)
+an10.27:11.7 | P: ‘Dve pañhā dve uddesā dve veyyākaraṇānī’ti, iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | T: it is with reference to this that this was said.
+an10.27:12.1 | P: ‘Tayo pañhā tayo uddesā tīṇi veyyākaraṇānī’ti, iti kho panetaṁ vuttaṁ. | T: (3) “When it was said: ‘A question about three, a concise statement about three, an explanation of three,’
+an10.27:12.2 | P: Kiñcetaṁ paṭicca vuttaṁ? | T: with reference to what was this said?
+an10.27:12.3 | P: Tīsu, bhikkhave, dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with three things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.
+an10.27:12.4 | S: What three? | T: What three things?
+an10.27:12.5 | S: Three feelings. … | T: The three kinds of feelings.
+an10.27:12.6 | P: imesu kho, bhikkhave, tīsu dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with these three things … in this very life he makes an end of suffering.
+an10.27:12.7 | P: ‘Tayo pañhā tayo uddesā tīṇi veyyākaraṇānī’ti, iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | T: “When it was said: ‘A question about three, a concise statement about three, an explanation of three,’ it is with reference to this that this was said.
+an10.27:13.1 | P: ‘Cattāro pañhā cattāro uddesā cattāri veyyākaraṇānī’ti, iti kho panetaṁ vuttaṁ. | T: (4) “When it was said: ‘A question about four, a concise statement about four, an explanation of four,’
+an10.27:13.2 | P: Kiñcetaṁ paṭicca vuttaṁ? | T: with reference to what was this said?
+an10.27:13.3 | P: Catūsu, bhikkhave, dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with four things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.
+an10.27:13.4 | S: What four? | T: What four things?
+an10.27:13.5 | S: The four foods. … | T: The four kinds of nutriment.
+an10.27:13.6 | P: imesu kho, bhikkhave, catūsu dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with these four things … in this very life he makes an end of suffering.
+an10.27:13.7 | P: ‘Cattāro pañhā cattāro uddesā cattāri veyyākaraṇānī’ti, iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | T: “When it was said: ‘A question about four, a concise statement about four, an explanation of four,’ it is with reference to this that this was said.
+an10.27:14.1 | P: ‘Pañca pañhā pañcuddesā pañca veyyākaraṇānī’ti, iti kho panetaṁ vuttaṁ. | T: (5) “When it was said: ‘A question about five, a concise statement about five, an explanation of five,’
+an10.27:14.2 | P: Kiñcetaṁ paṭicca vuttaṁ? | T: with reference to what was this said?
+an10.27:14.3 | P: Pañcasu, bhikkhave, dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with five things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.
+an10.27:14.4 | S: What five? | T: What five things?
+an10.27:14.5 | S: The five grasping aggregates. … | T: The five aggregates subject to clinging.
+an10.27:14.6 | P: imesu kho, bhikkhave, pañcasu dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with these five things … in this very life he makes an end of suffering.
+an10.27:14.7 | P: ‘Pañca pañhā pañcuddesā pañca veyyākaraṇānī’ti, iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | T: “When it was said: ‘A question about five, a concise statement about five, an explanation of five,’ it is with reference to this that this was said.
+an10.27:15.1 | P: ‘Cha pañhā cha uddesā cha veyyākaraṇānī’ti, iti kho panetaṁ vuttaṁ. | T: (6) “When it was said: ‘A question about six, a concise statement about six, an explanation of six,’
+an10.27:15.2 | P: Kiñcetaṁ paṭicca vuttaṁ? | T: with reference to what was this said?
+an10.27:15.3 | P: Chasu, bhikkhave, dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with six things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.
+an10.27:15.4 | S: What six? | T: What six things?
+an10.27:15.5 | S: The six interior sense fields. … | T: The six internal sense bases.
+an10.27:15.6 | P: imesu kho, bhikkhave, chasu dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with these six things … in this very life he makes an end of suffering.
+an10.27:15.7 | P: ‘Cha pañhā cha uddesā cha veyyākaraṇānī’ti, iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | T: “When it was said: ‘A question about six, a concise statement about six, an explanation of six,’ it is with reference to this that this was said.
+an10.27:16.1 | P: ‘Satta pañhā sattuddesā satta veyyākaraṇānī’ti, iti kho panetaṁ vuttaṁ. | T: (7) “When it was said: ‘A question about seven, a concise statement about seven, an explanation of seven,’
+an10.27:16.2 | P: Kiñcetaṁ paṭicca vuttaṁ? | T: with reference to what was this said?
+an10.27:16.3 | P: Sattasu, bhikkhave, dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with seven things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.
+an10.27:16.4 | S: What seven? | T: What seven things?
+an10.27:16.5 | S: The seven planes of consciousness. … | T: The seven stations for consciousness.
+an10.27:16.6 | P: imesu kho, bhikkhave, sattasu dhammesu bhikkhu sammā nibbindamāno sammā virajjamāno sammā vimuccamāno sammā pariyantadassāvī sammadatthaṁ abhisamecca diṭṭheva dhamme dukkhassantakaro hoti. | T: When a bhikkhu is completely disenchanted with these seven things … in this very life he makes an end of suffering.

@@ -127,6 +127,53 @@ Once those answers are kept, what is still open comes back in two folders, run t
 | A final look at the cuts still open | `data/<translator>/review/final/` | the first prompt; each item shows both its lines whole |
 | The places left | `data/<translator>/review/places2/` | the places prompt below |
 
+## Reading through
+
+The last check reads every line. `data/<translator>/review/read/` holds the whole translation beside
+Sujato's, a text after another, the least settled texts first. Give each batch to one subagent,
+model `sonnet`, four at a time, with the prompt below; each saves `batch-NNN.findings` beside its
+batch. Commit and push as they come. Stop when the batches are done or a usage limit is near, and
+say how many lines were reported in all.
+
+```
+You are checking a Buddhist sutta translation (by <name>) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Report only when you are sure.
+
+Your share: <path>/batch-NNN.txt. Read all of it, in two or three parts, then save your findings
+with the Write tool as <path>/batch-NNN.findings, or the single word "none" if nothing is
+misplaced. Be token-efficient: use only the Read and Write tools, open no file but your batch, run
+no commands, and keep your reasoning brief.
+
+When done, reply with one line: how many lines you reported.
+```
+
 ### The places prompt
 
 The prompt above, with its first four paragraphs, down to the list of answers, replaced by these:
