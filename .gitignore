@@ -14,6 +14,14 @@ web/public/data/
 # resources under web/ios/ and web/android/ are what's committed.
 web/assets/
 data/sujato.post/
+# Review scratch: local copies of the review rounds' answers, which cuts.json keeps, and the pages
+# and batches scripts/segment-translations.mjs writes.
+data/*/review/**/*.answers.*
+data/*/review/**/*.opus.*
+data/*/review/batches/
+data/*/review/*.html
+data/*/review/findings.json
+data/*/review/tidy.json
 .env
 *.local
 CLAUDE.local.md
