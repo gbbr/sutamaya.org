@@ -4850,7 +4850,10 @@
  "sn45.63:1.8": "on, and cessation, maturing in release.",
  "sn45.77:1.6": "on, and cessation, maturing in release.",
  "sn45.8:9.5": "nd in mind, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.",
- "sn45.83:1.4": "… accomplishment in careful attention …",
+ "sn45.83:1.4": {
+  "after": "… accomplishment in careful attention …",
+  "placed": true
+ },
  "sn45.91:1.6": "on, and cessation, maturing in release.",
  "sn46.14:3.3": " enlightenment, to Nibbāna. What seven?",
  "sn46.14:3.6": "htenment, to Nibbāna.”\n“Surely, Blessed One, they are factors of enlightenment!",
@@ -9837,7 +9840,7 @@
   "placed": true
  },
  "mn95:27.3": {
-  "after": "he teachings is most helpful for zeal.”",
+  "after": "ama about the thing most helpful for a reflective acceptance of the teachings.”",
   "placed": true
  },
  "mn95:28.3": {
@@ -12409,5 +12412,49 @@
  "sn45.90:1.4": {
   "after": "… accomplishment in careful attention …",
   "placed": true
+ },
+ "mn95:23.2": {
+  "after": "r Gotama, is most helpful for striving?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:26.2": {
+  "after": "aster Gotama, is most helpful for zeal?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:27.1": {
+  "after": "he teachings is most helpful for zeal.”",
+  "placed": true,
+  "own": true
+ },
+ "mn95:27.2": {
+  "after": "reflective acceptance of the teachings?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:28.2": {
+  "after": "helpful for examination of the meaning?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:29.2": {
+  "after": "t helpful for memorising the teachings?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:30.2": {
+  "after": "is most helpful for hearing the Dhamma?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:32.2": {
+  "after": "ma, is most helpful for paying respect?",
+  "placed": true,
+  "own": true
+ },
+ "sn45.83:1.1": {
+  "placed": true,
+  "own": true
  }
 }

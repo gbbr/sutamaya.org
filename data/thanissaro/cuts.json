@@ -12699,7 +12699,8 @@
   "own": true
  },
  "iti10:2.2": {
-  "empty": "up"
+  "after": " incapable of putting an end to stress.",
+  "placed": true
  },
  "iti10:5.2": {
   "empty": "up"
@@ -14366,5 +14367,46 @@
   "after": "n of stress … This is the path of practice leading to the cessation of stress.’",
   "placed": true,
   "own": true
+ },
+ "iti10:3.1": {
+  "empty": "up"
+ },
+ "iti11:2.1": {
+  "empty": "up"
+ },
+ "iti11:2.2": {
+  "empty": "up"
+ },
+ "iti11:3.1": {
+  "empty": "up"
+ },
+ "iti12:3.1": {
+  "empty": "up"
+ },
+ "iti12:3.2": {
+  "empty": "up"
+ },
+ "iti13:2.1": {
+  "empty": "up"
+ },
+ "iti13:2.2": {
+  "empty": "up"
+ },
+ "mn54:17.5": {
+  "after": "rch, would he burn his hand or his arm or some other part of his body, so that he would meet with death from that cause, or with death-like pain?”\n“Yes, lord.”",
+  "placed": true,
+  "own": true
+ },
+ "sn1.42:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn1.42:1.5": {
+  "after": "se?\nA giver of what, a giver of vision?",
+  "placed": true
+ },
+ "sn47.38:1.5": {
+  "after": " & of itself, the body is comprehended.",
+  "placed": true
  }
 }

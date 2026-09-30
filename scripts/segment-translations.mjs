@@ -1177,21 +1177,25 @@ if (applyAnswers) {
 }
 
 // The read-throughs' findings, by line: the words the line should start with, or null for none. A
-// line two findings disagree on is left out.
+// line two readers disagree on is left out, unless a fix made by hand, in review/hand/, settles it.
 const findings = new Map();
 if (weighing) {
+  const HAND = path.join(REVIEW, 'hand');
   const files = [path.join(REVIEW, 'closing-lines.findings'), ...fs.globSync(path.join(REVIEW, '*', '*.findings'))];
   const torn = new Set();
+  const byHand = new Map();
   for (const file of files.filter((f) => fs.existsSync(f))) {
     for (const line of fs.readFileSync(file, 'utf8').split('\n')) {
       const m = /^(\S+:\S+) (?:starts: (.+)|none)$/.exec(line.trim());
       if (!m) continue;
       const starts = m[2]?.trim() ?? null;
-      if (findings.has(m[1]) && findings.get(m[1]) !== starts) torn.add(m[1]);
+      if (path.dirname(file) === HAND) byHand.set(m[1], starts);
+      else if (findings.has(m[1]) && findings.get(m[1]) !== starts) torn.add(m[1]);
       findings.set(m[1], starts);
     }
   }
   for (const key of torn) findings.delete(key);
+  for (const [key, starts] of byHand) findings.set(key, starts);
 }
 
 // Moves each cut a review settled to where the text before it ends with the settled words, nearest

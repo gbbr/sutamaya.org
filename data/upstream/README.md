@@ -146,6 +146,7 @@ files here are named.
    which it does when each of its findings takes effect and the text still reads whole. Opus judges
    the passing groups, or 50 of them at random where there are more. A group it finds worse comes
    out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
+   A fix made by hand goes in the same form in `review/hand/`, where it overrides the readers'.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then commit.
@@ -154,8 +155,6 @@ files here are named.
 
 - Take in the rest of Thanissaro's read-through, batches 024 on in `review/read/`, as step 3 of
   "Reviewing new and revised texts" says.
-- The Buddhist Publication Society's online library (bps.lk) was down on 29 September 2026; it may
-  hold more of Bodhi's translations with notes.
 
 ## Where to look
 

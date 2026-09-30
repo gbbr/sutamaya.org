@@ -5071,14 +5071,14 @@
   "file": "sutta/mn/mn95.html",
   "uids": "mn95",
   "lines": 303,
-  "segments": 241,
+  "segments": 249,
   "unsure": 0,
   "unsureKeys": [],
   "joined": 16,
   "merged": 7,
   "elided": 9,
   "long": 6,
-  "unmatched": 5,
+  "unmatched": 13,
   "ratio": 1.18
  },
  {
@@ -13897,16 +13897,14 @@
   "file": "sutta/sn/sn45/sn45.83.html",
   "uids": "sn45.83",
   "lines": 6,
-  "segments": 2,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn45.83:1.4@0.76"
-  ],
-  "joined": 3,
+  "segments": 3,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 2,
   "merged": 1,
-  "elided": 2,
+  "elided": 1,
   "long": 1,
-  "unmatched": 0,
+  "unmatched": 1,
   "ratio": 1.36
  },
  {
