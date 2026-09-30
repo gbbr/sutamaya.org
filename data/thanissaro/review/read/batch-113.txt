@@ -1,0 +1,416 @@
+## snp1.1
+snp1.1:1.1 | S: When anger surges, they drive it out, | T: The monk who subdues his arisen anger
+snp1.1:1.2 | S: as with medicine a cobra’s spreading venom. | T: as, with herbs, snake-venom once it has spread,
+snp1.1:1.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:1.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:2.1 | S: They’ve cut off greed entirely, | T: The monk who has cut off passion without leaving a trace,
+snp1.1:2.2 | S: like a lotus plucked flower and stalk. | T: as he would, plunging into a lake, a lotus,
+snp1.1:2.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:2.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:3.1 | S: They’ve cut off craving entirely, | T: The monk who has cut off craving without leaving a trace,
+snp1.1:3.2 | S: drying up that swift-flowing stream. | T: drying up the swift-flowing flood,
+snp1.1:3.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:3.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:4.1 | S: They’ve swept away conceit entirely, | T: The monk who has uprooted conceit without leaving a trace,
+snp1.1:4.2 | S: as a fragile bridge of reeds by a great flood. | T: as a great flood, a very weak bridge made of reeds,
+snp1.1:4.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:4.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:5.1 | S: In future lives they find no worth, | T: The monk seeing in states of becoming no essence,
+snp1.1:5.2 | S: as an inspector of fig trees finds no flower. | T: as he would, when examining fig trees, no flowers,
+snp1.1:5.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:5.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:6.1 | S: They hide no anger within, | T: The monk with no inner anger,
+snp1.1:6.2 | S: passed beyond any kind of existence. | T: who has thus gone beyond becoming & not-,
+snp1.1:6.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:6.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:7.1 | S: Their mental vibrations are cleared away, | T: The monk whose discursive thoughts are dispersed,
+snp1.1:7.2 | S: internally clipped off entirely. | T: well-dealt with inside without leaving a trace,
+snp1.1:7.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:7.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:8.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:8.2 | S: but have gone beyond all this proliferation. | T: transcending all this objectification,
+snp1.1:8.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:8.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:9.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:9.2 | S: for they know that nothing in the world <j>is what it seems. | T: knowing with regard to the world that “All this is unreal,”
+snp1.1:9.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:9.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:10.1 | S: They have not run too far nor run back, | T: (none)
+snp1.1:10.2 | S: knowing nothing is what it seems, free of greed. | T: (none)
+snp1.1:10.3 | S: Such a mendicant sheds the near shore and the far, | T: The monk who hasn’t slipped past or held back,
+snp1.1:10.4 | S: as a serpent its old worn-out skin. | T: (none)
+snp1.1:11.1 | S: They have not run too far nor run back, | T: (none)
+snp1.1:11.2 | S: knowing nothing is what it seems, free of lust. | T: without greed, as “All this is unreal,”
+snp1.1:11.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:11.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:12.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:12.2 | S: knowing nothing is what it seems, free of hate. | T: without aversion, as “All this is unreal,”
+snp1.1:12.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:12.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:13.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or turned back,
+snp1.1:13.2 | S: knowing nothing is what it seems, free of delusion. | T: without delusion, as “All this is unreal,”
+snp1.1:13.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:13.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:14.1 | S: They have no underlying tendencies at all, | T: The monk in whom there are no obsessions
+snp1.1:14.2 | S: and are rid of unskillful roots, | T: —the roots of unskillfulness totally destroyed—
+snp1.1:14.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:14.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:15.1 | S: They have nothing born of distress at all | T: The monk in whom there’s nothing born of disturbance
+snp1.1:15.2 | S: to make them to return to the near shore. | T: that would lead him back to this shore,
+snp1.1:15.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:15.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:16.1 | S: No snarl grows in them at all, | T: The monk in whom there’s nothing born of the underbrush
+snp1.1:16.2 | S: that would shackle them to a new life. | T: that would act as a cause for binding him to becoming,
+snp1.1:16.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:16.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:17.1 | S: They’ve given up the five hindrances, | T: The monk who’s abandoned five hindrances,
+snp1.1:17.2 | S: untroubled, rid of indecision, free of thorns. | T: who, untroubled, de-arrowed, has crossed over doubt,
+snp1.1:17.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:17.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp2.5
+snp2.5:1.1 | S: So I have heard. | T: (none)
+snp2.5:1.2 | S: At one time the Buddha was staying near Gayā on the cut-stone ledge in the haunt of Spiky the native spirit. | T: I have heard that on one occasion the Blessed One was staying in Gayā at Ṭaṁkitamañca, the haunt of Suciloma [NeedleHair] the yakkha.
+snp2.5:1.3 | S: Now at that time the native spirits Shaggy and Spiky were passing by not far from the Buddha. | T: And on that occasion Khara [Rough] the yakkha and Suciloma the yakkha passed by not far from the Blessed One.
+snp2.5:1.4 | S: So Shaggy said to Spiky, | T: Khara the yakkha said to Suciloma the yakkha,
+snp2.5:1.5 | S: “That’s an ascetic.” | T: “That’s a contemplative.”
+snp2.5:1.6 | S: “That’s no ascetic, he’s a faker! | T: “That’s not a contemplative. That’s a fake contemplative.
+snp2.5:1.7 | S: I’ll soon find out whether he’s an ascetic or a faker.” | T: I’ll find out whether that’s a contemplative or a fake contemplative.”
+snp2.5:2.1 | S: Then Spiky went up to the Buddha and leaned up against his body, | T: So Suciloma the yakkha approached the Blessed One and on arrival leaned his body up against the Blessed One. The Blessed One leaned his body away.
+snp2.5:2.2 | S: but the Buddha pulled away. | T: So Suciloma the yakkha said to the Blessed One,
+snp2.5:2.3 | S: Then Spiky said to the Buddha, | T: (none)
+snp2.5:2.4 | S: “Are you afraid, ascetic?” | T: “Are you afraid of me, contemplative?”
+snp2.5:2.5 | S: “No, respectable sir, I’m not afraid. | T: “No, I’m not afraid of you, friend,
+snp2.5:2.6 | S: But your touch is nasty.” | T: just that your touch is evil.”
+snp2.5:3.1 | S: “I will ask you a question, ascetic. | T: “I will ask you a question, contemplative.
+snp2.5:3.2 | S: If you don’t answer me, I’ll drive you insane, or explode your heart, or grab you by the feet and throw you to the far shore of the Ganges!” | T: If you can’t answer me, I will hurl out your mind or rip open your heart or, grabbing you by the feet, hurl you across the Ganges.”
+snp2.5:4.1 | S: “I don’t see anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans who could do that to me. | T: “My friend, I see no one in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, who could hurl out my mind or rip open my heart or, grabbing me by the feet, hurl me across the Ganges.
+snp2.5:4.2 | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+snp2.5:4.3 | S: Then Spiky addressed the Buddha in verse: | T: So Suciloma the yakkha addressed the Blessed One in verse:
+snp2.5:5.1 | S: “Where do greed and hate come from? | T: Passion & aversion come from what cause?
+snp2.5:5.2 | S: From where spring discontent, desire, and terror? | T: Displeasure, delight, horripilation are born from what?
+snp2.5:5.3 | S: Where do the mind’s thoughts originate, | T: Arising from what do thoughts fling the mind around,
+snp2.5:5.4 | S: like a crow let loose by boys.” | T: as boys, a (captive) crow?
+snp2.5:6.1 | S: “Greed and hate come from here; | T: The Buddha: Passion & aversion come from this as a cause;
+snp2.5:6.2 | S: from here spring discontent, desire, and terror; | T: displeasure, delight, horripilation are born from this;
+snp2.5:6.3 | S: here’s where the mind’s thoughts originate, | T: arising from this thoughts fling the mind around,
+snp2.5:6.4 | S: like a crow let loose by boys. | T: as boys, a (captive) crow:
+snp2.5:7.1 | S: Born of affection, originating in oneself, | T: They’re born from affection arisen from the mind, from oneself,
+snp2.5:7.2 | S: like prop roots sprouting from a banyan; | T: like the trunk-born (shoots) of a banyan tree,
+snp2.5:7.3 | S: the many kinds of attachment to sensual pleasures | T: thick, attached to sensuality,
+snp2.5:7.4 | S: are like camel’s foot creeper <j>creeping through the woods. | T: like a māluva vine spread in a forest.
+snp2.5:8.1 | S: Those who understand where they come from | T: Those who discern where it’s born
+snp2.5:8.2 | S: dispel them—listen up, spirit! | T: drive it out—listen, yakkha!
+snp2.5:8.3 | S: They cross this flood so hard to cross, | T: They cross over this flood, so hard to cross,
+snp2.5:8.4 | S: not crossed before, so as to not be reborn.” | T: never crossed before,
+snp2.5:8.5 | P: Sūcilomasuttaṁ pañcamaṁ. | T: for the sake of no further becoming.
+
+## ud2.1
+ud2.1:1.1 | S: So I have heard. | T: (none)
+ud2.1:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the Mucalinda tree on the bank of the Nerañjarā River. | T: I have heard that on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Muccalinda tree, newly awakened.
+ud2.1:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat for seven days in one session, sensitive to the bliss of release.
+ud2.1:2.1 | S: Just then a large storm blew up out of season, bringing seven days of precipitation, with cold winds and overcast skies. | T: And on that occasion a great, out-of-season storm-cloud rose up, with seven days of rainy weather, cold winds, & intense darkness.
+ud2.1:2.2 | S: Mucalinda, the dragon king, came out from his abode, encircled the Buddha’s body with seven coils and spread his large hood over his head, thinking, | T: Then Muccalinda the nāga king–leaving his dwelling place and encircling the Blessed One’s body seven times with his coils–stood with his great hood spread over the Blessed One, (thinking,)
+ud2.1:2.3 | S: “May the Buddha not be hot or cold, nor be bothered by flies, mosquitoes, wind, sun, or reptiles.” | T: “Don’t let the Blessed One be disturbed by cold. Don’t let the Blessed One be disturbed by heat. Don’t let the Blessed One be disturbed by the touch of flies, mosquitoes, wind, sun, & creeping things.”
+ud2.1:3.1 | S: When seven days had passed, the Buddha emerged from that state of immersion. | T: Then, with the passing of seven days, the Blessed One emerged from that concentration.
+ud2.1:3.2 | S: When he knew the heavens were clear and cloudless, Mucalinda unwrapped his coils from the Buddha’s body. Hiding his own form, he manifested in the form of a brahmin youth. He stood in front of the Buddha, venerating him with cupped palms. | T: Muccalinda the nāga king, realizing that the sky had cleared and was free of clouds, unraveled his coils from the body of the Blessed One, dropped his own appearance and, assuming the appearance of a young man, stood in front of the Blessed One with hands before his heart, paying homage.
+ud2.1:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.1:5.1 | S: “Seclusion is happiness for the contented | T: Blissful is solitude for one who’s content,
+ud2.1:5.2 | S: who see the teaching they have learned. | T: who has heard the Dhamma, who sees.
+ud2.1:5.3 | S: Kindness for the world is happiness | T: Blissful is non-affliction with regard for the world,
+ud2.1:5.4 | S: for one who’d not harm a living creature. | T: restraint for living beings.
+ud2.1:6.1 | S: Dispassion for the world is happiness | T: Blissful is dispassion with regard for the world,
+ud2.1:6.2 | S: for one who has gone beyond sensual pleasures. | T: the overcoming of sensuality.
+ud2.1:6.3 | S: But dispelling the conceit ‘I am’ | T: But the subduing of the conceit “I am”–
+ud2.1:6.4 | S: is truly the ultimate happiness.” | T: That is truly the ultimate bliss.
+
+## sn22.83
+sn22.83:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.83:1.2 | S: There Ānanda addressed the mendicants: | T: There Ven. Ānanda addressed the monks,
+sn22.83:1.3 | S: “Reverends, mendicants!” | T: “Friend monks!”
+sn22.83:1.4 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+sn22.83:1.5 | S: Ānanda said this: | T: Ven. Ānanda said,
+sn22.83:2.1 | S: “Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, Ven. Puṇṇa Mantāṇiputta was very helpful to us when we were newly ordained.
+sn22.83:2.2 | S: He gave me this advice: | T: He exhorted us with this exhortation:
+sn22.83:2.3 | S: ‘Reverend Ānanda, the thought “I am” occurs because of grasping, not without grasping. | T: “‘It’s with possessiveness, friend Ānanda, that there is “I am,” not without possessiveness. And through possessiveness of what is there “I am,” not without possessiveness?
+sn22.83:2.4 | S: Grasping what? | T: (none)
+sn22.83:2.5 | S: The thought “I am” occurs because of grasping form, | T: Through possessiveness of form there is “I am,” not without possessiveness.
+sn22.83:2.6 | S: feeling, | T: Through possessiveness of feeling…
+sn22.83:2.7 | S: perception, | T: perception…
+sn22.83:2.8 | S: choices, | T: fabrications…
+sn22.83:2.9 | S: and consciousness, not without grasping. | T: Through possessiveness of consciousness there is “I am,” not without possessiveness.
+sn22.83:3.1 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments, and they check their own reflection in a clean bright mirror or a clear bowl of water. They’d look because of grasping, not without grasping. | T: “‘Just as if a young woman—or a man—youthful, fond of adornment, contemplating the image of her face in a mirror, pure & bright, or in a bowl of clear water, would look with possessiveness, not without possessiveness.
+sn22.83:3.2 | S: In the same way, the thought “I am” occurs because of grasping form, | T: In the same way, through possessiveness of form there is “I am,” not without possessiveness.
+sn22.83:3.3 | S: feeling, | T: Through possessiveness of feeling…
+sn22.83:3.4 | S: perception, | T: perception…
+sn22.83:3.5 | S: choices, | T: fabrications…
+sn22.83:3.6 | S: and consciousness, not without grasping. | T: Through possessiveness of consciousness there is “I am,” not without possessiveness.
+sn22.83:4.1 | S: What do you think, Reverend Ānanda? | T: “‘What do you think, friend Ānanda?
+sn22.83:4.2 | S: Is form permanent or impermanent?’ | T: Is form constant or inconstant?’
+sn22.83:4.3 | S: ‘Impermanent, reverend.’ | T: “‘Inconstant, friend.’ “‘And is that which is inconstant easeful or stressful?’ “‘Stressful, friend.’ “‘And is it fitting to regard what is inconstant, stressful, subject to change as: “This is mine. This is my self. This is what I am”?‘ “‘No, friend.’ “‘… Is feeling constant or inconstant?’—‘Inconstant, friend.’ … “‘… Is perception constant or inconstant?’—‘Inconstant, friend.’ … “‘… Are fabrications constant or inconstant?’—‘Inconstant, friend.’ … “‘What do you think, friend Ānanda? Is consciousness constant or inconstant?’ “‘Inconstant, friend.’ “‘And is that which is inconstant easeful or stressful?’ “‘Stressful, friend.’ “‘And is it fitting to regard what is inconstant, stressful, subject to change as: “This is mine. This is my self. This is what I am”?’ “‘No, friend.’ “‘Thus, friend Ānanda, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: “This is not mine. This is not my self. This is not what I am.”
+sn22.83:4.4 | S: ‘Is feeling … | T: “‘Any feeling whatsoever.…
+sn22.83:4.5 | S: perception … | T: “‘Any perception whatsoever.…
+sn22.83:4.6 | S: choices … | T: “‘Any fabrications whatsoever.…
+sn22.83:4.7 | S: consciousness permanent or impermanent?’ | T: “‘Any consciousness whatsoever that is past,
+sn22.83:4.8 | S: ‘Impermanent, reverend.’ … | T: future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment as: “This is not mine. This is not my self. This is not what I am.”
+sn22.83:4.9 | S: ‘So you should truly see … | T: (none)
+sn22.83:4.10 | S: Seeing this … | T: “‘Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, “Released.”
+sn22.83:4.11 | S: They understand: “… there is nothing further for this place.”’ | T: He discerns that “Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.”’
+sn22.83:4.12 | S: Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, Ven. Puṇṇa Maṇtāniputta was very helpful to us when we were newly ordained.
+sn22.83:4.13 | S: He gave me this advice. | T: He exhorted us with this exhortation.
+sn22.83:4.14 | S: And when I heard this teaching from Venerable Puṇṇa son of Mantāṇī, I comprehended the teaching.” | T: And when I had heard this Dhamma-explanation from Ven. Puṇṇa Maṇtāniputta, I broke through to the Dhamma.”
+
+## sn35.229
+sn35.229:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “‘The ocean, the ocean,’ says the uninstructed run-of-the-mill person.
+sn35.229:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that’s not the ocean in the discipline of the noble ones.
+sn35.229:1.3 | S: That’s just a large body of water, a large sea of water. | T: It’s a great mass of water, a great body of water.
+sn35.229:1.4 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked with sensual desire.
+sn35.229:1.5 | S: This is called the ocean in the training of the Noble One. | T: These are called the ocean in the discipline of the noble ones.
+sn35.229:1.6 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this cosmos—with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk—is, for the most part, submerged, like a tangled skein, a knotted ball of string, like matted rushes & reeds, and doesn’t go beyond the plane of deprivation, the bad destination, the lower realm, the wandering-on.
+sn35.229:2.1 | S: There are sounds … smells … tastes … touches … ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked with sensual desire.
+sn35.229:2.2 | S: This is called the ocean in the training of the Noble One. | T: These are called the ocean in the discipline of the noble ones.
+sn35.229:2.3 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this cosmos—with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk—is, for the most part, submerged, like a tangled skein, a knotted ball of string, like matted rushes & reeds, and doesn’t go beyond the plane of deprivation, the bad destination, the lower realm, the wandering-on.
+sn35.229:3.1 | S: Those in whom greed, hate, and ignorance | T: Whoever has become dispassionate to passion, aversion, & ignorance,
+sn35.229:3.2 | S: have faded away; | T: (none)
+sn35.229:3.3 | S: have crossed the ocean so hard to cross, | T: crosses over this ocean,
+sn35.229:3.4 | S: with its saltwater crocodiles and monsters, <j>its waves and dangers. | T: with its danger of sharks, demons, waves, so very hard to cross.
+sn35.229:4.1 | S: They’ve slipped their chains, given up death, and have no attachments. | T: He’s one who has overcome ties, forsaken death,
+sn35.229:4.2 | S: They’ve given up suffering, <j>so there are no more future lives. | T: abandoned suffering & stress, is acquisition-free with no further becoming.
+sn35.229:4.3 | S: They’ve disappeared, and cannot be measured; | T: Having gone to his end, he has no measure,
+sn35.229:4.4 | S: and they’ve confounded the King of Death, I say.” | T: has bewildered, I tell you, Death’s king.
+
+## sn35.230
+sn35.230:1.1 | S: “Mendicants, suppose an angler was to cast a baited hook into a deep lake. | T: “Monks, just as if a fisherman were to cast a baited hook into a deep lake and a fish with its eye out for food would swallow it—
+sn35.230:1.2 | S: Seeing the bait, a fish would swallow it. | T: (none)
+sn35.230:1.3 | S: And so the fish that swallowed the hook would meet with tragedy and disaster, and the angler can do what he wants with it. | T: so that the fish that had thus swallowed the fisherman’s hook would fall into misfortune & disaster, and the fisherman could do with it as he will—
+sn35.230:2.1 | S: In the same way, there are these six hooks in the world that mean tragedy and slaughter for living creatures. | T: in the same way, there are these six hooks in the world for the misfortune of beings, for the slaughter of those that breathe.
+sn35.230:2.2 | S: What six? | T: Which six?
+sn35.230:2.3 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are forms, monks, cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:2.4 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.230:2.5 | S: they’re called a mendicant who has swallowed Māra’s hook. They’ve met with tragedy and disaster, and the Wicked One can do with them what he wants. | T: he is said to be a monk who has swallowed Māra’s hook, who has fallen into misfortune & disaster. The Evil One can do with him as he will.
+sn35.230:2.6 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.230:3.1 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:3.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.230:3.3 | S: they’re called a mendicant who has swallowed Māra’s hook. They’ve met with tragedy and disaster, and the Wicked One can do with them what he wants. | T: he is said to be a monk who has swallowed Māra’s hook, who has fallen into misfortune & disaster. The Evil One can do with him as he will.
+sn35.230:4.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Now, there are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:4.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, they’re called a mendicant who hasn’t swallowed Māra’s hook. They’ve broken the hook, destroyed it. They haven’t met with tragedy and disaster, and the Wicked One cannot do with them what he wants. | T: If a monk does not relish them, welcome them, or remain fastened to them, he is said to be a monk who has not swallowed Māra’s hook, who has snapped the hook, who has broken the hook, who has not fallen into misfortune & disaster. The Evil One cannot do with him as he will.
+sn35.230:5.1 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.230:5.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:5.3 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, they’re called a mendicant who hasn’t swallowed Māra’s hook. They’ve broken the hook, destroyed it. They haven’t met with tragedy and disaster, and the Wicked One cannot do with them what he wants.” | T: If a monk does not relish them, welcome them, or remain fastened to them, he is said to be a monk who has not swallowed Māra’s hook, who has snapped the hook, who has broken the hook, who has not fallen into misfortune & disaster. The Evil One cannot do with him as he will.”
+
+## sn4.20
+sn4.20:1.1 | S: At one time the Buddha was staying in the land of the Kosalans, in a wilderness hut on the slopes of the Himalayas. | T: I have heard that on one occasion the Blessed One was staying among the Kosalans in a wilderness hut in a Himalayan district.
+sn4.20:1.2 | S: Then as he was in private retreat this thought came to his mind, | T: Then, as he was alone in seclusion, this train of thought arose in his awareness:
+sn4.20:1.3 | S: “I wonder if it’s possible to rule legitimately, without killing or having someone kill for you; without conquering or having someone conquer for you; without sorrowing or causing sorrow?” | T: “Is it possible to exercise rulership without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously?”
+sn4.20:2.1 | S: And then Māra the Wicked, knowing the Buddha’s train of thought, went up to him and said, | T: Then Māra, the Evil One, knowing with his awareness the train of thought in the Blessed One’s awareness, went to him and on arrival said to him:
+sn4.20:2.2 | S: “Rule, Blessed One! Rule, Holy One! Rule legitimately, without killing or having someone kill for you; without conquering or having someone conquer for you; without sorrowing or causing sorrow!” | T: “Exercise rulership, Blessed One! Exercise rulership, O One Well-Gone!—without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously!”
+sn4.20:2.3 | S: “But what do you see, Wicked One, that you say this to me?” | T: “But what do you see in me, Evil One, that you say to me, ‘Exercise rulership, Blessed One! Exercise rulership, O One Well-Gone!—without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously!’?”
+sn4.20:2.5 | S: “The Blessed One, sir, has developed and cultivated the four bases for psychic power, made them a vehicle and a basis, kept them up, consolidated them, and properly implemented them. | T: “Lord, the Blessed One has developed the four bases of power, pursued them, given them a means of transport, given them a grounding, steadied them, consolidated them, and undertaken them well.
+sn4.20:2.6 | S: If he wished, the Blessed One need only determine that the Himalaya, king of mountains, was gold, and it would turn into gold.” | T: If he wanted to, he could resolve on the Himalayas, king of mountains, as gold, and it would become a mountain of gold.” The Buddha: “The entirety
+sn4.20:3.1 | S: “Take a golden mountain, | T: of a mountain of gold,
+sn4.20:3.2 | S: entirely of native gold, and double it— | T: (none)
+sn4.20:3.3 | S: it’s still not enough for one! | T: of solid bullion: Even twice that wouldn’t suffice for one person.
+sn4.20:3.4 | S: Knowing this, live a moral life. | T: Knowing this, live evenly, in tune with the contemplative life.
+sn4.20:4.1 | S: When a personage has seen where suffering comes from | T: When you see stress, and from where it comes,
+sn4.20:4.2 | S: how could they incline toward sensual pleasures? | T: how can you incline to sensuality?
+sn4.20:4.3 | S: Realizing that attachment is a chain in the world, | T: Knowing acquisition to be a bond in the world,
+sn4.20:4.4 | S: a personage would train to remove it.” | T: train for its subduing.”
+sn4.20:5.1 | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+
+## sn42.10
+sn42.10:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was staying near Rājagaha at the Squirrels’ Sanctuary.
+sn42.10:1.2 | S: Now at that time while the king’s retinue was sitting together in the royal compound this discussion came up among them, | T: Now at that time, when the king’s assembly had gathered and was sitting together in the royal palace, this topic of conversation arose:
+sn42.10:1.3 | S: “Gold and currency are proper for ascetics who follow the Sakyan. They accept and receive gold and currency.” | T: “Money [lit: gold & silver] is allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives consent to money. The Sakyan-son contemplatives accept money.”
+sn42.10:2.1 | S: Now at that time the chief Maṇicūḷaka was sitting in that assembly. | T: At that time Maṇicūḷaka the headman was sitting in that assembly,
+sn42.10:2.2 | S: He said to that retinue, | T: so he said to them,
+sn42.10:2.3 | S: “Good masters, don’t say that. | T: “Don’t say that, masters.
+sn42.10:2.4 | S: Gold and currency are not proper for ascetics who follow the Sakyan. They neither accept nor receive gold and currency. They have set aside gems and gold, and quit using gold and currency.” | T: Money is not allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives do not consent to money. The Sakyan-son contemplatives do not accept money. The Sakyan-son contemplatives have given up gold & jewelry, have renounced money.”
+sn42.10:2.5 | S: He was able to persuade that assembly. | T: And he was able to convince the assembly.
+sn42.10:2.6 | S: Then Maṇicūḷaka went up to the Buddha, bowed, sat down to one side, and told him what had happened. He then said, | T: Then he went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn42.10:2.7 | P: “idha, bhante, rājantepure rājaparisāya sannisinnānaṁ sannipatitānaṁ ayamantarākathā udapādi: | T: “Just now, lord, when the king’s assembly had gathered and was sitting together in the royal palace, this topic of conversation arose:
+sn42.10:2.8 | P: ‘kappati samaṇānaṁ sakyaputtiyānaṁ jātarūparajataṁ, sādiyanti samaṇā sakyaputtiyā jātarūparajataṁ, paṭiggaṇhanti samaṇā sakyaputtiyā jātarūparajatan’ti. | T: ‘Money is allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives consent to money. The Sakyan-son contemplatives accept money.’
+sn42.10:2.9 | P: Evaṁ vutte, ahaṁ, bhante, taṁ parisaṁ etadavocaṁ: | T: When this was said, I said to them,
+sn42.10:2.10 | P: ‘mā ayyo evaṁ avacuttha. | T: ‘Don’t say that, masters.
+sn42.10:2.11 | P: Na kappati samaṇānaṁ sakyaputtiyānaṁ jātarūparajataṁ, na sādiyanti samaṇā sakyaputtiyā jātarūparajataṁ, nappaṭiggaṇhanti samaṇā sakyaputtiyā jātarūparajataṁ, nikkhittamaṇisuvaṇṇā samaṇā sakyaputtiyā apetajātarūparajatā’ti. | T: Money is not allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives do not consent to money. The Sakyan-son contemplatives do not accept money. The Sakyan-son contemplatives have given up gold & jewelry, have renounced money.’
+sn42.10:2.12 | P: Asakkhiṁ khvāhaṁ, bhante, taṁ parisaṁ saññāpetuṁ. | T: And I was able to convince the assembly.
+sn42.10:2.13 | S: “Answering this way, I trust that I repeat what the Buddha has said, and don’t misrepresent him with an untruth. I trust my explanation is in line with the teaching, and that there are no legitimate grounds for rebuttal or criticism.” | T: Answering in this way, lord, am I speaking in line with what the Blessed One has said, am I not misrepresenting the Blessed One with what is unfactual, am I answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing me?”
+sn42.10:3.1 | S: “Indeed, in answering this way you repeat what I’ve said, and don’t misrepresent me with an untruth. Your explanation is in line with the teaching, and there are no legitimate grounds for rebuttal or criticism. | T: “Yes, headman, in answering in this way you are speaking in line with what I have said, you are not misrepresenting me with what is unfactual, and you are answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing you.
+sn42.10:3.2 | S: Gold and currency are not proper for ascetics who follow the Sakyan. They neither accept nor receive gold and currency. They have set aside gems and gold, and quit using gold and currency. | T: For money is not allowable for the Sakyan-son contemplatives, the Sakyan-son contemplatives do not consent to money, the Sakyan-son contemplatives do not accept money, the Sakyan-son contemplatives have given up gold & jewelry, have renounced money.
+sn42.10:3.3 | S: If gold and currency were proper for them, then the five kinds of sensual stimulation would also be proper. | T: For anyone for whom money is allowable, the five strings of sensuality are also allowable. For anyone for whom the five strings of sensuality are allowable, money is allowable.
+sn42.10:3.4 | S: And if the five kinds of sensual stimulation are proper for them, you should categorically regard them as not having the qualities of an ascetic or a follower of the Sakyan. | T: That you can unequivocally recognize as not the quality of a contemplative, not the quality of a Sakyan son.
+sn42.10:3.5 | S: Rather, chief, I say this: | T: (none)
+sn42.10:3.6 | S: Straw may be looked for by one needing straw; wood may be looked for by one needing wood; a cart may be looked for by one needing a cart; a workman may be looked for by one needing a workman. | T: “Now I do say that thatch may be sought for by one needing thatch, wood may be sought for by one needing wood, a cart may be sought for by one needing a cart, a workman may be sought for by one needing a workman,
+sn42.10:3.7 | S: But in any case, there is no way they can accept or look for gold and currency, I say.” | T: but by no means do I say that money may be consented to or sought for in any way at all.”
+
+## sn9.1
+sn9.1:1.1 | S: So I have heard. | T: I have heard that on one occasion a certain monk was staying among the Kosalans in a forest grove.
+sn9.1:1.2 | S: At one time one of the mendicants was staying in the land of the Kosalans in a certain forest grove. | T: (none)
+sn9.1:1.3 | S: Now at that time that mendicant, during their day’s meditation, was thinking bad, unskillful thoughts to do with the domestic life. | T: Now at that time, as he had gone to spend the day (in the grove), he was thinking unskillful thoughts, connected with the household life.
+sn9.1:1.4 | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.1:2.1 | S: “You entered the woods desiring seclusion, | T: “Desiring seclusion you’ve entered the forest,
+sn9.1:2.2 | S: yet your mind strays to outward things. | T: and yet your mind goes running outside.
+sn9.1:2.3 | S: As a person, dispel the desire for people; | T: You, a person: subdue your desire for people.
+sn9.1:2.4 | S: then you’ll be happy, free of greed. | T: Then you’ll be happy, free from passion.
+sn9.1:3.1 | S: Give up discontent; be mindful; | T: Dispel discontent, be mindful.
+sn9.1:3.2 | S: let us remind you to be mindful. | T: Let me remind you of that which is good—
+sn9.1:3.3 | S: The dusty abyss is so hard to cross; | T: for the dust of the regions below is hard to transcend.
+sn9.1:3.4 | S: don’t let sensual dust drag you down. | T: Don’t let the dust of the sensual pull you down.
+sn9.1:4.1 | S: Just as a bird strewn with dirt | T: As a bird spattered with dirt
+sn9.1:4.2 | S: sheds that clingy dust with a shake; | T: sheds the adhering dust with a shake,
+sn9.1:4.3 | S: so too, an energetic, mindful mendicant | T: so a monk —energetic & mindful—
+sn9.1:4.4 | S: sheds that clingy dust with a shake.” | T: sheds the adhering dust.”
+sn9.1:5.1 | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+
+## snp2.4
+snp2.4:1.1 | S: So I have heard. | T: (none)
+snp2.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that at one time the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+snp2.4:1.3 | S: Then, late at night, a glorious deity, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then a certain deva, in the far extreme of the night, her extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One. On arrival, having bowed down to him, she stood to one side.
+snp2.4:1.4 | S: That deity addressed the Buddha in verse: | T: As she was standing there, she addressed him with a verse.
+snp2.4:2.1 | S: “Many gods and humans | T: “Many devas & human beings
+snp2.4:2.2 | S: have thought about blessings | T: give thought to protection,
+snp2.4:2.3 | S: desiring well-being: | T: desiring well-being.
+snp2.4:2.4 | S: declare the highest blessing.” | T: Tell, then, the highest protection.”
+snp2.4:3.1 | S: “Not to fraternize with fools, | T: The Buddha: “Not consorting with fools,
+snp2.4:3.2 | S: but to fraternize with the wise, | T: consorting with the wise,
+snp2.4:3.3 | S: and honoring those worthy of honor: | T: paying homage to those worthy of homage:
+snp2.4:3.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:4.1 | S: Living in a suitable region, | T: Living in a civilized land,
+snp2.4:4.2 | S: having made merit in the past, | T: having made merit in the past,
+snp2.4:4.3 | S: being rightly resolved in oneself, | T: directing oneself rightly:
+snp2.4:4.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:5.1 | S: Education and a craft, | T: Broad knowledge, skill,
+snp2.4:5.2 | S: discipline and training, | T: well-mastered discipline,
+snp2.4:5.3 | S: and well-spoken speech: | T: well-spoken words:
+snp2.4:5.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:6.1 | S: Caring for mother and father, | T: Support for one’s mother & father,
+snp2.4:6.2 | S: kindness to children and partners, | T: assistance to one’s wife and children,
+snp2.4:6.3 | S: and unstressful work: | T: consistency in one’s work:
+snp2.4:6.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:7.1 | S: Giving and righteous conduct, | T: Generosity, living in rectitude,
+snp2.4:7.2 | S: kindness to relatives, | T: assistance to one’s relatives,
+snp2.4:7.3 | S: blameless deeds: | T: deeds that are blameless:
+snp2.4:7.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:8.1 | S: Desisting and abstaining from evil, | T: Avoiding, abstaining from evil; refraining from intoxicants,
+snp2.4:8.2 | S: avoiding drinking liquor, | T: (none)
+snp2.4:8.3 | S: diligence in good qualities: | T: being heedful of mental qualities:
+snp2.4:8.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:9.1 | S: Respect and placidity, | T: Respect, humility,
+snp2.4:9.2 | S: contentment and gratitude, | T: contentment, gratitude,
+snp2.4:9.3 | S: and timely listening to the teaching: | T: hearing the Dhamma on timely occasions:
+snp2.4:9.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:10.1 | S: Patience, being easy to admonish, | T: Patience, being easy to instruct,
+snp2.4:10.2 | S: the sight of ascetics, | T: seeing contemplatives,
+snp2.4:10.3 | S: and timely discussion of the teaching: | T: discussing the Dhamma on timely occasions:
+snp2.4:10.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:11.1 | S: Fervor and chastity | T: Austerity, celibacy,
+snp2.4:11.2 | S: seeing the noble truths, | T: seeing the noble truths,
+snp2.4:11.3 | S: and realization of extinguishment: | T: realizing unbinding:
+snp2.4:11.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:12.1 | S: Though touched by worldly conditions, | T: A mind that, when touched by the ways of the world,
+snp2.4:12.2 | S: their mind does not tremble; | T: is unshaken,
+snp2.4:12.3 | S: sorrowless, stainless, secure: | T: sorrowless, dustless, at rest:
+snp2.4:12.4 | S: this is the highest blessing. | T: This is the highest protection.
+snp2.4:13.1 | S: Having completed these things, | T: (none)
+snp2.4:13.2 | S: undefeated everywhere; | T: When acting in this way, everywhere undefeated,
+snp2.4:13.3 | S: everywhere they go in safety: | T: people go everywhere in well-being:
+snp2.4:13.4 | S: this is their highest blessing.” | T: This is their highest protection.”
+
+## mn140
+mn140:1.1 | S: So I have heard. | T: I have heard that on one occasion,
+mn140:1.2 | S: At one time the Buddha was wandering in the Magadhan lands when he arrived at Rājagaha. | T: as the Blessed One was wandering among the Magadhans, he entered Rājagaha,
+mn140:1.3 | S: He went to see Bhaggava the potter, and said, | T: went to the potter Bhaggava, and on arrival said to him,
+mn140:2.1 | S: “Bhaggava, if it is no trouble, I’d like to spend a single night in your workshop.” | T: “If it is no inconvenience for you, Bhaggava, I will stay for one night in your shed.”
+mn140:2.2 | S: “It’s no trouble, sir. | T: “It’s no inconvenience for me, lord,
+mn140:2.3 | S: But there’s a renunciate already staying there. | T: but there is a wanderer who has already taken up residence there.
+mn140:2.4 | S: If he allows it, sir, you may stay as long as you please.” | T: If he gives his permission, you may stay there as you like.”
+mn140:3.1 | S: Now at that time a gentleman named Pukkusāti had gone forth out of faith from the lay life to homelessness in the Buddha’s name. | T: Now at that time a clansman named Pukkusāti had left home and gone forth into homelessness through faith, out of dedication to the Blessed One.
+mn140:3.2 | S: And it was he who had first taken up residence in the workshop. | T: He was the one who had already taken up residence in the potter’s shed.
+mn140:3.3 | S: Then the Buddha approached Venerable Pukkusāti and said, | T: So the Blessed One approached Ven. Pukkusāti and, on arrival, said to him,
+mn140:3.4 | S: “Mendicant, if it is no trouble, I’d like to spend a single night in the workshop.” | T: “If it is no inconvenience for you, monk, I will stay one night in the shed.”
+mn140:3.5 | S: “The potter’s workshop is spacious, reverend. | T: “The shed is roomy, my friend.
+mn140:3.6 | S: Stay as long as you please.” | T: Stay as you like.”
+mn140:4.1 | S: Then the Buddha entered the workshop and spread out a grass mat to one side. He sat down cross-legged, set his body straight, and brought mindfulness to the present. | T: So the Blessed One, entering the potter’s shed and setting out a spread of grass to one side, sat down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+mn140:4.2 | S: He spent much of the night sitting in meditation, | T: He spent most of the night sitting (in meditation). Ven. Pukkusāti also spent most of the night sitting (in meditation).
+mn140:4.3 | S: and so did Pukkusāti. | T: The thought occurred to the Blessed One,
+mn140:4.4 | S: Then it occurred to the Buddha, | T: (none)
+mn140:4.5 | S: “This gentleman’s behavior is impressive. | T: “How inspiring is the way this clansman behaves!
+mn140:4.6 | S: Why don’t I question him?” | T: What if I were to question him?”
+mn140:4.7 | S: So the Buddha said to Pukkusāti, | T: So he said to Ven. Pukkusāti,
+mn140:5.1 | S: “In whose name have you gone forth, mendicant? Who is your Teacher? Whose teaching do you believe in?” | T: “Out of dedication to whom, monk, have you gone forth? Who is your teacher? Of whose Dhamma do you approve?”
+mn140:5.2 | S: “Reverend, there is the ascetic Gotama—a Sakyan, gone forth from a Sakyan family. | T: “There is, my friend, Gotama the contemplative, a son of the Sakyans, gone forth from a Sakyan clan.
+mn140:5.3 | S: He has this good reputation: | T: Now, this excellent report about Master Gotama has been spread about:
+mn140:5.4 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+mn140:5.5 | S: I’ve gone forth in his name. | T: I have gone forth out of dedication to that Blessed One.
+mn140:5.6 | S: That Blessed One is my Teacher, | T: That Blessed One is my teacher.
+mn140:5.7 | S: and I believe in his teaching.” | T: It is of that Blessed One’s Dhamma that I approve.”
+mn140:5.8 | S: “But mendicant, where is the Blessed One at present, the perfected one, the fully awakened Buddha?” | T: “But where, monk, is that Blessed One—worthy & rightly self-awakened—staying now?”
+mn140:5.9 | S: “In the northern lands there is a city named Sāvatthī. | T: “There is, my friend, a city in the northern lands named Sāvatthī.
+mn140:5.10 | S: There the Blessed One is now staying, the perfected one, the fully awakened Buddha.” | T: That is where the Blessed One—worthy & rightly self-awakened—is staying now.”
+mn140:5.11 | S: “But have you ever seen that Buddha? | T: “Have you ever seen that Blessed One before?
+mn140:5.12 | S: Would you recognize him if you saw him?” | T: On seeing him, would you recognize him?”
+mn140:5.13 | S: “No, I’ve never seen him, | T: “No, my friend, I have never seen the Blessed One before,
+mn140:5.14 | S: and I wouldn’t recognize him if I did.” | T: nor on seeing him would I recognize him.”
+mn140:6.1 | S: Then it occurred to the Buddha, | T: Then the thought occurred to the Blessed One:
+mn140:6.2 | S: “This gentleman has gone forth in my name. | T: “It’s out of dedication to me that this clansman has gone forth.
+mn140:6.3 | S: Why don’t I teach him the Dhamma?” | T: What if I were to teach him the Dhamma?”
+mn140:6.4 | S: So the Buddha said to Pukkusāti, | T: So he said to Ven. Pukkusāti,
+mn140:6.5 | S: “Mendicant, I shall teach you the Dhamma. | T: “I will teach you the Dhamma, monk.
+mn140:6.6 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+mn140:6.7 | S: “Yes, reverend,” replied Pukkusāti. | T: “As you say, friend,” Ven. Pukkusāti responded to the Blessed One.
+mn140:6.8 | S: The Buddha said this: | T: The Blessed One said:
+mn140:7.1 | S: “‘This person has six elements, six fields of contact, eighteen mental preoccupations, and four foundations. | T: “A person has six properties, six media of sensory contact, eighteen considerations, & four determinations.
+mn140:7.2 | S: Where they stand, the streams of conceiving do not flow. And where the streams of conceiving do not flow, they are called a sage at peace. | T: He has been stilled where the currents of supposition do not flow. And when the currents of supposition do not flow, he is said to be a sage at peace.
+mn140:7.3 | S: Do not neglect wisdom; preserve truth; foster generosity; and train only for peace.’ | T: One should not be negligent of discernment, should guard the truth, be devoted to relinquishment, and train only for calm.
+mn140:7.4 | S: This is the summary recital for the analysis of the elements. | T: This is the summary of the analysis of the six properties.
+mn140:8.1 | S: ‘This person has six elements.’ | T: “‘A person has six properties.’
+mn140:8.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. In reference to what was it said?
+mn140:8.3 | S: There are these six elements: | T: These are the six properties:
+mn140:8.4 | S: the elements of earth, water, fire, air, space, and consciousness. | T: the earth property, the liquid property, the fire property, the wind property, the space property, the consciousness property.
+mn140:8.5 | S: ‘This person has six elements.’ | T: ‘A person has six properties.’
+mn140:8.6 | S: That’s what I said, and this is why I said it. | T: Thus it was said, and in reference to this was it said.
+mn140:9.1 | S: ‘This person has six fields of contact.’ | T: “‘A person has six media of sensory contact.’
+mn140:9.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. In reference to what was it said?
+mn140:9.3 | S: The fields of contact of the eye, ear, nose, tongue, body, and mind. | T: These are the six media of sensory contact: the eye as a medium of sensory contact, the ear… the nose… the tongue… the body… the intellect as a medium of sensory contact.
+mn140:9.4 | S: ‘This person has six fields of contact.’ | T: ‘A person has six media of sensory contact.’
+mn140:9.5 | S: That’s what I said, and this is why I said it. | T: Thus it was said, and in reference to this was it said.
+mn140:10.1 | S: ‘This person has eighteen mental preoccupations.’ | T: “‘A person has eighteen considerations.’
+mn140:10.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. In reference to what was it said?
+mn140:10.3 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: These are the eighteen considerations: On seeing a form with the eye, one considers a form that can act as a basis for joy, a form that can act as a basis for sadness, or a form that can act as a basis for equanimity.
+mn140:10.4 | S: Hearing a sound with their ears … | T: On hearing a sound with the ear.…
+mn140:10.5 | S: Smelling an odor with their nose … | T: On smelling an aroma with the nose.…
+mn140:10.6 | S: Tasting a flavor with their tongue … | T: On tasting a flavor with the tongue.…
+mn140:10.7 | S: Encountering a touch with their body … | T: On touching a tactile sensation with the body.…
+mn140:10.8 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: On cognizing an idea with the intellect, one considers an idea that can act as a basis for joy, an idea that can act as a basis for sadness, or an idea that can act as a basis for equanimity.
+mn140:10.9 | S: So there are six preoccupations with happiness, six preoccupations with sadness, and six preoccupations with equanimity. | T: Thus there are six considerations conducive to joy, six conducive to sadness, & six conducive to equanimity.
+mn140:10.10 | S: ‘This person has eighteen mental preoccupations.’ | T: ‘A person has eighteen considerations.’
+mn140:10.11 | S: That’s what I said, and this is why I said it. | T: Thus it was said, and in reference to this was it said.
+mn140:11.1 | S: ‘This person has four foundations.’ | T: “‘A person has four determinations.’
+mn140:11.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. In reference to what was it said?
+mn140:11.3 | S: The foundations of wisdom, truth, generosity, and peace. | T: These are the four determinations: the determination for discernment, the determination for truth, the determination for relinquishment, the determination for calm.
+mn140:11.4 | S: ‘This person has four foundations.’ | T: ‘A person has four determinations.’
+mn140:11.5 | S: That’s what I said, and this is why I said it. | T: Thus it was said, and in reference to this was it said.
+mn140:12.1 | S: ‘Do not neglect wisdom; preserve truth; foster generosity; and train only for peace.’ | T: “‘One should not be negligent of discernment, should guard the truth, be devoted to relinquishment, and train only for calm.’
+mn140:12.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. In reference to what was it said?
+mn140:13.1 | S: And how does one not neglect wisdom? | T: And how is one not negligent of discernment?
+mn140:13.2 | S: There are these six elements: | T: These are the six properties:
+mn140:13.3 | S: the elements of earth, water, fire, air, space, and consciousness. | T: the earth property, the liquid property, the fire property, the wind property, the space property, the consciousness property.
+mn140:14.1 | S: And what is the earth element? | T: “And what is the earth property?
+mn140:14.2 | S: The earth element may be interior or exterior. | T: The earth property can be either internal or external.
+mn140:14.3 | S: And what is the interior earth element? | T: What is the internal earth property?
+mn140:14.4 | S: Anything internal, personal, that’s hard, solid, and appropriated. This includes: | T: Anything internal, within oneself, that’s hard, solid, & sustained (by craving):
+mn140:14.5 | S: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, or anything else internal, personal, that’s hard, solid, and appropriated. | T: head hairs, body hairs, nails, teeth, skin, flesh, tendons, bones, bone marrow, kidneys, heart, liver, membranes, spleen, lungs, large intestines, small intestines, contents of the stomach, feces, or anything else internal, within oneself, that’s hard, solid, and sustained:
+mn140:14.6 | S: This is called the interior earth element. | T: This is called the internal earth property.
+mn140:14.7 | S: The interior earth element and the exterior earth element are just the earth element. | T: Now both the internal earth property & the external earth property are simply earth property.
+mn140:14.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it has come to be with right discernment: ‘This is not mine, this is not what I am, this is not my self.’
+mn140:14.9 | S: When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element. | T: When one sees it thus as it has come to be with right discernment, one becomes disenchanted with the earth property and makes the earth property fade from the mind.
+mn140:15.1 | S: And what is the water element? | T: “And what is the liquid property?
+mn140:15.2 | S: The water element may be interior or exterior. | T: The liquid property may be either internal or external.
+mn140:15.3 | S: And what is the interior water element? | T: What is the internal liquid property?
+mn140:15.4 | S: Anything internal, personal, that’s water, watery, and appropriated. This includes: | T: Anything internal, within oneself, that’s liquid, watery, & sustained:
+mn140:15.5 | S: bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine, or anything else internal, personal, that’s water, watery, and appropriated. | T: bile, phlegm, pus, blood, sweat, fat, tears, oil, saliva, mucus, oil-of-the-joints, urine, or anything else internal, within oneself, that’s liquid, watery, & sustained:
+mn140:15.6 | S: This is called the interior water element. | T: This is called the internal liquid property.
+mn140:15.7 | S: The interior water element and the exterior water element are just the water element. | T: Now both the internal liquid property & the external liquid property are simply liquid property.
+mn140:15.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it has come to be with right discernment: ‘This is not mine, this is not what I am, this is not my self.’
+mn140:15.9 | S: When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element. | T: When one sees it thus as it has come to be with right discernment, one becomes disenchanted with the liquid property and makes the liquid property fade from the mind.
+mn140:16.1 | S: And what is the fire element? | T: “And what is the fire property?
+mn140:16.2 | S: The fire element may be interior or exterior. | T: The fire property may be either internal or external.

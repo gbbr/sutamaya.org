@@ -1,0 +1,352 @@
+## an2.47
+an2.47:1.0 | S: 47 | T: (none)
+an2.47:1.1 | S: “There are, mendicants, these two assemblies. | T: “Monks, there are these two assemblies.
+an2.47:1.2 | S: What two? | T: Which two?
+an2.47:1.3 | S: An assembly educated in fancy talk, not in questioning, and an assembly educated in questioning, not in fancy talk. | T: The assembly trained in bombast and not in cross-questioning, and the assembly trained in cross-questioning and not in bombast.
+an2.47:1.4 | S: And what is an assembly educated in fancy talk, not in questioning? | T: “And which is the assembly trained in bombast and not in cross-questioning?
+an2.47:1.5 | S: It is an assembly where, when discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited the mendicants do not want to listen. They don’t actively listen or try to understand, nor do they think those teachings are worth learning and memorizing. | T: There is the case where in any assembly when the discourses of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are recited, the monks don’t listen, don’t lend ear, don’t set their hearts on knowing them, don’t regard them as worth grasping or mastering.
+an2.47:1.6 | S: But when discourses composed by poets—poetry, with fancy words and phrases, composed by outsiders or spoken by disciples—are being recited the mendicants do want to listen. They actively listen and try to understand, and they think those teachings are worth learning and memorizing. But when they’ve memorized those teachings they don’t question or examine each other, saying: | T: But when discourses that are literary works—the works of poets, artful in sound, artful in expression, the work of outsiders, words of disciples—are recited, they listen, they lend ear, they set their hearts on knowing them, they regard them as worth grasping & mastering. Yet when they have mastered that Dhamma, they don’t cross-question one another about it, don’t dissect:
+an2.47:1.7 | S: ‘Why does it say this? What does that mean?’ | T: ‘How is this? What is the meaning of this?’
+an2.47:1.8 | S: So they don’t reveal what is hidden or clarify what is unclear, or dispel doubt regarding the many doubtful matters. | T: They don’t make open what isn’t open, don’t make plain what isn’t plain, don’t dispel doubt on its various doubtful points.
+an2.47:1.9 | S: This is called an assembly educated in fancy talk, not in questioning. | T: This is called an assembly trained in bombast, not in cross-questioning.
+an2.47:2.1 | S: And what is an assembly educated in questioning, not in fancy talk? | T: “And which is the assembly trained in cross-questioning and not in bombast?
+an2.47:2.2 | S: It is an assembly where, when discourses composed by poets—poetry, with fancy words and phrases, composed by outsiders or spoken by disciples—are being recited the mendicants do not want to listen. They don’t actively listen or try to understand, nor do they think those teachings are worth learning and memorizing. | T: “There is the case where in any assembly when discourses that are literary works—the works of poets, artful in sound, artful in rhetoric, the work of outsiders, words of disciples—are recited, the monks don’t listen, don’t lend ear, don’t set their hearts on knowing them; don’t regard them as worth grasping or mastering.
+an2.47:2.3 | S: But when discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited the mendicants do want to listen. They actively listen and try to understand, and they think those teachings are worth learning and memorizing. | T: But when the discourses of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are recited, they listen, they lend ear, they set their hearts on knowing them, they regard them as worth grasping & mastering.
+an2.47:2.4 | S: And when they’ve memorized those teachings they question and examine each other, saying: | T: And when they have mastered that Dhamma, they cross-question one another about it and dissect it:
+an2.47:2.5 | S: ‘Why does it say this? What does that mean?’ | T: ‘How is this? What is the meaning of this?’
+an2.47:2.6 | S: So they reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: They make open what isn’t open, make plain what isn’t plain, dispel doubt on its various doubtful points.
+an2.47:2.7 | S: This is called an assembly educated in questioning, not in fancy talk. | T: This is called an assembly trained in cross-questioning and not in bombast.”
+an2.47:2.8 | S: These are the two assemblies. | T: (none)
+an2.47:2.9 | S: The better of these two assemblies is the assembly educated in questioning, not in fancy talk.” | T: (none)
+
+## an6.19
+an6.19:1.1 | S: At one time the Buddha was staying at Ñātika in the brick house. | T: I have heard that at one time the Blessed One was staying near Nādika in the Brick Hall.
+an6.19:1.2 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+an6.19:1.3 | S: “Mendicants!” | T: “Monks!”
+an6.19:1.4 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an6.19:1.5 | S: The Buddha said this: | T: The Blessed One said,
+an6.19:1.6 | S: “Mendicants, when mindfulness of death is developed and cultivated it’s very fruitful and beneficial. It has freedom from death as its objective and culmination. | T: “Mindfulness of death, when developed & pursued, is of great fruit & great benefit. It gains a footing in the deathless, has the deathless as its final end.
+an6.19:1.7 | S: But do you develop mindfulness of death?” | T: Therefore you should develop mindfulness of death.”
+an6.19:2.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk addressed the Blessed One,
+an6.19:2.2 | S: “Sir, I develop mindfulness of death.” | T: “I already develop mindfulness of death.” “And how do you develop mindfulness of death?”
+an6.19:2.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:2.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:2.5 | S: ‘Oh, if I’d only live for another day and night, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for a day & night, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’
+an6.19:2.6 | S: That’s how I develop mindfulness of death.” | T: This is how I develop mindfulness of death.”
+an6.19:3.1 | S: Another mendicant said to the Buddha, | T: Then another monk addressed the Blessed One,
+an6.19:3.2 | S: “Sir, I too develop mindfulness of death.” | T: “I, too, already develop mindfulness of death.” “And how do you develop mindfulness of death?”
+an6.19:3.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:3.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:3.5 | S: ‘Oh, if I’d only live for another day, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for a day, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’
+an6.19:3.6 | S: That’s how I develop mindfulness of death.” | T: This is how I develop mindfulness of death.”
+an6.19:4.1 | S: Another mendicant said to the Buddha, | T: Then another monk addressed the Blessed One,
+an6.19:4.2 | S: “Sir, I too develop mindfulness of death.” | T: “I, too, develop mindfulness of death.”…
+an6.19:4.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:4.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:4.5 | S: ‘Oh, if I’d only live as long as it takes to eat a meal of almsfood, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for the interval that it takes to eat a meal, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’…”
+an6.19:4.6 | S: That’s how I develop mindfulness of death.” | T: (none)
+an6.19:5.1 | S: Another mendicant said to the Buddha, | T: Then another monk addressed the Blessed One,
+an6.19:5.2 | S: “Sir, I too develop mindfulness of death.” | T: “I, too, develop mindfulness of death.”…
+an6.19:5.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:5.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:5.5 | S: ‘Oh, if I’d only live as long as it takes to chew and swallow four or five mouthfuls, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for the interval that it takes to swallow, having chewed up four morsels of food, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’…”
+an6.19:5.6 | S: That’s how I develop mindfulness of death.” | T: (none)
+an6.19:6.1 | S: Another mendicant said to the Buddha, | T: Then another monk addressed the Blessed One,
+an6.19:6.2 | S: “Sir, I too develop mindfulness of death.” | T: “I, too, develop mindfulness of death.”…
+an6.19:6.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:6.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:6.5 | S: ‘Oh, if I’d only live as long as it takes to chew and swallow a single mouthful, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for the interval that it takes to swallow, having chewed up one morsel of food, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’…”
+an6.19:6.6 | S: That’s how I develop mindfulness of death.” | T: (none)
+an6.19:7.1 | S: Another mendicant said to the Buddha, | T: Then another monk addressed the Blessed One,
+an6.19:7.2 | S: “Sir, I too develop mindfulness of death.” | T: “I, too, develop mindfulness of death.”…
+an6.19:7.3 | S: “But mendicant, how do you develop it?” | T: (none)
+an6.19:7.4 | S: “In this case, sir, I think: | T: “I think,
+an6.19:7.5 | S: ‘Oh, if I’d only live as long as it takes to breathe out after breathing in, or to breathe in after breathing out, I’d focus on the Buddha’s instructions and I could really achieve a lot.’ | T: ‘O, that I might live for the interval that it takes to breathe out after breathing in, or to breathe in after breathing out, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal.’
+an6.19:7.6 | S: That’s how I develop mindfulness of death.” | T: This is how I develop mindfulness of death.”
+an6.19:8.1 | S: When this was said, the Buddha said to those mendicants: | T: When this was said, the Blessed One addressed the monks.
+an6.19:8.2 | S: “As to the mendicants who develop mindfulness of death by wishing | T: “Whoever develops mindfulness of death, thinking,
+an6.19:8.3 | S: to live for a day and night … | T: ‘O, that I might live for a day & night…
+an6.19:9.2 | S: or to live for a day … | T: for a day…
+an6.19:10.2 | S: or to live as long as it takes to eat a meal of almsfood … | T: for the interval that it takes to eat a meal…
+an6.19:11.2 | S: or to live as long as it takes to chew and swallow four or five mouthfuls— | T: for the interval that it takes to swallow having chewed up four morsels of food, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal’—
+an6.19:12.1 | S: these are called mendicants who live negligently. They slackly develop mindfulness of death for the ending of defilements. | T: they are said to dwell heedlessly. They develop mindfulness of death slowly for the sake of ending the effluents.
+an6.19:13.1 | S: But as to the mendicants who develop mindfulness of death by wishing | T: “But whoever develops mindfulness of death, thinking,
+an6.19:13.2 | S: to live as long as it takes to chew and swallow a single mouthful … | T: ‘O, that I might live for the interval that it takes to swallow having chewed up one morsel of food…
+an6.19:14.2 | S: or to live as long as it takes to breathe out after breathing in, or to breathe in after breathing out— | T: for the interval that it takes to breathe out after breathing in, or to breathe in after breathing out, that I might attend to the Blessed One’s instructions. I would have accomplished a great deal’—
+an6.19:15.1 | S: these are called mendicants who live diligently. They keenly develop mindfulness of death for the ending of defilements. | T: they are said to dwell heedfully. They develop mindfulness of death acutely for the sake of ending the effluents.
+an6.19:16.1 | S: So you should train like this: | T: “Therefore you should train yourselves:
+an6.19:16.2 | S: ‘We will live diligently. We will keenly develop mindfulness of death for the ending of defilements.’ | T: ‘We will dwell heedfully. We will develop mindfulness of death acutely for the sake of ending the effluents.’
+an6.19:16.3 | S: That’s how you should train.” | T: That is how you should train yourselves.”
+an6.19:16.4 | P: Navamaṁ. | T: That is what the Blessed One said. Gratified, the monks delighted in the Blessed One’s words.
+
+## iti105
+iti105:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti105:2.1 | S: “Mendicants, there are four things that give rise to craving in a mendicant. | T: “Monks, there are these four birthplaces of craving where a monk’s craving, when taking birth, takes birth.
+iti105:2.2 | S: What four? | T: Which four?
+iti105:2.3 | S: For the sake of robes, | T: Either for the sake of cloth a monk’s craving, when taking birth, takes birth.
+iti105:2.4 | S: almsfood, | T: Or for the sake of alms food a monk’s craving,
+iti105:2.5 | S: lodgings, | T: (none)
+iti105:2.6 | S: or rebirth in this or that state. | T: when taking birth, takes birth. Or for the sake of lodging a monk’s craving, when taking birth, takes birth. Or for the sake of becoming or not becoming this or that a monk’s craving, when taking birth, takes birth.
+iti105:2.7 | S: These are the four things that give rise to craving in a mendicant.” | T: These are the four birthplaces of craving where a monk’s craving, when taking birth,
+iti105:2.8 | S: The Buddha spoke this matter. | T: (none)
+iti105:2.9 | S: On this it is said: | T: takes birth.”
+iti105:3.1 | S: “Craving is a person’s partner | T: With craving his companion, a man
+iti105:3.2 | S: as they transmigrate on this long journey. | T: wanders on a long, long time.
+iti105:3.3 | S: They go from this state to another, | T: Neither in this state here nor anywhere else
+iti105:3.4 | S: but don’t escape transmigration. | T: does he go beyond the wandering- on.
+iti105:4.1 | S: Knowing this danger, | T: Knowing this drawback–
+iti105:4.2 | S: that craving is the cause of suffering— | T: that craving brings stress into play–
+iti105:4.3 | S: rid of craving, free of grasping, | T: free from craving, devoid of clinging,
+iti105:4.4 | S: a mendicant would wander mindful.” | T: mindful, the monk lives the mendicant life.
+iti105:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti43
+iti43:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti43:2.1 | S: “There is, mendicants, freedom from rebirth, freedom from what has been produced, made, and conditioned. | T: “There is, monks, an unborn–unbecome–unmade–unfabricated.
+iti43:2.2 | S: If there were no freedom from rebirth, freedom from what has been produced, made, and conditioned, then you would find no escape here from rebirth, from what has been produced, made, and conditioned. | T: If there were not that unborn–unbecome–unmade–unfabricated, there would not be the case that escape from the born–become–made–fabricated would be discerned.
+iti43:2.3 | S: But since there is freedom from rebirth, freedom from what has been produced, made, and conditioned, an escape is found from rebirth, from what has been produced, made, and conditioned.” | T: But precisely because there is an unborn–unbecome–unmade–unfabricated, escape from the born–become–made–fabricated is thus discerned.”
+iti43:2.4 | S: The Buddha spoke this matter. | T: (none)
+iti43:2.5 | S: On this it is said: | T: (none)
+iti43:3.1 | S: “What’s reborn, produced, and arisen, | T: The born, become, produced,
+iti43:3.2 | S: made, conditioned, not lasting, | T: made, fabricated, impermanent,
+iti43:3.3 | S: wrapped in old age and death, | T: fabricated of aging & death,
+iti43:3.4 | S: frail, a nest of disease, | T: a nest of illnesses, perishing,
+iti43:4.1 | S: whose inception is the leash to food: | T: come-into-being through nourishment and the guide [that is craving]–
+iti43:4.2 | S: that’s not fit to delight in. | T: is unfit for delight.
+iti43:4.3 | S: The escape from that is peaceful, | T: The escape from that is peaceful,
+iti43:4.4 | S: beyond the scope of logic, everlasting, | T: permanent, a sphere beyond conjecture,
+iti43:5.1 | S: where nothing is reborn or arisen, | T: unborn, unproduced,
+iti43:5.2 | S: the sorrowless, stainless state, | T: the sorrowless, stainless state,
+iti43:5.3 | S: the cessation of all painful things, | T: the cessation of stressful qualities,
+iti43:5.4 | S: the blissful stilling of conditions.” | T: stilling-of-fabrications bliss.
+iti43:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti47
+iti47:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti47:2.1 | S: “A mendicant should meditate wakeful, mendicants, mindful and aware, joyful and clear, and at times discern the skillful qualities in that state. | T: “Monks, a monk should be wakeful: mindful, alert, centered, sensitive, clear, & calm. And there he should, at the appropriate times, see clearly into skillful mental qualities.
+iti47:2.2 | S: A mendicant who meditates in this way can expect one of two results: | T: For a monk who is wakeful–mindful, alert, centered, sensitive, clear, & calm, seeing clearly, at the appropriate times, into skillful mental qualities–one of two fruits can be expected:
+iti47:2.3 | S: enlightenment in this very life, or if there’s residue left behind, non-return.” | T: either gnosis right in the here-&-now, or–if there be any remnant of clinging-sustenance–non-return.”
+iti47:2.4 | S: The Buddha spoke this matter. | T: (none)
+iti47:2.5 | S: On this it is said: | T: (none)
+iti47:3.1 | S: “Listen up, wakeful ones! | T: Those who are wakeful, listen to this!
+iti47:3.2 | S: And those asleep, wake up! | T: Those who are sleeping, wake up!
+iti47:3.3 | S: Wakefulness is better than sleep, | T: Wakefulness is better than sleep.
+iti47:3.4 | S: the wakeful have nothing to fear. | T: For those who are wakeful, there’s no danger, no fear.
+iti47:4.1 | S: Those who are wakeful, mindful and aware, | T: Whoever is wakeful, mindful, alert,
+iti47:4.2 | S: immersed in samādhi, joyful and clear, | T: centered, sensitive, calm, & clear,
+iti47:4.3 | S: rightly investigating the Dhamma in good time, | T: rightly exploring the Dhamma at appropriate times,
+iti47:4.4 | S: at one, would banish the darkness. | T: he–on becoming unified– could shatter the darkness.
+iti47:5.1 | S: That’s why you should apply yourself to wakefulness. | T: So be devoted to wakefulness.
+iti47:5.2 | S: A keen and alert mendicant, possessing absorption, | T: The ardent monk –masterful, acquiring jhāna,
+iti47:5.3 | S: having cut the fetter of birth and old age, | T: cutting the fetter of birth & aging–
+iti47:5.4 | S: would experience supreme awakening <j>in this very life.” | T: touches right here a self-awakening un-
+iti47:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti47:6.2 | P: Dasamaṁ. | T: surpassed.
+
+## iti73
+iti73:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti73:2.1 | S: “Mendicants, formless states are more peaceful than states of form; cessation is more peaceful than formless states.” | T: “Monks, formless phenomena are more peaceful than forms; cessation, more peaceful than formless phenomena.”
+iti73:2.2 | S: The Buddha spoke this matter. | T: (none)
+iti73:2.3 | S: On this it is said: | T: (none)
+iti73:3.1 | S: “There are beings in the realm of luminous form, | T: Those beings headed to forms,
+iti73:3.2 | S: and others stuck in the formless. | T: and those standing in the formless,
+iti73:3.3 | S: Not understanding cessation, | T: with no knowledge of cessation,
+iti73:3.4 | S: they return in future lives. | T: return to further becoming.
+iti73:4.1 | S: But the people who completely understand form, | T: But, comprehending form,
+iti73:4.2 | S: not stuck in the formless, | T: not taking a stance in formless things,
+iti73:4.3 | S: released in cessation— | T: those released in cessation
+iti73:4.4 | S: they are conquerors of death. | T: are people who’ve left death behind.
+iti73:5.1 | S: Having directly experienced <j>the element free of death, | T: Having touched with his body the deathless property free
+iti73:5.2 | S: free of attachments; | T: from acquisitions,
+iti73:5.3 | S: having realized relinquishment | T: having realized relinquishing
+iti73:5.4 | S: of attachments, the undefiled | T: of acquisitions, effluent-free,
+iti73:5.5 | S: fully awakened Buddha teaches | T: the Rightly Self-awakened One teaches the state
+iti73:5.6 | S: the sorrowless, stainless state.” | T: with no sorrow,
+iti73:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti73:6.2 | P: Catutthaṁ. | T: no dust.
+
+## ud6.6
+ud6.6:1.1 | S: So I have heard. | T: (none)
+ud6.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud6.6:1.3 | S: Now at that time several ascetics, brahmins, and wanderers who followed various other religions were residing in Sāvatthī, holding different views, beliefs, and opinions, relying on different views. | T: And on that occasion there were many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views.
+ud6.6:2.1 | S: There were some ascetics and brahmins who had this doctrine and view: | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.6:2.2 | S: “The self and the cosmos are eternal. This is the only truth, anything else is futile.” | T: “The self & the cosmos are eternal. Only this is true; anything otherwise is worthless.”
+ud6.6:3.1 | S: Others held views such as the following, each regarding their own view as true and others as silly. | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.6:3.2 | S: “The self and the cosmos are not eternal.” | T: “The self & the cosmos are not eternal” …
+ud6.6:4.2 | S: “The self and the cosmos are both eternal and not eternal.” | T: “The self & the cosmos are both eternal and not eternal” …
+ud6.6:5.2 | S: “The self and the cosmos are neither eternal nor not eternal.” | T: “The self & the cosmos are neither eternal nor not eternal” …
+ud6.6:6.2 | S: “The self and the cosmos are made by oneself.” | T: “The self & the cosmos are self-made” …
+ud6.6:7.2 | S: “The self and the cosmos are made by another.” | T: “The self & the cosmos are other-made” …
+ud6.6:8.2 | S: “The self and the cosmos are made by both oneself and another.” | T: “The self & the cosmos are both self-made & other-made” …
+ud6.6:9.2 | S: “The self and the cosmos have arisen anomalously, not made by oneself or another.” | T: “The self & the cosmos–without self-making, without other-making–are spontaneously arisen” …
+ud6.6:10.2 | S: “Pleasure and pain are eternal, and the self and the cosmos.” | T: (none)
+ud6.6:11.2 | S: “Pleasure and pain are not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:12.2 | S: “Pleasure and pain are both eternal and not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:13.2 | S: “Pleasure and pain are neither eternal nor not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:14.2 | S: “Pleasure and pain are made by oneself, and the self and the cosmos.” | T: “Pleasure & pain, the self & the cosmos are self-made” …
+ud6.6:15.2 | S: “Pleasure and pain are made by another, and the self and the cosmos.” | T: “other-made” …
+ud6.6:16.2 | S: “Pleasure and pain are made by both oneself and another, and the self and the cosmos.” | T: “both self-made & other-made” … “Pleasure & pain,
+ud6.6:17.2 | S: “Pleasure and pain have arisen anomalously, not made by oneself or another, and the self and the cosmos.” | T: the self & the cosmos–without self-making, without other-making–are spontaneously arisen. Only this is true; anything otherwise is worthless.”
+ud6.6:18.1 | S: They were fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: And they kept on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:18.2 | S: “Such is Truth, such is not Truth! | T: “The Dhamma is like this, it’s not like that.
+ud6.6:18.3 | S: Such is not Truth, such is Truth!” | T: The Dhamma’s not like that, it’s like this.”
+ud6.6:19.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and–carrying their bowls & robes–went into Sāvatthī for alms.
+ud6.6:19.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One,
+ud6.6:20.1 | P: “Idha, bhante, sambahulā nānātitthiyasamaṇabrāhmaṇaparibbājakā sāvatthiyaṁ paṭivasanti nānādiṭṭhikā nānākhantikā nānārucikā nānādiṭṭhinissayanissitā. | T: “Lord, there are many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs,
+ud6.6:21.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: dependent for support on their differing views….
+ud6.6:21.3 | P: te bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: And they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:21.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.6:21.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.6:22.1 | P: “Aññatitthiyā, bhikkhave, paribbājakā andhā acakkhukā. | T: “Monks, the wanderers of other sects are blind & eyeless.
+ud6.6:22.2 | P: Te atthaṁ na jānanti anatthaṁ na jānanti, dhammaṁ na jānanti adhammaṁ na jānanti. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma.
+ud6.6:22.3 | P: Te atthaṁ ajānantā anatthaṁ ajānantā, dhammaṁ ajānantā adhammaṁ ajānantā bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: Not knowing what is beneficial and what is harmful, not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:22.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.6:22.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.6:23.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.6:24.1 | S: “Folk are fixated on the I-maker, | T: People are intent on the idea of ‘I-making’ and attached to the idea of ‘other-making.’
+ud6.6:24.2 | S: which is tied up with the other-maker. | T: (none)
+ud6.6:24.3 | S: There are some who do not realize this, | T: Some don’t realize this,
+ud6.6:24.4 | S: they do not see the dart. | T: nor do they see it as an arrow.
+ud6.6:25.1 | S: But when they see this dart, | T: But to one who, having extracted this arrow, sees,
+ud6.6:25.2 | S: they do not think, ‘I make it’, | T: [the thought] ‘I am doing,’ doesn’t occur;
+ud6.6:25.3 | S: nor ‘another makes it’. | T: ‘Another is doing,’ doesn’t occur.
+ud6.6:26.1 | S: These folk are caught up in conceit, | T: This human race is possessed by conceit
+ud6.6:26.2 | S: tied by conceit, shackled by conceit. | T: bound by conceit, tied down by conceit.
+ud6.6:26.3 | S: Vehemently defending their views, | T: Speaking hurtfully because of their views
+ud6.6:26.4 | S: they don’t escape transmigration.” | T: they don’t go beyond the wandering-on.
+
+## ud8.10
+ud8.10:1.1 | S: So I have heard. | T: (none)
+ud8.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud8.10:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+ud8.10:1.4 | S: “Mendicants!” | T: “Monks!”
+ud8.10:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+ud8.10:1.6 | S: The Buddha said this: | T: The Blessed One said,
+ud8.10:2.1 | S: “Mendicants, when Dabba the Mallian rose into the air and, sitting cross-legged in midair, entered and withdrew from the fire element before becoming fully quenched, his body burning and combusting left neither ashes nor soot to be found. | T: “When Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.
+ud8.10:2.2 | S: It’s like when ghee or oil blaze and burn, and neither ashes nor soot are found. | T: Just as when ghee or oil is burned and consumed, neither ashes nor soot can be discerned,
+ud8.10:2.3 | S: In the same way, when Dabba the Mallian rose into the air and, sitting cross-legged in midair, entered and withdrew from the fire element before becoming fully quenched, his body burning and combusting left neither ashes nor soot to be found.” | T: in the same way, when Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.”
+ud8.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.10:4.1 | S: “Just as the glow of iron struck | T: Just as the destination of a glowing fire
+ud8.10:4.2 | S: by a hammer in the fire of Jātaveda | T: struck with a [blacksmith’s] iron hammer,
+ud8.10:4.3 | S: gradually dissipates, | T: gradually growing calm,
+ud8.10:4.4 | S: its destiny unknown; | T: isn’t known: Even so, there’s no destination to describe
+ud8.10:5.1 | S: in the same way, for the rightly released, | T: for those rightly released
+ud8.10:5.2 | S: who have crossed the flood of sensual bonds, | T: –having crossed over the flood of sensuality’s bond–
+ud8.10:5.3 | S: there is no destination to describe— | T: (none)
+ud8.10:5.4 | S: they have found unshakable happiness.” | T: for those who’ve attained unwavering bliss.
+ud8.10:9.5 | S: The Heartfelt Sayings are finished. | T: (none)
+
+## sn35.80
+sn35.80:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One:
+sn35.80:1.2 | S: “Sir, is there one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge?” | T: “Lord, is there any one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises?” “Yes, monk, there is one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises.”
+sn35.80:2.1 | S: “There is, mendicant.” | T: (none)
+sn35.80:3.1 | S: “But what is that one thing?” | T: “What is that one thing?”
+sn35.80:4.1 | S: “Ignorance is one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge.” | T: “Ignorance, monk, is the one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises.”
+sn35.80:5.1 | S: “But how does a mendicant know and see so as to give up ignorance and give rise to knowledge?” | T: “But how does a monk know, how does a monk see, so that ignorance is abandoned and clear knowing arises?”
+sn35.80:6.1 | S: “Take a mendicant who has heard: | T: “There is the case, monk, where a monk has heard,
+sn35.80:6.2 | S: ‘Nothing is worth insisting on.’ | T: ‘All dhammas are unworthy of attachment.’
+sn35.80:6.3 | S: When a mendicant has heard that | T: Having heard that all dhammas are unworthy of attachment,
+sn35.80:6.4 | S: nothing is worth insisting on, | T: (none)
+sn35.80:6.5 | S: they directly know all things. Directly knowing all things, they completely understand all things. Completely understanding all things, they see all signs as other. They see the eye, sights, | T: he directly knows every dhamma. Directly knowing every dhamma, he comprehends every dhamma. Comprehending every dhamma, he sees all themes [all objects] as something separate. “He sees the eye as something separate. He sees forms as something separate.
+sn35.80:6.6 | S: eye consciousness, | T: He sees eye-consciousness as something separate.
+sn35.80:6.7 | S: and eye contact as other. | T: He sees eye-contact as something separate.
+sn35.80:6.8 | S: And they also see the pleasant, painful, or neutral feeling that arises dependent on eye contact as other. … | T: And whatever arises in dependence on eye-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too he sees as something separate. “He sees the ear as something separate.… “He sees the nose as something separate.… “He sees the tongue as something separate.… “He sees the body as something separate.…
+sn35.80:6.9 | S: They see the mind, ideas, | T: “He sees the intellect as something separate. He sees ideas as something separate.
+sn35.80:6.10 | S: mind consciousness, | T: He sees intellect-consciousness as something separate.
+sn35.80:6.11 | S: and mind contact as other. | T: (none)
+sn35.80:6.12 | S: And they also see the pleasant, painful, or neutral feeling that arises dependent on mind contact as other. | T: He sees intellect-contact as something separate. And whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too he sees as something separate.
+sn35.80:6.13 | S: That’s how a mendicant knows and sees so as to give up ignorance and give rise to knowledge.” | T: “This is how a monk knows, this is how a monk sees, so that ignorance is abandoned and clear knowing arises.”
+
+## sn47.8
+sn47.8:1.1 | S: “Mendicants, suppose a foolish, incompetent, unskillful cook was to serve a ruler or their chief minister with an excessive variety of curries: | T: “Suppose that there is a foolish, incompetent, unskillful cook who has presented a king or a king’s minister with various kinds of curry:
+sn47.8:1.2 | S: chiefly sour, bitter, pungent, and sweet; hot and mild, and salty and bland. | T: mainly sour, mainly bitter, mainly peppery, mainly sweet, alkaline or non-alkaline, salty or non-salty.
+sn47.8:2.1 | S: But that cook didn’t take their master’s hint: | T: He doesn’t take note of his master, thinking,
+sn47.8:2.2 | S: ‘Today my master preferred this sauce, or he reached for it, or he took a lot of it, or he praised it. | T: ‘Today my master likes this curry, or he reaches out for that curry, or he takes a lot of this curry, or he praises that curry.
+sn47.8:2.3 | S: Today my master preferred the chiefly sour or bitter or pungent or sweet or hot or mild or salty sauce. Or he preferred the bland sauce, or he reached for the bland one, or he took a lot of it, or he praised it.’ | T: Today my master likes mainly sour curry.… Today my master likes mainly bitter curry… mainly peppery curry… mainly sweet curry… alkaline curry… non-alkaline curry… salty curry… Today my master likes non-salty curry, or he reaches out for non-salty curry, or he takes a lot of non-salty curry, or he praises non-salty curry.’
+sn47.8:3.1 | S: That foolish, incompetent, unskillful cook doesn’t get presented with clothes, wages, or bonuses. | T: As a result, he is not rewarded with clothing or wages or gifts. Why is that? Because the foolish, incompetent,
+sn47.8:3.2 | S: Why is that? | T: (none)
+sn47.8:3.3 | S: Because they don’t take their master’s hint. | T: unskillful cook doesn’t take note of his own master.
+sn47.8:3.4 | S: In the same way, a foolish, incompetent, unskillful mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “In the same way, there is the case where a foolish, incompetent, unskillful monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.8:3.5 | S: As they meditate observing an aspect of the body, their mind doesn’t enter immersion, and their corruptions aren’t given up. | T: As he remains thus focused on the body in & of itself, his mind doesn’t become concentrated, his defilements [Commentary: the five hindrances] are not abandoned.
+sn47.8:3.6 | S: But they don’t take the hint. | T: He doesn’t take note of that fact.
+sn47.8:3.7 | S: They meditate observing an aspect of feelings … | T: He remains focused on feelings in & of themselves…
+sn47.8:3.8 | S: mind … | T: the mind in & of itself…
+sn47.8:3.9 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.8:3.10 | S: As they meditate observing an aspect of principles, the mind doesn’t enter immersion, and the corruptions aren’t given up. | T: As he remains thus focused on mental qualities in & of themselves, his mind doesn’t become concentrated, his defilements are not abandoned.
+sn47.8:3.11 | S: But they don’t take the hint. | T: He doesn’t take note of that fact.
+sn47.8:4.1 | S: That foolish, incompetent, unskillful mendicant doesn’t get blissful meditations in this very life, nor do they get mindfulness and situational awareness. | T: As a result, he is not rewarded with a pleasant abiding here & now, nor with mindfulness & alertness. Why is that? Because the foolish, incompetent,
+sn47.8:4.2 | S: Why is that? | T: (none)
+sn47.8:4.3 | S: Because they don’t take their mind’s hint. | T: unskillful monk doesn’t take note of his own mind.
+sn47.8:5.1 | S: Suppose an astute, competent, skillful cook was to serve a ruler or their chief minister with an extravagant variety of curries: | T: “Now suppose that there is a wise, competent, skillful cook who has presented a king or a king’s minister with various kinds of curry:
+sn47.8:5.2 | S: chiefly sour, bitter, pungent, and sweet; hot and mild, and salty and bland. | T: mainly sour, mainly bitter, mainly peppery, mainly sweet, alkaline or non-alkaline, salty or non-salty.
+sn47.8:6.1 | S: And that cook took their master’s hint: | T: He takes note of his master, thinking,
+sn47.8:6.2 | S: ‘Today my master preferred this sauce, or he reached for it, or he took a lot of it, or he praised it. | T: ‘Today my master likes this curry, or he reaches out for that curry, or he takes a lot of this curry or he praises that curry.
+sn47.8:6.3 | S: Today my master preferred the chiefly sour or bitter or pungent or sweet or hot or mild or salty sauce. Or he preferred the bland sauce, or he reached for the bland one, or he took a lot of it, or he praised it.’ | T: Today my master likes mainly sour curry.… Today my master likes mainly bitter curry… mainly peppery curry… mainly sweet curry… alkaline curry… non-alkaline curry… salty curry… Today my master likes non-salty curry, or he reaches out for non-salty curry, or he takes a lot of non-salty curry, or he praises non-salty curry.’
+sn47.8:7.1 | S: That astute, competent, skillful cook gets presented with clothes, wages, and bonuses. | T: As a result, he is rewarded with clothing, wages, & gifts. Why is that? Because the wise, competent,
+sn47.8:7.2 | S: Why is that? | T: (none)
+sn47.8:7.3 | S: Because they take their master’s hint. | T: skillful cook takes note of his own master.
+sn47.8:7.4 | S: In the same way, an astute, competent, skillful mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “In the same way, there is the case where a wise, competent, skillful monk remains focused on the body in & of itself…
+sn47.8:7.5 | S: As they meditate observing an aspect of the body, their mind enters immersion, and their corruptions are given up. | T: (none)
+sn47.8:7.6 | S: They take the hint. | T: (none)
+sn47.8:7.7 | S: They meditate observing an aspect of feelings … | T: feelings in & of themselves…
+sn47.8:7.8 | S: mind … | T: the mind in & of itself…
+sn47.8:7.9 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.8:7.10 | S: As they meditate observing an aspect of principles, their mind enters immersion, and their corruptions are given up. | T: As he remains thus focused on mental qualities in & of themselves, his mind becomes concentrated, his defilements are abandoned.
+sn47.8:7.11 | S: They take the hint. | T: He takes note of that fact.
+sn47.8:8.1 | S: That astute, competent, skillful mendicant gets blissful meditations in this very life, and they get mindfulness and situational awareness. | T: As a result, he is rewarded with a pleasant abiding here & now, together with mindfulness & alertness. Why is that? Because the wise, competent,
+sn47.8:8.2 | S: Why is that? | T: (none)
+sn47.8:8.3 | S: Because they take their mind’s hint.” | T: skillful monk takes note of his own mind.”
+
+## an8.61
+an8.61:1.1 | S: “Mendicants, these eight individuals are found in the world. | T: “Monks, these eight persons are to be found existing in the world.
+an8.61:1.2 | S: What eight? | T: Which eight?
+an8.61:1.3 | S: First, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “There is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:1.4 | S: They try hard, strive, and make an effort to get them. | T: He rouses himself, strives, & makes an effort for gain,
+an8.61:1.5 | S: But material things don’t come to them. | T: yet for him—rousing himself, striving, & making an effort for gain—gain doesn’t arise.
+an8.61:1.6 | S: And so they sorrow and wail and lament, beating their breast and falling into confusion because they don’t get those material things. | T: Because of that lack of gain, he sorrows, grieves, & laments, beats his breast, becomes distraught.
+an8.61:1.7 | S: This is called | T: (none)
+an8.61:1.8 | S: a mendicant who lives desiring material things. They try hard, strive, and make an effort to get them. But when they do not acquire material things, they sorrow and lament. They’ve fallen from the true teaching. | T: This is called a monk who desires gain, who rouses himself, strives, & makes an effort for gain, but not gaining it, sorrows & laments. And he has fallen away from the True Dhamma.
+an8.61:2.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:2.2 | S: They try hard, strive, and make an effort to get them. | T: He rouses himself, strives, & makes an effort for gain,
+an8.61:2.3 | S: And material things do come to them. | T: and for him—rousing himself, striving, & making an effort for gain—gain arises.
+an8.61:2.4 | S: And so they become indulgent and fall into negligence regarding those material things. | T: Because of that gain, he becomes intoxicated, complacent, & falls into heedlessness.
+an8.61:2.5 | S: This is called | T: (none)
+an8.61:2.6 | S: a mendicant who lives desiring material things. They try hard, strive, and make an effort to get them. And when they acquire material things, they become intoxicated and negligent. They’ve fallen from the true teaching. | T: This is called a monk who desires gain, who rouses himself, strives, & makes an effort for gain, and on gaining it becomes intoxicated & heedless. And he has fallen away from the True Dhamma.
+an8.61:3.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:3.2 | S: They don’t try hard, strive, and make an effort to get them. | T: He doesn’t rouse himself, strive, or make an effort for gain,
+an8.61:3.3 | S: And material things don’t come to them. | T: and for him—not rousing himself, striving, or making an effort for gain—gain doesn’t arise.
+an8.61:3.4 | S: And so they sorrow and wail and lament, beating their breast and falling into confusion because they don’t get those material things. | T: Because of that lack of gain, he sorrows, grieves, & laments, beats his breast, becomes distraught.
+an8.61:3.5 | S: This is called | T: (none)
+an8.61:3.6 | S: a mendicant who lives desiring material things. They don’t try hard, strive, and make an effort to get them. And when they do not acquire material things, they sorrow and lament. They’ve fallen from the true teaching. | T: This is called a monk who desires gain, who doesn’t rouse himself, strive, or make an effort for gain, and not gaining it, sorrows & laments. And he has fallen away from the True Dhamma.
+an8.61:4.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:4.2 | S: They don’t try hard, strive, and make an effort to get them. | T: He doesn’t rouse himself, strive, or make an effort for gain,
+an8.61:4.3 | S: But material things do come to them. | T: yet for him—not rousing himself, striving, or making an effort for gain—gain arises.
+an8.61:4.4 | S: And so they become indulgent and fall into negligence regarding those material things. | T: Because of that gain, he becomes intoxicated, complacent, & falls into heedlessness.
+an8.61:4.5 | S: This is called | T: (none)
+an8.61:4.6 | S: a mendicant who lives desiring material things. They don’t try hard, strive, and make an effort to get them. But when they acquire material things, they become intoxicated and negligent. They’ve fallen from the true teaching. | T: This is called a monk who desires gain, who doesn’t rouse himself, strive, or make an effort for gain, but on gaining it becomes intoxicated & heedless. And he has fallen away from the True Dhamma.
+an8.61:5.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:5.2 | S: They try hard, strive, and make an effort to get them. | T: He rouses himself, strives, & makes an effort for gain,
+an8.61:5.3 | S: But material things don’t come to them. | T: yet for him—rousing himself, striving, & making an effort for gain—gain doesn’t arise.
+an8.61:5.4 | S: But they don’t sorrow and wail and lament, beating their breast and falling into confusion because they don’t get those material things. | T: Because of that lack of gain, he doesn’t sorrow, grieve, lament, beat his breast, or become distraught.
+an8.61:5.5 | S: This is called | T: (none)
+an8.61:5.6 | S: a mendicant who lives desiring material things. They try hard, strive, and make an effort to get them. But when they do not acquire material things, they don’t sorrow and lament. They haven’t fallen from the true teaching. | T: This is called a monk who desires gain, who rouses himself, strives, & makes an effort for gain, but not gaining it, doesn’t sorrow or lament. And he has not fallen away from the True Dhamma.
+an8.61:6.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:6.2 | S: They try hard, strive, and make an effort to get them. | T: He rouses himself, strives, & makes an effort for gain,
+an8.61:6.3 | S: And material things do come to them. | T: and for him—rousing himself, striving, & making an effort for gain—gain arises.
+an8.61:6.4 | S: But they don’t become indulgent and fall into negligence regarding those material things. | T: Because of that gain, he doesn’t become intoxicated, complacent, or fall into heedlessness.
+an8.61:6.5 | S: This is called | T: (none)
+an8.61:6.6 | S: a mendicant who lives desiring material things. They try hard, strive, and make an effort to get them. But when they acquire material things, they don’t become intoxicated and negligent. They haven’t fallen from the true teaching. | T: This is called a monk who desires gain, who rouses himself, strives, & makes an effort for gain, and on gaining it doesn’t become intoxicated or heedless. And he has not fallen away from the True Dhamma.
+an8.61:7.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:7.2 | S: They don’t try hard, strive, and make an effort to get them. | T: He doesn’t rouse himself, strive, or make an effort for gain,
+an8.61:7.3 | S: And material things don’t come to them. | T: and for him—not rousing himself, striving, or making an effort for gain—gain doesn’t arise.
+an8.61:7.4 | S: But they don’t sorrow and wail and lament, beating their breast and falling into confusion because they don’t get those material things. | T: Because of that lack of gain, he doesn’t sorrow, grieve, lament, beat his breast, or become distraught.
+an8.61:7.5 | S: This is called | T: (none)
+an8.61:7.6 | S: a mendicant who lives desiring material things. They don’t try hard, strive, and make an effort to get them. And when they do not acquire material things, they don’t sorrow and lament. They haven’t fallen from the true teaching. | T: This is called a monk who desires gain, who doesn’t rouse himself, strive, or make an effort for gain, and not gaining it, doesn’t sorrow or lament. And he not has fallen away from the True Dhamma.
+an8.61:8.1 | S: Next, when a mendicant stays secluded, living independently, a desire arises for material things. | T: “Then there is the case where a desire for gain arises in a monk living independently in seclusion.
+an8.61:8.2 | S: They don’t try hard, strive, and make an effort to get them. | T: He doesn’t rouse himself, strive, or make an effort for gain,
+an8.61:8.3 | S: But material things do come to them. | T: yet for him—not rousing himself, striving, or making an effort for gain—gain arises.
+an8.61:8.4 | S: But they don’t become indulgent and fall into negligence regarding those material things. | T: Because of that gain, he doesn’t become intoxicated, complacent, or fall into heedlessness.
+an8.61:8.5 | S: This is called | T: (none)
+an8.61:8.6 | S: a mendicant who lives desiring material things. They don’t try hard, strive, and make an effort to get them. And when they acquire material things, they don’t become intoxicated and negligent. They haven’t fallen from the true teaching. | T: This is called a monk who desires gain, who doesn’t rouse himself, strive, or make an effort for gain, and on gaining it doesn’t become intoxicated or heedless. And he has not fallen away from the True Dhamma.
+an8.61:9.1 | S: These are the eight individuals found in the world.” | T: “Monks, these eight persons are to be found existing in the world.”
+

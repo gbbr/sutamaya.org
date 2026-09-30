@@ -1,0 +1,350 @@
+## mn137
+mn137:1.1 | S: So I have heard. | T: (none)
+mn137:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn137:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn137:1.4 | S: “Mendicants!” | T: “Monks!”
+mn137:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn137:1.6 | S: The Buddha said this: | T: The Blessed One said:
+mn137:2.1 | S: “Mendicants, I shall teach you the analysis of the six sense fields. | T: “Monks, I will teach you the analysis of the six sense media.
+mn137:2.2 | S: Listen and apply your mind well, I will speak.” | T: Listen, and pay close attention. I will speak.”
+mn137:2.3 | S: “Yes, sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn137:2.4 | S: The Buddha said this: | T: The Blessed One said:
+mn137:3.1 | S: “‘The six interior sense fields should be understood. The six exterior sense fields should be understood. The six classes of consciousness should be understood. The six classes of contact should be understood. The eighteen mental preoccupations should be understood. The thirty-six positions of sentient beings should be understood. Therein, relying on this, give up that. The Noble One cultivates the establishment of mindfulness in three cases, by virtue of which they are a Teacher worthy to instruct a group. Of all meditation tutors, it is he that is called the supreme guide for those fit for training.’ | T: “The six internal sense-media should be known. The six external sense-media should be known. The six classes of consciousness should be known. The six classes of contact should be known. The eighteen explorations for the intellect should be known. The thirty-six emotions to which beings are attached should be known. With regard to them, depending on this, abandon that. There are three establishings of mindfulness that a noble one cultivates, cultivating which he is a teacher fit to instruct a group. Among master trainers, he is said to be the unexcelled trainer of people fit to be tamed.
+mn137:3.2 | S: This is the summary recital for the analysis of the six sense fields. | T: This is the summary of the analysis of the six sense-media.
+mn137:4.1 | S: ‘The six interior sense fields should be understood.’ | T: “’The six internal sense-media should be known’:
+mn137:4.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:4.3 | S: There are the sense fields of the eye, ear, nose, tongue, body, and mind. | T: The eye-medium, the ear-medium, the nose-medium, the tongue-medium, the body-medium, the intellect-medium.
+mn137:4.4 | S: ‘The six interior sense fields should be understood.’ | T: ’The six internal sense-media should be known’:
+mn137:4.5 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:5.1 | S: ‘The six exterior sense fields should be understood.’ | T: “’The six external sense-media should be known’:
+mn137:5.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:5.3 | S: There are the sense fields of sights, sounds, smells, tastes, touches, and ideas. | T: The form-medium, the sound-medium, the aroma-medium, the flavor-medium, the tactile-sensation-medium, the idea-medium.
+mn137:5.4 | S: ‘The six exterior sense fields should be understood.’ | T: ’The six external sense-media should be known’:
+mn137:5.5 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:6.1 | S: ‘The six classes of consciousness should be understood.’ | T: “’The six classes of consciousness should be known’:
+mn137:6.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:6.3 | S: There are eye, ear, nose, tongue, body, and mind consciousness. | T: Eye-consciousness, ear-consciousness, nose-consciousness, tongue-consciousness, body-consciousness, intellect-consciousness.
+mn137:6.4 | S: ‘The six classes of consciousness should be understood.’ | T: ’The six classes of consciousness should be known’:
+mn137:6.5 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:7.1 | S: ‘The six classes of contact should be understood.’ | T: “’The six classes of contact should be known’:
+mn137:7.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:7.3 | S: There is contact through the eye, ear, nose, tongue, body, and mind. | T: Eye-contact, ear-contact, nose-contact, tongue-contact, body-contact, intellect-contact.
+mn137:7.4 | S: ‘The six classes of contact should be understood.’ | T: ’The six classes of contact should be known’:
+mn137:7.5 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:8.1 | S: ‘The eighteen mental preoccupations should be understood.’ | T: “‘The eighteen explorations for the intellect should be known’:
+mn137:8.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:8.3 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: Seeing a form via the eye, one explores a form that can act as the basis for happiness, one explores a form that can act as the basis for unhappiness, one explores a form that can act as the basis for equanimity.
+mn137:8.4 | S: Hearing a sound with their ears … | T: Hearing a sound via the ear…
+mn137:8.5 | S: Smelling an odor with their nose … | T: Smelling an aroma via the nose…
+mn137:8.6 | S: Tasting a flavor with their tongue … | T: Tasting a flavor via the tongue…
+mn137:8.7 | S: Encountering a touch with their body … | T: Touching a tactile sensation via the body…
+mn137:8.8 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: Cognizing an idea via the intellect, one explores an idea that can act as the basis for happiness, one explores an idea that can act as the basis for unhappiness, one explores an idea that can act as the basis for equanimity.
+mn137:8.9 | S: So there are six preoccupations with happiness, six preoccupations with sadness, and six preoccupations with equanimity. ‘The eighteen mental preoccupations should be understood.’ | T: The eighteen explorations for the intellect should be known’:
+mn137:8.10 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:9.1 | S: ‘The thirty-six positions of sentient beings should be understood.’ | T: “‘The thirty-six emotions to which beings are attached should be known’:
+mn137:9.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:9.3 | S: There are six kinds of domestic happiness and six kinds of renunciate happiness. There are six kinds of domestic sadness and six kinds of renunciate sadness. There are six kinds of domestic equanimity and six kinds of renunciate equanimity. | T: Six kinds of house-based happiness & six kinds of renunciation-based happiness; six kinds of house-based distress & six kinds of renunciation-based distress; six kinds of house-based equanimity & six kinds of renunciation-based equanimity.
+mn137:10.1 | S: And in this context what are the six kinds of domestic happiness? | T: “And what are the six kinds of house-based happiness?
+mn137:10.2 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasing, connected with the worldly pleasures of the flesh. Happiness arises when you regard it as a gain to obtain such sights, or when you recollect sights you formerly obtained that have passed, ceased, and perished. | T: The happiness that arises when one regards as an acquisition the acquisition of forms cognizable by the eye—agreeable, pleasing, charming, endearing, connected with worldly baits—or when one recalls the previous acquisition of such forms after they have passed, ceased, & changed:
+mn137:10.3 | S: Such happiness is called domestic happiness. | T: That is called house-based happiness.
+mn137:10.4 | S: There are sounds known by the ear … | T: [Similarly with sounds,
+mn137:10.5 | S: Smells known by the nose … | T: smells,
+mn137:10.6 | S: Tastes known by the tongue … | T: tastes,
+mn137:10.7 | S: Touches known by the body … | T: tactile sensations,
+mn137:10.8 | S: Ideas known by the mind, which are likable, desirable, agreeable, pleasing, connected with the worldly pleasures of the flesh. Happiness arises when you regard it as a gain to obtain such ideas, or when you recollect ideas you formerly obtained that have passed, ceased, and perished. | T: & ideas.]
+mn137:10.9 | S: Such happiness is called domestic happiness. | T: (none)
+mn137:10.10 | S: These are the six kinds of domestic happiness. | T: (none)
+mn137:11.1 | S: And in this context what are the six kinds of renunciate happiness? | T: “And what are the six kinds of renunciation-based happiness?
+mn137:11.2 | S: When you’ve understood the impermanence of sights—their perishing, fading away, and cessation—happiness arises as you truly understand through right understanding that both formerly and now all those sights are impermanent, suffering, and perishable. | T: The happiness that arises when—experiencing the inconstancy of those very forms, their change, fading, & cessation—one sees with right discernment as it has come to be that all forms, both before and now, are inconstant, stressful, subject to change:
+mn137:11.3 | S: Such happiness is called renunciate happiness. | T: That is called renunciation-based happiness.
+mn137:11.4 | S: When you’ve understood the impermanence of sounds … | T: [Similarly with sounds,
+mn137:11.5 | S: smells … | T: smells,
+mn137:11.6 | S: tastes … | T: tastes,
+mn137:11.7 | S: touches … | T: tactile sensations,
+mn137:11.8 | S: ideas—their perishing, fading away, and cessation—happiness arises as you truly understand through right understanding that both formerly and now all those ideas are impermanent, suffering, and perishable. | T: & ideas.]
+mn137:11.9 | S: Such happiness is called renunciate happiness. | T: (none)
+mn137:11.10 | S: These are the six kinds of renunciate happiness. | T: (none)
+mn137:12.1 | S: And in this context what are the six kinds of domestic sadness? | T: “And what are the six kinds of house-based distress?
+mn137:12.2 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasing, connected with the worldly pleasures of the flesh. Sadness arises when you regard it as a loss to lose such sights, or when you recollect sights you formerly lost that have passed, ceased, and perished. | T: The distress that arises when one regards as a non-acquisition the non-acquisition of forms cognizable by the eye—agreeable, pleasing, charming, endearing, connected with worldly baits—or when one recalls the previous non-acquisition of such forms after they have passed, ceased, & changed:
+mn137:12.3 | S: Such sadness is called domestic sadness. | T: That is called house-based distress.
+mn137:12.4 | S: There are sounds known by the ear … | T: [Similarly with sounds,
+mn137:12.5 | S: There are smells known by the nose … | T: smells,
+mn137:12.6 | S: There are tastes known by the tongue … | T: tastes,
+mn137:12.7 | S: There are touches known by the body … | T: tactile sensations,
+mn137:12.8 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasing, connected with the worldly pleasures of the flesh. Sadness arises when you regard it as a loss to lose such ideas, or when you recollect ideas you formerly lost that have passed, ceased, and perished. | T: & ideas.]
+mn137:12.9 | S: Such sadness is called domestic sadness. | T: (none)
+mn137:12.10 | S: These are the six kinds of domestic sadness. | T: (none)
+mn137:13.1 | S: And in this context what are the six kinds of renunciate sadness? | T: “And what are the six kinds of renunciation-based distress?
+mn137:13.2 | S: When you’ve understood the impermanence of sights—their perishing, fading away, and cessation—you truly understand through right understanding that both formerly and now all those sights are impermanent, suffering, and perishable. Upon seeing this, you give rise to longing for the supreme liberations: | T: The distress coming from the longing that arises in one who is filled with longing for the unexcelled liberations when—experiencing the inconstancy of those very forms, their change, fading, & cessation—he sees with right discernment as it has come to be that all forms, both before and now, are inconstant, stressful, subject to change and he is filled with this longing:
+mn137:13.3 | S: ‘Oh, when will I enter and remain in the same dimension that the noble ones enter and remain in today?’ When you give rise to longing for the supreme liberations like this, sadness arises because of the longing. | T: ‘O when will I enter & remain in the dimension that the noble ones now enter & remain in?’
+mn137:13.4 | S: Such sadness is called renunciate sadness. | T: This is called renunciation-based distress.
+mn137:13.5 | S: When you’ve understood the impermanence of sounds … | T: [Similarly with sounds,
+mn137:13.6 | S: smells … | T: smells,
+mn137:13.7 | S: tastes … | T: tastes,
+mn137:13.8 | S: touches … | T: tactile sensations,
+mn137:13.9 | S: ideas—their perishing, fading away, and cessation—you truly understand through right understanding that both formerly and now all those ideas are impermanent, suffering, and perishable. Upon seeing this, you give rise to longing for the supreme liberations: | T: & ideas.]
+mn137:13.10 | S: ‘Oh, when will I enter and remain in the same dimension that the noble ones enter and remain in today?’ When you give rise to longing for the supreme liberations like this, sadness arises because of the longing. | T: (none)
+mn137:13.11 | S: Such sadness is called renunciate sadness. | T: (none)
+mn137:13.12 | S: These are the six kinds of renunciate sadness. | T: (none)
+mn137:14.1 | S: And in this context what are the six kinds of domestic equanimity? | T: “And what are the six kinds of house-based equanimity?
+mn137:14.2 | S: When seeing a sight with their eyes, equanimity arises for the unlearned ordinary person—a foolish ordinary person who has not overcome their limitations and the results of deeds, and is blind to the drawbacks. | T: The equanimity that arises when a foolish, deluded person—a run-of-the-mill, untaught person who has not conquered his limitations or the results of action & who is blind to danger—sees a form with the eye.
+mn137:14.3 | S: Such equanimity does not transcend the sight. | T: Such equanimity does not go beyond the form,
+mn137:14.4 | S: That’s why it’s called domestic equanimity. | T: which is why it is called house-based equanimity.
+mn137:14.5 | S: When hearing a sound with their ears … | T: [Similarly with sounds,
+mn137:14.6 | S: When smelling an odor with their nose … | T: smells,
+mn137:14.7 | S: When tasting a flavor with their tongue … | T: tastes,
+mn137:14.8 | S: When encountering a touch with their body … | T: tactile sensations,
+mn137:14.9 | S: When knowing an idea with their mind, equanimity arises for the unlearned ordinary person—a foolish ordinary person who has not overcome their limitations and the results of deeds, and is blind to the drawbacks. | T: (none)
+mn137:14.10 | S: Such equanimity does not transcend the idea. | T: & ideas.]
+mn137:14.11 | S: That’s why it’s called domestic equanimity. | T: (none)
+mn137:14.12 | S: These are the six kinds of domestic equanimity. | T: (none)
+mn137:15.1 | S: And in this context what are the six kinds of renunciate equanimity? | T: “And what are the six kinds of renunciation-based equanimity?
+mn137:15.2 | S: When you’ve understood the impermanence of sights—their perishing, fading away, and cessation—equanimity arises as you truly understand through right understanding that both formerly and now all those sights are impermanent, suffering, and perishable. | T: The equanimity that arises when—experiencing the inconstancy of those very forms, their change, fading, & cessation—one sees with right discernment as it has come to be that all forms, both before and now, are inconstant, stressful, subject to change:
+mn137:15.3 | S: Such equanimity transcends the sight. | T: This equanimity goes beyond form,
+mn137:15.4 | S: That’s why it’s called renunciate equanimity. | T: which is why it is called renunciation-based equanimity.
+mn137:15.5 | S: When you’ve understood the impermanence of sounds … | T: [Similarly with sounds,
+mn137:15.6 | S: smells … | T: smells,
+mn137:15.7 | S: tastes … | T: tastes,
+mn137:15.8 | S: touches … | T: tactile sensations,
+mn137:15.9 | S: ideas—their perishing, fading away, and cessation—equanimity arises as you truly understand through right understanding that both formerly and now all those ideas are impermanent, suffering, and perishable. | T: (none)
+mn137:15.10 | S: Such equanimity transcends the idea. | T: & ideas.]
+mn137:15.11 | S: That’s why it’s called renunciate equanimity. | T: (none)
+mn137:15.12 | S: These are the six kinds of renunciate equanimity. | T: (none)
+mn137:15.13 | S: ‘The thirty-six positions of sentient beings should be understood.’ | T: “‘The thirty-six emotions to which beings are attached should be known’:
+mn137:15.14 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:16.1 | S: ‘Therein, relying on this, give up that.’ | T: “‘With regard to them, depending on this, abandon that’:
+mn137:16.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:16.3 | S: Therein, by relying and depending on the six kinds of renunciate happiness, give up and go beyond the six kinds of domestic happiness. | T: “Here, by depending & relying on the six kinds of renunciation-based happiness, abandon & transcend the six kinds of house-based happiness. Such is their abandoning, such is their transcending.
+mn137:16.4 | S: That’s how they are given up. | T: (none)
+mn137:16.5 | S: Therein, by relying on the six kinds of renunciate sadness, give up the six kinds of domestic sadness. | T: By depending & relying on the six kinds of renunciation-based distress, abandon & transcend the six kinds of house-based distress.
+mn137:16.6 | S: That’s how they are given up. | T: Such is their abandoning, such is their transcending.
+mn137:16.7 | S: Therein, by relying on the six kinds of renunciate equanimity, give up the six kinds of domestic equanimity. | T: By depending & relying on the six kinds of renunciation-based equanimity, abandon & transcend the six kinds of house-based equanimity.
+mn137:16.8 | S: That’s how they are given up. | T: Such is their abandoning, such their transcending.
+mn137:16.9 | S: Therein, by relying on the six kinds of renunciate happiness, give up the six kinds of renunciate sadness. | T: “By depending & relying on the six kinds of renunciation-based happiness, abandon & transcend the six kinds of renunciation-based distress.
+mn137:16.10 | S: That’s how they are given up. | T: Such is their abandoning, such is their transcending.
+mn137:16.11 | S: Therein, by relying on the six kinds of renunciate equanimity, give up the six kinds of renunciate happiness. | T: By depending & relying on the six kinds of renunciation-based equanimity, abandon & transcend the six kinds of renunciation-based happiness.
+mn137:16.12 | S: That’s how they are given up. | T: Such is their abandoning, such their transcending.
+mn137:17.1 | S: There is equanimity that is diversified, based on diversity, and equanimity that is unified, based on unity. | T: “There is equanimity coming from multiplicity, dependent on multiplicity; and there is equanimity coming from singleness, dependent on singleness.
+mn137:18.1 | S: And what is equanimity based on diversity? | T: “And what is equanimity coming from multiplicity, dependent on multiplicity?
+mn137:18.2 | S: There is equanimity toward sights, sounds, smells, tastes, and touches. | T: There is equanimity with regard to forms, equanimity with regard to sounds… smells… tastes… tactile sensations [& ideas: this word appears in one of the recensions].
+mn137:18.3 | S: This is equanimity based on diversity. | T: This is equanimity coming from multiplicity, dependent on multiplicity.
+mn137:19.1 | S: And what is equanimity based on unity? | T: “And what is equanimity coming from singleness, dependent on singleness?
+mn137:19.2 | S: There is equanimity based on the dimensions of infinite space, infinite consciousness, nothingness, and neither perception nor non-perception. | T: There is equanimity dependent on the dimension of the infinitude of space, equanimity dependent on the dimension of the infinitude of consciousness… dependent on the dimension of nothingness… dependent on the dimension of neither perception nor non-perception.
+mn137:19.3 | S: This is equanimity based on unity. | T: This is equanimity coming from singleness, dependent on singleness.
+mn137:20.1 | S: Therein, relying on equanimity based on unity, give up equanimity based on diversity. | T: “By depending & relying on equanimity coming from singleness, dependent on singleness, abandon & transcend equanimity coming from multiplicity, dependent on multiplicity.
+mn137:20.2 | S: That’s how it is given up. | T: Such is its abandoning, such its transcending.
+mn137:20.3 | S: Relying on not being determined by that, give up equanimity based on unity. | T: “By depending & relying on non-fashioning, abandon & transcend the equanimity coming from singleness, dependent on singleness.
+mn137:20.4 | S: That’s how it is given up. | T: Such is its abandoning, such its transcending.
+mn137:20.5 | S: ‘Therein, relying on this, give up that.’ | T: “‘Depending on this, abandon that’:
+mn137:20.6 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:21.1 | S: ‘The Noble One cultivates the establishment of mindfulness in three cases, by virtue of which they are a Teacher worthy to instruct a group.’ | T: “‘There are three establishings of mindfulness that a noble one cultivates, cultivating which he is a teacher fit to instruct a group’:
+mn137:21.2 | S: That’s what I said, | T: Thus was it said.
+mn137:21.3 | S: but why did I say it? | T: And in reference to what was it said?
+mn137:22.1 | S: The first case is when the Teacher teaches Dhamma to his disciples out of kindness and sympathy: | T: “There is the case where the Teacher—out of sympathy, seeking their well-being—teaches the Dhamma to his disciples:
+mn137:22.2 | S: ‘This is for your welfare. This is for your happiness.’ | T: ‘This is for your well-being, this is for your happiness.’
+mn137:22.3 | S: But their disciples don’t want to listen. They don’t actively listen or try to understand. They proceed having turned away from the Teacher’s instruction. | T: His disciples do not listen or lend ear or apply their minds to gnosis. Turning aside, they stray from the Teacher’s message.
+mn137:22.4 | S: In this case the Realized One is not unhappy, he does not feel unhappiness. He remains unfestering, mindful and aware. | T: In this case the Tathāgata is not satisfied nor is he sensitive to satisfaction, yet he remains untroubled, mindful, & alert.
+mn137:22.5 | S: This is the first case in which the Noble One cultivates the establishment of mindfulness. | T: This is the first establishing of mindfulness that a noble one cultivates, cultivating which he is a teacher fit to instruct a group.
+mn137:23.1 | S: The next case is when the Teacher teaches Dhamma to his disciples out of kindness and sympathy: | T: “And further, there is the case where the Teacher—out of sympathy, seeking their well-being—teaches the Dhamma to his disciples:
+mn137:23.2 | S: ‘This is for your welfare. This is for your happiness.’ | T: ‘This is for your well-being, this is for your happiness.’
+mn137:23.3 | S: And some of their disciples don’t want to listen. They don’t actively listen or try to understand. They proceed having turned away from the Teacher’s instruction. | T: Some of his disciples do not listen or lend ear or apply their minds to gnosis. Turning aside, they stray from the Teacher’s message.
+mn137:23.4 | S: But some of their disciples do want to listen. They actively listen and try to understand. They don’t proceed having turned away from the Teacher’s instruction. | T: But some of his disciples listen, lend ear, & apply their minds to gnosis. They do not turn aside or stray from the Teacher’s message.
+mn137:23.5 | S: In this case the Realized One is not unhappy, | T: In this case the Tathāgata is not satisfied nor is he sensitive to satisfaction;
+mn137:23.6 | S: nor is he happy. | T: (none)
+mn137:23.7 | P: Anattamanatā ca attamanatā ca— | T: at the same time he is not dissatisfied nor is he sensitive to dissatisfaction. Free from both satisfaction & dissatisfaction,
+mn137:23.8 | S: Shunning both unhappiness and happiness, he remains equanimous, mindful and aware. | T: he remains equanimous, mindful, & alert.
+mn137:23.9 | S: This is the second case in which the Noble One cultivates the establishment of mindfulness. | T: This is the second establishing of mindfulness.…
+mn137:24.1 | S: The next case is when the Teacher teaches Dhamma to his disciples out of kindness and sympathy: | T: “And further, there is the case where the Teacher—out of sympathy, seeking their well-being—teaches the Dhamma to his disciples:
+mn137:24.2 | S: ‘This is for your welfare. This is for your happiness.’ | T: ‘This is for your well-being, this is for your happiness.’
+mn137:24.3 | S: And their disciples want to listen. They actively listen and try to understand. They don’t proceed having turned away from the Teacher’s instruction. | T: His disciples listen, lend ear, & apply their minds to gnosis. They do not turn aside or stray from the Teacher’s message.
+mn137:24.4 | S: In this case the Realized One is happy, he does feel happiness. He remains unfestering, mindful and aware. | T: In this case the Tathāgata is satisfied and is sensitive to satisfaction, yet he remains untroubled, mindful, & alert.
+mn137:24.5 | S: This is the third case in which the Noble One cultivates the establishment of mindfulness. | T: This is the third establishing of mindfulness that a noble one cultivates,
+mn137:24.6 | S: ‘The Noble One cultivates the establishment of mindfulness in three cases, by virtue of which they are a Teacher worthy to instruct a group.’ | T: cultivating which he is a teacher fit to instruct a group. “‘There are three establishings of mindfulness that a noble one cultivates, cultivating which he is a teacher fit to instruct a group’:
+mn137:24.7 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+mn137:25.1 | S: ‘Of all meditation tutors, it is he that is called the supreme guide for those fit for training.’ | T: “’Among master trainers, he is said to be the unexcelled trainer of people fit to be tamed’:
+mn137:25.2 | S: That’s what I said, but why did I say it? | T: Thus was it said. And in reference to what was it said?
+mn137:25.3 | S: Driven by an elephant trainer, an elephant in training proceeds in just one direction: | T: “Steered by the elephant trainer, the elephant to be tamed runs in only one direction:
+mn137:25.4 | S: east, west, north, or south. | T: east, west, north, or south.
+mn137:26.1 | S: Driven by a horse trainer, a horse in training proceeds in just one direction: | T: Steered by the horse trainer, the horse to be tamed runs in only one direction:
+mn137:26.2 | S: east, west, north, or south. | T: east, west, north, or south.
+mn137:26.3 | S: Driven by an ox trainer, an ox in training proceeds in just one direction: | T: Steered by the ox trainer, the ox to be tamed runs in only one direction:
+mn137:26.4 | S: east, west, north, or south. | T: east, west, north, or south.
+mn137:26.5 | S: But driven by the Realized One, the perfected one, the fully awakened Buddha, a person in training proceeds in eight directions: | T: “But steered by the Tathāgata—worthy & rightly self-awakened—the person to be tamed fans out in eight directions.
+mn137:27.1 | S: Having physical form, they see forms. | T: “Possessed of form, he/she sees forms.
+mn137:27.2 | S: This is the first direction. | T: This is the first direction.
+mn137:27.3 | S: Not perceiving physical form internally, they see forms externally. | T: “Not percipient of form internally, he/she sees forms externally.
+mn137:27.4 | S: This is the second direction. | T: This is the second direction.
+mn137:27.5 | S: They’re focused only on beauty. | T: “He/she is intent only on the beautiful.
+mn137:27.6 | S: This is the third direction. | T: This is the third direction.
+mn137:27.7 | S: Going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space. | T: “With the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ he/she enters and remains in the dimension of the infinitude of space.
+mn137:27.8 | S: This is the fourth direction. | T: This is the fourth direction.
+mn137:27.9 | S: Going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, they enter and remain in the dimension of infinite consciousness. | T: “With the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ he/she enters and remains in the dimension of the infinitude of consciousness.
+mn137:27.10 | S: This is the fifth direction. | T: This is the fifth direction.
+mn137:27.11 | S: Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. | T: “With the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ he/she enters and remains in the dimension of nothingness.
+mn137:27.12 | S: This is the sixth direction. | T: This is the sixth direction.
+mn137:27.13 | S: Going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception. | T: “With the complete transcending of the dimension of nothingness, he/she enters and remains in the dimension of neither perception nor non-perception.
+mn137:27.14 | S: This is the seventh direction. | T: This is the seventh direction.
+mn137:27.15 | S: Going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and feeling. | T: “With the complete transcending of the dimension of neither perception nor non-perception, he/she enters and remains in the cessation of perception and feeling.
+mn137:27.16 | S: This is the eighth direction. | T: This is the eighth direction.
+mn137:27.17 | S: Driven by the Realized One, the perfected one, the fully awakened Buddha, a person in training proceeds in these eight directions. | T: “Steered by the Tathāgata—worthy & rightly self-awakened—the person to be tamed fans out in eight directions.
+mn137:28.1 | S: ‘Of all meditation tutors, it is he that is called the supreme guide for those fit for training.’ | T: “’Among master trainers, he [the Tathāgata] is said to be the unexcelled trainer of people fit to be tamed’:
+mn137:28.2 | S: That’s what I said, and this is why I said it.” | T: Thus was it said. And in reference to this was it said.”
+mn137:28.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn137:28.4 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+
+## dn9
+dn9:1.0 | S: 1. On the Wanderer Poṭṭhapāda | T: (none)
+dn9:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove,
+dn9:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: (none)
+dn9:1.3 | S: Now at that time the wanderer Poṭṭhapāda was residing together with three hundred wanderers in Mallikā’s single-halled monastery for philosophical debates, hedged by pale-moon ebony trees. | T: Anāthapiṇḍika’s monastery. Now on that occasion Poṭṭhapāda the wanderer, together with a large following of about 300 wanderers, had taken up residence in the debating hall near the Tiṇḍuka tree in the single-pavilion park of Queen Mallikā.
+dn9:1.4 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then the Blessed One, early in the morning—having adjusted his lower robe and taking his bowl & outer robe—entered Sāvatthī for alms.
+dn9:2.1 | S: Then it occurred to him, | T: Then the thought occurred to him,
+dn9:2.2 | S: “It’s too early to wander for alms in Sāvatthī. | T: “While it’s still too early to go into Sāvatthī for alms,
+dn9:2.3 | S: Why don’t I go to Mallikā’s monastery to visit the wanderer Poṭṭhapāda?” | T: why don’t I go to the debating hall near the Tiṇḍuka tree in the single-pavilion park of Queen Mallikā to see Poṭṭhapāda the wanderer?” So he went to the debating hall near the Tiṇḍuka tree in the single-pavilion park of Queen Mallikā.
+dn9:2.4 | S: So that’s what he did. | T: (none)
+dn9:3.1 | S: Now at that time, Poṭṭhapāda was sitting together with a large assembly of wanderers making an uproar, a colossal racket. They engaged in all kinds of low talk, such as | T: Now on that occasion Poṭṭhapāda the wanderer was sitting with his large following of wanderers, all making a great noise & racket, discussing many kinds of bestial topics of conversation:
+dn9:3.2 | S: talk about kings, bandits, and chief ministers; talk about armies, threats, and wars; talk about food, drink, clothes, and beds; talk about garlands and fragrances; talk about family, vehicles, villages, towns, cities, and countries; talk about women and heroes; talk at the street market and the place for water pots; talk about the departed; motley talk; tales of land and sea; and talk about being reborn in this or that place. | T: conversation about kings, robbers, & ministers of state; armies, alarms, & battles; food & drink; clothing, furniture, garlands, & scents; relatives; vehicles; villages, towns, cities, the countryside; women & heroes; the gossip of the street & the well; tales of the dead; tales of diversity, the creation of the world & of the sea; talk of whether things exist or not.
+dn9:4.1 | S: Poṭṭhapāda saw the Buddha coming off in the distance, | T: Then Poṭṭhapāda the wanderer saw the Blessed One coming from afar,
+dn9:4.2 | S: and hushed his own assembly, | T: and on seeing him, hushed his following:
+dn9:4.3 | S: “Be quiet, good fellows, don’t make a sound. | T: “Be quiet, good sirs. Don’t make any noise.
+dn9:4.4 | S: Here comes the ascetic Gotama. | T: Here comes the contemplative Gotama.
+dn9:4.5 | S: The venerable likes quiet and praises quiet. | T: He is fond of quietude and speaks in praise of quietude.
+dn9:4.6 | S: Hopefully if he sees that our assembly is quiet he’ll see fit to approach.” | T: Maybe, if he perceives our group as quiet, he will consider it worth his while to come our way.”
+dn9:4.7 | S: Then those wanderers fell silent. | T: So the wanderers fell silent.
+dn9:5.1 | S: Then the Buddha approached Poṭṭhapāda, | T: Then the Blessed One went to Poṭṭhapāda,
+dn9:5.2 | S: who said to him, | T: and Poṭṭhapāda said to him,
+dn9:5.3 | S: “Let the Blessed One come, sir! | T: “Come, Blessed One.
+dn9:5.4 | S: Welcome to the Blessed One, sir! | T: Welcome, Blessed One.
+dn9:5.5 | S: It’s been a long time since you took the opportunity to come here. | T: It’s been a long time since the Blessed One has gone out of his way to come here.
+dn9:5.6 | S: Please, sir, sit down, here, a seat is ready.” | T: Sit down, Blessed One.
+dn9:5.7 | S: The Buddha sat down on the seat spread out, | T: This seat has been prepared.” So the Blessed One sat on the prepared seat.
+dn9:5.8 | S: while Poṭṭhapāda took a low seat and sat to one side. | T: Poṭṭhapāda, taking a lower seat, sat to one side.
+dn9:5.9 | S: The Buddha said to him, | T: As he was sitting there, the Blessed One said to him,
+dn9:5.10 | S: “Poṭṭhapāda, what were you sitting talking about just now? What conversation was left unfinished?” | T: “For what topic of conversation are you gathered together here? In the midst of what topic of conversation have you been interrupted?”
+dn9:6.0 | S: 1.1. On the Cessation of Perception | T: (none)
+dn9:6.1 | S: When he said this, the wanderer Poṭṭhapāda said to the Buddha, | T: When this was said, Poṭṭhapāda replied,
+dn9:6.2 | S: “Sir, leave aside what we were sitting talking about just now. | T: “Never mind, lord, about the topic of conversation for which we have gathered here.
+dn9:6.3 | S: It won’t be hard for you to hear about that later. | T: It won’t be difficult for the Blessed One to hear about that later.
+dn9:6.4 | S: Sir, a few days ago several ascetics and brahmins who follow various other religions were sitting together at the debating hall, and a discussion about the cessation of perception came up among them: | T: For the past few days a discussion has arisen among the many sects of contemplatives & brahmans gathered and sitting together in the debating hall, concerning the ultimate cessation of perception:
+dn9:6.5 | S: ‘How does the cessation of perception happen?’ | T: ‘How is there the ultimate cessation of perception?’
+dn9:6.6 | S: Some of them said: | T: With regard to this, some said,
+dn9:6.7 | S: ‘A person’s perceptions arise and cease without cause or reason. | T: ‘A person’s perception arises and ceases without cause, without reason.
+dn9:6.8 | S: When they arise, you become percipient. | T: When it arises, one is percipient.
+dn9:6.9 | S: When they cease, you become non-percipient.’ | T: When it ceases, one is not percipient.’
+dn9:6.10 | S: That’s how some describe the cessation of perception. | T: That’s how one group described the ultimate cessation of perception.
+dn9:6.11 | S: But someone else says: | T: “Then someone else said,
+dn9:6.12 | S: ‘That’s not how it is, good fellows! | T: ‘No, that’s not how it is.
+dn9:6.13 | S: Perception is a person’s self, | T: Perception is a person’s self,
+dn9:6.14 | S: which enters and departs. | T: which comes and goes.
+dn9:6.15 | S: When it enters, you become percipient. | T: When it comes, one is percipient.
+dn9:6.16 | S: When it departs, you become non-percipient.’ | T: When it goes, one is not percipient.’
+dn9:6.17 | S: That’s how some describe the cessation of perception. | T: That’s how one group described the ultimate cessation of perception.
+dn9:6.18 | S: But someone else says: | T: “Then someone else said,
+dn9:6.19 | S: ‘That’s not how it is, good fellows! | T: ‘No, that’s not how it is,
+dn9:6.20 | S: There are ascetics and brahmins of great power and might. | T: for there are contemplatives & brahmans of great power, great potency.
+dn9:6.21 | S: They insert and extract a person’s perception. | T: They draw perception in and out of a person. When they draw it in,
+dn9:6.22 | S: When they insert it, you become percipient. | T: one is percipient.
+dn9:6.23 | S: When they extract it, you become non-percipient.’ | T: When they draw it out, one is not percipient.’
+dn9:6.24 | S: That’s how some describe the cessation of perception. | T: That’s how one group described the ultimate cessation of perception.
+dn9:6.25 | S: But someone else says: | T: “Then someone else said,
+dn9:6.26 | S: ‘That’s not how it is, good fellows! | T: ‘No, that’s not how it is,
+dn9:6.27 | S: There are deities of great power and might. | T: for there are devas of great power, great potency.
+dn9:6.28 | S: They insert and extract a person’s perception. | T: They draw perception in and out of a person. When they draw it in,
+dn9:6.29 | S: When they insert it, you become percipient. | T: one is percipient.
+dn9:6.30 | S: When they extract it, you become non-percipient.’ | T: When they draw it out, one is not percipient.’
+dn9:6.31 | S: That’s how some describe the cessation of perception. | T: That’s how one group described the ultimate cessation of perception.
+dn9:6.32 | S: That reminded me of the Buddha: | T: “Then the memory of the Blessed One arose within me:
+dn9:6.33 | S: ‘Surely it must be the Blessed One, the Holy One who is so very skilled in such matters.’ | T: ‘Ah, the Blessed One! Ah, the One Well-Gone—who surely is well-skilled in these matters.’
+dn9:6.34 | S: The Buddha is skilled and well-versed concerning the cessation of perception. | T: The Blessed One is skilled and expert in the ultimate cessation of perception.
+dn9:6.35 | S: How does the cessation of perception happen?” | T: So what, lord, is the ultimate cessation of perception?”
+dn9:7.0 | S: 1.2. Perception Arises With a Cause | T: (none)
+dn9:7.1 | S: “Regarding this, Poṭṭhapāda, those ascetics and brahmins who say that | T: “In this regard, Poṭṭhapāda,
+dn9:7.2 | S: a person’s perceptions arise and cease without cause or reason are wrong from the start. | T: those contemplatives & brahmans who say that a person’s perception arises & ceases without cause, without reason, are wrong from the very start.
+dn9:7.3 | S: Why is that? | T: Why is that?
+dn9:7.4 | S: Because a person’s perceptions arise and cease with cause and reason. | T: Because a person’s perception arises & ceases with a cause, with a reason.
+dn9:7.5 | S: With training, certain perceptions arise and certain perceptions cease. | T: With training, one perception arises and with training another perception ceases.
+dn9:7.6 | S: And what is that training?” said the Buddha. | T: And what is that training?
+dn9:7.7 | S: “It’s when a Realized One arises in the world, perfected, a fully awakened Buddha … | T: “There is the case where a Tathāgata appears in the world, worthy and rightly self-awakened. [as in DN 2] …
+dn9:7.8 | S: That’s how a mendicant is accomplished in ethics. … | T: “This is how a monk is consummate in virtue.…
+dn9:9.1 | S: Seeing that the hindrances have been given up in them, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when blissful, the mind becomes immersed. | T: “Seeing that these five hindrances have been abandoned within him, he becomes glad. Glad, he becomes enraptured. Enraptured, his body grows tranquil. His body tranquil, he is sensitive to pleasure. Feeling pleasure, his mind becomes concentrated.
+dn9:10.1 | S: Quite secluded from sensual pleasures, secluded from unskillful qualities, they enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “Quite secluded from sensuality, secluded from unskillful qualities, the monk enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+dn9:10.2 | S: The sensual perception that they had previously ceases. | T: His earlier perception of sensuality ceases,
+dn9:10.3 | S: At that time they have a subtle and true perception of the rapture and bliss born of seclusion. | T: and on that occasion there is a perception of a refined truth of rapture & pleasure born of seclusion. On that occasion he is one who is percipient of a refined truth of rapture & pleasure born of seclusion.
+dn9:10.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:10.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:11.1 | S: “Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: “Then, with the stilling of directed thoughts & evaluations, the monk enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+dn9:11.2 | S: The subtle and true perception of the rapture and bliss born of seclusion that they had previously ceases. | T: His earlier perception of a refined truth of rapture & pleasure born of seclusion ceases,
+dn9:11.3 | S: At that time they have a subtle and true perception of the rapture and bliss born of immersion. | T: and on that occasion there is a perception of a refined truth of rapture & pleasure born of concentration. On that occasion he is one who is percipient of a refined truth of rapture & pleasure born of concentration.
+dn9:11.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:11.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:12.1 | S: “Furthermore, with the fading away of rapture, a mendicant enters and remains in the third absorption, where they meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: “And further, with the fading of rapture, the monk remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+dn9:12.2 | S: The subtle and true perception of the rapture and bliss born of immersion that they had previously ceases. | T: His earlier perception of a refined truth of rapture & pleasure born of concentration ceases,
+dn9:12.3 | S: At that time they have a subtle and true perception of bliss with equanimity. | T: and on that occasion there is a perception of a refined truth of equanimity. On that occasion he is one who is percipient of a refined truth of equanimity.
+dn9:12.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:12.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:13.1 | S: “Furthermore, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: “And further, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—the monk enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+dn9:13.2 | S: The subtle and true perception of bliss with equanimity that they had previously ceases. | T: His earlier perception of a refined truth of equanimity ceases, and on that occasion there is a perception of a refined truth of neither pleasure nor pain.
+dn9:13.3 | S: At that time they have a subtle and true perception of neutral feeling. | T: On that occasion he is one who is percipient of a refined truth of neither pleasure nor pain.
+dn9:13.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:13.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:14.1 | S: “Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “And further, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not heeding perceptions of multiplicity, (perceiving,) ‘Infinite space,’ the monk enters & remains in the dimension of the infinitude of space.
+dn9:14.2 | S: The perception of luminous form that they had previously ceases. | T: His earlier perception of form ceases,
+dn9:14.3 | S: At that time they have a subtle and true perception of the dimension of infinite space. | T: and on that occasion there is a perception of a refined truth of the dimension of the infinitude of space. On that occasion he is one who is percipient of a refined truth of the dimension of the infinitude of space.
+dn9:14.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:14.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:15.1 | S: “Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: “And further, with the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ the monk enters & remains in the dimension of the infinitude of consciousness.
+dn9:15.2 | S: The subtle and true perception of the dimension of infinite space that they had previously ceases. | T: His earlier perception of a refined truth of the dimension of the infinitude of space ceases,
+dn9:15.3 | S: At that time they have a subtle and true perception of the dimension of infinite consciousness. | T: and on that occasion there is a perception of a refined truth of the dimension of the infinitude of consciousness. On that occasion he is one who is percipient of a refined truth of the dimension of the infinitude of consciousness.
+dn9:15.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:15.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:16.1 | S: “Furthermore, a mendicant, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: “And further, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ enters & remains in the dimension of nothingness.
+dn9:16.2 | S: The subtle and true perception of the dimension of infinite consciousness that they had previously ceases. | T: His earlier perception of a refined truth of the dimension of the infinitude of consciousness ceases,
+dn9:16.3 | S: At that time they have a subtle and true perception of the dimension of nothingness. | T: and on that occasion there is a perception of a refined truth of the dimension of nothingness. On that occasion he is one who is percipient of a refined truth of the dimension of nothingness.
+dn9:16.4 | S: That’s how, with training, certain perceptions arise and certain perceptions cease. | T: And thus it is that with training one perception arises and with training another perception ceases.
+dn9:16.5 | S: And this is that training,” said the Buddha. | T: (none)
+dn9:17.1 | S: “Poṭṭhapāda, from the time a mendicant here takes charge of their own perception, they proceed from one stage to the next, progressively reaching the peak of perception. | T: “Now, when the monk is percipient of himself here, then from there to there, step by step, he touches the peak of perception.
+dn9:17.2 | S: Standing on the peak of perception they think, | T: As he remains at the peak of perception, the thought occurs to him,
+dn9:17.3 | S: ‘Intentionality is bad for me, it’s better to be free of it. | T: ‘Thinking is bad for me. Not thinking is better for me.
+dn9:17.4 | S: For if I were to intend and choose, these perceptions would cease in me, and other coarser perceptions would arise. | T: If I were to think and will, this perception of mine would cease, and a grosser perception would appear.
+dn9:17.5 | S: Why don’t I neither make a choice nor form an intention?’ | T: What if I were neither to think nor to will?’
+dn9:17.6 | S: They neither make a choice nor form an intention. | T: So he neither thinks nor wills, and as he is neither thinking nor willing,
+dn9:17.7 | S: Those perceptions cease in them, and other coarser perceptions don’t arise. | T: that perception ceases and another, grosser perception does not appear.
+dn9:17.8 | S: They touch cessation. | T: He touches cessation.
+dn9:17.9 | S: And that, Poṭṭhapāda, is how the progressive cessation of perception is attained with awareness. | T: This, Poṭṭhapāda, is how there is the alert step-by step attainment of the ultimate cessation of perception.
+dn9:18.1 | S: What do you think, Poṭṭhapāda? | T: “Now what do you think, Poṭṭhapāda?
+dn9:18.2 | S: Have you ever heard of this before?” | T: Have you ever before heard of such an alert step-by step attainment of the ultimate cessation of perception?”
+dn9:18.3 | S: “No, sir. | T: “No, lord.
+dn9:18.4 | S: This is how I understand what the Buddha said: | T: And here is how I understand the Dhamma taught by the Blessed One:
+dn9:18.5 | S: ‘From the time a mendicant here takes charge of their own perception, they proceed from one stage to the next, progressively reaching the peak of perception. | T: ‘When the monk is percipient of himself here, then from there to there, step by step, he touches the peak of perception.
+dn9:18.6 | S: Standing on the peak of perception they think, | T: As he remains at the peak of perception, the thought occurs to him,
+dn9:18.7 | S: “Intentionality is bad for me, it’s better to be free of it. | T: ”Thinking is bad for me. Not thinking is better for me.
+dn9:18.8 | S: For if I were to intend and choose, these perceptions would cease in me, and other coarser perceptions would arise. | T: If I were to think and will, this perception of mine would cease, and a grosser perception would appear.
+dn9:18.9 | S: Why don’t I neither make a choice nor form an intention?” | T: What if I were neither to think nor to will?” So he neither thinks nor wills, and as he is neither thinking nor willing,
+dn9:18.10 | S: Those perceptions cease in them, and other coarser perceptions don’t arise. | T: that perception ceases and another, grosser perception does not appear.
+dn9:18.11 | S: They touch cessation. | T: He touches cessation.
+dn9:18.12 | S: And that is how the progressive cessation of perception is attained with awareness.’” | T: This, Poṭṭhapāda, is how there is the alert step-by step attainment of the ultimate cessation of perception.’”
+dn9:18.13 | S: “That’s right, Poṭṭhapāda.” | T: “That’s right, Poṭṭhapāda.”
+dn9:19.1 | S: “Does the Buddha describe just one peak of perception, or many?” | T: “But, lord, does the Blessed One describe one peak of perception or many peaks of perception?”
+dn9:19.2 | S: “I describe the peak of perception as both one and many.” | T: “Poṭṭhapāda, I describe one peak of perception and many peaks of perception.”
+dn9:19.3 | S: “But sir, how do you describe it as one peak and as many?” | T: “And how does the Blessed One describe one peak of perception and many peaks of perception?”
+dn9:19.4 | S: “I describe the peak of perception according to the specific manner in which one touches cessation. | T: “In whatever way one touches cessation, Poṭṭhapāda, that’s the way I describe the peak of perception.
+dn9:19.5 | S: That’s how I describe the peak of perception as both one and many.” | T: That’s how I describe one peak of perception and many peaks of perception.”
+dn9:20.1 | S: “But sir, does perception arise first and knowledge afterwards? Or does knowledge arise first and perception afterwards? Or do they both arise at the same time?” | T: “Now, lord, does perception arise first, and knowledge after; or does knowledge arise first, and perception after; or do perception & knowledge arise simultaneously?”
+dn9:20.2 | S: “Perception arises first and knowledge afterwards. The arising of perception leads to the arising of knowledge. | T: “Poṭṭhapāda, perception arises first, and knowledge after. And the arising of knowledge comes from the arising of perception.
+dn9:20.3 | S: They understand, | T: One discerns,
+dn9:20.4 | S: ‘My knowledge arose from a specific condition.’ | T: ‘It’s in dependence on this that my knowledge has arisen.’
+dn9:20.5 | S: That is a way to understand how | T: (none)
+dn9:20.6 | S: perception arises first and knowledge afterwards; that the arising of perception leads to the arising of knowledge.” | T: Through this line of reasoning one can realize how perception arises first, and knowledge after, and how the arising of knowledge comes from the arising of perception.”
+dn9:21.0 | S: 1.3. Perception and the Self | T: (none)
+dn9:21.1 | S: “Sir, is perception a person’s self, or are perception and self different things?” | T: “Now, lord, is perception a person’s self, or is perception one thing and self another?”
+dn9:21.2 | S: “But Poṭṭhapāda, do you believe in a self?” | T: “What self do you posit, Poṭṭhapāda?”
+dn9:21.3 | S: “I believe in a solid self, sir, which is formed, made up of the four principal states, and consumes edible food.” | T: “I posit a gross self, possessed of form, made up of the four great elements [earth, water, fire, and wind], feeding on physical food.” “Then, Poṭṭhapāda, your self would be gross, possessed of form, made up of the four great elements, feeding on physical food.
+dn9:21.4 | S: “Suppose there was such a solid self, Poṭṭhapāda. In that case, perception would be one thing, the self another. | T: That being the case, then for you perception would be one thing and self another.
+dn9:21.5 | S: Here is another way to understand how perception and self are different things. | T: And it’s through this line of reasoning that one can realize how perception will be one thing and self another:
+dn9:21.6 | S: So long as that solid self remains, still some perceptions arise in a person and others cease. | T: Even as there remains this gross self—possessed of form, made up of the four great elements, and feeding on food—then for that person, perception arises as other, perception passes away as other.
+dn9:21.7 | S: That is a way to understand how perception and self are different things.” | T: It’s through this line of reasoning that one can realize how perception will be one thing and self another.”
+dn9:22.1 | S: “Sir, I believe in a mind-made self which is whole in its major and minor limbs, not deficient in any faculty.” | T: “Then, lord, I posit a mind-made self complete in all its parts, not inferior in its faculties.” “Then, Poṭṭhapāda, your self would be mind-made, complete in all its parts, not inferior in its faculties.
+dn9:22.2 | S: “Suppose there was such a mind-made self, Poṭṭhapāda. In that case, perception would be one thing, the self another. | T: That being the case, then for you perception would be one thing and self another.
+dn9:22.3 | S: Here is another way to understand how perception and self are different things. | T: And it’s through this line of reasoning that one can realize how perception will be one thing and self another:
+dn9:22.4 | S: So long as that mind-made self remains, still some perceptions arise in a person and others cease. | T: Even as there remains this mind-made self—complete in all its parts, not inferior in its faculties—then for that person, perception arises as other, perception passes away as other.
+dn9:22.5 | S: That too is a way to understand how perception and self are different things.” | T: It’s through this line of reasoning that one can realize how perception will be one thing and self another.”

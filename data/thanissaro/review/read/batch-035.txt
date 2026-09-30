@@ -1,0 +1,330 @@
+## snp1.2
+snp1.2:1.1 | S: “I’ve boiled my rice and drawn my milk,” | T: Dhaniya the cattleman: “The rice is cooked, my milking done.
+snp1.2:1.2 | S: said Dhaniya the rancher, | T: I live with my people
+snp1.2:1.3 | S: “I stay with my family along the bank of the Mahī. | T: along the banks of the Mahi;
+snp1.2:1.4 | S: My hut is roofed, my sacred fire kindled: | T: my hut is roofed, my fire lit:
+snp1.2:1.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:2.1 | S: “I boil not with anger <j>and have drawn out hard-heartedness,” | T: The Buddha: “Free from anger,
+snp1.2:2.2 | S: said the Buddha, | T: my rigidity gone,
+snp1.2:2.3 | S: “I stay for one night along the bank of the Mahī. | T: I live for one night along the banks of the Mahi;
+snp1.2:2.4 | S: My hut is wide open, my fire is quenched: | T: my hut’s roof is open, my fire out.
+snp1.2:2.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:3.1 | S: “No gadflies or mosquitoes are found,” | T: Dhaniya: “No mosquitoes or gadflies are to be found.
+snp1.2:3.2 | S: said Dhaniya, | T: (none)
+snp1.2:3.3 | S: “cows graze on the lush meadow grass. | T: The cows range in the marshy meadow where the grasses flourish.
+snp1.2:3.4 | S: They get by even when the rain comes: | T: They could stand the rain if it came:
+snp1.2:3.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:4.1 | S: “I bound a raft and prepared it well,” | T: The Buddha: “A raft, well-made, has been lashed together.
+snp1.2:4.2 | S: said the Buddha, | T: (none)
+snp1.2:4.3 | S: “and with it I crossed over, went to the far shore, <j>and dispelled the flood. | T: Having crossed over, gone to the far shore, I’ve subdued the flood.
+snp1.2:4.4 | S: Now I have no need for a raft: | T: No need for a raft is to be found:
+snp1.2:4.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:5.1 | S: “My wife is obedient, not wanton,” | T: Dhaniya: “My wife is composed, not wanton,
+snp1.2:5.2 | S: said Dhaniya, | T: is charming,
+snp1.2:5.3 | S: “long have we lived together happily. | T: has lived with me long.
+snp1.2:5.4 | S: I hear nothing bad about her: | T: I hear no evil about her at all:
+snp1.2:5.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:6.1 | S: “My mind is obedient and freed,” | T: The Buddha: “My mind is composed, released,
+snp1.2:6.2 | S: said the Buddha, | T: (none)
+snp1.2:6.3 | S: “long nurtured and well-tamed. | T: has long been nurtured, well tamed.
+snp1.2:6.4 | S: Nothing bad is found in me: | T: No evil is to be found in me:
+snp1.2:6.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:7.1 | S: “I am self-employed,” | T: (none)
+snp1.2:7.2 | S: said Dhaniya, | T: Dhaniya:
+snp1.2:7.3 | S: “and my healthy children likewise. | T: “I support myself on my earnings. My sons live in harmony, free from disease.
+snp1.2:7.4 | S: I hear nothing bad about them: | T: I hear no evil about them at all:
+snp1.2:7.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:8.1 | S: “I am no one’s lackey,” | T: (none)
+snp1.2:8.2 | S: said the Buddha, | T: The Buddha: “I’m in no one’s employ,
+snp1.2:8.3 | S: “with what I have earned I wander the world. | T: I wander the whole world on the reward [of my Awakening].
+snp1.2:8.4 | S: I have no need for wages: | T: No need for earnings is to be found:
+snp1.2:8.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:9.1 | S: “I have heifers and sucklings,” | T: (none)
+snp1.2:9.2 | S: said Dhaniya, | T: Dhaniya:
+snp1.2:9.3 | S: “cows in calf and breeding cows. | T: “There are cows, young bulls, cows in calf, & breeding cows,
+snp1.2:9.4 | S: I’ve also got a bull, captain of the herd here: | T: & a great bull, the leader of the herd:
+snp1.2:9.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:10.1 | S: “I have no heifers or sucklings,” | T: (none)
+snp1.2:10.2 | S: said the Buddha, | T: The Buddha:
+snp1.2:10.3 | S: “no cows in calf or breeding cows. | T: “There are no cows, no young bulls, no cows in calf or breeding cows,
+snp1.2:10.4 | S: I haven’t got a bull, captain of the herd here: | T: no great bull, the leader of the herd:
+snp1.2:10.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:11.1 | S: “The stakes are driven in, unshakable,” | T: Dhaniya: “The stakes are dug-in,
+snp1.2:11.2 | S: said Dhaniya, | T: immovable.
+snp1.2:11.3 | S: “The grass halters are new and well-woven, | T: The new muñja-grass halters, well-woven,
+snp1.2:11.4 | S: not even the sucklings can break them: | T: not even young bulls could break:
+snp1.2:11.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:12.1 | S: “Like a bull I broke the bonds,” | T: The Buddha: “Having broken my bonds like a great bull,
+snp1.2:12.2 | S: said the Buddha, | T: (none)
+snp1.2:12.3 | S: “like an elephant I snapped the vine. | T: like a great elephant tearing a rotting vine,
+snp1.2:12.4 | S: I will never lie in a womb again: | T: I never again will lie in the womb:
+snp1.2:12.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:13.1 | S: Right then a vast cloud rained forth, | T: The great cloud rained down straightaway, filling the lowlands & high.
+snp1.2:13.2 | S: soaking the uplands and valleys. | T: (none)
+snp1.2:13.3 | S: Hearing the heavens rain down, | T: Hearing the rain-god pour down,
+snp1.2:13.4 | S: Dhaniya said this: | T: Dhaniya said:
+snp1.2:14.1 | S: “It is no small gain for us | T: “How great our gain
+snp1.2:14.2 | S: that we have seen the Buddha. | T: that we’ve gazed on the Blessed One!
+snp1.2:14.3 | S: We come to you for refuge, Clear-eyed One. | T: We go to him, the One with Eyes, for refuge.
+snp1.2:14.4 | S: O great sage, please be our Teacher. | T: May you be our teacher, Great Sage.
+snp1.2:15.1 | S: My wife and I, obedient, | T: My wife & I are composed.
+snp1.2:15.2 | S: shall lead the spiritual life under the Holy One. | T: Let’s follow the holy life
+snp1.2:15.3 | S: Gone beyond birth and death, | T: under the One Well-Gone. Gone to the far shore of aging & death,
+snp1.2:15.4 | S: we shall make an end of suffering.” | T: let’s put an end to suffering & stress.”
+snp1.2:16.1 | S: “Children bring you delight!” | T: Māra: “Those with children delight because of their children.
+snp1.2:16.2 | S: said Māra the Wicked, | T: (none)
+snp1.2:16.3 | S: “Cattle also bring you delight! | T: Those with cattle delight because of their cows.
+snp1.2:16.4 | S: For attachments are a man’s delight; | T: A person’s delight comes from acquisitions,
+snp1.2:16.5 | S: without attachments there’s no delight.” | T: for a person with no acquisitions doesn’t delight.”
+snp1.2:17.1 | S: “Your children bring you sorrow,” | T: The Buddha: “Those with children grieve precisely because of their children.
+snp1.2:17.2 | S: said the Buddha, | T: (none)
+snp1.2:17.3 | S: “Your cattle also bring you sorrow. | T: Those with cattle grieve precisely because of their cows.
+snp1.2:17.4 | S: For attachments are a man’s sorrow; | T: A person’s grief comes from acquisitions,
+snp1.2:17.5 | S: without attachments there are no sorrows.” | T: for a person with no acquisitions doesn’t grieve.”
+
+## an5.167
+an5.167:1.1 | S: There Sāriputta addressed the mendicants: | T: There Ven. Sāriputta addressed the monks,
+an5.167:1.2 | S: “Reverends, a mendicant who wants to accuse another should first establish five things in themselves. | T: “Friends, an accusing monk, when he wants to accuse another [of a wrong-doing], is fit to do so after having established five things in himself.
+an5.167:2.1 | S: What five? | T: Which five?
+an5.167:2.2 | S: I will speak at the right time, not at the wrong time. | T: “‘I will speak at the right time, not at the wrong time.’
+an5.167:2.3 | S: I will speak truthfully, not falsely. | T: “‘I will say what is factual, not what is not unfactual.’
+an5.167:2.4 | S: I will speak gently, not harshly. | T: “‘I will speak gently, not harshly.’
+an5.167:2.5 | S: I will speak beneficially, not harmfully. | T: “‘I will say what is connected with the goal [or: the matter at hand], not what is unconnected to the goal [the matter at hand].’
+an5.167:2.6 | S: I will speak lovingly, not from secret hate. | T: “‘I will speak with an attitude of goodwill, not with inner aversion.’
+an5.167:2.7 | S: A mendicant who wants to accuse another should first establish these five things in themselves. | T: “Monks, an accusing monk, when he wants to accuse another, is fit to do so after having established these five things in himself.
+an5.167:3.1 | S: Take a case where I see a certain individual being accused at the wrong time, not being disturbed at the right time. They’re accused falsely, not disturbed truthfully. They’re accused harshly, not disturbed gently. They’re accused harmfully, not disturbed beneficially. They’re accused with secret hate, not disturbed lovingly. | T: “There is the case, friends, where I see a certain person accused at the wrong time and not called to task at the right time; accused with what is unfactual and not called to task with what is factual; accused harshly and not called to task gently; accused with what is unconnected with the goal and not called to task with what is connected with the goal; accused with an attitude of inner aversion and not called to task with an attitude of goodwill.
+an5.167:4.1 | S: The mendicant who is accused improperly should be reassured in five ways. | T: “Friends, when a monk has been accused with what is not-Dhamma, non-remorse should be encouraged in him in five ways:
+an5.167:4.2 | S: ‘Venerable, you were accused at the wrong time, not at the right time. There’s no need for you to feel remorse. | T: ‘Venerable sir, you were accused at the wrong time, not at the right time. That’s enough for you to feel no remorse. You were accused with what is unfactual, not with what is factual. That’s enough for you to feel no remorse.
+an5.167:4.3 | S: You were accused falsely, not truthfully. … | T: (none)
+an5.167:4.4 | S: You were accused harshly, not gently. … | T: You were accused harshly, not gently.
+an5.167:4.5 | S: You were accused harmfully, not beneficially. … | T: (none)
+an5.167:4.6 | S: You were accused with secret hate, not lovingly. There’s no need for you to feel remorse.’ | T: That’s enough for you to feel no remorse. You were accused with what is unconnected with the goal, not with what is connected with the goal. That’s enough for you to feel no remorse. You were accused with an attitude of inner aversion, and not with an attitude of goodwill. That’s enough for you to feel no remorse.’
+an5.167:4.7 | S: A mendicant who is accused improperly should be reassured in these five ways. | T: “When a monk has been accused with what is not-Dhamma, non-remorse should be encouraged in him in these five ways.
+an5.167:5.1 | S: The mendicant who makes improper accusations should be chastened in five ways. | T: “When a monk has accused [another] with what is not-Dhamma, remorse should be encouraged in him in five ways:
+an5.167:5.2 | S: ‘Reverend, you made an accusation at the wrong time, not at the right time. There’s a reason for you to feel remorse. | T: ‘Friend, you made an accusation at the wrong time, not at the right time. That’s enough for you to feel remorse. You made an accusation with what is unfactual, not with what is factual. That’s enough for you to feel remorse.
+an5.167:5.3 | S: You made an accusation falsely, not truthfully. … | T: (none)
+an5.167:5.4 | S: You made an accusation harshly, not gently. … | T: You made an accusation harshly, not gently.
+an5.167:5.5 | S: You made an accusation harmfully, not beneficially. … | T: (none)
+an5.167:5.6 | S: You made an accusation with secret hate, not lovingly. There’s a reason for you to feel remorse.’ | T: That’s enough for you to feel remorse. You made an accusation with what is unconnected with the goal, not with what is connected with the goal. That’s enough for you to feel remorse. You made an accusation with an attitude of inner aversion, not with an attitude of goodwill. That’s enough for you to feel remorse.’
+an5.167:5.7 | S: The mendicant who makes improper accusations should be chastened in these five ways. | T: “When a monk has made an accusation with what is not-Dhamma, remorse should be encouraged in him in these five ways.
+an5.167:5.8 | S: Why is that? | T: Why is that?
+an5.167:5.9 | S: So that another mendicant wouldn’t think to make a false accusation. | T: So that no other monk would think that he, too, should make an accusation with what is unfactual.
+an5.167:6.1 | S: Take a case where I see a certain individual being accused at the right time, not being disturbed at the wrong time. They’re accused truthfully, not disturbed falsely. They’re accused gently, not disturbed harshly. They’re accused beneficially, not disturbed harmfully. They’re accused lovingly, not disturbed with secret hate. | T: “There is the case, friends, where I see a certain person accused at the right time and not called to task at the wrong time; accused with what is factual and not called to task with what is unfactual; accused gently and not called to task harshly; accused with what is connected with the goal and not called to task with what is unconnected with the goal; accused with an attitude of goodwill and not called to task with an attitude of inner aversion.
+an5.167:7.1 | S: The mendicant who is accused properly should be chastened in five ways. | T: “Friends, when a monk has been accused with what is Dhamma, remorse should be encouraged in him in five ways:
+an5.167:7.2 | S: ‘Venerable, you were accused at the right time, not at the wrong time. There’s a reason for you to feel remorse. | T: ‘Venerable sir, you were accused at the right time, not at the wrong time. That’s enough for you to feel remorse. You were accused with what is factual, not with what is unfactual. That’s enough for you to feel remorse.
+an5.167:7.3 | S: You were accused truthfully, not falsely. … | T: (none)
+an5.167:7.4 | S: You were accused gently, not harshly. … | T: You were accused gently, not harshly.
+an5.167:7.5 | S: You were accused beneficially, not harmfully. … | T: (none)
+an5.167:7.6 | S: You were accused lovingly, not with secret hate. There’s a reason for you to feel remorse.’ | T: That’s enough for you to feel remorse. You were accused with what is connected with the goal, not with what is unconnected with the goal. That’s enough for you to feel remorse. You were accused with an attitude of goodwill, not with an attitude of inner aversion. That’s enough for you to feel remorse.’
+an5.167:7.7 | S: The mendicant who is accused properly should be chastened in these five ways. | T: “When a monk has been accused with what is Dhamma, remorse should be encouraged in him in these five ways.
+an5.167:8.1 | S: The mendicant who makes proper accusations should be reassured in five ways. | T: “When a monk has accused [another] with what is Dhamma, non-remorse should be encouraged in him in five ways:
+an5.167:8.2 | S: ‘Reverend, you made an accusation at the right time, not at the wrong time. There’s no need for you to feel remorse. | T: ‘Friend, you made an accusation at the right time, not at the wrong time. That’s enough for you to feel no remorse. You made an accusation with what is factual, not with what is unfactual. That’s enough for you to feel no remorse.
+an5.167:8.3 | S: You made an accusation truthfully, not falsely. … | T: (none)
+an5.167:8.4 | S: You made an accusation gently, not harshly. … | T: You made an accusation gently, not harshly.
+an5.167:8.5 | S: You made an accusation beneficially, not harmfully. … | T: (none)
+an5.167:8.6 | S: You made an accusation lovingly, not with secret hate. There’s no need for you to feel remorse.’ | T: That’s enough for you to feel no remorse. You made an accusation with what is connected with the goal, not with what is unconnected with the goal. That’s enough for you to feel no remorse. You made an accusation with an attitude of goodwill, not with an attitude of inner aversion. That’s enough for you to feel no remorse.’
+an5.167:8.7 | S: The mendicant who makes proper accusations should be reassured in these five ways. | T: “When a monk has made an accusation with what is Dhamma, non-remorse should be encouraged in him in these five ways.
+an5.167:8.8 | S: Why is that? | T: Why is that?
+an5.167:8.9 | S: So that another mendicant would think to make a true accusation. | T: So that another monk would think that he, too, should make an accusation with what is factual.
+an5.167:9.1 | S: An individual who is accused should ground themselves in two things: | T: “Friends, a person being accused should be established in two qualities:
+an5.167:9.2 | S: truth and an even temper. | T: in truth and in being unprovoked:
+an5.167:9.3 | S: Even if others accuse me—at the right time or the wrong time, truthfully or falsely, gently or harshly, beneficially or harmfully, lovingly or with secret hate—I will still ground myself in two things: | T: ‘If another were to accuse me in five ways— at the right time or at the wrong time, with what is factual or with what is unfactual, gently or harshly, with what is connected with the goal or with what is unconnected to the goal, with an attitude of goodwill or with an attitude of inner aversion— I will be established in two qualities:
+an5.167:9.4 | S: truth and an even temper. | T: in truth and in being unprovoked.
+an5.167:9.5 | S: If I know that | T: “‘If I know,
+an5.167:9.6 | S: that quality is found in me, I will tell them that it is. | T: “This quality is within me,” I should tell him, “It is. This quality is found within me.”
+an5.167:9.8 | S: If I know that | T: If I know,
+an5.167:9.9 | S: that quality is not found in me, I will tell them that it is not.” | T: “This quality is not within me,” I should tell him, “It isn’t. This quality is not found within me.”’”
+an5.167:10.1 | S: “Even when you speak like this, Sāriputta, there are still some futile people here who do not respectfully take it up.” | T: [The Blessed One said,] “Sāriputta, even though you are speaking in this way, still there are some worthless men who don’t accept it respectfully.”
+an5.167:11.1 | S: “Sir, there are those faithless individuals who went forth from the lay life to homelessness not out of faith but to earn a livelihood. They’re devious, deceitful, and sneaky. They’re haughty, insolent, fickle, scurrilous, and loose-tongued. They do not guard their sense doors or eat in moderation, and they are not dedicated to wakefulness. They don’t care about the ascetic life, and don’t keenly respect the training. They’re indulgent and slack, leaders in backsliding, neglecting seclusion, lazy, and lacking energy. They’re unmindful, lacking situational awareness and immersion, with straying minds, witless and idiotic. When I speak to them like this, they don’t respectfully take it up. | T: “Lord, those who have no confidence, who have gone forth from home into the homeless life not out of confidence but to make a living—sly, crafty, deceptive, restless, rowdy, unruly, talkative, of loose words, their senses unguarded, knowing no moderation in food, not committed to wakefulness, indifferent to the qualities of a contemplative, with no strong respect for the training, luxurious & lax, leaders in backsliding, discarding the duties of solitude, lazy, weak in their efforts, of muddled mindfulness, unalert, unconcentrated, their minds scattered, of poor discernment, stupid: They, when I have spoken to them in this way, don’t accept it respectfully.
+an5.167:12.1 | S: Sir, there are those gentlemen who went forth from the lay life to homelessness out of faith. They’re not devious, deceitful, and sneaky. They’re not haughty, insolent, fickle, scurrilous, and loose-tongued. They guard their sense doors and eat in moderation, and they are dedicated to wakefulness. They care about the ascetic life, and keenly respect the training. They’re not indulgent or slack, nor are they leaders in backsliding, neglecting seclusion. They’re energetic and determined. They’re mindful, with situational awareness, immersion, and unified minds; wise and clever. When I speak to them like this, they do respectfully take it up.” | T: “But those sons of good families who have confidence, who have gone forth from home into the homeless life out of confidence—not sly, not crafty, not deceptive, not restless, not rowdy, not unruly, not talkative, not of loose words, their senses guarded, knowing moderation in food, committed to wakefulness, not indifferent to the qualities of a contemplative, with strong respect for the training, not luxurious or lax, leaders in going forward, taking on the duties of solitude, aroused in their efforts, resolute, of unmuddled mindfulness, alert, concentrated, their minds unified, discerning, not stupid: They, when I have spoken to them in this way, accept it respectfully.”
+an5.167:13.1 | S: “Sāriputta, those faithless individuals who went forth from the lay life to homelessness not out of faith but to earn a livelihood … Leave them be. | T: “Sāriputta, leave aside those who have gone forth from home into the homeless life not out of confidence but to make a living… of poor discernment, stupid.
+an5.167:14.1 | S: But those gentlemen who went forth from the lay life to homelessness out of faith … You should speak to them. | T: But as for those who have gone forth from home into the homeless life out of confidence… resolute, of unmuddled mindfulness, alert, concentrated, their minds unified, discerning, not stupid: Those are the ones to whom you should speak.
+an5.167:14.2 | S: Sāriputta, you should advise your spiritual companions! | T: “Exhort your fellow monks, Sāriputta!
+an5.167:14.3 | S: You should instruct your spiritual companions! | T: Instruct your fellow monks, Sāriputta!
+an5.167:14.4 | S: Thinking: ‘I will draw my spiritual companions away from false teachings and ground them in true teachings.’ | T: [Thinking,] ‘I will raise my fellow monks out of what is not True Dhamma and establish them in True Dhamma.’
+an5.167:14.5 | S: That’s how you should train.” | T: That’s how you should train yourself.”
+
+## iti92
+iti92:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti92:2.1 | S: “Mendicants, suppose a mendicant were to hold the corner of my cloak and follow behind me step by step. | T: “Monks, even if a monk, taking hold of my outer robe, were to follow right behind me, placing his feet in my footsteps,
+iti92:2.2 | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: yet if he were to be greedy for sensuality, strong in his passions, malevolent in mind, corrupt in his resolves, his mindfulness muddled, unalert, uncentered, his mind scattered, & his faculties uncontrolled,
+iti92:2.3 | S: Then they are far from me, and I from them. | T: then he would be far from me, and I from him.
+iti92:2.4 | S: Why is that? | T: Why is that?
+iti92:2.5 | S: Because that mendicant does not see the teaching. | T: Because he does not see the Dhamma.
+iti92:2.6 | S: Not seeing the teaching, they do not see me. | T: Not seeing the Dhamma, he does not see me.
+iti92:3.1 | S: Suppose a mendicant were to live a hundred leagues away. | T: “But even if a monk were to live one hundred leagues away,
+iti92:3.2 | S: Yet they do not covet sensual pleasures; they’re not infatuated, or full of ill will and malicious intent. They have established mindfulness, situational awareness and immersion, with unified mind and restrained faculties. | T: yet if he were to have no greed for sensuality, were not strong in his passions, not malevolent in mind, uncorrupt in his resolves, his mindfulness established, alert, centered, his mind at singleness, & his faculties well-restrained,
+iti92:3.3 | S: Then they are close to me, and I to them. | T: then he would be near to me, and I to him.
+iti92:3.4 | S: Why is that? | T: Why is that?
+iti92:3.5 | S: Because that mendicant sees the teaching. | T: Because he sees the Dhamma.
+iti92:3.6 | S: Seeing the teaching, they see me.” | T: Seeing the Dhamma,
+iti92:3.7 | S: The Buddha spoke this matter. | T: (none)
+iti92:3.8 | S: On this it is said: | T: he sees me.”
+iti92:4.1 | S: “One full of desire and distress | T: (none)
+iti92:4.2 | S: may follow close behind, | T: Though following right behind, ambitious, annoyed:
+iti92:4.3 | S: yet see how distant they are— | T: see how far he is!– the perturbed from the unperturbed,
+iti92:4.4 | S: the stirred from the still, | T: the bound
+iti92:4.5 | S: the burning from the quenched, | T: from the Unbound,
+iti92:4.6 | S: the greedy from the greedless. | T: the greedy one from the one with no greed.
+iti92:5.1 | S: An astute person who has understood | T: But the wise person who, through
+iti92:5.2 | S: and directly known the teaching, | T: direct knowledge of Dhamma, gnosis of Dhamma,
+iti92:5.3 | S: grows calm, as unperturbed | T: grows still & unperturbed
+iti92:5.4 | S: as a lake free of wind. | T: like a lake unruffled by wind:
+iti92:6.1 | S: See how close they are— | T: see how close he is!– the unperturbed to the unperturbed,
+iti92:6.2 | S: the still to the still, | T: the Unbound to the Unbound,
+iti92:6.3 | S: the quenched to the quenched, | T: (none)
+iti92:6.4 | S: the greedless to the greedless.” | T: the greedless one
+iti92:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti92:7.2 | P: Tatiyaṁ. | T: to the one with no greed.
+
+## sn35.232
+sn35.232:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: Once, Ven. Sāriputta and Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn35.232:1.2 | S: Then in the late afternoon, Venerable Mahākoṭṭhita came out of retreat, went to Venerable Sāriputta, and exchanged greetings with him. | T: Then Ven. Mahā Koṭṭhita, in the evening, left his seclusion and went to Ven. Sāriputta. On arrival, he exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies,
+sn35.232:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Sāriputta: | T: he sat to one side. As he was sitting there, he said to Ven. Sāriputta,
+sn35.232:2.1 | S: “Reverend Sāriputta, which is it? Is the eye the fetter of sights, or are sights the fetter of the eye? | T: “Now tell me, friend Sāriputta, is the eye the fetter of forms, or are forms the fetter of the eye?
+sn35.232:2.2 | S: Is the ear … nose … tongue … body … | T: Is the ear… Is the nose… Is the tongue… Is the body…
+sn35.232:2.3 | S: mind the fetter of ideas, or are ideas the fetter of the mind?” | T: Is the intellect the fetter of ideas, or are ideas the fetter of the intellect?”
+sn35.232:3.1 | S: “Reverend Koṭṭhita, the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “No, my friend. The eye is not the fetter of forms, nor are forms the fetter of the eye.
+sn35.232:3.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:3.3 | S: The ear … nose … tongue … body … | T: The ear is not the fetter of sounds… The nose is not the fetter of aromas… The tongue is not the fetter of flavors… The body is not the fetter of tactile sensations…
+sn35.232:3.5 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect.
+sn35.232:3.6 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:4.1 | S: Suppose there was a black ox and a white ox yoked by a single harness or yoke. | T: “Suppose that a black ox and a white ox were joined with a single collar or yoke.
+sn35.232:4.2 | S: Would it be right to say that | T: If someone were to say,
+sn35.232:4.3 | S: the black ox is the yoke of the white ox, or the white ox is the yoke of the black ox?” | T: ‘The black ox is the fetter of the white ox, the white ox is the fetter of the black’—speaking this way, would he be speaking rightly?”
+sn35.232:4.4 | S: “No, reverend. | T: “No, my friend.
+sn35.232:4.5 | S: The black ox is not the yoke of the white ox, nor is the white ox the yoke of the black ox. | T: The black ox is not the fetter of the white ox, nor is the white ox the fetter of the black.
+sn35.232:4.6 | S: The yoke there is the single harness or yoke that they’re yoked by.” | T: The single collar or yoke by which they are joined: That is the fetter there.”
+sn35.232:5.1 | S: “In the same way, the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “In the same way, the eye is not the fetter of forms, nor are forms the fetter of the eye.
+sn35.232:5.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:5.3 | S: The ear … nose … tongue … body … | T: The ear is not the fetter of sounds…The nose is not the fetter of aromas…The tongue is not the fetter of flavors…The body is not the fetter of tactile sensations…
+sn35.232:5.4 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect.
+sn35.232:5.5 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:6.1 | S: If the eye were the fetter of sights, or if sights were the fetter of the eye, this living of the spiritual life for the complete ending of suffering would not be found. | T: “If the eye were the fetter of forms, or if forms were the fetter of the eye, then this holy life for the right ending of stress & suffering would not be proclaimed.
+sn35.232:6.2 | S: However, since this is not the case, but | T: (none)
+sn35.232:6.3 | S: the fetter there is the desire and greed that arises from the pair of them, this living of the spiritual life for the complete ending of suffering is found. | T: But because whatever desire-passion arises in dependence on the two of them is the fetter there, that is why this holy life for the right ending of stress & suffering is proclaimed.
+sn35.232:7.1 | S: If the ear … nose … tongue … body … | T: “If the ear were the fetter… “If the nose were the fetter… “If the tongue were the fetter… “If the body were the fetter…
+sn35.232:8.1 | S: mind were the fetter of ideas, or if ideas were the fetter of the mind, this living of the spiritual life for the complete ending of suffering would not be found. | T: “If the intellect were the fetter of ideas, or if ideas were the fetter of the intellect, then this holy life for the right ending of stress & suffering would not be proclaimed.
+sn35.232:8.2 | S: However, since this is not the case, but | T: (none)
+sn35.232:8.3 | S: the fetter there is the desire and greed that arises from the pair of them, this living of the spiritual life for the complete ending of suffering is found. | T: But because whatever desire-passion arises in dependence on the two of them is the fetter there, that is why this holy life for the right ending of stress & suffering is proclaimed. “And through this line of reasoning one may know how the eye is not the fetter of forms, nor are forms the fetter of the eye, but whatever desire-passion arises in dependence on the two of them: That is the fetter there. The ear is not the fetter of sounds… The nose is not the fetter of aromas… The tongue is not the fetter of flavors… The body is not the fetter of tactile sensations… The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect, but whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:9.1 | S: This too is a way to understand how this is so. | T: (none)
+sn35.232:10.1 | S: The Buddha has an eye | T: There is an eye in the Blessed One.
+sn35.232:10.2 | S: with which he sees a sight. | T: The Blessed One sees forms with the eye.
+sn35.232:10.3 | S: But he has no desire and greed, | T: There is no desire or passion in the Blessed One.
+sn35.232:10.4 | S: for his mind is well freed. | T: The Blessed One is well released in mind.
+sn35.232:10.5 | S: The Buddha has an ear … | T: “There is an ear in the Blessed One…
+sn35.232:10.9 | S: nose … | T: “There is a nose in the Blessed One…
+sn35.232:10.13 | S: tongue … | T: “There is a tongue in the Blessed One…
+sn35.232:10.17 | S: The Buddha has a body | T: “There is a body in the Blessed One…
+sn35.232:10.18 | S: with which he senses touch. | T: (none)
+sn35.232:10.19 | S: But he has no desire and greed, | T: (none)
+sn35.232:10.20 | S: for his mind is well freed. | T: “There is an intellect in the Blessed One.
+sn35.232:10.21 | S: The Buddha has a mind | T: The Blessed One knows ideas with the intellect.
+sn35.232:10.22 | S: with which he knows ideas. | T: (none)
+sn35.232:10.23 | S: But he has no desire and greed, | T: There is no desire or passion in the Blessed One.
+sn35.232:10.24 | S: for his mind is well freed. | T: The Blessed One is well released in mind.
+sn35.232:11.1 | S: This too is a way to understand how the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “It is through this line of reasoning that one may know how the eye is not the fetter of forms, nor are forms the fetter of the eye,
+sn35.232:11.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:11.3 | S: The ear … | T: The ear is not the fetter of sounds…
+sn35.232:11.4 | S: nose … | T: The nose is not the fetter of aromas…
+sn35.232:11.5 | S: tongue … | T: The tongue is not the fetter of flavors…
+sn35.232:11.6 | P: yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo taṁ tattha saṁyojanaṁ. | T: The body is not the fetter of tactile sensations…
+sn35.232:11.7 | S: body … | T: (none)
+sn35.232:11.8 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect,
+sn35.232:11.9 | S: The fetter there is the desire and greed that arises from the pair of them.” | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there.”
+
+## dn29
+dn29:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying among the Sakyans in the mansion in the mango grove of the Sakyan family called Vedhañña [Archer].
+dn29:1.2 | S: At one time the Buddha was staying in the land of the Sakyans in a stilt longhouse in a mango grove belonging to those Sakyans named Vedhaññā. | T: (none)
+dn29:1.3 | S: Now at that time the Jain ascetic of the Ñātika clan had recently passed away at Pāvā. | T: And on that occasion Nigaṇṭha Nāṭaputta had just died in Pāvā.
+dn29:1.4 | S: With his passing the Jain ascetics split, dividing into two factions, fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: On his death, the Nigaṇṭhas had split into two factions. They kept arguing, quarreling, & disputing, stabbing one another with weapons of the mouth:
+dn29:1.5 | S: “You don’t understand this teaching and training. I understand this teaching and training. What, you understand this teaching and training? You’re practicing wrong. I’m practicing right. I stay on topic, you don’t. You said last what you should have said first. You said first what you should have said last. What you’ve thought so much about has been disproved. Your doctrine is refuted. Go on, save your doctrine! You’re trapped; get yourself out of this—if you can!” | T: “You don’t understand this Dhamma-Vinaya. I understand this Dhamma-Vinaya. How could you understand this Dhamma-Vinaya? You practice wrongly. I practice rightly. I’m consistent. You’re inconsistent. What should be said first, you said last. What should be said last, you said first. What you cogitated so long has been turned inside out. Your position has been overthrown. You’re trapped, so go try to release your position or disentangle yourself if you can!”
+dn29:1.6 | S: You’d think there was nothing but slaughter going on among the Jain ascetics. | T: Nothing but slaughter, as it were, was being committed among the Nigaṇṭha Nāṭa-sons.
+dn29:1.7 | S: And the Jain Ñātika’s white-clothed lay disciples were disillusioned, dismayed, and disappointed in the Jain ascetics. They were equally disappointed with a teaching and training so poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha, with broken monument and without a refuge. | T: Even the lay disciples of Nigaṇṭha Nāṭaputta, dressed in white, seemed disenchanted, disgusted, & repelled by the Nigaṇṭha Nāṭa-sons, and at how that poorly proclaimed Dhamma-Vinaya was poorly expounded, not leading out, not conducive to calming, expounded by one who was not rightly self-awakened, its foundation [now] broken, without an arbiter.
+dn29:2.1 | S: And then, after completing the rainy season residence near Pāvā, the novice Cunda went to see Venerable Ānanda at Sāma village. He bowed, sat down to one side, and told him what had happened. | T: Then Cunda the novice, who had spent the Rains at Pāvā, went to Ven. Ānanda at Sāmagāma and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to Ven. Ānanda, “Venerable sir,
+dn29:2.2 | P: “nigaṇṭho, bhante, nāṭaputto pāvāyaṁ adhunākālaṅkato. | T: Nigaṇṭha Nāṭaputta has just died in Pāvā.
+dn29:2.3 | P: Tassa kālaṅkiriyāya bhinnā nigaṇṭhā dvedhikajātā …pe… bhinnathūpe appaṭisaraṇe”ti. | T: On his death, the Nigaṇṭhas have split into two factions. They keep arguing, quarreling, & disputing, stabbing one another with weapons of the mouth: ‘You don’t understand this Dhamma-Vinaya. I understand this Dhamma-Vinaya. How could you understand this Dhamma-Vinaya? You practice wrongly. I practice rightly. I’m consistent. You’re inconsistent. What should be said first, you said last. What should be said last, you said first. What you cogitated so long has been turned inside out. Your position has been overthrown. You’re trapped, so go try to release your position or disentangle yourself if you can!’ Nothing but slaughter, as it were, is being committed among the Nigaṇṭha Nāṭa-sons. Even the lay disciples of Nigaṇṭha Nāṭaputta, dressed in white, seem disenchanted, disgusted, & repelled by the Nigaṇṭha Nāṭa-sons, and at how that poorly proclaimed Dhamma-Vinaya was poorly expounded, not leading out, not conducive to calming, expounded by one who was not rightly self-awakened, its support [now] broken, without an arbiter.”
+dn29:2.4 | S: Ānanda said to him, | T: When this was said, Ven. Ānanda said to Cunda the novice,
+dn29:2.5 | S: “Reverend Cunda, we should see the Buddha about this matter. | T: “Friend Cunda, there is warrant here for talking to the Blessed One.
+dn29:2.6 | S: Come, let’s go to the Buddha and tell him about this.” | T: Let’s go to the Blessed One and, on arrival, report this matter to him.”
+dn29:2.7 | S: “Yes, sir,” replied Cunda. | T: “As you say, venerable sir,” Cunda the novice responded to Ven. Ānanda.
+dn29:3.1 | S: Then Ānanda and Cunda went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then Ven. Ānanda & Cunda the novice went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, Ven. Ānanda said to the Blessed One,
+dn29:3.2 | P: “ayaṁ, bhante, cundo samaṇuddeso evamāha, ‘nigaṇṭho, bhante, nāṭaputto pāvāyaṁ adhunākālaṅkato, | T: “Lord, Cunda the novice, here, has said that Nigaṇṭha Nāṭaputta has just died in Pāvā. … Even the lay disciples of Nigaṇṭha Nāṭaputta, dressed in white, seem disenchanted, disgusted,
+dn29:3.3 | P: tassa kālaṅkiriyāya bhinnā nigaṇṭhā …pe… bhinnathūpe appaṭisaraṇe’”ti. | T: & repelled by the Nigaṇṭha Nāṭa-sons,
+dn29:4.0 | S: 1. The Teaching of the Unawakened | T: (none)
+dn29:4.1 | S: “That’s what happens, Cunda, when a teaching and training is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: and at how that poorly proclaimed Dhamma-Vinaya was poorly expounded, not leading out, not conducive to calming, expounded by one who was not rightly self-awakened, its support broken, without an arbiter.” “That’s the way it is, Cunda, with a poorly proclaimed Dhamma-Vinaya, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn29:4.2 | S: Take the case where a teacher is not awakened, and the teaching is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: A Poorly-expounded Dhamma-Vinaya “There is the case, Cunda, where a teacher is not rightly self-awakened, and his Dhamma-Vinaya is poorly proclaimed, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn29:4.3 | S: A disciple in that teaching does not practice in line with the teaching, does not practice following that procedure, does not live in line with the teaching. They proceed having turned away from that teaching. | T: A disciple of that Dhamma does not dwell practicing the Dhamma in accordance with [that] Dhamma, practicing masterfully, living in line with [that] Dhamma, but deviates from it.
+dn29:4.4 | S: You should say this to them, | T: He is to be told,
+dn29:4.5 | S: ‘You’re fortunate, reverend, you’re so very fortunate! | T: ‘It is a gain for you, friend, well-gained by you,
+dn29:4.6 | S: For your teacher is not awakened, and their teaching is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: that—when your teacher is not rightly self-awakened, and his Dhamma-Vinaya is poorly proclaimed, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened—
+dn29:4.7 | S: But you don’t practice in line with that teaching, you don’t practice following that procedure, you don’t live in line with the teaching. You proceed having turned away from that teaching.’ | T: you are one who does not dwell practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, but deviates from it.’
+dn29:4.8 | S: In such a case the teacher and the teaching are to blame, but the disciple deserves praise. | T: There, Cunda, the teacher is to be criticized, the Dhamma is to be criticized, but the disciple is to be thus praised.
+dn29:4.9 | S: Suppose someone was to say to such a disciple, | T: “Whoever might say to such a disciple,
+dn29:4.10 | S: ‘Come on, venerable, practice as taught and pointed out by your teacher.’ | T: ‘Come, friend, practice in line with the Dhamma as taught and formulated by your teacher’:
+dn29:4.11 | S: The one who encourages, the one who they encourage, and the one who practices accordingly all brim with much wickedness. | T: The person who urged him, the thing urged, and the person who practiced in line with what was urged would all produce much demerit.
+dn29:4.12 | S: Why is that? | T: Why is that?
+dn29:4.13 | S: It’s because that teaching and training is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: That’s the way it is, Cunda, with a poorly proclaimed Dhamma-Vinaya, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn29:5.1 | S: Take the case where a teacher is not awakened, and the teaching is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: “There is the case, Cunda, where a teacher is not rightly self-awakened, and his Dhamma-Vinaya is poorly proclaimed, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn29:5.2 | S: A disciple in that teaching practices in line with the teaching, practices following that procedure, lives in line with the teaching. They proceed having undertaken that teaching. | T: A disciple of that Dhamma dwells practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, and acts to conform to it.
+dn29:5.3 | S: You should say this to them, | T: He is to be told,
+dn29:5.4 | S: ‘It’s your loss, reverend, it’s your misfortune! For your teacher is not awakened, and their teaching is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: ‘It is no gain for you, friend, poorly-gained by you, that—when your teacher is not rightly self-awakened, and his Dhamma-Vinaya, is poorly proclaimed, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened—
+dn29:5.5 | S: And you practice in line with that teaching, you practice following that procedure, you live in line with the teaching. You proceed having undertaken that teaching.’ | T: you are one who dwells practicing the Dhamma in accordance with [that] Dhamma, practicing masterfully, living in line with [that] Dhamma, and acts to conform to it.’
+dn29:5.6 | S: In such a case the teacher, the teaching, and the disciple are all to blame. | T: There, Cunda, the teacher is to be criticized, the Dhamma is to be criticized, and the disciple is to be thus criticized.
+dn29:5.7 | S: Suppose someone was to say to such a disciple, | T: “Whoever might say to such a disciple,
+dn29:5.8 | S: ‘Clearly the venerable is practicing systematically and will succeed in that system.’ | T: ‘Yes, friend, practicing the right way, you will succeed in the right way’:
+dn29:5.9 | S: The one who praises, the one who they praise, and the one who, being praised, rouses up even more energy all brim with much wickedness. | T: The person who praised him, the thing praised, and the person who, being praised, aroused even greater persistence would all produce much demerit.
+dn29:5.10 | S: Why is that? | T: Why is that?
+dn29:5.11 | S: It’s because that teaching and training is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: That’s the way it is, Cunda, with a poorly proclaimed Dhamma-Vinaya, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn29:6.0 | S: 2. The Teaching of the Awakened | T: (none)
+dn29:6.1 | S: Take the case where a teacher is awakened, and the teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: A Well-expounded Dhamma-Vinaya “There is the case, Cunda, where a teacher is rightly self-awakened, and his Dhamma-Vinaya, is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:6.2 | S: A disciple in that teaching does not practice in line with the teaching, does not practice following that procedure, does not live in line with the teaching. They proceed having turned away from that teaching. | T: A disciple of that Dhamma does not dwell practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, but deviates from it.
+dn29:6.3 | S: You should say this to them, | T: He is to be told,
+dn29:6.4 | S: ‘It’s your loss, reverend, it’s your misfortune! For your teacher is awakened, and their teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: ‘It is no gain for you, friend, poorly-gained by you, that—when your teacher is rightly self-awakened, and his Dhamma-Vinaya is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened—
+dn29:6.5 | S: But you don’t practice in line with that teaching, you don’t practice following that procedure, you don’t live in line with the teaching. You proceed having turned away from that teaching.’ | T: you are one who does not dwell practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, but deviates from it.’
+dn29:6.6 | S: In such a case the teacher and the teaching deserve praise, but the disciple is to blame. | T: There, Cunda, the teacher is to be praised, the Dhamma is to be praised, but the disciple is to be thus criticized.
+dn29:6.7 | S: Suppose someone was to say to such a disciple, | T: “Whoever might say to such a disciple,
+dn29:6.8 | S: ‘Come on, venerable, practice as taught and pointed out by your teacher.’ | T: ‘Come, friend, practice in line with the Dhamma as taught and formulated by your teacher’:
+dn29:6.9 | S: The one who encourages, the one who they encourage, and the one who practices accordingly all brim with much merit. | T: The person who urged him, the thing urged, and the person who practiced in line with what was urged would all produce much merit.
+dn29:6.10 | S: Why is that? | T: Why is that?
+dn29:6.11 | S: It’s because that teaching and training is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: That’s the way it is, Cunda, with a well-proclaimed Dhamma-Vinaya, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:7.1 | S: Take the case where a teacher is awakened, and the teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: “There is the case, Cunda, where a teacher is rightly self-awakened, and his Dhamma-Vinaya, is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:7.2 | S: A disciple in that teaching practices in line with the teaching, practices following that procedure, lives in line with the teaching. They proceed having undertaken that teaching. | T: A disciple of that Dhamma dwells practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, and acts to conform to it.
+dn29:7.3 | S: You should say this to them, | T: He is to be told,
+dn29:7.4 | S: ‘You’re fortunate, reverend, you’re so very fortunate! | T: ‘It is a gain for you, friend, well-gained by you,
+dn29:7.5 | S: For your teacher is awakened, and their teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: that—when your teacher is rightly self-awakened, and his Dhamma-Vinaya is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened—
+dn29:7.6 | S: And you practice in line with that teaching, you practice following that procedure, you live in line with the teaching. You proceed having undertaken that teaching.’ | T: you are one who dwells practicing the Dhamma in accordance with the Dhamma, practicing masterfully, living in line with the Dhamma, and acts to conform to it.’
+dn29:7.7 | S: In such a case the teacher, the teaching, and the disciple all deserve praise. | T: There, Cunda, the teacher is to be praised, the Dhamma is to be praised, and the disciple is to be thus praised.
+dn29:7.8 | S: Suppose someone was to say to such a disciple, | T: “Whoever might say to such a disciple,
+dn29:7.9 | S: ‘Clearly the venerable is practicing systematically and will succeed in that system.’ | T: ‘Yes, friend, practicing the right way, you will succeed in the right way’:
+dn29:7.10 | S: The one who praises, the one who they praise, and the one who, being praised, rouses up even more energy all brim with much merit. | T: The person who praised him, the thing praised, and the person who, being praised, aroused even greater persistence would all produce much merit.
+dn29:7.11 | S: Why is that? | T: Why is that?
+dn29:7.12 | S: It’s because that teaching and training is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: That’s the way it is, Cunda, with a well-proclaimed Dhamma-Vinaya, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:8.0 | S: 3. When Disciples Have Regrets | T: The Complete Holy Life
+dn29:8.1 | S: Take the case where a teacher arises in the world who is perfected, a fully awakened Buddha. The teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is fully awakened. | T: “There is the case, Cunda, where a teacher has appeared in the world, worthy & rightly self-awakened. And the Dhamma is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:8.2 | S: But the disciples have not been educated in the meaning of that good teaching. And the spiritual practice that’s entirely full and pure has not been disclosed and divulged to them; its sayings have not all been collected; and it has not been fully revealed with its demonstrable basis among gods and humans. | T: But his disciples have not been instructed in the meaning/goal of the True Dhamma, nor has the complete holy life been entirely disclosed to them, made plain, with all its steps collected, complete with miracles, well-proclaimed as far as human beings & devas.
+dn29:8.3 | S: And then their teacher passes away. | T: Then their teacher disappears.
+dn29:8.4 | S: When such a teacher has passed away the disciples are tormented by regrets. | T: When a teacher of that sort has died, it is a matter of regret for his disciples.
+dn29:8.5 | S: Why is that? | T: Why is that? Because:
+dn29:8.6 | S: They think: ‘Our teacher was perfected, a fully awakened Buddha. His teaching was well explained, but we were not educated in its meaning. And the spiritual practice was not fully disclosed and divulged to us; its sayings have not all been collected; and it has not been fully revealed with its demonstrable basis among gods and humans. | T: ‘A teacher has appeared in the world, worthy & rightly self-awakened. And the Dhamma is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened. But we have not been instructed in the meaning/goal of the True Dhamma, nor has the complete holy life been entirely disclosed to us, made plain, with all its steps collected, complete with miracles, well-proclaimed as far as human beings & devas,
+dn29:8.7 | S: And then our teacher passed away.’ | T: and now our teacher has disappeared.’
+dn29:8.8 | S: When such a teacher has passed away the disciples are tormented by regrets. | T: When a teacher of that sort has died, it is a matter of regret for his disciples.
+dn29:9.0 | S: 4. When Disciples Have No Regrets | T: (none)
+dn29:9.1 | S: Take the case where a teacher arises in the world who is perfected, a fully awakened Buddha. The teaching is well explained and well propounded, emancipating, leading to peace, proclaimed by someone who is fully awakened. | T: “But then there is the case, Cunda, where a teacher has appeared in the world, worthy & rightly self-awakened. And the Dhamma is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:9.2 | S: The disciples have been educated in the meaning of that good teaching. And the spiritual practice that’s entirely full and pure has been disclosed and divulged to them; its sayings have all been collected; and it has been fully revealed with its demonstrable basis among gods and humans. | T: His disciples have been instructed in the meaning/goal of the True Dhamma, and the complete holy life has been entirely disclosed to them, made plain, with all its steps collected, complete with miracles, well-proclaimed as far as human beings & devas.
+dn29:9.3 | S: And then their teacher passes away. | T: Then their teacher disappears.
+dn29:9.4 | S: When such a teacher has passed away the disciples are free of regrets. | T: When a teacher of that sort has died, it is a matter of no regret for his disciples.
+dn29:9.5 | S: Why is that? | T: Why is that?
+dn29:9.6 | S: They think: ‘Our teacher was perfected, a fully awakened Buddha. | T: Because: ‘A teacher has appeared in the world, worthy & rightly self-awakened.
+dn29:9.7 | S: His teaching was well explained, | T: And the Dhamma is well-proclaimed, well-expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn29:9.8 | S: we were educated in its meaning, and the spiritual practice was fully revealed to us. | T: And we have been instructed in the meaning/goal of the True Dhamma, and the complete holy life has been entirely disclosed to us, made plain, with all its steps collected, complete with miracles, well-proclaimed as far as human beings & devas,
+dn29:9.9 | S: And then our teacher passed away.’ | T: and now our teacher has disappeared.’
+dn29:9.10 | S: When such a teacher has passed away the disciples are free of regrets. | T: When a teacher of that sort has died, it is a matter of no regret for his disciples.
+dn29:10.0 | S: 5. On the Incomplete Spiritual Path, Etc. | T: (none)
+dn29:10.1 | S: Now suppose, Cunda, that a spiritual path possesses those factors. But the teacher is not senior, long standing, long gone forth, advanced in years, and reached the final stage of life. | T: “Now, if a holy life is endowed with those factors, yet there is no teacher who is an elder, of long standing, long gone forth, senior, attained to old age, then a holy life of that sort is incomplete with regard to that factor. But when a holy life is endowed with those factors, and there is a teacher who is an elder, of long standing, long gone forth, senior, attained to old age, then a holy life of that sort is complete with regard to that factor. “But if a holy life is endowed with those factors, and there is a teacher who is an elder, of long standing, long gone forth,
+dn29:10.2 | S: Then that spiritual path is incomplete in that respect. | T: (none)
+dn29:10.3 | S: But when a spiritual path possesses those factors and the teacher is senior, | T: (none)
+dn29:10.4 | S: then that spiritual path is complete in that respect. | T: (none)
+dn29:11.1 | S: Now suppose that a spiritual path possesses those factors and the teacher is senior. But there are no senior monk disciples who are competent, educated, self-assured, have attained sanctuary from the yoke, | T: senior, attained to old age, yet there are no elder monk disciples of his that are experienced, trained, mature, attained to security from the yoke,
+dn29:11.2 | S: who can rightly explain the true teaching, and who can legitimately and completely refute the doctrines of others that come up, and teach with a demonstrable basis. | T: able to teach the True Dhamma, able to trap with the True Dhamma any opposing doctrines that have arisen and—having trapped them—to teach the Dhamma complete with miracles,
+dn29:11.3 | S: Then that spiritual path is incomplete in that respect. | T: then a holy life of that sort is incomplete with regard to that factor.

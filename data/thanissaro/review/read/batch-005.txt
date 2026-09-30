@@ -1,0 +1,419 @@
+## an2.23
+an2.23:1.0 | S: 23 | T: (none)
+an2.23:1.1 | S: “Mendicants, these two misrepresent the Realized One. | T: “Monks, these two slander the Tathāgata.
+an2.23:1.2 | S: What two? | T: Which two?
+an2.23:1.3 | S: One who explains what was not spoken by the Realized One as spoken by him. And one who explains what was spoken by the Realized One as not spoken by him. | T: He who explains what was not said or spoken by the Tathāgata as said or spoken by the Tathāgata.
+an2.23:1.4 | S: These two misrepresent the Realized One. | T: (none)
+an2.23:2.1 | S: These two don’t misrepresent the Realized One. | T: And he who explains what was said or spoken by the Tathāgata as not said or spoken by the Tathāgata.
+an2.23:2.2 | S: What two? | T: (none)
+an2.23:2.3 | S: One who explains what was not spoken by the Realized One as not spoken by him. And one who explains what was spoken by the Realized One as spoken by him. | T: (none)
+an2.23:2.4 | S: These two don’t misrepresent the Realized One.” | T: These are the two who slander the Tathāgata.”
+
+## thag16.7
+thag16.7:1.1 | S: I rode on an elephant’s neck, | T: Whatever the fine clothes I wore when astride the elephant’s neck,
+thag16.7:1.2 | S: wearing luxurious clothes. | T: (none)
+thag16.7:1.3 | S: I ate boiled fine rice | T: whatever the fine rice I ate,
+thag16.7:1.4 | S: with pure meat sauce. | T: the pure meat sauce,
+thag16.7:2.1 | S: Today I am fortunate, persistent, | T: today—fortunate, persevering,
+thag16.7:2.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:2.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:2.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:3.1 | S: Wearing rags, persistent, | T: Wearing cast-off cloth, persevering,
+thag16.7:3.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:3.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:3.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:4.1 | S: Living on almsfood, persistent, | T: Going for alms, persevering,
+thag16.7:4.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:4.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:4.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:5.1 | S: Possessing only three robes, persistent, | T: Wearing only one triple set of robes, persevering…
+thag16.7:5.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:5.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:5.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:6.1 | S: Wandering for alms indiscriminately, persistent, | T: Bypassing no donors on his alms round, persevering…
+thag16.7:6.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:6.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:6.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:7.1 | S: Sitting alone, persistent, | T: Eating only one meal a day, persevering…
+thag16.7:7.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:7.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:7.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:8.1 | S: Eating only what’s put in the alms-bowl, persistent, | T: Eating from the bowl, persevering…
+thag16.7:8.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:8.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:8.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:9.1 | S: Never eating too late, persistent, | T: Refusing food brought afterwards, persevering…
+thag16.7:9.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:9.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:9.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:10.1 | S: Living in the wilderness, persistent, | T: Living in the wilderness, persevering…
+thag16.7:10.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:10.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:10.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:11.1 | S: Living at the foot of a tree, persistent, | T: Living at the foot of a tree, persevering…
+thag16.7:11.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:11.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:11.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:12.1 | S: Living in the open, persistent, | T: Living in the open air, persevering…
+thag16.7:12.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:12.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:12.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:13.1 | S: Living in a charnel ground, persistent, | T: Living in a cemetery, persevering…
+thag16.7:13.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:13.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:13.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:14.1 | S: Accepting whatever seat is offered, persistent, | T: Accepting whatever lodging he’s assigned, persevering,
+thag16.7:14.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:14.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:14.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:15.1 | S: Not lying down to sleep, persistent, | T: Not lying down, persevering,
+thag16.7:15.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:15.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:15.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:16.1 | S: Few in wishes, persistent, | T: Modest, persevering…
+thag16.7:16.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:16.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:16.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:17.1 | S: Content, persistent, | T: Content, persevering…
+thag16.7:17.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:17.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:17.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:18.1 | S: Secluded, persistent, | T: Secluded, persevering…
+thag16.7:18.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:18.3 | S: Bhaddiya son of Godhā | T: Unentangled,
+thag16.7:18.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:19.1 | S: Aloof, persistent, | T: persevering…
+thag16.7:19.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:19.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:19.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:20.1 | S: Energetic, persistent, | T: Energy aroused, persevering,
+thag16.7:20.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:20.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:20.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:21.1 | S: Giving up a hundred ounces of bronze, | T: Abandoning a 100-carat bowl of bronze
+thag16.7:21.2 | S: and a hundred grains of gold, | T: and a 100-weight bowl of gold,
+thag16.7:21.3 | S: I took a bowl made of clay: | T: I took instead a bowl of clay:
+thag16.7:21.4 | S: this is my second initiation. | T: That was my second consecration.
+thag16.7:22.1 | S: I used to live in a citadel with walls so high, | T: In the midst of high encircling walls,
+thag16.7:22.2 | S: with battlements strong and gates, | T: strong battlements & gates,
+thag16.7:22.3 | S: all guarded by swordsmen— | T: guarded by men with swords in hand—
+thag16.7:22.4 | S: and yet I was afraid. | T: trembling I used to live.
+thag16.7:23.1 | S: Today I am fortunate, free of cowardice, | T: Today, fortunate, unafraid,
+thag16.7:23.2 | S: with fear and dread given up. | T: with fear & terror abandoned,
+thag16.7:23.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:23.4 | S: has plunged into the forest and practices absorption. | T: having plunged into the forest, does jhāna.
+thag16.7:24.1 | S: Established in the entire spectrum of ethics, | T: Standing firm in the aggregate of virtue,
+thag16.7:24.2 | S: developing mindfulness and wisdom, | T: developing mindfulness & discernment,
+thag16.7:24.3 | S: gradually I attained | T: step by step I attained
+thag16.7:24.4 | S: the ending of all fetters. | T: the ending of all fetters.
+
+## an10.54
+an10.54:1.1 | S: “Mendicants, if a mendicant isn’t skilled in encompassing another’s mind, then they should train themselves: ‘I will be skilled in encompassing my own mind.’ | T: “Even if a monk is not skilled in the ways of the minds of others [not skilled in reading the minds of others], he should train himself: ‘I will be skilled in reading my own mind.’
+an10.54:2.1 | S: And how is a mendicant skilled in encompassing their own mind? | T: “And how is a monk skilled in reading his own mind?
+an10.54:2.2 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments, and they check their own reflection in a clean bright mirror or a clear bowl of water. If they see any dirt or blemish there, they’d try to remove it. | T: Imagine a young woman—or man—youthful, fond of adornment, examining the image of her own face in a bright, clean mirror or bowl of clear water: If she saw any dirt or blemish there, she would try to remove it.
+an10.54:2.3 | S: But if they don’t see any dirt or blemish there, they’re happy with that, as they’ve got all they wished for: | T: If she saw no dirt or blemish there, she would be pleased, her resolves fulfilled:
+an10.54:2.4 | S: ‘How fortunate that I’m clean!’ | T: ‘How fortunate I am! How clean I am!’
+an10.54:2.5 | S: In the same way, checking is very helpful for a mendicant’s skillful qualities. | T: In the same way, a monk’s self-examination is very productive in terms of skillful qualities [if he conducts it in this way]:
+an10.54:2.6 | S: ‘Do I have internal serenity of heart or not? Do I have the higher wisdom of discernment of principles or not?’ | T: ‘Am I one who achieves internal tranquility of awareness, or am I one who does not achieve internal tranquility of awareness? Am I one who achieves insight into phenomena through heightened discernment, or am I one who does not achieve insight into phenomena through heightened discernment?’ “If, on examination, he knows, ‘I am one who achieves internal tranquility of awareness but not insight into phenomena through heightened discernment,’ then his duty is to make an effort for the maintenance of internal tranquility of awareness and for insight into phenomena through heightened discernment.
+an10.54:3.1 | S: Suppose that, upon checking, a mendicant knows this: | T: At a later time he will then become one who achieves both internal tranquility of awareness and insight into phenomena through heightened discernment.
+an10.54:3.2 | S: ‘I have serenity but not discernment.’ Grounded on serenity, they should practice meditation to get discernment. | T: (none)
+an10.54:3.3 | S: After some time they have both serenity and discernment. | T: (none)
+an10.54:4.1 | S: But suppose that, upon checking, a mendicant knows this: | T: “But if, on examination, the monk knows,
+an10.54:4.2 | S: ‘I have discernment but not serenity.’ Grounded on discernment, they should practice meditation to get serenity. | T: ‘I am one who achieves insight into phenomena through heightened discernment but not internal tranquility of awareness,’ then his duty is to make an effort for the maintenance of insight into phenomena through heightened discernment and for internal tranquility of awareness.
+an10.54:4.3 | S: After some time they have both serenity and discernment. | T: At a later time he will then become one who achieves both insight into phenomena through heightened discernment and internal tranquility of awareness.
+an10.54:5.1 | S: But suppose that, upon checking, a mendicant knows this: | T: “But if, on examination, the monk knows,
+an10.54:5.2 | S: ‘I have neither serenity nor discernment.’ In order to get those skillful qualities, they should apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: ‘I am one who achieves neither internal tranquility of awareness nor insight into phenomena through heightened discernment,’ then he should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for gaining those very same skillful qualities.
+an10.54:5.3 | S: Suppose your clothes or head were on fire. In order to extinguish it, you’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: Just as when a person whose turban or head was on fire would put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness to put out the fire on his turban or head;
+an10.54:5.5 | S: In the same way, in order to get those skillful qualities, that mendicant should apply extraordinary enthusiasm … | T: in the same way, the monk should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for gaining those very same skillful qualities.
+an10.54:5.6 | S: After some time they have both serenity and discernment. | T: At a later time he will then become one who achieves both insight into phenomena through heightened discernment and internal tranquility of awareness.
+an10.54:6.1 | S: But suppose that, upon checking, a mendicant knows this: | T: “But if, on examination, the monk knows,
+an10.54:6.2 | S: ‘I have both serenity and discernment.’ Grounded on those skillful qualities, they should practice meditation further to end the defilements. | T: ‘I am one who achieves both internal tranquility of awareness and insight into phenomena through heightened discernment,’ then his duty is to make an effort in maintaining those very same skillful qualities to a higher degree for the ending of the effluents.
+an10.54:7.1 | S: I say that there are two kinds of robes: | T: “Monks, I speak of robes in two ways:
+an10.54:7.2 | S: those you should wear, and those you shouldn’t wear. | T: to be partaken of and not to be partaken of.
+an10.54:7.3 | S: I say that there are two kinds of almsfood: | T: I also speak of alms food… lodgings…
+an10.54:7.4 | S: that which you should eat, and that which you shouldn’t eat. | T: (none)
+an10.54:7.5 | S: I say that there are two kinds of lodging: | T: (none)
+an10.54:7.6 | S: those you should frequent, and those you shouldn’t frequent. | T: (none)
+an10.54:7.7 | S: I say that there are two kinds of village or town: | T: villages & towns…
+an10.54:7.8 | S: those you should frequent, and those you shouldn’t frequent. | T: (none)
+an10.54:7.9 | S: I say that there are two kinds of country: | T: countrysides…
+an10.54:7.10 | S: those you should frequent, and those you shouldn’t frequent. | T: (none)
+an10.54:7.11 | S: I say that there are two kinds of individual: | T: individuals in two ways:
+an10.54:7.12 | S: those you should frequent, and those you shouldn’t frequent. | T: to be partaken of and not to be partaken of.
+an10.54:8.1 | S: ‘I say that there are two kinds of robes: | T: “‘Monks, I speak of robes in two ways:
+an10.54:8.2 | S: those you should wear, and those you shouldn’t wear.’ | T: to be partaken of and not to be partaken of’:
+an10.54:8.3 | S: That’s what I said, but why did I say it? | T: Thus was it said. In reference to what was it said?
+an10.54:8.4 | S: Well, should you know of a robe: | T: Any robe of which one has come to know,
+an10.54:8.5 | S: ‘When I wear this robe, unskillful qualities grow, and skillful qualities decline.’ You should not wear that kind of robe. | T: ‘When I partake of this robe, unskillful qualities increase and skillful qualities decrease,’ that sort of robe is not to be partaken of.
+an10.54:8.6 | S: Whereas, should you know of a robe: | T: Any robe of which one has come to know,
+an10.54:8.7 | S: ‘When I wear this robe, unskillful qualities decline, and skillful qualities grow.’ You should wear that kind of robe. | T: ‘When I partake of this robe, unskillful qualities decrease and skillful qualities increase,’ that sort of robe is to be partaken of.
+an10.54:8.8 | S: ‘I say that there are two kinds of robes: | T: ’Monks, I speak of robes in two ways:
+an10.54:8.9 | S: those you should wear, and those you shouldn’t wear.’ | T: to be partaken of and not to be partaken of’:
+an10.54:8.10 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+an10.54:9.1 | S: ‘I say that there are two kinds of almsfood: | T: “‘Monks, I also speak of alms food in two ways…’
+an10.54:9.2 | S: that which you should eat, and that which you shouldn’t eat.’ | T: (none)
+an10.54:9.3 | S: That’s what I said, but why did I say it? | T: (none)
+an10.54:9.4 | S: Well, should you know of almsfood: | T: …
+an10.54:9.5 | S: ‘When I eat this almsfood, unskillful qualities grow, and skillful qualities decline.’ You should not eat that kind of almsfood. | T: (none)
+an10.54:9.6 | S: Whereas, should you know of almsfood: | T: (none)
+an10.54:9.7 | S: ‘When I eat this almsfood, unskillful qualities decline, and skillful qualities grow.’ You should eat that kind of almsfood. | T: (none)
+an10.54:9.8 | S: ‘I say that there are two kinds of almsfood: | T: “‘Monks, I also speak of lodgings in two ways…’
+an10.54:9.9 | S: that which you should eat, and that which you shouldn’t eat.’ | T: (none)
+an10.54:9.10 | S: That’s what I said, and this is why I said it. | T: …
+an10.54:10.1 | S: ‘I say that there are two kinds of lodging: | T: (none)
+an10.54:10.2 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:10.3 | S: That’s what I said, but why did I say it? | T: (none)
+an10.54:10.4 | S: Well, should you know of a lodging: | T: (none)
+an10.54:10.5 | S: ‘When I frequent this lodging, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of lodging. | T: (none)
+an10.54:10.6 | S: Whereas, should you know of a lodging: | T: (none)
+an10.54:10.7 | S: ‘When I frequent this lodging, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of lodging. | T: (none)
+an10.54:10.8 | S: ‘I say that there are two kinds of lodging: | T: (none)
+an10.54:10.9 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:10.10 | S: That’s what I said, and this is why I said it. | T: (none)
+an10.54:11.1 | S: ‘I say that there are two kinds of village or town: | T: “‘Monks, I also speak of villages & towns in two ways…’
+an10.54:11.2 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:11.3 | S: That’s what I said, but why did I say it? | T: (none)
+an10.54:11.4 | S: Well, should you know of a village or town: | T: (none)
+an10.54:11.5 | S: ‘When I frequent this village or town, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of village or town. | T: (none)
+an10.54:11.6 | S: Whereas, should you know of a village or town: | T: (none)
+an10.54:11.7 | S: ‘When I frequent this village or town, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of village or town. | T: (none)
+an10.54:11.8 | S: ‘I say that there are two kinds of village or town: | T: (none)
+an10.54:11.9 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:11.10 | S: That’s what I said, and this is why I said it. | T: …
+an10.54:12.1 | S: ‘I say that there are two kinds of country: | T: “‘Monks, I also speak of countrysides in two ways…’
+an10.54:12.2 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:12.3 | S: That’s what I said, but why did I say it? | T: (none)
+an10.54:12.4 | S: Well, should you know of a country: | T: (none)
+an10.54:12.5 | S: ‘When I frequent this country, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of country. | T: (none)
+an10.54:12.6 | S: Whereas, should you know of a country: | T: (none)
+an10.54:12.7 | S: ‘When I frequent this country, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of country. | T: (none)
+an10.54:12.8 | S: ‘I say that there are two kinds of country: | T: (none)
+an10.54:12.9 | S: those you should frequent, and those you shouldn’t frequent.’ | T: (none)
+an10.54:12.10 | S: That’s what I said, and this is why I said it. | T: …
+an10.54:13.1 | S: ‘I say that there are two two kinds of individual: | T: “‘Monks, I also speak of individuals in two ways:
+an10.54:13.2 | S: those you should frequent, and those you shouldn’t frequent.’ | T: to be partaken of and not to be partaken of’:
+an10.54:13.3 | S: That’s what I said, but why did I say it? | T: Thus was it said. In reference to what was it said?
+an10.54:13.4 | S: Well, should you know of an individual: | T: Any individual of whom one has come to know,
+an10.54:13.5 | S: ‘When I frequent this individual, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of individual. | T: ‘When I partake of this individual, unskillful qualities increase and skillful qualities decrease,’ that sort of individual is not to be partaken of.
+an10.54:13.6 | S: Whereas, should you know of an individual: | T: Any individual of whom one has come to know,
+an10.54:13.7 | S: ‘When I frequent this individual, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of individual. | T: ‘When I partake of this individual, unskillful qualities decrease and skillful qualities increase,’ that sort of individual is to be partaken of.
+an10.54:13.8 | S: ‘I say that there are two kinds of individual: | T: ’Monks, I also speak of individuals in two ways:
+an10.54:13.9 | S: those you should frequent, and those you shouldn’t frequent.’ | T: to be partaken of and not to be partaken of’:
+an10.54:13.10 | S: That’s what I said, and this is why I said it.” | T: Thus was it said. And in reference to this was it said.”
+
+## an7.35
+an7.35:1.1 | S: “Mendicants, tonight a deity … said to me: | T: “Last night, monks, a certain devatā in the far extreme of the night, her extreme radiance lighting up the entirety of Jeta’s Grove, came to me and, on arrival, bowed down to me and stood to one side. As she was standing there, she said to me,
+an7.35:1.2 | S: ‘Sir, these seven things don’t lead to the decline of a mendicant. | T: ‘These seven qualities, lord, lead to a monk’s non-decline.
+an7.35:1.3 | S: What seven? | T: Which seven?
+an7.35:1.4 | S: Respect for the Teacher, for the teaching, for the Saṅgha, for the training, for immersion; being easy to admonish, and good friendship. | T: Respect for the teacher, respect for the Dhamma, respect for the Saṅgha, respect for training, respect for concentration, compliance, having admirable friends.
+an7.35:1.5 | S: These seven things don’t lead to the decline of a mendicant.’ | T: These seven qualities, lord, lead to a monk’s non-decline.’
+an7.35:1.6 | S: That is what that deity said. | T: “That is what that devatā said.
+an7.35:1.7 | S: Then he bowed and respectfully circled me, keeping me on his right side, before vanishing right there.” | T: Having said it, she bowed down to me, circled me three times, and then disappeared right there.”
+an7.35:2.1 | S: When he said this, Venerable Sāriputta said to the Buddha: | T: When this was said, Ven. Sāriputta said to the Blessed One,
+an7.35:2.2 | S: “Sir, this is how I understand the detailed meaning of the Buddha’s brief statement. | T: “This, lord, is how I understand the detailed meaning of the Blessed One’s brief statement.
+an7.35:2.3 | S: It’s when a mendicant personally respects the Teacher and praises such respect. | T: “There is the case where a monk himself has respect for the Teacher. He speaks in praise of having respect for the Teacher.
+an7.35:2.4 | S: And they encourage other mendicants who lack such respect to respect the Teacher. | T: With regard to those other monks who don’t have respect for the Teacher, he gets them to undertake respect for the Teacher.
+an7.35:2.5 | S: And they praise other mendicants who respect the Teacher at the right time, truthfully and correctly. | T: As for those other monks who do have respect for the Teacher, he at the proper times speaks in praise of them—truly, accurately.
+an7.35:2.6 | S: They personally respect the teaching … | T: “There is the case where a monk himself has respect for the Dhamma.…
+an7.35:2.7 | S: They personally respect the Saṅgha … | T: “There is the case where a monk himself has respect for the Saṅgha.…
+an7.35:2.8 | S: They personally respect the training … | T: “There is the case where a monk himself has respect for training.…
+an7.35:2.9 | S: They personally respect immersion … | T: “There is the case where a monk himself has respect for concentration.…
+an7.35:2.10 | S: They are personally easy to admonish … | T: “There is the case where a monk himself is compliant.…
+an7.35:2.11 | S: They personally have good friends, and praise such friendship. | T: “There is the case where a monk himself has admirable friends. He speaks in praise of having admirable friends.
+an7.35:2.12 | S: And they encourage other mendicants who lack good friends to develop good friendship. | T: With regard to those other monks who don’t have admirable friends, he gets them to undertake admirable friendship.
+an7.35:2.13 | S: And they praise other mendicants who have good friends at the right time, truthfully and correctly. | T: As for those other monks who do have admirable friends, he at the proper times speaks in praise of them—truly, accurately.
+an7.35:2.14 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “This, lord, is how I understand the detailed meaning of the Blessed One’s brief statement.”
+an7.35:3.1 | S: “Good, good, Sāriputta! | T: (none)
+an7.35:3.2 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this. | T: (none)
+an7.35:3.3 | S: It’s when a mendicant personally respects the Teacher … | T: (none)
+an7.35:3.4 | S: And they encourage other mendicants who lack such respect to respect the Teacher. | T: (none)
+an7.35:3.5 | S: And they praise other mendicants who respect the Teacher at the right time, truthfully and correctly. | T: (none)
+an7.35:3.6 | S: They personally respect the teaching … | T: (none)
+an7.35:3.7 | S: They personally respect the Saṅgha … | T: (none)
+an7.35:3.8 | S: They personally respect the training … | T: (none)
+an7.35:3.9 | S: They personally respect immersion … | T: (none)
+an7.35:3.10 | S: They are personally easy to admonish … | T: (none)
+an7.35:3.11 | S: They personally have good friends, and praise such friendship. | T: (none)
+an7.35:3.12 | S: And they encourage other mendicants who lack good friends to develop good friendship. | T: (none)
+an7.35:3.13 | S: And they praise other mendicants who have good friends at the right time, truthfully and correctly. | T: (none)
+an7.35:3.14 | S: This is how to see the detailed meaning of what I said in brief.” | T: (none)
+
+## an9.34
+an9.34:1.1 | S: At one time Venerable Sāriputta was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion Ven. Sāriputta was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+an9.34:1.2 | S: There he addressed the mendicants: | T: There he said to the monks,
+an9.34:1.3 | S: “Reverends, extinguishment is bliss! | T: “This unbinding is pleasant, friends.
+an9.34:1.4 | S: Extinguishment is bliss!” | T: This unbinding is pleasant.”
+an9.34:1.5 | S: When he said this, Venerable Udāyī said to him, | T: When this was said, Ven. Udāyin said to Ven. Sāriputta,
+an9.34:1.6 | S: “But Reverend Sāriputta, what’s blissful about it, since nothing is felt?” | T: “But what is the pleasure here, my friend, where there is nothing felt?”
+an9.34:1.7 | S: “The fact that nothing is felt is precisely what’s blissful about it. | T: “Just that is the pleasure here, my friend: where there is nothing felt.
+an9.34:1.8 | S: Reverend, there are these five kinds of sensual stimulation. | T: There are these five strands of sensuality.
+an9.34:1.9 | S: What five? | T: Which five?
+an9.34:1.10 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire;
+an9.34:1.11 | S: Sounds known by the ear … | T: sounds cognizable via the ear…
+an9.34:1.12 | S: Smells known by the nose … | T: aromas cognizable via the nose…
+an9.34:1.13 | S: Tastes known by the tongue … | T: flavors cognizable via the tongue…
+an9.34:1.14 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+an9.34:1.15 | S: These are the five kinds of sensual stimulation. | T: (none)
+an9.34:1.16 | S: The pleasure and happiness that arise from these five kinds of sensual stimulation is called sensual pleasure. | T: Whatever pleasure or joy arises in dependence on these five strands of sensuality, that is sensual pleasure.
+an9.34:2.1 | S: First, take a mendicant who, quite secluded from sensual pleasures … enters and remains in the first absorption. | T: “Now there is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an9.34:2.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by sensual pleasures beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with sensuality, that is an affliction for him.
+an9.34:2.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain would arise in a healthy person as an affliction,
+an9.34:2.4 | S: In the same way, should perception and focus accompanied by sensual pleasures beset them, that’s an affliction for them. | T: even so the attention to perceptions dealing with sensuality that beset the monk is an affliction for him.
+an9.34:2.5 | S: And affliction has been called suffering by the Buddha. | T: Now, the Blessed One has said that whatever is an affliction is stress.
+an9.34:2.6 | S: That’s the way to understand how extinguishment is bliss. | T: So by this line of reasoning it may be known how unbinding is pleasant.
+an9.34:3.1 | S: Furthermore, take a mendicant who, as the placing of the mind and keeping it connected are stilled, enters and remains in the second absorption. | T: “Then there is the case where a monk, with the stilling of directed thoughts & evaluations, enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an9.34:3.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by placing of the mind beset them, that’s an affliction for them. | T: (none)
+an9.34:3.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:3.4 | S: In the same way, should perception and focus accompanied by placing of the mind beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with directed thought, that is an affliction for him.…
+an9.34:3.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:3.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:4.1 | S: Furthermore, take a mendicant who, with the fading away of rapture, enters and remains in the third absorption. | T: “Then there is the case where a monk, with the fading of rapture, remains equanimous, mindful, & alert, senses pleasure with the body, and enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an9.34:4.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by rapture beset them, that’s an affliction for them. | T: (none)
+an9.34:4.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:4.4 | S: In the same way, should perception and focus accompanied by rapture beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with rapture, that is an affliction for him.…
+an9.34:4.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:4.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:5.1 | S: Furthermore, take a mendicant who, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, enters and remains in the fourth absorption. | T: “Then there is the case where a monk, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—enters & remains in the fourth jhāna:
+an9.34:5.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: purity of equanimity & mindfulness,
+an9.34:5.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: neither pleasure nor pain.
+an9.34:5.4 | S: In the same way, should perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with equanimity, that is an affliction for him.…
+an9.34:5.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:5.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:6.1 | S: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Then there is the case where a monk, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ enters & remains in the dimension of the infinitude of space. If, as he remains there, he is beset with attention to perceptions dealing with form,
+an9.34:6.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by form beset them, that’s an affliction for them. | T: (none)
+an9.34:6.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:6.4 | S: In the same way, should perception and focus accompanied by form beset them, that’s an affliction for them. | T: that is an affliction for him.…
+an9.34:6.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:6.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:7.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: “Then there is the case where a monk, with the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ enters & remains in the dimension of the infinitude of consciousness.
+an9.34:7.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. | T: (none)
+an9.34:7.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:7.4 | S: In the same way, should perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of space, that is an affliction for him.…
+an9.34:7.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:7.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:8.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: “Then there is the case where a monk, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ enters & remains in the dimension of nothingness.
+an9.34:8.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. | T: (none)
+an9.34:8.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:8.4 | S: In the same way, should perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of consciousness, that is an affliction for him.…
+an9.34:8.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:8.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:9.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. | T: “Then there is the case where a monk, with the complete transcending of the dimension of nothingness, enters & remains in the dimension of neither perception nor non-perception.
+an9.34:9.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. | T: (none)
+an9.34:9.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:9.4 | S: In the same way, should perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of nothingness, that is an affliction for him.
+an9.34:9.5 | S: And affliction has been called suffering by the Buddha. | T: Now, the Blessed One has said that whatever is an affliction is stress.
+an9.34:9.6 | S: That too is a way to understand how extinguishment is bliss. | T: So by this line of reasoning it may be known how unbinding is pleasant.
+an9.34:10.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. | T: “Then there is the case where a monk, with the complete transcending of the dimension of neither perception nor non-perception, enters & remains in the cessation of perception & feeling. And as he sees (that) with discernment, effluents are completely ended.
+an9.34:11.1 | S: That too is a way to understand how extinguishment is bliss.” | T: So by this line of reasoning it may be known how unbinding is pleasant.”
+
+## an5.264
+an5.264:1.1 | S: “Mendicants, without giving up these five qualities you can’t enter and remain in the first absorption. | T: “Without abandoning these five qualities, one is incapable of entering & remaining in the first jhana.
+an5.264:1.2 | S: What five? | T: Which five?
+an5.264:1.3 | S: Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. | T: Stinginess as to one’s monastery [lodgings], stinginess as to one’s family [of supporters], stinginess as to one’s gains, stinginess as to one’s status, and ingratitude.
+an5.264:1.4 | S: Without giving up these five qualities you can’t enter and remain in the first absorption. | T: Without abandoning these five qualities, one is incapable of entering & remaining in the first jhana.
+an5.264:2.1 | S: But after giving up these five qualities you can enter and remain in the first absorption. | T: “With the abandoning of these five qualities, one is capable of entering & remaining in the first jhana…”
+an5.264:2.2 | S: What five? | T: (none)
+an5.264:2.3 | S: Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. | T: (none)
+an5.264:2.4 | S: After giving up these five qualities you can enter and remain in the first absorption.” | T: (none)
+
+## dhp416
+dhp416:1 | S: They’ve given up craving, | T: (none)
+dhp416:2 | S: and have gone forth from lay life; | T: totally gone:
+dhp416:3 | S: they’ve ended craving to be reborn: | T: (none)
+dhp416:4 | S: that’s who I declare a brahmin. | T: he’s what I call a brahman.
+dhp416:5.1 | S: They’ve given up craving, | T: Whoever, abandoning craving here,
+dhp416:6 | S: and have gone forth from lay life; | T: would go forth from home– his cravings, becomings, totally gone:
+dhp416:7 | S: they’ve ended craving to be reborn: | T: (none)
+dhp416:8 | S: that’s who I declare a brahmin. | T: he’s what I call a brahman.
+
+## sn12.23
+sn12.23:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.23:1.2 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “Monks, the ending of effluents is for one who knows & sees, I tell you, not for one who does not know & does not see. For one who knows what & sees what is there the ending of effluents?
+sn12.23:1.3 | S: For one who knows and sees what? | T: (none)
+sn12.23:1.4 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its disappearance. Such is feeling, such its origination, such its disappearance.
+sn12.23:1.5 | S: Such is feeling … | T: (none)
+sn12.23:1.6 | S: Such is perception … | T: Such is perception,
+sn12.23:1.7 | S: Such are choices … | T: (none)
+sn12.23:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such its origination, such its disappearance. Such are fabrications, such their origination, such their disappearance. Such is consciousness, such its origination, such its disappearance.’
+sn12.23:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: The ending of effluents is for one who knows in this way & sees in this way.
+sn12.23:2.1 | S: I say that this knowledge of ending has a vital condition, it doesn’t lack a vital condition. | T: “The knowledge of ending in the presence of ending has its prerequisite, I tell you. It is not without a prerequisite. And what is the prerequisite for the knowledge of ending?
+sn12.23:2.2 | S: And what is it? | T: (none)
+sn12.23:2.3 | S: You should say: ‘Freedom.’ | T: Release, it should be said.
+sn12.23:2.4 | S: I say that freedom has a vital condition, it doesn’t lack a vital condition. | T: Release has its prerequisite, I tell you. It is not without a prerequisite. And what is its prerequisite?
+sn12.23:2.5 | S: And what is it? | T: (none)
+sn12.23:2.6 | S: You should say: ‘Dispassion.’ | T: (none)
+sn12.23:2.7 | S: I say that dispassion has a vital condition. | T: Dispassion.…
+sn12.23:2.8 | S: And what is it? | T: (none)
+sn12.23:2.9 | S: You should say: ‘Disillusionment.’ | T: Disenchantment.…
+sn12.23:2.10 | S: I say that disillusionment has a vital condition. | T: (none)
+sn12.23:2.11 | S: And what is it? | T: (none)
+sn12.23:2.12 | S: You should say: ‘Truly knowing and seeing.’ | T: (none)
+sn12.23:2.13 | S: I say that truly knowing and seeing has a vital condition. | T: Knowledge & vision of things as they have come to be.…
+sn12.23:2.14 | S: And what is it? | T: (none)
+sn12.23:2.15 | S: You should say: ‘Immersion.’ | T: Concentration.…
+sn12.23:2.16 | S: I say that immersion has a vital condition. | T: (none)
+sn12.23:3.1 | S: And what is it? | T: (none)
+sn12.23:3.2 | S: You should say: ‘Bliss.’ | T: Pleasure.…
+sn12.23:3.3 | S: I say that bliss has a vital condition. | T: (none)
+sn12.23:3.4 | S: And what is it? | T: (none)
+sn12.23:3.5 | S: You should say: ‘Tranquility.’ | T: (none)
+sn12.23:3.6 | S: I say that tranquility has a vital condition. | T: Serenity.…
+sn12.23:3.7 | S: And what is it? | T: (none)
+sn12.23:3.8 | S: You should say: ‘Rapture.’ | T: Rapture.…
+sn12.23:3.9 | S: I say that rapture has a vital condition. | T: (none)
+sn12.23:3.10 | S: And what is it? | T: (none)
+sn12.23:3.11 | S: You should say: ‘Joy.’ | T: Joy.…
+sn12.23:3.12 | S: I say that joy has a vital condition. | T: (none)
+sn12.23:3.13 | S: And what is it? | T: (none)
+sn12.23:3.14 | S: You should say: ‘Faith.’ | T: Conviction.…
+sn12.23:3.15 | S: I say that faith has a vital condition. | T: (none)
+sn12.23:4.1 | S: And what is it? | T: (none)
+sn12.23:4.2 | S: You should say: ‘Suffering.’ | T: Stress.…
+sn12.23:4.3 | S: I say that suffering has a vital condition. | T: (none)
+sn12.23:4.4 | S: And what is it? | T: (none)
+sn12.23:4.5 | S: You should say: ‘Rebirth.’ | T: Birth.…
+sn12.23:4.6 | S: I say that rebirth has a vital condition. | T: (none)
+sn12.23:4.7 | S: And what is it? | T: (none)
+sn12.23:4.8 | S: You should say: ‘Continued existence.’ | T: Becoming.…
+sn12.23:4.9 | S: I say that continued existence has a vital condition. | T: (none)
+sn12.23:4.10 | S: And what is it? | T: (none)
+sn12.23:4.11 | S: You should say: ‘Grasping.’ | T: Clinging.…
+sn12.23:4.12 | S: I say that grasping has a vital condition. | T: (none)
+sn12.23:4.13 | S: And what is it? | T: (none)
+sn12.23:4.14 | S: You should say: ‘Craving.’ | T: Craving.…
+sn12.23:4.15 | S: I say that craving has a vital condition. | T: (none)
+sn12.23:5.1 | S: And what is it? | T: (none)
+sn12.23:5.2 | S: You should say: ‘Feeling.’ … | T: Feeling.…
+sn12.23:5.3 | S: You should say: ‘Contact.’ … | T: Contact.…
+sn12.23:5.4 | S: You should say: ‘The six sense fields.’ … | T: The six sense media.…
+sn12.23:5.5 | S: You should say: ‘Name and form.’ … | T: Name-&-form.…
+sn12.23:5.6 | S: You should say: ‘Consciousness.’ … | T: Consciousness.…
+sn12.23:5.7 | S: You should say: ‘Choices.’ … | T: Fabrications.…
+sn12.23:5.8 | S: I say that choices have a vital condition, they don’t lack a vital condition. | T: Fabrications have their prerequisite, I tell you. They are not without a prerequisite.
+sn12.23:5.9 | S: And what is the vital condition for choices? | T: And what is their prerequisite?
+sn12.23:5.10 | S: You should say: ‘Ignorance.’ | T: Ignorance, it should be said.
+sn12.23:6.1 | S: So, mendicants: ignorance is the vital condition for choices. | T: “Thus fabrications have ignorance as their prerequisite,
+sn12.23:6.2 | S: Choices are the vital condition for consciousness. | T: consciousness has fabrications as its prerequisite,
+sn12.23:6.3 | S: Consciousness is the vital condition for name and form. | T: name-&-form has consciousness as its prerequisite,
+sn12.23:6.4 | S: Name and form are the vital conditions for the six sense fields. | T: the six sense media have name-&-form as their prerequisite,
+sn12.23:6.5 | S: The six sense fields are the vital conditions for contact. | T: contact has the six sense media as its prerequisite,
+sn12.23:6.6 | S: Contact is the vital condition for feeling. | T: feeling has contact as its prerequisite,
+sn12.23:6.7 | S: Feeling is the vital condition for craving. | T: craving has feeling as its prerequisite,
+sn12.23:6.8 | S: Craving is the vital condition for grasping. | T: clinging has craving as its prerequisite,
+sn12.23:6.9 | S: Grasping is the vital condition for continued existence. | T: becoming has clinging as its prerequisite,
+sn12.23:6.10 | S: Continued existence is the vital condition for rebirth. | T: birth has becoming as its prerequisite,
+sn12.23:6.11 | S: Rebirth is the vital condition for suffering. | T: stress has birth as its prerequisite,
+sn12.23:6.12 | S: Suffering is the vital condition for faith. | T: conviction has stress as its prerequisite,
+sn12.23:6.13 | S: Faith is the vital condition for joy. | T: joy has conviction as its prerequisite,
+sn12.23:6.14 | S: Joy is the vital condition for rapture. | T: rapture has joy as its prerequisite,
+sn12.23:6.15 | S: Rapture is the vital condition for tranquility. | T: calm has rapture as its prerequisite,
+sn12.23:6.16 | S: Tranquility is the vital condition for bliss. | T: pleasure has calm as its prerequisite,
+sn12.23:6.17 | S: Bliss is the vital condition for immersion. | T: concentration has pleasure as its prerequisite,
+sn12.23:6.18 | S: Immersion is the vital condition for truly knowing and seeing. | T: knowledge & vision of things as they have come to be has concentration as its prerequisite,
+sn12.23:6.19 | S: Truly knowing and seeing is the vital condition for disillusionment. | T: disenchantment has knowledge & vision of things as they have come to be as its prerequisite,
+sn12.23:6.20 | S: Disillusionment is the vital condition for dispassion. | T: dispassion has disenchantment as its prerequisite,
+sn12.23:6.21 | S: Dispassion is the vital condition for freedom. | T: release has dispassion as its prerequisite,
+sn12.23:6.22 | S: Freedom is the vital condition for the knowledge of ending. | T: knowledge of ending has release as its prerequisite.
+sn12.23:7.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as when the devas pour rain in heavy drops & crash thunder on the upper mountains: The water, flowing down along the slopes, fills the branches of the mountain ravines & gullies. When the branches of the mountain ravines & gullies are full, they fill the little lakes. When the little lakes are full, they fill the big lakes… the little rivers… the big rivers. When the big rivers are full, they fill the great ocean.
+sn12.23:8.1 | S: In the same way, ignorance is the vital condition for choices. … Freedom is the vital condition for the knowledge of ending.” | T: In the same way: fabrications have ignorance as their prerequisite, consciousness has fabrications as its prerequisite, name-&-form has consciousness as their prerequisite, the six sense media have name-&-form as their prerequisite, contact has the six sense media as its prerequisite, feeling has contact as its prerequisite, craving has feeling as its prerequisite, clinging has craving as its prerequisite, becoming has clinging as its prerequisite, birth has becoming as its prerequisite, stress has birth as its prerequisite, conviction has stress as its prerequisite, joy has conviction as its prerequisite, rapture has joy as its prerequisite, calm has rapture as its prerequisite, pleasure has calm as its prerequisite, concentration has pleasure as its prerequisite, knowledge & vision of things as they have come to be has concentration as its prerequisite, disenchantment has knowledge & vision of things as they have come to be as its prerequisite, dispassion has disenchantment as its prerequisite, release has dispassion as its prerequisite, knowledge of ending has release as its prerequisite.”
+

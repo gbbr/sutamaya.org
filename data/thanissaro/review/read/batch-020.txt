@@ -1,0 +1,347 @@
+## an2.135
+an2.135:1.0 | S: 135 | T: (none)
+an2.135:1.1 | S: “When a foolish, incompetent untrue person has two qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: “Endowed with two qualities, the fool—incompetent, a person of no integrity—keeps himself injured & impaired. He’s blameworthy, open to being blamed by the observant, & generates much demerit.
+an2.135:1.2 | S: What two? | T: Which two?
+an2.135:1.3 | S: Without examining or scrutinizing, they arouse faith in things that are dubious, | T: “Without investigating it, without examining it, he shows confidence in a matter that merits skepticism. Without investigating it, without examining it,
+an2.135:1.4 | S: and they don’t arouse faith in things that are inspiring. | T: he shows skepticism toward a matter that merits confidence.
+an2.135:1.5 | S: When a foolish, incompetent untrue person possesses these two qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: “Endowed with these two qualities, the fool—incompetent, a person of no integrity—keeps himself injured & impaired. He’s blameworthy, open to being blamed by the observant, & generates much demerit.
+an2.135:2.1 | S: When an astute, competent true person has two qualities they keep themselves healthy and whole. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit. | T: “Endowed with two qualities, the wise person—competent, a person of integrity—keeps himself uninjured & unimpaired. He’s blameless, not open to being blamed by the observant, & generates much merit.
+an2.135:2.2 | S: What two? | T: Which two?
+an2.135:2.3 | S: After examining or scrutinizing, they don’t arouse faith in things that are dubious, | T: “Investigating it, examining it, he shows skepticism toward a matter that merits skepticism. Investigating it, examining it, he shows confidence in a matter that merits confidence.
+an2.135:2.4 | S: and they do arouse faith in things that are inspiring. | T: (none)
+an2.135:2.5 | S: When an astute, competent true person possesses these two qualities they keep themselves healthy and whole. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit.” | T: “Endowed with these two qualities, the wise person—competent, a person of integrity—keeps himself uninjured & unimpaired. He’s blameless, not open to being blamed by the observant, & generates much merit.”
+
+## iti28
+iti28:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti28:2.1 | S: “Mendicants, when a mendicant has two qualities they live unhappily in this very life—with distress, anguish, and fever— | T: “Endowed with two things, monks, a monk lives in stress in the present life–troubled, distressed, & feverish–
+iti28:2.2 | S: and when the body breaks up, after death, they can expect a bad rebirth. | T: and at the break-up of the body, after death, a bad destination can be expected.
+iti28:2.3 | S: What two? | T: Which two?
+iti28:2.4 | S: Not guarding the sense doors and eating too much. | T: A lack of guarding of the doors of the sense faculties, and knowing no moderation in food.
+iti28:2.5 | S: When a mendicant possesses these two qualities they live unhappily in this very life—with distress, anguish, and fever— | T: Endowed with these two things, a monk lives in stress in the present life–troubled, distressed, & feverish–
+iti28:2.6 | S: and when the body breaks up, after death, they can expect a bad rebirth.” | T: and at the break-up of the body, after death, a bad destination can be expected.”
+iti28:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti28:2.8 | S: On this it is said: | T: (none)
+iti28:3.1 | S: “Eye, ear, nose, | T: Eye & ear & nose,
+iti28:3.2 | S: tongue, body, and likewise mind: | T: tongue, body & mind:
+iti28:3.3 | S: a mendicant who leaves these | T: when a monk leaves these doors unguarded
+iti28:3.4 | S: sense doors unguarded— | T: (none)
+iti28:4.1 | S: immoderate in eating, | T: –knowing no moderation in food,
+iti28:4.2 | S: sense faculties unrestrained— | T: not restraining his senses–
+iti28:4.3 | S: reaps suffering | T: he experiences stress:
+iti28:4.4 | S: both physical and mental. | T: stress in body, stress in mind.
+iti28:5.1 | S: Burning in body, | T: Burning in body,
+iti28:5.2 | S: burning in mind, | T: burning in mind,
+iti28:5.3 | S: by day or by night | T: whether by day or by night,
+iti28:5.4 | S: such a person lives in suffering.” | T: one like this lives in suffering & stress.
+iti28:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti41
+iti41:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti41:2.1 | S: “Those sentient beings are truly bereft, mendicants, who are bereft of noble wisdom. | T: “Monks, those beings are truly deprived who are deprived of noble discernment.
+iti41:2.2 | S: They live unhappily in this very life—with distress, anguish, and fever— | T: They live in stress in the present life–troubled, distressed, & feverish–
+iti41:2.3 | S: and when the body breaks up, after death, they can expect a bad rebirth. | T: and at the break-up of the body, after death, a bad destination can be expected.
+iti41:2.4 | S: Those sentient beings are not bereft who are not bereft of noble wisdom. | T: “Those beings are not deprived who are not deprived of noble discernment.
+iti41:2.5 | S: In this very life they’re happy—free of distress, anguish, and fever— | T: They live in ease in the present life–untroubled, undistressed, & not feverish–
+iti41:2.6 | S: and when the body breaks up, after death, they can expect a good rebirth.” | T: and at the break-up of the body, after death, a good destination can be expected.
+iti41:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti41:2.8 | S: On this it is said: | T: (none)
+iti41:3.1 | S: “See the world with its gods, | T: Look at the world –including its heavenly beings:
+iti41:3.2 | S: bereft of wisdom, | T: deprived of discernment,
+iti41:3.3 | S: habituated to name and form, | T: making an abode in name-&-form,
+iti41:3.4 | S: imagining this is truth. | T: it conceives that ‘This is the truth.’
+iti41:4.1 | S: Wisdom is best in the world, | T: The best discernment in the world
+iti41:4.2 | S: as it leads to penetration, | T: is what leads to penetration,
+iti41:4.3 | S: through which one rightly understands | T: for it rightly discerns
+iti41:4.4 | S: the ending of rebirth and continued existence. | T: the total ending of birth & becoming.
+iti41:5.1 | S: Gods and humans envy them, | T: Human & heavenly beings hold them dear:
+iti41:5.2 | S: the Buddhas, ever mindful, | T: those who are self-awakened, mindful,
+iti41:5.3 | S: of laughing wisdom, | T: (none)
+iti41:5.4 | S: bearing their final body.” | T: bearing their last bodies
+iti41:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti41:6.2 | P: Catutthaṁ. | T: with joyful discernment.
+
+## ud5.10
+ud5.10:1.1 | S: So I have heard. | T: (none)
+ud5.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.10:1.3 | S: Now at that time Venerable Cūḷapanthaka was sitting not far from the Buddha, cross-legged, his body set straight, and mindfulness brought to the present. | T: And on that occasion Ven. Cūḷa Panthaka was sitting not far from the Blessed One, his legs crossed, his body held erect, with mindfulness established to the fore.
+ud5.10:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Cūḷa Panthaka sitting not far away, his legs crossed, his body held erect, with mindfulness established to the fore.
+ud5.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.10:4.1 | S: “Steady in body, steady in mind, | T: With steady body, steady awareness,
+ud5.10:4.2 | S: standing, sitting or lying down: | T: –whether standing, sitting, or lying down–
+ud5.10:4.3 | S: a mendicant focusing on this mindfulness | T: a monk determined on mindfulness
+ud5.10:4.4 | S: gains an ever higher distinction. | T: gains one distinction after another. Having gained one distinction
+ud5.10:4.5 | S: And when they have done so, | T: (none)
+ud5.10:4.6 | S: they vanish from the King of Death.” | T: after another, he goes where the King of Death can’t see.
+
+## ud7.6
+ud7.6:1.1 | S: So I have heard. | T: (none)
+ud7.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud7.6:1.3 | S: Now at that time Venerable Koṇḍañña Who Understood was sitting not far from the Buddha, cross-legged, with his body straight, reviewing the freedom through the ending of craving. | T: And on that occasion Ven. Aññāta Koṇḍañña was sitting not far from the Blessed One, his legs crossed, his body held erect, reflecting on [his] release through the total ending of craving.
+ud7.6:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Aññāta Koṇḍañña sitting not far away, his legs crossed, his body held erect, reflecting on [his] release through the total ending of craving.
+ud7.6:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.6:4.1 | S: “There is no root or ground or leaves for them, | T: For someone with no root, no soil, no leaves
+ud7.6:4.2 | S: so where would creepers sprout from? | T: –how creepers?
+ud7.6:4.3 | S: That attentive one is released from bonds: | T: Who’s fit to criticize him?– the enlightened one freed from bonds.
+ud7.6:4.4 | S: who is worthy to criticize them? | T: (none)
+ud7.6:4.5 | S: Even the gods praise them, | T: Even devas praise him.
+ud7.6:4.6 | S: and by the Divinity, too, they’re praised.” | T: Even by Brahmā he’s praised.
+
+## sn56.36
+sn56.36:1.1 | S: “Suppose a person was to strip all the grass, sticks, branches, and leaves in the Black Plum Tree Land, gather them together into one pile, | T: “Monks, suppose that a man were to cut down all the grass, sticks, branches, & leaves in India and to gather them into a heap. Having gathered them into a heap,
+sn56.36:1.2 | S: and make them into stakes. | T: he would make stakes from them,
+sn56.36:1.3 | S: Then they’d impale the large creatures in the ocean on large stakes; the medium-sized creatures on medium-sized stakes; and the small creatures on small stakes. | T: and having made stakes he would impale all the large animals in the sea on large stakes, all the medium-sized animals in the sea on medium-sized stakes, & all the minute animals in the sea on minute stakes.
+sn56.36:1.4 | S: They wouldn’t run out of sizable creatures in the ocean before | T: Before he had come to the end of all the sizable animals in the sea,
+sn56.36:2.1 | S: using up all the grass, sticks, branches, and leaves in the Black Plum Tree Land. | T: all the grass, sticks, branches, & leaves here in India would have been used up and exhausted.
+sn56.36:2.2 | S: There are far more small creatures in the ocean than this, so it wouldn’t be feasible to impale them on stakes. | T: It wouldn’t be feasible for him to impale on stakes the even-more-numerous minute animals in the sea.
+sn56.36:2.3 | S: Why is that? | T: (none)
+sn56.36:2.4 | S: Because of the small size of those life-forms. | T: Why is that? Because of the minuteness of their bodies.
+sn56.36:2.5 | S: That’s how big the plane of loss is. | T: So great is the plane of deprivation.
+sn56.36:2.6 | S: An individual accomplished in view, exempt from that vast plane of loss, truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “Freed from this great plane of deprivation is the individual consummate in view, who discerns, as it has come to be, that ‘This is stress … This is the origination of stress … This is the cessation of stress … This is the path of practice leading to the cessation of stress.’ “Therefore your duty is the contemplation, ‘This is stress … This is the origination of stress … This is the cessation of stress.’ Your duty is the contemplation, ‘This is the path of practice leading to the cessation of stress.’”
+sn56.36:3.1 | S: That’s why you should practice meditation …” | T: (none)
+
+## sn54.13
+sn54.13:1.1 | S: At Sāvatthī. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn54.13:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he asked the Blessed One,
+sn54.13:1.3 | S: “Sir, is there one thing that, when developed and cultivated, fulfills four things; and those four things, when developed and cultivated, fulfill seven things; and those seven things, when developed and cultivated, fulfill two things?” | T: “Is there one quality that, when developed & pursued, brings four qualities to completion? And four qualities that, when developed & pursued, bring seven qualities to completion? And seven qualities that, when developed & pursued, bring two qualities to completion?” “Yes, Ānanda, there is one quality that, when developed & pursued, brings four qualities to completion; and four qualities that, when developed & pursued, bring seven qualities to completion; and seven qualities that, when developed & pursued, bring two qualities to completion. And what is the one quality that, when developed & pursued, brings four qualities to completion? What are the four qualities that, when developed & pursued, bring seven qualities to completion? What are the seven qualities that, when developed & pursued, bring two qualities to completion?
+sn54.13:2.1 | S: “There is, Ānanda.” | T: (none)
+sn54.13:3.1 | S: “Sir, what is that one thing?” | T: (none)
+sn54.13:3.2 | S: “Immersion due to mindfulness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. | T: “Concentration through mindfulness of in-&-out breathing, when developed & pursued, brings the four establishings of mindfulness to completion. The four establishings of mindfulness, when developed & pursued, bring the seven factors for awakening to completion. The seven factors for awakening, when developed & pursued, bring clear knowing & release to completion.
+sn54.13:4.1 | S: And how is mindfulness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? | T: “Now how does a monk develop & pursue concentration through mindfulness of in-&-out breathing so that it brings the four establishings of mindfulness to completion?
+sn54.13:4.2 | S: It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, sets their body straight, and brings mindfulness to the present. | T: “There is the case where a monk, having gone to the wilderness, to the shade of a tree, or to an empty building, sits down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+sn54.13:4.3 | S: Just mindful, they breathe in. Mindful, they breathe out. | T: Always mindful, he breathes in; mindful he breathes out.
+sn54.13:4.4 | S: Breathing in heavily they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ … | T: “[1] Breathing in long, he discerns, ‘I am breathing in long’; or breathing out long, he discerns, ‘I am breathing out long.’ [2] Or breathing in short, he discerns, ‘I am breathing in short’; or breathing out short, he discerns, ‘I am breathing out short.’ [3] He trains himself, ‘I will breathe in sensitive to the entire body.’ He trains himself, ‘I will breathe out sensitive to the entire body.’ [4] He trains himself, ‘I will breathe in calming bodily fabrication.’ He trains himself, ‘I will breathe out calming bodily fabrication.’ “[5] He trains himself, ‘I will breathe in sensitive to rapture.’ He trains himself, ‘I will breathe out sensitive to rapture.’ [6] He trains himself, ‘I will breathe in sensitive to pleasure.’ He trains himself, ‘I will breathe out sensitive to pleasure.’ [7] He trains himself, ‘I will breathe in sensitive to mental fabrication.’ He trains himself, ‘I will breathe out sensitive to mental fabrication.’ [8] He trains himself, ‘I will breathe in calming mental fabrication.’ He trains himself, ‘I will breathe out calming mental fabrication.’ “[9] He trains himself, ‘I will breathe in sensitive to the mind.’ He trains himself, ‘I will breathe out sensitive to the mind.’ [10] He trains himself, ‘I will breathe in gladdening the mind.’ He trains himself, ‘I will breathe out gladdening the mind.’ [11] He trains himself, ‘I will breathe in steadying the mind.’ He trains himself, ‘I will breathe out steadying the mind. [12] He trains himself, ‘I will breathe in releasing the mind.’ He trains himself, ‘I will breathe out releasing the mind.’ “[13] He trains himself, ‘I will breathe in focusing on inconstancy.’ He trains himself, ‘I will breathe out focusing on inconstancy.’ [14] He trains himself, ‘I will breathe in focusing on dispassion [or: fading].’ He trains himself, ‘I will breathe out focusing on dispassion.’ [15] He trains himself, ‘I will breathe in focusing on cessation.’ He trains himself, ‘I will breathe out focusing on cessation.’
+sn54.13:4.5 | S: They practice like this: ‘I’ll breathe in observing letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: [16] He trains himself, ‘I will breathe in focusing on relinquishment.’ He trains himself, ‘I will breathe out focusing on relinquishment.’
+sn54.13:5.1 | S: There’s a time when a mendicant is breathing in heavily, and they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ | T: “[1] On whatever occasion a monk breathing in long discerns, ‘I am breathing in long’; or breathing out long, discerns, ‘I am breathing out long’; or breathing in short, discerns, ‘I am breathing in short’; or breathing out short, discerns,
+sn54.13:5.2 | S: … | T: ‘I am breathing out short’;
+sn54.13:5.3 | S: They practice like this: ‘I’ll breathe in stilling the physical process.’ They practice like this: ‘I’ll breathe out stilling the physical process.’ | T: trains himself, ‘I will breathe in…&… out sensitive to the entire body’; trains himself, ‘I will breathe in…&…out calming bodily fabrication’:
+sn54.13:5.4 | S: At such a time a mendicant is meditating by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:5.5 | S: Why is that? | T: (none)
+sn54.13:5.6 | S: Because the breath is a certain aspect of the body, I say. | T: I tell you, Ānanda, that this—the in-&-out breath—is classed as a body among bodies,
+sn54.13:5.7 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:6.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing rapture … | T: “[2] On whatever occasion a monk trains himself, ‘I will breathe in…&…out sensitive to rapture’; trains himself, ‘I will breathe in…&…out sensitive to pleasure’; trains himself, ‘I will breathe in…&…out sensitive to mental fabrication’;
+sn54.13:6.2 | S: bliss … | T: (none)
+sn54.13:6.3 | S: mind …’ … | T: (none)
+sn54.13:6.4 | S: They practice like this: ‘I’ll breathe in stilling the mental process.’ They practice like this: ‘I’ll breathe out stilling the mental process.’ | T: trains himself, ‘I will breathe in…&…out calming mental fabrication’:
+sn54.13:6.5 | S: At such a time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:6.6 | S: Why is that? | T: (none)
+sn54.13:6.7 | S: Because careful application of mind to the in-breaths and out-breaths is a certain aspect of feelings, I say. | T: I tell you, Ānanda, that this—careful attention to in-&-out breaths—is classed as a feeling among feelings,
+sn54.13:6.8 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:7.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing the mind.’ They practice like this: ‘I’ll breathe out experiencing the mind.’ | T: “[3] On whatever occasion a monk trains himself, ‘I will breathe in…&…out sensitive to the mind’;
+sn54.13:7.2 | S: They practice like this: ‘I’ll breathe in gladdening the mind … | T: trains himself, ‘I will breathe in…&…out gladdening the mind’;
+sn54.13:7.3 | S: immersing the mind in samādhi … | T: trains himself, ‘I will breathe in…&…out steadying the mind’;
+sn54.13:7.4 | S: freeing the mind.’ They practice like this: ‘I’ll breathe out freeing the mind.’ | T: trains himself, ‘I will breathe in…&…out releasing the mind’:
+sn54.13:7.5 | S: At such a time a mendicant is meditating by observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:7.6 | S: Why is that? | T: (none)
+sn54.13:7.7 | S: Because there is no development of immersion due to mindfulness of breathing for someone who is unmindful and lacks awareness, I say. | T: I don’t say that there is mindfulness of in-&-out breathing in one of lapsed mindfulness and no alertness,
+sn54.13:7.8 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:8.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in observing impermanence … | T: “[4] On whatever occasion a monk trains himself, ‘I will breathe in…&…out focusing on inconstancy’;
+sn54.13:8.2 | S: fading away … | T: trains himself, ‘I will breathe in…&…out focusing on dispassion’;
+sn54.13:8.3 | S: cessation … | T: (none)
+sn54.13:8.4 | S: letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: trains himself, ‘I will breathe in…&…out focusing on cessation’; trains himself, ‘I will breathe in…&…out focusing on relinquishing’:
+sn54.13:8.5 | S: At such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:8.6 | S: Having seen with wisdom the giving up of covetousness and displeasure, they watch closely over with equanimity. | T: He who sees with discernment the abandoning of greed & distress is one who watches carefully with equanimity,
+sn54.13:8.7 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:9.1 | S: That’s how immersion due to mindfulness of breathing is developed and cultivated so as to fulfill the four kinds of mindfulness meditation. | T: “This is how concentration through mindfulness of in-&-out breathing, when developed & pursued, brings the four establishings of mindfulness to their culmination.
+sn54.13:10.1 | S: And how are the four kinds of mindfulness meditation developed and cultivated so as to fulfill the seven awakening factors? | T: “And how are the four establishings of mindfulness developed & pursued so that the seven factors for awakening come to completion?
+sn54.13:10.2 | S: Whenever a mendicant meditates by observing an aspect of the body, | T: “[1] On whatever occasion the monk remains focused on the body in & of itself—ardent,
+sn54.13:10.3 | S: their mindfulness is established and lucid. | T: alert, & mindful—subduing greed & distress with reference to the world, on that occasion his mindfulness is steady & without lapse.
+sn54.13:10.4 | S: At such a time, a mendicant has initiated the awakening factor of mindfulness; they develop it and perfect it. | T: When his mindfulness is steady & without lapse, then mindfulness as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:11.1 | S: As they live mindfully in this way they investigate, explore, and inquire into that principle with wisdom. | T: “[2] Remaining mindful in this way, he examines, analyzes, & comes to a comprehension of that quality with discernment.
+sn54.13:11.2 | S: At such a time, a mendicant has activated the awakening factor of investigation of principles; they develop it and perfect it. | T: When he remains mindful in this way, examining, analyzing, & coming to a comprehension of that quality with discernment, then analysis of qualities as a factor for awakening is aroused in him. He develops it,
+sn54.13:11.3 | P: dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, dhammavicayasambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:12.1 | S: As they investigate principles with wisdom in this way their energy is roused up and unflagging. | T: “[3] In one who examines, analyzes, & comes to a comprehension of that quality with discernment, persistence is aroused unflaggingly.
+sn54.13:12.2 | S: At such a time, a mendicant has initiated the awakening factor of energy; they develop it and perfect it. | T: When persistence is aroused unflaggingly in one who examines, analyzes, & comes to a comprehension of that quality with discernment, then persistence as a factor for awakening is aroused in him. He develops it,
+sn54.13:12.3 | P: vīriyasambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, vīriyasambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, vīriyasambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:13.1 | S: When you’re energetic, rapture not of the flesh arises. | T: “[4] In one whose persistence is aroused, a rapture not of the flesh arises. When a rapture not of the flesh arises in one whose persistence is aroused,
+sn54.13:13.2 | S: At such a time, a mendicant has initiated the awakening factor of rapture; they develop it and perfect it. | T: then rapture as a factor for awakening is aroused in him. He develops it,
+sn54.13:13.3 | P: pītisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, pītisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, pītisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:14.1 | S: When the mind is full of rapture, the body and mind become tranquil. | T: “[5] For one enraptured at heart, the body grows calm and the mind grows calm. When the body & mind of a monk enraptured at heart grow calm,
+sn54.13:14.2 | S: At such a time, a mendicant has activated the awakening factor of tranquility; they develop it and perfect it. | T: then calm as a factor for awakening is aroused in him. He develops it,
+sn54.13:14.3 | P: passaddhisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, passaddhisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, passaddhisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:15.1 | S: When the body is tranquil and one feels bliss, the mind becomes immersed in samādhi. | T: “[6] For one who is at ease—his body calmed—the mind becomes concentrated.
+sn54.13:15.2 | S: At such a time, a mendicant has activated the awakening factor of immersion; they develop it and perfect it. | T: When the mind of one who is at ease—his body calmed—becomes concentrated, then concentration as a factor for awakening is aroused in him. He develops it,
+sn54.13:15.3 | P: samādhisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, samādhisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, samādhisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:16.1 | S: They closely watch over that mind immersed in samādhi. | T: “[7] He carefully watches the mind thus concentrated with equanimity. When he carefully watches the mind thus concentrated with equanimity,
+sn54.13:16.2 | S: At such a time, a mendicant has activated the awakening factor of equanimity; they develop it and perfect it. | T: equanimity as a factor for awakening is aroused in him.
+sn54.13:17.1 | S: Whenever a mendicant meditates by observing an aspect of feelings … | T: (none)
+sn54.13:17.2 | S: mind … | T: (none)
+sn54.13:17.3 | S: principles, | T: (none)
+sn54.13:17.4 | S: their mindfulness is established and lucid. | T: (none)
+sn54.13:17.5 | S: At such a time, a mendicant has activated the awakening factor of mindfulness; they develop it and perfect it. … | T: He develops it,
+sn54.13:17.6 | P: satisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, satisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, satisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: and for him it goes to the culmination of its development.
+sn54.13:17.7 | S: (Tell in full as for the first kind of mindfulness meditation.) | T: [Similarly with the other three establishings of mindfulness:
+sn54.13:18.1 | S: They closely watch over that mind immersed in samādhi. | T: in feelings, mind, & mental qualities.]
+sn54.13:18.2 | S: At such a time, a mendicant has activated the awakening factor of equanimity; they develop it and perfect it. | T: (none)
+sn54.13:18.4 | S: That’s how the four kinds of mindfulness meditation are developed and cultivated so as to fulfill the seven awakening factors. | T: “This is how the four establishings of mindfulness, when developed & pursued, lead to the culmination of the seven factors for awakening.
+sn54.13:19.1 | S: And how are the seven awakening factors developed and cultivated so as to fulfill knowledge and freedom? | T: “And how are the seven factors for awakening developed & pursued so as to lead to the culmination of clear knowing & release?
+sn54.13:19.2 | S: It’s when a mendicant develops the awakening factors of mindfulness, | T: There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion… dispassion… cessation, resulting in relinquishment.
+sn54.13:19.3 | S: investigation of principles, energy, rapture, tranquility, immersion, | T: He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn54.13:19.4 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion… dispassion… cessation, resulting in relinquishment.
+sn54.13:19.5 | S: That’s how the seven awakening factors are developed and cultivated so as to fulfill knowledge and freedom.” | T: “This is how the seven factors for awakening, when developed & pursued, lead to the culmination of clear knowing & release.” That is what the Blessed One said. Gratified, Ven. Ānanda delighted in the Blessed One’s words.
+
+## an5.196
+an5.196:1.1 | S: “Mendicants, before his awakening five great dreams appeared to the Realized One, the perfected one, the fully awakened Buddha, when he was still not awake but intent on awakening. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, five great dreams appeared to him. Which five? “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta,
+an5.196:1.2 | S: What five? | T: (none)
+an5.196:1.3 | S: This great earth was his bed. Himalaya, king of mountains, was his pillow. His left hand was laid down in the eastern sea. His right hand was laid down in the western sea. And both his feet were laid down in the southern sea. | T: this great earth was his great bed. The Himalayas, king of mountains, was his pillow. His left hand rested in the eastern sea, his right hand in the western sea, and both feet in the southern sea.
+an5.196:1.4 | S: This is the first great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the first great dream that appeared to him.
+an5.196:2.1 | S: Next, a kind of grass called ‘the crosser’ grew up from his navel and stood pressing against the cloudy sky. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, a woody vine growing out of his navel stood reaching to the sky.
+an5.196:2.2 | S: This is the second great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the second great dream that appeared to him.
+an5.196:3.1 | S: Next, white caterpillars with black heads crawled up from his feet and covered his knees. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, white worms with black heads crawling up from his feet covered him as far as his knees.
+an5.196:3.2 | S: This is the third great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the third great dream that appeared to him.
+an5.196:4.1 | S: Next, four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, four different-colored birds coming from the four directions fell at his feet and turned entirely white.
+an5.196:4.2 | S: This is the fourth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fourth great dream that appeared to him.
+an5.196:5.1 | S: Next, he walked back and forth on top of a big mountain of filth while remaining unsoiled. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, he walked back & forth on top of a giant mountain of excrement but was not soiled by the excrement.
+an5.196:5.2 | S: This is the fifth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fifth great dream that appeared to him.
+an5.196:6.1 | S: Now, as to when, before his awakening, the Realized One, the perfected one, the fully awakened Buddha was still not awake but intent on awakening. This great earth was his bed. Himalaya, king of mountains, was his pillow. His left hand was laid down in the eastern sea. His right hand was laid down in the western sea. And both his feet were laid down in the southern sea. | T: “Now, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and this great earth was his great bed, the Himalayas, king of mountains, was his pillow, his left hand rested in the eastern sea, his right hand in the western sea, and both feet in the southern sea:
+an5.196:6.2 | S: This was fulfilled when the Buddha awakened to the perfect awakening. | T: (none)
+an5.196:6.3 | S: This was the first great dream that appeared to him while he was still not awakened. | T: this first great dream appeared to let him know that he would awaken to the unexcelled right self-awakening.
+an5.196:7.1 | S: As to when a kind of grass called ‘the crosser’ grew up from his navel and stood pressing against the cloudy sky. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and a woody vine growing out of his navel stood reaching to the sky:
+an5.196:7.2 | S: This was fulfilled when, after the Buddha had awakened to the noble eightfold path, it was fully revealed among gods and humans. | T: this second great dream appeared to let him know that when he had awakened to the noble eightfold path, he would proclaim it well as far as there are devas & human beings.
+an5.196:7.3 | S: This was the second great dream that appeared to him while he was still not awakened. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta,
+an5.196:8.1 | S: As to when white caterpillars with black heads crawled up from his feet and covered his knees. | T: and white worms with black heads crawling up from his feet covered him as far as his knees:
+an5.196:8.2 | S: This was fulfilled when many white-clothed laypeople went for refuge to him for life. | T: this third great dream appeared to let him know that many white-clothed householders would go for life-long refuge to the Tathāgata.
+an5.196:8.3 | S: This was the third great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:9.1 | S: As to when four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and four different-colored birds coming from the four directions fell at his feet and turned entirely white:
+an5.196:9.2 | S: This was fulfilled when members of the four classes—aristocrats, brahmins, peasants, and menials—went forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One and realized supreme freedom. | T: this fourth great dream appeared to let him know that people from the four castes—brahmans, noble-warriors, merchants, and laborers—having gone forth from the home life into homelessness in the Dhamma & Vinaya taught by the Tathāgata, would realize unexcelled release.
+an5.196:9.3 | S: This was the fourth great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:10.1 | S: As to when he walked back and forth on top of a big mountain of filth while remaining unsoiled. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and he walked back & forth on top of a giant mountain of excrement but was not soiled by the excrement:
+an5.196:10.2 | S: This was fulfilled when the Realized One received robes, almsfood, lodgings, and medicines and supplies for the sick. And he used them untied, uninfatuated, unattached, seeing the drawbacks, and understanding the escape. | T: this fifth great dream appeared to let him know that the Tathāgata would receive gifts of robes, alms food, lodgings, & medicinal requisites to cure the sick, but he would use them unattached to them, uninfatuated, guiltless, seeing the drawbacks (of attachment to them), and discerning the escape from them.
+an5.196:10.3 | S: This was the fifth great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:11.1 | S: Before his awakening these five great dreams appeared to the Realized One, the perfected one, the fully awakened Buddha, when he was still not awake but intent on awakening.” | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, these five great dreams appeared to him.”
+
+## iti103
+iti103:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti103:2.1 | S: “Mendicants, there are ascetics and brahmins who don’t truly understand about suffering, its origin, its cessation, and the path. | T: “Monks, any contemplatives or brahmans who do not discern, as it has come to be, that ‘This is stress,’ … that ‘This is the origination of stress,’ … that ‘This is the cessation of stress,’ who do not discern, as it has come to be, that ‘This is the path of practice leading to the cessation of stress’:
+iti103:2.2 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: to me these contemplatives & brahmans do not count as contemplatives among contemplatives or as brahmans among brahmans. Furthermore, they do not enter & remain in the goal of the contemplative life or the goal of brahmanly life, having directly known & realized it for themselves right in the here-&-now.
+iti103:3.1 | S: There are ascetics and brahmins who truly understand about suffering, its origin, its cessation, and the path. | T: “But any contemplatives or brahmans who discern, as it has come to be, that ‘This is stress,’ … that ‘This is the origination of stress,’ … that ‘This is the cessation of stress,’ who discern, as it has come to be, that ‘This is the path of practice leading to the cessation of stress’:
+iti103:3.2 | S: I regard them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: to me these contemplatives & brahmans count as contemplatives among contemplatives and as brahmans among brahmans. Furthermore, they enter & remain in the goal of the contemplative life & the goal of the brahmanly life, having directly known & realized it for themselves right in the here-&-now.”
+iti103:3.3 | S: The Buddha spoke this matter. | T: (none)
+iti103:3.4 | S: On this it is said: | T: (none)
+iti103:4.1 | S: “There are those who don’t understand suffering | T: Those who don’t discern stress,
+iti103:4.2 | S: and suffering’s cause, | T: stress’s coming into play,
+iti103:4.3 | S: and where all suffering | T: (none)
+iti103:4.4 | S: cease with no residue left behind. | T: & where it totally stops, without trace,
+iti103:4.5 | S: And they do not know the path | T: who don’t know the path,
+iti103:4.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress:
+iti103:5.1 | S: They lack the heart’s release, | T: lowly in their awareness-release
+iti103:5.2 | S: as well as the release by wisdom. | T: & discernment-release,
+iti103:5.3 | S: Unable to make an end, | T: incapable of making an end,
+iti103:5.4 | S: they continue to be reborn and grow old. | T: they’re headed to birth & aging.
+iti103:6.1 | S: But there are those who understand suffering | T: But those who discern stress,
+iti103:6.2 | S: and suffering’s cause, | T: stress’s coming into play,
+iti103:6.3 | S: and where all suffering | T: (none)
+iti103:6.4 | S: cease with no residue left behind. | T: & where it totally stops, without trace,
+iti103:6.5 | S: And they understand the path | T: who discern the path,
+iti103:6.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress:
+iti103:7.1 | S: They’re endowed with the heart’s release, | T: consummate in their awareness-release
+iti103:7.2 | S: as well as the release by wisdom. | T: & discernment-release,
+iti103:7.3 | S: Able to make an end, | T: capable of making an end,
+iti103:7.4 | S: they don’t continue to be reborn and grow old.” | T: they are not headed to birth & aging.
+iti103:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti106
+iti106:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti106:2.1 | S: “Mendicants, a family where the children honor their parents in their home is said to live with Divinity. | T: “Monks, living with Brahma are those families where, in the home, mother & father are revered by the children.
+iti106:2.2 | S: A family where the children honor their parents in their home is said to live with the elder gods. | T: (none)
+iti106:2.3 | S: A family where the children honor their parents in their home is said to live with the first tutors. | T: Living with the first devas are those families where, in the home, mother & father are revered by the children. Living with the first teachers are those families where, in the home, mother & father are revered by the children.
+iti106:2.4 | S: A family where the children honor their parents in their home is said to live with those worthy of offerings dedicated to the gods. | T: Living with those worthy of gifts are those families where, in the home, mother & father are revered by the children.
+iti106:3.1 | S: ‘Divinity’ is a term for your parents. | T: ‘Brahma’ is a synonym for mother & father.
+iti106:3.2 | S: ‘Elder gods’ is a term for your parents. | T: (none)
+iti106:3.3 | S: ‘First tutors’ is a term for your parents. | T: ‘The first devas’ is a synonym for mother & father. ‘The first teachers’ is a synonym for mother & father.
+iti106:3.4 | S: ‘Worthy of offerings dedicated to the gods’ is a term for your parents. | T: ‘Those worthy of gifts’ is a synonym for mother & father.
+iti106:3.5 | S: Why is that? | T: Why is that?
+iti106:3.6 | S: Parents are very helpful to their children, they raise them, nurture them, and show them the world.” | T: Mother & father do much for their children. They care for them, nourish them, introduce them to this world.”
+iti106:3.7 | S: The Buddha spoke this matter. | T: Mother & father, compassionate to their family,
+iti106:3.8 | S: On this it is said: | T: are called
+iti106:4.1 | S: “Parents are said to be ‘Divinity’ | T: Brahma,
+iti106:4.2 | S: and ‘first tutors’. | T: first teachers,
+iti106:4.3 | S: They’re worthy of offerings dedicated to the gods <j>from their children, | T: those worthy of gifts from their children.
+iti106:4.4 | S: for they love their offspring. | T: (none)
+iti106:5.1 | S: Therefore an astute person | T: So the wise should pay them
+iti106:5.2 | S: would revere them and honor them | T: homage, honor,
+iti106:5.3 | S: with food and drink, | T: with food & drink,
+iti106:5.4 | S: clothes and bedding, | T: clothing & bedding,
+iti106:5.5 | S: anointing and bathing, | T: anointing & bathing,
+iti106:5.6 | S: and by washing their feet. | T: & washing their feet.
+iti106:6.1 | S: Because they serve | T: Performing these services to their parents,
+iti106:6.2 | S: their parents like this, | T: (none)
+iti106:6.3 | S: they’re praised in this life by the astute, | T: the wise are praised right here
+iti106:6.4 | S: and they depart to rejoice in heaven.” | T: and after death rejoice in heaven.
+iti106:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## an10.46
+an10.46:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was staying near Kapilavatthu in the Banyan Park.
+an10.46:1.2 | S: Then on the sabbath several Sakyan lay followers went up to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: Then many Sakyan lay followers, it being the uposatha day, went to the Blessed One. On arrival, having bowed down to him, they sat to one side. As they were sitting there, the Blessed One said to them,
+an10.46:1.3 | S: “Sakyans, do you observe the sabbath with its eight factors?” | T: “Sakyans, do you observe the eight-factored uposatha?”
+an10.46:1.4 | S: “Sir, sometimes we do, sometimes we don’t.” | T: “Sometimes we do, lord, and sometimes we don’t.”
+an10.46:1.5 | S: “That’s your loss, Sakyans, it’s your misfortune. In this life with its fear of sorrow and death, you sometimes keep the sabbath and you sometimes don’t. | T: “It’s no gain for you, Sakyans. It’s ill-gotten, that in this life so endangered by grief, in this life so endangered by death, you sometimes observe the eight-factored uposatha and sometimes don’t.
+an10.46:2.1 | S: What do you think, Sakyans? | T: “What do you think, Sakyans?
+an10.46:2.2 | S: Take a man who earns half a dollar for an honest day’s work. | T: Suppose a man, by some profession or other, without encountering an unskillful day, were to earn a half-kahāpaṇa.
+an10.46:2.3 | S: Is this enough to call him a deft and industrious man?” | T: Would he deserve to be called a capable man, full of initiative?”
+an10.46:2.4 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.46:3.1 | S: “What do you think, Sakyans? | T: “Suppose a man,
+an10.46:3.2 | S: Take a man who earns a dollar for an honest day’s work. | T: (none)
+an10.46:3.3 | S: Is this enough to call him a deft and industrious man?” | T: (none)
+an10.46:3.4 | S: “Yes, sir.” | T: (none)
+an10.46:4.1 | S: “What do you think, Sakyans? | T: by some profession or other,
+an10.46:4.2 | S: Take a man who, for an honest day’s work, earns two dollars … | T: without encountering an unskillful day, were to earn a kahāpaṇa… two kahāpaṇas…
+an10.46:4.3 | S: three dollars … | T: three…
+an10.46:4.4 | S: four dollars … | T: four…
+an10.46:4.5 | S: five dollars … | T: five…
+an10.46:4.6 | S: six dollars … | T: six…
+an10.46:4.7 | S: seven dollars … | T: seven…
+an10.46:4.8 | S: eight dollars … | T: eight…
+an10.46:4.9 | S: nine dollars … | T: nine…
+an10.46:4.10 | S: ten dollars … | T: ten…
+an10.46:4.11 | S: twenty dollars … | T: twenty…
+an10.46:4.12 | S: thirty dollars … | T: thirty…
+an10.46:4.13 | S: forty dollars … | T: forty…
+an10.46:4.14 | S: fifty dollars … | T: fifty…
+an10.46:4.15 | S: a hundred dollars. | T: one hundred kahāpaṇas.
+an10.46:4.16 | S: Is this enough to call him a deft and industrious man?” | T: Would he deserve to be called a capable man, full of initiative?”
+an10.46:4.17 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.46:5.1 | S: “What do you think, Sakyans? | T: “Now what do you think?
+an10.46:5.2 | S: Suppose that man earned a hundred or a thousand dollars every day and saved it all up. If he lived for a hundred years, would he not accumulate a large mass of wealth?” | T: Earning one hundred, one thousand kahāpaṇas a day; saving up his gains, living for one hundred years, would a man arrive at a great mass of wealth?”
+an10.46:5.3 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.46:6.1 | S: “What do you think, Sakyans? | T: “Now what do you think?
+an10.46:6.2 | S: Would that man, on account of that wealth, experience absolute happiness for a single day or night, or even half a day or night?” | T: Would that man, because of that wealth, on account of that wealth, with that wealth as the cause, live sensitive to unalloyed bliss for a day, a night, half a day, or half a night?”
+an10.46:6.3 | S: “No, sir.” | T: “No, lord.
+an10.46:6.4 | S: “Why is that?” | T: And why is that?
+an10.46:6.5 | S: “Because sensual pleasures, sir, are impermanent, hollow, false, and deceptive.” | T: Sensual pleasures are inconstant, hollow, false, deceptive by nature.”
+an10.46:7.1 | S: “But take one of my disciples who lives diligent, keen, and resolute for ten years, practicing in line with my instructions. They can experience absolute happiness for a hundred years, ten thousand years, or a hundred thousand years. | T: “Now, Sakyans, there is the case where a disciple of mine, spending ten years—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia.
+an10.46:7.2 | S: And they could become a once-returner or a non-returner, or, as a sure bet, a stream-enterer. | T: And he would be a once-returner, a non-returner, or at the very least a stream-winner.
+an10.46:7.3 | S: Let alone ten years, | T: “Let alone ten years,
+an10.46:8.1 | S: take one of my disciples who lives diligent, keen, and resolute for nine years … | T: there is the case where a disciple of mine, spending nine years…
+an10.46:8.2 | S: eight years … | T: eight years…
+an10.46:8.3 | S: seven years … | T: seven…
+an10.46:8.4 | S: six years … | T: six…
+an10.46:8.5 | S: five years … | T: five…
+an10.46:8.6 | S: four years … | T: four…
+an10.46:8.7 | S: three years … | T: three…
+an10.46:8.8 | S: two years … | T: two years…
+an10.46:8.9 | S: one year … | T: one year—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner.
+an10.46:8.10 | P: Tiṭṭhatu, sakkā, ekaṁ vassaṁ. | T: “Let alone one year,
+an10.46:9.1 | S: ten months … | T: there is the case where a disciple of mine, spending ten months…
+an10.46:10.1 | S: nine months … | T: nine months…
+an10.46:10.2 | S: eight months … | T: eight months…
+an10.46:10.3 | S: seven months … | T: seven…
+an10.46:10.4 | S: six months … | T: six…
+an10.46:10.5 | S: five months … | T: five…
+an10.46:10.6 | S: four months … | T: four…
+an10.46:10.7 | S: three months … | T: three…
+an10.46:10.8 | S: two months … | T: two months… one month…
+an10.46:10.9 | S: one month … | T: half a month—
+an10.46:10.10 | S: a fortnight … | T: (none)
+an10.46:11.1 | S: ten days … | T: (none)
+an10.46:12.1 | S: nine days … | T: (none)
+an10.46:12.2 | S: eight days … | T: (none)
+an10.46:12.3 | S: seven days … | T: (none)
+an10.46:12.4 | S: six days … | T: (none)
+an10.46:12.5 | S: five days … | T: (none)
+an10.46:12.6 | S: four days … | T: (none)
+an10.46:12.7 | S: three days … | T: (none)
+an10.46:12.8 | S: two days … | T: (none)
+an10.46:12.9 | S: Let alone two days, take one of my disciples who lives diligent, keen, and resolute for one day, practicing in line with my instructions. They can experience absolute happiness for a hundred years, ten thousand years, or a hundred thousand years. And they could become a once-returner or a non-returner, or, as a sure bet, a stream-enterer. | T: heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner. “Let alone half a month, there is the case where a disciple of mine, spending ten days & nights… nine days & nights… eight… seven… six… five… four… three… two days & nights… one day & night—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner.
+an10.46:12.10 | S: It’s your loss, Sakyans, it’s your misfortune. In this life with its fear of sorrow and death, you sometimes keep the sabbath and you sometimes don’t.” | T: “It’s no gain for you, Sakyans. It’s ill-gotten, that in this life so endangered by grief, in this life so endangered by death, you sometimes observe the eight-factored uposatha and sometimes don’t.”
+an10.46:12.11 | S: “Well, sir, from this day forth we will observe the sabbath with its eight factors.” | T: “Then from this day forward, lord, we will observe the eight-factored uposatha.”
+

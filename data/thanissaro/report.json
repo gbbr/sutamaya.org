@@ -332,10 +332,8 @@
   "uids": "an1.77 an1.78 an1.79 an1.80 an1.81 an1.82",
   "lines": 34,
   "segments": 24,
-  "unsure": 1,
-  "unsureKeys": [
-   "an1.77:1.1@0.74"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -389,14 +387,14 @@
   "file": "sutta/an/an10/an10.108.html",
   "uids": "an10.108",
   "lines": 24,
-  "segments": 20,
+  "segments": 21,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 3,
+  "joined": 2,
   "merged": 0,
-  "elided": 3,
+  "elided": 2,
   "long": 1,
-  "unmatched": 1,
+  "unmatched": 2,
   "ratio": 1.54
  },
  {
@@ -445,14 +443,14 @@
   "file": "sutta/an/an10/an10.17.html",
   "uids": "an10.17",
   "lines": 38,
-  "segments": 20,
+  "segments": 21,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 9,
+  "joined": 8,
   "merged": 3,
-  "elided": 6,
+  "elided": 5,
   "long": 0,
-  "unmatched": 1,
+  "unmatched": 2,
   "ratio": 1.5
  },
  {
@@ -460,10 +458,8 @@
   "uids": "an10.176",
   "lines": 85,
   "segments": 79,
-  "unsure": 1,
-  "unsureKeys": [
-   "an10.176:45.3@0.83"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 3,
   "elided": 2,
@@ -686,10 +682,8 @@
   "uids": "an10.69",
   "lines": 16,
   "segments": 14,
-  "unsure": 1,
-  "unsureKeys": [
-   "an10.69:2.2@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -820,7 +814,7 @@
   "merged": 1,
   "elided": 0,
   "long": 0,
-  "unmatched": 1,
+  "unmatched": 0,
   "ratio": 1.55
  },
  {
@@ -884,11 +878,8 @@
   "uids": "an10.96",
   "lines": 77,
   "segments": 70,
-  "unsure": 2,
-  "unsureKeys": [
-   "an10.96:6.1@0.65",
-   "an10.96:7.1@0.57"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 1,
   "elided": 0,
@@ -943,10 +934,8 @@
   "uids": "an11.12",
   "lines": 45,
   "segments": 38,
-  "unsure": 1,
-  "unsureKeys": [
-   "an11.12:5.12@0.68"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -1071,10 +1060,8 @@
   "uids": "an2.18",
   "lines": 20,
   "segments": 19,
-  "unsure": 1,
-  "unsureKeys": [
-   "an2.18:2.9@0.69"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -1185,10 +1172,8 @@
   "uids": "an2.36",
   "lines": 56,
   "segments": 51,
-  "unsure": 1,
-  "unsureKeys": [
-   "an2.36:5.9@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 0,
   "elided": 5,
@@ -1369,12 +1354,8 @@
   "uids": "an3.102",
   "lines": 33,
   "segments": 21,
-  "unsure": 3,
-  "unsureKeys": [
-   "an3.102:3.6@0.48",
-   "an3.102:4.2@0.65",
-   "an3.102:4.5@0.64"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -1471,10 +1452,8 @@
   "uids": "an3.112",
   "lines": 50,
   "segments": 22,
-  "unsure": 1,
-  "unsureKeys": [
-   "an3.112:1.9@0.53"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -1823,10 +1802,8 @@
   "uids": "an3.39",
   "lines": 51,
   "segments": 45,
-  "unsure": 1,
-  "unsureKeys": [
-   "an3.39:10.2@0.54"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -1839,10 +1816,8 @@
   "uids": "an3.40",
   "lines": 72,
   "segments": 64,
-  "unsure": 1,
-  "unsureKeys": [
-   "an3.40:7.1@0.91"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 1,
   "elided": 2,
@@ -1939,10 +1914,8 @@
   "uids": "an3.52",
   "lines": 21,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "an3.52:2.4@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -1983,12 +1956,8 @@
   "uids": "an3.61",
   "lines": 114,
   "segments": 104,
-  "unsure": 3,
-  "unsureKeys": [
-   "an3.61:3.3@0.89",
-   "an3.61:5.3@0.89",
-   "an3.61:7.3@0.89"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 1,
   "elided": 6,
@@ -2197,10 +2166,8 @@
   "uids": "an3.84",
   "lines": 16,
   "segments": 14,
-  "unsure": 1,
-  "unsureKeys": [
-   "an3.84:3.2@0.39"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -2381,11 +2348,8 @@
   "uids": "an4.10",
   "lines": 69,
   "segments": 54,
-  "unsure": 2,
-  "unsureKeys": [
-   "an4.10:4.3@0.31",
-   "an4.10:8.3@0.36"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 0,
   "elided": 8,
@@ -2426,10 +2390,8 @@
   "uids": "an4.111",
   "lines": 32,
   "segments": 30,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.111:4.2@0.45"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -2652,10 +2614,8 @@
   "uids": "an4.159",
   "lines": 62,
   "segments": 52,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.159:6.2@0.76"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 1,
   "elided": 5,
@@ -2836,10 +2796,8 @@
   "uids": "an4.184",
   "lines": 64,
   "segments": 60,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.184:9.4@0.85"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -2852,10 +2810,8 @@
   "uids": "an4.19",
   "lines": 17,
   "segments": 14,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.19:4.2@0.92"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -2882,11 +2838,8 @@
   "uids": "an4.192",
   "lines": 73,
   "segments": 60,
-  "unsure": 2,
-  "unsureKeys": [
-   "an4.192:6.6@0.59",
-   "an4.192:11.4@0.68"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 0,
   "elided": 6,
@@ -2913,10 +2866,8 @@
   "uids": "an4.195",
   "lines": 86,
   "segments": 70,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.195:11.8@0.34"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 0,
   "elided": 13,
@@ -2943,15 +2894,13 @@
   "uids": "an4.200",
   "lines": 88,
   "segments": 77,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.200:16.1@0.75"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
   "long": 1,
-  "unmatched": 1,
+  "unmatched": 0,
   "ratio": 1.39
  },
  {
@@ -2973,10 +2922,8 @@
   "uids": "an4.233",
   "lines": 29,
   "segments": 26,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.233:2.4@0.43"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -3017,10 +2964,8 @@
   "uids": "an4.238",
   "lines": 11,
   "segments": 9,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.238:3.2@0.91"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -3256,12 +3201,12 @@
   "file": "sutta/an/an4/an4.45.html",
   "uids": "an4.45",
   "lines": 28,
-  "segments": 23,
+  "segments": 24,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 3,
+  "joined": 2,
   "merged": 0,
-  "elided": 3,
+  "elided": 2,
   "long": 0,
   "unmatched": 1,
   "ratio": 1.24
@@ -3271,10 +3216,8 @@
   "uids": "an4.49",
   "lines": 37,
   "segments": 32,
-  "unsure": 1,
-  "unsureKeys": [
-   "an4.49:5.2@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -3287,11 +3230,8 @@
   "uids": "an4.5",
   "lines": 33,
   "segments": 32,
-  "unsure": 2,
-  "unsureKeys": [
-   "an4.5:8.3@0.52",
-   "an4.5:8.4@0.96"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -3388,15 +3328,8 @@
   "uids": "an4.73",
   "lines": 40,
   "segments": 30,
-  "unsure": 6,
-  "unsureKeys": [
-   "an4.73:2.2@0.70",
-   "an4.73:3.2@0.75",
-   "an4.73:4.2@0.75",
-   "an4.73:6.2@0.73",
-   "an4.73:7.2@0.78",
-   "an4.73:8.2@0.75"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 9,
   "merged": 0,
   "elided": 9,
@@ -3478,14 +3411,14 @@
   "file": "sutta/an/an4/an4.89.html",
   "uids": "an4.89",
   "lines": 16,
-  "segments": 14,
+  "segments": 15,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 1,
+  "joined": 0,
   "merged": 0,
-  "elided": 1,
+  "elided": 0,
   "long": 0,
-  "unmatched": 1,
+  "unmatched": 2,
   "ratio": 3
  },
  {
@@ -3619,10 +3552,8 @@
   "uids": "an5.121",
   "lines": 12,
   "segments": 11,
-  "unsure": 1,
-  "unsureKeys": [
-   "an5.121:1.4@0.38"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -3929,10 +3860,8 @@
   "uids": "an5.196",
   "lines": 29,
   "segments": 23,
-  "unsure": 1,
-  "unsureKeys": [
-   "an5.196:7.3@0.63"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -4071,10 +4000,8 @@
   "uids": "an5.254 an5.255 an5.256 an5.257 an5.258 an5.259",
   "lines": 21,
   "segments": 17,
-  "unsure": 1,
-  "unsureKeys": [
-   "an5.256:2.4@0.62"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -4171,12 +4098,8 @@
   "uids": "an5.34",
   "lines": 40,
   "segments": 38,
-  "unsure": 3,
-  "unsureKeys": [
-   "an5.34:3.2@0.33",
-   "an5.34:4.2@0.90",
-   "an5.34:6.2@0.86"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -4399,10 +4322,8 @@
   "uids": "an5.75",
   "lines": 101,
   "segments": 90,
-  "unsure": 1,
-  "unsureKeys": [
-   "an5.75:15.9@0.53"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 3,
   "elided": 2,
@@ -4456,13 +4377,13 @@
   "file": "sutta/an/an5/an5.79.html",
   "uids": "an5.79",
   "lines": 56,
-  "segments": 52,
+  "segments": 51,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 3,
-  "merged": 1,
+  "joined": 4,
+  "merged": 2,
   "elided": 2,
-  "long": 0,
+  "long": 1,
   "unmatched": 0,
   "ratio": 1.2
  },
@@ -4639,10 +4560,8 @@
   "uids": "an6.19",
   "lines": 62,
   "segments": 49,
-  "unsure": 1,
-  "unsureKeys": [
-   "an6.19:8.3@0.49"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 9,
   "merged": 0,
   "elided": 9,
@@ -4795,10 +4714,8 @@
   "uids": "an6.47",
   "lines": 22,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "an6.47:3.6@0.98"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -4839,11 +4756,8 @@
   "uids": "an6.55",
   "lines": 94,
   "segments": 82,
-  "unsure": 2,
-  "unsureKeys": [
-   "an6.55:2.4@0.48",
-   "an6.55:14.1@0.85"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 2,
   "elided": 2,
@@ -4856,10 +4770,8 @@
   "uids": "an6.60",
   "lines": 95,
   "segments": 90,
-  "unsure": 1,
-  "unsureKeys": [
-   "an6.60:1.4@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 2,
   "elided": 1,
@@ -4900,10 +4812,8 @@
   "uids": "an6.70",
   "lines": 17,
   "segments": 10,
-  "unsure": 1,
-  "unsureKeys": [
-   "an6.70:1.8@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -5210,10 +5120,8 @@
   "uids": "an7.49",
   "lines": 91,
   "segments": 43,
-  "unsure": 1,
-  "unsureKeys": [
-   "an7.49:12.1@0.70"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -5226,10 +5134,8 @@
   "uids": "an7.50",
   "lines": 35,
   "segments": 30,
-  "unsure": 1,
-  "unsureKeys": [
-   "an7.50:11.3@0.75"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -5256,17 +5162,13 @@
   "uids": "an7.52",
   "lines": 55,
   "segments": 48,
-  "unsure": 3,
-  "unsureKeys": [
-   "an7.52:6.2@0.80",
-   "an7.52:12.4@0.31",
-   "an7.52:12.11@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
   "long": 0,
-  "unmatched": 3,
+  "unmatched": 2,
   "ratio": 1.69
  },
  {
@@ -5582,11 +5484,8 @@
   "uids": "an8.30",
   "lines": 116,
   "segments": 101,
-  "unsure": 2,
-  "unsureKeys": [
-   "an8.30:5.1@0.98",
-   "an8.30:12.1@0.95"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 9,
   "merged": 1,
   "elided": 8,
@@ -5599,11 +5498,8 @@
   "uids": "an8.39",
   "lines": 28,
   "segments": 23,
-  "unsure": 2,
-  "unsureKeys": [
-   "an8.39:4.2@0.56",
-   "an8.39:7.3@0.87"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -5630,10 +5526,8 @@
   "uids": "an8.51",
   "lines": 89,
   "segments": 73,
-  "unsure": 1,
-  "unsureKeys": [
-   "an8.51:23.3@0.45"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 3,
   "elided": 9,
@@ -5758,10 +5652,8 @@
   "uids": "an8.80",
   "lines": 88,
   "segments": 74,
-  "unsure": 1,
-  "unsureKeys": [
-   "an8.80:16.3@0.70"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 0,
   "elided": 7,
@@ -5788,10 +5680,8 @@
   "uids": "an8.9",
   "lines": 35,
   "segments": 32,
-  "unsure": 1,
-  "unsureKeys": [
-   "an8.9:1.2@0.95"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -6195,12 +6085,12 @@
   "file": "sutta/dn/dn1.html",
   "uids": "dn1",
   "lines": 660,
-  "segments": 594,
+  "segments": 593,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 53,
+  "joined": 54,
   "merged": 10,
-  "elided": 43,
+  "elided": 44,
   "long": 5,
   "unmatched": 5,
   "ratio": 1.46
@@ -6210,14 +6100,8 @@
   "uids": "dn11",
   "lines": 197,
   "segments": 165,
-  "unsure": 5,
-  "unsureKeys": [
-   "dn11:9-66.7@0.34",
-   "dn11:9-66.8@0.57",
-   "dn11:9-66.9@0.33",
-   "dn11:76.1@0.83",
-   "dn11:78.1@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 5,
   "elided": 7,
@@ -6230,12 +6114,8 @@
   "uids": "dn12",
   "lines": 187,
   "segments": 157,
-  "unsure": 3,
-  "unsureKeys": [
-   "dn12:9.5@0.42",
-   "dn12:13.2@0.65",
-   "dn12:63-77.3@0.59"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 2,
   "elided": 6,
@@ -6248,11 +6128,8 @@
   "uids": "dn15",
   "lines": 275,
   "segments": 226,
-  "unsure": 2,
-  "unsureKeys": [
-   "dn15:12.2@0.98",
-   "dn15:23.7@0.56"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 33,
   "merged": 5,
   "elided": 28,
@@ -6265,17 +6142,8 @@
   "uids": "dn16",
   "lines": 1662,
   "segments": 1477,
-  "unsure": 8,
-  "unsureKeys": [
-   "dn16:1.31.1@0.93",
-   "dn16:1.31.3@0.92",
-   "dn16:1.34.5@0.90",
-   "dn16:3.8.14@0.54",
-   "dn16:3.8.15@0.40",
-   "dn16:4.23.2@0.42",
-   "dn16:5.1.5@0.39",
-   "dn16:6.15.5@0.71"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 132,
   "merged": 20,
   "elided": 112,
@@ -6288,17 +6156,8 @@
   "uids": "dn2",
   "lines": 648,
   "segments": 551,
-  "unsure": 8,
-  "unsureKeys": [
-   "dn2:12.4@0.58",
-   "dn2:14.1@0.46",
-   "dn2:18.7@0.42",
-   "dn2:21.7@0.42",
-   "dn2:24.7@0.42",
-   "dn2:27.7@0.42",
-   "dn2:30.7@0.42",
-   "dn2:33.10@0.43"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 60,
   "merged": 6,
   "elided": 54,
@@ -6311,12 +6170,8 @@
   "uids": "dn20",
   "lines": 335,
   "segments": 307,
-  "unsure": 3,
-  "unsureKeys": [
-   "dn20:5.15@0.34",
-   "dn20:10.2@0.92",
-   "dn20:22.7@0.34"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 27,
   "merged": 15,
   "elided": 12,
@@ -6370,15 +6225,12 @@
   "file": "sutta/dn/dn29.html",
   "uids": "dn29",
   "lines": 463,
-  "segments": 364,
-  "unsure": 2,
-  "unsureKeys": [
-   "dn29:34.16@0.59",
-   "dn29:34.17@0.92"
-  ],
-  "joined": 52,
+  "segments": 363,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 53,
   "merged": 17,
-  "elided": 35,
+  "elided": 36,
   "long": 6,
   "unmatched": 1,
   "ratio": 1.24
@@ -6402,11 +6254,8 @@
   "uids": "dn34",
   "lines": 892,
   "segments": 779,
-  "unsure": 2,
-  "unsureKeys": [
-   "dn34:1.6.4@0.68",
-   "dn34:2.3.94@0.42"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 39,
   "merged": 11,
   "elided": 28,
@@ -6419,11 +6268,8 @@
   "uids": "dn9",
   "lines": 472,
   "segments": 363,
-  "unsure": 2,
-  "unsureKeys": [
-   "dn9:5.9@0.75",
-   "dn9:32.14@0.46"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 35,
   "merged": 11,
   "elided": 24,
@@ -6436,11 +6282,8 @@
   "uids": "dhp1-20",
   "lines": 91,
   "segments": 82,
-  "unsure": 2,
-  "unsureKeys": [
-   "dhp3:3@0.90",
-   "dhp19:2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 0,
   "elided": 8,
@@ -6453,10 +6296,8 @@
   "uids": "dhp100-115",
   "lines": 69,
   "segments": 55,
-  "unsure": 1,
-  "unsureKeys": [
-   "dhp114:1@0.98"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 6,
   "elided": 7,
@@ -6623,10 +6464,8 @@
   "uids": "dhp256-272",
   "lines": 71,
   "segments": 56,
-  "unsure": 1,
-  "unsureKeys": [
-   "dhp272:1@0.56"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 15,
   "merged": 2,
   "elided": 13,
@@ -6667,10 +6506,8 @@
   "uids": "dhp306-319",
   "lines": 59,
   "segments": 55,
-  "unsure": 1,
-  "unsureKeys": [
-   "dhp307:2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 1,
   "elided": 2,
@@ -6711,10 +6548,8 @@
   "uids": "dhp334-359",
   "lines": 109,
   "segments": 100,
-  "unsure": 1,
-  "unsureKeys": [
-   "dhp338:2@0.41"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 3,
   "elided": 5,
@@ -6741,10 +6576,8 @@
   "uids": "dhp383-423",
   "lines": 228,
   "segments": 163,
-  "unsure": 1,
-  "unsureKeys": [
-   "dhp403:2@0.93"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 14,
   "merged": 2,
   "elided": 12,
@@ -6967,11 +6800,8 @@
   "uids": "iti91",
   "lines": 27,
   "segments": 19,
-  "unsure": 2,
-  "unsureKeys": [
-   "iti91:2.5@0.41",
-   "iti91:5.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 0,
   "elided": 7,
@@ -7026,15 +6856,13 @@
   "uids": "iti95",
   "lines": 27,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti95:6.1@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 0,
   "elided": 6,
   "long": 1,
-  "unmatched": 1,
+  "unmatched": 0,
   "ratio": 1.07
  },
  {
@@ -7126,10 +6954,8 @@
   "uids": "iti102",
   "lines": 21,
   "segments": 15,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti102:4.2@0.71"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -7254,10 +7080,8 @@
   "uids": "iti111",
   "lines": 29,
   "segments": 21,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti111:7.1@0.99"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 3,
   "elided": 3,
@@ -7284,10 +7108,8 @@
   "uids": "iti14",
   "lines": 15,
   "segments": 10,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti14:2.2@0.38"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -7356,10 +7178,8 @@
   "uids": "iti19",
   "lines": 16,
   "segments": 12,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti19:3.3@0.44"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -7400,10 +7220,8 @@
   "uids": "iti22",
   "lines": 28,
   "segments": 22,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti22:2.6@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 1,
   "elided": 5,
@@ -7570,10 +7388,8 @@
   "uids": "iti34",
   "lines": 17,
   "segments": 15,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti34:3.1@0.98"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -7586,11 +7402,8 @@
   "uids": "iti35",
   "lines": 17,
   "segments": 13,
-  "unsure": 2,
-  "unsureKeys": [
-   "iti35:2.3@0.61",
-   "iti35:3.1@0.31"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -7771,14 +7584,8 @@
   "uids": "iti48",
   "lines": 21,
   "segments": 19,
-  "unsure": 5,
-  "unsureKeys": [
-   "iti48:2.6@0.55",
-   "iti48:3.1@0.64",
-   "iti48:3.2@0.96",
-   "iti48:4.2@0.92",
-   "iti48:5.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -8113,11 +7920,8 @@
   "uids": "iti72",
   "lines": 17,
   "segments": 13,
-  "unsure": 2,
-  "unsureKeys": [
-   "iti72:3.3@0.90",
-   "iti72:3.4@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -8144,11 +7948,8 @@
   "uids": "iti74",
   "lines": 43,
   "segments": 32,
-  "unsure": 2,
-  "unsureKeys": [
-   "iti74:5.6@0.70",
-   "iti74:7.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 1,
   "elided": 9,
@@ -8175,10 +7976,8 @@
   "uids": "iti76",
   "lines": 41,
   "segments": 35,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti76:6.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -8205,10 +8004,8 @@
   "uids": "iti78",
   "lines": 29,
   "segments": 16,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti78:8.4@0.81"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 0,
   "elided": 8,
@@ -8263,10 +8060,8 @@
   "uids": "iti82",
   "lines": 29,
   "segments": 24,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti82:5.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -8279,10 +8074,8 @@
   "uids": "iti83",
   "lines": 48,
   "segments": 40,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti83:12.4@0.88"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 2,
   "elided": 6,
@@ -8323,10 +8116,8 @@
   "uids": "iti86",
   "lines": 15,
   "segments": 10,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti86:4.3@0.89"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -8339,10 +8130,8 @@
   "uids": "iti87",
   "lines": 23,
   "segments": 17,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti87:4.4@0.88"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 0,
   "elided": 5,
@@ -8369,10 +8158,8 @@
   "uids": "iti89",
   "lines": 45,
   "segments": 27,
-  "unsure": 1,
-  "unsureKeys": [
-   "iti89:8.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 11,
   "merged": 1,
   "elided": 10,
@@ -8385,10 +8172,8 @@
   "uids": "snp1.1",
   "lines": 69,
   "segments": 64,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp1.1:14.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 2,
   "elided": 2,
@@ -8415,10 +8200,8 @@
   "uids": "snp1.11",
   "lines": 57,
   "segments": 51,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp1.11:10.3@0.34"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 3,
   "elided": 3,
@@ -8431,11 +8214,8 @@
   "uids": "snp1.12",
   "lines": 74,
   "segments": 64,
-  "unsure": 2,
-  "unsureKeys": [
-   "snp1.12:3.3@0.88",
-   "snp1.12:4.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -8462,10 +8242,8 @@
   "uids": "snp1.3",
   "lines": 165,
   "segments": 163,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp1.3:36.3@0.92"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -8492,10 +8270,8 @@
   "uids": "snp1.5",
   "lines": 38,
   "segments": 33,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp1.5:8.2@0.88"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 1,
   "elided": 3,
@@ -8522,10 +8298,8 @@
   "uids": "snp1.7",
   "lines": 133,
   "segments": 127,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp1.7:31.3@0.73"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -8566,13 +8340,8 @@
   "uids": "snp2.1",
   "lines": 90,
   "segments": 87,
-  "unsure": 4,
-  "unsureKeys": [
-   "snp2.1:12.2@0.88",
-   "snp2.1:16.2@0.90",
-   "snp2.1:17.2@0.88",
-   "snp2.1:18.2@0.88"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -8641,10 +8410,8 @@
   "uids": "snp2.14",
   "lines": 130,
   "segments": 109,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp2.14:3.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 1,
   "elided": 9,
@@ -8727,10 +8494,8 @@
   "uids": "snp2.7",
   "lines": 155,
   "segments": 137,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp2.7:34.3@0.83"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 17,
   "merged": 2,
   "elided": 15,
@@ -8771,10 +8536,8 @@
   "uids": "snp3.1",
   "lines": 81,
   "segments": 74,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp3.1:20.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 2,
   "elided": 4,
@@ -8787,11 +8550,8 @@
   "uids": "snp3.10",
   "lines": 138,
   "segments": 127,
-  "unsure": 2,
-  "unsureKeys": [
-   "snp3.10:4.3@0.48",
-   "snp3.10:30.2@0.69"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 2,
   "elided": 6,
@@ -8804,12 +8564,8 @@
   "uids": "snp3.11",
   "lines": 184,
   "segments": 172,
-  "unsure": 3,
-  "unsureKeys": [
-   "snp3.11:3.2@0.90",
-   "snp3.11:9.3@0.91",
-   "snp3.11:35.2@0.92"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 11,
   "merged": 3,
   "elided": 8,
@@ -8822,11 +8578,8 @@
   "uids": "snp3.12",
   "lines": 313,
   "segments": 281,
-  "unsure": 2,
-  "unsureKeys": [
-   "snp3.12:10.4@0.90",
-   "snp3.12:57.1@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 14,
   "merged": 7,
   "elided": 7,
@@ -8839,10 +8592,8 @@
   "uids": "snp3.2",
   "lines": 103,
   "segments": 98,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp3.2:23.3@0.88"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 1,
   "elided": 3,
@@ -8869,12 +8620,8 @@
   "uids": "snp3.4",
   "lines": 158,
   "segments": 151,
-  "unsure": 3,
-  "unsureKeys": [
-   "snp3.4:1.7@0.43",
-   "snp3.4:6.2@0.36",
-   "snp3.4:32.1@0.84"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 1,
   "elided": 5,
@@ -8887,12 +8634,8 @@
   "uids": "snp3.5",
   "lines": 124,
   "segments": 113,
-  "unsure": 3,
-  "unsureKeys": [
-   "snp3.5:7.1@0.57",
-   "snp3.5:24.1@0.53",
-   "snp3.5:28.3@0.42"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 4,
   "elided": 6,
@@ -8905,14 +8648,8 @@
   "uids": "snp3.6",
   "lines": 221,
   "segments": 197,
-  "unsure": 5,
-  "unsureKeys": [
-   "snp3.6:19.1@0.36",
-   "snp3.6:21.4@0.34",
-   "snp3.6:33.3@0.30",
-   "snp3.6:37.1@0.50",
-   "snp3.6:45.4@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 23,
   "merged": 5,
   "elided": 18,
@@ -8924,15 +8661,12 @@
   "file": "sutta/kn/snp/vagga3/snp3.7.html",
   "uids": "snp3.7",
   "lines": 204,
-  "segments": 186,
-  "unsure": 2,
-  "unsureKeys": [
-   "snp3.7:6.4@0.48",
-   "snp3.7:34.3@0.98"
-  ],
-  "joined": 16,
+  "segments": 187,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 15,
   "merged": 2,
-  "elided": 14,
+  "elided": 13,
   "long": 1,
   "unmatched": 3,
   "ratio": 1.15
@@ -8956,10 +8690,8 @@
   "uids": "snp3.9",
   "lines": 290,
   "segments": 267,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp3.9:69.3@0.76"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 22,
   "merged": 3,
   "elided": 19,
@@ -9028,10 +8760,8 @@
   "uids": "snp4.13",
   "lines": 81,
   "segments": 78,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp4.13:13.2@0.36"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 1,
   "elided": 2,
@@ -9058,10 +8788,8 @@
   "uids": "snp4.15",
   "lines": 82,
   "segments": 79,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp4.15:7.4@0.63"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -9074,10 +8802,8 @@
   "uids": "snp4.16",
   "lines": 99,
   "segments": 77,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp4.16:1.3@0.38"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 2,
   "elided": 8,
@@ -9160,10 +8886,8 @@
   "uids": "snp4.7",
   "lines": 43,
   "segments": 39,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp4.7:8.2@0.95"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -9204,10 +8928,8 @@
   "uids": "snp5.1",
   "lines": 231,
   "segments": 214,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp5.1:50.2@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 17,
   "merged": 3,
   "elided": 14,
@@ -9290,10 +9012,8 @@
   "uids": "snp5.15",
   "lines": 23,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp5.15:4.2@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -9362,10 +9082,8 @@
   "uids": "snp5.3",
   "lines": 17,
   "segments": 16,
-  "unsure": 1,
-  "unsureKeys": [
-   "snp5.3:3.4@0.56"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -9378,11 +9096,8 @@
   "uids": "snp5.4",
   "lines": 37,
   "segments": 30,
-  "unsure": 2,
-  "unsureKeys": [
-   "snp5.4:1.5@0.92",
-   "snp5.4:2.5@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 4,
   "elided": 2,
@@ -9717,10 +9432,8 @@
   "uids": "thag1.21",
   "lines": 5,
   "segments": 4,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag1.21:1.4@0.38"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -10153,10 +9866,8 @@
   "uids": "thag10.5",
   "lines": 41,
   "segments": 38,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag10.5:10.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -10295,10 +10006,8 @@
   "uids": "thag16.4",
   "lines": 101,
   "segments": 96,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag16.4:18.3@0.92"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 2,
   "elided": 2,
@@ -10339,10 +10048,8 @@
   "uids": "thag17.2",
   "lines": 153,
   "segments": 135,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag17.2:24.2@0.38"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 17,
   "merged": 1,
   "elided": 16,
@@ -10355,11 +10062,8 @@
   "uids": "thag18.1",
   "lines": 173,
   "segments": 156,
-  "unsure": 2,
-  "unsureKeys": [
-   "thag18.1:29.3@0.80",
-   "thag18.1:39.6@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 11,
   "merged": 3,
   "elided": 8,
@@ -10400,10 +10104,8 @@
   "uids": "thag2.16",
   "lines": 10,
   "segments": 10,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag2.16:2.2@0.36"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -10668,10 +10370,8 @@
   "uids": "thag3.5",
   "lines": 13,
   "segments": 12,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag3.5:3.2@0.39"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -10698,10 +10398,8 @@
   "uids": "thag4.10",
   "lines": 17,
   "segments": 16,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag4.10:3.4@0.91"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -10896,10 +10594,8 @@
   "uids": "thag6.9",
   "lines": 25,
   "segments": 21,
-  "unsure": 1,
-  "unsureKeys": [
-   "thag6.9:3.1@0.95"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -11024,10 +10720,8 @@
   "uids": "thig13.1",
   "lines": 77,
   "segments": 69,
-  "unsure": 1,
-  "unsureKeys": [
-   "thig13.1:5.2@0.49"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 1,
   "elided": 7,
@@ -11068,11 +10762,8 @@
   "uids": "thig14.1",
   "lines": 138,
   "segments": 126,
-  "unsure": 2,
-  "unsureKeys": [
-   "thig14.1:4.2@0.90",
-   "thig14.1:9.3@0.93"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 4,
   "elided": 6,
@@ -11211,10 +10902,8 @@
   "uids": "thig5.4",
   "lines": 21,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "thig5.4:3.4@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -11311,10 +11000,8 @@
   "uids": "thig6.5",
   "lines": 25,
   "segments": 22,
-  "unsure": 1,
-  "unsureKeys": [
-   "thig6.5:2.4@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -11439,12 +11126,8 @@
   "uids": "ud1.10",
   "lines": 77,
   "segments": 64,
-  "unsure": 3,
-  "unsureKeys": [
-   "ud1.10:6.4@0.96",
-   "ud1.10:7.4@0.96",
-   "ud1.10:11.2@0.42"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 0,
   "elided": 6,
@@ -11527,10 +11210,8 @@
   "uids": "ud1.7",
   "lines": 11,
   "segments": 9,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud1.7:3.2@0.42"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -11683,10 +11364,8 @@
   "uids": "ud2.8",
   "lines": 91,
   "segments": 83,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud2.8:5.3@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -11825,10 +11504,8 @@
   "uids": "ud3.8",
   "lines": 29,
   "segments": 19,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud3.8:2.2@0.33"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -11897,11 +11574,8 @@
   "uids": "ud4.3",
   "lines": 24,
   "segments": 21,
-  "unsure": 2,
-  "unsureKeys": [
-   "ud4.3:2.2@0.58",
-   "ud4.3:5.4@0.71"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -11970,10 +11644,8 @@
   "uids": "ud4.8",
   "lines": 71,
   "segments": 64,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud4.8:9.2@0.55"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -12170,10 +11842,8 @@
   "uids": "ud6.2",
   "lines": 32,
   "segments": 24,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud6.2:3.2@0.54"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -12354,10 +12024,8 @@
   "uids": "ud7.5",
   "lines": 15,
   "segments": 14,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud7.5:2.2@0.56"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -12370,10 +12038,8 @@
   "uids": "ud7.6",
   "lines": 12,
   "segments": 9,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud7.6:4.3@0.58"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -12498,10 +12164,8 @@
   "uids": "ud8.5",
   "lines": 98,
   "segments": 94,
-  "unsure": 1,
-  "unsureKeys": [
-   "ud8.5:2.3@0.59"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 2,
   "elided": 1,
@@ -12570,12 +12234,8 @@
   "uids": "mn1",
   "lines": 332,
   "segments": 180,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn1:50.2@0.63",
-   "mn1:74.2@0.62",
-   "mn1:170.2@0.61"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 147,
   "merged": 22,
   "elided": 125,
@@ -12586,18 +12246,10 @@
  {
   "file": "sutta/mn/mn10.html",
   "uids": "mn10",
-  "stale": [
-   "mn10:4.11"
-  ],
   "lines": 233,
   "segments": 186,
-  "unsure": 4,
-  "unsureKeys": [
-   "mn10:4.11@0.65",
-   "mn10:32.10@0.55",
-   "mn10:45.2@0.79",
-   "mn10:45.3@0.75"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 23,
   "merged": 1,
   "elided": 22,
@@ -12610,10 +12262,8 @@
   "uids": "mn101",
   "lines": 360,
   "segments": 287,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn101:7.24@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 36,
   "merged": 13,
   "elided": 23,
@@ -12640,11 +12290,8 @@
   "uids": "mn105",
   "lines": 186,
   "segments": 176,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn105:5.11@0.49",
-   "mn105:25.9@0.40"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 3,
   "elided": 2,
@@ -12699,10 +12346,8 @@
   "uids": "mn109",
   "lines": 115,
   "segments": 104,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn109:4.2@0.64"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 9,
   "merged": 0,
   "elided": 9,
@@ -12715,10 +12360,8 @@
   "uids": "mn11",
   "lines": 130,
   "segments": 114,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn11:16.8@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 7,
   "elided": 5,
@@ -12745,11 +12388,8 @@
   "uids": "mn111",
   "lines": 95,
   "segments": 90,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn111:18.2@0.40",
-   "mn111:20.2@0.40"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -12790,10 +12430,8 @@
   "uids": "mn118",
   "lines": 152,
   "segments": 136,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn118:33.1@0.84"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 0,
   "elided": 8,
@@ -12806,10 +12444,8 @@
   "uids": "mn119",
   "lines": 188,
   "segments": 169,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn119:3.1@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 0,
   "elided": 7,
@@ -12822,9 +12458,8 @@
   "uids": "mn12",
   "lines": 370,
   "segments": 331,
-  "unsure": 3,
+  "unsure": 2,
   "unsureKeys": [
-   "mn12:8.16@0.92",
    "mn12:38.1@0.31",
    "mn12:39.1@0.31"
   ],
@@ -12882,10 +12517,8 @@
   "uids": "mn125",
   "lines": 143,
   "segments": 128,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn125:17-21.1@0.61"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 2,
   "elided": 4,
@@ -12898,15 +12531,8 @@
   "uids": "mn126",
   "lines": 179,
   "segments": 154,
-  "unsure": 6,
-  "unsureKeys": [
-   "mn126:11.8@0.50",
-   "mn126:12.8@0.57",
-   "mn126:13.8@0.57",
-   "mn126:15.8@0.53",
-   "mn126:17.8@0.57",
-   "mn126:18.8@0.55"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 17,
   "merged": 0,
   "elided": 17,
@@ -12919,19 +12545,13 @@
   "uids": "mn128",
   "lines": 277,
   "segments": 231,
-  "unsure": 5,
-  "unsureKeys": [
-   "mn128:7.2@0.50",
-   "mn128:7.8@0.48",
-   "mn128:11.3@0.73",
-   "mn128:20.4@0.32",
-   "mn128:21.4@0.33"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 23,
   "merged": 5,
   "elided": 18,
   "long": 5,
-  "unmatched": 3,
+  "unmatched": 4,
   "ratio": 1.17
  },
  {
@@ -12953,12 +12573,8 @@
   "uids": "mn130",
   "lines": 201,
   "segments": 184,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn130:18.3@0.64",
-   "mn130:18.10@0.64",
-   "mn130:19.3@0.64"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 1,
   "elided": 7,
@@ -12985,12 +12601,8 @@
   "uids": "mn133",
   "lines": 230,
   "segments": 156,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn133:2.14@0.79",
-   "mn133:6.2@0.74",
-   "mn133:12.3@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 5,
   "elided": 7,
@@ -13031,11 +12643,8 @@
   "uids": "mn137",
   "lines": 193,
   "segments": 174,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn137:22.2@0.91",
-   "mn137:23.2@0.92"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 18,
   "merged": 7,
   "elided": 11,
@@ -13062,10 +12671,8 @@
   "uids": "mn14",
   "lines": 142,
   "segments": 120,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn14:5.5@0.44"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 6,
   "elided": 4,
@@ -13078,12 +12685,8 @@
   "uids": "mn140",
   "lines": 237,
   "segments": 214,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn140:10.3@0.43",
-   "mn140:21.4@0.45",
-   "mn140:22.4@0.48"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 5,
   "elided": 8,
@@ -13152,12 +12755,8 @@
   "uids": "mn148",
   "lines": 225,
   "segments": 180,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn148:10.3@0.53",
-   "mn148:10.18@0.51",
-   "mn148:10.24@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 26,
   "merged": 5,
   "elided": 21,
@@ -13170,11 +12769,8 @@
   "uids": "mn149",
   "lines": 103,
   "segments": 91,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn149:11.3@0.63",
-   "mn149:21.1@0.65"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 6,
   "elided": 2,
@@ -13187,10 +12783,8 @@
   "uids": "mn151",
   "lines": 107,
   "segments": 70,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn151:12.3@0.65"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 9,
   "merged": 0,
   "elided": 9,
@@ -13245,10 +12839,8 @@
   "uids": "mn19",
   "lines": 121,
   "segments": 114,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn19:23.3@0.47"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 1,
   "elided": 5,
@@ -13259,9 +12851,6 @@
  {
   "file": "sutta/mn/mn2.html",
   "uids": "mn2",
-  "stale": [
-   "mn2:16.1"
-  ],
   "lines": 123,
   "segments": 101,
   "unsure": 0,
@@ -13277,16 +12866,14 @@
   "file": "sutta/mn/mn20.html",
   "uids": "mn20",
   "lines": 85,
-  "segments": 64,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn20:4.1@0.48"
-  ],
-  "joined": 4,
+  "segments": 65,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 3,
   "merged": 1,
-  "elided": 3,
+  "elided": 2,
   "long": 0,
-  "unmatched": 1,
+  "unmatched": 2,
   "ratio": 1.33
  },
  {
@@ -13308,10 +12895,8 @@
   "uids": "mn22",
   "lines": 357,
   "segments": 306,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn22:20.1@0.52"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 16,
   "merged": 6,
   "elided": 10,
@@ -13337,12 +12922,9 @@
   "file": "sutta/mn/mn25.html",
   "uids": "mn25",
   "lines": 197,
-  "segments": 128,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn25:9.3@0.81",
-   "mn25:11.8@0.31"
-  ],
+  "segments": 127,
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 20,
   "merged": 6,
   "elided": 14,
@@ -13355,11 +12937,8 @@
   "uids": "mn26",
   "lines": 363,
   "segments": 338,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn26:4.7@0.55",
-   "mn26:20.9@0.79"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 23,
   "merged": 3,
   "elided": 20,
@@ -13400,10 +12979,8 @@
   "uids": "mn29",
   "lines": 179,
   "segments": 154,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn29:5.14@0.59"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -13416,10 +12993,8 @@
   "uids": "mn30",
   "lines": 161,
   "segments": 120,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn30:5.1@0.58"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 2,
   "elided": 2,
@@ -13432,12 +13007,8 @@
   "uids": "mn31",
   "lines": 145,
   "segments": 121,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn31:6.3@0.62",
-   "mn31:17.6@0.34",
-   "mn31:20.5@0.58"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 6,
   "elided": 7,
@@ -13478,11 +13049,8 @@
   "uids": "mn36",
   "lines": 358,
   "segments": 319,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn36:20.4@0.93",
-   "mn36:29.3@0.95"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 31,
   "merged": 4,
   "elided": 27,
@@ -13537,10 +13105,8 @@
   "uids": "mn4",
   "lines": 163,
   "segments": 127,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn4:14.6@0.59"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -13553,11 +13119,8 @@
   "uids": "mn40",
   "lines": 69,
   "segments": 55,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn40:6.2@0.87",
-   "mn40:13.3@0.45"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -13570,10 +13133,8 @@
   "uids": "mn41",
   "lines": 120,
   "segments": 107,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn41:18-42.34@0.73"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 0,
   "elided": 5,
@@ -13642,13 +13203,8 @@
   "uids": "mn49",
   "lines": 162,
   "segments": 155,
-  "unsure": 4,
-  "unsureKeys": [
-   "mn49:4.3@0.39",
-   "mn49:26.4@0.68",
-   "mn49:28.3@0.38",
-   "mn49:30.12@0.66"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 2,
   "elided": 4,
@@ -13675,10 +13231,8 @@
   "uids": "mn51",
   "lines": 188,
   "segments": 168,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn51:28.2@0.32"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 4,
   "elided": 8,
@@ -13733,10 +13287,8 @@
   "uids": "mn55",
   "lines": 78,
   "segments": 76,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn55:13.6@0.76"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -13763,10 +13315,8 @@
   "uids": "mn57",
   "lines": 112,
   "segments": 105,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn57:8.5@0.40"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 2,
   "elided": 3,
@@ -13779,10 +13329,8 @@
   "uids": "mn58",
   "lines": 93,
   "segments": 74,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn58:6.10@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -13823,13 +13371,8 @@
   "uids": "mn60",
   "lines": 292,
   "segments": 269,
-  "unsure": 4,
-  "unsureKeys": [
-   "mn60:13.1@0.85",
-   "mn60:32.1@0.95",
-   "mn60:38.3@0.62",
-   "mn60:56.2@0.31"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 0,
   "elided": 7,
@@ -13870,13 +13413,8 @@
   "uids": "mn63",
   "lines": 180,
   "segments": 112,
-  "unsure": 4,
-  "unsureKeys": [
-   "mn63:3.50@0.34",
-   "mn63:6.2@0.74",
-   "mn63:6.18@1.00",
-   "mn63:6.19@0.67"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 22,
   "merged": 2,
   "elided": 20,
@@ -13957,31 +13495,32 @@
  {
   "file": "sutta/mn/mn70.html",
   "uids": "mn70",
-  "lines": 201,
-  "segments": 141,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn70:6.7@0.90"
+  "stale": [
+   "mn70:12.1"
   ],
-  "joined": 42,
+  "lines": 201,
+  "segments": 142,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 41,
   "merged": 3,
-  "elided": 39,
+  "elided": 38,
   "long": 8,
-  "unmatched": 1,
+  "unmatched": 2,
   "ratio": 1.13
  },
  {
   "file": "sutta/mn/mn72.html",
   "uids": "mn72",
   "lines": 159,
-  "segments": 99,
+  "segments": 100,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 14,
+  "joined": 13,
   "merged": 1,
-  "elided": 13,
+  "elided": 12,
   "long": 1,
-  "unmatched": 0,
+  "unmatched": 1,
   "ratio": 1.09
  },
  {
@@ -14017,10 +13556,8 @@
   "uids": "mn77",
   "lines": 388,
   "segments": 326,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn77:5.10@0.45"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 33,
   "merged": 2,
   "elided": 31,
@@ -14033,11 +13570,8 @@
   "uids": "mn78",
   "lines": 160,
   "segments": 143,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn78:4.2@0.54",
-   "mn78:9.3@0.49"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 1,
   "elided": 3,
@@ -14053,13 +13587,9 @@
   ],
   "lines": 432,
   "segments": 349,
-  "unsure": 5,
+  "unsure": 1,
   "unsureKeys": [
-   "mn82:6.3@0.51",
-   "mn82:7.19@0.57",
-   "mn82:10.9@0.49",
-   "mn82:38.1@0.48",
-   "mn82:42.2@0.73"
+   "mn82:7.19@0.57"
   ],
   "joined": 62,
   "merged": 3,
@@ -14073,12 +13603,8 @@
   "uids": "mn85",
   "lines": 551,
   "segments": 479,
-  "unsure": 3,
-  "unsureKeys": [
-   "mn85:43.4@0.57",
-   "mn85:44.9@0.81",
-   "mn85:44.21@0.86"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 31,
   "merged": 3,
   "elided": 28,
@@ -14091,10 +13617,8 @@
   "uids": "mn86",
   "lines": 206,
   "segments": 193,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn86:14.8@0.30"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 2,
   "elided": 8,
@@ -14106,13 +13630,11 @@
   "file": "sutta/mn/mn87.html",
   "uids": "mn87",
   "lines": 148,
-  "segments": 132,
-  "unsure": 1,
-  "unsureKeys": [
-   "mn87:6.14@0.49"
-  ],
-  "joined": 3,
-  "merged": 0,
+  "segments": 131,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 4,
+  "merged": 1,
   "elided": 3,
   "long": 1,
   "unmatched": 1,
@@ -14165,11 +13687,8 @@
   "uids": "mn93",
   "lines": 242,
   "segments": 189,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn93:17.3@0.47",
-   "mn93:19.3@0.83"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 25,
   "merged": 4,
   "elided": 21,
@@ -14182,11 +13701,8 @@
   "uids": "mn95",
   "lines": 303,
   "segments": 253,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn95:5.3@0.54",
-   "mn95:35.2@0.83"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -14199,11 +13715,8 @@
   "uids": "mn97",
   "lines": 230,
   "segments": 143,
-  "unsure": 2,
-  "unsureKeys": [
-   "mn97:15.1@0.48",
-   "mn97:27.10@0.44"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 2,
   "elided": 11,
@@ -14286,10 +13799,8 @@
   "uids": "sn1.20",
   "lines": 105,
   "segments": 66,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn1.20:23.1@0.76"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -14316,10 +13827,8 @@
   "uids": "sn1.25",
   "lines": 22,
   "segments": 22,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn1.25:2.4@0.75"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -14836,11 +14345,8 @@
   "uids": "sn12.20",
   "lines": 61,
   "segments": 50,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn12.20:2.5@0.70",
-   "sn12.20:3.13@0.70"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -14923,13 +14429,8 @@
   "uids": "sn12.44",
   "lines": 42,
   "segments": 41,
-  "unsure": 4,
-  "unsureKeys": [
-   "sn12.44:3.3@0.63",
-   "sn12.44:3.4@0.51",
-   "sn12.44:5.3@0.63",
-   "sn12.44:5.4@0.51"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -14970,10 +14471,8 @@
   "uids": "sn12.51",
   "lines": 89,
   "segments": 75,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn12.51:24.2@0.34"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 0,
   "elided": 13,
@@ -15028,10 +14527,8 @@
   "uids": "sn12.62",
   "lines": 33,
   "segments": 29,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn12.62:3.7@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -15142,11 +14639,8 @@
   "uids": "sn12.70",
   "lines": 177,
   "segments": 156,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn12.70:4.5@0.48",
-   "sn12.70:4.9@0.93"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 2,
   "elided": 8,
@@ -15215,10 +14709,8 @@
   "uids": "sn15.10",
   "lines": 37,
   "segments": 28,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn15.10:2.5@0.52"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -15259,10 +14751,8 @@
   "uids": "sn15.13",
   "lines": 32,
   "segments": 31,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn15.13:3.15@0.52"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -15289,10 +14779,8 @@
   "uids": "sn15.3",
   "lines": 21,
   "segments": 20,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn15.3:2.15@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -15319,10 +14807,8 @@
   "uids": "sn15.6",
   "lines": 16,
   "segments": 15,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn15.6:2.10@0.57"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -15544,12 +15030,12 @@
   "file": "sutta/sn/sn2/sn2.26.html",
   "uids": "sn2.26",
   "lines": 26,
-  "segments": 23,
+  "segments": 24,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 2,
+  "joined": 1,
   "merged": 0,
-  "elided": 2,
+  "elided": 1,
   "long": 0,
   "unmatched": 2,
   "ratio": 1.26
@@ -15867,11 +15353,8 @@
   "uids": "sn22.1",
   "lines": 91,
   "segments": 77,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn22.1:5.5@0.31",
-   "sn22.1:13.4@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 12,
   "merged": 4,
   "elided": 8,
@@ -15968,10 +15451,8 @@
   "uids": "sn22.131",
   "lines": 12,
   "segments": 7,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.131:1.2@0.78"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 1,
   "elided": 3,
@@ -16068,10 +15549,8 @@
   "uids": "sn22.2",
   "lines": 84,
   "segments": 68,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.2:8.15@0.59"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 8,
   "merged": 1,
   "elided": 7,
@@ -16252,10 +15731,8 @@
   "uids": "sn22.48",
   "lines": 18,
   "segments": 15,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.48:1.2@0.66"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -16282,10 +15759,8 @@
   "uids": "sn22.53",
   "lines": 19,
   "segments": 17,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.53:3.7@0.60"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 1,
   "elided": 0,
@@ -16298,10 +15773,8 @@
   "uids": "sn22.54",
   "lines": 30,
   "segments": 28,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.54:4.7@0.73"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 1,
   "elided": 0,
@@ -16510,10 +15983,8 @@
   "uids": "sn22.85",
   "lines": 194,
   "segments": 167,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn22.85:7.10@0.68"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 23,
   "merged": 9,
   "elided": 14,
@@ -17002,10 +16473,8 @@
   "uids": "sn3.11",
   "lines": 34,
   "segments": 26,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn3.11:9.4@0.36"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -17046,10 +16515,8 @@
   "uids": "sn3.15",
   "lines": 37,
   "segments": 25,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn3.15:3.2@0.51"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -17118,11 +16585,8 @@
   "uids": "sn3.21",
   "lines": 98,
   "segments": 88,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn3.21:14.1@0.90",
-   "sn3.21:20.1@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 4,
   "elided": 6,
@@ -17359,10 +16823,8 @@
   "uids": "sn35.117",
   "lines": 75,
   "segments": 44,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn35.117:8.6@0.31"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -17557,10 +17019,8 @@
   "uids": "sn35.23",
   "lines": 12,
   "segments": 11,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn35.23:1.9@0.35"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -17811,10 +17271,8 @@
   "uids": "sn35.74",
   "lines": 48,
   "segments": 46,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn35.74:14.1@0.72"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -17883,10 +17341,8 @@
   "uids": "sn35.88",
   "lines": 67,
   "segments": 53,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn35.88:4.1@0.56"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 11,
   "merged": 1,
   "elided": 10,
@@ -18011,10 +17467,8 @@
   "uids": "sn36.23",
   "lines": 16,
   "segments": 15,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn36.23:2.8@0.53"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -18447,10 +17901,8 @@
   "uids": "sn41.10",
   "lines": 43,
   "segments": 32,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn41.10:2.18@0.70"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 0,
   "elided": 3,
@@ -18463,10 +17915,8 @@
   "uids": "sn41.3",
   "lines": 70,
   "segments": 61,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn41.3:8.8@0.61"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 1,
   "elided": 3,
@@ -18477,18 +17927,13 @@
  {
   "file": "sutta/sn/sn41/sn41.4.html",
   "uids": "sn41.4",
-  "stale": [
-   "sn41.4:4.7"
-  ],
   "lines": 44,
-  "segments": 40,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn41.4:6.9@0.50"
-  ],
-  "joined": 2,
+  "segments": 39,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 3,
   "merged": 1,
-  "elided": 1,
+  "elided": 2,
   "long": 0,
   "unmatched": 0,
   "ratio": 1.14
@@ -18540,11 +17985,8 @@
   "uids": "sn42.11",
   "lines": 52,
   "segments": 45,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn42.11:2.22@0.37",
-   "sn42.11:5.5@0.37"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 6,
   "merged": 0,
   "elided": 6,
@@ -18571,10 +18013,8 @@
   "uids": "sn42.3",
   "lines": 30,
   "segments": 29,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn42.3:3.8@0.83"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -18587,10 +18027,8 @@
   "uids": "sn42.6",
   "lines": 42,
   "segments": 41,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn42.6:8.6@0.86"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -18603,10 +18041,8 @@
   "uids": "sn42.7",
   "lines": 44,
   "segments": 42,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn42.7:5.3@0.74"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -18619,10 +18055,8 @@
   "uids": "sn42.8",
   "lines": 102,
   "segments": 73,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn42.8:10.1@0.57"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -18705,10 +18139,8 @@
   "uids": "sn44.3",
   "lines": 43,
   "segments": 25,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn44.3:4.19@0.42"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 2,
   "elided": 1,
@@ -19155,10 +18587,8 @@
   "uids": "sn46.54",
   "lines": 84,
   "segments": 59,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn46.54:1.2@0.51"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -19199,11 +18629,8 @@
   "uids": "sn47.10",
   "lines": 73,
   "segments": 51,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn47.10:6.8@0.74",
-   "sn47.10:7.9@0.74"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 10,
   "merged": 2,
   "elided": 8,
@@ -19398,10 +18825,8 @@
   "uids": "sn47.42",
   "lines": 12,
   "segments": 11,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn47.42:1.3@0.61"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -19582,10 +19007,8 @@
   "uids": "sn48.43",
   "lines": 28,
   "segments": 25,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn48.43:3.1@0.54"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 1,
   "elided": 1,
@@ -19724,10 +19147,8 @@
   "uids": "sn5.2",
   "lines": 23,
   "segments": 23,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn5.2:2.2@0.32"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -19768,10 +19189,8 @@
   "uids": "sn5.5",
   "lines": 26,
   "segments": 25,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn5.5:1.3@0.63"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -19784,10 +19203,8 @@
   "uids": "sn5.6",
   "lines": 23,
   "segments": 23,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn5.6:4.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -19828,11 +19245,8 @@
   "uids": "sn5.9",
   "lines": 27,
   "segments": 27,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn5.9:5.2@0.90",
-   "sn5.9:6.3@0.89"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -19859,10 +19273,8 @@
   "uids": "sn51.14",
   "lines": 36,
   "segments": 30,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn51.14:3.3@0.51"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 4,
   "merged": 0,
   "elided": 4,
@@ -19875,10 +19287,8 @@
   "uids": "sn51.15",
   "lines": 42,
   "segments": 36,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn51.15:5.4@0.96"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -19961,10 +19371,8 @@
   "uids": "sn54.12",
   "lines": 47,
   "segments": 39,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn54.12:5.1@0.65"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 7,
   "merged": 0,
   "elided": 7,
@@ -19977,11 +19385,8 @@
   "uids": "sn54.13",
   "lines": 81,
   "segments": 65,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn54.13:10.4@0.67",
-   "sn54.13:15.2@0.86"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 13,
   "merged": 0,
   "elided": 13,
@@ -20050,10 +19455,8 @@
   "uids": "sn55.21",
   "lines": 27,
   "segments": 23,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn55.21:1.5@0.45"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 3,
   "merged": 1,
   "elided": 2,
@@ -20080,10 +19483,8 @@
   "uids": "sn55.23",
   "lines": 66,
   "segments": 35,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn55.23:2.5@0.53"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 2,
   "elided": 0,
@@ -20110,10 +19511,8 @@
   "uids": "sn55.26",
   "lines": 85,
   "segments": 63,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn55.26:19.4@0.79"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 0,
   "elided": 1,
@@ -20126,10 +19525,8 @@
   "uids": "sn55.27",
   "lines": 53,
   "segments": 43,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn55.27:8.5@0.41"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
@@ -20212,11 +19609,8 @@
   "uids": "sn55.40",
   "lines": 61,
   "segments": 52,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn55.40:5.8@0.53",
-   "sn55.40:6.8@0.53"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 1,
   "merged": 1,
   "elided": 0,
@@ -20550,14 +19944,12 @@
   "file": "sutta/sn/sn6/sn6.14.html",
   "uids": "sn6.14",
   "lines": 59,
-  "segments": 54,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn6.14:5.5@0.81"
-  ],
-  "joined": 5,
+  "segments": 55,
+  "unsure": 0,
+  "unsureKeys": [],
+  "joined": 4,
   "merged": 0,
-  "elided": 5,
+  "elided": 4,
   "long": 1,
   "unmatched": 0,
   "ratio": 1.39
@@ -20581,10 +19973,8 @@
   "uids": "sn6.2",
   "lines": 35,
   "segments": 30,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn6.2:5.1@0.62"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 1,
   "elided": 4,
@@ -20611,11 +20001,8 @@
   "uids": "sn7.14",
   "lines": 57,
   "segments": 57,
-  "unsure": 2,
-  "unsureKeys": [
-   "sn7.14:2.2@0.90",
-   "sn7.14:8.2@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 0,
   "merged": 0,
   "elided": 0,
@@ -20670,10 +20057,8 @@
   "uids": "sn7.2",
   "lines": 44,
   "segments": 39,
-  "unsure": 1,
-  "unsureKeys": [
-   "sn7.2:7.3@0.90"
-  ],
+  "unsure": 0,
+  "unsureKeys": [],
   "joined": 5,
   "merged": 0,
   "elided": 5,

@@ -1,0 +1,386 @@
+## sn25.1
+sn25.1:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.1:1.2 | S: “Mendicants, the eye is impermanent, decaying, and perishing. | T: “Monks, the eye is inconstant, changeable, alterable.
+sn25.1:1.3 | S: The ear, | T: The ear…
+sn25.1:1.4 | S: nose, | T: The nose…
+sn25.1:1.5 | S: tongue, | T: The tongue…
+sn25.1:1.6 | S: body, | T: The body…
+sn25.1:1.7 | S: and mind are impermanent, decaying, and perishing. | T: The mind is inconstant, changeable, alterable.
+sn25.1:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. They’ve stepped into the sure path, they’ve stepped into the level of the true person, and they’ve passed beyond the level of the untrue person. | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill.
+sn25.1:1.9 | S: They can’t do any deed which would make them be reborn in hell, the animal realm, or the ghost realm. | T: He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts.
+sn25.1:1.10 | S: They can’t die without realizing the fruit of stream-entry. | T: He is incapable of passing away until he has realized the fruit of stream-entry.
+sn25.1:2.1 | S: Someone who accepts these teachings after deliberating them with a degree of wisdom is called a follower of teachings. They’ve stepped into the sure path, they’ve stepped into the level of the true person, and they’ve passed beyond the level of the untrue person. | T: “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill.
+sn25.1:2.2 | S: They can’t do any deed which would make them be reborn in hell, the animal realm, or the ghost realm. | T: He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts.
+sn25.1:2.3 | S: They can’t die without realizing the fruit of stream-entry. | T: He is incapable of passing away until he has realized the fruit of stream-entry.
+sn25.1:2.4 | S: Someone who understands and sees these principles is called a stream-enterer, not liable to be reborn in the underworld, assured, destined for awakening.” | T: “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe, headed for self-awakening.”
+
+## sn25.2
+sn25.2:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.2:1.2 | S: “Mendicants, sights are impermanent, decaying, and perishing. | T: “Monks, forms are inconstant, changeable, alterable.
+sn25.2:1.3 | S: Sounds, | T: Sounds.…
+sn25.2:1.4 | S: smells, | T: Aromas.…
+sn25.2:1.5 | S: tastes, | T: Flavors.…
+sn25.2:1.6 | S: touches, | T: Tactile sensations.…
+sn25.2:1.7 | S: and ideas are impermanent, decaying, and perishing. | T: Ideas are inconstant, changeable, alterable.…
+sn25.2:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. They’ve stepped into the sure path, they’ve stepped into the level of the true person, and they’ve passed beyond the level of the untrue person. | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill.
+sn25.2:1.9 | S: They can’t do any deed which would make them be reborn in hell, the animal realm, or the ghost realm. | T: He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts.
+sn25.2:1.10 | S: They can’t die without realizing the fruit of stream-entry. | T: He is incapable of passing away until he has realized the fruit of stream-entry.
+sn25.2:2.1 | S: Someone who accepts these teachings after deliberating them with a degree of wisdom is called a follower of teachings. They’ve stepped into the sure path, they’ve stepped into the level of the true person, and they’ve passed beyond the level of the untrue person. | T: “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill.
+sn25.2:2.2 | S: They can’t do any deed which would make them be reborn in hell, the animal realm, or the ghost realm. | T: He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts.
+sn25.2:2.3 | S: They can’t die without realizing the fruit of stream-entry. | T: He is incapable of passing away until he has realized the fruit of stream-entry.
+sn25.2:2.4 | S: Someone who understands and sees these principles is called | T: “One who knows and sees that these phenomena are this way is called a stream-enterer,
+sn25.2:2.5 | S: a stream-enterer, not liable to be reborn in the underworld, assured, destined for awakening.” | T: steadfast, never again destined for states of woe, headed for self-awakening.”
+
+## sn25.3
+sn25.3:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.3:1.2 | S: “Mendicants, eye consciousness is impermanent, decaying, and perishing. | T: “Monks, eye-consciousness is inconstant, changeable, alterable.
+sn25.3:1.3 | S: Ear consciousness, | T: Ear-consciousness.…
+sn25.3:1.4 | S: nose consciousness, | T: Nose-consciousness.…
+sn25.3:1.5 | S: tongue consciousness, | T: Tongue-consciousness.…
+sn25.3:1.6 | S: body consciousness, | T: Body-consciousness.…
+sn25.3:1.7 | S: and mind consciousness are impermanent, decaying, and perishing. | T: Intellect-consciousness is inconstant, changeable, alterable.…
+sn25.3:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast,
+sn25.3:1.9 | P: sambodhiparāyano”ti. | T: never again destined for states of woe,
+sn25.3:1.10 | P: Tatiyaṁ. | T: headed for self-awakening.”
+
+## sn25.4
+sn25.4:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.4:1.2 | S: “Mendicants, eye contact is impermanent, decaying, and perishing. | T: “Monks, eye-contact is inconstant, changeable, alterable.
+sn25.4:1.3 | S: Ear contact, | T: Ear-contact.…
+sn25.4:1.4 | S: nose contact, | T: Nose-contact.…
+sn25.4:1.5 | S: tongue contact, | T: Tongue-contact.…
+sn25.4:1.6 | S: body contact, | T: Body-contact.…
+sn25.4:1.7 | S: and mind contact are impermanent, decaying, and perishing. | T: Intellect-contact is inconstant, changeable, alterable…
+sn25.4:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.4:1.10 | P: Catutthaṁ. | T: headed for self-awakening.”
+
+## sn25.5
+sn25.5:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.5:1.2 | S: “Mendicants, feeling born of eye contact is impermanent, decaying, and perishing. | T: “Monks, feeling born of eye-contact is inconstant, changeable, alterable.
+sn25.5:1.3 | S: Feeling born of ear contact, | T: Feeling born of ear-contact.…
+sn25.5:1.4 | S: feeling born of nose contact, | T: Feeling born of nose-contact.…
+sn25.5:1.5 | S: feeling born of tongue contact, | T: Feeling born of tongue-contact.…
+sn25.5:1.6 | S: feeling born of body contact, | T: Feeling born of body-contact.…
+sn25.5:1.7 | S: and feeling born of mind contact are impermanent, decaying, and perishing. | T: Feeling born of intellect-contact is inconstant, changeable, alterable…
+sn25.5:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.5:1.9 | P: sambodhiparāyano’”ti. | T: headed for self-awakening.”
+
+## sn25.6
+sn25.6:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.6:1.2 | S: “Mendicants, perception of sights is impermanent, decaying, and perishing. | T: “Monks, perception of forms is inconstant, changeable, alterable.
+sn25.6:1.3 | S: Perception of sounds, | T: Perception of sounds.…
+sn25.6:1.4 | S: perception of smells, | T: Perception of smells.…
+sn25.6:1.5 | S: perception of tastes, | T: Perception of tastes.…
+sn25.6:1.6 | S: perception of touches, | T: Perception of tactile sensations.…
+sn25.6:1.7 | S: and perception of ideas are impermanent, decaying, and perishing. | T: Perception of ideas is inconstant, changeable, alterable.…
+sn25.6:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.6:1.9 | P: sambodhiparāyano’”ti. | T: headed for self-awakening.”
+
+## sn25.7
+sn25.7:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.7:1.2 | S: “Mendicants, intention regarding sights is impermanent, decaying, and perishing. | T: “Monks, intention for forms is inconstant, changeable, alterable.
+sn25.7:1.3 | S: Intention regarding sounds, | T: Intention for sounds.…
+sn25.7:1.4 | S: intention regarding smells, | T: Intention for smells.…
+sn25.7:1.5 | S: intention regarding tastes, | T: Intention for tastes.…
+sn25.7:1.6 | S: intention regarding touches, | T: Intention for tactile sensations.…
+sn25.7:1.7 | S: and intentions regarding ideas are impermanent, decaying, and perishing. | T: Intention for ideas is inconstant, changeable, alterable.…
+sn25.7:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.7:1.9 | P: sambodhiparāyano’”ti. | T: headed for self-awakening.”
+
+## sn25.8
+sn25.8:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.8:1.2 | S: “Mendicants, craving for sights is impermanent, decaying, and perishing. | T: “Monks, craving for forms is inconstant, changeable, alterable.
+sn25.8:1.3 | S: Craving for sounds, | T: Craving for sounds.…
+sn25.8:1.4 | S: craving for smells, | T: Craving for smells.…
+sn25.8:1.5 | S: craving for tastes, | T: Craving for tastes.…
+sn25.8:1.6 | S: craving for touches, | T: Craving for tactile sensations.…
+sn25.8:1.7 | S: and craving for ideas are impermanent, decaying, and perishing. | T: Craving for ideas is inconstant, changeable, alterable.…
+sn25.8:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.8:1.10 | P: Aṭṭhamaṁ. | T: headed for self-awakening.”
+
+## sn25.9
+sn25.9:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn25.9:1.2 | S: “Mendicants, the earth element is impermanent, decaying, and perishing. | T: “Monks, the earth property is inconstant, changeable, alterable.
+sn25.9:1.3 | S: The water element, | T: The liquid property.…
+sn25.9:1.4 | S: the fire element, | T: The fire property.…
+sn25.9:1.5 | S: the air element, | T: The wind property.…
+sn25.9:1.6 | S: the space element, | T: The space property.…
+sn25.9:1.7 | S: and the consciousness element are impermanent, decaying, and perishing. | T: The consciousness property is inconstant, changeable, alterable.…
+sn25.9:1.8 | S: Someone who has faith and confidence in these teachings is called a follower by faith. …” | T: “One who has conviction & belief that these phenomena are this way is called a faith-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who, after pondering with a modicum of discernment, has accepted that these phenomena are this way is called a Dhamma-follower: one who has entered the orderliness of rightness, entered the plane of people of integrity, transcended the plane of the run-of-the-mill. He is incapable of doing any deed by which he might be reborn in hell, in the animal womb, or in the realm of hungry ghosts. He is incapable of passing away until he has realized the fruit of stream-entry. “One who knows and sees that these phenomena are this way is called a stream-enterer, steadfast, never again destined for states of woe,
+sn25.9:1.9 | P: sambodhiparāyano’”ti. | T: headed for self-awakening.”
+
+## sn27.1
+sn27.1:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.1:1.2 | S: “Mendicants, desire and greed for the eye, | T: “Monks, any desire-passion with regard to the eye is a defilement of the mind.
+sn27.1:1.3 | S: ear, | T: Any desire-passion with regard to the ear…
+sn27.1:1.4 | S: nose, | T: the nose…
+sn27.1:1.5 | S: tongue, | T: the tongue…
+sn27.1:1.6 | S: body, | T: the body…
+sn27.1:1.7 | S: or mind is a corruption of the mind. | T: the intellect is a defilement of the mind.
+sn27.1:1.8 | S: When a mendicant has given up mental corruption in these six cases, their mind inclines to renunciation. | T: When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation.
+sn27.1:1.9 | S: A mind imbued with renunciation is said to be fit for work regarding anything that can be realized by insight.” | T: The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn27.3
+sn27.3:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.3:1.2 | S: “Mendicants, desire and greed for eye consciousness, | T: “Monks, any desire-passion with regard to eye-consciousness is a defilement of the mind.
+sn27.3:1.3 | S: ear consciousness, | T: Any desire-passion with regard to ear-consciousness…
+sn27.3:1.4 | S: nose consciousness, | T: nose-consciousness…
+sn27.3:1.5 | S: tongue consciousness, | T: tongue-consciousness…
+sn27.3:1.6 | S: body consciousness, | T: body-consciousness…
+sn27.3:1.7 | S: or mind consciousness is a corruption of the mind. | T: intellect-consciousness is a defilement of the mind.
+sn27.3:1.8 | S: When a mendicant has given up mental corruption in these six cases, their mind inclines to renunciation. | T: When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation.
+sn27.3:1.9 | S: A mind imbued with renunciation is said to be fit for work regarding anything that can be realized by insight.” | T: The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn27.4
+sn27.4:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.4:1.2 | S: “Mendicants, desire and greed for eye contact, | T: “Monks, any desire-passion with regard to contact at the eye is a defilement of the mind.
+sn27.4:1.3 | S: ear contact, | T: Any desire-passion with regard to contact at the ear…
+sn27.4:1.4 | S: nose contact, | T: contact at the nose…
+sn27.4:1.5 | S: tongue contact, | T: contact at the tongue…
+sn27.4:1.6 | S: body contact, | T: contact at the body…
+sn27.4:1.7 | S: or mind contact is a corruption of the mind. …” | T: contact at the intellect is a defilement of the mind. When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation. The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn27.5
+sn27.5:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.5:1.2 | S: “Mendicants, desire and greed for feeling born of eye contact, | T: “Monks, any desire-passion with regard to feeling born of contact at the eye is a defilement of the mind.
+sn27.5:1.3 | S: feeling born of ear contact, | T: Any desire-passion with regard to feeling born of contact at the ear…
+sn27.5:1.4 | S: feeling born of nose contact, | T: feeling born of contact at the nose…
+sn27.5:1.5 | S: feeling born of tongue contact, | T: feeling born of contact at the tongue…
+sn27.5:1.6 | S: feeling born of body contact, | T: feeling born of contact at the body…
+sn27.5:1.7 | S: or feeling born of mind contact is a defilement of the mind. …” | T: feeling born of contact at the intellect is a defilement of the mind. When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation. The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn27.7
+sn27.7:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.7:1.2 | S: “Mendicants, desire and greed for intention regarding sights, | T: “Monks, any desire-passion with regard to intentions involving forms is a defilement of the mind.
+sn27.7:1.3 | S: intention regarding sounds, | T: Any desire-passion with regard to intentions involving sounds…
+sn27.7:1.4 | S: intention regarding smells, | T: intentions involving aromas…
+sn27.7:1.5 | S: intention regarding tastes, | T: intentions involving flavors…
+sn27.7:1.6 | S: intention regarding touches, | T: intentions involving tactile sensations…
+sn27.7:1.7 | S: or intention regarding ideas is a corruption of the mind. …” | T: intentions involving ideas is a defilement of the mind. When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation. The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn27.8
+sn27.8:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn27.8:1.2 | S: “Mendicants, desire and greed for craving for sights, | T: “Monks, any desire-passion with regard to craving for forms is a defilement of the mind.
+sn27.8:1.3 | S: craving for sounds, | T: Any desire-passion with regard to craving for sounds…
+sn27.8:1.4 | S: craving for smells, | T: craving for aromas…
+sn27.8:1.5 | S: craving for tastes, | T: craving for flavors…
+sn27.8:1.6 | S: craving for touches, | T: craving for tactile sensations…
+sn27.8:1.7 | S: or craving for ideas is a corruption of the mind. …” | T: craving for ideas is a defilement of the mind. When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation. The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
+
+## sn3.10
+sn3.10:1.1 | S: Now at that time a large group of people had been put in shackles by King Pasenadi of Kosala—some in ropes, some in manacles, some in chains. | T: At Sāvatthī. Now on that occasion a great group of people had been put into bondage by King Pasenadi Kosala—some with ropes, some with wooden shackles, some with chains.
+sn3.10:2.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and—carrying their bowls & outer robes—went into Sāvatthī for alms.
+sn3.10:2.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One,
+sn3.10:2.3 | P: “idha, bhante, raññā pasenadinā kosalena mahājanakāyo bandhāpito, appekacce rajjūhi appekacce andūhi appekacce saṅkhalikāhī”ti. | T: “Lord, a great group of people has now been put into bondage by King Pasenadi Kosala—some with ropes, some with wooden shackles, some with chains.”
+sn3.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha recited these verses: | T: Then, on realizing the significance of that, the Blessed One on that occasion spoke these verses:
+sn3.10:4.1 | S: “The attentive say that shackle is not strong | T: That’s not a strong bond —so say the enlightened—
+sn3.10:4.2 | S: that’s made of iron, wood, or knots. | T: the one made of iron, of wood, or of grass.
+sn3.10:4.3 | S: But obsession with jeweled earrings, | T: To be smitten, enthralled, with jewels & ornaments,
+sn3.10:4.4 | S: concern for your partners and children: | T: longing for children & wives:
+sn3.10:5.1 | S: this, say the attentive, is a strong shackle | T: That’s the strong bond, —so say the enlightened—
+sn3.10:5.2 | S: dragging the indulgent down, hard to escape. | T: one that’s constraining, elastic, hard to untie.
+sn3.10:5.3 | S: Having cut this one too they go forth, | T: But having cut it, they —the enlightened—go forth,
+sn3.10:5.4 | S: unconcerned, having given up sensual pleasures.” | T: free of longing, abandoning sensual ease.
+
+## sn3.13
+sn3.13:1.1 | S: At Sāvatthī. | T: Dwelling at Sāvatthī…
+sn3.13:1.2 | S: Now at that time King Pasenadi of Kosala used to eat boiled rice by the bucketful. | T: Now, on that occasion King Pasenadi of Kosala ate a gallon-measure of rice.
+sn3.13:1.3 | S: Then after eating King Pasenadi of Kosala went up to the Buddha, huffing and puffing. He bowed and sat down to one side. | T: Then, having just finished his meal and breathing heavily, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+sn3.13:2.1 | S: Then, knowing that King Pasenadi was huffing and puffing after eating, on that occasion the Buddha spoke this verse: | T: Then the Blessed One, sensing that King Pasenadi of Kosala had just finished his meal and was breathing heavily, recited this verse:
+sn3.13:3.1 | S: “When a man is always mindful, | T: For a person always mindful,
+sn3.13:3.2 | S: knowing moderation in eating, | T: knowing moderation in the food he’s obtained,
+sn3.13:3.3 | S: his discomfort fades, | T: his pains grow slender;
+sn3.13:3.4 | S: and he ages slowly, taking care of his life.” | T: gradually he ages, guarding his life.
+sn3.13:4.1 | S: Now at that time the student Sudassana was standing behind the king. | T: Now, on that occasion the young brahman Sudassana was standing behind King Pasenadi of Kosala.
+sn3.13:4.2 | S: Then King Pasenadi addressed him, | T: So the king addressed him,
+sn3.13:4.3 | S: “Please, dear Sudassana, memorize this verse in the Buddha’s presence and recite it to me whenever I am served a meal. | T: “Come now, my dear Sudassana. Having learned this verse in the Blessed One’s presence, recite it during the time I am taking my meal,
+sn3.13:4.4 | S: I’ll set up a regular daily allowance of a hundred dollars for you.” | T: and I will bestow on you a daily stipend of one hundred kahapaṇa.”
+sn3.13:4.5 | S: “Yes, Your Majesty,” replied Sudassana. He memorized that verse in the Buddha’s presence, and then whenever the king was served a meal he would repeat it: | T: Saying, “As you say, your majesty,” the young brahman Sudassana and learning the verse in the Blessed One’s presence, he recited it during the time when King Pasenadi was taking his meal:
+sn3.13:5.1 | S: “When a man is always mindful, | T: For a person always mindful,
+sn3.13:5.2 | S: knowing moderation in eating, | T: knowing moderation in the food he’s obtained,
+sn3.13:5.3 | S: his discomfort fades, | T: his pains grow slender;
+sn3.13:5.4 | S: and he ages slowly, taking care of his life.” | T: gradually he ages, guarding his life.
+sn3.13:6.1 | S: Then the king gradually got used to having at most a cup of rice. | T: Then King Pasenadi of Kosala step-by-step restrained himself to at most a quart-measure of rice.
+sn3.13:6.2 | S: After some time King Pasenadi’s body slimmed right down. Stroking his limbs with his hands, at that time he expressed this heartfelt sentiment: | T: At a later time, when he had become quite slim, he stroked his limbs with his hand and exclaimed,
+sn3.13:6.3 | S: “In both ways the Buddha has sympathy for me: | T: “O, how the Blessed One has shown sympathy for my benefit of both sorts:
+sn3.13:6.4 | S: in the good of this life and the good of lives to come.” | T: for that in the present life, and that in the life to come!”
+
+## sn3.14
+sn3.14:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī.
+sn3.14:1.2 | S: Then King Ajātasattu of Magadha, son of the princess of Videha, mobilized an army of four divisions and marched to Kāsi to attack King Pasenadi of Kosala. | T: Then King Ajātasattu of Magadha, the son of Queen Videha, raising a fourfold army, marched toward Kāsi against King Pasenadi Kosala. King Pasenadi heard, “King Ajātasattu of Magadha, the son of Queen Videha,
+sn3.14:1.3 | S: When King Pasenadi heard of this, | T: they say,
+sn3.14:1.5 | S: he mobilized an army of four divisions and marched to Kāsi to defend it against Ajātasattu. | T: has raised a fourfold army and is marching toward Kāsi against me.” So King Pasenadi, raising a fourfold army, launched a counter-attack toward Kāsi against King Ajātasattu.
+sn3.14:1.6 | S: Then the two kings met in battle. | T: Then King Ajātasattu & King Pasenadi fought a battle,
+sn3.14:1.7 | S: And in that battle Ajātasattu defeated Pasenadi, | T: and in that battle King Ajātasattu defeated King Pasenadi.
+sn3.14:1.8 | S: who withdrew to his own capital at Sāvatthī. | T: King Pasenadi, defeated, marched back to his capital at Sāvatthī.
+sn3.14:2.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks, having adjusted their lower robes, and taking their bowls & outer robes, went into Sāvatthī for alms.
+sn3.14:2.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. Then the Buddha said: | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One:
+sn3.14:3.1 | P: “Idha, bhante, rājā māgadho ajātasattu vedehiputto caturaṅginiṁ senaṁ sannayhitvā rājānaṁ pasenadiṁ kosalaṁ abbhuyyāsi yena kāsi. | T: “Just now, lord, King Ajātasattu of Magadha, the son of Queen Videha, raising a fourfold army, marched toward Kāsi against King Pasenadi Kosala.
+sn3.14:3.2 | P: Assosi kho, bhante, rājā pasenadi kosalo: | T: King Pasenadi heard,
+sn3.14:3.3 | P: ‘rājā kira māgadho ajātasattu vedehiputto caturaṅginiṁ senaṁ sannayhitvā mamaṁ abbhuyyāto yena kāsī’ti. | T: ‘King Ajātasattu of Magadha, the son of Queen Videha, they say, has raised a fourfold army and is marching toward Kāsi against me.’
+sn3.14:3.4 | P: Atha kho, bhante, rājā pasenadi kosalo caturaṅginiṁ senaṁ sannayhitvā rājānaṁ māgadhaṁ ajātasattuṁ vedehiputtaṁ paccuyyāsi yena kāsi. | T: So King Pasenadi, raising a fourfold army, launched a counter-attack toward Kāsi against King Ajātasattu.
+sn3.14:3.5 | P: Atha kho, bhante, rājā ca māgadho ajātasattu vedehiputto rājā ca pasenadi kosalo saṅgāmesuṁ. | T: Then King Ajātasattu & King Pasenadi fought a battle,
+sn3.14:3.6 | P: Tasmiṁ kho pana, bhante, saṅgāme rājā māgadho ajātasattu vedehiputto rājānaṁ pasenadiṁ kosalaṁ parājesi. | T: and in that battle King Ajātasattu defeated King Pasenadi.
+sn3.14:3.7 | P: Parājito ca, bhante, rājā pasenadi kosalo sakameva rājadhāniṁ sāvatthiṁ paccuyyāsī”ti. | T: King Pasenadi, defeated, marched back to his capital at Sāvatthī.”
+sn3.14:4.1 | S: “Mendicants, King Ajātasattu has bad friends, companions, and associates. | T: “Monks, King Ajātasattu has evil friends, evil comrades, evil companions,
+sn3.14:4.2 | S: But King Pasenadi has good friends, companions, and associates. | T: whereas King Pasenadi has fine friends, fine comrades, fine companions.
+sn3.14:4.3 | S: Yet on this day King Pasenadi will have a bad night’s sleep as one defeated.” | T: Yet for now, King Pasenadi will lie down tonight in pain, defeated.”
+sn3.14:4.4 | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.14:5.1 | S: “Victory breeds enmity; | T: “Winning gives birth to hostility.
+sn3.14:5.2 | S: the defeated sleep badly. | T: Losing, one lies down in pain.
+sn3.14:5.3 | S: The peaceful sleep at ease, | T: The calmed lie down with ease,
+sn3.14:5.4 | S: having left victory and defeat behind.” | T: having set winning & losing aside.”
+
+## sn3.6
+sn3.6:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn3.6:1.2 | S: Seated to one side, King Pasenadi said to the Buddha, | T: As he was sitting to one side, King Pasenadi Kosala said to the Blessed One:
+sn3.6:1.3 | S: “Just now, sir, as I was in private retreat this thought came to mind: | T: “Just now, lord, while I was alone in seclusion, this train of thought arose in my awareness:
+sn3.6:1.4 | S: ‘Few are the sentient beings in the world who, when they obtain luxury possessions, don’t grow indulgent and negligent, giving in to greed for sensual pleasures, and doing the wrong thing by others. | T: ‘Few are those people in the world who, when acquiring lavish wealth, don’t become intoxicated & heedless, don’t become greedy for sensuality, and don’t mistreat other beings. Many more are those who, when acquiring lavish wealth, become intoxicated & heedless, become greedy for sensuality, and mistreat other beings.’” “That’s the way it is, great king! That’s the way it is! Few are those people in the world who, when acquiring lavish wealth, don’t become intoxicated & heedless, don’t become greedy for sensuality, and don’t mistreat other beings.
+sn3.6:1.5 | S: There are many more who, when they obtain luxury possessions, do grow indulgent and negligent, giving in to greed for sensual pleasures, and doing the wrong thing by others.’” | T: Many more are those who, when acquiring lavish wealth, become intoxicated & heedless, become greedy for sensuality, and mistreat other beings.”
+sn3.6:2.1 | S: “That’s so true, Great King! That’s so true!” said the Buddha. And he repeated the king’s statement, adding: | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.6:3.1 | S: “Full of desire for possessions and pleasures, | T: “Impassioned with sensual possessions,
+sn3.6:3.2 | S: greedy, infatuated by sensual pleasures; | T: greedy, dazed by sensual pleasures,
+sn3.6:3.3 | S: they don’t notice that they’ve gone too far, | T: they don’t awaken to the fact that they’ve gone too far—
+sn3.6:3.4 | S: like deer ensnared in a trap set out. | T: like deer into a trap laid out.
+sn3.6:3.5 | S: It’ll be bitter later on; | T: Afterwards it’s bitter for them:
+sn3.6:3.6 | S: for the result will be bad for them.” | T: Evil for them the result.”
+
+## sn3.7
+sn3.7:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn3.7:1.2 | S: Seated to one side, King Pasenadi said to the Buddha, | T: As he was sitting to one side, King Pasenadi Kosala said to the Blessed One:
+sn3.7:1.3 | S: “Sir, when I’m sitting in court I see well-to-do aristocrats, brahmins, and householders—rich, affluent, and wealthy, with lots of gold and silver, lots of property and assets, and lots of money and grain. But they tell deliberate lies for the sake of sensual pleasures. | T: “Just now, lord, as I was sitting in judgment, I saw that even affluent nobles, affluent brahmans, & affluent householders—rich, with great wealth & property, with vast amounts of gold & silver, vast amounts of valuables & commodities, vast amounts of wealth & grain—tell deliberate lies with sensuality as the cause, sensuality as the reason, simply for the sake of sensuality.
+sn3.7:1.4 | S: Then it occurred to me: | T: Then, the thought occurred to me:
+sn3.7:1.5 | S: ‘Enough with passing judgment today. Now my dearest will be known by the judgments he makes.’” | T: ‘I’ve had enough of this judging! Let some other fine fellow be known for his judgments!’”
+sn3.7:2.1 | S: “That’s so true, Great King! That’s so true! | T: “That’s the way it is, great king! That’s the way it is!
+sn3.7:2.2 | S: Those who are well-to-do aristocrats, brahmins, and householders tell deliberate lies for the sake of sensual pleasures. | T: Even affluent nobles, affluent brahmans, & affluent householders… tell deliberate lies with sensuality as the cause, sensuality as the reason, simply for the sake of sensuality.
+sn3.7:2.3 | S: That is for their lasting harm and suffering.” | T: That will lead to their long-term harm & pain.”
+sn3.7:2.4 | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.7:3.1 | S: “Full of desire for possessions and pleasures, | T: “Impassioned with sensual possessions,
+sn3.7:3.2 | S: greedy, infatuated by sensual pleasures; | T: greedy, dazed by sensual pleasures,
+sn3.7:3.3 | S: they don’t notice that they’ve gone too far, | T: they don’t awaken to the fact that they’ve gone too far—
+sn3.7:3.4 | S: like fish swiftly snared. | T: like fish into a trap set out.
+sn3.7:3.5 | S: It’ll be bitter later on; | T: Afterwards it’s bitter for them:
+sn3.7:3.6 | S: for the result will be bad for them.” | T: Evil for them the result.”
+
+## sn3.8
+sn3.8:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn3.8:1.2 | S: Now at that time King Pasenadi of Kosala was upstairs in the royal longhouse together with Queen Mallikā. | T: On that occasion King Pasenadi Kosala had gone with Queen Mallikā to the upper palace.
+sn3.8:1.3 | S: Then the king said to the queen, | T: Then he said to her,
+sn3.8:1.4 | S: “Mallikā, is there anyone more dear to you than yourself?” | T: “Mallikā, is there anyone dearer to you than yourself?”
+sn3.8:1.5 | S: “No, Great King, there isn’t. | T: “No, great king. There is no one dearer to me than myself. And what about you, great king?
+sn3.8:1.6 | S: But is there anyone more dear to you than yourself?” | T: Is there anyone dearer to you than yourself?”
+sn3.8:1.7 | S: “For me also, Mallikā, there’s no one.” | T: “No, Mallikā. There is no one dearer to me than myself.”
+sn3.8:2.1 | S: Then King Pasenadi of Kosala came downstairs from the stilt longhouse, went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then the king, descending from the palace, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One, “Just now, lord, when I had gone with Queen Mallikā to the upper palace, I said to her,
+sn3.8:2.3 | P: ‘atthi nu kho te, mallike, kocañño attanā piyataro’ti? | T: ‘Mallikā, is there anyone dearer to you than yourself?’
+sn3.8:2.4 | P: Evaṁ vutte, bhante, mallikā devī maṁ etadavoca: | T: “When this was said, she said to me,
+sn3.8:2.5 | P: ‘natthi kho me, mahārāja, kocañño attanā piyataro. | T: ‘No, great king. There is no one dearer to me than myself.
+sn3.8:2.6 | P: Tuyhaṁ pana, mahārāja, atthañño koci attanā piyataro’ti? | T: And what about you, great king? Is there anyone dearer to you than yourself?’
+sn3.8:2.7 | P: Evaṁ vuttāhaṁ, bhante, mallikaṁ deviṁ etadavocaṁ: | T: “When this was said, I said to her,
+sn3.8:2.8 | P: ‘mayhampi kho, mallike, natthañño koci attanā piyataro’”ti. | T: ‘No, Mallikā. There is no one dearer to me than myself.’”
+sn3.8:3.1 | S: Then, understanding this matter, on that occasion the Buddha spoke this verse: | T: Then, on realizing the significance of that, the Blessed One at that time said this verse:
+sn3.8:4.1 | S: “Having explored every quarter with the mind, | T: “Searching all directions with your awareness,
+sn3.8:4.2 | S: one finds no one dearer than oneself. | T: you find no one dearer than yourself.
+sn3.8:4.3 | S: Likewise for others, each holds themselves dear; | T: In the same way, others are thickly dear to themselves. So you shouldn’t hurt others
+sn3.8:4.4 | S: so one who desires self-knowledge <j>would harm no other.” | T: if you love yourself.”
+
+## sn35.109
+sn35.109:1.1 | S: “Mendicants, I will teach you the things that tighten the fetters, and the fetter. | T: Near Sāvatthi. There the Blessed One said, “Monks, I will teaching you the phenomena that are conducive to fettering and the fetter.
+sn35.109:1.2 | S: Listen … | T: Listen & pay close attention. I will speak.”
+sn35.109:1.3 | S: What are the things that tighten the fetters? And what is the fetter? | T: “As you say, lord, the monks responded to him. The Blessed One said, “And which are the phenomena conducive to fettering? And which is the fetter?
+sn35.109:1.4 | S: The eye is something that tightens the fetters. | T: “The eye, monks, is a phenomenon conducive to fettering.
+sn35.109:1.5 | S: The desire and greed for it is the fetter. | T: Whatever desire-passion is there, that is the fetter there.
+sn35.109:1.6 | S: The ear … nose … tongue … body … | T: “The ear is a phenomenon conducive to fettering. Whatever desire-passion is there, that is the fetter there. “The nose is a phenomenon conducive to fettering. Whatever desire-passion is there, that is the fetter there. “The tongue is a phenomenon conducive to fettering. Whatever desire-passion is there, that is the fetter there. “The body is a phenomenon conducive to fettering. Whatever desire-passion is there, that is the fetter there.
+sn35.109:1.7 | S: mind is something that tightens the fetters. | T: “The intellect is a phenomenon conducive to fettering.
+sn35.109:1.8 | S: The desire and greed for it is the fetter. | T: Whatever desire-passion is there, that is the fetter there.
+sn35.109:1.9 | S: These are called the things that tighten the fetters, and this is the fetter.” | T: “These are called the phenomena conducive to fettering. This is the fetter.”
+
+## sn35.110
+sn35.110:1.1 | S: “Mendicants, I will teach you the things that fuel grasping, and the grasping. | T: Near Sāvatthī. There the Blessed One said, “Monks, I will teach you clingable phenomena & clinging.
+sn35.110:1.2 | S: Listen … | T: Listen & pay close attention. I will speak.”
+sn35.110:1.3 | S: What are the things that fuel grasping? And what is the grasping? | T: “As you say, lord,” the monks responded to him. The Blessed One said, “And which, monks, are clingable phenomena? Which is the clinging?
+sn35.110:1.4 | S: The eye is something that fuels grasping. | T: “The eye is a clingable phenomenon.
+sn35.110:1.5 | S: The desire and greed for it is the grasping. | T: Whatever desire-passion is there, that is the clinging there. “The ear is a clingable phenomenon. Whatever desire-passion is there, that is the clinging there. “The nose is a clingable phenomenon. Whatever desire-passion is there, that is the clinging there. “The tongue is a clingable phenomenon. Whatever desire-passion is there, that is the clinging there.
+sn35.110:1.6 | S: The ear … nose … tongue … body … | T: “The body is a clingable phenomenon. Whatever desire-passion is there, that is the clinging there.
+sn35.110:1.7 | S: mind is something that fuels grasping. | T: “The intellect is a clingable phenomenon.
+sn35.110:1.8 | S: The desire and greed for it is the grasping. | T: Whatever desire-passion is there, that is the clinging there.
+sn35.110:1.9 | S: These are called the things that fuel grasping, and this is the grasping.” | T: “These are called clingable phenomena. This is the clinging.”
+
+## sn35.115
+sn35.115:1.1 | S: “Mendicants, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are forms, monks, cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.115:1.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.115:1.3 | S: they’re called a mendicant who is bound in sights known by the eye. They’re trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: he is said to be a monk fettered to forms cognizable by the eye. He has gone over to Māra’s camp; he has come under Māra’s power.
+sn35.115:1.4 | S: They’re bound by Māra’s bonds, and the Wicked One can do with them what he wants. | T: The Evil One can do with him as he will.
+sn35.115:2.1 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.115:2.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.115:2.3 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.115:2.4 | S: they’re called a mendicant who is bound in ideas known by the mind. They’re trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: he is said to be a monk fettered to ideas cognizable by the intellect. He has gone over to Māra’s camp; he has come under Māra’s power.
+sn35.115:2.5 | S: They’re bound by Māra’s bonds, and the Wicked One can do with them what he wants. | T: The Evil One can do with him as he will.
+sn35.115:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Now, there are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.115:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a monk does not relish them, welcome them, or remain fastened to them,
+sn35.115:3.3 | S: they’re called a mendicant who is freed from sights known by the eye. They’re not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: he is said to be a monk freed from forms cognizable by the eye. He has not gone over to Māra’s camp; he has not come under Māra’s power.
+sn35.115:3.4 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants. | T: The Evil One cannot do with him as he will.
+sn35.115:4.1 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.115:4.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.115:4.3 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a monk does not relish them, welcome them, or remain fastened to them,
+sn35.115:4.4 | S: they’re called a mendicant who is freed from ideas known by the mind. They’re not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: he is said to be a monk freed from ideas cognizable by the intellect. He has not gone over to Māra’s camp; he has not come under Māra’s power.
+sn35.115:4.5 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants.” | T: The Evil One cannot do with him as he will.”
+
+## sn35.116
+sn35.116:1.1 | S: “Mendicants, I say it’s not possible to know or see or reach the end of the world by traveling. | T: “Monks, I don’t say that one would know, see, or reach the end of the cosmos by traveling.
+sn35.116:1.2 | S: But I also say there’s no making an end of suffering without reaching the end of the world.” | T: But I also don’t say that there is a putting an end to stress without reaching the end of the cosmos.”
+sn35.116:1.3 | S: When he had spoken, the Blessed One rose from his seat and entered his dwelling. | T: Having said this, the Blessed One got up from his seat and went into his dwelling.
+sn35.116:1.4 | S: Soon after the Buddha left, those mendicants considered, | T: Then, not long after the Blessed One had left, this thought occurred to the monks:
+sn35.116:1.5 | S: “The Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail. … | T: “This brief statement the Blessed One made, after which he went into his dwelling without analyzing the detailed meaning—i.e.,
+sn35.116:1.6 | P: ‘“nāhaṁ, bhikkhave, gamanena lokassa antaṁ ñāteyyaṁ, daṭṭheyyaṁ, patteyyan”ti vadāmi. | T: ‘Monks, I don’t say that one would know, see, or reach the end of the cosmos by traveling.
+sn35.116:1.7 | P: Na ca panāhaṁ, bhikkhave, appatvā lokassa antaṁ dukkhassa antakiriyaṁ vadāmī’ti. | T: But I also don’t say that there is a putting an end to stress without reaching the end of the cosmos’:
+sn35.116:1.8 | S: Who can explain in detail the meaning of this brief summary recital given by the Buddha?” | T: now who might analyze the unanalyzed detailed meaning of this brief statement?”
+sn35.116:2.1 | S: Then those mendicants thought, | T: Then the thought occurred to them,
+sn35.116:2.2 | S: “This Venerable Ānanda is praised by the Buddha and esteemed by his sensible spiritual companions. | T: “Ven. Ānanda is praised by the Teacher and esteemed by his observant companions in the holy life.
+sn35.116:2.3 | S: He is capable of explaining in detail the meaning of this brief summary recital given by the Buddha. | T: He is capable of analyzing the unanalyzed detailed meaning of this brief statement.
+sn35.116:2.4 | S: Let’s go to him, and ask him about this matter.” | T: Suppose we were to go to him and, on arrival, cross-question him about this matter.”
+sn35.116:3.1 | S: Then those mendicants went to Ānanda and exchanged greetings with him. | T: So the monks went to Ven. Ānanda and, on arrival, exchanged courteous greetings with him.
+sn35.116:3.2 | S: When the greetings and polite conversation were over, they sat down to one side. They told him what had happened, and said, | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they [told him what had happened,
+sn35.116:4.9 | P: Tesaṁ no, āvuso, amhākaṁ etadahosi: | T: and added,]
+sn35.116:4.12 | P: Yannūna mayaṁ yenāyasmā ānando tenupasaṅkameyyāma; upasaṅkamitvā āyasmantaṁ ānandaṁ etamatthaṁ paṭipuccheyyāmā’ti. | T: “Analyze the meaning,
+sn35.116:4.13 | S: “May Venerable Ānanda please explain this.” | T: Ven. Ānanda!”
+sn35.116:5.1 | S: “Reverends, suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But he’d pass over the roots and trunk, imagining that the heartwood should be sought in the branches and leaves. | T: [He replied:] “Friends, it’s as if a man needing heartwood, looking for heartwood, wandering in search of heartwood—passing over the root & trunk of a standing tree possessing heartwood—were to imagine that heartwood should be sought among its branches & leaves.
+sn35.116:5.2 | S: Such is the consequence for the venerables. Though you were face to face with the Buddha, you bypassed him, imagining that you should ask me about this matter. | T: So it is with you, who—having bypassed the Blessed One when you were face to face with him, the Teacher—imagine that I should be asked about this matter.
+sn35.116:5.3 | S: For he is the Buddha, the one who knows and sees. He is vision, he is knowledge, he is the manifestation of principle, he is the manifestation of divinity. He is the preacher, the proclaimer, the elucidator of meaning, the bestower of freedom from death, the lord of truth, the Realized One. | T: For knowing, the Blessed One knows; seeing, he sees. He is the Eye, he is Knowledge, he is Dhamma, he is Brahmā. He is the speaker, the proclaimer, the elucidator of meaning, the giver of the deathless, the lord of the Dhamma, the Tathāgata.
+sn35.116:5.5 | S: That was the time to approach the Buddha and ask about this matter. | T: That was the time when you should have cross-questioned him about this matter.
+sn35.116:5.6 | S: You should have remembered it in line with the Buddha’s answer.” | T: However he answered, that was how you should have remembered it.”
+sn35.116:6.1 | S: “Certainly he is the Buddha, the one who knows and sees. He is vision, he is knowledge, he is the manifestation of principle, he is the manifestation of divinity. He is the preacher, the proclaimer, the elucidator of meaning, the bestower of freedom from death, the lord of truth, the Realized One. | T: “Yes, friend Ānanda: Knowing, the Blessed One knows; seeing, he sees. He is the Eye, he is Knowledge, he is Dhamma, he is Brahmā. He is the speaker, the proclaimer, the elucidator of meaning, the giver of the deathless, the lord of the Dhamma, the Tathāgata.
+sn35.116:6.3 | S: That was the time to approach the Buddha and ask about this matter. | T: That was the time when we should have cross-questioned him about this matter.
+sn35.116:6.4 | S: We should have remembered it in line with the Buddha’s answer. | T: However he answered, that was how we should have remembered it.
+sn35.116:6.5 | S: Still, Venerable Ānanda is praised by the Buddha and esteemed by his sensible spiritual companions. | T: But you are praised by the Teacher and esteemed by your observant companions in the holy life.
+sn35.116:6.6 | S: You are capable of explaining in detail the meaning of this brief summary recital given by the Buddha. | T: You are capable of analyzing the unanalyzed detailed meaning of this brief statement. Analyze the meaning,
+sn35.116:6.7 | S: Please explain this, if it’s no trouble.” | T: Ven. Ānanda without making it difficult!”
+sn35.116:7.1 | S: “Then listen and apply your mind well, I will speak.” | T: “In that case, my friends, listen & pay close attention. I will speak.”
+sn35.116:7.2 | S: “Yes, reverend,” they replied. | T: “As you say, friend,” the monks responded to him.
+sn35.116:7.3 | S: Ānanda said this: | T: Ven. Ānanda said this:
+sn35.116:8.1 | S: “Reverends, the Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail: | T: “Friends, concerning the brief statement the Blessed One made, after which he went into his dwelling without analyzing the detailed meaning—i.e.,
+sn35.116:8.2 | S: ‘Mendicants, I say it’s not possible to know or see or reach the end of the world by traveling. | T: ‘Monks, I don’t say that one would know, see, or reach the end of the cosmos by traveling.
+sn35.116:8.3 | S: But I also say there’s no making an end of suffering without reaching the end of the world.’ | T: But I also don’t say that there is a putting an end to stress without reaching the end of the cosmos’—
+sn35.116:8.4 | S: This is how I understand the detailed meaning of this summary recital. | T: I understand the detailed meaning to be this: That by means of which,
+sn35.116:8.5 | S: Whatever in the world through which you perceive the world and conceive the world | T: with regard to the cosmos, one is a perceiver of a cosmos, a conceiver of a cosmos,
+sn35.116:8.6 | S: is called the world in the training of the Noble One. | T: that, in the discipline of the noble is called ‘the cosmos.’
+sn35.116:8.7 | S: And through what in the world do you perceive the world and conceive the world? | T: And by means of what, with regard to the cosmos, is one a perceiver of a cosmos, a conceiver of a cosmos?
+sn35.116:8.8 | S: Through the eye in the world you perceive the world and conceive the world. | T: By means of the eye one is, with regard to the cosmos, a perceiver of a cosmos, a conceiver of a cosmos.
+sn35.116:8.9 | S: Through the ear … | T: By means of the ear…
+sn35.116:8.10 | S: nose … | T: the nose…
+sn35.116:8.11 | S: tongue … | T: the tongue…
+sn35.116:8.12 | S: body … | T: the body…
+sn35.116:8.13 | S: mind in the world you perceive the world and conceive the world. | T: the intellect one is, with regard to the cosmos, a perceiver of a cosmos, a conceiver of a cosmos.
+sn35.116:8.14 | S: Whatever in the world through which you perceive the world and conceive the world | T: That by means of which, with regard to the cosmos, one is a perceiver of a cosmos, a conceiver of a cosmos,
+sn35.116:8.15 | S: is called the world in the training of the Noble One. | T: that, in the discipline of the noble is called ‘the cosmos.’
+sn35.116:8.16 | S: Reverends, the Buddha gave this brief summary, then entered his dwelling without explaining the meaning in detail: | T: “So, concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—i.e.,
+sn35.116:8.17 | S: ‘Mendicants, I say it’s not possible to know or see or reach the end of the world by traveling. | T: ‘Monks, I don’t say that one would know, see, or reach the end of the cosmos by traveling.
+sn35.116:8.18 | S: But I also say there’s no making an end of suffering without reaching the end of the world.’ | T: But I also don’t say that there is a putting an end to stress without reaching the end of the cosmos’—
+sn35.116:8.19 | S: That is how I understand the detailed meaning of this summary. | T: this is how I understand the detailed meaning.
+sn35.116:8.20 | S: If you wish, you may go to the Buddha and ask him about this. | T: Now, friends, if you wish, having gone to the Blessed One, cross-question him about this matter.
+sn35.116:8.21 | S: You should remember it in line with the Buddha’s answer.” | T: However he answers is how you should remember it.”
+sn35.116:9.1 | S: “Yes, reverend,” replied those mendicants. Then they rose from their seats and went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then the monks, delighting in & approving of Ven. Ānanda’s words, got up from their seats and went to the Blessed One. On arrival, having bowed down to him, they sat to one side. As they were sitting there, they [told him what had happened after he had gone into his dwelling,
+sn35.116:10.14 | S: Then they said, “And Ānanda explained the meaning to us in this manner, with these words and phrases.” | T: and ended by saying,] “Then Ven. Ānanda analyzed the meaning using these words, these statements, these phrases.”
+sn35.116:11.1 | S: “Mendicants, Ānanda is astute, he has great wisdom. | T: “Ānanda is wise, monks. Ānanda is a person of great discernment.
+sn35.116:11.2 | S: If you came to me and asked this question, I would answer it in exactly the same way as Ānanda. | T: If you had asked me about this matter, I too would have answered in the same way he did.
+sn35.116:11.3 | S: That is what it means, and that’s how you should remember it.” | T: That is its meaning, and that is how you should remember it.”
+

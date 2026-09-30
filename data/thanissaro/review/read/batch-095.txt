@@ -1,0 +1,407 @@
+## thag10.1
+thag10.1:1.1 | S: “The trees are now crimson, venerable sir, | T: Covered in embers now are the trees, shedding their canopy, lord,
+thag10.1:1.2 | S: they’ve shed their foliage, and are ready to fruit. | T: in search of fruit.
+thag10.1:1.3 | S: They shine as if aflame; | T: As if flaring up, they glow.
+thag10.1:1.4 | S: great hero, this season is full of flavor. | T: The time, great hero, partakes of savors.
+thag10.1:2.1 | S: The blossoming trees are delightful, | T: The trees in bloom, delightful,
+thag10.1:2.2 | S: wafting their scent all around, in all directions. | T: waft delights all around, in all directions,
+thag10.1:2.3 | S: They’ve shed their leaves and wish to fruit, | T: dropping their petals in hope of fruit.
+thag10.1:2.4 | S: hero, it is time to leave here. | T: Now, O hero, is the time to set forth.
+thag10.1:3.1 | S: It is neither too hot nor too cold, | T: Neither too cold nor too hot:
+thag10.1:3.2 | S: venerable sir, it’s a pleasant season for traveling. | T: pleasant the season, lord, fit for a journey.
+thag10.1:3.3 | S: Let the Sākiyans and Koliyans see you, | T: Let them see you—the Sakyans & Koliyans—
+thag10.1:3.4 | S: heading west across the Rohiṇī river. | T: facing west, crossing in the Rohiṇī.
+thag10.1:4.1 | S: In hope, the field is plowed; | T: In hope they plow the field.
+thag10.1:4.2 | S: the seed is sown in hope; | T: In hope the seed is sown.
+thag10.1:4.3 | S: in hope, merchants travel the seas, | T: In hope do merchants go to sea,
+thag10.1:4.4 | S: carrying rich cargoes. | T: (none)
+thag10.1:4.5 | S: The hope that I stand for: | T: bringing back wealth. Let the hope in which I stand bear fruit.
+thag10.1:4.6 | S: may it succeed! | T: (none)
+thag10.1:5.1 | S: Again and again, they sow the seed; | T: Again & again they sow the seed.
+thag10.1:5.2 | S: again and again, the king of the heavens sends rain; | T: Again & again the deva-kings rain.
+thag10.1:5.3 | S: again and again, farmers plow the field; | T: Again & again farmers plow the fields.
+thag10.1:5.4 | S: again and again, grain is produced for the nation. | T: Again & again grain comes to the kingdom.
+thag10.1:6.1 | S: Again and again, the beggars wander, | T: Again & again beggars wander.
+thag10.1:6.2 | S: again and again, the donors give. | T: Again & again lords of giving give.
+thag10.1:6.3 | S: Again and again, when the donors have given, | T: Again & again having given, the lords of giving
+thag10.1:6.4 | S: again and again, they take their place in heaven. | T: again & again go to the heavenly place.
+thag10.1:7.1 | S: A hero of vast wisdom purifies seven generations | T: Truly, an enlightened one of deep discernment cleanses, back for seven generations,
+thag10.1:7.2 | S: of the family in which they’re born. | T: the family in which he’s born.
+thag10.1:7.3 | S: Sakya, I believe you’re the king of kings, | T: I would imagine you to be Sakka, the deva of devas
+thag10.1:7.4 | S: since you fathered the one who is truly named a sage. | T: for you engendered a sage truly named.
+thag10.1:8.1 | S: The father of the great seer is named Suddhodana; | T: Suddhodana is the name of the Great Seer’s father,
+thag10.1:8.2 | S: and the Buddha’s mother is named Māyā. | T: and Māyā name of the Buddha’s mother
+thag10.1:8.3 | S: Having borne the Bodhisatta in her belly, | T: who, having nurtured the bodhisatta with her womb,
+thag10.1:8.4 | S: she rejoices in the Third Heaven. | T: at the break-up of the body, rejoices in the threefold divine realm.
+thag10.1:9.1 | S: When she died and passed away from here, | T: She, Gotamī, having passed away, having fallen away from here,
+thag10.1:9.2 | S: she was blessed with heavenly sensual pleasures; | T: is now endowed with heavenly sensual pleasures.
+thag10.1:9.3 | S: enjoying the five kinds of sensual stimulation. | T: She rejoices in the five strings of sensuality,
+thag10.1:9.4 | S: Gotamī is surrounded by those hosts of gods.” | T: surrounded by those groups of devas.
+thag10.1:10.1 | S: “I’m the son of the Buddha, the incomparable Aṅgīrasa, the unaffected, | T: I am the son of the Buddha, who endures what is hard to endure— Aṅgīrasa: incomparable, Such.
+thag10.1:10.2 | S: the bearer of the unbearable. | T: (none)
+thag10.1:10.3 | S: You, Sakya, are my father’s father; | T: You, Sakka, are my father’s father.
+thag10.1:10.4 | S: Gotama, you are my grandfather in the Dhamma.” | T: In the Dhamma, Gotama, you are my grandfather.
+
+## thig3.2
+thig3.2:1.1 | S: Four or five times | T: Four times, five,
+thig3.2:1.2 | S: I left my dwelling. | T: I ran amok from my dwelling,
+thig3.2:1.3 | S: I had failed to find peace of heart, | T: having gained no peace of awareness,
+thig3.2:1.4 | S: or any control over my mind. | T: my thoughts out of control.
+thig3.2:2.1 | S: I approached a nun | T: So I went to a trustworthy nun.
+thig3.2:2.2 | S: in whom I had faith. | T: (none)
+thig3.2:2.3 | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig3.2:2.4 | S: the aggregates, sense fields, and elements. | T: aggregates, sense media, properties.
+thig3.2:3.1 | S: When I had heard her teaching, | T: Hearing the Dhamma,
+thig3.2:3.2 | S: in accordance with her instructions, | T: I did as she said.
+thig3.2:3.3 | S: I sat cross-legged for seven days without moving, | T: For seven days I sat in one spot,
+thig3.2:3.4 | S: given over to rapture and bliss. | T: absorbed in rapture & bliss.
+thig3.2:3.5 | S: On the eighth day I stretched out my feet, | T: On the eighth, I stretched out my legs,
+thig3.2:3.6 | S: having shattered the mass of darkness. | T: having burst the mass of darkness.
+
+## thig3.5
+thig3.5:1.1 | S: “You cry ‘Live, my dear mother!’ in the forest. | T: [Ubbiri recalls the Buddha’s words:] “‘Jīva, my daughter,’ you cry in the woods.
+thig3.5:1.2 | S: Ubbirī, get a hold of yourself! | T: Come to your senses, Ubbiri.
+thig3.5:1.3 | S: Eighty-four thousand people, | T: 84,000
+thig3.5:1.4 | S: all named ‘Live’, | T: all named Jīva
+thig3.5:1.5 | S: have been burnt in this funeral ground: | T: have been burned in that charnel ground.
+thig3.5:1.6 | S: which one do you grieve for?” | T: For which of them do you grieve?”
+thig3.5:2.1 | S: “Oh! For you have plucked the arrow from me, | T: Pulling out —completely out—
+thig3.5:2.2 | S: so hard to see, stuck in the heart. | T: the arrow so hard to see, embedded in my heart,
+thig3.5:2.3 | S: You’ve swept away the grief for my daughter | T: he expelled from me —overcome with grief— the grief
+thig3.5:2.4 | S: in which I once was mired. | T: over my daughter.
+thig3.5:3.1 | S: Today I’ve plucked the arrow, | T: Today—with arrow removed,
+thig3.5:3.2 | S: I’m hungerless, quenched. | T: without hunger, entirely unbound—
+thig3.5:3.3 | S: I go for refuge to that sage, the Buddha, | T: to the Buddha, Dhamma, & Saṅgha I go, for refuge to the Sage.
+thig3.5:3.4 | S: to his teaching, and to the Saṅgha.” | T: (none)
+
+## ud1.5
+ud1.5:1.1 | S: So I have heard. | T: (none)
+ud1.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud1.5:1.3 | S: Now at that time a number of senior monks approached the Buddha—the venerables Sāriputta, Mahāmoggallāna, Mahākassapa, Mahākaccāna, Mahākoṭṭhita, Mahākappina, Mahācunda, Anuruddha, Revata, and Nanda. | T: And on that occasion Ven. Sāriputta, Ven. Mahā Moggalāna, Ven. Mahā Kassapa, Ven. Mahā Kaccāna, Ven. Mahā Koṭṭhita, Ven. Mahā Kappina, Ven. Mahā Cunda, Ven. Anuruddha, Ven. Revata, and Ven. Nanda went to the Blessed One.
+ud1.5:2.1 | S: The Buddha saw them coming off in the distance, | T: The Blessed One saw them coming from afar and,
+ud1.5:2.2 | S: and addressed the mendicants: | T: on seeing them, addressed the monks,
+ud1.5:2.3 | S: “These, mendicants, are brahmins coming! | T: “Monks, those are brahmans who are coming.
+ud1.5:2.4 | S: These are brahmins coming!” | T: Monks, those are brahmans who are coming.”
+ud1.5:2.5 | S: When he said this, a certain mendicant who was brahmin by birth asked the Buddha, | T: When this was said, a certain monk who was a brahman by birth said to the Blessed One,
+ud1.5:2.6 | S: “Sir, how do you define a brahmin? And what are the things that make one a brahmin?” | T: “To what extent, lord, is one a brahman? And which are the qualities that make one a brahman?”
+ud1.5:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.5:4.1 | S: “Having banished bad qualities, | T: Having banished evil qualities,
+ud1.5:4.2 | S: those who live always mindful, | T: those who go about ever mindful,
+ud1.5:4.3 | S: with fetters ended, awakened, | T: awakened, their fetters ended:
+ud1.5:4.4 | S: they are the world’s true brahmins.” | T: They, in the world, are truly brahmans.
+
+## ud5.8
+ud5.8:1.1 | S: So I have heard. | T: (none)
+ud5.8:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ refuge.
+ud5.8:1.3 | S: Now at that time Venerable Ānanda robed up in the morning and, taking his bowl and robe, entered Rājagaha for alms. | T: And on that occasion, early in the morning of the uposatha, Ven. Ānanda adjusted his under robe and–carrying his bowl & robes–went into Rājagaha for alms.
+ud5.8:2.1 | S: Devadatta saw him wandering for alms, | T: Devadatta saw Ven. Ānanda going for alms in Rājagaha and,
+ud5.8:2.2 | S: so he went up to him and said, | T: on seeing him, went to him. On arrival, he said to him,
+ud5.8:2.3 | S: “From this day forth, Reverend Ānanda, I shall perform the sabbath and legal proceedings of the Saṅgha apart from the Buddha and the Saṅgha of mendicants.” | T: “From this day forward, friend Ānanda, I will conduct the uposatha & community transactions apart from the Blessed One, apart from the community of monks.”
+ud5.8:3.1 | S: Then Ānanda wandered for alms in Rājagaha. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, | T: Then Ven. Ānanda–having gone for alms in Rājagaha, after the meal, returning from his alms round–went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One, “Just now, lord, after adjusting my under robe early in the morning and carrying my bowl & robes, I went into Rājagaha for alms.
+ud5.8:3.2 | S: and told him what had just happened, adding: | T: Devadatta saw me going for alms in Rājagaha and,
+ud5.8:4.3 | P: Disvāna yenāhaṁ tenupasaṅkami; upasaṅkamitvā maṁ etadavoca: | T: on seeing me, went up to me. On arrival, he said to me,
+ud5.8:4.4 | P: ‘ajjatagge dānāhaṁ, āvuso ānanda, aññatreva bhagavatā aññatra bhikkhusaṅghā uposathaṁ karissāmi saṅghakammāni cā’ti. | T: ‘From this day forward, friend Ānanda,
+ud5.8:4.5 | S: “Today, sir, Devadatta will split the Saṅgha. He will perform the sabbath and legal proceedings of the Saṅgha.” | T: I will conduct the uposatha & community transactions apart from the Blessed One, apart from the community of monks.’ Lord, today Devadatta will split the community. He will conduct the uposatha & community transactions [apart from the community].”
+ud5.8:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.8:6.1 | S: “It’s easy for the good to do good, | T: The good, for the good, is easy to do.
+ud5.8:6.2 | S: but for the bad, doing good is hard. | T: The good, for the evil, is hard to do.
+ud5.8:6.3 | S: For the bad, it’s easy to do bad, | T: Evil, for the evil, is easy to do.
+ud5.8:6.4 | S: but for the noble ones, doing bad is hard.” | T: Evil, for the noble ones, is hard to do.
+
+## ud7.5
+ud7.5:1.1 | S: So I have heard. | T: (none)
+ud7.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud7.5:1.3 | S: Then Venerable Bhaddiya the Dwarf, closely following several mendicants, approached the Buddha. | T: And on that occasion Ven. Bhaddiya the Dwarf, following behind a large number of monks, was going to the Blessed One.
+ud7.5:2.1 | S: The Buddha saw Venerable Bhaddiya coming off in the distance—ugly, unsightly, deformed, and despised by most of the mendicants. | T: From afar, the Blessed One saw Ven. Bhaddiya the Dwarf coming, following behind a large number of monks: ugly, unsightly, stunted, treated with condescension by most of the monks.
+ud7.5:2.2 | S: The Buddha addressed the mendicants: | T: On seeing him, the Blessed One addressed the monks,
+ud7.5:3.1 | S: “Mendicants, do you see this monk coming—ugly, unsightly, deformed, and despised by most of the mendicants?” | T: “Monks, do you see that monk coming from afar, following behind a large number of monks: ugly, unsightly, stunted, treated with condescension by most of the monks?”
+ud7.5:3.2 | S: “Yes, sir.” | T: “Yes, lord.”
+ud7.5:4.1 | S: “That mendicant is very mighty and powerful. It’s not easy to find an attainment that he has not already attained. | T: “That, monks, is a monk of great power, great might. The attainment already attained by that monk is not of a sort easily attained.
+ud7.5:4.2 | S: And he has realized the supreme culmination of the spiritual path in this very life. He lives having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.” | T: And by means of it he has reached & remains in the supreme goal of the holy life for which clansmen rightly go forth from home into homelessness, knowing & realizing it for himself right in the here-&-now.”
+ud7.5:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.5:6.1 | S: “With faultless parts and white canopy, | T: Faultless, canopied in white,
+ud7.5:6.2 | S: the one-spoked chariot rolls on. | T: the single-spoked chariot rolls along.
+ud7.5:6.3 | S: See it come, untroubled, | T: See him coming, untroubled:
+ud7.5:6.4 | S: with stream cut, unbound.” | T: one whose stream is cut,
+ud7.5:6.5 | P: Pañcamaṁ. | T: free from bonds.
+
+## sn1.10
+sn1.10:1.1 | S: At Sāvatthī. | T: (none)
+sn1.10:1.2 | S: Standing to one side, that deity addressed the Buddha in verse: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.10:2.1 | S: “Living in the wilderness, | T: “Living in the wilderness,
+sn1.10:2.2 | S: peaceful spiritual practitioners | T: staying peaceful, remaining chaste,
+sn1.10:2.3 | S: eat just one meal a day: | T: eating just one meal a day:
+sn1.10:2.4 | S: so why is their complexion so clear?” | T: why are their faces so bright & serene?”
+sn1.10:3.1 | S: “They don’t grieve for the past, | T: The Buddha: “They don’t sorrow over the past,
+sn1.10:3.2 | S: nor do they pray for the future; | T: don’t long for the future. They survive on the present.
+sn1.10:3.3 | S: they feed on whatever comes that day, | T: That’s why their faces
+sn1.10:3.4 | S: that’s why their complexion’s so clear. | T: are bright & serene.
+sn1.10:4.1 | S: Because they pray for the future, | T: From longing for the future,
+sn1.10:4.2 | S: and grieve for the past, | T: from sorrowing over the past,
+sn1.10:4.3 | S: fools wither away, | T: fools wither away
+sn1.10:4.4 | S: like a green reed mowed down.” | T: like a green reed cut down.”
+
+## sn10.4
+sn10.4:1.1 | S: At one time the Buddha was staying in the land of the Magadhans at the Maṇimālika Shrine, the haunt of the native spirit Maṇibhadda. | T: On one occasion the Blessed One was staying among the Magadhans at the Jewel-stand Shrine, the haunt of the yakkha-spirit, Maṇibhadda [Auspicious Jewel].
+sn10.4:1.2 | S: Then the native spirit Maṇibhadda went up to the Buddha, and spoke this verse in the Buddha’s presence: | T: Then Maṇibhadda the yakkha-spirit went to the Blessed One and, on arrival, recited this verse:
+sn10.4:2.1 | S: “It’s always auspicious for the mindful; | T: “It’s always auspicious for one who is mindful.
+sn10.4:2.2 | S: the mindful prosper in happiness. | T: The mindful one prospers happily—always.
+sn10.4:2.3 | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:2.4 | S: and they are freed from enmity.” | T: and is totally freed from animosity.”
+sn10.4:3.1 | S: “It’s always auspicious for the mindful; | T: The Buddha: “It’s always auspicious for one who is mindful.
+sn10.4:3.2 | S: the mindful prosper in happiness. | T: The mindful one prospers happily always.
+sn10.4:3.3 | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:3.4 | S: but they’re not freed from enmity. | T: but isn’t totally freed from animosity.
+sn10.4:4.1 | S: But someone whose mind delights in harmlessness, | T: Whoever’s heart, all day, all night, delights in harmlessness
+sn10.4:4.2 | S: all day and all night, | T: (none)
+sn10.4:4.3 | S: with love for all living creatures— | T: with goodwill for all beings
+sn10.4:4.4 | S: they have no enmity for anyone.” | T: has no animosity with anyone at all.
+
+## sn21.9
+sn21.9:1.1 | S: At Sāvatthī. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn21.9:1.2 | S: Then Venerable Tissa—the Buddha’s cousin on his father’s side—went to the Buddha, bowed, and sat down to one side. He was miserable and sad, with tears flowing. Then the Buddha said to him: | T: Then Ven. Tissa, the Blessed One’s paternal cousin, went to the Blessed One and, having bowed down to him, sat to one side—miserable, unhappy, shedding tears. So the Blessed One said to him,
+sn21.9:1.3 | S: “Tissa, why are you sitting there so miserable and sad, with tears flowing?” | T: “Tissa, why are you sitting to one side—miserable, unhappy, shedding tears?”
+sn21.9:1.4 | S: “Sir, it’s because the mendicants beset me on all sides with sneering and jeering.” | T: “Because, lord, monks on all sides attack me with piercing words.”
+sn21.9:1.5 | S: “That’s because you admonish others, but don’t accept admonition yourself. | T: “But that, Tissa, is because you’re one who admonishes but can’t stand being admonished.
+sn21.9:1.6 | S: As a gentleman who has gone forth out of faith from the lay life to homelessness, it’s not appropriate for you to admonish others without accepting admonition yourself. | T: It’s not proper for you—a clansman who has gone forth through conviction from the home life into homelessness—that you’re one who admonishes but can’t stand being admonished. This is what’s proper for you—a clansman who has gone forth through conviction from the home life into homelessness:
+sn21.9:1.7 | S: It’s appropriate for you to | T: (none)
+sn21.9:1.8 | S: admonish others and accept admonition yourself.” | T: that you be one who admonishes and can stand being admonished.”
+sn21.9:2.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn21.9:2.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn21.9:3.1 | S: “Why are you angry? Don’t be angry! | T: Why are you angry? Don’t be angry.
+sn21.9:3.2 | S: It’s better to not be angry, Tissa. | T: Non-anger, Tissa, is best for you.
+sn21.9:3.3 | S: For this spiritual life is lived | T: It’s for the sake of subduing
+sn21.9:3.4 | S: in order to remove anger, conceit, and denigration.” | T: anger, conceit, & contempt, Tissa, that the holy life is lived.
+
+## sn35.101
+sn35.101:1.1 | S: “Mendicants, give up what’s not yours. | T: “Monks, whatever’s not yours: Let go of it.
+sn35.101:1.2 | S: Giving it up will be for your welfare and happiness. | T: Your letting go of it will be for your long-term happiness & benefit.
+sn35.101:1.3 | S: And what isn’t yours? | T: And what is not yours?
+sn35.101:1.4 | S: The eye isn’t yours: give it up. | T: “The eye isn’t yours:
+sn35.101:1.5 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:1.6 | S: Giving it up will be for your welfare and happiness. | T: Your letting go of it will be for your long-term happiness & benefit.
+sn35.101:1.7 | S: Sights … | T: Forms are not yours…
+sn35.101:1.10 | S: Eye consciousness … | T: Eye-consciousness isn’t yours…
+sn35.101:1.13 | S: Eye contact … | T: (none)
+sn35.101:1.16 | S: The pleasant, painful, or neutral feeling that arises dependent on eye contact isn’t yours: give it up. | T: Eye-contact isn’t yours… Whatever arises in dependence on eye-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours:
+sn35.101:1.17 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:1.18 | S: Giving it up will be for your welfare and happiness. | T: Your letting go of it will be for your long-term happiness & benefit.
+sn35.101:2.1 | S: The ear … nose … tongue … body … | T: “The ear isn’t yours: Let go of it… “The nose isn’t yours: Let go of it… “The tongue isn’t yours: Let go of it… “The body’s not yours:
+sn35.101:2.14 | P: Taṁ pajahatha. Taṁ vo pahīnaṁ hitāya sukhāya bhavissati …pe…. | T: Let go of it…
+sn35.101:3.1 | S: The mind isn’t yours: give it up. | T: “The intellect’s not yours:
+sn35.101:3.2 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:3.3 | S: Giving it up will be for your welfare and happiness. | T: Your letting go of it will be for your long-term happiness & benefit.
+sn35.101:3.4 | S: Ideas … | T: Ideas are not yours…
+sn35.101:3.7 | S: Mind consciousness … | T: Intellect-consciousness isn’t yours…
+sn35.101:3.10 | S: Mind contact … | T: (none)
+sn35.101:3.13 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. | T: Intellect-contact isn’t yours… Whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours:
+sn35.101:3.14 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:3.15 | S: Giving it up will be for your welfare and happiness. | T: Your letting go of it will be for your long-term happiness & benefit.
+sn35.101:4.1 | S: Suppose a person was to carry off the grass, sticks, branches, and leaves in this Jeta’s Grove, or burn them, or do what they want with them. | T: “Suppose a person were to gather or burn or do as he likes with the grass, twigs, branches, & leaves here in Jeta’s Grove.
+sn35.101:4.2 | S: Would you think: | T: Would the thought occur to you,
+sn35.101:4.3 | S: ‘This person is carrying us off, burning us, or doing what they want with us’?” | T: ‘It’s us that this person is gathering, burning, or doing with as he likes’?”
+sn35.101:5.1 | S: “No, sir. | T: “No, lord.
+sn35.101:6.1 | S: Why is that? | T: Why is that?
+sn35.101:7.1 | S: Because  to us that’s neither self nor belonging to self.” | T: Because those things are not our self nor do they pertain to our self.”
+sn35.101:8.1 | S: “In the same way, the eye isn’t yours: give it up. | T: “In the same way, monks, the eye isn’t yours:
+sn35.101:8.2 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:8.3 | S: Giving it up will be for your welfare and happiness. … | T: Your letting go of it will be for your long-term happiness & benefit… The ear… The nose…
+sn35.101:8.4 | P: Rūpā na tumhākaṁ … | T: The tongue… The body…
+sn35.101:8.7 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. | T: The intellect’s not yours: Let go of it. Your letting go of it will be for your long-term happiness & benefit… Whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours:
+sn35.101:8.8 | P: Taṁ pajahatha. | T: Let go of it.
+sn35.101:8.9 | S: Giving it up will be for your welfare and happiness.” | T: Your letting go of it will be for your long-term happiness & benefit.”
+
+## sn41.4
+sn41.4:1.1 | S: At one time several senior mendicants were staying near Macchikāsaṇḍa in the Wild Mango Grove. | T: On one occasion a large number of senior monks were staying near Macchikāsaṇḍa in the Wild Mango Grove.
+sn41.4:1.2 | S: Then Citta the householder went up to them, bowed, sat down to one side, and said to them, | T: Then Citta the householder went to them and, on arrival, having bowed down to them, sat to one side. As he was sitting there, he said to them:
+sn41.4:1.3 | S: “Sirs, would the senior monks please accept tomorrow’s meal from me in my milkshed?” | T: “Venerable sirs, may the senior monks acquiesce to tomorrow’s meal from me.”
+sn41.4:1.4 | S: They consented with silence. | T: The senior monks acquiesced by silence.
+sn41.4:1.5 | S: Then, knowing that the senior mendicants had consented, Citta rose from his seat, bowed, and respectfully circled them, keeping them on his right, before leaving. | T: Then Citta the householder, sensing the senior monks’ acquiescence, got up from his seat and, having bowed down to them, circumambulated them—keeping them to his right—and left.
+sn41.4:1.6 | S: Then when the night had passed, the senior mendicants robed up in the morning and, taking their bowls and robes, went to Citta’s milkshed, and sat down on the seats spread out. | T: When the night had passed, the senior monks adjusted their lower robes in the early morning and, taking their bowls & outer robes, went to Citta’s residence. There they sat down on the appointed seats.
+sn41.4:2.1 | S: Then Citta served and satisfied the senior mendicants with his own hands with delicious milk-rice made with ghee. | T: Then Citta the householder, with his own hand, served & satisfied them with exquisite milk-rice mixed with ghee.
+sn41.4:2.2 | S: When the senior mendicants had eaten and washed their hands and bowls, they rose from their seats and left. | T: When the senior monks had finished eating and had rinsed their bowls & hands, they got up from their seats and left.
+sn41.4:2.3 | S: Citta instructed that the leftovers of the food be distributed, then followed behind the senior mendicants. | T: Citta the householder, having said, “Give away the rest,” followed behind the senior monks.
+sn41.4:2.4 | S: Now at that time it was boiling hot. | T: Now on that occasion it was hot & sweltering.
+sn41.4:2.5 | S: And those senior mendicants walked along as if their bodies were melting, as happens after a meal. | T: The senior monks went along with their bodies melting, as it were, from the meal they had finished.
+sn41.4:3.1 | S: Now at that time Venerable Mahaka was the most junior mendicant in that Saṅgha. | T: And on that occasion Ven. Mahaka was the most junior of all the monks in that Saṅgha.
+sn41.4:3.2 | S: Then Venerable Mahaka said to the senior venerable, | T: He said to the senior monk:
+sn41.4:3.3 | S: “Wouldn’t it be nice, Honorable Senior, if a cool wind blew, a cloud canopy formed, and a gentle rain drizzled down?” | T: “Wouldn’t it be nice, venerable elder, if a cool wind were to blow, and there were a thundering cloud, and rain would fall in scattered drops?”
+sn41.4:4.1 | S: “It would indeed be nice, Reverend Mahaka.” | T: “Yes, friend Mahaka, that would be nice…”
+sn41.4:4.2 | S: Then Mahaka used his psychic power to will that a cool wind would blow, a cloud canopy would form, and a gentle rain would drizzle down. | T: Then Ven. Mahaka willed a psychic feat such that a cool wind blew, a thundering cloud developed, and the rain fell in scattered drops.
+sn41.4:4.3 | S: Then Citta thought, | T: The thought occurred to Citta the householder,
+sn41.4:4.4 | S: “The most junior mendicant in this Saṅgha has such psychic power!” | T: “Such is the psychic power of the most junior of all the monks in this Saṅgha!”
+sn41.4:4.5 | S: When they reached the monastery, Mahaka said to the senior venerable, | T: Then when Ven. Mahaka reached the monastery/park, he said to the senior monk,
+sn41.4:4.6 | S: “Honorable Senior, is that sufficient?” | T: “Is that enough, venerable sir?” “That’s enough, friend Mahaka—
+sn41.4:4.7 | S: “That’s sufficient, Reverend Mahaka, | T: (none)
+sn41.4:4.8 | S: you’ve done enough | T: what you have done,
+sn41.4:4.9 | S: and offered enough.” | T: what you have offered.”
+sn41.4:4.10 | S: Then the senior mendicants entered their dwellings, | T: Then the monks went to their separate dwellings,
+sn41.4:4.11 | S: and Mahaka entered his own dwelling. | T: and Ven. Mahaka went to his.
+sn41.4:5.1 | S: Then Citta went up to Mahaka, bowed, sat down to one side, and said to him, | T: Then Citta the householder went to Ven. Mahaka and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to him,
+sn41.4:5.2 | S: “Sir, please show me a superhuman demonstration of psychic power.” | T: “It would be good, venerable sir, if Master Mahaka would show me a superior human attainment, a miracle of psychic power.”
+sn41.4:5.3 | S: “Well, then, householder, place your upper robe on the porch and spread a handful of grass on it.” | T: “In that case, householder, spread out your upper robe on the porch and put a pile of grass on it.”
+sn41.4:5.4 | S: “Yes, sir,” replied Citta, and did as he was asked. | T: Responding, “As you say, venerable sir,” to Ven. Mahaka, Citta the householder spread out his upper robe on the porch and put a pile of grass on it.
+sn41.4:5.5 | S: Mahaka entered his dwelling and latched the door. Then he used his psychic power to will that a flame shoot out through the keyhole and the chink in the door-panel, and it burned up the grass but not the upper robe. | T: Then Ven. Mahaka, having entered his dwelling and bolted the door, willed a psychic feat such that flame shot through the keyhole and the space around the door, burning up the grass but not the robe.
+sn41.4:5.6 | S: Then Citta shook out his upper robe and stood to one side, shocked and awestruck. | T: Then Citta the householder, having shaken out the robe, stood to one side—in awe, his hair standing on end.
+sn41.4:5.7 | S: Mahaka left his dwelling and said to Citta, | T: Ven. Mahaka came out of his dwelling and said,
+sn41.4:5.8 | S: “Is that sufficient, householder?” | T: “Is that enough, householder?”
+sn41.4:6.1 | S: “That’s sufficient, sir, | T: (none)
+sn41.4:6.2 | S: you’ve done enough | T: “That’s enough, venerable sir—what you have done,
+sn41.4:6.3 | S: and offered enough. | T: what you have offered.
+sn41.4:6.4 | S: I hope Master Mahaka is happy here in Macchikāsaṇḍa, | T: May Master Mahaka delight in the charming Wild Mango Grove at Macchikāsaṇḍa.
+sn41.4:6.5 | S: for the Wild Mango Grove is lovely. | T: (none)
+sn41.4:6.6 | S: I’ll make sure that Master Mahaka is provided with robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: I will be responsible for your robes, almsfood, lodgings, & medicinal requisites.”
+sn41.4:6.7 | S: “That’s nice of you to say, householder.” | T: “That is admirably said, householder.”
+sn41.4:6.8 | S: But Mahaka set his lodgings in order and, taking his bowl and robe, left Macchikāsaṇḍa, | T: Then Ven. Mahaka—having set his lodging in order and taking his bowl & robes—left Macchikāsaṇḍa.
+sn41.4:6.9 | S: never to return. | T: And in leaving Macchikāsaṇḍa, he was gone for good and never returned.
+
+## sn44.8
+sn44.8:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn44.8:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+sn44.8:1.3 | S: “Worthy Gotama, is this right: ‘the cosmos is eternal’?” | T: “Now then, Master Gotama, is the cosmos eternal?”
+sn44.8:1.4 | S: “This has not been declared by me, Vaccha.” … | T: “That has not been declared by me, Vaccha: ‘The cosmos is eternal.’” “Well then, Master Gotama, is the cosmos not eternal?” “Vaccha, that too has not been declared by me: ‘The cosmos is not eternal.’” “Then is the cosmos finite?” … “Is the cosmos infinite?” … “Is the body the same as the soul?” … “Is the body one thing, and the soul another?” … “Does the Tathāgata exist after death?” … “Does the Tathāgata not exist after death?” … “Does the Tathāgata both exist and not exist after death?” …
+sn44.8:1.5 | S: “Then is this right: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Does the Tathāgata neither exist nor not exist after death?”
+sn44.8:1.6 | S: “This too has not been declared by me.” | T: “Vaccha, that too has not been declared by me:
+sn44.8:1.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.”
+sn44.8:2.1 | S: “What’s the cause, worthy Gotama, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “Now, Master Gotama, what is the cause, what is the reason why—when wanderers of other sects are asked in this way, they answer that
+sn44.8:2.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or
+sn44.8:2.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: ‘The Tathāgata neither exists nor does not exist after death,’
+sn44.8:2.4 | S: And what’s the reason why, when the worthy Gotama is asked these questions, he does not declare one of these to be true?” | T: yet when Master Gotama is asked in this way, he does not answer that
+sn44.8:2.5 | P: ‘sassato loko’tipi …pe… | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or
+sn44.8:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: ‘The Tathāgata neither exists nor does not exist after death’?”
+sn44.8:3.1 | S: “Vaccha, the wanderers of other religions regard form as self, self as having form, form in self, or self in form. | T: “Vaccha, the members of other sects assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn44.8:3.2 | S: They regard feeling … | T: “They assume feeling to be the self…
+sn44.8:3.3 | S: perception … | T: “They assume perception to be the self…
+sn44.8:3.4 | S: choices … | T: “They assume fabrications to be the self…
+sn44.8:3.5 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “They assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn44.8:3.6 | S: That’s why, when asked, they declare one of those answers to be true. | T: That is why, when asked in this way, they answer that
+sn44.8:3.7 | P: ‘sassato loko’ti vā …pe… | T: ‘The cosmos is eternal’ …
+sn44.8:3.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.8:3.9 | S: The Realized One doesn’t regard form as self, self as having form, form in self, or self in form. | T: “But the Tathāgata, worthy & rightly self-awakened, doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form. “He doesn’t assume feeling to be the self… “He doesn’t assume perception to be the self… “He doesn’t assume fabrications to be the self…
+sn44.8:3.10 | S: He doesn’t regard feeling … | T: “He doesn’t assume consciousness to be the self,
+sn44.8:3.11 | S: perception … | T: (none)
+sn44.8:3.12 | S: choices … | T: (none)
+sn44.8:3.13 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn44.8:3.14 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: That is why, when asked in this way, he does not answer that
+sn44.8:3.15 | P: ‘sassato loko’tipi …pe… | T: ‘The cosmos is eternal’ …
+sn44.8:3.16 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.8:4.1 | S: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to Ven. Mahā Moggallāna and, on arrival, exchanged courteous greetings with him.
+sn44.8:4.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to Ven. Mahā Moggallāna and received exactly the same explanation).
+sn44.8:7.1 | S: He said, “It’s incredible, worthy Moggallāna, it’s amazing. | T: “Amazing, Master Moggallāna! Astounding!
+sn44.8:7.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.8:7.3 | S: Just now I went to the ascetic Gotama and asked him about this matter. | T: Just now, Master Moggallāna, I went to the contemplative Gotama and, on arrival, asked him about this matter,
+sn44.8:7.4 | S: And he explained it to me with these words and phrases, just like the worthy Moggallāna. | T: and he answered me with the same words, the same phrasing, as Master Moggallāna.
+sn44.8:7.5 | S: It’s incredible, worthy Moggallāna, it’s amazing! | T: Amazing, Master Moggallāna! Astounding!
+sn44.8:7.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!”
+
+## sn46.14
+sn46.14:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn46.14:1.2 | S: Now at that time Venerable Mahākassapa was staying in the Pipphali cave, and he was sick, suffering, gravely ill. | T: And on that occasion Ven. Mahā Kassapa was staying in the Pepper Tree Cave: diseased, in pain, severely ill.
+sn46.14:1.3 | S: Then in the late afternoon, the Buddha came out of retreat, went to Venerable Mahākassapa, sat down on the seat spread out, and said to him: | T: Then the Blessed One, emerging from his seclusion in the evening, went to Ven. Mahā Kassapa and, on arrival, sat down on a seat made ready. Having sat down, he said to Ven. Mahā Kassapa,
+sn46.14:2.1 | S: “I hope you’re keeping well, Kassapa, I hope you’re all right. I hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: “I hope you are getting better, Kassapa. I hope you are comfortable. I hope that your pains are lessening and not increasing. I hope that there are signs of their lessening, and not of their increasing.”
+sn46.14:2.2 | S: “Sir, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: “I am not getting better, lord. I am not comfortable. My extreme pains are increasing, not lessening. There are signs of their increasing, and not of their lessening.”
+sn46.14:3.1 | S: “Kassapa, I’ve rightly explained these seven awakening factors. When developed and cultivated, they lead to direct knowledge, to awakening, and to extinguishment. | T: “Kassapa, these seven factors for awakening rightly taught by me, when developed and pursued, lead to direct knowledge, to self-awakening, to unbinding. Which seven? “Mindfulness as a factor for awakening rightly taught by me, when developed and pursued, leads to direct knowledge, to self-awakening, to unbinding. “Analysis of qualities as a factor for awakening, rightly taught by me, when developed and pursued, leads to direct knowledge, to self-awakening, to unbinding.
+sn46.14:3.2 | S: What seven? | T: (none)
+sn46.14:3.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: “Persistence as a factor for awakening.… “Rapture as a factor for awakening.… “Calm as a factor for awakening.… “Concentration as a factor for awakening.… “Equanimity as a factor for awakening rightly taught by me,
+sn46.14:3.4 | S: These are the seven awakening factors that I’ve rightly explained. When developed and cultivated, they lead to direct knowledge, to awakening, and to extinguishment.” | T: when developed and pursued, leads to direct knowledge, to self-awakening, to unbinding. “Kassapa, these are the seven factors for awakening rightly taught by me that—when developed and pursued—lead to direct knowledge, to self-awakening, to unbinding.”
+sn46.14:3.5 | S: “Indeed, Blessed One, these are awakening factors! | T: “They are indeed factors for awakening, O Blessed One.
+sn46.14:3.6 | S: Indeed, Holy One, these are awakening factors!” | T: They are indeed factors for awakening, O One Well-Gone.”
+sn46.14:4.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn46.14:4.2 | S: Satisfied, Venerable Mahākassapa approved what the Buddha said. | T: Gratified, Ven. Mahā Kassapa delighted in the Blessed One’s words.
+sn46.14:4.3 | S: And that’s how he recovered from that illness. | T: And Ven. Mahā Kassapa recovered from his disease.
+sn46.14:4.4 | P: Tathāpahīno cāyasmato mahākassapassa so ābādho ahosīti. | T: That was how Ven. Mahā Kassapa’s disease was abandoned.
+
+## sn46.29
+sn46.29:1.1 | S: “Mendicants, I do not see a single thing that, when it is developed and cultivated like this, leads to giving up the things that tighten the fetters like the seven awakening factors. | T: “Monks, I don’t envision any one other quality that, when thus developed & pursued, leads to the abandoning of things conducive to the fetters, aside from the seven factors for awakening.
+sn46.29:1.2 | S: What seven? | T: Which seven?
+sn46.29:1.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: (none)
+sn46.29:1.4 | S: And how are the seven awakening factors developed and cultivated so as to lead to giving up the things that tighten the fetters? | T: “There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening…
+sn46.29:2.1 | S: It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.29:2.2 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.29:2.3 | S: That’s how the seven awakening factors are developed and cultivated so as to lead to giving up the things that tighten the fetters. | T: “When thus developed & pursued, the seven factors for awakening lead to the abandoning of things conducive to the fetters.
+sn46.29:3.1 | S: And what are the things that tighten the fetters? | T: “And what are the things conducive to the fetters?
+sn46.29:3.2 | S: The eye is something that tightens the fetters. | T: The eye is a thing conducive to the fetters.
+sn46.29:3.3 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+sn46.29:3.4 | S: The ear … nose … tongue … body … | T: “The ear… the nose… the tongue… the body…
+sn46.29:3.6 | S: mind is something that tightens the fetters. | T: the intellect is a thing conducive to the fetters.
+sn46.29:3.7 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+sn46.29:3.8 | S: These are called the things that tighten the fetters.” | T: These are called the things conducive to the fetters.”
+
+## sn48.8
+sn48.8:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.8:1.2 | S: What five? | T: Which five?
+sn48.8:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, & the faculty of discernment.
+sn48.8:1.4 | S: And where should the faculty of faith be seen? | T: “Now, where is the faculty of conviction to be seen?
+sn48.8:1.5 | S: In the four factors of stream-entry. | T: In the four stream-entry factors:
+sn48.8:1.6 | P: ettha saddhindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of conviction is to be seen.
+sn48.8:1.7 | S: And where should the faculty of energy be seen? | T: “And where is the faculty of persistence to be seen?
+sn48.8:1.8 | S: In the four right efforts. | T: In the four right exertions:
+sn48.8:1.9 | P: ettha vīriyindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of persistence is to be seen.
+sn48.8:1.10 | S: And where should the faculty of mindfulness be seen? | T: “And where is the faculty of mindfulness to be seen?
+sn48.8:1.11 | S: In the four kinds of mindfulness meditation. | T: In the four establishings of mindfulness: Here the faculty of mindfulness is to be seen.
+sn48.8:1.13 | S: And where should the faculty of immersion be seen? | T: “And where is the faculty of concentration to be seen?
+sn48.8:1.14 | S: In the four absorptions. | T: In the four jhānas:
+sn48.8:1.15 | P: ettha samādhindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of concentration is to be seen.
+sn48.8:1.16 | S: And where should the faculty of wisdom be seen? | T: “And where is the faculty of discernment to be seen?
+sn48.8:1.17 | S: In the four noble truths. | T: In the four noble truths:
+sn48.8:1.18 | P: ettha paññindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of discernment is to be seen.”
+sn48.8:1.19 | S: These are the five faculties.” | T: (none)
+sn48.8:1.20 | P: Aṭṭhamaṁ. | T: See also SN 45:8 and SN 56:11.
+
+## sn56.35
+sn56.35:1.1 | S: “Mendicants, suppose there was a man with a lifespan of a hundred years. | T: “Monks, suppose there was a man whose life span was 100 years, who would live to 100.
+sn56.35:1.2 | S: And someone might say to him: | T: Someone would say to him,
+sn56.35:1.3 | S: ‘Come now, my man, they’ll strike you with a hundred spears in the morning, at midday, and in the late afternoon. | T: ‘Look here, fellow. They will stab you at dawn with 100 spears, at noon with 100 spears, & again at evening with 100 spears.
+sn56.35:1.4 | S: And you’ll live for a hundred years being struck with three hundred spears every day. But when a hundred years have passed, you will comprehend the four noble truths for the first time.’ | T: You, thus stabbed day after day with 300 spears, will have a lifespan of 100 years, will live to be 100, and at the end of 100 years you will realize the four noble truths that you have never realized before.’
+sn56.35:2.1 | S: For an earnest gentleman this is sufficient reason to submit. | T: “Monks, a person who desired his own true benefit would do well to take up (the offer).
+sn56.35:2.2 | S: Why is that? | T: Why is that?
+sn56.35:2.3 | S: This transmigration has no known beginning. | T: From an inconceivable beginning comes transmigration.
+sn56.35:2.4 | S: No first point is found of blows by spears, swords, arrows, and axes. | T: A beginning point is not evident for the (pain of) blows from spears, swords, & axes.
+sn56.35:2.5 | S: Now this may be so. | T: Even if this (offer) were to occur,
+sn56.35:2.6 | S: But the comprehension of the four noble truths doesn’t come with pain or sadness, I say. | T: I tell you that the realization of the four noble truths would not be accompanied by pain & distress.
+sn56.35:2.7 | S: Rather, the comprehension of the four noble truths comes only with pleasure and happiness, I say. | T: Instead, I tell you, the realization of the four noble truths would be accompanied by pleasure & happiness.
+sn56.35:2.8 | S: What four? | T: “Which four?
+sn56.35:2.9 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of stress, the noble truth of the origination of stress, the noble truth of the cessation of stress, and the noble truth of the path of practice leading to the cessation of stress. “Therefore your duty is the contemplation, ‘This is stress … This is the origination of stress … This is the cessation of stress.’ Your duty is the contemplation, ‘This is the path of practice leading to the cessation of stress.’”
+sn56.35:3.1 | S: That’s why you should practice meditation …” | T: (none)
+
+## mn7
+mn7:1.1 | S: So I have heard. | T: (none)
+mn7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika's monastery.
+mn7:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn7:1.4 | S: “Mendicants!” | T: “Monks!”
+mn7:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn7:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn7:2.1 | S: “Suppose, mendicants, there was a cloth that was dirty and soiled. | T: “Monks, suppose a piece of cloth were defiled and tenaciously stained,
+mn7:2.2 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look poorly dyed and impure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be poorly dyed, impurely dyed.
+mn7:2.3 | S: Why is that? | T: Why is that?
+mn7:2.4 | S: Because of the impurity of the cloth. | T: Because of the impurity of the cloth.
+mn7:2.5 | S: In the same way, when the mind is corrupt, a bad destiny is to be expected. | T: In the same way, when the mind is defiled, a bad destination can be expected.
+mn7:2.6 | S: Suppose there was a cloth that was pure and clean. | T: “But suppose a piece of cloth were pure and clean,
+mn7:2.7 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look well dyed and pure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be well dyed, purely dyed.
+mn7:2.8 | S: Why is that? | T: Why is that?
+mn7:2.9 | S: Because of the purity of the cloth. | T: Because of the purity of the cloth.
+mn7:2.10 | S: In the same way, when the mind isn’t corrupt, a good destiny is to be expected. | T: In the same way, when the mind is undefiled, a good destination can be expected.
+mn7:3.1 | S: And what are the corruptions of the mind? | T: “And which are the defilements of the mind?
+mn7:3.2 | S: Covetousness and immoral greed, ill will, anger, acrimony, disdain, contempt, jealousy, stinginess, deceit, deviousness, obstinacy, aggression, conceit, arrogance, vanity, and negligence are corruptions of the mind. | T: Possessiveness-and-inordinate-greed is a defilement of the mind. Ill will… Anger… Spitefulness… Dismissiveness… Antagonism… Envy… Selfishness… Deceit… Pretentiousness… Stubbornness… Competitiveness… Conceit… Arrogance… Intoxication… Heedlessness is a defilement of the mind. “Knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ a monk abandons possessiveness-and-inordinate-greed as a defilement of the mind. … Knowing, ‘Heedlessness is a defilement of the mind,’ a monk abandons heedlessness as a defilement of the mind. “When a monk, knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ has abandoned possessiveness-and-inordinate-greed as a defilement of the mind…
+mn7:4.1 | S: A mendicant who understands that covetousness and immoral greed are corruptions of the mind gives them up. | T: (none)
+mn7:4.2 | S: A mendicant who understands that ill will … | T: (none)
+mn7:4.30 | S: negligence is a corruption of the mind gives it up. | T: and knowing, ‘Heedlessness is a defilement of the mind,’ has abandoned heedlessness as a defilement of the mind,
+mn7:5.1 | S: When they have understood these corruptions of the mind | T: (none)
+mn7:5.2 | S: for what they are, and have given them up, | T: (none)
+mn7:5.32 | S: they have experiential confidence in the Buddha: | T: he is endowed with confirmed conviction in the Awakened One:
+mn7:5.33 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+mn7:6.1 | S: They have experiential confidence in the teaching: | T: “He is endowed with confirmed conviction in the Dhamma:
+mn7:6.2 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+mn7:7.1 | S: They have experiential confidence in the Saṅgha: | T: “He is endowed with confirmed conviction in the Saṅgha:
+mn7:7.2 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four types of noble disciples when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: worthy of gifts, worthy of hospitality, worthy of offerings, worthy of respect, the incomparable field of merit for the world.’
+mn7:8.1 | S: When a mendicant has discarded, eliminated, released, given up, and relinquished to this extent, thinking, ‘I have experiential confidence in the Buddha … | T: “Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by a monk, he—thinking, ‘I am endowed with confirmed conviction in the Awakened One’—
+mn7:8.2 | P: Pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati; | T: gains a sense of the goal,
+mn7:9.1 | S: the teaching … | T: (none)
+mn7:10.1 | S: the Saṅgha,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: gains a sense of the Dhamma,
+mn7:11.1 | S: Thinking: ‘I have discarded, eliminated, released, given up, and relinquished to this extent,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: gains a joy connected with the Dhamma.
+mn7:11.2 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated. “Thinking, ‘I am endowed with confirmed conviction in the Dhamma,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated. “Thinking, ‘I am endowed with confirmed conviction in the Saṅgha,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated. “Thinking, ‘Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by me,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:12.1 | S: When a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: “When a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:12.2 | S: Compare with cloth that is dirty and soiled; it can be made pure and clean by pure water. Or native gold, which can be made pure and bright by a forge. | T: Just as a piece of cloth, defiled & stained, becomes pure & bright with the help of clear water, or gold becomes pure & bright with the help of a furnace,
+mn7:12.3 | S: In the same way, when a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: in the same way, when a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:13.1 | S: They meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “He keeps pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.
+mn7:14.1 | S: They meditate spreading a heart full of compassion to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of compassion to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: He keeps pervading the first direction with an awareness imbued with compassion…

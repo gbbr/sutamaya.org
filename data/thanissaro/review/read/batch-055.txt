@@ -1,0 +1,363 @@
+## ud6.4
+ud6.4:1.1 | S: So I have heard. | T: (none)
+ud6.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud6.4:1.3 | S: Now at that time several ascetics, brahmins, and wanderers who followed various other religions were residing in Sāvatthī, holding different views, beliefs, and opinions, relying on different views. | T: And on that occasion there were many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views.
+ud6.4:2.1 | S: There were some ascetics and brahmins who had this doctrine and view: | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.4:2.2 | S: “The cosmos is eternal. This is the only truth, anything else is futile.” | T: “The cosmos is eternal. Only this is true; anything otherwise is worthless.”
+ud6.4:3.1 | S: Others held views such as the following, each regarding their own view as true and others as silly. | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.4:3.2 | S: “The cosmos is not eternal.” | T: “The cosmos is not eternal” …
+ud6.4:4.2 | S: “The cosmos is finite.” | T: “The cosmos is finite” …
+ud6.4:5.2 | S: “The cosmos is infinite.” | T: “The cosmos is infinite” …
+ud6.4:6.2 | S: “The soul and the body are one and the same.” | T: “The soul is the same thing as the body” …
+ud6.4:7.2 | S: “The soul is one thing, the body another.” | T: “The soul is one thing and the body another” …
+ud6.4:8.2 | S: “A realized one still exists after death.” | T: “After death a Tathāgata exists” …
+ud6.4:9.2 | S: “A realized one no longer exists after death.” | T: “After death a Tathāgata does not exist” …
+ud6.4:10.2 | S: “A realized one both still exists and no longer exists after death.” | T: “After death a Tathāgata both exists & does not exist” …
+ud6.4:11.2 | S: “A realized one neither still exists nor no longer exists after death.” | T: “After death a Tathāgata neither exists nor does not exist. Only this is true; anything otherwise is worthless.”
+ud6.4:12.1 | S: They were fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: And they kept on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:12.2 | S: “Such is Truth, such is not Truth! | T: “The Dhamma is like this, it’s not like that.
+ud6.4:12.3 | S: Such is not Truth, such is Truth!” | T: The Dhamma’s not like that, it’s like this.”
+ud6.4:13.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and–carrying their bowls & robes–went into Sāvatthī for alms.
+ud6.4:13.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. The Buddha said: | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One,
+ud6.4:14.1 | P: “Idha, bhante, sambahulā nānātitthiyasamaṇabrāhmaṇaparibbājakā sāvatthiyaṁ paṭivasanti nānādiṭṭhikā nānākhantikā nānārucikā nānādiṭṭhinissayanissitā— | T: “Lord, there are many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs,
+ud6.4:15.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: dependent for support on their differing views….
+ud6.4:15.3 | P: te bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: And they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:15.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:15.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.4:16.1 | S: “The wanderers of other religions are blind and sightless. | T: “Monks, the wanderers of other sects are blind & eyeless.
+ud6.4:16.2 | S: They don’t understand what is beneficial or what is not beneficial, nor what is the truth and what is not the truth. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma. Not knowing what is beneficial and what is harmful,
+ud6.4:16.3 | S: That’s why they are fighting, quarreling, and disputing, continually wounding each other with barbed words. | T: not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:16.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:16.5 | P: nediso dhammo, ediso dhammo’ti. | T: The Dhamma’s not like that, it’s like this.’
+ud6.4:17.1 | S: Once upon a time, mendicants, right here in Sāvatthī there was a certain king. | T: “Once, monks, in this same Sāvatthī, there was a certain king,
+ud6.4:17.2 | S: Then the king addressed a man, | T: and the king said to a certain man,
+ud6.4:17.3 | S: ‘Please, my man, gather all those blind from birth throughout Sāvatthī and bring them together in one place.’ | T: ‘Come, my good man. Gather together all the people in Sāvatthī who have been blind from birth.’”
+ud6.4:17.4 | S: ‘Yes, Your Majesty,’ that man replied. He did as the king asked, then said to him, | T: “Responding, ‘As you say, your majesty,’ to the king, the man–having rounded up all the people in Sāvatthī who had been blind from birth–went to the king and on arrival said,
+ud6.4:17.5 | S: ‘Your Majesty, the blind people throughout Sāvatthī have been gathered.’ | T: ‘Your majesty, the people in Sāvatthī who have been blind from birth have been gathered together.’
+ud6.4:17.6 | S: ‘Well then, lad, show them an elephant.’ | T: “‘Very well then, I say, show the blind people an elephant.’
+ud6.4:17.7 | S: ‘Yes, Your Majesty,’ that man replied. He did as the king asked. | T: “Responding, ‘As you say, your majesty,’ to the king,
+ud6.4:18.1 | S: To some of the blind people he showed the elephant’s head, saying, | T: the man showed the blind people an elephant. To some of the blind people he showed the elephant’s head, saying, ‘This, blind people,
+ud6.4:18.2 | S: ‘Here is the elephant.’ | T: is what an elephant is like.’
+ud6.4:18.3 | S: To some of them he showed the elephant’s ear, saying, | T: To some of them he showed the elephant’s ear, saying,
+ud6.4:18.4 | S: ‘Here is the elephant.’ | T: ‘This, blind people, is what an elephant is like.’
+ud6.4:18.5 | S: To some of them he showed the elephant’s tusk, saying, | T: To some of them he showed the elephant’s tusk…
+ud6.4:18.6 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.7 | S: To some of them he showed the elephant’s trunk, saying, | T: the elephant’s trunk…
+ud6.4:18.8 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.9 | S: To some of them he showed the elephant’s flank, saying, | T: the elephant’s body…
+ud6.4:18.10 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.11 | S: To some of them he showed the elephant’s leg, saying, | T: the elephant’s foot…
+ud6.4:18.12 | S: ‘Here is the elephant.’ | T: the elephant’s hindquarters…
+ud6.4:18.13 | S: To some of them he showed the elephant’s thigh, saying, | T: (none)
+ud6.4:18.14 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.15 | S: To some of them he showed the elephant’s tail, saying, | T: the elephant’s tail…
+ud6.4:18.16 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.17 | S: To some of them he showed the tip of the elephant’s tail, saying, | T: the tuft at the end of the elephant’s tail, saying,
+ud6.4:18.18 | S: ‘Here is the elephant.’ | T: ‘This, blind people, is what an elephant is like.’
+ud6.4:19.1 | S: Then he approached the king and said, | T: “Then, having shown the blind people the elephant, the man went to the king and on arrival said,
+ud6.4:19.2 | S: ‘Your Majesty, the blind people have been shown the elephant. | T: ‘Your majesty, the blind people have seen the elephant. May your majesty do what you think it is now time to do.’
+ud6.4:19.3 | S: Please go at your convenience.’ | T: (none)
+ud6.4:20.1 | S: Then the king went up to the blind people and said, | T: “Then the king went to the blind people and on arrival asked them, ‘Blind people,
+ud6.4:20.2 | S: ‘Have you seen the elephant?’ | T: have you seen the elephant?’
+ud6.4:20.3 | S: ‘Yes, Your Majesty, we have been shown the elephant.’ | T: “‘Yes, your majesty. We have seen the elephant.’
+ud6.4:20.4 | S: ‘Then tell us, what kind of thing is an elephant?’ | T: “‘Now tell me, blind people, what the elephant is like.’
+ud6.4:21.1 | S: The blind people who had been shown the elephant’s head said, | T: “The blind people who had been shown the elephant’s head said,
+ud6.4:21.2 | S: ‘Your Majesty, an elephant is like a pot.’ | T: ‘The elephant, your majesty, is just like a jar.’
+ud6.4:22.1 | S: Those who had been shown the ear said, | T: “Those who had been shown the elephant’s ear said,
+ud6.4:22.2 | S: ‘An elephant is like a winnowing fan.’ | T: ‘The elephant, your majesty, is just like a winnowing basket.’
+ud6.4:23.1 | S: Those who had been shown the tusk said, | T: “Those who had been shown the elephant’s tusk said,
+ud6.4:23.2 | S: ‘An elephant is like a ploughshare.’ | T: ‘The elephant, your majesty, is just like a plowshare.’
+ud6.4:24.1 | S: Those who had been shown the trunk said, | T: “Those who had been shown the elephant’s trunk said,
+ud6.4:24.2 | S: ‘An elephant is like a draft-pole.’ | T: ‘The elephant, your majesty, is just like the pole of a plow.’
+ud6.4:25.1 | S: Those who had been shown the flank said, | T: “Those who had been shown the elephant’s body said,
+ud6.4:25.2 | S: ‘An elephant is like a storehouse.’ | T: ‘The elephant, your majesty, is just like a granary.’
+ud6.4:26.1 | S: Those who had been shown the leg said, | T: “Those who had been shown the elephant’s foot said,
+ud6.4:26.2 | S: ‘An elephant is like a pillar.’ | T: ‘The elephant, your majesty, is just like a post.’
+ud6.4:27.1 | S: Those who had been shown the thigh said, | T: “Those who had been shown the elephant’s hindquarters said,
+ud6.4:27.2 | S: ‘An elephant is like a mortar.’ | T: ‘The elephant, your majesty, is just like a mortar.’
+ud6.4:28.1 | S: Those who had been shown the tail said, | T: “Those who had been shown the elephant’s tail said,
+ud6.4:28.2 | S: ‘An elephant is like a pestle.’ | T: ‘The elephant, your majesty, is just like a pestle.’
+ud6.4:29.1 | S: Those who had been shown the tip of the tail said, | T: “Those who had been shown the tuft at the end of the elephant’s tail said,
+ud6.4:29.2 | S: ‘An elephant is like a broom.’ | T: ‘The elephant, your majesty, is just like a broom.’
+ud6.4:30.1 | S: Saying, ‘Such is an elephant, not such! | T: “Saying, ‘The elephant is like this, it’s not like that.
+ud6.4:30.2 | S: Such is not an elephant, such is!’ they punched each other with their fists. | T: The elephant’s not like that, it’s like this,’ they struck one another with their fists.
+ud6.4:30.3 | S: At that, the king was pleased. | T: That gratified the king.
+ud6.4:31.1 | S: In the same way, mendicants, the wanderers of other religions are blind and sightless. | T: “In the same way, monks, the wanderers of other sects are blind & eyeless.
+ud6.4:31.2 | S: They don’t understand what is beneficial or what is not beneficial, nor what is the truth and what is not the truth. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma. Not knowing what is beneficial and what is harmful,
+ud6.4:31.3 | S: That’s why they are fighting, quarreling, and disputing, continually wounding each other with barbed words. | T: not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:31.4 | S: ‘Such is Truth, such is not! | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:31.5 | S: Such is not Truth, such is!’” | T: The Dhamma’s not like that, it’s like this.’”
+ud6.4:32.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.4:33.1 | S: “Some ascetics and brahmins, it seems, | T: (none)
+ud6.4:33.2 | S: cling to these things. | T: With regard to these things they’re attached– some contemplatives & brahmans.
+ud6.4:33.3 | S: Arguing, they dispute, | T: They quarrel & fight–
+ud6.4:33.4 | S: the folk who see just one part.” | T: people seeing one side.
+
+## an7.64
+an7.64:1.1 | S: “Mendicants, these seven things that please and assist an enemy happen to an irritable woman or man. | T: “These seven things—pleasing to an enemy, bringing about an enemy’s aim—come to a man or woman who is angry.
+an7.64:1.2 | S: What seven? | T: Which seven?
+an7.64:1.3 | S: Firstly, an enemy wishes for an enemy: | T: “There is the case where an enemy wishes of an enemy,
+an7.64:1.4 | S: ‘If only they’d become ugly!’ | T: ‘O, may this person be ugly!’
+an7.64:1.5 | S: Why is that? | T: Why is that?
+an7.64:1.6 | S: Because an enemy doesn’t like to have a beautiful enemy. | T: An enemy is not pleased with an enemy’s good looks.
+an7.64:1.7 | S: An irritable individual, overcome and overwhelmed by anger, is ugly, even though they’re nicely bathed and anointed, with hair and beard dressed, and wearing white clothes. | T: Now, when a person is angry—overcome with anger, oppressed with anger—then even though that he may be well-bathed, well-anointed, dressed in white clothes, his hair & beard neatly trimmed, he is ugly nevertheless, all because he is overcome with anger.
+an7.64:1.9 | S: This is the first thing that pleases and assists an enemy which happens to an irritable woman or man. | T: This is the first thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:2.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:2.2 | S: ‘If only they’d sleep badly!’ | T: ‘O, may this person sleep badly!’
+an7.64:2.3 | S: Why is that? | T: Why is that?
+an7.64:2.4 | S: Because an enemy doesn’t like to have an enemy who sleeps at ease. | T: An enemy is not pleased with an enemy’s restful sleep.
+an7.64:2.5 | S: An irritable individual, overcome and overwhelmed by anger, sleeps badly, even though they sleep on a couch spread with woolen covers—shag-piled, pure white, or embroidered with flowers—and spread with a fine deer hide, with a canopy above and red pillows at both ends. | T: Now, when a person is angry—overcome with anger, oppressed with anger—then even though he sleeps on a bed spread with a white blanket, spread with a woolen coverlet, spread with a flower-embroidered bedspread, covered with a rug of deerskins, with a canopy overhead, or on a sofa with red cushions at either end, he sleeps badly nevertheless, all because he is overcome with anger.
+an7.64:2.7 | S: This is the second thing … | T: This is the second thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:3.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:3.2 | S: ‘If only their needs are not amply satisfied!’ | T: ‘O, may this person not profit!’
+an7.64:3.3 | S: Why is that? | T: Why is that?
+an7.64:3.4 | S: Because an enemy doesn’t like to have an enemy whose needs are amply satisfied. | T: An enemy is not pleased with an enemy’s profits.
+an7.64:3.5 | S: When an irritable individual, overcome and overwhelmed by anger, gets what they don’t need they think, ‘I’ve got what I need.’ When they get what they need they think, ‘I’ve got what I don’t need.’ | T: Now, when a person is angry—overcome with anger, oppressed with anger—then even when he suffers a loss, he thinks, ‘I’ve gained a profit’; and even when he gains a profit, he thinks, ‘I’ve suffered a loss.’
+an7.64:3.6 | S: When an angry person gets these things that are the exact opposite of what they need, it’s for their lasting harm and suffering. | T: When he has grabbed hold of these ideas that work in mutual opposition (to the truth), they lead to his long-term suffering & loss, all because he is overcome with anger.
+an7.64:3.7 | S: This is the third thing … | T: This is the third thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:4.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:4.2 | S: ‘If only they weren’t wealthy!’ | T: (none)
+an7.64:4.3 | S: Why is that? | T: ‘O,
+an7.64:4.4 | S: Because an enemy doesn’t like to have an enemy who is wealthy. | T: (none)
+an7.64:4.5 | S: When an individual is irritable, overcome and overwhelmed by anger, the rulers seize the legitimate wealth they’ve earned by their efforts, built up with their own hands, gathered by the sweat of their brow. | T: may this person not have any wealth!’ Why is that? An enemy is not pleased with an enemy’s wealth. Now, when a person is angry—overcome with anger, oppressed with anger—then whatever his wealth, earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow—righteous wealth righteously gained—the king orders it sent to the royal treasury [in payment of fines levied for his behavior] all because he is overcome with anger.
+an7.64:4.6 | S: This is the fourth thing … | T: This is the fourth thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:5.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:5.2 | S: ‘If only they weren’t famous!’ | T: (none)
+an7.64:5.3 | S: Why is that? | T: ‘O,
+an7.64:5.4 | S: Because an enemy doesn’t like to have a famous enemy. | T: (none)
+an7.64:5.5 | S: When an individual is irritable, overcome and overwhelmed by anger, any fame they have acquired by diligence falls to dust. | T: may this person not have any reputation!’ Why is that? An enemy is not pleased with an enemy’s reputation. Now, when a person is angry—overcome with anger, oppressed with anger—whatever reputation he has gained from being heedful, it falls away, all because he is overcome with anger.
+an7.64:5.6 | S: This is the fifth thing … | T: This is the fifth thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:6.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:6.2 | S: ‘If only they had no friends!’ | T: ‘O, may this person not have any friends!’
+an7.64:6.3 | S: Why is that? | T: Why is that?
+an7.64:6.4 | S: Because an enemy doesn’t like to have an enemy with friends. | T: An enemy is not pleased with an enemy’s having friends.
+an7.64:6.5 | S: When an individual is irritable, overcome and overwhelmed by anger, their friends and colleagues, relatives and kin avoid them from afar. | T: Now, when a person is angry—overcome with anger, oppressed with anger—his friends, companions, & relatives will avoid him from afar, all because he is overcome with anger.
+an7.64:6.6 | S: This is the sixth thing … | T: This is the sixth thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:7.1 | S: Furthermore, an enemy wishes for an enemy: | T: “And further, an enemy wishes of an enemy,
+an7.64:7.2 | S: ‘If only, when their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell!’ | T: ‘O, may this person, on the break-up of the body, after death, reappear in a plane of deprivation, a bad destination, a lower realm, hell!’
+an7.64:7.3 | S: Why is that? | T: Why is that?
+an7.64:7.4 | S: Because an enemy doesn’t like to have an enemy who goes to a good place. | T: An enemy is not pleased with an enemy’s going to heaven.
+an7.64:7.5 | S: When an individual is irritable, overcome and overwhelmed by anger, they do bad things by way of body, speech, and mind. | T: Now, when a person is angry—overcome with anger, oppressed with anger—he engages in misconduct with the body, misconduct with speech, misconduct with the mind. Having engaged in misconduct with the body, misconduct with speech, misconduct with the mind, then—
+an7.64:7.7 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: on the break-up of the body, after death—he reappears in a plane of deprivation, a bad destination, a lower realm, hell, all because he was overcome with anger.
+an7.64:7.8 | S: This is the seventh thing that pleases and assists an enemy which happens to an irritable woman or man. | T: This is the seventh thing pleasing to an enemy, bringing about an enemy’s aim, that comes to a man or woman who is angry.
+an7.64:8.1 | S: These are the seven things that please and assist an enemy which happen to an irritable woman or man. | T: “These are the seven things—pleasing to an enemy, bringing about an enemy’s aim—that come to a man or woman who is angry.”
+an7.64:9.1 | S: An irritable person is ugly | T: An angry person is ugly & sleeps poorly.
+an7.64:9.2 | S: and they sleep badly. | T: (none)
+an7.64:9.3 | S: When they get what they need, | T: Gaining a profit, he turns it into a loss,
+an7.64:9.4 | S: they take it to be what they don’t need. | T: having done damage with word & deed.
+an7.64:10.1 | S: An angry person | T: (none)
+an7.64:10.2 | S: kills with body or speech; | T: (none)
+an7.64:10.3 | S: overcome with anger, | T: A person overwhelmed with anger
+an7.64:10.4 | S: they lose their wealth. | T: destroys his wealth.
+an7.64:11.1 | S: Mad with anger, | T: Maddened with anger,
+an7.64:11.2 | S: they fall into disgrace. | T: he destroys his status.
+an7.64:11.3 | S: Family, friends, and loved ones | T: Relatives, friends,
+an7.64:11.4 | S: avoid an irritable person. | T: & colleagues avoid him.
+an7.64:12.1 | S: Anger creates harm; | T: Anger brings loss.
+an7.64:12.2 | S: anger upsets the mind. | T: Anger inflames the mind.
+an7.64:12.3 | S: That person doesn’t recognize | T: He doesn’t realize
+an7.64:12.4 | S: the danger that arises within. | T: that his danger is born from within.
+an7.64:13.1 | S: An angry person doesn’t know the good. | T: An angry person doesn’t know his own benefit.
+an7.64:13.2 | S: An angry person doesn’t see the truth. | T: An angry person doesn’t see the Dhamma.
+an7.64:13.3 | S: When a person is beset by anger, | T: A man conquered by anger
+an7.64:13.4 | S: only blind darkness is left. | T: is in a mass of darkness. He takes pleasure in bad deeds
+an7.64:14.1 | S: An angry person destroys with ease | T: (none)
+an7.64:14.2 | S: what was hard to build. | T: as if they were good,
+an7.64:14.3 | S: Afterwards, when the anger is spent, | T: but later, when his anger is gone,
+an7.64:14.4 | S: they’re tormented as if burnt by fire. | T: he suffers as if burned with fire.
+an7.64:15.1 | S: Their look betrays their sulkiness | T: He is spoiled, blotted out,
+an7.64:15.2 | S: like a fire’s smoky plume. | T: like fire enveloped in smoke.
+an7.64:15.3 | S: And when their anger flares up, | T: When anger spreads,
+an7.64:15.4 | S: they make others angry. | T: when a man becomes angry,
+an7.64:16.1 | S: They have no conscience or prudence, | T: he has no shame, no compunction,
+an7.64:16.2 | S: nor any respectful speech. | T: is not respectful in speech.
+an7.64:16.3 | S: One overcome by anger | T: For a person overcome with anger,
+an7.64:16.4 | S: has no island refuge anywhere. | T: nothing gives light.
+an7.64:17.1 | S: The deeds that torment a man | T: I’ll list the deeds that bring remorse,
+an7.64:17.2 | S: are far from those that are good. | T: that are far from the teachings.
+an7.64:17.3 | S: I’ll explain them now; | T: (none)
+an7.64:17.4 | S: listen to this, for it is the truth. | T: Listen!
+an7.64:18.1 | S: An angry person slays their father; | T: An angry person kills his father,
+an7.64:18.2 | S: their mother, too, they slay. | T: kills his mother,
+an7.64:18.3 | S: An angry person slays a saint; | T: kills Brahmans
+an7.64:18.4 | S: a normal person, too, they slay. | T: & people run-of-the-mill.
+an7.64:19.1 | S: A man is raised by his mother, | T: It’s because of a mother’s devotion
+an7.64:19.2 | S: who shows him the world. | T: that one sees the world,
+an7.64:19.3 | S: But an angry ordinary person slays | T: yet an angry run-of-the-mill person
+an7.64:19.4 | S: even that good woman who gave him life. | T: can kill this giver of life.
+an7.64:20.1 | S: Like oneself, those sentient beings | T: Like oneself,
+an7.64:20.2 | S: hold themselves most dear. | T: all beings hold themselves most dear, yet an angry person, deranged,
+an7.64:20.3 | S: But when angered, <j>they kill themselves in different ways, | T: can kill himself in many ways:
+an7.64:20.4 | S: distraught in many respects. | T: (none)
+an7.64:21.1 | S: Some kill themselves with swords, | T: with a sword,
+an7.64:21.2 | S: some, distraught, take poison. | T: taking poison,
+an7.64:21.3 | S: Some hang themselves with rope, | T: hanging himself by a rope in a mountain glen.
+an7.64:21.4 | S: or fling themselves down a mountain gorge. | T: (none)
+an7.64:22.1 | S: When they commit deeds of baby-killing, | T: Doing these deeds
+an7.64:22.2 | S: and killing themselves, | T: that kill beings and do violence to himself,
+an7.64:22.3 | S: they don’t realize what they do, | T: the angry person doesn’t realize he’s ruined.
+an7.64:22.4 | S: for anger leads to their downfall. | T: (none)
+an7.64:23.1 | S: The snare of death in the form of anger | T: This snare of Māra, in the form of anger,
+an7.64:23.2 | S: lies hidden in the heart. | T: dwelling in the cave of the heart:
+an7.64:23.3 | S: You should cut it out by self-control, | T: Cut it out with self-control,
+an7.64:23.4 | S: by wisdom, energy, and right ideas. | T: discernment, persistence, right view.
+an7.64:24.1 | S: An astute person should cut out | T: The wise would cut out
+an7.64:24.2 | S: this unskillful thing. | T: each & every form of unskillfulness.
+an7.64:24.3 | S: And they’d train in the teaching in just the same way, | T: Train yourselves:
+an7.64:24.4 | S: not yielding to sulkiness. | T: ‘May we not be blotted out.’
+an7.64:25.1 | S: Free of anger, free of despair, | T: Free from anger & untroubled,
+an7.64:25.2 | S: free of greed, with no more longing, | T: free from greed, without longing,
+an7.64:25.3 | S: tamed, having given up anger, | T: tamed, your anger abandoned,
+an7.64:25.4 | S: the undefiled are fully extinguished.” | T: effluent-free, you will be unbound.
+
+## snp5.8
+snp5.8:1.1 | S: “People say there are sages in the world,” | T: There are in the world sages, they say
+snp5.8:1.2 | S: said Venerable Nanda, | T: —
+snp5.8:1.3 | S: “but how is this the case? | T: in what way?
+snp5.8:1.4 | S: Is someone called a sage because of their knowledge, | T: Do they call one a sage for possessing knowledge
+snp5.8:1.5 | S: or because of their way of life?” | T: or possessing a way of life?
+snp5.8:2.1 | S: “Experts do not speak of a sage in terms of | T: (none)
+snp5.8:2.2 | S: view, learning, or knowledge. | T: The Buddha: Not on account of his views, learning, or knowledge do the skilled here, Nanda,
+snp5.8:2.3 | S: Those who are sages live far from the crowd, I say, | T: call one a sage. Those who live disarmed,
+snp5.8:2.4 | S: untroubled, with no need for hope.” | T: undesiring, untroubled: Those, I say, are called sages.
+snp5.8:3.1 | S: “As to those ascetics and brahmins,” | T: Nanda: Whatever brahmans & contemplatives
+snp5.8:3.2 | S: said Venerable Nanda, | T: (none)
+snp5.8:3.3 | S: “who speak of purity in terms of what is seen or heard, | T: describe purity in terms of views & learning, describe purity
+snp5.8:3.4 | S: or in terms of precepts and vows, | T: in terms of habits & practices,
+snp5.8:3.5 | S: or in terms of countless different things. | T: describe purity in terms of manifold ways:
+snp5.8:3.6 | S: Living self-controlled in that matter, | T: Have they, dear sir, living there in that way,
+snp5.8:3.7 | S: have they crossed over rebirth and old age, <j>good fellow? | T: crossed over birth & aging?
+snp5.8:3.8 | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. Please tell me.
+snp5.8:4.1 | S: “As to those ascetics and brahmins,” | T: The Buddha: Whatever brahmans & contemplatives
+snp5.8:4.2 | S: replied the Buddha, | T: (none)
+snp5.8:4.3 | S: “who speak of purity in terms of what is seen or heard, | T: describe purity in terms of views & learning, describe purity
+snp5.8:4.4 | S: or in terms of precepts and vows, | T: in terms of habits & practices,
+snp5.8:4.5 | S: or in terms of countless different things. | T: describe purity in terms of manifold ways:
+snp5.8:4.6 | S: Even though they live self-controlled in that matter, | T: None of them, living there in that way,
+snp5.8:4.7 | S: they’ve not crossed over rebirth and old age, <j>I declare.” | T: I tell you, have crossed over birth & aging.
+snp5.8:5.1 | S: “As to those ascetics and brahmins,” | T: Nanda: Whatever brahmans & contemplatives
+snp5.8:5.2 | S: said Venerable Nanda, | T: (none)
+snp5.8:5.3 | S: “who speak of purity in terms of what is seen or heard, | T: describe purity in terms of views & learning, describe purity
+snp5.8:5.4 | S: or in terms of precepts and vows, | T: in terms of habits & practices,
+snp5.8:5.5 | S: or in terms of countless different things. | T: describe purity in terms of manifold ways:
+snp5.8:5.6 | S: You say they have not crossed the flood, sage. | T: If, sage, as you say, they’ve not crossed over the flood,
+snp5.8:5.7 | S: So who then in the world of gods and humans | T: then who in the world of beings divine & human,
+snp5.8:5.8 | S: has crossed over rebirth and old age, good fellow? | T: dear sir, has crossed over birth & aging?
+snp5.8:5.9 | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. Please tell me.
+snp5.8:6.1 | S: “I don’t say that all ascetics and brahmins,” | T: The Buddha: I don’t say that all brahmans & contemplatives
+snp5.8:6.2 | S: replied the Buddha, | T: (none)
+snp5.8:6.3 | S: “are shrouded by rebirth and old age. | T: are shrouded in birth & aging.
+snp5.8:6.4 | S: There are those here who have given up all | T: Those here who’ve abandoned
+snp5.8:6.5 | S: that is seen, heard, and thought, <j>and precepts and vows, | T: what’s seen, heard, & sensed, habits & practices —all—
+snp5.8:6.6 | S: who have given up all the countless different things. | T: who’ve abandoned their manifold ways —again, all—
+snp5.8:6.7 | S: Fully understanding craving, <j>they are free of defilements, | T: who, comprehending craving, are effluent-free:
+snp5.8:6.8 | S: those people, I say, have crossed the flood.” | T: They are the ones, I tell you, who’ve crossed over the flood.
+snp5.8:7.1 | S: “I rejoice in the words of the great seer! | T: Nanda: I relish, Gotama, the Great Seer’s words
+snp5.8:7.2 | S: You have expounded non-attachment well, Gotama. | T: well-expounded, without acquisition.
+snp5.8:7.3 | S: There are those here who have given up all | T: Those here who’ve abandoned
+snp5.8:7.4 | S: that is seen, heard, and thought, <j>and precepts and vows, | T: what’s seen, heard, & sensed, habits & practices —all—
+snp5.8:7.5 | S: who have given up all the countless different things. | T: who’ve abandoned their manifold ways —again, all—
+snp5.8:7.6 | S: Fully understanding craving, <j>they are free of defilements, | T: who, comprehending craving, are effluent-free:
+snp5.8:7.7 | S: those people, I agree, have crossed the flood.” | T: I, too, say they’ve crossed over the flood.
+
+## mn74
+mn74:1.1 | S: So I have heard. | T: (none)
+mn74:1.2 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain in the Boar’s Cave. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha on Vulture Peak Mountain, in the Boar’s Cave.
+mn74:2.1 | S: Then the wanderer Dīghanakha went up to the Buddha, and exchanged greetings with him. | T: Then LongNails the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+mn74:2.2 | S: When the greetings and polite conversation were over, he stood to one side and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he stood to one side. As he was standing there, he said to the Blessed One,
+mn74:2.3 | S: “Worthy Gotama, this is my doctrine and view: | T: “Master Gotama, I am of the view, of the opinion, that
+mn74:2.4 | S: ‘Nothing is acceptable to me.’” | T: ‘All is not pleasing to me.’”
+mn74:2.5 | S: “This view of yours, Aggivessana— | T: “But even this view of yours, Aggivessana—
+mn74:2.6 | S: is that acceptable to you?” | T: (none)
+mn74:2.7 | S: “If I were to accept this view, worthy Gotama, it would make no difference, it would make no difference!” | T: ’All is not pleasing to me’—is even that not pleasing to you?’” “Even if this view of mine were pleasing to me, Master Gotama, it would still be the same, it would still be the same.”
+mn74:3.1 | S: “Well, Aggivessana, there are many more in the world who say, | T: “Well, Aggivessana, there are more than many in the world who say,
+mn74:3.2 | S: ‘It would make no difference! It would make no difference!’ | T: ‘It would still be the same, it would still be the same,’
+mn74:3.3 | S: But they don’t give up that view, and they grasp another view. | T: yet they both do not abandon that view and they cling to another view.
+mn74:3.4 | S: And there are a scant few in the world who say, | T: There are fewer than few in the world who say,
+mn74:3.5 | S: ‘It would make no difference! It would make no difference!’ | T: ‘It would still be the same, it would still be the same,’
+mn74:3.6 | S: And they give up that view by not grasping another view. | T: and they both abandon that view and do not cling to another view.
+mn74:4.1 | S: There are some ascetics and brahmins who have this doctrine and view: | T: “There are some contemplatives & brahmans who are of the view, of the opinion, that
+mn74:4.2 | S: ‘Everything is acceptable to me.’ | T: ‘All is pleasing to me.’
+mn74:4.3 | S: There are some ascetics and brahmins who have this doctrine and view: | T: There are some contemplatives & brahmans who are of the view, of the opinion, that
+mn74:4.4 | S: ‘Nothing is acceptable to me.’ | T: ‘All is not pleasing to me.’
+mn74:4.5 | S: There are some ascetics and brahmins who have this doctrine and view: | T: There are some contemplatives & brahmans who are of the view, of the opinion, that
+mn74:4.6 | S: ‘Some things are acceptable to me and some things are not.’ | T: ‘A part is pleasing to me; a part is not pleasing to me.’
+mn74:4.7 | S: Regarding this, the view of the ascetics and brahmins to whom everything is acceptable | T: “With regard to those contemplatives & brahmans who are of the view, of the opinion, that ‘All is pleasing to me’:
+mn74:4.8 | S: is close to greed, bondage, approving, attachment, and grasping. | T: That view of theirs is close to being impassioned, close to bondage, close to delighting, close to holding, close to clinging.
+mn74:4.9 | S: The view of the ascetics and brahmins to whom nothing is acceptable | T: With regard to those contemplatives & brahmans who are of the view, of the opinion, that ‘All is not pleasing to me’:
+mn74:4.10 | S: is far from greed, bondage, approving, attachment, and grasping.” | T: That view of theirs is close to not being impassioned, close to non-bondage, close to not-delighting, close to not-holding, close to not-clinging.”
+mn74:5.1 | S: When he said this, the wanderer Dīghanakha said to the Buddha, | T: When this was said, LongNails the wanderer said to the Blessed One,
+mn74:5.2 | S: “Worthy Gotama commends my conviction! He recommends my conviction!” | T: “Master Gotama commends my viewpoint. Master Gotama recommends my viewpoint.”
+mn74:5.3 | S: “Now, regarding the ascetics and brahmins to whom | T: “With regard to those contemplatives & brahmans who are of the view, of the opinion that
+mn74:5.4 | S: some things are acceptable and some things are not. | T: ‘A part is pleasing to me; a part is not pleasing to me’:
+mn74:5.5 | S: Their view of what is acceptable is close to greed, bondage, approving, attachment, and grasping. | T: Whatever is pleasing to them, their view is close to being impassioned, close to bondage, close to delighting, close to holding, close to clinging. Whatever is not pleasing to them, their view is close to not being impassioned, close to non-bondage, close to not-delighting, close to not-holding, close to not-clinging.
+mn74:5.6 | S: Their view of what is not acceptable is far from greed, bondage, approving, attachment, and grasping. | T: (none)
+mn74:6.1 | S: When it comes to the view of the ascetics and brahmins to whom | T: “With regard to those contemplatives & brahmans who are of the view, of the opinion,
+mn74:6.2 | S: everything is acceptable, | T: ‘All is pleasing to me’:
+mn74:6.3 | S: a sensible person reflects like this: | T: An observant person among them considers that
+mn74:6.4 | S: ‘I have the view that | T: (none)
+mn74:6.5 | S: everything is acceptable. | T: (none)
+mn74:6.6 | S: Suppose I were to obstinately stick to this view and insist, | T: ‘If I were to grasp and insist firmly on this view of mine that “All is pleasing to me,” and to state that
+mn74:6.7 | S: “This is the only truth, anything else is futile.” | T: “Only this is true, all else is worthless,”
+mn74:6.8 | S: Then I’d argue with two individuals— | T: I would clash with two—
+mn74:6.9 | S: an ascetic or brahmin to whom nothing is acceptable, | T: the contemplative or brahman who is of the view, of the opinion that “All is not pleasing to me” and the contemplative or brahman who is of the view,
+mn74:6.10 | S: and an ascetic or brahmin to whom some things are acceptable and some things are not. | T: of the opinion that “A part is pleasing to me; a part is not pleasing to me.”
+mn74:6.11 | P: imehi assa dvīhi viggaho. | T: I would clash with these two.
+mn74:6.12 | S: And when there’s arguing, there’s dispute; when there’s dispute there’s distress; and when there’s distress there’s harm.’ | T: Where there is a clash, there is dispute. Where there is a dispute, quarreling. Where there is quarreling, annoyance. Where there is annoyance, frustration.’
+mn74:6.13 | S: So, considering in themselves the potential for argument, dispute, distress, and harm, they give up that view by not grasping another view. | T: Envisioning for himself clash, dispute, quarreling, annoyance, frustration, he both abandons that view and does not cling to another view.
+mn74:6.14 | S: That’s how those views are given up and let go. | T: Thus there is the abandoning of these views; thus there is the relinquishing of these views.
+mn74:7.1 | S: When it comes to the view of the ascetics and brahmins to whom | T: “With regard to those contemplatives & brahmans who are of the view, of the opinion that
+mn74:7.2 | S: nothing is acceptable, | T: ‘All is not pleasing to me’:
+mn74:7.3 | S: a sensible person reflects like this: | T: An observant person among them considers that
+mn74:7.4 | S: ‘I have the view that | T: (none)
+mn74:7.5 | S: nothing is acceptable. | T: (none)
+mn74:7.6 | S: Suppose I were to obstinately stick to this view and insist, | T: ‘If I were to grasp and insist firmly on this view of mine that “All is not pleasing to me,” and to state that
+mn74:7.7 | S: “This is the only truth, anything else is futile.” | T: “Only this is true, all else is worthless,”
+mn74:7.8 | S: Then I’d argue with two individuals— | T: I would clash with two—
+mn74:7.9 | S: an ascetic or brahmin to whom everything is acceptable, | T: the contemplative or brahman who is of the view, of the opinion that “All is pleasing to me” and the contemplative or brahman who is of the view,
+mn74:7.10 | S: and an ascetic or brahmin to whom some things are acceptable and some things are not. | T: of the opinion that “A part is pleasing to me; a part is not pleasing to me.”
+mn74:7.11 | P: imehi assa dvīhi viggaho. | T: I would clash with these two.
+mn74:7.12 | S: And when there’s arguing, there’s dispute; when there’s dispute there’s distress; and when there’s distress there’s harm.’ | T: Where there is a clash, there is dispute. Where there is a dispute, quarreling. Where there is quarreling, annoyance. Where there is annoyance, frustration.’
+mn74:7.13 | S: So, considering in themselves the potential for argument, dispute, distress, and harm, they give up that view by not grasping another view. | T: Envisioning for himself clash, dispute, quarreling, annoyance, frustration, he both abandons that view and does not cling to another view.
+mn74:7.14 | S: That’s how those views are given up and let go. | T: Thus there is the abandoning of these views; thus there is the relinquishing of these views.
+mn74:8.1 | S: When it comes to the view of the ascetics and brahmins to whom | T: “With regard to those contemplatives & brahmans who are of the view, of the opinion that
+mn74:8.2 | S: some things are acceptable and some things are not, | T: ‘A part is pleasing to me; a part is not pleasing to me’:
+mn74:8.3 | S: a sensible person reflects like this: | T: An observant person among them considers that
+mn74:8.4 | S: ‘I have the view that | T: (none)
+mn74:8.5 | S: some things are acceptable and some things are not. | T: (none)
+mn74:8.6 | S: Suppose I were to obstinately stick to this view and insist, | T: ‘If I were to grasp and insist firmly on this view of mine that “A part is pleasing to me; a part is not pleasing to me,” and to state that
+mn74:8.7 | S: “This is the only truth, anything else is futile.” | T: “Only this is true, all else is worthless,”
+mn74:8.8 | S: Then I’d argue with two individuals— | T: I would clash with two—
+mn74:8.9 | S: an ascetic or brahmin to whom everything is acceptable, | T: the contemplative or brahman who is of the view, of the opinion that “All is pleasing to me” and the contemplative or brahman who is of the view, of the opinion that “All is not pleasing to me.”
+mn74:8.10 | S: and an ascetic or brahmin to whom nothing is acceptable. | T: (none)
+mn74:8.11 | P: imehi assa dvīhi viggaho. | T: I would clash with these two.
+mn74:8.12 | S: And when there’s arguing, there’s dispute; when there’s dispute there’s distress; and when there’s distress there’s harm.’ | T: Where there is a clash, there is dispute. Where there is a dispute, quarreling. Where there is quarreling, annoyance. Where there is annoyance, frustration.’
+mn74:8.13 | S: So, considering in themselves the potential for argument, dispute, distress, and harm, they give up that view by not grasping another view. | T: Envisioning for himself clash, dispute, quarreling, annoyance, frustration, he both abandons that view and does not cling to another view.
+mn74:8.14 | S: That’s how those views are given up and let go. | T: Thus there is the abandoning of these views; thus there is the relinquishing of these views.
+mn74:9.1 | S: Aggivessana, this body is formed. It’s made up of the four principal states, produced by mother and father, built up from rice and porridge, liable to impermanence, to wearing away and erosion, to breaking up and destruction. You should see it as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: “Now, Aggivessana, this body—endowed with form, composed of the four primary elements, born from mother & father, nourished with rice & porridge, subject to inconstancy, rubbing, pressing, dissolution, and dispersion—should be envisioned as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self. In one who envisions the body as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self,
+mn74:9.2 | S: Doing so, you’ll give up desire, affection, and subservience to the body. | T: any desire for the body, attraction to the body, following after the body is abandoned.
+mn74:10.1 | S: There are these three feelings: | T: “There are these three kinds of feeling:
+mn74:10.2 | S: pleasant, painful, and neutral. | T: a pleasant feeling, a painful feeling, and neither-pleasant-nor-painful feeling.
+mn74:10.3 | S: At a time when you feel a pleasant feeling, you don’t feel a painful or neutral feeling; | T: On the occasion when one feels a pleasant feeling, one does not feel either a painful feeling or a neither-pleasant-nor-painful feeling.
+mn74:10.4 | S: you only feel a pleasant feeling. | T: One feels only a pleasant feeling on that occasion.
+mn74:10.5 | S: At a time when you feel a painful feeling, you don’t feel a pleasant or neutral feeling; | T: On the occasion when one feels a painful feeling, one does not feel either a pleasant feeling or a neither-pleasant-nor-painful feeling.
+mn74:10.6 | S: you only feel a painful feeling. | T: One feels only a painful feeling on that occasion.
+mn74:10.7 | S: At a time when you feel a neutral feeling, you don’t feel a pleasant or painful feeling; | T: On the occasion when one feels a neither-pleasant-nor-painful feeling, one does not feel either a pleasant feeling or a painful feeling.
+mn74:10.8 | S: you only feel a neutral feeling. | T: One feels only a neither-pleasant-nor-painful feeling on that occasion.
+mn74:11.1 | S: Pleasant, painful, and neutral feelings are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. | T: “A pleasant feeling is inconstant, fabricated, dependently co-arisen, subject to ending, subject to vanishing, fading, ceasing. A painful feeling is also inconstant, fabricated, dependently co-arisen, subject to ending, subject to vanishing, fading, ceasing. A neither-pleasant-nor-painful feeling is also inconstant, fabricated, dependently co-arisen, subject to ending, subject to vanishing, fading, ceasing.
+mn74:12.1 | S: Seeing this, a learned noble disciple grows disillusioned with pleasant, painful, and neutral feelings. | T: “Seeing this, an instructed disciple of the noble ones grows disenchanted with pleasant feeling, disenchanted with painful feeling, disenchanted with neither-pleasant-nor-painful feeling.
+mn74:12.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he grows dispassionate. From dispassion, he is released. With release, there is the knowledge, ‘Released.’
+mn74:12.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns, ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+mn74:13.1 | S: A mendicant whose mind is freed like this doesn’t side with anyone or dispute with anyone. They use the language of the world to communicate without getting stuck on it.” | T: A monk whose mind is thus released does not take sides with anyone, does not dispute with anyone. He words things by means of what is said in the world but without grasping at it.”
+mn74:14.1 | S: Now at that time Venerable Sāriputta was standing behind the Buddha fanning him. | T: Now at that time Ven. Sāriputta was sitting behind the Blessed One, fanning him.
+mn74:14.2 | S: Then he thought, | T: The thought occurred to him,
+mn74:14.3 | S: “It seems the Buddha speaks of giving up and letting go of all these things through direct knowledge.” | T: “Indeed, it seems that the Blessed One speaks to us of the abandoning of each of these qualities through direct knowledge. Indeed, it seems that the One Well-Gone speaks to us of the relinquishing of each of these qualities through direct knowledge.”
+mn74:14.4 | S: Reflecting like this, Venerable Sāriputta’s mind was freed from the defilements by not grasping. | T: As Ven. Sāriputta was reflecting thus, his mind was released from effluents through not-clinging.
+mn74:15.1 | S: And the stainless, immaculate vision of the Dhamma arose in the wanderer Dīghanakha: | T: While in LongNails the wanderer there arose the dustless, stainless Dhamma eye:
+mn74:15.2 | S: “Everything that is liable to arise is liable to cease.” | T: “Whatever is subject to origination is all subject to cessation.”
+mn74:15.3 | S: Then Dīghanakha saw, attained, understood, and fathomed the Dhamma. He went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. He said to the Buddha: | T: Then LongNails the wanderer—having seen the Dhamma, having attained the Dhamma, having known the Dhamma, having fathomed the Dhamma, having crossed over and beyond uncertainty, having no more perplexity, having gained fearlessness, having becoming independent of others with regard to the Teacher’s message—said to the Blessed One:
+mn74:16.1 | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+mn74:16.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+mn74:16.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks.
+mn74:16.4 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+

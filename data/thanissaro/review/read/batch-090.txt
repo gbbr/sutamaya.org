@@ -1,0 +1,487 @@
+## sn35.63
+sn35.63:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn35.63:1.2 | S: Then Venerable Migajāla went up to the Buddha … | T: Then Ven. Migajāla went to the Blessed One and on arrival,
+sn35.63:1.3 | S: and said to him: | T: having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+sn35.63:1.4 | S: “Sir, they speak of one who lives alone. | T: (none)
+sn35.63:1.5 | S: How is one who lives alone defined? And how is living with a partner defined?” | T: “‘A person who is living alone. A person who is living alone,’ thus it is said. To what extent, lord, is one a person who is living alone, and to what extent is one a person who is living with a companion?”
+sn35.63:2.1 | S: “Migajāla, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Migajāla, there are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire—
+sn35.63:2.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: and a monk relishes them, welcomes them, & remains fastened to them. As he relishes them, welcomes them, & remains fastened to them,
+sn35.63:2.3 | S: this gives rise to relishing. | T: delight arises.
+sn35.63:2.4 | S: When there’s relishing there’s lust. | T: There being delight, he is impassioned.
+sn35.63:2.5 | S: When there’s lust there is yoking. | T: Being impassioned, he is fettered.
+sn35.63:2.6 | S: A mendicant who is fettered by relishing is said to live with a partner. | T: A monk joined with the fetter of delight is said to be a person who is living with a companion.
+sn35.63:2.7 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body…
+sn35.63:2.8 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire—
+sn35.63:2.9 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: and a monk relishes them, welcomes them, & remains fastened to them. As he relishes them, welcomes them, & remains fastened to them,
+sn35.63:2.10 | S: this gives rise to relishing. | T: delight arises.
+sn35.63:2.11 | S: When there’s relishing there’s lust. | T: There being delight, he is impassioned.
+sn35.63:2.12 | S: When there’s lust there is yoking. | T: Being impassioned, he is fettered.
+sn35.63:2.13 | S: A mendicant who is fettered by relishing is said to live with a partner. | T: A monk joined with the fetter of delight is said to be a person who is living with a companion.
+sn35.63:2.14 | S: A mendicant who lives like this is said to live with a partner, even if they frequent remote lodgings in the wilderness and the forest that are quiet and still, far from the madding crowd, remote from human settlements, and fit for retreat. | T: “A person living in this way—even if he frequents isolated forest & wilderness dwellings, with an unpopulated atmosphere, lying far from humanity, appropriate for seclusion—is still said to be living with a companion.
+sn35.63:2.15 | P: atha kho sadutiyavihārīti vuccati. | T: Why is that?
+sn35.63:2.16 | S: Why is that? | T: Because the craving that is his companion has not been abandoned by him.
+sn35.63:2.17 | S: For craving is their partner, and they haven’t given it up. | T: (none)
+sn35.63:2.18 | S: That’s why they’re said to live with a partner. | T: Thus he is said to be a person who is living with a companion.
+sn35.63:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Now, there are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire—
+sn35.63:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: and a monk does not relish them, welcome them, or remain fastened to them. As he doesn’t relish them, welcome them, or remain fastened to them,
+sn35.63:3.3 | S: relishing ceases. | T: delight ceases.
+sn35.63:3.4 | S: When there’s no relishing there’s no lust. | T: There being no delight, he is not impassioned.
+sn35.63:3.5 | S: When there’s no lust there’s no yoking. | T: Being not impassioned,
+sn35.63:3.6 | S: A mendicant who is not fettered by relishing is said to live alone. | T: he is not fettered. A monk disjoined from the fetter of delight is said to be a person who is living alone.
+sn35.63:3.7 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body…
+sn35.63:3.8 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire—
+sn35.63:3.9 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: and a monk does not relish them, welcome them, or remain fastened to them. As he doesn’t relish them, welcome them, or remain fastened to them,
+sn35.63:3.10 | S: relishing ceases. | T: delight ceases.
+sn35.63:3.11 | S: When there’s no relishing there’s no lust. | T: There being no delight, he is not impassioned.
+sn35.63:3.12 | S: When there’s no lust there’s no yoking. | T: Being not impassioned,
+sn35.63:3.13 | S: A mendicant who is not fettered by relishing is said to live alone. | T: he is not fettered. A monk disjoined from the fetter of delight is said to be a person who is living alone.
+sn35.63:3.14 | S: A mendicant who lives like this is said to live alone, even if they live within a village crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. | T: “A person living in this way—even if he lives near a village, associating with monks & nuns, with male & female lay followers, with kings & royal ministers, with sectarians & their disciples—is still said to be living alone. A person living alone is said to be a monk.
+sn35.63:3.15 | P: Atha kho ekavihārīti vuccati. | T: Why is that?
+sn35.63:3.16 | S: Why is that? | T: Because the craving that is his companion has been abandoned by him.
+sn35.63:3.17 | S: For craving is their partner, and they have given it up. | T: (none)
+sn35.63:3.18 | S: That’s why they’re said to live alone.” | T: Thus he is said to be a person who is living alone.”
+
+## sn5.4
+sn5.4:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.4:1.2 | S: Then the nun Vijayā robed up in the morning … | T: Then, early in the morning, Vijayā the nun adjusted her robes and, taking her bowl & outer robe,
+sn5.4:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: went into Sāvatthī for alms. When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day. Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.4:1.4 | S: Then Māra the Wicked, wanting to make the nun Vijayā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.4:2.1 | S: “You’re so young and beautiful, | T: “You, a beautiful young woman. I, a young man.
+sn5.4:2.2 | S: and I’m a youth in my prime. | T: (none)
+sn5.4:2.3 | S: Come, my lady, let us enjoy | T: Come, my lady, let’s enjoy ourselves
+sn5.4:2.4 | S: the music of a five-piece band.” | T: to the music of a five-piece band.”
+sn5.4:3.1 | S: Then the nun Vijayā thought, | T: Then the thought occurred to Vijayā the nun:
+sn5.4:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+sn5.4:3.3 | S: Then she thought, | T: Then it occurred to her:
+sn5.4:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+sn5.4:3.5 | S: Then Vijayā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.4:4.1 | S: “Sights, sounds, tastes, smells, | T: “Lovely sights, sounds, smells, tastes,
+sn5.4:4.2 | S: and touches so delightful. | T: & tactile sensations
+sn5.4:4.3 | S: I hand them right back to you, Māra, | T: I leave to you, Māra.
+sn5.4:4.4 | S: for I have no use for them. | T: I have no need for them.
+sn5.4:5.1 | S: This body is rotting, | T: I’m disgusted, ashamed of this putrid body—
+sn5.4:5.2 | S: decaying and frail. | T: disintegrating, dissolving.
+sn5.4:5.3 | S: I’m horrified and repelled by it, | T: (none)
+sn5.4:5.4 | S: and I’ve eradicated sensual craving. | T: Sensual craving is rooted out.
+sn5.4:6.1 | S: There are beings in the realm of luminous form, | T: Beings who have come to form,
+sn5.4:6.2 | S: and others stuck in the formless. | T: & those with a share in the formless,
+sn5.4:6.3 | S: I’ve destroyed the darkness | T: & the peaceful attainments:
+sn5.4:6.4 | S: regarding all such peaceful attainments.” | T: their darkness is completely destroyed.”
+sn5.4:7.1 | S: Then Māra the Wicked, thinking, “The nun Vijayā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Vijayā the nun knows me”—vanished right there.
+
+## snp3.9
+snp3.9:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying at Icchānaṅgala in the Icchānaṅgala forest grove.
+snp3.9:1.2 | S: At one time the Buddha was staying in a forest near Icchānaṅgala. | T: (none)
+snp3.9:1.3 | S: Now at that time several very well-known well-to-do brahmins were residing in Icchānaṅgala. They included | T: And on that occasion many well-known wealthy brahmans were dwelling in Icchānaṅgala, i.e.,
+snp3.9:1.4 | S: the brahmins Caṅkī, Tārukkha, Pokkharasāti, Jānussoṇi, Todeyya, and others. | T: Caṅkī the brahman, Tārukkha the brahman, Pokkharasāti the brahman, Jānusoṇin the brahman, Todeyya the brahman, and many other well-known wealthy brahmans.
+snp3.9:1.5 | S: Then as the students Vāseṭṭha and Bhāradvāja were going for a walk they began to discuss the question: | T: Then, while the young brahmans Vāseṭṭha and Bhāradvāja were walking and wandering about to exercise their legs, this conversation arose between them:
+snp3.9:1.6 | S: “How do you become a brahmin?” | T: “How is one a brahman?”
+snp3.9:2.1 | S: Bhāradvāja said this: | T: The young brahman Bhāradvāja said,
+snp3.9:2.2 | S: “When you’re well born on both your mother’s and father’s side, stemming from a clean vessel, with irrefutable and impeccable genealogy back to the seventh paternal generation— | T: “When one is well-born on both sides, the mother’s & the father’s, is of pure descent for seven generations of fathers—uncriticized & irreproachable in the telling of one’s birth:
+snp3.9:2.3 | S: then you’re a brahmin.” | T: It’s to that extent that one is a brahman.”
+snp3.9:3.1 | S: Vāseṭṭha said this: | T: The young brahman Vāseṭṭha said,
+snp3.9:3.2 | S: “When you’re ethical and accomplished in doing your duties— | T: “When one is virtuous & consummate in one’s practices,
+snp3.9:3.3 | S: then you’re a brahmin.” | T: it’s to that extent that one is a brahman.”
+snp3.9:3.4 | S: But neither was able to persuade the other. | T: But neither was the young brahman Bhāradvāja able to win over the young brahman Vāseṭṭha, nor was the young brahman Vāseṭṭha able to win over the young brahman Bhāradvāja.
+snp3.9:4.1 | S: So Vāseṭṭha said to Bhāradvāja, | T: Then the young brahman Vāseṭṭha said to the young brahman Bhāradvāja,
+snp3.9:4.2 | S: “Worthy Bhāradvāja, the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—is staying in a forest near Icchānaṅgala. | T: “Bhāradvāja, this Gotama the contemplative—a son of the Sakyans, gone forth from the Sakyan clan—is staying at Icchānaṅgala in the Icchānaṅgala forest grove.
+snp3.9:4.3 | S: He has this good reputation: | T: And of that Master Gotama this fine reputation has spread:
+snp3.9:4.4 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘He is indeed a Blessed One, worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+snp3.9:4.5 | S: Come, let’s go to see him and ask him about this matter. | T: Come, let’s go to Gotama the contemplative and, on arrival, ask him about this matter.
+snp3.9:4.6 | S: As he answers, so we’ll remember it.” | T: However he answers, that’s how we’ll hold it.”
+snp3.9:4.7 | S: “Yes, worthy sir,” replied Bhāradvāja. | T: “As you say, master,” the young brahman Bhāradvāja responded to the young brahman Vāseṭṭha.
+snp3.9:5.1 | S: So they went to the Buddha and exchanged greetings with him. | T: So the young brahmans Vāseṭṭha and Bhāradvāja went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+snp3.9:5.2 | S: When the greetings and polite conversation were over, they sat down to one side, | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there,
+snp3.9:5.3 | S: and Vāseṭṭha addressed the Buddha in verse: | T: the young brahman Vāseṭṭha addressed the Blessed One in verses:
+snp3.9:6.1 | S: “We’re both authorized masters | T: Master, we’re acknowledged & self-proclaimed
+snp3.9:6.2 | S: of the three Vedas. | T: as masters of the three knowledges:
+snp3.9:6.3 | S: I’m a student of Pokkharasāti, | T: I, a student of Pokkharasāti,
+snp3.9:6.4 | S: and he of Tārukkha. | T: this one, of Tārukka.
+snp3.9:7.1 | S: We’re fully qualified | T: Whatever is taught by masters of the three knowledges,
+snp3.9:7.2 | S: in all the Vedic experts teach. | T: in that we are adept—
+snp3.9:7.3 | S: As philologists and grammarians, | T: grammarians & philologists,
+snp3.9:7.4 | S: we match our tutors in recitation. | T: on a par with our teachers in recitation.
+snp3.9:8.1 | S: We have a dispute | T: We have a dispute,
+snp3.9:8.2 | S: regarding genealogy. | T: Gotama,
+snp3.9:8.3 | S: For Bhāradvāja says that | T: on the topic of birth. Bhāradvāja says that one is a brahman
+snp3.9:8.4 | S: one is a brahmin due to birth, | T: through birth,
+snp3.9:8.5 | S: but I declare it’s because of one’s deeds. | T: I say through action.
+snp3.9:8.6 | S: Oh Clear-eyed One, know this as our debate. | T: Know this, One with Eyes.
+snp3.9:9.1 | S: Since neither of us was able | T: Neither of us can win over the other.
+snp3.9:9.2 | S: to convince the other, | T: (none)
+snp3.9:9.3 | S: we’ve come to ask you, sir, | T: We come, asking the master
+snp3.9:9.4 | S: renowned as the awakened one. | T: reputed to be self-awakened.
+snp3.9:10.1 | S: As people honor with cupped palms | T: As people going with hands palm-to-palm over the heart pay homage, venerating
+snp3.9:10.2 | S: the moon on the cusp of waxing, | T: the moon when it’s just past new,
+snp3.9:10.3 | S: bowing, they revere | T: (none)
+snp3.9:10.4 | S: Gotama in the world. | T: in the same way in the world, Gotama,
+snp3.9:11.1 | S: We ask this of Gotama, | T: we ask Gotama,
+snp3.9:11.2 | S: the Eye arisen in the world: | T: the Eye arisen in the world:
+snp3.9:11.3 | S: is one a brahmin due to birth, | T: Is one a brahman through birth
+snp3.9:11.4 | S: or else because of deeds? | T: or is it through action?
+snp3.9:11.5 | S: We don’t know, please tell us, | T: Tell us, who don’t know,
+snp3.9:11.6 | S: so we can recognize a brahmin.” | T: how we might know a brahman.”
+snp3.9:12.1 | S: “I shall explain to you,” | T: (none)
+snp3.9:12.2 | S: said the Buddha, | T: The Buddha:
+snp3.9:12.3 | S: “accurately and in sequence, | T: “I will answer you step-by-step as it really is.
+snp3.9:12.4 | S: the taxonomy of living creatures, | T: (none)
+snp3.9:12.5 | S: for species are indeed diverse. | T: Animals are divided by nature, for their species differ, one from another.
+snp3.9:13.1 | S: Know the grass and trees, | T: You know grasses & trees,
+snp3.9:13.2 | S: though they lack self-awareness. | T: even though they don’t proclaim themselves:
+snp3.9:13.3 | S: They’re defined by birth, | T: (none)
+snp3.9:13.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:14.1 | S: Next there are bugs that crawl or fly, | T: Then beetles & moths,
+snp3.9:14.2 | S: and so on, to ants and termites. | T: down to white ants:
+snp3.9:14.3 | S: They’re defined by birth, | T: (none)
+snp3.9:14.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:15.1 | S: Know the quadrupeds, too, | T: You know four-footed beasts,
+snp3.9:15.2 | S: both small and large. | T: small & large:
+snp3.9:15.3 | S: They’re defined by birth, | T: (none)
+snp3.9:15.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:16.1 | S: Know, too, the long-backed snakes, | T: You know belly-footed, long-backed snakes:
+snp3.9:16.2 | S: crawling on their bellies. | T: (none)
+snp3.9:16.3 | S: They’re defined by birth, | T: (none)
+snp3.9:16.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:17.1 | S: Next know the fish, | T: Then you know fish in the water,
+snp3.9:17.2 | S: whose habitat is the water. | T: with water their range:
+snp3.9:17.3 | S: They’re defined by birth, | T: (none)
+snp3.9:17.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:18.1 | S: Next know the birds, | T: Then you know birds,
+snp3.9:18.2 | S: winged chariots in flight. | T: with wings as their vehicles,
+snp3.9:18.3 | S: They’re defined by birth, | T: coursing through the sky:
+snp3.9:18.4 | S: for species are indeed diverse. | T: Their distinguishing markings are made by nature, for their species differ, one from another.
+snp3.9:19.1 | S: While the differences between these species | T: While these species have many distinguishing marks
+snp3.9:19.2 | S: are defined by birth, | T: made by nature,
+snp3.9:19.3 | S: the differences between humans | T: human beings don’t have many distinguishing marks
+snp3.9:19.4 | S: are not defined by birth. | T: made by nature:
+snp3.9:20.1 | S: Not by hair nor by head, | T: not through hair or head
+snp3.9:20.2 | S: not by ear nor by eye, | T: not through ears or eyes, not through face or nose,
+snp3.9:20.3 | S: not by mouth nor by nose, | T: not through mouth or lips,
+snp3.9:20.4 | S: not by lips nor by eyebrow, | T: (none)
+snp3.9:21.1 | S: not by shoulder nor by neck, | T: not through neck or shoulders,
+snp3.9:21.2 | S: not by belly nor by back, | T: not through belly or back,
+snp3.9:21.3 | S: not by buttocks nor by breast, | T: not through buttocks or chest,
+snp3.9:21.4 | S: not by groin nor by genitals, | T: not through groin or intercourse,
+snp3.9:22.1 | S: not by hands nor by feet, | T: not through hands or feet,
+snp3.9:22.2 | S: not by fingers nor by nails, | T: not through fingers or nails,
+snp3.9:22.3 | S: not by knees nor by thighs, | T: not through calves or thighs,
+snp3.9:22.4 | S: not by color nor by voice: | T: not through complexion or voice.
+snp3.9:22.5 | S: none of these are defined by birth | T: Their distinguishing mark is not made by nature
+snp3.9:22.6 | S: as it is for other species. | T: as it is for other species.
+snp3.9:23.1 | S: In specific human bodies | T: In human beings that’s not found individually in their bodies,
+snp3.9:23.2 | S: you can’t find such distinctions. | T: but their identification is described
+snp3.9:23.3 | S: The distinctions among humans | T: (none)
+snp3.9:23.4 | S: are spoken of by convention. | T: in terms of convention:
+snp3.9:24.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:24.2 | S: who lives off keeping cattle: | T: makes a living by guarding cows,
+snp3.9:24.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:24.4 | S: as a farmer, not a brahmin. | T: as a farmer, not as a brahman.
+snp3.9:25.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:25.2 | S: who lives off various professions: | T: makes a living through various crafts,
+snp3.9:25.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:25.4 | S: as a professional, not a brahmin. | T: as a craftsman, not as a brahman.
+snp3.9:26.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:26.2 | S: who lives off trade: | T: makes a living through trade,
+snp3.9:26.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:26.4 | S: as a trader, not a brahmin. | T: as a merchant, not as a brahman.
+snp3.9:27.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:27.2 | S: who lives off serving others: | T: makes a living by serving others,
+snp3.9:27.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:27.4 | S: as a servant, not a brahmin. | T: as a servant, not as a brahman.
+snp3.9:28.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:28.2 | S: who lives off stealing: | T: makes a living through stealing,
+snp3.9:28.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha:
+snp3.9:28.4 | S: as a bandit, not a brahmin. | T: This is a thief, not a brahman.
+snp3.9:29.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:29.2 | S: who lives off archery: | T: makes a living through arrow & sword,
+snp3.9:29.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:29.4 | S: as a warrior, not a brahmin. | T: as a soldier, not as a brahman.
+snp3.9:30.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:30.2 | S: who lives off priesthood: | T: makes a living through priesthood,
+snp3.9:30.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:30.4 | S: as a sacrificer, not a brahmin. | T: as a sacrificer, not as a brahman.
+snp3.9:31.1 | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:31.2 | S: who taxes village and nation, | T: makes a living partaking of city & state,
+snp3.9:31.3 | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:31.4 | S: as a ruler, not a brahmin. | T: as a king, not as a brahman.
+snp3.9:32.1 | S: I don’t call someone a brahmin | T: I don’t call one a brahman
+snp3.9:32.2 | S: after the mother’s womb they’re born from. | T: for being born of a mother or sprung from a womb.
+snp3.9:32.3 | S: If they still have attachments, | T: He’s called a ‘bho-sayer’
+snp3.9:32.4 | S: they’re just someone who says ‘worthy’. | T: (none)
+snp3.9:32.5 | S: Having nothing, taking nothing: | T: if he has anything at all. But someone with nothing, who clings to no thing:
+snp3.9:32.6 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:33.1 | S: Having cut off all fetters | T: Having cut every fetter,
+snp3.9:33.2 | S: they have no anxiety; | T: he doesn’t get ruffled.
+snp3.9:33.3 | S: they’ve slipped their chains and are detached: | T: Beyond attachment, unshackled:
+snp3.9:33.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:34.1 | S: They’ve cut the strap and harness, | T: Having cut the strap & thong,
+snp3.9:34.2 | S: the halter and bridle too; | T: cord & bridle,
+snp3.9:34.3 | S: with cross-bar lifted, they’re awakened: | T: having thrown off the bar, awakened:
+snp3.9:34.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:35.1 | S: Abuse, killing, caging: | T: He endures—unangered— insult, assault, & imprisonment.
+snp3.9:35.2 | S: they endure these without anger. | T: (none)
+snp3.9:35.3 | S: Patience is their powerful army: | T: His army is strength; his strength, forbearance:
+snp3.9:35.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:36.1 | S: Not irritable or pretentious, | T: Free from anger,
+snp3.9:36.2 | S: dutiful in precepts and observances, | T: duties observed, principled, with no overbearing pride,
+snp3.9:36.3 | S: tamed, bearing their final body: | T: trained, a ‘last-body’:
+snp3.9:36.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:37.1 | S: Like water from a lotus leaf, | T: Like water on a lotus leaf,
+snp3.9:37.2 | S: like a mustard seed off the point of a pin, | T: a mustard seed on the tip of an awl,
+snp3.9:37.3 | S: sensual pleasures slip off them: | T: he doesn’t adhere to sensual pleasures:
+snp3.9:37.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:38.1 | S: They understand for themselves | T: He discerns right here, for himself, on his own,
+snp3.9:38.2 | S: the end of suffering in this life; | T: his own ending of stress.
+snp3.9:38.3 | S: with burden put down, detached: | T: Unshackled, his burden laid down:
+snp3.9:38.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:39.1 | S: Deep in wisdom, intelligent, | T: Wise, deeply discerning, astute
+snp3.9:39.2 | S: expert in the path and what is not the path; | T: as to what is the path & what’s not;
+snp3.9:39.3 | S: arrived at the highest goal: | T: his ultimate goal attained:
+snp3.9:39.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:40.1 | S: Mixing with neither | T: Uncontaminated
+snp3.9:40.2 | S: householders nor the homeless; | T: by householders & houseless ones alike; living with no home,
+snp3.9:40.3 | S: a migrant with no bastion, few in wishes: | T: with next to no wants:
+snp3.9:40.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:41.1 | S: They’ve laid aside violence | T: Having put aside violence
+snp3.9:41.2 | S: against creatures firm and frail; | T: against beings fearful or firm,
+snp3.9:41.3 | S: not killing or making others kill: | T: he neither kills nor gets others to kill:
+snp3.9:41.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:42.1 | S: Not fighting among those who fight, | T: Unopposing among opposition,
+snp3.9:42.2 | S: quenched among those who have taken up arms, | T: unbound among the armed,
+snp3.9:42.3 | S: not grasping among those who grasp: | T: unclinging among those who cling:
+snp3.9:42.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:43.1 | S: They’ve discarded greed and hate, | T: His passion, aversion,
+snp3.9:43.2 | S: along with conceit and contempt, | T: conceit, & contempt, have fallen away—
+snp3.9:43.3 | S: like a mustard seed off the point of a pin: | T: like a mustard seed from the tip of an awl:
+snp3.9:43.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:44.1 | S: The words they utter | T: He would say what’s non-grating, instructive,
+snp3.9:44.2 | S: are polished, informative, and true, | T: true—
+snp3.9:44.3 | S: and don’t offend anyone: | T: abusing no one:
+snp3.9:44.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:45.1 | S: They don’t steal anything in the world, | T: Here in the world he takes nothing not-given
+snp3.9:45.2 | S: long or short, | T: —long, short, large, small, attractive, not:
+snp3.9:45.3 | S: tiny or huge, beautiful or ugly: | T: (none)
+snp3.9:45.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:46.1 | S: They have no hope | T: His longing for this
+snp3.9:46.2 | S: for this world or the next; | T: & for the next world can’t be found;
+snp3.9:46.3 | S: with no need for hope, detached: | T: free from longing, unshackled:
+snp3.9:46.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:47.1 | S: They have no clinging, | T: His attachments, his homes, can’t be found.
+snp3.9:47.2 | S: knowledge has freed them of indecision, | T: He, through knowing, is unperplexed,
+snp3.9:47.3 | S: they’ve arrived at the objective, freedom from death: | T: has reached a footing in the deathless:
+snp3.9:47.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:48.1 | S: They’ve escaped clinging | T: He has gone
+snp3.9:48.2 | S: to both good and bad deeds; | T: beyond attachment here for both merit & evil—
+snp3.9:48.3 | S: sorrowless, stainless, pure: | T: sorrowless, dustless, & pure:
+snp3.9:48.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:49.1 | S: Pure as the spotless moon, | T: Spotless, pure like the moon
+snp3.9:49.2 | S: clear and unclouded, | T: —limpid & calm—
+snp3.9:49.3 | S: they’ve ended relish for rebirth: | T: his delights, his becomings, totally gone:
+snp3.9:49.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:50.1 | S: They’ve got past this grueling swamp | T: He has made his way past this hard-going path:
+snp3.9:50.2 | S: of delusion, transmigration. | T: delusion, wandering-on.
+snp3.9:50.3 | S: Meditating in stillness, free of indecision, | T: He’s crossed over, has gone beyond, is free from want, from perplexity,
+snp3.9:50.4 | S: they have crossed over to the far shore. | T: absorbed in jhāna,
+snp3.9:50.5 | S: They’re quenched by not grasping: | T: through no-clinging unbound:
+snp3.9:50.6 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:51.1 | S: They’ve given up sensual pleasures, | T: Whoever, abandoning sensual passions here,
+snp3.9:51.2 | S: and have gone forth from lay life; | T: would go forth from home—
+snp3.9:51.3 | S: they’ve ended rebirth in the sensual realm: | T: his sensual passions, becomings, totally gone:
+snp3.9:51.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:52.1 | S: They’ve given up craving, | T: Whoever, abandoning craving here,
+snp3.9:52.2 | S: and have gone forth from lay life; | T: would go forth from home— his cravings, becomings, totally gone:
+snp3.9:52.3 | S: they’ve ended craving to be reborn: | T: (none)
+snp3.9:52.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:53.1 | S: They’ve thrown off the human yoke, | T: Having left behind the human bond,
+snp3.9:53.2 | S: and slipped out of the heavenly yoke; | T: having made his way past the divine, from all bonds unshackled:
+snp3.9:53.3 | S: unyoked from all yokes: | T: (none)
+snp3.9:53.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:54.1 | S: Giving up desire and discontent, | T: Having left behind delight & displeasure,
+snp3.9:54.2 | S: they’re cooled and free of attachments; | T: cooled, with no acquisitions—
+snp3.9:54.3 | S: a hero, master of the whole world: | T: a hero who has conquered all the world, every world:
+snp3.9:54.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:55.1 | S: They know the passing away | T: He knows in every way beings’ passing away,
+snp3.9:55.2 | S: and rebirth of all beings; | T: and their re- arising;
+snp3.9:55.3 | S: unattached, holy, awakened: | T: unattached, awakened, well-gone:
+snp3.9:55.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:56.1 | S: Gods, centaurs, and humans | T: He whose course they don’t know —devas, gandhabbas, & human beings—
+snp3.9:56.2 | S: don’t know their destiny; | T: (none)
+snp3.9:56.3 | S: the perfected ones with defilements ended: | T: his effluents ended, an arahant:
+snp3.9:56.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:57.1 | S: They have nothing before or after, | T: He who has nothing —in front, behind,
+snp3.9:57.2 | S: or even in between. | T: in between—
+snp3.9:57.3 | S: Having nothing, taking nothing: | T: the one with nothing who clings to no thing:
+snp3.9:57.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:58.1 | S: Captain of the herd, excellent hero, | T: A splendid bull, conqueror, hero,
+snp3.9:58.2 | S: great seer and victor; | T: great seer—
+snp3.9:58.3 | S: unstirred, washed, awakened: | T: free from want, awakened, washed:
+snp3.9:58.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:59.1 | S: They who know their past lives, | T: He knows his former lives.
+snp3.9:59.2 | S: see heaven and places of loss, | T: He sees heavens & states of woe,
+snp3.9:59.3 | S: and have attained the ending of rebirth, | T: has attained the ending of birth:
+snp3.9:59.4 | S: that’s who I declare a brahmin. | T: He’s what I call a brahman.
+snp3.9:60.1 | S: For name and clan are formulated | T: (none)
+snp3.9:60.2 | S: as mere convention in the world. | T: For this is a convention in the world: the name & clan determined,
+snp3.9:60.3 | S: Produced by mutual agreement, | T: come into being from common consent,
+snp3.9:60.4 | S: they’re formulated in each case. | T: here & there determined.
+snp3.9:61.1 | S: For a long time this misconception | T: Taking a position unknowingly for a long time obsessively,
+snp3.9:61.2 | S: has prejudiced those who don’t understand. | T: those who don’t know
+snp3.9:61.3 | S: Ignorant, they declare | T: (none)
+snp3.9:61.4 | S: that one is a brahmin by birth. | T: say that one is a brahman by birth.
+snp3.9:62.1 | S: You’re not a brahmin by birth, | T: Not by birth is one a brahman,
+snp3.9:62.2 | S: nor by birth a non-brahmin. | T: not by birth a non-brahman.
+snp3.9:62.3 | S: You’re a brahmin by your deeds, | T: By action is one a brahman.
+snp3.9:62.4 | S: and by deeds a non-brahmin. | T: By action one is a non-brahman.
+snp3.9:63.1 | S: You’re a farmer by your deeds, | T: By action is one a farmer.
+snp3.9:63.2 | S: by deeds you’re a professional; | T: By action one is a craftsman.
+snp3.9:63.3 | S: you’re a trader by your deeds, | T: By action is one a merchant.
+snp3.9:63.4 | S: by deeds are you a servant; | T: By action one is a servant.
+snp3.9:64.1 | S: you’re a bandit by your deeds, | T: By action is one a thief.
+snp3.9:64.2 | S: by deeds you’re a warrior; | T: By action one is a soldier.
+snp3.9:64.3 | S: you’re a sacrificer by your deeds, | T: By action is one a sacrificer.
+snp3.9:64.4 | S: by deeds you’re a ruler. | T: By action one is a king.
+snp3.9:65.1 | S: In this way the astute regard deeds | T: The wise see action in this way as it has come to be,
+snp3.9:65.2 | S: in accord with truth. | T: seeing dependent co-arising,
+snp3.9:65.3 | S: Seeing dependent origination, | T: (none)
+snp3.9:65.4 | S: they’re expert in deeds and their results. | T: cognizant of action’s results.
+snp3.9:66.1 | S: Deeds make the world go on, | T: Through action the world rolls on.
+snp3.9:66.2 | S: deeds make people go on; | T: People roll on through action.
+snp3.9:66.3 | S: sentient beings are bound by deeds, | T: In action are beings held bound together,
+snp3.9:66.4 | S: like a moving chariot’s linchpin. | T: as in a linchpin, a chariot traveling along.
+snp3.9:67.1 | S: By fervor and spiritual practice, | T: Through austerity, the holy life,
+snp3.9:67.2 | S: by restraint and by self-control: | T: through restraint & self-control:
+snp3.9:67.3 | S: that’s how to become a brahmin, | T: That’s how one is a brahman.
+snp3.9:67.4 | S: this is the supreme brahmin. | T: That’s a brahman unexcelled.
+snp3.9:68.1 | S: Accomplished in the three knowledges, | T: Consummate in the three knowledges,
+snp3.9:68.2 | S: peaceful, with rebirth ended, | T: further-becoming ended, at peace:
+snp3.9:68.3 | S: know them, Vāseṭṭha, | T: Know, Vāseṭṭha:
+snp3.9:68.4 | S: as the Divinity and Sakka to the wise.” | T: That’s Brahmā, that’s Sakka, for those who directly know.”
+snp3.9:69.1 | S: When he had spoken, Vāseṭṭha and Bhāradvāja said to him, | T: When this was said, the young brahmans Vāseṭṭha & Bhāradvāja said to the Blessed One:
+snp3.9:69.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. We go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+snp3.9:69.3 | S: From this day forth, may the worthy Gotama remember us as lay followers who have gone for refuge for life.” | T: May Master Gotama remember us as lay followers who have gone for refuge from this day forward, for life.”
+
+## sn12.12
+sn12.12:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.12:1.2 | S: “Mendicants, these four fuels maintain sentient beings that have been born and help those about to be born. | T: “Monks, there are these four nutriments for the maintenance of beings who have come into being or for the support of those in search of a place to be born.
+sn12.12:1.3 | S: What four? | T: Which four?
+sn12.12:1.4 | S: Edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: Physical food, gross or refined; contact as the second; intellectual intention the third; and consciousness the fourth.
+sn12.12:1.5 | S: These are the four fuels that maintain sentient beings that have been born and help those that are about to be born.” | T: These are the four nutriments for the maintenance of beings who have come into being or for the support of those in search of a place to be born.
+sn12.12:2.1 | S: When he said this, Venerable Phagguna of the Top-Knot said to the Buddha, | T: When this was said, Ven. Moḷiya Phagguna said to the Blessed One,
+sn12.12:2.2 | S: “But sir, who consumes consciousness as fuel?” | T: “Lord, who feeds on the consciousness-nutriment?“
+sn12.12:2.3 | S: “That’s not a cogent question,” said the Buddha. | T: “Not a valid question,” the Blessed One said.
+sn12.12:2.4 | S: “I don’t speak of one who consumes. | T: “I don’t say ‘feeds.’
+sn12.12:2.5 | S: If I were to speak of one who consumes, then it would be cogent to ask | T: If I were to say ‘feeds,’ then ‘Who feeds on the consciousness-nutriment?’ would be a valid question.
+sn12.12:2.6 | S: who consumes. | T: (none)
+sn12.12:2.7 | S: But I don’t speak like that. | T: But I don’t say that. When I don’t say that,
+sn12.12:2.8 | S: Hence it would be cogent to ask: | T: the valid question is
+sn12.12:2.9 | S: ‘For what is consciousness the fuel?’ | T: ‘Consciousness-nutriment for what?’
+sn12.12:2.10 | S: And a cogent answer to this would be: | T: And the valid answer is,
+sn12.12:2.11 | S: ‘Consciousness as fuel is a requirement for regeneration into a new state of existence in the future. When the being is present, there are the six sense fields. The six sense fields are requirements for contact.’” | T: ‘Consciousness-nutriment for the production of future coming-into-being. When that has come into being and exists, then the six sense media. From the six sense media as a requisite condition comes contact.’”
+sn12.12:3.1 | S: “But sir, who contacts?” | T: “Lord, who makes contact?”
+sn12.12:3.2 | S: “That’s not a cogent question,” said the Buddha. | T: “Not a valid question,” the Blessed One said.
+sn12.12:3.3 | S: “I don’t speak of one who contacts. | T: “I don’t say ‘makes contact.’
+sn12.12:3.4 | S: If I were to speak of one who contacts, then it would be cogent to ask | T: If I were to say ‘makes contact,’ then ‘Who makes contact?’ would be a valid question.
+sn12.12:3.5 | S: who contacts. | T: (none)
+sn12.12:3.6 | S: But I don’t speak like that. | T: But I don’t say that. When I don’t say that,
+sn12.12:3.7 | S: Hence it would be cogent to ask: | T: the valid question is
+sn12.12:3.8 | S: ‘What is a requirement for contact?’ | T: ‘From what as a requisite condition comes contact?’
+sn12.12:3.9 | S: And a cogent answer to this would be: | T: And the valid answer is,
+sn12.12:3.10 | S: ‘The six sense fields are requirements for contact. Contact is a requirement for feeling.’” | T: ‘From the six sense media as a requisite condition comes contact. From contact as a requisite condition comes feeling.’”
+sn12.12:4.1 | S: “But sir, who feels?” | T: “Lord, who feels?”
+sn12.12:4.2 | S: “That’s not a cogent question,” said the Buddha. | T: “Not a valid question,” the Blessed One said.
+sn12.12:4.3 | S: “I don’t speak of one who feels. | T: “I don’t say ‘feels.’
+sn12.12:4.4 | S: If I were to speak of one who feels, then it would be cogent to ask | T: If I were to say ‘feels,’ then ‘Who feels?’ would be a valid question.
+sn12.12:4.5 | S: who feels. | T: (none)
+sn12.12:4.6 | S: But I don’t speak like that. | T: But I don’t say that. When I don’t say that,
+sn12.12:4.7 | S: Hence it would be cogent to ask: | T: the valid question is
+sn12.12:4.8 | S: ‘What is a requirement for feeling?’ | T: ‘From what as a requisite condition comes feeling?’
+sn12.12:4.9 | S: And a cogent answer to this would be: | T: And the valid answer is,
+sn12.12:4.10 | S: ‘Contact is a requirement for feeling. Feeling is a requirement for craving.’” | T: ‘From contact as a requisite condition comes feeling. From feeling as a requisite condition comes craving.’”
+sn12.12:5.1 | S: “But sir, who craves?” | T: “Lord, who craves?”
+sn12.12:5.2 | S: “That’s not a cogent question,” said the Buddha. | T: “Not a valid question,” the Blessed One said.
+sn12.12:5.3 | S: “I don’t speak of one who craves. | T: “I don’t say ‘craves.’
+sn12.12:5.4 | S: If I were to speak of one who craves, then it would be cogent to ask | T: If I were to say ‘craves,’ then ‘Who craves?’ would be a valid question.
+sn12.12:5.5 | S: who craves. | T: (none)
+sn12.12:5.6 | S: But I don’t speak like that. | T: But I don’t say that. When I don’t say that,
+sn12.12:5.7 | S: Hence it would be cogent to ask: | T: the valid question is
+sn12.12:5.8 | S: ‘What is a requirement for craving?’ | T: ‘From what as a requisite condition comes craving?’
+sn12.12:5.9 | S: And a cogent answer to this would be: | T: And the valid answer is,
+sn12.12:5.10 | S: ‘Feeling is a requirement for craving. Craving is a requirement for grasping.’” | T: ‘From feeling as a requisite condition comes craving. From craving as a requisite condition comes clinging/sustenance.’”
+sn12.12:6.1 | S: “But sir, who grasps?” | T: “Lord, who clings?”
+sn12.12:6.2 | S: “That’s not a cogent question,” said the Buddha. | T: “Not a valid question,” the Blessed One said.
+sn12.12:6.3 | S: “I don’t speak of one who grasps. | T: “I don’t say ‘clings.’
+sn12.12:6.4 | S: If I were to speak of one who grasps, then it would be cogent to ask | T: If I were to say ‘clings,’ then ‘Who clings?’ would be a valid question.
+sn12.12:6.5 | S: who grasps. | T: (none)
+sn12.12:6.6 | S: But I don’t speak like that. | T: But I don’t say that. When I don’t say that,
+sn12.12:6.7 | S: Hence it would be cogent to ask: | T: the valid question is
+sn12.12:6.8 | S: ‘What is a requirement for grasping?’ | T: ‘From what as a requisite condition comes clinging?’
+sn12.12:6.9 | S: And a cogent answer to this would be: | T: And the valid answer is,
+sn12.12:6.10 | S: ‘Craving is a requirement for grasping. | T: ‘From craving as a requisite condition comes clinging.
+sn12.12:6.11 | S: Grasping is a requirement for continued existence.’ … | T: From clinging as a requisite condition comes becoming. From becoming as a requisite condition comes birth. From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, & despair come into play.
+sn12.12:6.12 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn12.12:7.1 | S: When the six fields of contact fade away and cease with no residue left behind, contact ceases. | T: “Now from the remainderless fading & cessation of the six sense media comes the cessation of contact.
+sn12.12:7.2 | S: When contact ceases, feeling ceases. | T: From the cessation of contact comes the cessation of feeling.
+sn12.12:7.3 | S: When feeling ceases, craving ceases. | T: From the cessation of feeling comes the cessation of craving.
+sn12.12:7.4 | S: When craving ceases, grasping ceases. | T: From the cessation of craving comes the cessation of clinging/sustenance.
+sn12.12:7.5 | S: When grasping ceases, continued existence ceases. | T: From the cessation of clinging/sustenance comes the cessation of becoming.
+sn12.12:7.6 | S: When continued existence ceases, rebirth ceases. | T: From the cessation of becoming comes the cessation of birth.
+sn12.12:7.7 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: From the cessation of birth, then aging-&-death, sorrow, lamentation, pain, distress, & despair all cease.
+sn12.12:7.8 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of stress & suffering.”
+
+## dn11
+dn11:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying at Nālandā in Pāvārika’s mango grove.
+dn11:1.2 | S: At one time the Buddha was staying near Nāḷandā in Pāvārika’s Mango Grove. | T: (none)
+dn11:1.3 | S: Then the householder Kevaḍḍha went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then Kevaṭṭa the householder approached the Blessed One and, on arrival, having bowed down, sat to one side. As he was sitting there he said to the Blessed One:
+dn11:1.4 | S: “Sir, this Nāḷandā is successful and prosperous, populous and full of people. | T: “Lord, this Nālandā is powerful, both prosperous and populous, filled with people who have faith in the Blessed One.
+dn11:1.5 | S: Please direct a mendicant to perform a superhuman demonstration of psychic power. | T: It would be good if the Blessed One were to direct a monk to display a miracle of psychic power from his superior human state so that Nālandā would to an even greater extent have faith in the Blessed One.”
+dn11:1.6 | S: Then Nāḷandā will become even more devoted to the Buddha!” | T: (none)
+dn11:1.7 | S: When he said this, the Buddha said, | T: When this was said, the Blessed One said to Kevaṭṭa the householder,
+dn11:1.8 | S: “Kevaḍḍha, I do not teach Dhamma to the mendicants like this: | T: “Kevaṭṭa, I don’t teach the monks in this way:
+dn11:1.9 | S: ‘Come now, mendicants, perform a superhuman demonstration of psychic power for the white-clothed laypeople.’” | T: ‘Come, monks, display a miracle of psychic power to the lay people clad in white.’”
+dn11:2.1 | S: For a second time, Kevaḍḍha made the same request, | T: A second time.… A third time, Kevaṭṭa the householder said to the Blessed One:
+dn11:2.2 | S: “Sir, I am not teaching you the Dhamma, | T: (none)
+dn11:2.3 | S: but nonetheless I say: | T: “I won’t argue with the Blessed One, but I tell you:
+dn11:2.4 | S: ‘Sir, this Nāḷandā is successful and prosperous, populous and full of people. | T: Lord, this Nālandā is powerful, both prosperous and populous, filled with people who have faith in the Blessed One.
+dn11:2.5 | S: Please direct a mendicant to perform a superhuman demonstration of psychic power. | T: It would be good if the Blessed One were to direct a monk to display a miracle of psychic power from his superior human state so that Nālandā would to an even greater extent have faith in the Blessed One.”
+dn11:2.6 | S: Then Nāḷandā will become even more devoted to the Buddha!’” | T: (none)
+dn11:2.7 | S: But for a second time, the Buddha gave the same answer. | T: (none)
+dn11:3.1 | S: For a third time, Kevaḍḍha made the same request, | T: A third time, the Blessed One said to Kevaṭṭa the householder, “Kevaṭṭa,
+dn11:3.5 | P: Sādhu, bhante, bhagavā ekaṁ bhikkhuṁ samādisatu, yo uttari manussadhammā iddhipāṭihāriyaṁ karissati. | T: I don’t teach the monks in this way: ‘Come, monks, display a miracle of psychic power to the lay people clad in white.’
+dn11:3.6 | S: at which the Buddha said the following. | T: (none)
+dn11:3.7.0 | S: 1. The Demonstration of Psychic Power | T: (none)
+dn11:3.8 | S: “Kevaḍḍha, there are three kinds of demonstration, which I declare having realized them with my own insight. | T: “Kevaṭṭa, there are these three miracles that I have declared, having directly known and realized them for myself.
+dn11:3.9 | S: What three? | T: Which three?
+dn11:3.10 | S: The demonstration of psychic power, the demonstration of revealing, and the demonstration of instruction. | T: The miracle of psychic power, the miracle of telepathy, and the miracle of instruction.
+dn11:4.1 | S: And what is the demonstration of psychic power? | T: The Miracle of Psychic Power “And what is the miracle of psychic power?
+dn11:4.2 | S: It’s a mendicant who wields the many kinds of psychic power: multiplying themselves and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful; controlling the body as far as the realm of divinity. | T: There is the case where a monk wields manifold psychic powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, and mountains as if through space. He dives in and out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting cross-legged he flies through the air like a winged bird. With his hand he touches and strokes even the sun and moon, so mighty and powerful. He exercises influence with his body even as far as the Brahmā worlds.
+dn11:4.3 | S: Someone with faith and confidence sees that mendicant performing those superhuman feats. | T: “Then someone who has faith and conviction in him sees him wielding manifold psychic powers… exercising influence with his body even as far as the Brahmā worlds.
+dn11:4.4 | S: They tell someone else who lacks faith and confidence: | T: He reports this to someone who has no faith and no conviction, telling him,
+dn11:4.5 | S: ‘Oh lord, how incredible, how amazing! The ascetic has such psychic power and might! | T: ‘Isn’t it awesome. Isn’t it astounding, how great the power, how great the prowess of this contemplative.
+dn11:4.6 | S: I saw him myself, performing all these superhuman feats!’ | T: Just now I saw him wielding manifold psychic powers… exercising influence with his body even as far as the Brahmā worlds.’
+dn11:5.1 | S: But the one lacking faith and confidence would say to them: | T: Then the person without faith, without conviction, would say to the person with faith and with conviction:
+dn11:5.2 | S: ‘There’s a spell named Gandhārī. | T: ‘Sir, there is a charm called the Gandhāri charm by which the monk wielded manifold psychic powers…
+dn11:5.3 | S: Using that a mendicant can perform such superhuman feats.’ | T: exercising influence with his body even as far as the Brahmā worlds.’
+dn11:5.4 | S: What do you think, Kevaḍḍha? | T: What do you think, Kevaṭṭa?
+dn11:5.5 | S: Wouldn’t someone lacking faith speak like that?” | T: Isn’t that what the man without faith, without conviction, would say to the man with faith and with conviction?”
+dn11:5.6 | S: “They would, sir.” | T: “Yes, lord, that’s just what he would say.”
+dn11:5.7 | S: “Seeing this drawback in psychic power, I’m horrified, repelled, and disgusted by demonstrations of psychic power. | T: “Seeing this drawback to the miracle of psychic power, Kevaṭṭa, I feel ashamed, repelled, and disgusted with the miracle of psychic power.
+dn11:6.0 | S: 2. The Demonstration of Revealing | T: The Miracle of Telepathy
+dn11:6.1 | S: And what is the demonstration of revealing? | T: “And what is the miracle of telepathy?
+dn11:6.2 | S: It’s when a mendicant reveals the mind, mentality, thoughts, and reflections of other beings and individuals: | T: There is the case where a monk reads the minds, the mental events, the thoughts, the ponderings of other beings, other individuals, (saying,)
+dn11:6.3 | S: ‘This is what you’re thinking, such is your thought, and thus is your state of mind.’ | T: ‘Such is your thinking, here is where your thinking is, thus is your mind.’
+dn11:6.4 | S: Someone with faith and confidence sees that mendicant revealing another individual’s thoughts. | T: “Then someone who has faith and conviction in him sees him reading the minds… of other beings.…
+dn11:6.6 | S: They tell someone else who lacks faith and confidence: | T: He reports this to someone who has no faith and no conviction, telling him,
+dn11:6.7 | S: ‘Oh lord, how incredible, how amazing! The ascetic has such psychic power and might! | T: ‘Isn’t it awesome. Isn’t it astounding, how great the power, how great the prowess of this contemplative.
+dn11:6.8 | S: I saw him myself, revealing the thoughts of another individual!’ | T: Just now I saw him reading the minds… of other beings.…’
+dn11:7.1 | S: But the one lacking faith and confidence would say to them: | T: Then the person without faith, without conviction, would say to the person with faith and with conviction:
+dn11:7.2 | S: ‘There’s a spell named Māṇikā. | T: ‘Sir, there is a charm called the Maṇikā charm by which the monk read the minds…
+dn11:7.3 | S: Using that a mendicant can reveal another individual’s thoughts.’ | T: (none)
+dn11:7.5 | S: What do you think, Kevaḍḍha? | T: of other beings.…’ What do you think, Kevaṭṭa?
+dn11:7.6 | S: Wouldn’t someone lacking faith speak like that?” | T: Isn’t that what the man without faith, without conviction, would say to the man with faith and with conviction?”
+dn11:7.7 | S: “They would, sir.” | T: “Yes, lord, that’s just what he would say.”
+dn11:7.8 | S: “Seeing this drawback in revealing, I’m horrified, repelled, and disgusted by demonstrations of revealing. | T: “Seeing this drawback to the miracle of telepathy, Kevaṭṭa, I feel horrified, humiliated, and disgusted with the miracle of telepathy.
+dn11:8.0 | S: 3. The Demonstration of Instruction | T: The Miracle of Instruction
+dn11:8.1 | S: And what is the demonstration of instruction? | T: “And what is the miracle of instruction?
+dn11:8.2 | S: It’s when a mendicant instructs others like this: | T: There is the case where a monk gives instruction in this way:
+dn11:8.3 | S: ‘Think like this, not like that. Focus your mind like this, not like that. Give up this, and live having achieved that.’ | T: ‘Direct your thought in this way, don’t direct it in that. Attend to things in this way, don’t attend to them in that. Let go of this, enter and remain in that.’ This, Kevaṭṭa, is called the miracle of instruction. “Then there is the case where a Tathāgata appears in the world, worthy and rightly self-awakened. He teaches the Dhamma admirable in its beginning, admirable in its middle, admirable in its end. He proclaims the holy life both in its particulars and in its essence, entirely perfect, surpassingly pure. “A householder or householder’s son, hearing the Dhamma, gains conviction in the Tathāgata and reflects: ‘Household life is confining, a dusty path. The life gone forth is like the open air. It is not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell. What if I were to shave off my hair and beard, put on the ochre robes, and go forth from the household life into homelessness?’ “So after some time he abandons his mass of wealth, large or small; leaves his circle of relatives, large or small; shaves off his hair and beard, puts on the ochre robes, and goes forth from the household life into homelessness. “When he has thus gone forth, he lives restrained by the rules of the monastic code, seeing danger in the slightest faults. Consummate in his virtue, he guards the doors of his senses, is possessed of mindfulness & alertness, and is content [for details, see DN 2].… Abandoning the Hindrances “Endowed with this noble aggregate of virtue, this noble restraint over the sense faculties, this noble mindfulness and alertness, and this noble contentment, he seeks out a secluded dwelling: a forest, the shade of a tree, a mountain, a glen, a hillside cave, a charnel ground, a forest grove, the open air, a heap of straw. After his meal, returning from his alms round, he sits down, crosses his legs, holds his body erect, and brings mindfulness to the fore. “Abandoning covetousness with regard to the world, he dwells with an awareness devoid of covetousness. He cleanses his mind of covetousness. Abandoning ill will & anger, he dwells with an awareness devoid of ill will, sympathetic with the welfare of all living beings. He cleanses his mind of ill will & anger. Abandoning sloth & torpor, he dwells with an awareness devoid of sloth and torpor, mindful, alert, percipient of light. He cleanses his mind of sloth & torpor. Abandoning restlessness & anxiety, he dwells undisturbed, his mind inwardly stilled. He cleanses his mind of restlessness & anxiety. Abandoning uncertainty, he dwells having crossed over uncertainty, with no perplexity with regard to skillful mental qualities. He cleanses his mind of uncertainty. “Suppose that a man, taking a loan, invests it in his business affairs. His business affairs succeed. He repays his old debts and there is extra left over for maintaining his wife. The thought would occur to him, ‘Before, taking a loan, I invested it in my business affairs. Now my business affairs have succeeded. I have repaid my old debts and there is extra left over for maintaining my wife.’ Because of that he would experience joy and happiness. “Now suppose that a man falls sick—in pain and seriously ill. He does not enjoy his meals, and there is no strength in his body. As time passes, he eventually recovers from that sickness. He enjoys his meals and there is strength in his body. The thought would occur to him, ‘Before, I was sick....Now I am recovered from that sickness. I enjoy my meals and there is strength in my body.’ Because of that he would experience joy and happiness. “Now suppose that a man is bound in prison. As time passes, he eventually is released from that bondage, safe and sound, with no loss of property. The thought would occur to him, ‘Before, I was bound in prison. Now I am released from that bondage, safe and sound, with no loss of my property.’ Because of that he would experience joy and happiness. “Now suppose that a man is a slave, subject to others, not subject to himself, unable to go where he likes. As time passes, he eventually is released from that slavery, subject to himself, not subject to others, freed, able to go where he likes. The thought would occur to him, ‘Before, I was a slave....Now I am released from that slavery, subject to myself, not subject to others, freed, able to go where I like.’ Because of that he would experience joy and happiness. “Now suppose that a man, carrying money and goods, is traveling by a road through desolate country. As time passes, he eventually emerges from that desolate country, safe and sound, with no loss of property. The thought would occur to him, ‘Before, carrying money and goods, I was traveling by a road through desolate country. Now I have emerged from that desolate country, safe and sound, with no loss of my property.’ Because of that he would experience joy and happiness. “In the same way, when these five hindrances are not abandoned in himself, the monk regards it as a debt, a sickness, a prison, slavery, a road through desolate country. But when these five hindrances are abandoned in himself, he regards it as unindebtedness, good health, release from prison, freedom, a place of security. When he sees that they have been abandoned within him, gladness is born. In one who is gladdened, rapture is born. Enraptured at heart, his body grows calm. His body calm, he is sensitive to pleasure. Feeling pleasure, his mind becomes concentrated.
+dn11:8.4 | S: This is called the demonstration of instruction. | T: (none)

@@ -1,0 +1,310 @@
+## mn135
+mn135:1.1 | S: So I have heard. | T: (none)
+mn135:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn135:2.1 | S: Then the student Subha, Todeyya’s son, approached the Buddha, and exchanged greetings with him. | T: Then Subha the student, Todeyya’s son, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+mn135:2.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One:
+mn135:3.1 | S: “What is the cause, worthy Gotama, what is the reason why even among those who are human beings some are seen to be inferior and superior? | T: “Master Gotama, what is the reason, what is the cause, why baseness & excellence are seen among human beings, among the human race?
+mn135:3.2 | S: For people are seen who are short-lived and long-lived, | T: For short-lived & long-lived people are to be seen,
+mn135:3.3 | S: sickly and healthy, | T: sickly & healthy,
+mn135:3.4 | S: ugly and beautiful, | T: ugly & beautiful,
+mn135:3.5 | S: insignificant and illustrious, | T: uninfluential & influential,
+mn135:3.6 | S: poor and rich, | T: poor & rich,
+mn135:3.7 | S: from low and eminent families, | T: low-born & high-born,
+mn135:3.8 | S: witless and wise. | T: stupid & discerning people are to be seen.
+mn135:3.9 | S: What is the reason why even among those who are human beings some are seen to be inferior and superior?” | T: So what is the reason, what is the cause, why baseness & excellence are seen among human beings, among the human race?”
+mn135:4.1 | S: “Student, sentient beings are the owners of their deeds and heir to their deeds. Deeds are their womb, their relative, and their refuge. | T: “Student, beings are owners of their actions, heirs of their actions, born of their actions, related through their actions, and have their actions as their arbitrator.
+mn135:4.2 | S: It is deeds that divide beings into | T: Action is what differentiates beings in terms of baseness & excellence.”
+mn135:4.3 | S: inferior and superior.” | T: “I don’t understand the detailed meaning of Master Gotama’s statement spoken in brief without explaining the detailed meaning.
+mn135:4.4 | S: “I don’t understand the meaning of what the worthy Gotama has said in brief, without explaining the details. | T: (none)
+mn135:4.5 | S: Worthy Gotama, please teach me this matter in detail so I can understand the meaning.” | T: It would be good if Master Gotama taught me the Dhamma so that I might understand the detailed meaning of his brief statement.”
+mn135:4.6 | S: “Well then, student, listen and apply your mind well, I will speak.” | T: “In that case, student, listen & pay close attention. I will speak.”
+mn135:4.7 | S: “Yes, worthy sir,” replied Subha. | T: “As you say, Master Gotama,” Subha the student responded to the Blessed One.
+mn135:4.8 | S: The Buddha said this: | T: The Blessed One said:
+mn135:5.1 | S: “Take some woman or man who kills living creatures. They’re violent, bloody-handed, a hardened killer, merciless to living beings. | T: “There is the case, student, where a woman or man is a killer of living beings, brutal, bloody-handed, given to killing & slaying, showing no mercy to living beings.
+mn135:5.2 | S: Because of undertaking such deeds, when their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation, a bad destination, a lower realm, hell. If, on the break-up of the body, after death—
+mn135:5.3 | S: If they’re not reborn in a place of loss, but return to the human realm, then wherever they’re reborn they’re short-lived. | T: instead of reappearing in a plane of deprivation, a bad destination, a lower realm, hell—he/she comes to the human state, then he/she is short-lived wherever reborn.
+mn135:5.4 | S: For killing living creatures is the path leading to a short lifespan. | T: This is the way leading to a short life:
+mn135:5.5 | P: pāṇātipātī hoti luddo lohitapāṇi hatapahate niviṭṭho adayāpanno pāṇabhūtesu. | T: to be a killer of living beings, brutal, bloody-handed,
+mn135:6.1 | S: But take some woman or man who gives up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings. | T: given to killing & slaying, showing no mercy to living beings. “But then there is the case where a woman or man, having abandoned the killing of living beings, abstains from killing living beings, and dwells with the rod laid down, the knife laid down, scrupulous, merciful, & sympathetic for the welfare of all living beings.
+mn135:6.2 | S: Because of undertaking such deeds, when their body breaks up, after death, they’re reborn in a good place, a heavenly realm. | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination, a heavenly world.
+mn135:6.3 | S: If they’re not reborn in a heavenly realm, but return to the human realm, then wherever they’re reborn they’re long-lived. | T: If, on the break-up of the body, after death—instead of reappearing in a good destination, a heavenly world—he/she comes to the human state, then he/she is long-lived wherever reborn.
+mn135:6.4 | S: For not killing living creatures is the path leading to a long lifespan. | T: This is the way leading to a long life: to have abandoned the killing of living beings, to abstain from killing living beings,
+mn135:7.1 | S: Take some woman or man who habitually hurts living creatures with a fist, stone, rod, or sword. | T: to dwell with one’s rod laid down, one’s knife laid down, scrupulous, merciful, & sympathetic for the welfare of all living beings. “There is the case where a woman or man is one who harms beings with his/her fists, with clods, with sticks, or with knives.
+mn135:7.2 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation…
+mn135:7.3 | S: or if they return to the human realm, they’re sickly … | T: If instead he/she comes to the human state, then he/she is sickly wherever reborn.
+mn135:7.4 | P: Bavhābādhasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to sickliness:
+mn135:8.1 | S: But take some woman or man who would never hurt living creatures with a fist, stone, rod, or sword. | T: to be one who harms beings with one’s fists, with clods, with sticks, or with knives. “But then there is the case where a woman or man is not one who harms beings with his/her fists, with clods, with sticks, or with knives.
+mn135:8.2 | S: Because of undertaking such deeds, after death they’re reborn in a heavenly realm … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination…
+mn135:8.3 | S: or if they return to the human realm, they’re healthy … | T: If instead he/she comes to the human state, then he/she is healthy wherever reborn.
+mn135:8.4 | P: Appābādhasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to health:
+mn135:8.5 | P: sattānaṁ aviheṭhakajātiko hoti pāṇinā vā leḍḍunā vā daṇḍena vā satthena vā. | T: not to be one who harms beings with one’s fists, with clods, with sticks, or with knives.
+mn135:9.1 | S: Take some woman or man who is irritable and bad-tempered. | T: “There is the case, where a woman or man is ill-tempered & easily upset;
+mn135:9.2 | S: Even when lightly criticized they lose their temper, becoming annoyed, hostile, and hard-hearted, and displaying annoyance, hate, and bitterness. | T: even when lightly criticized, he/she grows offended, provoked, malicious, & resentful; shows annoyance, aversion, & bitterness.
+mn135:9.3 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation…
+mn135:9.4 | S: or if they return to the human realm, they’re ugly … | T: If instead he/she comes to the human state, then he/she is ugly wherever reborn.
+mn135:9.5 | P: Dubbaṇṇasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to ugliness:
+mn135:9.7 | P: appampi vutto samāno abhisajjati kuppati byāpajjati patiṭṭhīyati kopañca dosañca appaccayañca pātukaroti. | T: to be ill-tempered & easily upset;
+mn135:10.1 | S: But take some woman or man who isn’t irritable and bad-tempered. | T: (none)
+mn135:10.2 | S: Even when heavily criticized, they don’t lose their temper, become annoyed, hostile, and hard-hearted, or display annoyance, hate, and bitterness. | T: even when lightly criticized, to grow offended, provoked, malicious, & resentful; to show annoyance, aversion, & bitterness. “But then there is the case where a woman or man is not ill-tempered or easily upset; even when heavily criticized, he/she doesn’t grow offended, provoked, malicious, or resentful; doesn’t show annoyance, aversion, or bitterness.
+mn135:10.3 | S: Because of undertaking such deeds, after death they’re reborn in a heavenly realm … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination…
+mn135:10.4 | S: or if they return to the human realm, they’re lovely … | T: If instead he/she comes to the human state, then he/she is beautiful wherever reborn.
+mn135:10.5 | P: Pāsādikasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to beauty:
+mn135:10.7 | P: bahumpi vutto samāno nābhisajjati na kuppati na byāpajjati na patiṭṭhīyati na kopañca dosañca appaccayañca pātukaroti. | T: not to be ill-tempered or easily upset; even when heavily criticized, not to be offended, provoked, malicious, or resentful; nor to show annoyance, aversion, & bitterness.
+mn135:11.1 | S: Take some woman or man who is jealous. | T: “There is the case where a woman or man is envious.
+mn135:11.2 | S: They envy, resent, and begrudge the possessions, honor, respect, reverence, homage, and veneration given to others. | T: He/she envies, begrudges, & broods about others’ gains, honor, respect, reverence, salutations, & veneration.
+mn135:11.3 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation… If instead he/she comes to the human state, then he/she is not influential wherever reborn. This is the way leading to being uninfluential: to be envious, to envy, begrudge, & brood about others’ gains, honor, respect, reverence, salutations, & veneration. “But then there is the case where a woman or man is not envious. He/she does not envy, begrudge, or brood about others’ gains, honor, respect, reverence, salutations, or veneration.
+mn135:11.4 | S: or if they return to the human realm, they’re insignificant … | T: (none)
+mn135:12.1 | S: But take some woman or man who is not jealous … | T: (none)
+mn135:12.3 | S: Because of undertaking such deeds, after death they’re reborn in a heavenly realm … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination…
+mn135:12.4 | S: or if they return to the human realm, they’re illustrious … | T: If instead he/she comes to the human state, he/she is influential wherever reborn.
+mn135:12.5 | P: Mahesakkhasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to being influential:
+mn135:12.6 | P: anissāmanako hoti; | T: not to be envious;
+mn135:12.7 | P: paralābhasakkāragarukāramānanavandanapūjanāsu na issati na upadussati na issaṁ bandhati. | T: not to envy, begrudge, or brood about others’ gains, honor, respect, reverence, salutations, or veneration.
+mn135:13.1 | S: Take some woman or man who doesn’t give to ascetics or brahmins such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: “There is the case where a woman or man is not a giver of food, drink, cloth, sandals, garlands, scents, ointments, beds, dwellings, or lighting to contemplatives or brahmans. Through having adopted & carried out such actions, on the break-up of the body, after death he/she reappears in a plane of deprivation… If instead he/she comes to the human state, he/she is poor wherever reborn. This is the way leading to poverty: not to be a giver of food, drink, cloth, sandals, garlands, scents, ointments, beds, dwellings, or lighting to contemplatives or brahmans. “But then there is the case where a woman or man is a giver of food, drink, cloth, sandals, scents, ointments, beds, dwellings, & lighting to contemplatives & brahmans.
+mn135:13.2 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination…
+mn135:13.3 | S: or if they return to the human realm, they’re poor … | T: If instead he/she comes to the human state, then he/she is wealthy wherever reborn.
+mn135:13.4 | P: Appabhogasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to great wealth:
+mn135:14.1 | S: But take some woman or man who does give to ascetics or brahmins … | T: to be a giver of food, drink, cloth, sandals, garlands, scents, ointments, beds, dwellings,
+mn135:14.2 | S: Because of undertaking such deeds, after death they’re reborn in a heavenly realm … | T: (none)
+mn135:14.3 | S: or if they return to the human realm, they’re rich … | T: & lighting to contemplatives & brahmans.
+mn135:15.1 | S: Take some woman or man who is obstinate and arrogant. | T: “There is the case where a woman or man is obstinate & arrogant.
+mn135:15.2 | S: They don’t bow to those they should bow to. They don’t rise up for them, offer them a seat, make way for them, or honor, respect, esteem, or venerate those who are worthy of such. | T: He/she does not pay homage to those who deserve homage, rise up for those for whom one should rise up, give a seat to those to whom one should give a seat, make way for those for whom one should make way, worship those who should be worshipped, respect those who should be respected, revere those who should be revered, or honor those who should be honored.
+mn135:15.3 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation…
+mn135:15.4 | S: or if they return to the human realm, they’re reborn in a low class family … | T: If instead he/she comes to the human state, then he/she is low-born wherever reborn. This is the way leading to a low birth:
+mn135:15.6 | P: thaddho hoti atimānī; | T: to be obstinate & arrogant,
+mn135:15.7 | P: abhivādetabbaṁ na abhivādeti, paccuṭṭhātabbaṁ na paccuṭṭheti, āsanārahassa na āsanaṁ deti, maggārahassa na maggaṁ deti, sakkātabbaṁ na sakkaroti, garukātabbaṁ na garukaroti, mānetabbaṁ na māneti, pūjetabbaṁ na pūjeti. | T: not to pay homage to those who deserve homage, nor rise up for… nor give a seat to… nor make way for… nor worship… nor respect… nor revere… nor honor those who should be honored.
+mn135:16.1 | S: But take some woman or man who is not obstinate and arrogant … | T: “But then there is the case where a woman or man is not obstinate or arrogant;
+mn135:16.2 | P: abhivādetabbaṁ abhivādeti, paccuṭṭhātabbaṁ paccuṭṭheti, āsanārahassa āsanaṁ deti, maggārahassa maggaṁ deti, sakkātabbaṁ sakkaroti, garukātabbaṁ garukaroti, mānetabbaṁ māneti, pūjetabbaṁ pūjeti. | T: he/she pays homage to those who deserve homage, rises up… gives a seat… makes way… worships… respects… reveres… honors those who should be honored.
+mn135:16.3 | S: Because of undertaking such deeds, after death they’re reborn in a heavenly realm … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination…
+mn135:16.4 | S: or if they return to the human realm, they’re reborn in an eminent family … | T: If instead he/she comes to the human state, then he/she is highborn wherever reborn.
+mn135:16.5 | P: Uccākulīnasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to a high birth:
+mn135:16.6 | P: atthaddho hoti anatimānī; | T: not to be obstinate or arrogant;
+mn135:16.7 | P: abhivādetabbaṁ abhivādeti, paccuṭṭhātabbaṁ paccuṭṭheti, āsanārahassa āsanaṁ deti, maggārahassa maggaṁ deti, sakkātabbaṁ sakkaroti, garukātabbaṁ garukaroti, mānetabbaṁ māneti, pūjetabbaṁ pūjeti. | T: to pay homage to those who deserve homage, to rise up… give a seat… make way… worship… respect… revere… honor those who should be honored.
+mn135:17.1 | S: Take some woman or man who doesn’t approach an ascetic or brahmin to ask: | T: “There is the case where a woman or man when visiting a contemplative or brahman, does not ask:
+mn135:17.2 | S: ‘Sir, what is skillful and what is unskillful? | T: ‘What is skillful, venerable sir? What is unskillful?
+mn135:17.3 | S: What is blameworthy and what is blameless? | T: What is blameworthy? What is blameless?
+mn135:17.4 | S: What should be cultivated and what should not be cultivated? | T: What should be cultivated? What should not be cultivated?
+mn135:17.5 | S: What kind of action will lead to my lasting harm and suffering? Or what kind of action will lead to my lasting welfare and happiness?’ | T: What, having been done by me, will be for my long-term harm & suffering? Or what, having been done by me, will be for my long-term welfare & happiness?’
+mn135:17.6 | S: Because of undertaking such deeds, after death they’re reborn in a place of loss … | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a plane of deprivation, a bad destination, a lower realm, hell. If, on the break-up of the body, after death—instead of reappearing in a plane of deprivation, a bad destination,
+mn135:17.7 | S: or if they return to the human realm, they’re witless … | T: a lower realm, hell—he/she comes to the human state, then he/she will be stupid wherever reborn.
+mn135:17.8 | P: Duppaññasaṁvattanikā esā, māṇava, paṭipadā yadidaṁ— | T: This is the way leading to stupidity:
+mn135:17.9 | P: samaṇaṁ vā brāhmaṇaṁ vā upasaṅkamitvā na paripucchitā hoti: | T: when visiting a contemplative or brahman, not to ask:
+mn135:17.10 | P: ‘kiṁ, bhante, kusalaṁ, kiṁ akusalaṁ; | T: ‘What is skillful?
+mn135:17.11 | P: kiṁ sāvajjaṁ, kiṁ anavajjaṁ; | T: …
+mn135:17.13 | P: kiṁ me karīyamānaṁ dīgharattaṁ ahitāya dukkhāya hoti, kiṁ vā pana me karīyamānaṁ dīgharattaṁ hitāya sukhāya hotī’ti? | T: Or what, having been done by me, will be for my long-term welfare & happiness?’
+mn135:18.1 | S: But take some woman or man who does approach an ascetic or brahmin to ask: | T: “But then there is the case where a woman or man when visiting a contemplative or brahman, asks:
+mn135:18.2 | S: ‘Sir, what is skillful and what is unskillful? | T: ‘What is skillful, venerable sir? What is unskillful?
+mn135:18.3 | S: What is blameworthy and what is blameless? | T: What is blameworthy? What is blameless?
+mn135:18.4 | S: What should be cultivated and what should not be cultivated? | T: What should be cultivated? What should not be cultivated?
+mn135:18.5 | S: What kind of action will lead to my lasting harm and suffering? Or what kind of action will lead to my lasting welfare and happiness?’ | T: What, having been done by me, will be for my long-term harm & suffering? Or what, having been done by me, will be for my long-term welfare & happiness?’
+mn135:18.6 | S: Because of undertaking such deeds, when their body breaks up, after death, they’re reborn in a good place, a heavenly realm. | T: Through having adopted & carried out such actions, on the break-up of the body, after death, he/she reappears in a good destination, a heavenly world.
+mn135:18.7 | S: If they’re not reborn in a heavenly realm, but return to the human realm, then wherever they’re reborn they’re very wise. | T: If, on the break-up of the body, after death—instead of reappearing in a good destination, a heavenly world—he/she comes to the human state, then he/she is discerning wherever reborn.
+mn135:18.8 | S: For asking questions of ascetics or brahmins is the path leading to wisdom. | T: This is the way leading to discernment: when visiting a contemplative or brahman, to ask:
+mn135:18.10 | P: ‘kiṁ, bhante, kusalaṁ, kiṁ akusalaṁ; | T: ‘What is skillful?…
+mn135:18.12 | P: kiṁ sevitabbaṁ, kiṁ na sevitabbaṁ; | T: Or what, having been done by me,
+mn135:18.13 | P: kiṁ me karīyamānaṁ dīgharattaṁ ahitāya dukkhāya hoti, kiṁ vā pana me karīyamānaṁ dīgharattaṁ hitāya sukhāya hotī’ti? | T: will be for my long-term welfare & happiness?’
+mn135:19.1 | S: So it is the way people live that makes them how they are, whether short-lived or long-lived, | T: “So, student, the way leading to short life makes people short-lived, the way leading to long life makes people long-lived. The way leading to sickliness makes people sickly, the way leading to health makes people healthy. The way leading to ugliness makes people ugly, the way leading to beauty makes people beautiful. The way leading to lack of influence makes people uninfluential, the way leading to influence makes people influential. The way leading to poverty makes people poor, the way leading to wealth makes people wealthy.
+mn135:19.2 | S: sickly or healthy, | T: (none)
+mn135:19.3 | S: ugly or lovely, | T: (none)
+mn135:19.4 | S: insignificant or illustrious, | T: (none)
+mn135:19.5 | S: poor or rich, | T: (none)
+mn135:19.6 | S: in a low class or eminent family, | T: The way leading to low birth makes people low-born, the way leading to high birth makes people highborn.
+mn135:19.7 | S: or witless or wise. | T: The way leading to stupidity makes people stupid, the way leading to discernment makes people discerning.
+mn135:20.1 | S: Sentient beings are the owners of their deeds and heir to their deeds. Deeds are their womb, their relative, and their refuge. | T: “Beings are owners of their actions, heirs of their actions, born of their actions, related through their actions, and have their actions as their arbitrator.
+mn135:20.2 | S: It is deeds that divide beings into | T: Action is what differentiates beings in terms of baseness & excellence.”
+mn135:20.3 | S: inferior and superior.” | T: (none)
+mn135:21.1 | S: When he had spoken, Subha said to him, | T: When this was said, Subha the student, Todeyya’s son, said to the Blessed One:
+mn135:21.2 | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+mn135:21.3 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the Teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+mn135:21.4 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks.
+mn135:21.5 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+
+## an2.38
+an2.38:1.0 | S: 38 | T: (none)
+an2.38:1.1 | S: At one time Venerable Mahākaccāna was staying near Madhurā in the Nut Grass Grove. | T: On one occasion Ven. Mahā Kaccāna was staying near Madhura in the Gundā Forest.
+an2.38:1.2 | S: Then the brahmin Kandarāyana went up to Mahākaccāna, and exchanged greetings with him … He sat down to one side and said to Mahākaccāna: | T: Then Kaṇḍarāyana the brahman went to Ven. Mahā Kaccāna and on arrival exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Mahā Kaccāna,
+an2.38:1.3 | S: “I have heard, worthy Kaccāna, that the ascetic Kaccāna doesn’t bow to old brahmins, the elderly and senior, who are advanced in years and have reached the final stage of life; nor does he rise in their presence or offer them a seat. | T: “I have heard it said, Master Kaccāna, that, ‘Kaccāna the contemplative does not raise his hands in respect to aged, venerable brahmans—advanced in years, come to the last stage of life—nor does he rise up to greet them, nor does he offer them a seat.’
+an2.38:1.4 | S: And this is indeed the case, | T: (none)
+an2.38:1.5 | S: for the ascetic Kaccāna does not bow to old brahmins, elderly and senior, who are advanced in years and have reached the final stage of life; nor does he rise in their presence or offer them a seat. | T: Insofar as you don’t raise your hands in respect to aged, venerable brahmans—advanced in years, come to the last stage of life—nor rise up to greet them, nor offer them a seat,
+an2.38:1.6 | S: This is not appropriate, worthy Kaccāna.” | T: that is simply not right, Master Kaccāna.”
+an2.38:2.1 | S: “There is the stage of an elder and the stage of youth as explained by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha. | T: “Brahman, the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—has declared the level of one who is venerable and the level of one who is a youngster.
+an2.38:2.2 | S: If an elder, though eighty, ninety, or a hundred years old, still dwells in the midst of sensual pleasures, enjoying them, consumed by thoughts of them, burning with fever for them, and eagerly seeking more, | T: Even if one is venerable—80, 90, 100 years old—yet if one partakes of sensuality, lives in the midst of sensuality, burns with sensual fever, is chewed up by sensual thoughts, and is eager in the search for sensuality,
+an2.38:2.3 | S: they are reckoned as a child, not a senior. | T: then one is reckoned simply as a young fool, not an elder.
+an2.38:2.4 | S: If a youth, young, with pristine black hair, blessed with youth, in the prime of life, | T: “But if one is a youngster, youthful—a black-haired young person endowed with the blessings of youth in the first stage of life—
+an2.38:2.5 | S: does not dwell in the midst of sensual pleasures, enjoying them, consumed by thoughts of them, burning with fever for them, and eagerly seeking more, | T: yet does not partake of sensuality, does not live in the midst of sensuality, does not burn with sensual fever, is not chewed up by sensual thoughts, and is not eager in the search for sensuality,
+an2.38:2.6 | S: they are reckoned as astute, a senior.” | T: then one is reckoned as a wise elder.”
+an2.38:3.1 | S: When this was said, the brahmin Kandarāyana got up from his seat, placed his robe over one shoulder, and bowed with his head to the feet of the young mendicants, saying, | T: When this was said, Kaṇḍarāyana the brahman rose up from his seat, arranged his cloak over one shoulder, and bowed down at the feet of the monks who were youngsters, (saying,)
+an2.38:3.2 | S: “The good fellows are elders, at the stage of the elder; | T: “You, sirs, are the venerable ones, standing on the level of those who are venerable.
+an2.38:3.3 | S: we are youths, at the stage of youth. | T: We are the youngsters, standing on the level of those who are youngsters.
+an2.38:4.1 | S: Excellent, worthy Kaccāna! … From this day forth, may the worthy Kaccāna remember me as a lay follower who has gone for refuge for life.” | T: “Magnificent, Master Kaccāna! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Kaccāna—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks. May Master Kaccāna remember me as a lay follower who has gone for refuge from this day forward, for life.”
+
+## an4.235
+an4.235:1.1 | S: “Mendicants, I declare these four kinds of deeds, having realized them with my own insight. | T: “Monks, these four types of kamma have been directly known, verified, & made known by me.
+an4.235:1.2 | S: What four? | T: Which four?
+an4.235:1.3 | S: There are dark deeds with dark results; | T: There is kamma that is dark with dark result.
+an4.235:1.4 | S: bright deeds with bright results; | T: There is kamma that is bright with bright result.
+an4.235:1.5 | S: dark and bright deeds with dark and bright results; and | T: There is kamma that is dark & bright with dark & bright result.
+an4.235:1.6 | S: neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: There is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.235:1.7 | S: And what are dark deeds with dark results? | T: “And what is kamma that is dark with dark result?
+an4.235:1.8 | S: It’s when someone kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. | T: There is the case where a certain person is one who takes life, is one who takes what is not given, is one who engages in illicit sex, is one who tells lies, is one who takes fermented & distilled liquors that are the basis for heedlessness This is called kamma that is dark with dark result.
+an4.235:1.9 | S: These are called dark deeds with dark results. | T: “And what is kamma that is bright with bright result? There is the case where a certain person is one who abstains from taking life, is one who abstains from taking what is not given, is one who abstains from engaging in illicit sex, is one who abstains from telling lies,
+an4.235:2.1 | S: And what are bright deeds with bright results? | T: (none)
+an4.235:2.2 | S: It’s when someone doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. | T: is one who abstains from taking fermented & distilled liquors that are the basis for heedlessness This is called kamma that is bright with bright result.
+an4.235:2.3 | S: These are called bright deeds with bright results. | T: (none)
+an4.235:3.1 | S: And what are dark and bright deeds with dark and bright results? | T: “And what is kamma that is dark & bright with dark & bright result?
+an4.235:3.2 | S: It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. | T: There is the case where a certain person fabricates a bodily fabrication that is injurious & non-injurious… a verbal fabrication that is injurious & non-injurious… a mental fabrication that is injurious & non-injurious.… He rearises in an injurious & non-injurious world.… There he is touched by injurious & non-injurious contacts.… He experiences injurious & non-injurious feelings, pleasure mingled with pain, like those of human beings, some devas, and some beings in the lower realms. This is called kamma that is dark & bright with dark & bright result.
+an4.235:4.1 | S: And what are neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds? | T: “And what is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma?
+an4.235:4.2 | S: It’s the intention to give up dark deeds with dark results, bright deeds with bright results, and both dark and bright deeds with both dark and bright results. These are called neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: The intention right there to abandon this kamma that is dark with dark result, the intention right there to abandon this kamma that is bright with bright result, the intention right there to abandon this kamma that is dark & bright with dark & bright result. This is called kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.235:4.3 | S: These are the four kinds of deeds that I declare, having realized them with my own insight.” | T: “These, monks, are the four types of kamma directly known, verified, & made known by me.”
+
+## iti30
+iti30:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti30:2.1 | S: “These two things, mendicants, are mortifying. | T: “Monks, there are these two things that cause remorse.
+iti30:2.2 | S: What two? | T: Which two?
+iti30:2.3 | S: It’s when someone hasn’t done good and skillful things that keep them safe, but has done bad things, violence and sin. | T: There is the case of the person who has not done what is admirable, has not done what is skillful, has not given protection to those in fear, and instead has done what is evil, savage, & cruel.
+iti30:2.4 | S: Thinking, ‘I haven’t done good things’, they’re mortified. Thinking, ‘I have done bad things’, they’re mortified. | T: Thinking, ‘I have not done what is admirable,’ he feels remorse. Thinking, ‘I have done what is evil,’ he feels remorse.
+iti30:2.5 | S: These are the two things that are mortifying.” | T: These are the two things that cause remorse.”
+iti30:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti30:2.7 | S: On this it is said: | T: Having engaged
+iti30:3.1 | S: “Having done bad things | T: in bodily misconduct,
+iti30:3.2 | S: by way of body, | T: verbal misconduct,
+iti30:3.3 | S: speech, and mind, | T: misconduct of mind,
+iti30:3.4 | S: and whatever else is corrupt; | T: or whatever else is flawed,
+iti30:4.1 | S: not having done good deeds, | T: not having done what is skillful,
+iti30:4.2 | S: and having done many bad, | T: having done much that is not,
+iti30:4.3 | S: when their body breaks up, that witless person | T: at the break-up of the body, the undiscerning one reappears in
+iti30:4.4 | S: is reborn in hell.” | T: hell.
+iti30:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## ud2.2
+ud2.2:1.1 | S: So I have heard. | T: (none)
+ud2.2:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.2:1.3 | S: Now at that time, after the meal, on return from almsround, several mendicants sat together in the assembly hall and this discussion came up among them: | T: And on that occasion a large number of monks, after the meal, on returning from their alms round, were sitting gathered together in the assembly hall when this discussion arose:
+ud2.2:1.4 | S: “Which of these two kings has greater wealth, riches, treasury, dominion, vehicles, forces, might, and power: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?” | T: “Friends, which of these two kings has greater wealth, greater possessions, the greater treasury, the larger realm, the greater stock of riding animals, the greater army, greater power, greater might: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?”
+ud2.2:1.5 | S: At that point the conversation among those mendicants was left unfinished. | T: (none)
+ud2.2:2.1 | S: Then in the late afternoon, the Buddha came out of retreat, went to the assembly hall, sat down on the seat spread out, | T: And this discussion came to no conclusion. Then the Blessed One, emerging from his seclusion in the late afternoon, went to the assembly hall and, on arrival, sat down on a seat laid out.
+ud2.2:2.2 | S: and addressed the mendicants: | T: Seated, he addressed the monks:
+ud2.2:2.3 | S: “Mendicants, what were you sitting talking about just now? What conversation was left unfinished?” | T: “For what topic are you sitting together here? And what was the discussion that came to no conclusion?”
+ud2.2:3.1 | S: So the mendicants told him what they had been talking about when the Buddha arrived. The Buddha said, | T: “Just now, lord, after the meal, on returning from our alms round, we were sitting gathered here at the assembly hall when this discussion arose:
+ud2.2:3.2 | P: ‘ko nu kho, āvuso, imesaṁ dvinnaṁ rājūnaṁ mahaddhanataro vā mahābhogataro vā mahākosataro vā mahāvijitataro vā mahāvāhanataro vā mahabbalataro vā mahiddhikataro vā mahānubhāvataro vā rājā vā māgadho seniyo bimbisāro, rājā vā pasenadi kosalo’ti? | T: ‘Friends, which of these two kings has greater wealth, greater possessions, the greater treasury, the larger realm, the greater stock of riding animals, the greater army, greater power, greater might: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?’
+ud2.2:3.3 | P: Ayaṁ kho no, bhante, antarākathā vippakatā, atha bhagavā anuppatto”ti. | T: This was the discussion that had come to no conclusion when the Blessed One arrived.”
+ud2.2:4.1 | S: “Mendicants, it is not appropriate for you gentlemen who have gone forth out of faith from the lay life to homelessness to talk about such things. | T: “It isn’t proper, monks, that sons of good families, on having gone forth out of faith from home to the homeless life, should talk on such a topic.
+ud2.2:4.2 | S: When you’re sitting together you should do one of two things: | T: When you have gathered you have two duties:
+ud2.2:4.3 | S: discuss the teachings or keep noble silence.” | T: either Dhamma-talk or noble silence.”
+ud2.2:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.2:6.1 | S: “Neither the pleasures of the senses, | T: Any sensual bliss in the world,
+ud2.2:6.2 | S: nor even divine happiness, | T: any heavenly bliss,
+ud2.2:6.3 | S: is worth even a sixteenth part | T: isn’t worth one sixteenth-sixteenth
+ud2.2:6.4 | S: of the happiness of craving’s end.” | T: of the bliss of the ending of craving.
+
+## ud2.7
+ud2.7:1.1 | S: So I have heard. | T: (none)
+ud2.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.7:1.3 | S: Now at that time a certain lay follower’s dear and beloved only child passed away. | T: And on that occasion the dear and beloved only son of a certain lay follower had died.
+ud2.7:2.1 | S: Then in the middle of the day several lay followers with wet clothes and hair went up to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: So a large number of lay followers–their clothes wet, their hair wet–went to the Blessed One in the middle of the day and, on arrival, having bowed down to him, sat to one side. As they were sitting there the Blessed One said to them:
+ud2.7:2.2 | S: “Why, lay followers, have you come here in the middle of the day with wet clothes and hair?” | T: “Why have you come here–your clothes wet, your hair wet–in the middle of the day?”
+ud2.7:3.1 | S: The lay follower replied, | T: When this was said, the lay follower said to the Blessed One,
+ud2.7:3.2 | S: “Sir, my dear and beloved only child has passed away. | T: “My dear and beloved only son, lord, has died.
+ud2.7:3.3 | S: That’s why we came here in the middle of the day with wet clothes and hair.” | T: This is why we have come here–our clothes wet, our hair wet–in the middle of the day.”
+ud2.7:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.7:5.1 | S: “Hosts of gods and most human beings are bound | T: Tied down by the allure of what seems dear, hosts of devas, most human beings,
+ud2.7:5.2 | S: to what seems dear and pleasant. | T: (none)
+ud2.7:5.3 | S: Gloomy and exhausted, | T: worn out with misery,
+ud2.7:5.4 | S: they fall under the sway of the King of Death. | T: fall under the sway of the King of Death.
+ud2.7:6.1 | S: The diligent, who day and night | T: But those who, day & night,
+ud2.7:6.2 | S: give up what seems pleasant, | T: heedfully abandon what seems dear,
+ud2.7:6.3 | S: dig out the root of gloom— | T: dig up misery by the root–
+ud2.7:6.4 | S: Death’s bait so hard to escape.” | T: Death’s bait so hard
+ud2.7:6.5 | P: Sattamaṁ. | T: to overcome.
+
+## ud5.4
+ud5.4:1.1 | S: So I have heard. | T: (none)
+ud5.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.4:1.3 | S: Now at that time, between Sāvatthī and the Jeta Grove, several boys were tormenting some fish. | T: And on that occasion, a large number of boys on the road between Sāvatthī & Jeta’s Grove were catching fish.
+ud5.4:2.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then early in the morning the Blessed One adjusted his under robe and–carrying his bowl & robes–went into Sāvatthī for alms.
+ud5.4:2.2 | S: He saw the boys tormenting the fish. | T: He saw the large number of boys on the road between Sāvatthī & Jeta’s Grove catching little fish.
+ud5.4:2.3 | S: He went to them and said, | T: Seeing them, he went up to them and, on arrival, said to them,
+ud5.4:2.4 | S: “Boys, do you fear pain? Do you dislike pain?” | T: “Boys, do you fear pain? Do you dislike pain?”
+ud5.4:2.5 | S: “Yes, sir,” they replied. “We dislike pain.” | T: “Yes, lord, we fear pain. We dislike pain.”
+ud5.4:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.4:4.1 | S: “If you fear pain, | T: If you fear pain,
+ud5.4:4.2 | S: if you dislike pain, | T: if you dislike pain,
+ud5.4:4.3 | S: don’t do bad deeds | T: don’t anywhere do an evil deed
+ud5.4:4.4 | S: either openly or in secret. | T: in open or in secret.
+ud5.4:5.1 | S: If you should do a bad deed, | T: If you’re doing or will do an evil deed,
+ud5.4:5.2 | S: now or in the future, | T: (none)
+ud5.4:5.3 | S: you won’t be freed from suffering, | T: you won’t escape pain
+ud5.4:5.4 | S: though you fly away and flee.” | T: catching up as you run away.
+
+## sn22.48
+sn22.48:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.48:1.2 | S: “Mendicants, I will teach you the five aggregates and the five grasping aggregates. | T: There the Blessed One said, “Monks, I will teach you the five aggregates & the five clinging-aggregates.
+sn22.48:1.3 | S: Listen … | T: Listen & pay close attention. I will speak.” “As you say, lord,” the monks responded to him.
+sn22.48:1.4 | S: And what are the five aggregates? | T: The Blessed One said, “Now what, monks, are the five aggregates?
+sn22.48:1.5 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of form. | T: “Any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the form aggregate. “Any feeling whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the feeling aggregate. “Any perception whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near:
+sn22.48:1.6 | S: Any kind of feeling at all … | T: (none)
+sn22.48:1.7 | S: Any kind of perception at all … | T: That is called the perception aggregate.
+sn22.48:1.8 | S: Any kind of choices at all … | T: “Any fabrications whatsoever that are past,
+sn22.48:1.9 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of consciousness. | T: future, or present; internal or external; blatant or subtle; common or sublime; far or near: Those are called the fabrication aggregate. “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the consciousness aggregate.
+sn22.48:1.10 | S: These are called the five aggregates. | T: “These are called the five aggregates.
+sn22.48:2.1 | S: And what are the five grasping aggregates? | T: “And what are the five clinging-aggregates?
+sn22.48:2.2 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of form. | T: “Any form whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the form clinging-aggregate. “Any feeling whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the feeling clinging-aggregate. “Any perception whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents:
+sn22.48:2.3 | S: Any kind of feeling at all … | T: (none)
+sn22.48:2.4 | S: Any kind of perception at all … | T: That is called the perception clinging-aggregate.
+sn22.48:2.5 | S: Any kind of choices at all … | T: “Any fabrications whatsoever—
+sn22.48:2.6 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of consciousness. | T: past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that are clingable, offer sustenance, and are accompanied with effluents: Those are called the fabrication clinging-aggregate. “Any consciousness whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the consciousness clinging-aggregate.
+sn22.48:2.7 | S: These are called the five grasping aggregates.” | T: “These are called the five clinging-aggregates.”
+
+## sn42.11
+sn42.11:1.1 | S: At one time the Buddha was staying in the land of the Mallas, near the Mallian town named Uruvelakappa. | T: On one occasion the Blessed One was staying among the Mallans in a Mallan town named Uruvelakappa.
+sn42.11:1.2 | S: Then Bhadraka the village chief went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Gandhabhaka the headman went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+sn42.11:1.3 | S: “Please, sir, let the Blessed One teach me the origin and disappearance of suffering.” | T: “It would be good, lord, if the Blessed One would teach me the origination & ending of stress.”
+sn42.11:1.4 | S: “Chief, if I were to teach you about the origin and disappearance of suffering in connection with the past, saying | T: “Headman, if I were to teach you the origination & ending of stress with reference to the past, saying,
+sn42.11:1.5 | S: ‘this is how it was in the past,’ you might have doubts or uncertainties about that. | T: ‘Thus it was in the past,’ you would be doubtful and perplexed.
+sn42.11:1.6 | S: If I were to teach you about the origin and disappearance of suffering in connection with the future, saying | T: If I were to teach you the origination & ending of stress with reference to the future, saying,
+sn42.11:1.7 | S: ‘this is how it will be in the future,’ you might have doubts or uncertainties about that. | T: ‘Thus it will be in the future,’ you would be doubtful and perplexed.
+sn42.11:1.8 | S: Rather, chief, I will teach you about the origin and disappearance of suffering as I am sitting right here and you are sitting right there. | T: So instead, I—sitting right here—will teach you sitting right there the origination & ending of stress.
+sn42.11:1.9 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+sn42.11:1.10 | S: “Yes, sir,” Bhadraka replied. | T: “As you say, lord,” Gandhabhaka the headman responded to him.
+sn42.11:1.11 | S: The Buddha said this: | T: The Blessed One said:
+sn42.11:2.1 | S: “What do you think, chief? | T: “Now what do you think, headman?
+sn42.11:2.2 | S: Are there any people here in Uruvelakappa who, if they were executed, imprisoned, fined, or condemned, it would cause you sorrow, lamentation, pain, sadness, and distress?” | T: Are there any people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause sorrow, lamentation, pain, distress, or despair to arise in you?” “Yes, lord, there are people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause sorrow, lamentation, pain, distress, or despair to arise in me.” “And are there any people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause no sorrow, lamentation, pain, distress, or despair to arise in you?”
+sn42.11:2.3 | S: “There are, sir.” | T: “Yes, lord,
+sn42.11:2.4 | S: “But are there any people here in Uruvelakappa who, if they were executed, imprisoned, fined, or condemned, it would not cause you sorrow, lamentation, pain, sadness, and distress?” | T: there are people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause no sorrow, lamentation, pain, distress, or despair to arise in me.” “Now what is the cause, what is the reason, why the murder, imprisonment, fining, or censure of some of the people in Uruvelakappa would cause you sorrow, lamentation, pain, distress, or despair, whereas the murder, imprisonment, fining,
+sn42.11:2.5 | S: “There are, sir.” | T: (none)
+sn42.11:2.6 | S: “What’s the cause, chief, what’s the reason why, if this was to happen to some people it could cause you sorrow, while if it happens to others it does not?” | T: or censure of others would cause you no sorrow, lamentation, pain, distress, or despair?“
+sn42.11:2.7 | S: “The people regarding whom this would give rise to sorrow are those I have desire and passion. | T: “Those people in Uruvelakappa whose murder, imprisonment, fining, or censure would cause me sorrow, lamentation, pain, distress, or despair are those for whom I feel desire-passion.
+sn42.11:2.8 | S: The people regarding whom this would not give rise to sorrow are those I don’t have desire and passion.” | T: Those people in Uruvelakappa whose murder, imprisonment, fining, or censure would cause me no sorrow, lamentation, pain, distress, or despair are those for whom I feel no desire-passion.”
+sn42.11:2.9 | S: “With this present phenomenon that you have seen, understood, immediately attained, and fathomed, you can apply the same method to the past and future: | T: “Now, headman, from what you have realized, fathomed, attained right now in the present, without regard to time, you may draw an inference with regard to the past and future:
+sn42.11:2.10 | S: ‘All the suffering that arose in the past was rooted and sourced in desire. | T: ‘Whatever stress, in arising, arose for me in the past, all of it had desire as its root, had desire as its cause—
+sn42.11:2.11 | S: For desire is the root of suffering. | T: for desire is the cause of stress.
+sn42.11:2.12 | S: All the suffering that will arise in the future will be rooted and sourced in desire. | T: And whatever stress, in arising, will arise for me in the future, all of it will have desire as the root, will have desire as its cause—
+sn42.11:2.13 | S: For desire is the root of suffering.’” | T: for desire is the cause of stress.’”
+sn42.11:2.14 | S: “It’s incredible, sir, it’s amazing! | T: “Amazing, lord! Astounding!
+sn42.11:2.15 | S: How well said this was by the Buddha! | T: How well the Blessed One has put it:
+sn42.11:2.16 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: ‘Whatever stress, in arising, arose for me in the past, all of it had desire as its root, had desire as its cause—for desire is the cause of stress. And whatever stress, in arising, will arise for me in the future, all of it will have desire as the root, will have desire as its cause—
+sn42.11:2.17 | S: For desire is the root of suffering.’ | T: for desire is the cause of stress.’
+sn42.11:2.18 | S: I have a boy called Ciravāsi, who resides in a house away from here. | T: I have a son, lord, named Ciravāsi, who lives far away from here.
+sn42.11:2.19 | S: I rise early and dispatch someone, saying: | T: When I get up in the morning, I send a man, saying,
+sn42.11:2.20 | S: ‘Go, lad, and check on my boy Ciravāsi.’ | T: ‘Go, learn how Ciravāsi is doing.’
+sn42.11:2.21 | S: Until they get back I worry: | T: And as long as that man has not returned, I am simply beside myself, (thinking,)
+sn42.11:2.22 | S: ‘I hope nothing’s wrong with Ciravāsi!’” | T: ‘Don’t let Ciravāsi be sick!’”
+sn42.11:3.1 | S: “What do you think, chief? | T: “Now, what do you think, headman?
+sn42.11:3.2 | S: If Ciravāsi was executed, imprisoned, fined, or condemned, would it cause you sorrow, lamentation, pain, sadness, and distress?” | T: If Ciravāsi were to be murdered or imprisoned or fined or censured, would you feel sorrow, lamentation, pain, distress, & despair?” “Lord, if my son Ciravāsi were to be murdered or imprisoned or fined or censured, my very life would be altered. So how could I not feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:3.3 | S: “How could it not, sir?” | T: (none)
+sn42.11:3.4 | S: “This too is a way to understand: | T: “Thus, headman, by this line of reasoning it may be realized how stress, when arising, arises:
+sn42.11:3.5 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: All of it has desire as its root, has desire as its cause—
+sn42.11:3.6 | S: For desire is the root of suffering.’ | T: for desire is the cause of stress.”
+sn42.11:4.1 | S: What do you think, chief? | T: “Now what do you think, headman?
+sn42.11:4.2 | S: Before you’d seen or heard of Ciravāsi’s mother, did you have any desire or passion or fondness for her?” | T: Before you had seen or heard of Ciravāsi’s mother, did you feel desire, passion, or love for her?” “No, lord.” “And after you had seen or heard of Ciravāsi’s mother,
+sn42.11:4.3 | S: “No, sir.” | T: (none)
+sn42.11:4.4 | S: “Then was it because you saw or heard of her that you had | T: (none)
+sn42.11:4.5 | S: desire or passion or fondness for her?” | T: did you feel desire, passion, or love for her?”
+sn42.11:4.6 | S: “Yes, sir.” | T: “Yes, lord.”
+sn42.11:5.1 | S: “What do you think, chief? | T: “What do you think?
+sn42.11:5.2 | S: If Ciravāsi’s mother was executed, imprisoned, fined, or condemned, would it cause you sorrow, lamentation, pain, sadness, and distress?” | T: If Ciravāsi’s mother were to be murdered or imprisoned or fined or censured, would you feel sorrow, lamentation, pain, distress, & despair?” “Lord, if Ciravāsi’s mother were to be murdered or imprisoned or fined or censured, my very life would be altered. So how could I not feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:5.3 | S: “How could it not, sir?” | T: (none)
+sn42.11:5.4 | S: “This too is a way to understand: | T: “Thus, headman, by this line of reasoning it may be realized how stress,
+sn42.11:5.5 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: when arising, arises: All of it has desire as its root, has desire as its cause—for desire is the cause of stress.”
+sn42.11:5.6 | S: For desire is the root of suffering.’” | T: (none)
+

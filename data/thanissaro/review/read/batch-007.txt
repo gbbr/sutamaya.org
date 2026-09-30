@@ -1,0 +1,327 @@
+## an4.99
+an4.99:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “Monks, these four types of individuals are to be found existing in the world.
+an4.99:1.2 | S: What four? | T: Which four?
+an4.99:1.3 | S: One who practices to benefit themselves, but not others; | T: The one who practices for his own benefit but not for that of others.
+an4.99:1.4 | S: one who practices to benefit others, but not themselves; | T: The one who practices for the benefit of others but not for his own.
+an4.99:1.5 | S: one who practices to benefit neither themselves nor others; and | T: The one who practices neither for his own benefit nor for that of others.
+an4.99:1.6 | S: one who practices to benefit both themselves and others. | T: The one who practices for his own benefit and for that of others.
+an4.99:2.1 | S: And how does an individual practice to benefit themselves, but not others? | T: “And how is one an individual who practices for his own benefit but not for that of others?
+an4.99:2.2 | S: It’s when an individual doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. But they don’t encourage others to do the same. | T: There is the case where a certain individual himself abstains from the taking of life but doesn’t encourage others in undertaking abstinence from the taking of life. He himself abstains from stealing but doesn’t encourage others in undertaking abstinence from stealing. He himself abstains from sexual misconduct but doesn’t encourage others in undertaking abstinence from sexual misconduct. He himself abstains from lying but doesn’t encourage others in undertaking abstinence from lying. He himself abstains from intoxicants that cause heedlessness but doesn’t encourage others in undertaking abstinence from intoxicants that cause heedlessness. Such is the individual who practices for his own benefit but not for that of others. “And how is one an individual who practices for the benefit of others but not for his own? There is the case where a certain individual himself doesn’t abstain from the taking of life but encourages others in undertaking abstinence from the taking of life. He himself doesn’t abstain from stealing but encourages others in undertaking abstinence from stealing. He himself doesn’t abstain from sexual misconduct but encourages others in undertaking abstinence from sexual misconduct. He himself doesn’t abstain from lying but encourages others in undertaking abstinence from lying. He himself doesn’t abstain from intoxicants that cause heedlessness but encourages others in undertaking abstinence from intoxicants that cause heedlessness. Such is the individual who practices for the benefit of others but not for his own. “And how is one an individual who practices neither for his own benefit nor for that of others? There is the case where a certain individual himself doesn’t abstain from the taking of life and doesn’t encourage others in undertaking abstinence from the taking of life. He himself doesn’t abstain from stealing and doesn’t encourage others in undertaking abstinence from stealing. He himself doesn’t abstain from sexual misconduct and doesn’t encourage others in undertaking abstinence from sexual misconduct. He himself doesn’t abstain from lying and doesn’t encourage others in undertaking abstinence from lying. He himself doesn’t abstain from intoxicants that cause heedlessness and doesn’t encourage others in undertaking abstinence from intoxicants that cause heedlessness.
+an4.99:2.7 | S: That’s how an individual practices to benefit themselves, but not others. | T: Such is the individual who practices neither for his own benefit nor for that of others.
+an4.99:3.1 | S: And how does an individual practice to benefit others, but not themselves? | T: “And how is one an individual who practices for his own benefit and for that of others?
+an4.99:3.2 | S: It’s when an individual kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. But they encourage others to not do these things. | T: There is the case where a certain individual himself abstains from the taking of life and encourages others in undertaking abstinence from the taking of life. He himself abstains from stealing and encourages others in undertaking abstinence from stealing. He himself abstains from sexual misconduct and encourages others in undertaking abstinence from sexual misconduct. He himself abstains from lying and encourages others in undertaking abstinence from lying. He himself abstains from intoxicants that cause heedlessness and encourages others in undertaking abstinence from intoxicants that cause heedlessness.
+an4.99:3.7 | S: That’s how an individual practices to benefit others, but not themselves. | T: (none)
+an4.99:4.1 | S: And how does a person practice to benefit neither themselves nor others? | T: (none)
+an4.99:4.2 | S: It’s when an individual kills, etc. … and doesn’t encourage others to not do these things. | T: (none)
+an4.99:4.3 | S: That’s how an individual practices to benefit neither themselves nor others. | T: (none)
+an4.99:5.1 | S: And how does an individual practice to benefit both themselves and others? | T: (none)
+an4.99:5.2 | S: It’s when an individual doesn’t kill, etc. … and encourages others to do the same. | T: (none)
+an4.99:5.3 | S: That’s how an individual practices to benefit both themselves and others. | T: Such is the individual who practices for his own benefit and for that of others.
+an4.99:5.4 | S: These are the four individuals found in the world.” | T: “These are the four types of individuals to be found existing in the world.”
+
+## iti60
+iti60:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti60:2.1 | S: “Mendicants, there are these three grounds for making merit. | T: “Monks, there are these three grounds for meritorious activity.
+iti60:2.2 | S: What three? | T: Which three?
+iti60:2.3 | S: Giving, ethical conduct, and meditation are all grounds for making merit. | T: The ground for meritorious activity made of generosity, the ground for meritorious activity made of virtue, and the ground for meritorious activity made of development [meditation].
+iti60:2.4 | S: These are the three grounds for making merit.” | T: These are the three grounds for meritorious activity.”
+iti60:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti60:2.6 | S: On this it is said: | T: (none)
+iti60:3.1 | S: “One should practice only good deeds, | T: Train in acts of merit
+iti60:3.2 | S: whose happy outcome stretches ahead. | T: that yield the foremost profit of bliss–
+iti60:3.3 | S: Giving and moral conduct, | T: (none)
+iti60:3.4 | S: developing a mind of love: | T: develop generosity, a life in tune, a mind of good will.
+iti60:4.1 | S: having developed these | T: Developing these
+iti60:4.2 | S: three things yielding happiness, | T: three things that bring about bliss,
+iti60:4.3 | S: that astute one is reborn | T: the wise reappear in a world of bliss
+iti60:4.4 | S: in a happy, pleasing world.” | T: (none)
+iti60:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti60:5.2 | P: Paṭhamaṁ. | T: unalloyed.
+
+## iti71
+iti71:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti71:2.1 | S: “Mendicants, I’ve seen beings who engaged in good conduct of body, speech, and mind, who did not denounce the noble ones, who held right view and acted accordingly. | T: “Monks, I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world. It’s not from having heard this from another contemplative or brahman that I tell you that I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world. It’s from having known it myself, seen it myself, realized it myself that I tell you that I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–
+iti71:2.2 | S: At the breaking up of the body, after death, they were reborn in a good destination, a heavenly realm. | T: at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.”
+iti71:3.1 | S: Now, I don’t say this because I’ve heard it from some other ascetic or brahmin. | T: (none)
+iti71:3.4 | S: I only say it because I’ve known, seen, and realized it for myself.” | T: (none)
+iti71:4.3 | S: The Buddha spoke this matter. | T: (none)
+iti71:4.4 | S: On this it is said: | T: (none)
+iti71:5.1 | S: “When the mind has been directed right, | T: With mind rightly directed,
+iti71:5.2 | S: and words rightly spoken, | T: speaking right speech,
+iti71:5.3 | S: and right bodily deeds have been done, | T: doing right deeds with the body:
+iti71:5.4 | S: an individual here | T: a person here
+iti71:6.1 | S: learned, doer of good deeds, | T: of much learning, a doer of merit
+iti71:6.2 | S: though their life may be short, | T: here in this next-to-nothing life,
+iti71:6.3 | S: when their body breaks up, that wise person | T: at the break-up of the body, discerning,
+iti71:6.4 | S: is reborn in heaven.” | T: reappears in heaven.
+iti71:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## sn16.5
+sn16.5:1.1 | S: So I have heard. | T: (none)
+sn16.5:1.2 | S: Near Rājagaha, in the Bamboo Grove. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn16.5:1.3 | S: Then Venerable Mahākassapa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Ven. Mahā Kassapa went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him,
+sn16.5:1.4 | S: “You’re old now, Kassapa. Those worn-out hempen rag robes must be a burden for you. | T: “You are now old, Kassapa. Your robes made of cast-off hemp rags are heavy for you.
+sn16.5:1.5 | S: So Kassapa, you should wear clothes given by householders, accept invitations for the meal, and stay in my presence.” | T: So wear robes donated by householders, eat invitational meals, and live close by me.”
+sn16.5:2.1 | S: “For a long time, sir, I’ve lived in the wilderness, eaten only almsfood, worn rag robes, and owned just three robes; and I’ve praised these things. I’ve been one of few wishes, content, secluded, aloof, and energetic; and I’ve praised these things.” | T: “Lord, for a long time I have lived in the wilderness and have extolled living in the wilderness. I have been an almsgoer and have extolled being an almsgoer. I have worn cast-off rags and have extolled wearing cast-off rags. I have worn only one set of the triple robe and have extolled wearing only one set of the triple robe. I have been modest and have extolled being modest. I have been content and have extolled being content. I have been reclusive and have extolled being reclusive. I have been unentangled and have extolled being unentangled. I have kept my persistence aroused and have extolled having persistence aroused.” “But, Kassapa, what compelling reason do you see that you for a long time have lived in the wilderness and have extolled living in the wilderness… that you have kept your persistence aroused and have extolled having persistence aroused?” “Lord, I see two compelling reasons that for a long time I have lived in the wilderness and have extolled living in the wilderness… that I have kept my persistence aroused and have extolled having persistence aroused:
+sn16.5:3.1 | S: “But seeing what benefit, Kassapa, have you long practiced these things?” | T: (none)
+sn16.5:4.1 | S: “Sir, seeing two benefits I have long practiced these things. | T: (none)
+sn16.5:5.1 | S: I see happiness for myself in this life. And I have sympathy for future generations, thinking: | T: seeing a pleasant abiding for myself in the here & now, and feeling sympathy for later generations:
+sn16.5:5.2 | S: ‘Hopefully those who come after might follow my example.’ | T: ‘Perhaps later generations will take it as an example:
+sn16.5:5.3 | S: For they may think: ‘It seems that the disciples awakened after the Buddha for a long time lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; and they praised these things. They were of few wishes, content, secluded, aloof, and energetic; and they praised these things.’ | T: “It seems that the disciples of the Awakened One and those who awakened after him lived for a long time in the wilderness and extolled living in the wilderness; were almsgoers and extolled being almsgoers; wore cast-off rags and extolled wearing cast-off rags; wore only one set of the triple robe and extolled wearing only one set of the triple robe; were modest and extolled being modest; were content and extolled being content;
+sn16.5:5.4 | P: piṇḍapātikā ceva ahesuṁ …pe… | T: were reclusive and extolled being reclusive;
+sn16.5:5.5 | P: paṁsukūlikā ceva ahesuṁ … | T: were unentangled and extolled being unentangled;
+sn16.5:5.11 | P: āraddhavīriyā ceva ahesuṁ vīriyārambhassa ca vaṇṇavādino’ti. | T: kept their persistence aroused and extolled having persistence aroused.”’”
+sn16.5:5.12 | S: They’ll practice accordingly, which will be for their lasting welfare and happiness. | T: (none)
+sn16.5:6.1 | S: Seeing these two benefits I have long practiced these things.” | T: (none)
+sn16.5:7.1 | S: “Good, good, Kassapa! | T: “Good, Kassapa. Very good.
+sn16.5:7.2 | S: You’re acting for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: It seems that you are one who practices for the benefit & happiness of many, out of sympathy for the world, for the welfare, benefit, & happiness of devas & human beings.
+sn16.5:7.3 | S: So Kassapa, wear worn-out hempen rag robes, walk for alms, and stay in the wilderness.” | T: So continue wearing your robes of cast-off hemp cloth, go for alms, and live in the wilderness.”
+
+## sn44.5
+sn44.5:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. … | T: On one occasion Ven. Sāriputta and Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana. Then Ven. Mahā Koṭṭhita, emerging from his seclusion in the evening, went to Ven. Sāriputta and exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta, “Now then, friend Sāriputta,
+sn44.5:1.2 | S: (The same down as far as:) | T: does the Tathāgata exist after death?”
+sn44.5:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: “That, friend, has not been declared by the Blessed One:
+sn44.5:1.4 | S: “Reverend, if you’re not rid of greed, desire, fondness, thirst, passion, and craving for form … | T: (none)
+sn44.5:1.6 | S: feeling … | T: (none)
+sn44.5:1.7 | S: perception … | T: (none)
+sn44.5:1.8 | S: choices … | T: (none)
+sn44.5:1.9 | S: consciousness, you think ‘a realized one still exists after death’ … | T: ‘The Tathāgata exists after death.’” “Well then, friend Sāriputta, does the Tathāgata not exist after death?” “Friend, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’” “Then does the Tathāgata both exist and not exist after death?” “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’” “Well then, does the Tathāgata neither exist nor not exist after death?” “That too has not been declared by the Blessed One: ‘The Tathāgata neither exists nor does not exist after death.’” “Now, friend Sāriputta, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’ Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?” “For one whose passion for form has not been removed, whose desire… affection… thirst… fever… craving for form has not been removed, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.5:1.10 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.5:1.11 | S: If you are rid of greed for form … | T: “For one whose passion for feeling has not been removed.…
+sn44.5:1.12 | S: feeling … | T: (none)
+sn44.5:1.13 | S: perception … | T: “For one whose passion for perception has not been removed.…
+sn44.5:1.14 | S: choices … | T: “For one whose passion for fabrication has not been removed.…
+sn44.5:1.15 | S: consciousness, you don’t think ‘a realized one still exists after death’ … | T: “For one whose passion for consciousness has not been removed, whose desire… affection… thirst… fever… craving for consciousness has not been removed, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death.’ “But for one whose passion for form has been removed, whose desire… affection… thirst… fever… craving for form has been removed, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur. “For one whose passion for feeling has been removed.… “For one whose passion for perception has been removed.… “For one whose passion for fabrication has been removed.… “For one whose passion for consciousness has been removed, whose desire… affection… thirst… fever… craving for consciousness has been removed, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.5:1.16 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.5:1.17 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This is the cause, this is the reason, why that has not been declared by the Blessed One.”
+
+## iti7
+iti7:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti7:2.1 | S: “Mendicants, without directly knowing and completely understanding the all, without dispassion for it and giving it up, you can’t end suffering. | T: “Monks, one who has not fully known & fully understood the All, whose mind has not been cleansed of passion for it, has not abandoned it, is incapable of putting an end to stress.
+iti7:2.2 | S: By directly knowing and completely understanding the all, having dispassion for it and giving it up, you can end suffering.” | T: But one who has fully known & fully understood the All, whose mind has been cleansed of passion for it and has abandoned it, is capable of putting an end to stress.”
+iti7:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti7:2.4 | S: On this it is said: | T: (none)
+iti7:3.1 | S: “Those who know the all as all, | T: Knowing the All from all around,
+iti7:3.2 | S: are not attracted to anything. | T: not stirred by passion in all places:
+iti7:3.3 | S: They completely understand all, | T: he, having comprehended the All,
+iti7:3.4 | S: and have risen above all suffering.” | T: has gone beyond all stress.
+iti7:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## iti94
+iti94:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti94:2.1 | S: “A mendicant should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. | T: “Monks, a monk should investigate in such a way that–his consciousness neither externally scattered & diffused, nor internally positioned–he is, from lack of clinging/sustenance, unagitated,
+iti94:2.2 | S: When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the origin of suffering—of rebirth, old age, and death in the future.” | T: and there is no coming into being of the origination of future birth, aging, death, or stress.”
+iti94:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti94:2.4 | S: On this it is said: | T: (none)
+iti94:3.1 | S: “For one who has given up seven chains, | T: For a monk who has abandoned seven attachments
+iti94:3.2 | S: a mendicant who has cut the cord, | T: and cut the guide:
+iti94:3.3 | S: transmigration through births is finished, | T: the wandering-on in birth is finished;
+iti94:3.4 | S: there’ll be no more future lives for them.” | T: there is, for him, no further becoming.
+iti94:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## sn1.21
+sn1.21:1.1 | S: At Sāvatthī. | T: (none)
+sn1.21:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: As she was standing there, the devatā recited this verse in the Blessed One’s presence:
+sn1.21:2.1 | S: “Like they’re struck by a sword, | T: “As if struck by a sword,
+sn1.21:2.2 | S: like their head was on fire, | T: as if his head were on fire,
+sn1.21:2.3 | S: a mendicant, mindful, should go forth, | T: (none)
+sn1.21:2.4 | S: to give up sensual desire.” | T: a monk should live the wandering life —mindful— for the abandoning of sensual passion.”
+sn1.21:3.1 | S: “Like they’re struck by a sword, | T: The Buddha: “As if struck by a sword,
+sn1.21:3.2 | S: like their head was on fire, | T: as if his head were on fire,
+sn1.21:3.3 | S: a mendicant, mindful, should go forth, | T: (none)
+sn1.21:3.4 | S: to give up substantialist view.” | T: a monk should live the wandering life —mindful— for the abandoning of self-identity.”
+
+## an10.17
+an10.17:1.1 | S: “Mendicants, you should live with a protector, not without one. | T: “Live with a protector, monks, and not without a protector.
+an10.17:1.2 | S: Living without a protector is suffering. | T: He suffers, one who lives without a protector.
+an10.17:1.3 | S: There are ten qualities that serve as protector. | T: And these ten are qualities creating a protector.
+an10.17:1.4 | S: What ten? | T: Which ten?
+an10.17:1.5 | S: Firstly, a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: “There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+an10.17:1.7 | S: This is a quality that serves as protector. | T: And the fact that he is virtuous… seeing danger in the slightest faults is a quality creating a protector.
+an10.17:2.1 | S: Furthermore, a mendicant is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: “Then again, the monk has heard much, has retained what he has heard, has stored what he has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning and expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views. And the fact that he has heard much… well-penetrated in terms of his views is a quality creating a protector.
+an10.17:2.3 | S: This too is a quality that serves as protector. | T: “Then again, the monk has admirable friends, admirable comrades, admirable companions. And the fact that he has admirable friends, admirable comrades,
+an10.17:3.1 | S: Furthermore, a mendicant has good friends, companions, and associates. | T: admirable companions is a quality creating a protector.
+an10.17:3.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:4.1 | S: Furthermore, a mendicant is easy to admonish, having qualities that make them easy to admonish. They’re patient, and take instruction respectfully. | T: “Then again, the monk is easy to speak to, endowed with qualities that make him easy to speak to, patient, respectful to instruction. And the fact that he is easy to speak to… respectful to instruction is a quality creating a protector.
+an10.17:4.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:5.1 | S: Furthermore, a mendicant is deft and tireless in a diverse spectrum of duties for their spiritual companions, understanding how to go about things in order to complete and organize the work. | T: “Then again, the monk is adept at the various affairs involving his companions in the holy life; is vigorous, quick-witted in the techniques involved in them, is up to doing them or arranging to get them done. And the fact that he is adept at…
+an10.17:5.2 | P: Yampi, bhikkhave, bhikkhu yāni tāni sabrahmacārīnaṁ …pe… alaṁ kātuṁ alaṁ saṁvidhātuṁ, | T: doing them or arranging to get them done is a quality creating a protector.
+an10.17:5.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:6.1 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “Then again, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya. And the fact that he is one who desires the Dhamma, endearing in his conversation,
+an10.17:6.2 | P: Yampi, bhikkhave, bhikkhu dhammakāmo hoti piyasamudāhāro, abhidhamme abhivinaye uḷārapāmojjo, | T: greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector.
+an10.17:6.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:7.1 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “Then again, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+an10.17:7.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:8.1 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Then again, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all. And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all is a quality creating a protector.
+an10.17:8.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:9.1 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “Then again, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done and said a long time ago. And the fact that he is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done and said a long time ago is a quality creating a protector.
+an10.17:9.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:10.1 | S: Furthermore, a mendicant is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “Then again, the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress. And the fact that the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress is a quality creating a protector.
+an10.17:10.3 | S: This too is a quality that serves as protector. | T: (none)
+an10.17:11.1 | S: You should live with a protector, not without one. | T: “Live with a protector, monks, and not without a protector.
+an10.17:11.2 | S: Living without a protector is suffering. | T: He suffers, one who lives without a protector.
+an10.17:11.3 | S: These are the ten qualities that serve as protector.” | T: These are the ten qualities creating a protector.”
+
+## iti81
+iti81:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti81:2.1 | S: “I’ve seen, mendicants, sentient beings whose minds are overcome and overwhelmed by honor. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: “Monks, I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:3.1 | S: I’ve seen sentient beings whose minds are overcome and overwhelmed by not being honored. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: “It’s not through having heard it from another contemplative or brahman that I say, ‘I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.’
+iti81:4.1 | S: I’ve seen sentient beings whose minds are overcome and overwhelmed by both honor and by not being honored. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: “Instead, it’s from having known it myself, seen it myself, observed it myself that I say, ‘I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.’”
+iti81:5.1 | S: Now, I don’t say this because I’ve heard it from some other ascetic or brahmin. | T: (none)
+iti81:5.2 | S: I only say it because I’ve known, seen, and realized it for myself.” | T: (none)
+iti81:8.2 | S: The Buddha spoke this matter. | T: (none)
+iti81:8.3 | S: On this it is said: | T: (none)
+iti81:9.1 | S: “Whether they’re honored | T: Both when receiving offerings
+iti81:9.2 | S: or not honored, or both, | T: & not,
+iti81:9.3 | S: their immersion doesn’t waver | T: his concentration doesn’t waver;
+iti81:9.4 | S: as they abide in the immeasurables. | T: he remains heedful:
+iti81:10.1 | S: They persistently practice absorption | T: he–continually absorbed in jhāna,
+iti81:10.2 | S: with subtle view and discernment. | T: subtle in view & clear-seeing,
+iti81:10.3 | S: Rejoicing in the ending of grasping, | T: enjoying the ending of clinging–
+iti81:10.4 | S: they’re said to be a true person.” | T: is called a man of integrity.
+iti81:11.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## an10.93
+an10.93:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an10.93:1.2 | S: Then the householder Anāthapiṇḍika left Sāvatthī in the middle of the day to see the Buddha. | T: Then Anāthapiṇḍika the householder left Sāvatthī in the middle of the day to see the Blessed One,
+an10.93:1.3 | S: Then it occurred to him, | T: but the thought then occurred to him,
+an10.93:1.4 | S: “It’s the wrong time to see the Buddha, | T: “Now is not the right time to see the Blessed One,
+an10.93:1.5 | S: as he’s in retreat. | T: for he is in seclusion.
+an10.93:1.6 | S: And it’s the wrong time to see the esteemed mendicants, | T: And it is not the right time to see the mind-developing monks,
+an10.93:1.7 | S: as they’re in retreat. | T: for they are in seclusion.
+an10.93:1.8 | S: Why don’t I visit the monastery for the wanderers of other religions?” | T: What if I were to visit the park of the wanderers of other persuasions?” So he headed to the park of the wanderers of other persuasions.
+an10.93:2.1 | S: Then he went to the monastery for the wanderers of other religions. | T: (none)
+an10.93:2.2 | S: Now at that time, the wanderers of other religions had come together, making an uproar, a colossal racket as they sat and talked about all kinds of low topics. | T: Now on that occasion the wanderers of other persuasions had come together in a gathering and were sitting, discussing many kinds of bestial topics, making a great noise and racket.
+an10.93:2.3 | S: They saw Anāthapiṇḍika coming off in the distance, | T: They saw Anāthapiṇḍika the householder coming from afar,
+an10.93:2.4 | S: and stopped each other, saying, | T: and on seeing him, hushed one another:
+an10.93:2.5 | S: “Be quiet, good fellows, don’t make a sound. | T: “Be quiet, good sirs. Don’t make any noise.
+an10.93:2.6 | S: The householder Anāthapiṇḍika, a disciple of the ascetic Gotama, is coming into our monastery. | T: Here comes Anāthapiṇḍika the householder, a disciple of the contemplative Gotama.
+an10.93:2.7 | S: He is included among the white-clothed lay disciples of the ascetic Gotama, who is residing in Sāvatthī. | T: He is one of those disciples of the contemplative Gotama, clad in white, who lives in Sāvatthī.
+an10.93:2.8 | S: Such venerables like the quiet, are educated to be quiet, and praise the quiet. | T: These people are fond of quietude, trained in quietude, and speak in praise of quietude.
+an10.93:2.9 | S: Hopefully if he sees that our assembly is quiet he’ll see fit to approach.” | T: Maybe, if he perceives our group as quiet, he will consider it worth his while to come our way.”
+an10.93:3.1 | S: Then those wanderers of other religions fell silent. | T: So the wanderers fell silent.
+an10.93:3.2 | S: Then Anāthapiṇḍika went up to them, and exchanged greetings with those wanderers. | T: Then Anāthapiṇḍika the householder went to where the wanderers of other persuasions were staying. On arrival he greeted them courteously.
+an10.93:3.3 | S: When the greetings and polite conversation were over, he sat down to one side. The wanderers said to him, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, the wanderers said to him,
+an10.93:3.4 | S: “Tell us, householder, what is the view of the ascetic Gotama?” | T: “Tell us, householder, what views the contemplative Gotama has.”
+an10.93:3.5 | S: “Sirs, I don’t know all his views.” | T: “Venerable sirs, I don’t know entirely what views the Blessed One has.”
+an10.93:4.1 | S: “Well then, since it seems you don’t know all the views of the ascetic Gotama, | T: “Well, well. So you don’t know entirely what views the contemplative Gotama has.
+an10.93:4.2 | S: tell us, what are the views of the mendicants?” | T: Then tell us what views the monks have.”
+an10.93:4.3 | S: “Sirs, I don’t know all the mendicants’ views.” | T: “I don’t even know entirely what views the monks have.”
+an10.93:5.1 | S: “Well then, since it seems you don’t know all the views of the ascetic Gotama or of the mendicants, | T: “So you don’t know entirely what views the contemplative Gotama has or even that the monks have.
+an10.93:5.2 | S: tell us, householder, what is your view?” | T: Then tell us what views you have.”
+an10.93:5.3 | S: “Sirs, it’s not hard for me to explain what my views are. | T: “It wouldn’t be difficult for me to expound to you what views I have.
+an10.93:5.4 | S: But please, let the venerables explain their own convictions first. Afterwards it won’t be hard for me to explain my views.” | T: But please let the venerable ones expound each in line with his position, and then it won’t be difficult for me to expound to you what views I have.”
+an10.93:6.1 | S: When he said this, one of the wanderers said to him, | T: When this had been said, one of the wanderers said to Anāthapiṇḍika the householder,
+an10.93:6.2 | S: “The cosmos is eternal. This is the only truth, anything else is futile. | T: “The cosmos is eternal. Only this is true; anything otherwise is worthless.
+an10.93:6.3 | S: That’s my view, householder.” | T: This is the sort of view I have.”
+an10.93:7.1 | S: Another wanderer said, | T: Another wanderer said to Anāthapiṇḍika,
+an10.93:7.2 | S: “The cosmos is not eternal. This is the only truth, anything else is futile. | T: “The cosmos is not eternal. Only this is true; anything otherwise is worthless.
+an10.93:7.3 | S: That’s my view, householder.” | T: This is the sort of view I have.”
+an10.93:8.1 | S: Another wanderer said, | T: Another wanderer said,
+an10.93:8.2 | S: “The cosmos is finite …” … | T: (none)
+an10.93:8.3 | S: “The cosmos is infinite …” … | T: (none)
+an10.93:8.4 | S: “The soul and the body are one and the same …” … | T: (none)
+an10.93:8.5 | S: “The soul is one thing, the body another …” … | T: “The cosmos is finite…”…“The cosmos is infinite…”…“The soul & the body are the same…”…“The soul is one thing and the body another…”…“After death a Tathāgata exists…”…“After death a Tathāgata does not exist…”…“After death a Tathāgata both does & does not exist…”…“After death a Tathāgata neither does nor does not exist.
+an10.93:8.6 | S: “A realized one still exists after death …” … | T: (none)
+an10.93:8.7 | S: “A realized one no longer exists after death …” … | T: (none)
+an10.93:8.8 | S: “A realized one both still exists and no longer exists after death …” … | T: (none)
+an10.93:8.9 | S: “A Realized One neither still exists nor no longer exists after death. This is the only truth, anything else is futile. | T: Only this is true; anything otherwise is worthless.
+an10.93:8.10 | S: That’s my view, householder.” | T: This is the sort of view I have.”
+an10.93:9.1 | S: When this was said, Anāthapiṇḍika said this, | T: When this had been said, Anāthapiṇḍika the householder said to the wanderers,
+an10.93:9.2 | S: “Sirs, regarding the venerable who said this: | T: “As for the venerable one who says,
+an10.93:9.3 | S: ‘The cosmos is eternal. This is the only truth, anything else is futile. | T: ‘The cosmos is eternal. Only this is true; anything otherwise is worthless.
+an10.93:9.4 | S: That’s my view, householder.’ | T: This is the sort of view I have,”
+an10.93:9.5 | S: This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. | T: his view arises from his own inappropriate attention or in dependence on the words of another.
+an10.93:9.6 | S: But that view is created, conditioned, chosen, dependently originated. | T: (none)
+an10.93:9.7 | S: Whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: (none)
+an10.93:9.8 | S: And what’s impermanent is suffering. | T: (none)
+an10.93:9.9 | S: What he clings to and holds to is just suffering. | T: (none)
+an10.93:10.1 | S: Regarding the venerable who said this: | T: (none)
+an10.93:10.2 | S: ‘The cosmos is not eternal. This is the only truth, anything else is futile. | T: (none)
+an10.93:10.3 | S: That’s my view, householder.’ | T: (none)
+an10.93:10.4 | S: This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. | T: (none)
+an10.93:10.5 | S: But that view is created, conditioned, chosen, dependently originated. | T: Now this view has been brought into being, is fabricated, willed, dependently originated.
+an10.93:10.6 | S: Whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: Whatever has been brought into being, is fabricated, willed, dependently originated:
+an10.93:10.7 | S: And what’s impermanent is suffering. | T: That is inconstant.
+an10.93:10.8 | S: What he clings to and holds to is just suffering. | T: (none)
+an10.93:11.1 | S: Regarding the venerable who said this: | T: (none)
+an10.93:11.2 | S: ‘The cosmos is finite …’ … | T: (none)
+an10.93:11.3 | S: ‘The cosmos is infinite …’ … | T: (none)
+an10.93:11.4 | S: ‘The soul and the body are one and the same …’ … | T: (none)
+an10.93:11.5 | S: ‘The soul is one thing, the body another …’ … | T: (none)
+an10.93:11.6 | S: ‘A realized one still exists after death …’ … | T: (none)
+an10.93:11.7 | S: ‘A realized one no longer exists after death …’ … | T: (none)
+an10.93:11.8 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: (none)
+an10.93:11.9 | S: ‘A Realized One neither still exists nor no longer exists after death. This is the only truth, anything else is futile. | T: (none)
+an10.93:11.10 | S: That’s my view, householder.’ | T: (none)
+an10.93:11.11 | S: This view of his has either arisen from his own irrational application of mind, or is conditioned by what someone else says. | T: (none)
+an10.93:11.12 | S: But that view is created, conditioned, chosen, dependently originated. | T: (none)
+an10.93:11.13 | S: Whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: Whatever is inconstant is stress.
+an10.93:11.14 | S: And what’s impermanent is suffering. | T: (none)
+an10.93:11.15 | S: What he clings to and holds to is just suffering.” | T: This venerable one thus adheres to that very stress, submits himself to that very stress.” [Similarly for the other positions.]
+an10.93:12.1 | S: When he said this the wanderers said to him, | T: When this had been said, the wanderers said to Anāthapiṇḍika the householder,
+an10.93:12.2 | S: “Householder, we’ve each explained our own convictions. | T: “We have each & every one expounded to you in line with our own positions.
+an10.93:12.3 | S: Tell us, householder, what is your view?” | T: Now tell us what views you have.”
+an10.93:12.4 | S: “Sirs, whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: “Whatever has been brought into being, is fabricated, willed, dependently originated: That is inconstant.
+an10.93:12.5 | S: And what’s impermanent is suffering. | T: Whatever is inconstant is stress.
+an10.93:12.6 | S: And what’s suffering is not mine, I am not this, this is not my self. | T: Whatever is stress is not me, is not what I am, is not my self.
+an10.93:12.7 | S: That’s my view, sirs.” | T: This is the sort of view I have.”
+an10.93:13.1 | S: “Householder, whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: “So, householder, whatever has been brought into being, is fabricated, willed, dependently originated: That is inconstant.
+an10.93:13.2 | S: And what’s impermanent is suffering. | T: Whatever is inconstant is stress.
+an10.93:13.3 | S: What you cling to and hold to is just suffering.” | T: You thus adhere to that very stress, submit yourself to that very stress.”
+an10.93:14.1 | S: “Sirs, whatever is created, conditioned, chosen, and dependently originated is impermanent. | T: “Venerable sirs, whatever has been brought into being, is fabricated, willed, dependently originated: That is inconstant.
+an10.93:14.2 | S: And what’s impermanent is suffering. | T: Whatever is inconstant is stress.
+an10.93:14.3 | S: And I’ve truly seen clearly with right wisdom that what’s suffering is not mine, I am not this, it’s not my self. | T: Whatever is stress is not me, is not what I am, is not my self. Having seen this well with right discernment as it has come to be,
+an10.93:14.4 | S: And I truly understand the escape beyond that.” | T: I also discern the higher escape from it as it has come to be.”
+an10.93:15.1 | S: When this was said, those wanderers sat silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, the wanderers fell silent, abashed, sitting with their shoulders drooping, their heads down, brooding, at a loss for words.
+an10.93:15.2 | S: Seeing this, Anāthapiṇḍika rose from his seat. He went to the Buddha, bowed, sat down to one side, and informed the Buddha of all they had discussed. | T: Anāthapiṇḍika the householder, perceiving that the wanderers were silent, abashed… at a loss for words, got up & went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there, he told the Blessed One the entirety of his conversation with the wanderers. (The Blessed One said:)
+an10.93:15.3 | S: “Good, good, householder! | T: “Well done, householder. Well done.
+an10.93:15.4 | S: That’s how you should legitimately and completely refute those futile men from time to time.” | T: That is how you should periodically & righteously refute those foolish men.”
+an10.93:16.1 | S: Then the Buddha educated, encouraged, fired up, and inspired the householder Anāthapiṇḍika with a Dhamma talk, | T: Then he instructed, urged, roused, and encouraged Anāthapiṇḍika the householder with a talk on Dhamma. When Anāthapiṇḍika the householder had been instructed, urged, roused and encouraged by the Blessed One with a talk on Dhamma,
+an10.93:16.2 | S: after which Anāthapiṇḍika got up from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: he got up from his seat and, having bowed down to the Blessed One, left, keeping the Blessed One on his right side.
+an10.93:17.1 | S: Then, not long after Anāthapiṇḍika had left, the Buddha addressed the mendicants: | T: Not long afterward, the Blessed One addressed the monks:
+an10.93:17.2 | S: “Mendicants, even a mendicant who has ordained for a hundred years in this teaching and training would legitimately and completely refute those wanderers of other religions just as the householder Anāthapiṇḍika did.” | T: “Monks, even a monk who has long penetrated the Dhamma in this Dhamma & Vinaya would do well, periodically & righteously, to refute the wanderers of other persuasions in just the way Anāthapiṇḍika the householder has done.”
+
+## an8.7
+an8.7:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain, not long after Devadatta had left. | T: On one occasion the Blessed One was staying near Rājagaha on Vulture Peak Mountain, not long after Devadatta’s departure.
+an8.7:1.2 | S: There the Buddha spoke to the mendicants about Devadatta: | T: There, referring to Devadatta, he addressed the monks:
+an8.7:1.3 | S: “Mendicants, it’s good for a mendicant to check their own failings from time to time. | T: “Monks, it’s good for a monk periodically to have reflected on his own failings.
+an8.7:1.4 | S: It’s good for a mendicant to check the failings of others from time to time. | T: It’s good for a monk periodically to have reflected on the failings of others.
+an8.7:1.5 | S: It’s good for a mendicant to check their own successes from time to time. | T: It’s good for a monk periodically to have reflected on his own attainments.
+an8.7:1.6 | S: It’s good for a mendicant to check the successes of others from time to time. | T: It’s good for a monk periodically to have reflected on the attainments of others.
+an8.7:1.7 | S: Overcome and overwhelmed by eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: “Conquered by eight untrue dhammas, his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable. Which eight? “Conquered by material gain, his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable.
+an8.7:2.1 | S: What eight? | T: (none)
+an8.7:2.2 | S: Overcome and overwhelmed by gain … | T: “Conquered by lack of material gain.…
+an8.7:2.3 | S: loss … | T: (none)
+an8.7:2.4 | S: fame … | T: “Conquered by status.… “Conquered by lack of status.…
+an8.7:2.5 | S: disgrace … | T: (none)
+an8.7:2.6 | S: honor … | T: “Conquered by offerings.… “Conquered by lack of offerings.…
+an8.7:2.7 | S: dishonor … | T: (none)
+an8.7:2.8 | S: corrupt wishes … | T: (none)
+an8.7:2.9 | S: bad friendship, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: “Conquered by evil ambition.… “Conquered by evil friendship,
+an8.7:2.10 | S: Overcome and overwhelmed by these eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable.
+an8.7:3.1 | S: It’s good for a mendicant, whenever they encounter it, to overcome gain … | T: “Monks, it’s good for a monk to keep conquering again & again any arisen material gain. It’s good for a monk to keep conquering again & again any arisen lack of material gain…
+an8.7:3.2 | S: loss … | T: (none)
+an8.7:3.3 | S: fame … | T: any arisen status… any arisen lack of status…
+an8.7:3.4 | S: disgrace … | T: (none)
+an8.7:3.5 | S: honor … | T: any arisen offerings… any arisen lack of offerings…
+an8.7:3.6 | S: dishonor … | T: (none)
+an8.7:3.7 | S: corrupt wishes … | T: any arisen evil ambition…
+an8.7:3.8 | S: bad friendship. | T: any arisen evil friendship.
+an8.7:4.1 | S: What advantage does a mendicant gain by overcoming these eight things? | T: “And for what compelling reason should a monk keep conquering again & again any arisen material gain…
+an8.7:4.7 | P: uppannaṁ pāpicchataṁ … | T: any arisen evil friendship?
+an8.7:5.1 | S: The distressing and feverish defilements that might arise in someone who lives without overcoming these eight things do not arise when they have overcome them. | T: Because when one dwells not having conquered any arisen material gain, effluents arise, along with vexations & fevers. But when one dwells having conquered any arisen material gain, those effluents, vexations,
+an8.7:5.6 | P: uppannaṁ asakkāraṁ … | T: & fevers are not.
+an8.7:5.9 | S: This is the advantage that a mendicant gains by overcoming these eight things. | T: [Similarly with any arisen lack of material gain, any arisen status, any arisen lack of status, any arisen offerings, any arisen lack of offerings, any arisen evil ambition, & any arisen evil friendship.] “It’s for this compelling reason that a monk should keep conquering again & again any arisen material gain…
+an8.7:5.15 | P: uppannaṁ pāpicchataṁ … | T: any arisen evil friendship.
+an8.7:6.1 | S: So, mendicants, you should train like this: | T: “Therefore, monks, you should train yourselves:
+an8.7:6.2 | S: ‘Whenever we encounter it, we will overcome gain … | T: ‘We will keep conquering again & again any arisen material gain… any arisen lack of material gain…
+an8.7:6.3 | S: loss … | T: (none)
+an8.7:6.4 | S: fame … | T: any arisen status… any arisen lack of status…
+an8.7:6.5 | S: disgrace … | T: (none)
+an8.7:6.6 | S: honor … | T: any arisen offerings… any arisen lack of offerings…
+an8.7:6.7 | S: dishonor … | T: (none)
+an8.7:6.8 | S: corrupt wishes … | T: any arisen evil ambition…
+an8.7:6.9 | S: bad friendship.’ | T: any arisen evil friendship.’
+an8.7:6.10 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+

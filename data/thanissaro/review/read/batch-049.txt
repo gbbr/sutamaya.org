@@ -1,0 +1,386 @@
+## an2.2
+an2.2:1.0 | S: 2. Endeavor | T: (none)
+an2.2:1.1 | S: “These two endeavors are challenging in the world. | T: “Monks, there are these two exertions that are hard to maintain in the world.
+an2.2:1.2 | S: What two? | T: Which two?
+an2.2:1.3 | S: The endeavor of laypeople staying in a home to provide robes, almsfood, lodgings, and medicines and supplies for the sick. And the endeavor of those gone forth from the lay life to homelessness to let go of all attachments. | T: The exertion of laypeople living at home for the sake of producing cloth, almsfood, lodging, & medicinal requisites for curing the sick. And the exertion of those who have gone forth from home for the sake of relinquishing all acquisitions.
+an2.2:1.4 | S: These are the two endeavors that are challenging in the world. | T: “These are the two exertions that are hard to maintain in the world.
+an2.2:2.1 | S: The better of these two endeavors is the effort to let go of all attachments. | T: “Of these two exertions, this is the foremost: the exertion for the sake of relinquishing all acquisitions.
+an2.2:2.2 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+an2.2:2.3 | S: ‘We shall endeavor to let go of all attachments.’ | T: ‘We will exert ourselves in the exertion for the sake of relinquishing all acquisitions.’
+an2.2:2.4 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+
+## an2.21
+an2.21:1.0 | S: 21 | T: (none)
+an2.21:1.1 | S: “Mendicants, there are two fools. | T: “Monks, these two are fools.
+an2.21:1.2 | S: What two? | T: Which two?
+an2.21:1.3 | S: One who doesn’t recognize when they’ve made a mistake. And one who doesn’t properly accept the confession of someone who’s made a mistake. | T: The one who doesn’t see his transgression as a transgression, and the one who doesn’t rightfully pardon another who has confessed his transgression.
+an2.21:1.4 | S: These are the two fools. | T: These two are fools.
+an2.21:2.1 | S: There are two who are astute. | T: “These two are wise people.
+an2.21:2.2 | S: What two? | T: Which two?
+an2.21:2.3 | S: One who recognizes when they’ve made a mistake. And one who properly accepts the confession of someone who’s made a mistake. | T: The one who sees his transgression as a transgression, and the one who rightfully pardons another who has confessed his transgression.
+an2.21:2.4 | S: These are the two who are astute.” | T: These two are wise people.”
+
+## an3.47
+an3.47:1.1 | S: “Mendicants, the conditioned has these three characteristics. | T: “Monks, these three are fabricated characteristics of what is fabricated.
+an3.47:1.2 | S: What three? | T: Which three?
+an3.47:1.3 | S: Arising is evident, vanishing is evident, and change while persisting is evident. | T: Arising is discernable, passing away is discernable, alteration [literally: otherness] while staying is discernable.
+an3.47:1.4 | S: These are the three characteristics of the conditioned.” | T: “These are three fabricated characteristics of what is fabricated.
+an3.47:2.0 | S: Characteristics of the Unconditioned | T: (none)
+an3.47:2.1 | S: “The unconditioned has these three characteristics. | T: “Now these three are unfabricated characteristics of what is unfabricated.
+an3.47:2.2 | S: What three? | T: Which three?
+an3.47:2.3 | S: No arising is evident, no vanishing is evident, and no change while persisting is evident. | T: No arising is discernable, no passing away is discernable, no alteration while staying is discernable.
+an3.47:2.4 | S: These are the three characteristics of the unconditioned.” | T: “These are three unfabricated characteristics of what is unfabricated.” Alternative translation: “Monks, these three are fabricated characteristics of what is fabricated. Which three? Arising is discernable, passing away is discernable, alteration [literally: otherness] of what stays is discernable. “These are three fabricated characteristics of what is fabricated. “Now these three are unfabricated characteristics of what is unfabricated. Which three? No arising is discernable, no passing away is discernable, no alteration of what stays is discernable. “These are three unfabricated characteristics of what is unfabricated.”
+
+## an3.5
+an3.5:1.1 | S: “A fool is known by three things. | T: “Monks, a person endowed with three qualities is to be recognized as a fool.
+an3.5:1.2 | S: What three? | T: Which three?
+an3.5:1.3 | S: They ask a question irrationally. They answer a question irrationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they disagree with it. | T: He formulates a question inappropriately. He answers a question inappropriately. When another answers a question appropriately—having chosen circumscribed, coherent words & phrases—he doesn’t approve of it.
+an3.5:1.4 | S: These are the three things by which a fool is known. | T: A person endowed with these three qualities is to be recognized as a fool.
+an3.5:2.1 | S: An astute person is known by three things. | T: “Monks, a person endowed with three qualities is to be recognized as a wise person.
+an3.5:2.2 | S: What three? | T: Which three?
+an3.5:2.3 | S: They ask a question rationally. They answer a question rationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they agree with it. | T: He formulates a question appropriately. He answers a question appropriately. When another answers a question appropriately—having chosen circumscribed, coherent words & phrases—he approves of it.
+an3.5:2.4 | S: These are the three things by which an astute person is known. | T: A person endowed with these three qualities is to be recognized as a wise person.”
+an3.5:2.5 | S: So you should train …” | T: (none)
+
+## an4.49
+an4.49:1.1 | S: “Mendicants, there are these four perversions of perception, thought, and view. | T: “Monks, there are these four perversions of perception, perversions of mind, perversions of view. Which four? ‘Constant’ with regard to the inconstant is a perversion of perception, a perversion of mind, a perversion of view.
+an4.49:1.2 | S: What four? | T: (none)
+an4.49:1.3 | S: Taking impermanence as permanence. | T: (none)
+an4.49:1.4 | S: Taking suffering as happiness. | T: ‘Pleasant’ with regard to the stressful.…
+an4.49:1.5 | S: Taking not-self as self. | T: ‘Self’ with regard to not-self.…
+an4.49:1.6 | S: Taking ugliness as beauty. | T: ‘Attractive’ with regard to the unattractive is a perversion of perception,
+an4.49:1.7 | S: These are the four perversions of perception, thought, and view. | T: a perversion of mind, a perversion of view. These are the four perversions of perception, perversions of mind, perversions of view.
+an4.49:2.1 | S: There are these four corrections of perception, thought, and view. | T: “There are these four non-perversions of perception, non-perversions of mind, non-perversions of view. Which four? ‘Inconstant’ with regard to the inconstant is a non-perversion of perception, a non-perversion of mind, a non-perversion of view.
+an4.49:2.2 | S: What four? | T: (none)
+an4.49:2.3 | S: Taking impermanence as impermanence. | T: (none)
+an4.49:2.4 | S: Taking suffering as suffering. | T: ‘Stressful’ with regard to the stressful.…
+an4.49:2.5 | S: Taking not-self as not-self. | T: ‘Not-self’ with regard to not-self.…
+an4.49:2.6 | S: Taking ugliness as ugliness. | T: ‘Unattractive’ with regard to the unattractive is a non-perversion of perception, a non-perversion of mind, a non-perversion of view.
+an4.49:2.7 | S: These are the four corrections of perception, thought, and view. | T: These are the four non-perversions of perception, non-perversions of mind, non-perversions of view.”
+an4.49:3.1 | S: Perceiving impermanence as permanence, | T: Perceiving constancy in the inconstant,
+an4.49:3.2 | S: suffering as happiness, | T: pleasure in the stressful,
+an4.49:3.3 | S: not-self as self, | T: self in what’s not-self,
+an4.49:3.4 | S: and ugliness as beauty— | T: attractiveness in the unattractive,
+an4.49:3.5 | S: sentient beings are ruined by wrong view, | T: beings, destroyed by wrong-view,
+an4.49:3.6 | S: deranged, out of their minds. | T: go mad, out of their minds.
+an4.49:4.1 | S: Yoked by Māra’s yoke, these people | T: Bound to Māra’s yoke,
+an4.49:4.2 | S: find no sanctuary from the yoke. | T: from the yoke they find no rest.
+an4.49:4.3 | S: Sentient beings continue to transmigrate, | T: Beings go on to the wandering-on,
+an4.49:4.4 | S: with ongoing birth and death. | T: leading to birth & death.
+an4.49:5.1 | S: But when the Buddhas arise | T: But when Awakened Ones
+an4.49:5.2 | S: in the world, those beacons | T: arise in the world, bringing light to the world,
+an4.49:5.3 | S: reveal this teaching, | T: they proclaim the Dhamma
+an4.49:5.4 | S: that leads to the stilling of suffering. | T: leading to the stilling of stress.
+an4.49:6.1 | S: When a wise person hears them, | T: When those with discernment listen,
+an4.49:6.2 | S: they get their mind back. | T: they regain their senses,
+an4.49:6.3 | S: Seeing impermanence as impermanence, | T: seeing the inconstant as inconstant,
+an4.49:6.4 | S: suffering as suffering, | T: the stressful as stressful,
+an4.49:7.1 | S: not-self as not-self, | T: what’s not-self as not-self,
+an4.49:7.2 | S: and ugliness as ugliness— | T: the unattractive as unattractive.
+an4.49:7.3 | S: taking up right view, | T: Undertaking right view,
+an4.49:7.4 | S: they’ve risen above all suffering.” | T: they transcend all stress & suffering.
+
+## an5.49
+an5.49:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: Once the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an5.49:1.2 | S: Then King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. | T: Then King Pasenadi Kosala went to the Blessed One and, on arrival, having bowed down, sat to one side.
+an5.49:2.1 | P: Tena kho pana samayena mallikā devī kālaṅkatā hoti. | T: Now, at that time Queen Mallikā died.
+an5.49:2.2 | S: Then a man went up to the king and whispered in his ear, | T: Then a certain man went to the king and whispered in his ear:
+an5.49:2.3 | S: “Your Majesty, Queen Mallikā has passed away.” | T: “Your majesty, Queen Mallikā has died.”
+an5.49:2.4 | S: When this was said, King Pasenadi was miserable and sad. He sat with his shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, King Pasenadi Kosala sat there miserable, sick at heart, his shoulders drooping, his face down, brooding, at a loss for words.
+an5.49:3.1 | S: Knowing this, the Buddha said to him, | T: Then the Blessed One saw the king sitting there miserable, sick at heart… at a loss for words, and so said to him,
+an5.49:3.2 | S: “Great king, there are five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “There are these five things, great king, that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. Which five? “‘May what is subject to aging not age.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to illness not grow ill.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to death not die.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to ending not end.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to destruction not be destroyed.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world.
+an5.49:3.3 | S: What five? | T: (none)
+an5.49:3.4 | S: That someone liable to old age should not grow old. … Sorrowing and lamenting doesn’t do even a little bit of good … ‘The deed is powerful. What can I do now?’” | T: “Now, it happens to an uninstructed run-of-the-mill person that something that is subject to aging ages. With the aging of what is subject to aging, he does not reflect: ‘It doesn’t happen only to me that what is subject to aging will age. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to aging will age. And if, with the aging of what is subject to aging, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the aging of what is subject to aging, he sorrows, grieves, laments, beats his breast, & becomes distraught. This is called an uninstructed run-of-the-mill person pierced by the poisoned arrow of sorrow, tormenting himself. “And further, it happens to an uninstructed run-of-the-mill person that something that is subject to illness grows ill… that something subject to death dies… that something subject to ending ends… that something subject to destruction is destroyed. With the destruction of what is subject to destruction, he does not reflect: ‘It doesn’t happen only to me that what is subject to destruction will be destroyed. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to destruction will be destroyed. And if, with the destruction of what is subject to destruction, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the destruction of what is subject to destruction, he sorrows, grieves, laments, beats his breast, & becomes distraught. This is called an uninstructed run-of-the-mill person pierced by the poisoned arrow of sorrow, tormenting himself. “Now, it happens to an instructed disciple of the noble ones that something that is subject to aging ages. With the aging of what is subject to aging, he reflects: ‘It doesn’t happen only to me that what is subject to aging will age. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to aging will age. And if, with the aging of what is subject to aging, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the aging of what is subject to aging, he does not sorrow, grieve, or lament, does not beat his breast or become distraught. This is called an instructed disciple of the noble ones who has pulled out the poisoned arrow of sorrow pierced with which the uninstructed run-of-the-mill person torments himself. Sorrowless, arrowless, the disciple of the noble ones is totally unbound right within himself. “And further, it happens to an instructed disciple of the noble ones that something that is subject to illness grows ill… that something subject to death dies… that something subject to ending ends… that something subject to destruction is destroyed. With the destruction of what is subject to destruction, he reflects: ‘It doesn’t happen only to me that what is subject to destruction will be destroyed. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to destruction will be destroyed. And if, with the destruction of what is subject to destruction, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the destruction of what is subject to destruction, he does not sorrow, grieve, or lament, does not beat his breast or become distraught. This is called an instructed disciple of the noble ones who has pulled out the poisoned arrow of sorrow pierced with which the uninstructed run-of-the-mill person torments himself. Sorrowless, arrowless, the disciple of the noble ones is totally unbound right within himself. “These are the five things, great king, that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world.” Not by sorrowing, not by lamenting, is any aim accomplished here, not even a bit. Knowing you’re sorrowing & in pain, your enemies are gratified. But when a sage with a sense for determining what is his aim doesn’t waver in the face of misfortune, his enemies are pained, seeing his face unchanged, as of old. Where & however an aim is accomplished through eulogies, chants, good sayings, donations, & family customs, follow them diligently there & that way. But if you discern that your own aim or that of others is not gained in this way, acquiesce (to the nature of things) unsorrowing, with the thought: ‘What important work
+an5.49:3.5 | P: Navamaṁ. | T: am I doing now?’
+
+## an5.80
+an5.80:1.1 | S: “Mendicants, these five future perils have not currently arisen, but they will arise in the future. | T: “Monks, these five future dangers, unarisen at present, will arise in the future.
+an5.80:1.2 | S: You should look out for them | T: Be alert to them and,
+an5.80:1.3 | S: and try to give them up. | T: being alert, work to get rid of them.
+an5.80:2.1 | S: What five? | T: Which five?
+an5.80:2.2 | S: In a future time there will be mendicants who like nice robes. | T: “There will be, in the course of the future, monks desirous of fine robes.
+an5.80:2.3 | S: They will neglect the practice of wearing rag robes and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine robes, will neglect the practice of wearing cast-off cloth; will neglect isolated forest & wilderness dwellings;
+an5.80:2.4 | S: They will come down to the villages, towns, and capital cities and make their homes there. And they will employ many kinds of improper solicitation for the sake of a robe. | T: will move to towns, cities, & royal capitals, taking up residence there. For the sake of a robe they will do many kinds of unseemly, inappropriate things.
+an5.80:2.5 | S: This is the first future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the first future danger, unarisen at present, that will arise in the future.
+an5.80:2.6 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:2.7 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:3.1 | S: Furthermore, in a future time there will be mendicants who like nice almsfood. | T: “And further, in the course of the future there will be monks desirous of fine food.
+an5.80:3.2 | S: They will neglect the practice of walking for almsfood and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine food, will neglect the practice of going for alms; will neglect isolated forest & wilderness dwellings;
+an5.80:3.3 | S: They will come down to the villages, towns, and capital cities and make their home there. And they will employ many kinds of improper solicitation for the sake of almsfood. | T: will move to towns, cities, & royal capitals, taking up residence there and searching out the tip-top tastes with the tip of the tongue. For the sake of food they will do many kinds of unseemly, inappropriate things.
+an5.80:3.4 | S: This is the second future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the second future danger, unarisen at present, that will arise in the future.
+an5.80:3.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:3.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:4.1 | S: Furthermore, in a future time there will be mendicants who like nice lodgings. | T: “And further, in the course of the future there will be monks desirous of fine lodgings.
+an5.80:4.2 | S: They will neglect the practice of staying at the root of a tree and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine lodgings, will neglect the practice of living in the wilds; will neglect isolated forest & wilderness dwellings;
+an5.80:4.3 | S: They will come down to the villages, towns, and capital cities and make their home there. And they will employ many kinds of improper solicitation for the sake of lodgings. | T: will move to towns, cities, & royal capitals, taking up residence there. For the sake of lodgings they will do many kinds of unseemly, inappropriate things.
+an5.80:4.4 | S: This is the third future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the third future danger, unarisen at present, that will arise in the future.
+an5.80:4.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:4.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:5.1 | S: Furthermore, in a future time there will be mendicants who mix closely with nuns, trainee nuns, and novice nuns. | T: “And further, in the course of the future there will be monks who will live in close association with nuns, female trainees, & female novices. As they interact with nuns, female trainees, & female novices,
+an5.80:5.2 | S: In such conditions, it can be expected that | T: (none)
+an5.80:5.3 | S: they will lead the spiritual life dissatisfied, or commit one of the corrupt offenses, or resign the training and return to a lesser life. | T: they can be expected either to lead the holy life dissatisfied or to fall into one of the defiling offenses, leaving the training, returning to a lower way of life.
+an5.80:5.4 | S: This is the fourth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fourth future danger, unarisen at present, that will arise in the future.
+an5.80:5.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:5.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:6.1 | S: Furthermore, in a future time there will be mendicants who mix closely with monastery attendants and novices. | T: “And further, in the course of the future there will be monks who will live in close association with monastery attendants & novices. As they interact with monastery attendants & novices,
+an5.80:6.2 | S: In such conditions it can be expected that | T: they can be expected to live committed to many kinds of stored-up possessions and to making large boundary posts for fields & crops.
+an5.80:6.3 | S: they will engage in storing up goods for their own use, and making obvious hints about digging the earth and cutting plants. | T: (none)
+an5.80:6.4 | S: This is the fifth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fifth future danger, unarisen at present, that will arise in the future.
+an5.80:6.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:6.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:7.1 | S: These are the five future perils that have not currently arisen, but will arise in the future. | T: “These, monks, are the five future dangers, unarisen at present, that will arise in the future.
+an5.80:7.2 | S: You should look out for them | T: (none)
+an5.80:7.3 | S: and try to give them up.” | T: Be alert to them and,
+an5.80:8.1 | P: Dve cetovimuttiphalā, | T: being alert,
+an5.80:8.3 | P: Yodhājīvā ca dve vuttā, | T: work to get rid of them.”
+
+## an7.59
+an7.59:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying near Kimila in the Bamboo Forest.
+an7.59:1.2 | S: At one time the Buddha was staying near Kimbilā in the Freshwater Mangrove Wood. | T: (none)
+an7.59:1.3 | S: Then Venerable Kimbila went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Kimila went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+an7.59:1.4 | S: “What is the cause, sir, what is the reason why the true teaching does not last long after the final quenching of the Realized One?” | T: “What is the cause, lord, what is the reason why, when a Tathāgata has totally unbound, the true Dhamma does not last a long time?”
+an7.59:2.1 | S: “Kimbila, it’s when the monks, nuns, laymen, and laywomen lack respect and reverence for the Teacher, the teaching, the Saṅgha, the training, immersion, diligence, and hospitality after the final quenching of the Realized One. | T: “Kimila, there is the case where, when a Tathāgata has totally unbound, the monks, nuns, male lay followers, & female lay followers live without respect, without deference, for the Teacher; live without respect, without deference, for the Dhamma… the Saṅgha… the Training [heightened virtue, heightened concentration, heightened discernment]… concentration… heedfulness; live without respect, without deference, for hospitality.
+an7.59:2.2 | S: This is the cause, this is the reason why the true teaching does not last long after the final quenching of the Realized One.” | T: This is the cause, this is the reason why, when a Tathāgata has totally unbound, the true Dhamma does not last a long time.”
+an7.59:3.1 | S: “What is the cause, sir, what is the reason why the true teaching does last long after the final quenching of the Realized One?” | T: “And what is the cause, what is the reason why, when a Tathāgata has totally unbound, the true Dhamma does last a long time?”
+an7.59:3.2 | S: “Kimbila, it’s when the monks, nuns, laymen, and laywomen maintain respect and reverence for the Teacher, the teaching, the Saṅgha, the training, immersion, diligence, and hospitality after the final quenching of the Realized One. | T: “Kimila, there is the case where, when a Tathāgata has totally unbound, the monks, nuns, male lay followers, & female lay followers live with respect, with deference, for the Teacher; live with respect, with deference, for the Dhamma… the Saṅgha… the Training… concentration… heedfulness; live with respect, with deference, for hospitality.
+an7.59:3.3 | S: This is the cause, this is the reason why the true teaching does last long after the final quenching of the Realized One.” | T: This is the cause, this is the reason why, when a Tathāgata has totally unbound, the true Dhamma does last a long time.”
+
+## iti93
+iti93:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti93:2.1 | S: “Mendicants, there are these three fires. | T: “Monks, there are these three fires.
+iti93:2.2 | S: What three? | T: Which three?
+iti93:2.3 | S: The fires of greed, hate, and delusion. | T: The fire of passion, the fire of aversion, the fire of delusion.
+iti93:2.4 | S: These are the three fires.” | T: These are the three fires.”
+iti93:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti93:2.6 | S: On this it is said: | T: (none)
+iti93:3.1 | S: “The fire of greed burns a mortal, | T: The fire of passion burns in a mortal
+iti93:3.2 | S: lustful, infatuated by sensual pleasures; | T: delighting in, smitten with sensual desires;
+iti93:3.3 | S: while, fallen in the fire of hate, | T: the fire of aversion, in a malevolent person
+iti93:3.4 | S: a person kills living creatures; | T: taking life;
+iti93:4.1 | S: and, bewildered by the fire of delusion, | T: the fire of delusion, in a bewildered person
+iti93:4.2 | S: they miss the teaching of the noble ones. | T: ignorant of the noble teaching.
+iti93:4.3 | S: Not recognizing these three fires, | T: Not understanding these fires,
+iti93:4.4 | S: people are caught up in substantial reality. | T: people –fond of self-identity– unreleased from Māra’s shackles,
+iti93:5.1 | S: They fill the ranks of hell, | T: swell the ranks of hell,
+iti93:5.2 | S: of birth as an animal, | T: the wombs of common animals, demons,
+iti93:5.3 | S: or of titans and ghosts, | T: the realm of the hungry ghosts.
+iti93:5.4 | S: not freed from Māra’s bonds. | T: (none)
+iti93:6.1 | S: But as to those committed day and night | T: While those who, day & night, are devoted
+iti93:6.2 | S: to the teaching of the Buddha: | T: to the message of the rightly self-awakened,
+iti93:6.3 | S: they extinguish the fire of greed, | T: put out the fire of passion,
+iti93:6.4 | S: always perceiving ugliness; | T: constantly perceiving the foul.
+iti93:7.1 | S: while those supreme men | T: They, superlative people,
+iti93:7.2 | S: extinguish the fire of hate with love; | T: put out the fire of aversion with good will,
+iti93:7.3 | S: and the fire of delusion with the wisdom | T: and the fire of delusion with the discernment leading
+iti93:7.4 | S: that leads to penetration. | T: to penetration.
+iti93:8.1 | S: Having extinguished these fires, alert, | T: They, the masterful,
+iti93:8.2 | S: tireless all day and night, | T: untiring by night & day,
+iti93:8.3 | S: they become fully extinguished, | T: having put out [the fires],
+iti93:8.4 | S: completely transcending suffering. | T: having, without remainder, comprehended stress, are, without remainder, totally unbound.
+iti93:9.1 | S: Seers of the noble truths, knowledge masters, | T: They, the wise, with an attainer-of-wisdom’s noble vision,
+iti93:9.2 | S: the astute, understanding rightly, | T: right gnosis,
+iti93:9.3 | S: directly know the ending of rebirth, | T: directly knowing the ending of birth,
+iti93:9.4 | S: they come not back to future lives.” | T: come to no further becoming.
+iti93:10.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## snp5.5
+snp5.5:1.1 | S: “I ask you, Blessed One; please tell me this,” | T: I ask you, Blessed One. Please tell me.
+snp5.5:1.2 | S: said Venerable Mettagū, | T: (none)
+snp5.5:1.3 | S: “for I think you are a knowledge master, evolved. | T: I regard you as an attainer-of-knowledge, developed in mind.
+snp5.5:1.4 | S: Where do all these sufferings come from, | T: From what have the many forms of stress
+snp5.5:1.5 | S: in all their countless forms in the world?” | T: arisen in the world?
+snp5.5:2.1 | S: “You have rightly asked me of the origin of suffering,” | T: The Buddha: You ask me the source of stress.
+snp5.5:2.2 | S: replied the Buddha, | T: (none)
+snp5.5:2.3 | S: “I shall tell you as I understand it. | T: I’ll tell it to you as one who discerns.
+snp5.5:2.4 | S: Attachment is the source of suffering | T: From acquisition as cause
+snp5.5:2.5 | S: in all its countless forms in the world. | T: the many forms of stress come into being in the world.
+snp5.5:3.1 | S: When an ignorant person builds up attachments, | T: Whoever, unknowing, makes acquisitions
+snp5.5:3.2 | S: that dullard returns to suffering again and again. | T: —the dullard— comes to stress again & again.
+snp5.5:3.3 | S: So let one who understands <j>not build up attachments, | T: Therefore, discerning, you shouldn’t create acquisitions
+snp5.5:3.4 | S: contemplating the inception of suffering and rebirth.” | T: as you stay focused on the birth & origin of stress.
+snp5.5:4.1 | S: “Whatever I asked you have explained to me. | T: Mettagū: What we asked, you’ve expounded.
+snp5.5:4.2 | S: I ask you once more, please tell me this: | T: Now we ask something else. Please tell us.
+snp5.5:4.3 | S: How do the attentive cross the flood | T: How do the enlightened cross over the flood of
+snp5.5:4.4 | S: of rebirth, old age, sorrow, and lamenting? | T: birth & aging, lamentation & sorrow?
+snp5.5:4.5 | S: Please, sage, answer me clearly, | T: Please, sage, declare this to me
+snp5.5:4.6 | S: for truly you understand this matter.” | T: as this Dhamma has been known by you.
+snp5.5:5.1 | S: “I shall extol a teaching to you,” | T: The Buddha: I will expound to you Dhamma
+snp5.5:5.2 | S: replied the Buddha, | T: (none)
+snp5.5:5.3 | S: “that is apparent in the present, not relying on legends. | T: —here-&-now, not quoted words—
+snp5.5:5.4 | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:5.5 | S: may cross over clinging in the world.” | T: you’ll cross over beyond entanglement in the world.
+snp5.5:6.1 | S: “And I rejoice, great seer, | T: Mettagū: And I relish, Great Seer,
+snp5.5:6.2 | S: in that supreme teaching, | T: that Dhamma supreme,
+snp5.5:6.3 | S: having understood which, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:6.4 | S: may cross over clinging in the world.” | T: I’ll cross over beyond entanglement in the world.
+snp5.5:7.1 | S: “Once you’ve expelled relishing and dogmatism,” | T: The Buddha: Whatever you’re alert to,
+snp5.5:7.2 | S: replied the Buddha, | T: (none)
+snp5.5:7.3 | S: “regarding everything you are aware of— | T: (none)
+snp5.5:7.4 | S: above, below, all round, between— | T: above, below, across, in between:
+snp5.5:7.5 | S: having cast aside consciousness, <j>don’t continue in existence. | T: Dispelling any delight, any entrenchment in those things, consciousness should not take a stance in becoming.
+snp5.5:8.1 | S: A mendicant who wanders meditating like this, | T: The monk who dwells thus
+snp5.5:8.2 | S: diligent and mindful, calling nothing their own, | T: —mindful, heedful— letting go of his sense of mine,
+snp5.5:8.3 | S: would, being wise, give up the suffering | T: knowing right here would abandon
+snp5.5:8.4 | S: of rebirth, old age, sorrow and lamenting right here.” | T: birth & aging, lamentation & sorrow, stress.
+snp5.5:9.1 | S: “I rejoice in the words of the great seer! | T: Mettagū: I relish, Gotama, the Great Seer’s words
+snp5.5:9.2 | S: You have expounded non-attachment well, Gotama. | T: well-expounded, without acquisition,
+snp5.5:9.3 | S: Clearly the Buddha has given up suffering, | T: for yes, Blessed One, you’ve abandoned stress
+snp5.5:9.4 | S: for truly you understand this matter. | T: as this Dhamma has been known by you.
+snp5.5:10.1 | S: Surely, sage, those you’d regularly instruct | T: And they, too, would abandon stress those whom you, sage, would admonish unceasingly.
+snp5.5:10.2 | S: would also give up suffering. | T: (none)
+snp5.5:10.3 | S: Having met, I bow especially to you, <j>O spiritual giant; | T: Having met you, I bow down to you, Nāga.
+snp5.5:10.4 | S: hopefully the Buddha may regularly instruct me.” | T: Perhaps you will admonish me unceasingly.
+snp5.5:11.1 | S: “Any brahmin recognized as a knowledge master, | T: The Buddha: Whoever you recognize as a brahman, an attainer-of-knowledge
+snp5.5:11.2 | S: who has nothing, unattached to sensual life, | T: possessing nothing, unentangled in sensuality & becoming—
+snp5.5:11.3 | S: clearly has crossed this flood, | T: yes, he has crossed over this flood.
+snp5.5:11.4 | S: crossed to the far shore, kind, wishless. | T: Having crossed to the far shore, he’s free from rigidity, free from doubt.
+snp5.5:12.1 | S: And a wise person here, a knowledge master, | T: And anyone who has realized, who is an attainer-of-knowledge here,
+snp5.5:12.2 | S: having untied the bond to life after life, | T: having unentangled the bond to becoming and non-,
+snp5.5:12.3 | S: free of craving, untroubled, with no need for hope, | T: free of craving, untroubled, undesiring—
+snp5.5:12.4 | S: has crossed over rebirth and old age, I declare.” | T: he, I tell you, has crossed over birth & aging.
+
+## thig6.1
+thig6.1:1.1 | S: “One whose path you do not know, | T: [Paṭācārā recounts the Buddha’s words:] “You don’t know the path
+thig6.1:1.2 | S: not whence they came nor where they went; | T: of his coming or going,
+thig6.1:1.3 | S: though they came from who knows where, | T: that being who has come from where?—
+thig6.1:1.4 | S: you mourn that being, crying, ‘Oh my son!’ | T: the one you lament as ‘my son.’
+thig6.1:2.1 | S: But one whose path you do know, | T: But when you know the path
+thig6.1:2.2 | S: whence they came or where they went; | T: of his coming or going,
+thig6.1:2.3 | S: that one you do not lament— | T: you don’t grieve after him,
+thig6.1:2.4 | S: such is the nature of living creatures. | T: for that is the nature of beings.
+thig6.1:3.1 | S: Unasked he came, | T: Unasked, he came from there.
+thig6.1:3.2 | S: he left without leave. | T: Without permission, he went from here
+thig6.1:3.3 | S: He must have come from somewhere, | T: —coming from where?—
+thig6.1:3.4 | S: and stayed who knows how many days. | T: having stayed a few days.
+thig6.1:3.5 | S: He left from here by one road, | T: And coming one way from here,
+thig6.1:3.6 | S: he will go from there by another. | T: he goes yet another from there.
+thig6.1:4.1 | S: Departing with the form of a human, | T: Dying in the human form,
+thig6.1:4.2 | S: he will go on transmigrating. | T: he will go wandering on.
+thig6.1:4.3 | S: As he came, so he went: | T: As he came, so he has gone—
+thig6.1:4.4 | S: why weep over that?” | T: so what is there to lament?”
+thig6.1:5.1 | S: “Oh! For you have plucked the arrow from me, | T: Pulling out —completely out—
+thig6.1:5.2 | S: so hard to see, stuck in the heart. | T: the arrow so hard to see, embedded in my heart,
+thig6.1:5.3 | S: You’ve swept away the grief for my son, | T: he [the Buddha] expelled from me —overcome with grief— the grief over my son.
+thig6.1:5.4 | S: in which I once was mired. | T: (none)
+thig6.1:6.1 | S: Today I’ve plucked the arrow, | T: Today—with arrow removed,
+thig6.1:6.2 | S: I’m hungerless, quenched. | T: without hunger, entirely unbound—
+thig6.1:6.3 | S: I go for refuge to that sage, the Buddha, | T: to the Buddha, Dhamma, & Saṅgha I go, for refuge to the Sage.
+thig6.1:6.4 | S: to his teaching, and to the Saṅgha.” | T: (none)
+thig6.1:7.1 | S: That is how five hundred nuns declared their enlightenment. | T: (none)
+
+## thig9.1
+thig9.1:1.1 | S: “Vaḍḍha, please never ever | T: Vaḍḍha’s Mother: Vaḍḍha, don’t have any
+thig9.1:1.2 | S: get snarled in the world. | T: underbrush-lust ever, in the world, at all.
+thig9.1:1.3 | S: My child, do not partake | T: Don’t, my little son,
+thig9.1:1.4 | S: in suffering again and again. | T: have a share in suffering again & again.
+thig9.1:2.1 | S: For happy dwell the sages, Vaḍḍha, | T: For happy are sages, Vaḍḍha,
+thig9.1:2.2 | S: unstirred, their doubts cut off, | T: unperturbed, with doubt cut through.
+thig9.1:2.3 | S: cooled and tamed, | T: Having become cool and self-controlled,
+thig9.1:2.4 | S: and free of defilements. | T: they dwell effluent-free.
+thig9.1:3.1 | S: Vaḍḍha, foster the path | T: Foster the path,
+thig9.1:3.2 | S: that the seers have walked, | T: pursued by seers,
+thig9.1:3.3 | S: for the attainment of vision, | T: for the attainment of vision,
+thig9.1:3.4 | S: and for making an end of suffering.” | T: for the ending of stress. Vaḍḍha: Undaunted, mother,
+thig9.1:4.1 | S: “Mother, you speak with such assurance | T: you speak this matter to me.
+thig9.1:4.2 | S: to me on this matter. | T: (none)
+thig9.1:4.3 | S: My dear mom, I can’t help thinking | T: I suspect that now in you
+thig9.1:4.4 | S: that no snarls are found in you.” | T: no underbrush is found.
+thig9.1:5.1 | S: “Vaḍḍha, not a jot or a skerrick | T: Vaḍḍha’s Mother: Whatever fabrications
+thig9.1:5.2 | S: of snarl is found in me | T: (none)
+thig9.1:5.3 | S: for any conditions at all, | T: (none)
+thig9.1:5.4 | S: whether low, high, or middling. | T: are lowly, middling, or exalted: No underbrush for them in me —not a bit, not the least little bit— is found.
+thig9.1:6.1 | S: All defilements are ended for me, | T: All effluents are ended for me—
+thig9.1:6.2 | S: meditating and diligent. | T: heedful, doing jhāna.
+thig9.1:6.3 | S: I’ve attained the three knowledges | T: The three knowledges are attained;
+thig9.1:6.4 | S: and fulfilled the Buddha’s instructions.” | T: the Buddha’s bidding, done.
+thig9.1:7.1 | S: “Oh so excellent was the goad | T: Vaḍḍha: With what a vast goad
+thig9.1:7.2 | S: my mother spurred me with! | T: my mother poked me— because of her sympathy—
+thig9.1:7.3 | S: Owing to her compassion, she spoke | T: verses connected to the ultimate goal.
+thig9.1:7.4 | S: verses on the ultimate goal. | T: (none)
+thig9.1:8.1 | S: On hearing her words, | T: Having heard her words—
+thig9.1:8.2 | S: advised by my mother, | T: my mother’s instruction—
+thig9.1:8.3 | S: I was struck with righteous urgency | T: Dhamma-saṁvega arose
+thig9.1:8.4 | S: for the sake of sanctuary from the yoke. | T: for attaining rest from the yoke.
+thig9.1:9.1 | S: Striving, resolute, | T: Resolute in exertion,
+thig9.1:9.2 | S: tireless all day and night, | T: relentlessly, both day & night,
+thig9.1:9.3 | S: urged on by my mother, | T: I, roused by my mother,
+thig9.1:9.4 | S: I realized supreme peace. | T: touched the highest peace.
+
+## ud3.1
+ud3.1:1.1 | S: So I have heard. | T: (none)
+ud3.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.1:1.3 | S: Now, at that time a certain mendicant was sitting not far from the Buddha, cross-legged, with his body straight. As a result of past deeds, he suffered painful, sharp, severe, and acute feelings, which he endured unbothered, with mindfulness and awareness. | T: And on that occasion a certain monk was sitting not far from the Blessed One, his legs crossed, his body held erect, enduring fierce pains, sharp & severe, that were the result of old kamma–mindful, alert, without suffering. The Blessed One saw him sitting not far away, his legs crossed, his body held erect, enduring fierce pains, sharp & severe, that were the result of old kamma–mindful, alert,
+ud3.1:2.1 | S: The Buddha saw him meditating and enduring that pain. | T: and not struck down by them.
+ud3.1:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.1:4.1 | S: “A mendicant who has left all deeds behind, | T: For the monk who has left all kamma behind,
+ud3.1:4.2 | S: shaking off the dust of past deeds, | T: shaking off the dust of the past,
+ud3.1:4.3 | S: unselfish, steady, unaffected, | T: steady, unpossessive, Such:
+ud3.1:4.4 | S: has no need to complain.” | T: There’s no point in telling
+ud3.1:4.5 | P: Paṭhamaṁ. | T: anyone else.
+
+## ud3.4
+ud3.4:1.1 | S: So I have heard. | T: (none)
+ud3.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.4:1.3 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha, cross-legged, his body set straight, and mindfulness brought to the present. | T: And on that occasion Ven. Sāriputta was sitting not far from the Blessed One, his legs crossed, his body held erect, having set mindfulness to the fore.
+ud3.4:1.4 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Sāriputta sitting not far away, his legs crossed, his body held erect, having set mindfulness to the fore.
+ud3.4:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.4:3.1 | S: “As a rocky mountain | T: As a mountain of rock
+ud3.4:3.2 | S: is unwavering and well grounded, | T: is unwavering, well-settled,
+ud3.4:3.3 | S: so when delusion ends, | T: so a monk whose delusion is ended
+ud3.4:3.4 | S: a monk, like a mountain, doesn’t tremble.” | T: doesn’t quiver– just like a mountain.
+
+## ud3.5
+ud3.5:1.1 | S: So I have heard. | T: (none)
+ud3.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.5:1.3 | S: Now at that time Venerable Mahāmoggallāna was sitting not far from the Buddha, cross-legged, with his body straight and mindfulness of the body well-established in himself. | T: And on that occasion Ven. Mahā Moggallāna was sitting not far from the Blessed One, his legs crossed, his body held erect, having mindfulness immersed in the body well-established within.
+ud3.5:1.4 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Mahā Moggallāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established within.
+ud3.5:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.5:3.1 | S: “With mindfulness of the body established, | T: With mindfulness immersed in the body well-established,
+ud3.5:3.2 | S: restrained in the six fields of contact, | T: restrained with regard to the six contact-media–
+ud3.5:3.3 | S: a mendicant always immersed in samādhi | T: continually centered, a monk
+ud3.5:3.4 | S: would know extinguishment in themselves.” | T: can know unbinding for himself.
+
+## ud4.10
+ud4.10:1.1 | S: So I have heard. | T: (none)
+ud4.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud4.10:1.3 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha, cross-legged, with his body straight, reviewing his own peacefulness. | T: And on that occasion Ven. Sāriputta was sitting not far from the Blessed One–his legs crossed, his body held erect–reflecting on the peace within himself. The Blessed One saw Ven. Sāriputta sitting not far away–his legs crossed, his body held erect–
+ud4.10:2.1 | S: The Buddha saw him meditating there. | T: reflecting on the peace within himself.
+ud4.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.10:4.1 | S: “With mind at peace, so full of peace, | T: For the monk whose mind is peaceful, at peace,
+ud4.10:4.2 | S: for a mendicant who has cut the cord, | T: whose cord is cut,
+ud4.10:4.3 | S: transmigration through births is finished: | T: birth & the wandering on are totally ended.
+ud4.10:4.4 | S: they’re freed from Māra’s bonds.” | T: Freed is he from Māra’s bonds.
+
+## ud4.7
+ud4.7:1.1 | S: So I have heard. | T: (none)
+ud4.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud4.7:1.3 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha, cross-legged, with his body straight. He was of few wishes, content, secluded, aloof, energetic, dedicated to the higher mind. | T: And on that occasion Ven. Sāriputta was sitting not far from the Blessed One–his legs crossed, his body held erect–modest, content, solitary, unentangled, his persistence aroused, devoted to the heightened mind.
+ud4.7:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Sāriputta sitting not far away–his legs crossed, his body held erect–modest, content, solitary, unentangled, his persistence aroused, devoted to the heightened mind.
+ud4.7:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.7:4.1 | S: “A sage of higher consciousness, diligent, | T: Of heightened awareness & heedful,
+ud4.7:4.2 | S: training in the ways of sagacity: | T: the sage trained in sagacity’s way:
+ud4.7:4.3 | S: there are no sorrows for the unaffected, | T: He has no sorrows, one who is Such,
+ud4.7:4.4 | S: calm and ever mindful.” | T: calmed & ever mindful.
+
+## ud5.7
+ud5.7:1.1 | S: So I have heard. | T: (none)
+ud5.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.7:1.3 | S: Now at that time Venerable Revata the Doubter was sitting not far from the Buddha, cross-legged, with his body straight, reviewing his own purification by traversing doubt. | T: And on that occasion Ven. Revata the Doubter was sitting not far from the Blessed One, his legs crossed, his body held erect, reflecting on [his] purification through the overcoming of doubt.
+ud5.7:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Revata the Doubter sitting not far away, his legs crossed, his body held erect, reflecting on [his] purification through the overcoming of doubt.
+ud5.7:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.7:4.1 | S: “Any doubts about this life or the next, | T: Any doubts, about here or the world beyond,
+ud5.7:4.2 | S: about one’s own experiences or those of another: | T: about what is experienced by/because of others, by/because of oneself,
+ud5.7:4.3 | S: those who meditate give them all up, | T: are abandoned–all– by the person in jhāna,
+ud5.7:4.4 | S: keenly practicing the spiritual life.” | T: ardent, living the holy life.
+
+## ud5.9
+ud5.9:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was wandering among the Kosalans with a large community of monks.
+ud5.9:1.2 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants. | T: (none)
+ud5.9:1.3 | S: Now at that time several young students were passing by not far from the Buddha in a teasing manner. | T: And on that occasion, a large number of youths passed by as if jeering not far from the Blessed One. The Blessed One saw the large number of youths passing by as if jeering not far away.
+ud5.9:1.4 | S: The Buddha saw them. | T: Then,
+ud5.9:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.9:3.1 | S: “Dolts pretending to be astute, | T: False pundits, totally muddled,
+ud5.9:3.2 | S: they talk, their words out of bounds. | T: speaking in the range of mere words,
+ud5.9:3.3 | S: They blab at will, their mouths agape, | T: babbling as much as they like:
+ud5.9:3.4 | S: and no one knows what leads them on.” | T: led on by what, they don’t know.
+

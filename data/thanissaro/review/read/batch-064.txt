@@ -1,0 +1,268 @@
+## sn22.55
+sn22.55:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.55:1.2 | S: There the Buddha expressed this heartfelt sentiment: | T: There the Blessed One exclaimed this exclamation:
+sn22.55:1.3 | S: “‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: “‘It should not be, it should not occur to me [should not be mine]; it will not be, it will not occur to me [will not be mine]’:
+sn22.55:1.4 | S: A mendicant who makes such a resolution can cut off the lower fetters.” | T: A monk set on this would break the (five) lower fetters.”
+sn22.55:1.5 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One,
+sn22.55:1.6 | S: “But sir, how | T: (none)
+sn22.55:1.7 | S: can a mendicant who makes such a resolution cut off the lower fetters?” | T: “In what way would a monk set on this—‘It should not be, it should not occur to me; it will not be, it will not occur to me’—break the (five) lower fetters?”
+sn22.55:2.1 | S: “Mendicant, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in their teaching. They’ve not seen true persons, and are neither skilled nor trained in their teaching. | T: “There is the case, monk, where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.55:2.2 | S: They regard form as self, self as having form, form in self, or self in form. | T: assumes form to be the self, or the self as possessing form, or form as in the self, or the self as in form. “He assumes feeling to be the self, or the self as possessing feeling, or feeling as in the self, or the self as in feeling. He assumes perception to be the self, or the self as possessing perception, or perception as in the self, or the self as in perception. He assumes fabrications to be the self, or the self as possessing fabrications, or fabrications as in the self, or the self as in fabrications. He assumes consciousness to be the self,
+sn22.55:2.3 | S: They regard feeling … | T: (none)
+sn22.55:2.4 | S: perception … | T: (none)
+sn22.55:2.5 | S: choices … | T: (none)
+sn22.55:2.6 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.55:3.1 | S: They don’t truly understand form—which is impermanent—as impermanent. | T: “He doesn’t discern, as it has come to be, inconstant form as ‘inconstant form.’
+sn22.55:3.2 | S: They don’t truly understand feeling … | T: He doesn’t discern, as it has come to be, inconstant feeling as ‘inconstant feeling’ …
+sn22.55:3.3 | S: perception … | T: inconstant perception as ‘inconstant perception’ …
+sn22.55:3.4 | S: choices … | T: inconstant fabrications as ‘inconstant fabrications’ …
+sn22.55:3.5 | S: consciousness—which is impermanent—as impermanent. | T: inconstant consciousness as ‘inconstant consciousness.’
+sn22.55:4.1 | S: They don’t truly understand form—which is suffering—as suffering. | T: “He doesn’t discern, as it has come to be, stressful form as ‘stressful form’ …
+sn22.55:4.2 | S: They don’t truly understand feeling … | T: stressful feeling as ‘stressful feeling’ …
+sn22.55:4.3 | S: perception … | T: stressful perception as ‘stressful perception’ …
+sn22.55:4.4 | S: choices … | T: stressful fabrications as ‘stressful fabrications’ …
+sn22.55:4.5 | S: consciousness—which is suffering—as suffering. | T: stressful consciousness as ‘stressful consciousness.’
+sn22.55:5.1 | S: They don’t truly understand form—which is not-self—as not-self. | T: “He doesn’t discern, as it has come to be, not-self form as ‘not-self form’ …
+sn22.55:5.2 | S: They don’t truly understand feeling … | T: not-self feeling as ‘not-self feeling’ …
+sn22.55:5.3 | S: perception … | T: not-self perception as ‘not-self perception’ …
+sn22.55:5.4 | S: choices … | T: not-self fabrications as ‘not-self fabrications’ …
+sn22.55:5.5 | S: consciousness—which is not-self—as not-self. | T: not-self consciousness as ‘not-self consciousness.’
+sn22.55:6.1 | S: They don’t truly understand form—which is conditioned—as conditioned. | T: “He doesn’t discern, as it has come to be, fabricated form as ‘fabricated form’ …
+sn22.55:6.2 | S: They don’t truly understand feeling … | T: fabricated feeling as ‘fabricated feeling’ …
+sn22.55:6.3 | S: perception … | T: fabricated perception as ‘fabricated perception’ …
+sn22.55:6.4 | S: choices … | T: fabricated fabrications as ‘fabricated fabrications’ …
+sn22.55:6.5 | S: consciousness—which is conditioned—as conditioned. | T: fabricated consciousness as ‘fabricated consciousness.’
+sn22.55:6.6 | S: They don’t truly understand that form will vanish. | T: “He doesn’t discern, as it has come to be, that ‘form will not become’ …
+sn22.55:6.7 | S: They don’t truly understand that feeling … | T: ‘feeling will not become’ …
+sn22.55:6.8 | S: perception … | T: ‘perception will not become’ …
+sn22.55:6.9 | S: choices … | T: ‘fabrications will not become’ …
+sn22.55:6.10 | S: consciousness will vanish. | T: ‘consciousness will not become.’
+sn22.55:7.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “Now, a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma—
+sn22.55:7.2 | S: They don’t regard form as self … | T: doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.55:7.3 | S: They don’t regard feeling … | T: He doesn’t assume feeling to be the self.… doesn’t assume perception to be the self.… doesn’t assume fabrications to be the self.…
+sn22.55:7.4 | S: perception … | T: (none)
+sn22.55:7.5 | S: choices … | T: (none)
+sn22.55:7.6 | S: consciousness as self. | T: He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.55:8.1 | S: They truly understand form—which is impermanent—as impermanent. | T: “He discerns, as it has come to be, inconstant form as ‘inconstant form’ …
+sn22.55:8.2 | S: They truly understand feeling … | T: inconstant feeling as ‘inconstant feeling’ …
+sn22.55:8.3 | S: perception … | T: inconstant perception as ‘inconstant perception’ …
+sn22.55:8.4 | S: choices … | T: inconstant fabrications as ‘inconstant fabrications’ …
+sn22.55:8.5 | S: consciousness—which is impermanent—as impermanent. | T: inconstant consciousness as ‘inconstant consciousness.’
+sn22.55:8.6 | S: They truly understand form … feeling … perception … choices … consciousness—which is suffering—as suffering. | T: “He discerns, as it has come to be, stressful form as ‘stressful form’ … stressful feeling as ‘stressful feeling’ … stressful perception as ‘stressful perception’ … stressful fabrications as ‘stressful fabrications’ … stressful consciousness as ‘stressful consciousness.’
+sn22.55:8.7 | S: They truly understand form … feeling … perception … choices … consciousness—which is not-self—as not-self. | T: “He discerns, as it has come to be, not-self form as ‘not-self form’ … not-self feeling as ‘not-self feeling’ … not-self perception as ‘not-self perception’ … not-self fabrications as ‘not-self fabrications’ … not-self consciousness as ‘not-self consciousness.’
+sn22.55:8.8 | S: They truly understand form … feeling … perception … choices … consciousness—which is conditioned—as conditioned. | T: “He discerns, as it has come to be, fabricated form as ‘fabricated form’ … fabricated feeling as ‘fabricated feeling’ … fabricated perception as ‘fabricated perception’ … fabricated fabrications as ‘fabricated fabrications’ … fabricated consciousness as ‘fabricated consciousness.’
+sn22.55:8.9 | S: They truly understand that form will vanish. | T: “He discerns, as it has come to be, that ‘form will not become’ …
+sn22.55:8.10 | S: They truly understand that feeling … | T: ‘feeling will not become’ …
+sn22.55:8.11 | S: perception … | T: ‘perception will not become’ …
+sn22.55:8.12 | S: choices … | T: ‘fabrications will not become’ …
+sn22.55:8.13 | S: consciousness will vanish. | T: ‘consciousness will not become.’
+sn22.55:9.1 | S: It’s because of the vanishing of form, feeling, perception, choices, and consciousness that a mendicant who makes such a resolution— | T: “From the non-becoming of form, from the non-becoming of feeling… of perception… of fabrications… of consciousness, a monk set on this—
+sn22.55:9.2 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine’— | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me’—
+sn22.55:9.3 | S: can cut off the lower fetters.” | T: would break the (five) lower fetters.”
+sn22.55:9.4 | S: “Sir, you say that a mendicant who makes such a resolution can cut off the lower fetters. | T: “Lord, a monk set on this would break the (five) lower fetters.
+sn22.55:10.1 | S: But how are they to know and see in order to end the defilements without delay?” | T: But for one knowing in what way, seeing in what way, is there the immediate ending of effluents?”
+sn22.55:10.2 | S: “Mendicant, an unlearned ordinary person worries about things that aren’t a worry. | T: “There is the case where an uninstructed run-of-the-mill person… falls into fear over what is not grounds for fear.
+sn22.55:10.3 | S: For an unlearned ordinary person worries: | T: There is fear for an uninstructed run-of-the-mill person (who thinks),
+sn22.55:10.4 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me.’
+sn22.55:11.1 | S: A learned noble disciple doesn’t worry about things that aren’t a worry. | T: But an instructed disciple of the noble ones does not fall into fear over what is not grounds for fear.
+sn22.55:11.2 | S: For a learned noble disciple doesn’t worry: | T: There is no fear for an instructed disciple of the noble ones (who thinks),
+sn22.55:11.3 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me.’
+sn22.55:11.4 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Should consciousness, when standing, stand attached to form, supported by form (as its object), landing on form, watered with delight, it would exhibit growth, increase, & proliferation. “Should consciousness, when standing, stand attached to feeling, supported by feeling (as its object), landing on feeling, watered with delight, it would exhibit growth, increase,
+sn22.55:11.5 | S: Or should consciousness involved with feeling remain … | T: & proliferation.
+sn22.55:11.6 | S: Or should consciousness involved with perception remain … | T: “Should consciousness, when standing, stand attached to perception, supported by perception (as its object), landing on perception,
+sn22.55:11.7 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: watered with delight, it would exhibit growth, increase, & proliferation. “Should consciousness, when standing, stand attached to fabrications, supported by fabrications (as its object), landing on fabrications, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.55:12.1 | S: Suppose, mendicant, you were to say: | T: “Were someone to say,
+sn22.55:12.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘I will describe a coming, a going, a passing away, an arising, a growth, an increase, or a proliferation of consciousness apart from form, from feeling, from perception, from fabrications,’ that would be impossible.
+sn22.55:13.1 | S: If a mendicant has given up greed for the form element, the support is cut off, and there is no establishment of consciousness. | T: “If a monk abandons passion for the property of form.… “If a monk abandons passion for the property of feeling.… “If a monk abandons passion for the property of perception.…
+sn22.55:13.2 | S: If a mendicant has given up greed for the feeling element … | T: “If a monk abandons passion for the property of fabrications.…
+sn22.55:13.3 | S: perception element … | T: (none)
+sn22.55:13.4 | S: choices element … | T: (none)
+sn22.55:13.5 | S: consciousness element, the support is cut off, and there is no establishment of consciousness. | T: “If a monk abandons passion for the property of consciousness, then owing to the abandonment of passion, the support is cut off, and there is no landing of consciousness.
+sn22.55:13.6 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: Consciousness, thus not having landed, not increasing, not concocting, is released.
+sn22.55:13.7 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: Owing to release, it is steady. Owing to steadiness, it is contented. Owing to contentment, it is not agitated. Not agitated, he (the monk) is totally unbound right within.
+sn22.55:13.8 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+sn22.55:13.9 | S: The ending of the defilements without delay is for one who knows and sees this.” | T: “For one knowing in this way, seeing in this way, monk, there is the immediate ending of effluents.”
+
+## an3.121
+an3.121:1.1 | S: “Mendicants, there are these three kinds of purity. | T: Monks, there are these three purities.
+an3.121:1.2 | S: What three? | T: Which three?
+an3.121:1.3 | S: Purity of body, speech, and mind. | T: Bodily purity, verbal purity, & mental purity.
+an3.121:1.4 | S: And what is purity of body? | T: “And what is bodily purity?
+an3.121:1.5 | S: It’s when a mendicant doesn’t kill living creatures, steal, or have sex. | T: There is the case where a monk abstains from taking life, abstains from theft, abstains from uncelibacy.
+an3.121:1.6 | S: This is called ‘purity of body’. | T: This is called bodily purity.
+an3.121:2.1 | S: And what is purity of speech? | T: “And what is verbal purity?
+an3.121:2.2 | S: It’s when a mendicant doesn’t use speech that’s false, backbiting, harsh, or nonsensical. | T: There is the case where a monk abstains from telling lies, abstains from divisive speech, abstains from harsh speech, abstains from idle chatter.
+an3.121:2.3 | S: This is called ‘purity of speech’. | T: This is called verbal purity.
+an3.121:3.1 | S: And what is purity of mind? | T: “And what is mental purity?
+an3.121:3.2 | S: It’s when a mendicant who has sensual desire in them understands ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: There is the case where, there being sensual desire present within, a monk discerns, ‘There is sensual desire present within me.’ Or, there being no sensual desire present within, he discerns, ‘There is no sensual desire present within me.’ He discerns how there is the arising of unarisen sensual desire. And he discerns how there is the abandoning of sensual desire once it has arisen. And he discerns how there is no further appearance in the future of sensual desire that has been abandoned.
+an3.121:3.3 | S: When they have ill will in them they understand ‘I have ill will in me’; and when they don’t have ill will in them they understand ‘I don’t have ill will in me’. They understand how ill will arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: “There being ill will present within…
+an3.121:3.4 | S: When they have dullness and drowsiness in them they understand ‘I have dullness and drowsiness in me’; and when they don’t have dullness and drowsiness in them they understand ‘I don’t have dullness and drowsiness in me’. They understand how dullness and drowsiness arise; how, when they’ve already arisen, they’re given up; and how, once they’re given up, they don’t arise again in the future. | T: “There being sloth & drowsiness present within…
+an3.121:3.5 | S: When they have restlessness and remorse in them they understand ‘I have restlessness and remorse in me’; and when they don’t have restlessness and remorse in them they understand ‘I don’t have restlessness and remorse in me’. They understand how restlessness and remorse arise; how, when they’ve already arisen, they’re given up; and how, once they’re given up, they don’t arise again in the future. | T: “There being restlessness & anxiety present within…
+an3.121:3.6 | S: When they have doubt in them they understand ‘I have doubt in me’; and when they don’t have doubt in them they understand ‘I don’t have doubt in me’. They understand how doubt arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: “There being uncertainty present within, a monk discerns, ‘There is uncertainty present within me.’ Or, there being no uncertainty present within, he discerns, ‘There is no uncertainty present within me.’ He discerns how there is the arising of unarisen uncertainty. And he discerns how there is the abandoning of uncertainty once it has arisen. And he discerns how there is no further appearance in the future of uncertainty that has been abandoned.
+an3.121:3.7 | S: This is called ‘purity of mind’. | T: This is called mental purity.”
+an3.121:3.8 | S: These are the three kinds of purity. | T: “These, monks, are the three purities.”
+an3.121:4.1 | S: Purity of body, purity of speech, | T: (none)
+an3.121:4.2 | S: and undefiled purity of heart. | T: (none)
+an3.121:4.3 | S: A pure one, blessed with purity, | T: Bodily pure, verbally pure, mentally pure, without effluent: A pure one, consummate in purity,
+an3.121:4.4 | S: has washed off all bad things, they say.” | T: is said to be cleansed of evil.
+
+## an4.192
+an4.192:1.1 | S: “Mendicants, these four things can be known in four situations. | T: “Monks, these four traits may be known by means of four (other) traits.
+an4.192:1.2 | S: What four? | T: Which four?
+an4.192:1.3 | S: You can get to know a person’s ethics by living with them. But only after a long time, not casually; only when attentive, not when inattentive; and only by the wise, not the witless. | T: “It’s through living together that a person’s virtue may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning.
+an4.192:1.4 | S: You can get to know a person’s purity by dealing with them. … | T: “It’s through dealing with a person that his purity may be known,
+an4.192:1.5 | S: You can get to know a person’s resilience in times of trouble. … | T: (none)
+an4.192:1.6 | S: You can get to know a person’s wisdom by discussion. But only after a long time, not casually; only when attentive, not when inattentive; and only by the wise, not the witless. | T: and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning. “It’s through adversity that a person’s endurance may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning. “It’s through discussion that a person’s discernment may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning.
+an4.192:2.1 | S: ‘You can get to know a person’s ethics by living with them. But only after a long time, not casually; only when attentive, not when inattentive; and only by the wise, not the witless.’ | T: [1] “‘It’s through living together that a person’s virtue may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’:
+an4.192:2.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. And in reference to what was it said?
+an4.192:2.3 | S: Take an individual who’s living with someone else. They come to know: | T: “There is the case where one individual, through living with another, knows this:
+an4.192:2.4 | S: ‘For a long time this venerable’s deeds have been broken, tainted, spotty, and marred. Their deeds and behavior are inconsistent. | T: ‘For a long time this person has been torn, broken, spotted, splattered in his actions. He hasn’t been consistent in his actions. He hasn’t practiced consistently with regard to the precepts.
+an4.192:2.5 | S: This venerable is unethical, not ethical.’ | T: He is an unprincipled person, not a virtuous, principled one.’
+an4.192:3.1 | S: Take another individual who’s living with someone else. They come to know: | T: And then there is the case where one individual, through living with another, knows this:
+an4.192:3.2 | S: ‘For a long time this venerable’s deeds have been intact, impeccable, spotless, and unmarred. Their deeds and behavior are consistent. | T: ‘For a long time this person has been untorn, unbroken, unspotted, unsplattered in his actions. He has been consistent in his actions. He has practiced consistently with regard to the precepts.
+an4.192:3.3 | S: This venerable is ethical, not unethical.’ | T: He is a virtuous, principled person, not an unprincipled one.’
+an4.192:3.4 | S: That’s why I said that you can get to know a person’s ethics by living with them. But only after a long time, not a short time; only when attentive, not when inattentive; and only by the wise, not the witless. | T: “‘It’s through living together that a person’s virtue may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’: Thus it was said. And in reference to this was it said.
+an4.192:4.1 | S: ‘You can get to know a person’s purity by dealing with them. …’ | T: [2] “‘It’s through dealing with a person that his purity may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’:
+an4.192:4.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. And in reference to what was it said?
+an4.192:4.3 | S: Take an individual who has dealings with someone else. They come to know: | T: “There is the case where one individual, through dealing with another, knows this:
+an4.192:4.4 | S: ‘This venerable deals with one person in one way. Then they deal with two, three, or many people each in different ways. | T: ‘This person deals one way when one-on-one, another way when with two, another way when with three, another way when with many.
+an4.192:4.5 | S: They’re not consistent from one deal to the next. | T: (none)
+an4.192:4.6 | S: This venerable’s dealings are impure, not pure.’ | T: His earlier dealings do not jibe with his later dealings. He is impure in his dealings, not pure.’
+an4.192:5.1 | S: Take another individual who has dealings with someone else. They come to know: | T: And then there is the case where one individual, through dealing with another, knows this:
+an4.192:5.2 | S: ‘This venerable deals with one person in one way. Then they deal with two, three, or many people each in the same way. | T: ‘The way this person deals when one-on-one, is the same way he deals when with two, when with three, when with many.
+an4.192:5.3 | S: They’re consistent from one deal to the next. | T: (none)
+an4.192:5.4 | S: This venerable’s dealings are pure, not impure.’ | T: His earlier dealings jibe with his later dealings. He is pure in his dealings, not impure.’
+an4.192:5.5 | S: That’s why I said that you can get to know a person’s purity by dealing with them. … | T: “‘It’s through dealing with a person that his purity may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’: Thus it was said. And in reference to this was it said.
+an4.192:6.1 | S: ‘You can get to know a person’s resilience in times of trouble. …’ | T: [3] “‘It’s through adversity that a person’s endurance may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’:
+an4.192:6.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. And in reference to what was it said?
+an4.192:6.3 | S: Take someone who experiences loss of family, wealth, or health. But they don’t reflect: | T: “There is the case where a person, suffering loss of relatives, loss of wealth, or loss through disease, doesn’t reflect:
+an4.192:6.4 | S: ‘Worldly life is like that. Incarnation is like that. That’s why the eight worldly conditions revolve around the world, and the world revolves around the eight worldly conditions: | T: ‘That’s how it is when living together in the world. That’s how it is when gaining a personal identity [atta-bhāva, literally “self-state”]. When there is living in the world, when there is the gaining of a personal identity, these eight worldly conditions spin after the world, and the world spins after these eight worldly conditions:
+an4.192:6.5 | S: gain and loss, fame and disgrace, blame and praise, pleasure and pain.’ | T: gain, loss, status, disgrace, censure, praise, pleasure, & pain.’ Suffering loss of relatives, loss of wealth, or loss through disease,
+an4.192:6.6 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: he sorrows, grieves, & laments, beats his breast, becomes distraught.
+an4.192:7.1 | S: Take someone else who experiences loss of family, wealth, or health. But they reflect: | T: And then there is the case where a person, suffering loss of relatives, loss of wealth, or loss through disease, reflects:
+an4.192:7.2 | S: ‘Worldly life is like that. Incarnation is like that. That’s why the eight worldly conditions revolve around the world, and the world revolves around the eight worldly conditions: | T: ‘That’s how it is when living together in the world. That’s how it is when gaining a personal identity. When there is living in the world, when there is the gaining of a personal identity, these eight worldly conditions spin after the world, and the world spins after these eight worldly conditions:
+an4.192:7.3 | S: gain and loss, fame and disgrace, blame and praise, pleasure and pain.’ | T: gain, loss, status, disgrace, censure, praise, pleasure, & pain.’
+an4.192:7.4 | S: They don’t sorrow or wail or lament, beating their breast and falling into confusion. | T: Suffering loss of relatives, loss of wealth, or loss through disease, he doesn’t sorrow, grieve, or lament, doesn’t beat his breast or become distraught.
+an4.192:7.5 | S: That’s why I said that you can get to know a person’s resilience in times of trouble. … | T: (none)
+an4.192:8.1 | S: ‘You can get to know a person’s wisdom by discussion. But only after a long time, not casually; only when attentive, not when inattentive; and only by the wise, not the witless.’ | T: “‘It’s through adversity that a person’s endurance may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’: Thus it was said. And in reference to this was it said. [4] “‘It’s through discussion that a person’s discernment may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’:
+an4.192:8.2 | S: That’s what I said, but why did I say it? | T: Thus it was said. And in reference to what was it said?
+an4.192:8.3 | S: Take an individual who is discussing with someone else. They come to know: | T: “There is the case where one individual, through discussion with another, knows this:
+an4.192:8.4 | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re witless, not wise. | T: ‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question, he is dull, not discerning.
+an4.192:8.5 | S: Why is that? | T: Why is that?
+an4.192:8.6 | S: This venerable does not bring up a deep and meaningful saying that is peaceful, sublime, beyond the scope of logic, subtle, comprehensible to the astute. | T: He doesn’t make statements that are deep, tranquil, refined, beyond the scope of conjecture, subtle, to-be-experienced by the wise.
+an4.192:8.7 | S: When this venerable speaks on Dhamma they’re not able to explain the meaning, either briefly or in detail. They can’t teach it, assert it, establish it, clarify it, analyze it, or reveal it. | T: He cannot declare the meaning, teach it, describe it, set it forth, reveal it, explain it, or make it plain. He is dull, not discerning.’
+an4.192:8.8 | S: This venerable is witless, not wise.’ | T: (none)
+an4.192:9.1 | S: Suppose a person with clear eyes was standing on the bank of a lake. They’d see a little fish rising, | T: Just as if a man with good eyesight standing on the shore of a body of water were to see a small fish rise.
+an4.192:9.2 | S: and think: | T: The thought would occur to him,
+an4.192:9.3 | S: ‘Judging by this fish’s approach, by the ripples it makes, and by its force, it’s a little fish, not a big one.’ | T: ‘From the rise of this fish, from the break of its ripples, from its speed, it is a small fish, not a large one.’
+an4.192:9.4 | S: In the same way, an individual who is discussing with someone else would come to know: | T: In the same way, one individual, in discussion with another, knows this: ‘From the way this person rises to an issue, from the way he applies (his reasoning),
+an4.192:9.5 | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re witless, not wise. …’ | T: from the way he addresses a question…
+an4.192:9.8 | P: Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca na paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ. | T: he is dull,
+an4.192:9.9 | P: Duppañño ayamāyasmā, nāyamāyasmā paññavā’ti. | T: not discerning.’
+an4.192:10.1 | S: Take another individual who is discussing with someone else. They come to know: | T: “And then there is the case where one individual, through discussion with another, knows this:
+an4.192:10.2 | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re wise, not witless. | T: ‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question, he is discerning, not dull.
+an4.192:10.3 | S: Why is that? | T: Why is that?
+an4.192:10.4 | S: This venerable brings up a deep and meaningful saying that is peaceful, sublime, beyond the scope of logic, subtle, comprehensible to the astute. | T: He makes statements that are deep, tranquil, refined, beyond the scope of conjecture, subtle, to-be-experienced by the wise.
+an4.192:10.5 | S: When this venerable speaks on Dhamma they’re able to explain the meaning, either briefly or in detail. They teach it, assert it, establish it, clarify it, analyze it, and reveal it. | T: He can declare the meaning, teach it, describe it, set it forth, reveal it, explain it, & make it plain. He is discerning, not dull.’
+an4.192:10.6 | S: This venerable is wise, not witless.’ | T: (none)
+an4.192:11.1 | S: Suppose a man with clear eyes was standing on the bank of a lake. He’d see a big fish rising, | T: Just as if a man with good eyesight standing on the shore of a body of water were to see a large fish rise.
+an4.192:11.2 | S: and think: | T: The thought would occur to him,
+an4.192:11.3 | S: ‘Judging by this fish’s approach, by the ripples it makes, and by its force, it’s a big fish, not a little one.’ | T: ‘From the rise of this fish, from the break of its ripples, from its speed, it is a large fish, not a small one.’
+an4.192:11.4 | S: In the same way, an individual who is discussing with someone else would come to know: | T: In the same way, one individual, in discussion with another, knows this: ‘From the way this person rises to an issue, from the way he applies (his reasoning),
+an4.192:11.5 | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they articulate a question, they’re wise, not witless. …’ | T: from the way he addresses a question… he is discerning,
+an4.192:11.8 | P: Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ. | T: not dull.’
+an4.192:12.1 | S: That’s why I said that you can get to know a person’s wisdom by discussion. But only after a long time, not casually; only when attentive, not when inattentive; and only by the wise, not the witless. | T: “‘It’s through discussion that a person’s discernment may be known, and then only after a long period, not a short period; by one who is attentive, not by one who is inattentive; by one who is discerning, not by one who is not discerning’: Thus it was said. And in reference to this was it said.
+an4.192:12.2 | S: These are the four things that can be known in four situations.” | T: “These, monks, are the four traits that may be known by means of these four (other) traits.”
+
+## ud3.8
+ud3.8:1.1 | S: So I have heard. | T: (none)
+ud3.8:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.8:1.3 | S: Now at that time, after the meal, on return from almsround, several mendicants sat together in the pavilion by the kareri tree and this discussion came up among them: | T: And on that occasion a large number of monks, after the meal, on returning from their alms round, were sitting gathered together at the kareri-tree pavilion when this discussion arose:
+ud3.8:2.1 | S: “Reverends, when a mendicant who eats only almsfood is wandering for alms, from time to time they get to see pleasing sights, hear pleasing sounds, smell pleasing odors, taste pleasing flavors, and encounter pleasing touches. | T: “Friends, an alms-collecting monk, while going for alms, periodically sees agreeable sights via the eye. He periodically hears agreeable sounds via the ear… smells agreeable aromas via the nose… tastes agreeable flavors via the tongue… touches agreeable tactile sensations via the body.
+ud3.8:2.2 | S: They wander for alms being honored, respected, revered, venerated, and esteemed. | T: An alms-collecting monk, while going for alms, is honored, respected, revered, venerated, and given homage.
+ud3.8:2.3 | S: Come, we too should eat only almsfood. | T: “So, friends, let’s become alms-collecting monks. Then we, too, while going for alms,
+ud3.8:2.4 | S: From time to time we too will get to see pleasing sights, hear pleasing sounds, smell pleasing odors, taste pleasing flavors, and encounter pleasing touches. | T: will periodically get to see agreeable sights via the eye… to hear agreeable sounds via the ear… to smell agreeable aromas via the nose… to taste agreeable flavors via the tongue… to touch agreeable tactile sensations via the body.
+ud3.8:2.5 | S: We too shall wander for alms being honored, respected, revered, venerated, and esteemed.” | T: We, too, while going for alms, will be honored, respected, revered, venerated, and given homage.”
+ud3.8:2.6 | S: At that point the conversation among those mendicants was left unfinished. | T: (none)
+ud3.8:3.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the pavilion by the kareri tree, where he sat down on the seat spread out | T: And this discussion came to no conclusion. Then the Blessed One, emerging from his seclusion in the late afternoon, went to the kareri-tree pavilion and, on arrival, sat down on a seat laid out.
+ud3.8:3.2 | S: and addressed the mendicants: | T: Seated, he addressed the monks:
+ud3.8:3.3 | S: “Mendicants, what were you sitting talking about just now? What conversation was left unfinished?” | T: “For what topic are you sitting together here? And what was the discussion that came to no conclusion?”
+ud3.8:4.1 | S: So the mendicants told him what they had been talking about. The Buddha said, | T: “Just now, lord, after the meal, on returning from our alms round, we were sitting gathered together here at the kareri-tree pavilion when this discussion arose: [They repeat what had been said.]”
+ud3.8:6.1 | S: “Mendicants, it is not appropriate for you gentlemen who have gone forth out of faith from the lay life to homelessness to talk about such things. | T: “It isn’t proper, monks, that sons of good families, on having gone forth out of faith from home to the homeless life, should talk on such a topic.
+ud3.8:6.2 | S: When you’re sitting together you should do one of two things: | T: When you have gathered you have two duties:
+ud3.8:6.3 | S: discuss the teachings or keep noble silence.” | T: either Dhamma-talk or noble silence.”
+ud3.8:7.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.8:8.1 | S: “A mendicant who relies on alms, | T: The monk going for alms,
+ud3.8:8.2 | S: self-supported, providing for no other; | T: supporting himself and no other:
+ud3.8:8.3 | S: the unaffected one is envied by even the gods, | T: The devas adore one who is Such
+ud3.8:8.4 | S: but not if they’re after popularity and reputation.” | T: if he’s not intent on fame & praise.
+
+## sn2.25
+sn2.25:1.1 | S: So I have heard. | T: (none)
+sn2.25:1.2 | S: At one time several mendicants were staying in the Kosalan lands, in a wilderness hut on the slopes of the Himalayas. They were haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: I have heard that on one occasion many monks were staying among the Kosalans in wilderness huts: high-strung, rowdy, unruly, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+sn2.25:2.1 | S: Then on the fifteenth day sabbath the godling Jantu went up to those mendicants and addressed them in verse: | T: Then Jantu the deva’s son, on the uposatha of the fifteenth, went to those monks and, on arrival, addressed them in verses.
+sn2.25:3.1 | S: “The mendicants used to live happily, | T: They lived happily in the past,
+sn2.25:3.2 | S: as disciples of Gotama. | T: the monks who were Gotama’s disciples.
+sn2.25:3.3 | S: Desireless they sought alms; | T: Without wishes, they sought their alms.
+sn2.25:3.4 | S: desireless they used their lodgings. | T: Without wishes, their dwellings.
+sn2.25:3.5 | S: Knowing that the world was impermanent | T: Knowing inconstancy with regard to the world,
+sn2.25:3.6 | S: they made an end of suffering. | T: they made an end of suffering.
+sn2.25:4.1 | S: But now they’ve made themselves hard to look after, | T: [But these,] making themselves hard to maintain,
+sn2.25:4.2 | S: like chiefs in a village. | T: like headmen in a village,
+sn2.25:4.3 | S: They eat and eat and then lie down, | T: eating, eating, lie down
+sn2.25:4.4 | S: passed out in the homes of others. | T: infatuated in others’ homes.
+sn2.25:5.1 | S: Having raised my cupped palms to the Saṅgha, | T: Placing my hands over my heart to the Saṅgha,
+sn2.25:5.2 | S: I speak here only about certain people. | T: I speak of some,
+sn2.25:5.3 | S: They’re dregs, with no protector, | T: hurled down, without protection,
+sn2.25:5.4 | S: just like those who have passed away. | T: like hungry ghosts.
+sn2.25:6.1 | S: I’m speaking about | T: (none)
+sn2.25:6.2 | S: those who live negligently. | T: Those who live heedlessly: My words touch on them.
+sn2.25:6.3 | S: To those who live diligently | T: Those who live heedfully:
+sn2.25:6.4 | S: I pay homage.” | T: I pay them homage.
+
+## sn22.122
+sn22.122:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: On one occasion Ven. Sāriputta & Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn22.122:1.2 | S: Then in the late afternoon, Venerable Mahākoṭṭhita came out of retreat, went to Venerable Sāriputta, and said: | T: Then Ven. Mahā Koṭṭhita, emerging from his seclusion in the evening, went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta,
+sn22.122:1.3 | S: “Reverend Sāriputta, what things should an ethical mendicant rationally apply the mind to?” | T: “Sāriputta my friend, which things should a virtuous monk attend to in an appropriate way?”
+sn22.122:1.4 | S: “Reverend Koṭṭhita, an ethical mendicant should rationally apply the mind to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: “A virtuous monk, Koṭṭhita my friend, should attend in an appropriate way to the five clinging-aggregates as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self.
+sn22.122:1.5 | S: What five? | T: Which five?
+sn22.122:1.6 | S: That is, the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: The form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate.
+sn22.122:1.7 | S: An ethical mendicant should rationally apply the mind to these five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: A virtuous monk should attend in an appropriate way to these five clinging-aggregates as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self.
+sn22.122:1.8 | S: It’s possible that an ethical mendicant who rationally applies the mind to the five grasping aggregates will realize the fruit of stream-entry.” | T: For it is possible that a virtuous monk, attending in an appropriate way to these five clinging-aggregates as inconstant… not-self, would realize the fruit of stream-entry.”
+sn22.122:2.1 | S: “But Reverend Sāriputta, what things should a mendicant stream-enterer rationally apply the mind to?” | T: “Then which things should a monk who has attained stream-entry attend to in an appropriate way?”
+sn22.122:2.2 | S: “A mendicant stream-enterer should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. | T: “A monk who has attained stream-entry should attend in an appropriate way to these five clinging-aggregates as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self.
+sn22.122:2.3 | S: It’s possible that a mendicant stream-enterer who rationally applies the mind to the five grasping aggregates will realize the fruit of once-return.” | T: For it is possible that a monk who has attained stream-entry, attending in an appropriate way to these five clinging-aggregates as inconstant… not-self, would realize the fruit of once-returning.”
+sn22.122:3.1 | S: “But Reverend Sāriputta, what things should a mendicant once-returner rationally apply the mind to?” | T: “Then which things should a monk who has attained once-returning attend to in an appropriate way?”
+sn22.122:3.2 | S: “A mendicant once-returner should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. | T: “A monk who has attained once-returning should attend in an appropriate way to these five clinging-aggregates as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self.
+sn22.122:3.3 | S: It’s possible that a mendicant once-returner who rationally applies the mind to the five grasping aggregates will realize the fruit of non-return.” | T: For it is possible that a monk who has attained once-returning, attending in an appropriate way to these five clinging-aggregates as inconstant… not-self, would realize the fruit of non-returning.”
+sn22.122:4.1 | S: “But Reverend Sāriputta, what things should a mendicant non-returner rationally apply the mind to?” | T: “Then which things should a monk who has attained non-returning attend to in an appropriate way?”
+sn22.122:4.2 | S: “A mendicant non-returner should also rationally apply the mind to these five grasping aggregates as impermanent … as not-self. | T: “A monk who has attained non-returning should attend in an appropriate way to these five clinging-aggregates as inconstant,
+sn22.122:4.3 | S: It’s possible that a mendicant non-returner who rationally applies the mind to the five grasping aggregates will realize perfection.” | T: (none)
+sn22.122:5.1 | S: “But Reverend Sāriputta, what things should a perfected one rationally apply the mind to?” | T: (none)
+sn22.122:5.2 | S: “Reverend Koṭṭhita, a perfected one should also rationally apply the mind to the five grasping aggregates as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self. For it is possible that a monk who has attained non-returning, attending in an appropriate way to these five clinging-aggregates as inconstant… not-self, would realize the fruit of arahantship.” “Then which things should an arahant attend to in an appropriate way?” “An arahant should attend in an appropriate way to these five clinging-aggregates as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a dissolution, an emptiness, not-self.
+sn22.122:5.3 | S: A perfected one has nothing more to do, and nothing that needs improvement. | T: Although, for an arahant, there is nothing further to do, and nothing to add to what has been done,
+sn22.122:5.4 | S: Still, these things, when developed and cultivated, lead to blissful meditation in this life, and also to mindfulness and situational awareness.” | T: still these things—when developed & pursued—lead both to a pleasant abiding in the here & now and to mindfulness & alertness.”
+
+## sn22.26
+sn22.26:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.26:1.2 | S: “Mendicants, before my awakening—when I was still unawakened but intent on awakening—I thought: | T: “Monks, before my self-awakening, when I was still just an unawakened bodhisatta, the thought occurred to me:
+sn22.26:1.3 | S: ‘What’s the gratification, the drawback, and the escape when it comes to form … | T: ‘What is the allure of form? What is its drawback? What is its escape?
+sn22.26:1.4 | S: feeling … | T: “‘What is the allure of feeling? What is its drawback? What is its escape?
+sn22.26:1.5 | S: perception … | T: “‘What is the allure of perception? What is its drawback? What is its escape?
+sn22.26:1.6 | S: choices … | T: “‘What is the allure of fabrications? What is their drawback? What is their escape?
+sn22.26:1.7 | S: and consciousness?’ | T: “‘What is the allure of consciousness? What is its drawback? What is its escape?’
+sn22.26:1.8 | S: Then it occurred to me: | T: “Then the thought occurred to me,
+sn22.26:1.9 | S: ‘The pleasure and happiness that arise from form: this is its gratification. | T: ‘Whatever pleasure & joy arises dependent on form: That is the allure of form.
+sn22.26:1.10 | S: That form is impermanent, suffering, and perishable: this is its drawback. | T: The fact that form is inconstant, stressful, subject to change: That is the drawback of form.
+sn22.26:1.11 | S: Removing and giving up desire and greed for form: this is its escape. | T: The subduing of desire & passion, the abandoning of desire & passion for form: That is the escape from form.
+sn22.26:1.12 | S: The pleasure and happiness that arise from feeling … | T: [Similarly with feeling,
+sn22.26:1.15 | S: perception … | T: perception,
+sn22.26:1.16 | S: choices … | T: fabrications,
+sn22.26:1.19 | S: consciousness: this is its gratification. | T: (none)
+sn22.26:1.20 | S: That consciousness is impermanent, suffering, and perishable: this is its drawback. | T: (none)
+sn22.26:1.21 | S: Removing and giving up desire and greed for consciousness: this is its escape.’ | T: & consciousness.]
+sn22.26:2.1 | S: As long as I didn’t truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Monks, as long as I did not have direct knowledge, as it had come to be, of the allure as allure, of the drawback as drawback, and of the escape as escape, with regard to these five clinging-aggregates, I did not claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn22.26:2.2 | S: But when I did truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “But when I did have direct knowledge, as it had come to be, of the allure as allure, the drawback as drawback, and the escape as escape, with regard to these five clinging-aggregates, then I did claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn22.26:2.4 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+sn22.26:2.5 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further-becoming.’”
+

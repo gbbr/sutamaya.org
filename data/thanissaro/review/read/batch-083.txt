@@ -1,0 +1,416 @@
+## an2.32
+an2.32:1.0 | S: 32 | T: (none)
+an2.32:1.1 | S: “Mendicants, I will teach you the level of the untrue person and the level of the true person. | T: “Monks, I will teach you the level of a person of no integrity and the level of a person of integrity.
+an2.32:1.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an2.32:1.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+an2.32:1.4 | S: The Buddha said this: | T: The Blessed One said,
+an2.32:2.1 | S: “What is the level of the untrue person? | T: “Now what is the level of a person of no integrity?
+an2.32:2.2 | S: The untrue person is ungrateful and thankless, | T: A person of no integrity is ungrateful & unthankful.
+an2.32:2.3 | S: for the wicked only know how to be ungrateful and thankless. | T: This ingratitude, this lack of thankfulness, is advocated by rude people.
+an2.32:2.4 | S: It is totally the level of an untrue person to be ungrateful and thankless. | T: It is entirely on the level of people of no integrity.
+an2.32:2.5 | S: The true person is grateful and thankful, | T: A person of integrity is grateful & thankful.
+an2.32:2.6 | S: for the virtuous only know how to be grateful and thankful. | T: This gratitude, this thankfulness, is advocated by civil people.
+an2.32:2.7 | S: It is totally the level of a true person to be grateful and thankful.” | T: It is entirely on the level of people of integrity.”
+
+## an3.39
+an3.39:1.1 | S: “My lifestyle was delicate, mendicants, most delicate, extremely delicate. | T: “Monks, I lived in refinement, utmost refinement, total refinement.
+an3.39:1.2 | S: In my father’s home, lotus ponds were made just for me. | T: My father even had lotus ponds made in our palace:
+an3.39:1.3 | S: In some, blue water lilies blossomed, while in others, there were pink or white lotuses, just for my benefit. | T: one where red lotuses bloomed, one where white lotuses bloomed, one where blue lotuses bloomed, all for my sake.
+an3.39:1.4 | S: I only used sandalwood from Kāsi, and my turbans, jackets, sarongs, and upper robes also came from Kāsi. | T: I used no sandalwood that was not from Vārāṇasī. My turban was from Vārāṇasī, as were my tunic, my lower garments, & my outer cloak.
+an3.39:1.5 | S: And a white parasol was held over me night and day, with the thought: | T: A white sunshade was held over me day & night to protect me from cold,
+an3.39:1.6 | S: ‘Don’t let cold, heat, grass, dust, or damp bother him.’ | T: heat, dust, dirt, & dew.
+an3.39:2.1 | S: I had three stilt longhouses—one for the winter, one for the summer, and one for the rainy season. | T: “I had three palaces: one for the cold season, one for the hot season, one for the rainy season.
+an3.39:2.2 | S: I stayed in a stilt longhouse without coming downstairs for the four months of the rainy season, where I was entertained by musicians—none of them men. | T: During the four months of the rainy season I was entertained in the rainy-season palace by minstrels without a single man among them, and I did not once come down from the palace.
+an3.39:2.3 | S: While the bondservants, workers, and staff in other houses are given sour gruel with false black pepper to eat, in my father’s home they are given fine rice with meat. | T: Whereas the servants, workers, & retainers in other people’s homes are fed meals of lentil soup & broken rice, in my father’s home the servants, workers, & retainers were fed wheat, rice, & meat.
+an3.39:3.1 | S: Amid such prosperity and such a delicate lifestyle, I thought: | T: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me:
+an3.39:3.2 | S: ‘When an unlearned ordinary person—who is liable to grow old, not being exempt from old age—sees someone else who is old, they’re horrified, repelled, and disgusted, overlooking the fact that they themselves are in the same situation. | T: ‘When an untaught, run-of-the-mill person, himself subject to aging, not beyond aging, sees another who is aged, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to aging, not beyond aging.
+an3.39:3.3 | S: But since I, too, am liable to grow old, it would not be appropriate for me to be horrified, embarrassed, and disgusted, when I see someone else who is old.’ | T: If I—who am subject to aging, not beyond aging—were to be repelled, ashamed, & disgusted on seeing another person who is aged, that would not be fitting for me.’
+an3.39:3.4 | S: Reflecting like this, I entirely gave up the vanity of youth. | T: As I noticed this, the (typical) young person’s intoxication with youth entirely dropped away.
+an3.39:4.1 | S: ‘When an unlearned ordinary person—who is liable to get sick, not being exempt from sickness—sees someone else who is sick, they’re horrified, repelled, and disgusted, overlooking the fact that they themselves are in the same situation. | T: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to illness, not beyond illness, sees another who is ill, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to illness, not beyond illness.
+an3.39:4.2 | S: But since I, too, am liable to get sick, it would not be appropriate for me to be horrified, embarrassed, and disgusted, when I see someone else who is sick.’ | T: And if I—who am subject to illness, not beyond illness—were to be repelled, ashamed, & disgusted on seeing another person who is ill, that would not be fitting for me.’
+an3.39:4.3 | S: Reflecting like this, I entirely gave up the vanity of health. | T: As I noticed this, the healthy person’s intoxication with health entirely dropped away.
+an3.39:5.1 | S: ‘When an unlearned ordinary person—who is liable to die, not being exempt from death—sees someone else who is dead, they’re horrified, repelled, and disgusted, overlooking the fact that they themselves are in the same situation. | T: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to death, not beyond death, sees another who is dead, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to death, not beyond death.
+an3.39:5.2 | S: But since I, too, am liable to die, it would not be appropriate for me to be horrified, embarrassed, and disgusted, when I see someone else who is dead.’ | T: And if I—who am subject to death, not beyond death—were to be repelled, ashamed, & disgusted on seeing another person who is dead, that would not be fitting for me.’
+an3.39:5.3 | S: Reflecting like this, I entirely gave up the vanity of life. | T: As I noticed this, the living person’s intoxication with life entirely dropped away.
+an3.39:6.1 | S: There are these three vanities. | T: “Monks, there are these three forms of intoxication.
+an3.39:6.2 | S: What three? | T: Which three?
+an3.39:6.3 | S: The vanity of youth, of health, and of life. | T: Intoxication with youth, intoxication with health, intoxication with life.
+an3.39:6.4 | S: Intoxicated with the vanity of youth, an unlearned ordinary person does bad things by way of body, speech, and mind. | T: “Drunk with the intoxication of youth, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct,
+an3.39:6.5 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+an3.39:6.6 | S: Intoxicated with the vanity of health … | T: “Drunk with the intoxication of health,
+an3.39:6.7 | S: Intoxicated with the vanity of life, an unlearned ordinary person does bad things by way of body, speech, and mind. | T: an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell. “Drunk with the intoxication of life, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct,
+an3.39:6.8 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+an3.39:7.1 | S: Intoxicated with the vanity of youth, health, or life, a mendicant resigns the training and returns to a lesser life. | T: “Drunk with the intoxication of youth, a monk leaves the training and returns to the lower life. Drunk with the intoxication of health, a monk leaves the training and returns to the lower life. Drunk with the intoxication of life, a monk leaves the training and returns to the lower life.”
+an3.39:8.1 | S: For others, sickness is natural, | T: (none)
+an3.39:8.2 | S: and so are old age and death. | T: ‘Subject to birth, subject to aging, subject to death,
+an3.39:8.3 | S: Though this is how their nature is, | T: (none)
+an3.39:8.4 | S: ordinary people feel disgusted. | T: run-of-the-mill people are repelled by those who suffer from that to which they are subject.
+an3.39:9.1 | S: If I were to be disgusted | T: And if I were to be repelled
+an3.39:9.2 | S: with creatures whose nature is such, | T: (none)
+an3.39:9.3 | S: it would not be appropriate for me, | T: by beings subject to these things,
+an3.39:9.4 | S: since my life is just the same. | T: it would not be fitting for me,
+an3.39:10.1 | S: Living in such a way, | T: living as they do.’ As I maintained this attitude—
+an3.39:10.2 | S: I understood the truth without attachments. | T: knowing the Dhamma without acquisitions—
+an3.39:10.3 | S: I mastered all vanities— | T: I overcame all intoxication
+an3.39:10.4 | S: of health, of youth, | T: with health, youth,
+an3.39:11.1 | S: and even of life— | T: & life
+an3.39:11.2 | S: seeing renunciation as sanctuary. | T: as one who sees renunciation as rest.
+an3.39:11.3 | S: Zeal sprang up in me | T: For me, energy arose,
+an3.39:11.4 | S: as I looked to extinguishment. | T: unbinding was clearly seen.
+an3.39:12.1 | S: Now I’m unable | T: There’s now no way
+an3.39:12.2 | S: to indulge in sensual pleasures; | T: I could partake of sensual pleasures.
+an3.39:12.3 | S: there’s no turning back, | T: (none)
+an3.39:12.4 | S: I’m committed to the spiritual life.” | T: Having followed the holy life,
+an3.39:12.5 | P: Navamaṁ. | T: I will not return.
+
+## an6.45
+an6.45:1.1 | S: “Mendicants, isn’t poverty suffering in the world for a person who enjoys sensual pleasures?” | T: “Monks, for one who partakes of sensuality, poverty is suffering in the world.”
+an6.45:1.2 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:2.1 | S: “When a poor, penniless person falls into debt, isn’t being in debt also suffering in the world for a person who enjoys sensual pleasures?” | T: “And a poor, destitute, penniless person gets into debt. For one who partakes of sensuality, getting into debt is suffering in the world.”
+an6.45:2.2 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:3.1 | S: “When a poor person who has fallen into debt agrees to pay interest, isn’t the interest also suffering in the world for a person who enjoys sensual pleasures?” | T: “And a poor, destitute, penniless person, having gotten into debt, owes interest payments. For one who partakes of sensuality, interest payment is suffering in the world.”
+an6.45:3.2 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:4.1 | S: “When a poor person who has fallen into debt and agreed to pay interest fails to pay it when it falls due, they get a warning. | T: “And when a poor, destitute, penniless person owing interest payments does not pay interest on time, they serve him notice.
+an6.45:4.2 | S: Isn’t being warned suffering in the world for a person who enjoys sensual pleasures?” | T: For one who partakes of sensuality, being served notice is suffering in the world.”
+an6.45:4.3 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:5.1 | S: “When a poor person fails to pay after getting a warning, they’re prosecuted. | T: “And when a poor, destitute, penniless person, being served notice, does not pay, they hound him.
+an6.45:5.2 | S: Isn’t being prosecuted suffering in the world for a person who enjoys sensual pleasures?” | T: For one who partakes of sensuality, being hounded is suffering in the world.”
+an6.45:5.3 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:6.1 | S: “When a poor person fails to pay after being prosecuted, they’re imprisoned. | T: “And when a poor, destitute, penniless person, being hounded, does not pay,
+an6.45:6.2 | S: Isn’t being imprisoned suffering in the world for a person who enjoys sensual pleasures?” | T: he is put into bondage. For one who partakes of sensuality, bondage is suffering in the world.”
+an6.45:6.3 | S: “Yes, sir.” | T: “Yes, lord.”
+an6.45:7.1 | S: “So mendicants, poverty, debt, interest, warnings, prosecution, and imprisonment are suffering in the world for those who enjoy sensual pleasures. | T: “Thus, monks, poverty is suffering in the world for one who partakes of sensuality. Getting into debt is suffering in the world for one who partakes of sensuality. Interest payment is suffering in the world for one who partakes of sensuality. Being served notice is suffering in the world for one who partakes of sensuality. Being hounded is suffering in the world for one who partakes of sensuality. Bondage is suffering in the world for one who partakes of sensuality.
+an6.45:7.2 | S: In the same way, whoever has no faith, conscience, prudence, energy, and wisdom when it comes to skillful qualities | T: “In the same way, monks, whoever has no conviction with regard to skillful qualities, no sense of shame with regard to skillful qualities, no sense of compunction with regard to skillful qualities, no persistence with regard to skillful qualities, no discernment with regard to skillful qualities is,
+an6.45:7.3 | S: is called poor and penniless in the training of the Noble One. | T: in the discipline of the noble ones, said to be poor, destitute, & penniless. “He—poor, destitute, & penniless,
+an6.45:8.1 | S: Since they have no faith, conscience, prudence, energy, or wisdom when it comes to skillful qualities, they do bad things by way of body, speech, and mind. | T: having no conviction with regard to skillful qualities, no sense of shame… no sense of compunction… no persistence… no discernment with regard to skillful qualities—engages in misconduct by way of the body, misconduct by way of speech, misconduct by way of the mind.
+an6.45:8.2 | S: This is how they’re in debt, I say. | T: For him, I tell you, this is getting into debt.
+an6.45:9.1 | S: In order to conceal the bad things they do by way of body, speech, and mind they harbor corrupt wishes. | T: “For the purpose of concealing his bodily misconduct, he formulates evil desires: He desires, ‘May they not know about me.’ He resolves, ‘May they not know about me.’ He speaks, (thinking,) ‘May they not know about me.’ He makes an effort with his body, (thinking,) ‘May they not know about me.’ For the purpose of concealing his verbal misconduct.… For the purpose of concealing his mental misconduct, he formulates evil desires:
+an6.45:9.2 | S: They wish, plan, speak, and act with the thought: ‘May no one find me out!’ | T: He desires, ‘May they not know about me.’ He resolves, ‘May they not know about me.’ He speaks, (thinking,) ‘May they not know about me.’ He makes an effort with his body, (thinking,) ‘May they not know about me.’
+an6.45:9.3 | S: This is how they pay interest, I say. | T: For him, I tell you, this is interest payment.
+an6.45:10.1 | S: Good-hearted spiritual companions say this about them: | T: “And then his well-behaved companions in the holy life say about him,
+an6.45:10.2 | S: ‘This venerable acts like this, and behaves like that.’ | T: ‘This venerable one acts in this way, behaves in this way.’
+an6.45:10.3 | S: This is how they’re warned, I say. | T: For him, I tell you, this is being served notice.
+an6.45:11.1 | S: When they go to a wilderness, the root of a tree, or an empty hut, they’re beset by remorseful, unskillful thoughts. | T: “And then, when he has gone to the wilderness, to the foot of a tree, or to an empty dwelling, he is beset with evil, unskillful thoughts accompanied by remorse.
+an6.45:11.2 | S: This is how they’re prosecuted, I say. | T: For him, I tell you, this is being hounded.
+an6.45:12.1 | S: That poor, penniless person has done bad things by way of body, speech, and mind. When their body breaks up, after death, they’re trapped in the prison of hell or the animal realm. | T: “He—poor, destitute, & penniless, having engaged in misconduct by way of the body, misconduct by way of speech, & misconduct by way of the mind—on the break-up of the body, after death, is bound by the bond of hell or the bond of the animal womb.
+an6.45:12.2 | S: I don’t see a single prison that’s as grim, as vicious, and such an obstacle to reaching the supreme sanctuary from the yoke as the prison of hell or the animal realm. | T: And I can imagine no one other bond so tormenting, so painful, so obstructive to the unexcelled rest from bondage, as the bond of hell or the bond of the animal womb.
+an6.45:13.1 | S: Poverty is said to be suffering in the world, | T: “Poverty is called suffering in the world;
+an6.45:13.2 | S: and so is being in debt. | T: so, too, is getting into debt.
+an6.45:13.3 | S: A poor person who has fallen into debt | T: A poor person, in debt,
+an6.45:13.4 | S: frets even when spending the loan. | T: partaking of sensuality, suffers hardship.
+an6.45:14.1 | S: And then they’re prosecuted, | T: Then they hound him
+an6.45:14.2 | S: or even thrown in jail. | T: and put him into bondage:
+an6.45:14.3 | S: Such imprisonment is true suffering | T: the painful bond
+an6.45:14.4 | S: for someone who prays for pleasure and possessions. | T: for one longing to gain sensual pleasures.
+an6.45:15.1 | S: In the same way, in the Noble One’s training | T: Now, anyone with no conviction in the discipline of the noble ones
+an6.45:15.2 | S: whoever has no faith, | T: —
+an6.45:15.3 | S: no conscience or prudence, | T: no sense of shame, no sense of compunction—
+an6.45:15.4 | S: contemplates bad deeds. | T: contemplating evil actions,
+an6.45:16.1 | S: After doing bad things | T: (none)
+an6.45:16.2 | S: by way of body, | T: doing wrong by way of body,
+an6.45:16.3 | S: speech, and mind, | T: wrong by way of speech, & wrong by way of the mind,
+an6.45:16.4 | S: they wish, ‘May no one find me out!’ | T: wants: ‘May they not know about me.’
+an6.45:17.1 | S: Their behavior is creepy | T: He creeps along in body,
+an6.45:17.2 | S: by body, speech, and mind. | T: speech, or mind,
+an6.45:17.3 | S: They pile up bad deeds | T: piling up evil actions, here & there, again & again. He, with evil actions,
+an6.45:17.4 | S: on and on, life after life. | T: (none)
+an6.45:18.1 | S: That simpleton evildoer, | T: his wisdom weak,
+an6.45:18.2 | S: knowing their own misdeeds, | T: knowing his own wrong-doing, is
+an6.45:18.3 | S: is a poor person who has fallen into debt, | T: a poor person, in debt.
+an6.45:18.4 | S: and frets even when spending the loan. | T: Partaking of sensuality, he suffers hardship.
+an6.45:19.1 | S: And when in village or wilderness | T: Then they hound him—
+an6.45:19.2 | S: they’re prosecuted | T: (none)
+an6.45:19.3 | S: by painful mental plans, | T: painful mental resolves
+an6.45:19.4 | S: which are born of remorse. | T: born of remorse— at home or in the wilderness.
+an6.45:20.1 | S: That simpleton evildoer, | T: He, with evil actions, his wisdom weak,
+an6.45:20.2 | S: knowing their own misdeeds, | T: knowing his own wrong-doing,
+an6.45:20.3 | S: goes to one of the animal realms, | T: goes to an animal womb
+an6.45:20.4 | S: or is trapped in hell. | T: or is bound in hell:
+an6.45:21.1 | S: Such imprisonment is true suffering, | T: the painful bond
+an6.45:21.2 | S: from which the attentive are released. | T: from which the enlightened are freed.
+an6.45:21.3 | S: With confident heart, they give | T: But one with confidence,
+an6.45:21.4 | S: with wealth that is properly earned. | T: (none)
+an6.45:22.1 | S: That faithful householder of discernment | T: (none)
+an6.45:22.2 | S: holds a winning hand on both counts: | T: living at home, making gifts of his belongings, righteously-gained, wins both goals:
+an6.45:22.3 | S: welfare and benefit in this life, | T: advantage in the here & now,
+an6.45:22.4 | S: and happiness in lives to come. | T: & happiness in the world beyond.
+an6.45:22.5 | S: This is how, for a householder, | T: The liberality of this householder
+an6.45:22.6 | S: merit grows by generosity. | T: piles up merit.
+an6.45:23.1 | S: In the same way, in the Noble One’s training, | T: (none)
+an6.45:23.2 | S: whoever is grounded in faith, | T: Now, anyone with conviction firmly established in the discipline of the noble ones—
+an6.45:23.3 | S: with conscience and prudence, | T: with a sense of shame, of compunction,
+an6.45:23.4 | S: wise, and ethically restrained, | T: discerning & restrained by virtue— is,
+an6.45:24.1 | S: is said to live happily | T: (none)
+an6.45:24.2 | S: in the Noble One’s training. | T: in the discipline of the noble ones,
+an6.45:24.3 | S: After gaining pleasure not of the flesh, | T: said to be living in ease. Gaining a pleasure not of the flesh,
+an6.45:24.4 | S: they concentrate on equanimity. | T: he determines on equanimity,
+an6.45:25.1 | S: They give up the five hindrances, | T: abandoning the five hindrances
+an6.45:25.2 | S: constantly energetic, | T: —persistence constantly aroused—
+an6.45:25.3 | S: and enter the absorptions, | T: entering the jhānas:
+an6.45:25.4 | S: unified, alert, and mindful. | T: unified, mindful, astute.
+an6.45:26.1 | S: Truly knowing in this way | T: Knowing this as it has come to be
+an6.45:26.2 | S: regards the ending of all fetters, | T: in the total ending of all fetters,
+an6.45:26.3 | S: by not grasping in any way, | T: through everywhere not-clinging,
+an6.45:26.4 | S: their mind is rightly freed. | T: his mind is rightly released.
+an6.45:27.1 | S: To that unaffected one, rightly freed | T: In him, Such, rightly released,
+an6.45:27.2 | S: with the end of the fetters of continued existence, | T: there is the knowledge, in the total ending of the fetters of becoming:
+an6.45:27.3 | S: the knowledge comes: | T: (none)
+an6.45:27.4 | S: ‘My freedom is unshakable.’ | T: ‘My release is unprovoked.’
+an6.45:28.1 | S: This is the ultimate knowledge. | T: That is the highest knowledge
+an6.45:28.2 | S: This is the supreme happiness. | T: that, the happiness unexcelled.
+an6.45:28.3 | S: Sorrowless, stainless, secure: | T: Sorrowless, dustless, at rest,
+an6.45:28.4 | S: this is the highest freedom from debt.” | T: that is release from debt.”
+
+## an8.22
+an8.22:1.1 | S: At one time the Buddha was staying in the land of the Vajjis at Elephant Village. | T: On one occasion the Blessed One was staying among the Vajjians near Hatthigāma.
+an8.22:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks:
+an8.22:1.3 | S: “Mendicants, you should remember the householder Uggata of Elephant Village as someone who has eight amazing and incredible qualities.” | T: “Monks, remember Ugga the householder of Hatthigāma as having eight amazing & astounding qualities.”
+an8.22:1.4 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+an8.22:1.5 | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said it, the One Well-gone rose from his seat & entered his dwelling.
+an8.22:2.1 | S: Then a certain mendicant robed up in the morning and, taking his bowl and robe, went to the home of the householder Uggata of Elephant Village, where he sat down on the seat spread out. | T: Then early in the morning, a certain monk—having adjusted his under robe and carrying his robes & bowl—went to the home of Ugga the householder of Hatthigāma and, on arrival, sat down on a seat laid out.
+an8.22:2.2 | S: Then Uggata of Elephant Village went up to that mendicant, bowed, and sat down to one side. The mendicant said to him: | T: Then Ugga the householder went to the monk and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the monk said to him,
+an8.22:2.3 | S: “Householder, the Buddha declared that you have eight amazing and incredible qualities. | T: “Householder, the Blessed One has declared that you are endowed with eight amazing & astounding qualities.
+an8.22:2.4 | S: What are the eight qualities that he spoke of?” | T: With which eight amazing & astounding qualities has the Blessed One declared that you are endowed?” “Venerable sir, I don’t know with which eight amazing & astounding qualities the Blessed One has declared that I am endowed,
+an8.22:3.1 | S: “Sir, I don’t know | T: (none)
+an8.22:3.2 | S: what eight amazing and incredible qualities the Buddha was referring to. | T: (none)
+an8.22:3.3 | S: But these eight amazing and incredible qualities are found in me. | T: but there are eight amazing & astounding qualities to be found in me.
+an8.22:3.4 | S: Listen and apply your mind well, I will speak.” | T: Listen to them & pay careful attention. I will speak.”
+an8.22:3.5 | S: “Yes, householder,” replied the mendicant. | T: “As you say, householder,” the monk responded to Ugga the householder of Hatthigāma.
+an8.22:3.6 | S: Uggata of Elephant Village said this: | T: Ugga said,
+an8.22:3.7 | S: “Sir, when I first saw the Buddha off in the distance I was partying in the Dragon’s Park. | T: “Venerable sir, I was carousing in the Nāga forest when I saw the Blessed One in the distance for the first time.
+an8.22:3.8 | S: My heart was inspired as soon as I saw him, and I sobered up. | T: As soon as I saw the Blessed One, my heart felt confidence, and my liquor-intoxication left me.
+an8.22:3.9 | S: This is the first incredible and amazing quality found in me. | T: This is the first amazing & astounding quality to be found in me.
+an8.22:4.1 | S: With confident heart I paid homage to the Buddha. | T: “With a confident heart, I attended to the Blessed One.
+an8.22:4.2 | S: The Buddha taught me step by step, with | T: (none)
+an8.22:4.3 | S: a talk on giving, ethical conduct, and heaven. He revealed the drawbacks of sensual pleasures, so sordid and corrupt, and the benefit of renunciation. | T: He gave me a graduated talk, i.e., a talk on giving, a talk on virtue, a talk on heaven; he proclaimed the drawbacks of, degradation in, & defilement in sensuality, and the rewards of renunciation.
+an8.22:4.4 | S: And when he knew that my mind was ready, pliable, rid of hindrances, elated, and confident he revealed the special teaching of the Buddhas: | T: Then—when the Blessed One knew that I was of ready mind, malleable mind, unhindered mind, exultant mind, confident mind—he proclaimed to me the distinctive teaching of the Awakened Ones:
+an8.22:4.5 | S: suffering, its origin, its cessation, and the path. | T: stress, origination, cessation, path.
+an8.22:4.6 | S: Just as a clean cloth rid of stains would properly absorb dye, | T: Just as a white cloth with stains removed would rightly take dye,
+an8.22:4.7 | S: in that very seat the stainless, immaculate vision of the Dhamma arose in me: | T: in the same way there arose to me, in that very seat, the dustless, stainless Dhamma eye:
+an8.22:4.8 | S: ‘Everything that is liable to arise is liable to cease.’ | T: Whatever is subject to origination is all subject to cessation.
+an8.22:4.9 | S: I saw, attained, understood, and fathomed the Dhamma. I went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. Right there I went for refuge to the Buddha, his teaching, and the Saṅgha. And I undertook the five training rules with chastity as the fifth. | T: Then—having seen the Dhamma, having reached the Dhamma, known the Dhamma, gained a footing in the Dhamma, having crossed over & beyond doubt, having had no more questioning, having gained fearlessness & become independent of others with regard to the Teacher’s message, right there I went to the Buddha, the Dhamma, & the Saṅgha for refuge and undertook the training rules with celibacy as the fifth.
+an8.22:4.10 | S: This is the second incredible and amazing quality found in me. | T: This, venerable sir, is the second amazing & astounding quality to be found in me.
+an8.22:5.1 | S: I had four teenage wives. | T: “I had four young wives. So I went to my wives and,
+an8.22:5.2 | S: And I went to them and said: | T: on arrival, said to them,
+an8.22:5.3 | S: ‘Sisters, I’ve undertaken the five training rules with chastity as fifth. | T: ‘Sisters, I have undertaken the five training rules with celibacy as the fifth.
+an8.22:5.4 | S: If you wish, you may stay here, enjoy my wealth, and do good deeds. Or you can return to your own families. | T: Whoever wants to may partake of this wealth & make merit [here], or you may go to the homes of your relatives,
+an8.22:5.5 | S: Or would you prefer if I gave you to another man?’ | T: or, if you want (another) man, to whom shall I give you?’
+an8.22:5.6 | S: When I said this, my eldest wife said to me: | T: When this was said, the eldest wife said to me,
+an8.22:5.7 | S: ‘Master, please give me to the man named so-and-so.’ | T: ‘Young master, give me to the man named so-&-so.’
+an8.22:5.8 | S: Then I summoned that man. Taking my wife with my left hand and a ceremonial vase with my right, I presented her to that man with the pouring of water. | T: Having sent for that man, having taken that wife with my left hand, having taken the ceremonial vase with my right hand, I gave her to that man. But even as I gave up my young wife as a gift,
+an8.22:5.9 | S: But I can’t recall getting upset while giving away my teenage wife. | T: I don’t recall any alteration in my mind.
+an8.22:5.10 | S: This is the third incredible and amazing quality found in me. | T: This, venerable sir, is the third amazing & astounding quality to be found in me.
+an8.22:6.1 | S: And though my family has wealth, | T: “There is wealth to be found in my family,
+an8.22:6.2 | S: it’s shared without reserve with ethical people of good character. | T: but it is given unstintingly to virtuous people of admirable character.
+an8.22:6.3 | S: This is the fourth incredible and amazing quality found in me. | T: This, venerable sir, is the fourth amazing & astounding quality to be found in me.
+an8.22:7.1 | S: When I pay homage to a mendicant, | T: “Whatever monk I attend to,
+an8.22:7.2 | S: I do so carefully, not carelessly. | T: I attend to him attentively, not inattentively.
+an8.22:7.3 | S: If that venerable teaches me the Dhamma, | T: If that venerable one teaches me the Dhamma,
+an8.22:7.4 | S: I listen carefully, not carelessly. | T: I listen attentively, not inattentively.
+an8.22:7.5 | S: But if they don’t teach me the Dhamma, I teach them. | T: If he doesn’t teach me the Dhamma, I teach him the Dhamma.
+an8.22:7.6 | S: This is the fifth incredible and amazing quality found in me. | T: This, venerable sir, is the fifth amazing & astounding quality to be found in me.
+an8.22:8.1 | S: It’s not unusual for deities to come to me when the Saṅgha has been invited and announce: | T: “When I have invited the Saṅgha (for a meal), it’s not amazing for devas to come & inform me,
+an8.22:8.2 | S: ‘Householder, that mendicant is freed both ways. That one is freed by wisdom. That one is a direct witness. That one is attained to view. That one is freed by faith. That one is a follower of teachings. That one is a follower by faith. That one is ethical, of good character. That one is unethical, of bad character.’ | T: ‘That monk, householder, is released both ways. That monk is released through discernment. That monk is a bodily witness. That monk is attained to view. That monk is released through conviction. That monk is a Dhamma-follower. That monk is a conviction-follower. That monk is virtuous, of admirable character. That monk is unvirtuous, of evil character.’
+an8.22:8.3 | S: But while I’m serving the Saṅgha I don’t recall thinking: | T: Yet while I am serving the Saṅgha, I don’t recall giving rise to the thought,
+an8.22:8.4 | S: ‘Let me give this one just a little, and that one a lot.’ | T: ‘I will give this one a little’ or ‘I will give this one a lot.’
+an8.22:8.5 | S: Rather, I give impartially. | T: Instead, I give with an impartial mind.
+an8.22:8.6 | S: This is the sixth incredible and amazing quality found in me. | T: This, venerable sir, is the sixth amazing & astounding quality to be found in me.
+an8.22:9.1 | S: It’s not unusual for deities to come to me and announce: | T: “It’s not amazing for devas to come & inform me,
+an8.22:9.2 | S: ‘Householder, the Buddha’s teaching is well explained!’ | T: ‘Householder, the Blessed One’s Dhamma is well-taught.’ When that is said, I say to those devas,
+an8.22:9.3 | S: When they say this I say to them: | T: (none)
+an8.22:9.4 | S: ‘The Buddha’s teaching is well explained, regardless of whether or not you deities say so!’ | T: ‘Whether or not you devas say that, the Blessed One’s Dhamma is well-taught.’
+an8.22:9.5 | S: But I don’t recall getting too excited by the fact that | T: Still, I don’t recall any exaltation of mind because devas come to me or because I converse with devas.
+an8.22:9.6 | S: the deities come to me, and I have a conversation with them. | T: (none)
+an8.22:9.7 | S: This is the seventh incredible and amazing quality found in me. | T: This, venerable sir, is the seventh amazing & astounding quality to be found in me.
+an8.22:10.1 | S: If I pass away before the Buddha, it would be no wonder if the Buddha declares of me: | T: “And, venerable sir, if I die before the Blessed One, it won’t be amazing if the Blessed One declares of me,
+an8.22:10.2 | S: ‘The householder Uggata of Elephant Village is bound by no fetter that might return him to this world.’ | T: ‘There is no fetter, bound by which Ugga the householder of Hatthigāma will come back to this world.’
+an8.22:10.3 | S: This is the eighth incredible and amazing quality found in me. | T: This, venerable sir, is the eighth amazing & astounding quality to be found in me.
+an8.22:11.1 | S: These eight amazing and incredible qualities are found in me. | T: “These, venerable sir, are the eight amazing & astounding qualities to be found in me.
+an8.22:11.2 | S: But I don’t know | T: But I don’t know with which eight amazing & astounding qualities the Blessed One has declared I am endowed.”
+an8.22:11.3 | S: what eight amazing and incredible qualities the Buddha was referring to.” | T: (none)
+an8.22:12.1 | S: Then that mendicant, after taking almsfood in Uggata of Elephant Village’s home, rose from his seat and left. | T: Then the monk, having received almsfood at the home of Ugga the householder of Hatthigāma, got up from his seat & left.
+an8.22:12.2 | S: Then after the meal, on his return from almsround, he went to the Buddha, bowed, and sat down to one side. | T: Then, after his meal, returning from his alms round, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there,
+an8.22:12.3 | S: He informed the Buddha of all he had discussed with the householder Uggata of Elephant Village. The Buddha said: | T: he told the Blessed One the entirety of his conversation with Ugga the householder of Hatthigāma.
+an8.22:13.1 | S: “Good, good, mendicant! | T: “Excellent, monk! Excellent!
+an8.22:13.2 | S: When I declared that the householder Uggata of Elephant Village was someone who has eight amazing and incredible qualities, I was referring to the same eight qualities that he rightly explained to you. | T: Just as Ugga has rightly declared them, these are the eight amazing & astounding qualities with which I had declared he is endowed.
+an8.22:13.3 | S: You should remember the householder Uggata of Elephant Village as someone who has these eight amazing and incredible qualities.” | T: Remember Ugga the householder of Hatthigāma as having these eight amazing & astounding qualities.”
+
+## snp4.1
+snp4.1:1.1 | S: If a mortal desires sensual pleasure | T: If one, longing for sensual pleasure,
+snp4.1:1.2 | S: and their desire succeeds, | T: achieves it, yes,
+snp4.1:1.3 | S: they definitely become elated, | T: he’s enraptured at heart.
+snp4.1:1.4 | S: having got what they want. | T: The mortal gets what he wants.
+snp4.1:2.1 | S: But for that personage in the throes of pleasure, | T: But if for that person
+snp4.1:2.2 | S: aroused by desire, | T: —longing, desiring—
+snp4.1:2.3 | S: when those pleasures fade, | T: the pleasures diminish,
+snp4.1:2.4 | S: it inflicts them like an arrow strike. | T: he’s afflicted, as if shot with an arrow.
+snp4.1:3.1 | S: One who, being mindful, | T: Whoever avoids sensual desires
+snp4.1:3.2 | S: avoids sensual pleasures | T: (none)
+snp4.1:3.3 | S: like side-stepping a snake’s head, | T: —as he would, with his foot, the head of a snake—
+snp4.1:3.4 | S: transcends attachment to the world. | T: goes beyond, mindful, this attachment in the world.
+snp4.1:4.1 | S: There are many objects of sensual desire: | T: A man who is greedy
+snp4.1:4.2 | S: fields, lands, and gold; cattle and horses; | T: for fields, land, gold, cattle, horses,
+snp4.1:4.3 | S: slaves and servants; women and relatives. | T: servants, employees, women, relatives, many sensual pleasures,
+snp4.1:4.4 | S: When a man lusts over these, | T: (none)
+snp4.1:5.1 | S: the weak overpower him | T: is overpowered with weakness
+snp4.1:5.2 | S: and adversities crush him. | T: and trampled by trouble,
+snp4.1:5.3 | S: Suffering follows him | T: for pain invades him
+snp4.1:5.4 | S: like water in a leaky boat. | T: as water, a cracked boat.
+snp4.1:6.1 | S: That’s why a personage, ever mindful, | T: So one, always mindful,
+snp4.1:6.2 | S: should avoid sensual pleasures. | T: should avoid sensual desires.
+snp4.1:6.3 | S: Give them up and cross the flood, | T: Letting them go, he’d cross over the flood
+snp4.1:6.4 | S: as a bailed-out boat reaches the far shore. | T: like one who, having bailed out the boat, has reached the far shore.
+
+## thag3.10
+thag3.10:1.1 | S: In the past you had faith, | T: Before, you had faith.
+thag3.10:1.2 | S: today you have none. | T: Today you don’t.
+thag3.10:1.3 | S: What’s yours is yours alone— | T: What is yours is just for you.
+thag3.10:1.4 | S: I’ve done nothing wrong. | T: I’ve done nothing wrong.
+thag3.10:2.1 | S: Faith is impermanent, fickle: | T: For I’ve seen that faith is inconstant,
+thag3.10:2.2 | S: or so I have seen. | T: (none)
+thag3.10:2.3 | S: Passions wax and wane: | T: wavering. Even they who are passionate lose their passion.
+thag3.10:2.4 | S: why would a sage waste away on that account? | T: Why should a sage waste away over that?
+thag3.10:3.1 | S: The meal of a sage is cooked | T: A sage’s meal is cooked
+thag3.10:3.2 | S: bit by bit in this family or that. | T: little by little, in this family and that.
+thag3.10:3.3 | S: I’ll walk for alms, | T: I will go for alms.
+thag3.10:3.4 | S: for my legs are strong. | T: I have the strength of my legs.
+
+## thag3.9
+thag3.9:1.1 | S: “With knobbly knees, | T: His limbs knotted like a kālā plant,
+thag3.9:1.2 | S: thin and veiny, | T: his body lean & lined with veins,
+thag3.9:1.3 | S: eating and drinking but little— | T: knowing moderation in food & drink:
+thag3.9:1.4 | S: this person’s spirit is undaunted.” | T: the man of undaunted heart.
+thag3.9:2.1 | S: “Pestered by flies and mosquitoes | T: Touched by gnats & horseflies
+thag3.9:2.2 | S: in the wilds, the formidable forest, | T: in the wilds, the great wood,
+thag3.9:2.3 | S: one should mindfully endure, | T: (none)
+thag3.9:2.4 | S: like an elephant at the head of the battle. | T: like an elephant at the head of a battle: He, mindful, should stay there, endure.
+thag3.9:3.1 | S: A monk alone is like the supreme Divinity; | T: One alone is like Brahmā,
+thag3.9:3.2 | S: a pair of monks are like gods; | T: two, like devas,
+thag3.9:3.3 | S: three are like a village; | T: three, like a village,
+thag3.9:3.4 | S: and more than that is a rabble.” | T: more than that:
+thag3.9:3.5 | P: … Yasojo thero …. | T: a hullabaloo.
+
+## thag6.10
+thag6.10:1.1 | S: I was only seven years old | T: When I was seven
+thag6.10:1.2 | S: and had just gone forth | T: & newly gone forth,
+thag6.10:1.3 | S: when I overcame the mighty serpent king | T: having conquered with my power the great powerful serpent,
+thag6.10:1.4 | S: with my psychic powers. | T: (none)
+thag6.10:2.1 | S: I brought water for my mentor | T: I was fetching water for my preceptor
+thag6.10:2.2 | S: from the great lake Anotatta. | T: from the great lake, Anotatta,
+thag6.10:2.3 | S: When he saw me, | T: when the Teacher saw me & said:
+thag6.10:2.4 | S: my teacher declared: | T: (none)
+thag6.10:3.1 | S: “Sāriputta, see this | T: “Look, Sāriputta, at that one,
+thag6.10:3.2 | S: young boy coming, | T: the young boy coming there,
+thag6.10:3.3 | S: carrying a water pot, | T: carrying a pot of water,
+thag6.10:3.4 | S: serene inside himself. | T: well-centered within,
+thag6.10:4.1 | S: His conduct inspires confidence, | T: his practices—inspiring;
+thag6.10:4.2 | S: he is of lovely deportment: | T: his bearing—admirable.
+thag6.10:4.3 | S: he is Anuruddha’s novice, | T: He’s Anuruddha’s novice,
+thag6.10:4.4 | S: self-assured in psychic powers. | T: mature in his powers,
+thag6.10:5.1 | S: Made a thoroughbred by a thoroughbred, | T: made thoroughbred by a thoroughbred,
+thag6.10:5.2 | S: made good by the good, | T: good by one who is good,
+thag6.10:5.3 | S: educated and trained by Anuruddha, | T: tamed by Anuruddha,
+thag6.10:5.4 | S: who has completed his task. | T: trained by one whose task is done.
+thag6.10:6.1 | S: Having attained ultimate peace | T: He, having reached the highest peace
+thag6.10:6.2 | S: and witnessed the unshakable, | T: & realized the unshakable,
+thag6.10:6.3 | S: that novice Sumana has the wish: | T: Sumana the novice wants this:
+thag6.10:6.4 | S: ‘May no one find me out!’” | T: ‘Don’t let anyone know me.’”
+
+## thag6.13
+thag6.13:1.1 | S: The rain saturates things that are covered up; | T: Rain soddens what’s covered
+thag6.13:1.2 | S: it doesn’t saturate things that are open. | T: & doesn’t sodden what’s exposed.
+thag6.13:1.3 | S: Therefore you should open up a covered thing, | T: So open up what’s covered up,
+thag6.13:1.4 | S: so the rain will not saturate it. | T: so that it won’t get soddened by the rain.
+thag6.13:2.1 | S: The world is beaten down by death | T: Attacked by death is the world,
+thag6.13:2.2 | S: and surrounded by old age. | T: surrounded by aging,
+thag6.13:2.3 | S: The dart of craving has struck it down, | T: beset by the arrow of craving,
+thag6.13:2.4 | S: and it’s always fuming with desire. | T: always obscured by desire.
+thag6.13:3.1 | S: The world is beaten down by death, | T: Attacked by death is the world,
+thag6.13:3.2 | S: caged by old age, | T: & encircled by aging,
+thag6.13:3.3 | S: beaten constantly without respite, | T: constantly beaten, with no shelter,
+thag6.13:3.4 | S: like a criminal being flogged. | T: like a thief sentenced to punishment.
+thag6.13:4.1 | S: Three things are coming, like a wall of flame: | T: They encroach like masses of flame, these three:
+thag6.13:4.2 | S: death, disease, and old age. | T: death, aging, & illness.
+thag6.13:4.3 | S: No power can stand before them, | T: There’s no strength to confront them,
+thag6.13:4.4 | S: and no speed’s enough to flee. | T: no speed to run away.
+thag6.13:5.1 | S: Don’t waste your day, | T: Make the day not-in-vain,
+thag6.13:5.2 | S: a little or a lot. | T: a little or a lot. However much
+thag6.13:5.3 | S: Every night that passes | T: the day passes,
+thag6.13:5.4 | S: shortens your life by that much. | T: that’s how much less is life.
+thag6.13:6.1 | S: Walking or standing, | T: (none)
+thag6.13:6.2 | S: sitting or lying down: | T: (none)
+thag6.13:6.3 | S: your final night draws near; | T: Your last day approaches.
+thag6.13:6.4 | S: you have no time to be careless. | T: This isn’t your time
+thag6.13:6.5 | P: … Sirimaṇḍo thero …. | T: to be heedless.
+
+## thig6.3
+thig6.3:1.1 | S: “You’re so young and beautiful! | T: Māra: “You, a beautiful young woman;
+thig6.3:1.2 | S: I too am young, just a youth. | T: I, a young man, full of youth.
+thig6.3:1.3 | S: Come, Khemā, let us enjoy | T: Come, Khemā, let’s enjoy ourselves
+thig6.3:1.4 | S: the music of a five-piece band.” | T: to the music of a five-piece band.” Khemā:
+thig6.3:2.1 | S: “This body is rotting, | T: (none)
+thig6.3:2.2 | S: ailing and frail, | T: (none)
+thig6.3:2.3 | S: I’m horrified and repelled by it, | T: “I’m disgusted, ashamed of this putrid body— disintegrating, dissolving.
+thig6.3:2.4 | S: and I’ve eradicated sensual craving. | T: Sensual craving is rooted out.
+thig6.3:3.1 | S: Sensual pleasures are like swords and spears; | T: Sensual pleasures are like swords & spears;
+thig6.3:3.2 | S: the aggregates are their chopping block. | T: the aggregates, their executioner’s block.
+thig6.3:3.3 | S: What you call erotic delight | T: What you call sensual delight
+thig6.3:3.4 | S: is now no delight for me. | T: is no delight for me.
+thig6.3:4.1 | S: Relishing is banished in every respect, | T: Everywhere enjoyment is defeated;
+thig6.3:4.2 | S: and the mass of darkness is shattered. | T: the mass of darkness, burst.
+thig6.3:4.3 | S: So know this, Wicked One: | T: So know, Evil One,
+thig6.3:4.4 | S: you’re beaten, terminator!” | T: that you have been, End-maker, struck down.”
+thig6.3:5.1 | S: “Worshiping the stars, | T: Paying homage to the zodiac stars,
+thig6.3:5.2 | S: serving the sacred flame in a grove; | T: tending the fire in the forest,
+thig6.3:5.3 | S: failing to grasp the true nature of things, | T: not knowing it as it actually was,
+thig6.3:5.4 | S: foolish me, I thought this was purity. | T: fools, you conceived it as purity.
+thig6.3:6.1 | S: But now I worship the Awakened One, | T: Whereas I am one who pays homage to the One Self-awakened,
+thig6.3:6.2 | S: supreme among men. | T: the utmost man.
+thig6.3:6.3 | S: Doing the Teacher’s bidding, | T: I’m one who has done the Teacher’s bidding,
+thig6.3:6.4 | S: I am released from all suffering.” | T: entirely released from sufferings & stress.
+
+## thig6.5
+thig6.5:1.1 | S: I was born into an eminent family, | T: Born in a high-ranking family
+thig6.5:1.2 | S: affluent and wealthy, | T: with much property, great wealth,
+thig6.5:1.3 | S: endowed with a beautiful complexion and figure; | T: consummate in complexion & figure,
+thig6.5:1.4 | S: Majjha’s true-born daughter. | T: I was the daughter of Majjha, the treasurer.
+thig6.5:2.1 | S: I was sought by princes, | T: Kings’ sons sought for me,
+thig6.5:2.2 | S: coveted by sons of the wealthy. | T: rich merchants’ sons longed for me.
+thig6.5:2.3 | S: One sent a messenger to my father: | T: One of them sent my father a messenger,
+thig6.5:2.4 | S: “Give me Anopamā! | T: saying, “Give me Anopamā.
+thig6.5:3.1 | S: However much your daughter | T: (none)
+thig6.5:3.2 | S: Anopamā weighs, | T: (none)
+thig6.5:3.3 | S: I’ll give you eight times that | T: I will give in return eight times her weight
+thig6.5:3.4 | S: in gold coin and gems.” | T: in jewels & gold.”
+thig6.5:4.1 | S: When I saw the Awakened One, | T: But I, having seen the One Self-awakened,
+thig6.5:4.2 | S: the world’s Elder, unsurpassed, | T: unsurpassed, excelling the world,
+thig6.5:4.3 | S: I paid homage at his feet, | T: paid homage to his feet,
+thig6.5:4.4 | S: and withdrew to one side. | T: sat down to one side.
+thig6.5:5.1 | S: Out of compassion, | T: He,
+thig6.5:5.2 | S: Gotama taught me the Dhamma. | T: Gotama, from sympathy, taught me the Dhamma.
+thig6.5:5.3 | S: While sitting in that seat, | T: And as I sat in that very seat,
+thig6.5:5.4 | S: I realized the third fruit. | T: I attained the third fruit [of non-return.]
+thig6.5:6.1 | S: Then, having shaved off my hair, | T: Then I cut off my hair,
+thig6.5:6.2 | S: I went forth to homelessness. | T: and went forth into homelessness.
+thig6.5:6.3 | S: This is the seventh day | T: Today is the seventh day
+thig6.5:6.4 | S: since my craving dried up. | T: since I made craving wither away.
+
+## ud2.4
+ud2.4:1.1 | S: So I have heard. | T: (none)
+ud2.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.4:1.3 | S: Now at that time the Buddha was honored, respected, revered, venerated, and esteemed. And he received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: And on that occasion the Blessed One was worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:1.4 | S: And the mendicant Saṅgha was also honored, respected, revered, venerated, and esteemed. And they received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: The community of monks was also worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:1.5 | S: But the wanderers who followed other religions were not honored, respected, revered, venerated, and esteemed. And they didn’t receive robes, almsfood, lodgings, and medicines and supplies for the sick. | T: But the wanderers of other sects were not worshipped, revered, honored, venerated, or given homage; nor were they recipients of robes, alms food, lodgings, or medicinal requisites for the sick.
+ud2.4:1.6 | S: Then those wanderers who followed other religions, unable to bear the esteem of the mendicant Saṅgha, abused, attacked, harassed, and troubled the mendicants in the village and the wilderness. | T: So the wanderers of other sects, unable to stand the veneration given to the Blessed One and the community of monks, on seeing monks in village or wilderness, would insult, revile, irritate, & harass them with discourteous, abusive language.
+ud2.4:2.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then a large number of monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to him,
+ud2.4:2.2 | P: “etarahi, bhante, bhagavā sakkato garukato mānito pūjito apacito, lābhī cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: “At present the Blessed One is worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:2.3 | P: Bhikkhusaṅghopi sakkato garukato mānito pūjito apacito, lābhī cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: The community of monks is also worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:2.4 | P: Aññatitthiyā pana paribbājakā asakkatā agarukatā amānitā apūjitā anapacitā, na lābhino cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: But the wanderers of other sects are not worshipped, revered, honored, venerated, or given homage; nor are they recipients of robes, alms food, lodgings, or medicinal requisites for the sick.
+ud2.4:2.5 | P: Atha kho te, bhante, aññatitthiyā paribbājakā bhagavato sakkāraṁ asahamānā bhikkhusaṅghassa ca, gāme ca araññe ca bhikkhū disvā asabbhāhi pharusāhi vācāhi akkosanti paribhāsanti rosenti vihesantī”ti. | T: So the wanderers of other sects, unable to stand the veneration given to the Blessed One and the community of monks, on seeing monks in village or wilderness, insult, revile, irritate, & harass them with discourteous, abusive language.”
+ud2.4:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.4:4.1 | S: “When struck by pleasure and pain <j>in the village or wilderness, | T: When in contact with pleasure or pain in village or wilderness,
+ud2.4:4.2 | S: regard it not as self or alien. | T: don’t take it as yours or as others’.
+ud2.4:4.3 | S: Contacts strike because of attachment; | T: Contacts make contact dependent on a sense of acquisition.
+ud2.4:4.4 | S: how would contacts strike one free of attachment?” | T: Where there’s no sense of acquisition, contacts would make contact
+ud2.4:4.5 | P: Catutthaṁ. | T: with what?
+

@@ -1,0 +1,284 @@
+## an4.138
+an4.138:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “Monks, there are these four persons to be found existing in the world.
+an4.138:1.2 | S: What four? | T: Which four?
+an4.138:1.3 | S: One is on retreat in body, but not mind; | T: The one withdrawn in body but not withdrawn in mind,
+an4.138:1.4 | S: one is on retreat in mind, but not body; | T: the one not withdrawn in body but withdrawn in mind,
+an4.138:1.5 | S: one is on retreat in neither body nor mind; and | T: the one not withdrawn in body & not withdrawn in mind,
+an4.138:1.6 | S: one is on retreat in both body and mind. | T: and the one withdrawn in body & withdrawn in mind.
+an4.138:2.1 | S: And how is an individual on retreat in body, but not mind? | T: “And how is a person withdrawn in body but not withdrawn in mind?
+an4.138:2.2 | S: It’s when an individual frequents remote lodgings in the wilderness and the forest. | T: There is the case where a certain person resorts to isolated wilderness & forest dwellings.
+an4.138:2.3 | S: But they think sensual, malicious, and cruel thoughts. | T: There he thinks thoughts of sensuality, he thinks thoughts of ill will, he thinks thoughts of harmfulness.
+an4.138:2.4 | S: That’s how an individual is on retreat in body, but not mind. | T: This is how a person is withdrawn in body but not withdrawn in mind.
+an4.138:3.1 | S: And how is an individual on retreat in mind, but not body? | T: “And how is a person not withdrawn in body but withdrawn in mind?
+an4.138:3.2 | S: It’s when an individual doesn’t frequent remote lodgings in the wilderness and the forest. | T: There is the case where a certain person doesn’t resort to isolated wilderness & forest dwellings.
+an4.138:3.3 | S: But they think thoughts of renunciation, good will, and harmlessness. | T: He thinks thoughts of renunciation, he thinks thoughts of non-ill will, he thinks thoughts of harmlessness.
+an4.138:3.4 | S: That’s how an individual is on retreat in mind, but not body. | T: This is how a person is not withdrawn in body but withdrawn in mind.
+an4.138:4.1 | S: And how is an individual on retreat in neither body nor mind? | T: “And how is a person not withdrawn in body & not withdrawn in mind?
+an4.138:4.2 | S: It’s when an individual doesn’t frequent remote lodgings in the wilderness and the forest. | T: There is the case where a certain person doesn’t resort to isolated wilderness & forest dwellings.
+an4.138:4.3 | S: And they think sensual, malicious, and cruel thoughts. | T: He thinks thoughts of sensuality, he thinks thoughts of ill will, he thinks thoughts of harmfulness.
+an4.138:4.4 | S: That’s how an individual is on retreat in neither body nor mind. | T: This is how a person is not withdrawn in body & not withdrawn in mind.
+an4.138:5.1 | S: And how is an individual on retreat in both body and mind? | T: “And how is a person withdrawn in body & withdrawn in mind?
+an4.138:5.2 | S: It’s when an individual frequents remote lodgings in the wilderness and the forest. | T: There is the case where a certain person resorts to isolated wilderness & forest dwellings.
+an4.138:5.3 | S: And they think thoughts of renunciation, good will, and harmlessness. | T: There he thinks thoughts of renunciation, he thinks thoughts of non-ill will, he thinks thoughts of harmlessness.
+an4.138:5.4 | S: That’s how an individual is on retreat in both body and mind. | T: This is how a person is withdrawn in body & withdrawn in mind.
+an4.138:5.5 | S: These are the four individuals found in the world.” | T: “These, monks, are four persons to be found existing in the world.”
+
+## an4.144
+an4.144:1.1 | S: “Mendicants, there are four kinds of shining. | T: “There are these four types of brightness.
+an4.144:1.2 | S: What four? | T: Which four?
+an4.144:1.3 | S: The shining of the moon, sun, fire, and wisdom. | T: The brightness of the sun, the brightness of the moon, the brightness of fire, and the brightness of discernment.
+an4.144:1.4 | S: These are the four kinds of shining. | T: These are the four types of brightness.
+an4.144:1.5 | S: The best of these four kinds of shining is the shining of wisdom.” | T: And of these four types of brightness, the foremost is the brightness of discernment.”
+
+## an4.156
+an4.156:1.1 | S: “Mendicants, an eon contains four uncountable periods. | T: “Monks, there are these four uncountables of an eon.
+an4.156:1.2 | S: What four? | T: Which four?
+an4.156:1.3 | S: When an eon contracts, it’s not easy to calculate | T: “When an eon is devolving, it’s not easy to count as
+an4.156:1.4 | S: how many years, how many hundreds or thousands or hundreds of thousands of years it takes. | T: ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’
+an4.156:2.1 | S: When an eon remains fully contracted, it’s not easy to calculate | T: “When an eon stays having devolved, it’s not easy to count as
+an4.156:2.2 | S: how many years, how many hundreds or thousands or hundreds of thousands of years it takes. | T: ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’
+an4.156:3.1 | S: When an eon expands, it’s not easy to calculate | T: “When an eon is evolving, it’s not easy to count as
+an4.156:3.2 | S: how many years, how many hundreds or thousands or hundreds of thousands of years it takes. | T: ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’
+an4.156:4.1 | S: When an eon remains fully expanded, it’s not easy to calculate | T: “When an eon stays having evolved, it’s not easy to count as
+an4.156:4.2 | S: how many years, how many hundreds or thousands or hundreds of thousands of years it takes. | T: ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’
+an4.156:4.3 | S: These are the four uncountable periods of an eon.” | T: “These, monks, are the four uncountables of an eon.”
+
+## an4.158
+an4.158:1.1 | S: There Sāriputta addressed the mendicants: | T: There Ven. Sāriputta addressed the monks,
+an4.158:1.2 | S: “Reverends, mendicants!” | T: “Friend monks!”
+an4.158:1.3 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+an4.158:1.4 | S: Sāriputta said this: | T: Ven. Sāriputta said,
+an4.158:2.1 | S: “Reverends, any monk or nun who sees four things inside themselves should conclude: | T: “Friends, any monk or nun who sees four qualities in him- or herself should come to the conclusion,
+an4.158:2.2 | S: ‘My skillful qualities are declining. | T: ‘I am declining in skillful qualities.
+an4.158:2.3 | S: For this is what the Buddha calls decline.’ | T: This is called decline by the Blessed One.’
+an4.158:2.4 | S: What four? | T: Which four?
+an4.158:2.5 | S: They have much greed, much hate, and much delusion; and their wisdom eye doesn’t go into the many deep matters. | T: An increase in passion, an increase in aversion, an increase in delusion, and one’s eye of discernment makes no headway in terms of deep possibilities & impossibilities.
+an4.158:2.6 | S: Any monk or nun who sees these four things inside themselves should conclude: | T: Any monk or nun who sees these four qualities in him- or herself should come to the conclusion,
+an4.158:2.7 | S: ‘My skillful qualities are declining. | T: ‘I am declining in skillful qualities.
+an4.158:2.8 | S: For this is what the Buddha calls decline.’ | T: This is called decline by the Blessed One.’
+an4.158:3.1 | S: Any monk or nun who sees four things inside themselves should conclude: | T: “Any monk or nun who sees four qualities in him- or herself should come to the conclusion,
+an4.158:3.2 | S: ‘My skillful qualities are not declining. | T: ‘I am not declining in skillful qualities.
+an4.158:3.3 | S: For this is what the Buddha calls non-decline.’ | T: This is called non-decline by the Blessed One.’
+an4.158:3.4 | S: What four? | T: Which four?
+an4.158:3.5 | S: Their greed, hate, and delusion grow less; and their wisdom eye goes into the many deep matters. | T: A reduction in passion, a reduction in aversion, a reduction in delusion, and one’s eye of discernment makes headway in terms of deep possibilities & impossibilities.
+an4.158:3.6 | S: Any monk or nun who sees these four things inside themselves should conclude: | T: Any monk or nun who sees these four qualities in him- or herself should come to the conclusion,
+an4.158:3.7 | S: ‘My skillful qualities are not declining. | T: ‘I am not declining in skillful qualities.
+an4.158:3.8 | S: For this is what the Buddha calls non-decline.’” | T: This is called non-decline by the Blessed One.’”
+
+## an4.162
+an4.162:1.1 | S: “Mendicants, there are four ways of practice. | T: “Monks, there are these four modes of practice.
+an4.162:1.2 | S: What four? | T: Which four?
+an4.162:1.3 | S: Painful practice with slow insight, | T: Painful practice with slow intuition,
+an4.162:1.4 | S: painful practice with swift insight, | T: painful practice with quick intuition,
+an4.162:1.5 | S: pleasant practice with slow insight, and | T: pleasant practice with slow intuition,
+an4.162:1.6 | S: pleasant practice with swift insight. | T: & pleasant practice with quick intuition.
+an4.162:2.1 | S: And what’s the painful practice with slow insight? | T: “And which is painful practice with slow intuition?
+an4.162:2.2 | S: It’s when someone is ordinarily full of acute greed, hate, and delusion. They often feel the pain and sadness that greed, hate, and delusion bring. | T: There is the case where a certain individual is normally of an intensely passionate nature. He perpetually experiences pain & distress born of passion. Or he is normally of an intensely aversive nature. He perpetually experiences pain & distress born of aversion. Or he is normally of an intensely deluded nature. He perpetually experiences pain & distress born of delusion.
+an4.162:2.5 | S: These five faculties manifest in them weakly: | T: These five faculties of his—
+an4.162:2.6 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—
+an4.162:2.7 | S: Because of this, they only slowly attain the conditions for ending the defilements in the present life. | T: appear weakly. Because of their weakness, he attains only slowly the immediacy that leads to the ending of the effluents.
+an4.162:2.8 | S: This is called the painful practice with slow insight. | T: This is called painful practice with slow intuition.
+an4.162:3.1 | S: And what’s the painful practice with swift insight? | T: “And which is painful practice with quick intuition?
+an4.162:3.2 | S: It’s when someone is ordinarily full of acute greed, hate, and delusion. They often feel the pain and sadness that greed, hate, and delusion bring. | T: There is the case where a certain individual is normally of an intensely passionate nature. He perpetually experiences pain & distress born of passion. Or he is normally of an intensely aversive nature. He perpetually experiences pain & distress born of aversion. Or he is normally of an intensely deluded nature. He perpetually experiences pain & distress born of delusion.
+an4.162:3.5 | S: And these five faculties manifest in them strongly: | T: These five faculties of his—
+an4.162:3.6 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—appear intensely.
+an4.162:3.7 | S: Because of this, they swiftly attain the conditions for ending the defilements in the present life. | T: Because of their intensity, he attains quickly the immediacy that leads to the ending of the effluents.
+an4.162:3.8 | S: This is called the painful practice with swift insight. | T: This is called painful practice with quick intuition.
+an4.162:4.1 | S: And what’s pleasant practice with slow insight? | T: “And which is pleasant practice with slow intuition?
+an4.162:4.2 | S: It’s when someone is not ordinarily full of acute greed, hate, and delusion. They rarely feel the pain and sadness that greed, hate, and delusion bring. | T: There is the case where a certain individual is normally not of an intensely passionate nature. He does not perpetually experience pain & distress born of passion. Or he is normally not of an intensely aversive nature. He does not perpetually experience pain & distress born of aversion. Or he is normally not of an intensely deluded nature. He does not perpetually experience pain & distress born of delusion.
+an4.162:4.5 | S: These five faculties manifest in them weakly: | T: These five faculties of his—
+an4.162:4.6 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—
+an4.162:4.7 | S: Because of this, they only slowly attain the conditions for ending the defilements in the present life. | T: appear weakly. Because of their weakness, he attains only slowly the immediacy that leads to the ending of the effluents.
+an4.162:4.8 | S: This is called the pleasant practice with slow insight. | T: This is called pleasant practice with slow intuition.
+an4.162:5.1 | S: And what’s the pleasant practice with swift insight? | T: “And which is pleasant practice with quick intuition?
+an4.162:5.2 | S: It’s when someone is not ordinarily full of acute greed, hate, and delusion. They rarely feel the pain and sadness that greed, hate, and delusion bring. | T: There is the case where a certain individual is normally not of an intensely passionate nature. He does not perpetually experience pain & distress born of passion. Or he is normally not of an intensely aversive nature. He does not perpetually experience pain & distress born of aversion. Or he is normally not of an intensely deluded nature. He does not perpetually experience pain & distress born of delusion.
+an4.162:5.5 | S: These five faculties manifest in them strongly: | T: These five faculties of his—
+an4.162:5.6 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—appear intensely.
+an4.162:5.7 | S: Because of this, they swiftly attain the conditions for ending the defilements in the present life. | T: Because of their intensity, he attains quickly the immediacy that leads to the ending of the effluents.
+an4.162:5.8 | S: This is called the pleasant practice with swift insight. | T: This is called pleasant practice with quick intuition.
+an4.162:5.9 | S: These are the four ways of practice.” | T: “These are the four modes of practice.”
+
+## an4.163
+an4.163:1.1 | S: “Mendicants, there are four ways of practice. | T: “Monks, there are these four modes of practice.
+an4.163:1.2 | S: What four? | T: Which four?
+an4.163:1.3 | S: Painful practice with slow insight, | T: Painful practice with slow intuition,
+an4.163:1.4 | S: painful practice with swift insight, | T: painful practice with quick intuition,
+an4.163:1.5 | S: pleasant practice with slow insight, and | T: pleasant practice with slow intuition,
+an4.163:1.6 | S: pleasant practice with swift insight. | T: & pleasant practice with quick intuition.
+an4.163:2.1 | S: And what’s the painful practice with slow insight? | T: “And which is painful practice with slow intuition?
+an4.163:2.2 | S: It’s when a mendicant meditates observing the ugliness of the body, perceives the repulsiveness of food, perceives dissatisfaction with the whole world, observes the impermanence of all conditions, | T: There is the case where a monk remains focused on unattractiveness with regard to the body, percipient of loathsomeness in food, percipient of distaste for every world, (and) focused on inconstancy with regard to all fabrications.
+an4.163:2.3 | S: and has well established the perception of their own death. | T: The perception of death is well established within him.
+an4.163:2.4 | S: They rely on these five powers of a trainee: | T: He dwells in dependence on the five strengths of one in training—
+an4.163:2.5 | S: faith, conscience, prudence, energy, and wisdom. | T: strength of conviction, strength of a sense of shame, strength of a sense of compunction, strength of persistence, & strength of discernment—
+an4.163:2.6 | S: But these five faculties manifest in them weakly: | T: but these five faculties of his—
+an4.163:2.7 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—
+an4.163:2.8 | S: Because of this, they only slowly attain the conditions for ending the defilements in the present life. | T: appear weakly. Because of their weakness, he attains only slowly the immediacy that leads to the ending of the effluents.
+an4.163:2.9 | S: This is called the painful practice with slow insight. | T: This is called painful practice with slow intuition.
+an4.163:3.1 | S: And what’s the painful practice with swift insight? | T: “And which is painful practice with quick intuition?
+an4.163:3.2 | S: It’s when a mendicant meditates observing the ugliness of the body, perceives the repulsiveness of food, perceives dissatisfaction with the whole world, observes the impermanence of all conditions, | T: There is the case where a monk remains focused on unattractiveness with regard to the body, percipient of loathsomeness in food, percipient of distaste for every world, (and) focused on inconstancy with regard to all fabrications.
+an4.163:3.3 | S: and has well established the perception of their own death. | T: The perception of death is well established within him.
+an4.163:3.4 | S: They rely on these five powers of a trainee: | T: He dwells in dependence on these five strengths of one in training—
+an4.163:3.5 | S: faith, conscience, prudence, energy, and wisdom. | T: strength of conviction, strength of a sense of shame, strength of a sense of compunction, strength of persistence, & strength of discernment—
+an4.163:3.6 | S: And these five faculties manifest in them strongly: | T: and these five faculties of his—
+an4.163:3.7 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—appear intensely.
+an4.163:3.8 | S: Because of this, they swiftly attain the conditions for ending the defilements in the present life. | T: Because of their intensity, he attains quickly the immediacy that leads to the ending of the effluents.
+an4.163:3.9 | S: This is called the painful practice with swift insight. | T: This is called painful practice with quick intuition.
+an4.163:4.1 | S: And what’s the pleasant practice with slow insight? | T: “And which is pleasant practice with slow intuition?
+an4.163:4.2 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: There is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an4.163:4.3 | S: As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an4.163:4.4 | S: And with the fading away of rapture, they enter and remain in the third absorption, where they meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an4.163:4.5 | S: With the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an4.163:4.6 | S: They rely on these five powers of a trainee: | T: He dwells in dependence on these five strengths of one in training—
+an4.163:4.7 | S: faith, conscience, prudence, energy, and wisdom. | T: strength of conviction, strength of a sense of shame, strength of a sense of compunction, strength of persistence, & strength of discernment—
+an4.163:4.8 | S: But these five faculties manifest in them weakly: | T: but these five faculties of his—
+an4.163:4.9 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—
+an4.163:4.10 | S: Because of this, they only slowly attain the conditions for ending the defilements in the present life. | T: appear weakly. Because of their weakness, he attains only slowly the immediacy that leads to the ending of the effluents.
+an4.163:4.11 | S: This is called the pleasant practice with slow insight. | T: This is called pleasant practice with slow intuition.
+an4.163:5.1 | S: And what’s the pleasant practice with swift insight? | T: “And which is pleasant practice with quick intuition?
+an4.163:5.2 | S: It’s when a mendicant … enters and remains in the first absorption … second absorption … third absorption … fourth absorption … | T: There is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation. With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance. With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’ With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an4.163:5.3 | S: They rely on these five powers of a trainee: | T: He dwells in dependence on these five strengths of one in training—
+an4.163:5.4 | S: faith, conscience, prudence, energy, and wisdom. | T: strength of conviction, strength of a sense of shame, strength of a sense of compunction, strength of persistence, & strength of discernment—
+an4.163:5.5 | S: And these five faculties manifest in them strongly: | T: and these five faculties of his—
+an4.163:5.6 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment—appear intensely.
+an4.163:5.7 | S: Because of this, they swiftly attain the conditions for ending the defilements in the present life. | T: Because of their intensity, he attains quickly the immediacy that leads to the ending of the effluents.
+an4.163:5.8 | S: This is called the pleasant practice with swift insight. | T: This is called pleasant practice with quick intuition.
+an4.163:5.9 | S: These are the four ways of practice.” | T: “These are the four modes of practice.”
+
+## an4.164
+an4.164:1.1 | S: “Mendicants, there are four ways of practice. | T: “Monks, there are these four modes of practice.
+an4.164:1.2 | S: What four? | T: Which four?
+an4.164:1.3 | S: Impatient practice, patient practice, taming practice, and calming practice. | T: Intolerant practice, tolerant practice, self-controlled practice, and even practice.
+an4.164:1.4 | S: And what’s the impatient practice? | T: “And which is intolerant practice?
+an4.164:1.5 | S: It’s when someone abuses, annoys, or argues with you, and you abuse, annoy, or argue right back at them. | T: There is the case where a certain individual, when insulted, returns the insult; when abused, returns the abuse; when bickered with, bickers in return.
+an4.164:1.6 | S: This is called the impatient practice. | T: This is called intolerant practice.
+an4.164:2.1 | S: And what’s the patient practice? | T: “And which is tolerant practice?
+an4.164:2.2 | S: It’s when someone abuses, annoys, or argues with you, and you don’t abuse, annoy, or argue back at them. | T: There is the case where a certain individual, when insulted, doesn’t return the insult; when abused, doesn’t return the abuse; when bickered with, doesn’t bicker in return.
+an4.164:2.3 | S: This is called the patient practice. | T: This is called tolerant practice.
+an4.164:3.1 | S: And what’s the taming practice? | T: “And which is self-controlled practice?
+an4.164:3.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, doesn’t grasp at any theme or variations by which—
+an4.164:3.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the eye. He achieves restraint with regard to the faculty of the eye.
+an4.164:3.4 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear.…
+an4.164:3.5 | S: When they smell an odor with their nose … | T: “On smelling an aroma with the nose.…
+an4.164:3.6 | S: When they taste a flavor with their tongue … | T: “On tasting a flavor with the tongue.…
+an4.164:3.7 | S: When they feel a touch with their body … | T: “On touching a tactile sensation with the body.…
+an4.164:3.8 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, he doesn’t grasp at any theme or variations by which—
+an4.164:3.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the intellect. He achieves restraint with regard to the faculty of the intellect.
+an4.164:3.10 | S: This is called the taming practice. | T: “This is called self-controlled practice.
+an4.164:4.1 | S: And what’s the calming practice? | T: “And which is even practice?
+an4.164:4.2 | S: It’s when a mendicant doesn’t tolerate a sensual, malicious, or cruel thought. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, calm them, eliminate them, and obliterate them. | T: There is the case where a monk doesn’t acquiesce to an arisen thought of sensuality. He abandons it, destroys it, dispels it, wipes it out of existence. “He doesn’t acquiesce to an arisen thought of ill will. He abandons it, destroys it, dispels it, wipes it out of existence. “He doesn’t acquiesce to an arisen thought of harmfulness. He abandons it, destroys it, dispels it, wipes it out of existence. “He doesn’t acquiesce to any arisen evil, unskillful qualities. He abandons them, destroys them, dispels them, wipes them out of existence.
+an4.164:4.3 | S: This is called the calming practice. | T: “This is called even practice.
+an4.164:4.4 | S: These are the four ways of practice.” | T: “These, monks, are four modes of practice.”
+
+## an4.165
+an4.165:1.1 | S: “Mendicants, there are four ways of practice. | T: “Monks, there are these four modes of practice.
+an4.165:1.2 | S: What four? | T: Which four?
+an4.165:1.3 | S: Impatient practice, patient practice, taming practice, and calming practice. | T: Intolerant practice, tolerant practice, self-controlled practice, and even practice.
+an4.165:2.1 | S: And what’s the impatient practice? | T: “And which is intolerant practice?
+an4.165:2.2 | S: It’s when someone cannot endure cold, heat, hunger, and thirst. They cannot endure the touch of flies, mosquitoes, wind, sun, and reptiles. They cannot endure rude and unwelcome criticism. And they cannot put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. | T: There is the case where a certain individual doesn’t tolerate cold, heat, hunger, & thirst; the touch of flies, mosquitoes, wind, sun, & reptiles; ill-spoken, unwelcome words; & bodily feelings that, when they arise, are painful, racking, sharp, piercing, disagreeable, displeasing, & menacing to life.
+an4.165:2.3 | S: This is called the impatient practice. | T: This is called intolerant practice.
+an4.165:3.1 | S: And what’s the patient practice? | T: “And which is tolerant practice?
+an4.165:3.2 | S: It’s when someone endures cold, heat, hunger, and thirst. They endure the touch of flies, mosquitoes, wind, sun, and reptiles. They endure rude and unwelcome criticism. And they put up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. | T: There is the case where a certain individual tolerates cold, heat, hunger, & thirst; the touch of flies, mosquitoes, wind, sun, & reptiles; ill-spoken, unwelcome words; & bodily feelings that, when they arise, are painful, racking, sharp, piercing, disagreeable, displeasing, & menacing to life.
+an4.165:3.3 | S: This is called the patient practice. | T: This is called tolerant practice.
+an4.165:4.1 | S: And what’s the taming practice? | T: “And which is self-controlled practice?
+an4.165:4.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. … | T: There is the case where a monk, on seeing a form with the eye, doesn’t grasp at any theme or variations by which—if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the eye. He achieves restraint with regard to the faculty of the eye.
+an4.165:4.3 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear.…
+an4.165:4.4 | S: When they smell an odor with their nose … | T: “On smelling an aroma with the nose.…
+an4.165:4.5 | S: When they taste a flavor with their tongue … | T: “On tasting a flavor with the tongue.…
+an4.165:4.6 | S: When they feel a touch with their body … | T: “On touching a tactile sensation with the body.…
+an4.165:4.7 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, he doesn’t grasp at any theme or variations by which—
+an4.165:4.8 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the intellect. He achieves restraint with regard to the faculty of the intellect.
+an4.165:4.9 | S: This is called the taming practice. | T: “This is called self-controlled practice.
+an4.165:5.1 | S: And what’s the calming practice? | T: “And which is even practice?
+an4.165:5.2 | S: It’s when a mendicant doesn’t tolerate a sensual, malicious, or cruel thought. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, calm them, eliminate them, and obliterate them. | T: There is the case where a monk doesn’t acquiesce to an arisen thought of sensuality. He abandons it, destroys it, dispels it, wipes it out of existence. “He doesn’t acquiesce to an arisen thought of ill will.… “He doesn’t acquiesce to an arisen thought of harmfulness… “He doesn’t acquiesce to any arisen evil, unskillful qualities. He abandons them, destroys them, dispels them, wipes them out of existence.
+an4.165:5.3 | S: This is called the calming practice. | T: “This is called even practice.
+an4.165:5.4 | S: These are the four ways of practice.” | T: “These, monks, are four modes of practice.”
+
+## an4.178
+an4.178:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “Monks, these four types of individuals are to be found existing in the world.
+an4.178:1.2 | S: What four? | T: Which four?
+an4.178:1.3 | S: Take a mendicant who enters and remains in a peaceful release of the heart. | T: “There is the case where a monk enters & remains in a certain peaceful awareness-release.
+an4.178:1.4 | S: They focus on the cessation of substantial reality, | T: He attends to the cessation of self-identification,
+an4.178:1.5 | S: but on that their mind does not leap forth, gain confidence, settle down, and become decided. | T: but as he is attending to the cessation of self-identification his mind doesn’t leap up, grow confident, steadfast,
+an4.178:1.6 | S: You wouldn’t expect that mendicant to realize the cessation of substantial reality. | T: or firm in the cessation of self-identification. For him the cessation of self-identification is not to be expected.
+an4.178:1.7 | S: Suppose a person were to grab a branch with a glue-smeared hand. Their hand would stick, hold, and bind to it. | T: Just as if a man were to grasp a branch with his hand smeared with resin, his hand would stick to it, grip it, adhere to it;
+an4.178:1.8 | S: In the same way, take a mendicant who enters and remains in a peaceful release of the heart. | T: in the same way, the monk enters & remains in a certain peaceful awareness-release.
+an4.178:1.9 | S: They focus on the cessation of substantial reality, | T: He attends to the cessation of self-identification,
+an4.178:1.10 | S: but on that their mind does not leap forth, gain confidence, settle down, and become decided. | T: but as he is attending to the cessation of self-identification his mind doesn’t leap up, grow confident, steadfast,
+an4.178:1.11 | S: You wouldn’t expect that mendicant to realize the cessation of substantial reality. | T: or firm in the cessation of self-identification. For him the cessation of self-identification is not to be expected.
+an4.178:2.1 | S: Next, take a mendicant who enters and remains in a peaceful release of the heart. | T: “Now, there is the case where a monk enters & remains in a certain peaceful awareness-release.
+an4.178:2.2 | S: They focus on the cessation of substantial reality, | T: He attends to the cessation of self-identification,
+an4.178:2.3 | S: and on that their mind leaps forth, gains confidence, settles down, and becomes decided. | T: and as he is attending to the cessation of self-identification his mind leaps up, grows confident, steadfast,
+an4.178:2.4 | S: You would expect that mendicant to realize the cessation of substantial reality. | T: & firm in the cessation of self-identification. For him the cessation of self-identification is to be expected.
+an4.178:2.5 | S: Suppose a person were to grab a branch with a clean hand. Their hand wouldn’t stick, hold, or bind to it. | T: Just as if a man were to grasp a branch with a clean hand, his hand would not stick to it, grip it, or adhere to it;
+an4.178:2.6 | S: In the same way, take a mendicant who enters and remains in a peaceful release of the heart. | T: in the same way, the monk enters & remains in a certain peaceful awareness-release.
+an4.178:2.7 | S: They focus on the cessation of substantial reality, | T: He attends to the cessation of self-identification,
+an4.178:2.8 | S: and on that their mind leaps forth, gains confidence, settles down, and becomes decided. | T: and as he is attending to the cessation of self-identification his mind leaps up, grows confident, steadfast,
+an4.178:2.9 | S: You would expect that mendicant to realize the cessation of substantial reality. | T: & firm in the cessation of self-identification. For him the cessation of self-identification is to be expected.
+an4.178:3.1 | S: Next, take a mendicant who enters and remains in a peaceful release of the heart. | T: “Now, there is the case where a monk enters & remains in a certain peaceful awareness-release.
+an4.178:3.2 | S: They focus on smashing ignorance, | T: He attends to the breaching of ignorance,
+an4.178:3.3 | S: but on that their mind does not leap forth, gain confidence, settle down, and become decided. | T: but as he is attending to the breaching of ignorance his mind doesn’t leap up, grow confident, steadfast,
+an4.178:3.4 | S: You wouldn’t expect that mendicant to smash ignorance. | T: or firm in the breaching of ignorance. For him the breaching of ignorance is not to be expected.
+an4.178:3.5 | S: Suppose there was a billabong that had been stagnant for many years. | T: Just as if there were a waste-water pool that had stood for countless years,
+an4.178:3.6 | S: And someone was to close off the inlets and open up the drains, and the heavens didn’t provide enough rain. | T: where a man were to block all the inlets and open all the outlets, and the sky were to not rain down in good streams of rain:
+an4.178:3.7 | S: You wouldn’t expect that billabong to break its banks. | T: the breaching of the waste-water pool’s embankment would not be expected;
+an4.178:3.8 | S: In the same way, take a mendicant who enters and remains in a certain peaceful release of the heart. | T: in the same way, the monk enters & remains in a certain peaceful awareness-release.
+an4.178:3.9 | S: They focus on smashing ignorance, | T: He attends to the breaching of ignorance,
+an4.178:3.10 | S: but on that their mind does not leap forth, gain confidence, settle down, and become decided. | T: but as he is attending to the breaching of ignorance his mind doesn’t leap up, grow confident, steadfast,
+an4.178:3.11 | S: You wouldn’t expect that mendicant to smash ignorance. | T: or firm in the breaching of ignorance. For him the breaching of ignorance is not to be expected.
+an4.178:4.1 | S: Next, take a mendicant who enters and remains in a peaceful release of the heart. | T: “Now, there is the case where a monk enters & remains in a certain peaceful awareness-release.
+an4.178:4.2 | S: They focus on smashing ignorance, | T: He attends to the breaching of ignorance,
+an4.178:4.3 | S: and on that their mind leaps forth, gains confidence, settles down, and becomes decided. | T: and as he is attending to the breaching of ignorance his mind leaps up, grows confident, steadfast,
+an4.178:4.4 | S: You would expect that mendicant to smash ignorance. | T: & firm in the breaching of ignorance. For him the breaching of ignorance is to be expected.
+an4.178:4.5 | S: Suppose there was a billabong that had been stagnant for many years. | T: Just as if there were a waste-water pool that had stood for countless years,
+an4.178:4.6 | S: And someone was to open up the inlets and close off the drains, and the heavens provided plenty of rain. | T: where a man were to open all the inlets and block all the outlets, and the sky were to rain down in good streams of rain:
+an4.178:4.7 | S: You would expect that billabong to break its banks. | T: the breaching of the waste-water pool’s embankment would be expected;
+an4.178:4.8 | S: In the same way, take a mendicant who enters and remains in a certain peaceful release of the heart. | T: in the same way, the monk enters & remains in a certain peaceful awareness-release.
+an4.178:4.9 | S: They focus on smashing ignorance, | T: He attends to the breaching of ignorance,
+an4.178:4.10 | S: and on that their mind leaps forth, gains confidence, settles down, and becomes decided. | T: and as he is attending to the breaching of ignorance his mind leaps up, grows confident, steadfast,
+an4.178:4.11 | S: You would expect that mendicant to smash ignorance. | T: & firm in the breaching of ignorance. For him the breaching of ignorance is to be expected.
+an4.178:4.12 | S: These are the four individuals found in the world.” | T: “These are four types of individuals to be found existing in the world.”
+
+## an4.179
+an4.179:1.1 | S: Then Venerable Ānanda went up to Venerable Sāriputta, and exchanged greetings with him. | T: Then Ven. Ānanda went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him.
+an4.179:1.2 | S: When the greetings and polite conversation were over, Ānanda sat down to one side, and said to Sāriputta: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta,
+an4.179:1.3 | S: “What is the cause, Reverend Sāriputta, what is the reason why some sentient beings are not fully extinguished in this very life?” | T: “Friend Sāriputta, what is the cause, what is the reason, why some beings do not become totally unbound in the present life?”
+an4.179:2.1 | S: “Reverend Ānanda, it’s because some sentient beings don’t really understand which perceptions make things worse, which keep things steady, which lead to distinction, and which lead to penetration. | T: “There’s the case, friend Ānanda, where beings do not discern, as it has come to be, that ‘This perception has a share in decline;’ ‘This perception has a share in stability;’ ‘This perception has a share in distinction;’ ‘This perception has a share in penetration.’
+an4.179:2.2 | S: That’s the cause, that’s the reason why some sentient beings are not fully extinguished in this very life.” | T: This is the cause, this is the reason, why some beings do not become totally unbound in the present life.”
+an4.179:3.1 | S: “What is the cause, Reverend Sāriputta, what is the reason why some sentient beings are fully extinguished in this very life?” | T: “And what, friend Sāriputta, is the cause, what is the reason, why some beings do become totally unbound in the present life?”
+an4.179:3.2 | S: “Reverend Ānanda, it’s because some sentient beings truly understand which perceptions make things worse, which keep things steady, which lead to distinction, and which lead to penetration. | T: “There’s the case, friend Ānanda, where beings discern, as it has come to be, that ‘This perception has a share in decline;’ ‘This perception has a share in stability;’ ‘This perception has a share in distinction;’ ‘This perception has a share in penetration.’
+an4.179:3.3 | S: That’s the cause, that’s the reason why some sentient beings are fully extinguished in this very life.” | T: This is the cause, this is the reason, why some beings become totally unbound in the present life.”
+
+## an4.182
+an4.182:1.1 | S: “There are four things that no one can guarantee— | T: “For four things, monks, there is no guarantor—
+an4.182:1.2 | S: not an ascetic, a brahmin, a god, a Māra, a divinity, or anyone in the world. | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.
+an4.182:2.1 | S: What four? | T: Which four?
+an4.182:2.2 | S: No one can guarantee that someone liable to old age will not grow old. | T: “‘May what is subject to aging not age’: For this there is no guarantor—
+an4.182:2.3 | P: samaṇo vā brāhmaṇo vā devo vā māro vā brahmā vā koci vā lokasmiṁ; | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.
+an4.182:2.4 | S: No one can guarantee that someone liable to sickness will not get sick. | T: “‘May what is subject to illness not fall ill’: For this there is no guarantor—
+an4.182:2.5 | P: samaṇo vā brāhmaṇo vā devo vā māro vā brahmā vā koci vā lokasmiṁ; | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.
+an4.182:2.6 | S: No one can guarantee that someone liable to death will not die. | T: “‘May what is subject to death not die’: For this there is no guarantor—
+an4.182:2.7 | P: samaṇo vā brāhmaṇo vā devo vā māro vā brahmā vā koci vā lokasmiṁ; | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.
+an4.182:2.8 | S: No one can guarantee that the bad deeds done in past lives—corrupting, leading to future lives, hurtful, resulting in suffering and future rebirth, old age, and death—will not produce their result. | T: “‘May the results of evil actions—defiled, leading to further becoming, distressing, ripening in pain & future birth, aging, & death—not appear’: For this there is no guarantor—
+an4.182:2.9 | P: samaṇo vā brāhmaṇo vā devo vā māro vā brahmā vā koci vā lokasmiṁ. | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.
+an4.182:3.1 | S: These are the four things that no one can guarantee— | T: “For these four things, monks, there is no guarantor—
+an4.182:3.2 | S: not an ascetic, a brahmin, a god, a Māra, a divinity, or anyone in the world.” | T: neither a contemplative, nor a brahman, nor a deva, nor a Māra, nor a Brahmā, nor anyone at all in the world.”
+
+## an4.201
+an4.201:1.1 | S: “Mendicants, I will teach you an untrue person and an even more untrue person, | T: “Monks, I will teach you the person of no integrity, the person of less integrity than the person of no integrity,
+an4.201:1.2 | S: a true person and an even truer person. | T: the person of integrity, & the person of more integrity than the person of integrity.
+an4.201:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay careful attention. I will speak.”
+an4.201:1.4 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+an4.201:1.5 | S: The Buddha said this: | T: The Blessed One said,
+an4.201:2.1 | S: “And what is an untrue person? | T: “And which, monks, is the person of no integrity?
+an4.201:2.2 | S: It’s someone who kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. | T: There is the case where a certain individual is one who takes life, takes what is not given [steals], engages in sexual misconduct, tells lies, and takes distilled & fermented drinks that cause heedlessness.
+an4.201:2.3 | S: This is called an untrue person. | T: This is called a person of no integrity.
+an4.201:3.1 | S: And what is an even more untrue person? | T: “And which is the person of less integrity than the person of no integrity?
+an4.201:3.2 | S: It’s someone who kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. And they encourage others to do these things. | T: There is the case where a certain individual himself is one who takes life and he encourages another in undertaking the taking of life. He himself is one who takes what is not given and he encourages another in undertaking the taking of what is not given. He himself is one who engages in sexual misconduct and he encourages another in undertaking sexual misconduct. He himself is one who tells lies and he encourages another in undertaking the telling of lies. He himself is one who takes distilled & fermented drinks that cause heedlessness and he encourages another in undertaking the taking of distilled & fermented drinks that cause heedlessness.
+an4.201:3.7 | S: This is called an even more untrue person. | T: This is called a person of less integrity than the person of no integrity.
+an4.201:4.1 | S: And what is a true person? | T: “And which is the person of integrity?
+an4.201:4.2 | S: It’s someone who doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. | T: There is the case where a certain individual abstains from taking life, abstains from taking what is not given, abstains from sexual misconduct, abstains from telling lies, and abstains from taking distilled & fermented drinks that cause heedlessness.
+an4.201:4.3 | S: This is called a true person. | T: This is called a person of integrity.
+an4.201:5.1 | S: And what is an even truer person? | T: “And which is the person of more integrity than the person of integrity?
+an4.201:5.2 | S: It’s someone who doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. And they encourage others to refrain from these things. | T: There is the case where a certain individual himself abstains from taking life and he encourages another in undertaking abstinence from taking life. He himself abstains from taking what is not given and he encourages another in undertaking abstinence from taking what is not given. He himself abstains from sexual misconduct and he encourages another in undertaking abstinence from sexual misconduct. He himself abstains from telling lies and he encourages another in undertaking abstinence from telling lies. He himself abstains from taking distilled & fermented drinks that cause heedlessness and he encourages another in undertaking abstinence from taking distilled & fermented drinks that cause heedlessness.
+an4.201:5.7 | S: This is called an even truer person.” | T: This is called a person of more integrity than the person of integrity.”
+

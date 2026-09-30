@@ -1,0 +1,326 @@
+## snp5.18
+snp5.18:1.1 | S: This was said by the Buddha while staying in the land of the Magadhans at the Pāsāṇaka Shrine. | T: Epilogue That is what the Blessed One said when dwelling among the Magadhans at the Pāsāṇaka shrine.
+snp5.18:1.2 | S: When requested by the sixteen brahmin devotees, he answered their questions one by one. | T: Asked in turn by the sixteen brahmans, he answered their questions.
+snp5.18:1.3 | S: If you understand the meaning and the teaching of each of these questions, and practice in line with the teaching, you may go right to the far shore of old age and death. | T: And if one were to practice the Dhamma in accordance with the Dhamma, knowing the meaning and Dhamma of each of these questions, one would go to the far shore of birth & death.
+snp5.18:1.4 | S: These teachings are said to lead to the far shore, which is why the name of this exposition of the teaching is “The Way to the Far Shore”. | T: Because these Dhammas lead there, this Dhamma-sequence is called “To the Far Shore.”
+snp5.18:2.1 | S: Ajita, Tissametteyya, | T: Ajita, Tissa-metteyya,
+snp5.18:2.2 | S: Puṇṇaka and Mettagū, | T: Puṇṇaka & Mettagū,
+snp5.18:2.3 | S: Dhotaka and Upasiva, | T: Dhotaka & Upasīva,
+snp5.18:2.4 | S: Nanda and then Hemaka, | T: Nanda & Hemaka,
+snp5.18:3.1 | S: both Todeyya and Kappa, | T: Todeyya & Kappa,
+snp5.18:3.2 | S: and Jatukaṇṇī the astute, | T: the wise Jatukaṇṇin,
+snp5.18:3.3 | S: Bhadrāvudha and Udaya, | T: Bhadrāvudha & Udaya,
+snp5.18:3.4 | S: and the brahmin Posāla, | T: Posāla the brahman,
+snp5.18:3.5 | S: Mogharāja the intelligent, | T: Mogharāja the intelligent,
+snp5.18:3.6 | S: and Piṅgiya the great seer: | T: and Piṅgiya the great seer:
+snp5.18:4.1 | S: they approached the Buddha, | T: They went to the Awakened One,
+snp5.18:4.2 | S: the seer of consummate conduct. | T: consummate in conduct, the seer.
+snp5.18:4.3 | S: Asking their subtle questions, | T: They went to the excellent Awakened One, asking subtle questions. The Awakened One, when asked their questions,
+snp5.18:4.4 | S: they came to the most excellent Buddha. | T: (none)
+snp5.18:5.1 | S: The Buddha answered their questions | T: answered in line with the truth.
+snp5.18:5.2 | S: in accordance with truth. | T: (none)
+snp5.18:5.3 | S: The sage satisfied the brahmins | T: (none)
+snp5.18:5.4 | S: with his answers to their questions. | T: By answering their questions, the sage delighted the brahmans.
+snp5.18:6.1 | S: Those who were satisfied by the Clear-eyed One, | T: They, delighted by the One with Eyes—
+snp5.18:6.2 | S: the Buddha, Kinsman of the Sun, | T: Awakened, Kinsman of the Sun—
+snp5.18:6.3 | S: led the spiritual life in his presence, | T: lived the holy life in the presence of the one
+snp5.18:6.4 | S: the one of such outstanding wisdom. | T: of foremost discernment.
+snp5.18:7.1 | S: If you practice in accordance | T: Whoever would practice
+snp5.18:7.2 | S: with each of these questions | T: as the Awakened One taught concerning each of these questions,
+snp5.18:7.3 | S: as taught by the Buddha, | T: (none)
+snp5.18:7.4 | S: you’ll go from the near shore to the far. | T: would go from the near shore to the far— would go from the near shore to the far
+snp5.18:8.1 | S: Developing the supreme path, | T: developing the path supreme.
+snp5.18:8.2 | S: you’ll go from the near shore to the far. | T: (none)
+snp5.18:8.3 | S: This path is for going to the far shore; | T: The path is for going beyond,
+snp5.18:8.4 | S: that’s why it’s called “The Way to the Far Shore”. | T: and so it’s called “To the Far Shore.”
+
+## sn12.2
+sn12.2:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.2:1.2 | S: “Mendicants, I will teach and analyze for you dependent origination. | T: “Monks, I will describe & analyze dependent co-arising for you.
+sn12.2:1.3 | S: Listen and apply your mind well, I will speak.” | T: (none)
+sn12.2:1.4 | S: “Yes, sir,” they replied. | T: (none)
+sn12.2:1.5 | S: The Buddha said this: | T: And what is dependent co-arising?
+sn12.2:2.1 | S: “And what is dependent origination? | T: (none)
+sn12.2:2.2 | S: Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+sn12.2:2.3 | S: Choices are a requirement for consciousness. | T: From fabrications as a requisite condition comes consciousness.
+sn12.2:2.4 | S: Consciousness is a requirement for name and form. | T: From consciousness as a requisite condition comes name-&-form.
+sn12.2:2.5 | S: Name and form are requirements for the six sense fields. | T: From name-&-form as a requisite condition come the six sense media.
+sn12.2:2.6 | S: The six sense fields are requirements for contact. | T: From the six sense media as a requisite condition comes contact.
+sn12.2:2.7 | S: Contact is a requirement for feeling. | T: From contact as a requisite condition comes feeling.
+sn12.2:2.8 | S: Feeling is a requirement for craving. | T: From feeling as a requisite condition comes craving.
+sn12.2:2.9 | S: Craving is a requirement for grasping. | T: From craving as a requisite condition comes clinging/sustenance.
+sn12.2:2.10 | S: Grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+sn12.2:2.11 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+sn12.2:2.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, & despair come into play.
+sn12.2:2.13 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn12.2:3.1 | S: And what is old age and death? | T: “Now which aging-&-death?
+sn12.2:3.2 | S: The old age, decrepitude, broken teeth, grey hair, wrinkly skin, diminished vitality, and failing faculties of the various sentient beings in the various orders of sentient beings. | T: Whatever aging, decrepitude, brokenness, graying, wrinkling, decline of life-force, weakening of the faculties of the various beings in this or that group of beings,
+sn12.2:3.3 | S: This is called old age. | T: that is called aging.
+sn12.2:3.4 | S: The passing away, passing on, disintegration, demise, mortality, death, decease, breaking up of the aggregates, and laying to rest of the corpse of the various sentient beings in the various orders of sentient beings. | T: Whatever deceasing, passing away, breaking up, disappearance, dying, death, completion of time, break up of the aggregates, casting off of the body, interruption in the life faculty of the various beings in this or that group of beings,
+sn12.2:3.5 | S: This is called death. | T: (none)
+sn12.2:3.6 | S: Such is old age, and such is death. | T: (none)
+sn12.2:3.7 | S: This is called old age and death. | T: that is called death.
+sn12.2:4.1 | S: And what is rebirth? | T: “And which birth?
+sn12.2:4.2 | S: The rebirth, inception, conception, regeneration, manifestation of the aggregates, and acquisition of the sense fields of the various sentient beings in the various orders of sentient beings. | T: Whatever birth, taking birth, descent, coming-to-be, coming-forth, appearance of aggregates, & acquisition of (sense) media of the various beings in this or that group of beings,
+sn12.2:4.3 | S: This is called rebirth. | T: that is called birth.
+sn12.2:5.1 | S: And what is continued existence? | T: “And which becoming?
+sn12.2:5.2 | S: There are these three states of existence. | T: These three becomings:
+sn12.2:5.3 | S: Existence in the sensual realm, the realm of luminous form, and the formless realm. | T: sensual becoming, form becoming, & formless becoming.
+sn12.2:5.4 | S: This is called continued existence. | T: This is called becoming.
+sn12.2:6.1 | S: And what is grasping? | T: (none)
+sn12.2:6.2 | S: There are these four kinds of grasping. | T: “And which clinging/sustenance? These four are clingings:
+sn12.2:6.3 | S: Grasping at sensual pleasures, views, precepts and observances, and theories of a self. | T: sensuality-clinging, view-clinging, habit-&-practice-clinging, and doctrine-of-self-clinging. This is called clinging. [Or: These four are sustenances: sensuality-sustenance, view-sustenance, habit-&-practice-sustenance, and doctrine-of-self-sustenance.]
+sn12.2:6.4 | S: This is called grasping. | T: (none)
+sn12.2:7.1 | S: And what is craving? | T: “And which craving?
+sn12.2:7.2 | S: There are these six classes of craving. | T: These six are classes of craving:
+sn12.2:7.3 | S: Craving for sights, sounds, smells, tastes, touches, and ideas. | T: craving for forms, craving for sounds, craving for smells, craving for tastes, craving for tactile sensations, craving for ideas.
+sn12.2:7.4 | S: This is called craving. | T: This is called craving.
+sn12.2:8.1 | S: And what is feeling? | T: “And which feeling?
+sn12.2:8.2 | S: There are these six classes of feeling. | T: These six are classes of feeling:
+sn12.2:8.3 | S: Feeling born of contact through the eye, ear, nose, tongue, body, and mind. | T: feeling born from eye-contact, feeling born from ear-contact, feeling born from nose-contact, feeling born from tongue-contact, feeling born from body-contact, feeling born from intellect-contact.
+sn12.2:8.4 | S: This is called feeling. | T: This is called feeling.
+sn12.2:9.1 | S: And what is contact? | T: “And which contact?
+sn12.2:9.2 | S: There are these six classes of contact. | T: These six are classes of contact:
+sn12.2:9.3 | S: Contact through the eye, ear, nose, tongue, body, and mind. | T: eye-contact, ear-contact, nose-contact, tongue-contact, body-contact, intellect-contact.
+sn12.2:9.4 | S: This is called contact. | T: This is called contact.
+sn12.2:10.1 | S: And what are the six sense fields? | T: “And which six sense media? These six are sense media:
+sn12.2:10.2 | S: The sense fields of the eye, ear, nose, tongue, body, and mind. | T: the eye-medium, the ear-medium, the nose-medium, the tongue-medium, the body-medium, the intellect-medium.
+sn12.2:10.3 | S: These are called the six sense fields. | T: These are called the six sense media.
+sn12.2:11.1 | S: And what are name and form? | T: “And which name-&-form?
+sn12.2:11.2 | S: Feeling, perception, intention, contact, and application of mind. | T: Feeling, perception, intention, contact, & attention:
+sn12.2:11.3 | S: This is called name. | T: This is called name.
+sn12.2:11.4 | S: The four principal states, and form derived from the four principal states. | T: The four great elements, and the form dependent on the four great elements:
+sn12.2:11.5 | S: This is called form. | T: This is called form.
+sn12.2:11.6 | S: Such is name and such is form. | T: This name & this form are called name-&-form.
+sn12.2:11.7 | S: These are called name and form. | T: (none)
+sn12.2:12.1 | S: And what is consciousness? | T: “And which consciousness?
+sn12.2:12.2 | S: There are these six classes of consciousness. | T: These six are classes of consciousness:
+sn12.2:12.3 | S: Eye, ear, nose, tongue, body, and mind consciousness. | T: eye-consciousness, ear-consciousness, nose-consciousness, tongue-consciousness, body-consciousness, intellect-consciousness.
+sn12.2:12.4 | S: This is called consciousness. | T: This is called consciousness.
+sn12.2:13.1 | S: And what are choices? | T: “And which fabrications?
+sn12.2:13.2 | S: There are three kinds of choices. | T: These three are fabrications:
+sn12.2:13.3 | S: Choices by way of body, speech, and mind. | T: bodily fabrications, verbal fabrications, mental fabrications.
+sn12.2:13.4 | S: These are called choices. | T: These are called fabrications.
+sn12.2:14.1 | S: And what is ignorance? | T: “And which ignorance?
+sn12.2:14.2 | S: Not knowing about suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: Not knowing stress, not knowing the origination of stress, not knowing the cessation of stress, not knowing the way of practice leading to the cessation of stress:
+sn12.2:14.3 | S: This is called ignorance. | T: This is called ignorance.
+sn12.2:15.1 | S: And so, ignorance is a requirement for choices. | T: (none)
+sn12.2:15.2 | S: Choices are a requirement for consciousness. … | T: (none)
+sn12.2:15.3 | S: That is how this entire mass of suffering originates. | T: (none)
+sn12.2:15.4 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: “Now from the remainderless fading & cessation of that very ignorance comes the cessation of fabrications.
+sn12.2:15.5 | S: When choices cease, consciousness ceases. … | T: From the cessation of fabrications comes the cessation of consciousness. From the cessation of consciousness comes the cessation of name-&-form. From the cessation of name-&-form comes the cessation of the six sense media. From the cessation of the six sense media comes the cessation of contact. From the cessation of contact comes the cessation of feeling. From the cessation of feeling comes the cessation of craving. From the cessation of craving comes the cessation of clinging/sustenance. From the cessation of clinging/sustenance comes the cessation of becoming. From the cessation of becoming comes the cessation of birth. From the cessation of birth, then aging & death, sorrow, lamentation, pain, distress, & despair all cease.
+sn12.2:15.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of stress & suffering.”
+
+## mn52
+mn52:1.1 | S: So I have heard. | T: I have heard that on one occasion Ven. Ānanda was staying near Vesālī at Veḷuvagāmaka.
+mn52:1.2 | S: At one time Venerable Ānanda was staying near Vesālī in the little village of Beluva. | T: (none)
+mn52:1.3 | S: Now at that time the householder Dasama, a wealthy citizen, had arrived at Pāṭaliputta on some business. | T: Now on that occasion Dasama the householder from Aṭṭhakanagara had arrived at Pāṭaliputta on some business.
+mn52:2.1 | S: He went to the Chicken Monastery, approached a certain mendicant, bowed, sat down to one side, and said to him, | T: Then he went to a certain monk at Kukkaṭa Monastery and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the monk,
+mn52:2.2 | S: “Sir, where is Venerable Ānanda now staying? | T: “Where is Ven. Ānanda staying now?
+mn52:2.3 | S: For I want to see him.” | T: I’d like to see him.”
+mn52:2.4 | S: “Householder, Venerable Ānanda is staying near Vesālī in the little village of Beluva.” | T: “Householder, the Ven. Ānanda is staying near Vesālī at Veḷuvagāmaka.”
+mn52:3.1 | S: Then the householder Dasama, having concluded his business there, went to the little village of Beluva in Vesālī to see Ānanda. He bowed, sat down to one side, and said to Ānanda: | T: Then Dasama the householder from Aṭṭhakanagara, on completing his business at Pāṭaliputta, went to Ven. Ānanda at Veḷuvagāmaka near Vesālī. On arrival, having bowed down to him, he sat to one side. As he was sitting there,
+mn52:3.2 | S: “Honorable Ānanda, is there one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke?” | T: he said to Ven. Ānanda: “Venerable sir, is there a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended effluents go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before?”
+mn52:3.3 | S: “There is, householder.” | T: “Yes, householder, there is.…”
+mn52:3.4 | S: “And what is that one thing?” | T: (none)
+mn52:4.1 | S: “Householder, it’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “And what is that one quality, venerable sir…?” “There is the case, householder, where a monk, quite secluded from sensuality, secluded from unskillful qualities, enters & remains in the first jhāna: rapture & pleasure born from seclusion, accompanied by directed thought & evaluation.
+mn52:4.2 | S: Then they reflect: | T: He reflects on this and discerns,
+mn52:4.3 | S: ‘Even this first absorption is produced by choices and intentions.’ | T: ‘This first jhāna is fabricated & intended.
+mn52:4.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+mn52:4.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the effluents.
+mn52:4.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the five lower fetters [self-identification views, grasping at habits & practices, uncertainty, sensual passion, and irritation]—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.
+mn52:4.7 | S: This is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. | T: “This, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended effluents go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+mn52:5.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption … | T: [Similarly with the second,
+mn52:6.1 | S: third absorption … | T: third,
+mn52:7.1 | S: fourth absorption … | T: and fourth jhānas.]
+mn52:8.1 | S: Furthermore, a mendicant meditates spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “Then again, a monk keeps pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, expansive, unlimited, without hostility, without ill will.
+mn52:8.2 | S: Then they reflect: | T: He reflects on this and discerns,
+mn52:8.3 | S: ‘Even this heart’s release by love is produced by choices and intentions.’ | T: ‘This awareness-release through goodwill is fabricated & intended.
+mn52:8.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ … | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’ Staying right there, he reaches the ending of the effluents. Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world. “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended effluents go to their total ending,
+mn52:8.6 | P: anuttaraṁ yogakkhemaṁ anupāpuṇāti. | T: or he attains the unexcelled security from the yoke that he had not attained before.
+mn52:9.1 | S: Furthermore, a mendicant meditates spreading a heart full of compassion … | T: [Similarly with awareness-release through compassion,
+mn52:10.1 | S: rejoicing … | T: through empathetic joy,
+mn52:11.1 | S: equanimity … | T: & through equanimity.]
+mn52:12.1 | S: Furthermore, householder, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Then again, a monk—with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space’—enters & remains in the dimension of the infinitude of space.
+mn52:12.2 | S: Then they reflect: | T: He reflects on this and discerns,
+mn52:12.3 | S: ‘Even this attainment of the dimension of infinite space is produced by choices and intentions.’ | T: ‘This attainment of the infinitude of space is fabricated & intended.
+mn52:12.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ … | T: (none)
+mn52:13.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. … | T: (none)
+mn52:14.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: (none)
+mn52:14.2 | S: Then they reflect: | T: (none)
+mn52:14.3 | S: ‘Even this attainment of the dimension of nothingness is produced by choices and intentions.’ | T: (none)
+mn52:14.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+mn52:14.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the effluents.
+mn52:14.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.
+mn52:14.7 | S: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke.” | T: “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended effluents go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+mn52:15.1 | S: When he said this, the householder Dasama said to Venerable Ānanda, | T: [Similarly with the dimension of the infinitude of consciousness and the dimension of nothingness.] When this was said, Dasama the householder from Aṭṭhakanagara said to Ven. Ānanda,
+mn52:15.2 | S: “Honorable Ānanda, suppose a person was looking for the entrance to a treasure trove. And all at once they’d come across eleven entrances! | T: “Venerable Ānanda, just as if a man seeking a single opening onto treasure were all at once to come upon eleven openings onto treasure,
+mn52:15.3 | S: In the same way, I was searching for the door to freedom from death. And all at once I found eleven doors to freedom from death for cultivation. | T: in the same way I—seeking a single doorway to the deathless—have all at once come to hear of eleven doorways to the deathless.
+mn52:15.4 | S: Suppose a person had a house with eleven doors. If the house caught fire they’d be able to flee to safety through any one of those doors. | T: And just as if a man whose house had eleven doors could take himself to safety by means of any one of those doors,
+mn52:15.5 | S: In the same way, I’m able to flee to safety through any one of these eleven doors to freedom from death. | T: in the same way I can take myself to safety by means of any one of these eleven doors to the deathless.
+mn52:15.6 | S: Sir, those of other religions seek a fee for the tutor. Why shouldn’t I make an offering to Venerable Ānanda?” | T: Venerable sir, when sectarians search for a teacher’s fee for their teachers, why shouldn’t I pay homage to Ven. Ānanda?”
+mn52:16.1 | S: Then the householder Dasama, having assembled the Saṅgha from Vesālī and Pāṭaliputta, served and satisfied them with his own hands with delicious fresh and cooked foods. | T: So Dasama the householder from Aṭṭhakanagara, having assembled the Saṅgha of monks from Vesālī and Pāṭaliputta, with his own hands served & satisfied them with refined staple & non-staple foods.
+mn52:16.2 | S: He clothed each and every mendicant in a pair of garments, with a set of three robes for Ānanda. And he had a dwelling worth five hundred built for Ānanda. | T: He presented a pair of cloths to each monk, and a triple robe to Ven. Ānanda. And for Ven. Ānanda he had a dwelling built worth five hundred (kahāpanas).
+
+## an10.18
+an10.18:1.1 | S: So I have heard. | T: (none)
+an10.18:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: (none)
+an10.18:1.3 | S: There the Buddha addressed the mendicants, | T: (none)
+an10.18:1.4 | S: “Mendicants!” | T: (none)
+an10.18:1.5 | S: “Venerable sir,” they replied. | T: (none)
+an10.18:1.6 | S: The Buddha said this: | T: (none)
+an10.18:2.1 | S: “Mendicants, you should live with a protector, not without one. | T: “Live with a protector, monks, and not without a protector.
+an10.18:2.2 | S: Living without a protector is suffering. | T: He suffers, one who lives without a protector.
+an10.18:2.3 | S: There are ten qualities that serve as protector. | T: And these ten are qualities creating a protector.
+an10.18:2.4 | S: What ten? | T: Which ten?
+an10.18:2.5 | S: Firstly, a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: “There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults. [When they think,] ‘How virtuous is this monk! He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults,’
+an10.18:2.6 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:2.7 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:2.8 | S: This is a quality that serves as protector. | T: This is a quality creating a protector.
+an10.18:3.1 | S: Furthermore, a mendicant is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, reinforcing them by recitation, mentally scrutinizing them, and penetrating them theoretically. | T: “Then again, the monk has heard much, has retained what he has heard, has stored what he has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning & expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views. [When they think,] ‘How much this monk has heard! Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning & expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views,’
+an10.18:3.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:3.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:3.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:4.1 | S: Furthermore, a mendicant has good friends, companions, and associates. | T: “Then again, the monk has admirable friends, admirable comrades, admirable companions. [When they think,] ‘How this monk has admirable friends, admirable comrades, admirable companions!’
+an10.18:4.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:4.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:4.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:5.1 | S: Furthermore, a mendicant is easy to admonish, having qualities that make them easy to admonish. They’re patient, and take instruction respectfully. | T: “Then again, the monk is easy to speak to, endowed with qualities that make him easy to speak to, patient, respectful to instruction. [When they think,] ‘How easy this monk is to speak to! He is endowed with qualities that make him easy to speak to, patient, respectful to instruction,’
+an10.18:5.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:5.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:5.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:6.1 | S: Furthermore, a mendicant is deft and tireless in a diverse spectrum of duties for their spiritual companions, understanding how to go about things in order to complete and organize the work. | T: “Then again, the monk is adept at the various affairs involving his companions in the holy life; is vigorous, quick-witted in the techniques involved in them, is up to doing them or arranging to get them done. [When they think,] ‘How adept this monk is at the various affairs involving his companions in the holy life! He is vigorous, quick-witted in the techniques involved in them, is up to doing them or arranging to get them done,’
+an10.18:6.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:6.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:6.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:7.1 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “Then again, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya. [When they think,] ‘How this monk is one who desires the Dhamma! He is endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya,’
+an10.18:7.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:7.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:7.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:8.1 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “Then again, the monk keeps his persistence aroused for abandoning unskillful qualities & for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. [When they think,] ‘How this monk keeps his persistence aroused for abandoning unskillful qualities & for taking on skillful qualities! He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities,’
+an10.18:8.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:8.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:8.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:9.1 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Then again, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all. [When they think,] ‘How this monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all!’
+an10.18:9.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:9.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:9.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:10.1 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “Then again, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago. [When they think,] ‘How mindful is this monk! He is endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago,’
+an10.18:10.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:10.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:10.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:11.1 | S: Furthermore, a mendicant is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “Then again, the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress. [When they think,] ‘How this monk is discerning! He is endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress,’
+an10.18:11.2 | S: Knowing this, the mendicants—whether senior, middle, or junior—think that mendicant is worth advising and instructing. | T: elder monks think that he should be corrected & instructed. Even monks of middle standing & newcoming monks think that he should be corrected & instructed.
+an10.18:11.3 | S: Being treated with such kindness by the senior, middle, and junior mendicants, that mendicant can expect only growth, not decline. | T: For him—treated with sympathy by the elders, sympathy by those of middle standing, & sympathy by newcomers—growth in skillful qualities is to be expected, and not decline.
+an10.18:11.4 | S: This too is a quality that serves as protector. | T: This, too, is a quality creating a protector.
+an10.18:12.1 | S: You should live with a protector, not without one. | T: “Live with a protector, monks, and not without a protector.
+an10.18:12.2 | S: Living without a protector is suffering. | T: He suffers, one who lives without a protector.
+an10.18:12.3 | S: These are the ten qualities that serve as protector.” | T: These are the ten qualities creating a protector.”
+an10.18:12.4 | S: That is what the Buddha said. | T: (none)
+an10.18:12.5 | S: Satisfied, the mendicants approved what the Buddha said. | T: (none)
+
+## mn126
+mn126:1.1 | S: So I have heard. | T: (none)
+mn126:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+mn126:2.1 | S: Then Venerable Bhūmija robed up in the morning and, taking his bowl and robe, went to the home of Prince Jayasena, where he sat down on the seat spread out. | T: Then, early in the morning, Ven. Bhūmija—having adjusted his lower robe and taking his bowl & outer robe—went to Prince Jayasena’s residence. On arrival, he sat down on a seat made ready.
+mn126:3.1 | S: Then Jayasena approached and exchanged greetings with him. | T: Prince Jayasena went to Ven. Bhūmija and, on arrival, exchanged courteous greetings with him.
+mn126:3.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to Bhūmija: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Bhūmija,
+mn126:3.3 | S: “Worthy Bhūmija, there are some ascetics and brahmins who have this doctrine and view: | T: “Master Bhūmija, there are some contemplatives & brahmans who espouse this teaching, espouse this view:
+mn126:3.4 | S: ‘If you make a wish and lead the spiritual life, you can’t win the fruit. | T: ‘If one follows the holy life, even when having made a wish (for results), one is incapable of obtaining results.
+mn126:3.5 | S: If you don’t make a wish and lead the spiritual life, you can’t win the fruit. | T: If one follows the holy life even when having made no wish, one is incapable of obtaining results.
+mn126:3.6 | S: If you both make a wish and don’t make a wish and lead the spiritual life, you can’t win the fruit. | T: If one follows the holy life even when both having made a wish and having made no wish, one is incapable of obtaining results.
+mn126:3.7 | S: If you neither make a wish nor don’t make a wish and lead the spiritual life, you can’t win the fruit.’ | T: If one follows the holy life even when neither having made a wish nor having made no wish, one is incapable of obtaining results.’
+mn126:3.8 | S: What does the worthy Bhūmija’s Teacher say about this? How does he explain it?” | T: With regard to that, what does Master Bhūmija’s teacher say, what is his view, what does he declare?”
+mn126:4.1 | S: “Prince, I haven’t heard and learned this in the presence of the Buddha. | T: “I haven’t heard this face to face with the Blessed One, prince, I haven’t received this face to face with the Blessed One,
+mn126:4.2 | S: But it’s possible that he might explain it like this: | T: but there is the possibility that the Blessed One would answer in this way:
+mn126:4.3 | S: ‘If you lead the spiritual life irrationally, you can’t win the fruit, regardless of whether you make a wish, | T: ‘If one follows the holy life inappropriately, even when having made a wish (for results), one is incapable of obtaining results. If one follows the holy life inappropriately,
+mn126:4.4 | S: you don’t make a wish, | T: even when having made no wish…
+mn126:4.5 | S: you both do and do not make a wish, | T: both having made a wish and having made no wish…
+mn126:4.6 | S: or you neither do nor don’t make a wish. | T: neither having made a wish nor having made no wish, one is incapable of obtaining results.
+mn126:4.7 | S: But if you lead the spiritual life rationally, you can win the fruit, regardless of whether you make a wish, | T: (But) if one follows the holy life appropriately, even when having made a wish, one is capable of obtaining results. If one follows the holy life appropriately,
+mn126:4.8 | S: you don’t make a wish, | T: even when having made no wish…
+mn126:4.9 | S: you both do and do not make a wish, | T: both having made a wish and having made no wish…
+mn126:4.10 | S: or you neither do nor don’t make a wish.’ | T: neither having made a wish nor having made no wish, one is capable of obtaining results.’
+mn126:4.11 | S: I haven’t heard and learned this in the presence of the Buddha. | T: I haven’t heard this face to face with the Blessed One, I haven’t received this face to face with the Blessed One,
+mn126:4.12 | S: But it’s possible that he might explain it like that.” | T: but there is the possibility that the Blessed One would answer in this way.”
+mn126:5.1 | S: “If that’s what your teacher says, worthy Bhūmija, he clearly stands head and shoulders above all the various other ascetics and brahmins.” | T: “If that is what Master Bhūmija’s teacher says, if that is his view, if that is what he declares, then yes, Master Bhūmija’s teacher stands, as it were, having struck all of those many contemplatives & brahmans down by the head.”
+mn126:6.1 | S: Then Prince Jayasena served Venerable Bhūmija from his own dish. | T: Prince Jayasena then served Ven. Bhūmija from his own dish of milk rice. Then Ven. Bhūmija,
+mn126:7.1 | S: Then after the meal, on his return from almsround, Bhūmija went to the Buddha, bowed, sat down to one side, and told him all that had happened, adding: | T: after his meal, returning from his almsround, went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there he said to the Blessed One:
+mn126:7.2 | P: “idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya yena jayasenassa rājakumārassa nivesanaṁ tenupasaṅkamiṁ; upasaṅkamitvā paññatte āsane nisīdiṁ. | T: “Just now, lord, early in the morning—having adjusted my lower robe and taking my bowl & outer robe—I went to Prince Jayasena’s residence. On arrival, I sat down on a seat made ready.
+mn126:7.3 | P: Atha kho, bhante, jayaseno rājakumāro yenāhaṁ tenupasaṅkami; upasaṅkamitvā mayā saddhiṁ sammodi. | T: Then Prince Jayasena went to me and, on arrival, exchanged courteous greetings with me. After an exchange of friendly greetings & courtesies,
+mn126:7.4 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho, bhante, jayaseno rājakumāro maṁ etadavoca: | T: he sat to one side. As he was sitting there he said to me,
+mn126:7.5 | P: ‘santi, bho bhūmija, eke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino— | T: ‘Master Bhūmija, there are some contemplatives & brahmans who espouse this teaching, espouse this view:
+mn126:7.6 | P: āsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: “If one follows the holy life even when having made a wish (for results)…
+mn126:7.7 | P: anāsañcepi karitvā …pe… | T: having made no wish…
+mn126:7.8 | P: āsañca anāsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: both having made a wish and having made no wish…
+mn126:7.9 | P: nevāsaṁ nānāsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāyā’ti. | T: neither having made a wish nor having made no wish, one is incapable of obtaining results.”
+mn126:7.10 | P: ‘Idha bhoto bhūmijassa satthā kiṁvādī kimakkhāyī’ti? | T: With regard to that, what does Master Bhūmija’s teacher say, what is his view, what does he declare?’
+mn126:7.11 | P: Evaṁ vutte, ahaṁ, bhante, jayasenaṁ rājakumāraṁ etadavocaṁ: | T: “When this was said, I replied to Prince Jayasena,
+mn126:7.12 | P: ‘na kho me taṁ, rājakumāra, bhagavato sammukhā sutaṁ, sammukhā paṭiggahitaṁ. | T: ‘I haven’t heard this face to face with the Blessed One, prince, I haven’t received this face to face with the Blessed One,
+mn126:7.13 | P: Ṭhānañca kho etaṁ vijjati yaṁ bhagavā evaṁ byākareyya— | T: but there is the possibility that the Blessed One would answer in this way:
+mn126:7.14 | P: āsañcepi karitvā ayoniso brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: “If one follows the holy life inappropriately, even when having made a wish (for results)…
+mn126:7.15 | P: anāsañcepi karitvā ayoniso brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: having made no wish… both having made a wish and having made no wish…
+mn126:7.17 | P: nevāsaṁ nānāsañcepi karitvā ayoniso brahmacariyaṁ caranti, abhabbā phalassa adhigamāya. | T: neither having made a wish nor having made no wish, one is incapable of obtaining results.
+mn126:7.18 | P: Āsañcepi karitvā yoniso brahmacariyaṁ caranti, bhabbā phalassa adhigamāya; | T: (But) if one follows the holy life appropriately, even when having made a wish…
+mn126:7.19 | P: anāsañcepi karitvā …pe… | T: having made no wish…
+mn126:7.20 | P: āsañca anāsañcepi karitvā …pe… | T: both having made a wish and having made no wish…
+mn126:7.21 | P: nevāsaṁ nānāsañcepi karitvā yoniso brahmacariyaṁ caranti, bhabbā phalassa adhigamāyāti. | T: neither having made a wish nor having made no wish, one is capable of obtaining results.”
+mn126:7.22 | P: Na kho me taṁ, rājakumāra, bhagavato sammukhā sutaṁ, sammukhā paṭiggahitaṁ. | T: I haven’t heard this face to face with the Blessed One, I haven’t received this face to face with the Blessed One,
+mn126:7.23 | P: Ṭhānañca kho etaṁ vijjati yaṁ bhagavā evaṁ byākareyyā’ti. | T: but there is the possibility that the Blessed One would answer in this way.’
+mn126:7.24 | P: ‘Sace bhoto bhūmijassa satthā evaṁvādī evamakkhāyī, addhā bhoto bhūmijassa satthā sabbesaṁyeva puthusamaṇabrāhmaṇānaṁ muddhānaṁ maññe āhacca tiṭṭhatī’ti. | T: “‘If that is what Master Bhūmija’s teacher says, if that is his view, if that is what he declares, then yes, Master Bhūmija’s teacher stands, as it were, having struck all of those many contemplatives & brahmans down by the head.’
+mn126:7.25 | S: “Answering this way, I trust that I repeated what the Buddha has said, and didn’t misrepresent him with an untruth. I trust my explanation was in line with the teaching, and that there are no legitimate grounds for rebuttal or criticism.” | T: “Answering in this way when thus asked, lord, am I speaking in line with what the Blessed One has said, am I not misrepresenting the Blessed One with what is unfactual, am I answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing me?”
+mn126:8.1 | S: “Indeed, Bhūmija, in answering this way you repeated what I’ve said, and didn’t misrepresent me with an untruth. Your explanation was in line with the teaching, and there are no legitimate grounds for rebuttal or criticism. | T: “Certainly, Bhūmija, in answering in this way when thus asked, you are speaking in line with what I have said, you are not misrepresenting me with what is unfactual, and you are answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing you.
+mn126:9.1 | S: There are some ascetics and brahmins who have wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. If they lead the spiritual life, they can’t win the fruit, regardless of whether they make a wish, | T: For any contemplatives or brahmans endowed with wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, & wrong concentration: If they follow the holy life even when having made a wish (for results), they are incapable of obtaining results. If they follow the holy life even when having made no wish, they are incapable of obtaining results.
+mn126:9.2 | S: they don’t make a wish, | T: If they follow the holy life even when both having made a wish and having made no wish,
+mn126:9.3 | S: they both do and do not make a wish, | T: they are incapable of obtaining results.
+mn126:9.4 | S: or they neither do nor don’t make a wish. | T: If they follow the holy life even when neither having made a wish nor having made no wish, they are incapable of obtaining results.
+mn126:9.5 | S: Why is that? | T: Why is that?
+mn126:9.6 | S: Because that’s an irrational way to win the fruit. | T: Because it is an inappropriate way of obtaining results.
+mn126:10.1 | S: Suppose there was a person in need of oil. While wandering in search of oil, they tried heaping sand in a bucket, sprinkling it little by little with water, and pressing it out. | T: “Suppose a man in need of oil, looking for oil, wandering in search of oil, would pile gravel in a tub and press it, sprinkling it again & again with water.
+mn126:10.2 | S: But by doing this, they couldn’t extract any oil, regardless of whether they made a wish, | T: If he were to pile gravel in a tub and press it, sprinkling it again & again with water even when having made a wish (for results)… having made no wish… both having made a wish and having made no wish…
+mn126:10.3 | S: didn’t make a wish, | T: (none)
+mn126:10.4 | S: both did and did not make a wish, | T: (none)
+mn126:10.5 | S: or neither did nor did not make a wish. | T: neither having made a wish nor having made no wish, he would be incapable of obtaining results.
+mn126:10.6 | S: Why is that? | T: Why is that?
+mn126:10.7 | S: Because that’s an irrational way to extract oil. | T: Because it is an inappropriate way of obtaining results.
+mn126:10.8 | S: And so it is for any ascetics and brahmins who have wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. If they lead the spiritual life, they can’t win the fruit, regardless of whether or not they make a wish. | T: “In the same way, any contemplatives or brahmans endowed with wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, & wrong concentration: If they follow the holy life even when having made a wish (for results)… having made no wish… both having made a wish and having made no wish… neither having made a wish nor having made no wish, they are incapable of obtaining results.
+mn126:10.12 | S: Why is that? | T: Why is that?
+mn126:10.13 | S: Because that’s an irrational way to win the fruit. | T: Because it is an inappropriate way of obtaining results.
+mn126:11.1 | S: Suppose there was a person in need of milk. While wandering in search of milk, they tried pulling the horn of a newly-calved cow. | T: “Suppose a man in need of milk, looking for milk, wandering in search of milk, would twist the horn of a newly-calved cow. If he were to twist the horn of a newly-calved cow even when having made a wish (for results)…
+mn126:11.2 | S: But by doing this, they couldn’t get any milk, regardless of whether they made a wish, | T: having made no wish… both having made a wish and having made no wish…
+mn126:11.3 | S: didn’t make a wish, | T: (none)
+mn126:11.4 | S: both did and did not make a wish, | T: (none)
+mn126:11.5 | S: or neither did nor did not make a wish. | T: neither having made a wish nor having made no wish, he would be incapable of obtaining results.
+mn126:11.6 | S: Why is that? | T: Why is that?
+mn126:11.7 | S: Because that’s an irrational way to get milk. | T: Because it is an inappropriate way of obtaining results.
+mn126:11.8 | S: And so it is for any ascetics and brahmins who have wrong view … | T: “In the same way, any contemplatives or brahmans endowed with wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, & wrong concentration:
+mn126:11.9 | P: micchāsamādhino te āsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: If they follow the holy life even when having made a wish (for results)…
+mn126:11.10 | P: anāsañcepi karitvā …pe… | T: having made no wish…
+mn126:11.11 | P: āsañca anāsañcepi karitvā …pe… | T: both having made a wish and having made no wish…
+mn126:11.12 | P: nevāsaṁ nānāsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya. | T: neither having made a wish nor having made no wish, they are incapable of obtaining results.
+mn126:11.13 | P: Taṁ kissa hetu? | T: Why is that?
+mn126:11.14 | S: Because that’s an irrational way to win the fruit. | T: Because it is an inappropriate way of obtaining results.
+mn126:12.1 | S: Suppose there was a person in need of butter. While wandering in search of butter, they tried pouring water into a pot and churning it with a stick. | T: “Suppose a man in need of butter, looking for butter, wandering in search of butter, would sprinkle water on water in a crock and twirl it with a churn-stick. If he were to sprinkle water on water in a crock and twirl it with a churn-stick even when having made a wish (for results)…
+mn126:12.2 | S: But by doing this, they couldn’t produce any butter, regardless of whether they made a wish, | T: having made no wish… both having made a wish and having made no wish…
+mn126:12.3 | S: didn’t make a wish, | T: (none)
+mn126:12.4 | S: both did and did not make a wish, | T: (none)
+mn126:12.5 | S: or neither did nor did not make a wish. | T: neither having made a wish nor having made no wish, he would be incapable of obtaining results.
+mn126:12.6 | S: Why is that? | T: Why is that?
+mn126:12.7 | S: Because that’s an irrational way to produce butter. | T: Because it is an inappropriate way of obtaining results.
+mn126:12.8 | S: And so it is for any ascetics and brahmins who have wrong view … | T: “In the same way, any contemplatives or brahmans endowed with wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, & wrong concentration:
+mn126:12.9 | P: micchāsamādhino te āsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: If they follow the holy life even when having made a wish (for results)…
+mn126:12.10 | P: anāsañcepi karitvā …pe… | T: having made no wish…
+mn126:12.11 | P: āsañca anāsañcepi karitvā …pe… | T: both having made a wish and having made no wish…
+mn126:12.12 | P: nevāsaṁ nānāsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya. | T: neither having made a wish nor having made no wish, they are incapable of obtaining results.
+mn126:12.13 | P: Taṁ kissa hetu? | T: Why is that?
+mn126:12.14 | S: Because that’s an irrational way to win the fruit. | T: Because it is an inappropriate way of obtaining results.
+mn126:13.1 | S: Suppose there was a person in need of fire. While wandering in search of fire, they tried drilling a green, sappy log with a drill-stick. | T: “Suppose a man in need of fire, looking for fire, wandering in search of fire, would take a fire stick and rub it into a wet, sappy piece of wood.
+mn126:13.2 | S: But by doing this, they couldn’t start a fire, regardless of whether they made a wish, | T: If he were to take a fire stick and rub it into a wet, sappy piece of wood even when having made a wish (for results)… having made no wish… both having made a wish and having made no wish…
+mn126:13.3 | S: didn’t make a wish, | T: (none)
+mn126:13.4 | S: both did and did not make a wish, | T: (none)
+mn126:13.5 | S: or neither did nor did not make a wish. | T: neither having made a wish nor having made no wish, he would be incapable of obtaining results.
+mn126:13.6 | S: Why is that? | T: Why is that?
+mn126:13.7 | S: Because that’s an irrational way to start a fire. | T: Because it is an inappropriate way of obtaining results.
+mn126:13.8 | S: And so it is for any ascetics and brahmins who have wrong view … | T: “In the same way, any contemplatives or brahmans endowed with wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, & wrong concentration:
+mn126:13.9 | P: micchāsamādhino te āsañcepi karitvā brahmacariyaṁ caranti, abhabbā phalassa adhigamāya; | T: If they follow the holy life even when having made a wish (for results)…
+mn126:13.10 | P: anāsañcepi karitvā …pe… | T: having made no wish…
