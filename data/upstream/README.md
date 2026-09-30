@@ -98,7 +98,9 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    `html_text/en/pli/sutta/`, and update the commit above.
 4. **Segment again**: `node scripts/segment-translations.mjs thanissaro` (or `bodhi`). It keeps the
    cuts a review settled (`data/<translator>/cuts.json`) and leaves unwritten any text whose segments
-   aren't word for word its page.
+   aren't word for word its page. A line's English carries a little markup, which the script's
+   header lists: the translator's verse line breaks inside the line, his headings inside it, and his
+   references to other suttas, in the app's form and linked.
 5. **Review the cuts it is least sure of**: `--items 0.3` writes them in batches to
    `data/<translator>/review/batches/`, with the instructions for Claude, who writes the answers
    beside each batch. `--answers` keeps the answers so far in `cuts.json`. After an interruption,
@@ -126,27 +128,13 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
 - Read the rest of Thanissaro's translation line by line, from batch 024 of `review/read/`, as
   [cloud-review.md](cloud-review.md)'s "Reading through" says, and take the findings in (step 7
   above). Bodhi's is read in full.
-- Give more lines English of their own: some lines Sujato translates are empty here because the
-  translator's English for them sits inside a neighbour's line, with no place to cut it apart.
-  `empty.html` shows them, before any change to the segmenter.
 - Decide how the app offers a second translation, keeping every Pali line as reachable as with
   Sujato: a line whose English sits on its neighbour opens its Pali with that neighbour's, and a
-  line the translator leaves out, such as Bodhi's "as in 8:42" and Thanissaro's excerpts, shows
-  its Pali on its own.
-- Fit each translation's layout to the Pali's markup. A line's role — heading, verse, closing line —
-  comes from `data/html`, whichever English sits on the line, so a translation is laid out as the
-  Pali is. Prose and most verse fit. Three things don't:
-  - **The translator's own headings.** Most have no Pali heading line to sit on, in both
-    translations, and open the next line as plain words.
-  - **Verse line breaks.** A Pali verse line often holds two or more of the translator's lines, and
-    the segmenter runs them together: over a third of the verse lines in Thanissaro, about a tenth
-    in Bodhi.
-  - **Text on closing and summary lines.** The Pali's closing line ("Dutiyaṁ") and its chapter
-    summary, which the app styles as an ending or leaves out, should take only a translator's
-    closing words, such as Bodhi's "The Book of the Tens is finished." Nine of Bodhi's still hold
-    the last words of the sutta, where the read-through's fix doesn't take effect.
-- Where a translator points to another passage instead of translating it ("identical with 8:42",
-  "The rest as in the preceding sutta"), show the passage itself in its place, with a link to it.
+  line the translator leaves out, such as Bodhi's "as in AN8.42" and Thanissaro's excerpts, shows
+  its Pali on its own. A line's role — heading, verse, closing line — comes from `data/html`,
+  whichever English sits on it, and the app shows the markup a line carries (step 4): a heading of
+  the translator's as a small heading, his verse lines as he breaks them, and his references as
+  links.
 - Once these translations ship, each source needs a credit on the Help page.
 - The Buddhist Publication Society's online library (bps.lk) was down on 29 September 2026; it may
   hold more of Bodhi's translations with notes.

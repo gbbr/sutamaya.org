@@ -17,11 +17,17 @@
 //   review/                                   the review pages and the cuts put up for review
 //
 // The English is only ever cut, never rewritten: a text whose segments, joined, aren't word for word
-// the text of its page, read a second way, is reported and not written.
+// the text of its page, read a second way, is reported and not written. A line is written with a
+// little markup over its words:
+//   "\n"                     – where a verse line of the translator's starts inside it
+//   <span class="heading">   – round a heading of his inside it, which no Pali heading line holds
+//   <a href>                 – a reference in his text to another sutta, which takes the app's form
+//                              ("as in 3:2" becomes "as in AN3.2"), from review/references.json
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { JSDOM } from 'jsdom';
+import { formatRef } from './lib/collections.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA = path.join(ROOT, 'data');
@@ -773,7 +779,7 @@ function streamOf(blocks) {
   for (const m of text.matchAll(/\s+(?=[“‘])/g)) add(m.index + m[0].length, 1.2, {});
   for (const m of text.matchAll(/[—–](?=[^\s—–])/g)) add(m.index + 1, 1.2, {});
   add(text.length, 3, {});
-  return { text, marks, cuts: [...cuts.values()].sort((a, b) => a.at - b.at) };
+  return { text, marks, blocks: starts, cuts: [...cuts.values()].sort((a, b) => a.at - b.at) };
 }
 
 // Returns each line's piece of the stream — its span, and whether it's empty or merged into the
@@ -1299,13 +1305,14 @@ function segmentsOf(results, text) {
 
 // Returns the places in `text`, after `lo` and before `hi`, where a line can start with the words a
 // finding quotes: at their first word, taking in an opening quote or bracket the finding leaves out.
+// The text's start is a place when `lo` is too.
 function quotedAt(text, words, lo, hi) {
   const re = new RegExp(words.split(/\s+/).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+'), 'g');
   const places = [];
   for (const m of text.slice(lo, hi).matchAll(re)) {
     let at = lo + m.index;
-    while (at > lo + 1 && /[“‘"'([]/.test(text[at - 1])) at--;
-    if (at > lo && /[\s—–]/.test(text[at - 1])) places.push(at);
+    while (at > lo && /[“‘"'([]/.test(text[at - 1])) at--;
+    if (at === 0 || (at > lo && /[\s—–]/.test(text[at - 1]))) places.push(at);
   }
   return places;
 }
@@ -1332,6 +1339,49 @@ function rising(
     best = next;
   }
   return [...best.values()].reduce((a, b) => (b.cost < a.cost ? b : a)).chosen;
+}
+
+// References in each line's English to another sutta, by line, from the reviewers' list: the
+// words that cite the sutta, and its ID. A reference citing no sutta by number, or more than one,
+// is left as it is.
+const CITE = /(?:\b(?:DN|MN|SN|AN|Sn|Snp|Dhp|Ud|Iti|Thag|Thig|Kp|Khp|Sutta)\s+)?(?<![§\d:.—–-])\b\d+(?:[:.]\d+)*(?:[-–]\d+)?/g;
+const cites = new Map();
+for (const ref of [readJson(path.join(REVIEW, 'references.json'))].flat()) {
+  const found = (ref.source ?? ref.where) === 'text' && ref.target ? (ref.words.match(CITE) ?? []) : [];
+  // A bare number cites nothing for certain: a citation has a colon or a collection's name.
+  if (found.length === 1 && /[:A-Za-z]/.test(found[0])) cites.set(ref.key, [...(cites.get(ref.key) ?? []), { cite: found[0], target: ref.target }]);
+}
+
+// Returns a line's English as it is written out: its segment, with each verse line of the
+// translator's that starts inside it on a line of its own, each heading of his inside it marked,
+// unless it is all a heading line of the Pali holds, and each reference to another sutta in the
+// app's form, linking to it.
+function presented(
+  stream,
+  r,
+  line,
+  // The references to other suttas the line holds.
+  cited = [],
+) {
+  const { text, blocks } = stream;
+  const bounds = [r.start, ...blocks.filter((b) => b.at > r.start && b.at < r.end).map((b) => b.at), r.end];
+  const pieces = [];
+  for (let k = 0; k + 1 < bounds.length; k++) {
+    const words = text.slice(bounds[k], bounds[k + 1]).replace(/\s+/g, ' ').trim();
+    if (words) pieces.push({ kind: blocks.findLast((b) => b.at <= bounds[k]).kind, words });
+  }
+  const headingLine = line.heading && pieces.every((p) => p.kind === 'h');
+  let out = pieces
+    .map((p, k) => {
+      const words = p.kind === 'h' && !headingLine ? `<span class="heading">${p.words}</span>` : p.words;
+      return k === 0 ? words : `${p.kind === 'v' || p.kind === 'vs' ? '\n' : ' '}${words}`;
+    })
+    .join('');
+  for (const { cite, target } of cited) {
+    const at = new RegExp(`(?<![\\w:.])${cite.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?!\\w|[:.]\\d)`, 'g');
+    if ((out.match(at) ?? []).length === 1) out = out.replace(at, `<a href="https://suttacentral.net/${target}">${formatRef(target)}</a>`);
+  }
+  return out;
 }
 
 // Returns a text's findings: those that change its lines, in groups, each tried, and the others. A
@@ -1368,7 +1418,8 @@ function weigh(unit, aligned) {
       if (holds(now, m.i) && at === now.results[m.i].start) others.push({ key: m.key, starts: m.starts, status: 'already so' });
       else if (at === null) others.push({ key: m.key, starts: m.starts, status: 'not found' });
       else {
-        const settles = { after: anchorBefore(text, at), placed: true };
+        // A line starting the text has no words before it to settle it after.
+        const settles = at ? { after: anchorBefore(text, at), placed: true } : { placed: true };
         if (aligned[m.i].empty || aligned[m.i].merged) settles.own = true;
         moves.push({ ...m, at, settles });
       }
@@ -1730,7 +1781,16 @@ for (const unit of units) {
     };
     const titleLine = lines.find((l) => l.suttaTitle) ?? lines.filter((l) => l.title).at(-1);
     if (titleLine) put(titleLine, unit.title, [[...unit.intro, ...unit.seeAlso, ...titleNotes].map((p) => `<p>${p}</p>`).join('')].filter(Boolean));
-    body.forEach((line, i) => put(line, segText[i], segNotes[i], endsAtDash[i]));
+    // Each reference to another sutta goes with the line that holds its words: its own, or the
+    // nearest within three lines, where a review moved them.
+    const cited = new Map();
+    body.forEach((line, i) => {
+      for (const c of cites.get(line.key) ?? []) {
+        const x = [0, -1, 1, -2, 2, -3, 3].map((d) => i + d).find((x) => segText[x]?.includes(c.cite));
+        if (x !== undefined) cited.set(x, [...(cited.get(x) ?? []), c]);
+      }
+    });
+    body.forEach((line, i) => put(line, segText[i] && presented(stream, results[i], line, cited.get(i)), segNotes[i], endsAtDash[i]));
 
     if (reviewed.has(name)) reviewUnits.push({ name, entry, body, segText, segNotes, results, intro: unit.intro });
 

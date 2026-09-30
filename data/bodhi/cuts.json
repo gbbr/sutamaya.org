@@ -527,7 +527,9 @@
  "sn35.248:3.1": "eiving, one is freed from the Evil One.",
  "sn35.31:1.7": "t—he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’",
  "sn35.31:1.19": "… he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’",
- "sn35.52:2.2": "t…. All is suffering…. All is nonself….",
+ "sn35.52:2.2": {
+  "empty": "up"
+ },
  "sn35.56:1.2": {
   "empty": "up"
  },
@@ -6228,8 +6230,7 @@
   "empty": "down"
  },
  "sn35.52:2.1": {
-  "after": "At Savatthi.",
-  "placed": true
+  "empty": "up"
  },
  "sn4.6:5.3": {
   "empty": "stay"
@@ -12365,5 +12366,48 @@
   "after": "life, and leads to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.",
   "placed": true,
   "own": true
+ },
+ "sn35.123:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.123:1.12": {
+  "empty": "up"
+ },
+ "sn35.123:2.2": {
+  "empty": "up"
+ },
+ "sn35.52:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.52:1.7": {
+  "empty": "up"
+ },
+ "sn35.52:2.3": {
+  "empty": "up"
+ },
+ "sn35.52:2.4": {
+  "empty": "up"
+ },
+ "sn35.52:2.5": {
+  "empty": "up"
+ },
+ "sn35.52:3.1": {
+  "empty": "up"
+ },
+ "sn35.52:3.2": {
+  "empty": "up"
+ },
+ "sn45.90:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn45.90:1.2": {
+  "empty": "up"
+ },
+ "sn45.90:1.4": {
+  "after": "… accomplishment in careful attention …",
+  "placed": true
  }
 }
