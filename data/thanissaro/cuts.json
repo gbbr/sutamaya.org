@@ -560,10 +560,19 @@
  "dhp6:4": "n the verge\nof perishing,\nthose who do:",
  "dhp10:4": "trol,\nwell-established\nin the precepts,",
  "dhp12:3": "ce as essence,\nand non-essence as non-,",
- "dhp100:3": " were thousands\nof meaningless words is",
+ "dhp100:3": {
+  "after": "ere were thousands\nof meaningless words",
+  "placed": true
+ },
  "dhp100:4": "eaningless words is\none\nmeaningful\nword",
- "dhp101:3": "were thousands\nof meaningless verses is",
- "dhp102:3": "nting hundreds\nof meaningless verses is",
+ "dhp101:3": {
+  "after": "re were thousands\nof meaningless verses",
+  "placed": true
+ },
+ "dhp102:3": {
+  "after": "chanting hundreds\nof meaningless verses",
+  "placed": true
+ },
  "dhp340:3": "ut the sprouted creeper stays\nin place.",
  "dhp349:4": " on beauty,\ncraving grows all the more.",
  "dhp352:2": "is last.\nFree from craving,\nungrasping,",
@@ -707,7 +716,10 @@
  "snp2.8:6.3": "d\non a sturdy boat,\nwith rudder & oars,",
  "snp2.9:4.3": "h a sense of how\nto investigate Dhamma,",
  "snp2.9:7.1": "\nhis discernment & learning\ndon’t grow.",
- "snp3.1:6.4": "s demeanor!\nMindful, his eyes downcast,",
+ "snp3.1:6.4": {
+  "after": "ely, pure!\nHow consummate his demeanor!",
+  "placed": true
+ },
  "snp3.1:17.1": "coloring\nlike a noble-warrior by birth.",
  "snp3.10:5.3": {
   "after": "he said to the Blessed One, “Lord, the monk Kokālika has died and, having died,",
@@ -1582,7 +1594,10 @@
   "empty": "up"
  },
  "mn60:36.3": "ed to the practice of bathing in water.",
- "mn85:59.10": "w in six years… five years… four years…",
+ "mn85:59.10": {
+  "after": "rs… four years… three years… two years…",
+  "placed": true
+ },
  "sn12.11:3.6": "n, pain, distress, & despair all cease.",
  "sn12.15:3.9": "n, pain, distress, & despair all cease.",
  "sn12.46:3.8": "ce comes the cessation of fabrications.",
@@ -4907,7 +4922,8 @@
  },
  "mn41:43.2": "non-perception. Why is that? Because one is a person of Dhamma conduct, harmonious conduct.\n“If one—a person of Dhamma conduct, harmonious conduct—should wish:",
  "mn43:3.4": {
-  "empty": "down"
+  "after": "friend, one is said to be ‘discerning.’",
+  "placed": true
  },
  "mn43:4.5": "nsciousness.’ And what does it cognize?",
  "mn43:20.3": "rst jhāna, and with five is it endowed.",
@@ -9626,7 +9642,10 @@
  "sn12.70:15.17": " Is perception constant or inconstant?”—",
  "sn12.70:15.26": " consciousness constant or inconstant?”—",
  "sn14.11:5.2": "o be reached as perception attainments.",
- "sn15.10:4.2": "\n“The accumulation\nof a single person’s",
+ "sn15.10:4.2": {
+  "after": "accumulation\nof a single person’s\nbones",
+  "placed": true
+ },
  "sn16.11:9.4": "er, it is this Blessed One I would see!",
  "sn16.2:2.4": "s unbeneficial,’ he arouses no ardency.",
  "sn16.2:4.3": "t is unbeneficial,’ he arouses ardency.",
@@ -10573,7 +10592,7 @@
   "own": true
  },
  "dn20:9.12": {
-  "after": "the monks’ forest meeting.\nAnd Virūḷha,",
+  "after": "meeting.\nAnd Virūḷha, who rules as king",
   "placed": true
  },
  "dn22:2.3": {
@@ -11199,7 +11218,9 @@
   "placed": true
  },
  "mn140:25.2": {
-  "empty": "stay"
+  "after": " highest determination for discernment,",
+  "placed": true,
+  "own": true
  },
  "mn143:20.5": {
   "after": "iputta.”\n“Very good, Ānanda. Very good,",
@@ -11729,7 +11750,9 @@
   "placed": true
  },
  "sn22.95:14.3": {
-  "empty": "stay"
+  "after": " view the aggregates\nby day & by night,",
+  "placed": true,
+  "own": true
  },
  "sn22.97:6.9": {
   "after": "onsciousness constant or inconstant?” “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?”\n“No, lord.”",
@@ -12388,7 +12411,10 @@
   "after": "thout anger, the sage\nshould cross over",
   "placed": true
  },
- "snp4.16:1.3": "tta:\n“Never before\nhave I seen or heard",
+ "snp4.16:1.3": {
+  "after": "n. Sāriputta:\n“Never before\nhave I seen",
+  "placed": true
+ },
  "snp4.7:8.2": "lard.\nKnowing these drawbacks, the sage",
  "snp5.1:50.2": "eply?”\nAjita:\n“Bāvarī asked about heads",
  "snp5.15:4.2": "e steps leading there.\nKnowing directly",
@@ -12404,7 +12430,10 @@
  "thag18.1:29.3": "unction\nare always rightly established:",
  "thag18.1:39.6": "ed\nby water, inclining\nto renunciation,",
  "thag2.16:2.2": "\nWhoever, unknowing,\nmakes acquisitions",
- "thag3.5:3.2": "h my chest\nI push through wild grasses—",
+ "thag3.5:3.2": {
+  "after": "from ease.\nWith my chest\nI push through",
+  "placed": true
+ },
  "thag4.10:3.4": {
   "after": "e foremost\nOne Well-Gone,\nhis disciples",
   "placed": true
@@ -13446,8 +13475,7 @@
   "empty": "up"
  },
  "an9.34:6.4": {
-  "after": "e dimension of the infinitude of space.",
-  "placed": true
+  "empty": "up"
  },
  "an9.36:1.9": {
   "empty": "down"
@@ -13864,7 +13892,7 @@
   "placed": true
  },
  "iti97:4.3": {
-  "after": "k is a person with admirable qualities.",
+  "after": " qualities that are wings to awakening.",
   "placed": true
  },
  "iti97:5.1": {
@@ -14724,7 +14752,7 @@
   "empty": "down"
  },
  "mn63:6.17": {
-  "after": "he body another,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress whose destruction I make known right in the here & now.",
+  "after": "‘After death a Tathāgata does not exist,’ there is the living of the holy life.",
   "placed": true
  },
  "mn64:2.4": {
@@ -39452,5 +39480,356 @@
  "sn9.6:6.2": {
   "after": "Their total stilling is bliss.’\nJālinī,",
   "placed": true
+ },
+ "an10.177:2.2": {
+  "after": "aster Gotama, you know that we brahmans",
+  "placed": true
+ },
+ "an3.57:7.2": {
+  "after": "orm,\nor pigeon gray:\nIf a bull is born—",
+  "placed": true,
+  "own": true
+ },
+ "an3.57:7.3": {
+  "after": "r pigeon gray:\nIf a bull is born—\ntame,",
+  "placed": true
+ },
+ "an3.57:8.4": {
+  "after": "s—\nnoble warriors, brahmans,\nmerchants,",
+  "placed": true
+ },
+ "an3.57:9.2": {
+  "after": "rs,\noutcastes, or scavengers—\nif one is",
+  "placed": true
+ },
+ "an3.90:5.3": {
+  "after": "eightened mind,\nheightened discernment:",
+  "placed": true
+ },
+ "an4.37:3.3": {
+  "after": "a monk, on seeing a form with the eye, doesn’t grasp at any theme or variations",
+  "placed": true
+ },
+ "an4.37:3.9": {
+  "after": "gnizing an idea with the intellect, he doesn’t grasp at any theme or variations",
+  "placed": true
+ },
+ "an6.45:16.1": {
+  "after": "ompunction—\ncontemplating evil actions,",
+  "placed": true,
+  "own": true
+ },
+ "an6.45:16.2": {
+  "after": "contemplating evil actions,\ndoing wrong",
+  "placed": true
+ },
+ "an6.45:21.4": {
+  "after": "onfidence,\nliving at home,\nmaking gifts",
+  "placed": true,
+  "own": true
+ },
+ "an6.45:22.2": {
+  "after": " of his belongings,\nrighteously-gained,",
+  "placed": true
+ },
+ "an9.34:6.2": {
+  "after": "e dimension of the infinitude of space.",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.18.6": {
+  "after": "s cosmos is infinite, unencircled. Those contemplatives & brahmans who say that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.18.7": {
+  "after": "cled. Those contemplatives & brahmans who say that this cosmos is finite, encircled: That is a falsehood on their part.",
+  "placed": true
+ },
+ "dn11:82.5": {
+  "after": "Been and Shall Be.’\nA second time, the monk said to the Great Brahmā, ‘Friend, I didn’t ask you if you were Brahmā, the Great Brahmā, the Conqueror, the Unconquered, the All-Seeing, All-Powerful, the Sovereign Lord, the Maker, Creator, Chief, Appointer, and Ruler, Father of All That Have Been and Shall Be. I asked you",
+  "placed": true
+ },
+ "dn11:83.5": {
+  "after": "Been and Shall Be.’\n“A third time, the monk said to the Great Brahmā, ‘Friend, I didn’t ask you if you were Brahmā, the Great Brahmā, the Conqueror, the Unconquered, the All-Seeing, All-Powerful, the Sovereign Lord, the Maker, Creator, Chief, Appointer, and Ruler, Father of All That Have Been and Shall Be. I asked you",
+  "placed": true
+ },
+ "dn16:4.20.7": {
+  "after": "essed One.\nI have heard that,\non eating",
+  "placed": true
+ },
+ "dn16:4.32.6": {
+  "after": "were you?’\n“‘I was right here, friend.’",
+  "placed": true,
+  "own": true
+ },
+ "dn16:4.32.7": {
+  "after": ", friend.’\n“‘But did you see anything?’",
+  "placed": true
+ },
+ "dn33:2.2.61": {
+  "after": "elfish… has evil desires & wrong views…",
+  "placed": true,
+  "own": true
+ },
+ "dn34:2.2.50": {
+  "after": "es hatred. ‘He is doing me harm. But what should I expect?’ one subdues hatred.",
+  "placed": true,
+  "own": true
+ },
+ "dhp210:2": {
+  "after": "sk.\nDon’t ever–regardless–\nbe conjoined",
+  "placed": true
+ },
+ "dhp23:2": {
+  "after": "ightened, constantly\nabsorbed in jhana,",
+  "placed": true
+ },
+ "dhp231:2": {
+  "after": ".\nGuard against anger\nerupting in body;",
+  "placed": true
+ },
+ "dhp232:2": {
+  "after": "Guard against anger\nerupting in speech;",
+  "placed": true
+ },
+ "dhp233:2": {
+  "after": ".\nGuard against anger\nerupting in mind;",
+  "placed": true
+ },
+ "dhp248:1": {
+  "after": "p\nby the root\nright here in this world.",
+  "placed": true
+ },
+ "dhp296:3": {
+  "after": "man, untroubled, travels on.\nThey awaken, always wide awake:\nGotama’s disciples",
+  "placed": true
+ },
+ "dhp297:3": {
+  "after": "ntly immersed\nin the Buddha.\nThey awaken, always wide awake:\nGotama’s disciples",
+  "placed": true
+ },
+ "dhp298:3": {
+  "after": "ntly immersed\nin the Dhamma.\nThey awaken, always wide awake:\nGotama’s disciples",
+  "placed": true
+ },
+ "dhp299:3": {
+  "after": "ntly immersed\nin the Sangha.\nThey awaken, always wide awake:\nGotama’s disciples",
+  "placed": true
+ },
+ "dhp328:2": {
+  "after": "he mud.\nIf you gain a mature companion–",
+  "placed": true
+ },
+ "iti97:4.4": {
+  "after": "k is a person with admirable qualities.",
+  "placed": true,
+  "own": true
+ },
+ "iti98:5.4": {
+  "after": "preme field of merit,\nwise, discerning–",
+  "placed": true
+ },
+ "iti98:6.1": {
+  "empty": "down"
+ },
+ "iti98:6.2": {
+  "after": "\nwouldn’t give it at appropriate times?",
+  "placed": true
+ },
+ "iti73:5.2": {
+  "after": "ed with his body\nthe deathless property",
+  "placed": true
+ },
+ "snp1.11:13.2": {
+  "after": "ng is cared for,\nfilthy, evil-smelling,",
+  "placed": true
+ },
+ "snp1.3:11.2": {
+  "after": "ceros.\nIf you gain an astute companion,",
+  "placed": true
+ },
+ "snp1.3:12.3": {
+  "after": "a fellow traveler, right-living & wise,",
+  "placed": true
+ },
+ "snp1.3:39.2": {
+  "after": "ime consorting\nwith the release through",
+  "placed": true
+ },
+ "snp2.2:6.2": {
+  "after": "tiless,\neating the flesh off your back,",
+  "placed": true
+ },
+ "snp2.7:12.1": {
+  "after": "t engage in copulation\neven in a dream.",
+  "placed": true,
+  "own": true
+ },
+ "snp2.7:12.3": {
+  "after": "n a dream.\nThose imitating his practice",
+  "placed": true
+ },
+ "snp3.1:7.1": {
+  "empty": "down"
+ },
+ "snp3.1:7.2": {
+  "after": "\nlooking only a plow-length before him.",
+  "placed": true
+ },
+ "snp3.12:17.2": {
+  "after": "\nan attainer-of-knowledge\nsees rightly.",
+  "placed": true
+ },
+ "snp3.12:25.4": {
+  "after": "asure, pain,\nneither pleasure nor pain,",
+  "placed": true,
+  "own": true
+ },
+ "snp3.2:18.3": {
+  "after": "\nthe troops, Māra\nalong with his mount—",
+  "placed": true
+ },
+ "snp3.6:39.2": {
+  "after": "h regard to good conduct,\nall-skillful,",
+  "placed": true
+ },
+ "snp4.6:9.3": {
+  "after": "as water on a red lily,\ndoesn’t adhere,",
+  "placed": true
+ },
+ "snp5.1:7.2": {
+  "after": "tever of mine\nthat could be given away,",
+  "placed": true
+ },
+ "snp5.7:5.2": {
+  "after": "-around Eye, he stays there,\nunaffected",
+  "placed": true
+ },
+ "thag12.1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "thag12.1:1.2": {
+  "after": "Here master the virtue",
+  "placed": true
+ },
+ "thag16.8:10.3": {
+  "after": "hose who advise endurance,\nforbearance,",
+  "placed": true,
+  "own": true
+ },
+ "thag17.2:22.3": {
+  "after": "of evil\nseems a storm cloud.\nI don’t delight in death,\ndon’t delight in living.",
+  "placed": true,
+  "own": true
+ },
+ "thag17.2:22.4": {
+  "after": "storm cloud.\nI don’t delight in death,\ndon’t delight in living.\nI await my time",
+  "placed": true,
+  "own": true
+ },
+ "thag17.2:23.1": {
+  "after": "I await my time\nlike a worker his wage.",
+  "placed": true,
+  "own": true
+ },
+ "thag17.2:23.2": {
+  "after": "ker his wage.\nI don’t delight in death,",
+  "placed": true,
+  "own": true
+ },
+ "thag17.2:23.3": {
+  "after": "time\nlike a worker his wage.\nI don’t delight in death,\ndon’t delight in living.",
+  "placed": true
+ },
+ "thag17.2:23.4": {
+  "after": "n’t delight in living.\nI await my time,",
+  "placed": true
+ },
+ "thag2.13:2.3": {
+  "after": "l doing evil deeds\ndoesn’t realize that",
+  "placed": true
+ },
+ "thag4.4:4.3": {
+  "after": "ionate for\npassion,\naversion,\nignorance",
+  "placed": true,
+  "own": true
+ },
+ "thig14.1:18.2": {
+  "after": " go far away,\nI will think only of your",
+  "placed": true
+ },
+ "thig6.4:5.2": {
+  "after": " me the Dhamma.\nHearing the Great Seer,",
+  "placed": true
+ },
+ "thig6.5:5.2": {
+  "after": "to one side.\nHe, Gotama, from sympathy,",
+  "placed": true
+ },
+ "thig7.2:1.3": {
+  "after": "ulness,\na nun with developed faculties,",
+  "placed": true
+ },
+ "thig7.3:1.3": {
+  "after": "t sees,\na nun with developed faculties,",
+  "placed": true
+ },
+ "mn107:14.5": {
+  "after": "illed in the road leading to Rājagaha.”",
+  "placed": true
+ },
+ "mn113:12.9": {
+  "after": "though one is not a wilderness dweller,",
+  "placed": true
+ },
+ "mn12:19.1": {
+  "after": "unate in accordance with their kamma. …",
+  "placed": true
+ },
+ "mn140:28.8": {
+  "after": "ith the highest determination for calm,",
+  "placed": true,
+  "own": true
+ },
+ "mn21:8.2": {
+  "after": "e or town—there were a large sal-forest",
+  "placed": true
+ },
+ "mn26:31.6": {
+  "after": "al desire. Aromas cognizable via the nose—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.",
+  "placed": true,
+  "own": true
+ },
+ "mn56:29.16": {
+  "after": "ciple.\nOf the free-from-doubt, skillful",
+  "placed": true
+ },
+ "mn63:6.13": {
+  "after": "he body another,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress whose destruction I make known right in the here & now.",
+  "placed": true,
+  "own": true
+ },
+ "mn63:6.14": {
+  "after": "e view, ‘After death a Tathāgata exists,’ there is the living of the holy life.",
+  "placed": true
+ },
+ "mn85:59.36": {
+  "after": " days… four days… three days… two days…",
+  "placed": true
+ },
+ "sn3.24:9.3": {
+  "after": " person of conviction & learning,\nwise,",
+  "placed": true
+ },
+ "sn44.4:1.3": {
+  "after": "xists nor does not exist after death.”’",
+  "placed": true
+ },
+ "sn9.3:2.2": {
+  "after": ",\nroaming through the rugged mountains,",
+  "placed": true,
+  "own": true
  }
 }
