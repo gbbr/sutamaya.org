@@ -171,6 +171,12 @@ files here are named.
   before its first numbered note (MN 10, DN 33), the second page's title in `an2.31` and
   `sn22.126`, DN 1's headings (styled as a "See also"), and AN 1.31–38, which `an1.21-40.html`
   takes over though it lacks them (name it `an1.21-30,39-40.html` and teach `uidsOf` the comma).
+- Let a line start wherever it makes sense to cut, not breaking a word, even with no space before
+  it: after a colon run into the next word. The segmenter allows only a space, a dash or an
+  ellipsis; then cut these two, which now sit at the end of the line above: Bodhi's "Blessed
+  One:“A transgression overcame us," on `sn1.35:6.1` (`sn1.35:6.2` starts at "“A transgression"),
+  and Ṭhānissaro's "sagacity:Be like a razor’s edge." on `snp3.11:38.1` (`snp3.11:38.2` starts at
+  "Be like").
 - Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no
   reader reported.
 
