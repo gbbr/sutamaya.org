@@ -149,6 +149,9 @@ files here are named.
    the passing groups, or 50 of them at random where there are more. A group it finds worse comes
    out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
    A fix made by hand goes in the same form in `review/hand/`, where it overrides the readers'.
+   The findings `--findings` can't apply, whose words aren't found where their line can start or
+   whose group takes no effect, `flagged <folder>` writes out in the stretches of text around them:
+   Opus writes whole fixes for them into `review/hand/`, tried and judged as the readers' are.
    A second read, done on the text with the first read's findings kept, has the last word: where
    it names a line an earlier reader named differently, the earlier line stays in its file marked
    `# superseded: `, which the segmenter skips. Otherwise a line two readers disagree on is left out.
@@ -161,7 +164,17 @@ files here are named.
 ## What's left
 
 - Teach `check-upstream.py` dhammatalks.org's pages, whose introductions and notes the segmenter
-  writes apart from the text, so it can check Thanissaro's translation too.
+  writes apart from the text, so it can check Thanissaro's translation too. Read that way, 29
+  pages differ, and each difference is the segmenter's: the "See also" of an AN 1 or AN 2 sutta
+  with no title line of its own, words run together where a note's italics start or end with a
+  space, a notes' box's paragraphs before its first numbered note (MN 10, DN 33), the second
+  page's title in `an2.31` and `sn22.126`, DN 1's headings (styled as a "See also"), and AN
+  1.31–38, which `an1.21-40.html` takes over though it lacks them.
+- `an1.77-82.html` holds AN 1.76–81 and is to be named so.
+- Let a line start right after an ellipsis written without spaces ("restrained…with"), as after a
+  dash, then try the findings that frees: most of the 220 Bodhi findings left unfound.
+- Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no
+  reader reported.
 
 ## Where to look
 

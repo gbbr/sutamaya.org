@@ -14,6 +14,10 @@ Run from the repository's root:
       writes each text's lines beside Sujato's to review/<folder>/ (read/ by default), for a
       read-through: the texts named, or every one, those with the most lines left empty first,
       about 60,000 characters to a file
+  scripts/segmenter/review-rounds.py <translator> flagged [<folder>]
+      writes the findings the segmenter's last --findings run couldn't apply, each in the stretch
+      of its text around it, line by line beside Sujato's, to review/<folder>/ (flagged/ by
+      default), about 60,000 characters to a file
 """
 import glob
 import json
@@ -142,5 +146,72 @@ elif command == 'read':
             flush()
     flush()
     print(f'{folder}: {len(texts)} texts in {n} files')
+elif command == 'flagged':
+    (folder,) = rest or ['flagged']
+    found = json.load(open(f'{REVIEW}/findings.json'))
+    todo = [(o['key'], o['starts']) for o in found['others'] if o['status'] == 'not found']
+    todo += [(f['key'], f['starts']) for g in found['groups'] if g['verdict'] != 'passes' for f in g['findings']]
+    words = lambda s: re.sub(r'[^\w\s]', ' ', s).lower().split()
+    files = {key: path for path in glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True) for key in json.load(open(path))}
+    docs = {}
+
+    def rows_of(path):
+        """Returns a document's lines that have Sujato's English or the translation's, but its title lines."""
+        if path not in docs:
+            theirs = json.load(open(path))
+            beside = path.replace(f'data/{translator}/', 'data/sujato/').replace(f'-en-{translator}.json', '-en-sujato.json')
+            his = json.load(open(beside)) if os.path.exists(beside) else {}
+            pali = json.load(open(path.replace(f'data/{translator}/', 'data/pali/').replace(f'_translation-en-{translator}.json', '_root-pli-ms.json')))
+            docs[path] = []
+            for key, text in theirs.items():
+                s, text = his.get(key, '').strip(), ' '.join(re.sub(r'<[^>]+>', '', text).split())
+                if not key.split(':')[1].startswith('0.') and (s or text):
+                    docs[path].append((key, f'S: {s}' if s else f'P: {pali.get(key, "").strip()}', text))
+        return docs[path]
+
+    # Each finding still off, as a window of its document's lines: its own line and the nearest
+    # holding its words, with two lines either side.
+    windows = {}
+    for key, starts in todo:
+        rows = rows_of(files[key])
+        keys = [row[0] for row in rows]
+        if key not in keys:
+            continue
+        i = j = keys.index(key)
+        now, opening = words(rows[i][2]), words(starts or '')[:4]
+        if (starts is None and not now) or (starts is not None and now[:len(opening)] == opening):
+            continue
+        if starts:
+            quoted = ' '.join(words(starts)[:5])
+            near = [x for x in range(max(0, i - 12), min(len(rows), i + 13)) if quoted in ' '.join(words(rows[x][2]))]
+            if near:
+                j = min(near, key=lambda x: abs(x - i))
+        windows.setdefault(files[key], []).append([max(0, min(i, j) - 2), min(len(rows) - 1, max(i, j) + 2), [f'Reported: {key} ' + (f'starts: {starts}' if starts else 'none')]])
+    # Overlapping windows join into one stretch.
+    stretches = []
+    for path, ws in windows.items():
+        ws.sort()
+        joined = []
+        for w in ws:
+            if joined and w[0] <= joined[-1][1] + 1:
+                joined[-1][1] = max(joined[-1][1], w[1])
+                joined[-1][2] += w[2]
+            else:
+                joined.append(w)
+        rows = docs[path]
+        for lo, hi, reports in joined:
+            shown = [f'{key} | {said} | T: {text or "(none)"}' for key, said, text in rows[lo:hi + 1]]
+            stretches.append('\n'.join([f'## {os.path.basename(path).split("_")[0]}', *shown, *dict.fromkeys(reports)]))
+    os.makedirs(f'{REVIEW}/{folder}')
+    batch, size, n = [], 0, 0
+    for stretch in stretches + [None]:
+        if batch and (stretch is None or size + len(stretch) > 60000):
+            n += 1
+            open(f'{REVIEW}/{folder}/batch-{n:03d}.txt', 'w').write('\n\n'.join(batch) + '\n')
+            batch, size = [], 0
+        if stretch:
+            batch.append(stretch)
+            size += len(stretch)
+    print(f'{folder}: {sum(len(w[2]) for ws in windows.values() for w in ws)} findings in {len(stretches)} stretches, in {n} files')
 else:
     sys.exit(__doc__)

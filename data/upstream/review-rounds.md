@@ -29,6 +29,7 @@ done
 | Places | `places/` | `opus` | the places prompt | `batch-NNN.answers.N` |
 | Read-through | see "Reading through" | `sonnet` | the reading prompt | `batch-NNN.findings` |
 | Second read | `reread/` | `opus` | the reading prompt | `batch-NNN.findings` |
+| Flagged lines | `flagged/` | `opus` | the flagged prompt | `hand/flagged-NNN.findings` |
 | Check of a read's changes | outside the repository | `opus` | the check prompt | one file of answers |
 | References | — | `opus` | the references prompt | `references.json` |
 
@@ -203,6 +204,59 @@ Use only the Read and Write tools, and open no other file. Be economical: start 
 and keep your reasoning brief. Quote at most a few words at a time anywhere, your reasoning
 included: a content filter stops replies that copy out long stretches of the translation. When
 done, reply with one line: how many items are better, same and worse.
+```
+
+## The flagged prompt
+
+For one subagent per batch of `review/flagged/`: each batch holds the readers' findings the segmenter
+could not apply, each with the stretch of its text around it. The fixes go to `review/hand/`, where
+they override the readers'. Fill in the name, the batch's path and number of stretches, and the
+answers path.
+
+```
+You are fixing where a Buddhist sutta translation (by <name>) is cut into lines that match the
+Pali original's lines. Readers reported the places in this file as misplaced, but their fixes
+could not be applied as written: most need a neighbouring line changed too.
+
+The file <path> holds <n> places, each a short stretch of one text under its "## <text>" heading,
+line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the translation's text
+    on that line now, or (none)
+
+followed by what the readers reported for it:
+
+    Reported: <key> starts: <words>      the line should start with these words
+    Reported: <key> none                 the line should hold no text
+
+A line's T should say what its S says. For each stretch, work out where each line's text should
+start so that the stretch reads right, and write the fix in full:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+A line's text runs from its first words to the first words of the next line that has text. Every
+line that has text now and that you don't name keeps exactly the words it starts with now, and a
+line with (none) that you don't name stays empty. So name each line whose first words must change,
+and each line that must lose all its text. Name only lines shown in the stretch. Quote only words
+that will be on that line: where it will hold fewer than six words, quote just those, never the
+next line's.
+
+A line can only start after a space or a dash: where words are joined without a space, as in
+"restrained…with", no line can start at the second word, so leave such a place as it is.
+
+The reports point to the problem but may be wrong: follow a report only where it is right, and
+write nothing for a stretch that already reads right. Judge by meaning, not wording. These are not
+errors: different wording, or a different order of words within a line; a line the translator
+leaves out or shortens; several of Sujato's lines given as one sentence that sits on the first of
+them, with (none) on the others; a heading or a number the translator adds at the start of a line.
+
+Read all of the file, in two or three parts, then save your fixes with the Write tool as
+<answers path>, one per line and nothing else. Be token-efficient: use only the Read and Write
+tools, open no file but your batch, run no commands, start no agents, and keep your reasoning
+brief. Quote at most a few words at a time anywhere, your reasoning included: a content filter
+stops replies that copy out long stretches of the translation. When done, reply with one line: how
+many stretches you fixed and how many lines you named.
 ```
 
 ## The places prompt
