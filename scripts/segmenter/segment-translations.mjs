@@ -741,6 +741,8 @@ const UNSURE = 1.0;
 const COARSE_ABOVE = 12000;
 
 const NEG = -1e30;
+// The marks a review may start a line right after with no space between, as none breaks a word.
+const JOINS = /[—–….?!:;,]/;
 
 // Returns the text a page's blocks make, one stream, with its note marks and the places a segment
 // may end: after whitespace, or right after a dash or an ellipsis with no space after it, as Sujato's
@@ -1262,7 +1264,7 @@ function applyDecisions(
         for (let from = text.indexOf(before, Math.max(0, p.start - before.length)); from !== -1 && from < r.end; from = text.indexOf(before, from + 1)) {
           const end = from + before.length;
           const next = end + (/^\s+/.exec(text.slice(end, end + 4))?.[0].length ?? 0);
-          const ends = next > end || /[—–…]$/.test(before);
+          const ends = next > end || JOINS.test(before.at(-1));
           if (ends && next > p.start && next < r.end && (at === -1 || Math.abs(next - r.start) < Math.abs(at - r.start))) at = next;
         }
         if (at === -1) unplaced.push(r.key);
@@ -1306,11 +1308,11 @@ function anchorBefore(text, at) {
   return anchor;
 }
 
-// Returns each line's segment of `text`, whether it ends right after a dash or an ellipsis with no
-// space after it, and the segments joined as they are written: a space after each but those.
+// Returns each line's segment of `text`, whether it ends with no space after it, and the segments
+// joined as they are written: a space after each but those.
 function segmentsOf(results, text) {
   const segText = results.map((r) => text.slice(r.start, r.end).replace(/\s+/g, ' ').trim());
-  const endsJoined = results.map((r) => r.end < text.length && /[—–…]$/.test(text.slice(r.start, r.end)));
+  const endsJoined = results.map((r) => r.end < text.length && JOINS.test(text[r.end - 1]));
   const joined = segText.map((s, i) => (s ? `${s}${endsJoined[i] ? '' : ' '}` : '')).join('').trim();
   return { segText, endsJoined, joined };
 }
@@ -1324,7 +1326,7 @@ function quotedAt(text, words, lo, hi) {
   for (const m of text.slice(lo, hi).matchAll(re)) {
     let at = lo + m.index;
     while (at > lo && /[“‘"'([]/.test(text[at - 1])) at--;
-    if (at === 0 || (at > lo && /[\s—–…]/.test(text[at - 1]))) places.push(at);
+    if (at === 0 || (at > lo && (/\s/.test(text[at - 1]) || JOINS.test(text[at - 1])))) places.push(at);
   }
   return places;
 }
@@ -1716,9 +1718,8 @@ for (const unit of units) {
     applyDecisions(results, stream.text, entry);
     const { segText, endsJoined, joined: got } = segmentsOf(results, stream.text);
 
-    // The text check: the segments, joined as they are written — a space after each but one ending
-    // right after a dash or an unspaced ellipsis — are character for character the page's text read
-    // the second way.
+    // The text check: the segments, joined as they are written — a space after each but one with no
+    // space after it — are character for character the page's text read the second way.
     const page = want.join(' ');
     if (got !== page) {
       let at = 0;

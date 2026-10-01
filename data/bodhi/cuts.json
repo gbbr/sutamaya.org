@@ -17063,7 +17063,8 @@
   "empty": "up"
  },
  "sn1.20:4.2": {
-  "empty": "up"
+  "after": "arth and said to the Venerable Samiddhi:",
+  "placed": true
  },
  "sn12.13:1.11": {
   "after": "t … the six sense bases … name-and-form",
@@ -17908,5 +17909,9 @@
  },
  "sn22.97:6.8": {
   "empty": "up"
+ },
+ "sn1.35:6.2": {
+  "after": " One’s feet and said to the Blessed One:",
+  "placed": true
  }
 }
