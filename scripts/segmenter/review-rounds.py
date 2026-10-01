@@ -18,6 +18,10 @@ Run from the repository's root:
       writes the findings the segmenter's last --findings run couldn't apply, each in the stretch
       of its text around it, line by line beside Sujato's, to review/<folder>/ (flagged/ by
       default), about 60,000 characters to a file
+  scripts/segmenter/review-rounds.py <translator> empty [<folder>]
+      writes each line a read-through leaves out, with Pali but no English of Sujato's or the
+      translation's, in the stretch of its text around it, to review/<folder>/ (empty/ by
+      default), about 60,000 characters to a file
 """
 import glob
 import json
@@ -213,5 +217,50 @@ elif command == 'flagged':
             batch.append(stretch)
             size += len(stretch)
     print(f'{folder}: {sum(len(w[2]) for ws in windows.values() for w in ws)} findings in {len(stretches)} stretches, in {n} files')
+elif command == 'empty':
+    (folder,) = rest or ['empty']
+    stretches, hidden = [], 0
+    for path in sorted(glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True)):
+        theirs = json.load(open(path))
+        beside = path.replace(f'data/{translator}/', 'data/sujato/').replace(f'-en-{translator}.json', '-en-sujato.json')
+        his = json.load(open(beside)) if os.path.exists(beside) else {}
+        pali = json.load(open(path.replace(f'data/{translator}/', 'data/pali/').replace(f'_translation-en-{translator}.json', '_root-pli-ms.json')))
+        if not any(theirs.values()):
+            continue
+        # The lines a read-through shows, and those it leaves out: no English of either, but Pali.
+        rows = []
+        for key, text in theirs.items():
+            s, text, p = his.get(key, '').strip(), ' '.join(re.sub(r'<[^>]+>', '', text).split()), pali.get(key, '').strip()
+            if key.split(':')[1].startswith('0.') or not (s or text or p):
+                continue
+            rows.append((key, f'S: {s}' if s else f'P: {p}', text, not (s or text)))
+        # A sutta's closing, after its last line with English: its number, and a chapter's summary verse.
+        last = {row[0].split(':')[0]: i for i, row in enumerate(rows) if not row[3]}
+        rows = [row for i, row in enumerate(rows) if i <= last.get(row[0].split(':')[0], -1)]
+        # Each left-out line, with two lines either side; overlapping windows join into one stretch.
+        joined = []
+        for i, row in enumerate(rows):
+            if not row[3]:
+                continue
+            hidden += 1
+            lo, hi = max(0, i - 2), min(len(rows) - 1, i + 2)
+            if joined and lo <= joined[-1][1] + 1:
+                joined[-1][1] = hi
+            else:
+                joined.append([lo, hi])
+        for lo, hi in joined:
+            shown = [f'{key} | {said} | T: {text or "(none)"}' for key, said, text, _ in rows[lo:hi + 1]]
+            stretches.append('\n'.join([f'## {os.path.basename(path).split("_")[0]}', *shown]))
+    os.makedirs(f'{REVIEW}/{folder}')
+    batch, size, n = [], 0, 0
+    for stretch in stretches + [None]:
+        if batch and (stretch is None or size + len(stretch) > 60000):
+            n += 1
+            open(f'{REVIEW}/{folder}/batch-{n:03d}.txt', 'w').write('\n\n'.join(batch) + '\n')
+            batch, size = [], 0
+        if stretch:
+            batch.append(stretch)
+            size += len(stretch)
+    print(f'{folder}: {hidden} lines in {len(stretches)} stretches, in {n} files')
 else:
     sys.exit(__doc__)

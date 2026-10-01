@@ -116,7 +116,7 @@ in `data/sujato/`'s layout:
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
-| `review/` | the review rounds, the read-throughs and the list of references |
+| `review/` | the review rounds, the read-throughs, the audit and the list of references |
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
   and not written.
@@ -155,20 +155,28 @@ files here are named.
    A second read, done on the text with the first read's findings kept, has the last word: where
    it names a line an earlier reader named differently, the earlier line stays in its file marked
    `# superseded: `, which the segmenter skips. Otherwise a line two readers disagree on is left out.
+   A read-through lists only lines holding Sujato's English or the translation's, so `empty` puts
+   up the rest, each line Sujato leaves empty with its Pali and the text around it: a translator
+   who gives in full a passage Sujato abbreviates has it there, on the line next door. Its batches
+   are read, tried and judged as a read-through's.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
    reads the pages its own way and compares them with the segmented text and notes word for word:
    anything it shows beyond references, heading numbers and page furniture blocks the commit. Then
-   commit.
+   run `python3 scripts/segmenter/check-integrity.py <translator>`, which checks where the words
+   sit: titles, headings, closing lines, notes, links and markup. Anything it shows is fixed by
+   hand in `review/hand/`, or in the segmenter. Then commit.
+
+An audit measures what the rounds leave: Opus reads a dozen texts drawn at random, every line,
+the left-out ones too. Each translator's is in `review/audit/`, with its draw and its rate.
 
 ## What's left
 
-- Read Bodhi's lines that Sujato leaves empty, about 2,900, with their Pali: the read-throughs
-  never show them, and the audit (`data/bodhi/review/audit/`) found 3 of 14 wrong, his version of
-  an abbreviated passage landing on the line next door.
-- Last, an audit of Thanissaro's translation, as Bodhi's: Opus reads a few texts at random, to
-  measure the errors no reader reported.
+- Texts whose wording repeats almost word for word from section to section, as Thanissaro's
+  AN 3.112 (past, future, present) and MN 111: a finding names a line's start by its words, which
+  occur in every section, so the cut stays where it is. Fixing them needs a finding that names
+  which occurrence it means.
 
 ## Where to look
 
@@ -177,5 +185,7 @@ files here are named.
 | The segmenter and its options | `scripts/segmenter/segment-translations.mjs` |
 | Putting rounds up and keeping their answers | `scripts/segmenter/review-rounds.py` |
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
+| The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
+| The audits | `data/<translator>/review/audit/` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
 | The reader a read-through runs | `.claude/agents/line-reader.md` |

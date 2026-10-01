@@ -175,13 +175,29 @@ for (const [file, urls] of Object.entries(sources)) {
   for (const url of [urls].flat()) pageUid.set(url.replace(/^https?:\/\/www\.dhammatalks\.org/, ''), uidsOf(name)[0]);
 }
 
+// The Dhammapada's chapter for each of its endnotes, by the note's id, from the chapters' links to them.
+const noteChapter = new Map();
+for (const file of Object.keys(sources).filter((f) => f.startsWith('sutta/kn/dhp/'))) {
+  const html = fs.readFileSync(path.join(UPSTREAM, file), 'utf8');
+  for (const [, id] of html.matchAll(/endnotes\.html#(dhp-note\d+)/g)) noteChapter.set(id, uidsOf(path.basename(file, '.html'))[0]);
+}
+// A note no chapter links to belongs to the chapter of the note before it.
+if (fs.existsSync(path.join(UPSTREAM, 'notes/kn/dhp/endnotes.html'))) {
+  let chapter;
+  for (const [, id] of fs.readFileSync(path.join(UPSTREAM, 'notes/kn/dhp/endnotes.html'), 'utf8').matchAll(/\bid="(dhp-note\d+)"/g)) {
+    chapter = noteChapter.get(id) ?? chapter;
+    if (chapter) noteChapter.set(id, chapter);
+  }
+}
+
 // Returns a link's target as the app reads note links: a SuttaCentral link for a text the app
 // holds, else an absolute link to its source.
 function fixHref(href) {
   if (href.startsWith('#')) return null;
   const local = href.replace(/^https?:\/\/www\.dhammatalks\.org/, '');
   const [page, hash] = local.split('#');
-  const uid = pageUid.get(page);
+  // A link to one of the Dhammapada's endnotes opens the chapter that note belongs to.
+  const uid = page.endsWith('/endnotes.html') && noteChapter.has(hash) ? noteChapter.get(hash) : pageUid.get(page);
   if (uid) return `https://suttacentral.net/${uid}${hash ? `#${hash}` : ''}`;
   return local.startsWith('/') ? `https://www.dhammatalks.org${local}` : href;
 }

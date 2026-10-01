@@ -169,6 +169,22 @@ reasoning included: a content filter stops replies that copy out long stretches 
 When done, reply with one line: how many lines you reported.
 ```
 
+### The left-out lines
+
+A read-through leaves out a line that holds neither Sujato's English nor the translation's, and a
+translator's rendering of a passage Sujato abbreviates can sit on the line next to it.
+`review-rounds.py <translator> empty` writes each such line, a sutta's closing aside, in the stretch
+of its text around it, to `review/empty/`. Its batches are read as a read-through's, with the
+reading prompt and this paragraph added before "Your share":
+
+```
+This file shows only stretches of each text, each around one or more lines given as P: with T:
+(none): lines Sujato leaves empty because he abbreviates them. Check those lines first. Where the
+translation renders that Pali on the line above or below, the words belong on the P line: report
+it as starting at them. Where the translation abbreviates or leaves the passage out too, leave the
+line as it is.
+```
+
 ## The check prompt
 
 For one subagent, after a read's findings are tried: 50 of the passing groups in

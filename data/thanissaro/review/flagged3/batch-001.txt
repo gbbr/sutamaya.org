@@ -1,0 +1,153 @@
+## an1.31-40
+an1.32:1.2 | S: A tamed mind is very beneficial.” | T: The mind, when tamed leads to great benefit.”
+an1.33:1.0 | S: 33 | T: (none)
+an1.33:1.1 | S: “Mendicants, I do not see a single thing that is so very harmful as this mind that is not guarded. | T: 1.33 “I don’t envision a single thing that, when unguarded, leads to such great harm as the mind. The mind, when unguarded leads to great harm.”
+an1.33:1.2 | S: An unguarded mind is very harmful.” | T: (none)
+an1.34:1.0 | S: 34 | T: (none)
+Reported: an1.33:1.1 starts: unguarded,
+
+## an1.31-40
+an1.34:1.2 | S: A guarded mind is very beneficial.” | T: The mind, when guarded leads to great benefit.”
+an1.35:1.0 | S: 35 | T: (none)
+an1.35:1.1 | S: “Mendicants, I do not see a single thing that is so very harmful as this mind that is not protected. | T: 1.35 “I don’t envision a single thing that, when unprotected, leads to such great harm as the mind. The mind, when unprotected leads to great harm.”
+an1.35:1.2 | S: An unprotected mind is very harmful.” | T: (none)
+an1.36:1.0 | S: 36 | T: (none)
+Reported: an1.35:1.1 starts: unprotected,
+
+## an1.31-40
+an1.36:1.2 | S: A protected mind is very beneficial.” | T: The mind, when protected leads to great benefit.”
+an1.37:1.0 | S: 37 | T: (none)
+an1.37:1.1 | S: “Mendicants, I do not see a single thing that is so very harmful as this mind that is not restrained. | T: 1.37 “I don’t envision a single thing that, when unrestrained, leads to such great harm as the mind. The mind, when unrestrained leads to great harm.”
+an1.37:1.2 | S: An unrestrained mind is very harmful.” | T: (none)
+an1.38:1.0 | S: 38 | T: (none)
+Reported: an1.37:1.1 starts: unrestrained—
+
+## an1.31-40
+an1.38:1.2 | S: A restrained mind is very beneficial.” | T: The mind, when restrained leads to great benefit.”
+an1.39:1.0 | S: 39 | T: 39.
+an1.39:1.1 | S: “Mendicants, I do not see a single thing that is so very harmful as this mind that is not tamed, guarded, protected, and restrained. | T: “I don’t envision a single thing that—when untamed, unguarded, unprotected, unrestrained—leads to such great harm as the mind.
+an1.39:1.2 | S: An untamed, unguarded, unprotected, and unrestrained mind is very harmful.” | T: The mind—when untamed, unguarded, unprotected, unrestrained—leads to great harm.”
+an1.40:1.0 | S: 40 | T: 40.
+Reported: an1.39:1.1 starts: 39. “I don’t envision a single thing that—
+
+## an4.19
+an4.19:1.1 | S: “Mendicants, there are these four ways of making prejudiced decisions. | T: “There are these four ways of going off course.
+an4.19:1.2 | S: What four? | T: Which four?
+an4.19:1.3 | S: Making decisions prejudiced by favoritism, hostility, stupidity, and cowardice. | T: One goes off course through desire. One goes off course through aversion. One goes off course through delusion. One goes off course through fear.
+an4.19:1.4 | S: These are the four ways of making prejudiced decisions. | T: These are the four ways of going off course.”
+an4.19:2.1 | S: There are these four ways of making unprejudiced decisions. | T: (none)
+an4.19:2.2 | S: What four? | T: (none)
+an4.19:2.3 | S: Making decisions unprejudiced by favoritism, hostility, stupidity, and cowardice. | T: (none)
+an4.19:2.4 | S: These are the four ways of making unprejudiced decisions. | T: (none)
+an4.19:3.1 | S: If you act against the teaching | T: If you—
+an4.19:3.2 | S: out of favoritism, hostility, cowardice, or stupidity, | T: through desire, aversion, delusion, fear— transgress the Dhamma,
+an4.19:3.3 | S: your fame fades away, | T: your honor wanes,
+an4.19:3.4 | S: like the moon in the waning fortnight. | T: as in the dark fortnight, the moon.
+an4.19:4.1 | S: If you don’t act against the teaching | T: “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.” If you don’t—
+an4.19:4.2 | S: out of favoritism, hostility, cowardice, and stupidity, | T: through desire, aversion, delusion, fear— transgress the Dhamma,
+an4.19:4.3 | S: your fame swells, | T: your honor waxes,
+Reported: an4.19:2.1 starts: “There are these four ways of not
+Reported: an4.19:2.4 starts: These are the four ways of not
+Reported: an4.19:4.1 starts: If you don’t— through desire, aversion, delusion,
+
+## dn22
+dn22:11.0 | S: 2. Observing the Feelings | T: B. Feelings
+dn22:11.1 | S: And how does a mendicant meditate observing an aspect of feelings? | T: “And how does a monk remain focused on feelings in & of themselves?
+dn22:11.2 | S: It’s when a mendicant who feels a pleasant feeling knows: ‘I feel a pleasant feeling.’ | T: There is the case where a monk, when feeling a painful feeling, discerns, ‘I am feeling a painful feeling.’
+dn22:11.3 | S: When they feel a painful feeling, they know: ‘I feel a painful feeling.’ | T: When feeling a pleasant feeling, he discerns, ‘I am feeling a pleasant feeling.’
+dn22:11.4 | S: When they feel a neutral feeling, they know: ‘I feel a neutral feeling.’ | T: When feeling a neither-painful-nor-pleasant feeling, he discerns, ‘I am feeling a neither-painful-nor-pleasant feeling.’
+dn22:11.5 | S: When they feel a pleasant feeling of the flesh, they know: ‘I feel a pleasant feeling of the flesh.’ | T: (none)
+Reported: dn22:11.2 starts: When feeling a pleasant feeling, he discerns,
+
+## dn33
+dn33:2.2.57 | S: Furthermore, a mendicant is offensive and contemptuous … | T: “And further, there is the case where a monk is dismissive & antagonistic… is deceitful & pretentious…
+dn33:2.2.58 | S: They’re jealous and stingy … | T: is envious & selfish…
+dn33:2.2.59 | S: They’re devious and deceitful … | T: (none)
+dn33:2.2.60 | S: They have corrupt wishes and wrong view … | T: has evil desires & wrong views…
+dn33:2.2.61 | S: They’re attached to their own views, holding them tight, and refusing to let go. | T: is opinionated, tenacious, & obstinate.
+Reported: dn33:2.2.59 starts: is deceitful & pretentious… is envious & selfish…
+
+## dn33
+dn33:3.1.135 | S: But I say that this is only for those of ethical conduct, not for the unethical. | T: But I say this of a virtuous person, not of an unvirtuous one,
+dn33:3.1.136 | S: And for those free of desire, not those with desire. | T: of one devoid of passion, not of one with passion.
+dn33:3.1.137 | S: The heart’s wish of an ethical person succeeds because of their freedom from desire. | T: A virtuous person’s act of directing awareness succeeds through purity. • “Eight worldly conditions: gain, loss, status, disgrace, censure, praise, pleasure, pain.
+dn33:3.1.138 | S: <b>Eight assemblies:</b> | T: • “Eight assemblies:
+dn33:3.1.139 | S: the assemblies of aristocrats, brahmins, householders, and ascetics. An assembly of the gods of the four great kings. An assembly of the gods of the thirty-three. An assembly of Māras. An assembly of divinities. | T: a noble warrior assembly, a brahman assembly, a householder assembly, a contemplative assembly, a Four Great Kings assembly, a (Devas of the) Thirty-three assembly, a Māra assembly, a Brahmā assembly.
+dn33:3.1.140 | S: <b>Eight worldly conditions:</b> | T: (none)
+dn33:3.1.141 | S: gain and loss, fame and disgrace, blame and praise, pleasure and pain. | T: (none)
+dn33:3.1.142 | S: <b>Eight dimensions of mastery:</b> | T: • “Eight dimensions of (mental) mastery:
+dn33:3.1.143 | S: Perceiving form internally, someone sees forms externally, limited, both pretty and ugly. Mastering them, they perceive: ‘I know and see.’ | T: One percipient of form internally sees forms externally as limited, beautiful & ugly. Mastering them, he is percipient of ‘I know; I see.’
+Reported: dn33:3.1.140 starts: • “Eight worldly conditions:
+Reported: dn33:3.1.141 starts: gain, loss, status, disgrace, censure, praise, pleasure, pain.
+
+## dn33
+dn33:3.3.19 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.20 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “And further, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya.
+dn33:3.3.21 | P: Yaṁpāvuso, bhikkhu dhammakāmo hoti …pe… uḷārapāmojjo. | T: And the fact that he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector. “And further, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+dn33:3.3.22 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.23 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “And further, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all.
+dn33:3.3.24 | P: Yaṁpāvuso, bhikkhu santuṭṭho hoti …pe… parikkhārehi. | T: And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all is a quality creating a protector.
+dn33:3.3.25 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.26 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: (none)
+dn33:3.3.28 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.29 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “And further, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago.
+Reported: dn33:3.3.26 starts: “And further, the monk keeps his persistence
+
+## dn34
+dn34:2.3.18 | S: This too is a quality that serves as protector. | T: (none)
+dn34:2.3.19 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “And further, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya.
+dn34:2.3.20 | P: Yaṁpāvuso, bhikkhu …pe… uḷārapāmojjo. | T: And the fact that he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector. “And further, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+dn34:2.3.21 | S: This too is a quality that serves as protector. | T: (none)
+dn34:2.3.22 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “And further, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all.
+dn34:2.3.23 | P: Yaṁpāvuso, bhikkhu …pe… | T: And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all is a quality creating a protector.
+dn34:2.3.24 | S: This too is a quality that serves as protector. | T: (none)
+dn34:2.3.25 | S: Furthermore, a mendicant is energetic. | T: (none)
+dn34:2.3.27 | S: This too is a quality that serves as protector. | T: (none)
+dn34:2.3.28 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “And further, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago.
+Reported: dn34:2.3.25 starts: “And further, the monk keeps his persistence
+
+## dhp100-115
+dhp105:3 | S: can undo the victory | T: could turn that triumph back into defeat. You could,
+dhp105:4 | S: of such a personage. | T: (none)
+dhp106:1 | S: Rather than a thousandfold sacrifice, | T: (none)
+dhp106:2 | S: every month for a full century, | T: month by month, at a cost of thousands, conduct sacrifices a hundred times,
+dhp106:3 | S: it’s better to honor for a single hour | T: or pay a single moment’s homage to one person, self-cultivated.
+Reported: dhp106:1 starts: You could, month by month, at a cost of
+
+## dhp383-423
+dhp415:2 | S: and have gone forth from lay life; | T: would go forth from home–
+dhp415:3 | S: they’ve ended rebirth in the sensual realm: | T: his sensual passions, becomings,
+dhp415:4 | S: that’s who I declare a brahmin. | T: (none)
+dhp416:1 | S: They’ve given up craving, | T: (none)
+dhp416:2 | S: and have gone forth from lay life; | T: (none)
+dhp416:3 | S: they’ve ended craving to be reborn: | T: totally gone: he’s what I call a brahman.
+dhp416:4 | S: that’s who I declare a brahmin. | T: (none)
+dhp416:5.1 | S: They’ve given up craving, | T: Whoever, abandoning craving here,
+Reported: dhp415:4 starts: he’s what I call a brahman.
+
+## iti84
+iti84:7.1 | S: Following the path so well taught | T: Those who follow the path,
+iti84:7.2 | S: by the unsurpassed caravan leader, | T: well-taught by the Caravan Leader unsurpassed,
+iti84:7.3 | S: those who are diligent in the Holy One’s teaching | T: will put an end to stress right here–
+iti84:7.4 | S: make an end of suffering in this very life.” | T: those heeding the message of the One Well-Gone.
+iti84:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+Reported: iti84:7.3 starts: those heeding the message of the One Well-Gone.
+Reported: iti84:7.4 starts: will put an end to stress right here–
+
+## mn102
+mn102:12.7 | S: Suppose a mutt on a leash was tethered to a strong post or pillar. It would just keeping running and circling around that post or pillar. | T: Just as a dog, tied by a leash to a post or stake, keeps running around and circling around that very post or stake;
+mn102:12.8 | S: In the same way, those ascetics and brahmins, from fear and disgust with substantial reality, just keep running and circling around substantial reality. | T: in the same way, these venerable contemplative & brahmans—through fear of self-identity, through disgust for self-identity—(nevertheless) keep running & circling around self-identity.
+mn102:12.9 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: (none)
+mn102:12.10 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: (none)
+mn102:13.1 | S: Whatever ascetics and brahmins speculate and theorize about the final end, and propose various hypotheses concerning the final end, all of them propose one or other of these five topics. | T: (none)
+mn102:14.1 | S: There are some ascetics and brahmins who speculate and theorize about the first beginning, and propose various hypotheses concerning the first beginning. They propose the following, each insisting that theirs is the only truth and that everything else is wrong. | T: (none)
+Reported: mn102:12.9 starts: With regard to that—fabricated, gross—there is
+Reported: mn102:12.10 starts: Knowing that, seeing the escape from it,
+
+## an1.71-81
+an1.75:1.2 | S: When you apply the mind rationally, the awakening factors arise, or, if they’ve already arisen, they’re fully developed.” | T: (none)
+an1.76:1.0 | S: 76 | T: Increase in Discernment 77.
+an1.76:1.1 | S: “Loss of relatives, mendicants, is a small thing. | T: “Next to nothing, monks, is loss of relatives.
+an1.76:1.2 | S: Wisdom is the worst thing to lose.” | T: This is the worst loss: loss of discernment.”
+an1.77:1.0 | S: 77 | T: 78.
+Reported: an1.76:1.1 starts: 77. “Next to nothing, monks, is loss of

@@ -1,0 +1,461 @@
+## sn44.11
+sn44.11:1.4 | S: “Worthy Kaccāna, does a realized one still exist after death?” | T: “Now then, Master Kaccāna, does the Tathāgata exist after death?”
+sn44.11:1.5 | S: “Vaccha, this has not been declared by the Buddha.” | T: “Vaccha, that has not been declared by the Blessed One: ‘The Tathāgata exists after death.’”
+sn44.11:1.6 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:1.7 | S: “Well then, does a realized one no longer exist after death?” | T: “Well then, Master Kaccāna, does the Tathāgata not exist after death?”
+sn44.11:1.8 | S: “This too has not been declared by the Buddha.” | T: “Vaccha, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’”
+sn44.11:1.9 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:2.1 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: “Then does the Tathāgata both exist and not exist after death?”
+sn44.11:2.2 | S: “This has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’”
+sn44.11:2.3 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:2.4 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: “Well then, does the Tathāgata neither exist nor not exist after death?”
+sn44.11:2.5 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One:
+sn44.11:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.11:3.1 | S: “Worthy Kaccāna, when asked these questions, you say that this has not been declared by the Buddha. | T: “Now, Master Kaccāna, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata does not exist after death.”’ When asked if the Tathāgata both exists and does not exist after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata both exists and does not exist after death.”’ When asked if the Tathāgata neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One:
+sn44.11:3.2 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.4 | P: ‘Kiṁ pana, bho kaccāna, na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.5 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.7 | P: ‘Kiṁ nu kho, bho kaccāna, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.8 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.10 | P: ‘Kiṁ pana, bho kaccāna, neva hoti na na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.11 | P: ‘etampi kho, vaccha, abyākataṁ bhagavatā— | T: (none)
+sn44.11:3.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.11:3.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the contemplative Gotama?”
+
+## sn44.11
+sn44.11:3.17 | S: “Not long, reverend: three years.” | T: “Not long, my friend. Three years.”
+sn44.11:3.18 | S: “One who has learned this much in this time, reverend, has learned a lot, who can say what lies ahead!” | T: “Whoever has gained just this much in this much time has gained a great deal, my friend—to say nothing of what he has thus gone beyond.”
+sn44.11:3.19 | P: Ekādasamaṁ. | T: (none)
+sn44.11:3.20 | P: Abyākatavaggo paṭhamo. | T: (none)
+sn44.11:4.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:4.1 | P: Khemātherī anurādho, | T: (none)
+sn44.11:4.2 | P: sāriputtoti koṭṭhiko; | T: (none)
+sn44.11:4.3 | P: Moggallāno ca vaccho ca, | T: (none)
+sn44.11:4.4 | P: kutūhalasālānando; | T: (none)
+sn44.11:4.5 | P: Sabhiyo ekādasamanti. | T: (none)
+sn44.11:4.6 | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+sn44.11:5.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:5.1 | P: Saḷāyatanavedanā, | T: (none)
+sn44.11:5.2 | P: mātugāmo jambukhādako; | T: (none)
+sn44.11:5.3 | P: Sāmaṇḍako moggallāno, | T: (none)
+sn44.11:5.4 | P: citto gāmaṇi saṅkhataṁ; | T: (none)
+sn44.11:5.5 | P: Abyākatanti dasadhāti. | T: (none)
+sn44.11:5.6 | P: Saḷāyatanavaggo catuttho. | T: (none)
+sn44.11:5.7 | S: The Book of the Six Sense Fields is finished. | T: (none)
+
+## sn44.1
+sn44.1:4.2 | S: “Ma’am, does a realized one still exist after death?” | T: “Now then, lady, does the Tathāgata exist after death?”
+sn44.1:4.3 | S: “Great king, this has not been declared by the Buddha.” | T: “That, great king, has not been declared by the Blessed One: ‘The Tathāgata exists after death.’”
+sn44.1:4.4 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:4.5 | S: “Well then, does a realized one no longer exist after death?” | T: “Well then, lady, does the Tathāgata not exist after death?”
+sn44.1:4.6 | S: “This too has not been declared by the Buddha.” | T: “Great king, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’”
+sn44.1:4.7 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:4.8 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: “Then does the Tathāgata both exist and not exist after death?”
+sn44.1:4.9 | S: “This has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’”
+sn44.1:4.10 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:4.11 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: “Well then, does the Tathāgata neither exist nor not exist after death?”
+sn44.1:4.12 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.1:4.13 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:5.1 | S: “Ma’am, when asked these questions, you say | T: “Now, lady, when asked if the Tathāgata exists after death, you say,
+sn44.1:5.2 | S: that this has not been declared by the Buddha. | T: ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.1:5.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.4 | P: ‘Kiṁ panayye, na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.5 | P: ‘etampi kho, mahārāja, abyākataṁ bhagavatā— | T: (none)
+sn44.1:5.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.7 | P: ‘Kiṁ nu kho, ayye, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.8 | P: ‘abyākataṁ kho etaṁ, mahārāja, bhagavatā— | T: (none)
+sn44.1:5.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.10 | P: ‘Kiṁ panayye, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.11 | P: ‘etampi kho, mahārāja, abyākataṁ bhagavatā— | T: (none)
+sn44.1:5.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.1:6.1 | S: “Well then, Great King, I’ll ask you about this in return, and you can answer as you like. | T: “Very well, then, great king, I will question you in return about this very same matter. Answer as you see fit.
+
+## sn44.1
+sn44.1:6.14 | S: To say that after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists: none of these apply. | T: ‘The Tathāgata exists after death’ doesn’t apply. ‘The Tathāgata doesn’t exist after death’ doesn’t apply. ‘The Tathāgata both exists and doesn’t exist after death’ doesn’t apply. ‘The Tathāgata neither exists nor doesn’t exist after death’ doesn’t apply.
+sn44.1:7.1 | S: Any feeling … | T: “Any feeling…
+sn44.1:7.2 | P: Vedanāsaṅkhāyavimutto, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:7.3 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:7.4 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:8.1 | S: perception … | T: Any perception…
+sn44.1:8.2 | S: choices … | T: Any fabrications…
+sn44.1:8.3 | P: Saṅkhārasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:8.4 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:8.5 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:9.1 | S: consciousness by which a realized one might be described has been cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: “Any consciousness by which one describing the Tathāgata would describe him: That the Tathāgata has abandoned, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+sn44.1:9.2 | S: A realized one is freed from reckoning in terms of consciousness. They’re deep, immeasurable, and hard to fathom, | T: Freed from the classification of consciousness, great king, the Tathāgata is deep, boundless, hard to fathom,
+
+## sn44.1
+sn44.1:9.5 | S: Then King Pasenadi approved and agreed with what the nun Khemā said. Then he rose from his seat, bowed, and respectfully circled her, keeping her on his right, before leaving. | T: Then King Pasenadi Kosala, delighting in & approving of Khemā the nun’s words, got up from his seat, bowed down to her and—keeping her to his right—departed.
+sn44.1:10.1 | S: Then on a later occasion King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. He asked the Buddha exactly the same questions he had asked the nun Khemā, and received the same answers. | T: Then at another time he went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there [he asked the Blessed One the same questions he had asked Khemā the nun, and received precisely the same responses and analogies. Then he exclaimed:]
+sn44.1:10.2 | P: “kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.3 | P: “Abyākataṁ kho etaṁ, mahārāja, mayā: | T: (none)
+sn44.1:10.4 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.5 | P: “Kiṁ pana, bhante, na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.6 | P: “Etampi kho, mahārāja, abyākataṁ mayā: | T: (none)
+sn44.1:10.7 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.8 | P: “Kiṁ nu kho, bhante, hoti ca na ca hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.9 | P: “Abyākataṁ kho etaṁ, mahārāja, mayā: | T: (none)
+sn44.1:10.10 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.11 | P: “Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.12 | P: “Etampi kho, mahārāja, abyākataṁ mayā: | T: (none)
+sn44.1:10.13 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.14 | P: “‘Kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: | T: (none)
+sn44.1:10.15 | P: ‘abyākataṁ kho etaṁ, mahārāja, mayā—hoti tathāgato paraṁ maraṇā’ti vadesi …pe…. | T: (none)
+sn44.1:10.16 | P: “‘Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: | T: (none)
+sn44.1:10.17 | P: ‘etampi kho, mahārāja, abyākataṁ mayā— | T: (none)
+sn44.1:10.18 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:10.19 | P: Ko nu kho, bhante, hetu, ko paccayo, yenetaṁ abyākataṁ bhagavatā”ti? | T: (none)
+sn44.1:11.1 | P: “Tena hi, mahārāja, taññevettha paṭipucchissāmi. Yathā te khameyya tathā naṁ byākareyyāsi. | T: (none)
+sn44.1:11.2 | P: Taṁ kiṁ maññasi, mahārāja, atthi te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti gaṅgāya vālukaṁ gaṇetuṁ— | T: (none)
+sn44.1:11.3 | P: ettakā vālukā iti vā …pe… ettakāni vālukasatasahassāni iti vā”ti? | T: (none)
+sn44.1:11.4 | P: “No hetaṁ, bhante”. | T: (none)
+sn44.1:11.5 | P: “Atthi pana te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti mahāsamudde udakaṁ gaṇetuṁ— | T: (none)
+sn44.1:11.6 | P: ettakāni udakāḷhakāni iti vā …pe… ettakāni udakāḷhakasatasahassāni iti vā”ti? | T: (none)
+sn44.1:11.7 | P: “No hetaṁ, bhante”. | T: (none)
+sn44.1:11.8 | P: “Taṁ kissa hetu”? | T: (none)
+sn44.1:11.9 | P: “Mahā, bhante, samuddo gambhīro appameyyo duppariyogāho. | T: (none)
+sn44.1:11.10 | P: Evameva kho, mahārāja, yena rūpena tathāgataṁ paññāpayamāno paññāpeyya, taṁ rūpaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. | T: (none)
+sn44.1:11.11 | P: Rūpasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:11.12 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:11.13 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti …pe… | T: (none)
+sn44.1:11.14 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:11.15 | P: Yāya vedanāya …pe… | T: (none)
+sn44.1:11.16 | P: yāya saññāya …pe… yehi saṅkhārehi …pe…. | T: (none)
+sn44.1:12.1 | P: Yena viññāṇena tathāgataṁ paññāpayamāno paññāpeyya, taṁ viññāṇaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. | T: (none)
+sn44.1:12.2 | P: Viññāṇasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:12.3 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:12.4 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upetī”ti. | T: (none)
+sn44.1:13.1 | S: He said, “It’s incredible, sir, it’s amazing! | T: “Amazing, lord! Astounding!
+sn44.1:13.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+
+## sn44.3
+sn44.3:2.1 | S: “Reverend Sāriputta, does a realized one still exist after death?” | T: “Now then, friend Sāriputta, does the Tathāgata exist after death?”
+sn44.3:2.2 | S: “Reverend, this has not been declared by the Buddha.” | T: “That, friend, has not been declared by the Blessed One: ‘The Tathāgata exists after death.’”
+sn44.3:2.3 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.3:2.4 | S: “Well then, does a realized one no longer exist after death? … | T: “Well then, friend Sāriputta, does the Tathāgata not exist after death?”
+sn44.3:2.5 | P: “Etampi kho, āvuso, abyākataṁ bhagavatā: | T: “Friend, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’”
+sn44.3:2.6 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.3:2.7 | S: Does a realized one both still exist and no longer exist after death? … | T: “Then does the Tathāgata both exist and not exist after death?” “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’”
+sn44.3:2.8 | P: “Abyākataṁ kho etaṁ, āvuso, bhagavatā: | T: (none)
+sn44.3:2.9 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.3:2.10 | S: Does a realized one neither still exist nor no longer exist after death?” | T: “Well then, does the Tathāgata neither exist nor not exist after death?”
+sn44.3:2.11 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One:
+sn44.3:2.12 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.3:3.1 | S: “Reverend, when asked these questions, you say that they have not been declared by the Buddha. | T: “Now, friend Sāriputta, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.3:3.2 | P: hoti tathāgato paraṁ maraṇā’ti vadesi …pe… | T: (none)
+sn44.3:3.3 | P: ‘kiṁ panāvuso, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: | T: (none)
+sn44.3:3.4 | P: ‘etampi kho, āvuso, abyākataṁ bhagavatā— | T: (none)
+sn44.3:3.5 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.3:3.6 | S: What’s the cause, what’s the reason why they have not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.3:4.1 | S: “Reverend, ‘Does a realized one still exist after death?’ is included in form. | T: “‘The Tathāgata exists after death’ is immersed in form.
+
+## sn44.3
+sn44.3:4.4 | S: ‘Does a realized one neither still exist nor no longer exist after death?’ is included in form. | T: ‘The Tathāgata neither exists nor does not exist after death’ is immersed in form.
+sn44.3:4.5 | S: ‘Does a realized one still exist after death?’ is included in feeling … | T: “‘The Tathāgata exists after death’ is immersed in feeling…
+sn44.3:4.6 | P: Na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. | T: (none)
+sn44.3:4.7 | P: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. | T: (none)
+sn44.3:4.8 | P: Neva hoti na na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. | T: (none)
+sn44.3:4.9 | S: perception … | T: “‘The Tathāgata exists after death’ is immersed in perception…
+sn44.3:4.10 | P: Na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. | T: (none)
+sn44.3:4.11 | P: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. | T: (none)
+sn44.3:4.12 | P: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. | T: (none)
+sn44.3:4.13 | S: choices … | T: “‘The Tathāgata exists after death’ is immersed in fabrication…
+sn44.3:4.14 | P: Na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. | T: (none)
+sn44.3:4.15 | P: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. | T: (none)
+sn44.3:4.16 | P: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. | T: (none)
+sn44.3:4.17 | S: consciousness. | T: “‘The Tathāgata exists after death’ is immersed in consciousness.
+sn44.3:4.18 | S: ‘Does a realized one no longer exist after death?’ is included in consciousness. | T: ‘The Tathāgata does not exist after death’ is immersed in consciousness.
+
+## sn44.4
+sn44.4:1.14 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.4:2.1 | S: Truly knowing and seeing form … | T: “But for one who knows & sees form as it has come to be, who knows & sees the origination of form… the cessation of form… the path of practice leading to the cessation of form, as it has come to be, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.4:2.2 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. | T: (none)
+sn44.4:2.3 | S: feeling … | T: “For one who knows & sees feeling as it has come to be…
+sn44.4:2.4 | S: perception … | T: “For one who knows & sees perception as it has come to be…
+
+## sn44.5
+sn44.5:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.5:1.4 | S: “Reverend, if you’re not rid of greed, desire, fondness, thirst, passion, and craving for form … | T: “For one whose passion for form has not been removed, whose desire… affection… thirst… fever… craving for form has not been removed, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.5:1.5 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa hoti. | T: (none)
+sn44.5:1.6 | S: feeling … | T: “For one whose passion for feeling has not been removed.…
+sn44.5:1.7 | S: perception … | T: “For one whose passion for perception has not been removed.…
+
+## sn44.6
+sn44.6:1.4 | S: “Reverend Koṭṭhita, does a realized one still exist after death?” … | T: “Now then, friend Koṭṭhita, does the Tathāgata exist after death?” “That, friend, has not been declared by the Blessed One: ‘The Tathāgata exists after death.’” “Well then, friend Koṭṭhita, does the Tathāgata not exist after death?” “Friend, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’” “Then does the Tathāgata both exist and not exist after death?” “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’” “Well then, does the Tathāgata neither exist nor not exist after death?” “That too has not been declared by the Blessed One: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.6:1.5 | S: “Reverend, when asked these questions, you say that this has not been declared by the Buddha. | T: “Now, friend Koṭṭhita, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.6:1.6 | P: ‘etampi kho, āvuso, abyākataṁ bhagavatā— | T: (none)
+sn44.6:1.7 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.6:1.8 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.6:2.1 | S: “Reverend, if you like, love, and enjoy form, and don’t truly see the cessation of form, you think ‘a realized one still exists after death’ or | T: “For one who loves form, who is fond of form, who cherishes form, who does not know or see, as it has come to be, the cessation of form, there occurs the thought, ‘The Tathāgata exists after death’ or
+
+## sn44.7
+sn44.7:2.1 | S: “Worthy Moggallāna, is this right: ‘the cosmos is eternal’?” | T: “Now then, Master Moggallāna, is the cosmos eternal?”
+sn44.7:2.2 | S: “Vaccha, this has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One, Vaccha: ‘The cosmos is eternal.’”
+sn44.7:2.3 | P: ‘sassato loko’”ti. | T: (none)
+sn44.7:2.4 | S: “Then is this right: ‘the cosmos is not eternal’ … | T: “Well then, Master Moggallāna, is the cosmos not eternal?”
+sn44.7:2.5 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, that too has not been declared by the Blessed One: ‘The cosmos is not eternal.’”
+sn44.7:2.6 | P: ‘asassato loko’”ti. | T: (none)
+sn44.7:2.7 | S: ‘the cosmos is finite’ … | T: “Then is the cosmos finite?”
+sn44.7:2.8 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.9 | P: ‘antavā loko’”ti. | T: …
+sn44.7:2.10 | S: ‘the cosmos is infinite’ … | T: “Is the cosmos infinite?”
+sn44.7:2.11 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.12 | P: ‘anantavā loko’”ti. | T: …
+sn44.7:2.13 | S: ‘the soul and the body are one and the same’ … | T: “Is the body the same as the soul?”
+sn44.7:2.14 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.15 | P: ‘taṁ jīvaṁ taṁ sarīran’”ti. | T: …
+sn44.7:2.16 | S: ‘the soul is one thing, the body another’ … | T: “Is the body one thing, and the soul another?”
+sn44.7:2.17 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.18 | P: ‘aññaṁ jīvaṁ aññaṁ sarīran’”ti. | T: …
+sn44.7:2.19 | S: ‘a realized one still exists after death’ … | T: “Does the Tathāgata exist after death?”
+sn44.7:2.20 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.21 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: …
+sn44.7:2.22 | S: ‘a realized one no longer exists after death’ … | T: “Does the Tathāgata not exist after death?”
+sn44.7:2.23 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.24 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: …
+sn44.7:2.25 | S: ‘a realized one both still exists and no longer exists after death’ … | T: “Does the Tathāgata both exist and not exist after death?”
+sn44.7:2.26 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: …
+sn44.7:2.27 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.7:2.28 | S: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Does the Tathāgata neither exist nor not exist after death?”
+sn44.7:2.29 | S: “This too has not been declared by the Buddha.” | T: “Vaccha, that too has not been declared by the Blessed One:
+
+## sn44.7
+sn44.7:5.1 | S: Then the wanderer Vacchagotta rose from his seat and went to the Buddha and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn44.7:5.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked the Buddha the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to the Blessed One and received exactly the same explanation).
+sn44.7:5.3 | P: “kiṁ nu kho, bho gotama, sassato loko”ti? | T: (none)
+sn44.7:5.4 | P: “Abyākataṁ kho etaṁ, vaccha, mayā: ‘sassato loko’ti …pe…. | T: (none)
+sn44.7:5.5 | P: “Kiṁ pana, bho gotama, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.7:5.6 | P: “Etampi kho, vaccha, abyākataṁ mayā: | T: (none)
+sn44.7:5.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.7:6.1 | P: “Ko nu kho, bho gotama, hetu ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:6.2 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.7:6.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: (none)
+sn44.7:6.4 | P: Ko pana, bho gotama, hetu ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:6.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.7:6.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.7:7.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: (none)
+sn44.7:7.2 | P: jivhaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: (none)
+sn44.7:7.3 | P: manaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti. | T: (none)
+sn44.7:7.4 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:7.5 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.7:7.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: (none)
+sn44.7:7.7 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho cakkhuṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: (none)
+sn44.7:7.8 | P: jivhaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: (none)
+sn44.7:7.9 | P: manaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati. | T: (none)
+sn44.7:7.10 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:7.11 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.7:8.1 | S: He said, “It’s incredible, worthy Gotama, it’s amazing! | T: “Amazing, Master Gotama! Astounding!
+sn44.7:8.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+
+## sn44.8
+sn44.8:4.1 | S: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to Ven. Mahā Moggallāna and, on arrival, exchanged courteous greetings with him.
+sn44.8:4.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to Ven. Mahā Moggallāna and received exactly the same explanation).
+sn44.8:4.3 | P: “kiṁ nu kho, bho moggallāna, sassato loko”ti? | T: (none)
+sn44.8:4.4 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: ‘sassato loko’ti …pe…. | T: (none)
+sn44.8:4.5 | P: “Kiṁ pana, bho moggallāna, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti? | T: (none)
+sn44.8:4.6 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.8:4.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.8:5.1 | P: “Ko nu kho, bho moggallāna, hetu, ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:5.2 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.8:5.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: (none)
+sn44.8:5.4 | P: Ko pana, bho moggallāna, hetu, ko paccayo yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:5.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:5.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.8:6.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.2 | P: Vedanaṁ attato samanupassanti …pe… | T: (none)
+sn44.8:6.3 | P: saññaṁ …pe… | T: (none)
+sn44.8:6.4 | P: saṅkhāre …pe… | T: (none)
+sn44.8:6.5 | P: viññāṇaṁ attato samanupassanti, viññāṇavantaṁ vā attānaṁ, attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.6 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:6.7 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.8:6.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: (none)
+sn44.8:6.9 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho na rūpaṁ attato samanupassati, na rūpavantaṁ vā attānaṁ, na attani vā rūpaṁ, na rūpasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.10 | P: Na vedanaṁ attato samanupassati …pe… | T: (none)
+sn44.8:6.11 | P: na saññaṁ …pe… | T: (none)
+sn44.8:6.12 | P: na saṅkhāre …pe… | T: (none)
+sn44.8:6.13 | P: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.14 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:6.15 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.8:7.1 | S: He said, “It’s incredible, worthy Moggallāna, it’s amazing. | T: “Amazing, Master Moggallāna! Astounding!
+sn44.8:7.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+
+## sn45.4
+sn45.4:1.7 | S: It’s a vehicle fit for divinity!” | T: What a sublime-looking vehicle!”
+sn45.4:2.1 | S: Then Ānanda wandered for alms in Sāvatthī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened, adding, | T: Then Ven. Ānanda, having gone for alms in Sāvatthī, after the meal, returning from his alms round, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One, “Just now, lord, early in the morning, I adjusted my under robe and—carrying my bowl & outer robes—went into Sāvatthī for alms.
+sn45.4:3.1 | P: “Idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pāvisiṁ. | T: (none)
+sn45.4:3.2 | P: Addasaṁ khvāhaṁ, bhante, jāṇussoṇiṁ brāhmaṇaṁ sabbasetena vaḷavābhirathena sāvatthiyā niyyāyantaṁ. | T: I saw the brahman Jāṇussoṇin leaving Sāvatthī in an all-white chariot drawn by mares.
+sn45.4:3.3 | P: Setā sudaṁ assā yuttā honti setālaṅkārā, seto ratho, setaparivāro, setā rasmiyo, setā patodalaṭṭhi, setaṁ chattaṁ, setaṁ uṇhīsaṁ, setāni vatthāni, setā upāhanā, setāya sudaṁ vālabījaniyā bījīyati. | T: White were the yoked horses, white the ornaments, white the chariot, white the upholstery, white the reins, white the goad, white the canopy, white his turban, white his clothes, white his sandals, and with a white yak-tail fan he was fanned.
+sn45.4:3.4 | P: Tamenaṁ jano disvā evamāha: | T: Seeing him, people were saying, ‘What a sublime vehicle! What a sublime-looking vehicle!’
+sn45.4:3.5 | P: ‘brahmaṁ vata, bho, yānaṁ. | T: (none)
+sn45.4:3.6 | P: Brahmayānarūpaṁ vata, bho’ti. | T: (none)
+sn45.4:3.7 | S: “Sir, can you point out a divine vehicle in this teaching and training?” | T: Is it possible to designate a sublime vehicle in this Dhamma-Vinaya?”
+sn45.4:4.1 | S: “I can, Ānanda,” said the Buddha. | T: “It is possible, Ānanda,” said the Blessed One.
+
+## sn46.26
+sn46.26:1.1 | S: “Mendicants, you should develop the path and the practice that leads to the ending of craving. | T: “Monks, develop the path & practice leading to the ending of craving.
+sn46.26:1.2 | S: And what is the path and the practice that leads to the ending of craving? | T: And which is the path, which is the practice, leading to the ending of craving?
+sn46.26:1.3 | P: Yadidaṁ— | T: (none)
+sn46.26:1.4 | S: It is the seven awakening factors. | T: The seven factors for awakening:
+sn46.26:1.5 | S: What seven? | T: (none)
+
+## sn46.29
+sn46.29:3.3 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+sn46.29:3.4 | S: The ear … nose … tongue … body … | T: “The ear… the nose… the tongue… the body…
+sn46.29:3.5 | P: Etthete uppajjanti saṁyojanavinibandhā ajjhosānā …pe… | T: (none)
+sn46.29:3.6 | S: mind is something that tightens the fetters. | T: the intellect is a thing conducive to the fetters.
+sn46.29:3.7 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+
+## sn46.30
+sn46.30:3.4 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn46.30:4.1 | S: I acquired the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: “I have gained mindfulness as a factor for awakening that—when I have developed & cultivated it—will lead me to such a state that, dwelling by means of it, I will discern, ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’ “I have gained analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening… “I have gained equanimity as a factor for awakening that—
+sn46.30:4.2 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānissāmi …pe… | T: (none)
+sn46.30:4.3 | S: Each of these, when developed and cultivated by me meditating in just such a way, will bring me to such a state that I will understand: | T: when I have developed & cultivated it—will lead me to such as a state that, dwelling by means of it, I will discern,
+sn46.30:4.4 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+
+## sn46.52
+sn46.52:4.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We will learn the meaning of these words in the presence of the Blessed One.”
+sn46.52:4.4 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: So, having gone for alms in Sāvatthī, after the meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn46.52:5.1 | P: “Idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pavisimha. | T: (none)
+sn46.52:5.2 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+sn46.52:5.3 | P: ‘atippago kho tāva sāvatthiyaṁ piṇḍāya carituṁ, | T: (none)
+sn46.52:5.4 | P: yannūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. | T: (none)
+sn46.52:5.5 | P: Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha; upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha. | T: (none)
+sn46.52:5.6 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, aññatitthiyā paribbājakā etadavocuṁ: | T: (none)
+sn46.52:6.1 | P: ‘Samaṇo, āvuso, gotamo sāvakānaṁ evaṁ dhammaṁ deseti “etha tumhe, bhikkhave, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe satta bojjhaṅge yathābhūtaṁ bhāvethā”ti. | T: (none)
+sn46.52:6.2 | P: Mayampi kho, āvuso, sāvakānaṁ evaṁ dhammaṁ desema: | T: (none)
+sn46.52:6.3 | P: “etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe satta bojjhaṅge yathābhūtaṁ bhāvethā”ti. | T: (none)
+sn46.52:6.4 | P: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ—dhammadesanāya vā dhammadesanaṁ, anusāsaniyā vā anusāsanin’ti? | T: (none)
+sn46.52:7.1 | P: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha nappaṭikkosimha, anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: | T: (none)
+sn46.52:7.2 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: (none)
+sn46.52:8.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when wanderers of other sects speak in that way, they should be addressed in this way:
+sn46.52:8.2 | S: ‘But reverends, is there a way in which the five hindrances become ten and the seven awakening factors become fourteen?’ | T: ‘But friends, is there an exposition, following which, the five hindrances become ten, and the seven factors for awakening fourteen?’
+
+## sn46.54
+sn46.54:3.5 | S: Meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will.’ | T: “‘Keep pervading the first direction with an awareness imbued with equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.’
+sn46.54:4.1 | S: We too teach our disciples in just the same way. | T: “Now, friends, we too teach our disciples in this way: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—keep pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will. “‘Keep pervading the first direction with an awareness imbued with compassion.… “‘Keep pervading the first direction with an awareness imbued with empathetic joy.… “‘Keep pervading the first direction with an awareness imbued with equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.’
+sn46.54:4.2 | P: ‘etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: (none)
+sn46.54:4.3 | P: karuṇāsahagatena cetasā … | T: (none)
+sn46.54:4.4 | P: muditāsahagatena cetasā … | T: (none)
+sn46.54:4.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; | T: (none)
+sn46.54:4.6 | P: iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:4.7 | S: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?” | T: “So, friends, what difference, what distinction, what distinguishing factor is there here between Gotama the contemplative and us, when comparing Dhamma teaching with Dhamma teaching, instruction with instruction?”
+sn46.54:5.1 | S: Those mendicants neither approved nor rejected that statement of the wanderers of other religions. | T: Then the monks neither delighted in the words of the wanderers of other sects, nor did they reject them.
+
+## sn46.54
+sn46.54:5.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We will learn the meaning of these words in the presence of the Blessed One.”
+sn46.54:5.4 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: So, having gone for alms in Haliddavasana, after the meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn46.54:6.1 | P: “Idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya haliddavasane piṇḍāya pavisimha. | T: (none)
+sn46.54:6.2 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+sn46.54:6.3 | P: ‘atippago kho tāva haliddavasane piṇḍāya carituṁ. | T: (none)
+sn46.54:7.1 | P: Yannūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha, upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha. | T: (none)
+sn46.54:7.2 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, te aññatitthiyā paribbājakā etadavocuṁ: | T: (none)
+sn46.54:8.1 | P: ‘Samaṇo, āvuso, gotamo sāvakānaṁ evaṁ dhammaṁ deseti: | T: (none)
+sn46.54:8.2 | P: “etha tumhe, bhikkhave, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: (none)
+sn46.54:8.3 | P: karuṇāsahagatena cetasā …pe… | T: (none)
+sn46.54:8.4 | P: muditāsahagatena cetasā …pe… | T: (none)
+sn46.54:8.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:9.1 | P: Mayampi kho, āvuso, sāvakānaṁ evaṁ dhammaṁ desema: | T: (none)
+sn46.54:9.2 | P: ‘etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: (none)
+sn46.54:9.3 | P: karuṇāsahagatena cetasā …pe… | T: (none)
+sn46.54:9.4 | P: muditāsahagatena cetasā …pe… | T: (none)
+sn46.54:9.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:9.6 | P: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ, dhammadesanāya vā dhammadesanaṁ, anusāsaniyā vā anusāsaninti? | T: (none)
+sn46.54:10.1 | P: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha nappaṭikkosimha, anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: | T: (none)
+sn46.54:10.2 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: (none)
+sn46.54:11.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when wanderers of other sects speak in that way, they should be addressed in this way:
+sn46.54:11.2 | S: ‘But reverends, how is the heart’s release by love developed? What is its destination, apex, fruit, and culmination? | T: ‘But how, friends, is awareness-release through goodwill developed, what is its destination, what is its excellence, its fruit, & its consummation?
+
+## sn47.10
+sn47.10:3.1 | S: Then Ānanda educated, encouraged, fired up, and inspired those nuns with a Dhamma talk, after which he rose from his seat and left. | T: (none)
+sn47.10:3.2 | S: Then Ānanda wandered for alms in Sāvatthī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then Ven. Ānanda, having gone for alms in Sāvatthī, after the meal, returning from his alms round, went to the Blessed One. On arrival, having bowed down to him, he sat to one side. As he was sitting there he (reported his conversation with the nuns.)
+sn47.10:4.1 | P: “Idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya yena aññataro bhikkhunupassayo tenupasaṅkamiṁ; upasaṅkamitvā paññatte āsane nisīdiṁ. | T: (none)
+sn47.10:4.2 | P: Atha kho, bhante, sambahulā bhikkhuniyo yenāhaṁ tenupasaṅkamiṁsu; upasaṅkamitvā maṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho, bhante, tā bhikkhuniyo maṁ etadavocuṁ: | T: (none)
+sn47.10:4.3 | P: ‘idha, bhante ānanda, sambahulā bhikkhuniyo catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharantiyo uḷāraṁ pubbenāparaṁ visesaṁ sañjānantī’ti. | T: (none)
+sn47.10:4.4 | P: Evaṁ vuttāhaṁ, bhante, tā bhikkhuniyo etadavocaṁ: | T: (none)
+sn47.10:4.5 | P: ‘evametaṁ, bhaginiyo, evametaṁ, bhaginiyo. | T: (none)
+sn47.10:4.6 | P: Yo hi koci, bhaginiyo, bhikkhu vā bhikkhunī vā catūsu satipaṭṭhānesu suppatiṭṭhitacitto viharati, tassetaṁ pāṭikaṅkhaṁ—uḷāraṁ pubbenāparaṁ visesaṁ sañjānissatī’”ti. | T: (none)
+sn47.10:5.1 | S: “That’s so true, Ānanda! That’s so true! | T: “That’s the way it is, Ānanda. That’s the way it is.
+sn47.10:5.2 | S: Any monk or nun who meditates with their mind firmly established in the four kinds of mindfulness meditation can expect to | T: Any monk or nun who dwells with mind well-established in the four establishings of mindfulness, he/she may be expected to
+
+## sn47.13
+sn47.13:5.1 | S: “Well, Ānanda, when Sāriputta was fully quenched, did he take away your entire spectrum of ethical conduct, of immersion, of wisdom, of freedom, or of the knowledge and vision of freedom?” | T: “But, Ānanda, when he totally unbound, did Sāriputta take the aggregate of virtue along with him? Did he take the aggregate of concentration… discernment… release… the aggregate of knowledge & vision of release along with him?”
+sn47.13:5.2 | S: “No, sir, he did not. | T: “No, lord, when he totally unbound, Ven. Sāriputta didn’t take the aggregate of virtue… concentration… discernment… release… the aggregate of knowledge & vision of release along with him.
+sn47.13:5.3 | P: paññākkhandhaṁ vā …pe… | T: (none)
+sn47.13:5.4 | P: vimuttikkhandhaṁ vā …pe… | T: (none)
+sn47.13:5.5 | P: vimuttiñāṇadassanakkhandhaṁ vā ādāya parinibbuto. | T: (none)
+sn47.13:5.6 | S: But Venerable Sāriputta was my adviser and counselor. He educated, encouraged, fired up, and inspired me. He never tired of teaching the Dhamma, and he supported his spiritual companions. | T: It’s just that he was my instructor & counselor, one who exhorted, urged, roused, & encouraged me. He was tireless in teaching the Dhamma, a help to his companions in the holy life.
+sn47.13:5.7 | S: I remember the nectar of the teaching, the riches of the teaching, the support of the teaching given by Venerable Sāriputta.” | T: We miss the nourishment of his Dhamma, the wealth of his Dhamma, his help in the Dhamma.”
+
+## sn47.19
+sn47.19:3.4 | S: And how do you look after yourself by looking after others? | T: “And how do you watch after yourself when watching after others?
+sn47.19:3.5 | S: By acceptance, harmlessness, love, and sympathy. | T: Through endurance, through harmlessness, through a mind of goodwill, & through sympathy. This is how you watch after yourself when watching after others.
+sn47.19:3.6 | P: evaṁ kho, bhikkhave, paraṁ rakkhanto attānaṁ rakkhati. | T: (none)
+sn47.19:3.7 | S: Thinking ‘I’ll look after myself,’ you should cultivate mindfulness meditation. | T: “The establishing of mindfulness is to be practiced with the thought, ‘I’ll watch after myself.’
+sn47.19:3.8 | S: Thinking ‘I’ll look after others,’ you should cultivate mindfulness meditation. | T: The establishing of mindfulness is to be practiced with the thought, ‘I’ll watch after others.’
+
+## sn47.29
+sn47.29:1.8 | S: ‘Sir, please visit him at his home out of sympathy.’” | T: ‘It would be good if Ven. Ānanda would visit Sirivaḍḍha’s home, out of sympathy for him.’”
+sn47.29:1.9 | S: “Yes, sir,” that man replied. He did as Sirivaḍḍha asked. | T: Responding, “As you say, lord,” to Sirivaḍḍha the householder, the man went to Ven. Ānanda and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said, “Venerable sir, Sirivaḍḍha the householder is diseased, in pain, severely ill. He pays homage with his head to your feet.” Then he said, “It would be good if Ven. Ānanda would visit Sirivaḍḍha’s home, out of sympathy for him.”
+sn47.29:1.10 | P: “sirivaḍḍho, bhante, gahapati ābādhiko dukkhito bāḷhagilāno, so āyasmato ānandassa pāde sirasā vandati. | T: (none)
+sn47.29:1.11 | P: Evañca vadeti: | T: (none)
+sn47.29:1.12 | P: ‘sādhu kira, bhante, āyasmā ānando yena sirivaḍḍhassa gahapatissa nivesanaṁ tenupasaṅkamatu anukampaṁ upādāyā’”ti. | T: (none)
+sn47.29:1.13 | S: Ānanda consented with silence. | T: Ven. Ānanda consented with silence.
+sn47.29:2.1 | S: Then Venerable Ānanda robed up in the morning and, taking his bowl and robe, went to the home of the householder Sirivaḍḍha, sat down on the seat spread out, and said to him: | T: Then Ven. Ānanda—having adjusted his under robe and carrying his bowl & outer robe—went to the home of Sirivaḍḍha the householder. On arrival, he sat down on a seat made ready and said to Sirivaḍḍha the householder:
+
+## sn47.6
+sn47.6:4.2 | S: If you roam inside your own territory, the domain of your fathers, Māra won’t find a vulnerability or get an opportunity. | T: In one who wanders in what is his proper range, his own ancestral territory, Māra gains no opening, Māra gains no foothold.
+sn47.6:4.3 | S: And what is a mendicant’s own territory, the domain of the fathers? | T: And what, for a monk, is his proper range, his own ancestral territory?
+sn47.6:4.4 | P: Yadidaṁ— | T: (none)
+sn47.6:4.5 | S: It’s the four kinds of mindfulness meditation. | T: The four establishings of mindfulness.
+sn47.6:4.6 | S: What four? | T: Which four?
+
+## sn47.7
+sn47.7:3.2 | S: If you roam out of your own territory into the domain of others, Māra will find a vulnerability and get an opportunity. | T: In one who wanders into what is not his proper range and is the territory of others, Māra gains an opening, Māra gains a foothold.
+sn47.7:3.3 | S: And what is not a mendicant’s own territory but the domain of others? | T: And what, for a monk, is not his proper range and is the territory of others?
+sn47.7:3.4 | P: Yadidaṁ— | T: (none)
+sn47.7:3.5 | S: It’s the five kinds of sensual stimulation. | T: The five strings of sensuality.
+sn47.7:3.6 | S: What five? | T: Which five?
+
+## sn47.7
+sn47.7:4.2 | S: If you roam inside your own territory, the domain of your fathers, Māra won’t find a vulnerability and get an opportunity. | T: In one who wanders in what is his proper range, his own ancestral territory, Māra gains no opening, Māra gains no foothold.
+sn47.7:4.3 | S: And what is a mendicant’s own territory, the domain of the fathers? | T: And what, for a monk, is his proper range, his own ancestral territory?
+sn47.7:4.4 | P: Yadidaṁ— | T: (none)
+sn47.7:4.5 | S: It’s the four kinds of mindfulness meditation. | T: The four establishings of mindfulness.
+sn47.7:4.6 | S: What four? | T: Which four?
+
+## sn48.44
+sn48.44:2.2 | S: the faculties of faith, energy, mindfulness, immersion, and wisdom, when developed and cultivated, have freedom from death as their objective, destination, and culmination. | T: the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation.
+sn48.44:2.3 | S: There are those who have not known or seen or understood or realized or experienced this with wisdom. They may rely on faith in this matter. | T: Those who have not known, seen, penetrated, realized, or attained it by means of discernment would have to take it on conviction in others that the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation;
+sn48.44:2.4 | P: saddhindriyaṁ …pe… paññindriyaṁ bhāvitaṁ bahulīkataṁ amatogadhaṁ hoti amataparāyaṇaṁ amatapariyosānaṁ. | T: (none)
+sn48.44:2.5 | S: But there are those who have known, seen, understood, realized, and experienced this with wisdom. They have no doubts or uncertainties in this matter. | T: whereas those who have known, seen, penetrated, realized, & attained it by means of discernment would have no doubt or uncertainty that the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation.
+sn48.44:2.6 | P: saddhindriyaṁ …pe… paññindriyaṁ bhāvitaṁ bahulīkataṁ amatogadhaṁ hoti amataparāyaṇaṁ amatapariyosānaṁ. | T: (none)
+sn48.44:2.7 | S: I have known, seen, understood, realized, and experienced this with wisdom. | T: And as for me, I have known, seen, penetrated, realized, & attained it by means of discernment.
+sn48.44:2.8 | S: I have no doubts or uncertainties that the faculties of faith, energy, mindfulness, immersion, and wisdom, when developed and cultivated, have freedom from death as their objective, destination, and culmination.” | T: I have no doubt or uncertainty that the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation.”
+sn48.44:3.1 | S: “Good, good, Sāriputta! | T: “Excellent, Sāriputta. Excellent.
+sn48.44:3.2 | S: There are those who have not known or seen or understood or realized or experienced this with wisdom. They may rely on faith in this matter. | T: Those who have not known, seen, penetrated, realized, or attained it by means of discernment would have to take it on conviction in others that the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation;
+sn48.44:3.3 | P: saddhindriyaṁ bhāvitaṁ bahulīkataṁ amatogadhaṁ hoti amataparāyaṇaṁ amatapariyosānaṁ …pe… paññindriyaṁ bhāvitaṁ bahulīkataṁ amatogadhaṁ hoti amataparāyaṇaṁ amatapariyosānaṁ. | T: (none)
+sn48.44:3.4 | S: But there are those who have known, seen, understood, realized, and experienced this with wisdom. They have no doubts or uncertainties that | T: whereas those who have known, seen, penetrated, realized, & attained it by means of discernment would have no doubt or uncertainty that
+sn48.44:3.5 | S: the faculties of faith, energy, mindfulness, immersion, and wisdom, when developed and cultivated, have freedom from death as their objective, destination, and culmination.” | T: the faculty of conviction… persistence… mindfulness… concentration… discernment, when developed & pursued, gains a footing in the deathless, has the deathless as its final end & consummation.”
+
+## sn48.8
+sn48.8:1.10 | S: And where should the faculty of mindfulness be seen? | T: “And where is the faculty of mindfulness to be seen?
+sn48.8:1.11 | S: In the four kinds of mindfulness meditation. | T: In the four establishings of mindfulness: Here the faculty of mindfulness is to be seen.
+sn48.8:1.12 | P: ettha satindriyaṁ daṭṭhabbaṁ. | T: (none)
+sn48.8:1.13 | S: And where should the faculty of immersion be seen? | T: “And where is the faculty of concentration to be seen?
+sn48.8:1.14 | S: In the four absorptions. | T: In the four jhānas:
+
+## sn5.10
+sn5.10:6.4 | S: naught but suffering ceases.” | T: Nothing ceases but stress.”
+sn5.10:7.1 | S: Then Māra the Wicked, thinking, “The nun Vajirā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Vajirā the nun knows me”—vanished right there.
+sn5.10:7.2 | P: Bhikkhunīvaggo paṭhamo. | T: (none)
+sn5.10:8.0 | P: Tassuddānaṁ | T: (none)
+sn5.10:8.1 | P: Āḷavikā ca somā ca, | T: (none)
+sn5.10:8.2 | P: Gotamī vijayā saha; | T: (none)
+sn5.10:8.3 | P: Uppalavaṇṇā ca cālā, | T: (none)
+sn5.10:8.4 | P: Upacālā sīsupacālā ca; | T: (none)
+sn5.10:8.5 | P: Selā vajirāya te dasāti. | T: (none)
+sn5.10:8.6 | S: The Linked Discourses on Nuns are complete. | T: (none)

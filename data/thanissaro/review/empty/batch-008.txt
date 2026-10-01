@@ -1,0 +1,405 @@
+## dn2
+dn2:35.11 | S: Having gone forth they’d live restrained in body, speech, and mind, living content with nothing more than food and clothes, delighting in seclusion. | T: Having thus gone forth he lives restrained in body, speech, and mind, content with the simplest food and shelter, delighting in solitude.
+dn2:35.12 | S: And suppose your men were to report all this to you. | T: Then suppose one of your men were to inform you: ‘You should know, your majesty, that that man of yours—your slave, your workman… always watching for the look on your face… has gone forth from the household life into homelessness… content with the simplest food and shelter, delighting in solitude.’
+dn2:35.13 | P: ‘yagghe, deva, jāneyyāsi, yo te so puriso dāso kammakāro pubbuṭṭhāyī pacchānipātī kiṅkārapaṭissāvī manāpacārī piyavādī mukhullokako; | T: (none)
+dn2:35.14 | P: so, deva, kesamassuṁ ohāretvā kāsāyāni vatthāni acchādetvā agārasmā anagāriyaṁ pabbajito. | T: (none)
+dn2:35.15 | P: So evaṁ pabbajito samāno kāyena saṁvuto viharati, vācāya saṁvuto viharati, manasā saṁvuto viharati, ghāsacchādanaparamatāya santuṭṭho, abhirato paviveke’ti. | T: (none)
+dn2:35.16 | S: Would you say to them: | T: Would you, thus informed, say,
+dn2:35.17 | S: ‘Bring that person to me! Let them once more be my bondservant, my worker’?” | T: ‘Bring that man back to me. Make him again be my slave, my workman… always watching for the look on my face!’?”
+
+## dn2
+dn2:37.14 | S: Having gone forth they’d live restrained in body, speech, and mind, living content with nothing more than food and clothes, delighting in seclusion. | T: Having thus gone forth he lives restrained in body, speech, and mind, content with the simplest food and shelter, delighting in solitude.
+dn2:37.15 | S: And suppose your men were to report all this to you. | T: Then suppose one of your men were to inform you: ‘You should know, your majesty, that that man of yours—the farmer, the householder, the taxpayer swelling the royal treasury… has gone forth from the household life into homelessness… content with the simplest food & shelter, delighting in solitude.’
+dn2:37.16 | P: ‘yagghe, deva, jāneyyāsi, yo te so puriso kassako gahapatiko karakārako rāsivaḍḍhako; | T: (none)
+dn2:37.17 | P: so deva kesamassuṁ ohāretvā kāsāyāni vatthāni acchādetvā agārasmā anagāriyaṁ pabbajito. | T: (none)
+dn2:37.18 | P: So evaṁ pabbajito samāno kāyena saṁvuto viharati, vācāya saṁvuto viharati, manasā saṁvuto viharati, ghāsacchādanaparamatāya santuṭṭho, abhirato paviveke’ti. | T: (none)
+dn2:37.19 | S: Would you say to them: | T: Would you, thus informed, say,
+dn2:37.20 | S: ‘Bring that person to me! Let them once more be a farmer, a householder, a hard worker, someone who builds up their capital’?” | T: ‘Bring that man back to me. Make him again be a farmer, a householder, a taxpayer swelling the royal treasury!’?”
+
+## dn2
+dn2:69.3 | S: He would pay off the original loan and have enough left over to support his partner. | T: He repays his old debts and there is extra left over for maintaining his wife.
+dn2:69.4 | S: Thinking about this, | T: The thought would occur to him, ‘Before, taking a loan, I invested it in my business affairs. Now my business affairs have succeeded. I have repaid my old debts and there is extra left over for maintaining my wife.’
+dn2:69.5 | P: ‘ahaṁ kho pubbe iṇaṁ ādāya kammante payojesiṁ. | T: (none)
+dn2:69.6 | P: Tassa me te kammantā samijjhiṁsu. | T: (none)
+dn2:69.7 | P: Sohaṁ yāni ca porāṇāni iṇamūlāni, tāni ca byantiṁ akāsiṁ, atthi ca me uttariṁ avasiṭṭhaṁ dārabharaṇāyā’ti. | T: (none)
+dn2:69.8 | S: he’d be filled with joy and happiness. | T: Because of that he would experience joy and happiness.
+dn2:70.1 | S: Suppose there was a person who was sick, suffering, gravely ill. They’d lose their appetite and get physically weak. | T: “Now suppose that a man falls sick—in pain and seriously ill. He does not enjoy his meals, and there is no strength in his body.
+dn2:70.2 | S: But after some time they’d recover from that illness, and regain their appetite and their strength. | T: As time passes, he eventually recovers from that sickness. He enjoys his meals and there is strength in his body.
+dn2:70.3 | S: Thinking about this, | T: The thought would occur to him, ‘Before, I was sick.… Now I am recovered from that sickness. I enjoy my meals and there is strength in my body.’
+dn2:70.4 | P: ‘ahaṁ kho pubbe ābādhiko ahosiṁ dukkhito bāḷhagilāno; | T: (none)
+dn2:70.5 | P: bhattañca me nacchādesi, na ca me āsi kāye balamattā. | T: (none)
+dn2:70.6 | P: Somhi etarahi tamhā ābādhā mutto; | T: (none)
+dn2:70.7 | P: bhattañca me chādeti, atthi ca me kāye balamattā’ti. | T: (none)
+dn2:70.8 | S: they’d be filled with joy and happiness. | T: Because of that he would experience joy and happiness.
+dn2:71.1 | S: Suppose a person was imprisoned in a jail. | T: “Now suppose that a man is bound in prison.
+dn2:71.2 | S: But after some time they were released from jail, safe and sound, with no loss of wealth. | T: As time passes, he eventually is released from that bondage, safe and sound, with no loss of property.
+dn2:71.3 | S: Thinking about this, | T: The thought would occur to him, ‘Before, I was bound in prison. Now I am released from that bondage, safe and sound, with no loss of my property.’
+dn2:71.4 | P: ‘ahaṁ kho pubbe bandhanāgāre baddho ahosiṁ, somhi etarahi tamhā bandhanāgārā mutto sotthinā abbhayena. | T: (none)
+dn2:71.5 | P: Natthi ca me kiñci bhogānaṁ vayo’ti. | T: (none)
+dn2:71.6 | S: they’d be filled with joy and happiness. | T: Because of that he would experience joy and happiness.
+dn2:72.1 | S: Suppose a person was a bondservant. They would not be their own master, but indentured to another, unable to go where they wish. | T: “Now suppose that a man is a slave, subject to others, not subject to himself, unable to go where he likes.
+dn2:72.2 | S: But after some time they’d be freed from servitude. They would be their own master, not indentured to another, a freeman able to go where they wish. | T: As time passes, he eventually is released from that slavery, subject to himself, not subject to others, freed, able to go where he likes.
+dn2:72.3 | S: Thinking about this, | T: The thought would occur to him, ‘Before, I was a slave.… Now I am released from that slavery, subject to myself, not subject to others, freed, able to go where I like.’
+dn2:72.4 | P: ‘ahaṁ kho pubbe dāso ahosiṁ anattādhīno parādhīno na yenakāmaṅgamo. | T: (none)
+dn2:72.5 | P: Somhi etarahi tamhā dāsabyā mutto attādhīno aparādhīno bhujisso yenakāmaṅgamo’ti. | T: (none)
+dn2:72.6 | S: they’d be filled with joy and happiness. | T: Because of that he would experience joy and happiness.
+dn2:73.1 | S: Suppose there was a person with wealth and property who was traveling along a desert road, which was perilous, with nothing to eat. | T: “Now suppose that a man, carrying money and goods, is traveling by a road through desolate country.
+dn2:73.2 | S: But after some time they crossed over the desert safely, arriving within a village, a sanctuary free of peril. | T: As time passes, he eventually emerges from that desolate country, safe and sound, with no loss of property.
+dn2:73.3 | S: Thinking about this, | T: The thought would occur to him, ‘Before, carrying money and goods, I was traveling by a road through desolate country. Now I have emerged from that desolate country, safe and sound, with no loss of my property.’
+dn2:73.4 | P: ‘ahaṁ kho pubbe sadhano sabhogo kantāraddhānamaggaṁ paṭipajjiṁ dubbhikkhaṁ sappaṭibhayaṁ. | T: (none)
+dn2:73.5 | P: Somhi etarahi taṁ kantāraṁ nitthiṇṇo sotthinā, gāmantaṁ anuppatto khemaṁ appaṭibhayan’ti. | T: (none)
+dn2:73.6 | S: they’d be filled with joy and happiness. | T: Because of that he would experience joy and happiness.
+dn2:74.1 | S: In the same way, as long as these five hindrances are not given up inside themselves, a mendicant regards them as a debt, a disease, a prison, slavery, and a desert crossing. | T: “In the same way, when these five hindrances are not abandoned in himself, the monk regards it as a debt, a sickness, a prison, slavery, a road through desolate country.
+dn2:74.2 | S: But when these five hindrances are given up inside themselves, a mendicant regards this as freedom from debt, good health, release from prison, emancipation, and a place of sanctuary at last. | T: But when these five hindrances are abandoned in himself, he regards it as unindebtedness, good health, release from prison, freedom, a place of security.
+dn2:74.3 | P: evameva kho, mahārāja, bhikkhu ime pañca nīvaraṇe pahīne attani samanupassati. | T: (none)
+dn2:74.4 | S: Seeing that the hindrances have been given up in them, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when blissful, the mind becomes immersed. | T: When he sees that they have been abandoned within him, gladness is born. In one who is gladdened, rapture is born. Enraptured at heart, his body grows calm. His body calm, he is sensitive to pleasure. Feeling pleasure, his mind becomes concentrated.
+dn2:75.0 | S: 4.3.2.5. First Absorption | T: The Four Jhānas
+
+## dn2
+dn2:92.4 | P: sarāgaṁ vā cittaṁ ‘sarāgaṁ cittan’ti pajānāti, | T: He discerns a mind with passion as ‘a mind with passion,’
+dn2:92.5 | P: vītarāgaṁ vā cittaṁ ‘vītarāgaṁ cittan’ti pajānāti, | T: and a mind without passion as ‘a mind without passion’ …
+dn2:92.6 | P: sadosaṁ vā cittaṁ ‘sadosaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.7 | P: vītadosaṁ vā cittaṁ ‘vītadosaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.8 | P: samohaṁ vā cittaṁ ‘samohaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.9 | P: vītamohaṁ vā cittaṁ ‘vītamohaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.10 | P: saṅkhittaṁ vā cittaṁ ‘saṅkhittaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.11 | P: vikkhittaṁ vā cittaṁ ‘vikkhittaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.12 | P: mahaggataṁ vā cittaṁ ‘mahaggataṁ cittan’ti pajānāti, | T: (none)
+dn2:92.13 | P: amahaggataṁ vā cittaṁ ‘amahaggataṁ cittan’ti pajānāti, | T: (none)
+dn2:92.14 | P: sauttaraṁ vā cittaṁ ‘sauttaraṁ cittan’ti pajānāti, | T: (none)
+dn2:92.15 | P: anuttaraṁ vā cittaṁ ‘anuttaraṁ cittan’ti pajānāti, | T: (none)
+dn2:92.16 | P: samāhitaṁ vā cittaṁ ‘samāhitaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.17 | P: asamāhitaṁ vā cittaṁ ‘asamāhitaṁ cittan’ti pajānāti, | T: (none)
+dn2:92.18 | P: vimuttaṁ vā cittaṁ ‘vimuttaṁ cittan’ti pajānāti, | T: a released mind as ‘a released mind,’
+dn2:92.19 | P: avimuttaṁ vā cittaṁ ‘avimuttaṁ cittan’ti pajānāti. | T: and an unreleased mind as ‘an unreleased mind.’
+
+## dn2
+dn2:98.1 | S: Suppose that in a mountain glen there was a lake that was transparent, clear, and unclouded. A person with clear eyes standing on the bank would see the clams and mussels, pebbles and gravel, and schools of fish swimming about or staying still. They’d think: ‘This lake is transparent, clear, and unclouded. And here are the clams and mussels, pebbles and gravel, and schools of fish swimming about or staying still.’ | T: Just as if there were a pool of water in a mountain glen—clear, limpid, & unsullied—where a man with good eyesight standing on the bank could see shells, gravel, and pebbles, and also shoals of fish swimming about and resting, and it would occur to him, ‘This pool of water is clear, limpid, and unsullied. Here are these shells, gravel, and pebbles, and also these shoals of fish swimming about and resting.’
+dn2:98.2 | S: In the same way, when their mind has become immersed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—they project it and extend it toward knowledge of the ending of defilements. | T: In the same way—with his mind thus concentrated, purified, and bright, unblemished, free from defects, pliant, malleable, steady, and attained to imperturbability—the monk directs and inclines it to the knowledge of the ending of effluents. He discerns, as it has come to be, that ‘This is stress… This is the origination of stress… This is the cessation of stress… This is the way leading to the cessation of stress… These are effluents… This is the origination of effluents… This is the cessation of effluents… This is the way leading to the cessation of effluents.’
+dn2:98.3 | P: ‘So idaṁ dukkhan’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. | T: (none)
+dn2:98.4 | P: ‘Ime āsavā’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. | T: (none)
+dn2:98.5 | P: Tassa evaṁ jānato evaṁ passato kāmāsavāpi cittaṁ vimuccati, bhavāsavāpi cittaṁ vimuccati, avijjāsavāpi cittaṁ vimuccati, | T: His heart, thus knowing, thus seeing, is released from the effluent of sensuality, the effluent of becoming, the effluent of ignorance.
+dn2:98.6 | P: vimuttasmiṁ ‘vimuttam’iti ñāṇaṁ hoti, | T: With release, there is the knowledge, ‘Released.’
+
+## dn33
+dn33:1.3.2 | S: bowed, stood to one side, | T: having bowed down to him, stood to one side.
+dn33:1.3.3 | S: and told him of their preparations, saying, | T: As they were standing there they said to him, “Lord, the reception hall has been covered all over with felt rugs, seats have been arranged, a water vessel has been set out, and an oil lamp raised.
+dn33:1.3.4 | P: “sabbasantharisanthataṁ, bhante, sandhāgāraṁ, bhagavato āsanāni paññattāni, udakamaṇiko patiṭṭhāpito, telapadīpo āropito. | T: (none)
+dn33:1.3.5 | S: “Please, sir, come at your convenience.” | T: It is now time for the Blessed One to do as he sees fit.”
+dn33:1.4.1 | S: Then the Buddha robed up and, taking his bowl and robe, went to the new town hall together with the Saṅgha of mendicants. Having washed his feet, he entered the town hall and sat against the central column facing east. | T: So the Blessed One—after adjusting his under robe and carrying his bowl & outer robe—went together with the Saṅgha of monks to the reception hall. On arrival he washed his feet, entered the hall, and sat with his back to the central post, facing east.
+
+## dn33
+dn33:1.6.5 | S: And the Jain Ñātika’s white-clothed lay disciples were disillusioned, dismayed, and disappointed in the Jain ascetics. They were equally disappointed with a teaching and training so poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha, with broken monument and without a refuge. | T: Even the lay disciples of Nigaṇṭha Nāṭaputta, dressed in white, seemed disenchanted, disgusted, & repelled by the Nigaṇṭha Nāṭa-sons, and at how that poorly proclaimed Dhamma-Vinaya was poorly expounded, not leading out, not conducive to calming, expounded by one who was not rightly self-awakened, its foundation [now] broken, without an arbiter.
+dn33:1.7.1 | S: Then Sāriputta told the mendicants about these things. He went on to say, | T: So Ven. Sāriputta addressed the monks, “Friends, Nigaṇṭha Nāṭaputta has recently died in Pāvā. On his death, the Nigaṇṭhas have split into two factions.… Even the lay disciples of Nigaṇṭha Nāṭaputta, dressed in white, seem disenchanted, disgusted, & repelled by the Nigaṇṭha Nāṭa-sons, and at how that poorly proclaimed Dhamma-Vinaya was poorly expounded, not leading out, not conducive to calming, expounded by one who was not rightly self-awakened, its foundation [now] broken, without an arbiter.
+dn33:1.7.2 | P: “nigaṇṭho, āvuso, nāṭaputto pāvāyaṁ adhunākālaṅkato, | T: (none)
+dn33:1.7.3 | P: tassa kālaṅkiriyāya bhinnā nigaṇṭhā dvedhikajātā …pe… bhinnathūpe appaṭisaraṇe. | T: (none)
+dn33:1.7.4 | S: “That’s what happens, reverends, when a teaching and training is poorly explained and poorly propounded, not emancipating, not leading to peace, proclaimed by someone who is not a fully awakened Buddha. | T: “That’s the way it is, friends, with a poorly proclaimed Dhamma-Vinaya, poorly expounded, not leading out, not conducive to calming, expounded by one who is not rightly self-awakened.
+dn33:1.7.5 | S: But this teaching is well explained and well propounded to us by the Blessed One, emancipating, leading to peace, proclaimed by someone who is a fully awakened Buddha. | T: But our Dhamma of the Blessed One is well expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened.
+dn33:1.7.6 | S: You should all recite this in concert, without disputing, so that this spiritual path may last for a long time. That would be for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: So it should all be recited together, without dispute, so that this holy life will endure & last a long time. That will be for the benefit & happiness of many, out of sympathy for the world, for the welfare, benefit, & happiness of devas & human beings.
+dn33:1.7.7 | S: And what is that teaching? | T: “And which is our Dhamma of the Blessed One that is well expounded, leading out, conducive to calming, expounded by one who is rightly self-awakened, that should all be recited together, without dispute, so that this holy life will endure & last a long time, and that will be for the benefit & happiness of many, out of sympathy for the world, for the welfare, benefit, & happiness of devas & human beings?
+dn33:1.7.8 | P: yattha sabbeheva saṅgāyitabbaṁ, na vivaditabbaṁ, yathayidaṁ brahmacariyaṁ addhaniyaṁ assa ciraṭṭhitikaṁ, tadassa bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ? | T: (none)
+dn33:1.7.9.0 | S: 1. Ones | T: Ones
+dn33:1.7.10 | S: There are teachings grouped by one that have been rightly explained by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha. | T: “There is, friends, one dhamma that is rightly expounded by the Blessed One—the one who knows, the one who sees, the Worthy One, rightly self-awakened.
+
+## dn33
+dn33:1.10.63 | S: The Realized One’s behavior by way of body, speech, and mind is pure. He has no misconduct in these three ways that need be hidden, thinking: | T: The Tathāgata, friends, is one of pure bodily conduct. He has no bodily misconduct that he would have to protect (with the thought), ‘Don’t let anyone else know this of me.’ The Tathāgata is one of pure verbal conduct. He has no verbal misconduct that he would have to protect (with the thought), ‘Don’t let anyone else know this of me.’ The Tathāgata is one of pure mental conduct. He has no mental misconduct that he would have to protect (with the thought),
+dn33:1.10.64 | S: ‘Don’t let others find this out about me!’ | T: ‘Don’t let anyone else know this of me.’
+dn33:1.10.65 | P: Parisuddhavacīsamācāro āvuso, tathāgato, natthi tathāgatassa vacīduccaritaṁ, yaṁ tathāgato rakkheyya: | T: (none)
+dn33:1.10.66 | P: ‘mā me idaṁ paro aññāsī’ti. | T: •
+dn33:1.10.67 | P: Parisuddhamanosamācāro, āvuso, tathāgato, natthi tathāgatassa manoduccaritaṁ yaṁ tathāgato rakkheyya: | T: (none)
+dn33:1.10.68 | P: ‘mā me idaṁ paro aññāsī’ti. | T: (none)
+dn33:1.10.69 | S: <b>Three possessions:</b> | T: “Three impediments:
+dn33:1.10.70 | S: greed, hate, and delusion. | T: the impediment of passion, the impediment of aversion, the impediment of delusion.
+
+## dn33
+dn33:1.11.65 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: Any monk who is diligent, deft, alert, & mindful in this is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+dn33:1.11.66 | S: Furthermore, a mendicant is content with any kind of almsfood … | T: “And further, the monk is content with any old almsfood at all. He speaks in praise of being content with any old almsfood at all. He doesn’t, for the sake of almsfood, do anything unseemly or inappropriate. Not getting almsfood, he isn’t agitated. Getting almsfood, he uses it unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them. He doesn’t, on account of his contentment with any old almsfood at all, exalt himself or disparage others. Any monk who is diligent, deft, alert, & mindful in this is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+dn33:1.11.67 | P: Yo hi tattha dakkho analaso sampajāno paṭissato, ayaṁ vuccatāvuso: ‘bhikkhu porāṇe aggaññe ariyavaṁse ṭhito’. | T: (none)
+dn33:1.11.68 | S: Furthermore, a mendicant is content with any kind of lodgings … | T: “And further, the monk is content with any old lodging at all. He speaks in praise of being content with any old lodging at all. He doesn’t, for the sake of lodging, do anything unseemly or inappropriate. Not getting lodging, he isn’t agitated. Getting lodging, he uses it unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them. He doesn’t, on account of his contentment with any old lodging at all, exalt himself or disparage others. Any monk who is diligent, deft, alert, & mindful in this is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+dn33:1.11.69 | P: Yo hi tattha dakkho analaso sampajāno paṭissato, ayaṁ vuccatāvuso: ‘bhikkhu porāṇe aggaññe ariyavaṁse ṭhito’. | T: (none)
+dn33:1.11.70 | S: Furthermore, a mendicant enjoys giving up and loves to give up. They enjoy meditation and love to meditate. But they don’t glorify themselves or put down others on account of their love for giving up and meditation. | T: “And further, the monk finds pleasure & delight in developing (skillful qualities), finds pleasure & delight in abandoning (unskillful qualities). He doesn’t, on account of his pleasure & delight in developing & abandoning, exalt himself or disparage others.
+dn33:1.11.71 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: Any monk who is diligent, deft, alert, & mindful in this is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+
+## dn33
+dn33:2.1.84 | S: <b>Five shackles of the heart:</b> | T: • “Five bondages of awareness:
+dn33:2.1.85 | S: Firstly, a mendicant isn’t free of greed, desire, fondness, thirst, passion, and craving for sensual pleasures. | T: There is the case, friends, where a monk is not free of passion, desire, love, thirst, fever, or craving for sensual pleasures. When a monk is not free of passion, desire, love, thirst, fever, or craving for sensual pleasures,
+dn33:2.1.86 | P: Yo so, āvuso, bhikkhu kāmesu avītarāgo hoti avigatacchando avigatapemo avigatapipāso avigatapariḷāho avigatataṇho, tassa cittaṁ na namati ātappāya anuyogāya sātaccāya padhānāya. | T: (none)
+dn33:2.1.87 | S: This being so, their mind doesn’t incline toward keenness, commitment, persistence, and striving. | T: then his mind doesn’t tend toward ardency, commitment, perseverance, or exertion. When one’s mind doesn’t tend toward ardency, commitment, perseverance, or exertion,
+dn33:2.1.88 | S: This is the first shackle of the heart. | T: that is the first bondage of awareness.
+
+## dn33
+dn33:2.2.80 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+dn33:2.2.81 | P: Aṭṭhānametaṁ, āvuso, anavakāso, yaṁ karuṇāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya, | T: It’s impossible, there is no way that—when compassion has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well-undertaken as an awareness-release—harmfulness would still keep overpowering the mind. That possibility doesn’t exist,
+dn33:2.2.82 | P: atha ca panassa vihesā cittaṁ pariyādāya ṭhassati, netaṁ ṭhānaṁ vijjati. | T: (none)
+dn33:2.2.83 | S: For it is the heart’s release by compassion that is the escape from thoughts of harming.’ | T: for this is the escape from harmfulness: compassion as an awareness-release.’
+dn33:2.2.84 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+
+## dn33
+dn33:2.2.87 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+dn33:2.2.88 | P: Aṭṭhānametaṁ, āvuso, anavakāso, yaṁ muditāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya, | T: It’s impossible, there is no way that—when empathetic joy has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well-undertaken as an awareness-release—resentment would still keep overpowering the mind. That possibility doesn’t exist,
+dn33:2.2.89 | P: atha ca panassa arati cittaṁ pariyādāya ṭhassati, netaṁ ṭhānaṁ vijjati. | T: (none)
+dn33:2.2.90 | S: For it is the heart’s release by rejoicing that is the escape from discontent.’ | T: for this is the escape from resentment: empathetic joy as an awareness-release.’
+dn33:2.2.91 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+
+## dn33
+dn33:3.1.42 | S: They think: | T: The thought occurs to him:
+dn33:3.1.43 | S: ‘I feel a little sick. Lying down would be good for me. I’d better have a lie down.’ | T: ‘I have come down with a slight illness. There’s a need to lie down.’
+dn33:3.1.44 | P: atthi kappo nipajjituṁ, handāhaṁ nipajjāmī’ti. | T: (none)
+dn33:3.1.45 | S: They lie down, and don’t rouse energy … | T: So he lies down. He doesn’t make an effort for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+dn33:3.1.46 | S: This is the seventh ground for laziness. | T: This is the seventh ground for laziness.
+
+## dn33
+dn33:3.1.64 | S: They think: | T: The thought occurs to him:
+dn33:3.1.65 | S: ‘I have to go on a journey. While walking it’s not easy to focus on the instructions of the Buddhas. I’d better preemptively rouse up energy.’ | T: ‘I will have to go on this journey. But when I am going on the journey, it will not be easy to attend to the Buddha’s message. Why don’t I make an effort beforehand for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized?’
+dn33:3.1.66 | P: Handāhaṁ vīriyaṁ ārabhāmi …pe… | T: (none)
+dn33:3.1.67 | S: They rouse up energy … | T: So he makes an effort for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+dn33:3.1.68 | S: This is the third ground for arousing energy. | T: This is the third ground for the arousal of energy.
+
+## dn33
+dn33:3.1.144 | S: This is the first dimension of mastery. | T: This is the first dimension of (mental) mastery.
+dn33:3.1.145 | S: Perceiving form internally, someone sees forms externally, limitless, both pretty and ugly. Mastering them, they perceive: ‘I know and see.’ | T: “One percipient of form internally sees forms externally as immeasurable, beautiful & ugly. Mastering them, he is percipient of ‘I know; I see.’
+dn33:3.1.146 | P: evaṁsaññī hoti. | T: (none)
+dn33:3.1.147 | S: This is the second dimension of mastery. | T: This is the second dimension of (mental) mastery.
+dn33:3.1.148 | S: Not perceiving form internally, someone sees forms externally, limited, both pretty and ugly. Mastering them, they perceive: ‘I know and see.’ | T: “One percipient of the formless internally sees forms externally as limited, beautiful & ugly. Mastering them, he is percipient of ‘I know; I see.’
+
+## dn33
+dn33:3.3.4 | S: <b>Ten qualities that serve as protector:</b> | T: • “Ten qualities creating a protector:
+dn33:3.3.5 | S: Firstly, a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case, friends, where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults. And the fact that he is virtuous… seeing danger in the slightest faults is a quality creating a protector.
+dn33:3.3.6 | P: Yaṁpāvuso, bhikkhu sīlavā hoti, pātimokkhasaṁvarasaṁvuto viharati, ācāragocarasampanno, aṇumattesu vajjesu bhayadassāvī samādāya sikkhati sikkhāpadesu. | T: (none)
+dn33:3.3.7 | S: This is a quality that serves as protector. | T: (none)
+dn33:3.3.8 | S: Furthermore, a mendicant is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: “And further, the monk has heard much, has retained what he has heard, has stored what he has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning and expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views. And the fact that he has heard much… well-penetrated in terms of his views is a quality creating a protector.
+dn33:3.3.9 | P: Yaṁpāvuso, bhikkhu bahussuto hoti …pe… diṭṭhiyā suppaṭividdhā. | T: (none)
+dn33:3.3.10 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.11 | S: Furthermore, a mendicant has good friends, companions, and associates. | T: “And further, the monk has admirable friends, admirable comrades, admirable companions. And the fact that he has admirable friends, admirable comrades, admirable companions is a quality creating a protector.
+dn33:3.3.12 | P: Yaṁpāvuso, bhikkhu kalyāṇamitto hoti kalyāṇasahāyo kalyāṇasampavaṅko. | T: (none)
+dn33:3.3.13 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.14 | S: Furthermore, a mendicant is easy to admonish, having qualities that make them easy to admonish. They’re patient, and take instruction respectfully. | T: “And further, the monk is easy to speak to, endowed with qualities that make him easy to speak to, patient, respectful to instruction. And the fact that he is easy to speak to… respectful to instruction is a quality creating a protector.
+dn33:3.3.15 | P: Yaṁpāvuso, bhikkhu suvaco hoti …pe… padakkhiṇaggāhī anusāsaniṁ. | T: (none)
+dn33:3.3.16 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.17 | S: Furthermore, a mendicant is deft and tireless in a diverse spectrum of duties for their spiritual companions, understanding how to go about things in order to complete and organize the work. | T: “And further, the monk is adept at the various affairs involving his companions in the holy life, is vigorous, quick-witted in the techniques involved in them, is up to doing them or arranging to get them done.
+
+## dn33
+dn33:3.3.19 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.20 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “And further, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya. And the fact that he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector. “And further, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+dn33:3.3.21 | P: Yaṁpāvuso, bhikkhu dhammakāmo hoti …pe… uḷārapāmojjo. | T: (none)
+dn33:3.3.22 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.23 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “And further, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all.
+
+## dn33
+dn33:3.3.25 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.26 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: (none)
+dn33:3.3.27 | P: Yaṁpāvuso, bhikkhu āraddhavīriyo viharati …pe… anikkhittadhuro kusalesu dhammesu. | T: (none)
+dn33:3.3.28 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.29 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “And further, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago. And the fact that he is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done & said a long time ago is a quality creating a protector.
+dn33:3.3.30 | P: Yaṁpāvuso, bhikkhu satimā hoti …pe… saritā anussaritā. | T: (none)
+dn33:3.3.31 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.32 | S: Furthermore, a mendicant is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “And further, the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress. And the fact that the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress—
+dn33:3.3.33 | P: Yaṁpāvuso, bhikkhu paññavā hoti …pe… sammādukkhakkhayagāminiyā. | T: (none)
+dn33:3.3.34 | S: This too is a quality that serves as protector. | T: is a quality creating a protector.
+dn33:3.3.35 | S: <b>Ten universal dimensions of meditation:</b> | T: • “Ten totality-dimensions:
+
+## dn33
+dn33:3.3.81 | S: And how is a mendicant well freed by wisdom? | T: “And how is a monk well-released in discernment?
+dn33:3.3.82 | S: It’s when a mendicant understands: ‘I’ve given up greed, hate, and delusion, cut them off at the root, made them like a palm stump, obliterated them, so they’re unable to arise in the future.’ | T: There is the case where a monk discerns, ‘Passion is abandoned in me, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.’ He discerns, ‘Aversion is abandoned in me, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.’ He discerns, ‘Delusion is abandoned in me, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.’
+dn33:3.3.83 | P: ‘Doso me pahīno ucchinnamūlo tālāvatthukato anabhāvaṅkato āyatiṁ anuppādadhammo’ti pajānāti. | T: (none)
+dn33:3.3.84 | P: ‘Moho me pahīno ucchinnamūlo tālāvatthukato anabhāvaṅkato āyatiṁ anuppādadhammo’ti pajānāti. | T: (none)
+dn33:3.3.85 | S: That’s how a mendicant’s mind is well freed by wisdom. | T: This is how a monk is well-released in discernment.
+dn33:3.3.86 | S: <b>Ten qualities of an adept:</b> | T: • “Ten qualities of one beyond training:
+
+## dn34
+dn34:1.2.29 | S: <b>What one thing should be realized?</b> | T: • “Which one dhamma should be realized?
+dn34:1.2.30 | S: The unshakable release of the heart. | T: Unprovoked release of awareness: This one dhamma should be realized.
+dn34:1.2.31 | P: Ayaṁ eko dhammo sacchikātabbo. | T: (none)
+dn34:1.2.32 | S: So these ten things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These ten dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.3.0 | S: 2. Groups of Two | T: Twos
+
+## dn34
+dn34:1.3.5 | S: <b>What two things should be developed?</b> | T: • “Which two dhammas should be developed?
+dn34:1.3.6 | S: Serenity and discernment. | T: Tranquility & insight: These two dhammas should be developed.
+dn34:1.3.7 | P: Ime dve dhammā bhāvetabbā. | T: (none)
+dn34:1.3.8 | S: <b>What two things should be completely understood?</b> | T: • “Which two dhammas should be comprehended?
+dn34:1.3.9 | S: Name and form. | T: Name & form:
+
+## dn34
+dn34:1.3.11 | S: <b>What two things should be given up?</b> | T: • “Which two dhammas should be abandoned?
+dn34:1.3.12 | S: Ignorance and craving for continued existence. | T: Ignorance & craving for becoming: These two dhammas should be abandoned.
+dn34:1.3.13 | P: Ime dve dhammā pahātabbā. | T: (none)
+dn34:1.3.14 | S: <b>What two things make things worse?</b> | T: • “Which two dhammas are on the side of decline?
+dn34:1.3.15 | S: Being hard to admonish and having bad friends. | T: Being hard to instruct & evil friendship: These two dhammas are on the side of decline.
+dn34:1.3.16 | P: Ime dve dhammā hānabhāgiyā. | T: (none)
+dn34:1.3.17 | S: <b>What two things lead to distinction?</b> | T: • “Which two dhammas are on the side of distinction?
+dn34:1.3.18 | S: Being easy to admonish and having good friends. | T: Being easy to instruct & admirable friendship:
+
+## dn34
+dn34:1.3.24 | S: Two knowledges: | T: Two knowledges:
+dn34:1.3.25 | S: knowledge of ending, and knowledge of non-arising. | T: knowledge of the ending (of the effluents) & knowledge of (their) non-recurrence. These two dhammas should be made to arise.
+dn34:1.3.26 | P: Ime dve dhammā uppādetabbā. | T: (none)
+dn34:1.3.27 | S: <b>What two things should be directly known?</b> | T: • “Which two dhammas should be directly known?
+dn34:1.3.28 | S: Two elements: | T: Two properties:
+
+## dn34
+dn34:1.4.6 | S: Three kinds of immersion. | T: Three concentrations:
+dn34:1.4.7 | S: Immersion with placing the mind and keeping it connected. Immersion without placing the mind, merely keeping it connected. Immersion without placing the mind or keeping it connected. | T: concentration with directed thought & evaluation, concentration without directed thought & with a modicum of evaluation, concentration without directed thought & evaluation. These three dhammas should be developed.
+dn34:1.4.8 | P: Ime tayo dhammā bhāvetabbā. | T: (none)
+dn34:1.4.9 | S: <b>What three things should be completely understood?</b> | T: • “Which three dhammas should be comprehended?
+dn34:1.4.10 | S: Three feelings: | T: Three feelings:
+
+## dn34
+dn34:1.4.14 | S: Three cravings: | T: Three cravings:
+dn34:1.4.15 | S: craving for sensual pleasures, craving for continued existence, and craving for nonexistence. | T: craving for sensuality, craving for becoming, craving for non-becoming. These three dhammas should be abandoned.
+dn34:1.4.16 | P: Ime tayo dhammā pahātabbā. | T: (none)
+dn34:1.4.17 | S: <b>What three things make things worse?</b> | T: • “Which three dhammas are on the side of decline?
+dn34:1.4.18 | S: Three unskillful roots: | T: Three roots of what is unskillful:
+
+## dn34
+dn34:1.4.22 | S: Three skillful roots: | T: Three roots of what is skillful:
+dn34:1.4.23 | S: contentment, love, and understanding. | T: lack of greed as a root of what is skillful, lack of aversion as a root of what is skillful, lack of delusion as a root of what is skillful. These three dhammas are on the side of distinction.
+dn34:1.4.24 | P: Ime tayo dhammā visesabhāgiyā. | T: (none)
+dn34:1.4.25 | S: <b>What three things are hard to comprehend?</b> | T: • “Which three dhammas are hard to penetrate?
+dn34:1.4.26 | S: Three elements of escape. | T: Three properties for escape:
+
+## dn34
+dn34:1.4.30 | S: Three knowledges: | T: Three knowledges:
+dn34:1.4.31 | S: knowledge regarding the past portion, the future portion, and the present portion. | T: knowledge of the past, knowledge of the future, & knowledge of the present. These three dhammas should be made to arise.
+dn34:1.4.32 | P: Ime tayo dhammā uppādetabbā. | T: (none)
+dn34:1.4.33 | S: <b>What three things should be directly known?</b> | T: • “Which three dhammas should be directly known?
+dn34:1.4.34 | S: Three elements: | T: Three properties:
+
+## dn34
+dn34:1.4.38 | S: Three knowledges: | T: Three forms of clear knowing:
+dn34:1.4.39 | S: recollection of past lives, knowledge of the death and rebirth of sentient beings, and knowledge of the ending of defilements. | T: the clear knowing of the knowledge of previous lifetimes, the clear knowing of the knowledge of the passing away & arising of beings, the clear knowing of the knowledge of the ending of the effluents. These three dhammas should be realized.
+dn34:1.4.40 | P: Ime tayo dhammā sacchikātabbā. | T: (none)
+dn34:1.4.41 | S: So these thirty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These thirty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.5.0 | S: 4. Groups of Four | T: Fours
+
+## dn34
+dn34:1.5.10 | S: mind … | T: He remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+dn34:1.5.11 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: He remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world. These four dhammas should be developed.
+dn34:1.5.12 | P: Ime cattāro dhammā bhāvetabbā. | T: (none)
+dn34:1.5.13 | S: <b>What four things should be completely understood?</b> | T: • “Which four dhammas should be comprehended?
+dn34:1.5.14 | S: Four foods: | T: Four nutriments:
+
+## dn34
+dn34:1.5.18 | S: Four floods: | T: Four floods:
+dn34:1.5.19 | S: sensuality, desire for rebirth, views, and ignorance. | T: the flood of sensuality, the flood of becoming, the flood of views, the flood of ignorance. These four dhammas should be abandoned.
+dn34:1.5.20 | P: Ime cattāro dhammā pahātabbā. | T: (none)
+dn34:1.5.21 | S: <b>What four things make things worse?</b> | T: • “Which four dhammas are on the side of decline?
+dn34:1.5.22 | S: Four yokes: | T: Four yokes:
+
+## dn34
+dn34:1.5.34 | S: Four knowledges: | T: Four knowledges:
+dn34:1.5.35 | S: knowledge of the teaching, inferential knowledge, knowledge of encompassing, and conventional knowledge. | T: knowledge with regard to the Dhamma, knowledge with regard to inference, knowledge with regard to encompassing (the minds of others), knowledge of conventions. These four dhammas should be made to arise.
+dn34:1.5.36 | P: Ime cattāro dhammā uppādetabbā. | T: (none)
+dn34:1.5.37 | S: <b>What four things should be directly known?</b> | T: • “Which four dhammas should be directly known?
+dn34:1.5.38 | S: The four noble truths: | T: Four noble truths:
+
+## dn34
+dn34:1.6.33 | S: This being so, their mind doesn’t incline toward keenness, commitment, persistence, and striving. | T: When a monk is angered & unhappy with his fellows in the holy life, his mind rigid & hostile, then his mind doesn’t tend toward ardency, commitment, perseverance, or exertion. When one’s mind doesn’t tend toward ardency, commitment, perseverance, or exertion,
+dn34:1.6.34 | S: This is the fifth kind of hard-heartedness. | T: that is the fifth mental blockage. “These five dhammas are on the side of decline.
+dn34:1.6.35 | P: Ime pañca dhammā hānabhāgiyā. | T: (none)
+dn34:1.6.36 | S: <b>What five things lead to distinction?</b> | T: • “Which five dhammas are on the side of distinction?
+dn34:1.6.37 | S: Five faculties: | T: Five faculties:
+
+## dn34
+dn34:1.6.102 | S: Five spectrums of the teaching: | T: Five dhamma aggregates:
+dn34:1.6.103 | S: ethics, immersion, wisdom, freedom, and knowledge and vision of freedom. | T: the aggregate of virtue, the aggregate of concentration, the aggregate of discernment, the aggregate of release, the aggregate of knowledge & vision of release. These five dhammas should be realized.
+dn34:1.6.104 | P: Ime pañca dhammā sacchikātabbā. | T: (none)
+dn34:1.6.105 | S: So these fifty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These fifty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.7.0 | S: 6. Groups of Six | T: Sixes
+
+## dn34
+dn34:1.7.14 | S: Six topics for recollection: | T: Six objects of recollection:
+dn34:1.7.15 | S: the recollection of the Buddha, the teaching, the Saṅgha, ethics, generosity, and the deities. | T: recollection of the Buddha, recollection of the Dhamma, recollection of the Saṅgha, recollection of virtue, recollection of generosity, recollection of the devas. These six dhammas should be developed.
+dn34:1.7.16 | P: Ime cha dhammā bhāvetabbā. | T: (none)
+dn34:1.7.17 | S: <b>What six things should be completely understood?</b> | T: • “Which six dhammas should be comprehended?
+dn34:1.7.18 | S: Six interior sense fields: | T: Six internal sense media:
+
+## dn34
+dn34:1.7.22 | S: Six classes of craving: | T: Six classes of craving:
+dn34:1.7.23 | S: craving for sights, sounds, smells, tastes, touches, and ideas. | T: craving for forms, craving for sounds, craving for aromas, craving for flavors, craving for tactile sensations, craving for ideas. These six dhammas should be abandoned.
+dn34:1.7.24 | P: Ime cha dhammā pahātabbā. | T: (none)
+dn34:1.7.25 | S: <b>What six things make things worse?</b> | T: • “Which six dhammas are on the side of decline?
+dn34:1.7.26 | S: Six kinds of disrespect. | T: Six types of disrespect:
+
+## dn34
+dn34:1.7.76 | S: Encountering a touch with their body … | T: On sensing a tactile sensation via the body…
+dn34:1.7.77 | S: Knowing an idea with their mind, they’re neither happy nor sad. They remain equanimous, mindful and aware. | T: On cognizing an idea via the intellect, he is neither gladdened nor saddened, but remains equanimous, mindful, & alert. These six dhammas should be made to arise.
+dn34:1.7.78 | P: Ime cha dhammā uppādetabbā. | T: (none)
+dn34:1.7.79 | S: <b>What six things should be directly known?</b> | T: • “Which six dhammas should be directly known?
+dn34:1.7.80 | S: Six unsurpassable things: | T: Six things that are unsurpassed:
+
+## dn34
+dn34:1.7.86 | S: With clairaudience that is purified and superhuman, they hear both kinds of sounds, human and heavenly, whether near or far. | T: “He hears—by means of the divine ear-element, purified & surpassing the human—both kinds of sounds: divine & human, whether near or far.
+dn34:1.7.87 | S: They understand the minds of other beings and individuals, having encompassed them with their own mind. | T: “He discerns the awareness of other beings, other individuals, having encompassed it with his own awareness. He discerns a mind with passion as ‘a mind with passion,’ and a mind without passion as ‘a mind without passion.’ He discerns a mind with aversion as ‘a mind with aversion,’ and a mind without aversion as ‘a mind without aversion.’ He discerns a mind with delusion as ‘a mind with delusion,’ and a mind without delusion as ‘a mind without delusion.’ He discerns a restricted mind as ‘a restricted mind,’ and a scattered mind as ‘a scattered mind.’ He discerns an enlarged mind as ‘an enlarged mind,’ and an unenlarged mind as ‘an unenlarged mind.’ He discerns a surpassed mind [one that is not at the most excellent level] as ‘a surpassed mind,’ and an unsurpassed mind as ‘an unsurpassed mind.’ He discerns a concentrated mind as ‘a concentrated mind,’ and an unconcentrated mind as ‘an unconcentrated mind.’ He discerns a released mind as ‘a released mind,’ and an unreleased mind as ‘an unreleased mind.’
+dn34:1.7.88 | P: sarāgaṁ vā cittaṁ sarāgaṁ cittanti pajānāti …pe… | T: (none)
+dn34:1.7.89 | P: avimuttaṁ vā cittaṁ avimuttaṁ cittanti pajānāti. | T: (none)
+dn34:1.7.90 | S: They recollect many kinds of past lives, with features and details. | T: “He recollects his manifold past lives, i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he recollects his manifold past lives in their modes & details.
+dn34:1.7.91 | S: With clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. They understand how sentient beings pass on according to their deeds. | T: “He sees—by means of the divine eye, purified and surpassing the human—beings passing away & re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus—by means of the divine eye, purified & surpassing the human—he sees beings passing away & re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma.
+dn34:1.7.92 | S: They realize the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: “Through the ending of the effluents, he enters & remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here-&-now. “These six dhammas should be realized.
+dn34:1.7.93 | P: Ime cha dhammā sacchikātabbā. | T: (none)
+dn34:1.7.94 | S: So these sixty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These sixty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.8.0 | S: 7. Groups of Seven | T: Sevens
+
+## dn34
+dn34:1.8.7 | S: Seven awakening factors: | T: Seven factors for awakening:
+dn34:1.8.8 | S: mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: mindfulness as a factor for awakening, analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening. These seven dhammas should be developed.
+dn34:1.8.9 | P: Ime satta dhammā bhāvetabbā. | T: (none)
+dn34:1.8.10 | S: <b>What seven things should be completely understood?</b> | T: • “Which seven dhammas should be comprehended?
+dn34:1.8.11 | S: Seven planes of consciousness. | T: Seven stations of consciousness:
+
+## dn34
+dn34:1.8.28 | S: Seven underlying tendencies: | T: Seven obsessions:
+dn34:1.8.29 | S: sensual desire, aversion, views, doubt, conceit, desire for continued existence, and ignorance. | T: the obsession of sensual passion, the obsession of resistance, the obsession of views, the obsession of uncertainty, the obsession of conceit, the obsession of passion for becoming, the obsession of ignorance. These seven dhammas should be abandoned.
+dn34:1.8.30 | P: Ime satta dhammā pahātabbā. | T: (none)
+dn34:1.8.31 | S: <b>What seven things make things worse?</b> | T: • “Which seven dhammas are on the side of decline?
+dn34:1.8.32 | S: Seven bad qualities: | T: Seven untrue dhammas:
+
+## dn34
+dn34:1.8.44 | S: Seven perceptions: | T: Seven perceptions:
+dn34:1.8.45 | S: the perception of impermanence, the perception of not-self, the perception of ugliness, the perception of drawbacks, the perception of giving up, the perception of fading away, and the perception of cessation. | T: the perception of inconstancy, the perception of not-self, the perception of unattractiveness, the perception of drawbacks, the perception of abandoning, the perception of dispassion, the perception of cessation. These seven dhammas should be made to arise.
+dn34:1.8.46 | P: Ime satta dhammā uppādetabbā. | T: (none)
+dn34:1.8.47 | S: <b>What seven things should be directly known?</b> | T: • “Which seven dhammas should be directly known?
+dn34:1.8.48 | S: Seven qualifications for graduation. | T: Seven grounds for praise:
+
+## dn34
+dn34:1.8.60 | S: This is a power that a mendicant who has ended the defilements relies on to claim: ‘My defilements have ended.’ | T: The fact that—for a monk whose effluents are ended—the inconstancy of all fabrications is well seen, as it has come to be, with right discernment is a strength of a monk whose effluents are ended by which he knows, ‘My effluents are ended.’
+dn34:1.8.61 | S: Furthermore, a mendicant with defilements ended has clearly seen with right wisdom that sensual pleasures are truly like a pit of glowing coals. … | T: “And further, for a monk whose effluents are ended, sensuality is well seen, as it has come to be, with right discernment, as being like a pit of burning embers…
+dn34:1.8.62 | P: Yaṁpāvuso …pe… ‘khīṇā me āsavā’ti. | T: (none)
+dn34:1.8.63 | S: Furthermore, the mind of a mendicant with defilements ended slants, slopes, and inclines to seclusion. They’re withdrawn, loving renunciation, and have totally eliminated defiling influences. … | T: “And further, the heart of a monk whose effluents are ended is bent on seclusion, inclines to seclusion, slopes toward seclusion, delights in renunciation, and is entirely done with the things that would act as causes for the effluents.…
+dn34:1.8.64 | P: Yaṁpāvuso …pe… ‘khīṇā me āsavā’ti. | T: (none)
+dn34:1.8.65 | S: Furthermore, a mendicant with defilements ended has well developed the four kinds of mindfulness meditation. … | T: “And further, for a monk whose effluents are ended, the four establishings of mindfulness are developed, well developed.…
+dn34:1.8.66 | P: Yaṁpāvuso …pe… ‘khīṇā me āsavā’ti. | T: (none)
+dn34:1.8.67 | S: Furthermore, a mendicant with defilements ended has well developed the five faculties. … | T: “And further, for a monk whose effluents are ended, the five faculties are developed, well developed.…
+dn34:1.8.68 | P: Yaṁpāvuso …pe… ‘khīṇā me āsavā’ti. | T: (none)
+dn34:1.8.69 | S: Furthermore, a mendicant with defilements ended has well developed the seven awakening factors. … | T: “And further, for a monk whose effluents are ended, the seven factors for awakening are developed, well developed.…
+dn34:1.8.70 | P: Yaṁpāvuso …pe… ‘khīṇā me āsavā’ti. | T: (none)
+dn34:1.8.71 | S: Furthermore, a mendicant with defilements ended has well developed the noble eightfold path. … | T: “And further, for a monk whose effluents are ended, the noble eightfold path is developed, well developed.
+dn34:1.8.72 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: The fact that—for a monk whose effluents are ended—the noble eightfold path is developed, well developed, is a strength of a monk whose effluents are ended by which he knows,
+dn34:1.8.73 | S: ‘My defilements have ended.’ | T: ‘My effluents are ended.’ “These seven dhammas should be realized.
+dn34:1.8.74 | P: Ime satta dhammā sacchikātabbā. | T: (none)
+dn34:1.8.75 | S: So these seventy things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These seventy dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.8.76 | S: The first recitation section is complete. | T: (none)
+
+## dn34
+dn34:2.1.31 | S: The noble eightfold path, that is: | T: The noble eightfold path, i.e.,
+dn34:2.1.32 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration. These eight dhammas should be developed.
+dn34:2.1.33 | P: Ime aṭṭha dhammā bhāvetabbā. | T: (none)
+dn34:2.1.34 | S: <b>What eight things should be completely understood?</b> | T: • “Which eight dhammas should be comprehended?
+dn34:2.1.35 | S: Eight worldly conditions: | T: Eight worldly conditions:
+
+## dn34
+dn34:2.1.39 | S: Eight wrong ways: | T: Eight forms of wrongness:
+dn34:2.1.40 | S: wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, wrong concentration. These eight dhammas should be abandoned.
+dn34:2.1.41 | P: Ime aṭṭha dhammā pahātabbā. | T: (none)
+dn34:2.1.42 | S: <b>What eight things make things worse?</b> | T: • “Which eight dhammas are on the side of decline?
+dn34:2.1.43 | S: Eight grounds for laziness. | T: Eight grounds for laziness:
+
+## dn34
+dn34:2.1.78 | S: They think: | T: The thought occurs to him:
+dn34:2.1.79 | S: ‘I’ve recently recovered from illness. My body is weak and unfit for work. I’d better have a lie down.’ | T: ‘I have recovered from my illness. It’s not long after my recovery. This body of mine is weak & unsuitable for work. Why don’t I lie down?’
+dn34:2.1.80 | P: Tassa me kāyo dubbalo akammañño, handāhaṁ nipajjāmī’ti. | T: (none)
+dn34:2.1.81 | S: They lie down, and don’t rouse energy … | T: So he lies down. He doesn’t make an effort for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+dn34:2.1.82 | S: This is the eighth ground for laziness. | T: This is the eighth ground for laziness.
+dn34:2.1.83 | P: Ime aṭṭha dhammā hānabhāgiyā. | T: (none)
+dn34:2.1.84 | S: <b>What eight things lead to distinction?</b> | T: “These eight dhammas are on the side of decline. • “Which eight dhammas are on the side of distinction?
+dn34:2.1.85 | S: Eight grounds for arousing energy. | T: Eight grounds for the arousal of energy:
