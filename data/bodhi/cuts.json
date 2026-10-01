@@ -231,7 +231,10 @@
  "an3.64:11.7": " to bellow deeply in an empty cow shed,",
  "an3.65:1.7": "e that is perfectly complete and pure.’",
  "an4.10:4.3": "e does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to the six bases for contact.",
- "an4.14:2.4": "not tolerate an arisen sensual thought;",
+ "an4.14:2.4": {
+  "after": "olerate an arisen thought of ill will …",
+  "placed": true
+ },
  "an4.19:2.4": "course because of desire … as in 4:18 …",
  "an4.23:6.3": " world—\nall in the world just as it is—",
  "an4.34:3.3": "Dhamma have confidence in the foremost,",
@@ -284,7 +287,10 @@
  "dn1:1.4.7": "s friends, how the Exalted One, he who knows and sees, the Worthy One, the perfectly enlightened Buddha, has so thoroughly penetrated the diversity in the dispositions of beings. For this wanderer Suppiya spoke in many ways in dispraise of the Buddha, the Dhamma, and the Sangha,",
  "dn1:1.9.8": " definite and connected with the good.’",
  "dn1:1.11.3": "m roots, stems, joints, buds, and seeds—",
- "dn1:1.22.2": "nderstand the language of animals—\nthe recluse Gotama abstains from such wrong means of livelihood, from such debased arts.’\n“Or he might say: ‘Whereas some recluses and brahmins, while living on the food offered by the faithful, earn their living by a wrong means of livelihood,",
+ "dn1:1.22.2": {
+  "after": "e of animals—\nthe recluse Gotama abstains from such wrong means of livelihood, from such debased arts.’\n“Or he might say: ‘Whereas some recluses and brahmins, while living on the food offered by the faithful, earn their living by a wrong means of livelihood, by such debased arts",
+  "placed": true
+ },
  "dn1:2.24.6": "hould be false, that would distress me,",
  "dn1:3.53.1": "mmortality, non-percipient immortality,",
  "dn15:7.3": "as condition there is clinging.’ How that is so, Ānanda, should be understood in this way: If there were absolutely and utterly no craving of any kind anywhere—",
@@ -1080,7 +1086,10 @@
  "an8.17:1.2": "hus, a woman binds a man in eight ways.",
  "an8.18:1.2": "hus, a man binds a woman in eight ways.",
  "an8.2:8.3": "such its origin, such its passing away;",
- "an8.28:6.1": "bhikkhu with taints destroyed….\n(5)–(8)",
+ "an8.28:6.1": {
+  "after": "fulness. Since that is so, this is a power of a bhikkhu with taints destroyed….",
+  "placed": true
+ },
  "an8.30:3.11": " this eighth thought of a great person:",
  "an8.30:20.2": "nce to this that this was said.\n(7) “When it was said: ‘This Dhamma is for one who is wise, not for one who is unwise,’",
  "an8.30:20.5": "e complete destruction of suffering. When it was said: ‘This Dhamma is for one who is wise, not for one who is unwise,’",
@@ -1385,10 +1394,22 @@
  "sn36.7:8.8": " feel a feeling terminating with life.’",
  "sn4.25:14.4": "nt of the goal, the peace of the heart.",
  "sn4.7:3.2": "e:\n“Within him craving no longer lurks,",
- "sn43.12:4.4": "ioned? Emptiness concentration….”\nvii …",
- "sn43.12:4.7": "ioned? Signless concentration….”\nviii …",
- "sn43.12:6.7": ", applies his mind, and strives….”\nxv …",
- "sn43.12:7.7": "itional formations of striving….”\nxix …",
+ "sn43.12:4.4": {
+  "after": "conditioned? Emptiness concentration….”",
+  "placed": true
+ },
+ "sn43.12:4.7": {
+  "after": "nconditioned? Signless concentration….”",
+  "placed": true
+ },
+ "sn43.12:6.7": {
+  "after": " the abandoning of arisen evil unwholesome states; he makes an effort, arouses energy, applies his mind, and strives….”",
+  "placed": true
+ },
+ "sn43.12:7.7": {
+  "after": " possesses concentration due to energy and volitional formations of striving….”",
+  "placed": true
+ },
  "sn43.12:9.5": {
   "after": "d….”\nxxvii–xxx … “And what, bhikkhus, is the path leading to the unconditioned?",
   "placed": true
@@ -1697,7 +1718,10 @@
  "an4.51:3.1": "ation of mind while using almsfood that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.",
  "an4.51:4.2": "t leads to one’s welfare and happiness.",
  "an4.53:5.3": "es a deva live together with a wretch? Here, the husband is one who abstains from the destruction of life … he does not insult or revile ascetics and brahmins.",
- "an4.61:11.2": "nt of the mind’ and has abandoned them;",
+ "an4.61:11.2": {
+  "after": "‘Longing and unrighteous greed are a defilement of the mind,’ he abandons them.",
+  "placed": true
+ },
  "an4.62:4.2": "And what is the happiness of enjoyment?",
  "an4.62:6.2": "what is the happiness of blamelessness?",
  "an4.62:8.2": "ile seeing things clearly, the wise one",
@@ -1949,7 +1973,10 @@
  "mn41:44.2": "olders of Sālā said to the Blessed One:",
  "mn46:16.2": "of undertaking things that is painful now and ripens in the future as pleasure?",
  "mn47:16.3": "ra or Brahmā or by anyone in the world.",
- "mn52:8.6": "eliverance of mind through altruistic joy is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent,",
+ "mn52:8.6": {
+  "after": "verance of mind through loving-kindness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that,",
+  "placed": true
+ },
  "mn52:12.1": "nce of mind through equanimity is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
  "mn52:13.1": "of the base of infinite space is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One … wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
  "mn52:15.2": "er Dasama of Aṭṭhakanāgara said to him:",
@@ -2257,14 +2284,22 @@
  "sn4.22:1.7": "Perfectly Enlightened One! It is indeed a gain for me, it is well gained by me,",
  "sn4.24:8.6": "would be unable to return to that pond.",
  "sn43.1:2.3": "heir welfare, that I have done for you.",
- "sn43.12:2.10": "ading to the unconditioned….”\niii–viii.",
+ "sn43.12:2.10": {
+  "empty": "down"
+ },
  "sn43.12:3.8": "tion only….”\nv … “And what, bhikkhus, is the path leading to the unconditioned?",
  "sn43.12:5.2": "mindfulness\nix … “And what, bhikkhus, is the path leading to the unconditioned?",
- "sn43.12:5.10": "ading to the unconditioned….”\nxiii–xvi.",
+ "sn43.12:5.10": {
+  "after": " in mind, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world….”",
+  "placed": true
+ },
  "sn43.12:6.11": "strives….”\nxvi … “And what, bhikkhus, is the path leading to the unconditioned?",
  "sn43.12:7.2": "ual power\nxvii … “And what, bhikkhus, is the path leading to the unconditioned?",
  "sn43.12:8.2": " faculties\nxxi … “And what, bhikkhus, is the path leading to the unconditioned?",
- "sn43.12:9.2": "ing to the unconditioned….”\nxxvii–xxx …",
+ "sn43.12:9.2": {
+  "after": "ve powers\nxxvi … “And what, bhikkhus, is the path leading to the unconditioned?",
+  "placed": true
+ },
  "sn43.12:10.3": "the enlightenment factor of mindfulness, which is based upon seclusion, dispassion, and cessation, maturing in release:",
  "sn43.44:1.11": "heir welfare, that I have done for you.",
  "sn44.1:10.19": "‘Great king, I have not declared this.’",
@@ -2331,7 +2366,10 @@
  "sn46.30:2.2": "able sir! It is amazing, venerable sir,",
  "sn46.30:5.2": "s state of being.’”\n“Good, good, Udayī!",
  "sn46.31:2.4": "on, and cessation, maturing in release.",
- "sn46.4:2.9": "ightenment factor of mindfulness,’ it occurs to me, ‘It’s measureless’; it occurs to me, ‘It’s fully perfected.’ While it persists, I understand, ‘It persists.",
+ "sn46.4:2.9": {
+  "after": "persists, I understand, ‘It persists. ’",
+  "placed": true
+ },
  "sn46.4:2.11": " persists, I understand, ‘It persists.’",
  "sn46.4:3.5": "e evening he would wear in the evening.",
  "sn46.5:1.4": "aid to him: “Venerable sir, it is said,",
@@ -2799,7 +2837,9 @@
  "an5.7:1.14": "and welfare, out of compassion for him.",
  "an8.10:2.1": "isplayed anger, hatred, and resentment.",
  "an8.10:2.3": "bhikkhus: “Bhikkhus, eject this person!",
- "an8.10:3.5": "se of the other crops, the good barley.",
+ "an8.10:3.5": {
+  "empty": "up"
+ },
  "an8.11:2.2": "ssed One:\n“I have heard, Master Gotama:",
  "an8.11:13.5": "mous, mindful, one who dwells happily.’",
  "an8.11:15.3": "attained by me in the first watch of the night. Ignorance was dispelled, true knowledge had arisen; darkness was dispelled, light had arisen, as happens when one dwells heedful, ardent, and resolute.",
@@ -2927,7 +2967,9 @@
  "dn2:10.5": "t deceiving me, are you, friend Jīvaka?",
  "dn2:12.4": "as the company of bhikkhus now enjoys!”",
  "dn2:20.10": " advancing forward and no falling back.",
- "dn2:29.5": "uffused with the avoidance of all evil.",
+ "dn2:29.5": {
+  "empty": "up"
+ },
  "dn2:32.5": " questions:\n“Is there no world beyond?”",
  "dn2:40.1": "the Exalted One.\nThe Exalted One spoke:",
  "dn2:44.8": " measured, and connected with the good.",
@@ -3361,7 +3403,9 @@
  "sn11.14:3.4": " he undertook faith, virtue, learning, generosity, and wisdom in the Dhamma and Discipline proclaimed by the Tathagata.",
  "sn11.19:2.3": "uman beings\nHumbly worship you, Vasava.",
  "sn11.22:1.5": "mbled, and complained about it, saying:",
- "sn11.22:2.4": "devas approached Sakka and said to him:",
+ "sn11.22:2.4": {
+  "empty": "down"
+ },
  "sn11.22:3.2": "kha, he announced his name three times:",
  "sn11.4:1.4": " the asuras, addressed the asuras thus:",
  "sn11.4:1.10": "and reviled him with rude, harsh words.",
@@ -3876,8 +3920,14 @@
  "sn4.5:2.2": "One said this:\n“Bhikkhus, I am freed from all snares, both celestial and human.",
  "sn4.5:2.8": "e those who will understand the Dhamma.",
  "sn4.7:1.2": "e Bamboo Grove, the Squirrel Sanctuary.",
- "sn43.12:3.1": "tioned….”\niii–viii. Concentration\niii …",
- "sn43.12:5.11": "ii–xvi. The four right strivings\nxiii …",
+ "sn43.12:3.1": {
+  "after": "unconditioned? Insight: this is called the path leading to the unconditioned….”",
+  "placed": true
+ },
+ "sn43.12:5.11": {
+  "after": "he world….”\nxii … “And what, bhikkhus is the path leading to the unconditioned?",
+  "placed": true
+ },
  "sn43.12:6.2": "strivings\nxiii … “And what, bhikkhus, is the path leading to the unconditioned?",
  "sn43.12:6.5": "itioned….”\nxiv … “And what, bhikkhus, is the path leading to the unconditioned?",
  "sn43.12:6.8": " strives….”\nxv … “And what, bhikkhus, is the path leading to the unconditioned?",
@@ -3894,7 +3944,9 @@
  "sn43.12:11.19": "heir welfare, that I have done for you.",
  "sn44.1:1.5": "asenadi of Kosala addressed a man thus:",
  "sn44.1:3.5": "earned, a splendid speaker, ingenious.’",
- "sn44.1:10.7": " king, I have not declared this either:",
+ "sn44.1:10.7": {
+  "empty": "up"
+ },
  "sn44.1:13.7": "he Blessed One used. It is wonderful, venerable sir! It is amazing, venerable sir! How the meaning and the phrasing of both teacher and disciple coincide and agree with each other and do not diverge, that is, in regard to the chief matter.",
  "sn44.10:2.2": "nerable Ānanda said to the Blessed One:",
  "sn44.3:1.2": "Baraṇasī in the Deer Park at Isipatana.",
@@ -4617,7 +4669,10 @@
  "sn12.15:3.8": "the cessation of volitional formations,",
  "sn12.16:2.2": "s aging-and-death, for its fading away and cessation, one is fit to be called a bhikkhu who is a speaker on the Dhamma.",
  "sn12.17:6.3": "erable sir! Magnificent, venerable sir!",
- "sn12.18:4.8": "the cessation of volitional formations,",
+ "sn12.18:4.8": {
+  "after": "mes cessation of volitional formations;",
+  "placed": true
+ },
  "sn12.18:5.2": "etic Timbaruka said to the Blessed One:",
  "sn12.2:5.2": "rth.\n“And what, bhikkhus, is existence?",
  "sn12.2:9.2": "eling.\n“And what, bhikkhus, is contact?",
@@ -5476,7 +5531,7 @@
   "placed": true
  },
  "mn52:9.1": {
-  "after": "of mind through altruistic joy is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
+  "after": "f mind through loving-kindness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
   "placed": true
  },
  "mn52:5.1": {
@@ -5885,7 +5940,8 @@
   "empty": "stay"
  },
  "sn4.23:1.15": {
-  "after": "ourth time … A fifth time…A sixth time,",
+  "after": "me…A fourth time … A fifth time…A sixth time, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind,",
+  "placed": true,
   "own": true
  },
  "sn4.23:1.16": {
@@ -6020,7 +6076,9 @@
  "an10.18:8.2": "uty of cultivating wholesome qualities.",
  "an10.212:2.11": " in the world no ascetics and brahmins of right conduct and right practice who,",
  "an10.216:5.11": " in the world no ascetics and brahmins of right conduct and right practice who,",
- "an10.216:6.1": "and mind. His bodily kamma is crooked …",
+ "an10.216:6.1": {
+  "empty": "up"
+ },
  "an10.267-746:1.27": {
   "empty": "up"
  },
@@ -6056,7 +6114,9 @@
  "an5.27:1.8": "orcefully suppressing the defilements.’",
  "an5.28:2.6": "ooze; so too, the bhikkhu makes the rapture and happiness born of seclusion drench, steep, fill, and pervade this body,",
  "an5.39:1.3": " to be born in their family. What five?",
- "an5.42:3.4": "d of virtuous behavior and observances.",
+ "an5.42:3.4": {
+  "empty": "down"
+ },
  "an5.48:1.3": ", or by anyone in the world. What five?",
  "an5.5:1.3": "r censure in this very life. What five?",
  "an5.5:2.3": "or praise in this very life. What five?",
@@ -6183,14 +6243,25 @@
   "empty": "up"
  },
  "sn36.8:7.4": "t feeling … all as in preceding sutta …",
- "sn4.19:3.9": "s, Evil One, tactile objects are yours,",
+ "sn4.19:3.9": {
+  "after": "s no body, no tactile objects, no body-contact and its base of consciousness—there is no place for you there, Evil One.",
+  "placed": true
+ },
  "sn4.23:1.5": "Then, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind,",
  "sn4.25:12.2": " the Blessed One and stood to one side.",
  "sn4.6:5.2": "im.\n“Though many creatures crawl about,",
- "sn43.12:2.5": " our instruction to you.”\nii. Insight\n…",
- "sn43.12:2.6": "ou.”\nii. Insight\n… “And what, bhikkhus,",
+ "sn43.12:2.5": {
+  "empty": "down"
+ },
+ "sn43.12:2.6": {
+  "after": " our instruction to you.”\nii. Insight\n…",
+  "placed": true
+ },
  "sn43.12:7.11": "striving….”\nxx … “And what, bhikkhus, is the path leading to the unconditioned?",
- "sn43.12:9.3": "ned….”\nxxvii–xxx … “And what, bhikkhus,",
+ "sn43.12:9.3": {
+  "after": ", a bhikkhu develops the power of faith, which is based upon seclusion, dispassion, and cessation, maturing in release:",
+  "placed": true
+ },
  "sn44.6:6.4": "n of craving as it really is, that thinks: ‘The Tathagata exists after death’ …",
  "sn44.6:7.3": "d you want anything additional to this?",
  "sn44.7:2.16": " ‘The soul and the body are the same.’”",
@@ -6323,8 +6394,7 @@
   "empty": "down"
  },
  "sn44.1:10.10": {
-  "after": "r death.’”\n“How is this, venerable sir?",
-  "placed": true
+  "empty": "up"
  },
  "sn45.4:11.2": {
   "empty": "stay"
@@ -6493,7 +6563,7 @@
   "own": true
  },
  "an10.27:10.8": {
-  "after": "t one, an explanation of one,’ it is with reference to this that this was said.",
+  "after": "s an end of suffering.\n“When it was said: ‘A question about one, a concise statement about one, an explanation of one,’",
   "placed": true
  },
  "an10.27:11.4": {
@@ -6970,7 +7040,8 @@
   "own": true
  },
  "an4.10:10.4": {
-  "empty": "up"
+  "after": "ing entirely understood\nsense pleasures",
+  "placed": true
  },
  "an4.14:3.3": {
   "after": "the enlightenment factor of mindfulness, which is based upon seclusion, dispassion, and cessation, maturing in release.",
@@ -7106,11 +7177,11 @@
   "own": true
  },
  "an4.3:2.6": {
-  "after": "3) Having investigated and scrutinized,",
+  "after": "s about a matter that merits suspicion.",
   "placed": true
  },
  "an4.3:2.7": {
-  "after": "s about a matter that merits suspicion.",
+  "after": "e believes a matter that merits belief.",
   "placed": true
  },
  "an4.3:4.2": {
@@ -7119,7 +7190,8 @@
   "own": true
  },
  "an4.3:4.3": {
-  "empty": "up"
+  "after": "at results in the loss of one’s wealth,",
+  "placed": true
  },
  "an4.3:4.4": {
   "after": "lth,\nthe loss of all, oneself included;",
@@ -7135,9 +7207,7 @@
   "empty": "up"
  },
  "an4.33:3.4": {
-  "after": "as,\nsets in motion the wheel of Dhamma,",
-  "placed": true,
-  "own": true
+  "empty": "down"
  },
  "an4.36:1.2": {
   "after": "n the Blessed One was traveling along the highway between Ukkaṭṭhā and Setavya.",
@@ -7930,7 +8000,7 @@
   "empty": "up"
  },
  "dn1:1.33.7": {
-  "after": "bove) … Thus he recollects his numerous past lives in their modes and their details.\n“He speaks thus: ‘The self and the world are eternal, barren, steadfast as a mountain peak, standing firm like a pillar. And though these beings roam and wander (through the round of existence),",
+  "after": "tion and expansion … (As above) … Thus he recollects his numerous past lives in their modes and their details.\n“He speaks thus: ‘The self and the world are eternal, barren, steadfast as a mountain peak, standing firm like a pillar. And though these beings roam and wander (through the round of existence), pass away and re-arise, yet the self and the world remain the same just like eternity itself.",
   "placed": true,
   "own": true
  },
@@ -8766,7 +8836,7 @@
   "own": true
  },
  "mn20:7.7": {
-  "after": "onstrain him, and crush him, so too…when, with his teeth clenched and his tongue pressed against the roof of his mouth,",
+  "after": "strain him, and crush him, so too…when,",
   "placed": true
  },
  "mn22:8.8": {
@@ -10305,7 +10375,8 @@
   "placed": true
  },
  "sn12.18:2.11": {
-  "empty": "up"
+  "after": "o pleasure and pain?”\n“It is not that there is no pleasure and pain, Timbaruka;",
+  "placed": true
  },
  "sn12.18:2.12": {
   "after": "Timbaruka; there is pleasure and pain.”",
@@ -11773,7 +11844,7 @@
   "own": true
  },
  "sn4.14:4.1": {
-  "after": "action and repulsion.”\nThe Blessed One:",
+  "after": "et caught\nIn attraction and repulsion.”",
   "placed": true
  },
  "sn4.16:4.4": {
@@ -14603,6 +14674,1193 @@
  },
  "sn56.46:4.3": {
   "after": "ions that lead to death, nor in volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.",
+  "placed": true,
+  "own": true
+ },
+ "an10.216:4.1": {
+  "after": "ion is crooked; his rebirth is crooked.",
+  "placed": true
+ },
+ "an10.216:10.1": {
+  "empty": "up"
+ },
+ "an10.216:10.3": {
+  "after": " is straight; his rebirth is straight….",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:11.1": {
+  "after": "t one, an explanation of one,’ it is with reference to this that this was said.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:11.2": {
+  "after": "hat this was said.\n(2) “When it was said: ‘A question about two, a concise statement about two, an explanation of two,’",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:11.3": {
+  "after": "tement about two, an explanation of two,’ with reference to what was this said?",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:11.6": {
+  "after": "fering. What two things? Name and form.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:17.1": {
+  "after": "ven, an explanation of seven,’ it is with reference to this that this was said.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:17.2": {
+  "after": "is was said.\n(8) “When it was said: ‘A question about eight, a concise statement about eight, an explanation of eight,’",
+  "placed": true
+ },
+ "an10.27:17.3": {
+  "after": "nt about eight, an explanation of eight,’ with reference to what was this said?",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:17.4": {
+  "after": "pletely disenchanted with eight things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.",
+  "placed": true
+ },
+ "an10.27:17.5": {
+  "after": "an end of suffering. What eight things?",
+  "placed": true
+ },
+ "an10.27:17.6": {
+  "after": "t things? The eight worldly conditions.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:17.7": {
+  "after": "anted with these eight things … in this very life he makes an end of suffering.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.1": {
+  "after": "ght, an explanation of eight,’ it is with reference to this that this was said.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.2": {
+  "after": " this was said.\n(9) “When it was said: ‘A question about nine, a concise statement about nine, an explanation of nine,’",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.3": {
+  "after": "ment about nine, an explanation of nine,’ with reference to what was this said?",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.4": {
+  "after": "mpletely disenchanted with nine things, completely dispassionate toward them, completely liberated from them, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.5": {
+  "after": " an end of suffering. What nine things?",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.6": {
+  "after": "nine things? The nine abodes of beings.",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:18.7": {
+  "after": "hanted with these nine things … in this very life he makes an end of suffering.",
+  "placed": true
+ },
+ "an10.39:3.1": {
+  "after": " tormented in hell for an eon, Ānanda.”",
+  "placed": true,
+  "own": true
+ },
+ "an10.39:3.2": {
+  "empty": "up"
+ },
+ "an3.36:1.7": {
+  "after": "did not honor the elders of the family.",
+  "placed": true,
+  "own": true
+ },
+ "an3.36:3.4": {
+  "after": "d blotched limbs?’ And the man replies:",
+  "placed": true
+ },
+ "an3.36:5.3": {
+  "after": "h, and mind”?’ —‘No, lord, I could not. I was heedless.’\n“Then King Yama says: ‘Through heedlessness, good man, you failed to do good by body, speech, or mind.",
+  "placed": true,
+  "own": true
+ },
+ "an3.36:7.4": {
+  "empty": "down"
+ },
+ "an3.36:7.5": {
+  "after": ", I am not exempt from illness. Let me now do good by body, speech, and mind”?’—",
+  "placed": true
+ },
+ "an3.36:8.3": {
+  "after": "llness. Let me now do good by body, speech, and mind”?’—‘No, lord, I could not. I was heedless.’\n“Then King Yama says: ‘Through heedlessness, good man, you failed to do good by body, speech, or mind.",
+  "placed": true,
+  "own": true
+ },
+ "an3.36:11.4": {
+  "empty": "down"
+ },
+ "an3.36:11.5": {
+  "after": "th, I am not exempt from death. Let me now do good by body, speech, and mind”?’—",
+  "placed": true
+ },
+ "an3.36:12.3": {
+  "after": " death. Let me now do good by body, speech, and mind”?’—‘No, lord, I could not. I was heedless.’\n“Then King Yama says: ‘Through heedlessness, good man, you failed to do good by body, speech, or mind.",
+  "placed": true,
+  "own": true
+ },
+ "an3.36:17.3": {
+  "after": "ron\nand heated till it glows with fire.",
+  "placed": true,
+  "own": true
+ },
+ "an3.36:17.4": {
+  "empty": "up"
+ },
+ "an3.39:1.6": {
+  "after": "y night a white canopy was held over me",
+  "placed": true
+ },
+ "an3.40:2.4": {
+  "empty": "down"
+ },
+ "an3.40:2.5": {
+  "after": "nd what, bhikkhus, is the world as one’s authority? Here, having gone to the forest, to the foot of a tree, or to an empty hut, a bhikkhu reflects thus: ‘I did not go forth from the household life into homelessness for the sake of a robe …",
+  "placed": true
+ },
+ "an3.40:3.4": {
+  "empty": "down"
+ },
+ "an3.40:3.5": {
+  "after": "d what, bhikkhus, is the Dhamma as one’s authority? Here, having gone to the forest, to the foot of a tree, or to an empty hut, a bhikkhu reflects thus: ‘I did not go forth from the household life into homelessness for the sake of a robe …",
+  "placed": true
+ },
+ "an3.50:3.5": {
+  "after": " Here, a master thief depends on kings or royal ministers. He thinks: ‘If anyone accuses me of anything, these kings or royal ministers will dismiss the case.’",
+  "placed": true,
+  "own": true
+ },
+ "an3.50:7.5": {
+  "after": "Here, an evil bhikkhu depends on kings or royal ministers. He thinks: ‘If anyone accuses me of anything, these kings or royal ministers will dismiss the case.’",
+  "placed": true,
+  "own": true
+ },
+ "an4.10:1.6": {
+  "after": ", someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to sensual pleasures.",
+  "placed": true
+ },
+ "an4.10:2.3": {
+  "after": "someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to states of existence.",
+  "placed": true
+ },
+ "an4.10:3.3": {
+  "after": "d as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to views.",
+  "placed": true
+ },
+ "an4.10:5.6": {
+  "after": "ty? Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to sensual pleasures.",
+  "placed": true
+ },
+ "an4.10:6.3": {
+  "after": "? Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to states of existence.",
+  "placed": true
+ },
+ "an4.10:7.3": {
+  "after": "s as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to views.",
+  "placed": true
+ },
+ "an4.10:8.3": {
+  "after": ", someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to the six bases for contact.",
+  "placed": true
+ },
+ "an4.10:11.3": {
+  "after": " bond of views\nand dissolved ignorance,",
+  "placed": true,
+  "own": true
+ },
+ "an4.10:11.4": {
+  "after": "ance,\nthe sages have severed all bonds;",
+  "placed": true
+ },
+ "an4.11:3.1": {
+  "after": "continuously lazy and lacking in energy while walking.\n(2) “If a sensual thought … arises in a bhikkhu while standing …",
+  "placed": true,
+  "own": true
+ },
+ "an4.11:4.1": {
+  "after": "acking in energy while walking.\n(2) “If a sensual thought … arises in a bhikkhu while standing … (3) If a sensual thought … arises in a bhikkhu while sitting …",
+  "placed": true
+ },
+ "an4.11:7.1": {
+  "after": "and continuously energetic and resolute while walking.\n(2) “If a sensual thought … arises in a bhikkhu while standing …",
+  "placed": true,
+  "own": true
+ },
+ "an4.11:8.1": {
+  "after": "tic and resolute while walking.\n(2) “If a sensual thought … arises in a bhikkhu while standing … (3) If a sensual thought … arises in a bhikkhu while sitting …",
+  "placed": true
+ },
+ "an4.12:4.1": {
+  "after": "f longing and ill will while standing …",
+  "placed": true
+ },
+ "an4.14:2.3": {
+  "after": " it, terminates it, and obliterates it.",
+  "placed": true,
+  "own": true
+ },
+ "an4.14:5.3": {
+  "after": "bandonment,\ndevelopment and protection:",
+  "placed": true,
+  "own": true
+ },
+ "an4.14:5.4": {
+  "after": "nt and protection:\nthese four strivings",
+  "placed": true
+ },
+ "an4.28:5.2": {
+  "after": " dwells in the east he vanquishes discontent, discontent does not vanquish him;",
+  "placed": true
+ },
+ "an4.28:5.3": {
+  "after": " dwells in the west he vanquishes discontent, discontent does not vanquish him;",
+  "placed": true,
+  "own": true
+ },
+ "an4.28:5.4": {
+  "after": "dwells in the north he vanquishes discontent, discontent does not vanquish him;",
+  "placed": true
+ },
+ "an4.3:1.7": {
+  "after": "ious about a matter that merits belief.",
+  "placed": true
+ },
+ "an4.30:2.2": {
+  "after": "se wanderers: “Wanderers, there are these four Dhamma factors that are primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.",
+  "placed": true,
+  "own": true
+ },
+ "an4.30:2.3": {
+  "after": " wise ascetics and brahmins. What four?",
+  "placed": true,
+  "own": true
+ },
+ "an4.30:2.4": {
+  "after": "will not be adulterated, which is not repudiated by wise ascetics and brahmins.",
+  "placed": true
+ },
+ "an4.30:2.5": {
+  "after": "hat is primal, of long standing … not repudiated by wise ascetics and brahmins.",
+  "placed": true
+ },
+ "an4.33:4.1": {
+  "after": "as,\nsets in motion the wheel of Dhamma,",
+  "placed": true
+ },
+ "an4.53:1.2": {
+  "after": "he highway between Madhurā and Verañjā.",
+  "placed": true,
+  "own": true
+ },
+ "an4.53:1.5": {
+  "after": "s saw the Blessed One sitting there and",
+  "placed": true
+ },
+ "an4.53:3.3": {
+  "after": "ssed by the stain of miserliness; he insults and reviles ascetics and brahmins.",
+  "placed": true,
+  "own": true
+ },
+ "an4.60:4.4": {
+  "empty": "down"
+ },
+ "an4.60:4.5": {
+  "after": "y day and night\nmerit always increases;",
+  "placed": true
+ },
+ "an4.61:11.3": {
+  "after": "he has understood thus: ‘Ill will is a defilement of the mind,’ he abandons it.",
+  "placed": true
+ },
+ "an4.61:11.4": {
+  "after": "thus: ‘Dullness and drowsiness are a defilement of the mind,’ he abandons them.",
+  "placed": true
+ },
+ "an4.61:11.5": {
+  "after": "hus: ‘Restlessness and remorse are a defilement of the mind,’ he abandons them.",
+  "placed": true
+ },
+ "an4.61:12.1": {
+  "after": "en he has understood thus: ‘Doubt is a defilement of the mind,’ he abandons it.",
+  "placed": true,
+  "own": true
+ },
+ "an4.61:14.2": {
+  "after": ", kings, thieves, or displeasing heirs;",
+  "placed": true,
+  "own": true
+ },
+ "an5.31:10.1": {
+  "after": "ts radiance\nall the stars in the world,",
+  "placed": true,
+  "own": true
+ },
+ "an5.31:10.2": {
+  "after": " one accomplished in virtuous behavior,",
+  "placed": true
+ },
+ "an5.41:3.3": {
+  "after": "ods, kings or bandits or unloved heirs;",
+  "placed": true,
+  "own": true
+ },
+ "an5.41:6.2": {
+  "after": "le’s wealth is exhausted when he has utilized it in these five ways, he thinks:",
+  "placed": true,
+  "own": true
+ },
+ "an5.41:6.5": {
+  "after": "ciple’s wealth increases when he has utilized it in these five ways, he thinks:",
+  "placed": true,
+  "own": true
+ },
+ "an5.42:4.1": {
+  "after": "d of virtuous behavior and observances.",
+  "placed": true
+ },
+ "an5.55:9.3": {
+  "after": "o not fully understand sense pleasures,",
+  "placed": true,
+  "own": true
+ },
+ "an5.55:9.4": {
+  "after": "res,\nare plunged headlong into saṁsāra,",
+  "placed": true
+ },
+ "an5.9:1.3": {
+  "after": "ential bhikkhu falls away and is not established in the good Dhamma. What five?",
+  "placed": true
+ },
+ "an5.9:1.4": {
+  "after": "l bhikkhu devoid of faith falls away and is not established in the good Dhamma.",
+  "placed": true,
+  "own": true
+ },
+ "an8.10:3.6": {
+  "after": "se of the other crops, the good barley.",
+  "placed": true,
+  "own": true
+ },
+ "an8.21:6.1": {
+  "after": "place in my mind. This is the third astounding and amazing quality found in me.",
+  "placed": true
+ },
+ "an8.21:9.3": {
+  "after": "d report to me: ‘Householder, the Dhamma is well expounded by the Blessed One.’",
+  "placed": true,
+  "own": true
+ },
+ "an8.21:9.4": {
+  "after": "ssed One.’ I then say to those deities:",
+  "placed": true
+ },
+ "an8.24:2.8": {
+  "after": " and (3) has a sense of moral shame and",
+  "placed": true,
+  "own": true
+ },
+ "an8.28:5.3": {
+  "empty": "down"
+ },
+ "an8.30:9.2": {
+  "after": "ed with many gravies and curries seems to a householder or a householder’s son;",
+  "placed": true
+ },
+ "an8.30:13.3": {
+  "after": "n sat down on the seat prepared for him",
+  "placed": true,
+  "own": true
+ },
+ "an8.46:1.3": {
+  "after": "asion the Venerable Anuruddha had gone off to pass the day and was in seclusion",
+  "placed": true
+ },
+ "an8.46:6.1": {
+  "after": " sat down to one side, and said to him:",
+  "placed": true
+ },
+ "an8.7:3.2": {
+  "after": "hu to overcome gain whenever it arises.",
+  "placed": true,
+  "own": true
+ },
+ "an8.7:4.2": {
+  "after": "ikkhu overcome gain whenever it arises?",
+  "placed": true,
+  "own": true
+ },
+ "an8.7:4.8": {
+  "after": "ld he overcome loss … fame … disrepute … honor … lack of honor … evil desires …",
+  "placed": true,
+  "own": true
+ },
+ "an8.7:5.2": {
+  "after": "n one who has not overcome arisen gain do not occur in one who has overcome it.",
+  "placed": true,
+  "own": true
+ },
+ "an8.7:5.10": {
+  "after": "hould overcome gain whenever it arises.",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.6.2": {
+  "after": "alse and point it out as false, saying:",
+  "placed": true
+ },
+ "dn1:1.12.2": {
+  "after": "thful, enjoy the use of stored up goods",
+  "placed": true
+ },
+ "dn1:1.19.2": {
+  "after": " engage in running messages and errands",
+  "placed": true
+ },
+ "dn1:1.23.2": {
+  "after": "ther animals—\nthe recluse Gotama abstains from such wrong means of livelihood, from such debased arts.’\n“Or he might say: ‘Whereas some recluses and brahmins, while living on the food offered by the faithful, earn their living by a wrong means of livelihood, by such debased arts",
+  "placed": true
+ },
+ "dn1:1.36.3": {
+  "after": "he world to be eternal, all of them do so on these four grounds or on a certain one of them. Outside of these there is none.\n“This, bhikkhus, the Tathāgata understands. And he understands: ‘These standpoints, thus assumed and thus misapprehended, lead to such a future destination, to such a state in the world beyond.’",
+  "placed": true
+ },
+ "dn1:2.5.7": {
+  "after": "other beings might come to this place!”",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.6.5": {
+  "after": "ter him.\n“Now, bhikkhus, this comes to pass, that a certain being, after passing away from that plane, takes rebirth in this world. Having come to this world, he goes forth from home to homelessness.",
+  "placed": true
+ },
+ "dn1:2.8.3": {
+  "after": "ecome forgetful, they pass away from that plane.\n“Now, bhikkhus, this comes to pass, that a certain being, after passing away from that plane, takes rebirth in this world. Having come to this world, he goes forth from home to homelessness.",
+  "placed": true
+ },
+ "dn1:2.11.3": {
+  "after": "nd consequently, they pass away from that plane.\n“Now, bhikkhus, this comes to pass, that a certain being, after passing away from that plane, takes rebirth in this world. Having come to this world, he goes forth from home to homelessness.",
+  "placed": true
+ },
+ "dn1:2.15.3": {
+  "after": "and partly non-eternal, all of them do so on these four grounds or on a certain one of them. Outside of these there is none.\n“This, bhikkhus, the Tathāgata understands. And he understands: ‘These standpoints, thus assumed and thus misapprehended, lead to such a future destination, to such a state in the world beyond.’",
+  "placed": true
+ },
+ "dn1:2.24.8": {
+  "after": "some. But when he is questioned about this or that point, he resorts to evasive statements and to endless equivocation:",
+  "placed": true
+ },
+ "dn1:2.25.10": {
+  "after": "his or that point he resorts to evasive statements and to endless equivocation:",
+  "placed": true
+ },
+ "dn1:2.26.12": {
+  "after": "wholesome. But, when questioned about this or that point, he resorts to evasive statements and to endless equivocation:",
+  "placed": true
+ },
+ "dn1:2.31.5": {
+  "after": "at plane. Now, bhikkhus, this comes to pass, that a certain being, after passing away from that plane, takes rebirth in this world. Having come to this world, he goes forth from home to homelessness.",
+  "placed": true
+ },
+ "dn1:2.36.3": {
+  "after": "tination, to such in the world beyond.’",
+  "placed": true
+ },
+ "dn1:3.30.3": {
+  "after": "these sixty-two grounds or on a certain one of them. Outside of these there is none.\n“This, bhikkhus, the Tathāgata understands. And he understands: ‘These standpoints, thus assumed and thus misapprehended, lead to such a future destination, to such a state in the world beyond.’",
+  "placed": true
+ },
+ "dn1:3.32.1": {
+  "after": "nd Vacillation (Paritassitavipphandita)",
+  "placed": true
+ },
+ "dn1:3.51.1": {
+  "after": "ceptual theorems referring to the past;",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.52.1": {
+  "after": "ring to the past; when those who maintain a doctrine of percipient immortality,",
+  "placed": true
+ },
+ "dn1:3.73.3": {
+  "after": "bhikkhus, stands with the leash that bound it to existence cut. As long as his body stands, gods and men shall see him.",
+  "placed": true
+ },
+ "dn1:3.73.7": {
+  "after": "Tathāgata stands with the leash that bound it to existence cut. As long as his body stands, gods and men shall see him.",
+  "placed": true
+ },
+ "dn2:19.2": {
+  "after": "sir, I approached Makkhali Gosāla, exchanged greetings and courtesies with him,",
+  "placed": true
+ },
+ "dn2:20.6": {
+  "after": "rsonal strength, no personal fortitude.",
+  "placed": true
+ },
+ "dn2:29.4": {
+  "after": "ined with a fourfold restraint. How so?",
+  "placed": true
+ },
+ "dn2:29.6": {
+  "after": "uffused with the avoidance of all evil.",
+  "placed": true,
+  "own": true
+ },
+ "dn2:31.3": {
+  "empty": "down"
+ },
+ "dn2:32.1": {
+  "after": "roached Sañjaya Belaṭṭhaputta, exchanged greetings and courtesies with him, and sat down to one side. I then asked him (as in §14) if he could point out any fruit of recluseship visible here and now.",
+  "placed": true
+ },
+ "dn2:33.5": {
+  "empty": "up"
+ },
+ "dn2:33.6": {
+  "empty": "up"
+ },
+ "dn2:35.11": {
+  "after": "s.’\n“After some time he shaves off his hair and beard, puts on saffron robes, and goes forth from home to homelessness.",
+  "placed": true
+ },
+ "dn2:43.2": {
+  "after": " bhikkhu possessed of moral discipline?",
+  "placed": true
+ },
+ "dn2:47.2": {
+  "after": "hful, enjoy the use of stored-up goods,",
+  "placed": true
+ },
+ "dn2:49.2": {
+  "after": "in the following games and recreations:",
+  "placed": true
+ },
+ "dn2:54.2": {
+  "after": " engage in running messages and errands",
+  "placed": true
+ },
+ "dn2:70.2": {
+  "after": "is food and his strength would decline.",
+  "placed": true
+ },
+ "mn104:16.8": {
+  "after": "unt of memory. And so there comes to be the settlement of some litigations here",
+  "placed": true
+ },
+ "mn104:17.15": {
+  "after": "past insanity. And so there comes to be the settlement of some litigations here",
+  "placed": true
+ },
+ "mn135:5.5": {
+  "after": "dent, that leads to short life, namely,",
+  "placed": true
+ },
+ "mn135:15.5": {
+  "after": "n wherever he is reborn he is low-born.",
+  "placed": true
+ },
+ "mn140:4.3": {
+  "after": "most of the night seated in meditation,",
+  "placed": true,
+  "own": true
+ },
+ "mn140:18.4": {
+  "after": "al. What is the internal space element?",
+  "placed": true,
+  "own": true
+ },
+ "mn140:18.5": {
+  "after": " space, spatial, and clung-to, that is,",
+  "placed": true
+ },
+ "mn140:35.2": {
+  "after": "n order to search for a bowl and robes.",
+  "placed": true
+ },
+ "mn20:5.5": {
+  "after": "rms that had come within range of sight",
+  "placed": true,
+  "own": true
+ },
+ "mn20:6.5": {
+  "after": "oncentrated. Just as a man walking fast",
+  "placed": true,
+  "own": true
+ },
+ "mn22:13.7": {
+  "after": "ther shore was safe and free from fear,",
+  "placed": true
+ },
+ "mn22:13.8": {
+  "after": "ree from fear, but there was no ferryboat or bridge for going to the far shore.",
+  "placed": true,
+  "own": true
+ },
+ "mn22:25.8": {
+  "after": " long as eternity’—would it not be an utterly and completely foolish teaching?”",
+  "placed": true
+ },
+ "mn22:42.2": {
+  "after": "g time.\nIn This Dhamma\n“Bhikkhus, the Dhamma well proclaimed by me thus is clear, open, evident, and free of patchwork.",
+  "placed": true
+ },
+ "mn22:47.2": {
+  "after": "ded for enlightenment.\n“Bhikkhus, the Dhamma well proclaimed by me thus is clear, open, evident, and free of patchwork.",
+  "placed": true
+ },
+ "mn27:3.2": {
+  "after": " Gotama?”\n“Sir, suppose a wise elephant woodsman were to enter an elephant wood",
+  "placed": true
+ },
+ "mn27:4.11": {
+  "after": "visit such and such a village or town.’",
+  "placed": true,
+  "own": true
+ },
+ "mn27:4.12": {
+  "after": "r town.’ They go to the recluse Gotama,",
+  "placed": true
+ },
+ "mn27:4.13": {
+  "after": "laddens them with a talk on the Dhamma.",
+  "placed": true
+ },
+ "mn27:9.3": {
+  "after": "k was finished, he sat down at one side",
+  "placed": true
+ },
+ "mn27:10.2": {
+  "after": "aid this:\n“Brahmin, suppose an elephant woodsman were to enter an elephant wood",
+  "placed": true
+ },
+ "mn27:10.17": {
+  "after": "‘Indeed, this is a big bull elephant. ’",
+  "placed": true
+ },
+ "mn27:12.3": {
+  "after": "mma he acquires faith in the Tathāgata.",
+  "placed": true
+ },
+ "mn27:25.2": {
+  "after": "ledge of the destruction of the taints.",
+  "placed": true
+ },
+ "mn52:8.2": {
+  "after": "without hostility and without ill will.",
+  "placed": true
+ },
+ "mn52:8.3": {
+  "after": "hout hostility and without ill will. He considers this and understands it thus:",
+  "placed": true
+ },
+ "mn52:8.4": {
+  "after": "rance of mind through loving-kindness is conditioned and volitionally produced.",
+  "placed": true
+ },
+ "mn52:8.5": {
+  "after": " through loving-kindness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’",
+  "placed": true
+ },
+ "mn52:10.1": {
+  "after": "nce of mind through compassion is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
+  "placed": true,
+  "own": true
+ },
+ "mn52:11.1": {
+  "after": "of mind through altruistic joy is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
+  "placed": true,
+  "own": true
+ },
+ "mn54:3.5": {
+  "after": " like.”\nWhen this was said, the householder Potaliya thought: “The recluse Gotama addresses me as ‘householder,’” and angry and displeased, he remained silent.",
+  "placed": true,
+  "own": true
+ },
+ "mn54:8.4": {
+  "empty": "up"
+ },
+ "mn54:11.3": {
+  "empty": "up"
+ },
+ "mn54:18.9": {
+  "after": "h or deadly suffering because of that.”",
+  "placed": true,
+  "own": true
+ },
+ "mn54:19.2": {
+  "after": "oves, lovely meadows, and lovely lakes,",
+  "placed": true
+ },
+ "mn54:19.3": {
+  "after": "es, and on waking he saw nothing of it.",
+  "placed": true,
+  "own": true
+ },
+ "mn60:13.3": {
+  "after": " falsehood—no evil is done by the doer.",
+  "placed": true
+ },
+ "mn60:27.5": {
+  "after": "causality’ is not opposed to those arahants who hold the doctrine of causality.",
+  "placed": true
+ },
+ "mn7:20.10": {
+  "after": "pass?\nWhat the Payāga? What the Bāhukā?",
+  "placed": true
+ },
+ "mn82:15.5": {
+  "after": "le Raṭṭhapāla’s mind. When he knew that",
+  "placed": true,
+  "own": true
+ },
+ "mn82:27.5": {
+  "after": "aw the venerable Raṭṭhapāla seated at the root of a tree for the day’s abiding.",
+  "placed": true
+ },
+ "mn82:30.7": {
+  "after": " from the home life into homelessness.’",
+  "placed": true
+ },
+ "mn82:40.7": {
+  "after": "be able to have it of the life to come:",
+  "placed": true
+ },
+ "mn82:41.30": {
+  "empty": "up"
+ },
+ "mn82:42.20": {
+  "empty": "down"
+ },
+ "mn82:42.21": {
+  "after": "ded with stakes he burns upon the pyre.",
+  "placed": true
+ },
+ "mn82:42.22": {
+  "after": "And as he dies, no relatives or friends",
+  "placed": true,
+  "own": true
+ },
+ "mn95:9.28": {
+  "after": "s that come to our town are our guests,",
+  "placed": true
+ },
+ "mn95:15.7": {
+  "after": "e is wrong.’ In this way, Bhāradvāja, there is the preservation of truth; in this way he preserves truth; in this way we describe the preservation of truth. But as yet there is no discovery of truth.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:15.8": {
+  "empty": "up"
+ },
+ "mn95:24.4": {
+  "after": " most helpful for scrutiny, Bhāradvāja.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:24.5": {
+  "after": "ly one’s will, one will not scrutinise;",
+  "placed": true
+ },
+ "mn95:30.5": {
+  "after": "give ear, one will not hear the Dhamma;",
+  "placed": true
+ },
+ "mn95:30.6": {
+  "after": "se one gives ear, one hears the Dhamma.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:31.4": {
+  "after": "ost helpful for giving ear, Bhāradvāja.",
+  "placed": true
+ },
+ "mn95:31.5": {
+  "after": "not pay respect, one will not give ear;",
+  "placed": true
+ },
+ "mn95:31.6": {
+  "after": "ecause one pays respect, one gives ear.",
+  "placed": true,
+  "own": true
+ },
+ "sn1.20:5.1": {
+  "after": "le in order to pursue what takes time.”",
+  "placed": true,
+  "own": true
+ },
+ "sn1.20:5.2": {
+  "after": "nd, in order to pursue what takes time.",
+  "placed": true
+ },
+ "sn1.20:25.5": {
+  "after": "\nThough devas and humans search for him",
+  "placed": true,
+  "own": true
+ },
+ "sn1.20:25.6": {
+  "after": " humans search for him\nHere and beyond,",
+  "placed": true
+ },
+ "sn1.32:4.4": {
+  "after": " to the nongiver.\nThe hunger and thirst",
+  "placed": true,
+  "own": true
+ },
+ "sn1.32:4.6": {
+  "after": " that the miser fears\nAfflict that fool",
+  "placed": true,
+  "own": true
+ },
+ "sn11.22:2.5": {
+  "after": "devas approached Sakka and said to him:",
+  "placed": true
+ },
+ "sn11.22:3.4": {
+  "after": "r and uglier and more and more deformed",
+  "placed": true,
+  "own": true
+ },
+ "sn12.31:7.3": {
+  "after": "o you see: ‘This has come to be’?”\n“Venerable sir, one sees as it really is with correct wisdom: ‘This has come to be.’",
+  "placed": true
+ },
+ "sn12.31:7.7": {
+  "after": "s fading away and cessation. One sees as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation.’",
+  "placed": true
+ },
+ "sn12.31:8.3": {
+  "after": "r, has one comprehended the Dhamma? Venerable sir, one sees as it really is with correct wisdom: ‘This has come to be.’",
+  "placed": true
+ },
+ "sn12.31:8.7": {
+  "after": "is liberated by nonclinging. One sees as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation.’",
+  "placed": true
+ },
+ "sn12.31:10.1": {
+  "after": "t,\nBeing discreet, tell me, dear sir.’—",
+  "placed": true
+ },
+ "sn12.66:1.11": {
+  "after": "engage in inward exploration, bhikkhu?”",
+  "placed": true
+ },
+ "sn12.66:1.12": {
+  "after": "n, bhikkhu?”\nThe bhikkhu then explained",
+  "placed": true
+ },
+ "sn12.66:13.9": {
+  "after": " will meet death or deadly suffering. ’",
+  "placed": true
+ },
+ "sn12.67:2.3": {
+  "empty": "up"
+ },
+ "sn12.67:3.1": {
+  "after": "āriputta: Is birth created by oneself …",
+  "placed": true,
+  "own": true
+ },
+ "sn16.3:1.5": {
+  "after": "well, a precipice, or a steep riverbank",
+  "placed": true
+ },
+ "sn16.6:3.3": {
+  "after": "d the bhikkhu Abhiñjika in my name that",
+  "placed": true,
+  "own": true
+ },
+ "sn21.11:1.4": {
+  "after": "ssed One saw him coming in the distance",
+  "placed": true,
+  "own": true
+ },
+ "sn22.3:15.4": {
+  "after": "derstand this Dhamma and Discipline…. ‘",
+  "placed": true
+ },
+ "sn22.78:2.9": {
+  "after": " though we thought ourselves permanent;",
+  "placed": true
+ },
+ "sn22.79:5.2": {
+  "after": "do you call them volitional formations?",
+  "placed": true
+ },
+ "sn22.79:11.20": {
+  "after": "bhikkhus, any kind of form whatsoever …",
+  "placed": true,
+  "own": true
+ },
+ "sn22.79:11.21": {
+  "after": "ever … Any kind of feeling whatsoever …",
+  "placed": true,
+  "own": true
+ },
+ "sn22.79:11.22": {
+  "after": "r … Any kind of perception whatsoever …",
+  "placed": true,
+  "own": true
+ },
+ "sn22.82:14.4": {
+  "after": "manent?”—“Impermanent, venerable sir.”…—",
+  "placed": true,
+  "own": true
+ },
+ "sn22.82:14.5": {
+  "after": "—“Is feeling permanent or impermanent?…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.82:14.6": {
+  "after": " perception permanent or impermanent? …",
+  "placed": true,
+  "own": true
+ },
+ "sn22.82:14.7": {
+  "after": "l formations permanent or impermanent?…",
+  "placed": true
+ },
+ "sn22.95:14.1": {
+  "after": "rderer;\nHere no substance can be found.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.95:14.2": {
+  "after": "e found.\n“A bhikkhu with energy aroused",
+  "placed": true
+ },
+ "sn35.248:5.4": {
+  "empty": "up"
+ },
+ "sn35.31:1.15": {
+  "after": "ming.\n“He does not conceive the ear … …",
+  "placed": true,
+  "own": true
+ },
+ "sn35.31:1.18": {
+  "after": "ear … … He does not conceive the mind …",
+  "placed": true
+ },
+ "sn35.33:1.16": {
+  "after": "rth.\n“The ear … The tongue … The body …",
+  "placed": true,
+  "own": true
+ },
+ "sn35.33:1.17": {
+  "after": "ar … The tongue … The body … The mind …",
+  "placed": true
+ },
+ "sn35.64:2.8": {
+  "after": ". If a bhikkhu seeks delight in them, …",
+  "placed": true,
+  "own": true
+ },
+ "sn35.93:1.2": {
+  "after": "“Bhikkhus, consciousness comes to be in dependence on a dyad.",
+  "placed": true,
+  "own": true
+ },
+ "sn4.19:3.3": {
+  "after": "here there is no eye, no forms, no eye-contact and its base of consciousness—there is no place for you there, Evil One.",
+  "placed": true,
+  "own": true
+ },
+ "sn4.19:3.10": {
+  "after": "ntal phenomena are yours, mind-contact and its base of consciousness are yours;",
+  "placed": true
+ },
+ "sn4.19:4.1": {
+  "after": "e is no place for you there, Evil One.”",
+  "placed": true,
+  "own": true
+ },
+ "sn4.19:4.2": {
+  "after": "a:\n“That of which they say ‘It’s mine,’",
+  "placed": true
+ },
+ "sn43.12:2.1": {
+  "after": "oned…. This is our instruction to you.”",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:2.2": {
+  "empty": "up"
+ },
+ "sn43.12:2.3": {
+  "empty": "up"
+ },
+ "sn43.12:2.9": {
+  "empty": "up"
+ },
+ "sn43.12:4.3": {
+  "empty": "down"
+ },
+ "sn43.12:4.6": {
+  "empty": "down"
+ },
+ "sn43.12:5.5": {
+  "after": "nditioned….”\nx … “And what, bhikkhus, is the path leading to the unconditioned?",
+  "placed": true
+ },
+ "sn43.12:5.7": {
+  "after": "feelings, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world….”",
+  "placed": true
+ },
+ "sn43.12:5.8": {
+  "after": "he world….”\nxi … “And what, bhikkhus, is the path leading to the unconditioned?",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:6.6": {
+  "empty": "down"
+ },
+ "sn43.12:7.6": {
+  "empty": "down"
+ },
+ "sn43.12:9.1": {
+  "after": "… the faculty of wisdom, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….”",
+  "placed": true
+ },
+ "sn44.1:10.6": {
+  "empty": "up"
+ },
+ "sn44.1:10.8": {
+  "empty": "up"
+ },
+ "sn44.1:10.11": {
+  "empty": "down"
+ },
+ "sn44.1:10.12": {
+  "after": "ts after death.’”\nAll as above down to:",
+  "placed": true
+ },
+ "sn44.1:10.14": {
+  "after": " down to:\n“Great king, I have not declared this either: ‘The Tathagata neither exists nor does not exist after death.’”",
+  "placed": true
+ },
+ "sn44.1:10.15": {
+  "empty": "down"
+ },
+ "sn44.1:10.16": {
+  "after": "When asked, ‘How is it, venerable sir, does the Tathagata exist after death?’ …",
+  "placed": true
+ },
+ "sn44.1:10.17": {
+  "after": "en, venerable sir, does the Tathagata neither exist nor not exist after death?’—",
+  "placed": true
+ },
+ "sn44.1:11.5": {
+  "empty": "up"
+ },
+ "sn44.1:11.7": {
+  "empty": "up"
+ },
+ "sn44.1:11.8": {
+  "empty": "up"
+ },
+ "sn44.1:11.10": {
+  "empty": "up"
+ },
+ "sn44.1:11.11": {
+  "empty": "down"
+ },
+ "sn44.1:12.2": {
+  "after": "mathematician … all as above down to: …",
+  "placed": true
+ },
+ "sn44.3:2.4": {
+  "empty": "up"
+ },
+ "sn44.3:2.7": {
+  "empty": "up"
+ },
+ "sn44.6:2.2": {
+  "empty": "up"
+ },
+ "sn44.6:2.9": {
+  "after": "onsciousness as it really is, that thinks: ‘The Tathagata exists after death’ …",
+  "placed": true
+ },
+ "sn44.6:3.7": {
+  "after": "ciousness as it really is, does not think: ‘The Tathagata exists after death’ …",
+  "placed": true
+ },
+ "sn45.18:2.2": {
+  "after": "id, ‘the unholy life, the unholy life.’",
+  "placed": true,
+  "own": true
+ },
+ "sn45.24:2.4": {
+  "empty": "down"
+ },
+ "sn45.24:2.5": {
+  "after": "ntration. This is called the wrong way.",
+  "placed": true
+ },
+ "sn45.34:6.4": {
+  "after": "ng, the wise man\nShould cleanse himself",
+  "placed": true,
+  "own": true
+ },
+ "sn45.34:7.3": {
+  "after": "eloped\nIn the factors of enlightenment,",
+  "placed": true,
+  "own": true
+ },
+ "sn45.34:7.4": {
+  "after": "t,\nWho through nonclinging find delight",
+  "placed": true
+ },
+ "sn46.54:5.2": {
+  "after": "ected the statement of those wanderers.",
+  "placed": true
+ },
+ "sn47.8:4.3": {
+  "after": "ry life, nor does he gain mindfulness and clear comprehension. For what reason?",
+  "placed": true
+ },
+ "sn47.8:6.2": {
+  "after": "wise, competent, skilful cook picks up the sign of his own master’s preference:",
+  "placed": true,
+  "own": true
+ },
+ "sn47.8:6.3": {
+  "empty": "up"
+ },
+ "sn56.35:2.2": {
+  "after": "intent on his good to accept the offer.",
+  "placed": true
+ },
+ "sn56.35:2.3": {
+  "after": "d to accept the offer. For what reason?",
+  "placed": true,
+  "own": true
+ },
+ "sn56.42:1.7": {
+  "after": " the steep precipice off Paṭibhana Peak",
   "placed": true,
   "own": true
  }
