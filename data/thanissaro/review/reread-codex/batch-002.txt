@@ -1,0 +1,561 @@
+## an3.62
+an3.62:1.1 | S: “Mendicants, an unlearned ordinary person speaks of three perils that tear mothers and children apart. | T: “Monks, uneducated run-of-the-mill people describe three things as mother-&-child-separating dangers.
+an3.62:1.2 | S: What three? | T: Which three?
+an3.62:1.3 | S: There comes a time when a great fire flares up, | T: “There comes a time when a great fire-conflagration breaks out.
+an3.62:1.4 | S: and it burns villages, towns, and cities. | T: When a great fire-conflagration breaks out, it burns villages, towns, & cities.
+an3.62:1.5 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: When it is burning villages, towns, & cities, a mother there can’t get to her child, and the child can’t get to its mother.
+an3.62:1.6 | S: This is the first peril that tears mothers and children apart. | T: This is the first thing that uneducated run-of-the-mill people describe as a mother-&-child-separating danger.
+an3.62:2.1 | S: Furthermore, there comes a time when a great storm gathers, | T: “Then again there comes a time when a great cloud arises.
+an3.62:2.2 | S: and it unleashes a mighty flood | T: When a great cloud arises, a great flood of water is produced.
+an3.62:2.3 | S: that sweeps away villages, towns, and cities. | T: When a great flood of water is produced, it floods villages, towns, & cities.
+an3.62:2.4 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: When it is flooding villages, towns, & cities, a mother there can’t get to her child, and the child can’t get to its mother.
+an3.62:2.5 | S: This is the second peril that tears mothers and children apart. | T: This is the second thing that uneducated run-of-the-mill people describe as a mother-&-child-separating danger.
+an3.62:3.1 | S: Furthermore, there comes a time of peril due to turmoil in the wilds, so the countryfolk mount their vehicles and flee everywhere. | T: “Then again there comes a time when there is danger and an invasion of savage tribes. Taking power, they surround the countryside.
+an3.62:3.2 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: When this happens, a mother there can’t get to her child, and the child can’t get to its mother.
+an3.62:3.3 | S: This is the third peril that tears mothers and children apart. | T: This is the third thing that uneducated run-of-the-mill people describe as a mother-&-child-separating danger.
+an3.62:3.4 | S: These are the three perils an unlearned ordinary person speaks of that tear mothers and children apart. | T: “These are the three things that uneducated run-of-the-mill people describe as mother-&-child-separating dangers.
+an3.62:4.1 | S: Mendicants, an unlearned ordinary person speaks of three perils that don’t tear mothers and children apart. | T: “But there are these three things that are mother-&-child-uniting dangers, yet run-of-the-mill people describe them as mother-&-child-separating dangers.
+an3.62:4.2 | S: What three? | T: Which three?
+an3.62:4.3 | S: There comes a time when a great fire flares up, | T: “There comes a time when a great fire-conflagration breaks out.
+an3.62:4.4 | S: and it burns villages, towns, and cities. | T: When a great fire-conflagration breaks out, it burns villages, towns, & cities.
+an3.62:4.5 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: When it is burning villages, towns, & cities, there are times when it so happens that a mother can get to her child, and the child can get to its mother.
+an3.62:4.6 | S: This is the first peril that doesn’t tear mothers and children apart. | T: This is the first thing that is a mother-&-child-uniting danger, yet run-of-the-mill people describe it as a mother-&-child-separating danger.
+an3.62:5.1 | S: Furthermore, there comes a time when a great storm gathers, | T: “Then again there comes a time when a great cloud arises.
+an3.62:5.2 | S: and it unleashes a mighty flood | T: When a great cloud arises, a great flood of water is produced.
+an3.62:5.3 | S: that sweeps away villages, towns, and cities. | T: When a great flood of water is produced, it floods villages, towns, & cities.
+an3.62:5.4 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: When it is flooding villages, towns, & cities, there are times when it so happens that a mother can get to her child, and the child can get to its mother.
+an3.62:5.5 | S: This is the second peril that doesn’t tear mothers and children apart. | T: This is the second thing that is a mother-&-child-uniting danger, yet run-of-the-mill people describe it as a mother-&-child-separating danger.
+an3.62:6.1 | S: Furthermore, there comes a time of peril due to turmoil in the wilds, so the countryfolk mount their vehicles and flee everywhere. | T: “Then again there comes a time when there is danger and an invasion of savage tribes. Taking power, they surround the countryside.
+an3.62:6.2 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: When this happens, there are times when it so happens that a mother can get to her child, and the child can get to its mother.
+an3.62:6.3 | S: This is the third peril that doesn’t tear mothers and children apart. | T: This is the third thing that is a mother-&-child-uniting danger, yet run-of-the-mill people describe it as a mother-&-child-separating danger.
+an3.62:6.4 | S: These are the three perils an unlearned ordinary person speaks of that don’t tear mothers and children apart. | T: “These are the three things that are mother-&-child-uniting dangers, yet run-of-the-mill people describe them as mother-&-child-separating dangers.
+an3.62:7.1 | S: There are three perils that tear mothers and children apart. | T: “There are these three things that are (genuine) mother-&-child-separating dangers.
+an3.62:7.2 | S: What three? | T: Which three?
+an3.62:7.3 | S: The perils of old age, sickness, and death. | T: The danger of aging, the danger of illness, the danger of death.
+an3.62:7.4 | S: When a child is growing old, a mother doesn’t get her wish: | T: “A mother can’t get (her wish) with regard to her child who is aging, ‘I am aging, but may my child not age.’
+an3.62:7.5 | S: ‘Let me grow old, may my child not grow old!’ | T: (none)
+an3.62:7.6 | S: When a mother is growing old, a child doesn’t get their wish: | T: A child can’t get (its wish) with regard to its mother who is aging, ‘I am aging, but may my mother not age.’
+an3.62:7.7 | S: ‘Let me grow old, may my mother not grow old!’ | T: (none)
+an3.62:8.1 | S: When a child is sick, a mother doesn’t get her wish: | T: “A mother can’t get (her wish) with regard to her child who is growing ill,
+an3.62:8.2 | S: ‘Let me be sick, may my child not be sick!’ | T: ‘I am growing ill, but may my child not grow ill.’
+an3.62:8.3 | S: When a mother is sick, a child doesn’t get their wish: | T: A child can’t get (its wish) with regard to its mother who is growing ill,
+an3.62:8.4 | S: ‘Let me be sick, may my mother not be sick!’ | T: ‘I am growing ill, but may my mother not grow ill.’
+an3.62:9.1 | S: When a child is dying, a mother doesn’t get her wish: | T: “A mother can’t get (her wish) with regard to her child who is dying,
+an3.62:9.2 | S: ‘Let me die, may my child not die!’ | T: ‘I am dying, but may my child not die.’
+an3.62:9.3 | S: When a mother is dying, a child doesn’t get their wish: | T: A child can’t get (its wish) with regard to its mother who is dying,
+an3.62:9.4 | S: ‘Let me die, may my mother not die!’ | T: ‘I am dying, but may my mother not die.’
+an3.62:9.5 | S: These are the three perils that tear mothers and children apart. | T: “These are the three things that are (genuine) mother-&-child-separating dangers.
+an3.62:10.1 | S: There is a path and a practice that leads to giving up and going beyond the three perils that don’t tear mothers and children apart, and the three perils that do tear mothers and children apart. | T: “There is a path, there is a practice, that leads to the abandoning and overcoming of these three mother-&-child-uniting dangers and these three mother-&-child-separating dangers.
+an3.62:10.2 | S: What is that path and practice? | T: “And which is that path, which is that practice…?
+an3.62:10.3 | S: It is simply this noble eightfold path, that is: | T: Just this very noble eightfold path, i.e.,
+an3.62:10.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+an3.62:10.5 | S: This is the path, this is the practice that leads to giving up and going beyond the three perils that don’t tear mothers and children apart, and the three perils that do tear mothers and children apart.” | T: “This is the path, this the practice, that leads to the abandoning and overcoming of these three mother-&-child-uniting dangers and these three mother-&-child-separating dangers.”
+
+## thig7.3
+thig7.3:1.1 | S: “A nun with faculties developed, | T: Upacālā: Having mindfulness, having an eye that sees, a nun with developed faculties, I
+thig7.3:1.2 | S: mindful, seeing clearly, | T: (none)
+thig7.3:1.3 | S: I penetrated that peaceful state, | T: penetrated the peaceful state
+thig7.3:1.4 | S: which reprobates do not cultivate.” | T: of which worthless people don’t partake.
+thig7.3:2.1 | S: “Why don’t you approve of rebirth? | T: Māra: Why don’t you approve of birth?
+thig7.3:2.2 | S: When you’re born, you get to enjoy sensual pleasures. | T: One who is born enjoys sensual pleasures.
+thig7.3:2.3 | S: Enjoy erotic delights; | T: Enjoy sensual delight!
+thig7.3:2.4 | S: don’t regret it later.” | T: Don’t later burn with regret.
+thig7.3:3.1 | S: “Death comes to those who are born; | T: Upacālā: For one who is born there’s death,
+thig7.3:3.2 | S: and when born they fall into suffering: | T: the cutting-off of hands & feet, binding, flogging, torment. One who’s born incurs pain.
+thig7.3:3.3 | S: the chopping off of hands and feet, | T: (none)
+thig7.3:3.4 | S: killing, caging, misery. | T: (none)
+thig7.3:4.1 | S: But there is one born in the Sakyan clan, | T: But there is the Rightly Awakened One, the undefeated one, born in the Sakyan clan.
+thig7.3:4.2 | S: awakened and undefeated. | T: (none)
+thig7.3:4.3 | S: He taught me the Dhamma | T: He taught me the Dhamma
+thig7.3:4.4 | S: for transcending rebirth: | T: for the transcending of birth:
+thig7.3:5.1 | S: suffering, suffering’s origin, | T: stress, the co-arising of stress,
+thig7.3:5.2 | S: suffering’s transcendence, | T: the overcoming of stress,
+thig7.3:5.3 | S: and the noble eightfold path | T: & the noble eightfold path
+thig7.3:5.4 | S: that leads to the stilling of suffering. | T: leading to the stilling of stress.
+thig7.3:6.1 | S: After hearing his words, | T: Having heard his words,
+thig7.3:6.2 | S: I happily did his bidding. | T: I dwell, delighting in his bidding.
+thig7.3:6.3 | S: I’ve attained the three knowledges | T: The three knowledges are attained;
+thig7.3:6.4 | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, done.
+thig7.3:7.1 | S: Relishing is banished in every respect, | T: Everywhere enjoyment is defeated;
+thig7.3:7.2 | S: and the mass of darkness is shattered. | T: the mass of darkness, burst.
+thig7.3:7.3 | S: So know this, Wicked One: | T: So know, Evil One,
+thig7.3:7.4 | S: you’re beaten, terminator!” | T: that you have been, End-maker, struck down.
+
+## an3.57
+an3.57:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha, and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an3.57:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One:
+an3.57:1.3 | S: “I have heard, worthy Gotama, that the ascetic Gotama says this: | T: “Master Gotama, I have heard that ‘Gotama the contemplative says this:
+an3.57:1.4 | S: ‘Gifts should only be given to me, not to others. | T: “Only to me should a gift be given, and not to others.
+an3.57:1.5 | S: Gifts should only be given to my disciples, not to the disciples of others. | T: Only to my disciples should a gift be given, and not to others.
+an3.57:1.6 | S: Only what is given to me is very fruitful, not what is given to others. | T: Only what is given to me bears great fruit, and not what is given to others.
+an3.57:1.7 | S: Only what is given to my disciples is very fruitful, not what is given to the disciples of others.’ | T: Only what is given to my disciples bears great fruit, and not what is given to the disciples of others.”’
+an3.57:1.13 | S: I trust those who say this repeat what the worthy Gotama has said, and do not misrepresent him with an untruth? Is their explanation in line with the teaching? Are there any legitimate grounds for rebuttal and criticism? | T: Now those who report this: Are they reporting the Master Gotama’s actual words, are they not misrepresenting him with what is unfactual, are they answering in line with the Dhamma, so that no one whose thinking is in line with the Dhamma will have grounds for criticizing them?
+an3.57:1.14 | S: For we don’t want to misrepresent the worthy Gotama.” | T: For we don’t want to misrepresent the Master Gotama.”
+an3.57:2.1 | S: “Vaccha, those who say this | T: “Vaccha, whoever says this:
+an3.57:2.2 | P: ‘samaṇo gotamo evamāha: | T: ‘Gotama the contemplative says this:
+an3.57:2.3 | P: “mayhameva dānaṁ dātabbaṁ …pe… | T: “Only to me should a gift be given.…
+an3.57:2.4 | P: nāññesaṁ sāvakānaṁ dinnaṁ mahapphalan”’ti | T: Only what is given to my disciples bears great fruit, and not what is given to the disciples of others,”
+an3.57:2.5 | S: do not repeat what I have said. They misrepresent me with what is false and untrue. | T: is not reporting my actual words, is misrepresenting me with what is unfactual & untrue.
+an3.57:2.6 | S: Anyone who prevents another from giving makes an obstacle and a roadblock for three individuals. | T: “Vaccha, whoever prevents another from giving a gift creates three obstructions, three impediments.
+an3.57:2.7 | S: What three? | T: Which three?
+an3.57:2.8 | S: The giver is obstructed from making merit. The receiver is obstructed from getting what is offered. And they’ve already broken and damaged themselves. | T: He creates an obstruction to the merit of the giver, an obstruction to the recipient’s gains, and prior to that he undermines and harms his own self.
+an3.57:2.9 | S: Anyone who prevents another from giving makes an obstacle and a roadblock for these three individuals. | T: Whoever prevents another from giving a gift creates these three obstructions, these three impediments.
+an3.57:3.1 | S: Vaccha, this is what I say: | T: “I tell you, Vaccha,
+an3.57:3.2 | S: ‘You even make merit by tipping out dish-washing water in a cesspool or a sump with living creatures in it, thinking, | T: even if a person throws the rinsings of a bowl or a cup into a village pool or pond, thinking,
+an3.57:3.3 | S: “May any creatures here be nourished!”’ | T: ‘May whatever animals live here feed on this,’ that would be a source of merit,
+an3.57:3.4 | S: How much more then for human beings! | T: to say nothing of what is given to human beings.
+an3.57:3.5 | S: However, I also say that a gift to an ethical person is more fruitful than one to an unethical person. They’ve given up five factors, and possess five factors. | T: But I do say that what is given to a virtuous person is of great fruit, and not so much what is given to an unvirtuous person. And the virtuous person has abandoned five factors and is endowed with five.
+an3.57:4.1 | S: What are the five factors they’ve given up? | T: “Which five has he abandoned?
+an3.57:4.2 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: He has abandoned sensual desire… ill will… sloth & drowsiness… restlessness & anxiety… uncertainty.
+an3.57:4.3 | S: These are the five factors they’ve given up. | T: These are the five factors he has abandoned.
+an3.57:5.1 | S: What are the five factors they possess? | T: And with which five is he endowed?
+an3.57:5.2 | S: The entire spectrum of an adept’s ethics, immersion, wisdom, freedom, and knowledge and vision of freedom. | T: He is endowed with the aggregate of virtue of one beyond training… the aggregate of concentration of one beyond training… the aggregate of discernment of one beyond training… the aggregate of release of one beyond training… the aggregate of knowledge & vision of release of one beyond training.
+an3.57:5.3 | S: These are the five factors they possess. | T: These are the five factors with which he is endowed.
+an3.57:5.4 | S: I say that a gift to anyone who has given up these five factors and possesses these five factors is very fruitful. | T: “I tell you: What is given to one who has abandoned these five factors and is endowed with these five, bears great fruit.
+an3.57:6.1 | S: Cows may be black or white, | T: “In a herd of cattle, whether black, white,
+an3.57:6.2 | S: red or tawny, | T: ruddy, brown,
+an3.57:6.3 | S: mottled or uniform, | T: dappled, uniform,
+an3.57:6.4 | S: or pigeon-colored. | T: or pigeon gray:
+an3.57:7.1 | S: But when one is born among them, | T: If a bull is born—
+an3.57:7.2 | S: the bull that’s tamed— | T: (none)
+an3.57:7.3 | S: a behemoth, powerful, | T: tame, enduring, consummate in strength,
+an3.57:7.4 | S: well-paced in pulling forward— | T: & swift—
+an3.57:7.5 | S: they yoke the load just to him, | T: people yoke him to burdens,
+an3.57:7.6 | S: regardless of his color. | T: regardless of his color.
+an3.57:8.1 | S: So it is for humans, | T: In the same way,
+an3.57:8.2 | S: wherever they may be born— | T: wherever one is born among human beings—
+an3.57:8.3 | S: among aristocrats, brahmins, peasants, | T: noble warriors, brahmans,
+an3.57:8.4 | S: menials, or corpse-workers and scavengers— | T: merchants, workers, outcastes, or scavengers—
+an3.57:9.1 | S: one is born among them, | T: if one is tame,
+an3.57:9.2 | S: tamed, true to their vows. | T: with good practices,
+an3.57:9.3 | S: Firm in principle, accomplished in ethical conduct, | T: righteous, consummate in virtue,
+an3.57:9.4 | S: truthful, conscientious, | T: a speaker of truth, with conscience at heart,
+an3.57:10.1 | S: they’ve given up birth and death. | T: one who’s abandoned birth & death,
+an3.57:10.2 | S: Complete in the spiritual journey, | T: completed the holy life
+an3.57:10.3 | S: with burden put down, detached, | T: put down the burden,
+an3.57:10.4 | S: they’ve completed the task <j>and are free of defilements. | T: done the task effluent-free,
+an3.57:11.1 | S: Gone beyond all things, | T: gone beyond all dhammas,
+an3.57:11.2 | S: they’re quenched by not grasping. | T: through lack of clinging unbound:
+an3.57:11.3 | S: In that flawless field, | T: Offerings to this spotless field
+an3.57:11.4 | S: a religious donation is abundant. | T: (none)
+an3.57:12.1 | S: Fools who don’t understand— | T: bear an abundance of fruit. But fools, unknowing,
+an3.57:12.2 | S: unlearned simpletons— | T: dull, uninformed,
+an3.57:12.3 | S: give their gifts to those outside, | T: give gifts outside
+an3.57:12.4 | S: and don’t attend the peaceful ones. | T: and don’t come near the good.
+an3.57:13.1 | S: But those who do attend the peaceful ones— | T: While those who do come near the good
+an3.57:13.2 | S: wise, esteemed as attentive— | T: —regarded as enlightened, discerning—
+an3.57:13.3 | S: and whose faith in the Holy One | T: whose conviction in the One Well-Gone
+an3.57:13.4 | S: has roots planted deep, | T: has taken root, is established:
+an3.57:14.1 | S: they go to the realm of the gods, | T: They go to the world of the devas
+an3.57:14.2 | S: or are born here in a good family. | T: or are reborn here in good family.
+an3.57:14.3 | S: Gradually those astute ones | T: Step by step
+an3.57:14.4 | S: reach extinguishment.” | T: they reach unbinding : they who are wise.”
+
+## snp1.2
+snp1.2:1.1 | S: “I’ve boiled my rice and drawn my milk,” | T: Dhaniya the cattleman: “The rice is cooked, my milking done.
+snp1.2:1.2 | S: said Dhaniya the rancher, | T: (none)
+snp1.2:1.3 | S: “I stay with my family along the bank of the Mahī. | T: I live with my people along the banks of the Mahi;
+snp1.2:1.4 | S: My hut is roofed, my sacred fire kindled: | T: my hut is roofed, my fire lit:
+snp1.2:1.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:2.1 | S: “I boil not with anger <j>and have drawn out hard-heartedness,” | T: The Buddha: “Free from anger, my rigidity gone,
+snp1.2:2.2 | S: said the Buddha, | T: (none)
+snp1.2:2.3 | S: “I stay for one night along the bank of the Mahī. | T: I live for one night along the banks of the Mahi;
+snp1.2:2.4 | S: My hut is wide open, my fire is quenched: | T: my hut’s roof is open, my fire out.
+snp1.2:2.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:3.1 | S: “No gadflies or mosquitoes are found,” | T: Dhaniya: “No mosquitoes or gadflies are to be found.
+snp1.2:3.2 | S: said Dhaniya, | T: (none)
+snp1.2:3.3 | S: “cows graze on the lush meadow grass. | T: The cows range in the marshy meadow where the grasses flourish.
+snp1.2:3.4 | S: They get by even when the rain comes: | T: They could stand the rain if it came:
+snp1.2:3.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:4.1 | S: “I bound a raft and prepared it well,” | T: The Buddha: “A raft, well-made, has been lashed together.
+snp1.2:4.2 | S: said the Buddha, | T: (none)
+snp1.2:4.3 | S: “and with it I crossed over, went to the far shore, <j>and dispelled the flood. | T: Having crossed over, gone to the far shore, I’ve subdued the flood.
+snp1.2:4.4 | S: Now I have no need for a raft: | T: No need for a raft is to be found:
+snp1.2:4.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:5.1 | S: “My wife is obedient, not wanton,” | T: Dhaniya: “My wife is composed, not wanton,
+snp1.2:5.2 | S: said Dhaniya, | T: (none)
+snp1.2:5.3 | S: “long have we lived together happily. | T: is charming, has lived with me long.
+snp1.2:5.4 | S: I hear nothing bad about her: | T: I hear no evil about her at all:
+snp1.2:5.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:6.1 | S: “My mind is obedient and freed,” | T: The Buddha: “My mind is composed, released,
+snp1.2:6.2 | S: said the Buddha, | T: (none)
+snp1.2:6.3 | S: “long nurtured and well-tamed. | T: has long been nurtured, well tamed.
+snp1.2:6.4 | S: Nothing bad is found in me: | T: No evil is to be found in me:
+snp1.2:6.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:7.1 | S: “I am self-employed,” | T: Dhaniya: “I support myself on my earnings.
+snp1.2:7.2 | S: said Dhaniya, | T: (none)
+snp1.2:7.3 | S: “and my healthy children likewise. | T: My sons live in harmony, free from disease.
+snp1.2:7.4 | S: I hear nothing bad about them: | T: I hear no evil about them at all:
+snp1.2:7.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:8.1 | S: “I am no one’s lackey,” | T: The Buddha: “I’m in no one’s employ,
+snp1.2:8.2 | S: said the Buddha, | T: (none)
+snp1.2:8.3 | S: “with what I have earned I wander the world. | T: I wander the whole world on the reward [of my Awakening].
+snp1.2:8.4 | S: I have no need for wages: | T: No need for earnings is to be found:
+snp1.2:8.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:9.1 | S: “I have heifers and sucklings,” | T: Dhaniya: “There are cows, young bulls,
+snp1.2:9.2 | S: said Dhaniya, | T: (none)
+snp1.2:9.3 | S: “cows in calf and breeding cows. | T: cows in calf, & breeding cows,
+snp1.2:9.4 | S: I’ve also got a bull, captain of the herd here: | T: & a great bull, the leader of the herd:
+snp1.2:9.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:10.1 | S: “I have no heifers or sucklings,” | T: The Buddha: “There are no cows, no young bulls,
+snp1.2:10.2 | S: said the Buddha, | T: (none)
+snp1.2:10.3 | S: “no cows in calf or breeding cows. | T: no cows in calf or breeding cows,
+snp1.2:10.4 | S: I haven’t got a bull, captain of the herd here: | T: no great bull, the leader of the herd:
+snp1.2:10.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:11.1 | S: “The stakes are driven in, unshakable,” | T: Dhaniya: “The stakes are dug-in, immovable.
+snp1.2:11.2 | S: said Dhaniya, | T: (none)
+snp1.2:11.3 | S: “The grass halters are new and well-woven, | T: The new muñja-grass halters, well-woven,
+snp1.2:11.4 | S: not even the sucklings can break them: | T: not even young bulls could break:
+snp1.2:11.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:12.1 | S: “Like a bull I broke the bonds,” | T: The Buddha: “Having broken my bonds like a great bull,
+snp1.2:12.2 | S: said the Buddha, | T: (none)
+snp1.2:12.3 | S: “like an elephant I snapped the vine. | T: like a great elephant tearing a rotting vine,
+snp1.2:12.4 | S: I will never lie in a womb again: | T: I never again will lie in the womb:
+snp1.2:12.5 | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, go ahead & rain.”
+snp1.2:13.1 | S: Right then a vast cloud rained forth, | T: The great cloud rained down straightaway, filling the lowlands & high.
+snp1.2:13.2 | S: soaking the uplands and valleys. | T: (none)
+snp1.2:13.3 | S: Hearing the heavens rain down, | T: Hearing the rain-god pour down,
+snp1.2:13.4 | S: Dhaniya said this: | T: Dhaniya said:
+snp1.2:14.1 | S: “It is no small gain for us | T: “How great our gain
+snp1.2:14.2 | S: that we have seen the Buddha. | T: that we’ve gazed on the Blessed One!
+snp1.2:14.3 | S: We come to you for refuge, Clear-eyed One. | T: We go to him, the One with Eyes, for refuge.
+snp1.2:14.4 | S: O great sage, please be our Teacher. | T: May you be our teacher, Great Sage.
+snp1.2:15.1 | S: My wife and I, obedient, | T: My wife & I are composed.
+snp1.2:15.2 | S: shall lead the spiritual life under the Holy One. | T: Let’s follow the holy life under the One Well-Gone.
+snp1.2:15.3 | S: Gone beyond birth and death, | T: Gone to the far shore of aging & death,
+snp1.2:15.4 | S: we shall make an end of suffering.” | T: let’s put an end to suffering & stress.”
+snp1.2:16.1 | S: “Children bring you delight!” | T: Māra: “Those with children delight because of their children.
+snp1.2:16.2 | S: said Māra the Wicked, | T: (none)
+snp1.2:16.3 | S: “Cattle also bring you delight! | T: Those with cattle delight because of their cows.
+snp1.2:16.4 | S: For attachments are a man’s delight; | T: A person’s delight comes from acquisitions,
+snp1.2:16.5 | S: without attachments there’s no delight.” | T: for a person with no acquisitions doesn’t delight.”
+snp1.2:17.1 | S: “Your children bring you sorrow,” | T: The Buddha: “Those with children grieve precisely because of their children.
+snp1.2:17.2 | S: said the Buddha, | T: (none)
+snp1.2:17.3 | S: “Your cattle also bring you sorrow. | T: Those with cattle grieve precisely because of their cows.
+snp1.2:17.4 | S: For attachments are a man’s sorrow; | T: A person’s grief comes from acquisitions,
+snp1.2:17.5 | S: without attachments there are no sorrows.” | T: for a person with no acquisitions doesn’t grieve.”
+
+## thag17.2
+thag17.2:1.1 | S: “One who’s mindful <j>as per their conduct and mindfulness, | T: Mindful,
+thag17.2:1.2 | S: diligent <j>as per their intentions and meditation, | T: heedful, his mind well-centered, absorbed with restrained resolves,
+thag17.2:1.3 | S: happy inside, serene, solitary, contented: | T: inwardly delighting in his conduct, his mindfulness, alone, content:
+thag17.2:1.4 | S: that is what they call a mendicant. | T: He’s called a monk.
+thag17.2:2.1 | S: When eating fresh or dried food, | T: Eating moist or dry food,
+thag17.2:2.2 | S: one shouldn’t be overly replete. | T: he shouldn’t be heavily sated.
+thag17.2:2.3 | S: A mendicant should wander mindfully, | T: With unfilled belly, with measured food, the monk should wander mindfully.
+thag17.2:2.4 | S: with empty stomach, taking limited food. | T: (none)
+thag17.2:3.1 | S: Four or five mouthfuls before you’re full, | T: Leaving four or five mouthfuls uneaten,
+thag17.2:3.2 | S: drink some water; | T: he should drink water:
+thag17.2:3.3 | S: this is enough for a resolute mendicant | T: This is enough for the easeful abiding of a resolute monk.
+thag17.2:3.4 | S: to live in comfort. | T: (none)
+thag17.2:4.1 | S: If they cover themselves with a robe | T: And he covers himself with a proper robe
+thag17.2:4.2 | S: that’s allowable and fit for purpose; | T: enough for that purpose:
+thag17.2:4.3 | S: this is enough for a resolute mendicant | T: This is enough for the easeful abiding of a resolute monk.
+thag17.2:4.4 | S: to live in comfort. | T: (none)
+thag17.2:5.1 | S: When sitting cross-legged, | T: As he sits cross-legged,
+thag17.2:5.2 | S: the rain doesn’t fall on the knees; | T: it doesn’t rain on his knees:
+thag17.2:5.3 | S: this is enough for a resolute mendicant | T: This is enough for the easeful abiding of a resolute monk.
+thag17.2:5.4 | S: to live in comfort.” | T: (none)
+thag17.2:6.1 | S: “When you’ve seen happiness as suffering, | T: Whoever sees pleasure as pain,
+thag17.2:6.2 | S: and suffering as a dart, | T: and pain as an arrow,
+thag17.2:6.3 | S: and that there’s nothing between the two— | T: and that there’s nothing between the two:
+thag17.2:6.4 | S: what keeps you in the world? <j>What would you become? | T: With what will he be what in the world?
+thag17.2:7.1 | S: Thinking, ‘May I have nothing to do <j>with those of bad wishes, | T: “May I never have anything to do with a person of evil desires,
+thag17.2:7.2 | S: lazy, lacking energy, | T: lazy, lowly in his persistence,
+thag17.2:7.3 | S: unlearned, lacking regard for others’— | T: with little learning, disrespectful”:
+thag17.2:7.4 | S: what keeps you in the world? <j>What would you become?” | T: With what will he be what in the world?
+thag17.2:8.1 | S: “An intelligent, learned person, | T: But one who is learned, wise,
+thag17.2:8.2 | S: steady in ethics, | T: well-centered in virtues,
+thag17.2:8.3 | S: devoted to serenity of heart— | T: devoted to tranquility of awareness:
+thag17.2:8.4 | S: let them stand at the head.” | T: Let him stand at the head.
+thag17.2:9.1 | S: “A beast who likes to proliferate, | T: One who is devoted to objectification,
+thag17.2:9.2 | S: enjoying proliferation, | T: his heart delighting in objectification,
+thag17.2:9.3 | S: fails to win extinguishment, | T: attains no unbinding,
+thag17.2:9.4 | S: the supreme sanctuary from the yoke. | T: the unexcelled rest from the yoke.
+thag17.2:10.1 | S: But one who gives up proliferation, | T: But whoever, abandoning objectification,
+thag17.2:10.2 | S: enjoying the state of non-proliferation, | T: delighting in the path of non-objectification,
+thag17.2:10.3 | S: wins extinguishment, | T: attains unbinding,
+thag17.2:10.4 | S: the supreme sanctuary from the yoke.” | T: the unexcelled rest from the yoke.
+thag17.2:11.1 | S: “Whether in the village or the wilderness, | T: In village or wilds,
+thag17.2:11.2 | S: in a valley or the uplands, | T: valley, plateau:
+thag17.2:11.3 | S: wherever the perfected ones live | T: that place is delightful where arahants dwell.
+thag17.2:11.4 | S: is a delightful place.” | T: (none)
+thag17.2:12.1 | S: “Delightful are the wildernesses | T: Delightful wilds
+thag17.2:12.2 | S: where no people delight. | T: where the crowds don’t delight,
+thag17.2:12.3 | S: Those free of greed will delight there, | T: those free from passion delight,
+thag17.2:12.4 | S: not those who seek sensual pleasures.” | T: for they’re not searching for sensual pleasures.
+thag17.2:13.1 | S: “Regard one who sees your faults | T: Regard him as one who
+thag17.2:13.2 | S: as a guide to a hidden treasure. | T: points out treasure, the wise one who seeing your faults rebukes you.
+thag17.2:13.3 | S: Stay close to one so intelligent and astute | T: Stay with this sort of sage.
+thag17.2:13.4 | S: who curbs you when you need it. | T: (none)
+thag17.2:13.5 | S: Sticking close to such an impartial person, | T: For the one who stays with a sage of this sort,
+thag17.2:13.6 | S: things get better, not worse.” | T: things get better, not worse.
+thag17.2:14.1 | S: “Advise and instruct; | T: Let him admonish, instruct,
+thag17.2:14.2 | S: curb wickedness: | T: deflect you away from poor manners.
+thag17.2:14.3 | S: for you shall be loved by the good, | T: To the good, he’s endearing;
+thag17.2:14.4 | S: and disliked by the bad.” | T: to the bad, he’s not.
+thag17.2:15.1 | S: “The Blessed One, the Buddha, the seer | T: He, the Blessed One, the One Awakened, the One with Eyes,
+thag17.2:15.2 | S: was teaching Dhamma to another. | T: was teaching Dhamma to another.
+thag17.2:15.3 | S: As he taught the Dhamma, | T: And while the Dhamma was being taught,
+thag17.2:15.4 | S: I lent an ear to get the meaning. | T: I, desiring the Dhamma, turned an attentive ear.
+thag17.2:16.1 | S: My listening wasn’t wasted: | T: My listening was not in vain:
+thag17.2:16.2 | S: I’m freed, without defilements.” | T: I’m released, effluent-free.
+thag17.2:17.1 | S: “Not for knowledge of past lives, | T: Not for knowledge of previous lifetimes,
+thag17.2:17.2 | S: nor even for clairvoyance; | T: nor for the divine eye,
+thag17.2:17.3 | S: not for psychic powers, <j>or encompassing the minds of others, | T: nor for knowledge of others’ minds, nor for psychic power,
+thag17.2:17.4 | S: nor for knowing people’s <j>passing away and being reborn; | T: nor for knowledge of beings dying & being reborn,
+thag17.2:17.5 | S: not for purifying the power of clairaudience, | T: nor for purifying the divine ear
+thag17.2:17.6 | S: did I have any wish.” | T: did I have any aspiration.
+thag17.2:18.1 | S: “His only shelter is the foot of a tree; | T: Sitting at the root of a tree,
+thag17.2:18.2 | S: shaven, wrapped in his outer robe, | T: with shaven head, wrapped in an outer robe,
+thag17.2:18.3 | S: the senior monk foremost in wisdom, | T: the elder foremost in discernment:
+thag17.2:18.4 | S: Upatissa himself practices absorption. | T: Upatissa does jhāna.
+thag17.2:19.1 | S: When in a meditation  free of placing the mind, | T: Attaining no-thinking,
+thag17.2:19.2 | S: a disciple of the Buddha | T: the disciple of the Rightly Self-Awakened One
+thag17.2:19.3 | S: is at that moment blessed | T: is endowed
+thag17.2:19.4 | S: with noble silence. | T: with noble silence straightaway.
+thag17.2:20.1 | S: As a rocky mountain | T: As a mountain of rock
+thag17.2:20.2 | S: is unwavering and well grounded, | T: is unwavering, well-settled,
+thag17.2:20.3 | S: so when delusion ends, | T: so a monk whose delusion is ended
+thag17.2:20.4 | S: a monk, like a mountain, doesn’t tremble.” | T: doesn’t quiver— just like a mountain.
+thag17.2:21.1 | S: “To the man who has not a blemish, | T: To a person without blemish,
+thag17.2:21.2 | S: who is always seeking purity, | T: in constant quest of what’s pure,
+thag17.2:21.3 | S: even a hair-tip of evil | T: a hair-tip of evil
+thag17.2:21.4 | S: seems as big as a stormcloud.” | T: seems a storm cloud.
+thag17.2:22.1 | S: “I don’t long for death; | T: I don’t delight in death,
+thag17.2:22.2 | S: I don’t long for life; | T: don’t delight in living.
+thag17.2:22.3 | S: I will lay down this body, | T: (none)
+thag17.2:22.4 | S: aware and mindful. | T: (none)
+thag17.2:23.1 | S: I don’t long for death; | T: (none)
+thag17.2:23.2 | S: I don’t long for life; | T: (none)
+thag17.2:23.3 | S: I await my time, | T: I await my time
+thag17.2:23.4 | S: like a worker waiting for their wages.” | T: like a worker his wage. I don’t delight in death, don’t delight in living. I await my time, mindful, alert.
+thag17.2:24.1 | S: “Both what came before and what follows after | T: On either side is death, it’s not non-death, ahead or behind.
+thag17.2:24.2 | S: are nothing but death, not freedom from death. | T: (none)
+thag17.2:24.3 | S: Practice, don’t perish— | T: Practice, don’t perish.
+thag17.2:24.4 | S: don’t let the moment pass you by. | T: Don’t let the moment pass you by.
+thag17.2:25.1 | S: Just like a frontier city, | T: As a frontier fortress is guarded
+thag17.2:25.2 | S: is guarded inside and out, | T: within & without,
+thag17.2:25.3 | S: so you should ward yourselves— | T: you should safeguard yourselves.
+thag17.2:25.4 | S: don’t let the moment pass you by. | T: Don’t let the moment pass you by.
+thag17.2:25.5 | S: For if you miss your moment | T: Those for whom the moment is past
+thag17.2:25.6 | S: you’ll grieve when sent to hell.” | T: grieve, consigned to hell.
+thag17.2:26.1 | S: “Calm and still, | T: Calmed, restrained,
+thag17.2:26.2 | S: thoughtful in counsel, not restless— | T: giving counsel unruffled,
+thag17.2:26.3 | S: he shakes off bad qualities | T: he shakes off evil qualities—
+thag17.2:26.4 | S: as the gale shakes leaves off a tree. | T: as the breeze, a leaf from a tree.
+thag17.2:27.1 | S: Calm and still, | T: Calmed, restrained,
+thag17.2:27.2 | S: thoughtful in counsel, not restless— | T: giving counsel unruffled,
+thag17.2:27.3 | S: he plucks off bad qualities | T: he removed evil qualities—
+thag17.2:27.4 | S: as the gale shakes leaves off a tree. | T: as the breeze, a leaf from a tree.
+thag17.2:28.1 | S: Calm and free of despair, | T: (none)
+thag17.2:28.2 | S: clear and unclouded, | T: (none)
+thag17.2:28.3 | S: of good morals, intelligent: | T: (none)
+thag17.2:28.4 | S: one would make an end of suffering.” | T: (none)
+thag17.2:29.1 | S: “Some householders, and even some renunciants, | T: You shouldn’t trust in this way some householders or those gone forth.
+thag17.2:29.2 | S: are not to be trusted. | T: (none)
+thag17.2:29.3 | S: Some who were good later become bad; | T: Having been good, they become bad.
+thag17.2:29.4 | S: while some who were bad become good.” | T: Having been bad, they become good.
+thag17.2:30.1 | S: “Sensual desire, ill will, | T: Sensual desire, ill will,
+thag17.2:30.2 | S: dullness and drowsiness, | T: sloth & torpor,
+thag17.2:30.3 | S: restlessness, and doubt: | T: restlessness & uncertainty:
+thag17.2:30.4 | S: these are the five mental stains for a monk.” | T: These, for a monk, are the five defilements.
+thag17.2:31.1 | S: “Whether they’re honored | T: The concentration of one dwelling in heedfulness doesn’t waver, whether he is honored or not.
+thag17.2:31.2 | S: or not honored, or both, | T: (none)
+thag17.2:31.3 | S: their immersion doesn’t waver | T: (none)
+thag17.2:31.4 | S: as they abide in the immeasurables. | T: (none)
+thag17.2:32.1 | S: They persistently practice absorption | T: Doing jhāna, persevering,
+thag17.2:32.2 | S: with subtle view and discernment. | T: having subtle insight into subtle views,
+thag17.2:32.3 | S: Rejoicing in the ending of grasping, | T: delighting in the ending of clinging:
+thag17.2:32.4 | S: they’re said to be a true person.” | T: He’s called a man of integrity.
+thag17.2:33.1 | S: “The oceans and the earth, | T: The great ocean, the Earth,
+thag17.2:33.2 | S: the mountains and the wind— | T: a mountain, even the wind
+thag17.2:33.3 | S: no simile can do justice | T: aren’t fitting as a comparison
+thag17.2:33.4 | S: to the Teacher’s magnificent liberation.” | T: for the Teacher’s foremost release.
+thag17.2:34.1 | S: “The senior monk who keeps the wheel rolling, | T: Keeping the (Dhamma) wheel going,
+thag17.2:34.2 | S: he is very wise and serene. | T: the elder of great knowledge, centered,
+thag17.2:34.3 | S: Like earth, like water, like fire, | T: being like earth, fire, & water,
+thag17.2:34.4 | S: he is neither attracted nor repelled. | T: is neither impassioned nor angered.
+thag17.2:35.1 | S: He has attained the perfection of wisdom, | T: Having attained perfection in discernment,
+thag17.2:35.2 | S: so intelligent and thoughtful. | T: greatly intelligent, a great sage,
+thag17.2:35.3 | S: He is bright, but seems to be dull; | T: not dull, though seemingly dull,
+thag17.2:35.4 | S: he always wanders, quenched.” | T: he always wanders unbound.
+thag17.2:36.1 | S: “I’ve served the Teacher | T: The Teacher has been served by me;
+thag17.2:36.2 | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, done;
+thag17.2:36.3 | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag17.2:36.4 | S: the leash to existence is eradicated. | T: the guide to becoming, uprooted.
+thag17.2:37.1 | S: Persist with diligence: | T: Attain consummation through heedfulness:
+thag17.2:37.2 | S: this is my instruction. | T: That is my message.
+thag17.2:37.3 | S: Come, I’ll be fully quenched— | T: So then, I’m about to unbind.
+thag17.2:37.4 | S: I am everywhere free.” | T: I’m released everywhere.
+
+## dhp102
+dhp102:1 | S: Better than reciting | T: And better than chanting
+dhp102:2 | S: a hundred meaningless verses | T: hundreds of meaningless verses is
+dhp102:3 | S: is a single saying of Dhamma, | T: one Dhamma-saying
+dhp102:4 | S: hearing which brings you peace. | T: that on hearing brings peace.
+
+## an6.38
+an6.38:1.1 | S: Then a certain brahmin went up to the Buddha, and exchanged greetings with him. | T: Then a certain brahman went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an6.38:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+an6.38:1.3 | S: “Worthy Gotama, this is my doctrine and view: | T: “Master Gotama, I hold to the doctrine, hold to the view,
+an6.38:1.4 | S: One does not act of one’s own volition, nor does one act of another’s volition.” | T: that there is no self-doing, there is no other-doing.”
+an6.38:1.5 | S: “Brahmin, may I never see or hear of anyone holding such a doctrine or view! | T: “Brahman, may I not see or hear of such a doctrine, such a view.
+an6.38:1.6 | S: How on earth can someone who comes and goes on his own say that | T: For how can one—even though he himself is coming forward, he himself is going away—say,
+an6.38:1.7 | S: one does not act of one’s own volition, nor does one act of another’s volition? | T: ‘There is no self-doing, there is no other-doing’?
+an6.38:2.1 | S: What do you think, brahmin, is there an element of initiative?” | T: [1] “What do you think, brahman: Does the property of instigation exist?”
+an6.38:2.2 | S: “Yes, sir.” | T: “Yes, sir.”
+an6.38:2.3 | S: “Since this is so, do we find sentient beings who initiate activity?” | T: “And when there’s the property of instigation, are beings who are instigating discerned?”
+an6.38:2.4 | S: “Yes, sir.” | T: “Yes, sir.”
+an6.38:2.5 | S: “Since there is an element of initiative, and sentient beings who initiate activity are found, sentient beings act of their own volition or that of another. | T: “Then, when there’s the property of instigation and beings who are instigating are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:3.1 | S: What do you think, brahmin, is there an element of persistence … | T: [2] “What do you think, brahman: Does the property of perseverance exist?” “Yes, sir.” “And when there’s the property of perseverance, are beings who are persevering discerned?” “Yes, sir.” “Then, when there’s the property of perseverance and beings who are persevering are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:3.2 | S: exertion … | T: [3] “What do you think, brahman: Does the property of exertion exist?” “Yes, sir.” “And when there’s the property of exertion, are beings who are exerting discerned?” “Yes, sir.” “Then, when there’s the property of exertion and beings who are exerting are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:3.3 | S: strength … | T: [4]“What do you think, brahman: Does the property of firmness exist?” “Yes, sir.” “And when there’s the property of firmness, are beings who are standing firm discerned?” “Yes, sir.” “Then, when there’s the property of firmness and beings who are standing firm are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:3.4 | S: endurance … | T: [5] “What do you think, brahman: Does the property of stability exist?” “Yes, sir.” “And when there’s the property of stability, are beings who are maintaining stability discerned?” “Yes, sir.” “Then, when there’s the property of stability and beings who are maintaining stability are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:3.5 | S: exertion?” | T: [6] “What do you think, brahman: Does the property of striving exist?”
+an6.38:3.6 | S: “Yes, sir.” | T: “Yes, sir.”
+an6.38:3.7 | S: “Since this is so, do we find sentient beings who have exertion?” | T: “And when there’s the property of striving, are beings who are striving discerned?”
+an6.38:3.8 | S: “Yes, sir.” | T: “Yes, sir.”
+an6.38:3.9 | S: “Since there is an element of exertion, and sentient beings who have exertion are found, sentient beings act of their own volition or that of another. | T: “Then, when there’s the property of striving and beings who are striving are discerned, that is the self-doing of beings, that is (their) other-doing.
+an6.38:4.1 | S: Brahmin, may I never see or hear of anyone holding such a doctrine or view! | T: “Brahman, may I not see or hear of such a doctrine, such a view [as yours].
+an6.38:4.2 | S: How on earth can someone who comes and goes on his own say that | T: For how can one—even though he himself is coming forward, he himself is going away—say,
+an6.38:4.3 | S: one does not act of one’s own volition, nor does one act of another’s volition?” | T: ‘There is no self-doing, there is no other-doing’?”
+an6.38:5.1 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+an6.38:5.2 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone for refuge from this day forward, for life.”
+
+## dhp296
+dhp296:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples whose mindfulness,
+dhp296:2 | S: always wake up refreshed, | T: (none)
+dhp296:3 | S: who day and night | T: both day & night,
+dhp296:4 | S: constantly recollect the Buddha. | T: is constantly immersed in the Buddha.
+
+## dhp298
+dhp298:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples whose mindfulness,
+dhp298:2 | S: always wake up refreshed, | T: (none)
+dhp298:3 | S: who day and night | T: both day & night,
+dhp298:4 | S: constantly recollect the Saṅgha. | T: is constantly immersed in the Sangha.
+
+## dhp299
+dhp299:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples whose mindfulness,
+dhp299:2 | S: always wake up refreshed, | T: (none)
+dhp299:3 | S: who day and night | T: both day & night,
+dhp299:4 | S: are constantly mindful of the body. | T: is constantly immersed in the body.
+
+## dhp297
+dhp297:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples whose mindfulness,
+dhp297:2 | S: always wake up refreshed, | T: (none)
+dhp297:3 | S: who day and night | T: both day & night,
+dhp297:4 | S: constantly recollect the teaching. | T: is constantly immersed in the Dhamma.
+
+## dhp43
+dhp43:1 | S: A rightly directed mind | T: Whatever a mother, father or other kinsman might do for you, the well-directed mind can do for you even better.
+dhp43:2 | S: would do you more good | T: (none)
+dhp43:3 | S: than your mother or father | T: (none)
+dhp43:4 | S: or any other relative. | T: (none)
+
+## thag16.8
+thag16.8:1.1 | S: “While walking, ascetic, you say ‘I’ve stopped.’ | T: Aṅgulimāla: “While walking, contemplative, you say, ’I have stopped.’
+thag16.8:1.2 | S: And I have stopped, but you tell me I’ve not. | T: But when I have stopped you say that I haven’t.
+thag16.8:1.3 | S: I’m asking you this, ascetic: | T: I ask you the meaning of this:
+thag16.8:1.4 | S: how is it you’ve stopped and I have not?” | T: How have you stopped? How haven’t I?”
+thag16.8:2.1 | S: “Aṅgulimāla, I have forever stopped— | T: The Buddha: “I have stopped, Aṅgulimāla, once & for all,
+thag16.8:2.2 | S: I’ve laid aside violence toward all creatures. | T: having cast off violence toward all living beings.
+thag16.8:2.3 | S: But you can’t stop yourself <j>from harming living creatures; | T: You, though, are unrestrained toward beings.
+thag16.8:2.4 | S: that’s why I’ve stopped, but you have not.” | T: That’s how I’ve stopped and you haven’t.”
+thag16.8:3.1 | S: “Oh, at long last a renowned great seer, | T: Aṅgulimāla: “At long last a greatly revered great seer
+thag16.8:3.2 | S: an ascetic has followed me into this deep wood. | T: for my sake has come to the great forest.
+thag16.8:3.3 | S: Now that I’ve heard your verse on Dhamma, | T: Having heard your verse in line with the Dhamma,
+thag16.8:3.4 | S: I shall discard a thousand evils.” | T: I will go about having abandoned evil.”
+thag16.8:4.1 | S: With these words, <j>the bandit hurled his sword and weapons | T: So saying, the bandit hurled his sword & weapons
+thag16.8:4.2 | S: down a cliff into an abyss. | T: over a cliff into a chasm, a pit.
+thag16.8:4.3 | S: He venerated the Holy One’s feet, | T: Then the bandit paid homage to the feet of the One Well-Gone,
+thag16.8:4.4 | S: and requested the going forth <j>from the Buddha right away. | T: and right there requested the Going-forth.
+thag16.8:5.1 | S: Then the Buddha, the compassionate great seer, | T: The Awakened One, the compassionate great seer,
+thag16.8:5.2 | S: the Teacher of the world with its gods, | T: the teacher of the world, along with its devas,
+thag16.8:5.3 | S: said to him, “Come, monk!” | T: said to him then: “Come, monk.”
+thag16.8:5.4 | S: And with that he became a monk. | T: That in itself was monkhood for him.
+thag16.8:6.1 | S: “He who once was heedless, | T: Aṅgulimāla: Who once was heedless,
+thag16.8:6.2 | S: but turned to heedfulness, | T: but later is not,
+thag16.8:6.3 | S: shines upon this world, | T: brightens the world
+thag16.8:6.4 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+thag16.8:7.1 | S: Someone whose bad deed | T: His evil-done deed
+thag16.8:7.2 | S: is supplanted by the good, | T: is replaced with skillfulness:
+thag16.8:7.3 | S: shines upon this world, | T: He brightens the world
+thag16.8:7.4 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+thag16.8:8.1 | S: A young mendicant | T: Whatever young monk
+thag16.8:8.2 | S: devoted to the Buddha’s teaching, | T: devotes himself to the Buddha’s bidding:
+thag16.8:8.3 | S: shines upon this world, | T: He brightens the world
+thag16.8:8.4 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+thag16.8:9.1 | S: May even my enemies <j>hear a Dhamma talk! | T: May even my enemies hear talk of the Dhamma.
+thag16.8:9.2 | S: May even my enemies <j>devote themselves to the Buddha’s teaching! | T: May even my enemies devote themselves to the Buddha’s bidding.
+thag16.8:9.3 | S: May even my enemies associate with those good men | T: May even my enemies associate with those people who—peaceful, good—
+thag16.8:9.4 | S: who establish others in the Dhamma! | T: get others to accept the Dhamma.
+thag16.8:10.1 | S: May even my enemies <j>hear Dhamma at the right time, | T: May even my enemies hear the Dhamma time & again
+thag16.8:10.2 | S: from those who teach acceptance, | T: from those who advise endurance, forbearance, who praise non-opposition,
+thag16.8:10.3 | S: praising acquiescence; | T: (none)
+thag16.8:10.4 | S: and may they follow that path! | T: and may they follow it.
+thag16.8:11.1 | S: For then they’d never wish harm | T: For surely he wouldn’t harm me,
+thag16.8:11.2 | S: upon myself or others. | T: or anyone else;
+thag16.8:11.3 | S: Having arrived at ultimate peace, | T: he would attain the foremost peace,
+thag16.8:11.4 | S: they’d look after creatures firm and frail. | T: would protect the feeble & firm.
+thag16.8:12.1 | S: For while irrigators guide water, | T: Irrigators guide the water.
+thag16.8:12.2 | S: fletchers bend arrows straight, | T: Fletchers shape the arrow shaft.
+thag16.8:12.3 | S: and carpenters bend timber straight, | T: Carpenters shape the wood.
+thag16.8:12.4 | S: the astute tame themselves. | T: The wise control themselves.
+thag16.8:13.1 | S: Some tame by using the rod, | T: Some tame with a blunt stick,
+thag16.8:13.2 | S: some with goads, and some with whips. | T: with hooks, & with whips
+thag16.8:13.3 | S: But the unaffected one tamed me | T: But without blunt or bladed weapons I was tamed by the one who is Such.
+thag16.8:13.4 | S: without rod or sword. | T: (none)
+thag16.8:14.1 | S: My name is ‘Harmless’, | T: “Doer of No Harm” is my name,
+thag16.8:14.2 | S: though I used to be harmful. | T: but I used to be a doer of harm.
+thag16.8:14.3 | S: The name I bear today is true, | T: Today I am true to my name,
+thag16.8:14.4 | S: for I do no harm to anyone. | T: for I harm no one at all.
+thag16.8:15.1 | S: I used to be a bandit, | T: A bandit I used to be,
+thag16.8:15.2 | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+thag16.8:15.3 | S: Swept away in a great flood, | T: Swept along by a great flood,
+thag16.8:15.4 | S: I went to the Buddha for refuge. | T: I went to the Buddha as refuge.
+thag16.8:16.1 | S: I used to have blood on my hands, | T: Bloody-handed I used to be,
+thag16.8:16.2 | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+thag16.8:16.3 | S: See the refuge I’ve found— | T: See my going for refuge!
+thag16.8:16.4 | S: the leash to existence is eradicated. | T: Uprooted is [craving], the guide to becoming.
+thag16.8:17.1 | S: I’ve done many of the sort of deeds | T: Having done the type of kamma
+thag16.8:17.2 | S: that lead to a bad destination. | T: that would lead to many bad destinations,
+thag16.8:17.3 | S: The result of my deeds has already struck me, | T: touched by the fruit of [that] kamma,
+thag16.8:17.4 | S: so I enjoy my food free of debt. | T: unindebted, I eat my food.
+thag16.8:18.1 | S: Fools and simpletons | T: They’re addicted to heedlessness —dullards, fools—
+thag16.8:18.2 | S: devote themselves to negligence. | T: (none)
+thag16.8:18.3 | S: But the wise protect diligence | T: while one who is wise cherishes heedfulness
+thag16.8:18.4 | S: as their best treasure. | T: as his highest wealth.
+thag16.8:19.1 | S: Don’t devote yourself to negligence, | T: Don’t give way to heedlessness
+thag16.8:19.2 | S: or delight in erotic intimacy. | T: or to intimacy with sensual delight—
+thag16.8:19.3 | S: For if you’re diligent and practice absorption, | T: for a heedful person, absorbed in jhāna,
+thag16.8:19.4 | S: you’ll attain ultimate happiness. | T: attains an abundant bliss.
+thag16.8:20.1 | S: It was welcome, not unwelcome, | T: (none)
+thag16.8:20.2 | S: the advice I got was good. | T: (none)
+thag16.8:20.3 | S: Of the well-explained teachings, | T: This has come well & not gone away, it was not badly thought through for me. From among well-analyzed qualities,
+thag16.8:20.4 | S: I arrived at the best. | T: I have obtained the best.
+thag16.8:21.1 | S: It was welcome, not unwelcome, | T: This has come well & not gone away,
+thag16.8:21.2 | S: the advice I got was good. | T: it was not badly thought through for me.
+thag16.8:21.3 | S: I’ve attained the three knowledges, | T: The three knowledges have been attained;
+thag16.8:21.4 | S: and fulfilled the Buddha’s instructions.” | T: the Awakened One’s bidding, done.
+thag16.8:22.1 | S: “In the wilderness, at a tree’s root, | T: Where once I stayed here & there with shuddering mind— in the wilderness, at the foot of a tree,
+thag16.8:22.2 | S: on mountains, or in caves— | T: in mountains, caves—
+thag16.8:22.3 | S: it used to be that wherever I stood, | T: (none)
+thag16.8:22.4 | S: my mind was anxious. | T: (none)
+thag16.8:23.1 | S: But now I lie down happily and stand up happily, | T: with ease I now lie down, I stand,
+thag16.8:23.2 | S: I live my life happily, | T: with ease I live my life.
+thag16.8:23.3 | S: out of Māra’s reach; | T: (none)
+thag16.8:23.4 | S: the Teacher had sympathy for me. | T: O, the Teacher has shown me sympathy!
+thag16.8:24.1 | S: I used to be of brahmin birth, | T: Before, I was of brahman stock,
+thag16.8:24.2 | S: highborn on both sides, | T: on either side high-born.
+thag16.8:24.3 | S: now I’m a son of the Holy One, | T: Today I’m the son of the One Well-Gone,
+thag16.8:24.4 | S: the Teacher, King of Dhamma. | T: the Dhamma-king, the Teacher.
+thag16.8:25.1 | S: I am rid of craving, free of grasping, | T: Rid of craving, devoid of clinging,
+thag16.8:25.2 | S: my sense doors are guarded and well-restrained. | T: sense-doors guarded, well-restrained,
+thag16.8:25.3 | S: I’ve destroyed the root of gloom, | T: having killed the root of evil,
+thag16.8:25.4 | S: and attained the ending of defilements. | T: I’ve reached the end of the effluents.
+thag16.8:26.1 | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag16.8:26.2 | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, done;
+thag16.8:26.3 | S: The heavy burden is laid down, | T: the guide to becoming, uprooted; the heavy load, laid down.
+thag16.8:26.4 | S: the leash to existence is eradicated.” | T: (none)
+

@@ -1,0 +1,363 @@
+## sn2.25
+sn2.25:1.1 | S: So I have heard. | T: I have heard that
+sn2.25:1.2 | S: At one time several mendicants were staying in the Kosalan lands, in a wilderness hut on the slopes of the Himalayas. They were haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: on one occasion many monks were staying among the Kosalans in wilderness huts: high-strung, rowdy, unruly, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+sn2.25:2.1 | S: Then on the fifteenth day sabbath the godling Jantu went up to those mendicants and addressed them in verse: | T: Then Jantu the deva’s son, on the uposatha of the fifteenth, went to those monks and, on arrival, addressed them in verses.
+sn2.25:3.1 | S: “The mendicants used to live happily, | T: They lived happily in the past,
+sn2.25:3.2 | S: as disciples of Gotama. | T: the monks who were Gotama’s disciples.
+sn2.25:3.3 | S: Desireless they sought alms; | T: Without wishes, they sought their alms.
+sn2.25:3.4 | S: desireless they used their lodgings. | T: Without wishes, their dwellings.
+sn2.25:3.5 | S: Knowing that the world was impermanent | T: Knowing inconstancy with regard to the world,
+sn2.25:3.6 | S: they made an end of suffering. | T: they made an end of suffering.
+sn2.25:4.1 | S: But now they’ve made themselves hard to look after, | T: [But these,] making themselves hard to maintain,
+sn2.25:4.2 | S: like chiefs in a village. | T: like headmen in a village,
+sn2.25:4.3 | S: They eat and eat and then lie down, | T: eating, eating, lie down
+sn2.25:4.4 | S: passed out in the homes of others. | T: infatuated in others’ homes.
+sn2.25:5.1 | S: Having raised my cupped palms to the Saṅgha, | T: Placing my hands over my heart to the Saṅgha,
+sn2.25:5.2 | S: I speak here only about certain people. | T: I speak of some,
+sn2.25:5.3 | S: They’re dregs, with no protector, | T: hurled down, without protection,
+sn2.25:5.4 | S: just like those who have passed away. | T: like hungry ghosts.
+sn2.25:6.1 | S: I’m speaking about | T: Those who live heedlessly: My words touch on them.
+sn2.25:6.2 | S: those who live negligently. | T: (none)
+sn2.25:6.3 | S: To those who live diligently | T: Those who live heedfully:
+sn2.25:6.4 | S: I pay homage.” | T: I pay them homage.
+
+## an10.96
+an10.96:1.1 | S: At one time Venerable Ānanda was staying near Rājagaha in the Hot Springs Monastery. | T: On one occasion Ven. Ānanda was staying near Rājagaha in Tapodā monastery.
+an10.96:1.2 | S: Then Ānanda rose at the crack of dawn and went to the hot springs to bathe. | T: Then, as night was ending, he got up & went to the Tapodā Hot Springs to bathe his limbs.
+an10.96:1.3 | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed his limbs and having gotten out of the springs, he stood wearing only his lower robe, drying his limbs.
+an10.96:1.4 | S: The wanderer Kokanada also rose at the crack of dawn and went to the hot springs to bathe. | T: Kokanuda the wanderer, as night was ending, also got up & went to the Tapodā Hot Springs to bathe his limbs.
+an10.96:2.1 | S: He saw Ānanda coming off in the distance | T: He saw Ven. Ānanda from afar,
+an10.96:2.2 | S: and said to him, | T: and on seeing him said to him,
+an10.96:2.3 | S: “Who’s here, reverend?” | T: “Who are you, my friend?”
+an10.96:2.4 | S: “I’m a mendicant, reverend.” | T: “I am a monk, my friend.”
+an10.96:3.1 | S: “Of which mendicants?” | T: “Which kind of monk?”
+an10.96:3.2 | S: “Of the ascetics who follow the Sakyan.” | T: “A son-of-the-Sakyan contemplative.”
+an10.96:4.1 | S: “I’d like to ask the venerable about a certain point, if you’d take the time to answer.” | T: “I would like to ask you about a certain point, if you would give me leave to pose a question.”
+an10.96:4.2 | S: “Ask, reverend. When I’ve heard it I’ll know.” | T: “Go ahead and ask. Having heard (your question), I’ll inform you.”
+an10.96:5.1 | S: “Is this your view: ‘The cosmos is eternal. This is the only truth, anything else is futile’?” | T: “How is it, my friend: ‘The cosmos is eternal. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:5.2 | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:6.1 | S: “Then is this your view: ‘The cosmos is not eternal. This is the only truth, anything else is futile’?” | T: “Very well, then: ‘The cosmos is not eternal. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:6.2 | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:7.1 | S: “Then is this your view: ‘The cosmos is finite …’ … | T: “Very well, then: ‘The cosmos is finite … ’ …
+an10.96:7.2 | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.96:7.3 | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.96:7.4 | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.96:7.5 | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.96:7.6 | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.96:7.7 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.96:7.8 | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile’?” | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:7.9 | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:8.1 | S: “Then, sir, do you neither know nor see?” | T: “Then in that case, do you not know or see?”
+an10.96:8.2 | S: “That’s not so, reverend. | T: “No, my friend. It’s not the case that I don’t know, I don’t see.
+an10.96:8.3 | S: I do know and see.” | T: I do know. I do see.”
+an10.96:9.1 | S: “When asked about all these points, you say that’s not your view. | T: “But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” …
+an10.96:11.1 | P: Kiṁ nu kho, bho, antavā loko …pe… | T: “The cosmos is finite … ” …
+an10.96:11.2 | P: anantavā loko … | T: “The cosmos is infinite … ” …
+an10.96:11.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | T: “The soul & the body are the same … ” …
+an10.96:11.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | T: “The soul is one thing and the body another … ” …
+an10.96:11.5 | P: hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata exists … ” …
+an10.96:11.6 | P: na hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata does not exist … ” …
+an10.96:11.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata both does & does not exist … ” …
+an10.96:11.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññanti— | T: “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.”
+an10.96:11.9 | P: evaṁdiṭṭhi bhavanti, iti puṭṭho samāno: | T: Is this the sort of view you have?’ you inform me,
+an10.96:11.10 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | T: ‘No, my friend, I don’t have that sort of view.’
+an10.96:12.1 | S: Yet when asked whether you neither know nor see, | T: But on being asked, ‘Then in that case, do you not know or see?’
+an10.96:12.2 | S: you say, ‘That’s not so, reverend. | T: you inform me, ‘No, my friend.
+an10.96:12.3 | S: I do know and see.’ | T: It’s not the case that I don’t know or see. I do know. I do see.’
+an10.96:12.4 | S: How then should we see the meaning of this statement?” | T: Now, how is the meaning of this statement to be understood?”
+an10.96:13.1 | S: “‘The cosmos is eternal. This is the only truth, anything else is futile:’ that’s a misconception. | T: “‘The cosmos is eternal. Only this is true; anything otherwise is worthless,’ is a viewpoint.
+an10.96:13.2 | S: ‘The cosmos is not eternal. This is the only truth, anything else is futile:’ that’s a misconception. | T: ‘The cosmos is not eternal …’ …
+an10.96:13.3 | S: ‘The cosmos is finite …’ … | T: ‘The cosmos is finite … ’ …
+an10.96:13.4 | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.96:13.5 | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.96:13.6 | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.96:13.7 | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.96:13.8 | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.96:13.9 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.96:13.10 | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile:’ that’s a misconception. | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless,’ is a viewpoint.
+an10.96:14.1 | S: I know and see the scope of convictions, the scope of grounds for views, fixation on views, obsession with views, the origin of views, and the uprooting of views. | T: The extent to which there are viewpoints, view-stances, the taking up of views, obsessions with views, the cause of views, & the uprooting of views: that’s what I know. That’s what I see.
+an10.96:14.2 | S: Knowing and seeing thus, why should I say: | T: Knowing that, I say ‘I know.’ Seeing that, I say ‘I see.’ Why should I say
+an10.96:14.3 | S: ‘I neither know nor see?’ | T: ‘I don’t know, I don’t see’?
+an10.96:14.4 | S: I do know and see.” | T: I do know. I do see.”
+an10.96:15.1 | S: “What is the venerable’s name? And how are you known among your spiritual companions?” | T: “What is your name, my friend? What do your companions in the holy life call you?”
+an10.96:15.2 | S: “Reverend, my name is Ānanda. | T: “My name is Ānanda, my friend,
+an10.96:15.3 | S: And that’s how I’m known among my spiritual companions.” | T: and that’s what my companions in the holy life call me.”
+an10.96:15.4 | S: “Goodness! I had no idea I was consulting such a great tutor as | T: “What? Have I been talking with the great teacher without realizing that he was Ven. Ānanda?
+an10.96:15.5 | S: Venerable Ānanda! | T: (none)
+an10.96:15.6 | S: If I had known who | T: Had I recognized that he was Ven. Ānanda,
+an10.96:15.7 | S: you were, I wouldn’t have said so much. | T: I would not have cross-examined him so much.
+an10.96:15.8 | S: May Venerable Ānanda please forgive me.” | T: May Ven. Ānanda please forgive me.”
+
+## sn22.89
+sn22.89:1.1 | S: At one time several senior mendicants were staying near Kosambī in Ghosita’s monastery. | T: On one occasion many elder monks were staying near Kosambī at Ghosita’s monastery.
+sn22.89:1.2 | S: Now at that time Venerable Khemaka was staying in the Jujube Tree Monastery, and he was sick, suffering, gravely ill. | T: And at that time Ven. Khemaka was staying at the Jujube Tree Park, diseased, in pain, severely ill.
+sn22.89:1.3 | S: In the late afternoon those senior mendicants came out of retreat and addressed Venerable Dāsaka, | T: Then in the evening the elder monks left their seclusion and addressed Ven. Dāsaka,
+sn22.89:1.4 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: (saying,) “Come, friend Dāsaka. Go to the monk Khemaka and on arrival say to him,
+sn22.89:1.5 | S: ‘Reverend Khemaka, the seniors | T: ‘The elders, friend Khemaka, say to you,
+sn22.89:1.6 | S: hope you’re keeping well; they hope you’re all right. They hope your pain is fading, not growing; that its fading is evident, not its growing.’” | T: “We hope you are getting better, friend. We hope you are comfortable. We hope that your pains are lessening and not increasing. We hope that there are signs of their lessening, and not of their increasing.”’”
+sn22.89:1.7 | S: “Yes, reverends,” replied Dāsaka. He went to Khemaka and said to him: | T: Replying, “As you say, friends,” to the elder monks, Ven. Dāsaka went to Ven. Khemaka and on arrival said to him:
+sn22.89:1.8 | S: “Reverend Khemaka, the seniors | T: “The elders, friend Khemaka, say to you,
+sn22.89:1.9 | S: hope you’re keeping well; they hope you’re all right. They hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: ‘We hope you are getting better, friend. We hope you are comfortable. We hope that your pains are lessening and not increasing. We hope that there are signs of their lessening, and not of their increasing.’”
+sn22.89:1.10 | S: “Reverend, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: “I am not getting better, my friend. I am not comfortable. My extreme pains are increasing, not lessening. There are signs of their increasing, and not of their lessening.”
+sn22.89:2.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said, | T: Then Ven. Dāsaka went to the elder monks and, on arrival, said to them, “The monk Khemaka has said to me, ‘I am not getting better, my friend. I am not comfortable. My extreme pains are increasing, not lessening. There are signs of their increasing, and not of their lessening.’”
+sn22.89:2.4 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dāsaka. Go to the monk Khemaka and on arrival say to him,
+sn22.89:2.5 | S: ‘Reverend Khemaka, the seniors say that | T: ‘The elders, friend Khemaka, say to you,
+sn22.89:2.6 | S: these five grasping aggregates have been taught by the Buddha, that is: | T: “Concerning these five clinging-aggregates described by the Blessed One—i.e.,
+sn22.89:2.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+sn22.89:2.8 | S: Do you regard anything among these five grasping aggregates as self or as belonging to self?’” | T: Do you assume anything with regard to these five clinging-aggregates to be self or belonging to self?”’”
+sn22.89:3.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: Replying, “As you say, friends,” to the elder monks, Ven. Dāsaka went to Ven. Khemaka and on arrival said to him,
+sn22.89:3.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: “The elders, friend Khemaka, say to you, ‘Concerning these five clinging-aggregates described by the Blessed One—i.e., the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate: Do you assume anything with regard to these five clinging-aggregates to be self or belonging to self?’”
+sn22.89:3.6 | S: “These five grasping aggregates have been taught by the Buddha, that is: | T: “Friend, concerning these five clinging-aggregates described by the Blessed One—i.e.,
+sn22.89:3.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+sn22.89:3.8 | S: I do not regard anything among these five grasping aggregates as self or as belonging to self.” | T: With regard to these five clinging-aggregates, there is nothing I assume to be self or belonging to self.”
+sn22.89:4.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said: | T: Then Ven. Dāsaka went to the elder monks and, on arrival, said to them,
+sn22.89:4.2 | P: “khemako, āvuso, bhikkhu evamāha: | T: “The monk Khemaka has said to me,
+sn22.89:4.3 | P: ‘pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: ‘Friend, concerning these five clinging-aggregates described by the Blessed One—i.e., the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+sn22.89:4.5 | P: Imesu khvāhaṁ, āvuso, pañcasu upādānakkhandhesu na kiñci attaṁ vā attaniyaṁ vā samanupassāmī’”ti. | T: With regard to these five clinging-aggregates, there is nothing I assume to be self or belonging to self.’”
+sn22.89:4.6 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dāsaka. Go to the monk Khemaka and on arrival say to him,
+sn22.89:4.7 | S: ‘Reverend Khemaka, the seniors say that | T: ‘The elders, friend Khemaka, say to you,
+sn22.89:4.8 | S: these five grasping aggregates have been taught by the Buddha, that is: | T: “Concerning these five clinging-aggregates described by the Blessed One—i.e.,
+sn22.89:4.9 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+sn22.89:4.10 | S: If, as it seems, Venerable Khemaka does not regard anything among these five grasping aggregates as self or as belonging to self, | T: If, with regard to these five clinging-aggregates, Ven. Khemaka assumes nothing to be self or belonging to self,
+sn22.89:4.11 | S: then he is a perfected one, with defilements ended.’” | T: then Ven. Khemaka is an arahant, devoid of effluents.”’”
+sn22.89:5.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: Replying, “As you say, friends,” to the elder monks, Ven. Dāsaka went to Ven. Khemaka and on arrival said to him,
+sn22.89:5.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: “The elders, friend Khemaka, say to you, ‘Concerning these five clinging-aggregates described by the Blessed One—i.e., the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate: If, with regard to these five clinging-aggregates, Ven. Khemaka assumes nothing to be self or belonging to self, then Ven. Khemaka is an arahant, devoid of effluents.’”
+sn22.89:5.6 | S: “These five grasping aggregates have been taught by the Buddha, that is: | T: “Friend, concerning these five clinging-aggregates described by the Blessed One—i.e.,
+sn22.89:5.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+sn22.89:5.8 | S: I do not regard anything among these five grasping aggregates as self or as belonging to self, yet I am not a perfected one, with defilements ended. | T: With regard to these five clinging-aggregates, there is nothing I assume to be self or belonging to self, and yet I am not an arahant.
+sn22.89:5.9 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’.” | T: With regard to these five clinging-aggregates, ‘I am’ has not been overcome, although I don’t assume that ‘I am this.’”
+sn22.89:6.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said: | T: Then Ven. Dāsaka went to the elder monks and, on arrival, said to them, “The monk Khemaka has said to me, ‘Friend, concerning these five clinging-aggregates described by the Blessed One—i.e., the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate: With regard to these five clinging-aggregates, there is nothing I assume to be self or belonging to self, and yet I am not an arahant. With regard to these five clinging-aggregates, “I am” has not been overcome, although I don’t assume that “I am this.”’”
+sn22.89:7.1 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dāsaka. Go to the monk Khemaka and on arrival say to him,
+sn22.89:7.2 | S: ‘Reverend Khemaka, the seniors ask, | T: ‘The elders, friend Khemaka, say to you,
+sn22.89:7.3 | S: when you say “I am”, what is it that you’re talking about? | T: “Friend Khemaka, this ‘I am’ of which you speak: what do you say ‘I am’?
+sn22.89:7.4 | S: Is it form or apart from form? | T: Do you say, ‘I am form,’ or do you say, ‘I am something other than form’?
+sn22.89:7.5 | S: Is it feeling … | T: Do you say, ‘I am feeling…
+sn22.89:7.6 | S: perception … | T: perception…
+sn22.89:7.7 | S: choices … | T: fabrications…
+sn22.89:7.8 | S: consciousness, or apart from consciousness? | T: consciousness,’ or do you say, ‘I am something other than consciousness’?
+sn22.89:7.9 | S: When you say “I am”, what is it that you’re talking about?” | T: This ‘I am’ of which you speak: what do you say ‘I am’?”’”
+sn22.89:8.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: Replying, “As you say, friends,” to the elder monks, Ven. Dāsaka went to Ven. Khemaka and on arrival said to him, “The elders, friend Khemaka, say to you, ‘Friend Khemaka, this “I am” of which you speak: what do you say “I am”? Do you say, “I am form,” or do you say, “I am something other than form”? Do you say, “I am feeling… perception… fabrications… consciousness,” or do you say, “I am something other than consciousness” ’? This “I am” of which you speak: what do you say “I am”?’”
+sn22.89:8.10 | S: “Enough, Reverend Dāsaka! What’s the point in running back and forth? | T: “Enough, friend Dāsaka. What is accomplished by this running back & forth?
+sn22.89:8.11 | S: Bring my staff, | T: Fetch me my staff.
+sn22.89:8.12 | S: I’ll go to see the senior mendicants myself.” | T: I will go to the elder monks myself.”
+sn22.89:9.1 | S: Then Venerable Khemaka, leaning on a staff, went to those senior mendicants and exchanged greetings with them. | T: Then Ven. Khemaka, leaning on his staff, went to the elder monks and, on arrival, exchanged courteous greetings with them.
+sn22.89:9.2 | S: When the greetings and polite conversation were over, he sat down to one side. They said to him: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, the elder monks said to him,
+sn22.89:9.3 | S: “Reverend Khemaka, when you say ‘I am’, what is it that you’re talking about? | T: “Friend Khemaka, this ‘I am’ of which you speak: what do you say ‘I am’?
+sn22.89:9.4 | S: Is it form or apart from form? | T: Do you say, ‘I am form,’ or do you say, ‘I am something other than form’?
+sn22.89:9.5 | S: Is it feeling … | T: Do you say, ‘I am feeling…
+sn22.89:9.6 | S: perception … | T: perception…
+sn22.89:9.7 | S: choices … | T: fabrications…
+sn22.89:9.8 | S: consciousness, or apart from consciousness? | T: consciousness,’ or do you say, ‘I am something other than consciousness’’?
+sn22.89:9.9 | S: When you say ‘I am’, what is it that you’re talking about?” | T: This ‘I am’ of which you speak: what do you say ‘I am’?”
+sn22.89:9.10 | S: “Reverends, I don’t say ‘I am’ with reference to form, or apart from form. | T: “Friends, it’s not that I say ‘I am form,’ nor do I say ‘I am something other than form.’
+sn22.89:9.11 | S: I don’t say ‘I am’ with reference to feeling … | T: It’s not that I say, ‘I am feeling…
+sn22.89:9.12 | S: perception … | T: perception…
+sn22.89:9.13 | S: choices … | T: fabrications…
+sn22.89:9.14 | S: consciousness, or apart from consciousness. | T: consciousness,’ nor do I say, ‘I am something other than consciousness.’
+sn22.89:9.15 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’. | T: With regard to these five clinging-aggregates, ‘I am’ has not been overcome, although I don’t assume that ‘I am this.’
+sn22.89:10.1 | S: It’s like the scent of a blue water lily, or a pink or white lotus. | T: “It’s just like the scent of a blue, red, or white lotus:
+sn22.89:10.2 | S: Would it be right to say that the scent belongs to the petals or the stalk or the pistil?” | T: If someone were to call it the scent of a petal or the scent of the color or the scent of a filament, would he be speaking correctly?”
+sn22.89:10.3 | S: “No, reverend.” | T: “No, friend.”
+sn22.89:10.4 | S: “Then, reverends, how should it be said?” | T: “Then how would he describe it if he were describing it correctly?”
+sn22.89:10.5 | S: “It would be right to say that the scent belongs to the flower.” | T: “As the scent of the flower: That’s how he would describe it if he were describing it correctly.”
+sn22.89:10.6 | S: “In the same way, reverends, I don’t say ‘I am’ with reference to form, or apart from form. | T: “In the same way, friends, it’s not that I say ‘I am form,’ nor do I say ‘I am other than form.’
+sn22.89:10.7 | S: I don’t say ‘I am’ with reference to feeling … | T: It’s not that I say, ‘I am feeling…
+sn22.89:10.8 | S: perception … | T: perception…
+sn22.89:10.9 | S: choices … | T: fabrications…
+sn22.89:10.10 | S: consciousness, or apart from consciousness. | T: consciousness,’ nor do I say, ‘I am something other than consciousness.’
+sn22.89:10.11 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’. | T: With regard to these five clinging-aggregates, ‘I am’ has not been overcome, although I don’t assume that ‘I am this.’
+sn22.89:11.1 | S: Although a noble disciple has given up the five lower fetters, they still have a lingering residue of the conceit ‘I am’, the desire ‘I am’, and the underlying tendency ‘I am’ which has not been eradicated. | T: “Friends, even though a noble disciple has abandoned the five lower fetters, he still has with regard to the five clinging-aggregates a lingering residual ‘I am’ conceit, an ‘I am’ desire, an ‘I am’ obsession.
+sn22.89:11.2 | S: After some time they meditate observing rise and fall in the five grasping aggregates. | T: But at a later time he keeps focusing on the phenomena of arising & passing away with regard to the five clinging-aggregates:
+sn22.89:11.3 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its disappearance.
+sn22.89:11.4 | S: Such is feeling … | T: Such is feeling.…
+sn22.89:11.5 | S: Such is perception … | T: Such is perception.…
+sn22.89:11.6 | S: Such are choices … | T: Such are fabrications.…
+sn22.89:11.7 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its disappearance.’
+sn22.89:11.8 | S: As they do so, that lingering residue is eradicated. | T: As he keeps focusing on the arising & passing away of these five clinging-aggregates, the lingering residual ‘I am’ conceit, ‘I am’ desire, ‘I am’ obsession is fully obliterated.
+sn22.89:12.1 | S: Suppose there was a cloth that was dirty and soiled, so the owners give it to a launderer. | T: “Just like a cloth, dirty & stained: Its owners give it over to a washerman,
+sn22.89:12.2 | S: The launderer kneads it thoroughly with salt, lye, and cow dung, and rinses it in clear water. | T: who scrubs it with salt earth or lye or cow-dung and then rinses it in clear water.
+sn22.89:12.3 | S: Although that cloth is clean and bright, it still has a lingering scent of salt, lye, or cow dung that had not been eradicated. | T: Now even though the cloth is clean & spotless, it still has a lingering residual scent of salt earth or lye or cow-dung.
+sn22.89:12.4 | S: The launderer returns it to its owners, who store it in a fragrant casket. | T: The washerman gives it to the owners, the owners put it away in a scent-infused wicker hamper,
+sn22.89:12.5 | S: And that lingering scent would be eradicated. | T: and its lingering residual scent of salt earth, lye, or cow-dung is fully obliterated.
+sn22.89:12.6 | S: In the same way, although a noble disciple has given up the five lower fetters, they still have a lingering residue of the conceit ‘I am’, the desire ‘I am’, and the underlying tendency ‘I am’ which has not been eradicated. | T: “In the same way, friends, even though a noble disciple has abandoned the five lower fetters, he still has with regard to the five clinging-aggregates a lingering residual ‘I am’ conceit, an ‘I am’ desire, an ‘I am’ obsession.
+sn22.89:12.7 | S: After some time they meditate observing rise and fall in the five grasping aggregates. | T: But at a later time he keeps focusing on arising & passing away with regard to the five clinging-aggregates:
+sn22.89:12.8 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its disappearance.
+sn22.89:12.9 | S: Such is feeling … | T: Such is feeling.…
+sn22.89:12.10 | S: Such is perception … | T: Such is perception.…
+sn22.89:12.11 | S: Such are choices … | T: Such are fabrications.…
+sn22.89:12.12 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its disappearance.’
+sn22.89:12.13 | S: As they do so, that lingering residue is eradicated.” | T: As he keeps focusing on the arising & passing away of these five clinging-aggregates, the lingering residual ‘I am’ conceit, ‘I am’ desire, ‘I am’ obsession is fully obliterated.”
+sn22.89:13.1 | S: When he said this, the senior mendicants said to Venerable Khemaka, | T: When this was said, the elder monks said to Ven. Khemaka,
+sn22.89:13.2 | S: “We didn’t want to trouble Venerable Khemaka with our questions. But you’re capable of explaining, teaching, asserting, establishing, clarifying, analyzing, and revealing the Buddha’s instructions in detail. | T: “We didn’t cross-examine Ven. Khemaka with the purpose of troubling him, just that (we thought) Ven. Khemaka is capable of declaring the Blessed One’s message, teaching it, describing it, setting it forth, revealing it, explaining it, making it plain—just as he has in fact declared it, taught it, described it, set it forth, revealed it, explained it, made it plain.”
+sn22.89:13.3 | S: And that’s just what you’ve done.” | T: (none)
+sn22.89:14.1 | S: That is what Venerable Khemaka said. | T: That is what Ven. Khemaka said.
+sn22.89:14.2 | S: Satisfied, the senior mendicants approved what Khemaka said. | T: Gratified, the elder monks delighted in his words.
+sn22.89:14.3 | S: And while this discourse was being spoken, the minds of sixty senior mendicants and of Venerable Khemaka were freed from defilements by not grasping. | T: And while this explanation was being given, the minds of sixty-some monks, through lack of clinging/sustenance, were released from effluents—as was Ven. Khemaka’s.
+
+## snp3.10
+snp3.10:1.1 | S: So I have heard. | T: I have heard that
+snp3.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+snp3.10:1.3 | S: Then the mendicant Kokālika went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then the monk Kokālika went to the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there, he said to the Blessed One,
+snp3.10:1.4 | S: “Sir, Sāriputta and Moggallāna have corrupt wishes. They’ve fallen under the sway of corrupt wishes.” | T: “Lord, Sāriputta & Moggallāna have evil desires. They have fallen under the sway of evil desires.”
+snp3.10:2.1 | S: When this was said, the Buddha said to Kokālika, | T: When this was said, the Blessed One said to him,
+snp3.10:2.2 | S: “Don’t say that, Kokālika! Don’t say that, Kokālika! | T: “Don’t say that, Kokālika. Don’t say that, Kolālika.
+snp3.10:2.3 | S: Have confidence in Sāriputta and Moggallāna, | T: Make your mind confident in Sāriputta & Moggallāna.
+snp3.10:2.4 | S: they’re good monks.” | T: They are admirable people.”
+snp3.10:3.1 | S: For a second time … | T: A second time…
+snp3.10:3.2 | S: For a third time Kokālika said to the Buddha, | T: A third time, the monk Kokālika said to the Blessed One,
+snp3.10:3.3 | S: “Despite my faith and trust in the Buddha, Sāriputta and Moggallāna have corrupt wishes. They’ve fallen under the sway of corrupt wishes.” | T: “Even though the lord Blessed One inspires conviction and faith in me, Sāriputta & Moggallāna have evil desires. They have fallen under the sway of evil desires.”
+snp3.10:3.4 | S: For a third time, the Buddha said to Kokālika, | T: A third time, the Blessed One said to him,
+snp3.10:3.5 | S: “Don’t say that, Kokālika! Don’t say that, Kokālika! | T: “Don’t say that, Kokālika. Don’t say that, Kolālika.
+snp3.10:3.6 | S: Have confidence in Sāriputta and Moggallāna, | T: Make your mind confident in Sāriputta & Moggallāna.
+snp3.10:3.7 | S: they’re good monks.” | T: They are admirable people.”
+snp3.10:4.1 | S: Then Kokālika rose from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the monk Kokālika, getting up from his seat, bowed down to the Blessed One, circumambulated him, keeping him to his right, and departed.
+snp3.10:4.2 | S: Not long after he left his body erupted with boils the size of mustard seeds. | T: Then not long after he had departed, Kokālika’s whole body became covered with boils the size of mustard seeds.
+snp3.10:4.3 | S: The boils grew to the size of mung beans, then chickpeas, then jujube seeds, then jujubes, then myrobalans, then unripe wood-apples, then ripe wood-apples. Finally they burst open, and pus and blood oozed out. | T: From the size of mustard seeds, they became the size of green gram. From the size of green gram, they became the size of black beans. From the size of black beans, they became the size of jujube pits. From the size of jujube pits, they became the size of jujube fruits. From the size of jujube fruits, they became the size of myrobalans. From the size of myrobalans, they became the size of unripe vilva fruits. From the size of unripe vilva fruits, they became the size of small jackfruits. When they were the size of small jackfruits, they burst. Blood and pus flowed out.
+snp3.10:4.4 | S: Then the mendicant Kokālika died of that illness. | T: Then the monk Kokālika died of that disease and, having died,
+snp3.10:4.5 | S: He was reborn in the Pink Lotus hell because of his resentment for Sāriputta and Moggallāna. | T: he reappeared in the Paduma hell for engendering hatred in his heart against Sāriputta & Moggallāna.
+snp3.10:5.1 | S: Then, late at night, the glorious divinity Sahampati, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Brahmā Sahampati, in the far extreme of the night, his extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One. On arrival, having bowed down to him, he stood to one side. As he was standing there, he said to the Blessed One,
+snp3.10:5.2 | S: “Sir, the mendicant Kokālika has passed away. | T: “Lord, the monk Kokālika has died and, having died,
+snp3.10:5.3 | S: He was reborn in the Pink Lotus hell because of his resentment for Sāriputta and Moggallāna.” | T: has reappeared in the Paduma hell for engendering hatred in his heart against Sāriputta & Moggallāna.”
+snp3.10:5.4 | S: That is what the divinity Sahampati said. | T: That is what Brahmā Sahampati said.
+snp3.10:5.5 | S: Then he bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: Having said that, having bowed down, he circumambulated the Blessed One, keeping him to his right, and disappeared right there.
+snp3.10:6.1 | S: Then, when the night had passed, the Buddha told the mendicants all that had happened. | T: Then when the night had passed, the Blessed One addressed the monks, “Monks, last night Brahmā Sahampati, in the far extreme of the night, his extreme radiance lighting up the entirety of Jeta’s Grove, came to me. On arrival, having bowed down to me, he stood to one side. As he was standing there, he said to me, ‘Lord, the monk Kokālika has died and, having died, has reappeared in the Paduma hell for engendering hatred in his heart against Sāriputta & Moggallāna.’ That is what Brahmā Sahampati said. Having said that, having bowed down, he circumambulated me, keeping me to his right, and disappeared right there.”
+snp3.10:7.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One,
+snp3.10:7.2 | S: “Sir, how long is the lifespan in the Pink Lotus hell?” | T: “Lord, how long is the measure of the lifespan in the Paduma hell?”
+snp3.10:7.3 | S: “It’s long, mendicant. | T: “Long, monk, is the measure of the lifespan in the Paduma hell.
+snp3.10:7.4 | S: It’s not easy to calculate how many years, how many hundreds or thousands or hundreds of thousands of years it lasts.” | T: It’s not easy to calculate ‘this many years’ or ‘this many hundreds of years’ or ‘this many thousands of years’ or ‘this many hundreds of thousands of years.’”
+snp3.10:7.5 | S: “But sir, is it possible to give a simile?” | T: “But, lord, can a simile be made?”
+snp3.10:7.6 | S: “It’s possible,” said the Buddha. | T: “It can, monk,” said the Blessed One.
+snp3.10:8.1 | S: “Suppose there was a Kosalan load of twenty packs of sesame seed. And at the end of every hundred years someone would remove a single seed from it. | T: “Suppose that there were a twenty-measure Kosalan cartload of sesame seeds. From that, a man would remove a sesame seed every hundred years.
+snp3.10:8.2 | S: By this means the Kosalan load of twenty packs of sesame seed would run out faster than a single lifetime in the Abbuda hell. | T: That twenty-measure Kosalan cartload of sesame seeds would come to an end in this manner more quickly than a single Abbuda [Swelling] hell.
+snp3.10:8.3 | S: Now, twenty lifetimes in the Abbuda hell equal one lifetime in the Nirabbuda hell. | T: Like twenty Abbuda hells is one Nirabbuda [Free from Swelling] hell.
+snp3.10:8.4 | S: Twenty lifetimes in the Nirabbuda hell equal one lifetime in the Ababa hell. | T: Like twenty Nirabbuda hells is one Ababa [Alas!] hell.
+snp3.10:8.5 | S: Twenty lifetimes in the Ababa hell equal one lifetime in the Aṭaṭa hell. | T: Like twenty Ababa hells is one Ahaha hell.
+snp3.10:8.6 | S: Twenty lifetimes in the Aṭaṭa hell equal one lifetime in the Ahaha hell. | T: Like twenty Ahaha hells is one Aṭaṭa hell.
+snp3.10:8.7 | S: Twenty lifetimes in the Ahaha hell equal one lifetime in the Yellow Lotus hell. | T: Like twenty Aṭaṭa hells is one Kumuda [White Water Lily] hell.
+snp3.10:8.8 | S: Twenty lifetimes in the Yellow Lotus hell equal one lifetime in the Fragrant Water Lily hell. | T: Like twenty Kumuda hells is one Sogandhika [Fragrant White Water Lily] hell.
+snp3.10:8.9 | S: Twenty lifetimes in the Fragrant Water Lily hell equal one lifetime in the Blue Water Lily hell. | T: Like twenty Sogandhika hells is one Uppalaka [Blue Lotus] hell.
+snp3.10:8.10 | S: Twenty lifetimes in the Blue Water Lily hell equal one lifetime in the White Lotus hell. | T: Like twenty Uppalaka hells is one Puṇḍarīka [White Lotus] hell.
+snp3.10:8.11 | S: Twenty lifetimes in the White Lotus hell equal one lifetime in the Pink Lotus hell. | T: Like twenty Puṇḍarīka hells is one Paduma [Red Lotus] hell.
+snp3.10:8.12 | S: The mendicant Kokālika has been reborn in the Pink Lotus hell because of his resentment for Sāriputta and Moggallāna.” | T: “The monk Kokālika has reappeared in the Paduma hell, for engendering hatred in his heart against Sāriputta & Moggallāna.”
+snp3.10:8.13 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+snp3.10:8.14 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+snp3.10:9.1 | S: “A person is born | T: “Surely, when a person is born,
+snp3.10:9.2 | S: with an axe in their mouth. | T: an axe is born in his mouth,
+snp3.10:9.3 | S: A fool cuts themselves with it | T: with which he cuts himself—
+snp3.10:9.4 | S: when they say bad words. | T: the fool saying a bad statement.
+snp3.10:10.1 | S: When you praise someone worthy of criticism, | T: Whoever praises one deserving censure
+snp3.10:10.2 | S: or criticize someone worthy of praise, | T: or censures one deserving praise,
+snp3.10:10.3 | S: you choose a losing hand with your own mouth: | T: accumulates wickedness with his mouth,
+snp3.10:10.4 | S: you’ll never find happiness that way. | T: and in that wickedness finds no ease.
+snp3.10:11.1 | S: A losing hand at dice is a trivial thing, | T: Next to nothing is the bad throw
+snp3.10:11.2 | S: if all you lose is your money | T: when one loses money at dice.
+snp3.10:11.3 | S: and all you own, even yourself. | T: (none)
+snp3.10:11.4 | S: What’s a really terrible hand | T: But great is the bad throw
+snp3.10:11.5 | S: is to hate the holy ones. | T: when one gets angered at those well-gone.
+snp3.10:12.1 | S: For a hundred thousand times a hundred million, | T: For one hundred thousand Nirabbudas
+snp3.10:12.2 | S: times five hundred and thirty-six times <j>a thousand times ten million years | T: and thirty-six and five Abbudas,
+snp3.10:12.3 | S: a slanderer of noble ones goes to hell, | T: one who maligns noble ones,
+snp3.10:12.4 | S: having aimed bad words and thoughts at them. | T: directing his words & heart toward evil, goes to hell.
+snp3.10:13.1 | S: A liar goes to hell, | T: He goes to hell, the one who asserts what didn’t take place,
+snp3.10:13.2 | S: as does one who denies what they did. | T: as does the one who, having done, says, ‘I didn’t.’
+snp3.10:13.3 | S: Both are equal in the hereafter, | T: Both—low-acting people— there become equal: after death,
+snp3.10:13.4 | S: those men of base deeds. | T: in the place beyond.
+snp3.10:14.1 | S: Whoever wrongs a man who has done no wrong, | T: Whoever harasses an innocent man,
+snp3.10:14.2 | S: a pure man who has not a blemish, | T: a man pure, without blemish:
+snp3.10:14.3 | S: the evil backfires on the fool, | T: The evil comes right back to the fool
+snp3.10:14.4 | S: like fine dust thrown upwind. | T: like fine dust thrown against the wind.
+snp3.10:15.1 | S: One addicted to the way of greed, | T: One devoted to the strings of greed
+snp3.10:15.2 | S: abuses others with their speech, | T: slanders others with his words:
+snp3.10:15.3 | S: faithless, miserly, uncharitable, | T: faithless, stingy, miserly, mean,
+snp3.10:15.4 | S: stingy, addicted to backbiting. | T: devoted to divisive tales.
+snp3.10:16.1 | S: Foul-mouthed, divisive, ignoble, | T: You with your hard road of a mouth, untrue, ignoble,
+snp3.10:16.2 | S: a baby-killer, wicked, wrongdoer, | T: destroyer of progress, evil, doer of wrong,
+snp3.10:16.3 | S: worst of men, cursed, base-born— | T: lowest of men, wicked, degenerate:
+snp3.10:16.4 | S: quiet now, for you are bound for hell. | T: Don’t speak a lot here. You are headed to hell.
+snp3.10:17.1 | S: You stir up dust, causing harm, | T: You scatter dust to your harm.
+snp3.10:17.2 | S: when you, sinner, malign the good. | T: You, an offender, malign the good,
+snp3.10:17.3 | S: Having done many bad deeds, | T: and, having engaged in many sorts of bad conduct
+snp3.10:17.4 | S: you’ll go to the pit for a long time. | T: are going for a long time to the pit.
+snp3.10:18.1 | S: For no one’s deeds are ever lost, | T: For no one’s action is annihilated.
+snp3.10:18.2 | S: they return to their owner. | T: Surely its owner gets it back.
+snp3.10:18.3 | S: In the next life that stupid sinner | T: An offender, the fool,
+snp3.10:18.4 | S: sees suffering in themselves. | T: sees suffering for himself in the next world.
+snp3.10:19.1 | S: They approach the place of impalement, | T: He goes to the place set with
+snp3.10:19.2 | S: with its iron spikes, sharp blades, and iron stakes. | T: iron spikes, the sharp-bladed iron stake,
+snp3.10:19.3 | S: Then there is the food, which appropriately, | T: where the food, as is fitting,
+snp3.10:19.4 | S: is like a red-hot iron ball. | T: resembles a ball of heated iron.
+snp3.10:20.1 | S: For the speakers speak not sweetly, | T: When they [the hell-wardens] speak, they don’t speak lovingly.
+snp3.10:20.2 | S: they don’t hurry there, or find shelter. | T: They [the hell beings] can’t run away. They’re not going to shelter.
+snp3.10:20.3 | S: They lie upon a spread of coals, | T: They lie on ashes strewn about.
+snp3.10:20.4 | S: they enter a blazing mass of fire. | T: They enter a blazing mass of fire.
+snp3.10:21.1 | S: Wrapping them in a net, | T: Tying them up with nets,
+snp3.10:21.2 | S: they strike them there with iron hammers. | T: they [the hell-wardens] strike them with hammers made of iron.
+snp3.10:21.3 | S: They come to blinding darkness, | T: Truly, they go to a blind darkness
+snp3.10:21.4 | S: which spreads about them like a fog. | T: that spreads out like a fog.
+snp3.10:22.1 | S: Next they enter a copper pot, | T: Then they enter a copper pot,
+snp3.10:22.2 | S: a blazing mass of fire. | T: a blazing mass of fire,
+snp3.10:22.3 | S: There they roast for a long time, | T: in which they cook for a long, long time,
+snp3.10:22.4 | S: writhing in the masses of fire. | T: bobbing up & down in a mass of fire.
+snp3.10:23.1 | S: Then the sinner roasts there | T: There the offender then cooks
+snp3.10:23.2 | S: in a mixture of pus and blood. | T: in a mixture of blood & pus.
+snp3.10:23.3 | S: No matter where they settle, | T: In whatever direction he leans to rest
+snp3.10:23.4 | S: everything they touch there hurts them. | T: he festers at the touch.
+snp3.10:24.1 | S: The sinner roasts in | T: There the offender then cooks
+snp3.10:24.2 | S: worm-infested water. | T: in an ooze where worms live,
+snp3.10:24.3 | S: There’s not even a shore to go to, | T: and there is no shore to which he can go,
+snp3.10:24.4 | S: for all around are the same kind of pots. | T: for the cooking pots all around are all the same.
+snp3.10:25.1 | S: They enter the Sword-Leaf Forest, | T: Then they enter the sharp sword-leaf forest
+snp3.10:25.2 | S: so sharp they cut their body to pieces. | T: where their limbs are cut off.
+snp3.10:25.3 | S: Having grabbed the tongue with a hook, | T: Seizing them by the tongue with a hook,
+snp3.10:25.4 | S: they stab it, slashing back and forth. | T: they [the hell-wardens] strike them, dragging them back & forth.
+snp3.10:26.1 | S: Then they approach the impassable Vetaraṇī River, | T: Then they come to the Vettaraṇin, hard to cross,
+snp3.10:26.2 | S: with its sharp blades, its razor blades. | T: with sharp blades, razor blades,
+snp3.10:26.3 | S: Dullards fall into it, | T: and there they fall in, the fools,
+snp3.10:26.4 | S: the wicked who have done wicked deeds. | T: evil-doers having done evil deeds.
+snp3.10:27.1 | S: There dogs all brown and spotted, | T: There, while they wail, voracious black & spotted dogs,
+snp3.10:27.2 | S: and raven flocks, and greedy jackals | T: jackals, & flocks of ravens
+snp3.10:27.3 | S: devour them as they wail, | T: chew on them.
+snp3.10:27.4 | S: while hawks and crows attack them. | T: Vultures & crows pick at them.
+snp3.10:28.1 | S: Hard, alas, is the life here | T: How hard, indeed, is this way of life there
+snp3.10:28.2 | S: that sinners endure. | T: that offending people come to see.
+snp3.10:28.3 | S: That’s why for the rest of this life | T: So, for the remainder of life here,
+snp3.10:28.4 | S: a person ought do their duty without fail. | T: a person, heedful, should do his duty.
+snp3.10:29.1 | S: Experts have counted the loads of sesame | T: Those loads of sesame seeds
+snp3.10:29.2 | S: as compared to the Pink Lotus hell. | T: compared to the Paduma hell have been calculated by those who know
+snp3.10:29.3 | S: For there are five times ten thousand times ten million, | T: as five times ten thousand crores,
+snp3.10:29.4 | S: plus another twelve hundred times ten million years— | T: plus twelve times one hundred more.
+snp3.10:30.1 | S: as painful as life is said to be in hell, | T: The length of the hells of suffering described here
+snp3.10:30.2 | S: that’s how long one must dwell there. | T: is how long [the hell-beings] will have to dwell there.
+snp3.10:30.3 | S: That’s why, for those who are pure, well-behaved, <j>full of good qualities, | T: So when in the company of those who are pure, admirable, excellent,
+snp3.10:30.4 | S: one should always guard one’s speech and mind.” | T: one should constantly guard one’s words & heart.
+
+## snp2.9
+snp2.9:1.1 | S: “With what morality, what conduct, | T: “With what virtue, what behavior,
+snp2.9:1.2 | S: fostering what deeds, | T: nurturing what actions,
+snp2.9:1.3 | S: would a person lay the foundations right, | T: would a person become rightly based
+snp2.9:1.4 | S: and reach the highest goal?” | T: and attain the ultimate goal?”
+snp2.9:2.1 | S: “Honoring elders without jealousy, | T: “One should be respectful of one’s superiors & not envious;
+snp2.9:2.2 | S: they’d know the time to visit their respected teachers. | T: should have a sense of the time for seeing teachers;
+snp2.9:2.3 | S: Treasuring the chance for a Dhamma talk, | T: should value the opportunity when a talk on Dhamma’s in progress;
+snp2.9:2.4 | S: they’d listen carefully to the well-spoken words. | T: should listen intently to well-spoken words;
+snp2.9:3.1 | S: At the right time, they’d enter <j>the vicinity of their respected teachers | T: should go at the proper time, humbly, casting off arrogance, to one’s teacher’s presence;
+snp2.9:3.2 | S: in placid manner, leaving obstinacy behind. | T: (none)
+snp2.9:3.3 | S: They’d call to mind and put into practice | T: should both recollect & follow the Dhamma, its meaning, restraint, & the holy life.
+snp2.9:3.4 | S: the meaning, the teaching, self-control, <j>and the spiritual life. | T: (none)
+snp2.9:4.1 | S: Delighting in the teaching, enjoying the teaching, | T: Delighting in Dhamma, savoring Dhamma,
+snp2.9:4.2 | S: standing on the teaching, evaluating the teaching, | T: established in Dhamma, with a sense of how to investigate Dhamma,
+snp2.9:4.3 | S: they’d never say anything that degraded the teaching, | T: one should not speak in ways destructive of Dhamma,
+snp2.9:4.4 | S: but would be guided by genuine words well-spoken. | T: should guide oneself with true, well-spoken words.
+snp2.9:5.1 | S: Giving up mirth, muttered prayer, weeping, ill will, | T: Shedding laughter,chattering, lamentation, hatred,
+snp2.9:5.2 | S: deceit, fawning, greed, conceit, | T: deception, deviousness, greed, pride,
+snp2.9:5.3 | S: aggression, crudeness, stains, and indulgence, | T: confrontation, roughness, astringency, infatuation,
+snp2.9:5.4 | S: they’d wander free of vanity, steadfast. | T: one should go about free of intoxication, with steadfast mind.
+snp2.9:6.1 | S: Understanding is the essence of well-spoken words, | T: Understanding’s the heartwood of well-spoken words;
+snp2.9:6.2 | S: stillness is the essence of learning and understanding. | T: concentration, the heartwood of learning & understanding.
+snp2.9:6.3 | S: Wisdom and learning do not flourish | T: When a person is hasty & heedless his discernment & learning don’t grow.
+snp2.9:6.4 | S: in a hasty and negligent person. | T: (none)
+snp2.9:7.1 | S: Those happy with the teaching <j>proclaimed by the Noble One | T: While those who delight in the Dhamma taught by the noble ones,
+snp2.9:7.2 | S: are supreme in speech, mind, and deed. | T: are unsurpassed in word, action, & mind.
+snp2.9:7.3 | S: Abiding in peace, gentleness, and stillness, | T: They, established in calm, composure, & concentration,
+snp2.9:7.4 | S: they’ve realized the essence of learning and wisdom.” | T: have reached what discernment & learning have as their heartwood.”
+

@@ -1,0 +1,459 @@
+## dn20, continued
+dn20:12.13 | S: ‘Now is the time, sir, | T: “Now is the occasion, sir,
+dn20:12.14 | S: for the meeting of mendicants in the wood.’ | T: of the monk’s forest meeting.”
+dn20:13.1 | S: The gods of water and earth, | T: Devas of water, earth,
+dn20:13.2 | S: and fire and wind came there. | T: fire, & wind have come here.
+dn20:13.3 | S: The gods of Varuṇa and Varuṇa’s offsping, | T: Varuṇas, Vāruṇas,
+dn20:13.4 | S: and Soma together with Yasa. | T: Soma together with Yasa,
+dn20:13.5 | S: A host of the gods of love | T: the prestigious devas of the hosts
+dn20:13.6 | S: and compassion came, so glorious. | T: of goodwill & compassion have come.
+dn20:13.7 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:13.8 | S: shone in all different colors. | T: all of varied hue,
+dn20:13.9 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:13.10 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:13.11 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:13.12 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:14.1 | S: The Vishnu and Sahalī gods, | T: Veṇḍu [Viṣṇu] & Sahalī,
+dn20:14.2 | S: and the unequaled pair of twins. | T: Asama & the Yama twins,
+dn20:14.3 | S: The gods living on the moon came, | T: the devas dependent on the moon
+dn20:14.4 | S: with the Moon before them. | T: surrounding the moon have come.
+dn20:14.5 | S: The gods living on the sun came, | T: The devas dependent on the sun
+dn20:14.6 | S: with the Sun before them. | T: surrounding the sun have come.
+dn20:14.7 | S: And with the stars before them | T: Devas surrounding the zodiac stars
+dn20:14.8 | S: came the languid gods of clouds. | T: and the sprites of the clouds have come.
+dn20:14.9 | S: And Vāsava came, the greatest of the Vasus, | T: Sakka, chief of the Vasus,
+dn20:14.10 | S: who is Sakka the Able, Purindada the Firstgiver: | T: the ancient donor, has come.
+dn20:14.11 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:14.12 | S: shone in all different colors. | T: all of varied hue,
+dn20:14.13 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:14.14 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:14.15 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:14.16 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:15.1 | S: Then came the Sahabhū gods, | T: Then come the Sahabhu devas,
+dn20:15.2 | S: blazing like a crested flame; | T: blazing like crests of fire-flame.
+dn20:15.3 | S: and the Ariṭṭhakas and Rojas too, | T: The Ariṭṭakas, Rojas,
+dn20:15.4 | S: and the gods hued blue as flax. | T: cornflower blue.
+dn20:15.5 | S: The Varuṇas and Sahadhammas, | T: Varuṇas & Sahadhammas,
+dn20:15.6 | S: the Accutas and Anejakas, | T: Accutas & Anejakas,
+dn20:15.7 | S: the Sūleyyas and Ruciras all came, | T: Sūleyyas & Ruciras,
+dn20:15.8 | S: as did the Vāsavanesi gods. | T: and Vāsavanesis have come.
+dn20:15.9 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:15.10 | S: shone in all different colors. | T: all of varied hue,
+dn20:15.11 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:15.12 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:15.13 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:15.14 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:16.1 | S: The Samānas, Mahāsamānas, | T: Samānas, Great Samānas,
+dn20:16.2 | S: Mānusas, and Mānusuttamas all came, | T: Mānusas, Super Mānusas,
+dn20:16.3 | S: and the gods depraved by play, | T: the devas corrupted by play have come,
+dn20:16.4 | S: and those who are malevolent. | T: as well as devas corrupted by mind.
+dn20:16.5 | S: Then came the gods of Mercury, | T: Then come green-gold devas and those wearing red.
+dn20:16.6 | S: and those who live on Mars. | T: (none)
+dn20:16.7 | S: The Pāragas and Mahāpāragas came, | T: Pāragas, Great Pāragas,
+dn20:16.8 | S: such glorious gods. | T: prestigious devas have come.
+dn20:16.9 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:16.10 | S: shone in all different colors. | T: all of varied hue,
+dn20:16.11 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:16.12 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:16.13 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:16.14 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:17.1 | S: The gods of Venus, the newborn Sun, <j>and the Dawn | T: White devas, ruddy-green devas, dawn-devas
+dn20:17.2 | S: came along with those from Saturn. | T: have come with the Veghanas
+dn20:17.3 | S: And the gods of the white globe came | T: headed by devas totally in white.
+dn20:17.4 | S: leading the brilliant gods. | T: The Vicakkhaṇas have come.
+dn20:17.5 | S: The Sadāmattas and Hāragajas, | T: Sadāmatta, Hāragajas,
+dn20:17.6 | S: and assorted glorious ones; | T: & the prestigious multi-coloreds,
+dn20:17.7 | S: Pajjuna came thundering, | T: Pajunna, the thunderer,
+dn20:17.8 | S: he who rains on all quarters. | T: who brings rain to the lands:
+dn20:17.9 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:17.10 | S: shone in all different colors. | T: all of varied hue,
+dn20:17.11 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:17.12 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:17.13 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:17.14 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:18.1 | S: The Khemiyas from the realms of Tusita and Yama, | T: The Khemiyas, Tusitas, & Yāmas,
+dn20:18.2 | S: and the glorious Kaṭṭhakas came; | T: the prestigious Kaṭṭhakas,
+dn20:18.3 | S: the Lambītakas, Lāmaseṭṭhas, | T: Lambitakas & Lāma chiefs,
+dn20:18.4 | S: those called the Shining, and those Yonder. | T: the Jotināmas & Āsavas,
+dn20:18.5 | S: The gods who love to create came too, | T: the Nimmānaratis have come,
+dn20:18.6 | S: and those who control what is created by others. | T: as have the Paranimmitas.
+dn20:18.7 | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:18.8 | S: shone in all different colors. | T: all of varied hue,
+dn20:18.9 | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:18.10 | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:18.11 | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:18.12 | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+dn20:19.1 | S: These sixty hosts of gods | T: These 60 deva groups,
+dn20:19.2 | S: shone in all different colors. | T: all of varied hue,
+dn20:19.3 | S: They came organized by name, | T: have come arranged in order,
+dn20:19.4 | S: these and others likewise, thinking: | T: together with others in like manner (thinking:)
+dn20:19.5 | S: ‘They who have shed rebirth, the kindly ones, | T: “We’ll see the one who has transcended birth,
+dn20:19.6 | S: the undefiled ones who have crossed the flood— | T: who has no bounds, who has crossed over the flood, effluent-free,
+dn20:19.7 | S: let us see them, <j>with the dragon who brought them across, | T: the Mighty One, crossing over the flood,
+dn20:19.8 | S: who like the Moon has overcome darkness.’ | T: like the moon emerging from the dark fortnight.”
+dn20:20.1 | S: Subrahmā and Paramatta came, | T: Subrahmā and Paramatta Brahmā,
+dn20:20.2 | S: with sons of those powerful ones. | T: together with sons of the Powerful One,
+dn20:20.3 | S: Sanaṅkumāra and Tissa | T: Sanaṅkumāra and Tissa:
+dn20:20.4 | S: also came to the meeting in the wood. | T: They too have come to the forest meeting.
+dn20:20.5 | S: Of a thousand realms of divinity, | T: Great Brahmā, who stands over 1,000 Brahmā worlds,
+dn20:20.6 | S: the Great Divinity stands forth. | T: (none)
+dn20:20.7 | S: He has arisen, brilliant, | T: who arose there spontaneously, effulgent:
+dn20:20.8 | S: his formidable body so glorious. | T: Prestigious is he, with a terrifying body.
+dn20:20.9 | S: Ten Gods Almighty came there, | T: And ten Brahmā sovereigns, each the lord of his own realm—
+dn20:20.10 | S: each one of them wielding power, | T: (none)
+dn20:20.11 | S: and in the middle of them came | T: and in their midst has come
+dn20:20.12 | S: Hārita with his following.” | T: Hārita Brahmā surrounded by his retinue.”
+dn20:21.1 | S: When they had all come forth— | T: When all these devas with Indras & Brahmās had come,
+dn20:21.2 | S: the gods with their Lord, and the divinities— | T: (none)
+dn20:21.3 | S: Māra’s army came forth too: | T: Māra’s army came as well.
+dn20:21.4 | S: see the stupidity of the Dark Lord! | T: Now look at the Dark One’s foolishness!
+dn20:21.5 | S: “Come, seize them and bind them,” he said, | T: [He said:] “Come seize them! Bind them!
+dn20:21.6 | S: “let them be bound by desire! | T: Tie them down with passion!
+dn20:21.7 | S: Surround them on all sides, | T: Surround them on every side!
+dn20:21.8 | S: don’t let any escape!” | T: Don’t let anyone at all escape!”
+dn20:21.9 | S: And so there the great general, | T: Thus the great warlord urged on his dark army,
+dn20:21.10 | S: the Dark Lord sent forth his army. | T: (none)
+dn20:21.11 | S: He struck the ground with his fist | T: slapping the ground with his hand,
+dn20:21.12 | S: to make a horrifying sound | T: making a horrendous din,
+dn20:21.13 | S: like a monsoon cloud, | T: as when a storm cloud
+dn20:21.14 | S: thundering and flashing. | T: bursts with thunder, lightning, & torrents of rain.
+dn20:21.15 | S: But then turned back, | T: But then he withdrew—
+dn20:21.16 | S: furious, out of control. | T: enraged, with none under his sway.
+dn20:22.1 | S: And all that was known | T: Realizing all this,
+dn20:22.2 | S: and distinguished by the Clear-eyed One. | T: the One-with-Vision felt moved to speak.
+dn20:22.3 | S: Consequently, the Teacher addressed | T: The Teacher then said to them,
+dn20:22.4 | S: the disciples who love the teaching: | T: disciples delighting in his instruction,
+dn20:22.5 | S: “Māra’s army has arrived; | T: “Māra’s army has approached.
+dn20:22.6 | S: mendicants, you should be aware of them.” | T: Detect them, monks!”
+dn20:22.7 | S: Those monks grew keen, | T: Listening to the Awakened One’s instruction, they made an ardent effort.
+dn20:22.8 | S: hearing the Buddha’s instruction. | T: (none)
+dn20:22.9 | S: The army fled from those free of passion, | T: The army retreated from those without passion,
+dn20:22.10 | S: and not a single hair was stirred! | T: without raising even a hair on their bodies.
+dn20:22.11 | S: “All triumphant in battle, | T: Having all won the battle—
+dn20:22.12 | S: so fearless and glorious. | T: prestigious, past fear—
+dn20:22.13 | S: They rejoice with all the spirits, | T: they rejoice with all beings:
+dn20:22.14 | S: the disciples renowned among men.” | T: disciples outstanding among the human race.
+
+## thag15.2
+thag15.2:1.1 | S: Awakened as a human being, | T: A human being, self-awakened,
+thag15.2:1.2 | S: self-tamed and immersed in samādhi, | T: his mind tamed, concentrated,
+thag15.2:1.3 | S: following the spiritual path, | T: traveling along the Brahmā road,
+thag15.2:1.4 | S: he loves peace of mind. | T: delighting in the stilling of the mind:
+thag15.2:2.1 | S: Revered by people, | T: He,
+thag15.2:2.2 | S: gone beyond all things, | T: having gone beyond all dhammas, to whom human beings pay homage,
+thag15.2:2.3 | S: even the gods revere him; | T: the devas pay homage as well—
+thag15.2:2.4 | S: so I’ve heard from the perfected one. | T: so I have heard from the Worthy One
+thag15.2:3.1 | S: He has transcended all fetters, | T: —to him, gone past all fetters,
+thag15.2:3.2 | S: and escaped from entanglements. | T: gone from the forest to the clearing,
+thag15.2:3.3 | S: Delighting to renounce sensual pleasures, | T: delighting in the renunciation of sensuality,
+thag15.2:3.4 | S: he’s freed like lustrous gold from stone. | T: released like gold from its ore.
+thag15.2:4.1 | S: That giant outshines all, | T: He, the nāga outshining all others,
+thag15.2:4.2 | S: like the Himalaya beside other mountains. | T: as the Himalayas, rocky hills:
+thag15.2:4.3 | S: Of all those named “giant”, | T: Among all things named nāga,
+thag15.2:4.4 | S: he is truly named, supreme. | T: he, unexcelled, is truly named.
+thag15.2:5.1 | S: I shall extol the giant for you, | T: I will praise the nāga to you—
+thag15.2:5.2 | S: for he does nothing monstrous. | T: for he does no misdeed.
+thag15.2:5.3 | S: gentleness and harmlessness | T: Composure & harmlessness
+thag15.2:5.4 | S: are two feet of the giant. | T: are the nāga’s two feet.
+thag15.2:6.1 | S: Mindfulness and awareness | T: Austerity & celibacy
+thag15.2:6.2 | S: are his two other feet. | T: are the nāga’s two other feet.
+thag15.2:6.3 | S: Faith is the giant’s trunk, | T: Conviction is the great nāga’s trunk, his hand;
+thag15.2:6.4 | S: and equanimity his white tusks. | T: equanimity, his white tusks.
+thag15.2:7.1 | S: Mindfulness is his neck, his head is wisdom— | T: Mindfulness his neck; his head: discernment,
+thag15.2:7.2 | S: investigation and thinking about principles. | T: discrimination, reflection on dhammas;
+thag15.2:7.3 | S: His belly is the sacred hearth of the Dhamma, | T: Dhamma the balanced heat of his digestion;
+thag15.2:7.4 | S: and his tail is seclusion. | T: seclusion his tail.
+thag15.2:8.1 | S: Practicing absorption, enjoying the breath, | T: He, in jhāna, delighting in assurance,
+thag15.2:8.2 | S: he is serene within. | T: inwardly well-concentrated,
+thag15.2:8.3 | S: The giant is serene when walking, | T: the nāga, when going, is concentrated,
+thag15.2:8.4 | S: the giant is serene when standing, | T: when standing, the nāga is concentrated,
+thag15.2:9.1 | S: the giant is serene when lying down, | T: when reclining, the nāga is concentrated,
+thag15.2:9.2 | S: and when sitting, the giant is serene. | T: when sitting, the nāga is concentrated.
+thag15.2:9.3 | S: The giant is restrained everywhere: | T: Everywhere he’s restrained, the nāga:
+thag15.2:9.4 | S: this is the accomplishment of the giant. | T: That is the nāga’s consummation.
+thag15.2:10.1 | S: He eats blameless things, | T: He eats what is blameless;
+thag15.2:10.2 | S: he doesn’t eat blameworthy things. | T: doesn’t eat what is not;
+thag15.2:10.3 | S: When he gets food and clothes, | T: on gaining food & clothing,
+thag15.2:10.4 | S: he avoids storing them up. | T: doesn’t store it up.
+thag15.2:11.1 | S: Having severed all bonds, | T: Having cut all bonds,
+thag15.2:11.2 | S: fetters large and small, | T: fetters tiny & large,
+thag15.2:11.3 | S: wherever he goes, | T: wherever he goes,
+thag15.2:11.4 | S: he goes without concern. | T: he goes without longing.
+thag15.2:12.1 | S: A white lotus, | T: Like a white lotus,
+thag15.2:12.2 | S: fragrant and delightful, | T: (none)
+thag15.2:12.3 | S: sprouts in water and grows there, | T: born & growing in the water,
+thag15.2:12.4 | S: but the water doesn’t cling to it. | T: but not smeared by the water —fragrant, delightful—
+thag15.2:13.1 | S: Just so the Buddha is born in the world, | T: even so the awakened one, well-born in the world,
+thag15.2:13.2 | S: and lives in the world, | T: lives in the world,
+thag15.2:13.3 | S: but the world doesn’t stick to him, | T: but is not smeared by the world,
+thag15.2:13.4 | S: as water does not stick to the lotus. | T: like the lotus, by the water.
+thag15.2:14.1 | S: A great blazing fire | T: A great blazing fire
+thag15.2:14.2 | S: dies down when the fuel runs out. | T: (none)
+thag15.2:14.3 | S: And when the coals have gone out | T: unnourished grows calm, and though its embers exist
+thag15.2:14.4 | S: it’s said to be “quenched”. | T: is described as unbound:
+thag15.2:15.1 | S: This simile is taught by the discerning | T: Conveying an instructive meaning, this image is taught by the observant.
+thag15.2:15.2 | S: to express the meaning clearly. | T: (none)
+thag15.2:15.3 | S: Great giants will understand | T: Great nāgas will recognize
+thag15.2:15.4 | S: what the giant taught the giant. | T: the nāga as taught by the nāga
+thag15.2:16.1 | S: Free of greed, free of hate, | T: as free from passion, free from aversion,
+thag15.2:16.2 | S: free of delusion, undefiled; | T: free from delusion, effluent-free.
+thag15.2:16.3 | S: the giant, giving up his body, | T: His body discarded, the nāga
+thag15.2:16.4 | S: undefiled, will be fully quenched. | T: will, without effluent, totally unbind.
+
+## thig7.2
+thig7.2:1.1 | S: “As a nun with developed faculties, | T: Cālā: Having established mindfulness, a nun with developed faculties, I
+thig7.2:1.2 | S: having established mindfulness, | T: (none)
+thig7.2:1.3 | S: I penetrated that peaceful state, | T: penetrated the peaceful state:
+thig7.2:1.4 | S: the blissful stilling of conditions.” | T: stilling-of-fabrications bliss.
+thig7.2:2.1 | S: “In whose name did you shave your head? | T: Māra: “For whose sake have you shaved your head?
+thig7.2:2.2 | S: You look like an ascetic, | T: You look like a contemplative
+thig7.2:2.3 | S: but you don’t approve any creed. | T: but don’t approve of a philosophy,
+thig7.2:2.4 | S: Why do you wander as if lost?” | T: so why are you wandering here confused?”
+thig7.2:3.1 | S: “Followers of other creeds | T: Cālā: “Outside philosophers place
+thig7.2:3.2 | S: rely on their views. | T: their confidence in views.
+thig7.2:3.3 | S: They don’t understand the Dhamma, | T: They don’t know the Dhamma.
+thig7.2:3.4 | S: for they’re no experts in the Dhamma. | T: They’re not adept in the Dhamma.
+thig7.2:4.1 | S: But there is one born in the Sakyan clan, | T: But there is the Awakened One, born in the Sakyan clan,
+thig7.2:4.2 | S: the unrivaled Buddha; | T: a person without peer.
+thig7.2:4.3 | S: he taught me the Dhamma | T: He taught me the Dhamma
+thig7.2:4.4 | S: for going beyond views. | T: for the transcending of views:
+thig7.2:5.1 | S: Suffering, suffering’s origin, | T: stress, the co-arising of stress,
+thig7.2:5.2 | S: suffering’s transcendence, | T: the overcoming of stress,
+thig7.2:5.3 | S: and the noble eightfold path | T: & the noble eightfold path
+thig7.2:5.4 | S: that leads to the stilling of suffering. | T: leading to the stilling of stress.
+thig7.2:6.1 | S: After hearing his words, | T: Having heard his words,
+thig7.2:6.2 | S: I happily did his bidding. | T: I dwell, delighting in his bidding.
+thig7.2:6.3 | S: I’ve attained the three knowledges | T: The three knowledges are attained;
+thig7.2:6.4 | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, done.
+thig7.2:7.1 | S: Relishing is banished in every respect, | T: Everywhere enjoyment is defeated;
+thig7.2:7.2 | S: and the mass of darkness is shattered. | T: the mass of darkness, burst.
+thig7.2:7.3 | S: So know this, Wicked One: | T: So know, Evil One,
+thig7.2:7.4 | S: you’re beaten, terminator!” | T: that you have been, End-maker, struck down.
+
+## sn8.4
+sn8.4:1.1 | S: At one time Venerable Ānanda was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion Ven. Ānanda was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn8.4:1.2 | S: Then Venerable Ānanda robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms with Venerable Vaṅgīsa as his second monk. | T: Then early in the morning, having adjusted his lower robe and taking his bowl & outer robe, he went into Sāvatthī for alms with Ven. Vaṅgīsa as his attendant monk.
+sn8.4:1.3 | S: And at that time Venerable Vaṅgīsa became dissatisfied, as lust infected his mind. | T: Now at that time dissatisfaction (with the celibate life) had arisen in Ven. Vaṅgīsa. Lust invaded his mind.
+sn8.4:1.4 | S: Then he addressed Ānanda in verse: | T: So he addressed Ven. Ānanda with this verse:
+sn8.4:2.1 | S: “I’ve got a burning desire for pleasure; | T: “With sensual lust I burn.
+sn8.4:2.2 | S: My mind is on fire! | T: My mind is on fire.
+sn8.4:2.3 | S: Please, out of compassion, Gotama, | T: Please, Gotama, from compassion,
+sn8.4:2.4 | S: tell me how to quench the flames.” | T: tell me how to put it out.”
+sn8.4:3.1 | S: “Your mind is on fire | T: Ven. Ānanda: “From distorted perception your mind is on fire. Shun the theme of the beautiful
+sn8.4:3.2 | S: because of a perversion of perception. | T: (none)
+sn8.4:3.3 | S: Turn away from the feature of things | T: (none)
+sn8.4:3.4 | S: that’s attractive, provoking lust. | T: accompanied by lust.
+sn8.4:4.1 | S: See all conditioned phenomena as alien, | T: See mental fabrications as other,
+sn8.4:4.2 | S: as suffering and not-self. | T: as stress, & not-self.
+sn8.4:4.3 | S: Extinguish the great fire of lust, | T: Extinguish your great lust.
+sn8.4:4.4 | S: don’t burn up again and again. | T: Don’t keep burning again & again.
+sn8.4:5.1 | S: With mind unified and serene, | T: Develop the mind —well-centered & one— in the foul, through the foul.
+sn8.4:5.2 | S: meditate on the ugly aspects of the body. | T: (none)
+sn8.4:5.3 | S: With mindfulness immersed in the body, | T: Have your mindfulness immersed in the body.
+sn8.4:5.4 | S: be full of disillusionment. | T: Be one who pursues disenchantment.
+sn8.4:6.1 | S: Meditate on the signless, | T: Develop the theme-less.
+sn8.4:6.2 | S: give up the underlying tendency to conceit; | T: Cast out conceit.
+sn8.4:6.3 | S: and when you comprehend conceit, | T: Then, from breaking through conceit,
+sn8.4:6.4 | S: you will live at peace.” | T: you will go on your way, at peace.”
+
+## iti84
+iti84:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti84:2.1 | S: “These three individuals, mendicants, arise in the world for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: “Monks, these three persons, appearing in the world, appear for the benefit of many, the happiness of many, in sympathy for the world–for the welfare, the benefit, the happiness of beings human & divine.
+iti84:2.2 | S: What three? | T: Which three?
+iti84:2.3 | S: It’s when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: “There is the case where a Tathāgata appears in the world, worthy & rightly self-awakened, consummate in clear knowing & conduct, well-gone, an expert with regard to the cosmos, unsurpassed trainer of tamable people, teacher of beings human & divine, awakened, blessed.
+iti84:2.4 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: He teaches the Dhamma admirable in its beginning, admirable in its middle, admirable in its end. He proclaims the holy life both in its particulars & in its essence, entirely perfect, surpassingly pure.
+iti84:2.5 | S: This is the first individual who arises in the world for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: This is the first person who, appearing in the world, appears for the benefit of many, the happiness of many, in sympathy for the world–for the welfare, the benefit, the happiness of beings human & divine.
+iti84:3.1 | S: Furthermore, it’s when a mendicant is a perfected one, with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment. | T: “Furthermore, there is the disciple of that Teacher who is a worthy one, his effluents ended, who has reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and who is released through right gnosis.
+iti84:3.2 | S: They teach Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: He teaches the Dhamma admirable in its beginning, admirable in its middle, admirable in its end. He proclaims the holy life both in its particulars & in its essence, entirely perfect, surpassingly pure.
+iti84:3.3 | S: This is the second individual who arises in the world for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: This is the second person who, appearing in the world, appears for the benefit of many, the happiness of many, in sympathy for the world–for the welfare, the benefit, the happiness of beings human & divine.
+iti84:4.1 | S: Furthermore, it’s when a disciple of that Teacher is a trainee, a learned practitioner with precepts and observances intact. | T: “Furthermore, there is the disciple of that Teacher who is one who follows the practice for one in training, erudite, having entered into [good] habits & practices.
+iti84:4.2 | S: They teach Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: He, too, teaches the Dhamma admirable in its beginning, admirable in its middle, admirable in its end. He proclaims the holy life both in its particulars & in its essence, entirely perfect, surpassingly pure.
+iti84:4.3 | S: This is the third individual who arises in the world for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: This is the third person who, appearing in the world, appears for the benefit of many, the happiness of many, in sympathy for the world–for the welfare, the benefit, the happiness of beings human & divine.
+iti84:4.4 | S: These are the three individuals who arise in the world for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans.” | T: “These are the three persons who, appearing in the world, appear for the benefit of many, the happiness of many, in sympathy for the world–for the welfare, the benefit, the happiness of beings human & divine.”
+iti84:4.5 | S: The Buddha spoke this matter. | T: (none)
+iti84:4.6 | S: On this it is said: | T: (none)
+iti84:5.1 | S: “The Teacher is the first, the great seer, | T: The Teacher, Great Seer, is first in the world;
+iti84:5.2 | S: following whom is the evolved disciple, | T: following him, the disciple with mind composed;
+iti84:5.3 | S: and then a trainee, a practitioner, | T: and then the erudite one who follows the practice for one in training,
+iti84:5.4 | S: learned, with precepts and observances intact. | T: having entered into good habits, practices.
+iti84:6.1 | S: These three are first among gods and humans, | T: These three, chief among beings divine & human,
+iti84:6.2 | S: beacons proclaiming the teaching! | T: giving light, proclaiming the Dhamma,
+iti84:6.3 | S: They fling open the door to freedom from death, | T: throw open the door to the Deathless,
+iti84:6.4 | S: freeing many from yokes. | T: release many from bondage.
+iti84:7.1 | S: Following the path so well taught | T: Those who follow the path,
+iti84:7.2 | S: by the unsurpassed caravan leader, | T: well-taught by the Caravan Leader unsurpassed,
+iti84:7.3 | S: those who are diligent in the Holy One’s teaching | T: will put an end to stress right here–
+iti84:7.4 | S: make an end of suffering in this very life.” | T: those heeding the message of the One Well-Gone.
+iti84:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## snp5.2
+snp5.2:1.1 | S: “By what is the world shrouded?” | T: With what is the world shrouded?
+snp5.2:1.2 | S: said Venerable Ajita. | T: (none)
+snp5.2:1.3 | S: “Why does it not shine? | T: Because of what doesn’t it shine?
+snp5.2:1.4 | S: Tell me, what is its sullying? | T: With what is it smeared? Tell me.
+snp5.2:1.5 | S: What is its greatest fear?” | T: What is its great danger & fear?
+snp5.2:2.1 | S: “The world is shrouded in ignorance.” | T: The Buddha: With ignorance the world is shrouded.
+snp5.2:2.2 | S: replied the Buddha. | T: (none)
+snp5.2:2.3 | S: “Avarice and negligence make it not shine. | T: Because of stinginess, heedlessness, it doesn’t shine.
+snp5.2:2.4 | S: Muttered prayer is its sullying, I say. | T: With longing it’s smeared—I tell you.
+snp5.2:2.5 | S: Suffering is its greatest fear.” | T: Suffering-stress: its great danger & fear.
+snp5.2:3.1 | S: “The streams flow everywhere,” | T: Ajita: They flow every which way,
+snp5.2:3.2 | S: said Venerable Ajita. | T: (none)
+snp5.2:3.3 | S: “What is there to block them? | T: the streams. What is their blocking,
+snp5.2:3.4 | S: And tell me the restraint of streams— | T: what their restraint—tell me—
+snp5.2:3.5 | S: by what are they locked out?” | T: with what are they finally stopped?
+snp5.2:4.1 | S: “The streams in the world,” | T: The Buddha: Whatever streams there are in the world:
+snp5.2:4.2 | S: replied the Buddha, | T: (none)
+snp5.2:4.3 | S: “are blocked by mindfulness. | T: Their blocking is mindfulness,
+snp5.2:4.4 | S: I tell you the restraint of streams— | T: mindfulness is their restraint—I tell you—
+snp5.2:4.5 | S: they are locked out by wisdom.” | T: with discernment they’re finally stopped.
+snp5.2:5.1 | S: “That wisdom and mindfulness,” | T: Ajita: Discernment & mindfulness,
+snp5.2:5.2 | S: said Venerable Ajita, | T: (none)
+snp5.2:5.3 | S: “and that which is name and form, good fellow; | T: name-&-form, dear sir:
+snp5.2:5.4 | S: when questioned, please tell me of this: | T: Tell me, when asked this,
+snp5.2:5.5 | S: where does this all cease?” | T: where are they brought to a halt?
+snp5.2:6.1 | S: “This question which you have asked, | T: The Buddha: This question you’ve asked,
+snp5.2:6.2 | S: I shall answer you, Ajita. | T: Ajita, I’ll answer it for you—
+snp5.2:6.3 | S: Where name and form | T: where name-&-form
+snp5.2:6.4 | S: cease with no residue left behind— | T: are brought to a halt without trace:
+snp5.2:6.5 | S: with the cessation of consciousness, | T: With the cessation of consciousness
+snp5.2:6.6 | S: here they cease.” | T: they’re here brought to a halt.
+snp5.2:7.1 | S: “There are those who have appraised the teaching, | T: Ajita: Those here who have fathomed the Dhamma,
+snp5.2:7.2 | S: and many kinds of trainees here. | T: those who are learners, those who are run-of-the-mill:
+snp5.2:7.3 | S: Now you, being alert, are asked | T: When you, dear sir, astute, are asked this,
+snp5.2:7.4 | S: to tell me their behavior, good fellow.” | T: tell me their manner of life.
+snp5.2:8.1 | S: “Not greedy for sensual pleasures, | T: The Buddha: He should not hanker for sensual pleasures,
+snp5.2:8.2 | S: their mind would be unclouded. | T: should be limpid in mind.
+snp5.2:8.3 | S: Skilled in all things, | T: Skilled in all mental qualities,
+snp5.2:8.4 | S: a mendicant would wander mindful.” | T: he, the monk, should wander mindfully.
+
+## sn36.7
+sn36.7:1.1 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: I have heard that on one occasion the Blessed One was staying near Vesālī at the Gabled Hall in the Great Forest.
+sn36.7:1.2 | S: Then in the late afternoon, the Buddha came out of retreat and went to the infirmary, where he sat down on the seat spread out, | T: Then, emerging from his seclusion in the evening, he went to the sick ward. On arrival he sat down on a seat made ready.
+sn36.7:1.3 | S: and addressed the mendicants: | T: Having sat down, he addressed the monks:
+sn36.7:2.1 | S: “Mendicants, a mendicant should await their time mindful and aware. | T: “A monk should approach the time of death mindful & alert.
+sn36.7:2.2 | S: This is my instruction to you. | T: This is our instruction to you all.
+sn36.7:3.1 | S: And how is a mendicant mindful? | T: “And how is a monk mindful?
+sn36.7:3.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: There is the case where a monk remains focused on the body in & of itself—ardent, alert, & mindful—putting aside greed & distress with reference to the world.
+sn36.7:3.3 | S: They meditate observing an aspect of feelings … | T: He remains focused on feelings in & of themselves…
+sn36.7:3.4 | S: They meditate observing an aspect of the mind … | T: mind in & of itself…
+sn36.7:3.5 | S: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—putting aside greed & distress with reference to the world.
+sn36.7:3.6 | S: That’s how a mendicant is mindful. | T: This is how a monk is mindful.
+sn36.7:4.1 | S: And how is a mendicant aware? | T: “And how is a monk alert?
+sn36.7:4.2 | S: It’s when a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. | T: When going forward & returning, he makes himself fully alert; when looking toward & looking away… when bending & extending his limbs… when carrying his outer cloak, his upper robe, & his bowl… when eating, drinking, chewing, & savoring… when urinating & defecating… when walking, standing, sitting, falling asleep, waking up, talking, & remaining silent, he makes himself fully alert.
+sn36.7:4.3 | S: That’s how a mendicant acts with situational awareness. | T: This is how a monk is alert.
+sn36.7:4.4 | S: A mendicant should await their time mindful and aware. | T: “So a monk should approach the time of death mindful & alert.
+sn36.7:4.5 | S: This is my instruction to you. | T: This is our instruction to you all.
+sn36.7:5.1 | S: While a mendicant is meditating like this—mindful, aware, diligent, keen, and resolute—if pleasant feelings arise, they understand: | T: “As a monk is dwelling thus mindful & alert—heedful, ardent, & resolute—a feeling of pleasure arises in him. He discerns that
+sn36.7:5.2 | S: ‘A pleasant feeling has arisen in me. | T: ‘A feeling of pleasure has arisen in me.
+sn36.7:5.3 | S: That’s dependent, not independent. | T: It is dependent on a requisite condition, not independent.
+sn36.7:5.4 | S: Dependent on what? | T: Dependent on what?
+sn36.7:5.5 | S: Dependent on my own body. | T: Dependent on this body.
+sn36.7:5.6 | S: But this body is impermanent, conditioned, dependently originated. | T: Now, this body is inconstant, fabricated, dependently co-arisen.
+sn36.7:5.7 | S: So how could a pleasant feeling be permanent, since it has arisen dependent on a body that is impermanent, conditioned, and dependently originated?’ | T: Being dependent on a body that is inconstant, fabricated, & dependently co-arisen, how can this feeling of pleasure that has arisen be constant?’
+sn36.7:5.8 | S: They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and pleasant feeling. | T: He remains focused on inconstancy with regard to the body & to the feeling of pleasure. He remains focused on dissolution… dispassion… cessation… relinquishment with regard to the body & to the feeling of pleasure. As he remains focused on inconstancy… dissolution… dispassion… cessation…
+sn36.7:5.9 | S: As they do so, they give up the underlying tendency to greed for the body and pleasant feeling. | T: relinquishment with regard to the body & to the feeling of pleasure, he abandons any passion-obsession for the body & the feeling of pleasure.
+sn36.7:6.1 | S: While a mendicant is meditating like this—mindful, aware, diligent, keen, and resolute—if painful feelings arise, they understand: | T: “As he is dwelling thus mindful & alert—heedful, ardent, & resolute—a feeling of pain arises in him. He discerns that
+sn36.7:6.3 | S: ‘A painful feeling has arisen in me. | T: ‘A feeling of pain has arisen in me.
+sn36.7:6.4 | S: That’s dependent, not independent. | T: It is dependent on a requisite condition, not independent.
+sn36.7:6.5 | S: Dependent on what? | T: Dependent on what?
+sn36.7:6.6 | S: Dependent on my own body. | T: Dependent on this body.
+sn36.7:6.7 | S: But this body is impermanent, conditioned, dependently originated. | T: Now, this body is inconstant, fabricated, dependently co-arisen.
+sn36.7:6.8 | S: So how could a painful feeling be permanent, since it has arisen dependent on a body that is impermanent, conditioned, and dependently originated?’ | T: Being dependent on a body that is inconstant, fabricated, & dependently co-arisen, how can this feeling of pain that has arisen be constant?’
+sn36.7:6.9 | S: They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and painful feeling. | T: He remains focused on inconstancy with regard to the body & to the feeling of pain. He remains focused on dissolution… dispassion… cessation… relinquishment with regard to the body & to the feeling of pain. As he remains focused on inconstancy… dissolution… dispassion… cessation…
+sn36.7:6.10 | S: As they do so, they give up the underlying tendency to aversion toward the body and painful feeling. | T: relinquishment with regard to the body & to the feeling of pain, he abandons any resistance-obsession for the body & the feeling of pain.
+sn36.7:7.1 | S: While a mendicant is meditating like this—mindful, aware, diligent, keen, and resolute—if neutral feelings arise, they understand: | T: “As he is dwelling thus mindful & alert—heedful, ardent, & resolute—a feeling of neither-pleasure-nor-pain arises in him. He discerns that
+sn36.7:7.2 | S: ‘A neutral feeling has arisen in me. | T: ‘A feeling of neither-pleasure-nor-pain has arisen in me.
+sn36.7:7.3 | S: That’s dependent, not independent. | T: It is dependent on a requisite condition, not independent.
+sn36.7:7.4 | S: Dependent on what? | T: Dependent on what?
+sn36.7:7.5 | S: Dependent on my own body. | T: Dependent on this body.
+sn36.7:7.6 | S: But this body is impermanent, conditioned, dependently originated. | T: Now, this body is inconstant, fabricated, dependently co-arisen.
+sn36.7:7.7 | S: So how could a neutral feeling be permanent, since it has arisen dependent on a body that is impermanent, conditioned, and dependently originated?’ | T: Being dependent on a body that is inconstant, fabricated, & dependently co-arisen, how can this feeling of neither-pleasure-nor-pain that has arisen be constant?’
+sn36.7:7.8 | S: They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in the body and neutral feeling. | T: He remains focused on inconstancy with regard to the body & to the feeling of neither-pleasure-nor-pain. He remains focused on dissolution… dispassion… cessation… relinquishment with regard to the body & to the feeling of neither-pleasure-nor-pain. As he remains focused on inconstancy… dissolution… dispassion… cessation…
+sn36.7:7.9 | S: As they do so, they give up the underlying tendency to ignorance toward the body and neutral feeling. | T: relinquishment with regard to the body & to the feeling of neither-pleasure-nor-pain, he abandons any ignorance-obsession for the body & the feeling of neither-pleasure-nor-pain.
+sn36.7:8.1 | S: If they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “Sensing a feeling of pleasure, he discerns that it is inconstant, not grasped at, not relished.
+sn36.7:8.2 | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: Sensing a feeling of pain…
+sn36.7:8.3 | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: Sensing a feeling of neither-pleasure-nor-pain, he discerns that it is inconstant, not grasped at, not relished.
+sn36.7:8.4 | S: If they feel a pleasant feeling, they feel it detached. | T: Sensing a feeling of pleasure, he senses it disjoined from it.
+sn36.7:8.5 | S: If they feel a painful feeling, they feel it detached. | T: Sensing a feeling of pain…
+sn36.7:8.6 | S: If they feel a neutral feeling, they feel it detached. | T: Sensing a feeling of neither-pleasure-nor-pain, he senses it disjoined from it.
+sn36.7:8.7 | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: When sensing a feeling limited to the body, he discerns that ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, he discerns that ‘I am sensing a feeling limited to life.’
+sn36.7:8.8 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’ | T: He discerns that ‘With the break-up of the body, after the termination of life, all that is experienced, not being relished, will grow cold right here.’
+sn36.7:9.1 | S: Suppose an oil lamp depended on oil and a wick to burn. | T: “Just as an oil lamp burns in dependence on oil & wick;
+sn36.7:9.2 | S: As the oil and the wick are used up, it would be extinguished due to not being fed. | T: and from the termination of the oil & wick—and from not being provided any other sustenance—it goes out unnourished;
+sn36.7:9.3 | S: In the same way, feeling the end of the body draw close, a mendicant understands: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, a mendicant understands: ‘I feel the end of life draw close.’ | T: in the same way, when sensing a feeling limited to the body, he discerns that ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, he discerns that ‘I am sensing a feeling limited to life.’
+sn36.7:9.4 | S: They understand: ‘When my body breaks up and my life is over, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’” | T: He discerns that ‘With the break-up of the body, after the termination of life, all that is sensed, not being relished, will grow cold right here.’”
+
+## sn15.10
+sn15.10:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was staying near Rājagaha on Vulture Peak Mountain.
+sn15.10:1.2 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+sn15.10:1.3 | S: “Mendicants!” | T: “Monks!”
+sn15.10:1.4 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to the Blessed One.
+sn15.10:1.5 | S: The Buddha said this: | T: The Blessed One said,
+sn15.10:2.1 | S: “Mendicants, this transmigration has no known beginning. … | T: “Monks, from an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.10:2.2 | S: One individual roaming and transmigrating for an eon would amass a heap of bones the size of this Mount Vepulla, if they were gathered together and not lost. | T: If a single person were to transmigrate & wander on for an eon, he/she would leave behind a chain of bones, a pile of bones, a heap of bones, as large as this Mount Vepulla, if there were someone to collect them and the collection were not destroyed.
+sn15.10:2.3 | S: Why is that? | T: “Why is that?
+sn15.10:2.4 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.10:2.5 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn15.10:3.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn15.10:3.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-gone, the Teacher, said further:
+sn15.10:4.1 | S: “If the bones of a single individual | T: “The accumulation of a single person’s
+sn15.10:4.2 | S: for a single eon were gathered up, | T: bones for an eon
+sn15.10:4.3 | S: they’d make a pile the size of a mountain: | T: would be a heap on a par with the mountain,
+sn15.10:4.4 | S: so said the great seer. | T: so said the Great Seer.
+sn15.10:5.1 | S: And this is declared to be | T: (He declared this to be
+sn15.10:5.2 | S: as big as Mount Vepulla, | T: the great Mount Vepulla
+sn15.10:5.3 | S: higher than the Vulture’s Peak | T: to the north of Vulture’s Peak
+sn15.10:5.4 | S: in the Mountainfold of the Magadhans. | T: in the mountain-ring of the Magadhans.)
+sn15.10:6.1 | S: But then, with right understanding, | T: But when that person sees with right discernment
+sn15.10:6.2 | S: one sees the noble truths— | T: the four noble truths—
+sn15.10:6.3 | S: suffering, suffering’s origin, | T: stress, the cause of stress,
+sn15.10:6.4 | S: suffering’s transcendence, | T: the transcending of stress,
+sn15.10:6.5 | S: and the noble eightfold path | T: & the noble eightfold path,
+sn15.10:6.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress—
+sn15.10:7.1 | S: After roaming on seven times at most, | T: having wandered on seven times at most,
+sn15.10:7.2 | S: that individual | T: then,
+sn15.10:7.3 | S: makes an end of suffering, | T: with the ending of all fetters, he makes an end of stress.”
+sn15.10:7.4 | S: with the ending of all fetters.” | T: (none)
+
+## an4.37
+an4.37:1.1 | S: “Mendicants, a mendicant who possesses four qualities can’t decline, and has drawn near to extinguishment. | T: “Endowed with four qualities, a monk is incapable of falling away and is right in the presence of unbinding.
+an4.37:1.2 | S: What four? | T: Which four?
+an4.37:1.3 | S: A mendicant is accomplished in ethics, guards the sense doors, eats in moderation, and is dedicated to wakefulness. | T: “There is the case where a monk is consummate in virtue, guards the doors to his sense faculties, knows moderation in eating, & is devoted to wakefulness.
+an4.37:2.1 | S: And how is a mendicant accomplished in ethics? | T: “And how is a monk consummate in virtue?
+an4.37:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+an4.37:2.3 | S: That’s how a mendicant is accomplished in ethics. | T: This is how a monk is consummate in virtue.
+an4.37:3.1 | S: And how does a mendicant guard the sense doors? | T: “And how does a monk guard the doors to his sense faculties?
+an4.37:3.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, doesn’t grasp at any theme or variations by which—
+an4.37:3.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the eye. He achieves restraint with regard to the faculty of the eye.
+an4.37:3.4 | S: Hearing a sound with their ears … | T: “On hearing a sound with the ear.…
+an4.37:3.5 | S: Smelling an odor with their nose … | T: “On smelling an aroma with the nose.…
+an4.37:3.6 | S: Tasting a flavor with their tongue … | T: “On tasting a flavor with the tongue.…
+an4.37:3.7 | S: Encountering a touch with their body … | T: “On feeling a tactile sensation with the body.…
+an4.37:3.8 | S: Knowing an idea with their mind, they don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, he doesn’t grasp at any theme or variations by which—
+an4.37:3.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the intellect. He achieves restraint with regard to the faculty of the intellect.
+an4.37:3.10 | S: That’s how a mendicant guards the sense doors. | T: This is how a monk guards the doors to his sense faculties.
+an4.37:4.1 | S: And how does a mendicant eat in moderation? | T: “And how does a monk know moderation in eating?
+an4.37:4.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: There is the case where a monk, considering it appropriately, takes his food
+an4.37:4.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: not playfully, nor for intoxication, nor for putting on bulk, nor for beautification, but simply for the survival & continuance of this body, for ending its afflictions, for the support of the holy life, thinking, ‘I will destroy old feelings (of hunger) & not create new feelings (from overeating). Thus I will maintain myself, be blameless, & live in comfort.’
+an4.37:4.4 | S: That’s how a mendicant eats in moderation. | T: This is how a monk knows moderation in eating.
+an4.37:5.1 | S: And how is a mendicant dedicated to wakefulness? | T: “And how is a monk devoted to wakefulness?
+an4.37:5.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. | T: There is the case where a monk during the day, sitting & pacing back & forth, cleanses his mind of any qualities that would hold the mind in check.
+an4.37:5.3 | S: In the first watch of the night, they continue to practice walking and sitting meditation. | T: During the first watch of the night [dusk to 10 p.m.], sitting & pacing back & forth, he cleanses his mind of any qualities that would hold the mind in check.
+an4.37:5.4 | S: In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: During the second watch of the night [10 p.m. to 2 a.m.], reclining on his right side, he takes up the lion’s posture, one foot placed on top of the other, mindful, alert, with his mind set on getting up (either as soon as he awakens or at a particular time).
+an4.37:5.5 | S: In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: During the last watch of the night [2 a.m. to dawn], sitting & pacing back & forth, he cleanses his mind of any qualities that would hold the mind in check.
+an4.37:5.6 | S: This is how a mendicant is dedicated to wakefulness. | T: This is how a monk is devoted to wakefulness.
+an4.37:5.7 | S: A mendicant who possesses these four qualities can’t decline, and has drawn near to extinguishment. | T: “Endowed with these four qualities, a monk is incapable of falling away and is right in the presence of unbinding.”
+an4.37:6.1 | S: Established in ethics, | T: The monk established in virtue,
+an4.37:6.2 | S: restrained in the sense faculties, | T: restrained with regard to the sense faculties,
+an4.37:6.3 | S: eating in moderation, | T: knowing moderation in food,
+an4.37:6.4 | S: and dedicated to wakefulness; | T: & devoted to wakefulness:
+an4.37:7.1 | S: a mendicant lives like this, with keen energy, | T: Dwelling thus ardently,
+an4.37:7.2 | S: tireless all night and day, | T: day & night, untiring,
+an4.37:7.3 | S: developing skillful qualities, | T: he develops skillful qualities
+an4.37:7.4 | S: for the sake of sanctuary from the yoke. | T: for the attainment of rest from the yoke.
+an4.37:8.1 | S: A mendicant who loves diligence, | T: The monk delighting in heedfulness
+an4.37:8.2 | S: seeing fear in negligence, | T: and seeing danger in heedlessness
+an4.37:8.3 | S: can’t decline, | T: is incapable of falling away,
+an4.37:8.4 | S: and has drawn near to extinguishment.” | T: is right in the presence of unbinding.
+

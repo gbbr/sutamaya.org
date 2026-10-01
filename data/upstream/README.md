@@ -147,13 +147,16 @@ files here are named.
    the passing groups, or 50 of them at random where there are more. A group it finds worse comes
    out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
    A fix made by hand goes in the same form in `review/hand/`, where it overrides the readers'.
+   A second read, done on the text with the first read's findings kept, has the last word: where
+   it names a line an earlier reader named differently, the earlier line stays in its file marked
+   `# superseded: `, which the segmenter skips. Otherwise a line two readers disagree on is left out.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then commit.
 
 ## What's left
 
-- Take in the rest of Thanissaro's read-through, batches 024 on in `review/read/`, as step 3 of
+- Take in the rest of Bodhi's second read, batches 047 on in `review/reread/`, as step 3 of
   "Reviewing new and revised texts" says.
 
 ## Where to look

@@ -1,0 +1,598 @@
+## iti68
+iti68:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti68:2.1 | S: “Whoever has not given up greed, hate, and delusion | T: “Monks, anyone whose passion is unabandoned, whose aversion is unabandoned, whose delusion is unabandoned
+iti68:2.2 | S: is said to be trapped. They’re caught in Māra’s snare, and the Wicked One can do with them what he wants. | T: is said to have gone over to Māra’s camp, has come under Māra’s power. The Evil One can do with that person as he likes.
+iti68:2.3 | S: Whoever has given up greed, hate, and delusion | T: But anyone whose passion is abandoned, whose aversion is abandoned, whose delusion is abandoned
+iti68:2.4 | S: is said to be free. They’re released from Māra’s snare, and the Wicked One cannot do with them what he wants.” | T: is said not to have gone over to Māra’s camp, has thrown off Māra’s power. With that person, the Evil One cannot do as he likes.”
+iti68:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti68:2.6 | S: On this it is said: | T: (none)
+iti68:3.1 | S: “Those in whom greed, hate, and ignorance | T: Anyone whose passion, aversion, & ignorance
+iti68:3.2 | S: have faded away, | T: have faded away,
+iti68:3.3 | S: belong with those who are evolved; | T: is said to be composed in mind,
+iti68:3.4 | S: A manifestation of divinity, realized, | T: Brahma-become, awakened, Tathāgata,
+iti68:3.5 | S: awakened, beyond enmities and fears, | T: one for whom fear & hostility are past,
+iti68:3.6 | S: they’ve given up everything, they say.” | T: one who’s abandoned the All.
+iti68:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## snp1.9
+snp1.9:1.1 | S: “Today is the fifteenth day sabbath,” | T: Sātāgira the yakkha: Today is the fifteenth, the uposatha day.
+snp1.9:1.2 | S: said Sātāgira, the native spirit of mount Sātā, | T: (none)
+snp1.9:1.3 | S: “a holy night is at hand. | T: A divine night is at hand.
+snp1.9:1.4 | S: Come now, let us see Gotama, | T: Let’s go see Gotama,
+snp1.9:1.5 | S: the Teacher of peerless name.” | T: the Teacher perfectly named.
+snp1.9:2.1 | S: “Isn’t his mind well-disposed,” | T: Hemavata the yakkha: Is his mind well-directed,
+snp1.9:2.2 | S: said Hemavata, the native spirit of the Himalayas, | T: (none)
+snp1.9:2.3 | S: “impartial toward all creatures? | T: Such, toward all beings?
+snp1.9:2.4 | S: And aren’t his thoughts under control | T: Are his resolves mastered
+snp1.9:2.5 | S: when it comes to likes and dislikes?” | T: regarding what’s desirable & not?
+snp1.9:3.1 | S: “His mind is well-disposed,” | T: Sātāgira the yakkha: His mind is well-directed
+snp1.9:3.2 | S: said Sātāgira, | T: (none)
+snp1.9:3.3 | S: “impartial toward all creatures. | T: and Such toward all beings.
+snp1.9:3.4 | S: His thoughts are under control | T: And his resolves are mastered
+snp1.9:3.5 | S: when it comes to his likes and dislikes.” | T: regarding what’s desirable & not.
+snp1.9:4.1 | S: “Doesn’t he not steal?” | T: Hemavata the yakkha: Does he not take what’s not given?
+snp1.9:4.2 | S: said Hemavata, | T: (none)
+snp1.9:4.3 | S: “And doesn’t he harm not a creature? | T: Is he restrained toward beings?
+snp1.9:4.4 | S: Isn’t he far from negligence? | T: Is he far from complacency?
+snp1.9:4.5 | S: And doesn’t he not neglect absorption?” | T: Does he not neglect jhāna?
+snp1.9:5.1 | S: “He does not take what is not given,” | T: Sātāgira the yakkha: He doesn’t take what’s not given,
+snp1.9:5.2 | S: said Sātāgira, | T: (none)
+snp1.9:5.3 | S: “and he harms not a creature. | T: and he’s restrained toward beings.
+snp1.9:5.4 | S: He is far from negligence— | T: He’s far from complacency and,
+snp1.9:5.5 | S: the Buddha does not neglect absorption.” | T: awakened, he does not neglect jhāna.
+snp1.9:6.1 | S: “Doesn’t he avoid lying?” | T: Hemavata the yakkha: Does he not tell lies?
+snp1.9:6.2 | S: said Hemavata, | T: (none)
+snp1.9:6.3 | S: “And doesn’t he not speak sharply? | T: Do his ways of speaking not cut things off?
+snp1.9:6.4 | S: Doesn’t he avoid backbiting, | T: Does he not speak destructively?
+snp1.9:6.5 | S: as well as speaking nonsense?” | T: Does he not speak idly?
+snp1.9:7.1 | S: “He does not lie,” | T: Sātāgira the yakkha: He doesn’t tell lies.
+snp1.9:7.2 | S: said Sātāgira, | T: (none)
+snp1.9:7.3 | S: “nor does he speak sharply. | T: His ways of speaking don’t cut things off.
+snp1.9:7.4 | S: He avoids backbiting, | T: He doesn’t speak destructively.
+snp1.9:7.5 | S: and thoughtfully speaks wise counsel.” | T: Deliberating, he speaks what’s of benefit.
+snp1.9:8.1 | S: “Doesn’t he find sensual pleasures unattractive?” | T: Hemavata the yakkha: Is he not passionate for sensuality?
+snp1.9:8.2 | S: said Hemavata, | T: (none)
+snp1.9:8.3 | S: “And isn’t his mind unclouded? | T: Is his mind unmuddied?
+snp1.9:8.4 | S: Hasn’t he escaped delusion? | T: Has he gone beyond delusion?
+snp1.9:8.5 | S: Does his eye see clearly in all things?” | T: Does he have an Eye with regard to phenomena?
+snp1.9:9.1 | S: “He does not find sensual pleasures attractive,” | T: Sātāgira the yakkha: He’s not passionate for sensuality.
+snp1.9:9.2 | S: said Sātāgira, | T: (none)
+snp1.9:9.3 | S: “and his mind is unclouded. | T: His mind is unmuddied.
+snp1.9:9.4 | S: He has escaped all delusion— | T: He has gone beyond all delusion.
+snp1.9:9.5 | S: the Buddha, whose eye sees clearly in all things.” | T: Awakened, he has an Eye with regard to phenomena.
+snp1.9:10.1 | S: “Isn’t he accomplished in knowledge?” | T: Hemavata the yakkha: Is he consummate in clear-knowing?
+snp1.9:10.2 | S: said Hemavata, | T: (none)
+snp1.9:10.3 | S: “And doesn’t he live a pure life? | T: Is he pure in his conduct?
+snp1.9:10.4 | S: Aren’t his defilements all ended? | T: Are his effluents ended?
+snp1.9:10.5 | S: Doesn’t he have no future lives?” | T: Does he have no further becoming?
+snp1.9:11.1 | S: “He is accomplished in knowledge,” | T: Sātāgira the yakkha: He is both consummate in clear-knowing
+snp1.9:11.2 | S: said Sātāgira, | T: (none)
+snp1.9:11.3 | S: “and he does live a pure life. | T: & pure in his conduct.
+snp1.9:11.4 | S: His defilements are all ended, | T: All his effluents are ended.
+snp1.9:11.5 | S: there’ll be no more future lives for him.” | T: He has no further becoming.
+snp1.9:12.1 | S: “Accomplished is the sage’s mind | T: Hemavata the yakkha: Consummate the mind of the sage
+snp1.9:12.2 | S: in action and in speech, | T: in action & in ways of speech,
+snp1.9:12.3 | S: and he’s accomplished in knowledge and conduct | T: you rightly praise him as consummate in clear-knowing & conduct.
+snp1.9:12.4 | S: as per the teaching you praise.” | T: (none)
+snp1.9:13.1 | S: “Accomplished is the sage’s mind | T: Consummate the mind of the sage
+snp1.9:13.2 | S: in action and in speech, | T: in action & in ways of speech,
+snp1.9:13.3 | S: and he’s accomplished in knowledge and conduct | T: you rightly rejoice in him as consummate in clear-knowing & conduct.
+snp1.9:13.4 | S: as per the teaching you rejoice in. | T: (none)
+snp1.9:14.1 | S: Accomplished is the sage’s mind | T: Consummate the mind of the sage
+snp1.9:14.2 | S: in action and in speech, | T: in action & in ways of speech, let’s go see Gotama,
+snp1.9:14.3 | S: and he’s accomplished in knowledge and conduct: | T: consummate in clear-knowing & conduct. Come,
+snp1.9:14.4 | S: come now, let us see Gotama.” | T: let’s go see Gotama,
+snp1.9:15.1 | S: “The hero so lean, with antelope calves, | T: enlightened, with legs like an antelope, thin,
+snp1.9:15.2 | S: not greedy, eating little, | T: eating little, not greedy,
+snp1.9:15.3 | S: the sage meditating alone in the forest, | T: doing jhāna in the forest.
+snp1.9:15.4 | S: come now, let us see Gotama. | T: (none)
+snp1.9:16.1 | S: A giant, wandering alone like a lion, | T: Having gone to the nāga, the lion wandering alone,
+snp1.9:16.2 | S: unconcerned for sensual pleasures, | T: indifferent to sensuality,
+snp1.9:16.3 | S: let’s approach him and ask about | T: let’s ask him
+snp1.9:16.4 | S: release from the snare of death.” | T: about release from Death’s snare. Let’s ask Gotama,
+snp1.9:17.1 | S: “The communicator, the instructor, | T: proclaimer, preacher,
+snp1.9:17.2 | S: who has gone beyond all things, | T: attained to the far shore of all phenomena:
+snp1.9:17.3 | S: Awakened, beyond enmities and fears, | T: awakened, gone past animosity & fear.
+snp1.9:17.4 | S: let us ask Gotama.” | T: (none)
+snp1.9:18.1 | S: “What has the world arisen in?” | T: Hemavata the yakkha: In what has the world arisen?
+snp1.9:18.2 | S: said Hemavata, | T: (none)
+snp1.9:18.3 | S: “What does it get close to? | T: In what does it make acquaintance?
+snp1.9:18.4 | S: By grasping what | T: From clinging to what
+snp1.9:18.5 | S: is the world troubled in what?” | T: is the world? In what is the world afflicted?
+snp1.9:19.1 | S: “The world’s arisen in six,” | T: The Buddha: In six has the world arisen.
+snp1.9:19.2 | S: said the Buddha to Hemavata. | T: (none)
+snp1.9:19.3 | S: “It gets close to six. | T: In six does it make acquaintance.
+snp1.9:19.4 | S: Derived from the six, | T: From clinging just to six
+snp1.9:19.5 | S: the world’s troubled in six.” | T: is the world, in six is the world afflicted.
+snp1.9:20.1 | S: “What is that grasping | T: Hemavata the yakkha: Which is that clinging
+snp1.9:20.2 | S: by which the world is troubled? | T: where the world is afflicted?
+snp1.9:20.3 | S: Tell us the exit when asked: | T: When asked the way leading out, please tell
+snp1.9:20.4 | S: how is one released from all suffering?” | T: how is one released from suffering & stress.
+snp1.9:21.1 | S: “The world has five kinds of sensual stimulation, | T: The Buddha: The five strings of sensuality in the world,
+snp1.9:21.2 | S: and the mind is said to be the sixth. | T: with the heart described as the sixth:
+snp1.9:21.3 | S: When you’ve discarded desire for these, | T: Being dispassioned for desire there:
+snp1.9:21.4 | S: you’re released from all suffering. | T: That’s how one’s released from suffering & stress.
+snp1.9:22.1 | S: This is the exit from the world, | T: That is the way leading out of the world
+snp1.9:22.2 | S: explained in accord with the truth. | T: proclaimed to you as it really is,
+snp1.9:22.3 | S: The way I’ve explained it is how | T: I have proclaimed to you:
+snp1.9:22.4 | S: you’re released from all suffering.” | T: That’s how one is released from suffering & stress.
+snp1.9:23.1 | S: “Who here crosses the flood, | T: Hemavata the yakkha: Who here crosses over the flood?
+snp1.9:23.2 | S: Who crosses the deluge? | T: Who here crosses over the ocean?
+snp1.9:23.3 | S: Who, not standing and unsupported, | T: Unestablished, without support,
+snp1.9:23.4 | S: does not sink in the deep?” | T: who doesn’t sink into the deep?
+snp1.9:24.1 | S: “Someone who is always endowed with ethics, | T: The Buddha: Always consummate in virtue,
+snp1.9:24.2 | S: wise and serene, | T: discerning, well-centered,
+snp1.9:24.3 | S: inwardly reflective, mindful, | T: internally percipient, mindful,
+snp1.9:24.4 | S: crosses the flood so hard to cross. | T: one crosses over the flood hard to cross.
+snp1.9:25.1 | S: Someone who desists from sensual perception, | T: Abstaining from perceptions of sensuality,
+snp1.9:25.2 | S: who has escaped all fetters, | T: overcoming all fetters,
+snp1.9:25.3 | S: and has ended relish for rebirth, | T: having totally ended delight in becoming,
+snp1.9:25.4 | S: does not sink in the deep.” | T: one doesn’t sink into the deep.
+snp1.9:26.1 | S: “Behold him of wisdom deep <j>who sees the subtle meaning, | T: Hemavata the yakkha: The one deeply discerning, seeing the subtle goal,
+snp1.9:26.2 | S: who has nothing, unattached to sensual life, | T: having nothing, unattached in sensual becoming:
+snp1.9:26.3 | S: everywhere free, | T: See him, everywhere released,
+snp1.9:26.4 | S: the great seer treading the holy road. | T: the great seer, going the divine way!
+snp1.9:27.1 | S: Behold him of peerless name <j>who sees the subtle meaning, | T: Perfectly named, seeing the subtle goal,
+snp1.9:27.2 | S: giver of wisdom, <j>unattached to the realm of sensuality: | T: granting discernment, unattached to sensual nostalgia:
+snp1.9:27.3 | S: the all-knower, so very intelligent, | T: See him, all-knowing, wise,
+snp1.9:27.4 | S: the great seer treading the noble road. | T: the great seer, going the noble way!
+snp1.9:28.1 | S: It was a fine sight for us today, | T: Truly, it was well-seen today,
+snp1.9:28.2 | S: a good sunup, a good rising, | T: well-dawned, well-arisen,
+snp1.9:28.3 | S: to see the Awakened One, | T: that we saw the One Self-Awakened,
+snp1.9:28.4 | S: the undefiled one who has crossed the flood. | T: crossed over the flood, effluent-free.
+snp1.9:29.1 | S: These thousand native spirits | T: These ten hundred yakkhas,
+snp1.9:29.2 | S: powerful and glorious, | T: powerful, prestigious,
+snp1.9:29.3 | S: all go to you for refuge, | T: all go to you for refuge.
+snp1.9:29.4 | S: you are our supreme Teacher. | T: You are our teacher unexcelled.
+snp1.9:30.1 | S: We shall journey | T: We will wander
+snp1.9:30.2 | S: village to village, peak to peak, | T: from village to village, town to town,
+snp1.9:30.3 | S: paying homage to the Buddha, | T: paying homage to the One Self-Awakened
+snp1.9:30.4 | S: and the clear rightness of the teaching!” | T: & to the Dhamma’s true rightness.
+
+## an8.23
+an8.23:1.1 | S: At one time the Buddha was staying near Āḷavī, at Āḷavī’s premier shrine. | T: On one occasion the Blessed One was staying near Āḷavī at the Aggāḷava Shrine.
+an8.23:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks:
+an8.23:1.3 | S: “Mendicants, you should remember the householder Hatthaka of Āḷavī as someone who has seven amazing and incredible qualities. | T: “Monks, remember Hatthaka of Āḷavī as being endowed with seven amazing, astounding qualities.
+an8.23:1.4 | S: What seven? | T: Which seven?
+an8.23:1.5 | S: He’s faithful, | T: Monks, Hatthaka of Āḷavī is endowed with conviction.
+an8.23:1.6 | S: ethical, | T: He is virtuous.
+an8.23:1.7 | S: conscientious, | T: He has a sense of shame.
+an8.23:1.8 | S: prudent, | T: He has a sense of compunction.
+an8.23:1.9 | S: learned, | T: He is learned.
+an8.23:1.10 | S: generous, | T: He is generous.
+an8.23:1.11 | S: and wise. | T: He is discerning.
+an8.23:1.12 | S: You should remember the householder Hatthaka of Āḷavī as someone who possesses these seven amazing and incredible qualities.” | T: Remember Hatthaka of Āḷavī as being endowed with these seven amazing, astounding qualities.”
+an8.23:1.13 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+an8.23:1.14 | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said it, the One Well-Gone, getting up from his seat, went into his dwelling.
+an8.23:2.1 | S: Then a certain mendicant robed up in the morning and, taking his bowl and robe, went to the home of the householder Hatthaka of Āḷavī, where he sat down on the seat spread out. | T: Then early in the morning a certain monk, having adjusted his lower robe and carrying his bowl & outer robe, went to Hatthaka of Āḷavī’s home. On arrival, he sat down on a seat made ready.
+an8.23:2.2 | S: Then Hatthaka went up to that mendicant, bowed, and sat down to one side. The mendicant said to Hatthaka: | T: Then Hatthaka of Āḷavī approached the monk and, having bowed down to him, sat to one side. As he was sitting there the monk said to him,
+an8.23:3.1 | S: “Respectable sir, the Buddha declared that you have seven amazing and incredible qualities. | T: “Friend, the Blessed One has described you as being endowed with seven amazing, astounding qualities.
+an8.23:3.2 | S: What seven? | T: Which seven?
+an8.23:3.3 | S: He said that you’re faithful, | T: ‘Hatthaka of Āḷavī is endowed with conviction.
+an8.23:3.4 | S: ethical, | T: He is virtuous.
+an8.23:3.5 | S: conscientious, | T: He has a sense of shame.
+an8.23:3.6 | S: prudent, | T: He has a sense of compunction.
+an8.23:3.7 | S: learned, | T: He is learned.
+an8.23:3.8 | S: generous, | T: He is generous.
+an8.23:3.9 | S: and wise. | T: He is discerning.’
+an8.23:3.10 | S: The Buddha declared that you possess these seven amazing and incredible qualities.” | T: Friend, the Blessed One has described you as being endowed with these seven amazing, astounding qualities.”
+an8.23:3.11 | S: “But sir, I trust that no white-clothed lay people were present?” | T: “I hope, sir, that there were no white-clad householders there.”
+an8.23:3.12 | S: “No, there weren’t any white-clothed lay people present.” | T: “No, friend, there were no white-clad householders there.”
+an8.23:3.13 | S: “That’s good, sir.” | T: “It’s good, sir, that there were no white-clad householders there.”
+an8.23:4.1 | S: Then that mendicant, after taking almsfood in Hatthaka of Āḷavī’s home, rose from his seat and left. | T: Then the monk, having received alms at Hatthaka of Āḷavī’s home, departed.
+an8.23:4.2 | S: Then after the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him of what he had discussed with the householder Hatthaka. The Buddha said: | T: After his meal, returning from his alms round, he went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there, he [told the Blessed One what had happened].
+an8.23:7.1 | S: “Good, good, mendicant! | T: [The Blessed One replied:] “It’s good, monk, it’s very good
+an8.23:7.2 | S: That gentleman has few wishes. | T: that the clansman is modest and does not want others to know of the skillful qualities present in him.
+an8.23:7.3 | S: He doesn’t want his own good qualities to be made known to others. | T: (none)
+an8.23:7.4 | S: Well then, mendicant, you should remember the householder Hatthaka of Āḷavī as someone who has this eighth amazing and incredible quality, that is, fewness of wishes.” | T: In that case, monk, remember Hatthaka of Āḷavī as being endowed with this eighth amazing, astounding quality: modesty.”
+
+## dhp300
+dhp300:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples
+dhp300:2 | S: always wake up refreshed, | T: (none)
+dhp300:3 | S: whose minds day and night | T: whose hearts delight, both day & night, in harmlessness.
+dhp300:4 | S: delight in harmlessness. | T: (none)
+
+## dhp301
+dhp301:1 | S: The disciples of Gotama | T: They awaken, always wide awake: Gotama’s disciples
+dhp301:2 | S: always wake up refreshed, | T: (none)
+dhp301:3 | S: whose minds day and night | T: whose hearts delight, both day & night, in developing the mind.
+dhp301:4 | S: delight in meditation. | T: (none)
+
+## dhp100
+dhp100:1 | S: Better than a thousand | T: Better than if there were thousands
+dhp100:2 | S: meaningless sayings | T: of meaningless words is
+dhp100:3 | S: is a single meaningful saying, | T: one meaningful word
+dhp100:4 | S: hearing which brings you peace. | T: that on hearing brings peace.
+
+## ud8.7
+ud8.7:1.1 | S: So I have heard. | T: I have heard that
+ud8.7:1.2 | S: At one time the Buddha was traveling along a road in the Kosalan lands with Venerable Nāgasamāla as his second monk. | T: on one occasion the Blessed One was journeying along a road in the Kosalan country with Ven. Nāgasamāla as his junior companion.
+ud8.7:1.3 | S: Nāgasamāla saw a fork in the road | T: Ven. Nāgasamāla, while going along the road, saw a fork in the path.
+ud8.7:1.4 | S: and said to the Buddha, | T: On seeing it, he said to the Blessed One,
+ud8.7:1.5 | S: “Sir, this is the road, | T: “That, lord Blessed One, is the route.
+ud8.7:1.6 | S: let us go this way.” | T: We go that way.”
+ud8.7:1.7 | S: But when he said this the Buddha responded, | T: When this was said, the Blessed One said,
+ud8.7:1.8 | S: “Nāgasamāla, this is the road, | T: “This, Nāgasamāla, is the route.
+ud8.7:1.9 | S: let us go this way.” | T: We go this way.”
+ud8.7:2.1 | S: For a second time … | T: A second time…
+ud8.7:2.2 | S: For a third time Nāgasamāla said to the Buddha, | T: A third time, Ven. Nāgasamāla said to the Blessed One,
+ud8.7:2.3 | S: “Sir, this is the road, | T: “That, lord Blessed One, is the route.
+ud8.7:2.4 | S: let us go this way.” | T: We go that way.”
+ud8.7:2.5 | S: And for a third time the Buddha responded, | T: And for a third time, the Blessed One said,
+ud8.7:2.6 | S: “Nāgasamāla, this is the road, | T: “This, Nāgasamāla, is the route.
+ud8.7:2.7 | S: let us go this way.” | T: We go this way.”
+ud8.7:2.8 | S: Then Nāgasamāla put the Buddha’s bowl and robes down on the ground right there and left, saying, | T: Then Ven. Nāgasamāla, placing the Blessed One’s bowl & robes right there on the ground, left, saying,
+ud8.7:2.9 | S: “Sir, here are your bowl and robes.” | T: “This, lord Blessed One, is the bowl & robes.”
+ud8.7:3.1 | S: Then as Nāgasamāla was going down that road, he was set upon by bandits who struck him with fists and feet, broke his bowl, and tore up his outer robe. | T: Then as Ven. Nāgasamāla was going along that route, thieves–jumping out in the middle of the road–pummeled him with their fists & feet, broke his bowl, and ripped his outer robe to shreds.
+ud8.7:3.2 | S: Then Nāgasamāla—with his bowl broken and his outer robe torn—went to the Buddha and told him what had happened. | T: So Ven. Nāgasamāla–with his bowl broken, his outer robe ripped to shreds–went to the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there he said to the Blessed One, “Just now, lord, as I was going along that route, thieves jumped out in the middle of the road, pummeled me with their fists & feet, broke my bowl, and ripped my outer robe to shreds.”
+ud8.7:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.7:5.1 | S: “Walking together, dwelling as one, | T: When traveling together, mixed together
+ud8.7:5.2 | S: the knowledge master mixes with foolish folk. | T: with a person who doesn’t know, an attainer-of-wisdom,
+ud8.7:5.3 | S: Knowing this, they give up wickedness, | T: on realizing that the person is evil, abandons him
+ud8.7:5.4 | S: like a milk-drinking heron the water.” | T: as a milk-feeding heron, a bog.
+
+## dhp101
+dhp101:1 | S: Better than a thousand | T: Better than if there were thousands
+dhp101:2 | S: meaningless verses | T: of meaningless verses is
+dhp101:3 | S: is a single meaningful verse, | T: one meaningful line of verse
+dhp101:4 | S: hearing which brings you peace. | T: that on hearing brings peace.
+
+## dhp270
+dhp270:1 | S: You don’t become a noble one | T: Not by harming life does one become noble.
+dhp270:2 | S: by harming living beings. | T: (none)
+dhp270:3 | S: One harmless toward all living beings | T: One is termed noble for being gentle to all living things.
+dhp270:4 | S: is said to be a noble one. | T: (none)
+
+## dhp183
+dhp183:1 | S: Not to do any evil; | T: The non-doing of any evil, the performance
+dhp183:2 | S: to embrace the good; | T: of what’s skillful,
+dhp183:3 | S: to purify one’s mind: | T: the cleansing of one’s own mind:
+dhp183:4 | S: this is the instruction of the Buddhas. | T: this is the teaching of the Awakened.
+
+## thig13.5
+thig13.5:1.1 | S: “I was so young, my clothes so fresh, | T: “I was a child, with clean clothes,
+thig13.5:1.2 | S: at that time I heard the teaching. | T: when I first heard the Dhamma.
+thig13.5:1.3 | S: Being diligent, | T: And within me, heedful,
+thig13.5:1.4 | S: I comprehended the truth; | T: was a break-through to the truth.
+thig13.5:2.1 | S: and then I became profoundly dispassionate | T: Then I arrived at an enormous dissatisfaction
+thig13.5:2.2 | S: toward all sensual pleasures. | T: with all sensuality.
+thig13.5:2.3 | S: Seeing fear in substantial reality, | T: Seeing the danger in self-identity,
+thig13.5:2.4 | S: I longed for renunciation. | T: I longed only for renunciation.
+thig13.5:3.1 | S: Giving up my family circle, | T: Leaving my circle of relatives,
+thig13.5:3.2 | S: bonded servants and workers, | T: slaves, workers,
+thig13.5:3.3 | S: and my flourishing village fields, | T: prosperous villages & fields,
+thig13.5:3.4 | S: so delightful and pleasant, | T: delightful, enticing possessions,
+thig13.5:4.1 | S: I went forth; | T: I went forth,
+thig13.5:4.2 | S: all that is no small wealth. | T: abandoning not-insignificant wealth.
+thig13.5:4.3 | S: Now that I’ve renounced in faith like this, | T: Having gone out through conviction
+thig13.5:4.4 | S: in the true teaching so well proclaimed, | T: in the well-taught true Dhamma,
+thig13.5:5.1 | S: since I desire to have nothing, | T: it wouldn’t be proper for me— aspiring to nothingness—
+thig13.5:5.2 | S: it would not be appropriate | T: (none)
+thig13.5:5.3 | S: to take back gold and currency, | T: having cast off gold & silver to take them back.
+thig13.5:5.4 | S: having already got rid of them. | T: (none)
+thig13.5:6.1 | S: Currency or gold | T: Gold & silver
+thig13.5:6.2 | S: doesn’t lead to peace and awakening. | T: don’t buy awakening, don’t buy peace.
+thig13.5:6.3 | S: It doesn’t befit an ascetic; | T: This [gold] isn’t proper for contemplatives.
+thig13.5:6.4 | S: it’s not the wealth of the noble ones; | T: This isn’t noble wealth.
+thig13.5:7.1 | S: it’s greed and vanity, | T: This is greediness, intoxication,
+thig13.5:7.2 | S: confusion and growing decadence, | T: delusion, bondage to dust,
+thig13.5:7.3 | S: dubious and troublesome— | T: suspicion, many troubles.
+thig13.5:7.4 | S: there is nothing lasting there. | T: There’s no lasting stability here.
+thig13.5:8.1 | S: Depraved and heedless, | T: It’s to this extent that many, many men —heedless,
+thig13.5:8.2 | S: unenlightened folk, their hearts corrupt, | T: their hearts defiled—
+thig13.5:8.3 | S: fight each other, | T: opposing one another,
+thig13.5:8.4 | S: creating conflict. | T: create conflicts,
+thig13.5:9.1 | S: Killing, caging, misery, | T: murder, bondage, calamity,
+thig13.5:9.2 | S: loss, grief, and lamentation; | T: loss, grief, & lamentation.
+thig13.5:9.3 | S: those sunk in sensual pleasures | T: Many misfortunes are seen for those head-over-heels in sensuality.
+thig13.5:9.4 | S: see many disastrous things. | T: (none)
+thig13.5:10.1 | S: My family, why do you urge me on | T: So, my relatives: Why do you,
+thig13.5:10.2 | S: to pleasures, as if you were my enemies? | T: like enemies, try to bind me to sensuality?
+thig13.5:10.3 | S: You know I’ve gone forth, | T: You know I’ve gone forth,
+thig13.5:10.4 | S: seeing fear in sensual pleasures. | T: seeing the danger in sensuality.
+thig13.5:11.1 | S: It’s not due to gold, coined or uncoined, | T: Gold coin & bullion
+thig13.5:11.2 | S: that defilements come to an end. | T: can’t put an end to effluents.
+thig13.5:11.3 | S: Sensual pleasures are enemies and killers, | T: Sensuality is an enemy, a murderer,
+thig13.5:11.4 | S: hostile forces that bind you to thorns. | T: hostile, arrows & bonds.
+thig13.5:12.1 | S: My family, why do you urge me on | T: So, my relatives: Why do you,
+thig13.5:12.2 | S: to pleasures, as if you were my enemies? | T: like enemies, try to bind me to sensuality?
+thig13.5:12.3 | S: You know I’ve gone forth, | T: You know I’ve gone forth
+thig13.5:12.4 | S: shaven, wrapped in my outer robe. | T: with shaven head, wrapped in a patchwork cloak.
+thig13.5:13.1 | S: Leftovers as gleanings, | T: Leftover alms-scraps, gleanings,
+thig13.5:13.2 | S: and cast-off rags as robes— | T: a robe made from cast-off cloth:
+thig13.5:13.3 | S: that’s what’s fitting for me, | T: That’s what’s proper for me—
+thig13.5:13.4 | S: the essentials of the homeless life. | T: the requisites of one with no home.
+thig13.5:14.1 | S: Great seers expel sensual pleasures, | T: The great seers have rejected sensuality,
+thig13.5:14.2 | S: both human and heavenly. | T: both human & divine.
+thig13.5:14.3 | S: Safe in their sanctuary, they are freed, | T: Released are they, in the place of security.
+thig13.5:14.4 | S: having found unshakable happiness. | T: Arrived are they, in unshaken ease.
+thig13.5:15.1 | S: May I not encounter sensual pleasures, | T: So may I not come into union with sensuality,
+thig13.5:15.2 | S: for no shelter is found in them. | T: in which no shelter is found.
+thig13.5:15.3 | S: Sensual pleasures are enemies and killers, | T: It’s an enemy, a murderer —sensuality—
+thig13.5:15.4 | S: as painful as a mass of fire. | T: painful, like a mass of flame.
+thig13.5:16.1 | S: This is a roadblock, a threat, | T: Greed: an obstacle, fearful,
+thig13.5:16.2 | S: full of distress and thorns; | T: threatened, full of thorns,
+thig13.5:16.3 | S: it is a blind spot, uneven, | T: very discordant,
+thig13.5:16.4 | S: a great gateway to confusion. | T: a great cause of delusion.
+thig13.5:17.1 | S: Hazardous and terrifying, | T: Sensuality: a frightening attack,
+thig13.5:17.2 | S: sensual pleasures are like a cobra’s head, | T: like a snake’s head
+thig13.5:17.3 | S: where fools delight, | T: in which fools delight—
+thig13.5:17.4 | S: the blind ordinary folk. | T: blinded, run-of-the-mill.
+thig13.5:18.1 | S: Stuck in the swamp of sensuality, | T: Because many people in the world are stuck in the mud of sensuality, unknowing,
+thig13.5:18.2 | S: there are so many ignorant in the world. | T: (none)
+thig13.5:18.3 | S: They know nothing of the end | T: they don’t realize the ending of birth & death.
+thig13.5:18.4 | S: of rebirth and death. | T: (none)
+thig13.5:19.1 | S: Because of sensual pleasures, | T: Many people follow the path to bad destinations because of sensuality,
+thig13.5:19.2 | S: people jump right on to the path <j>that goes to a bad place. | T: (none)
+thig13.5:19.3 | S: So many walk the path | T: (none)
+thig13.5:19.4 | S: that brings disease onto themselves. | T: bringing disease on themselves.
+thig13.5:20.1 | S: That’s how sensual pleasures create enemies; | T: Thus sensuality creates enemies.
+thig13.5:20.2 | S: they are so tormenting, so corrupting, | T: It burns, is defiled.
+thig13.5:20.3 | S: trapping beings with worldly pleasures of the flesh, | T: It’s the bait of the world,
+thig13.5:20.4 | S: they are nothing less than the bonds of death. | T: constraining, the bondage of death,
+thig13.5:21.1 | S: Maddening, enticing, | T: maddening, deceptive,
+thig13.5:21.2 | S: sensual pleasures derange the mind. | T: agitating the mind.
+thig13.5:21.3 | S: For the corruption of beings, | T: It’s a net cast by Māra for the defilement of living beings:
+thig13.5:21.4 | S: swiftly ensnared by Māra. | T: (none)
+thig13.5:22.1 | S: Sensual pleasures are infinitely dangerous, | T: with endless drawbacks,
+thig13.5:22.2 | S: they’re full of suffering, a terrible poison; | T: much pain, great poison,
+thig13.5:22.3 | S: offering little gratification, they’re makers of strife, | T: giving little enjoyment, creating conflict,
+thig13.5:22.4 | S: withering bright qualities away. | T: drying up the good side [of the mind].
+thig13.5:23.1 | S: Since I’ve created so much ruination | T: I, having cast off much trouble like this
+thig13.5:23.2 | S: because of sensual pleasures, | T: caused by sensuality,
+thig13.5:23.3 | S: I will not relapse to them again, | T: will not return to it,
+thig13.5:23.4 | S: but will always delight in extinguishment. | T: as I always delight in unbinding.
+thig13.5:24.1 | S: Having once made strife <j>for the sake of sensual pleasures, | T: Doing battle with sensuality
+thig13.5:24.2 | S: now I am longing for that cool state. | T: in hopes of the cool state,
+thig13.5:24.3 | S: I shall meditate diligently | T: I will stay heedful, finding delight
+thig13.5:24.4 | S: for the ending of all fetters. | T: in the ending of fetters.
+thig13.5:25.1 | S: Sorrowless, stainless, secure— | T: (none)
+thig13.5:25.2 | S: I follow that path, | T: I follow the path—
+thig13.5:25.3 | S: the straight noble eightfold way | T: eightfold, straight, griefless, stainless, secure—
+thig13.5:25.4 | S: by which the seers have crossed over.” | T: over which great seers have crossed.”
+thig13.5:26.1 | S: “Look at this: Subhā the smith’s daughter, | T: See this Subhā, the goldsmith’s daughter,
+thig13.5:26.2 | S: standing firm in the teaching. | T: standing firm in the Dhamma,
+thig13.5:26.3 | S: She has entered the imperturbable state, | T: entering the imperturbable state,
+thig13.5:26.4 | S: meditating at the root of a tree. | T: doing jhāna at the foot of a tree.
+thig13.5:27.1 | S: It’s just eight days since she went forth, | T: This is the eighth day of her going forth
+thig13.5:27.2 | S: the faithful one, grace of the true teaching. | T: confident, beautiful through the true Dhamma.
+thig13.5:27.3 | S: Guided by Uppalavaṇṇā, | T: Trained by Uppalavaṇṇā,
+thig13.5:27.4 | S: she is master of the three knowledges, <j>conqueror of death. | T: she’s a three-knowledge woman who’s left death behind;
+thig13.5:28.1 | S: This one is freed from slavery and debt, | T: freed from slavery, debtless,
+thig13.5:28.2 | S: a nun with faculties developed. | T: a nun with developed faculties,
+thig13.5:28.3 | S: Unyoked from all yokes, | T: set loose from all ties,
+thig13.5:28.4 | S: she has completed the task <j>and is free of defilements.” | T: her task done, effluent- free.
+thig13.5:29.1 | S: Thus did Sakka, lord of all creatures, | T: Sakka, lord of beings,
+thig13.5:29.2 | S: along with a host of gods, | T: with his community of devas,
+thig13.5:29.3 | S: having come by their psychic powers, | T: approaching her through supranormal power,
+thig13.5:29.4 | S: honor Subhā, the smith’s daughter. | T: pays homage to her: Subhā the goldsmith’s daughter.
+
+## iti73
+iti73:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti73:2.1 | S: “Mendicants, formless states are more peaceful than states of form; cessation is more peaceful than formless states.” | T: “Monks, formless phenomena are more peaceful than forms; cessation, more peaceful than formless phenomena.”
+iti73:2.2 | S: The Buddha spoke this matter. | T: (none)
+iti73:2.3 | S: On this it is said: | T: (none)
+iti73:3.1 | S: “There are beings in the realm of luminous form, | T: Those beings headed to forms,
+iti73:3.2 | S: and others stuck in the formless. | T: and those standing in the formless,
+iti73:3.3 | S: Not understanding cessation, | T: with no knowledge of cessation,
+iti73:3.4 | S: they return in future lives. | T: return to further becoming.
+iti73:4.1 | S: But the people who completely understand form, | T: But, comprehending form,
+iti73:4.2 | S: not stuck in the formless, | T: not taking a stance in formless things,
+iti73:4.3 | S: released in cessation— | T: those released in cessation
+iti73:4.4 | S: they are conquerors of death. | T: are people who’ve left death behind.
+iti73:5.1 | S: Having directly experienced <j>the element free of death, | T: Having touched with his body the deathless property free
+iti73:5.2 | S: free of attachments; | T: from acquisitions,
+iti73:5.3 | S: having realized relinquishment | T: having realized relinquishing
+iti73:5.4 | S: of attachments, the undefiled | T: of acquisitions, effluent-free,
+iti73:5.5 | S: fully awakened Buddha teaches | T: the Rightly Self-awakened One teaches
+iti73:5.6 | S: the sorrowless, stainless state.” | T: the state with no sorrow, no dust.
+iti73:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## dhp210
+dhp210:1 | S: Don’t ever get too close | T: Don’t ever–regardless–
+dhp210:2 | S: to those you like or dislike. | T: be conjoined with what’s dear or undear.
+dhp210:3 | S: For not seeing the liked is suffering, | T: It’s painful not to see what’s dear
+dhp210:4 | S: and so is seeing the disliked. | T: or to see what’s not.
+
+## dhp245
+dhp245:1 | S: Life is hard for the conscientious, | T: but for someone who’s constantly scrupulous, cautious, observant, sincere, pure in his livelihood, clean in his pursuits, it’s hard.
+dhp245:2 | S: always seeking purity, | T: (none)
+dhp245:3 | S: neither clinging nor rude, | T: (none)
+dhp245:4 | S: pure of livelihood and discerning. | T: (none)
+
+## dhp231
+dhp231:1 | S: Guard against ill-tempered deeds, | T: Guard against anger
+dhp231:2 | S: be restrained in body. | T: erupting in body; in body, be restrained.
+dhp231:3 | S: Giving up bad bodily conduct, | T: Having abandoned bodily misconduct,
+dhp231:4 | S: conduct yourself well in body. | T: live conducting yourself well in body.
+
+## dhp233
+dhp233:1 | S: Guard against ill-tempered thoughts, | T: Guard against anger
+dhp233:2 | S: be restrained in mind. | T: erupting in mind; in mind, be restrained.
+dhp233:3 | S: Giving up bad mental conduct, | T: Having abandoned mental misconduct,
+dhp233:4 | S: conduct yourself well in mind. | T: live conducting yourself well in mind.
+
+## dhp373
+dhp373:1 | S: A mendicant who enters an empty hut | T: A monk with his mind at peace, going into an empty dwelling,
+dhp373:2 | S: with mind at peace | T: (none)
+dhp373:3 | S: finds a superhuman delight | T: clearly seeing the Dhamma aright: his delight is more than human.
+dhp373:4 | S: as they rightly discern the Dhamma. | T: (none)
+
+## dhp232
+dhp232:1 | S: Guard against ill-tempered words, | T: Guard against anger
+dhp232:2 | S: be restrained in speech. | T: erupting in speech; in speech, be restrained.
+dhp232:3 | S: Giving up bad verbal conduct, | T: Having abandoned verbal misconduct,
+dhp232:4 | S: conduct yourself well in speech. | T: live conducting yourself well in speech.
+
+## dhp23
+dhp23:1 | S: They who regularly meditate, | T: The enlightened, constantly absorbed in jhana, persevering,
+dhp23:2 | S: always staunchly vigorous; | T: firm in their effort:
+dhp23:3 | S: the attentive realize extinguishment, | T: they touch Unbinding,
+dhp23:4 | S: the supreme sanctuary from the yoke. | T: the unexcelled rest from the yoke.
+
+## dhp248
+dhp248:1 | S: Know this, my man: | T: right here in this world. So know, my good man,
+dhp248:2 | S: they are unrestrained and wicked. | T: that bad deeds are reckless.
+dhp248:3 | S: Don’t let that greed and unrighteousness | T: Don’t let greed & unrighteousness
+dhp248:4 | S: inflict pain on you for long. | T: oppress you with long-term pain.
+
+## sn47.10
+sn47.10:1.1 | S: Then Venerable Ānanda robed up in the morning and, taking his bowl and robe, went to the nuns’ quarters, and sat down on the seat spread out. | T: The Blessed One was staying in Sāvatthī. Then Ven. Ānanda, early in the morning—having adjusted his lower robe and taking his bowl & outer robe—went to a certain nuns’ residence. On arrival, he sat down on a seat laid out.
+sn47.10:1.2 | S: Then several nuns went up to Venerable Ānanda bowed, sat down to one side, and said to him: | T: Then a large number of nuns went to Ven. Ānanda and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to him,
+sn47.10:2.1 | S: “Honorable Ānanda, several nuns meditate with their minds firmly established in the four kinds of mindfulness meditation. They have realized a higher distinction than they had before.” | T: “Here, Ven. Ānanda, a large number of nuns dwelling with their minds well-established in the four establishings of mindfulness are perceiving grand, successive distinctions.”
+sn47.10:2.2 | S: “That’s how it is, sisters! That’s how it is, sisters! | T: “That’s the way it is, sisters. That’s the way it is.
+sn47.10:2.3 | S: Any monk or nun who meditates with their mind firmly established in the four kinds of mindfulness meditation can expect to | T: Any monk or nun who dwells with mind well-established in the four establishings of mindfulness may be expected to
+sn47.10:2.4 | S: realize a higher distinction than they had before.” | T: perceive grand, successive distinctions.”
+sn47.10:3.1 | S: Then Ānanda educated, encouraged, fired up, and inspired those nuns with a Dhamma talk, after which he rose from his seat and left. | T: (none)
+sn47.10:3.2 | S: Then Ānanda wandered for alms in Sāvatthī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then Ven. Ānanda, having gone for alms in Sāvatthī, after the meal, returning from his alms round, went to the Blessed One. On arrival, having bowed down to him, he sat to one side. As he was sitting there he (reported his conversation with the nuns.)
+sn47.10:5.1 | S: “That’s so true, Ānanda! That’s so true! | T: “That’s the way it is, Ānanda. That’s the way it is.
+sn47.10:5.2 | S: Any monk or nun who meditates with their mind firmly established in the four kinds of mindfulness meditation can expect to | T: Any monk or nun who dwells with mind well-established in the four establishings of mindfulness, he/she may be expected to
+sn47.10:5.3 | S: realize a higher distinction than they had before. | T: perceive grand, successive distinctions.
+sn47.10:6.1 | S: What four? | T: (none)
+sn47.10:6.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “There is the case where a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.10:6.3 | S: As they meditate observing an aspect of the body, based on the body there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. | T: As he remains thus focused on the body in & of itself, a fever based on the body arises within his body, or there is sluggishness in his awareness, or his mind becomes scattered externally.
+sn47.10:6.4 | S: That mendicant should direct their mind toward an inspiring subject as a basis for meditation. | T: He should then direct his mind to any inspiring theme.
+sn47.10:6.5 | S: As they do so, joy springs up. | T: As his mind is directed to any inspiring theme, gladness is born within him.
+sn47.10:6.6 | S: Being joyful, rapture springs up. | T: In one who is gladdened, rapture is born.
+sn47.10:6.7 | S: When the mind is full of rapture, the body becomes tranquil. | T: In one whose heart is enraptured, the body grows calm.
+sn47.10:6.8 | S: When the body is tranquil, one feels bliss. | T: His body calm, he feels pleasure.
+sn47.10:6.9 | S: And when blissful, the mind becomes immersed in samādhi. | T: Feeling pleasure, his mind grows concentrated.
+sn47.10:6.10 | S: Then they reflect: | T: He reflects,
+sn47.10:6.11 | S: ‘I have accomplished the goal for which I directed my mind. | T: ‘I have attained the aim to which my mind was directed.
+sn47.10:6.12 | S: Let me now relax.’ | T: Let me withdraw (my mind from the inspiring theme).’
+sn47.10:6.13 | S: They relax, and neither place the mind nor keep it connected. | T: He withdraws & engages neither in directed thought nor in evaluation.
+sn47.10:6.14 | S: They understand: ‘I’m neither placing the mind nor keeping it connected. Mindful within myself, I’m happy.’ | T: He discerns that ‘I am not thinking or evaluating. I am inwardly mindful & at ease.’
+sn47.10:7.1 | S: Furthermore, a mendicant meditates by observing an aspect of feelings … | T: “And further, he remains focused on feelings…
+sn47.10:7.2 | S: mind … | T: mind…
+sn47.10:7.3 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.10:7.4 | S: As they meditate observing an aspect of principles, based on principles there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. | T: As he remains thus focused on mental qualities in & of themselves, a fever based on mental qualities arises within his body, or there is sluggishness in his awareness, or his mind becomes scattered externally.
+sn47.10:7.5 | S: That mendicant should direct their mind toward an inspiring subject as a basis for meditation. | T: He should then direct his mind to any inspiring theme.
+sn47.10:7.6 | S: As they do so, joy springs up. | T: As his mind is directed to any inspiring theme, gladness is born within him.
+sn47.10:7.7 | S: Being joyful, rapture springs up. | T: In one who is gladdened, rapture is born.
+sn47.10:7.8 | S: When the mind is full of rapture, the body becomes tranquil. | T: In one whose heart is enraptured, the body grows calm.
+sn47.10:7.9 | S: When the body is tranquil, one feels bliss. | T: His body calm, he feels pleasure.
+sn47.10:7.10 | S: And when blissful, the mind becomes immersed in samādhi. | T: Feeling pleasure, his mind grows concentrated.
+sn47.10:7.11 | S: Then they reflect: | T: He reflects,
+sn47.10:7.12 | S: ‘I have accomplished the goal for which I directed my mind. | T: ‘I have attained the aim to which my mind was directed.
+sn47.10:7.13 | S: Let me now relax.’ | T: Let me withdraw.’
+sn47.10:7.14 | S: They relax, and neither place the mind nor keep it connected. | T: He withdraws & engages neither in directed thought nor in evaluation.
+sn47.10:7.15 | S: They understand: ‘I’m neither placing the mind nor keeping it connected. Mindful within myself, I’m happy.’ | T: He discerns that ‘I am not thinking or evaluating. I am inwardly mindful & at ease.’
+sn47.10:7.16 | S: That’s how there is directed development. | T: “This, Ānanda, is development based on directing.
+sn47.10:8.1 | S: And how is there undirected development? | T: And what is development based on not directing?
+sn47.10:8.2 | S: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ | T: A monk, when not directing his mind to external things, discerns that ‘My mind is not directed to external things.
+sn47.10:8.3 | S: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ | T: It is unconstricted [asaṅkhitta] front & back—released & undirected.
+sn47.10:8.4 | S: And they also understand: ‘I meditate observing an aspect of the body—keen, aware, mindful; I am happy.’ | T: And then, I remain focused on the body in & of itself. I am ardent, alert, mindful, & at ease.’
+sn47.10:8.5 | S: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ | T: “When not directing his mind to external things, he discerns, ‘My mind is not directed to external things.
+sn47.10:8.6 | S: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ | T: It is unconstricted front & back—released & undirected.
+sn47.10:8.7 | S: And they also understand: ‘I meditate observing an aspect of feelings—keen, aware, mindful; I am happy.’ | T: And then, I remain focused on feelings…
+sn47.10:8.8 | S: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ | T: (none)
+sn47.10:8.9 | S: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ | T: (none)
+sn47.10:8.10 | S: And they also understand: ‘I meditate observing an aspect of the mind—keen, aware, mindful; I am happy.’ | T: mind…
+sn47.10:8.11 | S: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ | T: (none)
+sn47.10:8.12 | S: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ | T: (none)
+sn47.10:8.13 | S: And they also understand: ‘I meditate observing an aspect of principles—keen, aware, mindful; I am happy.’ | T: mental qualities in & of themselves. I am ardent, alert, mindful, & at ease.’
+sn47.10:8.14 | S: That’s how there is undirected development. | T: “This, Ānanda, is development based on not directing.
+sn47.10:9.1 | S: So, Ānanda, I’ve taught you directed development and undirected development. | T: “Now, Ānanda, I have taught you development based on directing and development based on not directing.
+sn47.10:9.2 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: What a teacher should do out of compassion for his disciples, seeking their welfare, that have I done for you.
+sn47.10:9.3 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, Ānanda! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: Over there are (places to sit at) the roots of trees; over there, empty dwellings. Practice jhāna, Ānanda. Don’t be heedless. Don’t later fall into remorse. That is our message to you all.”
+sn47.10:10.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn47.10:10.2 | S: Satisfied, Venerable Ānanda approved what the Buddha said. | T: Gratified, Ven. Ānanda delighted in the Blessed One’s words.
+
+## dhp71
+dhp71:1 | S: For a wicked deed that has been done | T: An evil deed, when done,
+dhp71:2 | S: does not curdle quickly like milk. | T: doesn’t–like ready milk–
+dhp71:3 | S: Smoldering, it follows the fool, | T: come out right away. It follows the fool, smoldering
+dhp71:4 | S: like a fire smothered over with ash. | T: like a fire hidden in ashes.
+
+## dhp284
+dhp284:1 | S: So long as the vine, no matter how small, | T: For as long as the least bit of underbrush
+dhp284:2 | S: that ties a man to women is not cut, | T: of a man for women
+dhp284:3 | S: his mind remains trapped, | T: is not cleared away, the heart is fixated
+dhp284:4 | S: like a calf suckling its mother. | T: like a suckling calf on its mother.
+
+## thig13.2
+thig13.2:1.1 | S: “You fell asleep saying ‘ascetics’; | T: Rohiṇī’s father: You go to sleep saying, “Contemplatives.”
+thig13.2:1.2 | S: you woke up saying ‘ascetics’; | T: You wake up, “Contemplatives.”
+thig13.2:1.3 | S: you only praise ascetics, madam— | T: You praise only contemplatives.
+thig13.2:1.4 | S: surely you’ll become an ascetic. | T: No doubt you will be a contemplative.
+thig13.2:2.1 | S: You provide ascetics | T: Abundant food & drink you give to contemplatives.
+thig13.2:2.2 | S: with abundant food and drink. | T: (none)
+thig13.2:2.3 | S: I ask you now, Rohiṇī: | T: Now, Rohiṇī, I ask you:
+thig13.2:2.4 | S: why do you like ascetics? | T: Why do you hold contemplatives dear?
+thig13.2:3.1 | S: They don’t like to work, they’re lazy, | T: They don’t like to work, they’re lazy,
+thig13.2:3.2 | S: they live on charity; | T: living off what’s given by others,
+thig13.2:3.3 | S: always on the lookout, greedy for sweets— | T: full of hankerings, wanting delicious things:
+thig13.2:3.4 | S: so why do you like ascetics?” | T: Why do you hold contemplatives dear?
+thig13.2:4.1 | S: “Dad, for a long time now | T: Rohiṇī: For a long time, father,
+thig13.2:4.2 | S: you’ve questioned me about ascetics. | T: you’ve quizzed me about contemplatives.
+thig13.2:4.3 | S: I shall extol for you | T: I’ll praise to you
+thig13.2:4.4 | S: their wisdom, ethics, and vigor. | T: their discernment, virtue, endeavor.
+thig13.2:5.1 | S: They like to work, they’re not lazy; | T: They do like to work, they’re not lazy.
+thig13.2:5.2 | S: by giving up greed and hate, | T: They do the best work: They abandon passion & anger.
+thig13.2:5.3 | S: they do the best kind of work— | T: (none)
+thig13.2:5.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:6.1 | S: As for the three roots of evil, | T: They rid themselves of the three evil roots,
+thig13.2:6.2 | S: by pure deeds they shake them off. | T: doing pure actions.
+thig13.2:6.3 | S: They have given up all wickedness— | T: All their evil’s abandoned.
+thig13.2:6.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:7.1 | S: Their bodily actions are pure; | T: Clean their bodily action,
+thig13.2:7.2 | S: their actions of speech likewise; | T: so is their verbal action.
+thig13.2:7.3 | S: their actions of mind are pure— | T: Clean their mental action:
+thig13.2:7.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:8.1 | S: Immaculate as a conch-shell, | T: Spotless, like mother of pearl,
+thig13.2:8.2 | S: they’re pure inside and out, | T: pure within & without,
+thig13.2:8.3 | S: full of bright qualities— | T: perfect in clear qualities:
+thig13.2:8.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:9.1 | S: They’re learned and memorize the teaching, | T: Learned, maintaining the Dhamma,
+thig13.2:9.2 | S: noble, living righteously, | T: noble, living the Dhamma,
+thig13.2:9.3 | S: teaching the text and its meaning: | T: they teach the goal & the Dhamma:
+thig13.2:9.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:10.1 | S: They’re learned and memorize the teaching, | T: Learned, maintaining the Dhamma,
+thig13.2:10.2 | S: noble, living righteously, | T: noble, living the Dhamma,
+thig13.2:10.3 | S: unified in mind, and mindful— | T: with unified minds & mindful:
+thig13.2:10.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:11.1 | S: Traveling afar, and mindful, | T: Traveling far, mindful,
+thig13.2:11.2 | S: thoughtful in counsel, not restless, | T: giving counsel unruffled,
+thig13.2:11.3 | S: they understand the end of suffering— | T: they discern the end of suffering:
+thig13.2:11.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:12.1 | S: When they leave a village, | T: When they leave any village
+thig13.2:12.2 | S: they don’t look back with longing, | T: they don’t turn to look back at anything.
+thig13.2:12.3 | S: but proceed without concern— | T: How free from concern they go!
+thig13.2:12.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:13.1 | S: They hoard no goods in storerooms, | T: They don’t store in a granary,
+thig13.2:13.2 | S: nor in pots or baskets. | T: pot, or basket.
+thig13.2:13.3 | S: They seek food prepared by others— | T: They hunt [only] for what’s already cooked:
+thig13.2:13.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:14.1 | S: They don’t receive gold coins, | T: They take neither silver,
+thig13.2:14.2 | S: or gold or silver; | T: nor gold, nor money.
+thig13.2:14.3 | S: feeding on whatever comes that day, | T: They live off whatever is present:
+thig13.2:14.4 | S: that’s why I like ascetics. | T: That’s why I hold contemplatives dear.
+thig13.2:15.1 | S: They have gone forth from different families, | T: Having gone forth from different families
+thig13.2:15.2 | S: even different countries, | T: & from different countries,
+thig13.2:15.3 | S: and yet they all love one another— | T: still they hold one another dear:
+thig13.2:15.4 | S: that’s why I like ascetics.” | T: That’s why I hold contemplatives dear.
+thig13.2:16.1 | S: “Dear Rohinī, it was truly for our benefit | T: Rohiṇī’s father: Rohiṇī, truly for our benefit
+thig13.2:16.2 | S: that you were born in our family! | T: were you born in our family.
+thig13.2:16.3 | S: You have faith and such keen respect | T: You have conviction in the Buddha & Dhamma, and strong respect
+thig13.2:16.4 | S: for the Buddha, his teaching, and the Saṅgha. | T: for the Saṅgha.
+thig13.2:17.1 | S: For you understand this | T: You truly discern
+thig13.2:17.2 | S: supreme field of merit. | T: this field of merit unexcelled.
+thig13.2:17.3 | S: These ascetics will henceforth | T: These contemplatives will receive
+thig13.2:17.4 | S: receive our religious donation, too. | T: (none)
+thig13.2:18.1 | S: For there we will place our sacrifice, | T: our offering, too, for here we’ll set up
+thig13.2:18.2 | S: and it shall be abundant.” | T: our abundant sacrifice.
+thig13.2:18.3 | S: “If you fear suffering, | T: Rohiṇī: If you’re afraid of pain,
+thig13.2:18.4 | S: if you don’t like suffering, | T: if you dislike pain,
+thig13.2:19.1 | S: go for refuge to the Buddha, the unaffected, | T: go to the Buddha for refuge,
+thig13.2:19.2 | S: to his teaching and to the Saṅgha. | T: go to the Dhamma & Saṅgha.
+thig13.2:19.3 | S: Undertake the precepts, | T: Take on the precepts:
+thig13.2:19.4 | S: that will be good for you.” | T: That will lead to your benefit.
+thig13.2:20.1 | S: “I go for refuge to the Buddha, the unaffected, | T: Rohiṇī’s father: I go to the Buddha for refuge;
+thig13.2:20.2 | S: to his teaching and to the Saṅgha. | T: I go to the Dhamma & Saṅgha.
+thig13.2:20.3 | S: I undertake the precepts, | T: I take on the precepts:
+thig13.2:20.4 | S: that will be good for me. | T: That will lead to my benefit.
+thig13.2:21.1 | S: I used to be brahmin only by kin, | T: Before, I was a kinsman to Brahmā;
+thig13.2:21.2 | S: now I genuinely am a brahmin. | T: now, truly a brahman.
+thig13.2:21.3 | S: Master of the three knowledges, I’m a scholar, | T: I’m a three-knowledge man & safe,
+thig13.2:21.4 | S: a knowledge master, a bathed initiate.” | T: consummate in knowledge, washed clean.
+

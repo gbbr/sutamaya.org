@@ -1,0 +1,460 @@
+## dhp338
+dhp338:1 | S: A tree grows back even when cut down, | T: If its root remains undamaged & strong, a tree, even if cut, will grow back.
+dhp338:2 | S: so long as its roots are strong and undamaged; | T: (none)
+dhp338:3 | S: suffering springs up again and again, | T: So too if craving-obsession is not rooted out, this suffering returns again & again.
+dhp338:4 | S: so long as the tendency to craving is not pulled out. | T: (none)
+
+## an10.75
+an10.75:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an10.75:1.2 | S: Then Venerable Ānanda robed up in the morning and, taking his bowl and robe, went to the home of the laywoman Migasālā, where he sat down on the seat spread out. | T: Then early in the morning, Ven. Ānanda—having adjusted his lower robe and carrying his bowl & outer robe—went to the house of the female lay follower Migāsālā. On arrival, he sat down on a seat made ready.
+an10.75:1.3 | S: Then the laywoman Migasālā went up to Ānanda, bowed, sat down to one side, and said to him: | T: Then the female lay follower Migāsālā approached Ven. Ānanda and, on arrival, having bowed down to him, sat to one side. As she was sitting there, she said to Ven. Ānanda,
+an10.75:2.1 | S: “Honorable Ānanda, how on earth are we supposed to understand the teaching taught by the Buddha, when the chaste and the unchaste are both reborn in exactly the same place in the next life? | T: “Venerable sir, how on earth should the Dhamma taught by the Blessed One be understood where one who practices celibacy and one who doesn’t practice celibacy would both have exactly the same destination in the next life?
+an10.75:2.2 | S: My father Purāṇa was chaste, set apart, refraining from the vulgar act of sex. | T: My father, Purāṇa, was one who practiced celibacy, living apart, abstaining from sexual intercourse, the vulgar act.
+an10.75:2.3 | S: When he passed away the Buddha declared that, since he was a once-returner, he was reborn in the host of joyful gods. | T: When he had died, he was predicted by the Blessed One to be a once-returner, rearising in the company of the Contented (devas).
+an10.75:2.4 | S: But my uncle Isidatta was not chaste; he lived content with his wife. | T: My paternal uncle, Isidatta, did not practice celibacy and was content to live with his wife.
+an10.75:2.5 | S: When he passed away the Buddha declared that, since he too was a once-returner, he was reborn in the host of joyful gods. | T: And yet when he died, he too was predicted by the Blessed One to be a once-returner, rearising in the company of the Contented (devas).
+an10.75:3.1 | S: How on earth are we supposed to understand the teaching taught by the Buddha, when the chaste and the unchaste are both reborn in exactly the same place in the next life?” | T: So how on earth should the Dhamma taught by the Blessed One be understood where one who practices celibacy and one who doesn’t practice celibacy would both have exactly the same destination in the next life?”
+an10.75:3.2 | S: “You’re right, sister, but that’s how the Buddha declared it.” | T: “But it was just as the Blessed One predicted, sister.”
+an10.75:4.1 | S: Then Ānanda, after receiving almsfood at Migasālā’s home, rose from his seat and left. | T: Then Ven. Ānanda, after receiving alms at the house of the female lay follower Migāsālā, got up from his seat and left.
+an10.75:4.2 | S: Then after the meal, on his return from almsround, Ānanda went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then after his meal, returning from his alms round, Ven. Ānanda went to the Blessed One. On arrival, having bowed down to him, he sat to one side. As he was sitting there he (related his entire conversation with Migāsālā).
+an10.75:8.1 | S: “Ānanda, who is this laywoman Migasālā, a foolish incompetent aunty, with an aunty’s wit? And who is it that knows how to assess individual persons? | T: “But, Ānanda, who is this Migāsālā, foolish, incompetent, blind, with the discernment of the blind? And who are these people with knowledge of the course of other individuals?
+an10.75:9.1 | S: These ten individuals are found in the world. | T: “Ānanda, these ten individuals are to be found existing in the world.
+an10.75:9.2 | S: What ten? | T: Which ten?
+an10.75:9.3 | S: Take a certain individual who is unethical. | T: [1] “There is the case where one individual is unvirtuous
+an10.75:9.4 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where that unethical conduct ceases without remainder. | T: and he doesn’t discern, as it has come to be, the awareness-release and discernment-release where that lack of virtue ceases without trace.
+an10.75:9.5 | S: And they’ve not listened or learned or penetrated theoretically or found even temporary freedom. | T: He is unaccomplished in listening, unaccomplished in wide learning, and has not penetrated (the teachings) in terms of his views. He doesn’t gain occasional release.
+an10.75:9.6 | S: When their body breaks up, after death, they depart for a lower place, not a higher. | T: At the break-up of the body, after death, he heads for loss, not for distinction.
+an10.75:9.7 | S: They’re going to a lower place, not a higher. | T: He is one who goes to loss, not one who goes to distinction.
+an10.75:10.1 | S: Take a certain individual who is unethical. | T: [2] “But then, Ānanda, there is the case where one individual is unvirtuous
+an10.75:10.2 | S: But they truly understand the freedom of heart and freedom by wisdom where that unethical conduct ceases without remainder. | T: and yet he discerns, as it has come to be, the awareness-release and discernment-release where that lack of virtue ceases without trace.
+an10.75:10.3 | S: And they’ve listened and learned and penetrated theoretically and found at least temporary freedom. | T: He is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views. He gains occasional release.
+an10.75:10.4 | S: When their body breaks up, after death, they depart for a higher place, not a lower. | T: At the break-up of the body, after death, he heads for distinction, not for loss.
+an10.75:10.5 | S: They’re going to a higher place, not a lower. | T: He is one who goes to distinction, not one who goes to loss.
+an10.75:11.1 | S: Judgmental people compare them, saying: | T: “In this case, Ānanda, those who are measurers will measure:
+an10.75:11.2 | S: ‘This one has just the same qualities as the other, so why is one worse and one better?’ | T: ‘This one has the same qualities as the other. Why should one of them be base and the other sublime?’
+an10.75:11.3 | S: This will be for their lasting harm and suffering. | T: That will be for their [the measurers] long-term harm & suffering.
+an10.75:12.1 | S: In this case, the individual who is unethical, | T: “In this case, Ānanda, the individual who is is unvirtuous
+an10.75:12.2 | S: but truly understands the freedom of heart … | T: and yet discerns, as it has come to be, the awareness-release and discernment-release where that lack of virtue ceases without trace;
+an10.75:12.3 | S: and has listened and learned and penetrated theoretically and found at least temporary freedom | T: who is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views; who gains occasional release,
+an10.75:12.4 | S: is better and finer than the other individual. | T: is higher & more sublime than the other one.
+an10.75:12.5 | S: Why is that? | T: Why is that?
+an10.75:12.6 | S: Because the stream of the teaching carries them along. | T: Because the Dhamma-stream carries him along.
+an10.75:12.7 | S: But who knows the difference between them except a Realized One? | T: But who would know this difference aside from a Tathāgata?
+an10.75:12.8 | S: So, Ānanda, don’t be judgmental about individuals. | T: “Therefore, Ānanda, don’t be a measurer of individuals.
+an10.75:12.9 | S: Don’t pass judgment on individuals. | T: Don’t take the measure of other individuals.
+an10.75:12.10 | S: Those who pass judgment on individuals harm themselves. | T: He’s conceited, anyone who takes the measure of other individuals.
+an10.75:12.11 | S: I, or someone like me, may pass judgment on people. | T: I, however, may take the measure of individuals—or one like me.
+an10.75:13.1 | S: Take a certain individual who is ethical. | T: [3] “There is the case where one individual is virtuous
+an10.75:13.2 | S: But they don’t truly understand the freedom of heart and freedom by wisdom where that ethical conduct ceases without remainder. | T: and he doesn’t discern, as it has come to be, the awareness-release and discernment-release where that virtue ceases without trace.
+an10.75:13.3 | S: And they’ve not listened or learned or penetrated theoretically or found even temporary freedom. | T: He is unaccomplished in listening, unaccomplished in wide learning, and has not penetrated (the teachings) in terms of his views. He doesn’t gain occasional release.
+an10.75:13.4 | S: When their body breaks up, after death, they depart for a lower place, not a higher. | T: At the break-up of the body, after death, he heads for loss, not for distinction.
+an10.75:13.5 | S: They’re going to a lower place, not a higher. | T: He is one who goes to loss, not one who goes to distinction.
+an10.75:14.1 | S: Take a certain individual who is ethical. | T: [4] “But then, Ānanda, there is the case where one individual is virtuous
+an10.75:14.2 | S: And they truly understand the freedom of heart and freedom by wisdom where that ethical conduct ceases without remainder. | T: and he discerns, as it has come to be, the awareness-release and discernment-release where that virtue ceases without trace.
+an10.75:14.3 | S: And they’ve listened and learned and penetrated theoretically and found at least temporary freedom. | T: He is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views. He gains occasional release.
+an10.75:14.4 | S: When their body breaks up, after death, they depart for a higher place, not a lower. | T: At the break-up of the body, after death, he heads for distinction, not for loss.
+an10.75:14.5 | S: They’re going to a higher place, not a lower. | T: He is one who goes to distinction, not one who goes to loss.
+an10.75:15.1 | S: Judgmental people compare them … | T: “In this case, Ānanda, those who are measurers will measure.… He’s conceited, anyone who takes the measure of other individuals.
+an10.75:15.2 | S: I, or someone like me, may pass judgment on individuals. | T: I, however, may take the measure of individuals—or one like me.
+an10.75:16.1 | S: Take a certain individual who is very lustful. | T: [5] “There is the case where one individual is fiercely lustful
+an10.75:16.2 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where that lust ceases without remainder. | T: and he doesn’t discern, as it has come to be, the awareness-release and discernment-release where that lust ceases without trace.
+an10.75:16.3 | S: And they’ve not listened or learned or penetrated theoretically or found even temporary freedom. | T: He is unaccomplished in listening, unaccomplished in wide learning, and has not penetrated (the teachings) in terms of his views. He doesn’t gain occasional release.
+an10.75:16.4 | S: When their body breaks up, after death, they depart for a lower place, not a higher. | T: At the break-up of the body, after death, he heads for loss, not for distinction.
+an10.75:16.5 | S: They’re going to a lower place, not a higher. | T: He is one who goes to loss, not one who goes to distinction.
+an10.75:17.1 | S: Take a certain individual who is very lustful. | T: [6] “But then, Ānanda, there is the case where one individual is fiercely lustful
+an10.75:17.2 | S: But they truly understand the freedom of heart and freedom by wisdom where that lust ceases without remainder. | T: and yet he discerns, as it has come to be, the awareness-release and discernment-release where that lust ceases without trace.
+an10.75:17.3 | S: And they’ve listened and learned and penetrated theoretically and found at least temporary freedom. | T: He is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views. He gains occasional release.
+an10.75:17.4 | S: When their body breaks up, after death, they depart for a higher place, not a lower. | T: At the break-up of the body, after death, he heads for distinction, not for loss.
+an10.75:17.5 | S: They’re going to a higher place, not a lower. | T: He is one who goes to distinction, not one who goes to loss.
+an10.75:18.1 | S: Judgmental people compare them … | T: “In this case, Ānanda, those who are measurers will measure.… He’s conceited, anyone who takes the measure of other individuals.
+an10.75:18.2 | S: I, or someone like me, may pass judgment on individuals. | T: I, however, may take the measure of individuals—or one like me.
+an10.75:19.1 | S: Take a certain individual who is irritable. | T: [7] “There is the case where one individual is angry
+an10.75:19.2 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where that anger ceases without remainder. | T: and he doesn’t discern, as it has come to be, the awareness-release and discernment-release where that anger ceases without trace.
+an10.75:19.3 | S: And they’ve not listened or learned or penetrated theoretically or found even temporary freedom. | T: He is unaccomplished in listening, unaccomplished in wide learning, and has not penetrated (the teachings) in terms of his views. He doesn’t gain occasional release.
+an10.75:19.4 | S: When their body breaks up, after death, they depart for a lower place, not a higher. | T: At the break-up of the body, after death, he heads for loss, not for distinction.
+an10.75:19.5 | S: They’re going to a lower place, not a higher. | T: He is one who goes to loss, not one who goes to distinction.
+an10.75:20.1 | S: Take a certain individual who is irritable. | T: [8] “But then, Ānanda, there is the case where one individual is angry
+an10.75:20.2 | S: But they truly understand the freedom of heart and freedom by wisdom where that anger ceases without remainder. | T: and yet he discerns, as it has come to be, the awareness-release and discernment-release where that anger ceases without trace.
+an10.75:20.3 | S: And they’ve listened and learned and penetrated theoretically and found at least temporary freedom. | T: He is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views. He gains occasional release.
+an10.75:20.4 | S: When their body breaks up, after death, they depart for a higher place, not a lower. | T: At the break-up of the body, after death, he heads for distinction, not for loss.
+an10.75:20.5 | S: They’re going to a higher place, not a lower. | T: He is one who goes to distinction, not one who goes to loss.
+an10.75:21.1 | S: Judgmental people compare them … | T: “In this case, Ānanda, those who are measurers will measure.… He’s conceited, anyone who takes the measure of other individuals.
+an10.75:21.2 | S: I, or someone like me, may pass judgment on individuals. | T: I, however, may take the measure of individuals—or one like me.
+an10.75:22.1 | S: Take a certain individual who is restless. | T: [9] “There is the case where one individual is restless
+an10.75:22.2 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where that restlessness ceases without remainder. | T: and he doesn’t discern, as it has come to be, the awareness-release and discernment-release where that restlessness ceases without trace.
+an10.75:22.3 | S: And they’ve not listened or learned or penetrated theoretically or found even temporary freedom. | T: He is unaccomplished in listening, unaccomplished in wide learning, and has not penetrated (the teachings) in terms of his views. He doesn’t gain occasional release.
+an10.75:22.4 | S: When their body breaks up, after death, they depart for a lower place, not a higher. | T: At the break-up of the body, after death, he heads for loss, not for distinction.
+an10.75:22.5 | S: They’re going to a lower place, not a higher. | T: He is one who goes to loss, not one who goes to distinction.
+an10.75:23.1 | S: Take a certain individual who is restless. | T: [10] “But then, Ānanda, there is the case where one individual is restless
+an10.75:23.2 | S: But they truly understand the freedom of heart and freedom by wisdom where that restlessness ceases without remainder. | T: and yet he discerns, as it has come to be, the awareness-release and discernment-release where that restlessness ceases without trace.
+an10.75:23.3 | S: And they’ve listened and learned and penetrated theoretically and found at least temporary freedom. | T: He is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views. He gains occasional release.
+an10.75:23.4 | S: When their body breaks up, after death, they depart for a higher place, not a lower. | T: At the break-up of the body, after death, he heads for distinction, not for loss.
+an10.75:23.5 | S: They’re going to a higher place, not a lower. | T: He is one who goes to distinction, not one who goes to loss.
+an10.75:24.1 | S: Judgmental people compare them, saying: | T: “In this case, Ānanda, those who are measurers will measure:
+an10.75:24.2 | S: ‘This one has just the same qualities as the other, so why is one worse and one better?’ | T: ‘This one has the same qualities as the other. Why should one of them be base and the other sublime?’
+an10.75:24.3 | S: This will be for their lasting harm and suffering. | T: That will be for their long-term harm & suffering.
+an10.75:25.1 | S: In this case, the individual who is restless, but truly understands the freedom of heart … | T: “In this case, Ānanda, the individual who is restless and yet discerns, as it has come to be, the awareness-release and discernment-release where that restlessness ceases without trace;
+an10.75:25.2 | S: and has listened and learned and penetrated theoretically and found at least temporary freedom | T: who is accomplished in listening, accomplished in wide learning, and has penetrated (the teachings) in terms of his views; who gains occasional release,
+an10.75:25.3 | S: is better and finer than the other individual. | T: is higher & more sublime than the other one.
+an10.75:25.4 | S: Why is that? | T: Why is that?
+an10.75:25.5 | S: Because the stream of the teaching carries them along. | T: Because the Dhamma-stream carries him along.
+an10.75:25.6 | S: But who knows the difference between them except a Realized One? | T: But who would know this difference aside from a Tathāgata?
+an10.75:25.7 | S: So, Ānanda, don’t be judgmental about individuals. | T: “Therefore, Ānanda, don’t be a measurer of individuals.
+an10.75:25.8 | S: Don’t pass judgment on individuals. | T: Don’t take the measure of other individuals.
+an10.75:25.9 | S: Those who pass judgment on individuals harm themselves. | T: He’s conceited, anyone who takes the measure of other individuals.
+an10.75:25.10 | S: I, or someone like me, may pass judgment on individuals. | T: I, however, may take the measure of individuals—or one like me.
+an10.75:26.1 | S: Who is this laywoman Migasālā, a foolish incompetent aunty, with an aunty’s wit? And who is it that knows how to assess individual persons? | T: “So who, Ānanda, is this Migāsālā, foolish, incompetent, blind, with the discernment of the blind? And who are these people with knowledge of the course of other individuals?
+an10.75:26.2 | S: These ten individuals are found in the world. | T: “Ānanda, these are the ten individuals to be found existing in the world.
+an10.75:27.1 | S: If Isidatta had achieved Purāṇa’s level of ethical conduct, Purāṇa could not have even known Isidatta’s destination. | T: “If Isidatta had been endowed with the sort of virtue with which Purāṇa was endowed, Purāṇa wouldn’t have known Isidatta’s destination.
+an10.75:27.2 | S: And if Purāṇa had achieved Isidatta’s level of wisdom, Isidatta could not have even known Purāṇa’s destination. | T: If Purāṇa had been endowed with the sort of discernment with which Isidatta was endowed, Isidatta wouldn’t have known Purāṇa’s destination.
+an10.75:27.3 | S: So both individuals were lacking in one respect.” | T: It was in this way, Ānanda, that both of these individuals were inferior in part.”
+
+## thag5.10
+thag5.10:1.1 | S: With fault-finding mind, the simpleton | T: Intent on quibbling, the dullard
+thag5.10:1.2 | S: listens to the victor’s instruction. | T: hears the Conqueror’s teaching.
+thag5.10:1.3 | S: They’re as far from the true teaching | T: He’s as far from the True Dhamma
+thag5.10:1.4 | S: as the earth is from the sky. | T: as the ground is from the sky.
+thag5.10:2.1 | S: With fault-finding mind, the simpleton | T: Intent on quibbling, the dullard
+thag5.10:2.2 | S: listens to the victor’s instruction. | T: hears the Conqueror’s teaching.
+thag5.10:2.3 | S: They fall away from the true teaching, | T: He wanes from the True Dhamma
+thag5.10:2.4 | S: like the moon in the waning fortnight. | T: like the moon in the dark half of the month.
+thag5.10:3.1 | S: With fault-finding mind, the simpleton | T: Intent on quibbling, the dullard
+thag5.10:3.2 | S: listens to the victor’s instruction. | T: hears the Conqueror’s teaching.
+thag5.10:3.3 | S: They wither away in the true teaching, | T: He dries up in the True Dhamma
+thag5.10:3.4 | S: like a fish in a little puddle. | T: like a fish in next to no water.
+thag5.10:4.1 | S: With fault-finding mind, the simpleton | T: Intent on quibbling, the dullard
+thag5.10:4.2 | S: listens to the victor’s instruction. | T: hears the Conqueror’s teaching.
+thag5.10:4.3 | S: They don’t thrive in the true teaching, | T: He doesn’t grow in the True Dhamma,
+thag5.10:4.4 | S: like a rotten seed in a field. | T: like a rotten seed in a field.
+thag5.10:5.1 | S: But one with contented mind | T: But whoever hears the Conqueror’s teaching with guarded intent,
+thag5.10:5.2 | S: who listens to the victor’s instruction— | T: (none)
+thag5.10:5.3 | S: having wiped out all defilements; | T: doing away with effluents —all—
+thag5.10:5.4 | S: having witnessed the unshakable; | T: realizing the unshakable,
+thag5.10:5.5 | S: having arrived at ultimate peace— | T: attaining the foremost peace,
+thag5.10:5.6 | S: the undefiled are fully extinguished. | T: —effluent-free— totally unbinds.
+
+## ud8.8
+ud8.8:1.1 | S: So I have heard. | T: I have heard that
+ud8.8:1.2 | S: At one time the Buddha was staying near Sāvatthī in the stilt longhouse of Migāra’s mother in the Eastern Monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at the Eastern Monastery, the palace of Migāra’s mother.
+ud8.8:1.3 | S: Now at that time the dear and beloved granddaughter of Visākhā, Migāra’s mother, had just passed away. | T: And on that occasion a dear and beloved grandson of Visākhā, Migāra’s mother, had died. So Visākhā, Migāra’s mother–
+ud8.8:1.4 | S: Then, in the middle of the day, Visākhā with wet clothes and hair went to the Buddha, bowed, and sat down. | T: her clothes wet, her hair wet–went to the Blessed One in the middle of the day and, on arrival, having bowed down to him, sat to one side.
+ud8.8:1.5 | S: The Buddha said to her, | T: As she was sitting there the Blessed One said to her:
+ud8.8:2.1 | S: “So, Visākhā, where are you coming from in the middle of the day with wet clothes and hair?” | T: “Why have you come here, Visākhā–your clothes wet, your hair wet–in the middle of the day?”
+ud8.8:2.2 | S: “Sir, my beloved granddaughter has just passed away. | T: When this was said, she said to the Blessed One, “My dear and beloved grandson has died.
+ud8.8:2.3 | S: That’s why I came here in the middle of the day with wet clothes and hair.” | T: This is why I have come here–my clothes wet, my hair wet–in the middle of the day.”
+ud8.8:2.4 | S: “Visākhā, would you like as many children and grandchildren as there are people in the whole of Sāvatthī?” | T: “Visākhā, would you like to have as many children & grandchildren as there are people in Sāvatthī?”
+ud8.8:2.5 | S: “I would, sir.” | T: “Yes, lord, I would like to have as many children & grandchildren as there are people in Sāvatthī.”
+ud8.8:3.1 | S: “But Visākhā, how many people pass away each day in Sāvatthī?” | T: “But how many people in Sāvatthī die in the course of a day?”
+ud8.8:3.2 | S: “Every day, sir, there are ten people passing away in Sāvatthī. | T: “Sometimes ten people die in Sāvatthī in the course of a day,
+ud8.8:3.3 | S: Or else there are nine, | T: sometimes nine…
+ud8.8:3.4 | S: eight, | T: eight…
+ud8.8:3.5 | S: seven, | T: seven…
+ud8.8:3.6 | S: six, | T: six…
+ud8.8:3.7 | S: five, | T: five…
+ud8.8:3.8 | S: four, | T: four…
+ud8.8:3.9 | S: three, | T: three…
+ud8.8:3.10 | S: two, | T: two…
+ud8.8:3.11 | S: or at least one person who passes away every day in Sāvatthī. | T: Sometimes one person dies in Sāvatthī in the course of a day.
+ud8.8:3.12 | S: Sāvatthī is never without someone passing away.” | T: Sāvatthī is never free from people dying.”
+ud8.8:4.1 | S: “What do you think, Visākhā? Would there ever be a time when your clothes and hair were not wet?” | T: “So what do you think, Visākhā? Would you ever be free of wet clothes & wet hair?”
+ud8.8:4.2 | S: “No, sir. | T: “No, lord.
+ud8.8:4.3 | S: Enough, sir, with so many children and grandchildren.” | T: Enough of my having so many children & grandchildren.”
+ud8.8:5.1 | S: “Those who have a hundred loved ones, Visākhā, have a hundred sufferings. | T: “Visākhā, those who have a hundred dear ones have a hundred sufferings.
+ud8.8:5.2 | S: Those who have ninety loved ones, | T: Those who have ninety dear ones have ninety sufferings.
+ud8.8:5.3 | S: or eighty, | T: Those who have eighty…
+ud8.8:5.4 | S: seventy, | T: seventy…
+ud8.8:5.5 | S: sixty, | T: sixty…
+ud8.8:5.6 | S: fifty, | T: fifty…
+ud8.8:5.7 | S: forty, | T: forty…
+ud8.8:5.8 | S: thirty, | T: thirty…
+ud8.8:5.9 | S: twenty, | T: twenty…
+ud8.8:5.10 | S: ten, | T: ten…
+ud8.8:5.11 | S: nine, | T: nine…
+ud8.8:5.12 | S: eight, | T: eight…
+ud8.8:5.13 | S: seven, | T: seven…
+ud8.8:5.14 | S: six, | T: six…
+ud8.8:5.15 | S: five, | T: five…
+ud8.8:5.16 | S: four, | T: four…
+ud8.8:5.17 | S: three, | T: three…
+ud8.8:5.18 | S: two, | T: two…
+ud8.8:5.19 | S: or one loved one have one suffering. | T: Those who have one dear one have one suffering.
+ud8.8:5.20 | S: Those who have no loved ones have no suffering. They are free of sorrow, stains, and anguish I say.” | T: Those who have no dear ones have no sufferings. They are free from sorrow, free from stain, free from lamentation, I tell you.”
+ud8.8:6.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.8:7.1 | S: “All the sorrows and lamentations | T: The sorrows, lamentations,
+ud8.8:7.2 | S: and the countless forms of suffering in the world | T: the many kinds of suffering in the world,
+ud8.8:7.3 | S: occur because of those that we love; | T: exist dependent on something dear.
+ud8.8:7.4 | S: without loved ones they do not occur. | T: They don’t exist when there’s nothing dear.
+ud8.8:8.1 | S: That’s why those who have no loved ones <j>at all in the world | T: And thus blissful & sorrowless are those for whom nothing in the world is anywhere dear.
+ud8.8:8.2 | S: are happy and free of grief. | T: (none)
+ud8.8:8.3 | S: So aspiring to the sorrowless and stainless, | T: So one who aspires to the stainless & sorrowless
+ud8.8:8.4 | S: have no loved ones in the world at all.” | T: shouldn’t make anything dear in the world anywhere.
+
+## an3.48
+an3.48:1.1 | S: “Mendicants, great sal trees grow in three ways supported by the Himalayas, the king of mountains. | T: “Monks, the great Sal trees that live in dependence on the Himalayas, the king of mountains, prosper in terms of three kinds of prosperity.
+an3.48:1.2 | S: What three? | T: Which three?
+an3.48:1.3 | S: The branches, leaves, and foliage; the bark and shoots; and the softwood and heartwood. | T: They prosper in terms of branches, leaves, & foliage. They prosper in terms of bark & shoots. They prosper in terms of softwood and heartwood.
+an3.48:1.4 | S: Great sal trees grow in these three ways supported by the Himalayas, the king of mountains. | T: The great Sal trees that grow in dependence on the Himalayas, the king of mountains, prosper in terms of these three kinds of prosperity.
+an3.48:2.1 | S: In the same way, a family grows in three ways supported by a family head with faith. | T: “In the same way, the descendants who live in dependence on a clansman of conviction prosper in terms of three kinds of prosperity.
+an3.48:2.2 | S: What three? | T: Which three?
+an3.48:2.3 | S: Faith, ethics, and wisdom. | T: They prosper in terms of conviction. They prosper in terms of virtue. They prosper in terms of discernment.
+an3.48:2.4 | S: A family grows in these three ways supported by a family head with faith. | T: The descendants who live in dependence on a clansman of conviction prosper in terms of these three kinds of prosperity.
+an3.48:3.1 | S: Supported by the rocky mountain | T: Like a mountain of rock
+an3.48:3.2 | S: in the wilds, the formidable forest, | T: in the wilderness, in a mighty grove,
+an3.48:3.3 | S: the tree grows | T: dependent on which there prosper
+an3.48:3.4 | S: to become lord of the forest. | T: lords of the forest, great trees—
+an3.48:4.1 | S: So too, when the family head | T: in the same way, those who here live dependent on
+an3.48:4.2 | S: is ethical and faithful, | T: a clansman of conviction —consummate in virtue—
+an3.48:4.3 | S: supported by them, they grow: | T: prosper:
+an3.48:4.4 | S: children, partners, and kin, | T: wife & children,
+an3.48:4.5 | S: colleagues, relatives, | T: friends,
+an3.48:4.6 | S: and those dependent for their livelihood. | T: dependents, & kin.
+an3.48:5.1 | S: Seeing the ethical conduct of the virtuous, | T: Seeing the virtue of that virtuous one,
+an3.48:5.2 | S: the generosity and good deeds, | T: his liberality & good conduct,
+an3.48:5.3 | S: those who see clearly | T: those who are perceptive follow suit.
+an3.48:5.4 | S: do likewise. | T: (none)
+an3.48:6.1 | S: Having practiced the teaching here, | T: Having, here in this world, followed the Dhamma,
+an3.48:6.2 | S: the path that goes to a good place, | T: the path to a good destination,
+an3.48:6.3 | S: they delight in the heavenly realm, | T: they delight in the world of the devas,
+an3.48:6.4 | S: enjoying all the pleasures they desire.” | T: enjoying the pleasures they desire.
+
+## an4.170
+an4.170:1.1 | S: So I have heard. | T: (none)
+an4.170:1.2 | S: At one time Venerable Ānanda was staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Ānanda was staying in Kosambī at Ghosita’s monastery.
+an4.170:1.3 | S: There Ānanda addressed the mendicants: | T: There he addressed the monks,
+an4.170:1.4 | S: “Reverends, mendicants!” | T: “Friends!”
+an4.170:1.5 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+an4.170:1.6 | S: Ānanda said this: | T: Ven. Ānanda said:
+an4.170:2.1 | S: “Reverends, all of the monks and nuns who declare in my presence that they have attained perfection, did so by one or other of four paths. | T: “Friends, whoever—monk or nun—declares the attainment of arahantship in my presence, they all do it by means of one or another of four paths.
+an4.170:3.1 | S: What four? | T: Which four?
+an4.170:3.2 | S: Take a mendicant who develops serenity before discernment. | T: “There is the case where a monk has developed insight preceded by tranquility.
+an4.170:3.3 | S: As they do so, the path is born in them. | T: As he develops insight preceded by tranquility, the path is born.
+an4.170:3.4 | S: They cultivate, develop, and make much of it. | T: He follows that path, develops it, pursues it.
+an4.170:3.5 | S: By doing so, they give up the fetters and eliminate the underlying tendencies. | T: As he follows the path, developing it & pursuing it—his fetters are abandoned, his obsessions destroyed.
+an4.170:4.1 | S: Another mendicant develops discernment before serenity. | T: “Then there is the case where a monk has developed tranquility preceded by insight.
+an4.170:4.2 | S: As they do so, the path is born in them. | T: As he develops tranquility preceded by insight, the path is born.
+an4.170:4.3 | S: They cultivate, develop, and make much of it. | T: He follows that path, develops it, pursues it.
+an4.170:4.4 | S: By doing so, they give up the fetters and eliminate the underlying tendencies. | T: As he follows the path, developing it & pursuing it—his fetters are abandoned, his obsessions destroyed.
+an4.170:5.1 | S: Another mendicant develops serenity and discernment in conjunction. | T: “Then there is the case where a monk has developed tranquility in tandem with insight.
+an4.170:5.2 | S: As they do so, the path is born in them. | T: As he develops tranquility in tandem with insight, the path is born.
+an4.170:5.3 | S: They cultivate, develop, and make much of it. | T: He follows that path, develops it, pursues it.
+an4.170:5.4 | S: By doing so, they give up the fetters and eliminate the underlying tendencies. | T: As he follows the path, developing it & pursuing it—his fetters are abandoned, his obsessions destroyed.
+an4.170:6.1 | S: Another mendicant’s heart is seized by restlessness to realize the teaching. | T: “Then there is the case where a monk’s mind has its restlessness concerning the Dhamma [Comm: the corruptions of insight] well under control.
+an4.170:6.2 | S: But there comes a time when their mind is stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: There comes a time when his mind grows steady inwardly, settles down, and becomes unified & concentrated.
+an4.170:6.3 | S: The path is born in them. | T: In him the path is born.
+an4.170:6.4 | S: They cultivate, develop, and make much of it. | T: He follows that path, develops it, pursues it.
+an4.170:6.5 | S: By doing so, they give up the fetters and eliminate the underlying tendencies. | T: As he follows the path, developing it & pursuing it—his fetters are abandoned, his obsessions destroyed.
+an4.170:7.1 | S: All of the monks and nuns who declare in my presence that they have attained perfection, did so by one or other of these four paths.” | T: “Whoever—monk or nun—declares the attainment of arahantship in my presence, they all do it by means of one or another of these four paths.”
+
+## snp3.6
+snp3.6:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+snp3.6:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: (none)
+snp3.6:1.3 | S: Now at that time the wanderer Sabhiya had been presented with several questions by a deity who was a former blood relation, saying: | T: Now on that occasion, questions had been assigned to Sabhiya the wanderer by a devatā who was a former relative of his:
+snp3.6:1.4 | S: “Sabhiya, you should live the spiritual life with whatever ascetic or brahmin answers these questions.” | T: “Sabhiya, if any contemplative or brahman, when asked these questions, answers them, live the holy life in his presence.”
+snp3.6:2.1 | S: Then Sabhiya, after learning those questions in the presence of that deity, approached those ascetics and brahmins who led an order and a community, and taught a community, who were well-known and famous religious founders, deemed holy by many people. That is, | T: Then Sabhiya the wanderer, having learned these questions in the presence of that devatā, went to those who had communities & groups, who were the teachers of groups, well-known, prestigious, founders of sects, well-regarded by people at large—i.e.,
+snp3.6:2.2 | S: Pūraṇa Kassapa, the bamboo-staffed ascetic Gosāla, Ajita of the hair blanket, Pakudha Kaccāyana, Sañjaya Belaṭṭhiputta, and the Jain ascetic of the Ñātika clan. | T: Pūraṇa Kassapa, Makkhali Gosāla, Ajita Kesakambalin, Pakudha Kaccāyana, Sañjaya Velaṭṭhaputta, & the Nigaṇṭha Nāṭaputta—
+snp3.6:2.3 | S: And he asked them those questions, | T: and asked them the questions.
+snp3.6:2.4 | S: but they were stumped by them. | T: But they, being asked the questions by Sabhiya the wanderer, were unable to answer.
+snp3.6:2.5 | S: Displaying annoyance, hate, and bitterness, | T: Unable to answer, they showed anger, aversion, & displeasure,
+snp3.6:2.6 | S: they questioned Sabhiya in return. | T: and even turned the questions back on Sabhiya the wanderer.
+snp3.6:3.1 | S: Then Sabhiya thought, | T: The thought occurred to Sabhiya the wanderer,
+snp3.6:3.2 | S: “Those famous ascetics and brahmins | T: “These venerable contemplatives & brahmans with communities & groups, who are the teachers of groups, well-known, prestigious, founders of sects, well-regarded by people at large—i.e.,
+snp3.6:3.3 | P: pūraṇo kassapo …pe… nigaṇṭho nāṭaputto— | T: Pūraṇa Kassapa … & the Nigaṇṭha Nāṭaputta—
+snp3.6:3.4 | S: were stumped by my questions. | T: when asked these questions by me are unable to answer.
+snp3.6:3.5 | S: Displaying annoyance, hate, and bitterness, | T: Unable to answer, they show anger, aversion, & displeasure,
+snp3.6:3.6 | S: they questioned me in return on that matter. | T: and even turn the questions back on me.
+snp3.6:3.7 | S: Why don’t I return to a lesser life so I can enjoy sensual pleasures?” | T: What if I were to revert to the lower life and partake of sensual pleasures?”
+snp3.6:4.1 | S: Then Sabhiya thought, | T: But then the thought occurred to him,
+snp3.6:4.2 | S: “This ascetic Gotama also leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. | T: “There is still this Gotama the contemplative. He has a community & group, he is the teacher of a group, well-known, prestigious, founder of a sect, well-regarded by people at large.
+snp3.6:4.3 | S: Why don’t I ask him these questions?” | T: What if I, having gone to him, were to ask him these questions?”
+snp3.6:5.1 | S: Then he thought, | T: Then the thought occurred to Sabhiya the wanderer,
+snp3.6:5.2 | S: “Even those ascetics and brahmins who are elderly and senior, who are advanced in years and have reached the final stage of life; who are senior, long standing, long gone forth; who lead an order and a community, and tutor a community; who are well-known and famous religious founders, deemed holy by many people—that is | T: “Now, those venerable contemplatives & brahmans—Pūraṇa Kassapa … & the Nigaṇṭha Nāṭaputta—are old, elderly, aged, along in their years, at an advanced stage of life, elders, senior, long gone forth, with communities & groups, teachers of groups, well-known, prestigious, founders of sects, well-regarded by people at large:
+snp3.6:5.3 | S: Pūraṇa Kassapa and the rest— | T: (none)
+snp3.6:5.4 | S: were stumped by my questions. | T: Even they, when asked these questions by me, were unable to answer.
+snp3.6:5.5 | S: They displayed annoyance, hate, and bitterness, and even questioned me in return. | T: Unable to answer, they showed anger, aversion, & displeasure, and even turned the questions back on me.
+snp3.6:5.6 | S: How can the ascetic Gotama possibly answer my questions, | T: So how could this Gotama the contemplative answer when asked these questions?
+snp3.6:5.7 | S: since he is so young in age and newly gone forth?” | T: He is both young in age and newly gone forth.”
+snp3.6:6.1 | S: Then he thought, | T: But then the thought occurred to him,
+snp3.6:6.2 | S: “An ascetic should not be looked down upon or disparaged because they are young. | T: “Gotama the contemplative is not to be despised as ‘young’ or treated with contempt.
+snp3.6:6.3 | S: Though young, the ascetic Gotama has great psychic power and might. Why don’t I ask him these questions?” | T: Even though young, he is of great power & great might. What if I, having gone to him, were to ask him these questions?”
+snp3.6:7.1 | S: Then Sabhiya set out for Rājagaha. | T: So Sabhiya the wanderer set out, headed for Rājagaha.
+snp3.6:7.2 | S: Traveling stage by stage, he came to Rājagaha, the Bamboo Grove, the squirrels’ feeding ground. He went up to the Buddha and exchanged greetings with him. | T: Wandering by stages, he arrived at where the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary. On arrival, he exchanged courteous greetings with the Blessed One.
+snp3.6:7.3 | S: When the greetings and polite conversation were over, he sat down to one side, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there,
+snp3.6:7.4 | S: and addressed the Buddha in verse: | T: he addressed the Blessed One in verse:
+snp3.6:8.1 | S: “I’ve come full of  doubts and uncertainties,” | T: “Doubtful & uncertain, I have come
+snp3.6:8.2 | S: said Sabhiya, | T: (none)
+snp3.6:8.3 | S: “wishing to ask some questions. | T: desiring to ask questions.
+snp3.6:8.4 | S: Please solve them for me. | T: Put an end to them, when asked them by me.
+snp3.6:8.5 | S: Answer my questions in turn, <j>in accordance with the truth.” | T: Answer me one-by-one, in line with the Dhamma.”
+snp3.6:9.1 | S: “You have come from afar, Sabhiya,” | T: “Sabhiya,” said the Blessed One, “you have come from afar,
+snp3.6:9.2 | S: said the Buddha, | T: (none)
+snp3.6:9.3 | S: “wishing to ask some questions. | T: desiring to ask questions.
+snp3.6:9.4 | S: I shall solve them for you, | T: I will put an end to them, when asked them by you.
+snp3.6:9.5 | S: answering your questions in turn, <j>in accordance with the truth. | T: I will answer you one-by-one, in line with the Dhamma.”
+snp3.6:10.1 | S: Ask me your question, Sabhiya, | T: (none)
+snp3.6:10.2 | S: whatever you want. | T: (none)
+snp3.6:10.3 | S: I’ll solve each and every | T: (none)
+snp3.6:10.4 | S: question you have.” | T: (none)
+snp3.6:11.1 | S: Then Sabhiya thought, | T: Then the thought occurred to Sabhiya the wanderer,
+snp3.6:11.2 | S: “Oh lord, how incredible, how amazing! | T: “Isn’t it amazing? Isn’t it astounding?—
+snp3.6:11.3 | S: Where those other ascetics and brahmins didn’t even give me a chance, the Buddha has invited me.” | T: how even the leave, of which I didn’t receive even a little bit from other contemplatives & brahmans, has been granted to me by Gotama the contemplative.”
+snp3.6:11.4 | S: Uplifted and elated, full of rapture and happiness, he asked this question. | T: Gratified, joyful, exultant, enraptured, & happy, he asked the Blessed One a question:
+snp3.6:12.1 | S: “What must one attain to be called a mendicant?” | T: “Having attained what is one said to be a monk?
+snp3.6:12.2 | S: said Sabhiya, | T: (none)
+snp3.6:12.3 | S: “How is one ‘gentle’, how said to be ‘tamed’? | T: In what way is one composed? And how is one said to be tamed?
+snp3.6:12.4 | S: How is one declared to be ‘awakened’? | T: How is one called ‘awakened’?
+snp3.6:12.5 | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+snp3.6:13.1 | S: “When by the path they have walked themselves,” | T: The Buddha: “Having gone to total unbinding, having crossed over doubt, by means of the path accomplished by himself,
+snp3.6:13.2 | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:13.3 | S: “they reach extinguishment, with doubt overcome; | T: (none)
+snp3.6:13.4 | S: giving up desire for existence or nonexistence, | T: having abandoned becoming & non-becoming,
+snp3.6:13.5 | S: their journey complete, their rebirths ended: <j>that is a mendicant. | T: having fulfilled [the task], further-becoming ended: He is a monk.
+snp3.6:14.1 | S: Equanimous toward everything, mindful, | T: Everywhere equanimous, mindful,
+snp3.6:14.2 | S: they don’t harm anyone in the world. | T: he harms no one in all the world.
+snp3.6:14.3 | S: An ascetic who has crossed over, unclouded, | T: A contemplative crossed over, limpid,
+snp3.6:14.4 | S: who has no pretensions, is gentle. | T: he has no swellings: He is composed.
+snp3.6:15.1 | S: Their faculties have been developed | T: Whose faculties are developed,
+snp3.6:15.2 | S: inside and out in the whole world. | T: within & without, with regard to all the world,
+snp3.6:15.3 | S: Having pierced through this world and the next, | T: disenchanted with this world & the next,
+snp3.6:15.4 | S: tamed, they await their time. | T: he awaits his time, developed: He’s tamed.
+snp3.6:16.1 | S: They have examined the eons in their entirety, | T: Having evaluated all theories, the wandering-on, dying & reappearing,
+snp3.6:16.2 | S: and both sides of transmigration—<j>passing away and rebirth. | T: (none)
+snp3.6:16.3 | S: Rid of dust, unblemished, purified: | T: having done away with dust & blemish —pure—
+snp3.6:16.4 | S: the one they call ‘awakened’ has attained <j>the end of rebirth.” | T: he has attained the ending of birth: He is called awakened.”
+snp3.6:17.1 | S: And then, having approved and agreed with what the Buddha said, uplifted and elated, full of rapture and happiness, Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy, asked the Blessed One a further question:
+snp3.6:18.1 | S: “What must one attain to be called ‘brahmin’?” | T: “Having attained what is one said to be a brahman?
+snp3.6:18.2 | S: said Sabhiya. | T: (none)
+snp3.6:18.3 | S: “Why is one an ‘ascetic’, and how a ‘bathed initiate’? | T: In what way is one a contemplative, and how is one ‘washed’?
+snp3.6:18.4 | S: How is one declared to be a ‘giant’? | T: How is one called a nāga?
+snp3.6:18.5 | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+snp3.6:19.1 | S: “Having banished all bad things,” | T: The Buddha: “Having banished all evils,
+snp3.6:19.2 | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:19.3 | S: “immaculate, well-composed, steadfast, | T: well-centered, stainless, firm in mind,
+snp3.6:19.4 | S: consummate, they’ve left transmigration behind: | T: gone entirely beyond the wandering-on,
+snp3.6:19.5 | S: unattached, one such is called ‘brahmin’. | T: independent, Such: He’s called a brahman.
+snp3.6:20.1 | S: An assuaged one who has given up good and evil, | T: Calmed, having abandoned good & evil,
+snp3.6:20.2 | S: stainless, understanding this world and the next, | T: dustless, having known this world & the next,
+snp3.6:20.3 | S: gone beyond rebirth and death: | T: gone beyond birth & death,
+snp3.6:20.4 | S: one such is rightly called ‘ascetic’. | T: he is truly called a contemplative— Such.
+snp3.6:21.1 | S: Having washed off all bad things | T: Having washed off all evils
+snp3.6:21.2 | S: inside and out in the whole world, | T: within & without, in all the world,
+snp3.6:21.3 | S: among gods and humans bound to creations, | T: with regard to the theories of beings human & divine,
+snp3.6:21.4 | S: the one they call ‘washed’ does not return to creation. | T: he goes to no theory: He’s said to be ‘washed.’
+snp3.6:22.1 | S: They do nothing monstrous at all in the world, | T: He does no misdeed at all in the world.
+snp3.6:22.2 | S: discarding all yokes and bonds, | T: Having escaped all fetters & bonds,
+snp3.6:22.3 | S: everywhere not stuck, freed: | T: freed, he’s everywhere un- attached,
+snp3.6:22.4 | S: one such is rightly called ‘giant’.” | T: truly he’s called a nāga— Such.”
+snp3.6:23.1 | S: And then Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured, & happy, asked the Blessed One a further question:
+snp3.6:24.1 | S: “Who is a ‘field-victor’ according to the Buddhas?” | T: “Whom do the awakened call a field-victor?
+snp3.6:24.2 | S: said Sabhiya, | T: (none)
+snp3.6:24.3 | S: “Why is one ‘skillful’, and how ‘an astute scholar’? | T: In what way is one skilled and how is one wise?
+snp3.6:24.4 | S: How is one declared to be a ‘sage’? | T: And how is one called by the name of ‘sage’?
+snp3.6:24.5 | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+snp3.6:25.1 | S: “They are victors on the fields of deeds in their entirety,” | T: The Buddha: “Having examined all fields— heavenly, human, and fields of the Brahmās—
+snp3.6:25.2 | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:25.3 | S: “the fields of gods, humans, and divinities; | T: (none)
+snp3.6:25.4 | S: released from the root bondage to all fields: | T: freed from the root bonds of all fields,
+snp3.6:25.5 | S: one such is rightly called ‘field-victor’. | T: he’s truly called a field-victor— Such.
+snp3.6:26.1 | S: They have examined the coffers in their entirety, | T: Having examined all storehouses—
+snp3.6:26.2 | S: the coffers of gods, humans, and divinities; | T: heavenly, human, storehouses of Brahmās—
+snp3.6:26.3 | S: released from the root bondage to all coffers: | T: freed from the root bonds of all storehouses,
+snp3.6:26.4 | S: one such is rightly called ‘skillful’. | T: he’s truly called skillful— Such.
+snp3.6:27.1 | S: They have examined whiteness | T: Having examined all white flowers
+snp3.6:27.2 | S: both inside and out; understanding purity, | T: within & without, one of pure discernment
+snp3.6:27.3 | S: they have left dark and bright behind: | T: gone beyond dark & bright,
+snp3.6:27.4 | S: one such is rightly called ‘an astute scholar’. | T: he’s truly called wise— Such.
+snp3.6:28.1 | S: Understanding the nature of the bad and the good | T: Knowing false & true Dhamma
+snp3.6:28.2 | S: inside and out in the whole world; | T: within & without, in all the world,
+snp3.6:28.3 | S: one worthy of honor by gods and humans, | T: he is worshipped by beings human & divine.
+snp3.6:28.4 | S: who has escaped from the net and the chain: <j>that is a sage.” | T: Having transcended snares & nets, he is a sage.”
+snp3.6:29.1 | S: And then Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy, asked the Blessed One a further question:
+snp3.6:30.1 | S: “What must one attain <j>to be called ‘knowledge master’?” | T: “Having attained what is one said to be an attainer-of-knowledge?
+snp3.6:30.2 | S: said Sabhiya, | T: (none)
+snp3.6:30.3 | S: “Why is one ‘studied’, and how is one ‘heroic’? | T: In what way is one well-tested, and how is one persistent?
+snp3.6:30.4 | S: How to gain the name ‘thoroughbred’? | T: Why is one named a thoroughbred?
+snp3.6:30.5 | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+snp3.6:31.1 | S: “They have examined knowledges in their entirety,” | T: The Buddha: “Having examined all knowledges—
+snp3.6:31.2 | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:31.3 | S: “those that are current among ascetics and brahmins; | T: those of brahmans, those of contemplatives—
+snp3.6:31.4 | S: rid of greed for all feelings, | T: devoid of passion for all feelings,
+snp3.6:31.5 | S: having left all knowledges behind: <j>that is a knowledge master. | T: gone beyond knowledge: He’s an attainer-of-knowledge.
+snp3.6:32.1 | S: Having studied proliferation and name & form | T: Having tested objectification & name-&-form,
+snp3.6:32.2 | S: inside and out—the root of disease; | T: within & without, the root of disease,
+snp3.6:32.3 | S: released from the root bondage to all disease: | T: freed from the root bond of disease,
+snp3.6:32.4 | S: one such is rightly called ‘studied’. | T: he’s truly called well-tested— Such.
+snp3.6:33.1 | S: Refraining from all evil here, | T: Abstaining from all evils,
+snp3.6:33.2 | S: heroic, he escapes from the suffering of hell; | T: gone beyond the suffering of hell,
+snp3.6:33.3 | S: he is heroic and energetic: | T: he’s one with persistence. He, with persistence, exertion,
+snp3.6:33.4 | S: one such is rightly called ‘hero’. | T: is rightly called a hero— Such.
+snp3.6:34.1 | S: Whoever’s bonds are cut, | T: One truly whose bonds are cut within & without,
+snp3.6:34.2 | S: the root of clinging inside and out; | T: (none)
+snp3.6:34.3 | S: released from the root bondage to all clinging: | T: freed from all the root bonds of snares,
+snp3.6:34.4 | S: one such is rightly called ‘thoroughbred’.” | T: truly he’s called a thoroughbred— Such.”
+snp3.6:35.1 | S: And then Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy, asked the Blessed One a further question:
+snp3.6:36.1 | S: “What must one attain to be called ‘scholar’?” | T: “Having attained what is one said to be learned?
+snp3.6:36.2 | S: said Sabhiya, | T: (none)
+snp3.6:36.3 | S: “Why is one ‘noble’, and how is one ‘well conducted’? | T: In what way is one noble, and how is one a person of good conduct?
+snp3.6:36.4 | S: How to gain the name ‘wanderer’? | T: Why is one named a wanderer?
+snp3.6:36.5 | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+snp3.6:37.1 | S: “One who has learned every teaching,” | T: The Buddha: “Having heard, having directly known every Dhamma for the sake of direct knowing
+snp3.6:37.2 | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:37.3 | S: “and has known for themselves what in the world <j>is blameworthy and blameless; | T: in the world, whatever is blameworthy or blameless,
+snp3.6:37.4 | S: a vanquisher, decided, liberated, | T: having conquered, free of doubt, released
+snp3.6:37.5 | S: untroubled everywhere: they call them ‘scholar’. | T: everywhere, everywhere without trouble, one is said to be learned.
+snp3.6:38.1 | S: Having cut off defilements and clingings, | T: Having cut attachments & effluents,
+snp3.6:38.2 | S: being wise, they enter no womb. | T: knowing, he does not come to lie in the womb,
+snp3.6:38.3 | S: They’ve cast aside the bog of the three perceptions, | T: dispelling mud and the three types of perception,
+snp3.6:38.4 | S: the one they call ‘noble’ does not return to creation. | T: he goes to no theory: He is called noble.
+snp3.6:39.1 | S: One here who is accomplished <j>and skillful in all forms of good conduct; | T: Whoever here has attained attainment with regard to good conduct,
+snp3.6:39.2 | S: always understanding the teaching, | T: all-skillful, who has learned the Dhamma,
+snp3.6:39.3 | S: everywhere not stuck, freed in mind, | T: unattached everywhere, everywhere his mind released,
+snp3.6:39.4 | S: who has no aversion: they are ‘well-conducted’. | T: he has no irritation: He is one of good conduct.
+snp3.6:40.1 | S: They wander full of wisdom, | T: Avoiding whatever action there is
+snp3.6:40.2 | S: having banished any deed that results in suffering, | T: that ripens in suffering & stress —above, below, and even all around in the middle— one who goes about, comprehending,
+snp3.6:40.3 | S: deceit and conceit, as well as greed and anger, | T: he has put an all-around end to deceptiveness, conceit, greed, anger,
+snp3.6:40.4 | S: above, below, all round, between. | T: (none)
+snp3.6:40.5 | S: They have made a limit on name and form; | T: name-&-form:
+snp3.6:40.6 | S: the one they call a ‘wanderer’ <j>has reached their destination.” | T: He’s called a wanderer, attained to attainment.” Then Sabhiya the wanderer—
+snp3.6:41.1 | S: And then, having approved and agreed with what the Buddha said, uplifted and elated, full of rapture and happiness, Sabhiya rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and extolled the Buddha in his presence with fitting verses: | T: delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy—got up from his seat and, arranging his upper robe over his shoulder and placing his hands palm-to-palm over his heart toward the Blessed One, praised the Blessed One face-to-face with fitting verses:
+snp3.6:42.1 | S: “O one of vast wisdom, <j>there are three and sixty opinions | T: “One Deeply Discerning, you have crossed over the flood of darkness of the three & sixty views leading downward,
+snp3.6:42.2 | S: based on the doctrines of ascetics: | T: dependent on the teachings of contemplatives,
+snp3.6:42.3 | S: they are expressions of perception, <j>based on perception. | T: dependent on perceptions & words of perceptions.
+snp3.6:42.4 | S: Having dispelled them all, <j>you passed over the dark flood. | T: (none)
+snp3.6:43.1 | S: You have gone to the end, gone beyond suffering, | T: You have gone to the end, you have gone to the further shore of suffering & stress.
+snp3.6:43.2 | S: you are perfected, a fully awakened Buddha; <j>I think you have ended defilements. | T: You are a noble one, rightly self-awakened. I would imagine that you have ended the effluents.
+snp3.6:43.3 | S: Brilliant, thoughtful, abounding in wisdom, | T: Brilliant, thoughtful, of abundant discernment,
+snp3.6:43.4 | S: ender of suffering—you brought me across! | T: ender of suffering, you have brought me across.
+snp3.6:44.1 | S: When you understood my uncertainty, | T: When you learned of my doubt,
+snp3.6:44.2 | S: you brought me beyond doubt—homage to you! | T: you brought me across my uncertainty. Homage to you,
+snp3.6:44.3 | S: A sage, accomplished in the ways of sagacity, | T: sage attained to the attainment of sagacity’s ways.
+snp3.6:44.4 | S: you are gentle, not hardhearted, <j>O Kinsman of the Sun. | T: Free from rigidity, Kinsman of the Sun, you’re composed.
+snp3.6:45.1 | S: Any doubts that I once had, | T: The doubt I had before,
+snp3.6:45.2 | S: you have answered for me, O Clear-eyed One. | T: you have answered, One with Eyes.
+snp3.6:45.3 | S: Clearly you are a sage, an Awakened One, | T: Yes, you are a sage, rightly self-awakened.
+snp3.6:45.4 | S: there are no hindrances in you. | T: You have no hindrances.
+snp3.6:46.1 | S: All your distress | T: Your despairs
+snp3.6:46.2 | S: is blown away and mown down. | T: are fallen down, cut from the stem.
+snp3.6:46.3 | S: Cooled, tamed, steadfast: | T: Cooled, attained to self-control, steadfast,
+snp3.6:46.4 | S: truth is your strength. | T: enduring in truth:
+snp3.6:47.1 | S: O giant among giants, O great hero, | T: In your words, Nāga of nāgas, great hero,
+snp3.6:47.2 | S: when you are speaking | T: (none)
+snp3.6:47.3 | S: all the gods rejoice, | T: all devas—
+snp3.6:47.4 | S: including both Nārada and Pabbata. | T: including Nāradas and Pabbatas— delight.
+snp3.6:48.1 | S: Homage to you, O thoroughbred! | T: Homage to you, O thoroughbred man,
+snp3.6:48.2 | S: Homage to you, supreme among men! | T: Homage to you, O superlative man,
+snp3.6:48.3 | S: In the world with its gods, | T: in the world with its devas
+snp3.6:48.4 | S: you have no rival. | T: there’s no one to compare with you.
+snp3.6:49.1 | S: You are the Buddha, you are the Teacher, | T: You : Awakened. You : Teacher.
+snp3.6:49.2 | S: you are the sage who has overcome Māra; | T: You : Sage who has conquered Māra.
+snp3.6:49.3 | S: you have cut off the underlying tendencies, | T: You : Having cut obsessions,
+snp3.6:49.4 | S: you’ve crossed over, and you bring humanity across. | T: having crossed over, bring this generation across.
+snp3.6:50.1 | S: You have transcended attachments, | T: Your acquisitions transcended,
+snp3.6:50.2 | S: your defilements are shattered; | T: your effluents torn apart,
+snp3.6:50.3 | S: you are a lion free of grasping, | T: you are a lion free of clinging,
+snp3.6:50.4 | S: with fear and dread given up. | T: your fear & terror abandoned.
+snp3.6:51.1 | S: Like a graceful lotus | T: As a lovely lotus
+snp3.6:51.2 | S: to which water does not stick, | T: is not smeared by water,
+snp3.6:51.3 | S: so both good and evil | T: you are not smeared by good or evil.
+snp3.6:51.4 | S: do not stick to you. | T: (none)
+snp3.6:51.5 | S: Stretch out your feet, great hero: | T: Extend your feet, hero:
+snp3.6:51.6 | S: Sabhiya bows to the Teacher.” | T: Sabhiya venerates them, the feet of the Teacher.
+snp3.6:52.1 | S: Then the wanderer Sabhiya bowed with his head to the Buddha’s feet and said, | T: Then Sabhiya the wanderer, bending his head to the Blessed One’s feet, said,
