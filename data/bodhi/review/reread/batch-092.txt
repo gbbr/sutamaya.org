@@ -1,0 +1,338 @@
+## an3.2
+an3.2:1.1 | S: “A fool is characterized by their deeds, and an astute person is characterized by their deeds, for wisdom shines in its traces. | T: “Bhikkhus, the fool is characterized by his actions; the wise person is characterized by his actions. Wisdom shines in its manifestation.
+an3.2:1.2 | S: A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.2:1.3 | S: What three? | T: What three?
+an3.2:1.4 | S: Bad conduct by way of body, speech, and mind. | T: Bodily misconduct, verbal misconduct, and mental misconduct.
+an3.2:1.5 | S: These are the three things by which a fool is known. | T: One who possesses these three qualities should be known as a fool.
+an3.2:2.1 | S: An astute person is known by three things. | T: One who possesses three qualities should be known as a wise person.
+an3.2:2.2 | S: What three? | T: What three?
+an3.2:2.3 | S: Good conduct by way of body, speech, and mind. | T: Bodily good conduct, verbal good conduct, and mental good conduct.
+an3.2:2.4 | S: These are the three things by which an astute person is known. | T: One who possesses these three qualities should be known as a wise person.
+an3.2:3.1 | S: So you should train like this: | T: “Therefore, bhikkhus, you should train yourselves thus:
+an3.2:3.2 | S: ‘We will shun the three things by which a fool is known, and we will proceed having undertaken the three things by which an astute person is known.’ | T: ‘We will avoid the three qualities possessing which one is known as a fool, and we will undertake and observe the three qualities possessing which one is known as a wise person.’
+an3.2:3.3 | S: That’s how you should train.” | T: It is in this way that you should train yourselves.”
+
+## an3.31
+an3.31:1.1 | S: “Mendicants, a family where the children honor their parents in their home is said to live with divinity. | T: (1) “Bhikkhus, those families dwell with Brahmā where at home the mother and father are revered by their children.
+an3.31:1.2 | S: A family where the children honor their parents in their home is said to live with the first tutors. | T: (2) Those families dwell with the first teachers where at home the mother and father are revered by their children.
+an3.31:1.3 | S: A family where the children honor their parents in their home is said to live with those worthy of offerings dedicated to the gods. | T: (3) Those families dwell with the gift-worthy where at home the mother and father are revered by their children.
+an3.31:1.4 | S: ‘Divinity’ is a term for your parents. | T: “‘Brahmā,’ bhikkhus, is a designation for mother and father.
+an3.31:1.5 | S: ‘First tutors’ is a term for your parents. | T: ‘First teachers’ is a designation for mother and father.
+an3.31:1.6 | S: ‘Worthy of offerings dedicated to the gods’ is a term for your parents. | T: ‘Giftworthy’ is a designation for mother and father.
+an3.31:1.7 | S: Why is that? | T: For what reason?
+an3.31:1.8 | S: Parents are very helpful to their children, they raise them, nurture them, and show them the world. | T: Mother and father are helpful to their children: they raise them, nurture them, and show them the world.”
+an3.31:2.1 | S: Parents are said to be ‘divinity’ | T: Mother and father are called “Brahmā”
+an3.31:2.2 | S: and ‘first tutors’, it’s said. | T: and also “first teachers.”
+an3.31:2.3 | S: They’re worthy of offerings dedicated to the gods <j>from their children, | T: They are worthy of gifts from their children,
+an3.31:2.4 | S: for they love their offspring. | T: for they have compassion for their offspring.
+an3.31:3.1 | S: Therefore an astute person | T: Therefore a wise person should revere them,
+an3.31:3.2 | S: would revere them and honor them | T: and show them due honor,
+an3.31:3.3 | S: with food and drink, | T: serve them with food and drink,
+an3.31:3.4 | S: clothes and bedding, | T: with clothes and bedding,
+an3.31:3.5 | S: anointing and bathing, | T: by massaging and bathing them,
+an3.31:3.6 | S: and by washing their feet. | T: and by washing their feet.
+an3.31:4.1 | S: Because they look after | T: Because of this service
+an3.31:4.2 | S: their parents like this, | T: to mother and father,
+an3.31:4.3 | S: in this life they’re praised by the astute, | T: the wise praise one in this world
+an3.31:4.4 | S: and they depart to rejoice in heaven.” | T: and after death one rejoices in heaven.
+
+## an3.3
+an3.3:1.1 | S: “There are these three characteristics, signs, and manifestations of a fool. | T: “Bhikkhus, the fool has these three characteristics of a fool, marks of a fool, manifestations of a fool.
+an3.3:1.2 | S: What three? | T: What three?
+an3.3:1.3 | S: A fool thinks poorly, speaks poorly, and acts poorly. | T: Here, a fool thinks badly, speaks badly, and acts badly.
+an3.3:1.4 | S: If a fool didn’t think poorly, speak poorly, and act poorly, then how would the astute know of them: | T: If the fool did not think badly, speak badly, and act badly, how would wise people know of him:
+an3.3:1.5 | S: ‘This worthy one is a fool, an untrue person’? | T: ‘This fellow is a fool, a bad person’?
+an3.3:1.6 | S: But since a fool does think poorly, speak poorly, and act poorly, then the astute do know of them: | T: But because the fool thinks badly, speaks badly, and acts badly, wise people know of him:
+an3.3:1.7 | S: ‘This worthy one is a fool, an untrue person’. | T: ‘This fellow is a fool, a bad person.’
+an3.3:1.8 | S: These are the three characteristics, signs, and manifestations of a fool. | T: These are the fool’s three characteristics of a fool, marks of a fool, manifestations of a fool.
+an3.3:2.1 | S: There are these three characteristics, signs, and manifestations of an astute person. | T: “The wise person has these three characteristics of a wise person, marks of a wise person, manifestations of a wise person.
+an3.3:2.2 | S: What three? | T: What three?
+an3.3:2.3 | S: An astute person thinks well, speaks well, and acts well. | T: Here, a wise person thinks well, speaks well, and acts well.
+an3.3:2.4 | S: If an astute person didn’t think well, speak well, and act well, then how would the astute know of them: | T: If the wise person did not think well, speak well, and act well, how would wise people know of him:
+an3.3:2.5 | S: ‘This worthy one is astute, a true person’? | T: ‘This fellow is wise, a good person’?
+an3.3:2.6 | S: But since an astute person does think well, speak well, and act well, then the astute do know of them: | T: But because the wise person thinks well, speaks well, and acts well, wise people know of him:
+an3.3:2.7 | S: ‘This worthy one is astute, a true person’. | T: ‘This fellow is wise, a good person.’
+an3.3:2.8 | S: These are the three characteristics, signs, and manifestations of an astute person. | T: These are the wise person’s three characteristics of a wise person, marks of a wise person, manifestations of a wise person.
+an3.3:2.9 | S: So you should train …” | T: “Therefore … as in AN3.2 … It is in this way that you should train yourselves.”
+
+## an3.41
+an3.41:1.1 | S: “Mendicants, when three things are present, a faithful gentleman brims with much merit. | T: “Bhikkhus, when three things are present, a clansman endowed with faith generates much merit.
+an3.41:1.2 | S: What three? | T: What three?
+an3.41:1.3 | S: When faith is present, | T: (1) When faith is present, a clansman endowed with faith generates much merit.
+an3.41:1.4 | S: when a gift to give is present, | T: (2) When an object to be given is present, a clansman endowed with faith generates much merit.
+an3.41:1.5 | S: and when those worthy of a religious donation are present. | T: (3) When those worthy of offerings are present, a clansman endowed with faith generates much merit.
+an3.41:1.6 | S: When these three things are present, a faithful gentleman brims with much merit.” | T: When these three things are present, a clansman endowed with faith generates much merit.”
+
+## an3.42
+an3.42:1.1 | S: “There are three grounds, mendicants, by which a person with faith and confidence can be known. | T: “Bhikkhus, in three cases one may be understood to have faith and confidence.
+an3.42:1.2 | S: What three? | T: What three?
+an3.42:1.3 | S: They like to see ethical people. They like to hear the true teaching. And they live at home with heart rid of the stain of stinginess, freely generous, open-handed, loving to let go, committed to charity, loving to give and to share. | T: When one desires to see those of virtuous behavior; when one desires to hear the good Dhamma; and when one dwells at home with a mind devoid of the stain of miserliness, freely generous, openhanded, delighting in relinquishment, devoted to charity, delighting in giving and sharing.
+an3.42:1.4 | S: These are the three grounds by which a person with faith and confidence can be known. | T: In these three cases, one may be understood to have faith and confidence.”
+an3.42:2.1 | S: They like to see ethical people; | T: One who desires to see the virtuous ones,
+an3.42:2.2 | S: they want to hear the true teaching; | T: who wishes to hear the good Dhamma,
+an3.42:2.3 | S: they’ve driven out the stain of stinginess: | T: who has removed the stain of miserliness,
+an3.42:2.4 | S: that’s who’s called an individual of faith.” | T: is called a person endowed with faith.
+
+## an3.43
+an3.43:1.1 | S: “Mendicants, taking three reasons into consideration provides quite enough motivation to teach Dhamma to another. | T: “Bhikkhus, when one sees three advantages, it is enough to teach others the Dhamma.
+an3.43:1.2 | S: What three? | T: What three?
+an3.43:1.3 | S: When the teacher understands the meaning and the teaching. | T: (1) The one who teaches the Dhamma experiences the meaning and the Dhamma.
+an3.43:1.4 | S: When the audience understands the meaning and the teaching. | T: (2) The one who hears the Dhamma experiences the meaning and the Dhamma.
+an3.43:1.5 | S: When both the teacher and the audience understand the meaning and the teaching. | T: (3) Both the one who teaches the Dhamma and the one who hears the Dhamma experience the meaning and the Dhamma.
+an3.43:1.6 | S: Taking these three reasons into consideration provides quite enough motivation to teach Dhamma to another.” | T: Seeing these three advantages, it is enough to teach others the Dhamma.”
+
+## an3.44
+an3.44:1.1 | S: “In three situations, mendicants, conversation flows. | T: “Bhikkhus, in three cases talk flows smoothly.
+an3.44:1.2 | S: What three? | T: What three?
+an3.44:1.3 | S: When the teacher understands the meaning and the teaching. | T: (1) When the one who teaches the Dhamma experiences the meaning and the Dhamma.
+an3.44:1.4 | S: When the audience understands the meaning and the teaching. | T: (2) When the one who hears the Dhamma experiences the meaning and the Dhamma.
+an3.44:1.5 | S: When both the teacher and the audience understand the meaning and the teaching. | T: (3) When both the one who teaches the Dhamma and the one who hears the Dhamma experience the meaning and the Dhamma.
+an3.44:1.6 | S: These are the three situations in which conversation flows.” | T: In these three cases talk flows smoothly.”
+
+## an3.45
+an3.45:1.1 | S: “Mendicants, these three things are recommended by astute true persons. | T: “Bhikkhus, there are these three things prescribed by the wise, prescribed by good people.
+an3.45:1.2 | S: What three? | T: What three?
+an3.45:1.3 | S: Giving, | T: (1) Giving is prescribed by the wise, prescribed by good people.
+an3.45:1.4 | S: going forth, | T: (2) The going forth is prescribed by the wise, prescribed by good people.
+an3.45:1.5 | S: and taking care of your mother and father. | T: (3) Attending upon one’s mother and father is prescribed by the wise, prescribed by good people.
+an3.45:1.6 | S: These are the three things recommended by astute true persons. | T: These three things are prescribed by the wise, prescribed by good people.”
+an3.45:2.1 | S: The virtuous recommend giving, | T: Good people prescribe giving,
+an3.45:2.2 | S: harmlessness, restraint, and self-control; | T: harmlessness, self-control, and self-taming,
+an3.45:2.3 | S: caring for mother and father, | T: service to one’s mother and father
+an3.45:2.4 | S: and peaceful spiritual practitioners. | T: and to the peaceful followers of the spiritual life.
+an3.45:3.1 | S: These are the things recommended by the good, | T: These are the deeds of the good
+an3.45:3.2 | S: which the astute should cultivate. | T: which the wise person should pursue.
+an3.45:3.3 | S: A noble one, having vision, | T: The noble one possessed of vision
+an3.45:3.4 | S: will enjoy a world of grace.” | T: goes to an auspicious world.
+
+## an3.46
+an3.46:1.1 | S: “Mendicants, when ethical renunciates are supported by a town or village, | T: “Bhikkhus, when virtuous renunciants dwell in dependence on a village or a town,
+an3.46:1.2 | S: the people there brim with much merit in three ways. | T: the people there generate much merit in three ways.
+an3.46:1.3 | S: What three? | T: What three?
+an3.46:1.4 | S: By way of body, speech, and mind. | T: By body, speech, and mind.
+an3.46:1.5 | S: When ethical renunciates are supported by a town or village, | T: When virtuous renunciants dwell in dependence on a village or a town,
+an3.46:1.6 | S: the people there brim with much merit in these three ways.” | T: the people there generate much merit in these three ways.”
+
+## an3.49
+an3.49:1.1 | S: “In three situations, mendicants, you should be keen. | T: “Bhikkhus, in three cases ardor should be exercised.
+an3.49:1.2 | S: What three? | T: What three?
+an3.49:1.3 | S: You should be keen to prevent bad, unskillful qualities from arising. You should be keen to give rise to skillful qualities. And you should be keen to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. | T: (1) Ardor should be exercised for the non-arising of unarisen bad unwholesome qualities. (2) Ardor should be exercised for the arising of unarisen wholesome qualities. (3) Ardor should be exercised for enduring arisen bodily feelings that are painful, racking, sharp, piercing, harrowing, disagreeable, sapping one’s vitality.
+an3.49:1.4 | S: In these three situations, you should be keen. | T: In these three cases ardor should be exercised.
+an3.49:2.1 | S: It’s a mendicant who is keen to prevent bad, unskillful qualities from arising. They’re keen to give rise to skillful qualities. And they’re keen to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. | T: “When a bhikkhu exercises ardor for the non-arising of unarisen bad unwholesome qualities, for the arising of unarisen wholesome qualities, and for enduring arisen bodily feelings that are painful, racking, sharp, piercing, harrowing, disagreeable, sapping one’s vitality,
+an3.49:2.2 | S: This is called a mendicant who is keen, alert, and mindful so as to rightly make an end of suffering.” | T: he is called a bhikkhu who is ardent, alert, and mindful in order to make a complete end of suffering.”
+
+## an3.4
+an3.4:1.1 | S: “A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.4:1.2 | S: What three? | T: What three?
+an3.4:1.3 | S: They don’t recognize when they’ve made a mistake. When they do recognize it they don’t deal with it properly. And when someone else confesses a mistake to them, they don’t accept it properly. | T: (1) He does not see his transgression as a transgression. (2) When he sees his transgression as a transgression, he does not make amends for it in accordance with the Dhamma. (3) When another person confesses a transgression to him, he does not accept it in accordance with the Dhamma.
+an3.4:1.4 | S: These are the three things by which a fool is known. | T: One who possesses these three qualities should be known as a fool.
+an3.4:2.1 | S: An astute person is known by three things. | T: “One who possesses three qualities should be known as a wise person.
+an3.4:2.2 | S: What three? | T: What three?
+an3.4:2.3 | S: They recognize when they’ve made a mistake. When they recognize it they deal with it properly. And when someone else confesses a mistake to them, they accept it properly. | T: (1) He sees a transgression as a transgression. (2) When he sees a transgression as a transgression, he makes amends for it in accordance with the Dhamma. (3) When another person confesses a transgression to him, he accepts it in accordance with the Dhamma.
+an3.4:2.4 | S: These are the three things by which an astute person is known. | T: One who possesses these three qualities should be known as a wise person.
+an3.4:2.5 | S: So you should train …” | T: “Therefore … It is in this way that you should train yourselves.”
+
+## an3.51
+an3.51:1.1 | S: Then two old brahmins—elderly and senior, who were advanced in years and had reached the final stage of life, a hundred and twenty years old—went up to the Buddha, and exchanged greetings with him. | T: Then two brahmins who were old, aged, burdened with years, advanced in life, come to the last stage, a hundred and twenty years of age, approached the Blessed One and exchanged greetings with him.
+an3.51:1.2 | S: When the greetings and polite conversation were over, they sat down to one side, and said to the Buddha: | T: When they had concluded their greetings and cordial talk, they sat down to one side and said to the Blessed One:
+an3.51:1.3 | S: “We brahmins, worthy Gotama, are old, elderly and senior, we’re advanced in years and have reached the final stage of life; we’re a hundred and twenty years old. | T: “We are brahmins, Master Gotama, old, aged … a hundred and twenty years of age.
+an3.51:1.4 | S: And we haven’t done what is good and skillful, nor have we made a shelter from fear. | T: But we have not done anything good and wholesome, nor have we made a shelter for ourselves.
+an3.51:1.5 | S: Advise us, worthy Gotama, instruct us! It will be for our lasting welfare and happiness.” | T: Let Master Gotama exhort us and instruct us in a way that will lead to our welfare and happiness for a long time!”
+an3.51:2.1 | S: “Indeed, brahmins, you’re old, elderly and senior. | T: “Truly, brahmins, you are old, aged, burdened with years, advanced in life, come to the last stage, a hundred and twenty years of age,
+an3.51:2.2 | S: And you haven’t done what is good and skillful, nor have you made a shelter from fear. | T: but you have not done anything good and wholesome, nor have you made a shelter for yourselves.
+an3.51:2.3 | S: This world is led onward by old age, sickness, and death. | T: Indeed, this world is swept away by old age, illness, and death.
+an3.51:2.4 | S: But restraint here by way of body, speech, and mind is the shelter, asylum, island, refuge, and final haven for the departed. | T: But though the world is swept away by old age, illness, and death, when one has departed, bodily, verbal, and mental self-control will provide a shelter, a harbor, an island, a refuge, and a support.”
+an3.51:3.1 | S: This life, so very short, is led onward. | T: Life is swept along, short is the life span,
+an3.51:3.2 | S: One led on to old age has no shelter. | T: no shelters exist for one who has grown old.
+an3.51:3.3 | S: Seeing this peril in death, | T: Seeing clearly this peril in death,
+an3.51:3.4 | S: do good deeds that bring you joy. | T: one should do deeds of merit that bring happiness.
+an3.51:4.1 | S: The restraint practiced here— | T: When one departs this life,
+an3.51:4.2 | S: of body, speech, and mind— | T: self-control over body, speech, and mind,
+an3.51:4.3 | S: leads the departed to happiness, | T: and the deeds of merit one did while living,
+an3.51:4.4 | S: as the good deeds done while living.” | T: lead to one’s happiness.
+
+## an3.53
+an3.53:1.1 | S: Then a brahmin went up to the Buddha, and exchanged greetings with him. Seated to one side he said to the Buddha: | T: Then a certain brahmin approached the Blessed One … and said to him:
+an3.53:1.2 | S: “Worthy Gotama, they speak of ‘a teaching apparent in the present life’. | T: “Master Gotama, it is said: ‘A directly visible Dhamma, a directly visible Dhamma.’
+an3.53:1.3 | S: In what way is the teaching apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: In what way is the Dhamma directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise?”
+an3.53:2.1 | S: “A greedy person, overcome and overwhelmed by greed, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (1) “Brahmin, one excited by lust, overcome by lust, with mind obsessed by it, intends for his own affliction, for the affliction of others, and for the affliction of both, and he experiences mental suffering and dejection.
+an3.53:2.2 | S: When greed has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when lust is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.53:2.7 | S: This is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: It is in this way that the Dhamma is directly visible….
+an3.53:3.1 | S: A hateful person, overcome by hate, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (2) “One full of hate, overcome by hatred, with mind obsessed by it, intends for his own affliction, for the affliction of others, and for the affliction of both, and he experiences mental suffering and dejection.
+an3.53:3.2 | S: When hate has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when hatred is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.53:3.3 | S: This, too, is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: It is in this way, too, that the Dhamma is directly visible….
+an3.53:4.1 | S: A deluded person, overcome by delusion, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (3) “One who is deluded, overcome by delusion, with mind obsessed by it, intends for his own affliction, for the affliction of others, and for the affliction of both, and he experiences mental suffering and dejection.
+an3.53:4.2 | S: When delusion has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when delusion is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.53:4.3 | S: This, too, is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: It is in this way, too, that the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.”
+an3.53:5.1 | S: “Excellent, worthy Gotama! Excellent! | T: “Excellent, Master Gotama! Excellent, Master Gotama!
+an3.53:5.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Master Gotama has made the Dhamma clear in many ways, as though he were turning upright what had been overthrown, revealing what was hidden, showing the way to one who was lost, or holding up a lamp in the darkness so those with good eyesight can see forms.
+an3.53:5.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I now go for refuge to Master Gotama, to the Dhamma, and to the Saṅgha of bhikkhus.
+an3.53:5.4 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: Let Master Gotama consider me a lay follower who from today has gone for refuge for life.”
+
+## an3.54
+an3.54:1.1 | S: Then a brahmin wanderer went up to the Buddha … Seated to one side he said to the Buddha: | T: Then a certain brahmin wanderer approached the Blessed One … and said to him:
+an3.54:1.2 | S: “Worthy Gotama, they speak of ‘a teaching apparent in the present life’. | T: “Master Gotama, it is said: ‘A directly visible Dhamma, a directly visible Dhamma.’
+an3.54:1.3 | S: In what way is the teaching apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: In what way is the Dhamma directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise?”
+an3.54:2.1 | S: “A greedy person, overcome by greed, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (1) “Brahmin, one excited by lust, overcome by lust, with mind obsessed by it, intends for his own affliction, for the affliction of others, or for the affliction of both, and he experiences mental suffering and dejection.
+an3.54:2.2 | S: When greed has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when lust is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.54:3.1 | S: A greedy person does bad things by way of body, speech, and mind. | T: One excited by lust, overcome by lust, with mind obsessed by it, engages in misconduct by body, speech, and mind.
+an3.54:3.2 | S: When greed has been given up, they don’t do bad things by way of body, speech, and mind. | T: But when lust is abandoned, he does not engage in misconduct by body, speech, and mind.
+an3.54:4.1 | S: A greedy person doesn’t truly understand what’s for their own good, the good of another, or the good of both. | T: One excited by lust, overcome by lust, with mind obsessed by it, does not understand as it really is his own good, the good of others, or the good of both.
+an3.54:4.2 | S: When greed has been given up, they truly understand what’s for their own good, the good of another, or the good of both. | T: But when lust is abandoned, he understands as it really is his own good, the good of others, and the good of both.
+an3.54:4.3 | S: This is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: It is in this way, brahmin, that the Dhamma is directly visible … to be personally experienced by the wise.
+an3.54:5.1 | S: A hateful person … | T: (2) “One full of hate, overcome by hatred …
+an3.54:5.2 | S: A deluded person, overcome by delusion, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (3) “One who is deluded, overcome by delusion, with mind obsessed by it, intends for his own affliction, for the affliction of others, or for the affliction of both, and he experiences mental suffering and dejection.
+an3.54:5.3 | S: When delusion has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when delusion is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.54:6.1 | S: A deluded person does bad things by way of body, speech, and mind. | T: One who is deluded, overcome by delusion, with mind obsessed by it, engages in misconduct by body, speech, and mind.
+an3.54:6.2 | S: When delusion has been given up, they don’t do bad things by way of body, speech, and mind. | T: But when delusion is abandoned, he does not engage in misconduct by body, speech, and mind.
+an3.54:7.1 | S: A deluded person doesn’t truly understand what’s for their own good, the good of another, or the good of both. | T: One who is deluded, overcome by delusion, with mind obsessed by it, does not understand as it really is his own good, the good of others, or the good of both.
+an3.54:7.2 | S: When delusion has been given up, they truly understand what’s for their own good, the good of another, or the good of both. | T: But when delusion is abandoned, he understands as it really is his own good, the good of others, and the good of both.
+an3.54:7.3 | S: This, too, is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: It is in this way, too, that the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.”
+an3.54:8.1 | S: “Excellent, worthy Gotama! Excellent! … | T: “Excellent, Master Gotama! …
+an3.54:8.2 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: Let Master Gotama consider me a lay follower who from today has gone for refuge for life.”
+
+## an3.55
+an3.55:1.1 | S: Then the brahmin Jānussoṇi went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the brahmin Jāṇussoṇī approached the Blessed One … and said to him:
+an3.55:1.2 | S: “Worthy Gotama, they say that ‘extinguishment is apparent in the present life’. | T: “Master Gotama, it is said: ‘Directly visible nibbāna, directly visible nibbāna.’
+an3.55:1.3 | S: In what way is extinguishment apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: In what way is nibbāna directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise?”
+an3.55:2.1 | S: “A greedy person, overcome by greed, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (1) “Brahmin, one excited by lust, overcome by lust, with mind obsessed by it, intends for his own affliction, for the affliction of others, or for the affliction of both, and he experiences mental suffering and dejection.
+an3.55:2.2 | S: When greed has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when lust is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.55:2.3 | S: This is how extinguishment is apparent in the present life. | T: It is in this way that nibbāna is directly visible.
+an3.55:3.1 | S: A hateful person … | T: (2) “One full of hate, overcome by hatred …
+an3.55:3.2 | S: A deluded person, overcome by delusion, intends to hurt themselves, hurt others, and hurt both. They experience mental pain and sadness. | T: (3) “One who is deluded, overcome by delusion, with mind obsessed by it, intends for his own affliction, for the affliction of others, or for the affliction of both, and he experiences mental suffering and dejection.
+an3.55:3.3 | S: When delusion has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. | T: But when delusion is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection.
+an3.55:3.4 | S: This, too, is how extinguishment is apparent in the present life. | T: It is in this way, too, that nibbāna is directly visible.
+an3.55:4.1 | S: When you experience the ending of greed, hate, and delusion without remainder, | T: “When, brahmin, one experiences the remainderless destruction of lust, the remainderless destruction of hatred, and the remainderless destruction of delusion,
+an3.55:4.2 | S: that’s how extinguishment is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: it is in this way, too, that nibbāna is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.”
+an3.55:5.1 | S: “Excellent, worthy Gotama! Excellent! … | T: “Excellent, Master Gotama! …
+an3.55:5.2 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: Let Master Gotama consider me a lay follower who from today has gone for refuge for life.”
+
+## an3.56
+an3.56:1.1 | S: Then a certain well-to-do brahmin went up to the Buddha, and seated to one side he said to him: | T: Then a certain affluent brahmin approached the Blessed One … and said to him:
+an3.56:1.2 | S: “Worthy Gotama, I have heard that brahmins of the past who were elderly and senior, the tutors of tutors, said: | T: “Master Gotama, I have heard older brahmins who are aged, burdened with years, teachers of teachers, saying:
+an3.56:1.3 | S: ‘In the old days this world was so full of humans you’d think they were squashed together. The villages, towns, and capital cities were no more than a chicken’s flight apart.’ | T: ‘In the past this world was so thickly populated one would think there was no space between people. The villages, towns, and capital cities were so close that cocks could fly between them.’
+an3.56:1.4 | S: What is the cause, worthy Gotama, what is the reason why these days human numbers have dwindled, a decline in population is evident, and whole villages, towns, cities, and countries have disappeared?” | T: Why is it, Master Gotama, that at present the number of people has declined, depopulation is seen, and villages, towns, cities, and districts have vanished?”
+an3.56:2.1 | S: “These days, brahmin, humans just love illicit desire. They’re overcome by immoral greed, and mired in wrong religious teachings. | T: (1) “At present, brahmin, people are excited by illicit lust, overcome by unrighteous greed, afflicted by wrong Dhamma.
+an3.56:2.2 | S: Taking up sharp knives, they murder each other. And so many people perish. | T: As a result, they take up weapons and slay one another. Hence many people die.
+an3.56:2.3 | S: This is the cause, this is the reason why these days human numbers have dwindled. | T: This is a reason why at present the number of people has declined, depopulation is seen, and villages, towns, cities, and districts have vanished.
+an3.56:3.1 | S: Furthermore, because these days humans just love illicit desire … | T: (2) “Again, at present people are excited by illicit lust, overcome by unrighteous greed, afflicted by wrong Dhamma.
+an3.56:3.2 | S: the heavens don’t provide enough rain, | T: When this happens, sufficient rain does not fall.
+an3.56:3.3 | S: so there’s famine, a bad harvest, with crops blighted and turned to straw. | T: As a result, there is a famine, a scarcity of grain; the crops become blighted and turn to straw.
+an3.56:3.4 | S: And so many people perish. | T: Hence many people die.
+an3.56:3.5 | S: This is the cause, this is the reason why these days human numbers have dwindled. | T: This is another reason why at present the number of people has declined, depopulation is seen, and villages, towns, cities, and districts have vanished.
+an3.56:4.1 | S: Furthermore, because these days humans just love illicit desire … | T: (3) “Again, at present people are excited by illicit lust, overcome by unrighteous greed, afflicted by wrong Dhamma.
+an3.56:4.2 | S: native spirits let vicious monsters loose. And so many humans perish. | T: When this happens, the yakkhas release wild spirits. Hence many people die.
+an3.56:4.3 | S: This is the cause, this is the reason why these days human numbers have dwindled.” | T: This is yet another reason why at present the number of people has declined, depopulation is seen, and villages, towns, cities, and districts have vanished.”
+an3.56:5.1 | S: “Excellent, worthy Gotama! Excellent! … | T: “Excellent, Master Gotama! …
+an3.56:5.2 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: Let Master Gotama consider me a lay follower who from today has gone for refuge for life.”
+
+## an3.5
+an3.5:1.1 | S: “A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.5:1.2 | S: What three? | T: What three?
+an3.5:1.3 | S: They ask a question irrationally. They answer a question irrationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they disagree with it. | T: (1) He formulates a question carelessly; (2) he replies to a question carelessly; (3) when another person replies to a question carefully, with well-rounded and coherent words and phrases, he does not approve of it.
+an3.5:1.4 | S: These are the three things by which a fool is known. | T: One who possesses these three qualities should be known as a fool.
+an3.5:2.1 | S: An astute person is known by three things. | T: “One who possesses three qualities should be known as a wise person.
+an3.5:2.2 | S: What three? | T: What three?
+an3.5:2.3 | S: They ask a question rationally. They answer a question rationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they agree with it. | T: (1) He formulates a question carefully; (2) he replies to a question carefully; (3) when another person replies to a question carefully, with well-rounded and coherent words and phrases, he approves of it.
+an3.5:2.4 | S: These are the three things by which an astute person is known. | T: One who possesses these three qualities should be known as a wise person.
+an3.5:2.5 | S: So you should train …” | T: “Therefore … It is in this way that you should train yourselves.”
+
+## an3.62
+an3.62:1.1 | S: “Mendicants, an unlearned ordinary person speaks of three perils that tear mothers and children apart. | T: “Bhikkhus, the uninstructed worldling speaks of these three perils that separate mother and son.
+an3.62:1.2 | S: What three? | T: What three?
+an3.62:1.3 | S: There comes a time when a great fire flares up, | T: (1) “There comes a time when a great conflagration arises. When the great conflagration has arisen,
+an3.62:1.4 | S: and it burns villages, towns, and cities. | T: it burns up villages, towns, and cities. When villages, towns, and cities are burning up,
+an3.62:1.5 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: the mother does not find her son and the son does not find his mother.
+an3.62:1.6 | S: This is the first peril that tears mothers and children apart. | T: This is the first peril that separates mother and son of which the uninstructed worldling speaks.
+an3.62:2.1 | S: Furthermore, there comes a time when a great storm gathers, | T: (2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen,
+an3.62:2.2 | S: and it unleashes a mighty flood | T: a great deluge takes place. When the great deluge takes place,
+an3.62:2.3 | S: that sweeps away villages, towns, and cities. | T: villages, towns, and cities are swept away. When villages, towns, and cities are being swept away,
+an3.62:2.4 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: the mother does not find her son and the son does not find his mother.
+an3.62:2.5 | S: This is the second peril that tears mothers and children apart. | T: This is the second peril that separates mother and son of which the uninstructed worldling speaks.
+an3.62:3.1 | S: Furthermore, there comes a time of peril due to turmoil in the wilds, so the countryfolk mount their vehicles and flee everywhere. | T: (3) “Again, there comes a time of perilous turbulence in the wilderness, when the people of the countryside, mounted on their vehicles, flee on all sides. When there is perilous turbulence in the wilderness, and the people of the countryside, mounted on their vehicles, are fleeing on all sides,
+an3.62:3.2 | S: When this happens, a mother can’t find her child, and a child can’t find their mother. | T: the mother does not find her son and the son does not find his mother.
+an3.62:3.3 | S: This is the third peril that tears mothers and children apart. | T: This is the third peril that separates mother and son of which the uninstructed worldling speaks.
+an3.62:3.4 | S: These are the three perils an unlearned ordinary person speaks of that tear mothers and children apart. | T: “These are the three perils that separate mother and son of which the uninstructed worldling speaks.
+an3.62:4.1 | S: Mendicants, an unlearned ordinary person speaks of three perils that don’t tear mothers and children apart. | T: “There are, bhikkhus, these three perils when mother and son reconnect that the uninstructed worldling speaks of as perils that separate mother and son.
+an3.62:4.2 | S: What three? | T: What three?
+an3.62:4.3 | S: There comes a time when a great fire flares up, | T: (1) “There comes a time when a great conflagration arises. When the great conflagration has arisen,
+an3.62:4.4 | S: and it burns villages, towns, and cities. | T: it burns up villages, towns, and cities. When villages, towns, and cities are burning up,
+an3.62:4.5 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: there is sometimes an occasion when the mother finds her son and the son finds his mother.
+an3.62:4.6 | S: This is the first peril that doesn’t tear mothers and children apart. | T: This is the first peril when mother and son reconnect that the uninstructed worldling speaks of as a peril that separates mother and son.
+an3.62:5.1 | S: Furthermore, there comes a time when a great storm gathers, | T: (2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen,
+an3.62:5.2 | S: and it unleashes a mighty flood | T: a great deluge takes place. When the great deluge takes place,
+an3.62:5.3 | S: that sweeps away villages, towns, and cities. | T: villages, towns, and cities are swept away. When villages, towns, and cities are being swept away,
+an3.62:5.4 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: there is sometimes an occasion when the mother finds her son and the son finds his mother.
+an3.62:5.5 | S: This is the second peril that doesn’t tear mothers and children apart. | T: This is the second peril when mother and son reconnect that the uninstructed worldling speaks of as a peril that separates mother and son.
+an3.62:6.1 | S: Furthermore, there comes a time of peril due to turmoil in the wilds, so the countryfolk mount their vehicles and flee everywhere. | T: (3) “Again, there comes a time of perilous turbulence in the wilderness, when the people of the countryside, mounted on their vehicles, flee on all sides. When there is perilous turbulence in the wilderness, and the people of the countryside, mounted on their vehicles, are fleeing on all sides,
+an3.62:6.2 | S: When this happens, sometimes a mother can find her child, and a child can find their mother. | T: there is sometimes an occasion when the mother finds her son and the son finds his mother.
+an3.62:6.3 | S: This is the third peril that doesn’t tear mothers and children apart. | T: This is the third peril when mother and son reconnect that the uninstructed worldling speaks of as a peril that separates mother and son.
+an3.62:6.4 | S: These are the three perils an unlearned ordinary person speaks of that don’t tear mothers and children apart. | T: “These are the three perils when mother and son reconnect that the uninstructed worldling speak of as perils that separate mother and son.
+an3.62:7.1 | S: There are three perils that tear mothers and children apart. | T: “There are, bhikkhus, these three perils that separate mother and son.
+an3.62:7.2 | S: What three? | T: What three?
+an3.62:7.3 | S: The perils of old age, sickness, and death. | T: The peril of old age, the peril of illness, and the peril of death.
+an3.62:7.4 | S: When a child is growing old, a mother doesn’t get her wish: | T: (1) “When the son is growing old, the mother cannot fulfill her wish: ‘Let me grow old,
+an3.62:7.5 | S: ‘Let me grow old, may my child not grow old!’ | T: but may my son not grow old!’
+an3.62:7.6 | S: When a mother is growing old, a child doesn’t get their wish: | T: And when the mother is growing old, the son cannot fulfill his wish: ‘Let me grow old,
+an3.62:7.7 | S: ‘Let me grow old, may my mother not grow old!’ | T: but may my mother not grow old!’
+an3.62:8.1 | S: When a child is sick, a mother doesn’t get her wish: | T: (2) “When the son has fallen ill, the mother cannot fulfill her wish:
+an3.62:8.2 | S: ‘Let me be sick, may my child not be sick!’ | T: ‘Let me fall ill, but may my son not fall ill!’
+an3.62:8.3 | S: When a mother is sick, a child doesn’t get their wish: | T: And when the mother has fallen ill, the son cannot fulfill his wish:
+an3.62:8.4 | S: ‘Let me be sick, may my mother not be sick!’ | T: ‘Let me fall ill, but may my mother not fall ill!’
+an3.62:9.1 | S: When a child is dying, a mother doesn’t get her wish: | T: (3) “When the son is dying, the mother cannot fulfill her wish:
+an3.62:9.2 | S: ‘Let me die, may my child not die!’ | T: ‘Let me die, but may my son not die!’
+an3.62:9.3 | S: When a mother is dying, a child doesn’t get their wish: | T: And when the mother is dying, the son cannot fulfill his wish:
+an3.62:9.4 | S: ‘Let me die, may my mother not die!’ | T: ‘Let me die, but may my mother not die!’
+an3.62:9.5 | S: These are the three perils that tear mothers and children apart. | T: “These are the three perils that separate mother and son.
+an3.62:10.1 | S: There is a path and a practice that leads to giving up and going beyond the three perils that don’t tear mothers and children apart, and the three perils that do tear mothers and children apart. | T: “There is a path, bhikkhus, there is a way that leads to the abandoning and overcoming of these three perils when mother and son reconnect and of these three perils that separate mother and son.
+an3.62:10.2 | S: What is that path and practice? | T: And what is the path and way?
+an3.62:10.3 | S: It is simply this noble eightfold path, that is: | T: It is just this noble eightfold path; that is,
+an3.62:10.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right intention, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.
+an3.62:10.5 | S: This is the path, this is the practice that leads to giving up and going beyond the three perils that don’t tear mothers and children apart, and the three perils that do tear mothers and children apart.” | T: This is the path and way that leads to the abandoning and overcoming of these three perils when mother and son reconnect and of these three perils that separate mother and son.”
+
+## an3.63
+an3.63:1.1 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants when he arrived at a village of the Kosalan brahmins named Venāgapura. | T: On one occasion the Blessed One was wandering on tour among the Kosalans together with a large Saṅgha of bhikkhus when he reached the Kosalan brahmin village named Venāgapura.
+an3.63:1.2 | S: The brahmins and householders of Venāgapura heard: | T: The brahmin householders of Venāgapura heard:
+an3.63:1.3 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Venāgapura. | T: “It is said that the ascetic Gotama, the son of the Sakyans who went forth from a Sakyan family, has arrived at Venāgapura.
+an3.63:1.4 | S: He has this good reputation: | T: Now a good report about that Master Gotama has circulated thus:
+an3.63:1.5 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘That Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed leader of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.
+an3.63:1.6 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: Having realized by his own direct knowledge this world with its devas, Māra, and Brahmā, this population with its ascetics and brahmins, its devas and humans, he makes it known to others.
+an3.63:1.7 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: He teaches a Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; he reveals a spiritual life that is perfectly complete and pure.’
+an3.63:1.8 | S: It’s good to see such perfected ones.” | T: Now it is good to see such arahants.”
+an3.63:2.1 | S: Then the brahmins and householders of Venāgapura went up to the Buddha. Before sitting down to one side, some bowed, some exchanged greetings and polite conversation, some held up their cupped palms toward the Buddha, some announced their name and clan, while some kept silent. Then the brahmin Vacchagotta of Venāgapura said to the Buddha: | T: Then the brahmin householders of Venāgapura approached the Blessed One. Some paid homage to the Blessed One and sat down to one side; some exchanged greetings with him and, when they had concluded their greetings and cordial talk, sat down to one side; some reverentially saluted him and sat down to one side; some pronounced their name and clan and sat down to one side; some kept silent and sat down to one side. The brahmin Vacchagotta of Venāgapura then said to the Blessed One:
+an3.63:3.1 | S: “It’s incredible, worthy Gotama, it’s amazing, | T: “It is astounding and amazing, Master Gotama,
+an3.63:3.2 | S: how your faculties are so very clear, and the complexion of your skin is pure and bright. | T: how Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.3 | S: It’s like a golden brown jujube in the autumn, | T: Just as a yellow jujube fruit in the autumn is pure and bright,
+an3.63:3.4 | P: evamevaṁ bhoto gotamassa vippasannāni indriyāni parisuddho chavivaṇṇo pariyodāto. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.5 | S: or a ripe palmyra fruit freshly plucked from the stalk, | T: Just as a palm fruit that has just been removed from its stalk is pure and bright,
+an3.63:3.6 | P: evamevaṁ bhoto gotamassa vippasannāni indriyāni parisuddho chavivaṇṇo pariyodāto. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.7 | S: or a pendant of Black Plum River gold, fashioned by a deft smith, well-wrought in the forge, and placed on a cream rug where it shines and glows and dazzles. | T: Just as an ornament of finest gold, well prepared by a skilled goldsmith and very skillfully wrought in the furnace, placed on red brocade, shines and beams and radiates,
+an3.63:3.8 | S: In the same way, your faculties are so very clear, and the complexion of your skin is pure and bright. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.9 | S: Surely the worthy Gotama gets when he wants, without trouble or difficulty, various kinds of high and luxurious bedding, such as: | T: “Whatever high and luxurious kinds of bedding there are—that is,
+an3.63:3.10 | S: sofas, couches, woolen covers—shag-piled, colorful, white, embroidered with flowers, quilted, embroidered with animals, double or single fringed—and silk covers studded with gems, as well as silken sheets, wollen carpets, rugs for elephants, horses, or chariots, black antelope hides and woven rugs, and spreads of fine deer hide, with a canopy above and red cushions at both ends.” | T: a sofa, a divan, a long-haired coverlet, a coverlet of diverse colors, a white coverlet, a woolen coverlet with floral designs, a quilt of cotton wool, a woolen coverlet ornamented with animal figures, a woolen coverlet with double borders, a woolen coverlet with a single border, a silken sheet studded with gems, a sheet made with silk threads and studded with gems, a dancer’s rug, an elephant rug, a horse rug, a chariot rug, a rug of antelope hide, a spread made of the hide of the kadali-deer, a bed with a canopy above and red bolsters at both ends—Master Gotama surely gains them at will, without trouble or difficulty.”
+an3.63:4.1 | S: “Brahmin, these various kinds of high and luxurious bedding | T: “Brahmin, those high and luxurious kinds of bedding are rarely obtained by those who have gone forth,
+an3.63:4.3 | S: are hard for renunciates to find. And even if they do get them, they’re not allowed. | T: and if they are obtained, they are not allowed.
+an3.63:5.1 | S: There are, brahmin, these three high and luxurious beds that I get these days when I want, without trouble or difficulty. | T: “But, brahmin, there are three kinds of high and luxurious beds that at present I gain at will, without trouble or difficulty.
+an3.63:5.2 | S: What three? | T: What three?
+an3.63:5.3 | S: The heavenly high and luxurious bed, the divine high and luxurious bed, and the noble high and luxurious bed. | T: The celestial high and luxurious bed, the divine high and luxurious bed, and the noble high and luxurious bed.
+an3.63:5.4 | S: These are the three high and luxurious beds that I get these days when I want, without trouble or difficulty.” | T: These are the three kinds of high and luxurious beds that at present I gain at will, without trouble or difficulty.”
+an3.63:6.1 | S: “But what, worthy Gotama, is the heavenly high and luxurious bed?” | T: (1) “But, Master Gotama, what is the celestial high and luxurious bed that at present you gain at will, without trouble or difficulty?”
+an3.63:6.2 | S: “Brahmin, when I am living supported by a village or town, I robe up in the morning and, taking my bowl and robe, enter the town or village for alms. | T: “Here, brahmin, when I am dwelling in dependence on a village or town, in the morning I dress, take my bowl and robe, and enter that village or town for alms.
+an3.63:6.3 | S: After the meal, on my return from almsround, I enter within a forest. | T: After the meal, when I have returned from the alms round, I enter a grove.
+an3.63:6.4 | S: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present. | T: I collect some grass or leaves that I find there into a pile and then sit down. Having folded my legs crosswise and straightened my body, I establish mindfulness in front of me.
+an3.63:6.5 | S: Quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Then, secluded from sensual pleasures, secluded from unwholesome states, I enter and dwell in the first jhāna, which consists of rapture and pleasure born of seclusion, accompanied by thought and examination.
+an3.63:6.6 | S: As the placing of the mind and keeping it connected are stilled, I enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the subsiding of thought and examination, I enter and dwell in the second jhāna, which has internal placidity and unification of mind and consists of rapture and pleasure born of concentration, without thought and examination.
+an3.63:6.7 | S: And with the fading away of rapture, I enter and remain in the third absorption, where I meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading away as well of rapture, I dwell equanimous and, mindful and clearly comprehending, I experience pleasure with the body; I enter and dwell in the third jhāna of which the noble ones declare: ‘He is equanimous, mindful, one who dwells happily.’
+an3.63:6.8 | S: With the giving up of pleasure and pain, and the disappearance of former happiness and sadness, I enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: With the abandoning of pleasure and pain, and with the previous passing away of joy and dejection, I enter and dwell in the fourth jhāna, neither painful nor pleasant, which has purification of mindfulness by equanimity.
+an3.63:6.9 | S: When I’m practicing like this, if I walk, at that time my walking is heavenly. | T: “Then, brahmin, when I am in such a state, if I walk back and forth, on that occasion my walking back and forth is celestial.
+an3.63:6.10 | S: When I’m practicing like this, if I stand, at that time my standing is heavenly. | T: If I am standing, on that occasion my standing is celestial.
+an3.63:6.11 | S: When I’m practicing like this, if I sit, at that time my sitting is heavenly. | T: If I am sitting, on that occasion my sitting is celestial.
+an3.63:6.12 | S: When I’m practicing like this, if I lie down, at that time my lying is heavenly. | T: If I lie down,
+an3.63:6.13 | S: This is the heavenly high and luxurious bed that I get these days when I want, without trouble or difficulty.” | T: on that occasion this is my celestial high and luxurious bed. This is that celestial high and luxurious bed that at present I can gain at will, without trouble or difficulty.”
+an3.63:7.1 | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It is astounding and amazing, Master Gotama!
+an3.63:7.2 | S: Who but the worthy Gotama could get such a heavenly high and luxurious bed when he wants, without trouble or difficulty? | T: Who else, apart from Master Gotama, can gain at will, without trouble or difficulty, such a celestial high and luxurious bed?
+an3.63:8.1 | S: But what, worthy Gotama, is the divine high and luxurious bed?” | T: (2) “But, Master Gotama, what is the divine high and luxurious bed that at present you gain at will, without trouble or difficulty?”
+an3.63:8.2 | S: “Brahmin, when I am living supported by a village or town, I robe up in the morning and, taking my bowl and robe, enter the town or village for alms. | T: “Here, brahmin, when I am dwelling in dependence on a village or town, in the morning I dress, take my bowl and robe, and enter that village or town for alms.
+an3.63:8.3 | S: After the meal, on my return from almsround, I enter within a forest. | T: After the meal, when I have returned from the alms round, I enter a grove.
+an3.63:8.4 | S: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present. | T: I collect some grass or leaves that I find there into a pile and then sit down. Having folded my legs crosswise and straightened my body, I establish mindfulness in front of me.
+an3.63:8.5 | S: I meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, I spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: Then I dwell pervading one quarter with a mind imbued with loving-kindness, likewise the second quarter, the third quarter, and the fourth quarter. Thus above, below, across, and everywhere, and to all as to myself, I dwell pervading the entire world with a mind imbued with loving-kindness, vast, exalted, measureless, without enmity, without ill will.

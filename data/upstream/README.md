@@ -160,8 +160,6 @@ files here are named.
 
 ## What's left
 
-- Take in the rest of Bodhi's second read, batches 047 on in `review/reread/`, as step 3 of
-  "Reviewing new and revised texts" says.
 - Teach `check-upstream.py` dhammatalks.org's pages, whose introductions and notes the segmenter
   writes apart from the text, so it can check Thanissaro's translation too.
 

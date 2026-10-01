@@ -1,0 +1,364 @@
+## sn36.11
+sn36.11:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain bhikkhu approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn36.11:1.2 | S: “Just now, sir, as I was in private retreat this thought came to mind. | T: “Here, venerable sir, while I was alone in seclusion, a reflection arose in my mind thus:
+sn36.11:1.3 | S: The Buddha has spoken of three feelings. | T: ‘Three feeling have been spoken of by the Blessed One:
+sn36.11:1.4 | S: Pleasant, painful, and neutral feeling. | T: pleasant feeling, painful feeling, neither-painful-nor-pleasant feeling.
+sn36.11:1.5 | S: These are the three feelings the Buddha has spoken of. | T: These three feelings have been spoken of by the Blessed One.
+sn36.11:1.6 | S: But the Buddha has also said: | T: But the Blessed One has said:
+sn36.11:1.7 | S: ‘Suffering includes whatever is felt.’ | T: “Whatever is felt is included in suffering.”
+sn36.11:1.8 | S: What was the Buddha referring to when he said this?” | T: Now with reference to what was this stated by the Blessed One?’”
+sn36.11:2.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+sn36.11:2.2 | S: I have spoken of these three feelings. | T: These three feelings have been spoken of by me:
+sn36.11:2.3 | S: Pleasant, painful, and neutral feeling. | T: pleasant feeling, painful feeling, neither-painful-nor-pleasant feeling.
+sn36.11:2.4 | S: These are the three feelings I have spoken of. | T: These three feelings have been spoken of by me.
+sn36.11:2.5 | S: But I have also said: | T: And I have also said:
+sn36.11:2.6 | S: ‘Suffering includes whatever is felt.’ | T: ‘Whatever is felt is included in suffering.’
+sn36.11:2.7 | S: When I said this I was referring to the impermanence of conditions, to the fact that conditions are | T: That has been stated by me with reference to the impermanence of formations.
+sn36.11:2.9 | S: liable to end, | T: That has been stated by me with reference to formations being subject to destruction …
+sn36.11:2.10 | S: vanish, | T: to formations being subject to vanishing …
+sn36.11:2.11 | S: fade away, | T: to formations being subject to fading away …
+sn36.11:2.12 | S: cease, | T: to formations being subject to cessation …
+sn36.11:2.13 | S: and perish. | T: to formations being subject to change.
+sn36.11:2.15 | S: But I have also explained the progressive cessation of activities. | T: “Then, bhikkhu, I have also taught the successive cessation of formations.
+sn36.11:2.16 | S: For someone who has attained the first absorption, speech has ceased. | T: For one who has attained the first jhana, speech has ceased.
+sn36.11:2.17 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have ceased. | T: For one who has attained the second jhana, thought and examination have ceased.
+sn36.11:2.18 | S: For someone who has attained the third absorption, rapture has ceased. | T: For one who has attained the third jhana, rapture has ceased.
+sn36.11:2.19 | S: For someone who has attained the fourth absorption, breathing has ceased. | T: For one who has attained the fourth jhana, in-breathing and out-breathing have ceased.
+sn36.11:2.20 | S: For someone who has attained the dimension of infinite space, the perception of form has ceased. | T: For one who has attained the base of the infinity of space, the perception of form has ceased.
+sn36.11:2.21 | S: For someone who has attained the dimension of infinite consciousness, the perception of the dimension of infinite space has ceased. | T: For one who has attained the base of the infinity of consciousness, the perception pertaining to the base of the infinity of space has ceased.
+sn36.11:2.22 | S: For someone who has attained the dimension of nothingness, the perception of the dimension of infinite consciousness has ceased. | T: For one who has attained the base of nothingness, the perception pertaining to the base of the infinity of consciousness has ceased.
+sn36.11:2.23 | S: For someone who has attained the dimension of neither perception nor non-perception, the perception of the dimension of nothingness has ceased. | T: For one who has attained the base of neither-perception-nor-nonperception, the perception pertaining to the base of nothingness has ceased.
+sn36.11:2.24 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have ceased. | T: For one who has attained the cessation of perception and feeling, perception and feeling have ceased.
+sn36.11:2.25 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have ceased. | T: For a bhikkhu whose taints are destroyed, lust has ceased, hatred has ceased, delusion has ceased.
+sn36.11:2.26 | S: And I have also explained the progressive settling of activities. | T: “Then, bhikkhu, I have also taught the successive subsiding of formations.
+sn36.11:2.27 | S: For someone who has attained the first absorption, speech has stilled. | T: For one who has attained the first jhana speech has subsided….
+sn36.11:2.28 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have stilled. … | T: (none)
+sn36.11:2.29 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have stilled. | T: For one who has attained the cessation of perception and feeling, perception and feeling have subsided.
+sn36.11:2.30 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have stilled. | T: For a bhikkhu whose taints are destroyed, lust has subsided, hatred has subsided, delusion has subsided.
+sn36.11:2.31 | S: There are these six levels of tranquility. | T: “There are, bhikkhu, these six kinds of tranquillization.
+sn36.11:2.32 | S: For someone who has attained the first absorption, speech has been tranquilized. | T: For one who has attained the first jhana, speech has been tranquillized.
+sn36.11:2.33 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have been tranquilized. | T: For one who has attained the second jhana, thought and examination have been tranquillized.
+sn36.11:2.34 | S: For someone who has attained the third absorption, rapture has been tranquilized. | T: For one who has attained the third jhana, rapture has been tranquillized.
+sn36.11:2.35 | S: For someone who has attained the fourth absorption, breathing has been tranquilized. | T: For one who has attained the fourth jhana, in-breathing and out-breathing have been tranquillized.
+sn36.11:2.36 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have been tranquilized. | T: For one who has attained the cessation of perception and feeling, perception and feeling have been tranquillized.
+sn36.11:2.37 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have been tranquilized.” | T: For a bhikkhu whose taints are destroyed, lust has been tranquillized, hatred has been tranquillized, delusion has been tranquillized.”
+
+## an8.34
+an8.34:1.1 | S: “Mendicants, when a field has eight factors a seed sown in it is not very fruitful or rewarding or productive. | T: “Bhikkhus, a seed sown in a field that possesses eight factors does not bring forth abundant fruits, its fruits are not delectable, and it does not yield a profit.
+an8.34:1.2 | S: What eight factors does it have? | T: What eight factors?
+an8.34:1.3 | S: It’s when a field has mounds and ditches. It has stones and gravel. It’s salty. It doesn’t have deep furrows. And it’s not equipped with water inlets, water outlets, irrigation channels, and boundaries. | T: “Here, (1) the field has mounds and ditches; (2) it contains stones and gravel; (3) it is salty; (4) it is not deeply furrowed; (5) it does not have inlets for the water to enter; (6) it does not have outlets for excess water to flow out; (7) it does not have irrigation channels; and (8) it does not have boundaries.
+an8.34:1.4 | S: When a field has these eight factors a seed sown in it is not fruitful or rewarding or productive. | T: A seed sown in a field that possesses these eight factors does not bring forth abundant fruits, its fruits are not delectable, and it does not yield a profit.
+an8.34:2.1 | S: In the same way, when an ascetic or brahmin has eight factors a gift given to them is not very fruitful or beneficial or brilliant or bountiful. | T: “So too, bhikkhus, a gift given to ascetics and brahmins who possess eight factors is not of great fruit and benefit, and it is not very brilliant or pervasive.
+an8.34:2.2 | S: What eight factors do they have? | T: What eight factors?
+an8.34:2.3 | S: It’s when an ascetic or brahmin has wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: Here, the ascetics and brahmins are of wrong view, wrong intention, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong concentration.
+an8.34:2.4 | S: When an ascetic or brahmin has these eight factors a gift given to them is not very fruitful or beneficial or brilliant or bountiful. | T: A gift given to ascetics and brahmins who possess these eight factors is not of great fruit and benefit, and it is not very brilliant or pervasive.
+an8.34:3.1 | S: When a field has eight factors a seed sown in it is very fruitful and rewarding and productive. | T: “Bhikkhus, a seed sown in a field that possesses eight factors brings forth abundant fruits, its fruits are delectable, and it yields a profit.
+an8.34:3.2 | S: What eight factors does it have? | T: What eight factors?
+an8.34:3.3 | S: It’s when a field doesn’t have mounds and ditches. It doesn’t have stones and gravel. It’s not salty. It has deep furrows. And it’s equipped with water inlets, water outlets, irrigation channels, and boundaries. | T: “Here, (1) the field does not have mounds and ditches; (2) it does not contain stones and gravel; (3) it is not salty; (4) it is deeply furrowed; (5) it has inlets for the water to enter; (6) it has outlets for excess water to flow out; (7) it has irrigation channels; and (8) it has boundaries.
+an8.34:3.4 | S: When a field has these eight factors a seed sown in it is very fruitful and rewarding and productive. | T: A seed sown in a field that possesses these eight factors brings forth abundant fruits, its fruits are delectable, and it yields a profit.
+an8.34:4.1 | S: In the same way, when an ascetic or brahmin has eight factors a gift given to them is very fruitful and beneficial and brilliant and bountiful. | T: “So too, bhikkhus, a gift given to ascetics and brahmins who possess eight factors is of great fruit and benefit, and it is extraordinarily brilliant and pervasive.
+an8.34:4.2 | S: What eight factors do they have? | T: What eight factors?
+an8.34:4.3 | S: It’s when an ascetic or brahmin has right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Here, the ascetics and brahmins are of right view, right intention, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.
+an8.34:4.4 | S: When an ascetic or brahmin has these eight factors a gift given to them is very fruitful and beneficial and brilliant and bountiful. | T: A gift given to ascetics and brahmins who possess these eight factors is of great fruit and benefit, and it is extraordinarily brilliant and pervasive.”
+an8.34:5.1 | S: When the field is excellent, | T: When the field is excellent,
+an8.34:5.2 | S: and the seed sown in it is excellent, | T: and the seed sown is excellent,
+an8.34:5.3 | S: and the rainfall is excellent, | T: and there is an excellent supply of rain,
+an8.34:5.4 | S: the crop of grain will be excellent. | T: the yield of grain is excellent.
+an8.34:6.1 | S: The absence of crop loss is excellent, | T: Its health is excellent;
+an8.34:6.2 | S: its growth is excellent, | T: its growth too is excellent;
+an8.34:6.3 | S: its maturation is excellent, | T: its maturation is excellent;
+an8.34:6.4 | S: and its fruit is excellent. | T: its fruit truly is excellent.
+an8.34:7.1 | S: So too, when you give excellent food | T: So too when one gives excellent food
+an8.34:7.2 | S: to those of excellent ethics, | T: to those accomplished in virtuous behavior,
+an8.34:7.3 | S: it leads to many excellences, | T: it arrives at several kinds of excellence,
+an8.34:7.4 | S: for what you did was excellent. | T: for what one has done is excellent.
+an8.34:8.1 | S: So if a person wants excellence, | T: Therefore if one desires excellence let a person here be accomplished;
+an8.34:8.2 | S: let them excel in this. | T: (none)
+an8.34:8.3 | S: You should frequent those with excellent wisdom, | T: one should resort to those accomplished in wisdom;
+an8.34:8.4 | S: so that your own excellence will flourish. | T: thus one’s own accomplishments flourish.
+an8.34:9.1 | S: Excelling in knowledge and conduct, | T: One accomplished in true knowledge and conduct,
+an8.34:9.2 | S: and having excellence of mind, | T: having gained accomplishment of mind,
+an8.34:9.3 | S: you perform excellent deeds, | T: performs action that is accomplished
+an8.34:9.4 | S: and gain excellent benefits. | T: and accomplishes the good.
+an8.34:10.1 | S: Truly knowing the world, | T: Having known the world as it is,
+an8.34:10.2 | S: and having attained excellence of view, | T: one should attain accomplishment in view.
+an8.34:10.3 | S: one who excels in mind proceeds, | T: One accomplished in mind advances
+an8.34:10.4 | S: relying on excellence in the path. | T: by relying on accomplishment in the path.
+an8.34:11.1 | S: Shaking off all stains, | T: Having rubbed off all stains,
+an8.34:11.2 | S: and attaining the excellence of extinguishment, | T: having attained nibbāna,
+an8.34:11.3 | S: you’re freed from all sufferings: | T: one is then freed from all sufferings:
+an8.34:11.4 | S: this is complete excellence.” | T: this is total accomplishment.
+
+## sn35.245
+sn35.245:1.1 | S: Then one mendicant went up to another mendicant and asked, | T: One bhikkhu approached another and asked him:
+sn35.245:1.2 | S: “Reverend, at what point is a mendicant’s vision well purified?” | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:1.3 | S: “When a mendicant truly understands the origin and disappearance of the six fields of contact, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the six bases for contact, in this way his vision is well purified.”
+sn35.245:2.1 | S: Not content with that answer, that mendicant went up to a series of other mendicants and received the following answers: | T: Then the first bhikkhu, dissatisfied with the other’s answer, approached another bhikkhu and asked him:
+sn35.245:2.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:2.3 | S: “When a mendicant truly understands the origin and disappearance of the five grasping aggregates, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the five aggregates subject to clinging, in this way his vision is well purified.”
+sn35.245:3.1 | P: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ etadavoca: | T: Again, the first bhikkhu, dissatisfied with the other’s answer, approached still another bhikkhu and asked him:
+sn35.245:3.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:3.3 | S: “When a mendicant truly understands the origin and disappearance of the four principal states, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the four great elements, in this way his vision is well purified.”
+sn35.245:4.1 | P: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ etadavoca: | T: Again, the first bhikkhu, dissatisfied with the other’s answer, approached still another bhikkhu and asked him:
+sn35.245:4.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:4.3 | S: “When a mendicant truly understands that everything that is liable to arise is liable to cease, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as it really is: ‘Whatever is subject to origination is all subject to cessation,’ in this way his vision is well purified.”
+sn35.245:5.1 | S: Not content with any of those answers, that mendicant went up to the Buddha and told him what had happened. Then he said to him, | T: Then the first bhikkhu, dissatisfied with the other’s answer, approached the Blessed One, reported everything that had happened, and asked:
+sn35.245:5.12 | S: “Sir, at what point is a mendicant’s vision well purified?” | T: “In what way, venerable sir, is a bhikkhu’s vision well purified?”
+sn35.245:6.1 | S: “Mendicant, suppose a person had never seen a parrot tree before. | T: “Bhikkhu, suppose there was a man who had never before seen a Kiṁ tree.
+sn35.245:6.2 | S: They’d go up to someone who had seen a parrot tree and ask them, | T: He might approach a man who had seen a Kiṁ tree and ask him:
+sn35.245:6.3 | S: ‘My man, what’s a parrot tree like?’ | T: ‘Sir, what is a Kiṁ tree like?’ The other might answer:
+sn35.245:6.4 | S: They’d say, | T: (none)
+sn35.245:6.5 | S: ‘A parrot tree is blackish, like a charred stump.’ | T: ‘Good man, a Kiṁ tree is blackish, like a charred stump.’
+sn35.245:6.6 | S: Now, at that time a parrot tree may well have been just as that person saw it. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.1 | S: Not content with that answer, that person would go up to a series of other people and receive the following answers: | T: “Then that man, dissatisfied with the other’s answer, might approach another man who had seen a kiṁsuka tree and ask him: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.4 | S: ‘A parrot tree is reddish, like a scrap of meat.’ | T: ‘Good man, a kiṁsuka tree is reddish, like a piece of meat.’
+sn35.245:7.5 | P: Tena kho pana, bhikkhu, samayena tādisovassa kiṁsuko yathāpi tassa purisassa dassanaṁ. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.6 | P: Atha kho so bhikkhu puriso asantuṭṭho tassa purisassa pañhaveyyākaraṇena, yenaññataro puriso kiṁsukassa dassāvī tenupasaṅkameyya; upasaṅkamitvā taṁ purisaṁ evaṁ vadeyya: | T: “Then that man, dissatisfied with the other’s answer, might approach still another man who had seen a kiṁsuka tree and ask him:
+sn35.245:7.7 | P: ‘kīdiso, bho purisa, kiṁsuko’ti? | T: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.9 | S: ‘A parrot tree has flaking bark and burst pods, like a lebbeck tree.’ | T: ‘Good man, a kiṁsuka tree has strips of bark hanging down and burst pods, like an acacia tree.’
+sn35.245:7.10 | P: Tena kho pana, bhikkhu, samayena tādisovassa kiṁsuko, yathāpi tassa purisassa dassanaṁ. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.11 | P: Atha kho so bhikkhu puriso asantuṭṭho tassa purisassa pañhaveyyākaraṇena, yenaññataro puriso kiṁsukassa dassāvī tenupasaṅkameyya; upasaṅkamitvā taṁ purisaṁ evaṁ vadeyya: | T: “Then that man, dissatisfied with the other’s answer, might approach still another man who had seen a kiṁsuka tree and ask him:
+sn35.245:7.12 | P: ‘kīdiso, bho purisa, kiṁsuko’ti? | T: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.14 | S: ‘A parrot tree has luxuriant, shady foliage, like a banyan.’ | T: ‘Good man, a kiṁsuka tree has plenty of leaves and foliage and gives abundant shade, like a banyan tree.’
+sn35.245:7.15 | S: Now, at each of those times a parrot tree may well have been just as those people saw them. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.16 | S: In the same way, those true persons each answered according to what they were focused on when their vision was well purified. | T: “So too, bhikkhu, those superior men answered as they were disposed in just the way their own vision had been well purified.
+sn35.245:8.1 | S: Suppose there was a king’s frontier citadel with fortified embankments, ramparts, and arches, and six gates. | T: “Suppose, bhikkhu, a king had a frontier city with strong ramparts, walls, and arches, and with six gates.
+sn35.245:8.2 | S: And it has a gatekeeper who is astute, competent, and intelligent. He keeps strangers out and lets known people in. | T: The gatekeeper posted there would be wise, competent, and intelligent; one who keeps out strangers and admits acquaintances.
+sn35.245:8.3 | S: A swift pair of messengers would arrive from the east and say to the gatekeeper, | T: A swift pair of messengers would come from the east and ask the gatekeeper:
+sn35.245:8.4 | S: ‘Worthy man, where is the lord of the city?’ | T: ‘Where, good man, is the lord of this city?’
+sn35.245:8.5 | S: They’d say, | T: He would reply:
+sn35.245:8.6 | S: ‘There he is, sirs, seated at the central square.’ | T: ‘He is sitting in the central square.’
+sn35.245:8.7 | S: Then that swift pair of messengers would deliver a message of truth to the lord of the city and depart the way they came. | T: Then the swift pair of messengers would deliver a message of reality to the lord of the city and leave by the route by which they had arrived.
+sn35.245:8.8 | S: A swift pair of messengers would come from the west … | T: Similarly, messengers would come from the west,
+sn35.245:8.9 | S: north … | T: from the north,
+sn35.245:8.10 | S: south … | T: from the south,
+sn35.245:8.14 | S: deliver a message of truth to the lord of the city and depart the way they came. | T: deliver their message, and leave by the route by which they had arrived.
+sn35.245:9.1 | S: I’ve made up this simile to make a point. | T: “I have made up this simile, bhikkhu, in order to convey a meaning.
+sn35.245:9.2 | S: And this is the point. | T: This is the meaning here:
+sn35.245:9.3 | S: ‘City’ is a term for this body made up of the four principal states, produced by mother and father, built up from rice and porridge, liable to impermanence, to wearing away and erosion, to breaking up and destruction. | T: ‘The city’: this is a designation for this body consisting of the four great elements, originating from mother and father, built up out of boiled rice and gruel, subject to impermanence, to being worn and rubbed away, to breaking apart and dispersal.
+sn35.245:9.4 | S: ‘Six gates’ is a term for the six interior sense fields. | T: ‘The six gates’: this is a designation for the six internal sense bases.
+sn35.245:9.5 | S: ‘Gatekeeper’ is a term for mindfulness. | T: ‘The gatekeeper’: this is a designation for mindfulness.
+sn35.245:9.6 | S: ‘A swift pair of messengers’ is a term for serenity and discernment. | T: ‘The swift pair of messengers’: this is a designation for serenity and insight.
+sn35.245:9.7 | S: ‘The lord of the city’ is a term for consciousness. | T: ‘The lord of the city’: this is designation for consciousness.
+sn35.245:9.8 | S: ‘The central square’ is a term for the four principal states: | T: ‘The central square’: this is a designation for the four great elements—
+sn35.245:9.9 | S: the elements of earth, water, fire, and air. | T: the earth element, the water element, the heat element, the air element.
+sn35.245:9.10 | S: ‘A message of truth’ is a term for extinguishment. | T: ‘A message of reality’: this is a designation for Nibbāna.
+sn35.245:9.11 | S: ‘The way they came’ is a term for the noble eightfold path, that is, | T: ‘The route by which they had arrived’: this is a designation for the Noble Eightfold Path; that is,
+sn35.245:9.12 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion.” | T: right view … right concentration.”
+
+## an4.21
+an4.21:1.1 | S: So I have heard. | T: Thus have I heard.
+an4.21:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an4.21:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an4.21:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+an4.21:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an4.21:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+an4.21:2.1 | S: “Mendicants, this one time, when I was first awakened, I was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: “Bhikkhus, on one occasion I was dwelling at Uruvelā, by the goatherds’ banyan tree on the bank of the Neranjarā River, just after I had attained full enlightenment.
+an4.21:2.2 | S: As I was in private retreat this thought came to mind: | T: Then, while I was alone in seclusion, a course of thought arose in my mind thus:
+an4.21:2.3 | S: ‘One without respect and reverence lives in suffering. | T: ‘It is painful to dwell without reverence and deference.
+an4.21:2.4 | S: What ascetic or brahmin should I honor and respect and rely on?’ | T: Now what ascetic or brahmin can I honor, respect, and dwell in dependence on?’
+an4.21:3.1 | S: Then it occurred to me: | T: “Then it occurred to me:
+an4.21:3.2 | S: ‘I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of ethics, if it were incomplete. | T: (1) ‘If my aggregate of virtuous behavior were incomplete, for the sake of completing it I would honor, respect, and dwell in dependence on another ascetic or brahmin.
+an4.21:3.3 | S: But I don’t see any other ascetic or brahmin in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who is more accomplished than myself in ethics, who I should honor and respect and rely on. | T: However, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, I do not see another ascetic or brahmin more accomplished in virtuous behavior than myself whom I could honor, respect, and dwell in dependence on.
+an4.21:4.1 | S: I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of immersion, if it were incomplete. | T: (2) “‘If my aggregate of concentration were incomplete, for the sake of completing it I would honor, respect, and dwell in dependence on another ascetic or brahmin.
+an4.21:4.2 | S: But I don’t see any other ascetic or brahmin … who is more accomplished than myself in immersion … | T: However … I do not see another ascetic or brahmin more accomplished in concentration than myself….
+an4.21:5.1 | S: I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of wisdom, if it were incomplete. | T: (3) “‘If my aggregate of wisdom were incomplete, for the sake of completing it I would honor, respect, and dwell in dependence on another ascetic or brahmin.
+an4.21:5.2 | S: But I don’t see any other ascetic or brahmin in this world … who is more accomplished than myself in wisdom … | T: However … I do not see another ascetic or brahmin more accomplished in wisdom than myself….
+an4.21:6.1 | S: I would honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of freedom, if it were incomplete. | T: (4) “‘If my aggregate of liberation were incomplete, for the sake of completing it I would honor, respect, and dwell in dependence on another ascetic or brahmin.
+an4.21:6.2 | S: But I don’t see any other ascetic or brahmin in this world … who is more accomplished than myself in freedom …’ | T: However, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, I do not see another ascetic or brahmin more accomplished in liberation than myself whom I could honor, respect, and dwell in dependence on.
+an4.21:7.1 | S: Then it occurred to me: | T: “It occurred to me:
+an4.21:7.2 | S: ‘Why don’t I honor and respect and rely on the same teaching to which I was awakened?’ | T: ‘Let me then honor, respect, and dwell in dependence only on this Dhamma to which I have become fully enlightened.’
+an4.21:8.1 | S: And then the divinity Sahampati, knowing my train of thought, vanished from the realm of divinity and appeared in front of me, as easily as a strong man would extend or contract his arm. | T: “Then Brahmā Sahampati, having known with his own mind the reflection in my mind, disappeared from the brahmā world and reappeared before me just as a strong man might extend his drawn-in arm or draw in his extended arm.
+an4.21:8.2 | S: He arranged his robe over one shoulder, knelt on his right knee, raised his cupped palms toward me, and said: | T: He arranged his upper robe over one shoulder, bent down with his right knee on the ground, reverently saluted me, and said:
+an4.21:8.3 | S: ‘That’s so true, Blessed One! That’s so true, Holy One! | T: ‘So it is, Blessed One! So it is, Fortunate One!
+an4.21:8.4 | S: All the perfected ones, the fully awakened Buddhas who lived in the past honored and respected and relied on this same teaching. | T: Bhante, those who were the Arahants, the Perfectly Enlightened Ones in the past—those Blessed Ones, too, honored, respected, and dwelled in dependence only on the Dhamma.
+an4.21:8.5 | S: All the perfected ones, the fully awakened Buddhas who will live in the future will honor and respect and rely on this same teaching. | T: Those who will be the Arahants, the Perfectly Enlightened Ones in the future—those Blessed Ones, too, will honor, respect, and dwell in dependence only on the Dhamma.
+an4.21:8.6 | S: May the Blessed One, who is the perfected one, the fully awakened Buddha at present, also honor and respect and rely on this same teaching.’ | T: Let the Blessed One, too, who is at present the Arahant, the Perfectly Enlightened One, honor, respect, and dwell in dependence only on the Dhamma.’
+an4.21:8.7 | S: That is what the divinity Sahampati said. | T: “This is what Brahmā Sahampati said.
+an4.21:8.8 | S: Then he went on to say: | T: Having said this, he further said this:
+an4.21:9.1 | S: ‘All Buddhas in the past, | T: “‘The perfect Buddhas of the past,
+an4.21:9.2 | S: the Buddhas of the future, | T: the Buddhas of the future,
+an4.21:9.3 | S: and the Buddha at present— | T: and the present Buddha
+an4.21:9.4 | S: destroyer of the sorrows of many— | T: who removes the sorrow of many:
+an4.21:10.1 | S: respecting the true teaching | T: (none)
+an4.21:10.2 | S: they did live, they do live, | T: all those dwelled, now dwell,
+an4.21:10.3 | S: and they also will live. | T: and in the future will dwell
+an4.21:10.4 | S: This is the nature of the Buddhas. | T: revering the good Dhamma. This is the nature of the Buddhas.
+an4.21:11.1 | S: Therefore someone who desires self-knowledge, | T: “‘Therefore one desiring the good,
+an4.21:11.2 | S: and aspires to greatness themselves, | T: aspiring for greatness,
+an4.21:11.3 | S: should respect the true teaching, | T: should revere the good Dhamma,
+an4.21:11.4 | S: remembering the instructions of the Buddhas.’ | T: recollecting the Buddhas’ teaching.’
+an4.21:12.1 | S: That is what the divinity Sahampati said. | T: “This was what Brahmā Sahampati said.
+an4.21:12.2 | S: Then he bowed and respectfully circled me, keeping me on his right side, before vanishing right there. | T: He then paid homage to me, and keeping me on his right, he disappeared right there.
+an4.21:12.3 | S: Then, knowing the request of the Divinity and what was suitable for myself, I honored and respected and relied on the same teaching to which I was awakened. | T: Then, having acknowledged Brahmā’s request and what was proper for myself, I honored, respected, and dwelled in dependence only on the Dhamma to which I had become fully enlightened.
+an4.21:12.4 | S: And since the Saṅgha has also achieved greatness, I also respect the Saṅgha.” | T: And now that the Saṅgha has acquired greatness, I have respect for the Saṅgha, too.”
+
+## an4.23
+an4.23:1.1 | S: “Mendicants, the world has been understood by the Realized One; | T: “Bhikkhus, the Tathāgata has fully awakened to the world;
+an4.23:1.2 | S: and he is detached from the world. | T: the Tathāgata is detached from the world.
+an4.23:1.3 | S: The origin of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the origin of the world;
+an4.23:1.4 | S: and he has given up the origin of the world. | T: the Tathāgata has abandoned the origin of the world.
+an4.23:1.5 | S: The cessation of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the cessation of the world;
+an4.23:1.6 | S: and he has realized the cessation of the world. | T: the Tathāgata has realized the cessation of the world.
+an4.23:1.7 | S: The practice that leads to the cessation of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the way leading to the cessation of the world;
+an4.23:1.8 | S: and he has developed the practice that leads to the cessation of the world. | T: the Tathāgata has developed the way leading to the cessation of the world.
+an4.23:2.1 | S: In this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—whatever is seen, heard, thought, known, attained, sought, and explored by the mind, all that has been understood by the Realized One. | T: (1) “Bhikkhus, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, whatever is seen, heard, sensed, cognized, reached, sought after, examined by the mind—all that the Tathāgata has fully awakened to;
+an4.23:2.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:3.1 | S: From the night when the Realized One awakens to the supreme perfect awakening until the night he becomes fully extinguished—in the element of extinguishment with no residue—everything he speaks, says, and expresses is real, not otherwise. | T: (2) “Bhikkhus, whatever the Tathāgata speaks, utters, or expounds in the interval between the night when he awakens to the unsurpassed perfect enlightenment and the night when he attains final nibbāna, all that is just so and not otherwise;
+an4.23:3.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:4.1 | S: The Realized One does as he says, and says as he does. | T: (3) “Bhikkhus, as the Tathāgata speaks, so he does; as he does, so he speaks.
+an4.23:4.2 | S: Since this is so, | T: Since he does as he speaks and speaks as he does,
+an4.23:4.3 | S: that’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:5.1 | S: In this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—the Realized One is the vanquisher, the unvanquished, the universal seer, the wielder of power. | T: (4) “Bhikkhus, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, the Tathāgata is the vanquisher, the unvanquished, the universal seer, the wielder of mastery;
+an4.23:5.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.”
+an4.23:6.1 | S: Directly knowing the whole world as it is, | T: Having directly known all the world— all in the world just as it is—
+an4.23:6.2 | S: and everything in it, | T: (none)
+an4.23:6.3 | S: he is detached from the whole world, | T: he is detached from all the world,
+an4.23:6.4 | S: uninvolved with the whole world. | T: disengaged from all the world.
+an4.23:7.1 | S: That attentive one is the vanquisher of all | T: He is the vanquisher of all,
+an4.23:7.2 | S: who is released from all ties. | T: the wise one who has untied all knots.
+an4.23:7.3 | S: He has reached ultimate peace: | T: He has reached the supreme peace,
+an4.23:7.4 | S: extinguishment, fearing nothing from any quarter. | T: nibbāna, inaccessible to fear.
+an4.23:8.1 | S: He is the Buddha, with defilements ended, | T: He is the Buddha, his taints destroyed,
+an4.23:8.2 | S: untroubled, with doubts cut off. | T: untroubled, all doubts cut off;
+an4.23:8.3 | S: He has attained the end of all deeds, | T: having reached the destruction of all kamma,
+an4.23:8.4 | S: freed with the ending of attachments. | T: he is liberated in the extinction of acquisitions.
+an4.23:9.1 | S: That Blessed One is the Buddha, | T: He is the Blessed One, the Buddha,
+an4.23:9.2 | S: he is the supreme lion, | T: he is the lion unsurpassed;
+an4.23:9.3 | S: in all the world with its gods, | T: in this world with its devas,
+an4.23:9.4 | S: he turns the divine wheel. | T: he set in motion the wheel of Brahmā.
+an4.23:10.1 | S: And so those gods and humans, | T: Thus those devas and human beings
+an4.23:10.2 | S: who have gone to the Buddha for refuge, | T: who have gone for refuge to the Buddha
+an4.23:10.3 | S: come together and revere him, | T: assemble and pay homage to him,
+an4.23:10.4 | S: great of heart and intrepid: | T: the great one free from diffidence:
+an4.23:11.1 | S: ‘Tamed, he is the best of tamers, | T: “Tamed, he is the best of tamers;
+an4.23:11.2 | S: peaceful, he is the seer among the peaceful, | T: peaceful, he is the seer among peace-bringers;
+an4.23:11.3 | S: liberated, he is the foremost of liberators, | T: freed, he is the chief of liberators;
+an4.23:11.4 | S: crossed over, he is the most excellent of guides across.’ | T: crossed over, he is the best of guides across.”
+an4.23:12.1 | S: And so they revere him, | T: Thus indeed they pay him homage,
+an4.23:12.2 | S: great of heart and intrepid. | T: the great one free from diffidence.
+an4.23:12.3 | S: In the world with its gods, | T: In this world together with its devas,
+an4.23:12.4 | S: he has no rival.” | T: there is no one who can rival you.
+
+## sn4.24
+sn4.24:1.1 | S: So I have heard. | T: Thus have I heard.
+sn4.24:1.2 | S: At one time the Buddha was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: On one occasion the Blessed One was dwelling at Uruvela on the bank of the river Nerañjara at the foot of the Goatherd’s Banyan Tree.
+sn4.24:1.3 | S: Now at that time Māra the Wicked had been pursuing the Buddha for seven years hoping to find a vulnerability without success. | T: Now on that occasion Mara the Evil One had been following the Blessed One for seven years, seeking to gain access to him but without success.
+sn4.24:1.4 | S: Then Māra the Wicked went up to the Buddha and addressed him in verse: | T: Then Mara the Evil One approached the Blessed One and addressed him in verse:
+sn4.24:2.1 | S: “Are you swamped by sorrow <j>that you meditate in the forest? | T: “Is it because you are sunk in sorrow That you meditate in the woods?
+sn4.24:2.2 | S: Have you lost a fortune, or do you long for one? | T: Because you’ve lost wealth or pine for it,
+sn4.24:2.3 | S: Or perhaps you’ve committed <j>some crime in the village? | T: Or committed some crime in the village?
+sn4.24:2.4 | S: Why don’t you get too close to people? | T: Why don’t you make friends with people?
+sn4.24:2.5 | S: And why does no one get close to you?” | T: Why don’t you form any intimate ties?”
+sn4.24:3.1 | S: “I’ve dug out the root of sorrow completely. | T: The Blessed One: “Having dug up entirely the root of sorrow,
+sn4.24:3.2 | S: I practice absorption free of guilt or sorrow. | T: Guiltless, I meditate free from sorrow.
+sn4.24:3.3 | S: I’ve cut off all greed and muttered prayer for future lives. | T: Having cut off all greedy urge for existence,
+sn4.24:3.4 | S: Undefiled, I practice absorption, <j>O kinsman of the negligent!” | T: I meditate taintless, O kinsman of the negligent!”
+sn4.24:4.1 | S: “The things they call ‘mine’, | T: Mara: “That of which they say ‘It’s mine,’
+sn4.24:4.2 | S: and those who say ‘it’s mine’: | T: And those who speak in terms of ‘mine’—
+sn4.24:4.3 | S: if your mind remains there, | T: If your mind exists among these,
+sn4.24:4.4 | S: you won’t escape me, ascetic!” | T: You won’t escape me, ascetic.”
+sn4.24:5.1 | S: “The things they speak of aren’t mine; | T: The Blessed One: “That which they speak of is not mine,
+sn4.24:5.2 | S: I’m not someone who speaks like that. | T: I’m not one of those who speak of mine.
+sn4.24:5.3 | S: So know this, Wicked One: | T: You should know thus, O Evil One:
+sn4.24:5.4 | S: you won’t even see the path I take.” | T: Even my path you will not see.”
+sn4.24:6.1 | S: “If you’ve discovered the path | T: Mara: “If you have discovered the path,
+sn4.24:6.2 | S: that’s safe, and leads to freedom from death, | T: The secure way leading to the Deathless,
+sn4.24:6.3 | S: go and walk that path alone— | T: Be off and walk that path alone;
+sn4.24:6.4 | S: why teach it to anyone else?” | T: What’s the point of instructing others?”
+sn4.24:7.1 | S: “Those crossing to the far shore | T: The Blessed One: “Those people going to the far shore
+sn4.24:7.2 | S: ask what’s beyond the domain of Death. | T: Ask what lies beyond Death’s realm.
+sn4.24:7.3 | S: When I’m asked, I explain to them | T: When asked, I explain to them
+sn4.24:7.4 | S: the truth without attachments.” | T: The truth without acquisitions.”
+sn4.24:8.1 | S: “Sir, suppose there was a lotus pond not far from a town or village, | T: Mara: “Suppose, venerable sir, not far from a village or a town there was a lotus pond in which a crab was living.
+sn4.24:8.2 | S: and a crab lived there. | T: (none)
+sn4.24:8.3 | S: Then several boys or girls would leave the town or village and go to the pond, where they’d pull out the crab and put it on solid ground. | T: Then a group of boys and girls would leave the village or town and go to the pond. They would pull the crab out from the water and set it down on high ground.
+sn4.24:8.4 | S: Whenever that crab extended a claw, those boys or girls would snap, crack, and break it off with a stick or a stone. | T: Then, whenever that crab would extend one of its claws, those boys and girls would cut it off, break it, and smash it to bits with sticks and stones.
+sn4.24:8.5 | S: And when that crab’s claws had all been snapped, cracked, and broken off it wouldn’t be able to return down into that lotus pond. | T: Thus, when all its claws have been cut off, broken, and smashed to bits, that crab would be unable to return to that pond.
+sn4.24:8.6 | S: In the same way, sir, the Buddha has snapped, cracked, and broken off all my twists, ducks, and dodges. | T: So too, venerable sir, all those distortions, manoeuvres, and contortions of mine have been cut off, broken, and smashed to bits by the Blessed One.
+sn4.24:8.7 | S: Now I’m not able to approach the Buddha again in hopes of finding a vulnerability.” | T: Now, venerable sir, I am unable to approach the Blessed One again seeking to gain access to him.”
+sn4.24:8.8 | S: Then Māra the Wicked recited these verses of disappointment in the Buddha’s presence: | T: Then Mara the Evil One, in the presence of the Blessed One, recited these verses of disappointment:
+sn4.24:9.1 | S: “A crow once circled a stone | T: “There was a crow that walked around
+sn4.24:9.2 | S: that looked like a lump of fat. | T: A stone that looked like a lump of fat.
+sn4.24:9.3 | S: ‘Perhaps I’ll find something tender,’ it thought, | T: ‘Let’s find something tender here,’ he thought,
+sn4.24:9.4 | S: ‘perhaps there’s something tasty.’ | T: ‘Perhaps there’s something nice and tasty.’
+sn4.24:10.1 | S: But finding nothing tasty, | T: But because he found nothing tasty there,
+sn4.24:10.2 | S: the crow left that place. | T: The crow departed from that spot.
+sn4.24:10.3 | S: Like the crow that pecked the stone, | T: Just like the crow that attacked the stone,
+sn4.24:10.4 | S: I leave Gotama disappointed.” | T: We leave Gotama disappointed.”
+
+## mn26
+mn26:1.1 | S: So I have heard. | T: Thus have I heard.
+mn26:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn26:2.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then, when it was morning, the Blessed One dressed, and taking his bowl and outer robe, went into Sāvatthī for alms.
+mn26:2.2 | S: Then several mendicants went up to Venerable Ānanda and said to him, | T: Then a number of bhikkhus went to the venerable Ānanda and said to him:
+mn26:2.3 | S: “Reverend, it’s been a long time since we’ve heard a Dhamma talk from the Buddha. | T: “Friend Ānanda, it is long since we heard a talk on the Dhamma from the Blessed One’s own lips.
+mn26:2.4 | S: It would be good if we got to hear a Dhamma talk from the Buddha.” | T: It would be good if we could get to hear such a talk, friend Ānanda.”—
+mn26:2.5 | S: “Well then, reverends, go to the brahmin Rammaka’s hermitage. | T: “Then let the venerable ones go to the brahmin Rammaka’s hermitage.
+mn26:2.6 | S: Hopefully you’ll get to hear a Dhamma talk from the Buddha.” | T: Perhaps you will get to hear a talk on the Dhamma from the Blessed One’s own lips.”—
+mn26:2.7 | S: “Yes, reverend,” they replied. | T: “Yes, friend,” they replied.
+mn26:3.1 | S: Then, after the meal, on his return from almsround, the Buddha addressed Ānanda, | T: Then, when the Blessed One had wandered for alms in Sāvatthī and had returned from his almsround, after his meal he addressed the venerable Ānanda:
+mn26:3.2 | S: “Come, Ānanda, let’s go to the stilt longhouse of Migāra’s mother in the Eastern Monastery for the day’s meditation.” | T: “Ānanda, let us go to the Eastern Park, to the Palace of Migāra’s Mother, for the day’s abiding.”—
+mn26:3.3 | S: “Yes, sir,” Ānanda replied. | T: “Yes, venerable sir,” the venerable Ānanda” replied.
+mn26:3.4 | S: So the Buddha went with Ānanda to the Eastern Monastery for the day’s meditation. | T: Then the Blessed One went with the venerable Ānanda to the Eastern Park, the Palace of Migāra’s Mother, for the day’s abiding.
+mn26:3.5 | S: In the late afternoon the Buddha came out of retreat and addressed Ānanda, | T: Then, when it was evening, the Blessed One rose from meditation and addressed the venerable Ānanda:
+mn26:3.6 | S: “Come, Ānanda, let’s go to the eastern gate to bathe.” | T: “Ānanda, let us go to the Eastern Bathing Place to bathe.”—
+mn26:3.7 | S: “Yes, sir,” Ānanda replied. | T: “Yes, venerable sir,” the venerable Ānanda replied.
+mn26:3.8 | S: So the Buddha went with Ānanda to the eastern gate to bathe. | T: Then the Blessed One went with the venerable Ānanda to the Eastern Bathing Place to bathe.
+mn26:3.9 | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: When he was finished, he came up out of the water and stood in one robe drying his limbs.
+mn26:3.10 | S: Then Ānanda said to the Buddha, | T: Then the venerable Ānanda said to the Blessed One:
+mn26:3.11 | S: “Sir, the hermitage of the brahmin Rammaka is nearby. | T: “Venerable sir, the brahmin Rammaka’s hermitage is nearby.
+mn26:3.12 | S: It’s so delightful, | T: That hermitage is agreeable and delightful.
+mn26:3.13 | S: so lovely. | T: (none)
+mn26:3.14 | S: Please visit it out of sympathy.” | T: Venerable sir, it would be good if the Blessed One went there out of compassion.”
+mn26:3.15 | S: The Buddha consented with silence. | T: The Blessed One consented in silence.
+mn26:4.1 | S: He went to the brahmin Rammaka’s hermitage. | T: Then the Blessed One went to the brahmin Rammaka’s hermitage.
+mn26:4.2 | S: Now at that time several mendicants were sitting together in the hermitage talking about the teaching. | T: Now on that occasion a number of bhikkhus were sitting together in the hermitage discussing the Dhamma.
+mn26:4.3 | S: The Buddha stood outside the door waiting for the talk to end. | T: The Blessed One stood outside the door waiting for their discussion to end.
+mn26:4.4 | S: When he knew the talk had ended he cleared his throat and knocked on the door-panel. | T: When he knew that it was over, he coughed and knocked,
+mn26:4.5 | S: The mendicants opened the door for the Buddha, | T: and the bhikkhus opened the door for him.
+mn26:4.6 | S: and he entered the hermitage, where he sat down on the seat spread out | T: The Blessed One entered, sat down on a seat made ready,
+mn26:4.7 | S: and addressed the mendicants: | T: and addressed the bhikkhus thus:
+mn26:4.8 | S: “Mendicants, what were you sitting talking about just now? What conversation was left unfinished?” | T: “Bhikkhus, for what discussion are you sitting together here now? And what was your discussion that was interrupted?”
+mn26:4.9 | S: “Sir, our unfinished discussion on the teaching was about the Buddha himself when the Buddha arrived.” | T: “Venerable sir, our discussion on the Dhamma that was interrupted was about the Blessed One himself. Then the Blessed One arrived.”
+mn26:4.10 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn26:4.11 | S: It’s appropriate for gentlemen like you, who have gone forth out of faith from the lay life to homelessness, to sit together and talk about the teaching. | T: It is fitting for you clansmen who have gone forth out of faith from the home life into homelessness to sit together to discuss the Dhamma.
+mn26:4.12 | S: When you’re sitting together you should do one of two things: | T: When you gather together, bhikkhus, you should do either of two things:
+mn26:4.13 | S: discuss the teachings or keep noble silence. | T: hold discussion on the Dhamma or maintain noble silence.
+mn26:5.1 | S: Mendicants, there are these two quests: | T: Two Kinds of Search “Bhikkhus, there are these two kinds of search:
+mn26:5.2 | S: the noble quest and the ignoble quest. | T: the noble search and the ignoble search.
+mn26:5.3 | S: And what is the ignoble quest? | T: And what is the ignoble search?
+mn26:5.4 | S: It’s when someone who is themselves liable to be reborn seeks what is also liable to be reborn. Themselves liable to grow old, fall sick, die, sorrow, and become corrupted, they seek what is also liable to these things. | T: Here someone being himself subject to birth seeks what is also subject to birth; being himself subject to ageing, he seeks what is also subject to ageing; being himself subject to sickness, he seeks what is also subject to sickness; being himself subject to death, he seeks what is also subject to death; being himself subject to sorrow, he seeks what is also subject to sorrow; being himself subject to defilement, he seeks what is also subject to defilement.
+mn26:6.1 | S: And what should be described as liable to be reborn? | T: “And what may be said to be subject to birth?
+mn26:6.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, elephants and cattle, and gold and currency are liable to be reborn. | T: Wife and children are subject to birth, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares, gold and silver are subject to birth.
+mn26:6.3 | S: These attachments are liable to be reborn. | T: These acquisitions are subject to birth;
+mn26:6.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to being reborn, seeks what is also liable to be reborn. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to birth, seeks what it also subject to birth.
+mn26:7.1 | S: And what should be described as liable to grow old? | T: “And what may be said to be subject to ageing?
+mn26:7.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, elephants and cattle, and gold and currency are liable to grow old. | T: Wife and children are subject to ageing, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares, gold and silver are subject to ageing.
+mn26:7.3 | S: These attachments are liable to grow old. | T: These acquistions are subject to ageing;
+mn26:7.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to grow old, seeks what is also liable to grow old. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to ageing, seeks what is also subject to ageing.
+mn26:8.1 | S: And what should be described as liable to fall sick? | T: “And what may be said to be subject to sickness?
+mn26:8.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, and elephants and cattle are liable to fall sick. | T: Wife and children are subject to sickness, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares are subject to sickness.
+mn26:8.3 | S: These attachments are liable to fall sick. | T: These acquisitions are subject to sickness;
+mn26:8.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to falling sick, seeks what is also liable to fall sick. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to sickness, seeks what is also subject to sickness.
+mn26:9.1 | S: And what should be described as liable to die? | T: “And what may be said to be subject to death?
+mn26:9.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, and elephants and cattle are liable to die. | T: Wife and children are subject to death, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares are subject to death.
+mn26:9.3 | S: These attachments are liable to die. | T: These acquisitions are subject to death;
+mn26:9.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to die, seeks what is also liable to die. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to death, seeks what is also subject to death.
+mn26:10.1 | S: And what should be described as liable to sorrow? | T: “And what may be said to be subject to sorrow?
+mn26:10.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, and elephants and cattle are liable to sorrow. | T: Wife and children are subject to sorrow, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares are subject to sorrow.
+mn26:10.3 | S: These attachments are liable to sorrow. | T: These acquisitions are subject to sorrow;
+mn26:10.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to sorrow, seeks what is also liable to sorrow. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to sorrow, seeks what is also subject to sorrow.
+mn26:11.1 | S: And what should be described as liable to corruption? | T: “And what may be said to be subject to defilement?
+mn26:11.2 | S: Partners and children, male and female bondservants, goats and sheep, chickens and pigs, elephants and cattle, and gold and currency are liable to corruption. | T: Wife and children are subject to defilement, men and women slaves, goats and sheep, fowl and pigs, elephants, cattle, horses, and mares, gold and silver are subject to defilement.
+mn26:11.3 | S: These attachments are liable to corruption. | T: These acquisitions are subject to defilement;
+mn26:11.4 | S: Someone who is tied, infatuated, and attached to such things, themselves liable to corruption, seeks what is also liable to corruption. | T: and one who is tied to these things, infatuated with them, and utterly committed to them, being himself subject to defilement, seeks what is also subject to defilement.
+mn26:11.5 | S: This is the ignoble quest. | T: This is the ignoble search.
+mn26:12.1 | S: And what is the noble quest? | T: “And what is the noble search?
+mn26:12.2 | S: It’s when someone who is themselves liable to be reborn, understanding the drawbacks in being liable to be reborn, seeks that which is free of rebirth, the supreme sanctuary from the yoke, extinguishment. Themselves liable to grow old, fall sick, die, sorrow, and become corrupted, understanding the drawbacks in these things, they seek that which is free of old age, sickness, death, sorrow, and corruption, the supreme sanctuary from the yoke, extinguishment. | T: Here someone being himself subject to birth, having understood the danger in what is subject to birth, seeks the unborn supreme security from bondage, Nibbāna; being himself subject to ageing, having understood the danger in what is subject to ageing, he seeks the unageing supreme security from bondage, Nibbāna; being himself subject to sickness, having understood the danger in what is subject to sickness, he seeks the unailing supreme security from bondage, Nibbāna; being himself subject to death, having understood the danger in what is subject to death, he seeks the deathless supreme security from bondage, Nibbāna; being himself subject to sorrow, having understood the danger in what is subject to sorrow, he seeks the sorrowless supreme security from bondage, Nibbāna; being himself subject to defilement, having understood the danger in what is subject to defilement, he seeks the undefiled supreme security from bondage, Nibbāna.
+mn26:12.3 | S: This is the noble quest. | T: This is the noble search.
+mn26:13.1 | S: Mendicants, before my awakening—when I was still unawakened but intent on awakening—I too, being liable to be reborn, sought what is also liable to be reborn. Myself liable to grow old, fall sick, die, sorrow, and become corrupted, I sought what is also liable to these things. | T: The Search for Enlightenment “Bhikkhus, before my enlightenment, while I was still only an unenlightened Bodhisatta, I too, being myself subject to birth, sought what was also subject to birth; being myself subject to ageing, sickness, death, sorrow, and defilement, I sought what was also subject to ageing, sickness, death, sorrow, and defilement.
+mn26:13.2 | S: Then it occurred to me: | T: Then I considered thus: ‘Why, being myself subject to birth,
+mn26:13.3 | S: ‘Why do I, being liable to be reborn, grow old, fall sick, sorrow, die, and become corrupted, seek things that have the same nature? | T: do I seek what is also subject to birth? Why, being myself subject to ageing, sickness, death, sorrow, and defilement, do I seek what is also subject to ageing, sickness, death, sorrow, and defilement?
+mn26:13.4 | S: Why don’t I seek that which is free of rebirth, old age, sickness, death, sorrow, and corruption, the supreme sanctuary from the yoke, extinguishment?’ | T: Suppose that, being myself subject to birth, having understood the danger in what is subject to birth, I seek the unborn supreme security from bondage, Nibbāna. Suppose that, being myself subject to ageing, sickness, death, sorrow, and defilement, having understood the danger in what is subject to ageing, sickness, death, sorrow, and defilement, I seek the unageing, unailing, deathless, sorrowless, and undefiled supreme security from bondage, Nibbāna.’
+mn26:14.1 | S: Some time later, while still with pristine black hair, blessed with youth, in the prime of life—though my mother and father wished otherwise, weeping with tearful faces—I shaved off my hair and beard, dressed in ocher robes, and went forth from the lay life to homelessness. | T: “Later, while still young, a black-haired young man endowed with the blessing of youth, in the prime of life, though my mother and father wished otherwise and wept with tearful faces, I shaved off my hair and beard, put on the yellow robe, and went forth from the home life into homelessness.

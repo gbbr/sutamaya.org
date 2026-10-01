@@ -199,7 +199,10 @@
  "an10.60:13.15": "ntrating the mind, I will breathe out.’",
  "an10.60:13.17": "ting impermanence, I will breathe out.’",
  "an10.60:13.18": "ating fading away, I will breathe out.’",
- "an10.8:2.8": "e pleasant dwellings in this very life,",
+ "an10.8:2.8": {
+  "after": " pleasant dwellings in this very life …",
+  "placed": true
+ },
  "an10.8:3.1": " having entered upon it, dwells in it?’",
  "an10.9:1.9": " transcending forms, that are formless,",
  "an3.15:2.9": "e. Is the new pair of wheels finished?’",
@@ -626,7 +629,10 @@
  "sn56.43:4.5": "t by the conflagration of death, nor burnt by the conflagration of sorrow, lamentation, pain, displeasure, and despair.",
  "sn56.46:3.6": "ng, tumble into the darkness of death, tumble into the darkness of sorrow, lamentation, pain, displeasure, and despair.",
  "sn56.46:4.5": "tumble into the darkness of death, nor tumble into the darkness of sorrow, lamentation, pain, displeasure, and despair.",
- "an3.65:31.3": "? When non-delusion arises in a person, is it for his welfare or for his harm?”",
+ "an3.65:31.3": {
+  "after": "and happiness for a long time?”\n“Yes, Bhante.”\n(3) “What do you think, Kālāmas?",
+  "placed": true
+ },
  "sn1.16:2.1": "eings,\nThe noble path does not appear.”",
  "sn35.9:1.4": "o speak of the present. Seeing thus … …",
  "sn45.3:3.2": {
@@ -635,7 +641,10 @@
  "sn56.43:3.5": "ns that lead to death, generate volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.",
  "sn56.43:4.4": "hat lead to death, nor generate volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.",
  "an3.65:31.4": "overcome by delusion, his mind not obsessed by it, does not destroy life … nor does he encourage others to do likewise.",
- "sn1.16:1.4": "t, torpor after meals:\nBecause of this,",
+ "sn1.16:1.4": {
+  "after": "ls:\nBecause of this, here among beings,",
+  "placed": true
+ },
  "sn1.16:2.2": "eings,\nThe noble path does not appear.”\n“Drowsiness, lethargy, lazy stretching,",
  "sn45.3:2.4": "and cultivate the Noble Eightfold Path.",
  "sn56.46:3.5": "ns that lead to death, generate volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.",
@@ -1080,8 +1089,14 @@
   "after": "er robe and bowl, as the good bhikkhus.",
   "placed": true
  },
- "an8.13:1.12": "nd he does not agitate other horses. (5) He reveals his tricks, ploys, gambits,",
- "an8.13:2.11": " he does not agitate other bhikkhus. (5) He reveals his tricks, ploys, gambits,",
+ "an8.13:1.12": {
+  "after": "wiles as they really are to his trainer",
+  "placed": true
+ },
+ "an8.13:2.11": {
+  "after": "the Teacher or to his wise fellow monks",
+  "placed": true
+ },
  "an8.14:13.2": "a person.\n(4) “Again, when the bhikkhus are reproving a bhikkhu for an offense,",
  "an8.17:1.2": "hus, a woman binds a man in eight ways.",
  "an8.18:1.2": "hus, a man binds a woman in eight ways.",
@@ -3344,7 +3359,10 @@
  "mn9:13.2": "”\nThe Four Noble Truths\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question:",
  "mn9:20.2": "amma.”\nAgeing and Death\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question:",
  "mn9:28.2": "his true Dhamma.”\nBeing\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question:",
- "mn9:29.2": " Dhamma.”\nBeing\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:29.2": {
+  "after": "ved at this true Dhamma.”\nBeing\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn9:32.2": " true Dhamma.”\nClinging\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question:",
  "mn9:33.3": "y leading to the cessation of clinging,",
  "mn9:36.2": "s true Dhamma.”\nCraving\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question:",
@@ -4212,15 +4230,15 @@
  "sn56.49:1.5": "Sineru, the king of mountains, is more.",
  "sn56.9:1.2": "ot engage in disputatious talk, saying:",
  "an10.14:9.4": {
-  "after": "n him, his mind inclines to ardor, effort, perseverance, and striving. Since his mind inclines to ardor … and striving,",
+  "after": "fidence in him, his mind inclines to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:11.4": {
-  "after": "ection, thirst, passion, and craving for them, his mind inclines to ardor, effort, perseverance, and striving. Since his mind inclines to ardor … and striving,",
+  "after": "aving for them, his mind inclines to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:12.6": {
-  "after": "evas … his mind inclines to ardor, effort, perseverance, and striving. Since his mind inclines to ardor … and striving,",
+  "after": "rder of devas … his mind inclines to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.17:11.2": "ves as a protector.\n“Bhikkhus, live under a protector, not without a protector.",
@@ -4615,21 +4633,48 @@
  "mn82:41.17": "your present forces you can conquer it.",
  "mn82:42.17": "rying, ‘Ah me! Alas! Our love is dead!’",
  "mn82:42.24": ".\nWhile his heirs take over his wealth,",
- "mn9:10.2": "mma.”\nNutriment\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
- "mn9:14.2": "ur Noble Truths\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
- "mn9:21.2": "geing and Death\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:10.2": {
+  "after": "at this true Dhamma.”\nNutriment\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
+ "mn9:14.2": {
+  "after": " Dhamma.”\nThe Four Noble Truths\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
+ "mn9:21.2": {
+  "after": " true Dhamma.”\nAgeing and Death\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn9:25.2": "rue Dhamma?”— “There might be, friends.",
- "mn9:33.2": "amma.”\nClinging\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:33.2": {
+  "after": " at this true Dhamma.”\nClinging\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn9:35.2": "leading to the cessation of clinging…he here and now makes an end of suffering.",
- "mn9:37.2": "hamma.”\nCraving\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:37.2": {
+  "after": "d at this true Dhamma.”\nCraving\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn9:41.2": "d at this true Dhamma.”\nFeeling\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
  "mn9:45.2": "d at this true Dhamma.”\nContact\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
  "mn9:49.2": " true Dhamma.”\nThe Sixfold Base\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
- "mn9:53.2": "ity-Materiality\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
- "mn9:57.2": "”\nConsciousness\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:53.2": {
+  "after": " Dhamma.”\nMentality-Materiality\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
+ "mn9:57.2": {
+  "after": "his true Dhamma.”\nConsciousness\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn9:61.2": "t this true Dhamma.”\nFormations\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
- "mn9:65.1": "mma.”\nIgnorance\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
- "mn9:69.2": "as unwavering confidence in the Dhamma, and has arrived at this true Dhamma?”—“There might be, friends.\n“When, friends,",
+ "mn9:65.1": {
+  "after": "at this true Dhamma.”\nIgnorance\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
+ "mn9:69.2": {
+  "after": " in the Dhamma, and has arrived at this true Dhamma?”—“There might be, friends.",
+  "placed": true
+ },
  "mn95:9.9": "lessing of youth, in the prime of life.",
  "mn95:9.12": "me virtue, possessing wholesome virtue.",
  "mn95:9.14": "a is a teacher of the teachers of many.",
@@ -5069,23 +5114,23 @@
   "placed": true
  },
  "an10.14:2.4": {
-  "after": " not incline to ardor … … and striving,",
+  "after": "in him, his mind does not incline to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:3.6": {
-  "after": "hem, ill disposed toward them, his mind does not incline to ardor, effort, perseverance, and striving. Since his mind does not incline to ardor … and striving,",
+  "after": "d them, his mind does not incline to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:4.4": {
-  "after": "passion, and craving for them, his mind does not incline to ardor, effort, perseverance, and striving. Since his mind does not incline to ardor … and striving,",
+  "after": "r them, his mind does not incline to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:5.6": {
-  "after": " in a certain order of devas … his mind does not incline to ardor, effort, perseverance, and striving. Since his mind does not incline to ardor … and striving,",
+  "after": "devas … his mind does not incline to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.14:10.6": {
-  "after": " his fellow monks … well disposed toward them, his mind inclines to ardor, effort, perseverance, and striving. Since his mind inclines to ardor … and striving,",
+  "after": "ed toward them, his mind inclines to ardor, effort, perseverance, and striving.",
   "placed": true
  },
  "an10.216:4.3": {
@@ -6138,7 +6183,10 @@
  "an8.46:6.4": "own to: … Then those deities, thinking:",
  "dn1:2.24.5": "olesome, my declaration might be false.",
  "dn1:2.26.9": "ld do so, I might not be able to reply.",
- "dn15:26.2": "s not describe it thus: ‘My self is immaterial and infinite.’\n“Therein, Ānanda,",
+ "dn15:26.2": {
+  "after": ", Ānanda, one who does not describe self as having material form and as limited",
+  "placed": true
+ },
  "dn2:41.3": "hamma, he gains faith in the Tathāgata.",
  "dn2:98.7": " as it really is: ‘This is suffering’ …",
  "dn2:102.3": "his king, bhikkhus, has ruined himself;",
@@ -6207,7 +6255,10 @@
  "sn11.13:13.2": {
   "empty": "up"
  },
- "sn12.17:5.8": "the cessation of volitional formations,",
+ "sn12.17:5.8": {
+  "after": "mes cessation of volitional formations;",
+  "placed": true
+ },
  "sn12.18:3.3": "’ or ‘Are they created by another? ’ or",
  "sn12.32:12.3": "ings no longer remains present in you?’—",
  "sn12.32:14.1": "r is felt is included within suffering.",
@@ -6992,12 +7043,12 @@
   "placed": true
  },
  "an3.62:2.2": {
-  "after": " worldling speaks.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen,",
+  "after": "orldling speaks.\n(2) “Again, there comes a time when a great rain cloud arises.",
   "placed": true,
   "own": true
  },
  "an3.62:5.2": {
-  "after": "es mother and son.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen,",
+  "after": " mother and son.\n(2) “Again, there comes a time when a great rain cloud arises.",
   "placed": true,
   "own": true
  },
@@ -7332,7 +7383,7 @@
   "own": true
  },
  "an4.7:1.3": {
-  "after": "hamma, adorn the Saṅgha. What four?\n(1)",
+  "after": "he Dhamma, adorn the Saṅgha. What four?",
   "placed": true,
   "own": true
  },
@@ -8181,7 +8232,7 @@
   "own": true
  },
  "dn15:24.11": {
-  "after": "s self as immaterial and infinite either describes such a self (as existing only) in the present or he describes such a self (as existing) there in the future,",
+  "after": " and limited underlies this.\n“One who describes self as immaterial and infinite",
   "placed": true
  },
  "dn15:26.3": {
@@ -15863,5 +15914,410 @@
   "after": " the steep precipice off Paṭibhana Peak",
   "placed": true,
   "own": true
+ },
+ "an10.14:2.3": {
+  "after": "m and does not place confidence in him.",
+  "placed": true
+ },
+ "an10.14:4.3": {
+  "after": "asures, not devoid of desire, affection, thirst, passion, and craving for them.",
+  "placed": true
+ },
+ "an10.14:5.5": {
+  "after": "oth, the pleasure of sleep … he lives the spiritual life aspiring for rebirth in a certain order of devas, thinking: ‘By this virtuous behavior, observance, austerity, or spiritual life I will be a deva or one in the retinue of the devas.’",
+  "placed": true
+ },
+ "an10.14:9.3": {
+  "after": "about him and places confidence in him.",
+  "placed": true
+ },
+ "an10.14:11.3": {
+  "after": " pleasures, devoid of desire, affection, thirst, passion, and craving for them.",
+  "placed": true
+ },
+ "an10.14:12.5": {
+  "after": " pleasure of sleep…. He does not live the spiritual life aspiring for rebirth in a certain order of devas, thinking: ‘By this virtuous behavior, observance, austerity, or spiritual life I will be a deva or one in the retinue of the devas.’",
+  "placed": true
+ },
+ "an10.21:3.4": {
+  "after": "sible and the impossible as impossible.",
+  "placed": true
+ },
+ "an10.21:4.2": {
+  "after": "t in terms of possibilities and causes.",
+  "placed": true
+ },
+ "an10.21:5.2": {
+  "after": " really is the ways leading everywhere.",
+  "placed": true
+ },
+ "an10.21:6.2": {
+  "after": "with its numerous and diverse elements.",
+  "placed": true
+ },
+ "an10.21:7.2": {
+  "after": "iversity in the dispositions of beings.",
+  "placed": true
+ },
+ "an10.21:8.2": {
+  "after": " faculties of other beings and persons.",
+  "placed": true
+ },
+ "an10.21:9.2": {
+  "after": "entrations, and meditative attainments.",
+  "placed": true
+ },
+ "an10.21:10.2": {
+  "after": " abodes with their aspects and details.",
+  "placed": true
+ },
+ "an10.21:11.2": {
+  "after": "gs fare in accordance with their kamma.",
+  "placed": true
+ },
+ "an10.21:12.2": {
+  "after": "aving entered upon it, he dwells in it.",
+  "placed": true
+ },
+ "an10.212:4.10": {
+  "after": "iew and has a correct perspective thus:",
+  "placed": true
+ },
+ "an10.8:2.3": {
+  "after": "rned, but not a speaker on the Dhamma …",
+  "placed": true
+ },
+ "an10.8:2.4": {
+  "after": " but not one who frequents assemblies …",
+  "placed": true
+ },
+ "an10.8:2.5": {
+  "after": "tly teaches the Dhamma to an assembly …",
+  "placed": true
+ },
+ "an10.8:2.6": {
+  "after": ", but not an expert on the discipline …",
+  "placed": true
+ },
+ "an10.8:2.7": {
+  "after": "weller who resorts to remote lodgings …",
+  "placed": true
+ },
+ "an3.62:1.4": {
+  "after": "these three perils that separate mother and son. What three?\n(1) “There comes a time when a great conflagration arises.",
+  "placed": true
+ },
+ "an3.62:1.5": {
+  "after": "ese three perils that separate mother and son. What three?\n(1) “There comes a time when a great conflagration arises. When the great conflagration has arisen, it burns up villages, towns, and cities.",
+  "placed": true
+ },
+ "an3.62:2.3": {
+  "after": "uninstructed worldling speaks.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen, a great deluge takes place.",
+  "placed": true
+ },
+ "an3.62:2.4": {
+  "after": " uninstructed worldling speaks.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen, a great deluge takes place. When the great deluge takes place, villages, towns, and cities are swept away.",
+  "placed": true
+ },
+ "an3.62:3.2": {
+  "after": "aks.\n(3) “Again, there comes a time of perilous turbulence in the wilderness, when the people of the countryside, mounted on their vehicles, flee on all sides.",
+  "placed": true
+ },
+ "an3.62:4.4": {
+  "after": "peaks of as perils that separate mother and son. What three?\n(1) “There comes a time when a great conflagration arises.",
+  "placed": true
+ },
+ "an3.62:4.5": {
+  "after": "aks of as perils that separate mother and son. What three?\n(1) “There comes a time when a great conflagration arises. When the great conflagration has arisen, it burns up villages, towns, and cities.",
+  "placed": true
+ },
+ "an3.62:5.3": {
+  "after": "that separates mother and son.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen, a great deluge takes place.",
+  "placed": true
+ },
+ "an3.62:5.4": {
+  "after": " that separates mother and son.\n(2) “Again, there comes a time when a great rain cloud arises. When the great rain cloud has arisen, a great deluge takes place. When the great deluge takes place, villages, towns, and cities are swept away.",
+  "placed": true
+ },
+ "an3.62:6.2": {
+  "after": "son.\n(3) “Again, there comes a time of perilous turbulence in the wilderness, when the people of the countryside, mounted on their vehicles, flee on all sides.",
+  "placed": true
+ },
+ "an3.62:7.5": {
+  "after": "ld, the mother cannot fulfill her wish:",
+  "placed": true
+ },
+ "an3.62:7.7": {
+  "after": "g old, the son cannot fulfill his wish:",
+  "placed": true
+ },
+ "an3.63:4.3": {
+  "after": "ose high and luxurious kinds of bedding",
+  "placed": true
+ },
+ "an3.63:6.13": {
+  "after": "is my celestial high and luxurious bed.",
+  "placed": true
+ },
+ "an3.63:8.13": {
+  "after": "is is my divine high and luxurious bed.",
+  "placed": true
+ },
+ "an3.63:10.13": {
+  "after": "his is my noble high and luxurious bed.",
+  "placed": true
+ },
+ "an3.64:1.6": {
+  "after": "Rājagaha: “I have learned the Dhamma of the ascetics who follow the Sakyan son.",
+  "placed": true
+ },
+ "an3.64:2.5": {
+  "after": "Rājagaha: ‘I have learned the Dhamma of the ascetics who follow the Sakyan son.",
+  "placed": true
+ },
+ "an3.64:3.4": {
+  "after": "n saying: ‘I have learned the Dhamma of the ascetics who follow the Sakyan son.",
+  "placed": true
+ },
+ "an3.64:11.3": {
+  "after": "would only howl and yelp like a jackal,",
+  "placed": true
+ },
+ "an3.65:30.1": {
+  "after": "k falsehood; nor does he encourage others to do likewise. Will that lead to his welfare and happiness for a long time?”",
+  "placed": true
+ },
+ "an3.65:31.1": {
+  "after": "h another’s wife, or speak falsehood; nor does he encourage others to do likewise. Will that lead to his welfare and happiness for a long time?”\n“Yes, Bhante.”",
+  "placed": true
+ },
+ "an3.65:31.2": {
+  "after": "and happiness for a long time?”\n“Yes, Bhante.”\n(2) “What do you think, Kālāmas?",
+  "placed": true
+ },
+ "an4.23:6.2": {
+  "after": ".”\nHaving directly known all the world—",
+  "placed": true,
+  "own": true
+ },
+ "an4.37:4.3": {
+  "after": "ting carefully, a bhikkhu consumes food",
+  "placed": true
+ },
+ "an4.6:1.11": {
+  "after": ", amazing accounts, and questions-and-answers—but he does not understand the meaning of what he has learned; he does not understand the Dhamma; and he does not practice in accordance with the Dhamma.",
+  "placed": true
+ },
+ "an4.6:2.5": {
+  "after": "… questions-and-answers—but having understood the meaning of what he has learned, and having understood the Dhamma, he practices in accordance with the Dhamma.",
+  "placed": true
+ },
+ "an4.6:3.5": {
+  "after": "is, of the discourses … questions-and-answers—but he does not understand the meaning of what he has learned; he does not understand the Dhamma; and he does not practice in accordance with the Dhamma.",
+  "placed": true
+ },
+ "an4.6:4.5": {
+  "after": "… questions-and-answers—and having understood the meaning of what he has learned, and having understood the Dhamma, he practices in accordance with the Dhamma.",
+  "placed": true
+ },
+ "an4.7:1.7": {
+  "after": "male lay follower who is competent, disciplined, self-confident, learned, an expert on the Dhamma, practicing in accordance with the Dhamma, adorns the Saṅgha.",
+  "placed": true
+ },
+ "an5.26:4.2": {
+  "after": "rned it, but he recites the Dhamma in detail as he has heard it and learned it.",
+  "placed": true
+ },
+ "an5.57:1.9": {
+  "empty": "up"
+ },
+ "an8.1:4.2": {
+  "after": "one arouses love toward just one being,",
+  "placed": true
+ },
+ "an8.11:11.2": {
+  "after": "s a hen with eight, ten, or twelve eggs",
+  "placed": true
+ },
+ "an8.11:18.6": {
+  "after": "e came the knowledge: ‘It’s liberated.’",
+  "placed": true
+ },
+ "an8.12:5.3": {
+  "after": "said to occur “on a second occasion.” …",
+  "placed": true
+ },
+ "an8.12:20.4": {
+  "after": "des his disciples’? For I am repelled by bodily, verbal, and mental misconduct;",
+  "placed": true,
+  "own": true
+ },
+ "an8.34:8.2": {
+  "after": "nt.\nTherefore if one desires excellence",
+  "placed": true,
+  "own": true
+ },
+ "dn15:2.2": {
+  "after": "condition?’ one should say: ‘They are.’",
+  "placed": true
+ },
+ "dn15:2.4": {
+  "after": " one is asked: ‘Is birth due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.6": {
+  "after": " is asked: ‘Is existence due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.8": {
+  "after": "e is asked: ‘Is clinging due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.10": {
+  "after": "ne is asked: ‘Is craving due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.12": {
+  "after": "ne is asked: ‘Is feeling due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.14": {
+  "after": "ne is asked: ‘Is contact due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.16": {
+  "after": "Is mentality-materiality due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:2.18": {
+  "after": "asked: ‘Is consciousness due to a specific condition?’ one should say: ‘It is.’",
+  "placed": true
+ },
+ "dn15:26.4": {
+  "after": " and as limited does not underlie this.",
+  "placed": true,
+  "own": true
+ },
+ "dn15:26.7": {
+  "after": "and as infinite does not underlie this.",
+  "placed": true,
+  "own": true
+ },
+ "dn15:26.10": {
+  "after": "ial and limited does not underlie this.",
+  "placed": true,
+  "own": true
+ },
+ "dn15:26.11": {
+  "after": "ited does not underlie this.\n“One who describes self as immaterial and infinite",
+  "placed": true
+ },
+ "dn15:31.5": {
+  "after": "solutely and utterly without remainder,",
+  "placed": true
+ },
+ "mn26:13.3": {
+  "after": "and defilement. Then I considered thus:",
+  "placed": true
+ },
+ "mn26:25.5": {
+  "after": "teacher? Whose Dhamma do you profess? ’",
+  "placed": true
+ },
+ "mn26:25.8": {
+  "after": "wer of all,\nUnsullied among all things,",
+  "placed": true
+ },
+ "mn26:25.12": {
+  "after": "teacher, and one like me\nExists nowhere",
+  "placed": true
+ },
+ "mn26:25.13": {
+  "after": "ere in all the world\nWith all its gods,",
+  "placed": true
+ },
+ "mn26:32.6": {
+  "after": "the hunter can do with him as he likes,",
+  "placed": true
+ },
+ "mn46:3.4": {
+  "after": " follow things that should be followed.",
+  "placed": true
+ },
+ "mn46:4.4": {
+  "after": "low things that should not be followed.",
+  "placed": true
+ },
+ "mn9:10.1": {
+  "after": "hamma.”\nNutriment\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—",
+  "placed": true
+ },
+ "mn9:14.1": {
+  "after": "Four Noble Truths\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—",
+  "placed": true
+ },
+ "mn9:21.1": {
+  "after": "\nAgeing and Death\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—",
+  "placed": true
+ },
+ "mn9:29.1": {
+  "after": "ue Dhamma.”\nBeing\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—",
+  "placed": true
+ },
+ "mn9:33.1": {
+  "after": "Dhamma.”\nClinging\nSaying, “Good, friend,” the bhikkhus delighted and rejoiced in the venerable Sāriputta’s words. Then they asked him a further question: “But, friend, might there be another way in which a noble disciple is one of right view…and has arrived at this true Dhamma?”—",
+  "placed": true
+ },
+ "sn1.36:5.2": {
+  "after": "evatā:\n“Foolish people devoid of wisdom",
+  "placed": true
+ },
+ "sn1.49:1.2": {
+  "after": "A devatā:\n“Those who are stingy here in the world,",
+  "placed": true
+ },
+ "sn1.49:3.2": {
+  "after": "we to understand it?”\nThe Blessed One:\n“Those who are stingy here in the world,",
+  "placed": true
+ },
+ "sn1.49:5.4": {
+  "after": "tever the fools may expect from others,",
+  "placed": true,
+  "own": true
+ },
+ "sn1.50:13.1": {
+  "after": "lager,\nIn the past you were my friend.”",
+  "placed": true,
+  "own": true
+ },
+ "sn1.50:13.2": {
+  "after": ".”\nSuch was the meeting that took place",
+  "placed": true
+ },
+ "sn12.17:4.7": {
+  "after": " suffering?’ you say: ‘It is not that I do not know and see suffering, Kassapa.",
+  "placed": true
+ },
+ "sn12.65:7.2": {
+  "after": "ould see an ancient path, an ancient road travelled upon by people in the past.",
+  "placed": true,
+  "own": true
+ },
+ "sn12.65:7.3": {
+  "after": " people in the past. He would follow it",
+  "placed": true
+ },
+ "sn35.243:4.8": {
+  "after": "called, friends, a bhikkhu who is corrupted amidst forms cognizable by the eye,",
+  "placed": true
+ },
+ "sn35.245:6.4": {
+  "after": "sk him: ‘Sir, what is a Kiṁ tree like?’",
+  "placed": true,
+  "own": true
+ },
+ "sn46.52:4.2": {
+  "after": "ected the statement of those wanderers.",
+  "placed": true
  }
 }
