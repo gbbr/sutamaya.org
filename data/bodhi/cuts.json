@@ -320,7 +320,10 @@
  },
  "mn108:10.7": "our refuge after the Blessed One has gone,” and whom you now have recourse to?’",
  "mn108:24.5": "d venerate one who should be venerated.",
- "mn108:26.7": "des with his mind obsessed by ill will,",
+ "mn108:26.7": {
+  "after": "bsessed by ill will, a prey to ill will…",
+  "placed": true
+ },
  "mn11:5.11": "om hate, not for one affected by hate.’—",
  "mn11:5.14": "ion, not for one affected by delusion.’—",
  "mn11:5.26": ", not for one who favours and opposes.’—",
@@ -356,8 +359,14 @@
  "mn2:7.6": "ardly perplexed about the present thus:",
  "mn2:12.2": "us, should be abandoned by restraining?",
  "mn20:7.2": "on to stilling the thought-formation of those thoughts, there still arise in him evil unwholesome thoughts connected with desire, with hate, and with delusion,",
- "mn20:7.9": "outh, a bhikkhu beats down, constrains,",
- "mn20:8.10": "d his mind becomes steadied internally,",
+ "mn20:7.9": {
+  "after": " constrains, and crushes mind with mind…",
+  "placed": true
+ },
+ "mn20:8.10": {
+  "after": "wholesome thoughts are abandoned in him…",
+  "placed": true
+ },
  "mn22:15.6": " my self.’ He regards feeling thus: ‘This is mine, this I am, this is my self.’",
  "mn22:16.4": "e regards feeling thus: ‘This is not mine, this I am not, this is not my self.’",
  "mn22:37.1": "ne, I say, is untraceable here and now.",
@@ -400,7 +409,10 @@
  "mn70:6.6": "them: “The Teacher calls you, friends.”",
  "mn75:23.18": "s dirty soiled garment when he told me:",
  "mn75:26.3": "ter Gotama! Magnificent, Master Gotama!",
- "mn77:8.7": "econd quality of the Blessed One…Again,",
+ "mn77:8.7": {
+  "after": "s the second quality of the Blessed One…",
+  "placed": true
+ },
  "mn77:23.3": " Perceiving form internally, one sees forms externally, limited, fair and ugly;",
  "mn77:23.6": " the first base for transcendence . Perceiving form internally, one sees forms externally, immeasurable, fair and ugly;",
  "mn77:23.9": " perceiving form internally, one sees forms externally, limited, fair and ugly;",
@@ -1325,13 +1337,22 @@
  "mn149:10.11": "ght—occur in him yoked evenly together.",
  "mn19:3.6": " my own affliction,’ it subsided in me;",
  "mn19:3.8": "affliction of both,’ it subsided in me;",
- "mn19:23.3": "ded in the first jhāna…as Sutta 4, §§23—",
+ "mn19:23.3": {
+  "after": " in the first jhāna…as Sutta 4, §§23—32…",
+  "placed": true
+ },
  "mn19:25.7": "ng their good, welfare, and protection,",
  "mn2:6.6": "unfit for attention that he attends to.",
  "mn2:8.5": " or the view ‘I perceive self with self’ arises in him as true and established;",
  "mn2:8.6": "the view ‘I perceive not-self with self’ arises in him as true and established;",
- "mn20:3.7": "e…his mind becomes steadied internally,",
- "mn20:4.9": "khu examines the danger in those thoughts…his mind becomes steadied internally,",
+ "mn20:3.7": {
+  "after": "r sign connected with what is wholesome…",
+  "placed": true
+ },
+ "mn20:4.9": {
+  "after": "u examines the danger in those thoughts…",
+  "placed": true
+ },
  "mn22:10.2": "us, some misguided men learn the Dhamma—",
  "mn22:15.7": " self.’ He regards perception thus: ‘This is mine, this I am, this is my self.’",
  "sn35.151:6.9": "mfort.\n“Bhikkhus, this holy life is lived without students and without a teacher. A bhikkhu who has students and a teacher dwells in suffering, not in comfort.",
@@ -1383,7 +1404,10 @@
  "sn35.74:19.1": " is mine, this I am, this is my self’?”—",
  "sn35.75:16.1": " is mine, this I am, this is my self’?”—",
  "sn35.82:2.2": "ir, it is said, ‘the world, the world.’",
- "sn35.87:8.3": "r-consciousness thus…I regard the mind,",
+ "sn35.87:8.3": {
+  "after": " I am not, this is not my self.’ I regard the ear, ear-consciousness, and things cognizable with ear-consciousness thus…",
+  "placed": true
+ },
  "sn35.91:1.10": " feeling arises with eye-contact as condition … he should not conceive that, should not conceive in that, should not conceive from that, should not conceive, ‘That is mine.’ For whatever one conceives, bhikkhus, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise.",
  "sn35.91:3.6": "feeling arises with mind-contact as condition … he should not conceive that, should not conceive in that, should not conceive from that, should not conceive, ‘That is mine.’ For whatever one conceives, bhikkhus, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise.",
  "sn35.95:10.2": {
@@ -1484,7 +1508,10 @@
   "after": "ursue the practice of torturing others.",
   "placed": true
  },
- "mn60:38.3": "g or a well-to-do brahmin… as Sutta 51,",
+ "mn60:38.3": {
+  "after": " a well-to-do brahmin… as Sutta 51, §10…",
+  "placed": true
+ },
  "mn60:39.2": "practice of torturing himself and does not torment others or pursue the practice of torturing others—the one who, since he torments neither himself nor others,",
  "mn60:56.2": "tice of torturing himself and who does not torment others or pursue the practice of torturing others—the one who, since he torments neither himself nor others,",
  "mn60:57.3": "ter Gotama! Magnificent, Master Gotama!",
@@ -1512,7 +1539,10 @@
  "mn70:8.11": "e in such a kind of pleasant feeling’?”—",
  "mn70:26.2": "g by his disciples would not be proper:",
  "mn75:11.5": "etinue of the gods of the Thirty-three;",
- "mn75:14.11": "as in §12…Since I take delight in that,",
+ "mn75:14.11": {
+  "after": "ly when I lived the home life…as in §12…",
+  "placed": true
+ },
  "mn75:17.2": "g his body over a burning charcoal pit;",
  "mn75:22.11": " disappointment?”—“Yes, Master Gotama.”—",
  "mn77:2.2": "eacocks’ Sanctuary, the wanderers’ park—",
@@ -1956,12 +1986,21 @@
  "mn28:3.4": "e five aggregates affected by clinging?",
  "mn28:6.2": "t\n“What, friends, is the earth element?",
  "mn28:11.2": "t\n“What, friends, is the water element?",
- "mn28:15.1": "even this external water element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change, what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’\n“So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—",
+ "mn28:15.1": {
+  "after": "n this external water element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change, what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’\n“So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—10…",
+  "placed": true
+ },
  "mn28:16.2": "nt\n“What, friends, is the fire element?",
- "mn28:18-20.2": " even this external fire element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change, what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’\n“So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—",
+ "mn28:18-20.2": {
+  "after": "en this external fire element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change, what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’\n“So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—10…",
+  "placed": true
+ },
  "mn28:21.2": "ent\n“What, friends, is the air element?",
  "mn29:1.3": "; it was soon after Devadatta had left.",
- "mn29:5.11": "h that attainment of virtue, but his intention is not fulfilled…Being diligent,",
+ "mn29:5.11": {
+  "after": "tention is not fulfilled…Being diligent, he achieves the attainment of virtue. He is pleased with that attainment of virtue, but his intention is not fulfilled…",
+  "placed": true
+ },
  "mn31:11-13.2": "attained while abiding diligent, ardent, and resolute.”\n“Good, good, Anuruddha.",
  "mn31:16.2": ", which we have attained by surmounting the preceding abiding, by making that abiding subside.”\n“Good, good, Anuruddha.",
  "mn31:17.2": "e…which we have attained by surmounting the preceding abiding, by making that abiding subside.”\n“Good, good, Anuruddha.",
@@ -4512,7 +4551,10 @@
  "mn108:26.13": "ours doubt within, he meditates, premeditates, out-meditates, and mismeditates.",
  "mn11:5.2": "ou and us?’\n“Wanderers of other sects who ask thus may be answered in this way:",
  "mn11:6.4": ", are opposed to the view of non-being.",
- "mn117:35.14": " abolished…In one of right deliverance,",
+ "mn117:35.14": {
+  "after": "knowledge, wrong knowledge is abolished…",
+  "placed": true
+ },
  "mn118:9.1": "ith a travel-bag to see—such is this Sangha of bhikkhus, such is this assembly.",
  "mn118:18.3": " he understands: ‘I breathe out short.’",
  "mn118:26.1": "y on that occasion a bhikkhu abides contemplating feelings as feelings, ardent, fully aware, and mindful, having put away covetousness and grief for the world.",
@@ -5497,7 +5539,9 @@
   "placed": true
  },
  "mn19:4-5.2": {
-  "empty": "stay"
+  "after": "lute, a thought of ill will arose in me…",
+  "placed": true,
+  "own": true
  },
  "mn2:9.2": {
   "after": "Bhikkhus, a well-taught noble disciple,",
@@ -5557,7 +5601,9 @@
   "own": true
  },
  "mn32:11.7": {
-  "empty": "stay"
+  "after": "to the venerable Ānanda…Friend Ānanda, the Gosinga Sāla-tree Wood is delightful…",
+  "placed": true,
+  "own": true
  },
  "mn36:33.3": {
   "after": "id food—some boiled rice and porridge.’",
@@ -5661,7 +5707,9 @@
   "placed": true
  },
  "mn75:11.2": {
-  "empty": "stay"
+  "after": "imself with forms cognizable by the eye…",
+  "placed": true,
+  "own": true
  },
  "mn75:19.8": {
   "after": "derful, Master Gotama, it is marvellous",
@@ -5676,7 +5724,9 @@
   "own": true
  },
  "mn77:24.7": {
-  "empty": "stay"
+  "after": "ṇa…Another contemplates the blue-kasiṇa…",
+  "placed": true,
+  "own": true
  },
  "mn8:3.1": {
   "after": "e sat down at one side and said to him:",
@@ -6234,14 +6284,38 @@
   "empty": "up"
  },
  "mn135:17.11": " way, student, that leads to stupidity,",
- "mn148:17-21.7": "s: ‘This is mine, this I am, this is my self.’\nii–vi “One regards the ear thus:",
- "mn148:17-21.8": "is my self.’…One regards the nose thus:",
- "mn148:17-21.9": " thus: ‘This is mine, this I am, this is my self.’…One regards the tongue thus:",
- "mn148:17-21.10": "is my self.’…One regards the body thus:",
- "mn148:23-27.7": "not mine, this I am not, this is not my self.’\nii–vi “One regards the ear thus:",
- "mn148:23-27.8": "ot my self.’…One regards the nose thus:",
- "mn148:23-27.9": " is not mine, this I am not, this is not my self.’…One regards the tongue thus:",
- "mn148:23-27.10": "ot my self.’…One regards the body thus:",
+ "mn148:17-21.7": {
+  "after": ".’\nii–vi “One regards the ear thus: ‘This is mine, this I am, this is my self.’…",
+  "placed": true
+ },
+ "mn148:17-21.8": {
+  "after": "y self.’…One regards the nose thus: ‘This is mine, this I am, this is my self.’…",
+  "placed": true
+ },
+ "mn148:17-21.9": {
+  "after": "self.’…One regards the tongue thus: ‘This is mine, this I am, this is my self.’…",
+  "placed": true
+ },
+ "mn148:17-21.10": {
+  "after": "y self.’…One regards the body thus: ‘This is mine, this I am, this is my self.’…",
+  "placed": true
+ },
+ "mn148:23-27.7": {
+  "after": "e regards the ear thus: ‘This is not mine, this I am not, this is not my self.’…",
+  "placed": true
+ },
+ "mn148:23-27.8": {
+  "after": " regards the nose thus: ‘This is not mine, this I am not, this is not my self.’…",
+  "placed": true
+ },
+ "mn148:23-27.9": {
+  "after": "egards the tongue thus: ‘This is not mine, this I am not, this is not my self.’…",
+  "placed": true
+ },
+ "mn148:23-27.10": {
+  "after": " regards the body thus: ‘This is not mine, this I am not, this is not my self.’…",
+  "placed": true
+ },
  "mn148:34.1": "ng…without abandoning ignorance and arousing true knowledge—this is impossible.",
  "mn2:8.3": "es in him. The view ‘self exists for me’ arises in him as true and established;",
  "mn27:4.16": "hen I saw this first footprint of the recluse Gotama, I came to the conclusion:",
@@ -8673,7 +8747,7 @@
   "placed": true
  },
  "mn135:10.4": {
-  "after": "r, hate, and bitterness. Because of performing and undertaking such action…he reappears in a happy destination…But if instead he comes back to the human state,",
+  "after": "play anger, hate, and bitterness. Because of performing and undertaking such action…he reappears in a happy destination…",
   "placed": true,
   "own": true
  },
@@ -8700,12 +8774,12 @@
   "placed": true
  },
  "mn135:12.4": {
-  "after": "tion received by others. Because of performing and undertaking such action…he reappears in a happy destination…But if instead he comes back to the human state,",
+  "after": "nd veneration received by others. Because of performing and undertaking such action…he reappears in a happy destination…",
   "placed": true,
   "own": true
  },
  "mn135:17.7": {
-  "after": "ess for a long time?’ Because of performing and undertaking such action…he reappears in a state of deprivation…But if instead he comes back to the human state,",
+  "after": "nd happiness for a long time?’ Because of performing and undertaking such action…he reappears in a state of deprivation…",
   "placed": true,
   "own": true
  },
@@ -9034,7 +9108,8 @@
   "own": true
  },
  "mn27:15.4": {
-  "empty": "up"
+  "after": "aculty. On hearing a sound with the ear…",
+  "placed": true
  },
  "mn27:15.9": {
   "after": "akes the restraint of the mind faculty.",
@@ -9116,7 +9191,7 @@
   "own": true
  },
  "mn31:11-13.5": {
-  "after": "bide in the fourth jhāna…Venerable sir,",
+  "after": "nter upon and abide in the fourth jhāna…",
   "placed": true,
   "own": true
  },
@@ -9133,7 +9208,7 @@
   "empty": "up"
  },
  "mn31:21.10": {
-  "after": "ring the exclamation of the earth gods,",
+  "after": "s of the heaven of the Four Great Kings…",
   "placed": true,
   "own": true
  },
@@ -9286,10 +9361,12 @@
   "placed": true
  },
  "mn38:30.8": {
-  "empty": "up"
+  "after": "is the origin of this whole mass of suffering.\n“On hearing a sound with the ear…",
+  "placed": true
  },
  "mn38:41.2": {
-  "empty": "up"
+  "after": "the cessation of this whole mass of suffering.\n“On hearing a sound with the ear…",
+  "placed": true
  },
  "mn38:41.7": {
   "empty": "up"
@@ -9788,7 +9865,7 @@
   "placed": true
  },
  "mn77:6.12": {
-  "after": " Belaṭṭhiputta…this Nigaṇṭha Nātaputta,",
+  "after": "sāla…this Ajita Kesakambalin… this Pakudha Kaccāyana…this Sañjaya Belaṭṭhiputta…",
   "placed": true,
   "own": true
  },
@@ -9861,7 +9938,7 @@
   "own": true
  },
  "mn82:7.11": {
-  "after": "lansman Raṭṭhapāla said to his parents:",
+  "after": " are still living?”\nFor the second time…",
   "placed": true,
   "own": true
  },
@@ -16990,6 +17067,832 @@
  },
  "sn12.13:1.11": {
   "after": "t … the six sense bases … name-and-form",
+  "placed": true,
+  "own": true
+ },
+ "mn104:7-11.5": {
+  "after": "eceitful…has evil wishes and wrong view…",
+  "placed": true
+ },
+ "mn108:26.9": {
+  "after": " and torpor, a prey to sloth and torpor…",
+  "placed": true
+ },
+ "mn108:26.11": {
+  "after": "rse, a prey to restlessness and remorse…",
+  "placed": true
+ },
+ "mn108:27.5": {
+  "after": "ters upon and abides in the third jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn108:27.6": {
+  "after": "ers upon and abides in the fourth jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn11:11.6": {
+  "after": "t? They do not understand two instances…",
+  "placed": true,
+  "own": true
+ },
+ "mn11:12.3": {
+  "after": "les and observances and clinging to a doctrine of self.\n“Though certain recluses and brahmins claim to propound the full understanding of all kinds of clinging…",
+  "placed": true
+ },
+ "mn11:12.6": {
+  "after": "lf. They do not understand one instance…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:35.8": {
+  "after": "right speech, wrong speech is abolished…",
+  "placed": true
+ },
+ "mn117:35.11": {
+  "after": "right effort, wrong effort is abolished…",
+  "placed": true
+ },
+ "mn117:37.6": {
+  "after": "one censures right speech… right action…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.7": {
+  "after": "t speech… right action…right livelihood…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.9": {
+  "after": "velihood…right effort…right mindfulness…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.10": {
+  "after": "t…right mindfulness…right concentration…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.11": {
+  "after": "ess…right concentration…right knowledge…",
+  "placed": true
+ },
+ "mn12:48.10": {
+  "after": "too, when I saw a cowherd or a shepherd…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:53-55.5": {
+  "after": "ood.’ They say: ‘Let us live on beans,’…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:53-55.6": {
+  "after": "ve on beans,’…‘Let us live on sesamum,’…",
+  "placed": true
+ },
+ "mn13:7.6": {
+  "after": "e of lust. Sounds cognizable by the ear…",
+  "placed": true,
+  "own": true
+ },
+ "mn13:7.7": {
+  "after": "y the ear…Odours cognizable by the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn13:7.8": {
+  "after": " nose…Flavours cognizable by the tongue…",
+  "placed": true
+ },
+ "mn13:23-28.3": {
+  "after": "ether with sinews…a skeleton without flesh and blood, held together with sinews…",
+  "placed": true
+ },
+ "mn13:29.2": {
+  "after": "bone, there a back-bone, here the skull…",
+  "placed": true
+ },
+ "mn13:33-35.2": {
+  "after": "ers upon and abides in the second jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn13:33-35.3": {
+  "after": "ters upon and abides in the third jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn135:7.3": {
+  "after": " he reappears in a state of deprivation…",
+  "placed": true
+ },
+ "mn135:9.4": {
+  "after": "s anger, hate, and bitterness. Because of performing and undertaking such action…he reappears in a state of deprivation…",
+  "placed": true
+ },
+ "mn135:13.3": {
+  "after": "lamps to recluses or brahmins. Because of performing and undertaking such action…he reappears in a state of deprivation…",
+  "placed": true
+ },
+ "mn135:14.3": {
+  "after": "nd lamps to recluses or brahmins. Because of performing and undertaking such action…he reappears in a happy destination…",
+  "placed": true
+ },
+ "mn135:15.4": {
+  "after": "ected, revered, and venerated. Because of performing and undertaking such action…he reappears in a state of deprivation…",
+  "placed": true
+ },
+ "mn135:15.7": {
+  "after": ", namely, one is obstinate and arrogant…",
+  "placed": true
+ },
+ "mn135:16.4": {
+  "after": "espected, revered, and venerated. Because of performing and undertaking such action…he reappears in a happy destination…",
+  "placed": true
+ },
+ "mn135:16.7": {
+  "after": "mely, one is not obstinate and arrogant…",
+  "placed": true
+ },
+ "mn135:18.7": {
+  "after": "e and happiness for a long time?’ Because of performing and undertaking such action…he reappears in a happy destination…",
+  "placed": true
+ },
+ "mn140:10.6": {
+  "after": "ear… On smelling an odour with the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn140:10.7": {
+  "after": "se…On tasting a flavour with the tongue…",
+  "placed": true,
+  "own": true
+ },
+ "mn140:10.8": {
+  "after": "ue…On touching a tangible with the body…",
+  "placed": true
+ },
+ "mn140:22.8": {
+  "after": "onsciousness…to the base of nothingness…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.3": {
+  "after": "k? Is the ear permanent or impermanent?…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.7": {
+  "after": "Is the tongue permanent or impermanent?…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.9": {
+  "after": "?…Is the body permanent or impermanent?…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.16": {
+  "after": "?…Is the mind permanent or impermanent?…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.23": {
+  "after": "manent or impermanent?…Are mind-objects…",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.30": {
+  "after": "…Are mind-objects…Is mind-consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:10.10": {
+  "after": "self.\n“If anyone says, ‘Forms are self’…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:10.16": {
+  "after": "nyone says, ‘Eye-consciousness is self’…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:10.22": {
+  "after": "\n“If anyone says, ‘Eye-contact is self’…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:10.34": {
+  "after": "elf.\n“If anyone says, ‘Craving is self’…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:29-33.5": {
+  "after": " arousing true knowledge—this is impossible.\nii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…",
+  "placed": true
+ },
+ "mn148:29-33.12": {
+  "after": "e knowledge—this is impossible.\nii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant…",
+  "placed": true
+ },
+ "mn148:39.1": {
+  "after": "nd arousing true knowledge—this is possible.\nii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…",
+  "placed": true
+ },
+ "mn148:39.8": {
+  "after": "rue knowledge—this is possible.\nii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant…",
+  "placed": true
+ },
+ "mn148:41.5": {
+  "after": "ue…Hebecomes disenchanted with the body…",
+  "placed": true
+ },
+ "mn149:4-7.2": {
+  "after": " know and see the ear as it actually is…",
+  "placed": true,
+  "own": true
+ },
+ "mn149:4-7.3": {
+  "after": "know and see the nose as it actually is…",
+  "placed": true,
+  "own": true
+ },
+ "mn19:9-10.2": {
+  "after": ", a thought of non-ill will arose in me…",
+  "placed": true
+ },
+ "mn2:12.5": {
+  "after": " abides with the ear faculty restrained…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:12.6": {
+  "after": "rained…with the nose faculty restrained…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:12.7": {
+  "after": "ined…with the tongue faculty restrained…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:12.8": {
+  "after": "rained…with the body faculty restrained…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:21.4": {
+  "after": "tigation-of-states enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:21.5": {
+  "after": " factor…the energy enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:21.6": {
+  "after": "factor…the rapture enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:21.7": {
+  "after": "r…the tranquillity enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:21.8": {
+  "after": "…the concentration enlightenment factor…",
+  "placed": true
+ },
+ "mn20:8.5": {
+  "after": "e examines the danger in those thoughts…",
+  "placed": true,
+  "own": true
+ },
+ "mn20:8.7": {
+  "after": "hts and does not give attention to them…",
+  "placed": true,
+  "own": true
+ },
+ "mn20:8.9": {
+  "after": "hem…When he gives attention to stilling the thought-formation of those thoughts…",
+  "placed": true
+ },
+ "mn22:10.24": {
+  "after": "ere some misguided men learn the Dhamma…",
+  "placed": true,
+  "own": true
+ },
+ "mn26:31.5": {
+  "after": "e of lust. Sounds cognizable by the ear…",
+  "placed": true,
+  "own": true
+ },
+ "mn26:31.6": {
+  "after": "y the ear…Odours cognizable by the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn26:31.7": {
+  "after": " nose…Flavours cognizable by the tongue…",
+  "placed": true
+ },
+ "mn27:15.5": {
+  "after": " ear…On smelling an odour with the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn27:15.6": {
+  "after": "se…On tasting a flavour with the tongue…",
+  "placed": true,
+  "own": true
+ },
+ "mn27:15.7": {
+  "after": "ue…On touching a tangible with the body…",
+  "placed": true
+ },
+ "mn27:25.3": {
+  "after": "leading to the cessation of suffering’;…",
+  "placed": true,
+  "own": true
+ },
+ "mn28:25.11": {
+  "after": "is, he understands thus:… repeat §§8—10…",
+  "placed": true
+ },
+ "mn29:4.21": {
+  "after": "u is called one who has taken the outer bark of the holy life and stopped short with that.\n“Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering. Surely an ending of this whole mass of suffering can be known.’ When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown, and his intention is not fulfilled…",
+  "placed": true
+ },
+ "mn29:5.7": {
+  "after": "u is called one who has taken the inner bark of the holy life and stopped short with that.\n“Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering. Surely an ending of this whole mass of suffering can be known.’ When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown, and his intention is not fulfilled…",
+  "placed": true
+ },
+ "mn29:6.10": {
+  "after": "n is not fulfilled …When he is diligent, he achieves the attainment of virtue. He is pleased with that attainment of virtue, but his intention is not fulfilled…",
+  "placed": true
+ },
+ "mn31:17.5": {
+  "after": "e in the base of infinite consciousness…",
+  "placed": true
+ },
+ "mn31:17.6": {
+  "after": "on and abide in the base of nothingness…",
+  "placed": true
+ },
+ "mn31:22.5": {
+  "after": "…the village from which they went forth…",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.6": {
+  "after": "rth…the town from which they went forth…",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.7": {
+  "after": "rth…the city from which they went forth…",
+  "placed": true
+ },
+ "mn31:22.10": {
+  "after": "nobles for a long time. If all brahmins…",
+  "placed": true,
+  "own": true
+ },
+ "mn32:13.7": {
+  "after": "Sāriputta, with the divine eye…as in §6…",
+  "placed": true,
+  "own": true
+ },
+ "mn32:15.7": {
+  "after": "in a talk on the higher Dhamma…as in §8…",
+  "placed": true,
+  "own": true
+ },
+ "mn32:16.6": {
+  "after": "rable Sāriputta thus: ‘Friend Sāriputta…",
+  "placed": true,
+  "own": true
+ },
+ "mn32:16.20": {
+  "after": " wields mastery over his mind… as in §9…",
+  "placed": true
+ },
+ "mn36:35-37.3": {
+  "after": "red upon and abided in the second jhāna…",
+  "placed": true
+ },
+ "mn36:35-37.5": {
+  "after": "ered upon and abided in the third jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn36:35-37.6": {
+  "after": "red upon and abided in the fourth jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn36:48.9": {
+  "after": "ging Makkhali Gosāla…Ajita Kesakambalin…",
+  "placed": true,
+  "own": true
+ },
+ "mn36:48.10": {
+  "after": "la…Ajita Kesakambalin…Pakudha Kaccāyana…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.15": {
+  "after": "sciousness has formations as its source…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.20": {
+  "after": "sation of clinging, cessation of being’…",
+  "placed": true
+ },
+ "mn38:21.25": {
+  "after": "tion of craving, cessation of clinging’…",
+  "placed": true
+ },
+ "mn38:21.30": {
+  "after": "ation of feeling, cessation of craving’…",
+  "placed": true
+ },
+ "mn38:21.51": {
+  "after": "formations, cessation of consciousness’…",
+  "placed": true
+ },
+ "mn38:29.5": {
+  "after": "y the eye… sounds cognizable by the ear…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:29.7": {
+  "after": "nose… flavours cognizable by the tongue…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:30.9": {
+  "after": "Such is the origin of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:30.10": {
+  "after": "e. Such is the origin of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…On tasting a flavour with the tongue…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:30.11": {
+  "after": "o be. Such is the origin of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…On tasting a flavour with the tongue…On touching a tangible with the body…",
+  "placed": true
+ },
+ "mn38:30.15": {
+  "after": "ing; he dislikes it if it is unpleasing…",
+  "placed": true
+ },
+ "mn38:39.3": {
+  "after": "ters upon and abides in the first jhāna…",
+  "placed": true
+ },
+ "mn38:39.4": {
+  "after": "ers upon and abides in the second jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:39.5": {
+  "after": "ters upon and abides in the third jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:41.3": {
+  "after": "h is the cessation of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:41.4": {
+  "after": "Such is the cessation of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…On tasting a flavour with the tongue…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:41.5": {
+  "after": "e. Such is the cessation of this whole mass of suffering.\n“On hearing a sound with the ear…On smelling an odour with the nose…On tasting a flavour with the tongue…On touching a tangible with the body…",
+  "placed": true
+ },
+ "mn38:41.9": {
+  "after": "does not dislike it if it is unpleasing…",
+  "placed": true
+ },
+ "mn57:2.8": {
+  "after": "future course?”\n“Enough, Puṇṇa, let that be. Do not ask me that.”\nA second time…",
+  "placed": true,
+  "own": true
+ },
+ "mn57:4.12": {
+  "after": "uture course?”\n“Enough, Seniya, let that be. Do not ask me that.”\nA second time…",
+  "placed": true,
+  "own": true
+ },
+ "mn6:18.2": {
+  "after": "to their actions thus:’…as Sutta 4, §29…",
+  "placed": true
+ },
+ "mn60:36.3": {
+  "after": ", rejecting conventions…as Sutta 51, §8…",
+  "placed": true
+ },
+ "mn63:3.27": {
+  "after": "lessed One knows ‘the world is finite,’…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:3.34": {
+  "after": "e,’…‘the soul is the same as the body,’…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.13": {
+  "after": "ame and clan of the man who wounded me;…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.19": {
+  "after": "ives in such a village or town or city;…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.21": {
+  "after": "nded me was a long bow or a cross-bow; …",
+  "placed": true
+ },
+ "mn63:5.23": {
+  "after": "fibre or reed or sinew or hemp or bark;…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:6.9": {
+  "after": "d is finite,’…‘the world is infinite, ’…",
+  "placed": true
+ },
+ "mn63:6.10": {
+  "after": ", ’…‘the soul is the same as the body,’…",
+  "placed": true,
+  "own": true
+ },
+ "mn64:10-12.7": {
+  "after": "terial form, feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self. He turns his mind away from those states and directs it towards the deathless element…",
+  "placed": true
+ },
+ "mn64:13.5": {
+  "after": " base of infinite space.\n“Whatever exists therein of feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self. He turns his mind away from those states and directs it towards the deathless element…",
+  "placed": true
+ },
+ "mn64:14.5": {
+  "after": " infinite consciousness.\n“Whatever exists therein of feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self. He turns his mind away from those states and directs it towards the deathless element…",
+  "placed": true
+ },
+ "mn65:9.18": {
+  "after": "ognised by you: ‘Many men lay followers…",
+  "placed": true
+ },
+ "mn65:17.4": {
+  "after": "ers upon and abides in the second jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn65:17.7": {
+  "after": "ters upon and abides in the third jhāna…",
+  "placed": true
+ },
+ "mn65:17.8": {
+  "after": "ers upon and abides in the fourth jhāna…",
+  "placed": true,
+  "own": true
+ },
+ "mn65:25.7": {
+  "after": "us, he prevaricates… repeat rest of §23…",
+  "placed": true,
+  "own": true
+ },
+ "mn65:26.6": {
+  "after": "y the bhikkhus, he does not prevaricate…",
+  "placed": true
+ },
+ "mn65:26.7": {
+  "after": "does not prevaricate…repeat rest of §24…",
+  "placed": true,
+  "own": true
+ },
+ "mn65:28.7": {
+  "after": "ogresses by a measure of faith and love…",
+  "placed": true,
+  "own": true
+ },
+ "mn70:6.10": {
+  "after": "Sangha now abstain from eating at night…",
+  "placed": true
+ },
+ "mn70:6.15": {
+  "after": "ikkhus: ‘Friends, we eat in the evening…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:8.10": {
+  "after": "criptures.”\n“The ear delights in sounds…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:8.11": {
+  "after": "s in sounds…The nose delights in odours…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:8.19": {
+  "after": " odours…The tongue delights in flavours…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:9.7": {
+  "after": "mself with sounds cognizable by the ear…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:9.8": {
+  "after": "ed himself with sounds cognizable by the ear…with odours cognizable by the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:9.9": {
+  "after": "yed himself with sounds cognizable by the ear…with odours cognizable by the nose…with flavours cognizable by the tongue…",
+  "placed": true
+ },
+ "mn75:10.3": {
+  "after": "sensual pleasure: with forms cognizable by the eye…with sounds cognizable by the ear…with odours cognizable by the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:10.4": {
+  "after": " sensual pleasure: with forms cognizable by the eye…with sounds cognizable by the ear…with odours cognizable by the nose…with flavours cognizable by the tongue…",
+  "placed": true
+ },
+ "mn75:11.3": {
+  "after": "ight enjoy himself with forms cognizable by the eye…with sounds cognizable by the ear…with odours cognizable by the nose…with flavours cognizable by the tongue…",
+  "placed": true
+ },
+ "mn75:12.4": {
+  "after": "han human sensual pleasures.”\n“So too, Māgandiya, formerly when I lived the home life, I enjoyed myself, provided and endowed with the five cords of sensual pleasure: with forms cognizable by the eye…",
+  "placed": true
+ },
+ "mn77:6.9": {
+  "after": "aha. There is also this Makkhali Gosāla…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.11": {
+  "after": "ta Kesakambalin… this Pakudha Kaccāyana…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.36": {
+  "after": "d some said this: ‘This Makkhali Gosāla…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.38": {
+  "after": "ita Kesakambalin…this Pakudha Kaccāyana…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.39": {
+  "after": "osāla…this Ajita Kesakambalin…this Pakudha Kaccāyana…this Sañjaya Belaṭṭhiputta…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.40": {
+  "after": "aṇṭha Nātaputta is the head of an order…",
+  "placed": true
+ },
+ "mn77:8.9": {
+  "after": "as the third quality of the Blessed One…",
+  "placed": true
+ },
+ "mn77:8.11": {
+  "after": "s the fourth quality of the Blessed One…",
+  "placed": true
+ },
+ "mn77:8.13": {
+  "after": "as the fifth quality of the Blessed One…",
+  "placed": true
+ },
+ "mn77:14.3": {
+  "after": " noble truth of the origin of suffering…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:14.4": {
+  "after": "ble truth of the cessation of suffering…",
+  "placed": true
+ },
+ "mn77:15.4": {
+  "after": "ides contemplating feelings as feelings…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:15.5": {
+  "after": "gs…He abides contemplating mind as mind…",
+  "placed": true
+ },
+ "mn77:16.4": {
+  "after": "oning of arisen evil unwholesome states…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:16.5": {
+  "after": "he arising of unarisen wholesome states…",
+  "placed": true
+ },
+ "mn77:18.4": {
+  "after": "ment. He develops the faculty of energy…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:19.4": {
+  "after": "enment. He develops the power of energy…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:19.5": {
+  "after": "ower of energy…the power of mindfulness…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:19.6": {
+  "after": " mindfulness…the power of concentration…",
+  "placed": true
+ },
+ "mn77:20.4": {
+  "after": "tigation-of-states enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:20.6": {
+  "after": "factor…the rapture enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:20.8": {
+  "after": " the concentration enlightenment factor…",
+  "placed": true
+ },
+ "mn77:24.5": {
+  "after": "ṇa…Another contemplates the fire-kasiṇa…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.6": {
+  "after": "iṇa…Another contemplates the air-kasiṇa…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.8": {
+  "after": "…Another contemplates the yellow-kasiṇa…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.9": {
+  "after": "iṇa…Another contemplates the red-kasiṇa…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.10": {
+  "after": "a…Another contemplates the white-kasiṇa…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.11": {
+  "after": "a…Another contemplates the space-kasiṇa…",
+  "placed": true
+ },
+ "mn82:8.14": {
+  "after": "ngly, so how could we give you our permission to go forth from the home life into homelessness while you are still living?” When this was said, the clansman Raṭṭhapāla was silent.\nFor the second time…",
+  "placed": true,
+  "own": true
+ },
+ "mn82:10.13": {
+  "after": ", so how could they give you their permission to go forth from the home life into homelessness while you are still living?” When this was said, the clansman Raṭṭhapāla was silent.\nFor the second time…",
+  "placed": true,
+  "own": true
+ },
+ "sn4.23:1.10": {
+  "after": "porary liberation of mind. A third time…",
+  "placed": true,
+  "own": true
+ },
+ "sn4.23:1.14": {
+  "after": "third time…A fourth time … A fifth time…",
   "placed": true,
   "own": true
  }

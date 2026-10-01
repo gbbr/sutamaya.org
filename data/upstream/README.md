@@ -171,8 +171,6 @@ files here are named.
   before its first numbered note (MN 10, DN 33), the second page's title in `an2.31` and
   `sn22.126`, DN 1's headings (styled as a "See also"), and AN 1.31–38, which `an1.21-40.html`
   takes over though it lacks them (name it `an1.21-30,39-40.html` and teach `uidsOf` the comma).
-- Let a line start right after an ellipsis written without spaces ("restrained…with"), as after a
-  dash, then try the findings that frees: most of the 220 Bodhi findings left unfound.
 - Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no
   reader reported.
 

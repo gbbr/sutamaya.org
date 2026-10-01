@@ -743,8 +743,8 @@ const COARSE_ABOVE = 12000;
 const NEG = -1e30;
 
 // Returns the text a page's blocks make, one stream, with its note marks and the places a segment
-// may end: after whitespace, or right after a dash, as Sujato's own lines end, so the segments joined
-// with a space, or none after a dash, are the text.
+// may end: after whitespace, or right after a dash or an ellipsis with no space after it, as Sujato's
+// own lines end, so the segments joined with a space, or none after those, are the text.
 function streamOf(blocks) {
   let text = '';
   const starts = [];
@@ -1261,7 +1261,7 @@ function applyDecisions(
         for (let from = text.indexOf(before, Math.max(0, p.start - before.length)); from !== -1 && from < r.end; from = text.indexOf(before, from + 1)) {
           const end = from + before.length;
           const next = end + (/^\s+/.exec(text.slice(end, end + 4))?.[0].length ?? 0);
-          const ends = next > end || /[—–]$/.test(before);
+          const ends = next > end || /[—–…]$/.test(before);
           if (ends && next > p.start && next < r.end && (at === -1 || Math.abs(next - r.start) < Math.abs(at - r.start))) at = next;
         }
         if (at === -1) unplaced.push(r.key);
@@ -1305,13 +1305,13 @@ function anchorBefore(text, at) {
   return anchor;
 }
 
-// Returns each line's segment of `text`, whether it ends right after a dash, and the segments
-// joined as they are written: a space after each but one ending right after a dash.
+// Returns each line's segment of `text`, whether it ends right after a dash or an ellipsis with no
+// space after it, and the segments joined as they are written: a space after each but those.
 function segmentsOf(results, text) {
   const segText = results.map((r) => text.slice(r.start, r.end).replace(/\s+/g, ' ').trim());
-  const endsAtDash = results.map((r) => /[—–]$/.test(text.slice(r.start, r.end)));
-  const joined = segText.map((s, i) => (s ? `${s}${endsAtDash[i] ? '' : ' '}` : '')).join('').trim();
-  return { segText, endsAtDash, joined };
+  const endsJoined = results.map((r) => r.end < text.length && /[—–…]$/.test(text.slice(r.start, r.end)));
+  const joined = segText.map((s, i) => (s ? `${s}${endsJoined[i] ? '' : ' '}` : '')).join('').trim();
+  return { segText, endsJoined, joined };
 }
 
 // Returns the places in `text`, after `lo` and before `hi`, where a line can start with the words a
@@ -1323,7 +1323,7 @@ function quotedAt(text, words, lo, hi) {
   for (const m of text.slice(lo, hi).matchAll(re)) {
     let at = lo + m.index;
     while (at > lo && /[“‘"'([]/.test(text[at - 1])) at--;
-    if (at === 0 || (at > lo && /[\s—–]/.test(text[at - 1]))) places.push(at);
+    if (at === 0 || (at > lo && /[\s—–…]/.test(text[at - 1]))) places.push(at);
   }
   return places;
 }
@@ -1713,10 +1713,11 @@ for (const unit of units) {
       if (keepFindings) for (const g of groups) if (g.verdict === 'passes') for (const f of g.findings) decisions[f.key] = f.settles;
     }
     applyDecisions(results, stream.text, entry);
-    const { segText, endsAtDash, joined: got } = segmentsOf(results, stream.text);
+    const { segText, endsJoined, joined: got } = segmentsOf(results, stream.text);
 
     // The text check: the segments, joined as they are written — a space after each but one ending
-    // right after a dash — are character for character the page's text read the second way.
+    // right after a dash or an unspaced ellipsis — are character for character the page's text read
+    // the second way.
     const page = want.join(' ');
     if (got !== page) {
       let at = 0;
@@ -1788,9 +1789,9 @@ for (const unit of units) {
         outDocs.set(line.doc, { dir: d.dir, text: Object.fromEntries(Object.keys(d.pali).map((k) => [k, ''])), notes: {} });
       }
     }
-    const put = (line, text, notes, endsAtDash) => {
+    const put = (line, text, notes, endsJoined) => {
       const out = outDocs.get(line.doc);
-      out.text[line.key] = text ? `${text}${endsAtDash ? '' : ' '}` : '';
+      out.text[line.key] = text ? `${text}${endsJoined ? '' : ' '}` : '';
       if (notes.length) out.notes[line.key] = notes.join(' ');
     };
     const titleLine = lines.find((l) => l.suttaTitle) ?? lines.filter((l) => l.title).at(-1);
@@ -1808,7 +1809,7 @@ for (const unit of units) {
         if (x !== undefined) cited.set(x, [...(cited.get(x) ?? []), c]);
       }
     });
-    body.forEach((line, i) => put(line, segText[i] && presented(stream, results[i], line, cited.get(i), titles), segNotes[i], endsAtDash[i]));
+    body.forEach((line, i) => put(line, segText[i] && presented(stream, results[i], line, cited.get(i), titles), segNotes[i], endsJoined[i]));
 
     if (reviewed.has(name)) reviewUnits.push({ name, entry, body, segText, segNotes, results, intro: unit.intro });
 

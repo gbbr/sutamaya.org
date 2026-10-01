@@ -242,8 +242,8 @@ and each line that must lose all its text. Name only lines shown in the stretch.
 that will be on that line: where it will hold fewer than six words, quote just those, never the
 next line's.
 
-A line can only start after a space or a dash: where words are joined without a space, as in
-"restrained…with", no line can start at the second word, so leave such a place as it is.
+A line can only start after a space, a dash or an ellipsis: where words are joined otherwise, as in
+"well-taught", no line can start at the second word, so leave such a place as it is.
 
 The reports point to the problem but may be wrong: follow a report only where it is right, and
 write nothing for a stretch that already reads right. Judge by meaning, not wording. These are not
