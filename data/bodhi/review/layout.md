@@ -4,7 +4,7 @@ How Bhikkhu Bodhi's English in `data/bodhi/sutta/` fits the line roles in `data/
 for three things that fit badly: closing and summary lines, his own headings, and verse line breaks.
 
 All counts come from a script run over every file. It reads each page in `data/upstream/bodhi/sutta/`
-the way `scripts/segment-translations.mjs` does, and maps it onto the segmented text one character
+the way `scripts/segmenter/segment-translations.mjs` does, and maps it onto the segmented text one character
 at a time, with whitespace ignored. 1,170 of the 1,174 texts map exactly. The other four
 (`sn12.5`, `sn45.103`, `sn45.115`, `sn45.127`) have no segmented file, so they are left out.
 

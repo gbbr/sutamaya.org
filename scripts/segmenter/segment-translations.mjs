@@ -2,10 +2,10 @@
 // Splits another translator's English, as its source publishes it, into the Pali's segments, the way
 // data/sujato is split, so each line of the translation sits on the Pali line it translates.
 //
-//   node scripts/segment-translations.mjs <bodhi|thanissaro> [--only name,…] [--review name,…]
-//                                        [--items <margin>] [--whole] [--recheck key,…] [--places]
-//                                        [--answers] [--keep-settled] [--overview]
-//                                        [--findings] [--keep-findings]
+//   node scripts/segmenter/segment-translations.mjs <bodhi|thanissaro> [--only name,…] [--review name,…]
+//                                                  [--items <margin>] [--whole] [--recheck key,…] [--places]
+//                                                  [--answers] [--keep-settled] [--overview]
+//                                                  [--findings] [--keep-findings]
 //
 // Reads data/upstream/<translator>/ and writes data/<translator>/, in data/sujato's layout:
 //   sutta/…_translation-en-<translator>.json  every Pali key of a document, its English or ""
@@ -20,16 +20,17 @@
 // the text of its page, read a second way, is reported and not written. A line is written with a
 // little markup over its words:
 //   "\n"                     – where a verse line of the translator's starts inside it
-//   <span class="heading">   – round a heading of his inside it, which no Pali heading line holds
+//   <span class="heading">   – round a heading of his inside it, which no Pali heading line holds, or
+//                              a sutta's title no title line holds, at the start of its text
 //   <a href>                 – a reference in his text to another sutta, which takes the app's form
 //                              ("as in 3:2" becomes "as in AN3.2"), from review/references.json
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { JSDOM } from 'jsdom';
-import { formatRef } from './lib/collections.js';
+import { formatRef } from '../lib/collections.js';
 
-const ROOT = path.resolve(import.meta.dirname, '..');
+const ROOT = path.resolve(import.meta.dirname, '../..');
 const DATA = path.join(ROOT, 'data');
 
 const args = process.argv.slice(2);
@@ -328,7 +329,7 @@ function whollyItalic(el) {
   return all.length > 0 && italic.length >= all.length * 0.9;
 }
 
-const newUnit = (uids, title, root) => ({ uids, title, roots: [root], blocks: [], intro: [], seeAlso: [], notes: new Map() });
+const newUnit = (uids, title, root) => ({ uids, title, titles: [], roots: [root], blocks: [], intro: [], seeAlso: [], notes: new Map() });
 
 // Returns the texts of a dhammatalks.org page: one, the page's. A file joining several pages, as
 // an2.31.html does, holds each page's <div id="sutta">, read in order as one text.
@@ -512,6 +513,13 @@ function parseSuttaCentral(document, name) {
   const page = newUnit(uidsOf(name), units[0].title, null);
   page.roots = units.flatMap((u) => u.roots);
   page.blocks = units.flatMap((u) => u.blocks);
+  // The later suttas' titles, each by the block its text starts with; a heading of numbers alone is
+  // SuttaCentral's numbering, not a title.
+  let first = units[0].blocks.length;
+  for (const u of units.slice(1)) {
+    if (/\p{L}/u.test(u.title)) page.titles.push({ title: u.title, block: first });
+    first += u.blocks.length;
+  }
   return [page];
 }
 
@@ -1092,6 +1100,7 @@ for (const file of pages) {
     unit.lines = targetsFor(unit.uids);
     unit.body = unit.lines.filter((l) => !l.title);
     unit.stream = streamOf(unit.blocks);
+    unit.titles = unit.titles.filter((t) => unit.stream.blocks[t.block]).map((t) => ({ title: t.title, at: unit.stream.blocks[t.block].at }));
     unit.missedNotes = attachCopyNotes(unit);
     units.push(unit);
   }
@@ -1364,18 +1373,21 @@ function presented(
   line,
   // The references to other suttas the line holds.
   cited = [],
+  // The titles that open a sutta's text, each by where that text starts in the stream.
+  titles = [],
 ) {
   const { text, blocks } = stream;
   const bounds = [r.start, ...blocks.filter((b) => b.at > r.start && b.at < r.end).map((b) => b.at), r.end];
   const pieces = [];
   for (let k = 0; k + 1 < bounds.length; k++) {
     const words = text.slice(bounds[k], bounds[k + 1]).replace(/\s+/g, ' ').trim();
-    if (words) pieces.push({ kind: blocks.findLast((b) => b.at <= bounds[k]).kind, words });
+    if (words) pieces.push({ kind: blocks.findLast((b) => b.at <= bounds[k]).kind, words, at: bounds[k] });
   }
   const headingLine = line.heading && pieces.every((p) => p.kind === 'h');
   let out = pieces
     .map((p, k) => {
-      const words = p.kind === 'h' && !headingLine ? `<span class="heading">${p.words}</span>` : p.words;
+      let words = p.kind === 'h' && !headingLine ? `<span class="heading">${p.words}</span>` : p.words;
+      for (const t of titles) if (t.at === p.at) words = `<span class="heading">${t.title}</span> ${words}`;
       return k === 0 ? words : `${p.kind === 'v' || p.kind === 'vs' ? '\n' : ' '}${words}`;
     })
     .join('');
@@ -1783,16 +1795,20 @@ for (const unit of units) {
     };
     const titleLine = lines.find((l) => l.suttaTitle) ?? lines.filter((l) => l.title).at(-1);
     if (titleLine) put(titleLine, unit.title, [[...unit.intro, ...unit.seeAlso, ...titleNotes].map((p) => `<p>${p}</p>`).join('')].filter(Boolean));
+    // The titles no title line holds open their sutta's text as headings: a page's later suttas',
+    // and a sutta's own where the Pali has no title line for it.
+    const titles = titleLine || !unit.title ? unit.titles : [{ title: unit.title, at: 0 }, ...unit.titles];
     // Each reference to another sutta goes with the line that holds its words: its own, or the
-    // nearest within three lines, where a review moved them.
+    // nearest that does, where a review moved them.
     const cited = new Map();
+    const byDistance = (i) => segText.map((_, x) => x).sort((a, b) => Math.abs(a - i) - Math.abs(b - i) || a - b);
     body.forEach((line, i) => {
       for (const c of cites.get(line.key) ?? []) {
-        const x = [0, -1, 1, -2, 2, -3, 3].map((d) => i + d).find((x) => segText[x]?.includes(c.cite));
+        const x = byDistance(i).find((x) => segText[x]?.includes(c.cite));
         if (x !== undefined) cited.set(x, [...(cited.get(x) ?? []), c]);
       }
     });
-    body.forEach((line, i) => put(line, segText[i] && presented(stream, results[i], line, cited.get(i)), segNotes[i], endsAtDash[i]));
+    body.forEach((line, i) => put(line, segText[i] && presented(stream, results[i], line, cited.get(i), titles), segNotes[i], endsAtDash[i]));
 
     if (reviewed.has(name)) reviewUnits.push({ name, entry, body, segText, segNotes, results, intro: unit.intro });
 

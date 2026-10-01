@@ -17,7 +17,7 @@ closing and summary lines, the translator's own headings, and his verse line bre
 | Lines with English found verbatim, in order, in the parsed page | 61,822 |
 | Title lines (from the page's `<h1>`, not its body) | 1,411 |
 
-The pages are read the way the segmenter reads them (`scripts/segment-translations.mjs`): each
+The pages are read the way the segmenter reads them (`scripts/segmenter/segment-translations.mjs`): each
 page becomes a run of blocks, one per paragraph, heading, speaker label or verse line, each verse
 line being a `<p>` in a `div.verse` or `div.verse-add`, a line of a `<pre>`, or a line after a
 `<br>`. Every line with English outside the titles is found word for word, in order, in that run,
@@ -247,5 +247,5 @@ lines counts on both.
 | The Pali's markup, which gives each line its role | `data/html/pli/ms/sutta/` |
 | The translator's pages | `data/upstream/thanissaro/sutta/` |
 | Sujato's text on the same keys | `data/sujato/sutta/` |
-| How a page is read into headings, paragraphs and verse lines | `scripts/segment-translations.mjs` |
+| How a page is read into headings, paragraphs and verse lines | `scripts/segmenter/segment-translations.mjs` |
 | The layout work this measures | `data/upstream/README.md`'s "What's left" |

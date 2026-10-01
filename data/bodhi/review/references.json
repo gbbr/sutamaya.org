@@ -70,7 +70,7 @@
     "target": "an4.39"
   },
   {
-    "key": "an4.54:9.1",
+    "key": "an4.54:6.1",
     "source": "text",
     "words": "is identical with 4:53",
     "kind": "stands_in",
@@ -140,7 +140,7 @@
     "target": "an5.303"
   },
   {
-    "key": "an8.6:8.2",
+    "key": "an8.6:6.8",
     "source": "text",
     "words": "The verses are identical with those of 8:5",
     "kind": "stands_in",
@@ -245,7 +245,7 @@
     "target": "an8.46"
   },
   {
-    "key": "an8.50:11.4",
+    "key": "an8.50:5.4",
     "source": "text",
     "words": "What follows is identical with 8:49",
     "kind": "stands_in",

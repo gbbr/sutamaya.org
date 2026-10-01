@@ -28,6 +28,8 @@ done
 | Final look | `final/` | `opus` | the cuts prompt; each item shows both its lines whole | `batch-NNN.answers.N` |
 | Places | `places/` | `opus` | the places prompt | `batch-NNN.answers.N` |
 | Read-through | see "Reading through" | `sonnet` | the reading prompt | `batch-NNN.findings` |
+| Second read | `reread/` | `opus` | the reading prompt | `batch-NNN.findings` |
+| Check of a read's changes | outside the repository | `opus` | the check prompt | one file of answers |
 | References | — | `opus` | the references prompt | `references.json` |
 
 The second opinion is independent: its subagents never read the `.answers` files, and a batch is
@@ -38,7 +40,7 @@ done when its `.opus` files hold one line for each of its items (the listing abo
 
 1. Take the batches in number order, leaving out those already done.
 2. Give each batch to one subagent: the Agent tool, type `general-purpose`, the round's model, with
-   its prompt. Run four at a time.
+   its prompt. Run three at a time.
 3. As they finish, say how many items were answered, how many were moved to another mark and how
    many got "?", from the subagents' replies.
 4. Stop when every batch is done, or when a usage limit stops the subagents, and say which batch
@@ -107,13 +109,14 @@ how many "?".
 The last round reads every line of its texts, each beside Sujato's, the least settled texts first:
 `data/<translator>/review/read/` for a whole translation, or the folder the round was put up in. A
 batch is read once its `batch-NNN.findings` is saved beside it, so a session carries on wherever the
-last one stopped.
+last one stopped. A second read puts up first the texts whose findings couldn't all be applied, which
+hold most of what is left.
 
 1. Take the batches with no `.findings` file, in number order. This lists them:
    `for b in data/<translator>/review/<folder>/batch-*.txt; do [ -e "${b%.txt}.findings" ] || echo "$b"; done`.
-2. Give each batch to one subagent, four at a time, with the reading prompt below: the Agent tool,
+2. Give each batch to one subagent, three at a time, with the reading prompt below: the Agent tool,
    type `line-reader`, which runs `sonnet` at effort high, or type `general-purpose` with model
-   `sonnet` where that type isn't available.
+   `sonnet` where that type isn't available. A second read sets the model to `opus`.
 3. Every ten batches, say in one line how many batches are read and how many are left, and how many
    lines the last ten reported. `grep -c : <findings file>` counts a batch's lines.
 4. Stop when the last ten batches reported five lines or fewer on average: the texts left are the
@@ -159,9 +162,47 @@ Report only when you are sure.
 Your share: <path>/batch-NNN.txt. Read all of it, in two or three parts, then save your findings
 with the Write tool as <path>/batch-NNN.findings, or the single word "none" if nothing is
 misplaced. Be token-efficient: use only the Read and Write tools, open no file but your batch, run
-no commands, and keep your reasoning brief.
+no commands, and keep your reasoning brief. Quote at most a few words at a time anywhere, your
+reasoning included: a content filter stops replies that copy out long stretches of the translation.
 
 When done, reply with one line: how many lines you reported.
+```
+
+## The check prompt
+
+For one subagent, after a read's findings are tried: 50 of the passing groups in
+`review/findings.json`, drawn at random, each written out whole with its lines' key, Sujato's English
+(or the Pali), and the translation's text before and after, numbered `## 1 (<name>, <text ID>)` on.
+More than 2 judged worse means keeping none of that read's findings; a group judged worse is looked
+at whole, with the lines around it, before it is dropped or fixed by hand.
+
+```
+You are checking changes to where a Buddhist sutta translation, by <name>, is cut into lines that
+match the lines of the Pali original.
+
+The file <path> holds 50 numbered items. Each shows a few consecutive lines. For each line it gives
+the line's key, Bhikkhu Sujato's English for that line (or the Pali, where he has none), and the
+other translation's text on that line Before a change and After it. The change only moves where the
+lines are cut: the words are the same, just placed on different lines.
+
+For each item, judge whether After puts the translation's text on the right lines better than
+Before, the same, or worse. A line's text should say what Sujato's line says, or translate its
+Pali. Judge by meaning, not wording: the translations word things differently, sometimes order the
+words of a sentence differently, may leave lines out or abbreviate (a line with no text), and may
+render several of Sujato's lines as one sentence that sits on the first of them. When both versions
+are equally acceptable or equally wrong, answer same.
+
+Read the whole file first, in two or three parts. Then save your answers with the Write tool to
+<answers path>, one line per item, in this form:
+
+    1 better
+    2 same
+    3 worse: <a few words saying why>
+
+Use only the Read and Write tools, and open no other file. Be economical: start no further agents
+and keep your reasoning brief. Quote at most a few words at a time anywhere, your reasoning
+included: a content filter stops replies that copy out long stretches of the translation. When
+done, reply with one line: how many items are better, same and worse.
 ```
 
 ## The places prompt

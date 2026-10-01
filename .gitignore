@@ -16,7 +16,7 @@ web/public/data/
 web/assets/
 data/sujato.post/
 # Review scratch: local copies of the review rounds' answers, which cuts.json keeps, and the pages
-# and batches scripts/segment-translations.mjs writes.
+# and batches scripts/segmenter/segment-translations.mjs writes.
 data/*/review/**/*.answers.*
 data/*/review/**/*.opus.*
 data/*/review/batches/

@@ -3,14 +3,14 @@
 
 Run from the repository's root:
 
-  scripts/review-rounds.py <translator> put <folder> <segmenter flags…>
+  scripts/segmenter/review-rounds.py <translator> put <folder> <segmenter flags…>
       runs the segmenter with the flags and moves the batches it writes to review/<folder>/,
       100 items to a file
-  scripts/review-rounds.py <translator> keep <folder>…
+  scripts/segmenter/review-rounds.py <translator> keep <folder>…
       keeps the answers in each review/<folder>/ in cuts.json, one folder after another
-  scripts/review-rounds.py <translator> keep-agreed <folder>
+  scripts/segmenter/review-rounds.py <translator> keep-agreed <folder>
       keeps the answers a first pass (.answers) and a second opinion (.opus) agree on
-  scripts/review-rounds.py <translator> read [<folder> <text>…]
+  scripts/segmenter/review-rounds.py <translator> read [<folder> <text>…]
       writes each text's lines beside Sujato's to review/<folder>/ (read/ by default), for a
       read-through: the texts named, or every one, those with the most lines left empty first,
       about 60,000 characters to a file
@@ -30,7 +30,7 @@ BATCHES = f'{REVIEW}/batches'
 
 def segment(*flags):
     """Runs the segmenter and prints the lines that say what it kept, put up or left unwritten."""
-    out = subprocess.run(['node', 'scripts/segment-translations.mjs', translator, *flags], capture_output=True, text=True)
+    out = subprocess.run(['node', 'scripts/segmenter/segment-translations.mjs', translator, *flags], capture_output=True, text=True)
     told = ('kept', 'up for review', 'places:', 'not written', 'no longer', 'rror')
     print(''.join(f'{line}\n' for line in (out.stdout + out.stderr).split('\n') if any(w in line for w in told)), end='')
 

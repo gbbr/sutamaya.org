@@ -1,8 +1,8 @@
 # Bodhi and Thanissaro translations
 
 Two more English translations of the suttas the app carries, Bhikkhu Bodhi's and Ṭhānissaro
-Bhikkhu's. This folder keeps them as their sources publish them. `scripts/segment-translations.mjs`
-cuts each text onto the Pali's lines, in `data/sujato/`'s layout, and writes them to `data/bodhi/`
+Bhikkhu's. This folder keeps them as their sources publish them. The segmenter,
+`scripts/segmenter/segment-translations.mjs`, cuts each text onto the Pali's lines, in `data/sujato/`'s layout, and writes them to `data/bodhi/`
 and `data/thanissaro/`, where reviews settle the cuts it is unsure of.
 
 ## What's here
@@ -83,7 +83,8 @@ saved under every sutta it holds, and only the section a file is named for is re
 | Thanissaro, older copies | CC BY-NC 4.0, or Access to Insight's free-distribution terms |
 
 The editorial rules over Sujato's English ([docs/retranslation.md](../../docs/retranslation.md))
-are not meant for either translation.
+are not meant for either translation. A citation shown in the app's form ("3:2" as "AN3.2", with a
+link) counts as layout, not a change to the translator's wording.
 
 ## Pulling updates
 
@@ -98,7 +99,7 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    carries belong here.
 3. **SuttaCentral's files** (Bodhi, and Thanissaro's older copies): copy them again from sc-data's
    `html_text/en/pli/sutta/`, and update the commit above.
-4. **Segment**: `node scripts/segment-translations.mjs thanissaro` (or `bodhi`). A new text comes
+4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new text comes
    out with the segmenter's own cuts. A revised one keeps every settled cut that still fits, and the
    run names those that don't.
 5. **Review** the new and revised texts, as "Reviewing new and revised texts" says.
@@ -120,15 +121,16 @@ in `data/sujato/`'s layout:
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
   and not written.
 - **Markup**: a line's English carries a newline where a verse line of the translator's starts
-  inside it, `<span class="heading">` round a heading of his that no Pali heading line holds, and
-  `<a href>` round a reference in his text to another sutta, written the app's way ("as in 3:2"
-  becomes "as in AN3.2"), from `review/references.json`.
+  inside it, `<span class="heading">` round a heading of his that no Pali heading line holds, or
+  round a sutta's title that no title line holds, at the start of its text, and `<a href>` round a
+  reference in his text to another sutta, written the app's way ("as in 3:2" becomes "as in
+  AN3.2"), from `review/references.json`.
 
 ## Reviewing new and revised texts
 
 The segmenter's unsure cuts, and the places a cut can't mend, go to reviewers in rounds, and
-`cuts.json` keeps what they settle. `scripts/review-rounds.py <translator> put <folder> <segmenter
-options>` puts a round up in batches in `review/<folder>/`; reviewers answer beside them, as
+`cuts.json` keeps what they settle. `scripts/segmenter/review-rounds.py <translator> put <folder>
+<segmenter options>` puts a round up in batches in `review/<folder>/`; reviewers answer beside them, as
 [review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every text here has been
 through the rounds, so a round takes only the texts in hand: `--only <page>,…` names them, as their
 files here are named.
@@ -152,18 +154,23 @@ files here are named.
    `# superseded: `, which the segmenter skips. Otherwise a line two readers disagree on is left out.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
-   that no longer fits. Then commit.
+   that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
+   reads the pages its own way and compares them with the segmented text word for word: anything
+   it shows beyond references, heading numbers and page furniture blocks the commit. Then commit.
 
 ## What's left
 
 - Take in the rest of Bodhi's second read, batches 047 on in `review/reread/`, as step 3 of
   "Reviewing new and revised texts" says.
+- Teach `check-upstream.py` dhammatalks.org's pages, whose introductions and notes the segmenter
+  writes apart from the text, so it can check Thanissaro's translation too.
 
 ## Where to look
 
 | What | Where |
 |---|---|
-| The segmenter and its options | `scripts/segment-translations.mjs` |
-| Putting rounds up and keeping their answers | `scripts/review-rounds.py` |
+| The segmenter and its options | `scripts/segmenter/segment-translations.mjs` |
+| Putting rounds up and keeping their answers | `scripts/segmenter/review-rounds.py` |
+| The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
 | The reader a read-through runs | `.claude/agents/line-reader.md` |
