@@ -158,18 +158,19 @@ files here are named.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
-   reads the pages its own way and compares them with the segmented text word for word: anything
-   it shows beyond references, heading numbers and page furniture blocks the commit. Then commit.
+   reads the pages its own way and compares them with the segmented text and notes word for word:
+   anything it shows beyond references, heading numbers and page furniture blocks the commit. Then
+   commit.
 
 ## What's left
 
-- Teach `check-upstream.py` dhammatalks.org's pages, whose introductions and notes the segmenter
-  writes apart from the text, so it can check Thanissaro's translation too. Read that way, 29
-  pages differ, and each difference is the segmenter's: the "See also" of an AN 1 or AN 2 sutta
-  with no title line of its own, words run together where a note's italics start or end with a
-  space, a notes' box's paragraphs before its first numbered note (MN 10, DN 33), the second
-  page's title in `an2.31` and `sn22.126`, DN 1's headings (styled as a "See also"), and AN
-  1.31–38, which `an1.21-40.html` takes over though it lacks them.
+- Fix what `check-upstream.py` finds in Thanissaro's translation, 29 pages, each the segmenter's
+  doing: the "See also" of a sutta with no title line of its own (AN 1, AN 2 and `an1.49-52`,
+  whose title also lands on its second document's title line), words run together where a note's
+  italics start or end with a space (`noteHtml` trims inside them), a notes' box's paragraphs
+  before its first numbered note (MN 10, DN 33), the second page's title in `an2.31` and
+  `sn22.126`, DN 1's headings (styled as a "See also"), and AN 1.31–38, which `an1.21-40.html`
+  takes over though it lacks them (name it `an1.21-30,39-40.html` and teach `uidsOf` the comma).
 - Let a line start right after an ellipsis written without spaces ("restrained…with"), as after a
   dash, then try the findings that frees: most of the 220 Bodhi findings left unfound.
 - Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no
