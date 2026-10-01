@@ -1,0 +1,388 @@
+## an3.29
+an3.29:1.1 | S: “These three individuals are found in the world. | T: “Bhikkhus, there are these three kinds of persons found existing in the world.
+an3.29:1.2 | S: What three? | T: What three?
+an3.29:1.3 | S: The blind, the one-eyed, and the two-eyed. | T: The blind person, the one-eyed person, and the two-eyed person.
+an3.29:1.4 | S: Who is the blind individual? | T: (1) “And what, bhikkhus, is the blind person?
+an3.29:1.5 | S: It’s someone who doesn’t have the kind of vision that’s needed to acquire more wealth or to increase the wealth they’ve already acquired. | T: Here, some person lacks the kind of eye with which one can acquire wealth not yet acquired and increase wealth already acquired,
+an3.29:1.6 | S: Nor do they have the kind of vision that’s needed to know the difference between qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: and he also lacks the kind of eye with which one can know wholesome and unwholesome qualities, blameworthy and blameless qualities, inferior and superior qualities, dark and bright qualities with their counterparts.
+an3.29:1.7 | S: This is called a blind individual. | T: This is called the blind person.
+an3.29:2.1 | S: Who is the individual with one eye? | T: (2) “And what is the one-eyed person?
+an3.29:2.2 | S: It’s someone who has the kind of vision that’s needed to acquire more wealth and to increase the wealth they’ve already acquired. | T: Here, some person has the kind of eye with which one can acquire wealth not yet acquired and increase wealth already acquired,
+an3.29:2.3 | S: But they don’t have the kind of vision that’s needed to know the difference between qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: but he lacks the kind of eye with which one can know wholesome and unwholesome qualities, blameworthy and blameless qualities, inferior and superior qualities, dark and bright qualities with their counterparts.
+an3.29:2.4 | S: This is called a one-eyed individual. | T: This is called the one-eyed person.
+an3.29:3.1 | S: Who is the individual with two eyes? | T: (3) “And what is the two-eyed person?
+an3.29:3.2 | S: It’s someone who has the kind of vision that’s needed to acquire more wealth and to increase the wealth they’ve already acquired. | T: Here, some person has the kind of eye with which one can acquire wealth not yet acquired and increase wealth already acquired,
+an3.29:3.3 | S: And they have the kind of vision that’s needed to know the difference between skillful and unskillful, blameworthy and blameless, inferior and superior, or qualities on the side of dark and bright. | T: and he also has the kind of eye with which one can know wholesome and unwholesome qualities, blameworthy and blameless qualities, inferior and superior qualities, dark and bright qualities with their counterparts.
+an3.29:3.5 | S: This is called a two-eyed individual. | T: This is called the two-eyed person.
+an3.29:3.6 | S: These are the three individuals found in the world. | T: “These, bhikkhus, are the three kinds of persons found existing in the world.”
+an3.29:4.1 | S: Neither suitable wealth, | T: He does not possess such wealth,
+an3.29:4.2 | S: nor merit do they make. | T: nor does he do deeds of merit;
+an3.29:4.3 | S: They hold a losing hand on both counts, | T: (none)
+an3.29:4.4 | S: those who are blind, with ruined eyes. | T: the blind man destitute of eyes casts an unlucky throw in both respects.
+an3.29:5.1 | S: And now the one-eyed | T: The person described as one-eyed
+an3.29:5.2 | S: individual is explained. | T: (none)
+an3.29:5.3 | S: By methods good and bad, | T: (none)
+an3.29:5.4 | S: that devious person seeks wealth. | T: is a hypocrite who seeks wealth, sometimes righteously and sometimes unrighteously.
+an3.29:6.1 | S: Both by fraudulent, thieving deeds, | T: Both by thievish cheatful acts
+an3.29:6.2 | S: and also by lies, | T: and by means of false speech
+an3.29:6.3 | S: the young man’s skilled at piling up money, | T: the man indulging in sensual pleasures is skilled in amassing wealth.
+an3.29:6.4 | S: and enjoying sensual pleasures. | T: (none)
+an3.29:6.5 | S: From here they go to hell— | T: Having gone from here to hell,
+an3.29:6.6 | S: the one-eyed person is ruined. | T: the one-eyed person is tormented.
+an3.29:7.1 | S: And now the two-eyed is explained, | T: One with two eyes is said to be
+an3.29:7.2 | S: the best individual. | T: the best kind of person.
+an3.29:7.3 | S: Their wealth is earned legitimately, | T: His wealth is acquired by his own exertion, with goods righteously gained.
+an3.29:7.4 | S: money acquired by their own hard work. | T: (none)
+an3.29:8.1 | S: They give with best of intentions, | T: With best intentions he then gives,
+an3.29:8.2 | S: that peaceful-hearted man. | T: this person with an undivided mind.
+an3.29:8.3 | S: They go to a good place, | T: He goes to rebirth in an excellent state
+an3.29:8.4 | S: where there is no sorrow. | T: where, having gone, one does not sorrow.
+an3.29:9.1 | S: The blind and the one-eyed, | T: (none)
+an3.29:9.2 | S: you should avoid from afar. | T: One should avoid from afar
+an3.29:9.3 | S: But you should keep the two-eyed close, | T: the blind one and the one-eyed person, but should befriend the one with two eyes,
+an3.29:9.4 | S: the best individual.” | T: the best kind of person.
+
+## sn12.11
+sn12.11:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.11:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. … | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park….
+sn12.11:1.3 | S: “Mendicants, these four fuels maintain sentient beings that have been born and help those about to be born. | T: “Bhikkhus, there are these four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:1.4 | S: What four? | T: What four?
+sn12.11:1.5 | S: Edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: The nutriment edible food, gross or subtle; second, contact; third, mental volition; fourth, consciousness.
+sn12.11:1.6 | S: These are the four fuels that maintain sentient beings that have been born and help those about to be born. | T: These are the four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:2.1 | S: What is the source, origin, birthplace, and inception of these four fuels? | T: “Bhikkhus, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.2 | S: Craving. | T: These four kinds of nutriment have craving as their source, craving as their origin; they are born and produced from craving.
+sn12.11:2.3 | S: And what is the source, origin, birthplace, and inception of craving? | T: “And this craving has what as its source, what as its origin, from what is it born and produced?
+sn12.11:2.4 | S: Feeling. | T: This craving has feeling as its source, feeling as its origin; it is born and produced from feeling.
+sn12.11:2.5 | S: And what is the source of feeling? | T: “And this feeling has what as its source…? Feeling has contact as its source….
+sn12.11:2.6 | S: Contact. | T: (none)
+sn12.11:2.7 | S: And what is the source of contact? | T: And this contact has what as its source…?
+sn12.11:2.8 | S: The six sense fields. | T: Contact has the six sense bases as its source….
+sn12.11:2.9 | S: And what is the source of the six sense fields? | T: And these six sense bases have what as their source…? The six sense bases have name-and-form as their source….
+sn12.11:2.10 | S: Name and form. | T: (none)
+sn12.11:2.11 | S: And what is the source of name and form? | T: And this name-and-form has what as its source…? Name-and-form has consciousness as its source….
+sn12.11:2.12 | S: Consciousness. | T: (none)
+sn12.11:2.13 | S: And what is the source of consciousness? | T: And this consciousness has what as its source…? Consciousness has volitional formations as its source….
+sn12.11:2.14 | S: Choices. | T: (none)
+sn12.11:2.15 | S: And what is the source of choices? | T: And these volitional formations have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.16 | S: Ignorance. | T: Volitional formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+sn12.11:3.1 | S: And so, mendicants, ignorance is a requirement for choices. | T: “Thus, bhikkhus, with ignorance as condition, volitional formations come to be;
+sn12.11:3.2 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.11:3.3 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.11:3.4 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.11:3.5 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.11:3.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+
+## sn12.60
+sn12.60:1.1 | S: At one time the Buddha was staying in the land of the Kurus, near the Kuru town named Kammāsadamma. | T: On one occasion the Blessed One was dwelling among the Kurus, where there was a town of the Kurus named Kammasadamma.
+sn12.60:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.60:1.3 | S: “It’s incredible, sir! It’s amazing, | T: “It is wonderful, venerable sir! It is amazing, venerable sir!
+sn12.60:1.4 | S: in that this dependent origination is deep and appears deep, yet to me it seems as plain as can be.” | T: This dependent origination is so deep and so deep in implications, yet to me it seems as clear as clear can be.”
+sn12.60:2.1 | S: “Not so, Ānanda! Not so, Ānanda! | T: “Not so, Ānanda! Not so, Ānanda!
+sn12.60:2.2 | S: This dependent origination is deep and appears deep. | T: This dependent origination is deep and deep in implications.
+sn12.60:2.3 | S: It is because of not understanding and not penetrating this teaching that this population has become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: It is because of not understanding and not penetrating this Dhamma, Ānanda, that this generation has become like a tangled skein, like a knotted ball of thread, like matted reeds and rushes, and does not pass beyond the plane of misery, the bad destinations, the nether world, saṁsara.
+sn12.60:3.1 | S: There are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: “Ānanda, when one dwells contemplating gratification in things that can be clung to, craving increases.
+sn12.60:3.2 | S: Craving is a requirement for grasping. | T: With craving as condition,
+sn12.60:3.3 | S: Grasping is a requirement for continued existence. | T: clinging comes to be….
+sn12.60:3.4 | S: Continued existence is a requirement for rebirth. | T: (none)
+sn12.60:3.5 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: (none)
+sn12.60:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.60:4.1 | S: Suppose there was a great tree. | T: “Suppose, Ānanda, there was a great tree,
+sn12.60:4.2 | S: And its roots going downwards and across all draw the sap upwards. | T: and all its roots going downwards and across would send the sap upwards.
+sn12.60:4.3 | S: Fed and fuelled by that, the great tree would stand for a long time. | T: Sustained by that sap, nourished by it, that great tree would stand for a very long time.
+sn12.60:4.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one lives contemplating gratification in things that can be clung to, craving increases….
+sn12.60:4.5 | S: Craving is a requirement for grasping. | T: (none)
+sn12.60:4.6 | S: Grasping is a requirement for continued existence. … | T: (none)
+sn12.60:4.7 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.60:5.1 | S: There are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “When, Ānanda, one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.60:5.2 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging….
+sn12.60:5.3 | S: When grasping ceases, continued existence ceases. … | T: (none)
+sn12.60:5.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.60:6.1 | S: Suppose there was a great tree. | T: “Suppose, Ānanda, there was a great tree.
+sn12.60:6.2 | S: Then a person comes along with a spade and basket. | T: Then a man would come along bringing a shovel and a basket.
+sn12.60:6.3 | S: They’d cut the tree down at the roots, dig them up, and pull them out, down to the fibers and stems. | T: He would cut down the tree at its foot …
+sn12.60:6.4 | S: Then they’d split the tree apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or float them away down a swift stream. | T: he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.
+sn12.60:6.7 | S: In this way the great tree is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that great tree would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.60:6.8 | S: In the same way, there are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “So too, Ānanda, when one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.60:6.9 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging;
+sn12.60:6.10 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.60:6.11 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.60:6.12 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.60:6.13 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+
+## sn21.5
+sn21.5:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn21.5:1.2 | S: Then Venerable Sujāta went to the Buddha. | T: Then the Venerable Sujata approached the Blessed One.
+sn21.5:1.3 | S: The Buddha saw him coming off in the distance, | T: The Blessed One saw him coming in the distance and addressed the bhikkhus thus:
+sn21.5:1.4 | S: and addressed the mendicants: | T: (none)
+sn21.5:1.5 | S: “This gentleman shines in both ways. | T: “Bhikkhus, this clansman is beautiful in both respects.
+sn21.5:1.6 | S: He’s attractive, good-looking, lovely, of surpassing beauty. And he has realized the supreme culmination of the spiritual path in this very life. He lives having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.” | T: He is handsome, good-looking, pleasing to behold, possessing supreme beauty of complexion. And he is one who, by realizing it for himself with direct knowledge, in this very life enters and dwells in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.”
+sn21.5:1.7 | S: That is what the Buddha said. | T: This is what the Blessed One said … who further said this:
+sn21.5:1.8 | S: Then the Holy One, the Teacher, went on to say: | T: (none)
+sn21.5:2.1 | S: “This mendicant truly shines. | T: “This bhikkhu shines with sublime beauty,
+sn21.5:2.2 | S: His heart is upright, | T: Having a mind utterly straight.
+sn21.5:2.3 | S: he’s unfettered, detached, | T: Detached is he, free from fetters,
+sn21.5:2.4 | S: quenched by not grasping. | T: Attained to Nibbāna by nonclinging.
+sn21.5:2.5 | S: He bears his final body, | T: He carries about his final body,
+sn21.5:2.6 | S: having vanquished Māra with his legions.” | T: Having conquered Mara and his mount.”
+
+## sn22.66
+sn22.66:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.66:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain bhikkhu approached the Blessed One … and said to him:
+sn22.66:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief….”
+sn22.66:1.4 | S: “Mendicant, give up desire for whatever’s impermanent.” | T: “Bhikkhu, you should abandon desire for whatever is impermanent.”
+sn22.66:1.5 | S: “Understood, Blessed One! Understood, Holy One!” | T: “Understood, Blessed One! Understood, Fortunate One!”
+sn22.66:2.1 | S: “But how do you see the detailed meaning of my brief statement?” | T: “In what way, bhikkhu, do you understand in detail the meaning of what was stated by me in brief?”
+sn22.66:2.2 | S: “Sir, form is impermanent; I should give up desire for it. | T: “Form, venerable sir, is impermanent; I should abandon desire for it.
+sn22.66:2.3 | S: Feeling … | T: Feeling is impermanent …
+sn22.66:2.4 | S: Perception … | T: Perception is impermanent …
+sn22.66:2.5 | S: Choices … | T: Volitional formations are impermanent …
+sn22.66:2.6 | S: Consciousness is impermanent; I should give up desire for it. | T: Consciousness is impermanent; I should abandon desire for it.
+sn22.66:2.7 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It is in such a way, venerable sir, that I understand in detail the meaning of what was stated by the Blessed One in brief.”
+sn22.66:3.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+sn22.66:3.2 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this. | T: It is good that you understand in detail the meaning of what was stated by me in brief.
+sn22.66:3.3 | S: Form is impermanent; you should give up desire for it. | T: Form is impermanent …
+sn22.66:3.4 | S: Feeling … | T: (none)
+sn22.66:3.5 | S: Perception … | T: (none)
+sn22.66:3.6 | S: Choices … | T: (none)
+sn22.66:3.7 | S: Consciousness is impermanent; you should give up desire for it. | T: Consciousness is impermanent; you should abandon desire for it.
+sn22.66:3.8 | S: This is how to see the detailed meaning of what I said in brief.” … | T: It is in such a way that the meaning of what was stated by me in brief should be understood in detail.”
+sn22.66:3.9 | S: And that mendicant became one of the perfected. | T: … And that bhikkhu became one of the arahants.
+
+## sn35.101
+sn35.101:1.1 | S: “Mendicants, give up what’s not yours. | T: “Bhikkhus, whatever is not yours, abandon it.
+sn35.101:1.2 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn35.101:1.3 | S: And what isn’t yours? | T: And what is it, bhikkhus, that is not yours?
+sn35.101:1.4 | S: The eye isn’t yours: give it up. | T: The eye is not yours: abandon it.
+sn35.101:1.6 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn35.101:1.7 | S: Sights … | T: Forms are not yours …
+sn35.101:1.10 | S: Eye consciousness … | T: Eye-consciousness is not yours …
+sn35.101:1.13 | S: Eye contact … | T: Eye-contact is not yours …
+sn35.101:1.16 | S: The pleasant, painful, or neutral feeling that arises dependent on eye contact isn’t yours: give it up. | T: Whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is not yours: abandon it.
+sn35.101:1.18 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn35.101:2.1 | S: The ear … nose … tongue … body … | T: “The ear is not yours …
+sn35.101:3.1 | S: The mind isn’t yours: give it up. | T: (none)
+sn35.101:3.3 | S: Giving it up will be for your welfare and happiness. | T: (none)
+sn35.101:3.4 | S: Ideas … | T: …
+sn35.101:3.7 | S: Mind consciousness … | T: The mind is not yours …
+sn35.101:3.10 | S: Mind contact … | T: (none)
+sn35.101:3.13 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. | T: Whatever feeling arises with mind-contact as condition … that too is not yours: abandon it.
+sn35.101:3.15 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn35.101:4.1 | S: Suppose a person was to carry off the grass, sticks, branches, and leaves in this Jeta’s Grove, or burn them, or do what they want with them. | T: “Suppose, bhikkhus, people were to carry off the grass, sticks, branches, and foliage in this Jeta’s Grove, or to burn them, or to do with them as they wish.
+sn35.101:4.2 | S: Would you think: | T: Would you think:
+sn35.101:4.3 | S: ‘This person is carrying us off, burning us, or doing what they want with us’?” | T: ‘People are carrying us off, or burning us, or doing with us as they wish’?”
+sn35.101:5.1 | S: “No, sir. | T: “No, venerable sir.
+sn35.101:6.1 | S: Why is that? | T: For what reason?
+sn35.101:7.1 | S: Because  to us that’s neither self nor belonging to self.” | T: Because, venerable sir, that is neither our self nor what belongs to our self.”
+sn35.101:8.1 | S: “In the same way, the eye isn’t yours: give it up. | T: “So too, bhikkhus, the eye is not yours …
+sn35.101:8.3 | S: Giving it up will be for your welfare and happiness. … | T: (none)
+sn35.101:8.7 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. | T: Whatever feeling arises with mind-contact as condition … that too is not yours: abandon it.
+sn35.101:8.9 | S: Giving it up will be for your welfare and happiness.” | T: When you have abandoned it, that will lead to your welfare and happiness.”
+
+## sn35.105
+sn35.105:1.1 | S: “Mendicants, when what exists, because of grasping what, do pleasure and pain arise in oneself?” | T: “Bhikkhus, when what exists, by clinging to what, do pleasure and pain arise internally?”
+sn35.105:2.1 | S: “Our teachings are rooted in the Buddha. …” | T: “Venerable sir, our teachings are rooted in the Blessed One….”
+sn35.105:3.1 | S: “Mendicants, when there’s an eye, because of grasping the eye, pleasure and pain arise in oneself. … | T: “When there is the eye, bhikkhus, by clinging to the eye, pleasure and pain arise internally. When there is the ear …
+sn35.105:3.2 | S: When there’s a mind, because of grasping the mind, pleasure and pain arise in oneself. | T: the mind, by clinging to the mind, pleasure and pain arise internally.
+sn35.105:3.3 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn35.105:3.4 | S: Is the eye permanent or impermanent?” | T: is the eye permanent or impermanent?”
+sn35.105:4.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”
+sn35.105:5.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”
+sn35.105:6.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”
+sn35.105:7.1 | S: “But by not grasping what’s impermanent, suffering, and perishable, would pleasure and pain arise in oneself?” | T: “But without clinging to what is impermanent, suffering, and subject to change, could pleasure and pain arise internally?”
+sn35.105:8.1 | S: “No, sir.” … | T: “No, venerable sir.”
+sn35.105:9.1 | S: “Is the ear … nose … tongue … body … | T: “Is the ear …
+sn35.105:15.1 | S: mind permanent or impermanent?” | T: the mind permanent or impermanent?…
+sn35.105:16.1 | S: “Impermanent, sir.” | T: (none)
+sn35.105:17.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn35.105:18.1 | S: “Suffering, sir.” | T: (none)
+sn35.105:19.1 | S: “But by not grasping what’s impermanent, suffering, and perishable, would pleasure and pain arise in oneself?” | T: But without clinging to what is impermanent, suffering, and subject to change, could pleasure and pain arise internally?”
+sn35.105:20.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.105:21.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, ear, nose, tongue, body, and mind. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards the eye … the mind.
+sn35.105:21.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.105:21.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+
+## sn35.90
+sn35.90:1.1 | S: “Mendicants, turbulence is a disease, a boil, a dart. | T: “Bhikkhus, being stirred is a disease, being stirred is a tumour, being stirred is a dart.
+sn35.90:1.2 | S: That’s why the Realized One lives unperturbed, with dart drawn out. | T: Therefore, bhikkhus, the Tathagata dwells unstirred, with the dart removed.
+sn35.90:1.3 | S: Now, a mendicant might wish: ‘May I live unperturbed, with dart drawn out.’ | T: Therefore, bhikkhus, if a bhikkhu should wish, ‘May I dwell unstirred, with the dart removed!’
+sn35.90:1.4 | S: So let them not conceive anything to be the eye, let them not conceive it in the eye, let them not conceive it as the eye, let them not conceive that ‘the eye is mine.’ | T: he should not conceive the eye, should not conceive in the eye, should not conceive from the eye, should not conceive, ‘The eye is mine.’
+sn35.90:1.5 | S: Let them not conceive sights … | T: “He should not conceive forms …
+sn35.90:1.6 | S: eye consciousness … | T: eye-consciousness …
+sn35.90:1.7 | S: eye contact … | T: eye-contact …
+sn35.90:1.8 | S: Let them not conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on eye contact. Let them not conceive it in that, let them not conceive it as that, and let them not conceive that ‘that is mine.’ | T: and as to whatever feeling arises with eye-contact as condition … he should not conceive that, should not conceive in that, should not conceive from that, should not conceive, ‘That is mine.’
+sn35.90:2.1 | S: Let them not conceive anything to be the ear … | T: “He should not conceive the ear …
+sn35.90:2.2 | S: nose … | T: (none)
+sn35.90:2.3 | S: tongue … | T: (none)
+sn35.90:3.1 | S: body … | T: (none)
+sn35.90:3.2 | S: mind … | T: He should not conceive the mind …
+sn35.90:3.3 | S: ideas … | T: mental phenomena …
+sn35.90:3.4 | S: mind consciousness … | T: mind-consciousness …
+sn35.90:3.5 | S: mind contact … | T: mind-contact …
+sn35.90:3.6 | S: Let them not conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on mind contact. Let them not conceive it in that, let them not conceive it as that, and let them not conceive that ‘that is mine.’ | T: and as to whatever feeling arises with mind-contact as condition … he should not conceive that, should not conceive in that, should not conceive from that, should not conceive, ‘That is mine.’
+sn35.90:3.7 | S: Let them not conceive anything to be all, let them not conceive it in all, let them not conceive it as all, let them not conceive that ‘all is mine’. | T: “He should not conceive all, should not conceive in all, should not conceive from all, should not conceive, ‘All is mine.’
+sn35.90:4.1 | S: Not conceiving, they don’t grasp at anything in the world. | T: “Since he does not conceive anything thus, he does not cling to anything in the world.
+sn35.90:4.2 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn35.90:4.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+
+## sn47.13
+sn47.13:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn47.13:1.2 | S: At that time Venerable Sāriputta was staying in the Magadhan lands near the little village of Nālaka, and he was sick, suffering, gravely ill. | T: Now on that occasion the Venerable Sāriputta was dwelling among the Magadhans at Nalakagama—sick, afflicted, gravely ill—
+sn47.13:1.3 | S: And the novice Cunda was his carer. | T: and the novice Cunda was his attendant.
+sn47.13:2.1 | S: Then Venerable Sāriputta was fully extinguished from that sickness. | T: Then, because of that illness, the Venerable Sāriputta attained final Nibbāna.
+sn47.13:2.2 | S: Then Cunda took Sāriputta’s bowl and robes and set out for Sāvatthī. He went to see Venerable Ānanda at Jeta’s grove, Anāthapiṇḍika’s monastery, bowed, sat down to one side, and said to him: | T: The novice Cunda, taking the Venerable Sāriputta’s bowl and robe, went to Savatthi, to Jeta’s Grove, Anathapiṇḍika’s Park. There he approached the Venerable Ānanda, paid homage to him, sat down to one side, and said to him:
+sn47.13:2.3 | S: “Sir, Venerable Sāriputta has become fully quenched. | T: “Venerable sir, the Venerable Sāriputta has attained final Nibbāna.
+sn47.13:2.4 | S: This is his bowl and robe.” | T: This is his bowl and robe.”
+sn47.13:3.1 | S: “Reverend Cunda, we should see the Buddha about this matter. | T: “Friend Cunda, we should see the Blessed One about this piece of news.
+sn47.13:3.2 | S: Come, let’s go to the Buddha and inform him about this.” | T: Come, friend Cunda, let us go to the Blessed One and report this matter to him.”
+sn47.13:3.3 | S: “Yes, sir,” replied Cunda. | T: “Yes, venerable sir,” the novice Cunda replied.
+sn47.13:4.1 | S: Then Ānanda and Cunda went to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda and the novice Cunda approached the Blessed One, paid homage to him, and sat down to one side. The Venerable Ānanda then said to the Blessed One:
+sn47.13:4.2 | S: “Sir, this novice Cunda says that | T: “This novice Cunda, venerable sir, says that
+sn47.13:4.3 | S: Venerable Sāriputta has become fully quenched. | T: the Venerable Sāriputta has attained final Nibbāna,
+sn47.13:4.4 | S: This is his bowl and robe. | T: and this is his bowl and robe.
+sn47.13:4.5 | S: Since I heard this, my body feels like it’s drugged. I’m disorientated, and the teachings don’t spring to mind.” | T: Venerable sir, since I heard that the Venerable Sāriputta has attained final Nibbāna, my body seems as if it has been drugged, I have become disoriented, the teachings are no longer clear to me.”
+sn47.13:5.1 | S: “Well, Ānanda, when Sāriputta was fully quenched, did he take away your entire spectrum of ethical conduct, of immersion, of wisdom, of freedom, or of the knowledge and vision of freedom?” | T: “Why, Ānanda, when Sāriputta attained final Nibbāna, did he take away your aggregate of virtue, or your aggregate of concentration, or your aggregate of wisdom, or your aggregate of liberation, or your aggregate of the knowledge and vision of liberation?”
+sn47.13:5.2 | S: “No, sir, he did not. | T: “No, he did not,
+sn47.13:5.6 | S: But Venerable Sāriputta was my adviser and counselor. He educated, encouraged, fired up, and inspired me. He never tired of teaching the Dhamma, and he supported his spiritual companions. | T: venerable sir. But for me the Venerable Sāriputta was an advisor and counsellor, one who instructed, exhorted, inspired, and gladdened me. He was unwearying in teaching the Dhamma; he was helpful to his brothers in the holy life.
+sn47.13:5.7 | S: I remember the nectar of the teaching, the riches of the teaching, the support of the teaching given by Venerable Sāriputta.” | T: We recollect the nourishment of Dhamma, the wealth of Dhamma, the help of Dhamma given by the Venerable Sāriputta.”
+sn47.13:6.1 | S: “Ānanda, did I not prepare for this when I explained that | T: “But have I not already declared, Ānanda,
+sn47.13:6.2 | S: we must be parted and separated from all we hold dear and beloved? | T: that we must be parted, separated, and severed from all who are dear and agreeable to us?
+sn47.13:6.3 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: How, Ānanda, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate!’?
+sn47.13:6.4 | S: That is not possible. | T: That is impossible.
+sn47.13:6.5 | S: Suppose there was a large tree standing with heartwood, and the largest branch broke off. | T: It is just as if the largest branch would break off a great tree standing possessed of heartwood:
+sn47.13:6.6 | S: In the same way, in the great Saṅgha that stands with heartwood, Sāriputta has become fully quenched. | T: so too, Ānanda, in the great Bhikkhu Saṅgha standing possessed of heartwood, Sāriputta has attained final Nibbāna.
+sn47.13:6.7 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: How, Ānanda, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate!’?
+sn47.13:6.8 | S: That is not possible. | T: That is impossible.
+sn47.13:6.9 | S: So Ānanda, live as your own island, your own refuge, with no other refuge. Let the teaching be your island and your refuge, with no other refuge. | T: “Therefore, Ānanda, dwell with yourselves as your own island, with yourselves as your own refuge, with no other refuge; dwell with the Dhamma as your island, with the Dhamma as your refuge,
+sn47.13:7.1 | S: And how does a mendicant do this? | T: (none)
+sn47.13:7.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.13:7.3 | S: They meditate observing an aspect of feelings … | T: (none)
+sn47.13:7.4 | S: mind … | T: (none)
+sn47.13:7.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.13:7.6 | S: That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. | T: with no other refuge … as in §9 … Those bhikkhus, Ānanda, either now or after I am gone, who dwell with themselves as their own island, with themselves as their own refuge,
+sn47.13:7.7 | S: Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” | T: with no other refuge; who dwell with the Dhamma as their island, with the Dhamma as their refuge, with no other refuge—it is these bhikkhus, Ānanda, who will be for me topmost of those keen on the training.”
+
+## sn56.23
+sn56.23:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn56.23:1.2 | S: “Mendicants, there are these four noble truths. | T: “Bhikkhus, there are these Four Noble Truths.
+sn56.23:1.3 | S: What four? | T: What four?
+sn56.23:1.4 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.23:1.5 | S: These are the four noble truths. | T: (none)
+sn56.23:1.6 | S: It is because he has truly understood these four noble truths that the Realized One is called ‘the perfected one, the fully awakened Buddha’. | T: It is because he has fully awakened to these Four Noble Truths as they really are that the Tathagata is called the Arahant, the Perfectly Enlightened One.
+sn56.23:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+
+## mn70
+mn70:1.1 | S: So I have heard. | T: Thus have I heard.
+mn70:1.2 | S: At one time the Buddha was wandering in the land of the Kāsis together with a large Saṅgha of mendicants. | T: On one occasion the Blessed One was wandering in the Kāsi country together with a large Sangha of bhikkhus.
+mn70:1.3 | S: There the Buddha addressed the mendicants: | T: There he addressed the bhikkhus thus:
+mn70:2.1 | S: “Mendicants, I abstain from eating at night. | T: “Bhikkhus, I abstain from eating at night.
+mn70:2.2 | S: Doing so, I find that I’m healthy and well, nimble, strong, and living comfortably. | T: By so doing, I am free from illness and affliction, and I enjoy lightness, strength, and a comfortable abiding.
+mn70:2.3 | S: You too should never eat at night. | T: Come, bhikkhus, abstain from eating at night.
+mn70:2.4 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.” | T: By so doing, you too will be free from illness and affliction, and you will enjoy lightness, strength, and a comfortable abiding.”
+mn70:2.5 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” they replied.
+mn70:3.1 | S: Then the Buddha, traveling stage by stage in the land of the Kāsis, arrived at a town of the Kāsis named Kīṭāgiri, | T: Then, as the Blessed One was wandering by stages in the Kāsi country, he eventually arrived at a Kāsi town called Kīṭāgiri.
+mn70:3.2 | S: and stayed there. | T: There he lived in this Kāsi town, Kīṭāgiri.
+mn70:4.1 | S: Now at that time the mendicants who followed Assaji and Punabbasuka were residing at Kīṭāgiri. | T: Now on that occasion the bhikkhus led by Assaji and Punabbasuka were residing at Kīṭāgiri.
+mn70:4.2 | S: Then several mendicants went up to them and said, | T: Then a number of bhikkhus went and told them:
+mn70:4.3 | S: “Reverends, the Buddha never eats at night, and neither does the mendicant Saṅgha. | T: “Friends, the Blessed One and the Sangha of bhikkhus now abstain from eating at night.
+mn70:4.4 | S: Doing so, they find that they’re healthy and well, nimble, strong, and living comfortably. | T: By so doing, they are free from illness and affliction, and they enjoy health, strength, and a comfortable abiding.
+mn70:4.5 | S: You too should abstain from eating at night. | T: Come, friends, abstain from eating at night.
+mn70:4.6 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.” | T: By so doing, you too will be free from illness and affliction, and you will enjoy lightness, strength, and a comfortable abiding.”
+mn70:4.7 | S: When they said this, the mendicants who followed Assaji and Punabbasuka said to them, | T: When this was said, the bhikkhus led by Assaji and Punabbasuka told those bhikkhus:
+mn70:4.8 | S: “Reverends, we eat at dusk, at daybreak, and at the wrong time of day. | T: “Friends, we eat in the evening, in the morning, and in the day outside the proper time.
+mn70:4.9 | S: Doing so, we find that we’re healthy and well, nimble, strong, and living comfortably. | T: By so doing, we are free from illness and affliction, and we enjoy lightness, strength, and a comfortable abiding.
+mn70:4.10 | S: Why should we give up what is apparent in the present to chase after what takes effect over time? | T: Why should we abandon a benefit visible here and now to pursue a benefit to be achieved at a future time?
+mn70:4.11 | S: We shall eat at dusk, at daybreak, and at the wrong time of day.” | T: We shall eat in the evening, in the morning, and in the day outside the proper time.”
+mn70:5.1 | S: Since those mendicants were unable to persuade the mendicants who were followers of Assaji and Punabbasuka, they approached the Buddha, bowed, sat down to one side, and told him what had happened. | T: Since the bhikkhus were unable to convince the bhikkhus led by Assaji and Punabbasuka, they went to the Blessed One. After paying homage to him, they sat down at one side and told him all that had occurred, adding: “Venerable sir, since we were unable to convince the bhikkhus led by Assaji and Punabbasuka, we have reported this matter to the Blessed One.”
+mn70:6.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One addressed a certain bhikkhu thus:
+mn70:6.2 | S: “Please, monk, in my name tell the mendicants who follow Assaji and Punabbasuka that | T: “Come, bhikkhu, tell the bhikkhus led by Assaji and Punabbasuka in my name that
+mn70:6.3 | S: the Teacher summons them.” | T: the Teacher calls them.”
+mn70:6.4 | S: “Yes, sir,” that monk replied. He went to those mendicants and said, | T: “Yes, venerable sir,” he replied, and he went to the bhikkhus led by Assaji and Punabbasuka and told them:
+mn70:6.5 | S: “Venerables, the Teacher summons you.” | T: “The Teacher calls you, friends.”
+mn70:6.6 | S: “Yes, reverend,” those mendicants replied. They went to the Buddha, bowed, and sat down to one side. | T: “Yes, friend,” they replied, and they went to the Blessed One, and after paying homage to him, sat down at one side.
+mn70:6.7 | S: The Buddha said to them, “Is it really true, mendicants, that several mendicants went to you and said: | T: The Blessed One then said: “Bhikkhus, is it true that when a number of bhikkhus went and told you:
+mn70:6.8 | S: ‘Reverends, the Buddha never eats at night, and neither does the mendicant Saṅgha. | T: ‘Friends, the Blessed One and the Sangha now abstain from eating at night…Come, friends,
+mn70:6.9 | S: Doing so, they find that they’re healthy and well, nimble, strong, and living comfortably. | T: (none)
+mn70:6.10 | S: You too should never eat at night. | T: abstain from eating at night …,’
+mn70:6.11 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.’ | T: (none)
+mn70:6.12 | S: When they said this, did you really say to them: | T: you told those bhikkhus:
+mn70:6.13 | S: ‘Reverends, we eat at dusk, at daybreak, and at the wrong time of day. | T: ‘Friends, we eat in the evening…Why should we abandon a benefit visible here and now to pursue a benefit to be achieved at a future time?
+mn70:6.14 | S: Doing so, we find that we’re healthy and well, nimble, strong, and living comfortably. | T: (none)
+mn70:6.15 | S: Why should we give up what is apparent in the present to chase after what takes effect over time? | T: (none)
+mn70:6.16 | S: We shall eat at dusk, at daybreak, and at the wrong time of day.’” | T: We shall eat in the evening, in the morning, and in the day outside the proper time’?”—
+mn70:6.17 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn70:6.18 | S: “Mendicants, have you ever known me to teach the Dhamma like this: no matter what this individual experiences—pleasurable, painful, or neutral—their unskillful qualities decline and their skillful qualities grow?” | T: “Bhikkhus, have you known me to teach the Dhamma in such a way as this: ‘Whatever this person experiences, whether pleasant or painful or neither-painful-nor-pleasant, unwholesome states diminish in him and wholesome states increase’?”—
+mn70:6.19 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:7.1 | S: “Haven’t you known me to teach the Dhamma like this: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow. When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow. When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow’?” | T: “Bhikkhus, have you not known me to teach the Dhamma in such a way as this: ‘Here, when someone feels a certain kind of pleasant feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase. Here, when someone feels a certain kind of painful feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of painful feeling, unwholesome states diminish in him and wholesome states increase. Here, when someone feels a certain kind of neither-painful-nor-pleasant feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of neither-painful-nor-pleasant feeling, unwholesome states diminish in him and wholesome states increase’?”—
+mn70:7.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn70:8.1 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn70:8.2 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: And if it were unknown by me, unseen, unfound, unrealised, uncontacted by wisdom thus:
+mn70:8.3 | S: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline.’ | T: ‘Here, when someone feels a certain kind of pleasant feeling, unwholesome states increase in him and wholesome states diminish,’
+mn70:8.4 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of pleasant feeling’?” | T: would it be fitting for me, not knowing that, to say: ‘Abandon such a kind of pleasant feeling’?”—
+mn70:8.5 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:8.6 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “But because it is known by me, seen, found, realised, contacted by wisdom thus:
+mn70:8.7 | S: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of pleasant feeling.’ | T: ‘Here, when someone feels a certain kind of pleasant feeling , unwholesome states increase in him and wholesome states diminish,’ that I therefore say: ‘Abandon such a kind of pleasant feeling.’
+mn70:8.8 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me, unseen, unfound, unrealised, uncontacted by wisdom thus:
+mn70:8.9 | S: ‘When someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow.’ | T: ‘Here, when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase,’
+mn70:8.10 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of pleasant feeling’?” | T: would it be fitting for me, not knowing that, to say: ‘Enter upon and abide in such a kind of pleasant feeling’?”—
+mn70:8.11 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:8.12 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “But because it is known by me, seen, found, realised, contacted by wisdom thus:
+mn70:8.13 | S: ‘When someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of pleasant feeling.’ | T: ‘Here, when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase,’ that I therefore say: ‘Enter upon and abide in such a kind of pleasant feeling.’
+mn70:8.14 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:8.15 | S: ‘When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline.’ | T: ‘Here, when someone feels a certain kind of painful feeling, unwholesome states increase in him and wholesome states diminish,’
+mn70:8.16 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of painful feeling’?” | T: that I therefore say: ‘Abandon such a kind of painful feeling.’
+mn70:8.17 | S: “No, sir.” | T: (none)
+mn70:9.1 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:9.2 | S: ‘When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of painful feeling.’ | T: ‘Here, when someone feels another kind of painful feeling, unwholesome states diminish in him and wholesome states increase,’ that I therefore say:
+mn70:9.3 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:9.4 | S: ‘When someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow.’ | T: (none)
+mn70:9.5 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of painful feeling’?” | T: ‘Enter upon and abide in such a kind of painful feeling.’
+mn70:9.6 | S: “No, sir.” | T: (none)
+mn70:9.7 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:9.8 | S: ‘When someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of painful feeling.’ | T: ‘Here, when someone feels a certain kind of neither-painful-nor-pleasant feeling, unwholesome states increase in him and wholesome states diminish,’ that I therefore say:
+mn70:10.1 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:10.2 | S: ‘When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline.’ | T: (none)
+mn70:10.3 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of neutral feeling’?” | T: ‘Abandon such a kind of neither-painful-nor-pleasant feeling.’
+mn70:10.4 | S: “No, sir.” | T: (none)
+mn70:10.5 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:10.6 | S: ‘When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of neutral feeling.’ | T: (none)
+mn70:10.7 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:10.8 | S: ‘When someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow.’ | T: (none)
+mn70:10.9 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of neutral feeling’?” | T: (none)
+mn70:10.10 | S: “No, sir.” | T: (none)
+mn70:11.1 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:11.2 | S: ‘When someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of neutral feeling.’ | T: ‘Here, when someone feels another kind of neither-painful-nor-pleasant feeling, unwholesome states diminish in him and wholesome states increase,’ that I therefore say: ‘Enter upon and abide in such a kind of neither-painful-nor-pleasant feeling.’
+mn70:12.1 | S: Mendicants, I don’t say that all these mendicants still have work to do with diligence. | T: “Bhikkhus, I do not say of all bhikkhus that they still have work to do with diligence;
+mn70:12.2 | S: Nor do I say that all these mendicants have no work to do with diligence. | T: nor do I say of all bhikkhus that they have no more work to do with diligence.
+mn70:12.3 | S: I say that mendicants don’t have work to do with diligence if they are perfected, with defilements ended, having completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and become rightly freed through enlightenment. | T: “I do not say of those bhikkhus who are arahants with taints destroyed, who have lived the holy life, done what had to be done, laid down the burden, reached the true goal, destroyed the fetters of being, and are completely liberated through final knowledge, that they still have work to do with diligence.
+mn70:12.4 | S: Why is that? | T: Why is that?
+mn70:12.5 | S: They’ve done their work with diligence. | T: They have done their work with diligence;
+mn70:12.6 | S: They’re incapable of being negligent. | T: they are no more capable of being negligent.
+mn70:13.1 | S: I say that mendicants still have work to do with diligence if they are trainees, who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke. | T: “I say of such bhikkhus who are in higher training, whose minds have not yet reached the goal, and who are still aspiring to the supreme security from bondage, that they still have work to do with diligence.
+mn70:13.2 | S: Why is that? Thinking: | T: Why is that? Because when those venerable ones make use of suitable resting places and associate with good friends and nurture their spiritual faculties,
+mn70:13.3 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: (none)
+mn70:13.4 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: they may by realising for themselves with direct knowledge here and now enter upon and abide in that supreme goal of the holy life for the sake of which clansmen rightly go forth from the home life into homelessness.
+mn70:13.5 | S: Seeing this fruit of diligence for those mendicants, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for these bhikkhus, I say that they still have work to do with diligence.
+mn70:14.1 | S: Mendicants, these seven individuals are found in the world. | T: “Bhikkhus, there are seven kinds of persons to be found existing in the world.
+mn70:14.2 | S: What seven? | T: What seven?
+mn70:14.3 | S: One freed both ways, one freed by wisdom, a direct witness, one attained to view, one freed by faith, a follower of teachings, and a follower by faith. | T: They are: one liberated-in-both ways, one liberated-by-wisdom, a body-witness, one attained-to-view, one liberated-by-faith, a Dhamma-follower, and a faith-follower.
+mn70:15.1 | S: And what individual is freed both ways? | T: “What kind of person is one liberated-in-both-ways?
+mn70:15.2 | S: It’s an individual who has direct meditative experience of the peaceful liberations that are formless, transcending form. And, having seen with wisdom, their defilements have come to an end. | T: Here some person contacts with the body and abides in those liberations that are peaceful and immaterial, transcending forms, and his taints are destroyed by his seeing with wisdom.
+mn70:15.3 | S: This individual is called freed both ways. | T: This kind of person is called one liberated-in-both-ways.
+mn70:15.4 | S: And I say that this mendicant has no work to do with diligence. | T: I do not say of such a bhikkhu that he still has work to do with diligence.
+mn70:15.5 | S: Why is that? | T: Why is that?
+mn70:15.6 | S: They’ve done their work with diligence. | T: He has done his work with diligence;
+mn70:15.7 | S: They’re incapable of being negligent. | T: he is no more capable of being negligent.
+mn70:16.1 | S: And what individual is freed by wisdom? | T: “What kind of person is one liberated-by-wisdom?
+mn70:16.2 | S: It’s an individual who does not have direct meditative experience of the peaceful liberations that are formless, transcending form. Nevertheless, having seen with wisdom, their defilements have come to an end. | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, but his taints are destroyed by his seeing with wisdom.
+mn70:16.3 | S: This individual is called freed by wisdom. | T: This kind of person is called one liberated-by-wisdom.
+mn70:16.4 | S: I say that this mendicant has no work to do with diligence. | T: I do not say of such a bhikkhu that he still has work to do with diligence.
+mn70:16.5 | S: Why is that? | T: Why is that?
+mn70:16.6 | S: They’ve done their work with diligence. | T: He has done his work with diligence;
+mn70:16.7 | S: They’re incapable of being negligent. | T: he is no more capable of being negligent.
+mn70:17.1 | S: And what individual is a direct witness? | T: “What kind of person is a body-witness?
+mn70:17.2 | S: It’s an individual who has direct meditative experience of the peaceful liberations that are formless, transcending form. And, having seen with wisdom, some of their defilements have come to an end. | T: Here some person contacts with the body and abides in those liberations that are peaceful and immaterial, transcending forms, and some of his taints are destroyed by his seeing with wisdom.
+mn70:17.3 | S: This individual is called a direct witness. | T: This kind of person is called a body-witness.
+mn70:17.4 | S: I say that this mendicant still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:17.5 | S: Why is that? Thinking: | T: Why is that? Because when that venerable one makes use of suitable resting places and associates with good friends and nurtures his spiritual faculties,
+mn70:17.6 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: (none)
+mn70:17.7 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: he may by realising for himself with direct knowledge here and now enter upon and abide in that supreme goal of the holy life for the sake of which clansmen rightly go forth from the home life into homelessness.
