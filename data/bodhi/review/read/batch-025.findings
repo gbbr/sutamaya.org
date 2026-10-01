@@ -6,9 +6,9 @@ mn63:5.15 starts: until I know whether the man who wounded me was dark
 mn63:5.17 starts: until I know whether the man who wounded me lives
 mn63:5.19 starts: until I know whether the bow that wounded me
 mn63:5.21 starts: until I know whether the bowstring that wounded me
-mn63:5.23 starts: until I know whether the shaft that wounded me was wild
+# superseded: mn63:5.23 starts: until I know whether the shaft that wounded me was wild
 mn63:5.25 starts: until I know with what kind of feathers the shaft
-mn63:5.27 starts: until I know with what kind of sinew the shaft
+# superseded: mn63:5.27 starts: until I know with what kind of sinew the shaft
 mn63:5.29 starts: until I know what kind of arrowhead it was
 mn63:7.3 starts: And what have I left undeclared?
 sn35.121:18.1 none

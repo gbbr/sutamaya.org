@@ -1312,7 +1312,10 @@
  "mn148:5.4": "angible-base, and the mind-object-base.",
  "mn148:8.9": "nd-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.",
  "mn148:9.9": "bjects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling; with feeling as condition there is craving.",
- "mn148:10.24": "act is self.’ Thus the eye is not self,",
+ "mn148:10.24": {
+  "after": "r anyone to say, ‘Eye-contact is self.’",
+  "placed": true
+ },
  "mn148:17-21.5": {
   "after": "am, this is my self.’ One regards forms thus…One regards eye-consciousness thus…One regards eye-contact thus…One regards feeling thus…One regards craving thus:",
   "placed": true
@@ -2826,12 +2829,12 @@
  "an5.55:1.10": "re was intimacy, lust found an opening.",
  "an5.55:5.3": "ad, a woman obsesses the mind of a man.",
  "an5.56:3.1": {
-  "after": "l life dissatisfied and have doubt about the teachings.”\nThen the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said. The Blessed One said:",
+  "after": "d and have doubt about the teachings.”\nThen the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said.",
   "placed": true
  },
  "an5.56:4.2": "he right side toward him, and departed.",
  "an5.56:6.1": {
-  "after": "al life joyfully and have no doubt about the teachings.”\nThen the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said. The Blessed One said:",
+  "after": "nd have no doubt about the teachings.”\nThen the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said.",
   "placed": true
  },
  "an5.57:1.5": {
@@ -5485,7 +5488,8 @@
   "placed": true
  },
  "mn2:15.2": {
-  "empty": "down"
+  "after": "cting wisely, he uses the resting place",
+  "placed": true
  },
  "mn2:16.1": {
   "after": "ls of climate and for enjoying retreat.",
@@ -6654,7 +6658,7 @@
   "placed": true
  },
  "an10.28:7.4": {
-  "after": "eveloped in these four things … in this very life he makes an end of suffering.",
+  "after": "ell developed in five things, completely sees their delimitations, and completely breaks through their meaning, in this very life he makes an end of suffering.",
   "placed": true
  },
  "an10.28:8.7": {
@@ -6873,17 +6877,13 @@
   "placed": true
  },
  "an3.30:7.1": {
-  "after": "er.\nHe too often goes to visit bhikkhus",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "an3.30:7.2": {
   "empty": "up"
  },
  "an3.30:9.1": {
-  "after": "se.\nHe too often goes to visit bhikkhus",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "an3.30:9.2": {
   "empty": "up"
@@ -7604,10 +7604,11 @@
   "placed": true
  },
  "an5.53:1.7": {
-  "empty": "down"
+  "after": "but moderate and suitable for striving.",
+  "placed": true
  },
  "an5.53:1.8": {
-  "after": "but moderate and suitable for striving.",
+  "after": "r striving.\n(3) “He is honest and open,",
   "placed": true
  },
  "an5.55:1.3": {
@@ -7801,7 +7802,8 @@
   "own": true
  },
  "an8.22:4.2": {
-  "empty": "up"
+  "after": "nt mind, I attended on the Blessed One.",
+  "placed": true
  },
  "an8.22:4.4": {
   "empty": "up"
@@ -8767,7 +8769,7 @@
   "placed": true
  },
  "mn146:15.3": {
-  "after": "n the Uposatha day of the fourteenth people are not doubtful or perplexed as to whether the moon is incomplete or full,",
+  "after": "t as on the Uposatha day of the fourteenth people are not doubtful or perplexed",
   "placed": true,
   "own": true
  },
@@ -8776,7 +8778,7 @@
   "placed": true
  },
  "mn146:27.3": {
-  "after": "on the Uposatha day of the fifteenth people are not doubtful or perplexed as to whether the moon is incomplete or full,",
+  "after": "st as on the Uposatha day of the fifteenth people are not doubtful or perplexed",
   "placed": true,
   "own": true
  },
@@ -9062,7 +9064,7 @@
   "placed": true
  },
  "mn29:5.14": {
-  "after": "tainment of concentration; he does not grow negligent and fall into negligence.",
+  "after": "of concentration, but his intention is not fulfilled. He does not, on account of it, laud himself and disparage others.",
   "placed": true
  },
  "mn29:5.18": {
@@ -9127,7 +9129,7 @@
   "placed": true
  },
  "mn36:3.3": {
-  "after": "anda saw him coming in the distance and",
+  "after": "e Ānanda saw him coming in the distance",
   "placed": true,
   "own": true
  },
@@ -9742,7 +9744,7 @@
   "placed": true
  },
  "mn75:20.11": {
-  "after": "cloth, beautiful, spotless, and clean!’—",
+  "after": "d clean!’ What do you think, Māgandiya?",
   "placed": true
  },
  "mn75:20.12": {
@@ -9801,7 +9803,8 @@
   "own": true
  },
  "mn77:13.8": {
-  "empty": "up"
+  "after": "t expect instruction from my disciples;",
+  "placed": true
  },
  "mn77:18.2": {
   "after": "o develop the five spiritual faculties.",
@@ -9820,10 +9823,12 @@
   "placed": true
  },
  "mn8:12.27": {
-  "empty": "up"
+  "after": "esentful; we shall not be resentful here’: effacement should be practised thus.",
+  "placed": true
  },
  "mn8:12.30": {
-  "empty": "up"
+  "after": "be envious; we shall not be envious here’: effacement should be practised thus.",
+  "placed": true
  },
  "mn82:6.7": {
   "after": "by your parents, Raṭṭhapāla, to go forth from the home life into homelessness?”",
@@ -10357,7 +10362,8 @@
   "placed": true
  },
  "sn11.5:13.4": {
-  "empty": "down"
+  "after": "r or not he thinks,\n… verses = 877–82 …",
+  "placed": true
  },
  "sn11.5:14.1": {
   "after": " 877–82 …\nAre unskilled in the Dhamma.’",
@@ -10388,7 +10394,8 @@
   "placed": true
  },
  "sn12.11:2.12": {
-  "empty": "down"
+  "after": " name-and-form has what as its source…?",
+  "placed": true
  },
  "sn12.11:2.13": {
   "after": "-form has consciousness as its source….",
@@ -11421,9 +11428,7 @@
   "empty": "up"
  },
  "sn35.15:1.27": {
-  "after": "ose … the tongue … the body … the mind.",
-  "placed": true,
-  "own": true
+  "empty": "down"
  },
  "sn35.15:2.2": {
   "after": "ics and brahmins, its devas and humans.",
@@ -11534,7 +11539,8 @@
   "placed": true
  },
  "sn35.244:9.2": {
-  "empty": "up"
+  "after": ", slope, and incline towards the west.’",
+  "placed": true
  },
  "sn35.244:9.4": {
   "after": ", slope, and incline towards the west?”",
@@ -11587,7 +11593,8 @@
   "own": true
  },
  "sn35.27:2.3": {
-  "empty": "up"
+  "after": "g it, one is capable of destroying suffering.\n“And what, bhikkhus, is the all…?",
+  "placed": true
  },
  "sn35.27:2.4": {
   "empty": "up"
@@ -11640,9 +11647,7 @@
   "empty": "up"
  },
  "sn35.75:5.1": {
-  "after": "As above down to:",
-  "placed": true,
-  "own": true
+  "empty": "down"
  },
  "sn35.79:2.1": {
   "after": "y a bhikkhu and true knowledge arises?”",
@@ -11722,7 +11727,7 @@
   "placed": true
  },
  "sn35.95:24.3": {
-  "after": "“When, firmly mindful, one sees a form,",
+  "after": "\nOne is not inflamed by lust for forms;",
   "placed": true,
   "own": true
  },
@@ -16319,5 +16324,75 @@
  "sn46.52:4.2": {
   "after": "ected the statement of those wanderers.",
   "placed": true
+ },
+ "an3.30:6.4": {
+  "after": "er.\nHe too often goes to visit bhikkhus",
+  "placed": true,
+  "own": true
+ },
+ "an3.30:8.4": {
+  "after": "se.\nHe too often goes to visit bhikkhus",
+  "placed": true,
+  "own": true
+ },
+ "an8.50:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "an8.50:1.2": {
+  "after": "ld and her life in this world succeeds.",
+  "placed": true,
+  "own": true
+ },
+ "an8.50:5.4": {
+  "empty": "up"
+ },
+ "mn12:48.9": {
+  "empty": "up"
+ },
+ "mn29:6.5": {
+  "after": "n the sapwood of the holy life and stopped short with that.\n“Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering. Surely an ending of this whole mass of suffering can be known.’ When he has gone forth thus, he acquires gain, honour, and renown.",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.13": {
+  "after": "happiness of the world for a long time.",
+  "placed": true
+ },
+ "mn36:19.12": {
+  "after": "his was the third simile that occurred to me spontaneously, never heard before.",
+  "placed": true
+ },
+ "mn38:17.5": {
+  "after": "n on Arising\n“So, bhikkhus, with ignorance as condition, formations come to be; with formations as condition, consciousness; with consciousness as condition, mentality-materiality; with mentality-materiality as condition, the sixfold base;",
+  "placed": true
+ },
+ "mn38:19.8": {
+  "after": "his, that arises.’ That is, with ignorance as condition, formations come to be; with formations as condition, consciousness; with consciousness as condition, mentality-materiality; with mentality-materiality as condition, the sixfold base;",
+  "placed": true
+ },
+ "mn4:13.2": {
+  "after": "and doubting…I have gone beyond doubt…’",
+  "placed": true,
+  "own": true
+ },
+ "mn4:13.4": {
+  "empty": "up"
+ },
+ "mn4:15.4": {
+  "empty": "up"
+ },
+ "sn35.15:1.28": {
+  "after": "ose … the tongue … the body … the mind.",
+  "placed": true
+ },
+ "sn35.75:6.1": {
+  "after": "As above down to:",
+  "placed": true
+ },
+ "sn36.12:6.3": {
+  "after": "ngs,\nHe is taintless in this very life.",
+  "placed": true,
+  "own": true
  }
 }
