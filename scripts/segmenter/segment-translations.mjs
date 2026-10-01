@@ -1214,7 +1214,8 @@ if (weighing) {
 // did to the cut above it, for the review page.
 //
 // Before the cuts, a line the review emptied gives its text to the line above that has some, from
-// where the cut below takes it back if the review put it there, and a line it filled, empty or
+// where the cut below takes it back if the review put it there, or, with none above, to the line
+// below that has some or that the review fills; and a line it filled, empty or
 // joined to the line above, becomes a piece of no length, which the cuts around it give its text.
 function applyDecisions(
   results,
@@ -1230,7 +1231,7 @@ function applyDecisions(
     if (!d || typeof d !== 'object') return;
     if (holdsText(r) && (d.empty === 'up' || d.empty === 'down')) {
       const above = results.findLast((o, x) => x < i && holdsText(o));
-      const below = results.find((o, x) => x > i && holdsText(o));
+      const below = results.find((o, x) => x > i && (holdsText(o) || decided[o.key]?.own));
       if (above) {
         above.end = r.end;
         r.start = r.end;

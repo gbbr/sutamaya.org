@@ -13501,8 +13501,7 @@
   "empty": "down"
  },
  "an9.36:9.9": {
-  "after": "tal ending of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.",
-  "placed": true
+  "empty": "up"
  },
  "an9.38:4.11": {
   "empty": "down"
@@ -39840,5 +39839,57 @@
  "an11.9:2.14": {
   "after": "h his awareness overcome by ill will…sloth & drowsiness… restlessness & anxiety…",
   "placed": true
+ },
+ "an9.36:7.5": {
+  "after": "tal ending of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.",
+  "placed": true,
+  "own": true
+ },
+ "an9.36:7.6": {
+  "after": "return from that world.\n“‘I tell you, the ending of the effluents depends on the dimension of the infinitude of space.’",
+  "placed": true,
+  "own": true
+ },
+ "an9.36:8.1": {
+  "after": "e infinitude of space.’ Thus it was said, and in reference to this was it said.",
+  "placed": true,
+  "own": true
+ },
+ "dn21:1.4.3": {
+  "empty": "up"
+ },
+ "dn21:1.5.7": {
+  "empty": "up"
+ },
+ "dn21:1.5.41": {
+  "empty": "up"
+ },
+ "dn21:1.5.43": {
+  "empty": "up"
+ },
+ "dn21:1.8.9": {
+  "empty": "up"
+ },
+ "dn21:1.9.4": {
+  "empty": "up"
+ },
+ "dn21:2.1.1": {
+  "placed": true,
+  "own": true
+ },
+ "dn21:2.1.2": {
+  "after": "deva-king asked him his first question:",
+  "placed": true,
+  "own": true
+ },
+ "snp5.1:42.2": {
+  "after": "e fifteenth day.\nThen, seeing the marks",
+  "placed": true,
+  "own": true
+ },
+ "mn102:15.5": {
+  "after": "ound self-identity. With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’",
+  "placed": true,
+  "own": true
  }
 }
