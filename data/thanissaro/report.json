@@ -112,34 +112,6 @@
   "ratio": 1.01
  },
  {
-  "file": "sutta/an/an1/an1.31-40.html",
-  "uids": "an1.39",
-  "lines": 4,
-  "segments": 2,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 1,
-  "merged": 0,
-  "elided": 1,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 0.97
- },
- {
-  "file": "sutta/an/an1/an1.31-40.html",
-  "uids": "an1.40",
-  "lines": 5,
-  "segments": 2,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 1,
-  "merged": 0,
-  "elided": 1,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 0.9
- },
- {
   "file": "sutta/an/an11/an11.16.html",
   "uids": "an11.16",
   "lines": 69,
@@ -224,18 +196,18 @@
   "ratio": 0.97
  },
  {
-  "file": "sutta/an/an1/an1.21-40.html",
-  "uids": "an1.21 an1.22 an1.23 an1.24 an1.25 an1.26 an1.27 an1.28 an1.29 an1.30 an1.31 an1.32 an1.33 an1.34 an1.35 an1.36 an1.37 an1.38 an1.39 an1.40",
-  "lines": 82,
-  "segments": 39,
+  "file": "sutta/an/an1/an1.21-30,39-40.html",
+  "uids": "an1.21 an1.22 an1.23 an1.24 an1.25 an1.26 an1.27 an1.28 an1.29 an1.30 an1.39 an1.40",
+  "lines": 50,
+  "segments": 36,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 21,
-  "merged": 4,
-  "elided": 17,
-  "long": 4,
+  "joined": 0,
+  "merged": 0,
+  "elided": 0,
+  "long": 0,
   "unmatched": 0,
-  "ratio": 0.93
+  "ratio": 1
  },
  {
   "file": "sutta/an/an1/an1.328.html",
@@ -6081,14 +6053,14 @@
   "file": "sutta/dn/dn1.html",
   "uids": "dn1",
   "lines": 660,
-  "segments": 608,
+  "segments": 617,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 38,
-  "merged": 8,
-  "elided": 30,
+  "joined": 29,
+  "merged": 6,
+  "elided": 23,
   "long": 3,
-  "unmatched": 32,
+  "unmatched": 34,
   "ratio": 1.46
  },
  {

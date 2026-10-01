@@ -1288,7 +1288,8 @@
   "spher",
   "activity",
   "rule",
-  "slightest"
+  "slightest",
+  "fault"
  ],
  "meaningful": [
   "retain",
@@ -7372,6 +7373,10 @@
   "nigantha",
   "nataputta"
  ],
+ "finit": [
+  "infinit",
+  "ists"
+ ],
  "youngling": [
   "calf",
   "baby",
@@ -7481,8 +7486,8 @@
   "62"
  ],
  "assert": [
-  "proclaim",
-  "adherent"
+  "adherent",
+  "proclaim"
  ],
  "dint": [
   "ardency",
@@ -7556,23 +7561,20 @@
   "hammer",
   "logic"
  ],
- "finit": [
-  "ists"
- ],
  "endless": [
-  "contortion",
   "eel",
-  "wriggl"
+  "wriggl",
+  "contortion"
  ],
  "flip": [
-  "contortion",
   "eel",
-  "wriggl"
+  "wriggl",
+  "contortion"
  ],
  "flop": [
-  "contortion",
   "eel",
-  "wriggl"
+  "wriggl",
+  "contortion"
  ],
  "anomalous": [
   "fortuitou",
@@ -7580,11 +7582,11 @@
   "fortuitous",
   "spontaneous"
  ],
- "sixteen": [
-  "16"
- ],
  "percipient": [
   "adherent"
+ ],
+ "sixteen": [
+  "16"
  ],
  "eradication": [
   "annihilation"
@@ -7604,7 +7606,6 @@
  ],
  "sixty": [
   "theorist",
-  "belief",
   "62"
  ],
  "anxiety": [

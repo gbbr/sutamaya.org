@@ -37,9 +37,11 @@ class Page(HTMLParser):
     """Collects a SuttaCentral or Access to Insight page's text: its title and body, without
     references, note markers, notes or furniture."""
 
-    def __init__(self):
+    def __init__(self, others=()):
         super().__init__(convert_charrefs=True)
         self.out, self.skipping, self.open, self.in_header = [], 0, [], False
+        # The suttas on the page that another page's text is written from.
+        self.others = set(others)
 
     def handle_starttag(self, tag, attrs):
         if tag in VOID:
@@ -56,6 +58,7 @@ class Page(HTMLParser):
             or (tag in ('div', 'section') and any('note' in c for c in cls))
             or (tag == 'span' and 'fn' in cls)
             or a.get('id') in FURNITURE
+            or (tag == 'article' and a.get('id') in self.others)
         )
         self.open.append(skip)
         self.skipping += skip
@@ -367,7 +370,7 @@ for file, texts in sorted(pages.items()):
         ours_notes = [t for text_id in texts for note in comments.get(text_id, []) for t in tokens(html.unescape(re.sub(r'<[^>]+>', '', re.sub(r'</?p>', ' ', note))))]
         odd += [f'note {d}' for d in compare(ours_notes, tokens(' '.join(notes)))]
     else:
-        page = Page()
+        page = Page(others=(t for t in lines if t not in texts))
         page.feed(source)
         odd = compare(ours, tokens(''.join(page.out)))
     if odd:

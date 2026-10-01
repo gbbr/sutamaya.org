@@ -10,7 +10,8 @@
 // Reads data/upstream/<translator>/ and writes data/<translator>/, in data/sujato's layout:
 //   sutta/…_translation-en-<translator>.json  every Pali key of a document, its English or ""
 //   notes/…_comment-en-<translator>.json      the translator's notes; the introduction and "see also"
-//                                             sit on the sutta's title line
+//                                             sit on the sutta's title line, or its first line
+//                                             where it has none
 //   cuts.json                                 what a review settled for a line, kept across runs
 //   learned.json                              the translator's words learned for Sujato's
 //   report.json                               each text's alignment and how sure it is
@@ -116,13 +117,18 @@ function loadDoc(doc) {
   return docs.get(doc);
 }
 
-// Returns the uids an upstream file's name covers: its own, or each of a span's ("sn15.14-19").
+// Returns the uids an upstream file's name covers: its own, or each of a span's ("sn15.14-19"), or
+// of several spans' ("an1.21-30,39-40").
 function uidsOf(name) {
   if (docDir.has(name)) return [name];
-  const range = /^(.*?)(\d+)-(\d+)$/.exec(name);
+  const [first, ...more] = name.split(',');
+  const range = /^(.*?)(\d+)-(\d+)$/.exec(first);
   if (!range) return [name];
   const uids = [];
-  for (let n = +range[2]; n <= +range[3]; n++) uids.push(range[1] + n);
+  for (const span of [`${range[2]}-${range[3]}`, ...more]) {
+    const [from, to = from] = span.split('-');
+    for (let n = +from; n <= +to; n++) uids.push(range[1] + n);
+  }
   return uids;
 }
 
@@ -184,24 +190,30 @@ const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace
 
 // Returns an element's inner HTML with its links fixed and every other tag but <i> dropped.
 function noteHtml(el) {
-  let html = '';
-  for (const node of el.childNodes) {
-    if (node.nodeType === 3) html += escapeHtml(node.data);
-    else if (node.nodeType === 1) {
-      const tag = node.tagName.toLowerCase();
-      // A note's link back to its marker, and a marker's number.
-      if (node.matches('a.footnote-back, span.fn, a.footnote-ref')) continue;
-      const inner = noteHtml(node);
-      if (tag === 'p' || tag === 'div') html += ` ${inner} `;
-      else if (tag === 'a') {
-        const href = node.getAttribute('href') && fixHref(node.getAttribute('href'));
-        html += href ? `<a href='${href}'>${inner}</a>` : inner;
-      } else if (tag === 'em' || tag === 'i') html += `<i>${inner}</i>`;
-      else html += inner;
+  const inner = (el) => {
+    let html = '';
+    for (const node of el.childNodes) {
+      if (node.nodeType === 3) html += escapeHtml(node.data);
+      else if (node.nodeType === 1) {
+        const tag = node.tagName.toLowerCase();
+        // A note's link back to its marker, and a marker's number.
+        if (node.matches('a.footnote-back, span.fn, a.footnote-ref')) continue;
+        const within = inner(node);
+        if (tag === 'p' || tag === 'div') html += ` ${within} `;
+        else if (tag === 'a') {
+          const href = node.getAttribute('href') && fixHref(node.getAttribute('href'));
+          html += href ? `<a href='${href}'>${within}</a>` : within;
+        } else if (tag === 'em' || tag === 'i') html += `<i>${within}</i>`;
+        else html += within;
+      }
     }
-  }
-  return html.replace(/\s+/g, ' ').trim();
+    return html;
+  };
+  return inner(el).replace(/\s+/g, ' ').trim();
 }
+
+// Returns a note's HTML without its number, inside any tag it opens with.
+const unnumbered = (html) => html.replace(/^((?:<[^>]+>\s*)*)\d+\.\s*/, '$1');
 
 // SuttaCentral's SC and PTS numbers.
 const REF = 'a.ref';
@@ -322,11 +334,12 @@ function titleOf(el) {
   return text.split('\n')[0].replace(/^[\d.–-]+\s+/, '');
 }
 
-// Returns whether a paragraph is wholly italic, as a dhammatalks.org introduction's are.
-function whollyItalic(el) {
+// Returns whether at least `share` of a paragraph's text is inside `tags`: wholly italic, as a
+// dhammatalks.org introduction is, or wholly bold, as a heading it styles as a "See also" is.
+function wholly(el, tags, share) {
   const all = el.textContent.replace(/\s+/g, '');
-  const italic = [...el.querySelectorAll('em, i')].map((e) => e.textContent).join('').replace(/\s+/g, '');
-  return all.length > 0 && italic.length >= all.length * 0.9;
+  const within = [...el.querySelectorAll(tags)].map((e) => e.textContent).join('').replace(/\s+/g, '');
+  return all.length > 0 && within.length >= all.length * share;
 }
 
 const newUnit = (uids, title, root) => ({ uids, title, titles: [], roots: [root], blocks: [], intro: [], seeAlso: [], notes: new Map() });
@@ -356,7 +369,11 @@ function parseDhammatalks(document, name) {
     const tag = el.tagName.toLowerCase();
     const cls = el.getAttribute('class') ?? '';
     if (el.hasAttribute('data-skip')) return;
-    if (tag === 'h1') return skip(el);
+    if (tag === 'h1') {
+      // A later page's title opens its text.
+      if (!root.contains(el) && /\p{L}/u.test(titleOf(el))) unit.titles.push({ title: titleOf(el), block: unit.blocks.length });
+      return skip(el);
+    }
     // A wrapper, such as MN 10's <div id="MN10">, holds the introduction as well as the text.
     if (tag === 'div' && !cls) return void eachBlock(el, (child) => handle(child, verse));
     if (/\bnote\b/.test(cls) && (tag === 'div' || tag === 'section')) {
@@ -365,17 +382,24 @@ function parseDhammatalks(document, name) {
       for (const part of el.children) {
         if (/notetitle/.test(part.getAttribute('class') ?? '')) continue;
         const html = noteHtml(part);
-        if (part.id) unit.notes.set(part.id, (note = { id: part.id, html: html.replace(/^\d+\.\s*/, ''), used: 0 }));
+        if (part.id) unit.notes.set(part.id, (note = { id: part.id, html: unnumbered(html), used: 0 }));
         else if (note) note.html += ` ${html}`;
+        // What the box holds before its first note is a note no marker points to.
+        else if (html) unit.notes.set(`box${unit.notes.size}`, (note = { id: `box${unit.notes.size}`, html, used: 0 }));
       }
       return;
     }
     // A note outside the notes' box, as SN 1.20's are, where the box closes before them.
     if (tag === 'p' && /note\d+$|^fn\d+$/.test(el.id)) {
-      unit.notes.set(el.id, { id: el.id, html: noteHtml(el).replace(/^\d+\.\s*/, ''), used: 0 });
+      unit.notes.set(el.id, { id: el.id, html: unnumbered(noteHtml(el)), used: 0 });
       return skip(el);
     }
     if (/seealso/.test(cls) || (tag === 'p' && /^\s*See also:/.test(el.textContent))) {
+      // A heading styled as a "See also", wholly bold, as DN 1's are.
+      if (wholly(el, 'strong, b', 1)) {
+        body = true;
+        return void unit.blocks.push(...blocksOf(el, 'h'));
+      }
       unit.seeAlso.push(noteHtml(el));
       return skip(el);
     }
@@ -393,7 +417,7 @@ function parseDhammatalks(document, name) {
     }
     if (/suttaCite|verse_stars|notetitle/.test(cls)) return skip(el);
     if (!body) {
-      if (starred || /\bintro\b/.test(cls) || /iblock/.test(cls) || (tag === 'p' && whollyItalic(el))) {
+      if (starred || /\bintro\b/.test(cls) || /iblock/.test(cls) || (tag === 'p' && wholly(el, 'em, i', 0.9))) {
         unit.intro.push(noteHtml(el));
         return skip(el);
       }
@@ -509,7 +533,13 @@ function parseSuttaCentral(document, name) {
     eachBlock(article, handle);
     return unit;
   });
-  if (units.length < 2 || units.every((u) => u.uids.length === 1 && u.uids[0] !== name)) return units;
+  if (units.length < 2 || units.every((u) => u.uids.length === 1 && u.uids[0] !== name)) {
+    // The title of a page of several suttas, above them all, is the first one's where it has only a
+    // number.
+    const pageTitle = [...document.querySelectorAll('h1')].find((h) => !h.closest('article'));
+    if (pageTitle && units.length > 1 && !/\p{L}/u.test(units[0].title)) units[0].title = titleOf(pageTitle);
+    return units;
+  }
   const page = newUnit(uidsOf(name), units[0].title, null);
   page.roots = units.flatMap((u) => u.roots);
   page.blocks = units.flatMap((u) => u.blocks);
@@ -1110,6 +1140,10 @@ for (const file of pages) {
 // The text each line's English is written from: the last to cover it.
 const writer = new Map();
 for (const unit of units) for (const line of unit.body) writer.set(line.key, unit);
+// An older copy's sutta a dhammatalks.org page also has is left out whole.
+for (let i = units.length - 1; i >= 0; i--) {
+  if (units[i].body.length && units[i].body.every((l) => writer.get(l.key) !== units[i])) units.splice(i, 1);
+}
 
 // The words this translator uses for Sujato's, learned from the lines a first pass aligns surely:
 // a pair seen together often enough, and seldom apart, is taken as one rendering of the other.
@@ -1796,8 +1830,13 @@ for (const unit of units) {
       out.text[line.key] = text ? `${text}${endsJoined ? '' : ' '}` : '';
       if (notes.length) out.notes[line.key] = notes.join(' ');
     };
-    const titleLine = lines.find((l) => l.suttaTitle) ?? lines.filter((l) => l.title).at(-1);
-    if (titleLine) put(titleLine, unit.title, [[...unit.intro, ...unit.seeAlso, ...titleNotes].map((p) => `<p>${p}</p>`).join('')].filter(Boolean));
+    // The title line: one of those the text opens with, as a later sutta's are another's.
+    const head = lines.slice(0, Math.max(0, lines.findIndex((l) => !l.title)));
+    const titleLine = head.find((l) => l.suttaTitle) ?? head.at(-1);
+    const titleParts = [...unit.intro, ...unit.seeAlso, ...titleNotes];
+    if (titleLine) put(titleLine, unit.title, [titleParts.map((p) => `<p>${p}</p>`).join('')].filter(Boolean));
+    // With none, its notes go with the first line that has text.
+    else if (titleParts.length) segNotes[Math.max(0, segText.findIndex(Boolean))].unshift(...titleParts);
     // The titles no title line holds open their sutta's text as headings: a page's later suttas',
     // and a sutta's own where the Pali has no title line for it.
     const titles = titleLine || !unit.title ? unit.titles : [{ title: unit.title, at: 0 }, ...unit.titles];
@@ -1948,7 +1987,7 @@ for (const [doc, out] of outDocs) {
     const notesFile = path.join(OUT, 'notes', out.dir, `${doc}_comment-en-${translator}.json`);
     fs.mkdirSync(path.dirname(notesFile), { recursive: true });
     fs.writeFileSync(notesFile, `${JSON.stringify(notes, null, 2)}\n`);
-  }
+  } else if (!only) fs.rmSync(path.join(OUT, 'notes', out.dir, `${doc}_comment-en-${translator}.json`), { force: true });
 }
 if (!only) fs.writeFileSync(path.join(OUT, 'report.json'), `${JSON.stringify(report, null, 1)}\n`);
 if (itemsBelow !== null || places || reviewUnits.length) fs.mkdirSync(REVIEW, { recursive: true });

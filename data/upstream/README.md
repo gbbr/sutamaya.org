@@ -41,7 +41,7 @@ sutta ID: `thanissaro/sutta/an/an3/an3.65.html`. Notes published apart from thei
 `notes/`, as Sujato's do. Bodhi's files keep SuttaCentral's numbers, which are the app's.
 
 - A page covering several of the app's suttas is named by the span: `sn15.14-19.html`.
-  `an1.21-40.html` covers only 1.21–30 and 1.39–40.
+  A page covering several spans names each, after a comma: `an1.21-30,39-40.html`.
 - In AN 1 and AN 2, where the app joins suttas into one text, a file is named by its single sutta:
   `an1.47.html` belongs to the app's `an1.41-50`.
 - Where the Thai edition splits one of the app's suttas in two, its file holds both pages, one
@@ -68,7 +68,7 @@ saved under every sutta it holds, and only the section a file is named for is re
   (`<a class='ref …'>`) and the licence at the end. None carries notes.
 - **Thanissaro's older copies** — `an1.31-40`, `an5.257-263`, `an5.264`, `an5.265-271`, `an11.16`
   and `an11.17` are Access to Insight's 2013 versions, which dhammatalks.org supersedes wherever it
-  has the sutta. `an1.31-40` also has 1.39–40, which `an1.21-40.html` has in newer wording.
+  has the sutta: `an1.31-40`'s 1.39–40 are read from `an1.21-30,39-40.html` instead.
 - **Bodhi's notes** — free only for DN 1: `notes/dn/dn1.html` is Access to Insight's copy of the
   same translation with its notes, while `sutta/dn/dn1.html` has the fuller text. His notes to MN,
   SN and AN are only in Wisdom's books.
@@ -112,7 +112,7 @@ in `data/sujato/`'s layout:
 
 | Path | Holds |
 |---|---|
-| `sutta/`, `notes/` | each Pali line's English, and the translator's notes; a sutta's title line also holds his introduction and "See also" |
+| `sutta/`, `notes/` | each Pali line's English, and the translator's notes; a sutta's title line also holds his introduction and "See also", or its first line where it has no title line |
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
@@ -164,15 +164,11 @@ files here are named.
 
 ## What's left
 
-- Fix what `check-upstream.py` finds in Thanissaro's translation, 29 pages, each the segmenter's
-  doing: the "See also" of a sutta with no title line of its own (AN 1, AN 2 and `an1.49-52`,
-  whose title also lands on its second document's title line), words run together where a note's
-  italics start or end with a space (`noteHtml` trims inside them), a notes' box's paragraphs
-  before its first numbered note (MN 10, DN 33), the second page's title in `an2.31` and
-  `sn22.126`, DN 1's headings (styled as a "See also"), and AN 1.31–38, which `an1.21-40.html`
-  takes over though it lacks them (name it `an1.21-30,39-40.html` and teach `uidsOf` the comma).
-- Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no
-  reader reported.
+- Read Bodhi's lines that Sujato leaves empty, about 2,900, with their Pali: the read-throughs
+  never show them, and the audit (`data/bodhi/review/audit/`) found 3 of 14 wrong, his version of
+  an abbreviated passage landing on the line next door.
+- Last, an audit of Thanissaro's translation, as Bodhi's: Opus reads a few texts at random, to
+  measure the errors no reader reported.
 
 ## Where to look
 
