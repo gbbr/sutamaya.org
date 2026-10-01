@@ -49,7 +49,7 @@ sutta ID: `thanissaro/sutta/an/an3/an3.65.html`. Notes published apart from thei
   `sn22.126.html` its SN 22:126 and 22:127.
 
 dhammatalks.org numbers suttas by the Thai edition, which differs from SuttaCentral's in parts of
-AN, SN 35, Snp 5 and Thag, so 154 of its pages carry a different number here: its AN 3:66, the
+AN, SN 35, Snp 5 and Thag, so 155 of its pages carry a different number here: its AN 3:66, the
 Kālāma Sutta, is `an3.65`. Each number comes from comparing the page with Sujato's text and the Pali
 title, cross-checked against SuttaCentral's copies of the same translations. The evidence is
 thinnest where neighbouring suttas are near-identical (AN 3.96–97, AN 4.233–238, AN 5.74, AN 9.8)
@@ -170,7 +170,6 @@ files here are named.
   space, a notes' box's paragraphs before its first numbered note (MN 10, DN 33), the second
   page's title in `an2.31` and `sn22.126`, DN 1's headings (styled as a "See also"), and AN
   1.31–38, which `an1.21-40.html` takes over though it lacks them.
-- `an1.77-82.html` holds AN 1.76–81 and is to be named so.
 - Let a line start right after an ellipsis written without spaces ("restrained…with"), as after a
   dash, then try the findings that frees: most of the 220 Bodhi findings left unfound.
 - Last, an audit: Opus reads a few texts of each translator at random, to measure the errors no

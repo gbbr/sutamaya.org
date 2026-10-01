@@ -322,18 +322,20 @@
   "ratio": 1.13
  },
  {
-  "file": "sutta/an/an1/an1.77-82.html",
-  "uids": "an1.77 an1.78 an1.79 an1.80 an1.81 an1.82",
+  "file": "sutta/an/an1/an1.76-81.html",
+  "uids": "an1.76 an1.77 an1.78 an1.79 an1.80 an1.81",
   "lines": 34,
-  "segments": 24,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 3,
+  "segments": 27,
+  "unsure": 1,
+  "unsureKeys": [
+   "an1.76:1.1@0.96"
+  ],
+  "joined": 0,
   "merged": 0,
-  "elided": 3,
-  "long": 1,
+  "elided": 0,
+  "long": 0,
   "unmatched": 0,
-  "ratio": 1.53
+  "ratio": 1.27
  },
  {
   "file": "sutta/an/an10/an10.101.html",
