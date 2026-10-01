@@ -1306,7 +1306,9 @@
  "mn146:6.24": "nt?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
  "mn146:7.24": "les…mind-objects permanent or impermanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
  "mn146:8.23": "?”—“Suffering, venerable sir.”— “Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
- "mn147:3.8": "t?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
+ "mn147:3.8": {
+  "empty": "up"
+ },
  "mn147:4-8.44": "d consciousness that arise with mind-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
  "mn148:4.4": "base, the body-base, and the mind-base.",
  "mn148:5.4": "angible-base, and the mind-object-base.",
@@ -1491,8 +1493,13 @@
  "mn63:4.4": "r me and I will declare to you “the world is eternal”…or “after death a Tathāgata neither exists nor does not exist”’?”—",
  "mn63:4.17": "are to me “the world is eternal”…or “after death a Tathāgata neither exists nor does not exist”’?”—“No, venerable sir.”—",
  "mn63:6.2": "ternal,’ the holy life cannot be lived;",
- "mn63:6.14": " exist,’ the holy life cannot be lived…",
- "mn63:6.17": "e cannot be lived… If there is the view",
+ "mn63:6.14": {
+  "empty": "down"
+ },
+ "mn63:6.17": {
+  "after": " exist,’ the holy life cannot be lived…",
+  "placed": true
+ },
  "mn64:4.3": "essed One, it is the time, Sublime One,",
  "mn64:8.8": "mind does not enter into it and acquire confidence, steadiness, and resolution,",
  "mn64:8.14": "if his mind enters into it and acquires confidence, steadiness, and resolution,",
@@ -1899,7 +1906,9 @@
   "after": " Is the eye permanent or impermanent?” —",
   "placed": true
  },
- "mn147:3.5": "? Is the eye permanent or impermanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—",
+ "mn147:3.5": {
+  "empty": "up"
+ },
  "mn147:4-8.39": "sciousness that arise with mind-contact as condition permanent or impermanent?”—",
  "mn147:4-8.41": "nsciousness that arise with mind-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—",
  "mn148:10.3": "rise and fall of the eye are discerned,",
@@ -3096,8 +3105,12 @@
  "mn146:16.4": " in exactly the same way.”\n“Yes, venerable sir,” the venerable Nandaka replied.",
  "mn146:27.5": "and their intention has been fulfilled.",
  "mn147:1.3": " in Jeta’s Grove, Anāthapiṇḍika’s Park.",
- "mn147:3.7": "manent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus:",
- "mn147:4-8.28": "e-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus:",
+ "mn147:3.7": {
+  "empty": "up"
+ },
+ "mn147:4-8.28": {
+  "empty": "up"
+ },
  "mn147:4-8.43": "d-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus:",
  "mn149:10.8": "es to fulfilment in him by development.",
  "mn149:11.3": "e five aggregates affected by clinging,",
@@ -3186,9 +3199,13 @@
  "mn32:11.1": "able Sāriputta said to the Blessed One:",
  "mn32:11.9": "able sir, the venerable Ānanda replied:",
  "mn32:12.7": "ood?’ And the venerable Revata replied:",
- "mn32:13.3": "?’ And the venerable Anuruddha replied:",
+ "mn32:13.3": {
+  "empty": "down"
+ },
  "mn32:13.9": "ood, good, Sāriputta. Anuruddha, speaking rightly, should speak just as he did.",
- "mn32:15.4": "n this was said, venerable sir, I addressed the venerable Mahā Moggallāna thus:",
+ "mn32:15.4": {
+  "empty": "up"
+ },
  "mn32:16.2": "e Mahā Moggallāna told the Blessed One:",
  "mn32:16.8": "?’ And the venerable Sāriputta replied:",
  "mn32:17.5": "also from me what kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood.",
@@ -4584,7 +4601,10 @@
  "mn38:20.5": "ading away and cessation of ignorance comes cessation of formations; with the cessation of formations, cessation of consciousness; with the cessation of consciousness, cessation of mentality-materiality; with the cessation of mentality-materiality, cessation of the sixfold base;",
  "mn38:22.8": "t is, with the cessation of ignorance comes cessation of formations; with the cessation of formations, cessation of consciousness; with the cessation of consciousness, cessation of mentality-materiality; with the cessation of mentality-materiality, cessation of the sixfold base;",
  "mn38:40.4": "g, welcome it, or remain holding to it.",
- "mn4:3.2": "ion.”\n“That is so, brahmin, that is so.",
+ "mn4:3.2": {
+  "after": "ened Bodhisatta, I too considered thus:",
+  "placed": true
+ },
  "mn4:32.2": "being, and from the taint of ignorance.",
  "mn4:35.2": " has compassion for future generations.",
  "mn41:4.2": "estination, in perdition, even in hell?",
@@ -5701,7 +5721,9 @@
   "placed": true
  },
  "sn1.20:4.1": {
-  "empty": "stay"
+  "after": "k alms:\nDon’t let the time pass me by!”",
+  "placed": true,
+  "own": true
  },
  "sn11.14:6.2": {
   "after": "“‘Therefore the person of intelligence,",
@@ -6224,7 +6246,10 @@
  "mn2:8.3": "es in him. The view ‘self exists for me’ arises in him as true and established;",
  "mn27:4.16": "hen I saw this first footprint of the recluse Gotama, I came to the conclusion:",
  "mn29:2.12": "he outer bark, or the twigs and leaves.",
- "mn29:6.7": "is called one who has taken the sapwood of the holy life and stopped short with that.\n“Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering. Surely an ending of this whole mass of suffering can be known.’ When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown,",
+ "mn29:6.7": {
+  "after": "wood of the holy life and stopped short with that.\n“Here, bhikkhus, some clansman goes forth out of faith from the home life into homelessness, considering: ‘I am a victim of birth, ageing, and death, of sorrow, lamentation, pain, grief, and despair; I am a victim of suffering, a prey to suffering. Surely an ending of this whole mass of suffering can be known.’ When he has gone forth thus, he acquires gain, honour, and renown. He is not pleased with that gain, honour, and renown, and his intention is not fulfilled",
+  "placed": true
+ },
  "mn29:6.21": "e outer bark, and the twigs and leaves.",
  "mn31:11-13.4": ", and resolute.”\n“Good, good, Anuruddha. But is there any other superhuman state, a distinction in knowledge and vision worthy of the noble ones, a comfortable abiding, which you have attained by surmounting that abiding, by making that abiding subside?”\n“Why not, venerable sir?",
  "mn36:12.2": "ind and remain?”\n“Why not, Aggivessana?",
@@ -8514,7 +8539,7 @@
   "placed": true
  },
  "mn11:16.16": {
-  "after": "mations have ignorance as their source,",
+  "after": "…Formations have what as their source…?",
   "placed": true,
   "own": true
  },
@@ -9563,7 +9588,7 @@
   "empty": "up"
  },
  "mn64:10-12.3": {
-  "after": "rs upon and abides in the fourth jhāna,",
+  "after": "n and abides in the third jhāna…Again,a",
   "placed": true,
   "own": true
  },
@@ -16392,6 +16417,579 @@
  },
  "sn36.12:6.3": {
   "after": "ngs,\nHe is taintless in this very life.",
+  "placed": true,
+  "own": true
+ },
+ "an8.50:1.3": {
+  "after": "life in this world succeeds. What four?",
+  "placed": true,
+  "own": true
+ },
+ "an8.6:7.1": {
+  "after": "isciple and an uninstructed worldling.”",
+  "placed": true,
+  "own": true
+ },
+ "mn108:27.3": {
+  "after": "lling of applied and sustained thought,",
+  "placed": true,
+  "own": true
+ },
+ "mn108:27.4": {
+  "empty": "up"
+ },
+ "mn11:10.7": {
+  "after": " though they claim to propound the full understanding of all kinds of clinging,",
+  "placed": true,
+  "own": true
+ },
+ "mn11:11.1": {
+  "after": "ibe only the full understanding of clinging to sensual pleasures without describing the full understanding of clinging to views, clinging to rules and observances, and clinging to a doctrine of self.",
+  "placed": true,
+  "own": true
+ },
+ "mn11:11.3": {
+  "empty": "up"
+ },
+ "mn11:11.4": {
+  "after": "scribe the full understanding of clinging to sensual pleasures and clinging to views without describing the full understanding of clinging to rules and observances and clinging to a doctrine of self.",
+  "placed": true,
+  "own": true
+ },
+ "mn11:11.5": {
+  "after": "nging to rules and observances and clinging to a doctrine of self. Why is that?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:11.7": {
+  "empty": "up"
+ },
+ "mn11:12.1": {
+  "after": "e only the full understanding of clinging to sensual pleasures and clinging to views without describing the full understanding of clinging to rules and observances and clinging to a doctrine of self.",
+  "placed": true,
+  "own": true
+ },
+ "mn11:12.5": {
+  "after": "describe the full understanding of clinging to sensual pleasures, clinging to views, and clinging to rules and observances without describing the full understanding of clinging to a doctrine of self.",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.2": {
+  "after": ", from what are they born and produced?",
+  "placed": true
+ },
+ "mn11:16.3": {
+  "after": "hey are born and produced from craving.",
+  "placed": true
+ },
+ "mn11:16.4": {
+  "after": "aving. Craving has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.5": {
+  "empty": "up"
+ },
+ "mn11:16.6": {
+  "after": "source…Feeling has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.7": {
+  "empty": "up"
+ },
+ "mn11:16.8": {
+  "after": "source…Contact has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.9": {
+  "empty": "up"
+ },
+ "mn11:16.10": {
+  "after": "e sixfold base has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.11": {
+  "empty": "up"
+ },
+ "mn11:16.12": {
+  "after": "ty-materiality has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.13": {
+  "empty": "up"
+ },
+ "mn11:16.14": {
+  "after": "…Consciousness has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn11:16.15": {
+  "empty": "down"
+ },
+ "mn117:35.9": {
+  "after": "s abolished…In one of right livelihood,",
+  "placed": true,
+  "own": true
+ },
+ "mn117:35.10": {
+  "after": "velihood, wrong livelihood is abolished",
+  "placed": true
+ },
+ "mn117:35.12": {
+  "after": "bolished…In one of right concentration,",
+  "placed": true,
+  "own": true
+ },
+ "mn117:35.13": {
+  "after": "is abolished…In one of right knowledge,",
+  "placed": true
+ },
+ "mn117:37.3": {
+  "after": "ses and brahmins who are of wrong view.",
+  "placed": true
+ },
+ "mn117:37.4": {
+  "after": "nd brahmins who are of wrong intention.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.5": {
+  "after": " that worthy one censures right speech…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:37.8": {
+  "empty": "up"
+ },
+ "mn135:8.3": {
+  "after": "solution of the body, after death, he reappears in a happy destination…But if instead he comes back to the human state,",
+  "placed": true
+ },
+ "mn140:21.6": {
+  "after": "r a very long time. If I were to direct this equanimity, so purified and bright, to the base of infinite consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn140:21.8": {
+  "empty": "up"
+ },
+ "mn140:22.6": {
+  "empty": "up"
+ },
+ "mn147:2.9": {
+  "after": "manent?” —“Impermanent, venerable sir.”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:2.10": {
+  "after": "? Is the eye permanent or impermanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—",
+  "placed": true
+ },
+ "mn147:2.11": {
+  "after": "permanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:2.12": {
+  "after": "manent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn147:2.13": {
+  "after": "t?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.1": {
+  "after": "anent or impermanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—“No, venerable sir.”",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.2": {
+  "after": "the eye permanent or impermanent?” —“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—“No, venerable sir.”\n“Rāhula, what do you think?",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.4": {
+  "empty": "up"
+ },
+ "mn147:3.6": {
+  "empty": "up"
+ },
+ "mn147:3.9": {
+  "empty": "up"
+ },
+ "mn147:3.10": {
+  "empty": "up"
+ },
+ "mn147:3.18": {
+  "after": "think? Are forms…Is eye-consciousness …",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.26": {
+  "empty": "up"
+ },
+ "mn147:3.27": {
+  "after": "nsciousness that arise with eye-contact as condition permanent or impermanent?”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.28": {
+  "after": "e-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.29": {
+  "after": "onsciousness that arise with eye-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.30": {
+  "after": " eye-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.31": {
+  "after": "e-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn147:3.32": {
+  "after": "nd consciousness that arise with eye-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.1": {
+  "after": " arise with eye-contact as condition permanent or impermanent?”—“Impermanent, venerable sir.”—“Is what is impermanent suffering or happiness?”—“Suffering, venerable sir.”—“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”—“No, venerable sir.”",
+  "placed": true,
+  "own": true
+ },
+ "mn147:4-8.5": {
+  "empty": "up"
+ },
+ "mn147:4-8.10": {
+  "empty": "up"
+ },
+ "mn147:4-8.11": {
+  "empty": "up"
+ },
+ "mn147:4-8.12": {
+  "empty": "up"
+ },
+ "mn147:4-8.19": {
+  "empty": "up"
+ },
+ "mn147:4-8.24": {
+  "empty": "up"
+ },
+ "mn147:4-8.26": {
+  "empty": "up"
+ },
+ "mn147:4-8.27": {
+  "empty": "up"
+ },
+ "mn147:4-8.29": {
+  "empty": "up"
+ },
+ "mn147:4-8.33": {
+  "empty": "up"
+ },
+ "mn147:4-8.37": {
+  "empty": "up"
+ },
+ "mn147:4-8.38": {
+  "empty": "up"
+ },
+ "mn148:10.28": {
+  "after": "elf.\n“If anyone says, ‘Feeling is self’",
+  "placed": true,
+  "own": true
+ },
+ "mn149:4-7.4": {
+  "empty": "up"
+ },
+ "mn149:4-7.5": {
+  "after": "now and see the body as it actually is…",
+  "placed": true,
+  "own": true
+ },
+ "mn2:12.9": {
+  "empty": "up"
+ },
+ "mn2:12.10": {
+  "after": "e mind faculty restrained…While taints,",
+  "placed": true,
+  "own": true
+ },
+ "mn27:7.1": {
+  "after": "hen I saw this third footprint of the recluse Gotama, I came to the conclusion: ‘The Blessed One is fully enlightened…’",
+  "placed": true
+ },
+ "mn27:7.8": {
+  "empty": "up"
+ },
+ "mn27:7.9": {
+  "empty": "up"
+ },
+ "mn27:7.10": {
+  "empty": "up"
+ },
+ "mn29:6.11": {
+  "after": "not fulfilled…When he is diligent, he achieves the attainment of concentration.",
+  "placed": true,
+  "own": true
+ },
+ "mn29:6.13": {
+  "after": "nment of concentration, but his intention is not fulfilled…When he is diligent,",
+  "placed": true
+ },
+ "mn31:22.3": {
+  "after": "happiness of that clan for a long time.",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.4": {
+  "after": "time. And if the retinue of the clan from which those three clansmen went forth",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.8": {
+  "after": "piness of that country for a long time.",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.9": {
+  "after": "appiness of the nobles for a long time.",
+  "placed": true,
+  "own": true
+ },
+ "mn31:22.11": {
+  "empty": "up"
+ },
+ "mn32:11.11": {
+  "empty": "up"
+ },
+ "mn32:12.8": {
+  "empty": "up"
+ },
+ "mn32:13.2": {
+  "after": "”\n“When that was said, venerable sir, I addressed the venerable Anuruddha thus:",
+  "placed": true
+ },
+ "mn32:13.4": {
+  "after": "d Anuruddha…What kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood?’",
+  "placed": true,
+  "own": true
+ },
+ "mn32:13.5": {
+  "after": "?’ And the venerable Anuruddha replied:",
+  "placed": true
+ },
+ "mn32:14.2": {
+  "after": "When this was said, venerable sir, I addressed the venerable Mahā Kassapa thus:",
+  "placed": true
+ },
+ "mn32:14.4": {
+  "empty": "up"
+ },
+ "mn32:14.5": {
+  "after": "end Kassapa…What kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood?’",
+  "placed": true
+ },
+ "mn32:14.6": {
+  "after": "And the venerable Mahā Kassapa replied:",
+  "placed": true
+ },
+ "mn32:14.7": {
+  "empty": "up"
+ },
+ "mn32:15.2": {
+  "after": "n this was said, venerable sir, I addressed the venerable Mahā Moggallāna thus:",
+  "placed": true
+ },
+ "mn32:15.5": {
+  "after": " Moggallāna…What kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood?’",
+  "placed": true,
+  "own": true
+ },
+ "mn32:15.6": {
+  "after": " the venerable Mahā Moggallāna replied:",
+  "placed": true
+ },
+ "mn36:40.2": {
+  "after": "reappearance of beings…as Sutta 4, §29…",
+  "placed": true
+ },
+ "mn36:48.8": {
+  "empty": "up"
+ },
+ "mn38:16.2": {
+  "after": "s, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?",
+  "placed": true
+ },
+ "mn38:16.4": {
+  "after": "d this craving has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.5": {
+  "empty": "up"
+ },
+ "mn38:16.6": {
+  "after": "d this feeling has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.7": {
+  "empty": "up"
+ },
+ "mn38:16.8": {
+  "after": "d this contact has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.9": {
+  "empty": "up"
+ },
+ "mn38:16.10": {
+  "after": "s sixfold base has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.11": {
+  "empty": "up"
+ },
+ "mn38:16.12": {
+  "after": "ty-materiality has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.13": {
+  "empty": "up"
+ },
+ "mn38:16.14": {
+  "after": " consciousness has what as its source…?",
+  "placed": true,
+  "own": true
+ },
+ "mn38:16.16": {
+  "after": " its source…And these formations have what as their source, what as their origin, from what are they born and produced?",
+  "placed": true
+ },
+ "mn4:3.1": {
+  "after": "in, that is so. Remote jungle-thicket resting places in the forest are hard to endure, seclusion is hard to practise, and it is hard to enjoy solitude. One would think the jungles must rob a bhikkhu of his mind, if he has no concentration.",
+  "placed": true,
+  "own": true
+ },
+ "mn4:3.3": {
+  "empty": "up"
+ },
+ "mn41:16-17.3": {
+  "after": "he company of well-to-do householders!’",
+  "placed": true
+ },
+ "mn63:3.25": {
+  "after": " do not see.’\n“If the Blessed One knows",
+  "placed": true,
+  "own": true
+ },
+ "mn63:3.32": {
+  "empty": "up"
+ },
+ "mn63:3.39": {
+  "empty": "down"
+ },
+ "mn63:3.41": {
+  "after": "e,’…‘the soul is the same as the body,’…‘the soul is one thing and the body another,’…‘after death a Tathāgata exists,’",
+  "placed": true
+ },
+ "mn63:5.15": {
+  "after": "was tall or short or of middle height;…",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.17": {
+  "empty": "up"
+ },
+ "mn63:5.27": {
+  "after": "new the shaft that wounded me was bound—",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.29": {
+  "after": "ind of arrowhead it was that wounded me—",
+  "placed": true
+ },
+ "mn63:6.6": {
+  "empty": "up"
+ },
+ "mn63:6.13": {
+  "empty": "up"
+ },
+ "mn64:10-12.2": {
+  "after": "n and abides in the second jhāna…Again,",
+  "placed": true
+ },
+ "mn75:10.2": {
+  "empty": "up"
+ },
+ "mn75:17.4": {
+  "after": "es, still indulge in sensual pleasures;",
+  "placed": true
+ },
+ "mn77:6.35": {
+  "after": "Pūraṇa Kassapa is not honoured, respected, revered, and venerated by his disciples, nor do his disciples live in dependence on him, honouring and respecting him. Indeed, he is scorned by the scorn shown to his Dhamma.’\n“And some said this:",
+  "placed": true,
+  "own": true
+ },
+ "mn77:6.37": {
+  "empty": "up"
+ },
+ "mn77:18.3": {
+  "after": "hu develops the faculty of faith, which leads to peace, leads to enlightenment.",
+  "placed": true,
+  "own": true
+ },
+ "mn77:18.5": {
+  "after": "y of energy…the faculty of mindfulness…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:18.6": {
+  "after": "of concentration…the faculty of wisdom,",
+  "placed": true
+ },
+ "mn77:20.3": {
+  "after": "ulness enlightenment factor, which is supported by seclusion, dispassion, and cessation, and results in relinquishment.",
+  "placed": true,
+  "own": true
+ },
+ "mn77:20.5": {
+  "empty": "up"
+ },
+ "mn77:20.7": {
+  "after": "…the tranquillity enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.3": {
+  "after": "templates the earthkasiṇa above, below, and across, undivided and immeasurable.",
+  "placed": true,
+  "own": true
+ },
+ "mn77:24.4": {
+  "empty": "up"
+ },
+ "sn1.20:4.2": {
+  "empty": "up"
+ },
+ "sn12.13:1.11": {
+  "after": "t … the six sense bases … name-and-form",
   "placed": true,
   "own": true
  }
