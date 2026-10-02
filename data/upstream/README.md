@@ -169,6 +169,9 @@ files here are named.
    `lists` puts up each line holding a list parted by ellipses ("the skeleton… the piece of meat…")
    followed by lines the translator leaves empty where Sujato gives the items one a line; Opus splits
    the items onto their lines where each renders one.
+   A fix can open new suspects for either round, so both run again after every round, in a new
+   folder (`cross2`, `lists2`…), until they put up nothing: each leaves out the lines its earlier
+   batches showed.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
@@ -178,8 +181,10 @@ files here are named.
    sit: titles, headings, closing lines, notes, links and markup. Anything it shows is fixed by
    hand in `review/hand/`, or in the segmenter. Then commit.
 
-An audit measures what the rounds leave: Opus reads a dozen texts drawn at random, every line,
-the left-out ones too, as `read <folder> --every <text ID>…` writes them. Each translator's audits
+An audit measures what the rounds leave: Opus reads texts drawn at random, 2 from each collection
+so that DN and MN are always read, every line, the left-out ones too, as `read <folder> --every
+<text ID>…` writes them. `review/audit3/draw.py` is the draw to copy, with a new seed, leaving out
+the texts earlier audits drew. Each translator's audits
 are in `review/audit*/`, each with its draw and its rate.
 
 ## Where to look

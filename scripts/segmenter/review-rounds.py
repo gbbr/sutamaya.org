@@ -28,10 +28,12 @@ Run from the repository's root:
   scripts/segmenter/review-rounds.py <translator> cross [<folder>]
       writes each line the translation leaves empty where the other translation suggests its text
       runs on from the line next door, in the stretch around it with both translations, to
-      review/<folder>/ (cross/ by default), about 60,000 characters to a file
+      review/<folder>/ (cross/ by default), about 60,000 characters to a file; a line an earlier
+      batch in review/cross*/ showed is left out
   scripts/segmenter/review-rounds.py <translator> lists [<folder>]
       writes each line holding a list parted by ellipses, followed by lines the translation leaves
-      empty where Sujato gives the items one a line, to review/<folder>/ (lists/ by default)
+      empty where Sujato gives the items one a line, to review/<folder>/ (lists/ by default); a
+      line an earlier batch in review/lists*/ showed is left out
   scripts/segmenter/review-rounds.py <translator> check <path> [<seed>]
       writes 50 of the passing groups in review/findings.json to <path>, for Opus to judge: an even
       share from each collection, all of one that has fewer, the rest drawn from the others
@@ -54,7 +56,8 @@ CHECKED = 50
 
 def write_stretches(folder, stretches):
     """Writes stretches of text to review/<folder>/, about 60,000 characters to a file, and returns how many files."""
-    os.makedirs(f'{REVIEW}/{folder}')
+    if stretches:
+        os.makedirs(f'{REVIEW}/{folder}')
     batch, size, n = [], 0, 0
     for stretch in stretches + [None]:
         if batch and (stretch is None or size + len(stretch) > 60000):
@@ -65,6 +68,11 @@ def write_stretches(folder, stretches):
             batch.append(stretch)
             size += len(stretch)
     return n
+
+
+def shown_before(round_name):
+    """Returns the lines the earlier batches of a round showed, in every review/<round_name>*/ folder."""
+    return {m[1] for path in glob.glob(f'{REVIEW}/{round_name}*/batch-*.txt') for m in re.finditer(r'^(\S+:\S+) \| ', open(path).read(), re.M)}
 
 
 def segment(*flags):
@@ -286,7 +294,7 @@ elif command == 'cross':
     words = lambda html: ' '.join(re.sub(r'<[^>]+>', '', html).split())
     # A sentence's end and the next one's start, inside a line.
     BREAK = re.compile(r'\S{2,}[.?!][’”\']*\s+[“‘"]*[A-Z(]')
-    stretches, marked = [], 0
+    stretches, marked, seen = [], 0, shown_before('cross')
     for path in sorted(glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True)):
         beside = path.replace(f'data/{translator}/', f'data/{other}/').replace(f'-en-{translator}.json', f'-en-{other}.json')
         if not os.path.exists(beside):
@@ -302,7 +310,7 @@ elif command == 'cross':
         # next door holds about as much as the other's two lines and a sentence break.
         marks = []
         for i, key in enumerate(keys):
-            if key.split(':')[0] not in both or count(theirs, key) or count(others, key) < 5:
+            if key in seen or key.split(':')[0] not in both or count(theirs, key) or count(others, key) < 5:
                 continue
             for j in (i - 1, i + 1):
                 if 0 <= j < len(keys) and keys[j].split(':')[0] == key.split(':')[0]:
@@ -330,7 +338,7 @@ elif command == 'cross':
 elif command == 'lists':
     (folder,) = rest or ['lists']
     words = lambda html: ' '.join(re.sub(r'<[^>]+>', '', html).split())
-    stretches, marked = [], 0
+    stretches, marked, seen = [], 0, shown_before('lists')
     for path in sorted(glob.glob(f'data/{translator}/sutta/**/*.json', recursive=True)):
         theirs = json.load(open(path))
         sujato = path.replace(f'data/{translator}/', 'data/sujato/').replace(f'-en-{translator}.json', '-en-sujato.json')
@@ -340,7 +348,7 @@ elif command == 'lists':
         # Each line holding three or more items parted by ellipses, followed by two or more lines it
         # leaves empty and Sujato fills, with a line either side.
         for i, key in enumerate(keys):
-            if len([part for part in re.split(r'\s*…\s*', words(theirs[key])) if part.strip()]) < 3:
+            if key in seen or len([part for part in re.split(r'\s*…\s*', words(theirs[key])) if part.strip()]) < 3:
                 continue
             j = i + 1
             while j < len(keys) and keys[j].split(':')[0] == key.split(':')[0] and not words(theirs[keys[j]]) and his.get(keys[j], '').strip():

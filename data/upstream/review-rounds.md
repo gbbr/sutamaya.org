@@ -54,6 +54,12 @@ The saved answers are the progress: commit nothing unless asked.
 
 ## Rules
 
+- Every Pali line holds its English where the translation has any. A list whose items are parted by
+  ellipses ("the skeleton… the piece of meat…") is never "one sentence over several lines": each
+  item goes on the Pali line it renders, and every prompt here judges it so.
+- By the same rule, words that render a Pali line stay on it, however short: a refrain such as DN 1's
+  "Or he might say:", which renders "…vaṇṇaṁ vadamāno vadeyya", is never moved onto the quotation
+  beside it.
 - Only the round's answers are saved: files in its folder, or `references.json`. Nothing else in
   the repository changes, and no script is run.
 - Never read a batch or an answers file yourself: they are large, and the listing above says all
@@ -150,7 +156,8 @@ A line's T should say what its S says. Report only what is clearly misplaced:
 These are not errors, so leave them out: different wording, or a different order of words within
 a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
 sentence that sits on the first of them, with (none) on the others; a heading or a number the
-translator adds at the start of a line.
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it.
 
 A line's text runs from its first words to the first words of the next line that has text, so
 every fix says where a line should start. Write one line for each line to change:
@@ -211,8 +218,9 @@ For each item, judge whether After puts the translation's text on the right line
 Before, the same, or worse. A line's text should say what Sujato's line says, or translate its
 Pali. Judge by meaning, not wording: the translations word things differently, sometimes order the
 words of a sentence differently, may leave lines out or abbreviate (a line with no text), and may
-render several of Sujato's lines as one sentence that sits on the first of them. When both versions
-are equally acceptable or equally wrong, answer same.
+render several of Sujato's lines as one sentence that sits on the first of them. A list whose items
+are parted by ellipses is not one sentence: each item belongs on the Pali line it renders. When both
+versions are equally acceptable or equally wrong, answer same.
 
 Read the whole file first, in two or three parts. Then save your answers with the Write tool to
 <answers path>, one line per item, in this form:
@@ -270,10 +278,14 @@ A line can start after a space or a punctuation mark, never inside a word: where
 by a hyphen or an apostrophe, as in "well-taught", leave such a place as it is.
 
 The reports point to the problem but may be wrong: follow a report only where it is right, and
-write nothing for a stretch that already reads right. Judge by meaning, not wording. These are not
+write nothing for a stretch that already reads right. Where two Pali lines say similar things, the
+translation belongs on the one whose words it renders, not the later one by default. Judge by
+meaning, not wording. These are not
 errors: different wording, or a different order of words within a line; a line the translator
 leaves out or shortens; several of Sujato's lines given as one sentence that sits on the first of
 them, with (none) on the others; a heading or a number the translator adds at the start of a line.
+But a list whose items are parted by ellipses is not one sentence: each item that renders its own
+Pali line belongs on it.
 
 Read all of the file, in two or three parts, then save your fixes with the Write tool as
 <answers path>, one per line and nothing else. Be token-efficient: use only the Read and Write
