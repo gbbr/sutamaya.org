@@ -1,0 +1,449 @@
+## mn1
+mn1:1.1 | S: So I have heard. | T: Thus have I heard.
+mn1:1.2 | S: At one time the Buddha was staying near Ukkaṭṭhā in the Subhaga Forest at the root of a magnificent sal tree. | T: On one occasion the Blessed One was living in Ukkaṭṭhā in the Subhaga Grove at the root of a royal sāla tree.
+mn1:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the bhikkhus thus:
+mn1:1.4 | S: “Mendicants!” | T: “Bhikkhus.”—
+mn1:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir,” they replied.
+mn1:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+mn1:2.1 | S: “Mendicants, I will teach you the explanation of the root of all things. | T: “Bhikkhus, I shall teach you a discourse on the root of all things.
+mn1:2.2 | S: Listen and apply your minds well, I will speak.” | T: Listen and attend closely to what I shall say.”—
+mn1:2.3 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+mn1:2.4 | S: The Buddha said this: | T: The Blessed One said this:
+mn1:3.1 | S: “Take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: The Ordinary Person “Here, bhikkhus, an untaught ordinary person, who has no regard for noble ones and is unskilled and undisciplined in their Dhamma, who has no regard for true men and is unskilled and undisciplined in their Dhamma,
+mn1:3.2 | S: They perceive earth as earth. | T: perceives earth as earth.
+mn1:3.3 | S: Having perceived earth as earth, they conceive it to be earth, they conceive it in earth, they conceive it as earth, they conceive that ‘earth is mine’, they approve earth. | T: Having perceived earth as earth, he conceives himself as earth, he conceives himself in earth, he conceives himself apart from earth, he conceives earth to be ‘mine,’ he delights in earth.
+mn1:3.4 | S: Why is that? | T: Why is that?
+mn1:3.5 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:4.1 | S: They perceive water as water. | T: “He perceives water as water.
+mn1:4.2 | S: Having perceived water as water, they conceive it to be water … | T: Having perceived water as water, he conceives himself as water, he conceives himself in water, he conceives himself apart from water, he conceives water to be ‘mine,’ he delights in water.
+mn1:4.3 | S: Why is that? | T: Why is that?
+mn1:4.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:5.1 | S: They perceive fire as fire. | T: “He perceives fire as fire.
+mn1:5.2 | S: Having perceived fire as fire, they conceive it to be fire … | T: Having perceived fire as fire, he conceives himself as fire, he conceives himself in fire, he conceives himself apart from fire, he conceives fire to be ‘mine,’ he delights in fire.
+mn1:5.3 | S: Why is that? | T: Why is that?
+mn1:5.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:6.1 | S: They perceive air as air. | T: “He perceives air as air.
+mn1:6.2 | S: Having perceived air as air, they conceive it to be air … | T: Having perceived air as air, he conceives himself as air, he conceives himself in air, he conceives himself apart from air, he conceives air to be ‘mine,’ he delights in air.
+mn1:6.3 | S: Why is that? | T: Why is that?
+mn1:6.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:7.1 | S: They perceive creatures as creatures. | T: “He perceives beings as beings.
+mn1:7.2 | S: Having perceived creatures as creatures, they conceive them to be creatures … | T: Having perceived beings as beings, he conceives beings, he conceives himself in beings, he conceives himself apart from beings, he conceives beings to be ‘mine,’ he delights in beings.
+mn1:7.3 | S: Why is that? | T: Why is that?
+mn1:7.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:8.1 | S: They perceive gods as gods. | T: “He perceives gods as gods.
+mn1:8.2 | S: Having perceived gods as gods, they conceive them to be gods … | T: Having perceived gods as gods, he conceives gods, he conceives himself in gods, he conceives himself apart from gods, he conceives gods to be ‘mine,’ he delights in gods.
+mn1:8.3 | S: Why is that? | T: Why is that?
+mn1:8.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:9.1 | S: They perceive the Progenitor as the Progenitor. | T: “He perceives Pajāpati as Pajāpati.
+mn1:9.2 | S: Having perceived the Progenitor as the Progenitor, they conceive him to be the Progenitor … | T: Having perceived Pajāpati as Pajāpati, he conceives Pajāpati, he conceives himself in Pajāpati, he conceives himself apart from Pajāpati, he conceives Pajāpati to be ‘mine,’ he delights in Pajāpati.
+mn1:9.3 | S: Why is that? | T: Why is that?
+mn1:9.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:10.1 | S: They perceive the Divinity as the Divinity. | T: “He perceives Brahmā as Brahmā.
+mn1:10.2 | S: Having perceived the Divinity as the Divinity, they conceive him to be the Divinity … | T: Having perceived Brahmā as Brahmā, he conceives Brahmā, he conceives himself in Brahmā, he conceives himself apart from Brahmā, he conceives Brahmā to be ‘mine,’ he delights in Brahmā.
+mn1:10.3 | S: Why is that? | T: Why is that?
+mn1:10.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:11.1 | S: They perceive those of sublime luminosity as those of sublime luminosity. | T: “He perceives the gods of Streaming Radiance as the gods of Streaming Radiance.
+mn1:11.2 | S: Having perceived those of sublime luminosity as those of sublime luminosity, they conceive them to be those of sublime luminosity … | T: Having perceived the gods of Streaming Radiance as the gods of Streaming Radiance, he conceives the gods of Streaming Radiance, he conceives himself in the gods of Streaming Radiance, he conceives himself apart from the gods of Streaming Radiance, he conceives the gods of Streaming Radiance to be ‘mine,’ he delights in the gods of Streaming Radiance.
+mn1:11.3 | S: Why is that? | T: Why is that?
+mn1:11.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:12.1 | S: They perceive those of universal beauty as those of universal beauty. | T: “He perceives the gods of Refulgent Glory as the gods of Refulgent Glory.
+mn1:12.2 | S: But then they conceive them to be those of universal beauty … | T: Having perceived the gods of Refulgent Glory as the gods of Refulgent Glory, he conceives the gods of Refulgent Glory, he conceives himself in the gods of Refulgent Glory, he conceives himself apart from the gods of Refulgent Glory, he conceives the gods of Refulgent Glory to be ‘mine,’ he delights in the gods of Refulgent Glory.
+mn1:12.3 | S: Why is that? | T: Why is that?
+mn1:12.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:13.1 | S: They perceive those of abundant fruit as those of abundant fruit. | T: “He perceives the gods of Great Fruit as the gods of Great Fruit.
+mn1:13.2 | S: Having perceived those of abundant fruit as those of abundant fruit, they conceive them to be those of abundant fruit … | T: Having perceived the gods of Great Fruit as the gods of Great Fruit, he conceives the gods of Great Fruit, he conceives himself in the gods of Great Fruit, he conceives himself apart from the gods of Great Fruit, he conceives the gods of Great Fruit to be ‘mine,’ he delights in the gods of Great Fruit.
+mn1:13.3 | S: Why is that? | T: Why is that?
+mn1:13.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:14.1 | S: They perceive the Vanquisher as the Vanquisher. | T: “He perceives the Overlord as the Overlord.
+mn1:14.2 | S: Having perceived the Vanquisher as the Vanquisher, they conceive him to be the Vanquisher … | T: Having perceived the Overlord as the Overlord, he conceives the Overlord, he conceives himself in the Overlord, he conceives himself apart from the Overlord, he conceives the Overlord to be ‘mine,’ he delights in the Overlord.
+mn1:14.3 | S: Why is that? | T: Why is that?
+mn1:14.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:15.1 | S: They perceive the dimension of infinite space as the dimension of infinite space. | T: “He perceives the base of infinite space as the base of infinite space.
+mn1:15.2 | S: Having perceived the dimension of infinite space as the dimension of infinite space, they conceive it to be the dimension of infinite space … | T: Having perceived the base of infinite space as the base of infinite space, he conceives himself as the base of infinite space, he conceives himself in the base of infinite space, he conceives himself apart from the base of infinite space, he conceives the base of infinite space to be ‘mine,’ he delights in the base of infinite space.
+mn1:15.3 | S: Why is that? | T: Why is that?
+mn1:15.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:16.1 | S: They perceive the dimension of infinite consciousness as the dimension of infinite consciousness. | T: “He perceives the base of infinite consciousness as the base of infinite consciousness.
+mn1:16.2 | S: Having perceived the dimension of infinite consciousness as the dimension of infinite consciousness, they conceive it to be the dimension of infinite consciousness … | T: Having perceived the base of infinite consciousness as the base of infinite consciousness, he conceives himself as the base of infinite consciousness, he conceives himself in the base of infinite consciousness, he conceives himself apart from the base of infinite consciousness, he conceives the base of infinite consciousness to be ‘mine,’ he delights in the base of infinite consciousness.
+mn1:16.3 | S: Why is that? | T: Why is that?
+mn1:16.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:17.1 | S: They perceive the dimension of nothingness as the dimension of nothingness. | T: “He perceives the base of nothingness as the base of nothingness.
+mn1:17.2 | S: Having perceived the dimension of nothingness as the dimension of nothingness, they conceive it to be the dimension of nothingness … | T: Having perceived the base of nothingness as the base of nothingness, he conceives himself as the base of nothingness, he conceives himself in the base of nothingness, he conceives himself apart from the base of nothingness, he conceives the base of nothingness to be ‘mine,’ he delights in the base of nothingness.
+mn1:17.3 | S: Why is that? | T: Why is that?
+mn1:17.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:18.1 | S: They perceive the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception. | T: “He perceives the base of neither-perception-nor-non-perception as the base of neither-perception-nor-non-perception.
+mn1:18.2 | S: Having perceived the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception, they conceive it to be the dimension of neither perception nor non-perception … | T: Having perceived the base of neither-perception-nor-non-perception as the base of neither-perception-nor-non-perception, he conceives himself as the base of neither-perception-nor-non-perception, he conceives himself in the base of neither-perception-nor-non-perception, he conceives himself apart from the base of neither-perception-nor-non-perception, he conceives the base of neither-perception-nor-non-perception to be ‘mine,’ he delights in the base of neither-perception-nor-non-perception.
+mn1:18.3 | S: Why is that? | T: Why is that?
+mn1:18.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:19.1 | S: They perceive the seen as the seen. | T: “He perceives the seen as the seen.
+mn1:19.2 | S: Having perceived the seen as the seen, they conceive it to be the seen … | T: Having perceived the seen as the seen, he conceives himself as the seen, he conceives himself in the seen, he conceives himself apart from the seen, he conceives the seen to be ‘mine,’ he delights in the seen.
+mn1:19.3 | S: Why is that? | T: Why is that?
+mn1:19.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:20.1 | S: They perceive the heard as the heard. | T: “He perceives the heard as the heard.
+mn1:20.2 | S: Having perceived the heard as the heard, they conceive it to be the heard … | T: Having perceived the heard as the heard, he conceives himself as the heard, he conceives himself in the heard, he conceives himself apart from the heard, he conceives the heard to be ‘mine,’ he delights in the heard.
+mn1:20.3 | S: Why is that? | T: Why is that?
+mn1:20.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:21.1 | S: They perceive the thought as the thought. | T: “He perceives the sensed as the sensed.
+mn1:21.2 | S: Having perceived the thought as the thought, they conceive it to be the thought … | T: Having perceived the sensed as the sensed, he conceives himself as the sensed, he conceives himself in the sensed, he conceives himself apart from the sensed, he conceives the sensed to be ‘mine,’ he delights in the sensed.
+mn1:21.3 | S: Why is that? | T: Why is that?
+mn1:21.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:22.1 | S: They perceive the known as the known. | T: “He perceives the cognized as the cognized.
+mn1:22.2 | S: Having perceived the known as the known, they conceive it to be the known … | T: Having perceived the cognized as the cognized, he conceives himself as the cognized, he conceives himself in the cognized, he conceives himself apart from the cognized, he conceives the cognized to be ‘mine,’ he delights in the cognized.
+mn1:22.3 | S: Why is that? | T: Why is that?
+mn1:22.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:23.1 | S: They perceive oneness as oneness. | T: “He perceives unity as unity.
+mn1:23.2 | S: Having perceived oneness as oneness, they conceive it to be oneness … | T: Having perceived unity as unity, he conceives himself as unity, he conceives himself in unity, he conceives himself apart from unity, he conceives unity to be ‘mine,’ he delights in unity.
+mn1:23.3 | S: Why is that? | T: Why is that?
+mn1:23.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:24.1 | S: They perceive diversity as diversity. | T: “He perceives diversity as diversity.
+mn1:24.2 | S: Having perceived diversity as diversity, they conceive it to be diversity … | T: Having perceived diversity as diversity, he conceives himself as diversity, he conceives himself in diversity, he conceives himself apart from diversity, he conceives diversity to be ‘mine,’ he delights in diversity.
+mn1:24.3 | S: Why is that? | T: Why is that?
+mn1:24.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:25.1 | S: They perceive all as all. | T: “He perceives all as all.
+mn1:25.2 | S: Having perceived all as all, they conceive it to be all … | T: Having perceived all as all, he conceives himself as all, he conceives himself in all, he conceives himself apart from all, he conceives all to be ‘mine,’ he delights in all.
+mn1:25.3 | S: Why is that? | T: Why is that?
+mn1:25.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:26.1 | S: They perceive extinguishment as extinguishment. | T: “He perceives Nibbāna as Nibbāna.
+mn1:26.2 | S: Having perceived extinguishment as extinguishment, they conceive it to be extinguishment, they conceive it in extinguishment, they conceive it as extinguishment, they conceive that ‘extinguishment is mine’, they approve extinguishment. | T: Having perceived Nibbāna as Nibbāna, he conceives himself as Nibbāna, he conceives himself in Nibbāna, he conceives himself apart from Nibbāna, he conceives Nibbāna to be ‘mine,’ he delights in Nibbāna.
+mn1:26.3 | S: Why is that? | T: Why is that?
+mn1:26.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not fully understood it, I say.
+mn1:26.5 | P: Puthujjanavasena paṭhamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:27.1 | S: A mendicant who is a trainee, who hasn’t achieved their heart’s desire, but lives aspiring to the supreme sanctuary from the yoke, directly knows earth as earth. | T: The Disciple in Higher Training “Bhikkhus, a bhikkhu who is in higher training, whose mind has not yet reached the goal, and who is still aspiring to the supreme security from bondage, directly knows earth as earth.
+mn1:27.2 | S: Having directly known earth as earth, let them not conceive it to be earth, let them not conceive it in earth, let them not conceive it as earth, let them not conceive that ‘earth is mine’, let them not approve earth. | T: Having directly known earth as earth, he should not conceive himself as earth, he should not conceive himself in earth, he should not conceive himself apart from earth, he should not conceive earth to be ‘mine,’ he should not delight in earth.
+mn1:27.3 | S: Why is that? | T: Why is that?
+mn1:27.4 | S: So that they may completely understand it, I say. | T: Because he must fully understand it, I say.
+mn1:28.1 | S: They directly know water … | T: 28–49. “He directly knows water as water…He directly knows all as all…
+mn1:29.1 | S: fire … | T: (none)
+mn1:30.1 | S: air … | T: (none)
+mn1:31.1 | S: creatures … | T: (none)
+mn1:32.1 | S: gods … | T: (none)
+mn1:33.1 | S: the Progenitor … | T: (none)
+mn1:34.1 | S: the Divinity … | T: (none)
+mn1:35.1 | S: those of sublime luminosity … | T: (none)
+mn1:36.1 | S: those replete with glory … | T: (none)
+mn1:37.1 | S: those of abundant fruit … | T: (none)
+mn1:38.1 | S: the Vanquisher … | T: (none)
+mn1:39.1 | S: the dimension of infinite space … | T: (none)
+mn1:40.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:41.1 | S: the dimension of nothingness … | T: (none)
+mn1:42.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:43.1 | S: the seen … | T: (none)
+mn1:44.1 | S: the heard … | T: (none)
+mn1:45.1 | S: the thought … | T: (none)
+mn1:46.1 | S: the known … | T: (none)
+mn1:47.1 | S: oneness … | T: (none)
+mn1:48.1 | S: diversity … | T: (none)
+mn1:49.1 | S: all … | T: (none)
+mn1:50.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows Nibbāna as Nibbāna.
+mn1:50.2 | S: Having directly known extinguishment as extinguishment, let them not conceive it to be extinguishment, let them not conceive it in extinguishment, let them not conceive it as extinguishment, let them not conceive that ‘extinguishment is mine’, let them not approve extinguishment. | T: Having directly known Nibbāna as Nibbāna, he should not conceive himself as Nibbāna, he should not conceive himself in Nibbāna, he should not conceive himself apart from Nibbāna, he should not conceive Nibbāna to be ‘mine,’ he should not delight in Nibbāna.
+mn1:50.3 | S: Why is that? | T: Why is that?
+mn1:50.4 | S: So that they may completely understand it, I say. | T: Because he must fully understand it, I say.
+mn1:50.5 | P: Sekkhavasena dutiyanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:51.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: The Arahant—I “Bhikkhus, a bhikkhu who is an arahant with taints destroyed, who has lived the holy life, done what had to be done, laid down the burden, reached his own goal, destroyed the fetters of being, and is completely liberated through final knowledge, he too directly knows earth as earth.
+mn1:51.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:51.3 | S: Why is that? | T: Why is that?
+mn1:51.4 | S: Because they have completely understood it, I say. | T: Because he has fully understood it, I say.
+mn1:52.1 | S: They directly know water … | T: “He too directly knows water as water…
+mn1:53.1 | S: fire … | T: (none)
+mn1:54.1 | S: air … | T: (none)
+mn1:55.1 | S: creatures … | T: (none)
+mn1:56.1 | S: gods … | T: (none)
+mn1:57.1 | S: the Progenitor … | T: (none)
+mn1:58.1 | S: the Divinity … | T: (none)
+mn1:59.1 | S: those of sublime luminosity … | T: (none)
+mn1:60.1 | S: those replete with glory … | T: (none)
+mn1:61.1 | S: those of abundant fruit … | T: (none)
+mn1:62.1 | S: the Vanquisher … | T: (none)
+mn1:63.1 | S: the dimension of infinite space … | T: (none)
+mn1:64.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:65.1 | S: the dimension of nothingness … | T: (none)
+mn1:66.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:67.1 | S: the seen … | T: (none)
+mn1:68.1 | S: the heard … | T: (none)
+mn1:69.1 | S: the thought … | T: (none)
+mn1:70.1 | S: the known … | T: (none)
+mn1:71.1 | S: oneness … | T: (none)
+mn1:72.1 | S: diversity … | T: (none)
+mn1:73.1 | S: all … | T: (none)
+mn1:74.1 | S: They directly know extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:74.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: (none)
+mn1:74.3 | S: Why is that? | T: Why is that?
+mn1:74.4 | S: Because they have completely understood it, I say. | T: Because he has fully understood it, I say.
+mn1:74.5 | P: Khīṇāsavavasena tatiyanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:75.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: The Arahant—Ii “Bhikkhus, a bhikkhu who is an arahant…completely liberated through final knowledge, he too directly knows earth as earth.
+mn1:75.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:75.3 | S: Why is that? | T: Why is that?
+mn1:75.4 | S: Because they’re free of greed due to the ending of greed. | T: Because he is free from lust through the destruction of lust.
+mn1:76.1 | S: They directly know water … | T: “He too directly knows water as water…
+mn1:77.1 | S: fire … | T: (none)
+mn1:78.1 | S: air … | T: (none)
+mn1:79.1 | S: creatures … | T: (none)
+mn1:80.1 | S: gods … | T: (none)
+mn1:81.1 | S: the Progenitor … | T: (none)
+mn1:82.1 | S: the Divinity … | T: (none)
+mn1:83.1 | S: those of sublime luminosity … | T: (none)
+mn1:84.1 | S: those replete with glory … | T: (none)
+mn1:85.1 | S: those of abundant fruit … | T: (none)
+mn1:86.1 | S: the Vanquisher … | T: (none)
+mn1:87.1 | S: the dimension of infinite space … | T: (none)
+mn1:88.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:89.1 | S: the dimension of nothingness … | T: (none)
+mn1:90.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:91.1 | S: the seen … | T: (none)
+mn1:92.1 | S: the heard … | T: (none)
+mn1:93.1 | S: the thought … | T: (none)
+mn1:94.1 | S: the known … | T: (none)
+mn1:95.1 | S: oneness … | T: (none)
+mn1:96.1 | S: diversity … | T: (none)
+mn1:97.1 | S: all … | T: (none)
+mn1:98.1 | S: They directly know extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:98.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: (none)
+mn1:98.3 | S: Why is that? | T: Why is that?
+mn1:98.4 | S: Because they’re free of greed due to the ending of greed. | T: Because he is free from lust through the destruction of lust.
+mn1:98.5 | P: Khīṇāsavavasena catutthanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:99.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: The Arahant—Iii “Bhikkhus, a bhikkhu who is an arahant…completely liberated through final knowledge, he too directly knows earth as earth.
+mn1:99.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:99.3 | S: Why is that? | T: Why is that?
+mn1:99.4 | S: Because they’re free of hate due to the ending of hate. | T: Because he is free from hate through the destruction of hate.
+mn1:100.1 | S: They directly know water … | T: “He too directly knows water as water…
+mn1:101.1 | S: fire … | T: (none)
+mn1:102.1 | S: air … | T: (none)
+mn1:103.1 | S: creatures … | T: (none)
+mn1:104.1 | S: gods … | T: (none)
+mn1:105.1 | S: the Progenitor … | T: (none)
+mn1:106.1 | S: the Divinity … | T: (none)
+mn1:107.1 | S: those of sublime luminosity … | T: (none)
+mn1:108.1 | S: those replete with glory … | T: (none)
+mn1:109.1 | S: those of abundant fruit … | T: (none)
+mn1:110.1 | S: the Vanquisher … | T: (none)
+mn1:111.1 | S: the dimension of infinite space … | T: (none)
+mn1:112.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:113.1 | S: the dimension of nothingness … | T: (none)
+mn1:114.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:115.1 | S: the seen … | T: (none)
+mn1:116.1 | S: the heard … | T: (none)
+mn1:117.1 | S: the thought … | T: (none)
+mn1:118.1 | S: the known … | T: (none)
+mn1:119.1 | S: oneness … | T: (none)
+mn1:120.1 | S: diversity … | T: (none)
+mn1:121.1 | S: all … | T: (none)
+mn1:122.1 | S: They directly know extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:122.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: (none)
+mn1:122.3 | S: Why is that? | T: Why is that?
+mn1:122.4 | S: Because they’re free of hate due to the ending of hate. | T: Because he is free from hate through the destruction of hate.
+mn1:122.5 | P: Khīṇāsavavasena pañcamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:123.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: The Arahant—Iv “Bhikkhus, a bhikkhu who is an arahant…completely liberated through final knowledge, he too directly knows earth as earth.
+mn1:123.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:123.3 | S: Why is that? | T: Why is that?
+mn1:123.4 | S: Because they’re free of delusion due to the ending of delusion. | T: Because he is free from delusion through the destruction of delusion.
+mn1:124.1 | S: They directly know water … | T: “He too directly knows water as water…
+mn1:125.1 | S: fire … | T: (none)
+mn1:126.1 | S: air … | T: (none)
+mn1:127.1 | S: creatures … | T: (none)
+mn1:128.1 | S: gods … | T: (none)
+mn1:129.1 | S: the Progenitor … | T: (none)
+mn1:130.1 | S: the Divinity … | T: (none)
+mn1:131.1 | S: those of sublime luminosity … | T: (none)
+mn1:132.1 | S: those replete with glory … | T: (none)
+mn1:133.1 | S: those of abundant fruit … | T: (none)
+mn1:134.1 | S: the Vanquisher … | T: (none)
+mn1:135.1 | S: the dimension of infinite space … | T: (none)
+mn1:136.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:137.1 | S: the dimension of nothingness … | T: (none)
+mn1:138.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:139.1 | S: the seen … | T: (none)
+mn1:140.1 | S: the heard … | T: (none)
+mn1:141.1 | S: the thought … | T: (none)
+mn1:142.1 | S: the known … | T: (none)
+mn1:143.1 | S: oneness … | T: (none)
+mn1:144.1 | S: diversity … | T: (none)
+mn1:145.1 | S: all … | T: (none)
+mn1:146.1 | S: They directly know extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:146.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: (none)
+mn1:146.3 | S: Why is that? | T: Why is that?
+mn1:146.4 | S: Because they’re free of delusion due to the ending of delusion. | T: Because he is free from delusion through the destruction of delusion.
+mn1:146.5 | P: Khīṇāsavavasena chaṭṭhanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:147.1 | S: The Realized One, the perfected one, the fully awakened Buddha directly knows earth as earth. | T: The Tathāgata—I “Bhikkhus, the Tathāgata, too, accomplished and fully enlightened, directly knows earth as earth.
+mn1:147.2 | S: Having directly known earth as earth, he does not conceive it to be earth, he does not conceive it in earth, he does not conceive it as earth, he does not conceive that ‘earth is mine’, he does not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:147.3 | S: Why is that? | T: Why is that?
+mn1:147.4 | S: Because the Realized One has completely understood it to the end, I say. | T: Because the Tathāgata has fully understood it to the end, I say.
+mn1:148.1 | S: He directly knows water … | T: “He too directly knows water as water…
+mn1:149.1 | S: fire … | T: (none)
+mn1:150.1 | S: air … | T: (none)
+mn1:151.1 | S: creatures … | T: (none)
+mn1:152.1 | S: gods … | T: (none)
+mn1:153.1 | S: the Progenitor … | T: (none)
+mn1:154.1 | S: the Divinity … | T: (none)
+mn1:155.1 | S: those of sublime luminosity … | T: (none)
+mn1:156.1 | S: those replete with glory … | T: (none)
+mn1:157.1 | S: those of abundant fruit … | T: (none)
+mn1:158.1 | S: the Vanquisher … | T: (none)
+mn1:159.1 | S: the dimension of infinite space … | T: (none)
+mn1:160.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:161.1 | S: the dimension of nothingness … | T: (none)
+mn1:162.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:163.1 | S: the seen … | T: (none)
+mn1:164.1 | S: the heard … | T: (none)
+mn1:165.1 | S: the thought … | T: (none)
+mn1:166.1 | S: the known … | T: (none)
+mn1:167.1 | S: oneness … | T: (none)
+mn1:168.1 | S: diversity … | T: (none)
+mn1:169.1 | S: all … | T: (none)
+mn1:170.1 | S: He directly knows extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:170.2 | S: Having directly known extinguishment as extinguishment, he does not conceive it to be extinguishment, he does not conceive it in extinguishment, he does not conceive it as extinguishment, he does not conceive that ‘extinguishment is mine’, he does not approve extinguishment. | T: (none)
+mn1:170.3 | S: Why is that? | T: Why is that?
+mn1:170.4 | S: Because the Realized One has completely understood it to the end, I say. | T: Because the Tathāgata has fully understood it to the end, I say.
+mn1:170.5 | P: Tathāgatavasena sattamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:171.1 | S: The Realized One, the perfected one, the fully awakened Buddha directly knows earth as earth. | T: The Tathāgata—Ii “Bhikkhus, the Tathāgata, too, accomplished and fully enlightened, directly knows earth as earth.
+mn1:171.2 | S: Having directly known earth as earth, he does not conceive it to be earth, he does not conceive it in earth, he does not conceive it as earth, he does not conceive that ‘earth is mine’, he does not approve earth. | T: Having directly known earth as earth, he does not conceive himself as earth, he does not conceive himself in earth, he does not conceive himself apart from earth, he does not conceive earth to be ‘mine,’ he does not delight in earth.
+mn1:171.3 | S: Why is that? | T: Why is that?
+mn1:171.4 | S: Because he has understood that approval is the root of suffering, | T: Because he has understood that delight is the root of suffering,
+mn1:171.5 | S: and that rebirth comes from continued existence; whoever has come to be gets old and dies. | T: and that with being as condition there is birth, and that for whatever has come to be there is ageing and death.
+mn1:171.6 | S: That’s why the Realized One—with the ending, fading away, cessation, giving up, and letting go of all cravings—has awakened to the supreme perfect awakening, I say. | T: Therefore, bhikkhus, through the complete destruction, fading away, cessation, giving up, and relinquishing of cravings, the Tathāgata has awakened to supreme full enlightenment, I say.
+mn1:172.1 | S: He directly knows water … | T: “He too directly knows water as water…
+mn1:173.1 | S: fire … | T: (none)
+mn1:174.1 | S: air … | T: (none)
+mn1:175.1 | S: creatures … | T: (none)
+mn1:176.1 | S: gods … | T: (none)
+mn1:177.1 | S: the Progenitor … | T: (none)
+mn1:178.1 | S: the Divinity … | T: (none)
+mn1:179.1 | S: those of sublime luminosity … | T: (none)
+mn1:180.1 | S: those replete with glory … | T: (none)
+mn1:181.1 | S: those of abundant fruit … | T: (none)
+mn1:182.1 | S: the Vanquisher … | T: (none)
+mn1:183.1 | S: the dimension of infinite space … | T: (none)
+mn1:184.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:185.1 | S: the dimension of nothingness … | T: (none)
+mn1:186.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:187.1 | S: the seen … | T: (none)
+mn1:188.1 | S: the heard … | T: (none)
+mn1:189.1 | S: the thought … | T: (none)
+mn1:190.1 | S: the known … | T: (none)
+mn1:191.1 | S: oneness … | T: (none)
+mn1:192.1 | S: diversity … | T: (none)
+mn1:193.1 | S: all … | T: (none)
+mn1:194.1 | S: He directly knows extinguishment as extinguishment. | T: Nibbāna as Nibbāna…
+mn1:194.2 | S: Having directly known extinguishment as extinguishment, he does not conceive it to be extinguishment, he does not conceive it in extinguishment, he does not conceive it as extinguishment, he does not conceive that ‘extinguishment is mine’, he does not approve extinguishment. | T: (none)
+mn1:194.3 | S: Why is that? | T: Why is that?
+mn1:194.4 | S: Because he has understood that approval is the root of suffering, | T: Because he has understood that delight is the root of suffering,
+mn1:194.5 | S: and that rebirth comes from continued existence; whoever has come to be gets old and dies. | T: and that with being as condition there is birth, and that for whatever has come to be there is ageing and death.
+mn1:194.6 | S: That’s why the Realized One—with the ending, fading away, cessation, giving up, and letting go of all cravings—has awakened to the supreme perfect Awakening, I say.” | T: Therefore, bhikkhus, through the complete destruction, fading away, cessation, giving up, and relinquishing of cravings, the Tathāgata has awakened to supreme full enlightenment, I say.”
+mn1:194.7 | P: Tathāgatavasena aṭṭhamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:194.8 | S: That is what the Buddha said. | T: That is what the Blessed One said,
+mn1:194.9 | S: But the mendicants did not approve what the Buddha said. | T: but those bhikkhus did not delight in the Blessed One’s words.
+mn1:194.10 | P: Mūlapariyāyasuttaṁ niṭṭhitaṁ paṭhamaṁ. | T: (none)
+
+## mn147
+mn147:1.1 | S: So I have heard. | T: Thus have I heard.
+mn147:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn147:1.3 | S: Then as he was in private retreat this thought came to his mind, | T: Then, while the Blessed One was alone in meditation, a thought arose in his mind thus:
+mn147:1.4 | S: “The qualities that ripen in freedom have ripened in Rāhula. | T: “The states that ripen in deliverance have ripened in Rāhula.
+mn147:1.5 | S: Why don’t I lead him further to the ending of defilements?” | T: Suppose I were to lead him on further to the destruction of the taints.”
+mn147:1.6 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then, when it was morning, the Blessed One dressed, and taking his bowl and outer robe, went into Sāvatthī for alms.
+mn147:1.7 | S: Then, after the meal, on his return from almsround, he addressed Venerable Rāhula, | T: When he had walked for alms in Sāvatthī and had returned from his almsround, after his meal he addressed the venerable Rāhula thus:
+mn147:1.8 | S: “Rāhula, get your sitting cloth. | T: “Take your sitting cloth with you, Rāhula;
+mn147:1.9 | S: Let’s go to the Dark Forest for the day’s meditation.” | T: let us go to the Blind Men’s Grove to pass the day.”
+mn147:1.10 | S: “Yes, sir,” replied Rāhula. Taking his sitting cloth he followed behind the Buddha. | T: “Yes, venerable sir,” the venerable Rāhula replied, and taking his sitting cloth with him, he followed close behind the Blessed One.
+mn147:2.1 | S: Now at that time many thousands of deities followed the Buddha, thinking, | T: Now on that occasion many thousands of deities followed the Blessed One, thinking:
+mn147:2.2 | S: “Today the Buddha will lead Rāhula further to the ending of defilements!” | T: “Today the Blessed One will lead the venerable Rāhula further to the destruction of the taints.”
+mn147:2.3 | S: Then the Buddha plunged deep into the Dark Forest and sat at the root of a tree on the seat spread out. | T: Then the Blessed One went into the Blind Men’s Grove and sat down at the root of a certain tree on a seat made ready.
+mn147:2.4 | S: Rāhula bowed to the Buddha and sat down to one side. | T: And the venerable Rāhula paid homage to the Blessed One and sat down at one side.
+mn147:2.5 | S: The Buddha said to him: | T: The Blessed One then said to the venerable Rāhula:
+mn147:2.6 | S: “What do you think, Rāhula? | T: “Rāhula, what do you think?
+mn147:2.7 | S: Is the eye permanent or impermanent?” | T: Is the eye permanent or impermanent?” —
+mn147:2.8 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+mn147:2.9 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+mn147:2.10 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+mn147:2.11 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+mn147:2.12 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+mn147:2.13 | S: “No, sir.” | T: “No, venerable sir.”
+mn147:3.1 | S: “What do you think, Rāhula? | T: “Rāhula, what do you think?
+mn147:3.2 | S: Are sights permanent or impermanent?” | T: Are forms…Is eye-consciousness …
+mn147:3.3 | S: “Impermanent, sir.” | T: (none)
+mn147:3.4 | S: “But if they’re impermanent, are they suffering or happiness?” | T: (none)
+mn147:3.5 | S: “Suffering, sir.” | T: (none)
+mn147:3.6 | S: “But if they’re impermanent, suffering, and perishable, are they fit to be regarded thus: | T: (none)
+mn147:3.7 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:3.8 | S: “No, sir.” | T: (none)
+mn147:3.9 | S: “What do you think, Rāhula? | T: (none)
+mn147:3.10 | S: Is eye consciousness permanent or impermanent?” | T: (none)
+mn147:3.11 | S: “Impermanent, sir.” | T: (none)
+mn147:3.12 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+mn147:3.13 | S: “Suffering, sir.” | T: (none)
+mn147:3.14 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+mn147:3.15 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:3.16 | S: “No, sir.” | T: (none)
+mn147:3.17 | S: “What do you think, Rāhula? | T: (none)
+mn147:3.18 | S: Is eye contact permanent or impermanent?” | T: …Is eye-contact…Is anything comprised within the feeling, perception, formations, and consciousness that arise with eye-contact as condition permanent or impermanent?”—
+mn147:3.19 | S: “Impermanent, sir.” | T: (none)
+mn147:3.20 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+mn147:3.21 | S: “Suffering, sir.” | T: (none)
+mn147:3.22 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+mn147:3.23 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:3.24 | S: “No, sir.” | T: (none)
+mn147:3.25 | S: “What do you think, Rāhula? | T: (none)
+mn147:3.26 | S: Anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” | T: (none)
+mn147:3.27 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+mn147:3.28 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+mn147:3.29 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+mn147:3.30 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+mn147:3.31 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+mn147:3.32 | S: “No, sir.” | T: “No, venerable sir.”
+mn147:4-8.1 | S: “What do you think, Rāhula? Is the ear … | T: “Rāhula, what do you think? Is the ear permanent or impermanent?…
+mn147:4-8.2 | P: “Aniccaṁ, bhante …pe… | T: (none)
+mn147:4-8.3 | S: nose … | T: Is the nose permanent or impermanent?…Is the tongue permanent or impermanent?…
+mn147:4-8.4 | P: “Aniccaṁ, bhante …pe… | T: (none)
+mn147:4-8.5 | S: tongue … | T: (none)
+mn147:4-8.6 | P: “Aniccā, bhante … | T: (none)
+mn147:4-8.7 | S: body … | T: Is the body permanent or impermanent?…
+mn147:4-8.8 | P: “Anicco, bhante … | T: (none)
+mn147:4-8.9 | S: mind permanent or impermanent?” | T: Is the mind permanent or impermanent?…
+mn147:4-8.10 | S: “Impermanent, sir.” | T: (none)
+mn147:4-8.11 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+mn147:4-8.12 | S: “Suffering, sir.” | T: (none)
+mn147:4-8.13 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+mn147:4-8.14 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:4-8.15 | S: “No, sir.” | T: (none)
+mn147:4-8.16 | S: “What do you think, Rāhula? Are ideas permanent or impermanent?” | T: Are mind-objects…
+mn147:4-8.17 | S: “Impermanent, sir.” | T: (none)
+mn147:4-8.18 | S: “But if they’re impermanent, are they suffering or happiness?” | T: (none)
+mn147:4-8.19 | S: “Suffering, sir.” | T: (none)
+mn147:4-8.20 | S: “But if they’re impermanent, suffering, and perishable, are they fit to be regarded thus: | T: (none)
+mn147:4-8.21 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:4-8.22 | S: “No, sir.” | T: (none)
+mn147:4-8.23 | S: “What do you think, Rāhula? Is mind consciousness permanent or impermanent?” | T: Is mind-consciousness…
+mn147:4-8.24 | S: “Impermanent, sir.” | T: (none)
+mn147:4-8.25 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+mn147:4-8.26 | S: “Suffering, sir.” | T: (none)
+mn147:4-8.27 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+mn147:4-8.28 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:4-8.29 | S: “No, sir.” | T: (none)
+mn147:4-8.30 | S: “What do you think, Rāhula? Is mind contact permanent or impermanent?” | T: Is mind-contact…Is anything comprised within the feeling, perception, formations, and consciousness that arise with mind-contact as condition permanent or impermanent?”—
+mn147:4-8.31 | S: “Impermanent, sir.” | T: (none)
+mn147:4-8.32 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+mn147:4-8.33 | S: “Suffering, sir.” | T: (none)
+mn147:4-8.34 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+mn147:4-8.35 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+mn147:4-8.36 | S: “No, sir.” | T: (none)
+mn147:4-8.37 | S: “What do you think, Rāhula? | T: (none)
+mn147:4-8.38 | S: Anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” | T: (none)
+mn147:4-8.39 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+mn147:4-8.40 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+mn147:4-8.41 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+mn147:4-8.42 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+mn147:4-8.43 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+mn147:4-8.44 | S: “No, sir.” | T: “No, venerable sir.”
+mn147:9.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact. | T: “Seeing thus, Rāhula, a well-taught noble disciple becomes disenchanted with the eye, disenchanted with forms, disenchanted with eye-consciousness, disenchanted with eye-contact, and disenchanted with anything comprised within the feeling, perception, formations, and consciousness that arise with eye-contact as condition.
+mn147:9.2 | S: They grow disillusioned with the ear … | T: “He becomes disenchanted with the ear…
+mn147:9.3 | S: nose … | T: He becomes disenchanted with the nose…
+mn147:9.4 | S: tongue … | T: He becomes disenchanted with the tongue…
+mn147:9.5 | S: body … | T: He becomes disenchanted with the body…
+mn147:9.6 | S: mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact. | T: He becomes disenchanted with the mind, disenchanted with mind-objects, disenchanted with mind-consciousness, disenchanted with mind-contact, and disenchanted with anything comprised within the feeling, perception, formations, and consciousness that arise with mind-contact as condition.
+mn147:9.7 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: “Being disenchanted, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It is liberated.’
+mn147:9.8 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’”
+mn147:9.9 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn147:9.10 | S: Satisfied, Venerable Rāhula approved what the Buddha said. | T: The venerable Rāhula was satisfied and delighted in the Blessed One’s words.
+mn147:9.11 | S: And while this discourse was being spoken, Rāhula’s mind was freed from defilements by not grasping. | T: Now while this discourse was being spoken, through not clinging the venerable Rāhula’s mind was liberated from the taints.
+mn147:9.12 | S: And the stainless, immaculate vision of the Dhamma arose in those thousands of deities: | T: And in those many thousands of deities there arose the spotless immaculate vision of the Dhamma:
+mn147:9.13 | S: “Everything that is liable to arise is liable to cease.” | T: “All that is subject to arising is subject to cessation.”
+mn147:9.14 | P: Cūḷarāhulovādasuttaṁ niṭṭhitaṁ pañcamaṁ. | T: (none)
+

@@ -1,0 +1,299 @@
+## mn13
+mn13:1.1 | S: So I have heard. | T: I have heard that
+mn13:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn13:2.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then, early in the morning, several monks adjusted their lower robes and, carrying their bowls & outer robes, went into Sāvatthī for alms.
+mn13:2.2 | S: Then it occurred to them, | T: The thought occurred to them,
+mn13:2.3 | S: “It’s too early to wander for alms in Sāvatthī. | T: “It’s still too early to go into Sāvatthī for alms.
+mn13:2.4 | S: Why don’t we visit the monastery for the wanderers of other religions?” | T: What if we were to visit the park of the wanderers of other persuasions?”
+mn13:2.5 | S: Then they went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: So they headed to the park of the wanderers of other persuasions. On arrival, they exchanged courteous greetings with the wanderers of other persuasions.
+mn13:2.6 | S: When the greetings and polite conversation were over, they sat down to one side. The wanderers said to them: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, the wanderers of other persuasions said to them,
+mn13:3.1 | S: “Reverends, the ascetic Gotama advocates the complete understanding of sensual pleasures, and so do we. | T: “Friends, Gotama the contemplative describes the comprehension of sensuality. We, too, describe the comprehension of sensuality.
+mn13:3.2 | S: The ascetic Gotama advocates the complete understanding of forms, and so do we. | T: He describes the comprehension of forms. We, too, describe the comprehension of forms.
+mn13:3.3 | S: The ascetic Gotama advocates the complete understanding of feelings, and so do we. | T: He describes the comprehension of feelings. We, too, describe the comprehension of feelings.
+mn13:3.4 | S: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?” | T: So what is the difference, what the distinction, what the distinguishing factor between him and us
+mn13:3.5 | P: yadidaṁ dhammadesanāya vā dhammadesanaṁ, anusāsaniyā vā anusāsanin”ti? | T: in terms of his teaching and ours, his message and ours?”
+mn13:4.1 | S: Those mendicants neither approved nor rejected that statement of the wanderers of other religions. | T: The monks, neither delighting nor disapproving of the words of the wanderers of other persuasions,
+mn13:4.2 | S: They rose from their seats, thinking, | T: got up from their seats, (thinking,)
+mn13:4.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We will learn the meaning of these words in the Blessed One’s presence.”
+mn13:5.1 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. The Buddha said: | T: Then, having gone for alms in Sāvatthī, after their meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they [told him what had happened].
+mn13:5.2 | P: “idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pāvisimha. | T: (none)
+mn13:5.3 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+mn13:5.4 | P: ‘atippago kho tāva sāvatthiyaṁ piṇḍāya carituṁ, | T: (none)
+mn13:5.5 | P: yaṁ nūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. | T: (none)
+mn13:5.6 | P: Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha; upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha; | T: (none)
+mn13:5.7 | P: sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, te aññatitthiyā paribbājakā etadavocuṁ: | T: (none)
+mn13:5.8 | P: ‘samaṇo, āvuso, gotamo kāmānaṁ pariññaṁ paññapeti, mayampi kāmānaṁ pariññaṁ paññapema. | T: (none)
+mn13:5.9 | P: Samaṇo, āvuso, gotamo rūpānaṁ pariññaṁ paññapeti, mayampi rūpānaṁ pariññaṁ paññapema. | T: (none)
+mn13:5.10 | P: Samaṇo, āvuso, gotamo vedanānaṁ pariññaṁ paññapeti, mayampi vedanānaṁ pariññaṁ paññapema. | T: (none)
+mn13:5.11 | P: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ dhammadesanāya vā dhammadesanaṁ anusāsaniyā vā anusāsanin’ti. | T: (none)
+mn13:5.12 | P: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha, nappaṭikkosimha; | T: (none)
+mn13:5.13 | P: anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: | T: (none)
+mn13:5.14 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: (none)
+mn13:6.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when the wanderers of other persuasions say this, they are to be told,
+mn13:6.2 | S: ‘But reverends, what’s the gratification, the drawback, and the escape when it comes to sensual pleasures? | T: ‘What, friends, with regard to sensuality, is the allure, what the drawback, what the escape?
+mn13:6.3 | S: What’s the gratification, the drawback, and the escape when it comes to forms? | T: What, with regard to forms, is the allure, what the drawback, what the escape?
+mn13:6.4 | S: What’s the gratification, the drawback, and the escape when it comes to feelings?’ | T: What, with regard to feelings, is the allure, what the drawback, what the escape?’
+mn13:6.5 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: When asked this, they will not manage an answer and, what is more, will get themselves into trouble.
+mn13:6.6 | S: Why is that? | T: Why is that?
+mn13:6.7 | S: Because they’re out of their element. | T: Because it lies outside their range.
+mn13:6.8 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: Monks, in this world with its devas, Māras, and Brahmās, in this people with its contemplatives & brahmans, its royalty & commonfolk, I do not see anyone who can satisfy the mind with an answer to these questions, aside from a Tathāgata, a Tathāgata’s disciples, or someone who has heard it from them.
+mn13:7.1 | S: And what is the gratification of sensual pleasures? | T: Sensuality “Now what, monks, is the allure of sensuality?
+mn13:7.2 | S: There are these five kinds of sensual stimulation. | T: These five strings of sensuality.
+mn13:7.3 | S: What five? | T: Which five?
+mn13:7.4 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+mn13:7.5 | S: Sounds known by the ear … | T: Sounds cognizable via the ear…
+mn13:7.6 | S: Smells known by the nose … | T: Aromas cognizable via the nose…
+mn13:7.7 | S: Tastes known by the tongue … | T: Flavors cognizable via the tongue…
+mn13:7.8 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+mn13:7.9 | S: These are the five kinds of sensual stimulation. | T: (none)
+mn13:7.10 | S: The pleasure and happiness that arise from these five kinds of sensual stimulation: this is the gratification of sensual pleasures. | T: Now whatever pleasure or happiness arises in dependence on these five strands of sensuality, that is the allure of sensuality.
+mn13:8.1 | S: And what is the drawback of sensual pleasures? | T: “And what is the drawback of sensuality?
+mn13:8.2 | S: It’s when a gentleman earns a living by means such as | T: There is the case where, on account of the occupation by which a clansman makes a living—
+mn13:8.3 | S: arithmetic, accounting, calculating, farming, trade, raising cattle, archery, government service, or one of the professions. | T: whether checking or accounting or calculating or plowing or trading or cattle-tending or archery or as a king’s man, or whatever the occupation may be—
+mn13:8.4 | S: But they must face cold and heat, being hurt by the touch of flies, mosquitoes, wind, sun, and reptiles, and risking death from hunger and thirst. | T: he faces cold, he faces heat, being harassed by mosquitoes & flies, wind & sun & creeping things, dying from hunger & thirst.
+mn13:8.5 | S: This is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: “Now this drawback in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:9.1 | S: That gentleman might try hard, strive, and make an effort, but fail to accrue riches. | T: “If the clansman gains no wealth while thus working & striving & making effort,
+mn13:9.2 | S: If this happens, they sorrow and wail and lament, beating their breast and falling into confusion, saying: | T: he sorrows, grieves, & laments, beats his breast, becomes distraught:
+mn13:9.3 | S: ‘Oh, my hard work is wasted. My efforts are fruitless!’ | T: ‘My work is in vain, my efforts are fruitless!’
+mn13:9.4 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:10.1 | S: That gentleman might try hard, strive, and make an effort, and succeed in accruing riches. | T: “If the clansman gains wealth while thus working & striving & making effort,
+mn13:10.2 | S: But they experience pain and sadness when they try to protect it, thinking: | T: he experiences pain & distress in protecting it:
+mn13:10.3 | S: ‘How can I prevent my wealth from being taken by rulers or bandits, consumed by fire, swept away by flood, or taken by unloved heirs?’ | T: ‘How will neither kings nor thieves make off with my property, nor fire burn it, nor water sweep it away, nor hateful heirs make off with it?’
+mn13:10.4 | S: And even though they protect it and ward it, rulers or bandits take it, or fire consumes it, or flood sweeps it away, or unloved heirs take it. | T: And as he thus guards and watches over his property, kings or thieves make off with it, or fire burns it, or water sweeps it away, or hateful heirs make off with it.
+mn13:10.5 | S: They sorrow and wail and lament, beating their breast and falling into confusion: | T: And he sorrows, grieves, & laments, beats his breast, becomes distraught:
+mn13:10.6 | S: ‘What once was mine is gone.’ | T: ‘What was mine is no more!’
+mn13:10.7 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:11.1 | S: Furthermore, for the sake of sensual pleasures kings fight with kings, aristocrats fight with aristocrats, brahmins fight with brahmins, and householders fight with householders. A mother fights with her child, child with mother, father with child, and child with father. Brother fights with brother, brother with sister, sister with brother, and friend fights with friend. | T: “Again, it is with sensuality for the reason, sensuality for the source, sensuality for the cause, the reason being simply sensuality, that kings quarrel with kings, nobles with nobles, brahmans with brahmans, householders with householders, mother with child, child with mother, father with child, child with father, brother with brother, sister with sister, brother with sister, sister with brother, friend with friend.
+mn13:11.2 | S: Once they’ve started quarreling, arguing, and disputing, they attack each other with fists, stones, rods, and swords, | T: And then in their quarrels, brawls, & disputes, they attack one another with fists or with clods or with sticks or with knives,
+mn13:11.3 | S: resulting in death and deadly pain. | T: so that they incur death or deadly pain.
+mn13:11.4 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:12.1 | S: Furthermore, for the sake of sensual pleasures they don their sword and shield, fasten their bow and arrows, and plunge into a battle massed on both sides, with arrows and spears flying and swords flashing. | T: “Again, it is with sensuality for the reason, sensuality for the source… that (men), taking swords & shields and buckling on bows & quivers, charge into battle massed in double array while arrows & spears are flying and swords are flashing;
+mn13:12.2 | S: There they are struck with arrows and spears, and their heads are chopped off, | T: and there they are wounded by arrows & spears, and their heads are cut off by swords,
+mn13:12.3 | S: resulting in death and deadly pain. | T: so that they incur death or deadly pain.
+mn13:12.4 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:13.1 | S: Furthermore, for the sake of sensual pleasures they don their sword and shield, fasten their bow and arrows, and charge wetly plastered bastions, with arrows and spears flying and swords flashing. | T: “Again, it is with sensuality for the reason, sensuality for the source… that (men), taking swords & shields and buckling on bows & quivers, charge slippery bastions while arrows & spears are flying and swords are flashing;
+mn13:13.2 | S: There they are struck with arrows and spears, splashed with dung, crushed by a superior force, and their heads are chopped off, | T: and there they are splashed with boiling cow dung and crushed under heavy weights, and their heads are cut off by swords,
+mn13:13.3 | S: resulting in death and deadly pain. | T: so that they incur death or deadly pain.
+mn13:13.4 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:14.1 | S: Furthermore, for the sake of sensual pleasures they break into houses, plunder wealth, steal from isolated buildings, commit highway robbery, and commit adultery. | T: “Again, it is with sensuality for the reason, sensuality for the source… that (men) break into windows, seize plunder, commit burglary, ambush highways, commit adultery,
+mn13:14.2 | S: The rulers would arrest them and subject them to various punishments— | T: and when they are captured, kings have them tortured in many ways.
+mn13:14.3 | S: whipping, caning, and clubbing; cutting off hands or feet, or both; cutting off ears or nose, or both; the ‘porridge pot’, the ‘shell-shave’, the ‘Rāhu’s mouth’, the ‘garland of fire’, the ‘burning hand’, the ‘bulrush twist’, the ‘bark dress’, the ‘antelope’, the ‘meat hook’, the ‘coins’, the ‘caustic pickle’, the ‘twisting bar’, the ‘straw mat’; being splashed with hot oil, being fed to the hounds, being impaled alive, and being beheaded. | T: They flog them with whips, beat them with canes, beat them with clubs; they cut off their hands, cut off their feet, cut off their hands & feet; they cut off their ears, cut off their noses, cut off their ears & noses; they subject them to the ‘porridge pot,’ the ‘polished-shell shave,’ the ‘Rāhu’s mouth,’ the ‘flaming garland,’ the ‘blazing hand,’ the ‘grass-duty (ascetic),’ the ‘bark-dress (ascetic),’ the ‘burning antelope,’ the ‘meat hooks,’ the ‘coin-gouging,’ the ‘lye pickling,’ the ‘pivot on a stake,’ the ‘rolled-up bed’; they have them splashed with boiling oil, devoured by dogs, impaled alive on stakes; they have their heads cut off with swords,
+mn13:14.4 | S: These result in death and deadly pain. | T: so that they incur death or deadly pain.
+mn13:14.5 | S: This too is a drawback of sensual pleasures apparent in the present life, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress visible here & now, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:15.1 | S: Furthermore, for the sake of sensual pleasures, they conduct themselves badly by way of body, speech, and mind. | T: “Again, it is with sensuality for the reason, sensuality for the source… that (people) engage in bodily misconduct, verbal misconduct, mental misconduct.
+mn13:15.2 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: Having engaged in bodily, verbal, and mental misconduct, they—on the break-up of the body, after death—re-appear in the plane of deprivation, the bad destination, the lower realms, in hell.
+mn13:15.3 | S: This is a drawback of sensual pleasures to do with lives to come, a mass of suffering caused by sensual pleasures. | T: Now this drawback too in the case of sensuality, this mass of stress in the future life, has sensuality for its reason, sensuality for its source, sensuality for its cause, the reason being simply sensuality.
+mn13:16.1 | S: And what is the escape from sensual pleasures? | T: “And what, monks, is the escape from sensuality?
+mn13:16.2 | S: Removing and giving up desire and greed for sensual pleasures: this is the escape from sensual pleasures. | T: The subduing of desire-passion for sensuality, the abandoning of desire-passion for sensuality: That is the escape from sensuality.
+mn13:17.1 | S: There are ascetics and brahmins who don’t truly understand sensual pleasures’ gratification, drawback, and escape in this way for what they are. It’s impossible for them to completely understand sensual pleasures themselves, or to instruct another so that, practicing accordingly, they will completely understand sensual pleasures. | T: “That any contemplatives or brahmans who do not discern, as it has come to be, the allure of sensuality as allure, the drawback of sensuality as drawback, the escape from sensuality as escape, would themselves comprehend sensuality or would rouse another with the truth so that, in line with what he has practiced, he would comprehend sensuality: That is impossible.
+mn13:17.2 | S: There are ascetics and brahmins who do truly understand sensual pleasures’ gratification, drawback, and escape in this way for what they are. It is possible for them to completely understand sensual pleasures themselves, or to instruct another so that, practicing accordingly, they will completely understand sensual pleasures. | T: But that any contemplatives or brahmans who discern, as it has come to be, the allure of sensuality as allure, the drawback of sensuality as drawback, the escape from sensuality as escape, would themselves comprehend sensuality or would rouse another with the truth so that, in line with what he has practiced, he would comprehend sensuality: That is possible.
+mn13:18.1 | S: And what is the gratification of forms? | T: Form “Now what, monks, is the allure of forms?
+mn13:18.2 | S: Suppose there was a girl of the brahmins, aristocrats, or householders in her fifteenth or sixteenth year, neither too tall nor too short, neither too thin nor too fat, neither too dark nor too fair. Is she not at the height of her beauty and prettiness?” | T: Suppose there were a maiden of the noble caste, the brahman caste, or the householder class, fifteen or sixteen years old, neither too tall nor too short, neither too thin nor too plump, neither too dark nor too pale. Is her beauty & charm at that time at its height?”
+mn13:18.3 | S: “Yes, sir.” | T: “Yes, lord.”
+mn13:18.4 | S: “The pleasure and happiness that arise from this beauty and prettiness | T: “Whatever pleasure & happiness arise in dependence on that beauty & charm:
+mn13:18.5 | S: is the gratification of forms. | T: That is the allure of forms.”
+mn13:19.1 | S: And what is the drawback of forms? | T: “And what is the drawback of form?
+mn13:19.2 | S: Suppose that some time later you were to see that same sister—eighty, ninety, or a hundred years old—bent double, crooked, leaning on a staff, trembling as they walk, ailing, past their prime, with teeth broken, hair grey and scanty or bald, skin wrinkled, and limbs blotchy. | T: There is the case where one might see that very same woman at a later time, when she’s eighty, ninety, one hundred years old: aged, roof-rafter crooked, bent-over, supported by a cane, palsied, miserable, broken-toothed, gray-haired, scanty-haired, bald, wrinkled, her body all blotchy.
+mn13:19.3 | S: What do you think, mendicants? | T: What do you think?
+mn13:19.4 | S: Has not that former beauty vanished and the drawback become clear?” | T: Has her earlier beauty & charm vanished, and the drawback appeared?”
+mn13:19.5 | S: “Yes, sir.” | T: “Yes, lord.”
+mn13:19.6 | S: “This is the drawback of forms. | T: “This, monks, is the drawback of forms.
+mn13:20.1 | S: Furthermore, suppose that you were to see that same sister sick, suffering, gravely ill, collapsed in her own urine and feces, being picked up by some and put down by others. | T: “Again, one might see that very same woman sick, in pain, & seriously ill, lying soiled with her own urine & excrement, lifted up by others, laid down by others.
+mn13:20.2 | S: What do you think, mendicants? | T: What do you think?
+mn13:20.3 | S: Has not that former beauty vanished and the drawback become clear?” | T: Has her earlier beauty & charm vanished, and the drawback appeared?”
+mn13:20.4 | S: “Yes, sir.” | T: “Yes, lord.”
+mn13:20.5 | S: “This too is the drawback of forms. | T: “This too, monks, is the drawback of forms.
+mn13:21.1 | S: Furthermore, suppose that you were to see that same sister as a corpse discarded in a charnel ground. And it had been dead for one, two, or three days, bloated, livid, and festering. | T: “Again, one might see that very same woman as a corpse cast away in a charnel ground—
+mn13:21.2 | P: ekāhamataṁ vā dvīhamataṁ vā tīhamataṁ vā, uddhumātakaṁ vinīlakaṁ vipubbakajātaṁ. | T: one day, two days, three days dead, bloated, livid, & oozing.
+mn13:21.3 | S: What do you think, mendicants? | T: What do you think?
+mn13:21.4 | S: Has not that former beauty vanished and the drawback become clear?” | T: Has her earlier beauty & charm vanished, and the drawback appeared?”
+mn13:21.5 | S: “Yes, sir.” | T: “Yes, lord.”
+mn13:21.6 | S: “This too is the drawback of forms. | T: “This too, monks, is the drawback of forms.
+mn13:22.1 | S: Furthermore, suppose that you were to see that same sister as a corpse discarded in a charnel ground. And it was being devoured by crows, hawks, vultures, herons, hounds, tigers, leopards, jackals, and many kinds of little creatures … | T: “Again, one might see that very same woman as a corpse cast away in a charnel ground
+mn13:22.2 | P: kākehi vā khajjamānaṁ, kulalehi vā khajjamānaṁ, gijjhehi vā khajjamānaṁ, kaṅkehi vā khajjamānaṁ, sunakhehi vā khajjamānaṁ, byagghehi vā khajjamānaṁ, dīpīhi vā khajjamānaṁ, siṅgālehi vā khajjamānaṁ, vividhehi vā pāṇakajātehi khajjamānaṁ. | T: picked at by crows, vultures, & hawks, by dogs, hyenas, & various other creatures…
+mn13:22.3 | P: Taṁ kiṁ maññatha, bhikkhave, yā purimā subhā vaṇṇanibhā sā antarahitā, ādīnavo pātubhūtoti? | T: (none)
+mn13:22.4 | P: ‘Evaṁ, bhante’. | T: (none)
+mn13:22.5 | P: Ayampi, bhikkhave, rūpānaṁ ādīnavo. | T: (none)
+mn13:23-28.1 | S: Furthermore, suppose that you were to see that same sister as a corpse discarded in a charnel ground. | T: (none)
+mn13:23-28.2 | S: And it had been reduced to a skeleton with flesh and blood, held together by sinews … A skeleton rid of flesh but smeared with blood, and held together by sinews … A skeleton rid of flesh and blood, held together by sinews … | T: a skeleton smeared with flesh & blood, connected with tendons… a fleshless skeleton smeared with blood, connected with tendons… a skeleton without flesh or blood, connected with tendons…
+mn13:23-28.3 | S: Bones rid of sinews scattered in every direction. Here a hand-bone, there a foot-bone, here an ankle bone, there a shin-bone, here a thigh-bone, there a hip-bone, here a rib-bone, there a back-bone, here an arm-bone, there a neck-bone, here a jaw-bone, there a tooth, here the skull. … | T: bones detached from their tendons, scattered in all directions—here a hand bone, there a foot bone, here a shin bone, there a thigh bone, here a hip bone, there a back bone, here a rib, there a breast bone, here a shoulder bone, there a neck bone, here a jaw bone, there a tooth, here a skull…
+mn13:23-28.4 | P: Taṁ kiṁ maññatha, bhikkhave, yā purimā subhā vaṇṇanibhā sā antarahitā, ādīnavo pātubhūtoti? | T: (none)
+mn13:23-28.5 | P: ‘Evaṁ, bhante’. | T: (none)
+mn13:23-28.6 | P: Ayampi, bhikkhave, rūpānaṁ ādīnavo. | T: (none)
+mn13:29.1 | S: Furthermore, suppose that you were to see that same sister as a corpse discarded in a charnel ground. | T: (none)
+mn13:29.2 | S: And it had been reduced to white bones, the color of shells … Decrepit bones, heaped in a pile … Bones rotted and crumbled to powder. | T: the bones whitened, somewhat like the color of shells…piled up, more than a year old… decomposed into a powder.
+mn13:29.3 | S: What do you think, mendicants? | T: What do you think?
+mn13:29.4 | S: Has not that former beauty vanished and the drawback become clear?” | T: Has her earlier beauty & charm vanished, and the drawback appeared?”
+mn13:29.5 | S: “Yes, sir.” | T: “Yes, lord.”
+mn13:29.6 | S: “This too is the drawback of forms. | T: “This too, monks, is the drawback of forms.
+mn13:30.1 | S: And what is the escape from forms? | T: “And what, monks, is the escape from forms?
+mn13:30.2 | S: Removing and giving up desire and greed for forms: this is the escape from forms. | T: The subduing of desire-passion for forms, the abandoning of desire-passion for forms: That is the escape from form.
+mn13:31.1 | S: There are ascetics and brahmins who don’t truly understand forms’ gratification, drawback, and escape in this way for what they are. It’s impossible for them to completely understand forms themselves, or to instruct another so that, practicing accordingly, they will completely understand forms. | T: “That any contemplatives or brahmans who do not discern, as it has come to be, the allure of forms as allure, the drawback of forms as drawback, the escape from forms as escape, would themselves comprehend form or would rouse another with the truth so that, in line with what he has practiced, he would comprehend form: That is impossible.
+mn13:31.2 | S: There are ascetics and brahmins who do truly understand forms’ gratification, drawback, and escape in this way for what they are. It is possible for them to completely understand forms themselves, or to instruct another so that, practicing accordingly, they will completely understand forms. | T: But that any contemplatives or brahmans who discern, as it has come to be, the allure of forms as allure, the drawback of forms as drawback, the escape from forms as escape, would themselves comprehend form or would rouse another with the truth so that, in line with what he has practiced, he would comprehend form: That is possible.
+mn13:32.1 | S: And what is the gratification of feelings? | T: Feeling “Now what, monks, is the allure of feelings?
+mn13:32.2 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: There is the case where a monk—quite secluded from sensuality, secluded from unskillful (mental) qualities—enters & remains in the first jhāna: rapture & pleasure born from seclusion, accompanied by directed thought & evaluation.
+mn13:32.3 | S: At that time a mendicant doesn’t intend to hurt themselves, hurt others, or hurt both; | T: At that time he does not intend his own affliction, the affliction of others, or the affliction of both.
+mn13:32.4 | S: they feel only feelings that are not hurtful. | T: He feels a feeling totally unafflicted.
+mn13:32.5 | S: Freedom from being hurt is the ultimate gratification of feelings, I say. | T: The unafflicted, I tell you, is the highest allure of feelings.
+mn13:33-35.1 | S: Furthermore, a mendicant enters and remains in the second absorption … | T: “Again the monk, with the stilling of directed thoughts & evaluations, enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance…
+mn13:33-35.2 | S: third absorption … | T: With the fading of rapture he remains equanimous, mindful & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding’…
+mn13:33-35.3 | S: fourth absorption. At that time a mendicant doesn’t intend to hurt themselves, hurt others, or hurt both; | T: With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain. At that time he does not intend his own affliction, the affliction of others, or the affliction of both.
+mn13:33-35.4 | S: they feel only feelings that are not hurtful. | T: He feels a feeling totally unafflicted.
+mn13:33-35.5 | S: Freedom from being hurt is the ultimate gratification of feelings, I say. | T: The unafflicted, I tell you, is the highest allure of feelings.
+mn13:36.1 | S: And what is the drawback of feelings? | T: “And what is the drawback of feelings?
+mn13:36.2 | S: That feelings are impermanent, suffering, and perishable: this is their drawback. | T: The fact that feeling is inconstant, stressful, subject to change: This is the drawback of feelings.
+mn13:37.1 | S: And what is the escape from feelings? | T: “And what is the escape from feelings?
+mn13:37.2 | S: Removing and giving up desire and greed for feelings: this is the escape from feelings. | T: The subduing of desire-passion for feelings, the abandoning of desire-passion for feelings: That is the escape from feelings.
+mn13:38.1 | S: There are ascetics and brahmins who don’t truly understand feelings’ gratification, drawback, and escape in this way for what they are. It’s impossible for them to completely understand feelings themselves, or to instruct another so that, practicing accordingly, they will completely understand feelings. | T: “That any contemplatives or brahmans who do not discern, as it has come to be, the allure of feelings as allure, the drawback of feelings as drawback, the escape from feelings as escape, would themselves comprehend feeling or would rouse another with the truth so that, in line with what he has practiced, he would comprehend feeling: That is impossible.
+mn13:38.2 | S: There are ascetics and brahmins who do truly understand feelings’ gratification, drawback, and escape in this way for what they are. It is possible for them to completely understand feelings themselves, or to instruct another so that, practicing accordingly, they will completely understand feelings.” | T: But that any contemplatives or brahmans who discern, as it has come to be, the allure of feelings as allure, the drawback of feelings as drawback, the escape from feelings as escape, would themselves comprehend feeling or would rouse another with the truth so that, in line with what he has practiced, he would comprehend feeling: That is possible.”
+mn13:38.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn13:38.4 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+mn13:38.5 | P: Mahādukkhakkhandhasuttaṁ niṭṭhitaṁ tatiyaṁ. | T: (none)
+
+## mn7
+mn7:1.1 | S: So I have heard. | T: I have heard that
+mn7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika's monastery.
+mn7:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn7:1.4 | S: “Mendicants!” | T: “Monks!”
+mn7:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn7:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn7:2.1 | S: “Suppose, mendicants, there was a cloth that was dirty and soiled. | T: “Monks, suppose a piece of cloth were defiled and tenaciously stained,
+mn7:2.2 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look poorly dyed and impure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be poorly dyed, impurely dyed.
+mn7:2.3 | S: Why is that? | T: Why is that?
+mn7:2.4 | S: Because of the impurity of the cloth. | T: Because of the impurity of the cloth.
+mn7:2.5 | S: In the same way, when the mind is corrupt, a bad destiny is to be expected. | T: In the same way, when the mind is defiled, a bad destination can be expected.
+mn7:2.6 | S: Suppose there was a cloth that was pure and clean. | T: “But suppose a piece of cloth were pure and clean,
+mn7:2.7 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look well dyed and pure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be well dyed, purely dyed.
+mn7:2.8 | S: Why is that? | T: Why is that?
+mn7:2.9 | S: Because of the purity of the cloth. | T: Because of the purity of the cloth.
+mn7:2.10 | S: In the same way, when the mind isn’t corrupt, a good destiny is to be expected. | T: In the same way, when the mind is undefiled, a good destination can be expected.
+mn7:3.1 | S: And what are the corruptions of the mind? | T: “And which are the defilements of the mind?
+mn7:3.2 | S: Covetousness and immoral greed, ill will, anger, acrimony, disdain, contempt, jealousy, stinginess, deceit, deviousness, obstinacy, aggression, conceit, arrogance, vanity, and negligence are corruptions of the mind. | T: Possessiveness-and-inordinate-greed is a defilement of the mind. Ill will… Anger… Spitefulness… Dismissiveness… Antagonism… Envy… Selfishness… Deceit… Pretentiousness… Stubbornness… Competitiveness… Conceit… Arrogance… Intoxication… Heedlessness is a defilement of the mind.
+mn7:4.1 | S: A mendicant who understands that covetousness and immoral greed are corruptions of the mind gives them up. | T: “Knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ a monk abandons possessiveness-and-inordinate-greed as a defilement of the mind. …
+mn7:4.2 | S: A mendicant who understands that ill will … | T: (none)
+mn7:4.3 | P: iti viditvā byāpādaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.4 | P: ‘kodho cittassa upakkileso’ti— | T: (none)
+mn7:4.5 | P: iti viditvā kodhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.6 | P: ‘upanāho cittassa upakkileso’ti— | T: (none)
+mn7:4.7 | P: iti viditvā upanāhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.8 | P: ‘makkho cittassa upakkileso’ti— | T: (none)
+mn7:4.9 | P: iti viditvā makkhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.10 | P: ‘paḷāso cittassa upakkileso’ti— | T: (none)
+mn7:4.11 | P: iti viditvā paḷāsaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.12 | P: ‘issā cittassa upakkileso’ti— | T: (none)
+mn7:4.13 | P: iti viditvā issaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.14 | P: ‘macchariyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:4.15 | P: iti viditvā macchariyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.16 | P: ‘māyā cittassa upakkileso’ti— | T: (none)
+mn7:4.17 | P: iti viditvā māyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.18 | P: ‘sāṭheyyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:4.19 | P: iti viditvā sāṭheyyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.20 | P: ‘thambho cittassa upakkileso’ti— | T: (none)
+mn7:4.21 | P: iti viditvā thambhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.22 | P: ‘sārambho cittassa upakkileso’ti— | T: (none)
+mn7:4.23 | P: iti viditvā sārambhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.24 | P: ‘māno cittassa upakkileso’ti— | T: (none)
+mn7:4.25 | P: iti viditvā mānaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.26 | P: ‘atimāno cittassa upakkileso’ti— | T: (none)
+mn7:4.27 | P: iti viditvā atimānaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.28 | P: ‘mado cittassa upakkileso’ti— | T: (none)
+mn7:4.29 | P: iti viditvā madaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.30 | S: negligence is a corruption of the mind gives it up. | T: Knowing, ‘Heedlessness is a defilement of the mind,’ a monk abandons heedlessness as a defilement of the mind.
+mn7:4.31 | P: iti viditvā pamādaṁ cittassa upakkilesaṁ pajahati. | T: (none)
+mn7:5.1 | S: When they have understood these corruptions of the mind | T: “When a monk, knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ has abandoned possessiveness-and-inordinate-greed as a defilement of the mind… and knowing, ‘Heedlessness is a defilement of the mind,’ has abandoned heedlessness as a defilement of the mind,
+mn7:5.2 | S: for what they are, and have given them up, | T: (none)
+mn7:5.3 | P: iti viditvā byāpādo cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.4 | P: ‘kodho cittassa upakkileso’ti— | T: (none)
+mn7:5.5 | P: iti viditvā kodho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.6 | P: ‘upanāho cittassa upakkileso’ti— | T: (none)
+mn7:5.7 | P: iti viditvā upanāho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.8 | P: ‘makkho cittassa upakkileso’ti— | T: (none)
+mn7:5.9 | P: iti viditvā makkho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.10 | P: ‘paḷāso cittassa upakkileso’ti— | T: (none)
+mn7:5.11 | P: iti viditvā paḷāso cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.12 | P: ‘issā cittassa upakkileso’ti— | T: (none)
+mn7:5.13 | P: iti viditvā issā cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.14 | P: ‘macchariyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:5.15 | P: iti viditvā macchariyaṁ cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.16 | P: ‘māyā cittassa upakkileso’ti— | T: (none)
+mn7:5.17 | P: iti viditvā māyā cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.18 | P: ‘sāṭheyyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:5.19 | P: iti viditvā sāṭheyyaṁ cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.20 | P: ‘thambho cittassa upakkileso’ti— | T: (none)
+mn7:5.21 | P: iti viditvā thambho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.22 | P: ‘sārambho cittassa upakkileso’ti— | T: (none)
+mn7:5.23 | P: iti viditvā sārambho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.24 | P: ‘māno cittassa upakkileso’ti— | T: (none)
+mn7:5.25 | P: iti viditvā māno cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.26 | P: ‘atimāno cittassa upakkileso’ti— | T: (none)
+mn7:5.27 | P: iti viditvā atimāno cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.28 | P: ‘mado cittassa upakkileso’ti— | T: (none)
+mn7:5.29 | P: iti viditvā mado cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.30 | P: ‘pamādo cittassa upakkileso’ti— | T: (none)
+mn7:5.31 | P: iti viditvā pamādo cittassa upakkileso pahīno hoti. | T: (none)
+mn7:5.32 | S: they have experiential confidence in the Buddha: | T: he is endowed with confirmed conviction in the Awakened One:
+mn7:5.33 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+mn7:6.1 | S: They have experiential confidence in the teaching: | T: “He is endowed with confirmed conviction in the Dhamma:
+mn7:6.2 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+mn7:7.1 | S: They have experiential confidence in the Saṅgha: | T: “He is endowed with confirmed conviction in the Saṅgha:
+mn7:7.2 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four types of noble disciples when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: worthy of gifts, worthy of hospitality, worthy of offerings, worthy of respect, the incomparable field of merit for the world.’
+mn7:8.1 | S: When a mendicant has discarded, eliminated, released, given up, and relinquished to this extent, thinking, ‘I have experiential confidence in the Buddha … | T: “Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by a monk, he—thinking, ‘I am endowed with confirmed conviction in the Awakened One’—gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:8.2 | P: Pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati; | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:9.1 | S: the teaching … | T: “Thinking, ‘I am endowed with confirmed conviction in the Dhamma,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:10.1 | S: the Saṅgha,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: “Thinking, ‘I am endowed with confirmed conviction in the Saṅgha,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:10.2 | P: pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati. | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:11.1 | S: Thinking: ‘I have discarded, eliminated, released, given up, and relinquished to this extent,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: “Thinking, ‘Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by me,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:11.2 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:12.1 | S: When a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: “When a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:12.2 | S: Compare with cloth that is dirty and soiled; it can be made pure and clean by pure water. Or native gold, which can be made pure and bright by a forge. | T: Just as a piece of cloth, defiled & stained, becomes pure & bright with the help of clear water, or gold becomes pure & bright with the help of a furnace,
+mn7:12.3 | S: In the same way, when a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: in the same way, when a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:13.1 | S: They meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “He keeps pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.
+mn7:14.1 | S: They meditate spreading a heart full of compassion to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of compassion to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: He keeps pervading the first direction with an awareness imbued with compassion…
+mn7:15.1 | S: They meditate spreading a heart full of rejoicing to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of rejoicing to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: empathetic joy…
+mn7:16.1 | S: They meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.
+mn7:17.1 | S: They understand: ‘There is this, there is what is worse than this, there is what is better than this, and there is an escape beyond the scope of perception.’ | T: “He discerns, ‘There is this. There is what is lower. There is what is more exquisite. There is the higher escape from this mode of perception.’
+mn7:18.1 | S: Knowing and seeing like this, their mind is freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: For him—thus knowing, thus seeing—the mind is released from the effluent of sensuality, released from the effluent of becoming, released from the effluent of ignorance.
+mn7:18.2 | S: When they’re freed, they know they’re freed. | T: With release, there is the knowledge, ‘Released.’
+mn7:18.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+mn7:18.4 | S: This is called | T: “This, monks,
+mn7:18.5 | S: a mendicant who is bathed with the inner bathing.” | T: is a monk who is said to be one who has bathed with the inner bathing.”
+mn7:19.1 | S: Now at that time the brahmin Bhāradvāja of Sundarikā was sitting not far from the Buddha. | T: Now, on that occasion Sundarika Bhāradvāja the brahman was sitting not far from the Blessed One,
+mn7:19.2 | S: He said to the Buddha, | T: so he said to the Blessed One,
+mn7:19.3 | S: “But does Worthy Gotama go to the Bāhukā River to bathe?” | T: “But does Master Gotama go to the Bāhuka River to bathe?”
+mn7:19.4 | S: “Brahmin, why go to the Bāhukā River? | T: “Why the Bāhuka River, brahman?
+mn7:19.5 | S: What can the Bāhukā River do?” | T: What good can the Bāhuka River do?”
+mn7:19.6 | S: “Many people deem that the Bāhukā River leads to a heavenly world and bestows merit. And many people rinse off their bad deeds in the Bāhukā River.” | T: “The Bāhuka River is agreed by many people to (lead to the next) world, Master Gotama. The Bāhuka River is agreed by many people to be meritorious, Master Gotama. And in the Bāhuka River many people wash away any evil deed they have done.”
+mn7:20.1 | S: Then the Buddha addressed Bhāradvāja of Sundarikā in verse: | T: So the Blessed One addressed Sundarika Bhāradvāja the brahman in verses:
+mn7:20.2 | S: “The Bāhukā and the Adhikakkā, | T: “The Bāhuka & the Adhikakkā,
+mn7:20.3 | S: at Gayā and the Sundarikā too, | T: the Gayā, the Sundarikā,
+mn7:20.4 | S: Sarasvatī and Payāga, | T: the Sarassati & the Payāga,
+mn7:20.5 | S: and the Bāhumatī River: | T: and also the Bāhumati:
+mn7:20.6 | S: a fool can constantly plunge into them | T: A fool, even if he bathes there constantly,
+mn7:20.7 | S: but it won’t purify their dark deeds. | T: wouldn’t cleanse a dark deed.
+mn7:20.8 | S: What can the Sundarikā do? | T: What can the Sundarikā do?
+mn7:20.9 | S: What the Payāga or the Bāhukā? | T: What the Payāga? What the Bāhuka?
+mn7:20.10 | S: They can’t cleanse a cruel person, a sinner | T: A person of animosity, one who’s done wrong, cannot be cleansed there
+mn7:20.11 | S: from their bad deeds. | T: of evil deeds.
+mn7:20.12 | S: For the pure in heart it’s always | T: But for one who is pure, it’s always
+mn7:20.13 | S: the spring festival or the sabbath. | T: the Phaggu festival; for one who is pure, always the uposatha.
+mn7:20.14 | S: For the pure in heart and clean of deed, | T: For one who is pure, clean in his deeds,
+mn7:20.15 | S: their vows will always be fulfilled. | T: his practices always reach consummation.
+mn7:20.16 | S: It’s here alone that you should bathe, brahmin, | T: Bathe right here, brahman.
+mn7:20.17 | S: making yourself a sanctuary for all creatures. | T: Create safety for yourself with regard to all beings.
+mn7:20.18 | S: And if you speak no lies, | T: If you don’t tell a lie,
+mn7:20.19 | S: nor harm any living creature, | T: don’t harm living beings,
+mn7:20.20 | S: nor steal anything not given, | T: don’t take what’s not given,
+mn7:20.21 | S: and you’re faithful and not stingy: | T: if you have conviction & are free from stinginess,
+mn7:20.22 | S: what’s the point of going to Gayā? | T: what would you gain from going to the Gayā?
+mn7:20.23 | S: For any well may be your Gayā!” | T: Even a well would be Gayā for you.”
+mn7:21.1 | S: When he had spoken, the brahmin Bhāradvāja of Sundarikā said to the Buddha, | T: When this was said, Sundarika Bhāradvāja the brahman said to the Blessed One,
+mn7:21.2 | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+mn7:21.3 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+mn7:21.4 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+mn7:21.5 | S: May I receive the going forth, the ordination in the worthy Gotama’s presence?” | T: Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance (into the Saṅgha of monks).”
+mn7:22.1 | S: And the brahmin Bhāradvāja of Sundarikā received the going forth, the ordination in the Buddha’s presence. | T: Then Sundarika Bhāradvāja the brahman received the Going-forth in the Blessed One’s presence, he gained the Acceptance.
+mn7:22.2 | S: Not long after his ordination, Venerable Bhāradvāja, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+mn7:22.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+mn7:22.4 | S: And Venerable Bhāradvāja became one of the perfected. | T: And so Ven. Bhāradvāja became another one of the arahants.
+mn7:22.5 | P: Vatthasuttaṁ niṭṭhitaṁ sattamaṁ. | T: (none)
+

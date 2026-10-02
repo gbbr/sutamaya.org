@@ -1,0 +1,309 @@
+## mn70
+mn70:1.1 | S: So I have heard. | T: Thus have I heard.
+mn70:1.2 | S: At one time the Buddha was wandering in the land of the Kāsis together with a large Saṅgha of mendicants. | T: On one occasion the Blessed One was wandering in the Kāsi country together with a large Sangha of bhikkhus.
+mn70:1.3 | S: There the Buddha addressed the mendicants: | T: There he addressed the bhikkhus thus:
+mn70:2.1 | S: “Mendicants, I abstain from eating at night. | T: “Bhikkhus, I abstain from eating at night.
+mn70:2.2 | S: Doing so, I find that I’m healthy and well, nimble, strong, and living comfortably. | T: By so doing, I am free from illness and affliction, and I enjoy lightness, strength, and a comfortable abiding.
+mn70:2.3 | S: You too should never eat at night. | T: Come, bhikkhus, abstain from eating at night.
+mn70:2.4 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.” | T: By so doing, you too will be free from illness and affliction, and you will enjoy lightness, strength, and a comfortable abiding.”
+mn70:2.5 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” they replied.
+mn70:3.1 | S: Then the Buddha, traveling stage by stage in the land of the Kāsis, arrived at a town of the Kāsis named Kīṭāgiri, | T: Then, as the Blessed One was wandering by stages in the Kāsi country, he eventually arrived at a Kāsi town called Kīṭāgiri.
+mn70:3.2 | S: and stayed there. | T: There he lived in this Kāsi town, Kīṭāgiri.
+mn70:4.1 | S: Now at that time the mendicants who followed Assaji and Punabbasuka were residing at Kīṭāgiri. | T: Now on that occasion the bhikkhus led by Assaji and Punabbasuka were residing at Kīṭāgiri.
+mn70:4.2 | S: Then several mendicants went up to them and said, | T: Then a number of bhikkhus went and told them:
+mn70:4.3 | S: “Reverends, the Buddha never eats at night, and neither does the mendicant Saṅgha. | T: “Friends, the Blessed One and the Sangha of bhikkhus now abstain from eating at night.
+mn70:4.4 | S: Doing so, they find that they’re healthy and well, nimble, strong, and living comfortably. | T: By so doing, they are free from illness and affliction, and they enjoy health, strength, and a comfortable abiding.
+mn70:4.5 | S: You too should abstain from eating at night. | T: Come, friends, abstain from eating at night.
+mn70:4.6 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.” | T: By so doing, you too will be free from illness and affliction, and you will enjoy lightness, strength, and a comfortable abiding.”
+mn70:4.7 | S: When they said this, the mendicants who followed Assaji and Punabbasuka said to them, | T: When this was said, the bhikkhus led by Assaji and Punabbasuka told those bhikkhus:
+mn70:4.8 | S: “Reverends, we eat at dusk, at daybreak, and at the wrong time of day. | T: “Friends, we eat in the evening, in the morning, and in the day outside the proper time.
+mn70:4.9 | S: Doing so, we find that we’re healthy and well, nimble, strong, and living comfortably. | T: By so doing, we are free from illness and affliction, and we enjoy lightness, strength, and a comfortable abiding.
+mn70:4.10 | S: Why should we give up what is apparent in the present to chase after what takes effect over time? | T: Why should we abandon a benefit visible here and now to pursue a benefit to be achieved at a future time?
+mn70:4.11 | S: We shall eat at dusk, at daybreak, and at the wrong time of day.” | T: We shall eat in the evening, in the morning, and in the day outside the proper time.”
+mn70:5.1 | S: Since those mendicants were unable to persuade the mendicants who were followers of Assaji and Punabbasuka, they approached the Buddha, bowed, sat down to one side, and told him what had happened. | T: Since the bhikkhus were unable to convince the bhikkhus led by Assaji and Punabbasuka, they went to the Blessed One. After paying homage to him, they sat down at one side and told him all that had occurred, adding:
+mn70:5.2 | P: “idha mayaṁ, bhante, yena assajipunabbasukā bhikkhū tenupasaṅkamimha; upasaṅkamitvā assajipunabbasuke bhikkhū etadavocumha: | T: (none)
+mn70:5.3 | P: ‘bhagavā kho, āvuso, aññatreva rattibhojanā bhuñjati bhikkhusaṅgho ca; | T: (none)
+mn70:5.4 | P: aññatra kho panāvuso, rattibhojanā bhuñjamānā appābādhatañca sañjānanti appātaṅkatañca lahuṭṭhānañca balañca phāsuvihārañca. | T: (none)
+mn70:5.5 | P: Etha, tumhepi, āvuso, aññatreva rattibhojanā bhuñjatha. | T: (none)
+mn70:5.6 | P: Aññatra kho panāvuso, tumhepi rattibhojanā bhuñjamānā appābādhatañca sañjānissatha appātaṅkatañca lahuṭṭhānañca balañca phāsuvihārañcā’ti. | T: (none)
+mn70:5.7 | P: Evaṁ vutte, bhante, assajipunabbasukā bhikkhū amhe etadavocuṁ: | T: (none)
+mn70:5.8 | P: ‘mayaṁ kho, āvuso, sāyañceva bhuñjāma pāto ca divā ca vikāle. | T: (none)
+mn70:5.9 | P: Te mayaṁ sāyañceva bhuñjamānā pāto ca divā ca vikāle appābādhatañca sañjānāma appātaṅkatañca lahuṭṭhānañca balañca phāsuvihārañca. | T: (none)
+mn70:5.10 | P: Te mayaṁ kiṁ sandiṭṭhikaṁ hitvā kālikaṁ anudhāvissāma? | T: (none)
+mn70:5.11 | P: Sāyañceva mayaṁ bhuñjissāma pāto ca divā ca vikāle’ti. | T: (none)
+mn70:5.12 | P: Yato kho mayaṁ, bhante, nāsakkhimha assajipunabbasuke bhikkhū saññāpetuṁ, atha mayaṁ etamatthaṁ bhagavato ārocemā”ti. | T: “Venerable sir, since we were unable to convince the bhikkhus led by Assaji and Punabbasuka, we have reported this matter to the Blessed One.”
+mn70:6.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One addressed a certain bhikkhu thus:
+mn70:6.2 | S: “Please, monk, in my name tell the mendicants who follow Assaji and Punabbasuka that | T: “Come, bhikkhu, tell the bhikkhus led by Assaji and Punabbasuka in my name that
+mn70:6.3 | S: the Teacher summons them.” | T: the Teacher calls them.”
+mn70:6.4 | S: “Yes, sir,” that monk replied. He went to those mendicants and said, | T: “Yes, venerable sir,” he replied, and he went to the bhikkhus led by Assaji and Punabbasuka and told them:
+mn70:6.5 | S: “Venerables, the Teacher summons you.” | T: “The Teacher calls you, friends.”
+mn70:6.6 | S: “Yes, reverend,” those mendicants replied. They went to the Buddha, bowed, and sat down to one side. | T: “Yes, friend,” they replied, and they went to the Blessed One, and after paying homage to him, sat down at one side.
+mn70:6.7 | S: The Buddha said to them, “Is it really true, mendicants, that several mendicants went to you and said: | T: The Blessed One then said: “Bhikkhus, is it true that when a number of bhikkhus went and told you:
+mn70:6.8 | S: ‘Reverends, the Buddha never eats at night, and neither does the mendicant Saṅgha. | T: ‘Friends, the Blessed One and the Sangha now abstain from eating at night…
+mn70:6.9 | S: Doing so, they find that they’re healthy and well, nimble, strong, and living comfortably. | T: (none)
+mn70:6.10 | S: You too should never eat at night. | T: Come, friends, abstain from eating at night …,’
+mn70:6.11 | S: Doing so, you’ll find that you’re healthy and well, nimble, strong, and living comfortably.’ | T: (none)
+mn70:6.12 | S: When they said this, did you really say to them: | T: you told those bhikkhus:
+mn70:6.13 | S: ‘Reverends, we eat at dusk, at daybreak, and at the wrong time of day. | T: ‘Friends, we eat in the evening…
+mn70:6.14 | S: Doing so, we find that we’re healthy and well, nimble, strong, and living comfortably. | T: (none)
+mn70:6.15 | S: Why should we give up what is apparent in the present to chase after what takes effect over time? | T: Why should we abandon a benefit visible here and now to pursue a benefit to be achieved at a future time?
+mn70:6.16 | S: We shall eat at dusk, at daybreak, and at the wrong time of day.’” | T: We shall eat in the evening, in the morning, and in the day outside the proper time’?”—
+mn70:6.17 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn70:6.18 | S: “Mendicants, have you ever known me to teach the Dhamma like this: no matter what this individual experiences—pleasurable, painful, or neutral—their unskillful qualities decline and their skillful qualities grow?” | T: “Bhikkhus, have you known me to teach the Dhamma in such a way as this: ‘Whatever this person experiences, whether pleasant or painful or neither-painful-nor-pleasant, unwholesome states diminish in him and wholesome states increase’?”—
+mn70:6.19 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:7.1 | S: “Haven’t you known me to teach the Dhamma like this: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow. When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow. When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline. But when someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow’?” | T: “Bhikkhus, have you not known me to teach the Dhamma in such a way as this: ‘Here, when someone feels a certain kind of pleasant feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase. Here, when someone feels a certain kind of painful feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of painful feeling, unwholesome states diminish in him and wholesome states increase. Here, when someone feels a certain kind of neither-painful-nor-pleasant feeling, unwholesome states increase in him and wholesome states diminish; but when someone feels another kind of neither-painful-nor-pleasant feeling, unwholesome states diminish in him and wholesome states increase’?”—
+mn70:7.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn70:8.1 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn70:8.2 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: And if it were unknown by me, unseen, unfound, unrealised, uncontacted by wisdom thus:
+mn70:8.3 | S: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline.’ | T: ‘Here, when someone feels a certain kind of pleasant feeling, unwholesome states increase in him and wholesome states diminish,’
+mn70:8.4 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of pleasant feeling’?” | T: would it be fitting for me, not knowing that, to say: ‘Abandon such a kind of pleasant feeling’?”—
+mn70:8.5 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:8.6 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “But because it is known by me, seen, found, realised, contacted by wisdom thus:
+mn70:8.7 | S: ‘When someone feels this kind of pleasant feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of pleasant feeling.’ | T: ‘Here, when someone feels a certain kind of pleasant feeling , unwholesome states increase in him and wholesome states diminish,’ that I therefore say: ‘Abandon such a kind of pleasant feeling.’
+mn70:8.8 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me, unseen, unfound, unrealised, uncontacted by wisdom thus:
+mn70:8.9 | S: ‘When someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow.’ | T: ‘Here, when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase,’
+mn70:8.10 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of pleasant feeling’?” | T: would it be fitting for me, not knowing that, to say: ‘Enter upon and abide in such a kind of pleasant feeling’?”—
+mn70:8.11 | S: “No, sir.” | T: “No, venerable sir.”
+mn70:8.12 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: “But because it is known by me, seen, found, realised, contacted by wisdom thus:
+mn70:8.13 | S: ‘When someone feels that kind of pleasant feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of pleasant feeling.’ | T: ‘Here, when someone feels another kind of pleasant feeling, unwholesome states diminish in him and wholesome states increase,’ that I therefore say: ‘Enter upon and abide in such a kind of pleasant feeling.’
+mn70:8.14 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:8.15 | S: ‘When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline.’ | T: ‘Here, when someone feels a certain kind of painful feeling, unwholesome states increase in him and wholesome states diminish,’
+mn70:8.16 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of painful feeling’?” | T: that I therefore say: ‘Abandon such a kind of painful feeling.’
+mn70:8.17 | S: “No, sir.” | T: (none)
+mn70:9.1 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:9.2 | S: ‘When someone feels this kind of painful feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of painful feeling.’ | T: (none)
+mn70:9.3 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:9.4 | S: ‘When someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow.’ | T: ‘Here, when someone feels another kind of painful feeling, unwholesome states diminish in him and wholesome states increase,’ that I therefore say:
+mn70:9.5 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of painful feeling’?” | T: ‘Enter upon and abide in such a kind of painful feeling.’
+mn70:9.6 | S: “No, sir.” | T: (none)
+mn70:9.7 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:9.8 | S: ‘When someone feels that kind of painful feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of painful feeling.’ | T: (none)
+mn70:10.1 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:10.2 | S: ‘When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline.’ | T: ‘Here, when someone feels a certain kind of neither-painful-nor-pleasant feeling, unwholesome states increase in him and wholesome states diminish,’ that I therefore say:
+mn70:10.3 | S: Not knowing this, would it be appropriate for me to say: ‘You should give up this kind of neutral feeling’?” | T: ‘Abandon such a kind of neither-painful-nor-pleasant feeling.’
+mn70:10.4 | S: “No, sir.” | T: (none)
+mn70:10.5 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:10.6 | S: ‘When someone feels this kind of neutral feeling, unskillful qualities grow and skillful qualities decline.’ Since this is so, that’s why I say: ‘You should give up this kind of neutral feeling.’ | T: (none)
+mn70:10.7 | S: Now, suppose I hadn’t known, seen, understood, realized, and experienced this with wisdom: | T: “If it were unknown by me…But because it is known by me…contacted by wisdom thus:
+mn70:10.8 | S: ‘When someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow.’ | T: ‘Here, when someone feels another kind of neither-painful-nor-pleasant feeling, unwholesome states diminish in him and wholesome states increase,’
+mn70:10.9 | S: Not knowing this, would it be appropriate for me to say: ‘You should enter and remain in that kind of neutral feeling’?” | T: (none)
+mn70:10.10 | S: “No, sir.” | T: (none)
+mn70:11.1 | S: “But I have known, seen, understood, realized, and experienced this with wisdom: | T: (none)
+mn70:11.2 | S: ‘When someone feels that kind of neutral feeling, unskillful qualities decline and skillful qualities grow.’ Since this is so, that’s why I say: ‘You should enter and remain in that kind of neutral feeling.’ | T: that I therefore say: ‘Enter upon and abide in such a kind of neither-painful-nor-pleasant feeling.’
+mn70:12.1 | S: Mendicants, I don’t say that all these mendicants still have work to do with diligence. | T: “Bhikkhus, I do not say of all bhikkhus that they still have work to do with diligence;
+mn70:12.2 | S: Nor do I say that all these mendicants have no work to do with diligence. | T: nor do I say of all bhikkhus that they have no more work to do with diligence.
+mn70:12.3 | S: I say that mendicants don’t have work to do with diligence if they are perfected, with defilements ended, having completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and become rightly freed through enlightenment. | T: “I do not say of those bhikkhus who are arahants with taints destroyed, who have lived the holy life, done what had to be done, laid down the burden, reached the true goal, destroyed the fetters of being, and are completely liberated through final knowledge, that they still have work to do with diligence.
+mn70:12.4 | S: Why is that? | T: Why is that?
+mn70:12.5 | S: They’ve done their work with diligence. | T: They have done their work with diligence;
+mn70:12.6 | S: They’re incapable of being negligent. | T: they are no more capable of being negligent.
+mn70:13.1 | S: I say that mendicants still have work to do with diligence if they are trainees, who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke. | T: “I say of such bhikkhus who are in higher training, whose minds have not yet reached the goal, and who are still aspiring to the supreme security from bondage, that they still have work to do with diligence.
+mn70:13.2 | S: Why is that? Thinking: | T: Why is that?
+mn70:13.3 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: Because when those venerable ones make use of suitable resting places and associate with good friends and nurture their spiritual faculties,
+mn70:13.4 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: they may by realising for themselves with direct knowledge here and now enter upon and abide in that supreme goal of the holy life for the sake of which clansmen rightly go forth from the home life into homelessness.
+mn70:13.5 | S: Seeing this fruit of diligence for those mendicants, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for these bhikkhus, I say that they still have work to do with diligence.
+mn70:14.1 | S: Mendicants, these seven individuals are found in the world. | T: “Bhikkhus, there are seven kinds of persons to be found existing in the world.
+mn70:14.2 | S: What seven? | T: What seven?
+mn70:14.3 | S: One freed both ways, one freed by wisdom, a direct witness, one attained to view, one freed by faith, a follower of teachings, and a follower by faith. | T: They are: one liberated-in-both ways, one liberated-by-wisdom, a body-witness, one attained-to-view, one liberated-by-faith, a Dhamma-follower, and a faith-follower.
+mn70:15.1 | S: And what individual is freed both ways? | T: “What kind of person is one liberated-in-both-ways?
+mn70:15.2 | S: It’s an individual who has direct meditative experience of the peaceful liberations that are formless, transcending form. And, having seen with wisdom, their defilements have come to an end. | T: Here some person contacts with the body and abides in those liberations that are peaceful and immaterial, transcending forms, and his taints are destroyed by his seeing with wisdom.
+mn70:15.3 | S: This individual is called freed both ways. | T: This kind of person is called one liberated-in-both-ways.
+mn70:15.4 | S: And I say that this mendicant has no work to do with diligence. | T: I do not say of such a bhikkhu that he still has work to do with diligence.
+mn70:15.5 | S: Why is that? | T: Why is that?
+mn70:15.6 | S: They’ve done their work with diligence. | T: He has done his work with diligence;
+mn70:15.7 | S: They’re incapable of being negligent. | T: he is no more capable of being negligent.
+mn70:16.1 | S: And what individual is freed by wisdom? | T: “What kind of person is one liberated-by-wisdom?
+mn70:16.2 | S: It’s an individual who does not have direct meditative experience of the peaceful liberations that are formless, transcending form. Nevertheless, having seen with wisdom, their defilements have come to an end. | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, but his taints are destroyed by his seeing with wisdom.
+mn70:16.3 | S: This individual is called freed by wisdom. | T: This kind of person is called one liberated-by-wisdom.
+mn70:16.4 | S: I say that this mendicant has no work to do with diligence. | T: I do not say of such a bhikkhu that he still has work to do with diligence.
+mn70:16.5 | S: Why is that? | T: Why is that?
+mn70:16.6 | S: They’ve done their work with diligence. | T: He has done his work with diligence;
+mn70:16.7 | S: They’re incapable of being negligent. | T: he is no more capable of being negligent.
+mn70:17.1 | S: And what individual is a direct witness? | T: “What kind of person is a body-witness?
+mn70:17.2 | S: It’s an individual who has direct meditative experience of the peaceful liberations that are formless, transcending form. And, having seen with wisdom, some of their defilements have come to an end. | T: Here some person contacts with the body and abides in those liberations that are peaceful and immaterial, transcending forms, and some of his taints are destroyed by his seeing with wisdom.
+mn70:17.3 | S: This individual is called a direct witness. | T: This kind of person is called a body-witness.
+mn70:17.4 | S: I say that this mendicant still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:17.5 | S: Why is that? Thinking: | T: Why is that?
+mn70:17.6 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: Because when that venerable one makes use of suitable resting places and associates with good friends and nurtures his spiritual faculties,
+mn70:17.7 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: he may by realising for himself with direct knowledge here and now enter upon and abide in that supreme goal of the holy life for the sake of which clansmen rightly go forth from the home life into homelessness.
+mn70:17.8 | S: Seeing this fruit of diligence for this mendicant, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for such a bhikkhu, I say that he still has work to do with diligence.
+mn70:18.1 | S: And what individual is attained to view? | T: “What kind of person is one attained-to-view?
+mn70:18.2 | S: It’s an individual who doesn’t have direct meditative experience of the peaceful liberations that are formless, transcending form. Nevertheless, having seen with wisdom, some of their defilements have come to an end. And they have clearly seen and clearly contemplated with wisdom the teaching and training proclaimed by the Realized One. | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, but some of his taints are destroyed by his seeing with wisdom, and he has reviewed and examined with wisdom the teachings proclaimed by the Tathāgata.
+mn70:18.3 | S: This individual is called attained to view. | T: This kind of person is called one attained-to-view.
+mn70:18.4 | S: I say that this mendicant also still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:18.5 | S: Why is that? Thinking: | T: Why is that? Because when that venerable one…into homelessness.
+mn70:18.6 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: (none)
+mn70:18.7 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: (none)
+mn70:18.8 | S: Seeing this fruit of diligence for this mendicant, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for such a bhikkhu, I say that he still has work to do with diligence.
+mn70:19.1 | S: And what individual is freed by faith? | T: “What kind of person is one liberated-by-faith?
+mn70:19.2 | S: It’s an individual who doesn’t have direct meditative experience of the peaceful liberations that are formless, transcending form. Nevertheless, having seen with wisdom, some of their defilements have come to an end. And their faith is settled, rooted, and planted in the Realized One. | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, but some of his taints are destroyed by his seeing with wisdom, and his faith is planted, rooted, and established in the Tathāgata.
+mn70:19.3 | S: This individual is called freed by faith. | T: This kind of person is called one liberated-by-faith.
+mn70:19.4 | S: I say that this mendicant also still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:19.5 | S: Why is that? Thinking: | T: Why is that? Because when that venerable one …into homelessness.
+mn70:19.6 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: (none)
+mn70:19.7 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: (none)
+mn70:19.8 | S: Seeing this fruit of diligence for this mendicant, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for such a bhikkhu, I say that he still has work to do with diligence.
+mn70:20.1 | S: And what individual is a follower of teachings? | T: “What kind of person is a Dhamma-follower?
+mn70:20.2 | S: It’s an individual who doesn’t have direct meditative experience of the peaceful liberations that are formless, transcending form. And having seen with wisdom, their defilements have not come to an end. And they accept the teachings proclaimed by the Realized One after deliberating them with a degree of wisdom. And they have the following qualities: | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, and his taints are not yet destroyed by his seeing with wisdom, but those teachings proclaimed by the Tathāgata are accepted by him after reflecting on them sufficiently with wisdom. Furthermore, he has these qualities:
+mn70:20.3 | S: the faculties of faith, energy, mindfulness, immersion, and wisdom. | T: the faith faculty, the energy faculty, the mindfulness faculty, the concentration faculty, and the wisdom faculty.
+mn70:20.4 | S: This individual is called a follower of teachings. | T: This kind of person is called a Dhamma-follower.
+mn70:20.5 | S: I say that this mendicant also still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:20.6 | S: Why is that? Thinking: | T: Why is that? Because when that venerable one…into homelessness.
+mn70:20.7 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: (none)
+mn70:20.8 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: (none)
+mn70:20.9 | S: Seeing this fruit of diligence for this mendicant, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for such a bhikkhu, I say that he still has work to do with diligence.
+mn70:21.1 | S: And what individual is a follower by faith? | T: “What kind of person is a faith-follower?
+mn70:21.2 | S: It’s an individual who doesn’t have direct meditative experience of the peaceful liberations that are formless, transcending form. And having seen with wisdom, their defilements have not come to an end. And they have a degree of faith and fondness for the Realized One. And they have the following qualities: | T: Here some person does not contact with the body and abide in those liberations that are peaceful and immaterial, transcending forms, and his taints are not yet destroyed by his seeing with wisdom, yet he has sufficient faith in and love for the Tathāgata. Furthermore, he has these qualities:
+mn70:21.3 | S: the faculties of faith, energy, mindfulness, immersion, and wisdom. | T: the faith faculty, the energy faculty, the mindfulness faculty, the concentration faculty, and the wisdom faculty.
+mn70:21.4 | S: This individual is called a follower by faith. | T: This kind of person is called a faith-follower.
+mn70:21.5 | S: I say that this mendicant also still has work to do with diligence. | T: I say of such a bhikkhu that he still has work to do with diligence.
+mn70:21.6 | S: Why is that? Thinking: | T: Why is that?
+mn70:21.7 | S: ‘Hopefully this venerable will frequent appropriate lodgings, associate with good friends, and control their faculties. | T: Because when that venerable one makes use of suitable resting places and associates with good friends and nurtures his spiritual faculties,
+mn70:21.8 | S: Then they might realize the supreme culmination of the spiritual path in this very life, and live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.’ | T: he may by realising for himself with direct knowledge here and now enter upon and abide in that supreme goal of the holy life for the sake of which clansmen rightly go forth from the home life into homelessness.
+mn70:21.9 | S: Seeing this fruit of diligence for this mendicant, I say that they still have work to do with diligence. | T: Seeing this fruit of diligence for such a bhikkhu, I say that he still has work to do with diligence.
+mn70:22.1 | S: Mendicants, I don’t say that enlightenment is achieved right away. | T: “Bhikkhus, I do not say that final knowledge is achieved all at once.
+mn70:22.2 | S: Rather, enlightenment is achieved by gradual training, progress, and practice. | T: On the contrary, final knowledge is achieved by gradual training, by gradual practice, by gradual progress.
+mn70:23.1 | S: And how is enlightenment achieved by gradual training, progress, and practice? | T: “And how is final knowledge achieved by gradual training, gradual practice, gradual progress?
+mn70:23.2 | S: It’s when someone in whom faith has arisen approaches a teacher. They pay homage, actively listen, hear the teachings, remember the teachings, examine their meaning, and accept them after deliberation. Then enthusiasm springs up; they make an attempt, weigh up, and strive. Striving, they directly realize the ultimate truth, and see it with penetrating wisdom. | T: Here one who has faith in a teacher visits him; when he visits him, he pays respect to him; when he pays respect to him, he gives ear; one who gives ear hears the Dhamma; having heard the Dhamma, he memorises it; he examines the meaning of the teachings he has memorised; when he examines their meaning, he gains a reflective acceptance of those teachings; when he has gained a reflective acceptance of those teachings, zeal springs up in him; when zeal has sprung up, he applies his will; having applied his will, he scrutinises; having scrutinised, he strives; resolutely striving, he realises with the body the supreme truth and sees it by penetrating it with wisdom.
+mn70:24.1 | S: Mendicants, there has not been that faith, | T: “There has not been that faith, bhikkhus,
+mn70:24.2 | S: that approaching, | T: and there has not been that visiting,
+mn70:24.3 | S: that paying homage, | T: and there has not been that paying of respect,
+mn70:24.4 | S: that listening, | T: and there has not been that giving ear,
+mn70:24.5 | S: that hearing the teachings, | T: and there has not been that hearing of the Dhamma,
+mn70:24.6 | S: that remembering the teachings, | T: and there has not been that memorising of the Dhamma,
+mn70:24.7 | S: that examining their meaning, | T: and there has not been that examination of the meaning,
+mn70:24.8 | S: that acceptance after deliberation, | T: and there has not been that reflective acceptance of the teachings,
+mn70:24.9 | S: that enthusiasm, | T: and there has not been that zeal,
+mn70:24.10 | S: that making an attempt, | T: and there has not been that application of will,
+mn70:24.11 | S: that weighing up, | T: and there has not been that scrutiny,
+mn70:24.12 | S: or that striving. | T: and there has not been that striving.
+mn70:24.13 | S: You’re on a bad path, mendicants! You’re practicing the wrong way! | T: Bhikkhus, you have lost your way; bhikkhus, you have been practising the wrong way.
+mn70:24.14 | S: How far these futile men have strayed from this teaching and training! | T: Just how far, bhikkhus, have these misguided men strayed from this Doctrine and Discipline?
+mn70:25.1 | S: There is an exposition in four statements, which a sensible person would quickly understand when it is recited. | T: “Bhikkhus, there is a four-phrased statement, and when it is recited a wise man would quickly understand it.
+mn70:25.2 | S: I shall recite it for you, mendicants. Try to understand it.” | T: I shall recite it to you, bhikkhus. Try to understand it.”
+mn70:25.3 | S: “Sir, who are we next to those who understand the teaching?” | T: “Venerable sir, who are we that we should understand the Dhamma?”
+mn70:26.1 | S: “Even with a teacher who values things of the flesh, is an heir in things of the flesh, who lives caught up in things of the flesh, you wouldn’t get into such haggling: | T: “Bhikkhus, even with a teacher who is concerned with material things, an heir to material things, attached to material things, such haggling by his disciples would not be proper:
+mn70:26.2 | S: ‘If we get this, we’ll do that. If we don’t get this, we won’t do it.’ What then of the Realized One, who lives utterly detached from things of the flesh? | T: ‘If we get this, we will do it; if we don’t get this, we won’t do it’; so what should be said when the teacher is the Tathāgata, who is utterly detached from material things?
+mn70:27.1 | S: For a faithful disciple who is practicing to fathom the Teacher’s instructions, this is in line with the teaching: | T: “Bhikkhus, for a faithful disciple who is intent on fathoming the Teacher’s Dispensation, it is natural that he conduct himself thus:
+mn70:27.2 | S: ‘The Buddha is my Teacher, I am his disciple. | T: ‘The Blessed One is the Teacher, I am a disciple;
+mn70:27.3 | S: The Buddha knows, I do not know.’ | T: the Blessed One knows, I do not know.’
+mn70:27.4 | S: For a faithful disciple who is practicing to fathom the Teacher’s instructions, the Teacher’s instructions are nourishing and nutritious. | T: For a faithful disciple who is intent on fathoming the Teacher’s Dispensation, the Teacher’s Dispensation is nourishing and refreshing.
+mn70:27.5 | S: For a faithful disciple who is practicing to fathom the Teacher’s instructions, this is in line with the teaching: | T: For a faithful disciple who is intent on fathoming the Teacher’s Dispensation, it is natural that he conduct himself thus:
+mn70:27.6 | S: ‘Gladly, let only skin, sinews, and bones remain! Let the flesh and blood waste away in my body! I will not relax my energy until I have achieved what is possible by human strength, energy, and vigor.’ | T: ‘Willingly, let only my skin, sinews, and bones remain, and let the flesh and blood dry up on my body, but my energy shall not be relaxed so long as I have not attained what can be attained by manly strength, manly energy, and manly persistence.’
+mn70:27.7 | S: For a faithful disciple who is practicing to fathom the Teacher’s instructions, one of two results can be expected: | T: For a faithful disciple who is intent on fathoming the Teacher’s Dispensation, one of two fruits may be expected:
+mn70:27.8 | S: enlightenment in this very life, or if there’s residue left behind, non-return.” | T: either final knowledge here and now or, if there is a trace of clinging left, non-return.”
+mn70:27.9 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn70:27.10 | S: Satisfied, the mendicants approved what the Buddha said. | T: The bhikkhus were satisfied and delighted in the Blessed One’s words.
+mn70:27.11 | P: Kīṭāgirisuttaṁ niṭṭhitaṁ dasamaṁ. | T: (none)
+mn70:27.12 | P: Bhikkhuvaggo niṭṭhito dutiyo. | T: (none)
+mn70:28.0 | P: Tassuddānaṁ | T: (none)
+mn70:28.1 | P: Kuñjara rāhula sassataloko, | T: (none)
+mn70:28.2 | P: Mālukyaputto ca bhaddāli nāmo; | T: (none)
+mn70:28.3 | P: Khudda dijātha sahampatiyācaṁ, | T: (none)
+mn70:28.4 | P: Nāḷaka raññikiṭāgirināmo. | T: (none)
+
+## mn28
+mn28:1.1 | S: So I have heard. | T: Thus have I heard.
+mn28:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn28:1.3 | S: There Sāriputta addressed the mendicants, | T: There the venerable Sāriputta addressed the bhikkhus thus:
+mn28:1.4 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus.”—
+mn28:1.5 | S: “Reverend,” they replied. | T: “Friend,” they replied.
+mn28:1.6 | S: Sāriputta said this: | T: The venerable Sāriputta said this:
+mn28:2.1 | S: “The footprints of all creatures that walk can fit inside an elephant’s footprint, so an elephant’s footprint is said to be the biggest of them all. | T: “Friends, just as the footprint of any living being that walks can be placed within an elephant’s footprint, and so the elephant’s footprint is declared the chief of them because of its great size;
+mn28:2.2 | S: In the same way, all skillful qualities are included in the four noble truths. | T: so too, all wholesome states can be included in the Four Noble Truths.
+mn28:2.3 | S: What four? | T: In what four?
+mn28:2.4 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: In the noble truth of suffering, in the noble truth of the origin of suffering, in the noble truth of the cessation of suffering, and in the noble truth of the way leading to the cessation of suffering.
+mn28:3.1 | S: And what is the noble truth of suffering? | T: “And what is the noble truth of suffering?
+mn28:3.2 | S: Rebirth is suffering; old age is suffering; death is suffering; sorrow, lamentation, pain, sadness, and distress are suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering. | T: Birth is suffering, ageing is suffering, death is suffering; sorrow, lamentation, pain, grief, and despair are suffering; not to obtain what one wants is suffering; in short, the five aggregates affected by clinging are suffering.
+mn28:3.3 | S: And what are the five grasping aggregates? | T: “And what are the five aggregates affected by clinging?
+mn28:3.4 | S: They are as follows: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: They are: the material form aggregate affected by clinging, the feeling aggregate affected by clinging, the perception aggregate affected by clinging, the formations aggregate affected by clinging, and the consciousness aggregate affected by clinging.
+mn28:4.1 | S: And what is the grasping aggregate of form? | T: “And what is the material form aggregate affected by clinging?
+mn28:4.2 | S: The four principal states, and form derived from the four principal states. | T: It is the four great elements and the material form derived from the four great elements.
+mn28:5.1 | S: And what are the four principal states? | T: And what are the four great elements?
+mn28:5.2 | S: The elements of earth, water, fire, and air. | T: They are the earth element, the water element, the fire element, and the air element.
+mn28:6.1 | S: And what is the earth element? | T: The Earth Element “What, friends, is the earth element?
+mn28:6.2 | S: The earth element may be interior or exterior. | T: The earth element may be either internal or external.
+mn28:6.3 | S: And what is the interior earth element? | T: What is the internal earth element?
+mn28:6.4 | S: Anything internal, personal, that’s hard, solid, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is solid, solidified, and clung-to; that is,
+mn28:6.5 | S: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces; or anything else internal, personal, that’s hard, solid, and appropriated. | T: head-hairs, body-hairs, nails, teeth, skin, flesh, sinews, bones, bone-marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, contents of the stomach, feces, or whatever else internally, belonging to oneself, is solid, solidified, and clung-to:
+mn28:6.6 | S: This is called the interior earth element. | T: this is called the internal earth element.
+mn28:6.7 | S: The interior earth element and the exterior earth element are just the earth element. | T: Now both the internal earth element and the external earth element are simply earth element.
+mn28:6.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn28:6.9 | S: When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the earth element and makes the mind dispassionate toward the earth element.
+mn28:7.1 | S: There comes a time when the exterior water element flares up. | T: “Now there comes a time when the water element is disturbed
+mn28:7.2 | S: At that time the exterior earth element vanishes. | T: and then the external earth element vanishes.
+mn28:7.3 | S: So for all its great age, the earth element will be revealed as impermanent, liable to end, vanish, and perish. | T: When even this external earth element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and changeˌ
+mn28:7.4 | S: What then of this ephemeral body appropriated by craving? Rather than ‘I’ or ‘mine’ or ‘I am’, they consider it to be none of these things. | T: what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’
+mn28:8.1 | S: If others abuse, attack, harass, and trouble that mendicant, they understand: | T: “So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:
+mn28:8.2 | S: ‘This painful feeling born of ear contact has arisen in me. | T: ‘This painful feeling born of ear-contact has arisen in me.
+mn28:8.3 | S: That’s dependent, not independent. | T: That is dependent, not independent.
+mn28:8.4 | S: Dependent on what? | T: Dependent on what?
+mn28:8.5 | S: Dependent on contact.’ | T: Dependent on contact.’
+mn28:8.6 | S: They see that contact, feeling, perception, choices, and consciousness are impermanent. | T: Then he sees that contact is impermanent, that feeling is impermanent, that perception is impermanent, that formations are impermanent, and that consciousness is impermanent.
+mn28:8.7 | S: Based on that element alone, their mind leaps forth, gains confidence, settles down, and becomes decided. | T: And his mind, having made an element its objective support, enters into that new objective support and acquires confidence, steadiness, and resolution.
+mn28:9.1 | S: Others might treat that mendicant with disliking, loathing, and detestation, | T: “Now, if others attack that bhikkhu in ways that are unwished for, undesired, and disagreeable,
+mn28:9.2 | S: striking them with fists, stones, sticks, and swords. | T: by contact with fists, clods, sticks, or knives,
+mn28:9.3 | S: They understand: | T: he understands thus:
+mn28:9.4 | S: ‘This body is such that fists, stones, sticks, and swords strike it. | T: ‘This body is of such a nature that contact with fists, clods, sticks, and knives assail it.
+mn28:9.5 | S: But the Buddha has said in the Advice on the Simile of the Saw: | T: But this has been said by the Blessed One in his “advice on the simile of the saw”:
+mn28:9.6 | S: “Even if low-down bandits were to sever you limb from limb with a two-handed saw, anyone who had a malevolent thought on that account would not be following my instructions.” | T: “Bhikkhus, even if bandits were to sever you savagely limb by limb with a two-handled saw, he who gave rise to a mind of hate towards them would not be carrying out my teaching.”
+mn28:9.7 | S: My energy shall be roused up and unflagging, my mindfulness established and lucid, my body tranquil and undisturbed, and my mind immersed and unified in samādhi. | T: So tireless energy shall be aroused in me and unremitting mindfulness established, my body shall be tranquil and untroubled, my mind concentrated and unified.
+mn28:9.8 | S: Gladly now, let fists, stones, sticks, and swords strike this body! For this is how the instructions of the Buddhas are followed.’ | T: And now let contact with fists, clods, sticks, and knives assail this body; for this teaching of the Buddhas is being practised by me.’
+mn28:10.1 | S: While recollecting the Buddha, the teaching, and the Saṅgha in this way, equanimity based on the skillful may not become stabilized in them. | T: “When that bhikkhu thus recollects the Buddha, the Dhamma, and the Sangha, if equanimity supported by the wholesome does not become established in him,
+mn28:10.2 | S: In that case they stir up a sense of urgency: | T: then he arouses a sense of urgency thus:
+mn28:10.3 | S: ‘It’s my loss, my misfortune, | T: ‘It is a loss for me, it is no gain for me, it is bad for me, it is no good for me,
+mn28:10.4 | S: that while recollecting the Buddha, the teaching, and the Saṅgha in this way, equanimity based on the skillful does not become stabilized in me.’ | T: that when I thus recollect the Buddha, the Dhamma, and the Sangha, equanimity supported by the wholesome does not become established in me.’
+mn28:10.5 | S: They’re like a daughter-in-law who stirs up a sense of urgency when they see their father-in-law. | T: Just as when a daughter-in-law sees her father-in-law, she arouses a sense of urgency to please him,
+mn28:10.6 | P: evameva kho, āvuso, tassa ce bhikkhuno evaṁ buddhaṁ anussarato, evaṁ dhammaṁ anussarato, evaṁ saṅghaṁ anussarato, upekkhā kusalanissitā na saṇṭhāti, so tena saṁvijjati saṁvegaṁ āpajjati: | T: so too, when that bhikkhu thus recollects the Buddha, the Dhamma, and the Sangha, if equanimity supported by the wholesome does not become established in him, then he arouses a sense of urgency.
+mn28:10.7 | P: ‘alābhā vata me, na vata me lābhā; dulladdhaṁ vata me, na vata me suladdhaṁ, yassa me evaṁ buddhaṁ anussarato evaṁ dhammaṁ anussarato, evaṁ saṅghaṁ anussarato, upekkhā kusalanissitā na saṇṭhātī’ti. | T: (none)
+mn28:10.8 | S: But if, while recollecting the Buddha, the teaching, and the Saṅgha in this way, equanimity based on the skillful does become stabilized in them, they’re happy with that. | T: But if, when he recollects the Buddha, the Dhamma, and the Sangha, equanimity supported by the wholesome becomes established in him, then he is satisfied with it.
+mn28:10.9 | S: At this point, much has been done by that mendicant. | T: At that point, friends, much has been done by that bhikkhu.
+mn28:11.1 | S: And what is the water element? | T: The Water Element “What, friends, is the water element?
+mn28:11.2 | S: The water element may be interior or exterior. | T: The water element may be either internal or external.
+mn28:11.3 | S: And what is the interior water element? | T: What is the internal water element?
+mn28:11.4 | S: Anything internal, personal, that’s water, watery, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is water, watery, and clung-to; that is,
+mn28:11.5 | S: bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine; or anything else internal, personal, that’s water, watery, and appropriated. | T: bile, phlegm, pus, blood, sweat, fat, tears, grease, spittle, snot, oil-of-the-joints, urine, or whatever else internally, belonging to oneself, is water, watery, and clung-to:
+mn28:11.6 | S: This is called the interior water element. | T: this is called the internal water element.
+mn28:11.7 | S: The interior water element and the exterior water element are just the water element. | T: Now both the internal water element and the external water element are simply water element.
+mn28:11.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn28:11.9 | S: When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the water element and makes the mind dispassionate toward the water element.
+mn28:12.1 | S: There comes a time when the exterior water element flares up. | T: “Now there comes a time when the external water element is disturbed.
+mn28:12.2 | S: It sweeps away villages, towns, cities, countries, and regions. | T: It carries away villages, towns, cities, districts, and countries.
+mn28:12.3 | S: There comes a time when the water in the ocean sinks down a hundred leagues, or two, three, four, five, six, up to seven hundred leagues. | T: There comes a time when the waters in the great ocean sink down a hundred leagues, two hundred leagues, three hundred leagues, four hundred leagues, five hundred leagues, six hundred leagues, seven hundred leagues.
+mn28:12.4 | S: There comes a time when the water in the ocean stands just seven palm trees deep, or six, five, four, three, two, or even just one palm tree deep. | T: There comes a time when the waters in the great ocean stand seven palms deep, six palms deep…two palms deep, only a palm deep.
+mn28:12.5 | S: There comes a time when the water in the ocean stands just seven fathoms deep, or six, five, four, three, two, or even just one fathom deep. | T: There comes a time when the waters in the great ocean stand seven fathoms deep, six fathoms deep…two fathoms deep, only a fathom deep.
+mn28:12.6 | S: There comes a time when the water in the ocean stands just half a fathom deep, or waist deep, or knee deep, or even just ankle deep. | T: There comes a time when the waters in the great ocean stand half a fathom deep, only waist deep, only knee deep, only ankle deep.
+mn28:12.7 | S: There comes a time when there’s not even enough water left in the great ocean to wet the tip of the toe. | T: There comes a time when the waters in the great ocean are not enough to wet even the joint of a finger.
+mn28:12.8 | S: So for all its great age, the water element will be revealed as impermanent, liable to end, vanish, and perish. | T: When even this external water element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change,
+mn28:13.1 | S: What then of this ephemeral body appropriated by craving? Rather than ‘I’ or ‘mine’ or ‘I am’, they consider it to be none of these things. … | T: what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’
+mn28:14.1 | S: If, while recollecting the Buddha, the teaching, and the Saṅgha in this way, equanimity based on the skillful does become stabilized in them, they’re happy with that. | T: “So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—10…
+mn28:15.1 | S: At this point, much has been done by that mendicant. | T: At that point too, friends, much has been done by that bhikkhu.
+mn28:16.1 | S: And what is the fire element? | T: The Fire Element “What, friends, is the fire element?
+mn28:16.2 | S: The fire element may be interior or exterior. | T: The fire element may be either internal or external.
+mn28:16.3 | S: And what is the interior fire element? | T: What is the internal fire element?
+mn28:16.4 | S: Anything internal, pertaining to an individual that’s fire, fiery, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is fire, fiery, and clung-to; that is,
+mn28:16.5 | S: that which warms, that which ages, that which heats you up when feverish, that which properly digests food and drink; or anything else internal, personal, that’s fire, fiery, and appropriated. | T: that by which one is warmed, ages, and is consumed, and that by which what is eaten, drunk, consumed, and tasted gets completely digested, or whatever else internally, belonging to oneself, is fire, fiery, and clung-to:
+mn28:16.6 | S: This is called the interior fire element. | T: this is called the internal fire element.
+mn28:16.7 | S: The interior fire element and the exterior fire element are just the fire element. | T: Now both the internal fire element and the external fire element are simply fire element.
+mn28:16.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn28:16.9 | S: When you truly see with right understanding, you grow disillusioned with the fire element, detaching the mind from the fire element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the fire element and makes the mind dispassionate toward the fire element.
+mn28:17.1 | S: There comes a time when the exterior fire element flares up. | T: “Now there comes a time when the external fire element is disturbed.
+mn28:17.2 | S: It burns up villages, towns, cities, countries, and regions until | T: It burns up villages, towns, cities, districts, and countries.
+mn28:17.3 | S: it reaches a green field, a roadside, a cliff’s edge, a body of water, or cleared parkland, where it’s extinguished due to not being fed. | T: It goes out due to lack of fuel only when it comes to green grass, or to a road, or to a rock, or to water, or to a fair open space.
+mn28:17.4 | S: There comes a time when they go looking for a fire, taking just a chicken feather or a scrap of sinew as kindling. | T: There comes a time when they seek to make a fire even with a cock’s feather or a hide-paring.
+mn28:17.5 | S: So for all its great age, the fire element will be revealed as impermanent, liable to end, vanish, and perish. | T: When even this external fire element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change,
+mn28:17.6 | S: What then of this ephemeral body appropriated by craving? Rather than ‘I’ or ‘mine’ or ‘I am’, they consider it to be none of these things. … | T: what of this body, which is clung to by craving and lasts but a while? There can be no considering that as ‘I’ or ‘mine’ or ‘I am.’
+mn28:18-20.1 | S: If, while recollecting the Buddha, the teaching, and the Saṅgha in this way, equanimity based on the skillful does become stabilized in them, they’re happy with that. | T: “So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:…repeat §§8—10…
+mn28:18-20.2 | S: At this point, much has been done by that mendicant. | T: At that point too, friends, much has been done by that bhikkhu.
+mn28:21.1 | S: And what is the air element? | T: The Air Element “What, friends, is the air element?
+mn28:21.2 | S: The air element may be interior or exterior. | T: The air element may be either internal or external.
+mn28:21.3 | S: And what is the interior air element? | T: What is the internal air element?
+mn28:21.4 | S: Anything internal, personal, that’s air, airy, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is air, airy, and clung-to; that is,
+mn28:21.5 | S: winds that go up or down, winds in the belly or the bowels, winds that flow through the limbs, in-breaths and out-breaths; or anything else internal, personal, that’s air, airy, and appropriated. | T: up-going winds, down-going winds, winds in the belly, winds in the bowels, winds that course through the limbs, in-breath and out-breath, or whatever else internally, belonging to oneself, is air, airy, and clung-to:
+mn28:21.6 | S: This is called the interior air element. | T: this is called the internal air element.
+mn28:21.7 | S: The interior air element and the exterior air element are just the air element. | T: Now both the internal air element and the external air element are simply air element.
+mn28:21.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn28:21.9 | S: When you truly see with right understanding, you grow disillusioned with the air element, detaching the mind from the air element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the air element and makes the mind dispassionate toward the air element.
+mn28:22.1 | S: There comes a time when the exterior air element flares up. | T: “Now there comes a time when the external air element is disturbed.
+mn28:22.2 | S: It sweeps away villages, towns, cities, countries, and regions. | T: It sweeps away villages, towns, cities, districts, and countries.
+mn28:22.3 | S: There comes a time, in the last month of summer, when they look for wind by using a palm-leaf or fan, and even the grasses in the drip-fringe of a thatch roof don’t stir. | T: There comes a time in the last month of the hot season when they seek wind by means of a fan or bellows and even the strands of straw in the drip-fringe of the thatch do not stir.
+mn28:22.4 | S: So for all its great age, the air element will be revealed as impermanent, liable to end, vanish, and perish. | T: When even this external air element, great as it is, is seen to be impermanent, subject to destruction, disappearance, and change,

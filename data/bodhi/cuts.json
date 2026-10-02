@@ -1535,7 +1535,10 @@
  "mn64:8.8": "mind does not enter into it and acquire confidence, steadiness, and resolution,",
  "mn64:8.14": "if his mind enters into it and acquires confidence, steadiness, and resolution,",
  "mn65:13.2": "ow, and mistaken?”\n“Yes, venerable sir.",
- "mn7:10.2": "ed of unwavering confidence in the Buddha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma.",
+ "mn7:10.2": {
+  "after": "ed of unwavering confidence in the Sangha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma.",
+  "placed": true
+ },
  "mn70:6.19": "r-pleasant, unwholesome states diminish in him and wholesome states increase’?”—",
  "mn70:8.4": "en someone feels a certain kind of pleasant feeling, unwholesome states increase in him and wholesome states diminish,’",
  "mn70:8.5": "ndon such a kind of pleasant feeling’?”—",
@@ -1565,7 +1568,9 @@
  "mn77:33.19": " were no spot thus: ‘There is no spot’;",
  "mn8:12.29": " insolent; we shall not be insolent here’: effacement should be practised thus.",
  "mn8:13.4": "’\n(3–43) Mind should be inclined thus:…",
- "mn8:16.13": " to extinguish it.\n(3–43) One given to…",
+ "mn8:16.13": {
+  "empty": "up"
+ },
  "sn12.32:15.2": "e and I do not despise myself.’ Being asked thus, venerable sir, I would answer in such a way.”\n“Good, good, Sāriputta!",
  "sn12.32:17.4": "has roared his lion’s roar thus: ‘Friends, the first question that the Blessed One asked me had not been previously considered by me: thus I hesitated over it.",
  "sn12.33:4.4": {
@@ -2044,7 +2049,7 @@
  "mn46:16.2": "of undertaking things that is painful now and ripens in the future as pleasure?",
  "mn47:16.3": "ra or Brahmā or by anyone in the world.",
  "mn52:8.6": {
-  "after": "verance of mind through loving-kindness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that,",
+  "after": "rough loving-kindness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.",
   "placed": true
  },
  "mn52:12.1": "nce of mind through equanimity is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.\n“This too is one thing proclaimed by the Blessed One… wherein if a bhikkhu abides diligent, ardent, and resolute…he attains the supreme security from bondage that he had not attained before.",
@@ -3328,7 +3333,10 @@
  "mn47:8.4": "with renown and fame are found in him?’",
  "mn47:15.5": "s practising the good way”?’—answering rightly, that bhikkhu would answer thus:",
  "mn52:4.5": " thus: ‘This first jhāna is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’",
- "mn52:13.6": "t of the base of infinite consciousness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that,",
+ "mn52:13.6": {
+  "after": "nfinite consciousness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.",
+  "placed": true
+ },
  "mn52:14.5": " the base of nothingness is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’",
  "mn54:25.5": "ike that in the Noble One’s Discipline?",
  "mn54:25.8": "are thoroughbreds, we set them in the place of those who are not thoroughbreds.",
@@ -3383,15 +3391,19 @@
  "mn70:8.7": "that, to say: ‘Abandon such a kind of pleasant feeling’?”—“No, venerable sir.”\n“But because it is known by me, seen, found, realised, contacted by wisdom thus:",
  "mn70:8.9": "n such a kind of pleasant feeling.’\n“If it were unknown by me, unseen, unfound, unrealised, uncontacted by wisdom thus:",
  "mn70:8.13": "nter upon and abide in such a kind of pleasant feeling’?”—“No, venerable sir.”\n“But because it is known by me, seen, found, realised, contacted by wisdom thus:",
- "mn70:8.15": " in such a kind of pleasant feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
- "mn70:9.2": {
+ "mn70:8.15": {
   "empty": "up"
+ },
+ "mn70:9.2": {
+  "after": " in such a kind of pleasant feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
+  "placed": true
  },
  "mn70:9.8": {
-  "empty": "up"
+  "after": "ndon such a kind of painful feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
+  "placed": true
  },
  "mn70:11.2": {
-  "after": "nother kind of neither-painful-nor-pleasant feeling, unwholesome states diminish in him and wholesome states increase,’",
+  "after": "either-painful-nor-pleasant feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
   "placed": true
  },
  "mn70:22.2": "inal knowledge is achieved all at once.",
@@ -3472,7 +3484,10 @@
  "mn95:24.6": "ne applies one’s will, one scrutinises.",
  "mn95:25.2": "st helpful for application of the will?",
  "mn95:34.10": " Gotama about, that he has answered us;",
- "mn95:35.2": "agnificent, Master Gotama!…as Sutta 91,",
+ "mn95:35.2": {
+  "after": "ficent, Master Gotama!…as Sutta 91, §37…",
+  "placed": true
+ },
  "sn1.1:1.3": " in Jeta’s Grove, Anathapiṇḍika’s Park.",
  "sn1.2:1.2": "At Savatthi.",
  "sn1.2:5.4": " cessation and appeasement of feelings:",
@@ -4705,7 +4720,10 @@
  "mn65:9.14": "ains, and they too will know me thus: “The bhikkhu named Bhaddāli is one who does not fulfil the training in the Teacher’s Dispensation.”’ This circumstance too was not recognised by you.\n“Also, this circumstance was not recognised by you:",
  "mn65:9.22": "tthī, and they too will know me thus: “The bhikkhu named Bhaddāli is one who does not fulfil the training in the Teacher’s Dispensation.”’ This circumstance too was not recognised by you.\n“Also, this circumstance was not recognised by you:",
  "mn7:4.1": "conceit…arrogance…vanity… …negligence is an imperfection that defiles the mind.",
- "mn7:11.1": " Buddha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma. When he is glad, rapture is born in him; in one who is rapturous, the body becomes tranquil; one whose body is tranquil feels pleasure; in one who feels pleasure, the mind becomes concentrated.",
+ "mn7:11.1": {
+  "after": "nwavering confidence in the Sangha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma. When he is glad…the mind becomes concentrated.",
+  "placed": true
+ },
  "mn70:8.2": "—“Yes, venerable sir.”\n“Good, bhikkhus.",
  "mn75:5.5": ".”\n“Be careful what you say, Māgandiya,",
  "mn75:8.6": " forms; that has been tamed by the Tathāgata, guarded, protected, and restrained, and he teaches the Dhamma for its restraint. Was it with reference to this that you said: ‘The recluse Gotama is a destroyer of growth’?”\n“It was with reference to this, Master Gotama, that I said:",
@@ -5516,7 +5534,8 @@
   "placed": true
  },
  "mn11:10.8": {
-  "empty": "up"
+  "after": " though they claim to propound the full understanding of all kinds of clinging,",
+  "placed": true
  },
  "mn12:4.1": {
   "after": "lessed One what Sunakkhatta was saying.",
@@ -5543,7 +5562,8 @@
   "placed": true
  },
  "mn135:18.5": {
-  "empty": "up"
+  "after": "sks: ‘Venerable sir, what is wholesome?…",
+  "placed": true
  },
  "mn135:18.11": {
   "empty": "down"
@@ -5553,7 +5573,8 @@
   "placed": true
  },
  "mn146:7.18": {
-  "empty": "up"
+  "after": "forms…sounds…odours… flavours…tangibles…",
+  "placed": true
  },
  "mn146:13.3": {
   "after": "tion of the taints. What are the seven?",
@@ -5662,7 +5683,8 @@
   "empty": "down"
  },
  "mn41:18-42.22": {
-  "empty": "up"
+  "after": "Brahmā’ s retinue…the gods of Radiance …",
+  "placed": true
  },
  "mn46:4.3": {
   "after": "he knows what things should be followed and what things should not be followed.",
@@ -5796,7 +5818,8 @@
   "placed": true
  },
  "mn95:32.5": {
-  "empty": "down"
+  "after": "acher, one will not pay respect to him;",
+  "placed": true
  },
  "mn95:33.1": {
   "after": "ng is most helpful for paying respect.”",
@@ -6537,15 +6560,16 @@
   "own": true
  },
  "mn41:18-42.34": {
-  "empty": "stay"
+  "after": "ods…the Sudassī gods…the Akaniṭṭha gods…",
+  "placed": true,
+  "own": true
  },
  "mn7:4.2": {
   "after": "ighteous greed is an imperfection that defiles the mind, a bhikkhu abandons it.",
   "own": true
  },
  "mn70:10.8": {
-  "after": "either-painful-nor-pleasant feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
-  "placed": true
+  "empty": "down"
  },
  "mn9:23.2": {
   "after": "to the cessation of ageing and death…he here and now makes an end of suffering.",
@@ -8921,7 +8945,8 @@
   "placed": true
  },
  "mn146:6.16": {
-  "empty": "down"
+  "after": " think? Is the ear….the nose…the tongue…",
+  "placed": true
  },
  "mn146:6.19": {
   "after": "ody…the mind permanent or impermanent?”—",
@@ -9613,7 +9638,8 @@
   "own": true
  },
  "mn6:16.13": {
-  "empty": "up"
+  "after": "nderstand a surpassed mind as surpassed",
+  "placed": true
  },
  "mn6:16.14": {
   "after": "and an unsurpassed mind as unsurpassed;",
@@ -9621,7 +9647,8 @@
   "own": true
  },
  "mn6:16.15": {
-  "empty": "up"
+  "after": "and a concentrated mind as concentrated",
+  "placed": true
  },
  "mn60:4.2": {
   "after": "e acquired faith supported by reasons?”",
@@ -13426,7 +13453,8 @@
   "empty": "up"
  },
  "mn12:30.9": {
-  "empty": "down"
+  "after": " them and held conversations with them,",
+  "placed": true
  },
  "mn12:30.10": {
   "after": "r or timidity might come upon me there.",
@@ -13454,7 +13482,8 @@
   "own": true
  },
  "mn146:6.12": {
-  "empty": "up"
+  "after": "Sisters, what do you think? Is the ear….",
+  "placed": true
  },
  "mn146:7.2": {
   "after": " proper wisdom thus: ‘These six internal bases are impermanent.’”\n“Good, good, sisters! So it is with a noble disciple who sees this as it actually is with proper wisdom.\n“Sisters, what do you think?",
@@ -13462,7 +13491,8 @@
   "own": true
  },
  "mn146:7.10": {
-  "empty": "up"
+  "after": "\n“Sisters, what do you think? Are forms…",
+  "placed": true
  },
  "mn146:8.9": {
   "after": "t do you think? Is eye-consciousness… …",
@@ -13470,7 +13500,8 @@
   "own": true
  },
  "mn146:8.11": {
-  "empty": "up"
+  "after": " eye-consciousness… … ear-consciousness…",
+  "placed": true
  },
  "mn146:9.5": {
   "empty": "up"
@@ -13723,10 +13754,12 @@
   "empty": "up"
  },
  "mn41:18-42.17": {
-  "empty": "up"
+  "after": "creations…the gods of Brahmā’ s retinue…",
+  "placed": true
  },
  "mn41:18-42.35": {
-  "empty": "up"
+  "after": "…the gods of the base of infinite space…",
+  "placed": true
  },
  "mn63:2.7": {
   "after": "ed One and ask him the meaning of this.",
@@ -13738,7 +13771,8 @@
   "placed": true
  },
  "mn63:3.49": {
-  "empty": "up"
+  "after": "let the Blessed One declare that to me.",
+  "placed": true
  },
  "mn63:3.50": {
   "after": "does not exist’ or ‘after death a Tathāgata neither exists nor does not exist,’",
@@ -13804,7 +13838,8 @@
   "placed": true
  },
  "mn70:9.1": {
-  "empty": "up"
+  "after": "r upon and abide in such a kind of pleasant feeling.’\n“If it were unknown by me…",
+  "placed": true
  },
  "mn70:9.3": {
   "after": "bandon such a kind of painful feeling.’",
@@ -13812,12 +13847,11 @@
   "own": true
  },
  "mn70:9.4": {
-  "after": "ndon such a kind of painful feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "mn70:9.7": {
-  "empty": "up"
+  "after": "refore say: ‘Abandon such a kind of painful feeling.’\n“If it were unknown by me…",
+  "placed": true
  },
  "mn70:10.1": {
   "after": "ide in such a kind of painful feeling.’",
@@ -13825,12 +13859,11 @@
   "own": true
  },
  "mn70:10.2": {
-  "after": "e in such a kind of painful feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "mn70:10.5": {
-  "empty": "up"
+  "after": "er upon and abide in such a kind of painful feeling.’\n“If it were unknown by me…",
+  "placed": true
  },
  "mn70:10.7": {
   "after": "I therefore say: ‘Abandon such a kind of neither-painful-nor-pleasant feeling.’",
@@ -16542,10 +16575,12 @@
   "own": true
  },
  "mn4:13.4": {
-  "empty": "up"
+  "after": "I have gone beyond doubt…’\n“‘ …given to self-praise and disparagement of others…",
+  "placed": true
  },
  "mn4:15.4": {
-  "empty": "up"
+  "after": "“‘…desirous of gain, honour, and renown…",
+  "placed": true
  },
  "sn35.15:1.28": {
   "after": "ose … the tongue … the body … the mind.",
@@ -16579,9 +16614,7 @@
   "empty": "up"
  },
  "mn11:10.7": {
-  "after": " though they claim to propound the full understanding of all kinds of clinging,",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "mn11:11.1": {
   "after": "ibe only the full understanding of clinging to sensual pleasures without describing the full understanding of clinging to views, clinging to rules and observances, and clinging to a doctrine of self.",
@@ -17031,7 +17064,7 @@
   "empty": "up"
  },
  "mn41:16-17.3": {
-  "after": "he company of well-to-do householders!’",
+  "after": " in the company of well-to-do brahmins!…",
   "placed": true
  },
  "mn63:3.25": {
@@ -17575,16 +17608,13 @@
   "own": true
  },
  "mn38:21.20": {
-  "after": "sation of clinging, cessation of being’…",
-  "placed": true
+  "empty": "up"
  },
  "mn38:21.25": {
-  "after": "tion of craving, cessation of clinging’…",
-  "placed": true
+  "empty": "up"
  },
  "mn38:21.30": {
-  "after": "ation of feeling, cessation of craving’…",
-  "placed": true
+  "empty": "up"
  },
  "mn38:21.51": {
   "after": "formations, cessation of consciousness’…",
@@ -20195,5 +20225,810 @@
  "sn12.62:4.5": {
   "after": "t…acontact to be experienced as painful…",
   "placed": true
+ },
+ "dn2:43.0.1": {
+  "empty": "up"
+ },
+ "dn2:43.0.2": {
+  "after": "nd clear comprehension, and is content.",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.4": {
+  "after": "ds a mind with lust as a mind with lust",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.6": {
+  "after": " mind with hatred as a mind with hatred",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.8": {
+  "after": "d with delusion as a mind with delusion",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.10": {
+  "after": " a contracted mind as a contracted mind",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.12": {
+  "after": "ands an exalted mind as an exalted mind",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.14": {
+  "after": " surpassable mind as a surpassable mind",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.16": {
+  "after": "oncentrated mind as a concentrated mind",
+  "placed": true,
+  "own": true
+ },
+ "dn2:91.18": {
+  "after": "ds a liberated mind as a liberated mind",
+  "placed": true,
+  "own": true
+ },
+ "mn1:49.1": {
+  "after": "8–49. “He directly knows water as water…",
+  "placed": true,
+  "own": true
+ },
+ "mn104:14.8": {
+  "after": "confrontation. And so there comes to be the settlement of some litigations here",
+  "placed": true,
+  "own": true
+ },
+ "mn104:15.8": {
+  "after": "of a majority. And so there comes to be the settlement of some litigations here",
+  "placed": true,
+  "own": true
+ },
+ "mn104:18.11": {
+  "after": "of an offence. And so there comes to be the settlement of some litigations here",
+  "placed": true,
+  "own": true
+ },
+ "mn104:19.24": {
+  "after": "ainst someone. And so there comes to be the settlement of some litigations here",
+  "placed": true,
+  "own": true
+ },
+ "mn108:20.12": {
+  "after": "ted and an unexalted mind as unexalted;",
+  "placed": true,
+  "own": true
+ },
+ "mn108:20.13": {
+  "empty": "up"
+ },
+ "mn108:20.14": {
+  "after": "and an unsurpassed mind as unsurpassed;",
+  "placed": true,
+  "own": true
+ },
+ "mn108:20.15": {
+  "empty": "up"
+ },
+ "mn118:42.2": {
+  "after": "fulness enlightenment factor, which is supported by seclusion, dispassion, and cessation, and ripens in relinquishment.",
+  "placed": true,
+  "own": true
+ },
+ "mn118:42.3": {
+  "after": "tigation-of-states enlightenment factor…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:28.2": {
+  "after": "ese four kinds of intrepidity, possessing which he claims the herd-leader’s place, roars his lion’s roar in the assemblies, and sets rolling the Wheel of Brahmā.\n“Sāriputta, when I know and see thus,",
+  "placed": true,
+  "own": true
+ },
+ "mn12:28.3": {
+  "after": " Wheel of Brahmā.\n“Sāriputta, when I know and see thus, should anyone say of me…",
+  "placed": true
+ },
+ "mn12:29.7": {
+  "empty": "up"
+ },
+ "mn12:29.8": {
+  "empty": "up"
+ },
+ "mn12:30.1": {
+  "after": "ached many hundred assemblies of nobles…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.2": {
+  "after": "les…many hundred assemblies of brahmins…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.3": {
+  "after": "many hundred assemblies of householders…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.4": {
+  "after": "ers…many hundred assemblies of recluses…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.5": {
+  "after": "s of the heaven of the Four Great Kings…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.6": {
+  "after": " gods of the heaven of the Thirty-three…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.7": {
+  "after": "ny hundred assemblies of Māra’s retinue…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.8": {
+  "after": "nue…many hundred assemblies of Brahmās.",
+  "placed": true,
+  "own": true
+ },
+ "mn12:31.2": {
+  "after": "in safety, fearlessness, and intrepidity.\n“Sāriputta, when I know and see thus,",
+  "placed": true,
+  "own": true
+ },
+ "mn12:31.3": {
+  "after": " and intrepidity.\n“Sāriputta, when I know and see thus, should anyone say of me…",
+  "placed": true
+ },
+ "mn12:34.2": {
+  "after": ". These are the four kinds of generation.\n“Sāriputta, when I know and see thus,",
+  "placed": true,
+  "own": true
+ },
+ "mn12:34.3": {
+  "after": "ds of generation.\n“Sāriputta, when I know and see thus, should anyone say of me…",
+  "placed": true
+ },
+ "mn12:37.9": {
+  "after": "arcoal pit and is experiencing exclusively painful, racking, piercing feelings.",
+  "placed": true,
+  "own": true
+ },
+ "mn12:38.9": {
+  "after": "llen into that cesspit and is experiencing painful, racking, piercing feelings.",
+  "placed": true,
+  "own": true
+ },
+ "mn12:39.9": {
+  "after": "tree experiencing much painful feeling.",
+  "placed": true,
+  "own": true
+ },
+ "mn12:40.9": {
+  "after": "ree experiencing much pleasant feeling.",
+  "placed": true,
+  "own": true
+ },
+ "mn12:41.10": {
+  "after": " that upper chamber in that mansion experiencing exclusively pleasant feelings.",
+  "placed": true,
+  "own": true
+ },
+ "mn135:18.9": {
+  "after": " student, that leads to wisdom, namely,",
+  "placed": true,
+  "own": true
+ },
+ "mn140:19.17": {
+  "after": "nce on a contact to be felt as pleasant…",
+  "placed": true,
+  "own": true
+ },
+ "mn140:19.20": {
+  "after": " felt as pleasant…to be felt as painful…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:6.14": {
+  "after": "what do you think? Is the ear….the nose…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:6.18": {
+  "after": "s the ear….the nose…the tongue…the body…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:7.12": {
+  "after": "rs, what do you think? Are forms…sounds…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:7.16": {
+  "after": "hink? Are forms…sounds…odours… flavours…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:7.17": {
+  "empty": "up"
+ },
+ "mn146:8.13": {
+  "after": " … ear-consciousness…nose-consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn146:8.17": {
+  "after": "ongue-consciousness… body-consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:5.6": {
+  "after": " external bases should be understood. ’",
+  "placed": true
+ },
+ "mn148:6.2": {
+  "after": "f consciousness should be understood. ’",
+  "placed": true
+ },
+ "mn148:7.11": {
+  "after": "sses of contact should be understood. ’",
+  "placed": true
+ },
+ "mn148:8.11": {
+  "after": "sses of feeling should be understood. ’",
+  "placed": true
+ },
+ "mn148:15.4": {
+  "empty": "up"
+ },
+ "mn148:15.10": {
+  "after": "‘Feeling is self,’… … ‘Craving is self’…",
+  "placed": true,
+  "own": true
+ },
+ "mn26:20.9": {
+  "after": "amma.’ The Brahmā Sahampati spoke thus,",
+  "placed": true,
+  "own": true
+ },
+ "mn26:25.2": {
+  "after": "nt the Ājīvaka Upaka saw me on the road",
+  "placed": true,
+  "own": true
+ },
+ "mn36:42.3": {
+  "after": "leading to the cessation of suffering’;…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:8.21": {
+  "after": "ms, it is reckoned as eye-consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.11": {
+  "after": "cessation of being, cessation of birth’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.16": {
+  "after": "sation of clinging, cessation of being’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.21": {
+  "after": "tion of craving, cessation of clinging’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.26": {
+  "after": "ation of feeling, cessation of craving’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.31": {
+  "after": "tion of contact, cessation of feeling’ …",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.36": {
+  "after": "the sixfold base, cessation of contact’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.41": {
+  "after": "riality, cessation of the sixfold base’…",
+  "placed": true,
+  "own": true
+ },
+ "mn38:21.46": {
+  "after": "ss, cessation of mentality-materiality’…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:8.4": {
+  "after": "hmins who are covetous and full of lust…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:9.4": {
+  "after": "mind of ill will and intentions of hate…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:10.4": {
+  "after": "dness…’\n“‘…overcome by sloth and torpor…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:11.4": {
+  "after": "ith restlessness and unpeaceful in mind…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:12.4": {
+  "after": "aceful mind…’\n“‘…uncertain and doubting…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:14.4": {
+  "after": "others…’\n“‘…subject to alarm and terror…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:16.4": {
+  "after": " wishes…’\n“‘…lazy and wanting in energy…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:17.4": {
+  "after": "tic…’\n“‘… unmindful and not fully aware…",
+  "placed": true,
+  "own": true
+ },
+ "mn4:18.4": {
+  "after": "…unconcentrated and with straying minds…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:16-17.4": {
+  "after": "he company of well-to-do householders!’",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.7": {
+  "after": " of the heaven of the Four Great Kings!…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.8": {
+  "after": " gods of the heaven of the Thirty-three…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.9": {
+  "after": "eaven of the Thirty-three…the Yāma gods…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.10": {
+  "after": "Yāma gods…the gods of the Tusita heaven…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.11": {
+  "after": "heaven…the gods who delight in creating…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.12": {
+  "after": " who wield power over others’ creations…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.23": {
+  "after": " Radiance …the gods of Limited Radiance…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.24": {
+  "after": "iance…the gods of Immeasurable Radiance…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.25": {
+  "after": "Radiance…the gods of Streaming Radiance…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.26": {
+  "after": "gods of Glory…the gods of Limited Glory…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.27": {
+  "after": "ed Glory…the gods of Immeasurable Glory…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.28": {
+  "after": "rable Glory…the gods of Refulgent Glory…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.29": {
+  "after": "Refulgent Glory…the gods of Great Fruit…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.30": {
+  "after": "…the gods of Great Fruit…the Aviha gods…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.31": {
+  "after": "at Fruit…the Aviha gods…the Atappa gods…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.32": {
+  "after": "a gods…the Atappa gods…the Sudassa gods…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.33": {
+  "after": " gods…the Sudassa gods…the Sudassī gods…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.36": {
+  "after": "s of the base of infinite consciousness…",
+  "placed": true,
+  "own": true
+ },
+ "mn41:18-42.37": {
+  "after": "ess…the gods of the base of nothingness…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:8.2": {
+  "after": "rtaking things that is painful now and ripens in the future as pleasure, does not understand it as it actually is thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn46:9.2": {
+  "after": "taking things that is pleasant now and ripens in the future as pleasure, does not understand it as it actually is thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn46:11.2": {
+  "after": "nt now and ripens in the future as pain, understands it as it actually is thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn46:12.2": {
+  "after": " of undertaking things that is painful now and ripens in the future as pleasure, understands it as it actually is thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.3": {
+  "after": " he experiences pain and grief that have killing of living beings as condition.",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.4": {
+  "after": "in and grief he takes what is not given…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.5": {
+  "after": "isconducts himself in sensual pleasures…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.6": {
+  "after": "f in sensual pleasures…speaks falsehood…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.7": {
+  "after": "es…speaks falsehood…speaks maliciously…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.8": {
+  "after": "hood…speaks maliciously… speaks harshly…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.9": {
+  "after": "aks maliciously… speaks harshly…gossips…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.10": {
+  "after": "sly… speaks harshly…gossips…is covetous…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:14.11": {
+  "after": "sips…is covetous…has a mind of ill will…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:15.3": {
+  "after": "e experiences pleasure and joy that have killing of living beings as condition.",
+  "placed": true,
+  "own": true
+ },
+ "mn46:15.11": {
+  "after": "ure and joy he takes what is not given…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.3": {
+  "after": "es pain and grief that have abstention from killing living beings as condition.",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.4": {
+  "after": "eings as condition. In pain and grief he abstains from taking what is not given…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.5": {
+  "after": "en…from misconduct in sensual pleasures…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.6": {
+  "after": "nsual pleasures…from speaking falsehood…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.7": {
+  "after": "ing falsehood…from speaking maliciously…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.8": {
+  "after": "aking maliciously…from speaking harshly…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.9": {
+  "after": "ly…from speaking harshly…from gossiping…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.10": {
+  "after": "rshly…from gossiping…he is not covetous…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:16.11": {
+  "after": "us…he does not have a mind of ill will…",
+  "placed": true,
+  "own": true
+ },
+ "mn46:17.3": {
+  "after": " pleasure and joy that have abstention from killing living beings as condition.",
+  "placed": true,
+  "own": true
+ },
+ "mn46:17.11": {
+  "after": "ngs as condition. In pleasure and joy he abstains from taking what is not given…",
+  "placed": true,
+  "own": true
+ },
+ "mn52:11.6": {
+  "after": "nd through equanimity is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.",
+  "placed": true
+ },
+ "mn52:12.6": {
+  "after": "ase of infinite space is conditioned and volitionally produced. But whatever is conditioned and volitionally produced is impermanent, subject to cessation.’ If he is steady in that, he attains the destruction of the taints. But if he does not attain the destruction of the taints…without ever returning from that world.",
+  "placed": true
+ },
+ "mn6:16.3": {
+  "after": "nd affected by lust as affected by lust",
+  "placed": true,
+  "own": true
+ },
+ "mn6:16.5": {
+  "after": "nd affected by hate as affected by hate",
+  "placed": true,
+  "own": true
+ },
+ "mn6:16.7": {
+  "after": "ted by delusion as affected by delusion",
+  "placed": true,
+  "own": true
+ },
+ "mn6:16.9": {
+  "after": "erstand a contracted mind as contracted",
+  "placed": true,
+  "own": true
+ },
+ "mn6:16.11": {
+  "after": "I understand an exalted mind as exalted",
+  "placed": true,
+  "own": true
+ },
+ "mn6:16.17": {
+  "after": "nderstand a liberated mind as liberated",
+  "placed": true,
+  "own": true
+ },
+ "mn63:3.42": {
+  "empty": "down"
+ },
+ "mn63:3.46": {
+  "after": "fter death a Tathāgata does not exist,’…",
+  "placed": true
+ },
+ "mn63:4.7": {
+  "after": " and the Blessed One will declare to me",
+  "placed": true,
+  "own": true
+ },
+ "mn7:8.2": {
+  "after": "ed of unwavering confidence in the Buddha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma.",
+  "placed": true,
+  "own": true
+ },
+ "mn7:9.1": {
+  "after": " Buddha,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma. When he is glad, rapture is born in him; in one who is rapturous, the body becomes tranquil; one whose body is tranquil feels pleasure; in one who feels pleasure, the mind becomes concentrated.",
+  "placed": true,
+  "own": true
+ },
+ "mn7:10.1": {
+  "after": "nwavering confidence in the Dhamma,’ and he gains inspiration in the meaning, gains inspiration in the Dhamma, gains gladness connected with the Dhamma. When he is glad…the mind becomes concentrated.",
+  "placed": true
+ },
+ "mn7:15.1": {
+  "after": "rter with a mind imbued with compassion…",
+  "placed": true,
+  "own": true
+ },
+ "mn7:16.1": {
+  "after": "…with a mind imbued with altruistic joy…",
+  "placed": true
+ },
+ "mn7:20.11": {
+  "after": "āhukā?\nThey cannot purify an evil-doer,",
+  "placed": true,
+  "own": true
+ },
+ "mn70:8.16": {
+  "empty": "up"
+ },
+ "mn70:9.5": {
+  "empty": "up"
+ },
+ "mn70:10.3": {
+  "empty": "up"
+ },
+ "mn70:10.6": {
+  "after": "e in such a kind of painful feeling.’\n“If it were unknown by me…But because it is known by me…contacted by wisdom thus:",
+  "placed": true,
+  "own": true
+ },
+ "mn70:11.1": {
+  "after": "such a kind of neither-painful-nor-pleasant feeling.’\n“If it were unknown by me…",
+  "placed": true,
+  "own": true
+ },
+ "mn75:3.3": {
+  "after": "There he saw a spread of grass prepared",
+  "placed": true,
+  "own": true
+ },
+ "mn75:5.1": {
+  "after": " been prepared for that Master Gotama.”",
+  "placed": true,
+  "own": true
+ },
+ "mn75:5.2": {
+  "empty": "up"
+ },
+ "mn8:16.6": {
+  "after": "iving beings by which to extinguish it.",
+  "placed": true,
+  "own": true
+ },
+ "mn8:16.12": {
+  "empty": "up"
+ },
+ "mn82:8.7": {
+  "after": "ring, dear Raṭṭhapāla. Get up, dear Raṭṭhapāla, eat, drink, and amuse yourself.",
+  "placed": true
+ },
+ "mn82:8.15": {
+  "after": "the third time his parents said to him:",
+  "placed": true,
+  "own": true
+ },
+ "mn82:8.17": {
+  "empty": "up"
+ },
+ "mn82:10.7": {
+  "after": ", friend Raṭṭhapāla. Get up, friend Raṭṭhapāla, eat, drink, and amuse yourself.",
+  "placed": true
+ },
+ "mn82:10.14": {
+  "after": "the third time his friends said to him:",
+  "placed": true,
+  "own": true
+ },
+ "mn82:10.15": {
+  "empty": "up"
+ },
+ "mn82:15.6": {
+  "after": "returning to the low life, he told him:",
+  "placed": true
+ },
+ "mn82:27.3": {
+  "after": "gamekeeper, tidy up the Migācīra Garden",
+  "placed": true,
+  "own": true
+ },
+ "mn9:42.5": {
+  "after": "ling is just this Noble Eightfold Path;",
+  "placed": true,
+  "own": true
+ },
+ "mn9:46.5": {
+  "after": "tact is just this Noble Eightfold Path;",
+  "placed": true,
+  "own": true
+ },
+ "mn9:50.5": {
+  "after": "base is just this Noble Eightfold Path;",
+  "placed": true,
+  "own": true
+ },
+ "mn9:58.5": {
+  "after": "ness is just this Noble Eightfold Path;",
+  "placed": true,
+  "own": true
+ },
+ "mn9:66.2": {
+  "after": "ance is just this Noble Eightfold Path;",
+  "placed": true,
+  "own": true
+ },
+ "mn95:25.4": {
+  "after": "or application of the will, Bhāradvāja.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:25.5": {
+  "after": "se zeal, one will not apply one’s will;",
+  "placed": true,
+  "own": true
+ },
+ "mn95:25.6": {
+  "after": "e arouses zeal, one applies one’s will.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:32.4": {
+  "after": "helpful for paying respect, Bhāradvāja.",
+  "placed": true,
+  "own": true
+ },
+ "mn95:32.6": {
+  "after": "its a teacher, one pays respect to him.",
+  "placed": true,
+  "own": true
  }
 }

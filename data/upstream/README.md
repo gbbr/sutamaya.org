@@ -187,6 +187,12 @@ so that DN and MN are always read, every line, the left-out ones too, as `read <
 the texts earlier audits drew. Each translator's audits
 are in `review/audit*/`, each with its draw and its rate.
 
+## What's left
+
+- Clean up unused folders in `data/{bodhi,thanissaro}/review/`? Is there any value in keeping them
+or can we just take note of the history/what has been done and that's good enough? I don't mind keeping
+them if it helps.
+
 ## Where to look
 
 | What | Where |

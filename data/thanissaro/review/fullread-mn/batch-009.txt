@@ -1,0 +1,386 @@
+## mn130
+mn130:1.1 | S: So I have heard. | T: I have heard that
+mn130:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn130:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn130:1.4 | S: “Mendicants!” | T: “Monks!”
+mn130:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn130:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn130:2.1 | S: “Mendicants, suppose there were two houses with doors. A person with clear eyes standing in between them would see humans entering and leaving a house and wandering to and fro. | T: “Monks, it’s as if there were two households with doors, and a man of good eyesight, standing there between them, would see people entering & leaving a house, wandering out & about.
+mn130:2.2 | S: In the same way, with clairvoyance that is purified and superhuman, I see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. I understand how sentient beings pass on according to their deeds: ‘These dear beings did good things by way of body, speech, and mind. They never denounced the noble ones; they had right view; and they chose to act out of that right view. When their body broke up, after death, they were reborn in a good place, a heavenly realm, or among humans. These dear beings did bad things by way of body, speech, and mind. They denounced the noble ones; they had wrong view; and they chose to act out of that wrong view. When their body broke up, after death, they were reborn in the ghost realm, the animal realm, or in a place of loss, a bad place, the underworld, hell.’ | T: In the same way, I—by means of the divine eye, purified & surpassing the human—see beings passing away & re-appearing, and I discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their actions: ‘O, how these beings—who were endowed with good conduct of body, speech, & mind, who did not revile noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world. Or how these beings—who were endowed with bad conduct of body, speech & mind, who reviled noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in the realm of the hungry ghosts. Or how these beings—who were endowed with bad conduct of body, speech & mind, who reviled noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in the animal womb. Or how these beings—who were endowed with bad conduct of body, speech & mind, who reviled noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell.’
+mn130:3.1 | S: The wardens of hell take them by the arms and present them to King Yama, saying, | T: “Then the hell-wardens, seizing (such a being) by the arms, present him to King Yama:
+mn130:3.2 | S: ‘Your Majesty, this person did not pay due respect to their mother and father, ascetics and brahmins, or honor the elders in the family. | T: ‘This is a man, your majesty, with no respect for mother, no respect for father, no reverence for contemplatives, no reverence for brahmans, no honor for the leaders of his clan.
+mn130:3.3 | S: May Your Majesty punish them!’ | T: Let your majesty decree his punishment.’
+mn130:3.4 | S: King Yama pursues, presses, and grills them about the first messenger of the gods: | T: “Then King Yama interrogates & interpellates & castigates the man regarding the first deva messenger:
+mn130:3.5 | S: ‘My man, did you not see the first messenger of the gods that appeared among human beings?’ | T: ‘My good man, didn’t you see the first deva messenger that has appeared among human beings?’
+mn130:3.6 | S: He says, | T: (none)
+mn130:3.7 | S: ‘I saw nothing, sir.’ | T: “‘I didn’t, lord,’ he says.
+mn130:4.1 | S: King Yama says to them, | T: Then King Yama says,
+mn130:4.2 | S: ‘My man, did you not see among human beings a little baby collapsed in their own urine and feces?’ | T: ‘My good man, didn’t you see among human beings a tender baby boy lying prone in its own urine & excrement?’
+mn130:4.3 | S: He says, | T: (none)
+mn130:4.4 | S: ‘I saw that, sir.’ | T: “‘I did, lord,’ he says.
+mn130:4.5 | S: King Yama says to them, | T: Then King Yama says,
+mn130:4.6 | S: ‘My man, did it not occur to you—being sensible and mature— | T: ‘My good man, didn’t the thought occur to you—observant & mature:
+mn130:4.7 | S: “I, too, am liable to be born. I’m not exempt from rebirth. I’d better do good by way of body, speech, and mind”?’ | T: “I, too, am subject to birth, have not gone beyond birth. I’d better do good with body, speech, & mind”?’
+mn130:4.8 | S: He says, | T: (none)
+mn130:4.9 | S: ‘I couldn’t, sir. I was negligent.’ | T: “‘I couldn’t, lord. I was heedless, lord.’
+mn130:4.10 | S: King Yama says to them, | T: Then King Yama says,
+mn130:4.11 | S: ‘My man, because you were negligent, you didn’t do good by way of body, speech, and mind. | T: ‘My good man, through heedlessness you did not do what is good with body, speech, & mind.
+mn130:4.12 | S: Well, they’ll definitely punish you to fit your negligence. | T: And of course, my good man, they will deal with you in accordance with your heedlessness.
+mn130:4.13 | S: That bad deed wasn’t done by your mother, father, brother, or sister. It wasn’t done by friends and colleagues, by relatives and kin, by ascetics and brahmins, or by the deities. That bad deed was done by you alone, and you alone will experience the result.’ | T: For that evil kamma of yours was neither done by your mother, nor done by your father, nor done by your brother, nor done by your sister, nor done by your friends & companions, nor done by your kinsmen & relatives, nor done by the devas. That evil kamma was done by you yourself, and you yourself will experience its result.’
+mn130:5.1 | S: Then King Yama grills them about the second messenger of the gods: | T: “Then, having interrogated & interpellated & castigated the man regarding the first deva messenger, King Yama interrogates & interpellates & castigates him regarding the second:
+mn130:5.2 | S: ‘My man, did you not see the second messenger of the gods that appeared among human beings?’ | T: ‘My good man, didn’t you see the second deva messenger that has appeared among human beings?’
+mn130:5.3 | S: He says, | T: (none)
+mn130:5.4 | S: ‘I saw nothing, sir.’ | T: “‘I didn’t, lord,’ he says.
+mn130:5.5 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:5.6 | S: ‘My man, did you not see among human beings an elderly woman or a man—eighty, ninety, or a hundred years old—bent double, crooked, leaning on a staff, trembling as they walk, ailing, past their prime, with teeth broken, hair grey and scanty or bald, skin wrinkled, and limbs blotchy?’ | T: ‘My good man, didn’t you see among human beings a woman or man eighty, ninety, one hundred years old: aged, roof-rafter crooked, bent-over, supported by a cane, palsied, miserable, broken-toothed, gray-haired, scanty-haired, bald, wrinkled, with limbs all blotchy?’
+mn130:5.7 | S: He says, | T: (none)
+mn130:5.8 | S: ‘I saw that, sir.’ | T: “‘I did, lord,’ he says.
+mn130:5.9 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:5.10 | S: ‘My man, did it not occur to you—being sensible and mature— | T: ‘My good man, didn’t the thought occur to you—observant & mature:
+mn130:5.11 | S: “I, too, am liable to grow old. I’m not exempt from old age. I’d better do good by way of body, speech, and mind”?’ | T: “I, too, am subject to aging, have not gone beyond aging. I’d better do good with body, speech, & mind”?’
+mn130:5.12 | S: He says, | T: (none)
+mn130:5.13 | S: ‘I couldn’t, sir. I was negligent.’ | T: “‘I couldn’t, lord. I was heedless, lord.’
+mn130:5.14 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:5.15 | S: ‘My man, because you were negligent, you didn’t do good by way of body, speech, and mind. | T: ‘My good man, through heedlessness you did not do what is good with body, speech, & mind.
+mn130:5.16 | S: Well, they’ll definitely punish you to fit your negligence. | T: And of course, my good man, they will deal with you in accordance with your heedlessness.
+mn130:5.17 | S: That bad deed wasn’t done by your mother, father, brother, or sister. It wasn’t done by friends and colleagues, by relatives and kin, by ascetics and brahmins, or by the deities. That bad deed was done by you alone, and you alone will experience the result.’ | T: For that evil kamma of yours was neither done by your mother, nor done by your father, nor done by your brother, nor done by your sister, nor done by your friends & companions, nor done by your kinsmen & relatives, nor done by the devas. That evil kamma was done by you yourself, and you yourself will experience its result.’
+mn130:6.1 | S: Then King Yama grills them about the third messenger of the gods: | T: “Then, having interrogated & interpellated & castigated the man regarding the second deva messenger, King Yama interrogates & interpellates & castigates him regarding the third:
+mn130:6.2 | S: ‘My man, did you not see the third messenger of the gods that appeared among human beings?’ | T: ‘My good man, didn’t you see the third deva messenger that has appeared among human beings?’
+mn130:6.3 | S: He says, | T: (none)
+mn130:6.4 | S: ‘I saw nothing, sir.’ | T: “‘I didn’t, lord,’ he says.
+mn130:6.5 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:6.6 | S: ‘My man, did you not see among human beings a woman or a man, sick, suffering, gravely ill, collapsed in their own urine and feces, being picked up by some and put down by others?’ | T: ‘My good man, didn’t you see among human beings a woman or man diseased, in pain, severely ill, lying in her/his own urine & excrement, lifted up by others, laid down by others?’
+mn130:6.7 | S: He says, | T: (none)
+mn130:6.8 | S: ‘I saw that, sir.’ | T: “‘I did, lord,’ he says.
+mn130:6.9 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:6.10 | S: ‘My man, did it not occur to you—being sensible and mature— | T: ‘My good man, didn’t the thought occur to you—observant & mature:
+mn130:6.11 | S: “I, too, am liable to become sick. I’m not exempt from sickness. I’d better do good by way of body, speech, and mind”?’ | T: “I, too, am subject to illness, have not gone beyond illness. I’d better do good with body, speech, & mind”?’
+mn130:6.12 | S: He says, | T: (none)
+mn130:6.13 | S: ‘I couldn’t, sir. I was negligent.’ | T: “‘I couldn’t, lord. I was heedless, lord.’
+mn130:6.14 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:6.15 | S: ‘My man, because you were negligent, you didn’t do good by way of body, speech, and mind. | T: ‘My good man, through heedlessness you did not do what is good with body, speech, & mind.
+mn130:6.16 | S: Well, they’ll definitely punish you to fit your negligence. | T: And of course, my good man, they will deal with you in accordance with your heedlessness.
+mn130:6.17 | S: That bad deed wasn’t done by your mother, father, brother, or sister. It wasn’t done by friends and colleagues, by relatives and kin, by ascetics and brahmins, or by the deities. That bad deed was done by you alone, and you alone will experience the result.’ | T: For that evil kamma of yours was neither done by your mother, nor done by your father, nor done by your brother, nor done by your sister, nor done by your friends & companions, nor done by your kinsmen & relatives, nor done by the devas. That evil kamma was done by you yourself, and you yourself will experience its result.’
+mn130:7.1 | S: Then King Yama grills them about the fourth messenger of the gods: | T: “Then, having interrogated & interpellated & castigated the man regarding the third deva messenger, King Yama interrogates & interpellates & castigates him regarding the fourth:
+mn130:7.2 | S: ‘My man, did you not see the fourth messenger of the gods that appeared among human beings?’ | T: ‘My good man, didn’t you see the fourth deva messenger that has appeared among human beings?’
+mn130:7.3 | S: He says, | T: (none)
+mn130:7.4 | S: ‘I saw nothing, sir.’ | T: “‘I didn’t, lord,’ he says.
+mn130:7.5 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:7.6 | S: ‘My man, did you not see among human beings when the rulers arrested a bandit, a criminal, and subjected them to various punishments— | T: ‘My good man, didn’t you see among human beings kings—catching a thief, a criminal—having him tortured in many ways:
+mn130:7.7 | S: whipping, caning, and clubbing; cutting off hands or feet, or both; cutting off ears or nose, or both; the ‘porridge pot’, the ‘shell-shave’, the ‘Rāhu’s mouth’, the ‘garland of fire’, the ‘burning hand’, the ‘bulrush twist’, the ‘bark dress’, the ‘antelope’, the ‘meat hook’, the ‘coins’, the ‘caustic pickle’, the ‘twisting bar’, the ‘straw mat’; being splashed with hot oil, being fed to the hounds, being impaled alive, and being beheaded?’ | T: flogging him with whips, beating him with canes, beating him with clubs; cutting off his hands, cutting off his feet, cut off his hands & feet; cutting off his ears, cutting off his nose, cutting off his ears & nose; subjecting him to the ‘porridge pot,’ the ‘polished-shell shave,’ the ‘Rāhu’s mouth,’ the ‘flaming garland,’ the ‘blazing hand,’ the ‘grass-duty (ascetic),’ the ‘bark-dress (ascetic),’ the ‘burning antelope,’ the ‘meat hooks,’ the ‘coin-gouging,’ the ‘lye pickling,’ the ‘pivot on a stake,’ the ‘rolled-up bed’; having him splashed with boiling oil, devoured by dogs, impaled alive on a stake; cutting off his head with a sword?’
+mn130:7.8 | S: He says, | T: (none)
+mn130:7.9 | S: ‘I saw that, sir.’ | T: “‘I did, lord,’ he says.
+mn130:7.10 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:7.11 | S: ‘My man, did it not occur to you—being sensible and mature— | T: ‘My good man, didn’t the thought occur to you—observant & mature:
+mn130:7.12 | S: “It seems that one who does bad deeds receives such punishment in this very life. What must happen to them in the next? I’d better do good by way of body, speech, and mind”?’ | T: “It seems that those who do evil actions are tortured in these many ways in the here & now. And how much more in the hereafter? I’d better do good with body, speech, & mind”?’
+mn130:7.13 | S: He says, | T: (none)
+mn130:7.14 | S: ‘I couldn’t, sir. I was negligent.’ | T: “‘I couldn’t, lord. I was heedless, lord.’
+mn130:7.15 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:7.16 | S: ‘My man, because you were negligent, you didn’t do good by way of body, speech, and mind. | T: ‘My good man, through heedlessness you did not do what is good with body, speech, & mind.
+mn130:7.17 | S: Well, they’ll definitely punish you to fit your negligence. | T: And of course, my good man, they will deal with you in accordance with your heedlessness.
+mn130:7.18 | S: That bad deed wasn’t done by your mother, father, brother, or sister. It wasn’t done by friends and colleagues, by relatives and kin, by ascetics and brahmins, or by the deities. That bad deed was done by you alone, and you alone will experience the result.’ | T: For that evil kamma of yours was neither done by your mother, nor done by your father, nor done by your brother, nor done by your sister, nor done by your friends & companions, nor done by your kinsmen & relatives, nor done by the devas. That evil kamma was done by you yourself, and you yourself will experience its result.’
+mn130:8.1 | S: Then King Yama grills them about the fifth messenger of the gods: | T: “Then, having interrogated & interpellated & castigated the man regarding the fourth deva messenger, King Yama interrogates & interpellates & castigates him regarding the fifth:
+mn130:8.2 | S: ‘My man, did you not see the fifth messenger of the gods that appeared among human beings?’ | T: ‘My good man, didn’t you see the fifth deva messenger that has appeared among human beings?’
+mn130:8.3 | S: He says, | T: (none)
+mn130:8.4 | S: ‘I saw nothing, sir.’ | T: “‘I didn’t, lord,’ he says.
+mn130:8.5 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:8.6 | S: ‘My man, did you not see among human beings a woman or a man, dead for one, two, or three days, bloated, livid, and festering?’ | T: ‘My good man, didn’t you see among human beings a woman or man, one day, two days, or three days dead: bloated, livid, oozing with lymph?’
+mn130:8.7 | S: He says, | T: (none)
+mn130:8.8 | S: ‘I saw that, sir.’ | T: “‘I did, lord,’ he says.
+mn130:8.9 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:8.10 | S: ‘My man, did it not occur to you—being sensible and mature— | T: ‘My good man, didn’t the thought occur to you—observant & mature:
+mn130:8.11 | S: “I, too, am liable to die. I’m not exempt from death. I’d better do good by way of body, speech, and mind”?’ | T: “I, too, am subject to death, have not gone beyond death. I’d better do good with body, speech, & mind”?’
+mn130:8.12 | S: He says, | T: (none)
+mn130:8.13 | S: ‘I couldn’t, sir. I was negligent.’ | T: “‘I couldn’t, lord. I was heedless, lord.’
+mn130:8.14 | S: King Yama says to them, | T: “Then King Yama says,
+mn130:8.15 | S: ‘My man, because you were negligent, you didn’t do good by way of body, speech, and mind. | T: ‘My good man, through heedlessness you did not do what is good with body, speech, & mind.
+mn130:8.16 | S: Well, they’ll definitely punish you to fit your negligence. | T: And of course, my good man, they will deal with you in accordance with your heedlessness.
+mn130:8.17 | S: That bad deed wasn’t done by your mother, father, brother, or sister. It wasn’t done by friends and colleagues, by relatives and kin, by ascetics and brahmins, or by the deities. That bad deed was done by you alone, and you alone will experience the result.’ | T: For that evil kamma of yours was neither done by your mother, nor done by your father, nor done by your brother, nor done by your sister, nor done by your friends & companions, nor done by your kinsmen & relatives, nor done by the devas. That evil kamma was done by you yourself, and you yourself will experience its result.’
+mn130:9.1 | S: After grilling them about the fifth messenger of the gods, King Yama falls silent. | T: “Then, having interrogated & interpellated & castigated the man regarding the fifth deva messenger, King Yama falls silent.
+mn130:10.1 | S: The wardens of hell punish them with the five-fold crucifixion. | T: “Then the hell-wardens torture (the evil-doer) with what’s called a five-fold imprisonment.
+mn130:10.2 | S: They drive red-hot stakes through the hands and feet, and another in the middle of the chest. | T: They drive a red-hot iron stake through one hand, they drive a red-hot iron stake through the other hand, they drive a red-hot iron stake through one foot, they drive a red-hot iron stake through the other foot, they drive a red-hot iron stake through the middle of his chest.
+mn130:10.3 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:11.1 | S: The wardens of hell throw them down and hack them with axes. … | T: “Then the hell-wardens lay him down and slice him with axes.
+mn130:12.1 | S: They hang them upside-down and hack them with hatchets. … | T: Then they hold him feet up & head down and slice him with adzes.
+mn130:13.1 | S: They harness them to a chariot, and drive them back and forth across burning ground, blazing and glowing. … | T: Then they harness him to a chariot and drive him back & forth over ground that is burning, blazing, & glowing.
+mn130:14.1 | S: They make them climb up and down a big mountain of burning coals, blazing and glowing. … | T: Then they make him climb up & down a vast mountain of embers that is burning, blazing, & glowing.
+mn130:15.1 | S: The wardens of hell turn them upside down and throw them in a red-hot copper pot, burning, blazing, and glowing. | T: Then they hold him feet up & head down and plunge him into a red-hot copper cauldron that is burning, blazing, & glowing.
+mn130:15.2 | P: So tattha pheṇuddehakaṁ paccati. | T: There he boils with bubbles foaming.
+mn130:15.3 | S: There they’re seared in boiling scum, and they’re swept up and down and round and round. | T: And as he is boiling there with bubbles foaming, he goes now up, he goes now down, he goes now around.
+mn130:15.4 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:16.1 | S: The wardens of hell toss them into the Great Hell. | T: “Then the hell-wardens throw him into the Great Hell.
+mn130:16.2 | S: Now, about that Great Hell: | T: And as to the Great Hell, monks:
+mn130:16.3 | S: ‘Four are its corners, four its doors, | T: It’s four-cornered & has four gates
+mn130:16.4 | S: neatly divided section by section. | T: set in the middle of each side.
+mn130:16.5 | S: Surrounded by an iron wall, | T: It’s surrounded by an iron fortress wall
+mn130:16.6 | S: of iron is its roof. | T: and roofed with iron.
+mn130:16.7 | S: The ground is even made of iron, | T: Its floor is made of red-hot iron,
+mn130:16.8 | S: it burns with fierce fire. | T: heated, fully blazing.
+mn130:16.9 | S: The heat forever radiates | T: It stands always, spreading 100 leagues all around.
+mn130:16.10 | S: a hundred leagues around.’ | T: (none)
+mn130:17.1 | S: Now in the Great Hell, flames surge out of the walls and crash into the opposite wall: from east to west, from west to east, from north to south, from south to north, from bottom to top, from top to bottom. | T: “The flame that leaps from the eastern wall of the Great Hell strikes the western wall. The flame that leaps from the western wall strikes the eastern wall. The flame that leaps from the northern wall strikes the southern wall. The flame that leaps from the southern wall strikes the northern wall. The flame that leaps from the bottom strikes the top. The flame that leaps from the top strikes the bottom.
+mn130:17.2 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:18.1 | S: There comes a time when, after a very long period has passed, the eastern gate of the Great Hell is opened. | T: “There comes a time when, ultimately, with the passing of a long stretch of time, the eastern gate of the Great Hell opens.
+mn130:18.2 | S: So they run there as fast as they can. | T: He runs there, rushing quickly.
+mn130:18.3 | S: And as they run, their outer skin, inner skin, flesh, and sinews burn and even their bones smoke. Such is their escape; | T: As he runs there, rushing quickly, his outer skin burns, his inner skin burns, his flesh burns, his tendons burn, even his bones turn to smoke. When (his foot) is lifted, he is just the same.
+mn130:18.4 | S: but when they’ve managed to make it most of the way, the gate is slammed shut. | T: But when he finally arrives, the door slams shut.
+mn130:18.5 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:18.6 | S: There comes a time when, after a very long period has passed, the western gate … | T: “There comes a time when, ultimately, with the passing of a long stretch of time, the western gate of the Great Hell opens…
+mn130:18.7 | S: northern gate … | T: the northern gate…
+mn130:18.8 | S: southern gate of the Great Hell is opened. | T: the southern gate of the Great Hell opens.
+mn130:18.9 | S: So they run there as fast as they can. | T: He runs there, rushing quickly.
+mn130:18.10 | S: And as they run, their outer skin, inner skin, flesh, and sinews burn and even their bones smoke. Such is their escape; | T: As he runs there, rushing quickly, his outer skin burns, his inner skin burns, his flesh burns, his tendons burn, even his bones turn to smoke. When (his foot) is lifted, he is just the same.
+mn130:18.11 | S: but when they’ve managed to make it most of the way, the gate is slammed shut. | T: But when he finally arrives, the door slams shut.
+mn130:18.12 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:19.1 | S: There comes a time when, after a very long period has passed, the eastern gate of the Great Hell is opened. | T: “There comes a time when, ultimately, with the passing of a long stretch of time, the eastern gate of the Great Hell opens.
+mn130:19.2 | S: So they run there as fast as they can. | T: He runs there, rushing quickly.
+mn130:19.3 | S: And as they run, their outer skin, inner skin, flesh, and sinews burn and even their bones smoke. Such is their escape; | T: As he runs there, rushing quickly, his outer skin burns, his inner skin burns, his flesh burns, his tendons burn, even his bones turn to smoke. When (his foot) is lifted, he is just the same.
+mn130:19.4 | S: and they make it out that door. | T: He gets out through the gate.
+mn130:20.1 | S: Immediately adjacent to the Great Hell is the vast Dung Hell. | T: But right next to the Great Hell is a vast Excrement Hell.
+mn130:20.2 | S: And that’s where they fall. | T: He falls into that.
+mn130:20.3 | S: In that Dung Hell there are needle-mouthed creatures that bore through the outer skin, the inner skin, the flesh, sinews, and bones, until they reach the marrow and devour it. | T: And in that Excrement Hell needle-mouth beings bore into his outer skin. Having bored into his outer skin, they bore into his inner skin… his flesh… his tendons… the bone. Having bored into the bone, they feed on the marrow.
+mn130:20.4 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:21.1 | S: Immediately adjacent to the Dung Hell is the vast Hell of Burning Chaff. | T: “Right next to the Excrement Hell is the vast Hot Ashes Hell.
+mn130:21.2 | S: And that’s where they fall. | T: He falls into that.
+mn130:21.3 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:22.1 | S: Immediately adjacent to the Hell of Burning Chaff is the vast Red Silk-Cotton Forest. It’s a league high, full of sixteen-inch thorns, burning, blazing, and glowing. | T: “Right next to the Hot Ashes Hell is the vast Simbali Forest, (with trees) reaching up a league, covered with thorns sixteen fingerbreadths long—burning, blazing, & glowing.
+mn130:22.2 | S: And there they make them climb up and down. | T: He enters that and is made to climb up & down them.
+mn130:22.3 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:23.1 | S: Immediately adjacent to the Red Silk-Cotton Forest is the vast Sword-Leaf Forest. | T: “Right next to the Simbali Forest is the vast Sword-leaf Forest.
+mn130:23.2 | S: They enter that. | T: He enters that.
+mn130:23.3 | S: There the fallen leaves blown by the wind cut their hands, feet, both hands and feet; they cut their ears, nose, both ears and nose. | T: There the leaves, stirred by the wind, cut off his hand, cut off his foot, cut off his hand & foot, cut off his ear, cut off his nose, cut off his ear & nose.
+mn130:23.4 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:24.1 | S: Immediately adjacent to the Sword-Leaf Forest is the vast Acid River. | T: “Right next to the Sword-leaf Forest is the vast Lye-water River.
+mn130:24.2 | S: And that’s where they fall. | T: He falls into that.
+mn130:24.3 | S: There they are swept upstream, swept downstream, and swept both up and down stream. | T: There he is swept downstream, he is swept upstream, he is swept downstream & upstream.
+mn130:24.4 | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:25.1 | S: The wardens of hell pull them out with a hook and place them on solid ground, and say, | T: “Then the hell-wardens pull him out with a hook and, placing him on the ground, say to him,
+mn130:25.2 | S: ‘My man, what do you want?’ | T: ‘Well, good man, what do you want?’
+mn130:25.3 | S: They say, | T: He replies,
+mn130:25.4 | S: ‘I’m hungry, sir.’ | T: ‘I’m hungry, venerable sirs.’
+mn130:25.5 | S: The wardens of hell force open their mouth with a hot iron spike—burning, blazing, and glowing—and shove in a red-hot copper ball, burning, blazing, and glowing. | T: So the hell-wardens pry open his mouth with red-hot iron tongs—burning, blazing, & glowing—and throw into it a copper ball, burning, blazing, & glowing.
+mn130:25.6 | S: It burns their lips, mouth, tongue, throat, and stomach before coming out below dragging their entrails. | T: It burns his lips, it burns his mouth, it burns his stomach and comes out the lower side, carrying along his bowels & intestines.
+mn130:25.7 | S: And there they feel painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:26.1 | S: The wardens of hell say, | T: “Then the hell-wardens say to him,
+mn130:26.2 | S: ‘My man, what do you want?’ | T: ‘Well, good man, what do you want?’
+mn130:26.3 | S: They say, | T: He replies,
+mn130:26.4 | S: ‘I’m thirsty, sir.’ | T: ‘I’m thirsty, venerable sirs.’
+mn130:26.5 | S: The wardens of hell force open their mouth with a hot iron spike—burning, blazing, and glowing—and pour in molten copper, burning, blazing, and glowing. | T: So the hell-wardens pry open his mouth with red-hot iron tongs—burning, blazing, & glowing—and pour into it molten copper, burning, blazing, & glowing.
+mn130:26.6 | S: It burns their lips, mouth, tongue, throat, and stomach before coming out below dragging their entrails. | T: It burns his lips, it burns his mouth, it burns his stomach and comes out the lower side, carrying along his bowels & intestines.
+mn130:26.7 | S: And there they feel painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+mn130:27.1 | S: The wardens of hell toss them back in the Great Hell. | T: “Then the hell-wardens throw him back into the Great Hell once more.
+mn130:28.1 | S: Once upon a time, King Yama thought: | T: “Once, monks, the thought occurred to King Yama:
+mn130:28.2 | S: ‘Those who do such bad deeds in the world receive these many different punishments. | T: ‘Those who did evil actions in the world are tortured in these many ways.
+mn130:28.3 | S: Oh, I hope I may be reborn as a human being! And that a Realized One—a perfected one, a fully awakened Buddha—arises in the world! And that I may pay homage to the Buddha! | T: O that I might gain the human state! And that a Tathāgata—worthy & rightly self-awakened—might arise in the world! And that I might attend to that Tathāgata!
+mn130:28.4 | S: Let that Buddha teach me Dhamma, so that I may understand his teaching!’ | T: And that he might teach me the Dhamma! And that I might understand his Dhamma!’
+mn130:29.1 | S: Now, I don’t say this because I’ve heard it from some other ascetic or brahmin. I only say it because I’ve known, seen, and realized it for myself.” | T: “I tell you this, monks, not from having heard it from another contemplative or brahman. On the contrary, I tell you this just as I have known for myself, seen for myself, understood for myself.”
+mn130:30.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn130:30.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+mn130:30.3 | S: “When warned by the gods’ messengers, | T: Warned by the deva messengers,
+mn130:30.4 | S: those sons of Manu who are negligent | T: those youths who are heedless
+mn130:30.5 | S: sorrow for a long time | T: grieve for a long, long time—
+mn130:30.6 | S: when they go to that wretched place. | T: people entering a lower state.
+mn130:30.7 | S: When warned by the gods’ messengers, | T: But those here who are good, people of integrity, when warned by the deva messengers
+mn130:30.8 | S: the good and true persons here | T: (none)
+mn130:30.9 | S: never neglect | T: aren’t heedless
+mn130:30.10 | S: the teaching of the Noble One. | T: of the noble Dhamma—ever.
+mn130:30.11 | S: Seeing the danger in grasping, | T: Seeing danger in clinging,
+mn130:30.12 | S: the origin of birth and death, | T: in the coming-into-play of birth & death,
+mn130:30.13 | S: the unattached are freed | T: they are released from lack of clinging,
+mn130:30.14 | S: with the ending of birth and death. | T: in the ending of birth & death.
+mn130:30.15 | S: Happy, they’ve come to a safe place, | T: They, happy, arriving at safety,
+mn130:30.16 | S: quenched in this very life. | T: fully unbound in the here & now,
+mn130:30.17 | S: They’ve gone beyond all enmities and fears, | T: having gone beyond all animosity & danger
+mn130:30.18 | S: and risen above all suffering.” | T: have escaped all suffering & stress.
+mn130:30.19 | P: Devadūtasuttaṁ niṭṭhitaṁ dasamaṁ. | T: (none)
+mn130:30.20 | P: Suññatavaggo niṭṭhito tatiyo. | T: (none)
+mn130:31.0 | P: Tassuddānaṁ | T: (none)
+mn130:31.1 | P: Dvidhāva suññatā hoti, | T: (none)
+mn130:31.2 | P: Abbhutadhammabākulaṁ; | T: (none)
+mn130:31.3 | P: Aciravatabhūmijanāmo, | T: (none)
+mn130:31.4 | P: Anuruddhupakkilesaṁ; | T: (none)
+mn130:31.5 | P: Bālapaṇḍito devadūtañca te dasāti. | T: (none)
+
+## mn128
+mn128:1.1 | S: So I have heard. | T: I have heard that
+mn128:1.2 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: on one occasion the Blessed One was staying near Kosambī in Ghosita’s monastery.
+mn128:2.1 | S: Now at that time the mendicants of Kosambī were fighting, quarreling, and disputing, continually wounding each other with barbed words. | T: And on that occasion the Kosambī monks kept arguing, quarreling, & disputing, stabbing one another with weapons of the mouth.
+mn128:3.1 | S: Then a mendicant went up to the Buddha, bowed, stood to one side, and told him what was happening, adding: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One,
+mn128:3.2 | P: “idha, bhante, kosambiyaṁ bhikkhū bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti. | T: “Lord, the Kosambī monks here keep arguing, quarreling, & disputing, stabbing one another with weapons of the mouth.
+mn128:3.3 | S: “Please, sir go to those mendicants out of sympathy.” | T: It would be good, lord, if the Blessed One went to them, out of sympathy.”
+mn128:3.4 | S: The Buddha consented with silence. | T: The Blessed One acquiesced with silence.
+mn128:4.1 | S: Then the Buddha went up to those mendicants and said, | T: Then he went to those monks and, on arrival, said to them,
+mn128:4.2 | S: “Enough, mendicants! Stop fighting, quarreling, and disputing.” | T: “Enough, monks. Don’t quarrel. Don’t argue. Don’t make strife. Don’t dispute.”
+mn128:4.3 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One,
+mn128:4.4 | S: “Wait, sir! | T: “Wait, Lord Blessed One.
+mn128:4.5 | S: Let the Buddha, the Lord of the Dhamma, | T: May the Master of the Dhamma
+mn128:4.6 | S: remain passive, dwelling in blissful meditation in this life. | T: remain inactive, devoted to a pleasant abiding in the here-&-now, Lord Blessed One.
+mn128:4.7 | S: We will be known for this fighting, quarreling, arguing, and disputing.” | T: We will be the ones who will be known for this argument, quarrel, strife, & dispute.”
+mn128:4.8 | S: For a second time … | T: A second time…
+mn128:4.9 | P: “alaṁ, bhikkhave, mā bhaṇḍanaṁ, mā kalahaṁ, mā viggahaṁ, mā vivādan”ti. | T: (none)
+mn128:4.10 | P: Dutiyampi kho so bhikkhu bhagavantaṁ etadavoca: | T: (none)
+mn128:4.11 | P: “āgametu, bhante. | T: (none)
+mn128:4.12 | P: Bhagavā dhammassāmī; | T: (none)
+mn128:4.13 | P: appossukko, bhante, bhagavā diṭṭhadhammasukhavihāraṁ anuyutto viharatu; | T: (none)
+mn128:4.14 | P: mayametena bhaṇḍanena kalahena viggahena vivādena paññāyissāmā”ti. | T: (none)
+mn128:4.15 | S: and a third time the Buddha said to those mendicants, | T: A third time, the Blessed One said to those monks,
+mn128:4.16 | S: “Enough, mendicants! Stop fighting, quarreling, and disputing.” | T: “Enough, monks. Don’t quarrel. Don’t argue. Don’t make strife. Don’t dispute.”
+mn128:4.17 | S: For a third time, that mendicant said to the Buddha, | T: A third time, that monk said to the Blessed One,
+mn128:4.18 | S: “Wait, sir! | T: “Wait, Lord Blessed One.
+mn128:4.19 | S: Let the Buddha, the Lord of the Dhamma, | T: May the Master of the Dhamma
+mn128:4.20 | S: remain passive, dwelling in blissful meditation in this life. | T: remain inactive, devoted to a pleasant abiding in the here-&-now, Lord Blessed One.
+mn128:4.21 | S: We will be known for this fighting, quarreling, arguing, and disputing.” | T: We will be the ones who will be known for this argument, quarrel, strife, & dispute.”
+mn128:5.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: Then, early in the morning, the Blessed One—having adjusted his under robe and carrying his bowl & robes—went into Kosambī for alms.
+mn128:5.2 | S: After the meal, on his return from almsround, he set his lodgings in order. Taking his bowl and robe, he recited these verses while standing right there: | T: Having gone for alms in Kosambī, after the meal, returning from his almsround, having set his dwelling in order, taking his bowl & robes, he recited these verses while standing:
+mn128:6.1 | S: “Many voices shout at once, | T: Loud-voiced on a par with people at large,
+mn128:6.2 | S: yet no one thinks that they’re the fool. | T: no one considers himself a fool.
+mn128:6.3 | S: Even as the Saṅgha splits, | T: Though the Saṅgha is splitting,
+mn128:6.4 | S: they think no better of the other. | T: they don’t consider anything else more.
+mn128:6.5 | S: Dolts pretending to be astute, | T: Completely forgotten: the words of the wise
+mn128:6.6 | S: they talk, their words out of bounds. | T: declaring the right range of speech.
+mn128:6.7 | S: They blab at will, their mouths agape, | T: Mouth-stretching as far as they want,
+mn128:6.8 | S: and not one knows what leads them on. | T: led on where, by what, they don’t know.
+mn128:6.9 | S: ‘They abused me, they hit me! | T: ‘He insulted me, hit me,
+mn128:6.10 | S: They beat me, they robbed me!’ | T: beat me, robbed me’:
+mn128:6.11 | S: For those bearing such a grudge, | T: For those who brood on this,
+mn128:6.12 | S: hatred is never laid to rest. | T: hostility isn’t stilled.
+mn128:6.13 | S: ‘They abused me, they hit me! | T: ‘He insulted me, hit me,
+mn128:6.14 | S: They beat me, they robbed me!’ | T: beat me, robbed me’:
+mn128:6.15 | S: For those who bear no such grudge, | T: For those who don’t brood on this,
+mn128:6.16 | S: hatred is laid to rest. | T: hostility is stilled.
+mn128:6.17 | S: For never is hatred | T: Hostilities aren’t stilled through hostility, regardless.
+mn128:6.18 | S: laid to rest by hate, | T: (none)
+mn128:6.19 | S: it’s laid to rest by love: | T: Hostilities are stilled through non-hostility:
+mn128:6.20 | S: this is an ancient teaching. | T: This, an unending truth.
+mn128:6.21 | S: When others do not understand, | T: Unlike those who don’t realize
+mn128:6.22 | S: let us, who do understand this, | T: that we’re here on the verge of perishing,
+mn128:6.23 | S: restrain ourselves in this regard; | T: those who do:
+mn128:6.24 | S: for that is how conflicts are laid to rest. | T: Their quarrels are stilled.
+mn128:6.25 | S: Breakers of bones and takers of life, | T: Bone-breakers, killers,
+mn128:6.26 | S: thieves of cattle, horses, wealth, | T: cattle thieves, robbers,
+mn128:6.27 | S: those who plunder the nation: | T: those who plunder the nation:
+mn128:6.28 | S: even they can come together, | T: Even they have their fellowship.
+mn128:6.29 | S: so why can’t you? | T: Why shouldn’t you have yours?
+mn128:6.30 | S: If you find an alert companion, | T: If you gain a mature companion—
+mn128:6.31 | S: an attentive friend to live happily together, | T: a fellow traveler, right-living, enlightened—
+mn128:6.32 | S: then, overcoming all adversities, | T: overcoming all dangers
+mn128:6.33 | S: wander with them, joyful and mindful. | T: go with him, gratified, mindful.
+mn128:6.34 | S: If you find no alert companion, | T: If you don’t gain a mature companion—
+mn128:6.35 | S: no attentive friend to live happily together, | T: a fellow traveler, right-living, enlightened—
+mn128:6.36 | S: then, like a king who flees his conquered realm, | T: go alone like a king renouncing his kingdom,
+mn128:6.37 | S: wander alone like a tusker in the wilds. | T: like the elephant in the Mātaṅga wilds, his herd.
+mn128:6.38 | S: It’s better to wander alone, | T: Going alone is better,
+mn128:6.39 | S: there’s no fellowship with fools. | T: there’s no companionship with a fool.
+mn128:6.40 | S: Wander alone and do no wrong, | T: Go alone, doing no evil,
+mn128:6.41 | S: at ease like a tusker in the wilds.” | T: at peace, like the elephant in the Mātaṅga wilds.
+mn128:7.1 | S: After speaking these verses while standing, the Buddha went to the village of the child salt-miners, | T: Having recited these verses while standing, the Blessed One went to Bālakaloṇakāraka Village.
+mn128:7.2 | S: where Venerable Bhagu was staying at the time. | T: Now, on that occasion Ven. Bhagu was staying near Bālakaloṇakāraka Village.
+mn128:7.3 | S: Bhagu saw the Buddha coming off in the distance, | T: He saw the Blessed One coming from afar and,
+mn128:7.4 | S: so he spread out a seat and placed water for washing the feet. | T: on seeing him, laid out a seat and water for washing the feet.
+mn128:7.5 | S: The Buddha sat down on the seat spread out, | T: The Blessed One sat down on the seat laid out and, seated,
+mn128:7.6 | S: and washed his feet. | T: washed his feet.
+mn128:7.7 | S: Bhagu bowed to the Buddha and sat down to one side. | T: Ven. Bhagu, having bowed down to the Blessed One, sat to one side.
+mn128:7.8 | S: The Buddha said to him, | T: As he was sitting there, the Blessed One said to him,
+mn128:7.9 | S: “I hope you’re keeping well, mendicant, I hope you’re all right. And I hope you’re having no trouble getting almsfood.” | T: “Is it tolerable, monk? Are you getting by? Are you weary from going for alms?”
+mn128:7.10 | S: “I’m keeping well, Blessed One, I’m all right. And I’m having no trouble getting almsfood.” | T: “It’s tolerable, O Blessed One. I’m getting by, O Blessed One. And I’m not weary, lord, from going for alms.”
+mn128:7.11 | S: Then the Buddha educated, encouraged, fired up, and inspired Bhagu with a Dhamma talk, after which he rose from his seat and set out for the Park of the East-Raftered Hall. | T: Then the Blessed One, having instructed, urged, roused, & encouraged Ven. Bhagu with a Dhamma talk, got up from his seat and went to the Eastern Bamboo Park.
+mn128:8.1 | S: Now at that time the venerables Anuruddha, Nandiya, and Kimbila were staying in the Park of the East-Raftered Hall. | T: On that occasion, Ven. Anuruddha, Ven. Nandiya, & Ven. Kimbila were staying in the Eastern Bamboo Park.
+mn128:8.2 | S: The park keeper saw the Buddha coming off in the distance | T: The park warden saw the Blessed One coming from afar and,
+mn128:8.3 | S: and said to the Buddha, | T: on seeing him, said to him,
+mn128:8.4 | S: “Don’t come into this park, ascetic. | T: “Contemplative, don’t enter the park.
+mn128:8.5 | S: There are three gentlemen staying here whose nature is to desire self-knowledge. | T: There are three sons of good families living there, apparently desiring their own (welfare).
+mn128:8.6 | S: Do not disturb them.” | T: Don’t disturb them.”
+mn128:9.1 | S: Anuruddha heard the park keeper conversing with the Buddha, | T: Ven. Anuruddha heard the park warden conversing with the Blessed One and,
+mn128:9.2 | S: and said to him, | T: on hearing him, said to the park warden,
+mn128:9.3 | S: “Don’t keep the Buddha out, good park keeper! | T: “Friend park warden, don’t stand in the way of the Blessed One.
+mn128:9.4 | S: Our Teacher, the Blessed One, has arrived.” | T: It’s our Teacher, the Blessed One, who has arrived!”
+mn128:10.1 | S: Then Anuruddha went to Nandiya and Kimbila, and said to them, | T: Then Ven. Anuruddha went to Ven. Nandiya & Ven. Kimbila and, on arrival, said to them,
+mn128:10.2 | S: “Come forth, venerables, come forth! Our Teacher, the Blessed One, has arrived!” | T: “Come out, venerables! Come out, venerables! It’s our Teacher, the Blessed One, who has arrived!”
+mn128:10.3 | S: Then Anuruddha, Nandiya, and Kimbila came out to greet the Buddha. | T: Then Ven. Anuruddha, Ven. Nandiya, & Ven. Kimbila went out to greet the Blessed One.
+mn128:10.4 | S: One received his bowl and robe, one spread out a seat, and one set out water for washing his feet. | T: One received his robe & bowl. Another laid out a seat. Another set out water for washing his feet.
+mn128:10.5 | S: The Buddha sat down on the seat spread out, | T: The Blessed One sat down on the seat laid out and, seated,
+mn128:10.6 | S: and washed his feet. | T: washed his feet.
+mn128:10.7 | S: Those venerables bowed and sat down to one side. | T: They, having bowed down to the Blessed One, sat to one side.
+mn128:10.8 | S: The Buddha said to Anuruddha, | T: As they were sitting there, the Blessed One said to Ven. Anuruddha,
+mn128:10.9 | S: “I hope you’re keeping well, Anuruddha and friends, I hope you’re all right. And I hope you’re having no trouble getting almsfood.” | T: “Is it tolerable for you, Anuruddhas? Are you getting by? Are you weary from going for alms?”
+mn128:10.10 | S: “We’re keeping well, Blessed One, we’re getting by. And we have no trouble getting almsfood.” | T: “It’s tolerable, O Blessed One. We’re getting by, O Blessed One. And we’re not weary, lord, from going for alms.”
+mn128:11.1 | S: “I hope you’re living in harmony, appreciating each other, without quarreling, blending like milk and water, and regarding each other with kindly eyes?” | T: “But, Anuruddhas, are you living harmoniously, cordially, & without dispute, blending like milk & water, looking at one another with eyes of affection?”
+mn128:11.2 | S: “Indeed, sir, we live in harmony as you say.” | T: “Yes, lord, we’re living harmoniously, cordially, & without dispute, blending like milk & water, looking at one another with eyes of affection.”
+mn128:11.3 | S: “But how do you live this way?” | T: “But, Anuruddhas, how are you living harmoniously, cordially, & without dispute, blending like milk & water, looking at one another with eyes of affection?”
+mn128:12.1 | S: “In this case, sir, I think: | T: “Here, lord, the thought occurs to me,
+mn128:12.2 | S: ‘I’m fortunate, so very fortunate, | T: ‘It’s a gain for me, a great gain,
+mn128:12.3 | S: to live together with spiritual companions such as these.’ | T: that I’m living with companions like this in the holy life.’
+mn128:12.4 | S: I consistently treat these venerables with kindness by way of body, speech, and mind, both in public and in private. | T: I’m set on bodily acts of goodwill with regard to these venerable ones, to their faces & behind their backs.
+mn128:12.5 | P: mettaṁ vacīkammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, | T: I’m set on verbal acts…
+mn128:12.6 | P: mettaṁ manokammaṁ paccupaṭṭhitaṁ āvi ceva raho ca. | T: mental acts of goodwill with regard to these venerable ones, to their faces & behind their backs.
+mn128:12.7 | S: I think: | T: The thought occurs to me,
+mn128:12.8 | S: ‘Why don’t I set aside my own ideas and just go along with these venerables’ ideas?’ | T: ‘Why don’t I, having cast aside my own mind, conduct myself in line with the mind of these venerable ones?’
+mn128:12.9 | S: And that’s what I do. | T: So, having cast aside my own mind, I conduct myself in line with the mind of these venerable ones.
+mn128:12.10 | S: Though we’re different in body, sir, we’re one in mind, it seems to me.” | T: We are separate in body, lord, but one—as it were—in mind.”
+mn128:12.11 | S: And the venerables Nandiya and Kimbila spoke likewise, and they added: | T: Ven. Nandiya & Ven. Kimbila said to the Blessed One,
+mn128:12.12 | P: āyasmāpi kho kimilo bhagavantaṁ etadavoca: | T: (none)
+mn128:12.13 | P: “mayhampi kho, bhante, evaṁ hoti: | T: “Here, lord, the thought occurs to me also,
+mn128:12.14 | P: ‘lābhā vata me, suladdhaṁ vata me | T: ‘It’s a gain for me, a great gain…
+mn128:12.15 | P: yohaṁ evarūpehi sabrahmacārīhi saddhiṁ viharāmī’ti. | T: (none)
+mn128:12.16 | P: Tassa mayhaṁ, bhante, imesu āyasmantesu mettaṁ kāyakammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, | T: (none)
+mn128:12.17 | P: mettaṁ vacīkammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, | T: (none)
+mn128:12.18 | P: mettaṁ manokammaṁ paccupaṭṭhitaṁ āvi ceva raho ca. | T: (none)
+mn128:12.19 | P: Tassa mayhaṁ, bhante, evaṁ hoti: | T: (none)
+mn128:12.20 | P: ‘yannūnāhaṁ sakaṁ cittaṁ nikkhipitvā imesaṁyeva āyasmantānaṁ cittassa vasena vatteyyan’ti. | T: (none)
+mn128:12.21 | P: So kho ahaṁ, bhante, sakaṁ cittaṁ nikkhipitvā imesaṁyeva āyasmantānaṁ cittassa vasena vattāmi. | T: (none)
+mn128:12.22 | P: Nānā hi kho no, bhante, kāyā, ekañca pana maññe cittanti. | T: We are separate in body, lord, but one—as it were—in mind.”
+mn128:12.23 | S: “That’s how we live in harmony, appreciating each other, without dispute, blending like milk and water, and regarding each other with kindly eyes.” | T: [Ven. Anuruddha:] “This, lord, is how we are living harmoniously, cordially, & without dispute, blending like milk & water, looking at one another with eyes of affection.”
+mn128:13.1 | S: “Good, good, Anuruddha and friends! | T: (none)
+mn128:13.2 | S: But I hope you’re living diligently, keen, and resolute?” | T: “But, Anuruddhas, do you remain heedful, ardent, & resolute?”
+mn128:14.1 | S: “Indeed, sir, we live diligently.” | T: “Yes, lord, we remain heedful, ardent, & resolute.”
+mn128:14.2 | S: “But how do you live this way?” | T: “But, Anuruddhas, how do you remain heedful, ardent, & resolute?”
+mn128:14.3 | S: “In this case, sir, whoever returns first from almsround prepares the seats, and puts out the drinking water and the rubbish bin. | T: “Here, lord, whichever of us returns first from going to the village for alms lays out the seats, sets out water for drinking & using, and sets out the refuse bucket.
+mn128:14.4 | S: If there’s remainder, whoever returns last eats it if they like. Otherwise they throw it out where there is little that grows, or drop it into water that has no living creatures. | T: Whoever returns afterwards from going to the village for alms eats the leftovers—if there are any and if he wants to—and if not, he throws them out in a place where there are no crops or dumps them into water without living beings in it.
+mn128:14.5 | S: Then they put away the seats, drinking water, and rubbish bin, and sweep the refectory. | T: He puts away the seats, puts away the water for drinking & using, puts away the refuse bucket after having washed it, and sweeps the meal hall.
+mn128:14.6 | S: If someone sees that the pot of water for washing, drinking, or the toilet is empty they set it up. | T: “Whoever sees that the drinking-water jar, using-water jar, or rinsing-water jar [in the bathroom] are low or empty refills it.
+mn128:14.7 | S: If he can’t do it, he summons another with a wave of the hand, and they set it up by lending each other a hand to lift. But we don’t break into speech for that reason. | T: If it occurs to him, ‘It’s too much for me,’ he calls another by waving—using hand signals—and they refill the drinking-water jar or using-water jar by joining hands. But we don’t for that reason break into speech.
+mn128:14.8 | S: And every five days we sit together for the whole night and discuss the teachings. | T: “And every five days we sit together for the whole night to discuss the Dhamma.
+mn128:14.9 | S: That’s how we live diligently, keen, and resolute.” | T: That’s how we remain heedful, ardent, & resolute.”
+mn128:15.1 | S: “Good, good, Anuruddha and friends! | T: “Excellent, Anuruddhas. Excellent.
+mn128:15.2 | S: But as you live diligently like this, have you achieved any superhuman distinction in knowledge and vision worthy of the noble ones, a comfortable meditation?” | T: But, remaining heedful, ardent, & resolute in this way, do you have a comfortable abiding where a superior human attainment, a truly noble distinction of knowledge & vision, has been attained?”
+mn128:15.3 | S: “Well, sir, while meditating diligent, keen, and resolute, we perceive both light and vision of forms. | T: “Lord, as we remain heedful, ardent, & resolute in this way, we perceive both light and a vision of forms,
+mn128:15.4 | S: But before long the light and the vision of forms vanish. | T: but not long afterward the light and the vision of forms disappears,
+mn128:15.5 | S: We haven’t worked out the basis of that.” | T: and we haven’t ferreted out the reason for that.”
+mn128:16.1 | S: “Well, you should work out the basis of that. | T: “Anuruddhas, you should ferret out the reason for that.
+mn128:16.2 | S: Before my awakening—when I was still unawakened but intent on awakening—I too perceived light and vision of forms. | T: Even I, before my self-awakening, when I was still just an unawakened bodhisatta, perceived both light and a vision of forms.
+mn128:16.3 | S: But before long my light and vision of forms vanished. | T: But not long afterward the light and the vision of forms disappeared.
+mn128:16.4 | S: It occurred to me: | T: The thought occurred to me:
+mn128:16.5 | S: ‘What’s the cause, what’s the reason why my light and vision of forms vanish?’ | T: ‘What is the cause, what is the reason, why the light and the vision of forms have disappeared?’
+mn128:16.6 | S: It occurred to me: | T: Then the thought occurred to me:
+mn128:16.7 | S: ‘Doubt arose in me, and because of that my immersion fell away. | T: ‘Doubt has arisen in me, and on account of the doubt my concentration fell away.
+mn128:16.8 | S: When immersion falls away, the light and vision of forms vanish. | T: With the falling away of concentration, the light and the vision of forms have disappeared.
+mn128:16.9 | S: I’ll make sure that doubt will not arise in me again.’ | T: I will act in a way such that doubt doesn’t arise in me again.’
+mn128:17.1 | S: While meditating diligent, keen, and resolute, I perceived light and vision of forms. | T: “So—staying heedful, ardent, & resolute—I perceived light and a vision of forms.
+mn128:17.2 | S: But before long my light and vision of forms vanished. | T: But not long afterward the light and the vision of forms disappeared.
+mn128:17.3 | S: It occurred to me: | T: The thought occurred to me:
+mn128:17.4 | S: ‘What’s the cause, what’s the reason why my light and vision of forms vanish?’ | T: ‘What is the cause, what is the reason, why the light and the vision of forms have disappeared?’
+mn128:17.5 | S: It occurred to me: | T: Then the thought occurred to me:
+mn128:17.6 | S: ‘Loss of focus arose in me, and because of that my immersion fell away. | T: ‘Inattention has arisen in me…’
+mn128:17.7 | S: When immersion falls away, the light and vision of forms vanish. | T: (none)
+mn128:17.8 | S: I’ll make sure that neither doubt nor loss of focus will arise in me again.’ | T: (none)
+mn128:18.1 | S: While meditating … | T: (none)
+mn128:18.2 | P: tassa mayhaṁ, anuruddhā, etadahosi: | T: …
+mn128:18.3 | S: ‘Dullness and drowsiness arose in me … | T: ‘Sloth-&-drowsiness has arisen in me…’
+mn128:18.4 | P: Samādhimhi cute obhāso antaradhāyati dassanañca rūpānaṁ. | T: (none)
+mn128:18.5 | S: I’ll make sure that neither doubt nor loss of focus nor dullness and drowsiness will arise in me again.’ | T: (none)
+mn128:19.1 | S: While meditating … | T: …
+mn128:19.2 | P: tassa mayhaṁ, anuruddhā, etadahosi: | T: (none)
+mn128:19.3 | S: ‘Terror arose in me, and because of that my immersion fell away. | T: ‘Panic has arisen in me, and on account of the panic my concentration fell away.
+mn128:19.4 | S: When immersion falls away, the light and vision of forms vanish. | T: With the falling away of concentration, the light and the vision of forms have disappeared.’
+mn128:19.5 | S: Suppose a person was traveling along a road, and killers were to spring out at them from both sides. They’d feel terrified because of that. | T: Suppose, Anuruddhas, that a man was traveling along a road, and murderers appeared on both sides. He would, for that reason, feel panic.
+mn128:19.6 | S: In the same way, terror arose in me … | T: In the same way, panic arose in me, and on account of the panic my concentration fell away.
+mn128:19.7 | P: Samādhimhi cute obhāso antaradhāyati dassanañca rūpānaṁ. | T: With the falling away of concentration, the light and the vision of forms disappeared.
+mn128:19.8 | S: I’ll make sure that neither doubt nor loss of focus nor dullness and drowsiness nor terror will arise in me again.’ | T: [I thought:] ‘I will act in a way such that doubt, inattention, sloth-&-drowsiness, and panic don’t arise in me again.’
+mn128:20.1 | S: While meditating … | T: “So—staying heedful, ardent, & resolute—I perceived light and a vision of forms. But not long afterward the light and the vision of forms disappeared. The thought occurred to me: ‘What is the cause, what is the reason, why the light and the vision of forms have disappeared?’
+mn128:20.2 | P: tassa mayhaṁ, anuruddhā, etadahosi: | T: Then the thought occurred to me:
+mn128:20.3 | S: ‘Elation arose in me, and because of that my immersion fell away. | T: ‘Excitement has arisen in me, and on account of the excitement my concentration fell away.
+mn128:20.4 | S: When immersion falls away, the light and vision of forms vanish. | T: With the falling away of concentration, the light and the vision of forms have disappeared.’
+mn128:20.5 | S: Suppose a person was looking for the entrance to a treasure trove. And all at once they’d come across five entrances! They’d feel excited because of that. | T: Suppose, Anuruddhas, that a man searching for portals to hidden treasure suddenly came across five portals to hidden treasure. He would, for that reason, feel excitement.
+mn128:20.6 | S: In the same way, elation arose in me … | T: In the same way, excitement arose in me.…
+mn128:20.7 | P: Samādhimhi cute obhāso antaradhāyati dassanañca rūpānaṁ. | T: (none)
+mn128:20.8 | S: I’ll make sure that neither doubt nor loss of focus nor dullness and drowsiness nor terror nor elation will arise in me again.’ | T: [I thought:] ‘I will act in a way such that doubt, inattention, sloth-&-drowsiness, panic, and excitement don’t arise in me again.’

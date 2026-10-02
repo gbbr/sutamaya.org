@@ -1,0 +1,395 @@
+## mn38, continued
+mn38:18.16 | P: “Taṇhāpaccayā upādānanti iti kho panetaṁ vuttaṁ, taṇhāpaccayā nu kho, bhikkhave, upādānaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: “‘With craving as condition, clinging’: so it was said. Now, bhikkhus, does clinging have craving as condition or not, or how do you take it in this case?”
+mn38:18.17 | P: “Taṇhāpaccayā, bhante, upādānaṁ; | T: “Clinging has craving as condition, venerable sir.
+mn38:18.18 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.19 | P: taṇhāpaccayā upādānan”ti. | T: ‘With craving as condition, clinging.’”
+mn38:18.20 | P: “Vedanāpaccayā taṇhāti iti kho panetaṁ vuttaṁ; | T: “‘With feeling as condition, craving’: so it was said.
+mn38:18.21 | P: vedanāpaccayā nu kho, bhikkhave, taṇhā, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does craving have feeling as condition or not, or how do you take it in this case?”
+mn38:18.22 | P: “Vedanāpaccayā, bhante, taṇhā; | T: “Craving has feeling as condition, venerable sir.
+mn38:18.23 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.24 | P: vedanāpaccayā taṇhā”ti. | T: ‘With feeling as condition, craving.’”
+mn38:18.25 | P: “Phassapaccayā vedanāti iti kho panetaṁ vuttaṁ; | T: “‘With contact as condition, feeling’: so it was said.
+mn38:18.26 | P: phassapaccayā nu kho, bhikkhave, vedanā, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does feeling have contact as condition or not, or how do you take it in this case?”
+mn38:18.27 | P: “Phassapaccayā, bhante, vedanā; | T: “Feeling has contact as condition, venerable sir.
+mn38:18.28 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.29 | P: phassapaccayā vedanā”ti. | T: ‘With contact as condition, feeling.’”
+mn38:18.30 | P: “Saḷāyatanapaccayā phassoti iti kho panetaṁ vuttaṁ; | T: “‘With the sixfold base as condition, contact’: so it was said.
+mn38:18.31 | P: saḷāyatanapaccayā nu kho, bhikkhave, phasso, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does contact have the sixfold base as condition or not, or how do you take it in this case?”
+mn38:18.32 | P: “Saḷāyatanapaccayā, bhante, phasso; | T: “Contact has the sixfold base as condition, venerable sir.
+mn38:18.33 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.34 | P: saḷāyatanapaccayā phasso”ti. | T: ‘With the sixfold base as condition, contact.’”
+mn38:18.35 | P: “Nāmarūpapaccayā saḷāyatananti iti kho panetaṁ vuttaṁ; | T: “‘With mentality-materiality as condition, the sixfold base’: so it was said.
+mn38:18.36 | P: nāmarūpapaccayā nu kho, bhikkhave, saḷāyatanaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does the sixfold base have mentality-materiality as condition or not, or how do you take it in this case?”
+mn38:18.37 | P: “Nāmarūpapaccayā, bhante, saḷāyatanaṁ; | T: “The sixfold base has mentality-materiality as condition, venerable sir.
+mn38:18.38 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.39 | P: nāmarūpapaccayā saḷāyatanan”ti. | T: ‘With mentality-materiality as condition, the sixfold base.’”
+mn38:18.40 | P: “Viññāṇapaccayā nāmarūpanti iti kho panetaṁ vuttaṁ; | T: “‘With consciousness as condition, mentality-materiality’: so it was said.
+mn38:18.41 | P: viññāṇapaccayā nu kho, bhikkhave, nāmarūpaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does mentality-materiality have consciousness as condition or not, or how do you take it in this case?”
+mn38:18.42 | P: “Viññāṇapaccayā, bhante, nāmarūpaṁ; | T: “Mentality-materiality has consciousness as condition, venerable sir.
+mn38:18.43 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.44 | P: viññāṇapaccayā nāmarūpan”ti. | T: ‘With consciousness as condition, mentality-materiality.’”
+mn38:18.45 | P: “Saṅkhārapaccayā viññāṇanti iti kho panetaṁ vuttaṁ; | T: “‘With formations as condition, consciousness’: so it was said.
+mn38:18.46 | P: saṅkhārapaccayā nu kho, bhikkhave, viññāṇaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does consciousness have formations as condition or not, or how do you take it in this case?”
+mn38:18.47 | P: “Saṅkhārapaccayā, bhante, viññāṇaṁ; | T: “Consciousness has formations as condition, venerable sir.
+mn38:18.48 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.49 | P: saṅkhārapaccayā viññāṇan”ti. | T: ‘With formations as condition, consciousness.’”
+mn38:18.50 | S: ‘Ignorance is a requirement for choices.’ That’s what I said. | T: “‘With ignorance as condition, formations’: so it was said.
+mn38:18.51 | S: Is that how you see this or not?” | T: Now, bhikkhus, do formations have ignorance as condition or not, or how do you take it in this case?”
+mn38:18.52 | P: “Avijjāpaccayā, bhante, saṅkhārā; | T: “Formations have ignorance as condition, venerable sir.
+mn38:18.53 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:18.54 | P: avijjāpaccayā saṅkhārā”ti. | T: ‘With ignorance as condition, formations. ’”
+mn38:19.1 | S: “Good, mendicants! | T: Recapitulation on Arising “Good, bhikkhus.
+mn38:19.2 | S: So both you and I say this. | T: So you say thus, and I also say thus:
+mn38:19.3 | S: When this exists, this comes to be; due to the arising of this, this arises. That is: | T: ‘When this exists, that comes to be; with the arising of this, that arises.’ That is,
+mn38:19.4 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, formations come to be;
+mn38:19.5 | S: Choices are a requirement for consciousness. | T: with formations as condition, consciousness;
+mn38:19.6 | S: Consciousness is a requirement for name and form. | T: with consciousness as condition, mentality-materiality;
+mn38:19.7 | S: Name and form are requirements for the six sense fields. | T: with mentality-materiality as condition, the sixfold base;
+mn38:19.8 | S: The six sense fields are requirements for contact. | T: with the sixfold base as condition, contact;
+mn38:19.9 | S: Contact is a requirement for feeling. | T: with contact as condition, feeling;
+mn38:19.10 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+mn38:19.11 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+mn38:19.12 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, being;
+mn38:19.13 | S: Continued existence is a requirement for rebirth. | T: with being as condition, birth;
+mn38:19.14 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:19.15 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:20.1 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: Forward Exposition on Cessation “But with the remainderless fading away and cessation of ignorance comes cessation of formations;
+mn38:20.2 | S: When choices cease, consciousness ceases. | T: with the cessation of formations, cessation of consciousness;
+mn38:20.3 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of mentality-materiality;
+mn38:20.4 | S: When name and form cease, the six sense fields cease. | T: with the cessation of mentality-materiality, cessation of the sixfold base;
+mn38:20.5 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the sixfold base, cessation of contact;
+mn38:20.6 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+mn38:20.7 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+mn38:20.8 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+mn38:20.9 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of being;
+mn38:20.10 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of being, cessation of birth;
+mn38:20.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:20.12 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:21.1 | S: ‘When rebirth ceases, old age and death cease.’ That’s what I said. | T: Reverse Order Questionnaire on Cessation “‘With the cessation of birth, cessation of ageing and death’: so it was said.
+mn38:21.2 | S: Is that how you see this or not?” | T: Now, bhikkhus, do ageing and death cease with the cessation of birth or not, or how do you take it in this case?”
+mn38:21.3 | P: “Jātinirodhā, bhante, jarāmaraṇanirodho; | T: “Ageing and death cease with the cessation of birth, venerable sir.
+mn38:21.4 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:21.5 | P: jātinirodhā jarāmaraṇanirodho”ti. | T: ‘With the cessation of birth, cessation of ageing and death.’”
+mn38:21.6 | S: “‘When continued existence ceases, rebirth ceases.’ … | T: “‘With the cessation of being, cessation of birth’…‘With the cessation of clinging, cessation of being’…
+mn38:21.7 | P: bhavanirodhā nu kho, bhikkhave, jātinirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.8 | P: “Bhavanirodhā, bhante, jātinirodho; | T: (none)
+mn38:21.9 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.10 | P: bhavanirodhā jātinirodho”ti. | T: (none)
+mn38:21.11 | P: “Upādānanirodhā bhavanirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.12 | P: upādānanirodhā nu kho, bhikkhave, bhavanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.13 | P: “Upādānanirodhā, bhante, bhavanirodho; | T: (none)
+mn38:21.14 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.15 | P: upādānanirodhā bhavanirodho”ti. | T: (none)
+mn38:21.16 | P: “Taṇhānirodhā upādānanirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.17 | P: taṇhānirodhā nu kho, bhikkhave, upādānanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.18 | P: “Taṇhānirodhā, bhante, upādānanirodho; | T: (none)
+mn38:21.19 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.20 | P: taṇhānirodhā upādānanirodho”ti. | T: ‘With the cessation of craving, cessation of clinging’…
+mn38:21.21 | P: “Vedanānirodhā taṇhānirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.22 | P: vedanānirodhā nu kho, bhikkhave, taṇhānirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.23 | P: “Vedanānirodhā, bhante, taṇhānirodho; | T: (none)
+mn38:21.24 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.25 | P: vedanānirodhā taṇhānirodho”ti. | T: ‘With the cessation of feeling, cessation of craving’…
+mn38:21.26 | P: “Phassanirodhā vedanānirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.27 | P: phassanirodhā nu kho, bhikkhave, vedanānirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.28 | P: “Phassanirodhā, bhante, vedanānirodho; | T: (none)
+mn38:21.29 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.30 | P: phassanirodhā vedanānirodho”ti. | T: ‘With the cessation of contact, cessation of feeling’ …’With the cessation of the sixfold base, cessation of contact’…‘With the cessation of mentality-materiality, cessation of the sixfold base’…‘With the cessation of consciousness, cessation of mentality-materiality’…‘With the cessation of formations, cessation of consciousness’…
+mn38:21.31 | P: “Saḷāyatananirodhā phassanirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.32 | P: saḷāyatananirodhā nu kho, bhikkhave, phassanirodho, no vā, kathaṁ vā ettha hotīti? | T: (none)
+mn38:21.33 | P: Saḷāyatananirodhā, bhante, phassanirodho; | T: (none)
+mn38:21.34 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.35 | P: saḷāyatananirodhā phassanirodho”ti. | T: (none)
+mn38:21.36 | P: “Nāmarūpanirodhā saḷāyatananirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.37 | P: nāmarūpanirodhā nu kho, bhikkhave, saḷāyatananirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.38 | P: “Nāmarūpanirodhā, bhante, saḷāyatananirodho; | T: (none)
+mn38:21.39 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.40 | P: nāmarūpanirodhā saḷāyatananirodho”ti. | T: (none)
+mn38:21.41 | P: “Viññāṇanirodhā nāmarūpanirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.42 | P: viññāṇanirodhā nu kho, bhikkhave, nāmarūpanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.43 | P: “Viññāṇanirodhā, bhante, nāmarūpanirodho; | T: (none)
+mn38:21.44 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.45 | P: viññāṇanirodhā nāmarūpanirodho”ti. | T: (none)
+mn38:21.46 | P: “Saṅkhāranirodhā viññāṇanirodhoti iti kho panetaṁ vuttaṁ; | T: (none)
+mn38:21.47 | P: saṅkhāranirodhā nu kho, bhikkhave, viññāṇanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.48 | P: “Saṅkhāranirodhā, bhante, viññāṇanirodho; | T: (none)
+mn38:21.49 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.50 | P: saṅkhāranirodhā viññāṇanirodho”ti. | T: (none)
+mn38:21.51 | S: ‘When ignorance ceases, choices cease.’ That’s what I said. | T: ‘With the cessation of ignorance, cessation of formations’: so it was said.
+mn38:21.52 | S: Is that how you see this or not?” | T: Now, bhikkhus, do formations cease with the cessation of ignorance or not, or how do you take it in this case?”
+mn38:21.53 | P: “Avijjānirodhā, bhante, saṅkhāranirodho; | T: “Formations cease with the cessation of ignorance, venerable sir.
+mn38:21.54 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:21.55 | P: avijjānirodhā saṅkhāranirodho”ti. | T: ‘With the cessation of ignorance, cessation of formations.’”
+mn38:22.1 | S: “Good, mendicants! | T: Recapitulation on Cessation “Good, bhikkhus.
+mn38:22.2 | S: So both you and I say this. | T: So you say thus, and I also say thus:
+mn38:22.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: ‘When this does not exist, that does not come to be; with the cessation of this, that ceases.’ That is,
+mn38:22.4 | S: When ignorance ceases, choices cease. | T: with the cessation of ignorance comes cessation of formations;
+mn38:22.5 | S: When choices cease, consciousness ceases. | T: with the cessation of formations, cessation of consciousness;
+mn38:22.6 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of mentality-materiality;
+mn38:22.7 | S: When name and form cease, the six sense fields cease. | T: with the cessation of mentality-materiality, cessation of the sixfold base;
+mn38:22.8 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the sixfold base, cessation of contact;
+mn38:22.9 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+mn38:22.10 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+mn38:22.11 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+mn38:22.12 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of being;
+mn38:22.13 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of being, cessation of birth;
+mn38:22.14 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:22.15 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:23.1 | S: Knowing and seeing in this way, mendicants, would you turn back to the first beginning, thinking, | T: Personal Knowledge “Bhikkhus, knowing and seeing in this way, would you run back to the past thus:
+mn38:23.2 | S: ‘Did we exist in the past? Did we not exist in the past? What were we in the past? How were we in the past? After being what, what did we become in the past?’?” | T: ‘Were we in the past? Were we not in the past? What were we in the past? How were we in the past? Having been what, what did we become in the past?’?”—
+mn38:23.3 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:23.4 | S: “Knowing and seeing in this way, mendicants, would you turn forward to the final end, thinking, | T: “Knowing and seeing in this way, would you run forward to the future thus:
+mn38:23.5 | S: ‘Will we exist in the future? Will we not exist in the future? What will we be in the future? How will we be in the future? After being what, what will we become in the future?’?” | T: ‘Shall we be in the future? Shall we not be in the future? What shall we be in the future? How shall we be in the future? Having been what, what shall we become in the future?’?”—
+mn38:23.6 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.1 | S: “Knowing and seeing in this way, mendicants, would you be undecided about the present, thinking, | T: “Knowing and seeing in this way, would you now be inwardly perplexed about the present thus:
+mn38:24.2 | S: ‘Am I? Am I not? What am I? How am I? This sentient being—where did it come from? And where will it go?’?” | T: ‘Am I? Am I not? What am I? How am I? Where has this being come from? Where will it go?’?”—
+mn38:24.3 | S: “No, sir.” | T: “No, venerable sir.”
+mn38:24.4 | S: “Knowing and seeing in this way, would you say, | T: “Bhikkhus, knowing and seeing in this way, would you speak thus:
+mn38:24.5 | S: ‘Our teacher is respected. We speak like this out of esteem for our teacher’?” | T: ‘The Teacher is respected by us. We speak as we do out of respect for the Teacher’?”—
+mn38:24.6 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.7 | S: “Knowing and seeing in this way, would you say, | T: “Knowing and seeing in this way, would you speak thus:
+mn38:24.8 | S: ‘Our ascetic says this. We speak like this because it is what he says’?” | T: ‘The Recluse says this, and we speak thus at the bidding of the Recluse’?”—
+mn38:24.9 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.10 | S: “Knowing and seeing in this way, would you dedicate yourself to another teacher?” | T: “Knowing and seeing in this way, would you acknowledge another teacher?”—
+mn38:24.11 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.12 | S: “Knowing and seeing in this way, would you believe that the observances and boisterous, superstitious rites of the various ascetics and brahmins are essential?” | T: “Knowing and seeing in this way, would you return to the observances, tumultuous debates, and auspicious signs of ordinary recluses and brahmins, taking them as the core of the holy life?”—
+mn38:24.13 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.14 | S: “Aren’t you speaking only of what you have known and seen and realized for yourselves?” | T: “Do you speak only of what you have known, seen, and understood for yourselves?” —
+mn38:24.15 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:25.1 | S: “Good, mendicants! You have been guided by me with this teaching that’s apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: “Good, bhikkhus. So you have been guided by me with this Dhamma, which is visible here and now, immediately effective, inviting inspection, onward leading, to be experienced by the wise for themselves.
+mn38:25.2 | S: For when I said that this teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves, | T: For it was with reference to this that it has been said: ‘Bhikkhus, this Dhamma is visible here and now, immediately effective, inviting inspection, onward leading, to be experienced by the wise for themselves.’
+mn38:25.3 | S: this is what I was referring to. | T: (none)
+mn38:26.1 | S: Mendicants, when three things come together an embryo is conceived. | T: The Round of Existence: Conception to Maturity “Bhikkhus, the descent of the embryo takes place through the union of three things.
+mn38:26.2 | S: In a case where the mother and father come together, but the mother is not in the fertile phase of her menstrual cycle, and the virile spirit is not ready, the embryo is not conceived. | T: Here, there is the union of the mother and father, but the mother is not in season, and the gandhabba is not present—in this case no descent of an embryo takes place.
+mn38:26.3 | S: In a case where the mother and father come together, the mother is in the fertile phase of her menstrual cycle, but the virile spirit is not ready, the embryo is not conceived. | T: Here, there is the union of the mother and father, and the mother is in season, but the gandhabba is not present—in this case too no descent of the embryo takes place.
+mn38:26.4 | S: But when these three things come together—the mother and father come together, the mother is in the fertile phase of her menstrual cycle, and the virile spirit is ready—an embryo is conceived. | T: But when there is the union of the mother and father, and the mother is in season, and the gandhabba is present, through the union of these three things the descent of the embryo takes place.
+mn38:27.1 | S: The mother nurtures the embryo in her womb for nine or ten months at great risk to her heavy burden. | T: “The mother then carries the embryo in her womb for nine or ten months with much anxiety, as a heavy burden.
+mn38:27.2 | S: When nine or ten months have passed, the mother gives birth at great risk to her heavy burden. | T: Then, at the end of nine or ten months, the mother gives birth with much anxiety, as a heavy burden.
+mn38:27.3 | S: When the infant is born she nourishes it with her own blood. | T: Then, when the child is born, she nourishes it with her own blood;
+mn38:27.4 | S: For mother’s milk is regarded as blood in the training of the Noble One. | T: for the mother’s breast-milk is called blood in the Noble One’s Discipline.
+mn38:28.1 | S: That boy grows up and his faculties mature. | T: “When he grows up and his faculties mature,
+mn38:28.2 | S: He accordingly plays childish games such as toy plows, tipcat, somersaults, pinwheels, toy measures, toy carts, and toy bows. | T: the child plays at such games as toy ploughs, tipcat, somersaults, toy windmills, toy measures, toy carts, and a toy bow and arrow.
+mn38:29.1 | S: That boy grows up and his faculties mature further. | T: “When he grows up and his faculties mature still further,
+mn38:29.2 | S: He accordingly amuses himself, supplied and provided with the five kinds of sensual stimulation. | T: the youth enjoys himself provided and endowed with the five cords of sensual pleasure,
+mn38:29.3 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: with forms cognizable by the eye…
+mn38:29.4 | S: Sounds known by the ear … | T: sounds cognizable by the ear…
+mn38:29.5 | S: Smells known by the nose … | T: odours cognizable by the nose…
+mn38:29.6 | S: Tastes known by the tongue … | T: flavours cognizable by the tongue…
+mn38:29.7 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tangibles cognizable by the body that are wished for, desired, agreeable and likeable, connected with sensual desire, and provocative of lust.
+mn38:30.1 | S: When they see a sight with their eyes, if it’s pleasant they desire it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: The Continuation of the Round “On seeing a form with the eye, he lusts after it if it is pleasing; he dislikes it if it is unpleasing. He abides with mindfulness of the body unestablished, with a limited mind,
+mn38:30.2 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: and he does not understand as it actually is the deliverance of mind and deliverance by wisdom wherein those evil unwholesome states cease without remainder.
+mn38:30.3 | S: Being so full of favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they approve, welcome, and keep clinging to it. | T: Engaged as he is in favouring and opposing, whatever feeling he feels—whether pleasant or painful or neither-painful-nor-pleasant—he delights in that feeling, welcomes it, and remains holding to it.
+mn38:30.4 | S: This gives rise to relishing. | T: As he does so, delight arises in him.
+mn38:30.5 | S: Relishing feelings is grasping. Their grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: Now delight in feelings is clinging. With his clinging as condition, being comes to be; with being as condition, birth; with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:30.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:30.7 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear…
+mn38:30.8 | S: When they smell an odor with their nose … | T: On smelling an odour with the nose…
+mn38:30.9 | S: When they taste a flavor with their tongue … | T: On tasting a flavour with the tongue…
+mn38:30.10 | S: When they feel a touch with their body … | T: On touching a tangible with the body…
+mn38:30.11 | S: When they know an idea with their mind, if it’s pleasant they desire it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: On cognizing a mind-object with the mind, he lusts after it if it is pleasing; he dislikes it if it is unpleasing…
+mn38:30.12 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: (none)
+mn38:30.13 | S: Being so full of favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they approve, welcome, and keep clinging to it. | T: (none)
+mn38:30.14 | S: This gives rise to relishing. | T: (none)
+mn38:30.15 | S: Relishing feelings is grasping. Their grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: Now delight in feelings is clinging. With his clinging as condition, being comes to be; with being as condition, birth; with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:30.16 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:31.1 | S: But consider when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: The Ending of the Round: The Gradual Training “Here, bhikkhus, a Tathāgata appears in the world, accomplished, fully enlightened…as MN27,
+mn38:31.2 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: (none)
+mn38:31.3 | S: He proclaims a teaching that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. | T: (none)
+mn38:31.4 | S: He reveals an entirely full and pure spiritual life. | T: (none)
+mn38:32.1 | S: A householder hears that teaching, or a householder’s child, or someone reborn in a good family. | T: (none)
+mn38:32.2 | S: They gain faith in the Realized One | T: (none)
+mn38:32.3 | S: and reflect: | T: (none)
+mn38:32.4 | S: ‘Life at home is cramped and dirty, life gone forth is wide open. | T: (none)
+mn38:32.5 | S: It’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: (none)
+mn38:32.6 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from lay life to homelessness?’ | T: (none)
+mn38:32.7 | S: After some time they give up a large or small fortune, and a large or small family circle. They shave off hair and beard, dress in ocher robes, and go forth from the lay life to homelessness. | T: (none)
+mn38:33.1 | S: Once they’ve gone forth, they take up the training and livelihood of the mendicants. They give up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings. | T: (none)
+mn38:33.2 | S: They give up stealing. They take only what’s given, and expect only what’s given. They keep themselves clean by not thieving. | T: (none)
+mn38:33.3 | S: They give up unchastity. They are chaste, set apart, refraining from the vulgar act of sex. | T: (none)
+mn38:33.4 | S: They give up lying. They speak the truth and stick to the truth. They’re honest and dependable, and don’t trick the world with their words. | T: (none)
+mn38:33.5 | S: They give up backbiting. They don’t repeat in one place what they heard in another so as to divide people against each other. Instead, they reconcile those who are divided and support those who are united, delighting in harmony, loving harmony, speaking words that promote harmony. | T: (none)
+mn38:33.6 | S: They give up harsh speech. They speak in a way that’s mellow, pleasing to the ear, endearing, going to the heart, polite, and likable and agreeable to the people. | T: (none)
+mn38:33.7 | S: They give up talking nonsense. Their words are timely, true, and meaningful, in line with the teaching and training. They say things at the right time which are valuable, reasonable, succinct, and beneficial. | T: (none)
+mn38:33.8 | S: They refrain from injuring plants and seeds. | T: (none)
+mn38:33.9 | S: They eat in one part of the day, abstaining from eating at night and food at the wrong time. | T: (none)
+mn38:33.10 | S: They refrain from seeing shows of dancing, singing, and music. | T: (none)
+mn38:33.11 | S: They refrain from attiring and adorning themselves with garlands, fragrance, and makeup. | T: (none)
+mn38:33.12 | S: They refrain from high and luxurious beds. | T: (none)
+mn38:33.13 | S: They refrain from receiving gold and currency, | T: (none)
+mn38:33.14 | S: raw grains, | T: (none)
+mn38:33.15 | S: raw meat, | T: (none)
+mn38:33.16 | S: women and girls, | T: (none)
+mn38:33.17 | S: male and female bondservants, | T: (none)
+mn38:33.18 | S: goats and sheep, | T: (none)
+mn38:33.19 | S: chickens and pigs, | T: (none)
+mn38:33.20 | S: elephants, cows, horses, and mares, | T: (none)
+mn38:33.21 | S: and fields and land. | T: (none)
+mn38:33.22 | S: They refrain from running errands and messages; | T: (none)
+mn38:33.23 | S: buying and selling; | T: (none)
+mn38:33.24 | S: falsifying weights, metals, or measures; | T: (none)
+mn38:33.25 | S: bribery, fraud, cheating, and duplicity; | T: (none)
+mn38:33.26 | S: mutilation, murder, abduction, banditry, plunder, and violence. | T: (none)
+mn38:34.1 | S: They’re content with robes to look after the body and almsfood to look after the belly. Wherever they go, they set out taking only these things. | T: (none)
+mn38:34.2 | S: They’re like a bird: wherever it flies, wings are its only burden. | T: (none)
+mn38:34.3 | S: In the same way, a mendicant is content with robes to look after the body and almsfood to look after the belly. Wherever they go, they set out taking only these things. | T: (none)
+mn38:34.4 | S: When they have this spectrum of noble ethics, they experience a blameless happiness inside themselves. | T: (none)
+mn38:35.1 | S: When they see a sight with their eyes, they don’t get caught up in the features and details. | T: (none)
+mn38:35.2 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: (none)
+mn38:35.3 | S: When they hear a sound with their ears … | T: (none)
+mn38:35.4 | S: When they smell an odor with their nose … | T: (none)
+mn38:35.5 | S: When they taste a flavor with their tongue … | T: (none)
+mn38:35.6 | S: When they feel a touch with their body … | T: (none)
+mn38:35.7 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: (none)
+mn38:35.8 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: (none)
+mn38:35.9 | S: When they have this noble sense restraint, they experience an unsullied bliss inside themselves. | T: (none)
+mn38:36.1 | S: They act with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. | T: (none)
+mn38:37.1 | S: When they have this spectrum of noble ethics, this noble contentment, this noble sense restraint, and this noble mindfulness and situational awareness, | T: (none)
+mn38:37.2 | S: they frequent a secluded lodging—a wilderness, the root of a tree, a hill, a ravine, a mountain cave, a charnel ground, a forest, the open air, a heap of straw. | T: (none)
+mn38:38.1 | S: After the meal, they return from almsround, sit down cross-legged, set their body straight, and bring mindfulness to the present. | T: (none)
+mn38:38.2 | S: Giving up covetousness for the world, they meditate with a heart rid of covetousness, cleansing the mind of covetousness. | T: (none)
+mn38:38.3 | S: Giving up ill will and malevolence, they meditate with a mind rid of ill will, full of sympathy for all living beings, cleansing the mind of ill will. | T: (none)
+mn38:38.4 | S: Giving up dullness and drowsiness, they meditate with a mind rid of dullness and drowsiness, perceiving light, mindful and aware, cleansing the mind of dullness and drowsiness. | T: (none)
+mn38:38.5 | S: Giving up restlessness and remorse, they meditate without restlessness, their mind settled internally, cleansing the mind of restlessness and remorse. | T: (none)
+mn38:38.6 | S: Giving up doubt, they meditate having gone beyond doubt, not undecided about skillful qualities, cleansing the mind of doubt. | T: §§11-18 [268-69]…he purifies his mind from doubt.
+mn38:39.1 | S: They give up these five hindrances, corruptions of the heart that weaken wisdom. | T: “Having thus abandoned these five hindrances, imperfections of the mind that weaken wisdom,
+mn38:39.2 | S: Then, quite secluded from sensual pleasures, secluded from unskillful qualities, they enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: quite secluded from sensual pleasures, secluded from unwholesome states, he enters upon and abides in the first jhāna…
+mn38:39.3 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption … | T: With the stilling of applied and sustained thought, he enters upon and abides in the second jhāna…
+mn38:39.4 | S: third absorption … | T: With the fading away as well of rapture…he enters upon and abides in the third jhāna…
+mn38:39.5 | S: fourth absorption. | T: With the abandoning of pleasure and pain…he enters upon and abides in the fourth jhāna…which has neither-pain-nor-pleasure and purity of mindfulness due to equanimity.
+mn38:40.1 | S: When they see a sight with their eyes, if it’s pleasant they don’t desire it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: The Ending of the Round: Full Cessation “On seeing a form with the eye, he does not lust after it if it is pleasing; he does not dislike it if it is unpleasing. He abides with mindfulness of the body established, with an immeasurable mind,
+mn38:40.2 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: and he understands as it actually is the deliverance of mind and deliverance by wisdom wherein those evil unwholesome states cease without remainder.
+mn38:40.3 | S: Having given up favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they don’t approve, welcome, or keep clinging to it. | T: Having thus abandoned favouring and opposing, whatever feeling he feels, whether pleasant or painful or neither-painful-nor-pleasant, he does not delight in that feeling, welcome it, or remain holding to it.
+mn38:40.4 | S: As a result, relishing of feelings ceases. | T: As he does not do so, delight in feelings ceases in him.
+mn38:40.5 | S: When their relishing ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: With the cessation of his delight comes cessation of clinging; with the cessation of clinging, cessation of being; with the cessation of being, cessation of birth; with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:40.6 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:41.1 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear…
+mn38:41.2 | S: When they smell an odor with their nose … | T: On smelling an odour with the nose…
+mn38:41.3 | S: When they taste a flavor with their tongue … | T: On tasting a flavour with the tongue…
+mn38:41.4 | S: When they feel a touch with their body … | T: On touching a tangible with the body…
+mn38:41.5 | S: When they know an idea with their mind, if it’s pleasant they don’t desire it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: On cognizing a mind-object with the mind, he does not lust after it if it is pleasing; he does not dislike it if it is unpleasing…
+mn38:41.6 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: (none)
+mn38:41.7 | S: Having given up favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they don’t approve, welcome, or keep clinging to it. | T: (none)
+mn38:41.8 | S: As a result, relishing of feelings ceases. | T: (none)
+mn38:41.9 | S: When their relishing ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: With the cessation of his delight comes cessation of clinging; with the cessation of clinging, cessation of being; with the cessation of being, cessation of birth; with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:41.10 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:41.11 | S: Mendicants, you should memorize this brief statement on freedom through the ending of craving. But the mendicant Sāti, the fisherman’s son, is caught in a vast net of craving, a tangle of craving.” | T: Conclusion “Bhikkhus, remember this discourse of mine briefly as deliverance in the destruction of craving; but remember the bhikkhu Sāti, son of a fisherman, as caught up in a vast net of craving, in the trammel of craving.”
+mn38:41.12 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn38:41.13 | S: Satisfied, the mendicants approved what the Buddha said. | T: The bhikkhus were satisfied and delighted in the Blessed One’s words.
+mn38:41.14 | P: Mahātaṇhāsaṅkhayasuttaṁ niṭṭhitaṁ aṭṭhamaṁ. | T: (none)
+
+## mn19
+mn19:1.1 | S: So I have heard. | T: Thus have I heard.
+mn19:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn19:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the bhikkhus thus:
+mn19:1.4 | S: “Mendicants!” | T: “Bhikkhus.”—
+mn19:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir,” they replied.
+mn19:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+mn19:2.1 | S: “Mendicants, before my awakening—when I was still unawakened but intent on awakening—I thought: | T: “Bhikkhus, before my enlightenment, while I was still only an unenlightened Bodhisatta, it occurred to me:
+mn19:2.2 | S: ‘Why don’t I meditate by continually dividing my thoughts into two classes?’ | T: ‘Suppose that I divide my thoughts into two classes.
+mn19:2.3 | S: So I assigned sensual, malicious, and cruel thoughts | T: Then I set on one side thoughts of sensual desire, thoughts of ill will, and thoughts of cruelty,
+mn19:2.4 | S: to one class. | T: (none)
+mn19:2.5 | S: And I assigned thoughts of renunciation, good will, and harmlessness | T: and I set on the other side thoughts of renunciation, thoughts of non-ill will, and thoughts of non-cruelty.
+mn19:2.6 | S: to the second class. | T: (none)
+mn19:3.1 | S: Then, as I meditated—diligent, keen, and resolute—a sensual thought arose. | T: “As I abided thus, diligent, ardent, and resolute, a thought of sensual desire arose in me.
+mn19:3.2 | S: I understood: | T: I understood thus:
+mn19:3.3 | S: ‘This sensual thought has arisen in me. | T: ‘This thought of sensual desire has arisen in me.
+mn19:3.4 | S: It leads to hurting myself, hurting others, and hurting both. It blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment.’ | T: This leads to my own affliction, to others’ affliction, and to the affliction of both; it obstructs wisdom, causes difficulties, and leads away from Nibbāna.’
+mn19:3.5 | S: When I reflected that it leads to hurting myself, it went away. | T: When I considered: ‘This leads to my own affliction,’ it subsided in me;
+mn19:3.6 | S: When I reflected that it leads to hurting others, it went away. | T: when I considered: ‘This leads to others’ affliction,’ it subsided in me;
+mn19:3.7 | S: When I reflected that it leads to hurting both, it went away. | T: when I considered: ‘This leads to the affliction of both,’ it subsided in me;
+mn19:3.8 | S: When I reflected that it blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment, it went away. | T: when I considered: ‘This obstructs wisdom, causes difficulties, and leads away from Nibbāna,’ it subsided in me.
+mn19:3.9 | S: So I gave up, dispelled, and eliminated any sensual thoughts that arose. | T: Whenever a thought of sensual desire arose in me, I abandoned it, removed it, did away with it.
+mn19:4-5.1 | S: Then, as I meditated—diligent, keen, and resolute—a malicious thought arose … | T: “As I abided thus, diligent, ardent, and resolute, a thought of ill will arose in me…
+mn19:4-5.2 | S: a cruel thought arose. | T: a thought of cruelty arose in me.
+mn19:4-5.3 | S: I understood: | T: I understood thus:
+mn19:4-5.4 | S: ‘This cruel thought has arisen in me. | T: ‘This thought of cruelty has arisen in me.
+mn19:4-5.5 | S: It leads to hurting myself, hurting others, and hurting both. It blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment.’ | T: This leads to my own affliction, to others’ affliction, and to the affliction of both; it obstructs wisdom, causes difficulties, and leads away from Nibbāna.‘
+mn19:4-5.6 | S: When I reflected that it leads to hurting myself … | T: (none)
+mn19:4-5.7 | S: hurting others … | T: (none)
+mn19:4-5.8 | S: hurting both, it went away. | T: (none)
+mn19:4-5.9 | S: When I reflected that it blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment, it went away. | T: When I considered thus…it subsided in me.
+mn19:4-5.10 | S: So I gave up, dispelled, and eliminated any cruel thoughts that arose. | T: Whenever a thought of cruelty arose in me, I abandoned it, removed it, did away with it.
+mn19:6.1 | S: Whatever a mendicant frequently thinks about and considers becomes their heart’s inclination. | T: “Bhikkhus, whatever a bhikkhu frequently thinks and ponders upon, that will become the inclination of his mind.
+mn19:6.2 | S: If they often think about and consider sensual thoughts, they’ve given up the thought of renunciation to cultivate sensual thought. Their mind inclines to sensual thoughts. | T: If he frequently thinks and ponders upon thoughts of sensual desire, he has abandoned the thought of renunciation to cultivate the thought of sensual desire, and then his mind inclines to thoughts of sensual desire.
+mn19:6.3 | S: If they often think about and consider malicious thoughts … their mind inclines to malicious thoughts. | T: (none)
+mn19:6.4 | S: If they often think about and consider cruel thoughts … their mind inclines to cruel thoughts. | T: If he frequently thinks and ponders upon thoughts of ill will…upon thoughts of cruelty, he has abandoned the thought of non-cruelty to cultivate the thought of cruelty, and then his mind inclines to thoughts of cruelty.
+mn19:7.1 | S: Suppose it’s the last month of the rainy season, in autumn, when the crops grow closely together, and a cowherd must take care of the cattle. | T: “Just as in the last month of the rainy season, in the autumn, when the crops thicken,
+mn19:7.2 | S: He’d tap and poke them with his staff on this side and that to keep them in check. | T: a cowherd would guard his cows by constantly tapping and poking them on this side and that with a stick to check and curb them.
+mn19:7.3 | S: Why is that? | T: Why is that?
+mn19:7.4 | S: For he sees that if they wander into the crops he could be executed, imprisoned, fined, or condemned. | T: Because he sees that he could be flogged, imprisoned, fined, or blamed if he let them stray into the crops.
+mn19:7.5 | S: In the same way, I saw that unskillful qualities have the drawbacks of sordidness and corruption, and that skillful qualities have the benefit and cleansing power of renunciation. | T: So too I saw in unwholesome states danger, degradation, and defilement, and in wholesome states the blessing of renunciation, the aspect of cleansing.
+mn19:8.1 | S: Then, as I meditated—diligent, keen, and resolute—a thought of renunciation arose. | T: “As I abided thus, diligent, ardent, and resolute, a thought of renunciation arose in me.
+mn19:8.2 | S: I understood: | T: I understood thus:
+mn19:8.3 | S: ‘This thought of renunciation has arisen in me. | T: ‘This thought of renunciation has arisen in me.
+mn19:8.4 | S: It doesn’t lead to hurting myself, hurting others, or hurting both. It nourishes wisdom, it’s on the side of freedom from distress, and it leads to extinguishment.’ | T: This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna.
+mn19:8.5 | S: If I were to keep on thinking and considering this all night … | T: If I think and ponder upon this thought even for a night,
+mn19:8.6 | S: all day … | T: (none)
+mn19:8.7 | S: all night and day, I see no danger that would come from that. | T: even for a day, even for a night and day, I see nothing to fear from it.
+mn19:8.8 | S: Still, thinking and considering for too long would tire my body. | T: But with excessive thinking and pondering I might tire my body,
+mn19:8.9 | S: And when the body is tired, the mind is stressed. | T: and when the body is tired, the mind becomes strained,
+mn19:8.10 | S: And when the mind is stressed, it’s far from immersion. | T: and when the mind is strained, it is far from concentration.’
+mn19:8.11 | S: So I stilled, settled, unified, and immersed my mind internally. | T: So I steadied my mind internally, quieted it, brought it to singleness, and concentrated it.
+mn19:8.12 | S: Why is that? | T: Why is that?
+mn19:8.13 | S: So that my mind would not be stressed. | T: So that my mind should not be strained.
+mn19:9-10.1 | S: Then, as I meditated—diligent, keen, and resolute—a thought of good will arose … | T: “As I abided thus, diligent, ardent, and resolute, a thought of non-ill will arose in me…
+mn19:9-10.2 | S: a thought of harmlessness arose. | T: a thought of non-cruelty arose in me.
+mn19:9-10.3 | S: I understood: | T: I understood thus:
+mn19:9-10.4 | S: ‘This thought of harmlessness has arisen in me. | T: ‘This thought of non-cruelty has arisen in me.
+mn19:9-10.5 | S: It doesn’t lead to hurting myself, hurting others, or hurting both. It nourishes wisdom, it’s on the side of freedom from distress, and it leads to extinguishment.’ | T: This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna.
+mn19:9-10.6 | S: If I were to keep on thinking and considering this all night … | T: If I think and ponder upon this thought even for a night,
+mn19:9-10.7 | S: all day … | T: (none)
+mn19:9-10.8 | S: all night and day, I see no danger that would come from that. | T: even for a day, even for a night and day, I see nothing to fear from it.
+mn19:9-10.9 | S: Still, thinking and considering for too long would tire my body. | T: But with excessive thinking and pondering I might tire my body,
+mn19:9-10.10 | S: And when the body is tired, the mind is stressed. | T: and when the body is tired, the mind becomes strained,
+mn19:9-10.11 | S: And when the mind is stressed, it’s far from immersion. | T: and when the mind is strained, it is far from concentration.’
+mn19:9-10.12 | S: So I stilled, settled, unified, and immersed my mind internally. | T: So I steadied my mind internally, quieted it, brought it to singleness, and concentrated it.
+mn19:9-10.13 | S: Why is that? | T: Why is that?
+mn19:9-10.14 | S: So that my mind would not be stressed. | T: So that my mind should not be strained.
+mn19:11.1 | S: Whatever a mendicant frequently thinks about and considers becomes their heart’s inclination. | T: “Bhikkhus, whatever a bhikkhu frequently thinks and ponders upon, that will become the inclination of his mind.
+mn19:11.2 | S: If they often think about and consider thoughts of renunciation, they’ve given up sensual thought to cultivate the thought of renunciation. Their mind inclines to thoughts of renunciation. | T: If he frequently thinks and ponders upon thoughts of renunciation, he has abandoned the thought of sensual desire to cultivate the thought of renunciation, and then his mind inclines to thoughts of renunciation.
+mn19:11.3 | S: If they often think about and consider thoughts of good will … their mind inclines to thoughts of good will. | T: (none)
+mn19:11.4 | S: If they often think about and consider thoughts of harmlessness … their mind inclines to thoughts of harmlessness. | T: If he frequently thinks and ponders upon thoughts of non-ill will…upon thoughts of non-cruelty, he has abandoned the thought of cruelty to cultivate the thought of non-cruelty, and then his mind inclines to thoughts of non-cruelty.
+mn19:12.1 | S: Suppose it’s the last month of summer, when all the crops have been gathered within a village, and a cowherd must take care of the cattle. While at the root of a tree or in the open he need only be mindful that | T: “Just as in the last month of the hot season, when all the crops have been brought inside the villages, a cowherd would guard his cows while staying at the root of a tree or out in the open, since he needs only to be mindful that the cows are there;
+mn19:12.2 | S: the cattle are there. | T: (none)
+mn19:12.3 | S: In the same way I needed only to be mindful that | T: so too, there was need for me only to be mindful that those states were there.
+mn19:12.4 | S: those things were there. | T: (none)
+mn19:13.1 | S: My energy was roused up and unflagging, my mindfulness was established and lucid, my body was tranquil and undisturbed, and my mind was immersed and unified in samādhi. | T: “Tireless energy was aroused in me and unremitting mindfulness was established, my body was tranquil and untroubled, my mind concentrated and unified.
+mn19:14.1 | S: Quite secluded from sensual pleasures, secluded from unskillful qualities, I entered and remained in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “Quite secluded from sensual pleasures, secluded from unwholesome states, I entered upon and abided in the first jhāna…as MN4, §§23—32…
+mn19:15.1 | S: As the placing of the mind and keeping it connected were stilled, I entered and remained in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: (none)
+mn19:16.1 | S: And with the fading away of rapture, I entered and remained in the third absorption, where I meditated with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: (none)
+mn19:17.1 | S: With the giving up of pleasure and pain, and the disappearance of former happiness and sadness, I entered and remained in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: (none)
+mn19:18.1 | S: When my mind had immersed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—I extended it toward recollection of past lives. | T: (none)
+mn19:18.2 | S: I recollected many kinds of past lives, with features and details. | T: (none)
+mn19:19.1 | S: This was the first knowledge, which I achieved in the first watch of the night. | T: (none)
+mn19:19.2 | S: Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: (none)
+mn19:20.1 | S: When my mind had become immersed in samādhi like this, I extended it toward knowledge of the death and rebirth of sentient beings. | T: (none)
+mn19:20.2 | S: With clairvoyance that is purified and superhuman, I saw sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. I understood how sentient beings pass on according to their deeds. | T: (none)
+mn19:21.1 | S: This was the second knowledge, which I achieved in the middle watch of the night. | T: (none)
+mn19:21.2 | S: Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: (none)
+mn19:22.1 | S: When my mind had become immersed in samādhi like this, I extended it toward knowledge of the ending of defilements. | T: (none)
+mn19:22.2 | S: I truly understood: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering.’ | T: (none)
+mn19:23.1 | S: I truly understood: ‘These are defilements’ … ‘This is the origin of defilements’ … ‘This is the cessation of defilements’ … ‘This is the practice that leads to the cessation of defilements.’ | T: (none)
+mn19:23.2 | S: Knowing and seeing like this, my mind was freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: (none)
+mn19:23.3 | S: I understood: ‘Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.’ | T: I directly knew: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’
+mn19:24.1 | S: This was the third knowledge, which I achieved in the last watch of the night. | T: “This was the third true knowledge attained by me in the last watch of the night.
+mn19:24.2 | S: Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: Ignorance was banished and true knowledge arose, darkness was banished and light arose, as happens in one who abides diligent, ardent, and resolute.
+mn19:25.1 | S: Suppose that in a forested wilderness there was an expanse of low-lying marshes, | T: “Suppose, bhikkhus, that in a wooded range there was a great low-lying marsh
+mn19:25.2 | S: and a large herd of deer lived nearby. | T: near which a large herd of deer lived.
+mn19:25.3 | S: Then along comes a person who wants to harm, injure, and threaten them. | T: Then a man appeared desiring their ruin, harm, and bondage,
+mn19:25.4 | S: They close off the safe, secure path that leads to happiness, and open the wrong path. There they plant domesticated male and female deer as decoys | T: and he closed off the safe and good path to be traveled joyfully, and he opened up a false path, and he put out a decoy and set up a dummy
+mn19:25.5 | S: so that, in due course, that herd of deer would fall to ruin and disaster. | T: so that the large herd of deer might later come upon calamity, disaster, and loss.
+mn19:25.6 | S: Then along comes a person who wants to help keep the herd of deer safe. | T: But another man came desiring their good, welfare, and protection,
+mn19:25.7 | S: They open up the safe, secure path that leads to happiness, and close off the wrong path. They get rid of the decoys | T: and he reopened the safe and good path that led to their happiness, and he closed off the false path, and he removed the decoy and destroyed the dummy,
+mn19:25.8 | S: so that, in due course, that herd of deer would grow, increase, and mature. | T: so that the large herd of deer might later come to growth, increase, and fulfilment.
+mn19:26.1 | S: I’ve made up this simile to make a point. | T: “Bhikkhus, I have given this simile in order to convey a meaning.
+mn19:26.2 | S: And this is what it means. | T: This is the meaning:
+mn19:26.3 | S: ‘An expanse of low-lying marshes’ is a term for sensual pleasures. | T: ‘The great low-lying marsh’ is a term for sensual pleasures.
+mn19:26.4 | S: ‘A large herd of deer’ is a term for sentient beings. | T: ‘The large herd of deer’ is a term for beings.
+mn19:26.5 | S: ‘A person who wants to harm, injure, and threaten them’ is a term for Māra the Wicked. | T: ‘The man desiring their ruin, harm, and bondage’ is a term for Māra the Evil One.
+mn19:26.6 | S: ‘The wrong path’ is a term for the wrong eightfold path, that is, | T: ‘The false path’ is a term for the wrong eightfold path, that is:
+mn19:26.7 | S: wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: wrong view, wrong intention, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong concentration.
+mn19:26.8 | S: ‘A domesticated male deer’ is a term for greed and relishing. | T: ‘The decoy’ is a term for delight and lust.
+mn19:26.9 | S: ‘A domesticated female deer’ is a term for ignorance. | T: ‘The dummy’ is a term for ignorance.
+mn19:26.10 | S: ‘A person who wants to help keep the herd of deer safe’ is a term for the Realized One, the perfected one, the fully awakened Buddha. | T: ‘The man desiring their good, welfare, and protection’ is a term for the Tathāgata, accomplished and fully enlightened.
+mn19:26.11 | S: ‘The safe, secure path that leads to happiness’ is a term for the noble eightfold path, that is: | T: ‘The safe and good path to be traveled joyfully’ is a term for the Noble Eightfold Path, that is:
+mn19:26.12 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right intention, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.

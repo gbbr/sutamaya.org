@@ -1,0 +1,316 @@
+## mn140
+mn140:1.1 | S: So I have heard. | T: Thus have I heard.
+mn140:1.2 | S: At one time the Buddha was wandering in the Magadhan lands when he arrived at Rājagaha. | T: On one occasion the Blessed One was wandering in the Magadhan country and eventually arrived at Rājagaha.
+mn140:1.3 | S: He went to see Bhaggava the potter, and said, | T: There he went to the potter Bhaggava and said to him:
+mn140:2.1 | S: “Bhaggava, if it is no trouble, I’d like to spend a single night in your workshop.” | T: “If it is not inconvenient for you, Bhaggava, I will stay one night in your workshop.”
+mn140:2.2 | S: “It’s no trouble, sir. | T: “It is not inconvenient for me, venerable sir,
+mn140:2.3 | S: But there’s a renunciate already staying there. | T: but there is a homeless one already staying there.
+mn140:2.4 | S: If he allows it, sir, you may stay as long as you please.” | T: If he agrees, then stay as long as you like, venerable sir.”
+mn140:3.1 | S: Now at that time a gentleman named Pukkusāti had gone forth out of faith from the lay life to homelessness in the Buddha’s name. | T: Now there was a clansman named Pukkusāti who had gone forth from the home life into homelessness out of faith in the Blessed One,
+mn140:3.2 | S: And it was he who had first taken up residence in the workshop. | T: and on that occasion he was already staying in the potter’s workshop.
+mn140:3.3 | S: Then the Buddha approached Venerable Pukkusāti and said, | T: Then the Blessed One went to the venerable Pukkusāti and said to him:
+mn140:3.4 | S: “Mendicant, if it is no trouble, I’d like to spend a single night in the workshop.” | T: “If it is not inconvenient for you, bhikkhu, I will stay one night in the workshop.”
+mn140:3.5 | S: “The potter’s workshop is spacious, reverend. | T: “The potter’s workshop is large enough, friend.
+mn140:3.6 | S: Stay as long as you please.” | T: Let the venerable one stay as long as he likes.”
+mn140:4.1 | S: Then the Buddha entered the workshop and spread out a grass mat to one side. He sat down cross-legged, set his body straight, and brought mindfulness to the present. | T: Then the Blessed One entered the potter’s workshop, prepared a spread of grass at one end, and sat down, folding his legs crosswise, setting his body erect, and establishing mindfulness in front of him.
+mn140:4.2 | S: He spent much of the night sitting in meditation, | T: Then the Blessed One spent most of the night seated in meditation,
+mn140:4.3 | S: and so did Pukkusāti. | T: and the venerable Pukkusāti also spent most of the night seated in meditation.
+mn140:4.4 | S: Then it occurred to the Buddha, | T: Then the Blessed One thought:
+mn140:4.5 | S: “This gentleman’s behavior is impressive. | T: “This clansman conducts himself in a way that inspires confidence.
+mn140:4.6 | S: Why don’t I question him?” | T: Suppose I were to question him.”
+mn140:4.7 | S: So the Buddha said to Pukkusāti, | T: So he asked the venerable Pukkusāti:
+mn140:5.1 | S: “In whose name have you gone forth, mendicant? Who is your Teacher? Whose teaching do you believe in?” | T: “Under whom have you gone forth, bhikkhu? Who is your teacher? Whose Dhamma do you profess?”
+mn140:5.2 | S: “Reverend, there is the ascetic Gotama—a Sakyan, gone forth from a Sakyan family. | T: “Friend, there is the recluse Gotama, the son of the Sakyans who went forth from a Sakyan clan.
+mn140:5.3 | S: He has this good reputation: | T: Now a good report of that Blessed Gotama has been spread to this effect:
+mn140:5.4 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘That Blessed One is accomplished, fully enlightened, perfect in true knowledge and conduct, sublime, knower of worlds, incomparable leader of persons to be tamed, teacher of gods and humans, enlightened, blessed.’
+mn140:5.5 | S: I’ve gone forth in his name. | T: I have gone forth under that Blessed One;
+mn140:5.6 | S: That Blessed One is my Teacher, | T: that Blessed One is my teacher;
+mn140:5.7 | S: and I believe in his teaching.” | T: I profess the Dhamma of that Blessed One.”
+mn140:5.8 | S: “But mendicant, where is the Blessed One at present, the perfected one, the fully awakened Buddha?” | T: “But, bhikkhu, where is that Blessed One, accomplished and fully enlightened, now living?”
+mn140:5.9 | S: “In the northern lands there is a city named Sāvatthī. | T: “There is, friend, a city in the northern country named Sāvatthī.
+mn140:5.10 | S: There the Blessed One is now staying, the perfected one, the fully awakened Buddha.” | T: The Blessed One, accomplished and fully enlightened, is now living there.”
+mn140:5.11 | S: “But have you ever seen that Buddha? | T: “But, bhikkhu, have you ever seen that Blessed One before?
+mn140:5.12 | S: Would you recognize him if you saw him?” | T: Would you recognise him if you saw him?”
+mn140:5.13 | S: “No, I’ve never seen him, | T: “No, friend, I have never seen that Blessed One before,
+mn140:5.14 | S: and I wouldn’t recognize him if I did.” | T: nor would I recognise him if I saw him.”
+mn140:6.1 | S: Then it occurred to the Buddha, | T: Then the Blessed One thought:
+mn140:6.2 | S: “This gentleman has gone forth in my name. | T: “This clansman has gone forth from the home life into homelessness under me.
+mn140:6.3 | S: Why don’t I teach him the Dhamma?” | T: Suppose I were to teach him the Dhamma.”
+mn140:6.4 | S: So the Buddha said to Pukkusāti, | T: So the Blessed One addressed the venerable Pukkusāti thus:
+mn140:6.5 | S: “Mendicant, I shall teach you the Dhamma. | T: “Bhikkhu, I will teach you the Dhamma.
+mn140:6.6 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely to what I shall say.”—
+mn140:6.7 | S: “Yes, reverend,” replied Pukkusāti. | T: “Yes, friend,” the venerable Pukkusāti replied.
+mn140:6.8 | S: The Buddha said this: | T: The Blessed One said this:
+mn140:7.1 | S: “‘This person has six elements, six fields of contact, eighteen mental preoccupations, and four foundations. | T: “Bhikkhu, this person consists of six elements, six bases of contact, and eighteen kinds of mental exploration, and he has four foundations.
+mn140:7.2 | S: Where they stand, the streams of conceiving do not flow. And where the streams of conceiving do not flow, they are called a sage at peace. | T: The tides of conceiving do not sweep over one who stands upon these foundations, and when the tides of conceiving no longer sweep over him he is called a sage at peace.
+mn140:7.3 | S: Do not neglect wisdom; preserve truth; foster generosity; and train only for peace.’ | T: One should not neglect wisdom, should preserve truth, should cultivate relinquishment, and should train for peace.
+mn140:7.4 | S: This is the summary recital for the analysis of the elements. | T: This is the summary of the exposition of the six elements.
+mn140:8.1 | S: ‘This person has six elements.’ | T: “‘Bhikkhu, this person consists of six elements.’
+mn140:8.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:8.3 | S: There are these six elements: | T: (none)
+mn140:8.4 | S: the elements of earth, water, fire, air, space, and consciousness. | T: There are the earth element, the water element, the fire element, the air element, the space element, and the consciousness element.
+mn140:8.5 | S: ‘This person has six elements.’ | T: So it was with reference to this that it was said: ‘Bhikkhu, this person consists of six elements.’
+mn140:8.6 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:9.1 | S: ‘This person has six fields of contact.’ | T: “‘Bhikkhu, this person consists of six bases of contact.’
+mn140:9.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:9.3 | S: The fields of contact of the eye, ear, nose, tongue, body, and mind. | T: There are the base of eye-contact, the base of ear-contact, the base of nose-contact, the base of tongue-contact, the base of body-contact, and the base of mind-contact.
+mn140:9.4 | S: ‘This person has six fields of contact.’ | T: So it was with reference to this that it was said: ‘Bhikkhu, this person consists of six bases of contact.’
+mn140:9.5 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:10.1 | S: ‘This person has eighteen mental preoccupations.’ | T: “‘Bhikkhu, this person consists of eighteen kinds of mental exploration.’
+mn140:10.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:10.3 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: On seeing a form with the eye, one explores a form productive of joy, one explores a form productive of grief, one explores a form productive of equanimity.
+mn140:10.4 | S: Hearing a sound with their ears … | T: On hearing a sound with the ear…
+mn140:10.5 | S: Smelling an odor with their nose … | T: On smelling an odour with the nose…
+mn140:10.6 | S: Tasting a flavor with their tongue … | T: On tasting a flavour with the tongue…
+mn140:10.7 | S: Encountering a touch with their body … | T: On touching a tangible with the body…
+mn140:10.8 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: On cognizing a mind-object with the mind, one explores a mind-object productive of joy, one explores a mind-object productive of grief, one explores a mind-object productive of equanimity.
+mn140:10.9 | S: So there are six preoccupations with happiness, six preoccupations with sadness, and six preoccupations with equanimity. | T: (none)
+mn140:10.10 | S: ‘This person has eighteen mental preoccupations.’ | T: So it was with reference to this that it was said: ‘Bhikkhu, this person consists of eighteen kinds of mental exploration.’
+mn140:10.11 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:11.1 | S: ‘This person has four foundations.’ | T: “‘Bhikkhu, this person has four foundations.’
+mn140:11.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:11.3 | S: The foundations of wisdom, truth, generosity, and peace. | T: There are the foundation of wisdom, the foundation of truth, the foundation of relinquishment, and the foundation of peace.
+mn140:11.4 | S: ‘This person has four foundations.’ | T: So it was with reference to this that it was said: ‘Bhikkhu, this person has four foundations.’
+mn140:11.5 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:12.1 | S: ‘Do not neglect wisdom; preserve truth; foster generosity; and train only for peace.’ | T: “‘One should not neglect wisdom, should preserve truth, should cultivate relinquishment, and should train for peace.’
+mn140:12.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:13.1 | S: And how does one not neglect wisdom? | T: “How, bhikkhu, does one not neglect wisdom?
+mn140:13.2 | S: There are these six elements: | T: There are these six elements:
+mn140:13.3 | S: the elements of earth, water, fire, air, space, and consciousness. | T: the earth element, the water element, the fire element, the air element, the space element, and the consciousness element.
+mn140:14.1 | S: And what is the earth element? | T: “What, bhikkhu, is the earth element?
+mn140:14.2 | S: The earth element may be interior or exterior. | T: The earth element may be either internal or external.
+mn140:14.3 | S: And what is the interior earth element? | T: What is the internal earth element?
+mn140:14.4 | S: Anything internal, personal, that’s hard, solid, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is solid, solidified, and clung-to, that is,
+mn140:14.5 | S: head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, or anything else internal, personal, that’s hard, solid, and appropriated. | T: head-hairs, body-hairs, nails, teeth, skin, flesh, sinews, bones, bone-marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, contents of the stomach, feces, or whatever else internally, belonging to oneself, is solid, solidified, and clung-to:
+mn140:14.6 | S: This is called the interior earth element. | T: this is called the internal earth element.
+mn140:14.7 | S: The interior earth element and the exterior earth element are just the earth element. | T: Now both the internal earth element and the external earth element are simply earth element.
+mn140:14.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn140:14.9 | S: When you truly see with right understanding, you grow disillusioned with the earth element, detaching the mind from the earth element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the earth element and makes the mind dispassionate towards the earth element.
+mn140:15.1 | S: And what is the water element? | T: “What, bhikkhu, is the water element?
+mn140:15.2 | S: The water element may be interior or exterior. | T: The water element may be either internal or external.
+mn140:15.3 | S: And what is the interior water element? | T: What is the internal water element?
+mn140:15.4 | S: Anything internal, personal, that’s water, watery, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is water, watery, and clung-to, that is,
+mn140:15.5 | S: bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine, or anything else internal, personal, that’s water, watery, and appropriated. | T: bile, phlegm, pus, blood, sweat, fat, tears, grease, spittle, snot, oil-of-the-joints, urine, or whatever else internally, belonging to oneself, is water, watery, and clung-to:
+mn140:15.6 | S: This is called the interior water element. | T: this is called the internal water element.
+mn140:15.7 | S: The interior water element and the exterior water element are just the water element. | T: Now both the internal water element and the external water element are simply water element.
+mn140:15.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn140:15.9 | S: When you truly see with right understanding, you grow disillusioned with the water element, detaching the mind from the water element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the water element and makes the mind dispassionate towards the water element.
+mn140:16.1 | S: And what is the fire element? | T: “What, bhikkhu, is the fire element?
+mn140:16.2 | S: The fire element may be interior or exterior. | T: The fire element may be either internal or external.
+mn140:16.3 | S: And what is the interior fire element? | T: What is the internal fire element?
+mn140:16.4 | S: Anything internal, personal, that’s fire, fiery, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is fire, fiery, and clung-to, that is,
+mn140:16.5 | S: that which warms, that which ages, that which heats you up when feverish, that which properly digests food and drink; or anything else internal, personal, that’s fire, fiery, and appropriated. | T: that by which one is warmed, ages, and is consumed, and that by which what is eaten, drunk, consumed, and tasted gets completely digested, or whatever else internally, belonging to oneself, is fire, fiery, and clung-to:
+mn140:16.6 | S: This is called the interior fire element. | T: this is called the internal fire element.
+mn140:16.7 | S: The interior fire element and the exterior fire element are just the fire element. | T: Now both the internal fire element and the external fire element are simply fire element.
+mn140:16.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn140:16.9 | S: When you truly see with right understanding, you grow disillusioned with the fire element, detaching the mind from the fire element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the fire element and makes the mind dispassionate towards the fire element.
+mn140:17.1 | S: And what is the air element? | T: “What, bhikkhu, is the air element?
+mn140:17.2 | S: The air element may be interior or exterior. | T: The air element may be either internal or external.
+mn140:17.3 | S: And what is the interior air element? | T: What is the internal air element?
+mn140:17.4 | S: Anything internal, personal, that’s air, airy, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is air, airy, and clung-to, that is,
+mn140:17.5 | S: winds that go up or down, winds in the belly or the bowels, winds that flow through the limbs, in-breaths and out-breaths; or anything else internal, personal, that’s air, airy, and appropriated. | T: up-going winds, down-going winds, winds in the belly, winds in the bowels, winds that course through the limbs, in-breath and out-breath, or whatever else internally, belonging to oneself, is air, airy, and clung-to:
+mn140:17.6 | S: This is called the interior air element. | T: this is called the internal air element.
+mn140:17.7 | S: The interior air element and the exterior air element are just the air element. | T: Now both the internal air element and the external air element are simply air element.
+mn140:17.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn140:17.9 | S: When you truly see with right understanding, you grow disillusioned with the air element, detaching the mind from the air element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the air element and makes the mind dispassionate towards the air element.
+mn140:18.1 | S: And what is the space element? | T: “What, bhikkhu, is the space element?
+mn140:18.2 | S: The space element may be interior or exterior. | T: The space element may be either internal or external.
+mn140:18.3 | S: And what is the interior space element? | T: What is the internal space element?
+mn140:18.4 | S: Anything internal, personal, that’s space, spacious, and appropriated. This includes: | T: Whatever internally, belonging to oneself, is space, spatial, and clung-to, that is,
+mn140:18.5 | S: the ear canals, nostrils, and mouth; and the space for swallowing what is eaten and drunk, the space where it stays, and the space for excreting it from the nether regions; or anything else internal, personal, that’s space, spacious, and appropriated. | T: the holes of the ears, the nostrils, the door of the mouth, and that aperture whereby what is eaten, drunk, consumed, and tasted gets swallowed, and where it collects, and whereby it is excreted from below, or whatever else internally, belonging to oneself, is space, spatial, and clung-to:
+mn140:18.6 | S: This is called the interior space element. | T: this is called the internal space element.
+mn140:18.7 | S: The interior space element and the exterior space element are just the space element. | T: Now both the internal space element and the external space element are simply space element.
+mn140:18.8 | S: This should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: And that should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn140:18.9 | S: When you truly see with right understanding, you grow disillusioned with the space element, detaching the mind from the space element. | T: When one sees it thus as it actually is with proper wisdom, one becomes disenchanted with the space element and makes the mind dispassionate towards the space element.
+mn140:19.1 | S: What remains is sheer consciousness, pure and bright. | T: “Then there remains only consciousness, purified and bright.
+mn140:19.2 | S: And what does that consciousness know? | T: What does one cognize with that consciousness?
+mn140:19.3 | S: It cognizes ‘pleasure’ and ‘pain’ and ‘neutral’. | T: One cognizes: ‘This is pleasant’; one cognizes: ‘This is painful’; one cognizes: ‘This is neither-painful-nor-pleasant.’
+mn140:19.4 | S: Pleasant feeling arises dependent on a contact to be experienced as pleasant. | T: In dependence on a contact to be felt as pleasant there arises a pleasant feeling.
+mn140:19.5 | S: When they feel a pleasant feeling, they know: ‘I feel a pleasant feeling.’ | T: When one feels a pleasant feeling, one understands: ‘I feel a pleasant feeling.’
+mn140:19.6 | S: They know: ‘With the cessation of that contact to be experienced as pleasant, the corresponding pleasant feeling ceases and stops.’ | T: One understands: ‘With the cessation of that same contact to be felt as pleasant, its corresponding feeling—the pleasant feeling that arose in dependence on that contact to be felt as pleasant—ceases and subsides.’
+mn140:19.7 | S: Painful feeling arises dependent on a contact to be experienced as painful. | T: In dependence on a contact to be felt as painful there arises a painful feeling.
+mn140:19.8 | S: When they feel a painful feeling, they know: ‘I feel a painful feeling.’ | T: When one feels a painful feeling, one understands: ‘I feel a painful feeling.’
+mn140:19.9 | S: They know: ‘With the cessation of that contact to be experienced as painful, the corresponding painful feeling ceases and stops.’ | T: One understands: ‘With the cessation of that same contact to be felt as painful, its corresponding feeling—the painful feeling that arose in dependence on that contact to be felt as painful—ceases and subsides.’
+mn140:19.10 | S: Neutral feeling arises dependent on a contact to be experienced as neutral. | T: In dependence on a contact to be felt as neither-painful-nor-pleasant there arises a neither-painful-nor-pleasant feeling.
+mn140:19.11 | S: When they feel a neutral feeling, they know: ‘I feel a neutral feeling.’ | T: When one feels a neither-painful-nor-pleasant feeling, one understands: ‘I feel a neither-painful-nor-pleasant feeling.’
+mn140:19.12 | S: They know: ‘With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops.’ | T: One understands: ‘With the cessation of that same contact to be felt as neither-painful-nor-pleasant, its corresponding feeling—the neither-painful-nor-pleasant feeling that arose in dependence on that contact to be felt as neither-painful-nor-pleasant—ceases and subsides.’
+mn140:19.13 | S: When you rub two sticks together, heat is generated and fire is produced. But when you part the sticks and lay them aside, any corresponding heat ceases and stops. | T: Bhikkhu, just as from the contact and friction of two fire-sticks heat is generated and fire is produced, and with the separation and disjunction of those two fire-sticks the corresponding heat ceases and subsides;
+mn140:19.14 | S: In the same way, pleasant feeling arises dependent on a contact to be experienced as pleasant. … | T: so too, in dependence on a contact to be felt as pleasant…to be felt as painful…to be felt as neither-painful-nor-pleasant there arises a neither-painful-nor-pleasant feeling…
+mn140:19.15 | P: So sukhaṁ vedanaṁ vedayamāno ‘sukhaṁ vedanaṁ vedayāmī’ti pajānāti. | T: (none)
+mn140:19.16 | P: ‘Tasseva sukhavedaniyassa phassassa nirodhā yaṁ tajjaṁ vedayitaṁ sukhavedaniyaṁ phassaṁ paṭicca uppannā sukhā vedanā sā nirujjhati, sā vūpasammatī’ti pajānāti. | T: (none)
+mn140:19.17 | P: Dukkhavedaniyaṁ, bhikkhu, phassaṁ paṭicca uppajjati dukkhā vedanā. | T: (none)
+mn140:19.18 | P: So dukkhaṁ vedanaṁ vedayamāno ‘dukkhaṁ vedanaṁ vedayāmī’ti pajānāti. | T: (none)
+mn140:19.19 | P: ‘Tasseva dukkhavedaniyassa phassassa nirodhā yaṁ tajjaṁ vedayitaṁ dukkhavedaniyaṁ phassaṁ paṭicca uppannā dukkhā vedanā sā nirujjhati, sā vūpasammatī’ti pajānāti. | T: (none)
+mn140:19.20 | P: Adukkhamasukhavedaniyaṁ, bhikkhu, phassaṁ paṭicca uppajjati adukkhamasukhā vedanā. | T: (none)
+mn140:19.21 | P: So adukkhamasukhaṁ vedanaṁ vedayamāno ‘adukkhamasukhaṁ vedanaṁ vedayāmī’ti pajānāti. | T: (none)
+mn140:19.22 | S: They know: ‘With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops.’ | T: One understands: ‘With the cessation of that same contact to be felt as neither-painful-nor-pleasant, its corresponding feeling…ceases and subsides.’
+mn140:20.1 | S: There remains only equanimity, pure, bright, pliable, workable, and radiant. | T: “Then there remains only equanimity, purified and bright, malleable, wieldy, and radiant.
+mn140:20.2 | S: It’s like when a deft goldsmith or a goldsmith’s apprentice prepares a forge, fires the crucible, picks up some native gold with tongs and puts it in the crucible. From time to time they fan it, from time to time they sprinkle water on it, and from time to time they just watch over it. That native gold becomes pliable, workable, and radiant, not brittle, and is ready to be worked. Then the goldsmith can successfully create any kind of ornament they want, whether a bracelet, earrings, a necklace, or a golden garland. | T: Suppose, bhikkhu, a skilled goldsmith or his apprentice were to prepare a furnace, heat up the crucible, take some gold with tongs, and put it into the crucible. From time to time he would blow on it, from time to time he would sprinkle water over it, and from time to time he would just look on. That gold would become refined, well refined, completely refined, faultless, rid of dross, malleable, wieldy, and radiant. Then whatever kind of ornament he wished to make from it, whether a golden chain or earrings or a necklace or a golden garland, it would serve his purpose.
+mn140:20.3 | S: In the same way, there remains only equanimity, pure, bright, pliable, workable, and radiant. | T: So too, bhikkhu, then there remains only equanimity, purified and bright, malleable, wieldy, and radiant.
+mn140:21.1 | S: They understand: | T: “He understands thus:
+mn140:21.2 | S: ‘If I were to apply this equanimity, so pure and bright, to the dimension of infinite space, and develop my mind accordingly, | T: ‘If I were to direct this equanimity, so purified and bright, to the base of infinite space and to develop my mind accordingly,
+mn140:21.3 | S: this equanimity of mine, relying on that and grasping it, would remain for a very long time. | T: then this equanimity of mine, supported by that base, clinging to it, would remain for a very long time.
+mn140:21.4 | S: If I were to apply this equanimity, so pure and bright, to the dimension of infinite consciousness, and develop my mind accordingly, | T: If I were to direct this equanimity, so purified and bright, to the base of infinite consciousness…
+mn140:21.5 | S: this equanimity of mine, relying on that and grasping it, would remain for a very long time. | T: (none)
+mn140:21.6 | S: If I were to apply this equanimity, so pure and bright, to the dimension of nothingness, and develop my mind accordingly, | T: …to the base of nothingness…to the base of neither-perception-nor-non-perception and to develop my mind accordingly,
+mn140:21.7 | S: this equanimity of mine, relying on that and grasping it, would remain for a very long time. | T: (none)
+mn140:21.8 | S: If I were to apply this equanimity, so pure and bright, to the dimension of neither perception nor non-perception, and develop my mind accordingly, | T: (none)
+mn140:21.9 | S: this equanimity of mine, relying on that and grasping it, would remain for a very long time.’ | T: then this equanimity of mine, supported by that base, clinging to it, would remain for a very long time.’
+mn140:22.1 | S: They understand: | T: “He understands thus:
+mn140:22.2 | S: ‘If I were to apply this equanimity, so pure and bright, to the dimension of infinite space, my mind would develop accordingly. | T: ‘If I were to direct this equanimity, so purified and bright, to the base of infinite space and to develop my mind accordingly,
+mn140:22.3 | S: But that is conditioned. | T: this would be conditioned.
+mn140:22.4 | S: If I were to apply this equanimity, so pure and bright, to the dimension of infinite consciousness … | T: If I were to direct this equanimity, so purified and bright, to the base of infinite consciousness…to the base of nothingness…
+mn140:22.5 | P: saṅkhatametaṁ. | T: (none)
+mn140:22.6 | S: nothingness … | T: (none)
+mn140:22.7 | P: saṅkhatametaṁ. | T: (none)
+mn140:22.8 | S: neither perception nor non-perception, my mind would develop accordingly. | T: to the base of neither-perception-nor-non-perception and to develop my mind accordingly,
+mn140:22.9 | S: But that is conditioned.’ | T: this would be conditioned.’
+mn140:22.10 | S: They neither make a choice nor form an intention for existence or nonexistence. | T: He does not form any condition or generate any volition tending towards either being or non-being.
+mn140:22.11 | S: Because of this, they don’t grasp at anything in the world. | T: Since he does not form any condition or generate any volition tending towards either being or non-being, he does not cling to anything in this world.
+mn140:22.12 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: When he does not cling, he is not agitated. When he is not agitated, he personally attains Nibbāna.
+mn140:22.13 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands thus: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’
+mn140:23.1 | S: If they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “If he feels a pleasant feeling, he understands: ‘It is impermanent; there is no holding to it; there is no delight in it.’
+mn140:23.2 | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a painful feeling, he understands: ‘It is impermanent; there is no holding to it; there is no delight in it.’
+mn140:23.3 | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a neither-painful-nor-pleasant feeling, he understands: ‘It is impermanent; there is no holding to it; there is no delight in it.’
+mn140:24.1 | S: If they feel a pleasant feeling, they feel it detached. | T: “If he feels a pleasant feeling, he feels it detached;
+mn140:24.2 | S: If they feel a painful feeling, they feel it detached. | T: if he feels a painful feeling, he feels it detached;
+mn140:24.3 | S: If they feel a neutral feeling, they feel it detached. | T: if he feels a neither-painful-nor-pleasant feeling, he feels it detached.
+mn140:24.4 | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: When he feels a feeling terminating with the body, he understands: ‘I feel a feeling terminating with the body.’ When he feels a feeling terminating with life, he understands: ‘I feel a feeling terminating with life.’
+mn140:24.5 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’ | T: He understands: ‘On the dissolution of the body, with the ending of life, all that is felt, not being delighted in, will become cool right here.’
+mn140:24.6 | S: Suppose an oil lamp depended on oil and a wick to burn. | T: Bhikkhu, just as an oil-lamp burns in dependence on oil and a wick,
+mn140:24.7 | S: As the oil and the wick are used up, it would be extinguished due to not being fed. | T: and when the oil and wick are used up, if it does not get any more fuel, it is extinguished from lack of fuel;
+mn140:24.8 | S: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: so too when he feels a feeling terminating with the body…a feeling terminating with life, he understands: ‘I feel a feeling terminating with life.’
+mn140:24.9 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’ | T: He understands: ‘On the dissolution of the body, with the ending of life, all that is felt, not being delighted in, will become cool right here.’
+mn140:25.1 | S: Therefore a mendicant thus endowed is endowed with the ultimate foundation of wisdom. | T: “Therefore a bhikkhu possessing this wisdom possesses the supreme foundation of wisdom.
+mn140:25.2 | S: For this is the ultimate noble wisdom, namely, | T: For this, bhikkhu, is the supreme noble wisdom, namely,
+mn140:25.3 | S: the knowledge of the ending of all suffering. | T: the knowledge of the destruction of all suffering.
+mn140:26.1 | S: Their freedom, being founded on truth, is unshakable. | T: “His deliverance, being founded upon truth, is unshakeable.
+mn140:26.2 | S: For that which is false has a deceptive nature, while that which is true has an undeceptive nature—extinguishment. | T: For that is false, bhikkhu, which has a deceptive nature, and that is true which has an undeceptive nature—Nibbāna.
+mn140:26.3 | S: Therefore a mendicant thus endowed is endowed with the ultimate foundation of truth. | T: Therefore a bhikkhu possessing this truth possesses the supreme foundation of truth.
+mn140:26.4 | S: For this is the ultimate noble truth, namely, | T: For this, bhikkhu, is the supreme noble truth, namely,
+mn140:26.5 | S: that which has an undeceptive nature—extinguishment. | T: Nibbāna, which has an undeceptive nature.
+mn140:27.1 | S: In their ignorance, they used to acquire attachments. | T: “Formerly, when he was ignorant, he undertook and accepted acquisitions;
+mn140:27.2 | S: Those have been cut off at the root, made like a palm stump, obliterated so they are unable to arise in the future. | T: now he has abandoned them, cut them off at the root, made them like a palm stump, done away with them so that they are no longer subject to future arising.
+mn140:27.3 | S: Therefore a mendicant thus endowed is endowed with the ultimate foundation of generosity. | T: Therefore a bhikkhu possessing this relinquishment possesses the supreme foundation of relinquishment.
+mn140:27.4 | S: For this is the ultimate noble generosity, namely, | T: For this, bhikkhu, is the supreme noble relinquishment, namely,
+mn140:27.5 | S: letting go of all attachments. | T: the relinquishing of all acquisitions.
+mn140:28.1 | S: In their ignorance, they used to be covetous, full of desire and lust. | T: “Formerly, when he was ignorant, he experienced covetousness, desire, and lust;
+mn140:28.2 | S: That has been cut off at the root, made like a palm stump, obliterated so it’s unable to arise in the future. | T: now he has abandoned them, cut them off at the root, made them like a palm stump, done away with them so that they are no longer subject to future arising.
+mn140:28.3 | S: In their ignorance, they used to be contemptuous, full of ill will and malevolence. | T: Formerly, when he was ignorant, he experienced anger, ill will, and hate;
+mn140:28.4 | S: That has been cut off at the root, made like a palm stump, obliterated so it’s unable to arise in the future. | T: now he has abandoned them, cut them off at the root, made them like a palm stump, done away with them so that they are no longer subject to future arising.
+mn140:28.5 | S: In their ignorance, they used to be ignorant, full of delusion. | T: Formerly, when he was ignorant, he experienced ignorance and delusion;
+mn140:28.6 | S: That has been cut off at the root, made like a palm stump, obliterated so it’s unable to arise in the future. | T: now he has abandoned them, cut them off at the root, made them like a palm stump, done away with them so that they are no longer subject to future arising.
+mn140:28.7 | S: Therefore a mendicant thus endowed is endowed with the ultimate foundation of peace. | T: Therefore a bhikkhu possessing this peace possesses the supreme foundation of peace.
+mn140:28.8 | S: For this is the ultimate noble peace, namely, | T: For this, bhikkhu, is the supreme noble peace, namely,
+mn140:28.9 | S: the pacification of greed, hate, and delusion. | T: the pacification of lust, hate, and delusion.
+mn140:29.1 | S: ‘Do not neglect wisdom; preserve truth; foster generosity; and train only for peace.’ | T: “So it was with reference to this that it was said: ‘One should not neglect wisdom, should preserve truth, should cultivate relinquishment, and should train for peace.’
+mn140:29.2 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:30.1 | S: ‘Where they stand, the streams of conceiving do not flow. And where the streams of conceiving do not flow, they are called a sage at peace.’ | T: “‘The tides of conceiving do not sweep over one who stands upon these foundations, and when the tides of conceiving no longer sweep over him he is called a sage at peace.’
+mn140:30.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn140:31.1 | S: These are all forms of conceiving: ‘I am’, ‘I am this’, ‘I will be’, ‘I will not be’, ‘I will have form’, ‘I will be formless’, ‘I will be percipient’, ‘I will be non-percipient’, ‘I will be neither percipient nor non-percipient.’ | T: “Bhikkhu, ‘I am’ is a conceiving; ‘I am this’ is a conceiving; ‘I shall be’ is a conceiving; ‘I shall not be’ is a conceiving; ‘I shall be possessed of form’ is a conceiving; ‘I shall be formless’ is a conceiving; ‘I shall be percipient’ is a conceiving; ‘I shall be non-percipient’ is a conceiving; ‘I shall be neither-percipient-nor-non-percipient’ is a conceiving.
+mn140:31.2 | S: Conceiving is a disease, a boil, a dart. | T: Conceiving is a disease, conceiving is a tumour, conceiving is a dart.
+mn140:31.3 | S: Having gone beyond all conceiving, one is called a sage at peace. | T: By overcoming all conceivings, bhikkhu, one is called a sage at peace.
+mn140:31.4 | S: The sage at peace is not reborn, does not grow old, and does not die. They are not shaken, and do not yearn. | T: And the sage at peace is not born, does not age, does not die; he is not shaken and does not yearn.
+mn140:31.5 | S: For they have nothing which would cause them to be reborn. Not being reborn, how could they grow old? Not growing old, how could they die? Not dying, how could they be shaken? Not shaking, for what could they yearn? | T: For there is nothing present in him by which he might be born. Not being born, how could he age? Not ageing, how could he die? Not dying, how could he be shaken? Not being shaken, why should he yearn?
+mn140:32.1 | S: ‘Where they stand, the streams of conceiving do not flow. And where the streams of conceiving do not flow, they are called a sage at peace.’ | T: “So it was with reference to this that it was said: ‘The tides of conceiving do not sweep over one who stands upon these foundations, and when the tides of conceiving no longer sweep over him he is called a sage at peace.’
+mn140:32.2 | S: That’s what I said, and this is why I said it. | T: (none)
+mn140:32.3 | S: Mendicant, you should remember this brief analysis of the six elements.” | T: Bhikkhu, bear in mind this brief exposition of the six elements.”
+mn140:33.1 | S: Then Venerable Pukkusāti thought, | T: Thereupon the venerable Pukkusāti thought:
+mn140:33.2 | S: “It seems the Teacher has come to me! The Holy One has come to me! The fully awakened Buddha has come to me!” He got up from his seat, arranged his robe over one shoulder, bowed with his head to the Buddha’s feet, and said, | T: “Indeed, the Teacher has come to me! The Sublime One has come to me! The Fully Enlightened One has come to me!” Then he rose from his seat, arranged his upper robe over one shoulder, and prostrating himself with his head at the Blessed One’s feet, he said:
+mn140:33.3 | S: “I made a mistake, sir. It was foolish, stupid, and unskillful of me to presume to address the Buddha as ‘reverend’. | T: “Venerable sir, a transgression overcame me, in that like a fool, confused and blundering, I presumed to address the Blessed One as ‘friend.’
+mn140:33.4 | S: Please, sir, accept my mistake for what it is, so I will restrain myself in future.” | T: Venerable sir, may the Blessed One forgive my transgression seen as such for the sake of restraint in the future.”
+mn140:33.5 | S: “Indeed, mendicant, you made a mistake. It was foolish, stupid, and unskillful of you to act in that way. | T: “Surely, bhikkhu, a transgression overcame you, in that like a fool, confused and blundering, you presumed to address me as ‘friend.’
+mn140:33.6 | S: But since you have recognized your mistake for what it is, and have dealt with it properly, I accept it. | T: But since you see your transgression as such and make amends in accordance with the Dhamma, we forgive you.
+mn140:33.7 | S: For it is growth in the training of the Noble One to recognize a mistake for what it is, deal with it properly, and commit to restraint in the future.” | T: For it is growth in the Noble One’s Discipline when one sees one’s transgression as such, makes amends in accordance with the Dhamma, and undertakes restraint in the future.”
+mn140:34.1 | S: “Sir, may I receive the going forth, the ordination in the Buddha’s presence?” | T: “Venerable sir, I would receive the full admission under the Blessed One.”
+mn140:34.2 | S: “But mendicant, do you have a full set of bowl and robes?” | T: “But are your bowl and robes complete, bhikkhu?”
+mn140:34.3 | S: “No, sir, I do not.” | T: “Venerable sir, my bowl and robes are not complete.”
+mn140:34.4 | S: “The Realized Ones do not ordain those without a full set of bowl and robes.” | T: “Bhikkhu, Tathāgatas do not give the full admission to anyone whose bowl and robes are not complete.”
+mn140:35.1 | S: And then Venerable Pukkusāti approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the venerable Pukkusāti, having delighted and rejoiced in the Blessed One’s words, rose from his seat, and after paying homage to the Blessed One, keeping him on his right, he departed in order to search for a bowl and robes.
+mn140:35.2 | S: But while he was wandering in search of a bowl and robes, a stray cow took his life. | T: Then, while the venerable Pukkusāti was searching for a bowl and robes, a stray cow killed him.
+mn140:36.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then a number of bhikkhus went to the Blessed One, and after paying homage to him, they sat down at one side and told him:
+mn140:36.2 | S: “Sir, the gentleman named Pukkusāti, who was advised in brief by the Buddha, has passed away. | T: “Venerable sir, the clansman Pukkusāti, who was given brief instruction by the Blessed One, has died.
+mn140:36.3 | S: Where has he been reborn in his next life?” | T: What is his destination? What is his future course?”
+mn140:36.4 | S: “Mendicants, Pukkusāti was astute. He practiced in line with the teaching, and did not trouble me about the teachings. | T: “Bhikkhus, the clansman Pukkusāti was wise. He practised in accordance with the Dhamma and did not trouble me in the interpretation of the Dhamma.
+mn140:36.5 | S: With the ending of the five lower fetters, he’s been reborn spontaneously and will become extinguished there, not liable to return from that world.” | T: With the destruction of the five lower fetters, the clansman Pukkusāti has reappeared spontaneously in the Pure Abodes and will attain final Nibbāna there without ever returning from that world.”
+mn140:36.6 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn140:36.7 | S: Satisfied, the mendicants approved what the Buddha said. | T: The bhikkhus were satisfied and delighted in the Blessed One’s words.
+mn140:36.8 | P: Dhātuvibhaṅgasuttaṁ niṭṭhitaṁ dasamaṁ. | T: (none)
+
+## mn95
+mn95:1.1 | S: So I have heard. | T: Thus have I heard.
+mn95:1.2 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants when he arrived at a village of the Kosalan brahmins named Opāsāda. | T: On one occasion the Blessed One was wandering in the Kosalan country with a large Sangha of bhikkhus, and eventually he arrived at a Kosalan brahmin village named Opasāda.
+mn95:1.3 | S: He stayed in the Godswood of sal trees to the north of Opāsāda. | T: There the Blessed One stayed in the Gods’ Grove, the Sāla-tree Grove to the north of Opasāda.
+mn95:2.1 | S: Now at that time the brahmin Caṅkī was living in Opāsāda. It was a crown property given by King Pasenadi of Kosala, teeming with living creatures, full of hay, wood, water, and grain, a royal park endowed to a brahmin. | T: Now on that occasion the brahmin Cankī was ruling over Opasāda, a crown property abounding in living beings, rich in grasslands, woodlands, waterways, and grain, a royal endowment, a sacred grant given to him by King Pasenadi of Kosala.
+mn95:3.1 | S: The brahmins and householders of Opāsāda heard: | T: The brahmin householders of Opasāda heard:
+mn95:3.2 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Opāsāda together with a large Saṅgha of mendicants. He is staying in the Godswood to the north. | T: “The recluse Gotama…as MN91,
+mn95:3.3 | S: He has this good reputation: | T: (none)
+mn95:3.4 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: (none)
+mn95:3.5 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: (none)
+mn95:3.6 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: (none)
+mn95:3.7 | S: It’s good to see such perfected ones.” | T: §3…Now it is good see such arahants.”
+mn95:4.1 | S: Then, exiting Opāsāda, they formed into companies and headed north to the Godswood. | T: Then the brahmin householders of Opasāda set forth from Opasāda in groups and bands and headed northwards to the Gods’ Grove, the Sāla-tree Grove.
+mn95:5.1 | S: Now at that time the brahmin Caṅkī had retired to the upper floor of his stilt longhouse for his midday nap. | T: Now on that occasion the brahmin Cankī had retired to the upper storey of his palace for his midday rest.
+mn95:5.2 | S: He saw the brahmins and householders heading for the Godswood, | T: Then he saw the brahmin householders of Opasāda setting forth from Opasāda in groups and bands and heading northwards to the Gods’ Grove, the Sāla-tree Grove.
+mn95:5.3 | S: and addressed his butler, | T: When he saw them, he asked his minister:
+mn95:5.4 | S: “My butler, why are the brahmins and householders heading north for the Godswood?” | T: “Good minister, why are the brahmin householders of Opasāda setting forth from Opasāda in groups and bands and heading northwards to the Gods’ Grove, the Sāla-tree Grove?”
+mn95:6.1 | S: “The ascetic Gotama has arrived at Opāsāda together with a large Saṅgha of mendicants. He is staying in the Godswood to the north. | T: “Sir, there is the recluse Gotama, the son of the Sakyans who went forth from a Sakyan clan, who has been wandering in the Kosalan country…as MN91,
+mn95:6.2 | S: He has this good reputation: | T: (none)
+mn95:6.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: (none)
+mn95:6.4 | S: They’re going to see that worthy Gotama.” | T: §3…They are going to see that Master Gotama.”
+mn95:6.5 | S: “Well then, go to the brahmins and householders and say to them: | T: “Then, good minister, go to the brahmin householders of Opasāda and tell them:
+mn95:6.6 | S: ‘Sirs, the brahmin Caṅkī asks | T: ‘Sirs, the brahmin Cankī says this:
+mn95:6.7 | S: you to wait, as he will also go to see the ascetic Gotama.’” | T: “Please wait, sirs. The brahmin Cankī will also go to see the recluse Gotama.”’”
+mn95:6.8 | S: “Yes, worthy sir,” replied the butler, and did as he was asked. | T: “Yes, sir,” the minister replied, and he went to the brahmin householders of Opasāda and gave them the message.
+mn95:6.9 | P: “caṅkī, bho, brāhmaṇo evamāha: | T: (none)
+mn95:6.10 | P: ‘āgamentu kira bhonto, caṅkīpi brāhmaṇo samaṇaṁ gotamaṁ dassanāya upasaṅkamissatī’”ti. | T: (none)
+mn95:7.1 | S: Now at that time around five hundred brahmins from abroad were residing in Opāsāda on some business. | T: Now on that occasion five hundred brahmins from various states were staying at Opasāda for some business or other.
+mn95:7.2 | S: They heard that | T: They heard:
+mn95:7.3 | S: the brahmin Caṅkī was going to see the ascetic Gotama. | T: “The brahmin Cankī, it is said, is going to see the recluse Gotama.”
+mn95:7.4 | S: They approached Caṅkī and said to him, | T: Then they went to the brahmin Cankī and asked him:
+mn95:7.5 | S: “Is it really true that you are going to see the ascetic Gotama?” | T: “Sir, is it true that you are going to see the recluse Gotama?”
+mn95:7.6 | S: “Yes, gentlemen, it is true.” | T: “So it is, sirs.
+mn95:7.7 | P: ‘ahaṁ samaṇaṁ gotamaṁ dassanāya upasaṅkamissāmī’”ti. | T: I am going to see the recluse Gotama.”
+mn95:8.1 | S: “Please don’t! | T: “Sir, do not go to see the recluse Gotama.
+mn95:8.2 | S: It’s not appropriate for you to go to see the ascetic Gotama; | T: It is not proper, Master Cankī, for you to go to see the recluse Gotama;
+mn95:8.3 | S: it’s appropriate that he comes to see you. | T: rather, it is proper for the recluse Gotama to come to see you.
+mn95:8.4 | S: You are well born on both your mother’s and father’s side, stemming from a clean vessel, with irrefutable and impeccable genealogy back to the seventh paternal generation. | T: For you, sir, are well born on both sides, of pure maternal and paternal descent seven generations back, unassailable and impeccable in respect of birth.
+mn95:8.5 | S: For this reason it’s not appropriate for you to go to see the ascetic Gotama; | T: Since that is so, Master Cankī, it is not proper for you to go to see the recluse Gotama;
+mn95:8.6 | S: it’s appropriate that he comes to see you. | T: rather, it is proper for the recluse Gotama to come to see you.
+mn95:8.7 | S: You’re rich, affluent, and wealthy. … | T: You, sir, are rich, with great wealth and great possessions.
+mn95:8.8 | S: You recite and remember the hymns, and have mastered the three Vedas, together with their vocabularies and ritual performance, their phonology and word classification, and the testaments as fifth. You know them word-by-word, and their grammar. You are well versed in cosmology and the marks of a great man. … | T: You, sir, are a master of the Three Vedas with their vocabularies, liturgy, phonology, and etymology, and the histories as a fifth; skilled in philology and grammar, you are fully versed in natural philosophy and in the marks of a Great Man.
+mn95:8.9 | S: You are attractive, good-looking, lovely, of surpassing beauty. You have divine looks and lustre, remarkable to behold. … | T: You, sir, are handsome, comely, and graceful, possessing supreme beauty of complexion, with sublime beauty and sublime presence, remarkable to behold.
+mn95:8.10 | S: You are ethical, mature in ethical conduct. … | T: You, sir, are virtuous, mature in virtue, possessing mature virtue.
+mn95:8.11 | S: You’re a good speaker who enunciates well, with a polished, clear, and articulate voice that expresses the meaning. … | T: You, sir, are a good speaker with a good delivery; you speak words that are courteous, distinct, flawless, and communicate the meaning.
+mn95:8.12 | S: You’re the tutor of tutors for many, and teach three hundred young students to recite the hymns. … | T: You, sir, teach the teachers of many, and you teach the recitation of the hymns to three hundred brahmin students.
+mn95:8.13 | S: You’re honored, respected, revered, venerated, and esteemed by King Pasenadi of Kosala | T: You, sir, are honoured, respected, revered, venerated, and esteemed by King Pasenadi of Kosala.
+mn95:8.14 | S: and the brahmin Pokkharasāti. … | T: You, sir, are honoured, respected, revered, venerated, and esteemed by the brahmin Pokkharasāti.
+mn95:8.15 | S: You live in Opāsāda, a crown property given by King Pasenadi of Kosala, teeming with living creatures, full of hay, wood, water, and grain, a royal park endowed to a brahmin. | T: You, sir, rule over Opasāda, a crown property abounding in living beings…a sacred grant given to you by King Pasenadi of Kosala.
+mn95:8.16 | S: For all these reasons it’s not appropriate for you to go to see the ascetic Gotama; | T: Since this is so, Master Cankī, it is not proper for you to go to see the recluse Gotama;
+mn95:8.17 | S: it’s appropriate that he comes to see you.” | T: rather, it is proper for the recluse Gotama to come to see you.”
+mn95:9.1 | S: When they had spoken, Caṅkī said to those brahmins: | T: When this was said, the brahmin Cankī told those brahmins:
+mn95:9.2 | S: “Well then, gentlemen, listen to why it’s appropriate for me to go to see the ascetic Gotama, | T: “Now, sirs, hear from me why it is proper for me to go to see Master Gotama,
+mn95:9.3 | S: and it’s not appropriate for him to come to see me. | T: and why it is not proper for Master Gotama to come to see me.
+mn95:9.4 | S: He is well born on both his mother’s and father’s side, stemming from a clean vessel, with irrefutable and impeccable genealogy back to the seventh paternal generation. | T: Sirs, the recluse Gotama is well born on both sides, of pure maternal and paternal descent seven generations back, unassailable and impeccable in respect of birth.
+mn95:9.5 | S: For this reason it’s not appropriate for the ascetic Gotama to come to see me; | T: Since this is so, sirs, it is not proper for Master Gotama to come to see me;
+mn95:9.6 | S: rather, it’s appropriate for me to go to see him. | T: rather, it is proper for me to go to see Master Gotama.
+mn95:9.7 | S: When he went forth he abandoned abundant gold, both coined and uncoined, stored above and below ground. … | T: Sirs, the recluse Gotama went forth abandoning much gold and bullion stored away in vaults and in lofts.
+mn95:9.8 | S: He went forth from the lay life to homelessness while still a youth, young, with pristine black hair, blessed with youth, in the prime of life. … | T: Sirs, the recluse Gotama went forth from the home life into homelessness while still young, a black-haired young man endowed with the blessing of youth, in the prime of life.
+mn95:9.9 | S: Though his mother and father wished otherwise, weeping with tearful faces, he shaved off his hair and beard, dressed in ocher robes, and went forth from the lay life to homelessness. … | T: Sirs, the recluse Gotama shaved off his hair and beard, put on the yellow robe, and went forth from the home life into homelessness though his mother and father wished otherwise and wept with tearful faces.
+mn95:9.10 | S: He is attractive, good-looking, lovely, of surpassing beauty. He has divine looks and lustre, remarkable to behold. … | T: Sirs, the recluse Gotama is handsome, comely, and graceful, possessing supreme beauty of complexion, with sublime beauty and sublime presence, remarkable to behold.
+mn95:9.11 | S: He is ethical, possessing ethical conduct that is noble and skillful. … | T: Sirs, the recluse Gotama is virtuous, with noble virtue, with wholesome virtue, possessing wholesome virtue.
+mn95:9.12 | S: He’s a good speaker who enunciates well, with a polished, clear, and articulate voice that expresses the meaning. … | T: Sirs, the recluse Gotama is a good speaker with a good delivery; he speaks words that are courteous, distinct, flawless, and communicate the meaning.
+mn95:9.13 | S: He’s a tutor of tutors. … | T: Sirs, the recluse Gotama is a teacher of the teachers of many.
+mn95:9.14 | S: He has ended sensual desire, and is rid of caprice. … | T: Sirs, the recluse Gotama is free from sensual lust and without personal vanity.
+mn95:9.15 | S: He teaches the efficacy of deeds and action. He doesn’t wish any harm upon the community of brahmins. … | T: Sirs, the recluse Gotama holds the doctrine of the moral efficacy of action, the doctrine of the moral efficacy of deeds; he does not seek any harm for the line of brahmins.
+mn95:9.16 | S: He went forth from an eminent family of unbroken aristocratic lineage. … | T: Sirs, the recluse Gotama went forth from an aristocratic family, from one of the original noble families.
+mn95:9.17 | S: He went forth from a rich, affluent, and wealthy family. … | T: Sirs, the recluse Gotama went forth from a rich family, from a family of great wealth and great possessions.
+mn95:9.18 | S: People come from distant lands and distant countries to question him. … | T: Sirs, people come from remote kingdoms and remote districts to question the recluse Gotama.
+mn95:9.19 | S: Many thousands of deities have gone for refuge for life to him. … | T: Sirs, many thousands of deities have gone for refuge for life to the recluse Gotama.
+mn95:9.20 | S: He has this good reputation: | T: Sirs, a good report of the recluse Gotama has been spread to this effect:
+mn95:9.21 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ … | T: ‘That Blessed One is accomplished, fully enlightened, perfect in true knowledge and conduct, sublime, knower of worlds, incomparable leader of persons to be tamed, teacher of gods and humans, enlightened, blessed.’
+mn95:9.22 | S: He has the thirty-two marks of a great man. … | T: Sirs, the recluse Gotama possesses the thirty-two marks of a Great Man.
+mn95:9.23 | S: King Seniya Bimbisāra of Magadha and his wives and children have gone for refuge for life to the ascetic Gotama. … | T: Sirs, King Seniya Bimbisāra of Magadha and his wife and children have gone for refuge for life to the recluse Gotama.
+mn95:9.24 | S: King Pasenadi of Kosala and his wives and children have gone for refuge for life to the ascetic Gotama. … | T: Sirs, King Pasenadi of Kosala and his wife and children have gone for refuge for life to the recluse Gotama.
+mn95:9.25 | S: The brahmin Pokkharasāti and his wives and children have gone for refuge for life to the ascetic Gotama. … | T: Sirs, the brahmin Pokkharasāti and his wife and children have gone for refuge for life to the recluse Gotama.
+mn95:9.26 | S: The ascetic Gotama has arrived to stay in the Godswood to the north of Opāsāda. | T: Sirs, the recluse Gotama has arrived at Opasāda and is living at Opasāda in the Gods’ Grove, the Sāla-tree Grove to the north of Opasāda.

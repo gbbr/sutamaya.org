@@ -1,0 +1,360 @@
+## mn147
+mn147:1.1 | S: So I have heard. | T: I have heard that
+mn147:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn147:1.3 | S: Then as he was in private retreat this thought came to his mind, | T: Then, as he was alone in seclusion, this line of thinking arose in the Blessed One’s awareness:
+mn147:1.4 | S: “The qualities that ripen in freedom have ripened in Rāhula. | T: “The mental qualities that ripen in release have ripened in Rāhula.
+mn147:1.5 | S: Why don’t I lead him further to the ending of defilements?” | T: What if I were to lead Rāhula further to the ending of the effluents?”
+mn147:1.6 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then the Blessed One, early in the morning—having adjusted his lower robe and taking his bowl & outer robe—went into Sāvatthī for alms.
+mn147:1.7 | S: Then, after the meal, on his return from almsround, he addressed Venerable Rāhula, | T: Having gone for alms in Sāvatthī, after the meal, returning from his alms round, he said to Ven. Rāhula,
+mn147:1.8 | S: “Rāhula, get your sitting cloth. | T: “Fetch your sitting cloth, Rāhula.
+mn147:1.9 | S: Let’s go to the Dark Forest for the day’s meditation.” | T: We will go to the Grove of the Blind to spend the day.”
+mn147:1.10 | S: “Yes, sir,” replied Rāhula. Taking his sitting cloth he followed behind the Buddha. | T: Responding, “As you say, lord,” to the Blessed One, Ven. Rāhula, carrying his sitting cloth, followed behind the Blessed One.
+mn147:2.1 | S: Now at that time many thousands of deities followed the Buddha, thinking, | T: Now at that time, many thousands of devas were following behind the Blessed One, (thinking,)
+mn147:2.2 | S: “Today the Buddha will lead Rāhula further to the ending of defilements!” | T: “Today the Blessed One will lead Ven. Rāhula further to the ending of the effluents.”
+mn147:2.3 | S: Then the Buddha plunged deep into the Dark Forest and sat at the root of a tree on the seat spread out. | T: Then the Blessed One, having plunged into the Grove of the Blind, sat down on a seat made ready at the foot of a tree.
+mn147:2.4 | S: Rāhula bowed to the Buddha and sat down to one side. | T: Ven. Rāhula, having bowed down to the Blessed One, sat to one side.
+mn147:2.5 | S: The Buddha said to him: | T: As he was sitting there, the Blessed One said to him,
+mn147:2.6 | S: “What do you think, Rāhula? | T: “What do you think, Rāhula?
+mn147:2.7 | S: Is the eye permanent or impermanent?” | T: Is the eye constant or inconstant?”
+mn147:2.8 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:2.9 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:2.10 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:2.11 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:2.12 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:2.13 | S: “No, sir.” | T: “No, lord.”
+mn147:3.1 | S: “What do you think, Rāhula? | T: “What do you think?
+mn147:3.2 | S: Are sights permanent or impermanent?” | T: Are forms constant or inconstant?”
+mn147:3.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:3.4 | S: “But if they’re impermanent, are they suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:3.5 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:3.6 | S: “But if they’re impermanent, suffering, and perishable, are they fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:3.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:3.8 | S: “No, sir.” | T: “No, lord.”
+mn147:3.9 | S: “What do you think, Rāhula? | T: “What do you think?
+mn147:3.10 | S: Is eye consciousness permanent or impermanent?” | T: Is consciousness at the eye constant or inconstant?”
+mn147:3.11 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:3.12 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:3.13 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:3.14 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:3.15 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:3.16 | S: “No, sir.” | T: “No, lord.”
+mn147:3.17 | S: “What do you think, Rāhula? | T: “What do you think?
+mn147:3.18 | S: Is eye contact permanent or impermanent?” | T: Is contact at the eye constant or inconstant?”
+mn147:3.19 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:3.20 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:3.21 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:3.22 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:3.23 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:3.24 | S: “No, sir.” | T: “No, lord.”
+mn147:3.25 | S: “What do you think, Rāhula? | T: “What do you think?
+mn147:3.26 | S: Anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact: is that permanent or impermanent?” | T: Whatever there is that arises in dependence on contact at the eye as a mode of feeling, a mode of perception, a mode of fabrication, or a mode of consciousness: Is it constant or inconstant?”
+mn147:3.27 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:3.28 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:3.29 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:3.30 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:3.31 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:3.32 | S: “No, sir.” | T: “No, lord.”
+mn147:4-8.1 | S: “What do you think, Rāhula? Is the ear … | T: “What do you think, Rāhula? Is the ear constant or inconstant?” “Inconstant, lord” …
+mn147:4-8.2 | P: “Aniccaṁ, bhante …pe… | T: (none)
+mn147:4-8.3 | S: nose … | T: “What do you think, Rāhula? Is the nose constant or inconstant?”
+mn147:4-8.4 | P: “Aniccaṁ, bhante …pe… | T: “Inconstant, lord” …
+mn147:4-8.5 | S: tongue … | T: “What do you think, Rāhula? Is the tongue constant or inconstant?”
+mn147:4-8.6 | P: “Aniccā, bhante … | T: “Inconstant, lord” …
+mn147:4-8.7 | S: body … | T: “What do you think, Rāhula? Is the body constant or inconstant?”
+mn147:4-8.8 | P: “Anicco, bhante … | T: “Inconstant, lord” …
+mn147:4-8.9 | S: mind permanent or impermanent?” | T: “What do you think, Rāhula? Is the intellect constant or inconstant?”
+mn147:4-8.10 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:4-8.11 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:4-8.12 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:4-8.13 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:4-8.14 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:4-8.15 | S: “No, sir.” | T: “No, lord.”
+mn147:4-8.16 | S: “What do you think, Rāhula? Are ideas permanent or impermanent?” | T: “What do you think? Are ideas constant or inconstant?”
+mn147:4-8.17 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:4-8.18 | S: “But if they’re impermanent, are they suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:4-8.19 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:4-8.20 | S: “But if they’re impermanent, suffering, and perishable, are they fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:4-8.21 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:4-8.22 | S: “No, sir.” | T: “No, lord.”
+mn147:4-8.23 | S: “What do you think, Rāhula? Is mind consciousness permanent or impermanent?” | T: “What do you think? Is consciousness at the intellect constant or inconstant?”
+mn147:4-8.24 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:4-8.25 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:4-8.26 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:4-8.27 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:4-8.28 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:4-8.29 | S: “No, sir.” | T: “No, lord.”
+mn147:4-8.30 | S: “What do you think, Rāhula? Is mind contact permanent or impermanent?” | T: “What do you think? Is contact at the intellect constant or inconstant?”
+mn147:4-8.31 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:4-8.32 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:4-8.33 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:4-8.34 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:4-8.35 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:4-8.36 | S: “No, sir.” | T: “No, lord.”
+mn147:4-8.37 | S: “What do you think, Rāhula? | T: “What do you think?
+mn147:4-8.38 | S: Anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact: is that permanent or impermanent?” | T: Whatever there is that arises in dependence on contact at the intellect as a mode of feeling, a mode of perception, a mode of fabrication, or a mode of consciousness: Is it constant or inconstant?”
+mn147:4-8.39 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+mn147:4-8.40 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn147:4-8.41 | S: “Suffering, sir.” | T: “Stressful, lord.”
+mn147:4-8.42 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn147:4-8.43 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn147:4-8.44 | S: “No, sir.” | T: “No, lord.”
+mn147:9.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on eye contact. | T: “Seeing thus, Rāhula, the instructed disciple of the noble ones grows disenchanted with the eye, disenchanted with forms, disenchanted with consciousness at the eye, disenchanted with contact at the eye. And whatever there is that arises in dependence on contact at the eye as a mode of feeling, a mode of perception, a mode of fabrication, or a mode of consciousness: With that, too, he grows disenchanted.
+mn147:9.2 | S: They grow disillusioned with the ear … | T: “He grows disenchanted with the ear.…
+mn147:9.3 | S: nose … | T: “He grows disenchanted with the nose.…
+mn147:9.4 | S: tongue … | T: “He grows disenchanted with the tongue.…
+mn147:9.5 | S: body … | T: “He grows disenchanted with the body.…
+mn147:9.6 | S: mind, ideas, mind consciousness, and mind contact. And they grow disillusioned with anything included in feeling, perception, choices, and consciousness that arises dependent on mind contact. | T: “He grows disenchanted with the intellect, disenchanted with ideas, disenchanted with consciousness at the intellect, disenchanted with contact at the intellect. And whatever there is that arises in dependence on contact at the intellect as a mode of feeling, a mode of perception, a mode of fabrication, or a mode of consciousness: With that, too, he grows disenchanted.
+mn147:9.7 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+mn147:9.8 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+mn147:9.9 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn147:9.10 | S: Satisfied, Venerable Rāhula approved what the Buddha said. | T: Gratified, Ven. Rāhula delighted in the Blessed One’s words.
+mn147:9.11 | S: And while this discourse was being spoken, Rāhula’s mind was freed from defilements by not grasping. | T: And while this explanation was being given, Ven. Rāhula’s mind, through lack of clinging/sustenance, was released from effluents.
+mn147:9.12 | S: And the stainless, immaculate vision of the Dhamma arose in those thousands of deities: | T: And to those many thousands of devas there arose the dustless, stainless Dhamma eye:
+mn147:9.13 | S: “Everything that is liable to arise is liable to cease.” | T: “Whatever is subject to origination is all subject to cessation.”
+mn147:9.14 | P: Cūḷarāhulovādasuttaṁ niṭṭhitaṁ pañcamaṁ. | T: (none)
+
+## mn151
+mn151:1.1 | S: So I have heard. | T: I have heard that
+mn151:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+mn151:1.3 | S: Then in the late afternoon, Sāriputta came out of retreat and went to the Buddha. He bowed and sat down to one side. The Buddha said to him, | T: Then Ven. Sāriputta, emerging from his seclusion in the late afternoon, went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there, the Blessed One said to him,
+mn151:2.1 | S: “Sāriputta, your faculties are so very clear, and your complexion is pure and bright. | T: “Clear, Sāriputta, are your faculties—pure your complexion, and bright.
+mn151:2.2 | S: What kind of meditation are you usually practicing these days?” | T: In which [meditative] dwelling do you often now dwell?”
+mn151:2.3 | S: “Sir, these days I usually practice the meditation on emptiness.” | T: “Lord, I often now dwell in a dwelling of emptiness.”
+mn151:2.4 | S: “Good, good, Sāriputta! | T: “Excellent, Sāriputta. Excellent.
+mn151:2.5 | S: It seems you usually practice the meditation of a great man. | T: You often now dwell in the dwelling of a great man,
+mn151:2.6 | S: For emptiness is the meditation of a great man. | T: for this is the dwelling of a great man: i.e., emptiness.
+mn151:2.7 | P: suññatā. | T: (none)
+mn151:3.1 | S: Now, a mendicant might wish: | T: “Sāriputta, if a monk should wish,
+mn151:3.2 | S: ‘May I usually practice the meditation on emptiness.’ So they should reflect: | T: ‘May I often dwell in a dwelling of emptiness,’ then he should consider:
+mn151:3.3 | S: ‘Along the path that I went for alms, or in the place I wandered for alms, or along the path that I returned from alms, was there any desire or greed or hate or delusion or aversion in my heart for sights known by the eye?’ | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, was there in my mind any desire, passion, aversion, delusion, or irritation for forms cognizable via the eye?’
+mn151:3.4 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:3.5 | S: there was such desire or greed or hate or delusion or aversion in their heart, they should make an effort to give up those unskillful qualities. | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, there was in my mind desire, passion, aversion, delusion, or irritation for forms cognizable via the eye,’ then he should make an effort for the abandoning of those evil, unskillful qualities.
+mn151:3.6 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:3.7 | S: there was no such desire or greed or hate or delusion or aversion in their heart, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, there was in my mind no desire, passion, aversion, delusion, or irritation for forms cognizable via the eye,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:4-8.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:4-8.2 | S: ‘Along the path that I went for alms, or in the place I wandered for alms, or along the path that I returned from alms, was there any desire or greed or hate or delusion or repulsion in my heart for sounds known by the ear … | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, was there in my mind any desire, passion, aversion, delusion, or irritation for sounds cognizable via the ear…
+mn151:4-8.3 | S: smells known by the nose … | T: aromas cognizable via the nose…
+mn151:4-8.4 | S: tastes known by the tongue … | T: flavors cognizable via the tongue…
+mn151:4-8.5 | S: touches known by the body … | T: tactile sensations cognizable via the body…
+mn151:4-8.6 | S: ideas known by the mind?’ | T: ideas cognizable via the intellect?’
+mn151:4-8.7 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:4-8.8 | S: there was such desire or greed or hate or delusion or aversion in their heart, they should make an effort to give up those unskillful qualities. | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, there was in my mind desire, passion, aversion, delusion, or irritation for ideas cognizable via the intellect,’ then he should make an effort for the abandoning of those evil, unskillful qualities.
+mn151:4-8.9 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:4-8.10 | S: there was no such desire or greed or hate or delusion or aversion in their heart, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘On the path by which I entered the village for alms, or in the place where I wandered for alms, or on the path by which I returned from the village for alms, there was in my mind no desire, passion, aversion, delusion, or irritation for ideas cognizable via the intellect,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:9.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:9.2 | S: ‘Have I given up the five kinds of sensual stimulation?’ | T: ‘Are the five strings of sensuality abandoned in me?’
+mn151:9.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:9.4 | S: they have not given them up, they should make an effort to do so. | T: ‘The five strings of sensuality are not abandoned in me,’ he should make an effort for the abandoning of the five strings of sensuality.
+mn151:9.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:9.6 | S: they have given them up, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘The five strings of sensuality are abandoned in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:10.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:10.2 | S: ‘Have I given up the five hindrances?’ | T: ‘Are the five hindrances abandoned in me?’
+mn151:10.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:10.4 | S: they have not given them up, they should make an effort to do so. | T: ‘The five hindrances are not abandoned in me,’ he should make an effort for the abandoning of the five hindrances.
+mn151:10.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:10.6 | S: they have given them up, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘The five hindrances are abandoned in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:11.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:11.2 | S: ‘Have I completely understood the five grasping aggregates?’ | T: ‘Are the five clinging-aggregates comprehended by me?’
+mn151:11.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:11.4 | S: they have not completely understood them, they should make an effort to do so. | T: ‘The five clinging-aggregates are not comprehended by me,’ he should make an effort for the comprehension of the five clinging-aggregates.
+mn151:11.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:11.6 | S: they have completely understood them, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘The five clinging-aggregates are comprehended by me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:12.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:12.2 | S: ‘Have I developed the four kinds of mindfulness meditation?’ | T: ‘Are the four establishings of mindfulness developed in me?’
+mn151:12.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:12.4 | S: they haven’t developed them, they should make an effort to do so. | T: ‘The four establishings of mindfulness are not developed in me,’ he should make an effort for the development of the four establishings of mindfulness.
+mn151:12.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:12.6 | S: they have developed them, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘The four establishings of mindfulness are developed in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:13.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:13.2 | S: ‘Have I developed the four right efforts … | T: ‘Are the four right exertions…
+mn151:13.3 | P: Sace, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:13.4 | P: ‘abhāvitā kho me cattāro sammappadhānā’ti, tena, sāriputta, bhikkhunā catunnaṁ sammappadhānānaṁ bhāvanāya vāyamitabbaṁ. | T: (none)
+mn151:13.5 | P: Sace pana, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:13.6 | P: ‘bhāvitā kho me cattāro sammappadhānā’ti, tena, sāriputta, bhikkhunā teneva pītipāmojjena vihātabbaṁ ahorattānusikkhinā kusalesu dhammesu. | T: (none)
+mn151:14.1 | P: Puna caparaṁ, sāriputta, bhikkhunā iti paṭisañcikkhitabbaṁ: | T: (none)
+mn151:14.2 | S: the four bases of psychic power … | T: the four bases of power…
+mn151:14.3 | P: Sace, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:14.4 | P: ‘abhāvitā kho me cattāro iddhipādā’ti, tena, sāriputta, bhikkhunā catunnaṁ iddhipādānaṁ bhāvanāya vāyamitabbaṁ. | T: (none)
+mn151:14.5 | P: Sace pana, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:14.6 | P: ‘bhāvitā kho me cattāro iddhipādā’ti, tena, sāriputta, bhikkhunā teneva pītipāmojjena vihātabbaṁ ahorattānusikkhinā kusalesu dhammesu. | T: (none)
+mn151:15.1 | P: Puna caparaṁ, sāriputta, bhikkhunā iti paṭisañcikkhitabbaṁ: | T: (none)
+mn151:15.2 | S: the five faculties … | T: the five faculties…
+mn151:15.3 | P: Sace, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:15.4 | P: ‘abhāvitāni kho me pañcindriyānī’ti, tena, sāriputta, bhikkhunā pañcannaṁ indriyānaṁ bhāvanāya vāyamitabbaṁ. | T: (none)
+mn151:15.5 | P: Sace pana, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:15.6 | P: ‘bhāvitāni kho me pañcindriyānī’ti, tena, sāriputta, bhikkhunā teneva pītipāmojjena vihātabbaṁ ahorattānusikkhinā kusalesu dhammesu. | T: (none)
+mn151:16.1 | P: Puna caparaṁ, sāriputta, bhikkhunā iti paṭisañcikkhitabbaṁ: | T: (none)
+mn151:16.2 | S: the five powers … | T: the five strengths…
+mn151:16.3 | P: Sace, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:16.4 | P: ‘abhāvitāni kho me pañca balānī’ti, tena, sāriputta, bhikkhunā pañcannaṁ balānaṁ bhāvanāya vāyamitabbaṁ. | T: (none)
+mn151:16.5 | P: Sace pana, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: (none)
+mn151:16.6 | P: ‘bhāvitāni kho me pañca balānī’ti, tena, sāriputta, bhikkhunā teneva pītipāmojjena vihātabbaṁ ahorattānusikkhinā kusalesu dhammesu. | T: (none)
+mn151:17.1 | P: Puna caparaṁ, sāriputta, bhikkhunā iti paṭisañcikkhitabbaṁ: | T: (none)
+mn151:17.2 | S: the seven awakening factors … | T: the seven factors for awakening developed in me?’
+mn151:17.3 | P: Sace, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: If, on reflection, he knows,
+mn151:17.4 | P: ‘abhāvitā kho me satta bojjhaṅgā’ti, tena, sāriputta, bhikkhunā sattannaṁ bojjhaṅgānaṁ bhāvanāya vāyamitabbaṁ. | T: ‘The seven factors for awakening are not developed in me,’ he should make an effort for the development of the seven factors for awakening.
+mn151:17.5 | P: Sace pana, sāriputta, bhikkhu paccavekkhamāno evaṁ jānāti: | T: But if, on reflection, he knows,
+mn151:17.6 | P: ‘bhāvitā kho me satta bojjhaṅgā’ti, tena, sāriputta, bhikkhunā teneva pītipāmojjena vihātabbaṁ ahorattānusikkhinā kusalesu dhammesu. | T: ‘The seven factors for awakening are developed in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:18.1 | P: Puna caparaṁ, sāriputta, bhikkhunā iti paṭisañcikkhitabbaṁ: | T: “Further, the monk should consider:
+mn151:18.2 | S: the noble eightfold path?’ | T: ‘Is the noble eightfold path developed in me?’
+mn151:18.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:18.4 | S: they haven’t developed it, they should make an effort to do so. | T: ‘The noble eightfold path is not developed in me,’ he should make an effort for the development of the noble eightfold path.
+mn151:18.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:18.6 | S: they have developed it, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘The noble eightfold path is developed in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:19.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:19.2 | S: ‘Have I developed serenity and discernment?’ | T: ‘Are tranquility & insight developed in me?’
+mn151:19.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:19.4 | S: they haven’t developed them, they should make an effort to do so. | T: ‘Tranquility & insight are not developed in me,’ he should make an effort for the development of tranquility & insight.
+mn151:19.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:19.6 | S: they have developed them, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘Tranquility & insight are developed in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:20.1 | S: Furthermore, a mendicant should reflect: | T: “Further, the monk should consider:
+mn151:20.2 | S: ‘Have I realized knowledge and freedom?’ | T: ‘Are clear knowing & release realized in me?’
+mn151:20.3 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflection, he knows,
+mn151:20.4 | S: they haven’t realized them, they should make an effort to do so. | T: ‘Clear knowing & release are not realized in me,’ he should make an effort for the realization of clear knowing & release.
+mn151:20.5 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflection, he knows,
+mn151:20.6 | S: they have realized them, they should meditate with rapture and joy, training day and night in skillful qualities. | T: ‘Clear knowing & release are realized in me,’ then he should dwell in refreshment & joy, training day & night in skillful qualities.
+mn151:21.1 | S: Whether in the past, future, or present, all those who purify their almsfood do so by continually checking in this way. | T: “Sāriputta, all those contemplatives & brahmans in the course of the past who purified their almsfood, did so through repeated reflection in just this way.
+mn151:21.2 | P: Yepi hi keci, sāriputta, anāgatamaddhānaṁ samaṇā vā brāhmaṇā vā piṇḍapātaṁ parisodhessanti, sabbe te evameva paccavekkhitvā paccavekkhitvā piṇḍapātaṁ parisodhessanti. | T: “All those contemplatives & brahmans in the course of the future who will purify their almsfood, will do so through repeated reflection in just this way.
+mn151:21.3 | P: Yepi hi keci, sāriputta, etarahi samaṇā vā brāhmaṇā vā piṇḍapātaṁ parisodhenti, sabbe te evameva paccavekkhitvā paccavekkhitvā piṇḍapātaṁ parisodhenti. | T: “All those contemplatives & brahmans at present who purify their almsfood, do so through repeated reflection in just this way.
+mn151:21.4 | S: So, Sāriputta, you should all train like this: ‘We shall purify our almsfood by continually checking.’” | T: “Thus, Sāriputta, you should train yourselves: ‘We will purify our almsfood through repeated reflection.’
+mn151:21.5 | P: evañhi vo, sāriputta, sikkhitabban”ti. | T: That’s how you should train yourselves.”
+mn151:21.6 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn151:21.7 | S: Satisfied, Venerable Sāriputta approved what the Buddha said. | T: Gratified, Ven. Sāriputta delighted in the Blessed One’s words.
+mn151:21.8 | P: Piṇḍapātapārisuddhisuttaṁ niṭṭhitaṁ navamaṁ. | T: (none)
+
+## mn18
+mn18:1.1 | S: So I have heard. | T: I have heard that
+mn18:1.2 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: on one occasion the Blessed One was staying among the Sakyans near Kapilavatthu in the Banyan Park.
+mn18:2.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kapilavatthu for alms. | T: Then in the early morning, having adjusted his lower robe and taking his bowl & outer robe, he went into Kapilavatthu for alms.
+mn18:2.2 | S: He wandered for alms in Kapilavatthu. After the meal, on his return from almsround, he went to the Great Wood for the day’s meditation, | T: Having gone for alms in Kapilavatthu, after the meal, returning from his alms round, he went to the Great Forest for the day’s abiding.
+mn18:2.3 | S: plunged deep into it, and sat at the root of a young wood-apple tree to meditate. | T: Plunging into the Great Forest, he sat down at the root of a young clump of bamboo for the day’s abiding.
+mn18:3.1 | S: Daṇḍapāṇi the Sakyan, while going for a walk, | T: Daṇḍapānin [“Stick-in-hand”] the Sakyan, out roaming & rambling for exercise,
+mn18:3.2 | S: plunged deep into the Great Wood. He approached the Buddha and exchanged greetings with him. | T: also went to the Great Forest. Plunging into the Great Forest, he went to the Blessed One under the young clump of bamboo. On arrival, he exchanged courteous greetings with him.
+mn18:3.3 | S: When the greetings and polite conversation were over, he stood to one side leaning on his staff, and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he stood to one side. As he was standing there, he said to the Blessed One,
+mn18:3.4 | S: “What is the ascetic’s doctrine? What does he assert?” | T: “What is the contemplative’s doctrine? What does he proclaim?”
+mn18:4.1 | S: “Respectable sir, my doctrine is such that one does not argue with anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. And it is such that perceptions do not underlie the brahmin who lives detached from sensual pleasures, without indecision, stripped of worry, and rid of craving for rebirth in this or that state. | T: “The sort of doctrine, friend, where one does not keep quarreling with anyone in the cosmos with its devas, Māras, & Brahmās, with its contemplatives & brahmans, its royalty & commonfolk; the sort (of doctrine) where perceptions no longer obsess the brahman who remains dissociated from sensuality, free from perplexity, his uncertainty cut away, devoid of craving for becoming & non-.
+mn18:4.2 | S: That is my doctrine, and that is what I assert.” | T: Such is my doctrine; such is what I proclaim.”
+mn18:5.1 | S: When he had spoken, Daṇḍapāṇi shook his head, waggled his tongue, raised his eyebrows until his brow puckered in three furrows, and left leaning on his staff. | T: When this was said, Daṇḍapānin the Sakyan—shaking his head, wagging his tongue, raising his eyebrows so that his forehead was wrinkled in three furrows—left, leaning on his stick.
+mn18:6.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the Banyan Tree Monastery, sat down on the seat spread out, | T: Then the Blessed One, emerging from his seclusion in the evening, went to the Banyan Park and, on arrival, sat down on a seat made ready. Having sat down,
+mn18:6.2 | S: and told the mendicants what had happened. | T: he [told the monks what had happened].
+mn18:6.3 | P: “idhāhaṁ, bhikkhave, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya kapilavatthuṁ piṇḍāya pāvisiṁ. | T: (none)
+mn18:6.4 | P: Kapilavatthusmiṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto yena mahāvanaṁ tenupasaṅkamiṁ divāvihārāya. | T: (none)
+mn18:6.5 | P: Mahāvanaṁ ajjhogāhetvā beluvalaṭṭhikāya mūle divāvihāraṁ nisīdiṁ. | T: (none)
+mn18:6.6 | P: Daṇḍapāṇipi kho, bhikkhave, sakko jaṅghāvihāraṁ anucaṅkamamāno anuvicaramāno yena mahāvanaṁ tenupasaṅkami. | T: (none)
+mn18:6.7 | P: Mahāvanaṁ ajjhogāhetvā yena beluvalaṭṭhikā yenāhaṁ tenupasaṅkami; upasaṅkamitvā mayā saddhiṁ sammodi. | T: (none)
+mn18:6.8 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā daṇḍamolubbha ekamantaṁ aṭṭhāsi. Ekamantaṁ ṭhito kho, bhikkhave, daṇḍapāṇi sakko maṁ etadavoca: | T: (none)
+mn18:6.9 | P: ‘kiṁvādī samaṇo kimakkhāyī’ti? | T: (none)
+mn18:6.10 | P: Evaṁ vutte, ahaṁ, bhikkhave, daṇḍapāṇiṁ sakkaṁ etadavocaṁ: | T: (none)
+mn18:6.11 | P: ‘yathāvādī kho, āvuso, sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya na kenaci loke viggayha tiṭṭhati, yathā ca pana kāmehi visaṁyuttaṁ viharantaṁ taṁ brāhmaṇaṁ akathaṅkathiṁ chinnakukkuccaṁ bhavābhave vītataṇhaṁ saññā nānusenti— | T: (none)
+mn18:6.12 | P: evaṁvādī kho ahaṁ, āvuso, evamakkhāyī’ti. | T: (none)
+mn18:6.13 | P: Evaṁ vutte, bhikkhave, daṇḍapāṇi sakko sīsaṁ okampetvā, jivhaṁ nillāḷetvā, tivisākhaṁ nalāṭikaṁ nalāṭe vuṭṭhāpetvā daṇḍamolubbha pakkāmī”ti. | T: (none)
+mn18:6.14 | S: When he had spoken, one of the mendicants said to him, | T: When this was said, a certain monk said to the Blessed One,
+mn18:7.1 | S: “But sir, asserting what doctrine does the Buddha not argue with anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans? | T: “Lord, what sort of doctrine is it where one does not keep quarreling with anyone in the cosmos with its devas, Māras, & Brahmās, with its contemplatives & brahmans, its royalty & commonfolk;
+mn18:7.2 | S: And how is it that perceptions do not underlie the Buddha, the brahmin who lives detached from sensual pleasures, without indecision, stripped of worry, and rid of craving for rebirth in this or that state?” | T: where perceptions no longer obsess the brahman who remains dissociated from sensuality, free from perplexity, his uncertainty cut away, devoid of craving for becoming & non-?”
+mn18:8.1 | S: “Mendicant, judgments driven by proliferating perceptions beset a person. | T: “If, monk, with regard to the cause whereby the perceptions & categories of objectification assail a person,
+mn18:8.2 | S: If they don’t find anything worth approving, welcoming, or getting attached to in the source from which these arise, | T: there is nothing there to relish, welcome, or remain fastened to,
+mn18:8.3 | S: just this is the end of the underlying tendencies to desire, aversion, views, doubt, conceit, the desire for continued existence, and ignorance. This is the end of taking up the rod and the sword, the end of quarrels, arguments, and disputes, of accusations, backbiting, and lies. | T: then that is the end of the obsessions of passion, the obsessions of resistance, the obsessions of views, the obsessions of uncertainty, the obsessions of conceit, the obsessions of passion for becoming, & the obsessions of ignorance. That is the end of taking up rods & bladed weapons, of arguments, quarrels, disputes, accusations, divisive speech, & false speech.
+mn18:8.4 | S: This is where these bad, unskillful qualities cease without remainder.” | T: That is where these evil, unskillful things cease without remainder.”
+mn18:9.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn18:9.2 | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said it, he—the One Well-Gone—got up from his seat and went into his dwelling.
+mn18:10.1 | S: Soon after the Buddha left, those mendicants considered, | T: Then, not long after the Blessed One had left, this thought occurred to the monks:
+mn18:10.2 | S: “The Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail. | T: “This brief statement the Blessed One made, after which he went into his dwelling without analyzing the detailed meaning—i.e.,
+mn18:10.3 | P: ‘yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti. | T: ‘If, with regard to the cause whereby the perceptions & categories of objectification assail a person,
+mn18:10.4 | P: Ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ. | T: there is nothing to relish…
+mn18:10.5 | P: Esevanto rāgānusayānaṁ …pe… | T: (none)
+mn18:10.6 | P: etthete pāpakā akusalā dhammā aparisesā nirujjhantī’ti. | T: that is where these evil, unskillful things cease without remainder’:
+mn18:10.7 | S: Who can explain in detail the meaning of this brief summary recital given by the Buddha?” | T: Now who might analyze the unanalyzed detailed meaning of this brief statement?”
+mn18:10.8 | S: Then those mendicants thought, | T: Then the thought occurred to them,
+mn18:10.9 | S: “This Venerable Mahākaccāna is praised by the Buddha and esteemed by his sensible spiritual companions. | T: “Ven. Mahā Kaccāna is praised by the Teacher and esteemed by his observant companions in the holy life.
+mn18:10.10 | S: He is capable of explaining in detail the meaning of this brief summary recital given by the Buddha. | T: He is capable of analyzing the unanalyzed detailed meaning of this brief statement.
+mn18:10.11 | S: Let’s go to him, and ask him about this matter.” | T: Suppose we were to go to him and, on arrival, cross-question him about this matter.”
+mn18:11.1 | S: Then those mendicants went to Mahākaccāna, and exchanged greetings with him. | T: So the monks went to Ven. Mahā Kaccāna and, on arrival, exchanged courteous greetings with him.
+mn18:11.2 | S: When the greetings and polite conversation were over, they sat down to one side. They told him what had happened, and said: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they [told him what had happened, and added,]
+mn18:11.3 | P: “idaṁ kho no, āvuso kaccāna, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | T: (none)
+mn18:11.4 | P: ‘yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti. | T: (none)
+mn18:11.5 | P: Ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ. | T: (none)
+mn18:11.6 | P: Esevanto rāgānusayānaṁ …pe… | T: (none)
+mn18:11.7 | P: etthete pāpakā akusalā dhammā aparisesā nirujjhantī’ti. | T: (none)
+mn18:11.8 | P: Tesaṁ no, āvuso kaccāna, amhākaṁ acirapakkantassa bhagavato etadahosi: | T: (none)
+mn18:11.9 | P: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | T: (none)
+mn18:11.10 | P: “yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti. | T: (none)
+mn18:11.11 | P: Ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ. | T: (none)
+mn18:11.12 | P: Esevanto rāgānusayānaṁ …pe… | T: (none)
+mn18:11.13 | P: etthete pāpakā akusalā dhammā aparisesā nirujjhantī”’ti. | T: (none)
+mn18:11.14 | P: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyāti? | T: (none)
+mn18:11.15 | P: Tesaṁ no, āvuso kaccāna, amhākaṁ etadahosi: | T: (none)
+mn18:11.16 | P: ‘ayaṁ kho āyasmā mahākaccāno satthu ceva saṁvaṇṇito sambhāvito ca viññūnaṁ sabrahmacārīnaṁ, pahoti cāyasmā mahākaccāno imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajituṁ. | T: (none)
+mn18:11.17 | P: Yannūna mayaṁ yenāyasmā mahākaccāno tenupasaṅkameyyāma; upasaṅkamitvā āyasmantaṁ mahākaccānaṁ etamatthaṁ paṭipuccheyyāmā’ti. | T: (none)
+mn18:11.18 | S: “May Venerable Mahākaccāna please explain this.” | T: “Analyze the meaning, Ven. Mahā Kaccāna!”
+mn18:12.1 | S: “Reverends, suppose there was a person in need of heartwood. And while wandering in search of heartwood he’d come across a large tree standing with heartwood. But he’d pass over the roots and trunk, imagining that the heartwood should be sought in the branches and leaves. | T: (He replied:) “Friends, it’s as if a man needing heartwood, looking for heartwood, wandering in search of heartwood—passing over the root & trunk of a standing tree possessing heartwood—were to imagine that heartwood should be sought among its branches & leaves.
+mn18:12.2 | S: Such is the consequence for the venerables. Though you were face to face with the Buddha, you bypassed him, imagining that you should ask me about this matter. | T: So it is with you, who—having bypassed the Blessed One when you were face to face with him, the Teacher—imagine that I should be asked about this matter.
+mn18:12.3 | S: For he is the Buddha, the one who knows and sees. He is vision, he is knowledge, he is the manifestation of principle, he is the manifestation of divinity. He is the preacher, the proclaimer, the elucidator of meaning, the bestower of freedom from death, the lord of truth, the Realized One. | T: For knowing, the Blessed One knows; seeing, he sees. He is the Eye, he is Knowledge, he is Dhamma, he is Brahmā. He is the speaker, the proclaimer, the elucidator of meaning, the giver of the deathless, the lord of the Dhamma, the Tathāgata.
+mn18:12.4 | S: That was the time to approach the Buddha and ask about this matter. | T: That was the time when you should have cross-questioned him about this matter.
+mn18:12.5 | S: You should have remembered it in line with the Buddha’s answer.” | T: However he answered, that was how you should have remembered it.”
+mn18:13.1 | S: “Certainly he is the Buddha, the one who knows and sees. He is vision, he is knowledge, he is the manifestation of principle, he is the manifestation of divinity. He is the preacher, the proclaimer, the elucidator of meaning, the bestower of freedom from death, the lord of truth, the Realized One. | T: “Yes, friend Kaccāna: Knowing, the Blessed One knows; seeing, he sees. He is the Eye, he is Knowledge, he is Dhamma, he is Brahmā. He is the speaker, the proclaimer, the elucidator of meaning, the giver of the deathless, the lord of the Dhamma, the Tathāgata.
+mn18:13.2 | S: That was the time to approach the Buddha and ask about this matter. | T: That was the time when we should have cross-questioned him about this matter.
+mn18:13.3 | S: We should have remembered it in line with the Buddha’s answer. | T: However he answered, that was how we should have remembered it.
+mn18:13.4 | S: Still, Mahākaccāna is praised by the Buddha and esteemed by his sensible spiritual companions. | T: But you are praised by the Teacher and esteemed by your observant companions in the holy life.
+mn18:13.5 | S: You are capable of explaining in detail the meaning of this brief summary recital given by the Buddha. | T: You are capable of analyzing the unanalyzed detailed meaning of this brief statement.
+mn18:13.6 | S: Please explain this, if it’s no trouble.” | T: Analyze the meaning, Ven. Mahā Kaccāna, without making it difficult!”
+mn18:14.1 | S: “Well then, reverends, listen and apply your mind well, I will speak.” | T: “In that case, my friends, listen & pay close attention. I will speak.”
+mn18:14.2 | S: “Yes, reverend,” they replied. | T: “As you say, friend,” the monks responded to him.
+mn18:14.3 | S: Venerable Mahākaccāna said this: | T: Ven. Mahā Kaccāna said this:
+mn18:15.1 | S: “Reverends, the Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail: | T: “Friends, concerning the brief statement the Blessed One made, after which he went into his dwelling without analyzing the detailed meaning—i.e.,
+mn18:15.2 | S: ‘Judgments driven by proliferating perceptions beset a person. | T: ‘If, with regard to the cause whereby the perceptions & categories of objectification assail a person,
+mn18:15.3 | S: If they don’t find anything worth approving, welcoming, or getting attached to in the source from which these arise, | T: there is nothing there to relish, welcome, or remain fastened to,
+mn18:15.4 | S: just this is the end of the underlying tendencies to desire, repulsion, views, doubt, conceit, the desire to be reborn, and ignorance. This is the end of taking up the rod and the sword, the end of quarrels, arguments, and disputes, of accusations, backbiting, and lies. This is where these bad, unskillful qualities cease without remainder.’ This is how I understand the detailed meaning of this summary recital. | T: then that is the end of the obsessions of passion, the obsessions of resistance, the obsessions of views, the obsessions of uncertainty, the obsessions of conceit, the obsessions of passion for becoming, & the obsessions of ignorance. That is the end of taking up rods & bladed weapons, of arguments, quarrels, disputes, accusations, divisive speech, & false speech. That is where these evil, unskillful things cease without remainder’—I understand the detailed meaning to be this:
+mn18:16.1 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for feeling. What you feel, you perceive. What you perceive, you think about. What you think about, you proliferate. What you proliferate is the source from which judgments driven by proliferating perceptions beset a person. This occurs with respect to sights known by the eye in the past, future, and present. | T: “Dependent on eye & forms, eye-consciousness arises. The meeting of the three is contact. With contact as a requisite condition, there is feeling. What one feels, one perceives [labels in the mind]. What one perceives, one thinks about. What one thinks about, one complicates. Based on what a person complicates, the perceptions & categories of objectification assail him/her with regard to past, present, & future forms cognizable via the eye.
+mn18:16.2 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “Dependent on ear & sounds, ear-consciousness arises.…
+mn18:16.3 | S: Nose consciousness arises dependent on the nose and smells. … | T: “Dependent on nose & aromas, nose-consciousness arises.…
+mn18:16.4 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: “Dependent on tongue & flavors, tongue-consciousness arises.…
+mn18:16.5 | S: Body consciousness arises dependent on the body and touches. … | T: “Dependent on body & tactile sensations, body-consciousness arises.…
+mn18:16.6 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. Contact is a requirement for feeling. What you feel, you perceive. What you perceive, you think about. What you think about, you proliferate. What you proliferate is the source from which judgments driven by proliferating perceptions beset a person. This occurs with respect to ideas known by the mind in the past, future, and present. | T: “Dependent on intellect & ideas, intellect-consciousness arises. The meeting of the three is contact. With contact as a requisite condition, there is feeling. What one feels, one perceives. What one perceives, one thinks about. What one thinks about, one complicates. Based on what a person complicates, the perceptions & categories of objectification assail him/her with regard to past, present, & future ideas cognizable via the intellect.
+mn18:17.1 | S: Where there is the eye, sights, and eye consciousness, it will be possible to discover evidence of contact. | T: “Now, when there is the eye, when there are forms, when there is eye-consciousness, it is possible that one will delineate a delineation of contact.
+mn18:17.2 | S: Where there is evidence of contact, it will be possible to discover evidence of feeling. | T: When there is a delineation of contact, it is possible that one will delineate a delineation of feeling.
+mn18:17.3 | S: Where there is evidence of feeling, it will be possible to discover evidence of perception. | T: When there is a delineation of feeling, it is possible that one will delineate a delineation of perception.
+mn18:17.4 | S: Where there is evidence of perception, it will be possible to discover evidence of thought. | T: When there is a delineation of perception, it is possible that one will delineate a delineation of thinking.
+mn18:17.5 | S: Where there is evidence of thought, it will be possible to discover evidence of being beset by judgments driven by proliferating perceptions. | T: When there is a delineation of thinking, it is possible that one will delineate a delineation of being assailed by the perceptions & categories of objectification.
+mn18:17.6 | S: Where there is the ear … | T: “When there is the ear.…
+mn18:17.7 | S: nose … | T: “When there is the nose.…
+mn18:17.8 | S: tongue … | T: “When there is the tongue.…
+mn18:17.9 | S: body … | T: “When there is the body.…
+mn18:17.10 | S: mind, ideas, and mind consciousness, it will be possible to discover evidence of contact. | T: “When there is the intellect, when there are ideas, when there is intellect-consciousness, it is possible that one will delineate a delineation of contact.
+mn18:17.11 | S: Where there is evidence of contact, it will be possible to discover evidence of feeling. | T: When there is a delineation of contact, it is possible that one will delineate a delineation of feeling.
+mn18:17.12 | S: Where there is evidence of feeling, it will be possible to discover evidence of perception. | T: When there is a delineation of feeling, it is possible that one will delineate a delineation of perception.
+mn18:17.13 | S: Where there is evidence of perception, it will be possible to discover evidence of thinking. | T: When there is a delineation of perception, it is possible that one will delineate a delineation of thinking.
+mn18:17.14 | S: Where there is evidence of thinking, it will be possible to discover evidence of being beset by judgments driven by proliferating perceptions. | T: When there is a delineation of thinking, it is possible that one will delineate a delineation of being assailed by the perceptions & categories of objectification.
+mn18:18.1 | S: Where there is no eye, no sights, and no eye consciousness, it will not be possible to discover evidence of contact. | T: “Now, when there is no eye, when there are no forms, when there is no eye-consciousness, it is impossible that one will delineate a delineation of contact.
+mn18:18.2 | S: Where there is no evidence of contact, it will not be possible to discover evidence of feeling. | T: When there is no delineation of contact, it is impossible that one will delineate a delineation of feeling.
+mn18:18.3 | S: Where there is no evidence of feeling, it will not be possible to discover evidence of perception. | T: When there is no delineation of feeling, it is impossible that one will delineate a delineation of perception.
+mn18:18.4 | S: Where there is no evidence of perception, it will not be possible to discover evidence of thinking. | T: When there is no delineation of perception, it is impossible that one will delineate a delineation of thinking.
+mn18:18.5 | S: Where there is no evidence of thinking, it will not be possible to discover evidence of being beset by judgments driven by proliferating perceptions. | T: When there is no delineation of thinking, it is impossible that one will delineate a delineation of being assailed by the perceptions & categories of objectification.
+mn18:18.6 | S: Where there is no ear … | T: “When there is no ear.…
+mn18:18.7 | S: no nose … | T: “When there is no nose.…
+mn18:18.8 | S: no tongue … | T: “When there is no tongue.…
+mn18:18.9 | S: no body … | T: “When there is no body.…
+mn18:18.10 | S: no mind, no ideas, and no mind consciousness, it will not be possible to discover evidence of contact. | T: “When there is no intellect, when there are no ideas, when there is no intellect-consciousness, it is impossible that one will delineate a delineation of contact.
+mn18:18.11 | S: Where there is no evidence of contact, it will not be possible to discover evidence of feeling. | T: When there is no delineation of contact, it is impossible that one will delineate a delineation of feeling.
+mn18:18.12 | S: Where there is no evidence of feeling, it will not be possible to discover evidence of perception. | T: When there is no delineation of feeling, it is impossible that one will delineate a delineation of perception.
+mn18:18.13 | S: Where there is no evidence of perception, it will not be possible to discover evidence of thinking. | T: When there is no delineation of perception, it is impossible that one will delineate a delineation of thinking.
+mn18:18.14 | S: Where there is no evidence of thinking, it will not be possible to discover evidence of being beset by judgments driven by proliferating perceptions. | T: When there is no delineation of thinking, it is impossible that one will delineate a delineation of being assailed by the perceptions & categories of objectification.
+mn18:19.1 | S: This is how I understand the detailed meaning of that brief summary recital given by the Buddha. | T: “So, concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—i.e.,
+mn18:19.2 | P: ‘yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ esevanto rāgānusayānaṁ …pe… | T: ‘If, with regard to the cause whereby the perceptions & categories of objectification assail a person, there is nothing there to relish, welcome, or remain fastened to, then that is the end of the obsessions of passion, the obsessions of resistance, the obsessions of views, the obsessions of uncertainty, the obsessions of conceit, the obsessions of passion for becoming, & the obsessions of ignorance. That is the end of taking up rods & bladed weapons, of arguments, quarrels, disputes, accusations, divisive speech, & false speech.
+mn18:19.3 | P: etthete pāpakā akusalā dhammā aparisesā nirujjhantī’ti, imassa kho ahaṁ, āvuso, bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa evaṁ vitthārena atthaṁ ājānāmi. | T: That is where these evil, unskillful things cease without remainder’—this is how I understand the detailed meaning.
+mn18:19.4 | S: If you wish, you may go to the Buddha and ask him about this. | T: Now, friends, if you wish, having gone to the Blessed One, cross-question him about this matter.
+mn18:19.5 | S: You should remember it in line with the Buddha’s answer.” | T: However he answers is how you should remember it.”
+mn18:20.1 | S: Then those mendicants, approving and agreeing with what Mahākaccāna said, rose from their seats and went to the Buddha, bowed, sat down to one side, and told him what had happened, adding: | T: Then the monks, delighting in & approving of Ven. Mahā Kaccāna’s words, got up from their seats and went to the Blessed One. On arrival, having bowed down to him, they sat to one side. As they were sitting there, they [told him what had happened after he had gone into his dwelling, and ended by saying,]
+mn18:20.2 | P: “yaṁ kho no, bhante, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | T: (none)
+mn18:20.3 | P: ‘yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti. | T: (none)
+mn18:20.4 | P: Ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ. | T: (none)
+mn18:20.5 | P: Esevanto rāgānusayānaṁ …pe… | T: (none)
+mn18:20.6 | P: etthete pāpakā akusalā dhammā aparisesā nirujjhantī’ti. | T: (none)
+mn18:20.7 | P: Tesaṁ no, bhante, amhākaṁ acirapakkantassa bhagavato etadahosi: | T: (none)
+mn18:20.8 | P: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | T: (none)
+mn18:20.9 | P: “yatonidānaṁ, bhikkhu, purisaṁ papañcasaññāsaṅkhā samudācaranti. | T: (none)
+mn18:20.10 | P: Ettha ce natthi abhinanditabbaṁ abhivaditabbaṁ ajjhositabbaṁ. | T: (none)
+mn18:20.11 | P: Esevanto rāgānusayānaṁ, esevanto paṭighānusayānaṁ, esevanto diṭṭhānusayānaṁ, esevanto vicikicchānusayānaṁ, esevanto mānānusayānaṁ, esevanto bhavarāgānusayānaṁ, esevanto avijjānusayānaṁ, esevanto daṇḍādānasatthādānakalahaviggahavivādatuvaṁtuvaṁpesuññamusāvādānaṁ. | T: (none)
+mn18:20.12 | P: Etthete pāpakā akusalā dhammā aparisesā nirujjhantī”ti. | T: (none)
+mn18:20.13 | P: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyā’ti? | T: (none)
+mn18:20.14 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+mn18:20.15 | P: ‘ayaṁ kho āyasmā mahākaccāno satthu ceva saṁvaṇṇito sambhāvito ca viññūnaṁ sabrahmacārīnaṁ, pahoti cāyasmā mahākaccāno imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajituṁ, yannūna mayaṁ yenāyasmā mahākaccāno tenupasaṅkameyyāma; upasaṅkamitvā āyasmantaṁ mahākaccānaṁ etamatthaṁ paṭipuccheyyāmā’ti. | T: (none)
