@@ -29,6 +29,8 @@ done
 | Places | `places/` | `opus` | the places prompt | `batch-NNN.answers.N` |
 | Read-through | see "Reading through" | `sonnet` | the reading prompt | `batch-NNN.findings` |
 | Second read | `reread/` | `opus` | the reading prompt | `batch-NNN.findings` |
+| Left-out lines | `empty/` | `sonnet` | the reading prompt, with "The left-out lines"' paragraph | `batch-NNN.findings` |
+| Audit | `audit<N>/` | `opus` | the reading prompt | `batch-NNN.findings` |
 | Flagged lines | `flagged/` | `opus` | the flagged prompt | `hand/flagged-NNN.findings` |
 | Disputed lines | `disputed/` | `opus` | the flagged prompt, for disputes | `hand/disputed-NNN.findings` |
 | Cross-check | `cross/` | `opus` | the cross prompt | `batch-NNN.findings` |
@@ -60,8 +62,8 @@ The saved answers are the progress: commit nothing unless asked.
 - By the same rule, words that render a Pali line stay on it, however short: a refrain such as DN 1's
   "Or he might say:", which renders "…vaṇṇaṁ vadamāno vadeyya", is never moved onto the quotation
   beside it.
-- Only the round's answers are saved: files in its folder, or `references.json`. Nothing else in
-  the repository changes, and no script is run.
+- Only the round's answers are saved: files in its folder or in `hand/`, or `references.json`.
+  Nothing else in the repository changes, and no script is run.
 - Never read a batch or an answers file yourself: they are large, and the listing above says all
   that is needed.
 - A batch left short of answers goes to one more subagent, whose share starts after the last
@@ -116,7 +118,7 @@ how many "?".
 
 ## Reading through
 
-The last round reads every line of its texts, each beside Sujato's, the least settled texts first:
+A read-through reads every line of its texts, each beside Sujato's, the least settled texts first:
 `data/<translator>/review/read/` for a whole translation, or the folder the round was put up in. A
 batch is read once its `batch-NNN.findings` is saved beside it, so a session carries on wherever the
 last one stopped. A second read puts up first the texts whose findings couldn't all be applied, which
@@ -183,9 +185,9 @@ When done, reply with one line: how many lines you reported.
 
 A read-through leaves out a line that holds neither Sujato's English nor the translation's, and a
 translator's rendering of a passage Sujato abbreviates can sit on the line next to it.
-`review-rounds.py <translator> empty` writes each such line, a sutta's closing aside, in the stretch
-of its text around it, to `review/empty/`. Its batches are read as a read-through's, with the
-reading prompt and this paragraph added before "Your share":
+`review-rounds.py <translator> empty` writes each such line, except those closing a sutta, in the
+stretch of its text around it, to `review/empty/`. Its batches are read as a read-through's, with
+the reading prompt and this paragraph added before "Your share":
 
 ```
 This file shows only stretches of each text, each around one or more lines given as P: with T:

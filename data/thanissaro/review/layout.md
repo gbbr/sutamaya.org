@@ -2,8 +2,7 @@
 
 The app takes each line's role — heading, prose, verse line, closing line — from the Pali's markup in
 `data/html`, whatever English sits on the line. This report measures where Ṭhānissaro Bhikkhu's
-segmented English (`data/thanissaro/sutta/`) and that markup disagree, in the three places
-`data/upstream/README.md` names under "Fit each translation's layout to the Pali's markup": text on
+segmented English (`data/thanissaro/sutta/`) and that markup disagree, in three places: text on
 closing and summary lines, the translator's own headings, and his verse line breaks.
 
 ## What it is drawn from
@@ -248,4 +247,4 @@ lines counts on both.
 | The translator's pages | `data/upstream/thanissaro/sutta/` |
 | Sujato's text on the same keys | `data/sujato/sutta/` |
 | How a page is read into headings, paragraphs and verse lines | `scripts/segmenter/segment-translations.mjs` |
-| The layout work this measures | `data/upstream/README.md`'s "What's left" |
+| How the segmenter carries his headings and verse breaks | `data/upstream/README.md`'s "Segmenting" |

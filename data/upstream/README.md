@@ -1,33 +1,34 @@
-# Bodhi and Thanissaro translations
+# Bodhi and Ṭhānissaro translations
 
 Two more English translations of the suttas the app carries, Bhikkhu Bodhi's and Ṭhānissaro
 Bhikkhu's. This folder keeps them as their sources publish them. The segmenter,
-`scripts/segmenter/segment-translations.mjs`, cuts each text onto the Pali's lines, in `data/sujato/`'s layout, and writes them to `data/bodhi/`
-and `data/thanissaro/`, where reviews settle the cuts it is unsure of.
+`scripts/segmenter/segment-translations.mjs`, cuts each text onto the Pali's lines, in
+`data/sujato/`'s layout, and writes them to `data/bodhi/` and `data/thanissaro/`, where reviews
+settle the cuts it is unsure of.
 
 ## What's here
 
 | Path | Contents |
 |---|---|
 | `bodhi/` | Bhikkhu Bodhi: 47 MN, 807 SN and 312 AN suttas from Wisdom Publications, and DN 1, 2 and 15 from the Buddhist Publication Society, all via SuttaCentral; Thag 8.1 from Access to Insight; notes for DN 1 |
-| `thanissaro/` | Ṭhānissaro Bhikkhu: 1,428 texts from dhammatalks.org, 6 older ones from SuttaCentral for suttas dhammatalks.org lacks, and the Dhammapada's endnotes |
+| `thanissaro/` | Ṭhānissaro Bhikkhu: 1,427 texts from dhammatalks.org, 6 older ones from SuttaCentral for suttas dhammatalks.org lacks, and the Dhammapada's endnotes |
 | `*/sources.json` | The source URL of every file, and the date they were fetched |
 
 SuttaCentral's files are from sc-data at commit `8442c9f`. Every text is one the app has.
 
 ## Coverage
 
-The share of the app's texts in each book that each translation covers. A text the app groups from
-several suttas, as in AN 1 and AN 2, counts when any of them is covered.
+The share of the app's texts in each book that hold each translation's text. A text the app groups
+from several suttas, as in AN 1 and AN 2, counts when any of them holds some.
 
-| Book | Thanissaro | Bodhi |
+| Book | Ṭhānissaro | Bodhi |
 |---|---|---|
 | DN | 41% | 9% |
 | MN | 70% | 31% |
-| SN | 27% | 44% |
+| SN | 26% | 44% |
 | AN | 29% | 22% |
 | Dhp | 100% | 0% |
-| Iti | 100% | 0% |
+| Iti | 98% | 0% |
 | Snp | 100% | 0% |
 | Thag | 39% | 0% |
 | Thig | 47% | 0% |
@@ -66,7 +67,7 @@ saved under every sutta it holds, and only the section a file is named for is re
   The Dhammapada's notes are in `notes/kn/dhp/endnotes.html`, which its chapters link to.
 - **SuttaCentral** — its HTML as published, with SuttaCentral and PTS references
   (`<a class='ref …'>`) and the licence at the end. None carries notes.
-- **Thanissaro's older copies** — `an1.31-40`, `an5.257-263`, `an5.264`, `an5.265-271`, `an11.16`
+- **Ṭhānissaro's older copies** — `an1.31-40`, `an5.257-263`, `an5.264`, `an5.265-271`, `an11.16`
   and `an11.17` are Access to Insight's 2013 versions, which dhammatalks.org supersedes wherever it
   has the sutta: `an1.31-40`'s 1.39–40 are read from `an1.21-30,39-40.html` instead.
 - **Bodhi's notes** — free only for DN 1: `notes/dn/dn1.html` is Access to Insight's copy of the
@@ -79,8 +80,8 @@ saved under every sutta it holds, and only the section a file is named for is re
 |---|---|
 | Bodhi, Wisdom Publications | CC BY-NC-ND 3.0: credit, no charge, wording unchanged |
 | Bodhi, Buddhist Publication Society | Free distribution: may be reformatted and shared free of charge; derived works marked as such |
-| Thanissaro, dhammatalks.org | CC BY-NC 4.0; the author counts any sale as commercial |
-| Thanissaro, older copies | CC BY-NC 4.0, or Access to Insight's free-distribution terms |
+| Ṭhānissaro, dhammatalks.org | CC BY-NC 4.0; the author counts any sale as commercial |
+| Ṭhānissaro, older copies | CC BY-NC 4.0, or Access to Insight's free-distribution terms |
 
 The editorial rules over Sujato's English ([docs/retranslation.md](../../docs/retranslation.md))
 are not meant for either translation. A citation shown in the app's form ("3:2" as "AN3.2", with a
@@ -97,11 +98,11 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    name it by the app's sutta ID as above, checking the number against Sujato's text and the Pali
    title where the Thai numbering differs, and add its URL to `sources.json`. Only texts the app
    carries belong here.
-3. **SuttaCentral's files** (Bodhi, and Thanissaro's older copies): copy them again from sc-data's
+3. **SuttaCentral's files** (Bodhi, and Ṭhānissaro's older copies): copy them again from sc-data's
    `html_text/en/pli/sutta/`, and update the commit above.
-4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new text comes
-   out with the segmenter's own cuts. A revised one keeps every settled cut that still fits, and the
-   run names those that don't.
+4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new
+   text comes out with the segmenter's own cuts. A revised one keeps every settled cut that still
+   fits, and the run names those that don't.
 5. **Review** the new and revised texts, as "Reviewing new and revised texts" says.
 
 ## Segmenting
@@ -129,11 +130,11 @@ in `data/sujato/`'s layout:
 ## Reviewing new and revised texts
 
 The segmenter's unsure cuts, and the places a cut can't mend, go to reviewers in rounds, and
-`cuts.json` keeps what they settle. `scripts/segmenter/review-rounds.py <translator> put <folder>
-<segmenter options>` puts a round up in batches in `review/<folder>/`; reviewers answer beside them, as
-[review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every text here has been
-through the rounds, so a round takes only the texts in hand: `--only <page>,…` names them, as their
-files here are named.
+`cuts.json` keeps what they settle. `scripts/segmenter/review-rounds.py <translator> put
+<folder> <segmenter options>` puts a round up in batches in `review/<folder>/`; reviewers answer
+beside them, as [review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every
+text here has been through the rounds, so a round takes only the texts in hand: `--only <page>,…`
+names them, as their files here are named.
 
 1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
    on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with
@@ -143,35 +144,38 @@ files here are named.
    two, and each line left empty whose English sits next door. Opus answers; `keep places`.
 3. **Read-through**: `read <folder> <text ID>…` writes the texts line by line beside Sujato's.
    Sonnet reads each batch and saves its findings beside it: where a line should start, or that it
-   should hold none. The segmenter's `--findings` tries them, a group on neighbouring lines at a
-   time, and writes `review/findings.json`: each group before and after, and whether it passes,
-   which it does when each of its findings takes effect and the text still reads whole. Opus judges
-   the passing groups, or 50 of them where there are more, as `check <path>` draws them from every
-   collection. A group it finds worse comes
-   out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
-   A fix made by hand goes in the same form in `review/hand/`, where it overrides the readers'.
-   The findings `--findings` can't apply, whose words aren't found where their line can start or
-   whose group takes no effect, `flagged <folder>` writes out in the stretches of text around them:
-   Opus writes whole fixes for them into `review/hand/`, tried and judged as the readers' are.
-   A second read, done on the text with the first read's findings kept, has the last word: where
-   it names a line an earlier reader named differently, the earlier line stays in its file marked
-   `# superseded: `, which the segmenter skips. Two readers who quote the same start at different
-   lengths agree, and the longer quote is kept; otherwise a line two readers disagree on is left out,
-   and `findings.json` lists it with each reader's finding. `disputed <folder>` writes those out as
-   `flagged` does, and Opus settles them in `review/hand/`.
-   A read-through lists only lines holding Sujato's English or the translation's, so `empty` puts
-   up the rest, each line Sujato leaves empty with its Pali and the text around it: a translator
-   who gives in full a passage Sujato abbreviates has it there, on the line next door. Its batches
-   are read, tried and judged as a read-through's. Where both translators have a sutta, `cross`
-   puts up each line one leaves empty while his line next door holds about as much as the other's two,
-   with a sentence break in it: his text likely runs on. Opus reads them with both translations
-   beside Sujato's, and they are tried and judged the same way.
-   `lists` puts up each line holding a list parted by ellipses ("the skeleton… the piece of meat…")
-   followed by lines the translator leaves empty where Sujato gives the items one a line; Opus splits
-   the items onto their lines where each renders one.
-   A fix can open new suspects for either round, so both run again after every round, in a new
-   folder (`cross2`, `lists2`…), until they put up nothing: each leaves out the lines its earlier
-   batches showed.
+   should hold none.
+   - **Trying them**: the segmenter's `--findings` tries the findings, a group on neighbouring lines
+     at a time, and writes `review/findings.json`: each group before and after, and whether it
+     passes, which it does when each of its findings takes effect and the text still reads whole.
+   - **Judging them**: Opus judges the passing groups, or 50 of them where there are more, as
+     `check <path>` draws them from every collection. A group it finds worse comes out of the
+     findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
+   - **Fixes by hand** go in the same form in `review/hand/`, where they override the readers'. The
+     findings `--findings` can't apply, whose words aren't found where their line can start or whose
+     group takes no effect, `flagged <folder>` writes out in the stretches of text around them; Opus
+     writes whole fixes for them into `review/hand/`, tried and judged as the readers' are.
+   - **A second read**, done on the text with the first read's findings kept, has the last word:
+     where it names a line an earlier reader named differently, the earlier line stays in its file
+     marked `# superseded: `, which the segmenter skips. Two readers who quote the same start at
+     different lengths agree, and the longer quote is kept; otherwise a line two readers disagree on
+     is left out, and `findings.json` lists it with each reader's finding. `disputed <folder>`
+     writes those out as `flagged` does, and Opus settles them in `review/hand/`.
+   - **Left-out lines**: a read-through lists only lines holding Sujato's English or the
+     translation's, so `empty` puts up the rest, each line Sujato leaves empty with its Pali and the
+     text around it: a translator who gives in full a passage Sujato abbreviates has it there, on
+     the line next door. Its batches are read, tried and judged as a read-through's.
+   - **Cross-check**: where both translators have a sutta, `cross` puts up each line one leaves
+     empty while his line next door holds about as much as the other's two, with a sentence break in
+     it: his text likely runs on. Opus reads them with both translations beside Sujato's, and they
+     are tried and judged the same way.
+   - **Lists**: `lists` puts up each line holding a list parted by ellipses ("the skeleton… the
+     piece of meat…") followed by lines the translator leaves empty where Sujato gives the items one
+     a line; Opus splits the items onto their lines where each renders one.
+
+   A fix can open new suspects for `cross` and `lists`, so both run again after every round, in a
+   new folder (`cross2`, `lists2`…), until they put up nothing: each leaves out the lines its
+   earlier batches showed.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
@@ -184,14 +188,8 @@ files here are named.
 An audit measures what the rounds leave: Opus reads texts drawn at random, 2 from each collection
 so that DN and MN are always read, every line, the left-out ones too, as `read <folder> --every
 <text ID>…` writes them. `review/audit3/draw.py` is the draw to copy, with a new seed, leaving out
-the texts earlier audits drew. Each translator's audits
-are in `review/audit*/`, each with its draw and its rate.
-
-## What's left
-
-- Clean up unused folders in `data/{bodhi,thanissaro}/review/`? Is there any value in keeping them
-or can we just take note of the history/what has been done and that's good enough? I don't mind keeping
-them if it helps.
+the texts earlier audits drew. Each translator's audits are in `review/audit*/`, each with its draw
+and its rate.
 
 ## Where to look
 
