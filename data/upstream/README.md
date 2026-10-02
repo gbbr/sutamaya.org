@@ -163,10 +163,11 @@ names them, as their files here are named.
      writes whole fixes for them into `review/hand/`, tried and judged as the readers' are.
    - **A second read**, done on the text with the first read's findings kept, has the last word:
      where it names a line an earlier reader named differently, the earlier line stays in its file
-     marked `# superseded: `, which the segmenter skips. Two readers who quote the same start at
-     different lengths agree, and the longer quote is kept; otherwise a line two readers disagree on
-     is left out, and `findings.json` lists it with each reader's finding. `disputed <folder>`
-     writes those out as `flagged` does, and Opus settles them in `review/hand/`.
+     marked `# superseded: `, which the segmenter skips.
+   - **Disagreements**: two readers who quote the same start at different lengths agree, and the
+     longer quote is kept; otherwise a line two readers disagree on is left out, and
+     `findings.json` lists it with each reader's finding. `disputed <folder>` writes those out as
+     `flagged` does, and Opus settles them in `review/hand/`.
    - **Left-out lines**: a read-through lists only lines holding Sujato's English or the
      translation's, so `empty` puts up the rest, each line Sujato leaves empty with its Pali and the
      text around it: a translator who gives in full a passage Sujato abbreviates has it there, on
