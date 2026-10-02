@@ -11,9 +11,7 @@ export const ROUTE_INTENT_KEY = 'sutamaya.routeIntent';
 export const READER_INTENT_KEY = 'sutamaya.readerIntent';
 export const UI_PREFS_KEY = 'sutamaya.uiPrefs';
 export const READER_PREFS_KEY = 'sutamaya.readerPrefs';
-// The reader menu panel's last-used tab, so it reopens where the reader left off (see
-// lib/reader/readerPanelTab.ts).
-export const READER_PANEL_TAB_KEY = 'sutamaya.readerPanelTab';
+
 // The Pali lines and notes left open in each sutta (see lib/reader/openLines.ts).
 export const OPEN_LINES_KEY = 'sutamaya.openLines';
 // The scroll offset each history entry was left at for another line of its sutta, in
