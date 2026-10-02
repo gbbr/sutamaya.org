@@ -1,0 +1,367 @@
+## sn12.14
+sn12.14:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.14:1.2 | S: “Mendicants, there are ascetics and brahmins who don’t understand these things, their origin, their cessation, and the practice that leads to their cessation. What things don’t they understand? | T: “Bhikkhus, as to those ascetics and brahmins who do not understand these things, the origin of these things, the cessation of these things, and the way leading to the cessation of these things: what are those things that they do not understand, whose origin they do not understand, whose cessation they do not understand, and the way leading to whose cessation they do not understand?
+sn12.14:2.1 | S: They don’t understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “They do not understand aging-and-death, its origin, its cessation, and the way leading to its cessation.
+sn12.14:2.2 | S: They don’t understand rebirth … | T: They do not understand birth …
+sn12.14:2.3 | S: continued existence … | T: existence …
+sn12.14:2.4 | S: grasping … | T: clinging …
+sn12.14:2.5 | S: craving … | T: craving …
+sn12.14:2.6 | S: feeling … | T: feeling …
+sn12.14:2.7 | S: contact … | T: contact …
+sn12.14:2.8 | S: the six sense fields … | T: the six sense bases …
+sn12.14:2.9 | S: name and form … | T: name-and-form …
+sn12.14:2.10 | S: consciousness … | T: consciousness …
+sn12.14:2.11 | S: They don’t understand choices, their origin, their cessation, and the practice that leads to their cessation. | T: volitional formations, their origin, their cessation, and the way leading to their cessation.
+sn12.14:2.12 | S: They don’t understand these things, their origin, their cessation, and the practice that leads to their cessation. | T: These are the things that they do not understand, whose origin they do not understand, whose cessation they do not understand, and the way leading to whose cessation they do not understand.
+sn12.14:2.13 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: “These I do not consider to be ascetics among ascetics or brahmins among brahmins, and these venerable ones do not, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism or the goal of brahminhood.
+sn12.14:3.1 | S: There are ascetics and brahmins who do understand these things, their origin, their cessation, and the practice that leads to their cessation. What things do they understand? | T: “But, bhikkhus, as to those ascetics and brahmins who understand these things, the origin of these things, the cessation of these things, and the way leading to the cessation of these things: what are those things that they understand, whose origin they understand, whose cessation they understand, and the way leading to whose cessation they understand?
+sn12.14:4.1 | S: They understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “They understand aging-and-death, its origin, its cessation, and the way leading to its cessation.
+sn12.14:4.2 | S: They understand rebirth … | T: They understand birth …
+sn12.14:4.3 | S: continued existence … | T: (none)
+sn12.14:4.4 | S: grasping … | T: (none)
+sn12.14:4.5 | S: craving … | T: (none)
+sn12.14:4.6 | S: feeling … | T: (none)
+sn12.14:4.7 | S: contact … | T: (none)
+sn12.14:4.8 | S: the six sense fields … | T: (none)
+sn12.14:4.9 | S: name and form … | T: (none)
+sn12.14:4.10 | S: consciousness … | T: (none)
+sn12.14:4.11 | S: They understand choices, their origin, their cessation, and the practice that leads to their cessation. | T: volitional formations, their origin, their cessation, and the way leading to their cessation.
+sn12.14:4.12 | S: They understand these things, their origin, their cessation, and the practice that leads to their cessation. | T: These are the things that they understand, whose origin they understand, whose cessation they understand, and the way leading to whose cessation they understand.
+sn12.14:4.13 | S: I deem them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: “These I consider to be ascetics among ascetics and brahmins among brahmins, and these venerable ones, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism and the goal of brahminhood.”
+sn12.14:4.14 | P: Catutthaṁ. | T: (none)
+
+## mn22
+mn22:1.1 | S: So I have heard. | T: Setting Thus have I heard.
+mn22:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn22:2.1 | S: Now at that time a mendicant named Ariṭṭha, who had previously been a vulture trapper, had the following harmful misconception: | T: Now on that occasion a pernicious view had arisen in a bhikkhu named Ariṭṭha, formerly of the vulture killers, thus:
+mn22:2.2 | S: “As I understand the Buddha’s teaching, the acts that he says are obstructions are not really obstructions for the one who performs them.” | T: “As I understand the Dhamma taught by the Blessed One, those things called obstructions by the Blessed One are not able to obstruct one who engages in them.
+mn22:2.3 | S: Several mendicants heard this rumour. | T: Several bhikkhus, having heard about this,
+mn22:2.4 | P: “ariṭṭhassa kira nāma bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn22:2.5 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’”ti. | T: (none)
+mn22:3.1 | S: They went up to Ariṭṭha and said to him, | T: went to the bhikkhu Ariṭṭha and asked him:
+mn22:3.2 | S: “Is it really true, Reverend Ariṭṭha, that you have such a harmful misconception: | T: “Friend Ariṭṭha, is it true that such a pernicious view has arisen in you?”
+mn22:3.3 | S: ‘As I understand the Buddha’s teaching, the acts that he says are obstructions are not really obstructions for the one who performs them’?” | T: (none)
+mn22:3.4 | S: “Indeed, reverends. As I understand the Buddha’s teaching, the acts that he says are obstructions are not really obstructions for the one who performs them.” | T: “Exactly so, friends. As I understand the Dhamma taught by the Blessed One, those things called obstructions by the Blessed One are not able to obstruct one who engages in them.”
+mn22:3.5 | S: Then, wishing to dissuade Ariṭṭha from his view, the mendicants pursued, pressed, and grilled him, | T: Then these bhikkhus, desiring to detach him from that pernicious view, pressed and questioned and cross-questioned him thus:
+mn22:3.6 | S: “Don’t say that, Ariṭṭha! Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that. | T: “Friend Ariṭṭha, do not say so. Do not misrepresent the Blessed One; it is not good to misrepresent the Blessed One. The Blessed One would not speak thus.
+mn22:3.7 | S: In many ways the Buddha has said that obstructive acts are obstructive, and that they really do obstruct the one who performs them. | T: For in many ways the Blessed One has stated how obstructive things are obstructions, and how they are able to obstruct one who engages in them.
+mn22:3.8 | S: The Buddha says that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: The Blessed One has stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.
+mn22:3.9 | S: With the similes of a skeleton … | T: With the simile of the skeleton…with the simile of the piece of meat…with the simile of the grass torch…with the simile of the pit of coals…with the simile of the dream…with the simile of the borrowed goods…with the simile of fruits on a tree…with the simile of the butcher’s knife and block…with the simile of the sword stake…with the simile of the snake’s head,
+mn22:3.10 | S: a scrap of meat … | T: (none)
+mn22:3.11 | S: a grass torch … | T: (none)
+mn22:3.12 | S: a pit of glowing coals … | T: (none)
+mn22:3.13 | S: a dream … | T: (none)
+mn22:3.14 | S: borrowed goods … | T: (none)
+mn22:3.15 | S: fruit on a tree … | T: (none)
+mn22:3.16 | S: a butcher’s knife and chopping board … | T: (none)
+mn22:3.17 | S: swords and spears … | T: (none)
+mn22:3.18 | S: a cobra’s head, the Buddha says that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks.” | T: the Blessed One has stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.”
+mn22:3.19 | S: But even though the mendicants pursued, pressed, and grilled him in this way, Ariṭṭha obstinately stuck to his misconception and insisted on it. | T: Yet although pressed and questioned and cross-questioned by those bhikkhus in this way, the bhikkhu Ariṭṭha, formerly of the vulture killers, still obstinately adhered to that pernicious view and continued to insist upon it.
+mn22:3.20 | P: “evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā”ti. | T: (none)
+mn22:3.21 | S: When they weren’t able to dissuade Ariṭṭha from his view, the mendicants went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Since the bhikkhus were unable to detach him from that pernicious view, they went to the Blessed One, and after paying homage to him, they sat down at one side and told him all that had occurred, adding:
+mn22:3.22 | P: “ariṭṭhassa nāma, bhante, bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn22:3.23 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. | T: (none)
+mn22:3.24 | P: Assumha kho mayaṁ, bhante: | T: (none)
+mn22:3.25 | P: ‘ariṭṭhassa kira nāma bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ— | T: (none)
+mn22:3.26 | P: tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. | T: (none)
+mn22:3.27 | P: Atha kho mayaṁ, bhante, yena ariṭṭho bhikkhu gaddhabādhipubbo tenupasaṅkamimha; upasaṅkamitvā ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etadavocumha: | T: (none)
+mn22:3.28 | P: ‘saccaṁ kira te, āvuso ariṭṭha, evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ— | T: (none)
+mn22:3.29 | P: tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti? | T: (none)
+mn22:3.30 | P: Evaṁ vutte, bhante, ariṭṭho bhikkhu gaddhabādhipubbo amhe etadavoca: | T: (none)
+mn22:3.31 | P: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. | T: (none)
+mn22:3.32 | P: Atha kho mayaṁ, bhante, ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etasmā pāpakā diṭṭhigatā vivecetukāmā samanuyuñjimha samanugāhimha samanubhāsimha: | T: (none)
+mn22:3.33 | P: ‘mā hevaṁ, āvuso ariṭṭha, avaca, mā bhagavantaṁ abbhācikkhi; na hi sādhu bhagavato abbhakkhānaṁ, na hi bhagavā evaṁ vadeyya. | T: (none)
+mn22:3.34 | P: Anekapariyāyenāvuso ariṭṭha, antarāyikā dhammā antarāyikā vuttā bhagavatā, alañca pana te paṭisevato antarāyāya. | T: (none)
+mn22:3.35 | P: Appassādā kāmā vuttā bhagavatā bahudukkhā bahupāyāsā, ādīnavo ettha bhiyyo. | T: (none)
+mn22:3.36 | P: Aṭṭhikaṅkalūpamā kāmā vuttā bhagavatā …pe… | T: (none)
+mn22:3.37 | P: sappasirūpamā kāmā vuttā bhagavatā bahudukkhā bahupāyāsā, ādīnavo ettha bhiyyo’ti. | T: (none)
+mn22:3.38 | P: Evampi kho, bhante, ariṭṭho bhikkhu gaddhabādhipubbo amhehi samanuyuñjiyamāno samanugāhiyamāno samanubhāsiyamāno tadeva pāpakaṁ diṭṭhigataṁ thāmasā parāmāsā abhinivissa voharati: | T: (none)
+mn22:3.39 | P: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. | T: (none)
+mn22:4.1 | P: Yato kho mayaṁ, bhante, nāsakkhimha ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha mayaṁ etamatthaṁ bhagavato ārocemā”ti. | T: “Venerable sir, since we could not detach the bhikkhu Ariṭṭha, formerly of the vulture killers, from this pernicious view, we have reported this matter to the Blessed One.”
+mn22:5.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One addressed a certain bhikkhu thus:
+mn22:5.2 | S: “Please, monk, in my name tell the mendicant Ariṭṭha, formerly a vulture trapper, that | T: “Come, bhikkhu, tell the bhikkhu Ariṭṭha, formerly of the vulture killers,
+mn22:5.3 | S: the Teacher summons him.” | T: in my name that the Teacher calls him.”—
+mn22:5.4 | S: “Yes, sir,” that monk replied. He went to Ariṭṭha and said to him, | T: “Yes, venerable sir,” he replied, and he went to the bhikkhu Ariṭṭha and told him:
+mn22:5.5 | S: “Reverend Ariṭṭha, the Teacher summons you.” | T: “The Teacher calls you, friend Ariṭṭha.”
+mn22:5.6 | S: “Yes, reverend,” Ariṭṭha replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: “Yes, friend,” he replied, and he went to the Blessed One, and after paying homage to him, sat down at one side. The Blessed One then asked him:
+mn22:5.7 | S: “Is it really true, Ariṭṭha, that you have such a harmful misconception: | T: “Ariṭṭha, is it true that the following pernicious view has arisen in you:
+mn22:5.8 | S: ‘As I understand the Buddha’s teaching, the acts that he says are obstructions are not really obstructions for the one who performs them’?” | T: ‘As I understand the Dhamma taught by the Blessed One, those things called obstructions by the Blessed One are not able to obstruct one who engages in them’?”
+mn22:5.9 | S: “Indeed, sir. As I understand the Buddha’s teaching, the acts that he says are obstructions are not really obstructions for the one who performs them.” | T: “Exactly so, venerable sir. As I understand the Dhamma taught by the Blessed One, those things called obstructions by the Blessed One are not able to obstruct one who engages in them.”
+mn22:6.1 | S: “Futile man, who on earth have you ever known me to teach in that way? | T: “Misguided man, to whom have you ever known me to teach the Dhamma in that way?
+mn22:6.2 | S: Haven’t I said in many ways that obstructive acts are obstructive, and that they really do obstruct the one who performs them? | T: Misguided man, have I not stated in many ways how obstructive things are obstructions, and how they are able to obstruct one who engages in them?
+mn22:6.3 | S: I’ve said that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: I have stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.
+mn22:6.4 | S: With the similes of a skeleton … | T: With the simile of the skeleton…with the simile of the piece of meat…with the simile of the grass torch…with the simile of the pit of coals…with the simile of the dream…with the simile of the borrowed goods…with the simile of fruits on a tree…with the simile of the butcher’s knife and block…with the simile of the sword stake…with the simile of the snake’s head,
+mn22:6.5 | S: a scrap of meat … | T: (none)
+mn22:6.6 | S: a grass torch … | T: (none)
+mn22:6.7 | S: a pit of glowing coals … | T: (none)
+mn22:6.8 | S: a dream … | T: (none)
+mn22:6.9 | S: borrowed goods … | T: (none)
+mn22:6.10 | S: fruit on a tree … | T: (none)
+mn22:6.11 | S: a butcher’s knife and chopping board … | T: (none)
+mn22:6.12 | S: swords and spears … | T: (none)
+mn22:6.13 | S: a cobra’s head, I’ve said that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: I have stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.
+mn22:6.14 | S: But still you misrepresent me by your wrong grasp, harm yourself, and brim with much wickedness. | T: But you, misguided man, by your wrong grasp have misrepresented us, injured yourself, and stored up much demerit;
+mn22:6.15 | S: This will be for your lasting harm and suffering.” | T: for this will lead to your harm and suffering for a long time.”
+mn22:7.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+mn22:7.2 | S: “What do you think, mendicants? | T: “Bhikkhus, what do you think?
+mn22:7.3 | S: Has this mendicant Ariṭṭha kindled even a spark of ardor in this teaching and training?” | T: Has this bhikkhu Ariṭṭha, formerly of the vulture killers, kindled even a spark of wisdom in this Dhamma and Discipline?”
+mn22:7.4 | S: “How could that be, sir? | T: “How could he, venerable sir?
+mn22:7.5 | S: No, sir.” | T: No, venerable sir.”
+mn22:7.6 | S: When this was said, Ariṭṭha sat silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, the bhikkhu Ariṭṭha, formerly of the vulture killers, sat silent, dismayed, with shoulders drooping and head down, glum, and without response.
+mn22:7.7 | S: Knowing this, the Buddha said, | T: Then, knowing this, the Blessed One told him:
+mn22:7.8 | S: “Futile man, you will be known by your own harmful misconception. | T: “Misguided man, you will be recognised by your own pernicious view.
+mn22:7.9 | S: I’ll question the mendicants about this.” | T: I shall question the bhikkhus on this matter.”
+mn22:8.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+mn22:8.2 | S: “Mendicants, do you understand my teaching as Ariṭṭha does, when he misrepresents me by his wrong grasp, harms himself, and brims with much wickedness?” | T: “Bhikkhus, do you understand the Dhamma taught by me as this bhikkhu Ariṭṭha, formerly of the vulture killers, does when by his wrong grasp he misrepresents us, injures himself and stores up much demerit?”
+mn22:8.3 | S: “No, sir. | T: “No, venerable sir.
+mn22:8.4 | S: For in many ways the Buddha has told us that obstructive acts are obstructive, and that they really do obstruct the one who performs them. | T: For in many ways the Blessed One has stated how obstructive things are obstructions,
+mn22:8.5 | P: alañca pana te paṭisevato antarāyāya. | T: and how they are able to obstruct one who engages in them.
+mn22:8.6 | S: The Buddha has said that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: The Blessed One has stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.
+mn22:8.7 | S: With the similes of a skeleton … | T: With the simile of the skeleton…with the simile of the snake’s head,
+mn22:8.8 | S: a cobra’s head, the Buddha has said that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks.” | T: the Blessed One has stated…that the danger in them is still more.”
+mn22:8.9 | S: “Good, good, mendicants! It’s good that you understand my teaching like this. | T: “Good, bhikkhus. It is good that you understand the Dhamma taught by me thus.
+mn22:8.10 | S: For in many ways I have said that obstructive acts are obstructive … | T: For in many ways I have stated how obstructive things are obstructions, and how they are able to obstruct one who engages in them.
+mn22:8.11 | P: Appassādā kāmā vuttā mayā, bahudukkhā bahupāyāsā, ādīnavo ettha bhiyyo. | T: I have stated that sensual pleasures provide little gratification, much suffering and despair, and that the danger in them is still more.
+mn22:8.12 | P: Aṭṭhikaṅkalūpamā kāmā vuttā mayā …pe… | T: With the simile of the skeleton…with the simile of the snake’s head, I have stated…that the danger in them is still more.
+mn22:8.13 | S: I’ve said that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: (none)
+mn22:8.14 | S: But still this Ariṭṭha misrepresents me by his wrong grasp, harms himself, and brims with much wickedness. | T: But this bhikkhu Ariṭṭha, formerly of the vulture killers, by his wrong grasp misrepresents us, injures himself, and stores up much demerit;
+mn22:8.15 | S: This will be for his lasting harm and suffering. | T: for this will lead to this misguided man’s harm and suffering for a long time.
+mn22:9.1 | S: Truly, mendicants, it is quite impossible to perform sensual acts without sensual desires, sensual perceptions, and sensual thoughts. | T: “Bhikkhus, that one can engage in sensual pleasures without sensual desires, without perceptions of sensual desire, without thoughts of sensual desire—that is impossible.
+mn22:10.1 | S: Take a futile person who memorizes the teaching— | T: The Simile of the Snake “Here, bhikkhus, some misguided men learn the Dhamma—
+mn22:10.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: discourses, stanzas, expositions, verses, exclamations, sayings, birth stories, marvels, and answers to questions—
+mn22:10.3 | S: But they don’t examine the meaning of those teachings with wisdom, | T: but having learned the Dhamma, they do not examine the meaning of those teachings with wisdom.
+mn22:10.4 | S: and so don’t come to an acceptance of them after deliberation. | T: Not examining the meaning of those teachings with wisdom, they do not gain a reflective acceptance of them.
+mn22:10.5 | S: They memorize the teaching for the sake of finding fault and winning debates. | T: Instead they learn the Dhamma only for the sake of criticising others and for winning in debates,
+mn22:10.6 | S: They don’t realize the goal for which they memorized them. | T: and they do not experience the good for the sake of which they learned the Dhamma.
+mn22:10.7 | S: Because they’re wrongly grasped, those teachings lead to their lasting harm and suffering. | T: Those teachings, being wrongly grasped by them, conduce to their harm and suffering for a long time.
+mn22:10.8 | S: Why is that? | T: Why is that?
+mn22:10.9 | S: Because of their wrong grasp of the teachings. | T: Because of the wrong grasp of those teachings.
+mn22:10.10 | S: Suppose there was a person in need of a cobra. And while wandering in search of a cobra | T: “Suppose a man needing a snake, seeking a snake, wandering in search of a snake,
+mn22:10.11 | S: they’d see a big cobra, | T: saw a large snake
+mn22:10.12 | S: and grasp it by the coil or the tail. | T: and grasped its coils or its tail.
+mn22:10.13 | S: But that cobra would twist back and bite them on the hand or the arm or other major or minor limb, | T: It would turn back on him and bite his hand or his arm or one of his limbs,
+mn22:10.14 | S: resulting in death or deadly pain. | T: and because of that he would come to death or deadly suffering.
+mn22:10.15 | S: Why is that? | T: Why is that?
+mn22:10.16 | S: Because of their wrong grasp of the cobra. | T: Because of his wrong grasp of the snake.
+mn22:10.17 | S: In the same way, a futile person memorizes the teaching … | T: So too, here some misguided men learn the Dhamma…
+mn22:10.18 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: (none)
+mn22:10.19 | P: Te taṁ dhammaṁ pariyāpuṇitvā tesaṁ dhammānaṁ paññāya atthaṁ na upaparikkhanti. | T: (none)
+mn22:10.20 | P: Tesaṁ te dhammā paññāya atthaṁ anupaparikkhataṁ na nijjhānaṁ khamanti. | T: (none)
+mn22:10.21 | P: Te upārambhānisaṁsā ceva dhammaṁ pariyāpuṇanti itivādappamokkhānisaṁsā ca. | T: (none)
+mn22:10.22 | P: Yassa catthāya dhammaṁ pariyāpuṇanti tañcassa atthaṁ nānubhonti. | T: (none)
+mn22:10.23 | S: and those teachings lead to their lasting harm and suffering. | T: (none)
+mn22:10.24 | S: Why is that? | T: Why is that?
+mn22:10.25 | S: Because of their wrong grasp of the teachings. | T: Because of the wrong grasp of those teachings.
+mn22:11.1 | S: Now, take a gentleman who memorizes the teaching— | T: “Here, bhikkhus, some clansmen learn the Dhamma—
+mn22:11.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: discourses…answers to questions—
+mn22:11.3 | S: And once he’s memorized them, he examines their meaning with wisdom, | T: and having learned the Dhamma, they examine the meaning of those teachings with wisdom.
+mn22:11.4 | S: and comes to an acceptance of them after deliberation. | T: Examining the meaning of those teachings with wisdom, they gain a reflective acceptance of them.
+mn22:11.5 | S: He doesn’t memorize the teaching for the sake of finding fault and winning debates. | T: They do not learn the Dhamma for the sake of criticising others and for winning in debates,
+mn22:11.6 | S: He realizes the goal for which he memorized them. | T: and they experience the good for the sake of which they learned the Dhamma.
+mn22:11.7 | S: Because they’re correctly grasped, those teachings lead to his lasting welfare and happiness. | T: Those teachings, being rightly grasped by them, conduce to their welfare and happiness for a long time.
+mn22:11.8 | S: Why is that? | T: Why is that?
+mn22:11.9 | S: Because of his correct grasp of the teachings. | T: Because of the right grasp of those teachings.
+mn22:11.10 | S: Suppose there was a person in need of a cobra. And while wandering in search of a cobra | T: “Suppose a man needing a snake, seeking a snake, wandering in search of a snake,
+mn22:11.11 | S: they’d see a big cobra, | T: saw a large snake
+mn22:11.12 | S: and hold it down carefully with a cleft stick. | T: and caught it rightly with a cleft stick,
+mn22:11.13 | S: Only then would they correctly grasp it by the neck. | T: and having done so, grasped it rightly by the neck.
+mn22:11.14 | S: And even though that cobra might wrap its coils around that person’s hand or arm or some other major or minor limb, that wouldn’t result in death or deadly pain. | T: Then although the snake might wrap its coils round his hand or his arm or his limbs, still he would not come to death or deadly suffering because of that.
+mn22:11.15 | S: Why is that? | T: Why is that?
+mn22:11.16 | S: Because of their correct grasp of the cobra. | T: Because of his right grasp of the snake.
+mn22:11.17 | S: In the same way, a gentleman memorizes the teaching … | T: So too, here some clansmen learn the Dhamma…
+mn22:11.18 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: (none)
+mn22:11.19 | P: Te taṁ dhammaṁ pariyāpuṇitvā tesaṁ dhammānaṁ paññāya atthaṁ upaparikkhanti. | T: (none)
+mn22:11.20 | P: Tesaṁ te dhammā paññāya atthaṁ upaparikkhataṁ nijjhānaṁ khamanti. | T: (none)
+mn22:11.21 | P: Te na ceva upārambhānisaṁsā dhammaṁ pariyāpuṇanti, na itivādappamokkhānisaṁsā ca. | T: (none)
+mn22:11.22 | P: Yassa catthāya dhammaṁ pariyāpuṇanti, tañcassa atthaṁ anubhonti. | T: (none)
+mn22:11.23 | S: and those teachings lead to his lasting welfare and happiness. | T: (none)
+mn22:11.24 | S: Why is that? | T: Why is that?
+mn22:11.25 | S: Because of his correct grasp of the teachings. | T: Because of the right grasp of those teachings.
+mn22:12.1 | S: So, mendicants, when you understand what I’ve said, you should remember it accordingly. | T: “Therefore, bhikkhus, when you understand the meaning of my statements, remember it accordingly;
+mn22:12.2 | S: But if I’ve said anything that you don’t understand, you should ask me about it, or some competent mendicants. | T: and when you do not understand the meaning of my statements, then ask either me about it or those bhikkhus who are wise.
+mn22:13.1 | S: Mendicants, I will teach you a simile of the teaching as a raft: for crossing over, not for holding on. | T: The Simile of the Raft “Bhikkhus, I shall show you how the Dhamma is similar to a raft, being for the purpose of crossing over, not for the purpose of grasping.
+mn22:13.2 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely to what I shall say.”—
+mn22:13.3 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+mn22:13.4 | S: The Buddha said this: | T: The Blessed One said this:
+mn22:13.5 | S: “Suppose there was a person traveling along the road. | T: “Bhikkhus, suppose a man in the course of a journey saw a great expanse of water,
+mn22:13.6 | S: They’d see a large deluge, whose near shore was dubious and perilous, while the far shore was a sanctuary free of peril. | T: whose near shore was dangerous and fearful and whose further shore was safe and free from fear,
+mn22:13.7 | S: But there was no ferryboat or bridge for crossing over. | T: but there was no ferryboat or bridge for going to the far shore.
+mn22:13.8 | S: They’d think, | T: Then he thought:
+mn22:13.9 | P: ‘ayaṁ kho mahāudakaṇṇavo, orimaṁ tīraṁ sāsaṅkaṁ sappaṭibhayaṁ, pārimaṁ tīraṁ khemaṁ appaṭibhayaṁ; | T: ‘There is this great expanse of water, whose near shore is dangerous and fearful and whose further shore is safe and free from fear,
+mn22:13.10 | P: natthi ca nāvā santāraṇī uttarasetu vā apārā pāraṁ gamanāya. | T: but there is no ferryboat or bridge for going to the far shore.
+mn22:13.11 | S: ‘Why don’t I gather grass, sticks, branches, and leaves and make a raft? Riding on the raft, and paddling with my hands and feet, I can safely reach the far shore.’ | T: Suppose I collect grass, twigs, branches, and leaves and bind them together into a raft, and supported by the raft and making an effort with my hands and feet, I got safely across to the far shore.’
+mn22:13.12 | S: And so they’d do exactly that. | T: And then the man collected grass, twigs, branches, and leaves and bound them together into a raft, and supported by the raft and making an effort with his hands and feet, he got safely across to the far shore.
+mn22:13.13 | S: And when they’d crossed over to the far shore, they’d think, | T: Then, when he had got across and had arrived at the far shore, he might think thus:
+mn22:13.14 | S: ‘This raft has been very helpful to me. | T: ‘This raft has been very helpful to me,
+mn22:13.15 | S: Riding on the raft, and paddling with my hands and feet, I have safely crossed over to the far shore. | T: since supported by it and making an effort with my hands and feet, I got safely across to the far shore.
+mn22:13.16 | S: Why don’t I hoist it on my head or pick it up on my shoulder and go wherever I want?’ | T: Suppose I were to hoist it on my head or load it on my shoulder, and then go wherever I want.’
+mn22:13.17 | S: What do you think, mendicants? | T: Now, bhikkhus, what do you think?
+mn22:13.18 | S: Would that person be doing what should be done with that raft?” | T: By doing so, would that man be doing what should be done with that raft?”
+mn22:13.19 | S: “No, sir.” | T: “No, venerable sir.”
+mn22:13.20 | S: “And what, mendicants, should that person do with the raft? | T: “By doing what would that man be doing what should be done with that raft?
+mn22:13.21 | S: When they’d crossed over they should think, | T: Here, bhikkhus, when that man got across and had arrived at the far shore, he might think thus:
+mn22:13.22 | S: ‘This raft has been very helpful to me. … | T: ‘This raft has been very helpful to me,
+mn22:13.23 | P: imāhaṁ kullaṁ nissāya hatthehi ca pādehi ca vāyamamāno sotthinā pāraṁ uttiṇṇo. | T: since supported by it and making an effort with my hands and feet, I got safely across to the far shore.
+mn22:13.24 | S: Why don’t I beach it on dry land or set it adrift on the water and go wherever I want?’ | T: Suppose I were to haul it onto the dry land or set it adrift in the water, and then go wherever I want.’
+mn22:13.25 | S: That’s what that person should do with the raft. | T: Now, bhikkhus, it is by so doing that that man would be doing what should be done with that raft.
+mn22:13.26 | S: In the same way, I have taught a simile of the teaching as a raft: for crossing over, not for holding on. | T: So I have shown you how the Dhamma is similar to a raft, being for the purpose of crossing over, not for the purpose of grasping.
+mn22:14.1 | S: By understanding the simile of the raft, you will even give up the teachings, let alone what is not the teachings. | T: “Bhikkhus, when you know the Dhamma to be similar to a raft, you should abandon even the teachings, how much more so things contrary to the teachings.
+mn22:15.1 | S: Mendicants, there are these six grounds for views. | T: Standpoints for Views “Bhikkhus, there are these six standpoints for views.
+mn22:15.2 | S: What six? | T: What are the six?
+mn22:15.3 | S: Take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: Here, bhikkhus, an untaught ordinary person, who has no regard for noble ones and is unskilled and undisciplined in their Dhamma, who has no regard for true men and is unskilled and undisciplined in their Dhamma,
+mn22:15.4 | S: They regard form as: ‘This is mine, I am this, this is my self.’ | T: regards material form thus: ‘This is mine, this I am, this is my self.’
+mn22:15.5 | S: They also regard feeling … | T: He regards feeling thus: ‘This is mine, this I am, this is my self.’
+mn22:15.6 | S: perception … | T: He regards perception thus: ‘This is mine, this I am, this is my self.’
+mn22:15.7 | S: choices … | T: He regards formations thus: ‘This is mine, this I am, this is my self.’
+mn22:15.8 | S: whatever is seen, heard, thought, known, attained, sought, and explored by the mind as: ‘This is mine, I am this, this is my self.’ | T: He regards what is seen, heard, sensed, cognized, encountered, sought, mentally pondered thus: ‘This is mine, this I am, this is my self.’
+mn22:15.9 | S: And as for this ground for views: | T: And this standpoint for views, namely,
+mn22:15.10 | S: ‘The cosmos and the self are one and the same. After death I will be that, permanent, everlasting, eternal, imperishable, and will last forever and ever.’ | T: ‘That which is the self is the world; after death I shall be permanent, everlasting, eternal, not subject to change; I shall endure as long as eternity’—
+mn22:15.11 | S: They regard this also as: ‘This is mine, I am this, this is my self.’ | T: this too he regards thus: ‘This is mine, this I am, this is my self.’
+mn22:16.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “Bhikkhus, a well-taught noble disciple who has regard for noble ones and is skilled and disciplined in their Dhamma, who has regard for true men and is skilled and disciplined in their Dhamma,
+mn22:16.2 | S: They regard form like this: ‘This is not mine, I am not this, this is not my self.’ | T: regards material form thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:16.3 | S: They also regard feeling … | T: He regards feeling thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:16.4 | S: perception … | T: He regards perception thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:16.5 | S: choices … | T: He regards formations thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:16.6 | S: whatever is seen, heard, thought, known, attained, sought, and explored by the mind like this: ‘This is not mine, I am not this, this is not my self.’ | T: He regards what is seen, heard, sensed, cognized, encountered, sought, mentally pondered thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:16.7 | S: And the same for this ground for views: | T: And this standpoint for views, namely,
+mn22:16.8 | S: ‘The cosmos and the self are one and the same. After death I will be that, permanent, everlasting, eternal, imperishable, and will last forever and ever.’ | T: ‘That which is the self is the world; after death I shall be permanent, everlasting, eternal, not subject to change; I shall endure as long as eternity’—
+mn22:16.9 | S: They also regard like this: ‘This is not mine, I am not this, this is not my self.’ | T: this too he regards thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:17.1 | S: Seeing in this way they’re not anxious about what doesn’t exist.” | T: “Since he regards them thus, he is not agitated about what is non-existent.”
+mn22:18.1 | S: When he said this, one of the mendicants said to the Buddha, | T: Agitation When this was said, a certain bhikkhu asked the Blessed One:
+mn22:18.2 | S: “Sir, can there be anxiety about what doesn’t exist externally?” | T: “Venerable sir, can there be agitation about what is non-existent externally?”
+mn22:18.3 | S: “There can, mendicant,” said the Buddha. | T: “There can be, bhikkhu,” the Blessed One said.
+mn22:18.4 | S: “It’s when someone thinks, | T: “Here, bhikkhu, someone thinks thus:
+mn22:18.5 | S: ‘Oh, it once was mine but is mine no more. | T: ‘Alas, I had it! Alas, I have it no longer!
+mn22:18.6 | S: Oh, it could be mine but I do not get it.’ | T: Alas, may I have it! Alas, I do not get it!’
+mn22:18.7 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: Then he sorrows, grieves, and laments, he weeps beating his breast and becomes distraught.
+mn22:18.8 | S: That’s how there is anxiety about what doesn’t exist externally.” | T: That is how there is agitation about what is non-existent externally.”
+mn22:19.1 | S: “But can there be no anxiety about what doesn’t exist externally?” | T: “Venerable sir, can there be no agitation about what is non-existent externally?”
+mn22:19.2 | S: “There can, mendicant,” said the Buddha. | T: “There can be, bhikkhu,” the Blessed One said.
+mn22:19.3 | S: “It’s when someone doesn’t think, | T: “Here, bhikkhu, someone does not think thus:
+mn22:19.4 | S: ‘Oh, it once was mine but is mine no more. | T: ‘Alas I had it! Alas, I have it no longer!
+mn22:19.5 | S: Oh, it could be mine but I do not get it.’ | T: Alas, may I have it! Alas, I do not get it!’
+mn22:19.6 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: Then he does not sorrow, grieve, and lament, he does not weep beating his breast and become distraught.
+mn22:19.7 | S: That’s how there is no anxiety about what doesn’t exist externally.” | T: That is how there is no agitation about what is non-existent externally.”
+mn22:20.1 | S: “But can there be anxiety about what doesn’t exist internally?” | T: “Venerable sir, can there be agitation about what is non-existent internally?”
+mn22:20.2 | S: “There can, mendicant,” said the Buddha. | T: “There can be, bhikkhu,” the Blessed One said.
+mn22:20.3 | S: “It’s when someone has such a view: | T: “Here, bhikkhu, someone has the view:
+mn22:20.4 | S: ‘The cosmos and the self are one and the same. After death I will be that, permanent, everlasting, eternal, imperishable, and will last forever and ever.’ | T: ‘That which is the self is the world; after death I shall be permanent, everlasting, eternal, not subject to change; I shall endure as long as eternity.’
+mn22:20.5 | S: They hear the Realized One or their disciple teaching Dhamma for the uprooting of all grounds, fixations, obsessions, insistences, and underlying tendencies regarding views; for the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: He hears the Tathāgata or a disciple of the Tathāgata teaching the Dhamma for the elimination of all standpoints, decisions, obsessions, adherences, and underlying tendencies, for the stilling of all formations, for the relinquishing of all attachments, for the destruction of craving, for dispassion, for cessation, for Nibbāna.
+mn22:20.6 | S: They think, | T: He thinks thus:
+mn22:20.7 | S: ‘Whoa, I’m going to be annihilated and destroyed! I won’t even exist any more!’ | T: ‘So I shall be annihilated! So I shall perish! So I shall be no more!’
+mn22:20.8 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: Then he sorrows, grieves, and laments, he weeps beating his breast and becomes distraught.
+mn22:20.9 | S: That’s how there is anxiety about what doesn’t exist internally.” | T: That is how there is agitation about what is non-existent internally.”
+mn22:21.1 | S: “But can there be no anxiety about what doesn’t exist internally?” | T: “Venerable sir, can there be no agitation about what is non-existent internally?”
+mn22:21.2 | S: “There can,” said the Buddha. | T: “There can be, bhikkhu,” the Blessed One said.
+mn22:21.3 | S: “It’s when someone doesn’t have such a view: | T: “Here, bhikkhu, someone does not have the view:
+mn22:21.4 | S: ‘The cosmos and the self are one and the same. After death I will be that, permanent, everlasting, eternal, imperishable, and will last forever and ever.’ | T: ‘That which is the self is the world…I shall endure as long as eternity.’
+mn22:21.5 | S: They hear the Realized One or their disciple teaching Dhamma for the uprooting of all grounds, fixations, obsessions, insistences, and underlying tendencies regarding views; for the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: He hears the Tathāgata or a disciple of the Tathāgata teaching the Dhamma for the elimination of all standpoints, decisions, obsessions, adherences, and underlying tendencies, for the stilling of all formations, for the relinquishing of all attachments, for the destruction of craving, for dispassion, for cessation, for Nibbāna.
+mn22:21.6 | S: They don’t think, | T: He does not think thus:
+mn22:21.7 | S: ‘Whoa, I’m going to be annihilated and destroyed! I won’t even exist any more!’ | T: ‘So I shall be annihilated! So I shall perish! So I shall be no more!’
+mn22:21.8 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: Then he does not sorrow, grieve, and lament, he does not weep beating his breast and become distraught.
+mn22:21.9 | S: That’s how there is no anxiety about what doesn’t exist internally. | T: That is how there is no agitation about what is non-existent internally.
+mn22:22.1 | S: Mendicants, it would make sense to be possessive about something that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: Impermanence and not Self “Bhikkhus, you may well acquire that possession that is permanent, everlasting, eternal, not subject to change, and that might endure as long as eternity.
+mn22:22.2 | S: But do you see any such possession?” | T: But do you see any such possession, bhikkhus?”—
+mn22:22.3 | S: “No, sir.” | T: “No, venerable sir.”—
+mn22:22.4 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn22:22.5 | S: I also can’t see any such possession. | T: I too do not see any possession that is permanent, everlasting, eternal, not subject to change, and that might endure as long as eternity.
+mn22:23.1 | S: It would make sense to grasp at a theory of self that didn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: “Bhikkhus, you may well cling to that doctrine of self that would not arouse sorrow, lamentation, pain, grief, and despair in one who clings to it.
+mn22:23.2 | S: But do you see any such theory of self?” | T: But do you see any such doctrine of self, bhikkhus?”—
+mn22:23.3 | S: “No, sir.” | T: “No, venerable sir.”—
+mn22:23.4 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn22:23.5 | S: I also can’t see any such theory of self. | T: I too do not see any doctrine of self that would not arouse sorrow, lamentation, pain, grief, and despair in one who clings to it.
+mn22:24.1 | S: It would make sense to rely on a view that didn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: “Bhikkhus, you may well take as a support that view that would not arouse sorrow, lamentation, pain, grief, and despair in one who takes it as a support.
+mn22:24.2 | S: But do you see any such view to rely on?” | T: But do you see any such support of views, bhikkhus?”—
+mn22:24.3 | S: “No, sir.” | T: “No, venerable sir.”—
+mn22:24.4 | S: “Good, mendicants! | T: “Good, bhikkhus.
+mn22:24.5 | S: I also can’t see any such view to rely on. | T: I too do not see any support of views that would not arouse sorrow, lamentation, pain, grief, and despair in one who takes it as a support.
+mn22:25.1 | S: Mendicants, were a self to exist, would there be the thought, ‘Belonging to my self’?” | T: “Bhikkhus, there being a self, would there be for me what belongs to a self?”—
+mn22:25.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn22:25.3 | S: “Were what belongs to a self to exist, would there be the thought, ‘My self’?” | T: “Or, there being what belongs to a self, would there be for me a self?”—
+mn22:25.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn22:25.5 | S: “But since a self and what belongs to a self are not found as a genuine fact, is not the following a totally foolish teaching: | T: “Bhikkhus, since a self and what belongs to a self are not apprehended as true and established, then this standpoint for views, namely,
+mn22:25.6 | S: ‘The cosmos and the self are one and the same. After death I will be that, permanent, everlasting, eternal, imperishable, and will last forever and ever’?” | T: ‘That which is the self is the world; after death I shall be permanent, everlasting, eternal, not subject to change; I shall endure as long as eternity’—
+mn22:25.7 | P: nanāyaṁ, bhikkhave, kevalo paripūro bāladhammo”ti? | T: would it not be an utterly and completely foolish teaching?”
+mn22:25.8 | S: “How could it not, sir? It’s a totally foolish teaching.” | T: “What else could it be, venerable sir, but an utterly and completely foolish teaching?”
+mn22:26.1 | S: “What do you think, mendicants? | T: “Bhikkhus, what do you think?
+mn22:26.2 | S: Is form permanent or impermanent?” | T: Is material form permanent or impermanent?”—
+mn22:26.3 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+mn22:26.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+mn22:26.5 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+mn22:26.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change, fit to be regarded thus:
+mn22:26.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+mn22:26.8 | S: “No, sir.” | T: “No, venerable sir.”
+mn22:26.9 | S: “What do you think, mendicants? | T: “Bhikkhus, what do you think?
+mn22:26.10 | S: Is feeling … | T: Is feeling…
+mn22:26.11 | S: perception … | T: Is perception…
+mn22:26.12 | S: choices … | T: Are formations…
+mn22:26.13 | S: consciousness permanent or impermanent?” | T: Is consciousness permanent or impermanent?”—
+mn22:26.14 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+mn22:26.15 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+mn22:26.16 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+mn22:26.17 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change, fit to be regarded thus:
+mn22:26.18 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+mn22:26.19 | S: “No, sir.” | T: “No, venerable sir.”
+mn22:27.1 | S: “So, mendicants, you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Therefore, bhikkhus, any kind of material form whatever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all material form should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:27.2 | S: You should truly see any kind of feeling … | T: Any kind of feeling whatever…
+mn22:27.3 | S: perception … | T: Any kind of perception whatever…
+mn22:27.4 | S: choices … | T: Any kind of formations whatever …
+mn22:27.5 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all consciousness should be seen as it actually is with proper wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+mn22:28.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, a well-taught noble disciple becomes disenchanted with material form, disenchanted with feeling, disenchanted with perception, disenchanted with formations, disenchanted with consciousness.
+mn22:29.1 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: “Being disenchanted, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It is liberated.’
+mn22:29.2 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’
+mn22:30.1 | S: Such a mendicant is one who is called ‘one who has lifted the cross-bar’, ‘one who has filled in the moat’, ‘one who has pulled up the pillar’, ‘one who is unimpeded’, and also ‘a noble one with banner lowered and burden dropped, detached’. | T: The Arahant “Bhikkhus, this bhikkhu is called one whose cross-bar has been lifted, whose trench has been filled in, whose pillar has been uprooted, one who has no bolt, a noble one whose banner is lowered, whose burden is lowered, who is unfettered.
+mn22:31.1 | S: And how has a mendicant raised the cross-bar? | T: “And how is the bhikkhu one whose cross-bar has been lifted?
+mn22:31.2 | S: It’s when a mendicant has given up ignorance, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: Here the bhikkhu has abandoned ignorance, has cut it off at the root, made it like a palm stump, done away with it, so that it is no longer subject to future arising.
+mn22:31.3 | S: That’s how a mendicant has lifted the cross-bar. | T: That is how the bhikkhu is one whose cross-bar has been lifted.
+mn22:32.1 | S: And how has a mendicant filled in the moat? | T: “And how is the bhikkhu one whose trench has been filled in?
+mn22:32.2 | S: It’s when a mendicant has given up transmigrating through births in future lives, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: Here the bhikkhu has abandoned the round of births that brings renewed being, has cut it off at the root…so that it is no longer subject to future arising.
+mn22:32.3 | S: That’s how a mendicant has filled in the moat. | T: That is how the bhikkhu is one whose trench has been filled in.
+mn22:33.1 | S: And how has a mendicant pulled up the pillar? | T: “And how is the bhikkhu one whose pillar has been uprooted?
+mn22:33.2 | S: It’s when a mendicant has given up craving, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: Here the bhikkhu has abandoned craving, has cut it off at the root…so that it is no longer subject to future arising.
+mn22:33.3 | S: That’s how a mendicant has pulled up the pillar. | T: That is how the bhikkhu is one whose pillar has been uprooted.
+mn22:34.1 | S: And how is a mendicant unimpeded? | T: “And how is the bhikkhu one who has no bolt?
+mn22:34.2 | S: It’s when a mendicant has given up the five lower fetters, cut them off at the root, made them like a palm stump, obliterated them, so they’re unable to arise in the future. | T: Here the bhikkhu has abandoned the five lower fetters, has cut them off at the root…so that they are no longer subject to future arising.
+mn22:34.3 | S: That’s how a mendicant is unimpeded. | T: That is how the bhikkhu is one who has no bolt.
+mn22:35.1 | S: And how is a mendicant a noble one with with banner lowered and burden dropped, detached? | T: “And how is the bhikkhu a noble one whose banner is lowered, whose burden is lowered, who is unfettered?
+mn22:35.2 | S: It’s when a mendicant has given up the conceit ‘I am’, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: Here a bhikkhu has abandoned the conceit ‘I am,’ has cut it off at the root …so that it is no longer subject to future arising.
+mn22:35.3 | S: That’s how a mendicant is a noble one with banner lowered and burden dropped, detached. | T: That is how the bhikkhu is a noble one whose banner is lowered, whose burden is lowered, who is unfettered.
+mn22:36.1 | S: When a mendicant’s mind was freed like this, the gods together with Indra, the Divinity, and the Progenitor, search as they may, will not discover: | T: “Bhikkhus, when the gods with Indra, with Brahmā and with Pajāpati seek a bhikkhu who is thus liberated in mind, they do not find anything of which they could say:
+mn22:36.2 | S: ‘This is the basis of that realized one’s consciousness.’ | T: ‘The consciousness of one thus gone is supported by this.’
+mn22:36.3 | S: Why is that? | T: Why is that?
+mn22:36.4 | S: Because even in this very life that realized one is not found, I say. | T: One thus gone, I say, is untraceable here and now.
+mn22:37.1 | S: Though I state and assert this, certain ascetics and brahmins misrepresent me with the incorrect, hollow, false, untruthful claim: | T: Misrepresentation of the Tathāgata “So saying, bhikkhus, so proclaiming, I have been baselessly, vainly, falsely, and wrongly misrepresented by some recluses and brahmins thus:
+mn22:37.2 | S: ‘The ascetic Gotama is an exterminator. He advocates the annihilation, eradication, and nonexistence of an existing being.’ | T: ‘The recluse Gotama is one who leads astray; he teaches the annihilation, the destruction, the extermination of an existing being.’
+mn22:37.3 | S: They misrepresent me as what I am not, and saying what I do not say. | T: As I am not, as I do not proclaim, so have I been baselessly, vainly, falsely, and wrongly misrepres ented by some recluses and brahmins thus:
+mn22:37.4 | P: ‘venayiko samaṇo gotamo, sato sattassa ucchedaṁ vināsaṁ vibhavaṁ paññāpetī’ti. | T: ‘The recluse Gotama is one who leads astray; he teaches the annihilation, the destruction, the extermination of an existing being.’
+mn22:37.5 | S: In the past, as today, what I describe is suffering and the cessation of suffering. | T: “Bhikkhus, both formerly and now what I teach is suffering and the cessation of suffering.
+mn22:37.6 | S: This being so, if others abuse, attack, harass, and trouble the Realized One, he doesn’t get resentful, bitter, and emotionally exasperated. | T: If others abuse, revile, scold, and harass the Tathāgata for that, the Tathāgata on that account feels no annoyance, bitterness, or dejection of the heart.
+mn22:38.1 | S: Or if others honor, respect, revere, or venerate him, he doesn’t get thrilled, elated, and emotionally excited. | T: And if others honour, respect, revere, and venerate the Tathāgata for that, the Tathāgata on that account feels no delight, joy, or elation of the heart.
+mn22:38.2 | S: If they praise him, he just thinks, | T: If others honour, respect, revere, and venerate the Tathāgata for that, the Tathāgata on that account thinks thus:
+mn22:38.3 | S: ‘They do such things for me regarding what in the past was completely understood.’ | T: ‘They perform such services as these for me in regard to this which earlier was fully understood.’
+mn22:39.1 | S: So, mendicants, if others abuse, attack, harass, and trouble you, don’t make yourselves resentful, bitter, and emotionally exasperated. | T: “Therefore, bhikkhus, if others abuse, revile, scold, and harass you, on that account you should not entertain any annoyance, bitterness, or dejection of the heart.
+mn22:39.2 | S: Or if others honor, respect, revere, or venerate you, don’t make yourselves thrilled, elated, and emotionally excited. | T: And if others honour, respect, revere, and venerate you, on that account you should not entertain any delight, joy, or elation of the heart.
+mn22:39.3 | S: If they praise you, just think, | T: If others honour, respect, revere, and venerate you, on that account you should think thus:
+mn22:39.4 | S: ‘They do such things for us regarding what in the past was completely understood.’ | T: ‘They perform such services as these for us in regard to this which earlier was fully understood.’
+mn22:40.1 | S: So, mendicants, give up what isn’t yours. | T: Not Yours “Therefore, bhikkhus, whatever is not yours, abandon it;
+mn22:40.2 | S: Giving it up will be for your lasting welfare and happiness. | T: when you have abandoned it, that will lead to your welfare and happiness for a long time.
+mn22:41.1 | S: And what isn’t yours? | T: What is it that is not yours?
+mn22:41.2 | S: Form isn’t yours: give it up. | T: Material form is not yours. Abandon it.
+mn22:41.3 | S: Giving it up will be for your lasting welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness for a long time.
+mn22:41.4 | S: Feeling … | T: Feeling is not yours. Abandon it.
+mn22:41.5 | P: sā vo pahīnā dīgharattaṁ hitāya sukhāya bhavissati. | T: When you have abandoned it, that will lead to your welfare and happiness for a long time.
+mn22:41.6 | S: perception … | T: Perception is not yours. Abandon it.
+mn22:41.7 | P: sā vo pahīnā dīgharattaṁ hitāya sukhāya bhavissati. | T: When you have abandoned it, that will lead to your welfare and happiness for a long time.
+mn22:41.8 | S: choices … | T: Formations are not yours. Abandon them.
+mn22:41.9 | P: te vo pahīnā dīgharattaṁ hitāya sukhāya bhavissanti. | T: When you have abandoned them, that will lead to your welfare and happiness for a long time.
+mn22:41.10 | S: consciousness isn’t yours: give it up. | T: Consciousness is not yours. Abandon it.
+mn22:41.11 | S: Giving it up will be for your lasting welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness for a long time.
+mn22:41.12 | S: What do you think, mendicants? | T: “Bhikkhus, what do you think?
+mn22:41.13 | S: Suppose a person was to carry off the grass, sticks, branches, and leaves in this Jeta’s Grove, or burn them, or do what they want with them. | T: If people carried off the grass, sticks, branches, and leaves in this Jeta Grove, or burned them, or did what they liked with them,
+mn22:41.14 | S: Would you think, | T: would you think:
+mn22:41.15 | S: ‘This person is carrying us off, burning us, or doing what they want with us’?” | T: ‘People are carrying us off or burning us or doing what they like with us’?”—
+mn22:41.16 | S: “No, sir. | T: “No, venerable sir.
+mn22:41.17 | S: Why is that? | T: Why not?
+mn22:41.18 | S: Because  to us that’s neither self nor belonging to self.” | T: Because that is neither our self nor what belongs to our self.”—
+mn22:41.19 | S: “In the same way, mendicants, give up what isn’t yours. | T: “So too, bhikkhus, whatever is not yours, abandon it;
+mn22:41.20 | S: Giving it up will be for your lasting welfare and happiness. | T: when you have abandoned it, that will lead to your welfare and happiness for a long time.

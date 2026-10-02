@@ -116,7 +116,7 @@ in `data/sujato/`'s layout:
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
-| `review/` | the review rounds, the read-throughs, the audit and the list of references |
+| `review/` | the review rounds, the read-throughs, the audits and the list of references |
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
   and not written.
@@ -146,7 +146,8 @@ files here are named.
    should hold none. The segmenter's `--findings` tries them, a group on neighbouring lines at a
    time, and writes `review/findings.json`: each group before and after, and whether it passes,
    which it does when each of its findings takes effect and the text still reads whole. Opus judges
-   the passing groups, or 50 of them at random where there are more. A group it finds worse comes
+   the passing groups, or 50 of them where there are more, as `check <path>` draws them from every
+   collection. A group it finds worse comes
    out of the findings, and more than 2 of 50 worse means keeping none. `--keep-findings` keeps them.
    A fix made by hand goes in the same form in `review/hand/`, where it overrides the readers'.
    The findings `--findings` can't apply, whose words aren't found where their line can start or
@@ -154,11 +155,20 @@ files here are named.
    Opus writes whole fixes for them into `review/hand/`, tried and judged as the readers' are.
    A second read, done on the text with the first read's findings kept, has the last word: where
    it names a line an earlier reader named differently, the earlier line stays in its file marked
-   `# superseded: `, which the segmenter skips. Otherwise a line two readers disagree on is left out.
+   `# superseded: `, which the segmenter skips. Two readers who quote the same start at different
+   lengths agree, and the longer quote is kept; otherwise a line two readers disagree on is left out,
+   and `findings.json` lists it with each reader's finding. `disputed <folder>` writes those out as
+   `flagged` does, and Opus settles them in `review/hand/`.
    A read-through lists only lines holding Sujato's English or the translation's, so `empty` puts
    up the rest, each line Sujato leaves empty with its Pali and the text around it: a translator
    who gives in full a passage Sujato abbreviates has it there, on the line next door. Its batches
-   are read, tried and judged as a read-through's.
+   are read, tried and judged as a read-through's. Where both translators have a sutta, `cross`
+   puts up each line one leaves empty while his line next door holds about as much as the other's two,
+   with a sentence break in it: his text likely runs on. Opus reads them with both translations
+   beside Sujato's, and they are tried and judged the same way.
+   `lists` puts up each line holding a list parted by ellipses ("the skeleton… the piece of meat…")
+   followed by lines the translator leaves empty where Sujato gives the items one a line; Opus splits
+   the items onto their lines where each renders one.
 4. **References**: Opus adds the texts' references to other suttas to `review/references.json`.
 5. **Segment again** and check the run's last lines: no text left unwritten, and no settled cut
    that no longer fits. Then run `python3 scripts/segmenter/check-upstream.py <translator>`, which
@@ -169,14 +179,8 @@ files here are named.
    hand in `review/hand/`, or in the segmenter. Then commit.
 
 An audit measures what the rounds leave: Opus reads a dozen texts drawn at random, every line,
-the left-out ones too. Each translator's is in `review/audit/`, with its draw and its rate.
-
-## What's left
-
-- Texts whose wording repeats almost word for word from section to section, as Thanissaro's
-  AN 3.112 (past, future, present) and MN 111: a finding names a line's start by its words, which
-  occur in every section, so the cut stays where it is. Fixing them needs a finding that names
-  which occurrence it means.
+the left-out ones too, as `read <folder> --every <text ID>…` writes them. Each translator's audits
+are in `review/audit*/`, each with its draw and its rate.
 
 ## Where to look
 
@@ -186,6 +190,6 @@ the left-out ones too. Each translator's is in `review/audit/`, with its draw an
 | Putting rounds up and keeping their answers | `scripts/segmenter/review-rounds.py` |
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
-| The audits | `data/<translator>/review/audit/` |
+| The audits | `data/<translator>/review/audit*/` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
 | The reader a read-through runs | `.claude/agents/line-reader.md` |

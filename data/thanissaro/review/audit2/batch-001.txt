@@ -1,0 +1,330 @@
+## dhp43
+dhp43:0 | P: Soreyyavatthu | T: (none)
+dhp43:1 | S: A rightly directed mind | T: Whatever a mother, father or other kinsman might do for you, the well-directed mind can do for you even better.
+dhp43:2 | S: would do you more good | T: (none)
+dhp43:3 | S: than your mother or father | T: (none)
+dhp43:4 | S: or any other relative. | T: (none)
+dhp43:5 | P: Cittavaggo tatiyo. | T: (none)
+
+## an11.16
+an11.16:1.1 | S: At one time Venerable Ānanda was staying near Vesālī in the little village of Beluva. | T: On one occasion Ven. Ananda was staying near Vesali at Veluvagamaka.
+an11.16:1.2 | S: Now at that time the householder Dasama, a wealthy citizen, had arrived at Pāṭaliputta on some business. | T: Now on that occasion Dasama the householder from Atthakanagara had arrived at Pataliputta on some business.
+an11.16:2.1 | S: He went to the Chicken Monastery, approached a certain mendicant, and said to him, | T: Then he went to a certain monk at Kukkata Monastery and on arrival said to him,
+an11.16:2.2 | S: “Sir, where is Venerable Ānanda now staying? | T: “Where is Ven. Ananda staying now?
+an11.16:2.3 | S: For I want to see him.” | T: I’d like to see him.”
+an11.16:2.4 | S: “Householder, Venerable Ānanda is staying near Vesālī in the little village of Beluva.” | T: “Householder, the Ven. Ananda is staying near Vesali at Veluvagamaka.”
+an11.16:3.1 | S: Then the householder Dasama, having concluded his business there, went to the little village of Beluva in Vesālī to see Ānanda. He bowed, sat down to one side, and said to Ānanda: | T: Then Dasama the householder from Atthakanagara, on completing his business at Pataliputta, went to Ven. Ananda at Veluvagamaka near Vesali. On arrival, having bowed down to him, he sat to one side. As he was sitting there, he said to Ven. Ananda:
+an11.16:3.2 | S: “Honorable Ānanda, is there one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke?” | T: “Venerable sir, is there a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before?”
+an11.16:3.3 | S: “There is, householder.” | T: “Yes, householder, there is…”
+an11.16:4.1 | S: “And what is that one thing?” | T: “And what is that one quality, venerable sir…?”
+an11.16:4.2 | S: “Householder, it’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “There is the case, householder, where a monk, withdrawn from sensuality, withdrawn from unskillful qualities, enters & remains in the first jhana: rapture & pleasure born from withdrawal, accompanied by directed thought & evaluation.
+an11.16:4.3 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:4.4 | S: ‘Even this first absorption is produced by choices and intentions.’ | T: ‘This first jhana is fabricated & intended.
+an11.16:4.5 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:4.6 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:4.7 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+an11.16:4.8 | S: This is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. | T: “This, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:5.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption … | T: (Similarly with the second,
+an11.16:5.2 | S: third absorption … | T: third,
+an11.16:5.3 | S: fourth absorption. | T: and fourth jhanas.)
+an11.16:5.4 | S: Then they reflect: | T: (none)
+an11.16:5.5 | S: ‘Even this fourth absorption is produced by choices and intentions.’ | T: (none)
+an11.16:5.6 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:5.7 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:5.8 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:5.9 | S: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. | T: (none)
+an11.16:6.1 | S: Furthermore, a mendicant meditates spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “Then again, a monk keeps pervading the first direction with an awareness imbued with good will, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with good will—abundant, expansive, immeasurable, without hostility, without ill will.
+an11.16:6.2 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:6.3 | S: ‘Even this heart’s release by love is produced by choices and intentions.’ | T: ‘This awareness-release through good will is fabricated & intended.
+an11.16:6.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:6.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:6.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+an11.16:6.7 | S: This too is one thing that has been rightly explained by the Blessed One … | T: “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:7.1 | S: Furthermore, a mendicant meditates spreading a heart full of compassion … | T: (Similarly with awareness-release through compassion,
+an11.16:7.2 | S: They meditate spreading a heart full of rejoicing … | T: through appreciation,
+an11.16:7.3 | S: They meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. | T: & through equanimity.)
+an11.16:7.4 | S: In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: (none)
+an11.16:7.5 | S: Then they reflect: | T: (none)
+an11.16:7.6 | S: ‘Even this heart’s release by equanimity is produced by choices and intentions.’ | T: (none)
+an11.16:7.7 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:7.8 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:7.9 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:7.10 | S: This too is one thing that has been rightly explained by the Blessed One … | T: (none)
+an11.16:8.1 | S: Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Then again, a monk—with the complete transcending of perceptions of [physical] form, with the disappearance of perceptions of resistance, and not heeding perceptions of diversity, [perceiving,] ‘Infinite space’—enters & remains in the dimension of the infinitude of space.
+an11.16:8.2 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:8.3 | S: ‘Even this attainment of the dimension of infinite space is produced by choices and intentions.’ | T: ‘This attainment of the infinitude of space is fabricated & intended.
+an11.16:8.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:8.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:8.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+an11.16:8.7 | S: This too is one thing that has been rightly explained by the Blessed One … | T: “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:9.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. … | T: (Similarly with the dimension of the infinitude of consciousness and the dimension of nothingness.)
+an11.16:9.2 | S: Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. … | T: (none)
+an11.16:9.3 | S: Then they reflect: | T: (none)
+an11.16:9.4 | S: ‘Even this attainment of the dimension of nothingness is produced by choices and intentions.’ | T: (none)
+an11.16:9.5 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:9.6 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:9.7 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:9.8 | S: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they reach the supreme sanctuary from the yoke.” | T: (none)
+an11.16:10.1 | S: When he said this, the householder Dasama said to Venerable Ānanda: | T: When this was said, Dasama the householder from Atthakanagara said to Ven. Ananda,
+an11.16:10.2 | S: “Honorable Ānanda, suppose a person was looking for the entrance to a treasure trove. And all at once they’d come across eleven entrances! | T: “Venerable Ananda, just as if a man seeking a single opening onto treasure were all at once to come upon eleven openings onto treasure,
+an11.16:10.3 | S: In the same way, I was searching for the door to freedom from death. And all at once I found eleven doors to freedom from death for cultivation. | T: in the same way I—seeking a single doorway to the Deathless—have all at once come to hear of eleven doorways to the Deathless.
+an11.16:10.4 | S: Suppose a person had a house with eleven doors. If the house caught fire they’d be able to flee to safety through any one of those doors. | T: And just as if a man whose house had eleven doors could take himself to safety by means of any one of those doors,
+an11.16:10.5 | S: In the same way, I’m able to flee to safety through any one of these eleven doors to freedom from death. | T: in the same way I can take myself to safety by means of any one of these eleven doors to the Deathless.
+an11.16:10.6 | S: Sir, those of other religions will seek a fee for the tutor. | T: Venerable sir, when sectarians search for a teacher’s fee for their teachers,
+an11.16:10.7 | S: Why shouldn’t I make an offering to Venerable Ānanda?” | T: why shouldn’t I pay homage to Ven. Ananda?”
+an11.16:11.1 | S: Then the householder Dasama, having assembled the Saṅgha from Vesālī and Pāṭaliputta, served and satisfied them with his own hands with delicious fresh and cooked foods. | T: So Dasama the householder from Atthakanagara, having assembled the community of monks from Vesali and Pataliputta, with his own hands served & satisfied them with refined staple & non-staple foods.
+an11.16:11.2 | S: He clothed each and every mendicant in a pair of garments, with a set of three robes for Ānanda. | T: He presented a pair of cloths to each monk, and a triple robe to Ven. Ananda.
+an11.16:11.3 | S: And he had a dwelling worth five hundred built for Ānanda. | T: And, for Ven. Ananda, he had a dwelling built worth five hundred [kahapanas].
+an11.16:11.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## dhp93
+dhp93:0 | P: Anuruddhattheravatthu | T: (none)
+dhp93:1 | S: One whose defilements have ended; | T: Effluents ended,
+dhp93:2 | S: who’s not attached to food; | T: independent of nutriment,
+dhp93:3 | S: whose domain is the liberation | T: their pasture–emptiness & freedom without sign:
+dhp93:4 | S: of the signless and the empty: | T: (none)
+dhp93:5 | S: their track is hard to trace, | T: their trail,
+dhp93:6 | S: like birds in the sky. | T: like that of birds through space, can’t be traced.
+
+## snp2.7
+snp2.7:1.1 | S: So I have heard. | T: I have heard that
+snp2.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+snp2.7:1.3 | S: Then several old and well-to-do brahmins of Kosala—elderly and senior, who were advanced in years and had reached the final stage of life—went up to the Buddha, and exchanged greetings with him. | T: Then many Kosalan brahmans of great means—old, aged, advanced in years, having come to the last stage of life—approached the Blessed One. On arrival, they exchanged courteous greetings with him.
+snp2.7:1.4 | S: When the greetings and polite conversation were over, they sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they said to him,
+snp2.7:1.5 | S: “Worthy Gotama, are the ancient principles of the brahmins exhibited these days among brahmins?” | T: “Master Gotama, do brahmans at present live in conformity with the brahman principles of ancient brahmans?”
+snp2.7:1.6 | S: “No, brahmins, they are not.” | T: “No, brahmans. Brahmans at present don’t live in conformity with the brahman principles of ancient brahmans.”
+snp2.7:1.7 | S: “If you wouldn’t mind, Worthy Gotama, please teach us the ancient principles of the brahmins.” | T: “It would be good if Master Gotama described the brahman principles of ancient brahmans, if it wouldn’t burden him.”
+snp2.7:1.8 | S: “Well then, brahmins, listen and apply your mind well, I will speak.” | T: “In that case, brahmans, listen and pay close attention. I will speak.”
+snp2.7:1.9 | S: “Yes, worthy sir,” they replied. | T: “As you say, master,” the brahmans of great means responded to the Blessed One.
+snp2.7:1.10 | S: The Buddha said this: | T: The Blessed One said:
+snp2.7:2.1 | S: “The ancient seers used to be | T: Seers, before,
+snp2.7:2.2 | S: restrained and austere. | T: were austere & restrained in mind.
+snp2.7:2.3 | S: Having given up the five sensual stimuli, | T: Abandoning the five strings of sensuality,
+snp2.7:2.4 | S: they lived for their own true good. | T: they practiced for their own benefit.
+snp2.7:3.1 | S: Brahmins used to own no cattle, | T: They had no cattle,
+snp2.7:3.2 | S: nor gold coin or grain. | T: no gold, no wealth.
+snp2.7:3.3 | S: Chanting was their money and grain, | T: They had study as their wealth.
+snp2.7:3.4 | S: which they guarded as a gift from god. | T: They protected the Brahmā treasure.
+snp2.7:4.1 | S: Food was prepared for them | T: They did not despise what was prepared for them:
+snp2.7:4.2 | S: and left beside their doors. | T: food set at doors,
+snp2.7:4.3 | S: People believed that food prepared in faith | T: prepared out of conviction for those who seek.
+snp2.7:4.4 | S: should be given to them. | T: (none)
+snp2.7:5.1 | S: With colorful clothes, | T: (none)
+snp2.7:5.2 | S: lodgings and houses, | T: (none)
+snp2.7:5.3 | S: prosperous nations and countries | T: Prosperous lands & kingdoms
+snp2.7:5.4 | S: honored those brahmins. | T: honored brahmans with multi-colored clothes, bedding, & dwellings.
+snp2.7:6.1 | S: Brahmins used to be inviolable and | T: Brahmans
+snp2.7:6.2 | S: invincible, protected by principle. | T: protecting their principles, protected by law, were not to be violated, not to be beaten.
+snp2.7:6.3 | S: No one ever turned them away | T: No one could block them
+snp2.7:6.4 | S: from the doors of families. | T: from the doors of any home.
+snp2.7:7.1 | S: For forty-eight years | T: For 48 years (young brahmans)
+snp2.7:7.2 | S: they led the spiritual life. | T: followed the holy life.
+snp2.7:7.3 | S: The brahmins of old pursued | T: Brahmans of old practiced the search
+snp2.7:7.4 | S: their quest for knowledge and conduct. | T: for knowledge & conduct.
+snp2.7:8.1 | S: Brahmins never transgressed with another, | T: Brahmans went to no other (caste),
+snp2.7:8.2 | S: nor did they purchase a wife. | T: nor did they buy their wives.
+snp2.7:8.3 | S: They lived together in love, | T: Living together from mutual love,
+snp2.7:8.4 | S: joining together by mutual consent. | T: having come together, they found joy together.
+snp2.7:9.1 | S: Brahmins never approached their wives for sex | T: Aside from the time
+snp2.7:9.2 | S: during the time outside | T: (none)
+snp2.7:9.3 | S: the fertile phase of the menstrual cycle | T: (none)
+snp2.7:9.4 | S: after menstruation. | T: after menstruation, brahmans didn’t engage in copulation.
+snp2.7:10.1 | S: They praised chastity and morality, | T: They praised: the holy life, virtue,
+snp2.7:10.2 | S: integrity, tenderness, and fervor, | T: being straightforward, mild, austere,
+snp2.7:10.3 | S: gentleness and harmlessness, | T: composed, harmless,
+snp2.7:10.4 | S: and also patience. | T: enduring.
+snp2.7:11.1 | S: He who was supreme among them, | T: The foremost brahman among them,
+snp2.7:11.2 | S: godlike, staunchly vigorous, | T: firm in perseverance,
+snp2.7:11.3 | S: did not engage in sex | T: didn’t engage in copulation
+snp2.7:11.4 | S: even in a dream. | T: even in a dream.
+snp2.7:12.1 | S: Training in line with their duties, | T: Those imitating his practice
+snp2.7:12.2 | S: many smart people here | T: (none)
+snp2.7:12.3 | S: praised chastity and morality, | T: praised the holy life, virtue,
+snp2.7:12.4 | S: and also patience. | T: & endurance.
+snp2.7:13.1 | S: They begged for rice, | T: They asked for rice,
+snp2.7:13.2 | S: bedding, clothes, ghee, and oil. | T: bedding, cloth, butter & oil.
+snp2.7:13.3 | S: Having collected them legitimately, | T: Having collected all that in line with rectitude,
+snp2.7:13.4 | S: they arranged a sacrifice. | T: from that they performed the sacrifice.
+snp2.7:14.1 | S: But they slew no cows | T: And in setting up the sacrifice, they didn’t harm cows.
+snp2.7:14.2 | S: while serving at the sacrifice. | T: (none)
+snp2.7:14.3 | S: Like a mother, father, or brother, | T: “Like a mother, father, brother,
+snp2.7:14.4 | S: or some other relative, | T: or other relative,
+snp2.7:14.5 | S: cows are our best friends, | T: cows are our foremost friends.
+snp2.7:14.6 | S: the fonts of medicine. | T: From them comes medicine.
+snp2.7:15.1 | S: They give food and strength, | T: They give food, strength,
+snp2.7:15.2 | S: and beauty and happiness. | T: beauty, & happiness.”
+snp2.7:15.3 | S: Knowing these benefits, | T: Knowing this line of reasoning,
+snp2.7:15.4 | S: they slew no cows. | T: they didn’t harm cows.
+snp2.7:16.1 | S: The brahmins were delicate and tall, | T: Delicate, with large bodies,
+snp2.7:16.2 | S: beautiful and glorious. | T: beautiful, prestigious,
+snp2.7:16.3 | S: They were keen on all the duties | T: brahmans were committed to standards of what should & shouldn’t be done in line with their principles.
+snp2.7:16.4 | S: according to their teachings. | T: (none)
+snp2.7:16.5 | S: So long as they continued in the world, | T: As long as this lasted in the world,
+snp2.7:16.6 | S: people flourished happily. | T: humanity prospered in happiness.
+snp2.7:17.1 | S: But perversion crept into them | T: But a perversion came among them.
+snp2.7:17.2 | S: little by little when they saw | T: Seeing, little by little,
+snp2.7:17.3 | S: the transformation of the king | T: the splendor of kings—
+snp2.7:17.4 | S: and the ladies in all their finery. | T: women well-ornamented,
+snp2.7:18.1 | S: Their chariots were harnessed with thoroughbreds, | T: chariots yoked to thoroughbreds,
+snp2.7:18.2 | S: well-made with bright canopies, | T: well-made, with elaborate embroideries,
+snp2.7:18.3 | S: and their homes and houses | T: houses & homes,
+snp2.7:18.4 | S: were neatly divided section by section. | T: well-proportioned, planned & laid out
+snp2.7:19.1 | S: They were lavished with herds of cattle, | T: lavish human wealth, surrounded by circles of cows,
+snp2.7:19.2 | S: and furnished with bevies of lovely ladies. | T: joined with groups of excellent women—
+snp2.7:19.3 | S: This extravagant human wealth | T: (none)
+snp2.7:19.4 | S: was coveted by the brahmins. | T: the brahmans grew greedy.
+snp2.7:20.1 | S: They compiled hymns to that end, | T: Having composed chants there,
+snp2.7:20.2 | S: approached King Okkāka and said, | T: they went up to Okkāka.
+snp2.7:20.3 | S: ‘You have plenty of money and grain. | T: “You have much wealth & grain.
+snp2.7:20.4 | S: Sacrifice! For you have much treasure. | T: Sacrifice! Much is your property!
+snp2.7:20.5 | S: Sacrifice! For you have much money.’ | T: Sacrifice! Much is your wealth!”
+snp2.7:21.1 | S: Persuaded by the brahmins, | T: (none)
+snp2.7:21.2 | S: the king, chief of charioteers, performed | T: Then the king, lord of charioteers, induced by the brahmans, having performed these sacrifices—
+snp2.7:21.3 | S: horse sacrifice, human sacrifice, | T: the horse sacrifice, the human sacrifice,
+snp2.7:21.4 | S: the sacrifices of the ‘casting of the yoke-pin’, <j>the ‘royal soma drinking’, and the ‘unimpeded’. | T: sammāpāsa, vājapeyya, & niraggaḷa—
+snp2.7:21.5 | S: When he had carried out these sacrifices, | T: (none)
+snp2.7:21.6 | S: he gave riches to the brahmins. | T: gave the brahmans wealth:
+snp2.7:22.1 | S: There were cattle, bedding, and clothes, | T: cows, bedding, clothes,
+snp2.7:22.2 | S: and ladies in all their finery; | T: women adorned,
+snp2.7:22.3 | S: chariots harnessed with thoroughbreds, | T: chariots yoked to thoroughbreds,
+snp2.7:22.4 | S: well-made with bright canopies; | T: well-made, with elaborate embroideries,
+snp2.7:23.1 | S: and lovely homes, | T: Having had delightful homes,
+snp2.7:23.2 | S: nicely divided section by section. | T: well-proportioned,
+snp2.7:23.3 | S: Having furnished them with different grains, | T: filled throughout with various grains,
+snp2.7:23.4 | S: he gave riches to the brahmins. | T: he gave the brahmans wealth.
+snp2.7:24.1 | S: When they got hold of that wealth, | T: And they, receiving the wealth there,
+snp2.7:24.2 | S: they arranged to store it up. | T: found joy together in hoarding it.
+snp2.7:24.3 | S: Falling under the sway of desire, | T: Overcome by desire,
+snp2.7:24.4 | S: their craving grew and grew. | T: their craving grew more.
+snp2.7:24.5 | S: They compiled hymns to that end, | T: Having composed chants there,
+snp2.7:24.6 | S: approached King Okkāka once more and said, | T: they went up to Okkāka again.
+snp2.7:25.1 | S: ‘Like water and earth, | T: “Like water & earth,
+snp2.7:25.2 | S: gold coin, riches, and grain, | T: gold, wealth, & grain,
+snp2.7:25.3 | S: are cows for humankind, | T: are cows to human beings.
+snp2.7:25.4 | S: as they are essential for creatures. | T: This is a requisite for beings.
+snp2.7:25.5 | S: Sacrifice! For you have much treasure. | T: Sacrifice! Much is your property!
+snp2.7:25.6 | S: Sacrifice! For you have much money.’ | T: Sacrifice! Much is your wealth!”
+snp2.7:26.1 | S: Persuaded by the brahmins, | T: (none)
+snp2.7:26.2 | S: the king, chief of charioteers, | T: Then the king, lord of charioteers, induced by the brahmans, killed in a sacrifice
+snp2.7:26.3 | S: had many hundred thousand cows | T: many hundred-thousands of cows.
+snp2.7:26.4 | S: slain at the sacrifice. | T: (none)
+snp2.7:27.1 | S: Neither with feet nor with horns | T: (none)
+snp2.7:27.2 | S: do cows harm anyone at all. | T: The cows—
+snp2.7:27.3 | S: Cows meek as lambs | T: meek like sheep,
+snp2.7:27.4 | S: supply buckets of milk. | T: giving milk by the bucket— hadn’t, with their hooves or horns or anything else, done anyone any harm.
+snp2.7:27.5 | S: But taking them by the horns, | T: But the king, grabbing them by the horns,
+snp2.7:27.6 | S: the king slew them with a sword. | T: killed them with a knife.
+snp2.7:28.1 | S: At that the gods and the ancestors, | T: Then the devas, the Fathers,
+snp2.7:28.2 | S: with Indra, the titans and monsters, | T: Indra, and rakkhasas
+snp2.7:28.3 | S: roared out: ‘This is a crime against nature!’ | T: cried out, “An injustice!”
+snp2.7:28.4 | S: as the sword fell on the cows. | T: when the knife fell on the cows.
+snp2.7:29.1 | S: There used to be three kinds of illness: | T: Three were the diseases before then:
+snp2.7:29.2 | S: greed, starvation, and old age. | T: desire, hunger, & aging.
+snp2.7:29.3 | S: But due to the slaughter of cows, | T: But from violence against cattle
+snp2.7:29.4 | S: this grew to be ninety-eight. | T: came ninety-eight.
+snp2.7:30.1 | S: This crime of the rods | T: This injustice of violence
+snp2.7:30.2 | S: is of ancient descent. | T: has come down as ancient.
+snp2.7:30.3 | S: Killing innocent creatures, | T: The innocent are killed;
+snp2.7:30.4 | S: the sacrificers forsake righteousness. | T: the sacrificers fall away from the Dhamma.
+snp2.7:31.1 | S: And that is how this mean old practice | T: This tradition—ancient, vile—
+snp2.7:31.2 | S: was criticized by sensible people. | T: is criticized by the observant.
+snp2.7:31.3 | S: Wherever they see such a thing, | T: Where people see such a thing,
+snp2.7:31.4 | S: folk criticize the sacrificer. | T: they criticize the sacrificer.
+snp2.7:32.1 | S: With righteousness gone, | T: With the Dhamma perishing in this way,
+snp2.7:32.2 | S: peasants and menials were split, | T: merchants are split from workers,
+snp2.7:32.3 | S: as were many aristocrats, | T: noble warriors are split far apart,
+snp2.7:32.4 | S: and wives looked down on their husbands. | T: the wife despises the husband.
+snp2.7:33.1 | S: Aristocrats and brahmins only by kin, | T: Noble warriors, kinsman of Brahmā,
+snp2.7:33.2 | S: and others protected by their clan, | T: and any others protected by clan,
+snp2.7:33.3 | S: neglecting their genealogy, | T: repudiating the doctrine of their birth,
+snp2.7:33.4 | S: fell under the sway of sensual pleasures.” | T: fall under sensuality’s sway.
+snp2.7:34.1 | S: When he had spoken, those well-to-do brahmins said to the Buddha, | T: When this was said, those brahmans of great means said to the Blessed One:
+snp2.7:34.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. We go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+snp2.7:34.3 | S: From this day forth, may the worthy Gotama remember us as lay followers who have gone for refuge for life.” | T: May Master Gotama remember us as lay followers who have gone for refuge from this day forward, for life.”
+snp2.7:34.4 | P: Brāhmaṇadhammikasuttaṁ sattamaṁ. | T: (none)
+
+## sn55.31
+sn55.31:1.1 | S: At Sāvatthī. | T: (none)
+sn55.31:1.2 | S: “Mendicants, there are these four kinds of overflowing merit, overflowing goodness that nurture happiness. | T: “Monks, there are these four bonanzas of merit, bonanzas of skillfulness, nourishments of bliss.
+sn55.31:1.3 | S: What four? | T: Which four?
+sn55.31:1.4 | S: Firstly, a noble disciple has experiential confidence in the Buddha … | T: “There is the case where the disciple of the noble ones is endowed with verified confidence in the Awakened One:
+sn55.31:1.5 | P: itipi so bhagavā …pe… satthā devamanussānaṁ buddho bhagavāti. | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+sn55.31:1.6 | S: This is the first kind of overflowing merit, overflowing goodness that nurtures happiness. | T: This is the first bonanza of merit, bonanza of skillfulness, nourishment of bliss.
+sn55.31:2.1 | S: Furthermore, a noble disciple has experiential confidence in the teaching … | T: “And further, the disciple of the noble ones is endowed with verified confidence in the Dhamma:
+sn55.31:2.2 | P: svākkhāto bhagavatā dhammo …pe… paccattaṁ veditabbo viññūhīti. | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+sn55.31:2.3 | S: This is the second kind of overflowing merit, overflowing goodness that nurtures happiness. | T: This is the second bonanza of merit, bonanza of skillfulness, nourishment of bliss.
+sn55.31:3.1 | S: Furthermore, a noble disciple has experiential confidence in the Saṅgha … | T: “And further, the disciple of the noble ones is endowed with verified confidence in the Saṅgha:
+sn55.31:3.2 | P: suppaṭipanno bhagavato sāvakasaṅgho …pe… anuttaraṁ puññakkhettaṁ lokassāti. | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four types of noble disciples when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, the incomparable field of merit for the world.’
+sn55.31:3.3 | S: This is the third kind of overflowing merit, overflowing goodness that nurtures happiness. | T: This is the third bonanza of merit, bonanza of skillfulness, nourishment of bliss.
+sn55.31:4.1 | S: Furthermore, a noble disciple’s ethical conduct is loved by the noble ones, unbroken, impeccable, spotless, and unmarred, liberating, praised by sensible people, not mistaken, and leading to immersion. | T: “And further, the disciple of the noble ones is endowed with virtues that are appealing to the noble ones: untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, leading to concentration.
+sn55.31:4.2 | S: This is the fourth kind of overflowing merit, overflowing goodness that nurtures happiness. | T: This is the fourth bonanza of merit, bonanza of skillfulness, nourishment of bliss.
+sn55.31:4.3 | S: These are the four kinds of overflowing merit, overflowing goodness that nurture happiness.” | T: “These are four bonanzas of merit, bonanzas of skillfulness, nourishments of bliss.”
+sn55.31:4.4 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.80
+sn35.80:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One:
+sn35.80:1.2 | S: “Sir, is there one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge?” | T: “Lord, is there any one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises?”
+sn35.80:2.1 | S: “There is, mendicant.” | T: “Yes, monk, there is one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises.”
+sn35.80:3.1 | S: “But what is that one thing?” | T: “What is that one thing?”
+sn35.80:4.1 | S: “Ignorance is one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge.” | T: “Ignorance, monk, is the one thing with whose abandoning in a monk ignorance is abandoned and clear knowing arises.”
+sn35.80:5.1 | S: “But how does a mendicant know and see so as to give up ignorance and give rise to knowledge?” | T: “But how does a monk know, how does a monk see, so that ignorance is abandoned and clear knowing arises?”
+sn35.80:6.1 | S: “Take a mendicant who has heard: | T: “There is the case, monk, where a monk has heard,
+sn35.80:6.2 | S: ‘Nothing is worth insisting on.’ | T: ‘All dhammas are unworthy of attachment.’
+sn35.80:6.3 | S: When a mendicant has heard that | T: Having heard that all dhammas are unworthy of attachment,
+sn35.80:6.4 | S: nothing is worth insisting on, | T: (none)
+sn35.80:6.5 | S: they directly know all things. Directly knowing all things, they completely understand all things. Completely understanding all things, they see all signs as other. They see the eye, sights, | T: he directly knows every dhamma. Directly knowing every dhamma, he comprehends every dhamma. Comprehending every dhamma, he sees all themes [all objects] as something separate. “He sees the eye as something separate. He sees forms as something separate.
+sn35.80:6.6 | S: eye consciousness, | T: He sees eye-consciousness as something separate.
+sn35.80:6.7 | S: and eye contact as other. | T: He sees eye-contact as something separate.
+sn35.80:6.8 | S: And they also see the pleasant, painful, or neutral feeling that arises dependent on eye contact as other. … | T: And whatever arises in dependence on eye-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too he sees as something separate. “He sees the ear as something separate.… “He sees the nose as something separate.… “He sees the tongue as something separate.… “He sees the body as something separate.…
+sn35.80:6.9 | S: They see the mind, ideas, | T: “He sees the intellect as something separate. He sees ideas as something separate.
+sn35.80:6.10 | S: mind consciousness, | T: He sees intellect-consciousness as something separate.
+sn35.80:6.11 | S: and mind contact as other. | T: He sees intellect-contact as something separate.
+sn35.80:6.12 | S: And they also see the pleasant, painful, or neutral feeling that arises dependent on mind contact as other. | T: And whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too he sees as something separate.
+sn35.80:6.13 | S: That’s how a mendicant knows and sees so as to give up ignorance and give rise to knowledge.” | T: “This is how a monk knows, this is how a monk sees, so that ignorance is abandoned and clear knowing arises.”
+sn35.80:6.14 | P: Sattamaṁ. | T: (none)
+
+## an10.92
+an10.92:1.1 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Anāthapiṇḍika the householder went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there, the Blessed One said to him,
+an10.92:2.1 | S: “Householder, when a noble disciple has quelled five fears and enmities, possesses the four factors of stream-entry, and has clearly seen and penetrated the noble system with wisdom, they may, if they wish, declare of themselves: | T: “When, for a disciple of the noble ones, five forms of fear & animosity are stilled; when he is endowed with the four factors of stream entry; and when, through discernment, he has rightly seen & rightly ferreted out the noble method, then if he wants he may state about himself:
+an10.92:2.2 | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’ | T: ‘Hell is ended for me; animal wombs are ended; the state of the hungry ghosts is ended; planes of deprivation, the bad destinations, the lower realms are ended! I am a stream-winner, never again destined for the lower realms, certain, headed for self-awakening!’
+an10.92:3.1 | S: What are the five fears and enmities they have quelled? | T: “Now, which five forms of danger & animosity are stilled?
+an10.92:3.2 | S: Anyone who kills living creatures brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. Anyone who refrains from killing living creatures does not brim with fear and enmity either in this life or in lives to come, and doesn’t experience mental pain and sadness. | T: “When a person takes life, then with the taking of life as a requisite condition, he produces fear & animosity in the here & now, produces fear & animosity in future lives, experiences mental concomitants of pain & despair; but when he refrains from taking life, he neither produces fear & animosity in the here & now nor does he produce fear & animosity in future lives, nor does he experience mental concomitants of pain & despair:
+an10.92:3.3 | S: So that fear and enmity is quelled for anyone who refrains from killing living creatures. | T: For one who refrains from taking life, that fear & animosity is thus stilled.
+an10.92:4.1 | S: Anyone who steals … | T: “When a person steals…
+an10.92:4.2 | S: Anyone who commits sexual misconduct … | T: engages in illicit sex…
+an10.92:4.3 | S: Anyone who lies … | T: tells lies…
+an10.92:4.4 | S: Anyone who consumes beer, wine, and liquor intoxicants brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. Anyone who refrains from beer, wine, and liquor intoxicants does not brim with fear and enmity either in this life or in lives to come, and doesn’t experience mental pain and sadness. | T: “When a person drinks distilled & fermented drinks that cause heedlessness, then with the drinking of distilled & fermented drinks that cause heedlessness as a requisite condition, he produces fear & animosity in the here & now, produces fear & animosity in future lives, experiences mental concomitants of pain & despair; but when he refrains from drinking distilled & fermented drinks that cause heedlessness, he neither produces fear & animosity in the here & now nor does he produce fear & animosity in future lives, nor does he experience mental concomitants of pain & despair:
+an10.92:4.5 | S: So that fear and enmity is quelled for anyone who refrains from beer, wine, and liquor intoxicants. | T: For one who refrains from drinking distilled & fermented drinks that cause heedlessness, that fear & animosity is thus stilled.
+an10.92:4.6 | S: These are the five fears and enmities they have quelled. | T: “These are the five forms of fear & animosity that are stilled.
+an10.92:5.1 | S: What are the four factors of stream-entry that they possess? | T: “And which are the four factors of stream entry with which he is endowed?
+an10.92:5.2 | S: It’s when a noble disciple has experiential confidence in the Buddha: | T: “There is the case where the disciple of the noble ones is endowed with verified confidence in the Awakened One:
+an10.92:5.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+an10.92:5.4 | S: They have experiential confidence in the teaching: | T: “He is endowed with verified confidence in the Dhamma:
+an10.92:5.5 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+an10.92:5.6 | S: They have experiential confidence in the Saṅgha: | T: “He is endowed with verified confidence in the Saṅgha:
+an10.92:5.7 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically…who have practiced masterfully—in other words, the four pairs, the eight individuals—they are the Saṅgha of the Blessed One’s disciples: deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, the incomparable field of merit for the world.’
+an10.92:5.8 | S: And a noble disciple’s ethical conduct is loved by the noble ones, unbroken, impeccable, spotless, and unmarred, liberating, praised by sensible people, not mistaken, and leading to immersion. | T: “He is endowed with virtues that are appealing to the noble ones: untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, leading to concentration.
+an10.92:5.9 | S: These are the four factors of stream-entry that they possess. | T: “These are the four factors of stream entry with which he is endowed.
+an10.92:6.1 | S: And what is the noble system that they have clearly seen and penetrated with wisdom? | T: “And which is the noble method that he has rightly seen & rightly ferreted out through discernment?
+an10.92:6.2 | S: It’s when a noble disciple reflects: | T: “There is the case where a disciple of the noble ones notices:
+an10.92:6.3 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: “When this is, that is. “From the arising of this comes the arising of that.
+an10.92:6.4 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: “When this isn’t, that isn’t. “From the cessation of this comes the cessation of that. “In other words:
+an10.92:6.5 | S: Ignorance is a requirement for choices. | T: “From ignorance as a requisite condition come fabrications.
+an10.92:6.6 | S: Choices are a requirement for consciousness. | T: “From fabrications as a requisite condition comes consciousness.
+an10.92:6.7 | S: Consciousness is a requirement for name and form. | T: “From consciousness as a requisite condition comes name-&-form.
+an10.92:6.8 | S: Name and form are requirements for the six sense fields. | T: “From name-&-form as a requisite condition come the six sense media.
+an10.92:6.9 | S: The six sense fields are requirements for contact. | T: “From the six sense media as a requisite condition comes contact.
+an10.92:6.10 | S: Contact is a requirement for feeling. | T: “From contact as a requisite condition comes feeling.
+an10.92:6.11 | S: Feeling is a requirement for craving. | T: “From feeling as a requisite condition comes craving.
+an10.92:6.12 | S: Craving is a requirement for grasping. | T: “From craving as a requisite condition comes clinging/sustenance.
+an10.92:6.13 | S: Grasping is a requirement for continued existence. | T: “From clinging/sustenance as a requisite condition comes becoming.
+an10.92:6.14 | S: Continued existence is a requirement for rebirth. | T: “From becoming as a requisite condition comes birth.
+an10.92:6.15 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: “From birth as a requisite condition, then aging & death, sorrow, lamentation, pain, distress, & despair come into play.
+an10.92:6.16 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+an10.92:6.17 | S: When ignorance fades away and ceases no residue left behind, choices cease. When choices cease, consciousness ceases. When consciousness ceases, name and form cease. When name and form cease, the six sense fields cease. When the six sense fields cease, contact ceases. When contact ceases, feeling ceases. When feeling ceases, craving ceases. When craving ceases, grasping ceases. When grasping ceases, continued existence ceases. When continued existence ceases, rebirth ceases. When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: “Now from the remainderless fading & cessation of that very ignorance comes the cessation of fabrications. From the cessation of fabrications comes the cessation of consciousness. From the cessation of consciousness comes the cessation of name-&-form. From the cessation of name-&-form comes the cessation of the six sense media. From the cessation of the six sense media comes the cessation of contact. From the cessation of contact comes the cessation of feeling. From the cessation of feeling comes the cessation of craving. From the cessation of craving comes the cessation of clinging/sustenance. From the cessation of clinging/sustenance comes the cessation of becoming. From the cessation of becoming comes the cessation of birth. From the cessation of birth, then aging & death, sorrow, lamentation, pain, distress, & despair all cease.
+an10.92:6.18 | S: That is how this entire mass of suffering ceases.’ | T: Such is the cessation of this entire mass of stress & suffering.
+an10.92:6.19 | S: This is the noble system that they have clearly seen and penetrated with wisdom. | T: “This is the noble method that he has rightly seen & rightly ferreted out through discernment.
+an10.92:7.1 | S: When a noble disciple has quelled five fears and enmities, possesses the four factors of stream-entry, and has clearly seen and penetrated the noble system with wisdom, they may, if they wish, declare of themselves: | T: “When, for a disciple of the noble ones, these five forms of fear & animosity are stilled; when he is endowed with these four factors of stream entry; and when, through discernment, he has rightly seen & rightly ferreted out this noble method, then if he wants he may state about himself:
+an10.92:7.2 | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’” | T: ‘Hell is ended for me; animal wombs are ended; the state of the hungry ghosts is ended; planes of deprivation, the bad destinations, the lower realms are ended! I am a stream-winner, never again destined for the lower realms, certain, headed for self-awakening!’”
+an10.92:7.3 | P: Dutiyaṁ. | T: (none)
+

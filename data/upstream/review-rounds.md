@@ -30,6 +30,9 @@ done
 | Read-through | see "Reading through" | `sonnet` | the reading prompt | `batch-NNN.findings` |
 | Second read | `reread/` | `opus` | the reading prompt | `batch-NNN.findings` |
 | Flagged lines | `flagged/` | `opus` | the flagged prompt | `hand/flagged-NNN.findings` |
+| Disputed lines | `disputed/` | `opus` | the flagged prompt, for disputes | `hand/disputed-NNN.findings` |
+| Cross-check | `cross/` | `opus` | the cross prompt | `batch-NNN.findings` |
+| Lists | `lists/` | `opus` | the lists prompt | `batch-NNN.findings` |
 | Check of a read's changes | outside the repository | `opus` | the check prompt | one file of answers |
 | References | — | `opus` | the references prompt | `references.json` |
 
@@ -188,8 +191,10 @@ line as it is.
 ## The check prompt
 
 For one subagent, after a read's findings are tried: 50 of the passing groups in
-`review/findings.json`, drawn at random, each written out whole with its lines' key, Sujato's English
-(or the Pali), and the translation's text before and after, numbered `## 1 (<name>, <text ID>)` on.
+`review/findings.json`, each written out whole with its lines' key, Sujato's English (or the Pali),
+and the translation's text before and after, numbered `## 1 (<name>, <text ID>)` on.
+`review-rounds.py <translator> check <path>` writes them, drawing an even share from each of DN, MN,
+SN, AN and the Khuddaka Nikāya, so that a collection with few groups is still judged.
 More than 2 judged worse means keeping none of that read's findings; a group judged worse is looked
 at whole, with the lines around it, before it is dropped or fixed by hand.
 
@@ -227,7 +232,10 @@ done, reply with one line: how many items are better, same and worse.
 For one subagent per batch of `review/flagged/`: each batch holds the readers' findings the segmenter
 could not apply, each with the stretch of its text around it. The fixes go to `review/hand/`, where
 they override the readers'. Fill in the name, the batch's path and number of stretches, and the
-answers path.
+answers path. For a batch of `review/disputed/`, the readers' findings for a line disagree: the
+prompt's second sentence becomes "Two or more readers reported where the lines in this file should
+start, and disagreed: at most one of their reports for a line is right, and perhaps none.", and
+the fixes name every reported line, right already or not, since that settles it.
 
 ```
 You are fixing where a Buddhist sutta translation (by <name>) is cut into lines that match the
@@ -273,6 +281,97 @@ tools, open no file but your batch, run no commands, start no agents, and keep y
 brief. Quote at most a few words at a time anywhere, your reasoning included: a content filter
 stops replies that copy out long stretches of the translation. When done, reply with one line: how
 many stretches you fixed and how many lines you named.
+```
+
+## The cross prompt
+
+For one subagent per batch of `review/cross/`: stretches where the other translator fills a line
+this one leaves empty. Fill in both names, the batch's path and number of stretches.
+
+```
+You are checking a Buddhist sutta translation (by <name>) that has been cut into lines to match the
+lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file <path> holds <n> short stretches, each under its "## <text>" heading, line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: <name>'s text on that
+    line, or (none) | O: <other name>'s text on the same line, or (none)
+
+Each stretch was picked because T is (none) on a line where O has text, and T's line next door
+holds about as much as O's two lines. O is a second opinion on where the lines fall; it can be cut
+wrongly too. Judge by S and the Pali.
+
+A line's T should say what its S (or its Pali) says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens, or abbreviates with an ellipsis; one sentence
+of the translator's that renders several Pali lines together and cannot be divided at a point that
+matches them, sitting on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line; a passage the translator himself moves to another place in
+the text. But separate sentences, or separate items of a list, that each render their own Pali
+line belong on those lines.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line can start
+after a space or a punctuation mark, never inside a word. Quote only words from T, never from O.
+Report only when you are sure.
+
+Read all of the file, in two parts, then save your findings with the Write tool as
+<path>/batch-NNN.findings, or the single word "none" if nothing is misplaced. Be token-efficient:
+use only the Read and Write tools, open no file but your batch, run no commands, start no agents,
+and keep your reasoning brief. Quote at most a few words at a time anywhere, your reasoning
+included: a content filter stops replies that copy out long stretches of the translation.
+
+When done, reply with one line: how many lines you reported, in how many stretches.
+```
+
+## The lists prompt
+
+For one subagent per batch of `review/lists/`. Fill in the name, an example of the translator's
+list, the batch's path and number of stretches.
+
+```
+You are fixing where a Buddhist sutta translation (by <name>) is cut into lines that match the
+lines of the Pali original.
+
+The file <path> holds <n> short stretches, each under its "## <text>" heading, line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: <name>'s text on that
+    line, or (none)
+
+Each stretch has a line where <name> gives a list whose items are parted by ellipses (<example>),
+followed by lines left (none) where Sujato gives the items one a line. Where the items each render
+one of those lines, each item belongs on its own line: the first item stays where it is, and each
+later item starts the line whose S or Pali it renders. Where an item has no line of its own, or the
+items are not in the Pali's order, or the list is one sentence that cannot be divided at points
+matching the lines, leave the stretch as it is.
+
+Write one line for each line whose first words must change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+
+A line's text runs from its first words to the first words of the next line that has text, so
+naming a line's start moves the words from there on, up to the next named start, onto it. Quote
+words exactly as they stand in T, including the ellipsis after them where it is part of the item,
+and where an item is shorter than six words, quote just that item. A line can start after a space
+or a punctuation mark (an ellipsis counts), never inside a word. Name only lines shown in the
+stretch, and report only when you are sure.
+
+Read all of the file, then save your fixes with the Write tool as <path>/batch-NNN.findings, one
+per line and nothing else, or the single word "none". Be token-efficient: use only the Read and
+Write tools, open no file but your batch, run no commands, start no agents, and keep your
+reasoning brief. Quote at most a few words at a time anywhere, your reasoning included: a content
+filter stops replies that copy out long stretches of the translation. When done, reply with one
+line: how many stretches you split and how many lines you named.
 ```
 
 ## The places prompt

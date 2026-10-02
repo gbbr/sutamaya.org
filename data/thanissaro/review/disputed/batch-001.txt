@@ -1,0 +1,464 @@
+## an1.31-40
+an1.31:1.0 | S: 31 | T: (none)
+an1.31:1.1 | S: “Mendicants, I do not see a single thing that is so very harmful as this mind that is not tamed. | T: “I don’t envision a single thing that, when untamed, leads to such great harm as the mind. The mind, when untamed leads to great harm.”
+an1.31:1.2 | S: An untamed mind is very harmful.” | T: (none)
+an1.31:1.3 | P: Paṭhamaṁ. | T: (none)
+Reported: an1.31:1.1 none
+Reported: an1.31:1.1 starts: 39. “I don’t envision a single thing
+
+## an9.34
+an9.34:4.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:4.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:5.1 | S: Furthermore, take a mendicant who, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, enters and remains in the fourth absorption. | T: “Then there is the case where a monk, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain. If, as he remains there, he is beset with attention to perceptions dealing with equanimity, that is an affliction for him.…
+an9.34:5.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: (none)
+an9.34:5.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:5.4 | S: In the same way, should perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: (none)
+Reported: an9.34:5.2 starts: If, as he remains there, he is beset
+Reported: an9.34:5.2 none
+
+## sn12.23
+sn12.23:1.5 | S: Such is feeling … | T: Such is feeling, such its origination, such its disappearance.
+sn12.23:1.6 | S: Such is perception … | T: Such is perception,
+sn12.23:1.7 | S: Such are choices … | T: such its origination, such its disappearance. Such are fabrications, such their origination, such their disappearance.
+sn12.23:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its disappearance.’
+sn12.23:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: The ending of effluents is for one who knows in this way & sees in this way.
+Reported: sn12.23:1.7 starts: Such are fabrications, such their origination,
+Reported: sn12.23:1.7 starts: such its origination, such its disappearance. Such are fabrications,
+
+## iti89
+iti89:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti89:2.1 | S: “Mendicants, overcome and overwhelmed by three things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: “Monks, conquered by three forms of false Dhamma–his mind overwhelmed–Devadatta is incurably doomed to deprivation, to hell, for an eon.
+iti89:2.2 | S: What three? | T: Which three? Conquered by evil desires–his mind overwhelmed–Devadatta is incurably doomed to deprivation, to hell, for the duration of an eon.
+iti89:2.3 | S: Corrupt wishes … | T: (none)
+iti89:2.4 | S: Bad friendship … | T: Conquered by friendship with evil people–his mind overwhelmed–Devadatta is incurably doomed to deprivation, to hell, for the duration of an eon.
+iti89:2.5 | S: When there is still more to be done, stopping half-way after achieving some trifling distinction. | T: And, there being something further to be done, he nevertheless stopped halfway with a lower modicum of distinctive attainment.
+Reported: iti89:2.3 starts: Conquered by evil desires–his mind overwhelmed–Devadatta is incurably
+Reported: iti89:2.3 none
+
+## mn102
+mn102:15.2 | S: ‘The self and the cosmos are eternal. This is the only truth, anything else is futile.’ It’s simply not possible for them to have personal knowledge of this that is pure and bright, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation. | T: (none)
+mn102:15.3 | S: But in the absence of personal knowledge that is pure and bright, even the portion of knowledge they illuminate is said to be grasping on their part. | T: (none)
+mn102:15.4 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:15.5 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it. …
+mn102:16.1 | S: Now, consider the ascetics and brahmins whose view is as follows. | T: (none)
+Reported: mn102:15.4 none
+Reported: mn102:15.4 starts: With regard to that—
+
+## an6.70
+an6.70:1.5 | S: and freed mind as ‘freed mind’. | T: that he would discern a released mind as ‘a released mind,’ and an unreleased mind as ‘an unreleased mind.’
+an6.70:1.6 | S: It’s impossible that they’ll recollect many kinds of past lives, with features and details. | T: “It’s impossible that he would recollect his manifold past lives [literally: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here’; that he would thus recollect his manifold past lives in their modes & details.
+an6.70:1.7 | S: It’s impossible that with clairvoyance that is purified and surpasses the human, they’ll understand how sentient beings pass on according to their deeds. | T: “It’s impossible that he would see—by means of the divine eye, purified & surpassing the human—beings passing away & re-appearing, and discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world’; that he would thus—by means of the divine eye, purified & surpassing the human—see beings passing away & re-appearing, and discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma. “It’s impossible that he would, through the ending of effluents, enter & remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.”
+an6.70:1.8 | S: It’s impossible that they’ll realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: (none)
+an6.70:2.1 | S: But it’s quite possible that a mendicant who has immersion that is peaceful, refined, tranquil, and unified will wield the many kinds of psychic power … | T: (none)
+an6.70:2.2 | S: It’s possible that with clairaudience that is purified and superhuman, they’ll hear both kinds of sounds … | T: (none)
+Reported: an6.70:1.8 starts: “It’s impossible that he would, through the ending of
+Reported: an6.70:1.8 none
+
+## sn35.75
+sn35.75:3.2 | S: I have no reason to blame myself when it comes to ethical conduct.” | T: “No, lord, I can’t fault myself with regard to my virtue.”
+sn35.75:4.1 | S: “In that case, mendicant, why do you have remorse and regret?” | T: “Then what are you anxious about? What is your remorse?”
+sn35.75:5.1 | S: “Because I understand that the Buddha has not taught the Dhamma merely for the sake of ethical purity.” | T: “I understand that the Blessed One has not taught the Dhamma with purity of virtue as its goal.” “If you understand that I have not taught the Dhamma with purity of virtue as its goal,
+sn35.75:6.1 | S: “If that is so, what then do you understand to be the goal of teaching the Dhamma?” | T: then for what goal do you understand that I have taught the Dhamma?”
+sn35.75:7.1 | S: “I understand that the Buddha has taught the Dhamma for the goal of complete extinguishment without grasping fuel.” | T: “I understand that the Blessed One has taught the Dhamma with total unbinding through lack of clinging as its goal.”
+sn35.75:8.1 | S: “Good, good, mendicant! | T: “Good, good, monk.
+Reported: sn35.75:6.1 starts: “If you understand that I have not taught
+Reported: sn35.75:6.1 starts: then for what goal do you understand that I
+
+## sn35.75
+sn35.75:10.1 | S: “Impermanent, sir.” … | T: “Inconstant, lord.”
+sn35.75:11.1 | P: “ …pe… | T: (none)
+sn35.75:11.2 | S: “Is the ear … | T: “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.” “… Is the ear constant or inconstant?”—“Inconstant, lord.” …
+sn35.75:11.3 | S: nose … | T: “… Is the nose constant or inconstant?”—“Inconstant, lord.” …
+sn35.75:11.4 | S: tongue … | T: “… Is the tongue constant or inconstant?”—“Inconstant, lord.” …
+Reported: sn35.75:11.2 starts: “And is that which is inconstant easeful or stressful?”
+Reported: sn35.75:11.2 starts: “… Is the ear constant or inconstant?”
+
+## mn70
+mn70:12.2 | S: Nor do I say that all these mendicants have no work to do with diligence. | T: nor do I say of all monks that they have no task to do with heedfulness.
+mn70:12.3 | S: I say that mendicants don’t have work to do with diligence if they are perfected, with defilements ended, having completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and become rightly freed through enlightenment. | T: “Monks who are arahants, whose mental effluents are ended, who have reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and who are released through right gnosis: I don’t say of them that they have a task to do with heedfulness.
+mn70:12.4 | S: Why is that? | T: Why is that? They have done their task with heedfulness.
+mn70:12.5 | S: They’ve done their work with diligence. | T: (none)
+mn70:12.6 | S: They’re incapable of being negligent. | T: They are incapable of being heedless.
+mn70:13.1 | S: I say that mendicants still have work to do with diligence if they are trainees, who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke. | T: But as for monks in higher training, who have not yet reached their hearts’ goal, who still aspire for the unexcelled freedom from bondage: I say of them that they have a task to do with heedfulness.
+Reported: mn70:12.5 starts: They have done their task with heedfulness.
+Reported: mn70:12.5 none
+
+## an4.1
+an4.1:2.2 | S: What four? | T: Which four?
+an4.1:2.3 | S: Noble ethics, | T: “It’s because of not understanding and not penetrating noble virtue that we have transmigrated & wandered on for such a long, long time, you & I.
+an4.1:2.4 | S: immersion, | T: “It’s because of not understanding and not penetrating noble concentration that we have transmigrated & wandered on for such a long, long time, you & I. “It’s because of not understanding and not penetrating noble discernment that we have transmigrated & wandered on for such a long, long time, you & I.
+an4.1:2.5 | S: wisdom, | T: (none)
+an4.1:2.6 | S: and freedom. | T: “It’s because of not understanding and not penetrating noble release that we have transmigrated & wandered on for such a long, long time, you & I.
+an4.1:2.7 | S: These noble ethics, immersion, wisdom, and freedom have been understood and comprehended. Craving for continued existence has been cut off; the leash to existence is ended; now there’ll be no more future lives.” | T: “But now that noble virtue is understood & penetrated, noble concentration… noble discernment… noble release is understood & penetrated, craving for becoming is destroyed, the guide to becoming [craving] is ended, there is now no further becoming.”
+Reported: an4.1:2.5 starts: “It’s because of not understanding and not penetrating noble discernment
+Reported: an4.1:2.5 none
+
+## an10.61
+an10.61:2.24 | S: You should say: ‘Associating with untrue persons.’ | T: ‘Associating with people of no integrity’ [or: ‘not associating with people of integrity’], it should be said.
+an10.61:3.1 | S: In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of mindfulness and situational awareness … lack of sense restraint … the three kinds of misconduct … the five hindrances. When the five hindrances are fulfilled, they fulfill ignorance. | T: “Thus, when not associating with people of integrity is made full, it fills [the conditions for] not hearing the true Dhamma. When not hearing the true Dhamma is made full, it fills [the conditions for] lack of conviction. When lack of conviction is made full, it fills [the conditions for] inappropriate attention… lack of mindfulness & alertness… lack of restraint of the senses… the three forms of misconduct… the five hindrances. When the five hindrances are made full,
+an10.61:3.2 | S: That’s the fuel for ignorance, and that’s how it’s fulfilled. | T: they fulfill [the conditions for] ignorance. Such is the food of this ignorance, and thus is it made full.
+an10.61:4.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as when the devas pour rain in heavy drops & crash thunder on the upper mountains: The water, flowing down along the slopes, fills the branches of the mountain ravines & gullies. When the branches of the mountain ravines & gullies are full, they fill the little lakes. When the little lakes are full, they fill the big lakes… the little rivers… the big rivers. When the big rivers are full, they fill the great ocean.
+an10.61:4.2 | S: That’s the fuel for the ocean, and that’s how it’s filled up. | T: Such is the food of the great ocean, and thus is it made full.
+Reported: an10.61:3.2 starts: Such is the food of this ignorance, and
+Reported: an10.61:3.2 starts: they fulfill [the conditions for] ignorance. Such is
+
+## sn36.21
+sn36.21:1.5 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of past deeds.’ | T: Whatever an individual feels—pleasure, pain, neither-pleasure-nor-pain—is entirely caused by what was done before.
+sn36.21:1.6 | S: What does the worthy Gotama say about this?” | T: Now what does Master Gotama say to that?”
+sn36.21:2.1 | S: “Sīvaka, some feelings stem from bile disorders. | T: [The Buddha:] “There are cases where some feelings arise based on bile [i.e., diseases and pains that come from a malfunction of the gall bladder]. You yourself should know how some feelings arise based on bile.
+sn36.21:2.2 | S: You can know this from your own personal experience, | T: (none)
+sn36.21:2.3 | S: and it is generally deemed to be true. | T: Even the world is agreed on how some feelings arise based on bile.
+sn36.21:2.4 | S: Since this is so, the ascetics and brahmins whose view is that | T: So any contemplatives & brahmans who are of the doctrine & view that whatever an individual feels—
+Reported: sn36.21:2.2 starts: You yourself should know how some feelings arise
+Reported: sn36.21:2.2 none
+
+## an10.76
+an10.76:4.4 | S: Without giving up these three things you can’t give up substantialist view, doubt, and misapprehension of precepts and observances. | T: (none)
+an10.76:5.1 | S: Without giving up three things you can’t give up irrational application of mind, following a wrong path, and mental sluggishness. | T: “Without abandoning three things, one is incapable of abandoning inappropriate attention, abandoning the following of a wrong path, abandoning slowness of awareness.
+an10.76:5.2 | S: What three? | T: Which three? Muddled truth, unalertness, & scattered awareness…
+an10.76:5.3 | S: Unmindfulness, lack of situational awareness, and scattered mind. | T: (none)
+an10.76:5.4 | S: Without giving up these three things you can’t give up irrational application of mind, following a wrong path, and mental sluggishness. | T: (none)
+an10.76:6.1 | S: Without giving up three things you can’t give up unmindfulness, lack of situational awareness, and scattered mind. | T: “Without abandoning three things, one is incapable of abandoning muddled truth, abandoning unalertness, abandoning scattered awareness.
+an10.76:6.2 | S: What three? | T: Which three? A lack of desire to see the noble ones, a lack of desire to hear the noble Dhamma, & a mind bent on criticism…
+an10.76:6.3 | S: Not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: (none)
+an10.76:6.4 | S: Without giving up these three things you can’t give up unmindfulness, lack of situational awareness, and scattered mind. | T: (none)
+an10.76:7.1 | S: Without giving up three things you can’t give up not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: “Without abandoning three things, one is incapable of abandoning a lack of desire to see the noble ones, abandoning a lack of desire to hear the noble Dhamma, abandoning a mind bent on criticism.
+an10.76:7.2 | S: What three? | T: Which three? Restlessness, a lack of restraint, & poor virtue …
+an10.76:7.3 | S: Restlessness, lack of restraint, and unethical conduct. | T: (none)
+an10.76:7.4 | S: Without giving up these three things you can’t give up not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: (none)
+an10.76:8.1 | S: Without giving up three things you can’t give up restlessness, lack of restraint, and unethical conduct. | T: “Without abandoning three things, one is incapable of abandoning restlessness, abandoning a lack of restraint, abandoning poor virtue.
+Reported: an10.76:5.3 starts: Muddled truth, unalertness, & scattered awareness…
+Reported: an10.76:5.3 none
+Reported: an10.76:6.3 starts: A lack of desire to see the noble
+Reported: an10.76:6.3 none
+Reported: an10.76:7.3 starts: Restlessness, a lack of restraint, & poor virtue
+Reported: an10.76:7.3 none
+
+## an10.76
+an10.76:14.4 | S: After giving up these three things you can give up substantialist view, doubt, and misapprehension of precepts and observances. | T: (none)
+an10.76:15.1 | S: After giving up three things you can give up irrational application of mind, following a wrong path, and mental sluggishness. | T: “Abandoning three things, one is capable of abandoning inappropriate attention, abandoning the following of a wrong path, abandoning slowness of awareness.
+an10.76:15.2 | S: What three? | T: Which three? Muddled truth, unalertness, & scattered awareness…
+an10.76:15.3 | S: Unmindfulness, lack of situational awareness, and a scattered mind. | T: (none)
+an10.76:15.4 | S: After giving up these three things you can give up irrational application of mind, following a wrong path, and mental sluggishness. | T: (none)
+an10.76:16.1 | S: After giving up three things you can give up unmindfulness, lack of situational awareness, and scattered mind. | T: “Abandoning three things, one is capable of abandoning muddled truth, abandoning unalertness, abandoning scattered awareness.
+an10.76:16.2 | S: What three? | T: Which three? A lack of desire to see the noble ones, a lack of desire to hear the noble Dhamma, & a mind bent on criticism…
+an10.76:16.3 | S: Not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: (none)
+an10.76:16.4 | S: After giving up these three things you can give up unmindfulness, lack of situational awareness, and scattered mind. | T: (none)
+an10.76:17.1 | S: After giving up three things you can give up not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: “Abandoning three things, one is capable of abandoning a lack of desire to see the noble ones, abandoning a lack of desire to hear the noble Dhamma, abandoning a mind bent on criticism.
+an10.76:17.2 | S: What three? | T: Which three? Restlessness, a lack of restraint, & poor virtue …
+an10.76:17.3 | S: Restlessness, lack of restraint, and unethical conduct. | T: (none)
+an10.76:17.4 | S: After giving up these three things you can give up not wanting to see the noble ones, not wanting to hear the teaching of the noble ones, and a fault-finding mind. | T: (none)
+an10.76:18.1 | S: After giving up three things you can give up restlessness, lack of restraint, and unethical conduct. | T: “Abandoning three things, one is capable of abandoning restlessness, abandoning a lack of restraint, abandoning poor virtue.
+Reported: an10.76:15.3 starts: Muddled truth, unalertness, & scattered awareness…
+Reported: an10.76:15.3 none
+Reported: an10.76:16.3 starts: A lack of desire to see the noble
+Reported: an10.76:16.3 none
+Reported: an10.76:17.3 starts: Restlessness, a lack of restraint, & poor virtue
+Reported: an10.76:17.3 none
+
+## an4.50
+an4.50:1.1 | S: “Mendicants, these four corruptions obscure the sun and moon, so they don’t glow and shine and dazzle. | T: “Monks, there are these four obscurations of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:1.2 | S: What four? | T: Which four? “Clouds are an obscuration of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:1.3 | S: Stormclouds … | T: (none)
+an4.50:2.1 | S: Fog … | T: “Fog is an obscuration.…
+an4.50:3.1 | S: Smoke … | T: “Smoke and dust is an obscuration.…
+Reported: an4.50:1.3 none
+Reported: an4.50:1.3 starts: “Clouds are an obscuration of the sun and moon,
+
+## mn113
+mn113:16-20.4 | S: who sleeps wherever they lay their mat … | T: one who is content with whatever dwelling is assigned to him…
+mn113:16-20.5 | S: who eats in one sitting per day. | T: one who eats only one meal a day.
+mn113:16-20.6 | S: They reflect: | T: He notices, ‘I am one who eats only one meal a day,
+mn113:16-20.7 | S: ‘I eat in one sitting per day, unlike these other mendicants.’ | T: but these other monks do not eat only one meal a day.’
+mn113:16-20.8 | S: And they glorify themselves and put others down on account of that. | T: He exalts himself for being one who eats only one meal a day and disparages others.
+mn113:16-20.9 | S: This too is a quality of an untrue person. | T: This is the quality of a person of no integrity.
+Reported: mn113:16-20.7 starts: ‘I am one who eats only one meal a day,
+Reported: mn113:16-20.7 starts: but these other monks do not eat
+
+## mn82
+mn82:1.1 | S: So I have heard. | T: I have heard that on one occasion the Blessed One, on a wandering tour among the Kurus with a large Saṅgha of monks, arrived at Thullakoṭṭhita, a town of the Kurus.
+mn82:1.2 | S: At one time the Buddha was wandering in the land of the Kurus together with a large Saṅgha of mendicants when he arrived at a town of the Kurus named Thullakoṭṭhika. | T: (none)
+mn82:2.1 | S: The brahmins and householders of Thullakoṭṭhika heard: | T: The brahmans & householders of Thullakoṭṭhita heard it said,
+mn82:2.2 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Thullakoṭṭhika, together with a large Saṅgha of mendicants. | T: “Gotama the contemplative—the son of the Sakyans, having gone forth from the Sakyan clan—has arrived at Kesaputta.
+Reported: mn82:1.2 none
+Reported: mn82:1.2 starts: on one occasion the Blessed One, on a
+
+## sn3.4
+sn3.4:1.3 | S: “Just now, sir, as I was in private retreat this thought came to mind. | T: “Just now, lord, while I was alone in seclusion, this train of thought arose in my awareness:
+sn3.4:1.4 | S: ‘Who are those who love themselves? And who are those who don’t love themselves?’ | T: ‘Who are dear to themselves, and who are not dear to themselves?’
+sn3.4:1.5 | S: Then it occurred to me: | T: Then it occurred to me: ‘Those who engage in bodily misconduct, verbal misconduct, & mental misconduct are not dear to themselves. Even though they may say, “We are dear to ourselves,” still they aren’t dear to themselves.
+sn3.4:1.6 | S: ‘Those who do bad things by way of body, speech, and mind | T: (none)
+sn3.4:1.7 | S: don’t love themselves. | T: (none)
+sn3.4:1.8 | S: Even though they may say: | T: (none)
+sn3.4:1.9 | S: “I love myself”, they don’t really. | T: (none)
+sn3.4:1.10 | S: Why is that? | T: Why is that? Of their own accord, they act toward themselves as an enemy would act toward an enemy; thus they aren’t dear to themselves. But those who engage in good bodily conduct, good verbal conduct, & good mental conduct
+sn3.4:1.11 | S: It’s because they treat themselves like an enemy. | T: (none)
+sn3.4:1.12 | S: That’s why they don’t love themselves. | T: (none)
+sn3.4:1.13 | S: Those who do good things by way of body, speech, and mind | T: (none)
+sn3.4:1.14 | S: do love themselves. | T: are dear to themselves. Even though they may say, “We aren’t dear to ourselves,” still they are dear to themselves.
+sn3.4:1.15 | S: Even though they may say: | T: (none)
+sn3.4:1.16 | S: “I don’t love myself”, they do really. | T: (none)
+sn3.4:1.17 | S: Why is that? | T: Why is that? Of their own accord, they act toward themselves as a dear one would act toward a dear one; thus they are dear to themselves.’”
+sn3.4:1.18 | S: It’s because they treat themselves like a loved one. | T: (none)
+sn3.4:1.19 | S: That’s why they do love themselves.’” | T: (none)
+sn3.4:2.1 | S: “That’s so true, Great King! That’s so true!” said the Buddha. And he repeated the king’s statement, adding: | T: “That’s the way it is, great king! That’s the way it is!
+sn3.4:2.2 | P: Ye hi keci, mahārāja, kāyena duccaritaṁ caranti, vācāya duccaritaṁ caranti, manasā duccaritaṁ caranti; | T: Those who engage in bodily misconduct, verbal misconduct, & mental misconduct
+Reported: sn3.4:1.6 starts: ‘Those who engage in bodily misconduct, verbal misconduct,
+Reported: sn3.4:1.7 starts: are not dear to themselves. Even though
+Reported: sn3.4:1.8 starts: Even though they may say, “We are dear
+Reported: sn3.4:1.9 starts: “We are dear to ourselves,” still they
+Reported: sn3.4:1.6 none
+Reported: sn3.4:1.7 none
+Reported: sn3.4:1.8 none
+Reported: sn3.4:1.9 none
+Reported: sn3.4:1.11 starts: Of their own accord, they act toward themselves
+Reported: sn3.4:1.12 starts: thus they aren’t dear to themselves. But those
+Reported: sn3.4:1.13 starts: But those who engage in good bodily conduct,
+Reported: sn3.4:1.11 none
+Reported: sn3.4:1.12 none
+Reported: sn3.4:1.13 none
+Reported: sn3.4:1.15 starts: Even though they may say, “We aren’t dear
+Reported: sn3.4:1.16 starts: “We aren’t dear to ourselves,” still they are
+Reported: sn3.4:1.15 none
+Reported: sn3.4:1.16 none
+Reported: sn3.4:1.18 starts: Of their own accord, they act toward themselves
+Reported: sn3.4:1.19 starts: thus they are dear to themselves.’”
+Reported: sn3.4:1.18 none
+Reported: sn3.4:1.19 none
+
+## an10.17
+an10.17:2.1 | S: Furthermore, a mendicant is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: “Then again, the monk has heard much, has retained what he has heard, has stored what he has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning and expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views.
+an10.17:2.2 | P: Yampi, bhikkhave, bhikkhu bahussuto hoti …pe… diṭṭhiyā suppaṭividdhā, | T: (none)
+an10.17:2.3 | S: This too is a quality that serves as protector. | T: And the fact that he has heard much… well-penetrated in terms of his views is a quality creating a protector.
+an10.17:3.1 | S: Furthermore, a mendicant has good friends, companions, and associates. | T: “Then again, the monk has admirable friends, admirable comrades, admirable companions.
+an10.17:3.2 | P: Yampi, bhikkhave, bhikkhu kalyāṇamitto hoti kalyāṇasahāyo kalyāṇasampavaṅko, | T: (none)
+an10.17:3.3 | S: This too is a quality that serves as protector. | T: And the fact that he has admirable friends, admirable comrades, admirable companions is a quality creating a protector.
+an10.17:4.1 | S: Furthermore, a mendicant is easy to admonish, having qualities that make them easy to admonish. They’re patient, and take instruction respectfully. | T: “Then again, the monk is easy to speak to, endowed with qualities that make him easy to speak to, patient, respectful to instruction.
+an10.17:4.2 | P: Yampi, bhikkhave, bhikkhu suvaco hoti …pe… anusāsaniṁ, | T: (none)
+an10.17:4.3 | S: This too is a quality that serves as protector. | T: And the fact that he is easy to speak to… respectful to instruction is a quality creating a protector.
+an10.17:5.1 | S: Furthermore, a mendicant is deft and tireless in a diverse spectrum of duties for their spiritual companions, understanding how to go about things in order to complete and organize the work. | T: “Then again, the monk is adept at the various affairs involving his companions in the holy life; is vigorous, quick-witted in the techniques involved in them, is up to doing them or arranging to get them done.
+an10.17:5.2 | P: Yampi, bhikkhave, bhikkhu yāni tāni sabrahmacārīnaṁ …pe… alaṁ kātuṁ alaṁ saṁvidhātuṁ, | T: (none)
+an10.17:5.3 | S: This too is a quality that serves as protector. | T: And the fact that he is adept at… doing them or arranging to get them done is a quality creating a protector.
+an10.17:6.1 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “Then again, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya.
+an10.17:6.2 | P: Yampi, bhikkhave, bhikkhu dhammakāmo hoti piyasamudāhāro, abhidhamme abhivinaye uḷārapāmojjo, | T: (none)
+an10.17:6.3 | S: This too is a quality that serves as protector. | T: And the fact that he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector.
+an10.17:7.1 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “Then again, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+an10.17:7.2 | P: Yampi, bhikkhave, bhikkhu āraddhavīriyo viharati akusalānaṁ dhammānaṁ pahānāya, kusalānaṁ dhammānaṁ upasampadāya, thāmavā daḷhaparakkamo anikkhittadhuro kusalesu dhammesu, | T: (none)
+an10.17:7.3 | S: This too is a quality that serves as protector. | T: And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+an10.17:8.1 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Then again, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all.
+an10.17:8.2 | P: Yampi, bhikkhave, bhikkhu santuṭṭho hoti itarītaracīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārena, | T: (none)
+an10.17:8.3 | S: This too is a quality that serves as protector. | T: And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all is a quality creating a protector.
+an10.17:9.1 | S: Furthermore, a mendicant is mindful. They have utmost mindfulness and alertness, and can remember and recall what was said and done long ago. | T: “Then again, the monk is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done and said a long time ago.
+an10.17:9.2 | P: Yampi, bhikkhave, bhikkhu satimā hoti paramena satinepakkena samannāgato cirakatampi cirabhāsitampi saritā anussaritā, | T: (none)
+an10.17:9.3 | S: This too is a quality that serves as protector. | T: And the fact that he is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done and said a long time ago is a quality creating a protector.
+an10.17:10.1 | S: Furthermore, a mendicant is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “Then again, the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress.
+an10.17:10.2 | P: Yampi, bhikkhave, bhikkhu paññavā hoti udayatthagāminiyā paññāya samannāgato ariyāya nibbedhikāya sammā dukkhakkhayagāminiyā, | T: (none)
+an10.17:10.3 | S: This too is a quality that serves as protector. | T: And the fact that the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress is a quality creating a protector.
+an10.17:11.1 | S: You should live with a protector, not without one. | T: “Live with a protector, monks, and not without a protector.
+an10.17:11.2 | S: Living without a protector is suffering. | T: He suffers, one who lives without a protector.
+Reported: an10.17:2.3 starts: And the fact that he has heard much…
+Reported: an10.17:2.3 starts: is a quality creating a protector.
+Reported: an10.17:3.3 starts: And the fact that he has admirable friends, admirable comrades,
+Reported: an10.17:3.3 starts: is a quality creating a protector.
+Reported: an10.17:4.3 starts: And the fact that he is easy to speak to…
+Reported: an10.17:4.3 starts: is a quality creating a protector.
+Reported: an10.17:5.2 none
+Reported: an10.17:5.2 starts: And the fact that he is adept at… doing
+Reported: an10.17:5.3 starts: And the fact that he is adept at…
+Reported: an10.17:5.3 starts: is a quality creating a protector.
+Reported: an10.17:6.2 none
+Reported: an10.17:6.2 starts: And the fact that he is one who desires the Dhamma
+Reported: an10.17:6.3 starts: And the fact that he is one who desires the Dhamma,
+Reported: an10.17:6.3 starts: is a quality creating a protector.
+Reported: an10.17:7.3 starts: And the fact that he keeps his persistence aroused…
+Reported: an10.17:7.3 starts: is a quality creating a protector.
+Reported: an10.17:8.3 starts: And the fact that he is content with any old robe cloth
+Reported: an10.17:8.3 starts: is a quality creating a protector.
+Reported: an10.17:9.3 starts: And the fact that he is mindful, endowed with excellent
+Reported: an10.17:9.3 starts: is a quality creating a protector.
+Reported: an10.17:10.3 starts: And the fact that the monk is discerning, endowed with
+Reported: an10.17:10.3 starts: is a quality creating a protector.
+
+## an10.46
+an10.46:10.10 | S: a fortnight … | T: half a month—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner.
+an10.46:10.11 | P: Tiṭṭhatu, sakkā, aḍḍhamāso. | T: (none)
+an10.46:11.1 | S: ten days … | T: “Let alone half a month, there is the case where a disciple of mine, spending ten days & nights…
+an10.46:11.2 | P: Tiṭṭhantu, sakkā, dasa rattindivā. | T: (none)
+an10.46:12.1 | S: nine days … | T: nine days & nights…
+Reported: an10.46:11.1 starts: there is the case where a disciple of mine, spending ten days
+Reported: an10.46:11.1 starts: “Let alone half a month, there is the case
+
+## an4.111
+an4.111:1.5 | S: “Kesi, what do you do with a horse in training that doesn’t follow these forms of training?” | T: “And if a tamable horse doesn’t submit either to a mild training or to a harsh training or to a mild & harsh training, Kesin, what do you do?”
+an4.111:1.6 | P: “Sace me, bhante, assadammo saṇhena vinayaṁ na upeti, pharusena vinayaṁ na upeti, saṇhapharusena vinayaṁ na upeti; | T: (none)
+an4.111:1.7 | S: “In that case, sir, I kill it. | T: “If a tamable horse doesn’t submit either to a mild training or to a harsh training or to a mild and harsh training, lord, then I kill it.
+an4.111:1.8 | S: Why is that? | T: Why is that? (I think:)
+an4.111:1.9 | S: So that I don’t disgrace my tutor’s community. | T: ‘Don’t let this be a disgrace to my lineage of teachers.’
+Reported: an4.111:1.7 starts: lord, then I kill it.
+Reported: an4.111:1.7 starts: “If a tamable horse doesn’t submit either
+
+## an5.166
+an5.166:3.1 | S: But for a second … and a third time Sāriputta repeated his statement. | T: A second time… A third time, Ven. Sāriputta addressed the monks,
+an5.166:3.2 | P: “idhāvuso, bhikkhu sīlasampanno samādhisampanno paññāsampanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi— | T: “Friends, there is the case where a monk—consummate in virtue, consummate in concentration, consummate in discernment—might enter & emerge from the cessation of perception & feeling.
+an5.166:3.3 | P: atthetaṁ ṭhānaṁ. | T: (none)
+an5.166:3.4 | P: No ce diṭṭheva dhamme aññaṁ ārādheyya, atikkammeva kabaḷīkārāhārabhakkhānaṁ devānaṁ sahabyataṁ aññataraṁ manomayaṁ kāyaṁ upapanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi— | T: There is the possibility that if he does not gain gnosis in the here & now, then—going beyond companionship with the devas who feed on material food, and arising in a certain mind-made group—he might [there] enter & emerge from the cessation of perception & feeling.
+an5.166:3.5 | P: atthetaṁ ṭhānan”ti. | T: There is that possibility.”
+an5.166:4.1 | S: And for a third time, Udāyī said to him, | T: A third time, Ven. Udāyin said to Ven. Sāriputta,
+Reported: an5.166:3.3 none
+Reported: an5.166:3.3 starts: There is the possibility that if he does not
+Reported: an5.166:3.4 starts: There is the possibility that if he
+Reported: an5.166:3.4 starts: if he does not gain gnosis in the
+
+## an5.166
+an5.166:7.1 | S: But for a second … and a third time Sāriputta repeated his statement. | T: A second time… A third time, Ven. Sāriputta addressed the monks,
+an5.166:7.2 | P: “idhāvuso, bhikkhu sīlasampanno samādhisampanno paññāsampanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi— | T: “Friends, there is the case where a monk—consummate in virtue, consummate in concentration, consummate in discernment—might enter & emerge from the cessation of perception & feeling.
+an5.166:7.3 | P: atthetaṁ ṭhānaṁ. | T: (none)
+an5.166:7.4 | P: No ce diṭṭheva dhamme aññaṁ ārādheyya, atikkammeva kabaḷīkārāhārabhakkhānaṁ devānaṁ sahabyataṁ aññataraṁ manomayaṁ kāyaṁ upapanno saññāvedayitanirodhaṁ samāpajjeyyāpi vuṭṭhaheyyāpi— | T: There is the possibility that if he does not gain gnosis in the here & now, then—going beyond companionship with the devas who feed on material food, and arising in a certain mind-made group—he might [there] enter & emerge from the cessation of perception & feeling.
+an5.166:7.5 | P: atthetaṁ ṭhānan”ti. | T: There is that possibility.”
+an5.166:8.1 | S: And for a third time, Udāyī said to him, | T: A third time, Ven. Udāyin said to Ven. Sāriputta,
+Reported: an5.166:7.3 none
+Reported: an5.166:7.3 starts: There is the possibility that if he does not
+Reported: an5.166:7.4 starts: There is the possibility that if he
+Reported: an5.166:7.4 starts: if he does not gain gnosis in the
+
+## dn29
+dn29:16.14 | S: But that saying of Uddaka’s is low, crude, ordinary, ignoble, and pointless, as it’s only about a razor. | T: But this statement of Uddaka Rāmaputta is base, vulgar, common, ignoble, unprofitable, dealing only with a razor.
+dn29:16.15 | S: If there’s anything of which it may be rightly said: | T: “But how would one, speaking rightly, say,
+dn29:16.16 | S: ‘Seeing, one does not see,’ it’s of this that it should be said. | T: ‘Seeing, one doesn’t see’? One speaking rightly, would say just this: ‘Seeing, one doesn’t see.’
+dn29:16.17 | P: ‘passaṁ na passatī’ti. | T: (none)
+dn29:16.18 | S: Seeing what does one not see? | T: And what is it that, ‘seeing, one doesn’t see’?
+dn29:16.19 | S: One sees this: a spiritual path endowed with all good qualities, complete in all good qualities, neither too little nor too much, well explained, whole, complete, and fully revealed. | T: Such a well-expounded, entirely complete, well-proclaimed holy life, consummate in all its aspects, complete in all its aspects, with nothing lacking and nothing in excess: This is what one sees.
+Reported: dn29:16.17 starts: ‘Seeing, one doesn’t see.’
+Reported: dn29:16.17 none
+
+## dn33
+dn33:3.3.7 | S: This is a quality that serves as protector. | T: is a quality creating a protector.
+dn33:3.3.8 | S: Furthermore, a mendicant is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: “And further, the monk has heard much, has retained what he has heard, has stored what he has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning and expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he has listened to often, retained, discussed, accumulated, examined with his mind, & well-penetrated in terms of his views.
+dn33:3.3.9 | P: Yaṁpāvuso, bhikkhu bahussuto hoti …pe… diṭṭhiyā suppaṭividdhā. | T: And the fact that he has heard much… well-penetrated in terms of his views is a quality creating a protector.
+dn33:3.3.10 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.11 | S: Furthermore, a mendicant has good friends, companions, and associates. | T: “And further, the monk has admirable friends, admirable comrades, admirable companions.
+dn33:3.3.12 | P: Yaṁpāvuso, bhikkhu kalyāṇamitto hoti kalyāṇasahāyo kalyāṇasampavaṅko. | T: And the fact that he has admirable friends, admirable comrades, admirable companions
+Reported: dn33:3.3.10 starts: is a quality creating a protector.
+Reported: dn33:3.3.10 none
+
+## dn33
+dn33:3.3.19 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.20 | S: Furthermore, a mendicant loves the teachings and is a delight to converse with, being full of joy in the teaching and training. | T: “And further, the monk is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya.
+dn33:3.3.21 | P: Yaṁpāvuso, bhikkhu dhammakāmo hoti …pe… uḷārapāmojjo. | T: And the fact that he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya is a quality creating a protector. “And further, the monk keeps his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities. And the fact that he keeps his persistence aroused… not shirking his duties with regard to skillful qualities is a quality creating a protector.
+dn33:3.3.22 | S: This too is a quality that serves as protector. | T: (none)
+dn33:3.3.23 | S: Furthermore, a mendicant is content with any kind of robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “And further, the monk is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all.
+dn33:3.3.24 | P: Yaṁpāvuso, bhikkhu santuṭṭho hoti …pe… parikkhārehi. | T: And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all is a quality creating a protector.
+Reported: dn33:3.3.22 starts: is a quality creating a protector.
+Reported: dn33:3.3.22 none
+
+## mn122
+mn122:2.12 | S: are many mendicants living there?” | T: Do many monks live there?”
+mn122:2.13 | P: “Sambahulāni, bhante, kāḷakhemakassa sakkassa vihāre senāsanāni paññattāni. | T: (none)
+mn122:2.14 | S: “Indeed there are, sir. | T: “Yes, lord, there are many resting places prepared in Kāḷa-khemaka the Sakyan’s dwelling. Many monks live there.
+mn122:2.15 | S: It’s currently the time for making robes.” | T: Our time for making robes has come around.”
+mn122:3.1 | S: “Ānanda, a mendicant doesn’t shine who enjoys company and groups, who loves them and likes to enjoy them. | T: “Ānanda, a monk does not shine if he delights in company, enjoys company, is committed to delighting in company; if he delights in a group, enjoys a group, rejoices in a group.
+Reported: mn122:2.14 starts: Many monks live there.
+Reported: mn122:2.14 starts: “Yes, lord, there are many resting places
+
+## mn128
+mn128:12.3 | S: to live together with spiritual companions such as these.’ | T: that I’m living with companions like this in the holy life.’
+mn128:12.4 | S: I consistently treat these venerables with kindness by way of body, speech, and mind, both in public and in private. | T: I’m set on bodily acts of goodwill with regard to these venerable ones, to their faces & behind their backs.
+mn128:12.5 | P: mettaṁ vacīkammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, | T: I’m set on verbal acts… mental acts of goodwill with regard to these venerable ones, to their faces & behind their backs.
+mn128:12.6 | P: mettaṁ manokammaṁ paccupaṭṭhitaṁ āvi ceva raho ca. | T: (none)
+mn128:12.7 | S: I think: | T: The thought occurs to me,
+mn128:12.8 | S: ‘Why don’t I set aside my own ideas and just go along with these venerables’ ideas?’ | T: ‘Why don’t I, having cast aside my own mind, conduct myself in line with the mind of these venerable ones?’
+Reported: mn128:12.6 starts: mental acts of goodwill with regard to these
+Reported: mn128:12.6 none
+
+## mn12
+mn12:36.4 | P: yathā paṭipanno ca kāyassa bhedā paraṁ maraṇā tiracchānayoniṁ upapajjati tañca pajānāmi. | T: practicing in line with which—at the break-up of the body, after death—one reappears in the animal womb.
+mn12:36.5 | P: Pettivisayañcāhaṁ, sāriputta, pajānāmi, pettivisayagāmiñca maggaṁ, pettivisayagāminiñca paṭipadaṁ; | T: (none)
+mn12:36.6 | S: the ghost realm … | T: “I discern the realm of the hungry ghosts, and I discern the path leading to the realm of the hungry ghosts, the practice leading to the realm of the hungry ghosts, practicing in line with which—at the break-up of the body, after death—one reappears in the realm of the hungry ghosts.
+mn12:36.7 | S: humanity … | T: “I discern human beings, and I discern the path leading to the world of human beings, the practice leading to the world of human beings,
+mn12:36.8 | P: yathā paṭipanno ca kāyassa bhedā paraṁ maraṇā manussesu upapajjati tañca pajānāmi. | T: practicing in line with which—at the break-up of the body, after death—one reappears among human beings.
+Reported: mn12:36.6 starts: practicing in line with which—at the break-up of the body, after death—one reappears in the realm
+Reported: mn12:36.6 starts: “I discern the realm of the hungry ghosts,
+
+## mn14
+mn14:2.6 | S: Despite understanding this, sometimes my mind is occupied by thoughts of greed, hate, and delusion. | T: there are still times when the quality of greed invades my mind and remains, when the quality of aversion… the quality of delusion invades my mind and remains.
+mn14:2.7 | P: Tassa mayhaṁ, bhante, evaṁ hoti: | T: (none)
+mn14:2.8 | S: I wonder what qualities remain in me that I have such thoughts?” | T: The thought occurs to me: What quality is unabandoned within me so that there are times when the quality of greed invades my mind and remains, when the quality of aversion… the quality of delusion invades my mind and remains?”
+mn14:3.1 | S: “Mahānāma, there is a quality that remains in you that makes you have such thoughts. | T: “Mahānāma, that very quality [i.e., greed, aversion, or delusion] is what is unabandoned within you so that there are times when the quality of greed… the quality of aversion… the quality of delusion invades your mind and remains.
+mn14:3.2 | S: For if you had given up that quality you would not still be living at home and enjoying sensual pleasures. | T: For if that quality were abandoned in you, you would not live the household life and would not partake of sensuality.
+Reported: mn14:2.8 starts: The thought occurs to me: What quality
+Reported: mn14:2.8 starts: What quality is unabandoned within me
+
+## mn25
+mn25:5.11 | P: Balavīriye parihīne tameva nivāpaṁ nivuttaṁ nevāpikassa paccāgamiṁsu. | T: Having lost their strength & energy, they returned to the poison-grass sown by the poison-grass sower.
+mn25:5.12 | P: Te tattha anupakhajja mucchitā bhojanāni bhuñjiṁsu. | T: (none)
+mn25:5.13 | P: Te tattha anupakhajja mucchitā bhojanāni bhuñjamānā madaṁ āpajjiṁsu, mattā samānā pamādaṁ āpajjiṁsu, pamattā samānā yathākāmakaraṇīyā ahesuṁ nevāpikassa amusmiṁ nivāpe. | T: Venturing unwarily into the poison-grass sown by the poison-grass sower, they ate food.…
+mn25:5.14 | S: failed to get free of the sower’s power. | T: That’s why that second herd of deer didn’t escape from the poison-grass sower’s power & control.
+mn25:5.15 | S: Why don’t we set up our lair close by where the sower has sown the seed? | T: “‘What if we were to take up residence near where poison-grass has been sown by the poison-grass sower and—
+Reported: mn25:5.13 none
+Reported: mn25:5.13 starts: Venturing unwarily into the poison-grass sown by the
+
+## mn29
+mn29:5.10 | P: So tāya sīlasampadāya na attānukkaṁseti, na paraṁ vambheti. | T: Because of that consummation in virtue he does not exalt himself or disparage others.
+mn29:5.11 | P: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno samādhisampadaṁ ārādheti. | T: He is not intoxicated with that consummation in virtue, not heedless about it, and does not fall into heedlessness. Being heedful, he achieves consummation in concentration.
+mn29:5.12 | P: So tāya samādhisampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. | T: He is gratified with that consummation in concentration, but his resolve is not fulfilled. He is not intoxicated with that consummation in concentration, not heedless about it, and does not fall into heedlessness.
+mn29:5.13 | P: So tāya samādhisampadāya na attānukkaṁseti, na paraṁ vambheti. | T: (none)
+mn29:5.14 | S: Being diligent, they achieve knowledge and vision. | T: Being heedful, he achieves knowledge & vision.
+mn29:5.15 | S: They’re happy with that, and they’ve got all they wished for. | T: He is gratified with that knowledge & vision, his resolve fulfilled.
+mn29:5.16 | S: And they glorify themselves and put others down on account of that, | T: Because of that knowledge & vision he exalts himself and disparages others:
+Reported: mn29:5.14 starts: He is not intoxicated with that consummation in concentration,
+Reported: mn29:5.14 starts: Being heedful, he achieves knowledge & vision.
+
+## mn31
+mn31:20.3 | S: gained such and such meditations and attainments, up to the ending of defilements, as you revealed to the Buddha?” | T: attained this or that attainment or abiding, as you declared in the Blessed One’s presence, all the way up to the ending of the effluents?”
+mn31:20.4 | S: “The venerables did not tell me that they had | T: “No, venerable sirs, you never reported to me that you had
+mn31:20.5 | S: gained such meditations and attainments. But I discovered it by encompassing your minds, | T: attained this or that attainment or abiding. It’s just that I know, having encompassed your awareness with my awareness, that you have attained this & that attainment & abiding.
+mn31:20.6 | P: ‘imāsañca imāsañca vihārasamāpattīnaṁ ime āyasmanto lābhino’ti. | T: (none)
+mn31:20.7 | S: and deities also told me. | T: And devas have reported to me
+mn31:20.8 | P: ‘imāsañca imāsañca vihārasamāpattīnaṁ ime āyasmanto lābhino’ti. | T: that you have attained this & that attainment & abiding,
+Reported: mn31:20.6 starts: that you have attained this & that attainment
+Reported: mn31:20.6 none
+
+## mn51
+mn51:5.14 | P: Yopāyaṁ, bhante, puggalo attantapo ca attaparitāpanānuyogamanuyutto parantapo ca paraparitāpanānuyogamanuyutto, ayampi me puggalo cittaṁ nārādheti. | T: The person who torments himself and is devoted to the practice of torturing himself, and also torments others and is devoted to the practice of torturing others doesn’t satisfy my mind.
+mn51:5.15 | P: Yo ca kho ayaṁ, bhante, puggalo nevattantapo nāttaparitāpanānuyogamanuyutto na parantapo na paraparitāpanānuyogamanuyutto, so anattantapo aparantapo diṭṭheva dhamme nicchāto nibbuto sītībhūto sukhappaṭisaṁvedī brahmabhūtena attanā viharati— | T: (none)
+mn51:5.16 | S: I only like the sound of the last individual, who doesn’t mortify either themselves or others.” | T: The person who neither torments himself nor is he devoted to the practice of torturing himself, and neither torments others nor is he devoted to the practice of torturing others, who—neither tormenting himself nor tormenting others—dwells in the here-&-now free of hunger, unbound, cooled, sensitive to pleasure, with a Brahmā-like mind does satisfy my mind.”
+mn51:6.1 | S: “But why don’t you like the sound of those three individuals?” | T: “But why, Pessa, do those three persons not satisfy your mind?”
+mn51:6.2 | S: “Sir, the individual who mortifies themselves does so even though they want to be happy and recoil from pain. | T: “Lord, the person who torments himself and is devoted to the practice of torturing himself: He torments & tortures his self who loves pleasure & abhors pain.
+Reported: mn51:5.16 none
+Reported: mn51:5.16 starts: The person who neither torments himself nor
+
+## mn63
+mn63:5.27 | S: whether the shaft was bound with sinews of a cow, a buffalo, a black lion, or an ape; | T: until I know whether the shaft with which I was wounded was bound with the sinew of an ox, a water buffalo, a langur, or a monkey.’
+mn63:5.28 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.29 | S: and whether the arrowhead was spiked, razor-tipped, barbed, made of iron or a calf’s tooth, or lancet-shaped.’ | T: He would say, ‘I won’t have this arrow removed until I know whether the shaft with which I was wounded was that of a common arrow, a curved arrow, a barbed, a calf-toothed, or an oleander arrow.’
+mn63:5.30 | S: That man would still not have learned these things, and meanwhile they’d die. | T: The man would die and those things would still remain unknown to him.
+mn63:5.31 | S: In the same way, suppose someone was to say: | T: “In the same way, if anyone were to say,
+Reported: mn63:5.29 starts: He would say, ‘I won’t have this arrow removed until I know whether the shaft
+Reported: mn63:5.29 starts: ‘I won’t have this arrow removed until I know whether the shaft
+
+## mn69
+mn69:4.4 | S: ‘What’s the point of this wilderness venerable’s staying alone and autonomous in the wilderness, since he’s not careful where he sits?’ | T: ‘What good has it done for this venerable wilderness-dweller to be alone in the wilderness, living independently, when he doesn’t know even a point of good conduct?’
+mn69:4.5 | P: tassa bhavanti vattāro. | T: (none)
+mn69:4.6 | S: That’s why a wilderness monk who has come to stay in the Saṅgha should be careful where he sits. | T: Because there are those who would say that of him, when a wilderness-dwelling monk has come into the Saṅgha and is living in the Saṅgha, he should be skilled with regard to seats.
+mn69:4.7 | S: A wilderness monk who has come to stay in the Saṅgha should know even the supplementary regulations. | T: (none)
+mn69:4.8 | S: If he doesn’t, there’ll be some who say: | T: (none)
+Reported: mn69:4.6 starts: Because there are those who would say
+Reported: mn69:4.6 starts: when a wilderness-dwelling monk has come into the Saṅgha
+
+## mn69
+mn69:11.3 | S: ‘What’s the point of this wilderness venerable’s staying alone and autonomous in the wilderness, since he eats too much?’ | T: ‘What good has it done for this venerable wilderness-dweller to be alone in the wilderness, living independently, when he doesn’t know moderation in eating?’
+mn69:11.4 | P: tassa bhavanti vattāro. | T: (none)
+mn69:11.5 | S: That’s why a wilderness monk should eat in moderation. | T: Because there are those who would say that of him, a wilderness-dwelling monk should know moderation in eating.
+mn69:12.1 | S: A wilderness monk should be committed to wakefulness. | T: “A wilderness-dwelling monk should be devoted to wakefulness.
+mn69:12.2 | S: If he isn’t, there’ll be some who say: | T: If a wilderness-dwelling monk is not devoted to wakefulness, there are those who would say of him,
+Reported: mn69:11.5 starts: Because there are those who would say
+Reported: mn69:11.5 starts: a wilderness-dwelling monk should know moderation in eating.
+
+## mn95
+mn95:25.6 | P: Tasmā ussāhassa chando bahukāro”ti. | T: (none)
+mn95:26.1 | P: “Chandassa pana, bho gotama, katamo dhammo bahukāro? | T: (none)
+mn95:26.2 | P: Chandassa bahukāraṁ dhammaṁ mayaṁ bhavantaṁ gotamaṁ pucchāmā”ti. | T: “But what quality is most helpful for desire? …”
+mn95:26.3 | S: Acceptance of the teachings after deliberation is helpful for enthusiasm … | T: “Coming to an agreement through pondering dhammas.…
+mn95:26.4 | P: No cete dhammā nijjhānaṁ khameyyuṁ, nayidaṁ chando jāyetha. | T: If one didn’t come to an agreement through pondering dhammas, desire wouldn’t arise.…”
+Reported: mn95:26.2 none
+Reported: mn95:26.2 starts: “But what quality is most helpful for desire?

@@ -65,7 +65,7 @@ const keepSettled = args.includes('--keep-settled');
 const overview = args.includes('--overview');
 // --findings: tries the read-throughs' findings (review/*/*.findings and
 // review/closing-lines.findings), and writes review/findings.json: what each group of them changes,
-// and whether it passes.
+// whether it passes, and the lines readers disagree on, with what each proposed.
 const weighing = args.includes('--findings') || args.includes('--keep-findings');
 // --keep-findings: as --findings, and keeps the findings that pass in cuts.json.
 const keepFindings = args.includes('--keep-findings');
@@ -1240,23 +1240,39 @@ if (applyAnswers) {
 // The read-throughs' findings, by line: the words the line should start with, or null for none. A
 // line two readers disagree on is left out, unless a fix made by hand, in review/hand/, settles it.
 const findings = new Map();
+// The lines readers disagree on that no fix by hand settles: { key, starts: each reader's finding }.
+const disputed = [];
+// Returns whether two findings for a line agree: both empty it, or both quote the same words as far as the shorter goes.
+const agree = (a, b) => {
+  if (a === null || b === null) return a === b;
+  const [x, y] = [a, b].map((s) => s.toLowerCase().match(WORD_RE) ?? []);
+  return x.slice(0, y.length).join(' ') === y.slice(0, x.length).join(' ');
+};
 if (weighing) {
   const HAND = path.join(REVIEW, 'hand');
   const files = [path.join(REVIEW, 'closing-lines.findings'), ...fs.globSync(path.join(REVIEW, '*', '*.findings'))];
   const torn = new Set();
   const byHand = new Map();
+  // Each line's findings, one a reader.
+  const proposals = new Map();
   for (const file of files.filter((f) => fs.existsSync(f))) {
     for (const line of fs.readFileSync(file, 'utf8').split('\n')) {
       const m = /^(\S+:\S+) (?:starts: (.+)|none)$/.exec(line.trim());
       if (!m) continue;
       const starts = m[2]?.trim() ?? null;
-      if (path.dirname(file) === HAND) byHand.set(m[1], starts);
-      else if (findings.has(m[1]) && findings.get(m[1]) !== starts) torn.add(m[1]);
-      findings.set(m[1], starts);
+      if (path.dirname(file) === HAND) {
+        byHand.set(m[1], starts);
+        continue;
+      }
+      proposals.set(m[1], [...(proposals.get(m[1]) ?? []), starts]);
+      if (findings.has(m[1]) && !agree(findings.get(m[1]), starts)) torn.add(m[1]);
+      // Of two findings that agree, the longer quote is kept.
+      if (!findings.has(m[1]) || (starts?.length ?? 0) > (findings.get(m[1])?.length ?? 0)) findings.set(m[1], starts);
     }
   }
   for (const key of torn) findings.delete(key);
   for (const [key, starts] of byHand) findings.set(key, starts);
+  for (const key of torn) if (!byHand.has(key)) disputed.push({ key, starts: [...new Set(proposals.get(key))] });
 }
 
 // Moves each cut a review settled to where the text before it ends with the settled words, nearest
@@ -2031,13 +2047,13 @@ if (weighing) {
   const seen = new Set([...weighed.flatMap((g) => g.findings.map((f) => f.key)), ...unmoved.map((f) => f.key)]);
   const others = [...unmoved, ...[...findings].filter(([key]) => !seen.has(key)).map(([key, starts]) => ({ key, starts, status: 'not weighed' }))];
   fs.mkdirSync(REVIEW, { recursive: true });
-  fs.writeFileSync(path.join(REVIEW, 'findings.json'), `${JSON.stringify({ groups: weighed, others }, null, 1)}\n`);
+  fs.writeFileSync(path.join(REVIEW, 'findings.json'), `${JSON.stringify({ groups: weighed, others, disputed }, null, 1)}\n`);
   const verdicts = [...new Set(weighed.map((g) => g.verdict))].map((v) => {
     const gs = weighed.filter((g) => g.verdict === v);
     return `${gs.reduce((a, g) => a + g.findings.length, 0)} in ${gs.length} groups: ${v}`;
   });
   const statuses = [...new Set(others.map((f) => f.status))].map((s) => `${others.filter((f) => f.status === s).length} ${s}`);
-  console.log(`findings: ${findings.size} lines; ${[...verdicts, ...statuses].join('; ')}`);
+  console.log(`findings: ${findings.size} lines; ${[...verdicts, ...statuses, `${disputed.length} disputed`].join('; ')}`);
 }
 if (keepFindings) fs.writeFileSync(CUTS_FILE, `${JSON.stringify(decisions, null, 1)}\n`);
 if (reviewUnits.length) fs.writeFileSync(path.join(REVIEW, 'review.html'), reviewPage(reviewUnits));

@@ -2051,7 +2051,7 @@
  "mn12:31.3": "aunted.\n“Sāriputta, when I know this & see this, anyone who would say of me, ‘Gotama the contemplative has no superior human state, no distinction in knowledge & vision worthy of a noble one. Having hammered it out through logic, Gotama the contemplative teaches a Dhamma that follows his reasoning, his own invention’:",
  "mn12:34.3": "ration.\n“Sāriputta, when I know this & see this, anyone who would say of me, ‘Gotama the contemplative has no superior human state, no distinction in knowledge & vision worthy of a noble one. Having hammered it out through logic, Gotama the contemplative teaches a Dhamma that follows his reasoning, his own invention’:",
  "mn12:36.6": {
-  "after": "death—one reappears in the animal womb.",
+  "after": "m of the hungry ghosts, the practice leading to the realm of the hungry ghosts,",
   "placed": true
  },
  "mn12:37.5": " that were neither flaming nor smoking.",
@@ -2129,7 +2129,7 @@
  "mn63:3.46": "ath a Tathāgata exists… does not exist…",
  "mn63:5.4": "\n“Māluṅkyaputta, if anyone were to say, ‘I won’t live the holy life under the Blessed One as long as he does not disclose to me that “The cosmos is eternal,” …",
  "mn63:5.29": {
-  "after": " water buffalo, a langur, or a monkey.’",
+  "after": ", a langur, or a monkey.’ He would say,",
   "placed": true
  },
  "mn63:5.34": "In the same way, if anyone were to say, ‘I won’t live the holy life under the Blessed One as long as he does not disclose to me that “The cosmos is eternal,” …",
@@ -2683,7 +2683,7 @@
  "mn138:21.14": "tability of consciousness—alter in accordance with the change in consciousness.",
  "mn138:22.3": "y lack of clinging/sustenance.\n“So, concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—i.e., ‘A monk should investigate in such a way that, his consciousness neither externally scattered & diffused, nor internally positioned, he would from lack of clinging/sustenance be unagitated.",
  "mn14:2.8": {
-  "after": "f delusion invades my mind and remains.",
+  "after": " and remains. The thought occurs to me:",
   "placed": true
  },
  "mn14:7.4": " man, or whatever the occupation may be—",
@@ -3927,7 +3927,8 @@
   "placed": true
  },
  "an1.31:1.2": {
-  "empty": "up"
+  "after": ", leads to such great harm as the mind.",
+  "placed": true
  },
  "an1.32:1.2": "eads to such great benefit as the mind.",
  "an1.33:1.2": {
@@ -4319,7 +4320,10 @@
  "dn1:2.13.4": "manent, non-eternal, subject to change.",
  "dn1:2.19.9": "e says, ‘This cosmos is finite & infinite. Those contemplatives & brahmans who say that this cosmos is finite, encircled: That is a falsehood on their part. Those contemplatives & brahmans who say that this cosmos is infinite, unencircled: That is a falsehood on their part, too.",
  "dn1:2.28.1": "“This is the fourth basis—with reference to which, coming from which—some contemplatives & brahmans, when being asked questions regarding this or that, resort to verbal contortions, to eel-wriggling.",
- "dn1:2.31.1": "risen self & cosmos on two grounds?\n17.",
+ "dn1:2.31.1": {
+  "after": "ly-arisen self & cosmos on two grounds?",
+  "placed": true
+ },
  "dn1:2.38.16": {
   "after": "is limitless,\n31. exclusively pleasant,",
   "placed": true
@@ -5544,14 +5548,26 @@
  "an3.109:1.4": " soggy, one’s mental actions get soggy.",
  "an3.109:3.4": "e’s bodily… verbal… mental actions rot.",
  "an3.112:1.6": "desire is born. With reference to things in the present that provide the occasion for desire & passion, desire is born.",
- "an3.112:1.10": "ference to things in the present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things.",
- "an3.112:1.11": "sent that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things. That, I tell you, is a fetter: that one’s awareness is impassioned.",
+ "an3.112:1.10": {
+  "after": " reference to things in the past that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things.",
+  "placed": true
+ },
+ "an3.112:1.11": {
+  "after": "past that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things. That, I tell you, is a fetter: that one’s awareness is impassioned.",
+  "placed": true
+ },
  "an3.112:5.4": {
   "after": "to things in the past that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them.",
   "placed": true
  },
- "an3.112:6.4": "things in the present that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them.",
- "an3.112:6.5": "esent that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them. Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.",
+ "an3.112:6.4": {
+  "after": " things in the future that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them.",
+  "placed": true
+ },
+ "an3.112:6.5": {
+  "after": "uture that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them. Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.",
+  "placed": true
+ },
  "an3.116:1.8": "is 20,000 eons. A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts. But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.",
  "an3.116:2.6": "is 40,000 eons. A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts. But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.",
  "an3.116:3.6": "is 60,000 eons. A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts. But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.",
@@ -6147,7 +6163,7 @@
  "dn1:2.32.3": "tuitously-arisen self & cosmos?\n“There is the case where a certain contemplative or brahman is a logician, an inquirer.",
  "dn1:2.40.2": "r of these 16 grounds. There is nothing outside of this.\n“With regard to this, the Tathāgata discerns that ‘These standpoints, thus seized, thus grasped at, lead to such & such a destination, to such & such a state in the world beyond.’ That the Tathāgata discerns. And he discerns what is higher than that. And yet, discerning that, he does not grasp at it. And as he is not grasping at it, unbinding [nibbuti] is experienced right within. Knowing, as they have come to be, the origination, ending, allure, & drawbacks of feelings, along with the escape from feelings, the Tathāgata, monks—through lack of clinging/sustenance—is released.",
  "dn1:3.1.1": {
-  "after": "on one or another of these 16 grounds. There is nothing outside of this.\n“With regard to this, the Tathāgata discerns that ‘These standpoints, thus seized, thus grasped at, lead to such & such a destination, to such & such a state in the world beyond.’ That the Tathāgata discerns. And he discerns what is higher than that. And yet, discerning that, he does not grasp at it. And as he is not grasping at it, unbinding [nibbuti] is experienced right within. Knowing, as they have come to be, the origination, ending, allure, & drawbacks of feelings, along with the escape from feelings, the Tathāgata, monks—through lack of clinging/sustenance—is released.\n“These, monks, are the dhammas—deep, hard to see, hard to realize, tranquil, refined, beyond the scope of conjecture, subtle, to-be-experienced by the wise—that the Tathāgata proclaims, having directly known & realized them for himself, and that those who, rightly speaking in praise of the Tathāgata in line with what is factual, would speak.",
+  "after": "would speak.\nNon-percipient After-death",
   "placed": true
  },
  "dn1:3.4.2": "o proclaim a non-percipient self after death, they all do so on one or another of these eight grounds. There is nothing outside of this.\n“With regard to this, the Tathāgata discerns that ‘These standpoints, thus seized, thus grasped at, lead to such & such a destination, to such & such a state in the world beyond.’ That the Tathāgata discerns. And he discerns what is higher than that. And yet, discerning that, he does not grasp at it. And as he is not grasping at it, unbinding [nibbuti] is experienced right within. Knowing, as they have come to be, the origination, ending, allure, & drawbacks of feelings, along with the escape from feelings, the Tathāgata, monks—through lack of clinging/sustenance—is released.",
@@ -8307,7 +8323,7 @@
  "an3.105:1.2": "not become impassioned with the cosmos.",
  "an3.109:4.2": ", mental actions are protected as well.",
  "an3.112:1.8": {
-  "after": "hings in the present that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.",
+  "after": "o things in the past that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.",
   "placed": true
  },
  "an3.112:7.4": "his is how, with reference to things in the present that provide the occasion for desire & passion, desire is not born.",
@@ -9773,7 +9789,8 @@
  "sn3.23:2.2": "d further:\n“Greed, aversion, & delusion",
  "sn3.25:9.4": "own good,\nsteadfast, secures confidence",
  "sn3.4:1.19": {
-  "empty": "down"
+  "after": " dear to ourselves,” still they are dear to themselves. Why is that? Of their own accord, they act toward themselves as a dear one would act toward a dear one;",
+  "placed": true
  },
  "sn3.9:4.4": "rifice,\nsammāpāsa, vājapeyya, niraggaḷa",
  "sn3.9:6.6": {
@@ -9985,32 +10002,32 @@
   "placed": true
  },
  "an10.17:2.3": {
-  "after": " well-penetrated in terms of his views.",
+  "after": "… well-penetrated in terms of his views",
   "placed": true,
   "own": true
  },
  "an10.17:4.3": {
-  "after": "to, patient, respectful to instruction.",
+  "after": " to speak to… respectful to instruction",
   "placed": true,
   "own": true
  },
  "an10.17:7.3": {
-  "after": "ties with regard to skillful qualities.",
+  "after": " persistence aroused… not shirking his duties with regard to skillful qualities",
   "placed": true,
   "own": true
  },
  "an10.17:8.3": {
-  "after": " requisites for curing sickness at all.",
+  "after": "ll. And the fact that he is content with any old robe cloth at all, any old alms food, any old lodging, any old medicinal requisites for curing sickness at all",
   "placed": true,
   "own": true
  },
  "an10.17:9.3": {
-  "after": "what was done and said a long time ago.",
+  "after": "time ago. And the fact that he is mindful, endowed with excellent proficiency in mindfulness, remembering & recollecting what was done and said a long time ago",
   "placed": true,
   "own": true
  },
  "an10.17:10.3": {
-  "after": " leading to the right ending of stress.",
+  "after": " stress. And the fact that the monk is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress",
   "placed": true,
   "own": true
  },
@@ -10039,7 +10056,9 @@
   "placed": true
  },
  "an10.93:8.8": {
-  "empty": "stay"
+  "after": "fter death a Tathāgata does not exist…”…",
+  "placed": true,
+  "own": true
  },
  "an10.99:34.1": {
   "after": "nsion of the infinitude of consciousness.\n“What do you think, Upāḷi? Isn’t this dwelling more excellent than the earlier dwellings, and more refined?”\n“Yes, lord.”\n“It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.",
@@ -10524,7 +10543,9 @@
   "placed": true
  },
  "dn15:28.12": {
-  "empty": "stay"
+  "after": "eling of pleasure or of pain is sensed.",
+  "placed": true,
+  "own": true
  },
  "dn16:1.16.5": {
   "after": "rical this lion’s roar you have roared:",
@@ -10669,7 +10690,8 @@
   "placed": true
  },
  "dn33:3.3.22": {
-  "empty": "up"
+  "after": " persistence aroused… not shirking his duties with regard to skillful qualities",
+  "placed": true
  },
  "dn33:1.3.2": {
   "after": "sel, and raised an oil lamp. Then they went to the Blessed One and, on arrival,",
@@ -10681,7 +10703,9 @@
   "own": true
  },
  "dn33:3.3.10": {
-  "empty": "down"
+  "after": "… well-penetrated in terms of his views",
+  "placed": true,
+  "own": true
  },
  "dn33:3.3.16": {
   "after": " to speak to… respectful to instruction",
@@ -11389,8 +11413,7 @@
   "placed": true
  },
  "mn51:5.16": {
-  "after": "torturing himself, and also torments others and is devoted to the practice of torturing others doesn’t satisfy my mind.",
-  "placed": true
+  "empty": "up"
  },
  "mn51:2.4": {
   "empty": "stay"
@@ -11591,7 +11614,8 @@
   "own": true
  },
  "mn90:2.9": {
-  "empty": "down"
+  "after": " head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.”",
+  "placed": true
  },
  "mn90:3.1": {
   "after": " King Pasenadi Kosala will come to see the Blessed One after his morning meal.”",
@@ -12207,7 +12231,10 @@
  "an3.102:3.6": "same way, a monk intent on heightened mind should attend periodically to three themes: He should attend periodically to the theme of concentration; he should attend periodically to the theme of uplifted energy; he should attend periodically to the theme of equanimity. If the monk intent on heightened mind were to attend solely to the theme of concentration, it’s possible that his mind would tend to laziness. If he were to attend solely to the theme of uplifted energy, it’s possible that his mind would tend to restlessness. If he were to attend solely to the theme of equanimity, it’s possible that his mind would not be rightly concentrated for the ending of the effluents.",
  "an3.102:4.2": "he Brahmā worlds. He can witness this for himself whenever there is an opening.",
  "an3.102:4.5": "with their kamma. He can witness this for himself whenever there is an opening.",
- "an3.112:1.9": "e present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.",
+ "an3.112:1.9": {
+  "after": " the past that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.",
+  "placed": true
+ },
  "an3.39:10.2": "hey do.’\nAs I maintained this attitude—",
  "an3.40:7.1": "s an effort\nin truth\ndoesn’t fall back.",
  "an3.52:2.4": {
@@ -12266,7 +12293,8 @@
  },
  "an6.60:1.4": "assembly hall discussing higher Dhamma.",
  "an6.70:1.8": {
-  "empty": "up"
+  "after": "rtunate in accordance with their kamma.",
+  "placed": true
  },
  "an7.49:12.1": "tancy, when developed & pursued, is of great fruit, of great benefit. It gains a footing in the deathless, has the deathless as its final end’: Thus was it said, and in reference to this was it said.",
  "an7.50:11.3": "o the Dhamma, & to the Saṅgha of monks.",
@@ -12585,7 +12613,7 @@
  "mn26:4.7": "ssed One sat down on a seat made ready.",
  "mn26:20.9": ".’\n“That is what Brahmā Sahampati said.",
  "mn29:5.14": {
-  "after": "her, there is the case where a certain son of good family, out of conviction, goes forth from the home life into homelessness, (thinking,) ‘… Perhaps the end of this entire mass of stress might be discerned!’ Having thus gone forth, he encounters gain, offerings, & fame. He is not gratified with that gain, offerings, & fame, his resolve not fulfilled. He is not intoxicated with that gain, offerings, & fame, not heedless about it, and does not fall into heedlessness. Being heedful, he achieves consummation in virtue. He is gratified with that consummation in virtue, but his resolve is not fulfilled. Because of that consummation in virtue he does not exalt himself or disparage others. He is not intoxicated with that consummation in virtue, not heedless about it, and does not fall into heedlessness. Being heedful, he achieves consummation in concentration. He is gratified with that consummation in concentration, but his resolve is not fulfilled. He is not intoxicated with that consummation in concentration, not heedless about it, and does not fall into heedlessness.",
+  "after": "urther, there is the case where a certain son of good family, out of conviction, goes forth from the home life into homelessness, (thinking,) ‘… Perhaps the end of this entire mass of stress might be discerned!’ Having thus gone forth, he encounters gain, offerings, & fame. He is not gratified with that gain, offerings, & fame, his resolve not fulfilled. He is not intoxicated with that gain, offerings, & fame, not heedless about it, and does not fall into heedlessness. Being heedful, he achieves consummation in virtue. He is gratified with that consummation in virtue, but his resolve is not fulfilled. Because of that consummation in virtue he does not exalt himself or disparage others. He is not intoxicated with that consummation in virtue, not heedless about it, and does not fall into heedlessness. Being heedful, he achieves consummation in concentration. He is gratified with that consummation in concentration, but his resolve is not fulfilled.",
   "placed": true
  },
  "mn30:5.1": {
@@ -12754,10 +12782,14 @@
   "own": true
  },
  "an10.76:7.3": {
-  "empty": "stay"
+  "after": "abandoning three things, one is incapable of abandoning a lack of desire to see the noble ones, abandoning a lack of desire to hear the noble Dhamma, abandoning a mind bent on criticism. Which three?",
+  "placed": true,
+  "own": true
  },
  "an10.76:17.3": {
-  "empty": "stay"
+  "after": "\n“Abandoning three things, one is capable of abandoning a lack of desire to see the noble ones, abandoning a lack of desire to hear the noble Dhamma, abandoning a mind bent on criticism. Which three?",
+  "placed": true,
+  "own": true
  },
  "an10.81:2.3": {
   "after": "with unrestricted awareness. Which ten?",
@@ -12777,7 +12809,8 @@
   "own": true
  },
  "dn1:3.1.0": {
-  "empty": "down"
+  "after": "on one or another of these 16 grounds. There is nothing outside of this.\n“With regard to this, the Tathāgata discerns that ‘These standpoints, thus seized, thus grasped at, lead to such & such a destination, to such & such a state in the world beyond.’ That the Tathāgata discerns. And he discerns what is higher than that. And yet, discerning that, he does not grasp at it. And as he is not grasping at it, unbinding [nibbuti] is experienced right within. Knowing, as they have come to be, the origination, ending, allure, & drawbacks of feelings, along with the escape from feelings, the Tathāgata, monks—through lack of clinging/sustenance—is released.\n“These, monks, are the dhammas—deep, hard to see, hard to realize, tranquil, refined, beyond the scope of conjecture, subtle, to-be-experienced by the wise—that the Tathāgata proclaims, having directly known & realized them for himself, and that those who, rightly speaking in praise of the Tathāgata in line with what is factual, would speak.",
+  "placed": true
  },
  "dn16:3.8.1": {
   "after": "y the Blessed One: ‘Evil One, I will not totally unbind as long as my monk disciples are not yet experienced, trained, attained to confidence, learned, maintaining the Dhamma, practicing the Dhamma in line with the Dhamma, practicing masterfully, living in line with the Dhamma; declaring the Dhamma—after having learned it from their own teachers—teaching it, describing it, setting it forth, revealing it, explaining it, making it plain; well-refuting, in line with the Dhamma, any opposing teachings that have arisen; teaching the Dhamma with its marvels.’",
@@ -12939,23 +12972,25 @@
   "placed": true
  },
  "an10.17:3.3": {
-  "after": "mirable comrades, admirable companions.",
+  "after": "he fact that he has admirable friends, admirable comrades, admirable companions",
   "placed": true,
   "own": true
  },
  "an10.17:5.2": {
-  "empty": "up"
+  "after": "ing them or arranging to get them done.",
+  "placed": true
  },
  "an10.17:5.3": {
-  "after": "ing them or arranging to get them done.",
+  "after": "one. And the fact that he is adept at… doing them or arranging to get them done",
   "placed": true,
   "own": true
  },
  "an10.17:6.2": {
-  "empty": "up"
+  "after": "g in the higher Dhamma & higher Vinaya.",
+  "placed": true
  },
  "an10.17:6.3": {
-  "after": "g in the higher Dhamma & higher Vinaya.",
+  "after": "he is one who desires the Dhamma, endearing in his conversation, greatly rejoicing in the higher Dhamma & higher Vinaya",
   "placed": true,
   "own": true
  },
@@ -13101,7 +13136,8 @@
   "own": true
  },
  "an10.76:5.3": {
-  "empty": "up"
+  "after": " three things, one is incapable of abandoning inappropriate attention, abandoning the following of a wrong path, abandoning slowness of awareness. Which three?",
+  "placed": true
  },
  "an10.76:5.4": {
   "empty": "up"
@@ -13141,7 +13177,8 @@
   "own": true
  },
  "an10.76:15.3": {
-  "empty": "up"
+  "after": "ng three things, one is capable of abandoning inappropriate attention, abandoning the following of a wrong path, abandoning slowness of awareness. Which three?",
+  "placed": true
  },
  "an10.76:15.4": {
   "empty": "up"
@@ -13181,7 +13218,8 @@
   "own": true
  },
  "an10.93:8.5": {
-  "empty": "up"
+  "after": "e…”…“The soul & the body are the same…”…",
+  "placed": true
  },
  "an10.93:9.6": {
   "after": " in dependence on the words of another.",
@@ -13286,7 +13324,8 @@
   "own": true
  },
  "an4.1:2.5": {
-  "empty": "up"
+  "after": "n that we have transmigrated & wandered on for such a long, long time, you & I.",
+  "placed": true
  },
  "an4.195:5.4": {
   "after": "—then we could have a discussion here.”",
@@ -13508,7 +13547,8 @@
   "empty": "up"
  },
  "an9.34:5.2": {
-  "empty": "up"
+  "after": "mindfulness, neither pleasure nor pain.",
+  "placed": true
  },
  "an9.34:5.3": {
   "empty": "up"
@@ -14937,7 +14977,7 @@
   "own": true
  },
  "sn12.23:1.7": {
-  "after": " its disappearance. Such is perception,",
+  "after": "isappearance. Such is perception, such its origination, such its disappearance.",
   "placed": true,
   "own": true
  },
@@ -15176,7 +15216,7 @@
   "own": true
  },
  "sn35.75:11.2": {
-  "after": "hat do you think, monk? Is the eye constant or inconstant?”\n“Inconstant, lord.”",
+  "after": "sful, lord.”\n“And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?”\n“No, lord.”",
   "placed": true,
   "own": true
  },
@@ -15291,7 +15331,8 @@
   "placed": true
  },
  "sn36.21:2.2": {
-  "empty": "up"
+  "after": "rom a malfunction of the gall bladder].",
+  "placed": true
  },
  "sn36.21:2.4": {
   "after": "sed on bile. Even the world is agreed on how some feelings arise based on bile.",
@@ -16191,7 +16232,8 @@
   "placed": true
  },
  "dn29:16.17": {
-  "empty": "down"
+  "after": " speaking rightly, would say just this:",
+  "placed": true
  },
  "dn29:16.18": {
   "after": "y just this: ‘Seeing, one doesn’t see.’",
@@ -16289,7 +16331,8 @@
   "own": true
  },
  "dn29:34.18": {
-  "empty": "up"
+  "after": "sure & pain are eternal: Only this is true, anything otherwise is worthless.’ …",
+  "placed": true
  },
  "dn29:34.20": {
   "after": " pain are both eternal & not eternal’ …",
@@ -16297,7 +16340,8 @@
   "own": true
  },
  "dn29:34.23": {
-  "empty": "down"
+  "after": "e’ … ‘Pleasure & pain are other-made’ …",
+  "placed": true
  },
  "dn29:34.24": {
   "after": "pain are both self-made & other-made’ …",
@@ -16707,7 +16751,8 @@
   "own": true
  },
  "mn126:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn126:4.4": {
   "after": "llows the holy life inappropriately, even when having made a wish (for results), one is incapable of obtaining results.",
@@ -16800,7 +16845,8 @@
   "own": true
  },
  "mn128:12.6": {
-  "empty": "up"
+  "after": "nd their backs. I’m set on verbal acts…",
+  "placed": true
  },
  "mn128:12.7": {
   "after": "m set on verbal acts… mental acts of goodwill with regard to these venerable ones, to their faces & behind their backs.",
@@ -17056,8 +17102,7 @@
   "placed": true
  },
  "mn25:5.13": {
-  "after": "ol.…” So, they entirely avoided that poison-grass food. Avoiding that dangerous enjoyment, they dwelled having plunged into a wilderness area. But in the last month of the hot season, when the grass & water were used up, their bodies became extremely gaunt. Their bodies having become extremely gaunt, they lost their strength & energy. Having lost their strength & energy, they returned to the poison-grass sown by the poison-grass sower.",
-  "placed": true
+  "empty": "up"
  },
  "mn25:5.14": {
   "after": "the poison-grass sower, they ate food.…",
@@ -17231,7 +17276,8 @@
   "placed": true
  },
  "mn31:20.6": {
-  "empty": "up"
+  "after": "assed your awareness with my awareness,",
+  "placed": true
  },
  "mn31:20.7": {
   "after": "ained this & that attainment & abiding.",
@@ -17382,7 +17428,8 @@
   "own": true
  },
  "mn59:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn59:1.4": {
   "after": " sitting there, he said to Ven. Udāyin,",
@@ -17561,7 +17608,8 @@
   "own": true
  },
  "mn82:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn82:3.2": {
   "after": "ome of them sat to one side in silence.",
@@ -18190,34 +18238,44 @@
   "placed": true
  },
  "sn3.4:1.6": {
-  "empty": "up"
+  "after": "to themselves?’ Then it occurred to me:",
+  "placed": true
  },
  "sn3.4:1.7": {
-  "empty": "up"
+  "after": " ‘Those who engage in bodily misconduct, verbal misconduct, & mental misconduct",
+  "placed": true
  },
  "sn3.4:1.8": {
-  "empty": "up"
+  "after": "urred to me: ‘Those who engage in bodily misconduct, verbal misconduct, & mental misconduct are not dear to themselves.",
+  "placed": true
  },
  "sn3.4:1.9": {
-  "empty": "up"
+  "after": "?’ Then it occurred to me: ‘Those who engage in bodily misconduct, verbal misconduct, & mental misconduct are not dear to themselves. Even though they may say,",
+  "placed": true
  },
  "sn3.4:1.11": {
-  "empty": "up"
+  "after": " “We are dear to ourselves,” still they aren’t dear to themselves. Why is that?",
+  "placed": true
  },
  "sn3.4:1.12": {
-  "empty": "up"
+  "after": "e dear to ourselves,” still they aren’t dear to themselves. Why is that? Of their own accord, they act toward themselves as an enemy would act toward an enemy;",
+  "placed": true
  },
  "sn3.4:1.13": {
-  "empty": "up"
+  "after": " are dear to ourselves,” still they aren’t dear to themselves. Why is that? Of their own accord, they act toward themselves as an enemy would act toward an enemy; thus they aren’t dear to themselves.",
+  "placed": true
  },
  "sn3.4:1.15": {
-  "empty": "up"
+  "after": "say, “We are dear to ourselves,” still they aren’t dear to themselves. Why is that? Of their own accord, they act toward themselves as an enemy would act toward an enemy; thus they aren’t dear to themselves. But those who engage in good bodily conduct, good verbal conduct, & good mental conduct are dear to themselves.",
+  "placed": true
  },
  "sn3.4:1.16": {
-  "empty": "up"
+  "after": "lves,” still they aren’t dear to themselves. Why is that? Of their own accord, they act toward themselves as an enemy would act toward an enemy; thus they aren’t dear to themselves. But those who engage in good bodily conduct, good verbal conduct, & good mental conduct are dear to themselves. Even though they may say,",
+  "placed": true
  },
  "sn3.4:1.18": {
-  "empty": "up"
+  "after": " “We aren’t dear to ourselves,” still they are dear to themselves. Why is that?",
+  "placed": true
  },
  "sn3.4:2.1": {
   "after": "ne; thus they are dear to themselves.’”",
@@ -18921,7 +18979,7 @@
   "own": true
  },
  "an10.46:11.1": {
-  "after": "ths… one month… half a month—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner.",
+  "after": "stream-winner.\n“Let alone half a month,",
   "placed": true,
   "own": true
  },
@@ -20299,7 +20357,7 @@
   "placed": true
  },
  "sn22.84:5.3": {
-  "after": "s not without passion for fabrications.",
+  "after": "eration in his fabrications?”\n“Yes, lord.”\n“Good, Tissa, good. That’s how it is",
   "placed": true
  },
  "sn22.84:7.1": {
@@ -20312,7 +20370,8 @@
   "own": true
  },
  "sn22.84:7.3": {
-  "empty": "up"
+  "after": "nge & alteration in his form?”\n“No, lord.”\n“Good, Tissa, good. That’s how it is",
+  "placed": true
  },
  "sn22.84:7.4": {
   "after": "or one who is without passion for form.",
@@ -21273,7 +21332,7 @@
   "placed": true
  },
  "an3.112:6.2": {
-  "after": "the present that provide the occasion for desire & passion, desire is not born?",
+  "after": " the future that provide the occasion for desire & passion, desire is not born?",
   "placed": true
  },
  "an3.121:4.1": {
@@ -21959,7 +22018,7 @@
   "placed": true
  },
  "an4.111:1.7": {
-  "after": "harsh training, Kesin, what do you do?”",
+  "after": "aining or to a mild and harsh training,",
   "placed": true
  },
  "an4.111:5.2": {
@@ -23284,7 +23343,7 @@
   "own": true
  },
  "an7.49:5.3": {
-  "after": "e perception of death; there is a step-by-step distinction in me; I have arrived at the fruit of (mental) development.’",
+  "after": "ception of death; there is no step-by-step distinction in me; I have not arrived at the fruit of (mental) development.’",
   "placed": true
  },
  "an7.49:5.8": {
@@ -23954,7 +24013,8 @@
   "own": true
  },
  "an9.1:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "an9.1:10.2": {
   "after": "ning.’\n“Monks, when a monk has admirable people as friends, companions, & colleagues, it is to be expected that he will",
@@ -24497,7 +24557,7 @@
   "placed": true
  },
  "dn1:3.70.1": {
-  "after": "oming of an existing being on seven grounds: That they would experience that other than through contact isn’t possible.",
+  "after": " with reference to the future on 44 grounds: That they would experience that other than through contact isn’t possible.",
   "placed": true
  },
  "dn1:3.72.1": {
@@ -24891,7 +24951,8 @@
   "own": true
  },
  "dn16:3.8.8": {
-  "empty": "up"
+  "after": " Blessed One: ‘Evil One, I will not totally unbind as long as my nun disciples…",
+  "placed": true
  },
  "dn16:3.8.10": {
   "empty": "down"
@@ -25259,7 +25320,8 @@
   "own": true
  },
  "dn2:32.6": {
-  "empty": "up"
+  "after": "isn’t another world… both is and isn’t…",
+  "placed": true
  },
  "dn2:32.8": {
   "after": "… if there are beings who transmigrate…",
@@ -27209,7 +27271,8 @@
   "own": true
  },
  "snp2.5:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "snp2.5:2.2": {
   "after": "ed his body up against the Blessed One.",
@@ -27770,7 +27833,8 @@
   "own": true
  },
  "snp3.6:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "snp3.6:2.5": {
   "after": "ya the wanderer, were unable to answer.",
@@ -29585,7 +29649,8 @@
   "own": true
  },
  "ud1.8:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud1.8:6.1": {
   "after": "ur son, contemplative. Look after him.”",
@@ -29596,7 +29661,8 @@
   "own": true
  },
  "ud2.1:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud2.10:1.4": {
   "after": "pty dwelling, would repeatedly exclaim,",
@@ -29636,7 +29702,8 @@
   "own": true
  },
  "ud2.6:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud2.6:1.4": {
   "after": " pregnant and on the verge of delivery.",
@@ -29665,7 +29732,8 @@
   "own": true
  },
  "ud3.1:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud3.1:2.1": {
   "after": "amma–mindful, alert, without suffering.",
@@ -29731,14 +29799,16 @@
   "own": true
  },
  "ud3.4:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud3.5:1.1": {
   "placed": true,
   "own": true
  },
  "ud3.5:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud3.6:1.1": {
   "placed": true,
@@ -29812,7 +29882,8 @@
   "own": true
  },
  "ud4.10:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud4.10:2.1": {
   "after": "e–his legs crossed, his body held erect–reflecting on the peace within himself.",
@@ -29854,7 +29925,8 @@
   "own": true
  },
  "ud4.7:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud4.8:1.1": {
   "placed": true,
@@ -29993,7 +30065,8 @@
   "own": true
  },
  "ud5.7:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "ud5.8:1.1": {
   "placed": true,
@@ -30758,7 +30831,8 @@
   "own": true
  },
  "mn108:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn108:4.1": {
   "after": "he Guardsman at his construction site?”",
@@ -31184,7 +31258,8 @@
   "own": true
  },
  "mn12:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn12:10.2": {
   "after": "sible and the impossible as impossible.",
@@ -31309,7 +31384,7 @@
   "placed": true
  },
  "mn122:2.14": {
-  "after": "’s dwelling. Do many monks live there?”",
+  "after": ", there are many resting places prepared in Kāḷa-khemaka the Sakyan’s dwelling.",
   "placed": true,
   "own": true
  },
@@ -31847,7 +31922,8 @@
   "own": true
  },
  "mn137:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn137:14.9": {
   "after": "e-based equanimity. [Similarly with sounds, smells, tastes, tactile sensations,",
@@ -32828,7 +32904,7 @@
   "placed": true
  },
  "mn22:8.7": {
-  "after": " obstructive acts to us, and when indulged in they are genuine obstructions. The Blessed One has said that sensual pleasures are of little satisfaction, much stress, much despair, & greater drawbacks. The Blessed One has compared sensual pleasures to a chain of bones: of much stress, much despair, & greater drawbacks.",
+  "after": "obstructive acts to us, and when indulged in they are genuine obstructions. The Blessed One has said that sensual pleasures are of little satisfaction, much stress, much despair, & greater drawbacks.",
   "placed": true,
   "own": true
  },
@@ -34540,7 +34616,8 @@
   "own": true
  },
  "mn6:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn6:16.13": {
   "after": "excellent level] as “an excelled mind,”",
@@ -34701,7 +34778,8 @@
   "own": true
  },
  "mn61:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn61:11.7": {
   "after": "o both; it was an unskillful bodily action with painful consequences, painful results, then you should confess it, reveal it, lay it open to the Teacher or to an observant companion in the holy life.",
@@ -34951,7 +35029,7 @@
   "own": true
  },
  "mn69:4.6": {
-  "after": "n’t know even a point of good conduct?’",
+  "after": "en a point of good conduct?’ Because there are those who would say that of him,",
   "placed": true,
   "own": true
  },
@@ -35000,7 +35078,7 @@
   "placed": true
  },
  "mn69:11.5": {
-  "after": " he doesn’t know moderation in eating?’",
+  "after": " know moderation in eating?’ Because there are those who would say that of him,",
   "placed": true
  },
  "mn69:12.2": {
@@ -35183,7 +35261,8 @@
   "own": true
  },
  "mn77:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn77:5.8": {
   "after": "rd Blessed One. This seat is laid out.”",
@@ -35737,8 +35816,7 @@
   "placed": true
  },
  "mn95:26.2": {
-  "after": "idn’t arise, one wouldn’t be willing.…”",
-  "placed": true
+  "empty": "up"
  },
  "mn95:26.3": {
   "after": " quality is most helpful for desire? …”",
@@ -35933,7 +36011,7 @@
   "placed": true
  },
  "sn10.8:9.3": {
-  "after": "or a third time, Sivaka the yakkha-spirit, invisible, proclaimed:\n“A hundred elephants,\na hundred horses,\na hundred mule-drawn carts,\na hundred-thousand maidens\nadorned with jewels & earrings\naren’t worth one-sixteenth\nof one step forward.",
+  "after": " time, Sivaka the yakkha-spirit, invisible, proclaimed:\n“A hundred elephants,\na hundred horses,\na hundred mule-drawn carts,\na hundred-thousand maidens\nadorned with jewels & earrings\naren’t worth one-sixteenth\nof one step forward.\nGo forward, householder!\nGo forward, householder!",
   "placed": true
  },
  "sn10.8:12.2": {
@@ -36117,9 +36195,7 @@
   "own": true
  },
  "sn12.31:14.1": {
-  "after": "s a person who was fathomed the Dhamma.",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "sn12.44:3.5": {
   "after": "n of the world.\n“Dependent on the ear & sounds there arises ear-consciousness. The meeting of the three is contact.… Dependent on the nose & aromas there arises nose-consciousness. The meeting of the three is contact.… Dependent on the tongue & flavors there arises tongue-consciousness. The meeting of the three is contact.… Dependent on the body & tactile sensations there arises body-consciousness. The meeting of the three is contact.…",
@@ -36673,7 +36749,8 @@
   "own": true
  },
  "sn22.5:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "sn22.5:8.1": {
   "after": "n’t enjoy, welcome, or remain fastened.",
@@ -37895,7 +37972,8 @@
   "placed": true
  },
  "sn35.63:2.15": {
-  "empty": "down"
+  "after": "rom humanity, appropriate for seclusion—",
+  "placed": true
  },
  "sn35.63:2.16": {
   "after": "ill said to be living with a companion.",
@@ -37915,7 +37993,8 @@
   "placed": true
  },
  "sn35.63:3.15": {
-  "empty": "down"
+  "after": "ters, with sectarians & their disciples—",
+  "placed": true
  },
  "sn35.63:3.16": {
   "after": "rson living alone is said to be a monk.",
@@ -38394,46 +38473,46 @@
   "empty": "down"
  },
  "sn43.12:3.5": {
-  "after": "ion with directed thought & evaluation…",
+  "after": "ected thought & evaluation…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:3.6": {
   "empty": "down"
  },
  "sn43.12:3.8": {
-  "after": "ought and with a modicum of evaluation…",
+  "after": "th a modicum of evaluation…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:4.3": {
   "empty": "down"
  },
  "sn43.12:4.5": {
-  "after": " unfabricated? Emptiness concentration…",
+  "after": "d? Emptiness concentration…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:4.6": {
   "empty": "down"
  },
  "sn43.12:4.8": {
-  "after": " unfabricated? Themeless concentration…",
+  "after": "d? Themeless concentration…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:5.5": {
-  "after": "on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "after": "here a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…\n“And which is the path leading to the unfabricated?",
   "placed": true,
   "own": true
  },
  "sn43.12:5.8": {
-  "after": "eelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "after": " a monk remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…\n“And which is the path leading to the unfabricated?",
   "placed": true,
   "own": true
  },
  "sn43.12:5.11": {
-  "after": "on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "after": "here a monk remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:7.8": {
-  "after": "ncentration founded on persistence & the fabrications of exertion. This is called the path leading to the unfabricated…",
+  "after": "founded on persistence & the fabrications of exertion. This is called the path leading to the unfabricated…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.12:7.10": {
@@ -38445,7 +38524,7 @@
   "placed": true
  },
  "sn43.12:11.15": {
-  "after": "dfulness dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated…",
+  "after": "ood… right effort… right mindfulness dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated…\n“And which is the path leading to the unfabricated?",
   "placed": true
  },
  "sn43.21:1.1": {
@@ -40164,7 +40243,7 @@
   "own": true
  },
  "an3.112:6.3": {
-  "after": "ce to things in the present that provide the occasion for desire & passion, one discerns their future (kammic) results.",
+  "after": "nce to things in the future that provide the occasion for desire & passion, one discerns their future (kammic) results.",
   "placed": true,
   "own": true
  },
@@ -45441,5 +45520,1609 @@
   "after": "sual passions, becomings,\ntotally gone:",
   "placed": true,
   "own": true
+ },
+ "an3.112:2.1": {
+  "after": "oned. This is how, with reference to things in the past that provide the occasion for desire & passion, desire is born.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:2.2": {
+  "after": "s in the future that provide the occasion for desire & passion, desire is born?",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:2.3": {
+  "after": "things in the future that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:2.4": {
+  "after": "he future that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:2.5": {
+  "after": "eference to things in the future that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:2.6": {
+  "after": "ture that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things. That, I tell you, is a fetter: that one’s awareness is impassioned.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.1": {
+  "after": "ed. This is how, with reference to things in the future that provide the occasion for desire & passion, desire is born.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.2": {
+  "after": " in the present that provide the occasion for desire & passion, desire is born?",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.3": {
+  "after": "hings in the present that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.4": {
+  "after": "e present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.5": {
+  "after": "ference to things in the present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:3.6": {
+  "after": "sent that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born. With the birth of desire, one is joined to those things. That, I tell you, is a fetter: that one’s awareness is impassioned.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:7.1": {
+  "after": "This is how, with reference to things in the future that provide the occasion for desire & passion, desire is not born.",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:7.2": {
+  "after": "the present that provide the occasion for desire & passion, desire is not born?",
+  "placed": true,
+  "own": true
+ },
+ "an3.112:7.3": {
+  "after": "esent that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them. Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.",
+  "placed": true,
+  "own": true
+ },
+ "mn111:21.3": {
+  "after": "… noble release,’ he would be rightly saying it of Sāriputta if he were to say:",
+  "placed": true,
+  "own": true
+ },
+ "mn111:22.3": {
+  "after": "material things,’ he would be rightly saying it of Sāriputta if he were to say:",
+  "placed": true,
+  "own": true
+ },
+ "an7.49:5.4": {
+  "after": "d the perception of death; there is no step-by-step distinction in me; I have not arrived at the fruit of (mental) development.’ In that way he is alert there.",
+  "placed": true,
+  "own": true
+ },
+ "an7.49:5.5": {
+  "after": "way from fervor for life, bends away, pulls back, and is not drawn in, and either equanimity or loathing take a stance,",
+  "placed": true,
+  "own": true
+ },
+ "an7.49:5.6": {
+  "after": "e perception of death; there is a step-by-step distinction in me; I have arrived at the fruit of (mental) development.’",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.68.1": {
+  "after": "oming of an existing being on seven grounds: That they would experience that other than through contact isn’t possible.",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.69.1": {
+  "after": "inding of an existing being on five grounds: That they would experience that other than through contact isn’t possible.",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.3": {
+  "after": "cosmos on four grounds,\nwhere any of those contemplatives & brahmans who are finite-ists or infinite-ists proclaim a finite or infinite cosmos on four grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.4": {
+  "after": "ite or infinite cosmos on four grounds,\nwhere any of those contemplatives & brahmans who, being asked questions regarding this or that, resort to verbal contortions, to eel-wriggling on four grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.5": {
+  "after": "ling on four grounds,\nwhere any of those contemplatives & brahmans who are fortuitous-arising-ists proclaim a fortuitously-arisen self & cosmos on two grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.6": {
+  "after": " & cosmos on two grounds,\nwhere any of those contemplatives & brahmans who are theorists about the past hold views about the past, approve of various beliefs with reference to the past on 18 grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.7": {
+  "after": "on 18 grounds,\nwhere any of those contemplatives & brahmans who are adherents of a percipient after-death proclaim a percipient self after death on 16 grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.8": {
+  "after": "ds,\nwhere any of those contemplatives & brahmans who are adherents of a non-percipient after-death proclaim a non-percipient self after death on eight grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.9": {
+  "after": "t self after death on eight grounds,\nwhere any of those contemplatives & brahmans who are adherents of a neither percipient nor non-percipient after-death, proclaim a neither percipient nor non-percipient self after death on eight grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.10": {
+  "after": " self after death on eight grounds,\nwhere any of those contemplatives & brahmans who are annihilationists proclaim the annihilation, destruction, & non-becoming of an existing being on seven grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.11": {
+  "after": " being on seven grounds,\nwhere any of those contemplatives & brahmans who are proponents of unbinding in the here-&-now proclaim the highest here-&-now unbinding of an existing being on five grounds,",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.71.12": {
+  "after": "ng on five grounds,\nwhere any of those contemplatives & brahmans who are theorists about the future hold views about the future, approve of various beliefs with reference to the future on 44 grounds,",
+  "placed": true
+ },
+ "dhp256:3": {
+  "after": " hurriedly\ndoesn’t mean you’re a judge.",
+  "placed": true,
+  "own": true
+ },
+ "mn143:2.13": {
+  "after": " said, “Lord, Anāthapiṇḍika the householder is diseased, in pain, severely ill.",
+  "placed": true,
+  "own": true
+ },
+ "mn143:2.14": {
+  "after": "th his head to the Blessed One’s feet.”",
+  "placed": true,
+  "own": true
+ },
+ "mn143:2.15": {
+  "after": " he went to Ven. Sāriputta and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said,",
+  "placed": true,
+  "own": true
+ },
+ "mn143:2.16": {
+  "after": "ide. As he was sitting there he said, “Venerable sir, Anāthapiṇḍika the householder is diseased, in pain, severely ill.",
+  "placed": true
+ },
+ "mn90:2.4": {
+  "after": "is feet in my name, ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, saying:",
+  "placed": true,
+  "own": true
+ },
+ "mn90:2.8": {
+  "after": "s he was sitting there, he said to him,",
+  "placed": true,
+  "own": true
+ },
+ "mn90:2.10": {
+  "after": "& living in comfort.” And then he said,",
+  "placed": true,
+  "own": true
+ },
+ "mn90:3.5": {
+  "after": "im, “Well in that case, great king, show reverence with your head to his feet in our name, too, and ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, saying:",
+  "placed": true,
+  "own": true
+ },
+ "mn90:4.5": {
+  "after": "ord, the sisters Somā and Sakulā heard,",
+  "placed": true,
+  "own": true
+ },
+ "mn90:4.6": {
+  "after": "y, King Pasenadi Kosala will go to see the Blessed One after his morning meal.’",
+  "placed": true,
+  "own": true
+ },
+ "mn90:4.7": {
+  "after": "being served and on arrival said to me,",
+  "placed": true,
+  "own": true
+ },
+ "mn90:4.8": {
+  "after": "d to me, ‘In that case, great king, show reverence with your head to his feet in our name, too, and ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, saying:",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:2.2": {
+  "after": " well-penetrated in terms of his views.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:3.2": {
+  "after": "mirable comrades, admirable companions.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:4.2": {
+  "after": "to, patient, respectful to instruction.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:7.2": {
+  "after": "ties with regard to skillful qualities.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:8.2": {
+  "after": " requisites for curing sickness at all.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:9.2": {
+  "after": "what was done and said a long time ago.",
+  "placed": true,
+  "own": true
+ },
+ "an10.17:10.2": {
+  "after": " leading to the right ending of stress.",
+  "placed": true,
+  "own": true
+ },
+ "an10.46:10.11": {
+  "after": "ths… one month… half a month—heedful, ardent, & resolute—practicing as I have instructed, would live sensitive to unalloyed bliss for a hundred years, a hundred centuries, a hundred millennia. And he would be a once-returner, a non-returner, or at the very least a stream-winner.",
+  "placed": true,
+  "own": true
+ },
+ "an10.61:3.2": {
+  "after": "itions for] inappropriate attention… lack of mindfulness & alertness… lack of restraint of the senses… the three forms of misconduct… the five hindrances. When the five hindrances are made full, they fulfill [the conditions for] ignorance.",
+  "placed": true
+ },
+ "an10.76:6.3": {
+  "after": "ngs, one is incapable of abandoning muddled truth, abandoning unalertness, abandoning scattered awareness. Which three?",
+  "placed": true,
+  "own": true
+ },
+ "an10.76:16.3": {
+  "after": "hings, one is capable of abandoning muddled truth, abandoning unalertness, abandoning scattered awareness. Which three?",
+  "placed": true,
+  "own": true
+ },
+ "an4.111:1.6": {
+  "after": "harsh training, Kesin, what do you do?”",
+  "placed": true,
+  "own": true
+ },
+ "an4.50:1.3": {
+  "after": "ed by which the sun and moon don’t glow, don’t shine, don’t dazzle. Which four?",
+  "placed": true,
+  "own": true
+ },
+ "iti89:2.3": {
+  "after": "tion, to hell, for an eon. Which three?",
+  "placed": true,
+  "own": true
+ },
+ "mn113:16-20.7": {
+  "after": "o eats only one meal a day. He notices,",
+  "placed": true
+ },
+ "mn12:36.5": {
+  "after": "death—one reappears in the animal womb.",
+  "placed": true,
+  "own": true
+ },
+ "mn122:2.13": {
+  "after": "’s dwelling. Do many monks live there?”",
+  "placed": true,
+  "own": true
+ },
+ "mn14:2.7": {
+  "after": "f delusion invades my mind and remains.",
+  "placed": true,
+  "own": true
+ },
+ "mn25:5.12": {
+  "after": "ol.…” So, they entirely avoided that poison-grass food. Avoiding that dangerous enjoyment, they dwelled having plunged into a wilderness area. But in the last month of the hot season, when the grass & water were used up, their bodies became extremely gaunt. Their bodies having become extremely gaunt, they lost their strength & energy. Having lost their strength & energy, they returned to the poison-grass sown by the poison-grass sower.",
+  "placed": true,
+  "own": true
+ },
+ "mn51:5.15": {
+  "after": "torturing himself, and also torments others and is devoted to the practice of torturing others doesn’t satisfy my mind.",
+  "placed": true,
+  "own": true
+ },
+ "mn63:5.28": {
+  "after": " water buffalo, a langur, or a monkey.’",
+  "placed": true,
+  "own": true
+ },
+ "mn69:4.5": {
+  "after": "n’t know even a point of good conduct?’",
+  "placed": true,
+  "own": true
+ },
+ "mn69:11.4": {
+  "after": " he doesn’t know moderation in eating?’",
+  "placed": true,
+  "own": true
+ },
+ "mn70:12.5": {
+  "after": " I don’t say of them that they have a task to do with heedfulness. Why is that?",
+  "placed": true,
+  "own": true
+ },
+ "mn95:26.1": {
+  "after": "idn’t arise, one wouldn’t be willing.…”",
+  "placed": true,
+  "own": true
+ },
+ "sn10.8:9.1": {
+  "after": "or a third time, Sivaka the yakkha-spirit, invisible, proclaimed:\n“A hundred elephants,\na hundred horses,\na hundred mule-drawn carts,\na hundred-thousand maidens\nadorned with jewels & earrings\naren’t worth one-sixteenth\nof one step forward.",
+  "placed": true,
+  "own": true
+ },
+ "sn10.8:9.2": {
+  "after": "rn back. Then for a third time, Sivaka the yakkha-spirit, invisible, proclaimed:\n“A hundred elephants,\na hundred horses,\na hundred mule-drawn carts,\na hundred-thousand maidens\nadorned with jewels & earrings\naren’t worth one-sixteenth\nof one step forward.\nGo forward, householder!",
+  "placed": true,
+  "own": true
+ },
+ "sn12.31:12.9": {
+  "after": "s a person who was fathomed the Dhamma.",
+  "placed": true,
+  "own": true
+ },
+ "sn12.31:13.1": {
+  "after": " the Further Shore is to be understood:",
+  "placed": true,
+  "own": true
+ },
+ "sn12.31:13.2": {
+  "after": "the Further Shore is to be understood:\nThose here who have fathomed the Dhamma,",
+  "placed": true,
+  "own": true
+ },
+ "sn12.31:13.3": {
+  "after": "re is to be understood:\nThose here who have fathomed the Dhamma,\nthose who are learners,\nthose who are run-of-the-mill:",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:8.2": {
+  "after": "tions?”\n“No, lord.”\n“Good, Tissa, good.",
+  "placed": true,
+  "own": true
+ },
+ "sn35.75:6.1": {
+  "after": "mma with purity of virtue as its goal.”",
+  "placed": true
+ },
+ "sn35.75:11.1": {
+  "after": "hat do you think, monk? Is the eye constant or inconstant?”\n“Inconstant, lord.”",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:3.4": {
+  "after": "ion with directed thought & evaluation…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:3.7": {
+  "after": "ought and with a modicum of evaluation…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:4.4": {
+  "after": " unfabricated? Emptiness concentration…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:4.7": {
+  "after": " unfabricated? Themeless concentration…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:5.4": {
+  "after": "on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:5.7": {
+  "after": "eelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:5.10": {
+  "after": "on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world. This is called the path leading to the unfabricated…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:7.7": {
+  "after": "ncentration founded on persistence & the fabrications of exertion. This is called the path leading to the unfabricated…",
+  "placed": true,
+  "own": true
+ },
+ "sn43.12:11.14": {
+  "after": "dfulness dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated…",
+  "placed": true,
+  "own": true
+ },
+ "an10.176:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an3.73:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an4.1:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an4.159:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an5.159:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an6.41:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an6.55:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an6.60:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an6.61:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an7.23:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an7.53:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an7.57:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an7.59:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.1.1": {
+  "after": "[ I ]",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.1.2": {
+  "after": "[ I ]\nI have heard that",
+  "placed": true
+ },
+ "dn11:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "dn29:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "dn9:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp1.10:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp1.4:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp2.12:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp3.4:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp3.5:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "snp3.9:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud1.9:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud2.10:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud2.2:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud2.2:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud2.3:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud2.3:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud2.7:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud2.7:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud2.8:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud2.9:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud2.9:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud3.2:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud3.2:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud3.3:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud3.3:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud3.7:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud3.7:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud4.1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud4.1:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud4.3:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud4.5:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud5.1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud5.1:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud5.10:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud5.10:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud5.4:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud5.4:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud5.9:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud6.1:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud6.5:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud6.5:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud7.1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud7.1:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud7.10:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "ud7.6:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud7.6:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud7.7:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud7.7:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "ud7.9:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "ud7.9:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn1:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn102:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn102:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn105:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn107:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn107:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn113:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn113:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn117:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn117:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn122:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn123:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn123:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn125:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn125:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn128:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn131:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn131:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn133:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn135:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn135:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn136:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn14:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn141:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn146:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn146:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn147:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn147:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn152:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn18:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn24:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn24:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn31:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn35:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn35:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn37:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn37:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn48:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn51:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn52:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn53:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn56:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn63:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn63:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn64:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn64:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "mn66:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn67:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn70:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn78:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn85:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "mn87:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "mn87:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn1.20:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn1.38:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn1.41:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn1.41:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn10.12:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn12.11:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.11:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn12.69:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.69:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn16.2:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn16.5:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn16.5:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn22.1:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn22.3:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn22.60:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn4.13:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn4.21:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn46.56:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn48.43:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn48.44:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn48.53:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn5.1:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn5.1:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn51.15:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn54.9:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn55.21:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "sn6.2:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn6.2:1.2": {
+  "after": "I have heard that",
+  "placed": true
+ },
+ "sn9.1:1.2": {
+  "after": "I have heard that",
+  "placed": true,
+  "own": true
+ },
+ "an3.39:7.2": {
+  "after": "ntoxication of youth, a monk leaves the training and returns to the lower life.",
+  "placed": true,
+  "own": true
+ },
+ "an3.39:7.3": {
+  "after": "toxication of health, a monk leaves the training and returns to the lower life.",
+  "placed": true,
+  "own": true
+ },
+ "an3.63:10.7": {
+  "after": ": ‘Passion has been abandoned in me, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.",
+  "placed": true,
+  "own": true
+ },
+ "an3.63:10.8": {
+  "after": ". Aversion has been abandoned in me, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.",
+  "placed": true,
+  "own": true
+ },
+ "dn15:28.5": {
+  "after": "ere are these three feelings, my friend—",
+  "placed": true,
+  "own": true
+ },
+ "dn15:28.6": {
+  "after": " feelings of neither pleasure nor pain.",
+  "placed": true,
+  "own": true
+ },
+ "mn108:10.2": {
+  "after": "mma is our arbitrator.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words),",
+  "placed": true,
+  "own": true
+ },
+ "mn108:10.3": {
+  "after": "or. The Dhamma is our arbitrator.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words), “He will be your arbitrator after I am gone,” to whom you now turn?’",
+  "placed": true,
+  "own": true
+ },
+ "mn108:10.4": {
+  "after": "tor. The Dhamma is our arbitrator.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words), “He will be your arbitrator after I am gone,” to whom you now turn?’ you said, ‘No, brahman. There isn’t any one monk appointed by the Blessed One…",
+  "placed": true,
+  "own": true
+ },
+ "mn108:10.8": {
+  "after": "trator.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words), “He will be your arbitrator after I am gone,” to whom you now turn?’ you said, ‘No, brahman. There isn’t any one monk appointed by the Blessed One… to whom we now turn.’\n“When asked, ‘Then is there any one monk authorized by the Saṅgha… to whom you now turn?’ you said, ‘No, brahman. There isn’t any one monk authorized by the Saṅgha…",
+  "placed": true,
+  "own": true
+ },
+ "mn117:4.2": {
+  "after": "s supports & requisite conditions.\n“[1] Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:10.2": {
+  "after": "ss—run & circle around right view.\n“[2] Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:16.2": {
+  "after": "run & circle around right resolve.\n“[3] Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:22.2": {
+  "after": "—run & circle around right speech.\n“[4] Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:28.2": {
+  "after": "—run & circle around right action.\n“[5] Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn117:35.2": {
+  "after": "ght factors, and the arahant with ten.\n“Of those, right view is the forerunner.",
+  "placed": true,
+  "own": true
+ },
+ "mn52:12.6": {
+  "after": "ude of space is fabricated & intended. Now whatever is fabricated & intended is inconstant & subject to cessation.’ Staying right there, he reaches the ending of the effluents. Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the five lower fetters—he is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.\n“This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended effluents go to their total ending,",
+  "placed": true,
+  "own": true
+ },
+ "mn57:12.3": {
+  "after": ", Puṇṇa the Koliyan cow-practice ascetic said, “Magnificent, lord! Magnificent!",
+  "placed": true,
+  "own": true
+ },
+ "mn77:18.3": {
+  "after": " develops the faculty of conviction going to stilling, going to self-awakening.",
+  "placed": true,
+  "own": true
+ },
+ "sn1.42:1.2": {
+  "after": "A giver of what is a giver of strength?",
+  "placed": true,
+  "own": true
+ },
+ "sn1.42:1.3": {
+  "after": "th?\nA giver of what, a giver of beauty?",
+  "placed": true,
+  "own": true
+ },
+ "sn1.42:1.4": {
+  "after": "auty?\nA giver of what, a giver of ease?",
+  "placed": true,
+  "own": true
+ },
+ "sn12.12:3.7": {
+  "after": "ct,’ then ‘Who makes contact?’ would be a valid question. But I don’t say that.",
+  "placed": true
+ },
+ "sn16.11:4.4": {
+  "after": "kefulness? You wander around destroying crops, as it were. You wander around destroying families, as it were. Your assembly is falling apart, Ānanda my friend.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:4.3": {
+  "after": "ge & alteration in his form?”\n“Yes, lord.”\n“Good, Tissa, good. That’s how it is",
+  "placed": true,
+  "own": true
+ },
+ "sn22.89:13.3": {
+  "after": "ling it, explaining it, making it plain—",
+  "placed": true,
+  "own": true
+ },
+ "sn35.246:4.18": {
+  "after": "ous components, a great many components—",
+  "placed": true,
+  "own": true
+ },
+ "sn45.4:3.5": {
+  "after": "ter robes—went into Sāvatthī for alms. I saw the brahman Jāṇussoṇin leaving Sāvatthī in an all-white chariot drawn by mares. White were the yoked horses, white the ornaments, white the chariot, white the upholstery, white the reins, white the goad, white the canopy, white his turban, white his clothes, white his sandals, and with a white yak-tail fan he was fanned. Seeing him, people were saying,",
+  "placed": true,
+  "own": true
+ },
+ "sn45.4:3.6": {
+  "after": "e were saying, ‘What a sublime vehicle!",
+  "placed": true,
+  "own": true
+ },
+ "sn46.30:4.2": {
+  "after": "ed mindfulness as a factor for awakening that—when I have developed & cultivated it—will lead me to such a state that, dwelling by means of it, I will discern,",
+  "placed": true,
+  "own": true
+ },
+ "sn46.30:4.3": {
+  "after": "oncentration as a factor for awakening…",
+  "placed": true
+ },
+ "sn46.54:4.2": {
+  "after": "we too teach our disciples in this way:",
+  "placed": true,
+  "own": true
+ },
+ "sn46.54:4.3": {
+  "after": "in this way: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—keep pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.",
+  "placed": true,
+  "own": true
+ },
+ "sn46.54:4.4": {
+  "after": "in this way: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—keep pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.\n“‘Keep pervading the first direction with an awareness imbued with compassion.…",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.31.1": {
+  "after": " eternal self & cosmos on four grounds?",
+  "placed": true
+ },
+ "dn1:2.2.1": {
+  "after": "-eternal self & cosmos on four grounds?",
+  "placed": true
+ },
+ "dn1:2.17.1": {
+  "after": "ite or infinite cosmos on four grounds?",
+  "placed": true
+ },
+ "dn1:2.17.7": {
+  "after": "perception of “finite” with regard to the cosmos. By means of that, I know that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.18.11": {
+  "after": "rception of “infinite” with regard to the cosmos. By means of that, I know that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.19.13": {
+  "after": "l around. By means of that, I know that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.20.5": {
+  "after": "os is neither finite nor infinite. Those contemplatives & brahmans who say that",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.25.2": {
+  "after": "As for the second: With reference to what, coming from what, do honorable contemplatives & brahmans, when being asked questions regarding this or that, resort to verbal contortions, to eel-wriggling?",
+  "placed": true
+ },
+ "dn1:2.27.9": {
+  "after": " both is & isn’t… neither is nor isn’t…",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.27.10": {
+  "after": "n’t… if there are beings who wander on…",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.27.11": {
+  "after": " beings who wander on… if there aren’t…",
+  "placed": true,
+  "own": true
+ },
+ "dn1:2.27.19": {
+  "after": "after death… doesn’t exist after death…",
+  "placed": true,
+  "own": true
+ },
+ "dn1:3.20.1": {
+  "after": "g of an existing being on five grounds?",
+  "placed": true
+ },
+ "dn2:32.9": {
+  "after": "ings who transmigrate… if there aren’t…",
+  "placed": true,
+  "own": true
+ },
+ "dn2:32.17": {
+  "after": " Tathāgata exists after death… doesn’t…",
+  "placed": true,
+  "own": true
+ },
+ "dn2:34.0.1": {
+  "empty": "up"
+ },
+ "dn2:34.0.2": {
+  "after": "n Sañjaya Velaṭṭhaputta’s words nor did I protest against them. Neither delighting nor protesting, I was dissatisfied. Without expressing dissatisfaction, without accepting his teaching, without adopting it, I got up from my seat and left.",
+  "placed": true,
+  "own": true
+ },
+ "dn2:41.3": {
+  "after": "amma, gains conviction in the Tathāgata",
+  "placed": true,
+  "own": true
+ },
+ "dn2:49.3": {
+  "after": "uessing thoughts, mimicking deformities—",
+  "placed": true,
+  "own": true
+ },
+ "mn148:10.5": {
+  "after": " falling away of the eye are discerned. And when its arising & falling away are discerned, it would follow that ‘My self arises & falls away.’ That’s why it wouldn’t be tenable if anyone were to say,",
+  "placed": true,
+  "own": true
+ },
+ "mn148:12.6": {
+  "after": "t-self. If anyone were to say, ‘Ideas are the self,’ that wouldn’t be tenable.…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:13.6": {
+  "after": "o say, ‘Consciousness at the intellect is the self,’ that wouldn’t be tenable.…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:14.6": {
+  "after": "were to say, ‘Contact at the intellect is the self,’ that wouldn’t be tenable.…",
+  "placed": true,
+  "own": true
+ },
+ "mn148:15.6": {
+  "after": "ot-self, contact at the intellect is not-self. If anyone were to say, ‘Feeling is the self,’ that wouldn’t be tenable.…",
+  "placed": true,
+  "own": true
+ },
+ "an10.93:8.3": {
+  "after": " wanderer said, “The cosmos is finite…”…",
+  "placed": true,
+  "own": true
+ },
+ "an10.93:8.4": {
+  "after": "s is finite…”…“The cosmos is infinite…”…",
+  "placed": true,
+  "own": true
+ },
+ "an10.93:8.6": {
+  "after": "oul is one thing and the body another…”…",
+  "placed": true,
+  "own": true
+ },
+ "an10.93:8.7": {
+  "after": "her…”…“After death a Tathāgata exists…”…",
+  "placed": true,
+  "own": true
+ },
+ "an10.93:8.9": {
+  "after": " Tathāgata both does & does not exist…”…",
+  "placed": true
+ },
+ "dn16:3.8.12": {
+  "after": "d by the Blessed One: ‘Evil One, I will not totally unbind as long as my nun disciples… my male lay-follower disciples…",
+  "placed": true,
+  "own": true
+ },
+ "dn16:3.23.2": {
+  "after": "ng many hundreds of brahman assemblies…",
+  "placed": true,
+  "own": true
+ },
+ "dn16:3.23.3": {
+  "after": "any hundreds of householder assemblies…",
+  "placed": true,
+  "own": true
+ },
+ "dn16:3.23.4": {
+  "after": "y hundreds of contemplative assemblies…",
+  "placed": true,
+  "own": true
+ },
+ "dn29:34.14": {
+  "after": "‘The self & the cosmos are self-made’ …",
+  "placed": true,
+  "own": true
+ },
+ "dn29:34.15": {
+  "after": "The self & the cosmos are other-made’ …",
+  "placed": true,
+  "own": true
+ },
+ "dn29:34.19": {
+  "after": " & pain are not eternal: Only this is true, anything otherwise is worthless.’ …",
+  "placed": true,
+  "own": true
+ },
+ "dn29:34.22": {
+  "after": "al’ … ‘Pleasure & pain are self-made’ …",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.2": {
+  "after": "ng many hundreds of brahman assemblies…",
+  "placed": true,
+  "own": true
+ },
+ "mn12:30.3": {
+  "after": "any hundreds of householder assemblies…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:10.3": {
+  "after": "inkling it again & again with water even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:10.4": {
+  "after": "ain with water even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:11.3": {
+  "after": "wist the horn of a newly-calved cow even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:11.4": {
+  "after": "ow. If he were to twist the horn of a newly-calved cow even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:12.3": {
+  "after": "ock and twirl it with a churn-stick even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:12.4": {
+  "after": "er on water in a crock and twirl it with a churn-stick even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:13.3": {
+  "after": " it into a wet, sappy piece of wood even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:13.4": {
+  "after": " fire stick and rub it into a wet, sappy piece of wood even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:15.3": {
+  "after": "ling them again & again with water, even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:15.4": {
+  "after": "in with water, even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:16.3": {
+  "after": "pull the teat of a newly-calved cow even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:16.4": {
+  "after": "cow. If he were to pull the teat of a newly-calved cow even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:17.3": {
+  "after": "k and twirl them with a churn-stick even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:17.4": {
+  "after": " on curds in a crock and twirl them with a churn-stick even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:18.3": {
+  "after": "t into a dry, sapless piece of wood even when having made a wish (for results)…",
+  "placed": true,
+  "own": true
+ },
+ "mn126:18.4": {
+  "after": "ire stick and rub it into a dry, sapless piece of wood even when having made a wish (for results)… having made no wish…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:8.12": {
+  "after": " is not free from passion… for feeling…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:8.13": {
+  "after": "ief, & despair. When one is not free from passion… for feeling… for perception…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:9.16": {
+  "after": "it, our teacher teaches the subduing of passion & desire for form… for feeling…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:9.17": {
+  "after": "spair. Seeing this benefit, our teacher teaches the subduing of passion & desire for form… for feeling… for perception…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.2:9.18": {
+  "after": " benefit, our teacher teaches the subduing of passion & desire for form… for feeling… for perception… for fabrications.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:4.5": {
+  "after": "who is not without passion, desire, love, thirst, fever, & craving for feeling…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:4.6": {
+  "after": "do you think, Tissa? In one who is not without passion, desire, love, thirst, fever, & craving for feeling… perception…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:4.7": {
+  "after": "Tissa? In one who is not without passion, desire, love, thirst, fever, & craving for feeling… perception… fabrications,",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:6.2": {
+  "after": "ness?”\n“Yes, lord.”\n“Good, Tissa, good.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:6.3": {
+  "after": "ration in his consciousness?”\n“Yes, lord.”\n“Good, Tissa, good. That’s how it is",
+  "placed": true
+ },
+ "sn22.84:7.5": {
+  "after": "one who is without passion, desire, love, thirst, fever, & craving for feeling…",
+  "placed": true,
+  "own": true
+ },
+ "sn22.84:7.6": {
+  "after": "hat do you think, Tissa? In one who is without passion, desire, love, thirst, fever, & craving for feeling… perception…",
+  "placed": true,
+  "own": true
+ },
+ "mn22:8.11": {
+  "after": "ed obstructive acts to you, and when indulged in they are genuine obstructions.",
+  "placed": true,
+  "own": true
+ },
+ "mn22:8.12": {
+  "after": "e described obstructive acts to you, and when indulged in they are genuine obstructions. I have said that sensual pleasures are of little satisfaction, much stress, much despair, & greater drawbacks.",
+  "placed": true,
+  "own": true
+ },
+ "mn22:8.13": {
+  "after": "ve acts to you, and when indulged in they are genuine obstructions. I have said that sensual pleasures are of little satisfaction, much stress, much despair, & greater drawbacks. I have compared sensual pleasures to a chain of bones: of much stress, much despair, & greater drawbacks. I have compared sensual pleasures to a lump of flesh… a grass torch… a pit of glowing embers… a dream… borrowed goods… the fruits of a tree… a butcher’s ax and chopping block… swords and spears…",
+  "placed": true
  }
 }
