@@ -206,7 +206,10 @@
  "mn152:7.6": "asting a flavor with the tongue, there arises in a monk an agreeable (reaction), a disagreeable (reaction), an agreeable & disagreeable (reaction). He discerns that ‘This agreeable (reaction) has arisen in me, this disagreeable (reaction)… this agreeable & disagreeable (reaction) has arisen in me. And that is fabricated, gross, dependently co-arisen. But this is peaceful, this is exquisite, i.e.,",
  "mn152:8.6": "tactile sensation with the body, there arises in a monk an agreeable (reaction), a disagreeable (reaction), an agreeable & disagreeable (reaction). He discerns that ‘This agreeable (reaction) has arisen in me, this disagreeable (reaction)… this agreeable & disagreeable (reaction) has arisen in me. And that is fabricated, gross, dependently co-arisen. But this is peaceful, this is exquisite, i.e.,",
  "mn152:9.6": "zing an idea with the intellect, there arises in a monk an agreeable (reaction), a disagreeable (reaction), an agreeable & disagreeable (reaction). He discerns that ‘This agreeable (reaction) has arisen in me, this disagreeable (reaction)… this agreeable & disagreeable (reaction) has arisen in me. And that is fabricated, gross, dependently co-arisen. But this is peaceful, this is exquisite, i.e.,",
- "mn18:3.2": "n, out roaming & rambling for exercise,",
+ "mn18:3.2": {
+  "after": "xercise, also went to the Great Forest.",
+  "placed": true
+ },
  "mn18:9.2": "er.” That is what the Blessed One said.",
  "mn18:13.6": "e capable of analyzing the unanalyzed detailed meaning of this brief statement.",
  "mn19:2.3": "p dividing my thinking into two sorts?’",
@@ -1052,7 +1055,10 @@
  "mn119:20.4": "es would be unpervaded with cool water;",
  "mn12:46.5": "crust.\n“The thought didn’t occur to me,",
  "mn121:13.4": "re, superior, & unsurpassed, they all enter & remain in this very same emptiness that is pure, superior, & unsurpassed.",
- "mn122:2.5": "ces prepared there and, on seeing them,",
+ "mn122:2.5": {
+  "after": "many resting places prepared there and,",
+  "placed": true
+ },
  "mn122:21.1": "w after the Teacher as if yoked to him.",
  "mn123:2.14": "s: ‘It’s amazing, friends. It’s astounding, the great might, the great power of the Tathāgata, in that the Tathāgata knows of the Awakened Ones of the past—those totally unbound, who have cut through objectification, who have cut the cycle, who have put an end to the round, who have lifted away all suffering & stress:",
  "mn125:2.7": " of mind.”\n“So it is, prince. So it is.",
@@ -3352,9 +3358,18 @@
  "mn90:2.6": "ng, & living in comfort.’ And then say:",
  "mn90:14.18": " Devas of the Thirty-three?”\n“Yes, sir,",
  "mn91:17.1": "he bowl nor overly solicitous about it.",
- "mn93:10.13": "ng off dust & dirt.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā,",
- "mn93:11.3": "iver, and scrubbing off dust & dirt.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā, heirs of Brahmā’?”\n“Even though Master Gotama says that, still the brahmans think, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā,",
- "mn93:12.3": "atever a fire might be needed to do.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā, heirs of Brahmā’?”\n“Even though Master Gotama says that, still the brahmans think, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā,",
+ "mn93:10.13": {
+  "after": "rt.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans.",
+  "placed": true
+ },
+ "mn93:11.3": {
+  "after": "ing off dust & dirt.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā, heirs of Brahmā’?”\n“Even though Master Gotama says that, still the brahmans think, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans.",
+  "placed": true
+ },
+ "mn93:12.3": {
+  "after": "ght be needed to do.”\n“So what strength is there, Assalāyana, what assurance, when the brahmans say, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans. Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā, heirs of Brahmā’?”\n“Even though Master Gotama says that, still the brahmans think, ‘Brahmans are the superior caste… Only brahmans are pure, not non-brahmans.",
+  "placed": true
+ },
  "mn93:16.5": "us & of fine character, Master Gotama.…",
  "mn93:18.2": "oding, at a loss for words—said to him,",
  "mn93:18.32": {
@@ -5106,7 +5121,8 @@
  "mn87:4.12": " only little child?”’\n“‘That’s the way it is, householder. That’s the way it is—",
  "mn87:5.8": "e way it is.”\n“No matter what Gotama the contemplative says, Mallikā endorses it: ‘If that was said by the Blessed One, great king, then that’s the way it is.’",
  "mn87:6.6": {
-  "empty": "up"
+  "after": "ay: ‘Lord, did the Blessed One say that",
+  "placed": true
  },
  "mn9:5.2": "at are the roots of what is unskillful?",
  "mn9:38.3": "craving?\n“There are these six cravings:",
@@ -7035,7 +7051,9 @@
  "mn148:39.4": "assion-obsession does not get obsessed.",
  "mn148:39.6": "stance-obsession does not get obsessed.",
  "mn148:41.6": "contact at the intellect, disenchanted with feeling, disenchanted with craving.",
- "mn149:10.7": "t the eye and is experienced as pleasure, pain, or neither-pleasure-nor-pain.\n“For him—uninfatuated, unattached, unconfused, remaining focused on their drawbacks—the five clinging-aggregates head toward future diminution. The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—is abandoned by him. His bodily disturbances & mental disturbances are abandoned. His bodily torments & mental torments are abandoned. His bodily distresses & mental distresses are abandoned. He is sensitive both to ease of body & ease of awareness.\n“Any view belonging to one who has come to be like this is his right view. Any resolve, his right resolve. Any effort, his right effort. Any mindfulness, his right mindfulness. Any concentration, his right concentration: just as earlier his actions, speech, & livelihood were already well-purified.",
+ "mn149:10.7": {
+  "empty": "down"
+ },
  "mn149:20.3": "t and is experienced as pleasure, pain, or neither-pleasure-nor-pain.\n“For him—uninfatuated, unattached, unconfused, remaining focused on their drawbacks—the five clinging-aggregates head toward future diminution. The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—is abandoned by him. His bodily disturbances & mental disturbances are abandoned. His bodily torments & mental torments are abandoned. His bodily distresses & mental distresses are abandoned. He is sensitive both to ease of body & ease of awareness.\n“Any view belonging to one who has come to be like this is his right view. Any resolve, his right resolve.",
  "mn149:26.5": "ge.”\nThat is what the Blessed One said.",
  "mn151:3.6": "or forms cognizable via the eye,’ then he should make an effort for the abandoning of those evil, unskillful qualities.",
@@ -7364,7 +7382,10 @@
  "mn57:5.4": "of cows. But if he is of such a view as, ‘By this habit or practice or asceticism or holy life I will become a greater or lesser deva,’ that is his wrong view.",
  "mn58:3.13": "asked, answers, ‘The Tathāgata would not say words that are unendearing & disagreeable to others,’ then you should say,",
  "mn58:3.14": "ow, lord, did you say of Devadatta that",
- "mn58:4.2": "ing bowed down to the Blessed One, he sat to one side. As he was sitting there,",
+ "mn58:4.2": {
+  "after": "to the Blessed One, he sat to one side.",
+  "placed": true
+ },
  "mn58:5.4": "ne with fine staple & non-staple foods.",
  "mn58:6.26": "… Just as if a two-horned chestnut were stuck in a man’s throat: He would not be able to swallow it down or spit it up.",
  "mn58:7.6": "ld you do?”\n“I would take it out, lord.",
@@ -11480,7 +11501,8 @@
   "placed": true
  },
  "mn57:6.8": {
-  "empty": "up"
+  "after": "have confidence in the Blessed One that",
+  "placed": true
  },
  "mn57:2.2": {
   "after": "sat to one side, curling up like a dog.",
@@ -25260,7 +25282,8 @@
   "own": true
  },
  "dn16:6.20.9": {
-  "empty": "up"
+  "after": ". Mahā Kassapa addressed the monks, “Enough, friends. Don’t grieve. Don’t lament. Hasn’t the Blessed One already taught",
+  "placed": true
  },
  "dn16:6.22.2": {
   "after": "eet, and worshipped them with his head.",
@@ -30477,7 +30500,7 @@
   "own": true
  },
  "mn10:1.2": {
-  "after": "lessed One was staying among the Kurus.",
+  "after": "I have heard that",
   "placed": true
  },
  "mn10:3.1": {
@@ -34606,7 +34629,8 @@
   "own": true
  },
  "mn57:1.2": {
-  "empty": "up"
+  "after": "I have heard that",
+  "placed": true
  },
  "mn57:7.2": {
   "after": "ese four types of kamma have been directly known, verified, & made known by me.",
@@ -48246,5 +48270,132 @@
   "after": "e & now.\n“So, Māluṅkyaputta, remember what is undisclosed by me as undisclosed,",
   "placed": true,
   "own": true
+ },
+ "mn122:2.10": {
+  "after": "ival, he sat down on a seat made ready.",
+  "placed": true
+ },
+ "mn25:6.8": {
+  "after": "wer & control. The second herd of deer…",
+  "placed": true,
+  "own": true
+ },
+ "mn101:5.2": {
+  "after": ", friends, it seems that you don’t know",
+  "placed": true,
+  "own": true
+ },
+ "mn101:5.6": {
+  "after": "at you don’t know that you existed in the past, and that you did not not exist…",
+  "placed": true,
+  "own": true
+ },
+ "mn35:21.7": {
+  "after": ", and don’t you envision of stress that",
+  "placed": true
+ },
+ "mn38:32.3": {
+  "after": "amma, gains conviction in the Tathāgata",
+  "placed": true,
+  "own": true
+ },
+ "mn43:5.2": {
+  "after": ": Thus it is said to be ‘consciousness.’”\n“Discernment & consciousness, friend:",
+  "placed": true,
+  "own": true
+ },
+ "mn43:9.2": {
+  "after": "g, perception, & consciousness, friend:",
+  "placed": true,
+  "own": true
+ },
+ "mn108:11.4": {
+  "after": "we live in dependence.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words),",
+  "placed": true,
+  "own": true
+ },
+ "mn108:11.5": {
+  "after": "respecting—we live in dependence.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words), “He will be your arbitrator after I am gone,” to whom you now turn?’",
+  "placed": true,
+  "own": true
+ },
+ "mn108:12.1": {
+  "after": " respecting—we live in dependence.”\n“When asked, ‘Master Ānanda, is there any one monk appointed by Master Gotama (with the words), “He will be your arbitrator after I am gone,” to whom you now turn?’ you said, ‘No, brahman. There isn’t any one monk appointed by the Blessed One…",
+  "placed": true,
+  "own": true
+ },
+ "mn14:18.6": {
+  "after": "xist?’\n“‘No, friend.’\n“‘And do you know",
+  "placed": true,
+  "own": true
+ },
+ "mn14:18.9": {
+  "after": "them?’\n“‘No, friend.’\n“‘And do you know",
+  "placed": true,
+  "own": true
+ },
+ "mn14:18.15": {
+  "after": "sted?’\n“‘No, friend.’\n“‘But do you know",
+  "placed": true,
+  "own": true
+ },
+ "mn140:19.17": {
+  "after": "e, there arises a feeling of pleasure.…",
+  "placed": true,
+  "own": true
+ },
+ "mn140:19.20": {
+  "after": "g of pleasure.… In dependence on a sensory contact that is to be felt as pain.…",
+  "placed": true,
+  "own": true
+ },
+ "mn149:10.8": {
+  "after": "t the eye and is experienced as pleasure, pain, or neither-pleasure-nor-pain.\n“For him—uninfatuated, unattached, unconfused, remaining focused on their drawbacks—the five clinging-aggregates head toward future diminution. The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—is abandoned by him. His bodily disturbances & mental disturbances are abandoned. His bodily torments & mental torments are abandoned. His bodily distresses & mental distresses are abandoned. He is sensitive both to ease of body & ease of awareness.\n“Any view belonging to one who has come to be like this is his right view. Any resolve, his right resolve. Any effort, his right effort. Any mindfulness, his right mindfulness. Any concentration, his right concentration: just as earlier his actions, speech, & livelihood were already well-purified.",
+  "placed": true
+ },
+ "mn85:14.7": {
+  "after": ".’ So I sat down right there, thinking,",
+  "placed": true,
+  "own": true
+ },
+ "mn85:57.4": {
+  "after": "th all five.”\n“What do you think, prince? There is the case where a man comes, (thinking,) ‘Prince Bodhi knows the art of riding an elephant & wielding a goad.",
+  "placed": true,
+  "own": true
+ },
+ "mn87:22.3": {
+  "after": " husband, wanted to give her to another",
+  "placed": true,
+  "own": true
+ },
+ "mn87:22.6": {
+  "after": "eparated us, want to give me to another",
+  "placed": true,
+  "own": true
+ },
+ "mn93:4.8": {
+  "after": "’t dispute with him on this statement.”",
+  "placed": true,
+  "own": true
+ },
+ "mn93:4.12": {
+  "empty": "up"
+ },
+ "mn93:14.6": {
+  "after": "the mixed breeding] makes a difference,",
+  "placed": true,
+  "own": true
+ },
+ "dn2:4.1": {
+  "empty": "up"
+ },
+ "dn2:4.3": {
+  "empty": "up"
+ },
+ "dn2:6.1": {
+  "empty": "up"
+ },
+ "dn2:6.3": {
+  "empty": "up"
  }
 }

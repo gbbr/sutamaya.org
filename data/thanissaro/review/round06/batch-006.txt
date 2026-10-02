@@ -1,0 +1,366 @@
+## mn7
+mn7:1.1 | S: So I have heard. | T: I have heard that
+mn7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika's monastery.
+mn7:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn7:1.4 | S: “Mendicants!” | T: “Monks!”
+mn7:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn7:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn7:2.1 | S: “Suppose, mendicants, there was a cloth that was dirty and soiled. | T: “Monks, suppose a piece of cloth were defiled and tenaciously stained,
+mn7:2.2 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look poorly dyed and impure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be poorly dyed, impurely dyed.
+mn7:2.3 | S: Why is that? | T: Why is that?
+mn7:2.4 | S: Because of the impurity of the cloth. | T: Because of the impurity of the cloth.
+mn7:2.5 | S: In the same way, when the mind is corrupt, a bad destiny is to be expected. | T: In the same way, when the mind is defiled, a bad destination can be expected.
+mn7:2.6 | S: Suppose there was a cloth that was pure and clean. | T: “But suppose a piece of cloth were pure and clean,
+mn7:2.7 | S: No matter what dye the dyer applied—whether blue or yellow or red or magenta—it would look well dyed and pure in color. | T: and a dyer were to dip it into some dye or other—whether blue or yellow or red or crimson. It would be well dyed, purely dyed.
+mn7:2.8 | S: Why is that? | T: Why is that?
+mn7:2.9 | S: Because of the purity of the cloth. | T: Because of the purity of the cloth.
+mn7:2.10 | S: In the same way, when the mind isn’t corrupt, a good destiny is to be expected. | T: In the same way, when the mind is undefiled, a good destination can be expected.
+mn7:3.1 | S: And what are the corruptions of the mind? | T: “And which are the defilements of the mind?
+mn7:3.2 | S: Covetousness and immoral greed, ill will, anger, acrimony, disdain, contempt, jealousy, stinginess, deceit, deviousness, obstinacy, aggression, conceit, arrogance, vanity, and negligence are corruptions of the mind. | T: Possessiveness-and-inordinate-greed is a defilement of the mind. Ill will… Anger… Spitefulness… Dismissiveness… Antagonism… Envy… Selfishness… Deceit… Pretentiousness… Stubbornness… Competitiveness… Conceit… Arrogance… Intoxication… Heedlessness is a defilement of the mind.
+mn7:4.1 | S: A mendicant who understands that covetousness and immoral greed are corruptions of the mind gives them up. | T: “Knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ a monk abandons possessiveness-and-inordinate-greed as a defilement of the mind. …
+mn7:4.2 | S: A mendicant who understands that ill will … | T: (none)
+mn7:4.3 | P: iti viditvā byāpādaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.4 | P: ‘kodho cittassa upakkileso’ti— | T: (none)
+mn7:4.5 | P: iti viditvā kodhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.6 | P: ‘upanāho cittassa upakkileso’ti— | T: (none)
+mn7:4.7 | P: iti viditvā upanāhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.8 | P: ‘makkho cittassa upakkileso’ti— | T: (none)
+mn7:4.9 | P: iti viditvā makkhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.10 | P: ‘paḷāso cittassa upakkileso’ti— | T: (none)
+mn7:4.11 | P: iti viditvā paḷāsaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.12 | P: ‘issā cittassa upakkileso’ti— | T: (none)
+mn7:4.13 | P: iti viditvā issaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.14 | P: ‘macchariyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:4.15 | P: iti viditvā macchariyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.16 | P: ‘māyā cittassa upakkileso’ti— | T: (none)
+mn7:4.17 | P: iti viditvā māyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.18 | P: ‘sāṭheyyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:4.19 | P: iti viditvā sāṭheyyaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.20 | P: ‘thambho cittassa upakkileso’ti— | T: (none)
+mn7:4.21 | P: iti viditvā thambhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.22 | P: ‘sārambho cittassa upakkileso’ti— | T: (none)
+mn7:4.23 | P: iti viditvā sārambhaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.24 | P: ‘māno cittassa upakkileso’ti— | T: (none)
+mn7:4.25 | P: iti viditvā mānaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.26 | P: ‘atimāno cittassa upakkileso’ti— | T: (none)
+mn7:4.27 | P: iti viditvā atimānaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.28 | P: ‘mado cittassa upakkileso’ti— | T: (none)
+mn7:4.29 | P: iti viditvā madaṁ cittassa upakkilesaṁ pajahati; | T: (none)
+mn7:4.30 | S: negligence is a corruption of the mind gives it up. | T: Knowing, ‘Heedlessness is a defilement of the mind,’ a monk abandons heedlessness as a defilement of the mind.
+mn7:4.31 | P: iti viditvā pamādaṁ cittassa upakkilesaṁ pajahati. | T: (none)
+mn7:5.1 | S: When they have understood these corruptions of the mind | T: “When a monk, knowing, ‘Possessiveness-and-inordinate-greed is a defilement of the mind,’ has abandoned possessiveness-and-inordinate-greed as a defilement of the mind… and knowing, ‘Heedlessness is a defilement of the mind,’ has abandoned heedlessness as a defilement of the mind,
+mn7:5.2 | S: for what they are, and have given them up, | T: (none)
+mn7:5.3 | P: iti viditvā byāpādo cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.4 | P: ‘kodho cittassa upakkileso’ti— | T: (none)
+mn7:5.5 | P: iti viditvā kodho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.6 | P: ‘upanāho cittassa upakkileso’ti— | T: (none)
+mn7:5.7 | P: iti viditvā upanāho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.8 | P: ‘makkho cittassa upakkileso’ti— | T: (none)
+mn7:5.9 | P: iti viditvā makkho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.10 | P: ‘paḷāso cittassa upakkileso’ti— | T: (none)
+mn7:5.11 | P: iti viditvā paḷāso cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.12 | P: ‘issā cittassa upakkileso’ti— | T: (none)
+mn7:5.13 | P: iti viditvā issā cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.14 | P: ‘macchariyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:5.15 | P: iti viditvā macchariyaṁ cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.16 | P: ‘māyā cittassa upakkileso’ti— | T: (none)
+mn7:5.17 | P: iti viditvā māyā cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.18 | P: ‘sāṭheyyaṁ cittassa upakkileso’ti— | T: (none)
+mn7:5.19 | P: iti viditvā sāṭheyyaṁ cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.20 | P: ‘thambho cittassa upakkileso’ti— | T: (none)
+mn7:5.21 | P: iti viditvā thambho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.22 | P: ‘sārambho cittassa upakkileso’ti— | T: (none)
+mn7:5.23 | P: iti viditvā sārambho cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.24 | P: ‘māno cittassa upakkileso’ti— | T: (none)
+mn7:5.25 | P: iti viditvā māno cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.26 | P: ‘atimāno cittassa upakkileso’ti— | T: (none)
+mn7:5.27 | P: iti viditvā atimāno cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.28 | P: ‘mado cittassa upakkileso’ti— | T: (none)
+mn7:5.29 | P: iti viditvā mado cittassa upakkileso pahīno hoti; | T: (none)
+mn7:5.30 | P: ‘pamādo cittassa upakkileso’ti— | T: (none)
+mn7:5.31 | P: iti viditvā pamādo cittassa upakkileso pahīno hoti. | T: (none)
+mn7:5.32 | S: they have experiential confidence in the Buddha: | T: he is endowed with confirmed conviction in the Awakened One:
+mn7:5.33 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+mn7:6.1 | S: They have experiential confidence in the teaching: | T: “He is endowed with confirmed conviction in the Dhamma:
+mn7:6.2 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+mn7:7.1 | S: They have experiential confidence in the Saṅgha: | T: “He is endowed with confirmed conviction in the Saṅgha:
+mn7:7.2 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four types of noble disciples when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: worthy of gifts, worthy of hospitality, worthy of offerings, worthy of respect, the incomparable field of merit for the world.’
+mn7:8.1 | S: When a mendicant has discarded, eliminated, released, given up, and relinquished to this extent, thinking, ‘I have experiential confidence in the Buddha … | T: “Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by a monk, he—thinking, ‘I am endowed with confirmed conviction in the Awakened One’—gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:8.2 | P: Pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati; | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:9.1 | S: the teaching … | T: “Thinking, ‘I am endowed with confirmed conviction in the Dhamma,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:10.1 | S: the Saṅgha,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: “Thinking, ‘I am endowed with confirmed conviction in the Saṅgha,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:10.2 | P: pamuditassa pīti jāyati, pītimanassa kāyo passambhati, passaddhakāyo sukhaṁ vedeti, sukhino cittaṁ samādhiyati. | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:11.1 | S: Thinking: ‘I have discarded, eliminated, released, given up, and relinquished to this extent,’ they find inspiration in the meaning and the teaching, and find joy connected with the teaching. | T: “Thinking, ‘Because [each of the defilements of mind] has been given up, spit out, released, abandoned, and relinquished in part by me,’ he gains a sense of the goal, gains a sense of the Dhamma, gains a joy connected with the Dhamma.
+mn7:11.2 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+mn7:12.1 | S: When a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: “When a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:12.2 | S: Compare with cloth that is dirty and soiled; it can be made pure and clean by pure water. Or native gold, which can be made pure and bright by a forge. | T: Just as a piece of cloth, defiled & stained, becomes pure & bright with the help of clear water, or gold becomes pure & bright with the help of a furnace,
+mn7:12.3 | S: In the same way, when a mendicant of such ethics, such qualities, and such wisdom eats boiled fine rice with the dark grains picked out and served with many soups and sauces, that is no obstacle for them. | T: in the same way, when a monk of such virtue, such Dhamma, and such discernment eats almsfood—even that consisting of hill rice with no black grains, and with many sauces & curries—it will not be an obstacle for him.
+mn7:13.1 | S: They meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “He keeps pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.
+mn7:14.1 | S: They meditate spreading a heart full of compassion to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of compassion to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: He keeps pervading the first direction with an awareness imbued with compassion…
+mn7:15.1 | S: They meditate spreading a heart full of rejoicing to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of rejoicing to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: empathetic joy…
+mn7:16.1 | S: They meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.
+mn7:17.1 | S: They understand: ‘There is this, there is what is worse than this, there is what is better than this, and there is an escape beyond the scope of perception.’ | T: “He discerns, ‘There is this. There is what is lower. There is what is more exquisite. There is the higher escape from this mode of perception.’
+mn7:18.1 | S: Knowing and seeing like this, their mind is freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: For him—thus knowing, thus seeing—the mind is released from the effluent of sensuality, released from the effluent of becoming, released from the effluent of ignorance.
+mn7:18.2 | S: When they’re freed, they know they’re freed. | T: With release, there is the knowledge, ‘Released.’
+mn7:18.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+mn7:18.4 | S: This is called | T: “This, monks,
+mn7:18.5 | S: a mendicant who is bathed with the inner bathing.” | T: is a monk who is said to be one who has bathed with the inner bathing.”
+mn7:19.1 | S: Now at that time the brahmin Bhāradvāja of Sundarikā was sitting not far from the Buddha. | T: Now, on that occasion Sundarika Bhāradvāja the brahman was sitting not far from the Blessed One,
+mn7:19.2 | S: He said to the Buddha, | T: so he said to the Blessed One,
+mn7:19.3 | S: “But does Worthy Gotama go to the Bāhukā River to bathe?” | T: “But does Master Gotama go to the Bāhuka River to bathe?”
+mn7:19.4 | S: “Brahmin, why go to the Bāhukā River? | T: “Why the Bāhuka River, brahman?
+mn7:19.5 | S: What can the Bāhukā River do?” | T: What good can the Bāhuka River do?”
+mn7:19.6 | S: “Many people deem that the Bāhukā River leads to a heavenly world and bestows merit. And many people rinse off their bad deeds in the Bāhukā River.” | T: “The Bāhuka River is agreed by many people to (lead to the next) world, Master Gotama. The Bāhuka River is agreed by many people to be meritorious, Master Gotama. And in the Bāhuka River many people wash away any evil deed they have done.”
+mn7:20.1 | S: Then the Buddha addressed Bhāradvāja of Sundarikā in verse: | T: So the Blessed One addressed Sundarika Bhāradvāja the brahman in verses:
+mn7:20.2 | S: “The Bāhukā and the Adhikakkā, | T: “The Bāhuka & the Adhikakkā,
+mn7:20.3 | S: at Gayā and the Sundarikā too, | T: the Gayā, the Sundarikā,
+mn7:20.4 | S: Sarasvatī and Payāga, | T: the Sarassati & the Payāga,
+mn7:20.5 | S: and the Bāhumatī River: | T: and also the Bāhumati:
+mn7:20.6 | S: a fool can constantly plunge into them | T: A fool, even if he bathes there constantly,
+mn7:20.7 | S: but it won’t purify their dark deeds. | T: wouldn’t cleanse a dark deed.
+mn7:20.8 | S: What can the Sundarikā do? | T: What can the Sundarikā do?
+mn7:20.9 | S: What the Payāga or the Bāhukā? | T: What the Payāga? What the Bāhuka?
+mn7:20.10 | S: They can’t cleanse a cruel person, a sinner | T: A person of animosity, one who’s done wrong, cannot be cleansed there
+mn7:20.11 | S: from their bad deeds. | T: of evil deeds.
+mn7:20.12 | S: For the pure in heart it’s always | T: But for one who is pure, it’s always
+mn7:20.13 | S: the spring festival or the sabbath. | T: the Phaggu festival; for one who is pure, always the uposatha.
+mn7:20.14 | S: For the pure in heart and clean of deed, | T: For one who is pure, clean in his deeds,
+mn7:20.15 | S: their vows will always be fulfilled. | T: his practices always reach consummation.
+mn7:20.16 | S: It’s here alone that you should bathe, brahmin, | T: Bathe right here, brahman.
+mn7:20.17 | S: making yourself a sanctuary for all creatures. | T: Create safety for yourself with regard to all beings.
+mn7:20.18 | S: And if you speak no lies, | T: If you don’t tell a lie,
+mn7:20.19 | S: nor harm any living creature, | T: don’t harm living beings,
+mn7:20.20 | S: nor steal anything not given, | T: don’t take what’s not given,
+mn7:20.21 | S: and you’re faithful and not stingy: | T: if you have conviction & are free from stinginess,
+mn7:20.22 | S: what’s the point of going to Gayā? | T: what would you gain from going to the Gayā?
+mn7:20.23 | S: For any well may be your Gayā!” | T: Even a well would be Gayā for you.”
+mn7:21.1 | S: When he had spoken, the brahmin Bhāradvāja of Sundarikā said to the Buddha, | T: When this was said, Sundarika Bhāradvāja the brahman said to the Blessed One,
+mn7:21.2 | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+mn7:21.3 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+mn7:21.4 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+mn7:21.5 | S: May I receive the going forth, the ordination in the worthy Gotama’s presence?” | T: Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance (into the Saṅgha of monks).”
+mn7:22.1 | S: And the brahmin Bhāradvāja of Sundarikā received the going forth, the ordination in the Buddha’s presence. | T: Then Sundarika Bhāradvāja the brahman received the Going-forth in the Blessed One’s presence, he gained the Acceptance.
+mn7:22.2 | S: Not long after his ordination, Venerable Bhāradvāja, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+mn7:22.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+mn7:22.4 | S: And Venerable Bhāradvāja became one of the perfected. | T: And so Ven. Bhāradvāja became another one of the arahants.
+mn7:22.5 | P: Vatthasuttaṁ niṭṭhitaṁ sattamaṁ. | T: (none)
+
+## mn57
+mn57:1.1 | S: So I have heard. | T: I have heard that once the Blessed One was dwelling among the Koliyans, near a Koliyan town named Haliddavasana.
+mn57:1.2 | S: At one time the Buddha was staying in the land of the Koliyans, where they have a town named Haliddavasana. | T: (none)
+mn57:2.1 | S: Then Puṇṇa the Koliyan, a cow votary, and the naked ascetic Seniya, a dog votary, went to the Buddha. Puṇṇa bowed to the Buddha and sat down to one side, while Seniya exchanged greetings and polite conversation with him before sitting down to one side curled up like a dog. | T: Then Puṇṇa the Koliyan cow-practice ascetic, and Seniya, a naked dog-practice ascetic, went to the Blessed One. On arrival, Puṇṇa the Koliyan, bowing down to the Blessed One, sat to one side, while Seniya exchanged courteous greetings with the Blessed One and, after an exchange of friendly greetings & courtesies, sat to one side, curling up like a dog.
+mn57:2.2 | S: Puṇṇa said to the Buddha, | T: While he was sitting there, Puṇṇa the Koliyan cow-practice ascetic said to the Blessed One,
+mn57:2.3 | S: “Sir, this naked ascetic Seniya the dog votary does a hard thing: he eats food placed on the ground. | T: “Lord, Seniya, this naked dog-practice ascetic, is a doer-of-hard-tasks. He eats food that is thrown on the ground.
+mn57:2.4 | S: For a long time he has undertaken that observance to behave like a dog. | T: He has long undertaken & conformed to that dog practice.
+mn57:2.5 | S: Where will he be reborn in his next life?” | T: What is his future destination? What is his future course?”
+mn57:2.6 | S: “Enough, Puṇṇa, let it be. Don’t ask me that.” | T: “Enough, Puṇṇa, put that aside. Don’t ask me that.”
+mn57:2.7 | S: For a second time … | T: A second time…
+mn57:2.8 | S: and a third time, Puṇṇa said to the Buddha, | T: A third time, Puṇṇa the Koliyan cow-practice ascetic said to the Blessed One,
+mn57:2.9 | S: “Sir, this naked ascetic Seniya does a hard thing: he eats food placed on the ground. | T: “Lord, Seniya, this naked dog-practice ascetic, is a doer-of-hard-tasks. He eats food that is thrown on the ground.
+mn57:2.10 | S: For a long time he has undertaken that observance to behave like a dog. | T: He has long undertaken & conformed to that dog practice.
+mn57:2.11 | S: Where will he be reborn in his next life?” | T: What is his future destination? What is his future course?”
+mn57:2.12 | S: “Clearly, Puṇṇa, I’m not getting through to you when I say: | T: “Apparently, Puṇṇa, I haven’t been able to get past you by saying,
+mn57:2.13 | S: ‘Enough, Puṇṇa, let it be. Don’t ask me that.’ | T: ‘Enough, Puṇṇa, put that aside. Don’t ask me that.’
+mn57:2.14 | S: Nevertheless, I will answer you. | T: So I will just answer you.
+mn57:3.1 | S: Take someone who develops the dog observance fully and uninterruptedly. They develop a dog’s ethics, a dog’s mentality, and a dog’s behavior fully and uninterruptedly. | T: “There is the case where a person develops the dog practice fully & without lapse, develops a dog’s habits fully & without lapse, develops a dog’s mind fully & without lapse, develops a dog’s demeanor fully & without lapse. Having developed the dog practice fully & without lapse… a dog’s habits… a dog’s mind… a dog’s demeanor fully & without lapse,
+mn57:3.2 | S: When their body breaks up, after death, they’re reborn in the company of dogs. | T: then on the break-up of the body, after death, he reappears in the company of dogs.
+mn57:3.3 | S: But if they have such a view: ‘By this precept or observance or fervent austerity or spiritual practice, may I become one of the gods!’ This is their wrong view. | T: But if he is of such a view as, ‘By this habit or practice or asceticism or holy life I will become a greater or lesser deva,’ that is his wrong view.
+mn57:3.4 | S: An individual with wrong view is reborn in one of two places, I say: hell or the animal realm. | T: Now, I tell you, Puṇṇa, there are two destinations for one with wrong view: hell or the animal womb.
+mn57:3.5 | S: So if the dog observance succeeds it leads to rebirth in the company of dogs, but if it fails it leads to hell.” | T: So the dog practice, if perfected, leads him to the company of dogs; if defective, to hell.”
+mn57:4.1 | S: When he said this, Seniya cried and burst out in tears. | T: When this was said, Seniya, the naked dog-practice ascetic cried out and burst into tears.
+mn57:4.2 | S: The Buddha said to Puṇṇa, | T: The Blessed One said to Puṇṇa the cow-practice ascetic,
+mn57:4.3 | S: “This is what I didn’t get through to you when I said: | T: “That’s what I couldn’t get past you by saying,
+mn57:4.4 | S: ‘Enough, Puṇṇa, let it be. Don’t ask me that.’” | T: ‘Enough, Puṇṇa, put that aside. Don’t ask me that.’”
+mn57:4.5 | S: Seniya said, “Sir, I’m not crying because of what the Buddha said. | T: [Seniya said,] “I’m not crying, lord, because of what the Blessed One said about me,
+mn57:4.6 | S: But, sir, for a long time I have undertaken this observance to behave like a dog. | T: but simply because I have for a long time undertaken & conformed to this dog practice.
+mn57:4.7 | S: Sir, this Puṇṇa is a cow votary. | T: “Lord, Puṇṇa, here, is a cow-practice ascetic.
+mn57:4.8 | S: For a long time he has undertaken that observance to behave like a cow. | T: He has long undertaken & conformed to that cow practice.
+mn57:4.9 | S: Where will he be reborn in his next life?” | T: What is his future destination? What is his future course?”
+mn57:4.10 | S: “Enough, Seniya, let it be. Don’t ask me that.” | T: “Enough, Seniya, put that aside. Don’t ask me that.”
+mn57:4.11 | S: For a second time … | T: A second time…
+mn57:4.12 | S: and a third time Seniya said to the Buddha, | T: A third time, Seniya the naked dog-practice ascetic said to the Blessed One,
+mn57:4.13 | S: “Sir, this Puṇṇa is a cow votary. | T: “Lord, Puṇṇa, here, is a cow-practice ascetic.
+mn57:4.14 | S: For a long time he has undertaken that observance to behave like a cow. | T: He has long undertaken & conformed to that cow practice.
+mn57:4.15 | S: Where will he be reborn in his next life?” | T: What is his future destination? What is his future course?”
+mn57:4.16 | S: “Clearly, Seniya, I’m not getting through to you when I say: | T: “Apparently, Seniya, I haven’t been able to get past you by saying,
+mn57:4.17 | S: ‘Enough, Seniya, let it be. Don’t ask me that.’ | T: ‘Enough, Seniya, put that aside. Don’t ask me that.’
+mn57:4.18 | S: Nevertheless, I will answer you. | T: So I will just answer you.
+mn57:5.1 | S: Take someone who develops the cow observance fully and uninterruptedly. They develop a cow’s ethics, a cow’s mentality, and a cow’s behavior fully and uninterruptedly. | T: “There is the case where a person develops the cow practice fully & without lapse, develops a cow’s habits fully & without lapse, develops a cow’s mind fully & without lapse, develops a cow’s demeanor fully & without lapse. Having developed the cow practice fully & without lapse… a cow’s habits… a cow’s mind… a cow’s demeanor fully & without lapse,
+mn57:5.2 | S: When their body breaks up, after death, they’re reborn in the company of cows. | T: then on the break-up of the body, after death, he reappears in the company of cows.
+mn57:5.3 | S: But if they have such a view: ‘By this precept or observance or fervent austerity or spiritual practice, may I become one of the gods!’ This is their wrong view. | T: But if he is of such a view as, ‘By this habit or practice or asceticism or holy life I will become a greater or lesser deva,’ that is his wrong view.
+mn57:5.4 | S: An individual with wrong view is reborn in one of two places, I say: hell or the animal realm. | T: Now, I tell you, Seniya, there are two destinations for one with wrong view: hell or the animal womb.
+mn57:5.5 | S: So if the cow observance succeeds it leads to rebirth in the company of cows, but if it fails it leads to hell.” | T: So the cow practice, if perfected, leads him to the company of cows; if defective, to hell.”
+mn57:6.1 | S: When he said this, Puṇṇa cried and burst out in tears. | T: When this was said, Puṇṇa the Koliyan cow-practice ascetic cried out and burst into tears.
+mn57:6.2 | S: The Buddha said to Seniya, | T: The Blessed One said to Seniya, the naked dog-practice ascetic,
+mn57:6.3 | S: “This is what I didn’t get through to you when I said: | T: “That’s what I couldn’t get past you by saying,
+mn57:6.4 | S: ‘Enough, Seniya, let it be. Don’t ask me that.’” | T: ‘Enough, Seniya, put that aside. Don’t ask me that.’”
+mn57:6.5 | S: Puṇṇa said, “Sir, I’m not crying because of what the Buddha said. | T: [Puṇṇa said,] “I’m not crying, lord, because of what the Blessed One said about me,
+mn57:6.6 | S: But, sir, for a long time I have undertaken this observance to behave like a cow. | T: but simply because I have for a long time undertaken & conformed to this cow practice.
+mn57:6.7 | S: I am quite confident that the Buddha | T: “Lord, I have confidence in the Blessed One that he can teach the Dhamma in such a way that I will abandon this cow practice and Seniya, this naked dog-practice ascetic, will abandon that dog practice.”
+mn57:6.8 | S: is capable of teaching me so that I can give up this cow observance, and the naked ascetic Seniya can give up that dog observance.” | T: (none)
+mn57:6.9 | S: “Well then, Puṇṇa, listen and apply your mind well, I will speak.” | T: “In that case, Puṇṇa, listen & pay close attention. I will speak.”
+mn57:6.10 | S: “Yes, sir,” he replied. | T: “As you say, lord,” Puṇṇa responded to the Blessed One.
+mn57:6.11 | S: The Buddha said this: | T: The Blessed One said,
+mn57:7.1 | S: “Puṇṇa, I declare these four kinds of deeds, having realized them with my own insight. | T: “Puṇṇa, these four types of kamma have been directly known, verified, & made known by me.
+mn57:7.2 | S: What four? | T: Which four?
+mn57:7.3 | S: There are dark deeds with dark results; | T: There is kamma that is dark with dark result.
+mn57:7.4 | S: bright deeds with bright results; | T: There is kamma that is bright with bright result.
+mn57:7.5 | S: dark and bright deeds with dark and bright results; and | T: There is kamma that is dark & bright with dark & bright result.
+mn57:7.6 | S: neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: There is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+mn57:8.1 | S: And what are dark deeds with dark results? | T: “And what is kamma that is dark with dark result?
+mn57:8.2 | S: It’s when someone makes hurtful choices by way of body, speech, and mind. | T: There is the case where a certain person fabricates an injurious bodily fabrication, fabricates an injurious verbal fabrication, fabricates an injurious mental fabrication.
+mn57:8.3 | S: Having made these choices, they’re reborn in a hurtful world, | T: Having fabricated an injurious bodily fabrication, having fabricated an injurious verbal fabrication, having fabricated an injurious mental fabrication, he rearises in an injurious world.
+mn57:8.4 | S: where hurtful contacts strike them. | T: On rearising in an injurious world, there he is touched by injurious contacts.
+mn57:8.5 | S: Touched by hurtful contacts, they experience hurtful feelings that are absolutely painful—like the beings in hell. | T: Touched by injurious contacts, he experiences feelings that are exclusively painful, like those of the beings in hell.
+mn57:8.6 | S: This is how a being is born from a being. | T: “Thus a being’s rearising is from a being.
+mn57:8.7 | S: For your deeds determine your rebirth, | T: One appears by means of what one does.
+mn57:8.8 | S: and when you’re reborn contacts strike you. | T: Having arisen there, contacts touch one.
+mn57:8.9 | S: This is why I say that sentient beings are heirs to their deeds. | T: Thus I tell you, Puṇṇa, that beings are the heirs to their actions.
+mn57:8.10 | S: These are called dark deeds with dark results. | T: “This is called kamma that is dark with dark result.
+mn57:9.1 | S: And what are bright deeds with bright results? | T: “And what is kamma that is bright with bright result?
+mn57:9.2 | S: It’s when someone makes pleasing choices by way of body, speech, and mind. | T: There is the case where a certain person fabricates a non-injurious bodily fabrication… a non-injurious verbal fabrication… a non-injurious mental fabrication.…
+mn57:9.3 | S: Having made these choices, they are reborn in a pleasing world, | T: He rearises in a non-injurious world.…
+mn57:9.4 | S: where pleasing contacts strike them. | T: There he is touched by non-injurious contacts.…
+mn57:9.5 | S: Touched by pleasing contacts, they experience pleasing feelings of absolute happiness—like the gods of universal beauty. | T: He experiences feelings that are exclusively pleasant, like those of the Beautiful Black Devas.
+mn57:9.6 | S: This is how a being is born from a being. | T: “Thus a being’s rearising is from a being.
+mn57:9.7 | S: For your deeds determine your rebirth, | T: One appears by means of what one does.
+mn57:9.8 | S: and when you’re reborn contacts strike you. | T: Having arisen there, contacts touch one.
+mn57:9.9 | S: This is why I say that sentient beings are heirs to their deeds. | T: Thus I tell you, Puṇṇa, that beings are the heirs to their actions.
+mn57:9.10 | S: These are called bright deeds with bright results. | T: “This is called kamma that is bright with bright result.
+mn57:10.1 | S: And what are dark and bright deeds with dark and bright results? | T: “And what is kamma that is dark & bright with dark & bright result?
+mn57:10.2 | S: It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. | T: There is the case where a certain person fabricates a bodily fabrication that is injurious & non-injurious… a verbal fabrication that is injurious & non-injurious… a mental fabrication that is injurious & non-injurious.…
+mn57:10.3 | S: Having made these choices, they are reborn in a world that is both hurtful and pleasing, | T: He rearises in an injurious & non-injurious world.…
+mn57:10.4 | S: where hurtful and pleasing contacts strike them. | T: There he is touched by injurious & non-injurious contacts.…
+mn57:10.5 | S: Touched by both hurtful and pleasing contacts, they experience both hurtful and pleasing feelings that are a mixture of pleasure and pain—like humans, some gods, and some beings in the underworld. | T: He experiences injurious & non-injurious feelings, pleasure mingled with pain, like those of human beings, some devas, and some beings in the lower realms.
+mn57:10.6 | S: This is how a being is born from a being. | T: “Thus a being’s rearising is from a being.
+mn57:10.7 | S: For what you do brings about your rebirth, | T: One appears by means of what one does.
+mn57:10.8 | S: and when you’re reborn contacts strike you. | T: Having arisen there, contacts touch one.
+mn57:10.9 | S: This is why I say that sentient beings are heirs to their deeds. | T: Thus I tell you, Puṇṇa, that beings are the heirs to their actions.
+mn57:10.10 | S: These are called dark and bright deeds with dark and bright results. | T: “This is called kamma that is dark & bright with dark & bright result.
+mn57:11.1 | S: And what are neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds? | T: “And what is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma?
+mn57:11.2 | S: It’s the intention to give up dark deeds with dark results, bright deeds with bright results, and both dark and bright deeds with both dark and bright results. | T: The intention right there to abandon this kamma that is dark with dark result, the intention right there to abandon this kamma that is bright with bright result, the intention right there to abandon this kamma that is dark & bright with dark & bright result.
+mn57:11.3 | S: These are called neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: “This is called kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+mn57:11.4 | S: These are the four kinds of deeds that I declare, having realized them with my own insight.” | T: “These, Puṇṇa, are the four types of kamma directly known, verified, & made known by me.”
+mn57:12.1 | S: When he had spoken, Puṇṇa the Koliyan said to the Buddha, | T: When this was said, Puṇṇa the Koliyan cow-practice ascetic said,
+mn57:12.2 | S: “Excellent, sir! Excellent! … | T: “Magnificent, lord! Magnificent!
+mn57:12.3 | P: Seyyathāpi, bhante …pe… | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear. I go to the Blessed One for refuge, to the Dhamma, and to the Saṅgha of monks.
+mn57:12.4 | S: From this day forth, may the Buddha remember me as a lay follower who has gone for refuge for life.” | T: May the Blessed One remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+mn57:13.1 | S: And Seniya the naked ascetic said to the Buddha, | T: But Seniya, the naked dog-practice ascetic, said,
+mn57:13.2 | S: “Excellent, sir! Excellent! … | T: “Magnificent, lord! Magnificent!
+mn57:13.3 | P: Seyyathāpi, bhante …pe… pakāsito. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear.
+mn57:13.4 | S: I go for refuge to the Buddha, to the teaching, and to the mendicant Saṅgha. | T: I go to the Blessed One for refuge, to the Dhamma, and to the Saṅgha of monks.
+mn57:13.5 | S: Sir, may I receive the going forth, the ordination in the Buddha’s presence?” | T: Let me obtain the going forth in the Blessed One’s presence, let me obtain the acceptance.”
+mn57:14.1 | S: “Seniya, if someone formerly ordained in another sect wishes to take the going forth, the ordination in this teaching and training, they must spend four months on probation. When four months have passed, if the mendicants are satisfied, they’ll give the going forth, the ordination into monkhood. | T: “Anyone, Seniya, who has previously belonged to another sect and who desires the going forth & acceptance into this Dhamma & Vinaya must first undergo probation for four months. If, at the end of four months, the monks feel so moved, they give him the going forth & accept him into the monk’s state.
+mn57:14.2 | S: However, I recognize individual differences in this matter.” | T: But I know distinctions among individuals in this matter.”
+mn57:14.3 | S: “Sir, if four months probation are required in such a case, I’ll spend four years on probation. When four years have passed, if the mendicants are satisfied, let them give me the going forth, the ordination into monkhood.” | T: “Lord, if that’s the case, I’m willing to undergo probation for four years. If, at the end of four years, the monks feel so moved, let them give me the going forth & accept me into the monk’s state.”
+mn57:15.1 | S: And the naked ascetic Seniya received the going forth, the ordination in the Buddha’s presence. | T: Then Seniya, the naked dog-practice ascetic obtained the going forth in the Blessed One’s presence, he obtained acceptance.
+mn57:15.2 | S: Not long after his ordination, Venerable Seniya, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Not long after his acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+mn57:15.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+mn57:15.4 | S: And Venerable Seniya became one of the perfected. | T: And thus Ven. Seniya became another one of the arahants.
+mn57:15.5 | P: Kukkuravatikasuttaṁ niṭṭhitaṁ sattamaṁ. | T: (none)
+
+## mn87
+mn87:1.1 | S: So I have heard. | T: I have heard that
+mn87:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn87:2.1 | S: Now at that time a certain householder’s dear and beloved only child passed away. | T: Now at that time a certain householder’s dear & beloved little son, his only child, had died.
+mn87:2.2 | S: After their death he didn’t feel like working or eating. | T: Because of his death, the father had no desire to work or to eat.
+mn87:2.3 | S: He would go to the cremation ground and wail, | T: He kept going to the cemetery and crying out,
+mn87:2.4 | S: “Where are you, my only child? Where are you, my only child?” | T: “Where have you gone, my only little child? Where have you gone, my only little child?”
+mn87:3.1 | S: Then he went to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: Then he went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him,
+mn87:3.2 | S: “Your faculties, householder, are those of one who is unstable in their own mind; there is a deterioration in your faculties.” | T: “Householder, your faculties are not those of one who is steady in his own mind. There is an aberration in your faculties.”
+mn87:3.3 | S: “And how, sir, could there be no deterioration of my faculties? | T: “Lord, how could there not be an aberration in my faculties?
+mn87:3.4 | S: For my dear and beloved only child has passed away. | T: My dear & beloved little son, my only child, has died.
+mn87:3.5 | S: Since their death I haven’t felt like working or eating. | T: Because of his death, I have no desire to work or to eat.
+mn87:3.6 | S: I go to the cremation ground and wail: | T: I keep going to the cemetery and crying out,
+mn87:3.7 | S: ‘Where are you, my only child? Where are you, my only child?’” | T: ‘Where have you gone, my only little child? Where have you gone, my only little child?’”
+mn87:3.8 | S: “That’s so true, householder! That’s so true, householder! | T: “That’s the way it is, householder. That’s the way it is—
+mn87:3.9 | S: For our loved ones are a source of sorrow, lamentation, pain, sadness, and distress.” | T: for sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.”
+mn87:3.10 | S: “Sir, who on earth could ever think such a thing! | T: “But lord, who would ever think that
+mn87:3.11 | P: ‘piyajātikā sokaparidevadukkhadomanassupāyāsā piyappabhavikā’ti? | T: sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear?
+mn87:3.12 | S: For our loved ones are a source of joy and happiness.” | T: Happiness & joy are born from one who is dear, come springing from one who is dear.”
+mn87:3.13 | S: Disagreeing with the Buddha’s statement, rejecting it, he rose from his seat and left. | T: So the householder, not delighting in the Blessed One’s words, rejecting the Blessed One’s words, got up from his seat and left.
+mn87:4.1 | S: Now at that time several gamblers were playing dice not far from the Buddha. | T: Now at that time a large number of gamblers were playing dice not far from the Blessed One.
+mn87:4.2 | S: That householder approached them and told them what had happened. | T: So the householder went to them and, on arrival, said to them,
+mn87:4.3 | P: “idhāhaṁ, bhonto, yena samaṇo gotamo tenupasaṅkamiṁ; upasaṅkamitvā samaṇaṁ gotamaṁ abhivādetvā ekamantaṁ nisīdiṁ. Ekamantaṁ nisinnaṁ kho maṁ, bhonto, samaṇo gotamo etadavoca: | T: “Just now, venerable sirs, I went to Gotama the contemplative and, on arrival, having bowed down to him, sat to one side. As I was sitting there, Gotama the contemplative said to me,
+mn87:4.4 | P: ‘na kho te, gahapati, sake citte ṭhitassa indriyāni, atthi te indriyānaṁ aññathattan’ti. | T: ‘Householder, your faculties are not those of one who is steady in his own mind. There is an aberration in your faculties.’
+mn87:4.5 | P: Evaṁ vutte, ahaṁ, bhonto, samaṇaṁ gotamaṁ etadavocaṁ: | T: “When this was said, I said to him,
+mn87:4.6 | P: ‘kiñhi me, bhante, indriyānaṁ nāññathattaṁ bhavissati; | T: ‘Lord, how could there not be an aberration in my faculties?
+mn87:4.7 | P: mayhañhi, bhante, ekaputtako piyo manāpo kālaṅkato. | T: My dear & beloved little son, my only child, has died.
+mn87:4.8 | P: Tassa kālaṅkiriyāya neva kammantā paṭibhanti, na bhattaṁ paṭibhāti. | T: Because of his death, I have no desire to work or to eat.
+mn87:4.9 | P: Sohaṁ āḷāhanaṁ gantvā kandāmi— | T: I keep going to the cemetery and crying out,
+mn87:4.10 | P: kahaṁ, ekaputtaka, kahaṁ, ekaputtakā’ti. | T: “Where have you gone, my only little child? Where have you gone, my only little child?”’
+mn87:4.11 | P: ‘Evametaṁ, gahapati, evametaṁ, gahapati. | T: “‘That’s the way it is, householder. That’s the way it is—
+mn87:4.12 | P: Piyajātikā hi, gahapati, sokaparidevadukkhadomanassupāyāsā piyappabhavikā’ti. | T: for sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.’
+mn87:4.13 | P: ‘Kassa kho nāmetaṁ, bhante, evaṁ bhavissati— | T: “‘But, lord, who would ever think that
+mn87:4.14 | P: piyajātikā sokaparidevadukkhadomanassupāyāsā piyappabhavikā? | T: sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear?
+mn87:4.15 | P: Piyajātikā hi kho, bhante, ānandasomanassā piyappabhavikā’ti. | T: Happiness & joy are born from one who is dear, come springing from one who is dear.’
+mn87:4.16 | P: Atha khvāhaṁ, bhonto, samaṇassa gotamassa bhāsitaṁ anabhinanditvā paṭikkositvā uṭṭhāyāsanā pakkamin”ti. | T: So, not delighting in the words of Gotama the contemplative, rejecting them, I got up from my seat and left.”
+mn87:4.17 | S: “That’s so true, householder! That’s so true, householder! | T: “That’s the way it is, householder (said the gamblers). That’s the way it is.
+mn87:4.18 | S: For our loved ones are a source of joy and happiness.” | T: Happiness & joy are born from one who is dear, come springing from one who is dear.”
+mn87:4.19 | S: Thinking, “The gamblers and I are in agreement,” the householder left. | T: So the householder left, thinking, “I agree with the gamblers.”
+mn87:5.1 | S: Eventually that topic of discussion reached the royal compound. | T: Eventually, word of this conversation made its way into the king’s inner chambers.
+mn87:5.2 | S: Then King Pasenadi addressed Queen Mallikā, | T: Then King Pasenadi Kosala addressed Queen Mallikā,
+mn87:5.3 | S: “Mallikā, your ascetic Gotama said this: | T: “Mallikā, your contemplative, Gotama, has said this:
+mn87:5.4 | S: ‘Our loved ones are a source of sorrow, lamentation, pain, sadness, and distress.’” | T: ‘Sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.’”
+mn87:5.5 | S: “If that’s what the Buddha said, Great King, then that’s how it is.” | T: “If that was said by the Blessed One, great king, then that’s the way it is.”
+mn87:5.6 | S: “No matter what the ascetic Gotama says, Mallikā agrees with him: | T: “No matter what Gotama the contemplative says, Mallikā endorses it:
+mn87:5.7 | S: ‘If that’s what the Buddha said, Great King, then that’s how it is.’ | T: ‘If that was said by the Blessed One, great king, then that’s the way it is.’
+mn87:5.8 | S: You’re just like a pupil who agrees with everything their tutor says. | T: Just as, no matter what his teacher says, a pupil endorses it:
+mn87:5.9 | P: ‘evametaṁ, ācariya, evametaṁ, ācariyā’ti. | T: ‘That’s the way it is, teacher. That’s the way it is.’
+mn87:5.10 | P: Evameva kho tvaṁ, mallike, yaññadeva samaṇo gotamo bhāsati taṁ tadevassa abbhanumodasi: | T: In the same way, no matter what Gotama the contemplative says, Mallikā endorses it:
+mn87:5.11 | P: ‘Sacetaṁ, mahārāja, bhagavatā bhāsitaṁ evametan’ti. | T: ‘If that was said by the Blessed One, great king, then that’s the way it is.’
+mn87:5.12 | S: Go away, Mallikā, get out of here!” | T: Go away, Mallikā! Out of my sight!”
+mn87:6.1 | S: Then Queen Mallikā addressed the brahmin Nāḷijaṅgha, | T: Then Queen Mallikā called for the brahman Nāḷijaṅgha:
+mn87:6.2 | S: “Please, brahmin, go to the Buddha, and in my name bow with your head to his feet. Ask him if he is healthy and well, nimble, strong, and living comfortably. | T: “Come, brahman. Go to the Blessed One and, on arrival, showing reverence with your head to his feet in my name, ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, saying:
+mn87:6.3 | P: ‘mallikā, bhante, devī bhagavato pāde sirasā vandati, appābādhaṁ appātaṅkaṁ lahuṭṭhānaṁ balaṁ phāsuvihāraṁ pucchatī’ti; | T: ‘Queen Mallikā, lord, shows reverence with her head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.’
+mn87:6.4 | S: And then say: | T: And then say:
+mn87:6.5 | S: ‘Sir, did the Buddha make this statement: | T: ‘Lord, did the Blessed One say that sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear?’
+mn87:6.6 | S: “Our loved ones are a source of sorrow, lamentation, pain, sadness, and distress”?’ | T: (none)
+mn87:6.7 | S: Remember well how the Buddha answers and tell it to me. | T: Whatever the Blessed One says, remember it well and tell it to me—
+mn87:6.8 | S: For Realized Ones say nothing that is not so.” | T: for Tathāgatas do not speak untruthfully.”
+mn87:6.9 | S: “Yes, ma’am,” he replied. He went to the Buddha and exchanged greetings with him. | T: “Yes, madam,” the brahman Nāḷijaṅgha responded to Queen Mallikā. Going to the Blessed One, on arrival he exchanged courteous greetings with the Blessed One.
+mn87:6.10 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One:
+mn87:6.11 | S: “Worthy Gotama, Queen Mallikā bows with her head to your feet. She asks if you are healthy and well, nimble, strong, and living comfortably. | T: “Master Gotama, Queen Mallikā shows reverence with her head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.
+mn87:6.12 | S: And she asks whether | T: And she says further:
+mn87:6.13 | S: the Buddha made this statement: | T: ‘Lord, did the Blessed One say that
+mn87:6.14 | S: ‘Our loved ones are a source of sorrow, lamentation, pain, sadness, and distress.’” | T: sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear?’”
+mn87:7.1 | S: “That’s right, brahmin, that’s right! | T: “That’s the way it is, brahman. That’s the way it is.
+mn87:7.2 | S: For our loved ones are a source of sorrow, lamentation, pain, sadness, and distress. | T: Sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:8.1 | S: And here’s a way to understand how our loved ones are a source of sorrow, lamentation, pain, sadness, and distress. | T: And it’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:8.2 | S: Once upon a time right here in Sāvatthī a certain woman’s mother passed away. | T: “Once in this same Sāvatthī there was a woman whose mother died.
+mn87:8.3 | S: And because of that she went mad and lost her mind. She went from street to street and from square to square saying, | T: Owing to her mother’s death she went mad, out of her mind, and wandering from street to street, crossroads to crossroads, would say,
+mn87:8.4 | S: ‘Has anyone seen my mother? Has anyone seen my mother?’ | T: ‘Have you seen my mother? Have you seen my mother?’
+mn87:9-14.1 | S: And here’s another way to understand how our loved ones are a source of sorrow, lamentation, pain, sadness, and distress. | T: It’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:9-14.2 | S: Once upon a time right here in Sāvatthī a certain woman’s father … | T: “Once in this same Sāvatthī there was a woman whose father died…
+mn87:9-14.3 | S: brother … | T: whose brother died…
+mn87:9-14.4 | S: sister … | T: whose sister died…
+mn87:9-14.5 | S: son … | T: whose son died…
+mn87:9-14.6 | S: daughter … | T: whose daughter died…
+mn87:9-14.7 | S: husband passed away. | T: whose husband died.
+mn87:9-14.8 | S: And because of that she went mad and lost her mind. She went from street to street and from square to square saying, | T: Owing to his death she went mad, out of her mind, and wandering from street to street, crossroads to crossroads, would say,
+mn87:9-14.9 | S: ‘Has anyone seen my husband? Has anyone seen my husband?’ | T: ‘Have you seen my husband? Have you seen my husband?’
+mn87:15-21.1 | S: And here’s another way to understand how our loved ones are a source of sorrow, lamentation, pain, sadness, and distress. | T: It’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:15-21.2 | S: Once upon a time right here in Sāvatthī a certain man’s mother … | T: “Once in this same Sāvatthī there was a man whose mother died.
+mn87:15-21.3 | P: So tassā kālakiriyāya ummattako khittacitto rathikāya rathikaṁ siṅghāṭakena siṅghāṭakaṁ upasaṅkamitvā evamāha: | T: Owing to her death he went mad, out of his mind, and wandering from street to street, crossroads to crossroads, would say,
+mn87:15-21.4 | P: ‘api me mātaraṁ addassatha, api me mātaraṁ addassathā’ti? | T: ‘Have you seen my mother? Have you seen my mother?’
+mn87:15-21.5 | P: Imināpi kho etaṁ, brāhmaṇa, pariyāyena veditabbaṁ yathā piyajātikā sokaparidevadukkhadomanassupāyāsā piyappabhavikāti. | T: It’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:15-21.6 | S: father … | T: “Once in this same Sāvatthī there was a man whose father died…
+mn87:15-21.7 | S: brother … | T: whose brother died…
+mn87:15-21.8 | S: sister … | T: whose sister died…
+mn87:15-21.9 | S: son … | T: whose son died…
+mn87:15-21.10 | S: daughter … | T: whose daughter died…
+mn87:15-21.11 | S: wife passed away. | T: whose wife died.
+mn87:15-21.12 | S: And because of that he went mad and lost his mind. He went from street to street and from square to square saying, | T: Owing to her death he went mad, out of his mind, and wandering from street to street, crossroads to crossroads, would say,
+mn87:15-21.13 | S: ‘Has anyone seen my wife? Has anyone seen my wife?’ | T: ‘Have you seen my wife? Have you seen my wife?’
+mn87:15-21.14 | S: And here’s another way to understand how our loved ones are a source of sorrow, lamentation, pain, sadness, and distress. | T: It’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.
+mn87:22.1 | S: Once upon a time right here in Sāvatthī a certain woman went to live with her relative’s family. | T: “Once in this same Sāvatthī there was a wife who went to her relatives’ home.
+mn87:22.2 | S: But her relatives wanted to divorce her from her husband and give her to another, | T: Her relatives, having separated her from her husband, wanted to give her to another against her will.
+mn87:22.3 | S: who she didn’t want. | T: (none)
+mn87:22.4 | S: So she told her husband about this. | T: So she said to her husband,
+mn87:22.5 | P: ‘ime, maṁ, ayyaputta, ñātakā tvaṁ acchinditvā aññassa dātukāmā. | T: ‘These relatives of mine, having separated us, want to give me to another against my will,’
+mn87:22.6 | P: Ahañca taṁ na icchāmī’ti. | T: (none)
+mn87:22.7 | S: But he cut her in two and disemboweled himself, thinking, | T: whereupon he cut her in two and slashed himself open, thinking,
+mn87:22.8 | S: ‘We shall be together after death.’ | T: ‘Dead we will be together.’
+mn87:22.9 | S: That’s another way to understand how our loved ones are a source of sorrow, lamentation, pain, sadness, and distress.” | T: It’s through this line of reasoning that it may be understood how sorrow, lamentation, pain, distress, & despair are born from one who is dear, come springing from one who is dear.”
+mn87:23.1 | S: Then Nāḷijaṅgha the brahmin, having approved and agreed with what the Buddha said, rose from his seat, went to Queen Mallikā, and told her of all they had discussed. Then Queen Mallikā approached King Pasenadi and said to him, | T: Then the brahman Nāḷijaṅgha, delighting in & approving of the Blessed One’s words, got up from his seat and went to Queen Mallikā. On arrival, he told her all that had been said in his conversation with the Blessed One. Then Queen Mallikā went to King Pasenadi Kosala and on arrival said to him,
+mn87:24.1 | S: “What do you think, Great King? | T: “What do you think, great king?

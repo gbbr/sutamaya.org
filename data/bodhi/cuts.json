@@ -289,7 +289,8 @@
  "an8.9:3.3": " in eating: Here, reflecting carefully,",
  "dn1:1.4.7": "s friends, how the Exalted One, he who knows and sees, the Worthy One, the perfectly enlightened Buddha, has so thoroughly penetrated the diversity in the dispositions of beings. For this wanderer Suppiya spoke in many ways in dispraise of the Buddha, the Dhamma, and the Sangha,",
  "dn1:1.9.8": {
-  "empty": "down"
+  "after": " definite and connected with the good.’",
+  "placed": true
  },
  "dn1:1.11.3": "m roots, stems, joints, buds, and seeds—",
  "dn1:1.22.2": {
@@ -1525,7 +1526,8 @@
  "mn63:4.17": "are to me “the world is eternal”…or “after death a Tathāgata neither exists nor does not exist”’?”—“No, venerable sir.”—",
  "mn63:6.2": "ternal,’ the holy life cannot be lived;",
  "mn63:6.14": {
-  "empty": "down"
+  "after": "her,’…‘after death a Tathāgata exists,’…",
+  "placed": true
  },
  "mn63:6.17": {
   "after": " exist,’ the holy life cannot be lived…",
@@ -3263,11 +3265,13 @@
  "mn32:11.9": "able sir, the venerable Ānanda replied:",
  "mn32:12.7": "ood?’ And the venerable Revata replied:",
  "mn32:13.3": {
-  "empty": "down"
+  "after": "rable Anuruddha thus: ‘Friend Anuruddha…",
+  "placed": true
  },
  "mn32:13.9": "ood, good, Sāriputta. Anuruddha, speaking rightly, should speak just as he did.",
  "mn32:15.4": {
-  "empty": "up"
+  "after": "ahā Moggallāna thus: ‘Friend Moggallāna…",
+  "placed": true
  },
  "mn32:16.2": "e Mahā Moggallāna told the Blessed One:",
  "mn32:16.8": "?’ And the venerable Sāriputta replied:",
@@ -9756,7 +9760,7 @@
   "empty": "up"
  },
  "mn64:10-12.3": {
-  "after": "n and abides in the third jhāna…Again,a",
+  "after": "ters upon and abides in the third jhāna…",
   "placed": true,
   "own": true
  },
@@ -16606,12 +16610,13 @@
   "own": true
  },
  "mn108:27.3": {
-  "after": "lling of applied and sustained thought,",
+  "after": "ters upon and abides in the first jhāna…",
   "placed": true,
   "own": true
  },
  "mn108:27.4": {
-  "empty": "up"
+  "after": "ers upon and abides in the second jhāna…",
+  "placed": true
  },
  "mn11:10.7": {
   "empty": "up"
@@ -16622,7 +16627,8 @@
   "own": true
  },
  "mn11:11.3": {
-  "empty": "up"
+  "after": "es and observances, and clinging to a doctrine of self.\n“Though certain recluses and brahmins claim to propound the full understanding of all kinds of clinging…",
+  "placed": true
  },
  "mn11:11.4": {
   "after": "scribe the full understanding of clinging to sensual pleasures and clinging to views without describing the full understanding of clinging to rules and observances and clinging to a doctrine of self.",
@@ -16661,7 +16667,8 @@
   "own": true
  },
  "mn11:16.5": {
-  "empty": "up"
+  "after": "rce…? Craving has feeling as its source…",
+  "placed": true
  },
  "mn11:16.6": {
   "after": "source…Feeling has what as its source…?",
@@ -16669,7 +16676,8 @@
   "own": true
  },
  "mn11:16.7": {
-  "empty": "up"
+  "after": "rce…? Feeling has contact as its source…",
+  "placed": true
  },
  "mn11:16.8": {
   "after": "source…Contact has what as its source…?",
@@ -16677,7 +16685,8 @@
   "own": true
  },
  "mn11:16.9": {
-  "empty": "up"
+  "after": "tact has the sixfold base as its source…",
+  "placed": true
  },
  "mn11:16.10": {
   "after": "e sixfold base has what as its source…?",
@@ -16685,7 +16694,8 @@
   "own": true
  },
  "mn11:16.11": {
-  "empty": "up"
+  "after": "has mentality-materiality as its source…",
+  "placed": true
  },
  "mn11:16.12": {
   "after": "ty-materiality has what as its source…?",
@@ -16693,7 +16703,8 @@
   "own": true
  },
  "mn11:16.13": {
-  "empty": "up"
+  "after": "riality has consciousness as its source…",
+  "placed": true
  },
  "mn11:16.14": {
   "after": "…Consciousness has what as its source…?",
@@ -16701,10 +16712,11 @@
   "own": true
  },
  "mn11:16.15": {
-  "empty": "down"
+  "after": "sciousness has formations as its source…",
+  "placed": true
  },
  "mn117:35.9": {
-  "after": "s abolished…In one of right livelihood,",
+  "after": "right action, wrong action is abolished…",
   "placed": true,
   "own": true
  },
@@ -16713,12 +16725,12 @@
   "placed": true
  },
  "mn117:35.12": {
-  "after": "bolished…In one of right concentration,",
+  "after": "fulness, wrong mindfulness is abolished…",
   "placed": true,
   "own": true
  },
  "mn117:35.13": {
-  "after": "is abolished…In one of right knowledge,",
+  "after": "ation, wrong concentration is abolished…",
   "placed": true
  },
  "mn117:37.3": {
@@ -16736,10 +16748,11 @@
   "own": true
  },
  "mn117:37.8": {
-  "empty": "up"
+  "after": "ht action…right livelihood…right effort…",
+  "placed": true
  },
  "mn135:8.3": {
-  "after": "solution of the body, after death, he reappears in a happy destination…But if instead he comes back to the human state,",
+  "after": "th, he reappears in a happy destination…",
   "placed": true
  },
  "mn140:21.6": {
@@ -16748,10 +16761,12 @@
   "own": true
  },
  "mn140:21.8": {
-  "empty": "up"
+  "after": "sciousness… …to the base of nothingness…",
+  "placed": true
  },
  "mn140:22.6": {
-  "empty": "up"
+  "after": "ould be conditioned. If I were to direct this equanimity, so purified and bright, to the base of infinite consciousness…",
+  "placed": true
  },
  "mn147:2.9": {
   "after": "manent?” —“Impermanent, venerable sir.”—",
@@ -16797,7 +16812,8 @@
   "empty": "up"
  },
  "mn147:3.10": {
-  "empty": "up"
+  "after": "”\n“Rāhula, what do you think? Are forms…",
+  "placed": true
  },
  "mn147:3.18": {
   "after": "think? Are forms…Is eye-consciousness …",
@@ -16805,7 +16821,8 @@
   "own": true
  },
  "mn147:3.26": {
-  "empty": "up"
+  "after": "…Is eye-consciousness … …Is eye-contact…",
+  "placed": true
  },
  "mn147:3.27": {
   "after": "nsciousness that arise with eye-contact as condition permanent or impermanent?”—",
@@ -16843,7 +16860,8 @@
   "own": true
  },
  "mn147:4-8.5": {
-  "empty": "up"
+  "after": "?…Is the nose permanent or impermanent?…",
+  "placed": true
  },
  "mn147:4-8.10": {
   "empty": "up"
@@ -16876,7 +16894,8 @@
   "empty": "up"
  },
  "mn147:4-8.38": {
-  "empty": "up"
+  "after": "s…Is mind-consciousness…Is mind-contact…",
+  "placed": true
  },
  "mn148:10.28": {
   "after": "elf.\n“If anyone says, ‘Feeling is self’",
@@ -16884,7 +16903,8 @@
   "own": true
  },
  "mn149:4-7.4": {
-  "empty": "up"
+  "after": "ow and see the tongue as it actually is…",
+  "placed": true
  },
  "mn149:4-7.5": {
   "after": "now and see the body as it actually is…",
@@ -16895,7 +16915,7 @@
   "empty": "up"
  },
  "mn2:12.10": {
-  "after": "e mind faculty restrained…While taints,",
+  "after": "rained…with the mind faculty restrained…",
   "placed": true,
   "own": true
  },
@@ -16910,7 +16930,8 @@
   "empty": "up"
  },
  "mn27:7.10": {
-  "empty": "up"
+  "after": "ertain learned recluses who were clever…",
+  "placed": true
  },
  "mn29:6.11": {
   "after": "not fulfilled…When he is diligent, he achieves the attainment of concentration.",
@@ -16918,7 +16939,7 @@
   "own": true
  },
  "mn29:6.13": {
-  "after": "nment of concentration, but his intention is not fulfilled…When he is diligent,",
+  "after": "ion, but his intention is not fulfilled…",
   "placed": true
  },
  "mn31:22.3": {
@@ -16946,10 +16967,12 @@
   "placed": true
  },
  "mn32:11.11": {
-  "empty": "up"
+  "after": "ta, a bhikkhu has learned much…as in §4…",
+  "placed": true
  },
  "mn32:12.8": {
-  "empty": "up"
+  "after": "elights in solitary meditation…as in §5…",
+  "placed": true
  },
  "mn32:13.2": {
   "after": "”\n“When that was said, venerable sir, I addressed the venerable Anuruddha thus:",
@@ -16969,7 +16992,8 @@
   "placed": true
  },
  "mn32:14.4": {
-  "empty": "up"
+  "after": "able Mahā Kassapa thus: ‘Friend Kassapa…",
+  "placed": true
  },
  "mn32:14.5": {
   "after": "end Kassapa…What kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood?’",
@@ -16980,7 +17004,8 @@
   "placed": true
  },
  "mn32:14.7": {
-  "empty": "up"
+  "after": "hu is a forest-dweller himself…as in §7…",
+  "placed": true
  },
  "mn32:15.2": {
   "after": "n this was said, venerable sir, I addressed the venerable Mahā Moggallāna thus:",
@@ -17000,7 +17025,8 @@
   "placed": true
  },
  "mn36:48.8": {
-  "empty": "up"
+  "after": "Master Gotama, engaging Makkhali Gosāla…",
+  "placed": true
  },
  "mn38:16.2": {
   "after": "s, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?",
@@ -17078,10 +17104,12 @@
   "own": true
  },
  "mn63:3.32": {
-  "empty": "up"
+  "after": "ld is finite,’…‘the world is infinite,’…",
+  "placed": true
  },
  "mn63:3.39": {
-  "empty": "down"
+  "after": " is finite,’…‘the world is infinite,’…‘the soul is the same as the body,’…‘the soul is one thing and the body another,’…",
+  "placed": true
  },
  "mn63:3.41": {
   "after": "e,’…‘the soul is the same as the body,’…‘the soul is one thing and the body another,’…‘after death a Tathāgata exists,’",
@@ -17093,25 +17121,28 @@
   "own": true
  },
  "mn63:5.17": {
-  "empty": "up"
+  "after": "me was dark or brown or golden-skinned;…",
+  "placed": true
  },
  "mn63:5.27": {
-  "after": "new the shaft that wounded me was bound—",
+  "after": "eron or a hawk or a peacock or a stork;…",
   "placed": true,
   "own": true
  },
  "mn63:5.29": {
-  "after": "ind of arrowhead it was that wounded me—",
+  "after": " ox or a buffalo or a deer or a monkey;…",
   "placed": true
  },
  "mn63:6.6": {
-  "empty": "up"
+  "after": "here is the view ‘the world is finite,’…",
+  "placed": true
  },
  "mn63:6.13": {
-  "empty": "up"
+  "after": "is finite,’…‘the world is infinite, ’…‘the soul is the same as the body,’…‘the soul is one thing and the body another,’…",
+  "placed": true
  },
  "mn64:10-12.2": {
-  "after": "n and abides in the second jhāna…Again,",
+  "after": "ers upon and abides in the second jhāna…",
   "placed": true
  },
  "mn75:10.2": {
@@ -17128,7 +17159,8 @@
   "own": true
  },
  "mn77:6.37": {
-  "empty": "up"
+  "after": "his Dhamma.’\n“And some said this: ‘This Makkhali Gosāla…this Ajita Kesakambalin…",
+  "placed": true
  },
  "mn77:18.3": {
   "after": "hu develops the faculty of faith, which leads to peace, leads to enlightenment.",
@@ -17141,7 +17173,7 @@
   "own": true
  },
  "mn77:18.6": {
-  "after": "of concentration…the faculty of wisdom,",
+  "after": "ndfulness… the faculty of concentration…",
   "placed": true
  },
  "mn77:20.3": {
@@ -17150,7 +17182,8 @@
   "own": true
  },
  "mn77:20.5": {
-  "empty": "up"
+  "after": " factor…the energy enlightenment factor…",
+  "placed": true
  },
  "mn77:20.7": {
   "after": "…the tranquillity enlightenment factor…",
@@ -17163,7 +17196,8 @@
   "own": true
  },
  "mn77:24.4": {
-  "empty": "up"
+  "after": ". Another contemplates the water-kasiṇa…",
+  "placed": true
  },
  "sn1.20:4.2": {
   "after": "arth and said to the Venerable Samiddhi:",
@@ -18382,7 +18416,7 @@
   "own": true
  },
  "dn1:1.10.1": {
-  "after": " definite and connected with the good.’",
+  "after": "ected with the good.’\n“Or he might say:",
   "placed": true
  },
  "dn1:3.58.1": {
@@ -18552,7 +18586,7 @@
   "own": true
  },
  "mn135:17.9": {
-  "after": " way, student, that leads to stupidity,",
+  "after": "udent, that leads to stupidity, namely,",
   "placed": true,
   "own": true
  },
@@ -18997,17 +19031,17 @@
   "placed": true
  },
  "mn9:22.10": {
-  "after": "eath is just this Noble Eightfold Path;",
+  "after": "o the cessation of ageing and death is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:26.5": {
-  "after": "irth is just this Noble Eightfold Path;",
+  "after": "y leading to the cessation of birth is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:38.5": {
-  "after": "ving is just this Noble Eightfold Path;",
+  "after": "leading to the cessation of craving is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
@@ -20988,27 +21022,27 @@
   "own": true
  },
  "mn9:42.5": {
-  "after": "ling is just this Noble Eightfold Path;",
+  "after": "leading to the cessation of feeling is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:46.5": {
-  "after": "tact is just this Noble Eightfold Path;",
+  "after": "leading to the cessation of contact is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:50.5": {
-  "after": "base is just this Noble Eightfold Path;",
+  "after": "o the cessation of the sixfold base is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:58.5": {
-  "after": "ness is just this Noble Eightfold Path;",
+  "after": "g to the cessation of consciousness is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
  "mn9:66.2": {
-  "after": "ance is just this Noble Eightfold Path;",
+  "after": "ading to the cessation of ignorance is just this Noble Eightfold Path; that is,",
   "placed": true,
   "own": true
  },
@@ -21036,5 +21070,121 @@
   "after": "its a teacher, one pays respect to him.",
   "placed": true,
   "own": true
+ },
+ "mn108:4.3": {
+  "after": "venerable Ānanda coming in the distance",
+  "placed": true,
+  "own": true
+ },
+ "mn108:24.4": {
+  "after": "d venerate one who should be venerated,",
+  "placed": true,
+  "own": true
+ },
+ "mn104:20.13": {
+  "after": "er with grass. And so there comes to be the settlement of some litigations here",
+  "placed": true,
+  "own": true
+ },
+ "mn60:34.10": {
+  "after": " cessation of being,” if their word is true then it is certainly still possible",
+  "placed": true,
+  "own": true
+ },
+ "mn60:34.12": {
+  "after": " perception. But as to the recluses and brahmins who hold the doctrine and view",
+  "placed": true
+ },
+ "mn70:18.6": {
+  "after": "erson is called one attained-to-view. I say of such a bhikkhu that he still has work to do with diligence. Why is that?",
+  "placed": true,
+  "own": true
+ },
+ "mn70:19.6": {
+  "after": "son is called one liberated-by-faith. I say of such a bhikkhu that he still has work to do with diligence. Why is that?",
+  "placed": true,
+  "own": true
+ },
+ "mn70:20.7": {
+  "after": "f person is called a Dhamma-follower. I say of such a bhikkhu that he still has work to do with diligence. Why is that?",
+  "placed": true,
+  "own": true
+ },
+ "mn19:6.3": {
+  "after": "inclines to thoughts of sensual desire.",
+  "placed": true,
+  "own": true
+ },
+ "mn19:6.4": {
+  "after": "s and ponders upon thoughts of ill will…",
+  "placed": true
+ },
+ "mn19:8.6": {
+  "after": "ood thus: ‘This thought of renunciation has arisen in me. This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna. If I think and ponder upon this thought even for a night,",
+  "placed": true,
+  "own": true
+ },
+ "mn19:8.7": {
+  "after": "thought of renunciation has arisen in me. This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna. If I think and ponder upon this thought even for a night, even for a day,",
+  "placed": true
+ },
+ "mn19:9-10.7": {
+  "after": "tood thus: ‘This thought of non-cruelty has arisen in me. This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna. If I think and ponder upon this thought even for a night,",
+  "placed": true,
+  "own": true
+ },
+ "mn19:9-10.8": {
+  "after": " thought of non-cruelty has arisen in me. This does not lead to my own affliction, or to others’ affliction, or to the affliction of both; it aids wisdom, does not cause difficulties, and leads to Nibbāna. If I think and ponder upon this thought even for a night, even for a day,",
+  "placed": true
+ },
+ "mn19:11.3": {
+  "after": "d inclines to thoughts of renunciation.",
+  "placed": true,
+  "own": true
+ },
+ "mn19:11.4": {
+  "after": "d ponders upon thoughts of non-ill will…",
+  "placed": true
+ },
+ "mn27:2.3": {
+  "after": "anderer Pilotika coming in the distance",
+  "placed": true,
+  "own": true
+ },
+ "mn36:20.4": {
+  "after": "onstrained, and crushed mind with mind.",
+  "placed": true
+ },
+ "mn36:28.4": {
+  "after": " soup.’ So I took very little food, a handful each time, whether of bean soup or lentil soup or vetch soup or pea soup.",
+  "placed": true
+ },
+ "mn65:18.2": {
+  "after": "llection of past lives…as Sutta 51, §24…",
+  "placed": true
+ },
+ "dn15:25.3": {
+  "after": "ing self as having material form and as limited, one does not describe it thus:",
+  "placed": true,
+  "own": true
+ },
+ "dn15:25.5": {
+  "after": "ng self as having material form and as infinite, one does not describe it thus:",
+  "placed": true,
+  "own": true
+ },
+ "dn15:25.7": {
+  "after": "r not describing self as immaterial and limited, one does not describe it thus:",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.19.4": {
+  "after": "rom running such messages and errands.’",
+  "placed": true,
+  "own": true
+ },
+ "dn1:1.20.1": {
+  "after": "essages and errands.’\n“Or he might say:",
+  "placed": true
  }
 }

@@ -1,0 +1,494 @@
+## mn1
+mn1:1.1 | S: So I have heard. | T: I have heard that
+mn1:1.2 | S: At one time the Buddha was staying near Ukkaṭṭhā in the Subhaga Forest at the root of a magnificent sal tree. | T: on one occasion the Blessed One was staying near Ukkaṭṭhā, in the shade of a royal Sal tree in the Very Blessed Forest.
+mn1:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn1:1.4 | S: “Mendicants!” | T: “Monks!”
+mn1:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn1:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn1:2.1 | S: “Mendicants, I will teach you the explanation of the root of all things. | T: “Monks, I will teach you the sequence of the root of all phenomena [or: the root sequence of all phenomena].
+mn1:2.2 | S: Listen and apply your minds well, I will speak.” | T: Listen & pay close attention. I will speak.”
+mn1:2.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” they responded to him.
+mn1:2.4 | S: The Buddha said this: | T: The Blessed One said:
+mn1:3.1 | S: “Take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “There is the case, monks, where an uninstructed run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+mn1:3.2 | S: They perceive earth as earth. | T: perceives earth as earth.
+mn1:3.3 | S: Having perceived earth as earth, they conceive it to be earth, they conceive it in earth, they conceive it as earth, they conceive that ‘earth is mine’, they approve earth. | T: Perceiving earth as earth, he supposes (things) about earth, he supposes (things) in earth, he supposes (things) coming out of earth, he supposes earth as ‘mine,’ he delights in earth.
+mn1:3.4 | S: Why is that? | T: Why is that?
+mn1:3.5 | S: Because they haven’t completely understood it, I say. | T: Because he has not comprehended it, I tell you.
+mn1:4.1 | S: They perceive water as water. | T: “He perceives water as water…
+mn1:4.2 | S: Having perceived water as water, they conceive it to be water … | T: (none)
+mn1:4.3 | S: Why is that? | T: (none)
+mn1:4.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:5.1 | S: They perceive fire as fire. | T: fire as fire…
+mn1:5.2 | S: Having perceived fire as fire, they conceive it to be fire … | T: (none)
+mn1:5.3 | S: Why is that? | T: (none)
+mn1:5.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:6.1 | S: They perceive air as air. | T: wind as wind…
+mn1:6.2 | S: Having perceived air as air, they conceive it to be air … | T: (none)
+mn1:6.3 | S: Why is that? | T: (none)
+mn1:6.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:7.1 | S: They perceive creatures as creatures. | T: beings as beings…
+mn1:7.2 | S: Having perceived creatures as creatures, they conceive them to be creatures … | T: (none)
+mn1:7.3 | S: Why is that? | T: (none)
+mn1:7.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:8.1 | S: They perceive gods as gods. | T: devas as devas…
+mn1:8.2 | S: Having perceived gods as gods, they conceive them to be gods … | T: (none)
+mn1:8.3 | S: Why is that? | T: (none)
+mn1:8.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:9.1 | S: They perceive the Progenitor as the Progenitor. | T: Pajāpati as Pajāpati…
+mn1:9.2 | S: Having perceived the Progenitor as the Progenitor, they conceive him to be the Progenitor … | T: (none)
+mn1:9.3 | S: Why is that? | T: (none)
+mn1:9.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:10.1 | S: They perceive the Divinity as the Divinity. | T: Brahmā as Brahmā…
+mn1:10.2 | S: Having perceived the Divinity as the Divinity, they conceive him to be the Divinity … | T: (none)
+mn1:10.3 | S: Why is that? | T: (none)
+mn1:10.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:11.1 | S: They perceive those of sublime luminosity as those of sublime luminosity. | T: the Radiant devas as Radiant devas…
+mn1:11.2 | S: Having perceived those of sublime luminosity as those of sublime luminosity, they conceive them to be those of sublime luminosity … | T: (none)
+mn1:11.3 | S: Why is that? | T: (none)
+mn1:11.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:12.1 | S: They perceive those of universal beauty as those of universal beauty. | T: the Beautiful Black devas as Beautiful Black devas…
+mn1:12.2 | S: But then they conceive them to be those of universal beauty … | T: (none)
+mn1:12.3 | S: Why is that? | T: (none)
+mn1:12.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:13.1 | S: They perceive those of abundant fruit as those of abundant fruit. | T: the Sky-fruit devas as Sky-fruit devas…
+mn1:13.2 | S: Having perceived those of abundant fruit as those of abundant fruit, they conceive them to be those of abundant fruit … | T: (none)
+mn1:13.3 | S: Why is that? | T: (none)
+mn1:13.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:14.1 | S: They perceive the Vanquisher as the Vanquisher. | T: the Conqueror as the Conqueror…
+mn1:14.2 | S: Having perceived the Vanquisher as the Vanquisher, they conceive him to be the Vanquisher … | T: (none)
+mn1:14.3 | S: Why is that? | T: (none)
+mn1:14.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:15.1 | S: They perceive the dimension of infinite space as the dimension of infinite space. | T: the dimension of the infinitude of space as the dimension of the infinitude of space…
+mn1:15.2 | S: Having perceived the dimension of infinite space as the dimension of infinite space, they conceive it to be the dimension of infinite space … | T: (none)
+mn1:15.3 | S: Why is that? | T: (none)
+mn1:15.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:16.1 | S: They perceive the dimension of infinite consciousness as the dimension of infinite consciousness. | T: the dimension of the infinitude of consciousness as the dimension of the infinitude of consciousness…
+mn1:16.2 | S: Having perceived the dimension of infinite consciousness as the dimension of infinite consciousness, they conceive it to be the dimension of infinite consciousness … | T: (none)
+mn1:16.3 | S: Why is that? | T: (none)
+mn1:16.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:17.1 | S: They perceive the dimension of nothingness as the dimension of nothingness. | T: the dimension of nothingness as the dimension of nothingness…
+mn1:17.2 | S: Having perceived the dimension of nothingness as the dimension of nothingness, they conceive it to be the dimension of nothingness … | T: (none)
+mn1:17.3 | S: Why is that? | T: (none)
+mn1:17.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:18.1 | S: They perceive the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception. | T: the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception…
+mn1:18.2 | S: Having perceived the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception, they conceive it to be the dimension of neither perception nor non-perception … | T: (none)
+mn1:18.3 | S: Why is that? | T: (none)
+mn1:18.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:19.1 | S: They perceive the seen as the seen. | T: the seen as the seen…
+mn1:19.2 | S: Having perceived the seen as the seen, they conceive it to be the seen … | T: (none)
+mn1:19.3 | S: Why is that? | T: (none)
+mn1:19.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:20.1 | S: They perceive the heard as the heard. | T: the heard as the heard…
+mn1:20.2 | S: Having perceived the heard as the heard, they conceive it to be the heard … | T: (none)
+mn1:20.3 | S: Why is that? | T: (none)
+mn1:20.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:21.1 | S: They perceive the thought as the thought. | T: the sensed as the sensed…
+mn1:21.2 | S: Having perceived the thought as the thought, they conceive it to be the thought … | T: (none)
+mn1:21.3 | S: Why is that? | T: (none)
+mn1:21.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:22.1 | S: They perceive the known as the known. | T: the cognized as the cognized…
+mn1:22.2 | S: Having perceived the known as the known, they conceive it to be the known … | T: (none)
+mn1:22.3 | S: Why is that? | T: (none)
+mn1:22.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:23.1 | S: They perceive oneness as oneness. | T: singleness as singleness…
+mn1:23.2 | S: Having perceived oneness as oneness, they conceive it to be oneness … | T: (none)
+mn1:23.3 | S: Why is that? | T: (none)
+mn1:23.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:24.1 | S: They perceive diversity as diversity. | T: multiplicity as multiplicity…
+mn1:24.2 | S: Having perceived diversity as diversity, they conceive it to be diversity … | T: (none)
+mn1:24.3 | S: Why is that? | T: (none)
+mn1:24.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:25.1 | S: They perceive all as all. | T: the All as the All…
+mn1:25.2 | S: Having perceived all as all, they conceive it to be all … | T: (none)
+mn1:25.3 | S: Why is that? | T: (none)
+mn1:25.4 | S: Because they haven’t completely understood it, I say. | T: (none)
+mn1:26.1 | S: They perceive extinguishment as extinguishment. | T: “He perceives unbinding as unbinding.
+mn1:26.2 | S: Having perceived extinguishment as extinguishment, they conceive it to be extinguishment, they conceive it in extinguishment, they conceive it as extinguishment, they conceive that ‘extinguishment is mine’, they approve extinguishment. | T: Perceiving unbinding as unbinding, he supposes things about unbinding, he supposes things in unbinding, he supposes things coming out of unbinding, he supposes unbinding as ‘mine,’ he delights in unbinding.
+mn1:26.3 | S: Why is that? | T: Why is that?
+mn1:26.4 | S: Because they haven’t completely understood it, I say. | T: Because he has not comprehended it, I tell you.
+mn1:26.5 | P: Puthujjanavasena paṭhamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:27.1 | S: A mendicant who is a trainee, who hasn’t achieved their heart’s desire, but lives aspiring to the supreme sanctuary from the yoke, directly knows earth as earth. | T: The Trainee “A monk who is a trainee—yearning for the unexcelled relief from bondage, his aspirations as yet unfulfilled—directly knows earth as earth.
+mn1:27.2 | S: Having directly known earth as earth, let them not conceive it to be earth, let them not conceive it in earth, let them not conceive it as earth, let them not conceive that ‘earth is mine’, let them not approve earth. | T: Directly knowing earth as earth, let him not suppose things about earth, let him not suppose things in earth, let him not suppose things coming out of earth, let him not suppose earth as ‘mine,’ let him not delight in earth.
+mn1:27.3 | S: Why is that? | T: Why is that?
+mn1:27.4 | S: So that they may completely understand it, I say. | T: So that he may comprehend it, I tell you.
+mn1:28.1 | S: They directly know water … | T: “He directly knows water as water…
+mn1:29.1 | S: fire … | T: fire as fire…
+mn1:30.1 | S: air … | T: wind as wind…
+mn1:31.1 | S: creatures … | T: beings as beings…
+mn1:32.1 | S: gods … | T: devas as devas…
+mn1:33.1 | S: the Progenitor … | T: Pajāpati as Pajāpati…
+mn1:34.1 | S: the Divinity … | T: Brahmā as Brahmā…
+mn1:35.1 | S: those of sublime luminosity … | T: the Radiant devas as Radiant devas…
+mn1:36.1 | S: those replete with glory … | T: the Beautiful Black devas as Beautiful Black devas…
+mn1:37.1 | S: those of abundant fruit … | T: the Sky-fruit devas as Sky-fruit devas…
+mn1:38.1 | S: the Vanquisher … | T: the Conqueror as the Conqueror…
+mn1:39.1 | S: the dimension of infinite space … | T: the dimension of the infinitude of space as the dimension of the infinitude of space…
+mn1:40.1 | S: the dimension of infinite consciousness … | T: the dimension of the infinitude of consciousness as the dimension of the infinitude of consciousness…
+mn1:41.1 | S: the dimension of nothingness … | T: the dimension of nothingness as the dimension of nothingness…
+mn1:42.1 | S: the dimension of neither perception nor non-perception … | T: the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception…
+mn1:43.1 | S: the seen … | T: the seen as the seen…
+mn1:44.1 | S: the heard … | T: the heard as the heard…
+mn1:45.1 | S: the thought … | T: the sensed as the sensed…
+mn1:46.1 | S: the known … | T: the cognized as the cognized…
+mn1:47.1 | S: oneness … | T: singleness as singleness…
+mn1:48.1 | S: diversity … | T: multiplicity as multiplicity…
+mn1:49.1 | S: all … | T: the All as the All…
+mn1:50.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:50.2 | S: Having directly known extinguishment as extinguishment, let them not conceive it to be extinguishment, let them not conceive it in extinguishment, let them not conceive it as extinguishment, let them not conceive that ‘extinguishment is mine’, let them not approve extinguishment. | T: Directly knowing unbinding as unbinding, let him not suppose things about unbinding, let him not suppose things in unbinding, let him not suppose things coming out of unbinding, let him not suppose unbinding as ‘mine,’ let him not delight in unbinding.
+mn1:50.3 | S: Why is that? | T: Why is that?
+mn1:50.4 | S: So that they may completely understand it, I say. | T: So that he may comprehend it, I tell you.
+mn1:50.5 | P: Sekkhavasena dutiyanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:51.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: The Arahant “A monk who is a Worthy One, devoid of effluents—who has attained completion, finished the task, laid down the burden, attained the true goal, destroyed the fetters of becoming, and is released through right knowledge—directly knows earth as earth.
+mn1:51.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:51.3 | S: Why is that? | T: Why is that?
+mn1:51.4 | S: Because they have completely understood it, I say. | T: Because he has comprehended it, I tell you.
+mn1:52.1 | S: They directly know water … | T: “He directly knows water as water…
+mn1:53.1 | S: fire … | T: fire as fire…
+mn1:54.1 | S: air … | T: wind as wind…
+mn1:55.1 | S: creatures … | T: beings as beings…
+mn1:56.1 | S: gods … | T: devas as devas…
+mn1:57.1 | S: the Progenitor … | T: Pajāpati as Pajāpati…
+mn1:58.1 | S: the Divinity … | T: Brahmā as Brahmā…
+mn1:59.1 | S: those of sublime luminosity … | T: the Radiant devas as Radiant devas…
+mn1:60.1 | S: those replete with glory … | T: the Beautiful Black devas as Beautiful Black devas…
+mn1:61.1 | S: those of abundant fruit … | T: the Sky-fruit devas as Sky-fruit devas…
+mn1:62.1 | S: the Vanquisher … | T: the Conqueror as the Conqueror…
+mn1:63.1 | S: the dimension of infinite space … | T: the dimension of the infinitude of space as the dimension of the infinitude of space…
+mn1:64.1 | S: the dimension of infinite consciousness … | T: the dimension of the infinitude of consciousness as the dimension of the infinitude of consciousness…
+mn1:65.1 | S: the dimension of nothingness … | T: the dimension of nothingness as the dimension of nothingness…
+mn1:66.1 | S: the dimension of neither perception nor non-perception … | T: the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception…
+mn1:67.1 | S: the seen … | T: the seen as the seen…
+mn1:68.1 | S: the heard … | T: the heard as the heard…
+mn1:69.1 | S: the thought … | T: the sensed as the sensed…
+mn1:70.1 | S: the known … | T: the cognized as the cognized…
+mn1:71.1 | S: oneness … | T: singleness as singleness…
+mn1:72.1 | S: diversity … | T: multiplicity as multiplicity…
+mn1:73.1 | S: all … | T: the All as the All…
+mn1:74.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:74.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:74.3 | S: Why is that? | T: Why is that?
+mn1:74.4 | S: Because they have completely understood it, I say. | T: Because he has comprehended it, I tell you.
+mn1:74.5 | P: Khīṇāsavavasena tatiyanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:75.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: “A monk who is a Worthy One, devoid of effluents… directly knows earth as earth.
+mn1:75.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:75.3 | S: Why is that? | T: Why is that?
+mn1:75.4 | S: Because they’re free of greed due to the ending of greed. | T: Because, with the ending of passion, he is devoid of passion, I tell you.
+mn1:76.1 | S: They directly know water … | T: “He directly knows water as water…
+mn1:77.1 | S: fire … | T: (none)
+mn1:78.1 | S: air … | T: (none)
+mn1:79.1 | S: creatures … | T: (none)
+mn1:80.1 | S: gods … | T: (none)
+mn1:81.1 | S: the Progenitor … | T: (none)
+mn1:82.1 | S: the Divinity … | T: (none)
+mn1:83.1 | S: those of sublime luminosity … | T: (none)
+mn1:84.1 | S: those replete with glory … | T: (none)
+mn1:85.1 | S: those of abundant fruit … | T: (none)
+mn1:86.1 | S: the Vanquisher … | T: (none)
+mn1:87.1 | S: the dimension of infinite space … | T: (none)
+mn1:88.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:89.1 | S: the dimension of nothingness … | T: (none)
+mn1:90.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:91.1 | S: the seen … | T: (none)
+mn1:92.1 | S: the heard … | T: (none)
+mn1:93.1 | S: the thought … | T: (none)
+mn1:94.1 | S: the known … | T: (none)
+mn1:95.1 | S: oneness … | T: (none)
+mn1:96.1 | S: diversity … | T: (none)
+mn1:97.1 | S: all … | T: the All as the All…
+mn1:98.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:98.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:98.3 | S: Why is that? | T: Why is that?
+mn1:98.4 | S: Because they’re free of greed due to the ending of greed. | T: Because, with the ending of passion, he is devoid of passion, I tell you.
+mn1:98.5 | P: Khīṇāsavavasena catutthanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:99.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: “A monk who is a Worthy One, devoid of effluents… directly knows earth as earth.
+mn1:99.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:99.3 | S: Why is that? | T: Why is that?
+mn1:99.4 | S: Because they’re free of hate due to the ending of hate. | T: Because, with the ending of aversion, he is devoid of aversion, I tell you.
+mn1:100.1 | S: They directly know water … | T: “He directly knows water as water…
+mn1:101.1 | S: fire … | T: (none)
+mn1:102.1 | S: air … | T: (none)
+mn1:103.1 | S: creatures … | T: (none)
+mn1:104.1 | S: gods … | T: (none)
+mn1:105.1 | S: the Progenitor … | T: (none)
+mn1:106.1 | S: the Divinity … | T: (none)
+mn1:107.1 | S: those of sublime luminosity … | T: (none)
+mn1:108.1 | S: those replete with glory … | T: (none)
+mn1:109.1 | S: those of abundant fruit … | T: (none)
+mn1:110.1 | S: the Vanquisher … | T: (none)
+mn1:111.1 | S: the dimension of infinite space … | T: (none)
+mn1:112.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:113.1 | S: the dimension of nothingness … | T: (none)
+mn1:114.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:115.1 | S: the seen … | T: (none)
+mn1:116.1 | S: the heard … | T: (none)
+mn1:117.1 | S: the thought … | T: (none)
+mn1:118.1 | S: the known … | T: (none)
+mn1:119.1 | S: oneness … | T: (none)
+mn1:120.1 | S: diversity … | T: (none)
+mn1:121.1 | S: all … | T: the All as the All…
+mn1:122.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:122.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:122.3 | S: Why is that? | T: Why is that?
+mn1:122.4 | S: Because they’re free of hate due to the ending of hate. | T: Because, with the ending of aversion, he is devoid of aversion, I tell you.
+mn1:122.5 | P: Khīṇāsavavasena pañcamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:123.1 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—directly knows earth as earth. | T: “A monk who is a Worthy One, devoid of effluents… directly knows earth as earth.
+mn1:123.2 | S: Having directly known earth as earth, they do not conceive it to be earth, they do not conceive it in earth, they do not conceive it as earth, they do not conceive that ‘earth is mine’, they do not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:123.3 | S: Why is that? | T: Why is that?
+mn1:123.4 | S: Because they’re free of delusion due to the ending of delusion. | T: Because, with the ending of delusion, he is devoid of delusion, I tell you.
+mn1:124.1 | S: They directly know water … | T: “He directly knows water as water…
+mn1:125.1 | S: fire … | T: (none)
+mn1:126.1 | S: air … | T: (none)
+mn1:127.1 | S: creatures … | T: (none)
+mn1:128.1 | S: gods … | T: (none)
+mn1:129.1 | S: the Progenitor … | T: (none)
+mn1:130.1 | S: the Divinity … | T: (none)
+mn1:131.1 | S: those of sublime luminosity … | T: (none)
+mn1:132.1 | S: those replete with glory … | T: (none)
+mn1:133.1 | S: those of abundant fruit … | T: (none)
+mn1:134.1 | S: the Vanquisher … | T: (none)
+mn1:135.1 | S: the dimension of infinite space … | T: (none)
+mn1:136.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:137.1 | S: the dimension of nothingness … | T: (none)
+mn1:138.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:139.1 | S: the seen … | T: (none)
+mn1:140.1 | S: the heard … | T: (none)
+mn1:141.1 | S: the thought … | T: (none)
+mn1:142.1 | S: the known … | T: (none)
+mn1:143.1 | S: oneness … | T: (none)
+mn1:144.1 | S: diversity … | T: (none)
+mn1:145.1 | S: all … | T: the All as the All…
+mn1:146.1 | S: They directly know extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:146.2 | S: Having directly known extinguishment as extinguishment, they do not conceive it to be extinguishment, they do not conceive it in extinguishment, they do not conceive it as extinguishment, they do not conceive that ‘extinguishment is mine’, they do not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:146.3 | S: Why is that? | T: Why is that?
+mn1:146.4 | S: Because they’re free of delusion due to the ending of delusion. | T: Because, with the ending of delusion, he is devoid of delusion, I tell you.
+mn1:146.5 | P: Khīṇāsavavasena chaṭṭhanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:147.1 | S: The Realized One, the perfected one, the fully awakened Buddha directly knows earth as earth. | T: The Tathāgata “The Tathāgata—a worthy one, rightly self-awakened—directly knows earth as earth.
+mn1:147.2 | S: Having directly known earth as earth, he does not conceive it to be earth, he does not conceive it in earth, he does not conceive it as earth, he does not conceive that ‘earth is mine’, he does not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:147.3 | S: Why is that? | T: Why is that?
+mn1:147.4 | S: Because the Realized One has completely understood it to the end, I say. | T: Because the Tathāgata has comprehended it to the end, I tell you.
+mn1:148.1 | S: He directly knows water … | T: “He directly knows water as water…
+mn1:149.1 | S: fire … | T: fire as fire…
+mn1:150.1 | S: air … | T: wind as wind…
+mn1:151.1 | S: creatures … | T: beings as beings…
+mn1:152.1 | S: gods … | T: devas as devas…
+mn1:153.1 | S: the Progenitor … | T: Pajāpati as Pajāpati…
+mn1:154.1 | S: the Divinity … | T: Brahmā as Brahmā…
+mn1:155.1 | S: those of sublime luminosity … | T: the Radiant devas as Radiant devas…
+mn1:156.1 | S: those replete with glory … | T: the Beautiful Black devas as Beautiful Black devas…
+mn1:157.1 | S: those of abundant fruit … | T: the Sky-fruit devas as Sky-fruit devas…
+mn1:158.1 | S: the Vanquisher … | T: the Conqueror as the Conqueror…
+mn1:159.1 | S: the dimension of infinite space … | T: the dimension of the infinitude of space as the dimension of the infinitude of space…
+mn1:160.1 | S: the dimension of infinite consciousness … | T: the dimension of the infinitude of consciousness as the dimension of the infinitude of consciousness…
+mn1:161.1 | S: the dimension of nothingness … | T: the dimension of nothingness as the dimension of nothingness…
+mn1:162.1 | S: the dimension of neither perception nor non-perception … | T: the dimension of neither perception nor non-perception as the dimension of neither perception nor non-perception…
+mn1:163.1 | S: the seen … | T: the seen as the seen…
+mn1:164.1 | S: the heard … | T: the heard as the heard…
+mn1:165.1 | S: the thought … | T: the sensed as the sensed…
+mn1:166.1 | S: the known … | T: the cognized as the cognized…
+mn1:167.1 | S: oneness … | T: singleness as singleness…
+mn1:168.1 | S: diversity … | T: multiplicity as multiplicity…
+mn1:169.1 | S: all … | T: the All as the All…
+mn1:170.1 | S: He directly knows extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:170.2 | S: Having directly known extinguishment as extinguishment, he does not conceive it to be extinguishment, he does not conceive it in extinguishment, he does not conceive it as extinguishment, he does not conceive that ‘extinguishment is mine’, he does not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:170.3 | S: Why is that? | T: Why is that?
+mn1:170.4 | S: Because the Realized One has completely understood it to the end, I say. | T: Because the Tathāgata has comprehended it to the end, I tell you.
+mn1:170.5 | P: Tathāgatavasena sattamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:171.1 | S: The Realized One, the perfected one, the fully awakened Buddha directly knows earth as earth. | T: “The Tathāgata—a worthy one, rightly self-awakened—directly knows earth as earth.
+mn1:171.2 | S: Having directly known earth as earth, he does not conceive it to be earth, he does not conceive it in earth, he does not conceive it as earth, he does not conceive that ‘earth is mine’, he does not approve earth. | T: Directly knowing earth as earth, he doesn’t suppose things about earth, doesn’t suppose things in earth, doesn’t suppose things coming out of earth, doesn’t suppose earth as ‘mine,’ doesn’t delight in earth.
+mn1:171.3 | S: Why is that? | T: Why is that?
+mn1:171.4 | S: Because he has understood that approval is the root of suffering, | T: Because he has known that delight is the root of suffering & stress,
+mn1:171.5 | S: and that rebirth comes from continued existence; whoever has come to be gets old and dies. | T: that from coming-into-being there is birth, and that for what has come into being there is aging & death.
+mn1:171.6 | S: That’s why the Realized One—with the ending, fading away, cessation, giving up, and letting go of all cravings—has awakened to the supreme perfect awakening, I say. | T: Therefore, with the total ending, fading away, cessation, letting go, relinquishment of craving, the Tathāgata has totally awakened to the unexcelled right self-awakening, I tell you.
+mn1:172.1 | S: He directly knows water … | T: “He directly knows water as water…
+mn1:173.1 | S: fire … | T: (none)
+mn1:174.1 | S: air … | T: (none)
+mn1:175.1 | S: creatures … | T: (none)
+mn1:176.1 | S: gods … | T: (none)
+mn1:177.1 | S: the Progenitor … | T: (none)
+mn1:178.1 | S: the Divinity … | T: (none)
+mn1:179.1 | S: those of sublime luminosity … | T: (none)
+mn1:180.1 | S: those replete with glory … | T: (none)
+mn1:181.1 | S: those of abundant fruit … | T: (none)
+mn1:182.1 | S: the Vanquisher … | T: (none)
+mn1:183.1 | S: the dimension of infinite space … | T: (none)
+mn1:184.1 | S: the dimension of infinite consciousness … | T: (none)
+mn1:185.1 | S: the dimension of nothingness … | T: (none)
+mn1:186.1 | S: the dimension of neither perception nor non-perception … | T: (none)
+mn1:187.1 | S: the seen … | T: (none)
+mn1:188.1 | S: the heard … | T: (none)
+mn1:189.1 | S: the thought … | T: (none)
+mn1:190.1 | S: the known … | T: (none)
+mn1:191.1 | S: oneness … | T: (none)
+mn1:192.1 | S: diversity … | T: (none)
+mn1:193.1 | S: all … | T: the All as the All…
+mn1:194.1 | S: He directly knows extinguishment as extinguishment. | T: “He directly knows unbinding as unbinding.
+mn1:194.2 | S: Having directly known extinguishment as extinguishment, he does not conceive it to be extinguishment, he does not conceive it in extinguishment, he does not conceive it as extinguishment, he does not conceive that ‘extinguishment is mine’, he does not approve extinguishment. | T: Directly knowing unbinding as unbinding, he doesn’t suppose things about unbinding, doesn’t suppose things in unbinding, doesn’t suppose things coming out of unbinding, doesn’t suppose unbinding as ‘mine,’ doesn’t delight in unbinding.
+mn1:194.3 | S: Why is that? | T: Why is that?
+mn1:194.4 | S: Because he has understood that approval is the root of suffering, | T: Because he has known that delight is the root of suffering & stress,
+mn1:194.5 | S: and that rebirth comes from continued existence; whoever has come to be gets old and dies. | T: that from coming-into-being there is birth, and that for what has come into being there is aging & death.
+mn1:194.6 | S: That’s why the Realized One—with the ending, fading away, cessation, giving up, and letting go of all cravings—has awakened to the supreme perfect Awakening, I say.” | T: Therefore, with the total ending, fading away, cessation, letting go, relinquishment of craving, the Tathāgata has totally awakened to the unexcelled right self-awakening, I tell you.”
+mn1:194.7 | P: Tathāgatavasena aṭṭhamanayabhūmiparicchedo niṭṭhito. | T: (none)
+mn1:194.8 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn1:194.9 | S: But the mendicants did not approve what the Buddha said. | T: Displeased, the monks did not delight in the Blessed One’s words.
+mn1:194.10 | P: Mūlapariyāyasuttaṁ niṭṭhitaṁ paṭhamaṁ. | T: (none)
+
+## mn35
+mn35:1.1 | S: So I have heard. | T: I have heard that
+mn35:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: on one occasion the Blessed One was staying near Vesālī, at the Gabled Hall in the Great Forest.
+mn35:2.1 | S: Now at that time Saccaka, the son of Jain parents, was staying in Vesālī. He was a controversialist who pretended to be astute and was deemed holy by many people. | T: And on that occasion Saccaka the Nigaṇṭha-son was dwelling in Vesālī—a debater, a sophist, well-regarded by people at large.
+mn35:2.2 | S: He was telling a crowd in Vesālī, | T: He made this statement before the assembly in Vesālī:
+mn35:2.3 | S: “I don’t see any ascetic or brahmin who would not shake and rock and tremble, sweating from the armpits, were I to take them on in debate—not a leader of an order or a community, or the tutor of a community, and not even one who claims to be a perfected one, a fully awakened Buddha. | T: “I see no contemplative or brahman, the head of an order, the head of a group, or even one who claims to be an arahant, rightly self-awakened, who—engaged in debate with me—would not shiver, quiver, shake, & break out in sweat under the armpits.
+mn35:2.4 | S: Even an insentient post would shake and rock and tremble were I to take it on in debate. | T: Even if I were to engage a senseless stump in debate, it—engaged with me in debate—would shiver, quiver, & shake,
+mn35:2.5 | S: How much more then a human being!” | T: to say nothing of a human being.”
+mn35:3.1 | S: Then Venerable Assaji robed up in the morning and, taking his bowl and robe, entered Vesālī for alms. | T: Then early in the morning Ven. Assaji adjusted his lower robe and—taking his bowl & outer robe—went into Vesālī for alms.
+mn35:3.2 | S: As Saccaka was going for a walk he saw Assaji coming off in the distance. | T: Saccaka the Nigaṇṭha-son, walking & wandering around Vesālī to exercise his legs, saw Ven. Assaji coming from afar.
+mn35:3.3 | S: He approached him and exchanged greetings with him. | T: On seeing him, he went up to him and exchanged courteous greetings with him.
+mn35:3.4 | S: When the greetings and polite conversation were over, Saccaka stood to one side and said to Assaji, | T: After an exchange of friendly greetings & courtesies, he stood to one side. As he was standing there, he said to him,
+mn35:4.1 | S: “Worthy Assaji, how does the ascetic Gotama guide his disciples? And on what topics does instruction to his disciples generally proceed?” | T: “Master Assaji, how does Gotama the contemplative discipline his disciples? Or what part of his instruction is generally presented to his disciples?”
+mn35:4.2 | S: “Aggivessana, this is how the Buddha guides his disciples, and his instructions to disciples generally proceed on these topics: | T: “Aggivessana, the Blessed One disciplines his disciples in this way; this part of the Blessed One’s instruction is generally presented to his disciples:
+mn35:4.3 | S: ‘Form, feeling, perception, choices, and consciousness are impermanent. | T: ‘Form is inconstant. Feeling is inconstant. Perception is inconstant. Fabrications are inconstant. Consciousness is inconstant.
+mn35:4.4 | S: Form, feeling, perception, choices, and consciousness are not-self. | T: Form is not-self. Feeling is not-self. Perception is not-self. Fabrications are not-self. Consciousness is not-self.
+mn35:4.5 | S: All conditions are impermanent. All things are not-self.’ | T: All fabrications are inconstant. All phenomena are not-self.’
+mn35:4.6 | S: This is how the Buddha guides his disciples, and how instruction to his disciples generally proceeds.” | T: This, Aggivessana, is the way in which the Blessed One disciplines his disciples; this part of the Blessed One’s instruction is generally presented to his disciples.”
+mn35:4.7 | S: “It’s sad to hear, worthy Assaji, that the ascetic Gotama has such a doctrine. | T: “What a bad thing to hear we have heard, Master Assaji, when we have heard that Gotama the contemplative teaches this sort of thing.
+mn35:4.8 | S: Hopefully, some time or other I’ll get to meet the worthy Gotama, and we can have a discussion. And hopefully I can dissuade him from this harmful misconception.” | T: Perhaps sooner or later we might go to meet with Gotama the contemplative. Perhaps there might be some discussion. Perhaps we might pry him away from that evil viewpoint.”
+mn35:5.1 | S: Now at that time around five hundred Licchavis were sitting together at the town hall on some business. | T: Now on that occasion, five hundred Licchavis had gathered at a meeting hall on some business or other.
+mn35:5.2 | S: Then Saccaka went up to them and said, | T: So Saccaka the Nigaṇṭha-son went to those Licchavis and, on arrival, said to them,
+mn35:5.3 | S: “Come forth, good Licchavīs, come forth! Today I am going to have a discussion with the ascetic Gotama. | T: “Come out, good Licchavis! Come out, good Licchavis! Today will be my discussion with Gotama the contemplative!
+mn35:5.4 | S: If he stands by the position stated to me by one of his well-known disciples—a mendicant named Assaji—I’ll take him on in debate and drag him to and fro and round about, like a strong man would grab a fleecy sheep and drag it to and fro and round about! | T: If he takes the position with me that was taken with me by his famous disciple, the monk named Assaji, then just as a strong man, seizing a long-haired ram by the hair, would drag him to and drag him fro and drag him all around,
+mn35:5.5 | P: evamevāhaṁ samaṇaṁ gotamaṁ vādena vādaṁ ākaḍḍhissāmi parikaḍḍhissāmi samparikaḍḍhissāmi. | T: in the same way I, statement by statement, will drag Gotama the contemplative to and drag him fro and drag him all around.
+mn35:5.6 | S: Taking him on in debate, I’ll drag him to and fro and round about, like a strong brewer’s worker would toss a large brewer’s sieve into a deep lake, grab it by the corners, and drag it to and fro and round about! | T: Just as a strong distillery worker, throwing a large distiller’s strainer into a deep water tank and grabbing it by the corners, would drag it to and drag it fro and drag it all around,
+mn35:5.7 | P: evamevāhaṁ samaṇaṁ gotamaṁ vādena vādaṁ ākaḍḍhissāmi parikaḍḍhissāmi samparikaḍḍhissāmi. | T: in the same way I, statement by statement, will drag Gotama the contemplative to and drag him fro and drag him all around.
+mn35:5.8 | S: Taking him on in debate, I’ll shake him down and about, and give him a beating, like a strong brewer’s mixer would grab a strainer by the corners and shake it down and about, and give it a beating! | T: Just as a strong distillery ruffian, grabbing a horse-hair strainer by the corners, would shake it down and shake it out and thump it,
+mn35:5.9 | P: evamevāhaṁ samaṇaṁ gotamaṁ vādena vādaṁ odhunissāmi niddhunissāmi nipphoṭessāmi. | T: in the same way I, statement by statement, will shake Gotama the contemplative down and shake him out and thump him.
+mn35:5.10 | S: I’ll play a game of hemp-washing with the ascetic Gotama, like a sixty-year-old elephant would plunge into a deep lotus pond and play a game of hemp-washing! | T: Just as a sixty-year old elephant, plunging into a deep pond, would amuse itself playing the game of hemp-washing,
+mn35:5.11 | P: evamevāhaṁ samaṇaṁ gotamaṁ sāṇadhovikaṁ maññe kīḷitajātaṁ kīḷissāmi. | T: in the same way I will amuse myself playing the game of hemp-washing Gotama the contemplative, as it were.
+mn35:5.12 | S: Come forth, good Licchavīs, come forth! Today I am going to have a discussion with the ascetic Gotama.” | T: Come on out, good Licchavis! Come on out, good Licchavis! Today will be my discussion with Gotama the contemplative!”
+mn35:6.1 | S: At that, some of the Licchavis said, | T: Then some of the Licchavis said,
+mn35:6.2 | S: “How can the ascetic Gotama refute Saccaka’s doctrine, when it is Saccaka who will refute Gotama’s doctrine?” | T: “Who is Gotama the contemplative that he will refute the statement of Saccaka the Nigaṇṭha-son? It’s Saccaka the Nigaṇṭha-son who will refute the statement of Gotama the contemplative.”
+mn35:6.3 | S: But some of the Licchavis said, | T: Some of the Licchavis said,
+mn35:6.4 | S: “Who is Saccaka to refute the Buddha’s doctrine, when it is the Buddha who will refute Saccaka’s doctrine?” | T: “Who is Saccaka the Nigaṇṭha-son that he will refute the statement of Gotama the contemplative? It’s Gotama the contemplative who will refute the statement of Saccaka the Nigaṇṭha-son.”
+mn35:6.5 | S: Then Saccaka, escorted by the five hundred Licchavis, went to the hall with the peaked roof in the Great Wood. | T: So Saccaka the Nigaṇṭha-son, surrounded by five hundred Licchavis, went to the Gabled Hall in the Great Forest.
+mn35:7.1 | S: At that time several mendicants were walking mindfully in the open air. | T: Now on that occasion a large number of monks were doing walking meditation in the open air.
+mn35:7.2 | S: Then Saccaka went up to them and said, | T: So Saccaka the Nigaṇṭha-son went up to the monks and said,
+mn35:7.3 | S: “Good fellows, where is the worthy Gotama at present? | T: “Where, masters, is Master Gotama now?
+mn35:7.4 | S: For we want to see him.” | T: We want to see Master Gotama.”
+mn35:7.5 | S: “Aggivessana, the Buddha has plunged deep into the Great Wood and is sitting at the root of a tree for the day’s meditation.” | T: “The Blessed One, Aggivessana, having plunged into the Great Forest, is sitting under a certain tree for the day’s abiding.”
+mn35:8.1 | S: Then Saccaka, together with a large group of Licchavis, went to the Buddha in the Great Wood, and exchanged greetings with him. | T: Then Saccaka the Nigaṇṭha-son together with a large group of Licchavis plunged into the Great Forest and went to the Blessed One. On arrival, he exchanged courteous greetings with the Blessed One.
+mn35:8.2 | S: When the greetings and polite conversation were over, he sat down to one side. | T: After an exchange of friendly greetings & courtesies, he sat to one side.
+mn35:8.3 | S: Before sitting down to one side, some of the Licchavīs bowed, some exchanged greetings and polite conversation, some held up their cupped palms toward the Buddha, some announced their name and clan, while some kept silent. | T: Some of the Licchavis, having bowed down to the Blessed One, sat to one side. Some of the Licchavis exchanged courteous greetings with the Blessed One and, after an exchange of friendly greetings & courtesies, sat to one side. Some of the Licchavis, having raised their hands palm-to-palm in front of the chest, sat to one side. Some of the Licchavis, after announcing their name and clan, sat to one side. Some of the Licchavis, staying silent, sat to one side.
+mn35:9.1 | S: Then Saccaka said to the Buddha, | T: As he was sitting there, he said to the Blessed One,
+mn35:9.2 | S: “I’d like to ask the worthy Gotama about a certain point, if you’d take the time to answer.” | T: “I would like to question Master Gotama on a certain point, if Master Gotama would grant me the favor of an answer to the question.”
+mn35:9.3 | S: “Ask what you wish, Aggivessana.” | T: “Ask, Aggivessana, as you see fit.”
+mn35:9.4 | S: “How does the worthy Gotama guide his disciples? And on what topics does instruction to his disciples generally proceed?” | T: “How does Master Gotama discipline his disciples? Or what part of his instruction is generally presented to his disciples?”
+mn35:9.5 | S: “This is how I guide my disciples, and my instructions to disciples generally proceed on these topics: | T: “Aggivessana, I discipline my disciples in this way; this part of my instruction is generally presented to my disciples:
+mn35:9.6 | S: ‘Form, feeling, perception, choices, and consciousness are impermanent. | T: ‘Form is inconstant. Feeling is inconstant. Perception is inconstant. Fabrications are inconstant. Consciousness is inconstant.
+mn35:9.7 | S: Form, feeling, perception, choices, and consciousness are not-self. | T: Form is not-self. Feeling is not-self. Perception is not-self. Fabrications are not-self. Consciousness is not-self.
+mn35:9.8 | S: All conditions are impermanent. All things are not-self.’ | T: All fabrications are inconstant. All phenomena are not-self.’
+mn35:9.9 | S: This is how I guide my disciples, and how instruction to my disciples generally proceeds.” | T: This, Aggivessana, is the way in which I discipline my disciples; this part of my instruction is generally presented to my disciples.”
+mn35:10.1 | S: “A simile strikes me, worthy Gotama.” | T: “A simile occurs to me, Master Gotama.”
+mn35:10.2 | S: “Then speak as you feel inspired,” said the Buddha. | T: “Let it occur to you, Aggivessana.”
+mn35:10.3 | S: “All the plants and seeds that achieve growth, increase, and maturity do so depending on the earth and grounded on the earth. | T: “Just as any seeds that exhibit growth, increase, & proliferation, all do so in dependence on the earth;
+mn35:10.4 | P: Evamete bījagāmabhūtagāmā vuddhiṁ virūḷhiṁ vepullaṁ āpajjanti. | T: (none)
+mn35:10.5 | S: All the hard work that gets done depends on the earth and is grounded on the earth. | T: or just as any activities requiring strength that are done, all are done in dependence on the earth;
+mn35:10.6 | P: Evamete balakaraṇīyā kammantā karīyanti. | T: (none)
+mn35:10.7 | S: In the same way, an individual person’s self is form. Established on form they brim with merit and wickedness. An individual person’s self is feeling … perception … choices … consciousness. Established on consciousness they brim with merit and wickedness.” | T: in the same way, Master Gotama, an individual with form as self, taking a stance on form, produces merit or demerit. An individual with feeling as self… with perception as self… with fabrications as self… with consciousness as self, taking a stance on consciousness, produces merit or demerit.”
+mn35:11.1 | S: “Aggivessana, are you not saying this: | T: “Then, Aggivessana, are you saying,
+mn35:11.2 | S: ‘Form is my self, feeling is my self, perception is my self, choices are my self, consciousness is my self’?” | T: ‘Form is my self, feeling is my self, perception is my self, fabrications are my self, consciousness is my self’?”
+mn35:11.3 | S: “Indeed, worthy Gotama, that is what I am saying. | T: “Yes, Master Gotama, I’m saying that ‘Form is my self, feeling is my self, perception is my self, fabrications are my self, consciousness is my self.’
+mn35:11.4 | S: And this big crowd agrees with me!” | T: As does this great multitude.”
+mn35:11.5 | S: “What has this big crowd to do with you? | T: “What does this great multitude have to do with you?
+mn35:11.6 | S: Please just unpack your own statement.” | T: Please focus just on your own assertion.”
+mn35:11.7 | S: “Then, worthy Gotama, what I am saying is this: | T: “Yes, Master Gotama, I’m saying that
+mn35:11.8 | S: ‘Form is my self, feeling is my self, perception is my self, choices are my self, consciousness is my self’.” | T: ‘Form is my self, feeling is my self, perception is my self, fabrications are my self, consciousness is my self.’”
+mn35:12.1 | S: “Well then, Aggivessana, I’ll ask you about this in return, and you can answer as you like. | T: “Very well then, Aggivessana, I will cross-question you on this matter. Answer as you see fit.
+mn35:12.2 | S: What do you think, Aggivessana? | T: What do you think?
+mn35:12.3 | S: Consider an anointed aristocratic king such as Pasenadi of Kosala or Ajātasattu of Magadha, son of the princess of Videha. | T: Would a consecrated, noble-warrior king—such as King Pasenadi of Kosala or King Ajātasattu Vedehiputta of Magadha—
+mn35:12.4 | S: Would they have the power in their own realm to execute those who have incurred execution, fine those who have incurred fines, or banish those who have incurred banishment?” | T: wield the power in his own domain to execute those (he has) sentenced to be executed, to fine those (he has) sentenced to be fined, or to banish those (he has) sentenced to be banished?”
+mn35:12.5 | S: “An anointed king would have such power, worthy Gotama. | T: “Yes, Master Gotama, he would wield the power in his own domain
+mn35:12.6 | P: ghātetāyaṁ vā ghātetuṁ, jāpetāyaṁ vā jāpetuṁ, pabbājetāyaṁ vā pabbājetuṁ, seyyathāpi rañño pasenadissa kosalassa, seyyathāpi vā pana rañño māgadhassa ajātasattussa vedehiputtassa. | T: to execute those (he has) sentenced to be executed, to fine those (he has) sentenced to be fined, or to banish those (he has) sentenced to be banished.
+mn35:12.7 | S: Even federations such as the | T: Even these oligarchic groups, such as the Vajjians & Mallans, wield the power in their own domains
+mn35:12.8 | S: Vajjis and Mallas | T: (none)
+mn35:12.9 | S: have such power in their own realm. | T: (none)
+mn35:12.10 | P: ghātetāyaṁ vā ghātetuṁ, jāpetāyaṁ vā jāpetuṁ, pabbājetāyaṁ vā pabbājetuṁ. | T: to execute those (they’ve) sentenced to be executed, to fine those (they’ve) sentenced to be fined, or to banish those (they’ve) sentenced to be banished,
+mn35:12.11 | S: So of course an anointed king such as Pasenadi or Ajātasattu | T: to say nothing of a consecrated, noble-warrior king such as King Pasenadi of Kosala, or King Ajātasattu Vedehiputta of Magadha.
+mn35:12.12 | S: would wield such power, as is their right.” | T: He would wield it, and he would deserve to wield it.”
+mn35:13.1 | S: “What do you think, Aggivessana? | T: “What do you think, Aggivessana?
+mn35:13.2 | S: When you say, | T: When you say,
+mn35:13.3 | S: ‘Form is my self,’ do you have power over that form to say: | T: ‘Form is my self,’ do you wield power over that form:
+mn35:13.4 | S: ‘May my form be like this! May it not be like that’?” | T: ‘May my form be thus, may my form not be thus’?”
+mn35:13.5 | S: When he said this, Saccaka kept silent. | T: When this was said, Saccaka the Nigaṇṭha-son was silent.
+mn35:13.6 | S: The Buddha asked the question a second time, | T: A second time, the Blessed One said to Saccaka the Nigaṇṭha-son:
+mn35:13.7 | P: “taṁ kiṁ maññasi, aggivessana, yaṁ tvaṁ evaṁ vadesi: | T: “What do you think, Aggivessana? When you say,
+mn35:13.8 | P: ‘rūpaṁ me attā’ti, vattati te tasmiṁ rūpe vaso— | T: ‘Form is my self,’ do you wield power over that form:
+mn35:13.9 | P: evaṁ me rūpaṁ hotu, evaṁ me rūpaṁ mā ahosī”ti? | T: ‘May my form be thus, may my form not be thus’?”
+mn35:13.10 | S: but Saccaka still kept silent. | T: When this was said, Saccaka the Nigaṇṭha-son was silent a second time.
+mn35:13.11 | S: So the Buddha said to Saccaka, | T: Then the Blessed One said to him,
+mn35:13.12 | S: “Answer now, Aggivessana. Now is not the time for silence. | T: “Answer now, Aggivessana. This is not the time to be silent.
+mn35:13.13 | S: If someone fails to answer a legitimate question when asked three times by the Buddha, their head explodes into seven pieces there and then.” | T: When anyone doesn’t answer when asked a legitimate question by the Tathāgata up to three times, his head splits into seven pieces right here.”
+mn35:14.1 | S: Now at that time the spirit Vajirapāṇī, taking up a burning iron thunderbolt, blazing and glowing, stood in the air above Saccaka, thinking, | T: Now on that occasion the spirit [yakkha] Vajirapāṇin [Thunderbolt-in-Hand], carrying an iron thunderbolt, was poised in the air above Saccaka the Nigaṇṭha-son, (thinking,)
+mn35:14.2 | S: “If this Saccaka doesn’t answer when asked a third time, I’ll blow his head into seven pieces there and then!” | T: “If Saccaka the Nigaṇṭha-son doesn’t answer when asked a legitimate question by the Blessed One up to three times, I will split his head into seven pieces right here.”
+mn35:14.3 | S: And both the Buddha and Saccaka could see Vajirapāṇī. | T: The Blessed One saw the spirit Vajirapāṇin, as did Saccaka the Nigaṇṭha-son.
+mn35:14.4 | S: Saccaka was terrified, shocked, and awestruck. Looking to the Buddha for shelter, asylum, and refuge, he said, | T: So Saccaka—afraid, terrified, his hair standing on end—seeking shelter in the Blessed One, seeking asylum in the Blessed One, seeking refuge in the Blessed One—said to the Blessed One,
+mn35:14.5 | S: “Ask me, worthy Gotama. I will answer.” | T: “Let Master Gotama ask me. I will answer.”
+mn35:15.1 | S: “What do you think, Aggivessana? | T: “What do you think, Aggivessana?
+mn35:15.2 | S: When you say, | T: When you say,
+mn35:15.3 | S: ‘Form is my self,’ do you have power over that form to say: | T: ‘Form is my self,’ do you wield power over that form:
+mn35:15.4 | S: ‘May my form be like this! May it not be like that’?” | T: ‘May my form be thus, may my form not be thus’?”
+mn35:15.5 | S: “No, worthy Gotama.” | T: “No, Master Gotama.”
+mn35:16.1 | S: “Think about it, Aggivessana! | T: “Pay attention, Aggivessana,
+mn35:16.2 | S: You should think before answering. | T: and answer (only) after having paid attention!
+mn35:16.3 | S: What you said before and what you said after don’t match up. | T: What you said after isn’t consistent with what you said before, nor is what you said before consistent with what you said after.
+mn35:16.4 | S: What do you think, Aggivessana? | T: “What do you think, Aggivessana?
+mn35:16.5 | S: When you say, | T: When you say,
+mn35:16.6 | S: ‘Feeling is my self,’ do you have power over that feeling to say: | T: ‘Feeling is my self…
+mn35:16.7 | S: ‘May my feeling be like this! May it not be like that’?” | T: (none)
+mn35:16.8 | S: “No, worthy Gotama.” | T: (none)
+mn35:17.1 | S: “Think about it, Aggivessana! | T: (none)
+mn35:17.2 | S: You should think before answering. | T: (none)
+mn35:17.3 | S: What you said before and what you said after don’t match up. | T: (none)
+mn35:17.4 | S: What do you think, Aggivessana? | T: (none)
+mn35:17.5 | S: When you say, | T: (none)
+mn35:17.6 | S: ‘Perception is my self,’ do you have power over that perception to say: | T: Perception is my self…
+mn35:17.7 | S: ‘May my perception be like this! May it not be like that’?” | T: (none)
+mn35:17.8 | S: “No, worthy Gotama.” | T: (none)
+mn35:18.1 | S: “Think about it, Aggivessana! | T: (none)
+mn35:18.2 | S: You should think before answering. | T: (none)
+mn35:18.3 | S: What you said before and what you said after don’t match up. | T: (none)
+mn35:18.4 | S: What do you think, Aggivessana? | T: (none)
+mn35:18.5 | S: When you say, | T: (none)
+mn35:18.6 | S: ‘Choices are my self,’ do you have power over those choices to say: | T: Fabrications are my self…
+mn35:18.7 | S: ‘May my choices be like this! May they not be like that’?” | T: (none)
+mn35:18.8 | S: “No, worthy Gotama.” | T: (none)
+mn35:19.1 | S: “Think about it, Aggivessana! | T: (none)
+mn35:19.2 | S: You should think before answering. | T: (none)
+mn35:19.3 | S: What you said before and what you said after don’t match up. | T: (none)
+mn35:19.4 | S: What do you think, Aggivessana? | T: (none)
+mn35:19.5 | S: When you say, | T: (none)
+mn35:19.6 | S: ‘Consciousness is my self,’ do you have power over that consciousness to say: | T: Consciousness is my self,’ do you wield power over that consciousness:
+mn35:19.7 | S: ‘May my consciousness be like this! May it not be like that’?” | T: ‘May my consciousness be thus, may my consciousness not be thus’?”
+mn35:19.8 | S: “No, worthy Gotama.” | T: “No, Master Gotama.”
+mn35:20.1 | S: “Think about it, Aggivessana! | T: “Pay attention, Aggivessana,
+mn35:20.2 | S: You should think before answering. | T: and answer (only) after having paid attention!
+mn35:20.3 | S: What you said before and what you said after don’t match up. | T: What you said after isn’t consistent with what you said before, nor is what you said before consistent with what you said after.
+mn35:20.4 | S: What do you think, Aggivessana? | T: “What do you think, Aggivessana?
+mn35:20.5 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+mn35:20.6 | S: “Impermanent.” | T: “Inconstant, Master Gotama.”
+mn35:20.7 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn35:20.8 | S: “Suffering.” | T: “Stressful, Master Gotama.”
+mn35:20.9 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn35:20.10 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn35:20.11 | S: “No, worthy Gotama.” | T: “No, Master Gotama.”
+mn35:20.12 | S: “What do you think, Aggivessana? | T: (none)
+mn35:20.13 | S: Is feeling … | T: “…Is feeling constant or inconstant?” “Inconstant, Master Gotama.”…
+mn35:20.14 | S: perception … | T: “…Is perception constant or inconstant?” “Inconstant, Master Gotama.”…
+mn35:20.15 | S: choices … | T: “…Are fabrications constant or inconstant?” “Inconstant, Master Gotama.”…
+mn35:20.16 | S: consciousness permanent or impermanent?” | T: “What do you think, Aggivessana? Is consciousness constant or inconstant?”
+mn35:20.17 | S: “Impermanent.” | T: “Inconstant, Master Gotama.”
+mn35:20.18 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+mn35:20.19 | S: “Suffering.” | T: “Stressful, Master Gotama.”
+mn35:20.20 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+mn35:20.21 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+mn35:20.22 | S: “No, worthy Gotama.” | T: “No, Master Gotama.”
+mn35:21.1 | S: “What do you think, Aggivessana? | T: “What do you think, Aggivessana?
+mn35:21.2 | S: Consider someone who resorts, draws near, and clings to suffering, regarding it thus: ‘This is mine, I am this, this is my self.’ Would they be able to completely understand suffering themselves, or live having wiped out suffering?” | T: When one adheres to stress, holds to stress, is attached to stress, and envisions of stress that ‘This is mine; this is my self; this is what I am,’ would he comprehend stress or dwell having totally destroyed stress?”

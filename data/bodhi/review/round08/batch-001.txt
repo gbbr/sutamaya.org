@@ -1,0 +1,350 @@
+## mn148
+mn148:1.1 | S: So I have heard. | T: Thus have I heard.
+mn148:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn148:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the bhikkhus thus:
+mn148:1.4 | S: “Mendicants!” | T: “Bhikkhus.”—
+mn148:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir,” they replied.
+mn148:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+mn148:2.1 | S: “Mendicants, I shall teach you the Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And I shall reveal a spiritual practice that’s entirely full and pure, namely, | T: “Bhikkhus, I shall teach you the Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; I shall reveal a holy life that is utterly perfect and pure, that is,
+mn148:2.2 | S: the six sets of six. | T: the six sets of six.
+mn148:2.3 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely to what I shall say.”—
+mn148:2.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+mn148:2.5 | S: The Buddha said this: | T: The Blessed One said this:
+mn148:3.1 | S: “The six interior sense fields should be understood. The six exterior sense fields should be understood. The six classes of consciousness should be understood. The six classes of contact should be understood. The six classes of feeling should be understood. The six classes of craving should be understood. | T: Synopsis “The six internal bases should be understood. The six external bases should be understood. The six classes of consciousness should be understood. The six classes of contact should be understood. The six classes of feeling should be understood. The six classes of craving should be understood.
+mn148:4.1 | S: ‘The six interior sense fields should be understood.’ | T: Enumeration i “‘The six internal bases should be understood.’
+mn148:4.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:4.3 | S: There are the sense fields of the eye, ear, nose, tongue, body, and mind. | T: There are the eye-base, the ear-base, the nose-base, the tongue-base, the body-base, and the mind-base.
+mn148:4.4 | S: ‘The six interior sense fields should be understood.’ | T: So it was with reference to this that it was said: ‘The six internal bases should be understood.’
+mn148:4.5 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:4.6 | S: This is the first set of six. | T: This is the first set of six.
+mn148:5.1 | S: ‘The six exterior sense fields should be understood.’ | T: ii “‘The six external bases should be understood.’
+mn148:5.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:5.3 | S: There are the sense fields of sights, sounds, smells, tastes, touches, and ideas. | T: There are the form-base, the sound-base, the odour-base, the flavour-base, the tangible-base, and the mind-object-base.
+mn148:5.4 | S: ‘The six exterior sense fields should be understood.’ | T: So it was with reference to this that it was said: ‘The six external bases should be understood. ’
+mn148:5.5 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:5.6 | S: This is the second set of six. | T: This is the second set of six.
+mn148:6.1 | S: ‘The six classes of consciousness should be understood.’ | T: iii “‘The six classes of consciousness should be understood. ’
+mn148:6.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:6.3 | S: Eye consciousness arises dependent on the eye and sights. | T: Dependent on the eye and forms, eye-consciousness arises;
+mn148:6.4 | S: Ear consciousness arises dependent on the ear and sounds. | T: dependent on the ear and sounds, ear-consciousness arises;
+mn148:6.5 | S: Nose consciousness arises dependent on the nose and smells. | T: dependent on the nose and odours, nose-consciousness arises;
+mn148:6.6 | S: Tongue consciousness arises dependent on the tongue and tastes. | T: dependent on the tongue and flavours, tongue-consciousness arises;
+mn148:6.7 | S: Body consciousness arises dependent on the body and touches. | T: dependent on the body and tangibles, body-consciousness arises;
+mn148:6.8 | S: Mind consciousness arises dependent on the mind and ideas. | T: dependent on the mind and mind-objects, mind-consciousness arises.
+mn148:6.9 | S: ‘The six classes of consciousness should be understood.’ | T: So it was with reference to this that it was said: ‘The six classes of consciousness should be understood.’
+mn148:6.10 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:6.11 | S: This is the third set of six. | T: This is the third set of six.
+mn148:7.1 | S: ‘The six classes of contact should be understood.’ | T: iv “‘The six classes of contact should be understood.’
+mn148:7.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:7.3 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: Dependent on the eye and forms, eye-consciousness arises; the meeting of the three is contact.
+mn148:7.4 | S: Ear consciousness arises dependent on the ear and sounds. The meeting of the three is contact. | T: Dependent on the ear and sounds, ear-consciousness arises; the meeting of the three is contact.
+mn148:7.5 | S: Nose consciousness arises dependent on the nose and smells. The meeting of the three is contact. | T: Dependent on the nose and odours, nose-consciousness arises; the meeting of the three is contact.
+mn148:7.6 | S: Tongue consciousness arises dependent on the tongue and tastes. The meeting of the three is contact. | T: Dependent on the tongue and flavours, tongue-consciousness arises; the meeting of the three is contact.
+mn148:7.7 | S: Body consciousness arises dependent on the body and touches. The meeting of the three is contact. | T: Dependent on the body and tangibles, body-consciousness arises; the meeting of the three is contact.
+mn148:7.8 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact.
+mn148:7.9 | S: ‘The six classes of contact should be understood.’ | T: So it was with reference to this that it was said: ‘The six classes of contact should be understood. ’
+mn148:7.10 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:7.11 | S: This is the fourth set of six. | T: This is the fourth set of six.
+mn148:8.1 | S: ‘The six classes of feeling should be understood.’ | T: v “‘The six classes of feeling should be understood.’
+mn148:8.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:8.3 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the eye and forms, eye-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.4 | S: Ear consciousness arises dependent on the ear and sounds. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the ear and sounds, ear-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.5 | S: Nose consciousness arises dependent on the nose and smells. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the nose and odours, nose-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.6 | S: Tongue consciousness arises dependent on the tongue and tastes. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the tongue and flavours, tongue-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.7 | S: Body consciousness arises dependent on the body and touches. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the body and tangibles, body-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.8 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. Contact is a requirement for feeling. | T: Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling.
+mn148:8.9 | S: ‘The six classes of feeling should be understood.’ | T: So it was with reference to this that it was said: ‘The six classes of feeling should be understood. ’
+mn148:8.10 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:8.11 | S: This is the fifth set of six. | T: This is the fifth set of six.
+mn148:9.1 | S: ‘The six classes of craving should be understood.’ | T: vi “‘The six classes of craving should be understood.’
+mn148:9.2 | S: That’s what I said, but why did I say it? | T: So it was said. And with reference to what was this said?
+mn148:9.3 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for feeling. Feeling is a requirement for craving. | T: Dependent on the eye and forms, eye-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling; with feeling as condition there is craving.
+mn148:9.4 | S: Ear consciousness … | T: Dependent on the ear and sounds, ear-consciousness arises…with feeling as condition there is craving.
+mn148:9.5 | S: Nose consciousness … | T: Dependent on the nose and odours, nose-consciousness arises…with feeling as condition there is craving.
+mn148:9.6 | S: Tongue consciousness … | T: Dependent on the tongue and flavours, tongue-consciousness arises…with feeling as condition there is craving.
+mn148:9.7 | S: Body consciousness … | T: Dependent on the body and tangibles, body-consciousness arises…with feeling as condition there is craving.
+mn148:9.8 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. Contact is a requirement for feeling. Feeling is a requirement for craving. | T: Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there is feeling; with feeling as condition there is craving.
+mn148:9.9 | S: ‘The six classes of craving should be understood.’ | T: So it was with reference to this that it was said: ‘The six classes of craving should be understood.’
+mn148:9.10 | S: That’s what I said, and this is why I said it. | T: (none)
+mn148:9.11 | S: This is the sixth set of six. | T: This is the sixth set of six.
+mn148:10.1 | S: If anyone says, ‘the eye is self,’ that is not tenable. | T: Demonstration of not Self i “If anyone says, ‘The eye is self,’ that is not tenable.
+mn148:10.2 | S: The arising and vanishing of the eye is evident, | T: The rise and fall of the eye are discerned,
+mn148:10.3 | S: so it would follow that one’s self arises and vanishes. | T: and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’
+mn148:10.4 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:10.5 | S: the eye is self. | T: ‘The eye is self.’
+mn148:10.6 | S: So the eye is not self. | T: Thus the eye is not self.
+mn148:10.7 | S: If anyone says, ‘sights are self,’ that is not tenable. | T: “If anyone says, ‘Forms are self’…
+mn148:10.8 | S: The arising and vanishing of sights is evident, | T: (none)
+mn148:10.9 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:10.10 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:10.11 | S: sights are self. | T: ‘Forms are self.’
+mn148:10.12 | S: So the eye is not self and sights are not self. | T: Thus the eye is not self, forms are not self.
+mn148:10.13 | S: If anyone says, ‘eye consciousness is self,’ that is not tenable. | T: “If anyone says, ‘Eye-consciousness is self’…
+mn148:10.14 | S: The arising and vanishing of eye consciousness is evident, | T: (none)
+mn148:10.15 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:10.16 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:10.17 | S: eye consciousness is self. | T: ‘Eye-consciousness is self.’
+mn148:10.18 | S: So the eye, sights, and eye consciousness are not self. | T: Thus the eye is not self, forms are not self, eye-consciousness is not self.
+mn148:10.19 | S: If anyone says, ‘eye contact is self,’ that is not tenable. | T: “If anyone says, ‘Eye-contact is self’…
+mn148:10.20 | S: The arising and vanishing of eye contact is evident, | T: (none)
+mn148:10.21 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:10.22 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:10.23 | S: eye contact is self. | T: ‘Eye-contact is self.’
+mn148:10.24 | S: So the eye, sights, eye consciousness, and eye contact are not self. | T: Thus the eye is not self, forms are not self, eye-consciousness is not self, eye-contact is not self.
+mn148:10.25 | S: If anyone says, ‘feeling is self,’ that is not tenable. | T: “If anyone says, ‘Feeling is self’
+mn148:10.26 | S: The arising and vanishing of feeling is evident, | T: (none)
+mn148:10.27 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:10.28 | S: That’s why it’s not tenable to claim that | T: …That is why it is not tenable for anyone to say,
+mn148:10.29 | S: feeling is self. | T: ‘Feeling is self.’
+mn148:10.30 | S: So the eye, sights, eye consciousness, eye contact, and feeling are not self. | T: Thus the eye is not self, forms are not self, eye-consciousness is not self, eye-contact is not self, feeling is not self.
+mn148:10.31 | S: If anyone says, ‘craving is self,’ that is not tenable. | T: “If anyone says, ‘Craving is self’…
+mn148:10.32 | S: The arising and vanishing of craving is evident, | T: (none)
+mn148:10.33 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:10.34 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:10.35 | S: craving is self. | T: ‘Craving is self.’
+mn148:10.36 | S: So the eye, sights, eye consciousness, eye contact, feeling, and craving are not self. | T: Thus the eye is not self, forms are not self, eye-consciousness is not self, eye-contact is not self, feeling is not self, craving is not self.
+mn148:11.1 | S: If anyone says, ‘the ear is self’ … | T: ii “If anyone says, ‘The ear is self,’ that is not tenable. The rise and fall of the ear are discerned, and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’ That is why it is not tenable for anyone to say, ‘The ear is self.’ Thus the ear is not self. “If anyone says, ‘Sounds are self,’…‘Ear-consciousness is self,’…‘Ear-contact is self,’…‘Feeling is self,’…‘Craving is self’… That is why it is not tenable for anyone to say, ‘Craving is self.’ Thus the ear is not self, sounds are not self, ear-consciousness is not self, ear-contact is not self, feeling is not self, craving is not self.
+mn148:11.2 | S: ‘the nose is self’ … | T: iii “If anyone says, ‘The nose is self,’ that is not tenable. The rise and fall of the nose are discerned, and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’ That is why it is not tenable for anyone to say, ‘The nose is self.’ Thus the nose is not self. “If anyone says, ‘Odours are self,’…‘Nose-consciousness is self,’ …‘Nose-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, ‘Craving is self.’ Thus the nose is not self, odours are not self, nose-consciousness is not self, nose-contact is not self, feeling is not self, craving is not self.
+mn148:11.3 | S: ‘the tongue is self’ … | T: iv “If anyone says, ‘The tongue is self,’ that is not tenable. The rise and fall of the tongue are discerned, and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’ That is why it is not tenable for anyone to say, ‘The tongue is self.’ Thus the tongue is not self. “If anyone says, ‘Flavours are self,’…‘Tongue-consciousness is self,’…‘Tongue-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, ‘Craving is self.’ Thus the tongue is not self, flavours are not self, tongue-consciousness is not self, tongue-contact is not self, feeling is not self, craving is not self.
+mn148:11.4 | S: ‘the body is self’ … | T: v “If anyone says, ‘The body is self,’ that is not tenable. The rise and fall of the body are discerned, and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’ That is why it is not tenable for anyone to say, ‘The body is self.’ Thus the body is not self. “If anyone says, ‘Tangibles are self,’…‘Body-consciousness is self,’…‘Body-contact is self,’…‘Feeling is self,’…‘Craving is self’…That is why it is not tenable for anyone to say, ‘Craving is self.’ Thus the body is not self, tangibles are not self, body-consciousness is not self, body-contact is not self, feeling is not self, craving is not self.
+mn148:11.5 | S: ‘the mind is self,’ that is not tenable. | T: vi “If anyone says, ‘The mind is self,’ that is not tenable.
+mn148:11.6 | S: The arising and vanishing of the mind is evident, | T: The rise and fall of the mind are discerned,
+mn148:11.7 | S: so it would follow that one’s self arises and vanishes. | T: and since its rise and fall are discerned, it would follow: ‘My self rises and falls.’
+mn148:11.8 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:11.9 | S: the mind is self. | T: ‘The mind is self.’
+mn148:11.10 | S: So the mind is not self. | T: Thus the mind is not self.
+mn148:12.1 | S: If anyone says, ‘ideas are self’ … | T: “If anyone says, ‘Mind-objects are self,’…
+mn148:12.2 | P: Dhammānaṁ uppādopi vayopi paññāyati. | T: (none)
+mn148:12.3 | P: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. | T: (none)
+mn148:12.4 | P: Tasmā taṁ na upapajjati: | T: (none)
+mn148:12.5 | P: ‘dhammā attā’ti yo vadeyya. | T: (none)
+mn148:12.6 | P: Iti mano anattā, dhammā anattā. | T: (none)
+mn148:13.1 | S: ‘mind consciousness is self’ … | T: ‘Mind-consciousness is self,’…
+mn148:13.2 | P: Manoviññāṇassa uppādopi vayopi paññāyati. | T: (none)
+mn148:13.3 | P: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. | T: (none)
+mn148:13.4 | P: Tasmā taṁ na upapajjati: | T: (none)
+mn148:13.5 | P: ‘manoviññāṇaṁ attā’ti yo vadeyya. | T: (none)
+mn148:13.6 | P: Iti mano anattā, dhammā anattā, manoviññāṇaṁ anattā. | T: (none)
+mn148:14.1 | S: ‘mind contact is self’ … | T: ‘Mind-contact is self,’…
+mn148:14.2 | P: Manosamphassassa uppādopi vayopi paññāyati. | T: (none)
+mn148:14.3 | P: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. | T: (none)
+mn148:14.4 | P: Tasmā taṁ na upapajjati: | T: (none)
+mn148:14.5 | P: ‘manosamphasso attā’ti yo vadeyya. | T: (none)
+mn148:14.6 | P: Iti mano anattā, dhammā anattā, manoviññāṇaṁ anattā, manosamphasso anattā. | T: (none)
+mn148:15.1 | S: ‘feeling is self’ … | T: ‘Feeling is self,’… …
+mn148:15.2 | P: Vedanāya uppādopi vayopi paññāyati. | T: (none)
+mn148:15.3 | P: Yassa kho pana uppādopi vayopi paññāyati, ‘attā me uppajjati ca veti cā’ti iccassa evamāgataṁ hoti. | T: (none)
+mn148:15.4 | P: Tasmā taṁ na upapajjati: | T: (none)
+mn148:15.5 | P: ‘vedanā attā’ti yo vadeyya. | T: (none)
+mn148:15.6 | P: Iti mano anattā, dhammā anattā, manoviññāṇaṁ anattā, manosamphasso anattā, vedanā anattā. | T: (none)
+mn148:15.7 | S: ‘craving is self,’ that is not tenable. | T: ‘Craving is self’…
+mn148:15.8 | S: The arising and vanishing of craving is evident, | T: (none)
+mn148:15.9 | S: so it would follow that one’s self arises and vanishes. | T: (none)
+mn148:15.10 | S: That’s why it’s not tenable to claim that | T: That is why it is not tenable for anyone to say,
+mn148:15.11 | S: craving is self. | T: ‘Craving is self.’
+mn148:15.12 | S: So the mind, ideas, mind consciousness, mind contact, feeling, and craving are not self. | T: Thus the mind is not self, mind-objects are not self, mind-consciousness is not self, mind-contact is not self, feeling is not self, craving is not self.
+mn148:16.1 | S: Now, mendicants, this is the practice that leads to the origin of substantial reality. | T: The Origination of Identity “Now, bhikkhus, this is the way leading to the origination of identity.
+mn148:16.2 | S: You regard the eye like this: ‘This is mine, I am this, this is my self.’ | T: i One regards the eye thus: ‘This is mine, this I am, this is my self.’
+mn148:17-21.1 | S: You regard sights … | T: One regards forms thus…
+mn148:17-21.2 | S: eye consciousness … | T: One regards eye-consciousness thus…
+mn148:17-21.3 | S: eye contact … | T: One regards eye-contact thus…
+mn148:17-21.4 | S: feeling … | T: One regards feeling thus…
+mn148:17-21.5 | S: craving like this: ‘This is mine, I am this, this is my self.’ | T: One regards craving thus: ‘This is mine, this I am, this is my self.’
+mn148:17-21.6 | S: You regard the ear … | T: ii–vi “One regards the ear thus: ‘This is mine, this I am, this is my self.’…
+mn148:17-21.7 | S: nose … | T: One regards the nose thus: ‘This is mine, this I am, this is my self.’…
+mn148:17-21.8 | S: tongue … | T: One regards the tongue thus: ‘This is mine, this I am, this is my self.’…
+mn148:17-21.9 | S: body … | T: One regards the body thus: ‘This is mine, this I am, this is my self.’…
+mn148:17-21.10 | S: mind … ideas … mind consciousness … mind contact … feeling … craving like this: ‘This is mine, I am this, this is my self.’ | T: One regards the mind thus: ‘This is mine, this I am, this is my self.’ One regards mind-objects thus…One regards mind-consciousness thus…One regards mind-contact thus…One regards feeling thus…One regards craving thus: ‘This is mine, this I am, this is my self.’
+mn148:22.1 | S: But this is the practice that leads to the cessation of substantial reality. | T: The Cessation of Identity “Now, bhikkhus, this is the way leading to the cessation of identity.
+mn148:22.2 | S: You regard the eye like this: ‘This is not mine, I am not this, this is not my self.’ | T: i One regards the eye thus: ‘This is not mine, this I am not, this is not my self.’
+mn148:23-27.1 | S: You regard sights … | T: One regards forms thus…
+mn148:23-27.2 | S: eye consciousness … | T: One regards eye-consciousness thus…
+mn148:23-27.3 | S: eye contact … | T: One regards eye-contact thus…
+mn148:23-27.4 | S: feeling … | T: One regards feeling thus…
+mn148:23-27.5 | S: craving like this: ‘This is not mine, I am not this, this is not my self.’ | T: One regards craving thus: ‘This is not mine, this I am not, this is not my self.’
+mn148:23-27.6 | S: You regard the ear … | T: ii–vi “One regards the ear thus: ‘This is not mine, this I am not, this is not my self.’…
+mn148:23-27.7 | S: nose … | T: One regards the nose thus: ‘This is not mine, this I am not, this is not my self.’…
+mn148:23-27.8 | S: tongue … | T: One regards the tongue thus: ‘This is not mine, this I am not, this is not my self.’…
+mn148:23-27.9 | S: body … | T: One regards the body thus: ‘This is not mine, this I am not, this is not my self.’…
+mn148:23-27.10 | S: mind like this: ‘This is not mine, I am not this, this is not my self.’ | T: One regards the mind thus: ‘This is not mine, this I am not, this is not my self.’
+mn148:23-27.11 | S: You regard ideas … | T: One regards mind-objects thus…
+mn148:23-27.12 | S: mind consciousness … | T: One regards mind-consciousness thus…
+mn148:23-27.13 | S: mind contact … | T: One regards mind-contact thus…
+mn148:23-27.14 | S: feeling … | T: One regards feeling thus…
+mn148:23-27.15 | S: craving like this: ‘This is not mine, I am not this, this is not my self.’ | T: One regards craving thus: ‘This is not mine, this I am not, this is not my self.’
+mn148:28.1 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for the arising of what is felt as pleasant, painful, or neutral. | T: The Underlying Tendencies i “Bhikkhus, dependent on the eye and forms, eye-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant.
+mn148:28.2 | S: When you experience a pleasant feeling, if you approve, welcome, and keep clinging to it, | T: When one is touched by a pleasant feeling, if one delights in it, welcomes it, and remains holding to it,
+mn148:28.3 | S: the underlying tendency to greed underlies that. | T: then the underlying tendency to lust lies within one.
+mn148:28.4 | S: When you experience a painful feeling, if you sorrow and wail and lament, beating your breast and falling into confusion, | T: When one is touched by a painful feeling, if one sorrows, grieves and laments, weeps beating one’s breast and becomes distraught,
+mn148:28.5 | S: the underlying tendency to aversion underlies that. | T: then the underlying tendency to aversion lies within one.
+mn148:28.6 | S: When you experience a neutral feeling, if you don’t truly understand that feeling’s origin, disappearance, gratification, drawback, and escape, | T: When one is touched by a neither-painful-nor-pleasant feeling, if one does not understand as it actually is the origination, the disappearance, the gratification, the danger, and the escape in regard to that feeling,
+mn148:28.7 | S: the underlying tendency to ignorance underlies that. | T: then the underlying tendency to ignorance lies within one.
+mn148:28.8 | S: Mendicants, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. | T: Bhikkhus, that one shall here and now make an end of suffering without abandoning the underlying tendency to lust for pleasant feeling, without abolishing the underlying tendency to aversion towards painful feeling, without extirpating the underlying tendency to ignorance in regard to neither-painful-nor-pleasant feeling, without abandoning ignorance and arousing true knowledge—this is impossible.
+mn148:29-33.1 | S: Ear consciousness … | T: ii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…
+mn148:29-33.2 | S: Nose consciousness … | T: (none)
+mn148:29-33.3 | S: Tongue consciousness … | T: (none)
+mn148:29-33.4 | S: Body consciousness … | T: (none)
+mn148:29-33.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. Contact is a requirement for the arising of what is felt as pleasant, painful, or neutral. | T: Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant…
+mn148:29-33.6 | S: When you experience a pleasant feeling, if you approve, welcome, and keep clinging to it, | T: (none)
+mn148:29-33.7 | S: the underlying tendency to greed underlies that. | T: (none)
+mn148:29-33.8 | S: When you experience a painful feeling, if you sorrow and wail and lament, beating your breast and falling into confusion, | T: (none)
+mn148:29-33.9 | S: the underlying tendency to aversion underlies that. | T: (none)
+mn148:29-33.10 | S: When you experience a neutral feeling, if you don’t truly understand that feeling’s origin, disappearance, gratification, drawback, and escape, | T: (none)
+mn148:29-33.11 | S: the underlying tendency to ignorance underlies that. | T: (none)
+mn148:29-33.12 | S: Mendicants, without giving up the underlying tendency to greed for pleasant feeling, without dispelling the underlying tendency to aversion toward painful feeling, without eradicating ignorance in the case of neutral feeling, without giving up ignorance and without giving rise to knowledge, it is quite impossible to make an end of suffering in this very life. | T: Bhikkhus, that one should here and now make an end of suffering without abandoning the underlying tendency to lust for pleasant feeling…without abandoning ignorance and arousing true knowledge—this is impossible.
+mn148:34.1 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. Contact is a requirement for the arising of what is felt as pleasant, painful, or neutral. | T: The Abandonment of the Underlying Tendencies i “Bhikkhus, dependent on the eye and forms, eye-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant.
+mn148:34.2 | S: When you experience a pleasant feeling, if you don’t approve, welcome, and keep clinging to it, | T: When one is touched by a pleasant feeling, if one does not delight in it, welcome it, and remain holding to it,
+mn148:34.3 | S: the underlying tendency to greed does not underlie that. | T: then the underlying tendency to lust does not lie within one.
+mn148:34.4 | S: When you experience a painful feeling, if you don’t sorrow or wail or lament, beating your breast and falling into confusion, | T: When one is touched by a painful feeling, if one does not sorrow, grieve and lament, does not weep beating one’s breast and become distraught,
+mn148:34.5 | S: the underlying tendency to aversion does not underlie that. | T: then the underlying tendency to aversion does not lie within one.
+mn148:34.6 | S: When you experience a neutral feeling, if you truly understand that feeling’s origin, disappearance, gratification, drawback, and escape, | T: When one is touched by a neither-painful-nor-pleasant feeling, if one understands as it actually is the origination, the disappearance, the gratification, the danger, and the escape in regard to that feeling,
+mn148:34.7 | S: the underlying tendency to ignorance does not underlie that. | T: then the underlying tendency to ignorance does not lie within one.
+mn148:34.8 | S: Mendicants, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. | T: Bhikkhus, that one shall here and now make an end of suffering by abandoning the underlying tendency to lust for pleasant feeling, by abolishing the underlying tendency to aversion towards painful feeling, by extirpating the underlying tendency to ignorance in regard to neither-painful-nor-pleasant feeling, by abandoning ignorance and arousing true knowledge—this is possible.
+mn148:35.1 | S: Ear consciousness … | T: ii–vi “Bhikkhus, dependent on the ear and sounds, ear-consciousness arises…
+mn148:36.1 | S: Nose consciousness … | T: (none)
+mn148:37.1 | S: Tongue consciousness … | T: (none)
+mn148:38.1 | S: Body consciousness … | T: (none)
+mn148:39.1 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. Contact is a requirement for what is felt as pleasant, painful, or neutral. | T: Dependent on the mind and mind-objects, mind-consciousness arises; the meeting of the three is contact; with contact as condition there arises a feeling felt as pleasant or painful or neither-painful-nor-pleasant…
+mn148:39.2 | S: When you experience a pleasant feeling, if you don’t approve, welcome, and keep clinging to it, | T: (none)
+mn148:39.3 | S: the underlying tendency to greed does not underlie that. | T: (none)
+mn148:39.4 | S: When you experience a painful feeling, if you don’t sorrow or wail or lament, beating your breast and falling into confusion, | T: (none)
+mn148:39.5 | S: the underlying tendency to aversion does not underlie that. | T: (none)
+mn148:39.6 | S: When you experience a neutral feeling, if you truly understand that feeling’s origin, disappearance, gratification, drawback, and escape, | T: (none)
+mn148:39.7 | S: the underlying tendency to ignorance does not underlie that. | T: (none)
+mn148:39.8 | S: Mendicants, after giving up the underlying tendency to greed for pleasant feeling, after dispelling the underlying tendency to aversion toward painful feeling, after eradicating ignorance in the case of neutral feeling, after giving up ignorance and giving rise to knowledge, it’s quite possible to make an end of suffering in this very life. | T: Bhikkhus, that one shall here and now make an end of suffering by abandoning the underlying tendency to lust for pleasant feeling…by abandoning ignorance and arousing true knowledge—this is possible.
+mn148:40.1 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, eye contact, feeling, and craving. | T: Liberation “Seeing thus, bhikkhus, a well-taught noble disciple becomes disenchanted with the eye, disenchanted with forms, disenchanted with eye-consciousness, disenchanted with eye-contact, disenchanted with feeling, disenchanted with craving.
+mn148:41.1 | S: They grow disillusioned with the ear … | T: “He becomes disenchanted with the ear…
+mn148:41.2 | S: nose … | T: He becomes disenchanted with the nose…
+mn148:41.3 | S: tongue … | T: He becomes disenchanted with the tongue…
+mn148:41.4 | S: body … | T: Hebecomes disenchanted with the body…
+mn148:41.5 | S: mind, ideas, mind consciousness, mind contact, feeling, and craving. | T: He becomes disenchanted with the mind, disenchanted with mind-objects, disenchanted with mind-consciousness, disenchanted with mind-contact, disenchanted with feeling, disenchanted with craving.
+mn148:41.6 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When it is freed, they know it is freed. | T: “Being disenchanted, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated, there comes the knowledge: ‘It is liberated.’
+mn148:41.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’”
+mn148:41.8 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn148:41.9 | S: Satisfied, the mendicants approved what the Buddha said. | T: The bhikkhus were satisfied and delighted in the Blessed One’s words.
+mn148:41.10 | S: And while this discourse was being spoken, the minds of sixty mendicants were freed from defilements by not grasping. | T: Now while this discourse was being spoken, through not clinging the minds of sixty bhikkhus were liberated from the taints.
+mn148:41.11 | P: Chachakkasuttaṁ niṭṭhitaṁ chaṭṭhaṁ. | T: (none)
+
+## mn64
+mn64:1.1 | S: So I have heard. | T: Thus have I heard.
+mn64:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn64:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the bhikkhus thus:
+mn64:1.4 | S: “Mendicants!” | T: “Bhikkhus.”—
+mn64:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir,” they replied.
+mn64:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+mn64:2.1 | S: “Mendicants, do you remember the five lower fetters taught by me?” | T: “Bhikkhus, do you remember the five lower fetters as taught by me?”
+mn64:2.2 | S: When he said this, Venerable Māluṅkyaputta said to him, | T: When this was said, the venerable Mālunkyāputta replied:
+mn64:2.3 | S: “Sir, I remember them.” | T: “Venerable sir, I remember the five lower fetters as taught by the Blessed One.”
+mn64:2.4 | S: “But how do you remember them?” | T: “But, Mālunkyāputta, in what way do you remember the five lower fetters as taught by me?”
+mn64:2.5 | S: “I remember the lower fetters taught by the Buddha as follows: substantialist view, | T: “Venerable sir, I remember identity view as a lower fetter taught by the Blessed One.
+mn64:2.6 | S: doubt, | T: I remember doubt as a lower fetter taught by the Blessed One.
+mn64:2.7 | S: misapprehension of precepts and observances, | T: I remember adherence to rules and observances as a lower fetter taught by the Blessed One.
+mn64:2.8 | S: sensual desire, | T: I remember sensual desire as a lower fetter taught by the Blessed One.
+mn64:2.9 | S: and ill will. | T: I remember ill will as a lower fetter taught by the Blessed One.
+mn64:2.10 | S: That’s how I remember the five lower fetters taught by the Buddha.” | T: It is in this way, venerable sir, that I remember the five lower fetters as taught by the Blessed One.”
+mn64:3.1 | S: “Who on earth do you remember being taught the five lower fetters in that way? | T: “Mālunkyāputta, to whom do you remember my having taught these five lower fetters in that way?
+mn64:3.2 | S: Wouldn’t the wanderers of other religions fault you using the simile of the infant? | T: Would not the wanderers of other sects confute you with the simile of the infant?
+mn64:3.3 | S: For a little baby doesn’t even have a concept of ‘substantial reality’, so how could substantialist view possibly arise in them? | T: For a young tender infant lying prone does not even have the notion ‘identity,’ so how could identity view arise in him?
+mn64:3.4 | S: Yet the underlying tendency to substantialist view still lies within them. | T: Yet the underlying tendency to identity view lies within him.
+mn64:3.5 | S: A little baby doesn’t even have a concept of ‘teachings’, so how could doubt about the teachings possibly arise in them? | T: A young tender infant lying prone does not even have the notion ‘teachings,’ so how could doubt about the teachings arise in him?
+mn64:3.6 | S: Yet the underlying tendency to doubt still lies within them. | T: Yet the underlying tendency to doubt lies within him.
+mn64:3.7 | S: A little baby doesn’t even have a concept of ‘precepts’, so how could misapprehension of precepts and observances possibly arise in them? | T: A young tender infant lying prone does not even have the notion ‘rules,’ so how could adherence to rules and observances arise in him?
+mn64:3.8 | S: Yet the underlying tendency to misapprehension of precepts and observances still lies within them. | T: Yet the underlying tendency to adhere to rules and observances lies within him.
+mn64:3.9 | S: A little baby doesn’t even have a concept of ‘sensual pleasures’, so how could desire for sensual pleasures possibly arise in them? | T: A young tender infant lying prone does not even have the notion ‘sensual pleasures,’ so how could sensual desire arise in him?
+mn64:3.10 | S: Yet the underlying tendency to sensual desire still lies within them. | T: Yet the underlying tendency to sensual lust lies within him.
+mn64:3.11 | S: A little baby doesn’t even have a concept of ‘sentient beings’, so how could ill will for sentient beings possibly arise in them? | T: A young tender infant lying prone does not even have the notion ‘beings,’ so how could ill will towards beings arise in him?
+mn64:3.12 | S: Yet the underlying tendency to ill will still lies within them. | T: Yet the underlying tendency to ill will lies within him.
+mn64:3.13 | S: Wouldn’t the wanderers of other religions fault you using the simile of the infant?” | T: Would not the wanderers of other sects confute you with this simile of the infant?”
+mn64:4.1 | S: When he said this, Venerable Ānanda said to the Buddha, | T: Thereupon, the venerable Ānanda said:
+mn64:4.2 | S: “Now is the time, Blessed One! Now is the time, Holy One! | T: “It is the time, Blessed One, it is the time, Sublime One,
+mn64:4.3 | S: May the Buddha teach the five lower fetters. The mendicants will listen and remember it.” | T: for the Blessed One to teach the five lower fetters. Having heard it from the Blessed One, the bhikkhus will remember it.”
+mn64:4.4 | S: “Well then, Ānanda, listen and apply your mind well, I will speak.” | T: “Then listen, Ānanda, and attend closely to what I shall say.”
+mn64:4.5 | S: “Yes, sir,” Ānanda replied. | T: “Yes, venerable sir,” the venerable Ānanda replied.
+mn64:4.6 | S: The Buddha said this: | T: The Blessed One said this:
+mn64:5.1 | S: “Ānanda, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “Here, Ānanda, an untaught ordinary person who has no regard for noble ones and is unskilled and undisciplined in their Dhamma, who has no regard for true men and is unskilled and undisciplined in their Dhamma,
+mn64:5.2 | S: Their heart is overcome and mired in substantialist view, | T: abides with a mind obsessed and enslaved by identity view,
+mn64:5.3 | S: and they don’t truly understand the escape from substantialist view that has arisen. | T: and he does not understand as it actually is the escape from the arisen identity view;
+mn64:5.4 | S: That substantialist view is entrenched in them, not eliminated: it is a lower fetter. | T: and when that identity view has become habitual and is uneradicated in him, it is a lower fetter.
+mn64:5.5 | S: Their heart is overcome and mired in doubt, | T: He abides with a mind obsessed and enslaved by doubt…
+mn64:5.6 | S: and they don’t truly understand the escape from doubt that has arisen. | T: (none)
+mn64:5.7 | S: That doubt is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.8 | S: Their heart is overcome and mired in misapprehension of precepts and observances, | T: by adherence to rules and observances …
+mn64:5.9 | S: and they don’t truly understand the escape from misapprehension of precepts and observances that has arisen. | T: (none)
+mn64:5.10 | S: That misapprehension of precepts and observances is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.11 | S: Their heart is overcome and mired in sensual desire, | T: by sensual lust …
+mn64:5.12 | S: and they don’t truly understand the escape from sensual desire that has arisen. | T: (none)
+mn64:5.13 | S: That sensual desire is entrenched in them, not eliminated: it is a lower fetter. | T: (none)
+mn64:5.14 | S: Their heart is overcome and mired in ill will, | T: by ill will,
+mn64:5.15 | S: and they don’t truly understand the escape from ill will that has arisen. | T: and he does not understand as it actually is the escape from arisen ill will;
+mn64:5.16 | S: That ill will is entrenched in them, not eliminated: it is a lower fetter. | T: and when that ill will has become habitual and is uneradicated in him, it is a lower fetter.
+mn64:6.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. Their heart is not overcome and mired in substantialist view, | T: “A well-taught noble disciple who has regard for noble ones and is skilled and disciplined in their Dhamma, who has regard for true men and is skilled and disciplined in their Dhamma, does not abide with a mind obsessed and enslaved by identity view;
+mn64:6.2 | S: and they truly understand the escape from substantialist view that has arisen. | T: he understands as it actually is the escape from the arisen identity view,
+mn64:6.3 | S: That substantialist view, along with any underlying tendency to it, is given up in them. | T: and identity view together with the underlying tendency to it is abandoned in him.
+mn64:6.4 | S: Their heart is not overcome and mired in doubt, | T: He does not abide with a mind obsessed and enslaved by doubt…
+mn64:6.5 | S: and they truly understand the escape from doubt that has arisen. | T: (none)
+mn64:6.6 | S: That doubt, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.7 | S: Their heart is not overcome and mired in misapprehension of precepts and observances, | T: by adherence to rules and observances…
+mn64:6.8 | S: and they truly understand the escape from misapprehension of precepts and observances that has arisen. | T: (none)
+mn64:6.9 | S: That misapprehension of precepts and observances, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.10 | S: Their heart is not overcome and mired in sensual desire, | T: by sensual lust…
+mn64:6.11 | S: and they truly understand the escape from sensual desire that has arisen. | T: (none)
+mn64:6.12 | S: That sensual desire, along with any underlying tendency to it, is given up in them. | T: (none)
+mn64:6.13 | S: Their heart is not overcome and mired in ill will, | T: by ill will;
+mn64:6.14 | S: and they truly understand the escape from ill will that has arisen. | T: he understands as it actually is the escape from the arisen ill will,
+mn64:6.15 | S: That ill will, along with any underlying tendency to it, is given up in them. | T: and ill will together with the underlying tendency to it is abandoned in him.
+mn64:6.16 | S: There is a path and a practice for giving up the five lower fetters. It’s not possible to know or see or give up the five lower fetters without relying on that path and that practice. | T: “There is a path, Ānanda, a way to the abandoning of the five lower fetters; that anyone, without relying on that path, on that way, shall know or see or abandon the five lower fetters—this is not possible.
+mn64:6.17 | S: Suppose there was a large tree standing with heartwood. It’s not possible to cut out the heartwood without having cut through the bark and the softwood. | T: Just as when there is a great tree standing possessed of heartwood, it is not possible that anyone shall cut out its heartwood without cutting through its bark and sapwood,
+mn64:6.18 | P: netaṁ ṭhānaṁ vijjati; | T: (none)
+mn64:6.19 | S: In the same way, there is a path and a practice for giving up the five lower fetters. It’s not possible to know or see or give up the five lower fetters without relying on that path and that practice. | T: so too, there is a path…this is not possible.
+mn64:7.1 | S: But it is possible to know and see and give up the five lower fetters by relying on that path and that practice. | T: “There is a path, Ānanda, a way to the abandoning of the five lower fetters; that someone, by relying on that path, on that way, shall know and see and abandon the five lower fetters—this is possible.
+mn64:8.1 | S: Suppose there was a large tree standing with heartwood. It is possible to cut out the heartwood after having cut through the bark and the softwood. | T: Just as, when there is a great tree standing possessed of heartwood, it is possible that someone shall cut out its heartwood by cutting through its bark and sapwood,
+mn64:8.2 | S: In the same way, there is a path and a practice for giving up the five lower fetters. It is possible to know and see and give up the five lower fetters by relying on that path and that practice. | T: so too, there is a path…this is possible.
+mn64:8.3 | S: Suppose the Ganges River was full to the brim so a crow could drink from it. | T: “Suppose, Ānanda, the river Ganges were full of water right up to the brim so that crows could drink from it,
+mn64:8.4 | S: Then along comes a feeble person, who thinks: | T: and then a feeble man came thinking:
+mn64:8.5 | S: ‘By swimming with my arms I’ll safely cross over to the far shore of the Ganges.’ | T: ‘By swimming across the stream with my arms, I shall get safely across to the further shore of this river Ganges’;
+mn64:8.6 | S: But they’re not able to do so. | T: yet he would not be able to get safely across.
+mn64:8.7 | S: In the same way, when the Dhamma is being taught to them for the cessation of substantial reality, those whose mind does not leap forth, gain confidence, settle down, and become decided | T: So too, when the Dhamma is being taught to someone for the cessation of personality, if his mind does not enter into it and acquire confidence, steadiness, and resolution,
+mn64:8.8 | S: should be regarded as being like that feeble person. | T: then he can be regarded as like the feeble man.
+mn64:8.9 | S: Suppose the Ganges River was full to the brim so a crow could drink from it. | T: “Suppose, Ānanda, the river Ganges were full of water right up to the brim so that crows could drink from it,
+mn64:8.10 | S: Then along comes a strong person, who thinks: | T: and then a strong man came thinking:
+mn64:8.11 | S: ‘By swimming with my arms I’ll safely cross over to the far shore of the Ganges.’ | T: ‘By swimming across the stream with my arms, I shall get safely across to the further shore of this river Ganges’;
+mn64:8.12 | S: And they are able to do so. | T: and he would be able to get safely across.
+mn64:8.13 | S: In the same way, when the Dhamma is being taught to them for the cessation of substantial reality, those whose mind leaps forth, gains confidence, settles down, and becomes decided | T: So too, when the Dhamma is being taught to someone for the cessation of personality, if his mind enters into it and acquires confidence, steadiness, and resolution,
+mn64:8.14 | S: should be regarded as being like that strong person. | T: then he can be regarded as like the strong man.
+mn64:9.1 | S: And what, Ānanda, is the path and the practice for giving up the five lower fetters? | T: “And what, Ānanda, is the path, the way to the abandoning of the five lower fetters?
+mn64:9.2 | S: It’s when a mendicant—due to the seclusion from attachments, the giving up of unskillful qualities, and the complete settling of physical discomforts—quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Here, with seclusion from the acquisitions, with the abandoning of unwholesome states, with the complete tranquillization of bodily inertia, quite secluded from sensual pleasures, secluded from unwholesome states, a bhikkhu enters upon and abides in the first jhāna, which is accompanied by applied and sustained thought, with rapture and pleasure born of seclusion.
+mn64:9.3 | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: “Whatever exists therein of material form, feeling, perception, formations, and consciousness, he sees those states as impermanent, as suffering, as a disease, as a tumour, as a barb, as a calamity, as an affliction, as alien, as disintegrating, as void, as not self.
+mn64:9.4 | S: They turn their mind away from those things, | T: He turns his mind away from those states and directs it towards the deathless element thus:
+mn64:9.5 | S: and apply it to the element free of death: | T: (none)
+mn64:9.6 | S: ‘This is peaceful; this is sublime—that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment.’ | T: ‘This is the peaceful, this is the sublime, that is, the stilling of all formations, the relinquishing of all attachments, the destruction of craving, dispassion, cessation, Nibbāna.’
+mn64:9.7 | S: Abiding in that they attain the ending of defilements. | T: If he is steady in that, he attains the destruction of the taints.
+mn64:9.8 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: But if he does not attain the destruction of the taints because of that desire for the Dhamma, that delight in the Dhamma, then with the destruction of the five lower fetters he becomes one due to reappear spontaneously in the Pure Abodes and there attain final Nibbāna without ever returning from that world.
+mn64:9.9 | S: This is the path and the practice for giving up the five lower fetters. | T: This is the path, the way to the abandoning of the five lower fetters.
+mn64:10-12.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption … | T: “Again, with the stilling of applied and sustained thought, a bhikkhu enters upon and abides in the second jhāna…Again,
+mn64:10-12.2 | S: third absorption … | T: with the fading away as well of rapture, a bhikkhu…enters upon and abides in the third jhāna…Again,a
+mn64:10-12.3 | S: fourth absorption. | T: with the abandoning of pleasure and pain…a bhikkhu enters upon and abides in the fourth jhāna, which has neither-pain-nor-pleasure and purity of mindfulness due to equanimity.
+mn64:10-12.4 | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent … | T: “Whatever exists therein of material form, feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self.
+mn64:10-12.5 | S: They turn their mind away from those things … | T: He turns his mind away from those states and directs it towards the deathless element…
+mn64:10-12.6 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:10-12.7 | S: This too is the path and the practice for giving up the five lower fetters. | T: This is the path, the way to the abandoning of the five lower fetters.
+mn64:13.1 | S: Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Again, with the complete surmounting of perceptions of form, with the disappearance of perceptions of sensory impact, with non-attention to perceptions of diversity, aware that ‘space is infinite,’ a bhikkhu enters upon and abides in the base of infinite space.
+mn64:13.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: “Whatever exists therein of feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self.
+mn64:13.3 | S: They turn their mind away from those things … | T: He turns his mind away from those states and directs it towards the deathless element…
+mn64:13.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:13.5 | S: This too is the path and the practice for giving up the five lower fetters. | T: This is the path, the way to the abandoning of the five lower fetters.
+mn64:14.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: “Again, by completely surmounting the base of infinite space, aware that ‘consciousness is infinite,’ a bhikkhu enters upon and abides in the base of infinite consciousness.
+mn64:14.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: “Whatever exists therein of feeling, perception, formations, and consciousness, he sees those states as impermanent…as not self.
+mn64:14.3 | S: They turn their mind away from those things … | T: He turns his mind away from those states and directs it towards the deathless element…
+mn64:14.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: (none)
+mn64:14.5 | S: This too is the path and the practice for giving up the five lower fetters. | T: This is the path, the way to the abandoning of the five lower fetters.
+mn64:15.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: “Again, by completely surmounting the base of infinite consciousness, aware that ‘there is nothing,’ a bhikkhu enters upon and abides in the base of nothingness.
+mn64:15.2 | S: They contemplate the phenomena there—included in feeling, perception, choices, and consciousness—as impermanent … | T: “Whatever exists therein of feeling, perception, formations, and consciousness, he sees those states as impermanent, as suffering, as a disease, as a tumour, as a barb, as a calamity, as an affliction, as alien, as disintegrating, as void, as not self.
+mn64:15.3 | S: They turn their mind away from those things … | T: He turns his mind away from those states and directs it towards the deathless element thus: ‘This is the peaceful, this is the sublime, that is, the stilling of all formations, the relinquishing of all attachments, the destruction of craving, dispassion, cessation, Nibbāna.’ If he is steady in that, he attains the destruction of the taints.
+mn64:15.4 | S: If they don’t attain the ending of defilements, they’re reborn spontaneously … and are not liable to return from that world. | T: But if he does not attain the destruction of the taints because of that desire for the Dhamma, that delight in the Dhamma, then with the destruction of the five lower fetters he becomes one due to reappear spontaneously in the Pure Abodes and there attain final Nibbāna without ever returning from that world.
+mn64:15.5 | S: This too is the path and the practice for giving up the five lower fetters.” | T: This is the path, the way to the abandoning of the five lower fetters.”
+mn64:16.1 | S: “Sir, if this is the path and the practice for giving up the five lower fetters, how then are some mendicants here released in heart while others are released by wisdom?” | T: “Venerable sir, if this is the path, the way to the abandoning of the five lower fetters, then how is it that some bhikkhus here are said to gain deliverance of mind and some are said to gain deliverance by wisdom?”
+mn64:16.2 | S: “In that case, I say it is the disparity of their faculties.” | T: “The difference here, Ānanda, is in their faculties, I say.”
+mn64:16.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn64:16.4 | S: Satisfied, Venerable Ānanda approved what the Buddha said. | T: The venerable Ānanda was satisfied and delighted in the Blessed One’s words.
+mn64:16.5 | P: Mahāmālukyasuttaṁ niṭṭhitaṁ catutthaṁ. | T: (none)
+

@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-02",
+  "scope": ["mn", "dn"],
+  "status": "completed",
+  "sourceSession": "52806882-781d-47bc-a7fd-bf178e708340",
+  "sourceAccount": "~/.claude",
+  "baseCommit": "321648cf",
+  "completedPass": {
+    "rounds": 11,
+    "batches": 114,
+    "reviewedLines": 33673,
+    "reportedCutCorrections": {
+      "bodhi": 79,
+      "thanissaro": 40
+    },
+    "changedStoredDecisions": {
+      "bodhi": 81,
+      "thanissaro": 40
+    },
+    "decisionCountNote": "Stored decisions also record adjacent cut anchors; they are not the same count as reported corrections.",
+    "coverage": {
+      "bodhi": {"texts": 50, "minimumCompletedReads": 2},
+      "thanissaro": {"texts": 120, "minimumCompletedReads": 2}
+    },
+    "findingsFolders": {
+      "bodhi": ["round01", "round07", "round08", "round09", "round10", "round11"],
+      "thanissaro": ["round01", "round02", "round03", "round04", "round05", "round06", "round07", "round09", "round10", "round11"]
+    },
+    "handFindings": "data/bodhi/review/hand/round11.findings",
+    "crossCheck": "data/thanissaro/review/cross2/",
+    "supersededFindings": "Earlier conflicting findings remain in their files, commented with '# superseded:'."
+  },
+  "nextPass": {
+    "status": "not authorized to resume",
+    "preparedFolder": "data/thanissaro/review/round12/",
+    "preparedBatches": 11,
+    "savedFindings": 0,
+    "resumeNote": "The user is considering a Pali-based alignment and verification process before authorizing further reads."
+  },
+  "validation": {
+    "upstreamWordDifferences": {"bodhi": 0, "thanissaro": 0},
+    "integrityProblems": {"bodhi": 0, "thanissaro": 0}
+  },
+  "integrationNote": "The completed MN/DN corrections are in cuts.json and the segmented texts. The separate verse review, SN/AN/KN Codex handoff, and app reveal behavior remain outside this integration."
+}

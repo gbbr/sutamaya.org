@@ -1,0 +1,294 @@
+## mn152, continued
+mn152:18.5 | P: Indriyabhāvanāsuttaṁ niṭṭhitaṁ dasamaṁ. | T: (none)
+mn152:18.6 | P: Saḷāyatanavaggo niṭṭhito pañcamo. | T: (none)
+mn152:19.0 | P: Tassuddānaṁ | T: (none)
+mn152:19.1 | P: Anāthapiṇḍiko channo, | T: (none)
+mn152:19.2 | P: puṇṇo nandakarāhulā; | T: (none)
+mn152:19.3 | P: Chachakkaṁ saḷāyatanikaṁ, | T: (none)
+mn152:19.4 | P: nagaravindeyyasuddhikā; | T: (none)
+mn152:19.5 | P: Indriyabhāvanā cāpi, | T: (none)
+mn152:19.6 | P: vaggo ovādapañcamoti. | T: (none)
+mn152:20.0 | P: Idaṁ vaggānamuddānaṁ | T: (none)
+mn152:20.1 | P: Devadahonupado ca, | T: (none)
+mn152:20.2 | P: Suññato ca vibhaṅgako; | T: (none)
+mn152:20.3 | P: Saḷāyatanoti vaggā, | T: (none)
+mn152:20.4 | P: Uparipaṇṇāsake ṭhitāti. | T: (none)
+mn152:20.5 | P: Uparipaṇṇāsakaṁ samattaṁ. | T: (none)
+mn152:20.6 | P: Tīhi paṇṇāsakehi paṭimaṇḍito sakalo | T: (none)
+mn152:20.7 | S: The Middle Discourses are complete. | T: (none)
+
+## mn20
+mn20:1.1 | S: So I have heard. | T: I have heard that
+mn20:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn20:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn20:1.4 | S: “Mendicants!” | T: “Monks!”
+mn20:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn20:1.6 | S: The Buddha said this: | T: The Blessed One said:
+mn20:2.1 | S: “Mendicants, a mendicant committed to the higher mind should focus on five subjects from time to time. | T: “When a monk is intent on the heightened mind, there are five themes he should attend to at the appropriate times.
+mn20:2.2 | S: What five? | T: Which five?
+mn20:3.1 | S: Take a mendicant who is focusing on some subject that gives rise to bad, unskillful thoughts connected with desire, hate, and delusion. That mendicant should focus on some other subject connected with the skillful. | T: “There is the case where evil, unskillful thoughts—connected with desire, aversion, or delusion—arise in a monk while he is referring to and attending to a particular theme. He should attend to another theme, apart from that one, connected with what is skillful.
+mn20:3.2 | S: As they do so, those bad thoughts are given up and come to an end. | T: When he is attending to this other theme, apart from that one, connected with what is skillful, then those evil, unskillful thoughts—connected with desire, aversion, or delusion—are abandoned and subside.
+mn20:3.3 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:3.4 | S: It’s like a deft mason or their apprentice who’d knock out or extract a large peg with a finer peg. | T: Just as a dexterous carpenter or his apprentice would use a small peg to knock out, drive out, and pull out a large one;
+mn20:3.5 | S: In the same way, a mendicant … should focus on some other basis of meditation connected with the skillful … | T: in the same way, if evil, unskillful thoughts—connected with desire, aversion, or delusion—arise in a monk while he is referring to and attending to a particular theme, he should attend to another theme, apart from that one, connected with what is skillful.
+mn20:3.6 | P: Tassa tamhā nimittā aññaṁ nimittaṁ manasikaroto kusalūpasaṁhitaṁ ye pāpakā akusalā vitakkā chandūpasaṁhitāpi dosūpasaṁhitāpi mohūpasaṁhitāpi te pahīyanti te abbhatthaṁ gacchanti. | T: When he is attending to this other theme, apart from that one, connected with what is skillful, then those evil, unskillful thoughts—connected with desire, aversion, or delusion—are abandoned and subside.
+mn20:3.7 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:4.1 | S: Now, suppose that mendicant is focusing on some other subject connected with the skillful, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. They should examine the drawbacks of those thoughts: | T: “If evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is attending to this other theme, connected with what is skillful, he should scrutinize the drawbacks of those thoughts:
+mn20:4.2 | S: ‘So these thoughts are unskillful, they’re blameworthy, and they result in suffering.’ | T: ‘Really, these thoughts of mine are unskillful, these thoughts of mine are blameworthy, these thoughts of mine result in stress.’
+mn20:4.3 | S: As they do so, those bad thoughts are given up and come to an end. | T: As he is scrutinizing the drawbacks of those thoughts, those evil, unskillful thoughts—connected with desire, aversion, or delusion—are abandoned and subside.
+mn20:4.4 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:4.5 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments. If the carcass of a snake or a dog or a human were hung around their neck, they’d be horrified, repelled, and disgusted. | T: Just as a young woman—or man—fond of adornment, would be horrified, humiliated, and disgusted if the carcass of a snake or a dog or a human being were hung from her neck;
+mn20:4.6 | S: In the same way, a mendicant … should examine the drawbacks of those thoughts … | T: in the same way, if evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is attending to this other theme, connected with what is skillful, he should scrutinize the drawbacks of those thoughts:
+mn20:4.7 | P: ‘itipime vitakkā akusalā, itipime vitakkā sāvajjā, itipime vitakkā dukkhavipākā’ti. | T: ‘Really, these thoughts of mine are unskillful, these thoughts of mine are blameworthy, these thoughts of mine result in stress.’
+mn20:4.8 | P: Tassa tesaṁ vitakkānaṁ ādīnavaṁ upaparikkhato ye pāpakā akusalā vitakkā chandūpasaṁhitāpi dosūpasaṁhitāpi mohūpasaṁhitāpi te pahīyanti te abbhatthaṁ gacchanti. | T: As he is scrutinizing the drawbacks of those thoughts, those evil, unskillful thoughts—connected with desire, aversion, or delusion—are abandoned and subside.
+mn20:4.9 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:5.1 | S: Now, suppose that mendicant is examining the drawbacks of those thoughts, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. They should try to forget and ignore them. | T: “If evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is scrutinizing the drawbacks of those thoughts, he should pay no mind and pay no attention to those thoughts.
+mn20:5.2 | S: As they do so, those bad thoughts are given up and come to an end. | T: As he is paying no mind and paying no attention to them, those evil, unskillful thoughts are abandoned and subside.
+mn20:5.3 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:5.4 | S: Suppose there was a person with clear eyes, and some undesirable sights came into their range of vision. | T: Just as a man with good eyes, not wanting to see forms that had come into range,
+mn20:5.5 | S: They’d just close their eyes or look away. | T: would close his eyes or look away;
+mn20:5.6 | S: In the same way, a mendicant … those bad thoughts are given up and come to an end … | T: in the same way, if evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is scrutinizing the drawbacks of those thoughts, he should pay no mind and pay no attention to those thoughts. As he is paying no mind and paying no attention to them, those evil, unskillful thoughts are abandoned and subside.
+mn20:5.7 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:6.1 | S: Now, suppose that mendicant is ignoring and forgetting about those thoughts, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. They should focus on stopping the formation of those thoughts. | T: “If evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is paying no mind and paying no attention to those thoughts, he should attend to the relaxing of thought-fabrication with regard to those thoughts.
+mn20:6.2 | S: As they do so, those bad thoughts are given up and come to an end. | T: As he is attending to the relaxing of thought-fabrication with regard to those thoughts, those evil, unskillful thoughts are abandoned and subside.
+mn20:6.3 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:6.4 | S: Suppose there was a person walking quickly. | T: Just as the thought would occur to a man walking quickly,
+mn20:6.5 | S: They’d think: | T: (none)
+mn20:6.6 | S: ‘Why am I walking so quickly? | T: ‘Why am I walking quickly?
+mn20:6.7 | S: Why don’t I slow down?’ | T: Why don’t I walk slowly?’
+mn20:6.8 | S: So they’d slow down. | T: So he walks slowly.
+mn20:6.9 | S: They’d think: | T: The thought occurs to him,
+mn20:6.10 | S: ‘Why am I walking slowly? | T: ‘Why am I walking slowly?
+mn20:6.11 | S: Why don’t I stand still?’ | T: Why don’t I stand?’
+mn20:6.12 | S: So they’d stand still. | T: So he stands.
+mn20:6.13 | S: They’d think: | T: The thought occurs to him,
+mn20:6.14 | S: ‘Why am I standing still? | T: ‘Why am I standing?
+mn20:6.15 | S: Why don’t I sit down?’ | T: Why don’t I sit down?’
+mn20:6.16 | S: So they’d sit down. | T: So he sits down.
+mn20:6.17 | S: They’d think: | T: The thought occurs to him,
+mn20:6.18 | S: ‘Why am I sitting? | T: ‘Why am I sitting?
+mn20:6.19 | S: Why don’t I lie down?’ | T: Why don’t I lie down?’
+mn20:6.20 | S: So they’d lie down. | T: So he lies down.
+mn20:6.21 | S: And so that person would shun successively coarser postures and adopt more subtle ones. | T: In this way, giving up the grosser posture, he takes up the more refined one.
+mn20:6.22 | S: In the same way, a mendicant … those thoughts are given up and come to an end … | T: In the same way, if evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is paying no mind and paying no attention to those thoughts, he should attend to the relaxing of thought-fabrication with regard to those thoughts. As he is attending to the relaxing of thought-fabrication with regard to those thoughts, those evil, unskillful thoughts are abandoned and subside.
+mn20:6.23 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:7.1 | S: Now, suppose that mendicant is focusing on stopping the formation of those thoughts, but bad, unskillful thoughts connected with desire, hate, and delusion keep coming up. | T: “If evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is attending to the relaxing of thought-fabrication with regard to those thoughts,
+mn20:7.2 | S: With teeth clenched and tongue pressed against the roof of the mouth, they should squeeze, squash, and crush mind with mind. | T: then—with his teeth clenched and his tongue pressed against the roof of his mouth—he should beat down, constrain, and crush his mind with his awareness.
+mn20:7.3 | S: As they do so, those bad thoughts are given up and come to an end. | T: As—with his teeth clenched and his tongue pressed against the roof of his mouth—he is beating down, constraining, and crushing his mind with his awareness, those evil, unskillful thoughts are abandoned and subside.
+mn20:7.4 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:7.5 | S: It’s like a strong man who grabs a weaker man by the head or throat or shoulder and squeezes, squashes, and crushes them. | T: Just as a strong man, seizing a weaker man by the head or the throat or the shoulders, would beat him down, constrain, and crush him;
+mn20:7.6 | S: In the same way, a mendicant … | T: in the same way, if evil, unskillful thoughts—connected with desire, aversion, or delusion—still arise in the monk while he is attending to the relaxing of thought-fabrication with regard to those thoughts,
+mn20:7.7 | S: with teeth clenched and tongue pressed against the roof of the mouth, should squeeze, squash, and crush mind with mind. | T: then—with his teeth clenched and his tongue pressed against the roof of his mouth—he should beat down, constrain, and crush his mind with his awareness.
+mn20:7.8 | S: As they do so, those bad thoughts are given up and come to an end. | T: As—with his teeth clenched and his tongue pressed against the roof of his mouth—he is beating down, constraining, and crushing his mind with his awareness, those evil, unskillful thoughts are abandoned and subside.
+mn20:7.9 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: With their abandoning, he steadies his mind right within, settles it, unifies it, and concentrates it.
+mn20:8.1 | S: Now, take the mendicant who is focusing on some subject that gives rise to bad, unskillful thoughts connected with desire, hate, and delusion. They focus on some other subject connected with the skillful … | T: “Now when a monk… attending to another theme…
+mn20:8.2 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: (none)
+mn20:8.3 | S: They examine the drawbacks of those thoughts … | T: scrutinizing the drawbacks of those thoughts…
+mn20:8.4 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: (none)
+mn20:8.5 | S: They try to forget and ignore about those thoughts … | T: paying no mind and paying no attention to those thoughts…
+mn20:8.6 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: (none)
+mn20:8.7 | S: They focus on stopping the formation of those thoughts … | T: attending to the relaxing of thought-fabrication with regard to those thoughts…
+mn20:8.8 | P: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. | T: (none)
+mn20:8.9 | S: With teeth clenched and tongue pressed against the roof of the mouth, they squeeze, squash, and crush mind with mind. When they succeed in each of these things, those bad thoughts are given up and come to an end. | T: beating down, constraining and crushing his mind with his awareness…
+mn20:8.10 | S: Their mind becomes stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: steadies his mind right within, settles it, unifies it and concentrates it:
+mn20:8.11 | S: This is called a mendicant who is a master of the ways of thought. | T: He is then called a monk with mastery over the ways of thought sequences.
+mn20:8.12 | S: They will think what they want to think, and they won’t think what they don’t want to think. | T: He thinks whatever thought he wants to, and doesn’t think whatever thought he doesn’t.
+mn20:8.13 | S: They’ve cut off craving, cast off the fetters, and by rightly comprehending conceit have made an end of suffering.” | T: He has severed craving, thrown off the fetters, and—through the right penetration of conceit—has made an end of suffering & stress.”
+mn20:8.14 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn20:8.15 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+mn20:8.16 | P: Vitakkasaṇṭhānasuttaṁ niṭṭhitaṁ dasamaṁ. | T: (none)
+mn20:8.17 | P: Sīhanādavaggo niṭṭhito dutiyo. | T: (none)
+mn20:9.0 | P: Tassuddānaṁ | T: (none)
+mn20:9.1 | P: Cūḷasīhanādalomahaṁsavaro, | T: (none)
+mn20:9.2 | P: Mahācūḷadukkhakkhandhaanumānikasuttaṁ; | T: (none)
+mn20:9.3 | P: Khilapatthamadhupiṇḍikadvidhāvitakka, | T: (none)
+mn20:9.4 | P: Pañcanimittakathā puna vaggo. | T: (none)
+
+## mn149
+mn149:1.1 | S: So I have heard. | T: I have heard that
+mn149:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Monastery.
+mn149:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn149:1.4 | S: “Mendicants!” | T: “Monks!”
+mn149:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn149:1.6 | S: The Buddha said this: | T: (none)
+mn149:2.1 | S: “Mendicants, I shall teach you the great discourse on what relates to the six sense fields. | T: “Monks, I will teach you the great six sense-media (discourse).
+mn149:2.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+mn149:2.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+mn149:2.4 | S: The Buddha said this: | T: The Blessed One said:
+mn149:3.1 | S: “Mendicants, when you don’t truly know and see the eye, sights, eye consciousness, eye contact, and what is felt as pleasant, painful, or neutral that arises dependent on eye contact, you’re aroused by these things. | T: “Not knowing, not seeing the eye as it has come to be; not knowing, not seeing forms… consciousness at the eye… contact at the eye as they have come to be; not knowing, not seeing whatever arises conditioned through contact at the eye—experienced as pleasure, pain, or neither-pleasure-nor-pain—as it has come to be, one is infatuated with the eye… forms… consciousness at the eye… contact at the eye… whatever arises conditioned by contact at the eye and is experienced as pleasure, pain, or neither-pleasure-nor-pain.
+mn149:3.2 | S: Someone who lives aroused like this—fettered, confused, concentrating on gratification—accumulates the five grasping aggregates for themselves in the future. | T: “For him—infatuated, attached, confused, not remaining focused on their drawbacks—the five clinging-aggregates head toward future accumulation.
+mn149:3.3 | S: And their craving—which leads to future lives, mixed up with relishing and greed, taking pleasure there wherever it alights—grows. | T: The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—grows within him.
+mn149:3.4 | S: Their physical and mental stress, | T: His bodily disturbances & mental disturbances grow.
+mn149:3.5 | S: torment, | T: His bodily torments & mental torments grow.
+mn149:3.6 | S: and fever grow. | T: His bodily distresses & mental distresses grow.
+mn149:3.7 | S: And they experience physical and mental suffering. | T: He is sensitive both to bodily stress & mental stress.
+mn149:4-7.1 | S: When you don’t truly know and see the ear … | T: “Not knowing, not seeing the ear.…
+mn149:4-7.2 | S: nose … | T: Not knowing, not seeing the nose.…
+mn149:4-7.3 | S: tongue … | T: Not knowing, not seeing the tongue.…
+mn149:4-7.4 | S: body … | T: Not knowing, not seeing the body.…
+mn149:4-7.5 | S: mind, ideas, mind consciousness, mind contact, and what is felt as pleasant, painful, or neutral that arises dependent on mind contact, you’re aroused by these things. | T: “Not knowing, not seeing the intellect as it has come to be; not knowing, not seeing ideas… consciousness at the intellect… contact at the intellect as they have come to be; not knowing, not seeing whatever arises conditioned through intellect-contact—experienced as pleasure, pain, or neither-pleasure-nor-pain—as it has come to be, one is infatuated with the intellect… ideas… consciousness at the intellect… contact at the intellect… whatever arises conditioned by contact at the intellect and is experienced as pleasure, pain, or neither-pleasure-nor-pain.
+mn149:8.1 | S: Someone who lives aroused like this—fettered, confused, concentrating on gratification—accumulates the five grasping aggregates for themselves in the future. | T: “For him—infatuated, attached, confused, not remaining focused on their drawbacks—the five clinging-aggregates head toward future accumulation.
+mn149:8.2 | S: And their craving—which leads to future lives, mixed up with relishing and greed, taking pleasure there wherever it alights—grows. | T: The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—grows within him.
+mn149:8.3 | S: Their physical and mental stress, | T: His bodily disturbances & mental disturbances grow.
+mn149:8.4 | S: torment, | T: His bodily torments & mental torments grow.
+mn149:8.5 | S: and fever grow. | T: His bodily distresses & mental distresses grow.
+mn149:8.6 | S: And they experience physical and mental suffering. | T: He is sensitive both to bodily stress & mental stress.
+mn149:9.1 | S: When you do truly know and see the eye, sights, eye consciousness, eye contact, and what is felt as pleasant, painful, or neutral that arises dependent on eye contact, you’re not aroused by these things. | T: “However, knowing & seeing the eye as it has come to be, knowing & seeing forms… consciousness at the eye… contact at the eye as they have come to be, knowing & seeing whatever arises conditioned through contact at the eye—experienced as pleasure, pain, or neither-pleasure-nor-pain—as it has come to be, one is not infatuated with the eye… forms… consciousness at the eye… contact at the eye… whatever arises conditioned by contact at the eye and is experienced as pleasure, pain, or neither-pleasure-nor-pain.
+mn149:9.2 | S: Someone who lives unaroused like this—unfettered, unconfused, concentrating on drawbacks—disperses the five grasping aggregates for themselves in the future. | T: “For him—uninfatuated, unattached, unconfused, remaining focused on their drawbacks—the five clinging-aggregates head toward future diminution.
+mn149:9.3 | S: And their craving—which leads to future lives, mixed up with relishing and greed, taking pleasure there wherever it alights—is given up. | T: The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—is abandoned by him.
+mn149:9.4 | S: Their physical and mental stress, | T: His bodily disturbances & mental disturbances are abandoned.
+mn149:9.5 | S: torment, | T: His bodily torments & mental torments are abandoned.
+mn149:9.6 | S: and fever are given up. | T: His bodily distresses & mental distresses are abandoned.
+mn149:9.7 | S: And they experience physical and mental pleasure. | T: He is sensitive both to ease of body & ease of awareness.
+mn149:10.1 | S: The view of such a person is right view. | T: “Any view belonging to one who has come to be like this is his right view.
+mn149:10.2 | S: Their intention is right intention, | T: Any resolve, his right resolve.
+mn149:10.3 | S: their effort is right effort, | T: Any effort, his right effort.
+mn149:10.4 | S: their mindfulness is right mindfulness, | T: Any mindfulness, his right mindfulness.
+mn149:10.5 | S: and their immersion is right immersion. | T: Any concentration, his right concentration:
+mn149:10.6 | S: And their actions of body and speech, and their livelihood, have already been fully purified before. | T: just as earlier his actions, speech, & livelihood were already well-purified.
+mn149:10.7 | S: So this noble eightfold path is fully developed. | T: Thus for him, having thus developed the noble eightfold path,
+mn149:10.8 | S: When the noble eightfold path is developed, the following are fully developed: the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, and the seven awakening factors. | T: the four establishings of mindfulness go to the culmination of their development. The four right exertions… the four bases of power… the five faculties… the five strengths… the seven factors for awakening go to the culmination of their development.
+mn149:10.9 | S: And these two qualities proceed in conjunction: | T: (And) for him these two qualities occur in tandem:
+mn149:10.10 | S: serenity and discernment. | T: tranquility & insight.
+mn149:10.11 | S: They completely understand by direct knowledge those things that should be completely understood by direct knowledge. | T: “He comprehends through direct knowledge whatever qualities are to be comprehended through direct knowledge,
+mn149:10.12 | S: They give up by direct knowledge those things that should be given up by direct knowledge. | T: abandons through direct knowledge whatever qualities are to be abandoned through direct knowledge,
+mn149:10.13 | S: They develop by direct knowledge those things that should be developed by direct knowledge. | T: develops through direct knowledge whatever qualities are to be developed through direct knowledge,
+mn149:10.14 | S: They realize by direct knowledge those things that should be realized by direct knowledge. | T: and realizes through direct knowledge whatever qualities are to be realized through direct knowledge.
+mn149:11.1 | S: And what are the things that should be completely understood by direct knowledge? | T: “And which qualities are to be comprehended through direct knowledge?
+mn149:11.2 | S: You should say: ‘The five grasping aggregates.’ | T: ‘The five clinging-aggregates,’ should be the reply.
+mn149:11.3 | S: That is: form, feeling, perception, choices, and consciousness. | T: Which five? The form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+mn149:11.4 | S: These are the things that should be completely understood by direct knowledge. | T: These are the qualities that are to be comprehended through direct knowledge.
+mn149:11.5 | S: And what are the things that should be given up by direct knowledge? | T: “And which qualities are to be abandoned through direct knowledge?
+mn149:11.6 | S: Ignorance and craving for continued existence. | T: Ignorance & craving for becoming:
+mn149:11.7 | S: These are the things that should be given up by direct knowledge. | T: These are the qualities that are to be abandoned through direct knowledge.
+mn149:11.8 | S: And what are the things that should be developed by direct knowledge? | T: “And which qualities are to be developed through direct knowledge?
+mn149:11.9 | S: Serenity and discernment. | T: Tranquility & insight:
+mn149:11.10 | S: These are the things that should be developed by direct knowledge. | T: these are the qualities that are to be developed through direct knowledge.
+mn149:11.11 | S: And what are the things that should be realized by direct knowledge? | T: “And which qualities are to be realized through direct knowledge?
+mn149:11.12 | S: Knowledge and freedom. | T: Clear knowing & release:
+mn149:11.13 | S: These are the things that should be realized by direct knowledge. | T: These are the qualities that are to be realized through direct knowledge.
+mn149:12-18.1 | S: When you truly know and see the ear … | T: “Knowing & seeing the ear.…
+mn149:12-18.2 | S: nose … | T: “Knowing & seeing the nose.…
+mn149:12-18.3 | S: tongue … | T: “Knowing & seeing the tongue.…
+mn149:12-18.4 | S: body … | T: “Knowing & seeing the body.…
+mn149:12-18.5 | S: mind, ideas, mind consciousness, mind contact, and what is felt as pleasant, painful, or neutral that arises dependent on mind contact, you are not aroused by these things. … | T: “Knowing & seeing the intellect as it has come to be, knowing & seeing ideas… consciousness at the intellect… contact at the intellect as they have come to be, knowing & seeing whatever arises conditioned through contact at the intellect—experienced as pleasure, pain, or neither-pleasure-nor-pain—as it has come to be, one is not infatuated with the intellect… ideas… consciousness at the intellect… contact at the intellect… whatever arises conditioned by contact at the intellect and is experienced as pleasure, pain, or neither-pleasure-nor-pain.
+mn149:19.1 | P: Tassa asārattassa asaṁyuttassa asammūḷhassa ādīnavānupassino viharato āyatiṁ pañcupādānakkhandhā apacayaṁ gacchanti. | T: “For him—uninfatuated, unattached, unconfused, remaining focused on their drawbacks—the five clinging-aggregates head toward future diminution.
+mn149:19.2 | P: Taṇhā cassa ponobbhavikā nandīrāgasahagatā tatratatrābhinandinī, sā cassa pahīyati. | T: The craving that makes for further becoming—accompanied by passion & delight, relishing now here & now there—is abandoned by him.
+mn149:19.3 | P: Tassa kāyikāpi darathā pahīyanti, cetasikāpi darathā pahīyanti; | T: His bodily disturbances & mental disturbances are abandoned.
+mn149:19.4 | P: kāyikāpi santāpā pahīyanti, cetasikāpi santāpā pahīyanti; | T: His bodily torments & mental torments are abandoned.
+mn149:19.5 | P: kāyikāpi pariḷāhā pahīyanti, cetasikāpi pariḷāhā pahīyanti. | T: His bodily distresses & mental distresses are abandoned.
+mn149:19.6 | P: So kāyasukhampi cetosukhampi paṭisaṁvedeti. | T: He is sensitive both to ease of body & ease of awareness.
+mn149:20.1 | P: Yā tathābhūtassa diṭṭhi sāssa hoti sammādiṭṭhi; | T: “Any view belonging to one who has come to be like this is his right view.
+mn149:20.2 | P: yo tathābhūtassa saṅkappo svāssa hoti sammāsaṅkappo; | T: Any resolve, his right resolve.
+mn149:20.3 | P: yo tathābhūtassa vāyāmo svāssa hoti sammāvāyāmo; | T: Any effort, his right effort.
+mn149:20.4 | P: yā tathābhūtassa sati sāssa hoti sammāsati; | T: Any mindfulness, his right mindfulness.
+mn149:20.5 | P: yo tathābhūtassa samādhi svāssa hoti sammāsamādhi. | T: Any concentration, his right concentration:
+mn149:20.6 | P: Pubbeva kho panassa kāyakammaṁ vacīkammaṁ ājīvo suparisuddho hoti. | T: just as earlier his actions, speech, & livelihood were already well-purified.
+mn149:20.7 | P: Evamassāyaṁ ariyo aṭṭhaṅgiko maggo bhāvanāpāripūriṁ gacchati. | T: (none)
+mn149:21.1 | P: Tassa evaṁ imaṁ ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvayato cattāropi satipaṭṭhānā bhāvanāpāripūriṁ gacchanti, cattāropi sammappadhānā bhāvanāpāripūriṁ gacchanti, cattāropi iddhipādā bhāvanāpāripūriṁ gacchanti, pañcapi indriyāni bhāvanāpāripūriṁ gacchanti, pañcapi balāni bhāvanāpāripūriṁ gacchanti, sattapi bojjhaṅgā bhāvanāpāripūriṁ gacchanti. | T: Thus for him, having thus developed the noble eightfold path, the four establishings of mindfulness go to the culmination of their development. The four right exertions… the four bases of power… the five faculties… the five strengths… the seven factors for awakening go to the culmination of their development.
+mn149:22.1 | P: Tassime dve dhammā yuganandhā vattanti— | T: (And) for him these two qualities occur in tandem:
+mn149:22.2 | P: samatho ca vipassanā ca. | T: tranquility & insight.
+mn149:22.3 | P: So ye dhammā abhiññā pariññeyyā te dhamme abhiññā parijānāti. | T: “He comprehends through direct knowledge whatever qualities are to be comprehended through direct knowledge,
+mn149:22.4 | P: Ye dhammā abhiññā pahātabbā te dhamme abhiññā pajahati. | T: abandons through direct knowledge whatever qualities are to be abandoned through direct knowledge,
+mn149:22.5 | P: Ye dhammā abhiññā bhāvetabbā te dhamme abhiññā bhāveti. | T: develops through direct knowledge whatever qualities are to be developed through direct knowledge,
+mn149:22.6 | P: Ye dhammā abhiññā sacchikātabbā te dhamme abhiññā sacchikaroti. | T: and realizes through direct knowledge whatever qualities are to be realized through direct knowledge.
+mn149:23.1 | P: Katame ca, bhikkhave, dhammā abhiññā pariññeyyā? | T: “And which qualities are to be comprehended through direct knowledge?
+mn149:23.2 | P: ‘Pañcupādānakkhandhā’ tissa vacanīyaṁ, seyyathidaṁ— | T: ‘The five clinging-aggregates,’ should be the reply. Which five?
+mn149:23.3 | P: rūpupādānakkhandho, vedanupādānakkhandho, saññupādānakkhandho, saṅkhārupādānakkhandho, viññāṇupādānakkhandho. | T: The form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate:
+mn149:23.4 | P: Ime dhammā abhiññā pariññeyyā. | T: These are the qualities that are to be comprehended through direct knowledge.
+mn149:24.1 | P: Katame ca, bhikkhave, dhammā abhiññā pahātabbā? | T: “And which qualities are to be abandoned through direct knowledge?
+mn149:24.2 | P: Avijjā ca bhavataṇhā ca— | T: Ignorance & craving for becoming:
+mn149:24.3 | P: ime dhammā abhiññā pahātabbā. | T: These are the qualities that are to be abandoned through direct knowledge.
+mn149:25.1 | P: Katame ca, bhikkhave, dhammā abhiññā bhāvetabbā? | T: “And which qualities are to be developed through direct knowledge?
+mn149:25.2 | P: Samatho ca vipassanā ca— | T: Tranquility & insight:
+mn149:25.3 | P: ime dhammā abhiññā bhāvetabbā. | T: these are the qualities that are to be developed through direct knowledge.
+mn149:26.1 | P: Katame ca, bhikkhave, dhammā abhiññā sacchikātabbā? | T: “And which qualities are to be realized through direct knowledge?
+mn149:26.2 | P: Vijjā ca vimutti ca— | T: Clear knowing & release:
+mn149:26.3 | S: These are the things that should be realized by direct knowledge.” | T: these are the qualities that are to be realized through direct knowledge.”
+mn149:26.4 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn149:26.5 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+mn149:26.6 | P: Mahāsaḷāyatanikasuttaṁ niṭṭhitaṁ sattamaṁ. | T: (none)
+
+## mn17
+mn17:1.1 | S: So I have heard. | T: I have heard that
+mn17:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn17:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn17:1.4 | S: “Mendicants!” | T: “Monks!”
+mn17:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn17:1.6 | S: The Buddha said this: | T: (none)
+mn17:2.1 | S: “Mendicants, I will teach you an exposition about jungle thickets. | T: “Monks, I will teach you the forest-hinterland sequence.
+mn17:2.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+mn17:2.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+mn17:2.4 | S: The Buddha said this: | T: The Blessed One said:
+mn17:3.1 | S: “Mendicants, take the case of a mendicant who lives close by a jungle thicket. | T: “Monks, there is the case where a monk lives in dependence on a certain forest hinterland.
+mn17:3.2 | S: As they do so, their mindfulness does not become established, their mind does not become immersed in samādhi, their defilements do not come to an end, and they do not arrive at the supreme sanctuary from the yoke. | T: As he is living in dependence on that forest hinterland, his unestablished mindfulness doesn’t become established, his unconcentrated mind doesn’t become concentrated, his unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:3.3 | S: And the necessities of life that a renunciate requires—robes, almsfood, lodgings, and medicines and supplies for the sick—are hard to come by. | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.
+mn17:3.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:3.5 | S: ‘While living close by this jungle thicket, my mindfulness does not become established, my mind does not become immersed in samādhi, my defilements do not come to an end, and I do not arrive at the supreme sanctuary from the yoke. | T: ‘I live in dependence on this forest hinterland. As I am living in dependence on this forest hinterland, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:3.6 | S: And the necessities of life that a renunciate requires—robes, almsfood, lodgings, and medicines and supplies for the sick—are hard to come by.’ | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.’
+mn17:3.7 | S: That mendicant should leave that jungle thicket that very time of night or day; they should not stay there. | T: That monk should leave that forest hinterland that very day or that very night. He shouldn’t stay there.
+mn17:4.1 | S: Take another case of a mendicant who lives close by a jungle thicket. | T: “Then there’s the case where a monk lives in dependence on a certain forest hinterland.
+mn17:4.2 | S: Their mindfulness does not become established … | T: As he is living in dependence on that forest hinterland, his unestablished mindfulness doesn’t become established, his unconcentrated mind doesn’t become concentrated, his unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:4.3 | S: But the necessities of life are easy to come by. | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:4.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:4.5 | S: ‘While living close by this jungle thicket, my mindfulness does not become established … | T: ‘I live in dependence on this forest hinterland. As I am living in dependence on this forest hinterland, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:4.6 | S: But the necessities of life are easy to come by. | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:4.7 | S: But I didn’t go forth from the lay life to homelessness for the sake of a robe, almsfood, lodgings, or medicines and supplies for the sick. | T: “‘Now, it’s not the case that I went forth from home into the homeless life for the sake of robes. It’s not the case that I went forth from home into the homeless life for the sake of almsfood, lodging, or medicinal requisites used for curing the sick.
+mn17:4.8 | S: Moreover, while living close by this jungle thicket, my mindfulness does not become established …’ | T: On top of that, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.’
+mn17:4.9 | S: That mendicant should, after appraisal, leave that jungle thicket; they should not stay there. | T: That monk, calculating this, should leave that forest hinterland. He shouldn’t stay there.
+mn17:5.1 | S: Take another case of a mendicant who lives close by a jungle thicket. | T: “Then there’s the case where a monk lives in dependence on a certain forest hinterland.
+mn17:5.2 | S: As they do so, their mindfulness becomes established, their mind becomes immersed in samādhi, their defilements come to an end, and they arrive at the supreme sanctuary from the yoke. | T: As he is living in dependence on that forest hinterland, his unestablished mindfulness becomes established, his unconcentrated mind becomes concentrated, his unended effluents come to an end, the unattained safety from the yoke is attained.
+mn17:5.3 | S: But the necessities of life that a renunciate requires—robes, almsfood, lodgings, and medicines and supplies for the sick—are hard to come by. That mendicant should reflect: | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty. “He should reflect on that:
+mn17:5.4 | P: ‘ahaṁ kho imaṁ vanapatthaṁ upanissāya viharāmi. | T: ‘I live in dependence on this forest hinterland.
+mn17:5.5 | S: ‘While living close by this jungle thicket, my mindfulness becomes established … | T: As I am living in dependence on this forest hinterland, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.
+mn17:5.6 | S: But the necessities of life are hard to come by. | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.
+mn17:5.7 | S: But I didn’t go forth from the lay life to homelessness for the sake of a robe, almsfood, lodgings, or medicines and supplies for the sick. | T: “‘Now, it’s not the case that I went forth from home into the homeless life for the sake of robes. It’s not the case that I went forth from home into the homeless life for the sake of almsfood, lodging, or medicinal requisites used for curing the sick.
+mn17:5.8 | S: Moreover, while living close by this jungle thicket, my mindfulness becomes established …’ | T: On top of that, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.’
+mn17:5.9 | S: That mendicant should, after appraisal, stay in that jungle thicket; they should not leave. | T: That monk, calculating this, should stay in that forest hinterland. He shouldn’t leave.
+mn17:6.1 | S: Take another case of a mendicant who lives close by a jungle thicket. | T: “Then there’s the case where a monk lives in dependence on a certain forest hinterland.
+mn17:6.2 | S: Their mindfulness becomes established … | T: As he is living in dependence on that forest hinterland, his unestablished mindfulness becomes established, his unconcentrated mind becomes concentrated, his unended effluents come to an end, the unattained safety from the yoke is attained.
+mn17:6.3 | S: And the necessities of life are easy to come by. | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:6.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:6.5 | S: ‘While living close by this jungle thicket, my mindfulness becomes established … | T: ‘I live in dependence on this forest hinterland. As I am living in dependence on this forest hinterland, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.
+mn17:6.6 | S: And the necessities of life are easy to come by.’ | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.’
+mn17:6.7 | S: That mendicant should stay in that jungle thicket for the rest of their life; they should not leave. | T: That monk should stay in that forest hinterland for life. He shouldn’t leave.
+mn17:7-10.1 | S: Take the case of a mendicant who lives supported by a village … | T: “Then there’s the case where a monk lives in dependence on a certain village …
+mn17:11-14.1 | S: town … | T: a certain town …
+mn17:15-18.1 | S: city … | T: a certain city …
+mn17:19-22.1 | S: country … | T: a certain countryside …
+mn17:23.1 | S: an individual. | T: “Then there’s the case where a monk lives in dependence on a certain individual.
+mn17:23.2 | S: As they do so, their mindfulness does not become established, their mind does not become immersed in samādhi, their defilements do not come to an end, and they do not arrive at the supreme sanctuary from the yoke. | T: As he is living in dependence on that individual, his unestablished mindfulness doesn’t become established, his unconcentrated mind doesn’t become concentrated, his unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:23.3 | S: And the necessities of life that a renunciate requires—robes, almsfood, lodgings, and medicines and supplies for the sick—are hard to come by. | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.
+mn17:23.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:23.5 | S: ‘… my mindfulness does not become established … | T: ‘I live in dependence on this individual. As I am living in dependence on this individual, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:23.6 | S: And the necessities of life are hard to come by.’ | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.’
+mn17:23.7 | S: That mendicant should leave that individual at any time of the day or night, without taking leave; they should not follow them. … | T: That monk may leave that individual that very day or that very night without taking leave. He shouldn’t continue following him.
+mn17:24.1 | S: Take another case of a mendicant who lives supported by an individual. | T: “Then there’s the case where a monk lives in dependence on a certain individual.
+mn17:24.2 | S: Their mindfulness does not become established … | T: As he is living in dependence on that individual, his unestablished mindfulness doesn’t become established, his unconcentrated mind doesn’t become concentrated, his unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:24.3 | S: But the necessities of life are easy to come by. | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:24.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:24.5 | S: ‘… my mindfulness does not become established … | T: ‘I live in dependence on this individual. As I am living in dependence on this individual, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.
+mn17:24.6 | S: But the necessities of life are easy to come by.’ … | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:24.7 | P: Na kho panāhaṁ cīvarahetu agārasmā anagāriyaṁ pabbajito, na piṇḍapātahetu …pe… na senāsanahetu …pe… na gilānappaccayabhesajjaparikkhārahetu agārasmā anagāriyaṁ pabbajito. | T: “‘Now, it’s not the case that I went forth from home into the homeless life for the sake of robes. It’s not the case that I went forth from home into the homeless life for the sake of almsfood, lodging, or medicinal requisites used for curing the sick.
+mn17:24.8 | P: Atha ca pana me imaṁ puggalaṁ upanissāya viharato anupaṭṭhitā ceva sati na upaṭṭhāti, asamāhitañca cittaṁ na samādhiyati, aparikkhīṇā ca āsavā na parikkhayaṁ gacchanti, ananuppattañca anuttaraṁ yogakkhemaṁ nānupāpuṇāmī’ti. | T: On top of that, my unestablished mindfulness doesn’t become established, my unconcentrated mind doesn’t become concentrated, my unended effluents don’t come to an end, the unattained safety from the yoke isn’t attained.’
+mn17:24.9 | S: That mendicant should, after appraisal, leave that individual having taken leave; they should not follow them. … | T: That monk, calculating this, may leave that individual without taking leave. He shouldn’t continue following him.
+mn17:25.1 | S: Take another case of a mendicant who lives supported by an individual. | T: “Then there’s the case where a monk lives in dependence on a certain individual.
+mn17:25.2 | S: Their mindfulness becomes established … | T: As he is living in dependence on that individual, his unestablished mindfulness becomes established, his unconcentrated mind becomes concentrated, his unended effluents come to an end, the unattained safety from the yoke is attained.
+mn17:25.3 | S: But the necessities of life are hard to come by. | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.
+mn17:25.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:25.5 | S: ‘… my mindfulness becomes established … | T: ‘I live in dependence on this individual. As I am living in dependence on this individual, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.
+mn17:25.6 | S: But the necessities of life are hard to come by.’ … | T: But the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained with difficulty.
+mn17:25.7 | P: Na kho panāhaṁ cīvarahetu agārasmā anagāriyaṁ pabbajito, na piṇḍapātahetu …pe… na senāsanahetu …pe… na gilānappaccayabhesajjaparikkhārahetu agārasmā anagāriyaṁ pabbajito. | T: “‘Now, it’s not the case that I went forth from home into the homeless life for the sake of robes. It’s not the case that I went forth from home into the homeless life for the sake of almsfood, lodging, or medicinal requisites used for curing the sick.
+mn17:25.8 | P: Atha ca pana me imaṁ puggalaṁ upanissāya viharato anupaṭṭhitā ceva sati upaṭṭhāti, asamāhitañca cittaṁ samādhiyati, aparikkhīṇā ca āsavā parikkhayaṁ gacchanti, ananuppattañca anuttaraṁ yogakkhemaṁ anupāpuṇāmī’ti. | T: On top of that, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.’
+mn17:25.9 | S: That mendicant should, after appraisal, follow that individual; they should not leave. | T: That monk, calculating this, should continue following that individual. He shouldn’t leave.
+mn17:26.1 | S: Take another case of a mendicant who lives supported by an individual. | T: “Then there’s the case where a monk lives in dependence on a certain individual.
+mn17:26.2 | S: As they do so, their mindfulness becomes established, their mind becomes immersed in samādhi, their defilements come to an end, and they arrive at the supreme sanctuary from the yoke. | T: As he is living in dependence on that individual, his unestablished mindfulness becomes established, his unconcentrated mind becomes concentrated, his unended effluents come to an end, the unattained safety from the yoke is attained.
+mn17:26.3 | S: And the necessities of life that a renunciate requires—robes, almsfood, lodgings, and medicines and supplies for the sick—are easy to come by. | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.
+mn17:26.4 | S: That mendicant should reflect: | T: “He should reflect on that:
+mn17:26.5 | S: ‘While living supported by this individual, my mindfulness becomes established … | T: ‘I live in dependence on this individual. As I am living in dependence on this individual, my unestablished mindfulness has become established, my unconcentrated mind has become concentrated, my unended effluents have come to an end, the unattained safety from the yoke is attained.
+mn17:26.6 | S: And the necessities of life are easy to come by.’ | T: And the requisites of life that should be obtained by one gone forth—robes, almsfood, lodging, or medicinal requisites used for curing the sick—are obtained without difficulty.’
+mn17:26.7 | S: That mendicant should follow that individual for the rest of their life; they should not leave them, even if driven away.” | T: That monk should stay with that individual for life. He shouldn’t leave, even if driven away.”
+mn17:26.8 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn17:26.9 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+mn17:26.10 | P: Vanapatthasuttaṁ niṭṭhitaṁ sattamaṁ. | T: (none)
+

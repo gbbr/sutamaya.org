@@ -1,0 +1,326 @@
+## mn33
+mn33:1.1 | S: So I have heard. | T: I have heard that
+mn33:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika's monastery.
+mn33:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+mn33:1.4 | S: “Mendicants!” | T: “Monks!”
+mn33:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn33:1.6 | S: The Buddha said this: | T: The Blessed One said,
+mn33:2.1 | S: “Mendicants, a cowherd with eleven factors can’t maintain and expand a herd of cattle. | T: “Monks, a cowherd endowed with eleven factors is incapable of looking after a herd so that it prospers & grows.
+mn33:2.2 | S: What eleven? | T: Which eleven?
+mn33:2.3 | S: It’s when a cowherd doesn’t know form, is unskilled in characteristics, doesn’t pick out flies’ eggs, doesn’t dress wounds, doesn’t spread smoke, doesn’t know the ford, doesn’t know satisfaction, doesn’t know the trail, is not skilled in ranges, milks dry, and doesn’t show extra respect to the bulls who are fathers and captains of the herd. | T: There is the case where a cowherd is not well-versed in forms [appearances], unskilled in characteristics, doesn’t pick out flies’ eggs, doesn’t dress wounds, doesn’t fumigate (the cattle pen), doesn’t know fords, doesn’t know what it is (for the cattle) to have drunk, doesn’t know the road, isn’t skilled in pastures, milks dry, and shows no extra respect for the bulls who are fathers & leaders of the herd.
+mn33:2.4 | S: A cowherd with these eleven factors can’t maintain and expand a herd of cattle. | T: A cowherd endowed with these eleven factors is incapable of looking after a herd so that it prospers & grows.
+mn33:3.1 | S: In the same way, a mendicant with eleven qualities can’t achieve growth, improvement, or maturity in this teaching and training. | T: “A monk endowed with these eleven factors is incapable of attaining growth, increase, & abundance in this Dhamma-Vinaya.
+mn33:3.2 | S: What eleven? | T: Which eleven?
+mn33:3.3 | S: It’s when a mendicant doesn’t know form, is unskilled in characteristics, doesn’t pick out flies’ eggs, doesn’t dress wounds, doesn’t spread smoke, doesn’t know the ford, doesn’t know satisfaction, doesn’t know the trail, is not skilled in ranges, milks dry, and doesn’t show extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha. | T: There is the case where a monk is not well-versed in forms, unskilled in characteristics, doesn’t pick out flies’ eggs, doesn’t dress wounds, doesn’t fumigate, doesn’t know fords, doesn’t know what it is to have drunk, doesn’t know the road, is not skilled in pastures, milks dry, and shows no extra respect for the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:4.1 | S: And how does a mendicant not know form? | T: “And how is a monk not well-versed in forms?
+mn33:4.2 | S: It’s when a mendicant doesn’t truly understand that all form is the four principal states, or form derived from the four principal states. | T: There is the case where a monk doesn’t discern, as it has come to be, that every form whatsoever is composed of the four great elements [earth, water, fire, & wind] and the forms dependent on them.
+mn33:4.3 | S: That’s how a mendicant doesn’t know form. | T: This is how a monk is not well-versed in forms.
+mn33:5.1 | S: And how is a mendicant not skilled in characteristics? | T: “And how is a monk unskilled in characteristics?
+mn33:5.2 | S: It’s when a mendicant doesn’t understand that a fool is characterized by their deeds, and an astute person is characterized by their deeds. | T: There is the case where a monk doesn’t discern, as it has come to be, that a fool is characterized by his actions, a wise person is characterized by his actions.
+mn33:5.3 | S: That’s how a mendicant isn’t skilled in characteristics. | T: This is how a monk is unskilled in characteristics.
+mn33:6.1 | S: And how does a mendicant not pick out flies’ eggs? | T: “And how does a monk not pick out flies’ eggs?
+mn33:6.2 | S: It’s when a mendicant tolerates a sensual, malicious, or cruel thought that has arisen. They tolerate any bad, unskillful qualities that have arisen. They don’t give them up, dispel them, eliminate them, and obliterate them. | T: There is the case where a monk acquiesces with an arisen thought of sensuality. He doesn’t abandon it, dispel it, demolish it, or wipe it out of existence. He acquiesces with an arisen thought of ill will… an arisen thought of harmfulness. He doesn’t abandon it, dispel it, demolish it, or wipe it out of existence. He acquiesces with arisen evil, unskillful qualities. He doesn’t abandon them, dispel them demolish them, or wipe them out of existence.
+mn33:6.3 | S: That’s how a mendicant doesn’t pick out flies’ eggs. | T: This is how a monk doesn’t pick out flies’ eggs.
+mn33:7.1 | S: And how does a mendicant not dress wounds? | T: “And how does a monk not dress wounds?
+mn33:7.2 | S: When a mendicant sees a sight with their eyes, they get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, grasps at themes or details by which—
+mn33:7.3 | S: Since the faculty of sight is left unrestrained, bad unskillful qualities of covetousness and displeasure become overwhelming. They don’t practice restraint, they don’t protect the faculty of sight, and they don’t achieve its restraint. | T: as he dwells without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He doesn’t practice for its restraint. He doesn’t protect the faculty of the eye.
+mn33:7.4 | S: When they hear a sound with their ears … | T: On hearing a sound with the ear…
+mn33:7.5 | S: smell an odor with their nose … | T: On smelling an aroma with the nose…
+mn33:7.6 | S: taste a flavor with their tongue … | T: On tasting a flavor with the tongue…
+mn33:7.7 | S: feel a touch with their body … | T: On touching a tactile sensation with the body…
+mn33:7.8 | S: know an idea with their mind, they get caught up in the features and details. | T: On cognizing an idea with the intellect, he grasps at themes or details by which—
+mn33:7.9 | S: Since the faculty of the mind is left unrestrained, bad unskillful qualities of covetousness and displeasure become overwhelming. They don’t practice restraint, they don’t protect the faculty of the mind, and they don’t achieve its restraint. | T: as he dwells without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He doesn’t practice for its restraint. He doesn’t protect the faculty of the intellect.
+mn33:7.10 | S: That’s how a mendicant doesn’t dress wounds. | T: This is how a monk doesn’t dress wounds.
+mn33:8.1 | S: And how does a mendicant not spread smoke? | T: “And how does a monk not fumigate?
+mn33:8.2 | S: It’s when a mendicant doesn’t teach others the Dhamma in detail as they learned and memorized it. | T: There is the case where a monk doesn’t teach others in detail the Dhamma as he has heard and mastered it.
+mn33:8.3 | S: That’s how a mendicant doesn’t spread smoke. | T: This is how a monk doesn’t fumigate.
+mn33:9.1 | S: And how does a mendicant not know the ford? | T: “And how does a monk not know fords?
+mn33:9.2 | S: It’s when a mendicant doesn’t from time to time go up to those mendicants who are very learned—inheritors of the heritage, who have memorized the teachings, the monastic law, and the outlines—and ask them questions: | T: There is the case where a monk goes time & again to the monks who are learned, well-versed in the tradition, who have memorized the Dhamma, the Vinaya, and the Mātikās, but doesn’t question them, doesn’t present them with his problems:
+mn33:9.3 | S: ‘Why, sir, does it say this? | T: ‘How is this, venerable sir?
+mn33:9.4 | S: What does that mean?’ | T: What is the meaning of this?’
+mn33:9.5 | S: Those venerables don’t reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: These venerable ones do not reveal what has not been revealed to him, do not make plain what has not been made plain to him, do not resolve his doubts about the many teachings that might give rise to doubt.
+mn33:9.6 | S: That’s how a mendicant doesn’t know the ford. | T: This is how a monk doesn’t know fords.
+mn33:10.1 | S: And how does a mendicant not know satisfaction? | T: “And how does a monk not know what it is to have drunk?
+mn33:10.2 | S: It’s when a mendicant, when the teaching and training proclaimed by the Realized One are being taught, finds no inspiration in the meaning and the teaching, and finds no joy connected with the teaching. | T: There is the case where a monk, when the Dhamma-Vinaya proclaimed by the Tathāgata is being taught, doesn’t gain understanding of the meaning, doesn’t gain understanding of the Dhamma, doesn’t gain joy connected with the Dhamma.
+mn33:10.3 | S: That’s how a mendicant doesn’t know satisfaction. | T: This is how a monk doesn’t know what it is to have drunk.
+mn33:11.1 | S: And how does a mendicant not know the trail? | T: “And how does a monk not know the road?
+mn33:11.2 | S: It’s when a mendicant doesn’t truly understand the noble eightfold path. | T: There is the case where a monk doesn’t discern, as it has come to be, the noble eightfold path.
+mn33:11.3 | S: That’s how a mendicant doesn’t know the trail. | T: This is how a monk doesn’t know the road.
+mn33:12.1 | S: And how is a mendicant not skilled in ranges? | T: “And how is a monk unskilled in pastures?
+mn33:12.2 | S: It’s when a mendicant doesn’t truly understand the four kinds of mindfulness meditation. | T: There is the case where a monk doesn’t discern, as they have come to be, the four establishings of mindfulness.
+mn33:12.3 | S: That’s how a mendicant is not skilled in ranges. | T: This is how a monk is unskilled in pastures.
+mn33:13.1 | S: And how does a mendicant milk dry? | T: “And how does a monk milk dry?
+mn33:13.2 | S: It’s when a mendicant is invited by a householder to accept robes, almsfood, lodgings, and medicines and supplies for the sick, and that mendicant doesn’t know moderation in accepting. | T: There is the case where a monk—when faithful householders invite him to accept gifts of cloth, alms food, lodgings, and medicinal requisites for curing the sick—knows no moderation in taking.
+mn33:13.3 | S: That’s how a mendicant milks dry. | T: This is how a monk milks dry.
+mn33:14.1 | S: And how does a mendicant not show extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha? | T: “And how does a monk show no extra respect for the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha?
+mn33:14.2 | S: It’s when a mendicant doesn’t consistently treat senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha with kindness by way of body, speech, and mind, both in public and in private. | T: There is the case where a monk doesn’t establish himself in bodily acts of goodwill, in public & in private, toward the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:14.3 | P: na mettaṁ vacīkammaṁ paccupaṭṭhāpeti āvi ceva raho ca; | T: He doesn’t establish himself in verbal acts of goodwill…
+mn33:14.4 | P: na mettaṁ manokammaṁ paccupaṭṭhāpeti āvi ceva raho ca. | T: in mental acts of goodwill, in public & in private, toward the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:14.5 | S: That’s how a mendicant doesn’t show extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha. | T: (none)
+mn33:14.6 | S: A mendicant with these eleven qualities can’t achieve growth, improvement, or maturity in this teaching and training. | T: “A monk endowed with these eleven factors is incapable of attaining growth, increase, & abundance in this Dhamma-Vinaya.
+mn33:15.1 | S: A cowherd with eleven factors can maintain and expand a herd of cattle. | T: “Monks, a cowherd endowed with eleven factors is capable of looking after a herd so that it prospers & grows.
+mn33:15.2 | S: What eleven? | T: Which eleven?
+mn33:15.3 | S: It’s when a cowherd knows form, is skilled in characteristics, picks out flies’ eggs, dresses wounds, spreads smoke, knows the ford, knows satisfaction, knows the trail, is skilled in ranges, doesn’t milk dry, and shows extra respect to the bulls who are fathers and captains of the herd. | T: There is the case where a cowherd is well-versed in forms (appearances), skilled in characteristics, picks out flies’ eggs, dresses wounds, fumigates, knows fords, knows what it is to have drunk, knows the road, is skilled in pastures, doesn’t milk dry, and shows extra respect for the bulls who are fathers & leaders of the herd.
+mn33:15.4 | S: A cowherd with these eleven factors can maintain and expand a herd of cattle. | T: A cowherd endowed with these eleven factors is capable of looking after a herd so that it prospers & grows.
+mn33:16.1 | S: In the same way, a mendicant with eleven qualities can achieve growth, improvement, and maturity in this teaching and training. | T: “A monk endowed with these eleven factors is capable of attaining growth, increase, & abundance in this Dhamma-Vinaya.
+mn33:16.2 | S: What eleven? | T: Which eleven?
+mn33:16.3 | S: It’s when a mendicant knows form, is skilled in characteristics, picks out flies’ eggs, dresses wounds, spreads smoke, knows the ford, knows satisfaction, knows the trail, is skilled in ranges, doesn’t milk dry, and shows extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha. | T: There is the case where a monk is well-versed in forms, skilled in characteristics, picks out flies’ eggs, dresses wounds, fumigates, knows fords, knows what it is to have drunk, knows the road, is skilled in pastures, doesn’t milk dry, and shows extra respect for the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:17.1 | S: And how does a mendicant know form? | T: “And how is a monk well-versed in forms?
+mn33:17.2 | S: It’s when a mendicant truly understands that all form is the four principal states, or form derived from the four principal states. | T: There is the case where a monk discerns, as it has come to be, that every form whatsoever is composed of the four great elements and the forms dependent on them.
+mn33:17.3 | S: That’s how a mendicant knows form. | T: This is how a monk is well-versed in forms.
+mn33:18.1 | S: And how is a mendicant skilled in characteristics? | T: “And how is a monk skilled in characteristics?
+mn33:18.2 | S: It’s when a mendicant understands that a fool is characterized by their deeds, and an astute person is characterized by their deeds. | T: There is the case where a monk discerns, as it has come to be, that a fool is characterized by his actions, a wise person is characterized by his actions.
+mn33:18.3 | S: That’s how a mendicant is skilled in characteristics. | T: This is how a monk is skilled in characteristics.
+mn33:19.1 | S: And how does a mendicant pick out flies’ eggs? | T: “And how does a monk pick out flies’ eggs?
+mn33:19.2 | S: It’s when a mendicant doesn’t tolerate a sensual, malicious, or cruel thought that has arisen. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, eliminate them, and obliterate them. | T: There is the case where a monk doesn’t acquiesce with an arisen thought of sensuality. He abandons it, dispels it, demolishes it, & wipes it out of existence. He doesn’t acquiesce with an arisen thought of ill will… an arisen thought of harmfulness. He abandons it, dispels it, demolishes it, & wipes it out of existence. He doesn’t acquiesce with arisen evil, unskillful qualities. He abandons them, dispels them, demolishes them, & wipes them out of existence.
+mn33:19.3 | S: That’s how a mendicant picks out flies’ eggs. | T: This is how a monk picks out flies’ eggs.
+mn33:20.1 | S: And how does a mendicant dress wounds? | T: “And how does a monk dress wounds?
+mn33:20.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, doesn’t grasp at any theme or details by which—
+mn33:20.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices for its restraint. He protects the faculty of the eye.
+mn33:20.4 | S: When they hear a sound with their ears … | T: On hearing a sound with the ear…
+mn33:20.5 | S: smell an odor with their nose … | T: On smelling an aroma with the nose…
+mn33:20.6 | S: taste a flavor with their tongue … | T: On tasting a flavor with the tongue…
+mn33:20.7 | S: feel a touch with their body … | T: On touching a tactile sensation with the body…
+mn33:20.8 | S: know an idea with their mind, they don’t get caught up in the features and details. | T: On cognizing an idea with the intellect, he doesn’t grasp at any theme or details by which—
+mn33:20.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices for its restraint. He protects the faculty of the intellect.
+mn33:20.10 | S: That’s how a mendicant dresses wounds. | T: This is how a monk dresses wounds.
+mn33:21.1 | S: And how does a mendicant spread smoke? | T: “And how does a monk fumigate?
+mn33:21.2 | S: It’s when a mendicant teaches others the Dhamma in detail as they learned and memorized it. | T: There is the case where a monk teaches others in detail the Dhamma as he has heard and mastered it.
+mn33:21.3 | S: That’s how a mendicant spreads smoke. | T: This is how a monk fumigates.
+mn33:22.1 | S: And how does a mendicant know the ford? | T: “And how does a monk know fords?
+mn33:22.2 | S: It’s when from time to time a mendicant goes up to those mendicants who are very learned—inheritors of the heritage, who have memorized the teachings, the monastic law, and the outlines—and asks them questions: | T: There is the case where a monk goes time & again to the monks who are learned, well-versed in the tradition, who have memorized the Dhamma, the Vinaya, and the Mātikās. He questions them, presents them with his problems:
+mn33:22.3 | S: ‘Why, sir, does it say this? | T: ‘How is this, venerable sir?
+mn33:22.4 | S: What does that mean?’ | T: What is the meaning of this?’
+mn33:22.5 | S: Those venerables reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: These venerable ones reveal what has not been revealed to him, make plain what has not been made plain to him, resolve his doubts about the many teachings that might give rise to doubt.
+mn33:22.6 | S: That’s how a mendicant knows the ford. | T: This is how a monk knows fords.
+mn33:23.1 | S: And how does a mendicant know satisfaction? | T: “And how does a monk know what it is to have drunk?
+mn33:23.2 | S: It’s when a mendicant, when the teaching and training proclaimed by the Realized One are being taught, finds inspiration in the meaning and the teaching, and finds joy connected with the teaching. | T: There is the case where a monk, when the Dhamma-Vinaya proclaimed by the Tathāgata is being taught, gains understanding of the meaning, gains understanding of the Dhamma, gains joy connected with the Dhamma.
+mn33:23.3 | S: That’s how a mendicant knows satisfaction. | T: This is how a monk knows what it is to have drunk.
+mn33:24.1 | S: And how does a mendicant know the trail? | T: “And how does a monk know the road?
+mn33:24.2 | S: It’s when a mendicant truly understands the noble eightfold path. | T: There is the case where a monk discerns, as it has come to be, the noble eightfold path.
+mn33:24.3 | S: That’s how a mendicant knows the trail. | T: This is how a monk knows the roads.
+mn33:25.1 | S: And how is a mendicant skilled in ranges? | T: “And how is a monk skilled in pastures?
+mn33:25.2 | S: It’s when a mendicant truly understands the four kinds of mindfulness meditation. | T: There is the case where a monk discerns, as they have come to be, the four establishings of mindfulness.
+mn33:25.3 | S: That’s how a mendicant is skilled in ranges. | T: This is how a monk is skilled in pastures.
+mn33:26.1 | S: And how does a mendicant not milk dry? | T: “And how does a monk not milk dry?
+mn33:26.2 | S: It’s when a mendicant is invited by a householder to accept robes, almsfood, lodgings, and medicines and supplies for the sick, | T: There is the case where a monk—when faithful householders invite him to accept gifts of cloth, alms food, lodgings, and medicinal requisites for curing the sick—
+mn33:26.3 | S: and that mendicant knows moderation in accepting. | T: knows moderation in taking.
+mn33:26.4 | S: That’s how a mendicant doesn’t milk dry. | T: This is how a monk doesn’t milk dry.
+mn33:27.1 | S: And how does a mendicant show extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha? | T: “And how does a monk show extra respect for the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha?
+mn33:27.2 | S: It’s when a mendicant consistently treats senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha with kindness by way of body, speech, and mind, both in public and in private. | T: There is the case where a monk establishes himself in bodily acts of goodwill, in public & in private, toward the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:27.3 | P: mettaṁ vacīkammaṁ paccupaṭṭhāpeti āvi ceva raho ca; | T: He establishes himself in verbal acts of goodwill…
+mn33:27.4 | P: mettaṁ manokammaṁ paccupaṭṭhāpeti āvi ceva raho ca. | T: in mental acts of goodwill, in public & in private, toward the elder monks with seniority, who have been ordained long, who are fathers & leaders of the Saṅgha.
+mn33:27.5 | S: That’s how a mendicant shows extra respect to senior mendicants of long standing, long gone forth, fathers and leaders of the Saṅgha. | T: (none)
+mn33:27.6 | S: A mendicant with these eleven qualities can achieve growth, improvement, and maturity in this teaching and training.” | T: “A monk endowed with these eleven factors is capable of attaining growth, increase, & abundance in this Dhamma-Vinaya.”
+mn33:27.7 | S: That is what the Buddha said. | T: (none)
+mn33:27.8 | S: Satisfied, the mendicants approved what the Buddha said. | T: (none)
+mn33:27.9 | P: Mahāgopālakasuttaṁ niṭṭhitaṁ tatiyaṁ. | T: (none)
+
+## mn86
+mn86:1.1 | S: So I have heard. | T: I have heard that
+mn86:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn86:2.1 | S: Now at that time in the realm of King Pasenadi of Kosala there was a bandit named Aṅgulimāla. He was violent, bloody-handed, a hardened killer, merciless to living beings. | T: And at that time in King Pasenadi’s realm there was a bandit named Aṅgulimāla: brutal, bloody-handed, devoted to killing & slaying, showing no mercy to living beings.
+mn86:2.2 | S: He laid waste to villages, towns, and countries. | T: He turned villages into non-villages, towns into non-towns, settled countryside into unsettled countryside.
+mn86:2.3 | S: He was constantly murdering humans, and he wore their fingers as a necklace. | T: Having repeatedly killed human beings, he wore a garland [māla] made of fingers [aṅguli].
+mn86:3.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then the Blessed One, early in the morning, having adjusted his lower robe and taking his bowl & outer robe, went into Sāvatthī for alms.
+mn86:3.2 | S: Then, after the meal, on his return from almsround, he set his lodgings in order and, taking his bowl and robe, he walked down the road that led to Aṅgulimāla. | T: Having gone for alms in Sāvatthī and returning from his alms round after his meal, he set his lodging in order. Carrying his bowl & robe, he went along the road to where Aṅgulimāla was staying.
+mn86:3.3 | S: The cowherds, shepherds, farmers, and travelers saw him on the road, | T: Cowherds, shepherds, & farmers saw him going along the road to where Aṅgulimāla was staying,
+mn86:3.4 | S: and said to him, | T: and on seeing him said to him,
+mn86:3.5 | S: “Don’t take this road, ascetic. | T: “Don’t go along that road, contemplative,
+mn86:3.6 | S: On this road there is a bandit named Aṅgulimāla. He is violent, bloody-handed, a hardened killer, merciless to living beings. | T: for on that road is Aṅgulimāla: brutal, bloody-handed, devoted to killing & slaying, showing no mercy to living beings.
+mn86:3.7 | S: He has laid waste to villages, towns, and countries. | T: He has turned villages into non-villages, towns into non-towns, settled countryside into unsettled countryside.
+mn86:3.8 | S: He is constantly murdering humans, and he wears their fingers as a necklace. | T: Having repeatedly killed human beings, he wears a garland made of fingers.
+mn86:3.9 | S: People travel along this road only after banding closely together in groups of ten, twenty, thirty, forty, or fifty. | T: Groups of ten, twenty, thirty, & forty men have gone along that road,
+mn86:3.10 | S: Still they meet their end by Aṅgulimāla’s hand.” | T: and even they have fallen into Aṅgulimāla’s hands.”
+mn86:3.11 | S: But when they said this, the Buddha went on in silence. | T: When this was said, the Blessed One kept going in silence.
+mn86:3.12 | S: For a second time … | T: A second time.…
+mn86:3.13 | S: and a third time, they urged the Buddha to turn back. | T: A third time, cowherds, shepherds, & farmers said to the Blessed One,
+mn86:3.14 | P: “mā, samaṇa, etaṁ maggaṁ paṭipajji, etasmiṁ samaṇa magge coro aṅgulimālo nāma luddo lohitapāṇi hatapahate niviṭṭho adayāpanno pāṇabhūtesu, tena gāmāpi agāmā katā, nigamāpi anigamā katā, janapadāpi ajanapadā katā. | T: “Don’t go along that road, contemplative.…
+mn86:3.15 | P: So manusse vadhitvā vadhitvā aṅgulīnaṁ mālaṁ dhāreti. | T: (none)
+mn86:3.16 | P: Etañhi samaṇa maggaṁ dasapi purisā vīsampi purisā tiṁsampi purisā cattārīsampi purisā paññāsampi purisā saṅkaritvā saṅkaritvā paṭipajjanti. | T: Groups of ten, twenty, thirty, & forty men have gone along that road,
+mn86:3.17 | P: Tepi corassa aṅgulimālassa hatthatthaṁ gacchantī”ti. | T: and even they have fallen into Aṅgulimāla’s hands.”
+mn86:4.1 | S: But when they said this, the Buddha went on in silence. | T: When this was said, the Blessed One kept going in silence.
+mn86:4.2 | S: The bandit Aṅgulimāla saw the Buddha coming off in the distance, | T: Then Aṅgulimāla saw the Blessed One coming from afar and on seeing him,
+mn86:4.3 | S: and thought, | T: this thought occurred to him:
+mn86:4.4 | S: “Oh lord, how incredible, how amazing! | T: “Isn’t it amazing! Isn’t it astounding!
+mn86:4.5 | S: People travel along this road only after banding closely together in groups of ten, twenty, thirty, forty, or fifty. | T: Groups of ten, twenty, thirty, & forty men have gone along this road,
+mn86:4.6 | S: Still they meet their end by my hand. | T: and even they have fallen into my hands,
+mn86:4.7 | S: But still this ascetic comes along alone and unaccompanied, like a conqueror. | T: and yet now this contemplative comes attacking, as it were, alone and without a companion.
+mn86:4.8 | S: Why don’t I take his life?” | T: Why don’t I kill him?”
+mn86:5.1 | S: Then Aṅgulimāla donned his sword and shield, fastened his bow and arrows, and followed behind the Buddha. | T: So Aṅgulimāla, taking up his sword & shield, buckling on his bow & quiver, followed right behind the Blessed One.
+mn86:5.2 | S: But the Buddha used his psychic power to will that Aṅgulimāla could not catch up with him no matter how hard he tried, even though the Buddha kept walking at a normal speed. | T: Then the Blessed One willed a feat of psychic power such that Aṅgulimāla, though running with all his might, could not catch up with the Blessed One walking at normal pace.
+mn86:5.3 | S: Then Aṅgulimāla thought, | T: Then the thought occurred to Aṅgulimāla:
+mn86:5.4 | S: “Oh lord, how incredible, how amazing! | T: “Isn’t it amazing! Isn’t it astounding!
+mn86:5.5 | S: Previously, even when I’ve chased a speeding elephant, horse, chariot or deer, I’ve always caught up with them. | T: In the past I’ve chased & seized even a swift-running elephant, a swift-running horse, a swift-running chariot, a swift-running deer.
+mn86:5.6 | S: But I can’t catch up with this ascetic no matter how hard I try, even though he’s walking at a normal speed.” | T: But now, even though I’m running with all my might, I can’t catch up with this contemplative walking at normal pace.”
+mn86:5.7 | S: He stood still and said, | T: So he stopped and called out to the Blessed One,
+mn86:5.8 | S: “Stop, stop, ascetic!” | T: “Stop, contemplative! Stop!”
+mn86:5.9 | S: “I’ve stopped, Aṅgulimāla—now you stop.” | T: “I have stopped, Aṅgulimāla. You stop.”
+mn86:5.10 | S: Then Aṅgulimāla thought, | T: Then the thought occurred to Aṅgulimāla,
+mn86:5.11 | S: “These ascetics who follow the Sakyan speak the truth. | T: “These Sakyan contemplatives are speakers of the truth, asserters of the truths,
+mn86:5.12 | S: Yet while walking the ascetic says: | T: and yet this contemplative, even while walking, says,
+mn86:5.13 | S: ‘I’ve stopped, Aṅgulimāla—now you stop.’ | T: ‘I have stopped, Aṅgulimāla. You stop.’
+mn86:5.14 | S: Why don’t I ask him about this?” | T: Why don’t I question him?”
+mn86:6.1 | S: Then he addressed the Buddha in verse: | T: So Aṅgulimāla the bandit addressed this verse to the Blessed One:
+mn86:6.2 | S: “While walking, ascetic, you say ‘I’ve stopped.’ | T: “While walking, contemplative, you say, ‘I have stopped.’
+mn86:6.3 | S: And I have stopped, but you tell me I’ve not. | T: But when I have stopped you say I haven’t.
+mn86:6.4 | S: I’m asking you this, ascetic: | T: I ask you the meaning of this:
+mn86:6.5 | S: how is it you’ve stopped and I have not?” | T: How have you stopped? How haven’t I?”
+mn86:6.6 | S: “Aṅgulimāla, I have forever stopped— | T: The Buddha: “I have stopped, Aṅgulimāla, once & for all,
+mn86:6.7 | S: I’ve laid aside violence toward all creatures. | T: having cast off violence toward all living beings.
+mn86:6.8 | S: But you can’t stop yourself <j>from harming living creatures; | T: You, though, are unrestrained toward beings.
+mn86:6.9 | S: that’s why I’ve stopped, but you have not.” | T: That’s how I’ve stopped and you haven’t.”
+mn86:6.10 | S: “Oh, at long last a renowned great seer, | T: Aṅgulimāla: “At long last a greatly revered great seer
+mn86:6.11 | S: an ascetic has followed me into this deep wood. | T: for my sake has come to the great forest.
+mn86:6.12 | S: Now that I’ve heard your verse on Dhamma, | T: Having heard your verse in line with the Dhamma,
+mn86:6.13 | S: I shall live without evil.” | T: I will go about having abandoned evil.”
+mn86:6.14 | S: With these words, <j>the bandit hurled his sword and weapons | T: So saying, the bandit hurled his sword & weapons
+mn86:6.15 | S: down a cliff into an abyss. | T: over a cliff into a chasm, a pit.
+mn86:6.16 | S: He venerated the Holy One’s feet, | T: Then the bandit paid homage to the feet of the One Well-Gone,
+mn86:6.17 | S: and requested the going forth right away. | T: and right there requested the Going-forth.
+mn86:6.18 | S: Then the Buddha, the compassionate great seer, | T: The Awakened One, the compassionate great seer,
+mn86:6.19 | S: the Teacher of the world with its gods, | T: the teacher of the world, along with its devas,
+mn86:6.20 | S: said to him, “Come, monk!” | T: said to him then: “Come, bhikkhu.”
+mn86:6.21 | S: And with that he became a monk. | T: That in itself was bhikkhuhood for him.
+mn86:7.1 | S: Then the Buddha set out for Sāvatthī with Venerable Aṅgulimāla as his second monk. | T: Then the Blessed One set out wandering toward Sāvatthī with Ven. Aṅgulimāla as his attendant monk.
+mn86:7.2 | S: Traveling stage by stage, he arrived at Sāvatthī, | T: After wandering by stages he reached Sāvatthī,
+mn86:7.3 | S: where he stayed in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: and there he lived near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn86:8.1 | S: Now at that time a crowd had gathered by the gate of King Pasenadi’s royal compound making a colossal racket, | T: Now at that time a large crowd of people, loud & noisy, had gathered at the gates to King Pasenadi Kosala’s inner palace,
+mn86:8.2 | S: “In your realm, Your Majesty, there is a bandit named Aṅgulimāla. He is violent, bloody-handed, a hardened killer, merciless to living beings. | T: (calling out,) “There is a bandit in your realm, sire, named Aṅgulimāla: brutal, bloody-handed, devoted to killing & slaying, showing no mercy to living beings.
+mn86:8.3 | S: He has laid waste to villages, towns, and countries. | T: He has turned villages into non-villages, towns into non-towns, settled countryside into unsettled countryside.
+mn86:8.4 | S: He is constantly murdering humans, and he wears their fingers as a necklace. | T: Having repeatedly killed human beings, he wears a garland made of fingers.
+mn86:8.5 | S: Your Majesty must put a stop to him!” | T: The king must stamp him out!”
+mn86:9.1 | S: Then King Pasenadi drove out from Sāvatthī in the middle of the day with around five hundred horses, | T: Then King Pasenadi Kosala, with a cavalry of roughly 500 horsemen, drove out of Sāvatthī in the middle of the day
+mn86:9.2 | S: heading for the monastery. | T: and entered the monastery.
+mn86:9.3 | S: He went by carriage as far as the terrain allowed, then descended and approached the Buddha on foot. He bowed and sat down to one side. The Buddha said to him, | T: Driving as far as the ground was passable for chariots, he got down from his chariot and went on foot to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there, the Blessed One said to him,
+mn86:9.4 | S: “What is it, Great King? Is King Seniya Bimbisāra of Magadha angry with you, or the Licchavis of Vesālī, or some other opposing ruler?” | T: “What is it, great king? Has King Seniya Bimbisāra of Magadha provoked you, or have the Licchavis of Vesālī or some other hostile king?”
+mn86:10.1 | S: “No, sir. | T: “No, lord. King Seniya Bimbisāra of Magadha hasn’t provoked me, nor have the Licchavis of Vesālī, nor has some other hostile king.
+mn86:10.2 | S: In my realm there is a bandit named Aṅgulimāla. He is violent, bloody-handed, a hardened killer, merciless to living beings. … | T: There is a bandit in my realm, lord, named Aṅgulimāla: brutal, bloody-handed, devoted to killing & slaying, showing no mercy to living beings.
+mn86:10.3 | P: Tena gāmāpi agāmā katā, nigamāpi anigamā katā, janapadāpi ajanapadā katā. | T: He has turned villages into non-villages, towns into non-towns, settled countryside into unsettled countryside.
+mn86:10.4 | P: So manusse vadhitvā vadhitvā aṅgulīnaṁ mālaṁ dhāreti. | T: Having repeatedly killed human beings, he wears a garland made of fingers.
+mn86:10.5 | S: I shall put a stop to him.” | T: I am going to stamp him out.”
+mn86:11.1 | S: “But, Great King, suppose you were to see that Aṅgulimāla had shaved off his hair and beard, dressed in ocher robes, and gone forth from the lay life to homelessness. And that he was refraining from killing living creatures, stealing, and lying; that he was eating in one part of the day, and was chaste, ethical, and of good character. What would you do to him?” | T: “Great king, suppose you were to see Aṅgulimāla with his hair & beard shaved off, wearing the ochre robe, having gone forth from the home life into homelessness, refraining from killing living beings, refraining from taking what is not given, refraining from telling lies, living the holy life on one meal a day, virtuous & of fine character: what would you do to him?”
+mn86:11.2 | S: “I would bow to him, rise in his presence, or offer him a seat. I’d invite him to accept robes, almsfood, lodgings, and medicines and supplies for the sick. And I’d organize his lawful guarding and protection. | T: “We would bow down to him, lord, or rise up to greet him, or offer him a seat, or offer him robes, almsfood, lodgings, or medicinal requisites for curing illness; or we would arrange a lawful guard, protection, & defense.
+mn86:11.3 | S: But sir, how could such an immoral, evil man ever have such virtue and restraint?” | T: But how could there be such virtue & restraint in an unvirtuous, evil character?”
+mn86:12.1 | S: Now at that time Venerable Aṅgulimāla was sitting not far from the Buddha. | T: Now at that time Ven. Aṅgulimāla was sitting not far from the Blessed One.
+mn86:12.2 | S: Then the Buddha pointed with his right arm and said to the king, | T: So the Blessed One, pointing with his right arm, said to King Pasenadi Kosala,
+mn86:12.3 | S: “Great king, this is Aṅgulimāla.” | T: “That, great king, is Aṅgulimāla.”
+mn86:12.4 | S: Then the king became frightened, scared, his hair standing on end. | T: Then King Pasenadi Kosala was frightened, terrified, his hair standing on end.
+mn86:12.5 | S: Knowing this, the Buddha said to him, | T: So the Blessed One, sensing the king’s fear & hair-raising awe, said to him,
+mn86:12.6 | S: “Do not fear, Great King. You have nothing to fear from him.” | T: “Don’t be afraid, great king. Don’t be afraid. He poses no danger to you.
+mn86:12.7 | S: Then the king’s fear died down. | T: Then the king’s fear, his terror, his hair-standing-on-end subsided.
+mn86:12.8 | S: Then the king went over to Aṅgulimāla and said, | T: He went over to Ven. Aṅgulimāla and said,
+mn86:12.9 | S: “Sir, is the master really Aṅgulimāla?” | T: “Are you really Aṅgulimāla, lord?”
+mn86:12.10 | S: “Yes, Great King.” | T: “Yes, great king.”
+mn86:12.11 | S: “What clans were your father and mother from?” | T: “What is your father’s clan? What is your mother’s clan?”
+mn86:12.12 | S: “My father was a Gagga, and my mother a Mantāṇī.” | T: “My father is a Gagga, great king, and my mother a Mantāṇi.”
+mn86:12.13 | S: “Sir, may Master Gagga son of Mantāṇī be happy. | T: “Then may Master Gagga Mantāṇiputta delight (in staying here).
+mn86:12.14 | S: I’ll make sure that you’re provided with robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: I will be responsible for your robes, almsfood, lodgings, & medicinal requisites for curing illness.”
+mn86:13.1 | S: But at that time Venerable Aṅgulimāla lived in the wilderness, ate only almsfood, and owned just three robes. | T: Now it so happened that at that time Ven. Aṅgulimāla was a wilderness-dweller, an alms-goer, wearing one set of the triple robe made of cast-off cloth.
+mn86:13.2 | S: So he said to the king, | T: So he said to King Pasenadi Kosala,
+mn86:13.3 | S: “Enough, Great King. My robes are complete.” | T: “Enough, great king. My triple robe is complete.”
+mn86:13.4 | S: Then the king went back to the Buddha, bowed, sat down to one side, and said to him, | T: So King Pasenadi Kosala went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+mn86:13.5 | S: “It’s incredible, sir, it’s amazing! | T: “It’s amazing, lord. It’s astounding,
+mn86:13.6 | S: How the Buddha tames those who are wild, pacifies those who are violent, and extinguishes those who are unquenched! | T: how the Blessed One has tamed the untamed, pacified the unpeaceful, and brought to unbinding those who were not unbound.
+mn86:13.7 | S: For I was not able to tame him with the rod and the sword, but the Buddha tamed him without rod or sword. | T: For what we could not tame even with blunt or bladed weapons, the Blessed One has tamed without blunt or bladed weapons.
+mn86:13.8 | S: Well, now, sir, I must go. | T: Now, lord, we must go.
+mn86:13.9 | S: I have many duties, and much to do.” | T: Many are our duties, many our responsibilities.”
+mn86:13.10 | S: “Please, Great King, go at your convenience.” | T: “Then do, great king, what you think it is now time to do.”
+mn86:13.11 | S: Then King Pasenadi rose from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then King Pasenadi Kosala got up from his seat, bowed down to the Blessed One and—keeping him to his right—departed.
+mn86:14.1 | S: Then Venerable Aṅgulimāla robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then Ven. Aṅgulimāla, early in the morning, having adjusted his lower robe and taking his bowl & outer robe, went into Sāvatthī for alms.
+mn86:14.2 | S: Then as he was wandering indiscriminately for almsfood he saw a woman undergoing a distressing obstructed labor. | T: As he was going from house to house for alms, he saw a woman suffering a breech birth.
+mn86:14.3 | S: Seeing this, it occurred to him, | T: On seeing her, the thought occurred to him:
+mn86:14.4 | S: “Oh, beings undergo such travail! | T: “How tormented are living beings!
+mn86:14.5 | S: Oh, beings undergo such travail!” | T: How tormented are living beings!”
+mn86:14.6 | S: Then after wandering for alms in Sāvatthī, after the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. The Buddha said to him, | T: Then, having gone for alms in Sāvatthī and returning from his alms round after his meal, he went to the Blessed One. On arrival, having bowed down to him, he sat to one side. As he was sitting there he said to the Blessed One,
+mn86:14.7 | P: “idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pāvisiṁ. | T: “Just now, lord, early in the morning, having adjusted my lower robe and taking my bowl & outer robe, I went into Sāvatthī for alms.
+mn86:14.8 | P: Addasaṁ kho ahaṁ, bhante, sāvatthiyaṁ sapadānaṁ piṇḍāya caramāno aññataraṁ itthiṁ mūḷhagabbhaṁ vighātagabbhaṁ. | T: As I was going from house to house for alms, I saw a woman suffering a breech birth.
+mn86:14.9 | P: Disvāna mayhaṁ etadahosi: | T: On seeing her, the thought occurred to me:
+mn86:14.10 | P: ‘kilissanti vata bho sattā, kilissanti vata bho sattā’”ti. | T: ‘How tormented are living beings! How tormented are living beings!’”
+mn86:15.1 | S: “Well then, Aṅgulimāla, go to that woman and say this: | T: “In that case, Aṅgulimāla, go to that woman and on arrival say to her,
+mn86:15.2 | S: ‘Ever since I was born, sister, I don’t recall having intentionally taken the life of a living creature. By this truth, may both you and your baby be safe.’” | T: ‘Sister, since I was born I do not recall intentionally killing a living being. Through this truth may there be wellbeing for you, wellbeing for your fetus.’”
+mn86:15.3 | S: “But sir, wouldn’t that be telling a deliberate lie? | T: “But, lord, wouldn’t that be a lie for me?
+mn86:15.4 | S: For I have intentionally killed many living creatures.” | T: For I have intentionally killed many living beings.”
+mn86:15.5 | S: “In that case, Aṅgulimāla, go to that woman and say this: | T: “Then in that case, Aṅgulimāla, go to that woman and on arrival say to her,
+mn86:15.6 | S: ‘Ever since I was born in the noble birth, sister, I don’t recall having intentionally taken the life of a living creature. By this truth, may both you and your baby be safe.’” | T: ‘Sister, since I was born in the noble birth, I do not recall intentionally killing a living being. Through this truth may there be wellbeing for you, wellbeing for your fetus.’”
+mn86:15.7 | S: “Yes, sir,” replied Aṅgulimāla. He went to that woman and said: | T: Responding, “As you say, lord,” to the Blessed One, Aṅgulimāla went to that woman and on arrival said to her,
+mn86:15.8 | S: “Ever since I was born in the noble birth, sister, I don’t recall having intentionally taken the life of a living creature. By this truth, may both you and your baby be safe.” | T: “Sister, since I was born in the noble birth, I do not recall intentionally killing a living being. Through this may there be wellbeing for you, wellbeing for your fetus.”
+mn86:15.9 | S: Then that woman was safe, and so was her baby. | T: And there was wellbeing for the woman, wellbeing for her fetus.
+mn86:16.1 | S: Then Aṅgulimāla, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then Ven. Aṅgulimāla, dwelling alone, secluded, heedful, ardent, & resolute, in no long time reached & remained in the supreme goal of the holy life for which clansmen rightly go forth from home into homelessness, knowing & realizing it for himself in the here & now.
+mn86:16.2 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+mn86:16.3 | S: And Venerable Aṅgulimāla became one of the perfected. | T: And thus Ven. Aṅgulimāla became another one of the arahants.
+mn86:17.1 | S: Then Venerable Aṅgulimāla robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then Ven. Aṅgulimāla, early in the morning, having adjusted his lower robe and taking his bowl & outer robe, went into Sāvatthī for alms.
+mn86:17.2 | S: Now at that time someone threw a stone that hit Aṅgulimāla, someone else threw a stick, and someone else threw gravel. | T: Now at that time a clod thrown by one person hit Ven. Aṅgulimāla on the body, a stone thrown by another person hit him on the body, and a potsherd thrown by still another person hit him on the body.
+mn86:17.3 | S: Then Aṅgulimāla—with cracked head, bleeding, his bowl broken, and his outer robe torn—went to the Buddha. | T: So Ven. Aṅgulimāla—his head broken open and dripping with blood, his bowl broken, and his outer robe ripped to shreds—went to the Blessed One.
+mn86:17.4 | S: The Buddha saw him coming off in the distance, | T: The Blessed One saw him coming from afar
+mn86:17.5 | S: and said to him, | T: and on seeing him said to him:
+mn86:17.6 | S: “Endure it, brahmin! Endure it, brahmin! | T: “Bear with it, brahman! Bear with it!
+mn86:17.7 | S: You’re experiencing in this very life the result of deeds that might have caused you to be tormented in hell for many years, many hundreds or thousands of years.” | T: The fruit of the kamma that would have burned you in hell for many years, many hundreds of years, many thousands of years, you are now experiencing in the here & now!”
+mn86:18.1 | S: Later, Venerable Aṅgulimāla was experiencing the bliss of release while in private retreat. | T: Then Ven. Aṅgulimāla, having gone alone into seclusion, experienced the bliss of release.
+mn86:18.2 | S: On that occasion he expressed this heartfelt sentiment: | T: At that time he exclaimed:
+mn86:18.3 | S: “He who once was heedless, | T: Who once was heedless,
+mn86:18.4 | S: but turned to heedfulness, | T: but later is not,
+mn86:18.5 | S: shines upon this world, | T: brightens the world
+mn86:18.6 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+mn86:18.7 | S: Someone whose bad deed | T: His evil-done deed
+mn86:18.8 | S: is supplanted by the good, | T: is replaced with skillfulness:
+mn86:18.9 | S: shines upon this world, | T: he brightens the world
+mn86:18.10 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+mn86:18.11 | S: A young mendicant | T: Whatever young monk
+mn86:18.12 | S: devoted to the Buddha’s teaching, | T: devotes himself to the Buddha’s bidding:
+mn86:18.13 | S: shines upon this world, | T: he brightens the world
+mn86:18.14 | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+mn86:18.15 | S: May even my enemies <j>hear a Dhamma talk! | T: May even my enemies hear talk of the Dhamma.
+mn86:18.16 | S: May even my enemies <j>devote themselves to the Buddha’s teaching! | T: May even my enemies devote themselves to the Buddha’s bidding.
+mn86:18.17 | S: May even my enemies associate with those good men | T: May even my enemies associate with those people who—peaceful, good—
+mn86:18.18 | S: who establish others in the Dhamma! | T: get others to accept the Dhamma.
+mn86:18.19 | S: May even my enemies <j>hear Dhamma at the right time, | T: May even my enemies hear the Dhamma time & again
+mn86:18.20 | S: from those who teach acceptance, | T: from those who advise endurance, forbearance,
+mn86:18.21 | S: praising acquiescence; | T: who praise non-opposition,
+mn86:18.22 | S: and may they follow that path! | T: and may they follow it.
+mn86:18.23 | S: For then they’d never wish harm | T: For surely he wouldn’t harm me,
+mn86:18.24 | S: upon myself or others. | T: or anyone else;
+mn86:18.25 | S: Having arrived at ultimate peace, | T: he would attain the foremost peace,
+mn86:18.26 | S: they’d look after creatures firm and frail. | T: would protect the feeble & firm.
+mn86:18.27 | S: For while irrigators guide water, | T: Irrigators guide the water.
+mn86:18.28 | S: fletchers bend arrows straight, | T: Fletchers shape the arrow shaft.
+mn86:18.29 | S: and carpenters bend timber straight, | T: Carpenters shape the wood.
+mn86:18.30 | S: the astute tame themselves. | T: The wise control themselves.
+mn86:18.31 | S: Some tame by using the rod, | T: Some tame with a blunt stick,
+mn86:18.32 | S: some with goads, and some with whips. | T: with hooks, & with whips
+mn86:18.33 | S: But the unaffected one tamed me | T: But without blunt or bladed weapons I was tamed by the one who is Such.
+mn86:18.34 | S: without rod or sword. | T: (none)
+mn86:18.35 | S: My name is ‘Harmless’, | T: “Doer of No Harm” is my name,
+mn86:18.36 | S: though I used to be harmful. | T: but I used to be a doer of harm.
+mn86:18.37 | S: The name I bear today is true, | T: Today I am true to my name,
+mn86:18.38 | S: for I do no harm to anyone. | T: for I harm no one at all.
+mn86:18.39 | S: I used to be a bandit, | T: A bandit I used to be,
+mn86:18.40 | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+mn86:18.41 | S: Swept away in a great flood, | T: Swept along by a great flood,
+mn86:18.42 | S: I went to the Buddha as a refuge. | T: I went to the Buddha as refuge.
+mn86:18.43 | S: I used to have blood on my hands, | T: Bloody-handed I used to be,
+mn86:18.44 | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+mn86:18.45 | S: See the refuge I’ve found— | T: See my going for refuge!
+mn86:18.46 | S: the leash to existence is eradicated. | T: Uprooted is [craving], the guide to becoming.
+mn86:18.47 | S: I’ve done many of the sort of deeds | T: Having done the type of kamma
+mn86:18.48 | S: that lead to a bad destination. | T: that would lead to many bad destinations,
+mn86:18.49 | S: The result of my deeds has already struck me, | T: touched by the fruit of (that) kamma,
+mn86:18.50 | S: so I enjoy my food free of debt. | T: unindebted, I eat my food.
+mn86:18.51 | S: Fools and simpletons | T: They’re addicted to heedlessness —dullards, fools—
+mn86:18.52 | S: devote themselves to negligence. | T: (none)
+mn86:18.53 | S: But the wise protect diligence | T: while one who is wise cherishes heedfulness
+mn86:18.54 | S: as their best treasure. | T: as his highest wealth.
+mn86:18.55 | S: Don’t devote yourself to negligence, | T: Don’t give way to heedlessness
+mn86:18.56 | S: or delight in erotic intimacy. | T: or to intimacy with sensual delight—
+mn86:18.57 | S: For if you’re diligent and practice absorption, | T: for a heedful person, absorbed in jhāna,
+mn86:18.58 | S: you’ll attain abundant happiness. | T: attains an abundant bliss.
+mn86:18.59 | S: It was welcome, not unwelcome, | T: This has come well & not gone away,
+mn86:18.60 | S: the advice I got was good. | T: it was not badly thought through for me.
+mn86:18.61 | S: Of the well-explained teachings, | T: From among well-analyzed qualities,
+mn86:18.62 | S: I arrived at the best. | T: I have obtained the best.
+mn86:18.63 | S: It was welcome, not unwelcome, | T: This has come well & not gone away,
+mn86:18.64 | S: the advice I got was good. | T: it was not badly thought through for me.
+mn86:18.65 | S: I’ve attained the three knowledges | T: The three knowledges have been attained;
+mn86:18.66 | S: and fulfilled the Buddha’s instructions.” | T: the Buddha’s bidding, done.
+mn86:18.67 | P: Aṅgulimālasuttaṁ niṭṭhitaṁ chaṭṭhaṁ. | T: (none)
+
