@@ -1,0 +1,411 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd87-7ddb-7552-9587-4e2e2e5c9932
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an10.54, continued
+an10.54:13.2 | S: those you should frequent, and those you shouldn’t frequent.’ | T: those to be associated with and those not to be associated with,’
+an10.54:13.3 | S: That’s what I said, but why did I say it? | T: for what reason was this said?
+an10.54:13.4 | S: Well, should you know of an individual: | T: If one knows of a person:
+an10.54:13.5 | S: ‘When I frequent this individual, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of individual. | T: ‘When I associate with this person, unwholesome qualities increase in me and wholesome qualities decline,’ one should not associate with such a person.
+an10.54:13.6 | S: Whereas, should you know of an individual: | T: But if one knows of a person:
+an10.54:13.7 | S: ‘When I frequent this individual, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of individual. | T: ‘When I associate with this person, unwholesome qualities decline in me and wholesome qualities increase,’ one should associate with such a person.
+an10.54:13.8 | S: ‘I say that there are two kinds of individual: | T: When it was said: ‘Persons too, I say, are twofold:
+an10.54:13.9 | S: those you should frequent, and those you shouldn’t frequent.’ | T: those to be associated with and those not to be associated with,’
+an10.54:13.10 | S: That’s what I said, and this is why I said it.” | T: it is because of this that this was said.”
+an10.54:13.11 | P: Catutthaṁ. | T: (none)
+
+## an4.34
+an4.34:1.1 | S: “Mendicants, these four kinds of confidence are the best. | T: “Bhikkhus, there are these four foremost kinds of confidence.
+an4.34:1.2 | S: What four? | T: What four?
+an4.34:1.3 | S: The Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: (1) “To whatever extent there are beings, whether footless or with two feet, four feet, or many feet, whether having form or formless, whether percipient or non-percipient, or neither percipient nor non-percipient, the Tathāgata, the Arahant, the Perfectly Enlightened One is declared the foremost among them.
+an4.34:1.4 | S: Those who have confidence in the Buddha have confidence in the best. | T: Those who have confidence in the Buddha have confidence in the foremost,
+an4.34:1.5 | S: Having confidence in the best, the result is the best. | T: and for those who have confidence in the foremost, the result is foremost.
+an4.34:2.1 | S: The noble eightfold path is said to be the best of all conditioned things. | T: (2) “To whatever extent there are phenomena that are conditioned, the noble eightfold path is declared the foremost among them.
+an4.34:2.2 | S: Those who have confidence in the noble eightfold path have confidence in the best. | T: Those who have confidence in the noble eightfold path have confidence in the foremost,
+an4.34:2.3 | S: Having confidence in the best, the result is the best. | T: and for those who have confidence in the foremost, the result is foremost.
+an4.34:3.1 | S: Fading away is said to be the best of all things whether conditioned or unconditioned. That is, the quelling of vanity, the removing of thirst, the uprooting of clinging, the breaking of the round, the ending of craving, fading away, cessation, extinguishment. | T: (3) “To whatever extent there are phenomena conditioned or unconditioned, dispassion is declared the foremost among them, that is, the crushing of pride, the removal of thirst, the uprooting of attachment, the termination of the round, the destruction of craving, dispassion, cessation, nibbāna.
+an4.34:3.2 | S: Those who have confidence in the teaching of fading away have confidence in the best. | T: Those who have confidence in the Dhamma have confidence in the foremost,
+an4.34:3.3 | S: Having confidence in the best, the result is the best. | T: and for those who have confidence in the foremost, the result is foremost.
+an4.34:4.1 | S: The Saṅgha of the Realized One’s disciples is said to be the best of all communities and groups. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world. | T: (4) “To whatever extent there are Saṅghas or groups, the Saṅgha of the Tathāgata’s disciples is declared the foremost among them, that is, the four pairs of persons, the eight types of individuals—this Saṅgha of the Blessed One’s disciples is worthy of gifts, worthy of hospitality, worthy of offerings, worthy of reverential salutation, the unsurpassed field of merit for the world.
+an4.34:4.2 | S: Those who have confidence in the Saṅgha have confidence in the best. | T: Those who have confidence in the Saṅgha have confidence in the foremost,
+an4.34:4.3 | S: Having confidence in the best, the result is the best. | T: and for those who have confidence in the foremost, the result is foremost.
+an4.34:4.4 | S: These are the four best kinds of confidence. | T: “These are the four foremost kinds of confidence.”
+an4.34:5.1 | S: For those who, knowing the best teaching, | T: For those confident in regard to the foremost, knowing the foremost Dhamma,
+an4.34:5.2 | S: base their confidence on the best— | T: (none)
+an4.34:5.3 | S: confident in the best Awakened One, | T: confident in the Buddha—the foremost—
+an4.34:5.4 | S: supremely worthy of a religious donation; | T: unsurpassed, worthy of offerings;
+an4.34:6.1 | S: confident in the best teaching, | T: for those confident in the foremost Dhamma,
+an4.34:6.2 | S: the bliss of fading and stilling; | T: in the blissful peace of dispassion;
+an4.34:6.3 | S: confident in the best Saṅgha, | T: for those confident in the foremost Saṅgha,
+an4.34:6.4 | S: the supreme field of merit— | T: the unsurpassed field of merit;
+an4.34:7.1 | S: giving gifts to the best, | T: for those giving gifts to the foremost,
+an4.34:7.2 | S: the best of merit grows: | T: the foremost kind of merit increases:
+an4.34:7.3 | S: the best lifespan, beauty, | T: the foremost life span, beauty, and glory,
+an4.34:7.4 | S: fame, reputation, happiness, and strength. | T: good reputation, happiness, and strength.
+an4.34:8.1 | S: An intelligent person gives to the best, | T: The wise one who gives to the foremost,
+an4.34:8.2 | S: settled on the best teaching. | T: concentrated upon the foremost Dhamma,
+an4.34:8.3 | S: When they become a god or human, | T: having become a deva or a human being,
+an4.34:8.4 | S: they rejoice at reaching the best.” | T: rejoices, having attained the foremost.
+an4.34:8.5 | P: Catutthaṁ. | T: (none)
+
+## sn35.88
+sn35.88:1.1 | S: And then Venerable Puṇṇa went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Puṇṇa approached the Blessed One … and said to him:
+sn35.88:1.2 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn35.88:2.1 | S: “Puṇṇa, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Puṇṇa, there are forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.88:2.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.88:2.3 | S: this gives rise to relishing. | T: delight arises in him.
+sn35.88:2.4 | S: Relishing is the origin of suffering, I say. | T: With the arising of delight, Puṇṇa, there is the arising of suffering, I say.
+sn35.88:2.5 | S: There are sounds … smells … tastes … touches … | T: There are, Puṇṇa, sounds cognizable by the ear …
+sn35.88:2.6 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.88:2.7 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.88:2.8 | S: this gives rise to relishing. | T: delight arises in him.
+sn35.88:2.9 | S: Relishing is the origin of suffering, I say. | T: With the arising of delight, Puṇṇa, there is the arising of suffering, I say.
+sn35.88:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Puṇṇa, there are forms cognizable by the eye …
+sn35.88:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, relishing ceases. | T: (none)
+sn35.88:3.3 | S: When relishing ceases, suffering ceases, I say. … | T: (none)
+sn35.88:3.4 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.88:3.5 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, relishing ceases. | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them, delight ceases in him.
+sn35.88:3.6 | S: When relishing ceases, suffering ceases, I say. | T: With the cessation of delight, Puṇṇa, there is the cessation of suffering, I say.
+sn35.88:4.1 | S: Puṇṇa, now that I’ve given you this brief advice, what country will you live in?” | T: “Now that you have received this brief exhortation from me, Puṇṇa, in which country will you dwell?”
+sn35.88:4.2 | S: “Sir, there’s a country named Sunāparanta; I will live there.” | T: “There is, venerable sir, a country named Sunaparanta. I will dwell there.”
+sn35.88:5.1 | S: “The people of Sunāparanta are wild and rough, Puṇṇa. | T: “Puṇṇa, the people of Sunaparanta are wild and rough.
+sn35.88:5.2 | P: pharusā kho, puṇṇa, sunāparantakā manussā. | T: (none)
+sn35.88:5.3 | S: If they abuse and insult you, what will you think of them?” | T: If they abuse and revile you, what will you think about that?”
+sn35.88:6.1 | S: “If they abuse and insult me, I will think: | T: “Venerable sir, if the people of Sunaparanta abuse and revile me, then I will think:
+sn35.88:6.2 | S: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t hit me with their fists.’ | T: ‘These people of Sunaparanta are excellent, truly excellent, in that they do not give me a blow with the fist.’
+sn35.88:6.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:6.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:7.1 | S: “But if they do hit you with their fists, what will you think of them then?” | T: “But, Puṇṇa, if the people of Sunaparanta do give you a blow with the fist, what will you think about that?”
+sn35.88:8.1 | S: “If they hit me with their fists, I’ll think: | T: “Venerable sir, if the people of Sunaparanta give me a blow with the fist, then I will think:
+sn35.88:8.2 | S: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t throw stones at me.’ | T: ‘These people of Sunaparanta are excellent, truly excellent, in that they do not give me a blow with a clod.’
+sn35.88:8.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:8.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:9.1 | S: “But if they do throw stones at you, what will you think of them then?” | T: “But, Puṇṇa, if the people of Sunaparanta do give you a blow with a clod, what will you think about that?”
+sn35.88:10.1 | S: “If they throw stones at me, I’ll think: | T: “Venerable sir, if the people of Sunaparanta give me a blow with a clod, then I will think:
+sn35.88:10.2 | S: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t beat me with a club.’ | T: ‘These people of Sunaparanta are excellent, truly excellent, in that they do not give me a blow with a rod.’
+sn35.88:10.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:10.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:11.1 | S: “But if they do beat you with a club, what will you think of them then?” | T: “But, Puṇṇa, if the people of Sunaparanta do give you a blow with a rod, what will you think about that?”
+sn35.88:12.1 | S: “If they beat me with a club, I’ll think: | T: “Venerable sir, if the people of Sunaparanta give me a blow with a rod, then I will think:
+sn35.88:12.2 | S: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t stab me with a knife.’ | T: ‘These people of Sunaparanta are excellent, truly excellent, in that they do not stab me with a knife.’
+sn35.88:12.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:12.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:13.1 | S: “But if they do stab you with a knife, what will you think of them then?” | T: “But, Puṇṇa, if the people of Sunaparanta do stab you with a knife, what will you think about that?”
+sn35.88:14.1 | S: “If they stab me with a knife, I’ll think: | T: “Venerable sir, if the people of Sunaparanta stab me with a knife, then I will think:
+sn35.88:14.2 | S: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t take my life with a sharp knife.’ | T: ‘These people of Sunaparanta are excellent, truly excellent, in that they do not take my life with a sharp knife.’
+sn35.88:14.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:14.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:15.1 | S: “But if they do take your life with a sharp knife, what will you think of them then?” | T: “But, Puṇṇa, if the people of Sunaparanta do take your life with a sharp knife, what will you think about that?”
+sn35.88:16.1 | S: “If they take my life with a sharp knife, I’ll think: | T: “Venerable sir, if the people of Sunaparanta take my life with a sharp knife, then I will think:
+sn35.88:16.2 | S: ‘There are disciples of the Buddha who looked for a suicide weapon because they were horrified, repelled, and disgusted with the body and with life. And I have found this without looking!’ | T: ‘There have been disciples of the Blessed One who, being repelled, humiliated, and disgusted by the body and by life, sought for an assailant. But I have come upon this assailant even without a search.’
+sn35.88:16.3 | S: That’s what I’ll think, Blessed One. | T: Then I will think thus, Blessed One;
+sn35.88:16.4 | S: That’s what I’ll think, Holy One.” | T: then I will think thus, Fortunate One.”
+sn35.88:17.1 | S: “Good, good Puṇṇa! | T: “Good, good, Puṇṇa!
+sn35.88:17.2 | S: Having such self-control and peacefulness, you will be quite capable of living in Sunāparanta. | T: Endowed with such self-control and peacefulness, you will be able to dwell in the Sunaparanta country.
+sn35.88:17.3 | S: Now, Puṇṇa, go at your convenience.” | T: Now, Puṇṇa, you may go at your own convenience.”
+sn35.88:18.1 | S: And then Puṇṇa welcomed and agreed with the Buddha’s words. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right. Then he set his lodgings in order and, taking his bowl and robe, set out for Sunāparanta. | T: Then, having delighted and rejoiced in the Blessed One’s statement, the Venerable Puṇṇa rose from his seat, paid homage to the Blessed One, and departed, keeping him on his right. He then set his lodging in order, took his bowl and outer robe, and set out to wander towards the Sunaparanta country.
+sn35.88:18.2 | S: Traveling stage by stage, he arrived at Sunāparanta, | T: Wandering by stages, he eventually arrived in the Sunaparanta country,
+sn35.88:18.3 | S: and stayed there. | T: where he dwelt.
+sn35.88:18.4 | S: Within that rainy season he confirmed around five hundred male and five hundred female lay followers. And within that same rainy season he realized the three knowledges. | T: Then, during that rains, the Venerable Puṇṇa established five hundred male lay followers and five hundred female lay followers in the practice,
+sn35.88:18.5 | P: Tenevantaravassena pañcamattāni upāsikāsatāni paṭivedesi. | T: (none)
+sn35.88:18.6 | P: Tenevantaravassena tisso vijjā sacchākāsi. | T: and he himself, during that same rains, realized the three true knowledges.
+sn35.88:18.7 | S: And within that same rainy season he became fully extinguished. | T: And during that same rains he attained final Nibbāna.
+sn35.88:19.1 | S: Then several mendicants went up to the Buddha … and asked him, | T: Then a number of bhikkhus approached the Blessed One … and said to him:
+sn35.88:19.2 | S: “Sir, the gentleman named Puṇṇa, who was advised in brief by the Buddha, has passed away. | T: “Venerable sir, the clansman named Puṇṇa, who was given a brief exhortation by the Blessed One, has died.
+sn35.88:19.3 | S: Where has he been reborn in his next life?” | T: What is his destination? What is his future bourn?”
+sn35.88:20.1 | S: “Mendicants, Puṇṇa was astute. He practiced in line with the teaching, and did not trouble me about the teachings. | T: “Bhikkhus, the clansman Puṇṇa was wise. He practised in accordance with the Dhamma and did not trouble me on account of the Dhamma.
+sn35.88:20.2 | S: Puṇṇa has become completely quenched.” | T: The clansman Puṇṇa has attained final Nibbāna.”
+sn35.88:20.3 | P: Pañcamaṁ. | T: (none)
+
+## sn11.14
+sn11.14:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn11.14:1.2 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus thus:
+sn11.14:1.3 | S: “Mendicants!” | T: “Bhikkhus!”
+sn11.14:1.4 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn11.14:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn11.14:2.1 | S: “Once upon a time, mendicants, there was a poor person, destitute and pitiful. | T: “Bhikkhus, once in the past in this same Rajagaha there was a poor man, a pauper, an indigent.
+sn11.14:2.2 | S: They took up faith, ethics, learning, generosity, and wisdom in the teaching and training proclaimed by the Realized One. | T: He undertook faith, virtue, learning, generosity, and wisdom in the Dhamma and Discipline proclaimed by the Tathagata.
+sn11.14:2.3 | S: After undertaking these things, when their body broke up, after death, they were reborn in a good place, a heavenly realm, in the company of the gods of the thirty-three. | T: Having done so, with the breakup of the body, after death, he was reborn in a good destination, in a heavenly world, in the company of the Tavatiṁsa devas,
+sn11.14:2.4 | S: There they outshone the other gods in beauty and glory. | T: where he outshone the other devas in regard to beauty and glory.
+sn11.14:2.5 | S: But the gods of the thirty-three complained, grumbled, and objected, | T: “Thereupon the Tavatiṁsa devas found fault with this, grumbled, and complained about it, saying:
+sn11.14:2.6 | S: ‘Oh lord, how incredible, how amazing! | T: ‘It is wonderful indeed, sir! It is amazing indeed, sir!
+sn11.14:2.7 | S: For when this godling was a human being in their past life they were poor, destitute, and pitiful. | T: For formerly, when this young deva was a human being, he was a poor man, a pauper, an indigent.
+sn11.14:2.8 | S: And when their body broke up, after death, they were reborn in a good place, a heavenly realm, in the company of the gods of the thirty-three. | T: Yet with the breakup of the body, after death, he has been reborn in a good destination, in a heavenly world, in the company of the Tavatiṁsa devas,
+sn11.14:2.9 | S: Here they outshine the other gods in beauty and glory.’ | T: where he outshines the other devas in regard to beauty and glory.’
+sn11.14:3.1 | S: Then Sakka, lord of gods, addressed the gods of the thirty-three, | T: “Then, bhikkhus, Sakka, lord of the devas, addressed the Tavatiṁsa devas thus:
+sn11.14:3.2 | S: ‘Good fellows, don’t complain about this godling. | T: ‘Dear sirs, do not find fault with this young deva.
+sn11.14:3.3 | S: When this godling was a human being in their past life they took up faith, ethics, learning, generosity, and wisdom in the teaching and training proclaimed by the Realized One. | T: Formerly, when this young deva was a human being, he undertook faith, virtue, learning, generosity, and wisdom in the Dhamma and Discipline proclaimed by the Tathagata.
+sn11.14:3.4 | S: After undertaking these things, when their body broke up, after death, they’ve been reborn in a good place, a heavenly realm, in the company of the gods of the thirty-three. | T: Having done so, with the breakup of the body, after death, he has been reborn in a good destination, in a heavenly world, in the company of the Tavatiṁsa devas,
+sn11.14:3.5 | S: Here they outshine the other gods in beauty and glory.’ | T: where he outshines the other devas in regard to beauty and glory.’
+sn11.14:3.6 | S: Then Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Then, bhikkhus, instructing the Tavatiṁsa devas, Sakka, lord of the devas, on that occasion recited these verses:
+sn11.14:4.1 | S: ‘Whoever has faith in the Realized One, | T: “‘When one has faith in the Tathagata,
+sn11.14:4.2 | S: unwavering and well grounded; | T: Unshakable and well established,
+sn11.14:4.3 | S: whose ethical conduct is good, | T: And good conduct built on virtue,
+sn11.14:4.4 | S: praised and loved by the noble ones; | T: Dear to the noble ones and praised;
+sn11.14:5.1 | S: who has confidence in the Saṅgha, | T: “‘When one has confidence in the Saṅgha
+sn11.14:5.2 | S: and correct view: | T: And one’s view is straightened out,
+sn11.14:5.3 | S: they’re said to be prosperous, | T: They say that one isn’t poor;
+sn11.14:5.4 | S: their life is not in vain. | T: One’s life is not lived in vain.
+sn11.14:6.1 | S: So let the wise devote themselves | T: “‘Therefore the person of intelligence,
+sn11.14:6.2 | S: to faith, ethical behaviour, | T: Remembering the Buddha’s Teaching, Should be devoted to faith and virtue,
+sn11.14:6.3 | S: confidence, and insight into the teaching, | T: To confidence and vision of the Dhamma.’”
+sn11.14:6.4 | S: remembering the instructions of the Buddhas.’” | T: (none)
+
+## an10.55
+an10.55:1.1 | S: There Sāriputta addressed the mendicants: | T: There the Venerable Sāriputta addressed the bhikkhus:
+an10.55:1.2 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus!”
+an10.55:1.3 | S: “Reverend,” they replied. | T: “Friend!” those bhikkhus replied.
+an10.55:1.4 | S: Sāriputta said this: | T: The Venerable Sāriputta said this:
+an10.55:2.1 | S: “Reverends, they speak of an individual liable to decline, | T: “Friends, it is said: ‘A person subject to decline, a person subject to decline.’
+an10.55:2.2 | S: and one not liable to decline. | T: (none)
+an10.55:2.3 | S: But how did the Buddha define an individual liable to decline, and one not liable to decline?” | T: In what way has the Blessed One said that a person is subject to decline, and in what way that a person is not subject to decline?”
+an10.55:2.4 | S: “Reverend, we would travel a long way to learn the meaning of this statement in the presence of Venerable Sāriputta. | T: “We would come from far away, friend, to learn the meaning of this statement from the Venerable Sāriputta.
+an10.55:2.5 | S: May Venerable Sāriputta himself please clarify the meaning of this. | T: It would be good if he would clear up the meaning of this statement.
+an10.55:2.6 | S: The mendicants will listen and remember it.” | T: Having heard it from him, the bhikkhus will retain it in mind.”
+an10.55:3.1 | S: “Then listen and apply your mind well, I will speak.” | T: “Well then, friends, listen and attend closely. I will speak.”
+an10.55:3.2 | S: “Yes, reverend,” they replied. | T: “Yes, friend,” those bhikkhus replied.
+an10.55:3.3 | S: Sāriputta said this: | T: The Venerable Sāriputta said this:
+an10.55:4.1 | S: “How did the Buddha define an individual liable to decline? | T: “In what way, friends, has the Blessed One said that a person is subject to decline?
+an10.55:4.2 | S: It’s when a mendicant doesn’t get to hear a teaching they haven’t heard before. They forget those teachings they have heard. They don’t keep exercising the teachings with which they are already familiar. And they don’t come to understand what they haven’t understood before. | T: Here, a bhikkhu does not get to hear a teaching he has not heard before, forgets those teachings he has already heard, does not bring to mind those teachings with which he is already familiar, and does not understand what he has not understood.
+an10.55:4.3 | S: That’s how the Buddha defined an individual liable to decline. | T: It is in this way that the Blessed One has said a person is subject to decline.
+an10.55:5.1 | S: And how did the Buddha define an individual not liable to decline? | T: “And in what way, friends, has the Blessed One said that a person is not subject to decline?
+an10.55:5.2 | S: It’s when a mendicant gets to hear a teaching they haven’t heard before. They remember those teachings they have heard. They keep exercising the teachings with which they are already familiar. And they come to understand what they haven’t understood before. | T: Here, a bhikkhu gets to hear a teaching he has not heard before, does not forget those teachings he has already heard, brings to mind those teachings with which he is already familiar, and understands what he has not understood.
+an10.55:5.3 | S: That’s how the Buddha defined an individual not liable to decline. | T: It is in this way that the Blessed One has said a person is not subject to decline.
+an10.55:6.1 | S: If a mendicant isn’t skilled in encompassing another’s mind, then they should train themselves: ‘I will be skilled in encompassing my own mind.’ | T: “Friends, a bhikkhu who is not skilled in the ways of others’ minds should train: ‘I will be skilled in the ways of my own mind.’
+an10.55:6.2 | P: evañhi vo, āvuso, sikkhitabbaṁ. | T: It is in this way that you should train yourselves.
+an10.55:7.1 | S: And how is a mendicant skilled in encompassing their own mind? | T: “And how, friends, is a bhikkhu skilled in the ways of his own mind?
+an10.55:7.2 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments, and they check their own reflection in a clean bright mirror or a clear bowl of water. If they see any dirt or blemish there, they’d try to remove it. | T: It is just as if a woman or a man—young, youthful, and fond of ornaments—would look at her or his own facial reflection in a clean and bright mirror or in a bowl of clear water. If they see any dust or blemish there, they will make an effort to remove it.
+an10.55:7.3 | S: But if they don’t see any dirt or blemish there, they’re happy with that, as they’ve got all they wished for: | T: But if they do not see any dust or blemish there, they will be glad about it; and their wish fulfilled, they will think,
+an10.55:7.4 | S: ‘How fortunate that I’m clean!’ | T: ‘How fortunate for me that I’m clean!’
+an10.55:7.5 | S: In the same way, checking is very helpful for a mendicant’s skillful qualities. | T: So too, self-examination is very helpful for a bhikkhu to grow in wholesome qualities.
+an10.55:7.6 | S: ‘Is contentment often found in me or not? Is good will often found in me or not? Is freedom from dullness and drowsiness often found in me or not? Is calm often found in me or not? Is confidence often found in me or not? Is love often found in me or not? Is purity of mind often found in me or not? Is internal joy with the teaching found in me or not? Is internal serenity of heart found in me or not? Is the higher wisdom of discernment of principles found in me or not?’ | T: “One should ask oneself: (1) ‘Am I often without longing? Does this quality exist in me or not? (2) Am I often without ill will? Does this quality exist in me or not? (3) Am I often free from dullness and drowsiness? Does this quality exist in me or not? (4) Am I often calm? Does this quality exist in me or not? (5) Am I often free from doubt? Does this quality exist in me or not? (6) Am I often without anger? Does this quality exist in me or not? (7) Is my mind often undefiled? Does this quality exist in me or not? (8) Do I gain internal joy of the Dhamma? Does this quality exist in me or not? (9) Do I gain internal serenity of mind? Does this quality exist in me or not? (10) Do I gain the higher wisdom of insight into phenomena? Does this quality exist in me or not?’
+an10.55:8.1 | S: Suppose a mendicant, while checking, doesn’t see any of these skillful qualities in themselves. In order to get them they should apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: “If, by such self-examination, a bhikkhu does not see any of these wholesome qualities present in himself, then he should put forth extraordinary desire, effort, zeal, enthusiasm, indefatigability, mindfulness, and clear comprehension to obtain those wholesome qualities.
+an10.55:8.2 | S: Suppose your clothes or head were on fire. In order to extinguish it, you’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: Just as one whose clothes or head had caught fire would put forth extraordinary desire, effort, zeal, enthusiasm, indefatigability, mindfulness, and clear comprehension to extinguish the fire on his clothes or head,
+an10.55:8.3 | P: Tasseva celassa vā sīsassa vā nibbāpanāya adhimattaṁ chandañca vāyāmañca ussāhañca ussoḷhiñca appaṭivāniñca satiñca sampajaññañca kareyya. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.55:8.4 | S: In the same way, they should apply extraordinary enthusiasm to get those skillful qualities … | T: so that bhikkhu should put forth extraordinary desire, effort, zeal, enthusiasm, indefatigability, mindfulness, and clear comprehension to obtain those wholesome qualities.
+an10.55:9.1 | S: Suppose a mendicant, while checking, sees some of these skillful qualities in themselves, but doesn’t see others. Grounded on the skillful qualities they see, they should apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness in order to get the skillful qualities they don’t see. | T: “But if, by such self-examination, a bhikkhu sees some wholesome qualities present in himself but not others, he should base himself on those wholesome qualities that he sees in himself and put forth extraordinary desire, effort, zeal, enthusiasm, indefatigability, mindfulness, and clear comprehension to obtain those wholesome qualities that he does not see in himself.
+an10.55:9.2 | S: Suppose your clothes or head were on fire. In order to extinguish it, you’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: Just as one whose clothes or head had caught fire would put forth extraordinary desire … to extinguish the fire on his clothes or head,
+an10.55:9.3 | P: Tasseva celassa vā sīsassa vā nibbāpanāya adhimattaṁ chandañca vāyāmañca ussāhañca ussoḷhiñca appaṭivāniñca satiñca sampajaññañca kareyya. | T: (none)
+an10.55:9.4 | S: In the same way, grounded on the skillful qualities they see, they should apply extraordinary enthusiasm to get those skillful qualities they don’t see. | T: so that bhikkhu should base himself on the wholesome qualities that he sees in himself and put forth extraordinary desire … to obtain those wholesome qualities that he does not see in himself.
+an10.55:10.1 | S: But suppose a mendicant, while checking, sees all of these skillful qualities in themselves. Grounded on all these skillful qualities they should practice meditation further to end the defilements.” | T: “But if, by such self-examination, a bhikkhu sees all these wholesome qualities present in himself, he should base himself on those same wholesome qualities and make a further effort to reach the destruction of the taints.”
+an10.55:10.2 | P: Pañcamaṁ. | T: (none)
+
+## an4.36
+an4.36:1.1 | S: At one time the Buddha was traveling along the road between Ukkaṭṭhā and Setavyā, | T: On one occasion the Blessed One was traveling along the highway between Ukkaṭṭhā and Setavya.
+an4.36:1.2 | S: as was the brahmin Doṇa. | T: The brahmin Doṇa was also traveling along the highway between Ukkaṭṭhā and Setavya.
+an4.36:1.3 | S: Doṇa saw that the Buddha’s footprints had thousand-spoked wheels, with rims and hubs, complete in every detail. | T: The brahmin Doṇa then saw the thousand-spoked wheels of the Blessed One’s footprints, with their rims and hubs, complete in all respects,
+an4.36:1.4 | S: It occurred to him, | T: and thought:
+an4.36:1.5 | S: “Oh lord, how incredible, how amazing! | T: “It is astounding and amazing!
+an4.36:1.6 | S: Surely these couldn’t be the footprints of a human being?” | T: These surely could not be the footprints of a human being!”
+an4.36:1.7 | S: The Buddha had left the road and sat at the root of a tree cross-legged, setting his body straight, and bringing mindfulness to the present. | T: Then the Blessed One left the highway and sat down at the foot of a tree, folding his legs crosswise, straightening his body, and establishing mindfulness in front of him.
+an4.36:1.8 | S: Then Doṇa, following the Buddha’s footprints, saw him sitting at the tree root—impressive and inspiring, with peaceful faculties and heart, attained to the highest self-control and serenity, like an elephant with tamed, guarded, and controlled faculties. | T: Tracking the Blessed One’s footprints, the brahmin Doṇa saw the Blessed One sitting at the foot of the tree—graceful, inspiring confidence, with peaceful faculties and peaceful mind, one who had attained to the highest taming and serenity, like a tamed and guarded bull elephant with controlled faculties.
+an4.36:1.9 | S: He went up to the Buddha and said to him: | T: He then approached the Blessed One and said to him:
+an4.36:2.1 | S: “Sir, might you be a god?” | T: (1) “Could you be a deva, sir?”
+an4.36:2.2 | S: “I will not be a god, brahmin.” | T: “I will not be a deva, brahmin.”
+an4.36:2.3 | S: “Might you be a centaur?” | T: (2) “Could you be a gandhabba, sir?”
+an4.36:2.4 | S: “I will not be a centaur.” | T: “I will not be a gandhabba, brahmin.”
+an4.36:2.5 | S: “Might you be a spirit?” | T: (3) “Could you be a yakkha, sir?”
+an4.36:2.6 | S: “I will not be a spirit.” | T: “I will not be a yakkha, brahmin.”
+an4.36:2.7 | S: “Might you be a human?” | T: (4) “Could you be a human being, sir?”
+an4.36:2.8 | S: “I will not be a human.” | T: “I will not be a human being, brahmin.”
+an4.36:3.1 | S: “When asked whether you might be a god, centaur, spirit, or human, | T: “When you are asked: ‘Could you be a deva, sir?’
+an4.36:3.2 | S: you answer that you will not be any of these. | T: you say: ‘I will not be a deva, brahmin.’
+an4.36:3.3 | P: ‘Gandhabbo no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When you are asked: ‘Could you be a gandhabba, sir?’
+an4.36:3.4 | P: ‘na kho ahaṁ, brāhmaṇa, gandhabbo bhavissāmī’ti vadesi. | T: you say: ‘I will not be a gandhabba, brahmin.’
+an4.36:3.5 | P: ‘Yakkho no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When you are asked: ‘Could you be a yakkha, sir?’
+an4.36:3.6 | P: ‘na kho ahaṁ, brāhmaṇa, yakkho bhavissāmī’ti vadesi. | T: you say: ‘I will not be a yakkha, brahmin.’
+an4.36:3.7 | P: ‘Manusso no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When you are asked: ‘Could you be a human being, sir?’
+an4.36:3.8 | P: ‘na kho ahaṁ, brāhmaṇa, manusso bhavissāmī’ti vadesi. | T: you say: ‘I will not be a human being, brahmin.’
+an4.36:3.9 | S: So what then might you be?” | T: What, then, could you be, sir?”
+an4.36:4.1 | S: “Brahmin, if I had not given up defilements I might have become a god … a centaur … a spirit … or a human. But I have given up those defilements, cut them off at the root, made them like a palm stump, obliterated them so they are unable to arise in the future. | T: (1) “Brahmin, I have abandoned those taints because of which I might have become a deva; I have cut them off at the root, made them like palm stumps, obliterated them so that they are no longer subject to future arising.
+an4.36:4.2 | P: Yesaṁ kho ahaṁ, brāhmaṇa, āsavānaṁ appahīnattā gandhabbo bhaveyyaṁ … yakkho bhaveyyaṁ … manusso bhaveyyaṁ, te me āsavā pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (2) I have abandoned those taints because of which I might have become a gandhabba … (3) … might have become a yakkha … (4) … might have become a human being; I have cut them off at the root, made them like palm stumps, obliterated them so that they are no longer subject to future arising.
+an4.36:4.3 | S: Suppose there was a blue water lily, or a pink or white lotus. Though it sprouted and grew in the water, it would rise up above the water and stand with no water clinging to it. | T: Just as a blue, red, or white lotus flower, though born in the water and grown up in the water, rises above the water and stands unsoiled by the water,
+an4.36:4.4 | S: In the same way, though I was born and grew up in the world, I live having mastered the world, unsullied by the world. | T: even so, though born in the world and grown up in the world, I have overcome the world and dwell unsoiled by the world.
+an4.36:4.5 | S: Remember me, brahmin, as a Buddha. | T: Remember me, brahmin, as a Buddha.
+an4.36:5.1 | S: I could have been reborn as a god, | T: “I have destroyed those taints by which I might have been reborn as a deva
+an4.36:5.2 | S: or as a centaur flying through the sky. | T: or as a gandhabba that travels through the sky;
+an4.36:5.3 | S: I could have become a spirit, | T: by which I might have reached the state of a yakkha,
+an4.36:5.4 | S: or returned as a human. | T: or arrived back at the human state:
+an4.36:5.5 | S: But I’ve ended those defilements, | T: I have dispelled and cut down these taints.
+an4.36:5.6 | S: they’re blown away and mown down. | T: (none)
+an4.36:6.1 | S: Like a graceful lotus, | T: “As a lovely white lotus
+an4.36:6.2 | S: to which water does not cling, | T: is not soiled by the water,
+an4.36:6.3 | S: the world doesn’t cling to me, | T: I am not soiled by the world:
+an4.36:6.4 | S: and so, brahmin, I am a Buddha.” | T: therefore, O brahmin, I am a Buddha.”
+an4.36:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.78
+sn22.78:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.78:1.2 | S: “Mendicants, toward evening the lion, king of beasts, emerges from his den, yawns, surveys the four quarters, and roars his lion’s roar three times. Then he sets out on the hunt. | T: “Bhikkhus, in the evening the lion, the king of beasts, comes out from his lair. Having come out, he stretches himself, surveys the four quarters all around, and roars his lion’s roar three times. Then he sets out in search of game.
+sn22.78:1.3 | S: And whatever animals hear the roar of the lion, king of beasts, are typically filled with fear, awe, and terror. They return to their lairs, be they in a hole, the water, or a wood; and the birds take to the air. | T: “When the lion, the king of beasts, roars, whatever animals hear the sound are for the most part filled with fear, a sense of urgency, and terror. Those who live in holes enter their holes; those who live in the water enter the water; those who live in the woods enter the woods; and the birds fly up into the air.
+sn22.78:1.4 | S: Even the royal elephants, bound with strong harnesses in the villages, towns, and capital cities, break apart their bonds, and urinate and defecate in terror as they flee here and there. | T: Even those royal bull elephants, bound by strong thongs in the villages, towns, and capital cities, burst and break their bonds asunder; frightened, they urinate and defecate and flee here and there.
+sn22.78:1.5 | S: That’s how powerful is the lion, king of beasts, over animals, how illustrious and mighty. | T: So powerful, bhikkhus, is the lion, the king of beasts, among the animals, so majestic and mighty.
+sn22.78:2.1 | S: In the same way, when a Realized One arises in the world—perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed—he teaches the Dhamma: | T: “So too, bhikkhus, when the Tathagata arises in the world, an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed leader of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One, he teaches the Dhamma thus:
+sn22.78:2.2 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+sn22.78:2.3 | S: Such is feeling … | T: such is feeling …
+sn22.78:2.4 | S: Such is perception … | T: such is perception …
+sn22.78:2.5 | S: Such are choices … | T: such are volitional formations …
+sn22.78:2.6 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such is consciousness, such its origin, such its passing away.’
+sn22.78:2.7 | S: Now, there are gods who are long-lived, beautiful, and very happy, lasting long in their divine palaces. When they hear this teaching by the Realized One, they’re typically filled with fear, awe, and terror. | T: “Then, bhikkhus, when those devas who are long-lived, beautiful, abounding in happiness, dwelling for a long time in lofty palaces, hear the Tathagata’s teaching of the Dhamma, they are for the most part filled with fear, a sense of urgency, and terror,
+sn22.78:2.8 | S: ‘Oh no! It turns out we’re impermanent, though we thought we were permanent! | T: saying: ‘It seems, sir, that we are impermanent, though we thought ourselves permanent;
+sn22.78:2.9 | S: It turns out we don’t last, though we thought we were everlasting! | T: it seems, sir, that we are unstable, though we thought ourselves stable;
+sn22.78:2.10 | S: It turns out we’re transient, though we thought we were eternal! | T: it seems, sir, that we are noneternal, though we thought ourselves eternal.
+sn22.78:2.11 | S: It turns out that we’re impermanent, not lasting, transient, and included within substantial reality.’ | T: It seems, sir, that we are impermanent, unstable, noneternal, included within identity.’
+sn22.78:2.12 | S: That’s how powerful is the Realized One in the world with its gods, how illustrious and mighty.” | T: So powerful, bhikkhus, is the Tathagata over this world together with its devas, so majestic and mighty.”
+sn22.78:2.13 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn22.78:2.14 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn22.78:3.1 | S: “The Buddha, the unrivaled Teacher | T: “When the Buddha, through direct knowledge,
+sn22.78:3.2 | S: in all the world with its gods, | T: (none)
+sn22.78:3.3 | S: rolls forth the Wheel of Dhamma | T: Sets in motion the Wheel of Dhamma,
+sn22.78:3.4 | S: from his own insight: | T: The peerless Teacher in this world With its devas makes this known:
+sn22.78:4.1 | S: substantial reality, its cessation, | T: “The cessation of identity
+sn22.78:4.2 | S: the origin of substantial reality, | T: And the origin of identity,
+sn22.78:4.3 | S: and the noble eightfold path | T: Also the Noble Eightfold Path
+sn22.78:4.4 | S: that leads to the stilling of suffering. | T: That leads to suffering’s appeasement.
+sn22.78:5.1 | S: And then the long-lived gods, | T: “Then those devas with long life spans,
+sn22.78:5.2 | S: so beautiful and glorious, | T: Beautiful, ablaze with glory,
+sn22.78:5.3 | S: are afraid and full of terror, | T: Are struck with fear, filled with terror,
+sn22.78:5.4 | S: like the other beasts when they hear a lion. | T: Like beasts who hear the lion’s roar.
+sn22.78:6.1 | S: ‘We haven’t passed beyond substantial reality! | T: “‘We’ve not transcended identity;
+sn22.78:6.2 | S: It turns out we’re impermanent!’ | T: It seems, sir, we’re impermanent,’
+sn22.78:6.3 | S: So they say when they hear the word | T: So they say having heard the utterance
+sn22.78:6.4 | S: of the perfected one, free and unaffected.” | T: Of the Arahant, the released Stable One.”
+sn22.78:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn12.31
+sn12.31:1.1 | S: At one time the Buddha was staying near Sāvatthī. | T: On one occasion the Blessed One was dwelling at Savatthī.…
+sn12.31:1.2 | S: Then the Buddha said to Venerable Sāriputta, | T: There the Blessed One addressed the Venerable Sāriputta thus:
+sn12.31:1.3 | S: “Sāriputta, this was said in ‘The Way to the Far Shore’, in ‘The Questions of Ajita’: | T: “Sāriputta, in ‘The Questions of Ajita’ of the Parayana it is said:
+sn12.31:2.1 | S: ‘There are those who have appraised the teaching, | T: ‘Those who have comprehended the Dhamma,
+sn12.31:2.2 | S: and many kinds of trainees here. | T: And the manifold trainees here:
+sn12.31:2.3 | S: Now you, being alert, are asked | T: Asked about their way of conduct,
+sn12.31:2.4 | S: to tell me their behavior, good fellow.’ | T: Being discreet, tell me, dear sir.’
+sn12.31:3.1 | S: How should we see the detailed meaning of this brief statement?” | T: How should the meaning of this, stated in brief, be understood in detail?”
+sn12.31:3.2 | S: When he said this, Sāriputta kept silent. | T: When this was said, the Venerable Sāriputta was silent.
+sn12.31:4.1 | S: For a second time … | T: A second time and a third time the Blessed One addressed the Venerable Sāriputta thus:
+sn12.31:4.2 | P: dutiyampi kho āyasmā sāriputto tuṇhī ahosi. | T: (none)
+sn12.31:4.3 | S: For a third time … | T: (none)
+sn12.31:4.4 | P: “vuttamidaṁ, sāriputta, pārāyane ajitapañhe: | T: “Sāriputta, in ‘The Questions of Ajita’ in the Parayana it is said …
+sn12.31:5.1 | P: ‘Ye ca saṅkhātadhammāse, | T: (none)
+sn12.31:5.2 | P: ye ca sekkhā puthū idha; | T: (none)
+sn12.31:5.3 | P: Tesaṁ me nipako iriyaṁ, | T: (none)
+sn12.31:5.4 | P: puṭṭho pabrūhi mārisā’ti. | T: (none)
+sn12.31:6.1 | P: Imassa nu kho, sāriputta, saṅkhittena bhāsitassa kathaṁ vitthārena attho daṭṭhabbo”ti? | T: How should the meaning of this, stated in brief, be understood in detail?”
+sn12.31:6.2 | S: Sāriputta kept silent. | T: A second time and a third time the Venerable Sāriputta was silent.
+sn12.31:7.1 | S: “Sāriputta, do you see that this has come to be?” | T: “Sāriputta, do you see: ‘This has come to be’? Sāriputta, do you see: ‘This has come to be’?”
+sn12.31:7.2 | S: “Sir, one truly sees with right wisdom that this has come to be. | T: “Venerable sir, one sees as it really is with correct wisdom: ‘This has come to be.’
+sn12.31:7.3 | S: Seeing this, one is practicing for disillusionment, dispassion, and cessation regarding what has come to be. | T: Having seen as it really is with correct wisdom: ‘This has come to be,’ one is practising for the purpose of revulsion towards what has come to be, for its fading away and cessation.
+sn12.31:7.4 | S: One truly sees with right wisdom that it came to be with that as fuel. | T: One sees as it really is with correct wisdom: ‘Its origination occurs with that as nutriment.’
+sn12.31:7.5 | S: Seeing this, one is practicing for disillusionment, dispassion, and cessation regarding the fuel for its origination. | T: Having seen as it really is with correct wisdom: ‘Its origination occurs with that as nutriment, ’ one is practising for the purpose of revulsion towards its origination through nutriment, for its fading away and cessation.
+sn12.31:7.6 | S: One truly sees with right wisdom that when that fuel ceases, what has come to be is liable to cease. | T: One sees as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation.’
+sn12.31:7.7 | S: Seeing this, one is practicing for disillusionment, dispassion, and cessation regarding what is liable to cease. | T: Having seen as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation, ’ one is practising for the purpose of revulsion towards what is subject to cessation, for its fading away and cessation.
+sn12.31:7.8 | S: In this way one is a trainee. | T: It is in such a way that one is a trainee.
+sn12.31:8.1 | S: And how, sir, has one appraised the teaching? | T: “And how, venerable sir, has one comprehended the Dhamma?
+sn12.31:8.2 | S: Sir, one truly sees with right wisdom that this has come to be. | T: Venerable sir, one sees as it really is with correct wisdom: ‘This has come to be.’
+sn12.31:8.3 | S: Seeing this, one is freed by not grasping through disillusionment, dispassion, and cessation regarding what has come to be. | T: Having seen as it really is with correct wisdom: ‘This has come to be,’ through revulsion towards what has come to be, through its fading away and cessation, one is liberated by nonclinging.
+sn12.31:8.4 | S: One truly sees with right wisdom that it came to be with that as fuel. | T: One sees as it really is with correct wisdom: ‘Its origination occurs with that as nutriment.’
+sn12.31:8.5 | S: Seeing this, one is freed by not grasping through disillusionment, dispassion, and cessation regarding the fuel for its origination. | T: Having seen as it really is with correct wisdom: ‘Its origination occurs with that as nutriment,’ through revulsion towards its origination through nutriment, through its fading away and cessation, one is liberated by nonclinging.
+sn12.31:8.6 | S: One truly sees with right wisdom that when that fuel ceases, what has come to be is liable to cease. | T: One sees as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation.’
+sn12.31:8.7 | S: Seeing this, one is freed by not grasping through disillusionment, dispassion, and cessation regarding what is liable to cease. | T: Having seen as it really is with correct wisdom: ‘With the cessation of that nutriment, what has come to be is subject to cessation,’ through revulsion towards what is subject to cessation, through its fading away and cessation, one is liberated by nonclinging.
+sn12.31:8.8 | S: In this way one has appraised the teaching. | T: It is in such a way that one has comprehended the Dhamma.
+sn12.31:8.9 | S: Sir, regarding what was said in ‘The Way to the Far Shore’, in ‘The Questions of Ajita’: | T: “Thus, venerable sir, when it is said in ‘The Questions of Ajita’ of the Parayana:
+sn12.31:9.1 | S: ‘There are those who have appraised the teaching, | T: ‘Those who have comprehended the Dhamma,
+sn12.31:9.2 | S: and many kinds of trainees here. | T: And the manifold trainees here:
+sn12.31:9.3 | S: Now you, being alert, are asked | T: Asked about their way of conduct,
+sn12.31:9.4 | S: to tell me their behavior, good fellow.’ | T: Being discreet, tell me, dear sir.’—
+sn12.31:10.1 | S: This is how I understand the detailed meaning of what was said in brief.” | T: it is in such a way that I understand in detail the meaning of this that was stated in brief.”
+sn12.31:11.1 | S: “Good, good, Sāriputta! (The Buddha repeated all of Sāriputta’s explanation, concluding:) | T: “Good, good, Sāriputta!… the Buddha repeats here the entire statement of the Venerable Sāriputta …
+sn12.31:11.2 | P: Bhūtamidanti yathābhūtaṁ sammappaññāya disvā bhūtassa nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn12.31:11.3 | P: Tadāhārasambhavanti yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn12.31:11.4 | P: Tadāhārasambhavanti yathābhūtaṁ sammappaññāya disvā āhārasambhavassa nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn12.31:11.5 | P: Tadāhāranirodhā yaṁ bhūtaṁ taṁ nirodhadhammanti yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn12.31:11.6 | P: Tadāhāranirodhā yaṁ bhūtaṁ taṁ nirodhadhammanti yathābhūtaṁ sammappaññāya disvā nirodhadhammassa nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn12.31:11.7 | P: Evaṁ kho, sāriputta, sekkho hoti. | T: (none)
+sn12.31:12.1 | P: Kathañca, sāriputta, saṅkhātadhammo hoti? | T: (none)
+sn12.31:12.2 | P: Bhūtamidanti, sāriputta, yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn12.31:12.3 | P: Bhūtamidanti yathābhūtaṁ sammappaññāya disvā bhūtassa nibbidā virāgā nirodhā anupādā vimutto hoti. | T: (none)
+sn12.31:12.4 | P: Tadāhārasambhavanti yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn12.31:12.5 | P: Tadāhārasambhavanti yathābhūtaṁ sammappaññāya disvā āhārasambhavassa nibbidā virāgā nirodhā anupādā vimutto hoti. | T: (none)
+sn12.31:12.6 | P: Tadāhāranirodhā yaṁ bhūtaṁ taṁ nirodhadhammanti yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn12.31:12.7 | P: Tadāhāranirodhā yaṁ bhūtaṁ taṁ nirodhadhammanti yathābhūtaṁ sammappaññā disvā nirodhadhammassa nibbidā virāgā nirodhā anupādā vimutto hoti. | T: (none)
+sn12.31:12.8 | P: Evaṁ kho, sāriputta, saṅkhātadhammo hoti. | T: (none)
+sn12.31:12.9 | P: Iti kho, sāriputta, yaṁ taṁ vuttaṁ pārāyane ajitapañhe: | T: (none)
+sn12.31:13.1 | P: ‘Ye ca saṅkhātadhammāse, | T: (none)
+sn12.31:13.2 | P: ye ca sekkhā puthū idha; | T: (none)
+sn12.31:13.3 | P: Tesaṁ me nipako iriyaṁ, | T: (none)
+sn12.31:13.4 | P: puṭṭho pabrūhi mārisā’ti. | T: (none)
+sn12.31:14.1 | S: This is how to see the detailed meaning of what was said in brief.” | T: it is in such a way that the meaning of this, stated in brief, should be understood in detail.”
+sn12.31:14.2 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full batch and found no clear line-boundary errors to report. I’ll write “none” to the findings file.
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-044.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+26,152
+0 lines reported.

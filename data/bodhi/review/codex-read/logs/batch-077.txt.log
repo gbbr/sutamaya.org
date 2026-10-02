@@ -1,0 +1,467 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8c-f92e-70e0-b473-1b21057eff43
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file and record only clearly misplaced text.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.242
+sn35.242:1.1 | S: At one time the Buddha was staying near Kimibilā on the bank of the Ganges River. | T: On one occasion the Blessed One was dwelling at Kimbila on the bank of the river Ganges.
+sn35.242:1.2 | S: Seeing a large tree trunk being carried along by the current, | T: The Blessed One saw a great log being carried along by the current of the river Ganges,
+sn35.242:1.3 | S: he addressed the mendicants: | T: and he addressed the bhikkhus thus:
+sn35.242:1.4 | S: “Mendicants, do you see that large tree trunk being carried along by the current of the Ganges River?” | T: “Do you see, bhikkhus, that great log being carried along by the current of the river Ganges?”
+sn35.242:1.5 | S: “Yes, sir,” they replied. … | T: “Yes, venerable sir.”… as above …
+sn35.242:1.6 | S: When this was said, Venerable Kimbila said to the Buddha: | T: When this was said, the Venerable Kimbila asked the Blessed One:
+sn35.242:1.7 | S: “But sir, what’s the near shore and what’s the far shore? What’s sinking in the middle? What’s getting stranded on high ground? What’s getting taken by humans or non-humans? What’s getting caught up in a whirlpool? And what’s rotting away?” … | T: “What, venerable sir, is the near shore … what is inward rottenness?” Replies as above except the following:
+sn35.242:1.8 | S: “And what, Kimbila, is rotting away? | T: “And what, Kimbila, is inward rottenness?
+sn35.242:1.9 | S: It’s when a mendicant has committed the kind of corrupt offense for which no rehabilitation is possible. | T: Here, Kimbila, a bhikkhu commits a certain defiled offence, an offence of a kind that does not allow for rehabilitation.
+sn35.242:1.10 | S: This is called ‘rotting away’.” | T: This is called inward rottenness.”
+sn35.242:1.11 | P: Pañcamaṁ. | T: (none)
+
+## sn35.245
+sn35.245:1.1 | S: Then one mendicant went up to another mendicant and asked, | T: One bhikkhu approached another and asked him:
+sn35.245:1.2 | S: “Reverend, at what point is a mendicant’s vision well purified?” | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:1.3 | S: “When a mendicant truly understands the origin and disappearance of the six fields of contact, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the six bases for contact, in this way his vision is well purified.”
+sn35.245:2.1 | S: Not content with that answer, that mendicant went up to a series of other mendicants and received the following answers: | T: Then the first bhikkhu, dissatisfied with the other’s answer, approached another bhikkhu and asked him:
+sn35.245:2.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:2.3 | S: “When a mendicant truly understands the origin and disappearance of the five grasping aggregates, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the five aggregates subject to clinging, in this way his vision is well purified.”
+sn35.245:3.1 | P: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ etadavoca: | T: Again, the first bhikkhu, dissatisfied with the other’s answer, approached still another bhikkhu and asked him:
+sn35.245:3.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:3.3 | S: “When a mendicant truly understands the origin and disappearance of the four principal states, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as they really are the origin and the passing away of the four great elements, in this way his vision is well purified.”
+sn35.245:4.1 | P: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ etadavoca: | T: Again, the first bhikkhu, dissatisfied with the other’s answer, approached still another bhikkhu and asked him:
+sn35.245:4.2 | P: “kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? | T: “In what way, friend, is a bhikkhu’s vision well purified?”
+sn35.245:4.3 | S: “When a mendicant truly understands that everything that is liable to arise is liable to cease, at that point their vision is well purified.” | T: “When, friend, a bhikkhu understands as it really is: ‘Whatever is subject to origination is all subject to cessation,’ in this way his vision is well purified.”
+sn35.245:5.1 | S: Not content with any of those answers, that mendicant went up to the Buddha and told him what had happened. Then he said to him, | T: Then the first bhikkhu, dissatisfied with the other’s answer, approached the Blessed One, reported everything that had happened, and asked:
+sn35.245:5.2 | P: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? | T: (none)
+sn35.245:5.3 | P: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: | T: (none)
+sn35.245:5.4 | P: ‘yato kho, āvuso, bhikkhu channaṁ phassāyatanānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. | T: (none)
+sn35.245:5.5 | P: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkamiṁ; upasaṅkamitvā taṁ bhikkhuṁ etadavocaṁ: | T: (none)
+sn35.245:5.6 | P: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? | T: (none)
+sn35.245:5.7 | P: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: | T: (none)
+sn35.245:5.8 | P: ‘yato kho, āvuso, bhikkhu pañcannaṁ upādānakkhandhānaṁ …pe… | T: (none)
+sn35.245:5.9 | P: catunnaṁ mahābhūtānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti …pe… | T: (none)
+sn35.245:5.10 | P: yaṁ kiñci samudayadhammaṁ sabbaṁ taṁ nirodhadhammanti yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. | T: (none)
+sn35.245:5.11 | P: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena yena bhagavā tenupasaṅkamiṁ (…). | T: (none)
+sn35.245:5.12 | S: “Sir, at what point is a mendicant’s vision well purified?” | T: “In what way, venerable sir, is a bhikkhu’s vision well purified?”
+sn35.245:6.1 | S: “Mendicant, suppose a person had never seen a parrot tree before. | T: “Bhikkhu, suppose there was a man who had never before seen a Kiṁ tree.
+sn35.245:6.2 | S: They’d go up to someone who had seen a parrot tree and ask them, | T: He might approach a man who had seen a Kiṁ tree and ask him:
+sn35.245:6.3 | S: ‘My man, what’s a parrot tree like?’ | T: ‘Sir, what is a Kiṁ tree like?’
+sn35.245:6.4 | S: They’d say, | T: The other might answer:
+sn35.245:6.5 | S: ‘A parrot tree is blackish, like a charred stump.’ | T: ‘Good man, a Kiṁ tree is blackish, like a charred stump.’
+sn35.245:6.6 | S: Now, at that time a parrot tree may well have been just as that person saw it. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.1 | S: Not content with that answer, that person would go up to a series of other people and receive the following answers: | T: “Then that man, dissatisfied with the other’s answer, might approach another man who had seen a kiṁsuka tree and ask him:
+sn35.245:7.2 | P: ‘kīdiso, bho purisa, kiṁsuko’ti? | T: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.3 | P: So evaṁ vadeyya: | T: (none)
+sn35.245:7.4 | S: ‘A parrot tree is reddish, like a scrap of meat.’ | T: ‘Good man, a kiṁsuka tree is reddish, like a piece of meat.’
+sn35.245:7.5 | P: Tena kho pana, bhikkhu, samayena tādisovassa kiṁsuko yathāpi tassa purisassa dassanaṁ. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.6 | P: Atha kho so bhikkhu puriso asantuṭṭho tassa purisassa pañhaveyyākaraṇena, yenaññataro puriso kiṁsukassa dassāvī tenupasaṅkameyya; upasaṅkamitvā taṁ purisaṁ evaṁ vadeyya: | T: “Then that man, dissatisfied with the other’s answer, might approach still another man who had seen a kiṁsuka tree and ask him:
+sn35.245:7.7 | P: ‘kīdiso, bho purisa, kiṁsuko’ti? | T: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.8 | P: So evaṁ vadeyya: | T: (none)
+sn35.245:7.9 | S: ‘A parrot tree has flaking bark and burst pods, like a lebbeck tree.’ | T: ‘Good man, a kiṁsuka tree has strips of bark hanging down and burst pods, like an acacia tree.’
+sn35.245:7.10 | P: Tena kho pana, bhikkhu, samayena tādisovassa kiṁsuko, yathāpi tassa purisassa dassanaṁ. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.11 | P: Atha kho so bhikkhu puriso asantuṭṭho tassa purisassa pañhaveyyākaraṇena, yenaññataro puriso kiṁsukassa dassāvī tenupasaṅkameyya; upasaṅkamitvā taṁ purisaṁ evaṁ vadeyya: | T: “Then that man, dissatisfied with the other’s answer, might approach still another man who had seen a kiṁsuka tree and ask him:
+sn35.245:7.12 | P: ‘kīdiso, bho purisa, kiṁsuko’ti? | T: ‘Sir, what is a kiṁsuka tree like?’ The other might answer:
+sn35.245:7.13 | P: So evaṁ vadeyya: | T: (none)
+sn35.245:7.14 | S: ‘A parrot tree has luxuriant, shady foliage, like a banyan.’ | T: ‘Good man, a kiṁsuka tree has plenty of leaves and foliage and gives abundant shade, like a banyan tree.’
+sn35.245:7.15 | S: Now, at each of those times a parrot tree may well have been just as those people saw them. | T: On that occasion a kiṁsuka tree might have been exactly as that man had seen it.
+sn35.245:7.16 | S: In the same way, those true persons each answered according to what they were focused on when their vision was well purified. | T: “So too, bhikkhu, those superior men answered as they were disposed in just the way their own vision had been well purified.
+sn35.245:8.1 | S: Suppose there was a king’s frontier citadel with fortified embankments, ramparts, and arches, and six gates. | T: “Suppose, bhikkhu, a king had a frontier city with strong ramparts, walls, and arches, and with six gates.
+sn35.245:8.2 | S: And it has a gatekeeper who is astute, competent, and intelligent. He keeps strangers out and lets known people in. | T: The gatekeeper posted there would be wise, competent, and intelligent; one who keeps out strangers and admits acquaintances.
+sn35.245:8.3 | S: A swift pair of messengers would arrive from the east and say to the gatekeeper, | T: A swift pair of messengers would come from the east and ask the gatekeeper:
+sn35.245:8.4 | S: ‘Worthy man, where is the lord of the city?’ | T: ‘Where, good man, is the lord of this city?’
+sn35.245:8.5 | S: They’d say, | T: He would reply:
+sn35.245:8.6 | S: ‘There he is, sirs, seated at the central square.’ | T: ‘He is sitting in the central square.’
+sn35.245:8.7 | S: Then that swift pair of messengers would deliver a message of truth to the lord of the city and depart the way they came. | T: Then the swift pair of messengers would deliver a message of reality to the lord of the city and leave by the route by which they had arrived.
+sn35.245:8.8 | S: A swift pair of messengers would come from the west … | T: Similarly, messengers would come from the west,
+sn35.245:8.9 | S: north … | T: from the north,
+sn35.245:8.10 | S: south … | T: from the south,
+sn35.245:8.11 | P: ‘kahaṁ, bho purisa, imassa nagarassāmī’ti? | T: (none)
+sn35.245:8.12 | P: So evaṁ vadeyya: | T: (none)
+sn35.245:8.13 | P: ‘eso, bhante, majjhe siṅghāṭake nisinno’ti. | T: (none)
+sn35.245:8.14 | S: deliver a message of truth to the lord of the city and depart the way they came. | T: deliver their message, and leave by the route by which they had arrived.
+sn35.245:9.1 | S: I’ve made up this simile to make a point. | T: “I have made up this simile, bhikkhu, in order to convey a meaning.
+sn35.245:9.2 | S: And this is the point. | T: This is the meaning here:
+sn35.245:9.3 | S: ‘City’ is a term for this body made up of the four principal states, produced by mother and father, built up from rice and porridge, liable to impermanence, to wearing away and erosion, to breaking up and destruction. | T: ‘The city’: this is a designation for this body consisting of the four great elements, originating from mother and father, built up out of boiled rice and gruel, subject to impermanence, to being worn and rubbed away, to breaking apart and dispersal.
+sn35.245:9.4 | S: ‘Six gates’ is a term for the six interior sense fields. | T: ‘The six gates’: this is a designation for the six internal sense bases.
+sn35.245:9.5 | S: ‘Gatekeeper’ is a term for mindfulness. | T: ‘The gatekeeper’: this is a designation for mindfulness.
+sn35.245:9.6 | S: ‘A swift pair of messengers’ is a term for serenity and discernment. | T: ‘The swift pair of messengers’: this is a designation for serenity and insight.
+sn35.245:9.7 | S: ‘The lord of the city’ is a term for consciousness. | T: ‘The lord of the city’: this is designation for consciousness.
+sn35.245:9.8 | S: ‘The central square’ is a term for the four principal states: | T: ‘The central square’: this is a designation for the four great elements—
+sn35.245:9.9 | S: the elements of earth, water, fire, and air. | T: the earth element, the water element, the heat element, the air element.
+sn35.245:9.10 | S: ‘A message of truth’ is a term for extinguishment. | T: ‘A message of reality’: this is a designation for Nibbāna.
+sn35.245:9.11 | S: ‘The way they came’ is a term for the noble eightfold path, that is, | T: ‘The route by which they had arrived’: this is a designation for the Noble Eightfold Path; that is,
+sn35.245:9.12 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion.” | T: right view … right concentration.”
+sn35.245:9.13 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.28
+sn35.28:1.1 | S: At one time the Buddha was staying near Gayā on Gayā Head together with a thousand mendicants. | T: On one occasion the Blessed One was dwelling at Gaya, at Gaya’s Head, together with a thousand bhikkhus.
+sn35.28:1.2 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus thus:
+sn35.28:1.3 | S: “Mendicants, all is burning. | T: “Bhikkhus, all is burning.
+sn35.28:1.4 | S: And what is the all that is burning? | T: And what, bhikkhus, is the all that is burning?
+sn35.28:1.5 | S: The eye is burning. Sights are burning. Eye consciousness is burning. Eye contact is burning. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also burning. | T: The eye is burning, forms are burning, eye-consciousness is burning, eye-contact is burning, and whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is burning.
+sn35.28:1.6 | S: Burning with what? | T: Burning with what?
+sn35.28:1.7 | S: Burning with the fires of greed, hate, and delusion. Burning with rebirth, old age, and death, with sorrow, lamentation, pain, sadness, and distress. | T: Burning with the fire of lust, with the fire of hatred, with the fire of delusion; burning with birth, aging, and death; with sorrow, lamentation, pain, displeasure, and despair, I say.
+sn35.28:1.8 | S: The ear … nose … tongue … body … | T: “The ear is burning …
+sn35.28:1.9 | P: Kena ādittaṁ? | T: …
+sn35.28:1.10 | P: ‘Rāgagginā, dosagginā, mohagginā ādittaṁ, jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi ādittan’ti vadāmi …pe… | T: (none)
+sn35.28:1.11 | S: The mind is burning. Ideas are burning. Mind consciousness is burning. Mind contact is burning. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also burning. | T: The mind is burning … and whatever feeling arises with mind-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is burning.
+sn35.28:1.12 | S: Burning with what? | T: Burning with what?
+sn35.28:1.13 | S: Burning with the fires of greed, hate, and delusion. Burning with rebirth, old age, and death, with sorrow, lamentation, pain, sadness, and distress, I say. | T: Burning with the fire of lust, with the fire of hatred, with the fire of delusion; burning with birth, aging, and death; with sorrow, lamentation, pain, displeasure, and despair, I say.
+sn35.28:1.14 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on eye contact. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards the eye, towards forms, towards eye-consciousness, towards eye-contact, towards whatever feeling arises with eye-contact as condition—
+sn35.28:1.15 | S: They grow disillusioned with the ear … nose … tongue … body … mind … painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: whether pleasant or painful or neither-painful-nor-pleasant; experiences revulsion towards the ear … towards the mind … towards whatever feeling arises with mind-contact as condition….
+sn35.28:1.16 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.28:1.17 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn35.28:2.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn35.28:2.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+sn35.28:2.3 | S: And while this discourse was being spoken, the minds of the thousand mendicants were freed from defilements by not grasping. | T: And while this discourse was being spoken, the minds of the thousand bhikkhus were liberated from the taints by nonclinging.
+sn35.28:2.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.2
+sn35.2:1.1 | S: “Mendicants, the eye is suffering. | T: “Bhikkhus, the eye is suffering.
+sn35.2:1.2 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn35.2:1.3 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.2:1.4 | S: The ear, | T: “The ear is suffering….
+sn35.2:1.5 | S: nose, | T: The nose is suffering….
+sn35.2:1.6 | S: tongue, | T: The tongue is suffering….
+sn35.2:1.7 | S: body, | T: The body is suffering….
+sn35.2:1.8 | S: and mind are suffering. | T: The mind is suffering.
+sn35.2:1.9 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn35.2:1.10 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.2:1.11 | S: Seeing this … | T: “Seeing thus …
+sn35.2:1.12 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn35.2:1.13 | P: Dutiyaṁ. | T: (none)
+
+## sn35.31
+sn35.31:1.1 | S: “Mendicants, I will teach you the practice that’s conducive to uprooting all conceiving. | T: “Bhikkhus, I will teach you the way that is suitable for uprooting all conceivings.
+sn35.31:1.2 | S: Listen … | T: Listen to that….
+sn35.31:1.3 | S: And what is the practice that’s conducive to uprooting all conceiving? | T: “And what, bhikkhus, is the way that is suitable for uprooting all conceivings?
+sn35.31:1.4 | S: It’s when a mendicant does not conceive anything to be the eye, does not conceive it in the eye, does not conceive it as the eye, and does not conceive that ‘the eye is mine.’ | T: Here, bhikkhus, a bhikkhu does not conceive the eye, does not conceive in the eye, does not conceive from the eye, does not conceive, ‘The eye is mine.’
+sn35.31:1.5 | S: They don’t conceive anything to be sights … | T: He does not conceive forms …
+sn35.31:1.6 | S: eye consciousness … eye contact. And they don’t conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on eye contact. They don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: eye-consciousness … eye-contact … and as to whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’
+sn35.31:1.7 | S: For whatever you conceive it to be, whatever you conceive it in, whatever you conceive it as, and whatever you conceive to be ‘mine’: that becomes something else. | T: For, bhikkhus, whatever one conceives, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise.
+sn35.31:1.8 | S: The world is attached to being, taking pleasure only in being, yet it becomes something else. | T: The world, becoming otherwise, attached to becoming, seeks delight only in becoming.
+sn35.31:1.9 | S: They don’t conceive anything to be the ear … nose … tongue … | T: “He does not conceive the ear …
+sn35.31:1.10 | P: Rase na maññati …pe… | T: (none)
+sn35.31:1.11 | P: jivhāviññāṇaṁ na maññati, jivhāsamphassaṁ na maññati. | T: (none)
+sn35.31:1.12 | P: Yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. | T: (none)
+sn35.31:1.13 | P: Yañhi, bhikkhave, maññati, yasmiṁ maññati, yato maññati, yaṁ meti maññati, tato taṁ hoti aññathā. | T: (none)
+sn35.31:1.14 | S: body … | T: …
+sn35.31:1.15 | S: mind … | T: He does not conceive the mind …
+sn35.31:1.16 | P: Dhamme na maññati …pe… | T: (none)
+sn35.31:1.17 | P: manoviññāṇaṁ na maññati, manosamphassaṁ na maññati. | T: (none)
+sn35.31:1.18 | S: They don’t conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on mind contact. They don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: and as to whatever feeling arises with mind-contact as condition … he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’
+sn35.31:1.19 | S: For whatever you conceive it to be, whatever you conceive it in, whatever you conceive it as, and whatever you conceive to be ‘mine’: that becomes something else. | T: For, bhikkhus, whatever one conceives, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise.
+sn35.31:1.20 | S: The world is attached to being, taking pleasure only in being, yet it becomes something else. | T: The world, becoming otherwise, attached to becoming, seeks delight only in becoming.
+sn35.31:1.21 | S: As far as the aggregates, elements, and sense fields extend, they don’t conceive anything to be that, they don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: “Whatever, bhikkhus, is the extent of the aggregates, the elements, and the sense bases, he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’
+sn35.31:1.22 | S: Not conceiving, they don’t grasp at anything in the world. | T: “Since he does not conceive anything thus, he does not cling to anything in the world.
+sn35.31:1.23 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn35.31:1.24 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn35.31:1.25 | S: This is the practice that’s conducive to uprooting all conceiving.” | T: “This, bhikkhus, is the way that is suitable for uprooting all conceivings.”
+sn35.31:1.26 | P: Navamaṁ. | T: (none)
+
+## sn35.3
+sn35.3:1.1 | S: “Mendicants, the eye is not-self. | T: “Bhikkhus, the eye is nonself.
+sn35.3:1.2 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.3:1.3 | S: The ear, | T: “The ear is nonself….
+sn35.3:1.4 | S: nose, | T: The nose is nonself….
+sn35.3:1.5 | S: tongue, | T: The tongue is nonself….
+sn35.3:1.6 | S: body, | T: The body is nonself….
+sn35.3:1.7 | S: and mind are not-self. | T: The mind is nonself.
+sn35.3:1.8 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.3:1.9 | S: Seeing this … | T: “Seeing thus …
+sn35.3:1.10 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn35.3:1.11 | P: Tatiyaṁ. | T: (none)
+
+## sn35.4
+sn35.4:1.1 | S: “Mendicants, sights are impermanent. | T: “Bhikkhus, forms are impermanent.
+sn35.4:1.2 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn35.4:1.3 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn35.4:1.4 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.4:1.5 | S: Sounds, | T: “Sounds …
+sn35.4:1.6 | S: smells, | T: Odours …
+sn35.4:1.7 | S: tastes, | T: Tastes …
+sn35.4:1.8 | S: touches, | T: Tactile objects …
+sn35.4:1.9 | S: and ideas are impermanent. | T: Mental phenomena are impermanent.
+sn35.4:1.10 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn35.4:1.11 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn35.4:1.12 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.4:1.13 | S: Seeing this, a learned noble disciple grows disillusioned with sights, sounds, smells, tastes, touches, and ideas. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards forms, revulsion towards sounds, revulsion towards odours, revulsion towards tastes, revulsion towards tactile objects, revulsion towards mental phenomena.
+sn35.4:1.14 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.4:1.15 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn35.4:1.16 | P: Catutthaṁ. | T: (none)
+
+## sn35.55
+sn35.55:1.1 | S: “Sir, how does one know and see so that the fetters are uprooted?” | T: … “Venerable sir, how should one know, how should one see, for the fetters to be uprooted?”
+sn35.55:1.2 | S: “Mendicant, knowing and seeing the eye as not-self, the fetters are uprooted …” | T: “Bhikkhu, when one knows and sees the eye as nonself, the fetters are uprooted. When one knows and sees forms as nonself … all as above … When one knows and sees thus, bhikkhu, the fetters are uprooted.”
+sn35.55:1.3 | P: Rūpe anattato … | T: (none)
+sn35.55:1.4 | P: cakkhuviññāṇaṁ … | T: (none)
+sn35.55:1.5 | P: cakkhusamphassaṁ … | T: (none)
+sn35.55:1.6 | P: yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi anattato jānato passato saṁyojanā samugghātaṁ gacchanti. | T: (none)
+sn35.55:1.7 | P: Sotaṁ … | T: (none)
+sn35.55:1.8 | P: ghānaṁ … | T: (none)
+sn35.55:1.9 | P: jivhaṁ … | T: (none)
+sn35.55:1.10 | P: kāyaṁ … | T: (none)
+sn35.55:1.11 | P: manaṁ … | T: (none)
+sn35.55:1.12 | P: dhamme … | T: (none)
+sn35.55:1.13 | P: manoviññāṇaṁ … | T: (none)
+sn35.55:1.14 | P: manosamphassaṁ … | T: (none)
+sn35.55:1.15 | P: yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi anattato jānato passato saṁyojanā samugghātaṁ gacchanti. | T: (none)
+sn35.55:1.16 | P: Evaṁ kho, bhikkhu, jānato evaṁ passato saṁyojanā samugghātaṁ gacchantī”ti. | T: (none)
+sn35.55:1.17 | P: Tatiyaṁ. | T: (none)
+
+## sn35.56
+sn35.56:1.1 | S: “Sir, how does one know and see so that the defilements are given up?” … | T: … “Venerable sir, how should one know, how should one see, for the taints to be abandoned?… for the taints to be uprooted?… for the underlying tendencies to be abandoned?… for the underlying tendencies to be uprooted?” “Bhikkhu, when one knows and sees the eye as nonself, the underlying tendencies are uprooted. When one knows and sees forms as nonself … all as above … When one knows and sees thus, bhikkhu, the underlying tendencies are uprooted.”
+sn35.56:1.2 | P: Catutthaṁ. | T: (none)
+
+## sn35.5
+sn35.5:1.1 | S: “Mendicants, sights are suffering. | T: “Bhikkhus, forms are suffering.
+sn35.5:1.2 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn35.5:1.3 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ …” | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.5:1.4 | P: Saddā … | T: “Sounds …
+sn35.5:1.5 | P: gandhā … | T: Odours …
+sn35.5:1.6 | P: rasā … | T: Tastes …
+sn35.5:1.7 | P: phoṭṭhabbā … | T: Tactile objects …
+sn35.5:1.8 | P: dhammā dukkhā. | T: Mental phenomena are suffering.
+sn35.5:1.9 | P: Yaṁ dukkhaṁ tadanattā. | T: What is suffering is nonself.
+sn35.5:1.10 | P: Yadanattā taṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya daṭṭhabbaṁ. | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.5:1.11 | P: Evaṁ passaṁ …pe… | T: “Seeing thus …
+sn35.5:1.12 | P: nāparaṁ itthattāyāti pajānātī”ti. | T: He understands: ‘… there is no more for this state of being.’”
+sn35.5:1.13 | P: Pañcamaṁ. | T: (none)
+
+## sn35.64
+sn35.64:1.1 | S: Then Venerable Migajāla went up to the Buddha … | T: Then the Venerable Migajala approached the Blessed One, paid homage to him, sat down to one side,
+sn35.64:1.2 | S: and said to him: | T: and said to him:
+sn35.64:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn35.64:2.1 | S: “Migajāla, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, Migajala, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.64:2.2 | S: If a mendicant approves, welcomes, and keep clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.64:2.3 | S: this gives rise to relishing. | T: delight arises.
+sn35.64:2.4 | S: Relishing is the origin of suffering, I say. | T: With the arising of delight, I say, Migajala, there is the arising of suffering.
+sn35.64:2.5 | S: There are sounds … smells … tastes … touches … | T: “There are, Migajala, sounds cognizable by the ear … odours cognizable by the nose … tastes cognizable by the tongue … tactile objects cognizable by the body …
+sn35.64:2.6 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.64:2.7 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, …
+sn35.64:2.8 | S: this gives rise to relishing. | T: delight arises.
+sn35.64:2.9 | S: Relishing is the origin of suffering, I say. | T: With the arising of delight, I say, Migajala, there is the arising of suffering.
+sn35.64:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, Migajala, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.64:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, relishing ceases. | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them, delight ceases.
+sn35.64:3.3 | S: When relishing ceases, suffering ceases, I say. | T: With the cessation of delight, I say, Migajala, comes the cessation of suffering.
+sn35.64:3.4 | S: There are sounds … smells … tastes … touches … | T: “There are, Migajala, sounds cognizable by the ear … odours cognizable by the nose … tastes cognizable by the tongue … tactile objects cognizable by the body …
+sn35.64:3.5 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.64:3.6 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, relishing ceases. | T: If a bhikkhu does not seek delight in them … delight ceases.
+sn35.64:3.7 | S: When relishing ceases, suffering ceases, I say.” | T: With the cessation of delight, I say, Migajala, comes the cessation of suffering.”
+sn35.64:4.1 | S: And then Venerable Migajāla approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the Venerable Migajala, having delighted and rejoiced in the Blessed One’s words, rose from his seat, and, after paying homage to the Blessed One, keeping him on his right, he departed.
+sn35.64:4.2 | S: Then Migajāla, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then, dwelling alone, withdrawn, diligent, ardent, and resolute, the Venerable Migajala, by realizing it for himself with direct knowledge, in this very life entered and dwelt in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.
+sn35.64:4.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He directly knew: “Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.”
+sn35.64:4.4 | S: And Migajāla became one of the perfected. | T: And the Venerable Migajala became one of the arahants.
+sn35.64:4.5 | P: Dutiyaṁ. | T: (none)
+
+## sn35.66
+sn35.66:1.1 | S: “Sir, they speak of this thing called a ‘sentient being’. | T: “Venerable sir, it is said, ‘a being, a being.’
+sn35.66:1.2 | S: How do we define a sentient being or what is known as a sentient being?” … | T: In what way, venerable sir, might there be a being or the description of a being?” The reply is as in the preceding sutta.
+sn35.66:1.3 | P: Catutthaṁ. | T: (none)
+
+## sn35.67
+sn35.67:1.1 | S: “Sir, they speak of this thing called ‘suffering’. | T: “Venerable sir, it is said, ‘suffering, suffering.’
+sn35.67:1.2 | S: How do we define suffering or what is known as suffering?” … | T: In what way, venerable sir, might there be suffering or the description of suffering?”…
+sn35.67:1.3 | P: Pañcamaṁ. | T: (none)
+
+## sn35.68
+sn35.68:1.1 | S: “Sir, they speak of this thing called ‘the world’. | T: “Venerable sir, it is said, ‘the world, the world.’
+sn35.68:1.2 | S: How do we define the world or what is known as the world?” | T: In what way, venerable sir, might there be the world or the description of the world?”
+sn35.68:1.3 | S: “Samiddhi, where there is the eye, sights, eye consciousness, and things knowable by eye consciousness, there is the world or what is known as the world. | T: “Where there is the eye, Samiddhi, where there are forms, eye-consciousness, things to be cognized by eye-consciousness, there the world exists or the description of the world.
+sn35.68:1.4 | S: Where there is the ear … nose … tongue … body … | T: “Where there is the ear …
+sn35.68:1.5 | S: Where there is the mind, ideas, mind consciousness, and things knowable by mind consciousness, there is the world or what is known as the world. | T: the mind, where there are mental phenomena, mind-consciousness, things to be cognized by mind-consciousness, there the world exists or the description of the world.
+sn35.68:2.1 | S: Where there is no eye, no sights, no eye consciousness, and no things knowable by eye consciousness, there is no world or what is known as the world. | T: “Where there is no eye, Samiddhi, no forms, no eye-consciousness, no things to be cognized by eye-consciousness, there the world does not exist nor any description of the world.
+sn35.68:2.2 | S: Where there is no ear … nose … tongue … body … | T: “Where there is no ear …
+sn35.68:2.3 | S: Where there is no mind, no ideas, no mind consciousness, and no things knowable by mind consciousness, there is no world or what is known as the world.” | T: no mind, no mental phenomena, no mind-consciousness, no things to be cognized by mind-consciousness, there the world does not exist nor any description of the world.”
+sn35.68:2.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.6
+sn35.6:1.1 | S: “Mendicants, sights are not-self. | T: “Bhikkhus, forms are nonself.
+sn35.6:1.2 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ …” | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.6:1.3 | P: Saddā …pe… | T: “Sounds …
+sn35.6:1.4 | P: gandhā … | T: Odours …
+sn35.6:1.5 | P: rasā … | T: Tastes …
+sn35.6:1.6 | P: phoṭṭhabbā … | T: Tactile objects …
+sn35.6:1.7 | P: dhammā anattā. | T: Mental phenomena are nonself.
+sn35.6:1.8 | P: Yadanattā taṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya daṭṭhabbaṁ. | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.6:1.9 | P: Evaṁ passaṁ …pe… | T: “Seeing thus …
+sn35.6:1.10 | P: nāparaṁ itthattāyāti pajānātī”ti. | T: He understands: ‘… there is no more for this state of being.’”
+sn35.6:1.11 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.70
+sn35.70:1.1 | S: Then Venerable Upavāṇa went up to the Buddha … | T: Then the Venerable Upavaṇa approached the Blessed One …
+sn35.70:1.2 | S: and said to him: | T: and said to him:
+sn35.70:1.3 | S: “Sir, they speak of ‘a teaching apparent in the present life’. | T: “Venerable sir, it is said, ‘the directly visible Dhamma, the directly visible Dhamma.’
+sn35.70:1.4 | S: In what way is the teaching apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: In what way, venerable sir, is the Dhamma directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise?”
+sn35.70:2.1 | S: “Upavāṇa, take a mendicant who sees a sight with their eyes. They experience both the sight and the desire for the sight. | T: “Here, Upavaṇa, having seen a form with the eye, a bhikkhu experiences the form as well as lust for the form.
+sn35.70:2.2 | S: There is desire for sights in them, and they understand that. | T: He understands that lust for forms exists internally thus: ‘There is in me lust for forms internally.’
+sn35.70:2.3 | S: Since this is so, | T: Since that is so,
+sn35.70:2.4 | P: Santañca ajjhattaṁ rūpesu rāgaṁ ‘atthi me ajjhattaṁ rūpesu rāgo’ti pajānāti. | T: (none)
+sn35.70:2.5 | S: this is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: Upavaṇa, the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.
+sn35.70:3.1 | S: Next, take a mendicant who hears … smells … tastes … touches … | T: “Further, Upavaṇa, having heard a sound with the ear …
+sn35.70:3.2 | P: Santañca ajjhattaṁ rasesu rāgaṁ ‘atthi me ajjhattaṁ rasesu rāgo’ti pajānāti. | T: (none)
+sn35.70:3.3 | P: Yaṁ taṁ, upavāṇa, bhikkhu jivhāya rasaṁ sāyitvā rasappaṭisaṁvedī ca hoti rasarāgappaṭisaṁvedī ca. | T: (none)
+sn35.70:3.4 | P: Santañca ajjhattaṁ rasesu rāgaṁ ‘atthi me ajjhattaṁ rasesu rāgo’ti pajānāti. Evampi kho, upavāṇa, sandiṭṭhiko dhammo hoti akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhi …pe…. | T: (none)
+sn35.70:4.1 | S: Next, take a mendicant who knows an idea with their mind. They experience both the idea and the desire for the idea. | T: having cognized a mental phenomenon with the mind, a bhikkhu experiences the mental phenomenon as well as lust for the mental phenomenon.
+sn35.70:4.2 | S: There is desire for ideas in them, and they understand that. | T: He understands that lust for mental phenomena exists internally thus: ‘There is in me lust for mental phenomena internally.’
+sn35.70:4.3 | S: Since this is so, | T: Since that is so,
+sn35.70:4.4 | P: Santañca ajjhattaṁ dhammesu rāgaṁ ‘atthi me ajjhattaṁ dhammesu rāgo’ti pajānāti. | T: (none)
+sn35.70:4.5 | S: this is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: Upavaṇa, the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.
+sn35.70:5.1 | S: Take a mendicant who sees a sight with their eyes. They experience the sight but no desire for the sight. | T: “But here, Upavaṇa, having seen a form with the eye, a bhikkhu experiences the form without experiencing lust for the form.
+sn35.70:5.2 | S: There is no desire for sights in them, and they understand that. | T: He understands that lust for forms does not exist internally thus: ‘There is in me no lust for forms internally.’
+sn35.70:5.3 | S: Since this is so, | T: Since that is so,
+sn35.70:5.4 | P: Asantañca ajjhattaṁ rūpesu rāgaṁ ‘natthi me ajjhattaṁ rūpesu rāgo’ti pajānāti. | T: (none)
+sn35.70:5.5 | S: this is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: Upavaṇa, the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.
+sn35.70:6.1 | S: Next, take a mendicant who hears … smells … tastes … touches … | T: “Further, Upavaṇa, having heard a sound with the ear … …
+sn35.70:7.1 | P: Puna caparaṁ, upavāṇa, bhikkhu manasā dhammaṁ viññāya dhammappaṭisaṁvedīhi kho hoti, no ca dhammarāgappaṭisaṁvedī. | T: (none)
+sn35.70:7.2 | P: Asantañca ajjhattaṁ dhammesu rāgaṁ ‘natthi me ajjhattaṁ dhammesu rāgo’ti pajānāti. | T: (none)
+sn35.70:7.3 | S: Next, take a mendicant who knows an idea with their mind. They experience the idea but no desire for the idea. | T: having cognized a mental phenomenon with the mind, a bhikkhu experiences the mental phenomenon without experiencing lust for the mental phenomenon.
+sn35.70:7.4 | S: There is no desire for ideas in them, and they understand that. | T: He understands that lust for mental phenomena does not exist internally thus: ‘There is in me no lust for mental phenomena internally.’
+sn35.70:7.5 | S: Since this is so, this is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: Since that is so, Upavaṇa, the Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.”
+sn35.70:7.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.71
+sn35.71:1.1 | S: “Mendicants, anyone who doesn’t truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape | T: “Bhikkhus, if a bhikkhu does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape, in the case of these six bases for contact,
+sn35.71:1.2 | S: has not completed the spiritual journey and is far from this teaching and training.” | T: then he has not lived the holy life; he is far away from this Dhamma and Discipline.”
+sn35.71:2.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain bhikkhu said to the Blessed One:
+sn35.71:2.2 | S: “Here, sir, I’m discouraged. | T: “Here, venerable sir, I am lost,
+sn35.71:2.3 | S: For I don’t truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape.” | T: for I do not understand as they really are the origin and the passing away, the gratification, the danger, and the escape, in the case of these six bases for contact.”
+sn35.71:3.1 | S: “What do you think, mendicant? | T: “What do you think, bhikkhu,
+sn35.71:3.2 | S: Do you regard the eye like this: ‘This is mine, I am this, this is my self’?” | T: do you regard the eye thus: ‘This is mine, this I am, this is my self’?”
+sn35.71:4.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.71:5.1 | S: “Good, mendicant! And regarding the eye, you will truly see clearly with right wisdom that: ‘This is not mine, I am not this, this is not my self.’ | T: “Good, bhikkhu! And here, bhikkhu, you should clearly see the eye as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.71:5.2 | S: Just this is the end of suffering. | T: This itself is the end of suffering.
+sn35.71:5.3 | S: Do you regard the ear … nose … tongue … body … | T: “Do you regard the ear thus…?
+sn35.71:6.1 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.71:7.1 | P: “Sādhu, bhikkhu, ettha ca te, bhikkhu, jivhā ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya sudiṭṭhaṁ bhavissati. | T: (none)
+sn35.71:7.2 | P: Esevanto dukkhassa …pe… | T: (none)
+sn35.71:7.3 | S: Do you regard the mind like this: ‘This is mine, I am this, this is my self’?” | T: Do you regard the mind thus: ‘This is mine, this I am, this is my self’?”
+sn35.71:8.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.71:9.1 | S: “Good, mendicant! And regarding the mind, you will truly see clearly with right wisdom that: ‘This is not mine, I am not this, this is not my self.’ | T: “Good, bhikkhu! And here, bhikkhu, you should clearly see the mind as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn35.71:9.2 | S: Just this is the end of suffering.” | T: This itself is the end of suffering.”
+sn35.71:9.3 | P: Navamaṁ. | T: (none)
+
+## sn35.77
+sn35.77:1.1 | S: “Rādha, you should give up desire for what is suffering. …” | T: … “Radha, you should abandon desire for whatever is suffering.”
+sn35.77:1.2 | P: Kiñca, rādha, dukkhaṁ? | T: (none)
+sn35.77:1.3 | P: Cakkhu kho, rādha, dukkhaṁ. Tatra te chando pahātabbo. | T: (none)
+sn35.77:1.4 | P: Rūpā … | T: …
+sn35.77:1.5 | P: cakkhuviññāṇaṁ … | T: (none)
+sn35.77:1.6 | P: cakkhusamphasso … | T: (none)
+sn35.77:1.7 | P: yampidaṁ cakkhusamphassa …pe… adukkhamasukhaṁ vā tampi dukkhaṁ. Tatra te chando pahātabbo …pe… | T: (none)
+sn35.77:1.8 | P: mano dukkho … | T: (none)
+sn35.77:1.9 | P: dhammā … | T: (none)
+sn35.77:1.10 | P: manoviññāṇaṁ … | T: (none)
+sn35.77:1.11 | P: manosamphasso … | T: (none)
+sn35.77:1.12 | P: yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi dukkhaṁ. Tatra te chando pahātabbo. | T: (none)
+sn35.77:1.13 | P: Yaṁ kho, rādha, dukkhaṁ tatra te chando pahātabbo”ti. | T: (none)
+sn35.77:1.14 | P: Catutthaṁ. | T: (none)
+
+## sn35.78
+sn35.78:1.1 | S: “Rādha, you should give up desire for what is not-self. …” | T: … “Radha, you should abandon desire for whatever is nonself.”
+sn35.78:1.2 | P: Ko ca, rādha, anattā? | T: (none)
+sn35.78:1.3 | P: Cakkhu kho, rādha, anattā. Tatra te chando pahātabbo. | T: (none)
+sn35.78:1.4 | P: Rūpā … | T: …
+sn35.78:1.5 | P: cakkhuviññāṇaṁ … | T: (none)
+sn35.78:1.6 | P: cakkhusamphasso … | T: (none)
+sn35.78:1.7 | P: yampidaṁ cakkhusamphassapaccayā …pe… | T: (none)
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.78:1.8 | P: mano anattā … | T: (none)
+sn35.78:1.9 | P: dhammā … | T: (none)
+sn35.78:1.10 | P: manoviññāṇaṁ … | T: (none)
+sn35.78:1.11 | P: manosamphasso … | T: (none)
+sn35.78:1.12 | P: yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi anattā. Tatra te chando pahātabbo. | T: (none)
+sn35.78:1.13 | P: Yo kho, rādha, anattā tatra te chando pahātabbo”ti. | T: (none)
+sn35.78:1.14 | P: Pañcamaṁ. | T: (none)
+
+## sn35.82
+sn35.82:1.1 | S: Then a mendicant went up to the Buddha … and said to him: | T: Then a certain bhikkhu approached the Blessed One … and said to him:
+sn35.82:2.1 | S: “Sir, they speak of this thing called ‘the world’. | T: “Venerable sir, it is said, ‘the world, the world.’
+sn35.82:2.2 | S: How is the world defined?” | T: In what way, venerable sir, is it said ‘the world’?”
+sn35.82:2.3 | S: “It wears away, mendicant, that’s why it’s called ‘the world’. | T: “It is disintegrating, bhikkhu, therefore it is called the world.
+sn35.82:2.4 | S: And what is wearing away? | T: And what is disintegrating?
+sn35.82:2.5 | S: The eye is wearing away. | T: The eye, bhikkhu, is disintegrating,
+sn35.82:2.6 | S: Sights … eye consciousness … eye contact is wearing away. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also wearing away. | T: forms are disintegrating, eye-consciousness is disintegrating, eye-contact is disintegrating, and whatever feeling arises with eye-contact as condition … that too is disintegrating.
+sn35.82:2.7 | S: The ear … nose … tongue … body …. | T: The ear is disintegrating …
+sn35.82:2.8 | S: The mind … ideas … mind consciousness … mind contact is wearing away. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also wearing away. | T: The mind is disintegrating … Whatever feeling arises with mind-contact as condition … that too is disintegrating.
+sn35.82:2.9 | S: It wears away, mendicant, that’s why it’s called ‘the world’.” | T: It is disintegrating, bhikkhu, therefore it is called the world.”
+sn35.82:2.10 | P: Navamaṁ. | T: (none)
+
+
+codex
+I found three reply introductions attached to the preceding questions, a sentence ending attached to the following line, and two separate sentences grouped under the first line of an abbreviated passage. I’ll write those six corrections.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-077.findings.tmp <<'EOF'
+sn35.245:7.3 starts: The other might answer:
+sn35.245:7.8 starts: The other might answer:
+sn35.245:7.13 starts: The other might answer:
+sn35.28:1.15 starts: experiences revulsion towards the ear … towards the
+sn35.55:1.3 starts: When one knows and sees forms as
+sn35.55:1.16 starts: When one knows and sees thus, bhikkhu,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+34,910
+6 lines reported.

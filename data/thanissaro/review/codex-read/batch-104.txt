@@ -1,0 +1,353 @@
+## sn43.3
+sn43.3:1.1 | S: “And what is the path that leads to the unconditioned? | T: “And which is the path leading to the unfabricated?
+sn43.3:1.2 | S: Immersion with placing the mind and keeping it connected. Immersion without placing the mind, merely keeping it connected. Immersion without placing the mind or keeping it connected. …” | T: Concentration with directed thought & evaluation, concentration without directed thought and with a modicum of evaluation, concentration without directed thought and without evaluation…
+sn43.3:1.3 | P: Tatiyaṁ. | T: (none)
+
+## sn43.4
+sn43.4:1.1 | S: “And what is the path that leads to the unconditioned? | T: “And which is the path leading to the unfabricated?
+sn43.4:1.2 | S: Emptiness immersion; signless immersion; undirected immersion. …” | T: Emptiness concentration, themeless concentration, undirected concentration…
+sn43.4:1.3 | P: Catutthaṁ. | T: (none)
+
+## sn43.5
+sn43.5:1.1 | S: “And what is the path that leads to the unconditioned? | T: “And which is the path leading to the unfabricated?
+sn43.5:1.2 | S: The four kinds of mindfulness meditation. …” | T: The four establishings of mindfulness…
+sn43.5:1.3 | P: Pañcamaṁ. | T: (none)
+
+## sn44.1
+sn44.1:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn44.1:1.2 | S: Now at that time the nun Khemā was wandering in the land of the Kosalans between Sāvatthī and Sāketa when she took up residence in Toraṇavatthu. | T: And on that occasion Khemā the nun, wandering on tour among the Kosalans, had taken up residence between Sāvatthī and Sāketa at Toraṇavatthu.
+sn44.1:1.3 | S: Then King Pasenadi was traveling from Sāketa to Sāvatthī, and he too stayed in Toraṇavatthu for a single night. | T: Then King Pasenadi Kosala, while traveling from Sāketa to Sāvatthī, took up a one-night residence between Sāvatthī and Sāketa at Toraṇavatthu.
+sn44.1:1.4 | S: Then King Pasenadi addressed a man, | T: Then he addressed a certain man,
+sn44.1:1.5 | S: “Please, my man, check if there’s a suitable (male) ascetic or brahmin in Toraṇavatthu to whom I can pay homage.” | T: “Come, now, my good man. Find out if in Toraṇavatthu there’s the sort contemplative or brahman I might visit today.”
+sn44.1:2.1 | S: “Yes, Your Majesty,” replied that man. He searched all over Toraṇavatthu, but he couldn’t see a suitable ascetic or brahmin for the king to pay homage to. | T: “As you say, sire,” the man responded to the king, but having roamed all over Toraṇavatthu he did not see the sort of contemplative or brahman the king might visit.
+sn44.1:2.2 | S: But he saw that the nun Khemā was staying there, | T: But he did see Khemā the nun residing in Toraṇavatthu. On seeing her,
+sn44.1:2.3 | S: so he went to the king and said to him, | T: he went to King Pasenadi Kosala and on arrival said to him,
+sn44.1:3.1 | S: “Your Majesty, there’s no (male) ascetic or brahmin in Toraṇavatthu for the king to pay homage to. | T: “Sire, in Toraṇavatthu there is no contemplative or brahman of the sort your majesty might visit.
+sn44.1:3.2 | S: But there is the nun Khemā, who’s a disciple of the Blessed One, the perfected one, the fully awakened Buddha. | T: But there is, however, a nun named Khemā, a disciple of the Blessed One, worthy & rightly self-awakened.
+sn44.1:3.3 | S: She has a good reputation as being | T: And of this lady, this admirable report has spread about:
+sn44.1:3.4 | S: astute, competent, intelligent, learned, a brilliant speaker, and eloquent. | T: ‘She is wise, competent, intelligent, learned, a fluent speaker, admirable in her ingenuity.’
+sn44.1:3.5 | S: Your Majesty may pay homage to her.” | T: Let your majesty visit her.”
+sn44.1:4.1 | S: Then King Pasenadi of Kosala went up to the nun Khemā, bowed, sat down to one side, and said to her: | T: Then King Pasenadi Kosala went to the Khemā the nun and, on arrival, having bowed down to her, sat to one side. As he was sitting there he said to her,
+sn44.1:4.2 | S: “Ma’am, does a realized one still exist after death?” | T: “Now then, lady, does the Tathāgata exist after death?”
+sn44.1:4.3 | S: “Great king, this has not been declared by the Buddha.” | T: “That, great king, has not been declared by the Blessed One:
+sn44.1:4.4 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata exists after death.’”
+sn44.1:4.5 | S: “Well then, does a realized one no longer exist after death?” | T: “Well then, lady, does the Tathāgata not exist after death?”
+sn44.1:4.6 | S: “This too has not been declared by the Buddha.” | T: “Great king, that too has not been declared by the Blessed One:
+sn44.1:4.7 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata does not exist after death.’”
+sn44.1:4.8 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: “Then does the Tathāgata both exist and not exist after death?”
+sn44.1:4.9 | S: “This has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One:
+sn44.1:4.10 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata both exists and does not exist after death.’”
+sn44.1:4.11 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: “Well then, does the Tathāgata neither exist nor not exist after death?”
+sn44.1:4.12 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One:
+sn44.1:4.13 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.1:5.1 | S: “Ma’am, when asked these questions, you say | T: “Now, lady, when asked if the Tathāgata exists after death, you say,
+sn44.1:5.2 | S: that this has not been declared by the Buddha. | T: ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.1:5.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.4 | P: ‘Kiṁ panayye, na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.5 | P: ‘etampi kho, mahārāja, abyākataṁ bhagavatā— | T: (none)
+sn44.1:5.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.7 | P: ‘Kiṁ nu kho, ayye, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.8 | P: ‘abyākataṁ kho etaṁ, mahārāja, bhagavatā— | T: (none)
+sn44.1:5.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.10 | P: ‘Kiṁ panayye, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: | T: (none)
+sn44.1:5.11 | P: ‘etampi kho, mahārāja, abyākataṁ bhagavatā— | T: (none)
+sn44.1:5.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:5.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.1:6.1 | S: “Well then, Great King, I’ll ask you about this in return, and you can answer as you like. | T: “Very well, then, great king, I will question you in return about this very same matter. Answer as you see fit.
+sn44.1:6.2 | S: What do you think, Great King? | T: What do you think, great king?
+sn44.1:6.3 | S: Do you have any accountant or finger-tallier or reckoner who can count the grains of sand in the Ganges, that is, | T: Do you have an accountant or calculator or mathematician who can count the grains of sand in the river Ganges as
+sn44.1:6.4 | S: how many grains of sand there are, how many hundreds or thousands or hundreds of thousands of grains of sand?” | T: ‘so many grains of sand’ or ‘so many hundreds of grains of sand’ or ‘so many thousands of grains of sand’ or ‘so many hundreds of thousands of grains of sand’?”
+sn44.1:6.5 | S: “No, ma’am.” | T: “No, lady.”
+sn44.1:6.6 | S: “Do you have any accountant or finger-tallier or reckoner who can count the water in the ocean, that is, | T: “Then do you have an accountant or calculator or mathematician who can count the water in the great ocean as
+sn44.1:6.7 | S: how many gallons of water there are, how many hundreds or thousands or hundreds of thousands of gallons of water?” | T: ‘so many buckets of water’ or ‘so many hundreds of buckets of water’ or ‘so many thousands of buckets of water’ or ‘so many hundreds of thousands of buckets of water’?”
+sn44.1:6.8 | S: “No, ma’am. | T: “No, lady.
+sn44.1:6.9 | S: Why is that? | T: Why is that?
+sn44.1:6.10 | S: Because the ocean is deep, immeasurable, and hard to fathom.” | T: The great ocean is deep, boundless, hard to fathom.”
+sn44.1:6.11 | S: “In the same way, Great King, any form by which a realized one might be described has been cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: “Even so, great king, any physical form by which one describing the Tathāgata would describe him: That the Tathāgata has abandoned, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+sn44.1:6.12 | S: A realized one is freed from reckoning in terms of form. They’re deep, immeasurable, and hard to fathom, | T: Freed from the classification of form, great king, the Tathāgata is deep, boundless, hard to fathom,
+sn44.1:6.13 | S: like the ocean. | T: like the ocean.
+sn44.1:6.14 | S: To say that after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists: none of these apply. | T: ‘The Tathāgata exists after death’ doesn’t apply. ‘The Tathāgata doesn’t exist after death’ doesn’t apply. ‘The Tathāgata both exists and doesn’t exist after death’ doesn’t apply. ‘The Tathāgata neither exists nor doesn’t exist after death’ doesn’t apply.
+sn44.1:7.1 | S: Any feeling … | T: “Any feeling…
+sn44.1:7.2 | P: Vedanāsaṅkhāyavimutto, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:7.3 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:7.4 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:8.1 | S: perception … | T: Any perception…
+sn44.1:8.2 | S: choices … | T: Any fabrications…
+sn44.1:8.3 | P: Saṅkhārasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:8.4 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:8.5 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:9.1 | S: consciousness by which a realized one might be described has been cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: “Any consciousness by which one describing the Tathāgata would describe him: That the Tathāgata has abandoned, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+sn44.1:9.2 | S: A realized one is freed from reckoning in terms of consciousness. They’re deep, immeasurable, and hard to fathom, | T: Freed from the classification of consciousness, great king, the Tathāgata is deep, boundless, hard to fathom,
+sn44.1:9.3 | S: like the ocean. | T: like the ocean.
+sn44.1:9.4 | S: To say that after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists: none of these apply.” | T: ‘The Tathāgata exists after death’ doesn’t apply. ‘The Tathāgata doesn’t exist after death doesn’t apply. ‘The Tathāgata both exists and doesn’t exist after death’ doesn’t apply. ‘The Tathāgata neither exists nor doesn’t exist after death’ doesn’t apply.”
+sn44.1:9.5 | S: Then King Pasenadi approved and agreed with what the nun Khemā said. Then he rose from his seat, bowed, and respectfully circled her, keeping her on his right, before leaving. | T: Then King Pasenadi Kosala, delighting in & approving of Khemā the nun’s words, got up from his seat, bowed down to her and—keeping her to his right—departed.
+sn44.1:10.1 | S: Then on a later occasion King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. He asked the Buddha exactly the same questions he had asked the nun Khemā, and received the same answers. | T: Then at another time he went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there [he asked the Blessed One the same questions he had asked Khemā the nun, and received precisely the same responses and analogies. Then he exclaimed:]
+sn44.1:10.2 | P: “kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.3 | P: “Abyākataṁ kho etaṁ, mahārāja, mayā: | T: (none)
+sn44.1:10.4 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.5 | P: “Kiṁ pana, bhante, na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.6 | P: “Etampi kho, mahārāja, abyākataṁ mayā: | T: (none)
+sn44.1:10.7 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.8 | P: “Kiṁ nu kho, bhante, hoti ca na ca hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.9 | P: “Abyākataṁ kho etaṁ, mahārāja, mayā: | T: (none)
+sn44.1:10.10 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.11 | P: “Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.1:10.12 | P: “Etampi kho, mahārāja, abyākataṁ mayā: | T: (none)
+sn44.1:10.13 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.1:10.14 | P: “‘Kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: | T: (none)
+sn44.1:10.15 | P: ‘abyākataṁ kho etaṁ, mahārāja, mayā—hoti tathāgato paraṁ maraṇā’ti vadesi …pe…. | T: (none)
+sn44.1:10.16 | P: “‘Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: | T: (none)
+sn44.1:10.17 | P: ‘etampi kho, mahārāja, abyākataṁ mayā— | T: (none)
+sn44.1:10.18 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.1:10.19 | P: Ko nu kho, bhante, hetu, ko paccayo, yenetaṁ abyākataṁ bhagavatā”ti? | T: (none)
+sn44.1:11.1 | P: “Tena hi, mahārāja, taññevettha paṭipucchissāmi. Yathā te khameyya tathā naṁ byākareyyāsi. | T: (none)
+sn44.1:11.2 | P: Taṁ kiṁ maññasi, mahārāja, atthi te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti gaṅgāya vālukaṁ gaṇetuṁ— | T: (none)
+sn44.1:11.3 | P: ettakā vālukā iti vā …pe… ettakāni vālukasatasahassāni iti vā”ti? | T: (none)
+sn44.1:11.4 | P: “No hetaṁ, bhante”. | T: (none)
+sn44.1:11.5 | P: “Atthi pana te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti mahāsamudde udakaṁ gaṇetuṁ— | T: (none)
+sn44.1:11.6 | P: ettakāni udakāḷhakāni iti vā …pe… ettakāni udakāḷhakasatasahassāni iti vā”ti? | T: (none)
+sn44.1:11.7 | P: “No hetaṁ, bhante”. | T: (none)
+sn44.1:11.8 | P: “Taṁ kissa hetu”? | T: (none)
+sn44.1:11.9 | P: “Mahā, bhante, samuddo gambhīro appameyyo duppariyogāho. | T: (none)
+sn44.1:11.10 | P: Evameva kho, mahārāja, yena rūpena tathāgataṁ paññāpayamāno paññāpeyya, taṁ rūpaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. | T: (none)
+sn44.1:11.11 | P: Rūpasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:11.12 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:11.13 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti …pe… | T: (none)
+sn44.1:11.14 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. | T: (none)
+sn44.1:11.15 | P: Yāya vedanāya …pe… | T: (none)
+sn44.1:11.16 | P: yāya saññāya …pe… yehi saṅkhārehi …pe…. | T: (none)
+sn44.1:12.1 | P: Yena viññāṇena tathāgataṁ paññāpayamāno paññāpeyya, taṁ viññāṇaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. | T: (none)
+sn44.1:12.2 | P: Viññāṇasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho— | T: (none)
+sn44.1:12.3 | P: seyyathāpi mahāsamuddo. | T: (none)
+sn44.1:12.4 | P: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upetī”ti. | T: (none)
+sn44.1:13.1 | S: He said, “It’s incredible, sir, it’s amazing! | T: “Amazing, lord! Astounding!
+sn44.1:13.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.1:13.3 | S: This one time I went to the nun Khemā and asked her about this matter. | T: Recently, lord, I went to Khemā the nun and, on arrival, asked her about this matter,
+sn44.1:13.4 | S: And she explained it to me with these words and phrases, just like the Buddha. | T: and she answered me with the same words, the same phrasing, as the Blessed One.
+sn44.1:13.5 | S: It’s incredible, sir, it’s amazing! | T: Amazing, lord! Astounding!
+sn44.1:13.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.1:13.7 | S: Well, now, sir, I must go. | T: “Now, lord, we must go.
+sn44.1:13.8 | S: I have many duties, and much to do.” | T: Many are our duties, many our responsibilities.”
+sn44.1:13.9 | S: “Please, Great King, go at your convenience.” | T: “Then do, great king, what you think it is now time to do.”
+sn44.1:13.10 | S: Then King Pasenadi approved and agreed with what the Buddha said. Then he rose from his seat, bowed, and respectfully circled him, keeping him on his right, before leaving. | T: So King Pasenadi Kosala, delighting in and approving of the Blessed One’s words, got up from his seat, bowed down to the Blessed One and—keeping him to his right—departed.
+sn44.1:13.11 | P: Paṭhamaṁ. | T: (none)
+
+## sn44.5
+sn44.5:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. … | T: On one occasion Ven. Sāriputta and Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana. Then Ven. Mahā Koṭṭhita, emerging from his seclusion in the evening, went to Ven. Sāriputta and exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta, “Now then, friend Sāriputta,
+sn44.5:1.2 | S: (The same down as far as:) | T: does the Tathāgata exist after death?” “That, friend, has not been declared by the Blessed One: ‘The Tathāgata exists after death.’” “Well then, friend Sāriputta, does the Tathāgata not exist after death?” “Friend, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’” “Then does the Tathāgata both exist and not exist after death?” “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’” “Well then, does the Tathāgata neither exist nor not exist after death?” “That too has not been declared by the Blessed One: ‘The Tathāgata neither exists nor does not exist after death.’” “Now, friend Sāriputta, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.5:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.5:1.4 | S: “Reverend, if you’re not rid of greed, desire, fondness, thirst, passion, and craving for form … | T: “For one whose passion for form has not been removed, whose desire… affection… thirst… fever… craving for form has not been removed, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.5:1.5 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa hoti. | T: (none)
+sn44.5:1.6 | S: feeling … | T: “For one whose passion for feeling has not been removed.…
+sn44.5:1.7 | S: perception … | T: “For one whose passion for perception has not been removed.…
+sn44.5:1.8 | S: choices … | T: “For one whose passion for fabrication has not been removed.…
+sn44.5:1.9 | S: consciousness, you think ‘a realized one still exists after death’ … | T: “For one whose passion for consciousness has not been removed, whose desire… affection… thirst… fever… craving for consciousness has not been removed, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.5:1.10 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.5:1.11 | S: If you are rid of greed for form … | T: “But for one whose passion for form has been removed, whose desire… affection… thirst… fever… craving for form has been removed, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.5:1.12 | S: feeling … | T: “For one whose passion for feeling has been removed.…
+sn44.5:1.13 | S: perception … | T: “For one whose passion for perception has been removed.…
+sn44.5:1.14 | S: choices … | T: “For one whose passion for fabrication has been removed.…
+sn44.5:1.15 | S: consciousness, you don’t think ‘a realized one still exists after death’ … | T: “For one whose passion for consciousness has been removed, whose desire… affection… thirst… fever… craving for consciousness has been removed, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.5:1.16 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.5:1.17 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This is the cause, this is the reason, why that has not been declared by the Blessed One.”
+sn44.5:1.18 | P: Pañcamaṁ. | T: (none)
+
+## sn44.6
+sn44.6:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: On one occasion Ven. Sāriputta and Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn44.6:1.2 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākoṭṭhita, and they greeted each other. | T: Then Ven. Sāriputta, emerging from his seclusion in the evening, went to Ven. Mahā Koṭṭhita and exchanged courteous greetings with him.
+sn44.6:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākoṭṭhita: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Mahā Koṭṭhita,
+sn44.6:1.4 | S: “Reverend Koṭṭhita, does a realized one still exist after death?” … | T: “Now then, friend Koṭṭhita, does the Tathāgata exist after death?” “That, friend, has not been declared by the Blessed One: ‘The Tathāgata exists after death.’” “Well then, friend Koṭṭhita, does the Tathāgata not exist after death?” “Friend, that too has not been declared by the Blessed One: ‘The Tathāgata does not exist after death.’” “Then does the Tathāgata both exist and not exist after death?” “That has not been declared by the Blessed One: ‘The Tathāgata both exists and does not exist after death.’” “Well then, does the Tathāgata neither exist nor not exist after death?” “That too has not been declared by the Blessed One: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.6:1.5 | S: “Reverend, when asked these questions, you say that this has not been declared by the Buddha. | T: “Now, friend Koṭṭhita, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.6:1.6 | P: ‘etampi kho, āvuso, abyākataṁ bhagavatā— | T: (none)
+sn44.6:1.7 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.6:1.8 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?”
+sn44.6:2.1 | S: “Reverend, if you like, love, and enjoy form, and don’t truly see the cessation of form, you think ‘a realized one still exists after death’ or | T: “For one who loves form, who is fond of form, who cherishes form, who does not know or see, as it has come to be, the cessation of form, there occurs the thought, ‘The Tathāgata exists after death’ or
+sn44.6:2.2 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathāgata does not exist after death’ or
+sn44.6:2.3 | S: ‘a realized one both still exists and no longer exists after death’ or | T: ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:2.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.6:2.5 | S: If you like, love, and enjoy feeling … | T: “For one who loves feeling.…
+sn44.6:2.6 | S: perception … | T: “For one who loves perception.…
+sn44.6:2.7 | S: choices … | T: “For one who loves fabrication.…
+sn44.6:2.8 | S: consciousness, and don’t truly see the cessation of consciousness, you think ‘a realized one still exists after death’ … | T: “For one who loves consciousness, who is fond of consciousness, who cherishes consciousness, who does not know or see, as it has come to be, the cessation of consciousness, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:2.9 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.6:3.1 | S: If you don’t like, love, and enjoy form … | T: “But for one who doesn’t love form, who isn’t fond of form, who doesn’t cherish form, who knows & sees, as it has come to be, the cessation of form, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:3.2 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.6:3.3 | S: feeling … | T: “For one who doesn’t love feeling.…
+sn44.6:3.4 | S: perception … | T: “For one who doesn’t love perception.…
+sn44.6:3.5 | S: choices … | T: “For one who doesn’t love fabrication.…
+sn44.6:3.6 | S: consciousness, and you truly see the cessation of consciousness, you don’t think ‘a realized one still exists after death’ … | T: “For one who doesn’t love consciousness, who isn’t fond of consciousness, who doesn’t cherish consciousness, who knows & sees, as it has come to be, the cessation of consciousness, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:3.7 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.6:3.8 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This is the cause, this is the reason, why that has not been declared by the Blessed One.”
+sn44.6:4.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: “But, my friend, would there another line of reasoning, in line with which that has not been declared by the Blessed One?”
+sn44.6:4.2 | S: “There could, reverend. | T: “There would, my friend.
+sn44.6:4.3 | S: If you like, love, and enjoy existence, and don’t truly see the cessation of continued existence, you think ‘a realized one still exists after death’ … | T: “For one who loves becoming, who is fond of becoming, who cherishes becoming, who does not know or see, as it has come to be, the cessation of becoming, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:4.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.6:4.5 | S: If you don’t like, love, and enjoy existence, and you truly see the cessation of continued existence, you don’t think ‘a realized one still exists after death’ … | T: “But for one who doesn’t love becoming, who isn’t fond of becoming, who doesn’t cherish becoming, who knows & sees, as it has come to be, the cessation of becoming, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:4.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.6:4.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, too, is a line of reasoning in line with which that has not been declared by the Blessed One.”
+sn44.6:5.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: “But, my friend, would there another line of reasoning, in line with which that has not been declared by the Blessed One?”
+sn44.6:5.2 | S: “There could, reverend. | T: “There would, my friend.
+sn44.6:5.3 | S: If you like, love, and enjoy grasping, and don’t truly see the cessation of grasping, you think ‘a realized one still exists after death’ … | T: “For one who loves clinging/sustenance, who is fond of clinging/sustenance, who cherishes clinging/sustenance, who does not know or see, as it has come to be, the cessation of clinging/sustenance, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:5.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.6:5.5 | S: If you don’t like, love, and enjoy grasping, and you truly see the cessation of grasping, you don’t think ‘a realized one still exists after death’ … | T: “But for one who doesn’t love clinging/sustenance, who isn’t fond of clinging/sustenance, who doesn’t cherish clinging/sustenance, who knows & sees, as it has come to be, the cessation of clinging/sustenance, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:5.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.6:5.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, too, is a line of reasoning in line with which that has not been declared by the Blessed One.”
+sn44.6:6.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: “But, my friend, would there another line of reasoning, in line with which that has not been declared by the Blessed One?”
+sn44.6:6.2 | S: “There could, reverend. | T: “There would, my friend.
+sn44.6:6.3 | S: If you like, love, and enjoy craving, and don’t truly see the cessation of craving, you think ‘a realized one still exists after death’ … | T: “For one who loves craving, who is fond of craving, who cherishes craving, who does not know or see, as it has come to be, the cessation of craving, there occurs the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:6.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.6:6.5 | S: If you don’t like, love, and enjoy craving, and you truly see the cessation of craving, you don’t think ‘a realized one still exists after death’ … | T: “But for one who doesn’t love craving, who isn’t fond of craving, who doesn’t cherish craving, who knows & sees, as it has come to be, the cessation of craving, the thought, ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death’ or
+sn44.6:6.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathāgata neither exists nor does not exist after death’ doesn’t occur.
+sn44.6:6.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, too, is a line of reasoning in line with which that has not been declared by the Blessed One.”
+sn44.6:7.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: “But, my friend, would there another line of reasoning, in line with which that has not been declared by the Blessed One?”
+sn44.6:7.2 | S: “Seriously, reverend, what more could you want? | T: “Now, what more do you want, friend Sāriputta?
+sn44.6:7.3 | S: For one who is freed due to the ending of craving, there is no cycle of rebirths to be found.” | T: When a monk has been freed from the classification of craving, there exists no cycle for describing him.”
+sn44.6:7.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn44.7
+sn44.7:1.1 | S: Then the wanderer Vacchagotta went up to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to Ven. Mahā Moggallāna and, on arrival, exchanged courteous greetings with him.
+sn44.7:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to Mahāmoggallāna: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Mahā Moggallāna,
+sn44.7:2.1 | S: “Worthy Moggallāna, is this right: ‘the cosmos is eternal’?” | T: “Now then, Master Moggallāna, is the cosmos eternal?”
+sn44.7:2.2 | S: “Vaccha, this has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One, Vaccha:
+sn44.7:2.3 | P: ‘sassato loko’”ti. | T: ‘The cosmos is eternal.’”
+sn44.7:2.4 | S: “Then is this right: ‘the cosmos is not eternal’ … | T: “Well then, Master Moggallāna, is the cosmos not eternal?”
+sn44.7:2.5 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, that too has not been declared by the Blessed One:
+sn44.7:2.6 | P: ‘asassato loko’”ti. | T: ‘The cosmos is not eternal.’”
+sn44.7:2.7 | S: ‘the cosmos is finite’ … | T: “Then is the cosmos finite?”
+sn44.7:2.8 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.9 | P: ‘antavā loko’”ti. | T: …
+sn44.7:2.10 | S: ‘the cosmos is infinite’ … | T: “Is the cosmos infinite?”
+sn44.7:2.11 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.12 | P: ‘anantavā loko’”ti. | T: …
+sn44.7:2.13 | S: ‘the soul and the body are one and the same’ … | T: “Is the body the same as the soul?”
+sn44.7:2.14 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.15 | P: ‘taṁ jīvaṁ taṁ sarīran’”ti. | T: …
+sn44.7:2.16 | S: ‘the soul is one thing, the body another’ … | T: “Is the body one thing, and the soul another?”
+sn44.7:2.17 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.18 | P: ‘aññaṁ jīvaṁ aññaṁ sarīran’”ti. | T: …
+sn44.7:2.19 | S: ‘a realized one still exists after death’ … | T: “Does the Tathāgata exist after death?”
+sn44.7:2.20 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: (none)
+sn44.7:2.21 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: …
+sn44.7:2.22 | S: ‘a realized one no longer exists after death’ … | T: “Does the Tathāgata not exist after death?”
+sn44.7:2.23 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.7:2.24 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: …
+sn44.7:2.25 | S: ‘a realized one both still exists and no longer exists after death’ … | T: “Does the Tathāgata both exist and not exist after death?”
+sn44.7:2.26 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: …
+sn44.7:2.27 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.7:2.28 | S: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Does the Tathāgata neither exist nor not exist after death?”
+sn44.7:2.29 | S: “This too has not been declared by the Buddha.” | T: “Vaccha, that too has not been declared by the Blessed One:
+sn44.7:2.30 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.”
+sn44.7:3.1 | S: “What’s the cause, worthy Moggallāna, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “Now, Master Moggallāna, what is the cause, what is the reason why—when wanderers of other sects are asked in this way, they answer that
+sn44.7:3.2 | P: sassato lokoti vā, asassato lokoti vā, antavā lokoti vā, anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā? | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or ‘The Tathāgata neither exists nor does not exist after death,’
+sn44.7:3.3 | S: And what’s the reason why, when the ascetic Gotama is asked these questions, he does not declare one of these to be true?” | T: yet when Gotama the contemplative is asked in this way, he does not answer that
+sn44.7:3.4 | P: sassato lokotipi, asassato lokotipi, antavā lokotipi, anantavā lokotipi, taṁ jīvaṁ taṁ sarīrantipi, aññaṁ jīvaṁ aññaṁ sarīrantipi, hoti tathāgato paraṁ maraṇātipi, na hoti tathāgato paraṁ maraṇātipi, hoti ca na ca hoti tathāgato paraṁ maraṇātipi, neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti? | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or ‘The Tathāgata neither exists nor does not exist after death’?”
+sn44.7:4.1 | S: “Vaccha, the wanderers of other religions regard the eye like this: ‘This is mine, I am this, this is my self.’ They regard the ear … nose … | T: “Vaccha, the members of other sects assume of the eye that ‘This is mine, this is my self, this is what I am.’ They assume of the ear… the nose…
+sn44.7:4.2 | S: tongue … body … | T: the tongue… the body…
+sn44.7:4.3 | S: mind like this: ‘This is mine, I am this, this is my self.’ | T: the intellect that ‘This is mine, this is my self, this is what I am.’
+sn44.7:4.4 | S: That’s why, when asked, they declare one of those answers to be true. | T: That is why, when asked in this way, they answer that
+sn44.7:4.5 | P: sassato lokoti vā …pe… | T: ‘The cosmos is eternal’…
+sn44.7:4.6 | P: neva hoti na na hoti tathāgato paraṁ maraṇāti vā. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.7:4.7 | S: The Realized One, the perfected one, the fully awakened Buddha regards the eye like this: ‘This is not mine, I am not this, this is not my self.’ He regards the ear … nose … | T: But the Tathāgata, worthy & rightly self-awakened, doesn’t assume of the eye that ‘This is mine, this is my self, this is what I am.’ He doesn’t assume of the ear… the nose…
+sn44.7:4.8 | S: tongue … body … | T: the tongue… the body…
+sn44.7:4.9 | S: mind like this: ‘This is not mine, I am not this, this is not my self.’ | T: the intellect that ‘This is mine, this is my self, this is what I am.’
+sn44.7:4.10 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: That is why, when asked in this way, he does not answer that
+sn44.7:4.11 | P: sassato lokotipi …pe… | T: ‘The cosmos is eternal’…
+sn44.7:4.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.7:5.1 | S: Then the wanderer Vacchagotta rose from his seat and went to the Buddha and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn44.7:5.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked the Buddha the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to the Blessed One and received exactly the same explanation).
+sn44.7:5.3 | P: “kiṁ nu kho, bho gotama, sassato loko”ti? | T: (none)
+sn44.7:5.4 | P: “Abyākataṁ kho etaṁ, vaccha, mayā: ‘sassato loko’ti …pe…. | T: (none)
+sn44.7:5.5 | P: “Kiṁ pana, bho gotama, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.7:5.6 | P: “Etampi kho, vaccha, abyākataṁ mayā: | T: (none)
+sn44.7:5.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.7:6.1 | P: “Ko nu kho, bho gotama, hetu ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:6.2 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.7:6.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: (none)
+sn44.7:6.4 | P: Ko pana, bho gotama, hetu ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:6.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.7:6.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.7:7.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: (none)
+sn44.7:7.2 | P: jivhaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: (none)
+sn44.7:7.3 | P: manaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti. | T: (none)
+sn44.7:7.4 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:7.5 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.7:7.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: (none)
+sn44.7:7.7 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho cakkhuṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: (none)
+sn44.7:7.8 | P: jivhaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: (none)
+sn44.7:7.9 | P: manaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati. | T: (none)
+sn44.7:7.10 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.7:7.11 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.7:8.1 | S: He said, “It’s incredible, worthy Gotama, it’s amazing! | T: “Amazing, Master Gotama! Astounding!
+sn44.7:8.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.7:8.3 | S: Just now I went to the ascetic Mahāmoggallāna and asked him about this matter. | T: Just now, Master Gotama, I went to the contemplative Moggallāna and, on arrival, asked him about this matter,
+sn44.7:8.4 | S: And he explained it to me with these words and phrases, just like the worthy Gotama. | T: and he answered me with the same words, the same phrasing, as Master Gotama.
+sn44.7:8.5 | S: It’s incredible, worthy Gotama, it’s amazing! | T: Amazing, Master Gotama! Astounding!
+sn44.7:8.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!”
+sn44.7:8.7 | P: Sattamaṁ. | T: (none)
+
+## sn44.8
+sn44.8:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn44.8:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+sn44.8:1.3 | S: “Worthy Gotama, is this right: ‘the cosmos is eternal’?” | T: “Now then, Master Gotama, is the cosmos eternal?”
+sn44.8:1.4 | S: “This has not been declared by me, Vaccha.” … | T: “That has not been declared by me, Vaccha: ‘The cosmos is eternal.’” “Well then, Master Gotama, is the cosmos not eternal?” “Vaccha, that too has not been declared by me: ‘The cosmos is not eternal.’” “Then is the cosmos finite?” … “Is the cosmos infinite?” … “Is the body the same as the soul?” … “Is the body one thing, and the soul another?” … “Does the Tathāgata exist after death?” … “Does the Tathāgata not exist after death?” … “Does the Tathāgata both exist and not exist after death?” …
+sn44.8:1.5 | S: “Then is this right: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Does the Tathāgata neither exist nor not exist after death?”
+sn44.8:1.6 | S: “This too has not been declared by me.” | T: “Vaccha, that too has not been declared by me:
+sn44.8:1.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.”
+sn44.8:2.1 | S: “What’s the cause, worthy Gotama, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “Now, Master Gotama, what is the cause, what is the reason why—when wanderers of other sects are asked in this way, they answer that
+sn44.8:2.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or
+sn44.8:2.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: ‘The Tathāgata neither exists nor does not exist after death,’
+sn44.8:2.4 | S: And what’s the reason why, when the worthy Gotama is asked these questions, he does not declare one of these to be true?” | T: yet when Master Gotama is asked in this way, he does not answer that
+sn44.8:2.5 | P: ‘sassato loko’tipi …pe… | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or
+sn44.8:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: ‘The Tathāgata neither exists nor does not exist after death’?”
+sn44.8:3.1 | S: “Vaccha, the wanderers of other religions regard form as self, self as having form, form in self, or self in form. | T: “Vaccha, the members of other sects assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn44.8:3.2 | S: They regard feeling … | T: “They assume feeling to be the self…
+sn44.8:3.3 | S: perception … | T: “They assume perception to be the self…
+sn44.8:3.4 | S: choices … | T: “They assume fabrications to be the self…
+sn44.8:3.5 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “They assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn44.8:3.6 | S: That’s why, when asked, they declare one of those answers to be true. | T: That is why, when asked in this way, they answer that
+sn44.8:3.7 | P: ‘sassato loko’ti vā …pe… | T: ‘The cosmos is eternal’ …
+sn44.8:3.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.8:3.9 | S: The Realized One doesn’t regard form as self, self as having form, form in self, or self in form. | T: “But the Tathāgata, worthy & rightly self-awakened, doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn44.8:3.10 | S: He doesn’t regard feeling … | T: “He doesn’t assume feeling to be the self…
+sn44.8:3.11 | S: perception … | T: “He doesn’t assume perception to be the self…
+sn44.8:3.12 | S: choices … | T: “He doesn’t assume fabrications to be the self…
+sn44.8:3.13 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn44.8:3.14 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: That is why, when asked in this way, he does not answer that
+sn44.8:3.15 | P: ‘sassato loko’tipi …pe… | T: ‘The cosmos is eternal’ …
+sn44.8:3.16 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: or that ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.8:4.1 | S: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to Ven. Mahā Moggallāna and, on arrival, exchanged courteous greetings with him.
+sn44.8:4.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to Ven. Mahā Moggallāna and received exactly the same explanation).
+sn44.8:4.3 | P: “kiṁ nu kho, bho moggallāna, sassato loko”ti? | T: (none)
+sn44.8:4.4 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: ‘sassato loko’ti …pe…. | T: (none)
+sn44.8:4.5 | P: “Kiṁ pana, bho moggallāna, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti? | T: (none)
+sn44.8:4.6 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: (none)
+sn44.8:4.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.8:5.1 | P: “Ko nu kho, bho moggallāna, hetu, ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:5.2 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.8:5.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: (none)
+sn44.8:5.4 | P: Ko pana, bho moggallāna, hetu, ko paccayo yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:5.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:5.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.8:6.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.2 | P: Vedanaṁ attato samanupassanti …pe… | T: (none)
+sn44.8:6.3 | P: saññaṁ …pe… | T: (none)
+sn44.8:6.4 | P: saṅkhāre …pe… | T: (none)
+sn44.8:6.5 | P: viññāṇaṁ attato samanupassanti, viññāṇavantaṁ vā attānaṁ, attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.6 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:6.7 | P: ‘sassato loko’ti vā …pe… | T: (none)
+sn44.8:6.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: (none)
+sn44.8:6.9 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho na rūpaṁ attato samanupassati, na rūpavantaṁ vā attānaṁ, na attani vā rūpaṁ, na rūpasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.10 | P: Na vedanaṁ attato samanupassati …pe… | T: (none)
+sn44.8:6.11 | P: na saññaṁ …pe… | T: (none)
+sn44.8:6.12 | P: na saṅkhāre …pe… | T: (none)
+sn44.8:6.13 | P: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. | T: (none)
+sn44.8:6.14 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: (none)
+sn44.8:6.15 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.8:7.1 | S: He said, “It’s incredible, worthy Moggallāna, it’s amazing. | T: “Amazing, Master Moggallāna! Astounding!
+sn44.8:7.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.8:7.3 | S: Just now I went to the ascetic Gotama and asked him about this matter. | T: Just now, Master Moggallāna, I went to the contemplative Gotama and, on arrival, asked him about this matter,
+sn44.8:7.4 | S: And he explained it to me with these words and phrases, just like the worthy Moggallāna. | T: and he answered me with the same words, the same phrasing, as Master Moggallāna.
+sn44.8:7.5 | S: It’s incredible, worthy Moggallāna, it’s amazing! | T: Amazing, Master Moggallāna! Astounding!
+sn44.8:7.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!”
+sn44.8:7.7 | P: Aṭṭhamaṁ. | T: (none)
+

@@ -1,0 +1,434 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd85-e1e5-7e82-a402-d989bba76ef3
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.66
+sn12.66:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.66:1.2 | S: At one time the Buddha was staying in the land of the Kurus, near the Kuru town named Kammāsadamma. | T: On one occasion the Blessed One was dwelling among the Kurus, where there was a town of the Kurus named Kammasadamma.
+sn12.66:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus thus:
+sn12.66:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+sn12.66:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn12.66:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.66:1.7 | S: “Mendicants, do you probe within?” | T: “Do you engage in inward exploration, bhikkhus?”
+sn12.66:1.8 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, one bhikkhu said to the Blessed One:
+sn12.66:1.9 | S: “Sir, I probe within.” | T: “Venerable sir, I engage in inward exploration.”
+sn12.66:1.10 | S: “But mendicant, how do you probe within?” | T: “How do you engage in inward exploration, bhikkhu?”
+sn12.66:1.11 | S: Then that mendicant answered, | T: The bhikkhu then explained
+sn12.66:1.12 | S: but the Buddha was not happy with the answer. | T: but the way he explained did not satisfy the Blessed One.
+sn12.66:2.1 | S: When he had spoken, Venerable Ānanda said to the Buddha, | T: Then the Venerable Ānanda said:
+sn12.66:2.2 | S: “Now is the time, Blessed One! Now is the time, Holy One! | T: “Now is the time for this, Blessed One! Now is the time for this, Fortunate One!
+sn12.66:2.3 | S: Let the Buddha speak of probing within. The mendicants will listen and remember it.” | T: Let the Blessed One explain inward exploration. Having heard it from the Blessed One, the bhikkhus will remember it.”
+sn12.66:2.4 | S: “Well then, Ānanda, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, Ānanda, I will speak.”
+sn12.66:2.5 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.66:2.6 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.66:3.1 | S: “Take a mendicant who probes within: | T: “Here, bhikkhus, when engaged in inward exploration, a bhikkhu explores thus:
+sn12.66:3.2 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death:
+sn12.66:3.3 | S: But what is the source of this suffering? When what exists do old age and death come to be? And when what does not exist do old age and death not come to be?’ | T: what is the source of this suffering, what is its origin, from what is it born and produced? When what exists does aging-and-death come to be? When what does not exist does aging-and-death not come to be?’
+sn12.66:3.4 | S: While probing they know: | T: “As he explores he understands thus:
+sn12.66:3.5 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death:
+sn12.66:3.6 | S: The source of this suffering is attachment. When attachments exist old age and death come to be. And when attachments do not exist old age and death don’t come to be.’ | T: this suffering has acquisition as its source, acquisition as its origin; it is born and produced from acquisition. When there is acquisition, aging-and-death comes to be; when there is no acquisition, aging-and-death does not come to be.’
+sn12.66:3.7 | S: They understand old age and death, their origin, their cessation, and the fitting practice for their cessation. | T: “He understands aging-and-death, its origin, its cessation, and the way leading on that is in conformity with its cessation.
+sn12.66:3.8 | S: And they practice in line with that path. | T: He practises in that way and conducts himself accordingly.
+sn12.66:3.9 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of old age and death. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of aging-and-death.
+sn12.66:4.1 | S: They probe further within: | T: “Then, engaging further in inward exploration, he explores thus:
+sn12.66:4.2 | S: ‘But what is the source of this attachment? When what exists does attachment come to be? And when what does not exist does attachment not come to be?’ | T: ‘What is the source of this acquisition, what is its origin, from what is it born and produced? When what exists does acquisition come to be? When what is absent does acquisition not come to be?’
+sn12.66:4.3 | S: While probing they know: | T: “As he explores he understands thus:
+sn12.66:4.4 | S: ‘The source of this attachment is craving. When craving exists attachments come to be. And when craving doesn’t exist attachments don’t come to be.’ | T: ‘Acquisition has craving as its source, craving as its origin; it is born and produced from craving. When there is craving, acquisition comes to be; when there is no craving, acquisition does not come to be.’
+sn12.66:4.5 | S: They understand attachments, their origin, their cessation, and the fitting practice for their cessation. | T: “He understands acquisition, its origin, its cessation, and the way leading on that is in conformity with its cessation.
+sn12.66:4.6 | S: And they practice in line with that path. | T: He practises in that way and conducts himself accordingly.
+sn12.66:4.7 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of attachments. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of acquisition.
+sn12.66:5.1 | S: They probe further within: | T: “Then, engaging further in inward exploration, he explores thus:
+sn12.66:5.2 | S: ‘But where does that craving arise and where does it settle?’ | T: ‘When this craving arises, where does it arise? When it settles down, upon what does it settle?’
+sn12.66:5.3 | S: While probing they know: | T: “As he explores he understands thus:
+sn12.66:5.4 | S: ‘That craving arises and settles on whatever in the world seems nice and pleasant. | T: ‘Whatever in the world has a pleasant and agreeable nature: it is here that this craving arises when it arises; it is here that it settles when it settles down.’
+sn12.66:5.5 | S: And what in the world seems nice and pleasant? | T: And what in the world has a pleasant and agreeable nature?
+sn12.66:5.6 | S: The eye in the world seems nice and pleasant, and it is there that craving arises and settles. | T: The eye has a pleasant and agreeable nature in the world: it is here that this craving arises when it arises; it is here that it settles when it settles down.
+sn12.66:5.7 | S: The ear … | T: So too the ear,
+sn12.66:5.8 | S: nose … | T: the nose,
+sn12.66:5.9 | S: tongue … | T: the tongue,
+sn12.66:5.10 | S: body … | T: the body,
+sn12.66:5.11 | S: mind in the world seems nice and pleasant, and it is there that craving arises and settles.’ | T: and the mind have a pleasant and agreeable nature: it is here that this craving arises when it arises; it is here that it settles when it settles down.
+sn12.66:6.1 | S: There were ascetics and brahmins of the past who saw the things that seem nice and pleasant in the world as permanent, as pleasurable, as self, as healthy, and as safe. | T: “Bhikkhus, whatever ascetics and brahmins in the past regarded that in the world with a pleasant and agreeable nature as permanent, as happiness, as self, as healthy, as secure:
+sn12.66:6.2 | S: Their craving grew. | T: they nurtured craving.
+sn12.66:6.3 | S: As their craving grew, their attachments grew. | T: In nurturing craving they nurtured acquisition.
+sn12.66:6.4 | S: As their attachments grew, their suffering grew. | T: In nurturing acquisition they nurtured suffering.
+sn12.66:6.5 | S: And as their suffering grew, they were not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They were not freed from suffering, I say. | T: In nurturing suffering they were not freed from birth, aging, and death; they were not freed from sorrow, lamentation, pain, displeasure, and despair; they were not freed from suffering, I say.
+sn12.66:7.1 | S: There will be ascetics and brahmins in the future who will see the things that seem nice and pleasant in the world as permanent, as pleasurable, as self, as healthy, and as safe. | T: “Whatever ascetics and brahmins in the future will regard that in the world with a pleasant and agreeable nature as permanent, as happiness, as self, as healthy, as secure:
+sn12.66:7.2 | S: Their craving will grow. | T: they will nurture craving.
+sn12.66:7.3 | S: As their craving grows, their attachments will grow. | T: In nurturing craving they will nurture acquisition.
+sn12.66:7.4 | S: As their attachments grow, their suffering will grow. | T: In nurturing acquisition they will nurture suffering.
+sn12.66:7.5 | S: And as their suffering grows, they will not be freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They will not be freed from suffering, I say. | T: In nurturing suffering they will not be freed from birth, aging, and death; they will not be freed from sorrow, lamentation, pain, displeasure, and despair; they will not be freed from suffering, I say.
+sn12.66:8.1 | S: There are ascetics and brahmins in the present who see the things that seem nice and pleasant in the world as permanent, as pleasurable, as self, as healthy, and as safe. | T: “Whatever ascetics and brahmins at present regard that in the world with a pleasant and agreeable nature as permanent, as happiness, as self, as healthy, as secure:
+sn12.66:8.2 | S: Their craving grows. | T: they are nurturing craving.
+sn12.66:8.3 | S: As their craving grows, their attachments grow. | T: In nurturing craving they are nurturing acquisition.
+sn12.66:8.4 | S: As their attachments grow, their suffering grows. | T: In nurturing acquisition they are nurturing suffering.
+sn12.66:8.5 | S: And as their suffering grows, they are not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are not freed from suffering, I say. | T: In nurturing suffering they are not freed from birth, aging, and death; they are not freed from sorrow, lamentation, pain, displeasure, and despair; they are not freed from suffering, I say.
+sn12.66:9.1 | S: Suppose there was a bronze goblet of beverage that had a nice color, aroma, and flavor. | T: “Suppose, bhikkhus, there was a bronze cup of a beverage having a fine colour, aroma, and taste,
+sn12.66:9.2 | S: But it was mixed with poison. | T: but it was mixed with poison.
+sn12.66:9.3 | S: Then along comes a man struggling in the oppressive heat, weary, thirsty, and parched. | T: Then a man would come along, oppressed and afflicted by the heat, tired, parched, and thirsty.
+sn12.66:9.4 | S: They’d say to him: | T: They would tell him:
+sn12.66:9.5 | S: ‘Here, my man, this bronze goblet of beverage has a nice color, aroma, and flavor. | T: ‘Good man, this beverage in the bronze cup has a fine colour, aroma, and taste,
+sn12.66:9.6 | S: But it’s mixed with poison. | T: but it is mixed with poison.
+sn12.66:9.7 | S: Drink it if you like. | T: Drink it if you wish.
+sn12.66:9.8 | S: If you drink it, the color, aroma, and flavor will be appetizing, but it will result in death or deadly pain.’ | T: If you drink it, it will gratify you with its colour, aroma, and taste, but by drinking it you will meet death or deadly suffering.’
+sn12.66:9.9 | S: He wouldn’t put that beverage down. Hastily, without reflection, he’d drink it, | T: Suddenly, without reflecting, he would drink the beverage—he would not reject it—
+sn12.66:9.10 | S: resulting in death or deadly pain. | T: and thereby he would meet death or deadly suffering.
+sn12.66:9.11 | S: In the same way, there are ascetics and brahmins of the past … | T: “So too, bhikkhus, whatever ascetics and brahmins in the past …
+sn12.66:9.12 | S: future … | T: in the future …
+sn12.66:9.13 | S: There are ascetics and brahmins in the present who see the things that seem nice and pleasant in the world as permanent, as pleasurable, as self, as healthy, and as safe. Their craving grows. | T: at present regard that in the world with a pleasant and agreeable nature as permanent, as happiness, as self, as healthy, as secure: they are nurturing craving.
+sn12.66:9.14 | S: As their craving grows, their attachments grow. | T: In nurturing craving …
+sn12.66:9.15 | S: As their attachments grow, their suffering grows. | T: (none)
+sn12.66:9.16 | S: And as their suffering grows, they are not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are not freed from suffering, I say. | T: they are not freed from suffering, I say.
+sn12.66:10.1 | S: There were ascetics and brahmins of the past who saw the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. | T: “Bhikkhus, whatever ascetics and brahmins in the past regarded that in the world with a pleasant and agreeable nature as impermanent, as suffering, as nonself, as a disease, as fearful:
+sn12.66:10.2 | S: They gave up craving. | T: they abandoned craving.
+sn12.66:10.3 | S: Giving up craving, they gave up attachments. | T: In abandoning craving they abandoned acquisition.
+sn12.66:10.4 | S: Giving up attachments, they gave up suffering. | T: In abandoning acquisition they abandoned suffering.
+sn12.66:10.5 | S: Giving up suffering, they were freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They were freed from suffering, I say. | T: In abandoning suffering they were freed from birth, aging, and death; they were freed from sorrow, lamentation, pain, displeasure, and despair; they were freed from suffering, I say.
+sn12.66:11.1 | S: There will be ascetics and brahmins in the future who will see the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. | T: “Whatever ascetics and brahmins in the future will regard that in the world with a pleasant and agreeable nature as impermanent, as suffering, as nonself, as a disease, as fearful:
+sn12.66:11.2 | S: They will give up craving. | T: they will abandon craving.
+sn12.66:11.3 | S: Giving up craving … | T: In abandoning craving …
+sn12.66:11.4 | S: they will be freed from suffering, I say. | T: they will be freed from suffering, I say.
+sn12.66:12.1 | S: There are ascetics and brahmins in the present who see the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. | T: “Whatever ascetics and brahmins at present regard that in the world with a pleasant and agreeable nature as impermanent, as suffering, as nonself, as a disease, as fearful:
+sn12.66:12.2 | S: They give up craving. | T: they are abandoning craving.
+sn12.66:12.3 | S: Giving up craving, they give up attachments. | T: In abandoning craving …
+sn12.66:12.4 | S: Giving up attachments, they give up suffering. | T: (none)
+sn12.66:12.5 | S: Giving up suffering, they are freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are freed from suffering, I say. | T: they are freed from suffering, I say.
+sn12.66:13.1 | S: Suppose there was a bronze goblet of beverage that had a nice color, aroma, and flavor. | T: “Suppose, bhikkhus, there was a bronze cup of a beverage having a fine colour, aroma, and taste,
+sn12.66:13.2 | S: But it was mixed with poison. | T: but it was mixed with poison.
+sn12.66:13.3 | S: Then along comes a man struggling in the oppressive heat, weary, thirsty, and parched. | T: Then a man would come along, oppressed and afflicted by the heat, tired, parched, and thirsty.
+sn12.66:13.4 | S: They’d say to him: | T: They would tell him:
+sn12.66:13.5 | S: ‘Here, my man, this bronze goblet of beverage has a nice color, aroma, and flavor. | T: ‘Good man, this beverage in the bronze cup has a fine colour, aroma, and taste,
+sn12.66:13.6 | S: But it’s mixed with poison. | T: but it is mixed with poison.
+sn12.66:13.7 | S: Drink it if you like. | T: Drink it if you wish.
+sn12.66:13.8 | S: If you drink it, its nice color, aroma, and flavor will refresh you. But drinking it will result in death or deadly pain.’ | T: If you drink it, it will gratify you with its colour, aroma, and taste, but by drinking it you will meet death or deadly suffering. ’
+sn12.66:13.9 | S: Then that man might think: | T: Then the man would think:
+sn12.66:13.10 | S: ‘I can allay my thirst with a fermented drink of beer, buttermilk, salt lassi, or salted infusion. But in any case, I shouldn’t drink that beverage, for it would be for my lasting harm and suffering.’ | T: ‘I can quench my thirst with water, whey, porridge, or soup, but I should not drink that beverage, since to do so would lead to my harm and suffering for a long time.’
+sn12.66:13.11 | S: He’d put that beverage down. After appraisal, he wouldn’t drink it, | T: Having reflected, he would not drink the beverage but would reject it,
+sn12.66:13.12 | S: and it wouldn’t result in death or deadly pain. | T: and thereby he would not meet death or deadly suffering.
+sn12.66:13.13 | S: In the same way, there were ascetics and brahmins of the past who saw the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. | T: “So too, bhikkhus, whatever ascetics and brahmins in the past …
+sn12.66:13.14 | S: They gave up craving. | T: (none)
+sn12.66:13.15 | S: Giving up craving, they gave up attachments. | T: (none)
+sn12.66:13.16 | S: Giving up attachments, they gave up suffering. | T: (none)
+sn12.66:13.17 | S: Giving up suffering, they were freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They were freed from suffering, I say. | T: (none)
+sn12.66:14.1 | S: There will be ascetics and brahmins in the future … | T: in the future …
+sn12.66:14.2 | S: There are ascetics and brahmins in the present who see the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. | T: at present regard that in the world with a pleasant and agreeable nature as impermanent, as suffering, as nonself, as a disease, as fearful:
+sn12.66:14.3 | S: They give up craving. | T: they are abandoning craving.
+sn12.66:14.4 | S: Giving up craving, they give up attachments. | T: In abandoning craving …
+sn12.66:14.5 | S: Giving up attachments, they give up suffering. | T: (none)
+sn12.66:14.6 | S: Giving up suffering, they are freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are freed from suffering, I say.” | T: they are freed from suffering, I say.”
+sn12.66:14.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.40
+an3.40:1.1 | S: “There are, mendicants, these three things to put in charge. | T: “Bhikkhus, there are these three authorities.
+an3.40:1.2 | S: What three? | T: What three?
+an3.40:1.3 | S: Putting oneself, the world, or the teaching in charge. | T: Oneself as one’s authority, the world as one’s authority, and the Dhamma as one’s authority.
+an3.40:1.4 | S: And what, mendicants, is putting oneself in charge? | T: (1) “And what, bhikkhus, is oneself as one’s authority?
+an3.40:1.5 | S: It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut, and reflects like this: | T: Here, having gone to the forest, to the foot of a tree, or to an empty hut, a bhikkhu reflects thus:
+an3.40:1.6 | S: ‘I didn’t go forth from the lay life to homelessness for the sake of a robe, | T: ‘I did not go forth from the household life into homelessness for the sake of a robe,
+an3.40:1.7 | S: almsfood, lodgings, or rebirth in this or that state. | T: almsfood, or lodging, or for the sake of becoming this or that,
+an3.40:1.8 | S: But I was swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. I was swamped by suffering, mired in suffering. | T: but rather with the thought: “I am immersed in birth, old age, and death; in sorrow, lamentation, pain, dejection, and anguish. I am immersed in suffering, afflicted by suffering.
+an3.40:1.9 | S: And I thought, “Hopefully I can make an end to this entire mass of suffering.” | T: Perhaps an ending of this entire mass of suffering can be discerned.”
+an3.40:1.10 | S: But it would not be appropriate for me to seek sensual pleasures like those I abandoned when I went forth, or even worse.’ | T: As one who has gone forth from the household life into homelessness, it would not be proper for me to seek out sensual pleasures similar to or worse than those that I have discarded.’
+an3.40:1.11 | S: Then they reflect: | T: He then reflects thus:
+an3.40:1.12 | S: ‘My energy shall be roused up and unflagging, mindfulness shall be established and lucid, my body shall be tranquil and undisturbed, and my mind shall be immersed in samādhi.’ | T: ‘Energy will be aroused in me without slackening; mindfulness will be established without confusion; my body will be tranquil without disturbance; my mind will be concentrated and one-pointed.’
+an3.40:1.13 | S: Putting themselves in charge, they give up the unskillful and develop the skillful, they give up the blameworthy and develop the blameless, and they keep themselves pure. | T: Having taken himself as his authority, he abandons the unwholesome and develops the wholesome; he abandons what is blameworthy and develops what is blameless; he maintains himself in purity.
+an3.40:1.14 | S: This is called putting oneself in charge. | T: This is called oneself as one’s authority.
+an3.40:2.1 | S: And what, mendicants, is putting the world in charge? | T: (2) “And what, bhikkhus, is the world as one’s authority?
+an3.40:2.2 | S: It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut, and reflects like this: | T: Here, having gone to the forest, to the foot of a tree, or to an empty hut, a bhikkhu reflects thus:
+an3.40:2.3 | S: ‘I didn’t go forth from the lay life to homelessness for the sake of a robe, | T: ‘I did not go forth from the household life into homelessness for the sake of a robe …
+an3.40:2.4 | S: almsfood, lodgings, or rebirth in this or that state. | T: (none)
+an3.40:2.5 | S: But I was swamped by rebirth, old age, and death, by sorrow, lamentation, pain, sadness, and distress. I was swamped by suffering, mired in suffering. | T: but rather with the thought: “I am immersed in birth, old age, and death …
+an3.40:2.6 | S: And I thought, “Hopefully I can make an end to this entire mass of suffering.” | T: Perhaps an ending of this entire mass of suffering can be discerned.”
+an3.40:2.7 | S: And now, since I’ve now gone forth, I might have sensual, malicious, or cruel thoughts. But the population of the world is large, | T: As one who has gone forth from the household life into homelessness, I might think sensual thoughts, thoughts of ill will, or thoughts of harming. But the abode of the world is vast.
+an3.40:2.8 | S: and there are ascetics and brahmins who have psychic power—they’re clairvoyant, and can read the minds of others. | T: In the vast abode of the world there are ascetics and brahmins with psychic potency and the divine eye who know the minds of others.
+an3.40:2.9 | S: They see far without being seen, even by those close; and they understand the minds of others. | T: They see things from a distance but they are not themselves seen even when they’re close; they know the minds of others with their own mind.
+an3.40:2.10 | S: They would know me: | T: They would know me thus:
+an3.40:2.11 | S: “Look at this gentleman; he’s gone forth out of faith from the lay life to homelessness, but he’s living mixed up with bad, unskillful qualities.” | T: “Look at this clansman: though he has gone forth from the household life into homelessness out of faith, he is tarnished by bad unwholesome states.”
+an3.40:2.12 | S: And there are deities, too, who have psychic power—they’re clairvoyant, and can read the minds of others. | T: There are deities, too, with psychic potency and the divine eye who know the minds of others.
+an3.40:2.13 | S: They see far without being seen, even by those close; and they understand the minds of others. | T: They see even from a distance but are not seen themselves even when close; they too know the minds of others with their own mind.
+an3.40:2.14 | S: They would know me: | T: They too would know me thus:
+an3.40:2.15 | S: “Look at this gentleman; he’s gone forth out of faith from the lay life to homelessness, but he’s living mixed up with bad, unskillful qualities.”’ | T: “Look at this clansman: though he has gone forth from the household life into homelessness out of faith, he is tarnished by bad unwholesome states.”’
+an3.40:2.16 | S: Then they reflect: | T: He then reflects thus:
+an3.40:2.17 | S: ‘My energy shall be roused up and unflagging, mindfulness shall be established and lucid, my body shall be tranquil and undisturbed, and my mind shall be immersed in samādhi.’ | T: ‘Energy will be aroused in me without slackening; mindfulness will be established without confusion; my body will be tranquil without disturbance; my mind will be concentrated and one-pointed.’
+an3.40:2.18 | S: Putting the world in charge, they give up the unskillful and develop the skillful, they give up the blameworthy and develop the blameless, and they keep themselves pure. | T: Having taken the world as his authority, he abandons the unwholesome and develops the wholesome; he abandons what is blameworthy and develops what is blameless; he maintains himself in purity.
+an3.40:2.19 | S: This is called putting the world in charge. | T: This is called the world as one’s authority.
+an3.40:3.1 | S: And what, mendicants, is putting the teaching in charge? | T: (3) “And what, bhikkhus, is the Dhamma as one’s authority?
+an3.40:3.2 | S: It’s when a mendicant has gone to a wilderness, or to the root of a tree, or to an empty hut, and reflects like this: | T: Here, having gone to the forest, to the foot of a tree, or to an empty hut, a bhikkhu reflects thus:
+an3.40:3.3 | S: ‘I didn’t go forth from the lay life to homelessness for the sake of a robe, | T: ‘I did not go forth from the household life into homelessness for the sake of a robe …
+an3.40:3.4 | S: almsfood, lodgings, or rebirth in this or that state. | T: (none)
+an3.40:3.5 | S: But I was swamped by rebirth, old age, and death, by sorrow, lamentation, pain, sadness, and distress. I was swamped by suffering, mired in suffering. | T: but rather with the thought: “I am immersed in birth, old age, and death …
+an3.40:3.6 | S: And I thought, “Hopefully I can make an end to this entire mass of suffering.” | T: Perhaps an ending of this entire mass of suffering can be discerned.”
+an3.40:3.7 | S: The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: The Dhamma is well expounded by the Blessed One, directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.
+an3.40:3.8 | S: I have spiritual companions who live knowing and seeing. | T: There are fellow monks of mine who know and see.
+an3.40:3.9 | S: Now that I’ve gone forth in this well explained teaching and training, it would not be appropriate for me to live lazy and heedless.’ | T: As one who has gone forth from the household life into homelessness in this well-expounded Dhamma and discipline, it would be improper for me to be lazy and heedless.’
+an3.40:3.10 | S: Then they reflect: | T: He then reflects thus:
+an3.40:3.11 | S: ‘My energy shall be roused up and unflagging, mindfulness shall be established and lucid, my body shall be tranquil and undisturbed, and my mind shall be immersed in samādhi.’ | T: ‘Energy will be aroused in me without slackening; mindfulness will be established without confusion; my body will be tranquil without disturbance; my mind will be concentrated and one-pointed.’
+an3.40:3.12 | S: Putting the teaching in charge, they give up the unskillful and develop the skillful, they give up the blameworthy and develop the blameless, and they keep themselves pure. | T: Having taken the Dhamma as his authority, he abandons the unwholesome and develops the wholesome; he abandons what is blameworthy and develops what is blameless; he maintains himself in purity.
+an3.40:3.13 | S: This is called putting the teaching in charge. | T: This is called the Dhamma as one’s authority.
+an3.40:3.14 | S: These are the three things to put in charge. | T: “These, bhikkhus, are the three authorities.”
+an3.40:4.1 | S: There’s no privacy in the world, | T: For one performing an evil deed there is no place in the world called “hidden.”
+an3.40:4.2 | S: for someone who does bad deeds. | T: (none)
+an3.40:4.3 | S: You’ll know for yourself, | T: The self within you knows, O person,
+an3.40:4.4 | S: whether you’ve lied or told the truth. | T: whether it is true or false.
+an3.40:5.1 | S: When you witness your good self, | T: Indeed, sir, you the witness
+an3.40:5.2 | S: you despise it; | T: despise your good self;
+an3.40:5.3 | S: while you disguise | T: (none)
+an3.40:5.4 | S: your bad self inside yourself. | T: you conceal the evil self existing within yourself.
+an3.40:6.1 | S: The gods and the Realized One see | T: The devas and Tathāgatas see the fool
+an3.40:6.2 | S: the fool who lives unjustly in the world. | T: acting unrighteously in the world.
+an3.40:6.3 | S: So with yourself in charge, live mindfully; | T: Therefore one should fare mindfully, taking oneself as authority;
+an3.40:6.4 | S: with the world in charge, <j>be alert and practice absorption; | T: alert and meditative, taking the world as authority;
+an3.40:6.5 | S: with the teaching in charge, <j>live in line with that teaching: | T: and fare in accordance with the Dhamma, taking the Dhamma as authority.
+an3.40:6.6 | S: a sage who tries for the truth doesn’t deteriorate. | T: Truly exerting himself, a sage does not decline.
+an3.40:7.1 | S: Māra’s conquered; the terminator’s overcome: | T: Having vanquished Māra and overcome the end-maker,
+an3.40:7.2 | S: one who strives reaches the end of rebirth. | T: the striver has finished with birth.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.40:7.3 | S: Unaffected, intelligent, knowing the world— | T: Such a sage, wise, a world-knower,
+an3.40:7.4 | S: that sage is determined by nothing at all.” | T: identifies with nothing at all.
+an3.40:7.5 | P: Dasamaṁ. | T: (none)
+an3.40:7.6 | P: Devadūtavaggo catuttho. | T: (none)
+an3.40:8.0 | P: Tassuddānaṁ | T: (none)
+an3.40:8.1 | P: Brahma ānanda sāriputto, | T: (none)
+an3.40:8.2 | P: Nidānaṁ hatthakena ca; | T: (none)
+an3.40:8.3 | P: Dūtā duve ca rājāno, | T: (none)
+an3.40:8.4 | P: Sukhumālādhipateyyena cāti. | T: (none)
+
+## an4.33
+an4.33:1.1 | S: “Mendicants, toward evening the lion, king of beasts, emerges from his den, | T: “Bhikkhus, in the evening the lion, the king of beasts, comes out from his lair,
+an4.33:1.2 | S: yawns, | T: stretches his body,
+an4.33:1.3 | S: surveys the four quarters, | T: surveys the four quarters all around,
+an4.33:1.4 | S: and roars his lion’s roar three times. | T: and roars his lion’s roar three times.
+an4.33:1.5 | S: Then he sets out on the hunt. | T: Then he sets out in search of game.
+an4.33:1.6 | S: And the animals who hear the roar of the lion, king of beasts, are typically filled with fear, awe, and terror. | T: “Whatever animals hear the lion roaring for the most part are filled with fear, a sense of urgency, and terror.
+an4.33:1.7 | S: They return to their lairs, be they in a hole, the water, or a wood; and the birds take to the air. | T: Those who live in holes enter their holes; those who live in the water enter the water; those who live in the woods enter the woods; and the birds resort to the sky.
+an4.33:1.8 | S: Even the royal elephants, bound with strong harnesses in the villages, towns, and capital cities, break apart their bonds, and urinate and defecate in terror as they flee here and there. | T: Even those royal bull elephants, bound by strong thongs in the villages, towns, and capital cities, burst and break their bonds asunder; frightened, they urinate and defecate and flee here and there.
+an4.33:1.9 | S: That’s how powerful is the lion, king of beasts, over animals, how illustrious and mighty. | T: So powerful among the animals is the lion, the king of beasts, so majestic and mighty.
+an4.33:2.1 | S: In the same way, when a Realized One arises in the world—perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed—he teaches the Dhamma: | T: “So too, bhikkhus, when the Tathāgata arises in the world, an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One, he teaches the Dhamma thus:
+an4.33:2.2 | S: ‘Such is substantial reality, such is the origin of substantial reality, such is the cessation of substantial reality, such is the practice that leads to the cessation of substantial reality.’ | T: ‘(1) Such is personal existence, (2) such the origin of personal existence, (3) such the cessation of personal existence, (4) such the way to the cessation of personal existence.’
+an4.33:2.3 | S: Now, there are gods who are long-lived, beautiful, and very happy, lasting long in their divine palaces. When they hear this teaching by the Realized One, they’re typically filled with fear, awe, and terror. | T: “When those devas who are long-lived, beautiful, abounding in happiness, dwelling for a long time in lofty palaces, hear the Tathāgata’s teaching of the Dhamma, for the most part they are filled with fear, a sense of urgency, and terror thus:
+an4.33:2.4 | S: ‘Oh no! It turns out we’re impermanent, though we thought we were permanent! | T: ‘It seems that we are actually impermanent, though we thought ourselves permanent;
+an4.33:2.5 | S: It turns out we don’t last, though we thought we were everlasting! | T: it seems that we are actually transient, though we thought ourselves everlasting;
+an4.33:2.6 | S: It turns out we’re transient, though we thought we were eternal! | T: it seems that we are actually non-eternal, though we thought ourselves eternal.
+an4.33:2.7 | S: It turns out that we’re impermanent, not lasting, transient, and included within substantial reality.’ | T: It seems that we are impermanent, transient, non-eternal, included in personal existence.’
+an4.33:2.8 | S: That’s how powerful is the Realized One in the world with its gods, how illustrious and mighty. | T: So powerful is the Tathāgata, so majestic and mighty is he in this world together with its devas.”
+an4.33:3.1 | S: The Buddha, the unrivaled Teacher | T: When, through direct knowledge, the Buddha, the teacher, the peerless person
+an4.33:3.2 | S: in all the world with its gods, | T: in this world with its devas,
+an4.33:3.3 | S: rolls forth the Wheel of Dhamma | T: sets in motion the wheel of Dhamma,
+an4.33:3.4 | S: from his own insight: | T: (none)
+an4.33:4.1 | S: substantial reality, its cessation, | T: he teaches personal existence, its cessation,
+an4.33:4.2 | S: the origin of substantial reality, | T: the origin of personal existence,
+an4.33:4.3 | S: and the noble eightfold path | T: and the noble eightfold path
+an4.33:4.4 | S: that leads to the stilling of suffering. | T: that leads to the calming down of suffering.
+an4.33:5.1 | S: And then the long-lived gods, | T: Then even those devas with long life spans—
+an4.33:5.2 | S: so beautiful and glorious, | T: beautiful, ablaze with glory—
+an4.33:5.3 | S: are afraid and full of terror, | T: become fearful and filled with terror,
+an4.33:5.4 | S: like the other beasts when they hear a lion. | T: like beasts who hear the lion’s roar.
+an4.33:6.1 | S: ‘We haven’t passed beyond substantial reality! | T: “It seems that we are impermanent, not beyond personal existence,”
+an4.33:6.2 | S: It turns out we’re impermanent!’ | T: (none)
+an4.33:6.3 | S: So they say when they hear the word | T: they say, when they hear the word of the Arahant,
+an4.33:6.4 | S: of the perfected one, free and unaffected.” | T: the Stable One who is fully freed.
+an4.33:6.5 | P: Tatiyaṁ. | T: (none)
+
+## sn22.76
+sn22.76:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.76:1.2 | S: “Mendicants, form is impermanent. | T: “Bhikkhus, form is impermanent.
+sn22.76:1.3 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn22.76:1.4 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn22.76:1.5 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.76:1.6 | S: Feeling … | T: “Feeling is impermanent….
+sn22.76:1.7 | S: Perception … | T: Perception is impermanent….
+sn22.76:1.8 | S: Choices … | T: Volitional formations are impermanent….
+sn22.76:1.9 | S: Consciousness is impermanent. | T: Consciousness is impermanent.
+sn22.76:1.10 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn22.76:1.11 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn22.76:1.12 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.76:2.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn22.76:2.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn22.76:2.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn22.76:2.4 | S: As far as there are abodes of sentient beings, even up until the pinnacle of existence, the perfected ones are the foremost and the best.” | T: “To whatever extent, bhikkhus, there are abodes of beings, even up to the pinnacle of existence, these are the foremost in the world, these are the best, that is, the arahants.”
+sn22.76:3.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn22.76:3.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn22.76:4.1 | S: “Oh! How happy are the perfected ones! | T: “Happy indeed are the arahants!
+sn22.76:4.2 | S: Craving is not found in them, | T: No craving can be found in them.
+sn22.76:4.3 | S: the conceit ‘I am’ is cut off, | T: Cut off is the conceit ‘I am,’
+sn22.76:4.4 | S: and the net of delusion is shattered. | T: Burst asunder is delusion’s net.
+sn22.76:5.1 | S: They’ve attained imperturbability, | T: (none)
+sn22.76:5.2 | S: their minds are unclouded, | T: Limpid are their minds;
+sn22.76:5.3 | S: nothing in the world clings to them, | T: They are unsullied in the world—
+sn22.76:5.4 | S: manifesting divinity, undefiled. | T: The holy ones, without taints.
+sn22.76:6.1 | S: Completely understanding the five aggregates, | T: “Having fully understood the five aggregates,
+sn22.76:6.2 | S: their domain is the seven good qualities. | T: Ranging in the seven good qualities,
+sn22.76:6.3 | S: Those true persons are praiseworthy, | T: Those praiseworthy superior men
+sn22.76:6.4 | S: the Buddha’s bosom sons. | T: Are the Buddha’s bosom sons.
+sn22.76:7.1 | S: Endowed with the seven gems, | T: “Endowed with the seven gems,
+sn22.76:7.2 | S: and trained in the three trainings, | T: Trained in the threefold training,
+sn22.76:7.3 | S: the great heroes live on, | T: Those great heroes wander about
+sn22.76:7.4 | S: with fear and dread given up. | T: With fear and trembling abandoned.
+sn22.76:8.1 | S: Endowed with ten factors, | T: “Endowed with the ten factors,
+sn22.76:8.2 | S: those giants are immersed in samādhi. | T: Those great nagas, concentrated,
+sn22.76:8.3 | S: They are the best in the world, | T: Are the best beings in the world:
+sn22.76:8.4 | S: craving is not found in them. | T: No craving can be found in them.
+sn22.76:9.1 | S: The adept’s knowledge has arisen: | T: “The adepts’ knowledge has arisen in them:
+sn22.76:9.2 | S: ‘This bag of bones is my last.’ | T: ‘This body is the last I bear.’
+sn22.76:9.3 | S: They are independent of others | T: (none)
+sn22.76:9.4 | S: in the core of the spiritual path. | T: In regard to the core of the holy life They no longer depend on others.
+sn22.76:10.1 | S: They do not waver due to the discriminations, | T: (none)
+sn22.76:10.2 | S: they’re freed from future lives. | T: They are released from renewed existence.
+sn22.76:10.3 | S: They’ve reached the level of the tamed, | T: Having reached the stage of the tamed,
+sn22.76:10.4 | S: in the world, they’re the winners. | T: They are the victors in the world.
+sn22.76:11.1 | S: Above, below, all round, | T: “Above, across, and below,
+sn22.76:11.2 | S: relishing is not found in them. | T: Delight is no more found in them.
+sn22.76:11.3 | S: They roar their lion’s roar: | T: They boldly sound their lion’s roar:
+sn22.76:11.4 | S: ‘The awakened are supreme in the world!’” | T: ‘The enlightened are supreme in the world.’”
+sn22.76:11.5 | P: Catutthaṁ. | T: (none)
+
+## sn35.136
+sn35.136:1.1 | S: “Mendicants, gods and humans like sights, they love them and enjoy them. | T: “Bhikkhus, devas and humans delight in forms, take delight in forms, rejoice in forms.
+sn35.136:1.2 | S: But when sights perish, fade away, and cease, gods and humans live in suffering. | T: With the change, fading away, and cessation of forms, devas and humans dwell in suffering.
+sn35.136:1.3 | S: Gods and humans like sounds … | T: Devas and humans delight in sounds …
+sn35.136:1.4 | P: Saddavipariṇāmavirāganirodhā dukkhā, bhikkhave, devamanussā viharanti. | T: (none)
+sn35.136:1.5 | S: smells … | T: delight in odours …
+sn35.136:1.6 | S: tastes … | T: delight in tastes …
+sn35.136:1.7 | S: touches … | T: delight in tactile objects …
+sn35.136:1.8 | S: ideas, they love them and enjoy them. | T: delight in mental phenomena, take delight in mental phenomena, rejoice in mental phenomena.
+sn35.136:1.9 | S: But when ideas perish, fade away, and cease, gods and humans live in suffering. | T: With the change, fading away, and cessation of mental phenomena, devas and humans dwell in suffering.
+sn35.136:1.10 | S: The Realized One has truly understood the origin, disappearance, gratification, drawback, and escape of sights, so he doesn’t like, love, or enjoy them. | T: “But, bhikkhus, the Tathagata, the Arahant, the Fully Enlightened One, has understood as they really are the origin and the passing away, the gratification, the danger, and the escape in the case of forms. He does not delight in forms, does not take delight in forms, does not rejoice in forms.
+sn35.136:1.11 | S: When sights perish, fade away, and cease, the Realized One lives happily. | T: With the change, fading away, and cessation of forms, the Tathagata dwells happily.
+sn35.136:1.12 | S: The Realized One has truly understood the origin, disappearance, gratification, drawback, and escape of sounds … | T: “He has understood as they really are the origin and the passing away, the gratification, the danger, and the escape in the case of sounds …
+sn35.136:1.13 | S: smells … | T: odours …
+sn35.136:1.14 | S: tastes … | T: tastes …
+sn35.136:1.15 | S: touches … | T: tactile objects …
+sn35.136:1.16 | S: ideas, so he doesn’t like, love, or enjoy them. | T: mental phenomena. He does not delight in mental phenomena, does not take delight in mental phenomena, does not rejoice in mental phenomena.
+sn35.136:1.17 | S: When ideas perish, fade away, and cease, the Realized One lives happily.” | T: With the change, fading away, and cessation of mental phenomena, the Tathagata dwells happily.”
+sn35.136:1.18 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn35.136:1.19 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn35.136:2.1 | S: “Sights, sounds, tastes, smells, | T: “Forms, sounds, odours, tastes,
+sn35.136:2.2 | S: touches and ideas, the lot of them— | T: Tactiles and all objects of mind—
+sn35.136:2.3 | S: they’re likable, desirable, and pleasurable | T: Desirable, lovely, agreeable,
+sn35.136:2.4 | S: as long as you can say that they exist. | T: So long as it’s said: ‘They are.’
+sn35.136:3.1 | S: For all the world with its gods, | T: “These are considered happiness By the world with its devas;
+sn35.136:3.2 | S: this is what they deem happiness. | T: (none)
+sn35.136:3.3 | S: And where they cease | T: But where these cease,
+sn35.136:3.4 | S: is deemed as suffering for them. | T: That they consider suffering.
+sn35.136:4.1 | S: The noble ones have seen that happiness | T: “The noble ones have seen as happiness
+sn35.136:4.2 | S: is the cessation of substantial reality. | T: The ceasing of identity.
+sn35.136:4.3 | S: This insight by those who see | T: This view of those who clearly see
+sn35.136:4.4 | S: contradicts the whole world. | T: Runs counter to the entire world.
+sn35.136:5.1 | S: What others say is happiness | T: “What others speak of as happiness,
+sn35.136:5.2 | S: the noble ones say is suffering. | T: That the noble ones say is suffering;
+sn35.136:5.3 | S: What others say is suffering | T: What others speak of as suffering,
+sn35.136:5.4 | S: the noble ones know as happiness. | T: That the noble ones know as bliss.
+sn35.136:6.1 | S: See, this teaching is hard to understand, | T: “Behold this Dhamma hard to comprehend:
+sn35.136:6.2 | S: it confuses the ignorant. | T: Here the foolish are bewildered.
+sn35.136:6.3 | S: There is darkness for the shrouded; | T: For those with blocked minds it is obscure,
+sn35.136:6.4 | S: blackness for those who don’t see. | T: Sheer darkness for those who do not see.
+sn35.136:7.1 | S: But the good are open; | T: “But for the good it is disclosed,
+sn35.136:7.2 | S: like light for those who see. | T: It is light here for those who see.
+sn35.136:7.3 | S: Though close, they do not understand, | T: The dullards unskilled in the Dhamma Don’t understand it in its presence.
+sn35.136:7.4 | S: the seekers inexpert in the teaching. | T: (none)
+sn35.136:8.1 | S: They’re mired in desire for continued existence, | T: “This Dhamma isn’t easily understood By those afflicted with lust for existence,
+sn35.136:8.2 | S: flowing along the stream of lives, | T: Who flow along in the stream of existence,
+sn35.136:8.3 | S: mired in Māra’s dominion: | T: Deeply mired in Mara’s realm.
+sn35.136:8.4 | S: this teaching isn’t easy for them to understand. | T: (none)
+sn35.136:9.1 | S: Who, apart from the noble ones, | T: “Who else apart from the noble ones
+sn35.136:9.2 | S: is qualified to understand this state? | T: Are able to understand this state?
+sn35.136:9.3 | S: Having rightly understood this state, | T: When they have rightly known that state,
+sn35.136:9.4 | S: the undefiled are fully extinguished.” | T: The taintless ones are fully quenched.”
+sn35.136:9.5 | P: Tatiyaṁ. | T: (none)
+
+## an10.39
+an10.39:1.1 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+an10.39:1.2 | S: “Sir, they speak of ‘schism in the Saṅgha’. | T: “Bhante, it is said: ‘Schism in the Saṅgha, schism in the Saṅgha.’
+an10.39:1.3 | S: How is schism in the Saṅgha defined?” | T: How is there schism in the Saṅgha?”
+an10.39:1.4 | S: “Ānanda, it’s when a mendicant explains what is not the teaching as the teaching … | T: “Here, Ānanda, (1) bhikkhus explain non-Dhamma as Dhamma … as in AN10.37 …
+an10.39:1.5 | S: and what was prescribed by the Realized One as not prescribed by the Realized One. | T: and (10) what has been prescribed by the Tathāgata as not having been prescribed by him.
+an10.39:1.6 | S: On these ten grounds they split off and go their own way. They perform legal acts autonomously and recite the monastic code autonomously. | T: On these ten grounds they withdraw and go apart. They perform legal acts separately and recite the Pātimokkha separately.
+an10.39:1.7 | S: That is how schism in the Saṅgha is defined.” | T: It is in this way, Ānanda, that there is schism in the Saṅgha.”
+an10.39:2.1 | S: “But sir, what does someone who has split a harmonious Saṅgha brim with?” | T: “But, Bhante, when one causes schism in a harmonious Saṅgha, what does one generate?”
+an10.39:2.2 | S: “They brim with sin that lasts for an eon.” | T: “One generates evil lasting for an eon, Ānanda.”
+an10.39:2.3 | S: “But sir, what is the sin that lasts for an eon?” | T: “But, Bhante, what is that evil lasting for an eon?”
+an10.39:2.4 | S: “They burn in hell for an eon, Ānanda. | T: “One is tormented in hell for an eon, Ānanda.”
+an10.39:3.1 | S: A schismatic remains for the eon | T: One who causes schism in the Saṅgha is bound for misery, bound for hell, to abide there for an eon.
+an10.39:3.2 | S: in a place of loss, in hell. | T: (none)
+an10.39:3.3 | S: Taking a stand against the teaching, | T: Delighting in factions, established in non-Dhamma,
+an10.39:3.4 | S: favoring factions, they ruin their sanctuary. | T: he falls away from security from bondage.
+an10.39:3.5 | S: After causing schism in a harmonious Saṅgha, | T: Having caused schism in a harmonious Saṅgha,
+an10.39:3.6 | S: they burn in hell for an eon.” | T: he is tormented in hell for an eon.
+an10.39:3.7 | P: Navamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found two clear boundary shifts, requiring four line changes. I’ll write those findings now.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-034.findings.tmp <<'EOF'
+an3.40:5.3 starts: you conceal the evil self existing within
+an3.40:5.4 starts: the evil self existing within yourself.
+sn22.76:9.3 starts: In regard to the core of the
+sn22.76:9.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+4 lines reported.
+tokens used
+24,235
+4 lines reported.

@@ -1,0 +1,507 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd83-058c-7a80-adfd-40c74adfe8ae
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn47.36
+sn47.36:1.1 | S: “Mendicants, there are these four kinds of mindfulness meditation. | T: “Bhikkhus, there are these four establishments of mindfulness.
+sn47.36:1.2 | S: What four? | T: What four?
+sn47.36:1.3 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body …
+sn47.36:1.4 | S: They meditate observing an aspect of feelings … | T: feelings in feelings …
+sn47.36:1.5 | S: mind … | T: mind in mind …
+sn47.36:1.6 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.36:1.7 | S: These are the four kinds of mindfulness meditation. | T: (none)
+sn47.36:1.8 | S: Because of developing and cultivating these four kinds of mindfulness meditation, one of two results can be expected: | T: “When, bhikkhus, these four establishments of mindfulness have been developed and cultivated, one of two fruits may be expected:
+sn47.36:1.9 | S: enlightenment in this very life, or if there’s residue left behind, non-return.” | T: either final knowledge in this very life or, if there is a residue of clinging, the state of nonreturning.”
+sn47.36:1.10 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn56.3
+sn56.3:1.1 | S: “Mendicants, whatever gentlemen—past, | T: “Bhikkhus, whatever clansmen in the past rightly went forth from the household life into homelessness,
+sn56.3:1.2 | S: future, | T: (none)
+sn56.3:1.3 | S: or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly comprehend the four noble truths. | T: all did so in order to make the breakthrough to the Four Noble Truths as they really are. Whatever clansmen in the future will rightly go forth from the household life into homelessness, all will do so in order to make the breakthrough to the Four Noble Truths as they really are. Whatever clansmen at present have rightly gone forth from the household life into homelessness, all have done so in order to make the breakthrough to the Four Noble Truths as they really are.
+sn56.3:2.1 | S: What four? | T: “What four?
+sn56.3:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.3:2.3 | S: Whatever gentlemen—past, | T: Whatever clansmen rightly went forth …
+sn56.3:2.4 | S: future, | T: will rightly go forth …
+sn56.3:2.5 | S: or present—rightly go forth from the lay life to homelessness, all of them do so in order to truly comprehend the four noble truths. | T: have rightly gone forth from household life into homelessness, all have done so in order to make the breakthrough to these Four Noble Truths as they really are.
+sn56.3:3.1 | S: That’s why you should practice meditation to understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’.” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.3:3.2 | P: Tatiyaṁ. | T: (none)
+
+## sn4.25
+sn4.25:1.1 | S: And then Māra the Wicked, after reciting these verses of disillusionment in the Buddha’s presence, left that place. He sat cross-legged on the ground not far from the Buddha, silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, scratching the ground with a stick. | T: Then Mara the Evil One, having spoken these verses of disappointment in the presence of the Blessed One, went away from that spot and sat down cross-legged on the ground not far from the Blessed One, silent, dismayed, with his shoulders drooping, downcast, brooding, unable to speak, scratching the ground with a stick.
+sn4.25:1.2 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked, and addressed him in verse: | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached Mara the Evil One and addressed him in verse:
+sn4.25:2.1 | S: “Why so downhearted, dad? | T: “Why are you despondent, father?
+sn4.25:2.2 | S: What man are you upset about? | T: Who’s the man for whom you grieve?
+sn4.25:2.3 | S: We’ll catch him with the snare of lust, | T: We’ll catch him with the snare of lust
+sn4.25:2.4 | S: like an elephant in the wild. | T: As they catch the forest elephant.
+sn4.25:2.5 | S: We’ll tie him up and bring him back— | T: We’ll bind him tightly and bring him back,
+sn4.25:2.6 | S: he’ll fall under your sway!” | T: And he’ll be under your control.”
+sn4.25:3.1 | S: “In this world he is the perfected one, the Holy One. | T: Mara: “The Arahant, the Fortunate One in the world,
+sn4.25:3.2 | S: He’s not easily seduced by lust. | T: Is not easily drawn by means of lust.
+sn4.25:3.3 | S: He has slipped free of Māra’s dominion; | T: He has gone beyond Mara’s realm:
+sn4.25:3.4 | S: that’s why I’m so upset.” | T: Therefore I sorrow so bitterly.”
+sn4.25:4.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and said to him, | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached the Blessed One and said to him:
+sn4.25:4.2 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:4.3 | S: But the Buddha ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:5.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—went off to the side and took counsel:
+sn4.25:5.2 | S: “Men have a diverse spectrum of tastes. | T: “Men’s tastes are diverse.
+sn4.25:5.3 | S: Why don’t we each manifest in the form of a hundred young maidens?” | T: Suppose we each manifest ourselves in the form of a hundred maidens.”
+sn4.25:5.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: Then Mara’s three daughters, each manifesting herself in the form of a hundred maidens, approached the Blessed One and said to him:
+sn4.25:5.5 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:5.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:6.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: Then Mara’s daughters went off to the side and again took counsel:
+sn4.25:6.2 | S: “Men have a diverse spectrum of tastes. | T: “Men’s tastes are diverse.
+sn4.25:6.3 | S: Why don’t we each manifest in the form of a hundred women who have never given birth?” | T: Suppose we each manifest ourselves in the form of a hundred women who have never given birth.”
+sn4.25:6.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: Then Mara’s three daughters, each manifesting herself in the form of a hundred women who have never given birth … in the form of a hundred women who have given birth once … … in the form of a hundred women who have given birth twice … in the form of a hundred women of middle age … in the form of a hundred old women, approached the Blessed One and said to him:
+sn4.25:6.5 | S: “We serve at your feet, ascetic.” | T: “We serve at your feet, ascetic.”
+sn4.25:6.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid no attention, as he was liberated in the unsurpassed extinction of acquisitions.
+sn4.25:7.1 | S: Then Craving, Malignancy, and Lust … | T: (none)
+sn4.25:7.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ sakiṁ vijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:7.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:7.4 | S: each manifested in the form of a hundred women who have given birth once … | T: (none)
+sn4.25:7.5 | P: “pāde te, samaṇa, paricāremā”ti. | T: (none)
+sn4.25:7.6 | P: Tampi bhagavā na manasākāsi, yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ duvijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:8.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.4 | S: women who have given birth twice … | T: (none)
+sn4.25:8.5 | P: yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.6 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.7 | P: majjhimitthivaṇṇasataṁ abhinimmineyyāmā”ti. | T: (none)
+sn4.25:8.8 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.9 | S: middle-aged women … | T: (none)
+sn4.25:8.10 | P: anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:9.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:9.2 | P: mahitthivaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:9.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:9.4 | S: old women … | T: (none)
+sn4.25:9.5 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: (none)
+sn4.25:9.6 | S: Then Craving, Malignancy, and Lust withdrew to one side and said, | T: Then Mara’s daughters—Taṇha, Arati, and Raga—went off to the side and said:
+sn4.25:9.7 | S: “What our father said is true: | T: “What our father told us is true:
+sn4.25:10.1 | S: ‘In this world he is the perfected one, the Holy One. | T: “‘The Arahant, the Fortunate One in the world …
+sn4.25:10.2 | S: He’s not easily seduced by lust. | T: (none)
+sn4.25:10.3 | S: He has slipped free of Māra’s dominion; | T: (none)
+sn4.25:10.4 | S: that’s why I’m so upset.’ | T: Therefore I sorrow so bitterly.’
+sn4.25:11.1 | S: For if we had come on to any ascetic or brahmin like this who was not free of lust, his heart would explode, or he’d spew hot blood from his mouth, or he’d go mad or lose his mind. | T: “If we had assailed with such tactics any ascetic or brahmin who was not devoid of lust, either his heart would have burst, or he would have vomited hot blood from his mouth, or he would have gone mad or become mentally deranged;
+sn4.25:11.2 | S: He’d dry up, wither away, and shrivel up like a green reed that was mowed down.” | T: or else he would have dried up and withered away and become shrivelled, just as a green reed that has been mowed down would dry up and wither away and become shrivelled.”
+sn4.25:11.3 | P: evameva ussusseyya visusseyya milāyeyyā”ti. | T: (none)
+sn4.25:12.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and stood to one side. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached the Blessed One and stood to one side.
+sn4.25:12.2 | S: Māra’s daughter Craving addressed the Buddha in verse: | T: Standing to one side, Mara’s daughter Taṇha addressed the Blessed One in verse:
+sn4.25:13.1 | S: “Are you swamped by sorrow <j>that you meditate in the forest? | T: “Is it because you are sunk in sorrow That you meditate in the woods?
+sn4.25:13.2 | S: Have you lost a fortune, or do you long for one? | T: Because you’ve lost wealth or pine for it,
+sn4.25:13.3 | S: Or perhaps you’ve committed <j>some crime in the village? | T: Or committed some crime in the village?
+sn4.25:13.4 | S: Why don’t you get too close to people? | T: Why don’t you make friends with people?
+sn4.25:13.5 | S: And why does no one get close to you?” | T: Why don’t you form any intimate ties?”
+sn4.25:14.1 | S: “I’ve reached the goal, peace of heart. | T: The Blessed One:
+sn4.25:14.2 | S: Having conquered the army <j>of the likable and pleasant, | T: “Having conquered the army of the pleasant and agreeable,
+sn4.25:14.3 | S: alone, practicing absorption, I awakened to bliss. | T: Meditating alone, I discovered bliss, The attainment of the goal, the peace of the heart.
+sn4.25:14.4 | S: That’s why I don’t get too close to people, | T: Therefore I don’t make friends with people,
+sn4.25:14.5 | S: and no one gets too close to me.” | T: Nor will I form any intimate ties.”
+sn4.25:15.1 | S: Then Māra’s daughter Malignancy addressed the Buddha in verse: | T: Then Mara’s daughter Arati addressed the Blessed One in verse:
+sn4.25:16.1 | S: “How does a mendicant who has crossed five floods | T: “How does a bhikkhu here often dwell That, five floods crossed,
+sn4.25:16.2 | S: usually meditate here while crossing the sixth? | T: he here has crossed the sixth?
+sn4.25:16.3 | S: How do they usually practice absorption <j>so that sensual perceptions | T: How does he meditate so sensual perceptions
+sn4.25:16.4 | S: are blocked out and don’t get hold of them?” | T: Are kept at bay and fail to grip him?”
+sn4.25:17.1 | S: “With tranquil body and mind well freed, | T: The Blessed One: “Tranquil in body, in mind well liberated,
+sn4.25:17.2 | S: without making choices, mindful, homeless; | T: Not generating, mindful, homeless,
+sn4.25:17.3 | S: understanding the teaching, <j>they practice absorption without placing the mind; | T: Knowing Dhamma, meditating thought-free,
+sn4.25:17.4 | S: they’re not shaking or drifting or rigid. | T: He does not erupt, or drift, or stiffen.
+sn4.25:18.1 | S: That’s how a mendicant who has crossed five floods | T: “When a bhikkhu here often dwells thus, With five floods crossed,
+sn4.25:18.2 | S: usually meditates here while crossing the sixth. | T: he here has crossed the sixth.
+sn4.25:18.3 | S: That’s how they usually practice absorption <j>so that sensual perceptions | T: When he meditates thus, sensual perceptions
+sn4.25:18.4 | S: are blocked out and don’t get hold of them.” | T: Are kept at bay and fail to grip him.”
+sn4.25:19.1 | S: Then Māra’s daughter Lust addressed the Buddha in verse: | T: Then Mara’s daughter Raga addressed the Blessed One in verse:
+sn4.25:20.1 | S: “He lives with his community after cutting off craving, | T: “He has cut off craving, faring with his group and order;
+sn4.25:20.2 | S: and many of the faithful will cross over for sure. | T: Surely many other beings will cross.
+sn4.25:20.3 | S: Alas, this homeless one will snatch many men away, | T: Alas, this homeless one will snatch many people
+sn4.25:20.4 | S: and lead them past the King of Death!” | T: And lead them away beyond the King of Death.”
+sn4.25:21.1 | S: “The great heroes they lead | T: The Blessed One: “Truly the Tathagatas, the great heroes,
+sn4.25:21.2 | S: by means of the true teaching. | T: Lead by means of the true Dhamma.
+sn4.25:21.3 | S: When the Realized Ones are leading by the teaching, | T: When they are leading by means of the Dhamma,
+sn4.25:21.4 | S: how could anyone who knows be jealous?” | T: What envy can there be in those who understand?”
+sn4.25:22.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked. | T: Then Mara’s daughters—Taṇha, Arati, and Raga—approached Mara the Evil One.
+sn4.25:22.2 | S: Māra the Wicked saw them coming off in the distance, | T: Mara saw them coming in the distance
+sn4.25:22.3 | S: and addressed them in verse: | T: and addressed them in verses:
+sn4.25:23.1 | S: “Fools! You drill into a mountain | T: “Fools! You tried to batter a mountain
+sn4.25:23.2 | S: with lotus stalks! | T: With the stalks of lotus flowers,
+sn4.25:23.3 | S: You dig up a hill with your nails! | T: To dig up a mountain with your nails,
+sn4.25:23.4 | S: You chew iron with your teeth! | T: To chew iron with your teeth.
+sn4.25:24.1 | S: You seek a footing in the abyss, as it were, | T: (none)
+sn4.25:24.2 | S: while lifting a rock with your head! | T: “As if, having lifted a rock with your head, You sought a foothold in the abyss;
+sn4.25:24.3 | S: After attacking a stump with your breast, as it were, | T: As if you struck a stump with your breast,
+sn4.25:24.4 | S: you leave Gotama disappointed.” | T: You part from Gotama disappointed.”
+sn4.25:25.1 | S: They came dazzling— | T: They had come to him glittering with beauty—
+sn4.25:25.2 | S: Craving, Malignancy, and Lust. | T: Taṇha, Arati, and Raga—
+sn4.25:25.3 | S: But the Teacher brushed them off right there, | T: But the Teacher swept them away right there
+sn4.25:25.4 | S: like the gale, a fallen tuft. | T: As the wind, a fallen cotton tuft.
+sn4.25:25.5 | P: Tatiyo vaggo. | T: (none)
+sn4.25:26.0 | P: Tassuddānaṁ | T: (none)
+sn4.25:26.1 | P: Sambahulā samiddhi ca, | T: (none)
+sn4.25:26.2 | P: Godhikaṁ sattavassāni; | T: (none)
+sn4.25:26.3 | P: Dhītaraṁ desitaṁ buddha, | T: (none)
+sn4.25:26.4 | P: Seṭṭhena imaṁ mārapañcakanti. | T: (none)
+sn4.25:26.5 | S: The Linked Discourses with Māra are complete. | T: (none)
+
+## sn22.85
+sn22.85:1.1 | S: At one time Venerable Sāriputta was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Venerable Sāriputta was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn22.85:1.2 | S: Now at that time a mendicant named Yamaka had the following harmful misconception: | T: Now on that occasion the following pernicious view had arisen in a bhikkhu named Yamaka:
+sn22.85:1.3 | S: “As I understand the Buddha’s teaching, a mendicant who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death.” | T: “As I understand the Dhamma taught by the Blessed One, a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death.”
+sn22.85:2.1 | S: Several mendicants heard this rumour. | T: A number of bhikkhus heard that such a pernicious view had arisen in the bhikkhu Yamaka.
+sn22.85:2.2 | P: “tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi, yathā khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā”ti. | T: (none)
+sn22.85:2.3 | S: They went to Yamaka and exchanged greetings with him. | T: Then they approached the Venerable Yamaka and exchanged greetings with him,
+sn22.85:2.4 | S: When the greetings and polite conversation were over, they sat down to one side and said to him, | T: after which they sat down to one side and said to him:
+sn22.85:3.1 | S: “Is it really true, Reverend Yamaka, that you have such a harmful misconception: | T: “Is it true, friend Yamaka, that such a pernicious view as this has arisen in you:
+sn22.85:3.2 | S: ‘As I understand the Buddha’s teaching, a mendicant who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death’?” | T: ‘As I understand the Dhamma taught by the Blessed One, a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death’?”
+sn22.85:3.3 | S: “Yes, reverends, that’s how I understand the Buddha’s teaching.” | T: “Exactly so, friends. As I understand the Dhamma taught by the Blessed One,
+sn22.85:3.4 | P: ‘khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā’”ti. | T: a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death.”
+sn22.85:4.1 | S: “Don’t say that, Yamaka! Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that.” | T: “Friend Yamaka, do not speak thus. Do not misrepresent the Blessed One. It is not good to misrepresent the Blessed One. The Blessed One would not speak thus:
+sn22.85:4.2 | P: ‘khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā’”ti. | T: ‘A bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death.’”
+sn22.85:4.3 | S: But even though admonished by those mendicants, Yamaka obstinately stuck to that misconception and insisted on stating it. | T: Yet, although he was admonished by the bhikkhus in this way, the Venerable Yamaka still obstinately grasped that pernicious view, adhered to it, and declared:
+sn22.85:4.4 | P: “tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi, yathā khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā”ti. | T: “As I understand the Dhamma taught by the Blessed One, a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death.”
+sn22.85:5.1 | S: When those mendicants were unable to dissuade Yamaka from that misconception, they rose from their seats and went to see Venerable Sāriputta. They told him what had happened, and said, | T: Since those bhikkhus were unable to detach the Venerable Yamaka from that pernicious view, they rose from their seats, approached the Venerable Sāriputta, and told him all that had occurred, adding:
+sn22.85:5.2 | P: “yamakassa nāma, āvuso sāriputta, bhikkhuno evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+sn22.85:5.3 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā’ti. | T: (none)
+sn22.85:5.4 | S: “May Venerable Sāriputta please go to the mendicant Yamaka out of sympathy.” | T: “It would be good if the Venerable Sāriputta would approach the bhikkhu Yamaka out of compassion for him.”
+sn22.85:5.5 | S: Sāriputta consented with silence. | T: The Venerable Sāriputta consented by silence.
+sn22.85:5.6 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Yamaka and exchanged greetings with him. Seated to one side he said to Yamaka: | T: Then, in the evening, the Venerable Sāriputta emerged from seclusion. He approached the Venerable Yamaka and exchanged greetings with him, after which he sat down to one side and said to him:
+sn22.85:6.1 | S: “Is it really true, Reverend Yamaka, that you have such a harmful misconception: | T: “Is it true, friend Yamaka, that such a pernicious view as this has arisen in you:
+sn22.85:6.2 | S: ‘As I understand the Buddha’s teaching, a mendicant who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death’?” | T: ‘As I understand the Dhamma taught by the Blessed One, a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death’?”
+sn22.85:6.3 | S: “Yes, reverend, that’s how I understand the Buddha’s teaching.” | T: “Exactly so, friend.”
+sn22.85:7.1 | S: “What do you think, Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:7.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.85:7.3 | S: “Impermanent, reverend.” | T: “Impermanent, friend.”…—
+sn22.85:7.4 | S: “Is feeling …” … | T: (none)
+sn22.85:7.5 | S: “… perception …” … | T: (none)
+sn22.85:7.6 | S: “… choices …” … | T: (none)
+sn22.85:7.7 | S: “… consciousness permanent or impermanent?” | T: (none)
+sn22.85:7.8 | S: “Impermanent, reverend.” | T: (none)
+sn22.85:7.9 | S: “So you should truly see … | T: “Therefore …
+sn22.85:7.10 | S: Seeing this … | T: Seeing thus …
+sn22.85:7.11 | S: They understand: ‘… there is nothing further for this place.’ | T: He understands: ‘… there is no more for this state of being.’
+sn22.85:8.1 | S: What do you think, Reverend Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:8.2 | S: Do you consider that the label ‘realized one’ applies to form?” | T: do you regard form as the Tathagata?”—
+sn22.85:8.3 | S: “No, reverend.” | T: “No, friend.”—
+sn22.85:8.4 | S: “Do you consider that the label ‘realized one’ applies to feeling?” … | T: “Do you regard feeling …
+sn22.85:8.5 | P: “No hetaṁ, āvuso” … | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.85:8.6 | S: “… perception?” … | T: perception …
+sn22.85:8.7 | S: “… choices?” … | T: volitional formations …
+sn22.85:8.8 | S: “ … consciousness?” | T: consciousness as the Tathagata?”—
+sn22.85:8.9 | S: “No, reverend.” | T: “No, friend.”
+sn22.85:9.1 | S: “What do you think, Reverend Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:9.2 | S: Do you consider that the label ‘realized one’ applies in relation to form?” | T: do you regard the Tathagata as in form?”—
+sn22.85:9.3 | S: “No, reverend.” | T: “No, friend.”—
+sn22.85:9.4 | S: “Do you consider that the label ‘realized one’ applies apart from form?” | T: “Do you regard the Tathagata as apart from form?”—
+sn22.85:9.5 | S: “No, reverend.” | T: “No, friend.”—
+sn22.85:9.6 | S: “Do you consider that the label ‘realized one’ applies in relation to feeling?” … | T: “Do you regard the Tathagata as in feeling?
+sn22.85:9.7 | S: “… apart from feeling?” … | T: As apart from feeling?
+sn22.85:9.8 | S: “… in relation to perception?” … | T: As in perception?
+sn22.85:9.9 | S: “… apart from perception?” … | T: As apart from perception?
+sn22.85:9.10 | S: “… in relation to choices?” … | T: As in volitional formations?
+sn22.85:9.11 | S: “… apart from choices?” … | T: As apart from volitional formations?
+sn22.85:9.12 | S: “… in relation to consciousness?” … | T: As in consciousness?
+sn22.85:9.13 | P: “No hetaṁ, āvuso”. | T: (none)
+sn22.85:9.14 | S: “… apart from consciousness?” | T: As apart from consciousness?”—
+sn22.85:9.15 | S: “No, reverend.” | T: “No, friend.”
+sn22.85:10.1 | S: “What do you think, Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:10.2 | S: Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” | T: do you regard form, feeling, perception, volitional formations, and consciousness taken together as the Tathagata?”—
+sn22.85:10.3 | S: “No, reverend.” | T: “No, friend.”
+sn22.85:11.1 | S: “What do you think, Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:11.2 | S: Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” | T: do you regard the Tathagata as one who is without form, without feeling, without perception, without volitional formations, without consciousness?”—
+sn22.85:11.3 | S: “No, reverend.” | T: “No, friend.”
+sn22.85:11.4 | S: “In that case, Reverend Yamaka, since a realized one is not found by you as a genuine fact in this very life, is it cogent for you to declare: | T: “But, friend, when the Tathagata is not apprehended by you as real and actual here in this very life, is it fitting for you to declare:
+sn22.85:11.5 | S: ‘As I understand the Buddha’s teaching, a mendicant who has ended the defilements is annihilated and destroyed when their body breaks up, and doesn’t exist after death’?” | T: ‘As I understand the Dhamma taught by the Blessed One, a bhikkhu whose taints are destroyed is annihilated and perishes with the breakup of the body and does not exist after death’?”
+sn22.85:12.1 | S: “Reverend Sāriputta, in my ignorance, I used to have that misconception. | T: “Formerly, friend Sāriputta, when I was ignorant, I did hold that pernicious view,
+sn22.85:12.2 | S: But now that I’ve heard the teaching from Venerable Sāriputta, I’ve given up that misconception, and I’ve comprehended the teaching.” | T: but now that I have heard this Dhamma teaching of the Venerable Sāriputta I have abandoned that pernicious view and have made the breakthrough to the Dhamma.”
+sn22.85:13.1 | S: “Reverend Yamaka, suppose they were to ask you: | T: “If, friend Yamaka, they were to ask you:
+sn22.85:13.2 | S: ‘When their body breaks up, after death, what happens to a perfected one, who has ended the defilements?’ | T: ‘Friend Yamaka, when a bhikkhu is an arahant, one whose taints are destroyed, what happens to him with the breakup of the body, after death?’—
+sn22.85:13.3 | S: How would you answer?” | T: being asked thus, what would you answer?”
+sn22.85:13.4 | S: “Reverend, if they were to ask this, | T: “If they were to ask me this, friend,
+sn22.85:13.5 | P: ‘yo so, āvuso yamaka, bhikkhu arahaṁ khīṇāsavo so kāyassa bhedā paraṁ maraṇā kiṁ hotī’ti? | T: (none)
+sn22.85:13.6 | S: I’d answer like this: | T: I would answer thus:
+sn22.85:13.7 | S: ‘Reverend, form is impermanent. | T: ‘Friends, form is impermanent;
+sn22.85:13.8 | S: What’s impermanent is suffering. | T: what is impermanent is suffering;
+sn22.85:13.9 | S: What’s suffering has ceased and disappeared. | T: what is suffering has ceased and passed away.
+sn22.85:13.10 | S: Feeling … | T: Feeling …
+sn22.85:13.11 | S: perception … | T: Perception …
+sn22.85:13.12 | S: choices … | T: Volitional formations …
+sn22.85:13.13 | S: consciousness is impermanent. | T: Consciousness is impermanent;
+sn22.85:13.14 | S: What’s impermanent is suffering. | T: what is impermanent is suffering;
+sn22.85:13.15 | S: What’s suffering has ceased and disappeared.’ | T: what is suffering has ceased and passed away.’
+sn22.85:13.16 | S: That’s how I’d answer such a question.” | T: Being asked thus, friend, I would answer in such a way.”
+sn22.85:14.1 | S: “Good, good, Reverend Yamaka! | T: “Good, good, friend Yamaka!
+sn22.85:14.2 | S: Well then, I shall give you a simile to make the meaning even clearer. | T: Now, friend Yamaka, I will make up a simile for you in order to convey this same meaning even more clearly.
+sn22.85:14.3 | S: Suppose there was a householder or householder’s son who was rich, with a lot of money and great wealth, | T: Suppose, friend Yamaka, there was a householder or a householder’s son, a rich man, with much wealth and property,
+sn22.85:14.4 | S: and a bodyguard for protection. | T: protected by a bodyguard.
+sn22.85:14.5 | S: Then along comes a person who wants to harm, injure, and threaten him, and take his life. | T: Then some man would appear who wanted to ruin him, to harm him, to endanger him, to take his life.
+sn22.85:14.6 | S: They’d think: | T: It would occur to that man:
+sn22.85:14.7 | S: ‘This householder or householder’s son is rich, with a lot of money and great wealth, | T: ‘This householder or householder’s son is a rich man, with much wealth and property,
+sn22.85:14.8 | S: and a bodyguard for protection. | T: protected by a bodyguard.
+sn22.85:14.9 | S: It won’t be easy to take his life by force. | T: It won’t be easy to take his life by force.
+sn22.85:14.10 | S: Why don’t I get close to him, then take his life?’ | T: Let me get close to him and then take his life.’
+sn22.85:14.11 | S: So he goes up to that householder or householder’s son and says: | T: “Then he would approach that householder or householder’s son and say to him:
+sn22.85:14.12 | S: ‘Sir, I would serve you.’ | T: ‘I would serve you, sir.’
+sn22.85:14.13 | S: They would serve that householder or householder’s son. | T: Then the householder or householder’s son would appoint him as a servant. The man would serve him,
+sn22.85:14.14 | S: They’d get up before him and go to bed after him, and be obliging, behaving nicely and speaking politely. | T: rising up before him, retiring after him, doing whatever he wants, agreeable in his conduct, endearing in his speech.
+sn22.85:14.15 | S: The householder or householder’s son would consider them as a friend | T: The householder or householder’s son would consider him a friend,
+sn22.85:14.16 | S: and companion, | T: a bosom friend,
+sn22.85:14.17 | S: and come to trust them. | T: and he would place trust in him.
+sn22.85:14.18 | S: But when that person realizes that | T: But when the man becomes aware that
+sn22.85:14.19 | S: they’ve gained the trust of the householder or householder’s son, then, when they know he’s alone, they’d take his life with a sharp knife. | T: the householder or householder’s son has placed trust in him, then, finding him alone, he would take his life with a sharp knife.
+sn22.85:15.1 | S: What do you think, Yamaka? | T: “What do you think, friend Yamaka,
+sn22.85:15.2 | S: When that person went to the householder or householder’s son and offered to | T: when that man had approached that householder or householder’s son and said to him:
+sn22.85:15.3 | S: serve him, weren’t they a killer then, | T: ‘I would serve you, sir,’ wasn’t he a murderer even then,
+sn22.85:15.4 | S: though he didn’t know that | T: though the other did not recognize him as
+sn22.85:15.5 | S: this was his killer? | T: ‘my murderer’?
+sn22.85:15.6 | S: And when they got up before him and went to bed after him, being obliging, behaving nicely and speaking politely, weren’t they a killer then, | T: And when the man was serving him, rising up before him, retiring after him, doing whatever he wants, agreeable in his conduct, endearing in his speech, wasn’t he a murderer then too,
+sn22.85:15.7 | S: though he didn’t know that | T: though the other did not recognize him as
+sn22.85:15.8 | S: this was his killer? | T: ‘my murderer’?
+sn22.85:15.9 | S: And when, knowing he was alone, they took his life with a sharp knife, weren’t they a killer then, | T: And when the man came upon him while he was alone and took his life with a sharp knife, wasn’t he a murderer then too,
+sn22.85:15.10 | S: though he didn’t know that | T: though the other did not recognize him as
+sn22.85:15.11 | S: this was his killer?” | T: ‘my murderer’?”
+sn22.85:15.12 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn22.85:15.13 | S: “In the same way, an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “So too, friend Yamaka, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.85:15.14 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.85:15.15 | S: They regard feeling … | T: “He regards feeling as self …
+sn22.85:15.16 | S: perception … | T: perception as self …
+sn22.85:15.17 | S: choices … | T: volitional formations as self …
+sn22.85:15.18 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.85:16.1 | S: They don’t truly understand form—which is impermanent—as impermanent. | T: “He does not understand as it really is impermanent form as ‘impermanent form’ …
+sn22.85:16.2 | S: They don’t truly understand feeling … | T: impermanent feeling as ‘impermanent feeling’ …
+sn22.85:16.3 | S: perception … | T: impermanent perception as ‘impermanent perception’ …
+sn22.85:16.4 | S: choices … | T: impermanent volitional formations as ‘impermanent volitional formations’ …
+sn22.85:16.5 | S: consciousness—which is impermanent—as impermanent. | T: impermanent consciousness as ‘impermanent consciousness.’
+sn22.85:17.1 | S: They don’t truly understand form—which is suffering—as suffering. | T: “He does not understand as it really is painful form as ‘painful form’ …
+sn22.85:17.2 | S: They don’t truly understand feeling … | T: painful feeling as ‘painful feeling’ …
+sn22.85:17.3 | S: perception … | T: painful perception as ‘painful perception’ …
+sn22.85:17.4 | S: choices … | T: painful volitional formations as ‘painful volitional formations’ …
+sn22.85:17.5 | S: consciousness—which is suffering—as suffering. | T: painful consciousness as ‘painful consciousness.’
+sn22.85:18.1 | S: They don’t truly understand form—which is not-self—as not-self. | T: “He does not understand as it really is selfless form as ‘selfless form’ …
+sn22.85:18.2 | S: They don’t truly understand feeling … | T: selfless feeling as ‘selfless feeling’ …
+sn22.85:18.3 | S: perception … | T: selfless perception as ‘selfless perception’ …
+sn22.85:18.4 | S: choices … | T: selfless volitional formations as ‘selfless volitional formations’ …
+sn22.85:18.5 | S: consciousness—which is not-self—as not-self. | T: selfless consciousness as ‘selfless consciousness.’
+sn22.85:19.1 | S: They don’t truly understand form—which is conditioned—as conditioned. | T: “He does not understand as it really is conditioned form as ‘conditioned form’ …
+sn22.85:19.2 | S: They don’t truly understand feeling … | T: conditioned feeling as ‘conditioned feeling’ …
+sn22.85:19.3 | S: perception … | T: conditioned perception as ‘conditioned perception’ …
+sn22.85:19.4 | S: choices … | T: conditioned volitional formations as ‘conditioned volitional formations’ …
+sn22.85:19.5 | S: consciousness—which is conditioned—as conditioned. | T: conditioned consciousness as ‘conditioned consciousness.’
+sn22.85:20.1 | S: They don’t truly understand form—which is a killer—as a killer. | T: “He does not understand as it really is murderous form as ‘murderous form’ …
+sn22.85:20.2 | S: They don’t truly understand feeling … | T: murderous feeling as ‘murderous feeling’ …
+sn22.85:20.3 | S: perception … | T: murderous perception as ‘murderous perception’ …
+sn22.85:20.4 | S: choices … | T: murderous volitional formations as ‘murderous volitional formations’ …
+sn22.85:20.5 | S: consciousness—which is a killer—as a killer. | T: murderous consciousness as ‘murderous consciousness.’
+sn22.85:21.1 | S: They’re attracted to form, grasp it, and fixate on the thought, ‘my self’. | T: “He becomes engaged with form, clings to it, and takes a stand upon it as ‘my self.’
+sn22.85:21.2 | S: They’re attracted to feeling … | T: He becomes engaged with feeling …
+sn22.85:21.3 | S: perception … | T: with perception …
+sn22.85:21.4 | S: choices … | T: with volitional formations …
+sn22.85:21.5 | S: consciousness, grasp it, and fixate on the thought, ‘my self’. | T: with consciousness, clings to it, and takes a stand upon it as ‘my self.’
+sn22.85:21.6 | S: And when you’ve gotten involved with and grasped these five grasping aggregates, they lead to your lasting harm and suffering. | T: These same five aggregates of clinging, to which he becomes engaged and to which he clings, lead to his harm and suffering for a long time.
+sn22.85:22.1 | S: A learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “But, friend, the instructed noble disciple, who is a seer of the noble ones …
+sn22.85:22.2 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: does not regard form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.85:22.3 | S: They don’t regard feeling … | T: “He does not regard feeling as self …
+sn22.85:22.4 | S: perception … | T: perception as self …
+sn22.85:22.5 | S: choices … | T: volitional formations as self …
+sn22.85:22.6 | S: consciousness as self, self as having consciousness, | T: consciousness as self, or self as possessing consciousness,
+sn22.85:22.7 | S: consciousness in self, or self in consciousness. | T: or consciousness as in self, or self as in consciousness.
+sn22.85:23.1 | S: They truly understand form—which is impermanent—as impermanent. | T: “He understands as it really is impermanent form as ‘impermanent form’ …
+sn22.85:23.2 | S: They truly understand feeling … | T: (none)
+sn22.85:23.3 | S: perception … | T: (none)
+sn22.85:23.4 | S: choices … | T: (none)
+sn22.85:23.5 | S: consciousness—which is impermanent—as impermanent. | T: impermanent consciousness as ‘impermanent consciousness.’
+sn22.85:24.1 | S: They truly understand form—which is suffering—as suffering. | T: “He understands as it really is painful form as ‘painful form’ …
+sn22.85:24.2 | S: They truly understand feeling … | T: (none)
+sn22.85:24.3 | S: perception … | T: (none)
+sn22.85:24.4 | S: choices … | T: (none)
+sn22.85:24.5 | S: consciousness—which is suffering—as suffering. | T: painful consciousness as ‘painful consciousness.’
+sn22.85:25.1 | S: They truly understand form—which is not-self—as not-self. | T: “He understands as it really is selfless form as ‘selfless form’ …
+sn22.85:25.2 | S: They truly understand feeling … | T: (none)
+sn22.85:25.3 | S: perception … | T: (none)
+sn22.85:25.4 | S: choices … | T: (none)
+sn22.85:25.5 | S: consciousness—which is not-self—as not-self. | T: selfless consciousness as ‘selfless consciousness.’
+sn22.85:26.1 | S: They truly understand form—which is conditioned—as conditioned. | T: “He understands as it really is conditioned form as ‘conditioned form’ …
+sn22.85:26.2 | S: They truly understand feeling … | T: (none)
+sn22.85:26.3 | S: perception … | T: (none)
+sn22.85:26.4 | S: choices … | T: (none)
+sn22.85:26.5 | S: consciousness—which is conditioned—as conditioned. | T: conditioned consciousness as ‘conditioned consciousness. ’
+sn22.85:27.1 | S: They truly understand form—which is a killer—as a killer. | T: “He understands as it really is murderous form as ‘murderous form’ …
+sn22.85:27.2 | S: They truly understand feeling … | T: (none)
+sn22.85:27.3 | S: perception … | T: (none)
+sn22.85:27.4 | S: choices … | T: (none)
+sn22.85:27.5 | S: consciousness—which is a killer—as a killer. | T: murderous consciousness as ‘murderous consciousness.’
+sn22.85:28.1 | S: When it comes to form, they are not attracted, do not grasp, and do not fixate on the thought, ‘my self’. | T: “He does not become engaged with form, cling to it, and take a stand upon it as ‘my self.’
+sn22.85:28.2 | S: When it comes to feeling … | T: He does not become engaged with feeling …
+sn22.85:28.3 | S: When it comes to perception … | T: with perception …
+sn22.85:28.4 | S: When it comes to choices … | T: with volitional formations …
+sn22.85:28.5 | S: When it comes to consciousness, they are not attracted, do not grasp, and do not fixate on the thought, ‘my self’. | T: with consciousness, cling to it, and take a stand upon it as ‘my self.’
+sn22.85:28.6 | S: And when you’re not attracted to and don’t grasp these five grasping aggregates, they lead to your lasting welfare and happiness.” | T: These same five aggregates of clinging, to which he does not become engaged and to which he does not cling, lead to his welfare and happiness for a long time.”
+sn22.85:28.7 | S: “Reverend Sāriputta, this is how it is when you have such venerables as spiritual companions to advise and instruct you out of kindness and sympathy. | T: “So it is, friend Sāriputta, for those venerable ones who have such compassionate and benevolent brothers in the holy life to admonish and instruct them.
+sn22.85:28.8 | S: And after hearing this teaching by Venerable Sāriputta, my mind is freed from the defilements by not grasping.” | T: And now that I have heard this Dhamma teaching of the Venerable Sāriputta, my mind is liberated from the taints by nonclinging.” This is what the Venerable Sāriputta said. Elated, the Venerable Yamaka delighted in the Venerable Sāriputta’s statement.
+sn22.85:28.9 | P: Tatiyaṁ. | T: (none)
+
+## sn22.55
+sn22.55:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.55:1.2 | S: There the Buddha expressed this heartfelt sentiment: | T: There the Blessed One uttered this inspired utterance:
+sn22.55:1.3 | S: “‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: “‘It might not be, and it might not be for me; it will not be, and it will not be for me’:
+sn22.55:1.4 | S: A mendicant who makes such a resolution can cut off the lower fetters.” | T: resolving thus, a bhikkhu can cut off the lower fetters.”
+sn22.55:1.5 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain bhikkhu said to the Blessed One:
+sn22.55:1.6 | S: “But sir, how | T: “But how, venerable sir,
+sn22.55:1.7 | S: can a mendicant who makes such a resolution cut off the lower fetters?” | T: can a bhikkhu, resolving thus: ‘It might not be, and it might not be for me; it will not be, and it will not be for me,’ cut off the lower fetters?”
+sn22.55:2.1 | S: “Mendicant, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in their teaching. They’ve not seen true persons, and are neither skilled nor trained in their teaching. | T: “Here, bhikkhu, the uninstructed worldling, who is not a seer of the noble ones …
+sn22.55:2.2 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self …
+sn22.55:2.3 | S: They regard feeling … | T: (none)
+sn22.55:2.4 | S: perception … | T: (none)
+sn22.55:2.5 | S: choices … | T: (none)
+sn22.55:2.6 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: or self as in consciousness.
+sn22.55:3.1 | S: They don’t truly understand form—which is impermanent—as impermanent. | T: “He does not understand as it really is impermanent form as ‘impermanent form’ …
+sn22.55:3.2 | S: They don’t truly understand feeling … | T: impermanent feeling as ‘impermanent feeling’ …
+sn22.55:3.3 | S: perception … | T: impermanent perception as ‘impermanent perception’ …
+sn22.55:3.4 | S: choices … | T: impermanent volitional formations as ‘impermanent volitional formations’ …
+sn22.55:3.5 | S: consciousness—which is impermanent—as impermanent. | T: impermanent consciousness as ‘impermanent consciousness.’
+sn22.55:4.1 | S: They don’t truly understand form—which is suffering—as suffering. | T: “He does not understand as it really is painful form as ‘painful form’ …
+sn22.55:4.2 | S: They don’t truly understand feeling … | T: painful feeling as ‘painful feeling’ …
+sn22.55:4.3 | S: perception … | T: painful perception as ‘painful perception’ …
+sn22.55:4.4 | S: choices … | T: painful volitional formations as ‘painful volitional formations’ …
+sn22.55:4.5 | S: consciousness—which is suffering—as suffering. | T: painful consciousness as ‘painful consciousness.’
+sn22.55:5.1 | S: They don’t truly understand form—which is not-self—as not-self. | T: “He does not understand as it really is selfless form as ‘selfless form’ …
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.55:5.2 | S: They don’t truly understand feeling … | T: selfless feeling as ‘selfless feeling’ …
+sn22.55:5.3 | S: perception … | T: selfless perception as ‘selfless perception’ …
+sn22.55:5.4 | S: choices … | T: selfless volitional formations as ‘selfless volitional formations’ …
+sn22.55:5.5 | S: consciousness—which is not-self—as not-self. | T: selfless consciousness as ‘selfless consciousness.’
+sn22.55:6.1 | S: They don’t truly understand form—which is conditioned—as conditioned. | T: “He does not understand as it really is conditioned form as ‘conditioned form’ …
+sn22.55:6.2 | S: They don’t truly understand feeling … | T: conditioned feeling as ‘conditioned feeling’ …
+sn22.55:6.3 | S: perception … | T: conditioned perception as ‘conditioned perception’ …
+sn22.55:6.4 | S: choices … | T: conditioned volitional formations as ‘conditioned volitional formations’ …
+sn22.55:6.5 | S: consciousness—which is conditioned—as conditioned. | T: conditioned consciousness as ‘conditioned consciousness.’
+sn22.55:6.6 | S: They don’t truly understand that form will vanish. | T: “He does not understand as it really is: ‘Form will be exterminated’ …
+sn22.55:6.7 | S: They don’t truly understand that feeling … | T: ‘Feeling will be exterminated’ …
+sn22.55:6.8 | S: perception … | T: ‘Perception will be exterminated’ …
+sn22.55:6.9 | S: choices … | T: ‘Volitional formations will be exterminated’ …
+sn22.55:6.10 | S: consciousness will vanish. | T: ‘Consciousness will be exterminated.’
+sn22.55:7.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “The instructed noble disciple, bhikkhu, who is a seer of the noble ones …
+sn22.55:7.2 | S: They don’t regard form as self … | T: does not regard form as self …
+sn22.55:7.3 | S: They don’t regard feeling … | T: (none)
+sn22.55:7.4 | S: perception … | T: (none)
+sn22.55:7.5 | S: choices … | T: (none)
+sn22.55:7.6 | S: consciousness as self. | T: or self as in consciousness.
+sn22.55:8.1 | S: They truly understand form—which is impermanent—as impermanent. | T: “He understands as it really is impermanent form as ‘impermanent form’ …
+sn22.55:8.2 | S: They truly understand feeling … | T: (none)
+sn22.55:8.3 | S: perception … | T: (none)
+sn22.55:8.4 | S: choices … | T: (none)
+sn22.55:8.5 | S: consciousness—which is impermanent—as impermanent. | T: impermanent consciousness as ‘impermanent consciousness.’
+sn22.55:8.6 | S: They truly understand form … feeling … perception … choices … consciousness—which is suffering—as suffering. | T: “He understands as it really is painful form as ‘painful form’ … painful consciousness as ‘painful consciousness.’
+sn22.55:8.7 | S: They truly understand form … feeling … perception … choices … consciousness—which is not-self—as not-self. | T: “He understands as it really is selfless form as ‘selfless form’ … selfless consciousness as ‘selfless consciousness.’
+sn22.55:8.8 | S: They truly understand form … feeling … perception … choices … consciousness—which is conditioned—as conditioned. | T: “He understands as it really is conditioned form as ‘conditioned form’ … conditioned consciousness as ‘conditioned consciousness. ’
+sn22.55:8.9 | S: They truly understand that form will vanish. | T: “He understands as it really is: ‘Form will be exterminated’ …
+sn22.55:8.10 | S: They truly understand that feeling … | T: ‘Feeling will be exterminated’ …
+sn22.55:8.11 | S: perception … | T: ‘Perception will be exterminated’ …
+sn22.55:8.12 | S: choices … | T: ‘Volitional formations will be exterminated’ …
+sn22.55:8.13 | S: consciousness will vanish. | T: ‘Consciousness will be exterminated.’
+sn22.55:9.1 | S: It’s because of the vanishing of form, feeling, perception, choices, and consciousness that a mendicant who makes such a resolution— | T: “With the extermination of form, feeling, perception, volitional formations, and consciousness, that bhikkhu, resolving thus:
+sn22.55:9.2 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine’— | T: ‘It might not be, and it might not be for me; it will not be, and it will not be for me,’
+sn22.55:9.3 | S: can cut off the lower fetters.” | T: can cut off the lower fetters.”
+sn22.55:9.4 | S: “Sir, you say that a mendicant who makes such a resolution can cut off the lower fetters. | T: “Resolving thus, venerable sir, a bhikkhu can cut off the lower fetters.
+sn22.55:10.1 | S: But how are they to know and see in order to end the defilements without delay?” | T: But how should one know, how should one see, for the immediate destruction of the taints to occur?”
+sn22.55:10.2 | S: “Mendicant, an unlearned ordinary person worries about things that aren’t a worry. | T: “Here, bhikkhu, the uninstructed worldling becomes frightened over an unfrightening matter.
+sn22.55:10.3 | S: For an unlearned ordinary person worries: | T: For this is frightening to the uninstructed worldling:
+sn22.55:10.4 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It might not be, and it might not be for me; it will not be, and it will not be for me.’
+sn22.55:11.1 | S: A learned noble disciple doesn’t worry about things that aren’t a worry. | T: But the instructed noble disciple does not become frightened over an unfrightening matter.
+sn22.55:11.2 | S: For a learned noble disciple doesn’t worry: | T: For this is not frightening to the noble disciple:
+sn22.55:11.3 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It might not be, and it might not be for me; it will not be, and it will not be for me.’
+sn22.55:11.4 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Consciousness, bhikkhu, while standing, might stand engaged with form …
+sn22.55:11.5 | S: Or should consciousness involved with feeling remain … | T: engaged with feeling …
+sn22.55:11.6 | S: Or should consciousness involved with perception remain … | T: engaged with perception …
+sn22.55:11.7 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: engaged with volitional formations; based upon volitional formations, established upon volitional formations, with a sprinkling of delight, it might come to growth, increase, and expansion.
+sn22.55:12.1 | S: Suppose, mendicant, you were to say: | T: “Bhikkhu, though someone might say:
+sn22.55:12.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘Apart from form, apart from feeling, apart from perception, apart from volitional formations, I will make known the coming and going of consciousness, its passing away and rebirth, its growth, increase, and expansion’—that is impossible.
+sn22.55:13.1 | S: If a mendicant has given up greed for the form element, the support is cut off, and there is no establishment of consciousness. | T: “Bhikkhu, if a bhikkhu has abandoned lust for the form element, with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.55:13.2 | S: If a mendicant has given up greed for the feeling element … | T: If he has abandoned lust for the feeling element …
+sn22.55:13.3 | S: perception element … | T: for the perception element …
+sn22.55:13.4 | S: choices element … | T: for the volitional formations element …
+sn22.55:13.5 | S: consciousness element, the support is cut off, and there is no establishment of consciousness. | T: for the consciousness element, with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.55:13.6 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: “When that consciousness is unestablished, not coming to growth, nongenerative, it is liberated.
+sn22.55:13.7 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: By being liberated, it is steady; by being steady, it is content; by being content, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn22.55:13.8 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn22.55:13.9 | S: The ending of the defilements without delay is for one who knows and sees this.” | T: “It is, bhikkhu, for one who knows thus, for one who sees thus, that the immediate destruction of the taints occurs.”
+sn22.55:13.10 | P: Tatiyaṁ. | T: (none)
+
+
+codex
+I’ve read the full batch. I found clear shifts in the past/future/present passage and the list of women’s forms. I’m checking the verse passages before writing the findings.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-024.findings.tmp <<'EOF'
+sn56.3:1.2 starts: Whatever clansmen in the future will rightly
+sn56.3:1.3 starts: Whatever clansmen at present have rightly gone
+sn4.25:7.4 starts: in the form of a hundred women
+sn4.25:8.4 starts: in the form of a hundred women
+sn4.25:8.9 starts: in the form of a hundred women
+sn4.25:9.4 starts: in the form of a hundred old
+sn4.25:24.1 starts: “As if, having lifted a rock with
+sn4.25:24.2 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+28,795
+8 lines reported.

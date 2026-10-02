@@ -1,0 +1,415 @@
+## sn22.1
+sn22.1:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.1:1.2 | S: At one time the Buddha was staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. | T: On one occasion the Blessed One was dwelling among the Bhaggas at Suṁsumaragira in the Bhesakaḷa Grove, the Deer Park.
+sn22.1:1.3 | S: Then the householder Nakula’s father went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the householder Nakulapita approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn22.1:2.1 | S: “Sir, I’m an old man, elderly and senior. I’m advanced in years and have reached the final stage of life. My body is ailing and I’m constantly unwell. | T: “I am old, venerable sir, aged, burdened with years, advanced in life, come to the last stage, afflicted in body, often ill.
+sn22.1:2.2 | S: I hardly ever get to see the esteemed mendicants. | T: I rarely get to see the Blessed One and the bhikkhus worthy of esteem.
+sn22.1:2.3 | S: May the Buddha please advise me | T: Let the Blessed One exhort me, venerable sir,
+sn22.1:2.4 | S: and instruct me. | T: let him instruct me,
+sn22.1:2.5 | S: It will be for my lasting welfare and happiness.” | T: since that would lead to my welfare and happiness for a long time.”
+sn22.1:3.1 | S: “That’s so true, householder! That’s so true, householder! | T: “So it is, householder, so it is!
+sn22.1:3.2 | S: For this body is ailing, swaddled in its shell. | T: This body of yours is afflicted, weighed down, encumbered.
+sn22.1:3.3 | S: If anyone dragging around this body claimed to be healthy even for an hour, what is that but foolishness? | T: If anyone carrying around this body were to claim to be healthy even for a moment, what is that due to other than foolishness?
+sn22.1:3.4 | S: So you should train like this: | T: Therefore, householder, you should train yourself thus:
+sn22.1:3.5 | S: ‘Though my body is ailing, my mind will be healthy.’ | T: ‘Even though I am afflicted in body, my mind will be unafflicted.’
+sn22.1:3.6 | S: That’s how you should train.” | T: Thus should you train yourself.”
+sn22.1:4.1 | S: And then the householder Nakula’s father approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right. Then he went up to Venerable Sāriputta, bowed, and sat down to one side. Sāriputta said to him: | T: Then the householder Nakulapita, having delighted and rejoiced in the Blessed One’s statement, rose from his seat and, having paid homage to the Blessed One, keeping him on his right, he approached the Venerable Sāriputta. Having paid homage to the Venerable Sāriputta, he sat down to one side, and the Venerable Sāriputta then said to him:
+sn22.1:4.2 | S: “Householder, your faculties are so very clear, | T: “Householder, your faculties are serene,
+sn22.1:4.3 | S: and your complexion is pure and bright. | T: your facial complexion is pure and bright.
+sn22.1:4.4 | S: Did you get to hear a Dhamma talk in the Buddha’s presence today?” | T: Did you get to hear a Dhamma talk today in the presence of the Blessed One?”
+sn22.1:5.1 | S: “What else, sir, could it be? | T: “Why not, venerable sir?
+sn22.1:5.2 | S: Just now the Buddha anointed me with the deathless ambrosia of a Dhamma talk.” | T: Just now I was anointed by the Blessed One with the ambrosia of a Dhamma talk.”
+sn22.1:5.3 | S: “But with what kind of ambrosial Dhamma talk did the Buddha anoint you?” | T: “With what kind of ambrosia of a Dhamma talk did the Blessed One anoint you, householder?”
+sn22.1:5.4 | S: So Nakula’s father told Sāriputta all that had happened, and said, | T: “Here, venerable sir, I approached the Blessed One…. The householder Nakulapita repeats his entire conversation with the Buddha.
+sn22.1:5.5 | P: ‘ahamasmi, bhante, jiṇṇo vuḍḍho mahallako addhagato vayoanuppatto āturakāyo abhikkhaṇātaṅko. | T: (none)
+sn22.1:5.6 | P: Aniccadassāvī kho panāhaṁ, bhante, bhagavato manobhāvanīyānañca bhikkhūnaṁ. | T: (none)
+sn22.1:5.7 | P: Ovadatu maṁ, bhante, bhagavā; | T: (none)
+sn22.1:5.8 | P: anusāsatu maṁ, bhante, bhagavā; | T: (none)
+sn22.1:5.9 | P: yaṁ mamassa dīgharattaṁ hitāya sukhāyā’ti. | T: (none)
+sn22.1:6.1 | P: Evaṁ vutte, maṁ, bhante, bhagavā etadavoca: | T: (none)
+sn22.1:6.2 | P: ‘evametaṁ, gahapati, evametaṁ, gahapati. | T: (none)
+sn22.1:6.3 | P: Āturo hāyaṁ, gahapati, kāyo aṇḍabhūto pariyonaddho. | T: (none)
+sn22.1:6.4 | P: Yo hi, gahapati, imaṁ kāyaṁ pariharanto muhuttampi ārogyaṁ paṭijāneyya, kimaññatra bālyā? | T: (none)
+sn22.1:6.5 | P: Tasmātiha te, gahapati, evaṁ sikkhitabbaṁ— | T: (none)
+sn22.1:6.6 | P: āturakāyassa me sato cittaṁ anāturaṁ bhavissatīti. | T: (none)
+sn22.1:6.7 | P: Evañhi te, gahapati, sikkhitabban’ti. | T: (none)
+sn22.1:6.8 | S: “That’s the ambrosial Dhamma talk with which I was anointed by the Buddha.” | T: “It was with the ambrosia of such a Dhamma talk, venerable sir, that the Blessed One anointed me.”
+sn22.1:7.1 | S: “But didn’t you feel the need to ask the Buddha the further question: | T: “Didn’t it occur to you, householder, to question the Blessed One further as to how one is afflicted in body and afflicted in mind,
+sn22.1:7.2 | S: ‘Sir, how do you define someone ailing in body and ailing in mind, and someone ailing in body and healthy in mind’?” | T: and how one is afflicted in body but not afflicted in mind?”
+sn22.1:7.3 | S: “Sir, we would travel a long way to learn the meaning of this statement in the presence of Venerable Sāriputta. | T: “We would come from far away, venerable sir, to learn the meaning of this statement from the Venerable Sāriputta.
+sn22.1:7.4 | S: May Venerable Sāriputta himself please clarify the meaning of this.” | T: It would be good indeed if the Venerable Sāriputta would clear up the meaning of this statement.”
+sn22.1:8.1 | S: “Well then, householder, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, householder, I will speak.”
+sn22.1:8.2 | S: “Yes, sir,” replied Nakula’s father. | T: “Yes, venerable sir,” the householder Nakulapita replied.
+sn22.1:8.3 | S: Sāriputta said this: | T: The Venerable Sāriputta said this:
+sn22.1:9.1 | S: “And how is one ailing in body and ailing in mind? | T: “How, householder, is one afflicted in body and afflicted in mind?
+sn22.1:9.2 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the qualities of a noble one. They’ve not seen true persons, and are neither skilled nor trained in the qualities of a true person. | T: Here, householder, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.1:9.3 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.1:9.4 | S: They’re obsessed with the thought: ‘I am form, form is mine!’ | T: He lives obsessed by the notions: ‘I am form, form is mine.’ As he lives obsessed by these notions,
+sn22.1:9.5 | S: But that form of theirs decays and perishes, | T: that form of his changes and alters. With the change and alteration of form,
+sn22.1:9.6 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:10.1 | S: They regard feeling as self, self as having feeling, feeling in self, or self in feeling. | T: “He regards feeling as self, or self as possessing feeling, or feeling as in self, or self as in feeling.
+sn22.1:10.2 | S: They’re obsessed with the thought: ‘I am feeling, feeling is mine!’ | T: He lives obsessed by the notions: ‘I am feeling, feeling is mine.’ As he lives obsessed by these notions,
+sn22.1:10.3 | S: But that feeling of theirs decays and perishes, | T: that feeling of his changes and alters. With the change and alteration of feeling,
+sn22.1:10.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:11.1 | S: They regard perception as self, self as having perception, perception in self, or self in perception. | T: “He regards perception as self, or self as possessing perception, or perception as in self, or self as in perception.
+sn22.1:11.2 | S: They’re obsessed with the thought: ‘I am perception, perception is mine!’ | T: He lives obsessed by the notions: ‘I am perception, perception is mine.’ As he lives obsessed by these notions,
+sn22.1:11.3 | S: But that perception of theirs decays and perishes, | T: that perception of his changes and alters. With the change and alteration of perception,
+sn22.1:11.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:12.1 | S: They regard choices as self, self as having choices, choices in self, or self in choices. | T: “He regards volitional formations as self, or self as possessing volitional formations, or volitional formations as in self, or self as in volitional formations.
+sn22.1:12.2 | S: They’re obsessed with the thought: ‘I am choices, choices are mine!’ | T: He lives obsessed by the notions: ‘I am volitional formations, volitional formations are mine.’ As he lives obsessed by these notions,
+sn22.1:12.3 | S: But those choices of theirs decay and perish, | T: those volitional formations of his change and alter. With the change and alteration of volitional formations,
+sn22.1:12.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:13.1 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He regards consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.1:13.2 | S: They’re obsessed with the thought: ‘I am consciousness, consciousness is mine!’ | T: He lives obsessed by the notions: ‘I am consciousness, consciousness is mine.’ As he lives obsessed by these notions,
+sn22.1:13.3 | S: But that consciousness of theirs decays and perishes, | T: that consciousness of his changes and alters. With the change and alteration of consciousness,
+sn22.1:13.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:13.5 | S: That’s how one is ailing in body and ailing in mind. | T: “It is in such a way, householder, that one is afflicted in body and afflicted in mind.
+sn22.1:14.1 | S: And how is one ailing in body and healthy in mind? | T: “And how, householder, is one afflicted in body but not afflicted in mind?
+sn22.1:14.2 | S: It’s when a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: Here, householder, the instructed noble disciple, who is a seer of the noble ones and is skilled and disciplined in their Dhamma, who is a seer of superior persons and is skilled and disciplined in their Dhamma,
+sn22.1:14.3 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: does not regard form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.1:14.4 | S: They’re not obsessed with the thought: ‘I am form, form is mine!’ | T: He does not live obsessed by the notions: ‘I am form, form is mine.’ As he lives unobsessed by these notions,
+sn22.1:14.5 | S: So when that form of theirs decays and perishes, | T: that form of his changes and alters. With the change and alteration of form,
+sn22.1:14.6 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:15.1 | S: They don’t regard feeling as self, self as having feeling, feeling in self, or self in feeling. | T: “He does not regard feeling as self, or self as possessing feeling, or feeling as in self, or self as in feeling.
+sn22.1:15.2 | S: They’re not obsessed with the thought: ‘I am feeling, feeling is mine!’ | T: He does not live obsessed by the notions: ‘I am feeling, feeling is mine.’ As he lives unobsessed by these notions,
+sn22.1:15.3 | S: So when that feeling of theirs decays and perishes, | T: that feeling of his changes and alters. With the change and alteration of feeling,
+sn22.1:15.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:16.1 | S: They don’t regard perception as self, self as having perception, perception in self, or self in perception. | T: “He does not regard perception as self, or self as possessing perception, or perception as in self, or self as in perception.
+sn22.1:16.2 | S: They’re not obsessed with the thought: ‘I am perception, perception is mine!’ | T: He does not live obsessed by the notions: ‘I am perception, perception is mine.’ As he lives unobsessed by these notions,
+sn22.1:16.3 | S: So when that perception of theirs decays and perishes, | T: that perception of his changes and alters. With the change and alteration of perception,
+sn22.1:16.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:17.1 | S: They don’t regard choices as self, self as having choices, choices in self, or self in choices. | T: “He does not regard volitional formations as self, or self as possessing volitional formations, or volitional formations as in self, or self as in volitional formations.
+sn22.1:17.2 | S: They’re not obsessed with the thought: ‘I am choices, choices are mine!’ | T: He does not live obsessed by the notions: ‘I am volitional formations, volitional formations are mine.’ As he lives unobsessed by these notions,
+sn22.1:17.3 | S: So when those choices of theirs decay and perish, | T: those volitional formations of his change and alter. With the change and alteration of volitional formations,
+sn22.1:17.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:18.1 | S: They don’t regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He does not regard consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.1:18.2 | S: They’re not obsessed with the thought: ‘I am consciousness, consciousness is mine!’ | T: He does not live obsessed by the notions: ‘I am consciousness, consciousness is mine.’ As he lives unobsessed by these notions,
+sn22.1:18.3 | S: So when that consciousness of theirs decays and perishes, | T: that consciousness of his changes and alters. With the change and alteration of consciousness,
+sn22.1:18.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.1:18.5 | S: That’s how an individual is ailing in body and healthy in mind.” | T: “It is in such a way, householder, that one is afflicted in body but not afflicted in mind.”
+sn22.1:19.1 | S: That is what Venerable Sāriputta said. | T: This is what the Venerable Sāriputta said.
+sn22.1:19.2 | S: Satisfied, Nakula’s father approved what Sāriputta said. | T: Elated, the householder Nakulapita delighted in the Venerable Sāriputta’s statement.
+sn22.1:19.3 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.20
+sn22.20:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.20:1.2 | S: “Mendicants, form is not-self. | T: “Bhikkhus, form is nonself.
+sn22.20:1.3 | S: The cause and reason that gives rise to form is also not-self. | T: The cause and condition for the arising of form is also nonself.
+sn22.20:1.4 | S: Since form is produced by what is not-self, how could it be self? | T: As form has originated from what is nonself, how could it be self?
+sn22.20:1.5 | S: Feeling is not-self … | T: “Feeling is nonself….
+sn22.20:1.6 | S: Perception is not-self … | T: Perception is nonself….
+sn22.20:1.7 | S: Choices are not-self … | T: Volitional formations are nonself….
+sn22.20:1.8 | S: Consciousness is not-self. | T: Consciousness is nonself.
+sn22.20:1.9 | S: The cause and reason that gives rise to consciousness is also not-self. | T: The cause and condition for the arising of consciousness is also nonself.
+sn22.20:1.10 | S: Since consciousness is produced by what is not-self, how could it be self? | T: As consciousness has originated from what is nonself, how could it be self?
+sn22.20:1.11 | S: Seeing this … | T: “Seeing thus …
+sn22.20:1.12 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn22.20:1.13 | P: Navamaṁ. | T: (none)
+
+## sn22.21
+sn22.21:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.21:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn22.21:1.3 | S: “Sir, they speak of ‘cessation’. | T: “Venerable sir, it is said, ‘cessation, cessation.’
+sn22.21:1.4 | S: The cessation of what things does this refer to?” | T: Through the cessation of what things is cessation spoken of?”
+sn22.21:1.5 | S: “Ānanda, form is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. | T: “Form, Ānanda, is impermanent, conditioned, dependently arisen, subject to destruction, to vanishing, to fading away, to cessation.
+sn22.21:1.6 | S: Its cessation is what ‘cessation’ refers to. | T: Through its cessation, cessation is spoken of.
+sn22.21:1.7 | S: Feeling … | T: “Feeling is impermanent …
+sn22.21:1.8 | P: Tassā nirodho ‘nirodho’ti vuccati. | T: (none)
+sn22.21:1.9 | S: Perception … | T: Perception is impermanent …
+sn22.21:1.10 | S: Choices … | T: Volitional formations are impermanent …
+sn22.21:1.11 | P: Tesaṁ nirodho ‘nirodho’ti vuccati. | T: …
+sn22.21:1.12 | S: Consciousness is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. | T: Consciousness is impermanent, conditioned, dependently arisen, subject to destruction, to vanishing, to fading away, to cessation.
+sn22.21:1.13 | S: Its cessation is what ‘cessation’ refers to. | T: Through its cessation, cessation is spoken of.
+sn22.21:1.14 | S: When they speak of ‘cessation’, its the cessation of these things that this refers to.” | T: “It is through the cessation of these things, Ānanda, that cessation is spoken of.”
+sn22.21:1.15 | P: Dasamaṁ. | T: (none)
+sn22.21:1.16 | P: Aniccavaggo dutiyo. | T: (none)
+sn22.21:2.0 | P: Tassuddānaṁ | T: (none)
+sn22.21:2.1 | P: Aniccaṁ dukkhaṁ anattā, | T: (none)
+sn22.21:2.2 | P: yadaniccāpare tayo; | T: (none)
+sn22.21:2.3 | P: Hetunāpi tayo vuttā, | T: (none)
+sn22.21:2.4 | P: ānandena ca te dasāti. | T: (none)
+
+## sn22.22
+sn22.22:1.1 | S: At Sāvatthī. | T: At Savatthi…. There the Blessed One said this:
+sn22.22:1.2 | S: “Mendicants, I will teach you the burden, the bearer of the burden, the taking up of the burden, and the putting down of the burden. | T: “Bhikkhus, I will teach you the burden, the carrier of the burden, the taking up of the burden, and the laying down of the burden.
+sn22.22:1.3 | S: Listen … | T: Listen to that….
+sn22.22:1.4 | S: And what is the burden? | T: “And what, bhikkhus, is the burden?
+sn22.22:1.5 | S: The five grasping aggregates, it should be said. | T: It should be said: the five aggregates subject to clinging.
+sn22.22:1.6 | S: What five? | T: What five?
+sn22.22:1.7 | S: The grasping aggregates of form, feeling, perception, choices, and consciousness. | T: The form aggregate subject to clinging, the feeling aggregate subject to clinging, the perception aggregate subject to clinging, the volitional formations aggregate subject to clinging, the consciousness aggregate subject to clinging.
+sn22.22:1.8 | S: This is called the burden. | T: This is called the burden.
+sn22.22:2.1 | S: And who is the bearer of the burden? | T: “And what, bhikkhus, is the carrier of the burden?
+sn22.22:2.2 | S: The individual, it should be said; | T: It should be said: the person,
+sn22.22:2.3 | S: the venerable of such name and such clan. | T: this venerable one of such a name and clan.
+sn22.22:2.4 | S: This is called the bearer of the burden. | T: This is called the carrier of the burden.
+sn22.22:3.1 | S: And what is the taking up of the burden? | T: “And what, bhikkhus, is the taking up of the burden?
+sn22.22:3.2 | S: It’s the craving that leads to future lives, mixed up with relishing and greed, taking pleasure there wherever it alights. That is, | T: It is this craving that leads to renewed existence, accompanied by delight and lust, seeking delight here and there; that is,
+sn22.22:3.3 | S: craving for sensual pleasures, craving for continued existence, and craving for nonexistence. | T: craving for sensual pleasures, craving for existence, craving for extermination.
+sn22.22:3.4 | S: This is called the taking up of the burden. | T: This is called the taking up of the burden.
+sn22.22:4.1 | S: And what is the putting down of the burden? | T: “And what, bhikkhus, is the laying down of the burden?
+sn22.22:4.2 | S: It’s the fading away and cessation of that very same craving no residue left behind; giving it away, letting it go, releasing it, and not clinging to it. | T: It is the remainderless fading away and cessation of that same craving, the giving up and relinquishing of it, freedom from it, non-reliance on it.
+sn22.22:4.3 | S: This is called the putting down of the burden.” | T: This is called the laying down of the burden.”
+sn22.22:5.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn22.22:5.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn22.22:6.1 | S: “The five aggregates are indeed burdens, | T: “The five aggregates are truly burdens,
+sn22.22:6.2 | S: and the individual is the bearer of the burden. | T: The burden-carrier is the person.
+sn22.22:6.3 | S: Taking up the burden is suffering in the world, | T: Taking up the burden is suffering in the world,
+sn22.22:6.4 | S: and putting the burden down is happiness. | T: Laying the burden down is blissful.
+sn22.22:7.1 | S: When the heavy burden is put down | T: Having laid the heavy burden down
+sn22.22:7.2 | S: without taking up another, | T: Without taking up another burden,
+sn22.22:7.3 | S: one who has plucked out craving, root and all, | T: Having drawn out craving with its root,
+sn22.22:7.4 | S: is hungerless, quenched.” | T: One is free from hunger, fully quenched.”
+sn22.22:7.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.23
+sn22.23:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.23:1.2 | S: “Mendicants, I will teach you the things that should be completely understood, and complete understanding. | T: “Bhikkhus, I will teach you things that should be fully understood and also full understanding.
+sn22.23:1.3 | S: Listen … | T: Listen to that….
+sn22.23:1.4 | S: And what things should be completely understood? | T: “And what, bhikkhus, are the things that should be fully understood?
+sn22.23:1.5 | S: Form, feeling, perception, choices, and consciousness. | T: Form, bhikkhus, is something that should be fully understood; feeling … perception … volitional formations … consciousness is something that should be fully understood.
+sn22.23:1.6 | S: These are called the things that should be completely understood. | T: These are called the things that should be fully understood.
+sn22.23:1.7 | S: And what is complete understanding? | T: “And what, bhikkhus, is full understanding?
+sn22.23:1.8 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion.
+sn22.23:1.9 | S: This is called complete understanding.” | T: This is called full understanding.”
+sn22.23:1.10 | P: Dutiyaṁ. | T: (none)
+
+## sn22.24
+sn22.24:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.24:1.2 | S: “Mendicants, without directly knowing and completely understanding form, without dispassion for it and giving it up, you can’t end suffering. | T: “Bhikkhus, without directly knowing and fully understanding form, without becoming dispassionate towards it and abandoning it, one is incapable of destroying suffering.
+sn22.24:1.3 | S: Without directly knowing and completely understanding feeling … | T: Without directly knowing and fully understanding feeling …
+sn22.24:1.4 | S: perception … | T: perception …
+sn22.24:1.5 | S: choices … | T: volitional formations …
+sn22.24:1.6 | S: consciousness, without dispassion for it and giving it up, you can’t end suffering. | T: consciousness, without becoming dispassionate towards it and abandoning it, one is incapable of destroying suffering.
+sn22.24:1.7 | S: By directly knowing and completely understanding form, having dispassion for it and giving it up, you can end suffering. | T: “Bhikkhus, by directly knowing and fully understanding form, by becoming dispassionate towards it and abandoning it, one is capable of destroying suffering.
+sn22.24:1.8 | S: By directly knowing and completely understanding feeling … | T: By directly knowing and fully understanding feeling …
+sn22.24:1.9 | S: perception … | T: perception …
+sn22.24:1.10 | S: choices … | T: volitional formations …
+sn22.24:1.11 | S: consciousness, having dispassion for it and giving it up, you can end suffering.” | T: consciousness, by becoming dispassionate towards it and abandoning it, one is capable of destroying suffering.”
+sn22.24:1.12 | P: Tatiyaṁ. | T: (none)
+
+## sn22.25
+sn22.25:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.25:1.2 | S: “Mendicants, give up desire and greed for form. | T: “Bhikkhus, abandon desire and lust for form.
+sn22.25:1.3 | S: Thus that form will be given up, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that form will be abandoned, cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn22.25:1.4 | S: Give up desire and greed for feeling … | T: “Abandon desire and lust for feeling …
+sn22.25:1.5 | P: Evaṁ sā vedanā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none)
+sn22.25:1.6 | S: perception … | T: for perception …
+sn22.25:1.7 | P: Evaṁ sā saññā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none)
+sn22.25:1.8 | S: choices … | T: for volitional formations …
+sn22.25:1.9 | P: Evaṁ te saṅkhārā pahīnā bhavissanti ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none)
+sn22.25:1.10 | S: consciousness. | T: for consciousness.
+sn22.25:1.11 | S: Thus that consciousness will be given up, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future.” | T: Thus that consciousness will be abandoned, cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.”
+sn22.25:1.12 | P: Catutthaṁ. | T: (none)
+
+## sn22.26
+sn22.26:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.26:1.2 | S: “Mendicants, before my awakening—when I was still unawakened but intent on awakening—I thought: | T: “Bhikkhus, before my enlightenment, while I was still a bodhisatta, not yet fully enlightened, it occurred to me:
+sn22.26:1.3 | S: ‘What’s the gratification, the drawback, and the escape when it comes to form … | T: ‘What is the gratification, what is the danger, what is the escape in the case of form?
+sn22.26:1.4 | S: feeling … | T: What is the gratification, what is the danger, what is the escape in the case of feeling …
+sn22.26:1.5 | S: perception … | T: perception …
+sn22.26:1.6 | S: choices … | T: volitional formations …
+sn22.26:1.7 | S: and consciousness?’ | T: consciousness?’
+sn22.26:1.8 | S: Then it occurred to me: | T: “Then, bhikkhus, it occurred to me:
+sn22.26:1.9 | S: ‘The pleasure and happiness that arise from form: this is its gratification. | T: ‘The pleasure and joy that arise in dependence on form: this is the gratification in form.
+sn22.26:1.10 | S: That form is impermanent, suffering, and perishable: this is its drawback. | T: That form is impermanent, suffering, and subject to change: this is the danger in form.
+sn22.26:1.11 | S: Removing and giving up desire and greed for form: this is its escape. | T: The removal and abandonment of desire and lust for form: this is the escape from form.
+sn22.26:1.12 | S: The pleasure and happiness that arise from feeling … | T: “‘The pleasure and joy that arise in dependence on feeling …
+sn22.26:1.13 | P: Yaṁ vedanā aniccā dukkhā vipariṇāmadhammā, ayaṁ vedanāya ādīnavo. | T: (none)
+sn22.26:1.14 | P: Yo vedanāya chandarāgavinayo chandarāgappahānaṁ, idaṁ vedanāya nissaraṇaṁ. | T: (none)
+sn22.26:1.15 | S: perception … | T: in dependence on perception …
+sn22.26:1.16 | S: choices … | T: in dependence on volitional formations …
+sn22.26:1.17 | P: Yaṁ saṅkhārā aniccā dukkhā vipariṇāmadhammā, ayaṁ saṅkhārānaṁ ādīnavo. | T: (none)
+sn22.26:1.18 | P: Yo saṅkhāresu chandarāgavinayo chandarāgappahānaṁ, idaṁ saṅkhārānaṁ nissaraṇaṁ. | T: (none)
+sn22.26:1.19 | S: consciousness: this is its gratification. | T: in dependence on consciousness: this is the gratification in consciousness.
+sn22.26:1.20 | S: That consciousness is impermanent, suffering, and perishable: this is its drawback. | T: That consciousness is impermanent, suffering, and subject to change: this is the danger in consciousness.
+sn22.26:1.21 | S: Removing and giving up desire and greed for consciousness: this is its escape.’ | T: The removal and abandonment of desire and lust for consciousness: this is the escape from consciousness.’
+sn22.26:2.1 | S: As long as I didn’t truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “So long, bhikkhus, as I did not directly know as they really are the gratification, the danger, and the escape in the case of these five aggregates subject to clinging, I did not claim to have awakened to the unsurpassed perfect enlightenment in this world with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans.
+sn22.26:2.2 | S: But when I did truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I directly knew all this as it really is, then I claimed to have awakened to the unsurpassed perfect enlightenment in this world with … its devas and humans.
+sn22.26:2.3 | P: athāhaṁ, bhikkhave, sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddhoti paccaññāsiṁ. | T: (none)
+sn22.26:2.4 | S: Knowledge and vision arose in me: | T: “The knowledge and vision arose in me:
+sn22.26:2.5 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unshakable is my liberation of mind; this is my last birth; now there is no more renewed existence.’”
+sn22.26:2.6 | P: Pañcamaṁ. | T: (none)
+
+## sn22.31
+sn22.31:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.31:1.2 | S: “Mendicants, I will teach you gloom and the root of gloom. | T: “Bhikkhus, I will teach you misery and the root of misery.
+sn22.31:1.3 | S: Listen … | T: Listen to that….
+sn22.31:1.4 | S: And what is gloom? | T: “And what, bhikkhus, is misery?
+sn22.31:1.5 | S: Form, feeling, perception, choices, and consciousness are gloom. | T: Form is misery; feeling is misery; perception is misery; volitional formations are misery; consciousness is misery.
+sn22.31:1.6 | S: This is called gloom. | T: This is called misery.
+sn22.31:1.7 | S: And what is the root of gloom? | T: “And what, bhikkhus, is the root of misery?
+sn22.31:1.8 | S: It’s the craving that leads to future lives, mixed up with relishing and greed, taking pleasure there wherever it alights. That is, | T: It is this craving that leads to renewed existence, accompanied by delight and lust, seeking delight here and there; that is,
+sn22.31:1.9 | S: craving for sensual pleasures, craving for continued existence, and craving for nonexistence. | T: craving for sensual pleasures, craving for existence, craving for extermination.
+sn22.31:1.10 | S: This is called the root of gloom.” | T: This is called the root of misery.”
+sn22.31:1.11 | P: Dasamaṁ. | T: (none)
+
+## sn22.32
+sn22.32:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.32:1.2 | S: “Mendicants, I will teach you what is brittle and what is not brittle. | T: “Bhikkhus, I will teach you the fragile and the unfragile.
+sn22.32:1.3 | S: Listen … | T: Listen to that….
+sn22.32:1.4 | S: And what is brittle? What is not brittle? | T: “And what, bhikkhus, is the fragile, and what the unfragile?
+sn22.32:1.5 | S: Form is brittle, | T: Form is the fragile;
+sn22.32:1.6 | S: but its cessation, settling, and disappearance is not brittle. | T: its cessation, subsiding, passing away is the unfragile.
+sn22.32:1.7 | S: Feeling … | T: Feeling is the fragile …
+sn22.32:1.8 | P: Yo tassā nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. | T: (none)
+sn22.32:1.9 | S: perception … | T: Perception is the fragile …
+sn22.32:1.10 | S: choices … | T: Volitional formations are the fragile …
+sn22.32:1.11 | P: Yo tesaṁ nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. | T: (none)
+sn22.32:1.12 | S: consciousness is brittle, | T: Consciousness is the fragile;
+sn22.32:1.13 | S: but its cessation, settling, and disappearance is not brittle.” | T: its cessation, subsiding, passing away is the unfragile.”
+sn22.32:1.14 | P: Ekādasamaṁ. | T: (none)
+sn22.32:1.15 | P: Bhāravaggo tatiyo. | T: (none)
+sn22.32:2.0 | P: Tassuddānaṁ | T: (none)
+sn22.32:2.1 | P: Bhāraṁ pariññaṁ abhijānaṁ, | T: (none)
+sn22.32:2.2 | P: chandarāgaṁ catutthakaṁ; | T: (none)
+sn22.32:2.3 | P: Assādā ca tayo vuttā, | T: (none)
+sn22.32:2.4 | P: abhinandanamaṭṭhamaṁ; | T: (none)
+sn22.32:2.5 | P: Uppādaṁ aghamūlañca, | T: (none)
+sn22.32:2.6 | P: ekādasamo pabhaṅgūti. | T: (none)
+
+## sn22.39
+sn22.39:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.39:1.2 | S: “Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. | T: “Bhikkhus, when a bhikkhu is practising in accordance with the Dhamma, this is what accords with the Dhamma:
+sn22.39:1.3 | S: They should live full of disillusionment for form, feeling, perception, choices, and consciousness. | T: he should dwell engrossed in revulsion towards form, feeling, perception, volitional formations, and consciousness.
+sn22.39:1.4 | S: Living in this way, they completely understand form, feeling, perception, choices, and consciousness. | T: One who dwells engrossed in revulsion towards form … and consciousness, fully understands form, feeling, perception, volitional formations, and consciousness.
+sn22.39:1.5 | S: Completely understanding form, feeling, perception, choices, and consciousness, they’re freed from these things. | T: One who fully understands form … and consciousness is freed from form, feeling, perception, volitional formations, and consciousness.
+sn22.39:1.6 | S: They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They’re freed from suffering, I say.” | T: He is freed from birth, aging, and death; freed from sorrow, lamentation, pain, displeasure, and despair; freed from suffering, I say.”
+sn22.39:1.7 | P: Sattamaṁ. | T: (none)
+
+## sn22.40
+sn22.40:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.40:1.2 | S: “Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing impermanence in form, feeling, perception, choices, and consciousness. … | T: “Bhikkhus, when a bhikkhu is practising in accordance with the Dhamma, this is what accords with the Dhamma: he should dwell contemplating impermanence in form … as above …
+sn22.40:1.3 | S: They’re freed from suffering, I say.” | T: he is freed from suffering, I say.”
+sn22.40:1.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.41
+sn22.41:1.1 | S: At Sāvatthī. | T: …
+sn22.41:1.2 | S: “Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing suffering in form, feeling, perception, choices, and consciousness. … | T: “he should dwell contemplating suffering in form … as above …
+sn22.41:1.3 | S: They’re freed from suffering, I say.” | T: he is freed from suffering, I say.”
+sn22.41:1.4 | P: Navamaṁ. | T: (none)
+
+## sn22.42
+sn22.42:1.1 | S: At Sāvatthī. | T: …
+sn22.42:1.2 | S: “Mendicants, when a mendicant is practicing in line with the teaching, this is what’s in line with the teaching. They should meditate observing not-self in form, feeling, perception, choices, and consciousness. … | T: “he should dwell contemplating nonself in form … as above …
+sn22.42:1.3 | S: They’re freed from suffering, I say.” | T: he is freed from suffering, I say.”
+sn22.42:1.4 | P: Dasamaṁ. | T: (none)
+sn22.42:1.5 | P: Natumhākavaggo catuttho. | T: (none)
+sn22.42:2.0 | P: Tassuddānaṁ | T: (none)
+sn22.42:2.1 | P: Natumhākena dve vuttā, | T: (none)
+sn22.42:2.2 | P: bhikkhūhi apare duve; | T: (none)
+sn22.42:2.3 | P: Ānandena ca dve vuttā, | T: (none)
+sn22.42:2.4 | P: anudhammehi dve dukāti. | T: (none)
+
+## sn22.43
+sn22.43:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.43:1.2 | S: “Mendicants, be your own island, your own refuge, with no other refuge. Let the teaching be your island and your refuge, with no other refuge. | T: “Bhikkhus, dwell with yourselves as an island, with yourselves as a refuge, with no other refuge; with the Dhamma as an island, with the Dhamma as a refuge, with no other refuge. When you dwell with yourselves as an island, with yourselves as a refuge, with no other refuge; with the Dhamma as an island, with the Dhamma as a refuge, with no other refuge,
+sn22.43:1.3 | S: When you live like this, you should examine rationally: ‘From what are sorrow, lamentation, pain, sadness, and distress born and produced?’ | T: the basis itself should be investigated thus: ‘From what are sorrow, lamentation, pain, displeasure, and despair born? How are they produced?’
+sn22.43:2.1 | S: And, mendicants, from what are sorrow, lamentation, pain, sadness, and distress born and produced? | T: “And, bhikkhus, from what are sorrow, lamentation, pain, displeasure, and despair born? How are they produced?
+sn22.43:2.2 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: Here, bhikkhus, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.43:2.3 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.43:2.4 | S: But that form of theirs decays and perishes, | T: That form of his changes and alters. With the change and alteration of form,
+sn22.43:2.5 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.43:2.6 | S: They regard feeling as self … | T: “He regards feeling as self …
+sn22.43:2.7 | P: Tassa sā vedanā vipariṇamati, aññathā ca hoti. | T: (none)
+sn22.43:2.8 | P: Tassa vedanāvipariṇāmaññathābhāvā uppajjanti sokaparideva …pe… pāyāsā. | T: (none)
+sn22.43:2.9 | S: They regard perception as self … | T: perception as self …
+sn22.43:2.10 | S: They regard choices as self … | T: volitional formations as self …
+sn22.43:2.11 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.43:2.12 | S: But that consciousness of theirs decays and perishes, | T: That consciousness of his changes and alters. With the change and alteration of consciousness,
+sn22.43:2.13 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.43:3.1 | S: Sorrow, lamentation, pain, sadness, and distress are given up when you understand the impermanence of form—its perishing, fading away, and cessation—and you truly see with right understanding that all form, whether past or present, is impermanent, suffering, and perishable. | T: “But, bhikkhus, when one has understood the impermanence of form, its change, fading away, and cessation, and when one sees as it really is with correct wisdom thus: ‘In the past and also now all form is impermanent, suffering, and subject to change,’ then sorrow, lamentation, pain, displeasure, and despair are abandoned.
+sn22.43:3.2 | S: When these things are given up there’s no anxiety. Without anxiety you live happily. A mendicant who lives happily is said to be quenched in that respect. | T: With their abandonment, one does not become agitated. Being unagitated, one dwells happily. A bhikkhu who dwells happily is said to be quenched in that respect.
+sn22.43:3.3 | S: Sorrow, lamentation, pain, sadness, and distress are given up when you understand the impermanence of feeling … | T: “When one has understood the impermanence of feeling …
+sn22.43:3.4 | P: Tesaṁ pahānā na paritassati, aparitassaṁ sukhaṁ viharati, sukhavihārī bhikkhu ‘tadaṅganibbuto’ti vuccati. | T: (none)
+sn22.43:3.5 | S: perception … | T: of perception …
+sn22.43:3.6 | S: choices … | T: of volitional formations …
+sn22.43:3.7 | P: Tesaṁ pahānā na paritassati, aparitassaṁ sukhaṁ viharati, sukhavihārī bhikkhu ‘tadaṅganibbuto’ti vuccati. | T: (none)
+sn22.43:3.8 | S: consciousness—its perishing, fading away, and cessation—and you truly see with right understanding that all consciousness, whether past or present, is impermanent, suffering, and perishable. | T: of consciousness, its change, fading away, and cessation, and when one sees as it really is with correct wisdom thus: ‘In the past and also now all consciousness is impermanent, suffering, and subject to change,’
+sn22.43:3.9 | S: When these things are given up there’s no anxiety. Without anxiety you live happily. A mendicant who lives happily is said to be quenched in that respect.” | T: then sorrow, lamentation, pain, displeasure, and despair are abandoned. With their abandonment, one does not become agitated. Being unagitated, one dwells happily. A bhikkhu who dwells happily is said to be quenched in that respect.”
+sn22.43:3.10 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.44
+sn22.44:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.44:1.2 | S: “Mendicants, I will teach you the practice that leads to the origin of substantial reality and the practice that leads to the cessation of substantial reality. | T: “Bhikkhus, I will teach you the way leading to the origination of identity and the way leading to the cessation of identity.
+sn22.44:1.3 | S: Listen … | T: Listen to that….
+sn22.44:1.4 | S: And what is the practice that leads to the origin of substantial reality? | T: “And what, bhikkhus, is the way leading to the origination of identity?
+sn22.44:1.5 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: Here, bhikkhus, the uninstructed worldling …
+sn22.44:1.6 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self …
+sn22.44:1.7 | S: They regard feeling as self … | T: feeling as self …
+sn22.44:1.8 | S: They regard perception as self … | T: perception as self …
+sn22.44:1.9 | S: They regard choices as self … | T: volitional formations as self …
+sn22.44:1.10 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self … or self as in consciousness.
+sn22.44:1.11 | S: This is called the practice that leads to the origin of substantial reality. | T: This, bhikkhus, is called the way leading to the origination of identity.
+sn22.44:1.12 | S: And that’s why it’s called a way of regarding things that leads to the origin of suffering. | T: When it is said, ‘The way leading to the origination of identity,’ the meaning here is this: a way of regarding things that leads to the origination of suffering.
+sn22.44:1.13 | P: Ayamevettha attho. | T: (none)
+sn22.44:2.1 | S: And what is the practice that leads to the cessation of substantial reality? | T: “And what, bhikkhus, is the way leading to the cessation of identity?
+sn22.44:2.2 | S: It’s when a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: Here, bhikkhus, the instructed noble disciple …
+sn22.44:2.3 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: does not regard form as self …
+sn22.44:2.4 | S: They don’t regard feeling as self … | T: nor feeling as self …
+sn22.44:2.5 | S: They don’t regard perception as self … | T: nor perception as self …
+sn22.44:2.6 | S: They don’t regard choices as self … | T: nor volitional formations as self …
+sn22.44:2.7 | S: They don’t regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: nor consciousness as self … nor self as in consciousness.
+sn22.44:2.8 | S: This is called the practice that leads to the cessation of substantial reality. | T: This, bhikkhus, is called the way leading to the cessation of identity.
+sn22.44:2.9 | S: And that’s why it’s called a way of regarding things that leads to the cessation of suffering.” | T: When it is said, ‘The way leading to the cessation of identity,’ the meaning here is this: a way of regarding things that leads to the cessation of suffering.”
+sn22.44:2.10 | P: Ayamevettha attho”ti. | T: (none)
+sn22.44:2.11 | P: Dutiyaṁ. | T: (none)
+
+## sn22.45
+sn22.45:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.45:1.2 | S: “Mendicants, form is impermanent. | T: “Bhikkhus, form is impermanent.
+sn22.45:1.3 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn22.45:1.4 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn22.45:1.5 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.45:1.6 | S: Seeing truly with right understanding like this, the mind becomes dispassionate and freed from defilements by not grasping. | T: When one sees this thus as it really is with correct wisdom, the mind becomes dispassionate and is liberated from the taints by nonclinging.
+sn22.45:1.7 | S: Feeling is impermanent … | T: “Feeling is impermanent….
+sn22.45:1.8 | S: Perception … | T: Perception is impermanent….
+sn22.45:1.9 | S: Choices … | T: Volitional formations are impermanent….
+sn22.45:1.10 | S: Consciousness is impermanent. | T: Consciousness is impermanent.
+sn22.45:1.11 | S: What’s impermanent is suffering. | T: What is impermanent is suffering.
+sn22.45:1.12 | S: What’s suffering is not-self. | T: What is suffering is nonself.
+sn22.45:1.13 | S: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ | T: What is nonself should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.45:1.14 | S: Seeing truly with right understanding like this, the mind becomes dispassionate and freed from defilements by not grasping. | T: When one sees this thus as it really is with correct wisdom, the mind becomes dispassionate and is liberated from the taints by nonclinging.
+sn22.45:1.15 | S: If a mendicant’s mind is dispassionate toward the form element, the feeling element, | T: “If, bhikkhus, a bhikkhu’s mind has become dispassionate towards the form element, it is liberated from the taints by nonclinging. If his mind has become dispassionate towards the feeling element …
+sn22.45:1.16 | S: the perception element, | T: towards the perception element …
+sn22.45:1.17 | S: the choices element, | T: towards the volitional formations element …
+sn22.45:1.18 | S: and the consciousness element, it’s freed from defilements by not grasping. | T: towards the consciousness element, it is liberated from the taints by nonclinging.
+sn22.45:1.19 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: “By being liberated, it is steady; by being steady, it is content; by being content, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn22.45:1.20 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.45:1.21 | P: Tatiyaṁ. | T: (none)
+
+## sn22.47
+sn22.47:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.47:1.2 | S: “Mendicants, whatever ascetics and brahmins regard various kinds of things as self, all regard the five grasping aggregates, or one of them. | T: “Bhikkhus, those ascetics and brahmins who regard anything as self in various ways all regard as self the five aggregates subject to clinging, or a certain one among them.
+sn22.47:1.3 | S: What five? | T: What five? “Here,
+sn22.47:1.4 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: bhikkhus, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.47:1.5 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.47:1.6 | S: They regard feeling … | T: He regards feeling as self …
+sn22.47:1.7 | S: perception … | T: perception as self …
+sn22.47:1.8 | S: choices … | T: volitional formations as self …
+sn22.47:1.9 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.47:2.1 | S: So they’re not rid of this way of regarding things, and the conceit ‘I am’. | T: “Thus this way of regarding things and the notion ‘I am’ have not vanished in him.
+sn22.47:2.2 | S: As long as they’re not rid of the conceit ‘I am’, the five faculties are conceived— | T: As ‘I am’ has not vanished, there takes place a descent of the five faculties—
+sn22.47:2.3 | S: the eye, ear, nose, tongue, and body. | T: of the eye faculty, the ear faculty, the nose faculty, the tongue faculty, the body faculty.
+sn22.47:2.4 | S: The mind, ideas, and the element of ignorance are all present. | T: There is, bhikkhus, the mind, there are mental phenomena, there is the element of ignorance.
+sn22.47:2.5 | S: Struck by feelings born of contact with ignorance, an unlearned ordinary person thinks ‘I am’, | T: When the uninstructed worldling is contacted by a feeling born of ignorance-contact, ‘I am’ occurs to him;
+sn22.47:2.6 | S: ‘I am this’, | T: ‘I am this’ occurs to him;
+sn22.47:2.7 | S: ‘I will be’, | T: ‘I will be’ and
+sn22.47:2.8 | S: ‘I will not be’, | T: ‘I will not be,’ and
+sn22.47:2.9 | S: ‘I will have form’, | T: ‘I will consist of form’ and
+sn22.47:2.10 | S: ‘I will be formless’, | T: ‘I will be formless,’ and
+sn22.47:2.11 | S: ‘I will be percipient’, | T: ‘I will be percipient’ and
+sn22.47:2.12 | S: ‘I will not be percipient’, | T: ‘I will be nonpercipient’ and
+sn22.47:2.13 | S: ‘I will be neither percipient nor non-percipient’. | T: ‘I will be neither percipient nor nonpercipient’—these occur to him.
+sn22.47:3.1 | S: The five faculties stay right where they are. | T: “The five faculties remain right there, bhikkhus,
+sn22.47:3.2 | S: But a learned noble disciple gives up ignorance about them and gives rise to knowledge. | T: but in regard to them the instructed noble disciple abandons ignorance and arouses true knowledge.
+sn22.47:3.3 | S: With the fading away of ignorance and the arising of knowledge, they don’t think ‘I am’, | T: With the fading away of ignorance and the arising of true knowledge, ‘I am’ does not occur to him;
+sn22.47:3.4 | S: ‘I am this’, | T: ‘I am this’ does not occur to him;
+sn22.47:3.5 | S: ‘I will be’, | T: ‘I will be’ and
+sn22.47:3.6 | S: ‘I will not be’, | T: ‘I will not be,’ and
+sn22.47:3.7 | S: ‘I will have form’, | T: ‘I will consist of form’ and
+sn22.47:3.8 | S: ‘I will be formless’, | T: ‘I will be formless,’ and
+sn22.47:3.9 | S: ‘I will be percipient’, | T: ‘I will be percipient’ and
+sn22.47:3.10 | S: ‘I will be non-percipient’, | T: ‘I will be nonpercipient’ and
+sn22.47:3.11 | S: ‘I will be neither percipient nor non-percipient’.” | T: ‘I will be neither percipient nor nonpercipient’—these do not occur to him.”
+sn22.47:3.12 | P: Pañcamaṁ. | T: (none)
+

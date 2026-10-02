@@ -1,0 +1,422 @@
+## an3.68
+an3.68:1.1 | S: “Mendicants, if wanderers of other religions were to ask: | T: “Monks, if you are asked by wanderers of other sects,
+an3.68:1.2 | S: ‘There are these three things. | T: ‘Friends, there are these three qualities.
+an3.68:1.3 | S: What three? | T: Which three?
+an3.68:1.4 | S: Greed, hate, and delusion. | T: Passion, aversion, & delusion.
+an3.68:1.5 | S: These are the three things. | T: These are the three qualities.
+an3.68:1.6 | S: What’s the difference between them?’ | T: Now what is the difference, what the distinction, what the distinguishing factor among these three qualities?’—
+an3.68:1.7 | S: How would you answer them?” | T: when thus asked, how would you answer those wanderers of other sects?”
+an3.68:1.8 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+an3.68:1.9 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “In that case, monks, listen & pay close attention. I will speak.”
+an3.68:1.10 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+an3.68:1.11 | S: The Buddha said this: | T: The Blessed One said,
+an3.68:2.1 | S: “Mendicants, if wanderers of other religions were to ask: | T: “Monks, if you are asked by wanderers of other sects,
+an3.68:2.2 | S: ‘There are these three things. | T: ‘Friends, there are these three qualities.
+an3.68:2.3 | S: What three? | T: Which three?
+an3.68:2.4 | S: Greed, hate, and delusion. | T: Passion, aversion, & delusion.
+an3.68:2.5 | S: These are the three things. | T: These are the three qualities.
+an3.68:2.6 | S: What’s the difference between them?’ | T: Now what is the difference, what the distinction, what the distinguishing factor among these three qualities?’—
+an3.68:2.7 | S: You should answer them: | T: when thus asked, you should answer those wanderers of other sects in this way,
+an3.68:2.8 | S: ‘Greed, reverends, is mildly blameworthy, but slow to fade away. Hate is very blameworthy, but quick to fade away. Delusion is very blameworthy, and slow to fade away.’ | T: ‘Friends, passion carries little blame and is slow to fade. Aversion carries great blame and is quick to fade. Delusion carries great blame and is slow to fade.
+an3.68:3.1 | S: And if they ask: ‘What is the cause, what is the reason why greed arises, and once arisen it increases and grows?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen passion arises, or arisen passion tends to growth & abundance?’
+an3.68:3.2 | S: You should say: ‘The feature of beauty. | T: ‘The theme of the attractive,’ it should be said.
+an3.68:3.3 | S: When you apply the mind irrationally to the feature of beauty, greed arises, and once arisen it increases and grows. | T: ‘For one who attends inappropriately to the theme of the attractive, unarisen passion arises and arisen passion tends to growth & abundance.…’
+an3.68:3.4 | S: This is the cause, this is the reason why greed arises, and once arisen it increases and grows.’ | T: (none)
+an3.68:4.1 | S: And if they ask: ‘What is the cause, what is the reason why hate arises, and once arisen it increases and grows?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen aversion arises, or arisen aversion tends to growth & abundance?’
+an3.68:4.2 | S: You should say: ‘The feature of aversion. | T: ‘The theme of irritation,’ it should be said.
+an3.68:4.3 | S: When you apply the mind irrationally to the feature of aversion, hate arises, and once arisen it increases and grows. | T: ‘For one who attends inappropriately to the theme of irritation, unarisen aversion arises and arisen aversion tends to growth & abundance.…’
+an3.68:4.4 | S: This is the cause, this is the reason why hate arises, and once arisen it increases and grows.’ | T: (none)
+an3.68:5.1 | S: And if they ask: ‘What is the cause, what is the reason why delusion arises, and once arisen it increases and grows?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen delusion arises, or arisen delusion tends to growth & abundance?’
+an3.68:5.2 | S: You should say: ‘Irrational application of mind. | T: ‘Inappropriate attention,’ it should be said.
+an3.68:5.3 | S: When you apply the mind irrationally, delusion arises, and once arisen it increases and grows. | T: ‘For one who attends inappropriately, unarisen delusion arises and arisen delusion tends to growth & abundance.…’
+an3.68:5.4 | S: This is the cause, this is the reason why delusion arises, and once arisen it increases and grows.’ | T: (none)
+an3.68:6.1 | S: And if they ask, ‘What is the cause, what is the reason why greed doesn’t arise, or if it’s already arisen it’s given up?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen passion does not arise, or arisen passion is abandoned?’
+an3.68:6.2 | S: You should say: ‘The feature of ugliness. | T: ‘The theme of the unattractive’ it should be said.
+an3.68:6.3 | S: When you apply the mind rationally on the ugly feature of things, greed doesn’t arise, or if it’s already arisen it’s given up. | T: ‘For one who attends appropriately to the theme of the unattractive, unarisen passion does not arise and arisen passion is abandoned.…’
+an3.68:6.4 | S: This is the cause, this is the reason why greed doesn’t arise, or if it’s already arisen it’s given up.’ | T: (none)
+an3.68:7.1 | S: And if they ask, ‘What is the cause, what is the reason why hate doesn’t arise, or if it’s already arisen it’s given up?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen aversion does not arise, or arisen aversion is abandoned?’
+an3.68:7.2 | S: You should say: ‘The heart’s release by love. | T: ‘Goodwill as an awareness-release,’ it should be said.
+an3.68:7.3 | S: When you apply the mind rationally on the heart’s release by love, hate doesn’t arise, or if it’s already arisen it’s given up. | T: ‘For one who attends appropriately to goodwill as an awareness-release, unarisen aversion does not arise and arisen aversion is abandoned.…’
+an3.68:7.4 | S: This is the cause, this is the reason why hate doesn’t arise, or if it’s already arisen it’s given up.’ | T: (none)
+an3.68:8.1 | S: And if they ask, ‘What is the cause, what is the reason why delusion doesn’t arise, or if it’s already arisen it’s given up?’ | T: “(Then if they ask,) ‘But what, friends, is the reason, what the cause, why unarisen delusion does not arise, or arisen delusion is abandoned?’
+an3.68:8.2 | S: You should say: ‘Rational application of mind. | T: ‘Appropriate attention,’ it should be said.
+an3.68:8.3 | S: When you apply the mind rationally, delusion doesn’t arise, or if it’s already arisen it’s given up. | T: ‘For one who attends appropriately, unarisen delusion does not arise and arisen delusion is abandoned.
+an3.68:8.4 | S: This is the cause, this is the reason why delusion doesn’t arise, or if it’s already arisen it’s given up.’” | T: This is the reason, this the cause, why unarisen delusion does not arise and arisen delusion is abandoned.’”
+an3.68:8.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.43
+an5.43:1.1 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Anāthapiṇḍika the householder went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him:
+an5.43:2.1 | S: “Householder, these five things, which are likable, desirable, and agreeable are hard to get in the world. | T: “These five things, householder, are welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.2 | S: What five? | T: Which five?
+an5.43:2.3 | S: Long life, | T: “Long life is welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.4 | S: beauty, | T: “Beauty is welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.5 | S: happiness, | T: “Happiness is welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.6 | S: fame, | T: “Status is welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.7 | S: and heaven. | T: “Rebirth in heaven is welcome, agreeable, pleasant, & hard to obtain in the world.
+an5.43:2.8 | S: These are the five things, which are likable, desirable, and agreeable, but hard to get in the world. | T: (none)
+an5.43:3.1 | S: And I say that these five things are not got by supplication or wishing for them. | T: “Now, I tell you, these five things are not to be obtained by reason of prayers or wishes.
+an5.43:3.2 | S: If they were, who would lack them? | T: If they were to be obtained by reason of prayers or wishes, who here would lack them?
+an5.43:4.1 | S: A noble disciple who wants to live long ought not pray for it, or hope for it, or pine for it. | T: It’s not fitting for the disciple of the noble ones who desires long life to pray for it or to delight in doing so.
+an5.43:4.2 | S: Instead, they should practice the way that leads to long life. | T: Instead, the disciple of the noble ones who desires long life should follow the path of practice leading to long life.
+an5.43:4.3 | S: For by practicing that way they gain long life | T: In so doing, he will attain long life,
+an5.43:4.4 | S: as a god or a human being. | T: either human or divine.
+an5.43:5.1 | S: A noble disciple who wants to be beautiful ought not pray for it, or hope for it, or pine for it. | T: “It’s not fitting for the disciple of the noble ones who desires beauty to pray for it or to delight in doing so.
+an5.43:5.2 | S: Instead, they should practice the way that leads to beauty. | T: Instead, the disciple of the noble ones who desires beauty should follow the path of practice leading to beauty.
+an5.43:5.3 | S: For by practicing that way they gain beauty | T: In so doing, he will attain beauty,
+an5.43:5.4 | S: as a god or a human being. | T: either human or divine.
+an5.43:6.1 | S: A noble disciple who wants to be happy ought not pray for it, or hope for it, or pine for it. | T: “It’s not fitting for the disciple of the noble ones who desires happiness to pray for it or to delight in doing so.
+an5.43:6.2 | S: Instead, they should practice the way that leads to happiness. | T: Instead, the disciple of the noble ones who desires happiness should follow the path of practice leading to happiness.
+an5.43:6.3 | S: For by practicing that way they gain happiness | T: In so doing, he will attain happiness,
+an5.43:6.4 | S: as a god or a human being. | T: either human or divine.
+an5.43:7.1 | S: A noble disciple who wants to be famous ought not pray for it, or hope for it, or pine for it. | T: “It’s not fitting for the disciple of the noble ones who desires status to pray for it or to delight in doing so.
+an5.43:7.2 | S: Instead, they should practice the way that leads to fame. | T: Instead, the disciple of the noble ones who desires status should follow the path of practice leading to status.
+an5.43:7.3 | S: For by practicing that way they gain fame | T: In so doing, he will attain status,
+an5.43:7.4 | S: as a god or a human being. | T: either human or divine.
+an5.43:8.1 | S: A noble disciple who wants to go to heaven ought not pray for it, or hope for it, or pine for it. | T: “It’s not fitting for the disciple of the noble ones who desires rebirth in heaven to pray for it or to delight in doing so.
+an5.43:8.2 | S: Instead, they should practice the way that leads to heaven. | T: Instead, the disciple of the noble ones who desires rebirth in heaven should follow the path of practice leading to rebirth in heaven.
+an5.43:8.3 | S: For by practicing that way they gain heaven, | T: In so doing, he will attain rebirth in heaven.”
+an5.43:8.4 | S: they are one who gains the heavens. | T: (none)
+an5.43:9.1 | S: For one who desires lofty delights | T: (none)
+an5.43:9.2 | S: again and again— | T: (none)
+an5.43:9.3 | S: long life, beauty, fame and reputation, | T: Long life, beauty, status, honor,
+an5.43:9.4 | S: heaven, and an eminent family— | T: heaven, high birth: To those who delight in aspiring for these things in great measure, continuously,
+an5.43:10.1 | S: the astute praise diligence | T: the wise praise heedfulness
+an5.43:10.2 | S: in making merit. | T: in making merit.
+an5.43:10.3 | S: Being diligent, an astute person | T: The wise person, heedful, acquires a two-fold welfare:
+an5.43:10.4 | S: secures both benefits: | T: (none)
+an5.43:11.1 | S: the benefit in this life, | T: welfare in this life &
+an5.43:11.2 | S: and in lives to come. | T: welfare in the next.
+an5.43:11.3 | S: An attentive one, comprehending the meaning, | T: By breaking through to his welfare
+an5.43:11.4 | S: is said to be astute.” | T: he’s called enlightened, wise.
+an5.43:11.5 | P: Tatiyaṁ. | T: (none)
+
+## an4.100
+an4.100:1.1 | S: Then the wanderer Potaliya went up to the Buddha, and exchanged greetings with him. | T: Then Potaliya the wanderer went to the Blessed One and, on arrival, greeted him courteously.
+an4.100:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and the Buddha said to him: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, the Blessed One said to him,
+an4.100:2.1 | S: “Potaliya, these four individuals are found in the world. | T: “Potaliya, there are these four persons to be found existing in the world.
+an4.100:2.2 | S: What four? | T: Which four?
+an4.100:2.3 | S: One individual criticizes those deserving of criticism at the right time, truthfully and correctly. But they don’t praise those deserving of praise at the right time, truthfully and correctly. | T: “There is the case where a certain person speaks in dispraise of one deserving dispraise when it is accurate, factual, & timely, but he doesn’t speak in praise of one deserving praise when it is accurate, factual, & timely.
+an4.100:2.4 | S: Another individual praises those deserving of praise … But they don’t criticize those deserving of criticism … | T: “There is the case where a certain person speaks in praise of one deserving praise when it is accurate, factual, & timely, but he doesn’t speak in dispraise of one deserving dispraise when it is accurate, factual, & timely.
+an4.100:2.5 | S: Another individual doesn’t praise those deserving of praise … Nor do they criticize those deserving of criticism … | T: “There is the case where a certain person doesn’t speak in dispraise of one deserving dispraise when it is accurate, factual, & timely, nor does he speak in praise of one deserving praise when it is accurate, factual, & timely.
+an4.100:2.6 | S: Another individual criticizes those deserving of criticism at the right time, truthfully and correctly. And they praise those deserving of praise at the right time, truthfully and correctly. | T: “There is the case where a certain person speaks in dispraise of one deserving dispraise when it is accurate, factual, & timely, and speaks in praise of one deserving praise when it is accurate, factual, & timely.
+an4.100:2.7 | S: These are the four individuals found in the world. | T: (none)
+an4.100:2.8 | S: Of these four individuals, who do you believe to be the finest?” | T: “Now, of these four persons, Potaliya, which one do you prefer as the most excellent & sublime?”
+an4.100:3.1 | P: “Cattārome, bho gotama, puggalā santo saṁvijjamānā lokasmiṁ. | T: “Master Gotama, there are these four persons to be found existing in the world.…
+an4.100:3.2 | P: Katame cattāro? | T: (none)
+an4.100:3.3 | P: Idha, bho gotama, ekacco puggalo avaṇṇārahassa avaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena, no ca kho vaṇṇārahassa vaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena. | T: (none)
+an4.100:3.4 | P: Idha pana, bho gotama, ekacco puggalo vaṇṇārahassa vaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena, no ca kho avaṇṇārahassa avaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena. | T: (none)
+an4.100:3.5 | P: Idha pana, bho gotama, ekacco puggalo neva avaṇṇārahassa avaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena, no ca vaṇṇārahassa vaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena. | T: (none)
+an4.100:3.6 | P: Idha pana, bho gotama, ekacco puggalo avaṇṇārahassa ca avaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena, vaṇṇārahassa ca vaṇṇaṁ bhāsitā hoti bhūtaṁ tacchaṁ kālena. | T: (none)
+an4.100:3.7 | P: Ime kho, bho gotama, cattāro puggalā santo saṁvijjamānā lokasmiṁ. | T: (none)
+an4.100:3.8 | S: “Worthy Gotama, of these four individuals, it is the individual who neither praises those deserving of praise at the right time, truthfully and correctly; nor criticizes those deserving of criticism at the right time, truthfully and correctly. | T: And of these four persons, Master Gotama, the one who neither speaks in dispraise of one deserving dispraise when it is accurate, factual, & timely, nor speaks in praise of one deserving praise when it is accurate, factual, & timely
+an4.100:3.9 | S: That is the individual I believe to be the finest. | T: is the one I prefer as most excellent & sublime.
+an4.100:3.10 | S: Why is that? | T: Why is that?
+an4.100:3.11 | S: Because, worthy Gotama, equanimity is the best.” | T: Because this is excellent: equanimity.”
+an4.100:4.1 | P: “Cattārome, potaliya, puggalā santo saṁvijjamānā lokasmiṁ. | T: “Potaliya, there are these four persons to be found existing in the world.…
+an4.100:4.2 | P: Katame cattāro …pe… ime kho, potaliya, cattāro puggalā santo saṁvijjamānā lokasmiṁ. | T: (none)
+an4.100:4.3 | S: “Potaliya, of these four individuals, it is the individual who criticizes those deserving of criticism at the right time, truthfully and correctly; and praises those deserving of praise at the right time, truthfully and correctly. | T: And of these four, Potaliya, the one who speaks in dispraise of one deserving dispraise when it is accurate, factual, & timely, and who speaks in praise of one deserving praise when it is accurate, factual, & timely is the most excellent & sublime of the four.
+an4.100:4.4 | S: That is the individual I consider to be the finest. | T: (none)
+an4.100:4.5 | S: Why is that? | T: Why is that?
+an4.100:4.6 | S: Because, Potaliya, understanding of time and context is the best.” | T: Because this is excellent: having a sense of the right time in every situation.”
+an4.100:5.1 | P: “Cattārome, bho gotama, puggalā santo saṁvijjamānā lokasmiṁ. | T: “Master Gotama, there are these four persons to be found existing in the world.…
+an4.100:5.2 | P: Katame cattāro …pe… ime kho, bho gotama, cattāro puggalā santo saṁvijjamānā lokasmiṁ. | T: (none)
+an4.100:5.3 | S: “Worthy Gotama, of these four individuals, it is the individual who criticizes those deserving of criticism at the right time, truthfully and correctly; and praises those deserving of praise at the right time, truthfully and correctly. | T: And of these four, Master Gotama, the one who speaks in dispraise of one deserving dispraise when it is accurate, factual, & timely, and who speaks in praise of one deserving praise when it is accurate, factual, & timely is the most excellent & sublime of the four.
+an4.100:5.4 | S: That is the individual I believe to be the finest. | T: (none)
+an4.100:5.5 | S: Why is that? | T: Why is that?
+an4.100:5.6 | S: Because, worthy Gotama, understanding of time and context is the best. | T: Because this is excellent: having a sense of the right time in every situation.”
+an4.100:6.1 | S: Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+an4.100:6.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+an4.100:6.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks.
+an4.100:6.4 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+an4.100:6.5 | P: Dasamaṁ. | T: (none)
+an4.100:6.6 | P: Asuravaggo pañcamo. | T: (none)
+an4.100:7.0 | P: Tassuddānaṁ | T: (none)
+an4.100:7.1 | P: Asuro tayo samādhī, | T: (none)
+an4.100:7.2 | P: chavālātena pañcamaṁ; | T: (none)
+an4.100:7.3 | P: Rāgo nisanti attahitaṁ, | T: (none)
+an4.100:7.4 | P: sikkhā potaliyena cāti. | T: (none)
+an4.100:7.5 | P: Dutiyo paṇṇāsako samatto. | T: (none)
+
+## sn22.1
+sn22.1:1.1 | S: So I have heard. | T: I have heard that
+sn22.1:1.2 | S: At one time the Buddha was staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. | T: on one occasion the Blessed One was staying among the Bhaggas at Crocodile Haunt in the Bhesakaḷā Forest at the Deer Park.
+sn22.1:1.3 | S: Then the householder Nakula’s father went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the householder Nakulapitar [Nakula’s father] went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn22.1:2.1 | S: “Sir, I’m an old man, elderly and senior. I’m advanced in years and have reached the final stage of life. My body is ailing and I’m constantly unwell. | T: “Lord, I am a feeble old man, aged, advanced in years, having come to the last stage of life. I am afflicted in body & ailing with every moment.
+sn22.1:2.2 | S: I hardly ever get to see the esteemed mendicants. | T: And it’s only rarely that I get to see the Blessed One & the monks who nourish the heart.
+sn22.1:2.3 | S: May the Buddha please advise me | T: May the Blessed One teach me,
+sn22.1:2.4 | S: and instruct me. | T: may the Blessed One instruct me,
+sn22.1:2.5 | S: It will be for my lasting welfare and happiness.” | T: for my long-term benefit & happiness.”
+sn22.1:3.1 | S: “That’s so true, householder! That’s so true, householder! | T: “So it is, householder. So it is.
+sn22.1:3.2 | S: For this body is ailing, swaddled in its shell. | T: The body is afflicted, weak, & encumbered.
+sn22.1:3.3 | S: If anyone dragging around this body claimed to be healthy even for an hour, what is that but foolishness? | T: For who, looking after this body, would claim even a moment of true health, except through sheer foolishness?
+sn22.1:3.4 | S: So you should train like this: | T: So you should train yourself:
+sn22.1:3.5 | S: ‘Though my body is ailing, my mind will be healthy.’ | T: ‘Even though I may be afflicted in body, my mind will be unafflicted.’
+sn22.1:3.6 | S: That’s how you should train.” | T: That is how you should train yourself.”
+sn22.1:4.1 | S: And then the householder Nakula’s father approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right. Then he went up to Venerable Sāriputta, bowed, and sat down to one side. Sāriputta said to him: | T: Then the householder Nakulapitar, delighting in & approving of the Blessed One’s words, rose from his seat and—bowing down to the Blessed One and circumambulating him, keeping him to his right—went to Ven. Sāriputta and on arrival, having bowed down to him, sat to one side. As he was sitting there, Ven. Sāriputta said to him,
+sn22.1:4.2 | S: “Householder, your faculties are so very clear, | T: “Your faculties are clear & calm, householder,
+sn22.1:4.3 | S: and your complexion is pure and bright. | T: your complexion pure.
+sn22.1:4.4 | S: Did you get to hear a Dhamma talk in the Buddha’s presence today?” | T: Have you had the opportunity of listening to a Dhamma talk in the presence of the Blessed One today?”
+sn22.1:5.1 | S: “What else, sir, could it be? | T: “How could it be otherwise, venerable sir?
+sn22.1:5.2 | S: Just now the Buddha anointed me with the deathless ambrosia of a Dhamma talk.” | T: I have just now been sprinkled by the Blessed One with the deathless ambrosia of a Dhamma talk.”
+sn22.1:5.3 | S: “But with what kind of ambrosial Dhamma talk did the Buddha anoint you?” | T: “And how were you sprinkled by the Blessed One with the deathless ambrosia of a Dhamma talk?”
+sn22.1:5.4 | S: So Nakula’s father told Sāriputta all that had happened, and said, | T: “Just now I went to the Blessed One and on arrival, having bowed down to him, sat to one side. As I was sitting there I said to him,
+sn22.1:5.5 | P: ‘ahamasmi, bhante, jiṇṇo vuḍḍho mahallako addhagato vayoanuppatto āturakāyo abhikkhaṇātaṅko. | T: ‘Lord, I am a feeble old man, aged, advanced in years, having come to the last stage of life. I am afflicted in body & ailing with every moment.
+sn22.1:5.6 | P: Aniccadassāvī kho panāhaṁ, bhante, bhagavato manobhāvanīyānañca bhikkhūnaṁ. | T: And it is only rarely that I get to see the Blessed One & the monks who nourish the heart.
+sn22.1:5.7 | P: Ovadatu maṁ, bhante, bhagavā; | T: May the Blessed One teach me,
+sn22.1:5.8 | P: anusāsatu maṁ, bhante, bhagavā; | T: may the Blessed One instruct me,
+sn22.1:5.9 | P: yaṁ mamassa dīgharattaṁ hitāya sukhāyā’ti. | T: for my long-term benefit & happiness.’
+sn22.1:6.1 | P: Evaṁ vutte, maṁ, bhante, bhagavā etadavoca: | T: “When this was said, the Blessed One said to me,
+sn22.1:6.2 | P: ‘evametaṁ, gahapati, evametaṁ, gahapati. | T: ‘So it is, householder. So it is.
+sn22.1:6.3 | P: Āturo hāyaṁ, gahapati, kāyo aṇḍabhūto pariyonaddho. | T: The body is afflicted, weak, & encumbered.
+sn22.1:6.4 | P: Yo hi, gahapati, imaṁ kāyaṁ pariharanto muhuttampi ārogyaṁ paṭijāneyya, kimaññatra bālyā? | T: For who, looking after this body, would claim even a moment of true health, except through sheer foolishness?
+sn22.1:6.5 | P: Tasmātiha te, gahapati, evaṁ sikkhitabbaṁ— | T: So you should train yourself:
+sn22.1:6.6 | P: āturakāyassa me sato cittaṁ anāturaṁ bhavissatīti. | T: “Even though I may be afflicted in body, my mind will be unafflicted.”
+sn22.1:6.7 | P: Evañhi te, gahapati, sikkhitabban’ti. | T: That is how you should train yourself.’
+sn22.1:6.8 | S: “That’s the ambrosial Dhamma talk with which I was anointed by the Buddha.” | T: That’s how I was sprinkled by the Blessed One with the deathless ambrosia of a Dhamma talk.”
+sn22.1:7.1 | S: “But didn’t you feel the need to ask the Buddha the further question: | T: “But why didn’t it occur to you to question the Blessed One further:
+sn22.1:7.2 | S: ‘Sir, how do you define someone ailing in body and ailing in mind, and someone ailing in body and healthy in mind’?” | T: ‘In what way is one afflicted in body & afflicted in mind? And in what way is one afflicted in body but unafflicted in mind?’
+sn22.1:7.3 | S: “Sir, we would travel a long way to learn the meaning of this statement in the presence of Venerable Sāriputta. | T: “I would come from a long way away to hear the explication of these words in Ven. Sāriputta’s presence.
+sn22.1:7.4 | S: May Venerable Sāriputta himself please clarify the meaning of this.” | T: It would be good if Ven. Sāriputta himself would enlighten me as to their meaning.”
+sn22.1:8.1 | S: “Well then, householder, listen and apply your mind well, I will speak.” | T: “Then in that case, householder, listen & pay close attention. I will speak.”
+sn22.1:8.2 | S: “Yes, sir,” replied Nakula’s father. | T: “As you say, venerable sir,” the householder Nakulapitar responded to him.
+sn22.1:8.3 | S: Sāriputta said this: | T: Ven. Sāriputta said:
+sn22.1:9.1 | S: “And how is one ailing in body and ailing in mind? | T: “Now, how is one afflicted in body & afflicted in mind?
+sn22.1:9.2 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the qualities of a noble one. They’ve not seen true persons, and are neither skilled nor trained in the qualities of a true person. | T: “There is the case where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.1:9.3 | S: They regard form as self, self as having form, form in self, or self in form. | T: assumes form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.1:9.4 | S: They’re obsessed with the thought: ‘I am form, form is mine!’ | T: He is seized with the idea that ‘I am form’ or ‘Form is mine.’
+sn22.1:9.5 | S: But that form of theirs decays and perishes, | T: As he is seized with these ideas, that form changes & alters.
+sn22.1:9.6 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in his form, there arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:10.1 | S: They regard feeling as self, self as having feeling, feeling in self, or self in feeling. | T: “He assumes feeling to be the self, or the self as possessing feeling, or feeling as in the self, or the self as in feeling.
+sn22.1:10.2 | S: They’re obsessed with the thought: ‘I am feeling, feeling is mine!’ | T: He is seized with the idea that ‘I am feeling’ or ‘Feeling is mine.’
+sn22.1:10.3 | S: But that feeling of theirs decays and perishes, | T: As he is seized with these ideas, that feeling changes & alters.
+sn22.1:10.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the feeling, there arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:11.1 | S: They regard perception as self, self as having perception, perception in self, or self in perception. | T: “He assumes perception to be the self, or the self as possessing perception, or perception as in the self, or the self as in perception.
+sn22.1:11.2 | S: They’re obsessed with the thought: ‘I am perception, perception is mine!’ | T: He is seized with the idea that ‘I am perception’ or ‘Perception is mine.’
+sn22.1:11.3 | S: But that perception of theirs decays and perishes, | T: As he is seized with these ideas, that perception changes & alters.
+sn22.1:11.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the perception, there arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:12.1 | S: They regard choices as self, self as having choices, choices in self, or self in choices. | T: “He assumes fabrications to be the self, or the self as possessing fabrications, or fabrications as in the self, or the self as in fabrications.
+sn22.1:12.2 | S: They’re obsessed with the thought: ‘I am choices, choices are mine!’ | T: He is seized with the idea that ‘I am fabrications’ or ‘Fabrications are mine.’
+sn22.1:12.3 | S: But those choices of theirs decay and perish, | T: As he is seized with these ideas, those fabrications change & alter.
+sn22.1:12.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the fabrications, there arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:13.1 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He assumes consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.1:13.2 | S: They’re obsessed with the thought: ‘I am consciousness, consciousness is mine!’ | T: He is seized with the idea that ‘I am consciousness’ or ‘Consciousness is mine.’
+sn22.1:13.3 | S: But that consciousness of theirs decays and perishes, | T: As he is seized with these ideas, that consciousness changes & alters.
+sn22.1:13.4 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the consciousness, there arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:13.5 | S: That’s how one is ailing in body and ailing in mind. | T: “This, householder, is how one is afflicted in body and afflicted in mind.
+sn22.1:14.1 | S: And how is one ailing in body and healthy in mind? | T: “And how is one afflicted in body but unafflicted in mind?
+sn22.1:14.2 | S: It’s when a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: There is the case where a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma—
+sn22.1:14.3 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.1:14.4 | S: They’re not obsessed with the thought: ‘I am form, form is mine!’ | T: He is not seized with the idea that ‘I am form’ or ‘Form is mine.’
+sn22.1:14.5 | S: So when that form of theirs decays and perishes, | T: As he is not seized with these ideas, that form changes & alters.
+sn22.1:14.6 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the form, there do not arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:15.1 | S: They don’t regard feeling as self, self as having feeling, feeling in self, or self in feeling. | T: “He doesn’t assume feeling to be the self.…
+sn22.1:15.2 | S: They’re not obsessed with the thought: ‘I am feeling, feeling is mine!’ | T: (none)
+sn22.1:15.3 | S: So when that feeling of theirs decays and perishes, | T: (none)
+sn22.1:15.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn22.1:16.1 | S: They don’t regard perception as self, self as having perception, perception in self, or self in perception. | T: “He doesn’t assume perception to be the self.…
+sn22.1:16.2 | S: They’re not obsessed with the thought: ‘I am perception, perception is mine!’ | T: (none)
+sn22.1:16.3 | S: So when that perception of theirs decays and perishes, | T: (none)
+sn22.1:16.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn22.1:17.1 | S: They don’t regard choices as self, self as having choices, choices in self, or self in choices. | T: “He doesn’t assume fabrications to be the self.…
+sn22.1:17.2 | S: They’re not obsessed with the thought: ‘I am choices, choices are mine!’ | T: (none)
+sn22.1:17.3 | S: So when those choices of theirs decay and perish, | T: (none)
+sn22.1:17.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn22.1:18.1 | S: They don’t regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.1:18.2 | S: They’re not obsessed with the thought: ‘I am consciousness, consciousness is mine!’ | T: He is not seized with the idea that ‘I am consciousness’ or ‘Consciousness is mine.’
+sn22.1:18.3 | S: So when that consciousness of theirs decays and perishes, | T: As he is not seized with these ideas, that consciousness changes & alters.
+sn22.1:18.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: From the change & alteration in the consciousness, there do not arise in him sorrow, lamentation, pain, distress, & despair.
+sn22.1:18.5 | S: That’s how an individual is ailing in body and healthy in mind.” | T: “This, householder, is how one is afflicted in body but unafflicted in mind.”
+sn22.1:19.1 | S: That is what Venerable Sāriputta said. | T: That is what Ven. Sāriputta said.
+sn22.1:19.2 | S: Satisfied, Nakula’s father approved what Sāriputta said. | T: Gratified, the householder Nakulapitar delighted in Ven. Sāriputta’s words.
+sn22.1:19.3 | P: Paṭhamaṁ. | T: (none)
+
+## an3.47
+an3.47:1.1 | S: “Mendicants, the conditioned has these three characteristics. | T: “Monks, these three are fabricated characteristics of what is fabricated.
+an3.47:1.2 | S: What three? | T: Which three?
+an3.47:1.3 | S: Arising is evident, vanishing is evident, and change while persisting is evident. | T: Arising is discernable, passing away is discernable, alteration [literally: otherness] while staying is discernable.
+an3.47:1.4 | S: These are the three characteristics of the conditioned.” | T: “These are three fabricated characteristics of what is fabricated.
+an3.47:1.5 | P: Sattamaṁ. | T: (none)
+an3.47:2.0 | S: Characteristics of the Unconditioned | T: (none)
+an3.47:2.1 | S: “The unconditioned has these three characteristics. | T: “Now these three are unfabricated characteristics of what is unfabricated.
+an3.47:2.2 | S: What three? | T: Which three?
+an3.47:2.3 | S: No arising is evident, no vanishing is evident, and no change while persisting is evident. | T: No arising is discernable, no passing away is discernable, no alteration while staying is discernable.
+an3.47:2.4 | S: These are the three characteristics of the unconditioned.” | T: “These are three unfabricated characteristics of what is unfabricated.” Alternative translation: “Monks, these three are fabricated characteristics of what is fabricated. Which three? Arising is discernable, passing away is discernable, alteration [literally: otherness] of what stays is discernable. “These are three fabricated characteristics of what is fabricated. “Now these three are unfabricated characteristics of what is unfabricated. Which three? No arising is discernable, no passing away is discernable, no alteration of what stays is discernable. “These are three unfabricated characteristics of what is unfabricated.”
+an3.47:2.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.5
+an3.5:1.1 | S: “A fool is known by three things. | T: “Monks, a person endowed with three qualities is to be recognized as a fool.
+an3.5:1.2 | S: What three? | T: Which three?
+an3.5:1.3 | S: They ask a question irrationally. They answer a question irrationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they disagree with it. | T: He formulates a question inappropriately. He answers a question inappropriately. When another answers a question appropriately—having chosen circumscribed, coherent words & phrases—he doesn’t approve of it.
+an3.5:1.4 | S: These are the three things by which a fool is known. | T: A person endowed with these three qualities is to be recognized as a fool.
+an3.5:2.1 | S: An astute person is known by three things. | T: “Monks, a person endowed with three qualities is to be recognized as a wise person.
+an3.5:2.2 | S: What three? | T: Which three?
+an3.5:2.3 | S: They ask a question rationally. They answer a question rationally. And when someone else answers a question rationally—with well-rounded, coherent, and relevant words and phrases—they agree with it. | T: He formulates a question appropriately. He answers a question appropriately. When another answers a question appropriately—having chosen circumscribed, coherent words & phrases—he approves of it.
+an3.5:2.4 | S: These are the three things by which an astute person is known. | T: A person endowed with these three qualities is to be recognized as a wise person.”
+an3.5:2.5 | S: So you should train …” | T: (none)
+an3.5:2.6 | P: Pañcamaṁ. | T: (none)
+
+## iti93
+iti93:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti93:2.1 | S: “Mendicants, there are these three fires. | T: “Monks, there are these three fires.
+iti93:2.2 | S: What three? | T: Which three?
+iti93:2.3 | S: The fires of greed, hate, and delusion. | T: The fire of passion, the fire of aversion, the fire of delusion.
+iti93:2.4 | S: These are the three fires.” | T: These are the three fires.”
+iti93:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti93:2.6 | S: On this it is said: | T: (none)
+iti93:3.1 | S: “The fire of greed burns a mortal, | T: The fire of passion burns in a mortal
+iti93:3.2 | S: lustful, infatuated by sensual pleasures; | T: delighting in, smitten with sensual desires;
+iti93:3.3 | S: while, fallen in the fire of hate, | T: the fire of aversion, in a malevolent person
+iti93:3.4 | S: a person kills living creatures; | T: taking life;
+iti93:4.1 | S: and, bewildered by the fire of delusion, | T: the fire of delusion, in a bewildered person
+iti93:4.2 | S: they miss the teaching of the noble ones. | T: ignorant of the noble teaching.
+iti93:4.3 | S: Not recognizing these three fires, | T: Not understanding these fires,
+iti93:4.4 | S: people are caught up in substantial reality. | T: people –fond of self-identity– unreleased from Māra’s shackles,
+iti93:5.1 | S: They fill the ranks of hell, | T: swell the ranks of hell,
+iti93:5.2 | S: of birth as an animal, | T: the wombs of common animals,
+iti93:5.3 | S: or of titans and ghosts, | T: demons, the realm of the hungry ghosts.
+iti93:5.4 | S: not freed from Māra’s bonds. | T: (none)
+iti93:6.1 | S: But as to those committed day and night | T: While those who, day & night, are devoted
+iti93:6.2 | S: to the teaching of the Buddha: | T: to the message of the rightly self-awakened,
+iti93:6.3 | S: they extinguish the fire of greed, | T: put out the fire of passion,
+iti93:6.4 | S: always perceiving ugliness; | T: constantly perceiving the foul.
+iti93:7.1 | S: while those supreme men | T: They, superlative people,
+iti93:7.2 | S: extinguish the fire of hate with love; | T: put out the fire of aversion with good will,
+iti93:7.3 | S: and the fire of delusion with the wisdom | T: and the fire of delusion with the discernment leading
+iti93:7.4 | S: that leads to penetration. | T: to penetration.
+iti93:8.1 | S: Having extinguished these fires, alert, | T: They, the masterful,
+iti93:8.2 | S: tireless all day and night, | T: untiring by night & day,
+iti93:8.3 | S: they become fully extinguished, | T: having put out [the fires],
+iti93:8.4 | S: completely transcending suffering. | T: having, without remainder, comprehended stress, are, without remainder, totally unbound.
+iti93:9.1 | S: Seers of the noble truths, knowledge masters, | T: They, the wise, with an attainer-of-wisdom’s noble vision,
+iti93:9.2 | S: the astute, understanding rightly, | T: right gnosis,
+iti93:9.3 | S: directly know the ending of rebirth, | T: directly knowing the ending of birth,
+iti93:9.4 | S: they come not back to future lives.” | T: come to no further becoming.
+iti93:10.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti93:10.2 | P: Catutthaṁ. | T: (none)
+
+## snp5.5
+snp5.5:1.1 | S: “I ask you, Blessed One; please tell me this,” | T: I ask you, Blessed One. Please tell me.
+snp5.5:1.2 | S: said Venerable Mettagū, | T: (none)
+snp5.5:1.3 | S: “for I think you are a knowledge master, evolved. | T: I regard you as an attainer-of-knowledge, developed in mind.
+snp5.5:1.4 | S: Where do all these sufferings come from, | T: From what have the many forms of stress
+snp5.5:1.5 | S: in all their countless forms in the world?” | T: arisen in the world?
+snp5.5:2.1 | S: “You have rightly asked me of the origin of suffering,” | T: The Buddha: You ask me the source of stress.
+snp5.5:2.2 | S: replied the Buddha, | T: (none)
+snp5.5:2.3 | S: “I shall tell you as I understand it. | T: I’ll tell it to you as one who discerns.
+snp5.5:2.4 | S: Attachment is the source of suffering | T: From acquisition as cause
+snp5.5:2.5 | S: in all its countless forms in the world. | T: the many forms of stress come into being in the world.
+snp5.5:3.1 | S: When an ignorant person builds up attachments, | T: Whoever, unknowing, makes acquisitions
+snp5.5:3.2 | S: that dullard returns to suffering again and again. | T: —the dullard— comes to stress again & again.
+snp5.5:3.3 | S: So let one who understands <j>not build up attachments, | T: Therefore, discerning, you shouldn’t create acquisitions
+snp5.5:3.4 | S: contemplating the inception of suffering and rebirth.” | T: as you stay focused on the birth & origin of stress.
+snp5.5:4.1 | S: “Whatever I asked you have explained to me. | T: Mettagū: What we asked, you’ve expounded.
+snp5.5:4.2 | S: I ask you once more, please tell me this: | T: Now we ask something else. Please tell us.
+snp5.5:4.3 | S: How do the attentive cross the flood | T: How do the enlightened cross over the flood of
+snp5.5:4.4 | S: of rebirth, old age, sorrow, and lamenting? | T: birth & aging, lamentation & sorrow?
+snp5.5:4.5 | S: Please, sage, answer me clearly, | T: Please, sage, declare this to me
+snp5.5:4.6 | S: for truly you understand this matter.” | T: as this Dhamma has been known by you.
+snp5.5:5.1 | S: “I shall extol a teaching to you,” | T: The Buddha: I will expound to you Dhamma
+snp5.5:5.2 | S: replied the Buddha, | T: (none)
+snp5.5:5.3 | S: “that is apparent in the present, not relying on legends. | T: —here-&-now, not quoted words—
+snp5.5:5.4 | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:5.5 | S: may cross over clinging in the world.” | T: you’ll cross over beyond entanglement in the world.
+snp5.5:6.1 | S: “And I rejoice, great seer, | T: Mettagū: And I relish, Great Seer,
+snp5.5:6.2 | S: in that supreme teaching, | T: that Dhamma supreme,
+snp5.5:6.3 | S: having understood which, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:6.4 | S: may cross over clinging in the world.” | T: I’ll cross over beyond entanglement in the world.
+snp5.5:7.1 | S: “Once you’ve expelled relishing and dogmatism,” | T: The Buddha: Whatever you’re alert to,
+snp5.5:7.2 | S: replied the Buddha, | T: (none)
+snp5.5:7.3 | S: “regarding everything you are aware of— | T: (none)
+snp5.5:7.4 | S: above, below, all round, between— | T: above, below, across, in between:
+snp5.5:7.5 | S: having cast aside consciousness, <j>don’t continue in existence. | T: Dispelling any delight, any entrenchment in those things, consciousness should not take a stance in becoming.
+snp5.5:8.1 | S: A mendicant who wanders meditating like this, | T: The monk who dwells thus
+snp5.5:8.2 | S: diligent and mindful, calling nothing their own, | T: —mindful, heedful— letting go of his sense of mine,
+snp5.5:8.3 | S: would, being wise, give up the suffering | T: knowing right here would abandon
+snp5.5:8.4 | S: of rebirth, old age, sorrow and lamenting right here.” | T: birth & aging, lamentation & sorrow, stress.
+snp5.5:9.1 | S: “I rejoice in the words of the great seer! | T: Mettagū: I relish, Gotama, the Great Seer’s words
+snp5.5:9.2 | S: You have expounded non-attachment well, Gotama. | T: well-expounded, without acquisition,
+snp5.5:9.3 | S: Clearly the Buddha has given up suffering, | T: for yes, Blessed One, you’ve abandoned stress
+snp5.5:9.4 | S: for truly you understand this matter. | T: as this Dhamma has been known by you.
+snp5.5:10.1 | S: Surely, sage, those you’d regularly instruct | T: And they, too, would abandon stress those whom you, sage, would admonish unceasingly.
+snp5.5:10.2 | S: would also give up suffering. | T: (none)
+snp5.5:10.3 | S: Having met, I bow especially to you, <j>O spiritual giant; | T: Having met you, I bow down to you, Nāga.
+snp5.5:10.4 | S: hopefully the Buddha may regularly instruct me.” | T: Perhaps you will admonish me unceasingly.
+snp5.5:11.1 | S: “Any brahmin recognized as a knowledge master, | T: The Buddha: Whoever you recognize as a brahman, an attainer-of-knowledge
+snp5.5:11.2 | S: who has nothing, unattached to sensual life, | T: possessing nothing, unentangled in sensuality & becoming—
+snp5.5:11.3 | S: clearly has crossed this flood, | T: yes, he has crossed over this flood.
+snp5.5:11.4 | S: crossed to the far shore, kind, wishless. | T: Having crossed to the far shore, he’s free from rigidity, free from doubt.
+snp5.5:12.1 | S: And a wise person here, a knowledge master, | T: And anyone who has realized, who is an attainer-of-knowledge here,
+snp5.5:12.2 | S: having untied the bond to life after life, | T: having unentangled the bond to becoming and non-,
+snp5.5:12.3 | S: free of craving, untroubled, with no need for hope, | T: free of craving, untroubled, undesiring—
+snp5.5:12.4 | S: has crossed over rebirth and old age, I declare.” | T: he, I tell you, has crossed over birth & aging.
+snp5.5:12.5 | P: Mettagūmāṇavapucchā catutthī. | T: (none)
+
+## sn12.68
+sn12.68:1.1 | S: At one time the venerables Musīla, Saviṭṭha, Nārada, and Ānanda were staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Musila, Ven. Paviṭṭha, Ven. Nārada, and Ven. Ānanda were staying near Kosambī at Ghosita’s monastery.
+sn12.68:1.2 | S: Then Venerable Saviṭṭha said to Venerable Musīla: | T: Then Ven. Paviṭṭha said to Ven. Musila,
+sn12.68:1.3 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Musila, my friend, putting aside conviction, putting aside preference, putting aside tradition, putting aside reasoning through analogies, putting aside an agreement through pondering views: Do you have truly personal knowledge that,
+sn12.68:1.4 | S: rebirth is a requirement for old age and death?” | T: ‘From birth as a requisite condition come aging-&-death’?”
+sn12.68:1.5 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Yes, Paviṭṭha my friend. Putting aside conviction… preference… tradition… reasoning through analogies… an agreement through pondering views, I do have truly personal knowledge that,
+sn12.68:1.6 | S: rebirth is a requirement for old age and death.” | T: ‘From birth as a requisite condition come aging-&-death.’”
+sn12.68:2.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberateation, do you personally know that | T: (none)
+sn12.68:2.2 | S: continued existence is a requirement for rebirth … | T: [Similarly with ‘From becoming as a requisite condition comes birth’ .…
+sn12.68:2.3 | S: grasping is a requirement for continued existence … | T: ‘From clinging/sustenance as a requisite condition comes becoming’.…
+sn12.68:2.4 | S: craving is a requirement for grasping … | T: ‘From craving as a requisite condition comes clinging/sustenance’.…
+sn12.68:2.5 | S: feeling is a requirement for craving … | T: ‘From feeling as a requisite condition comes craving’.…
+sn12.68:2.6 | S: contact is a requirement for feeling … | T: ‘From contact as a requisite condition comes feeling’.…
+sn12.68:2.7 | S: the six sense fields are requirements for contact … | T: ‘From the six sense media as a requisite condition comes contact’.…
+sn12.68:2.8 | S: name and form are requirements for the six sense fields … | T: ‘From name-&-form as a requisite condition come the six sense media’.…
+sn12.68:2.9 | S: consciousness is a requirement for name and form … | T: ‘From consciousness as a requisite condition comes name-&-form’.…
+sn12.68:2.10 | S: choices are a requirement for consciousness … | T: ‘From fabrications as a requisite condition comes consciousness.’]
+sn12.68:2.11 | S: ignorance is a requirement for choices?” | T: “Musila, my friend, putting aside conviction, putting aside preference, putting aside tradition, putting aside reasoning through analogies, putting aside an agreement through pondering views: Do you have truly personal knowledge that, ‘From ignorance as a requisite condition come fabrications’?”
+sn12.68:2.12 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Yes, Paviṭṭha my friend. Putting aside conviction… preference… tradition… reasoning through analogies… an agreement through pondering views, I do have truly personal knowledge that,
+sn12.68:2.13 | S: ignorance is a requirement for choices.” | T: ‘From ignorance as a requisite condition come fabrications.’”
+sn12.68:3.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Musila, my friend, putting aside conviction, putting aside preference, putting aside tradition, putting aside reasoning through analogies, putting aside an agreement through pondering views: Do you have truly personal knowledge that,
+sn12.68:3.2 | S: when rebirth ceases, old age and death cease?” | T: ‘From the cessation of birth comes the cessation of aging-&-death’?”
+sn12.68:3.3 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Yes, Paviṭṭha my friend. Putting aside conviction… preference… tradition… reasoning through analogies… an agreement through pondering views, I do have truly personal knowledge that,
+sn12.68:3.4 | S: when rebirth ceases, old age and death cease.” | T: ‘From the cessation of birth comes the cessation of aging-&-death.’”
+sn12.68:4.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: (none)
+sn12.68:4.2 | S: when continued existence ceases, rebirth ceases … | T: [Similarly with ‘From the cessation of becoming comes the cessation of birth’.…
+sn12.68:4.3 | S: when grasping ceases, continued existence ceases … | T: ‘From the cessation of clinging/sustenance comes the cessation of becoming’.…
+sn12.68:4.4 | S: when craving ceases, grasping ceases … | T: ‘From the cessation of craving comes the cessation of clinging/sustenance’.…
+sn12.68:4.5 | S: when feeling ceases, craving ceases … | T: ‘From the cessation of feeling comes the cessation of craving’.…
+sn12.68:4.6 | S: when contact ceases, feeling ceases … | T: ‘From the cessation of contact comes the cessation of feeling’.…
+sn12.68:4.7 | S: when the six sense fields cease, contact ceases … | T: ‘From the cessation of the six sense media comes the cessation of contact’.…
+sn12.68:4.8 | S: when name and form cease, the six sense fields cease … | T: ‘From the cessation of name-&-form comes the cessation of the six sense media’.…
+sn12.68:4.9 | S: when consciousness ceases name and form cease … | T: ‘From the cessation of consciousness comes the cessation of name-&-form’.…
+sn12.68:4.10 | S: when choices cease consciousness ceases … | T: ‘From the cessation of fabrications comes the cessation of consciousness.’]
+sn12.68:4.11 | S: when ignorance ceases, choices cease?” | T: “Musila, my friend, putting aside conviction, putting aside preference, putting aside tradition, putting aside reasoning through analogies, putting aside an agreement through pondering views: Do you have truly personal knowledge that, ‘From the cessation of ignorance comes the cessation of fabrications’?”
+sn12.68:4.12 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Yes, Paviṭṭha my friend. Putting aside conviction… preference… tradition… reasoning through analogies… an agreement through pondering views, I do have truly personal knowledge that,
+sn12.68:4.13 | S: when ignorance ceases, choices cease.” | T: ‘From the cessation of ignorance comes the cessation of fabrications.’”
+sn12.68:5.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Musila, my friend, putting aside conviction, putting aside preference, putting aside tradition, putting aside reasoning through analogies, putting aside an agreement through pondering views: Do you have truly personal knowledge that,
+sn12.68:5.2 | S: the cessation of continued existence is extinguishment?” | T: ‘The cessation of becoming is unbinding’?”
+sn12.68:5.3 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Yes, Paviṭṭha my friend. Putting aside conviction… preference… tradition… reasoning through analogies… an agreement through pondering views, I do have truly personal knowledge that,
+sn12.68:5.4 | S: the cessation of continued existence is extinguishment.” | T: ‘The cessation of becoming is unbinding.’”
+sn12.68:6.1 | S: “Then Venerable Musīla is a perfected one, with defilements ended.” | T: “Then, Ven. Musila, you are an arahant whose effluents are ended.”
+sn12.68:6.2 | S: When he said this, Musīla kept silent. | T: When this was said, Ven. Musila was silent.
+sn12.68:7.1 | S: Then Venerable Nārada said to Venerable Saviṭṭha, | T: Then Ven. Nārada said,
+sn12.68:7.2 | S: “Reverend Saviṭṭha, please let me answer these questions. | T: “Paviṭṭha my friend, it would be good if I were to get that question.
+sn12.68:7.3 | S: Ask me | T: Ask me that question and I will answer it for you.”
+sn12.68:7.4 | S: and I will answer them for you.” | T: (none)
+sn12.68:7.5 | S: “By all means, Venerable Nārada, try these questions. | T: “Then Ven. Nārada will get that question.
+sn12.68:7.6 | S: I’ll ask you | T: I will ask Ven. Nārada that question,
+sn12.68:7.7 | S: and you can answer them for me.” | T: and may he answer that question for me.”
+sn12.68:8.1 | S: (Saviṭṭha repeats exactly the same series of questions, and Nārada answers just as Musīla did.) | T: [Ven. Paviṭṭha asks the same questions of Ven. Nārada, who gives the same answers as Ven. Musila.]
+sn12.68:8.2 | P: ‘jātipaccayā jarāmaraṇan’”ti? | T: (none)
+sn12.68:8.3 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:8.4 | P: ‘jātipaccayā jarāmaraṇan’”ti. | T: (none)
+sn12.68:9.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ— | T: (none)
+sn12.68:9.2 | P: bhavapaccayā jāti …pe… | T: (none)
+sn12.68:9.3 | P: avijjāpaccayā saṅkhārā”ti? | T: (none)
+sn12.68:9.4 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:9.5 | P: ‘avijjāpaccayā saṅkhārā’”ti. | T: (none)
+sn12.68:10.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ: | T: (none)
+sn12.68:10.2 | P: ‘jātinirodhā jarāmaraṇanirodho’”ti? | T: (none)
+sn12.68:10.3 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:10.4 | P: ‘jātinirodhā jarāmaraṇanirodho’”ti. | T: (none)
+sn12.68:11.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ: | T: (none)
+sn12.68:11.2 | P: ‘bhavanirodhā jātinirodhoti …pe… | T: (none)
+sn12.68:11.3 | P: avijjānirodhā saṅkhāranirodho’”ti? | T: (none)
+sn12.68:11.4 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:11.5 | P: ‘avijjānirodhā saṅkhāranirodho’”ti. | T: (none)
+sn12.68:12.1 | S: “Reverend Nārada, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: (none)

@@ -1,0 +1,589 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8e-df1e-7851-9c16-6d308d44f5e8
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-boundary errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## iti13
+iti13:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: (none)
+iti13:2.1 | S: “Mendicants, without directly knowing and completely understanding disdain, without dispassion for it and giving it up, you can’t end suffering. | T: (none)
+iti13:2.2 | S: By directly knowing and completely understanding disdain, having dispassion for it and giving it up, you can end suffering.” | T: (none)
+iti13:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti13:2.4 | S: On this it is said: | T: (none)
+iti13:3.1 | S: “When overcome by disdain | T: (none)
+iti13:3.2 | S: beings go to a bad place. | T: (none)
+iti13:3.3 | S: Having rightly understood that disdain, | T: (none)
+iti13:3.4 | S: the discerning give it up. | T: (none)
+iti13:3.5 | S: Once they’ve given it up, | T: (none)
+iti13:3.6 | S: they never return to this world.” | T: (none)
+iti13:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: [The verses for these discourses are identical with those for §§2—5.]
+iti13:4.2 | P: Tatiyaṁ. | T: (none)
+
+## thag1.1
+thag1.1:1.0.1 | S: Background | T: (none)
+thag1.1:1.0.2 | S: Homage to him, the blessed one, the perfected one, the fully awakened Buddha! | T: (none)
+thag1.1:1.1 | S: Like the lions of mighty fang | T: (none)
+thag1.1:1.2 | S: who roar in mountain caves— | T: (none)
+thag1.1:1.3 | S: hear now from those who’ve practiced well | T: (none)
+thag1.1:1.4 | S: their own verses about themselves. | T: (none)
+thag1.1:2.1 | S: What their name, and what their clan, | T: (none)
+thag1.1:2.2 | S: and how they lived by the teaching; | T: (none)
+thag1.1:2.3 | S: how dedicated were those wise ones, | T: (none)
+thag1.1:2.4 | S: as they meditated tirelessly. | T: (none)
+thag1.1:3.1 | S: Clearly discerning in every case, | T: (none)
+thag1.1:3.2 | S: they reached the state that does not pass. | T: (none)
+thag1.1:3.3 | S: Reviewing their completed task, | T: (none)
+thag1.1:3.4 | S: they spoke about it in these words. | T: (none)
+thag1.1:4.0 | S: Subhūti | T: (none)
+thag1.1:4.1 | S: My hut is roofed and pleasant, sheltered from the wind: | T: My hut is roofed, comfortable, free of drafts;
+thag1.1:4.2 | S: so rain, heavens, as you please! | T: (none)
+thag1.1:4.3 | S: My mind is serene and freed, | T: my mind, well-centered, released.
+thag1.1:4.4 | S: I practice wholeheartedly: so rain, heavens! | T: I remain ardent. So, rain-deva. Go ahead & rain.
+thag1.1:4.5 | S: That is how this verse was recited by the senior venerable Subhūti. | T: (none)
+
+## iti10
+iti10:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti10:2.1 | S: “Mendicants, without directly knowing and completely understanding hate, without dispassion for it and giving it up, you can’t end suffering. | T: “Monks, one who has not fully known & fully understood aversion… delusion… anger… contempt, whose mind has not been cleansed of passion for it, has not abandoned it, is incapable of putting an end to stress.
+iti10:2.2 | S: By directly knowing and completely understanding hate, having dispassion for it and giving it up, you can end suffering.” | T: But one who has fully known & fully understood aversion… delusion… anger… contempt, whose mind has been cleansed of passion for it and has abandoned it, is capable of putting an end to stress.
+iti10:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti10:2.4 | S: On this it is said: | T: (none)
+iti10:3.1 | S: “When overcome by hate | T: (none)
+iti10:3.2 | S: beings go to a bad place. | T: (none)
+iti10:3.3 | S: Having rightly understood that hate, | T: (none)
+iti10:3.4 | S: the discerning give it up. | T: (none)
+iti10:3.5 | S: Once they’ve given it up, | T: (none)
+iti10:3.6 | S: they never return to this world.” | T: (none)
+iti10:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti10:4.2 | P: Dasamaṁ. | T: (none)
+iti10:4.3 | P: Pāṭibhogavaggo paṭhamo. | T: (none)
+iti10:5.0 | P: Tassuddānaṁ | T: (none)
+iti10:5.1 | P: Rāgadosā atha moho, | T: (none)
+iti10:5.2 | P: Kodhamakkhā mānaṁ sabbaṁ; | T: (none)
+iti10:5.3 | P: Mānato rāgadosā puna dve, | T: (none)
+iti10:5.4 | P: Pakāsitā vaggamāhu paṭhamanti. | T: (none)
+
+## sn43.2
+sn43.2:1.1 | S: “Mendicants, I will teach you the unconditioned and the path that leads to the unconditioned. | T: (none)
+sn43.2:1.2 | S: Listen … | T: (none)
+sn43.2:1.3 | S: And what is the unconditioned? | T: (none)
+sn43.2:1.4 | S: The ending of greed, hate, and delusion. | T: (none)
+sn43.2:1.5 | S: This is called the unconditioned. | T: (none)
+sn43.2:1.6 | S: And what is the path that leads to the unconditioned? | T: “And which is the path leading to the unfabricated?
+sn43.2:1.7 | S: Serenity and discernment. | T: Tranquility & insight…
+sn43.2:1.8 | S: This is called the path that leads to the unconditioned. …” | T: (none)
+sn43.2:1.9 | P: Dutiyaṁ. | T: (none)
+
+## sn15.14
+sn15.14:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn15.14:1.2 | S: “Mendicants, this transmigration has no known beginning. … | T: There the Blessed One said:
+sn15.14:1.3 | S: It’s not easy to find a sentient being who in all this long time has not previously been your mother. | T: (none)
+sn15.14:1.4 | S: Why is that? | T: (none)
+sn15.14:1.5 | S: This transmigration has no known beginning. … | T: (none)
+sn15.14:1.6 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: (none)
+sn15.14:1.7 | P: Catutthaṁ. | T: (none)
+
+## an6.73
+an6.73:1.1 | S: “Mendicants, without giving up these six qualities you can’t enter and remain in the first absorption. | T: “Monks, without abandoning six things, one is incapable of entering & remaining in the first jhāna.
+an6.73:1.2 | S: What six? | T: Which six?
+an6.73:1.3 | S: Desire for sensual pleasures, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: Sensual desire, ill will, sloth & drowsiness, restlessness & anxiety, uncertainty,
+an6.73:1.4 | S: And the drawbacks of sensual pleasures have not been truly seen clearly with right wisdom. | T: and one has not seen well, with right discernment—as they have come to be—the drawbacks of sensuality.
+an6.73:1.5 | S: Without giving up these six qualities you can’t enter and remain in the first absorption. | T: Without abandoning these six things, one is incapable of entering & remaining in the first jhāna.”
+an6.73:2.1 | S: But after giving up these six qualities you can enter and remain in the first absorption. | T: (none)
+an6.73:2.2 | S: What six? | T: (none)
+an6.73:2.3 | S: Desire for sensual pleasures, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: (none)
+an6.73:2.4 | S: And the drawbacks of sensual pleasures have been truly seen clearly with right wisdom. | T: (none)
+an6.73:2.5 | S: After giving up these six qualities you can enter and remain in the first absorption.” | T: (none)
+an6.73:2.6 | P: Navamaṁ. | T: (none)
+
+## an6.74
+an6.74:1.1 | S: “Mendicants, without giving up these six qualities you can’t enter and remain in the first absorption. | T: “Monks, without abandoning six things, one is incapable of entering & remaining in the first jhāna.
+an6.74:1.2 | S: What six? | T: Which six?
+an6.74:1.3 | S: Sensual, malicious, and cruel thoughts; and sensual, malicious, and cruel perceptions. | T: Thoughts of sensuality, thoughts of ill will, thoughts of harmfulness; perceptions of sensuality, perceptions of ill will, perceptions of harmfulness.
+an6.74:1.4 | S: Without giving up these six qualities you can’t enter and remain in the first absorption. | T: Without abandoning these six things, one is incapable of entering & remaining in the first jhāna.”
+an6.74:2.1 | S: But after giving up these six qualities you can enter and remain in the first absorption. | T: (none)
+an6.74:2.2 | S: What six? | T: (none)
+an6.74:2.3 | S: Sensual, malicious, and cruel thoughts; and sensual, malicious, and cruel perceptions. | T: (none)
+an6.74:2.4 | S: After giving up these six qualities you can enter and remain in the first absorption.” | T: (none)
+an6.74:2.5 | P: Dasamaṁ. | T: (none)
+an6.74:2.6 | P: Devatāvaggo sattamo. | T: (none)
+an6.74:3.0 | P: Tassuddānaṁ | T: (none)
+an6.74:3.1 | P: Anāgāmi arahaṁ mittā, | T: (none)
+an6.74:3.2 | P: saṅgaṇikārāmadevatā; | T: (none)
+an6.74:3.3 | P: Samādhisakkhibhabbaṁ balaṁ, | T: (none)
+an6.74:3.4 | P: tajjhānā apare duveti. | T: (none)
+
+## sn43.10
+sn43.10:1.1 | S: “And what is the path that leads to the unconditioned? | T: (none)
+sn43.10:1.2 | S: The seven awakening factors. …” | T: the seven factors for awakening…
+sn43.10:1.3 | P: Dasamaṁ. | T: (none)
+
+## sn43.13
+sn43.13:1.1 | S: “Mendicants, I will teach you the uninclined …” | T: “Monks, I will also teach you the unbent and the path leading to the unbent…
+sn43.13:1.2 | P: Taṁ suṇātha. | T: (none)
+sn43.13:1.3 | P: Katamañca, bhikkhave, anataṁ …pe…”. | T: (none)
+sn43.13:1.4 | S: (Tell in full as in the unconditioned in the previous chapter.) | T: (none)
+sn43.13:1.5 | P: Dutiyaṁ. | T: (none)
+
+## sn43.6
+sn43.6:1.1 | S: “And what is the path that leads to the unconditioned? | T: (none)
+sn43.6:1.2 | S: The four right efforts. …” | T: the four right exertions…
+sn43.6:1.3 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn43.7
+sn43.7:1.1 | S: “And what is the path that leads to the unconditioned? | T: (none)
+sn43.7:1.2 | S: The four bases of psychic power. …” | T: the four bases of power…
+sn43.7:1.3 | P: Sattamaṁ. | T: (none)
+
+## sn43.8
+sn43.8:1.1 | S: “And what is the path that leads to the unconditioned? | T: (none)
+sn43.8:1.2 | S: The five faculties. …” | T: the five faculties…
+sn43.8:1.3 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn43.9
+sn43.9:1.1 | S: “And what is the path that leads to the unconditioned? | T: (none)
+sn43.9:1.2 | S: The five powers. …” | T: the five strengths…
+sn43.9:1.3 | P: Navamaṁ. | T: (none)
+
+## sn35.95
+sn35.95:1.1 | S: Then Venerable Māluṅkyaputta went up to the Buddha … and asked him, | T: Then Ven. Māluṅkyaputta, who was ardent & resolute, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there,
+sn35.95:1.2 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: he said to the Blessed One: “It would be good, lord, if the Blessed One would teach me the Dhamma in brief so that, having heard the Dhamma from the Blessed One, I might dwell alone in seclusion: heedful, ardent, & resolute.”
+sn35.95:2.1 | S: “Well now, Māluṅkyaputta, what are we to say to the young monks, | T: “Here now, Māluṅkyaputta: What will I say to the young monks when you—
+sn35.95:2.2 | S: when even an old man like you, elderly and senior, advanced in years, having reached the final stage of life, asks for brief advice?” | T: aged, old, elderly, along in years, come to the last stage of life—ask for an admonition in brief?”
+sn35.95:3.1 | S: “Sir, even though I’m an old man, elderly and senior, | T: “Lord, even though I’m aged, old, elderly, along in years, come to the last stage of life,
+sn35.95:3.2 | S: may the Buddha please teach me Dhamma in brief! May the Holy One please teach me in brief! Hopefully I can understand the meaning of what the Buddha says. Hopefully I can be an heir of the Buddha’s teaching!” | T: may the Blessed One teach me the Dhamma in brief! May the One Well-Gone teach me the Dhamma in brief! It may well be that I’ll understand the Blessed One’s words. It may well be that I’ll become an heir to the Blessed One’s words.”
+sn35.95:4.1 | S: “What do you think, Māluṅkyaputta? | T: “What do you think, Māluṅkyaputta?
+sn35.95:4.2 | S: Do you have any desire or greed or fondness for sights known by the eye that are unseen, unseen before, and which you neither see nor think might be seen?” | T: The forms cognizable via the eye that are unseen by you—that you have never before seen, that you don’t see, and that are not to be seen by you: Do you have any desire or passion or love there?”
+sn35.95:4.3 | S: “No, sir.” | T: “No, lord.”
+sn35.95:5.1 | S: “Do you have any desire or greed or affection for sounds known by the ear … | T: “The sounds cognizable via the ear…
+sn35.95:5.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:6.1 | S: smells known by the nose … | T: “The aromas cognizable via the nose…
+sn35.95:6.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:7.1 | S: tastes known by the tongue … | T: “The flavors cognizable via the tongue…
+sn35.95:7.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:8.1 | S: touches known by the body … | T: “The tactile sensations cognizable via the body…
+sn35.95:8.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:9.1 | S: ideas known by the mind that are unknown, unknown before, and which you neither know nor think might be known?” | T: “The ideas cognizable via the intellect that are uncognized by you–the you have never before cognized, that you don’t cognize, and that are not to be cognized by you: Do you have any desire or passion or love there?”
+sn35.95:9.2 | S: “No, sir.” | T: “No, lord.”
+sn35.95:10.1 | S: “In that case, when it comes to things that ought be seen, heard, thought, and known: in the seen will be merely the seen; in the heard will be merely the heard; in the thought will be merely the thought; in the known will be merely the known. | T: “Then, Māluṅkyaputta, with regard to phenomena to be seen, heard, sensed, or cognized: In reference to the seen, there will be only the seen. In reference to the heard, only the heard. In reference to the sensed, only the sensed. In reference to the cognized, only the cognized. That is how you should train yourself.
+sn35.95:10.2 | S: When this is the case, | T: When for you there will be only the seen in reference to the seen, only the heard in reference to the heard, only the sensed in reference to the sensed, only the cognized in reference to the cognized,
+sn35.95:10.3 | S: you won’t be ‘by that’. | T: then, Māluṅkyaputta, there is no you in connection with that.
+sn35.95:10.4 | S: When you’re not ‘by that’, | T: When there is no you in connection with that,
+sn35.95:10.5 | S: you won’t be ‘in that’. | T: there is no you there.
+sn35.95:10.6 | S: When you’re not ‘in that’, | T: When there is no you there,
+sn35.95:10.7 | S: you won’t be in this life or the next or in between the two. | T: you are neither here nor yonder nor between the two.
+sn35.95:10.8 | S: Just this is the end of suffering.” | T: This, just this, is the end of stress.”
+sn35.95:11.1 | S: “This is how I understand the detailed meaning of the Buddha’s brief statement: | T: “I understand in detail, lord, the meaning of what the Blessed One has said in brief:
+sn35.95:12.1 | S: ‘When you see a sight, mindfulness is lost | T: Seeing a form —mindfulness lapsed—
+sn35.95:12.2 | S: as you focus on a pleasant feature. | T: attending to the theme of ‘endearing,’
+sn35.95:12.3 | S: Experiencing it with a mind full of desire, | T: impassioned in mind, one feels
+sn35.95:12.4 | S: you keep clinging to it. | T: and remains fastened on it.
+sn35.95:13.1 | S: Many feelings grow | T: One’s feelings, born of the form, grow numerous,
+sn35.95:13.2 | S: arising from sights. | T: (none)
+sn35.95:13.3 | S: The mind is damaged | T: Greed & annoyance
+sn35.95:13.4 | S: by covetousness and cruelty. | T: injure one’s mind.
+sn35.95:13.5 | S: Heaping up suffering like this, | T: Thus amassing stress,
+sn35.95:13.6 | S: you’re said to be far from extinguishment. | T: one is said to be far from unbinding.
+sn35.95:14.1 | S: When you hear a sound, mindfulness is lost | T: Hearing a sound…
+sn35.95:14.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:14.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:14.4 | S: you keep clinging to it. | T: (none)
+sn35.95:15.1 | S: Many feelings grow | T: (none)
+sn35.95:15.2 | S: arising from sounds. | T: (none)
+sn35.95:15.3 | S: The mind is damaged | T: (none)
+sn35.95:15.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:15.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:15.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:16.1 | S: When you smell an odor, mindfulness is lost | T: Smelling an aroma…
+sn35.95:16.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:16.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:16.4 | S: you keep clinging to it. | T: (none)
+sn35.95:17.1 | S: Many feelings grow | T: (none)
+sn35.95:17.2 | S: arising from smells. | T: (none)
+sn35.95:17.3 | S: The mind is damaged | T: (none)
+sn35.95:17.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:17.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:17.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:18.1 | S: When you enjoy a taste, mindfulness is lost | T: Tasting a flavor…
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.95:18.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:18.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:18.4 | S: you keep clinging to it. | T: (none)
+sn35.95:19.1 | S: Many feelings grow | T: (none)
+sn35.95:19.2 | S: arising from tastes. | T: (none)
+sn35.95:19.3 | S: The mind is damaged | T: (none)
+sn35.95:19.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:19.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:19.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:20.1 | S: When you sense a touch, mindfulness is lost | T: Touching a tactile sensation…
+sn35.95:20.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:20.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:20.4 | S: you keep clinging to it. | T: (none)
+sn35.95:21.1 | S: Many feelings grow | T: (none)
+sn35.95:21.2 | S: arising from touches. | T: (none)
+sn35.95:21.3 | S: The mind is damaged | T: (none)
+sn35.95:21.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:21.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:21.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:22.1 | S: When you know an idea, mindfulness is lost | T: Knowing an idea —mindfulness lapsed—
+sn35.95:22.2 | S: as you focus on a pleasant feature. | T: attending to the theme of ‘endearing,’
+sn35.95:22.3 | S: Experiencing it with a mind full of desire, | T: impassioned in mind, one feels
+sn35.95:22.4 | S: you keep clinging to it. | T: and remains fastened on it.
+sn35.95:23.1 | S: Many feelings grow | T: One’s feelings, born of the idea, grow numerous,
+sn35.95:23.2 | S: arising from ideas. | T: (none)
+sn35.95:23.3 | S: The mind is damaged | T: Greed & annoyance
+sn35.95:23.4 | S: by covetousness and cruelty. | T: injure one’s mind.
+sn35.95:23.5 | S: Heaping up suffering like this, | T: Thus amassing stress,
+sn35.95:23.6 | S: you’re said to be far from extinguishment. | T: one is said to be far from unbinding.
+sn35.95:24.1 | S: There’s no desire for sights | T: Not impassioned with forms
+sn35.95:24.2 | S: when you see a sight with mindfulness. | T: —seeing a form with mindfulness firm—
+sn35.95:24.3 | S: Experiencing it with a mind free of desire, | T: dispassioned in mind, one knows
+sn35.95:24.4 | S: you don’t keep clinging to it. | T: and doesn’t remain fastened on it.
+sn35.95:25.1 | S: Even as you see a sight | T: While one is seeing a form
+sn35.95:25.2 | S: and get familiar with how it feels, | T: —and even experiencing feeling—
+sn35.95:25.3 | S: you wear away, you don’t heap up: | T: it falls away and doesn’t accumulate.
+sn35.95:25.4 | S: that’s how to live mindfully. | T: Thus one fares mindfully.
+sn35.95:25.5 | S: Eroding suffering like this, | T: Thus not amassing stress,
+sn35.95:25.6 | S: you’re said to be in the presence of extinguishment. | T: one is said to be in the presence of unbinding.
+sn35.95:26.1 | S: There’s no desire for sounds | T: Not impassioned with sounds…
+sn35.95:26.2 | S: when you hear a sound with mindfulness. | T: (none)
+sn35.95:26.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:26.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:27.1 | S: Even as you hear a sound | T: (none)
+sn35.95:27.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:27.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:27.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:27.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:27.6 | S: you’re said to be in the presence of extinguishment. | T: (none)
+sn35.95:28.1 | S: There’s no desire for odors | T: Not impassioned with aromas…
+sn35.95:28.2 | S: when you smell an odor with mindfulness. | T: (none)
+sn35.95:28.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:28.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:29.1 | S: Even as you smell an odor | T: (none)
+sn35.95:29.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:29.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:29.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:29.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:29.6 | S: you’re said to be in the presence of extinguishment. | T: (none)
+sn35.95:30.1 | S: There’s no desire for tastes | T: Not impassioned with flavors…
+sn35.95:30.2 | S: when you enjoy a taste with mindfulness. | T: (none)
+sn35.95:30.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:30.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:31.1 | S: Even as you savor a taste | T: (none)
+sn35.95:31.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:31.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:31.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:31.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:31.6 | S: you’re said to be in the presence of extinguishment. | T: (none)
+sn35.95:32.1 | S: There’s no desire for touches | T: Not impassioned with tactile sensations…
+sn35.95:32.2 | S: when you sense a touch with mindfulness. | T: (none)
+sn35.95:32.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:32.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:33.1 | S: Even as you sense a touch | T: (none)
+sn35.95:33.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:33.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:33.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:33.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:33.6 | S: you’re said to be in the presence of extinguishment. | T: (none)
+sn35.95:34.1 | S: There’s no desire for ideas | T: Not impassioned with ideas
+sn35.95:34.2 | S: when you know an idea with mindfulness. | T: —knowing an idea with mindfulness firm—
+sn35.95:34.3 | S: Experiencing it with a mind free of desire, | T: dispassioned in mind, one knows
+sn35.95:34.4 | S: you don’t keep clinging to it. | T: and doesn’t remain fastened on it.
+sn35.95:35.1 | S: Even as you know an idea | T: While one is knowing an idea
+sn35.95:35.2 | S: and get familiar with how it feels, | T: —and even experiencing feeling—
+sn35.95:35.3 | S: you wear away, you don’t heap up: | T: it falls away and doesn’t accumulate.
+sn35.95:35.4 | S: that’s how to live mindfully. | T: Thus one fares mindfully.
+sn35.95:35.5 | S: Eroding suffering like this, | T: Thus not amassing stress,
+sn35.95:35.6 | S: you’re said to be in the presence of extinguishment.’ | T: one is said to be in the presence of unbinding.
+sn35.95:36.1 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It’s in this way, lord, that I understand in detail the meaning of what the Blessed One said in brief.”
+sn35.95:36.2 | S: “Good, good, Māluṅkyaputta! | T: “Good, Māluṅkyaputta.
+sn35.95:36.3 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this.” And he repeated the verses in full. | T: Very good. It’s good that you understand in detail this way the meaning of what I said in brief.” [The Buddha then repeats the verses.]
+sn35.95:37.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | T: (none)
+sn35.95:37.2 | P: Piyaṁ nimittaṁ manasi karoto; | T: (none)
+sn35.95:37.3 | P: Sārattacitto vedeti, | T: (none)
+sn35.95:37.4 | P: Tañca ajjhosa tiṭṭhati. | T: (none)
+sn35.95:38.1 | P: Tassa vaḍḍhanti vedanā, | T: (none)
+sn35.95:38.2 | P: anekā rūpasambhavā; | T: (none)
+sn35.95:38.3 | P: Abhijjhā ca vihesā ca, | T: (none)
+sn35.95:38.4 | P: cittamassūpahaññati; | T: (none)
+sn35.95:38.5 | P: Evaṁ ācinato dukkhaṁ, | T: (none)
+sn35.95:38.6 | P: ārā nibbāna vuccati. | T: (none)
+sn35.95:38.7 | P: …pe… | T: (none)
+sn35.95:39.1 | P: Na so rajjati dhammesu, | T: (none)
+sn35.95:39.2 | P: dhammaṁ ñatvā paṭissato; | T: (none)
+sn35.95:39.3 | P: Virattacitto vedeti, | T: (none)
+sn35.95:39.4 | P: tañca nājjhosa tiṭṭhati. | T: (none)
+sn35.95:40.1 | P: Yathāssa vijānato dhammaṁ, | T: (none)
+sn35.95:40.2 | P: Sevato cāpi vedanaṁ; | T: (none)
+sn35.95:40.3 | P: Khīyati nopacīyati, | T: (none)
+sn35.95:40.4 | P: Evaṁ so caratī sato; | T: (none)
+sn35.95:40.5 | P: Evaṁ apacinato dukkhaṁ, | T: (none)
+sn35.95:40.6 | P: Santike nibbāna vuccatī’ti. | T: (none)
+sn35.95:41.1 | S: “This is how to see the detailed meaning of what I said in brief.” | T: “It’s in this way, Māluṅkyaputta, that the meaning of what I said in brief should be regarded in detail.”
+sn35.95:42.1 | S: And then Venerable Māluṅkyaputta approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then Ven. Māluṅkyaputta, having been admonished by the admonishment from the Blessed One, got up from his seat and bowed down to the Blessed One, circled around him, keeping the Blessed One to his right side, and left.
+sn35.95:42.2 | S: Then Māluṅkyaputta, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then, dwelling alone, secluded, heedful, ardent, & resolute, he in no long time entered & remained in the supreme goal of the holy life for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+sn35.95:42.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+sn35.95:42.4 | S: And Venerable Māluṅkyaputta became one of the perfected. | T: And thus Ven. Māluṅkyaputta became another one of the arahants.
+sn35.95:42.5 | P: Dutiyaṁ. | T: (none)
+
+## thag16.7
+thag16.7:1.1 | S: I rode on an elephant’s neck, | T: Whatever the fine clothes I wore when astride the elephant’s neck,
+thag16.7:1.2 | S: wearing luxurious clothes. | T: (none)
+thag16.7:1.3 | S: I ate boiled fine rice | T: whatever the fine rice I ate,
+thag16.7:1.4 | S: with pure meat sauce. | T: the pure meat sauce,
+thag16.7:2.1 | S: Today I am fortunate, persistent, | T: today—fortunate, persevering,
+thag16.7:2.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:2.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:2.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:3.1 | S: Wearing rags, persistent, | T: Wearing cast-off cloth, persevering,
+thag16.7:3.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:3.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:3.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:4.1 | S: Living on almsfood, persistent, | T: Going for alms, persevering,
+thag16.7:4.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:4.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:4.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:5.1 | S: Possessing only three robes, persistent, | T: Wearing only one triple set of robes, persevering…
+thag16.7:5.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:5.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:5.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:6.1 | S: Wandering for alms indiscriminately, persistent, | T: Bypassing no donors on his alms round, persevering…
+thag16.7:6.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:6.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:6.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:7.1 | S: Sitting alone, persistent, | T: Eating only one meal a day, persevering…
+thag16.7:7.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:7.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:7.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:8.1 | S: Eating only what’s put in the alms-bowl, persistent, | T: Eating from the bowl, persevering…
+thag16.7:8.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:8.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:8.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:9.1 | S: Never eating too late, persistent, | T: Refusing food brought afterwards, persevering…
+thag16.7:9.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:9.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:9.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:10.1 | S: Living in the wilderness, persistent, | T: Living in the wilderness, persevering…
+thag16.7:10.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:10.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:10.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:11.1 | S: Living at the foot of a tree, persistent, | T: Living at the foot of a tree, persevering…
+thag16.7:11.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:11.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:11.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:12.1 | S: Living in the open, persistent, | T: Living in the open air, persevering…
+thag16.7:12.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:12.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:12.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:13.1 | S: Living in a charnel ground, persistent, | T: Living in a cemetery, persevering…
+thag16.7:13.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:13.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:13.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:14.1 | S: Accepting whatever seat is offered, persistent, | T: Accepting whatever lodging he’s assigned, persevering,
+thag16.7:14.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:14.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:14.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:15.1 | S: Not lying down to sleep, persistent, | T: Not lying down, persevering,
+thag16.7:15.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:15.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:15.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:16.1 | S: Few in wishes, persistent, | T: Modest, persevering…
+thag16.7:16.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:16.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:16.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:17.1 | S: Content, persistent, | T: Content, persevering…
+thag16.7:17.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:17.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:17.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:18.1 | S: Secluded, persistent, | T: Secluded, persevering…
+thag16.7:18.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:18.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:18.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:19.1 | S: Aloof, persistent, | T: Unentangled, persevering…
+thag16.7:19.2 | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:19.3 | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:19.4 | S: practices absorption without grasping. | T: (none)
+thag16.7:20.1 | S: Energetic, persistent, | T: Energy aroused, persevering,
+thag16.7:20.2 | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:20.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+thag16.7:20.4 | S: practices absorption without grasping. | T: does jhāna without clinging.
+thag16.7:21.1 | S: Giving up a hundred ounces of bronze, | T: Abandoning a 100-carat bowl of bronze
+thag16.7:21.2 | S: and a hundred grains of gold, | T: and a 100-weight bowl of gold,
+thag16.7:21.3 | S: I took a bowl made of clay: | T: I took instead a bowl of clay:
+thag16.7:21.4 | S: this is my second initiation. | T: That was my second consecration.
+thag16.7:22.1 | S: I used to live in a citadel with walls so high, | T: In the midst of high encircling walls,
+thag16.7:22.2 | S: with battlements strong and gates, | T: strong battlements & gates,
+thag16.7:22.3 | S: all guarded by swordsmen— | T: guarded by men with swords in hand—
+thag16.7:22.4 | S: and yet I was afraid. | T: trembling I used to live.
+thag16.7:23.1 | S: Today I am fortunate, free of cowardice, | T: Today, fortunate, unafraid,
+thag16.7:23.2 | S: with fear and dread given up. | T: with fear & terror abandoned,
+thag16.7:23.3 | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:23.4 | S: has plunged into the forest and practices absorption. | T: having plunged into the forest, does jhāna.
+thag16.7:24.1 | S: Established in the entire spectrum of ethics, | T: Standing firm in the aggregate of virtue,
+thag16.7:24.2 | S: developing mindfulness and wisdom, | T: developing mindfulness & discernment,
+thag16.7:24.3 | S: gradually I attained | T: step by step I attained
+thag16.7:24.4 | S: the ending of all fetters. | T: the ending of all fetters.
+thag16.7:24.5 | P: … Bhaddiyo kāḷigodhāya putto thero …. | T: (none)
+
+## an6.70
+an6.70:1.1 | S: “Mendicants, it is quite impossible that a mendicant without immersion that is peaceful, refined, tranquil, and unified will wield the many kinds of psychic power: multiplying themselves and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful. They control the body as far as the realm of divinity. | T: “Monks, it’s impossible that a monk—with concentration that is not peaceful, not exquisite, not attained through calming, not immersed in unification—would wield manifold supranormal powers; that having been one he would become many; that having been many he would become one; that he would appear, vanish, go unimpeded through walls, ramparts, & mountains as if through space; that he would dive in & out of the earth as if it were water; that he would walk on water without sinking as if it were dry land; that sitting cross-legged he would fly through the air like a winged bird; that with his hand he would touch & stroke even the sun & moon, so mighty & powerful; that he would influence with his body even as far as the Brahmā worlds.
+an6.70:1.2 | S: It’s impossible that with clairaudience that is purified and superhuman, they’ll hear both kinds of sounds, human and heavenly, whether near or far. | T: “It’s impossible that he would hear—by means of the divine ear-element, purified & surpassing the human—both kinds of sounds: divine & human, whether near or far.
+an6.70:1.3 | S: It’s impossible that they’ll understand the minds of other beings and individuals, having encompassed them with their own mind, | T: “It’s impossible that he would discern the awareness of other beings, other individuals, having encompassed it with his own awareness;
+an6.70:1.4 | S: understanding mind with greed as ‘mind with greed’ … | T: that he would discern a mind with passion as ‘a mind with passion,’ and a mind without passion as ‘a mind without passion’; that he would discern a mind with aversion as ‘a mind with aversion,’ and a mind without aversion as ‘a mind without aversion’; that he would discern a mind with delusion as ‘a mind with delusion,’ and a mind without delusion as ‘a mind without delusion’; that he would discern a restricted mind as ‘a restricted mind,’ and a scattered mind as ‘a scattered mind’; that he would discern an enlarged mind as ‘an enlarged mind,’ and an unenlarged mind as ‘an unenlarged mind’; that he would discern a surpassed mind [one that is not at the most excellent level] as ‘a surpassed mind,’ and an unsurpassed mind as ‘an unsurpassed mind’; that he would discern a concentrated mind as ‘a concentrated mind,’ and an unconcentrated mind as ‘an unconcentrated mind’;
+an6.70:1.5 | S: and freed mind as ‘freed mind’. | T: that he would discern a released mind as ‘a released mind,’ and an unreleased mind as ‘an unreleased mind.’
+an6.70:1.6 | S: It’s impossible that they’ll recollect many kinds of past lives, with features and details. | T: “It’s impossible that he would recollect his manifold past lives [literally: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here’; that he would thus recollect his manifold past lives in their modes & details.
+an6.70:1.7 | S: It’s impossible that with clairvoyance that is purified and surpasses the human, they’ll understand how sentient beings pass on according to their deeds. | T: “It’s impossible that he would see—by means of the divine eye, purified & surpassing the human—beings passing away & re-appearing, and discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world’; that he would thus—by means of the divine eye, purified & surpassing the human—see beings passing away & re-appearing, and discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma.
+an6.70:1.8 | S: It’s impossible that they’ll realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: “It’s impossible that he would, through the ending of effluents, enter & remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.”
+an6.70:2.1 | S: But it’s quite possible that a mendicant who has immersion that is peaceful, refined, tranquil, and unified will wield the many kinds of psychic power … | T: (none)
+an6.70:2.2 | S: It’s possible that with clairaudience that is purified and superhuman, they’ll hear both kinds of sounds … | T: (none)
+an6.70:2.3 | S: It’s possible that they’ll understand the minds of other beings … | T: (none)
+an6.70:2.4 | P: sarāgaṁ vā cittaṁ sarāgaṁ cittanti pajānissati …pe… | T: (none)
+an6.70:2.5 | P: vimuttaṁ vā cittaṁ vimuttaṁ cittanti pajānissatī’ti ṭhānametaṁ vijjati. | T: (none)
+an6.70:2.6 | S: It’s possible that they’ll recollect many kinds of past lives, with features and details. | T: (none)
+an6.70:2.7 | S: It’s possible that with clairvoyance that is purified and superhuman, they’ll understand how sentient beings pass on according to their deeds. | T: (none)
+an6.70:2.8 | S: It’s possible that they’ll realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements.” | T: (none)
+an6.70:2.9 | P: Chaṭṭhaṁ. | T: (none)
+
+## an9.34
+an9.34:1.1 | S: At one time Venerable Sāriputta was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion Ven. Sāriputta was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+an9.34:1.2 | S: There he addressed the mendicants: | T: There he said to the monks,
+an9.34:1.3 | S: “Reverends, extinguishment is bliss! | T: “This unbinding is pleasant, friends.
+an9.34:1.4 | S: Extinguishment is bliss!” | T: This unbinding is pleasant.”
+an9.34:1.5 | S: When he said this, Venerable Udāyī said to him, | T: When this was said, Ven. Udāyin said to Ven. Sāriputta,
+an9.34:1.6 | S: “But Reverend Sāriputta, what’s blissful about it, since nothing is felt?” | T: “But what is the pleasure here, my friend, where there is nothing felt?”
+an9.34:1.7 | S: “The fact that nothing is felt is precisely what’s blissful about it. | T: “Just that is the pleasure here, my friend: where there is nothing felt.
+an9.34:1.8 | S: Reverend, there are these five kinds of sensual stimulation. | T: There are these five strands of sensuality.
+an9.34:1.9 | S: What five? | T: Which five?
+an9.34:1.10 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire;
+an9.34:1.11 | S: Sounds known by the ear … | T: sounds cognizable via the ear…
+an9.34:1.12 | S: Smells known by the nose … | T: aromas cognizable via the nose…
+an9.34:1.13 | S: Tastes known by the tongue … | T: flavors cognizable via the tongue…
+an9.34:1.14 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+an9.34:1.15 | S: These are the five kinds of sensual stimulation. | T: (none)
+an9.34:1.16 | S: The pleasure and happiness that arise from these five kinds of sensual stimulation is called sensual pleasure. | T: Whatever pleasure or joy arises in dependence on these five strands of sensuality, that is sensual pleasure.
+an9.34:2.1 | S: First, take a mendicant who, quite secluded from sensual pleasures … enters and remains in the first absorption. | T: “Now there is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an9.34:2.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by sensual pleasures beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with sensuality, that is an affliction for him.
+an9.34:2.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain would arise in a healthy person as an affliction,
+an9.34:2.4 | S: In the same way, should perception and focus accompanied by sensual pleasures beset them, that’s an affliction for them. | T: even so the attention to perceptions dealing with sensuality that beset the monk is an affliction for him.
+an9.34:2.5 | S: And affliction has been called suffering by the Buddha. | T: Now, the Blessed One has said that whatever is an affliction is stress.
+an9.34:2.6 | S: That’s the way to understand how extinguishment is bliss. | T: So by this line of reasoning it may be known how unbinding is pleasant.
+an9.34:3.1 | S: Furthermore, take a mendicant who, as the placing of the mind and keeping it connected are stilled, enters and remains in the second absorption. | T: “Then there is the case where a monk, with the stilling of directed thoughts & evaluations, enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an9.34:3.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by placing of the mind beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with directed thought, that is an affliction for him.…
+an9.34:3.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:3.4 | S: In the same way, should perception and focus accompanied by placing of the mind beset them, that’s an affliction for them. | T: (none)
+an9.34:3.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:3.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:4.1 | S: Furthermore, take a mendicant who, with the fading away of rapture, enters and remains in the third absorption. | T: “Then there is the case where a monk, with the fading of rapture, remains equanimous, mindful, & alert, senses pleasure with the body, and enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an9.34:4.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by rapture beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with rapture, that is an affliction for him.…
+an9.34:4.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:4.4 | S: In the same way, should perception and focus accompanied by rapture beset them, that’s an affliction for them. | T: (none)
+an9.34:4.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:4.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:5.1 | S: Furthermore, take a mendicant who, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, enters and remains in the fourth absorption. | T: “Then there is the case where a monk, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an9.34:5.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with equanimity, that is an affliction for him.…
+an9.34:5.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:5.4 | S: In the same way, should perception and focus accompanied by bliss with equanimity beset them, that’s an affliction for them. | T: (none)
+an9.34:5.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:5.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:6.1 | S: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Then there is the case where a monk, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ enters & remains in the dimension of the infinitude of space.
+an9.34:6.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by form beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with form, that is an affliction for him.…
+an9.34:6.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:6.4 | S: In the same way, should perception and focus accompanied by form beset them, that’s an affliction for them. | T: (none)
+an9.34:6.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:6.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:7.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: “Then there is the case where a monk, with the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ enters & remains in the dimension of the infinitude of consciousness.
+an9.34:7.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of space, that is an affliction for him.…
+an9.34:7.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:7.4 | S: In the same way, should perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. | T: (none)
+an9.34:7.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:7.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:8.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: “Then there is the case where a monk, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ enters & remains in the dimension of nothingness.
+an9.34:8.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of consciousness, that is an affliction for him.…
+an9.34:8.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:8.4 | S: In the same way, should perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. | T: (none)
+an9.34:8.5 | S: And affliction has been called suffering by the Buddha. | T: (none)
+an9.34:8.6 | S: That too is a way to understand how extinguishment is bliss. | T: (none)
+an9.34:9.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. | T: “Then there is the case where a monk, with the complete transcending of the dimension of nothingness, enters & remains in the dimension of neither perception nor non-perception.
+an9.34:9.2 | S: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. | T: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of nothingness, that is an affliction for him.
+an9.34:9.3 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: (none)
+an9.34:9.4 | S: In the same way, should perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. | T: (none)
+an9.34:9.5 | S: And affliction has been called suffering by the Buddha. | T: Now, the Blessed One has said that whatever is an affliction is stress.
+an9.34:9.6 | S: That too is a way to understand how extinguishment is bliss. | T: So by this line of reasoning it may be known how unbinding is pleasant.
+an9.34:10.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. | T: “Then there is the case where a monk, with the complete transcending of the dimension of neither perception nor non-perception, enters & remains in the cessation of perception & feeling. And as he sees (that) with discernment, effluents are completely ended.
+an9.34:11.1 | S: That too is a way to understand how extinguishment is bliss.” | T: So by this line of reasoning it may be known how unbinding is pleasant.”
+an9.34:11.2 | P: Tatiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '601,800p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-001.findings.tmp <<'EOF'
+sn35.95:1.2 starts: “It would be good, lord, if the
+sn35.95:2.2 starts: when you— aged, old, elderly, along in
+sn35.95:36.3 starts: It’s good that you understand in detail
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+24,035
+3 lines reported.

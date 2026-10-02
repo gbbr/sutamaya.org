@@ -1,0 +1,357 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9e-c370-7ff0-b61e-9c746d035ce7
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and report only clearly misplaced text.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn46.18
+sn46.18:1.1 | S: “Mendicants, whoever has missed out on the seven awakening factors has missed out on the noble path to the complete ending of suffering. | T: “Monks, those in whom the seven factors for awakening are neglected, in them the noble path leading to the right ending of suffering & stress is neglected.
+sn46.18:1.2 | S: Whoever has undertaken the seven awakening factors has undertaken the noble path to the complete ending of suffering. | T: Those in whom the seven factors for awakening are aroused, in them the noble path leading to the right ending of suffering & stress is aroused.
+sn46.18:1.3 | S: What seven? | T: “Which seven?
+sn46.18:1.4 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: Mindfulness as a factor for awakening, analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, concentration as a factor for awakening, & equanimity as a factor for awakening. These are the seven factors for awakening.
+sn46.18:1.5 | S: Whoever has missed out on these seven awakening factors has missed out on the noble path to the complete ending of suffering. | T: “Those in whom these seven factors for awakening are neglected, in them the noble path leading to the right ending of suffering & stress is neglected.
+sn46.18:1.6 | S: Whoever has undertaken these seven awakening factors has undertaken the noble path to the complete ending of suffering.” | T: Those in whom these seven factors for awakening are aroused, in them the noble path leading to the right ending of suffering & stress is aroused.”
+sn46.18:1.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn46.30
+sn46.30:1.1 | S: At one time the Buddha was staying in the land of the Sumbhas, near the town of the Sumbhas named Sedaka. | T: I have heard that on one occasion the Blessed One was staying among the Sumbhas. Now there is a Sumbhan town named Sedaka.
+sn46.30:1.2 | S: Then Venerable Udāyī went up to the Buddha … and said to him: | T: Then Ven. Udāyin went to the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there, he said to the Blessed One,
+sn46.30:2.1 | S: “It’s incredible, sir, it’s amazing! | T: “It’s amazing, lord. It’s astounding,
+sn46.30:2.2 | S: How helpful my fondness and respect for the Buddha have been, and my sense of conscience and prudence. | T: how much they have done for me—my love & respect for the Blessed One, my sense of shame & compunction.
+sn46.30:2.3 | S: For when I was still a layman, I wasn’t helped much by the teaching or the Saṅgha. | T: Before, when I was a householder, I wasn’t appreciative of the Dhamma or the Saṅgha,
+sn46.30:2.4 | S: But when I considered my fondness and respect for the Buddha, and my sense of conscience and prudence, I went forth from the lay life to homelessness. | T: but contemplating my love & respect for the Blessed One, my sense of shame & compunction, I went forth from home life into homelessness.
+sn46.30:2.5 | S: The Buddha taught me the Dhamma: | T: The Blessed One taught me the Dhamma:
+sn46.30:2.6 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such the origination of form, such the disappearance of form.
+sn46.30:2.7 | S: Such is feeling … | T: Such is feeling…
+sn46.30:2.8 | S: Such is perception … | T: Such is perception…
+sn46.30:2.9 | S: Such are choices … | T: Such are fabrications…
+sn46.30:2.10 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such the origination of consciousness, such the disappearance of consciousness.’
+sn46.30:3.1 | S: Then, while staying in an empty hut, I followed the churning of the five grasping aggregates. I truly understood: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “Then, lord, when I was staying in an empty dwelling, turning over (in my mind) the setting upright & toppling over of these five clinging-aggregates, I directly knew as it had come to be, ‘This is stress… This is the origination of stress… This is the cessation of stress… This is the way of practice leading to the cessation of stress.’
+sn46.30:3.2 | S: I comprehended the teaching, sir, I acquired the path. | T: “I have broken through to the Dhamma, lord, and have gained the path that—
+sn46.30:3.3 | S: This, when developed and cultivated by me meditating in just such a way, will bring me to such a state that I will understand: | T: when I have developed & cultivated it—will lead me to such a state that, dwelling by means of it, I will discern,
+sn46.30:3.4 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn46.30:4.1 | S: I acquired the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: “I have gained mindfulness as a factor for awakening that—when I have developed & cultivated it—will lead me to such a state that, dwelling by means of it, I will discern,
+sn46.30:4.2 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānissāmi …pe… | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’ “I have gained analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.30:4.3 | S: Each of these, when developed and cultivated by me meditating in just such a way, will bring me to such a state that I will understand: | T: “I have gained equanimity as a factor for awakening that—when I have developed & cultivated it—will lead me to such as a state that, dwelling by means of it, I will discern,
+sn46.30:4.4 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn46.30:4.5 | S: This is the path that I acquired which, when developed and cultivated by me meditating in just such a way, will bring me to such a state that I will understand: | T: “This, lord, is the path I have gained that—when I have developed & cultivated it—will lead me to such a state that, dwelling by means of it, I will discern,
+sn46.30:4.6 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’”
+sn46.30:5.1 | S: “Good, good, Udāyī! | T: “Excellent, Udāyin, excellent.
+sn46.30:5.2 | S: For that is indeed the path that you acquired which, when developed and cultivated by you meditating in just such a way, will bring you to such a state that you will understand: | T: For this is the path that you have gained that—when you have developed & cultivated it—will lead you to such as a state that, dwelling by means of it, you will discern,
+sn46.30:5.3 | S: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’”
+sn46.30:5.4 | P: Dasamaṁ. | T: (none)
+sn46.30:5.5 | P: Udāyivaggo tatiyo. | T: (none)
+sn46.30:6.0 | P: Tassuddānaṁ | T: (none)
+sn46.30:6.1 | P: Bodhāya desanā ṭhānā, | T: (none)
+sn46.30:6.2 | P: ayoniso cāparihānī; | T: (none)
+sn46.30:6.3 | P: Khayo nirodho nibbedho, | T: (none)
+sn46.30:6.4 | P: ekadhammo udāyināti. | T: (none)
+
+## sn46.38
+sn46.38:1.1 | S: “Mendicants, sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. | T: “Monks, whenever a disciple of the noble ones listens to the Dhamma—receptive, attentive, focusing his entire awareness, lending ear—on that occasion his five hindrances don’t exist, and seven factors for awakening go to the completion of their development.
+sn46.38:2.1 | S: What are the five hindrances that are absent? | T: “And which of his five hindrances don’t exist on that occasion?
+sn46.38:2.2 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: The hindrance of sensual desire doesn’t exist on that occasion. The hindrance of ill will… The hindrance of sloth & drowsiness… The hindrance of restlessness & anxiety… The hindrance of uncertainty doesn’t exist on that occasion.
+sn46.38:2.3 | S: These are the five hindrances that are absent. | T: “His five hindrances don’t exist on that occasion.
+sn46.38:3.1 | S: And what are the seven awakening factors that are fully developed? | T: “And which seven factors for awakening go to the completion of their development on that occasion?
+sn46.38:3.2 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: Mindfulness as a factor for awakening goes to the completion of its development on that occasion. Analysis of qualities as a factor for awakening… Persistence as a factor for awakening… Rapture as a factor for awakening… Calm as a factor for awakening… Concentration as a factor for awakening… Equanimity as a factor for awakening goes to the completion of its development on that occasion.
+sn46.38:3.3 | S: These are the seven awakening factors that are fully developed. | T: These are the seven factors for awakening that go to the completion of their development on that occasion.
+sn46.38:3.4 | S: Sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed.” | T: “Monks, whenever a disciple of the noble ones listens to the Dhamma—receptive, attentive, focusing his entire awareness, lending ear—on that occasion his five hindrances don’t exist, and these seven factors for awakening go to the completion of their development.”
+sn46.38:3.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn46.4
+sn46.4:1.1 | S: At one time Venerable Sāriputta was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion Ven. Sāriputta was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn46.4:1.2 | S: There Sāriputta addressed the mendicants: | T: There he addressed the monks,
+sn46.4:1.3 | S: “Reverends, mendicants!” | T: “Friend monks!”
+sn46.4:1.4 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+sn46.4:1.5 | S: Sāriputta said this: | T: Ven. Sāriputta said,
+sn46.4:2.1 | S: “There are these seven awakening factors. | T: “Friends, there are these seven factors for awakening.
+sn46.4:2.2 | S: What seven? | T: Which seven?
+sn46.4:2.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: Mindfulness as a factor for awakening, analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, concentration as a factor for awakening, & equanimity as a factor for awakening.
+sn46.4:2.4 | S: These are the seven awakening factors. | T: These are the seven factors for awakening.
+sn46.4:2.5 | S: In the morning, I meditate on whichever of these seven awakening factors I want. | T: “Whichever factor for awakening among these seven factors for awakening I want to dwell in during the morning, I dwell in that factor for awakening during the morning.
+sn46.4:2.6 | S: At midday, | T: Whichever factor for awakening I want to dwell in during the middle of the day, I dwell in that factor for awakening during the middle of the day.
+sn46.4:2.7 | S: and in the evening, I meditate on whichever of these seven awakening factors I want. | T: Whichever factor for awakening I want to dwell in during the late afternoon, I dwell in that factor for awakening during the late afternoon.
+sn46.4:2.8 | S: If it’s the awakening factor of mindfulness, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: “If the thought occurs to me, ‘mindfulness as a factor for awakening,’ the thought occurs to me, ‘It is immeasurable’; the thought occurs to me, ‘It is well-mastered.’ While it remains, I discern, ‘It remains.’
+sn46.4:2.9 | S: And if it subsides in me I understand the specific reason it subsides. … | T: If it falls away from me, I discern, ‘It has fallen away from me because of this condition.’
+sn46.4:2.10 | S: If it’s the awakening factor of equanimity, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: [Similarly with analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, and concentration as a factor for awakening.] “If the thought occurs to me, ‘equanimity as a factor for awakening,’ the thought occurs to me, ‘It is immeasurable’; the thought occurs to me, ‘It is well-mastered.’ While it remains, I discern, ‘It remains.’
+sn46.4:2.11 | S: And if it subsides I understand the specific reason it subsides. | T: If it falls away from me, I discern, ‘It has fallen away from me because of this condition.’
+sn46.4:3.1 | S: Suppose that a ruler or their chief minister had a chest full of garments of different colors. | T: “Suppose, friends, that a king or king’s minister had a wardrobe full of many-colored clothes.
+sn46.4:3.2 | S: In the morning, they’d don whatever pair of garments they wanted. | T: Whichever set of clothes he might want to wear during the morning, he would wear that set of clothes during the morning.
+sn46.4:3.3 | S: At midday, | T: Whichever set of clothes he might want to wear during the middle of the day, he would wear that set of clothes during the middle of the day.
+sn46.4:3.4 | S: and in the evening, they’d don whatever pair of garments they wanted. | T: Whichever set of clothes he might want to wear during the late afternoon, he would wear that set of clothes during the late afternoon.
+sn46.4:3.5 | S: In the same way, in the morning, | T: “In the same way, whichever factor for awakening among these seven factors for awakening I want to dwell in during the morning, I dwell in that factor for awakening during the morning.
+sn46.4:3.6 | S: at midday, | T: Whichever factor for awakening I want to dwell in during the middle of the day, I dwell in that factor for awakening during the middle of the day.
+sn46.4:3.7 | S: and in the evening, I meditate on whichever of these seven awakening factors I want. | T: Whichever factor for awakening I want to dwell in during the late afternoon, I dwell in that factor for awakening during the late afternoon.
+sn46.4:3.8 | S: If it’s the awakening factor of mindfulness, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: “If the thought occurs to me, ‘mindfulness as a factor for awakening,’ the thought occurs to me, ‘It is immeasurable’; the thought occurs to me, ‘It is well-mastered.’ While it remains, I discern, ‘It remains.’
+sn46.4:3.9 | S: And if it subsides I understand the specific reason it subsides. … | T: If it falls away from me, I discern, ‘It has fallen away from me because of this condition.’
+sn46.4:3.10 | S: If it’s the awakening factor of equanimity, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: [Similarly with analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, and concentration as a factor for awakening.] “If the thought occurs to me, ‘equanimity as a factor for awakening,’ the thought occurs to me, ‘It is immeasurable’; the thought occurs to me, ‘It is well-mastered.’ While it remains, I discern, ‘It remains.’
+sn46.4:3.11 | S: And if it subsides I understand the specific reason it subsides.” | T: If it falls away from me, I discern, ‘It has fallen away from me because of this condition.’”
+sn46.4:3.12 | P: Catutthaṁ. | T: (none)
+
+## sn46.52
+sn46.52:1.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then, early in the morning, a large number of monks adjusted their lower robes and, taking their bowls & outer robes, went into Sāvatthī for alms.
+sn46.52:1.2 | S: Then it occurred to him, | T: Then the thought occurred to them,
+sn46.52:1.3 | S: “It’s too early to wander for alms in Sāvatthī. | T: “It’s still too early to go for alms in Sāvatthī.
+sn46.52:1.4 | S: Why don’t we visit the monastery for the wanderers of other religions?” | T: Why don’t we go to the park of the wanderers of other sects?”
+sn46.52:2.1 | S: Then they went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: So the monks went to the park of the wanderers of other sects. On arrival, they exchanged courteous greetings with the wanderers of other sects.
+sn46.52:2.2 | S: When the greetings and polite conversation were over, they sat down to one side. The wanderers said to them: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, the wanderers of other sects said to them,
+sn46.52:3.1 | S: “Reverends, the ascetic Gotama teaches his disciples like this: | T: “Friends, Gotama the contemplative teaches the Dhamma to his disciples in this way:
+sn46.52:3.2 | S: ‘Mendicants, please give up the five hindrances—corruptions of the heart that weaken wisdom—and truly develop the seven awakening factors.’ | T: ‘Come, monks—abandoning the five hindrances, the corruptions of awareness that weaken discernment—develop the seven factors for awakening as they have come to be.’
+sn46.52:3.3 | S: We too teach our disciples: | T: “Now, friends, we too teach our disciples in this way:
+sn46.52:3.4 | S: ‘Reverends, please give up the five hindrances—corruptions of the heart that weaken wisdom—and truly develop the seven awakening factors.’ | T: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—develop the seven factors for awakening as they have come to be.’
+sn46.52:3.5 | S: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?” | T: “So, friends, what difference, what distinction, what distinguishing factor is there here between Gotama the contemplative and us, when comparing Dhamma teaching with Dhamma teaching, instruction with instruction?”
+sn46.52:4.1 | S: Those mendicants neither approved nor rejected that statement of the wanderers of other religions. | T: Then the monks neither delighted in the words of the wanderers of other sects, nor did they reject them.
+sn46.52:4.2 | S: They rose from their seats, thinking: | T: Without delighting or rejecting, they got up from their seats and left, (thinking,)
+sn46.52:4.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We will learn the meaning of these words in the presence of the Blessed One.”
+sn46.52:4.4 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: So, having gone for alms in Sāvatthī, after the meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn46.52:5.1 | P: “Idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pavisimha. | T: (none)
+sn46.52:5.2 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+sn46.52:5.3 | P: ‘atippago kho tāva sāvatthiyaṁ piṇḍāya carituṁ, | T: (none)
+sn46.52:5.4 | P: yannūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. | T: (none)
+sn46.52:5.5 | P: Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha; upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha. | T: (none)
+sn46.52:5.6 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, aññatitthiyā paribbājakā etadavocuṁ: | T: (none)
+sn46.52:6.1 | P: ‘Samaṇo, āvuso, gotamo sāvakānaṁ evaṁ dhammaṁ deseti “etha tumhe, bhikkhave, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe satta bojjhaṅge yathābhūtaṁ bhāvethā”ti. | T: (none)
+sn46.52:6.2 | P: Mayampi kho, āvuso, sāvakānaṁ evaṁ dhammaṁ desema: | T: (none)
+sn46.52:6.3 | P: “etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe satta bojjhaṅge yathābhūtaṁ bhāvethā”ti. | T: (none)
+sn46.52:6.4 | P: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ—dhammadesanāya vā dhammadesanaṁ, anusāsaniyā vā anusāsanin’ti? | T: (none)
+sn46.52:7.1 | P: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha nappaṭikkosimha, anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: | T: (none)
+sn46.52:7.2 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: (none)
+sn46.52:8.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when wanderers of other sects speak in that way, they should be addressed in this way:
+sn46.52:8.2 | S: ‘But reverends, is there a way in which the five hindrances become ten and the seven awakening factors become fourteen?’ | T: ‘But friends, is there an exposition, following which, the five hindrances become ten, and the seven factors for awakening fourteen?’
+sn46.52:8.3 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: “Being asked in this way, the wanderers of other sects will be unable to respond and, on top of that, will fall into vexation.
+sn46.52:8.4 | S: Why is that? | T: Why is that?
+sn46.52:8.5 | S: Because they’re out of their element. | T: Because it lies beyond their range.
+sn46.52:8.6 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: Monks, I don’t see anyone in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, who would satisfy the mind with their answer to these questions, aside from the Tathāgata, a disciple of the Tathāgata, or one who had heard it from them.
+sn46.52:9.1 | S: And what is the way in which the five hindrances become ten? | T: “And which, monks, is the exposition, following which, the five hindrances become ten?
+sn46.52:9.2 | S: Sensual desire for what is internal is a hindrance; and sensual desire for what is external is also a hindrance. | T: “Any sensual desire for what is internal is a hindrance. Any sensual desire for what is external is a hindrance.
+sn46.52:9.3 | S: That’s how what is concisely referred to as ‘the hindrance of sensual desire’ becomes twofold. | T: Thus what comes under the heading of ‘the hindrance of sensual desire’ becomes, by means of this exposition, twofold.
+sn46.52:9.4 | S: Ill will for what is internal is a hindrance; and ill will for what is external is also a hindrance. | T: “Any ill will for what is internal is a hindrance. Any ill will for what is external is a hindrance.
+sn46.52:9.5 | S: That’s how what is concisely referred to as ‘the hindrance of ill will’ becomes twofold. | T: Thus what comes under the heading of ‘the hindrance of ill will’ becomes, by means of this exposition, twofold.
+sn46.52:9.6 | S: Dullness is a hindrance; and drowsiness is also a hindrance. | T: “Any sloth is a hindrance. Any drowsiness is a hindrance.
+sn46.52:9.7 | S: That’s how what is concisely referred to as ‘the hindrance of dullness and drowsiness’ becomes twofold. | T: Thus what comes under the heading of ‘the hindrance of sloth & drowsiness’ becomes, by means of this exposition, twofold.
+sn46.52:9.8 | S: Restlessness is a hindrance; and remorse is also a hindrance. | T: “Any restlessness is a hindrance. Any anxiety is a hindrance.
+sn46.52:9.9 | S: That’s how what is concisely referred to as ‘the hindrance of restlessness and remorse’ becomes twofold. | T: Thus what comes under the heading of ‘the hindrance of restlessness & anxiety’ becomes, by means of this exposition, twofold.
+sn46.52:9.10 | S: Doubt about internal things is a hindrance; and doubt about external things is also a hindrance. | T: “Any uncertainty over what is internal is a hindrance. Any uncertainty over what is external is a hindrance.
+sn46.52:9.11 | S: That’s how what is concisely referred to as ‘the hindrance of doubt’ becomes twofold. | T: Thus what comes under the heading of ‘the hindrance of uncertainty’ becomes, by means of this exposition, twofold.
+sn46.52:9.12 | S: This is the way in which the five hindrances become ten. | T: “This, monks, is the exposition, following which, the five hindrances become ten.
+sn46.52:10.1 | S: And what is the way in which the seven awakening factors become fourteen? | T: “And which is the exposition, following which, the seven factors for awakening become fourteen?
+sn46.52:10.2 | S: Mindfulness of internal things is the awakening factor of mindfulness; and mindfulness of external things is also the awakening factor of mindfulness. | T: “Any mindfulness concerning internal qualities is mindfulness as a factor for awakening. Any mindfulness concerning external qualities is mindfulness as a factor for awakening.
+sn46.52:10.3 | S: That’s how what is concisely referred to as ‘the awakening factor of mindfulness’ becomes twofold. | T: Thus what comes under the heading of ‘mindfulness as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:11.1 | S: Investigating, exploring, and inquiring into internal things with wisdom is the awakening factor of investigation of principles; and investigating, exploring, and inquiring into external things with wisdom is also the awakening factor of investigation of principles. | T: “Whenever one, with discernment, investigates, carefully attends to, and makes an examination of internal qualities, that is analysis of qualities as a factor for awakening. Whenever one, with discernment, investigates, carefully attends to, and makes an examination of external qualities, that is analysis of qualities as a factor for awakening.
+sn46.52:11.2 | S: That’s how what is concisely referred to as ‘the awakening factor of investigation of principles’ becomes twofold. | T: Thus what comes under the heading of ‘analysis of qualities as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:12.1 | S: Physical energy is the awakening factor of energy; and mental energy is also the awakening factor of energy. | T: “Any bodily persistence is persistence as a factor for awakening. Any mental persistence is persistence as a factor for awakening.
+sn46.52:12.2 | S: That’s how what is concisely referred to as ‘the awakening factor of energy’ becomes twofold. | T: Thus what comes under the heading of ‘persistence as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:13.1 | S: Rapture while placing the mind and keeping it connected is the awakening factor of rapture; and rapture without placing the mind and keeping it connected is also the awakening factor of rapture. | T: “Any rapture accompanied by directed thought & evaluation is rapture as a factor for awakening. Any rapture unaccompanied by directed thought & evaluation is rapture as a factor for awakening.
+sn46.52:13.2 | S: In this way what is concisely referred to as ‘the awakening factor of rapture’ becomes twofold. | T: Thus what comes under the heading of ‘rapture as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:14.1 | S: Physical tranquility is the awakening factor of tranquility; and mental tranquility is also the awakening factor of tranquility. | T: “Any bodily calm is calm as a factor for awakening. Any mental calm is calm as a factor for awakening.
+sn46.52:14.2 | S: In this way what is concisely referred to as ‘the awakening factor of tranquility’ becomes twofold. | T: Thus what comes under the heading of ‘calm as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:15.1 | S: Immersion while placing the mind and keeping it connected is the awakening factor of immersion; and immersion without placing the mind and keeping it connected is also the awakening factor of immersion. | T: “Any concentration accompanied by directed thought & evaluation is concentration as a factor for awakening. Any concentration unaccompanied by directed thought & evaluation is concentration as a factor for awakening.
+sn46.52:15.2 | S: In this way what is concisely referred to as ‘the awakening factor of immersion’ becomes twofold. | T: Thus what comes under the heading of ‘concentration as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:16.1 | S: Equanimity for internal things is the awakening factor of equanimity; and equanimity for external things is also the awakening factor of equanimity. | T: “Any equanimity concerning internal qualities is equanimity as a factor for awakening. Any equanimity concerning external qualities is equanimity as a factor for awakening.
+sn46.52:16.2 | S: In this way what is concisely referred to as ‘the awakening factor of equanimity’ becomes twofold. | T: Thus what comes under the heading of ‘equanimity as a factor for awakening’ becomes, by means of this exposition, twofold.
+sn46.52:16.3 | S: This is the way in which the seven awakening factors become fourteen.” | T: “This, monks, is the exposition, following which, the seven factors for awakening are fourteen.”
+sn46.52:16.4 | P: Dutiyaṁ. | T: (none)
+
+## sn46.53
+sn46.53:1.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then, early in the morning, a large number of monks adjusted their lower robes and, taking their bowls & outer robes, went into Sāvatthī for alms.
+sn46.53:1.2 | S: (The same as the previous discourse.) | T: Then the thought occurred to them, “It’s still too early to go for alms in Sāvatthī. Why don’t we go to the park of the wanderers of other sects?” So the monks went to the park of the wanderers of other sects. On arrival, they exchanged courteous greetings with the wanderers of other sects. After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, the wanderers of other sects said to them, “Friends, Gotama the contemplative teaches the Dhamma to his disciples in this way: ‘Come, monks—abandoning the five hindrances, the corruptions of awareness that weaken discernment—develop the seven factors for awakening as they have come to be.’ “Now, friends, we too teach our disciples in this way: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—develop the seven factors for awakening as they have come to be.’ “So, friends, what difference, what distinction, what distinguishing factor is there here between Gotama the contemplative and us, when comparing Dhamma teaching with Dhamma teaching, instruction with instruction?” Then the monks neither delighted in the words of the wanderers of other sects, nor did they reject them. Without delighting or rejecting, they got up from their seats and left, (thinking,) “We will learn the meaning of these words in the presence of the Blessed One.” So, having gone for alms in Sāvatthī, after the meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn46.53:2.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when wanderers of other sects speak in that way, they should be addressed in this way:
+sn46.53:2.2 | S: ‘Reverends, which awakening factors should not be developed when the mind is sluggish? And which awakening factors should be developed at that time? | T: ‘Friends, on any occasion when the mind is sluggish, which of the factors of awakening is that the wrong time to develop? Which of the factors of awakening is that the right time to develop?
+sn46.53:2.3 | S: Which awakening factors should not be developed when the mind is restless? And which awakening factors should be developed at that time?’ | T: And on any occasion when the mind is restless, which of the factors of awakening is that the wrong time to develop? Which of the factors of awakening is that the right time to develop?’
+sn46.53:2.4 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: “Being asked in this way, the wanderers of other sects will be unable to respond and, on top of that, will fall into vexation.
+sn46.53:2.5 | S: Why is that? | T: Why is that?
+sn46.53:2.6 | S: Because they’re out of their element. | T: Because it lies beyond their range.
+sn46.53:3.1 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: Monks, I don’t see anyone in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, who would satisfy the mind with their answer to these questions, aside from the Tathāgata, a disciple of the Tathāgata, or one who had heard it from them.
+sn46.53:4.1 | S: When the mind is sluggish, it’s the wrong time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “Now, monks, on any occasion when the mind is sluggish, that is the wrong time to develop calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening.
+sn46.53:4.2 | S: Why is that? | T: Why is that?
+sn46.53:4.3 | S: Because it’s hard to stimulate a sluggish mind with these things. | T: The sluggish mind is hard to raise up by those mental qualities.
+sn46.53:5.1 | S: Suppose someone wanted to make a small fire flare up. | T: Just as if a man, wanting to make a small fire blaze up,
+sn46.53:5.2 | S: If they toss wet grass, cow-dung, and timber on it, spray it with water, and scatter dirt on it, | T: were to place wet grass in it, wet cow dung, & wet sticks; were to give it a spray of water and smother it with dust.
+sn46.53:5.3 | S: could they make it flare up?” | T: Is it possible that he would make the small fire blaze up?”
+sn46.53:5.4 | S: “No, sir.” | T: “No, lord.”
+sn46.53:6.1 | S: “In the same way, when the mind is sluggish, it’s the wrong time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “In the same way, monks, on any occasion the mind is sluggish, that is the wrong time to develop calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening.
+sn46.53:6.2 | S: Why is that? | T: Why is that?
+sn46.53:6.3 | S: Because it’s hard to stimulate a sluggish mind with these things. | T: The sluggish mind is hard to raise up by those mental qualities.
+sn46.53:7.1 | S: When the mind is sluggish, it’s the right time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “Now, on any occasion when the mind is sluggish, that is the right time to develop analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening.
+sn46.53:7.2 | S: Why is that? | T: Why is that?
+sn46.53:7.3 | S: Because it’s easy to stimulate a sluggish mind with these things. | T: The sluggish mind is easy to raise up by those mental qualities.
+sn46.53:8.1 | S: Suppose someone wanted to make a small fire flare up. | T: Just as if a man, wanting to make a small fire blaze up,
+sn46.53:8.2 | S: If they toss dry grass, cow-dung, and timber on it, blow on it, and don’t scatter dirt on it, | T: were to place dry grass in it, dry cow dung, & dry sticks; were to blow on it with his mouth and not smother it with dust.
+sn46.53:8.3 | S: could they make it flare up?” | T: Is it possible that he would make the small fire blaze up?
+sn46.53:8.4 | S: “Yes, sir.” | T: “Yes, lord.
+sn46.53:9.1 | S: “In the same way, when the mind is sluggish, it’s the right time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “In the same way, monks, on any occasion when the mind is sluggish, that is the right time to develop analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening.
+sn46.53:9.2 | S: Why is that? | T: Why is that?
+sn46.53:9.3 | S: Because it’s easy to stimulate a sluggish mind with these things. | T: The sluggish mind is easy to raise up by those mental qualities.
+sn46.53:10.1 | S: When the mind is restless, it’s the wrong time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “Now, on any occasion when the mind is restless, that is the wrong time to develop analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening.
+sn46.53:10.2 | S: Why is that? | T: Why is that?
+
+exec
+/bin/bash -lc "sed -n '181,340p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn46.53:10.3 | S: Because it’s hard to settle a restless mind with these things. | T: The restless mind is hard to still with those mental qualities.
+sn46.53:11.1 | S: Suppose someone wanted to extinguish a great mass of fire. | T: Just as if a man, wanting to put out a large fire,
+sn46.53:11.2 | S: If they toss dry grass, cow-dung, and timber on it, blow on it, and don’t scatter dirt on it, | T: were to place dry grass in it, dry cow dung, & dry sticks; were to blow on it with his mouth and not smother it with dust.
+sn46.53:11.3 | S: could they extinguish it?” | T: Is it possible that he would put it out?”
+sn46.53:11.4 | S: “No, sir.” | T: “No, lord.”
+sn46.53:12.1 | S: “In the same way, when the mind is restless, it’s the wrong time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “In the same way, monks, on any occasion when the mind is restless, that is the wrong time to develop analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening.
+sn46.53:12.2 | S: Why is that? | T: Why is that?
+sn46.53:12.3 | S: Because it’s hard to settle a restless mind with these things. | T: The restless mind is hard to still with those mental qualities.
+sn46.53:13.1 | S: When the mind is restless, it’s the right time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “Now, on occasions when the mind is restless, that is the right time to develop calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening.
+sn46.53:13.2 | S: Why is that? | T: Why is that?
+sn46.53:13.3 | S: Because it’s easy to settle a restless mind with these things. | T: The restless mind is easy to still with those mental qualities.
+sn46.53:14.1 | S: Suppose someone wanted to extinguish a great mass of fire. | T: Just as if a man, wanting to put out a large fire,
+sn46.53:14.2 | S: If they toss wet grass, cow-dung, and timber on it, spray it with water, and scatter dirt on it, | T: were to place wet grass in it, wet cow dung, & wet sticks; were to give it a spray of water and smother it with dust.
+sn46.53:14.3 | S: could they extinguish it?” | T: Is it possible that he would put it out?”
+sn46.53:14.4 | S: “Yes, sir.” | T: “Yes, lord.”
+sn46.53:15.1 | S: “In the same way, when the mind is restless, it’s the right time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “In the same way, monks, when the mind is restless, that is the right time to develop calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening.
+sn46.53:15.2 | S: Why is that? | T: Why is that?
+sn46.53:15.3 | S: Because it’s easy to settle a restless mind with these things. | T: The restless mind is easy to still with those mental qualities.
+sn46.53:15.4 | S: But mindfulness is always useful, I say.” | T: “As for mindfulness, I tell you, that serves every purpose.”
+sn46.53:15.5 | P: Tatiyaṁ. | T: (none)
+
+## sn46.54
+sn46.54:1.1 | S: At one time the Buddha was staying in the land of the Koliyans, where they have a town named Haliddavasana. | T: On one occasion the Blessed One was staying among the Koliyans. Now there is a Koliyan town named Haliddavasana.
+sn46.54:1.2 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Haliddavasana for alms. | T: Then, early in the morning, a large number of monks adjusted their lower robes and, taking their bowls & outer robes, went into Haliddavasana for alms.
+sn46.54:1.3 | S: Then it occurred to them, | T: Then the thought occurred to them,
+sn46.54:1.4 | S: “It’s too early to wander for alms in Haliddavasana. | T: “It’s still too early to go for alms in Haliddavasana.
+sn46.54:1.5 | S: Why don’t we visit the monastery for the wanderers of other religions?” | T: Why don’t we go to the park of the wanderers of other sects?”
+sn46.54:2.1 | S: Then they went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: So the monks went to the park of the wanderers of other sects. On arrival, they exchanged courteous greetings with the wanderers of other sects.
+sn46.54:2.2 | S: When the greetings and polite conversation were over, they sat down to one side. The wanderers said to them: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, the wanderers of other sects said to them,
+sn46.54:3.1 | S: “Reverends, the ascetic Gotama teaches his disciples like this: | T: “Friends, Gotama the contemplative teaches the Dhamma to his disciples in this way:
+sn46.54:3.2 | S: ‘Come, mendicants, give up these five hindrances, corruptions of the heart that weaken wisdom, and meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: ‘Come, monks—abandoning the five hindrances, the corruptions of awareness that weaken discernment—keep pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.
+sn46.54:3.3 | S: Meditate spreading a heart full of compassion to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, spread a heart full of compassion to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “‘Keep pervading the first direction with an awareness imbued with compassion.…
+sn46.54:3.4 | S: Meditate spreading a heart full of rejoicing to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, spread a heart full of rejoicing to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “‘Keep pervading the first direction with an awareness imbued with empathetic joy.…
+sn46.54:3.5 | S: Meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will.’ | T: “‘Keep pervading the first direction with an awareness imbued with equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.’
+sn46.54:4.1 | S: We too teach our disciples in just the same way. | T: “Now, friends, we too teach our disciples in this way:
+sn46.54:4.2 | P: ‘etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: ‘Come, you friends—abandoning the five hindrances, the corruptions of awareness that weaken discernment—keep pervading the first direction [the east] with an awareness imbued with goodwill, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with goodwill—abundant, enlarged, immeasurable, without hostility, without ill will.
+sn46.54:4.3 | P: karuṇāsahagatena cetasā … | T: “‘Keep pervading the first direction with an awareness imbued with compassion.…
+sn46.54:4.4 | P: muditāsahagatena cetasā … | T: “‘Keep pervading the first direction with an awareness imbued with empathetic joy.… “‘Keep pervading the first direction with an awareness imbued with equanimity, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, keep pervading the all-encompassing cosmos with an awareness imbued with equanimity—abundant, enlarged, immeasurable, without hostility, without ill will.’
+sn46.54:4.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; | T: (none)
+sn46.54:4.6 | P: iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:4.7 | S: What, then, is the difference between the ascetic Gotama’s teaching and instruction and ours?” | T: “So, friends, what difference, what distinction, what distinguishing factor is there here between Gotama the contemplative and us, when comparing Dhamma teaching with Dhamma teaching, instruction with instruction?”
+sn46.54:5.1 | S: Those mendicants neither approved nor rejected that statement of the wanderers of other religions. | T: Then the monks neither delighted in the words of the wanderers of other sects, nor did they reject them.
+sn46.54:5.2 | S: They rose from their seats, thinking: | T: Without delighting or rejecting, they got up from their seats and left, (thinking,)
+sn46.54:5.3 | S: “We will learn the meaning of this statement from the Buddha himself.” | T: “We will learn the meaning of these words in the presence of the Blessed One.”
+sn46.54:5.4 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: So, having gone for alms in Haliddavasana, after the meal, returning from their alms round, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn46.54:6.1 | P: “Idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya haliddavasane piṇḍāya pavisimha. | T: (none)
+sn46.54:6.2 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | T: (none)
+sn46.54:6.3 | P: ‘atippago kho tāva haliddavasane piṇḍāya carituṁ. | T: (none)
+sn46.54:7.1 | P: Yannūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha, upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha. | T: (none)
+sn46.54:7.2 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, te aññatitthiyā paribbājakā etadavocuṁ: | T: (none)
+sn46.54:8.1 | P: ‘Samaṇo, āvuso, gotamo sāvakānaṁ evaṁ dhammaṁ deseti: | T: (none)
+sn46.54:8.2 | P: “etha tumhe, bhikkhave, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: (none)
+sn46.54:8.3 | P: karuṇāsahagatena cetasā …pe… | T: (none)
+sn46.54:8.4 | P: muditāsahagatena cetasā …pe… | T: (none)
+sn46.54:8.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:9.1 | P: Mayampi kho, āvuso, sāvakānaṁ evaṁ dhammaṁ desema: | T: (none)
+sn46.54:9.2 | P: ‘etha tumhe, āvuso, pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha …pe… | T: (none)
+sn46.54:9.3 | P: karuṇāsahagatena cetasā …pe… | T: (none)
+sn46.54:9.4 | P: muditāsahagatena cetasā …pe… | T: (none)
+sn46.54:9.5 | P: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharatha, tathā dutiyaṁ, tathā tatiyaṁ, tathā catutthaṁ; iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharathā’ti. | T: (none)
+sn46.54:9.6 | P: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ, dhammadesanāya vā dhammadesanaṁ, anusāsaniyā vā anusāsaninti? | T: (none)
+sn46.54:10.1 | P: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha nappaṭikkosimha, anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: | T: (none)
+sn46.54:10.2 | P: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. | T: (none)
+sn46.54:11.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: “Monks, when wanderers of other sects speak in that way, they should be addressed in this way:
+sn46.54:11.2 | S: ‘But reverends, how is the heart’s release by love developed? What is its destination, apex, fruit, and culmination? | T: ‘But how, friends, is awareness-release through goodwill developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:11.3 | S: How is the heart’s release by compassion developed? What is its destination, apex, fruit, and end? | T: How is awareness-release through compassion developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:11.4 | S: How is the heart’s release by rejoicing developed? What is its destination, apex, fruit, and end? | T: How is awareness-release through empathetic joy developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:11.5 | S: How is the heart’s release by equanimity developed? What is its destination, apex, fruit, and end?’ | T: How is awareness-release through equanimity developed, what is its destination, what is its excellence, its fruit, & its consummation?’
+sn46.54:11.6 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: “Being asked in this way, the wanderers of other sects will be unable to respond and, on top of that, will fall into vexation.
+sn46.54:11.7 | S: Why is that? | T: Why is that?
+sn46.54:11.8 | S: Because they’re out of their element. | T: Because it lies beyond their range.
+sn46.54:11.9 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: Monks, I don’t see anyone in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, who would satisfy the mind with their answer to these questions, aside from the Tathāgata, a disciple of the Tathāgata, or one who had heard it from them.
+sn46.54:12.1 | S: And how is the heart’s release by love developed? What is its destination, apex, fruit, and end? | T: “And how, monks, is awareness-release through goodwill developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:12.2 | S: It’s when a mendicant develops the heart’s release by love together with the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening accompanied by goodwill, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.54:12.3 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening accompanied by goodwill, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.54:12.4 | S: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive,’ that’s what they do. | T: If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome.
+sn46.54:12.5 | S: If they wish: ‘May I meditate perceiving the unrepulsive in the repulsive,’ that’s what they do. | T: If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome.
+sn46.54:12.6 | S: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive and the repulsive,’ that’s what they do. | T: If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome & what is.
+sn46.54:12.7 | S: If they wish: ‘May I meditate perceiving the unrepulsive in the repulsive and the unrepulsive,’ that’s what they do. | T: If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome & what is not.
+sn46.54:12.8 | S: If they wish: ‘May I meditate staying equanimous, mindful and aware, shunning both the repulsive and the unrepulsive,’ that’s what they do. | T: If he wants—in the presence of what is loathsome & what is not—cutting himself off from both, he remains equanimous, alert, & mindful.
+sn46.54:12.9 | S: The apex of the heart’s release by love is the beautiful, I say, for a wise mendicant here who has not penetrated to a higher freedom. | T: Or he may enter & remain in the beautiful liberation. I tell you, monks, awareness-release through goodwill has the beautiful as its excellence—in the case of one who has penetrated to no higher release.
+sn46.54:13.1 | S: And how is the heart’s release by compassion developed? What is its destination, apex, fruit, and end? | T: “And how is awareness-release through compassion developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:13.2 | S: It’s when a mendicant develops the heart’s release by compassion together with the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening accompanied by compassion, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.54:13.3 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening accompanied by compassion, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.54:13.4 | S: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive,’ that’s what they do. … | T: If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome. If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome & what is. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome & what is not.
+sn46.54:13.5 | S: If they wish: ‘May I meditate staying equanimous, mindful and aware, shunning both the repulsive and the unrepulsive,’ that’s what they do. | T: If he wants—in the presence of what is loathsome & what is not—cutting himself off from both, he remains equanimous, alert, & mindful.
+sn46.54:13.6 | S: Or else, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, they enter and remain in the dimension of infinite space. | T: Or, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ he enters & remains in the sphere of the infinitude of space.
+sn46.54:13.7 | S: The apex of the heart’s release by compassion is the dimension of infinite space, I say, for a wise mendicant here who has not penetrated to a higher freedom. | T: I tell you, monks, awareness-release through compassion has the sphere of the infinitude of space as its excellence—in the case of one who has penetrated to no higher release.
+sn46.54:14.1 | S: And how is the heart’s release by rejoicing developed? What is its destination, apex, fruit, and end? | T: “And how is awareness-release through empathetic joy developed, what is its destination, what is its excellence, its fruit, & its consummation?
+sn46.54:14.2 | S: It’s when a mendicant develops the heart’s release by rejoicing together with the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening accompanied by empathetic joy, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.54:14.3 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening accompanied by empathetic joy, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.54:14.4 | S: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive,’ that’s what they do. … | T: If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome. If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome & what is. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome & what is not.
+
+exec
+/bin/bash -lc "sed -n '341,500p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '270,340p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn46.54:14.2 | S: It’s when a mendicant develops the heart’s release by rejoicing together with the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening accompanied by empathetic joy, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.54:14.3 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening accompanied by empathetic joy, dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.54:14.4 | S: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive,’ that’s what they do. … | T: If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome. If he wants, he remains percipient of loathsomeness in the presence of what is not loathsome & what is. If he wants, he remains percipient of unloathsomeness in the presence of what is loathsome & what is not.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-106.findings.tmp <<'EOF'
+sn46.54:4.5 starts: “‘Keep pervading the first direction with an
+sn46.54:4.6 starts: Thus above, below, & all around, everywhere, in
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+2 lines reported.
+tokens used
+12,657
+2 lines reported.

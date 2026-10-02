@@ -1,0 +1,483 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8b-d83e-7b51-8b9b-e8d20d0e2149
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.48
+sn22.48:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.48:1.2 | S: “Mendicants, I will teach you the five aggregates and the five grasping aggregates. | T: “Bhikkhus, I will teach you the five aggregates and the five aggregates subject to clinging.
+sn22.48:1.3 | S: Listen … | T: Listen to that….
+sn22.48:1.4 | S: And what are the five aggregates? | T: “And what, bhikkhus, are the five aggregates?
+sn22.48:1.5 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of form. | T: Whatever kind of form there is, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near: this is called the form aggregate.
+sn22.48:1.6 | S: Any kind of feeling at all … | T: Whatever kind of feeling there is … this is called the feeling aggregate.
+sn22.48:1.7 | S: Any kind of perception at all … | T: Whatever kind of perception there is … this is called the perception aggregate.
+sn22.48:1.8 | S: Any kind of choices at all … | T: Whatever kind of volitional formations there are … these are called the volitional formations aggregate.
+sn22.48:1.9 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of consciousness. | T: Whatever kind of consciousness there is, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near: this is called the consciousness aggregate.
+sn22.48:1.10 | S: These are called the five aggregates. | T: These, bhikkhus, are called the five aggregates.
+sn22.48:2.1 | S: And what are the five grasping aggregates? | T: “And what, bhikkhus, are the five aggregates subject to clinging?
+sn22.48:2.2 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of form. | T: Whatever kind of form there is, whether past, future, or present … far or near, that is tainted, that can be clung to: this is called the form aggregate subject to clinging.
+sn22.48:2.3 | S: Any kind of feeling at all … | T: Whatever kind of feeling there is … that is tainted, that can be clung to: this is called the feeling aggregate subject to clinging.
+sn22.48:2.4 | S: Any kind of perception at all … | T: Whatever kind of perception there is … that is tainted, that can be clung to: this is called the perception aggregate subject to clinging.
+sn22.48:2.5 | S: Any kind of choices at all … | T: Whatever kind of volitional formations there are … that are tainted, that can be clung to: these are called the volitional formations aggregate subject to clinging.
+sn22.48:2.6 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of consciousness. | T: Whatever kind of consciousness there is, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, that is tainted, that can be clung to: this is called the consciousness aggregate subject to clinging.
+sn22.48:2.7 | S: These are called the five grasping aggregates.” | T: These, bhikkhus, are called the five aggregates subject to clinging.”
+sn22.48:2.8 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.49
+sn22.49:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.49:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn22.49:1.3 | S: Then the householder Soṇa went up to the Buddha … | T: Then Soṇa the householder’s son approached the Blessed One….
+sn22.49:1.4 | S: The Buddha said to him: | T: The Blessed One then said to Soṇa the householder’s son:
+sn22.49:2.1 | S: “Soṇa, there are ascetics and brahmins who—based on form, which is impermanent, suffering, and perishable—regard themselves thus: ‘I’m better’, | T: “Soṇa, when any ascetics and brahmins, on the basis of form—which is impermanent, suffering, and subject to change—regard themselves thus: ‘I am superior,’ or
+sn22.49:2.2 | S: or ‘I’m equal’, | T: ‘I am equal,’ or
+sn22.49:2.3 | S: or ‘I’m worse’. | T: ‘I am inferior,’
+sn22.49:2.4 | S: What is that but a failure to see truly? | T: what is that due to apart from not seeing things as they really are?
+sn22.49:2.5 | S: Based on feeling … | T: “When any ascetics and brahmins, on the basis of feeling …
+sn22.49:2.6 | P: ‘sadisohamasmī’ti vā samanupassanti; | T: (none)
+sn22.49:2.7 | P: ‘hīnohamasmī’ti vā samanupassanti; | T: (none)
+sn22.49:2.8 | P: kimaññatra yathābhūtassa adassanā? | T: (none)
+sn22.49:2.9 | S: perception … | T: on the basis of perception …
+sn22.49:2.10 | S: choices … | T: on the basis of volitional formations …
+sn22.49:2.11 | P: ‘sadisohamasmī’ti vā samanupassanti; | T: (none)
+sn22.49:2.12 | P: ‘hīnohamasmī’ti vā samanupassanti; | T: (none)
+sn22.49:2.13 | P: kimaññatra yathābhūtassa adassanā? | T: (none)
+sn22.49:2.14 | S: consciousness, which is impermanent, suffering, and perishable, they regard themselves thus: ‘I’m better’, | T: on the basis of consciousness—which is impermanent, suffering, and subject to change—regard themselves thus: ‘I am superior,’ or
+sn22.49:2.15 | S: or ‘I’m equal’, | T: ‘I am equal,’ or
+sn22.49:2.16 | S: or ‘I’m worse’. | T: ‘I am inferior,’
+sn22.49:2.17 | S: What is that but a failure to see truly? | T: what is that due to apart from not seeing things as they really are?
+sn22.49:3.1 | S: There are ascetics and brahmins who—based on form, which is impermanent, suffering, and perishable—don’t regard themselves thus: ‘I’m better’, | T: “Soṇa, when any ascetics and brahmins do not, on the basis of form—which is impermanent, suffering, and subject to change—regard themselves thus: ‘I am superior,’ or
+sn22.49:3.2 | S: or ‘I’m equal’, | T: ‘I am equal,’ or
+sn22.49:3.3 | S: or ‘I’m worse’. | T: ‘I am inferior,’
+sn22.49:3.4 | S: What is that but seeing truly? | T: what is that due to apart from seeing things as they really are?
+sn22.49:3.5 | S: Based on feeling … | T: “When any ascetics and brahmins do not, on the basis of feeling …
+sn22.49:3.6 | S: perception … | T: on the basis of perception …
+sn22.49:3.7 | S: choices … | T: on the basis of volitional formations …
+sn22.49:3.8 | S: consciousness, which is impermanent, suffering, and perishable, they don’t regard themselves thus: ‘I’m better’, | T: on the basis of consciousness—which is impermanent, suffering, and subject to change—regard themselves thus: ‘I am superior,’ or
+sn22.49:3.9 | S: or ‘I’m equal’, | T: ‘I am equal,’ or
+sn22.49:3.10 | S: or ‘I’m worse’. | T: ‘I am inferior,’
+sn22.49:3.11 | S: What is that but seeing truly? | T: what is that due to apart from seeing things as they really are?
+sn22.49:4.1 | S: What do you think, Soṇa? | T: “What do you think, Soṇa,
+sn22.49:4.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.49:4.3 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.49:4.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.49:4.5 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.49:4.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.49:4.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.49:4.8 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.49:4.9 | S: “Is feeling … | T: “Is feeling permanent or impermanent?…
+sn22.49:4.10 | P: “Aniccā, bhante” … | T: (none)
+sn22.49:4.11 | S: perception … | T: Is perception permanent or impermanent?…
+sn22.49:4.12 | S: choices … | T: Are volitional formations permanent or impermanent?…
+sn22.49:4.13 | S: consciousness permanent or impermanent?” | T: Is consciousness permanent or impermanent?”—
+sn22.49:4.14 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.49:4.15 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.49:4.16 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.49:4.17 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.49:4.18 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.49:4.19 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.49:5.1 | S: “So, Soṇa, you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Therefore, Soṇa, any kind of form whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all form should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.49:6.1 | S: You should truly see any kind of feeling … | T: “Any kind of feeling whatsoever …
+sn22.49:6.2 | S: perception … | T: Any kind of perception whatsoever …
+sn22.49:6.3 | S: choices … | T: Any kind of volitional formations whatsoever …
+sn22.49:6.4 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all consciousness should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.49:7.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, Soṇa, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn22.49:7.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn22.49:7.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.49:7.4 | P: Sattamaṁ. | T: (none)
+
+## sn22.4
+sn22.4:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.4:1.2 | S: At one time Venerable Mahākaccāna was staying in the land of the Avantis near Kuraraghara on Steep Mountain. | T: On one occasion the Venerable Mahakaccana was dwelling among the people of Avanti on Mount Papata at Kuraraghara.
+sn22.4:1.3 | S: Then the householder Hāliddikāni went up to Venerable Mahākaccāna … and asked him, | T: Then the householder Haliddakani approached the Venerable Mahakaccana, paid homage to him, sat down to one side, and said to him:
+sn22.4:1.4 | S: “Sir, this was said by the Buddha in ‘The Questions of Sakka’: | T: “Venerable sir, this was said by the Blessed One in ‘The Questions of Sakka’:
+sn22.4:1.5 | S: ‘Those ascetics and brahmins who are freed due to the ending of craving have reached the ultimate goal, the ultimate sanctuary from the yoke, the ultimate spiritual life, the ultimate end, and are best among gods and humans.’ | T: ‘Those ascetics and brahmins who are liberated in the extinction of craving are those who have reached the ultimate end, the ultimate security from bondage, the ultimate holy life, the ultimate goal, and are best among devas and humans.’
+sn22.4:2.1 | S: How should we see the detailed meaning of the Buddha’s brief statement?” | T: How, venerable sir, should the meaning of this, stated in brief by the Blessed One, be understood in detail?”
+sn22.4:3.1 | S: “Householder, consider any desire, greed, relishing, and craving for the form element; any attraction, grasping, mental fixation, insistence, and underlying tendencies. With the ending, fading away, cessation, giving away, and letting go of that, the mind is said to be ‘well freed’. | T: “Householder, through the destruction, fading away, cessation, giving up, and relinquishment of desire, lust, delight, craving, engagement and clinging, mental standpoints, adherences, and underlying tendencies towards the form element, the mind is said to be well liberated.
+sn22.4:4.1 | S: Consider any desire, greed, relishing, and craving for the feeling element … | T: “Through the destruction, fading away, cessation, giving up, and relinquishment of desire, lust, delight, craving, engagement and clinging, mental standpoints, adherences, and underlying tendencies towards the feeling element …
+sn22.4:4.2 | S: the perception element … | T: the perception element …
+sn22.4:4.3 | S: the choices element … | T: the volitional formations element …
+sn22.4:4.4 | S: the consciousness element; any attraction, grasping, mental fixation, insistence, and underlying tendencies. With the ending, fading away, cessation, giving away, and letting go of that, the mind is said to be ‘well freed’. | T: the consciousness element, the mind is said to be well liberated.
+sn22.4:5.1 | S: So, householder, that’s how to understand the detailed meaning of what the Buddha said in brief in ‘The Questions of Sakka’: | T: “Thus, householder, when it was said by the Blessed One in ‘The Questions of Sakka’:
+sn22.4:5.2 | S: ‘Those ascetics and brahmins who are freed due to the ending of craving have reached the ultimate goal, the ultimate sanctuary from the yoke, the ultimate spiritual life, the ultimate end, and are best among gods and humans.’” | T: ‘Those ascetics and brahmins who are liberated in the extinction of craving are those who have reached the ultimate end, the ultimate security from bondage, the ultimate holy life, the ultimate goal, and are best among devas and humans’—
+sn22.4:6.1 | P: Imassa kho, gahapati, bhagavatā saṅkhittena bhāsitassa evaṁ vitthārena attho daṭṭhabbo”ti. | T: it is in such a way that the meaning of this, stated in brief by the Blessed One, should be understood in detail.”
+sn22.4:6.2 | P: Catutthaṁ. | T: (none)
+
+## sn22.50
+sn22.50:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.50:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn22.50:1.3 | S: Then the householder Soṇa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Soṇa the householder’s son approached the Blessed One…. The Blessed One then said to Soṇa the householder’s son:
+sn22.50:2.1 | S: “Soṇa, there are ascetics and brahmins who don’t understand form, its origin, its cessation, and the practice that leads to its cessation. | T: “Soṇa, those ascetics or brahmins who do not understand form, its origin, its cessation, and the way leading to its cessation;
+sn22.50:2.2 | S: They don’t understand feeling … | T: who do not understand feeling …
+sn22.50:2.3 | S: perception … | T: perception …
+sn22.50:2.4 | S: choices … | T: volitional formations …
+sn22.50:2.5 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation. | T: consciousness, its origin, its cessation, and the way leading to its cessation:
+sn22.50:2.6 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: these I do not consider to be ascetics among ascetics or brahmins among brahmins, and these venerable ones do not, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism or the goal of brahminhood.
+sn22.50:3.1 | S: There are ascetics and brahmins who do understand form, its origin, its cessation, and the practice that leads to its cessation. | T: “But, Soṇa, those ascetics and brahmins who understand form, its origin, its cessation, and the way leading to its cessation;
+sn22.50:3.2 | S: They do understand feeling … | T: who understand feeling …
+sn22.50:3.3 | S: perception … | T: perception …
+sn22.50:3.4 | S: choices … | T: volitional formations …
+sn22.50:3.5 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation. | T: consciousness, its origin, its cessation, and the way leading to its cessation:
+sn22.50:3.6 | S: I deem them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: these I consider to be ascetics among ascetics and brahmins among brahmins, and these venerable ones, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism and the goal of brahminhood.”
+sn22.50:3.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.53
+sn22.53:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.53:1.2 | S: “Mendicants, if you get involved, you’re not free. If you’re not involved, you’re free. | T: “Bhikkhus, one who is engaged is unliberated; one who is disengaged is liberated.
+sn22.53:1.3 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: Consciousness, bhikkhus, while standing, might stand engaged with form; based upon form, established upon form, with a sprinkling of delight, it might come to growth, increase, and expansion.
+sn22.53:1.4 | S: Or should consciousness involved with feeling remain … | T: Or consciousness, while standing, might stand engaged with feeling …
+sn22.53:1.5 | S: Or should consciousness involved with perception remain … | T: engaged with perception …
+sn22.53:1.6 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: engaged with volitional formations; based upon volitional formations, established upon volitional formations, with a sprinkling of delight, it might come to growth, increase, and expansion.
+sn22.53:2.1 | S: Mendicants, suppose you say: | T: “Bhikkhus, though someone might say:
+sn22.53:2.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘Apart from form, apart from feeling, apart from perception, apart from volitional formations, I will make known the coming and going of consciousness, its passing away and rebirth, its growth, increase, and expansion’—that is impossible.
+sn22.53:3.1 | S: If a mendicant has given up greed for the form element, | T: “Bhikkhus, if a bhikkhu has abandoned lust for the form element,
+sn22.53:3.2 | S: the support is cut off, and there is no establishment of consciousness. | T: with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.53:3.3 | S: If a mendicant has given up greed for the feeling element … | T: If he has abandoned lust for the feeling element …
+sn22.53:3.4 | S: perception element … | T: for the perception element …
+sn22.53:3.5 | S: choices element … | T: for the volitional formations element …
+sn22.53:3.6 | S: consciousness element, | T: for the consciousness element,
+sn22.53:3.7 | S: the support is cut off, and there is no establishment of consciousness. | T: with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.53:3.8 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: “When that consciousness is unestablished, not coming to growth, nongenerative, it is liberated.
+sn22.53:3.9 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: By being liberated, it is steady; by being steady, it is content; by being content, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn22.53:3.10 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.53:3.11 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.54
+sn22.54:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.54:1.2 | S: “Mendicants, there are five kinds of plants. | T: “Bhikkhus, there are these five kinds of seeds.
+sn22.54:1.3 | S: What five? | T: What five?
+sn22.54:1.4 | S: Plants propagated from roots, trunks, cuttings, or joints; and those from regular seeds are the fifth. | T: Root-seeds, stem-seeds, joint-seeds, cutting-seeds, and germ-seeds as the fifth.
+sn22.54:1.5 | S: Suppose these five kinds of plants were intact, unspoiled, not weather-damaged, fertile, and well-kept. But there’s no earth or water. | T: If these five kinds of seeds are unbroken, unspoilt, undamaged by wind and sun, fertile, securely planted, but there is no earth or water, would these five kinds of seeds come to growth, increase, and expansion?” “No, venerable sir.” “If these five kinds of seeds are broken, spoilt, damaged by wind and sun, unfertile, not securely planted, but there is earth and water,
+sn22.54:1.6 | S: Then would these five kinds of plants reach growth, increase, and maturity?” | T: would these five kinds of seeds come to growth, increase, and expansion?”
+sn22.54:1.7 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.54:1.8 | S: “Suppose these five kinds of plants were intact, unspoiled, not weather-damaged, fertile, and well-kept. And there is earth and water. | T: “If these five kinds of seeds are unbroken, unspoilt, undamaged by wind and sun, fertile, securely planted, and there is earth and water,
+sn22.54:1.9 | S: Then would these five kinds of plants reach growth, increase, and maturity?” | T: would these five kinds of seeds come to growth, increase, and expansion?”
+sn22.54:1.10 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn22.54:1.11 | S: “The four establishings of consciousness should be seen as like the earth element. | T: “Bhikkhus, the four stations of consciousness should be seen as like the earth element.
+sn22.54:1.12 | S: Relishing and greed should be seen as like the water element. | T: Delight and lust should be seen as like the water element.
+sn22.54:1.13 | S: Consciousness with its fuel should be seen as like the five kinds of plants. | T: Consciousness together with its nutriment should be seen as like the five kinds of seeds.
+sn22.54:2.1 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Consciousness, bhikkhus, while standing, might stand engaged with form; based upon form, established upon form, with a sprinkling of delight, it might come to growth, increase, and expansion.
+sn22.54:2.2 | S: Or should consciousness involved with feeling remain … | T: Or consciousness, while standing, might stand engaged with feeling …
+sn22.54:2.3 | S: Or should consciousness involved with perception remain … | T: engaged with perception …
+sn22.54:2.4 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: engaged with volitional formations; based upon volitional formations, established upon volitional formations, with a sprinkling of delight, it might come to growth, increase, and expansion.
+sn22.54:3.1 | S: Mendicants, suppose you say: | T: “Bhikkhus, though someone might say:
+sn22.54:3.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘Apart from form, apart from feeling, apart from perception, apart from volitional formations, I will make known the coming and going of consciousness, its passing away and rebirth, its growth, increase, and expansion’—that is impossible.
+sn22.54:4.1 | S: If a mendicant has given up greed for the form element, | T: “Bhikkhus, if a bhikkhu has abandoned lust for the form element,
+sn22.54:4.2 | S: the support is cut off, and there is no establishment of consciousness. | T: with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.54:4.3 | S: If a mendicant has given up greed for the feeling element … | T: If he has abandoned lust for the feeling element …
+sn22.54:4.4 | S: perception element … | T: for the perception element …
+sn22.54:4.5 | S: choices element … | T: for the volitional formations element …
+sn22.54:4.6 | S: consciousness element, | T: for the consciousness element,
+sn22.54:4.7 | S: the support is cut off, and there is no establishment of consciousness. | T: with the abandoning of lust the basis is cut off: there is no support for the establishing of consciousness.
+sn22.54:4.8 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: “When that consciousness is unestablished, not coming to growth, nongenerative, it is liberated.
+sn22.54:4.9 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: By being liberated, it is steady; by being steady, it is content; by being content, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn22.54:4.10 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.54:4.11 | P: Dutiyaṁ. | T: (none)
+
+## sn22.56
+sn22.56:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.56:1.2 | S: “Mendicants, there are these five grasping aggregates. | T: “Bhikkhus, there are these five aggregates subject to clinging.
+sn22.56:1.3 | S: What five? | T: What five?
+sn22.56:1.4 | S: The grasping aggregates of form, feeling, perception, choices, and consciousness. | T: The form aggregate subject to clinging, the feeling aggregate subject to clinging, the perception aggregate subject to clinging, the volitional formations aggregate subject to clinging, the consciousness aggregate subject to clinging.
+sn22.56:1.5 | S: As long as I didn’t truly understand these five grasping aggregates in four rounds, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “So long as I did not directly know as they really are the five aggregates subject to clinging in four phases, I did not claim to have awakened to the unsurpassed perfect enlightenment in this world with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans.
+sn22.56:1.6 | S: But when I did truly understand these five grasping aggregates in four rounds, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I directly knew all this as it really is, then I claimed to have awakened to the unsurpassed perfect enlightenment in this world with … its devas and humans.
+sn22.56:1.7 | P: sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddhoti paccaññāsiṁ. | T: (none)
+sn22.56:2.1 | S: And how are there four rounds? | T: “And how, bhikkhus, are there four phases?
+sn22.56:2.2 | S: I directly knew form, its origin, its cessation, and the practice that leads to its cessation. | T: I directly knew form, its origin, its cessation, and the way leading to its cessation.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.56:2.3 | S: I directly knew feeling … | T: I directly knew feeling …
+sn22.56:2.4 | S: perception … | T: perception …
+sn22.56:2.5 | S: choices … | T: volitional formations …
+sn22.56:2.6 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation. | T: consciousness, its origin, its cessation, and the way leading to its cessation.
+sn22.56:3.1 | S: And what is form? | T: “And what, bhikkhus, is form?
+sn22.56:3.2 | S: The four principal states, and form derived from the four principal states. | T: The four great elements and the form derived from the four great elements:
+sn22.56:3.3 | S: This is called form. | T: this is called form.
+sn22.56:3.4 | S: Form originates from fuel. | T: With the arising of nutriment there is the arising of form.
+sn22.56:3.5 | S: When fuel ceases, form ceases. | T: With the cessation of nutriment there is the cessation of form.
+sn22.56:3.6 | S: The practice that leads to the cessation of form is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the way leading to the cessation of form; that is,
+sn22.56:3.7 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn22.56:4.1 | S: Whatever ascetics and brahmins have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation—and are practicing for disillusionment, dispassion, and cessation regarding form: they are practicing well. | T: “Whatever ascetics and brahmins, having thus directly known form, its origin, its cessation, and the way leading to its cessation, are practising for the purpose of revulsion towards form, for its fading away and cessation, they are practising well.
+sn22.56:4.2 | S: Those who practice well have a footing in this teaching and training. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.56:5.1 | S: Those ascetics and brahmins who have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation—and due to disillusionment, dispassion, and cessation regarding form, are freed by not grasping: they are well freed. | T: “And whatever ascetics and brahmins, having thus directly known form, its origin, its cessation, and the way leading to its cessation, through revulsion towards form, through its fading away and cessation, are liberated by nonclinging, they are well liberated.
+sn22.56:5.2 | S: Those who are well freed are consummate ones. | T: Those who are well liberated are consummate ones.
+sn22.56:5.3 | S: For consummate ones, there is no cycle of rebirths to be found. | T: As to those consummate ones, there is no round for describing them.
+sn22.56:6.1 | S: And what is feeling? | T: “And what, bhikkhus, is feeling?
+sn22.56:6.2 | S: There are these six classes of feeling: | T: There are these six classes of feeling:
+sn22.56:6.3 | S: feeling born of contact through the eye, ear, nose, tongue, body, and mind. | T: feeling born of eye-contact, feeling born of ear-contact, feeling born of nose-contact, feeling born of tongue-contact, feeling born of body-contact, feeling born of mind-contact.
+sn22.56:6.4 | S: This is called feeling. | T: This is called feeling.
+sn22.56:6.5 | S: Feeling originates from contact. | T: With the arising of contact there is the arising of feeling.
+sn22.56:6.6 | S: When contact ceases, feeling ceases. | T: With the cessation of contact there is the cessation of feeling.
+sn22.56:6.7 | S: The practice that leads to the cessation of feelings is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of feeling; that is,
+sn22.56:6.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view … right concentration.
+sn22.56:7.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya, evaṁ vedanāsamudayaṁ abhiññāya, evaṁ vedanānirodhaṁ abhiññāya, evaṁ vedanānirodhagāminiṁ paṭipadaṁ abhiññāya vedanāya nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: “Whatever ascetics and brahmins, having thus directly known feeling, its origin, its cessation, and the way leading to its cessation, are practising for the purpose of revulsion towards feeling, for its fading away and cessation, they are practising well.
+sn22.56:7.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.56:8.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya …pe… evaṁ vedanānirodhagāminiṁ paṭipadaṁ abhiññāya …pe… | T: “And whatever ascetics and brahmins, having thus directly known feeling … and the way leading to its cessation …
+sn22.56:8.2 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.56:9.1 | S: And what is perception? | T: “And what, bhikkhus, is perception?
+sn22.56:9.2 | S: There are these six classes of perception: | T: There are these six classes of perception:
+sn22.56:9.3 | S: perceptions of sights, sounds, smells, tastes, touches, and ideas. | T: perception of forms, perception of sounds, perception of odours, perception of tastes, perception of tactile objects, perception of mental phenomena.
+sn22.56:9.4 | S: This is called perception. | T: This is called perception.
+sn22.56:9.5 | S: Perception originates from contact. | T: With the arising of contact there is the arising of perception.
+sn22.56:9.6 | S: When contact ceases, perception ceases. | T: With the cessation of contact there is the cessation of perception.
+sn22.56:9.7 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of perception; that is,
+sn22.56:9.8 | P: sammādiṭṭhi …pe… sammāsamādhi …pe… | T: right view … right concentration.
+sn22.56:9.9 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: “Whatever ascetics and brahmins … As to those consummate ones, there is no round for describing them.
+sn22.56:10.1 | S: And what are choices? | T: “And what, bhikkhus, are volitional formations?
+sn22.56:10.2 | S: There are these six classes of intention: | T: There are these six classes of volition:
+sn22.56:10.3 | S: intention regarding sights, sounds, smells, tastes, touches, and ideas. | T: volition regarding forms, volition regarding sounds, volition regarding odours, volition regarding tastes, volition regarding tactile objects, volition regarding mental phenomena.
+sn22.56:10.4 | S: These are called choices. | T: This is called volitional formations.
+sn22.56:10.5 | S: Choices originate from contact. | T: With the arising of contact there is the arising of volitional formations.
+sn22.56:10.6 | S: When contact ceases, choices cease. | T: With the cessation of contact there is the cessation of volitional formations.
+sn22.56:10.7 | S: The practice that leads to the cessation of choices is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of volitional formations; that is,
+sn22.56:10.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view … right concentration.
+sn22.56:11.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: “Whatever ascetics and brahmins … …
+sn22.56:11.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: (none)
+sn22.56:12.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya saṅkhārānaṁ nibbidā virāgā nirodhā anupādā vimuttā, te suvimuttā. | T: (none)
+sn22.56:12.2 | P: Ye suvimuttā, te kevalino. | T: (none)
+sn22.56:12.3 | P: Ye kevalino vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.56:13.1 | S: And what is consciousness? | T: “And what, bhikkhus, is consciousness?
+sn22.56:13.2 | S: There are these six classes of consciousness: | T: There are these six classes of consciousness:
+sn22.56:13.3 | S: eye, ear, nose, tongue, body, and mind consciousness. | T: eye-consciousness, ear-consciousness, nose-consciousness, tongue-consciousness, body-consciousness, mind-consciousness.
+sn22.56:13.4 | S: This is called consciousness. | T: This is called consciousness.
+sn22.56:13.5 | S: Consciousness originates from name and form. | T: With the arising of name-and-form there is the arising of consciousness.
+sn22.56:13.6 | S: When name and form cease, consciousness ceases. | T: With the cessation of name-and-form there is the cessation of consciousness.
+sn22.56:13.7 | S: The practice that leads to the cessation of consciousness is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the way leading to the cessation of consciousness; that is,
+sn22.56:13.8 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn22.56:14.1 | S: Whatever ascetics and brahmins have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation—and are practicing for disillusionment, dispassion, and cessation regarding consciousness: they are practicing well. | T: “Whatever ascetics and brahmins, having thus directly known consciousness, its origin, its cessation, and the way leading to its cessation, are practising for the purpose of revulsion towards consciousness, for its fading away and cessation, they are practising well.
+sn22.56:14.2 | S: Those who practice well have a footing in this teaching and training. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.56:15.1 | S: Those ascetics and brahmins who have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation—and due to disillusionment, dispassion, and cessation regarding consciousness, are freed by not grasping: they are well freed. | T: “And whatever ascetics and brahmins, having thus directly known consciousness, its origin, its cessation, and the way leading to its cessation, through revulsion towards consciousness, through its fading away and cessation, are liberated by nonclinging, they are well liberated.
+sn22.56:15.2 | S: Those who are well freed are consummate ones. | T: Those who are well liberated are consummate ones.
+sn22.56:15.3 | S: For consummate ones, there is no cycle of rebirths to be found.” | T: As to those consummate ones, there is no round for describing them.”
+sn22.56:15.4 | P: Catutthaṁ. | T: (none)
+
+## sn22.57
+sn22.57:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.57:1.2 | S: “Mendicants, in this teaching and training a mendicant who is skilled in seven cases and who examines in three ways is called consummate, accomplished, a supreme person. | T: “Bhikkhus, a bhikkhu who is skilled in seven cases and a triple investigator is called, in this Dhamma and Discipline, a consummate one, one who has fully lived the holy life, the highest kind of person.
+sn22.57:1.3 | S: And how is a mendicant skilled in seven cases? | T: “And how, bhikkhus, is a bhikkhu skilled in seven cases?
+sn22.57:1.4 | S: It’s when a mendicant understands form, its origin, its cessation, and the practice that leads to its cessation. | T: Here, bhikkhus, a bhikkhu understands form, its origin, its cessation, and the way leading to its cessation;
+sn22.57:1.5 | S: They understand form’s gratification, drawback, and escape. | T: he understands the gratification, the danger, and the escape in the case of form.
+sn22.57:1.6 | S: They understand feeling … | T: “He understands feeling …
+sn22.57:1.7 | S: perception … | T: perception …
+sn22.57:1.8 | S: choices … | T: volitional formations …
+sn22.57:1.9 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation. | T: consciousness, its origin, its cessation, and the way leading to its cessation;
+sn22.57:1.10 | S: They understand consciousness’s gratification, drawback, and escape. | T: he understands the gratification, the danger, and the escape in the case of consciousness.
+sn22.57:2.1 | S: And what is form? | T: “And what, bhikkhus, is form?
+sn22.57:2.2 | S: The four principal states, and form derived from the four principal states. | T: The four great elements and the form derived from the four great elements:
+sn22.57:2.3 | S: This is called form. | T: this is called form.
+sn22.57:2.4 | S: Form originates from fuel. | T: With the arising of nutriment there is the arising of form.
+sn22.57:2.5 | S: When fuel ceases, form ceases. | T: With the cessation of nutriment there is the cessation of form.
+sn22.57:2.6 | S: The practice that leads to the cessation of form is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the way leading to the cessation of form; that is,
+sn22.57:2.7 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn22.57:3.1 | S: The pleasure and happiness that arise from form: this is its gratification. | T: “The pleasure and joy that arise in dependence on form: this is the gratification in form.
+sn22.57:3.2 | P: ayaṁ rūpassa assādo. | T: (none)
+sn22.57:3.3 | S: That form is impermanent, suffering, and perishable: this is its drawback. | T: That form is impermanent, suffering, and subject to change: this is the danger in form.
+sn22.57:3.4 | P: ayaṁ rūpassa ādīnavo. | T: (none)
+sn22.57:3.5 | S: Removing and giving up desire and greed for form: this is its escape. | T: The removal and abandonment of desire and lust for form: this is the escape from form.
+sn22.57:3.6 | P: idaṁ rūpassa nissaraṇaṁ. | T: (none)
+sn22.57:4.1 | S: Those ascetics and brahmins who have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation; | T: “Whatever ascetics and brahmins, having thus directly known form, its origin, its cessation, and the way leading to its cessation,
+sn22.57:4.2 | S: its gratification, drawback, and escape—and are practicing for disillusionment, dispassion, and cessation regarding form: they are practicing well. | T: having thus directly known the gratification, the danger, and the escape in the case of form, are practising for the purpose of revulsion towards form, for its fading away and cessation, they are practising well.
+sn22.57:4.3 | S: Those who practice well have a footing in this teaching and training. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.57:5.1 | S: Those ascetics and brahmins who have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation; | T: “And whatever ascetics and brahmins, having thus directly known form, its origin, its cessation, and the way leading to its cessation,
+sn22.57:5.2 | S: its gratification, drawback, and escape—and due to disillusionment, dispassion, and cessation regarding form, are freed by not grasping: they are well freed. | T: having thus directly known the gratification, the danger, and the escape in the case of form, through revulsion towards form, through its fading away and cessation, are liberated by nonclinging, they are well liberated.
+sn22.57:5.3 | S: Those who are well freed are consummate ones. | T: Those who are well liberated are consummate ones.
+sn22.57:5.4 | S: For consummate ones, there is no cycle of rebirths to be found. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:6.1 | S: And what is feeling? | T: “And what, bhikkhus, is feeling?
+sn22.57:6.2 | S: There are these six classes of feeling: | T: There are these six classes of feeling:
+sn22.57:6.3 | S: feeling born of eye contact … | T: feeling born of eye-contact … as in preceding sutta …
+sn22.57:6.4 | S: feeling born of mind contact. | T: feeling born of mind-contact.
+sn22.57:6.5 | S: This is called feeling. | T: This is called feeling.
+sn22.57:6.6 | S: Feeling originates from contact. | T: With the arising of contact there is the arising of feeling.
+sn22.57:6.7 | S: When contact ceases, feeling ceases. | T: With the cessation of contact there is the cessation of feeling.
+sn22.57:6.8 | S: The practice that leads to the cessation of feelings is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the way leading to the cessation of feeling; that is,
+sn22.57:6.9 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn22.57:7.1 | S: The pleasure and happiness that arise from feeling: this is its gratification. | T: “The pleasure and joy that arise in dependence on feeling: this is the gratification in feeling.
+sn22.57:7.2 | P: ayaṁ vedanāya assādo. | T: (none)
+sn22.57:7.3 | S: That feeling is impermanent, suffering, and perishable: this is its drawback. | T: That feeling is impermanent, suffering, and subject to change: this is the danger in feeling.
+sn22.57:7.4 | P: ayaṁ vedanāya ādīnavo. | T: (none)
+sn22.57:7.5 | S: Removing and giving up desire and greed for feeling: this is its escape. … | T: The removal and abandonment of desire and lust for feeling: this is the escape from feeling.
+sn22.57:7.6 | P: idaṁ vedanāya nissaraṇaṁ. | T: (none)
+sn22.57:8.1 | P: Ye hi, keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya, evaṁ vedanāsamudayaṁ abhiññāya, evaṁ vedanānirodhaṁ abhiññāya, evaṁ vedanānirodhagāminiṁ paṭipadaṁ abhiññāya; | T: “Whatever ascetics and brahmins, having thus directly known feeling, its origin, its cessation, and the way leading to its cessation,
+sn22.57:8.2 | P: evaṁ vedanāya assādaṁ abhiññāya, evaṁ vedanāya ādīnavaṁ abhiññāya, evaṁ vedanāya nissaraṇaṁ abhiññāya vedanāya nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: having thus directly known the gratification, the danger, and the escape in the case of feeling, are practising for the purpose of revulsion towards feeling, for its fading away and cessation, they are practising well.
+sn22.57:8.3 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.57:9.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya …pe… | T: “And whatever ascetics and brahmins, having thus directly known feeling … and the escape in the case of feeling …
+sn22.57:9.2 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:10.1 | S: And what is perception? | T: “And what, bhikkhus, is perception?
+sn22.57:10.2 | S: There are these six classes of perception: | T: There are these six classes of perception:
+sn22.57:10.3 | S: perceptions of sights, sounds, smells, tastes, touches, and ideas. | T: perception of forms … perception of mental phenomena.
+sn22.57:10.4 | S: This is called perception. | T: This is called perception.
+sn22.57:10.5 | S: Perception originates from contact. | T: With the arising of contact there is the arising of perception.
+sn22.57:10.6 | S: When contact ceases, perception ceases. | T: With the cessation of contact there is the cessation of perception.
+sn22.57:10.7 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of perception; that is, right view … right concentration. “The pleasure and joy that arise in dependence on perception: this is the gratification in perception. That perception is impermanent, suffering, and subject to change: this is the danger in perception. The removal and abandonment of desire and lust for perception: this is the escape from perception.
+sn22.57:10.8 | P: sammādiṭṭhi …pe… sammāsamādhi …pe… | T: “Whatever ascetics and brahmins …
+sn22.57:10.9 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:11.1 | S: And what are choices? | T: “And what, bhikkhus, are volitional formations?
+sn22.57:11.2 | S: There are these six classes of intention: | T: There are these six classes of volition:
+sn22.57:11.3 | S: intention regarding sights … | T: volition regarding forms …
+sn22.57:11.4 | S: intention regarding ideas. | T: volition regarding mental phenomena.
+sn22.57:11.5 | S: These are called choices. | T: This is called volitional formations.
+sn22.57:11.6 | S: Choices originate from contact. | T: With the arising of contact there is the arising of volitional formations.
+sn22.57:11.7 | S: When contact ceases, choices cease. | T: With the cessation of contact there is the cessation of volitional formations.
+sn22.57:11.8 | S: The practice that leads to the cessation of choices is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of volitional formations; that is,
+sn22.57:11.9 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view … right concentration.
+sn22.57:12.1 | P: Yaṁ saṅkhāre paṭicca uppajjati sukhaṁ somanassaṁ— | T: “The pleasure and joy that arise in dependence on volitional formations:
+sn22.57:12.2 | P: ayaṁ saṅkhārānaṁ assādo. | T: this is the gratification in volitional formations.
+sn22.57:12.3 | P: Ye saṅkhārā aniccā dukkhā vipariṇāmadhammā— | T: That volitional formations are impermanent, suffering, and subject to change:
+sn22.57:12.4 | P: ayaṁ saṅkhārānaṁ ādīnavo. | T: this is the danger in volitional formations.
+sn22.57:12.5 | P: Yo saṅkhāresu chandarāgavinayo chandarāgappahānaṁ— | T: The removal and abandonment of desire and lust for volitional formations:
+sn22.57:12.6 | P: idaṁ saṅkhārānaṁ nissaraṇaṁ. | T: this is the escape from volitional formations.
+sn22.57:13.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya …pe… saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipannā te suppaṭipannā. | T: “Whatever ascetics and brahmins …
+sn22.57:13.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti …pe… | T: As to those consummate ones,
+sn22.57:13.3 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: there is no round for describing them.
+sn22.57:14.1 | S: And what is consciousness? | T: “And what, bhikkhus, is consciousness?
+sn22.57:14.2 | S: There are these six classes of consciousness: | T: There are these six classes of consciousness:
+sn22.57:14.3 | S: eye, ear, nose, tongue, body, and mind consciousness. | T: eye-consciousness … mind-consciousness.
+sn22.57:14.4 | S: This is called consciousness. | T: This is called consciousness.
+sn22.57:14.5 | S: Consciousness originates from name and form. | T: With the arising of name-and-form there is the arising of consciousness.
+sn22.57:14.6 | S: When name and form cease, consciousness ceases. | T: With the cessation of name-and-form there is the cessation of consciousness.
+sn22.57:14.7 | S: The practice that leads to the cessation of consciousness is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the way leading to the cessation of consciousness; that is,
+sn22.57:14.8 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn22.57:15.1 | S: The pleasure and happiness that arise from consciousness: this is its gratification. | T: “The pleasure and joy that arise in dependence on consciousness: this is the gratification in consciousness.
+sn22.57:15.2 | P: ayaṁ viññāṇassa assādo. | T: (none)
+sn22.57:15.3 | S: That consciousness is impermanent, suffering, and perishable: this is its drawback. | T: That consciousness is impermanent, suffering, and subject to change: this is the danger in consciousness.
+sn22.57:15.4 | P: ayaṁ viññāṇassa ādīnavo. | T: (none)
+sn22.57:15.5 | S: Removing and giving up desire and greed for consciousness: this is its escape. | T: The removal and abandonment of desire and lust for consciousness: this is the escape from consciousness.
+sn22.57:15.6 | P: idaṁ viññāṇassa nissaraṇaṁ. | T: (none)
+sn22.57:16.1 | S: Those ascetics and brahmins who have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation; | T: “Whatever ascetics and brahmins, having thus directly known consciousness, its origin, its cessation, and the way leading to its cessation,
+sn22.57:16.2 | S: its gratification, drawback, and escape—and are practicing for disillusionment, dispassion, and cessation regarding consciousness: they are practicing well. | T: having thus directly known the gratification, the danger, and the escape in the case of consciousness, are practising for the purpose of revulsion towards consciousness, for its fading away and cessation, they are practising well.
+sn22.57:16.3 | S: Those who practice well have a footing  in this teaching and training. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.57:17.1 | S: Those ascetics and brahmins who have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation; | T: “And whatever ascetics and brahmins, having thus directly known consciousness, its origin, its cessation, and the way leading to its cessation,
+sn22.57:17.2 | S: its gratification, drawback, and escape—and due to disillusionment, dispassion, and cessation regarding consciousness, are freed by not grasping: they are well freed. | T: having thus directly known the gratification, the danger, and the escape in the case of consciousness, through revulsion towards consciousness, through its fading away and cessation, are liberated by nonclinging, they are well liberated.
+sn22.57:17.3 | S: Those who are well freed are consummate ones. | T: Those who are well liberated are consummate ones.
+sn22.57:17.4 | S: For consummate ones, there is no cycle of rebirths to be found. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:17.5 | S: That’s how a mendicant is skilled in seven cases. | T: “It is in such a way, bhikkhus, that a bhikkhu is skilled in seven cases.
+sn22.57:18.1 | S: And how does a mendicant examine in three ways? | T: “And how, bhikkhus, is a bhikkhu a triple investigator?
+sn22.57:18.2 | S: It’s when a mendicant examines by way of the elements, sense fields, and dependent origination. | T: Here, bhikkhus, a bhikkhu investigates by way of the elements, by way of the sense bases, and by way of dependent origination.
+sn22.57:18.3 | S: That’s how a mendicant examines in three ways. | T: It is in such a way that a bhikkhu is a triple investigator.
+sn22.57:18.4 | S: In this teaching and training, a mendicant who is skilled in seven cases and who examines in three ways is called consummate, accomplished, a supreme person.” | T: “Bhikkhus, a bhikkhu who is skilled in these seven cases and a triple investigator is called, in this Dhamma and Discipline, a consummate one, one who has fully lived the holy life, the highest kind of person.”
+sn22.57:18.5 | P: Pañcamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full file. I found four clear boundary changes and am checking the quoted starting words before writing them.
+exec
+/bin/bash -lc "sed -n '136,146p;212,226p;293,305p;319,326p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.53:3.10 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.53:3.11 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.54
+sn22.54:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.54:1.2 | S: “Mendicants, there are five kinds of plants. | T: “Bhikkhus, there are these five kinds of seeds.
+sn22.54:1.3 | S: What five? | T: What five?
+sn22.54:1.4 | S: Plants propagated from roots, trunks, cuttings, or joints; and those from regular seeds are the fifth. | T: Root-seeds, stem-seeds, joint-seeds, cutting-seeds, and germ-seeds as the fifth.
+sn22.54:1.5 | S: Suppose these five kinds of plants were intact, unspoiled, not weather-damaged, fertile, and well-kept. But there’s no earth or water. | T: If these five kinds of seeds are unbroken, unspoilt, undamaged by wind and sun, fertile, securely planted, but there is no earth or water, would these five kinds of seeds come to growth, increase, and expansion?” “No, venerable sir.” “If these five kinds of seeds are broken, spoilt, damaged by wind and sun, unfertile, not securely planted, but there is earth and water,
+sn22.54:1.6 | S: Then would these five kinds of plants reach growth, increase, and maturity?” | T: would these five kinds of seeds come to growth, increase, and expansion?”
+sn22.54:1.7 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.56:9.4 | S: This is called perception. | T: This is called perception.
+sn22.56:9.5 | S: Perception originates from contact. | T: With the arising of contact there is the arising of perception.
+sn22.56:9.6 | S: When contact ceases, perception ceases. | T: With the cessation of contact there is the cessation of perception.
+sn22.56:9.7 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of perception; that is,
+sn22.56:9.8 | P: sammādiṭṭhi …pe… sammāsamādhi …pe… | T: right view … right concentration.
+sn22.56:9.9 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: “Whatever ascetics and brahmins … As to those consummate ones, there is no round for describing them.
+sn22.56:10.1 | S: And what are choices? | T: “And what, bhikkhus, are volitional formations?
+sn22.56:10.2 | S: There are these six classes of intention: | T: There are these six classes of volition:
+sn22.56:10.3 | S: intention regarding sights, sounds, smells, tastes, touches, and ideas. | T: volition regarding forms, volition regarding sounds, volition regarding odours, volition regarding tastes, volition regarding tactile objects, volition regarding mental phenomena.
+sn22.56:10.4 | S: These are called choices. | T: This is called volitional formations.
+sn22.56:10.5 | S: Choices originate from contact. | T: With the arising of contact there is the arising of volitional formations.
+sn22.56:10.6 | S: When contact ceases, choices cease. | T: With the cessation of contact there is the cessation of volitional formations.
+sn22.56:10.7 | S: The practice that leads to the cessation of choices is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of volitional formations; that is,
+sn22.56:10.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view … right concentration.
+sn22.56:11.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: “Whatever ascetics and brahmins … …
+sn22.57:8.2 | P: evaṁ vedanāya assādaṁ abhiññāya, evaṁ vedanāya ādīnavaṁ abhiññāya, evaṁ vedanāya nissaraṇaṁ abhiññāya vedanāya nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: having thus directly known the gratification, the danger, and the escape in the case of feeling, are practising for the purpose of revulsion towards feeling, for its fading away and cessation, they are practising well.
+sn22.57:8.3 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: Those who are practising well have gained a foothold in this Dhamma and Discipline.
+sn22.57:9.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya …pe… | T: “And whatever ascetics and brahmins, having thus directly known feeling … and the escape in the case of feeling …
+sn22.57:9.2 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:10.1 | S: And what is perception? | T: “And what, bhikkhus, is perception?
+sn22.57:10.2 | S: There are these six classes of perception: | T: There are these six classes of perception:
+sn22.57:10.3 | S: perceptions of sights, sounds, smells, tastes, touches, and ideas. | T: perception of forms … perception of mental phenomena.
+sn22.57:10.4 | S: This is called perception. | T: This is called perception.
+sn22.57:10.5 | S: Perception originates from contact. | T: With the arising of contact there is the arising of perception.
+sn22.57:10.6 | S: When contact ceases, perception ceases. | T: With the cessation of contact there is the cessation of perception.
+sn22.57:10.7 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path … | T: This Noble Eightfold Path is the way leading to the cessation of perception; that is, right view … right concentration. “The pleasure and joy that arise in dependence on perception: this is the gratification in perception. That perception is impermanent, suffering, and subject to change: this is the danger in perception. The removal and abandonment of desire and lust for perception: this is the escape from perception.
+sn22.57:10.8 | P: sammādiṭṭhi …pe… sammāsamādhi …pe… | T: “Whatever ascetics and brahmins …
+sn22.57:10.9 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: As to those consummate ones, there is no round for describing them.
+sn22.57:12.5 | P: Yo saṅkhāresu chandarāgavinayo chandarāgappahānaṁ— | T: The removal and abandonment of desire and lust for volitional formations:
+sn22.57:12.6 | P: idaṁ saṅkhārānaṁ nissaraṇaṁ. | T: this is the escape from volitional formations.
+sn22.57:13.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya …pe… saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipannā te suppaṭipannā. | T: “Whatever ascetics and brahmins …
+sn22.57:13.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti …pe… | T: As to those consummate ones,
+sn22.57:13.3 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: there is no round for describing them.
+sn22.57:14.1 | S: And what is consciousness? | T: “And what, bhikkhus, is consciousness?
+sn22.57:14.2 | S: There are these six classes of consciousness: | T: There are these six classes of consciousness:
+sn22.57:14.3 | S: eye, ear, nose, tongue, body, and mind consciousness. | T: eye-consciousness … mind-consciousness.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-072.findings.tmp <<'EOF'
+sn22.54:1.6 starts: would these five kinds of seeds come
+sn22.54:1.7 starts: “No, venerable sir.” “If these five kinds of
+sn22.56:9.9 starts: As to those consummate ones, there is
+sn22.57:10.8 starts: right view … right concentration. “The pleasure and
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+4 lines reported.
+tokens used
+28,872
+4 lines reported.

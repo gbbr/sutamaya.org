@@ -1,0 +1,525 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd7f-a734-70b1-a29e-46e392f292c2
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clearly misplaced line starts to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn36.8
+sn36.8:1.1 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: (none)
+sn36.8:1.2 | S: Then in the late afternoon, the Buddha came out of retreat and went to the infirmary, where he sat down on the seat spread out, | T: (none)
+sn36.8:1.3 | S: and addressed the mendicants: | T: (none)
+sn36.8:2.1 | S: “Mendicants, a mendicant should await their time mindful and aware. | T: (none)
+sn36.8:2.2 | S: This is my instruction to you. | T: (none)
+sn36.8:3.1 | S: And how is a mendicant mindful? | T: (none)
+sn36.8:3.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn36.8:3.3 | S: They meditate observing an aspect of feelings … | T: As in preceding sutta down to the second injunction:
+sn36.8:3.4 | S: They meditate observing an aspect of the mind … | T: (none)
+sn36.8:3.5 | S: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn36.8:3.6 | S: That’s how a mendicant is mindful. | T: (none)
+sn36.8:4.1 | S: And how is a mendicant aware? | T: (none)
+sn36.8:4.2 | S: It’s when a mendicant acts with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. | T: (none)
+sn36.8:4.3 | S: That’s how a mendicant is aware. | T: (none)
+sn36.8:4.4 | S: A mendicant should await their time mindful and aware. | T: “A bhikkhu should await his time mindful and clearly comprehending.
+sn36.8:4.5 | S: This is my instruction to you. | T: This is our instruction to you.
+sn36.8:5.1 | S: While a mendicant is meditating like this—mindful, aware, diligent, keen, and resolute—if pleasant feelings arise, they understand: | T: “Bhikkhus, while a bhikkhu dwells thus, mindful and clearly comprehending, diligent, ardent, and resolute, if there arises in him a pleasant feeling, he understands thus:
+sn36.8:5.2 | P: So evaṁ pajānāti: | T: (none)
+sn36.8:5.3 | S: ‘A pleasant feeling has arisen in me. | T: ‘There has arisen in me a pleasant feeling.
+sn36.8:5.4 | S: That’s dependent, not independent. | T: Now that is dependent, not independent.
+sn36.8:5.5 | S: Dependent on what? | T: Dependent on what?
+sn36.8:5.6 | S: Dependent on this very contact. | T: Dependent on just this contact.
+sn36.8:5.7 | S: But this contact is impermanent, conditioned, dependently originated. | T: But this contact is impermanent, conditioned, dependently arisen.
+sn36.8:5.8 | S: So how could a pleasant feeling be permanent, since it has arisen dependent on contact that is impermanent, conditioned, and dependently originated?’ | T: So when the pleasant feeling has arisen in dependence on a contact that is impermanent, conditioned, dependently arisen, how could it be permanent?’
+sn36.8:5.9 | S: They meditate observing impermanence, vanishing, dispassion, cessation, and letting go in contact and pleasant feeling. | T: He dwells contemplating impermanence in contact and in pleasant feeling, he dwells contemplating vanishing, contemplating fading away, contemplating cessation, contemplating relinquishment.
+sn36.8:5.10 | S: As they do so, they give up the underlying tendency for greed for contact and pleasant feeling. | T: As he dwells thus, the underlying tendency to lust in regard to contact and in regard to pleasant feeling is abandoned by him.
+sn36.8:6.1 | S: While a mendicant is meditating like this—mindful, aware, diligent, keen, and resolute—if painful feelings arise … | T: “Bhikkhus, while a bhikkhu dwells thus, mindful and clearly comprehending, diligent, ardent, and resolute, if there arises in him a painful feeling, he understands thus: ‘There has arisen in me a painful feeling. Now that is dependent, not independent. Dependent on what? Dependent on just this contact. But this contact is impermanent, conditioned, dependently arisen. So when the painful feeling has arisen in dependence on a contact that is impermanent, conditioned, dependently arisen, how could it be permanent?’ He dwells contemplating impermanence in contact and in painful feeling, he dwells contemplating vanishing, contemplating fading away, contemplating cessation, contemplating relinquishment. As he dwells thus, the underlying tendency to aversion in regard to contact and in regard to painful feeling is abandoned by him.
+sn36.8:6.2 | P: viharato uppajjati dukkhā vedanā …pe… | T: (none)
+sn36.8:6.3 | S: if neutral feelings arise, they understand: | T: “Bhikkhus, while a bhikkhu dwells thus, mindful and clearly comprehending, diligent, ardent, and resolute, if there arises in him a neither-painful-nor-pleasant feeling,
+sn36.8:6.4 | P: So evaṁ pajānāti: | T: he understands thus:
+sn36.8:6.5 | S: ‘A neutral feeling has arisen in me. | T: ‘There has arisen in me a neither-painful-nor-pleasant feeling.
+sn36.8:6.6 | S: That’s dependent, not independent. | T: Now that is dependent, not independent.
+sn36.8:6.7 | S: Dependent on what? | T: Dependent on what?
+sn36.8:6.8 | S: Dependent on this very contact.’ | T: Dependent on just this contact.
+sn36.8:6.9 | S: (Tell in full as in the previous discourse.) | T: But this contact is impermanent, conditioned, dependently arisen. So when the neither-painful-nor-pleasant feeling has arisen in dependence on a contact that is impermanent, conditioned, dependently arisen, how could it be permanent?’ He dwells contemplating impermanence in contact and in neither-painful-nor-pleasant feeling, he dwells contemplating vanishing, contemplating fading away, contemplating cessation, contemplating relinquishment. As he dwells thus, the underlying tendency to ignorance in regard to contact and in regard to neither-painful-nor-pleasant feeling is abandoned by him.
+sn36.8:6.10 | S: They understand: ‘When my body breaks up and my life is over, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’ | T: (none)
+sn36.8:7.1 | S: Suppose an oil lamp depended on oil and a wick to burn. | T: (none)
+sn36.8:7.2 | S: As the oil and the wick are used up, it would be extinguished due to not being fed. | T: (none)
+sn36.8:7.3 | S: In the same way, feeling the end of the body draw close, a mendicant understands: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: “If he feels a pleasant feeling … all as in preceding sutta …
+sn36.8:7.4 | S: They understand: ‘When my body breaks up and my life is over, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’” | T: He understands: ‘With the breakup of the body, following the exhaustion of life, all that is felt, not being delighted in, will become cool right here.’”
+sn36.8:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn45.140
+sn45.140:1.1 | S: “The footprints of all creatures that walk can fit inside an elephant’s footprint. | T: “Bhikkhus, just as the footprints of all living beings that walk fit into the footprint of the elephant,
+sn45.140:1.2 | S: So an elephant’s footprint is said to be the biggest of them all. | T: and the elephant’s footprint is declared to be the chief among them, that is, with respect to size,
+sn45.140:1.3 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: so too whatever wholesome states there are, they are all rooted in diligence, converge upon diligence, and diligence is declared to be the chief among them.
+sn45.140:1.4 | S: A mendicant who is diligent can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu is diligent, it is to be expected that he will develop and cultivate the Noble Eightfold Path….”
+sn45.140:1.5 | S: And how does a mendicant who is diligent develop and cultivate the noble eightfold path? | T: (none)
+sn45.140:1.6 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. … | T: (none)
+sn45.140:1.7 | S: That’s how a mendicant who is diligent develops and cultivates the noble eightfold path.” | T: (none)
+sn45.140:1.8 | P: Dutiyaṁ. | T: (none)
+
+## an3.38
+an3.38:1.1 | S: “Once upon a time, mendicants, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Bhikkhus, once in the past, when Sakka, ruler of the devas, was guiding the Tāvatiṁsa devas, on that occasion he recited this verse:
+an3.38:2.1 | S: ‘Whoever wants to be like me | T: “‘The person who would be like me …
+an3.38:2.2 | S: would observe the sabbath | T: (none)
+an3.38:2.3 | S: complete in all eight factors, | T: (none)
+an3.38:2.4 | S: on the fourteenth and the fifteenth days, | T: (none)
+an3.38:2.5 | S: and the eighth day of the fortnight, | T: (none)
+an3.38:2.6 | S: as well as on the fortnightly special displays.’ | T: and during special fortnights.’
+an3.38:3.1 | S: But that verse was poorly sung by Sakka, lord of gods, not well sung; poorly spoken, not well spoken. | T: “This verse, bhikkhus, was badly recited by Sakka, ruler of the devas, not well recited. It was badly stated, not well stated.
+an3.38:3.2 | S: Why is that? | T: For what reason?
+an3.38:3.3 | S: Because Sakka, lord of gods, is not exempt from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. He is not exempt from suffering, I say. | T: Because Sakka, ruler of the devas, is not free from birth, old age and death, from sorrow, lamentation, pain, dejection, and anguish; he is not free from suffering, I say.
+an3.38:4.1 | S: But for a mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—it is appropriate to say: | T: But in the case of a bhikkhu who is an arahant—one whose taints are destroyed … one completely liberated through final knowledge—it is fitting for him to say:
+an3.38:5.1 | S: ‘Whoever wants to be like me | T: “‘The person who would be like me …
+an3.38:5.2 | S: would observe the sabbath, | T: (none)
+an3.38:5.3 | S: complete in all eight factors, | T: (none)
+an3.38:5.4 | S: on the fourteenth and the fifteenth days, | T: (none)
+an3.38:5.5 | S: and the eighth day of the fortnight, | T: (none)
+an3.38:5.6 | S: as well as on the fortnightly special displays.’ | T: and during special fortnights.’
+an3.38:6.1 | S: Why is that? | T: “For what reason?
+an3.38:6.2 | S: Because that mendicant is exempt from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. He is exempt from suffering, I say.” | T: Because that bhikkhu is free from birth, old age and death, from sorrow, lamentation, pain, dejection, and anguish; he is free from suffering, I say.”
+an3.38:6.3 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn12.68
+sn12.68:1.1 | S: At one time the venerables Musīla, Saviṭṭha, Nārada, and Ānanda were staying near Kosambī in Ghosita’s monastery. | T: On one occasion the Venerable Musīla, the Venerable Saviṭṭha, the Venerable Narada, and the Venerable Ānanda were living at Kosambī in Ghosita’s Park.
+sn12.68:1.2 | S: Then Venerable Saviṭṭha said to Venerable Musīla: | T: Then the Venerable Saviṭṭha said to the Venerable Musīla:
+sn12.68:1.3 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Friend Musīla, apart from faith, apart from personal preference, apart from oral tradition, apart from reasoned reflection, apart from acceptance of a view after pondering it, does the Venerable Musīla have personal knowledge thus:
+sn12.68:1.4 | S: rebirth is a requirement for old age and death?” | T: ‘With birth as condition, aging-and-death comes to be’?”
+sn12.68:1.5 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Friend Saviṭṭha, apart from faith, apart from personal preference, apart from oral tradition, apart from reasoned reflection, apart from acceptance of a view after pondering it, I know this, I see this:
+sn12.68:1.6 | S: rebirth is a requirement for old age and death.” | T: ‘With birth as condition, aging-and-death comes to be.’”
+sn12.68:2.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberateation, do you personally know that | T: “Friend Musīla, apart from faith … apart from acceptance of a view after pondering it, does the Venerable Musīla have personal knowledge thus:
+sn12.68:2.2 | S: continued existence is a requirement for rebirth … | T: ‘With existence as condition, birth’?…
+sn12.68:2.3 | S: grasping is a requirement for continued existence … | T: (none)
+sn12.68:2.4 | S: craving is a requirement for grasping … | T: (none)
+sn12.68:2.5 | S: feeling is a requirement for craving … | T: (none)
+sn12.68:2.6 | S: contact is a requirement for feeling … | T: (none)
+sn12.68:2.7 | S: the six sense fields are requirements for contact … | T: (none)
+sn12.68:2.8 | S: name and form are requirements for the six sense fields … | T: (none)
+sn12.68:2.9 | S: consciousness is a requirement for name and form … | T: (none)
+sn12.68:2.10 | S: choices are a requirement for consciousness … | T: (none)
+sn12.68:2.11 | S: ignorance is a requirement for choices?” | T: ‘With ignorance as condition, volitional formations’?”
+sn12.68:2.12 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Friend Saviṭṭha, apart from faith … apart from acceptance of a view after pondering it, I know this, I see this:
+sn12.68:2.13 | S: ignorance is a requirement for choices.” | T: ‘With ignorance as condition, volitional formations.’”
+sn12.68:3.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Friend Musīla, apart from faith … apart from acceptance of a view after pondering it, does the Venerable Musīla have personal knowledge:
+sn12.68:3.2 | S: when rebirth ceases, old age and death cease?” | T: ‘With the cessation of birth comes cessation of aging-and-death’? … … ‘With the cessation of ignorance comes cessation of volitional formations’?”
+sn12.68:3.3 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Friend Saviṭṭha, apart from faith …. apart from acceptance of a view after pondering it, I know this, I see this:
+sn12.68:3.4 | S: when rebirth ceases, old age and death cease.” | T: ‘With the cessation of birth comes cessation of aging-and-death.’…
+sn12.68:4.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: (none)
+sn12.68:4.2 | S: when continued existence ceases, rebirth ceases … | T: (none)
+sn12.68:4.3 | S: when grasping ceases, continued existence ceases … | T: (none)
+sn12.68:4.4 | S: when craving ceases, grasping ceases … | T: (none)
+sn12.68:4.5 | S: when feeling ceases, craving ceases … | T: (none)
+sn12.68:4.6 | S: when contact ceases, feeling ceases … | T: (none)
+sn12.68:4.7 | S: when the six sense fields cease, contact ceases … | T: (none)
+sn12.68:4.8 | S: when name and form cease, the six sense fields cease … | T: (none)
+sn12.68:4.9 | S: when consciousness ceases name and form cease … | T: (none)
+sn12.68:4.10 | S: when choices cease consciousness ceases … | T: (none)
+sn12.68:4.11 | S: when ignorance ceases, choices cease?” | T: (none)
+sn12.68:4.12 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: ‘With the cessation of ignorance comes cessation of volitional formations.’”
+sn12.68:4.13 | S: when ignorance ceases, choices cease.” | T: (none)
+sn12.68:5.1 | S: “Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: “Friend Musīla, apart from faith, apart from personal preference, apart from oral tradition, apart from reasoned reflection, apart from acceptance of a view after pondering it, does the Venerable Musīla have personal knowledge thus:
+sn12.68:5.2 | S: the cessation of continued existence is extinguishment?” | T: ‘Nibbāna is the cessation of existence’?”
+sn12.68:5.3 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: “Friend Saviṭṭha, apart from faith, apart from personal preference, apart from oral tradition, apart from reasoned reflection, apart from acceptance of a view after pondering it, I know this, I see this:
+sn12.68:5.4 | S: the cessation of continued existence is extinguishment.” | T: ‘Nibbāna is the cessation of existence.’”
+sn12.68:6.1 | S: “Then Venerable Musīla is a perfected one, with defilements ended.” | T: “Then the Venerable Musīla is an arahant, one whose taints are destroyed.”
+sn12.68:6.2 | S: When he said this, Musīla kept silent. | T: When this was said, the Venerable Musīla kept silent.
+sn12.68:7.1 | S: Then Venerable Nārada said to Venerable Saviṭṭha, | T: Then the Venerable Narada said to the Venerable Saviṭṭha:
+sn12.68:7.2 | S: “Reverend Saviṭṭha, please let me answer these questions. | T: “Friend Saviṭṭha, it would be good if I were asked that series of questions.
+sn12.68:7.3 | S: Ask me | T: Ask me that series of questions and I will answer you.”
+sn12.68:7.4 | S: and I will answer them for you.” | T: (none)
+sn12.68:7.5 | S: “By all means, Venerable Nārada, try these questions. | T: “Then let the Venerable Narada get to answer that series of questions.
+sn12.68:7.6 | S: I’ll ask you | T: I will ask the Venerable Narada that series of questions, and let him answer me.”
+sn12.68:7.7 | S: and you can answer them for me.” | T: (none)
+sn12.68:8.1 | S: (Saviṭṭha repeats exactly the same series of questions, and Nārada answers just as Musīla did.) | T: Here the Venerable Saviṭṭha asks the Venerable Narada the same series of questions as were addressed to the Venerable Musīla, and he answers in exactly the same way.
+sn12.68:8.2 | P: ‘jātipaccayā jarāmaraṇan’”ti? | T: (none)
+sn12.68:8.3 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:8.4 | P: ‘jātipaccayā jarāmaraṇan’”ti. | T: (none)
+sn12.68:9.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ— | T: (none)
+sn12.68:9.2 | P: bhavapaccayā jāti …pe… | T: (none)
+sn12.68:9.3 | P: avijjāpaccayā saṅkhārā”ti? | T: (none)
+sn12.68:9.4 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:9.5 | P: ‘avijjāpaccayā saṅkhārā’”ti. | T: (none)
+sn12.68:10.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ: | T: (none)
+sn12.68:10.2 | P: ‘jātinirodhā jarāmaraṇanirodho’”ti? | T: (none)
+sn12.68:10.3 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:10.4 | P: ‘jātinirodhā jarāmaraṇanirodho’”ti. | T: (none)
+sn12.68:11.1 | P: “Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ: | T: (none)
+sn12.68:11.2 | P: ‘bhavanirodhā jātinirodhoti …pe… | T: (none)
+sn12.68:11.3 | P: avijjānirodhā saṅkhāranirodho’”ti? | T: (none)
+sn12.68:11.4 | P: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: | T: (none)
+sn12.68:11.5 | P: ‘avijjānirodhā saṅkhāranirodho’”ti. | T: (none)
+sn12.68:12.1 | S: “Reverend Nārada, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that | T: (none)
+sn12.68:12.2 | S: the cessation of continued existence is extinguishment?” | T: (none)
+sn12.68:12.3 | S: “Reverend Saviṭṭha, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, I know and see that | T: (none)
+sn12.68:12.4 | S: the cessation of continued existence is extinguishment.” | T: (none)
+sn12.68:13.1 | S: “Then Venerable Nārada is a perfected one, with defilements ended.” | T: “Then the Venerable Narada is an arahant, one whose taints are destroyed.”
+sn12.68:13.2 | S: “I have truly seen clearly with right wisdom that the cessation of continued existence is extinguishment. Yet I am not a perfected one. | T: “Friend, though I have clearly seen as it really is with correct wisdom, ‘Nibbāna is the cessation of existence,’ I am not an arahant, one whose taints are destroyed.
+sn12.68:13.3 | S: Suppose there was a well on a desert road that had neither rope nor bucket. | T: Suppose, friend, there was a well along a desert road, but it had neither a rope nor a bucket.
+sn12.68:13.4 | S: Then along comes a person struggling in the oppressive heat, weary, thirsty, and parched. | T: Then a man would come along, oppressed and afflicted by the heat, tired, parched, and thirsty.
+sn12.68:13.5 | S: They’d know that there was water, but they couldn’t physically touch it. | T: He would look down into the well and the knowledge would occur to him, ‘There is water,’ but he would not be able to make bodily contact with it.
+sn12.68:13.6 | S: In the same way, I have truly seen clearly with right wisdom that the cessation of continued existence is extinguishment. Yet I am not a perfected one.” | T: So too, friend, though I have clearly seen as it really is with correct wisdom, ‘Nibbāna is the cessation of existence,’ I am not an arahant, one whose taints are destroyed.”
+sn12.68:14.1 | S: When he said this, Venerable Ānanda said to Venerable Saviṭṭha, | T: When this was said, the Venerable Ānanda asked the Venerable Saviṭṭha:
+sn12.68:14.2 | S: “Reverend Saviṭṭha, what do you have to say to Venerable Nārada when he speaks like this?” | T: “When he speaks in such a way, friend Saviṭṭha, what would you say about the Venerable Narada?”
+sn12.68:14.3 | S: “Reverend Ānanda, I have nothing to say to Venerable Nārada when he speaks like this, except what is good and wholesome.” | T: “When he speaks in such a way, friend Ānanda, I would not say anything about the Venerable Narada except what is good and favourable.”
+sn12.68:14.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.75
+sn35.75:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: (none)
+sn35.75:1.2 | S: “Sir, in such-and-such monastery there’s a mendicant who is junior and not well-known. He’s sick, suffering, gravely ill. | T: (none)
+sn35.75:1.3 | S: Please go to him out of sympathy.” | T: As above down to:
+sn35.75:2.1 | S: When the Buddha heard that the mendicant was junior and ill, understanding that he was not well-known, he went to him. | T: (none)
+sn35.75:2.2 | S: That mendicant saw the Buddha coming off in the distance | T: (none)
+sn35.75:2.3 | S: and stirred in his cot. | T: (none)
+sn35.75:2.4 | S: Then the Buddha said to that monk, | T: (none)
+sn35.75:2.5 | S: “It’s all right, mendicant, don’t get up. | T: (none)
+sn35.75:2.6 | S: There are some seats spread out, I will sit there.” | T: (none)
+sn35.75:2.7 | S: He sat down on the seat spread out and said to the mendicant, | T: (none)
+sn35.75:2.8 | S: “I hope you’re keeping well, mendicant, I hope you’re all right. I hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: (none)
+sn35.75:3.1 | S: “Sir, I’m not keeping well, I’m not getting by. … | T: (none)
+sn35.75:3.2 | S: I have no reason to blame myself when it comes to ethical conduct.” | T: (none)
+sn35.75:4.1 | S: “In that case, mendicant, why do you have remorse and regret?” | T: (none)
+sn35.75:5.1 | S: “Because I understand that the Buddha has not taught the Dhamma merely for the sake of ethical purity.” | T: (none)
+sn35.75:6.1 | S: “If that is so, what then do you understand to be the goal of teaching the Dhamma?” | T: “If, bhikkhu you understand that the Dhamma has not been taught by me for the sake of purification of virtue, then for what purpose do you understand the Dhamma to have been taught by me?”
+sn35.75:7.1 | S: “I understand that the Buddha has taught the Dhamma for the goal of complete extinguishment without grasping fuel.” | T: “Venerable sir, I understand the Dhamma to have been taught by the Blessed One for the sake of final Nibbāna without clinging.”
+sn35.75:8.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+sn35.75:8.2 | S: It’s good that you understand that I’ve taught the Dhamma for the goal of complete extinguishment with no fuel for grasping. | T: It is good that you understand the Dhamma to have been taught by me for the sake of final Nibbāna without clinging.
+sn35.75:8.3 | S: For that is indeed the goal. | T: For the Dhamma is taught by me for the sake of final Nibbāna without clinging.
+sn35.75:9.1 | S: What do you think, mendicant? | T: “What do you think, bhikkhu,
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.75:9.2 | S: Is the eye permanent or impermanent?” | T: is the eye permanent or impermanent?”—
+sn35.75:10.1 | S: “Impermanent, sir.” … | T: “Impermanent, venerable sir.”…
+sn35.75:11.1 | P: “ …pe… | T: (none)
+sn35.75:11.2 | S: “Is the ear … | T: “Is the ear …
+sn35.75:11.3 | S: nose … | T: the nose …
+sn35.75:11.4 | S: tongue … | T: the tongue …
+sn35.75:11.5 | S: body … | T: the body …
+sn35.75:11.6 | S: mind … | T: the mind …
+sn35.75:11.7 | S: mind consciousness … | T: mind-consciousness …
+sn35.75:11.8 | S: mind contact … | T: mind-contact …
+sn35.75:11.9 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact: is that permanent or impermanent?” | T: whatever feeling arises with mind-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—permanent or impermanent?”—
+sn35.75:12.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn35.75:13.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn35.75:14.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn35.75:15.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn35.75:15.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn35.75:16.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.75:17.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye … ear … nose … tongue … body … | T: “Seeing thus …
+sn35.75:17.2 | S: mind … | T: (none)
+sn35.75:17.3 | S: mind consciousness … | T: (none)
+sn35.75:17.4 | S: mind contact … | T: (none)
+sn35.75:17.5 | S: They grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: (none)
+sn35.75:17.6 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: (none)
+sn35.75:17.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn35.75:18.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn35.75:18.2 | S: Satisfied, that mendicant approved what the Buddha said. | T: Elated, that bhikkhu delighted in the Blessed One’s statement.
+sn35.75:18.3 | S: And while this discourse was being spoken, the mind of that mendicant was freed from defilements by not grasping. | T: And while this discourse was being spoken, that bhikkhu’s mind was liberated from the taints by nonclinging.
+sn35.75:18.4 | P: Dutiyaṁ. | T: (none)
+
+## sn35.108
+sn35.108:1.1 | S: “Mendicants, when what exists, because of grasping what and insisting on what, do people think ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’?” | T: “Bhikkhus, when what exists, by clinging to what, by adhering to what, does the thought occur: ‘I am superior’ or ‘I am equal’ or ‘I am inferior’?”
+sn35.108:2.1 | S: “Our teachings are rooted in the Buddha. …” | T: “Venerable sir, our teachings are rooted in the Blessed One….”
+sn35.108:3.1 | S: “When there’s an eye, because of grasping the eye and insisting on the eye, people think ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’. … | T: “When there is the eye, bhikkhus, by clinging to the eye, by adhering to the eye, the thought occurs: ‘I am superior’ or ‘I am equal’ or ‘I am inferior.’
+sn35.108:3.2 | P: jivhāya sati …pe… | T: When there is the ear …
+sn35.108:3.3 | S: When there’s a mind, because of grasping the mind and insisting on the mind, people think ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’. | T: When there is the mind, by clinging to the mind, by adhering to the mind, the thought occurs: ‘I am superior’ or ‘I am equal’ or ‘I am inferior.’
+sn35.108:3.4 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn35.108:3.5 | S: Is the eye permanent or impermanent?” | T: is the eye …
+sn35.108:4.1 | S: “Impermanent, sir.” | T: (none)
+sn35.108:5.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn35.108:6.1 | S: “Suffering, sir.” | T: (none)
+sn35.108:7.1 | S: “But by not grasping what’s impermanent, suffering, and perishable, would people think ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’?” | T: (none)
+sn35.108:8.1 | S: “No, sir.” … | T: (none)
+sn35.108:8.2 | P: jivhā … | T: (none)
+sn35.108:8.3 | P: niccā vā aniccā vā”ti? | T: (none)
+sn35.108:9.1 | P: “Aniccā, bhante” …pe…. | T: (none)
+sn35.108:10.1 | S: “Is the mind permanent or impermanent?” | T: the mind permanent or impermanent?”
+sn35.108:11.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”…
+sn35.108:12.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn35.108:13.1 | S: “Suffering, sir.” | T: (none)
+sn35.108:14.1 | S: “But by not grasping what’s impermanent, suffering, and perishable, would people think ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’?” | T: “But without clinging to what is impermanent, suffering, and subject to change, could the thought occur: ‘I am superior’ or ‘I am equal’ or ‘I am inferior’?”
+sn35.108:15.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.108:16.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, ear, nose, tongue, body, and mind. | T: “Seeing thus …
+sn35.108:16.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: (none)
+sn35.108:16.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn35.108:16.4 | P: Pañcamaṁ. | T: (none)
+
+## sn35.128
+sn35.128:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn35.128:1.2 | S: Then the householder Soṇa went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the householder’s son Soṇa approached the Blessed One … and said to him.….
+sn35.128:1.3 | S: “What is the cause, sir, what is the reason why some sentient beings are not fully extinguished in this very life? | T: (none)
+sn35.128:1.4 | S: What is the cause, sir, what is the reason why some sentient beings are fully extinguished in this very life?” … | T: (none)
+sn35.128:1.5 | S: (Tell in full as in SN 35.118.) | T: As in §118.
+sn35.128:1.6 | P: Ayaṁ kho, soṇa, hetu, ayaṁ paccayo yena m’idhekacce sattā diṭṭheva dhamme parinibbāyantīti. | T: (none)
+sn35.128:1.7 | P: Pañcamaṁ. | T: (none)
+
+## sn35.8
+sn35.8:1.1 | S: “Mendicants, the eye of the past and future is suffering, | T: At Savatthi. “Bhikkhus, the eye is suffering, both of the past and the future,
+sn35.8:1.2 | S: let alone the present. | T: not to speak of the present.
+sn35.8:1.3 | S: Seeing this, a learned noble disciple is not concerned with the eye of the past, | T: Seeing thus …
+sn35.8:1.4 | S: they don’t look forward to enjoying the eye in the future, | T: (none)
+sn35.8:1.5 | S: and they practice for disillusionment, dispassion, and cessation regarding the eye in the present. …” | T: (none)
+sn35.8:1.6 | P: Sotaṁ dukkhaṁ …pe… | T: (none)
+sn35.8:1.7 | P: ghānaṁ dukkhaṁ …pe… | T: (none)
+sn35.8:1.8 | P: jivhā dukkhā atītānāgatā; | T: (none)
+sn35.8:1.9 | P: ko pana vādo paccuppannāya. | T: (none)
+sn35.8:1.10 | P: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako atītāya jivhāya anapekkho hoti; | T: (none)
+sn35.8:1.11 | P: anāgataṁ jivhaṁ nābhinandati; | T: (none)
+sn35.8:1.12 | P: paccuppannāya jivhāya nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn35.8:1.13 | P: Kāyo dukkho …pe… | T: (none)
+sn35.8:1.14 | P: mano dukkho atītānāgato; | T: The mind is suffering …
+sn35.8:1.15 | P: ko pana vādo paccuppannassa. | T: (none)
+sn35.8:1.16 | P: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako atītasmiṁ manasmiṁ anapekkho hoti; | T: (none)
+sn35.8:1.17 | P: anāgataṁ manaṁ nābhinandati; | T: (none)
+sn35.8:1.18 | P: paccuppannassa manassa nibbidāya virāgāya nirodhāya paṭipanno hotī”ti. | T: for its fading away and cessation.”
+sn35.8:1.19 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn45.69
+sn45.69:1.1 | S: “… accomplishment in rational application of mind. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path. What one thing? Accomplishment in virtue … Accomplishment in desire … Accomplishment in self … Accomplishment in view … Accomplishment in diligence … Accomplishment in careful attention …
+sn45.69:1.2 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.69:1.3 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: (none)
+sn45.69:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: complete as in §63 … He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.69:1.5 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.69:1.6 | P: Sattamaṁ. | T: (none)
+
+## sn45.83
+sn45.83:1.1 | S: “… accomplishment in rational application of mind. | T: “Bhikkhus, I do not see even one other thing by means of which the unarisen Noble Eightfold Path arises and the arisen Noble Eightfold Path goes to fulfilment by development so effectively as by this: accomplishment in virtue … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … accomplishment in careful attention …
+sn45.83:1.2 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.83:1.3 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: (none)
+sn45.83:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: complete as in §77 … He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.83:1.5 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.83:1.6 | P: Sattamaṁ. | T: (none)
+
+## sn45.90
+sn45.90:1.1 | S: “… accomplishment in rational application of mind. | T: “Bhikkhus, I do not see even one other thing by means of which the unarisen Noble Eightfold Path arises and the arisen Noble Eightfold Path goes to fulfilment by development so effectively as by this: accomplishment in virtue … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … accomplishment in careful attention …
+sn45.90:1.2 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.90:1.3 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: (none)
+sn45.90:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: complete as in §84 … He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion.
+sn45.90:1.5 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.90:1.6 | P: Sattamaṁ. | T: (none)
+sn45.90:1.7 | P: Dutiyaekadhammapeyyālaṁ. | T: (none)
+sn45.90:2.0 | P: Tassuddānaṁ | T: (none)
+sn45.90:2.1 | P: Kalyāṇamittaṁ sīlañca, | T: (none)
+sn45.90:2.2 | P: chando ca attasampadā; | T: (none)
+sn45.90:2.3 | P: Diṭṭhi ca appamādo ca, | T: (none)
+sn45.90:2.4 | P: yoniso bhavati sattamaṁ. | T: (none)
+
+## sn12.47
+sn12.47:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.47:1.2 | S: Then the brahmin Jānussoṇi went up to the Buddha, and exchanged greetings with him. Seated to one side he said to the Buddha: | T: Then the brahmin Jaṇussoṇi approached the Blessed One and exchanged greetings with him. When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.47:2.1 | S: “Worthy Gotama, does all exist?” | T: “How is it, Master Gotama: does all exist?”
+sn12.47:2.2 | S: “‘All exists’: this is one extreme, brahmin.” | T: “‘All exists’: this, brahmin, is one extreme.”
+sn12.47:3.1 | S: “Then does all not exist?” | T: “Then, Master Gotama, does all not exist?”
+sn12.47:3.2 | S: “‘All does not exist’: this is the second extreme. | T: “‘All does not exist’: this, brahmin, is the second extreme.
+sn12.47:3.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle….”
+sn12.47:3.4 | S: ‘Ignorance is a requirement for choices. | T: (none)
+sn12.47:3.5 | S: Choices are a requirement for consciousness. … | T: (none)
+sn12.47:3.6 | S: That is how this entire mass of suffering originates. | T: (none)
+sn12.47:3.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: (none)
+sn12.47:3.8 | S: When choices cease, consciousness ceases. … | T: (none)
+sn12.47:3.9 | S: That is how this entire mass of suffering ceases.’” | T: (none)
+sn12.47:4.1 | S: When he said this, the brahmin Jānussoṇi said to the Buddha, | T: When this was said, the brahmin Jaṇussoṇi said to the Blessed One:
+sn12.47:4.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama!…
+sn12.47:4.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn12.47:4.4 | P: Sattamaṁ. | T: (none)
+
+## sn47.85-94
+sn47.85-94:1.1 | S: “Mendicants, there are these three searches. | T: (none)
+sn47.85-94:1.2 | S: What three? | T: (none)
+sn47.85-94:1.3 | S: The search for sensual pleasures, the search for continued existence, and the search for a spiritual path. …” | T: (none)
+sn47.85-94:1.4 | S: (Tell in full as in SN 45.161–170.) | T: (To be elaborated parallel to SN45.161.)
+sn47.85-94:1.5 | P: Esanāvaggo navamo. | T: (none)
+sn47.85-94:2.0 | P: Tassuddānaṁ | T: (none)
+sn47.85-94:2.1 | S: Searches, discriminations, defilements, | T: Searches, discriminations, taints,
+sn47.85-94:2.2 | S: states of existence, three kinds of suffering, | T: Kinds of existence, threefold suffering,
+sn47.85-94:2.3 | S: barrenness, stains, and troubles, | T: Barrenness, stains, and troubles,
+sn47.85-94:2.4 | S: feelings, craving, and thirst. | T: Feelings, craving, and thirst.
+
+## an8.8
+an8.8:1.1 | S: At one time Venerable Uttara was staying on the Saṅkheyyaka Mountain in the Mahisa region near Dhavajālikā. | T: On one occasion the Venerable Uttara was dwelling at Mahisavatthu, in Dhavajālikā on Mount Saṅkheyya.
+an8.8:1.2 | S: There Uttara addressed the mendicants: | T: There the Venerable Uttara addressed the bhikkhus….
+an8.8:1.3 | S: “Mendicants, it’s good for a mendicant to check their own failings from time to time. | T: “Friends, it is good for a bhikkhu from time to time to review his own failings.
+an8.8:1.4 | S: It’s good for a mendicant to check the failings of others from time to time. | T: It is good for a bhikkhu from time to time to review the failings of others.
+an8.8:1.5 | S: It’s good for a mendicant to check their own successes from time to time. | T: It is good for a bhikkhu from time to time to review his own achievements.
+an8.8:1.6 | S: It’s good for a mendicant to check the successes of others from time to time.” | T: It is good for a bhikkhu from time to time to review the achievements of others.”
+an8.8:2.1 | S: Now at that time the great king Vessavaṇa was on his way from the north to the south on some business. | T: Now on that occasion the great deva king Vessavaṇa was traveling from north to south on some business.
+an8.8:2.2 | S: He heard Venerable Uttara teaching this to the mendicants on Saṅkheyyaka Mountain. | T: He heard the Venerable Uttara at Mahisavatthu, in Dhavajālikā on Mount Saṅkheyya, teaching the Dhamma to the bhikkhus thus:
+an8.8:2.3 | P: “sādhāvuso, bhikkhu kālena kālaṁ attavipattiṁ paccavekkhitā hoti. | T: ‘Friends, it is good for a bhikkhu from time to time to review his own failings …
+an8.8:2.4 | P: Sādhāvuso, bhikkhu kālena kālaṁ paravipattiṁ paccavekkhitā hoti. | T: the failings of others …
+an8.8:2.5 | P: Sādhāvuso, bhikkhu kālena kālaṁ attasampattiṁ paccavekkhitā hoti. | T: his own achievements …
+an8.8:2.6 | P: Sādhāvuso, bhikkhu kālena kālaṁ parasampattiṁ paccavekkhitā hotī”ti. | T: the achievements of others.’
+an8.8:3.1 | S: Then Vessavaṇa vanished from Saṅkheyyaka Mountain and appeared among the gods of the thirty-three, as easily as a strong person would extend or contract their arm. | T: Then, just as a strong man might extend his drawn-in arm or draw in his extended arm, Vessavaṇa disappeared from Mount Saṅkheyya and reappeared among the Tāvatiṁsa devas.
+an8.8:3.2 | S: Then he went up to Sakka, lord of gods, and said to him: | T: He approached Sakka, ruler of the devas, and said to him:
+an8.8:3.3 | S: “Please good fellow, you should know this. | T: “Respected sir, you should know that the Venerable Uttara,
+an8.8:3.4 | S: Venerable Uttara is teaching the mendicants on Saṅkheyyaka Mountain in this way: | T: at Mahisavatthu, in Dhavajālikā on Mount Saṅkheyya, has been teaching the Dhamma to the bhikkhus thus:
+an8.8:3.5 | S: ‘It’s good for a mendicant from time to time to check their own failings. … | T: ‘Friends, it is good for a bhikkhu from time to time to review his own failings …
+an8.8:3.6 | S: the failings of others … | T: the failings of others …
+an8.8:3.7 | S: their own successes … | T: his own achievements …
+an8.8:3.8 | S: the successes of others.’” | T: the achievements of others.’”
+an8.8:4.1 | S: Then, as easily as a strong person would extend or contract their arm, Sakka vanished from the gods of the thirty-three and reappeared on Saṅkheyyaka Mountain in front of Venerable Uttara. | T: Then, just as a strong man might extend his drawn-in arm or draw in his extended arm, Sakka disappeared from among the Tāvatiṁsa devas and reappeared at Mahisavatthu, in Dhavajālikā on Mount Saṅkheyya, in front of the Venerable Uttara.
+an8.8:4.2 | S: Then Sakka went up to Venerable Uttara, bowed, stood to one side, and said to him: | T: He approached the Venerable Uttara, paid homage to him, stood to one side, and said to him:
+an8.8:5.1 | S: “Is it really true, sir, that you teach the mendicants in this way: | T: “Is it true, Bhante, as is said, that you have been teaching the Dhamma to the bhikkhus thus:
+an8.8:5.2 | S: ‘It’s good for a mendicant from time to time to check their own failings … | T: ‘Friends, it is good for a bhikkhu from time to time to review his own failings …
+an8.8:5.3 | S: the failings of others … | T: the failings of others …
+an8.8:5.4 | S: their own successes … | T: his own achievements …
+an8.8:5.5 | S: the successes of others’?” | T: the achievements of others’?”
+an8.8:5.6 | S: “Indeed, lord of gods.” | T: “Yes, ruler of the devas.”
+an8.8:5.7 | S: “Sir, did this teaching come to you from your own inspiration, or was it spoken by the Blessed One, the perfected one, the fully awakened Buddha?” | T: “But, Bhante, was this your own discernment, or was it the word of the Blessed One, the Arahant, the Perfectly Enlightened One?”
+an8.8:5.8 | S: “Well then, lord of gods, I shall give you a simile. | T: “Well then, ruler of the devas, I will give you a simile;
+an8.8:5.9 | S: For by means of a simile some sensible people understand the meaning of what is said. | T: even by means of a simile, some intelligent people understand the meaning of what has been said.
+an8.8:6.1 | S: Suppose there was a large heap of grain not far from a town or village. | T: Suppose not far from a village or town there was a great heap of grain,
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.8:6.2 | S: And a large crowd were to take away grain | T: and a large crowd of people were to take away grain with carrying-poles,
+an8.8:6.3 | S: with carrying poles, baskets, hip sacks, or their cupped hands. | T: baskets, hip-sacks, and their cupped hands.
+an8.8:6.4 | S: If someone were to go to that crowd and ask them | T: If someone were to approach that large crowd of people and ask them:
+an8.8:6.5 | S: where they got the grain from, how should that crowd rightly reply?” | T: ‘Where did you get this grain?’ what should they say?”
+an8.8:6.6 | S: “Sir, they should reply that they took it from the large heap of grain.” | T: “Bhante, those people should say: ‘We got it from that great heap of grain.’”
+an8.8:6.7 | S: “In the same way, lord of gods, whatever is well spoken is spoken by the Blessed One, the perfected one, the fully awakened Buddha. | T: “So too, ruler of the devas, whatever is well spoken is all the word of the Blessed One, the Arahant, the Perfectly Enlightened One.
+an8.8:6.8 | S: Both myself and others rely completely on that when we speak.” | T: I myself and others derive our good words from him.”
+an8.8:7.1 | S: “It’s incredible, sir, it’s amazing! | T: “It’s astounding and amazing, Bhante,
+an8.8:7.2 | S: How well this was said by Venerable Uttara! | T: how well you stated this:
+an8.8:7.3 | S: ‘Whatever is well spoken is spoken by the Blessed One, the perfected one, the fully awakened Buddha. | T: ‘Whatever is well spoken is all the word of the Blessed One, the Arahant, the Perfectly Enlightened One.
+an8.8:7.4 | S: Both myself and others rely completely on that when we speak.’ | T: I myself and others derive our good words from him.’
+an8.8:7.5 | S: At one time, Honorable Uttara, the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain, not long after Devadatta had left. | T: “On one occasion, Bhante Uttara, the Blessed One was dwelling at Rājagaha, on Mount Vulture Peak, not long after Devadatta had left.
+an8.8:7.6 | S: There the Buddha spoke to the mendicants about Devadatta: | T: There the Blessed One addressed the bhikkhus with reference to Devadatta:
+an8.8:8.1 | S: ‘Mendicants, it’s good for a mendicant from time to time to check their own failings … | T: ‘Bhikkhus, it is good for a bhikkhu from time to time to review his own failings….
+an8.8:8.2 | S: the failings of others … | T: (none)
+an8.8:8.3 | S: their own successes … | T: (none)
+an8.8:8.4 | S: the successes of others. | T: (none)
+an8.8:8.5 | S: Overcome and overwhelmed by eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: (none)
+an8.8:8.6 | S: What eight? | T: (none)
+an8.8:8.7 | S: Overcome and overwhelmed by gain … | T: (none)
+an8.8:8.8 | S: loss … | T: (none)
+an8.8:8.9 | S: fame … | T: (none)
+an8.8:8.10 | S: disgrace … | T: (none)
+an8.8:8.11 | S: honor … | T: (none)
+an8.8:8.12 | S: dishonor … | T: (none)
+an8.8:8.13 | S: corrupt wishes … | T: (none)
+an8.8:8.14 | S: bad friendship, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: (none)
+an8.8:8.15 | S: Overcome and overwhelmed by these eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: (none)
+an8.8:9.1 | S: It’s good for a mendicant, whenever they encounter it, to overcome gain … | T: (none)
+an8.8:9.2 | S: loss … | T: (none)
+an8.8:9.3 | S: fame … | T: (none)
+an8.8:9.4 | S: disgrace … | T: (none)
+an8.8:9.5 | S: honor … | T: (none)
+an8.8:9.6 | S: dishonor … | T: (none)
+an8.8:9.7 | S: corrupt wishes … | T: (none)
+an8.8:9.8 | S: bad friendship. | T: (none)
+an8.8:10.1 | S: What advantage does a mendicant gain by overcoming these eight things? | T: Sakka here cites the Buddha’s entire discourse of AN8.7,
+an8.8:10.2 | P: uppannaṁ alābhaṁ …pe… | T: (none)
+an8.8:10.3 | P: uppannaṁ yasaṁ … | T: down to:
+an8.8:10.4 | P: uppannaṁ ayasaṁ … | T: (none)
+an8.8:10.5 | P: uppannaṁ sakkāraṁ … | T: (none)
+an8.8:10.6 | P: uppannaṁ asakkāraṁ … | T: (none)
+an8.8:10.7 | P: uppannaṁ pāpicchataṁ … | T: (none)
+an8.8:10.8 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya? | T: (none)
+an8.8:11.1 | S: The distressing and feverish defilements that might arise in someone who lives without overcoming these eight things do not arise when they have overcome them. | T: (none)
+an8.8:11.2 | P: Yaṁ hissa, bhikkhave, uppannaṁ alābhaṁ …pe… | T: (none)
+an8.8:11.3 | P: uppannaṁ yasaṁ … | T: (none)
+an8.8:11.4 | P: uppannaṁ ayasaṁ … | T: (none)
+an8.8:11.5 | P: uppannaṁ sakkāraṁ … | T: (none)
+an8.8:11.6 | P: uppannaṁ asakkāraṁ … | T: (none)
+an8.8:11.7 | P: uppannaṁ pāpicchataṁ … | T: (none)
+an8.8:11.8 | P: uppannaṁ pāpamittataṁ anabhibhuyya viharato uppajjeyyuṁ āsavā vighātapariḷāhā, uppannaṁ pāpamittataṁ abhibhuyya viharato evaṁsa te āsavā vighātapariḷāhā na honti. | T: (none)
+an8.8:11.9 | S: This is the advantage that a mendicant gains by overcoming these eight things. | T: (none)
+an8.8:11.10 | P: uppannaṁ alābhaṁ …pe… | T: (none)
+an8.8:11.11 | P: uppannaṁ yasaṁ … | T: (none)
+an8.8:11.12 | P: uppannaṁ ayasaṁ … | T: (none)
+an8.8:11.13 | P: uppannaṁ sakkāraṁ … | T: (none)
+an8.8:11.14 | P: uppannaṁ asakkāraṁ … | T: (none)
+an8.8:11.15 | P: uppannaṁ pāpicchataṁ … | T: (none)
+an8.8:11.16 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya. | T: (none)
+an8.8:12.1 | S: So you should train like this: | T: (none)
+an8.8:12.2 | S: “Whenever we encounter it, we will overcome gain … | T: (none)
+an8.8:12.3 | S: loss … | T: [165–
+an8.8:12.4 | S: fame … | T: 66] …
+an8.8:12.5 | S: disgrace … | T: (none)
+an8.8:12.6 | S: honor … | T: (none)
+an8.8:12.7 | S: dishonor … | T: (none)
+an8.8:12.8 | S: corrupt wishes … | T: (none)
+an8.8:12.9 | S: bad friendship.” | T: (none)
+an8.8:12.10 | S: That’s how you should train.’ | T: It is in such a way, bhikkhus, that you should train yourselves.’
+an8.8:13.1 | S: Honorable Uttara, this exposition of the teaching is not established anywhere in the four assemblies— | T: “Bhante Uttara, this exposition of the Dhamma has not been promulgated anywhere among the four human assemblies: that is, among bhikkhus,
+an8.8:13.2 | S: monks, nuns, laymen, and laywomen. | T: bhikkhunīs, male lay followers, and female lay followers.
+an8.8:13.3 | P: Nāyaṁ dhammapariyāyo kismiñci upaṭṭhito. | T: (none)
+an8.8:13.4 | S: Sir, learn this exposition of the teaching! | T: Bhante, learn this exposition of the Dhamma,
+an8.8:13.5 | S: Memorize this exposition of the teaching! | T: master this exposition of the Dhamma,
+an8.8:13.6 | S: Remember this exposition of the teaching! | T: and retain this exposition of the Dhamma in mind.
+an8.8:13.7 | S: Sir, this exposition of the teaching is beneficial and relevant to the fundamentals of the spiritual life.” | T: This exposition of the Dhamma is beneficial; it pertains to the fundamentals of the spiritual life.”
+an8.8:13.8 | P: Aṭṭhamaṁ. | T: (none)
+
+
+codex
+I’ve read the full batch. I’m checking the candidate boundaries against the rules for abbreviated passages and short Pali refrains before writing the findings.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-007.findings.tmp <<'EOF'
+sn36.8:5.2 starts: he understands thus:
+sn12.68:4.11 starts: ‘With the cessation of ignorance comes cessation
+sn12.68:4.12 none
+sn12.68:4.13 starts: ‘With the cessation of ignorance comes cessation
+sn35.108:3.2 none
+an8.8:3.4 starts: the Venerable Uttara, at Mahisavatthu, in Dhavajālikā
+an8.8:6.3 starts: with carrying-poles, baskets, hip-sacks, and their cupped
+an8.8:13.2 starts: that is, among bhikkhus, bhikkhunīs, male lay
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+29,320
+8 lines reported.

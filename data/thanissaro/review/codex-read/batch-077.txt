@@ -1,0 +1,341 @@
+## an6.13
+an6.13:1.1 | S: “Mendicants, there are these six elements of escape. | T: “Monks, these six properties are means of escape.
+an6.13:1.2 | S: What six? | T: Which six?
+an6.13:1.3 | S: Take a mendicant who says: | T: “There is the case where a monk might say,
+an6.13:1.4 | S: ‘I’ve developed the heart’s release by love. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although goodwill has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken by me as my awareness-release,
+an6.13:1.5 | S: Yet somehow ill will still occupies my mind.’ | T: still ill will keeps overpowering my mind.’
+an6.13:1.6 | S: They should be told, ‘Not so, venerable! Don’t say that. Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that. | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:1.7 | S: It’s impossible, reverend, it cannot happen that the heart’s release by love has been developed and properly implemented, | T: It’s impossible, there is no way that—when goodwill has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken as an awareness-release—
+an6.13:1.8 | S: yet somehow ill will still occupies the mind. | T: ill will would still keep overpowering the mind. That possibility doesn’t exist,
+an6.13:1.9 | S: For it is the heart’s release by love that is the escape from ill will.’ | T: for this is the escape from ill will: goodwill as an awareness-release.’
+an6.13:2.1 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+an6.13:2.2 | S: ‘I’ve developed the heart’s release by compassion. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although compassion has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken by me as my awareness-release,
+an6.13:2.3 | S: Yet somehow the thought of harming still occupies my mind.’ | T: still harmfulness keeps overpowering my mind.’
+an6.13:2.4 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:2.5 | P: Aṭṭhānametaṁ, āvuso, anavakāso yaṁ karuṇāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya; | T: It’s impossible, there is no way that—when compassion has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken as an awareness-release—
+an6.13:2.6 | P: atha ca panassa vihesā cittaṁ pariyādāya ṭhassati, netaṁ ṭhānaṁ vijjati. | T: harmfulness would still keep overpowering the mind. That possibility doesn’t exist,
+an6.13:2.7 | S: For it is the heart’s release by compassion that is the escape from thoughts of harming.’ | T: for this is the escape from harmfulness: compassion as an awareness-release.’
+an6.13:3.1 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+an6.13:3.2 | S: ‘I’ve developed the heart’s release by rejoicing. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although empathetic joy has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken by me as my awareness-release,
+an6.13:3.3 | S: Yet somehow discontent still occupies my mind.’ | T: still resentment keeps overpowering my mind.’
+an6.13:3.4 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:3.5 | P: Aṭṭhānametaṁ, āvuso, anavakāso yaṁ muditāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya; | T: It’s impossible, there is no way that—when empathetic joy has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken as an awareness-release—
+an6.13:3.6 | P: atha ca panassa arati cittaṁ pariyādāya ṭhassati, netaṁ ṭhānaṁ vijjati. | T: resentment would still keep overpowering the mind. That possibility doesn’t exist,
+an6.13:3.7 | S: For it is the heart’s release by rejoicing that is the escape from discontent.’ | T: for this is the escape from resentment: empathetic joy as an awareness-release.’
+an6.13:4.1 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+an6.13:4.2 | S: ‘I’ve developed the heart’s release by equanimity. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although equanimity has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken by me as my awareness-release,
+an6.13:4.3 | S: Yet somehow desire still occupies my mind.’ | T: still passion keeps overpowering my mind.’
+an6.13:4.4 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:4.5 | P: Aṭṭhānametaṁ, āvuso, anavakāso yaṁ upekkhāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya; | T: It’s impossible, there is no way that—when equanimity has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken as an awareness-release—
+an6.13:4.6 | P: atha ca panassa rāgo cittaṁ pariyādāya ṭhassati, netaṁ ṭhānaṁ vijjati. | T: passion would still keep overpowering the mind. That possibility doesn’t exist,
+an6.13:4.7 | S: For it is the heart’s release by equanimity that is the escape from desire.’ | T: for this is the escape from passion: equanimity as an awareness-release.’
+an6.13:5.1 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+an6.13:5.2 | S: ‘I’ve developed the signless release of the heart. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although the signless has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken by me as my awareness-release,
+an6.13:5.3 | S: Yet somehow my consciousness still follows after signs.’ | T: still my consciousness follows the drift of signs.’
+an6.13:5.4 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:5.5 | P: Aṭṭhānametaṁ, āvuso, anavakāso yaṁ animittāya cetovimuttiyā bhāvitāya bahulīkatāya yānīkatāya vatthukatāya anuṭṭhitāya paricitāya susamāraddhāya; | T: It’s impossible, there is no way that—when the signless has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken as an awareness-release—
+an6.13:5.6 | P: atha ca panassa nimittānusāri viññāṇaṁ bhavissati, netaṁ ṭhānaṁ vijjati. | T: consciousness would follow the drift of signs. That possibility doesn’t exist,
+an6.13:5.7 | S: For it is the signless release of the heart that is the escape from all signs.’ | T: for this is the escape from all signs: the signless as an awareness-release.’
+an6.13:6.1 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+an6.13:6.2 | S: ‘I’m rid of the conceit “I am”. And I don’t regard anything as “I am this”. | T: ‘Although “I am” is gone, and I do not assume that “I am this,”
+an6.13:6.3 | S: Yet somehow the dart of doubt and indecision still occupies my mind.’ | T: still the arrow of uncertainty & perplexity keeps overpowering my mind.’
+an6.13:6.4 | S: They should be told, ‘Not so, venerable! Don’t say that. Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that. | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+an6.13:6.5 | S: It’s impossible, reverend, it cannot happen that the conceit “I am” has been done away with, and nothing is regarded as “I am this”, | T: It’s impossible, there is no way that—when “I am” is gone, and “I am this” is not assumed—
+an6.13:6.6 | S: yet somehow the dart of doubt and indecision still occupies the mind. | T: the arrow of uncertainty & perplexity would keep overpowering the mind. That possibility doesn’t exist,
+an6.13:6.7 | S: For it is the uprooting of the conceit “I am” that is the escape from the dart of doubt and indecision.’ | T: for this is the escape from the arrow of uncertainty & perplexity: the uprooting of the conceit, “I am”.’
+an6.13:7.1 | S: These are the six elements of escape.” | T: “These, monks, are six properties that are means of escape.”
+an6.13:7.2 | P: Tatiyaṁ. | T: (none)
+
+## an6.16
+an6.16:1.1 | S: At one time the Buddha was staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. | T: Once the Blessed One was staying among the Bhaggas in the Deer Park at Bhesakaḷā Forest, near Crocodile Haunt.
+an6.16:1.2 | S: Now at that time the householder Nakula’s father was sick, suffering, gravely ill. | T: At that time, Nakula’s father [Nakulapitar], the householder, was diseased, in pain, severely ill.
+an6.16:1.3 | S: Then the housewife Nakula’s mother said to him: | T: Then Nakula’s mother [Nakulamatar] said to him:
+an6.16:2.1 | S: “Householder, don’t pass away with concerns. | T: “Don’t be worried as you die, householder.
+an6.16:2.2 | S: Such concern is suffering, | T: Death is painful for one who is worried.
+an6.16:2.3 | S: and it’s criticized by the Buddha. | T: The Blessed One has criticized being worried at the time of death.
+an6.16:2.4 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:2.5 | S: ‘When I’ve gone, the housewife Nakula’s mother won’t be able to provide for the children and keep up the household carpets.’ | T: ‘Nakula’s mother will not be able to support the children or maintain the household after I’m gone,’
+an6.16:2.6 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:2.7 | S: I’m skilled at spinning cotton and carding wool. | T: I am skilled at spinning cotton, at carding matted wool.
+an6.16:2.8 | S: I’m able to provide for the children and keep up the household carpets. | T: I can support the children and maintain the household after you are gone.
+an6.16:2.9 | S: So householder, don’t pass away with concerns … | T: So don’t be worried as you die, householder.
+an6.16:2.10 | P: Dukkhā, gahapati, sāpekkhassa kālakiriyā; | T: Death is painful for one who is worried.
+an6.16:2.11 | P: garahitā ca bhagavatā sāpekkhassa kālakiriyā. | T: The Blessed One has criticized being worried at the time of death.
+an6.16:3.1 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:3.2 | S: ‘When I’ve gone, the housewife Nakula’s mother will take another husband.’ | T: ‘Nakula’s mother will take another husband after I’m gone,’
+an6.16:3.3 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:3.4 | S: Both you and I know that we have remained chaste while at home for the past sixteen years. | T: You know as well as I how my fidelity [literally: householder-celibacy] has been constant for the past sixteen years.
+an6.16:3.5 | S: So householder, don’t pass away with concerns … | T: So don’t be worried as you die, householder.
+an6.16:3.6 | P: Dukkhā, gahapati, sāpekkhassa kālakiriyā; | T: Death is painful for one who is worried.
+an6.16:3.7 | P: garahitā ca bhagavatā sāpekkhassa kālakiriyā. | T: The Blessed One has criticized death when one is worried.
+an6.16:4.1 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:4.2 | S: ‘When I’ve gone, the housewife Nakula’s mother won’t want to see the Buddha and his Saṅgha of mendicants.’ | T: ‘Nakula’s mother will have no desire to go see the Blessed One, to go see the Saṅgha of monks, after I’m gone,’
+an6.16:4.3 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:4.4 | S: When you’ve gone, I’ll want to see the Buddha and his mendicant Saṅgha even more. | T: I will have an even greater desire to go see the Blessed One, to go see the Saṅgha of monks, after you are gone.
+an6.16:4.5 | S: So householder, don’t pass away with concerns … | T: So don’t be worried as you die, householder.
+an6.16:4.6 | P: Dukkhā, gahapati, sāpekkhassa kālakiriyā; | T: Death is painful for one who is worried.
+an6.16:4.7 | P: garahitā ca bhagavatā sāpekkhassa kālakiriyā. | T: The Blessed One has criticized being worried at the time of death.
+an6.16:5.1 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:5.2 | S: ‘The housewife Nakula’s mother won’t fulfill ethics.’ | T: ‘Nakula’s mother will not act fully in accordance with the precepts after I’m gone,’
+an6.16:5.3 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:5.4 | S: I am one of those white-robed disciples of the Buddha who fulfills their ethics. | T: To the extent that the Blessed One has white-clad householder female disciples who act fully in accordance with the precepts, I am one of them.
+an6.16:5.5 | S: For whoever doubts this, that Blessed One, the perfected one, the fully awakened Buddha is staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. Let them approach him and ask. | T: If anyone doubts or denies this, let him go ask the Blessed One—worthy & rightly self-awakened—who is staying among the Bhaggas in the Deer Park at Bhesakaḷā Forest, near Crocodile Haunt.
+an6.16:5.6 | S: So householder, don’t pass away with concerns … | T: So don’t be worried as you die, householder.
+an6.16:5.7 | P: Dukkhā, gahapati, sāpekkhassa kālakiriyā; | T: Death is painful for one who is worried.
+an6.16:5.8 | P: garahitā ca bhagavatā sāpekkhassa kālakiriyā. | T: The Blessed One has criticized being worried at the time of death.
+an6.16:6.1 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:6.2 | S: ‘The housewife Nakula’s mother doesn’t have internal serenity of heart.’ | T: ‘Nakula’s mother will not attain inner tranquility of awareness after I’m gone,’
+an6.16:6.3 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:6.4 | S: I am one of those white-robed disciples of the Buddha who has internal serenity of heart. | T: To the extent that the Blessed One has white-clad householder female disciples who attain inner tranquility of awareness, I am one of them.
+an6.16:6.5 | S: For whoever doubts this, that Blessed One is staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. Let them approach him and ask. | T: If anyone doubts or denies this, let him go ask the Blessed One—worthy & rightly self-awakened—who is staying among the Bhaggas in the Deer Park at Bhesakaḷā Forest, near Crocodile Haunt.
+an6.16:6.6 | S: So householder, don’t pass away with concerns … | T: So don’t be worried as you die, householder.
+an6.16:6.7 | P: Dukkhā, gahapati, sāpekkhassa kālakiriyā; | T: Death is painful for one who is worried.
+an6.16:6.8 | P: garahitā ca bhagavatā sāpekkhassa kālakiriyā. | T: The Blessed One has criticized being worried at the time of death.
+an6.16:7.1 | S: Householder, you might think: | T: “Now it may be that you are thinking,
+an6.16:7.2 | S: ‘The housewife Nakula’s mother has not found a footing, a firm footing, and solace in this teaching and training. She has not gone beyond doubt, got rid of indecision, and gained assurance. And she’s not independent of others in the Teacher’s instructions.’ | T: ‘Nakula’s mother will not reach firm ground in this Dhamma & Vinaya, will not attain a firm foothold, will not attain consolation, overcome her doubts, dispel her perplexity, reach fearlessness or gain independence from others with regard to the Teacher’s message [a standard description of a stream-winner],’
+an6.16:7.3 | S: But you should not see it like this. | T: but you shouldn’t see things in that way.
+an6.16:7.4 | S: I am one of those white-robed disciples of the Buddha who has found a footing, a firm footing, and solace in this teaching and training. I have gone beyond doubt, got rid of indecision, and gained assurance. And I am independent of others in the Teacher’s instructions. | T: To the extent that the Blessed One has white-clad householder female disciples who reach firm ground in this Dhamma & Vinaya, attain a firm foothold, attain consolation, overcome their doubts, dispel their perplexity, reach fearlessness, & gain independence from others with regard to the Teacher’s message, I am one of them.
+an6.16:7.5 | S: For whoever doubts this, that Blessed One is staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. Let them approach him and ask. | T: If anyone doubts or denies this, let him go ask the Blessed One—worthy & rightly self-awakened—who is staying among the Bhaggas in the Deer Park at Bhesakaḷā Forest, near Crocodile Haunt.
+an6.16:7.6 | S: So householder, don’t pass away with concerns. | T: So don’t be worried as you die, householder.
+an6.16:7.7 | S: Such concern is suffering, | T: Death is painful for one who is worried.
+an6.16:7.8 | S: and it’s criticized by the Buddha.” | T: The Blessed One has criticized being worried at the time of death.”
+an6.16:8.1 | S: And then, as Nakula’s mother was giving this advice to Nakula’s father, his illness died down on the spot. | T: While Nakula’s father the householder was being exhorted by Nakula’s mother with this exhortation, his disease immediately subsided.
+an6.16:8.2 | S: And that’s how Nakula’s father recovered from that illness. | T: And he recovered from his disease.
+an6.16:8.3 | P: tathā pahīno ca pana nakulapituno gahapatissa so ābādho ahosi. | T: That was how Nakula’s father’s disease was abandoned.
+an6.16:8.4 | S: Soon after recovering, leaning on a staff he went to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then, soon after Nakula’s father the householder had recovered from being sick, not long after his recovery from his illness, he went leaning on a stick to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there, the Blessed One said to him,
+an6.16:9.1 | S: “You’re fortunate, householder, so very fortunate, | T: “It is your gain, your great gain, householder,
+an6.16:9.2 | S: to have the housewife Nakula’s mother advise and instruct you out of kindness and sympathy. | T: that you have Nakula’s mother—sympathetic & wishing for your welfare—as your counselor & instructor.
+an6.16:9.3 | S: She is one of those white-robed disciples of the Buddha who fulfills their ethics. | T: To the extent that I have white-clad householder female disciples who act fully in accordance with the precepts, she is one of them.
+an6.16:9.4 | S: She is one of those white-robed disciples of the Buddha who has internal serenity of heart. | T: To the extent that I have white-clad householder female disciples who attain inner tranquility of awareness, she is one of them.
+an6.16:9.5 | S: She is one of those white-robed disciples of the Buddha who has found a footing, a firm footing, and solace in this teaching and training. She has gone beyond doubt, got rid of indecision, and gained assurance. And she is independent of others in the Teacher’s instructions. | T: To the extent that I have white-clad householder female disciples who reach firm ground in this Dhamma & Vinaya, attain a firm foothold, attain consolation, overcome their doubts, dispel their perplexity, reach fearlessness, & gain independence from others with regard to the Teacher’s message, she is one of them.
+an6.16:9.6 | S: You’re fortunate, householder, so very fortunate, | T: It is your gain, your great gain, householder,
+an6.16:9.7 | S: to have the housewife Nakula’s mother advise and instruct you out of kindness and sympathy.” | T: that you have Nakula’s mother—sympathetic & wishing for your welfare—as your counselor & instructor.”
+an6.16:9.8 | P: Chaṭṭhaṁ. | T: (none)
+
+## an6.17
+an6.17:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika’s monastery.
+an6.17:1.2 | S: Then in the late afternoon, the Buddha came out of retreat, went to the assembly hall, and sat down on the seat spread out. | T: Then, in the evening, having risen from seclusion, he went to the meeting hall and, on arrival, sat down on a seat made ready.
+an6.17:1.3 | S: Venerable Sāriputta also came out of retreat, went to the assembly hall, bowed to the Buddha and sat down to one side. | T: Then Ven. Sāriputta, in the evening, having risen from seclusion, also went to the meeting hall and, on arrival, after bowing down to the Blessed One, sat to one side.
+an6.17:1.4 | S: Venerables Mahāmoggallāna, | T: Then Ven. Mahā Moggallāna…
+an6.17:1.5 | S: Mahākassapa, | T: Ven. Mahā Kassapa…
+an6.17:1.6 | S: Mahākaccāna, | T: Ven. Mahā Kaccāna…
+an6.17:1.7 | S: Mahākoṭṭhita, | T: Ven. Mahā Koṭṭhita…
+an6.17:1.8 | S: Mahācunda, | T: Ven. Mahā Cunda…
+an6.17:1.9 | S: Mahākappina, | T: Ven. Mahā Kappina…
+an6.17:1.10 | S: Anuruddha, | T: Ven. Anuruddha…
+an6.17:1.11 | S: Revata, | T: Ven. Revata…
+an6.17:1.12 | S: and Ānanda did the same. | T: Ven. Ānanda, in the evening, having risen from seclusion, also went to the meeting hall and, on arrival, after bowing down to the Blessed One, sat to one side.
+an6.17:1.13 | S: The Buddha spent much of the night sitting in meditation, then rose from his seat and entered his dwelling. | T: Then the Blessed One, having spent most of the night sitting, got up from his seat and entered his dwelling.
+an6.17:1.14 | S: And soon after the Buddha left those venerables each went to their own dwelling. | T: Not long after he had left, those venerable ones also got up from their seats and went to their own dwellings.
+an6.17:1.15 | S: But those mendicants who were junior, recently gone forth, newly come to this teaching and training slept until the sun came up, snoring. | T: But those monks who were new—not long gone forth, recently come to this Dhamma & Vinaya—slept until sunrise, snoring.
+an6.17:1.16 | S: The Buddha saw them doing this, with his clairvoyance that is purified and superhuman. | T: The Blessed One, with his divine eye, purified & surpassing the human—saw those monks sleeping until sunrise, snoring.
+an6.17:1.17 | S: He went to the assembly hall, sat down on the seat spread out, | T: Seeing them, he went to the meeting hall and sat down on a seat made ready.
+an6.17:1.18 | S: and addressed the mendicants: | T: Seated, he said to the monks,
+an6.17:2.1 | S: “Mendicants, where is Sāriputta? | T: “Monks, where is Sāriputta?
+an6.17:2.2 | S: Where are Mahāmoggallāna, | T: Where is Mahā Moggallāna?
+an6.17:2.3 | S: Mahākassapa, | T: Where is Mahā Kassapa?
+an6.17:2.4 | S: Mahākaccāna, | T: Where is Mahā Kaccāna?
+an6.17:2.5 | S: Mahākoṭṭhita, | T: Where is Mahā Koṭṭhita?
+an6.17:2.6 | S: Mahācunda, | T: Where is Mahā Cunda?
+an6.17:2.7 | S: Mahākappina, | T: Where is Mahā Kappina?
+an6.17:2.8 | S: Anuruddha, | T: Where is Anuruddha?
+an6.17:2.9 | S: Revata, | T: Where is Revata?
+an6.17:2.10 | S: and Ānanda? | T: Where is Ānanda?
+an6.17:2.11 | S: Where have these senior disciples gone?” | T: Where have those elder disciples gone?”
+an6.17:2.12 | S: “Soon after the Buddha left those venerables each went to their own dwelling.” | T: “Lord, not long after the Blessed One left, those venerable ones left and went to their own dwellings.”
+an6.17:2.13 | S: “So, mendicants, when the senior mendicants left, why did you sleep until the sun came up, snoring? | T: “But why, when those elder monks were gone, did you sleep until sunrise, snoring?
+an6.17:2.14 | S: What do you think, mendicants? | T: “What do you think, monks:
+an6.17:2.15 | S: Have you ever seen or heard | T: Have you ever seen or heard
+an6.17:2.16 | S: of an anointed aristocratic king who rules his whole life, dear and beloved to the country, while indulging in the pleasures of sleeping, lying down, and drowsing as much as he likes?” | T: of a head-anointed noble warrior king who—spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor—maintains his rule all his life or is pleasing & agreeable to the country?”
+an6.17:2.17 | S: “No, sir.” | T: “No, lord.”
+an6.17:2.18 | S: “Good, mendicants! | T: “Good, monks.
+an6.17:2.19 | S: I too have never seen or heard of such a thing. | T: I, too, have never seen or heard of
+an6.17:2.20 | P: ‘rājā khattiyo muddhāvasitto yāvadatthaṁ seyyasukhaṁ passasukhaṁ middhasukhaṁ anuyutto viharanto yāvajīvaṁ rajjaṁ kārento janapadassa vā piyo manāpo’ti. | T: a head-anointed noble warrior king who—spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor—maintains his rule all his life or is pleasing & agreeable to the country.
+an6.17:3.1 | S: What do you think, mendicants? | T: “What do you think, monks:
+an6.17:3.2 | S: Have you ever seen or heard | T: Have you ever seen or heard
+an6.17:3.3 | S: of an appointed official … | T: of a royal minister…
+an6.17:3.4 | S: a hereditary official … | T: a royal heir…
+an6.17:3.5 | S: a general … | T: a general…
+an6.17:3.6 | S: a village chief … | T: a village headman…
+an6.17:3.7 | S: or a guild head who runs the guild his whole life, dear and beloved to the guild, while indulging in the pleasures of sleeping, lying down, and drowsing as much as he likes?” | T: a guild master who— spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor—maintains leadership over his guild all his life or is pleasing & agreeable to the guild?”
+an6.17:3.8 | S: “No, sir.” | T: “No, lord.”
+an6.17:3.9 | S: “Good, mendicants! | T: “Good, monks.
+an6.17:3.10 | S: I too have never seen or heard of such a thing. | T: I, too, have never seen or heard of
+an6.17:3.11 | P: ‘pūgagāmaṇiko yāvadatthaṁ seyyasukhaṁ passasukhaṁ middhasukhaṁ anuyutto viharanto yāvajīvaṁ pūgagāmaṇikattaṁ vā kārento pūgassa vā piyo manāpo’ti. | T: a guild master who— spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor—maintains leadership over his guild all his life or is pleasing & agreeable to the guild.
+an6.17:4.1 | S: What do you think, mendicants? | T: “What do you think, monks:
+an6.17:4.2 | S: Have you ever seen or heard | T: Have you ever seen or heard
+an6.17:4.3 | S: of an ascetic or brahmin who indulges in the pleasures of sleeping, lying down, and drowsing as much as they like? Their sense doors are unguarded, they eat too much, they’re not dedicated to wakefulness, they’re unable to discern skillful qualities, and they don’t pursue the development of the qualities on the side of awakening in the evening and toward dawn. Yet they realize the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements.” | T: of a contemplative or brahman who—spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor, with his senses unguarded, knowing no moderation in food, not committed to wakefulness, with no insight into skillful qualities, not committed to the development of the wings to awakening in the early & late hours of the night—through the ending of the effluents, has entered & is remaining in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now?”
+an6.17:4.4 | S: “No, sir.” | T: “No, lord.”
+an6.17:4.5 | S: “Good, mendicants! | T: “Good, monks.
+an6.17:4.6 | S: I too have never seen or heard of such a thing. | T: I, too, have never seen or heard of
+an6.17:4.7 | P: ‘samaṇo vā brāhmaṇo vā yāvadatthaṁ seyyasukhaṁ passasukhaṁ middhasukhaṁ anuyutto indriyesu aguttadvāro bhojane amattaññū jāgariyaṁ ananuyutto avipassako kusalānaṁ dhammānaṁ pubbarattāpararattaṁ bodhipakkhiyānaṁ dhammānaṁ bhāvanānuyogaṁ ananuyutto āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharanto’ti. | T: a contemplative or brahman who—spending as much time as he likes committed to the pleasure of lying down, the pleasure of reclining, the pleasure of torpor, with his senses unguarded, knowing no moderation in food, not committed to wakefulness, with no insight into skillful qualities, not committed to the development of the wings to awakening in the early & late hours of the night—through the ending of the effluents, has entered & is remaining in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now.
+an6.17:5.1 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+an6.17:5.2 | S: ‘We will guard our sense doors, eat in moderation, be dedicated to wakefulness, discern skillful qualities, and pursue the development of the qualities on the side of awakening in the evening and toward dawn.’ | T: ‘We will have our senses guarded, know moderation in food, commit to wakefulness, gain insight into skillful qualities, and dwell committed to the development of the wings to awakening in the early & late hours of the night.’
+an6.17:5.3 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an6.17:5.4 | P: Sattamaṁ. | T: (none)
+
+## an6.20
+an6.20:1.1 | S: At one time the Buddha was staying at Ñātika in the brick house. | T: I have heard that at one time the Blessed One was staying near Nādika in the Brick Hall.
+an6.20:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks,
+an6.20:1.3 | S: “Mendicants, when mindfulness of death is developed and cultivated it’s very fruitful and beneficial. It has freedom from death as its objective and culmination. | T: “Monks, mindfulness of death—when developed & pursued—is of great fruit & great benefit. It gains a footing in the deathless, has the deathless as its final end.
+an6.20:1.4 | S: And how is mindfulness of death developed and cultivated to be very fruitful and beneficial, with freedom from death as its objective and culmination? | T: And how is mindfulness of death developed & pursued so that it is of great fruit & great benefit, gains a footing in the deathless, and has the deathless as its final end?
+an6.20:2.1 | S: As day passes by and night draws close, a mendicant reflects: | T: “There is the case where a monk, as day departs and night returns, reflects:
+an6.20:2.2 | S: ‘I might die of many causes. | T: ‘Many are the (possible) causes of my death.
+an6.20:2.3 | S: A snake might bite me, or a scorpion or centipede might sting me. | T: A snake might bite me, a scorpion might sting me, a centipede might bite me.
+an6.20:2.4 | S: And if I died from that it would be an obstacle to my progress. | T: That would be how my death would come about. That would be an obstruction for me.
+an6.20:2.5 | S: Or I might stumble off a cliff, or get food poisoning, or suffer a disturbance of bile, phlegm, or piercing winds. | T: Stumbling, I might fall; my food, digested, might trouble me; my bile might be provoked, my phlegm… piercing wind forces (in the body) might be provoked.
+an6.20:2.6 | S: And if I died from that it would be an obstacle to my progress.’ | T: That would be how my death would come about. That would be an obstruction for me.’
+an6.20:2.7 | S: That mendicant should reflect: | T: Then the monk should investigate:
+an6.20:2.8 | S: ‘Are there any bad, unskillful qualities that I haven’t given up, which might be an obstacle to my progress if I die tonight?’ | T: ‘Are there any evil, unskillful qualities unabandoned by me that would be an obstruction for me were I to die in the night?’
+an6.20:3.1 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflecting, he realizes that
+an6.20:3.2 | S: there are such bad, unskillful qualities. Then in order to give them up they should apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: there are evil, unskillful qualities unabandoned by him that would be an obstruction for him were he to die in the night, then he should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for the abandoning of those very same evil, unskillful qualities.
+an6.20:3.3 | S: Suppose your clothes or head were on fire. In order to extinguish it, you’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: Just as when a person whose turban or head was on fire would put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness to put out the fire on his turban or head,
+an6.20:3.4 | S: In the same way, in order to give up those bad, unskillful qualities, that mendicant should apply extraordinary enthusiasm … | T: in the same way the monk should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for the abandoning of those very same evil, unskillful qualities.
+an6.20:4.1 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflecting, he realizes that
+an6.20:4.2 | S: there are no such bad, unskillful qualities. Then that mendicant should meditate with rapture and joy, training day and night in skillful qualities. | T: there are no evil, unskillful qualities unabandoned by him that would be an obstruction for him were he to die in the night, then for that very reason he should dwell in joy & rapture, training himself day & night in skillful qualities.
+an6.20:5.1 | S: Or else, as night passes by and day draws close, a mendicant reflects: | T: “Further, there is the case where a monk, as night departs and day returns, reflects:
+an6.20:5.2 | S: ‘I might die of many causes. | T: ’Many are the (possible) causes of my death.
+an6.20:5.3 | S: A snake might bite me, or a scorpion or centipede might sting me. | T: A snake might bite me, a scorpion might sting me, a centipede might bite me.
+an6.20:5.4 | S: And if I died from that it would be an obstacle to my progress. | T: That would be how my death would come about. That would be an obstruction for me.
+an6.20:5.5 | S: Or I might stumble off a cliff, or get food poisoning, or suffer a disturbance of bile, phlegm, or piercing winds. | T: Stumbling, I might fall; my food, digested, might trouble me; my bile might be provoked, my phlegm… piercing wind forces (in the body) might be provoked.
+an6.20:5.6 | S: And if I died from that it would be an obstacle to my progress.’ | T: That would be how my death would come about. That would be an obstruction for me.’
+an6.20:5.7 | S: That mendicant should reflect: | T: Then the monk should investigate:
+an6.20:5.8 | S: ‘Are there any bad, unskillful qualities that I haven’t given up, which might be an obstacle to my progress if I die today?’ | T: ‘Are there any evil, unskillful qualities unabandoned by me that would be an obstruction for me were I to die during the day?’
+an6.20:6.1 | S: Suppose that, upon checking, a mendicant knows that | T: If, on reflecting, he realizes that
+an6.20:6.2 | S: there are such bad, unskillful qualities. Then in order to give them up they should apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: there are evil, unskillful qualities unabandoned by him that would be an obstruction for him were he to die during the day, then he should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for the abandoning of those very same evil, unskillful qualities.
+an6.20:6.3 | S: Suppose your clothes or head were on fire. In order to extinguish it, you’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness. | T: Just as when a person whose turban or head was on fire would put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness to put out the fire on his turban or head,
+an6.20:6.4 | S: In the same way, in order to give up those bad, unskillful qualities, that mendicant should apply extraordinary enthusiasm … | T: in the same way the monk should put forth extra desire, effort, diligence, endeavor, relentlessness, mindfulness, & alertness for the abandoning of those very same evil, unskillful qualities.
+an6.20:7.1 | S: But suppose that, upon checking, a mendicant knows that | T: But if, on reflecting, he realizes that
+an6.20:7.2 | S: there are no such bad, unskillful qualities. Then that mendicant should meditate with rapture and joy, training day and night in skillful qualities. | T: there are no evil, unskillful qualities unabandoned by him that would be an obstruction for him were he to die during the day, then for that very reason he should dwell in joy & rapture, training himself day & night in skillful qualities.
+an6.20:8.1 | S: Mindfulness of death, when developed and cultivated in this way, is very fruitful and beneficial. It has freedom from death as its objective and culmination.” | T: “This, monks, is how mindfulness of death is developed & pursued so that it is of great fruit & great benefit, gains a footing in the Deathless, and has the Deathless as its final end.” That is what the Blessed One said. Gratified, the monks delighted in the Blessed One’s words.
+an6.20:8.2 | P: Dasamaṁ. | T: (none)
+an6.20:8.3 | P: Sāraṇīyavaggo dutiyo. | T: (none)
+an6.20:9.0 | P: Tassuddānaṁ | T: (none)
+an6.20:9.1 | P: Dve sāraṇī nisāraṇīyaṁ, | T: (none)
+an6.20:9.2 | P: bhaddakaṁ anutappiyaṁ; | T: (none)
+an6.20:9.3 | P: Nakulaṁ soppamacchā ca, | T: (none)
+an6.20:9.4 | P: dve honti maraṇassatīti. | T: (none)
+
+## an6.31
+an6.31:1.1 | S: “These six things lead to the decline of a mendicant trainee. | T: “Monks, six qualities lead to the decline of a monk in training.
+an6.31:1.2 | S: What six? | T: Which six?
+an6.31:1.3 | S: They relish work, talk, sleep, and company. They don’t guard the sense doors, and they eat too much. | T: Delighting in work, delighting in talking, delighting in sleeping, delighting in entanglement, not guarding the sense faculties, not knowing moderation in food.
+an6.31:1.4 | S: These six things lead to the decline of a mendicant trainee. | T: These six qualities lead to the decline of a monk in training.
+an6.31:2.1 | S: These six things don’t lead to the decline of a mendicant trainee. | T: “Monks, six qualities lead to the non-decline of a monk in training.
+an6.31:2.2 | S: What six? | T: Which six?
+an6.31:2.3 | S: They don’t relish work, talk, sleep, and company. They guard the sense doors, and they don’t eat too much. | T: Not delighting in work, not delighting in talking, not delighting in sleeping, not delighting in entanglement, guarding the sense faculties, and knowing moderation in food.
+an6.31:2.4 | S: These six things don’t lead to the decline of a mendicant trainee.” | T: These six qualities lead to the non-decline of a monk in training.”
+an6.31:2.5 | P: Paṭhamaṁ. | T: (none)
+
+## an6.37
+an6.37:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an6.37:1.2 | S: Now at that time Veḷukaṇṭakī, Nanda’s mother, was preparing a religious donation with six factors for the mendicant Saṅgha headed by Sāriputta and Moggallāna. | T: And on that occasion the female lay follower Veḷukaṇṭakin Nandamātar, had established a donation endowed with six factors for the Saṅgha of monks headed by Sāriputta & Moggallāna.
+an6.37:1.3 | S: The Buddha saw her doing this, with his clairvoyance that is purified and superhuman, | T: The Blessed One saw with his divine eye, surpassing the human, that the laywoman Veḷukaṇḍakī, Nanda’s mother, had established a donation endowed with six factors for the Saṅgha of monks headed by Sāriputta & Moggallāna.
+an6.37:1.4 | S: and he addressed the mendicants: | T: On seeing this, he addressed the monks:
+an6.37:1.5 | S: “This Veḷukaṇṭakī, Nanda’s mother, is preparing a religious donation with six factors for the mendicant Saṅgha headed by Sāriputta and Moggallāna. | T: “Monks, the female lay follower Veḷukaṇṭakin Nandamātar, has established a donation endowed with six factors for the Saṅgha of monks headed by Sāriputta & Moggallāna.
+an6.37:2.1 | S: And how does a religious donation have six factors? | T: “And how is a donation endowed with six factors?
+an6.37:2.2 | S: Three factors apply to the donor and three to the recipients. | T: There is the case where there are the three factors of the donor, the three factors of the recipients.
+an6.37:2.3 | S: What three factors apply to the donor? | T: “And which are the three factors of the donor?
+an6.37:2.4 | S: It’s when a donor is in a good mood before giving, while giving they feel confident, and after giving they’re uplifted. | T: There is the case where the donor, before giving, is glad; while giving, his/her mind is bright & clear; and after giving is gratified.
+an6.37:2.5 | S: These three factors apply to the donor. | T: These are the three factors of the donor.
+an6.37:3.1 | S: What three factors apply to the recipients? | T: “And which are the three factors of the recipients?
+an6.37:3.2 | S: It’s when the recipients are free of greed, hate, and delusion, or practicing to be free of them. | T: There is the case where the recipients are free of passion or are practicing for the subduing of passion; free of aversion or practicing for the subduing of aversion; and free of delusion or practicing for the subduing of delusion.
+an6.37:3.3 | S: These three factors apply to the recipients. | T: These are the three factors of the recipients.
+an6.37:3.4 | S: Thus three factors apply to the donor and three to the recipients. | T: “Such are the three factors of the donor, the three factors of the recipients.
+an6.37:3.5 | S: That’s how a religious donation has six factors. | T: And this is how a donation is endowed with six factors.
+an6.37:4.1 | S: It’s not easy to grasp the merit of such a six-factored donation by saying that | T: “And it’s not easy to take the measure of the merit of a donation thus endowed with six factors as
+an6.37:4.2 | S: this is the extent of their overflowing merit, overflowing goodness that nurtures happiness and is conducive to heaven, ripening in happiness and leading to heaven. And it leads to what is likable, desirable, agreeable, to welfare and happiness. | T: ‘just this much a bonanza of merit, a bonanza of what is skillful—a nutriment of bliss, heavenly, resulting in bliss, leading to heaven—that leads to what is desirable, pleasing, charming, beneficial, pleasant.’
+an6.37:4.3 | S: It’s simply reckoned as an incalculable, immeasurable, great mass of merit. | T: It is simply reckoned as a great mass of merit, incalculable, immeasurable.
+an6.37:5.1 | S: It’s like trying to grasp how much water is in the ocean. It’s not easy to say | T: “Just as it’s not easy to take the measure of the great ocean as
+an6.37:5.2 | S: how many gallons, how many hundreds, thousands, hundreds of thousands of gallons there are. | T: ‘just this many buckets of water, just this many hundreds of buckets of water, just this many thousands of buckets of water, or just this many hundreds of thousands of buckets of water.’
+an6.37:5.3 | S: It’s simply reckoned as an incalculable, immeasurable, great mass of water. | T: It’s simply reckoned as a great mass of water, incalculable, immeasurable.
+an6.37:5.4 | S: In the same way, it’s not easy to grasp the merit of such a six-factored donation … | T: In the same way, it’s not easy to take the measure of the merit of a donation thus endowed with six factors as
+an6.37:5.5 | P: ‘ettako puññābhisando kusalābhisando sukhassāhāro sovaggiko sukhavipāko saggasaṁvattaniko iṭṭhāya kantāya manāpāya hitāya sukhāya saṁvattatī’ti. | T: ‘just this much a bonanza of merit, a bonanza of what is skillful—a nutriment of bliss, heavenly, resulting in bliss, leading to heaven—that leads to what is desirable, pleasing, charming, beneficial, pleasant.’
+an6.37:5.6 | P: Atha kho asaṅkhyeyyo appameyyo mahāpuññakkhandhotveva saṅkhaṁ gacchatī”ti. | T: It is simply reckoned as a great mass of merit, incalculable, immeasurable.”
+an6.37:6.1 | S: A good mood before giving, | T: Before giving, glad;
+an6.37:6.2 | S: confidence while giving, | T: while giving, the mind is bright & clear;
+an6.37:6.3 | S: feeling uplifted after giving: | T: having given, one is gratified:
+an6.37:6.4 | S: this is the perfect sacrifice. | T: This is the consummation of the sacrifice.
+an6.37:7.1 | S: Free of greed, free of hate, | T: Free of passion, free of aversion,
+an6.37:7.2 | S: free of delusion, undefiled; | T: free of delusion, without effluent:
+an6.37:7.3 | S: this is the field for the perfect sacrifice, | T: the consummation of the field of the sacrifice,
+an6.37:7.4 | S: the disciplined spiritual practitioners. | T: one restrained, leading the holy life.
+an6.37:8.1 | S: After rinsing, | T: Having rinsed oneself,
+an6.37:8.2 | S: you give with your own hands. | T: having given with one’s own hands,
+an6.37:8.3 | S: This sacrifice is very fruitful | T: then—
+an6.37:8.4 | S: for both yourself and others. | T: because of oneself, because of the other— that is a sacrifice yielding great fruit.
+an6.37:9.1 | S: When an intelligent, faithful person, | T: Having given thus —intelligent—
+an6.37:9.2 | S: sacrifices like this, with a mind of letting go, | T: a person of conviction, with awareness released,
+an6.37:9.3 | S: that astute one is reborn | T: reappears —wise—
+an6.37:9.4 | S: in a happy, pleasing world.” | T: in a world of bliss unalloyed.
+an6.37:9.5 | P: Sattamaṁ. | T: (none)
+
+## an6.41
+an6.41:1.1 | S: So I have heard. | T: I have heard that
+an6.41:1.2 | S: At one time Venerable Sāriputta was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: on one occasion the Blessed One was staying near Rājagaha on Vulture Peak Mountain.
+an6.41:1.3 | S: Then Venerable Sāriputta robed up in the morning and, taking his bowl and robe, descended the Vulture’s Peak together with several mendicants. At a certain spot he saw a large tree trunk, | T: Then early in the morning, Ven. Sāriputta, having adjusted his lower robe and carrying his bowl & outer robe, was coming down from Vulture Peak Mountain with a large group of monks when he saw a large wood pile off to one side.
+an6.41:1.4 | S: and he addressed the mendicants, | T: Seeing it, he said to the monks,
+an6.41:1.5 | S: “Reverends, do you see this large tree trunk?” | T: “Friends, do you see that large wood pile over there?”
+an6.41:1.6 | S: “Yes, reverend.” | T: “Yes, friend,” the monks replied.
+an6.41:2.1 | S: “If they wanted to, a mendicant with psychic powers who has mastered their mind could determine this tree trunk to be nothing but earth. | T: “Friends, if he wanted to, a monk with psychic power, having attained mastery of his mind, could will that wood pile to be nothing but earth.
+an6.41:2.2 | S: Why is that? | T: Why is that?
+an6.41:2.3 | S: Because the earth element exists in the tree trunk. Relying on that a mendicant with psychic powers could determine it to be nothing but earth. | T: There is earth-property [or: earth-potential] in that wood pile, in dependence on which he could will that wood pile to be nothing but earth.
+an6.41:2.4 | S: If they wanted to, a mendicant with psychic powers who has mastered their mind could determine this tree trunk to be nothing but water. … | T: “If he wanted to, a monk with psychic power, having attained mastery of his mind, could will that wood pile to be nothing but water…
+an6.41:2.5 | S: Or they could determine it to be nothing but fire … | T: fire…
+an6.41:2.6 | S: Or they could determine it to be nothing but air … | T: wind…
+an6.41:2.7 | S: Or they could determine it to be nothing but beautiful … | T: beautiful…
+an6.41:2.8 | S: Or they could determine it to be nothing but ugly. | T: unattractive.
+an6.41:2.9 | S: Why is that? | T: Why is that?
+an6.41:2.10 | S: Because the element of ugliness exists in the tree trunk. Relying on that a mendicant with psychic powers could determine it to be nothing but ugly.” | T: There is the property of the unattractive in that wood pile, in dependence on which he could will that wood pile to be nothing but unattractive.”
+an6.41:2.11 | P: Ekādasamaṁ. | T: (none)
+
+## an6.42
+an6.42:1.1 | S: So I have heard. | T: I have heard that
+an6.42:1.2 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants when he arrived at a village of the Kosalan brahmins named Icchānaṅgala. | T: on one occasion the Blessed One, on a wandering tour among the Kosalans with a large Saṅgha of monks, arrived at a Kosalan brahman village named Icchānaṅgala.
+an6.42:1.3 | S: He stayed in a forest near Icchānaṅgala. | T: There he stayed in the Icchānaṅgala forest grove.
+an6.42:1.4 | S: The brahmins and householders of Icchānaṅgala heard: | T: The brahman householders of Icchānaṅgala heard it said,
+an6.42:1.5 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Icchānaṅgala. He is staying in a forest near Icchānaṅgala. | T: “Gotama the contemplative—the son of the Sakyans, having gone forth from the Sakyan clan—on a wandering tour among the Kosalans with a large Saṅgha of monks—has arrived at Icchānaṅgala and is staying in the Icchānaṅgala forest grove.
+an6.42:1.6 | S: He has this good reputation: | T: And of that Master Gotama this fine reputation has spread:
+an6.42:1.7 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘He is indeed a Blessed One, worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.
+an6.42:1.8 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. It’s good to see such perfected ones.” | T: He makes known—having realized it through direct knowledge—this world with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk; he explains the Dhamma admirable in the beginning, admirable in the middle, admirable in the end; he expounds the holy life both in its particulars & in its essence, entirely perfect, surpassingly pure. It is good to see such a worthy one.’”
+an6.42:1.9 | S: Then, when the night had passed, they took abundant fresh and cooked foods and went to the forest near Icchānaṅgala, where they stood outside the gates making a colossal racket. | T: So the brahman householders of Icchānaṅgala, when the night was gone, taking many staple & non-staple foods, went to the gate house of the Icchānaṅgala forest grove. On arrival they stood there making a loud racket, a great racket.
+an6.42:2.1 | S: Now, at that time Venerable Nāgita was the Buddha’s attendant. | T: Now at that time Ven. Nāgita was the Blessed One’s attendant.
+an6.42:2.2 | S: Then the Buddha said to Nāgita, | T: So the Blessed One addressed Ven. Nāgita:
+an6.42:2.3 | S: “Nāgita, who’s making that colossal racket? You’d think it was fishermen hauling in a catch!” | T: “Nāgita, what is that loud racket, that great racket, like fishermen with a catch of fish?”
+an6.42:2.4 | S: “Sir, it’s these brahmins and householders of Icchānaṅgala. They’ve brought many fresh and cooked foods, and they’re standing outside the gates wanting to offer it specially to the Buddha and the mendicant Saṅgha.” | T: “Lord, those are the brahman householders of Icchānaṅgala standing at the gate house to the Icchānaṅgala forest grove, having brought many staple & non-staple foods for the sake of the Blessed One & the Saṅgha of monks.”
+an6.42:2.5 | S: “Nāgita, may I never become famous. May fame not come to me. | T: “May I have nothing to do with honor, Nāgita, and honor nothing to do with me.
+an6.42:2.6 | S: There are those who can’t get the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of awakening when they want, without trouble or difficulty like I can. | T: Whoever cannot obtain at will—without difficulty, without trouble—as I do, the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of self-awakening,
+an6.42:2.7 | S: Let them enjoy the filthy, lazy pleasure of possessions, honor, and popularity.” | T: let him consent to this slimy-excrement-pleasure, this torpor-pleasure, this pleasure of gains, offerings, & fame.”
+an6.42:3.1 | S: “Sir, may the Blessed One please relent now! May the Holy One relent! | T: “Lord, let the Blessed One acquiesce (to their offerings) now! Let the One Well-Gone acquiesce now!
+an6.42:3.2 | S: Now is the time for the Buddha to relent. | T: Now is the time for the Blessed One’s acquiescence, lord! Now is the time for the Blessed One’s acquiescence, lord!
+an6.42:3.3 | S: Wherever the Buddha now goes, the brahmins and householders, and people of town and country will incline the same way. | T: Wherever the Blessed One will go now, the brahmans of the towns & countryside will be so inclined.
+an6.42:3.4 | S: It’s like when the heavens rain heavily and the water flows downhill. | T: Just as when the rain-devas send rain in fat drops, the waters flow with the incline,
+an6.42:3.5 | S: In the same way, wherever the Buddha now goes, the brahmins and householders, and people of town and country will incline the same way. | T: in the same way, wherever the Blessed One will go now, the brahmans of the towns & countryside will be so inclined.
+an6.42:3.6 | S: Why is that? | T: Why is that?
+an6.42:3.7 | S: Because of the Buddha’s ethics and wisdom.” | T: Because such is the Blessed One’s virtue & discernment.”
+an6.42:4.1 | S: “Nāgita, may I never become famous. May fame not come to me. | T: “May I have nothing to do with honor, Nāgita, and honor nothing to do with me.
+an6.42:4.2 | S: There are those who can’t get the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of awakening when they want, without trouble or difficulty like I can. | T: Whoever cannot obtain at will—without difficulty, without trouble—as I do, the pleasure of renunciation, the pleasure of seclusion, the pleasure of peace, the pleasure of self-awakening,
+an6.42:4.3 | S: Let them enjoy the filthy, lazy pleasure of possessions, honor, and popularity. | T: let him consent to this slimy-excrement-pleasure, this torpor-pleasure, this pleasure of gains, offerings, & fame.
+an6.42:5.1 | S: Take a mendicant living within a village who I see sitting immersed in samādhi. | T: “Nāgita, there is the case where I see a monk sitting in concentration in a village dwelling.
+an6.42:5.2 | S: I think to myself: | T: The thought occurs to me,
+an6.42:5.3 | S: ‘Now a monastery worker, a novice, or a fellow practitioner will make this venerable fall from immersion.’ | T: ‘Soon a monastery attendant will disturb this venerable one in some way, or a novice will, and rouse him from his concentration.’
+an6.42:5.4 | S: So I’m not pleased that that mendicant is living within a village. | T: And so I am not pleased with that monk’s village-dwelling.
+an6.42:6.1 | S: Take a mendicant in the wilderness who I see sitting nodding in meditation. | T: “But then there is the case where I see a monk sitting, nodding, in the wilderness.
+an6.42:6.2 | S: I think to myself: | T: The thought occurs to me,
+an6.42:6.3 | S: ‘Now this venerable, having dispelled that sleepiness and weariness, will focus just on the unified perception of wilderness.’ | T: ‘Soon this venerable one will dispel his drowsiness & fatigue and attend to the wilderness-perception, (his mind) unified.’
+an6.42:6.4 | S: So I’m pleased that that mendicant is living in the wilderness. | T: And so I am pleased with that monk’s wilderness-dwelling.
+an6.42:7.1 | S: Take a mendicant in the wilderness who I see sitting without being immersed in samādhi. | T: “Then there is the case where I see a wilderness monk sitting unconcentrated in the wilderness.
+an6.42:7.2 | S: I think to myself: | T: The thought occurs to me,
+an6.42:7.3 | S: ‘Now if this venerable’s mind is not immersed in samādhi they will immerse it; or if it is immersed in samādhi, they will preserve it.’ | T: ‘Soon this venerable one will center his unconcentrated mind, or protect his concentrated mind.’
+an6.42:7.4 | S: So I’m pleased that that mendicant is living in the wilderness. | T: And so I am pleased with that monk’s wilderness-dwelling.
+an6.42:8.1 | S: Take a mendicant in the wilderness who I see sitting immersed in samādhi. | T: “Then there is the case where I see a wilderness monk sitting in concentration in the wilderness.
+an6.42:8.2 | S: I think to myself: | T: The thought occurs to me,
+an6.42:8.3 | S: ‘Now this venerable will free the unfreed mind or preserve the freed mind.’ | T: ‘Soon this venerable one will release his unreleased mind, or protect his released mind.’
+an6.42:8.4 | S: So I’m pleased that that mendicant is living in the wilderness. | T: And so I am pleased with that monk’s wilderness-dwelling.
+an6.42:9.1 | S: Take a mendicant who I see living within a village receiving robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Then there is the case where I see a village-dwelling monk who receives robes, alms food, shelter, & medicinal requisites for curing the sick.
+an6.42:9.2 | S: Enjoying possessions, honor, and popularity they neglect retreat, and they neglect remote lodgings in the wilderness and the forest. | T: Receiving, as he likes, those gains, offerings, & fame, he neglects seclusion, he neglects isolated forest & wilderness dwellings.
+an6.42:9.3 | S: They come down to villages, towns, and capital cities and make their home there. | T: He makes his living by visiting villages, towns, & cities.
+an6.42:9.4 | S: So I’m not pleased that that mendicant is living within a village. | T: And so I am not pleased with that monk’s village-dwelling.
+an6.42:10.1 | S: Take a mendicant who I see in the wilderness receiving robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Then there is the case where I see a wilderness monk who receives robes, alms food, shelter, & medicinal requisites for curing the sick.
+an6.42:10.2 | S: Fending off possessions, honor, and popularity they don’t neglect retreat, and they don’t neglect remote lodgings in the wilderness and the forest. | T: Fending off those gains, offerings, & fame, he doesn’t neglect seclusion, doesn’t neglect isolated forest & wilderness dwellings.
+an6.42:10.3 | S: So I’m pleased that that mendicant is living in the wilderness. | T: And so I am pleased with that monk’s wilderness-dwelling.

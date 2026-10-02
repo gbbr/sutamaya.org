@@ -1,0 +1,332 @@
+## ud4.4
+ud4.4:1.1 | S: So I have heard. | T: I have heard that
+ud4.4:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ Sanctuary.
+ud4.4:1.3 | S: At that time the venerables Sāriputta and Moggallāna were staying near the pigeons’ alcove. | T: And on that occasion Ven. Sāriputta and Ven. Mahā Moggallāna were staying in Pigeon Cave.
+ud4.4:1.4 | S: Now at that time Venerable Sāriputta was sitting outdoors in the moonlight, his head freshly shaven, having entered a certain state of immersion. | T: Then, on a moonlit night, Ven. Sāriputta–his head newly shaven–was sitting in the open air, having attained a certain level of concentration.
+ud4.4:2.1 | S: Now at that time two native spirits who were friends were on their way from the north to the south on some business. | T: And on that occasion two yakkhas who were companions were flying from north to south on some business or other.
+ud4.4:2.2 | S: They saw Sāriputta meditating there. | T: They saw Ven. Sāriputta–his head newly shaven–sitting in the open air.
+ud4.4:2.3 | S: One of the spirits said to the other, | T: Seeing him, the first yakkha said to the second,
+ud4.4:2.4 | S: “I feel inspired, my dear, to give this ascetic a blow on the head!” | T: “I’m inspired to give this contemplative a blow on the head.”
+ud4.4:2.5 | S: The other spirit replied, | T: When this was said, the second yakkha said to the first,
+ud4.4:2.6 | S: “Enough, my dear, don’t hit the ascetic! | T: “Enough of that, my good friend. Don’t lay a hand on the contemplative.
+ud4.4:2.7 | S: That is an eminent ascetic, powerful and mighty!” | T: He’s an outstanding contemplative, of great power & great might.”
+ud4.4:3.1 | S: For a second time the first spirit said to the other, | T: A second time, the first yakkha said to the second,
+ud4.4:3.2 | S: “I feel inspired to give this ascetic a blow on the head!” | T: “I’m inspired to give this contemplative a blow on the head.”
+ud4.4:3.3 | S: For a second time, the other spirit replied, | T: A second time, the second yakkha said to the first,
+ud4.4:3.4 | S: “Enough, don’t hit the ascetic! | T: “Enough of that, my good friend. Don’t lay a hand on the contemplative.
+ud4.4:3.5 | S: That is an eminent ascetic, powerful and mighty!” | T: He’s an outstanding contemplative, of great power & great might.”
+ud4.4:3.6 | S: For a third time the first spirit said to the other, | T: A third time, the first yakkha said to the second,
+ud4.4:3.7 | S: “I feel inspired to give this ascetic a blow on the head!” | T: “I’m inspired to give this contemplative a blow on the head.”
+ud4.4:3.8 | S: For a third time, the other spirit replied, | T: A third time, the second yakkha said to the first,
+ud4.4:3.9 | S: “Enough, don’t hit the ascetic! | T: “Enough of that, my good friend. Don’t lay a hand on the contemplative.
+ud4.4:3.10 | S: That is an eminent ascetic, powerful and mighty!” | T: He’s an outstanding contemplative, of great power & great might.”
+ud4.4:4.1 | S: Ignoring his friend, the first spirit struck Sāriputta. | T: Then the first yakkha, ignoring the second yakkha, gave Ven. Sāriputta a blow on the head.
+ud4.4:4.2 | S: The blow was so strong it would have felled a bull elephant seven or seven and a half cubits tall, or split apart a great mountain peak. | T: And with that blow he might have knocked over an elephant seven or eight cubits tall, or split a great rocky crag.
+ud4.4:4.3 | S: But then the spirit, crying out, “I burn, I burn!” fell into the Great Hell right there. | T: But right there the yakkha–yelling, “I’m burning!”–fell into the Great Hell.
+ud4.4:5.1 | S: With clairvoyance that is purified and superhuman, Venerable Moggallāna saw that spirit striking Venerable Sāriputta. | T: Now, Ven. Moggallāna–with his divine eye, pure and surpassing the human–saw the yakkha give Ven. Sāriputta a blow on the head.
+ud4.4:5.2 | S: He approached him and said, | T: Seeing this, he went to Ven. Sāriputta and, on arrival, said to him,
+ud4.4:5.3 | S: “I hope you’re keeping well, reverend, I hope you’re all right. I hope you are not in pain.” | T: “I hope you are well, friend Sāriputta. I hope you are comfortable. I hope you are feeling no pain.”
+ud4.4:5.4 | S: “I am keeping well, Reverend Moggallāna; | T: “I am well, friend Moggallāna. I am comfortable.
+ud4.4:5.5 | S: but my head does hurt a little.” | T: But I do have a slight headache.”
+ud4.4:6.1 | S: “It’s incredible, Reverend Sāriputta, it’s amazing! | T: “How amazing, friend Sāriputta! How astounding!
+ud4.4:6.2 | S: How mighty and powerful is Venerable Sāriputta! | T: How great your power & might!
+ud4.4:6.3 | S: Just now, a native spirit struck you on the head. | T: Just now a yakkha gave you a blow on the head.
+ud4.4:6.4 | S: The blow was so strong it would have felled a bull elephant seven or seven and a half cubits tall, or split apart a great mountain peak. | T: So great was that blow that he might have knocked over an elephant seven or eight cubits tall, or split a great rocky crag.
+ud4.4:6.5 | S: Yet you say, ‘I am keeping well, Reverend Moggallāna; | T: But all you say is this: ‘I am well, friend Moggallāna. I am comfortable.
+ud4.4:6.6 | S: but my head does hurt a little.’” | T: But I do have a slight headache’!”
+ud4.4:7.1 | S: “It’s incredible, Reverend Moggallāna, it’s amazing! | T: “How amazing, friend Moggallāna! How astounding!
+ud4.4:7.2 | S: How mighty and powerful is Venerable Moggallāna, in that he can even see a native spirit! | T: How great your power & might! Where you saw a yakkha just now,
+ud4.4:7.3 | S: Whereas I can’t even see a mud-goblin right now.” | T: I didn’t even see a dust devil!”
+ud4.4:8.1 | S: With clairaudience that is purified and superhuman, the Buddha heard that discussion between those two spiritual giants. | T: The Blessed One–with the divine ear-property, pure and surpassing the human–heard those two great beings conversing in this way.
+ud4.4:9.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.4:10.1 | S: “One whose mind is like a rock, | T: Whose mind, standing like rock,
+ud4.4:10.2 | S: steady, never shaking, | T: doesn’t shake,
+ud4.4:10.3 | S: free of desire for desirable things, | T: dispassionate for things that spark passion,
+ud4.4:10.4 | S: not getting annoyed when things are annoying: | T: unprovoked by things that spark provocation:
+ud4.4:10.5 | S: from where will suffering strike one | T: When one’s mind is developed like this, from where can there come to him suffering & stress?
+ud4.4:10.6 | S: whose mind is developed like this?” | T: (none)
+ud4.4:10.7 | P: Catutthaṁ. | T: (none)
+
+## sn35.74
+sn35.74:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn35.74:1.2 | S: Then a mendicant went up to the Buddha, and said to him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn35.74:1.3 | S: “Sir, in such-and-such monastery there’s a mendicant who is junior and not well-known. He’s sick, suffering, gravely ill. | T: “Lord, in such and such a dwelling a certain monk—newly ordained, not well known—is diseased, in pain, severely ill.
+sn35.74:1.4 | S: Please go to him out of sympathy.” | T: It would be good if the Blessed One would visit the monk, out of sympathy for him.”
+sn35.74:2.1 | S: When the Buddha heard that the mendicant was junior and ill, understanding that he was not well-known, he went to him. | T: Then the Blessed One, on hearing the word “newly ordained,” on hearing the word “diseased,” and realizing that the monk was not well known, went to him.
+sn35.74:2.2 | S: That mendicant saw the Buddha coming off in the distance | T: The monk saw the Blessed One coming from afar and,
+sn35.74:2.3 | S: and stirred in his cot. | T: on seeing him, stirred in his bed.
+sn35.74:2.4 | S: The Buddha said to that monk, | T: Then the Blessed One said to him,
+sn35.74:2.5 | S: “It’s all right, mendicant, don’t get up. | T: “Enough, monk. Don’t stir in your bed.
+sn35.74:2.6 | S: There are some seats spread out, I will sit there.” | T: There are these seats made ready. I will sit down there.”
+sn35.74:2.7 | S: He sat down on the seat spread out | T: The Blessed One sat down on a seat made ready.
+sn35.74:2.8 | S: and said to the mendicant, | T: Having sat down, he said to the monk,
+sn35.74:2.9 | S: “I hope you’re keeping well, mendicant, I hope you’re all right. I hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: “I hope you are getting better, monk. I hope you are comfortable. I hope that your pains are lessening and not increasing. I hope that there are signs of their lessening, and not of their increasing.”
+sn35.74:3.1 | S: “Sir, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: “I am not getting better, lord. I am not comfortable. My extreme pains are increasing, not lessening. There are signs of their increasing, and not of their lessening.”
+sn35.74:4.1 | S: “I hope you don’t have any remorse or regret?” | T: “Then I hope you have no anxiety, monk. I hope you have no remorse.”
+sn35.74:5.1 | S: “Indeed, sir, I have no little remorse and regret.” | T: “Yes, lord, I do have not a small amount of anxiety, not a small amount of remorse.”
+sn35.74:6.1 | S: “I hope you have no reason to blame yourself when it comes to ethical conduct?” | T: “I hope you can’t fault yourself with regard to your virtue.”
+sn35.74:7.1 | S: “No sir, I have no reason to blame myself when it comes to ethical conduct.” | T: “No, lord, I can’t fault myself with regard to my virtue.”
+sn35.74:8.1 | S: “In that case, mendicant, why do you have remorse and regret?” | T: “Then what are you anxious about? What is your remorse?”
+sn35.74:9.1 | S: “Because I understand that the Buddha has not taught the Dhamma merely for the sake of ethical purity.” | T: “I understand that the Blessed One has not taught the Dhamma with purity of virtue as its goal.”
+sn35.74:10.1 | S: “If that is so, what then do you understand to be the purpose of teaching the Dhamma?” | T: “If you understand that I have not taught the Dhamma with purity of virtue as its goal, then for what goal do you understand that I have taught the Dhamma?”
+sn35.74:11.1 | S: “I understand that the Buddha has taught the Dhamma for the purpose of the fading away of greed.” | T: “I understand that the Blessed One has taught the Dhamma with the fading of passion as its goal.”
+sn35.74:12.1 | S: “Good, good, mendicant! | T: “Good, good, monk.
+sn35.74:12.2 | S: It’s good that you understand that I’ve taught the Dhamma for the purpose of the fading away of greed. | T: It’s good that you understand that I have taught the Dhamma with the fading of passion as its goal, for I have taught the Dhamma with the fading of passion as its goal.
+sn35.74:12.3 | S: For that is indeed the purpose. | T: (none)
+sn35.74:12.4 | S: What do you think, mendicant? | T: “What do you think, monk?
+sn35.74:12.5 | S: Is the eye permanent or impermanent?” | T: Is the eye constant or inconstant?
+sn35.74:13.1 | S: “Impermanent, sir.” … | T: “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn35.74:14.1 | P: “ …pe… | T: ‘This is mine. This is my self. This is what I am’?” “No, lord.”
+sn35.74:14.2 | S: “Is the ear … | T: “… Is the ear constant or inconstant?”—“Inconstant, lord.” …
+sn35.74:14.3 | S: nose … | T: “… Is the nose constant or inconstant?”—“Inconstant, lord.” …
+sn35.74:14.4 | S: tongue … | T: “… Is the tongue constant or inconstant?”—“Inconstant, lord.” …
+sn35.74:14.5 | S: body … | T: “… Is the body constant or inconstant?”—“Inconstant, lord.” …
+sn35.74:14.6 | S: mind permanent or impermanent?” | T: “What do you think, monk? Is the intellect constant or inconstant?”
+sn35.74:15.1 | S: “Impermanent, sir.” | T: “Inconstant, lord.” “
+sn35.74:16.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: And is that which is inconstant easeful or stressful?”
+sn35.74:17.1 | S: “Suffering, sir.” | T: “Stressful, lord.” “
+sn35.74:18.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn35.74:18.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn35.74:19.1 | S: “No, sir.” | T: “No, lord.”
+sn35.74:20.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, ear, nose, tongue, body, and mind. | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with the eye, disenchanted with the ear, disenchanted with the nose, disenchanted with the tongue, disenchanted with the body, disenchanted with the intellect.
+sn35.74:20.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn35.74:20.3 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn35.74:21.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn35.74:21.2 | S: Satisfied, that mendicant approved what the Buddha said. | T: Gratified, the monk delighted in the Blessed One’s words.
+sn35.74:21.3 | S: And while this discourse was being spoken, the stainless, immaculate vision of the Dhamma arose in that mendicant: | T: And while this explanation was being given, there arose for the monk the dustless, stainless Dhamma eye:
+sn35.74:21.4 | S: “Everything that is liable to arise is liable to cease.” | T: “Whatever is subject to origination is all subject to cessation.”
+sn35.74:21.5 | P: Paṭhamaṁ. | T: (none)
+
+## an7.51
+an7.51:1.1 | S: “Mendicants, I will teach you an exposition of the teaching on yoking and unyoking. | T: “Monks, I will teach you a Dhamma discourse on bondage & lack of bondage.
+an7.51:1.2 | S: Listen and apply your mind well, I will speak. … | T: Listen & pay close attention. I will speak.” “Yes, lord,” the monks responded to the Blessed One.
+an7.51:1.3 | S: And what is the exposition of the teaching on yoking and unyoking? | T: (none)
+an7.51:2.1 | S: A woman focuses on her own femininity: | T: The Blessed One said: “A woman attends inwardly to her feminine faculties,
+an7.51:2.2 | S: her feminine moves, feminine appearance, feminine ways, feminine desires, feminine voice, and feminine adornment. | T: her feminine gestures, her feminine manners, feminine poise, feminine desires, feminine voice, feminine charms.
+an7.51:2.3 | S: She’s stimulated by this and takes pleasure in it. | T: She is excited by that, delighted by that.
+an7.51:2.4 | S: So she focuses on the masculinity of others: | T: Being excited & delighted by that, she attends outwardly to masculine faculties,
+an7.51:2.5 | S: masculine moves, masculine appearance, masculine ways, masculine desires, masculine voice, and masculine adornment. | T: masculine gestures, masculine manners, masculine poise, masculine desires, masculine voices, masculine charms.
+an7.51:2.6 | S: She’s stimulated by this and takes pleasure in it. | T: She is excited by that, delighted by that.
+an7.51:2.7 | S: So she desires to yoke herself to another. | T: Being excited & delighted by that, she wants to be bonded to what is outside her,
+an7.51:2.8 | S: And she desires the pleasure and happiness that comes from such yoking. | T: wants whatever pleasure & happiness that arise based on that bond.
+an7.51:2.9 | S: Sentient beings who relish their femininity are yoked to men. | T: Delighting, caught up in her femininity, a woman goes into bondage with reference to men.
+an7.51:2.10 | S: This is how a woman does not transcend her femininity. | T: This is how a woman does not transcend her femininity.
+an7.51:3.1 | S: A man focuses on his own masculinity: | T: “A man attends inwardly to his masculine faculties,
+an7.51:3.2 | S: his masculine moves, masculine appearance, masculine ways, masculine desires, masculine voice, and masculine adornment. | T: masculine gestures, masculine manners, masculine poise, masculine desires, masculine voice, masculine charms.
+an7.51:3.3 | S: He’s stimulated by this and takes pleasure in it. | T: He is excited by that, delighted by that.
+an7.51:3.4 | S: So he focuses on the femininity of others: | T: Being excited & delighted by that, he attends outwardly to feminine faculties,
+an7.51:3.5 | S: feminine moves, feminine appearance, feminine ways, feminine desires, feminine voice, and feminine adornment. | T: feminine gestures, feminine manners, feminine poise, feminine desires, feminine voices, feminine charms.
+an7.51:3.6 | S: He’s stimulated by this and takes pleasure in it. | T: He is excited by that, delighted by that.
+an7.51:3.7 | S: So he desires to yoke himself to another. | T: Being excited & delighted by that, he wants to be bonded to what is outside him,
+an7.51:3.8 | S: And he desires the pleasure and happiness that comes from such yoking. | T: wants whatever pleasure & happiness that arise based on that bond.
+an7.51:3.9 | S: Sentient beings who relish their masculinity are yoked to women. | T: Delighting, caught up in his masculinity, a man goes into bondage with reference to women.
+an7.51:3.10 | S: This is how a man does not transcend his masculinity. | T: This is how a man does not transcend his masculinity.
+an7.51:3.11 | S: This is how yoking comes about. | T: “This is how there is bondage.
+an7.51:4.1 | S: And how does unyoking come about? | T: “And how is there lack of bondage?
+an7.51:4.2 | S: A woman doesn’t focus on her own femininity: | T: A woman does not attend inwardly to her feminine faculties…
+an7.51:4.3 | S: her feminine moves, feminine appearance, feminine ways, feminine desires, feminine voice, and feminine adornment. | T: feminine charms.
+an7.51:4.4 | S: She isn’t stimulated by this and takes no pleasure in it. | T: She is not excited by that, not delighted by that…
+an7.51:4.5 | S: So she doesn’t focus on the masculinity of others: | T: does not attend outwardly to masculine faculties…
+an7.51:4.6 | S: masculine moves, masculine appearance, masculine ways, masculine desires, masculine voice, and masculine adornment. | T: masculine charms.
+an7.51:4.7 | S: She isn’t stimulated by this and takes no pleasure in it. | T: She is not excited by that, not delighted by that…
+an7.51:4.8 | S: So she doesn’t desire to yoke herself to another. | T: does not want to be bonded to what is outside her,
+an7.51:4.9 | S: Nor does she desire the pleasure and happiness that comes from such yoking. | T: does not want whatever pleasure & happiness that arise based on that bond.
+an7.51:4.10 | S: Sentient beings who do not relish their femininity are not yoked to men. | T: Not delighting, not caught up in her femininity, a woman does not go into bondage with reference to men.
+an7.51:4.11 | S: This is how a woman transcends her femininity. | T: This is how a woman transcends her femininity.
+an7.51:5.1 | S: A man doesn’t focus on his own masculinity: | T: “A man does not attend inwardly to his masculine faculties…
+an7.51:5.2 | S: masculine moves, masculine appearance, masculine ways, masculine desires, masculine voice, and masculine adornment. | T: masculine charms.
+an7.51:5.3 | S: He isn’t stimulated by this and takes no pleasure in it. | T: He is not excited by that, not delighted by that…
+an7.51:5.4 | S: So he doesn’t focus on the femininity of others: | T: does not attend outwardly to feminine faculties…
+an7.51:5.5 | S: feminine moves, feminine appearance, feminine ways, feminine desires, feminine voice, and feminine adornment. | T: feminine charms.
+an7.51:5.6 | S: He isn’t stimulated by this and takes no pleasure in it. | T: He is not excited by that, not delighted by that…
+an7.51:5.7 | S: So he doesn’t desire to yoke himself to another. | T: does not want to be bonded to what is outside him,
+an7.51:5.8 | S: Nor does he desire the pleasure and happiness that comes from such yoking. | T: does not want whatever pleasure & happiness that arise based on that bond.
+an7.51:5.9 | S: Sentient beings who do not relish their masculinity are not yoked to women. | T: Not delighting, not caught up in his masculinity, a man does not go into bondage with reference to women.
+an7.51:5.10 | S: This is how a man transcends his masculinity. | T: This is how a man transcends his masculinity.
+an7.51:5.11 | S: This is how unyoking comes about. | T: “This is how there is lack of bondage.
+an7.51:5.12 | S: This is the exposition of the teaching on yoking and unyoking.” | T: And this is the Dhamma discourse on bondage & lack of bondage.”
+an7.51:5.13 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn41.6
+sn41.6:1.1 | S: At one time Venerable Kāmabhū was staying near Macchikāsaṇḍa in the Wild Mango Grove. | T: On one occasion Ven. Kāmabhū was staying near Macchikāsaṇḍa in the Wild Mango Grove.
+sn41.6:1.2 | S: Then Citta the householder went up to Venerable Kāmabhū, sat down to one side, and said to him: | T: Then Citta the householder went to him and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to Ven. Kāmabhū,
+sn41.6:1.3 | S: “Sir, how many processes are there?” | T: “Venerable sir, how many (types of) fabrications are there?”
+sn41.6:1.4 | S: “Householder, there are three processes. | T: “There are three fabrications, householder:
+sn41.6:1.5 | S: The physical process, the verbal process, and the mental process.” | T: bodily-fabrications, verbal fabrications, & mental fabrications.”
+sn41.6:1.6 | S: Saying “Good, sir,” Citta approved and agreed with what Kāmabhū said. Then he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:1.7 | S: “But sir, what is the physical process? What’s the verbal process? What’s the mental process?” | T: “But what are bodily-fabrications? What are verbal fabrications? What are mental fabrications?”
+sn41.6:1.8 | S: “Breathing is a physical process. Placing the mind and keeping it connected are a verbal process. Perception and feeling are a mental process.” | T: “In-&-out breaths are bodily fabrications. Directed thought & evaluation are verbal fabrications. Perceptions & feelings are mental fabrications.”
+sn41.6:2.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:2.2 | S: “But sir, why is breathing a physical process? Why are placing the mind and keeping it connected a verbal process? Why are perception and feeling a mental process?” | T: “But why are in-&-out breaths bodily fabrications? Why are directed thought & evaluation verbal fabrications? Why are perceptions & feelings mental fabrications?”
+sn41.6:2.3 | S: “Breathing is physical. It’s tied up with the body, that’s why breathing is a physical process. | T: “In-&-out breaths are bodily; these are things tied up with the body. That’s why in-&-out breaths are bodily fabrications.
+sn41.6:2.4 | S: First you place the mind and keep it connected, then you break into speech. That’s why placing the mind and keeping it connected are a verbal process. | T: Having first directed one’s thoughts and made an evaluation, one then breaks out into speech. That’s why directed thought & evaluation are verbal fabrications.
+sn41.6:2.5 | S: Perception and feeling are mental. They’re tied up with the mind, that’s why perception and feeling are a mental process.” | T: Perceptions & feelings are mental; these are things tied up with the mind. That’s why perceptions & feelings are mental fabrications.”
+sn41.6:3.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:3.2 | S: “But sir, how does someone attain the cessation of perception and feeling?” | T: “Now, how does the attainment of the cessation of perception & feeling come about?”
+sn41.6:3.3 | S: “A mendicant who is entering such an attainment does not think: | T: “The thought does not occur to a monk as he is attaining the cessation of perception & feeling that ‘I am about to attain the cessation of perception & feeling’ or that ‘I am attaining the cessation of perception & feeling’ or that ‘I have attained the cessation of perception & feeling.’
+sn41.6:3.4 | S: ‘I will enter the cessation of perception and feeling’ or ‘I am entering the cessation of perception and feeling’ or ‘I have entered the cessation of perception and feeling.’ | T: (none)
+sn41.6:3.5 | S: Rather, their mind has been previously developed so as to lead to such a state.” | T: Instead, the way his mind has previously been developed leads him to that state.”
+sn41.6:4.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:4.2 | S: “But sir, which cease first for a mendicant who is entering the cessation of perception and feeling: the physical, verbal, or mental process?” | T: “When a monk is attaining the cessation of perception & feeling, which things cease first: bodily fabrications, verbal fabrications, or mental fabrications?”
+sn41.6:4.3 | S: “The verbal process ceases first, then physical, then mental.” | T: “When a monk is attaining the cessation of perception & feeling, verbal fabrications cease first, then bodily fabrications, then mental fabrications.”
+sn41.6:5.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:5.2 | S: “What’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling?” | T: “What is the difference between a monk who has died & passed away and a monk who has attained the cessation of perception & feeling?”
+sn41.6:5.3 | S: “When someone dies, their physical, verbal, and mental processes have ceased and stilled; their vitality is spent; their warmth is dissipated; and their faculties have disintegrated. | T: “In the case of a monk who has died & passed away, his bodily fabrication has ceased & subsided, verbal fabrication has ceased & subsided, mental fabrication has ceased & subsided, his life force is totally ended, his heat is dissipated, and his faculties are shut down.
+sn41.6:5.4 | S: When a mendicant has attained the cessation of perception and feeling, their physical, verbal, and mental processes have ceased and stilled. But their vitality is not spent; their warmth is not dissipated; and their faculties are very clear. | T: But in the case of a monk who has attained the cessation of perception & feeling, his bodily fabrication has ceased & subsided, verbal fabrication has ceased & subsided, mental fabrication has ceased & subsided, his life force is not ended, his heat is not dissipated, and his faculties are bright & clear.
+sn41.6:5.5 | S: That’s the difference between someone who has passed away and a mendicant who has attained the cessation of perception and feeling.” | T: This is the difference between a monk who has died & passed away and a monk who has attained the cessation of perception & feeling.”
+sn41.6:6.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:6.2 | S: “But sir, how does someone emerge from the cessation of perception and feeling?” | T: “Now, how does emergence from the cessation of perception & feeling come about?”
+sn41.6:6.3 | S: “A mendicant who is emerging from such an attainment does not think: | T: “The thought does not occur to a monk as he is emerging from the cessation of perception & feeling that
+sn41.6:6.4 | S: ‘I will emerge from the cessation of perception and feeling’ or ‘I am emerging from the cessation of perception and feeling’ or ‘I have emerged from the cessation of perception and feeling.’ | T: ‘I am about to emerge from the cessation of perception & feeling’ or that ‘I am emerging from the cessation of perception & feeling’ or that ‘I have emerged from the cessation of perception & feeling.’
+sn41.6:6.5 | S: Rather, their mind has been previously developed so as to lead to such a state.” | T: Instead, the way his mind has previously been developed leads him to that state.”
+sn41.6:7.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:7.2 | S: “But sir, which arise first for a mendicant who is emerging from the cessation of perception and feeling: the physical, verbal, or mental process?” | T: “When a monk is emerging from the cessation of perception & feeling, which things arise first: bodily fabrications, verbal fabrications, or mental fabrications?”
+sn41.6:7.3 | S: “The mental process arises first, then physical, then verbal.” | T: “When a monk is emerging from the cessation of perception & feeling, mental fabrications arise first, then bodily fabrications, then verbal fabrications.”
+sn41.6:8.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:8.2 | S: “But sir, when a mendicant has emerged from the attainment of the cessation of perception and feeling, how many kinds of contact do they experience?” | T: “When a monk has emerged from the cessation of perception & feeling, how many contacts make contact?”
+sn41.6:8.3 | S: “They experience three kinds of contact: | T: “When a monk has emerged from the cessation of perception & feeling, three contacts make contact:
+sn41.6:8.4 | S: emptiness, signless, and undirected contacts.” | T: contact with emptiness, contact with the themeless, & contact with the undirected.”
+sn41.6:9.1 | S: Saying “Good, sir,” he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:9.2 | S: “But sir, when a mendicant has emerged from the attainment of the cessation of perception and feeling, what does their mind slant, slope, and incline to?” | T: “When a monk has emerged from the cessation of perception & feeling, to what does his mind lean, to what does it tend, to what does it incline?”
+sn41.6:9.3 | S: “Their mind slants, slopes, and inclines to seclusion.” | T: “When a monk has emerged from the cessation of perception & feeling, his mind leans to seclusion, tends to seclusion, inclines to seclusion.”
+sn41.6:10.1 | S: Saying “Good, sir,” Citta approved and agreed with what Kāmabhū said. Then he asked another question: | T: “Very good, venerable sir.” And, delighting in and approving of Ven. Kāmabhū’s answer, Citta asked him a further question:
+sn41.6:10.2 | S: “But sir, how many things are helpful for attaining the cessation of perception and feeling?” | T: “How many mental qualities are of great help in the attainment of the cessation of perception & feeling?”
+sn41.6:10.3 | S: “Well, householder, you’ve finally asked what you should have asked first! | T: “Actually, householder, you have asked last what should have been asked first.
+sn41.6:10.4 | S: Nevertheless, I will answer you. | T: Nevertheless, I will answer you.
+sn41.6:10.5 | S: Two things are helpful for attaining the cessation of perception and feeling: | T: Two qualities are of great help in the attainment of the cessation of perception & feeling:
+sn41.6:10.6 | S: serenity and discernment.” | T: tranquility & insight.”
+sn41.6:10.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## an10.99
+an10.99:1.1 | S: Then Venerable Upāli went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then Ven. Upāli went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+an10.99:1.2 | S: “Sir, I wish to frequent remote lodgings in the wilderness and the forest.” | T: “Lord, I want to spend time in isolated wilderness & forest lodgings.”
+an10.99:2.1 | S: “Upāli, remote lodgings in the wilderness and the forest are challenging. | T: “Upāli, it’s not easy to endure isolated wilderness & forest lodgings.
+an10.99:2.2 | S: It’s hard to maintain seclusion and hard to find joy in it. | T: It’s not easy to maintain seclusion, not easy to enjoy being alone.
+an10.99:2.3 | S: Staying alone, the forests seem to rob the mind of a mendicant who isn’t immersed in samādhi. | T: The forests, as it were, plunder the mind of a monk who has not gained concentration.
+an10.99:2.4 | S: If someone should say this, | T: Whoever would say,
+an10.99:2.5 | S: ‘Though I don’t have immersion, I’m going to frequent remote lodgings in the wilderness and the forest.’ You can expect that | T: ‘I, without having gained concentration, will spend time in isolated wilderness & forest lodgings,’ of him it can be expected that
+an10.99:2.6 | S: they’ll sink down or float away. | T: he will sink to the bottom or float away.
+an10.99:3.1 | S: Suppose there was a large lake, | T: “Imagine, Upāli, a great freshwater lake.
+an10.99:3.2 | S: and along comes a bull elephant that’s three or three and a half meters tall. | T: Then there would come a great bull elephant, seven or seven and a half cubits tall.
+an10.99:3.3 | S: He’d think, | T: The thought would occur to him,
+an10.99:3.4 | S: ‘Why don’t I plunge into this lake and play around while washing my ears and back? | T: ‘What if I were to plunge into this freshwater lake, to playfully squirt water into my ears and along my back, and then—having playfully squirted water into my ears and along my back,
+an10.99:3.5 | S: When I’ve bathed and drunk, I’ll emerge from the water and go wherever I want.’ | T: having bathed & drunk & come back out—to go off as I please?’
+an10.99:3.6 | S: And that’s just what he does. | T: So, having plunged into the freshwater lake, he would
+an10.99:3.7 | P: kaṇṇasandhovikampi khiḍḍaṁ kīḷitvā piṭṭhisandhovikampi khiḍḍaṁ kīḷitvā nhatvā ca pivitvā ca paccuttaritvā yena kāmaṁ pakkameyya. | T: playfully squirt water into his ears and along his back, and then—having playfully squirted water into his ears and along his back, having bathed & drunk & come back out—he would go off as he pleased.
+an10.99:3.8 | S: Why is that? | T: Why is that?
+an10.99:3.9 | S: Because his large incarnation finds a footing in the depths. | T: Because his large body finds a footing in the depth.
+an10.99:4.1 | S: Then along comes a rabbit or a cat. | T: “Then a rabbit or a cat would come along.
+an10.99:4.2 | S: They’d think, | T: The thought would occur to it,
+an10.99:4.3 | S: ‘What difference is there between me and a bull elephant? | T: ‘What’s the difference between me and a bull elephant?
+an10.99:4.4 | S: Why don’t I plunge into this lake and play around while washing my ears and back? | T: What if I were to plunge into this freshwater lake, to playfully squirt water into my ears and along my back, and then—having playfully squirted water into my ears and along my back,
+an10.99:4.5 | S: When I’ve bathed and drunk, I’ll emerge from the water and go wherever I want.’ | T: having bathed & drunk & come back out—to go off as I please?’
+an10.99:4.6 | S: They jump into the lake rashly, without thinking. | T: So, without reflecting, he jumps rashly into the freshwater lake,
+an10.99:4.7 | S: You can expect that | T: and of him it can be expected that he will either sink to the bottom or float away.
+an10.99:4.8 | S: they’ll sink down or float away. | T: (none)
+an10.99:4.9 | S: Why is that? | T: Why is that?
+an10.99:4.10 | S: Because their little incarnation finds no footing in the depths. | T: Because his small body doesn’t find a footing in the depth.
+an10.99:4.11 | S: If someone should say this, | T: “In the same way, whoever would say,
+an10.99:4.12 | S: ‘Though I don’t have immersion, I’m going to frequent remote lodgings in the wilderness and the forest.’ You can expect that | T: ‘I, without having gained concentration, will spend time in isolated wilderness & forest lodgings,’ of him it can be expected that
+an10.99:4.13 | S: they’ll sink down or float away. | T: he will sink to the bottom or float away.
+an10.99:5.1 | S: Suppose there was a little baby boy playing in his own urine and feces. | T: “Imagine, Upāli, a stupid baby boy, lying on his back, playing with his urine & excrement.
+an10.99:5.2 | S: What do you think, Upāli? | T: What do you think?
+an10.99:5.3 | S: Isn’t that a totally foolish game?” | T: Isn’t that totally & completely a childish form of play?”
+an10.99:5.4 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:6.1 | S: “After some time that boy grows up and his faculties mature. | T: “Then, as the child grows and his faculties mature,
+an10.99:6.2 | S: He accordingly plays childish games such as toy plows, tip-cat, somersaults, pinwheels, toy measures, toy carts, and toy bows. | T: he plays at children’s games: toy plows, stick games, somersaults, toy windmills, toy measures, toy carts, and a toy bow & arrow.
+an10.99:6.3 | S: What do you think, Upāli? | T: What do you think?
+an10.99:6.4 | S: Aren’t such games better than what he did before?” | T: Aren’t these forms of play more excellent than the earlier form of play, and more refined?”
+an10.99:6.5 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:7.1 | S: “After some time that boy grows up and his faculties mature further. | T: “At a later time, as the boy grows and his faculties mature (still further),
+an10.99:7.2 | S: He accordingly amuses himself, supplied and provided with the five kinds of sensual stimulation. | T: he enjoys himself provided & endowed with the five strings of sensuality:
+an10.99:7.3 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, accompanied with sensual desire;
+an10.99:7.4 | S: Sounds known by the ear … | T: sounds cognizable via the ear…
+an10.99:7.5 | S: Smells known by the nose … | T: aromas cognizable via the nose…
+an10.99:7.6 | S: Tastes known by the tongue … | T: flavors cognizable via the tongue…
+an10.99:7.7 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, accompanied with sensual desire.
+an10.99:7.8 | S: What do you think, Upāli? | T: What do you think?
+an10.99:7.9 | S: Aren’t such games better than what he did before?” | T: Aren’t these forms of play more excellent than the earlier forms of play, and more refined?”
+an10.99:7.10 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:8.1 | S: “Now in this regard, Upāli, a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: “Now, Upāli, there is the case where a Tathāgata appears in the world, worthy & rightly self-awakened.
+an10.99:8.2 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: (none)
+an10.99:8.3 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: He teaches the Dhamma admirable in its beginning, admirable in its middle, admirable in its end. He proclaims the holy life both in its particulars and in its essence, entirely perfect, surpassingly pure.
+an10.99:9.1 | S: A householder hears that teaching, or a householder’s child, or someone reborn in a good family. | T: “A householder or householder’s son or one born in one clan or another hears that Dhamma.
+an10.99:9.2 | S: They gain faith in the Realized One | T: Having heard the Dhamma, he gains conviction in the Tathāgata. Being endowed with a gain in conviction,
+an10.99:9.3 | S: and reflect: | T: he reflects:
+an10.99:9.4 | S: ‘Life at home is cramped and dirty, life gone forth is wide open. | T: ‘Household life is confining, a dusty path. Life gone forth is the open air.
+an10.99:9.5 | S: It’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: It isn’t easy, living at home, to practice the holy life totally perfect, totally pure, a polished shell.
+an10.99:9.6 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from the lay life to homelessness?’ | T: What if I, having shaved off my hair & beard and putting on the ochre robe, were to go forth from the household life into homelessness?’
+an10.99:10.1 | S: After some time they give up a large or small fortune, and a large or small family circle. They shave off hair and beard, dress in ocher robes, and go forth from the lay life to homelessness. | T: “So after some time he abandons his mass of wealth, large or small; leaves his circle of relatives, large or small; shaves off his hair & beard, puts on the ochre robes, and goes forth from the household life into homelessness.
+an10.99:11.1 | S: Once they’ve gone forth, they take up the training and livelihood of the mendicants. They give up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings. | T: Virtue “When he has thus gone forth, endowed with the monks’ training & livelihood, then—abandoning the taking of life—he abstains from the taking of life. He dwells with his rod laid down, his knife laid down, scrupulous, merciful, compassionate for the welfare of all living beings.
+an10.99:12.1 | S: They give up stealing. They take only what’s given, and expect only what’s given. They keep themselves clean by not thieving. | T: “Abandoning the taking of what is not given, he abstains from taking what is not given. He takes only what is given, accepts only what is given, lives not by stealth but by means of a self that has become pure. This, too, is part of his virtue.
+an10.99:13.1 | S: They give up unchastity. They are chaste, set apart, refraining from the vulgar act of sex. | T: “Abandoning uncelibacy, he lives a celibate life, aloof, refraining from the sexual act that is the villager’s way.
+an10.99:14.1 | S: They give up lying. They speak the truth and stick to the truth. They’re honest and dependable, and don’t trick the world with their words. | T: “Abandoning the telling of lies, he abstains from telling lies. He speaks the truth, holds to the truth, is firm, reliable, no deceiver of the world.
+an10.99:15.1 | S: They give up backbiting. They don’t repeat in one place what they heard in another so as to divide people against each other. Instead, they reconcile those who are divided and support those who are united, delighting in harmony, loving harmony, speaking words that promote harmony. | T: “Abandoning divisive speech, he abstains from divisive speech. What he has heard here he does not tell there to break those people apart from these people here. What he has heard there he does not tell here to break these people apart from those people there. Thus reconciling those who have broken apart or cementing those who are united, he loves concord, delights in concord, enjoys concord, speaks things that create concord.
+an10.99:16.1 | S: They give up harsh speech. They speak in a way that’s mellow, pleasing to the ear, endearing, going to the heart, polite, and likable and agreeable to the people. | T: “Abandoning abusive speech, he abstains from abusive speech. He speaks words that are soothing to the ear, that are affectionate, that go to the heart, that are polite, appealing & pleasing to people at large.
+an10.99:17.1 | S: They give up talking nonsense. Their words are timely, true, and meaningful, in line with the teaching and training. They say things at the right time which are valuable, reasonable, succinct, and beneficial. | T: “Abandoning idle chatter, he abstains from idle chatter. He speaks in season, speaks what is factual, what is in accordance with the goal, the Dhamma, and the Vinaya. He speaks words worth treasuring, seasonable, reasonable, circumscribed, connected with the goal.
+an10.99:18.1 | S: They refrain from injuring plants and seeds. | T: “He abstains from damaging seed & plant life.
+an10.99:18.2 | S: They eat in one part of the day, abstaining from eating at night and food at the wrong time. | T: “He eats only once a day, refraining from the evening meal and from food at the wrong time of day.
+an10.99:18.3 | S: They refrain from seeing shows of dancing, singing, and music. | T: “He abstains from dancing, singing, instrumental music, and from watching shows.
+an10.99:18.4 | S: They refrain from attiring and adorning themselves with garlands, fragrance, and makeup. | T: “He abstains from wearing garlands and from beautifying himself with scents & cosmetics.
+an10.99:18.5 | S: They refrain from high and luxurious beds. | T: “He abstains from high & luxurious beds & seats.
+an10.99:18.6 | S: They refrain from receiving gold and currency, | T: “He abstains from accepting gold & money.
+an10.99:18.7 | S: raw grains, | T: “He abstains from accepting uncooked grain…
+an10.99:18.8 | S: raw meat, | T: raw meat…
+an10.99:18.9 | S: women and girls, | T: women & girls…
+an10.99:18.10 | S: male and female bondservants, | T: male & female slaves…
+an10.99:18.11 | S: goats and sheep, | T: goats & sheep…
+an10.99:18.12 | S: chickens and pigs, | T: fowl & pigs…
+an10.99:18.13 | S: elephants, cows, horses, and mares, | T: elephants, cattle, steeds, & mares…
+an10.99:18.14 | S: and fields and land. | T: fields & property.
+an10.99:18.15 | S: They refrain from running errands and messages; | T: “He abstains from running messages…
+an10.99:18.16 | S: buying and selling; | T: from buying & selling…
+an10.99:18.17 | S: falsifying weights, metals, or measures; | T: from dealing with false scales, false metals, & false measures…
+an10.99:18.18 | S: bribery, fraud, cheating, and duplicity; | T: from bribery, deception, & fraud.
+an10.99:18.19 | S: mutilation, murder, abduction, banditry, plunder, and violence. | T: “He abstains from mutilating, executing, imprisoning, highway robbery, plunder, & violence.
+an10.99:19.1 | S: They’re content with robes to look after the body and almsfood to look after the belly. | T: “He is content with a set of robes to provide for his body and alms food to provide for his hunger.
+an10.99:19.2 | S: Wherever they go, they set out taking only these things. | T: (none)
+an10.99:19.3 | S: They’re like a bird: wherever it flies, wings are its only burden. | T: Just as a bird, wherever it goes, flies with its wings as its only burden;
+an10.99:19.4 | S: In the same way, a mendicant is content with robes to look after the body and almsfood to look after the belly. Wherever they go, they set out taking only these things. | T: so too is he content with a set of robes to provide for his body and alms food to provide for his hunger. Wherever he goes, he takes only his barest necessities along.
+an10.99:19.5 | S: When they have this spectrum of noble ethics, they experience a blameless happiness inside themselves. | T: “Endowed with this noble aggregate of virtue, he is inwardly sensitive to the pleasure of being blameless.
+an10.99:20.1 | S: When they see a sight with their eyes, they don’t get caught up in the features and details. | T: Sense Restraint “On seeing a form with the eye, he doesn’t grasp at any theme or details by which—
+an10.99:20.2 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices for its restraint. He protects the faculty of the eye. He attains restraint with regard to the faculty of the eye.
+an10.99:20.3 | S: When they hear a sound with their ears … | T: On hearing a sound with the ear.…
+an10.99:20.4 | S: When they smell an odor with their nose … | T: On smelling an aroma with the nose.…
+an10.99:20.5 | S: When they taste a flavor with their tongue … | T: On tasting a flavor with the tongue.…
+an10.99:20.6 | S: When they feel a touch with their body … | T: On touching a tactile sensation with the body.…
+an10.99:20.7 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: On cognizing an idea with the intellect, he doesn’t grasp at any theme or details by which—
+an10.99:20.8 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices for its restraint. He protects the faculty of the intellect. He attains restraint with regard to the faculty of the intellect.
+an10.99:20.9 | S: When they have this noble sense restraint, they experience an unsullied bliss inside themselves. | T: Endowed with this noble restraint over the sense faculties, he is inwardly sensitive to the pleasure of being blameless.
+an10.99:21.1 | S: They act with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. | T: Mindfulness & Alertness “When going forward & returning, he makes himself alert. When looking toward & looking away… when bending & extending his limbs… when carrying his outer cloak, his upper robe, & his bowl… when eating, drinking, chewing, & tasting… when urinating & defecating… when walking, standing, sitting, falling asleep, waking up, talking, & remaining silent, he makes himself alert.
+an10.99:22.1 | S: When they have this spectrum of noble ethics, this noble sense restraint, and this noble mindfulness and situational awareness, | T: Abandoning the Hindrances “Endowed with this noble aggregate of virtue, this noble restraint over the sense faculties, this noble mindfulness & alertness,
+an10.99:22.2 | S: they frequent a secluded lodging—a wilderness, the root of a tree, a hill, a ravine, a mountain cave, a charnel ground, a forest, the open air, a heap of straw. | T: he seeks out a secluded dwelling: a wilderness, the shade of a tree, a mountain, a glen, a hillside cave, a charnel ground, a forest grove, the open air, a heap of straw.
+an10.99:22.3 | S: Gone to a wilderness, or to the root of a tree, or to an empty hut, they sit down cross-legged, set their body straight, and bring mindfulness to the present. | T: After his meal, returning from his alms round, he sits down, crosses his legs, holds his body erect, and brings mindfulness to the fore.
+an10.99:23.1 | S: Giving up covetousness for the world, they meditate with a heart rid of covetousness, cleansing the mind of covetousness. | T: “Abandoning covetousness with regard to the world, he dwells with an awareness devoid of covetousness. He cleanses his mind of covetousness.
+an10.99:23.2 | S: Giving up ill will and malevolence, they meditate with a mind rid of ill will, full of sympathy for all living beings, cleansing the mind of ill will. | T: Abandoning ill will & anger, he dwells with an awareness devoid of ill will, sympathetic with the welfare of all living beings. He cleanses his mind of ill will & anger.
+an10.99:23.3 | S: Giving up dullness and drowsiness, they meditate with a mind rid of dullness and drowsiness, perceiving light, mindful and aware, cleansing the mind of dullness and drowsiness. | T: Abandoning sloth & drowsiness, he dwells with an awareness devoid of sloth & drowsiness, mindful, alert, percipient of light. He cleanses his mind of sloth & drowsiness.
+an10.99:23.4 | S: Giving up restlessness and remorse, they meditate without restlessness, their mind settled internally, cleansing the mind of restlessness and remorse. | T: Abandoning restlessness & anxiety, he dwells undisturbed, his mind inwardly stilled. He cleanses his mind of restlessness & anxiety.
+an10.99:23.5 | S: Giving up doubt, they meditate having gone beyond doubt, not undecided about skillful qualities, cleansing the mind of doubt. | T: Abandoning uncertainty, he dwells having crossed over uncertainty, with no perplexity with regard to skillful qualities. He cleanses his mind of uncertainty.
+an10.99:24.1 | S: They give up these five hindrances, corruptions of the heart that weaken wisdom. | T: The Nine Attainments “Having abandoned these five hindrances—imperfections of awareness that weaken discernment—
+an10.99:24.2 | S: Then, quite secluded from sensual pleasures, secluded from unskillful qualities, they enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: then, quite secluded from sensuality, secluded from unskillful qualities, he enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an10.99:24.3 | S: What do you think, Upāli? | T: “What do you think, Upāḷi?
+an10.99:24.4 | S: Isn’t this state better than what they had before?” | T: Isn’t this dwelling more excellent than the earlier dwellings, and more refined?”
+an10.99:24.5 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:25.1 | S: “When my disciples see this quality inside themselves they frequent remote lodgings in the wilderness and the forest. But so far they haven’t achieved their heart’s goal. | T: “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:26.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: “And further, with the stilling of directed thoughts & evaluations, the monk enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an10.99:26.2 | S: What do you think, Upāli? | T: “What do you think, Upāḷi?
+an10.99:26.3 | S: Isn’t this state better than what they had before?” | T: Isn’t this dwelling more excellent than the earlier dwellings, and more refined?”
+an10.99:26.4 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:27.1 | S: “When my disciples see this quality inside themselves they frequent remote lodgings in the wilderness and the forest. But so far they haven’t achieved their heart’s goal. | T: “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:28.1 | S: Furthermore, with the fading away of rapture, a mendicant enters and remains in the third absorption. They meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: “And further, with the fading of rapture, the monk remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an10.99:28.2 | S: What do you think, Upāli? | T: “What do you think, Upāḷi?
+an10.99:28.3 | S: Isn’t this state better than what they had before?” | T: Isn’t this dwelling more excellent than the earlier dwellings, and more refined?”
+an10.99:28.4 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:29.1 | S: “When my disciples see this quality inside themselves they frequent remote lodgings in the wilderness and the forest. But so far they haven’t achieved their heart’s goal. | T: “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:30.1 | S: Furthermore, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. …” … | T: “And further, with the abandoning of pleasure & pain—as with the earlier disappearance of joy & distress—the monk enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain. “What do you think, Upāḷi? Isn’t this dwelling more excellent than the earlier dwellings, and more refined?” “Yes, lord.” “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:31.1 | S: “Furthermore, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, a mendicant enters and remains in the dimension of infinite space. | T: “And further, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ the monk enters & remains in the dimension of the infinitude of space.
+an10.99:31.2 | S: What do you think, Upāli? | T: “What do you think, Upāḷi?
+an10.99:31.3 | S: Isn’t this state better than what they had before?” | T: Isn’t this dwelling more excellent than the earlier dwellings, and more refined?”
+an10.99:31.4 | S: “Yes, sir.” | T: “Yes, lord.”
+an10.99:32.1 | S: “When my disciples see this quality inside themselves they frequent remote lodgings in the wilderness and the forest. But so far they haven’t achieved their heart’s goal. | T: “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:33.1 | S: Furthermore, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, a mendicant enters and remains in the dimension of infinite consciousness. …” … | T: “And further, with the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ the monk enters & remains in the dimension of the infinitude of consciousness. “What do you think, Upāḷi? Isn’t this dwelling more excellent than the earlier dwellings, and more refined?” “Yes, lord.” “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.
+an10.99:34.1 | S: “Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. …” … | T: “And further, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ the monk enters & remains in the dimension of nothingness. “What do you think, Upāḷi? Isn’t this dwelling more excellent than the earlier dwellings, and more refined?” “Yes, lord.” “It’s when seeing this quality within themselves that my disciples spend time in isolated wilderness & forest lodgings, but it’s not to this extent that they dwell having attained their true aim.

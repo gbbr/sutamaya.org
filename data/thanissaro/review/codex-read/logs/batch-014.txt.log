@@ -1,0 +1,533 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd91-bcfc-7d93-ad3c-7bad3ef1a6cb
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear boundary shifts, and write only those findings to the specified output file.
+
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## iti101
+iti101:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti101:2.1 | S: “Mendicants, these four trifles are easy to find and are blameless. | T: “Monks, these four things are next to nothing, both easy to gain & blameless.
+iti101:2.2 | S: What four? | T: Which four?
+iti101:2.3 | S: Rag-robes … | T: Cast-off cloth is next to nothing, both easy to gain & blameless.
+iti101:2.4 | S: A lump of almsfood … | T: Alms food is next to nothing, both easy to gain & blameless.
+iti101:2.5 | S: Lodgings at the root of a tree … | T: The root of a tree as a dwelling place is next to nothing, both easy to gain & blameless.
+iti101:2.6 | S: Rancid urine as medicine … | T: Medicine made of smelly urine is next to nothing, both easy to gain & blameless.
+iti101:2.7 | S: These four trifles are easy to find and are blameless. | T: These are the four things that are next to nothing, both easy to gain & blameless.
+iti101:2.8 | S: When a mendicant is content with trifles that are easy to find, they have one of the factors of the ascetic life, I say.” | T: When a monk is content with what is next to nothing, easy to gain & blameless, then I say that he has one of the component factors of the contemplative life.”
+iti101:2.9 | S: The Buddha spoke this matter. | T: (none)
+iti101:2.10 | S: On this it is said: | T: (none)
+iti101:3.1 | S: “When one is content with what’s blameless, | T: Content with what’s blameless,
+iti101:3.2 | S: trifling, and easy to find, | T: next to nothing, easy to gain,
+iti101:3.3 | S: they don’t get distressed | T: his mind not vexed over
+iti101:3.4 | S: about lodgings, robes, | T: lodging, clothing,
+iti101:3.5 | S: food, and drink, | T: food, or drink:
+iti101:3.6 | S: and they’re not obstructed anywhere. | T: the four directions offer him no obstruction.
+iti101:4.1 | S: These qualities are said to be | T: These things, declared congenial
+iti101:4.2 | S: integral to the ascetic life. | T: for the contemplative life,
+iti101:4.3 | S: They’re mastered by a mendicant, | T: are possessed by the monk
+iti101:4.4 | S: content and diligent.” | T: heedful, content.
+iti101:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti101:5.2 | P: Dutiyaṁ. | T: (none)
+
+## iti87
+iti87:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti87:2.1 | S: “Mendicants, these three unskillful thoughts are destroyers of sight, vision, and knowledge. They block wisdom, they’re on the side of distress, and they don’t lead to extinguishment. | T: “Monks, there are these three kinds of unskillful thinking that produce blindness, produce lack of vision, produce lack of knowledge, lead to the cessation of discernment, side with vexation, and are not conducive to Unbinding.
+iti87:2.2 | S: What three? | T: Which three?
+iti87:2.3 | S: Thoughts of sensuality, | T: Thinking imbued with sensuality.…
+iti87:2.4 | S: malice, | T: Thinking imbued with ill-will.…
+iti87:2.5 | S: and cruelty. | T: Thinking imbued with harmfulness produces blindness, produces lack of vision, produces lack of knowledge, leads to the cessation of discernment, sides with vexation, and is not conducive to Unbinding.
+iti87:2.6 | S: These are the three unskillful thoughts that are destroyers of sight, vision, and knowledge. They block wisdom, they’re on the side of distress, and they don’t lead to extinguishment. | T: These are the three kinds of unskillful thinking that produce blindness, produce lack of vision, produce lack of knowledge, lead to the cessation of discernment, side with vexation, and are not conducive to Unbinding.
+iti87:3.1 | S: These three skillful thoughts are creators of sight, vision, and knowledge. They grow wisdom, they’re on the side of solace, and they lead to extinguishment. | T: “There are these three kinds of skillful thinking that produce non-blindness, produce vision, produce knowledge, foster discernment, side with non-vexation, and are conducive to Unbinding.
+iti87:3.2 | S: What three? | T: Which three?
+iti87:3.3 | S: Thoughts of renunciation, | T: Thinking imbued with renunciation.…
+iti87:3.4 | S: good will, | T: Thinking imbued with non-ill-will.…
+iti87:3.5 | S: and harmlessness. | T: Thinking imbued with harmlessness produces non-blindness, produces vision, produces knowledge, fosters discernment, sides with non-vexation, and is conducive to Unbinding.
+iti87:3.6 | S: These are the three skillful thoughts that are creators of sight, vision, and knowledge. They grow wisdom, they’re on the side of solace, and they lead to extinguishment.” | T: These are the three kinds of skillful thinking that produce non-blindness, produce vision, produce knowledge, foster discernment, side with non-vexation, and are conducive to Unbinding.”
+iti87:3.7 | S: The Buddha spoke this matter. | T: (none)
+iti87:3.8 | S: On this it is said: | T: (none)
+iti87:4.1 | S: “Think the three skillful thoughts, | T: Three skillful thoughts should be thought,
+iti87:4.2 | S: and get rid of the unskillful. | T: three unskillful thoughts rejected.
+iti87:4.3 | S: Quelling such thoughts and considerations, | T: Whoever stills thoughts & evaluations
+iti87:4.4 | S: like rain on the dust, | T: –as rain would, a cloud of dust–
+iti87:4.5 | S: with a heart calmed of thought, | T: through an awareness with thinking stilled,
+iti87:4.6 | S: you’ll touch the state of peace right here.” | T: attains right here the state of peace.
+iti87:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti87:5.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## thig5.10
+thig5.10:1.1 | S: Plowing the fields, | T: [I thought:] “Plowing the field with plows,
+thig5.10:1.2 | S: sowing seeds in the ground, | T: sowing the ground with seed,
+thig5.10:1.3 | S: providing for partners and children, | T: supporting their wives & children,
+thig5.10:1.4 | S: young men acquire wealth. | T: young men gather up wealth.
+thig5.10:2.1 | S: I am accomplished in ethics, | T: So why is it that I, consummate in virtue,
+thig5.10:2.2 | S: and I do the Teacher’s bidding, | T: a doer of the teacher’s bidding,
+thig5.10:2.3 | S: being neither lazy nor restless— | T: don’t gain unbinding? I’m not lazy or proud.”
+thig5.10:2.4 | S: why then do I not achieve quenching? | T: (none)
+thig5.10:3.1 | S: Having washed my feet, | T: Washing my feet,
+thig5.10:3.2 | S: I took note of the water, | T: I noticed the water.
+thig5.10:3.3 | S: seeing the foot-washing water | T: And in watching it flow from high to low,
+thig5.10:3.4 | S: flowing from high ground to low. | T: (none)
+thig5.10:4.1 | S: My mind became serene, | T: my heart was composed
+thig5.10:4.2 | S: like a fine thoroughbred steed. | T: like a fine thoroughbred steed.
+thig5.10:4.3 | S: Then, taking a lamp, | T: Then taking a lamp,
+thig5.10:4.4 | S: I entered my dwelling, | T: I entered the hut,
+thig5.10:4.5 | S: inspected the bed, | T: checked the bedding,
+thig5.10:4.6 | S: and sat on my cot. | T: sat down on the bed.
+thig5.10:5.1 | S: Then, grabbing the pin, | T: And taking a pin,
+thig5.10:5.2 | S: I drew out the wick. | T: I pulled out the wick:
+thig5.10:5.3 | S: The liberation of my heart | T: Like the flame’s unbinding was the liberation of awareness.
+thig5.10:5.4 | S: was like the quenching of the lamp. | T: (none)
+thig5.10:6.1 | P: … Paṭācārā therī …. | T: (none)
+
+## ud6.6
+ud6.6:1.1 | S: So I have heard. | T: I have heard that
+ud6.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud6.6:1.3 | S: Now at that time several ascetics, brahmins, and wanderers who followed various other religions were residing in Sāvatthī, holding different views, beliefs, and opinions, relying on different views. | T: And on that occasion there were many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views.
+ud6.6:2.1 | S: There were some ascetics and brahmins who had this doctrine and view: | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.6:2.2 | S: “The self and the cosmos are eternal. This is the only truth, anything else is futile.” | T: “The self & the cosmos are eternal. Only this is true; anything otherwise is worthless.”
+ud6.6:3.1 | S: Others held views such as the following, each regarding their own view as true and others as silly. | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.6:3.2 | S: “The self and the cosmos are not eternal.” | T: “The self & the cosmos are not eternal” …
+ud6.6:4.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:4.2 | S: “The self and the cosmos are both eternal and not eternal.” | T: “The self & the cosmos are both eternal and not eternal” …
+ud6.6:5.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:5.2 | S: “The self and the cosmos are neither eternal nor not eternal.” | T: “The self & the cosmos are neither eternal nor not eternal” …
+ud6.6:6.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:6.2 | S: “The self and the cosmos are made by oneself.” | T: “The self & the cosmos are self-made” …
+ud6.6:7.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:7.2 | S: “The self and the cosmos are made by another.” | T: “The self & the cosmos are other-made” …
+ud6.6:8.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:8.2 | S: “The self and the cosmos are made by both oneself and another.” | T: “The self & the cosmos are both self-made & other-made” …
+ud6.6:9.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:9.2 | S: “The self and the cosmos have arisen anomalously, not made by oneself or another.” | T: “The self & the cosmos–without self-making, without other-making–are spontaneously arisen” …
+ud6.6:10.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:10.2 | S: “Pleasure and pain are eternal, and the self and the cosmos.” | T: (none)
+ud6.6:11.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:11.2 | S: “Pleasure and pain are not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:12.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:12.2 | S: “Pleasure and pain are both eternal and not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:13.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:13.2 | S: “Pleasure and pain are neither eternal nor not eternal, and the self and the cosmos.” | T: (none)
+ud6.6:14.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:14.2 | S: “Pleasure and pain are made by oneself, and the self and the cosmos.” | T: “Pleasure & pain, the self & the cosmos are self-made” …
+ud6.6:15.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:15.2 | S: “Pleasure and pain are made by another, and the self and the cosmos.” | T: “other-made” …
+ud6.6:16.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:16.2 | S: “Pleasure and pain are made by both oneself and another, and the self and the cosmos.” | T: “both self-made & other-made” …
+ud6.6:17.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:17.2 | S: “Pleasure and pain have arisen anomalously, not made by oneself or another, and the self and the cosmos.” | T: “Pleasure & pain, the self & the cosmos–without self-making, without other-making–are spontaneously arisen. Only this is true; anything otherwise is worthless.”
+ud6.6:18.1 | S: They were fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: And they kept on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:18.2 | S: “Such is Truth, such is not Truth! | T: “The Dhamma is like this, it’s not like that.
+ud6.6:18.3 | S: Such is not Truth, such is Truth!” | T: The Dhamma’s not like that, it’s like this.”
+ud6.6:19.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and–carrying their bowls & robes–went into Sāvatthī for alms.
+ud6.6:19.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud6.6:19.3 | P: Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: | T: As they were sitting there, they said to the Blessed One,
+ud6.6:20.1 | P: “Idha, bhante, sambahulā nānātitthiyasamaṇabrāhmaṇaparibbājakā sāvatthiyaṁ paṭivasanti nānādiṭṭhikā nānākhantikā nānārucikā nānādiṭṭhinissayanissitā. | T: “Lord, there are many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views….
+ud6.6:21.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.6:21.2 | P: ‘sassato attā ca loko ca, idameva saccaṁ moghamaññan’ti …pe… | T: (none)
+ud6.6:21.3 | P: te bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: And they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:21.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.6:21.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.6:22.1 | P: “Aññatitthiyā, bhikkhave, paribbājakā andhā acakkhukā. | T: “Monks, the wanderers of other sects are blind & eyeless.
+ud6.6:22.2 | P: Te atthaṁ na jānanti anatthaṁ na jānanti, dhammaṁ na jānanti adhammaṁ na jānanti. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma.
+ud6.6:22.3 | P: Te atthaṁ ajānantā anatthaṁ ajānantā, dhammaṁ ajānantā adhammaṁ ajānantā bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: Not knowing what is beneficial and what is harmful, not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.6:22.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.6:22.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.6:23.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.6:24.1 | S: “Folk are fixated on the I-maker, | T: People are intent on the idea of ‘I-making’ and attached to the idea of ‘other-making.’
+ud6.6:24.2 | S: which is tied up with the other-maker. | T: (none)
+ud6.6:24.3 | S: There are some who do not realize this, | T: Some don’t realize this,
+ud6.6:24.4 | S: they do not see the dart. | T: nor do they see it as an arrow.
+ud6.6:25.1 | S: But when they see this dart, | T: But to one who, having extracted this arrow, sees,
+ud6.6:25.2 | S: they do not think, ‘I make it’, | T: [the thought] ‘I am doing,’ doesn’t occur;
+ud6.6:25.3 | S: nor ‘another makes it’. | T: ‘Another is doing,’ doesn’t occur.
+ud6.6:26.1 | S: These folk are caught up in conceit, | T: This human race is possessed by conceit
+ud6.6:26.2 | S: tied by conceit, shackled by conceit. | T: bound by conceit, tied down by conceit.
+ud6.6:26.3 | S: Vehemently defending their views, | T: Speaking hurtfully because of their views
+ud6.6:26.4 | S: they don’t escape transmigration.” | T: they don’t go beyond the wandering-on.
+ud6.6:26.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## thag16.1
+thag16.1:1.1 | S: “Those who we killed in the past, | T: The bandit chief: “Those who for the sake of sacrifice for the sake of wealth we have killed in the past,
+thag16.1:1.2 | S: whether for sacrifice or for wealth, | T: against their will
+thag16.1:1.3 | S: without exception were afraid; | T: (none)
+thag16.1:1.4 | S: they trembled and they squealed. | T: have trembled & babbled from fear.
+thag16.1:2.1 | S: But you’re not scared; | T: But you— you show no fear;
+thag16.1:2.2 | S: you look even calmer than before. | T: your complexion brightens.
+thag16.1:2.3 | S: Why don’t you cry out | T: Why don’t you lament
+thag16.1:2.4 | S: in such a terrifying situation?” | T: in the face of what’s greatly to be feared?”
+thag16.1:3.1 | S: “There isn’t any mental suffering | T: Ven. Adhimutta: “There are no painful mind-states,
+thag16.1:3.2 | S: for one without concern, village chief. | T: chieftain, in one without longing.
+thag16.1:3.3 | S: All fears are left behind | T: In one whose fetters are ended, all fears are overcome.
+thag16.1:3.4 | S: by one whose fetters have ended. | T: (none)
+thag16.1:4.1 | S: When the leash to existence is ended, | T: With the ending of [craving] the guide to becoming,
+thag16.1:4.2 | S: and the truth is seen as it is, | T: when phenomena are seen for what they are,
+thag16.1:4.3 | S: there is no fear of death; | T: then as in the laying down of a burden, there’s no fear in death.
+thag16.1:4.4 | S: it’s like laying down a burden. | T: (none)
+thag16.1:5.1 | S: I’ve lived the spiritual life well, | T: I’ve lived well the holy life,
+thag16.1:5.2 | S: and developed the path well, too. | T: well-developed the path.
+thag16.1:5.3 | S: I do not fear death; | T: Death holds no fear for me.
+thag16.1:5.4 | S: it’s like the passing of a disease. | T: It’s like the end of a disease.
+thag16.1:6.1 | S: I’ve lived the spiritual life well, | T: I’ve lived well the holy life,
+thag16.1:6.2 | S: and developed the path well, too. | T: well-developed the path,
+thag16.1:6.3 | S: I’ve seen that there’s nothing gratifying in existences, | T: seen states of becoming as devoid of allure,
+thag16.1:6.4 | S: like someone who has tasted poison, <j>then thrown it out. | T: like poison spit out after it’s drunk.
+thag16.1:7.1 | S: One who has gone beyond, without grasping, | T: One gone to the far shore without clinging,
+thag16.1:7.2 | S: they’ve completed the task <j>and are free of defilements. | T: effluent-free, his task completed,
+thag16.1:7.3 | S: They are content at the end of life, | T: welcomes the ending of life,
+thag16.1:7.4 | S: like someone released from execution. | T: as if freed from a place of execution.
+thag16.1:8.1 | S: Having realized the supreme Dhamma, | T: Having attained the supreme Rightness,
+thag16.1:8.2 | S: without needing anything in the whole world, | T: unconcerned with all the world,
+thag16.1:8.3 | S: one doesn’t grieve at death; | T: as if released from a burning house, he doesn’t sorrow at death.
+thag16.1:8.4 | S: for it’s like escaping from a burning house. | T: (none)
+thag16.1:9.1 | S: Whatever has come to pass, | T: Whatever’s compounded,
+thag16.1:9.2 | S: wherever life is obtained, | T: wherever a state of becoming’s obtained,
+thag16.1:9.3 | S: there is no Lord of all that: | T: all that has no one in charge:
+thag16.1:9.4 | S: so said the great seer. | T: So says the Great Seer.
+thag16.1:10.1 | S: Whoever understands this | T: Whoever discerns this,
+thag16.1:10.2 | S: as it was taught by the Buddha | T: as taught by the Awakened One,
+thag16.1:10.3 | S: doesn’t grab on to any new life, | T: would no more grasp hold of any state of becoming
+thag16.1:10.4 | S: like you wouldn’t grab a hot iron ball. | T: than he would a hot iron ball.
+thag16.1:11.1 | S: It doesn’t occur to me, ‘I existed in the past’; | T: I have no ‘I was,’
+thag16.1:11.2 | S: nor, ‘I will exist in the future’. | T: no ‘I will be.’
+thag16.1:11.3 | S: Conditions will vanish— | T: Fabrications will simply go out of existence.
+thag16.1:11.4 | S: why weep over that? | T: What’s to lament there in that?
+thag16.1:12.1 | S: Seeing truly | T: For one who sees, as it actually is,
+thag16.1:12.2 | S: the bare arising of phenomena, | T: the pure arising of phenomena, the pure seriality of fabrications,
+thag16.1:12.3 | S: and the bare process of conditions, | T: (none)
+thag16.1:12.4 | S: there is no fear, village chief. | T: there’s no fear.
+thag16.1:13.1 | S: The world is like grass and sticks: | T: When seeing the world, with discernment, as on a par with grass & twigs,
+thag16.1:13.2 | S: when this is seen with wisdom, | T: (none)
+thag16.1:13.3 | S: not finding any possessiveness, | T: finding no ‘mine-ness,’
+thag16.1:13.4 | S: you won’t grieve, thinking ‘I don’t have it’. | T: thinking, ‘There’s nothing of mine,’ he feels no sorrow.
+thag16.1:14.1 | S: I’m fed up with the body; | T: Dissatisfied with this carcass, I’m unconcerned with becoming.
+thag16.1:14.2 | S: I have no need for another life. | T: (none)
+thag16.1:14.3 | S: This body will be broken up, | T: This body will break up
+thag16.1:14.4 | S: and there won’t be another. | T: and there will not be another.
+thag16.1:15.1 | S: Do what you want | T: Do as you like with this carcass.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+thag16.1:15.2 | S: with my corpse. | T: (none)
+thag16.1:15.3 | S: I won’t be angry or attached | T: From that I will feel neither hatred nor love.”
+thag16.1:15.4 | S: on account of that.” | T: (none)
+thag16.1:16.1 | S: When they heard these words, | T: Hearing these awesome, hair-raising words,
+thag16.1:16.2 | S: so astonishing and hair-raising, | T: (none)
+thag16.1:16.3 | S: the young men laid down their swords | T: the young men threw down their weapons & said:
+thag16.1:16.4 | S: and spoke these words: | T: (none)
+thag16.1:17.1 | S: “What have you practiced, Venerable? | T: “What have you done, sir,
+thag16.1:17.2 | S: And who is your tutor? | T: or who have you taken as mentor?
+thag16.1:17.3 | S: Whose instructions do we follow | T: Because of whose teachings
+thag16.1:17.4 | S: to gain the sorrowless state?” | T: is this lack of sorrow acquired?”
+thag16.1:18.1 | S: “The knower of all, the seer of all: | T: Ven. Adhimutta: “The all-knowing, all-seeing
+thag16.1:18.2 | S: the victor is my tutor. | T: conqueror: He is my mentor.
+thag16.1:18.3 | S: He is a Teacher of great compassion, | T: Greatly compassionate teacher,
+thag16.1:18.4 | S: healer of the whole world. | T: all the world’s healer,
+thag16.1:19.1 | S: He taught this Dhamma, | T: this doctrine is his,
+thag16.1:19.2 | S: leading to ending, unsurpassed. | T: unexcelled, leading to ending.
+thag16.1:19.3 | S: Following his instructions, | T: Because of his teachings
+thag16.1:19.4 | S: you can gain the sorrowless state.” | T: is this lack of sorrow acquired.”
+thag16.1:20.1 | S: When the bandits heard the good words of the seer, | T: The bandits, hearing the good words of the seer,
+thag16.1:20.2 | S: they laid down their swords and weapons. | T: threw down their swords & their weapons.
+thag16.1:20.3 | S: Some refrained from their former deeds, | T: Some relinquished their life of crime,
+thag16.1:20.4 | S: while others chose the going-forth. | T: some chose the Going-forth.
+thag16.1:21.1 | S: Having gone forth in the teaching of the Holy One, | T: Having gone forth in the teachings of the One Well-Gone,
+thag16.1:21.2 | S: those astute ones developed <j>the awakening factors and the powers. | T: developing the strengths & factors for awakening, wise,
+thag16.1:21.3 | S: Elated, happy, their faculties complete, | T: happy, exultant in mind, their faculties ripened,
+thag16.1:21.4 | S: they realized the state of extinguishment, <j>the unconditioned. | T: they touched uncompounded unbinding.
+thag16.1:21.5 | P: … Adhimutto thero …. | T: (none)
+
+## an7.7
+an7.7:1.1 | S: Then Ugga the government chief minister went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then Ugga, the king’s chief minister, approached the Blessed One and, on arrival, having bowed down, sat to one side. As he was sitting there, he said to the Blessed One:
+an7.7:2.1 | S: “It’s incredible, sir, it’s amazing! | T: “It’s amazing, lord, & astounding,
+an7.7:2.2 | S: Migāra of Rohaṇa is so rich, so very wealthy.” | T: how prosperous Migāra Rohaṇeyya is, how great his treasures, how great his resources!”
+an7.7:2.3 | S: “But Ugga, how rich is he?” | T: [The Buddha:] “But what is his property, Ugga? What are his great treasures & great resources?”
+an7.7:2.4 | S: “He has a hundred thousand gold coins, not to mention the silver coins!” | T: “One hundred thousand pieces of gold, lord, to say nothing of his silver.”
+an7.7:2.5 | S: “Well, Ugga, that is wealth, I can’t deny it. | T: “That is treasure, Ugga. I don’t say that it’s not.
+an7.7:2.6 | S: But fire, water, rulers, thieves, and unloved heirs all take a share of that wealth. | T: And that treasure is open to fire, floods, kings, thieves, & hateful heirs.
+an7.7:2.7 | S: There are these seven kinds of wealth that they can’t take a share of. | T: But these seven treasures are not open to fire, flood, kings, thieves, or hateful heirs.
+an7.7:2.8 | S: What seven? | T: Which seven?
+an7.7:2.9 | S: The wealth of faith, ethics, conscience, prudence, learning, generosity, and wisdom. | T: The treasure of conviction, the treasure of virtue, the treasure of a sense of shame, the treasure of a sense of compunction, the treasure of listening, the treasure of generosity, the treasure of discernment.
+an7.7:2.10 | S: There are these seven kinds of wealth that fire, water, rulers, thieves, and unloved heirs can’t take a share of. | T: These, Ugga, are the seven treasures that are not open to fire, flood, kings, thieves, or hateful heirs.”
+an7.7:3.1 | S: Faith and ethical conduct are kinds of wealth, | T: The treasure of conviction, the treasure of virtue,
+an7.7:3.2 | S: as are conscience and prudence, | T: the treasure of a sense of shame & compunction,
+an7.7:3.3 | S: learning and generosity, | T: the treasure of listening, generosity,
+an7.7:3.4 | S: and wisdom is the seventh kind of wealth. | T: & discernment as the seventh treasure:
+an7.7:4.1 | S: When a woman or man | T: Whoever, man or woman, has these treasures,
+an7.7:4.2 | S: has these kinds of wealth, | T: (none)
+an7.7:4.3 | S: they’re really rich in the world, | T: has great treasure in the world
+an7.7:4.4 | S: invincible among gods and humans. | T: that no being, human or divine, can excel.
+an7.7:5.1 | S: So let the wise devote themselves | T: So conviction & virtue, faith & Dhamma-vision should be cultivated by the intelligent,
+an7.7:5.2 | S: to faith, ethical behavior, | T: (none)
+an7.7:5.3 | S: confidence, and insight into the teaching, | T: (none)
+an7.7:5.4 | S: remembering the instructions of the Buddhas.” | T: remembering the Buddhas’ instruction.
+an7.7:5.5 | P: Sattamaṁ. | T: (none)
+
+## iti26
+iti26:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti26:2.1 | S: “Mendicants, if sentient beings only knew, as I do, the fruit of giving and sharing, they would not eat without first giving, and the stain of stinginess would not occupy their minds. | T: “Monks, if beings knew, as I know, the results of giving & sharing, they would not eat without having given, nor would the stain of selfishness overcome their minds.
+iti26:2.2 | S: They would not eat without sharing even their last mouthful, their last morsel, so long as there was someone to receive it. | T: Even if it were their last bite, their last mouthful, they would not eat without having shared, if there were someone to receive their gift.
+iti26:2.3 | S: It is because sentient beings do not know, as I do, the fruit of giving and sharing, that they eat without first giving, and the stain of stinginess occupies their minds.” | T: But because beings do not know, as I know, the results of giving & sharing, they eat without having given. The stain of selfishness overcomes their minds.”
+iti26:2.4 | S: The Buddha spoke this matter. | T: (none)
+iti26:2.5 | S: On this it is said: | T: (none)
+iti26:3.1 | S: “If sentient beings only knew | T: If beings knew
+iti26:3.2 | S: how great is the fruit | T: what the Great Seer said,
+iti26:3.3 | S: of giving and sharing | T: how the result of sharing
+iti26:3.4 | S: as taught by the great seer! | T: has such great fruit,
+iti26:4.1 | S: Rid of the stain of stinginess, | T: then, subduing the stain of selfishness
+iti26:4.2 | S: with clear and confident heart, | T: with brightened awareness,
+iti26:4.3 | S: they would duly give to the noble ones, | T: they’d give in season to the noble ones,
+iti26:4.4 | S: where a gift is very fruitful. | T: where a gift bears great fruit.
+iti26:5.1 | S: Having given food in abundance | T: Having given food as an offering
+iti26:5.2 | S: to those worthy of a religious donation, | T: to those worthy of offerings, many donors,
+iti26:5.3 | S: after passing from the human realm, | T: when they pass away from here, the human state,
+iti26:5.4 | S: the givers go to heaven. | T: go to heaven.
+iti26:6.1 | S: And when they have arrived there in heaven, | T: They, having gone there to heaven,
+iti26:6.2 | S: they enjoy all the pleasures they desire. | T: rejoice, enjoying sensual pleasures.
+iti26:6.3 | S: The generous enjoy the | T: Unselfish, they
+iti26:6.4 | S: fruit of giving and sharing.” | T: partake of the result of sharing.
+iti26:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti26:7.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti88
+iti88:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti88:2.1 | S: “Mendicants, there are these three inner stains, inner foes, inner enemies, inner killers, and inner adversaries. | T: “Monks, there are these three inside stains, inside enemies, inside foes, inside murderers, inside adversaries.
+iti88:2.2 | S: What three? | T: Which three?
+iti88:2.3 | S: Greed, | T: Greed is an inside stain, inside enemy, inside foe, inside murderer, inside adversary.
+iti88:2.4 | S: hate, | T: Aversion is an inside stain.…
+iti88:2.5 | S: and delusion. | T: Delusion is an inside stain, inside enemy, inside foe, inside murderer, inside adversary.
+iti88:2.6 | S: These three are inner stains, inner foes, inner enemies, inner killers, and inner adversaries.” | T: These are the three inside stains, inside enemies, inside foes, inside murderers, inside adversaries.”
+iti88:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti88:2.8 | S: On this it is said: | T: (none)
+iti88:3.1 | S: “Greed creates harm; | T: Greed causes harm.
+iti88:3.2 | S: greed upsets the mind. | T: Greed provokes the mind.
+iti88:3.3 | S: That person doesn’t recognize | T: (none)
+iti88:3.4 | S: the danger that arises within. | T: People don’t realize it as a danger born from within.
+iti88:4.1 | S: A greedy person doesn’t know the good. | T: A person, when greedy, doesn’t know his own welfare;
+iti88:4.2 | S: A greedy person doesn’t see the truth. | T: when greedy, doesn’t see Dhamma.
+iti88:4.3 | S: When a person is beset by greed, | T: Overcome with greed,
+iti88:4.4 | S: only blind darkness is left. | T: he’s in the dark, blind.
+iti88:5.1 | S: Those who have given up greed, | T: But when one, abandoning greed,
+iti88:5.2 | S: don’t get greedy even when provoked. | T: feels no greed for what would merit greed,
+iti88:5.3 | S: Greed falls off them | T: greed gets shed from him–
+iti88:5.4 | S: like a drop from a lotus-leaf. | T: like a drop of water off a lotus leaf.
+iti88:6.1 | S: Hate creates harm; | T: Aversion causes harm.
+iti88:6.2 | S: hate upsets the mind. | T: Aversion provokes the mind.
+iti88:6.3 | S: That person doesn’t recognize | T: (none)
+iti88:6.4 | S: the danger that arises within. | T: People don’t realize it as a danger born from within.
+iti88:7.1 | S: A hateful person doesn’t know the good. | T: A person, when aversive, doesn’t know his own welfare;
+iti88:7.2 | S: A hateful person doesn’t see the truth. | T: when aversive, doesn’t see Dhamma.
+iti88:7.3 | S: When a person is beset by hate, | T: Overcome with aversion
+iti88:7.4 | S: only blind darkness is left. | T: he’s in the dark, blind.
+iti88:8.1 | S: Those who have given up hate, | T: But when one, abandoning aversion,
+iti88:8.2 | S: don’t get angry even when provoked. | T: feels no aversion for what would merit aversion,
+iti88:8.3 | S: Hate falls off them | T: aversion drops away from him–
+iti88:8.4 | S: like a ripe palmyra fruit from its stem. | T: like a palm leaf from its stem.
+iti88:9.1 | S: Delusion creates harm; | T: Delusion causes harm.
+iti88:9.2 | S: delusion upsets the mind. | T: Delusion provokes the mind.
+iti88:9.3 | S: That person doesn’t recognize | T: (none)
+iti88:9.4 | S: the danger that arises within. | T: People don’t realize it as a danger born from within.
+iti88:10.1 | S: A deluded person doesn’t know the good. | T: A person, when deluded, doesn’t know his own welfare;
+iti88:10.2 | S: A deluded person doesn’t see the truth. | T: when deluded, doesn’t see Dhamma.
+iti88:10.3 | S: When a person is beset by delusion, | T: Overcome with delusion
+iti88:10.4 | S: only blind darkness is left. | T: he’s in the dark, blind.
+iti88:11.1 | S: Those who have given up delusion, | T: But when one, abandoning delusion,
+iti88:11.2 | S: don’t get deluded even when provoked. | T: feels no delusion for what would merit delusion,
+iti88:11.3 | S: They banish all delusion, | T: he disperses all delusion–
+iti88:11.4 | S: as the rising sun the dark.” | T: as the rising of the sun, the dark.
+iti88:12.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti88:12.2 | P: Navamaṁ. | T: (none)
+
+## snp5.12
+snp5.12:1.1 | S: “Hearing of the hero <j>with no desire for sensual pleasures,” | T: Hearing, hero, of one with no desire for sensuality,
+snp5.12:1.2 | S: said Venerable Jatukaṇṇī, | T: (none)
+snp5.12:1.3 | S: “who has passed over the flood, I’ve come <j>with a question for that desireless one. | T: I’ve come to ask the one gone beyond the flood, sensuality-free:
+snp5.12:1.4 | S: Tell me the state of peace, O natural visionary. | T: Tell me the state of peace, Blessed One, Simultaneous Eye.
+snp5.12:1.5 | S: Tell me this, Blessed One, as it really is. | T: Tell me as it actually is.
+snp5.12:2.1 | S: For, having mastered sensual desires, <j>the Blessed One proceeds, | T: For the Blessed One lives having conquered sensuality,
+snp5.12:2.2 | S: as the blazing sun shines on the earth. | T: as the radiant sun, in its radiance, the earth.
+snp5.12:2.3 | S: May you of vast wisdom explain the teaching | T: Limited my discernment,
+snp5.12:2.4 | S: to me of little wisdom so that I may understand | T: O Deeply Discerning. Teach me to know the Dhamma,
+snp5.12:2.5 | S: the giving up of rebirth and old age here.” | T: the abandoning here of birth & aging.
+snp5.12:3.1 | S: “With desire for sensual pleasures dispelled,” | T: The Buddha: Subdue greed for sensuality,
+snp5.12:3.2 | S: replied the Buddha, | T: (none)
+snp5.12:3.3 | S: “seeing renunciation as sanctuary, | T: & see renunciation as rest.
+snp5.12:3.4 | S: don’t be taking up or putting down | T: Let there be nothing grasped or rejected by you.
+snp5.12:3.5 | S: anything at all. | T: (none)
+snp5.12:4.1 | S: What came before, let wither away, | T: Burn up what’s before,
+snp5.12:4.2 | S: and after, let there be nothing. | T: and have nothing for after.
+snp5.12:4.3 | S: If you don’t grasp at the middle, | T: If you don’t grasp at what’s in between,
+snp5.12:4.4 | S: you will live at peace. | T: you will go about, calm.
+snp5.12:5.1 | S: One rid of greed, brahmin, | T: One completely devoid of greed
+snp5.12:5.2 | S: for the whole realm of name and form, | T: for name-&-form, brahman,
+snp5.12:5.3 | S: has no defilements by which | T: has no effluents
+snp5.12:5.4 | S: they might fall under the sway of Death.” | T: by which he would go under Māra’s sway.
+snp5.12:5.5 | P: Jatukaṇṇimāṇavapucchā ekādasamā. | T: (none)
+
+## an8.51
+an8.51:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was staying near Kapilavatthu in the Banyan Park.
+an8.51:1.2 | S: Then Mahāpajāpati Gotamī went up to the Buddha, bowed, stood to one side, and said to him: | T: Then Mahāpajāpati Gotamī went to the Blessed One and, on arrival, having bowed to him, stood to one side. As she was standing there she said to him:
+an8.51:1.3 | S: “Sir, please let ladies gain the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: “It would be good, lord, if women might obtain the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:1.4 | S: “Enough, Gotamī. | T: “Enough, Gotamī.
+an8.51:1.5 | S: Don’t endorse the going forth for ladies from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: Don’t advocate women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:2.1 | S: For a second time … | T: A second time.…
+an8.51:2.2 | P: “sādhu, bhante, labheyya mātugāmo tathāgatappavedite dhammavinaye agārasmā anagāriyaṁ pabbajjan”ti. | T: (none)
+an8.51:2.3 | P: “Alaṁ, gotami. | T: (none)
+an8.51:2.4 | P: Mā te rucci mātugāmassa tathāgatappavedite dhammavinaye agārasmā anagāriyaṁ pabbajjā”ti. | T: (none)
+an8.51:3.1 | S: For a third time, Mahāpajāpati Gotamī said to the Buddha: | T: A third time she said to him:
+an8.51:3.2 | S: “Sir, please let ladies gain the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: “It would be good, lord, if women might obtain the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:3.3 | S: “Enough, Gotamī. | T: “Enough, Gotamī.
+an8.51:3.4 | S: Don’t endorse the going forth for ladies from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: Don’t advocate women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:4.1 | S: Then Mahāpajāpati Gotamī thought, “The Buddha does not permit ladies to go forth.” Miserable and sad, weeping, with a tearful face, she bowed, and respectfully circled the Buddha, keeping him on her right, before leaving. | T: So Mahāpajāpati Gotamī, (thinking,) “The Blessed One does not allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata”—sad & unhappy, crying, her face in tears—bowed to the Blessed One and left, keeping him to her right.
+an8.51:5.1 | S: When the Buddha had stayed in Kapilavatthu as long as he pleased, he set out for Vesālī. | T: The Blessed One, having stayed as long as he liked in Kapilavatthu, set out for Vesālī.
+an8.51:5.2 | S: Traveling stage by stage, he arrived at Vesālī, | T: After wandering in stages, he arrived at Vesālī.
+an8.51:5.3 | S: where he stayed at the Great Wood, in the hall with the peaked roof. | T: There he stayed near Vesālī at the Gabled Hall in the Great Forest.
+an8.51:5.4 | S: Then Mahāpajāpati Gotamī had her hair shaved, and dressed in ocher robes. Together with several Sakyan ladies she set out for Vesālī. | T: Then Mahāpajāpati Gotamī, having had her hair cut off, having donned ochre robes, set out for Vesālī together with a large number of Sakyan women.
+an8.51:5.5 | S: Traveling stage by stage, she arrived at Vesālī and went to the Great Wood, the hall with the peaked roof. | T: After wandering in stages, she arrived at Vesālī and went to the Gabled Hall in the Great Forest.
+an8.51:5.6 | S: Then Mahāpajāpati Gotamī stood crying outside the gate, her feet swollen, her limbs covered with dust, miserable and sad, with tearful face. | T: Then she stood there outside the porch, her feet swollen, her limbs covered with dust, sad & unhappy, crying, her face in tears.
+an8.51:6.1 | S: Venerable Ānanda saw her standing there, | T: Ven. Ānanda saw her standing there outside the porch, her feet swollen, her limbs covered with dust, sad & unhappy, crying, her face in tears, and so asked her,
+an8.51:6.2 | S: and said to her, | T: (none)
+an8.51:6.3 | S: “Gotamī, why do you stand crying outside the gate, your feet swollen, your limbs covered with dust, miserable and sad, with tearful face?” | T: “Why, Gotamī, why are you standing here outside the porch, your feet swollen, your limbs covered with dust, sad & unhappy, crying, your face in tears?”
+an8.51:6.4 | S: “Honorable Ānanda, it’s because the Buddha does not permit ladies to go forth in the teaching and training proclaimed by the Realized One.” | T: “Because, venerable sir, the Blessed One does not allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:6.5 | S: “Well then, Gotamī, wait here an hour while I ask the Buddha to grant the going forth for ladies.” | T: “In that case, Gotamī, stay right here while I ask the Blessed One to allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:7.1 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One:
+an8.51:7.2 | S: “Sir, Mahāpajāpati Gotamī is standing crying outside the gate, her feet swollen, her limbs covered with dust, miserable and sad, with tearful face. | T: “Lord, Mahāpajāpati Gotamī is standing outside the porch—her feet swollen, her limbs covered with dust, sad and unhappy, crying, her face in tears,
+an8.51:7.3 | S: She says that it’s because the Buddha does not permit ladies to go forth. | T: because the Blessed One does not allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.
+an8.51:7.4 | S: Sir, please let ladies gain the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: It would be good if women might obtain the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:7.5 | S: “Enough, Ānanda. | T: “Enough, Ānanda.
+an8.51:7.6 | S: Don’t endorse the going forth for ladies from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: Don’t advocate women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:8.1 | S: For a second time … | T: A second time.…
+an8.51:8.2 | S: For a third time, Ānanda said to the Buddha: | T: A third time, Ven. Ānanda said,
+an8.51:8.3 | S: “Sir, please let ladies gain the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: “… It would be good, lord, if women might obtain the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:8.4 | S: “Enough, Ānanda. | T: “Enough, Ānanda.
+an8.51:8.5 | S: Don’t endorse the going forth for ladies from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: Don’t advocate women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:9.1 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda,
+an8.51:9.2 | S: “The Buddha does not permit ladies to go forth. | T: “The Blessed One does not allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.
+an8.51:9.3 | S: Why don’t I try another approach?” | T: What if I were to find some other way to ask the Blessed One to allow women’s Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:9.4 | S: Then Venerable Ānanda said to the Buddha, | T: So he said to the Blessed One,
+an8.51:9.5 | S: “Sir, is a lady able to realize the fruits of stream-entry, once-return, non-return, and perfection once she has gone forth?” | T: “Lord, if a woman were to go forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata, would she be able to realize the fruit of stream-entry, once-returning, non-returning, or arahantship?”
+an8.51:9.6 | S: “She is able, Ānanda.” | T: “Yes, Ānanda, she would.…”
+an8.51:9.7 | S: “If a lady is able to realize the fruits of stream-entry, once-return, non-return, and perfection once she has gone forth. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.51:9.8 | S: Sir, Mahāpajāpati has been very helpful to the Buddha. As his aunt, she raised him, nurtured him, and gave him her milk. | T: “In that case, lord, Mahāpajāpati Gotamī has been of great service to the Blessed One. She was the Blessed One’s aunt, foster mother, nurse, giver of milk.
+an8.51:9.9 | S: When the Buddha’s birth mother passed away, she nurtured him at her own breast. | T: When the Blessed One’s mother passed away, she gave him milk.
+an8.51:9.10 | S: Sir, please let ladies gain the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One.” | T: It would be good if women might obtain the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata.”
+an8.51:10.1 | S: “Ānanda, if Mahāpajāpati Gotamī accepts these eight principles of respect, that will be her ordination. | T: “Ānanda, if Mahāpajāpati Gotamī accepts eight rules of respect [garu-dhamma], that will be her Acceptance [as a nun].
+an8.51:11.1 | S: A nun, even if she has been ordained for a hundred years, should bow down to a monk who was ordained that very day. She should rise up for him, greet him with cupped palms, and observe proper etiquette toward him. | T: [1] “A nun who has been fully accepted even for a century must bow down, rise up from her seat, salute with hands palm-to-palm over her heart, and perform forms of respect due to superiors to a monk even if he has been fully accepted on that very day.
+an8.51:11.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: This rule is to be honored, respected, revered, venerated, never to be transgressed as long as she lives.
+an8.51:12.1 | S: A nun should not commence the rainy season residence in a monastery without monks. | T: [2] “A nun must not spend the Rains in a residence where there is no monk (nearby).…
+an8.51:12.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:13.1 | S: Each fortnight the nuns should expect two things from the community of monks: | T: [3] “Every half-month a nun should expect two things from the Saṅgha of monks:
+an8.51:13.2 | S: the date of the sabbath, and visiting for advice. | T: (permission to) ask for the date of the uposatha and (permission to) approach for an exhortation.…
+an8.51:13.3 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:14.1 | S: After completing the rainy season residence the nuns should invite admonition from the communities of both monks and nuns in regard to anything that was | T: [4] “At the end of the Rains-residence, a nun should invite (accusations from) both Saṅghas [the Saṅgha of monks and the Saṅgha of nuns] on any of three grounds:
+an8.51:14.2 | S: seen, heard, or suspected. | T: what they have seen, what they have heard, what they have suspected.…
+an8.51:14.3 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: [5]
+an8.51:15.1 | S: A nun who has committed a grave offense should undergo penance in the communities of both monks and nuns for a fortnight. | T: “A nun who has broken any of the rules of respect must undergo penance for half a month under both Saṅghas.…
+an8.51:15.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:16.1 | S: A trainee nun who has trained in the six rules for two years should seek ordination from the communities of both monks and nuns. | T: [6] “Only after a female trainee has trained in the six precepts for two years can she request Acceptance from both Saṅghas.…
+an8.51:16.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:17.1 | S: A nun should not abuse or insult a monk in any way. | T: [7] “A monk must not in any way be insulted or reviled by a nun.…
+an8.51:17.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:18.1 | S: From this day forth it is forbidden for nuns to criticize monks, but it is not forbidden for monks to criticize nuns. | T: [8] “From this day forward, the admonition of a monk by a nun is forbidden, but the admonition of a nun by a monk is not forbidden.
+an8.51:18.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: This rule, too, is to be honored, respected, revered, venerated, never to be transgressed as long as she lives.
+an8.51:19.1 | S: If Mahāpajāpati Gotamī accepts these eight principles of respect, that will be her ordination.” | T: “If Mahāpajāpati Gotamī accepts these eight rules of respect, that will be her Acceptance.”
+an8.51:20.1 | S: Then Ānanda, having learned these eight principles of respect from the Buddha himself, went to Mahāpajāpati Gotamī and said: | T: Then Ven. Ānanda, having learned the eight rules of respect in the Blessed One’s presence, went to Mahāpajāpati Gotamī and, on arrival, said to her,
+an8.51:21.1 | S: “Gotamī, if you accept eight principles of respect, that will be your ordination. | T: “Gotamī, if you accept these eight rules of respect, that will be your Acceptance.
+an8.51:22.1 | S: A nun, even if she has been ordained for a hundred years, should bow down to a monk who was ordained that very day. She should rise up for him, greet him with cupped palms, and observe proper etiquette toward him. | T: (none)
+an8.51:22.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. … | T: (none)
+an8.51:23.1 | S: From this day forth it is forbidden for nuns to criticize monks, but it is not forbidden for monks to criticize nuns. | T: (none)
+an8.51:23.2 | S: This principle should be honored, respected, esteemed, and venerated, and not transgressed so long as life lasts. | T: (none)
+an8.51:23.3 | S: If you accept these eight principles of respect, that will be your ordination.” | T: [And he repeated the eight rules.]”
+an8.51:24.1 | S: “Ānanda, suppose there was a woman or man who was young, youthful, and fond of adornments, and had bathed their head. After getting a garland of lotuses, jasmine, or liana flowers, they would take them in both hands and place them on the crown of the head. | T: “Ven. Ānanda, just as if a young woman—or man—fond of ornamentation, with bathed head, having been given a garland of lotuses or jasmine or scented creepers, having accepted it in both hands, were to place it on her head,
+an8.51:24.2 | S: In the same way, sir, I accept these eight principles of respect as not to be transgressed so long as life lasts.” | T: in the same way I accept the eight rules of respect, never to transgress them as long as I live.”
+an8.51:25.1 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda returned to the Blessed One and, having bowed down, sat to one side. As he was sitting there he said,
+an8.51:25.2 | S: “Sir, Mahāpajāpati Gotamī has accepted the eight principles of respect as not to be transgressed so long as life lasts.” | T: “Venerable sir, Mahāpajāpati Gotamī has accepted the eight rules of respect, never to transgress them as long as she lives.”
+an8.51:26.1 | S: “Ānanda, if ladies had not gained the going forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One, the spiritual life would have lasted long. The true teaching would have remained for a thousand years. | T: “But, Ānanda, if women had not obtained the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata, the holy life would have lasted long, the true Dhamma would have lasted 1,000 years.
+an8.51:26.2 | S: But since they have gained the going forth, now the spiritual life will not last long. | T: But now that they have obtained the Going-forth from the home life into homelessness in the Dhamma & Vinaya made known by the Tathāgata, the holy life will not last long,
+an8.51:26.3 | S: The true teaching will remain only five hundred years. | T: the true Dhamma will last only 500 years.
+an8.51:27.1 | S: It’s like those families with many women and few men. They’re easy prey for bandits and grain-jar thieves. | T: “Just as a clan in which there are many women and few men is easily plundered by robbers and thieves,
+an8.51:27.2 | S: In the same way, the spiritual life does not last long in a teaching and training where ladies gain the going forth. | T: in the same way, in whatever Dhamma & Vinaya women obtain the Going-forth from home life into homelessness, the holy life does not last long.
+an8.51:28.1 | S: It’s like a field full of rice. Once the disease called ‘white bones’ attacks, it doesn’t last long. | T: “Just as, when the white blight falls on a field of ripening wheat, that field of wheat does not last long,
+an8.51:28.2 | S: In the same way, the spiritual life does not last long in a teaching and training where ladies gain the going forth. | T: in the same way, in whatever Dhamma & Vinaya women obtain the Going-forth from home life into homelessness, the holy life does not last long.
+an8.51:29.1 | S: It’s like a field full of sugarcane. Once the disease called ‘red rot’ attacks, it doesn’t last long. | T: “Just as, when the rust disease falls on a field of sugar cane, that field of sugar cane does not last long,
+an8.51:29.2 | S: In the same way, the spiritual life does not last long in a teaching and training where ladies gain the going forth. | T: in the same way, in whatever Dhamma & Vinaya women obtain the Going-forth from home life into homelessness, the holy life does not last long.
+an8.51:30.1 | S: As a man might build a dyke around a large lake as a precaution against the water overflowing, | T: “Just as a man might make an embankment in advance around a great reservoir to keep the waters from overflowing,
+an8.51:30.2 | S: in the same way as a precaution I’ve prescribed the eight principles of respect as not to be transgressed so long as life lasts.” | T: in the same way I have set forth in advance the eight rules of respect for nuns that they are not to transgress as long as they live.”
+an8.51:30.3 | P: Paṭhamaṁ. | T: (none)
+
+
+codex
+I found three repeated cases where a complete sentence sits one line too low. I’m leaving out combined lines and differences in phrasing or word order.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-014.findings.tmp <<'EOF'
+iti88:3.3 starts: People don’t realize it as a danger
+iti88:3.4 none
+iti88:6.3 starts: People don’t realize it as a danger
+iti88:6.4 none
+iti88:9.3 starts: People don’t realize it as a danger
+iti88:9.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+28,831
+6 lines reported.

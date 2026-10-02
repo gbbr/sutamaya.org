@@ -1,0 +1,350 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8d-bcf7-7252-a081-66ef702154df
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch, check for clear boundary shifts, and write only the findings to the specified file.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn46.34
+sn46.34:1.1 | S: “Mendicants, these seven awakening factors are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom. | T: “Bhikkhus, these seven factors of enlightenment are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.
+sn46.34:1.2 | S: What seven? | T: What seven?
+sn46.34:1.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness, bhikkhus, is a nonobstruction … The enlightenment factor of equanimity is a nonobstruction, a nonhindrance, a noncorruption of the mind; when developed and cultivated it leads to the realization of the fruit of true knowledge and liberation.
+sn46.34:1.4 | S: These seven awakening factors are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom.” | T: These seven factors of enlightenment are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.”
+sn46.34:1.5 | P: Catutthaṁ. | T: (none)
+
+## sn46.35
+sn46.35:1.1 | S: “Mendicants, when you apply the mind irrationally, sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt arise, and once arisen they increase and grow.” | T: “Bhikkhus, when one attends carelessly, unarisen sensual desire arises and arisen sensual desire increases and expands; unarisen ill will arises and arisen ill will increases and expands; unarisen sloth and torpor arise and arisen sloth and torpor increase and expand; unarisen restlessness and remorse arise and arisen restlessness and remorse increase and expand; unarisen doubt arises and arisen doubt increases and expands.
+sn46.35:1.2 | P: Pañcamaṁ. | T: (none)
+sn46.35:2.0 | P: Yonisomanasikārasutta | T: (none)
+sn46.35:2.1 | S: “Mendicants, when you apply the mind rationally, the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity arise, and once they’ve arisen, they’re fully developed.” | T: “Bhikkhus, when one attends carefully, the unarisen enlightenment factor of mindfulness arises and the arisen enlightenment factor of mindfulness goes to fulfilment by development … the unarisen enlightenment factor of equanimity arises and the arisen enlightenment factor of equanimity goes to fulfilment by development.”
+sn46.35:2.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn46.36
+sn46.36:1.1 | S: “Mendicants, when the seven awakening factors are developed and cultivated they lead to growth and progress. | T: “Bhikkhus, these seven factors of enlightenment, when developed and cultivated, lead to growth, to nondecline.
+sn46.36:1.2 | S: What seven? | T: What seven?
+sn46.36:1.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness … the enlightenment factor of equanimity.
+sn46.36:1.4 | S: When these seven awakening factors are developed and cultivated they lead to growth and progress.” | T: These seven factors of enlightenment, when developed and cultivated, lead to growth, to nondecline.”
+sn46.36:1.5 | P: Sattamaṁ. | T: (none)
+
+## sn46.37
+sn46.37:1.1 | S: “Mendicants, there are these five obstacles and hindrances, corruptions of the heart that weaken wisdom. | T: “Bhikkhus, there are these five obstructions, hindrances, corruptions of the mind, weakeners of wisdom.
+sn46.37:1.2 | S: What five? | T: What five?
+sn46.37:1.3 | S: Sensual desire, | T: Sensual desire is an obstruction, a hindrance, a corruption of the mind, a weakener of wisdom.
+sn46.37:1.4 | S: ill will, | T: Ill will is an obstruction …
+sn46.37:1.5 | S: dullness and drowsiness, | T: Sloth and torpor are an obstruction …
+sn46.37:1.6 | S: restlessness and remorse, | T: Restlessness and remorse are an obstruction …
+sn46.37:1.7 | S: and doubt. | T: Doubt is an obstruction … a weakener of wisdom.
+sn46.37:1.8 | S: These are the five obstacles and hindrances, corruptions of the heart that weaken wisdom. | T: These are the five obstructions, hindrances, corruptions of the mind, weakeners of wisdom.
+sn46.37:2.1 | S: There are these seven awakening factors that are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom. | T: “There are, bhikkhus, these seven factors of enlightenment, which are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.
+sn46.37:2.2 | S: What seven? | T: What seven?
+sn46.37:2.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness is a nonobstruction … The enlightenment factor of equanimity is a nonobstruction.…
+sn46.37:2.4 | S: These seven awakening factors are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom.” | T: These are the seven factors of enlightenment that are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.”
+
+## sn46.38
+sn46.38:1.1 | S: “Mendicants, sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed. | T: “When, bhikkhus, a noble disciple listens to the Dhamma with eager ears, attending to it as a matter of vital concern, directing his whole mind to it, on that occasion the five hindrances are not present in him; on that occasion the seven factors of enlightenment go to fulfilment by development.
+sn46.38:2.1 | S: What are the five hindrances that are absent? | T: “And what are the five hindrances that are not present on that occasion?
+sn46.38:2.2 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: The hindrance of sensual desire is not present on that occasion; the hindrance of ill will … the hindrance of sloth and torpor … the hindrance of restlessness and remorse … the hindrance of doubt is not present on that occasion.
+sn46.38:2.3 | S: These are the five hindrances that are absent. | T: These are the five hindrances that are not present on that occasion.
+sn46.38:3.1 | S: And what are the seven awakening factors that are fully developed? | T: “And what are the seven factors of enlightenment that go to fulfilment by development on that occasion?
+sn46.38:3.2 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness goes to fulfilment by development on that occasion…. The enlightenment factor of equanimity goes to fulfilment by development on that occasion.
+sn46.38:3.3 | S: These are the seven awakening factors that are fully developed. | T: These are the seven factors of enlightenment that go to fulfilment by development on that occasion.
+sn46.38:3.4 | S: Sometimes a noble disciple pays attention, applies the mind, concentrates wholeheartedly, and actively listens to the teaching. At such a time the five hindrances are absent, and the seven awakening factors are fully developed.” | T: “When, bhikkhus, a noble disciple listens to the Dhamma with eager ears, attending to it as a matter of vital concern, directing his whole mind to it, on that occasion these five hindrances are not present in him; on that occasion these seven factors of enlightenment go to fulfilment by development.”
+sn46.38:3.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn46.39
+sn46.39:1.1 | S: “Mendicants, there are large trees with tiny seeds and big bodies, which grow up and around other trees as parasites. The trees they engulf break apart, collapse, and fall. | T: “Bhikkhus, there are huge trees with tiny seeds and huge bodies, encirclers of other trees, and the trees which they encircle become bent, twisted, and split.
+sn46.39:1.2 | S: And what are those large trees with tiny seeds and big bodies? | T: And what are those huge trees with tiny seeds and huge bodies?
+sn46.39:1.3 | S: The peepal, banyan, wavy leaf fig, cluster fig, Moreton Bay fig, and white fig. | T: The assattha, the banyan, the pilakkha, the udumbara, the kacchaka, and the kapitthana:
+sn46.39:1.4 | S: These are the large trees with tiny seeds and big bodies, which grow up and around other trees as parasites. The trees they engulf break apart, collapse, and fall. | T: these are those huge trees with tiny seeds and huge bodies, encirclers of other trees, and the trees which they encircle become bent, twisted, and split.
+sn46.39:1.5 | S: In the same way, take a certain gentleman who has gone forth from the lay life to homelessness, abandoning sensual pleasures. But beset by sensual pleasures that are similar, or even worse, he breaks apart, collapses, and falls. | T: So too, bhikkhus, when some clansman here has left behind sensual pleasures and gone forth from the household life into homelessness, he becomes bent, twisted, and split because of those same sensual pleasures, or because of others worse than them.
+sn46.39:2.1 | S: There are these five obstacles and hindrances, parasites of the mind that weaken wisdom. | T: “These five, bhikkhus, are obstructions, hindrances, encirclers of the mind, weakeners of wisdom.
+sn46.39:2.2 | S: What five? | T: What five?
+sn46.39:2.3 | S: Sensual desire, | T: Sensual desire is an obstruction, a hindrance encircling the mind, a weakener of wisdom.
+sn46.39:2.4 | S: ill will, | T: Ill will …
+sn46.39:2.5 | S: dullness and drowsiness, | T: Sloth and torpor …
+sn46.39:2.6 | S: restlessness and remorse, | T: Restlessness and remorse …
+sn46.39:2.7 | S: and doubt. | T: Doubt is an obstruction … a weakener of wisdom.
+sn46.39:2.8 | S: These are the five obstacles and hindrances, parasites of the mind that weaken wisdom. | T: These are the five obstructions, hindrances, encirclers of the mind, weakeners of wisdom.
+sn46.39:3.1 | S: These seven awakening factors are not obstacles, hindrances, or parasites of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom. | T: “These seven factors of enlightenment, bhikkhus, are nonobstructions, nonhindrances, nonencirclers of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.
+sn46.39:3.2 | S: What seven? | T: What seven?
+sn46.39:3.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness is a nonobstruction … The enlightenment factor of equanimity is a nonobstruction.…
+sn46.39:3.4 | S: These seven awakening factors are not obstacles, hindrances, or parasites of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom.” | T: These seven factors of enlightenment are nonobstructions, nonhindrances, nonencirclers of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.”
+sn46.39:3.5 | P: Navamaṁ. | T: (none)
+
+## sn46.40
+sn46.40:1.1 | S: “Mendicants, these five hindrances are destroyers of sight, vision, and knowledge. They block wisdom, they’re on the side of distress, and they don’t lead to extinguishment. | T: “Bhikkhus, these five hindrances are makers of blindness, causing lack of vision, causing lack of knowledge, detrimental to wisdom, tending to vexation, leading away from Nibbāna.
+sn46.40:1.2 | S: What five? | T: What five?
+sn46.40:1.3 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: The hindrance of sensual desire is a maker of blindness … The hindrance of ill will … The hindrance of sloth and torpor … The hindrance of restlessness and remorse … The hindrance of doubt is a maker of blindness … leading away from Nibbāna.
+sn46.40:1.4 | P: Byāpādanīvaraṇaṁ, bhikkhave …pe… | T: (none)
+sn46.40:1.5 | P: thinamiddhanīvaraṇaṁ, bhikkhave …pe… | T: (none)
+sn46.40:1.6 | P: uddhaccakukkuccanīvaraṇaṁ, bhikkhave …pe… | T: (none)
+sn46.40:1.7 | P: vicikicchānīvaraṇaṁ, bhikkhave, andhakaraṇaṁ acakkhukaraṇaṁ aññāṇakaraṇaṁ paññānirodhikaṁ vighātapakkhiyaṁ anibbānasaṁvattanikaṁ. | T: (none)
+sn46.40:1.8 | S: These five hindrances are destroyers of sight, vision, and knowledge. They block wisdom, they’re on the side of distress, and they don’t lead to extinguishment. | T: These five hindrances are makers of blindness, causing lack of vision, causing lack of knowledge, detrimental to wisdom, tending to vexation, leading away from Nibbāna.
+sn46.40:2.1 | S: These seven awakening factors are creators of vision and knowledge. They grow wisdom, they’re on the side of solace, and they lead to extinguishment. | T: “These seven factors of enlightenment, bhikkhus, are makers of vision, makers of knowledge, promoting the growth of wisdom, free from vexation, leading towards Nibbāna.
+sn46.40:2.2 | S: What seven? | T: What seven?
+sn46.40:2.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness is a maker of vision … The enlightenment factor of equanimity is a maker of vision … leading towards Nibbāna.
+sn46.40:2.4 | S: These seven awakening factors are creators of vision and knowledge. They grow wisdom, they’re on the side of solace, and they lead to extinguishment.” | T: These seven factors of enlightenment are makers of vision, makers of knowledge, promoting the growth of wisdom, free from vexation, leading towards Nibbāna.”
+sn46.40:2.5 | P: Dasamaṁ. | T: (none)
+sn46.40:2.6 | P: Nīvaraṇavaggo catuttho. | T: (none)
+sn46.40:3.0 | P: Tassuddānaṁ | T: (none)
+sn46.40:3.1 | P: Dve kusalā kilesā ca, | T: (none)
+sn46.40:3.2 | P: Dve yoniso ca buddhi ca; | T: (none)
+sn46.40:3.3 | P: Āvaraṇā nīvaraṇā rukkhaṁ, | T: (none)
+sn46.40:3.4 | P: Nīvaraṇañca te dasāti. | T: (none)
+
+## sn46.41
+sn46.41:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn46.41:1.2 | S: “Mendicants, all the ascetics and brahmins in the past who have given up the three discriminations have done so by developing and cultivating the seven awakening factors. | T: “Bhikkhus, whatever ascetics or brahmins in the past abandoned the three discriminations, all did so because they had developed and cultivated the seven factors of enlightenment.
+sn46.41:1.3 | S: All the ascetics and brahmins in the future who will give up the three discriminations will do so by developing and cultivating the seven awakening factors. | T: Whatever ascetics or brahmins in the future will abandon the three discriminations, all will do so because they will have developed and cultivated the seven factors of enlightenment.
+sn46.41:1.4 | S: All the ascetics and brahmins in the present who are giving up the three discriminations do so by developing and cultivating the seven awakening factors. | T: Whatever ascetics or brahmins at present abandon the three discriminations, all do so because they have developed and cultivated the seven factors of enlightenment.
+sn46.41:1.5 | S: What seven? | T: What seven?
+sn46.41:1.6 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness … the enlightenment factor of equanimity.
+sn46.41:1.7 | S: All the ascetics and brahmins in the past … | T: Whatever ascetics or brahmins in the past …
+sn46.41:1.8 | S: future … | T: in the future …
+sn46.41:1.9 | S: and present who give up the three discriminations do so by developing and cultivating the seven awakening factors.” | T: at present abandon the three discriminations, all do so because they have developed and cultivated these seven factors of enlightenment.”
+sn46.41:1.10 | P: Paṭhamaṁ. | T: (none)
+
+## sn46.43
+sn46.43:1.1 | S: “Mendicants, I will teach you a path for crushing Māra’s army. | T: “Bhikkhus, I will teach you the path crushing the army of Mara.
+sn46.43:1.2 | S: Listen … | T: Listen to that….
+sn46.43:1.3 | S: And what is that path? | T: “And what, bhikkhus, is the path crushing the army of Mara?
+sn46.43:1.4 | P: Yadidaṁ— | T: (none)
+sn46.43:1.5 | S: It is the seven awakening factors. | T: It is the seven factors of enlightenment.
+sn46.43:1.6 | S: What seven? | T: What seven?
+sn46.43:1.7 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness … the enlightenment factor of equanimity.
+sn46.43:1.8 | S: This is the path for crushing Māra’s army.” | T: This is the path crushing the army of Mara.”
+sn46.43:1.9 | P: Tatiyaṁ. | T: (none)
+
+## sn46.44
+sn46.44:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain bhikkhu approached the Blessed One … and said to him:
+sn46.44:1.2 | S: “Sir, they speak of ‘a witless idiot’. | T: “Venerable sir, it is said, ‘an unwise dolt, an unwise dolt.’
+sn46.44:1.3 | S: How is a witless idiot defined?” | T: In what way, venerable sir, is one called ‘an unwise dolt’?”
+sn46.44:1.4 | S: “Mendicant, they’re called a witless idiot because they haven’t developed and cultivated the seven awakening factors. | T: “Bhikkhus, it is because one has not developed and cultivated the seven factors of enlightenment that one is called ‘an unwise dolt.’
+sn46.44:1.5 | S: What seven? | T: What seven?
+sn46.44:1.6 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness … the enlightenment factor of equanimity.
+sn46.44:1.7 | S: They’re called a witless idiot because they haven’t developed and cultivated these seven awakening factors.” | T: It is because one has not developed and cultivated these seven factors of enlightenment that one is called ‘an unwise dolt.’”
+sn46.44:1.8 | P: Catutthaṁ. | T: (none)
+
+## sn46.48
+sn46.48:1.1 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn46.48:1.2 | S: In the same way, for a mendicant good friendship is the forerunner and harbinger of the arising of the seven awakening factors. | T: So too, for a bhikkhu this is the forerunner and precursor of the arising of the seven factors of enlightenment, that is, good friendship.
+sn46.48:1.3 | S: A mendicant with good friends can expect to develop and cultivate the seven awakening factors. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the seven factors of enlightenment.
+sn46.48:1.4 | S: And how does a mendicant with good friends develop and cultivate the seven awakening factors? | T: “And how does a bhikkhu who has a good friend develop and cultivate the seven factors of enlightenment?
+sn46.48:1.5 | S: It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: Here, bhikkhus, a bhikkhu develops the enlightenment factor of mindfulness … he develops the enlightenment factor of equanimity,
+sn46.48:1.6 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn46.48:1.7 | S: That’s how a mendicant with good friends develops and cultivates the seven awakening factors.” | T: It is in this way that a bhikkhu who has a good friend develops and cultivates the seven factors of enlightenment.”
+sn46.48:1.8 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn46.49
+sn46.49:1.1 | S: “Taking into account interior factors, mendicants, I do not see a single one that gives rise to the seven awakening factors like rational application of mind. …” | T: “Bhikkhus, as to internal factors, I do not see any other factor that is so helpful for the arising of the seven factors of enlightenment as this: careful attention. When a bhikkhu is accomplished in careful attention, it is to be expected that he will develop and cultivate the seven factors of enlightenment.” The rest as in §13.
+sn46.49:1.2 | P: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—satta bojjhaṅge bhāvessati, satta bojjhaṅge bahulīkarissati. | T: (none)
+sn46.49:1.3 | P: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkaroti? | T: (none)
+sn46.49:1.4 | P: Idha, bhikkhave, bhikkhu satisambojjhaṅgaṁ bhāveti vivekanissitaṁ …pe… | T: (none)
+sn46.49:1.5 | P: upekkhāsambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. | T: (none)
+sn46.49:1.6 | P: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkarotī”ti. | T: (none)
+sn46.49:1.7 | P: Navamaṁ. | T: (none)
+
+## sn46.50
+sn46.50:1.1 | S: “Taking into account exterior factors, mendicants, I do not see a single one that gives rise to the seven awakening factors like good friendship. …” | T: “Bhikkhus, as to external factors, I do not see any other factor that is so helpful for the arising of the seven factors of enlightenment as this: good friendship. When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the seven factors of enlightenment.” The rest as in §12.
+sn46.50:1.2 | P: Kalyāṇamittassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—satta bojjhaṅge bhāvessati, satta bojjhaṅge bahulīkarissati. | T: (none)
+sn46.50:1.3 | P: Kathañca, bhikkhave, bhikkhu kalyāṇamitto satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkaroti? | T: (none)
+sn46.50:1.4 | P: Idha, bhikkhave, bhikkhu satisambojjhaṅgaṁ bhāveti vivekanissitaṁ …pe… | T: (none)
+sn46.50:1.5 | P: upekkhāsambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. | T: (none)
+sn46.50:1.6 | P: Evaṁ kho, bhikkhave, bhikkhu kalyāṇamitto satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkarotī”ti. | T: (none)
+sn46.50:1.7 | P: Dasamaṁ. | T: (none)
+sn46.50:1.8 | P: Cakkavattivaggo pañcamo. | T: (none)
+sn46.50:2.0 | P: Tassuddānaṁ | T: (none)
+sn46.50:2.1 | P: Vidhā cakkavatti māro, | T: (none)
+sn46.50:2.2 | P: duppañño paññavena ca; | T: (none)
+sn46.50:2.3 | P: Daliddo adaliddo ca, | T: (none)
+sn46.50:2.4 | P: ādiccaṅgena te dasāti. | T: (none)
+
+## sn46.53
+sn46.53:1.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then, in the morning, a number of bhikkhus dressed and, taking their bowls and robes, entered Savatthī for alms …
+sn46.53:1.2 | S: (The same as the previous discourse.) | T: as in §52 down to: …
+sn46.53:2.1 | S: “Mendicants, when wanderers of other religions say this, you should say to them: | T: The Blessed One said: “Bhikkhus, when wanderers of other sects speak thus, they should be asked:
+sn46.53:2.2 | S: ‘Reverends, which awakening factors should not be developed when the mind is sluggish? And which awakening factors should be developed at that time? | T: ‘Friends, when the mind becomes sluggish, which factors of enlightenment is it untimely to develop on that occasion, and which factors of enlightenment is it timely to develop on that occasion?
+sn46.53:2.3 | S: Which awakening factors should not be developed when the mind is restless? And which awakening factors should be developed at that time?’ | T: Then, friends, when the mind becomes excited, which factors of enlightenment is it untimely to develop on that occasion, and which factors of enlightenment is it timely to develop on that occasion?’
+sn46.53:2.4 | S: Questioned like this, the wanderers of other religions would be stumped, and, in addition, would get frustrated. | T: Being asked thus, those wanderers would not be able to reply and, further, they would meet with vexation.
+sn46.53:2.5 | S: Why is that? | T: For what reason?
+sn46.53:2.6 | S: Because they’re out of their element. | T: Because that would not be within their domain.
+sn46.53:3.1 | S: I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who could provide a satisfying answer to these questions except the Realized One or his disciple or someone who has heard it from them. | T: I do not see anyone, bhikkhus, in this world with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans, who could satisfy the mind with an answer to these questions except the Tathagata or a disciple of the Tathagata or one who has heard it from them.
+sn46.53:4.1 | S: When the mind is sluggish, it’s the wrong time to develop the awakening factors of tranquility, immersion, and equanimity. | T: i. The sluggish mind: untimely “On an occasion, bhikkhus, when the mind becomes sluggish, it is untimely to develop the enlightenment factor of tranquillity, the enlightenment factor of concentration, and the enlightenment factor of equanimity.
+sn46.53:4.2 | S: Why is that? | T: For what reason?
+sn46.53:4.3 | S: Because it’s hard to stimulate a sluggish mind with these things. | T: Because the mind is sluggish, bhikkhus, and it is difficult to arouse it with those things.
+sn46.53:5.1 | S: Suppose someone wanted to make a small fire flare up. | T: “Suppose, bhikkhus, a man wants to make a small fire flare up.
+sn46.53:5.2 | S: If they toss wet grass, cow-dung, and timber on it, spray it with water, and scatter dirt on it, | T: If he throws wet grass, wet cowdung, and wet timber into it, sprays it with water, and scatters soil over it,
+sn46.53:5.3 | S: could they make it flare up?” | T: would he be able to make that small fire flare up?”
+sn46.53:5.4 | S: “No, sir.” | T: “No, venerable sir.”
+sn46.53:6.1 | S: “In the same way, when the mind is sluggish, it’s the wrong time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “So too, bhikkhus, on an occasion when the mind becomes sluggish, it is untimely to develop the enlightenment factor of tranquillity, the enlightenment factor of concentration, and the enlightenment factor of equanimity.
+sn46.53:6.2 | S: Why is that? | T: For what reason?
+sn46.53:6.3 | S: Because it’s hard to stimulate a sluggish mind with these things. | T: Because the mind is sluggish, bhikkhus, and it is difficult to arouse it with those things.
+sn46.53:7.1 | S: When the mind is sluggish, it’s the right time to develop the awakening factors of investigation of principles, energy, and rapture. | T: ii. The sluggish mind: timely “On an occasion, bhikkhus, when the mind becomes sluggish, it is timely to develop the enlightenment factor of discrimination of states, the enlightenment factor of energy, and the enlightenment factor of rapture.
+sn46.53:7.2 | S: Why is that? | T: For what reason?
+sn46.53:7.3 | S: Because it’s easy to stimulate a sluggish mind with these things. | T: Because the mind is sluggish, bhikkhus, and it is easy to arouse it with those things.
+sn46.53:8.1 | S: Suppose someone wanted to make a small fire flare up. | T: “Suppose, bhikkhus, a man wants to make a small fire flare up.
+sn46.53:8.2 | S: If they toss dry grass, cow-dung, and timber on it, blow on it, and don’t scatter dirt on it, | T: If he throws dry grass, dry cowdung, and dry timber into it, blows on it, and does not scatter soil over it,
+sn46.53:8.3 | S: could they make it flare up?” | T: would he be able to make that small fire flare up?”
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn46.53:8.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn46.53:9.1 | S: “In the same way, when the mind is sluggish, it’s the right time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “So too, bhikkhus, on an occasion when the mind becomes sluggish, it is timely to develop the enlightenment factor of discrimination of states, the enlightenment factor of energy, and the enlightenment factor of rapture.
+sn46.53:9.2 | S: Why is that? | T: For what reason?
+sn46.53:9.3 | S: Because it’s easy to stimulate a sluggish mind with these things. | T: Because the mind is sluggish, bhikkhus, and it is easy to arouse it with those things.
+sn46.53:10.1 | S: When the mind is restless, it’s the wrong time to develop the awakening factors of investigation of principles, energy, and rapture. | T: iii. The excited mind: untimely “On an occasion, bhikkhus, when the mind becomes excited, it is untimely to develop the enlightenment factor of discrimination of states, the enlightenment factor of energy, and the enlightenment factor of rapture.
+sn46.53:10.2 | S: Why is that? | T: For what reason?
+sn46.53:10.3 | S: Because it’s hard to settle a restless mind with these things. | T: Because the mind is excited, bhikkhus, and it is difficult to calm it down with those things.
+sn46.53:11.1 | S: Suppose someone wanted to extinguish a great mass of fire. | T: “Suppose, bhikkhus, a man wants to extinguish a great bonfire.
+sn46.53:11.2 | S: If they toss dry grass, cow-dung, and timber on it, blow on it, and don’t scatter dirt on it, | T: If he throws dry grass, dry cowdung, and dry timber into it, blows on it, and does not scatter soil over it,
+sn46.53:11.3 | S: could they extinguish it?” | T: would he be able to extinguish that great bonfire?”
+sn46.53:11.4 | S: “No, sir.” | T: “No, venerable sir.”
+sn46.53:12.1 | S: “In the same way, when the mind is restless, it’s the wrong time to develop the awakening factors of investigation of principles, energy, and rapture. | T: “So too, bhikkhus, on an occasion when the mind becomes excited, it is untimely to develop the enlightenment factor of discrimination of states, the enlightenment factor of energy, and the enlightenment factor of rapture.
+sn46.53:12.2 | S: Why is that? | T: For what reason?
+sn46.53:12.3 | S: Because it’s hard to settle a restless mind with these things. | T: Because the mind is excited, bhikkhus, and it is difficult to calm it down with those things.
+sn46.53:13.1 | S: When the mind is restless, it’s the right time to develop the awakening factors of tranquility, immersion, and equanimity. | T: iv. The excited mind: timely “On an occasion, bhikkhus, when the mind becomes excited, it is timely to develop the enlightenment factor of tranquillity, the enlightenment factor of concentration, and the enlightenment factor of equanimity.
+sn46.53:13.2 | S: Why is that? | T: For what reason?
+sn46.53:13.3 | S: Because it’s easy to settle a restless mind with these things. | T: Because the mind is excited, bhikkhus, and it is easy to calm it down with those things.
+sn46.53:14.1 | S: Suppose someone wanted to extinguish a great mass of fire. | T: “Suppose, bhikkhus, a man wants to extinguish a great bonfire.
+sn46.53:14.2 | S: If they toss wet grass, cow-dung, and timber on it, spray it with water, and scatter dirt on it, | T: If he throws wet grass, wet cowdung, and wet timber into it, sprays it with water, and scatters soil over it,
+sn46.53:14.3 | S: could they extinguish it?” | T: would he be able to extinguish that great bonfire?”
+sn46.53:14.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn46.53:15.1 | S: “In the same way, when the mind is restless, it’s the right time to develop the awakening factors of tranquility, immersion, and equanimity. | T: “So too, bhikkhus, on an occasion when the mind becomes excited, it is timely to develop the enlightenment factor of tranquillity, the enlightenment factor of concentration, and the enlightenment factor of equanimity.
+sn46.53:15.2 | S: Why is that? | T: For what reason?
+sn46.53:15.3 | S: Because it’s easy to settle a restless mind with these things. | T: Because the mind is excited, bhikkhus, and it is easy to calm it down with those things.
+sn46.53:15.4 | S: But mindfulness is always useful, I say.” | T: “But mindfulness, bhikkhus, I say is always useful.”
+sn46.53:15.5 | P: Tatiyaṁ. | T: (none)
+
+## sn46.55
+sn46.55:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn46.55:1.2 | S: Then Saṅgārava the brahmin went up to the Buddha, and exchanged greetings with him. | T: Then the brahmin Saṅgarava approached the Blessed One and exchanged greetings with him.
+sn46.55:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to the Blessed One:
+sn46.55:2.1 | S: “What is the cause, Worthy Gotama, what is the reason why sometimes even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed? | T: “Master Gotama, what is the cause and reason why sometimes even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited?
+sn46.55:2.2 | S: And why is it that sometimes even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed?” | T: What is the cause and reason why sometimes those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited?”
+sn46.55:3.1 | S: “Brahmin, there’s a time when your heart is overcome and mired in sensual desire and you don’t truly understand the escape from sensual desire that has arisen. At that time you don’t truly know or see what is good for yourself, good for another, or good for both. Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: i. Why the hymns do not recur to the mind “Brahmin, when one dwells with a mind obsessed by sensual lust, overwhelmed by sensual lust, and one does not understand as it really is the escape from arisen sensual lust, on that occasion one neither knows nor sees as it really is one’s own good, or the good of others, or the good of both. Then even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:4.1 | S: Suppose there was a bowl of water that was mixed with dye such as red lac, turmeric, indigo, or rose madder. | T: “Suppose, brahmin, there is a bowl of water mixed with lac, turmeric, blue dye, or crimson dye.
+sn46.55:4.2 | S: Even a person with clear eyes checking their own reflection wouldn’t truly know it or see it. | T: If a man with good sight were to examine his own facial reflection in it, he would neither know nor see it as it really is.
+sn46.55:4.3 | S: In the same way, when your heart is overcome and mired in sensual desire … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: So too, brahmin, when one dwells with a mind obsessed by sensual lust … … on that occasion even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:5.1 | S: Furthermore, when your heart is overcome and mired in ill will … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: “Again, brahmin, when one dwells with a mind obsessed by ill will, overwhelmed by ill will, and one does not understand as it really is the escape from arisen ill will, on that occasion one neither knows nor sees as it really is one’s own good, or the good of others, or the good of both. Then even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:6.1 | S: Suppose there was a bowl of water that was heated by fire, boiling and bubbling. | T: “Suppose, brahmin, there is a bowl of water being heated over a fire, bubbling and boiling.
+sn46.55:6.2 | S: Even a person with clear eyes checking their own reflection wouldn’t truly know it or see it. | T: If a man with good sight were to examine his own facial reflection in it, he would neither know nor see it as it really is.
+sn46.55:6.3 | S: In the same way, when your heart is overcome and mired in ill will … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: So too, brahmin, when one dwells with a mind obsessed by ill will … on that occasion even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:7.1 | S: Furthermore, when your heart is overcome and mired in dullness and drowsiness … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: “Again, brahmin, when one dwells with a mind obsessed by sloth and torpor, overwhelmed by sloth and torpor, and one does not understand as it really is the escape from arisen sloth and torpor, on that occasion one neither knows nor sees as it really is one’s own good, or the good of others, or the good of both. Then even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:8.1 | S: Suppose there was a bowl of water enveloped with moss and aquatic plants. | T: “Suppose, brahmin, there is a bowl of water covered over with water plants and algae.
+sn46.55:8.2 | S: Even a person with clear eyes checking their own reflection wouldn’t truly know it or see it. | T: If a man with good sight were to examine his own facial reflection in it, he would neither know nor see it as it really is.
+sn46.55:8.3 | S: In the same way, when your heart is overcome and mired in dullness and drowsiness … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: So too, brahmin, when one dwells with a mind obsessed by sloth and torpor … on that occasion even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:9.1 | S: Furthermore, when your heart is overcome and mired in restlessness and remorse … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: “Again, brahmin, when one dwells with a mind obsessed by restlessness and remorse, overwhelmed by restlessness and remorse, and one does not understand as it really is the escape from arisen restlessness and remorse, on that occasion one neither knows nor sees as it really is one’s own good, or the good of others, or the good of both. Then even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:10.1 | S: Suppose there was a bowl of water stirred by the wind, quivering, swirling, and rippling. | T: “Suppose, brahmin, there is a bowl of water stirred by the wind, rippling, swirling, churned into wavelets.
+sn46.55:10.2 | S: Even a person with clear eyes checking their own reflection wouldn’t truly know it or see it. | T: If a man with good sight were to examine his own facial reflection in it, he would neither know nor see it as it really is.
+sn46.55:10.3 | S: In the same way, when your heart is overcome and mired in restlessness and remorse … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: So too, brahmin, when one dwells with a mind obsessed by restlessness and remorse … on that occasion even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:11.1 | S: Furthermore, when your heart is overcome and mired in doubt … Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: “Again, brahmin, when one dwells with a mind obsessed by doubt, overwhelmed by doubt, and one does not understand as it really is the escape from arisen doubt, on that occasion one neither knows nor sees as it really is one’s own good, or the good of others, or the good of both. Then even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:12.1 | S: Suppose there was a bowl of water that was cloudy, murky, and muddy, hidden in the darkness. | T: “Suppose, brahmin, there is a bowl of water that is turbid, unsettled, muddy, placed in the dark.
+sn46.55:12.2 | S: Even a person with clear eyes checking their own reflection wouldn’t truly know it or see it. | T: If a man with good sight were to examine his own facial reflection in it, he would neither know nor see it as it really is.
+sn46.55:12.3 | S: In the same way, there’s a time when your heart is overcome and mired in doubt and you don’t truly understand the escape from doubt that has arisen. At that time you don’t truly know or see what is good for yourself, good for another, or good for both. Even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: So too, brahmin, when one dwells with a mind obsessed by doubt … on that occasion even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:12.4 | S: This is the cause, brahmin, this is the reason why sometimes even hymns that are long-rehearsed don’t spring to mind, let alone those that are not rehearsed. | T: “This, brahmin, is the cause and reason why even those hymns that have been recited over a long period do not recur to the mind, let alone those that have not been recited.
+sn46.55:13.1 | S: There’s a time when your heart is not overcome and mired in sensual desire and you truly understand the escape from sensual desire that has arisen. At that time you truly know and see what is good for yourself, good for another, and good for both. Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: ii. Why the hymns recur to the mind “Brahmin, when one dwells with a mind that is not obsessed by sensual lust, not overwhelmed by sensual lust, and one understands as it really is the escape from arisen sensual lust, on that occasion one knows and sees as it really is one’s own good, and the good of others, and the good of both. Then even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:14.1 | S: Suppose there was a bowl of water that was not mixed with dye such as red lac, turmeric, indigo, or rose madder. | T: “Suppose, brahmin, there is a bowl of water not mixed with lac, turmeric, blue dye, or crimson dye.
+sn46.55:14.2 | S: A person with clear eyes checking their own reflection would truly know it and see it. | T: If a man with good sight were to examine his own facial reflection in it, he would know and see it as it really is.
+sn46.55:14.3 | S: In the same way, when your heart is not overcome and mired in sensual desire … Even hymns that are long-unpracticed spring to mind, let alone those that are practiced. | T: So too, brahmin, when one dwells with a mind that is not obsessed by sensual lust … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:15.1 | S: Furthermore, when your heart is not overcome and mired in ill will … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: “Again, brahmin, when one dwells with a mind that is not obsessed by ill will … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:16.1 | S: Suppose there is a bowl of water that is not heated by a fire, boiling and bubbling. | T: “Suppose, brahmin, there is a bowl of water not heated over a fire, not bubbling, not boiling.
+sn46.55:16.2 | S: A person with clear eyes checking their own reflection would truly know it and see it. | T: If a man with good sight were to examine his own facial reflection in it, he would know and see it as it really is.
+sn46.55:16.3 | S: In the same way, when your heart is not overcome and mired in ill will … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: So too, brahmin, when one dwells with a mind that is not obsessed by ill will … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:17.1 | S: Furthermore, when your heart is not overcome and mired in dullness and drowsiness … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: “Again, brahmin, when one dwells with a mind that is not obsessed by sloth and torpor … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:18.1 | S: Suppose there is a bowl of water that is not enveloped with moss and aquatic plants. | T: “Suppose, brahmin, there is a bowl of water not covered over with water plants and algae.
+sn46.55:18.2 | S: A person with clear eyes checking their own reflection would truly know it and see it. | T: If a man with good sight were to examine his own facial reflection in it, he would know and see it as it really is.
+sn46.55:18.3 | S: In the same way, when your heart is not overcome and mired in dullness and drowsiness … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: So too, brahmin, when one dwells with a mind that is not obsessed by sloth and torpor … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:19.1 | S: Furthermore, when your heart is not overcome and mired in restlessness and remorse … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: “Again, brahmin, when one dwells with a mind that is not obsessed by restlessness and remorse … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:20.1 | S: Suppose there is a bowl of water that is not stirred by the wind, quivering, swirling, and rippling. | T: “Suppose, brahmin, there is a bowl of water not stirred by the wind, without ripples, without swirls, not churned into wavelets.
+sn46.55:20.2 | S: A person with clear eyes checking their own reflection would truly know it and see it. | T: If a man with good sight were to examine his own facial reflection in it, he would know and see it as it really is.
+sn46.55:20.3 | S: In the same way, when your heart is not overcome and mired in restlessness and remorse … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: So too, brahmin, when one dwells with a mind that is not obsessed by restlessness and remorse … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:21.1 | S: Furthermore, when your heart is not overcome and mired in doubt … Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: “Again, brahmin, when one dwells with a mind that is not obsessed by doubt … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:22.1 | S: Suppose there was a bowl of water that was transparent, clear, and unclouded, brought into the light. | T: “Suppose, brahmin, there is a bowl of water that is clear, serene, limpid, set out in the light.
+sn46.55:22.2 | S: A person with clear eyes checking their own reflection would truly know it and see it. | T: If a man with good sight were to examine his own facial reflection in it, he would know and see it as it really is.
+sn46.55:22.3 | S: In the same way, there’s a time when your heart is not overcome and mired in doubt and you truly understand the escape from doubt that has arisen. At that time you truly know and see what is good for yourself, good for another, and good for both. Even hymns that are long-unrehearsed spring to mind, let alone those that are rehearsed. | T: So too, brahmin, when one dwells with a mind that is not obsessed by doubt … on that occasion even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:22.4 | S: This is the cause, brahmin, this is the reason why sometimes even hymns that are long-unrehearsed do spring to mind, let alone those that are rehearsed. | T: “This, brahmin, is the cause and reason why even those hymns that have not been recited over a long period recur to the mind, let alone those that have been recited.
+sn46.55:23.1 | S: These seven awakening factors are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom. | T: “These seven factors of enlightenment, brahmin, are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.
+sn46.55:23.2 | S: What seven? | T: What seven?
+sn46.55:23.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness is a nonobstruction … The enlightenment factor of equanimity is a nonobstruction.…
+sn46.55:23.4 | S: These seven awakening factors are not obstacles, hindrances, or corruptions of the mind. When developed and cultivated they lead to the realization of the fruit of knowledge and freedom.” | T: These seven factors of enlightenment are nonobstructions, nonhindrances, noncorruptions of the mind; when developed and cultivated they lead to the realization of the fruit of true knowledge and liberation.”
+sn46.55:24.1 | S: When he said this, Saṅgārava said to the Buddha, | T: When this was said, the brahmin Saṅgarava said to the Blessed One:
+sn46.55:24.2 | S: “Excellent, worthy Gotama! … | T: “Magnificent, Master Gotama!…
+sn46.55:24.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn46.55:24.4 | P: Pañcamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found seven clear boundary shifts: four hindrance list items, the equanimity item, and two separate sentences about developing the awakening factors.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-084.findings.tmp <<'EOF'
+sn46.40:1.4 starts: The hindrance of ill will …
+sn46.40:1.5 starts: The hindrance of sloth and torpor …
+sn46.40:1.6 starts: The hindrance of restlessness and remorse …
+sn46.40:1.7 starts: The hindrance of doubt is a maker
+sn46.48:1.6 starts: he develops the enlightenment factor of equanimity,
+sn46.49:1.2 starts: When a bhikkhu is accomplished in careful attention,
+sn46.50:1.2 starts: When a bhikkhu has a good friend,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+7 lines reported.
+tokens used
+21,799
+7 lines reported.

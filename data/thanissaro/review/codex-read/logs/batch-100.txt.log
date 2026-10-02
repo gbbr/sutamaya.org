@@ -1,0 +1,324 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9e-10c7-7cd1-a6d7-777be8c1ba32
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear cases of misplaced text.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.239
+sn35.239:1.1 | S: “Mendicants, when a mendicant has three qualities they’re full of joy and happiness in this very life, and they have laid the groundwork for ending the defilements. | T: “Endowed with three qualities, a monk dwells full of happiness & joy in the here & now, and has initiated a source for the ending of the effluents.
+sn35.239:1.2 | S: What three? | T: Which three?
+sn35.239:1.3 | S: They guard the sense doors, eat in moderation, and are committed to wakefulness. | T: He is one who guards the doors to his sense faculties, knows moderation in eating, & is devoted to wakefulness.
+sn35.239:2.1 | S: And how does a mendicant guard the sense doors? | T: “And how is a monk one who guard the doors to his sense faculties?
+sn35.239:2.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, doesn’t grasp at any theme or variations by which—
+sn35.239:2.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the eye. He achieves restraint with regard to the faculty of the eye.
+sn35.239:2.4 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear…
+sn35.239:2.5 | S: When they smell an odor with their nose … | T: “On smelling an aroma with the nose…
+sn35.239:2.6 | S: When they taste a flavor with their tongue … | T: “On tasting a flavor with the tongue…
+sn35.239:2.7 | S: When they feel a touch with their body … | T: “On touching a tactile sensation with the body…
+sn35.239:2.8 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, he doesn’t grasp at any theme or variations by which—
+sn35.239:2.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the intellect. He achieves restraint with regard to the faculty of the intellect.
+sn35.239:2.10 | S: Suppose a chariot stood harnessed to thoroughbreds at a level crossroads, with a goad ready. A deft horse trainer, a master charioteer, might mount the chariot, taking the reins in his right hand and goad in the left. He’d drive out and back wherever he wishes, whenever he wishes. | T: “Suppose there were a chariot on level ground at four crossroads, harnessed to thoroughbreds, waiting with whips lying ready, so that a dexterous driver, a trainer of tamable horses, might mount and—taking the reins with his left hand and the whip with his right—drive out & back, to whatever place & by whichever road he liked;
+sn35.239:2.11 | S: In the same way, a mendicant trains to protect, control, tame, and pacify these six senses. | T: in the same way, the monk trains for the protection of these six senses, for their restraint, for their taming, for their stilling.
+sn35.239:2.12 | S: That’s how a mendicant guards the sense doors. | T: “This is how a monk is one who guards the doors to his sense faculties.
+sn35.239:3.1 | S: And how does a mendicant eat in moderation? | T: “And how is a monk one who knows moderation in eating?
+sn35.239:3.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: There is the case where a monk, considering it appropriately, takes his food
+sn35.239:3.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: not playfully, nor for intoxication, nor for putting on bulk, nor for beautification, but simply for the survival & continuance of this body, for ending its afflictions, for the support of the holy life, thinking, ‘I will destroy old feelings [of hunger] & not create new feelings [from overeating]. Thus I will maintain myself, be blameless, & live in comfort.’
+sn35.239:3.4 | S: It’s like a person who puts ointment on a wound only so that it can heal; or who oils an axle only so that it can carry a load. | T: “Just as a person anoints a wound simply for its healing, or greases an axle simply for the sake of carrying a load,
+sn35.239:3.5 | S: In the same way, a mendicant reflects rationally on the food that they eat: | T: in the same way a monk, considering it appropriately, takes his food
+sn35.239:3.6 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: not playfully, nor for intoxication, nor for putting on bulk, nor for beautification, but simply for the survival & continuance of this body, for ending its afflictions, for the support of the holy life, thinking, ‘I will destroy old feelings [of hunger] & not create new feelings [from overeating]. Thus I will maintain myself, be blameless, & live in comfort.’
+sn35.239:3.7 | S: That’s how a mendicant eats in moderation. | T: “This is how a monk is one who knows moderation in eating.
+sn35.239:4.1 | S: And how is a mendicant committed to wakefulness? | T: “And how is a monk one who is devoted to wakefulness?
+sn35.239:4.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. | T: There is the case where a monk during the day, sitting & pacing back & forth, cleanses his mind of any qualities that would hold the mind in check.
+sn35.239:4.3 | S: In the first watch of the night, they continue to practice walking and sitting meditation. | T: During the first watch of the night [dusk to 10 p.m.], sitting & pacing back & forth, he cleanses his mind of any qualities that would hold the mind in check.
+sn35.239:4.4 | S: In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: During the second watch of the night [10 p.m. to 2 a.m.], reclining on his right side, he takes up the lion’s posture, one foot placed on top of the other, mindful, alert, with his mind set on getting up [either as soon as he awakens or at a particular time].
+sn35.239:4.5 | S: In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: During the last watch of the night [2 a.m. to dawn], sitting & pacing back & forth, he cleanses his mind of any qualities that would hold the mind in check.
+sn35.239:4.6 | S: This is how a mendicant is committed to wakefulness. | T: “This is how a monk is one who is devoted to wakefulness.
+sn35.239:4.7 | S: When a mendicant possesses these three qualities they’re full of joy and happiness in this very life, and they have laid the groundwork for ending the defilements.” | T: “Endowed with these three qualities, a monk dwells full of happiness & joy in the here & now, and has initiated a source for the ending of the effluents.”
+sn35.239:4.8 | P: Dutiyaṁ. | T: (none)
+
+## sn35.241
+sn35.241:1.1 | S: At one time the Buddha was staying near Kosambī on the bank of the Ganges River. | T: On one occasion the Blessed One was staying near Ajjheya on the bank of the river Ganges.
+sn35.241:1.2 | S: Seeing a large tree trunk being carried along by the current, | T: He saw a large log being carried along by the current of the river Ganges,
+sn35.241:1.3 | S: he addressed the mendicants, | T: and on seeing it said to the monks:
+sn35.241:1.4 | S: “Mendicants, do you see that large tree trunk being carried along by the current of the Ganges River?” | T: “Monks, do you see that large log being carried along by the current of the river Ganges?”
+sn35.241:1.5 | S: “Yes, sir.” | T: “Yes, lord.”
+sn35.241:1.6 | S: “Mendicants, assume that that tree trunk doesn’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And assume that it doesn’t get taken by humans or non-humans or caught up in a whirlpool, and that it doesn’t rot away. | T: “Monks, if that log doesn’t veer toward the near shore, doesn’t veer toward the far shore, doesn’t sink in the middle, doesn’t get washed up on high ground, doesn’t get snared by human beings, doesn’t get snared by non-human beings, doesn’t get snared in a whirlpool, and doesn’t become rotten inside,
+sn35.241:1.7 | S: In that case, that tree trunk will slant, slope, and incline toward the ocean. | T: it will tend to the ocean, tilt to the ocean, incline to the ocean.
+sn35.241:1.8 | S: Why is that? | T: Why is that?
+sn35.241:1.9 | S: Because the current of the Ganges River slants, slopes, and inclines toward the ocean. | T: Because the current of the river Ganges tends to the ocean, tilts to the ocean, inclines to the ocean.
+sn35.241:2.1 | S: In the same way, assume that you don’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And assume that you don’t get taken by humans or non-humans or caught up in a whirlpool, and that you don’t rot away. | T: “In the same way, monks, if you don’t veer toward the near shore, don’t veer toward the far shore,
+sn35.241:2.2 | P: na majjhe saṁsīdissatha, na thale ussīdissatha, na manussaggāho gahessati, na amanussaggāho gahessati, na āvaṭṭaggāho gahessati, na antopūtī bhavissatha; | T: don’t sink in the middle, don’t get washed up on high ground, don’t get snared by human beings, don’t get snared by non-human beings, don’t get snared in a whirlpool, and don’t become rotten inside,
+sn35.241:2.3 | S: In that case, you will slant, slope, and incline toward extinguishment. | T: you will tend to unbinding, tilt to unbinding, incline to unbinding.
+sn35.241:2.4 | S: Why is that? | T: Why is that?
+sn35.241:2.5 | S: Because right view slants, slopes, and inclines toward extinguishment.” | T: Because right view tends to unbinding, tilts to unbinding, inclines to unbinding.”
+sn35.241:2.6 | S: When he said this, one of the mendicants said to the Buddha: | T: When this was said, a certain monk addressed the Blessed One:
+sn35.241:2.7 | S: “But sir, what’s the near shore and what’s the far shore? What’s sinking in the middle? What’s getting stranded on high ground? What’s getting taken by humans or non-humans? What’s getting caught up in a whirlpool? And what’s rotting away?” | T: “What, lord, is the near shore? What is the far shore? What is sinking in the middle? What is being washed up on high ground? What is being snared by human beings? What is being snared by non-human beings? What is being snared by a whirlpool? What is becoming rotten inside?”
+sn35.241:3.1 | S: “‘The near shore’, mendicant, is a term for the six interior sense fields. | T: “‘The near shore,’ monks, stands for the six internal sense media.
+sn35.241:3.2 | S: ‘The far shore’ is a term for the six exterior sense fields. | T: ‘The far shore’ stands for the six external sense media.
+sn35.241:3.3 | S: ‘Sinking in the middle’ is a term for greed and relishing. | T: ‘Sinking in the middle’ stands for passion & delight.
+sn35.241:3.4 | S: ‘Stranded on high ground’ is a term for the conceit ‘I am’. | T: ‘Being washed up on high ground’ stands for the conceit, ‘I am.’
+sn35.241:4.1 | S: And what’s getting taken by humans? | T: “And what, monks, is being snared by human beings?
+sn35.241:4.2 | S: It’s when someone mixes closely with laypeople, sharing their joys and sorrows—happy when they’re happy and sad when they’re sad—and getting themselves involved in their business. | T: There is the case where a monk lives entangled with householders, delighting with them and sorrowing with them, happy when they are happy, pained when they are in pain, taking on their affairs as his own duty.
+sn35.241:4.3 | S: That’s called getting taken by humans. | T: This is called being snared by human beings.
+sn35.241:5.1 | S: And what’s getting taken by non-humans? | T: “And what, monks, is being snared by non-human beings?
+sn35.241:5.2 | S: It’s when someone leads the spiritual life wishing to be reborn in one of the orders of gods: ‘By this precept or observance or fervent austerity or spiritual practice, may I become one of the gods!’ | T: There is the case where a certain monk lives the holy life in hopes of a certain company of devas, (thinking,) ‘By means of this virtue or practice or austerity or holy life I will become one sort of deva or another.’
+sn35.241:5.3 | S: That’s called getting taken by non-humans. | T: This is called being snared by non-human beings.
+sn35.241:5.4 | S: ‘Caught up in a whirlpool’ is a term for the five kinds of sensual stimulation. | T: “‘Being snared by a whirlpool’ stands for the five strings of sensuality.
+sn35.241:6.1 | S: And what’s rotting away? | T: “ And what, monks, is becoming rotten inside?
+sn35.241:6.2 | S: It’s when some person is unethical, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved. | T: There is the case where a certain monk is unprincipled, evil, unclean and suspect in his undertakings, hidden in his actions, not a contemplative though claiming to be one, not leading the holy life though claiming to do so, inwardly rotten, oozing with desire, filthy by nature.
+sn35.241:6.3 | S: This is called ‘rotting away’.” | T: This is called becoming rotten inside.”
+sn35.241:7.1 | S: Now at that time Nanda the cowherd was sitting not far from the Buddha. | T: Now at that time Nanda the cowherd was standing not far from the Blessed One.
+sn35.241:7.2 | S: Then he said to the Buddha: | T: Then he said to the Blessed One,
+sn35.241:7.3 | S: “I won’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And I won’t get taken by humans or non-humans or caught up in a whirlpool, and I won’t rot away. | T: “Lord, I don’t veer toward the near shore, I don’t veer toward the far shore, I won’t sink in the middle, I won’t get washed up on high ground, I won’t get snared by human beings, I won’t get snared by non-human beings, I won’t get snared in a whirlpool, and I won’t become rotten inside.
+sn35.241:7.4 | S: Sir, may I receive the going forth, the ordination in the Buddha’s presence?” | T: It would be good, lord, if I could obtain the Going-forth, if I could obtain Acceptance [as a monk].
+sn35.241:7.5 | S: “Well then, Nanda, return the cows to their owners.” | T: “In that case, Nanda, lead the cows back to their owners.”
+sn35.241:7.6 | S: “Sir, the cows will go back by themselves, since they love their calves.” | T: “The cows will go back, lord, out of attachment for their calves.”
+sn35.241:7.7 | S: “Still, Nanda, you should return them to their owners.” | T: “Lead the cows back to their owners, Nanda.”
+sn35.241:7.8 | S: Then Nanda, after returning the cows to their owners, went up to the Buddha and said to him, | T: Then, having led the cows back to their owners, Nanda the cowherd went to the Blessed One and, on arrival, told him,
+sn35.241:7.9 | S: “Sir, I have delivered the cows to their owners. | T: “The cows, lord, have been led back to their owners.
+sn35.241:7.10 | S: May I receive the going forth, the ordination in the Buddha’s presence?” | T: Let me obtain the Going-forth in the Blessed One’s presence! Let me obtain Acceptance!”
+sn35.241:7.11 | S: And the cowherd Nanda received the going forth, the ordination in the Buddha’s presence. | T: So Nanda the cowherd obtained the Going-forth in the Blessed One’s presence, he obtained Acceptance.
+sn35.241:7.12 | S: Not long after his ordination, | T: And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now. He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+sn35.241:7.13 | S: Venerable Nanda became one of the perfected. | T: And thus Ven. Nanda became another one of the arahants.
+sn35.241:7.14 | P: Catutthaṁ. | T: (none)
+
+## sn35.243
+sn35.243:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: I have heard that on one occasion the Blessed One was staying among the Sakyans at Kapilavatthu in the Banyan Park.
+sn35.243:1.2 | S: Now at that time a new town hall had recently been constructed for the Sakyans of Kapilavatthu. It had not yet been occupied by an ascetic or brahmin or any human at all. | T: Now at that time a new reception hall had just been built by the Kapilavatthu Sakyans, and it had not yet been dwelled in by any contemplative, brahman, or anyone at all in human form.
+sn35.243:1.3 | S: Then the Sakyans of Kapilavatthu went up to the Buddha, bowed, sat down to one side, and said to him, | T: So the Kapilavatthu Sakyans went to the Blessed One and, on arrival, having bowed down, sat to one side. As they were sitting there they said to him,
+sn35.243:1.4 | S: “Sir, a new town hall has recently been constructed for the Sakyans of Kapilavatthu. It has not yet been occupied by an ascetic or brahmin or any human at all. | T: “Lord, a new reception hall has just been built by the Kapilavatthu Sakyans, and it has not yet been dwelled in by any contemplative, brahman, or anyone at all in human form.
+sn35.243:1.5 | S: May the Buddha be the first to use it, | T: May the Blessed One be the first to use it.
+sn35.243:1.6 | S: and only then will the Sakyans of Kapilavatthu use it. | T: When the Blessed One has used it first, the Kapilavatthu Sakyans will use it afterwards.
+sn35.243:1.7 | S: That would be for the lasting welfare and happiness of the Sakyans of Kapilavatthu.” | T: That will be for their long-term welfare & happiness.”
+sn35.243:1.8 | S: The Buddha consented with silence. | T: The Blessed One acquiesced with silence.
+sn35.243:2.1 | S: Knowing that the Buddha had consented, the Sakyans rose from their seats, bowed and respectfully circled the Buddha, keeping him on their right. Then they went to the new town hall, where they spread carpets all over, prepared seats, set up a water jar, and placed an oil lamp. Then they went back to the Buddha and told him of their preparations, saying, | T: Sensing his acquiescence, the Kapilavatthu Sakyans got up from their seats, bowed down to him, circumambulated him, and then went to the new reception hall. On arrival, they spread it all over with felt rugs, arranged seats, set out a water vessel, and raised an oil lamp. Then they went to the Blessed One and, on arrival, having bowed down, stood to one side. As they were standing there they said to him,
+sn35.243:2.2 | P: “sabbasantharisanthataṁ, bhante, santhāgāraṁ, āsanāni paññattāni, udakamaṇiko patiṭṭhāpito, telappadīpo āropito. | T: “Lord, the reception hall has been covered all over with felt rugs, seats have been arranged, a water vessel has been set out, and an oil lamp raised.
+sn35.243:2.3 | S: “Please, sir, come at your convenience.” | T: It is now time for the Blessed One to do as he sees fit.”
+sn35.243:2.4 | S: Then the Buddha robed up and, taking his bowl and robe, went to the new town hall together with the Saṅgha of mendicants. Having washed his feet, he entered the town hall and sat against the central column facing east. | T: So the Blessed One—adjusting his lower robe and taking his bowl & outer robe—went together with a Saṅgha of monks to the reception hall. On arrival he washed his feet, entered the hall, and sat with his back to the central post, facing east.
+sn35.243:2.5 | S: The Saṅgha of mendicants also washed their feet, entered the town hall, and sat against the west wall facing east, with the Buddha right in front of them. | T: The Saṅgha of monks washed their feet, entered the hall, and sat with their backs to the western wall, facing east, ranged around the Blessed One.
+sn35.243:2.6 | S: The Sakyans of Kapilavatthu also washed their feet, entered the town hall, and sat against the east wall facing west, with the Buddha right in front of them. | T: The Kapilavatthu Sakyans washed their feet, entered the hall, and sat with their backs to the eastern wall, facing west, ranged around the Blessed One.
+sn35.243:2.7 | S: The Buddha spent much of the night educating, encouraging, firing up, and inspiring the Sakyans with a Dhamma talk. Then he sent them off, saying, | T: Then the Blessed One—having spent most of the night instructing, urging, rousing, & encouraging the Kapilavatthu Sakyans with a Dhamma talk—dismissed them, saying,
+sn35.243:2.8 | S: “The night is getting late, Gotamas. | T: “The night is far past, Gotamas.
+sn35.243:2.9 | S: Please go at your convenience.” | T: Do what you now think it is time to do.”
+sn35.243:2.10 | S: “Yes, sir,” replied the Sakyans. They got up from their seat, bowed and respectfully circled the Buddha, keeping him on their right, before leaving. | T: Responding, “As you say, lord,” to the Blessed One, the Kapilavatthu Sakyans rose from their seats, bowed down to the Blessed One, and—circumambulating him, keeping him to their right—departed.
+sn35.243:3.1 | S: Then, not long after the Sakyans had left, the Buddha addressed Venerable Mahāmoggallāna, | T: Then not long after the Kapilavatthu Sakyans had left, the Blessed One addressed Ven. Mahā Moggallāna:
+sn35.243:3.2 | S: “Moggallāna, the Saṅgha of mendicants is rid of dullness and drowsiness. | T: “Moggallāna, the Saṅgha of monks is free of drowsiness.
+sn35.243:3.3 | S: Give them some Dhamma talk as you feel inspired. | T: Give them a Dhamma talk of your own devising.
+sn35.243:3.4 | S: My back is sore, | T: My back aches.
+sn35.243:3.5 | S: I’ll stretch it.” | T: I will rest it.”
+sn35.243:3.6 | S: “Yes, sir,” Mahāmoggallāna replied. | T: “As you say, lord, Ven. Mahā Moggallāna responded to him.
+sn35.243:3.7 | S: And then the Buddha spread out his outer robe folded in four and laid down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: Then the Blessed One, having arranged his outer robe folded in four, lay down on his right side in the lion’s sleeping posture, with one foot on top of the other, mindful & alert, having made a mental note to get up.
+sn35.243:3.8 | S: There Venerable Mahāmoggallāna addressed the mendicants: | T: Then Ven. Mahā Moggallāna addressed the monks,
+sn35.243:3.9 | S: “Reverends, mendicants!” | T: ”Friend monks!”
+sn35.243:3.10 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+sn35.243:3.11 | S: Venerable Mahāmoggallāna said this: | T: Ven. Mahā Moggallāna said,
+sn35.243:3.12 | S: “I will teach you the explanation of the festering and the not festering. | T: ”Friends, I will teach you a discourse on being soggy and a discourse on not being soggy.
+sn35.243:3.13 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay careful attention. I will speak.”
+sn35.243:3.14 | S: “Yes, reverend,” they replied. | T: “As you say, friend,” the monks responded to him.
+sn35.243:3.15 | S: Venerable Mahāmoggallāna said this: | T: Ven. Mahā Moggallāna said,
+sn35.243:4.1 | S: “And how is someone festering? | T: ”And how is one soggy?
+sn35.243:4.2 | S: Take a mendicant who sees a sight with their eyes. If it’s pleasant they hold on to it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: There is the case where a monk, when seeing a form via the eye, is, in the case of pleasing forms, committed to forms and, in the case of displeasing forms, afflicted by forms. He remains with body-mindfulness not present, and with limited awareness.
+sn35.243:4.3 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: And he does not discern, as it has come to be, the awareness-release & discernment-release where those evil, unskillful qualities that have arisen cease without trace.
+sn35.243:4.4 | S: They hear a sound … smell an odor … taste a flavor … feel a touch … | T: “When hearing a sound via the ear… “When smelling an aroma via the nose… “When tasting a flavor via the tongue… “When touching a tactile sensation via the body…
+sn35.243:4.5 | S: know an idea with their mind. If it’s pleasant they hold on to it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: “When cognizing an idea via the intellect, he is, in the case of pleasing ideas, committed to ideas and, in the case of displeasing ideas, afflicted by ideas. He remains with body-mindfulness not present, and with limited awareness.
+sn35.243:4.6 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: And he does not discern, as it has come to be, the awareness-release & discernment-release where those evil, unskillful qualities that have arisen cease without trace.
+sn35.243:4.7 | S: This is called a mendicant who is festering when it comes to sights known by the eye, | T: “This is called a monk who is soggy with forms cognizable via the eye,
+sn35.243:4.8 | S: sounds … smells … tastes … touches … | T: soggy with sounds cognizable via the ear, soggy with aromas cognizable via the nose, soggy with flavors cognizable via the tongue, soggy with tactile sensations cognizable via the body,
+sn35.243:4.9 | S: ideas known by the mind. | T: soggy with ideas cognizable via the intellect.
+sn35.243:4.10 | S: When a mendicant lives like this, if Māra comes at them through the eye he finds a vulnerability and gets an opportunity. | T: “When a monk dwells in this way, then if Māra comes to him via the eye, Māra gains entry, Māra gains a foothold.
+sn35.243:4.11 | S: If Māra comes at them through the ear … nose … tongue … body … | T: If Māra comes to him via the ear… nose… tongue… body…
+sn35.243:4.12 | S: mind he finds a vulnerability and gets an opportunity. | T: intellect, Māra gains entry, Māra gains a foothold.
+sn35.243:5.1 | S: Suppose there was a house made of reeds or straw that was dried up, withered, and decrepit. | T: Just as if there were a shack made of reeds or a shack made of grass—dry, desiccated, more than a year old—
+sn35.243:5.2 | S: If a person came to it with a burning grass torch from the east, | T: and if a man were to come to it from the east with a burning grass torch, fire would gain entry, fire would gain a foothold.
+sn35.243:5.3 | S: west, | T: If a man were to come to it from the west…
+sn35.243:5.4 | S: north, | T: north…
+sn35.243:5.5 | S: south, | T: south…
+sn35.243:5.6 | S: below, | T: from below…
+sn35.243:5.7 | S: above, | T: from above…
+sn35.243:5.8 | S: or from anywhere, the fire would find a vulnerability, it would get an opportunity. | T: From whatever direction the man would come to it with a burning grass torch, fire would gain entry, fire would gain a foothold.
+sn35.243:5.9 | S: In the same way, when a mendicant lives like this, if Māra comes at them through the eye he finds a vulnerability and gets an opportunity. | T: In the same way, when a monk dwells in this way, then if Māra comes to him via the eye, Māra gains entry, Māra gains a foothold.
+sn35.243:5.10 | S: If Māra comes at them through the ear … nose … tongue … body … | T: If Māra comes to him via the ear… nose… tongue… body…
+sn35.243:5.11 | S: mind he finds a vulnerability and gets an opportunity. | T: intellect, Māra gains entry, Māra gains a foothold.
+sn35.243:5.12 | S: When a mendicant lives like this, they’re mastered by sights, | T: “And when a monk dwells in this way, forms overpower him. He does not overpower forms.
+sn35.243:5.13 | S: sounds, | T: Sounds overpower him…
+sn35.243:5.14 | S: smells, | T: Aromas…
+sn35.243:5.15 | S: tastes, | T: Flavors…
+sn35.243:5.16 | S: touches, | T: Tactile sensations…
+sn35.243:5.17 | S: and ideas, they don’t master these things. | T: Ideas overpower him. He does not overpower ideas.
+sn35.243:5.18 | S: This is called a mendicant who has been mastered by sights, sounds, smells, tastes, touches, and ideas. They’re mastered, not a master. Bad, unskillful qualities have mastered them, which are corrupting, leading to future lives, hurtful, and resulting in suffering and future rebirth, old age, and death. | T: This is called a monk overpowered by forms, overpowered by sounds, overpowered by aromas, overpowered by flavors, overpowered by tactile sensations, overpowered by ideas—one overpowered who does not overpower. He is overpowered by evil, unskillful qualities that defile, that lead to further becoming, that are miserable, that result in suffering & stress, that tend toward future birth, aging, & death.
+sn35.243:5.19 | S: That’s how someone is festering. | T: “It’s in this way, friends, that one is soggy.
+sn35.243:6.1 | S: And how is someone not festering? | T: “And how is one not soggy?
+sn35.243:6.2 | S: Take a mendicant who sees a sight with their eyes. If it’s pleasant they don’t hold on to it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: There is the case where a monk, when seeing a form via the eye, is not, in the case of pleasing forms, committed to forms nor, in the case of displeasing forms, afflicted by forms. He remains with body-mindfulness present, and with immeasurable awareness.
+sn35.243:6.3 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: And he discerns, as it has come to be, the awareness-release & discernment-release where those evil, unskillful qualities that have arisen cease without trace.
+sn35.243:6.4 | S: They hear a sound … smell an odor … taste a flavor … feel a touch … | T: “When hearing a sound via the ear… “When smelling an aroma via the nose… “When tasting a flavor via the tongue… “When touching a tactile sensation via the body…
+sn35.243:6.5 | S: know an idea with their mind. If it’s pleasant they don’t hold on to it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: “When cognizing an idea via the intellect, he is not, in the case of pleasing ideas, committed to ideas nor, in the case of displeasing ideas, afflicted by ideas. He remains with body-mindfulness present, and with immeasurable awareness.
+sn35.243:6.6 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: And he discerns, as it has come to be, the awareness-release & discernment-release where those evil, unskillful qualities that have arisen cease without trace.
+sn35.243:6.7 | S: This is called a mendicant who is not festering when it comes to sights known by the eye, | T: “This is called a monk who is not soggy with forms cognizable via the eye,
+sn35.243:6.8 | S: sounds … smells … tastes … touches … ideas known by the mind. | T: not soggy with sounds cognizable via the ear, not soggy with aromas cognizable via the nose, not soggy with flavors cognizable via the tongue, not soggy with tactile sensations cognizable via the body, not soggy with ideas cognizable via the intellect.
+sn35.243:6.9 | S: When a mendicant lives like this, if Māra comes at them through the eye he doesn’t find a vulnerability or get an opportunity. | T: “When a monk dwells in this way, then if Māra comes to him via the eye, Māra gains no entry, Māra gains no foothold.
+sn35.243:6.10 | S: If Māra comes at them through the ear … nose … tongue … body … | T: If Māra comes to him via the ear… nose… tongue… body…
+sn35.243:6.11 | S: mind he doesn’t find a vulnerability or get an opportunity. | T: intellect, Māra gains no entry, Māra gains no foothold.
+sn35.243:7.1 | S: Suppose there was a bungalow or hall made of thick clay with its plaster still wet. | T: Just as if there were a peaked house or hall thickly plastered with fine clay,
+sn35.243:7.2 | S: If a person came to it with a burning grass torch from the east, | T: and if a man were to come to it from the east with a burning grass torch, fire would gain no entry, fire would gain no foothold.
+sn35.243:7.3 | S: west, | T: If a man were to come to it from the west…
+sn35.243:7.4 | S: north, | T: north…
+sn35.243:7.5 | S: south, | T: south…
+sn35.243:7.6 | S: below, | T: from below…
+sn35.243:7.7 | S: above, | T: from above…
+sn35.243:7.8 | S: or from anywhere, the fire wouldn’t find a vulnerability, it would get no opportunity. | T: From whatever direction the man would come to it with a burning grass torch, fire would gain no entry, fire would gain no foothold.
+sn35.243:7.9 | S: In the same way, when a mendicant lives like this, if Māra comes at them through the eye he doesn’t find a vulnerability or get an opportunity. | T: In the same way, when a monk dwells in this way, then if Māra comes to him via the eye, Māra gains no entry, Māra gains no foothold.
+sn35.243:7.10 | S: If Māra comes at them through the ear … nose … tongue … body … mind he doesn’t find a vulnerability or get an opportunity. | T: If Māra comes to him via the ear… nose… tongue… body… intellect, Māra gains no entry, Māra gains no foothold.
+sn35.243:7.11 | S: When a mendicant lives like this, they master sights, | T: “And when a monk dwells in this way, he overpowers forms. Forms do not overpower him.
+sn35.243:7.12 | S: sounds, | T: He overpowers sounds…
+sn35.243:7.13 | S: smells, | T: aromas…
+sn35.243:7.14 | S: tastes, | T: flavors…
+sn35.243:7.15 | S: touches, | T: tactile sensations…
+sn35.243:7.16 | S: and ideas, they’re not mastered by these things. | T: ideas. Ideas do not overpower him.
+sn35.243:7.17 | S: This is called a mendicant who has mastered sights, sounds, smells, tastes, touches, and ideas. They’re a master, not mastered. Bad, unskillful qualities have been mastered by them, which are corrupting, leading to future lives, hurtful, and resulting in suffering and future rebirth, old age, and death. | T: This is called a monk who overpowers forms, overpowers sounds, overpowers aromas, overpowers flavors, overpowers tactile sensations, overpowers ideas—one who overpowers and is not overpowered. He overpowers evil, unskillful qualities that defile, that lead to further becoming, that are miserable, that result in suffering & stress, that tend toward future birth, aging, & death.
+sn35.243:7.18 | S: That’s how someone is not festering.” | T: “It’s in this way, friends, that one is not soggy.”
+sn35.243:8.1 | S: Then the Buddha got up and said to Venerable Mahāmoggallāna: | T: Then the Blessed One got up and said to Ven. Mahā Moggallāna,
+sn35.243:8.2 | S: “Good, good, Moggallāna! | T: “Good, good, Moggallāna.
+sn35.243:8.3 | S: It’s good that you’ve taught this explanation of the festering and the not festering.” | T: What you have said to the monks about the discourse on being soggy and the discourse on not being soggy is good.”
+sn35.243:9.1 | S: That is what Venerable Mahāmoggallāna said, | T: That is what Ven. Mahā Moggallāna said,
+sn35.243:9.2 | S: and the Teacher concurred. | T: and the Teacher approved.
+sn35.243:9.3 | S: Satisfied, the mendicants approved what Mahāmoggallāna said. | T: Gratified, the monks delighted in Ven. Mahā Moggallāna’s words.
+sn35.243:9.4 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.247
+sn35.247:1.1 | S: “Mendicants, suppose a person with wounded and festering limbs was to enter a thicket of reeds. | T: “Suppose that a man, wounded and festering, were to go into a swampy jungle.
+sn35.247:1.2 | S: The kusa thorns would pierce their feet, and the reed leaves would scratch their limbs. | T: Its sharp-bladed grasses would pierce his feet; its thorns would scratch his festering sores.
+sn35.247:1.3 | S: And that would cause that person to experience even more pain and distress. | T: And so, from that cause, he would experience an even greater measure of pain and unhappiness.
+sn35.247:1.4 | S: In the same way, some mendicant goes to a village or a wilderness and gets scolded, | T: In the same way, there is the case where a certain monk, having gone to a village or to the wilderness, meets up with someone who upbraids him:
+sn35.247:1.5 | S: ‘This venerable, acting like this, behaving like this, is a filthy village thorn.’ | T: ‘This venerable one, acting in this way, undertaking practices in this way, is a thorn of impurity in this village.’
+sn35.247:1.6 | S: Understanding that they’re a thorn, they should understand restraint and lack of restraint. | T: Knowing this person to be a thorn, one should understand restraint and lack of restraint.
+sn35.247:2.1 | S: And how is someone unrestrained? | T: “And what is lack of restraint?
+sn35.247:2.2 | S: Take a mendicant who sees a sight with their eyes. If it’s pleasant they hold on to it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: There is the case where a monk, seeing a form with the eye, is set on pleasing forms, is repelled by unpleasing forms, and remains with body-mindfulness unestablished, with limited awareness.
+sn35.247:2.3 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: He doesn’t discern, as it has come to be, the awareness-release, the discernment-release, where any evil, unskillful mental qualities that have arisen utterly cease without remainder.
+sn35.247:2.4 | S: When they hear a sound with their ears … | T: “Hearing a sound with the ear…
+sn35.247:2.5 | S: When they smell an odor with their nose … | T: “Smelling an aroma with the nose…
+sn35.247:2.6 | S: When they taste a flavor with their tongue … | T: “Tasting a flavor with the tongue…
+sn35.247:2.7 | S: When they feel a touch with their body … | T: “Touching a tactile sensation with the body…
+sn35.247:2.8 | S: When they know an idea with their mind, if it’s pleasant they hold on to it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: “Cognizing an idea with the intellect, he is set on pleasing ideas, is repelled by unpleasing ideas, and remains with body-mindfulness unestablished, with limited awareness.
+sn35.247:2.9 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: He doesn’t discern, as it has come to be, the awareness-release, the discernment-release, where any evil, unskillful mental qualities that have arisen utterly cease without remainder.
+sn35.247:3.1 | S: Suppose a person was to catch six animals, with diverse territories and feeding grounds, and tie them up with a strong rope. | T: “Just as if a person, catching six animals of different ranges, of different habitats, were to bind them with a strong rope.
+sn35.247:3.2 | S: They’d catch a snake, | T: Catching a snake, he would bind it with a strong rope.
+sn35.247:3.3 | S: a dolphin, | T: Catching a crocodile…
+sn35.247:3.4 | S: a bird, | T: a bird…
+sn35.247:3.5 | S: a dog, | T: a dog…
+sn35.247:3.6 | S: a jackal, | T: a hyena…
+sn35.247:3.7 | S: and a monkey, | T: a monkey,
+sn35.247:3.8 | S: tie each up with a strong rope, then tie a knot in the middle and let them loose. | T: he would bind it with a strong rope. Binding them all with a strong rope, and tying a knot in the middle, he would set chase to them.
+sn35.247:3.9 | S: Then those six animals with different domains and ranges would each pull toward their own domain and range. | T: “Then those six animals, of different ranges, of different habitats, would each pull toward its own range & habitat.
+sn35.247:3.10 | S: The snake would pull one way, thinking ‘I’m going into a termite mound!’ The dolphin would pull another way, thinking ‘I’m going into the water!’ The bird would pull another way, thinking ‘I’m flying into the atmosphere!’ The dog would pull another way, thinking ‘I’m going into the village!’ The jackal would pull another way, thinking ‘I’m going into the charnel ground!’ The monkey would pull another way, thinking ‘I’m going into the jungle!’ | T: The snake would pull, thinking, ‘I’ll go into the anthill.’ The crocodile would pull, thinking, ‘I’ll go into the water.’ The bird would pull, thinking, ‘I’ll fly up into the air.’ The dog would pull, thinking, ‘I’ll go into the village.’ The hyena would pull, thinking, ‘I’ll go into the charnel ground.’ The monkey would pull, thinking, ‘I’ll go into the forest.’
+sn35.247:3.11 | S: When those six animals became exhausted and worn out, the strongest of them would get their way, and they’d all have to submit to their control. | T: And when these six animals became internally exhausted, they would submit, they would surrender, they would come under the sway of whichever among them was the strongest.
+sn35.247:3.12 | S: In the same way, when a mendicant has not developed or cultivated mindfulness of the body, their eye pulls toward pleasant sights, but is put off by unpleasant sights. Their ear … nose … tongue … body … | T: In the same way, in any monk whose mindfulness immersed in the body is undeveloped & unpursued, the eye pulls toward pleasing forms, while unpleasing forms are repellent. The ear pulls toward pleasing sounds… The nose pulls toward pleasing aromas… The tongue pulls toward pleasing flavors… The body pulls toward pleasing tactile sensations…
+sn35.247:3.13 | S: mind pulls toward pleasant ideas, but is put off by unpleasant ideas. | T: The intellect pulls toward pleasing ideas, while unpleasing ideas are repellent.
+sn35.247:3.14 | S: This is how someone is unrestrained. | T: This, monks, is lack of restraint.
+sn35.247:4.1 | S: And how is someone restrained? | T: “And what is restraint?
+sn35.247:4.2 | S: Take a mendicant who sees a sight with their eyes. If it’s pleasant they don’t hold on to it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: There is the case where a monk, seeing a form with the eye, is not set on pleasing forms, is not repelled by unpleasing forms, and remains with body-mindfulness established, with immeasurable awareness.
+sn35.247:4.3 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: He discerns, as it has come to be, the awareness-release, the discernment-release, where all evil, unskillful mental qualities that have arisen utterly cease without remainder.
+sn35.247:4.4 | S: They hear a sound … smell an odor … taste a flavor … feel a touch … | T: “Hearing a sound with the ear… “Smelling an aroma with the nose… “Tasting a flavor with the tongue… “Touching a tactile sensation with the body…
+sn35.247:4.5 | S: know an idea with their mind. If it’s pleasant they don’t hold on to it, and if it’s unpleasant they don’t dislike it. They live with mindfulness of the body established and a limitless heart. | T: “Cognizing an idea with the intellect, he is not set on pleasing ideas, is not repelled by unpleasing ideas, and remains with body-mindfulness established, with immeasurable awareness.
+sn35.247:4.6 | S: And they truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: He discerns, as it has come to be, the awareness-release, the discernment-release, where all evil, unskillful mental qualities that have arisen utterly cease without remainder.
+sn35.247:5.1 | S: Suppose a person was to catch six animals, with diverse territories and feeding grounds, and tie them up with a strong rope. | T: “Just as if a person, catching six animals of different ranges, of different habitats, were to bind them with a strong rope.
+sn35.247:5.2 | S: They’d catch a snake, | T: Catching a snake, he would bind it with a strong rope.
+sn35.247:5.3 | S: a dolphin, | T: Catching a crocodile…
+sn35.247:5.4 | S: a bird, | T: a bird…
+sn35.247:5.5 | S: a dog, | T: a dog…
+sn35.247:5.6 | S: a jackal, | T: a hyena…
+sn35.247:5.7 | S: and a monkey, | T: a monkey,
+sn35.247:5.8 | S: tie each up with a strong rope, then tether them to a strong post or pillar. | T: he would bind it with a strong rope. Binding them all with a strong rope, he would tether them to a strong post or stake.
+sn35.247:5.9 | S: Then those six animals with different domains and ranges would each pull toward their own domain and range. | T: “Then those six animals, of different ranges, of different habitats, would each pull toward its own range & habitat.
+sn35.247:5.10 | S: The snake would pull one way, thinking ‘I’m going into a termite mound!’ The dolphin would pull another way, thinking ‘I’m going into the water!’ The bird would pull another way, thinking ‘I’m flying into the atmosphere!’ The dog would pull another way, thinking ‘I’m going into the village!’ The jackal would pull another way, thinking ‘I’m going into the charnel ground!’ The monkey would pull another way, thinking ‘I’m going into the jungle!’ | T: The snake would pull, thinking, ‘I’ll go into the anthill.’ The crocodile would pull, thinking, ‘I’ll go into the water.’ The bird would pull, thinking, ‘I’ll fly up into the air.’ The dog would pull, thinking, ‘I’ll go into the village.’ The hyena would pull, thinking, ‘I’ll go into the charnel ground.’ The monkey would pull, thinking, ‘I’ll go into the forest.’
+sn35.247:5.11 | S: When those six animals became exhausted and worn out, they’d stand or sit or lie down right by that post or pillar. | T: And when these six animals became internally exhausted, they would stand, sit, or lie down right there next to the post or stake.
+sn35.247:5.12 | S: In the same way, when a mendicant has developed and cultivated mindfulness of the body, their eye doesn’t pull toward pleasant sights, and isn’t put off by unpleasant sights. Their ear … nose … tongue … body … | T: In the same way, in any monk whose mindfulness immersed in the body is developed & pursued, the eye doesn’t pull toward pleasing forms, and unpleasing forms are not repellent. The ear doesn’t pull toward pleasing sounds… The nose doesn’t pull toward pleasing aromas… The tongue doesn’t pull toward pleasing flavors… The body doesn’t pull toward pleasing tactile sensations…
+sn35.247:5.13 | S: mind doesn’t pull toward pleasant ideas, and isn’t put off by unpleasant ideas. | T: The intellect doesn’t pull toward pleasing ideas, and unpleasing ideas are not repellent.
+sn35.247:5.14 | S: This is how someone is restrained. | T: This, monks, is restraint.
+sn35.247:6.1 | S: ‘A strong post or pillar’ is a term for mindfulness of the body. | T: “The ‘strong post or stake’ is a synonym for mindfulness immersed in the body.
+sn35.247:6.2 | S: So you should train like this: | T: “Thus you should train yourselves:
+sn35.247:6.3 | S: ‘We will develop mindfulness of the body. We’ll cultivate it, make it our vehicle and our basis, keep it up, consolidate it, and properly implement it.’ | T: ‘We will develop mindfulness immersed in the body. We will pursue it, give it a means of transport, give it a grounding. We will steady it, consolidate it, and set about it properly.’
+sn35.247:6.4 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+sn35.247:6.5 | P: Dasamaṁ. | T: (none)
+
+## sn35.24
+sn35.24:1.1 | S: “Mendicants, I will teach you the principle for giving up the all. | T: “Monks, I will teach you the All as a phenomenon to be abandoned.
+sn35.24:1.2 | S: Listen … | T: Listen & pay close attention. I will speak.”
+sn35.24:1.3 | S: And what is the principle for giving up the all? | T: “As you say, lord,” the monks responded to him. The Blessed One said, “And which All is a phenomenon to be abandoned?
+sn35.24:1.4 | S: The eye should be given up. Sights should be given up. Eye consciousness should be given up. Eye contact should be given up. The painful, pleasant, or neutral feeling that arises dependent on eye contact should also be given up. | T: The eye is to be abandoned. Forms are to be abandoned. Eye-consciousness is to be abandoned. Eye-contact is to be abandoned. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is to be abandoned.
+sn35.24:1.5 | S: The ear … nose … | T: “The ear is to be abandoned. Sounds are to be abandoned… “The nose is to be abandoned. Aromas are to be abandoned…
+sn35.24:1.6 | S: tongue … | T: “The tongue is to be abandoned. Flavors are to be abandoned…
+sn35.24:1.7 | S: body … | T: “The body is to be abandoned. Tactile sensations are to be abandoned…
+sn35.24:1.8 | S: mind should be given up. Ideas should be given up. Mind consciousness should be given up. Mind contact should be given up. The painful, pleasant, or neutral feeling that arises dependent on mind contact should be given up. | T: “The intellect is to be abandoned. Ideas are to be abandoned. Intellect-consciousness is to be abandoned. Intellect-contact is to be abandoned. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is to be abandoned.
+sn35.24:1.9 | S: This is the principle for giving up the all.” | T: “This is called the All as a phenomenon to be abandoned.”
+sn35.24:1.10 | P: Dutiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-100.findings.tmp <<'EOF'
+sn35.24:1.3 starts: “And which All is a phenomenon to be
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+1 line reported.
+tokens used
+22,512
+1 line reported.

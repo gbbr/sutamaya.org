@@ -1,0 +1,435 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fda2-8251-75d2-93a9-9233d1b71644
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, check for clear boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn47.4
+sn47.4:1.1 | S: At one time the Buddha was staying in the land of the Kosalans near the brahmin village of Sālā. | T: On one occasion the Blessed One was staying among the Kosalans near the brahman village called Sālā.
+sn47.4:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks, “Monks!” “Yes, lord,” the monks responded to the Blessed One. The Blessed One said,
+sn47.4:2.1 | S: “Mendicants, those mendicants who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in the four kinds of mindfulness meditation. | T: “Monks, the new monks—those who have not long gone forth, who are newcomers in this Dhamma & Vinaya—should be encouraged, exhorted, & established by you in the four establishings of mindfulness.
+sn47.4:2.2 | S: What four? | T: “Which four?
+sn47.4:2.3 | S: Please, reverends, meditate observing an aspect of the body—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know the body. | T: ‘Come, friends. Remain focused on the body in & of itself—being ardent, alert, unified, clear-minded, concentrated, & single-minded for knowledge of the body as it has come to be.
+sn47.4:2.4 | S: Meditate observing an aspect of feelings—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know feelings. | T: “‘Remain focused on feelings in & of themselves—being ardent, alert, unified, clear-minded, concentrated, & single-minded for knowledge of feelings as they have come to be.
+sn47.4:2.5 | S: Meditate observing an aspect of the mind—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know the mind. | T: “‘Remain focused on the mind in & of itself—being ardent, alert, unified, clear-minded, concentrated, & single-minded for knowledge of the mind as it has come to be.
+sn47.4:2.6 | S: Meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know principles. | T: “‘Remain focused on mental qualities in & of themselves—being ardent, alert, unified, clear-minded, concentrated, & single-minded for knowledge of mental qualities as they have come to be.’
+sn47.4:3.1 | S: Those mendicants who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand the body. | T: “Monks, even those who are in training,—who have not attained the heart’s goal but remain intent on the unsurpassed safety from bondage—even they remain focused on the body in & of itself—being ardent, alert, unified, clear-minded, concentrated, & single-minded for comprehension of the body.
+sn47.4:3.2 | S: They meditate observing an aspect of feelings—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand feelings. | T: They remain focused on feelings in & of themselves…
+sn47.4:3.3 | S: They meditate observing an aspect of the mind—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand the mind. | T: the mind in & of itself…
+sn47.4:3.4 | S: They meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand principles. | T: mental qualities in & of themselves—being ardent, alert, unified, clear-minded, concentrated, & single-minded for comprehension of mental qualities.
+sn47.4:4.1 | S: Those mendicants who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from the body. | T: “Monks, even those who are arahants—whose effluents are ended, who have reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and who are released through right gnosis—even they remain focused on the body in & of itself—being ardent, alert, unified, clear-minded, concentrated, & single-minded, disjoined from the body.
+sn47.4:4.2 | S: They meditate observing an aspect of feelings—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from feelings. | T: They remain focused on feelings in & of themselves…
+sn47.4:4.3 | S: They meditate observing an aspect of the mind—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from the mind. | T: the mind in & of itself…
+sn47.4:4.4 | S: They meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from principles. | T: mental qualities in & of themselves—being ardent, alert, unified, clear-minded, concentrated, & single-minded, disjoined from mental qualities.”
+sn47.4:5.1 | S: Those mendicants who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in these four kinds of mindfulness meditation.” | T: “Monks, the new monks, too—those who have not long gone forth, who are newcomers in this Dhamma & Vinaya—should be encouraged, exhorted, and established by you in these four establishings of mindfulness.”
+sn47.4:5.2 | P: Catutthaṁ. | T: (none)
+
+## sn47.6
+sn47.6:1.1 | S: “Once upon a time, mendicants, a hawk suddenly swooped down and grabbed a quail. | T: “Once a hawk suddenly swooped down on a quail and seized it.
+sn47.6:1.2 | S: And as the quail was being carried off he wailed, | T: Then the quail, as it was being carried off by the hawk, lamented,
+sn47.6:1.3 | S: ‘I’m so unlucky, of so little merit, to have roamed out of my territory into the domain of others. | T: ‘O, just my bad luck and lack of merit that I was wandering out of my proper range and into the territory of others!
+sn47.6:1.4 | S: If today I’d roamed within my own territory, the domain of my fathers, this hawk wouldn’t have stood a chance against me in a fight.’ | T: If only I had kept to my proper range today, to my own ancestral territory, this hawk would have been no match for me in battle.’
+sn47.6:1.5 | S: ‘So, quail, what is your own territory, the domain of your fathers?’ | T: “‘But what is your proper range?’ the hawk asked. ‘What is your own ancestral territory?’
+sn47.6:1.6 | S: ‘It’s a ploughed field covered with clods of earth.’ | T: “‘A newly plowed field with clumps of earth all turned up.’
+sn47.6:1.7 | S: Confident in her own strength, the hawk was not daunted or intimidated. She released the quail, saying, | T: “So the hawk, without bragging about its own strength, without mentioning its own strength, let go of the quail.
+sn47.6:1.8 | S: ‘Go now, quail. But even there you won’t escape me!’ | T: ‘Go, quail, but even when you have gone there you won’t escape me.’
+sn47.6:2.1 | S: Then the quail went to a ploughed field covered with clods of earth. He climbed up a big clod, and standing there, he said to the hawk: | T: “Then the quail, having gone to a newly plowed field with clumps of earth all turned up and climbing up on top of a large clump of earth, stood taunting the hawk,
+sn47.6:2.2 | S: ‘Come get me, hawk! Come get me, hawk!’ | T: ‘Now come and get me, you hawk! Now come and get me, you hawk!’
+sn47.6:2.3 | S: Confident in her own strength, the hawk was not daunted or intimidated. She folded her wings and suddenly swooped down on the quail. | T: “So the hawk, without bragging about its own strength, without mentioning its own strength, folded its two wings and suddenly swooped down toward the quail.
+sn47.6:2.4 | S: When the quail knew that the hawk was nearly there, he slipped under that clod. | T: When the quail knew, ‘The hawk is coming at me full speed,’ it slipped behind the clump of earth,
+sn47.6:2.5 | S: But the hawk crashed chest-first right there. | T: and right there the hawk shattered its own breast.
+sn47.6:2.6 | S: That’s what happens when you roam out of your territory into the domain of others. | T: “This is what happens to anyone who wanders into what is not his proper range and is the territory of others.
+sn47.6:3.1 | S: So, mendicants, don’t roam out of your own territory into the domain of others. | T: “For this reason, you should not wander into what is not your proper range and is the territory of others.
+sn47.6:3.2 | S: If you roam out of your own territory into the domain of others, Māra will find a vulnerability and get an opportunity. | T: In one who wanders into what is not his proper range and is the territory of others, Māra gains an opening, Māra gains a foothold.
+sn47.6:3.3 | S: And what is not a mendicant’s own territory but the domain of others? | T: And what, for a monk, is not his proper range and is the territory of others?
+sn47.6:3.4 | S: It’s the five kinds of sensual stimulation. | T: The five strings of sensuality.
+sn47.6:3.5 | S: What five? | T: Which five?
+sn47.6:3.6 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable by the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn47.6:3.7 | S: Sounds known by the ear … | T: Sounds cognizable by the ear…
+sn47.6:3.8 | S: Smells known by the nose … | T: Aromas cognizable by the nose…
+sn47.6:3.9 | S: Tastes known by the tongue … | T: Flavors cognizable by the tongue…
+sn47.6:3.10 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Tactile sensations cognizable by the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn47.6:3.11 | S: This is not a mendicant’s own territory but the domain of others. | T: These, for a monk, are not his proper range and are the territory of others.
+sn47.6:4.1 | S: You should roam inside your own territory, the domain of your fathers. | T: “Wander, monks, in what is your proper range, your own ancestral territory.
+sn47.6:4.2 | S: If you roam inside your own territory, the domain of your fathers, Māra won’t find a vulnerability or get an opportunity. | T: In one who wanders in what is his proper range, his own ancestral territory, Māra gains no opening, Māra gains no foothold.
+sn47.6:4.3 | S: And what is a mendicant’s own territory, the domain of the fathers? | T: And what, for a monk, is his proper range, his own ancestral territory?
+sn47.6:4.4 | P: Yadidaṁ— | T: (none)
+sn47.6:4.5 | S: It’s the four kinds of mindfulness meditation. | T: The four establishings of mindfulness.
+sn47.6:4.6 | S: What four? | T: Which four?
+sn47.6:4.7 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: There is the case where a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.6:4.8 | S: They meditate observing an aspect of feelings … | T: He remains focused on feelings in & of themselves…
+sn47.6:4.9 | S: mind … | T: mind in & of itself…
+sn47.6:4.10 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.6:4.11 | S: This is a mendicant’s own territory, the domain of the fathers.” | T: This, for a monk, is his proper range, his own ancestral territory.”
+sn47.6:4.12 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn47.7
+sn47.7:1.1 | S: “Mendicants, in the Himalayas there are regions that are rugged and impassable. In some such regions, neither monkeys nor humans can go, | T: “There are in the Himalayas, the king of mountains, difficult, uneven areas where neither monkeys nor human beings wander.
+sn47.7:1.2 | S: while in others, monkeys can go but not humans. | T: There are difficult, uneven areas where monkeys wander, but not human beings.
+sn47.7:1.3 | S: There are also level, pleasant places where both monkeys and humans can go. | T: There are level stretches of land, delightful, where both monkeys and human beings wander.
+sn47.7:1.4 | S: There hunters set snares of tar on the monkey trails to catch the monkeys. | T: In such spots hunters set a tar trap in the monkeys’ tracks, in order to catch some monkeys.
+sn47.7:2.1 | S: The monkeys who are not foolhardy and reckless see the tar and avoid it from afar. | T: Those monkeys who are not foolish or careless by nature, when they see the tar trap, will keep their distance.
+sn47.7:2.2 | S: But a foolish and reckless monkey goes up to the tar and grabs it with a hand. | T: But any monkey who is foolish & careless by nature comes up to the tar trap and grabs it with its paw,
+sn47.7:2.3 | S: He gets stuck there. | T: which then gets stuck there.
+sn47.7:2.4 | S: Thinking to free his hand, he grabs it with his other hand. | T: Thinking, ‘I’ll free my paw,’ he grabs it with his other paw.
+sn47.7:2.5 | S: He gets stuck there. | T: That too gets stuck.
+sn47.7:2.6 | S: Thinking to free both hands, he grabs it with a foot. | T: Thinking, ‘I’ll free both of my paws,’ he grabs it with his foot.
+sn47.7:2.7 | S: He gets stuck there. | T: That too gets stuck.
+sn47.7:2.8 | S: Thinking to free both hands and foot, he grabs it with his other foot. | T: Thinking, ‘I’ll free both of my paws and my foot,’ he grabs it with his other foot.
+sn47.7:2.9 | S: He gets stuck there. | T: That too gets stuck.
+sn47.7:2.10 | S: Thinking to free both hands and feet, he grabs it with his snout. | T: Thinking, ‘I’ll free both of my paws and my feet as well,’ he grabs it with his mouth.
+sn47.7:2.11 | S: He gets stuck there. | T: That too gets stuck.
+sn47.7:2.12 | S: And so the monkey, trapped at five points, just lies there screeching. He’d meet with tragedy and disaster, and the hunter can do what he wants with him. | T: So the monkey, snared in five ways, lies there whimpering, having fallen on misfortune, fallen on ruin, a prey to whatever the hunter wants to do with him.
+sn47.7:2.13 | S: The hunter spears him on that very banana tree, pries him off, and goes wherever he wants. | T: Then the hunter, without releasing the monkey, skewers him right there, picks him up, and goes off as he likes.
+sn47.7:2.14 | S: That’s what happens when you roam out of your territory into the domain of others. | T: “This is what happens to anyone who wanders into what is not his proper range and is the territory of others.
+sn47.7:3.1 | S: So, mendicants, don’t roam out of your own territory into the domain of others. | T: “For this reason, you should not wander into what is not your proper range and is the territory of others.
+sn47.7:3.2 | S: If you roam out of your own territory into the domain of others, Māra will find a vulnerability and get an opportunity. | T: In one who wanders into what is not his proper range and is the territory of others, Māra gains an opening, Māra gains a foothold.
+sn47.7:3.3 | S: And what is not a mendicant’s own territory but the domain of others? | T: And what, for a monk, is not his proper range and is the territory of others?
+sn47.7:3.4 | P: Yadidaṁ— | T: (none)
+sn47.7:3.5 | S: It’s the five kinds of sensual stimulation. | T: The five strings of sensuality.
+sn47.7:3.6 | S: What five? | T: Which five?
+sn47.7:3.7 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable by the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn47.7:3.8 | S: Sounds known by the ear … | T: Sounds cognizable by the ear…
+sn47.7:3.9 | S: Smells known by the nose … | T: Aromas cognizable by the nose…
+sn47.7:3.10 | S: Tastes known by the tongue … | T: Flavors cognizable by the tongue…
+sn47.7:3.11 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Tactile sensations cognizable by the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn47.7:3.12 | S: This is not a mendicant’s own territory but the domain of others. | T: These, for a monk, are not his proper range and are the territory of others.
+sn47.7:4.1 | S: You should roam inside your own territory, the domain of your fathers. | T: “Wander, monks, in what is your proper range, your own ancestral territory.
+sn47.7:4.2 | S: If you roam inside your own territory, the domain of your fathers, Māra won’t find a vulnerability and get an opportunity. | T: In one who wanders in what is his proper range, his own ancestral territory, Māra gains no opening, Māra gains no foothold.
+sn47.7:4.3 | S: And what is a mendicant’s own territory, the domain of the fathers? | T: And what, for a monk, is his proper range, his own ancestral territory?
+sn47.7:4.4 | P: Yadidaṁ— | T: (none)
+sn47.7:4.5 | S: It’s the four kinds of mindfulness meditation. | T: The four establishings of mindfulness.
+sn47.7:4.6 | S: What four? | T: Which four?
+sn47.7:4.7 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: There is the case where a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.7:4.8 | S: They meditate observing an aspect of feelings … | T: He remains focused on feelings in & of themselves…
+sn47.7:4.9 | S: mind … | T: mind in & of itself…
+sn47.7:4.10 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.7:4.11 | S: This is a mendicant’s own territory, the domain of the fathers.” | T: This, for a monk, is his proper range, his own ancestral territory.”
+sn47.7:4.12 | P: Sattamaṁ. | T: (none)
+
+## sn48.21
+sn48.21:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.21:1.2 | S: What five? | T: Which five?
+sn48.21:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment.
+sn48.21:1.4 | S: As long as I didn’t truly understand these five faculties’ origin, disappearance, gratification, drawback, and escape, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Now, as long as I did not have direct knowledge, as it has come to be, of the origination, the passing away, the allure, the drawbacks of—and the escape from—these five faculties, I did not claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn48.21:1.5 | S: But when I did truly understand these five faculties’ origin, disappearance, gratification, drawback, and escape, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did have direct knowledge, as it has come to be, of the origination, the passing away, the allure, the drawbacks of—and the escape from—these five faculties, then I did claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn48.21:1.6 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+sn48.21:1.7 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further becoming.’”
+sn48.21:1.8 | P: Paṭhamaṁ. | T: (none)
+
+## sn48.38
+sn48.38:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.38:1.2 | S: What five? | T: Which five?
+sn48.38:1.3 | S: The faculties of pleasure, pain, happiness, sadness, and equanimity. | T: The pleasure-faculty, the pain-faculty, the happiness-faculty, the distress-faculty, the equanimity-faculty.
+sn48.38:2.1 | S: And what is the faculty of pleasure? | T: “And what is the pleasure-faculty?
+sn48.38:2.2 | S: Physical enjoyment, physical pleasure, the enjoyable, pleasant feeling that’s born from physical contact. | T: Any physical pleasure, physical comfort born of body-contact to be experienced as pleasure & comfort.
+sn48.38:2.3 | S: This is called the faculty of pleasure. | T: That is called the pleasure-faculty.
+sn48.38:3.1 | S: And what is the faculty of pain? | T: “And what is the pain-faculty?
+sn48.38:3.2 | S: Physical pain, physical unpleasantness, the painful, unpleasant feeling that’s born from physical contact. | T: Any physical pain, physical discomfort born of body-contact to be experienced as pain & discomfort.
+sn48.38:3.3 | S: This is called the faculty of pain. | T: That is called the pain-faculty.
+sn48.38:4.1 | S: And what is the faculty of happiness? | T: “And what is the happiness-faculty?
+sn48.38:4.2 | S: Mental enjoyment, mental pleasure, the enjoyable, pleasant feeling that’s born from mind contact. | T: Any mental pleasure, mental comfort born of intellect-contact to be experienced as pleasure & comfort.
+sn48.38:4.3 | S: This is called the faculty of happiness. | T: That is called the happiness -faculty.
+sn48.38:5.1 | S: And what is the faculty of sadness? | T: “And what is the distress-faculty?
+sn48.38:5.2 | S: Mental pain, mental displeasure, the painful, unpleasant feeling that’s born from mind contact. | T: Any mental pain, mental discomfort born of intellect-contact to be experienced as pain & discomfort.
+sn48.38:5.3 | S: This is called the faculty of sadness. | T: That is called the distress-faculty.
+sn48.38:6.1 | S: And what is the faculty of equanimity? | T: “And what is the equanimity-faculty?
+sn48.38:6.2 | S: Neither pleasant nor unpleasant feeling, whether physical or mental. | T: Anything, physical or mental, to be experienced as neither comfort nor discomfort.
+sn48.38:6.3 | S: This is the faculty of equanimity. | T: That is called the equanimity-faculty.
+sn48.38:7.1 | S: In this context, the faculties of pleasure and happiness should be seen as pleasant feeling. | T: “With regard to this, the pleasure-faculty & happiness-faculty are to be seen as a feeling of pleasure.
+sn48.38:7.2 | S: The faculties of pain and sadness should be seen as painful feeling. | T: The pain-faculty & distress-faculty are to be seen as a feeling of pain.
+sn48.38:7.3 | S: The faculty of equanimity should be seen as neutral feeling. | T: The equanimity-faculty is to be seen as a feeling of neither pleasure nor pain.
+sn48.38:7.4 | S: That’s how these five faculties, depending on how they’re explained, having been five become three, and having been three become five.” | T: Thus, by this exposition, the five are three; and the three, five.”
+sn48.38:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn48.3
+sn48.3:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.3:1.2 | S: What five? | T: Which five?
+sn48.3:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment.
+sn48.3:1.4 | S: A noble disciple comes to truly understand these five faculties’ origin, disappearance, gratification, drawback, and escape. | T: When a disciple of the noble ones discerns, as they have come to be, the origination, the passing away, the allure, the drawbacks, and the escape from these five faculties,
+sn48.3:1.5 | S: Such a noble disciple is called a stream-enterer, not liable to be reborn in the underworld, assured, destined for awakening.” | T: he is called a disciple of the noble ones who has attained the stream: never again destined for the lower realms, certain, headed for self-awakening.”
+sn48.3:1.6 | P: Tatiyaṁ. | T: (none)
+
+## sn48.40
+sn48.40:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.40:1.2 | S: What five? | T: Which five?
+sn48.40:1.3 | S: The faculties of pain, sadness, pleasure, happiness, and equanimity. | T: The pain-faculty, the distress-faculty, the pleasure-faculty, the happiness-faculty, the equanimity-faculty.
+sn48.40:1.4 | S: While a mendicant is meditating—diligent, keen, and resolute—the faculty of pain arises. | T: “There is the case where, in a monk who is heedful, ardent, & resolute, there arises the pain-faculty.
+sn48.40:1.5 | S: They understand: | T: He discerns,
+sn48.40:1.6 | S: ‘The faculty of pain has arisen in me. And that has a basis, a source, a condition, and a reason. | T: ‘This pain-faculty has arisen within me. And that comes with an object, with a cause, with a fabrication, with a condition.
+sn48.40:1.7 | S: It’s not possible that the faculty of pain will arise without a basis, a source, a condition, or a reason.’ | T: That a pain-faculty would arise without an object, without a cause, without a fabrication, without a condition: That is impossible.’
+sn48.40:1.8 | S: They understand the faculty of pain, its origin, its cessation, and where that faculty of pain that’s arisen ceases without remainder. | T: He discerns the pain-faculty, he discerns the origination of the pain-faculty, he discerns the cessation of the pain-faculty, and he discerns where an arisen pain-faculty ceases without trace.
+sn48.40:1.9 | S: And where does that faculty of pain that’s arisen cease without remainder? | T: “And where does an arisen pain-faculty cease without trace?
+sn48.40:1.10 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: There is the case where a monk, quite secluded from sensuality, secluded from unskillful qualities, enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+sn48.40:1.11 | S: That’s where the faculty of pain that’s arisen ceases without remainder. | T: Here is where an arisen pain-faculty ceases without trace.
+sn48.40:1.12 | S: They’re called a mendicant who understands the cessation of the faculty of pain, and who applies their mind to that end. | T: “This, monks, is called a monk who knows the cessation of the pain-faculty. He gathers his mind for the sake of that reality.
+sn48.40:2.1 | S: While a mendicant is meditating—diligent, keen, and resolute—the faculty of sadness arises. | T: “There is the case where, in a monk who is heedful, ardent, & resolute, there arises the distress-faculty.
+sn48.40:2.2 | S: They understand: | T: He discerns,
+sn48.40:2.3 | S: ‘The faculty of sadness has arisen in me. And that has a basis, a source, a condition, and a reason. | T: ‘This distress-faculty has arisen within me. And that comes with an object, with a cause, with a fabrication, with a condition.
+sn48.40:2.4 | S: It’s not possible that the faculty of sadness will arise without a basis, a source, a condition, or a reason.’ | T: That a distress-faculty would arise without an object, without a cause, without a fabrication, without a condition: That is impossible.’
+sn48.40:2.5 | S: They understand the faculty of sadness, its origin, its cessation, and where that faculty of sadness that’s arisen ceases without remainder. | T: He discerns the distress-faculty, he discerns the origination of the distress-faculty, he discerns the cessation of the distress-faculty, and he discerns where an arisen distress-faculty ceases without trace.
+sn48.40:2.6 | S: And where does that faculty of sadness that’s arisen cease without remainder? | T: “And where does an arisen distress-faculty cease without trace?
+sn48.40:2.7 | S: It’s when, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: There is the case where a monk, with the stilling of directed thoughts & evaluations, enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+sn48.40:2.8 | S: That’s where the faculty of sadness that’s arisen ceases without remainder. | T: Here is where an arisen distress-faculty ceases without trace.
+sn48.40:2.9 | S: They’re called a mendicant who understands the cessation of the faculty of sadness, and who applies their mind to that end. | T: “This, monks, is called a monk who knows the cessation of the distress-faculty. He gathers his mind for the sake of that reality.
+sn48.40:3.1 | S: While a mendicant is meditating—diligent, keen, and resolute—the faculty of pleasure arises. | T: “There is the case where, in a monk who is heedful, ardent, & resolute, there arises the pleasure-faculty.
+sn48.40:3.2 | S: They understand: | T: He discerns,
+sn48.40:3.3 | S: ‘The faculty of pleasure has arisen in me. And that has a basis, a source, a condition, and a reason. | T: ‘This pleasure-faculty has arisen within me. And that comes with an object, with a cause, with a fabrication, with a condition.
+sn48.40:3.4 | S: It’s not possible that the faculty of pleasure will arise without a basis, a source, a condition, or a reason.’ | T: That a pleasure-faculty would arise without an object, without a cause, without a fabrication, without a condition: That is impossible.’
+sn48.40:3.5 | S: They understand the faculty of pleasure, its origin, its cessation, and where that faculty of pleasure that’s arisen ceases without remainder. | T: He discerns the pleasure-faculty, he discerns the origination of the pleasure-faculty, he discerns the cessation of the pleasure-faculty, and he discerns where an arisen pleasure-faculty ceases without trace.
+sn48.40:3.6 | S: And where does that faculty of pleasure that’s arisen cease without remainder? | T: “And where does an arisen pleasure-faculty cease without trace?
+sn48.40:3.7 | S: It’s when, with the fading away of rapture, a mendicant enters and remains in the third absorption, where they meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: There is the case where a monk, with the fading of rapture, remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+sn48.40:3.8 | S: That’s where the faculty of pleasure that’s arisen ceases without remainder. | T: Here is where an arisen pleasure-faculty ceases without trace.
+sn48.40:3.9 | S: They’re called a mendicant who understands the cessation of the faculty of pleasure, and who applies their mind to that end. | T: “This, monks, is called a monk who knows the cessation of the pleasure-faculty. He gathers his mind for the sake of that reality.
+sn48.40:4.1 | S: While a mendicant is meditating—diligent, keen, and resolute—the faculty of happiness arises. | T: “There is the case where, in a monk who is heedful, ardent, & resolute, there arises the happiness-faculty.
+sn48.40:4.2 | S: They understand: | T: He discerns,
+sn48.40:4.3 | S: ‘The faculty of happiness has arisen in me. And that has a basis, a source, a condition, and a reason. | T: ‘This happiness-faculty has arisen within me. And that comes with an object, with a cause, with a fabrication, with a condition.
+sn48.40:4.4 | S: It’s not possible that the faculty of happiness will arise without a basis, a source, a condition, or a reason.’ | T: That a happiness-faculty would arise without an object, without a cause, without a fabrication, without a condition: That is impossible.’
+sn48.40:4.5 | S: They understand the faculty of happiness, its origin, its cessation, and where that faculty of happiness that’s arisen ceases without remainder. | T: He discerns the happiness-faculty, he discerns the origination of the happiness-faculty, he discerns the cessation of the happiness-faculty, and he discerns where an arisen happiness-faculty ceases without trace.
+sn48.40:4.6 | S: And where does that faculty of happiness that’s arisen cease without remainder? | T: “And where does an arisen happiness-faculty cease without trace?
+sn48.40:4.7 | S: It’s when, giving up pleasure and pain, and disappearance former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: There is the case where a monk, with the abandoning of pleasure & pain—as with the earlier disappearance of happiness & distress—enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+sn48.40:4.8 | S: That’s where the faculty of happiness that’s arisen ceases without remainder. | T: Here is where an arisen happiness-faculty ceases without trace.
+sn48.40:4.9 | S: They’re called a mendicant who understands the cessation of the faculty of happiness, and who applies their mind to that end. | T: “This, monks, is called a monk who knows the cessation of the happiness-faculty. He gathers his mind for the sake of that reality.
+sn48.40:5.1 | S: While a mendicant is meditating—diligent, keen, and resolute—the faculty of equanimity arises. | T: “There is the case where, in a monk who is heedful, ardent, & resolute, there arises the equanimity-faculty.
+sn48.40:5.2 | S: They understand: | T: He discerns,
+sn48.40:5.3 | S: ‘The faculty of equanimity has arisen in me. And that has a basis, a source, a condition, and a reason. | T: ‘This equanimity-faculty has arisen within me. And that comes with an object, with a cause, with a fabrication, with a condition.
+sn48.40:5.4 | S: It’s not possible that the faculty of equanimity will arise without a basis, a source, a condition, or a reason.’ | T: That an equanimity-faculty would arise without an object, without a cause, without a fabrication, without a condition: That is impossible.’
+sn48.40:5.5 | S: They understand the faculty of equanimity, its origin, its cessation, and where that faculty of equanimity that’s arisen ceases without remainder. | T: He discerns the equanimity-faculty, he discerns the origination of the equanimity-faculty, he discerns the cessation of the equanimity-faculty, and he discerns where an arisen equanimity-faculty ceases without trace.
+sn48.40:5.6 | S: And where does that faculty of equanimity that’s arisen cease without remainder? | T: “And where does an arisen equanimity-faculty cease without trace?
+sn48.40:5.7 | S: It’s when a mendicant, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. | T: There is the case where a monk, with the complete transcending of the dimension of neither perception nor non-perception, enters & remains in the cessation of perception & feeling.
+sn48.40:5.8 | S: That’s where the faculty of equanimity that’s arisen ceases without remainder. | T: Here is where an arisen equanimity-faculty ceases without trace.
+sn48.40:5.9 | S: They’re called a mendicant who understands the cessation of the faculty of equanimity, and who applies their mind to that end.” | T: “This, monks, is called a monk who knows the cessation of the equanimity-faculty. He gathers his mind for the sake of that reality.”
+sn48.40:5.10 | P: Dasamaṁ. | T: (none)
+sn48.40:5.11 | P: Sukhindriyavaggo catuttho. | T: (none)
+sn48.40:6.0 | P: Tassuddānaṁ | T: (none)
+sn48.40:6.1 | P: Suddhikañca soto arahā, | T: (none)
+sn48.40:6.2 | P: duve samaṇabrāhmaṇā; | T: (none)
+sn48.40:6.3 | P: Vibhaṅgena tayo vuttā, | T: (none)
+sn48.40:6.4 | P: kaṭṭho uppaṭipāṭikanti. | T: (none)
+
+## sn48.41
+sn48.41:1.1 | S: So I have heard. | T: I have heard that
+sn48.41:1.2 | S: At one time the Buddha was staying near Sāvatthī in the stilt longhouse of Migāra’s mother in the Eastern Monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in the Eastern Monastery, the palace of Migāra’s mother.
+sn48.41:1.3 | S: Then in the late afternoon, the Buddha came out of retreat and sat warming his back in the last rays of the sun. | T: Now on that occasion the Blessed One, on emerging from his seclusion in the evening, sat warming his back in the western sun.
+sn48.41:2.1 | S: Then Venerable Ānanda went up to the Buddha, bowed, and while massaging the Buddha’s limbs he said: | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to the Blessed One, massaged the Blessed One’s limbs with his hand and said,
+sn48.41:2.2 | S: “It’s incredible, sir, it’s amazing, | T: “It’s amazing, lord. It’s astounding,
+sn48.41:2.3 | S: how the complexion of your skin is no longer pure and bright. Your limbs are flaccid and wrinkled, and your body is stooped. And it’s apparent that there has been a deterioration in your faculties | T: how the Blessed One’s complexion is no longer so clear & bright; his limbs are flabby & wrinkled; his back, bent forward; there’s a discernible change in his faculties—
+sn48.41:2.4 | S: of eye, ear, nose, tongue, and body.” | T: the faculty of the eye, the faculty of the ear, the faculty of the nose, the faculty of the tongue, the faculty of the body.”
+sn48.41:3.1 | S: “That’s how it is, Ānanda. | T: “That’s the way it is, Ānanda.
+sn48.41:3.2 | S: When young you’re liable to grow old; when healthy you’re liable to get sick; and when alive you’re liable to die. | T: When young, one is subject to aging; when healthy, subject to illness; when alive, subject to death.
+sn48.41:3.3 | S: The complexion of the skin is no longer pure and bright. The limbs are flaccid and wrinkled, and the body is stooped. And it’s apparent that there has been a deterioration in the faculties | T: The complexion is no longer so clear & bright; the limbs are flabby & wrinkled; the back, bent forward; there’s a discernible change in the faculties—
+sn48.41:3.4 | S: of eye, ear, nose, tongue, and body.” | T: the faculty of the eye, the faculty of the ear, the faculty of the nose, the faculty of the tongue, the faculty of the body.”
+sn48.41:4.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn48.41:4.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn48.41:5.1 | S: “Curse this wretched old age, | T: “I spit on you, wretched old age—
+sn48.41:5.2 | S: which makes you so ugly. | T: old age that makes for ugliness.
+sn48.41:5.3 | S: That’s how much this delightful puppet | T: The bodily image, so charming,
+
+exec
+/bin/bash -lc "sed -n '115,140p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn48.38:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.38:1.2 | S: What five? | T: Which five?
+sn48.38:1.3 | S: The faculties of pleasure, pain, happiness, sadness, and equanimity. | T: The pleasure-faculty, the pain-faculty, the happiness-faculty, the distress-faculty, the equanimity-faculty.
+sn48.38:2.1 | S: And what is the faculty of pleasure? | T: “And what is the pleasure-faculty?
+sn48.38:2.2 | S: Physical enjoyment, physical pleasure, the enjoyable, pleasant feeling that’s born from physical contact. | T: Any physical pleasure, physical comfort born of body-contact to be experienced as pleasure & comfort.
+sn48.38:2.3 | S: This is called the faculty of pleasure. | T: That is called the pleasure-faculty.
+sn48.38:3.1 | S: And what is the faculty of pain? | T: “And what is the pain-faculty?
+sn48.38:3.2 | S: Physical pain, physical unpleasantness, the painful, unpleasant feeling that’s born from physical contact. | T: Any physical pain, physical discomfort born of body-contact to be experienced as pain & discomfort.
+sn48.38:3.3 | S: This is called the faculty of pain. | T: That is called the pain-faculty.
+sn48.38:4.1 | S: And what is the faculty of happiness? | T: “And what is the happiness-faculty?
+sn48.38:4.2 | S: Mental enjoyment, mental pleasure, the enjoyable, pleasant feeling that’s born from mind contact. | T: Any mental pleasure, mental comfort born of intellect-contact to be experienced as pleasure & comfort.
+sn48.38:4.3 | S: This is called the faculty of happiness. | T: That is called the happiness -faculty.
+sn48.38:5.1 | S: And what is the faculty of sadness? | T: “And what is the distress-faculty?
+sn48.38:5.2 | S: Mental pain, mental displeasure, the painful, unpleasant feeling that’s born from mind contact. | T: Any mental pain, mental discomfort born of intellect-contact to be experienced as pain & discomfort.
+sn48.38:5.3 | S: This is called the faculty of sadness. | T: That is called the distress-faculty.
+sn48.38:6.1 | S: And what is the faculty of equanimity? | T: “And what is the equanimity-faculty?
+sn48.38:6.2 | S: Neither pleasant nor unpleasant feeling, whether physical or mental. | T: Anything, physical or mental, to be experienced as neither comfort nor discomfort.
+sn48.38:6.3 | S: This is the faculty of equanimity. | T: That is called the equanimity-faculty.
+sn48.38:7.1 | S: In this context, the faculties of pleasure and happiness should be seen as pleasant feeling. | T: “With regard to this, the pleasure-faculty & happiness-faculty are to be seen as a feeling of pleasure.
+sn48.38:7.2 | S: The faculties of pain and sadness should be seen as painful feeling. | T: The pain-faculty & distress-faculty are to be seen as a feeling of pain.
+sn48.38:7.3 | S: The faculty of equanimity should be seen as neutral feeling. | T: The equanimity-faculty is to be seen as a feeling of neither pleasure nor pain.
+sn48.38:7.4 | S: That’s how these five faculties, depending on how they’re explained, having been five become three, and having been three become five.” | T: Thus, by this exposition, the five are three; and the three, five.”
+sn48.38:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn48.3
+sn48.3:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+
+exec
+/bin/bash -lc "sed -n '221,320p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn48.41:5.4 | S: is ground down by old age. | T: is trampled by old age.
+sn48.41:6.1 | S: Even if you live for a hundred years, | T: Even those who live to a hundred
+sn48.41:6.2 | S: you’ll still end up dying. | T: are headed—all—to an end in death,
+sn48.41:6.3 | S: Death spares no one, | T: which spares no one,
+sn48.41:6.4 | S: but crushes all underfoot.” | T: which tramples all.”
+sn48.41:6.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn48.42
+sn48.42:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn48.42:1.2 | S: Then Uṇṇābha the brahmin went up to the Buddha, and exchanged greetings with him. | T: Then Uṇṇābha the brahman went to the Blessed One and, on arrival, having bowed down to him,
+sn48.42:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: sat to one side. As he was sitting there, he said to the Blessed One,
+sn48.42:2.1 | S: “Worthy Gotama, these five faculties have different domains and different ranges, and don’t experience each other’s domain and range. | T: “Master Gotama, these five faculties have different domains, different ranges, and do not experience one another’s range or domain.
+sn48.42:2.2 | S: What five? | T: Which five?
+sn48.42:2.3 | S: The faculties of the eye, ear, nose, tongue, and body. | T: The faculty of the eye, the faculty of the ear, the faculty of the nose, the faculty of the tongue, & the faculty of the body.
+sn48.42:2.4 | S: What do these five faculties, with their different domains and ranges, have recourse to? What experiences their domains and ranges?” | T: Now, of these five faculties that have different domains, different ranges, and do not experience one another’s range or domain, what is their arbitrator? And what experiences their range & domain?”
+sn48.42:3.1 | S: “Brahmin, these five faculties have different domains and different ranges, and don’t experience each other’s domain and range. | T: “Brahman, these five faculties have different domains, different ranges, and do not experience one another’s range or domain.
+sn48.42:3.2 | S: What five? | T: Which five?
+sn48.42:3.3 | S: The faculties of the eye, ear, nose, tongue, and body. | T: The faculty of the eye, the faculty of the ear, the faculty of the nose, the faculty of the tongue, & the faculty of the body.
+sn48.42:3.4 | S: These five faculties, with their different domains and ranges, have recourse to the mind. And the mind experiences their domains and ranges.” | T: Now, of these five faculties that have different domains, different ranges, and do not experience one another’s range or domain, the intellect is their arbitrator. The intellect experiences their range & domain.”
+sn48.42:4.1 | S: “But worthy Gotama, what does the mind have recourse to?” | T: “And what, Master Gotama, is the arbitrator of the intellect?”
+sn48.42:4.2 | S: “The mind has recourse to mindfulness.” | T: “Mindfulness, brahman, is the arbitrator of the intellect.”
+sn48.42:4.3 | S: “But what does mindfulness have recourse to?” | T: “And what, Master Gotama, is the arbitrator of mindfulness?”
+sn48.42:4.4 | S: “Mindfulness has recourse to freedom.” | T: “Release, brahman, is the arbitrator of mindfulness.”
+sn48.42:4.5 | S: “But what does freedom have recourse to?” | T: “And what, Master Gotama, is the arbitrator of release?”
+sn48.42:4.6 | S: “Freedom has recourse to extinguishment.” | T: “Unbinding, brahman, is the arbitrator of release.”
+sn48.42:4.7 | S: “But what does extinguishment have recourse to?” | T: “And what, Master Gotama, is the arbitrator of unbinding?”
+sn48.42:4.8 | S: “This question goes too far, brahmin! You weren’t able to grasp the limit of questioning. | T: “You’ve gone too far, brahman. You can’t keep holding on up to the limit of questions.
+sn48.42:4.9 | S: For extinguishment is the objective, destination, and culmination of the spiritual life.” | T: For the holy life is lived to gain a footing in unbinding, to culminate in unbinding, to have unbinding as its final end.”
+sn48.42:5.1 | S: And then the brahmin Uṇṇābha approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then Uṇṇābha the brahman, delighting & rejoicing in the Blessed One’s words, rose from his seat, and—after bowing down to him & circumambulating him—left.
+sn48.42:6.1 | S: Then, not long after he had left, the Buddha addressed the mendicants: | T: Then, not long after he had left, the Blessed One addressed the monks,
+sn48.42:6.2 | S: “Suppose there was a bungalow or a hall with a peaked roof, with windows on the eastern side. When the sun rises and a ray of light enters through a window, where would it land?” | T: “Suppose, monks, that there were a gabled house or gabled hall with a window on the east. When the sun rises and a sunbeam enters the window, where does it land?” [literally, “where is it established?”]
+sn48.42:6.3 | S: “On the western wall, sir.” | T: “On the western wall, lord.”
+sn48.42:6.4 | S: “In the same way, the brahmin Uṇṇābha’s faith in the Realized One is settled, rooted, and planted deep. It’s strong and can’t be shifted by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “In the same way, monks, Uṇṇābha the brahman’s conviction in the Tathāgata is settled, rooted, established, firm. It cannot be shaken by a contemplative or a brahman or a deva or a Māra or a Brahmā or anyone at all in the cosmos.
+sn48.42:6.5 | S: If he were to pass away at this time, he would be bound by no fetter that might return him to this world.” | T: If he were to die at this time, there is no fetter, fettered by which, Uṇṇābha the brahman would come back to this world.”
+sn48.42:6.6 | P: Dutiyaṁ. | T: (none)
+
+## sn48.4
+sn48.4:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.4:1.2 | S: What five? | T: Which five?
+sn48.4:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment.
+sn48.4:1.4 | S: A noble disciple comes to be freed by not grasping after truly understanding these five faculties’ gratification, drawback, and escape. | T: When—having discerned, as they have come to be, the origination, the passing away, the allure, the drawbacks, and the escape from these five faculties—a monk is released from lack of clinging/sustenance,
+sn48.4:1.5 | S: Such a mendicant is called a perfected one, with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment.” | T: he is called an arahant whose effluents are ended, who has reached fulfillment, done the task, laid down the burden, attained the true goal, laid to waste the fetter of becoming, and who is released through right gnosis.”
+sn48.4:1.6 | P: Catutthaṁ. | T: (none)
+
+## sn48.50
+sn48.50:1.1 | S: So I have heard. | T: I have heard that
+sn48.50:1.2 | S: At one time the Buddha was staying in the land of the Aṅgas, near the Aṅgan town named Āpaṇa. | T: on one occasion the Blessed One was staying among the Aṅgas. Now the Aṅgas have a town called Āpaṇṇa,
+sn48.50:1.3 | S: Then the Buddha said to Venerable Sāriputta: | T: and there the Blessed One addressed Ven. Sāriputta,
+sn48.50:1.4 | S: “Sāriputta, would a noble disciple who is sure and devoted to the Realized One have any doubt or uncertainty about the Realized One or his instructions?” | T: “Sāriputta, a disciple of the noble ones who is thoroughly inspired by the Tathāgata, who has gone solely to the Tathāgata [for refuge]: Would he have any doubt or uncertainty concerning the Tathāgata or the Tathāgata’s message?”
+sn48.50:2.1 | S: “Sir, a noble disciple who is sure and devoted to the Realized One would have no doubt or uncertainty about the Realized One or his instructions. | T: “Lord, a disciple of the noble ones who is thoroughly inspired by the Tathāgata, who has gone solely to the Tathāgata [for refuge] would have no doubt or uncertainty concerning the Tathāgata or the Tathāgata’s message.
+sn48.50:2.2 | S: You can expect that a faithful noble disciple will live with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: Of a disciple of the noble ones who has conviction, it can indeed be expected that he will keep his persistence aroused for abandoning unskillful mental qualities and taking on skillful mental qualities, that he will be steadfast, solid in his effort, not shirking his duties with regard to skillful mental qualities.
+sn48.50:2.3 | S: For their energy is the faculty of energy. | T: Whatever persistence he has is his faculty of persistence.
+sn48.50:3.1 | S: You can expect that a faithful and energetic noble disciple will be mindful, with utmost mindfulness and alertness, able to remember and recall what was said and done long ago. | T: “Lord, of a disciple of the noble ones who has conviction, whose persistence is aroused, it can indeed be expected that he will be mindful, endowed with excellent proficiency in mindfulness, remembering & able to call to mind even things that were done & said long ago.
+sn48.50:3.2 | S: For their mindfulness is the faculty of mindfulness. | T: Whatever mindfulness he has is his faculty of mindfulness.
+sn48.50:4.1 | S: You can expect that a faithful, energetic, and mindful noble disciple will, relying on letting go, gain immersion, gain unification of mind. | T: “Lord, of a disciple of the noble ones who has conviction, whose persistence is aroused, and whose mindfulness is established, it can indeed be expected that—making it his object to let go—he will gain concentration, he will gain singleness of mind.
+sn48.50:4.2 | S: For their immersion is the faculty of immersion. | T: Whatever concentration he has is his faculty of concentration.
+sn48.50:5.1 | S: You can expect that a faithful, energetic, mindful noble disciple with their mind immersed in samādhi will understand this: | T: “Lord, of a disciple of the noble ones who has conviction, whose persistence is aroused, whose mindfulness is established, and whose mind is rightly concentrated, it can indeed be expected that he will discern:
+sn48.50:5.2 | S: ‘Transmigration has no known beginning. | T: ‘From an inconceivable beginning comes transmigration.
+sn48.50:5.3 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not evident, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn48.50:5.4 | S: But when that dark mass of ignorance fades away and ceases with no residue left behind, that state is peaceful and sublime. | T: The total fading & cessation of ignorance, of this mass of darkness, is this peaceful state, this exquisite state:
+sn48.50:5.5 | S: That is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment.’ | T: the pacification of all fabrications; the relinquishing of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’
+sn48.50:5.6 | S: For their noble wisdom is the faculty of wisdom. | T: Whatever discernment he has is his faculty of discernment.
+sn48.50:6.1 | S: When a noble disciple has tried again and again, recollected again and again, entered immersion again and again, and understood with wisdom again and again, they will be confident of this: | T: “And so, lord, this convinced disciple of the noble ones, thus striving again & again, recollecting again & again, concentrating his mind again & again, discerning again & again, becomes thoroughly convinced:
+sn48.50:6.2 | S: ‘I have previously heard of these things. | T: ‘Those phenomena that once I had only heard about,
+sn48.50:6.3 | S: But now I have direct meditative experience of them, and see them with penetrating wisdom.’ | T: I here & now dwell touching with my body and, breaking through with discernment, I see.’
+sn48.50:6.4 | S: For their faith is the faculty of faith.” | T: Whatever conviction he has is his faculty of conviction.”
+sn48.50:7.1 | S: “Good, good, Sāriputta! | T: “Excellent, Sāriputta. Excellent.
+sn48.50:7.2 | S: Sāriputta, a noble disciple who is sure and devoted to the Realized One would have no doubt or uncertainty about the Realized One or his instructions. …” | T: A disciple of the noble ones who is thoroughly inspired by the Tathāgata, who has gone solely to the Tathāgata [for refuge] would have no doubt or uncertainty concerning the Tathāgata or the Tathāgata’s message.
+sn48.50:7.3 | S: The Buddha then repeated Sāriputta’s answer word for word. | T: Of a disciple of the noble ones who has conviction, it can indeed be expected that he will keep his persistence aroused
+sn48.50:7.4 | P: akusalānaṁ dhammānaṁ pahānāya, kusalānaṁ dhammānaṁ upasampadāya, thāmavā daḷhaparakkamo anikkhittadhuro kusalesu dhammesu. | T: for abandoning unskillful mental qualities and taking on skillful mental qualities, that he will be steadfast, solid in his effort, not shirking his duties with regard to skillful mental qualities.
+sn48.50:7.5 | P: Yaṁ hissa, sāriputta, vīriyaṁ tadassa vīriyindriyaṁ. | T: Whatever persistence he has is his faculty of persistence.
+sn48.50:8.1 | P: Saddhassa hi, sāriputta, ariyasāvakassa āraddhavīriyassa etaṁ pāṭikaṅkhaṁ yaṁ satimā bhavissati, paramena satinepakkena samannāgato, cirakatampi cirabhāsitampi saritā anussaritā. | T: “Sāriputta, of a disciple of the noble ones who has conviction, whose persistence is aroused, it can indeed be expected that he will be mindful, endowed with excellent proficiency in mindfulness, remembering & able to call to mind even things that were done & said long ago.
+sn48.50:8.2 | P: Yā hissa, sāriputta, sati tadassa satindriyaṁ. | T: Whatever mindfulness he has is his faculty of mindfulness.
+sn48.50:9.1 | P: Saddhassa hi, sāriputta, ariyasāvakassa āraddhavīriyassa upaṭṭhitassatino etaṁ pāṭikaṅkhaṁ yaṁ vossaggārammaṇaṁ karitvā labhissati samādhiṁ, labhissati cittassa ekaggataṁ. | T: “Sāriputta, of a disciple of the noble ones who has conviction, whose persistence is aroused, and whose mindfulness is established, it can indeed be expected that—making it his object to let go—he will gain concentration, he will gain singleness of mind.
+sn48.50:9.2 | P: Yo hissa, sāriputta, samādhi tadassa samādhindriyaṁ. | T: Whatever concentration he has is his faculty of concentration.
+sn48.50:10.1 | P: Saddhassa hi, sāriputta, ariyasāvakassa āraddhavīriyassa upaṭṭhitassatino samāhitacittassa etaṁ pāṭikaṅkhaṁ yaṁ evaṁ pajānissati— | T: “Sāriputta, of a disciple of the noble ones who has conviction, whose persistence is aroused, whose mindfulness is established, and whose mind is rightly concentrated, it can indeed be expected that he will discern:
+sn48.50:10.2 | P: anamataggo kho saṁsāro. | T: ‘From an inconceivable beginning comes transmigration.
+sn48.50:10.3 | P: Pubbakoṭi na paññāyati avijjānīvaraṇānaṁ sattānaṁ taṇhāsaṁyojanānaṁ sandhāvataṁ saṁsarataṁ. | T: A beginning point is not evident, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn48.50:10.4 | P: Avijjāya tveva tamokāyassa asesavirāganirodho santametaṁ padaṁ paṇītametaṁ padaṁ, yadidaṁ— | T: The total fading & cessation of ignorance, of this mass of darkness, is this peaceful state, this exquisite state:
+sn48.50:10.5 | P: sabbasaṅkhārasamatho sabbūpadhipaṭinissaggo taṇhākkhayo virāgo nirodho nibbānaṁ. | T: the pacification of all fabrications; the relinquishing of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’
+sn48.50:10.6 | P: Yā hissa, sāriputta, paññā tadassa paññindriyaṁ. | T: Whatever discernment he has is his faculty of discernment.
+sn48.50:11.1 | P: Saddho so, sāriputta, ariyasāvako evaṁ padahitvā padahitvā evaṁ saritvā saritvā evaṁ samādahitvā samādahitvā evaṁ pajānitvā pajānitvā evaṁ abhisaddahati: | T: “And so, Sāriputta, this convinced disciple of the noble ones, thus striving again & again, recollecting again & again, concentrating his mind again & again, discerning again & again, becomes thoroughly convinced:
+sn48.50:11.2 | P: ‘ime kho te dhammā ye me pubbe sutavā ahesuṁ. | T: ‘Those phenomena that once I had only heard about,
+sn48.50:11.3 | P: Tenāhaṁ etarahi kāyena ca phusitvā viharāmi, paññāya ca ativijjha passāmī’ti. | T: I here & now dwell touching with my body and, breaking through with discernment, I see.’
+sn48.50:11.4 | P: Yā hissa, sāriputta, saddhā tadassa saddhindriyan”ti. | T: Whatever conviction he has is his faculty of conviction.”
+sn48.50:11.5 | P: Dasamaṁ. | T: (none)
+sn48.50:11.6 | P: Jarāvaggo pañcamo. | T: (none)
+sn48.50:12.0 | P: Tassuddānaṁ | T: (none)
+sn48.50:12.1 | P: Jarā uṇṇābho brāhmaṇo, | T: (none)
+sn48.50:12.2 | P: sāketo pubbakoṭṭhako; | T: (none)
+sn48.50:12.3 | P: Pubbārāme ca cattāri, | T: (none)
+sn48.50:12.4 | P: piṇḍolo āpaṇena cāti. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '101,114p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn47.7:4.11 | S: This is a mendicant’s own territory, the domain of the fathers.” | T: This, for a monk, is his proper range, his own ancestral territory.”
+sn47.7:4.12 | P: Sattamaṁ. | T: (none)
+
+## sn48.21
+sn48.21:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.21:1.2 | S: What five? | T: Which five?
+sn48.21:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment.
+sn48.21:1.4 | S: As long as I didn’t truly understand these five faculties’ origin, disappearance, gratification, drawback, and escape, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Now, as long as I did not have direct knowledge, as it has come to be, of the origination, the passing away, the allure, the drawbacks of—and the escape from—these five faculties, I did not claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn48.21:1.5 | S: But when I did truly understand these five faculties’ origin, disappearance, gratification, drawback, and escape, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did have direct knowledge, as it has come to be, of the origination, the passing away, the allure, the drawbacks of—and the escape from—these five faculties, then I did claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn48.21:1.6 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+sn48.21:1.7 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further becoming.’”
+sn48.21:1.8 | P: Paṭhamaṁ. | T: (none)
+
+## sn48.38
+
+exec
+/bin/bash -lc "sed -n '321,420p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-108.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+36,526
+0 lines reported.

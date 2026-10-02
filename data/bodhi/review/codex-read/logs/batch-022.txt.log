@@ -1,0 +1,525 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd82-886f-7563-9f5b-2f2e71eba24b
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clearly misplaced line starts to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.100
+sn22.100:1.1 | S: At Sāvatthī. | T: (none)
+sn22.100:1.2 | S: “Mendicants, this transmigration has no known beginning. | T: “Bhikkhus, this saṁsara is without discoverable beginning.
+sn22.100:1.3 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A first point is not discerned of beings roaming and wandering on hindered by ignorance and fettered by craving….
+sn22.100:1.4 | S: Suppose a mutt on a leash was tethered to a strong post or pillar. Whether walking, standing, sitting, or lying down, it stays right beside that post or pillar. | T: “Suppose, bhikkhus, a dog tied up on a leash was bound to a strong post or pillar. If it walks, it walks close to that post or pillar. If it stands, it stands close to that post or pillar. If it sits down, it sits down close to that post or pillar. If it lies down, it lies down close to that post or pillar.
+sn22.100:1.5 | S: In the same way, an unlearned ordinary person regards form like this: ‘This is mine, I am this, this is my self.’ | T: “So too, bhikkhus, the uninstructed worldling regards form thus: ‘This is mine, this I am, this is myself.’
+sn22.100:1.6 | S: They regard feeling … | T: He regards feeling …
+sn22.100:1.7 | S: perception … | T: perception …
+sn22.100:1.8 | S: choices … | T: volitional formations …
+sn22.100:1.9 | S: consciousness like this: ‘This is mine, I am this, this is my self.’ | T: consciousness thus: ‘This is mine, this I am, this is myself.’
+sn22.100:1.10 | S: When walking, they walk right beside the five grasping aggregates. | T: If he walks, he walks close to those five aggregates subject to clinging.
+sn22.100:1.11 | S: When standing … | T: If he stands, he stands close to those five aggregates subject to clinging.
+sn22.100:1.12 | S: sitting … | T: If he sits down, he sits down close to those five aggregates subject to clinging.
+sn22.100:1.13 | S: lying down, they lie down right beside the five grasping aggregates. | T: If he lies down, he lies down close to those five aggregates subject to clinging.
+sn22.100:1.14 | S: So you should regularly check your own mind: | T: “Therefore, bhikkhus, one should often reflect upon one’s own mind thus:
+sn22.100:1.15 | S: ‘For a long time this mind has been corrupted by greed, hate, and delusion.’ | T: ‘For a long time this mind has been defiled by lust, hatred, and delusion.’
+sn22.100:1.16 | S: Sentient beings are corrupted because the mind is corrupted. | T: Through the defilements of the mind beings are defiled;
+sn22.100:1.17 | S: Sentient beings are purified because the mind is purified. | T: with the cleansing of the mind beings are purified.
+sn22.100:2.1 | S: Mendicants, have you seen the painting named ‘Conduct’?” | T: “Bhikkhus, have you seen the picture called ‘Faring On’?”
+sn22.100:2.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn22.100:2.3 | S: “That painting was devised by the mind, but the mind is even more diverse than that. | T: “Even that picture called ‘Faring On’ has been designed in its diversity by the mind, yet the mind is even more diverse than that picture called ‘Faring On.’
+sn22.100:2.4 | S: So you should regularly check your own mind: | T: “Therefore, bhikkhus, one should often reflect upon one’s own mind thus:
+sn22.100:2.5 | S: ‘For a long time this mind has been corrupted by greed, hate, and delusion.’ | T: ‘For a long time this mind has been defiled by lust, hatred, and delusion.’
+sn22.100:2.6 | S: Sentient beings are corrupted because the mind is corrupted. | T: Through the defilements of the mind beings are defiled;
+sn22.100:2.7 | S: Sentient beings are purified because the mind is purified. | T: with the cleansing of the mind beings are purified.
+sn22.100:3.1 | S: I don’t see any other order of beings as elaborate as the animal realm. | T: “Bhikkhus, I do not see any other order of living beings so diversified as those in the animal realm.
+sn22.100:3.2 | S: The creatures in the animal realm were devised by the mind, but the mind is even more diverse than that. | T: Even those beings in the animal realm have been diversified by the mind, yet the mind is even more diverse than those beings in the animal realm.
+sn22.100:3.3 | S: So you should regularly check your own mind: | T: “Therefore, bhikkhus, one should often reflect upon one’s own mind thus:
+sn22.100:3.4 | S: ‘For a long time this mind has been corrupted by greed, hate, and delusion.’ | T: ‘For a long time this mind has been defiled by lust, hatred, and delusion.’
+sn22.100:3.5 | S: Sentient beings are corrupted because the mind is corrupted. | T: Through the defilements of the mind beings are defiled;
+sn22.100:3.6 | S: Sentient beings are purified because the mind is purified. | T: with the cleansing of the mind beings are purified.
+sn22.100:4.1 | S: Suppose an artist or painter had some dye, red lac, turmeric, indigo, or rose madder. And on a polished plank or a wall or a canvas they’d create the form of a woman or a man, whole in its major and minor limbs. | T: “Suppose, bhikkhus, an artist or a painter, using dye or lac or turmeric or indigo or crimson, would create the figure of a man or a woman complete in all its features on a well-polished plank or wall or canvas.
+sn22.100:4.2 | S: In the same way, when an unlearned ordinary person generates a future life, all they generate is form, feeling, perception, choices, and consciousness. | T: So too, when the uninstructed worldling produces anything, it is only form that he produces; only feeling that he produces; only perception that he produces; only volitional formations that he produces; only consciousness that he produces.
+sn22.100:4.3 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn22.100:4.4 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.100:4.5 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”…—
+sn22.100:4.6 | S: “Is feeling … | T: (none)
+sn22.100:4.7 | S: perception … | T: (none)
+sn22.100:4.8 | S: choices … | T: (none)
+sn22.100:4.9 | S: consciousness permanent or impermanent?” … | T: (none)
+sn22.100:4.10 | S: “So you should truly see … | T: “Therefore …
+sn22.100:4.11 | S: Seeing this … | T: Seeing thus …
+sn22.100:4.12 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn22.100:4.13 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.40
+an5.40:1.1 | S: “Mendicants, great sal trees grow in five ways supported by the Himalayas, the king of mountains. | T: “Bhikkhus, based on the Himalayas, the king of mountains, great sal trees grow in five ways.
+an5.40:1.2 | S: What five? | T: What five?
+an5.40:1.3 | S: The branches, leaves, and foliage; | T: (1) They grow in branches, leaves, and foliage;
+an5.40:1.4 | S: the bark; | T: (2) they grow in bark;
+an5.40:1.5 | S: the shoots; | T: (3) they grow in shoots;
+an5.40:1.6 | S: the softwood; | T: (4) they grow in softwood;
+an5.40:1.7 | S: and the hardwood. | T: and (5) they grow in heartwood.
+an5.40:1.8 | S: Great sal trees grow in these five ways supported by the Himalayas, the king of mountains. | T: Based on the Himalayas, the king of mountains, great sal trees grow in these five ways.
+an5.40:1.9 | S: In the same way, a family grows in five ways supported by a family head with faith. | T: “So too, when the head of the family is endowed with faith, the people in the family who depend on him grow in five ways.
+an5.40:1.10 | S: What five? | T: What five?
+an5.40:1.11 | S: Faith, | T: (1) They grow in faith;
+an5.40:1.12 | S: ethics, | T: (2) they grow in virtuous behavior;
+an5.40:1.13 | S: learning, | T: (3) they grow in learning;
+an5.40:1.14 | S: generosity, | T: (4) they grow in generosity;
+an5.40:1.15 | S: and wisdom. | T: and (5) they grow in wisdom.
+an5.40:1.16 | S: A family grows in these five ways supported by a family head with faith. | T: When the head of a family is endowed with faith, the people in the family who depend on him grow in these five ways.”
+an5.40:2.1 | S: Supported by the rocky mountain | T: Just as the trees that grow in dependence on a rocky mountain
+an5.40:2.2 | S: in the wilds, the formidable forest, | T: in a vast forest wilderness
+an5.40:2.3 | S: the tree grows | T: (none)
+an5.40:2.4 | S: to become lord of the forest. | T: might become great ‘woodland lords,’
+an5.40:3.1 | S: So too, when the family head | T: so, when the head of a family here
+an5.40:3.2 | S: is ethical and faithful, | T: possesses faith and virtue,
+an5.40:3.3 | S: supported by them, they grow: | T: (none)
+an5.40:3.4 | S: children, partners, and kin, | T: his wife, children, and relatives all grow in dependence on him;
+an5.40:3.5 | S: colleagues, relatives, | T: so too his companions, his family circle,
+an5.40:3.6 | S: and those dependent for their livelihood. | T: and those dependent on him.
+an5.40:4.1 | S: Seeing the ethical conduct of the virtuous, | T: Those possessed of discernment, seeing that virtuous man’s good conduct,
+an5.40:4.2 | S: the generosity and good deeds, | T: his generosity and good deeds,
+an5.40:4.3 | S: those who see clearly | T: (none)
+an5.40:4.4 | S: do likewise. | T: emulate his example.
+an5.40:5.1 | S: Having practiced the teaching here, | T: Having lived here in accord with Dhamma,
+an5.40:5.2 | S: the path that goes to a good place, | T: the path leading to a good destination,
+an5.40:5.3 | S: they delight in the heavenly realm, | T: (none)
+an5.40:5.4 | S: enjoying all the pleasures they desire.” | T: those who desire sensual pleasures rejoice, delighting in the deva world.
+an5.40:5.5 | P: Dasamaṁ. | T: (none)
+an5.40:5.6 | P: Sumanavaggo catuttho. | T: (none)
+an5.40:6.0 | P: Tassuddānaṁ | T: (none)
+an5.40:6.1 | P: Sumanā cundī uggaho, | T: (none)
+an5.40:6.2 | P: sīho dānānisaṁsako; | T: (none)
+an5.40:6.3 | P: Kālabhojanasaddhā ca, | T: (none)
+an5.40:6.4 | P: puttasālehi te dasāti. | T: (none)
+
+## sn11.18
+sn11.18:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.18:1.2 | P: Tatra …pe… etadavoca: | T: There the Blessed One said this:
+sn11.18:1.3 | S: “Once upon a time, mendicants, Sakka, lord of gods, addressed his chariot handler Mātali, | T: “Bhikkhus, once in the past Sakka, lord of the devas, addressed his charioteer Matali thus:
+sn11.18:1.4 | S: ‘My dear Mātali, harness the chariot with its team of a thousand thoroughbreds. We will go to a park and see the scenery.’ | T: ‘Harness the chariot with its team of a thousand thoroughbreds, friend Matali. Let us go to the park grounds to see the beautiful scenery.’—
+sn11.18:1.5 | S: ‘Yes, lord,’ replied Mātali. He harnessed the chariot and informed Sakka, | T: ‘Yes, your lordship,’ Matali the charioteer replied. Then he harnessed the chariot with its team of a thousand thoroughbreds and announced to Sakka, lord of the devas:
+sn11.18:1.6 | S: ‘Good fellow, the chariot with its team of a thousand thoroughbreds has been harnessed. | T: ‘The chariot has been harnessed, dear sir.
+sn11.18:1.7 | S: Please go at your convenience.’ | T: You may come at your own convenience.’
+sn11.18:1.8 | S: Then Sakka descended from the Palace of Victory, raised his cupped palms, and revered the various quarters. | T: “Then, bhikkhus, Sakka, lord of the devas, descending from the Vejayanta Palace, raised his joined hands in reverential salutation, and worshipped the different quarters.
+sn11.18:1.9 | S: So Mātali the chariot handler addressed Sakka in verse: | T: Then Matali the charioteer addressed Sakka in verse:
+sn11.18:2.1 | S: ‘Those proficient in the three Vedas worship you, | T: “‘These all humbly worship you— Those versed in the Triple Veda,
+sn11.18:2.2 | S: as do all the aristocrats on earth, | T: All the khattiyas reigning on earth,
+sn11.18:2.3 | S: the four great kings, | T: The Four Great Kings and the glorious Thirty—
+sn11.18:2.4 | S: and the glorious host of Thirty. | T: (none)
+sn11.18:2.5 | S: So what’s the name of the spirit | T: So who, O Sakka, is that spirit
+sn11.18:2.6 | S: that you worship, Sakka?’ | T: To whom you bow in worship?’
+sn11.18:3.1 | S: ‘Those proficient in the three Vedas worship me, | T: Sakka: “‘These all humbly worship me— Those versed in the Triple Veda,
+sn11.18:3.2 | S: as do all the aristocrats on earth, | T: All the khattiyas reigning on earth,
+sn11.18:3.3 | S: the four great kings, | T: The Four Great Kings and the glorious Thirty—
+sn11.18:3.4 | S: and the glorious host of Thirty. | T: (none)
+sn11.18:4.1 | S: But I revere those accomplished in ethics, | T: But I worship those endowed with virtue,
+sn11.18:4.2 | S: who have long trained in immersion, | T: Those long trained in concentration,
+sn11.18:4.3 | S: who have rightly gone forth | T: Those who have properly gone forth
+sn11.18:4.4 | S: for the culmination of spiritual life. | T: With the holy life their destination.
+sn11.18:5.1 | S: I also worship those householders, | T: “‘I worship as well, O Matali, Those householders making merit,
+sn11.18:5.2 | S: the ethical lay followers | T: The lay followers possessed of virtue
+sn11.18:5.3 | S: who make merit, Mātali, | T: (none)
+sn11.18:5.4 | S: providing for a partner in a principled manner.’ | T: Who righteously maintain a wife.’
+sn11.18:6.1 | S: ‘Those who you worship | T: Matali: “‘Those whom you worship,
+sn11.18:6.2 | S: seem to be the best in the world, Sakka. | T: my lord Sakka, Are indeed the best in the world.
+sn11.18:6.3 | S: I too will worship | T: I too will worship them—
+sn11.18:6.4 | S: those who you worship, Sakka.’ | T: Those whom you worship, Vasava.’
+sn11.18:7.1 | S: After saying this, Maghavā the chief, | T: The Blessed One: “Having given this explanation, Having worshipped the different quarters, The deva-king Maghava,
+sn11.18:7.2 | S: king of gods, Sujā’s husband, | T: Suja’s husband, The chief,
+sn11.18:7.3 | S: having worshiped the various quarters | T: (none)
+sn11.18:7.4 | S: climbed into his chariot.” | T: climbed into his chariot.”
+
+## sn12.27
+sn12.27:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.27:1.2 | S: “Ignorance is a requirement for choices. | T: “Bhikkhus, with ignorance as condition, volitional formations come to be;
+sn12.27:1.3 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness …
+sn12.27:1.4 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.27:2.1 | S: And what is old age and death? | T: “And what, bhikkhus, is aging-and-death?
+sn12.27:2.2 | S: The old age, decrepitude, broken teeth, grey hair, wrinkly skin, diminished vitality, and failing faculties of the various sentient beings in the various orders of sentient beings. | T: The aging of the various beings …
+sn12.27:2.3 | S: This is called old age. | T: (none)
+sn12.27:2.4 | S: The passing away, passing on, disintegration, demise, mortality, death, decease, breaking up of the aggregates, and laying to rest of the corpse of the various sentient beings in the various orders of sentient beings. | T: (none)
+sn12.27:2.5 | S: This is called death. | T: as in §2 …
+sn12.27:2.6 | S: Such is old age, and such is death. | T: (none)
+sn12.27:2.7 | S: This is called old age and death. | T: thus this aging and this death are together called aging-and-death.
+sn12.27:2.8 | S: Rebirth is the origin of old age and death. | T: With the arising of birth there is the arising of aging-and-death;
+sn12.27:2.9 | S: When rebirth ceases, old age and death cease. | T: with the cessation of birth there is the cessation of aging-and-death.
+sn12.27:2.10 | S: The practice that leads to the cessation of old age and death is simply this noble eightfold path, | T: Just this Noble Eightfold Path is the way leading to the cessation of aging-and-death;
+sn12.27:2.11 | S: that is: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: that is, right view, right intention, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn12.27:3.1 | S: And what is rebirth? … | T: “And what, bhikkhus, is birth?…
+sn12.27:3.2 | S: And what is continued existence? … | T: existence?…
+sn12.27:3.3 | S: And what is grasping? … | T: clinging?… …
+sn12.27:3.4 | S: And what is craving? … | T: craving?…
+sn12.27:3.5 | S: And what is feeling? … | T: feeling?…
+sn12.27:3.6 | S: And what is contact? … | T: contact?…
+sn12.27:3.7 | S: And what are the six sense fields? … | T: the six sense bases?…
+sn12.27:3.8 | S: And what are name and form? … | T: name-and-form? …
+sn12.27:3.9 | S: And what is consciousness? … | T: consciousness?…
+sn12.27:4.1 | S: And what are choices? | T: volitional formations?
+sn12.27:4.2 | S: There are three kinds of choices. | T: There are these three kinds of volitional formations:
+sn12.27:4.3 | S: Choices by way of body, speech, and mind. | T: the bodily volitional formation, the verbal volitional formation, the mental volitional formation.
+sn12.27:4.4 | S: These are called choices. | T: (none)
+sn12.27:4.5 | S: Ignorance is the origin of choices. | T: With the arising of ignorance there is the arising of volitional formations.
+sn12.27:4.6 | S: When ignorance ceases, choices cease. | T: With the cessation of ignorance there is the cessation of volitional formations.
+sn12.27:4.7 | S: The practice that leads to the cessation of choices is simply this noble eightfold path, | T: Just this Noble Eightfold Path is the way leading to the cessation of volitional formations;
+sn12.27:4.8 | S: that is: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: that is, right view … right concentration.
+sn12.27:5.1 | S: When a noble disciple thus understands dependency, its origin, its cessation, and the practice that leads to its cessation, | T: “When, bhikkhus, a noble disciple thus understands the condition; thus understands the origin of the condition; thus understands the cessation of the condition; thus understands the way leading to the cessation of the condition,
+sn12.27:5.2 | S: that noble disciple is called: ‘one accomplished in view’, ‘one accomplished in vision’, ‘one who has come to the true teaching’, ‘one who sees this true teaching’, ‘one endowed with a trainee’s insight’, ‘one endowed with a trainee’s knowledge’, ‘one who has entered the stream of the teaching’, ‘a noble one with penetrative wisdom’, and also ‘one who stands pressing against the door to freedom from death’.” | T: he is then called a noble disciple who is accomplished in view, accomplished in vision, who has arrived at this true Dhamma, who sees this true Dhamma, who possesses a trainee’s knowledge, a trainee’s true knowledge, who has entered the stream of the Dhamma, a noble one with penetrative wisdom, one who stands squarely before the door to the Deathless.”
+sn12.27:5.3 | P: Sattamaṁ. | T: (none)
+
+## sn35.229
+sn35.229:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “Bhikkhus, the uninstructed worldling speaks of ‘the ocean, the ocean.’
+sn35.229:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that is not the ocean in the Noble One’s Discipline;
+sn35.229:1.3 | S: That’s just a large body of water, a large sea of water. | T: that is only a great mass of water, a great body of water.
+sn35.229:1.4 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, bhikkhus, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.229:1.5 | S: This is called the ocean in the training of the Noble One. | T: This is called the ocean in the Noble One’s Discipline.
+sn35.229:1.6 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this world with its devas, Mara, and Brahma, this generation with its ascetics and brahmins, its devas and humans, for the most part is submerged, become like a tangled skein, like a knotted ball of thread, like matted reeds and rushes, and cannot pass beyond the plane of misery, the bad destinations, the nether world, saṁsara.
+sn35.229:2.1 | S: There are sounds … smells … tastes … touches … ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are sounds cognizable by the ear … mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.229:2.2 | S: This is called the ocean in the training of the Noble One. | T: (none)
+sn35.229:2.3 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this world with its devas, Mara, and Brahma, this generation with its ascetics and brahmins, its devas and humans, for the most part is submerged, become like a tangled skein, like a knotted ball of thread, like matted reeds and rushes, and cannot pass beyond the plane of misery, the bad destinations, the nether world, saṁsara.
+sn35.229:3.1 | S: Those in whom greed, hate, and ignorance | T: “One who has expunged lust and hate Along with the taint of ignorance,
+sn35.229:3.2 | S: have faded away; | T: (none)
+sn35.229:3.3 | S: have crossed the ocean so hard to cross, | T: Has crossed this ocean so hard to cross
+sn35.229:3.4 | S: with its saltwater crocodiles and monsters, <j>its waves and dangers. | T: With its dangers of sharks, demons, waves.
+sn35.229:4.1 | S: They’ve slipped their chains, given up death, and have no attachments. | T: “The tie-surmounter, death-forsaker, without acquisitions,
+sn35.229:4.2 | S: They’ve given up suffering, <j>so there are no more future lives. | T: Has abandoned suffering for no renewed existence.
+sn35.229:4.3 | S: They’ve disappeared, and cannot be measured; | T: Passed away, he cannot be measured,
+sn35.229:4.4 | S: and they’ve confounded the King of Death, I say.” | T: I say: He has bewildered the King of Death.”
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.229:4.5 | P: Dutiyaṁ. | T: (none)
+
+## an3.48
+an3.48:1.1 | S: “Mendicants, great sal trees grow in three ways supported by the Himalayas, the king of mountains. | T: “Bhikkhus, based on the Himalayas, the king of mountains, great sal trees grow in three ways.
+an3.48:1.2 | S: What three? | T: What three?
+an3.48:1.3 | S: The branches, leaves, and foliage; the bark and shoots; and the softwood and heartwood. | T: (1) They grow in branches, leaves, and foliage; (2) they grow in bark and shoots; and (3) they grow in softwood and heartwood.
+an3.48:1.4 | S: Great sal trees grow in these three ways supported by the Himalayas, the king of mountains. | T: Based on the Himalayas, the king of mountains, great sal trees grow in these three ways.
+an3.48:2.1 | S: In the same way, a family grows in three ways supported by a family head with faith. | T: “So too, when the head of a family is endowed with faith, the people in the family who depend on him grow in three ways.
+an3.48:2.2 | S: What three? | T: What three?
+an3.48:2.3 | S: Faith, ethics, and wisdom. | T: (1) They grow in faith; (2) they grow in virtuous behavior; and (3) they grow in wisdom.
+an3.48:2.4 | S: A family grows in these three ways supported by a family head with faith. | T: When the head of a family is endowed with faith, the people in the family who depend on him grow in these three ways.”
+an3.48:3.1 | S: Supported by the rocky mountain | T: Just as the trees that grow in dependence on a rocky mountain
+an3.48:3.2 | S: in the wilds, the formidable forest, | T: in a vast forest wilderness
+an3.48:3.3 | S: the tree grows | T: (none)
+an3.48:3.4 | S: to become lord of the forest. | T: might become great “woodland lords,”
+an3.48:4.1 | S: So too, when the family head | T: so, when the head of a family here
+an3.48:4.2 | S: is ethical and faithful, | T: possesses faith and virtue,
+an3.48:4.3 | S: supported by them, they grow: | T: (none)
+an3.48:4.4 | S: children, partners, and kin, | T: his wife, children, and relatives all grow in dependence upon him;
+an3.48:4.5 | S: colleagues, relatives, | T: so too his friends, his family circle,
+an3.48:4.6 | S: and those dependent for their livelihood. | T: and those dependent on him.
+an3.48:5.1 | S: Seeing the ethical conduct of the virtuous, | T: Those possessed of discernment, seeing that virtuous man’s good conduct,
+an3.48:5.2 | S: the generosity and good deeds, | T: his generosity and good deeds,
+an3.48:5.3 | S: those who see clearly | T: (none)
+an3.48:5.4 | S: do likewise. | T: emulate his example.
+an3.48:6.1 | S: Having practiced the teaching here, | T: Having lived here in accord with Dhamma,
+an3.48:6.2 | S: the path that goes to a good place, | T: the path leading to a good destination,
+an3.48:6.3 | S: they delight in the heavenly realm, | T: those who desire sensual pleasures rejoice,
+an3.48:6.4 | S: enjoying all the pleasures they desire.” | T: delighting in the deva world.
+an3.48:6.5 | P: Navamaṁ. | T: (none)
+
+## an8.28
+an8.28:1.1 | S: Then Venerable Sāriputta went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Sāriputta approached the Blessed One…. The Blessed One then said to him:
+an8.28:1.2 | S: “Sāriputta, how many powers does a mendicant who has ended the defilements have that qualify them to claim: | T: “Sāriputta, when a bhikkhu’s taints have been destroyed, how many powers does he possess by reason of which he can claim:
+an8.28:1.3 | S: ‘My defilements have ended’?” | T: ‘My taints have been destroyed’?”
+an8.28:1.4 | S: “Sir, a mendicant who has ended the defilements has eight powers that qualify them to claim: | T: “Bhante, when a bhikkhu’s taints have been destroyed, he possesses eight powers by reason of which he can claim:
+an8.28:1.5 | S: ‘My defilements have ended.’ | T: ‘My taints have been destroyed.’
+an8.28:2.1 | S: What eight? | T: What eight?
+an8.28:2.2 | S: Firstly, a mendicant with defilements ended has clearly seen with right wisdom all conditions as truly impermanent. | T: (1) “Here, Bhante, a bhikkhu with taints destroyed has clearly seen all conditioned phenomena as they really are with correct wisdom as impermanent.
+an8.28:2.3 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: This is a power of a bhikkhu with taints destroyed on the basis of which he can claim:
+an8.28:2.4 | S: ‘My defilements have ended.’ | T: ‘My taints have been destroyed.’
+an8.28:3.1 | S: Furthermore, a mendicant with defilements ended has clearly seen with right wisdom that sensual pleasures are truly like a pit of glowing coals. | T: (2) “Again, a bhikkhu with taints destroyed has clearly seen sensual pleasures as they really are with correct wisdom as similar to a charcoal pit.
+an8.28:3.2 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: This is a power of a bhikkhu with taints destroyed….
+an8.28:3.3 | S: ‘My defilements have ended.’ | T: (none)
+an8.28:4.1 | S: Furthermore, the mind of a mendicant with defilements ended slants, slopes, and inclines to seclusion. They’re withdrawn, loving renunciation, and have totally eliminated defiling influences. | T: (3) “Again, the mind of a bhikkhu with taints destroyed slants, slopes, and inclines to seclusion; it is withdrawn, delighting in renunciation, and is entirely finished with all things that are a basis for the taints.
+an8.28:4.2 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: This is a power of a bhikkhu with taints destroyed….
+an8.28:4.3 | S: ‘My defilements have ended.’ | T: (none)
+an8.28:5.1 | S: Furthermore, a mendicant with defilements ended has well developed the four kinds of mindfulness meditation. | T: (4) “Again, a bhikkhu with taints destroyed has developed and well developed the four establishments of mindfulness.
+an8.28:5.2 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: Since that is so, this is a power of a bhikkhu with taints destroyed….
+an8.28:5.3 | S: ‘My defilements have ended.’ | T: (none)
+an8.28:6.1 | S: Furthermore, a mendicant with defilements ended has well developed the four bases of psychic power … | T: (5)–(8) “Again, a bhikkhu with taints destroyed has developed and well developed the four bases for psychic potency …
+an8.28:6.2 | S: the five faculties … | T: the five spiritual faculties …
+an8.28:6.3 | S: the seven awakening factors … | T: the seven factors of enlightenment …
+an8.28:6.4 | S: the noble eightfold path. | T: the noble eightfold path.
+an8.28:6.5 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: This is a power of a bhikkhu with taints destroyed on the basis of which he can claim:
+an8.28:6.6 | S: ‘My defilements have ended.’ | T: ‘My taints have been destroyed.’
+an8.28:7.1 | S: A mendicant who has ended the defilements possesses these eight powers that qualify them to claim: | T: “Bhante, when a bhikkhu’s taints have been destroyed, he possesses these eight powers on the basis of which he can claim:
+an8.28:7.2 | S: ‘My defilements have ended.’” | T: ‘My taints have been destroyed.’”
+an8.28:7.3 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn5.4
+sn5.4:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn5.4:1.2 | S: Then the nun Vijayā robed up in the morning … | T: Then, in the morning, the bhikkhuni Vijaya dressed …
+sn5.4:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: she sat down at the foot of a tree for the day’s abiding.
+sn5.4:1.4 | S: Then Māra the Wicked, wanting to make the nun Vijayā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Mara the Evil One, desiring to arouse fear, trepidation, and terror in the bhikkhuni Vijaya, desiring to make her fall away from concentration, approached her and addressed her in verse:
+sn5.4:2.1 | S: “You’re so young and beautiful, | T: “You are so young and beautiful,
+sn5.4:2.2 | S: and I’m a youth in my prime. | T: And I too am a youth in my prime.
+sn5.4:2.3 | S: Come, my lady, let us enjoy | T: Come, noble lady, let us rejoice
+sn5.4:2.4 | S: the music of a five-piece band.” | T: With the music of a fivefold ensemble.”
+sn5.4:3.1 | S: Then the nun Vijayā thought, | T: Then it occurred to the bhikkhuni Vijaya:
+sn5.4:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who is this…?
+sn5.4:3.3 | S: Then she thought, | T: (none)
+sn5.4:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: This is Mara the Evil One … desiring to make me fall away from concentration.”
+sn5.4:3.5 | S: Then Vijayā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then the bhikkhuni Vijaya, having understood, “This is Mara the Evil One,” replied to him in verses:
+sn5.4:4.1 | S: “Sights, sounds, tastes, smells, | T: “Forms, sounds, tastes, odours,
+sn5.4:4.2 | S: and touches so delightful. | T: And delightful tactile objects—
+sn5.4:4.3 | S: I hand them right back to you, Māra, | T: I offer them right back to you,
+sn5.4:4.4 | S: for I have no use for them. | T: For I, O Mara, do not need them.
+sn5.4:5.1 | S: This body is rotting, | T: “I am repelled and humiliated By this foul, putrid body,
+sn5.4:5.2 | S: decaying and frail. | T: Subject to break up, fragile:
+sn5.4:5.3 | S: I’m horrified and repelled by it, | T: (none)
+sn5.4:5.4 | S: and I’ve eradicated sensual craving. | T: I’ve uprooted sensual craving.
+sn5.4:6.1 | S: There are beings in the realm of luminous form, | T: “As to those beings who fare amidst form,
+sn5.4:6.2 | S: and others stuck in the formless. | T: And those who abide in the formless,
+sn5.4:6.3 | S: I’ve destroyed the darkness | T: (none)
+sn5.4:6.4 | S: regarding all such peaceful attainments.” | T: And those peaceful attainments too: Everywhere darkness has been destroyed.”
+sn5.4:7.1 | S: Then Māra the Wicked, thinking, “The nun Vijayā knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing “The bhikkhuni Vijaya knows me,” sad and disappointed, disappeared right there.
+
+## an3.37
+an3.37:1.1 | S: “On the eighth day of the fortnight, mendicants, the ministers and councillors of the four great kings wander about the world, thinking: | T: “Bhikkhus, (1) on the eighth of the fortnight, the ministers and assembly members of the four great kings wander over this world, thinking:
+an3.37:1.2 | S: ‘Hopefully most humans are paying due respect to their parents, ascetics and brahmins, honoring the elders in their families, observing and keeping vigil on the sabbath, and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father, behave properly toward ascetics and brahmins, honor the elders of the family, observe the uposatha, keep the extra observance days, and do meritorious deeds.’
+an3.37:1.3 | S: And on the fourteenth day of the fortnight, the sons of the four great kings wander about the world, thinking: | T: (2) On the fourteenth of the fortnight, the sons of the four great kings wander over this world, thinking:
+an3.37:1.4 | S: ‘Hopefully most humans are paying due respect to their parents … and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father … … and do meritorious deeds.’
+an3.37:1.5 | S: And on the fifteenth day sabbath, the four great kings themselves wander about the world, thinking: | T: (3) On the fifteenth, the uposatha day, the four great kings themselves wander over this world, thinking:
+an3.37:1.6 | S: ‘Hopefully most humans are paying due respect to their parents … and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father … and do meritorious deeds.’
+an3.37:2.1 | S: If only a few humans are paying due respect to their parents … and making merit, | T: “If, bhikkhus, there are few people who behave properly toward their mother and father … and do meritorious deeds,
+an3.37:2.2 | S: the four great kings address the gods of the thirty-three, seated together in the Hall of Clear Right: | T: the four great kings report this to the Tāvatiṁsa devas when they meet and are sitting together in the Sudhamma council hall:
+an3.37:2.3 | S: ‘Only a few humans are paying due respect to their parents … and making merit.’ | T: ‘Revered sirs, there are few people who behave properly toward their mother and father … and do meritorious deeds.’
+an3.37:2.4 | S: Then the gods of the thirty-three are disappointed, thinking, | T: Then, because of this, the Tāvatiṁsa devas become displeased, saying:
+an3.37:2.5 | S: ‘The heavenly hosts will dwindle, while the titan hosts will swell!’ | T: ‘Alas, the celestial company will decline and the company of asuras will flourish!’
+an3.37:3.1 | S: But if many humans are paying due respect to their parents … and making merit, | T: “But if there are many people who behave properly toward their mother and father … and do meritorious deeds,
+an3.37:3.2 | S: the four great kings address the gods of the thirty-three, seated together in the Hall of Clear Right: | T: the four great kings report this to the Tāvatiṁsa devas when they meet and are sitting together in the Sudhamma council hall:
+an3.37:3.3 | S: ‘Many humans are paying due respect to their parents … and making merit.’ | T: ‘Revered sirs, there are many people who behave properly toward their mother and father, behave properly toward ascetics and brahmins, honor the elders of the family, observe the uposatha, keep the extra observance days, and do meritorious deeds.’
+an3.37:3.4 | S: Then the gods of the thirty-three are pleased, thinking, | T: Then, because of this, the Tāvatiṁsa devas become elated, saying:
+an3.37:3.5 | S: ‘The heavenly hosts will swell, while the titan hosts will dwindle!’ | T: ‘Indeed, the celestial company will flourish and the company of asuras will decline!’”
+an3.37:4.1 | S: Once upon a time, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Bhikkhus, once in the past, when Sakka, ruler of the devas, was guiding the Tāvatiṁsa devas, he recited this verse:
+an3.37:5.1 | S: ‘Whoever wants to be like me | T: “‘The person who would be like me
+an3.37:5.2 | S: would observe the sabbath | T: should observe the uposatha
+an3.37:5.3 | S: complete in all eight factors, | T: complete in the eight factors,
+an3.37:5.4 | S: on the fourteenth and the fifteenth days, | T: on the fourteenth, fifteenth,
+an3.37:5.5 | S: and the eighth day of the fortnight, | T: and eighth of the fortnight,
+an3.37:5.6 | S: as well as on the fortnightly special displays.’ | T: and during special fortnights.’
+an3.37:6.1 | S: But that verse was poorly sung by Sakka, lord of gods, not well sung; poorly spoken, not well spoken. | T: “This verse, bhikkhus, was badly recited by Sakka, ruler of the devas, not well recited. It was badly stated, not well stated.
+an3.37:6.2 | S: Why is that? | T: For what reason?
+an3.37:6.3 | S: Because Sakka, lord of gods, is not free of greed, hate, and delusion. | T: Because Sakka, ruler of the devas, is not devoid of lust, hatred, and delusion.
+an3.37:7.1 | S: But for a mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—it is appropriate to say: | T: But in the case of a bhikkhu who is an arahant—one whose taints are destroyed, who has lived the spiritual life, done what had to be done, laid down the burden, reached his own goal, utterly destroyed the fetters of existence, one completely liberated through final knowledge—it is fitting for him to say:
+an3.37:8.1 | S: ‘Whoever wants to be like me | T: “‘The person who would be like me …
+an3.37:8.2 | S: would observe the sabbath, | T: (none)
+an3.37:8.3 | S: complete in all eight factors, | T: (none)
+an3.37:8.4 | S: on the fourteenth and the fifteenth days, | T: (none)
+an3.37:8.5 | S: and the eighth day of the fortnight, | T: (none)
+an3.37:8.6 | S: as well as on the fortnightly special displays.’ | T: and during special fortnights.’
+an3.37:9.1 | S: Why is that? | T: “For what reason?
+an3.37:9.2 | S: Because that mendicant is free of greed, hate, and delusion.” | T: Because that bhikkhu is devoid of lust, hatred, and delusion.”
+an3.37:9.3 | P: Sattamaṁ. | T: (none)
+
+## an3.47
+an3.47:1.1 | S: “Mendicants, the conditioned has these three characteristics. | T: “Bhikkhus, there are these three characteristics that define the conditioned.
+an3.47:1.2 | S: What three? | T: What three?
+an3.47:1.3 | S: Arising is evident, vanishing is evident, and change while persisting is evident. | T: An arising is seen, a vanishing is seen, and its alteration while it persists is seen.
+an3.47:1.4 | S: These are the three characteristics of the conditioned.” | T: These are the three characteristics that define the conditioned.
+an3.47:1.5 | P: Sattamaṁ. | T: (none)
+an3.47:2.0 | S: Characteristics of the Unconditioned | T: (none)
+an3.47:2.1 | S: “The unconditioned has these three characteristics. | T: “Bhikkhus, there are these three characteristics that define the unconditioned.
+an3.47:2.2 | S: What three? | T: What three?
+an3.47:2.3 | S: No arising is evident, no vanishing is evident, and no change while persisting is evident. | T: No arising is seen, no vanishing is seen, and no alteration while it persists is seen.
+an3.47:2.4 | S: These are the three characteristics of the unconditioned.” | T: These are the three characteristics that define the unconditioned.”
+an3.47:2.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.42
+an5.42:1.1 | S: “Mendicants, a true person is born in a family for the benefit, welfare, and happiness of the people. | T: “Bhikkhus, when a good person is born in a family, it is for the good, welfare, and happiness of many people.
+an5.42:1.2 | S: For the benefit, welfare, and happiness of mother and father; | T: It is for the good, welfare, and happiness of (1) his mother and father,
+an5.42:1.3 | S: children and partners; | T: (2) his wife and children,
+an5.42:1.4 | S: bondservants, workers, and staff; | T: (3) his slaves, workers, and servants,
+an5.42:1.5 | S: friends and colleagues; | T: (4) his friends and companions,
+an5.42:1.6 | S: and ascetics and brahmins. | T: and (5) ascetics and brahmins.
+an5.42:2.1 | S: It’s like a great rain cloud, which nourishes all the crops for the benefit, welfare, and happiness of the people. | T: Just as a great rain cloud, nurturing all the crops, appears for the good, welfare, and happiness of many people,
+an5.42:2.2 | S: In the same way, a true person is born in a family for the benefit, welfare, and happiness of the people. … | T: so too, when a good person is born in a family, it is for the good, welfare, and happiness of many people.
+an5.42:2.3 | P: mātāpitūnaṁ atthāya hitāya sukhāya hoti; | T: It is for the good, welfare, and happiness of his mother and father …
+an5.42:2.4 | P: puttadārassa atthāya hitāya sukhāya hoti; | T: (none)
+an5.42:2.5 | P: dāsakammakaraporisassa atthāya hitāya sukhāya hoti; | T: (none)
+an5.42:2.6 | P: mittāmaccānaṁ atthāya hitāya sukhāya hoti; | T: (none)
+an5.42:2.7 | P: samaṇabrāhmaṇānaṁ atthāya hitāya sukhāya hotīti. | T: ascetics and brahmins.”
+an5.42:3.1 | S: The gods protect one who is guarded by principle, | T: The deities protect one guarded by the Dhamma,
+an5.42:3.2 | S: who uses their wealth for the welfare of the many. | T: who has managed his wealth for the welfare of many.
+an5.42:3.3 | S: One who is learned, <j>with precepts and observances intact, | T: Fame does not forsake one steadfast in the Dhamma, who is learned and of virtuous behavior and observances.
+an5.42:3.4 | S: and steady in principle, doesn’t lose their reputation. | T: (none)
+an5.42:4.1 | S: Firm in principle, accomplished in ethical conduct, | T: Who is fit to blame him, standing in Dhamma, accomplished in virtuous behavior,
+an5.42:4.2 | S: truthful, conscientious; | T: a speaker of truth, possessing a sense of shame,
+an5.42:4.3 | S: like a pendant of Black Plum River gold, | T: pure like a coin of refined gold?
+an5.42:4.4 | S: who is worthy to criticize them? | T: (none)
+an5.42:4.5 | S: Even the gods praise them, | T: Even the devas praise him;
+an5.42:4.6 | S: and by the Divinity, too, they’re praised.” | T: by Brahmā, too, he is praised.
+an5.42:4.7 | P: Dutiyaṁ. | T: (none)
+
+## an5.49
+an5.49:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an5.49:1.2 | S: Then King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. | T: Then King Pasenadi of Kosala approached the Blessed One, paid homage to him, and sat down to one side.
+an5.49:2.1 | P: Tena kho pana samayena mallikā devī kālaṅkatā hoti. | T: Now on that occasion Queen Mallikā had just died.
+an5.49:2.2 | S: Then a man went up to the king and whispered in his ear, | T: Then a man approached King Pasendi and whispered in his ear:
+an5.49:2.3 | S: “Your Majesty, Queen Mallikā has passed away.” | T: “Sire, Queen Mallikā has just died.”
+an5.49:2.4 | S: When this was said, King Pasenadi was miserable and sad. He sat with his shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, King Pasenadi was pained and saddened, and he sat there with slumping shoulders, facing downward, glum, and speechless.
+an5.49:3.1 | S: Knowing this, the Buddha said to him, | T: Then the Blessed One, having known the king’s condition, said to him:
+an5.49:3.2 | S: “Great king, there are five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “Great king, there are these five situations that are unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.”
+an5.49:3.3 | S: What five? | T: The rest of this sutta is identical with AN5.48, including the verses.
+an5.49:3.4 | S: That someone liable to old age should not grow old. … Sorrowing and lamenting doesn’t do even a little bit of good … ‘The deed is powerful. What can I do now?’” | T: (none)
+an5.49:3.5 | P: Navamaṁ. | T: (none)
+
+## an8.39
+an8.39:1.1 | S: “Mendicants, there are these eight kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness. | T: “Bhikkhus, there are these eight streams of merit, streams of the wholesome, nutriments of happiness—heavenly, ripening in happiness, conducive to heaven—that lead to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.39:1.2 | S: What eight? | T: What eight?
+an8.39:1.3 | S: Firstly, a noble disciple has gone for refuge to the Buddha. | T: (1) “Here, a noble disciple has gone for refuge to the Buddha.
+an8.39:1.4 | S: This is the first kind of overflowing merit … | T: This is the first stream of merit, stream of the wholesome, nutriment of happiness—heavenly, ripening in happiness, conducive to heaven—that leads to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an8.39:2.1 | S: Furthermore, a noble disciple has gone for refuge to the teaching. | T: (2) “Again, a noble disciple has gone for refuge to the Dhamma.
+an8.39:2.2 | S: This is the second kind of overflowing merit … | T: This is the second stream of merit … that leads to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an8.39:3.1 | S: Furthermore, a noble disciple has gone for refuge to the Saṅgha. | T: (3) “Again, a noble disciple has gone for refuge to the Saṅgha.
+an8.39:3.2 | S: This is the third kind of overflowing merit … | T: This is the third stream of merit … that leads to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an8.39:3.3 | S: Mendicants, these five gifts are great, primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “There are, bhikkhus, these five gifts, great gifts, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, not repudiated by wise ascetics and brahmins.
+an8.39:3.4 | S: What five? | T: What five?
+an8.39:3.5 | S: Firstly, a noble disciple gives up killing living creatures. | T: (4) “Here, a noble disciple, having abandoned the destruction of life, abstains from the destruction of life.
+an8.39:3.6 | S: By so doing they give to countless sentient beings the gift of freedom from fear, enmity, and ill will. | T: By abstaining from the destruction of life, the noble disciple gives to an immeasurable number of beings freedom from fear, enmity, and affliction.
+an8.39:3.7 | S: And they themselves also enjoy unlimited freedom from fear, enmity, and ill will. | T: He himself in turn enjoys immeasurable freedom from fear, enmity, and affliction.
+an8.39:3.8 | S: This is the first gift that is a great offering, primordial, long-standing, customary, and traditional. It is uncorrupted, as it has been since the beginning. It’s not being corrupted now nor will it be. Sensible ascetics and brahmins don’t look down on it. | T: This is the first gift, a great gift, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which is not being adulterated and will not be adulterated, not repudiated by wise ascetics and brahmins.
+an8.39:3.9 | S: This is the fourth kind of overflowing merit … | T: This is the fourth stream of merit … that leads to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an8.39:4.1 | S: Furthermore, a noble disciple gives up stealing. … | T: (5)–(8) “Again, a noble disciple, having abandoned the taking of what is not given, abstains from taking what is not given …
+an8.39:4.2 | S: This is the fifth kind of overflowing merit … | T: (none)
+an8.39:5.1 | S: Furthermore, a noble disciple gives up sexual misconduct. … | T: abstains from sexual misconduct …
+an8.39:5.2 | S: This is the sixth kind of overflowing merit … | T: (none)
+an8.39:6.1 | S: Furthermore, a noble disciple gives up lying. … | T: abstains from false speech …
+an8.39:6.2 | S: This is the seventh kind of overflowing merit … | T: (none)
+an8.39:7.1 | S: Furthermore, a noble disciple gives up intoxicants of beer, wine, and liquor. | T: abstains from liquor, wine, and intoxicants, the basis for heedlessness.
+an8.39:7.2 | S: By so doing they give to countless sentient beings the gift of freedom from fear, enmity, and ill will. | T: By abstaining from liquor, wine, and intoxicants, the basis for heedlessness, the noble disciple gives to an immeasurable number of beings freedom from fear, enmity, and affliction.
+an8.39:7.3 | S: And they themselves also enjoy unlimited freedom from fear, enmity, and ill will. | T: He himself in turn enjoys immeasurable freedom from fear, enmity, and affliction.
+an8.39:7.4 | S: This is the fifth gift that is a great offering, primordial, long-standing, customary, and traditional. It is uncorrupted, as it has been since the beginning. It’s not being corrupted now nor will it be. Sensible ascetics and brahmins don’t look down on it. | T: This is the fifth gift, a great gift, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which is not being adulterated and will not be adulterated, not repudiated by wise ascetics and brahmins.
+an8.39:7.5 | S: This is the eighth kind of overflowing merit … | T: This is the eighth stream of merit … that leads to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an8.39:8.1 | S: These are the eight kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness.” | T: “These, bhikkhus, are the eight streams of merit, streams of the wholesome, nutriments of happiness—heavenly, ripening in happiness, conducive to heaven—that lead to what is wished for, desired, and agreeable, to one’s welfare and happiness.”
+an8.39:8.2 | P: Navamaṁ. | T: (none)
+
+
+codex
+I’ve read the whole batch. I’m checking the verse boundaries carefully and leaving out cases that reflect word order or combined lines.
+exec
+/bin/bash -lc "sed -n '78,90p;207,222p;265,279p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.40:5.2 | S: the path that goes to a good place, | T: the path leading to a good destination,
+an5.40:5.3 | S: they delight in the heavenly realm, | T: (none)
+an5.40:5.4 | S: enjoying all the pleasures they desire.” | T: those who desire sensual pleasures rejoice, delighting in the deva world.
+an5.40:5.5 | P: Dasamaṁ. | T: (none)
+an5.40:5.6 | P: Sumanavaggo catuttho. | T: (none)
+an5.40:6.0 | P: Tassuddānaṁ | T: (none)
+an5.40:6.1 | P: Sumanā cundī uggaho, | T: (none)
+an5.40:6.2 | P: sīho dānānisaṁsako; | T: (none)
+an5.40:6.3 | P: Kālabhojanasaddhā ca, | T: (none)
+an5.40:6.4 | P: puttasālehi te dasāti. | T: (none)
+
+## sn11.18
+sn11.18:1.1 | S: At Sāvatthī. | T: At Savatthī.
+an3.48:6.2 | S: the path that goes to a good place, | T: the path leading to a good destination,
+an3.48:6.3 | S: they delight in the heavenly realm, | T: those who desire sensual pleasures rejoice,
+an3.48:6.4 | S: enjoying all the pleasures they desire.” | T: delighting in the deva world.
+an3.48:6.5 | P: Navamaṁ. | T: (none)
+
+## an8.28
+an8.28:1.1 | S: Then Venerable Sāriputta went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Sāriputta approached the Blessed One…. The Blessed One then said to him:
+an8.28:1.2 | S: “Sāriputta, how many powers does a mendicant who has ended the defilements have that qualify them to claim: | T: “Sāriputta, when a bhikkhu’s taints have been destroyed, how many powers does he possess by reason of which he can claim:
+an8.28:1.3 | S: ‘My defilements have ended’?” | T: ‘My taints have been destroyed’?”
+an8.28:1.4 | S: “Sir, a mendicant who has ended the defilements has eight powers that qualify them to claim: | T: “Bhante, when a bhikkhu’s taints have been destroyed, he possesses eight powers by reason of which he can claim:
+an8.28:1.5 | S: ‘My defilements have ended.’ | T: ‘My taints have been destroyed.’
+an8.28:2.1 | S: What eight? | T: What eight?
+an8.28:2.2 | S: Firstly, a mendicant with defilements ended has clearly seen with right wisdom all conditions as truly impermanent. | T: (1) “Here, Bhante, a bhikkhu with taints destroyed has clearly seen all conditioned phenomena as they really are with correct wisdom as impermanent.
+an8.28:2.3 | S: This is a power that a mendicant who has ended the defilements relies on to claim: | T: This is a power of a bhikkhu with taints destroyed on the basis of which he can claim:
+an8.28:2.4 | S: ‘My defilements have ended.’ | T: ‘My taints have been destroyed.’
+an8.28:3.1 | S: Furthermore, a mendicant with defilements ended has clearly seen with right wisdom that sensual pleasures are truly like a pit of glowing coals. | T: (2) “Again, a bhikkhu with taints destroyed has clearly seen sensual pleasures as they really are with correct wisdom as similar to a charcoal pit.
+sn5.4:6.3 | S: I’ve destroyed the darkness | T: (none)
+sn5.4:6.4 | S: regarding all such peaceful attainments.” | T: And those peaceful attainments too: Everywhere darkness has been destroyed.”
+sn5.4:7.1 | S: Then Māra the Wicked, thinking, “The nun Vijayā knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing “The bhikkhuni Vijaya knows me,” sad and disappointed, disappeared right there.
+
+## an3.37
+an3.37:1.1 | S: “On the eighth day of the fortnight, mendicants, the ministers and councillors of the four great kings wander about the world, thinking: | T: “Bhikkhus, (1) on the eighth of the fortnight, the ministers and assembly members of the four great kings wander over this world, thinking:
+an3.37:1.2 | S: ‘Hopefully most humans are paying due respect to their parents, ascetics and brahmins, honoring the elders in their families, observing and keeping vigil on the sabbath, and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father, behave properly toward ascetics and brahmins, honor the elders of the family, observe the uposatha, keep the extra observance days, and do meritorious deeds.’
+an3.37:1.3 | S: And on the fourteenth day of the fortnight, the sons of the four great kings wander about the world, thinking: | T: (2) On the fourteenth of the fortnight, the sons of the four great kings wander over this world, thinking:
+an3.37:1.4 | S: ‘Hopefully most humans are paying due respect to their parents … and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father … … and do meritorious deeds.’
+an3.37:1.5 | S: And on the fifteenth day sabbath, the four great kings themselves wander about the world, thinking: | T: (3) On the fifteenth, the uposatha day, the four great kings themselves wander over this world, thinking:
+an3.37:1.6 | S: ‘Hopefully most humans are paying due respect to their parents … and making merit.’ | T: ‘We hope there are many people who behave properly toward their mother and father … and do meritorious deeds.’
+an3.37:2.1 | S: If only a few humans are paying due respect to their parents … and making merit, | T: “If, bhikkhus, there are few people who behave properly toward their mother and father … and do meritorious deeds,
+an3.37:2.2 | S: the four great kings address the gods of the thirty-three, seated together in the Hall of Clear Right: | T: the four great kings report this to the Tāvatiṁsa devas when they meet and are sitting together in the Sudhamma council hall:
+an3.37:2.3 | S: ‘Only a few humans are paying due respect to their parents … and making merit.’ | T: ‘Revered sirs, there are few people who behave properly toward their mother and father … and do meritorious deeds.’
+an3.37:2.4 | S: Then the gods of the thirty-three are disappointed, thinking, | T: Then, because of this, the Tāvatiṁsa devas become displeased, saying:
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-022.findings.tmp <<'EOF'
+an5.40:3.3 starts: his wife, children, and relatives all grow
+an5.40:3.4 none
+an5.40:5.3 starts: those who desire sensual pleasures rejoice, delighting
+an5.40:5.4 none
+sn12.27:2.6 starts: thus this aging and this death are
+sn12.27:2.7 none
+an3.48:4.3 starts: his wife, children, and relatives all grow
+an3.48:4.4 none
+an3.48:6.4 none
+sn5.4:6.3 starts: And those peaceful attainments too: Everywhere darkness
+sn5.4:6.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+11 lines reported.
+tokens used
+30,801
+11 lines reported.

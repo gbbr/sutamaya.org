@@ -1,0 +1,621 @@
+{
+  "date": "2026-10-02",
+  "translator": "bodhi",
+  "assessment": "read-only source-range correspondence assessment",
+  "evidence_scope": "Saved Bodhi upstream SN45 HTML, original Pali JSON, and current isolated trial translations for SN45.50-54/55/57-61/62. Other range pairs checked narrowly by exact normalized-body comparison plus their Pali keys.",
+  "primary_cases": [
+    {
+      "source_ids": [
+        "sn45.50-54",
+        "sn45.55"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.50-54.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.55.html"
+      ],
+      "source_declared_coverage": "45.50–55. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "d70b9071dff1852dd7bcfcf88b81143479bd43a7c387fb849f12a81eea07516d",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.50-54": [
+          "sn45.50-54:0.1",
+          "sn45.50-54:0.2",
+          "sn45.50-54:0.3",
+          "sn45.50-54:1.1",
+          "sn45.50-54:1.2",
+          "sn45.50-54:1.3",
+          "sn45.50-54:1.4",
+          "sn45.50-54:1.5",
+          "sn45.50-54:1.6",
+          "sn45.50-54:1.7",
+          "sn45.50-54:1.8"
+        ],
+        "sn45.55": [
+          "sn45.55:0.1",
+          "sn45.55:0.2",
+          "sn45.55:0.3",
+          "sn45.55:1.1",
+          "sn45.55:1.2",
+          "sn45.55:1.3",
+          "sn45.55:1.4",
+          "sn45.55:1.5",
+          "sn45.55:1.6",
+          "sn45.55:1.7"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "proposed_explicit_coverage": [
+        {
+          "source_component": "dawn",
+          "pali_key": "sn45.50-54:1.1",
+          "correspondence": "shared with sn45.55:1.1"
+        },
+        {
+          "source_component": "virtue",
+          "pali_key": "sn45.50-54:1.2",
+          "correspondence": "prefix plus virtue"
+        },
+        {
+          "source_component": "desire",
+          "pali_key": "sn45.50-54:1.4",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "self",
+          "pali_key": "sn45.50-54:1.5",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "view",
+          "pali_key": "sn45.50-54:1.6",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "diligence",
+          "pali_key": "sn45.50-54:1.7",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "careful_attention",
+          "pali_key": "sn45.55:1.2",
+          "correspondence": "variant phrase; common lead-in shared"
+        },
+        {
+          "source_component": "attention_expectation",
+          "pali_key": "sn45.55:1.3",
+          "correspondence": "literal predicate"
+        },
+        {
+          "source_component": "attention_question",
+          "pali_key": "sn45.55:1.4",
+          "correspondence": "literal question"
+        },
+        {
+          "source_component": "attention_path",
+          "pali_key": "sn45.55:1.5",
+          "correspondence": "right-view/right-concentration and abbreviation"
+        },
+        {
+          "source_component": "attention_conclusion",
+          "pali_key": "sn45.55:1.6",
+          "correspondence": "literal conclusion"
+        }
+      ],
+      "current_trial_defects": [
+        {
+          "keys": [
+            "sn45.50-54:1.2"
+          ],
+          "issue": "Five virtue-to-diligence variants plus foreign attention phrase are grouped here."
+        },
+        {
+          "keys": [
+            "sn45.50-54:1.3"
+          ],
+          "issue": "Entire explicit attention expectation/question/path/conclusion is attached to a virtue-expectation Pali key. It literally renders sn45.55:1.3–1.6."
+        },
+        {
+          "keys": [
+            "sn45.50-54:1.4",
+            "sn45.50-54:1.5",
+            "sn45.50-54:1.6",
+            "sn45.50-54:1.7"
+          ],
+          "issue": "Rendered individual variant phrases are not individually attached to their keys."
+        },
+        {
+          "keys": [
+            "sn45.55:1.2"
+          ],
+          "issue": "Terminal-single copy includes the earlier virtue/desire/self/view/diligence variants before careful attention; those variant phrases belong to the range document."
+        }
+      ],
+      "source_abbreviated_no_independent_literal_rendering": [
+        "sn45.50-54:1.3"
+      ],
+      "untranslated_structural_keys": [
+        "sn45.50-54:1.8",
+        "sn45.55:1.7"
+      ],
+      "local_cut_limit": "Splitting variant list items improves the range prefix locally, but the final attention phrase and tail still belong outside the range Pali document. In the terminal-single copy, removing preceding variants by ordinary cuts would lose the beginning of the preserved source or assign it to attention incorrectly. Grouping merely hides those mismatches. Neither copy can be wholly literal with its own document keys.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.50-54.html": "0b6c19e0cfa418cf94f3fd1098ff5727cccdd64b3a1925750aebd11bf0c9dda3",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.55.html": "85701d85cce6e3dc1b5c73fa1f963551516d0dd67fe1782665801c8ce28881e8"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.57-61",
+        "sn45.62"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.57-61.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.62.html"
+      ],
+      "source_declared_coverage": "45.57–62. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "1a4d4bcc5dbe1f473379642a4acfe314a7987443ed22194bc040f84699bc968e",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.57-61": [
+          "sn45.57-61:0.1",
+          "sn45.57-61:0.2",
+          "sn45.57-61:0.3",
+          "sn45.57-61:1.1",
+          "sn45.57-61:1.2",
+          "sn45.57-61:1.3",
+          "sn45.57-61:1.4",
+          "sn45.57-61:1.5",
+          "sn45.57-61:1.6",
+          "sn45.57-61:1.7"
+        ],
+        "sn45.62": [
+          "sn45.62:0.1",
+          "sn45.62:0.2",
+          "sn45.62:0.3",
+          "sn45.62:1.1",
+          "sn45.62:1.2",
+          "sn45.62:1.3",
+          "sn45.62:1.4",
+          "sn45.62:1.5",
+          "sn45.62:1.6",
+          "sn45.62:1.7",
+          "sn45.62:2.0",
+          "sn45.62:2.1",
+          "sn45.62:2.2",
+          "sn45.62:2.3",
+          "sn45.62:2.4"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "proposed_explicit_coverage": [
+        {
+          "source_component": "dawn",
+          "pali_key": "sn45.57-61:1.1",
+          "correspondence": "not a literal line in sn45.62"
+        },
+        {
+          "source_component": "virtue",
+          "pali_key": "sn45.57-61:1.2",
+          "correspondence": "prefix plus virtue"
+        },
+        {
+          "source_component": "desire",
+          "pali_key": "sn45.57-61:1.3",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "self",
+          "pali_key": "sn45.57-61:1.4",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "view",
+          "pali_key": "sn45.57-61:1.5",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "diligence",
+          "pali_key": "sn45.57-61:1.6",
+          "correspondence": "variant phrase"
+        },
+        {
+          "source_component": "careful_attention",
+          "pali_key": "sn45.62:1.1",
+          "correspondence": "only the careful-attention variant is literal here"
+        },
+        {
+          "source_component": "attention_expectation",
+          "pali_key": "sn45.62:1.2",
+          "correspondence": "literal predicate"
+        },
+        {
+          "source_component": "attention_question",
+          "pali_key": "sn45.62:1.3",
+          "correspondence": "literal question"
+        },
+        {
+          "source_component": "attention_path",
+          "pali_key": "sn45.62:1.4",
+          "correspondence": "lust/hatred/delusion-removal version, not seclusion/release version"
+        },
+        {
+          "source_component": "attention_conclusion",
+          "pali_key": "sn45.62:1.5",
+          "correspondence": "literal conclusion"
+        }
+      ],
+      "current_trial_defects": [
+        {
+          "keys": [
+            "sn45.57-61:1.2"
+          ],
+          "issue": "Virtue-to-diligence variants and all careful-attention content are in one range key; attention tail has no literal keys in this Pali document."
+        },
+        {
+          "keys": [
+            "sn45.57-61:1.3",
+            "sn45.57-61:1.4",
+            "sn45.57-61:1.5",
+            "sn45.57-61:1.6"
+          ],
+          "issue": "Rendered individual variant phrases are not individually attached to their keys."
+        },
+        {
+          "keys": [
+            "sn45.62:1.1"
+          ],
+          "issue": "Dawn plus common path lead-in and five earlier variants precede careful attention on a Pali row containing careful attention only."
+        }
+      ],
+      "source_abbreviated_no_independent_literal_rendering": [],
+      "untranslated_structural_keys": [
+        "sn45.57-61:1.7",
+        "sn45.62:1.6",
+        "sn45.62:1.7",
+        "sn45.62:2.0",
+        "sn45.62:2.1",
+        "sn45.62:2.2",
+        "sn45.62:2.3",
+        "sn45.62:2.4"
+      ],
+      "local_cut_limit": "Splitting variant list items improves the range prefix locally, but the final attention phrase and tail still belong outside the range Pali document. In the terminal-single copy, removing preceding variants by ordinary cuts would lose the beginning of the preserved source or assign it to attention incorrectly. Grouping merely hides those mismatches. Neither copy can be wholly literal with its own document keys.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.57-61.html": "57b679628ade4881f8d817d7e4b82deff8a499dca4a4ec785107d43345965abd",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.62.html": "09940831414230fa3271cae60102bd80e4e8a7f06195d88b0e8c574e2dbefcbd"
+      }
+    }
+  ],
+  "other_same_range_plus_terminal_duplicate_pairs": [
+    {
+      "source_ids": [
+        "sn45.42-47",
+        "sn45.48"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.42-47.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.48.html"
+      ],
+      "source_declared_coverage": "45.42–48. The Abandoning of the Fetters, Etc.",
+      "normalized_english_body_sha256": "370b7af50d3f7668773f625184516445c102651dceb7224d33455a141ef00123",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.42-47": [
+          "sn45.42-47:0.1",
+          "sn45.42-47:0.2",
+          "sn45.42-47:0.3",
+          "sn45.42-47:1.1",
+          "sn45.42-47:1.2",
+          "sn45.42-47:1.3",
+          "sn45.42-47:1.4",
+          "sn45.42-47:1.5",
+          "sn45.42-47:1.6",
+          "sn45.42-47:1.7",
+          "sn45.42-47:1.8",
+          "sn45.42-47:1.9"
+        ],
+        "sn45.48": [
+          "sn45.48:0.1",
+          "sn45.48:0.2",
+          "sn45.48:0.3",
+          "sn45.48:1.1",
+          "sn45.48:1.2",
+          "sn45.48:1.3",
+          "sn45.48:1.4",
+          "sn45.48:1.5",
+          "sn45.48:1.6",
+          "sn45.48:1.7",
+          "sn45.48:1.8",
+          "sn45.48:1.9",
+          "sn45.48:1.10",
+          "sn45.48:1.11",
+          "sn45.48:1.12",
+          "sn45.48:1.13",
+          "sn45.48:1.14",
+          "sn45.48:2.0",
+          "sn45.48:2.1",
+          "sn45.48:2.2",
+          "sn45.48:2.3",
+          "sn45.48:2.4"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.42-47.html": "60a784f4bd8827013fe65674fbdfdca57a8f3fc1c407f42aced73c0ef7e3010f",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.48.html": "3be28af5bd851603b508817c8499c69d6656a7683dc78631f9c2f169fe1ea51f"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.64-68",
+        "sn45.69"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.64-68.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.69.html"
+      ],
+      "source_declared_coverage": "45.64–69. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "7b76e26b7bc91ad97ab2707dda619d20a5ac4efb2a7f191dcbbe3b108086a287",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.64-68": [
+          "sn45.64-68:0.1",
+          "sn45.64-68:0.2",
+          "sn45.64-68:0.3",
+          "sn45.64-68:1.1",
+          "sn45.64-68:1.2",
+          "sn45.64-68:1.3",
+          "sn45.64-68:1.4",
+          "sn45.64-68:1.5",
+          "sn45.64-68:1.6",
+          "sn45.64-68:1.7",
+          "sn45.64-68:1.8"
+        ],
+        "sn45.69": [
+          "sn45.69:0.1",
+          "sn45.69:0.2",
+          "sn45.69:0.3",
+          "sn45.69:1.1",
+          "sn45.69:1.2",
+          "sn45.69:1.3",
+          "sn45.69:1.4",
+          "sn45.69:1.5",
+          "sn45.69:1.6"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.64-68.html": "ae86f8c8e21596955ab447bae2ec86579e54e86767ba1101ffe0bbdfae4c7531",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.69.html": "d95fd52cff5dcc4f4a9c049012d25a4e6dc0d5e0f20254c8cb2fb5be67619245"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.71-75",
+        "sn45.76"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.71-75.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.76.html"
+      ],
+      "source_declared_coverage": "45.71–76. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "b05c713e7ce9e83fed10bf30d545386696aa231f2f704d3640bb6b04c45a8856",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.71-75": [
+          "sn45.71-75:0.1",
+          "sn45.71-75:0.2",
+          "sn45.71-75:0.3",
+          "sn45.71-75:1.1",
+          "sn45.71-75:1.2",
+          "sn45.71-75:1.3",
+          "sn45.71-75:1.4",
+          "sn45.71-75:1.5",
+          "sn45.71-75:1.6",
+          "sn45.71-75:1.7",
+          "sn45.71-75:1.8",
+          "sn45.71-75:1.9"
+        ],
+        "sn45.76": [
+          "sn45.76:0.1",
+          "sn45.76:0.2",
+          "sn45.76:0.3",
+          "sn45.76:1.1",
+          "sn45.76:1.2",
+          "sn45.76:1.3",
+          "sn45.76:1.4",
+          "sn45.76:1.5",
+          "sn45.76:1.6",
+          "sn45.76:1.7",
+          "sn45.76:2.0",
+          "sn45.76:2.1",
+          "sn45.76:2.2",
+          "sn45.76:2.3",
+          "sn45.76:2.4"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.71-75.html": "865b56f07d1b1d88233c5e79dae30318be865e99765b3534bfdc9e51408fe879",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.76.html": "2ca8f7dcaad0088060149c64657d6220a5b87e0d1b76551814df8a2c9c292d6e"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.78-82",
+        "sn45.83"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.78-82.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.83.html"
+      ],
+      "source_declared_coverage": "45.78–83. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "c2bf62dfc3cb93ceb2120d3f4c5aab01f1872b03365ad610708d6a1a8c95cc5e",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.78-82": [
+          "sn45.78-82:0.1",
+          "sn45.78-82:0.2",
+          "sn45.78-82:0.3",
+          "sn45.78-82:1.1",
+          "sn45.78-82:1.2",
+          "sn45.78-82:1.3",
+          "sn45.78-82:1.4",
+          "sn45.78-82:1.5",
+          "sn45.78-82:1.6"
+        ],
+        "sn45.83": [
+          "sn45.83:0.1",
+          "sn45.83:0.2",
+          "sn45.83:0.3",
+          "sn45.83:1.1",
+          "sn45.83:1.2",
+          "sn45.83:1.3",
+          "sn45.83:1.4",
+          "sn45.83:1.5",
+          "sn45.83:1.6"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.78-82.html": "1c8e0f5240a697cda9e7214bbcf9b8f19ba5a8eca641e18a77379a16757b0a51",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.83.html": "2502afc5153c20175194fab356a9a4746271aeb88acc9e38cb3aadf57081444f"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.85-89",
+        "sn45.90"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.85-89.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.90.html"
+      ],
+      "source_declared_coverage": "45.85–90. Accomplishment in Virtue, Etc.",
+      "normalized_english_body_sha256": "bb25ab538f52e0ba7e64d7cf31ad05cf139876b3152bc128e483ff8630126a84",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.85-89": [
+          "sn45.85-89:0.1",
+          "sn45.85-89:0.2",
+          "sn45.85-89:0.3",
+          "sn45.85-89:1.1",
+          "sn45.85-89:1.2",
+          "sn45.85-89:1.3",
+          "sn45.85-89:1.4",
+          "sn45.85-89:1.5",
+          "sn45.85-89:1.6"
+        ],
+        "sn45.90": [
+          "sn45.90:0.1",
+          "sn45.90:0.2",
+          "sn45.90:0.3",
+          "sn45.90:1.1",
+          "sn45.90:1.2",
+          "sn45.90:1.3",
+          "sn45.90:1.4",
+          "sn45.90:1.5",
+          "sn45.90:1.6",
+          "sn45.90:1.7",
+          "sn45.90:2.0",
+          "sn45.90:2.1",
+          "sn45.90:2.2",
+          "sn45.90:2.3",
+          "sn45.90:2.4"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.85-89.html": "3bfcb2384d71f4acedcd715d5cff3f7db084891df64a45f9297e705da3abdfde",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.90.html": "9c098dd7920f4ce6aebf9933bc7006f0fc4bdf72b7f5132641e5e59af827be21"
+      }
+    },
+    {
+      "source_ids": [
+        "sn45.92-95",
+        "sn45.96"
+      ],
+      "source_paths": [
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.92-95.html",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.96.html"
+      ],
+      "source_declared_coverage": "45.92–96. Slanting to the East (2–6)",
+      "normalized_english_body_sha256": "4afa377ebde4d06b58874ca2ca3cad19c689d6ba4df827595f7bb67adadd2b5e",
+      "normalized_english_body_identical": true,
+      "raw_files_identical": false,
+      "normalization": "Main article content between header and footer; remove reference anchors, decode HTML, collapse whitespace. Author text and ellipses preserved.",
+      "pali_document_keys": {
+        "sn45.92-95": [
+          "sn45.92-95:0.1",
+          "sn45.92-95:0.2",
+          "sn45.92-95:0.3",
+          "sn45.92-95:1.1",
+          "sn45.92-95:1.2",
+          "sn45.92-95:1.3",
+          "sn45.92-95:1.4",
+          "sn45.92-95:1.5",
+          "sn45.92-95:1.6",
+          "sn45.92-95:1.7",
+          "sn45.92-95:1.8"
+        ],
+        "sn45.96": [
+          "sn45.96:0.1",
+          "sn45.96:0.2",
+          "sn45.96:0.3",
+          "sn45.96:1.1",
+          "sn45.96:1.2",
+          "sn45.96:1.3",
+          "sn45.96:1.4",
+          "sn45.96:1.5",
+          "sn45.96:1.6",
+          "sn45.96:1.7"
+        ]
+      },
+      "duplicate_class": "same combined range body under range ID and adjacent terminal-single ID",
+      "necessary_remedy": "One canonical preserved source body with alias/duplicate provenance; source spans mapped across the union of the two Pali documents, shared formula/reference coverage represented explicitly.",
+      "raw_source_sha256": {
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.92-95.html": "29c4f11c8d157c8234164bbfb0d969ed2757af11bd9a1369d916e10feef78815",
+        "data/upstream/bodhi/sutta/sn/sn45/sn45.96.html": "2e98c77c9d6b122fb309e44459ecca00533f6d220d6db06646f96f18d78d3929"
+      }
+    }
+  ],
+  "not_the_same_pattern": {
+    "sn45.141-145": "Five separate titled source discourses in the range file, not duplicate of terminal-single adjacent ID.",
+    "sn45.146-148": "Three separate titled source discourses; body differs from sn45.149.",
+    "sn45.103/sn45.115/sn45.127": "Identical abbreviated main bodies occur, but these are three single IDs, not the range-plus-terminal duplication class; no broad assessment made."
+  },
+  "minimal_trustworthy_remedy": {
+    "required": true,
+    "kind": "generic preserved-source span remap with duplicate aliases",
+    "steps": [
+      "Keep saved upstream files byte-for-byte; record all raw hashes and both source IDs as provenance aliases of one canonical combined-range English body.",
+      "For each source component, record target Pali document/key or explicit shared-formula, abbreviation, reference, or untranslated relationship. Do not infer equivalence from source filename alone.",
+      "Derive narrower display/alignment views from those source spans, or expose a combined-range view with both original Pali documents. Store shared English only once canonically; a shared displayed prefix must reference that source span instead of inventing English.",
+      "Preserve English token order inside the canonical source. Cross-document references can expose the component Pali keys, while ordinary monotonic cuts apply only within valid local spans.",
+      "Validate source-token conservation once per canonical range, duplicate alias identity, full component coverage, and zero literal variant-to-wrong-faculty/path mappings. Exclude untranslated structural metadata and source abbreviations from literal coverage counts."
+    ],
+    "immediate_limit_statement": "Current trial remains truthful only if these records are treated as unresolved source-scope limitations. Passing/not-found boundary status does not establish correct per-key correlation for these source ranges."
+  },
+  "why_cuts_alone_cannot_solve": "Each of two narrower Pali documents currently receives the whole same combined-range English body. Range keys lack the literal terminal-attention discourse; terminal-single keys lack the earlier variants (and SN45.62 lacks dawn). A cut can partition the current body monotonically but cannot move foreign words to another Pali document, represent shared spans, or deduplicate the two source copies. Correcting only one copy leaves the other copy foreign or forces loss/rewrite of preserved source.",
+  "changes_made": "Only this scratch assessment JSON; no source, translation, cut, script, app, or Git changes."
+}

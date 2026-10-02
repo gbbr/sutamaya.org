@@ -1,0 +1,394 @@
+## an4.53
+an4.53:1.1 | S: At one time the Buddha was traveling along the road between Madhurā and Verañjā, | T: On one occasion the Blessed One was traveling along the highway between Madhurā and Verañjā.
+an4.53:1.2 | S: as were several householders, both women and men. | T: A number of male and female householders were also traveling along the same highway.
+an4.53:1.3 | S: The Buddha left the road and sat at the root of a tree, | T: Then the Blessed One left the highway and sat down at the foot of a tree.
+an4.53:1.4 | S: where the householders saw him. | T: The male and female householders saw the Blessed One sitting there and
+an4.53:1.5 | S: They went up to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: approached him, paid homage to him, and sat down to one side. The Blessed One then said to them:
+an4.53:2.1 | S: “Householders, there are four ways of living together. | T: “Householders, there are these four ways of living together.
+an4.53:2.2 | S: What four? | T: What four?
+an4.53:2.3 | S: A male zombie living with a female zombie; | T: A wretch lives together with a wretch;
+an4.53:2.4 | S: a male zombie living with a goddess; | T: a wretch lives together with a female deva;
+an4.53:2.5 | S: a god living with a female zombie; | T: a deva lives together with a wretch;
+an4.53:2.6 | S: a god living with a goddess. | T: a deva lives together with a female deva.
+an4.53:3.1 | S: And how does a male zombie live with a female zombie? | T: (1) “And how, householders, does a wretch live together with a wretch?
+an4.53:3.2 | S: It’s when the husband kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. He’s unethical, of bad character, living at home with his heart full of the stain of stinginess, abusing and insulting ascetics and brahmins. | T: Here, the husband is one who destroys life, takes what is not given, engages in sexual misconduct, speaks falsely, and indulges in liquor, wine, and intoxicants, the basis for heedlessness; he is immoral, of bad character; he dwells at home with a heart obsessed by the stain of miserliness; he insults and reviles ascetics and brahmins.
+an4.53:3.3 | S: And the wife is also … unethical, of bad character … | T: And his wife is also one who destroys life … she insults and reviles ascetics and brahmins.
+an4.53:3.4 | S: That’s how a male zombie lives with a female zombie. | T: It is in such a way that a wretch lives together with a wretch.
+an4.53:4.1 | S: And how does a male zombie live with a goddess? | T: (2) “And how does a wretch live together with a female deva?
+an4.53:4.2 | S: It’s when the husband … is unethical, of bad character … | T: Here, the husband is one who destroys life … he insults and reviles ascetics and brahmins.
+an4.53:4.3 | S: But the wife doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume beer, wine, and liquor intoxicants. She’s ethical, of good character, living at home with heart rid of the stain of stinginess, not abusing and insulting ascetics and brahmins. | T: But his wife is one who abstains from the destruction of life, from taking what is not given, from sexual misconduct, from false speech, and from liquor, wine, and intoxicants, the basis for heedlessness; she is virtuous, of good character; she dwells at home with a heart free from the stain of miserliness; she does not insult or revile ascetics and brahmins.
+an4.53:4.4 | S: That’s how a male zombie lives with a goddess. | T: It is in such a way that a wretch lives together with a female deva.
+an4.53:5.1 | S: And how does a god live with a female zombie? | T: (3) “And how does a deva live together with a wretch?
+an4.53:5.2 | S: It’s when the husband … is ethical, of good character … | T: Here, the husband is one who abstains from the destruction of life … he does not insult or revile ascetics and brahmins.
+an4.53:5.3 | S: But the wife … is unethical, of bad character … | T: But his wife is one who destroys life … she insults and reviles ascetics and brahmins.
+an4.53:5.4 | S: That’s how a god lives with a female zombie. | T: It is in such a way that a deva lives together with a wretch.
+an4.53:6.1 | S: And how does a god live with a goddess? | T: (4) “And how does a deva live together with a female deva?
+an4.53:6.2 | S: It’s when the husband … is ethical, of good character … | T: Here, the husband is one who abstains from the destruction of life … he does not insult or revile ascetics and brahmins.
+an4.53:6.3 | S: And the wife is also … ethical, of good character … | T: And his wife is also one who abstains from the destruction of life … she does not insult or revile ascetics and brahmins.
+an4.53:6.4 | S: That’s how a god lives with a goddess. | T: It is in such a way that a deva lives together with a female deva.
+an4.53:6.5 | S: These are the four ways of living together. | T: “These are the four ways of living together.”
+an4.53:7.1 | S: When both are unethical, | T: When both are immoral,
+an4.53:7.2 | S: miserly and abusive, | T: miserly and abusive,
+an4.53:7.3 | S: then wife and husband | T: husband and wife
+an4.53:7.4 | S: live together as zombies. | T: live together as wretches.
+an4.53:8.1 | S: When the husband is unethical, | T: The husband is immoral,
+an4.53:8.2 | S: miserly and abusive, | T: miserly and abusive,
+an4.53:8.3 | S: but the wife is ethical, | T: but his wife is virtuous,
+an4.53:8.4 | S: bountiful, rid of stinginess, | T: charitable, generous.
+an4.53:8.5 | S: she’s a goddess living | T: She is a female deva living
+an4.53:8.6 | S: with a zombie for a husband. | T: with a wretched husband.
+an4.53:9.1 | S: When the husband is ethical, | T: The husband is virtuous,
+an4.53:9.2 | S: bountiful, rid of stinginess, | T: charitable, generous,
+an4.53:9.3 | S: but the wife is unethical, | T: but his wife is immoral,
+an4.53:9.4 | S: miserly and abusive, | T: miserly and abusive.
+an4.53:9.5 | S: she’s a zombie living | T: She is a wretch living
+an4.53:9.6 | S: with a god for a husband. | T: with a deva husband.
+an4.53:10.1 | S: When both are faithful and bountiful, | T: Both husband and wife are endowed with faith,
+an4.53:10.2 | S: disciplined, living righteously, | T: charitable and self-controlled, living their lives righteously,
+an4.53:10.3 | S: then wife and husband | T: (none)
+an4.53:10.4 | S: say nice things to each other. | T: addressing each other with pleasant words.
+an4.53:11.1 | S: Their needs are amply satisfied, | T: Then many benefits accrue to them
+an4.53:11.2 | S: so they live at ease. | T: and they dwell at ease.
+an4.53:11.3 | S: Their enemies are downhearted, | T: Their enemies are saddened
+an4.53:11.4 | S: when both are equal in ethics. | T: when both are the same in virtue.
+an4.53:12.1 | S: Having practiced the teaching here, | T: Having practiced the Dhamma here,
+an4.53:12.2 | S: both equal in precepts and observances, | T: the same in virtuous behavior and observances,
+an4.53:12.3 | S: they delight in the heavenly realm, | T: delighting after death in a deva world,
+an4.53:12.4 | S: enjoying all the pleasures they desire.” | T: they rejoice, enjoying sensual pleasures.
+an4.53:12.5 | P: Tatiyaṁ. | T: (none)
+
+## sn12.17
+sn12.17:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.17:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn12.17:1.3 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Rājagaha for alms. | T: Then, in the morning, the Blessed One dressed and, taking bowl and robe, entered Rajagaha for alms.
+sn12.17:1.4 | S: The naked ascetic Kassapa saw the Buddha coming off in the distance. | T: The naked ascetic Kassapa saw the Blessed One coming in the distance.
+sn12.17:1.5 | S: He went up to the Buddha, and exchanged greetings with him. | T: Having seen him, he approached the Blessed One and exchanged greetings with him.
+sn12.17:1.6 | S: When the greetings and polite conversation were over, he stood to one side and said to the Buddha, | T: When they had concluded their greetings and cordial talk, he stood to one side and said to him:
+sn12.17:1.7 | S: “I’d like to ask the worthy Gotama about a certain point, if you’d take the time to answer.” | T: “We would like to ask Master Gotama about a certain point, if he would grant us the favour of answering our question.”
+sn12.17:1.8 | S: “Kassapa, it’s the wrong time for questions. | T: “This is not the right time for a question, Kassapa.
+sn12.17:1.9 | S: We’ve entered an inhabited area.” | T: We have entered among the houses.”
+sn12.17:2.1 | S: A second time, | T: A second time and a third time the naked ascetic Kassapa said to the Blessed One:
+sn12.17:2.2 | P: “puccheyyāma mayaṁ bhavantaṁ gotamaṁ kañcideva desaṁ, sace no bhavaṁ gotamo okāsaṁ karoti pañhassa veyyākaraṇāyā”ti. | T: “We would like to ask Master Gotama about a certain point, if he would grant us the favour of answering our question.”
+sn12.17:2.3 | P: “Akālo kho tāva, kassapa, pañhassa; | T: “This is not the right time for a question, Kassapa. We have entered among the houses.”
+sn12.17:2.4 | P: antaragharaṁ paviṭṭhamhā”ti. | T: (none)
+sn12.17:2.5 | S: and a third time, Kassapa spoke to the Buddha and the Buddha replied. | T: (none)
+sn12.17:2.6 | P: antaragharaṁ paviṭṭhamhāti. | T: (none)
+sn12.17:2.7 | S: When this was said, Kassapa said to the Buddha, | T: Then the naked ascetic Kassapa said to the Blessed One:
+sn12.17:2.8 | S: “I don’t want to ask much.” | T: “We do not wish to ask Master Gotama much.”
+sn12.17:2.9 | S: “Ask what you wish, Kassapa.” | T: “Then ask what you want, Kassapa.”
+sn12.17:3.1 | S: “Well, worthy Gotama, is suffering made by oneself?” | T: “How is it, Master Gotama: is suffering created by oneself?”
+sn12.17:3.2 | S: “Not so, Kassapa,” said the Buddha. | T: “Not so, Kassapa,” the Blessed One said.
+sn12.17:3.3 | S: “Then is suffering made by another?” | T: “Then, Master Gotama, is suffering created by another?”
+sn12.17:3.4 | S: “Not so, Kassapa,” said the Buddha. | T: “Not so, Kassapa,” the Blessed One said.
+sn12.17:3.5 | S: “Well, is suffering made by both oneself and another?” | T: “How is it then, Master Gotama: is suffering created both by oneself and by another?”
+sn12.17:3.6 | S: “Not so, Kassapa,” said the Buddha. | T: “Not so, Kassapa,” the Blessed One said.
+sn12.17:3.7 | S: “Then does suffering arise anomalously, not made by oneself or another?” | T: “Then, Master Gotama, has suffering arisen fortuitously, being created neither by oneself nor by another?”
+sn12.17:3.8 | S: “Not so, Kassapa,” said the Buddha. | T: “Not so, Kassapa,” the Blessed One said.
+sn12.17:3.9 | S: “Well, is there no such thing as suffering?” | T: “How is it then, Master Gotama: is there no suffering?”
+sn12.17:3.10 | S: “It’s not that there’s no such thing as suffering. | T: “It is not that there is no suffering, Kassapa;
+sn12.17:3.11 | S: Suffering is real.” | T: there is suffering.”
+sn12.17:3.12 | S: “Then does the worthy Gotama not know or see suffering?” | T: “Then is it that Master Gotama does not know and see suffering?”
+sn12.17:3.13 | S: “It’s not that I don’t know or see suffering. | T: “It is not that I do not know and see suffering, Kassapa.
+sn12.17:3.14 | S: I do know suffering, | T: I know suffering,
+sn12.17:3.15 | S: I do see suffering.” | T: I see suffering.”
+sn12.17:4.1 | S: “Worthy Gotama, when asked these questions, you say ‘not so’. | T: “Whether you are asked: ‘How is it, Master Gotama: is suffering created by oneself?’
+sn12.17:4.2 | P: ‘Kiṁ pana, bho gotama, paraṅkataṁ dukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, kassapā’ti vadesi. | T: or ‘Is it created by another?’
+sn12.17:4.3 | P: ‘Kiṁ nu kho, bho gotama, sayaṅkatañca paraṅkatañca dukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, kassapā’ti vadesi. | T: or ‘Is it created by both?’
+sn12.17:4.4 | P: ‘Kiṁ pana, bho gotama, asayaṅkāraṁ aparaṅkāraṁ adhiccasamuppannaṁ dukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, kassapā’ti vadesi. | T: or ‘Is it created by neither?’ in each case you say: ‘Not so, Kassapa.’
+sn12.17:4.5 | S: Yet you say that there is such a thing as suffering. | T: When you are asked: ‘How is it then, Master Gotama: is there no suffering?’ you say: ‘It is not that there is no suffering, Kassapa; there is suffering.’
+sn12.17:4.6 | P: ‘Tena hi bhavaṁ gotamo dukkhaṁ na jānāti na passatī’ti iti puṭṭho samāno ‘na khvāhaṁ, kassapa, dukkhaṁ na jānāmi na passāmi. | T: When asked: ‘Then is it that Master Gotama does not know and see suffering?’ you say: ‘It is not that I do not know and see suffering, Kassapa.
+sn12.17:4.7 | S: And you say that you do know suffering, | T: I know suffering,
+sn12.17:4.8 | S: and you do see suffering. | T: I see suffering.’
+sn12.17:4.9 | S: Sir, let the Blessed One explain suffering to me! | T: Venerable sir, let the Blessed One explain suffering to me.
+sn12.17:4.10 | S: Let the Blessed One teach me about suffering!” | T: Let the Blessed One teach me about suffering.”
+sn12.17:5.1 | S: “Suppose that he who does the deed and he who experiences the result are one and the same. Then for one who has existed since the beginning, suffering is made by oneself. In speaking like this, one implies this is eternal. | T: “Kassapa, if one thinks, ‘The one who acts is the same as the one who experiences the result,’ then one asserts with reference to one existing from the beginning: ‘Suffering is created by oneself.’ When one asserts thus, this amounts to eternalism.
+sn12.17:5.2 | S: Suppose that he who does the deed is one, and he who experiences the result is another. Then for one stricken by feeling, suffering is made by another. In speaking like this, one implies this is annihilated. | T: But, Kassapa, if one thinks, ‘The one who acts is one, the one who experiences the result is another,’ then one asserts with reference to one stricken by feeling: ‘Suffering is created by another.’ When one asserts thus, this amounts to annihilationism.
+sn12.17:5.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.17:5.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.17:5.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.17:5.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.17:5.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations;
+sn12.17:5.8 | S: When choices cease, consciousness ceases. … | T: with the cessation of volitional formations, cessation of consciousness….
+sn12.17:5.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.17:6.1 | S: When this was said, Kassapa said to the Buddha, | T: When this was said, the naked ascetic Kassapa said to the Blessed One:
+sn12.17:6.2 | S: “Excellent, sir! Excellent! | T: “Magnificent, venerable sir! Magnificent, venerable sir!
+sn12.17:6.3 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, the Buddha has made the teaching clear in many ways. | T: The Dhamma has been made clear in many ways by the Blessed One, as though he were turning upright what had been turned upside down, revealing what was hidden, showing the way to one who was lost, or holding up a lamp in the dark for those with eyesight to see forms.
+sn12.17:6.4 | S: I go for refuge to the Buddha, to the teaching, and to the mendicant Saṅgha. | T: I go for refuge to the Blessed One, and to the Dhamma, and to the Bhikkhu Saṅgha.
+sn12.17:6.5 | S: Sir, may I receive the going forth, the ordination in the Buddha’s presence?” | T: May I receive the going forth under the Blessed One, may I receive the higher ordination?”
+sn12.17:7.1 | S: “Kassapa, if someone formerly ordained in another sect wishes to take the going forth, the ordination in this teaching and training, they must spend four months on probation. When four months have passed, if the mendicants are satisfied, they’ll give the going forth, the ordination into monkhood. | T: “Kassapa, one formerly belonging to another sect who desires the going forth and the higher ordination in this Dhamma and Discipline lives on probation for four months. At the end of the four months, if the bhikkhus are satisfied with him, they may if they wish give him the going forth and the higher ordination to the state of a bhikkhu.
+sn12.17:7.2 | S: However, I have recognized individual differences.” | T: But individual differences are recognized by me.”
+sn12.17:8.1 | S: “Sir, if four months probation are required in such a case, I’ll spend four years on probation. When four years have passed, if the mendicants are satisfied, let them give me the going forth, the ordination into monkhood.” | T: “If, venerable sir, one formerly belonging to another sect who desires the going forth and the higher ordination in this Dhamma and Discipline lives on probation for four months, and if at the end of the four months the bhikkhus, being satisfied with him, may if they wish give him the going forth and the higher ordination to the state of a bhikkhu, then I will live on probation for four years. At the end of the four years, if the bhikkhus are satisfied with me, let them if they wish give me the going forth and the higher ordination to the state of a bhikkhu.”
+sn12.17:9.1 | S: And the naked ascetic Kassapa received the going forth, the ordination in the Buddha’s presence. | T: Then the naked ascetic Kassapa received the going forth under the Blessed One, and he received the higher ordination.
+sn12.17:9.2 | S: Not long after his ordination, Venerable Kassapa, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: And soon, not long after his higher ordination, dwelling alone, withdrawn, diligent, ardent, and resolute, the Venerable Kassapa, by realizing it for himself with direct knowledge, in this very life entered and dwelt in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.
+sn12.17:9.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He directly knew: “Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.”
+sn12.17:9.4 | S: And Venerable Kassapa became one of the perfected. | T: And the Venerable Kassapa became one of the arahants.
+sn12.17:9.5 | P: Sattamaṁ. | T: (none)
+
+## an10.29
+an10.29:1.1 | S: “As far as Kāsi and Kosala extend, and as far as the dominion of King Pasenadi of Kosala extends, King Pasenadi is said to be the foremost. | T: (1) “Bhikkhus, as far as Kāsi and Kosala extend, as far as the realm of King Pasenadi of Kosala extends, there King Pasenadi of Kosala ranks as the foremost.
+an10.29:1.2 | S: But even King Pasenadi decays and perishes. | T: But even for King Pasenadi there is alteration; there is change.
+an10.29:1.3 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:1.4 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:2.1 | S: A galaxy extends a thousand times as far as the moon and sun revolve and the dazzling ones light up the quarters. | T: (2) “Bhikkhus, as far as sun and moon revolve and light up the quarters with their brightness, so far the thousandfold world system extends.
+an10.29:2.2 | S: In that galaxy there are a thousand moons, a thousand suns, a thousand Sinerus king of mountains, a thousand Black Plum Tree Lands, a thousand lands west of Godāvarī, a thousand lands north of Kuru, a thousand lands east of Videha, four thousand oceans, four thousand great kings, a thousand realms of the gods of the four great kings, a thousand realms of the gods of the thirty-three, of the gods of Yama, of the joyful gods, of the gods who love to create, of the gods who control what is created by others, and a thousand realms of divinity. | T: In that thousandfold world system there are a thousand moons, a thousand suns, a thousand Sinerus king of mountains, a thousand Jambudīpas, a thousand Aparagoyānas, a thousand Uttarakurus, a thousand Pubbavidehas, and a thousand four great oceans; a thousand four great kings, a thousand heavens ruled by the four great kings, a thousand Tāvatiṁsa heavens, a thousand Yāma heavens, a thousand Tusita heavens, a thousand heavens of devas who delight in creation, a thousand heavens of devas who control what is created by others, a thousand brahmā worlds.
+an10.29:2.3 | S: As far as the galaxy extends, the Great Divinity is said to be the foremost. | T: As far, bhikkhus, as this thousandfold world system extends, Mahābrahmā there ranks as the foremost.
+an10.29:2.4 | S: But even the Great Divinity decays and perishes. | T: But even for Mahābrahmā there is alteration; there is change.
+an10.29:2.5 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:2.6 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:3.1 | S: There comes a time when this cosmos contracts. | T: (3) “There comes a time, bhikkhus, when this world dissolves.
+an10.29:3.2 | S: As it contracts, most sentient beings migrate to the realm of sublime luminosity. | T: When the world is dissolving, beings for the most part migrate to the devas of streaming radiance.
+an10.29:3.3 | S: There they are mind-made, feeding on rapture, self-radiant, wandering in midair, steadily glorious, and they remain like that for a very long time. | T: There they exist mind-made, feeding on rapture, self-luminous, moving through the skies, living in glory, and they remain thus for a very long time.
+an10.29:3.4 | S: When the cosmos is contracting, the gods of sublime luminosity are said to be the foremost. | T: When the world is dissolving, the devas of streaming radiance rank as the foremost.
+an10.29:3.5 | S: But even the gods of sublime luminosity decay and perish. | T: But even for these devas there is alteration; there is change.
+an10.29:3.6 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:3.7 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:4.1 | S: There are these ten universal dimensions of meditation. | T: (4) “Bhikkhus, there are these ten kasiṇa bases.
+an10.29:4.2 | S: What ten? | T: What ten?
+an10.29:4.3 | S: Someone perceives the meditation on universal earth above, below, across, undivided and limitless. | T: One person perceives the earth kasiṇa above, below, across, undivided, measureless.
+an10.29:4.4 | S: They perceive the meditation on universal water … | T: One person perceives the water kasiṇa …
+an10.29:4.5 | S: the meditation on universal fire … | T: the fire kasiṇa …
+an10.29:4.6 | S: the meditation on universal air … | T: the air kasiṇa …
+an10.29:4.7 | S: the meditation on universal blue … | T: the blue kasiṇa …
+an10.29:4.8 | S: the meditation on universal yellow … | T: the yellow kasiṇa …
+an10.29:4.9 | S: the meditation on universal red … | T: the red kasiṇa …
+an10.29:4.10 | S: the meditation on universal white … | T: the white kasiṇa …
+an10.29:4.11 | S: the meditation on universal space … | T: the space kasiṇa …
+an10.29:4.12 | S: They perceive the meditation on universal consciousness above, below, across, undivided and limitless. | T: the consciousness kasiṇa above, below, across, undivided, measureless.
+an10.29:4.13 | S: These are the ten universal dimensions of meditation. | T: These are the ten kasiṇa bases.
+an10.29:5.1 | S: The best of these ten universal dimensions of meditation is when someone perceives the meditation on universal consciousness above, below, across, undivided and limitless. | T: Of these ten kasiṇa bases, this is the foremost, namely, when one perceives the consciousness kasiṇa above, below, across, undivided, measureless.
+an10.29:5.2 | S: Some sentient beings perceive like this. | T: There are beings who are percipient in such a way.
+an10.29:5.3 | S: But even the sentient beings who perceive like this decay and perish. | T: But even for beings who are percipient in such a way there is alteration; there is change.
+an10.29:5.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, bhikkhus, the instructed noble disciple becomes disenchanted with it;
+an10.29:5.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:6.1 | S: There are these eight dimensions of mastery. | T: (5) “Bhikkhus, there are these eight bases of overcoming.
+an10.29:6.2 | S: What eight? | T: What eight?
+an10.29:6.3 | S: Perceiving form internally, someone sees forms externally, limited, both pretty and ugly. | T: i “One percipient of forms internally sees forms externally, limited, beautiful or ugly.
+an10.29:6.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:6.5 | S: This is the first dimension of mastery. | T: This is the first basis of overcoming.
+an10.29:7.1 | S: Perceiving form internally, someone sees forms externally, limitless, both pretty and ugly. | T: ii “One percipient of forms internally sees forms externally, measureless, beautiful or ugly.
+an10.29:7.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:7.3 | S: This is the second dimension of mastery. | T: This is the second basis of overcoming.
+an10.29:8.1 | S: Not perceiving form internally, someone sees forms externally, limited, both pretty and ugly. | T: iii “One not percipient of forms internally sees forms externally, limited, beautiful or ugly.
+an10.29:8.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:8.3 | S: This is the third dimension of mastery. | T: This is the third basis of overcoming.
+an10.29:9.1 | S: Not perceiving form internally, someone sees forms externally, limitless, both pretty and ugly. | T: iv “One not percipient of forms internally sees forms externally, measureless, beautiful or ugly.
+an10.29:9.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:9.3 | S: This is the fourth dimension of mastery. | T: This is the fourth basis of overcoming.
+an10.29:10.1 | S: Not perceiving form internally, someone sees forms externally, blue, with blue color and blue appearance. | T: v “One not percipient of forms internally sees forms externally, blue ones, blue in color, with a blue hue, with a blue tint.
+an10.29:10.2 | S: They’re like a flax flower that’s blue, with blue color and blue appearance. Or a cloth from Varanasi that’s smoothed on both sides, blue, with blue color and blue appearance. | T: Just as the flax flower is blue, blue in color, with a blue hue, with a blue tint, or just as Bārāṇasī cloth, smoothened on both sides, might be blue, blue in color, with a blue hue, with a blue tint,
+an10.29:10.3 | S: In the same way, not perceiving form internally, someone sees forms externally, blue, with blue color and blue appearance. | T: so too, one not percipient of forms internally sees forms externally, blue ones….
+an10.29:10.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:10.5 | S: This is the fifth dimension of mastery. | T: This is the fifth basis of overcoming.
+an10.29:11.1 | S: Not perceiving form internally, someone sees forms externally, yellow, with yellow color and yellow appearance. | T: vi “One not percipient of forms internally sees forms externally, yellow ones, with a yellow hue, with a yellow tint.
+an10.29:11.2 | S: They’re like a champak flower that’s yellow, with yellow color and yellow appearance. Or a cloth from Varanasi that’s smoothed on both sides, yellow, with yellow color and yellow appearance. | T: Just as the kaṇikāra flower is yellow, yellow in color, with a yellow hue, with a yellow tint, or just as Bārāṇasī cloth, smoothened on both sides, might be yellow, yellow in color, with a yellow hue, with a yellow tint,
+an10.29:11.3 | S: In the same way, not perceiving form internally, someone sees forms externally, yellow, with yellow color and yellow appearance. | T: so too, one not percipient of forms internally sees forms externally, yellow ones….
+an10.29:11.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:11.5 | S: This is the sixth dimension of mastery. | T: This is the sixth basis of overcoming.
+an10.29:12.1 | S: Not perceiving form internally, someone sees forms externally, red, with red color and red appearance. | T: vii “One not percipient of forms internally sees forms externally, red ones, with a red hue, with a red tint.
+an10.29:12.2 | S: They’re like a scarlet mallow flower that’s red, with red color and red appearance. Or a cloth from Varanasi that’s smoothed on both sides, red, with red color and red appearance. | T: Just as the bandhujīvaka flower is red, red in color, with a red hue, with a red tint, or just as Bārāṇasī cloth, smoothened on both sides, might be red, red in color with a red hue, with a red tint,
+an10.29:12.3 | S: In the same way, not perceiving form internally, someone sees forms externally, red, with red color and red appearance. | T: so too, one not percipient of forms internally sees forms externally, red ones….
+an10.29:12.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:12.5 | S: This is the seventh dimension of mastery. | T: This is the seventh basis of overcoming.
+an10.29:13.1 | S: Not perceiving form internally, someone sees forms externally, white, with white color and white appearance. | T: viii “One not percipient of forms internally sees forms externally, white ones, white in color, with a white hue, with a white tint.
+an10.29:13.2 | S: They’re like the morning star that’s white, with white color and white appearance. Or a cloth from Varanasi that’s smoothed on both sides, white, with white color and white appearance. | T: Just as the morning star is white, white in color, with a white hue, with a white tint, or just as Bārāṇasī cloth, smoothened on both sides, might be white, white in color, with a white hue, with a white tint,
+an10.29:13.3 | S: In the same way, not perceiving form internally, someone sees forms externally, white, with white color and white appearance. | T: so too, one not percipient of forms internally sees forms externally, white ones….
+an10.29:13.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:13.5 | S: This is the eighth dimension of mastery. | T: This is the eighth basis of overcoming.
+an10.29:13.6 | S: These are the eight dimensions of mastery. | T: “These are the eight bases of overcoming.
+an10.29:14.1 | S: The best of these dimensions of mastery is when someone, not perceiving form internally, sees forms externally, white, with white color and white appearance. | T: Of these eight bases of overcoming, this is the foremost, namely, that one not percipient of forms internally sees forms externally, white ones, white in color with a white hue, with a white tint,
+an10.29:14.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: and having overcome them, he is percipient thus: ‘I know, I see.’
+an10.29:14.3 | S: Some sentient beings perceive like this. | T: There are beings who are percipient in such a way.
+an10.29:14.4 | S: But even the sentient beings who perceive like this decay and perish. | T: But even for beings who are percipient in such a way there is alteration; there is change.
+an10.29:14.5 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:14.6 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:15.1 | S: There are four ways of practice. | T: (6) “Bhikkhus, there are these four modes of practice.
+an10.29:15.2 | S: What four? | T: What four?
+an10.29:15.3 | S: Painful practice with slow insight, | T: Practice that is painful with sluggish direct knowledge;
+an10.29:15.4 | S: painful practice with swift insight, | T: practice that is painful with quick direct knowledge;
+an10.29:15.5 | S: pleasant practice with slow insight, and | T: practice that is pleasant with sluggish direct knowledge;
+an10.29:15.6 | S: pleasant practice with swift insight. | T: and practice that is pleasant with quick direct knowledge.
+an10.29:15.7 | S: These are the four ways of practice. | T: These are the four modes of practice.
+an10.29:16.1 | S: The best of these four ways of practice is the pleasant practice with swift insight. | T: Of these four modes of practice, this is the foremost, namely, practice that is pleasant with quick direct knowledge.
+an10.29:16.2 | S: Some sentient beings practice like this. | T: There are beings who practice in such a way.
+an10.29:16.3 | S: But even the sentient beings who practice like this decay and perish. | T: But even for beings who practice in such a way there is alteration; there is change.
+an10.29:16.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:16.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:17.1 | S: There are these four perceptions. | T: (7) “Bhikkhus, there are these four modes of perception.
+an10.29:17.2 | S: What four? | T: What four?
+an10.29:17.3 | S: One individual perceives the limited. | T: One person perceives what is limited;
+an10.29:17.4 | S: One individual perceives the expansive. | T: another perceives what is exalted;
+an10.29:17.5 | S: One individual perceives the limitless. | T: another perceives what is measureless;
+an10.29:17.6 | S: One individual, aware that ‘there is nothing at all’, perceives the dimension of nothingness. | T: and still another, perceiving ‘There is nothing,’ perceives the base of nothingness.
+an10.29:17.7 | S: These are the four perceptions. | T: These are the four modes of perception.
+an10.29:18.1 | S: The best of these four perceptions is when someone, aware that ‘there is nothing at all’, perceives the dimension of nothingness. | T: Of these four modes of perception, this is the foremost, namely, when, perceiving ‘There is nothing,’ one perceives the base of nothingness.
+an10.29:18.2 | S: Some sentient beings perceive like this. | T: There are beings who perceive in such a way.
+an10.29:18.3 | S: But even the sentient beings who perceive like this decay and perish. | T: But even for beings who perceive in such a way there is alteration; there is change.
+an10.29:18.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:18.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:19.1 | S: This is the best of the convictions of outsiders, that is: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: (8) “Bhikkhus, of the speculative views held by outsiders, this is the foremost, namely: ‘I might not be and it might not be mine; I shall not be, and it will not be mine.’
+an10.29:19.2 | S: When someone has such a view, you can expect | T: For it can be expected that one who holds such a view will not be unrepelled by existence and will not be repelled by the cessation of existence.
+an10.29:19.3 | S: that they will not be attracted to continued existence, | T: (none)
+an10.29:19.4 | S: and they will not be repulsed by the cessation of continued existence. | T: (none)
+an10.29:19.5 | S: Some sentient beings have such a view. | T: There are beings who hold such a view.
+an10.29:19.6 | S: But even the sentient beings who have views like this decay and perish. | T: But even for beings who hold such a view there is alteration; there is change.
+an10.29:19.7 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:19.8 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:20.1 | S: There are some ascetics and brahmins who advocate the ultimate purity of the spirit. | T: (9) “Bhikkhus, there are some ascetics and brahmins who proclaim supreme purification.
+an10.29:20.2 | S: This is the best of the advocates of the ultimate purity of the spirit, that is, when someone, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. | T: Of those who proclaim supreme purification, this is the foremost, namely, by completely surmounting the base of nothingness, one enters and dwells in the base of neither-perception-nor-non-perception.
+an10.29:20.3 | S: They teach Dhamma in order to directly know and realize this. | T: They teach their Dhamma for the direct knowledge and realization of this.
+an10.29:20.4 | S: Some sentient beings have such a doctrine. | T: There are beings who assert thus.
+an10.29:20.5 | S: But even the sentient beings who have such a doctrine decay and perish. | T: But even for those who assert thus, there is alteration; there is change.
+an10.29:20.6 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this thus, the instructed noble disciple becomes disenchanted with it;
+an10.29:20.7 | S: Their desire fades away even for the foremost, let alone the inferior. | T: being disenchanted, he becomes dispassionate toward the foremost, not to speak of what is inferior.
+an10.29:21.1 | S: There are some ascetics and brahmins who advocate ultimate extinguishment in this very life. | T: (10) “Bhikkhus, there are some ascetics and brahmins who proclaim supreme nibbāna in this very life.
+an10.29:21.2 | S: This is the best of those who advocate extinguishment in this very life, that is, liberation by not grasping after truly understanding the origin, disappearance, gratification, drawback, and escape of the six fields of contact. | T: Of those who proclaim supreme nibbāna in this very life, this is the foremost, namely, emancipation through non-clinging after one has seen as they really are the origin and passing away, the gratification, danger, and escape in regard to the six bases for contact.
+an10.29:21.3 | S: Though I state and assert this, certain ascetics and brahmins misrepresent me with the incorrect, hollow, false, untruthful claim: | T: “Bhikkhus, though I assert and declare my teaching in such a way, some ascetics and brahmins untruthfully, baselessly, falsely, and wrongly misrepresent me, by saying:
+an10.29:21.4 | S: ‘The ascetic Gotama doesn’t advocate the complete understanding of sensual pleasures, forms, or feelings.’ | T: ‘The ascetic Gotama does not proclaim the full understanding of sensual pleasures, the full understanding of forms, or the full understanding of feelings.’
+an10.29:21.5 | S: But I do advocate the complete understanding of sensual pleasures, forms, and feelings. And I advocate complete extinguishment with no fuel for grasping in this very life, wishless, quenched, and cooled.” | T: But, bhikkhus, I do proclaim the full understanding of sensual pleasures, the full understanding of forms, and the full understanding of feelings. In this very life, hungerless, quenched, and cooled, I proclaim final nibbāna through non-clinging.”
+an10.29:21.6 | P: Navamaṁ. | T: (none)
+
+## sn4.23
+sn4.23:1.1 | S: So I have heard. | T: Thus have I heard.
+sn4.23:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn4.23:1.3 | S: Now at that time Venerable Godhika was staying on the slopes of Isigili at the Black Rock. | T: Now on that occasion the Venerable Godhika was dwelling on the Black Rock on the Isigili Slope.
+sn4.23:1.4 | S: Then Venerable Godhika, meditating diligent, keen, and resolute, experienced temporary freedom of heart. | T: Then, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind,
+sn4.23:1.5 | S: But then he fell away from that temporary freedom of heart. | T: but he fell away from that temporary liberation of mind.
+sn4.23:1.6 | S: For a second … | T: A second time, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind,
+sn4.23:1.7 | P: Dutiyampi kho āyasmā godhiko tamhā sāmayikāya cetovimuttiyā parihāyi. | T: but he fell away from that temporary liberation of mind.
+sn4.23:1.8 | S: third … | T: A third time…
+sn4.23:1.9 | P: Tatiyampi kho āyasmā godhiko tamhā …pe… parihāyi. | T: (none)
+sn4.23:1.10 | S: fourth … | T: A fourth time …
+sn4.23:1.11 | P: Catutthampi kho āyasmā godhiko tamhā …pe… parihāyi. | T: (none)
+sn4.23:1.12 | S: fifth … | T: A fifth time…
+sn4.23:1.13 | P: Pañcamampi kho āyasmā …pe… vimuttiyā parihāyi. | T: (none)
+sn4.23:1.14 | S: sixth time Godhika experienced temporary freedom of heart. | T: A sixth time, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind,
+sn4.23:1.15 | S: But for a sixth time he fell away from it. | T: but he fell away from that temporary liberation of mind.
+sn4.23:1.16 | S: For a seventh time Godhika, meditating diligent, keen, and resolute, experienced temporary freedom of heart. | T: A seventh time, while the Venerable Godhika was dwelling diligent, ardent, and resolute, he reached temporary liberation of mind.
+sn4.23:2.1 | S: Then he thought, | T: Then it occurred to the Venerable Godhika:
+sn4.23:2.2 | S: “I’ve fallen away from this temporary freedom of heart no less than six times. | T: “Six times already I have fallen away from temporary liberation of mind.
+sn4.23:2.3 | S: Why don’t I commit suicide?” | T: Let me use the knife.”
+sn4.23:2.4 | S: And then Māra the Wicked, knowing Godhika’s train of thought, went up to the Buddha and addressed him in verse: | T: Then Mara the Evil One, having known with his own mind the reflection in the Venerable Godhika’s mind, approached the Blessed One and addressed him with these verses:
+sn4.23:3.1 | S: “O great hero, O greatly wise! | T: “O great hero, great in wisdom,
+sn4.23:3.2 | S: Shining with power and glory. | T: Blazing forth with power and glory!
+sn4.23:3.3 | S: You’ve gone beyond all enmities and fears, | T: (none)
+sn4.23:3.4 | S: I bow to your feet, O Clear-eyed One! | T: I worship your feet, One with Vision, Who has overcome all enmity and fear.
+sn4.23:4.1 | S: Great hero, master of death, | T: “O great hero who has vanquished death,
+sn4.23:4.2 | S: your disciple longs for death, | T: Your disciple is longing for death.
+sn4.23:4.3 | S: he’s planning for it. | T: He intends to take his own life:
+sn4.23:4.4 | S: Stop him, O light-bringer! | T: Restrain him from this, O luminous one!
+sn4.23:5.1 | S: For Blessed One, renowned among men, | T: “How, O Blessed One,
+sn4.23:5.2 | S: your disciple who loves your teaching, | T: can your disciple— One delighting in the Teaching,
+sn4.23:5.3 | S: a trainee who hasn’t achieved their heart’s desire— | T: A trainee seeking his mind’s ideal—
+sn4.23:5.4 | S: how can they kill themselves?” | T: Take his own life, O widely famed?”
+sn4.23:6.1 | S: Now at that time Venerable Godhika had already committed suicide. | T: Now on that occasion the Venerable Godhika had just used the knife.
+sn4.23:6.2 | S: Then the Buddha, knowing that this was Māra the Wicked, addressed him in verse: | T: Then the Blessed One, having understood, “This is Mara the Evil One,” addressed him in verse:
+sn4.23:7.1 | S: “This is how the attentive act, | T: “Such indeed is how the steadfast act:
+sn4.23:7.2 | S: for they don’t long for life. | T: They are not attached to life.
+sn4.23:7.3 | S: Having plucked out craving, root and all, | T: Having drawn out craving with its root,
+sn4.23:7.4 | S: Godhika is quenched.” | T: Godhika has attained final Nibbāna.”
+sn4.23:8.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+sn4.23:8.2 | S: “Come, mendicants, let’s go to the Black Rock on the slopes of Isigili where Godhika, who came from a good family, committed suicide.” | T: “Come, bhikkhus, let us go to the Black Rock on the Isigili Slope, where the clansman Godhika has used the knife.”
+sn4.23:8.3 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn4.23:9.1 | S: Then the Buddha together with several mendicants went to the Black Rock on the slopes of Isigili. | T: Then the Blessed One, together with a number of bhikkhus, went to the Black Rock on the Isigili Slope.
+sn4.23:9.2 | S: The Buddha saw Godhika off in the distance on his cot, lying with aggregates cast off. | T: The Blessed One saw in the distance the Venerable Godhika lying on the bed with his shoulder turned.
+sn4.23:9.3 | S: Now at that time a cloud of black smoke was moving east, west, north, south, above, below, and in-between. | T: Now on that occasion a cloud of smoke, a swirl of darkness, was moving to the east, then to the west, to the north, to the south, upwards, downwards, and to the intermediate quarters.
+sn4.23:10.1 | S: Then the Buddha said to the mendicants, | T: The Blessed One then addressed the bhikkhus thus:
+sn4.23:10.2 | S: “Mendicants, do you see that cloud of black smoke moving east, west, north, south, above, below, and in-between?” | T: “Do you see, bhikkhus, that cloud of smoke, that swirl of darkness, moving to the east, then to the west, to the north, to the south, upwards, downwards, and to the intermediate quarters?”
+sn4.23:10.3 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn4.23:10.4 | S: “That’s Māra the Wicked searching for Godhika’s consciousness, wondering: | T: “That, bhikkhus, is Mara the Evil One searching for the consciousness of the clansman Godhika, wondering:
+sn4.23:10.5 | S: ‘Where is Godhika’s consciousness established?’ | T: ‘Where now has the consciousness of the clansman Godhika been established?’
+sn4.23:10.6 | S: But since his consciousness is not established, Godhika is quenched.” | T: However, bhikkhus, with consciousness unestablished, the clansman Godhika has attained final Nibbāna.”
+sn4.23:10.7 | S: Then Māra, carrying his arched harp made from the pale timber of wood-apple, went up to the Buddha and addressed him in verse: | T: Then Mara the Evil One, taking a lute of yellow vilva-wood, approached the Blessed One and addressed him in verse:
+sn4.23:11.1 | S: “Above, below, all round, | T: “Above, below, and across,
+sn4.23:11.2 | S: in the four quarters and in-between, | T: In the four quarters and in between,
+sn4.23:11.3 | S: I’ve been searching without success: | T: I have been searching but do not find
+sn4.23:11.4 | S: where has that Godhika got to?” | T: Where Godhika has gone.”
+sn4.23:12.1 | S: “He was an attentive and steadfast sage, | T: The Blessed One: “That steadfast man was resolute,
+sn4.23:12.2 | S: a meditator who loved absorption. | T: A meditator always rejoicing in meditation,
+sn4.23:12.3 | S: By day and by night he applied himself, | T: Applying himself day and night
+sn4.23:12.4 | S: without concern for his life. | T: Without attachment even to life.
+sn4.23:13.1 | S: He defeated the army of death, | T: “Having conquered the army of Death,
+sn4.23:13.2 | S: and won’t return for any future life. | T: Not returning to renewed existence,
+sn4.23:13.3 | S: Having plucked out craving, root and all | T: Having drawn out craving with its root,
+sn4.23:13.4 | S: Godhika is quenched.” | T: Godhika has attained final Nibbāna.”
+sn4.23:14.1 | S: So stricken with sorrow | T: So much was he stricken with sorrow
+sn4.23:14.2 | S: that his harp dropped from his armpit, | T: That his lute dropped from his armpit.
+sn4.23:14.3 | S: that spirit, downcast, | T: Thereupon that disappointed spirit
+sn4.23:14.4 | S: vanished right there. | T: Disappeared right on the spot.
+
+## sn1.20
+sn1.20:1.1 | S: So I have heard. | T: Thus have I heard.
+sn1.20:1.2 | S: At one time the Buddha was staying near Rājagaha in the Hot Springs Monastery. | T: On one occasion the Blessed One was dwelling at Rājagaha in the Hot Springs Park.
+sn1.20:1.3 | S: Then Venerable Samiddhi rose at the crack of dawn and went to the hot springs to bathe. | T: Then the Venerable Samiddhi, having risen at the first flush of dawn, went to the hot springs to bathe.
+sn1.20:1.4 | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed in the hot springs and come back out, he stood in one robe drying his limbs.
+sn1.20:1.5 | S: Then, late at night, a glorious deity, lighting up the entire hot springs, went up to Samiddhi, and, standing in the air, addressed him in verse: | T: Then, when the night had advanced, a certain devatā of stunning beauty, illuminating the entire hot springs, approached the Venerable Samiddhi. Having approached, she stood in the air and addressed the Venerable Samiddhi in verse:
+sn1.20:2.1 | S: “Mendicant, you seek alms before you eat; | T: “Without having enjoyed you seek alms, bhikkhu,
+sn1.20:2.2 | S: you don’t seek alms after eating. | T: You don’t seek alms after you’ve enjoyed.
+sn1.20:2.3 | S: But you should eat first, then seek alms: | T: First enjoy, bhikkhu, then seek alms:
+sn1.20:2.4 | S: don’t let the time pass you by.” | T: Don’t let the time pass you by!”
+sn1.20:3.1 | S: “I actually don’t know the time; | T: “I do not know what the time might be;
+sn1.20:3.2 | S: it’s hidden and unseen. | T: The time is hidden and cannot be seen.
+sn1.20:3.3 | S: That’s why I seek alms before eating, | T: Hence, without enjoying, I seek alms:
+sn1.20:3.4 | S: so that the time may not pass me by!” | T: Don’t let the time pass me by!”
+sn1.20:4.1 | S: Then that deity landed on the ground and said to Samiddhi, | T: Then that devatā alighted on the earth and said to the Venerable Samiddhi:
+sn1.20:4.2 | S: “You’ve gone forth while young, mendicant. With pristine black hair, you’re blessed with youth, in the prime of life, and you’ve never flirted with sensual pleasures. | T: “You have gone forth while young, bhikkhu, a lad with black hair, endowed with the blessing of youth, in the prime of life, without having dallied with sensual pleasures.
+sn1.20:4.3 | S: Enjoy human sensual pleasures! | T: Enjoy human sensual pleasures, bhikkhu;
+sn1.20:4.4 | S: Don’t give up what is apparent in the present to chase after what takes effect over time.” | T: do not abandon what is directly visible in order to pursue what takes time.”
+sn1.20:5.1 | S: “I’m not, respectable sir. | T: “I have not abandoned what is directly visible, friend, in order to pursue what takes time.
+sn1.20:5.2 | S: I’m giving up what takes effect over time to chase after what is apparent in the present. | T: I have abandoned what takes time in order to pursue what is directly visible.
+sn1.20:5.3 | S: For the Buddha has said that sensual pleasures take effect over time, with much suffering and distress, and they’re all the more full of drawbacks. | T: For the Blessed One, friend, has stated that sensual pleasures are time-consuming, full of suffering, full of despair, and the danger in them is still greater,
+sn1.20:5.4 | S: But this teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: while this Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.”
+sn1.20:6.1 | S: “But in what way, mendicant, has the Buddha said that sensual pleasures take effect over time, with much suffering and distress, and they’re all the more full of drawbacks? | T: “But how is it, bhikkhu, that the Blessed One has stated that sensual pleasures are time-consuming, full of suffering, full of despair, and the danger in them is still greater?
+sn1.20:6.2 | S: And how is this teaching apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: How is it that this Dhamma is directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise?”
+sn1.20:7.1 | S: “I’m junior, respectable sir, recently gone forth, newly come to this teaching and training. | T: “I am newly ordained, friend, not long gone forth, just recently come to this Dhamma and Discipline.
+sn1.20:7.2 | S: I’m not able to explain this in detail. | T: I cannot explain it in detail.
+sn1.20:7.3 | S: But he, that Blessed One, the perfected one, the fully awakened Buddha, is staying near Rājagaha in the Hot Springs Monastery. | T: But that Blessed One, the Arahant, the Perfectly Enlightened One, is dwelling at Rajagaha in the Hot Springs Park.
+sn1.20:7.4 | S: You should approach him and ask about this matter. | T: Approach that Blessed One and ask him about this matter.
+sn1.20:7.5 | S: And you should remember it in line with the Buddha’s answer.” | T: As he explains it to you, so you should remember it.”
+sn1.20:8.1 | S: “It’s not easy for us to approach the Buddha, as he is surrounded by other illustrious deities. | T: “It isn’t easy for us to approach that Blessed One, bhikkhu, as he is surrounded by other devatās of great influence.
+sn1.20:8.2 | S: If you go to the Buddha and ask him about this matter, we’ll come along and listen to the teaching.” | T: If you would approach him and ask him about this matter, we will come along too in order to hear the Dhamma.”
+sn1.20:8.3 | S: “Yes, reverend,” Venerable Samiddhi replied. He went to the Buddha, bowed, sat down to one side, and told him what had happened. Then he added: | T: “Very well, friend,” the Venerable Samiddhi replied. Then he approached the Blessed One, paid homage to him, sat down to one side, and reported his entire discussion with that devatā, verses 44–45, included in the report, repeat verses 42–43 adding:
+sn1.20:9.1 | P: “Idhāhaṁ, bhante, rattiyā paccūsasamayaṁ paccuṭṭhāya yena tapodā tenupasaṅkamiṁ gattāni parisiñcituṁ. | T: (none)
+sn1.20:9.2 | P: Tapode gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsiṁ gattāni pubbāpayamāno. | T: (none)
+sn1.20:9.3 | P: Atha kho, bhante, aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ tapodaṁ obhāsetvā yenāhaṁ tenupasaṅkami; upasaṅkamitvā vehāsaṁ ṭhitā imāya gāthāya ajjhabhāsi: | T: (none)
+sn1.20:10.1 | P: ‘Abhutvā bhikkhasi bhikkhu, | T: (none)
+sn1.20:10.2 | P: na hi bhutvāna bhikkhasi; | T: (none)
+sn1.20:10.3 | P: Bhutvāna bhikkhu bhikkhassu, | T: (none)
+sn1.20:10.4 | P: mā taṁ kālo upaccagā’ti. | T: (none)
+sn1.20:11.1 | P: Evaṁ vutte, ahaṁ, bhante, taṁ devataṁ gāthāya paccabhāsiṁ: | T: (none)
+sn1.20:12.1 | P: ‘Kālaṁ vohaṁ na jānāmi, | T: (none)
+sn1.20:12.2 | P: channo kālo na dissati; | T: (none)
+sn1.20:12.3 | P: Tasmā abhutvā bhikkhāmi, | T: (none)
+sn1.20:12.4 | P: mā maṁ kālo upaccagā’ti. | T: (none)
+sn1.20:13.1 | P: Atha kho, bhante, sā devatā pathaviyaṁ patiṭṭhahitvā maṁ etadavoca: | T: (none)
+sn1.20:13.2 | P: ‘daharo tvaṁ, bhikkhu, pabbajito susu kāḷakeso, bhadrena yobbanena samannāgato, paṭhamena vayasā, anikkīḷitāvī kāmesu. | T: (none)
+sn1.20:13.3 | P: Bhuñja, bhikkhu, mānusake kāme; | T: (none)
+sn1.20:13.4 | P: mā sandiṭṭhikaṁ hitvā kālikaṁ anudhāvī’ti. | T: (none)
+sn1.20:14.1 | P: Evaṁ vuttāhaṁ, bhante, taṁ devataṁ etadavocaṁ: | T: (none)
+sn1.20:14.2 | P: ‘na khvāhaṁ, āvuso, sandiṭṭhikaṁ hitvā kālikaṁ anudhāvāmi; | T: (none)
+sn1.20:14.3 | P: kālikañca khvāhaṁ, āvuso, hitvā sandiṭṭhikaṁ anudhāvāmi. | T: (none)
+sn1.20:14.4 | P: Kālikā hi, āvuso, kāmā vuttā bhagavatā bahudukkhā bahupāyāsā; ādīnavo ettha bhiyyo. | T: (none)
+sn1.20:14.5 | P: Sandiṭṭhiko ayaṁ dhammo akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhī’ti. | T: (none)
+sn1.20:15.1 | P: Evaṁ vutte, bhante, sā devatā maṁ etadavoca: | T: (none)
+sn1.20:15.2 | P: ‘kathañca, bhikkhu, kālikā kāmā vuttā bhagavatā bahudukkhā bahupāyāsā; ādīnavo ettha bhiyyo? | T: (none)
+sn1.20:15.3 | P: Kathaṁ sandiṭṭhiko ayaṁ dhammo akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhī’ti? | T: (none)
+sn1.20:16.1 | P: Evaṁ vuttāhaṁ, bhante, taṁ devataṁ etadavocaṁ: | T: (none)
+sn1.20:16.2 | P: ‘ahaṁ kho, āvuso, navo acirapabbajito adhunāgato imaṁ dhammavinayaṁ, na tāhaṁ sakkomi vitthārena ācikkhituṁ. | T: (none)
+sn1.20:16.3 | P: Ayaṁ so bhagavā arahaṁ sammāsambuddho rājagahe viharati tapodārāme. | T: (none)
+sn1.20:16.4 | P: Taṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ puccha. | T: (none)
+sn1.20:16.5 | P: Yathā te bhagavā byākaroti tathā naṁ dhāreyyāsī’ti. | T: (none)
+sn1.20:17.1 | P: Evaṁ vutte, bhante, sā devatā maṁ etadavoca: | T: (none)
+sn1.20:17.2 | P: ‘na kho, bhikkhu, sukaro so bhagavā amhehi upasaṅkamituṁ, aññāhi mahesakkhāhi devatāhi parivuto. | T: (none)
+sn1.20:17.3 | P: Sace kho tvaṁ, bhikkhu, taṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ puccheyyāsi, mayampi āgaccheyyāma dhammassavanāyā’ti. | T: (none)
+sn1.20:17.4 | S: “Sir, if that deity spoke the truth, he’ll be close by.” | T: “If that devatā’s statement is true, venerable sir, then that devatā should be close by.”
+sn1.20:18.1 | S: When he had spoken, that deity said to Samiddhi, | T: When this was said, that devatā said to the Venerable Samiddhi:
+sn1.20:18.2 | S: “Ask, mendicant, ask! For I have arrived.” | T: “Ask, bhikkhu! Ask, bhikkhu! For I have arrived.”
+sn1.20:19.1 | S: Then the Buddha addressed the deity in verse: | T: Then the Blessed One addressed that devatā in verse:
+sn1.20:20.1 | S: “Sentient beings who perceive the communicable, | T: “Beings who perceive what can be expressed
+sn1.20:20.2 | S: become established in the communicable. | T: Become established in what can be expressed.
+sn1.20:20.3 | S: Not understanding the communicable, | T: Not fully understanding what can be expressed,
+sn1.20:20.4 | S: they fall under the yoke of Death. | T: They come under the yoke of Death.
+sn1.20:21.1 | S: But having fully understood the communicable, | T: “But having fully understood what can be expressed,
+sn1.20:21.2 | S: they don’t conceive a communicator, | T: One does not conceive ‘one who expresses.’
+sn1.20:21.3 | S: for they have nothing | T: For that does not exist for him
+sn1.20:21.4 | S: by which they might be described. | T: By which one could describe him.

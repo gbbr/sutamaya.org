@@ -1,0 +1,398 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-d402-7793-b38b-a09c1bddfb8e
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,160p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.120
+an3.120:1.1 | S: “Mendicants, there are these three kinds of purity. | T: Monks, there are these three purities.
+an3.120:1.2 | S: What three? | T: Which three?
+an3.120:1.3 | S: Purity of body, speech, and mind. | T: Bodily purity, verbal purity, & mental purity.
+an3.120:1.4 | S: And what is purity of body? | T: “And what is bodily purity?
+an3.120:1.5 | S: It’s when someone doesn’t kill living creatures, steal, or commit sexual misconduct. | T: There is the case where a certain person abstains from taking life, abstains from theft, abstains from sexual misconduct.
+an3.120:1.6 | S: This is called ‘purity of body’. | T: This is called bodily purity.
+an3.120:2.1 | S: And what is purity of speech? | T: “And what is verbal purity?
+an3.120:2.2 | S: It’s when someone doesn’t use speech that’s false, backbiting, harsh, or nonsensical. | T: There is the case where a certain person abstains from telling lies, abstains from divisive speech, abstains from harsh speech, abstains from idle chatter.
+an3.120:2.3 | S: This is called ‘purity of speech’. | T: This is called verbal purity.
+an3.120:3.1 | S: And what is purity of mind? | T: “And what is mental purity?
+an3.120:3.2 | S: It’s when someone is content, kind-hearted, and has right view. | T: There is the case where a certain person is one who is not covetous, is one whose mind is devoid of ill will, and is one with right view.
+an3.120:3.3 | S: This is called ‘purity of mind’. | T: This is called mental purity.
+an3.120:3.4 | S: These are the three kinds of purity.” | T: “These, monks, are the three purities.”
+an3.120:3.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.121
+an3.121:1.1 | S: “Mendicants, there are these three kinds of purity. | T: Monks, there are these three purities.
+an3.121:1.2 | S: What three? | T: Which three?
+an3.121:1.3 | S: Purity of body, speech, and mind. | T: Bodily purity, verbal purity, & mental purity.
+an3.121:1.4 | S: And what is purity of body? | T: “And what is bodily purity?
+an3.121:1.5 | S: It’s when a mendicant doesn’t kill living creatures, steal, or have sex. | T: There is the case where a monk abstains from taking life, abstains from theft, abstains from uncelibacy.
+an3.121:1.6 | S: This is called ‘purity of body’. | T: This is called bodily purity.
+an3.121:2.1 | S: And what is purity of speech? | T: “And what is verbal purity?
+an3.121:2.2 | S: It’s when a mendicant doesn’t use speech that’s false, backbiting, harsh, or nonsensical. | T: There is the case where a monk abstains from telling lies, abstains from divisive speech, abstains from harsh speech, abstains from idle chatter.
+an3.121:2.3 | S: This is called ‘purity of speech’. | T: This is called verbal purity.
+an3.121:3.1 | S: And what is purity of mind? | T: “And what is mental purity?
+an3.121:3.2 | S: It’s when a mendicant who has sensual desire in them understands ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: There is the case where, there being sensual desire present within, a monk discerns, ‘There is sensual desire present within me.’ Or, there being no sensual desire present within, he discerns, ‘There is no sensual desire present within me.’ He discerns how there is the arising of unarisen sensual desire. And he discerns how there is the abandoning of sensual desire once it has arisen. And he discerns how there is no further appearance in the future of sensual desire that has been abandoned.
+an3.121:3.3 | S: When they have ill will in them they understand ‘I have ill will in me’; and when they don’t have ill will in them they understand ‘I don’t have ill will in me’. They understand how ill will arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: “There being ill will present within…
+an3.121:3.4 | S: When they have dullness and drowsiness in them they understand ‘I have dullness and drowsiness in me’; and when they don’t have dullness and drowsiness in them they understand ‘I don’t have dullness and drowsiness in me’. They understand how dullness and drowsiness arise; how, when they’ve already arisen, they’re given up; and how, once they’re given up, they don’t arise again in the future. | T: “There being sloth & drowsiness present within…
+an3.121:3.5 | S: When they have restlessness and remorse in them they understand ‘I have restlessness and remorse in me’; and when they don’t have restlessness and remorse in them they understand ‘I don’t have restlessness and remorse in me’. They understand how restlessness and remorse arise; how, when they’ve already arisen, they’re given up; and how, once they’re given up, they don’t arise again in the future. | T: “There being restlessness & anxiety present within…
+an3.121:3.6 | S: When they have doubt in them they understand ‘I have doubt in me’; and when they don’t have doubt in them they understand ‘I don’t have doubt in me’. They understand how doubt arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. | T: “There being uncertainty present within, a monk discerns, ‘There is uncertainty present within me.’ Or, there being no uncertainty present within, he discerns, ‘There is no uncertainty present within me.’ He discerns how there is the arising of unarisen uncertainty. And he discerns how there is the abandoning of uncertainty once it has arisen. And he discerns how there is no further appearance in the future of uncertainty that has been abandoned.
+an3.121:3.7 | S: This is called ‘purity of mind’. | T: This is called mental purity.”
+an3.121:3.8 | S: These are the three kinds of purity. | T: “These, monks, are the three purities.”
+an3.121:4.1 | S: Purity of body, purity of speech, | T: Bodily pure, verbally pure,
+an3.121:4.2 | S: and undefiled purity of heart. | T: mentally pure, without effluent:
+an3.121:4.3 | S: A pure one, blessed with purity, | T: A pure one, consummate in purity,
+an3.121:4.4 | S: has washed off all bad things, they say.” | T: is said to be cleansed of evil.
+an3.121:4.5 | P: Navamaṁ. | T: (none)
+
+## an3.122
+an3.122:1.1 | S: “Mendicants, there are these three kinds of sagacity. | T: “Monks, there are these three forms of sagacity.
+an3.122:1.2 | S: What three? | T: Which three?
+an3.122:1.3 | S: Sagacity of body, speech, and mind. | T: Bodily sagacity, verbal sagacity, & mental sagacity.
+an3.122:1.4 | S: And what is sagacity of body? | T: “And what is bodily sagacity?
+an3.122:1.5 | S: It’s when a mendicant doesn’t kill living creatures, steal, or have sex. | T: There is the case where a monk abstains from taking life, abstains from theft, abstains from uncelibacy.
+an3.122:1.6 | S: This is called ‘sagacity of body’. | T: This is called bodily sagacity.
+an3.122:2.1 | S: And what is sagacity of speech? | T: “And what is verbal sagacity?
+an3.122:2.2 | S: It’s when a mendicant doesn’t use speech that’s false, backbiting, harsh, or nonsensical. | T: There is the case where a monk abstains from telling lies, abstains from divisive speech, abstains from harsh speech, abstains from idle chatter.
+an3.122:2.3 | S: This is called ‘sagacity of speech’. | T: This is called verbal sagacity.
+an3.122:3.1 | S: And what is sagacity of mind? | T: “And what is mental sagacity?
+an3.122:3.2 | S: It’s when a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: There is the case where a monk who—with the ending of effluents—enters & remains in the effluent-free awareness-release & discernment-release, having directly known & realized it for himself right in the here & now.
+an3.122:3.3 | S: This is called ‘sagacity of mind’. | T: This is called mental sagacity.
+an3.122:3.4 | S: These are the three kinds of sagacity. | T: “These, monks, are the three forms of sagacity.”
+an3.122:4.1 | S: A sage in body, a sage in speech, | T: A sage in body, a sage in speech,
+an3.122:4.2 | S: a sage undefiled in heart; | T: a sage in mind, without effluent,
+an3.122:4.3 | S: a sage, blessed with sagacity, | T: a sage consummate in sagacity
+an3.122:4.4 | S: has given up everything, they say.” | T: is said to have abandoned everything —the All.
+an3.122:4.5 | P: Dasamaṁ. | T: (none)
+an3.122:4.6 | P: Āpāyikavaggo dutiyo. | T: (none)
+an3.122:5.0 | P: Tassuddānaṁ | T: (none)
+an3.122:5.1 | P: Āpāyiko dullabho appameyyaṁ, | T: (none)
+an3.122:5.2 | P: Āneñjavipattisampadā; | T: (none)
+an3.122:5.3 | P: Apaṇṇako ca kammanto, | T: (none)
+an3.122:5.4 | P: Dve soceyyāni moneyyanti. | T: (none)
+
+## an3.123
+an3.123:1.1 | S: At one time the Buddha was staying near Kusinārā in the Forest of Offerings. | T: On one occasion the Blessed One was staying near Kusināra in the Baliharaṇa [Oblation-taking] forest grove.
+an3.123:1.2 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+an3.123:1.3 | S: “Mendicants!” | T: “Monks!”
+an3.123:1.4 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an3.123:1.5 | S: The Buddha said this: | T: The Blessed One said,
+an3.123:2.1 | S: “Mendicants, take the case of a mendicant living supported by a town or village. | T: “There is the case where a monk lives in dependence on a certain town or village.
+an3.123:2.2 | S: A householder or their child approaches and invites them for the next day’s meal. | T: A householder or householder’s son, approaching him, invites him for the next day’s meal.
+an3.123:2.3 | S: The mendicant accepts if they want. | T: If he wants to, he acquiesces.
+an3.123:2.4 | S: When the night has passed, they robe up in the morning, take their bowl and robe, and approach that householder’s home, where they sit on the seat spread out. | T: When the night has passed, early in the morning, he adjusts his under robe and—carrying his bowl & robes—goes to the residence of that householder or householder’s son. On arrival, he sits down on a seat laid out.
+an3.123:2.5 | S: The householder or their child serves and satisfies them with their own hands with delicious fresh and cooked foods. | T: The householder or householder’s son, with his own hand, serves & satisfies the monk with exquisite staple & non-staple food.
+an3.123:3.1 | S: The mendicant thinks: | T: The thought occurs to the monk,
+an3.123:3.2 | S: ‘It’s so good that this householder serves me with delicious fresh and cooked foods.’ | T: ‘How good it is that this householder or householder’s son serves & satisfies me with exquisite staple & non-staple food!’
+an3.123:3.3 | S: Then they think: | T: And the thought also occurs to him,
+an3.123:3.4 | S: ‘I really hope this householder serves me with delicious fresh and cooked foods in the future, too.’ | T: ‘O, may this householder or householder’s son in the future serve & satisfy me with this sort of exquisite staple & non-staple food!’
+an3.123:3.5 | S: They eat that food tied, infatuated, attached, blind to the drawbacks, and not understanding the escape. | T: He consumes that almsfood attached to it, infatuated, guilty, not seeing the drawbacks (of attachment to it), and not discerning the escape from them.
+an3.123:3.6 | S: They think about it with sensual, malicious, or cruel thoughts. | T: With regard to it, he thinks thoughts of sensuality, thoughts of ill will, thoughts of harmfulness.
+an3.123:3.7 | S: A gift to such a mendicant is not very fruitful, I say. | T: What is given to a monk of this sort, I tell you, is not of great fruit.
+an3.123:3.8 | S: Why is that? | T: Why is that?
+an3.123:3.9 | S: Because that mendicant is negligent. | T: Because the monk remains heedless.
+an3.123:4.1 | S: Take another case of a mendicant living supported by a town or village. | T: “But there is the case where a monk lives in dependence on a certain town or village.
+an3.123:4.2 | S: A householder or their child approaches and invites them for the next day’s meal. | T: A householder or householder’s son, approaching him, invites him for the next day’s meal.
+an3.123:4.3 | S: The mendicant accepts if they want. | T: If he wants to, he acquiesces.
+an3.123:4.4 | S: When the night has passed, they robe up in the morning, take their bowl and robe, and approach that householder’s home, where they sit on the seat spread out. | T: When the night has passed, early in the morning, he adjusts his under robe and—carrying his bowl & robes—goes to the residence of that householder or householder’s son. On arrival, he sits down on a seat laid out.
+an3.123:4.5 | S: The householder or their child serves and satisfies them with their own hands with delicious fresh and cooked foods. | T: The householder or householder’s son, with his own hand, serves & satisfies the monk with exquisite staple & non-staple food.
+an3.123:5.1 | S: It never occurs to them: | T: The thought doesn’t occur to the monk,
+an3.123:5.2 | S: ‘It’s so good that the householder or their child serves and satisfies me with their own hands with delicious fresh and cooked foods.’ | T: ‘How good it is that this householder or householder’s son serves & satisfies me with exquisite staple & non-staple food!’
+an3.123:5.3 | S: They don’t think: | T: And the thought also doesn’t occur to him,
+an3.123:5.4 | S: ‘I really hope this householder serves me with delicious fresh and cooked foods in the future, too.’ | T: ‘O, may this householder or householder’s son in the future serve & satisfy me with this sort of exquisite staple & non-staple food!’
+an3.123:5.5 | S: They eat that almsfood untied, uninfatuated, unattached, seeing the drawback, and understanding the escape. | T: He consumes that almsfood unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them.
+an3.123:5.6 | S: They think about it with thoughts of renunciation, good will, or harmlessness. | T: With regard to it, he thinks thoughts of renunciation, thoughts of non-ill will, thoughts of harmlessness.
+an3.123:5.7 | S: A gift to such a mendicant is very fruitful, I say. | T: What is given to a monk of this sort, I tell you, is of great fruit.
+an3.123:5.8 | S: Why is that? | T: Why is that?
+an3.123:5.9 | S: Because that mendicant is diligent.” | T: Because the monk remains heedful.”
+an3.123:5.10 | P: Paṭhamaṁ. | T: (none)
+
+## an3.125
+an3.125:1.1 | S: At one time the Buddha was staying near Vesālī, at the Gotamaka Shrine. | T: On one occasion the Blessed One was staying near Vesāli at Gotamaka Shrine.
+an3.125:1.2 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+an3.125:1.3 | S: “Mendicants!” | T: “Monks!”
+an3.125:1.4 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an3.125:1.5 | S: The Buddha said this: | T: The Blessed One said,
+an3.125:2.1 | S: “Mendicants, I teach based on direct knowledge, not without direct knowledge. | T: “Monks, it’s through direct knowledge that I teach the Dhamma, not without direct knowledge.
+an3.125:2.2 | S: I teach with reasons, not without them. | T: It’s with a cause that I teach the Dhamma, not without a cause.
+an3.125:2.3 | S: I teach with a demonstrable basis, not without it. | T: It’s with marvels that I teach the Dhamma, not without marvels.
+an3.125:2.4 | S: Since this is so, you should follow my advice and instruction. | T: Because I teach the Dhamma through direct knowledge and not without direct knowledge, because I teach the Dhamma with a cause and not without a cause, because I teach the Dhamma with marvels and not without marvels, there is good reason for my instruction, good reason for my admonition.
+an3.125:2.5 | S: This is enough for you to feel joyful, delighted, and happy: | T: And it is enough for you to be content, enough for you to be gratified, enough for you to take joy,
+an3.125:2.6 | S: ‘The Blessed One is a fully awakened Buddha! The teaching is well explained! The Saṅgha is practicing well!’” | T: that the Blessed One is rightly self-awakened, the Dhamma is well-taught by the Blessed One, and the Saṅgha has practiced rightly.”
+an3.125:3.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+an3.125:3.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+an3.125:3.3 | S: And while this discourse was being spoken, the thousandfold galaxy shook. | T: And while this explanation was being given, the ten-thousand-fold cosmos quaked.
+an3.125:3.4 | P: Tatiyaṁ. | T: (none)
+
+## an3.12
+an3.12:1.1 | S: “An anointed aristocratic king should commemorate three places as long as he lives. | T: “Monks, these three things are to be remembered by a head-anointed noble-warrior king throughout life.
+an3.12:1.2 | S: What three? | T: Which three?
+an3.12:1.3 | S: The place he was born. | T: “The place where he was born:
+an3.12:1.4 | S: This is the first place. | T: This is the first thing that is to be remembered by a head-anointed noble-warrior king throughout life.
+an3.12:2.1 | S: The place he was anointed as king. | T: “Then again, the place where he was head-anointed as a noble-warrior king:
+an3.12:2.2 | S: This is the second place. | T: This is the second thing that is to be remembered by a head-anointed noble-warrior king throughout life.
+an3.12:3.1 | S: The place where he won victory in battle, establishing himself as foremost in battle. | T: “Then again, the place where, having won the battle, he then emerged victorious and ruled at the head of the battle:
+an3.12:3.2 | S: This is the third place. | T: This is the third thing that is to be remembered by a head-anointed noble-warrior king throughout life.
+an3.12:3.3 | S: These are the three places an anointed king should commemorate as long as he lives. | T: “These, monks, are the three things to be remembered by a head-anointed noble-warrior king throughout life.
+an3.12:4.1 | S: In the same way, a mendicant should commemorate three places as long as they live. | T: “In the same way, these three things are to be remembered by a monk throughout life.
+an3.12:4.2 | S: What three? | T: Which three?
+an3.12:4.3 | S: The place where the mendicant shaved off their hair and beard, dressed in ocher robes, and went forth from the lay life to homelessness. | T: “The place where, shaving off his hair & beard, clothing himself in the ochre robe, he goes forth from the home life into homelessness:
+an3.12:4.4 | S: This is the first place. | T: This is the first thing that is to be remembered by a monk throughout life.
+an3.12:5.1 | S: The place where the mendicant truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “Then again, the place where he discerns, as it has come to be, ‘This is stress’ … ‘This is the origination of stress’ … ‘This is the cessation of stress’ … ‘This is the path of practice leading to the cessation of stress’:
+an3.12:5.2 | S: This is the second place. | T: This is the second thing that is to be remembered by a monk throughout life.
+an3.12:6.1 | S: The place where the mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: “Then again, the place where, through the ending of effluents, he enters & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing it for himself right in the here-&-now:
+an3.12:6.2 | S: This is the third place. | T: This is the third thing that is to be remembered by a monk throughout life.
+an3.12:6.3 | S: These are the three places a mendicant should commemorate as long as they live.” | T: “These, monks, are the three things to be remembered by a monk throughout life.”
+an3.12:6.4 | P: Dutiyaṁ. | T: (none)
+
+## an3.130
+an3.130:1.1 | S: Then Venerable Anuruddha went up to Venerable Sāriputta, and exchanged greetings with him. | T: Then Ven. Anuruddha went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him.
+an3.130:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to him: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta,
+an3.130:1.3 | S: “Here’s the thing, Reverend Sāriputta. With clairvoyance that is purified and surpasses the human, I survey the thousandfold galaxy. | T: “Here, by means of the divine eye, purified & surpassing the human, I see the thousand-fold cosmos.
+an3.130:1.4 | S: My energy is roused up and unflagging, my mindfulness is established and lucid, my body is tranquil and undisturbed, and my mind is immersed and unified in samādhi. | T: And my persistence is aroused & unsluggish. My mindfulness is established & unmuddled. My body is calm & unaroused. My mind is concentrated & gathered into singleness.
+an3.130:1.5 | S: But my mind is not freed from the defilements by not grasping.” | T: And yet my mind is not released from the effluents through lack of clinging/sustenance.”
+an3.130:2.1 | S: “Well, Reverend Anuruddha, when you say: | T: Ven. Sāriputta: “My friend, when the thought occurs to you,
+an3.130:2.2 | S: ‘With clairvoyance that is purified and surpasses the human, I survey the thousandfold galaxy,’ that’s your conceit. | T: ‘By means of the divine eye, purified & surpassing the human, I see the thousand-fold cosmos,’ that is related to your conceit.
+an3.130:2.3 | S: And when you say: | T: When the thought occurs to you,
+an3.130:2.4 | S: ‘My energy is roused up and unflagging, my mindfulness is established and lucid, my body is tranquil and undisturbed, and my mind is immersed in samādhi,’ that’s your restlessness. | T: ‘My persistence is aroused & unsluggish. My mindfulness is established & unmuddled. My body is calm & unaroused. My mind is concentrated & gathered into singleness,’ that is related to your restlessness.
+an3.130:2.5 | S: And when you say: | T: When the thought occurs to you,
+an3.130:2.6 | S: ‘But my mind is not freed from the defilements by not grasping,’ that’s your remorse. | T: ‘And yet my mind is not released from the effluents through lack of clinging/sustenance,’ that is related to your anxiety.
+an3.130:2.7 | S: It would be good to give up these three things. Ignore them and apply your mind to freedom from death.” | T: It would be well if—abandoning these three qualities, not attending to these three qualities—you directed your mind to the deathless property.”
+an3.130:3.1 | S: After some time Anuruddha gave up these three things. Ignoring them, he applied his mind to freedom from death. | T: So after that, Ven. Anuruddha—abandoning those three qualities, not attending to those three qualities—directed his mind to the deathless property.
+an3.130:3.2 | S: Then Anuruddha, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Dwelling alone, secluded, heedful, ardent, & resolute, he in no long time entered & remained in the unexcelled goal of the holy life for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+an3.130:3.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew, “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+an3.130:3.4 | S: And Venerable Anuruddha became one of the perfected. | T: And thus Ven. Anuruddha became another one of the arahants.
+an3.130:3.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.135
+
+exec
+/bin/bash -lc "sed -n '161,320p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.135:1.1 | S: “Mendicants, you should associate with a friend who has three factors. | T: “Monks, a friend endowed with three factors is worth associating with.
+an3.135:1.2 | S: What three? | T: Which three?
+an3.135:1.3 | S: They give what is hard to give, they do what is hard to do, and they endure what is hard to endure. | T: He/she gives what is hard to give, does what is hard to do, endures what is hard to endure.
+an3.135:1.4 | S: You should associate with a friend who has these three factors.” | T: A friend endowed with three factors is worth associating with.”
+an3.135:1.5 | P: Tatiyaṁ. | T: (none)
+
+## an3.136
+an3.136:1.1 | S: “Mendicants, whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles: | T: I have heard that at one time the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. There he addressed the monks, saying, “Monks.” “Yes, lord,” the monks responded to him. The Blessed One said, “Whether or not there is the arising of Tathāgatas, this property stands—this steadfastness of the Dhamma, this orderliness of the Dhamma:
+an3.136:1.2 | S: all conditions are impermanent. | T: ‘All fabrications are inconstant.’
+an3.136:1.3 | S: A Realized One awakens to this and comprehends it, | T: “The Tathāgata directly awakens to that, breaks through to that.
+an3.136:1.4 | S: then he explains, teaches, asserts, establishes, clarifies, analyzes, and discloses it: | T: Directly awakening & breaking through to that, he declares it, teaches it, describes it, sets it forth. He reveals it, explains it, makes it plain:
+an3.136:1.5 | S: ‘All conditions are impermanent.’ | T: ‘All fabrications are inconstant.’
+an3.136:1.6 | S: Whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles: | T: “Whether or not there is the arising of Tathāgatas, this property stands—this steadfastness of the Dhamma, this orderliness of the Dhamma:
+an3.136:1.7 | S: all conditions are suffering. | T: ‘All fabrications are stressful.’
+an3.136:1.8 | S: A Realized One awakens to this and comprehends it, | T: “The Tathāgata directly awakens to that, breaks through to that.
+an3.136:1.9 | S: then he explains, teaches, asserts, establishes, clarifies, analyzes, and discloses it: | T: Directly awakening & breaking through to that, he declares it, teaches it, describes it, sets it forth. He reveals it, explains it, makes it plain:
+an3.136:1.10 | S: ‘All conditions are suffering.’ | T: ‘All fabrications are stressful.’
+an3.136:1.11 | S: Whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles: | T: “Whether or not there is the arising of Tathāgatas, this property stands—this steadfastness of the Dhamma, this orderliness of the Dhamma:
+an3.136:1.12 | S: all things are not-self. | T: ‘All phenomena are not-self.’
+an3.136:1.13 | S: A Realized One awakens to this and comprehends it, | T: “The Tathāgata directly awakens to that, breaks through to that.
+an3.136:1.14 | S: then he explains, teaches, asserts, establishes, clarifies, analyzes, and discloses it: | T: Directly awakening & breaking through to that, he declares it, teaches it, describes it, sets it forth. He reveals it, explains it, makes it plain:
+an3.136:1.15 | S: ‘All things are not-self.’” | T: ‘All phenomena are not-self.’” That is what the Blessed One said. Gratified, the monks delighted at his words.
+an3.136:1.16 | P: Catutthaṁ. | T: (none)
+
+## an3.1
+an3.1:1.1 | S: So I have heard. | T: I have heard that
+an3.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta's Grove, Anāthapiṇḍika’s monastery.
+an3.1:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+an3.1:1.4 | S: “Mendicants!” | T: “Monks!”
+an3.1:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an3.1:1.6 | S: The Buddha said this: | T: The Blessed One said,
+an3.1:2.1 | S: “Whatever dangers there are, all come from the foolish, not from the astute. | T: “Monks, whatever dangers arise all arise from a fool, and not from a wise person.
+an3.1:2.2 | S: Whatever perils there are, all come from the foolish, not from the astute. | T: Whatever disasters arise all arise from a fool, and not from a wise person.
+an3.1:2.3 | S: Whatever hazards there are, all come from the foolish, not from the astute. | T: Whatever troubles arise all arise from a fool, and not from a wise person.
+an3.1:2.4 | S: It’s like a fire that spreads from a hut made of reeds or grass, and burns down even a bungalow, plastered inside and out, draft-free, with doors fastened and windows shuttered. | T: “Just as a fire, released from a house of reeds or a house of grass, burns even gabled houses, plastered inside & out, draft-free, with close-fitting doors & windows shut against the wind;
+an3.1:2.5 | S: In the same way, whatever dangers there are, all come from the foolish, not from the astute. | T: in the same way, whatever dangers arise all arise from a fool, and not from a wise person.
+an3.1:2.6 | S: Whatever perils there are, all come from the foolish, not from the astute. | T: Whatever disasters arise all arise from a fool, and not from a wise person.
+an3.1:2.7 | S: Whatever hazards there are, all come from the foolish, not from the astute. | T: Whatever troubles arise all arise from a fool and not from a wise person.
+an3.1:3.1 | S: So, the fool is dangerous, but the astute person is safe. | T: “Thus, monks, a fool brings danger; a wise person brings no danger.
+an3.1:3.2 | S: The fool is perilous, but the astute person is not. | T: A fool brings disasters; a wise person brings no disasters.
+an3.1:3.3 | S: The fool is hazardous, but the astute person is not. | T: A fool brings trouble; a wise person brings no trouble.
+an3.1:3.4 | S: There’s no danger, peril, or hazard that comes from the astute. | T: “There is no danger from a wise person. There are no disasters from a wise person. There is no trouble from a wise person.
+an3.1:4.1 | S: So you should train like this: | T: “Thus, monks, you should train yourselves:
+an3.1:4.2 | S: ‘We will shun the three things by which a fool is known, and we will proceed having undertaken the three things by which an astute person is known.’ | T: ‘We will avoid the three things that, endowed with which, one is to be recognized as a fool. We will undertake & maintain the three things that, endowed with which, one is to be recognized as a wise person.’
+an3.1:4.3 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an3.1:4.4 | P: Paṭhamaṁ. | T: (none)
+
+## an3.20
+an3.20:1.1 | S: “Mendicants, a shopkeeper who has three factors soon acquires great and abundant wealth. | T: “Monks, a shopkeeper endowed with three factors will, in no long time, achieve greatness & abundance in terms of wealth.
+an3.20:1.2 | S: What three? | T: Which three?
+an3.20:1.3 | S: It’s when a shopkeeper sees clearly, is indefatigable, and has supporters. | T: There is the case where a shopkeeper has a good eye, is astute, & is consummate in his backing.
+an3.20:1.4 | S: And how does a shopkeeper see clearly? | T: “And how does a shopkeeper have a good eye?
+an3.20:1.5 | S: It’s when a shopkeeper knows of a product: | T: There is the case where a shopkeeper knows of an item:
+an3.20:1.6 | S: ‘This product is bought at this price and is selling at this price. With this much investment, it’ll bring this much profit.’ | T: ‘This item can be bought at this price and sold at this price; the cost will be this much, and the profit this much.’
+an3.20:1.7 | S: That’s how a shopkeeper sees clearly. | T: This is how a shopkeeper has a good eye.
+an3.20:2.1 | S: And how is a shopkeeper indefatigable? | T: “And how is a shopkeeper astute?
+an3.20:2.2 | S: It’s when a shopkeeper is skilled in buying and selling products. | T: There is the case where a shopkeeper is skilled in buying & selling an item.
+an3.20:2.3 | S: That’s how a shopkeeper is indefatigable. | T: This is how a shopkeeper is astute.
+an3.20:3.1 | S: And how does a shopkeeper have supporters? | T: “And how is a shopkeeper consummate in his backing?
+an3.20:3.2 | S: It’s when rich, affluent, and wealthy householders or householders’ children know of him: | T: There is the case where householders or householders’ sons know of a shopkeeper,
+an3.20:3.3 | S: ‘This good shopkeeper sees clearly and is indefatigable. They are capable of providing for their wives and children, and paying us back from time to time.’ | T: ‘This shopkeeper has a good eye & is astute. He is capable of supporting his wife & children and repaying our investment at regular intervals.’
+an3.20:3.4 | S: They deposit money with the shopkeeper, saying: | T: They offer him wealth, [saying,]
+an3.20:3.5 | S: ‘With this, my good shopkeeper, earn money to provide for your wives and children, and pay us back from time to time.’ | T: ‘Here, my friend, having made wealth from this, support your wife & children and repay us at regular intervals.’
+an3.20:3.6 | S: That’s how a shopkeeper has supporters. | T: This is how a shopkeeper is consummate in his backing.
+an3.20:3.7 | S: A shopkeeper who has these three factors soon acquires great and abundant wealth. | T: “A shopkeeper endowed with these three factors will, in no long time, achieve greatness & abundance in terms of wealth.
+an3.20:4.1 | S: In the same way, a mendicant with three qualities soon acquires great and abundant skillful qualities. | T: “Monks, a monk endowed with three factors will, in no long time, achieve greatness & abundance in terms of skillful qualities.
+an3.20:4.2 | S: What three? | T: Which three?
+an3.20:4.3 | S: It’s when a mendicant sees clearly, is indefatigable, and has supporters. | T: There is the case where a monk has a good eye, is astute, & is consummate in his backing.
+an3.20:4.4 | S: And how does a mendicant see clearly? | T: “And how does a monk have a good eye?
+an3.20:4.5 | S: It’s when a mendicant truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: There is the case where a monk discerns, as it has come to be, that ‘This is stress’… ‘This is the origination of stress’… ‘This is the cessation of stress’… ‘This is the path of practice leading to the cessation of stress.’
+an3.20:4.6 | S: That’s how a mendicant sees clearly. | T: This is how a monk has a good eye.
+an3.20:5.1 | S: And how is a mendicant indefatigable? | T: “And how is a monk astute?
+an3.20:5.2 | S: It’s when a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: There is the case where a monk keeps his persistence aroused for abandoning unskillful qualities and taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+an3.20:5.3 | S: That’s how a mendicant is indefatigable. | T: This is how a monk is astute.
+an3.20:6.1 | S: And how does a mendicant have supporters? | T: “And how is a monk consummate in his backing?
+an3.20:6.2 | S: It’s when from time to time a mendicant goes up to those mendicants who are very learned—inheritors of the heritage, who have memorized the teachings, the monastic law, and the outlines—and asks them questions: | T: There is the case where a monk—approaching at regular intervals those monks who are learned, to whom the tradition has come down, who have memorized the suttas, memorized the Vinaya, memorized the mātikas [lists of Dhamma topics]—asks & questions them,
+an3.20:6.3 | S: ‘Why, sir, does it say this? What does that mean?’ | T: ‘How is this, venerable sirs? What is the meaning of this?’
+an3.20:6.4 | S: Those venerables reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: Those venerable ones make open what isn’t open, make plain what isn’t plain, dispel doubt on various doubtful points.
+an3.20:6.5 | S: That’s how a mendicant has supporters. | T: This is how a monk is consummate in his backing.
+an3.20:6.6 | S: A mendicant with these three qualities soon acquires great and abundant skillful qualities.” | T: “Monks, a monk endowed with these three factors will, in no long time, achieve greatness & abundance in terms of skillful qualities.”
+an3.20:6.7 | P: Dasamaṁ. | T: (none)
+an3.20:6.8 | P: Paṭhamabhāṇavāro niṭṭhito. | T: (none)
+an3.20:6.9 | P: Rathakāravaggo dutiyo. | T: (none)
+an3.20:7.0 | P: Tassuddānaṁ | T: (none)
+an3.20:7.1 | P: Ñāto sāraṇīyo bhikkhu, | T: (none)
+an3.20:7.2 | P: cakkavattī sacetano; | T: (none)
+an3.20:7.3 | P: Apaṇṇakattā devo ca, | T: (none)
+an3.20:7.4 | P: duve pāpaṇikena cāti. | T: (none)
+
+## an3.22
+an3.22:1.1 | S: “These three patients are found in the world. | T: “There are these three types of sick people to be found existing in the world.
+an3.22:1.2 | S: What three? | T: Which three?
+an3.22:1.3 | S: In some cases a patient won’t recover from an illness, regardless of whether or not they get suitable food and medicines, and a capable carer. | T: “There is the case of the sick person who—regardless of whether he does or does not receive amenable food, regardless of whether he does or does not receive amenable medicine, regardless of whether he does or does not receive proper nursing—will not recover from that illness.
+an3.22:2.1 | S: In some cases a patient will recover from an illness, regardless of whether or not they get suitable food and medicines, and a capable carer. | T: There is the case of the sick person who—regardless of whether he does or does not receive amenable food, regardless of whether he does or does not receive amenable medicine, regardless of whether he does or does not receive proper nursing—will recover from that illness.
+an3.22:3.1 | S: In some cases a patient can recover from an illness, but only if they get suitable food and medicines, and a capable carer, and not if they don’t get these things. | T: There is the case of the sick person who will recover from that illness if he receives amenable food, amenable medicine, & proper nursing, but not if he doesn’t.
+an3.22:4.1 | S: Now, it’s for the sake of the last patient—who will recover only if they get suitable food and medicines, and a capable carer—that food, medicines, and a carer are prescribed. | T: “Now, it is because of the sick person who will recover from that illness if he receives amenable food, amenable medicine, & proper nursing—but not if he doesn’t—that food for the sick has been allowed, medicine for the sick has been allowed, nursing for the sick has been allowed.
+an3.22:4.2 | S: But also, for the sake of this patient, the other patients should be looked after. | T: And it is because there is this sort of sick person that the other sorts of sick persons are to be nursed as well [on the chance that they may actually turn out to need and benefit from such nursing].
+an3.22:4.3 | S: These are the three kinds of patients found in the world. | T: “These are the three types of sick people to be found existing in the world.
+an3.22:5.1 | S: In the same way, these three individuals similar to patients are found in the world. | T: “In the same way, these three types of people, like the three types of sick people, are to be found existing in the world.
+an3.22:5.2 | S: What three? | T: Which three?
+an3.22:5.3 | S: Some people don’t step into the sure path with regard to skillful qualities, regardless of whether or not they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: “There is the case of the person who—regardless of whether he does or doesn’t get to see the Tathāgata, regardless of whether he does or doesn’t get to hear the Dhamma & Vinaya proclaimed by the Tathāgata—will not alight on the lawfulness, the rightness of skillful qualities.
+an3.22:6.1 | S: Some people do step into the sure path with regard to skillful qualities, regardless of whether or not they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: There is the case of the person who—regardless of whether he does or doesn’t get to see the Tathāgata, regardless of whether he does or doesn’t get to hear the Dhamma & Vinaya proclaimed by the Tathāgata—will alight on the lawfulness, the rightness of skillful qualities.
+an3.22:7.1 | S: Some people can step into the sure path with regard to skillful qualities, but only if they get to see a Realized One, and to hear the teaching and training that he proclaims, and not when they don’t get those things. | T: There is the case of the person who will alight on the lawfulness, the rightness of skillful qualities if he gets to see the Tathāgata and gets to hear the Dhamma & Vinaya proclaimed by the Tathāgata, but not if he doesn’t.
+an3.22:8.1 | S: Now, it’s for the sake of this last individual that teaching the Dhamma is prescribed, that is, the one who can step into the sure path with regard to skillful qualities, but only if they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: “Now, it is because of the person who will alight on the lawfulness, the rightness of skillful qualities if he gets to see the Tathāgata and gets to hear the Dhamma & Vinaya proclaimed by the Tathāgata—but not if he doesn’t—that the teaching of the Dhamma has been allowed.
+an3.22:8.2 | S: But also, for the sake of this individual, the other people should be taught Dhamma. | T: And it is because there is this sort of person that the other sorts of persons are to be taught the Dhamma as well [on the chance that they may actually turn out to need and benefit from the teaching].
+an3.22:8.3 | S: These are the three individuals similar to patients found in the world.” | T: “These are the three types of people, like the three types of sick people, to be found existing in the world.”
+an3.22:8.4 | P: Dutiyaṁ. | T: (none)
+
+## an3.24
+an3.24:1.1 | S: “Mendicants, these three individuals are very helpful to another. | T: “Monks, these three persons are one’s great benefactors.
+an3.24:1.2 | S: What three? | T: Which three?
+an3.24:1.3 | S: The individual who has enabled you to go for refuge to the Buddha, the teaching, and the Saṅgha. | T: “The person through whom one has gone to the Buddha for refuge, has gone to the Dhamma for refuge, has gone to the Saṅgha for refuge:
+an3.24:1.4 | S: This individual is very helpful to another. | T: This is one’s great benefactor.
+an3.24:2.1 | S: Furthermore, the individual who has enabled you to truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “Further, the person through whom one discerns, as it has come to be, that ‘This is stress’… ‘This is the origination of stress’… ‘This is the cessation of stress’… ‘This is the path of practice leading to the cessation of stress’:
+an3.24:2.2 | S: This individual is very helpful to another. | T: This is one’s great benefactor.
+an3.24:3.1 | S: Furthermore, the individual who has enabled you to realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with your own insight in this very life due to the ending of defilements. | T: “Further, the person through whom one—with the ending of effluents—enters & remains in the effluent-free awareness-release & discernment-release, having directly known & realized it for himself right in the here & now:
+an3.24:3.2 | S: This individual is very helpful to another. | T: This is one’s great benefactor.
+an3.24:3.3 | S: These are the three individuals who are very helpful to another individual. | T: “These three persons, monks, are one’s great benefactors.
+an3.24:4.1 | S: And I say that there is no one more helpful to another than these three individuals. | T: And I tell you: One has no other benefactor greater than these three.
+an3.24:4.2 | S: And I also say that it’s not easy to repay these three individuals by bowing down to them, rising up for them, greeting them with cupped palms, and observing proper etiquette for them; or by providing them with robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: And I tell you, too, that it’s not easy for one to repay these three benefactors by bowing down, by rising up in greeting, by raising one’s hands palm-to-palm in front of the heart, by performing services in line with seniority, or by presenting them with robes, almsfood, lodging, or medicinal requisites used for curing the sick.”
+an3.24:4.3 | P: Catutthaṁ. | T: (none)
+
+## an3.2
+an3.2:1.1 | S: “A fool is characterized by their deeds, and an astute person is characterized by their deeds, for wisdom shines in its traces. | T: “Monks, a fool is characterized by his/her actions. A wise person is characterized by his/her actions. It is through the activities of one’s life that one’s discernment shines.
+an3.2:1.2 | S: A fool is known by three things. | T: “A person endowed with three things is to be recognized as a fool.
+an3.2:1.3 | S: What three? | T: Which three?
+an3.2:1.4 | S: Bad conduct by way of body, speech, and mind. | T: Bodily misconduct, verbal misconduct, mental misconduct.
+an3.2:1.5 | S: These are the three things by which a fool is known. | T: A person endowed with these three things is to be recognized as a fool.
+an3.2:2.1 | S: An astute person is known by three things. | T: “A person endowed with three things is to be recognized as a wise person.
+an3.2:2.2 | S: What three? | T: Which three?
+an3.2:2.3 | S: Good conduct by way of body, speech, and mind. | T: Good bodily conduct, good verbal conduct, good mental conduct.
+an3.2:2.4 | S: These are the three things by which an astute person is known. | T: A person endowed with these three things is to be recognized as a wise person.
+an3.2:3.1 | S: So you should train like this: | T: “Thus, monks, you should train yourselves:
+an3.2:3.2 | S: ‘We will shun the three things by which a fool is known, and we will proceed having undertaken the three things by which an astute person is known.’ | T: ‘We will avoid the three things that, endowed with which, one is to be recognized as a fool. We will undertake & maintain the three things that, endowed with which, one is to be recognized as a wise person.’
+an3.2:3.3 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an3.2:3.4 | P: Dutiyaṁ. | T: (none)
+
+## an3.33
+an3.33:1.1 | S: Then Venerable Sāriputta went up to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: Then Ven. Sāriputta went to the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there, the Blessed One said to him,
+an3.33:1.2 | S: “Maybe I’ll teach Dhamma in brief, | T: “Sāriputta, I could teach the Dhamma in brief,
+an3.33:1.3 | S: maybe in detail, | T: I could teach the Dhamma in detail,
+an3.33:1.4 | S: maybe both in brief and in detail. | T: I could teach the Dhamma in brief & in detail,
+an3.33:1.5 | S: But it’s hard to find anyone who understands.” | T: but those who would understand the Dhamma are hard to find.”
+an3.33:1.6 | S: “Now is the time, Blessed One! Now is the time, Holy One! | T: “This is the time, Blessed One, this is the time, One Well Gone,
+an3.33:1.7 | S: Let the Buddha teach Dhamma in brief, in detail, and both in brief and in detail. | T: that the Blessed One should teach the Dhamma in brief, should teach the Dhamma in detail, should teach the Dhamma in brief & in detail.
+an3.33:1.8 | S: There will be those who understand the teaching!” | T: There will be those who would understand.”
+an3.33:2.1 | S: “So, Sāriputta, you should train like this: | T: “Then, Sāriputta, you should train yourselves:
+an3.33:2.2 | S: ‘There’ll be no I-making, mine-making, or underlying tendency to conceit for this conscious body; and no I-making, mine-making, or underlying tendency to conceit externally for all signs; and we’ll live having achieved the freedom of heart and freedom by wisdom where I-making, mine-making, and the underlying tendency to conceit are no more.’ | T: ‘There will be no I-making or mine-making conceit-obsession with regard to this conscious body. There will be no I-making or mine-making conceit-obsession with regard to all external themes [topics of concentration]. We will enter & remain in the awareness-release & discernment-release where there is no I-making or my-making conceit-obsession for one entering & remaining in it.’
+an3.33:2.3 | S: That’s how you should train. | T: That’s how you should train yourselves.
+an3.33:3.1 | S: When a mendicant has no I-making, mine-making, or underlying tendency to conceit for this conscious body; and no I-making, mine-making, or underlying tendency to conceit externally for all signs; and they live having attained the freedom of heart and freedom by wisdom where I-making, mine-making, and the underlying tendency to conceit are no more— | T: When there is in a monk no I-making or my-making conceit-obsession with regard to this conscious body, no I-making or my-making conceit-obsession with regard to all external themes, and when he enters & remains in the awareness-release & discernment-release where there is no I-making or my-making conceit-obsession for one entering & remaining in it,
+an3.33:3.2 | S: they’re called | T: he is called
+an3.33:3.3 | S: a mendicant who has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. | T: a monk who has cut through craving, has ripped off the fetter, and—from rightly breaking through conceit—has put an end to suffering & stress.
+an3.33:3.4 | S: And Sāriputta, this is what I was referring to in ‘The Way to the Far Shore’, in ‘The Questions of Udaya’ when I said: | T: “And it was in reference to this that I said, in Udaka’s Questions in the Pārāyana [Snp5.14]:
+an3.33:4.1 | S: ‘The giving up of both | T: “The abandoning
+an3.33:4.2 | S: sensual desires and displeasures, | T: both of sensual desires, & of unhappiness,
+an3.33:4.3 | S: the casting aside of dullness, | T: the dispelling of sloth,
+an3.33:4.4 | S: and the prevention of remorse; | T: the warding off of anxieties,
+an3.33:5.1 | S: pure equanimity and mindfulness, | T: equanimity-&-mindfulness purified,
+an3.33:5.2 | S: preceded by investigation of principles— | T: with inspection of mental qualities swift in the forefront:
+an3.33:5.3 | S: this, I declare, is liberation by enlightenment, | T: That I call the gnosis of emancipation,
+
+exec
+/bin/bash -lc "sed -n '321,480p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.33:5.4 | S: the smashing of ignorance.’” | T: the breaking open of ignorance.”
+an3.33:5.5 | P: Tatiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-064.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+19,523
+0 lines reported.

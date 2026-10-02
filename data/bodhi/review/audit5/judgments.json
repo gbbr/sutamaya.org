@@ -1,0 +1,282 @@
+{
+  "translator": "bodhi",
+  "status": "all audit5 proposals judged against original Pali",
+  "decisions": [
+    {
+      "key": "sn35.97:1.12",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn35.97:2.10",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn35.76:1.9",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn35.63:2.8",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:2.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:2.3",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:9.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:10.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:12.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.4:12.3",
+      "starts": "The people who consider him a fool",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.18:5.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.18:5.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.18:6.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.18:7.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.18:7.4",
+      "starts": "The chief, climbed into his chariot.",
+      "decision": "accept-with-finer-boundary",
+      "rationale": "Chief and chariot predicate translates pamukho rathamāruhī independently after reordered 7.1–7.3."
+    },
+    {
+      "key": "sn35.229:3.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn4.11:3.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an4.25:2.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an4.25:2.3",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an4.25:3.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.43:3.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn4.3:3.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:2.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:2.3",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:3.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:4.6",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:7.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.35:11.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn35.138:1.6",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn35.138:1.17",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an8.30:24.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.39:2.3",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.39:4.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.39:5.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an3.34:13.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an3.34:13.3",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an3.34:14.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an3.34:14.3",
+      "starts": "A bhikkhu, giving rise to knowledge,",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn4.6:5.2",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "an5.35:2.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.41:5.2",
+      "starts": "the body Along with one’s possessions.",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn1.71:3.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn11.15:2.4",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn45.143:3.2",
+      "starts": "so too …”",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn46.43:1.4",
+      "starts": "It is",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    },
+    {
+      "key": "sn46.43:1.5",
+      "starts": "the seven factors of enlightenment.",
+      "decision": "accept",
+      "rationale": "Original Pali checked with full local source-order context; correct boundary or smallest coherent group."
+    }
+  ]
+}

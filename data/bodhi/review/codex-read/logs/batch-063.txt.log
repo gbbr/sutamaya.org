@@ -1,0 +1,386 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8a-9a19-72e1-be22-372b098f1c92
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch, check for clear placement errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an8.14, continued
+an8.14:15.3 | S: I say that this individual is comparable to the wild colts who, when the trainer says ‘giddyup!’ and spurs and goads them on, ignore the trainer and the goad, spit out the bit, and go wherever they want. | T: I say this person is similar to the wild colt that, when told: ‘Go forward!’ and when spurred and incited by its trainer, does not heed its trainer or the goad but destroys the mouthbit with its teeth and sets out wherever it wishes.
+an8.14:15.4 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an8.14:15.5 | S: Some wild people are like that. | T: There is such a kind of person here like a wild colt.
+an8.14:15.6 | S: This is the sixth defect of a person. | T: This is the sixth fault of a person.
+an8.14:16.1 | S: Furthermore, the mendicants accuse a mendicant of an offense. | T: (7) “Again, when the bhikkhus are reproving a bhikkhu for an offense,
+an8.14:16.2 | S: But the accused mendicant neither confesses to the offense nor denies it, but frustrates the Saṅgha by staying silent. | T: he does not say, ‘I committed an offense,’ nor does he say, ‘I did not commit an offense,’ but he vexes the Saṅgha by keeping silent.
+an8.14:16.3 | S: I say that this individual is comparable to the wild colts who, when the trainer says ‘giddyup!’ and spurs and goads them on, don’t step forward or turn back but stand right there still as a post. | T: I say this person is similar to the wild colt that, when told: ‘Go forward!’ and when spurred and incited by its trainer, does not go forward or turn back but stands right there as still as a post.
+an8.14:16.4 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an8.14:16.5 | S: Some wild people are like that. | T: There is such a kind of person here like a wild colt.
+an8.14:16.6 | S: This is the seventh defect of a person. | T: This is the seventh fault of a person.
+an8.14:17.1 | S: Furthermore, the mendicants accuse a mendicant of an offense. | T: (8) “Again, when the bhikkhus are reproving a bhikkhu for an offense,
+an8.14:17.2 | S: But the accused mendicant says this: | T: he says:
+an8.14:17.3 | S: ‘Why are you venerables making so much of an issue over me? Now I’ll resign the training and return to a lesser life.’ | T: ‘Why are you making such a fuss about me? Now I’ll reject the training and return to the lower life.’
+an8.14:17.4 | S: When they have resigned the training, they say: | T: He then rejects the training, returns to the lower life, and declares:
+an8.14:17.5 | S: ‘Well, venerables, are you happy now?’ | T: ‘Now you can be satisfied!’
+an8.14:17.6 | S: I say that this individual is comparable to the wild colts who, when the trainer says ‘giddyup!’ and spurs and goads them on, tuck in their fore-legs and hind-legs, and sit right down on their four legs. | T: I say this person is similar to the wild colt that, when told: ‘Go forward!’ and when spurred and incited by its trainer, tucks in its front legs and its back legs and sits down right there on all four legs.
+an8.14:17.7 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an8.14:17.8 | S: Some wild people are like that. | T: There is such a kind of person here like a wild colt.
+an8.14:17.9 | S: This is the eighth defect of a person. | T: This is the eighth fault of a person.
+an8.14:17.10 | S: These are the eight wild people and eight defects in people.” | T: “These, bhikkhus, are the eight kinds of persons who are like wild colts and the eight faults of a person.”
+an8.14:17.11 | P: Catutthaṁ. | T: (none)
+
+## an8.15
+an8.15:1.1 | S: “Mendicants, there are these eight stains. | T: “Bhikkhus, there are these eight stains.
+an8.15:1.2 | S: What eight? | T: What eight?
+an8.15:1.3 | S: Not rehearsing is the stain of hymns. | T: (1) Non-recitation is the stain of the hymns.
+an8.15:1.4 | S: Neglect is the stain of houses. | T: (2) The stain of houses is lack of upkeep.
+an8.15:1.5 | S: Laziness is the stain of beauty. | T: (3) The stain of beauty is laziness.
+an8.15:1.6 | S: Negligence is a guard’s stain. | T: (4) Heedlessness is the stain of a guard.
+an8.15:1.7 | S: Misconduct is a woman’s stain. | T: (5) A woman’s stain is misconduct.
+an8.15:1.8 | S: Stinginess is a giver’s stain. | T: (6) Miserliness is a donor’s stain.
+an8.15:1.9 | S: Bad, unskillful qualities are a stain in this world and the next. | T: (7) Bad unwholesome qualities are stains in this world and the next.
+an8.15:1.10 | S: Worse than any of these is ignorance, the worst stain of all. | T: (8) A stain graver than this is ignorance, the very worst of stains.
+an8.15:1.11 | S: These are the eight stains. | T: These, bhikkhus, are the eight stains.”
+an8.15:2.1 | S: Not rehearsing is the stain of hymns. | T: Non-recitation is the stain of the hymns;
+an8.15:2.2 | S: The stain of houses is neglect. | T: the stain of houses is lack of upkeep;
+an8.15:2.3 | S: Laziness is the stain of beauty. | T: the stain of beauty is laziness,
+an8.15:2.4 | S: A guard’s stain is negligence. | T: heedlessness is the stain of a guard.
+an8.15:3.1 | S: Misconduct is a woman’s stain. | T: A woman’s stain is misconduct,
+an8.15:3.2 | S: A giver’s stain is stinginess. | T: miserliness is a donor’s stain;
+an8.15:3.3 | S: Bad qualities are a stain | T: bad unwholesome qualities are stains
+an8.15:3.4 | S: in this world and the next. | T: in this world and the next.
+an8.15:3.5 | S: But a worse stain than these | T: A stain graver than these
+an8.15:3.6 | S: is ignorance, the worst stain of all.” | T: is ignorance, the worst of stains.
+an8.15:3.7 | P: Pañcamaṁ. | T: (none)
+
+## an8.16
+an8.16:1.1 | S: “Mendicants, a mendicant with eight qualities is worthy of going on a mission. | T: “Bhikkhus, possessing eight qualities, a bhikkhu is worthy of going on a mission.
+an8.16:1.2 | S: What eight? | T: What eight?
+an8.16:1.3 | S: It’s a mendicant who learns and educates others. They memorize and remember. They understand and help others understand. They’re skilled at knowing what’s on topic and what isn’t. And they don’t cause quarrels. | T: “Here, (1)–(2) a bhikkhu is one who listens and makes others listen; (3)–(4) he is one who learns well and makes others learn; (5)–(6) he is one who understands and communicates well; (7) he is skilled in knowing what is relevant and what irrelevant; and (8) he does not foment quarrels.
+an8.16:1.4 | S: A mendicant with these eight qualities is worthy of going on a mission. | T: Possessing these eight qualities, a bhikkhu is worthy of going on a mission.
+an8.16:1.5 | S: Having eight qualities Sāriputta is worthy of going on a mission. | T: “Bhikkhus, possessing eight qualities, Sāriputta is worthy of going on a mission.
+an8.16:1.6 | S: What eight? | T: What eight?
+an8.16:1.7 | S: He learns and educates others. He memorizes and remembers. He understands and helps others understand. He’s skilled at knowing what’s on topic and what isn’t. And he doesn’t cause quarrels. | T: “Here, Sāriputta is one who listens and who makes others listen … he does not foment quarrels.
+an8.16:1.8 | S: Having these eight qualities Sāriputta is worthy of going on a mission. | T: Possessing these eight qualities, Sāriputta is worthy of going on a mission.”
+an8.16:2.1 | S: They don’t tremble when arriving | T: One who does not tremble when he arrives
+an8.16:2.2 | S: at an assembly of fierce debaters. | T: at an assembly with fierce debaters;
+an8.16:2.3 | S: They don’t miss out any words, | T: who does not omit words
+an8.16:2.4 | S: or conceal the instructions. | T: or conceal his message;
+an8.16:3.1 | S: Their words aren’t poisoned, | T: who speaks without hesitation,
+an8.16:3.2 | S: and they don’t tremble when questioned. | T: and does not waver when asked a question;
+an8.16:3.3 | S: Such a mendicant | T: a bhikkhu like this is worthy
+an8.16:3.4 | S: is worthy of going on a mission.” | T: of going on a mission.
+an8.16:3.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an8.19
+an8.19:1.1 | S: At one time the Buddha was staying in Verañjā at the root of a neem tree dedicated to Naḷeru. | T: On one occasion the Blessed One was dwelling at Verañjā at the foot of Naḷeru’s neem tree.
+an8.19:1.2 | S: Then Pahārāda, lord of titans, went up to the Buddha, bowed, and stood to one side. The Buddha said to him, | T: Then Pahārāda, ruler of the asuras, approached the Blessed One, paid homage to him, and stood to one side. The Blessed One then said to him:
+an8.19:2.1 | S: “Well, Pahārāda, do the titans love the ocean?” | T: “Pahārāda, do the asuras take delight in the great ocean?”
+an8.19:2.2 | S: “Sir, they do indeed.” | T: “Bhante, the asuras do take delight in the great ocean.”
+an8.19:2.3 | S: “But seeing what incredible and amazing things do the titans love the ocean?” | T: “But, Pahārāda, how many astounding and amazing qualities do the asuras see in the great ocean because of which they take delight in it?”
+an8.19:2.4 | S: “Sir, seeing eight incredible and amazing things the titans love the ocean. | T: “The asuras see eight astounding and amazing qualities in the great ocean because of which they take delight in it.
+an8.19:2.5 | S: What eight? | T: What eight?
+an8.19:2.6 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: (1) “The great ocean, Bhante, slants, slopes, and inclines gradually, not dropping off abruptly.
+an8.19:2.7 | P: Yampi, bhante, mahāsamuddo anupubbaninno anupubbapoṇo anupubbapabbhāro, na āyatakeneva papāto; | T: (none)
+an8.19:2.8 | S: This is the first thing the titans love about the ocean. | T: This is the first astounding and amazing quality that the asuras see in the great ocean because of which they take delight in it.
+an8.19:3.1 | S: Furthermore, the ocean is consistent and doesn’t overflow its boundaries. | T: (2) “Again, the great ocean is stable and does not overflow its boundaries.
+an8.19:3.2 | P: Yampi, bhante, mahāsamuddo ṭhitadhammo velaṁ nātivattati; | T: (none)
+an8.19:3.3 | S: This is the second thing the titans love about the ocean. | T: This is the second astounding and amazing quality that the asuras see in the great ocean….
+an8.19:4.1 | S: Furthermore, the ocean doesn’t accommodate a carcass, but quickly carries it to the shore and strands it on the beach. | T: (3) “Again, the great ocean does not associate with a corpse, but quickly carries it to the coast and washes it ashore.
+an8.19:4.2 | P: Yampi, bhante, mahāsamuddo na matena kuṇapena saṁvasati, yaṁ hoti mahāsamudde mataṁ kuṇapaṁ, taṁ khippameva tīraṁ vāheti, thalaṁ ussāreti; | T: (none)
+an8.19:4.3 | S: This is the third thing the titans love about the ocean. | T: This is the third astounding and amazing quality that the asuras see in the great ocean….
+an8.19:5.1 | S: Furthermore, when they reach the ocean, all the great rivers—that is, | T: (4) “Again, when the great rivers—
+an8.19:5.2 | S: the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—lose their names and clans and are simply reckoned as ‘the ocean’. | T: the Ganges, the Yamunā, the Aciravatī, the Sarabhū, and the Mahī—reach the great ocean, they give up their former names and designations and are simply called the great ocean.
+an8.19:5.3 | P: Yampi, bhante, yā kāci mahānadiyo, seyyathidaṁ—gaṅgā yamunā aciravatī sarabhū mahī, tā mahāsamuddaṁ patvā jahanti purimāni nāmagottāni, ‘mahāsamuddo’ tveva saṅkhaṁ gacchanti; | T: (none)
+an8.19:5.4 | S: This is the fourth thing the titans love about the ocean. | T: This is the fourth astounding and amazing quality that the asuras see in the great ocean….
+an8.19:6.1 | S: Furthermore, for all the world’s streams that reach it, and the showers that fall from the sky, the ocean never empties or fills up. | T: (5) “Again, whatever streams in the world flow into the great ocean and however much rain falls into it from the sky, neither a decrease nor a filling up can be seen in the great ocean.
+an8.19:6.2 | P: Yampi, bhante, yā ca loke savantiyo mahāsamuddaṁ appenti yā ca antalikkhā dhārā papatanti, na tena mahāsamuddassa ūnattaṁ vā pūrattaṁ vā paññāyati; | T: (none)
+an8.19:6.3 | S: This is the fifth thing the titans love about the ocean. | T: This is the fifth astounding and amazing quality that the asuras see in the great ocean….
+an8.19:7.1 | S: Furthermore, the ocean has just one taste, the taste of salt. | T: (6) “Again, the great ocean has but one taste, the taste of salt.
+an8.19:7.2 | P: Yampi, bhante, mahāsamuddo ekaraso loṇaraso; | T: (none)
+an8.19:7.3 | S: This is the sixth thing the titans love about the ocean. | T: This is the sixth astounding and amazing quality that the asuras see in the great ocean….
+an8.19:8.1 | S: Furthermore, the ocean is full of many kinds of treasures, such as pearls, gems, beryl, conch, quartz, coral, silver, native gold, rubies, and emeralds. | T: (7) “Again, the great ocean contains many precious substances, numerous precious substances such as pearls, gems, lapis lazuli, conch, quartz, coral, silver, gold, rubies, and cats-eye.
+an8.19:8.2 | P: Yampi, bhante, mahāsamuddo bahuratano anekaratano; tatrimāni ratanāni, seyyathidaṁ—muttā maṇi veḷuriyo saṅkho silā pavāḷaṁ rajataṁ jātarūpaṁ lohitako masāragallaṁ; | T: (none)
+an8.19:8.3 | S: This is the seventh thing the titans love about the ocean. | T: This is the seventh astounding and amazing quality that the asuras see in the great ocean….
+an8.19:9.1 | S: Furthermore, many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: (8) “Again, the great ocean is the abode of great beings such as timis, timiṅgalas, timirapiṅgalas, asuras, nāgas, and gandhabbas. There are in the great ocean beings with bodies one hundred yojanas long, two hundred, three hundred, four hundred, and five hundred yojanas long.
+an8.19:9.2 | P: Yampi, bhante, mahāsamuddo mahataṁ bhūtānaṁ āvāso; tatrime bhūtā—timi timiṅgalo timirapiṅgalo asurā nāgā gandhabbā; santi mahāsamudde yojanasatikāpi attabhāvā …pe… tiyojana … catuyojana … pañcayojanasatikāpi attabhāvā; | T: (none)
+an8.19:9.3 | S: This is the eighth thing the titans love about the ocean. | T: This is the eighth astounding and amazing quality that the asuras see in the great ocean because of which they take delight in it.
+an8.19:9.4 | S: Seeing these eight incredible and amazing things the titans love the ocean. | T: “These, Bhante, are the eight astounding and amazing qualities that the asuras see in the great ocean because of which they take delight in it.
+an8.19:10.1 | S: Well, sir, do the mendicants love this teaching and training?” | T: But do the bhikkhus take delight in this Dhamma and discipline?”
+an8.19:10.2 | S: “They do indeed, Pahārāda.” | T: “Pahārāda, the bhikkhus do take delight in this Dhamma and discipline.”
+an8.19:10.3 | S: “But seeing how many incredible and amazing things do the mendicants love this teaching and training?” | T: “But, Bhante, how many astounding and amazing qualities do the bhikkhus see in this Dhamma and discipline because of which they take delight in it?”
+an8.19:10.4 | S: “Seeing eight incredible and amazing things, Pahārāda, the mendicants love this teaching and training. | T: “The bhikkhus see eight astounding and amazing qualities in this Dhamma and discipline because of which they take delight in it.
+an8.19:10.5 | S: What eight? | T: What eight?
+an8.19:10.6 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: (1) “Just as, Pahārāda, the great ocean slants, slopes, and inclines gradually, not dropping off abruptly,
+an8.19:10.7 | S: In the same way in this teaching and training the penetration to enlightenment comes from gradual training, progress, and practice, not abruptly. | T: so too, in this Dhamma and discipline penetration to final knowledge occurs by gradual training, gradual activity, and gradual practice, not abruptly.
+an8.19:10.8 | P: Yampi, pahārāda, imasmiṁ dhammavinaye anupubbasikkhā anupubbakiriyā anupubbapaṭipadā, na āyatakeneva aññāpaṭivedho; | T: (none)
+an8.19:10.9 | S: This is the first thing the mendicants love about this teaching and training. | T: This is the first astounding and amazing quality that the bhikkhus see in this Dhamma and discipline because of which they take delight in it.
+an8.19:11.1 | S: The ocean is consistent and doesn’t overflow its boundaries. | T: (2) “Just as the great ocean is stable and does not overflow its boundaries,
+an8.19:11.2 | S: In the same way, when a training rule is laid down for my disciples they wouldn’t break it even for the sake of their own life. | T: so too, when I have prescribed a training rule for my disciples, they will not transgress it even for life’s sake.
+an8.19:11.3 | P: Yampi, pahārāda, mayā sāvakānaṁ sikkhāpadaṁ paññattaṁ taṁ mama sāvakā jīvitahetupi nātikkamanti; | T: (none)
+an8.19:11.4 | S: This is the second thing the mendicants love about this teaching and training. | T: This is the second astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:12.1 | S: The ocean doesn’t accommodate a carcass, but quickly carries it to the shore and strands it on the beach. | T: (3) “Just as the great ocean does not associate with a corpse, but quickly carries it to the coast and washes it ashore,
+an8.19:13.1 | S: In the same way, the Saṅgha doesn’t accommodate an individual who is unethical, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved. But they quickly gather and expel them. Even if they are sitting in the middle of the Saṅgha, they’re far from the Saṅgha, and the Saṅgha is far from them. | T: so too, the Saṅgha does not associate with a person who is immoral, of bad character, impure, of suspect behavior, secretive in his actions, not an ascetic though claiming to be one, not a celibate though claiming to be one, inwardly rotten, corrupt, depraved; rather, it quickly assembles and expels him. Even though he is seated in the midst of the Saṅgha of bhikkhus, yet he is far from the Saṅgha and the Saṅgha is far from him.
+an8.19:13.2 | P: Yampi, pahārāda, yo so puggalo dussīlo pāpadhammo asucisaṅkassarasamācāro paṭicchannakammanto assamaṇo samaṇapaṭiñño abrahmacārī brahmacāripaṭiñño antopūti avassuto kasambujāto, na tena saṅgho saṁvasati; khippameva naṁ sannipatitvā ukkhipati; kiñcāpi so hoti majjhe bhikkhusaṅghassa sannisinno, atha kho so ārakāva saṅghamhā saṅgho ca tena; | T: (none)
+an8.19:13.3 | S: This is the third thing the mendicants love about this teaching and training. | T: This is the third astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:14.1 | S: When they reach the ocean, all the great rivers—that is, the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—lose their names and clans and are simply reckoned as ‘the ocean’. | T: (4) “Just as, when the great rivers … reach the great ocean, they give up their former names and designations and are simply called the great ocean,
+an8.19:14.2 | S: In the same way, when they go forth from the lay life to homelessness, all four classes—aristocrats, brahmins, peasants, and menials—lose their former names and clans and are simply reckoned as ‘ascetics who follow the Sakyan’. | T: so too, when members of the four social classes—khattiyas, brahmins, vessas, and suddas—go forth from the household life into homelessness in the Dhamma and discipline proclaimed by the Tathāgata, they give up their former names and clans and are simply called ascetics following the Sakyan son.
+an8.19:14.3 | P: Yampi, pahārāda, cattārome vaṇṇā—khattiyā, brāhmaṇā, vessā, suddā, te tathāgatappavedite dhammavinaye agārasmā anagāriyaṁ pabbajitvā jahanti purimāni nāmagottāni, ‘samaṇā sakyaputtiyā’ tveva saṅkhaṁ gacchanti; | T: (none)
+an8.19:14.4 | S: This is the fourth thing the mendicants love about this teaching and training. | T: This is the fourth astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:15.1 | S: For all the world’s streams that reach it, and the showers that fall from the sky, the ocean never empties or fills up. | T: (5) “Just as, whatever streams in the world flow into the great ocean and however much rain falls into it from the sky, neither a decrease nor a filling up can be seen in the great ocean,
+an8.19:15.2 | S: In the same way, though several mendicants become fully extinguished in the element of extinguishment with no residue, the element of extinguishment never empties or fills up. | T: so too, even if many bhikkhus attain final nibbāna by way of the nibbāna element without residue remaining, neither a decrease nor a filling up can be seen in the nibbāna element.
+an8.19:15.3 | P: Yampi, pahārāda, bahū cepi bhikkhū anupādisesāya nibbānadhātuyā parinibbāyanti, na tena nibbānadhātuyā ūnattaṁ vā pūrattaṁ vā paññāyati; | T: (none)
+an8.19:15.4 | S: This is the fifth thing the mendicants love about this teaching and training. | T: This is the fifth astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:16.1 | S: The ocean has just one taste, the taste of salt. | T: (6) “Just as the great ocean has but one taste, the taste of salt,
+an8.19:16.2 | S: In the same way, this teaching and training has one taste, the taste of freedom. | T: so too, this Dhamma and discipline has but one taste, the taste of liberation.
+an8.19:16.3 | P: Yampi, pahārāda, ayaṁ dhammavinayo ekaraso, vimuttiraso; | T: (none)
+an8.19:16.4 | S: This is the sixth thing the mendicants love about this teaching and training. | T: This is the sixth astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:17.1 | S: The ocean is full of many kinds of treasures, such as pearls, gems, beryl, conch, quartz, coral, silver, native gold, rubies, and emeralds. | T: (7) “Just as the great ocean contains many precious substances, numerous precious substances such as pearls … cats-eye,
+an8.19:17.2 | S: In the same way, this teaching and training is full of many kinds of treasures, such as the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: so too, this Dhamma and discipline contains many precious substances, numerous precious substances: the four establishments of mindfulness, the four right strivings, the four bases for psychic potency, the five spiritual faculties, the five powers, the seven factors of enlightenment, the noble eightfold path.
+an8.19:17.3 | P: Yampi, pahārāda, ayaṁ dhammavinayo bahuratano anekaratano; tatrimāni ratanāni, seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo; | T: (none)
+an8.19:17.4 | S: This is the seventh thing the mendicants love about this teaching and training. | T: This is the seventh astounding and amazing quality that the bhikkhus see in this Dhamma and discipline….
+an8.19:18.1 | S: Many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: (8) “Just as the great ocean is the abode of great beings such as timis … … gandhabbas; and as there are in the great ocean beings with bodies one hundred yojanas long … five hundred yojanas long,
+an8.19:18.2 | S: In the same way, great beings live in this teaching and training, and these are those beings. The stream-enterer and the one practicing to realize the fruit of stream-entry. The once-returner and the one practicing to realize the fruit of once-return. The non-returner and the one practicing to realize the fruit of non-return. The perfected one, and the one practicing for perfection. | T: so too this Dhamma and discipline is the abode of great beings: the stream-enterer, the one practicing for realization of the fruit of stream-entry; the once-returner, the one practicing for realization of the fruit of once-returning; the non-returner, the one practicing for realization of the fruit of non-returning; the arahant, the one practicing for arahantship.
+an8.19:18.3 | P: Yampi, pahārāda, ayaṁ dhammavinayo mahataṁ bhūtānaṁ āvāso; tatrime bhūtā—sotāpanno sotāpattiphalasacchikiriyāya paṭipanno, sakadāgāmī sakadāgāmiphalasacchikiriyāya paṭipanno, anāgāmī anāgāmiphalasacchikiriyāya paṭipanno, arahā arahattāya paṭipanno; | T: (none)
+an8.19:18.4 | S: This is the eighth thing the mendicants love about this teaching and training. | T: This is the eighth astounding and amazing quality that the bhikkhus see in this Dhamma and discipline because of which they take delight in it.
+an8.19:19.1 | S: Seeing these eight incredible and amazing things, Pahārāda, the mendicants love this teaching and training.” | T: “These, Pahārāda, are the eight astounding and amazing qualities that the bhikkhus see in this Dhamma and discipline because of which they take delight in it.”
+an8.19:19.2 | P: Navamaṁ. | T: (none)
+
+## an8.1
+an8.1:1.1 | S: So I have heard. | T: Thus have I heard.
+an8.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an8.1:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an8.1:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+an8.1:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an8.1:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+an8.1:2.1 | S: “Mendicants, you can expect eight benefits when the heart’s release by love has been cultivated, developed, and practiced, made a vehicle and a basis, kept up, consolidated, and properly implemented. | T: “Bhikkhus, when the liberation of the mind by loving-kindness has been pursued, developed, and cultivated, made a vehicle and basis, carried out, consolidated, and properly undertaken, eight benefits are to be expected.
+an8.1:2.2 | S: What eight? | T: What eight?
+an8.1:2.3 | S: You sleep at ease. You wake happily. You don’t have bad dreams. Humans love you. Non-humans love you. Deities protect you. You can’t be harmed by fire, poison, or blade. If you don’t penetrate any higher, you’ll be reborn in a realm of divinity. | T: (1) “One sleeps well; (2) one awakens happily; (3) one does not have bad dreams; (4) one is pleasing to human beings; (5) one is pleasing to spirits; (6) deities protect one; (7) fire, poison, and weapons do not injure one; and (8) if one does not penetrate further, one moves on to the brahmā world.
+an8.1:2.4 | S: You can expect these eight benefits when the heart’s release by love has been cultivated, developed, and practiced, made a vehicle and a basis, kept up, consolidated, and properly implemented. | T: “When, bhikkhus, the liberation of the mind by loving-kindness has been pursued, developed, and cultivated, made a vehicle and basis, carried out, consolidated, and properly undertaken, these eight benefits are to be expected.”
+an8.1:3.1 | S: A mindful one who develops | T: For one who, ever mindful, develops
+an8.1:3.2 | S: limitless love | T: measureless loving-kindness,
+an8.1:3.3 | S: weakens the fetters, | T: the fetters thin out as he sees
+an8.1:3.4 | S: seeing the ending of attachments. | T: the destruction of the acquisitions.
+an8.1:4.1 | S: Loving just one creature with a hateless heart | T: If, with a mind free from hate, one arouses love toward just one being,
+an8.1:4.2 | S: makes you a true person. | T: one thereby becomes good.
+an8.1:4.3 | S: Sympathetic for all creatures, | T: Compassionate in mind toward all beings,
+an8.1:4.4 | S: a noble one creates abundant merit. | T: the noble one generates abundant merit.
+an8.1:5.1 | S: The royal potentates conquered this land | T: Those royal sages who conquered the earth with its multitudes of beings
+an8.1:5.2 | S: and traveled around sponsoring sacrifices— | T: traveled around performing sacrifices:
+an8.1:5.3 | S: horse sacrifice, human sacrifice, | T: the horse sacrifice, the person sacrifice,
+an8.1:5.4 | S: the sacrifices of the ‘casting of the yoke-pin’, <j>the ‘royal soma drinking’, and the ‘unimpeded’. | T: sammāpāsa, vājapeyya, niraggaḷa.
+an8.1:6.1 | S: These are not worth a sixteenth part | T: All these are not worth a sixteenth part
+an8.1:6.2 | S: of the mind developed with love, | T: of a well-developed loving mind,
+an8.1:6.3 | S: as all the constellations of stars | T: just as the hosts of stars cannot match
+an8.1:6.4 | S: aren’t worth a sixteenth part of the moon’s light. | T: a sixteenth part of the moon’s radiance.
+an8.1:7.1 | S: Don’t kill or cause others to kill, | T: One who does not kill or enjoin killing,
+an8.1:7.2 | S: don’t conquer or encourage others to conquer, | T: who does not conquer or enjoin conquest,
+an8.1:7.3 | S: with love for all sentient beings, | T: one who has loving-kindness toward all beings
+an8.1:7.4 | S: you’ll have no enmity for anyone.” | T: harbors no enmity toward anyone.
+an8.1:7.5 | P: Paṭhamaṁ. | T: (none)
+
+## an8.20
+an8.20:1.1 | S: At one time the Buddha was staying near Sāvatthī in the stilt longhouse of Migāra’s mother in the Eastern Monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Migāramātā’s Mansion in the Eastern Park.
+an8.20:1.2 | S: Now, at that time it was the sabbath, and the Buddha was sitting surrounded by the Saṅgha of monks. | T: Now on that occasion, on the day of the uposatha, the Blessed One was sitting surrounded by the Saṅgha of bhikkhus.
+an8.20:1.3 | S: And then, as the night was getting late, in the first watch of the night, Venerable Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then, as the night advanced, when the first watch passed, the Venerable Ānanda rose from his seat, arranged his upper robe over one shoulder, reverently saluted the Blessed One, and said to him:
+an8.20:1.4 | S: “Sir, the night is getting late. It is the first watch of the night, and the Saṅgha of monks has been sitting long. | T: “Bhante, the night has advanced; the first watch has passed; the Saṅgha of bhikkhus has been sitting for a long time.
+an8.20:1.5 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: Let the Blessed One recite the Pātimokkha to the bhikkhus.”
+an8.20:2.1 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One was silent.
+an8.20:2.2 | S: For a second time, as the night was getting late, in the middle watch of the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: As the night advanced still further, when the middle watch passed, the Venerable Ānanda rose from his seat a second time, arranged his upper robe over one shoulder, reverently saluted the Blessed One, and said to him:
+an8.20:2.3 | S: “Sir, the night is getting late. It is the middle watch of the night, and the Saṅgha of monks has been sitting long. | T: “Bhante, the night has advanced still further; the middle watch has passed; the Saṅgha of bhikkhus has been sitting for a long time.
+an8.20:2.4 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: Bhante, let the Blessed One recite the Pātimokkha to the bhikkhus.”
+an8.20:2.5 | S: But for a second time the Buddha kept silent. | T: A second time the Blessed One was silent.
+an8.20:2.6 | S: For a third time, as the night was getting late, in the last watch of the night, as dawn stirred, bringing joy to the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: As the night advanced still further, when the last watch passed, when dawn arrived and a rosy tint appeared on the horizon, the Venerable Ānanda rose from his seat a third time, arranged his upper robe over one shoulder, reverently saluted the Blessed One, and said to him:
+an8.20:2.7 | S: “Sir, the night is getting late. It is the last watch of the night and dawn stirs, bringing joy to the night. | T: “Bhante, the night has advanced still further; the last watch has passed; dawn has arrived and a rosy tint has appeared on the horizon;
+an8.20:2.8 | S: And the Saṅgha has been sitting long. | T: the Saṅgha of bhikkhus has been sitting for a long time.
+an8.20:2.9 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: Let the Blessed One recite the Pātimokkha to the bhikkhus.”
+an8.20:2.10 | S: “Ānanda, the assembly is not pure.” | T: “This assembly, Ānanda, is impure.”
+an8.20:3.1 | S: Then Venerable Mahāmoggallāna thought, | T: Then it occurred to the Venerable Mahāmoggallāna:
+an8.20:3.2 | S: “Who is the Buddha talking about?” | T: “What person was the Blessed One referring to when he said:
+an8.20:3.3 | P: ‘aparisuddhā, ānanda, parisā’”ti? | T: ‘This assembly, Ānanda, is impure’?”
+an8.20:3.4 | S: Then he focused on encompassing the minds of everyone in the Saṅgha. | T: Then the Venerable Mahāmoggallāna fixed his attention on the entire Saṅgha of bhikkhus, encompassing their minds with his own mind.
+an8.20:3.5 | S: He saw that unethical individual, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved, sitting in the middle of the Saṅgha. | T: He then saw that person sitting in the midst of the Saṅgha of bhikkhus: one who was immoral, of bad character, impure, of suspect behavior, secretive in his actions, not an ascetic though claiming to be one, not a celibate though claiming to be one, inwardly rotten, corrupt, depraved.
+an8.20:3.6 | S: When he saw him he rose from his seat, went up to him and said, | T: Having seen him, he rose from his seat, went up to that person, and said to him:
+an8.20:3.7 | S: “Get up, reverend. The Buddha has seen you. | T: “Get up, friend. The Blessed One has seen you.
+an8.20:3.8 | S: You can’t live in communion with the monks.” | T: You cannot live in communion with the bhikkhus.”
+an8.20:4.1 | S: But when he said this, that individual kept silent. | T: When this was said, that person remained silent.
+an8.20:4.2 | S: For a second time | T: A second time …
+an8.20:4.3 | P: “uṭṭhehāvuso, diṭṭhosi bhagavatā. | T: (none)
+an8.20:4.4 | P: Natthi te bhikkhūhi saddhiṁ saṁvāso”ti. | T: (none)
+an8.20:4.5 | P: Dutiyampi kho so puggalo tuṇhī ahosi. | T: (none)
+an8.20:4.6 | S: and a third time, | T: A third time the Venerable Mahāmoggallāna said to that person:
+an8.20:4.7 | S: he asked that monk to leave. | T: “Get up, friend. The Blessed One has seen you.
+an8.20:4.8 | P: Natthi te bhikkhūhi saddhiṁ saṁvāso”ti. | T: You cannot live in communion with the bhikkhus.”
+an8.20:4.9 | S: But for a third time that individual kept silent. | T: A third time that person remained silent.
+an8.20:5.1 | S: Then Venerable Mahāmoggallāna took that individual by the arm, ejected him out the gate, and bolted the door. Then he went up to the Buddha, and said to him, | T: Then the Venerable Mahāmoggallāna grabbed that person by the arm, evicted him through the outer gatehouse, and bolted the door. Then he returned to the Blessed One and said to him:
+an8.20:5.2 | S: “I have ejected that individual. | T: “I have evicted that person, Bhante.
+an8.20:5.3 | S: The assembly is pure. | T: The assembly is pure.
+an8.20:5.4 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: Let the Blessed One recite the Pātimokkha to the bhikkhus.”
+an8.20:5.5 | S: “It’s incredible, Moggallāna, it’s amazing, | T: “It’s astounding and amazing, Moggallāna,
+an8.20:5.6 | S: how that futile man waited to be taken by the arm!” | T: how that hollow man waited until he was grabbed by the arm.”
+an8.20:6.1 | S: Then the Buddha said to the monks: | T: Then the Blessed One addressed the bhikkhus:
+an8.20:6.2 | S: “Now, monks, you should perform the sabbath and recite the monastic code. | T: “Now, bhikkhus, you yourselves should conduct the uposatha and recite the Pātimokkha.
+an8.20:6.3 | S: From this day forth, I will not perform the sabbath or recite the monastic code. | T: From today onward, I will no longer do so.
+an8.20:6.4 | S: It’s impossible, monks, it can’t happen that a Realized One could recite the monastic code in an impure assembly. | T: It is impossible and inconceivable that the Tathāgata could conduct the uposatha and recite the Pātimokkha in an impure assembly.
+an8.20:7.1 | S: Seeing these eight incredible and amazing things the titans love the ocean. | T: “The asuras, bhikkhus, see these eight astounding and amazing qualities in the great ocean because of which they take delight in it.
+an8.20:7.2 | S: What eight? | T: What eight?
+an8.20:7.3 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: (1) “The great ocean, bhikkhus, slants, slopes, and inclines gradually, not dropping off abruptly.
+an8.20:7.4 | P: Yampi, bhikkhave, mahāsamuddo anupubbaninno anupubbapoṇo anupubbapabbhāro, na āyatakeneva papāto; | T: (none)
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.20:7.5 | S: This is the first thing the titans love about the ocean. | T: This is the first astounding and amazing quality that the asuras see in the great ocean because of which they take delight in it….
+an8.20:7.6 | S: (Tell in full as in the previous discourse.) | T: All as in AN8.19, but addressed to the bhikkhus.
+an8.20:8.1 | S: Furthermore, many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: (8) “Again, the great ocean is the abode of great beings … … five hundred yojanas long.
+an8.20:8.2 | P: Yampi, bhikkhave, mahāsamuddo mahataṁ bhūtānaṁ āvāso; tatrime bhūtā—timi timiṅgalo timirapiṅgalo asurā nāgā gandhabbā; vasanti mahāsamudde yojanasatikāpi attabhāvā …pe… pañcayojanasatikāpi attabhāvā; | T: (none)
+an8.20:8.3 | S: This is the eighth thing the titans love about the ocean. | T: This is the eighth astounding and amazing quality that the asuras see in the great ocean because of which they take delight in it.
+an8.20:8.4 | S: Seeing these eight incredible and amazing things the titans love the ocean. | T: “These, bhikkhus, are the eight astounding and amazing qualities that the asuras see in the great ocean because of which they take delight in it.
+an8.20:9.1 | S: In the same way, seeing eight incredible and amazing things, monks, the mendicants love this teaching and training. | T: So too, the bhikkhus see eight astounding and amazing qualities in this Dhamma and discipline because of which they take delight in it.
+an8.20:9.2 | S: What eight? | T: What eight?
+an8.20:9.3 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: (1) “Just as, bhikkhus, the great ocean slants, slopes, and inclines gradually, not dropping off abruptly,
+an8.20:9.4 | S: In the same way in this teaching and training the penetration to enlightenment comes from gradual training, progress, and practice, not abruptly. | T: so too, in this Dhamma and discipline penetration to final knowledge occurs by gradual training, gradual activity, and gradual practice, not abruptly.
+an8.20:9.5 | P: Yampi, bhikkhave, imasmiṁ dhammavinaye anupubbasikkhā anupubbakiriyā anupubbapaṭipadā, na āyatakeneva aññāpaṭivedho; | T: (none)
+an8.20:9.6 | S: This is the first thing the mendicants love about this teaching and training. … | T: This is the first astounding and amazing quality that the bhikkhus see in this Dhamma and discipline because of which they take delight in it…. All as in AN8.19, but addressed to the bhikkhus.
+an8.20:9.7 | S: Many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: (8) “Just as the great ocean is the abode of great beings … five hundred yojanas long,
+an8.20:9.8 | S: In the same way, great beings live in this teaching and training, and these are those beings. The stream-enterer and the one practicing to realize the fruit of stream-entry. The once-returner and the one practicing to realize the fruit of once-return. The non-returner and the one practicing to realize the fruit of non-return. The perfected one, and the one practicing for perfection. | T: so too, this Dhamma and discipline is the abode of great beings: the stream-enterer, the one practicing for the realization of the fruit of stream-entry … the arahant, the one practicing for arahantship.
+an8.20:9.9 | P: Yampi, bhikkhave, ayaṁ dhammavinayo mahataṁ bhūtānaṁ āvāso; tatrime bhūtā—sotāpanno sotāpattiphalasacchikiriyāya paṭipanno …pe… arahā arahattāya paṭipanno; | T: (none)
+an8.20:9.10 | S: This is the eighth thing the mendicants love about this teaching and training. | T: This is the eighth astounding and amazing quality that the bhikkhus see in this Dhamma and discipline because of which they take delight in it.
+an8.20:9.11 | S: Seeing these eight incredible and amazing things, the mendicants love this teaching and training.” | T: “These, bhikkhus, are the eight astounding and amazing qualities that the bhikkhus see in this Dhamma and discipline because of which they take delight in it.”
+an8.20:9.12 | P: Dasamaṁ. | T: (none)
+an8.20:9.13 | P: Mahāvaggo dutiyo. | T: (none)
+an8.20:10.0 | P: Tassuddānaṁ | T: (none)
+an8.20:10.1 | P: Verañjo sīho ājaññaṁ, | T: (none)
+an8.20:10.2 | P: khaḷuṅkena malāni ca; | T: (none)
+an8.20:10.3 | P: Dūteyyaṁ dve ca bandhanā, | T: (none)
+an8.20:10.4 | P: pahārādo uposathoti. | T: (none)
+
+## an8.24
+an8.24:1.1 | S: At one time the Buddha was staying near Āḷavī, at Āḷavī’s premier shrine. | T: On one occasion the Blessed One was dwelling at Āḷavī at the Aggāḷava Shrine.
+an8.24:1.2 | S: Then the householder Hatthaka of Āḷavī, escorted by around five hundred lay followers, went up to the Buddha, bowed, and sat down to one side. The Buddha said to Hatthaka: | T: Then Hatthaka of Āḷavī, accompanied by five hundred lay followers, approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+an8.24:1.3 | S: “Hatthaka, you have a large congregation. | T: “Your retinue is large, Hatthaka.
+an8.24:1.4 | S: How do you bring together such a large congregation?” | T: How do you sustain this large retinue?”
+an8.24:1.5 | S: “Sir, I bring together such a large congregation by using the four ways of being inclusive as taught by the Buddha. | T: “I do so, Bhante, by the four means of sustaining a favorable relationship taught by the Blessed One.
+an8.24:1.6 | S: When I know that they | T: When I know:
+an8.24:1.7 | S: can be included by a gift, I include them by giving a gift. | T: ‘This one is to be sustained by a gift,’ I sustain him by a gift.
+an8.24:1.8 | S: When I know that they | T: When I know:
+an8.24:1.9 | S: can be included by kindly words, I include them by kindly words. | T: ‘This one is to be sustained by endearing speech,’ I sustain him by endearing speech.
+an8.24:1.10 | S: When I know that they | T: When I know:
+an8.24:1.11 | S: can be included by taking care of them, I include them by caring for them. | T: ‘This one is to be sustained by beneficent conduct,’ I sustain him by beneficent conduct.
+an8.24:1.12 | S: When I know that they | T: When I know:
+an8.24:1.13 | S: can be included by equality, I include them by treating them equally. | T: ‘This one is to be sustained by impartiality,’ I sustain him by impartiality.
+an8.24:1.14 | S: But also, worthy sir, my family is wealthy. | T: There is wealth in my family, Bhante.
+an8.24:1.15 | S: They wouldn’t think that a poor person was worth listening to in the same way.” | T: They don’t think they should listen to me as if I were poor.”
+an8.24:1.16 | S: “Good, good, Hatthaka! | T: “Good, good, Hatthaka!
+an8.24:1.17 | S: This is the right way to bring together a large congregation. | T: This is the method by which you can sustain a large retinue.
+an8.24:1.18 | S: Whether in the past, future, or present, all those who have brought together a large congregation have done so by using these four ways of being inclusive.” | T: For all those in the past who sustained a large retinue did so by these same four means of sustaining a favorable relationship.
+an8.24:1.19 | P: Yepi hi keci, hatthaka, anāgatamaddhānaṁ mahatiṁ parisaṁ saṅgaṇhissanti, sabbe te imeheva catūhi saṅgahavatthūhi mahatiṁ parisaṁ saṅgaṇhissanti. | T: All those in the future who will sustain a large retinue will do so by these same four means of sustaining a favorable relationship.
+an8.24:1.20 | P: Yepi hi keci, hatthaka, etarahi mahatiṁ parisaṁ saṅgaṇhanti, sabbe te imeheva catūhi saṅgahavatthūhi mahatiṁ parisaṁ saṅgaṇhantī”ti. | T: And all those at present who sustain a large retinue do so by these same four means of sustaining a favorable relationship.”
+an8.24:2.1 | S: Then the Buddha educated, encouraged, fired up, and inspired Hatthaka of Āḷavī with a Dhamma talk, after which he got up from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then, after the Blessed One had instructed, encouraged, inspired, and gladdened Hatthaka of Āḷavī with a Dhamma talk, Hatthaka rose from his seat, paid homage to the Blessed One, circumambulated him keeping the right side toward him, and departed.
+an8.24:2.2 | S: Then, not long after Hatthaka had left, the Buddha addressed the mendicants: | T: Then, not long after Hatthaka of Āḷavī had left, the Blessed One addressed the bhikkhus:
+an8.24:2.3 | S: “Mendicants, you should remember the householder Hatthaka of Āḷavī as someone who has eight amazing and incredible qualities. | T: “Bhikkhus, you should remember Hatthaka of Āḷavī as one who possesses eight astounding and amazing qualities.
+an8.24:2.4 | S: What eight? | T: What eight?
+an8.24:2.5 | S: He’s faithful, | T: (1) He is endowed with faith.
+an8.24:2.6 | S: ethical, | T: (2) He is virtuous,
+an8.24:2.7 | S: conscientious, | T: and (3) has a sense of moral shame and
+an8.24:2.8 | S: prudent, | T: (4) moral dread.
+an8.24:2.9 | S: learned, | T: (5) He is learned,
+an8.24:2.10 | S: generous, | T: (6) generous,
+an8.24:2.11 | S: wise, | T: and (7) wise.
+an8.24:2.12 | S: and has few wishes. | T: (8) He has few desires.
+an8.24:2.13 | S: You should remember the householder Hatthaka of Āḷavī as someone who possesses these eight amazing and incredible qualities.” | T: You should remember Hatthaka of Āḷavī as one who possesses these eight astounding and amazing qualities.”
+an8.24:2.14 | P: Catutthaṁ. | T: (none)
+
+## an8.25
+an8.25:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was dwelling among the Sakyans at Kapilavatthu in the Banyan Tree Park.
+an8.25:1.2 | S: Then Mahānāma the Sakyan went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Mahānāma the Sakyan approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+an8.25:1.3 | S: “Sir, how is a lay follower defined?” | T: “In what way, Bhante, is one a lay follower?”
+an8.25:1.4 | S: “Mahānāma, when you’ve gone for refuge to the Buddha, the teaching, and the Saṅgha, | T: “When, Mahānāma, one has gone for refuge to the Buddha, the Dhamma, and the Saṅgha,
+an8.25:1.5 | S: you’re considered to be a lay follower.” | T: in that way one is a lay follower.”
+an8.25:2.1 | S: “But how is an ethical lay follower defined?” | T: “In what way, Bhante, is a lay follower virtuous?”
+an8.25:2.2 | S: “When a lay follower doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor, | T: “When, Mahānāma, a lay follower abstains from the destruction of life, from taking what is not given, from sexual misconduct, from false speech, and from liquor, wine, and intoxicants, the basis for heedlessness,
+an8.25:2.3 | S: they’re considered to be an ethical lay follower.” | T: in that way a lay follower is virtuous.”
+an8.25:3.1 | S: “But how do we define a lay follower who is practicing to benefit themselves, not others?” | T: “In what way, Bhante, is a lay follower practicing for his own welfare but not for the welfare of others?”
+an8.25:3.2 | S: “A lay follower is accomplished in faith, but doesn’t encourage others to do the same. | T: (1) “When, Mahānāma, a lay follower is himself accomplished in faith but does not encourage others to accomplish faith;
+an8.25:3.3 | S: They’re accomplished in ethical conduct, but don’t encourage others to do the same. | T: (2) when he is himself accomplished in virtuous behavior but does not encourage others to accomplish virtuous behavior;
+an8.25:3.4 | S: They’re accomplished in generosity, but don’t encourage others to do the same. | T: (3) when he is himself accomplished in generosity but does not encourage others to accomplish generosity;
+an8.25:3.5 | S: They like to see the mendicants, but don’t encourage others to do the same. | T: (4) when he himself wants to see bhikkhus but does not encourage others to see bhikkhus;
+an8.25:3.6 | S: They like to hear the true teaching, but don’t encourage others to do the same. | T: (5) when he himself wants to hear the good Dhamma but does not encourage others to hear the good Dhamma;
+an8.25:3.7 | S: They readily memorize the teachings they’ve heard, but don’t encourage others to do the same. | T: (6) when he himself retains in mind the teachings he has heard but does not encourage others to retain the teachings in mind;
+an8.25:3.8 | S: They examine the meaning of the teachings they’ve memorized, but don’t encourage others to do the same. | T: (7) when he himself examines the meaning of the teachings that have been retained in mind but does not encourage others to examine their meaning;
+an8.25:3.9 | S: Understanding the meaning and the teaching, they practice in line with the teaching, but they don’t encourage others to do the same. | T: (8) when he himself has understood the meaning and the Dhamma and practices in accordance with the Dhamma, but does not encourage others to do so:
+an8.25:3.10 | S: That’s how we define a lay follower who is practicing to benefit themselves, not others.” | T: it is in this way, Mahānāma, that a lay follower is practicing for his own welfare but not for the welfare of others.
+an8.25:4.1 | S: “But how do we define a lay follower who is practicing to benefit both themselves and others?” | T: “In what way, Bhante, is a lay follower practicing for his own welfare and for the welfare of others?”
+an8.25:4.2 | S: “A lay follower is accomplished in faith and encourages others to do the same. | T: (1) “When, Mahānāma, a lay follower is himself accomplished in faith and also encourages others to accomplish faith;
+an8.25:4.3 | S: They’re accomplished in ethical conduct and encourage others to do the same. | T: (2) when he is himself accomplished in virtuous behavior and also encourages others to accomplish virtuous behavior;
+an8.25:4.4 | S: They’re accomplished in generosity and encourage others to do the same. | T: (3) when he is himself accomplished in generosity and also encourages others to accomplish generosity;
+an8.25:4.5 | S: They like to see the mendicants and encourage others to do the same. | T: (4) when he himself wants to see bhikkhus and also encourages others to see bhikkhus;
+an8.25:4.6 | S: They like to hear the true teaching and encourage others to do the same. | T: (5) when he himself wants to hear the good Dhamma and also encourages others to hear the good Dhamma;
+an8.25:4.7 | S: They readily memorize the teachings they’ve heard and encourage others to do the same. | T: (6) when he himself retains in mind the teachings he has heard and also encourages others to retain the teachings in mind;
+an8.25:4.8 | S: They examine the meaning of the teachings they’ve memorized and encourage others to do the same. | T: (7) when he himself examines the meaning of the teachings that have been retained in mind and also encourages others to examine their meaning;
+an8.25:4.9 | S: Understanding the meaning and the teaching, they practice in line with the teaching and they encourage others to do the same. | T: (8) when he himself understands the meaning and the Dhamma and then practices in accordance with the Dhamma, and also encourages others to practice in accordance with the Dhamma:
+an8.25:4.10 | S: That’s how we define a lay follower who is practicing to benefit both themselves and others.” | T: it is in this way, Mahānāma, that a lay follower is practicing for his own welfare and also for the welfare of others.”
+an8.25:4.11 | P: Pañcamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf '%s\\n' 'an8.16:3.4 starts: is worthy of going on a mission.' 'an8.1:3.4 starts: as he sees the destruction of the acquisitions.' 'an8.1:6.4 starts: cannot match a sixteenth part of the' > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-063.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+22,623
+3 lines reported.

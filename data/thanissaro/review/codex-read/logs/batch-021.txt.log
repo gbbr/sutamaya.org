@@ -1,0 +1,610 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd93-4a1b-7080-89d4-6c1d22a6042e
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check the line boundaries, and write only the clear misplacements to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.62
+sn12.62:1.1 | S: At Sāvatthī. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn12.62:1.2 | S: “Mendicants, an unlearned ordinary person might become disillusioned, dispassionate, and freed from this body made up of the four principal states. | T: There he addressed the monks, “Monks, an uninstructed run-of-the-mill person might grow disenchanted with this body composed of the four great elements, might grow dispassionate toward it, might gain release from it.
+sn12.62:1.3 | S: Why is that? | T: Why is that?
+sn12.62:1.4 | S: This body made up of the four principal states is seen to accumulate and disperse, to be taken up and laid to rest. | T: Because the growth & decline, the taking up & putting down of this body composed of the four great elements are apparent.
+sn12.62:1.5 | S: That’s why an unlearned ordinary person might become disillusioned, dispassionate, and freed from it. | T: Thus the uninstructed run-of-the-mill person might grow disenchanted, might grow dispassionate, might gain release there.
+sn12.62:1.6 | S: But an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’. | T: “But as for what’s called ‘mind,’ ‘intellect,’ or ‘consciousness,’ the uninstructed run-of-the-mill person is unable to grow disenchanted with it, unable to grow dispassionate toward it, unable to gain release from it.
+sn12.62:1.7 | S: Why is that? | T: Why is that?
+sn12.62:1.8 | S: Because for a long time they’ve been attached to it, thought of it as their own, and mistaken it: | T: For a long time this has been relished, appropriated, and grasped by the uninstructed run-of-the-mill person as, ‘This is me, this is my self, this is what I am.’
+sn12.62:1.9 | S: ‘This is mine, I am this, this is my self.’ | T: (none)
+sn12.62:1.10 | S: That’s why an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from it. | T: Thus the uninstructed run-of-the-mill person is unable to grow disenchanted with it, unable to grow dispassionate toward it, unable to gain release from it.
+sn12.62:2.1 | S: But an unlearned ordinary person would be better off taking this body made up of the four principal states to be their self, rather than the mind. | T: “It would be better for the uninstructed run-of-the-mill person to hold to the body composed of the four great elements, rather than the mind, as the self.
+sn12.62:2.2 | S: Why is that? | T: Why is that?
+sn12.62:2.3 | S: This body made up of the four principal states is seen to last for a year, or for two, three, four, five, ten, twenty, thirty, forty, fifty, or a hundred years, or even longer. | T: Because this body composed of the four great elements is seen standing for a year, two years, three, four, five, ten, twenty, thirty, forty, fifty, a hundred years or more.
+sn12.62:2.4 | S: But that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’ arises as one thing and ceases as another all day and all night. | T: But what’s called ‘mind,’ ‘intellect,’ or ‘consciousness’ by day and by night arises as one thing and ceases as another. Just as a monkey, swinging through a forest wilderness, grabs a branch. Letting go of that, it grabs another branch. Letting go of that, it grabs another one. Letting go of that, it grabs another one. In the same way, what’s called ‘mind,’ ‘intellect,’ or ‘consciousness’ by day and by night arises as one thing and ceases as another.
+sn12.62:3.1 | S: In this case, a learned noble disciple carefully and rationally applies the mind to dependent origination itself: | T: “The instructed disciple of the noble ones, (however,) attends carefully & appropriately right there at the dependent co-arising:
+sn12.62:3.2 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: ‘When this is, that is. From the arising of this comes the arising of that.
+sn12.62:3.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases.’ | T: When this isn’t, that isn’t. From the cessation of this comes the cessation of that.’
+sn12.62:3.4 | S: Pleasant feeling arises dependent on a contact to be experienced as pleasant. | T: “In dependence on a sensory contact that is to be felt as pleasure, monks, there arises a feeling of pleasure. When sensing a feeling of pleasure, one discerns that ‘I am sensing a feeling of pleasure.’
+sn12.62:3.5 | S: With the cessation of that contact to be experienced as pleasant, the corresponding pleasant feeling ceases and stops. | T: One discerns that ‘With the cessation of that very sensory contact that is to be felt as pleasure, the concomitant feeling—the feeling of pleasure that has arisen in dependence on the sensory contact that is to be felt as pleasure—ceases, is stilled.’
+sn12.62:3.6 | S: Painful feeling arises dependent on a contact to be experienced as painful. | T: In dependence on a sensory contact that is to be felt as pain.…
+sn12.62:3.7 | S: With the cessation of that contact to be experienced as painful, the corresponding painful feeling ceases and stops. | T: (none)
+sn12.62:3.8 | S: Neutral feeling arises dependent on a contact to be experienced as neutral. | T: In dependence on a sensory contact that is to be felt as neither pleasure nor pain, there arises a feeling of neither pleasure nor pain. When sensing a feeling of neither pleasure nor pain, one discerns that ‘I am sensing a feeling of neither pleasure nor pain.’
+sn12.62:3.9 | S: With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops. | T: One discerns that ‘With the cessation of that very sensory contact that is to be felt as neither pleasure nor pain, the concomitant feeling—the feeling of neither pleasure nor pain that has arisen in dependence on the sensory contact that is to be felt as neither pleasure nor pain—ceases, is stilled.’
+sn12.62:4.1 | S: When you rub two sticks together, heat is generated and fire is produced. But when you part the sticks and lay them aside, any corresponding heat ceases and stops. | T: “Just as when, from the friction & conjunction of two fire sticks, heat is born and fire appears, and from the separation & disjunction of those very same fire sticks, the concomitant heat ceases, is stilled;
+sn12.62:4.2 | S: In the same way, pleasant feeling arises dependent on a contact to be experienced as pleasant. | T: in the same way, in dependence on a sensory contact that is to be felt as pleasure, there arises a feeling of pleasure.…
+sn12.62:4.3 | S: With the cessation of that contact to be experienced as pleasant, the corresponding pleasant feeling ceases and stops. | T: (none)
+sn12.62:4.4 | S: Painful feeling … | T: In dependence on a sensory contact that is to be felt as pain.…
+sn12.62:4.5 | S: Neutral feeling arises dependent on a contact to be experienced as neutral. | T: In dependence on a sensory contact that is to be felt as neither pleasure nor pain, there arises a feeling of neither pleasure nor pain.…
+sn12.62:4.6 | S: With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops. | T: One discerns that ‘With the cessation of that very sensory contact that is to be felt as neither pleasure nor pain, the concomitant feeling… ceases, is stilled.’
+sn12.62:5.1 | S: Seeing this, a learned noble disciple grows disillusioned with contact, feeling, perception, choices, and consciousness. | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness.
+sn12.62:5.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn12.62:5.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn12.62:5.4 | P: Dutiyaṁ. | T: (none)
+
+## an4.55
+an4.55:1.1 | S: So I have heard. | T: (none)
+an4.55:1.2 | S: At one time the Buddha was staying in the land of the Bhaggas at Crocodile’s Bellow, in the deer park at Bhesakaḷā’s Wood. | T: Once the Blessed One was staying among the Bhaggas in the Deer Park at Bhesakaḷā Forest, near Crocodile Haunt.
+an4.55:1.3 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, went to the home of the householder Nakula’s father, where he sat down on the seat spread out. | T: Then early in the morning the Blessed One, having adjusted his under robe and carrying his bowl and outer robe, went to the home of the householder, Nakula’s father. On arrival, he sat down on a seat made ready.
+an4.55:1.4 | S: Then the householder Nakula’s father and the housewife Nakula’s mother went up to the Buddha, bowed, and sat down to one side. Nakula’s father said to the Buddha, | T: Then Nakula’s father & Nakula’s mother went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, Nakula’s father said to the Blessed One:
+an4.55:2.1 | S: “Sir, ever since we were both young, and Nakula’s mother was given to me in marriage, I can’t recall betraying her even in thought, still less in deed. | T: “Lord, ever since Nakula’s mother as a young girl was brought to me (to be my wife) when I was just a young boy, I am not conscious of being unfaithful to her even in mind, much less in body.
+an4.55:2.2 | S: We want to see each other in both this life and the next.” | T: We want to see one another not only in the present life but also in the life to come.”
+an4.55:2.3 | S: Then Nakula’s mother said to the Buddha, | T: And Nakula’s mother said to the Blessed One:
+an4.55:2.4 | S: “Sir, ever since we were both young, and I was given in marriage to Nakula’s father, I can’t recall betraying him even in thought, still less in deed. | T: “Lord, ever since I as a young girl was brought to Nakula’s father when he was just a young boy, I am not conscious of being unfaithful to him even in mind, much less in body.
+an4.55:2.5 | S: We want to see each other in both this life and the next.” | T: We want to see one another not only in the present life but also in the life to come.”
+an4.55:3.1 | S: “Householders, if wife and husband want to see each other in both this life and the next, they should be equals in faith, ethics, generosity, and wisdom. | T: (The Blessed One said:) “If both husband & wife want to see one another not only in the present life but also in the life to come, they should be in tune (with each other) in conviction, in tune in virtue, in tune in generosity, and in tune in discernment. Then they will see one another not only in the present life but also in the life to come.”
+an4.55:4.1 | S: When both are faithful and bountiful, | T: Husband & wife, both of them having conviction, being responsive,
+an4.55:4.2 | S: disciplined, living righteously, | T: being restrained, living by the Dhamma,
+an4.55:4.3 | S: then wife and husband | T: (none)
+an4.55:4.4 | S: say nice things to each other. | T: addressing each other with loving words:
+an4.55:5.1 | S: Their needs are amply satisfied, | T: they benefit in manifold ways.
+an4.55:5.2 | S: so they live at ease. | T: To them comes bliss.
+an4.55:5.3 | S: Their enemies are downhearted, | T: Their enemies are dejected
+an4.55:5.4 | S: when both are equal in ethics. | T: when both are in tune in virtue.
+an4.55:6.1 | S: Having practiced the teaching here, | T: Having followed the Dhamma here in this world,
+an4.55:6.2 | S: both equal in precepts and observances, | T: both in tune in habits & practices,
+an4.55:6.3 | S: they delight in the heavenly realm, | T: they delight in the world of the devas,
+an4.55:6.4 | S: enjoying all the pleasures they desire.” | T: enjoying the pleasures they desire.
+an4.55:6.5 | P: Pañcamaṁ. | T: (none)
+
+## an5.56
+an5.56:1.1 | S: Then a mendicant went up to his own mentor, and said, | T: Then a certain monk went to his preceptor and, on arrival, said to him,
+an5.56:1.2 | S: “Now, sir, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.” | T: “Venerable sir, it’s as if my body is drugged. I’ve lost my bearings. Things aren’t clear to me. My mind keeps being overwhelmed with sloth & torpor. I lead the holy life dissatisfied. I have uncertainty about the teachings.”
+an5.56:2.1 | S: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, | T: So that monk [the preceptor], taking his student along, went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side.
+an5.56:2.2 | S: “Sir, this mendicant says this: | T: As he was sitting there he [told the Blessed One what his student had said.]
+an5.56:2.3 | S: ‘Now, sir, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.’” | T: (none)
+an5.56:3.1 | S: “That’s how it is, mendicant, when your sense doors are unguarded, you eat too much, you’re not dedicated to wakefulness, you’re unable to discern skillful qualities, and you don’t pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body feels like it’s drugged. You’re disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill your mind. You lead the spiritual life dissatisfied, and have doubts about the teachings. | T: [The Blessed One said:] “That’s how it is, monk, for one who lives with his senses unguarded, knowing no moderation in food, not committed to wakefulness, with no insight into skillful qualities, and not committed to the development of the wings to awakening in the early & late hours of the night. It’s as if his body is drugged. He’s lost his bearings. Things aren’t clear to him. His mind keeps being overwhelmed with sloth & torpor. He leads the holy life dissatisfied. He has uncertainty about the teachings.
+an5.56:3.2 | S: So you should train like this: | T: “Therefore, monk, you should train yourself:
+an5.56:3.3 | S: ‘I will guard my sense doors, eat in moderation, be dedicated to wakefulness, discern skillful qualities, and pursue the development of the qualities on the side of awakening in the evening and toward dawn.’ | T: ‘I will have my senses guarded, know moderation in food, commit to wakefulness, gain insight into skillful qualities, and dwell committed to the development of the wings to awakening in the early & late hours of the night.’
+an5.56:3.4 | S: That’s how you should train.” | T: That’s how you should train yourself.”
+an5.56:4.1 | S: When that mendicant had been given this advice by the Buddha, he rose from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then that monk [the student], having been admonished by the Blessed One’s admonishment, rose from his seat, bowed down to him, and—after circumambulating him—left.
+an5.56:4.2 | S: Then that mendicant, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+an5.56:4.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+an5.56:4.4 | S: And that mendicant became one of the perfected. | T: And so that monk became one of the arahants.
+an5.56:5.1 | S: When that mendicant had attained perfection, he went up to his own mentor, and said, | T: Then, having attained arahantship, he went to his preceptor and, on arrival, said to him,
+an5.56:5.2 | S: “Now, sir, my body doesn’t feel like it’s drugged. I’m not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill my mind. I lead the spiritual life satisfied, and have no doubts about the teachings.” | T: “Venerable sir, my body is no longer drugged and I’ve regained my bearings. Things are clear to me. My mind is no longer overwhelmed with sloth & torpor. I lead the holy life satisfied. I have no uncertainty about the teachings.”
+an5.56:5.3 | S: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, | T: So that monk [the preceptor], taking his student along, went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side.
+an5.56:5.4 | S: “Sir, this mendicant says this: | T: As he was sitting there he [told the Blessed One what his student had said.]
+an5.56:5.5 | S: ‘Now, sir, my body doesn’t feel like it’s drugged. I’m not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill my mind. I lead the spiritual life satisfied, and have no doubts about the teachings.’” | T: (none)
+an5.56:6.1 | S: “That’s how it is, mendicant, when your sense doors are guarded, you’re moderate in eating, you’re dedicated to wakefulness, you’re able to discern skillful qualities, and you pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body doesn’t feel like it’s drugged. You’re not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill your mind. You lead the spiritual life satisfied, and have no doubts about the teachings. | T: [The Blessed One said:] “That’s how it is, monk, for one who lives with his senses guarded, knowing moderation in food, committed to wakefulness, with insight into skillful qualities, and committed to the development of the wings to awakening in the early & late hours of the night. His body is no longer drugged and he’s regained his bearings. Things are clear to him. His mind is no longer overwhelmed with sloth & torpor. He leads the holy life satisfied. He has no uncertainty about the teachings.
+an5.56:6.2 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+an5.56:6.3 | S: ‘We will guard our sense doors, eat in moderation, be dedicated to wakefulness, discern skillful qualities, and pursue the development of the qualities on the side of awakening in the evening and toward dawn.’ | T: ‘We will have our senses guarded, know moderation in food, commit to wakefulness, gain insight into skillful qualities, and dwell committed to the development of the wings to awakening in the early & late hours of the night.’
+an5.56:6.4 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an5.56:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti97
+iti97:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti97:2.1 | S: “Mendicants, in this teaching and training a mendicant of good morals, good practice, and good wisdom is called consummate, accomplished, a supreme person. | T: “Monks, a monk who has admirable virtue, admirable qualities, & admirable discernment is called, in this Dhamma-&-Vinaya, one who is complete, fulfilled, a superlative person.
+iti97:3.1 | S: And how does a mendicant have good morals? | T: “And how is a monk a person with admirable virtue?
+iti97:3.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+iti97:3.3 | S: That’s how a mendicant has good morals. | T: In this way a monk is a person with admirable virtue.
+iti97:3.4 | S: Such is one of good morality. | T: Thus he is of admirable virtue.
+iti97:4.1 | S: And how does one have good practice? | T: “And how is a monk a person with admirable qualities?
+iti97:4.2 | S: It’s when a mendicant meditates pursuing the development of the seven qualities on the side of awakening. | T: There is the case where a monk lives devoted to developing the seven [sets of] qualities that are wings to awakening.
+iti97:4.3 | S: That’s how a mendicant has good practice. | T: In this way a monk is a person with admirable qualities.
+iti97:4.4 | S: Such is one of good morality and good practice. | T: Thus he is of admirable virtue & admirable qualities.
+iti97:5.1 | S: And how does one have good wisdom? | T: “And how is a monk a person with admirable discernment?
+iti97:5.2 | S: It’s when a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: There is the case where a monk–with the ending of effluents–remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing it for himself right in the here-&-now.
+iti97:5.3 | S: That’s how a mendicant has good wisdom; | T: In this way a monk is a person with admirable discernment.
+iti97:6.1 | S: Such is one of good morals, good practice, and good wisdom, who in this teaching and training is called consummate, accomplished, a supreme person.” | T: Thus he is of admirable virtue, admirable qualities, admirable discernment. In this Dhamma-&-Vinaya he is called one who is complete, fulfilled, a superlative person.”
+iti97:6.2 | S: The Buddha spoke this matter. | T: (none)
+iti97:6.3 | S: On this it is said: | T: (none)
+iti97:7.1 | S: “Who does nothing wrong | T: Devoid of wrong-doing
+iti97:7.2 | S: by body, speech or mind, | T: in thought, word, or deed,
+iti97:7.3 | S: is said to be one of good morals, | T: he’s called a person of admirable virtue:
+iti97:7.4 | S: a conscientious mendicant. | T: the monk conscientious.
+iti97:8.1 | S: Who has well developed the seven | T: Well-developed in the qualities
+iti97:8.2 | S: factors that lead to awakening | T: that go to the attainment of self-awakening,
+iti97:8.3 | S: is said to be one good practice, | T: he’s called a person of admirable qualities:
+iti97:8.4 | S: an unpretentious mendicant. | T: the monk unassuming.
+iti97:9.1 | S: Who understands for themselves | T: Discerning right here for himself, in himself,
+iti97:9.2 | S: the end of suffering in this life | T: the ending of stress
+iti97:9.3 | S: is said to be one good wisdom, | T: he’s called a person of admirable discernment:
+iti97:9.4 | S: an undefiled mendicant. | T: the monk with no effluent.
+iti97:10.1 | S: One accomplished in these three things, | T: Consummate in these things,
+iti97:10.2 | S: untroubled, with doubts cut off, | T: untroubled, with doubt cut away,
+iti97:10.3 | S: unattached to anything in the world, | T: unattached in all the world,
+iti97:10.4 | S: has given up everything, they say.” | T: he’s said to have abandoned the All.
+iti97:11.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti97:11.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## iti110
+iti110:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti110:2.1 | S: “Mendicants, suppose a mendicant has a sensual, malicious, or cruel thought while walking. | T: “If, while he is walking, monks, there arises in a monk a thought of sensuality, a thought of ill-will, or a thought of harmfulness,
+iti110:2.2 | S: They tolerate it and don’t give it up, dispel it, eliminate it, and obliterate it. Such a mendicant is said to be ‘not keen or prudent, always lazy, and lacking energy’ when walking. | T: and he does not quickly abandon, dispel, demolish, or wipe that thought out of existence, then a monk walking with such a lack of ardency & compunction is called continually & continuously lethargic & low in his persistence.
+iti110:2.3 | P: Carampi, bhikkhave, bhikkhu evaṁbhūto anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyoti vuccati. | T: (none)
+iti110:3.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … | T: “If, while he is standing.…
+iti110:3.2 | P: Tañce, bhikkhave, bhikkhu adhivāseti nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti. | T: (none)
+iti110:3.3 | P: Ṭhitopi, bhikkhave, bhikkhu evaṁbhūto anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyoti vuccati. | T: (none)
+iti110:4.1 | S: sitting … | T: “If, while he is sitting.…
+iti110:4.2 | P: Tañce, bhikkhave, bhikkhu adhivāseti nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti. | T: (none)
+iti110:4.3 | P: Nisinnopi, bhikkhave, bhikkhu evaṁbhūto anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyoti vuccati. | T: (none)
+iti110:5.1 | S: or when lying down while awake. | T: “If, while he is lying down, there arises in a monk a thought of sensuality, a thought of ill-will, or a thought of harmfulness,
+iti110:5.2 | S: They tolerate it and don’t give it up, dispel it, eliminate it, and obliterate it. | T: and he does not quickly abandon, dispel, demolish, or wipe that thought out of existence,
+iti110:5.3 | S: Such a mendicant is said to be ‘not keen or prudent, always lazy, and lacking energy’ when lying down while awake. | T: then a monk lying down with such a lack of ardency & compunction is called continually & continuously lethargic & low in his persistence.
+iti110:6.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while walking. | T: “But if, while he is walking, there arises in a monk a thought of sensuality, a thought of ill-will, or a thought of harmfulness,
+iti110:6.2 | S: They don’t tolerate them, but give them up, dispel them, eliminate them, and obliterate them. | T: and he quickly abandons, dispels, demolishes, & wipes that thought out of existence,
+iti110:6.3 | S: Such a mendicant is said to be ‘keen and prudent, always energetic and resolute’ when walking. | T: then a monk walking with such ardency & compunction is called continually & continuously resolute, one with persistence aroused.
+iti110:7.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … | T: “If, while he is standing.…
+iti110:7.2 | P: Tañce, bhikkhave, bhikkhu nādhivāseti pajahati vinodeti byantīkaroti anabhāvaṁ gameti. | T: (none)
+iti110:7.3 | P: Ṭhitopi, bhikkhave, bhikkhu evaṁbhūto ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitattoti vuccati. | T: (none)
+iti110:8.1 | S: sitting … | T: “If, while he is sitting.…
+iti110:8.2 | P: Tañce, bhikkhave, bhikkhu nādhivāseti pajahati vinodeti byantīkaroti anabhāvaṁ gameti. | T: (none)
+iti110:8.3 | P: Nisinnopi, bhikkhave, bhikkhu evaṁbhūto ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitattoti vuccati. | T: (none)
+iti110:9.1 | S: or when lying down while awake. | T: “If, while he is lying down, there arises in a monk a thought of sensuality, a thought of ill-will, or a thought of harmfulness,
+iti110:9.2 | S: They don’t tolerate it, but give it up, dispel it, eliminate it, and obliterate it. | T: and he quickly abandons, dispels, demolishes, & wipes that thought out of existence,
+iti110:9.3 | S: Such a mendicant is said to be ‘keen and prudent, always energetic and resolute’ when lying down while awake.” | T: then a monk lying down with such ardency & compunction is called continually & continuously resolute, one with persistence aroused.”
+iti110:9.4 | S: The Buddha spoke this matter. | T: (none)
+iti110:9.5 | S: On this it is said: | T: (none)
+iti110:10.1 | S: “Whether walking or standing, | T: Whether walking, standing,
+iti110:10.2 | S: sitting or lying down, | T: sitting, or lying down,
+iti110:10.3 | S: one who thinks a bad thought | T: whoever thinks evil thoughts,
+iti110:10.4 | S: to do with the domestic life | T: related to the household life,
+iti110:11.1 | S: is practicing the wrong way, | T: is following no path at all,
+iti110:11.2 | S: lost among things that delude; | T: smitten with delusory things.
+iti110:11.3 | S: such a mendicant is incapable | T: He’s incapable, a monk like this,
+iti110:11.4 | S: of experiencing the highest awakening. | T: of touching superlative self-awakening.
+iti110:12.1 | S: But one who, whether standing or walking, | T: But whoever– walking, standing,
+iti110:12.2 | S: sitting or lying down, | T: sitting, or lying down–
+iti110:12.3 | S: has calmed their thoughts, | T: overcomes thought,
+iti110:12.4 | S: loving peace of mind; | T: delighting in the stilling of thought:
+iti110:12.5 | S: such a mendicant is capable | T: he’s capable, a monk like this,
+iti110:12.6 | S: of experiencing the highest awakening.” | T: of touching superlative self-awakening.
+iti110:13.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti110:13.2 | P: Ekādasamaṁ. | T: (none)
+
+## snp2.11
+snp2.11:1.1 | S: “Does familiarity breed contempt, | T: “From living with him often
+snp2.11:1.2 | S: even for the man of wisdom? | T: do you not despise the wise man?
+snp2.11:1.3 | S: Do you honor he who holds aloft | T: Is the one who holds up the torch for human beings honored by you?”
+snp2.11:1.4 | S: the torch for all humanity?” | T: (none)
+snp2.11:2.1 | S: “Familiarity breeds no contempt | T: “From living with him often
+snp2.11:2.2 | S: for the man of wisdom. | T: I don’t despise the wise man.
+snp2.11:2.3 | S: I always honor he who holds aloft | T: The one who holds up the torch for human beings is honored by me.”
+snp2.11:2.4 | S: the torch for all humanity.” | T: (none)
+snp2.11:3.1 | S: “One who’s given up the five sensual stimulations, | T: “Abandoning the five strings of sensuality,
+snp2.11:3.2 | S: so pleasing and delightful, | T: endearing, charming,
+snp2.11:3.3 | S: and who’s left the home life out of faith— | T: going forth from home through conviction,
+snp2.11:3.4 | S: let them make an end to suffering! | T: be one who puts an end to suffering & stress.
+snp2.11:4.1 | S: Mix with spiritual friends, | T: Cultivate admirable friends
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+snp2.11:4.2 | S: stay in remote lodgings, | T: and an isolated dwelling,
+snp2.11:4.3 | S: secluded and quiet, | T: secluded, with next-to-no noise.
+snp2.11:4.4 | S: and eat in moderation. | T: Know moderation in eating.
+snp2.11:5.1 | S: Robes, almsfood, | T: Robe, alms-food,
+snp2.11:5.2 | S: requisites and lodgings: | T: requisites, dwellings:
+snp2.11:5.3 | S: don’t crave such things; | T: Don’t create craving for these.
+snp2.11:5.4 | S: don’t come back to this world again. | T: Don’t be one who returns to the world.
+snp2.11:6.1 | S: Be restrained in the monastic code | T: Restrained in the Pāṭimokkha
+snp2.11:6.2 | S: and the five sense faculties. | T: and the five faculties,
+snp2.11:6.3 | S: With mindfulness immersed in the body, | T: have mindfulness immersed in the body,
+snp2.11:6.4 | S: be full of disillusionment. | T: be one who’s cultivated disenchantment.
+snp2.11:7.1 | S: Turn away from the sign | T: Avoid the theme of beauty,
+snp2.11:7.2 | S: that’s attractive, provoking lust. | T: connected with passion.
+snp2.11:7.3 | S: With mind unified and serene, | T: Develop the mind in the unattractive— gathered into one, well-centered.
+snp2.11:7.4 | S: meditate on the ugly aspects of the body. | T: (none)
+snp2.11:8.1 | S: Meditate on the signless, | T: Develop the themeless.
+snp2.11:8.2 | S: give up the tendency to conceit; | T: Give up obsession with conceit.
+snp2.11:8.3 | S: and when you comprehend conceit, | T: Then, from having broken through conceit,
+snp2.11:8.4 | S: you will live at peace.” | T: you will go about, stilled.”
+snp2.11:9.1 | S: That is how the Buddha regularly advised Venerable Rāhula with these verses. | T: In this way, the Blessed One often instructed Ven. Rāhula with these verses.
+snp2.11:9.2 | P: Rāhulasuttaṁ ekādasamaṁ. | T: (none)
+
+## ud4.3
+ud4.3:1.1 | S: So I have heard. | T: I have heard that
+ud4.3:1.2 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants. | T: on one occasion the Blessed One was wandering among the Kosalans with a large community of monks.
+ud4.3:1.3 | S: And then the Buddha left the road, went to the root of a certain tree, and sat down on the seat spread out. | T: Then, coming down from the road, he went to a certain tree, and on arrival sat down on a seat laid out.
+ud4.3:2.1 | S: Then a certain cowherd went up to the Buddha, bowed, and sat down to one side. | T: A certain cowherd then went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud4.3:2.2 | S: The Buddha educated, encouraged, fired up, and inspired him with a Dhamma talk. | T: As he was sitting there, the Blessed One, instructed, urged, roused, & encouraged him with Dhamma-talk.
+ud4.3:3.1 | S: Then the cowherd said to the Buddha, | T: The cowherd–instructed, urged, roused, & encouraged by the Blessed One’s talk on Dhamma–said to him,
+ud4.3:3.2 | S: “Sir, would the Buddha, together with the mendicant Saṅgha, please accept tomorrow’s meal from me?” | T: “Lord, may the Blessed One, together with the community of monks, acquiesce to my offer of tomorrow’s meal.”
+ud4.3:3.3 | S: The Buddha consented with silence. | T: The Blessed One acquiesced with silence.
+ud4.3:3.4 | S: Then, knowing that the Buddha had consented, the cowherd rose from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the cowherd, understanding the Blessed One’s acquiescence, got up from his seat, bowed down to the Blessed One and left, circling him to the right.
+ud4.3:4.1 | S: And when the night had passed the cowherd had plenty of thick milk-rice prepared in his own home, with fresh ghee. Then he had the Buddha informed of the time, saying, | T: Then, after the night had passed, the cowherd–having prepared in his own home a great deal of thick milk-rice porridge & fresh ghee–announced the time of the meal to the Blessed One:
+ud4.3:4.2 | S: “Sir, it’s time. The meal is ready.” | T: “It’s time, lord. The meal is ready.”
+ud4.3:5.1 | S: The Buddha robed up, took his bowl and robe and, together with the Saṅgha of monks, went to the house of that cowherd, where he sat down on the prepared seat in the dining hall. | T: So the Blessed One early in the morning adjusted his under robe and–carrying his bowl & robes–went together with the community of monks to the cowherd’s home. On arrival, he sat down on a seat laid out.
+ud4.3:5.2 | S: Then the cowherd served and satisfied the mendicant Saṅgha headed by the Buddha with his own hands with a thick milk-rice and fresh ghee. | T: The cowherd, with his own hand, served & satisfied the community of monks headed by the Blessed One with thick milk-rice porridge & fresh ghee.
+ud4.3:5.3 | S: When the Buddha had eaten and washed his hand and bowl, the cowherd took a low seat and sat to one side. | T: Then, when the Blessed One had eaten and had rinsed his bowl & hands, the cowherd, taking a lower seat, sat down to one side.
+ud4.3:5.4 | S: The Buddha then educated, encouraged, fired up, and inspired him with a teaching, after which he got up and left. | T: As he was sitting there, the Blessed One, instructed, urged, roused, & encouraged him with Dhamma-talk, then got up from his seat & left.
+ud4.3:5.5 | S: But soon after the Buddha had left, the cowherd was killed by a certain man in the gap between village perimeters. | T: Now, not long after the Blessed One’s departure, the cowherd was killed by a certain man between the boundaries of two villages.
+ud4.3:6.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: A large number of monks then went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they told him,
+ud4.3:6.2 | P: “yena, bhante, gopālakena ajja buddhappamukho bhikkhusaṅgho appodakapāyāsena navena ca sappinā sahatthā santappito sampavārito so kira, bhante, gopālako aññatarena purisena sīmantarikāya jīvitā voropito”ti. | T: “The cowherd who today served & satisfied the community of monks headed by the Blessed One with thick milk-rice porridge & fresh ghee, has been killed, it is said, by a certain man between the boundaries of two villages.”
+ud4.3:7.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.3:8.1 | S: “A wrongly directed mind | T: Whatever an enemy might do to an enemy, or a foe to a foe, the ill-directed mind
+ud4.3:8.2 | S: would do you more harm | T: can do to you even worse.
+ud4.3:8.3 | S: than a hater to the hated, | T: (none)
+ud4.3:8.4 | S: or an enemy to their foe.” | T: (none)
+ud4.3:8.5 | P: Tatiyaṁ. | T: (none)
+
+## ud7.6
+ud7.6:1.1 | S: So I have heard. | T: I have heard that
+ud7.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud7.6:1.3 | S: Now at that time Venerable Koṇḍañña Who Understood was sitting not far from the Buddha, cross-legged, with his body straight, reviewing the freedom through the ending of craving. | T: And on that occasion Ven. Aññāta Koṇḍañña was sitting not far from the Blessed One, his legs crossed, his body held erect, reflecting on [his] release through the total ending of craving.
+ud7.6:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Aññāta Koṇḍañña sitting not far away, his legs crossed, his body held erect, reflecting on [his] release through the total ending of craving.
+ud7.6:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.6:4.1 | S: “There is no root or ground or leaves for them, | T: For someone with no root, no soil, no leaves
+ud7.6:4.2 | S: so where would creepers sprout from? | T: –how creepers?
+ud7.6:4.3 | S: That attentive one is released from bonds: | T: Who’s fit to criticize him?– the enlightened one freed from bonds.
+ud7.6:4.4 | S: who is worthy to criticize them? | T: (none)
+ud7.6:4.5 | S: Even the gods praise them, | T: Even devas praise him.
+ud7.6:4.6 | S: and by the Divinity, too, they’re praised.” | T: Even by Brahmā he’s praised.
+ud7.6:4.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn11.15
+sn11.15:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn11.15:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Sakka the deva-king went to the Blessed One and, on arrival, having bowed down to him, stood to one side. As he was standing there, he said to the Blessed One,
+sn11.15:1.3 | S: “Sir, what is a delightful place?” | T: “What, lord, is a delightful place?”
+sn11.15:2.1 | S: “Shrines in parks and forests, | T: The Buddha: “Park shrines, forest shrines,
+sn11.15:2.2 | S: well-made lotus ponds, | T: well-constructed lotus ponds
+sn11.15:2.3 | S: are not worth a sixteenth part | T: aren’t worth one-sixteenth
+sn11.15:2.4 | S: of a delightful human being. | T: of a delightful human being.
+sn11.15:3.1 | S: Whether in village or wilderness, | T: In village or wilds,
+sn11.15:3.2 | S: in a valley or the uplands, | T: valley, plateau:
+sn11.15:3.3 | S: wherever the perfected ones live | T: that place is delightful where arahants dwell.”
+sn11.15:3.4 | S: is a delightful place.” | T: (none)
+
+## sn20.7
+sn20.7:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī.
+sn20.7:1.2 | S: “Once upon a time, mendicants, the Dasārahas had a <em>mridangam</em> drum called the Plugger. | T: “Monks, there once was a time when the Dasārahas had a large drum called ‘Summoner.’
+sn20.7:1.3 | S: When the Plugger cracked, the Dasārahas patched it with another plug. | T: Whenever Summoner was split, the Dasārahas inserted another peg in it,
+sn20.7:1.4 | S: Eventually, there came a time when the old wooden shell for the drumskin disappeared | T: until the time came when Summoner’s original wooden body had disappeared and only a conglomeration of pegs remained.
+sn20.7:1.5 | S: and all that was left of the <em>mridangam</em> Plugger was a mass of plugs. | T: (none)
+sn20.7:1.6 | S: In the same way, in a future time there will be mendicants who won’t want to listen when discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited. They won’t actively listen or try to understand, nor will they think those teachings are worth learning and memorizing. | T: [The Commentary notes that the drum originally could be heard for twelve leagues, but in its final condition couldn’t be heard even from behind a curtain.] “In the same way, in the course of the future there will be monks who won’t listen when discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are being recited. They won’t lend ear, won’t set their hearts on knowing them, won’t regard these teachings as worth grasping or mastering.
+sn20.7:2.1 | S: But when discourses composed by poets—poetry, with fancy words and phrases, composed by outsiders or spoken by disciples—are being recited they will want to listen. They’ll actively listen and try to understand, and they’ll think those teachings are worth learning and memorizing. | T: But they will listen when discourses that are literary works—the works of poets, elegant in sound, elegant in rhetoric, the work of outsiders, words of disciples—are recited. They will lend ear and set their hearts on knowing them. They will regard these teachings as worth grasping & mastering.
+sn20.7:2.2 | S: And that is how the discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—will disappear. | T: “In this way the disappearance of the discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—will come about.
+sn20.7:2.3 | S: So you should train like this: | T: “Thus you should train yourselves:
+sn20.7:2.4 | S: ‘When discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited we will want to listen. We will actively listen and try to understand, and we will think those teachings are worth learning and memorizing.’ | T: ‘We will listen when discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are being recited. We will lend ear, will set our hearts on knowing them, will regard these teachings as worth grasping & mastering.’
+sn20.7:2.5 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+sn20.7:2.6 | P: Sattamaṁ. | T: (none)
+
+## sn35.23
+sn35.23:1.1 | S: At Sāvatthī. | T: (none)
+sn35.23:1.2 | S: “Mendicants, I will teach you the all. | T: “Monks, I will teach you the All.
+sn35.23:1.3 | S: Listen … | T: Listen & pay close attention. I will speak.”
+sn35.23:1.4 | S: And what is the all? | T: “As you say, lord,” the monks responded to the Blessed One. The Blessed One said, “What is the All?
+sn35.23:1.5 | S: It’s just the eye and sights, the ear and sounds, the nose and smells, the tongue and tastes, the body and touches, and the mind and ideas. | T: Simply the eye & forms, ear & sounds, nose & aromas, tongue & flavors, body & tactile sensations, intellect & ideas.
+sn35.23:1.6 | S: This is called the all. | T: This, monks, is called the All.
+sn35.23:1.7 | S: Mendicants, suppose someone was to say: | T: Anyone who would say,
+sn35.23:1.8 | S: ‘I’ll deny this all and describe another all.’ They’d have no grounds for that claim, | T: ‘Repudiating this All, I will describe another,’
+sn35.23:1.9 | S: they’d be stumped by questions, and, in addition, they’d get frustrated. | T: if questioned on what exactly might be the grounds for his statement, would be unable to explain and, furthermore, would be put to grief.
+sn35.23:1.10 | S: Why is that? | T: Why?
+sn35.23:1.11 | S: Because they’re out of their element.” | T: Because it lies beyond range.”
+sn35.23:1.12 | P: Paṭhamaṁ. | T: (none)
+
+## sn46.5
+sn46.5:1.1 | S: At Sāvatthī. | T: (none)
+sn46.5:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk approached the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there, he said to the Blessed One,
+sn46.5:1.3 | S: “Sir, they speak of the ‘awakening factors’. | T: “Lord, ‘factors for awakening, factors for awakening,’ it is said.
+sn46.5:1.4 | S: How are the awakening factors defined?” | T: To what extent are they said to be factors for awakening?”
+sn46.5:1.5 | S: “Mendicant, they’re called awakening factors because they lead to awakening. | T: “They lead to awakening, monk. Therefore they are said to be factors for awakening.
+sn46.5:1.6 | S: A mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.5:1.7 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.5:1.8 | S: As they develop the seven awakening factors, their mind is freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: “When these factors for awakening are developed, the mind is released from the effluent of sensuality, the mind is released from the effluent of becoming, the mind is released from the effluent of ignorance.
+sn46.5:1.9 | S: When they’re freed, they know they’re freed. | T: With release, there is the knowledge, ‘Released.’
+sn46.5:1.10 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: One discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn46.5:1.11 | S: They’re called awakening factors because they lead to awakening.” | T: “They lead to awakening, monk. Therefore they are said to be factors for awakening.”
+sn46.5:1.12 | P: Pañcamaṁ. | T: (none)
+
+## sn48.46
+sn48.46:1.1 | S: The same setting. | T: (none)
+sn48.46:1.2 | S: “Mendicants, how many faculties must a mendicant develop and cultivate so that they can declare enlightenment: | T: “Through the development & pursuit of how many faculties, monks, does a monk whose effluents are ended declare gnosis:
+sn48.46:1.3 | S: ‘I understand: “Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place”’?” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world’?”
+sn48.46:2.1 | S: “Our teachings are rooted in the Buddha. …” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn48.46:2.2 | S: “A mendicant must develop and cultivate two faculties so that they can declare enlightenment. | T: “Monks, it’s through the development & pursuit of two faculties that a monk whose effluents are ended declares gnosis:
+sn48.46:2.3 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāmīti. | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn48.46:2.4 | S: What two? | T: Through which two?
+sn48.46:2.5 | S: Noble wisdom and noble freedom. | T: Through noble discernment & noble release.
+sn48.46:2.6 | S: For their noble wisdom is the faculty of wisdom. | T: Whatever is his noble discernment is his faculty of discernment.
+sn48.46:2.7 | S: And their noble freedom is the faculty of immersion. | T: Whatever is his noble release is his faculty of concentration.
+sn48.46:2.8 | S: These are the two faculties that a mendicant must develop and cultivate so that they can declare enlightenment: | T: “It’s through the development & pursuit of these two faculties that a monk whose effluents are ended declares gnosis:
+sn48.46:2.9 | S: ‘I understand: “Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.”’” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’”
+sn48.46:2.10 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn7.2
+sn7.2:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn7.2:1.2 | S: The brahmin Bhāradvāja the Rude heard a rumor that | T: Then the brahman Akkosaka [“Insulter”] Bhāradvāja heard that a brahman of the Bhāradvāja clan had gone forth from the home life into homelessness in the presence of the Blessed One.
+sn7.2:2.1 | S: a brahmin of the Bhāradvāja clan had gone forth from the lay life to homelessness in the presence of the ascetic Gotama. Angry and displeased he went to the Buddha and abused and insulted him with rude, harsh words. When he had spoken, the Buddha said to him: | T: Angered & displeased, he went to the Blessed One and, on arrival, insulted & cursed him with rude, harsh words. When this was said, the Blessed One said to him:
+sn7.2:2.2 | S: “What do you think, brahmin? | T: “What do you think, brahman?
+sn7.2:2.3 | S: Do friends and colleagues, relatives and kin, and guests still come to visit you?” | T: Do friends & colleagues, relatives & kinsmen come to you as guests?”
+sn7.2:2.4 | S: “Sometimes they do, worthy Gotama.” | T: “Yes, Master Gotama, sometimes friends & colleagues, relatives & kinsmen come to me as guests.”
+sn7.2:2.5 | S: “Do you then serve them with fresh and cooked foods and savories?” | T: “And what do you think? Do you serve them with staple & non-staple foods & delicacies?”
+sn7.2:2.6 | S: “Sometimes I do.” | T: “Yes, sometimes I serve them with staple & non-staple foods & delicacies.”
+sn7.2:2.7 | S: “But if they don’t accept it, brahmin, who does it belong to?” | T: “And if they don’t accept them, to whom do those foods belong?”
+sn7.2:2.8 | S: “In that case it still belongs to me.” | T: “If they don’t accept them, Master Gotama, those foods are all mine.”
+sn7.2:2.9 | S: “In the same way, brahmin, when you abuse, harass, and attack us who do not abuse, harass, and attack, we don’t accept it. | T: “In the same way, brahman, that with which you have insulted me, who is not insulting; that with which you have taunted me, who is not taunting; that with which you have berated me, who is not berating: that I don’t accept from you.
+sn7.2:2.10 | S: It still belongs to you, brahmin, | T: It’s all yours, brahman.
+sn7.2:2.11 | S: it still belongs to you! | T: It’s all yours.
+sn7.2:3.1 | S: Someone who, when abused, harassed, and attacked, abuses, harasses, and attacks in return is said to eat the food and have a reaction to it. | T: “Whoever returns insult to one who is insulting, returns taunts to one who is taunting, returns a berating to one who is berating, is said to be eating together, sharing company, with that person.
+sn7.2:3.2 | S: But we neither eat your food nor do we have a reaction to it. | T: But I am neither eating together nor sharing your company, brahman.
+sn7.2:3.3 | S: It still belongs to you, brahmin, | T: It’s all yours.
+sn7.2:3.4 | S: it still belongs to you!” | T: It’s all yours.”
+sn7.2:3.5 | S: “The king and his retinue believe of the worthy Gotama, | T: “The king together with his court know this of Master Gotama—
+sn7.2:3.6 | S: ‘the ascetic Gotama is a perfected one’. | T: ‘Gotama the contemplative is an arahant’—
+sn7.2:3.7 | S: And yet he still gets angry.” | T: and yet still Master Gotama gets angry.”
+sn7.2:4.1 | S: “Whence anger for one free of anger, | T: The Buddha: “Whence is there anger for one free from anger,
+sn7.2:4.2 | S: tamed, living justly, | T: tamed, living in tune—
+sn7.2:4.3 | S: freed by right knowledge, | T: one released through right knowing,
+sn7.2:4.4 | S: peaceful and unaffected? | T: calmed & Such.
+sn7.2:5.1 | S: When you get angry at an angry person | T: You make things worse when you flare up at someone who’s angry.
+sn7.2:5.2 | S: you just make things worse for yourself. | T: (none)
+sn7.2:5.3 | S: When you don’t get angry at an angry person | T: Whoever doesn’t flare up at someone who’s angry
+sn7.2:5.4 | S: you win a battle hard to win. | T: wins a battle hard to win.
+sn7.2:6.1 | S: When you know that the other is angry, | T: You live for the good of both —your own, the other’s— when, knowing the other’s provoked,
+sn7.2:6.2 | S: you act for the good of both | T: (none)
+sn7.2:6.3 | S: yourself and the other | T: (none)
+sn7.2:6.4 | S: if you’re mindful and stay calm. | T: you mindfully grow calm.
+sn7.2:7.1 | S: People inexpert in the teaching | T: (none)
+sn7.2:7.2 | S: consider one who heals both | T: When you work the cure of both
+sn7.2:7.3 | S: oneself and the other | T: —your own, the other’s—
+sn7.2:7.4 | S: to be a fool.” | T: those who think you a fool know nothing of Dhamma.”
+sn7.2:8.1 | S: When he had spoken, Bhāradvāja the Rude said to the Buddha, | T: When this was said, the brahman Akkosaka Bhāradvāja said to the Blessed One,
+sn7.2:8.2 | S: “Excellent, worthy Gotama! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+sn7.2:8.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn7.2:8.4 | S: Sir, may I receive the going forth, the ordination in the worthy Gotama’s presence?” | T: Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance (into the Saṅgha of monks).”
+sn7.2:9.1 | S: And the brahmin Bhāradvāja the Rude received the going forth, the ordination in the Buddha’s presence. | T: Then the brahman Akkosaka Bhāradvāja received the Going-forth in the Blessed One’s presence, he gained the Acceptance.
+sn7.2:9.2 | S: Not long after his ordination, Venerable Bhāradvāja the Rude, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+sn7.2:9.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+sn7.2:9.4 | S: And Venerable Bhāradvāja became one of the perfected. | T: And so Ven. Bhāradvāja became another one of the arahants.
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the whole file. I’m checking a few possible boundary shifts against the exceptions for combined sentences and shortened passages.
+exec
+/bin/bash -lc "sed -n '45,105p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.55:2.5 | S: We want to see each other in both this life and the next.” | T: We want to see one another not only in the present life but also in the life to come.”
+an4.55:3.1 | S: “Householders, if wife and husband want to see each other in both this life and the next, they should be equals in faith, ethics, generosity, and wisdom. | T: (The Blessed One said:) “If both husband & wife want to see one another not only in the present life but also in the life to come, they should be in tune (with each other) in conviction, in tune in virtue, in tune in generosity, and in tune in discernment. Then they will see one another not only in the present life but also in the life to come.”
+an4.55:4.1 | S: When both are faithful and bountiful, | T: Husband & wife, both of them having conviction, being responsive,
+an4.55:4.2 | S: disciplined, living righteously, | T: being restrained, living by the Dhamma,
+an4.55:4.3 | S: then wife and husband | T: (none)
+an4.55:4.4 | S: say nice things to each other. | T: addressing each other with loving words:
+an4.55:5.1 | S: Their needs are amply satisfied, | T: they benefit in manifold ways.
+an4.55:5.2 | S: so they live at ease. | T: To them comes bliss.
+an4.55:5.3 | S: Their enemies are downhearted, | T: Their enemies are dejected
+an4.55:5.4 | S: when both are equal in ethics. | T: when both are in tune in virtue.
+an4.55:6.1 | S: Having practiced the teaching here, | T: Having followed the Dhamma here in this world,
+an4.55:6.2 | S: both equal in precepts and observances, | T: both in tune in habits & practices,
+an4.55:6.3 | S: they delight in the heavenly realm, | T: they delight in the world of the devas,
+an4.55:6.4 | S: enjoying all the pleasures they desire.” | T: enjoying the pleasures they desire.
+an4.55:6.5 | P: Pañcamaṁ. | T: (none)
+
+## an5.56
+an5.56:1.1 | S: Then a mendicant went up to his own mentor, and said, | T: Then a certain monk went to his preceptor and, on arrival, said to him,
+an5.56:1.2 | S: “Now, sir, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.” | T: “Venerable sir, it’s as if my body is drugged. I’ve lost my bearings. Things aren’t clear to me. My mind keeps being overwhelmed with sloth & torpor. I lead the holy life dissatisfied. I have uncertainty about the teachings.”
+an5.56:2.1 | S: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, | T: So that monk [the preceptor], taking his student along, went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side.
+an5.56:2.2 | S: “Sir, this mendicant says this: | T: As he was sitting there he [told the Blessed One what his student had said.]
+an5.56:2.3 | S: ‘Now, sir, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.’” | T: (none)
+an5.56:3.1 | S: “That’s how it is, mendicant, when your sense doors are unguarded, you eat too much, you’re not dedicated to wakefulness, you’re unable to discern skillful qualities, and you don’t pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body feels like it’s drugged. You’re disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill your mind. You lead the spiritual life dissatisfied, and have doubts about the teachings. | T: [The Blessed One said:] “That’s how it is, monk, for one who lives with his senses unguarded, knowing no moderation in food, not committed to wakefulness, with no insight into skillful qualities, and not committed to the development of the wings to awakening in the early & late hours of the night. It’s as if his body is drugged. He’s lost his bearings. Things aren’t clear to him. His mind keeps being overwhelmed with sloth & torpor. He leads the holy life dissatisfied. He has uncertainty about the teachings.
+an5.56:3.2 | S: So you should train like this: | T: “Therefore, monk, you should train yourself:
+an5.56:3.3 | S: ‘I will guard my sense doors, eat in moderation, be dedicated to wakefulness, discern skillful qualities, and pursue the development of the qualities on the side of awakening in the evening and toward dawn.’ | T: ‘I will have my senses guarded, know moderation in food, commit to wakefulness, gain insight into skillful qualities, and dwell committed to the development of the wings to awakening in the early & late hours of the night.’
+an5.56:3.4 | S: That’s how you should train.” | T: That’s how you should train yourself.”
+an5.56:4.1 | S: When that mendicant had been given this advice by the Buddha, he rose from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then that monk [the student], having been admonished by the Blessed One’s admonishment, rose from his seat, bowed down to him, and—after circumambulating him—left.
+an5.56:4.2 | S: Then that mendicant, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+an5.56:4.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+an5.56:4.4 | S: And that mendicant became one of the perfected. | T: And so that monk became one of the arahants.
+an5.56:5.1 | S: When that mendicant had attained perfection, he went up to his own mentor, and said, | T: Then, having attained arahantship, he went to his preceptor and, on arrival, said to him,
+an5.56:5.2 | S: “Now, sir, my body doesn’t feel like it’s drugged. I’m not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill my mind. I lead the spiritual life satisfied, and have no doubts about the teachings.” | T: “Venerable sir, my body is no longer drugged and I’ve regained my bearings. Things are clear to me. My mind is no longer overwhelmed with sloth & torpor. I lead the holy life satisfied. I have no uncertainty about the teachings.”
+an5.56:5.3 | S: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, | T: So that monk [the preceptor], taking his student along, went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side.
+an5.56:5.4 | S: “Sir, this mendicant says this: | T: As he was sitting there he [told the Blessed One what his student had said.]
+an5.56:5.5 | S: ‘Now, sir, my body doesn’t feel like it’s drugged. I’m not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill my mind. I lead the spiritual life satisfied, and have no doubts about the teachings.’” | T: (none)
+an5.56:6.1 | S: “That’s how it is, mendicant, when your sense doors are guarded, you’re moderate in eating, you’re dedicated to wakefulness, you’re able to discern skillful qualities, and you pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body doesn’t feel like it’s drugged. You’re not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill your mind. You lead the spiritual life satisfied, and have no doubts about the teachings. | T: [The Blessed One said:] “That’s how it is, monk, for one who lives with his senses guarded, knowing moderation in food, committed to wakefulness, with insight into skillful qualities, and committed to the development of the wings to awakening in the early & late hours of the night. His body is no longer drugged and he’s regained his bearings. Things are clear to him. His mind is no longer overwhelmed with sloth & torpor. He leads the holy life satisfied. He has no uncertainty about the teachings.
+an5.56:6.2 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+an5.56:6.3 | S: ‘We will guard our sense doors, eat in moderation, be dedicated to wakefulness, discern skillful qualities, and pursue the development of the qualities on the side of awakening in the evening and toward dawn.’ | T: ‘We will have our senses guarded, know moderation in food, commit to wakefulness, gain insight into skillful qualities, and dwell committed to the development of the wings to awakening in the early & late hours of the night.’
+an5.56:6.4 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an5.56:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti97
+iti97:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti97:2.1 | S: “Mendicants, in this teaching and training a mendicant of good morals, good practice, and good wisdom is called consummate, accomplished, a supreme person. | T: “Monks, a monk who has admirable virtue, admirable qualities, & admirable discernment is called, in this Dhamma-&-Vinaya, one who is complete, fulfilled, a superlative person.
+iti97:3.1 | S: And how does a mendicant have good morals? | T: “And how is a monk a person with admirable virtue?
+iti97:3.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+iti97:3.3 | S: That’s how a mendicant has good morals. | T: In this way a monk is a person with admirable virtue.
+iti97:3.4 | S: Such is one of good morality. | T: Thus he is of admirable virtue.
+iti97:4.1 | S: And how does one have good practice? | T: “And how is a monk a person with admirable qualities?
+iti97:4.2 | S: It’s when a mendicant meditates pursuing the development of the seven qualities on the side of awakening. | T: There is the case where a monk lives devoted to developing the seven [sets of] qualities that are wings to awakening.
+iti97:4.3 | S: That’s how a mendicant has good practice. | T: In this way a monk is a person with admirable qualities.
+iti97:4.4 | S: Such is one of good morality and good practice. | T: Thus he is of admirable virtue & admirable qualities.
+iti97:5.1 | S: And how does one have good wisdom? | T: “And how is a monk a person with admirable discernment?
+iti97:5.2 | S: It’s when a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: There is the case where a monk–with the ending of effluents–remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing it for himself right in the here-&-now.
+iti97:5.3 | S: That’s how a mendicant has good wisdom; | T: In this way a monk is a person with admirable discernment.
+iti97:6.1 | S: Such is one of good morals, good practice, and good wisdom, who in this teaching and training is called consummate, accomplished, a supreme person.” | T: Thus he is of admirable virtue, admirable qualities, admirable discernment. In this Dhamma-&-Vinaya he is called one who is complete, fulfilled, a superlative person.”
+iti97:6.2 | S: The Buddha spoke this matter. | T: (none)
+iti97:6.3 | S: On this it is said: | T: (none)
+iti97:7.1 | S: “Who does nothing wrong | T: Devoid of wrong-doing
+iti97:7.2 | S: by body, speech or mind, | T: in thought, word, or deed,
+iti97:7.3 | S: is said to be one of good morals, | T: he’s called a person of admirable virtue:
+
+exec
+/bin/bash -lc "sed -n '259,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn20.7:1.3 | S: When the Plugger cracked, the Dasārahas patched it with another plug. | T: Whenever Summoner was split, the Dasārahas inserted another peg in it,
+sn20.7:1.4 | S: Eventually, there came a time when the old wooden shell for the drumskin disappeared | T: until the time came when Summoner’s original wooden body had disappeared and only a conglomeration of pegs remained.
+sn20.7:1.5 | S: and all that was left of the <em>mridangam</em> Plugger was a mass of plugs. | T: (none)
+sn20.7:1.6 | S: In the same way, in a future time there will be mendicants who won’t want to listen when discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited. They won’t actively listen or try to understand, nor will they think those teachings are worth learning and memorizing. | T: [The Commentary notes that the drum originally could be heard for twelve leagues, but in its final condition couldn’t be heard even from behind a curtain.] “In the same way, in the course of the future there will be monks who won’t listen when discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are being recited. They won’t lend ear, won’t set their hearts on knowing them, won’t regard these teachings as worth grasping or mastering.
+sn20.7:2.1 | S: But when discourses composed by poets—poetry, with fancy words and phrases, composed by outsiders or spoken by disciples—are being recited they will want to listen. They’ll actively listen and try to understand, and they’ll think those teachings are worth learning and memorizing. | T: But they will listen when discourses that are literary works—the works of poets, elegant in sound, elegant in rhetoric, the work of outsiders, words of disciples—are recited. They will lend ear and set their hearts on knowing them. They will regard these teachings as worth grasping & mastering.
+sn20.7:2.2 | S: And that is how the discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—will disappear. | T: “In this way the disappearance of the discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—will come about.
+sn20.7:2.3 | S: So you should train like this: | T: “Thus you should train yourselves:
+sn20.7:2.4 | S: ‘When discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited we will want to listen. We will actively listen and try to understand, and we will think those teachings are worth learning and memorizing.’ | T: ‘We will listen when discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are being recited. We will lend ear, will set our hearts on knowing them, will regard these teachings as worth grasping & mastering.’
+sn20.7:2.5 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+sn20.7:2.6 | P: Sattamaṁ. | T: (none)
+
+## sn35.23
+sn35.23:1.1 | S: At Sāvatthī. | T: (none)
+sn35.23:1.2 | S: “Mendicants, I will teach you the all. | T: “Monks, I will teach you the All.
+sn35.23:1.3 | S: Listen … | T: Listen & pay close attention. I will speak.”
+sn35.23:1.4 | S: And what is the all? | T: “As you say, lord,” the monks responded to the Blessed One. The Blessed One said, “What is the All?
+sn35.23:1.5 | S: It’s just the eye and sights, the ear and sounds, the nose and smells, the tongue and tastes, the body and touches, and the mind and ideas. | T: Simply the eye & forms, ear & sounds, nose & aromas, tongue & flavors, body & tactile sensations, intellect & ideas.
+sn35.23:1.6 | S: This is called the all. | T: This, monks, is called the All.
+sn35.23:1.7 | S: Mendicants, suppose someone was to say: | T: Anyone who would say,
+sn35.23:1.8 | S: ‘I’ll deny this all and describe another all.’ They’d have no grounds for that claim, | T: ‘Repudiating this All, I will describe another,’
+sn35.23:1.9 | S: they’d be stumped by questions, and, in addition, they’d get frustrated. | T: if questioned on what exactly might be the grounds for his statement, would be unable to explain and, furthermore, would be put to grief.
+sn35.23:1.10 | S: Why is that? | T: Why?
+sn35.23:1.11 | S: Because they’re out of their element.” | T: Because it lies beyond range.”
+sn35.23:1.12 | P: Paṭhamaṁ. | T: (none)
+
+## sn46.5
+sn46.5:1.1 | S: At Sāvatthī. | T: (none)
+sn46.5:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk approached the Blessed One and, on arrival, bowed down to him and sat to one side. As he was sitting there, he said to the Blessed One,
+sn46.5:1.3 | S: “Sir, they speak of the ‘awakening factors’. | T: “Lord, ‘factors for awakening, factors for awakening,’ it is said.
+sn46.5:1.4 | S: How are the awakening factors defined?” | T: To what extent are they said to be factors for awakening?”
+sn46.5:1.5 | S: “Mendicant, they’re called awakening factors because they lead to awakening. | T: “They lead to awakening, monk. Therefore they are said to be factors for awakening.
+sn46.5:1.6 | S: A mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.5:1.7 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.5:1.8 | S: As they develop the seven awakening factors, their mind is freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: “When these factors for awakening are developed, the mind is released from the effluent of sensuality, the mind is released from the effluent of becoming, the mind is released from the effluent of ignorance.
+sn46.5:1.9 | S: When they’re freed, they know they’re freed. | T: With release, there is the knowledge, ‘Released.’
+sn46.5:1.10 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: One discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn46.5:1.11 | S: They’re called awakening factors because they lead to awakening.” | T: “They lead to awakening, monk. Therefore they are said to be factors for awakening.”
+sn46.5:1.12 | P: Pañcamaṁ. | T: (none)
+
+## sn48.46
+sn48.46:1.1 | S: The same setting. | T: (none)
+sn48.46:1.2 | S: “Mendicants, how many faculties must a mendicant develop and cultivate so that they can declare enlightenment: | T: “Through the development & pursuit of how many faculties, monks, does a monk whose effluents are ended declare gnosis:
+sn48.46:1.3 | S: ‘I understand: “Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place”’?” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world’?”
+sn48.46:2.1 | S: “Our teachings are rooted in the Buddha. …” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn48.46:2.2 | S: “A mendicant must develop and cultivate two faculties so that they can declare enlightenment. | T: “Monks, it’s through the development & pursuit of two faculties that a monk whose effluents are ended declares gnosis:
+sn48.46:2.3 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāmīti. | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’
+sn48.46:2.4 | S: What two? | T: Through which two?
+sn48.46:2.5 | S: Noble wisdom and noble freedom. | T: Through noble discernment & noble release.
+sn48.46:2.6 | S: For their noble wisdom is the faculty of wisdom. | T: Whatever is his noble discernment is his faculty of discernment.
+sn48.46:2.7 | S: And their noble freedom is the faculty of immersion. | T: Whatever is his noble release is his faculty of concentration.
+sn48.46:2.8 | S: These are the two faculties that a mendicant must develop and cultivate so that they can declare enlightenment: | T: “It’s through the development & pursuit of these two faculties that a monk whose effluents are ended declares gnosis:
+sn48.46:2.9 | S: ‘I understand: “Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.”’” | T: ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’”
+sn48.46:2.10 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn7.2
+sn7.2:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn7.2:1.2 | S: The brahmin Bhāradvāja the Rude heard a rumor that | T: Then the brahman Akkosaka [“Insulter”] Bhāradvāja heard that a brahman of the Bhāradvāja clan had gone forth from the home life into homelessness in the presence of the Blessed One.
+sn7.2:2.1 | S: a brahmin of the Bhāradvāja clan had gone forth from the lay life to homelessness in the presence of the ascetic Gotama. Angry and displeased he went to the Buddha and abused and insulted him with rude, harsh words. When he had spoken, the Buddha said to him: | T: Angered & displeased, he went to the Blessed One and, on arrival, insulted & cursed him with rude, harsh words. When this was said, the Blessed One said to him:
+sn7.2:2.2 | S: “What do you think, brahmin? | T: “What do you think, brahman?
+sn7.2:2.3 | S: Do friends and colleagues, relatives and kin, and guests still come to visit you?” | T: Do friends & colleagues, relatives & kinsmen come to you as guests?”
+sn7.2:2.4 | S: “Sometimes they do, worthy Gotama.” | T: “Yes, Master Gotama, sometimes friends & colleagues, relatives & kinsmen come to me as guests.”
+sn7.2:2.5 | S: “Do you then serve them with fresh and cooked foods and savories?” | T: “And what do you think? Do you serve them with staple & non-staple foods & delicacies?”
+sn7.2:2.6 | S: “Sometimes I do.” | T: “Yes, sometimes I serve them with staple & non-staple foods & delicacies.”
+sn7.2:2.7 | S: “But if they don’t accept it, brahmin, who does it belong to?” | T: “And if they don’t accept them, to whom do those foods belong?”
+sn7.2:2.8 | S: “In that case it still belongs to me.” | T: “If they don’t accept them, Master Gotama, those foods are all mine.”
+sn7.2:2.9 | S: “In the same way, brahmin, when you abuse, harass, and attack us who do not abuse, harass, and attack, we don’t accept it. | T: “In the same way, brahman, that with which you have insulted me, who is not insulting; that with which you have taunted me, who is not taunting; that with which you have berated me, who is not berating: that I don’t accept from you.
+sn7.2:2.10 | S: It still belongs to you, brahmin, | T: It’s all yours, brahman.
+sn7.2:2.11 | S: it still belongs to you! | T: It’s all yours.
+sn7.2:3.1 | S: Someone who, when abused, harassed, and attacked, abuses, harasses, and attacks in return is said to eat the food and have a reaction to it. | T: “Whoever returns insult to one who is insulting, returns taunts to one who is taunting, returns a berating to one who is berating, is said to be eating together, sharing company, with that person.
+sn7.2:3.2 | S: But we neither eat your food nor do we have a reaction to it. | T: But I am neither eating together nor sharing your company, brahman.
+sn7.2:3.3 | S: It still belongs to you, brahmin, | T: It’s all yours.
+sn7.2:3.4 | S: it still belongs to you!” | T: It’s all yours.”
+sn7.2:3.5 | S: “The king and his retinue believe of the worthy Gotama, | T: “The king together with his court know this of Master Gotama—
+sn7.2:3.6 | S: ‘the ascetic Gotama is a perfected one’. | T: ‘Gotama the contemplative is an arahant’—
+sn7.2:3.7 | S: And yet he still gets angry.” | T: and yet still Master Gotama gets angry.”
+sn7.2:4.1 | S: “Whence anger for one free of anger, | T: The Buddha: “Whence is there anger for one free from anger,
+sn7.2:4.2 | S: tamed, living justly, | T: tamed, living in tune—
+sn7.2:4.3 | S: freed by right knowledge, | T: one released through right knowing,
+sn7.2:4.4 | S: peaceful and unaffected? | T: calmed & Such.
+sn7.2:5.1 | S: When you get angry at an angry person | T: You make things worse when you flare up at someone who’s angry.
+sn7.2:5.2 | S: you just make things worse for yourself. | T: (none)
+sn7.2:5.3 | S: When you don’t get angry at an angry person | T: Whoever doesn’t flare up at someone who’s angry
+sn7.2:5.4 | S: you win a battle hard to win. | T: wins a battle hard to win.
+sn7.2:6.1 | S: When you know that the other is angry, | T: You live for the good of both —your own, the other’s— when, knowing the other’s provoked,
+sn7.2:6.2 | S: you act for the good of both | T: (none)
+sn7.2:6.3 | S: yourself and the other | T: (none)
+sn7.2:6.4 | S: if you’re mindful and stay calm. | T: you mindfully grow calm.
+sn7.2:7.1 | S: People inexpert in the teaching | T: (none)
+sn7.2:7.2 | S: consider one who heals both | T: When you work the cure of both
+sn7.2:7.3 | S: oneself and the other | T: —your own, the other’s—
+sn7.2:7.4 | S: to be a fool.” | T: those who think you a fool know nothing of Dhamma.”
+sn7.2:8.1 | S: When he had spoken, Bhāradvāja the Rude said to the Buddha, | T: When this was said, the brahman Akkosaka Bhāradvāja said to the Blessed One,
+sn7.2:8.2 | S: “Excellent, worthy Gotama! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+sn7.2:8.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn7.2:8.4 | S: Sir, may I receive the going forth, the ordination in the worthy Gotama’s presence?” | T: Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance (into the Saṅgha of monks).”
+sn7.2:9.1 | S: And the brahmin Bhāradvāja the Rude received the going forth, the ordination in the Buddha’s presence. | T: Then the brahman Akkosaka Bhāradvāja received the Going-forth in the Blessed One’s presence, he gained the Acceptance.
+sn7.2:9.2 | S: Not long after his ordination, Venerable Bhāradvāja the Rude, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now.
+sn7.2:9.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+sn7.2:9.4 | S: And Venerable Bhāradvāja became one of the perfected. | T: And so Ven. Bhāradvāja became another one of the arahants.
+
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-021.findings.tmp <<'EOF'
+an5.56:2.2 starts: [told the Blessed One what his student
+an5.56:5.4 starts: [told the Blessed One what his student
+sn7.2:7.1 starts: When you work the cure of both
+sn7.2:7.2 none
+sn7.2:7.3 none
+sn7.2:7.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+56,413
+6 lines reported.

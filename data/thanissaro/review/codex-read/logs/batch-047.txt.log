@@ -1,0 +1,530 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd98-2709-7443-bd5b-4576f808f013
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear shifts between lines, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.60, continued
+an3.60:16.3 | S: I prefer this demonstration, worthy Gotama. It’s the finest of the three kinds of demonstration. | T: this is the miracle that, of the three, appeals to me as the highest & most sublime.
+an3.60:17.1 | S: It’s incredible, worthy Gotama, it’s amazing, | T: “How amazing, Master Gotama! How astounding,
+an3.60:17.2 | S: how well this was said by the worthy Gotama. We regard the worthy Gotama as someone who possesses these three kinds of demonstration. | T: how well this has been said by Master Gotama. And we hold that Master Gotama is endowed with these three marvels:
+an3.60:17.3 | S: For the worthy Gotama wields the many kinds of psychic power … controlling the body as far as the realm of divinity. | T: Master Gotama wields manifold psychic powers… (and) exercises influence with his body even as far as the Brahmā worlds. …
+an3.60:17.4 | S: And Worthy Gotama comprehends the mind of another who has attained the immersion that is free of placing the mind and keeping it connected. He understands: | T: By encompassing with his own awareness the awareness of one who has attained a concentration devoid of directed thought & evaluation, Master Gotama discerns,
+an3.60:17.5 | S: ‘Judging by the way this worthy’s intentions are directed, immediately after this mind state they’ll think this thought.’ | T: ‘Given the way the mental fabrications of this venerable person are inclined, the directed thoughts of his mind will immediately think about this.’
+an3.60:17.6 | S: And the worthy Gotama instructs others like this: | T: Master Gotama gives instruction in this way:
+an3.60:17.7 | S: ‘Think like this, not like that. Focus your mind like this, not like that. Give up this, and live having achieved that.’” | T: ‘Direct your thought in this way, don’t direct it in that. Attend to things in this way, don’t attend to them in that. Let go of this, enter and remain in that.’”
+an3.60:18.1 | S: “Your words are clearly invasive and intrusive, brahmin. | T: “Well, brahman, you are certainly being rude & presumptuous in making this statement,
+an3.60:18.2 | S: Nevertheless, I will answer you. | T: but still I will respond to you.
+an3.60:18.3 | S: For I do wield the many kinds of psychic power … controlling the body as far as the realm of divinity. | T: Yes, I wield manifold psychic powers… (and) exercise influence with my body even as far as the Brahmā worlds; …
+an3.60:18.4 | S: And I do comprehend the mind of another individual who has attained the immersion that is free of placing the mind and keeping it connected. I understand: | T: by encompassing with my own awareness the awareness of one who has attained a concentration devoid of directed thought & evaluation, I discern,
+an3.60:18.5 | S: ‘Judging by the way this worthy’s intentions are directed, immediately after this mind state they’ll think this thought.’ | T: ‘Given the way the mental fabrications of this venerable person are inclined, the directed thoughts of his mind will immediately think about this.’
+an3.60:18.6 | S: And I do instruct others like this: | T: I give instruction in this way:
+an3.60:18.7 | S: ‘Think like this, not like that. Focus your mind like this, not like that. Give up this, and live having achieved that.’” | T: ‘Direct your thought in this way, don’t direct it in that. Attend to things in this way, don’t attend to them in that. Let go of this, enter and remain in that.’”
+an3.60:19.1 | S: “But worthy Gotama, is there even one other mendicant who possesses these three kinds of demonstration, apart from the worthy Gotama?” | T: “Aside from Master Gotama, is there another monk who is endowed with these three miracles?”
+an3.60:19.2 | S: “There’s not just one hundred mendicants, brahmin, who possess these three kinds of demonstration, nor two, three, four, or five hundred, but many more than that.” | T: “Brahman, there are not only one hundred other monks… two… three… four… five hundred other monks: The monks who are endowed with these three miracles are many more than that.”
+an3.60:19.3 | S: “But where are these mendicants now staying?” | T: “And, Master Gotama, where do those monks now live?”
+an3.60:19.4 | S: “Right here, brahmin, in this Saṅgha of mendicants.” | T: “In this very same Saṅgha of monks.”
+an3.60:20.1 | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+an3.60:20.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+an3.60:20.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+an3.60:20.4 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone for refuge from this day forward, for life.”
+an3.60:20.5 | P: Dasamaṁ. | T: (none)
+an3.60:20.6 | P: Brāhmaṇavaggo paṭhamo. | T: (none)
+an3.60:21.0 | P: Tassuddānaṁ | T: (none)
+an3.60:21.1 | P: Dve brāhmaṇā caññataro, | T: (none)
+an3.60:21.2 | P: paribbājakena nibbutaṁ; | T: (none)
+an3.60:21.3 | P: Palokavaccho tikaṇṇo, | T: (none)
+an3.60:21.4 | P: soṇi saṅgāravena cāti. | T: (none)
+
+## an8.13
+an8.13:1.1 | S: “Mendicants, a fine royal thoroughbred with eight factors is worthy of a king, fit to serve a king, and reckoned a factor of kingship. | T: “Endowed with eight qualities, a king’s auspicious thoroughbred steed is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an8.13:1.2 | S: What eight? | T: Which eight?
+an8.13:1.3 | S: It’s when a fine royal thoroughbred is well born on both | T: [1] “There is the case where a king’s auspicious thoroughbred steed is well-born on both sides,
+an8.13:1.4 | S: the mother’s and the father’s sides. | T: his mother’s & his father’s;
+an8.13:1.5 | S: He’s bred in the region fine thoroughbreds come from. | T: he is born in the country where other auspicious thoroughbred steeds are born.
+an8.13:1.6 | S: Whatever food he’s given, | T: [2] “When given food,
+an8.13:1.7 | S: fresh or dry, | T: whether fresh or dried,
+an8.13:1.8 | S: he eats carefully, without making a mess. | T: he eats it carefully, without scattering it around.
+an8.13:1.9 | S: He’s disgusted by sitting or lying down in excrement or urine. | T: [3] “He feels disgust at sitting or lying down in urine or excrement.
+an8.13:1.10 | S: He’s gentle and pleasant to live with, and he doesn’t upset the other horses. | T: [4] “He is composed & easy to live with, and doesn’t harass the other horses.
+an8.13:1.11 | S: He openly shows his tricks, bluffs, ruses, and feints to his trainer, | T: [5] “Whatever tricks or deceits or wiles or subterfuges he has, he shows them as they actually are to his trainer,
+an8.13:1.12 | S: so the trainer can try to subdue them. | T: so that his trainer can try to straighten them out.
+an8.13:1.13 | S: He carries his load, determining: | T: [6] “When in harness he gives rise to the thought,
+an8.13:1.14 | S: ‘Whether or not the other horses carry their loads, I’ll carry mine.’ | T: ‘Whether the other horses want to pull or not, I’ll pull here.’
+an8.13:1.15 | S: He always walks in a straight path. | T: [7] “When going, he goes the straight path.
+an8.13:1.16 | S: He’s strong, and stays strong even until death. | T: [8] “He is steadfast and remains steadfast to the end of life & death.
+an8.13:1.17 | S: A fine royal thoroughbred with these eight factors is worthy of a king. … | T: “Endowed with these eight qualities, a king’s auspicious thoroughbred steed is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an8.13:2.1 | S: In the same way, a mendicant with eight qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with eight qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an incomparable field of merit for the world.
+an8.13:2.2 | S: What eight? | T: Which eight?
+an8.13:2.3 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: [1] “There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+an8.13:2.4 | S: Whatever food they’re given, | T: [2] “When given food,
+an8.13:2.5 | S: coarse or fine, | T: whether coarse or refined,
+an8.13:2.6 | S: they eat carefully, without bother. | T: he eats it carefully, without complaining.
+an8.13:2.7 | S: They’re disgusted with bad conduct by way of body, speech, or mind, | T: [3] “He feels disgust at bodily misconduct, verbal misconduct, mental misconduct,
+an8.13:2.8 | S: and by attainment of the many kinds of unskillful things. | T: at the development of evil, unskillful (mental) qualities.
+an8.13:2.9 | S: They’re gentle and pleasant to live with, and they don’t upset the other mendicants. | T: [4] “He is composed & easy to live with, and doesn’t harass the other monks.
+an8.13:2.10 | S: They openly show their tricks, bluffs, ruses, and feints to their sensible spiritual companions, | T: [5] “Whatever tricks or deceits or wiles or subterfuges he has, he shows them as they actually are to the Teacher or to his observant companions in the holy life, so that the Teacher or his observant companions in the holy life can try to straighten them out.
+an8.13:2.11 | S: so they can try to subdue them. | T: (none)
+an8.13:2.12 | S: They do their training, determining: | T: [6] “When in training he gives rise to the thought,
+an8.13:2.13 | S: ‘Whether or not the other mendicants do their training, I’ll do mine.’ | T: ‘Whether the other monks want to train or not, I’ll train here.’
+an8.13:2.14 | S: They always walk in a straight path. | T: [7] “When going, he goes the straight path;
+an8.13:2.15 | S: And here the straight path is | T: here the straight path is this:
+an8.13:2.16 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+an8.13:2.17 | S: They’re energetic: | T: [8] “He dwells with his persistence aroused, (thinking,)
+an8.13:2.18 | S: ‘Gladly, let my skin, sinews, and bones remain! Let the blood and flesh waste away in my body! I will not stop trying until I have achieved what is possible by human strength, energy, and vigor.’ | T: ‘Gladly would I let the flesh & blood in my body dry up, leaving just the skin, tendons, & bones, but if I have not attained what can be reached through human steadfastness, human persistence, human striving, there will be no relaxing my persistence.’”
+an8.13:2.19 | S: A mendicant with these eight qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world.” | T: “Endowed with these eight qualities, a monk is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an incomparable field of merit for the world.”
+an8.13:2.20 | P: Tatiyaṁ. | T: (none)
+
+## snp3.3
+snp3.3:1.1 | S: So I have heard. | T: I have heard that on one occasion
+snp3.3:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+snp3.3:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+snp3.3:1.4 | S: “Mendicants!” | T: “Monks!”
+snp3.3:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+snp3.3:1.6 | S: The Buddha said this: | T: The Blessed One said:
+snp3.3:2.1 | S: “Mendicants, speech that has four factors is well spoken, not poorly spoken. It’s blameless and is not criticized by sensible people. | T: “Monks, speech endowed with four characteristics is well-spoken, not poorly spoken—faultless & not to be faulted by the observant.
+snp3.3:2.2 | S: What four? | T: Which four?
+snp3.3:2.3 | S: It’s when a mendicant speaks well, not poorly; their speech is principled, not unprincipled; they speak pleasantly, not unpleasantly; and they speak truthfully, not falsely. | T: There is the case where a monk says only what is well-spoken, not what is poorly spoken; only what is just, not what is unjust; only what is endearing, not what is unendearing; only what is true, not what is false.
+snp3.3:2.4 | S: Speech with these four factors is well spoken, not poorly spoken. It’s blameless and is not criticized by sensible people.” | T: Speech endowed with these four characteristics is well-spoken, not poorly spoken—faultless & not to be faulted by the observant.”
+snp3.3:2.5 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+snp3.3:2.6 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the One Well-Gone, the Teacher, said further:
+snp3.3:3.1 | S: “Good people say well-spoken words are foremost; | T: The calm say that what is well-spoken is best;
+snp3.3:3.2 | S: second, speech ought be principled, not unprincipled; | T: second, that one should say what is just, not unjust;
+snp3.3:3.3 | S: third, speak pleasantly, not unpleasantly; | T: third, what’s endearing, not unendearing;
+snp3.3:3.4 | S: and fourth, speak truthfully, not falsely.” | T: fourth, what is true, not false.
+snp3.3:4.1 | S: Then Venerable Vaṅgīsa rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said, | T: Then Ven. Vaṅgīsa, rising from his seat, arranging his robe over one shoulder, faced the Blessed One with his hands palm-to-palm in front of his heart and said,
+snp3.3:4.2 | S: “I feel inspired to speak, Blessed One! I feel inspired to speak, Holy One!” | T: “An inspiration has come to me, Blessed One! An inspiration has come to me, One Well-Gone!”
+snp3.3:4.3 | S: “Then speak as you feel inspired,” said the Buddha. | T: “Let the inspiration come to you, Vaṅgīsa,” the Blessed One said.
+snp3.3:4.4 | S: Then Vaṅgīsa extolled the Buddha in his presence with fitting verses: | T: Then Ven. Vaṅgīsa praised the Blessed One to his face with these fitting verses:
+snp3.3:5.1 | S: “Speak only those words | T: “Speak only the speech
+snp3.3:5.2 | S: that do not hurt yourself | T: that neither torments self
+snp3.3:5.3 | S: nor harm others; | T: nor does harm to others.
+snp3.3:5.4 | S: such speech is truly well spoken. | T: That speech is truly well-spoken.
+snp3.3:6.1 | S: Speak only pleasing words, | T: Speak only endearing speech,
+snp3.3:6.2 | S: words gladly welcomed. | T: speech that is welcomed.
+snp3.3:6.3 | S: Pleasing words are those | T: Speech when it brings no evil to others is pleasant.
+snp3.3:6.4 | S: that bring nothing bad to others. | T: (none)
+snp3.3:7.1 | S: Truth itself is undying speech: | T: Truth, indeed, is deathless speech:
+snp3.3:7.2 | S: this is an ancient teaching. | T: This is a primeval principle.
+snp3.3:7.3 | S: Good people say the teaching and meaning | T: The goal and the Dhamma —so say the calm—
+snp3.3:7.4 | S: are grounded in truth. | T: are firmly established on truth.
+snp3.3:8.1 | S: The words spoken by the Buddha | T: The speech the Awakened One speaks,
+snp3.3:8.2 | S: for finding the sanctuary, extinguishment, | T: for attaining unbinding, rest,
+snp3.3:8.3 | S: for making an end of suffering, | T: for making an end to the mass of stress:
+snp3.3:8.4 | S: this really is the best kind of speech.” | T: That is the speech unsurpassed.”
+snp3.3:8.5 | P: Subhāsitasuttaṁ tatiyaṁ. | T: (none)
+
+## an4.191
+an4.191:1.1 | S: “Mendicants, you can expect four benefits when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically. | T: “Monks, when the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, four rewards can be expected.
+an4.191:1.2 | S: What four? | T: Which four?
+an4.191:1.3 | S: Take a mendicant who memorizes the teaching— | T: “There is the case where a monk has mastered the Dhamma:
+an4.191:1.4 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose & verse, explanations, verses, spontaneous exclamations, quotations, birth stories, amazing events, question & answer sessions [the earliest classifications of the Buddha’s teachings].
+an4.191:1.5 | S: They’ve followed those teachings by ear, consolidated them by voice, examined them by the mind, and well penetrated them theoretically. | T: In him, these teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view.
+an4.191:1.6 | S: But they die unmindful and are reborn in one of the orders of gods. | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.
+an4.191:1.7 | S: Being happy there, passages of the teaching come back to them. | T: To him, happy there, they recite verses of Dhamma.
+an4.191:1.8 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:1.9 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:1.10 | S: This is the first benefit you can expect when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically. | T: When the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, this is the first reward that can be expected.
+an4.191:2.1 | S: Furthermore, take a mendicant who memorizes the teaching— | T: “Further, there is the case where a monk has mastered the Dhamma:
+an4.191:2.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues… question & answer sessions.
+an4.191:2.3 | S: They’ve followed those teachings by ear, consolidated them by voice, examined them by the mind, and well penetrated them theoretically. | T: In him, these teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view.
+an4.191:2.4 | S: But they die unmindful and are reborn in one of the orders of gods. | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.
+an4.191:2.5 | S: Though they’re happy there, passages of the teaching don’t come back to them. | T: It doesn’t happen that they recite verses of Dhamma to him, happy there.
+an4.191:2.6 | S: However, a mendicant with psychic powers, who has achieved mastery of the mind, teaches Dhamma to the assembly of gods. | T: But a monk with psychic power, attained to mastery of awareness, teaches the Dhamma to the assembly of devas.
+an4.191:2.7 | S: They think: | T: The thought occurs [to the new deva]:
+an4.191:2.8 | S: ‘I used to lead the spiritual life in this same teaching and training.’ | T: ‘This is the Dhamma & Vinaya under which I used to live the holy life.’
+an4.191:2.9 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:2.10 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:2.11 | S: Suppose a person was skilled in the sound of drums. | T: “Suppose a man skilled in the sound of a war drum were to hear the sound of a war drum while traveling along a highway.
+an4.191:2.12 | S: While traveling along a road they hear the sound of drums. | T: (none)
+an4.191:2.13 | S: They wouldn’t have any doubts or uncertainties about whether | T: He would have no doubt or perplexity,
+an4.191:2.14 | S: that was the sound of drums or not. | T: ‘Is that the sound of a war drum or not the sound of a war drum?’
+an4.191:2.15 | S: They’d just conclude, ‘That’s the sound of drums.’ | T: He would come to the conclusion, ‘That’s the sound of a war drum for sure.’
+an4.191:2.16 | S: In the same way, take a mendicant who memorizes the teaching … | T: In the same way, there is the case where a monk has mastered the Dhamma.…
+an4.191:2.17 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: (none)
+an4.191:2.18 | P: Tassa te dhammā sotānugatā honti, vacasā paricitā, manasānupekkhitā, diṭṭhiyā suppaṭividdhā. | T: (none)
+an4.191:2.19 | S: But they die unmindful and are reborn in one of the orders of gods. … | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.…
+an4.191:2.20 | P: Tassa tattha na heva kho sukhino dhammapadā plavanti; | T: (none)
+an4.191:2.21 | P: api ca kho bhikkhu iddhimā cetovasippatto devaparisāyaṁ dhammaṁ deseti. | T: A monk with psychic power, attained to mastery of awareness, teaches the Dhamma to the assembly of devas.
+an4.191:2.22 | P: Tassa evaṁ hoti: | T: The thought occurs [to the new deva]:
+an4.191:2.23 | P: ‘ayaṁ vā so dhammavinayo, yatthāhaṁ pubbe brahmacariyaṁ acarin’ti. | T: ‘This is the Dhamma & Vinaya under which I used to live the holy life.’
+an4.191:2.24 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:2.25 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:2.26 | S: This is the second benefit you can expect when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically. | T: When the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, this is the second reward that can be expected.
+an4.191:3.1 | S: Furthermore, take a mendicant who memorizes the teaching— | T: “Further, there is the case where a monk has mastered the Dhamma:
+an4.191:3.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues… question & answer sessions.
+an4.191:3.3 | S: They’ve followed those teachings by ear, consolidated them by voice, examined them by the mind, and well penetrated them theoretically. | T: In him, these teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view.
+an4.191:3.4 | S: But they die unmindful and are reborn in one of the orders of gods. | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.
+an4.191:3.5 | S: But passages of the teaching don’t come back to them when they’re happy, nor does a mendicant with psychic powers … teach Dhamma to the assembly of gods. | T: It doesn’t happen that they recite verses of Dhamma to him, happy there. Nor does a monk with psychic power, attained to mastery of awareness, teach the Dhamma to the assembly of devas.
+an4.191:3.6 | S: However, a godling teaches Dhamma to the assembly of gods. | T: But a deva teaches the Dhamma to the assembly of devas.
+an4.191:3.7 | S: They think: | T: The thought occurs [to the new deva]:
+an4.191:3.8 | S: ‘I used to lead the spiritual life in this same teaching and training.’ | T: ‘This is the Dhamma & Vinaya under which I used to live the holy life.’
+an4.191:3.9 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:3.10 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:3.11 | S: Suppose a person was skilled in the sound of horns. | T: “Suppose a man skilled in the sound of a conch were to hear the sound of a conch while traveling along a highway.
+an4.191:3.12 | S: While traveling along a road they hear the sound of horns. | T: (none)
+an4.191:3.13 | S: They wouldn’t have any doubt about whether | T: He would have no doubt or perplexity,
+an4.191:3.14 | S: that was the sound of horns or not. | T: ‘Is that the sound of a conch or not the sound of a conch?’
+an4.191:3.15 | S: They’d just conclude, ‘That’s the sound of horns.’ | T: He would come to the conclusion, ‘That’s the sound of a conch for sure.’
+an4.191:3.16 | S: In the same way, take a mendicant who memorizes the teaching … | T: In the same way, there is the case where a monk has mastered the Dhamma.…
+an4.191:3.17 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: (none)
+an4.191:3.18 | P: Tassa te dhammā sotānugatā honti, vacasā paricitā, manasānupekkhitā, diṭṭhiyā suppaṭividdhā. | T: (none)
+an4.191:3.19 | S: But they die unmindful and are reborn in one of the orders of gods. … | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.…
+an4.191:3.20 | P: Tassa tattha na heva kho sukhino dhammapadā plavanti, napi bhikkhu iddhimā cetovasippatto devaparisāyaṁ dhammaṁ deseti; | T: (none)
+an4.191:3.21 | P: api ca kho devaputto devaparisāyaṁ dhammaṁ deseti. | T: A deva teaches the Dhamma to the assembly of devas.
+an4.191:3.22 | P: Tassa evaṁ hoti: | T: The thought occurs [to the new deva]:
+an4.191:3.23 | P: ‘ayaṁ vā so dhammavinayo, yatthāhaṁ pubbe brahmacariyaṁ acarin’ti. | T: ‘This is the Dhamma & Vinaya under which I used to live the holy life.’
+an4.191:3.24 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:3.25 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:3.26 | S: This is the third benefit you can expect when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically. | T: When the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, this is the third reward that can be expected.
+an4.191:4.1 | S: Furthermore, take a mendicant who memorizes the teaching— | T: “Further, there is the case where a monk has mastered the Dhamma:
+an4.191:4.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues… question & answer sessions.
+an4.191:4.3 | S: They’ve followed those teachings by ear, consolidated them by voice, examined them by the mind, and well penetrated them theoretically. | T: In him, these teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view.
+an4.191:4.4 | S: But they die unmindful and are reborn in one of the orders of gods. | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.
+an4.191:4.5 | S: But passages of the teaching don’t come back to them when they’re happy, and neither a mendicant with psychic powers … nor a godling teaches Dhamma to the assembly of gods. | T: It doesn’t happen that they recite verses of Dhamma to him, happy there. Nor does a monk with psychic power, attained to mastery of awareness, teach the Dhamma to the assembly of devas. Nor does a deva teach the Dhamma to the assembly of devas.
+an4.191:4.6 | S: But a being who has been reborn spontaneously reminds another such being: | T: But [another] spontaneously-arisen being reminds [this] spontaneously-arisen being,
+an4.191:4.7 | S: ‘Do you remember, good fellow? Do you remember where we used to lead the spiritual life?’ | T: ‘Do you remember, my dear? Do you remember where we practiced the holy life together?’
+an4.191:4.8 | S: He says: | T: He says,
+an4.191:4.9 | S: ‘I remember, good fellow, I remember!’ | T: ‘I remember, my dear. I remember.’
+an4.191:4.10 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+an4.191:4.11 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:4.12 | S: Suppose there were two friends who had played together in the sand. | T: “Suppose that there were two comrades who played together in the mud.
+an4.191:4.13 | S: Some time or other they’d meet. | T: They would happen to meet later at some time, at some place,
+an4.191:4.14 | S: And one friend would say to the other: | T: and there one companion would say to the other,
+an4.191:4.15 | S: ‘Do you remember this, my dear? Do you remember that, my dear?’ | T: ‘Do you remember this, my friend? And do you remember this?’
+an4.191:4.16 | S: They’d say: | T: And the other would say,
+an4.191:4.17 | S: ‘I remember, my dear, I remember!’ | T: ‘I remember, my friend. I remember.’
+an4.191:4.18 | S: In the same way, take a mendicant who memorizes the teaching … | T: In the same way, there is the case where a monk has mastered the Dhamma:
+an4.191:4.19 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: dialogues… question & answer sessions.
+an4.191:4.20 | P: Tassa te dhammā sotānugatā honti, vacasā paricitā, manasānupekkhitā, diṭṭhiyā suppaṭividdhā. | T: In him, these teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view.
+an4.191:4.21 | S: But they die unmindful and are reborn in one of the orders of gods. … | T: Passing away when his mindfulness is muddled, he arises in a certain group of devas.…
+an4.191:4.22 | P: Tassa tattha na heva kho sukhino dhammapadā plavanti, napi bhikkhu iddhimā cetovasippatto devaparisāyaṁ dhammaṁ deseti, napi devaputto devaparisāyaṁ dhammaṁ deseti; | T: (none)
+an4.191:4.23 | P: api ca kho opapātiko opapātikaṁ sāreti: | T: A spontaneously-arisen being reminds [this] spontaneously-arisen being,
+an4.191:4.24 | P: ‘sarasi tvaṁ, mārisa, sarasi tvaṁ, mārisa, yattha mayaṁ pubbe brahmacariyaṁ acarimhā’ti. | T: ‘Do you remember, my dear? Do you remember where we practiced the holy life together?’
+an4.191:4.25 | P: So evamāha: | T: He says,
+an4.191:4.26 | P: ‘sarāmi, mārisa, sarāmi, mārisā’ti. | T: ‘I remember, my dear. I remember.’
+an4.191:4.27 | S: Memory comes up slowly, | T: Slow is the arising of his mindfulness,
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.191:4.28 | S: but then that being quickly reaches distinction. | T: but when mindful, he quickly arrives at distinction.
+an4.191:4.29 | S: This is the fourth benefit you can expect when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically. | T: When the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, this is the fourth reward that can be expected.
+an4.191:4.30 | S: You can expect these four benefits when the teachings have been followed by ear, consolidated by voice, examined by the mind, and well penetrated theoretically.” | T: “Monks, when the teachings have been followed by ear, recited by speech, examined by mind, and well penetrated by view, these four rewards can be expected.”
+an4.191:4.31 | P: Paṭhamaṁ. | T: (none)
+
+## an10.95
+an10.95:1.1 | S: Then the wanderer Uttiya went up to the Buddha, and exchanged greetings with him. | T: Then Uttiya the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an10.95:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+an10.95:1.3 | S: “Worthy Gotama, is this right: ‘The cosmos is eternal. This is the only truth, anything else is futile’?” | T: “Master Gotama, is it the case that ‘The cosmos is eternal: Only this is true; anything otherwise is worthless’?”
+an10.95:1.4 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:1.5 | P: ‘sassato loko, idameva saccaṁ moghamaññan’”ti. | T: ‘The cosmos is eternal: Only this is true; anything otherwise is worthless.’”
+an10.95:2.1 | S: “Then is this right: ‘The cosmos is not eternal. This is the only truth, anything else is futile’?” | T: “Very well, then, Master Gotama, is it the case that: ‘The cosmos is not eternal: Only this is true; anything otherwise is worthless’?”
+an10.95:2.2 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:2.3 | P: ‘asassato loko, idameva saccaṁ moghamaññan’”ti. | T: ‘The cosmos is not eternal: Only this is true; anything otherwise is worthless.’”
+an10.95:3.1 | S: “Then is this right: ‘The cosmos is finite …’ … | T: “Very well, then, Master Gotama, is it the case that ‘The cosmos is finite … ’ …
+an10.95:3.2 | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.95:3.3 | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.95:3.4 | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.95:3.5 | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.95:3.6 | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.95:3.7 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.95:3.8 | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile’?” | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless’?”
+an10.95:3.9 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:3.10 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’”ti. | T: ‘After death a Tathāgata neither does nor does not exist: Only this is true; anything otherwise is worthless.’”
+an10.95:4.1 | S: “When asked about all these points, worthy Gotama says that they have not been declared by him. | T: “But, Master Gotama, on being asked, ‘Is it the case that “The cosmos is eternal: Only this is true; anything otherwise is worthless”?’ you inform me, ‘Uttiya, I haven’t declared that “The cosmos is eternal: Only this is true; anything otherwise is worthless.”’ On being asked, ‘Is it the case that “The cosmos is not eternal … ” … “The cosmos is finite … ” … “The cosmos is infinite … ” … “The soul & the body are the same … ” … “The soul is one thing and the body another … ” … “After death a Tathāgata exists … ” … “After death a Tathāgata does not exist … ” … “After death a Tathāgata both does & does not exist … ” … “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless”?’ you inform me, ‘Uttiya, I haven’t declared that “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.”’
+an10.95:4.2 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:5.1 | P: ‘Kiṁ pana, bho gotama, asassato loko, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: (none)
+an10.95:5.2 | P: ‘etampi kho, uttiya, abyākataṁ mayā asassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:6.1 | P: ‘Kiṁ nu kho, bho gotama, antavā loko …pe… | T: (none)
+an10.95:6.2 | P: anantavā loko … | T: (none)
+an10.95:6.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | T: (none)
+an10.95:6.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | T: (none)
+an10.95:6.5 | P: hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.6 | P: na hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: (none)
+an10.95:6.9 | P: ‘etampi kho, uttiya, abyākataṁ mayā— | T: (none)
+an10.95:6.10 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:6.11 | S: So what then has been declared by Worthy Gotama?” | T: Now is there anything you have declared?”
+an10.95:7.1 | S: “Uttiya, I teach my disciples from my own insight in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to end the cycle of suffering, and to realize extinguishment.” | T: “Uttiya, having directly known it, I teach the Dhamma to my disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding.”
+an10.95:8.1 | S: “But when the worthy Gotama teaches in this way, is the whole world saved, or half, or a third?” | T: “And, Master Gotama, when having directly known it, you teach the Dhamma to your disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding, will all the cosmos be led (to release), or a half of it, or a third?”
+an10.95:8.2 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One was silent.
+an10.95:9.1 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda:
+an10.95:9.2 | S: “The wanderer Uttiya must not get the harmful misconception: | T: “Don’t let Uttiya the wanderer acquire the evil viewpoint that,
+an10.95:9.3 | S: ‘When the ascetic Gotama was asked this all-important question he falters without answering. He just can’t do it!’ | T: ‘When I asked him an all-encompassing question, Gotama the contemplative faltered and didn’t reply. Perhaps he was unable to.’
+an10.95:9.4 | S: That would be for his lasting harm and suffering.” | T: That would be for his long-term harm & suffering.”
+an10.95:10.1 | S: Then Ānanda said to the wanderer Uttiya, | T: So he said to Uttiya,
+an10.95:10.2 | S: “Well then, Reverend Uttiya, I shall give you a simile. | T: “In that case, my friend, I will give you an analogy,
+an10.95:10.3 | S: For by means of a simile some sensible people understand the meaning of what is said. | T: for there are cases where it is through the use of analogy that intelligent people can understand the meaning of what is being said.
+an10.95:10.4 | S: Suppose there was a king’s frontier citadel with fortified embankments, ramparts, and arches, and a single gate. | T: “Suppose that there were a royal frontier city with strong ramparts, strong walls & arches, and a single gate.
+an10.95:10.5 | S: And it has a gatekeeper who is astute, competent, and intelligent. He keeps strangers out and lets known people in. | T: In it would be a wise, competent, & intelligent gatekeeper to keep out those he didn’t know and to let in those he did.
+an10.95:10.6 | S: As he walks around the patrol path, he doesn’t see a hole or cleft in the wall, not even one big enough for a cat to slip out. | T: Walking along the path encircling the city, he wouldn’t see a crack or an opening in the walls big enough for even a cat to slip through.
+an10.95:10.7 | S: He doesn’t know how many creatures enter or leave the citadel. | T: Although he wouldn’t know that ‘So-and-so many creatures enter or leave the city,’
+an10.95:10.8 | S: But he does know that whatever sizable creatures enter or leave the citadel, all of them do so via this gate. | T: he would know this: ‘Whatever large creatures enter or leave the city all enter or leave it through this gate.’
+an10.95:11.1 | S: In the same way, it’s not the Realized One’s concern whether the whole world is saved by this, or half, or a third. | T: “In the same way, the Tathāgata does not endeavor to have all the cosmos or half of it or a third of it led (to release) by means of (his Dhamma).
+an10.95:11.2 | S: But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four kinds of mindfulness meditation. And they have truly developed the seven awakening factors. | T: But he does know this: ‘All those who have been led, are being led, or will be led (to release) from the cosmos have done so, are doing so, or will do so after having abandoned the five hindrances—those defilements of awareness that weaken discernment—having well-established [‘well-tuned’] their minds in the four establishings of mindfulness, and having developed, as they have come to be, the seven factors for awakening.
+an10.95:11.3 | S: That’s how they’re saved from the world, in the past, future, or present. | T: (none)
+an10.95:11.4 | S: Uttiya, you were just asking the Buddha the same question as before in a different way. | T: When you asked the Blessed One this question, you had already asked it in another way.
+an10.95:11.5 | S: That’s why he didn’t answer.” | T: That’s why he didn’t respond.”
+an10.95:11.6 | P: Pañcamaṁ. | T: (none)
+
+## an7.6
+an7.6:1.1 | S: “Mendicants, there are these seven kinds of wealth. | T: “Monks, there are these seven treasures.
+an7.6:1.2 | S: What seven? | T: Which seven?
+an7.6:1.3 | S: The wealth of faith, ethics, conscience, prudence, learning, generosity, and wisdom. | T: The treasure of conviction, the treasure of virtue, the treasure of a sense of shame, the treasure of a sense of compunction, the treasure of listening, the treasure of generosity, the treasure of discernment.
+an7.6:2.1 | S: And what is the wealth of faith? | T: “And what is the treasure of conviction?
+an7.6:2.2 | S: It’s when a noble disciple has faith in the Realized One’s awakening … | T: There is the case where a disciple of the noble ones has conviction, is convinced of the Tathāgata’s awakening:
+an7.6:2.3 | P: ‘itipi so bhagavā arahaṁ sammāsambuddho …pe… buddho bhagavā’ti. | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+an7.6:2.4 | S: This is called the wealth of faith. | T: This is called the treasure of conviction.
+an7.6:3.1 | S: And what is the wealth of ethical conduct? | T: “And what is the treasure of virtue?
+an7.6:3.2 | S: It’s when a noble disciple doesn’t kill living creatures, steal, commit sexual misconduct, use speech that’s false, backbiting, harsh, or nonsensical, or consume intoxicants of beer, wine, and liquor. | T: There is the case where a disciple of the noble ones abstains from taking life, abstains from stealing, abstains from sexual misconduct, abstains from lying, abstains from taking intoxicants that cause heedlessness.
+an7.6:3.3 | S: This is called the wealth of ethical conduct. | T: This, monks, is called the treasure of virtue.
+an7.6:4.1 | S: And what is the wealth of conscience? | T: “And what is the treasure of a sense of shame?
+an7.6:4.2 | S: It’s when a noble disciple has a conscience. They’re conscientious about bad conduct by way of body, speech, and mind, and conscientious about having any bad, unskillful qualities. | T: There is the case where a disciple of the noble ones feels shame at (the thought of engaging in) bodily misconduct, verbal misconduct, mental misconduct. He feels shame at falling into evil, unskillful actions.
+an7.6:4.3 | S: This is called the wealth of conscience. | T: This is called the treasure of a sense of shame.
+an7.6:5.1 | S: And what is the wealth of prudence? | T: “And what is the treasure of a sense of compunction?
+an7.6:5.2 | S: It’s when a noble disciple is prudent. They’re prudent when it comes to bad conduct by way of body, speech, and mind, and prudent when it comes to the acquiring of any bad, unskillful qualities. | T: There is the case where a monk, a disciple of the noble ones feels compunction at (the suffering that would result from) bodily misconduct, verbal misconduct, mental misconduct. He feels compunction at falling into evil, unskillful actions.
+an7.6:5.3 | S: This is called the wealth of prudence. | T: This is called the treasure of a sense of compunction.
+an7.6:6.1 | S: And what is the wealth of learning? | T: “And what is the treasure of listening?
+an7.6:6.2 | S: It’s when a noble disciple is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: There is the case where a disciple of the noble ones has heard much, has retained what he/she has heard, has stored what he/she has heard. Whatever teachings are admirable in the beginning, admirable in the middle, admirable in the end, that—in their meaning & expression—proclaim the holy life that is entirely perfect, surpassingly pure: Those he/she has listened to often, retained, discussed, accumulated, examined with his/her mind, and well-penetrated in terms of his/her views.
+an7.6:6.3 | S: This is called the wealth of learning. | T: This is called the treasure of listening.
+an7.6:7.1 | S: And what is the wealth of generosity? | T: “And what is the treasure of generosity?
+an7.6:7.2 | S: It’s when a noble disciple lives at home with heart rid of the stain of stinginess, freely generous, open-handed, loving to let go, committed to charity, loving to give and to share. | T: There is the case of a disciple of the noble ones, his awareness cleansed of the stain of stinginess, living at home, is freely generous, openhanded, delighting in being magnanimous, responsive to requests, delighting in the distribution of alms.
+an7.6:7.3 | S: This is called the wealth of generosity. | T: This is called the treasure of generosity.
+an7.6:8.1 | S: And what is the wealth of wisdom? | T: “And what is the treasure of discernment?
+an7.6:8.2 | S: It’s when a noble disciple is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: There is the case where a disciple of the noble ones is discerning, endowed with discernment of arising & passing away—noble, penetrating, leading to the right ending of stress.
+an7.6:8.3 | S: This is called the wealth of wisdom. | T: This is called the treasure of discernment.
+an7.6:9.1 | S: These are the seven kinds of wealth. | T: These, monks, are the seven treasures.”
+an7.6:10.1 | S: Faith and ethical conduct are kinds of wealth, | T: The treasure of conviction, the treasure of virtue,
+an7.6:10.2 | S: as are conscience and prudence, | T: the treasure of a sense of shame & compunction,
+an7.6:10.3 | S: learning and generosity, | T: the treasure of listening, generosity,
+an7.6:10.4 | S: and wisdom is the seventh kind of wealth. | T: & discernment as the seventh treasure.
+an7.6:11.1 | S: When a woman or man | T: Whoever, man or woman, has these treasures
+an7.6:11.2 | S: has these kinds of wealth, | T: (none)
+an7.6:11.3 | S: they’re said to be prosperous, | T: is said not to be poor,
+an7.6:11.4 | S: their life is not in vain. | T: has not lived in vain.
+an7.6:12.1 | S: So let the wise devote themselves | T: So conviction & virtue,
+an7.6:12.2 | S: to faith, ethical behavior, | T: faith & Dhamma-vision
+an7.6:12.3 | S: confidence, and insight into the teaching, | T: should be cultivated by the intelligent,
+an7.6:12.4 | S: remembering the instructions of the Buddhas.” | T: remembering the Buddhas’ instruction.
+an7.6:12.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn42.8
+sn42.8:1.1 | S: At one time the Buddha was staying near Nāḷandā in Pāvārika’s Mango Grove. | T: On one occasion the Blessed One was staying near Nāḷandā in the Pāvārika Mango Grove.
+sn42.8:1.2 | S: Then Asibandhaka’s son the chief, who was a disciple of the Jains, went up to the Buddha, and sat down to one side. The Buddha said to him, | T: Then Asibandhakaputta the headman, a disciple of the Nigaṇṭhas, went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him:
+sn42.8:1.3 | S: “Chief, how does the Jain ascetic of the Ñātika clan teach his disciples?” | T: “Headman, how does Nigaṇṭha Nāṭaputta teach the Dhamma to his disciples?”
+sn42.8:1.4 | S: “Sir, this is how the Jain Ñātika teaches his disciples: | T: “Nigaṇṭha Nāṭaputta teaches the Dhamma to his disciples in this way, lord:
+sn42.8:1.5 | S: ‘Everyone who kills a living creature, steals, commits sexual misconduct, or lies goes to a place of loss, to hell. | T: ‘All those who take life are destined for a plane of deprivation, are destined for hell. All those who steal… All those who indulge in illicit sex… All those who tell lies are destined for a plane of deprivation, are destined for hell.
+sn42.8:1.6 | S: You’re led on by what you frequently live by.’ | T: Whatever one keeps doing frequently, by that is one led (to a state of rebirth).’
+sn42.8:1.7 | S: This is how the Jain Ñātika teaches his disciples.” | T: That’s how Nigaṇṭha Nāṭaputta teaches the Dhamma to his disciples.”
+sn42.8:1.8 | S: “‘You’re led on by what you usually live by’: if this were true, then, according to what the Jain Ñātika says, no one would go to a place of loss, to hell. | T: “If it’s true that ‘Whatever one keeps doing frequently, by that is one led (to a state of rebirth),’ then no one is destined for a plane of deprivation or destined to hell in line with Nigaṇṭha Nāṭaputta’s words.
+sn42.8:2.1 | S: What do you think, chief? | T: What do you think, headman?
+sn42.8:2.2 | S: Take a person who kills living creatures. If we compare periods of time during the day and night, which is more frequent: the occasions when they’re killing or when they’re not killing?” | T: If a man is one who takes life, then taking into consideration time spent doing & not doing, whether by day or by night, which time is more: the time he spends taking life or the time he spends not taking life?”
+sn42.8:2.3 | S: “The occasions when they’re killing are less frequent, while the occasions when they’re not killing are more frequent.” | T: “If a man is one who takes life, lord, then taking into consideration time spent doing & not doing, whether by day or by night, then the time he spends taking life is less, and the time he spends not taking life is certainly more.
+sn42.8:2.4 | S: “‘You’re led on by what you usually live by’: if this were true, then, according to what the Jain ascetic of the Ñātika clan says, no one would go to a place of loss, to hell. | T: If it’s true that ‘Whatever one keeps doing frequently, by that is one led (to a state of rebirth),’ then no one is destined for a plane of deprivation or destined to hell in line with Nigaṇṭha Nāṭaputta’s words.”
+sn42.8:3.1 | S: What do you think, chief? | T: “What do you think, headman?
+sn42.8:3.2 | S: Take a person who steals … | T: If a man is one who steals…
+sn42.8:3.3 | P: “Yo so, bhante, puriso adinnādāyī rattiyā vā divasassa vā samayāsamayaṁ upādāya appataro so samayo, yaṁ so adinnaṁ ādiyati, atha kho sveva bahutaro samayo, yaṁ so adinnaṁ nādiyatī”ti. | T: (none)
+sn42.8:3.4 | P: “‘Yaṁbahulaṁ yaṁbahulañca, gāmaṇi, viharati tena tena nīyatī’ti, evaṁ sante na koci āpāyiko nerayiko bhavissati, yathā nigaṇṭhassa nāṭaputtassa vacanaṁ. | T: (none)
+sn42.8:4.1 | S: Take a person who commits sexual misconduct … | T: indulges in illicit sex…
+sn42.8:4.2 | P: “Yo so, bhante, puriso kāmesumicchācārī rattiyā vā divasassa vā samayāsamayaṁ upādāya, appataro so samayo yaṁ so kāmesu micchā carati, atha kho sveva bahutaro samayo, yaṁ so kāmesu micchā na caratī”ti. | T: (none)
+sn42.8:4.3 | P: “‘Yaṁbahulaṁ yaṁbahulañca, gāmaṇi, viharati tena tena nīyatī’ti, evaṁ sante na koci āpāyiko nerayiko bhavissati, yathā nigaṇṭhassa nāṭaputtassa vacanaṁ. | T: (none)
+sn42.8:5.1 | S: Take a person who lies. If we compare periods of time during the day and night, which is more frequent: the occasions when they’re lying or when they’re not lying?” | T: tells lies, then taking into consideration time spent doing & not doing, whether by day or by night, which time is more: the time he spends telling lies or the time he spends not telling lies?”
+sn42.8:5.2 | S: “The occasions when they’re lying are less frequent, while the occasions when they’re not lying are more frequent.” | T: “If a man is one who tells lies, lord, then taking into consideration time spent doing & not doing, whether by day or by night, then the time he spends telling lies is less, and the time he spends not telling lies is certainly more.
+sn42.8:5.3 | S: “‘You’re led on by what you usually live by’: if this were true, then, according to what the Jain Ñātika says, no one would go to a place of loss, to hell. | T: If it’s true that ‘Whatever one keeps doing frequently, by that is one led (to a state of rebirth),’ then no one is destined for a plane of deprivation or destined to hell in line with Nigaṇṭha Nāṭaputta’s words.”
+sn42.8:6.1 | S: Take some teacher who has this doctrine and view: | T: “There’s the case, headman, where a certain teacher holds this doctrine, holds this view:
+sn42.8:6.2 | S: ‘Everyone who kills a living creature, steals, commits sexual misconduct, or lies goes to a place of loss, to hell.’ | T: ‘All those who take life are destined for a plane of deprivation, are destined for hell. All those who steal… All those who indulge in illicit sex… All those who tell lies are destined for a plane of deprivation, are destined for hell.’
+sn42.8:6.3 | S: And there’s a disciple who is devoted to that teacher. | T: A disciple has faith in that teacher, and the thought occurs to him,
+sn42.8:6.4 | S: They think: | T: (none)
+sn42.8:6.5 | S: ‘My teacher has this doctrine and view: | T: ‘Our teacher holds this doctrine, holds this view:
+sn42.8:6.6 | S: “Everyone who kills a living creature, steals, commits sexual misconduct, or lies goes to a place of loss, to hell.” | T: “All those who take life are destined for a plane of deprivation, are destined for hell.”
+sn42.8:6.7 | S: But I’ve killed living creatures … | T: There are living beings that I have killed. I, too, am destined for a plane of deprivation, am destined for hell.’ He fastens onto that view.
+sn42.8:6.8 | P: Taṁ, gāmaṇi, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. | T: If he doesn’t abandon that doctrine, doesn’t abandon that state of mind, doesn’t relinquish that view, then as if he were to be carried off, he would thus be placed in hell.
+sn42.8:6.9 | P: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi— | T: (none)
+sn42.8:6.10 | P: yo koci adinnaṁ ādiyati, sabbo so āpāyiko nerayikoti. | T: (none)
+sn42.8:6.11 | S: stolen … | T: “(The thought occurs to him,)
+sn42.8:6.12 | P: Taṁ, gāmaṇi, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. | T: (none)
+sn42.8:6.13 | P: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi— | T: ‘Our teacher holds this doctrine, holds this view:
+sn42.8:6.14 | P: yo koci kāmesu micchā carati, sabbo so āpāyiko nerayiko’ti. | T: (none)
+sn42.8:6.15 | S: committed sexual misconduct … | T: ‘All those who steal… All those who indulge in illicit sex… All those who tell lies are destined for a plane of deprivation, are destined for hell.’
+sn42.8:6.16 | P: ‘Ahampamhi āpāyiko nerayiko’ti diṭṭhiṁ paṭilabhati. | T: (none)
+sn42.8:6.17 | P: Taṁ, gāmaṇi, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. | T: (none)
+sn42.8:6.18 | P: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi— | T: (none)
+sn42.8:6.19 | P: yo koci musā bhaṇati, sabbo so āpāyiko nerayikoti. | T: (none)
+sn42.8:6.20 | S: or lied.’ | T: There are lies that I have told.
+sn42.8:6.21 | S: They get the view: ‘I too am going to a place of loss, to hell.’ | T: I, too, am destined for a plane of deprivation, am destined for hell.’ He fastens onto that view.
+sn42.8:6.22 | S: Unless they give up that speech and that thought, and let go of that view, they will be placed in hell as if delivered there. | T: If he doesn’t abandon that doctrine, doesn’t abandon that state of mind, doesn’t relinquish that view, then as if he were to be carried off, he would thus be placed in hell.
+sn42.8:7.1 | S: But consider when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: “There is the case, headman, where a Tathāgata appears in the world, worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.
+sn42.8:7.2 | S: In many ways he criticizes and denounces killing living creatures, saying: ‘Stop killing living creatures!’ | T: He, in various ways, criticizes & censures the taking of life, and says, ‘Abstain from taking life.’
+sn42.8:7.3 | S: He criticizes and denounces stealing … | T: He criticizes & censures stealing, and says, ‘Abstain from stealing.’
+sn42.8:7.4 | S: sexual misconduct … | T: He criticizes & censures indulging in illicit sex, and says, ‘Abstain from indulging in illicit sex.’
+sn42.8:7.5 | S: lying, saying: ‘Stop lying!’ | T: He criticizes & censures the telling of lies, and says, ‘Abstain from the telling of lies.’
+sn42.8:7.6 | S: And there’s a disciple who is devoted to that teacher. | T: “A disciple has faith in that teacher and reflects:
+sn42.8:7.7 | S: Then they reflect: | T: (none)
+sn42.8:7.8 | S: ‘In many ways the Buddha criticizes and denounces killing living creatures, saying: “Stop killing living creatures!” | T: ‘The Blessed One in a variety of ways criticizes & censures the taking of life, and says, “Abstain from taking life.”
+sn42.8:7.9 | S: But I have killed living creatures to a certain extent. | T: There are living beings that I have killed, to a greater or lesser extent.
+sn42.8:7.10 | S: That’s not right, it’s not good, | T: That was not right. That was not good.
+sn42.8:7.11 | S: and I feel remorseful because of it. | T: But if I become remorseful for that reason,
+sn42.8:7.12 | S: But I can’t undo what I have done.’ | T: that evil deed of mine will not be undone.’
+sn42.8:7.13 | S: Reflecting like this, they give up killing living creatures, | T: So, reflecting thus, he abandons right then the taking of life,
+sn42.8:7.14 | S: and in future they don’t kill living creatures. | T: and in the future refrains from taking life.
+sn42.8:7.15 | S: That’s how to give up this bad deed | T: This is how there comes to be the abandoning of that evil deed.
+sn42.8:7.16 | S: and get past it. | T: This is how there comes to be the transcending of that evil deed.
+sn42.8:8.1 | S: ‘In many ways the Buddha criticizes and denounces stealing …’ | T: “(He reflects:) ‘The Blessed One in a variety of ways criticizes & censures stealing…
+sn42.8:8.2 | P: Atthi kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā. | T: (none)
+sn42.8:8.3 | P: Yaṁ kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā taṁ na suṭṭhu, taṁ na sādhu. | T: (none)
+sn42.8:8.4 | P: Ahañceva kho pana tappaccayā vippaṭisārī assaṁ, na metaṁ pāpaṁ kammaṁ akataṁ bhavissatī’ti. | T: (none)
+sn42.8:8.5 | P: So iti paṭisaṅkhāya tañceva adinnādānaṁ pajahati. | T: (none)
+sn42.8:8.6 | P: Āyatiñca adinnādānā paṭivirato hoti. | T: (none)
+sn42.8:8.7 | P: Evametassa pāpassa kammassa pahānaṁ hoti. | T: (none)
+sn42.8:8.8 | P: Evametassa pāpassa kammassa samatikkamo hoti. | T: (none)
+sn42.8:9.1 | S: ‘In many ways the Buddha criticizes and denounces sexual misconduct …’ | T: indulging in illicit sex…
+sn42.8:9.2 | P: Atthi kho pana mayā kāmesu micchā ciṇṇaṁ yāvatakaṁ vā tāvatakaṁ vā. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full file. The clearest shifts are in two passages with lists separated by ellipses. I’m checking the boundaries against the exceptions before writing the findings.
+exec
+/bin/bash -lc "sed -n '220,248p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.95:3.6 | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.95:3.7 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.95:3.8 | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile’?” | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless’?”
+an10.95:3.9 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:3.10 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’”ti. | T: ‘After death a Tathāgata neither does nor does not exist: Only this is true; anything otherwise is worthless.’”
+an10.95:4.1 | S: “When asked about all these points, worthy Gotama says that they have not been declared by him. | T: “But, Master Gotama, on being asked, ‘Is it the case that “The cosmos is eternal: Only this is true; anything otherwise is worthless”?’ you inform me, ‘Uttiya, I haven’t declared that “The cosmos is eternal: Only this is true; anything otherwise is worthless.”’ On being asked, ‘Is it the case that “The cosmos is not eternal … ” … “The cosmos is finite … ” … “The cosmos is infinite … ” … “The soul & the body are the same … ” … “The soul is one thing and the body another … ” … “After death a Tathāgata exists … ” … “After death a Tathāgata does not exist … ” … “After death a Tathāgata both does & does not exist … ” … “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless”?’ you inform me, ‘Uttiya, I haven’t declared that “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.”’
+an10.95:4.2 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:5.1 | P: ‘Kiṁ pana, bho gotama, asassato loko, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: (none)
+an10.95:5.2 | P: ‘etampi kho, uttiya, abyākataṁ mayā asassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:6.1 | P: ‘Kiṁ nu kho, bho gotama, antavā loko …pe… | T: (none)
+an10.95:6.2 | P: anantavā loko … | T: (none)
+an10.95:6.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | T: (none)
+an10.95:6.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | T: (none)
+an10.95:6.5 | P: hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.6 | P: na hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | T: (none)
+an10.95:6.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: (none)
+an10.95:6.9 | P: ‘etampi kho, uttiya, abyākataṁ mayā— | T: (none)
+an10.95:6.10 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:6.11 | S: So what then has been declared by Worthy Gotama?” | T: Now is there anything you have declared?”
+an10.95:7.1 | S: “Uttiya, I teach my disciples from my own insight in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to end the cycle of suffering, and to realize extinguishment.” | T: “Uttiya, having directly known it, I teach the Dhamma to my disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding.”
+an10.95:8.1 | S: “But when the worthy Gotama teaches in this way, is the whole world saved, or half, or a third?” | T: “And, Master Gotama, when having directly known it, you teach the Dhamma to your disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding, will all the cosmos be led (to release), or a half of it, or a third?”
+an10.95:8.2 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One was silent.
+an10.95:9.1 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda:
+an10.95:9.2 | S: “The wanderer Uttiya must not get the harmful misconception: | T: “Don’t let Uttiya the wanderer acquire the evil viewpoint that,
+an10.95:9.3 | S: ‘When the ascetic Gotama was asked this all-important question he falters without answering. He just can’t do it!’ | T: ‘When I asked him an all-encompassing question, Gotama the contemplative faltered and didn’t reply. Perhaps he was unable to.’
+an10.95:9.4 | S: That would be for his lasting harm and suffering.” | T: That would be for his long-term harm & suffering.”
+an10.95:10.1 | S: Then Ānanda said to the wanderer Uttiya, | T: So he said to Uttiya,
+an10.95:10.2 | S: “Well then, Reverend Uttiya, I shall give you a simile. | T: “In that case, my friend, I will give you an analogy,
+
+exec
+/bin/bash -lc "sed -n '343,366p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn42.8:6.18 | P: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi— | T: (none)
+sn42.8:6.19 | P: yo koci musā bhaṇati, sabbo so āpāyiko nerayikoti. | T: (none)
+sn42.8:6.20 | S: or lied.’ | T: There are lies that I have told.
+sn42.8:6.21 | S: They get the view: ‘I too am going to a place of loss, to hell.’ | T: I, too, am destined for a plane of deprivation, am destined for hell.’ He fastens onto that view.
+sn42.8:6.22 | S: Unless they give up that speech and that thought, and let go of that view, they will be placed in hell as if delivered there. | T: If he doesn’t abandon that doctrine, doesn’t abandon that state of mind, doesn’t relinquish that view, then as if he were to be carried off, he would thus be placed in hell.
+sn42.8:7.1 | S: But consider when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: “There is the case, headman, where a Tathāgata appears in the world, worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.
+sn42.8:7.2 | S: In many ways he criticizes and denounces killing living creatures, saying: ‘Stop killing living creatures!’ | T: He, in various ways, criticizes & censures the taking of life, and says, ‘Abstain from taking life.’
+sn42.8:7.3 | S: He criticizes and denounces stealing … | T: He criticizes & censures stealing, and says, ‘Abstain from stealing.’
+sn42.8:7.4 | S: sexual misconduct … | T: He criticizes & censures indulging in illicit sex, and says, ‘Abstain from indulging in illicit sex.’
+sn42.8:7.5 | S: lying, saying: ‘Stop lying!’ | T: He criticizes & censures the telling of lies, and says, ‘Abstain from the telling of lies.’
+sn42.8:7.6 | S: And there’s a disciple who is devoted to that teacher. | T: “A disciple has faith in that teacher and reflects:
+sn42.8:7.7 | S: Then they reflect: | T: (none)
+sn42.8:7.8 | S: ‘In many ways the Buddha criticizes and denounces killing living creatures, saying: “Stop killing living creatures!” | T: ‘The Blessed One in a variety of ways criticizes & censures the taking of life, and says, “Abstain from taking life.”
+sn42.8:7.9 | S: But I have killed living creatures to a certain extent. | T: There are living beings that I have killed, to a greater or lesser extent.
+sn42.8:7.10 | S: That’s not right, it’s not good, | T: That was not right. That was not good.
+sn42.8:7.11 | S: and I feel remorseful because of it. | T: But if I become remorseful for that reason,
+sn42.8:7.12 | S: But I can’t undo what I have done.’ | T: that evil deed of mine will not be undone.’
+sn42.8:7.13 | S: Reflecting like this, they give up killing living creatures, | T: So, reflecting thus, he abandons right then the taking of life,
+sn42.8:7.14 | S: and in future they don’t kill living creatures. | T: and in the future refrains from taking life.
+sn42.8:7.15 | S: That’s how to give up this bad deed | T: This is how there comes to be the abandoning of that evil deed.
+sn42.8:7.16 | S: and get past it. | T: This is how there comes to be the transcending of that evil deed.
+sn42.8:8.1 | S: ‘In many ways the Buddha criticizes and denounces stealing …’ | T: “(He reflects:) ‘The Blessed One in a variety of ways criticizes & censures stealing…
+sn42.8:8.2 | P: Atthi kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā. | T: (none)
+sn42.8:8.3 | P: Yaṁ kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā taṁ na suṭṭhu, taṁ na sādhu. | T: (none)
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-047.findings.tmp <<'EOF'
+snp3.3:1.2 starts: on one occasion the Blessed One was
+an10.95:5.1 starts: On being asked, ‘Is it the case
+an10.95:6.1 starts: “The cosmos is finite … ” …
+an10.95:6.2 starts: “The cosmos is infinite … ” …
+an10.95:6.3 starts: “The soul & the body are the
+an10.95:6.4 starts: “The soul is one thing and the
+an10.95:6.5 starts: “After death a Tathāgata exists … ”
+an10.95:6.6 starts: “After death a Tathāgata does not exist
+an10.95:6.7 starts: “After death a Tathāgata both does &
+an10.95:6.8 starts: “After death a Tathāgata neither does nor
+an10.95:6.9 starts: you inform me, ‘Uttiya, I haven’t declared
+an10.95:6.10 starts: “After death a Tathāgata neither does nor
+sn42.8:6.9 starts: “(The thought occurs to him,) ‘Our teacher
+sn42.8:6.10 starts: ‘All those who steal… All those who
+sn42.8:6.11 none
+sn42.8:6.13 none
+sn42.8:6.14 starts: All those who indulge in illicit sex…
+sn42.8:6.15 none
+sn42.8:6.19 starts: All those who tell lies are destined
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+19 lines reported.
+tokens used
+33,783
+19 lines reported.

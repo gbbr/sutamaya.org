@@ -1,0 +1,474 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9c-b60e-75b0-86d0-70ad4135c5bc
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear placement errors.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## thig2.3
+thig2.3:1.1 | S: I’m well freed, well freed, | T: So freed! So freed!
+thig2.3:1.2 | S: so very well freed from the pestle! | T: So thoroughly freed am I— from my pestle,
+thig2.3:1.3 | S: My shameless husband was most certainly a mushroom, | T: my shameless husband & his sun-shade making,
+thig2.3:1.4 | S: my mortar wafted like an eel. | T: my moldy old pot with its water-snake smell.
+thig2.3:2.1 | S: Greed and hate sizzle and hiss | T: Aversion & passion
+thig2.3:2.2 | S: as I squelch them. | T: I cut with a chop.
+thig2.3:2.3 | S: Having gone to the root of a tree, | T: Having come to the foot of a tree,
+thig2.3:2.4 | S: I meditate happily, thinking, “Oh, what bliss!” | T: I do jhāna, from the bliss thinking: “What bliss!”
+thig2.3:3.1 | P: … Sumaṅgalamātā therī …. | T: (none)
+
+## thig3.4
+thig3.4:1.1 | S: Leaving my day’s meditation | T: Coming out from my day’s abiding
+thig3.4:1.2 | S: on Vulture’s Peak Mountain, | T: on Vulture Peak Mountain,
+thig3.4:1.3 | S: I saw an elephant on the riverbank | T: I saw on the bank of the river an elephant
+thig3.4:1.4 | S: having just come up from his bath. | T: emerged from its plunge.
+thig3.4:2.1 | S: A man, taking a pole with a hook, | T: A man holding a hook
+thig3.4:2.2 | S: asked the elephant, “Give me your foot.” | T: requested: “Give me your foot.”
+thig3.4:2.3 | S: The elephant presented his foot, | T: The elephant extended its foot.
+thig3.4:2.4 | S: and the man mounted him. | T: The man got up on the elephant.
+thig3.4:3.1 | S: Seeing a wild beast so tamed, | T: Seeing what was untrained now tamed
+thig3.4:3.2 | S: submitting to human control, | T: brought under human control,
+thig3.4:3.3 | S: my mind became serene: | T: with that I centered my mind—
+thig3.4:3.4 | S: <em>that</em> is why I’ve gone to the forest! | T: why I’d gone to the woods in the first place.
+thig3.4:4.1 | P: … Dantikā therī …. | T: (none)
+
+## thig5.2
+thig5.2:1.1 | S: Intoxicated by my appearance, | T: Intoxicated with my complexion
+thig5.2:1.2 | S: my figure, my beauty, my fame, | T: figure, beauty, & fame;
+thig5.2:1.3 | S: and owing to my youth, | T: haughty with youth,
+thig5.2:1.4 | S: I looked down on others. | T: I despised other women.
+thig5.2:2.1 | S: I adorned this body | T: Adorning this body
+thig5.2:2.2 | S: all pretty, lamented by fools, | T: embellished to delude foolish men,
+thig5.2:2.3 | S: and stood at the brothel door, | T: I stood at the door to the brothel:
+thig5.2:2.4 | S: like a hunter setting a snare. | T: a hunter with snare laid out.
+thig5.2:3.1 | S: I stripped for them, | T: I showed off my ornaments,
+thig5.2:3.2 | S: revealing my many hidden treasures. | T: and revealed many a private part.
+thig5.2:3.3 | S: Creating an intricate illusion, | T: I worked my manifold magic,
+thig5.2:3.4 | S: I laughed, teasing those men. | T: laughing out loud at the crowd.
+thig5.2:4.1 | S: Today, having wandered for alms, | T: Today,
+thig5.2:4.2 | S: my head shaven, wearing the outer robe, | T: wrapped in a double cloak, my head shaven, having wandered for alms,
+thig5.2:4.3 | S: I sat at the root of a tree to meditate; | T: I sit at the foot of a tree
+thig5.2:4.4 | S: I’ve gained freedom from thought. | T: and attain the state of no-thought.
+thig5.2:5.1 | S: All yokes are severed, | T: All ties—
+thig5.2:5.2 | S: both human and heavenly. | T: human & divine—have been cut.
+thig5.2:5.3 | S: Having wiped out all defilements, | T: Having cast off all effluents,
+thig5.2:5.4 | S: I have become cooled and quenched. | T: cooled am I. Unbound.
+thig5.2:6.1 | P: … Vimalā purāṇagaṇikā therī …. | T: (none)
+
+## thig5.4
+thig5.4:1.1 | S: “Nandā, see this bag of bones as | T: “Sick, putrid, unclean:
+thig5.4:1.2 | S: diseased, filthy, and rotten. | T: look, Nandā, at this physical heap.
+thig5.4:1.3 | S: With mind unified and serene, | T: Through contemplation of the foul, develop your mind,
+thig5.4:1.4 | S: meditate on the ugly aspects of the body: | T: make it one, well-centered.
+thig5.4:2.1 | S: as this is, so is that, | T: As this [your body], so that.
+thig5.4:2.2 | S: as that is, so is this. | T: As that, so this.
+thig5.4:2.3 | S: A foul stink wafts from it, | T: It gives off a foul stench,
+thig5.4:2.4 | S: it is the fools’ delight.” | T: the delight of fools.”
+thig5.4:3.1 | S: Reflecting in such a way, | T: Considering it thus,
+thig5.4:3.2 | S: tireless all day and night, | T: untiring, both day & night,
+thig5.4:3.3 | S: having broken through | T: I, with my own discernment
+thig5.4:3.4 | S: with my own wisdom, I saw. | T: dissecting it, saw.
+thig5.4:4.1 | S: Being diligent, | T: And as I, heedful,
+thig5.4:4.2 | S: rationally investigating, | T: examined it aptly,
+thig5.4:4.3 | S: I truly saw this body | T: this body—as it actually is— was seen
+thig5.4:4.4 | S: both inside and out. | T: inside & out.
+thig5.4:5.1 | S: Then, growing disillusioned with the body, | T: Then was I disenchanted with the body
+thig5.4:5.2 | S: I became dispassionate within. | T: & dispassionate within:
+thig5.4:5.3 | S: Diligent, detached, | T: Heedful, detached,
+thig5.4:5.4 | S: I’m quenched and at peace. | T: calmed was I. Unbound.
+thig5.4:6.1 | P: … Sundarīnandā therī …. | T: (none)
+
+## thig6.6
+thig6.6:1.1 | S: Oh Buddha, my hero: homage to you! | T: Awakened! Hero! Homage to you,
+thig6.6:1.2 | S: Supreme among all beings, | T: highest of all beings—
+thig6.6:1.3 | S: who released me from suffering, | T: you who’ve released me
+thig6.6:1.4 | S: and many other beings as well. | T: and many other people from suffering!
+thig6.6:2.1 | S: All suffering is fully understood; | T: I’ve comprehended all stress,
+thig6.6:2.2 | S: craving—its cause—is dried up; | T: dried up craving, the cause,
+thig6.6:2.3 | S: the eightfold path has been developed; | T: developed the eightfold path,
+thig6.6:2.4 | S: and cessation has been realized by me. | T: and touched cessation.
+thig6.6:3.1 | S: Previously I was a mother, a son, | T: Before I was mother, son,
+thig6.6:3.2 | S: a father, a brother, and a grandmother. | T: father, brother, grandmother.
+thig6.6:3.3 | S: Failing to grasp the true nature of things, | T: Not knowing things as they were,
+thig6.6:3.4 | S: I transmigrated without reward. | T: I wandered on without respite.
+thig6.6:4.1 | S: Since I have seen the Blessed One, | T: But now that I’ve seen the Blessed One,
+thig6.6:4.2 | S: this bag of bones is my last. | T: this is my last body-heap.
+thig6.6:4.3 | S: Transmigration through births is finished, | T: Birth & wandering-on are totally ended.
+thig6.6:4.4 | S: now there’ll be no more future lives. | T: There is now no further becoming.
+thig6.6:5.1 | S: I see the disciples in harmony, | T: I see the disciples gathered,
+thig6.6:5.2 | S: energetic and resolute, | T: their persistence aroused, resolute,
+thig6.6:5.3 | S: always staunchly vigorous— | T: constant in strong exertion:
+thig6.6:5.4 | S: this is homage to the Buddhas! | T: This is the worship of the Buddhas.
+thig6.6:6.1 | S: It was truly for the benefit of many | T: Truly for the benefit of the many
+thig6.6:6.2 | S: that Māyā gave birth to Gotama. | T: did Māyā give birth to Gotama,
+thig6.6:6.3 | S: He swept away the mass of suffering | T: thrusting away the mass of pain
+thig6.6:6.4 | S: for those stricken by sickness and death. | T: of those mired in illness & death.
+thig6.6:7.1 | P: … Mahāpajāpatigotamī therī …. | T: (none)
+
+## thig6.8
+thig6.8:1.1 | S: Four or five times | T: Four times, five,
+thig6.8:1.2 | S: I left my dwelling; | T: I ran amok from my dwelling,
+thig6.8:1.3 | S: I had failed to find peace of heart, | T: having gained no peace of awareness,
+thig6.8:1.4 | S: or any control over my mind. | T: my thoughts out of control.
+thig6.8:2.1 | S: I approached a nun | T: So, approaching a nun,
+thig6.8:2.2 | S: and politely questioned her. | T: I cross-questioned her attentively.
+thig6.8:2.3 | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig6.8:2.4 | S: the elements and sense fields, | T: aggregates, sense media, properties,
+thig6.8:3.1 | S: the four noble truths, | T: four noble truths,
+thig6.8:3.2 | S: the faculties and the powers, | T: five faculties,
+thig6.8:3.3 | S: the awakening factors, and the eightfold path | T: seven factors for awakening, the eightfold path
+thig6.8:3.4 | S: for the attainment of the highest goal. | T: for attaining the highest goal.
+thig6.8:4.1 | S: After hearing her words, | T: Hearing her words,
+thig6.8:4.2 | S: I did her bidding. | T: I did her bidding.
+thig6.8:4.3 | S: In the first watch of the night, | T: In the first watch of the night,
+thig6.8:4.4 | S: I recollected my past lives. | T: I remembered past lives.
+thig6.8:5.1 | S: In the middle watch of the night, | T: In the second watch of the night,
+thig6.8:5.2 | S: I purified my clairvoyance. | T: I purified the divine eye.
+thig6.8:5.3 | S: In the last watch of the night, | T: In the third watch of the night,
+thig6.8:5.4 | S: I shattered the mass of darkness. | T: I burst the mass of darkness.
+thig6.8:6.1 | S: I then meditated pervading my body | T: Then I stayed, suffusing my body
+thig6.8:6.2 | S: with rapture and bliss. | T: with rapture & pleasure.
+thig6.8:6.3 | S: On the seventh day I stretched out my feet, | T: On the seventh day, I stretched out my legs,
+thig6.8:6.4 | S: having shattered the mass of darkness. | T: having burst the mass of darkness.
+thig6.8:7.1 | P: … Vijayā therī …. | T: (none)
+thig6.8:8.1 | P: Chakkanipāto niṭṭhito. | T: (none)
+
+## ud1.1
+ud1.1:1.1 | S: So I have heard. | T: I have heard that
+ud1.1:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the tree of awakening on the bank of the Nerañjarā River. | T: on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Bodhi tree–the tree of awakening–newly awakened.
+ud1.1:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat at the root of the Bodhi tree for seven days in one session, sensitive to the bliss of release.
+ud1.1:1.4 | S: When seven days had passed, the Buddha emerged from that state of immersion. In the first part of the night, he carefully applied the mind to dependent origination, going with the grain: | T: Then, with the passing of seven days, after emerging from that concentration, in the first watch of the night, he gave close attention to dependent co-arising in forward order, thus:
+ud1.1:2.1 | S: “So, when this exists, this comes to be; due to the arising of this, this arises. That is: | T: When this is, that is. From the arising of this comes the arising of that. In other words:
+ud1.1:2.2 | S: Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+ud1.1:2.3 | S: Choices are a requirement for consciousness. | T: From fabrications as a requisite condition comes consciousness.
+ud1.1:2.4 | S: Consciousness is a requirement for name and form. | T: From consciousness as a requisite condition comes name-&-form.
+ud1.1:2.5 | S: Name and form are requirements for the six sense fields. | T: From name-&-form as a requisite condition come the six sense media.
+ud1.1:2.6 | S: The six sense fields are requirements for contact. | T: From the six sense media as a requisite condition comes contact.
+ud1.1:2.7 | S: Contact is a requirement for feeling. | T: From contact as a requisite condition comes feeling.
+ud1.1:2.8 | S: Feeling is a requirement for craving. | T: From feeling as a requisite condition comes craving.
+ud1.1:2.9 | S: Craving is a requirement for grasping. | T: From craving as a requisite condition comes clinging/sustenance.
+ud1.1:2.10 | S: Grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+ud1.1:2.11 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+ud1.1:2.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, and despair come into play.
+ud1.1:2.13 | S: That is how this entire mass of suffering originates.” | T: Such is the origination of this entire mass of suffering & stress.
+ud1.1:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.1:4.1 | S: “When things become clear | T: As phenomena grow clear
+ud1.1:4.2 | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.1:4.3 | S: his doubts are dispelled, | T: his doubts all vanish
+ud1.1:4.4 | S: since he understands each thing and its cause.” | T: when he discerns a phenomenon with its cause.
+ud1.1:4.5 | P: Paṭhamaṁ. | T: (none)
+
+## ud1.2
+ud1.2:1.1 | S: So I have heard. | T: I have heard that
+ud1.2:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the tree of awakening on the bank of the Nerañjarā River. | T: on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Bodhi tree–the tree of awakening–newly awakened.
+ud1.2:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat at the root of the Bodhi tree for seven days in one session, sensitive to the bliss of release.
+ud1.2:1.4 | S: When seven days had passed, the Buddha emerged from that state of immersion. In the second part of the night, he carefully applied the mind to dependent origination, going against the grain: | T: Then, with the passing of seven days, after emerging from that concentration, in the second watch of the night, he gave close attention to dependent co-arising in reverse order, thus:
+ud1.2:2.1 | S: “So, when this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this isn’t, that isn’t. From the cessation of this comes the cessation of that. In other words:
+ud1.2:2.2 | S: When ignorance ceases, choices cease. | T: From the cessation of ignorance comes the cessation of fabrications.
+ud1.2:2.3 | S: When choices cease, consciousness ceases. | T: From the cessation of fabrications comes the cessation of consciousness.
+ud1.2:2.4 | S: When consciousness ceases, name and form cease. | T: From the cessation of consciousness comes the cessation of name-&-form.
+ud1.2:2.5 | S: When name and form cease, the six sense fields cease. | T: From the cessation of name-&-form comes the cessation of the six sense media.
+ud1.2:2.6 | S: When the six sense fields cease, contact ceases. | T: From the cessation of the six sense media comes the cessation of contact.
+ud1.2:2.7 | S: When contact ceases, feeling ceases. | T: From the cessation of contact comes the cessation of feeling.
+ud1.2:2.8 | S: When feeling ceases, craving ceases. | T: From the cessation of feeling comes the cessation of craving.
+ud1.2:2.9 | S: When craving ceases, grasping ceases. | T: From the cessation of craving comes the cessation of clinging/sustenance.
+ud1.2:2.10 | S: When grasping ceases, continued existence ceases. | T: From the cessation of clinging/sustenance comes the cessation of becoming.
+ud1.2:2.11 | S: When continued existence ceases, rebirth ceases. | T: From the cessation of becoming comes the cessation of birth.
+ud1.2:2.12 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: From the cessation of birth, then aging-&-death, sorrow, lamentation, pain, distress, and despair all cease.
+ud1.2:2.13 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of suffering & stress.
+ud1.2:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.2:4.1 | S: “When things become clear | T: As phenomena grow clear
+ud1.2:4.2 | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.2:4.3 | S: his doubts are dispelled, | T: his doubts all vanish
+ud1.2:4.4 | S: since he’s known the end of conditions.” | T: when he penetrates the ending of requisite conditions.
+ud1.2:4.5 | P: Dutiyaṁ. | T: (none)
+
+## ud1.3
+ud1.3:1.1 | S: So I have heard. | T: I have heard that
+ud1.3:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the tree of awakening on the bank of the Nerañjarā River. | T: on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Bodhi tree–the tree of awakening–newly awakened.
+ud1.3:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat at the root of the Bodhi tree for seven days in one session, sensitive to the bliss of release.
+ud1.3:1.4 | S: When seven days had passed, the Buddha emerged from that state of immersion. In the last watch, he carefully applied the mind to dependent origination, going both with and against the grain: | T: Then, with the passing of seven days, after emerging from that concentration, in the third watch of the night, he gave close attention to dependent co-arising in forward and reverse order, thus:
+ud1.3:2.1 | S: “So, when this exists, this comes to be; due to the arising of this, this arises. | T: When this is, that is. From the arising of this comes the arising of that.
+ud1.3:2.2 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this isn’t, that isn’t. From the cessation of this comes the cessation of that. In other words:
+ud1.3:2.3 | S: Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+ud1.3:2.4 | S: Choices are a requirement for consciousness. | T: From fabrications as a requisite condition comes consciousness.
+ud1.3:2.5 | S: Consciousness is a requirement for name and form. | T: From consciousness as a requisite condition comes name-&-form.
+ud1.3:2.6 | S: Name and form are requirements for the six sense fields. | T: From name-&-form as a requisite condition come the six sense media.
+ud1.3:2.7 | S: The six sense fields are requirements for contact. | T: From the six sense media as a requisite condition comes contact.
+ud1.3:2.8 | S: Contact is a requirement for feeling. | T: From contact as a requisite condition comes feeling.
+ud1.3:2.9 | S: Feeling is a requirement for craving. | T: From feeling as a requisite condition comes craving.
+ud1.3:2.10 | S: Craving is a requirement for grasping. | T: From craving as a requisite condition comes clinging/sustenance.
+ud1.3:2.11 | S: Grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+ud1.3:2.12 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+ud1.3:2.13 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, and despair come into play.
+ud1.3:2.14 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of suffering & stress.
+ud1.3:3.1 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: Now from the remainderless fading and cessation of that very ignorance comes the cessation of fabrications.
+ud1.3:3.2 | S: When choices cease, consciousness ceases. | T: From the cessation of fabrications comes the cessation of consciousness.
+ud1.3:3.3 | S: When consciousness ceases, name and form cease. | T: From the cessation of consciousness comes the cessation of name-&-form.
+ud1.3:3.4 | S: When name and form cease, the six sense fields cease. | T: From the cessation of name-&-form comes the cessation of the six sense media.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+ud1.3:3.5 | S: When the six sense fields cease, contact ceases. | T: From the cessation of the six sense media comes the cessation of contact.
+ud1.3:3.6 | S: When contact ceases, feeling ceases. | T: From the cessation of contact comes the cessation of feeling.
+ud1.3:3.7 | S: When feeling ceases, craving ceases. | T: From the cessation of feeling comes the cessation of craving.
+ud1.3:3.8 | S: When craving ceases, grasping ceases. | T: From the cessation of craving comes the cessation of clinging/ sustenance.
+ud1.3:3.9 | S: When grasping ceases, continued existence ceases. | T: From the cessation of clinging/sustenance comes the cessation of becoming.
+ud1.3:3.10 | S: When continued existence ceases, rebirth ceases. | T: From the cessation of becoming comes the cessation of birth.
+ud1.3:3.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: From the cessation of birth, then aging-&-death, sorrow, lamentation, pain, distress, and despair all cease.
+ud1.3:3.12 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of suffering & stress.
+ud1.3:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.3:5.1 | S: “When things become clear | T: As phenomena grow clear
+ud1.3:5.2 | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.3:5.3 | S: he remains, scattering Māra’s army, | T: he stands, routing Māra’s army,
+ud1.3:5.4 | S: as the sun lights up the sky.” | T: as the sun, illumining the sky.
+ud1.3:5.5 | P: Tatiyaṁ. | T: (none)
+
+## ud1.4
+ud1.4:1.1 | S: So I have heard. | T: I have heard that
+ud1.4:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Bodhi tree–the tree of awakening–newly awakened.
+ud1.4:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat at the root of the Bodhi tree for seven days in one session, sensitive to the bliss of release.
+ud1.4:1.4 | S: When seven days had passed, the Buddha emerged from that state of immersion. | T: At the end of seven days, he emerged from that concentration.
+ud1.4:2.1 | S: Then a certain brahmin, one of those who murmured the mystic syllable <i lang='pi' translate='no'>huṁ</i>, <i lang='pi' translate='no'>huṁ</i>, went up to the Buddha and exchanged greetings with him. | T: Then a certain overbearing brahman went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+ud1.4:2.2 | S: When the greetings and polite conversation were over, he stood to one side and said, | T: After an exchange of friendly greetings & courtesies, he stood to one side. As he was standing there, he said to the Blessed One,
+ud1.4:2.3 | S: “Worthy Gotama, how do you define a brahmin? And what are the things that make one a brahmin?” | T: “To what extent, Master Gotama, is one a brahman? And which are the qualities that make one a brahman?”
+ud1.4:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.4:4.1 | S: “Any brahmin who has banished bad qualities— | T: Any brahman who has banished evil qualities,
+ud1.4:4.2 | S: not murmuring the mystic syllable <i lang='pi' translate='no'>huṁ</i>, <j>unstained, self-controlled, | T: –not overbearing, not stained, his mind controlled–
+ud1.4:4.3 | S: a complete knowledge master <j>who has completed the spiritual journey— | T: gone to the end of wisdom, the holy life completed:
+ud1.4:4.4 | S: they may legitimately proclaim the divine doctrine; | T: Rightly would that brahman speak the holy teaching.
+ud1.4:4.5 | S: who have no pretensions about anything in the world.” | T: He has no swelling of pride anywhere in the world.
+ud1.4:4.6 | P: Catutthaṁ. | T: (none)
+
+## ud1.5
+ud1.5:1.1 | S: So I have heard. | T: I have heard that
+ud1.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud1.5:1.3 | S: Now at that time a number of senior monks approached the Buddha—the venerables Sāriputta, Mahāmoggallāna, Mahākassapa, Mahākaccāna, Mahākoṭṭhita, Mahākappina, Mahācunda, Anuruddha, Revata, and Nanda. | T: And on that occasion Ven. Sāriputta, Ven. Mahā Moggalāna, Ven. Mahā Kassapa, Ven. Mahā Kaccāna, Ven. Mahā Koṭṭhita, Ven. Mahā Kappina, Ven. Mahā Cunda, Ven. Anuruddha, Ven. Revata, and Ven. Nanda went to the Blessed One.
+ud1.5:2.1 | S: The Buddha saw them coming off in the distance, | T: The Blessed One saw them coming from afar and,
+ud1.5:2.2 | S: and addressed the mendicants: | T: on seeing them, addressed the monks,
+ud1.5:2.3 | S: “These, mendicants, are brahmins coming! | T: “Monks, those are brahmans who are coming.
+ud1.5:2.4 | S: These are brahmins coming!” | T: Monks, those are brahmans who are coming.”
+ud1.5:2.5 | S: When he said this, a certain mendicant who was brahmin by birth asked the Buddha, | T: When this was said, a certain monk who was a brahman by birth said to the Blessed One,
+ud1.5:2.6 | S: “Sir, how do you define a brahmin? And what are the things that make one a brahmin?” | T: “To what extent, lord, is one a brahman? And which are the qualities that make one a brahman?”
+ud1.5:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.5:4.1 | S: “Having banished bad qualities, | T: Having banished evil qualities,
+ud1.5:4.2 | S: those who live always mindful, | T: those who go about ever mindful,
+ud1.5:4.3 | S: with fetters ended, awakened, | T: awakened, their fetters ended:
+ud1.5:4.4 | S: they are the world’s true brahmins.” | T: They, in the world, are truly brahmans.
+ud1.5:4.5 | P: Pañcamaṁ. | T: (none)
+
+## ud1.7
+ud1.7:1.1 | S: So I have heard. | T: I have heard that
+ud1.7:1.2 | S: At one time the Buddha was staying in Pāvā at the Ajakalāpaka Shrine, the haunt of the native spirit Ajakalāpaka. | T: on one occasion the Blessed One was staying near Pāva at the Ajakalāpaka [Herd-of-Goats] shrine, the dwelling of the Ajakalāpaka spirit.
+ud1.7:1.3 | S: Now at that time the Buddha was meditating in the open during the dark of night, while a gentle rain drizzled down. | T: And on that occasion, in the pitch-black darkness of the night, the Blessed One was sitting in the open air, and the rain was falling in scattered drops.
+ud1.7:1.4 | S: Then Ajakalāpaka, wanting to make the Buddha feel fear, terror, and goosebumps, approached him, and while not far away yelled three times, “Havoc and heck!” Then he added, | T: Then the Ajakalāpaka spirit–wanting to cause fear, terror, & horripilation in the Blessed One–went to him and, on arrival, not far from him, three times made a commotion & pandemonium: “Commotion & pandemonium! Commotion & pandemonium! Commotion & pandemonium!–
+ud1.7:1.5 | S: “Now that’s a goblin for you, ascetic!” | T: That’s a goblin for you, contemplative!”
+ud1.7:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.7:3.1 | S: “When a brahmin gets over | T: When, with regard to his own qualities, a brahman is one
+ud1.7:3.2 | S: their own issues, | T: who has gone beyond,
+ud1.7:3.3 | S: they transcend this goblin | T: he transcends this goblin
+ud1.7:3.4 | S: and his havoc.” | T: and his pandemonium.
+ud1.7:3.5 | P: Sattamaṁ. | T: (none)
+
+## ud1.9
+ud1.9:1.1 | S: So I have heard. | T: I have heard that
+ud1.9:1.2 | S: At one time the Buddha was staying near Gayā on Gayā Head. | T: on one occasion the Blessed One was staying near Gayā at Gayā Head.
+ud1.9:1.3 | S: Now at that time—during the cold spell when the snow falls in the January winter—many matted hair ascetics plunged in and out of the Gayā river. Plunging and showering, they served the sacred flame, thinking: | T: And on that occasion, many ascetics–on the cold winter nights of the “Between-the-Eights,” when the snow was falling in Gayā–jumped up in the water, jumped down in the water, did a jumping-up-&-down in the water, poured (water over themselves), and performed the fire sacrifice, (thinking,)
+ud1.9:1.4 | S: “Through this there is purity.” | T: “Through this there is purity.”
+ud1.9:2.1 | S: The Buddha saw them plunging in and out. | T: The Blessed One saw those many ascetics–on the cold winter nights of the “Between-the-Eights,” when the snow was falling in Gayā–jumping up in the water, jumping down in the water, doing a jumping-up-&-down in the water, pouring (water over themselves), and performing the fire sacrifice,
+ud1.9:2.2 | P: “iminā suddhī”ti. | T: (thinking,) “Through this there is purity.”
+ud1.9:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.9:4.1 | S: “Purity doesn’t come from water, | T: Not by water is one clean,
+ud1.9:4.2 | S: no matter how many people bathe there. | T: though many people are bathing here.
+ud1.9:4.3 | S: One who has truth and principle, | T: Whoever has truth & rectitude:
+ud1.9:4.4 | S: they are pure, they are brahmins.” | T: He’s a clean one; he, a brahman.
+ud1.9:4.5 | P: Navamaṁ. | T: (none)
+
+## ud2.10
+ud2.10:1.1 | S: So I have heard. | T: I have heard that
+ud2.10:1.2 | S: At one time the Buddha was staying near Anupiya in a mango grove. | T: on one occasion the Blessed One was staying near Anupiyā in the Mango Grove.
+ud2.10:1.3 | S: Now at that time, Venerable Bhaddiya son of Kāḷīgodhā, even in the wilderness, at the foot of a tree, or in an empty dwelling, frequently expressed this heartfelt sentiment: | T: And on that occasion, Ven. Bhaddiya, Kāḷigodhā’s son, on going to the wilderness, to the root of a tree, or to an empty dwelling, would repeatedly exclaim,
+ud2.10:1.4 | S: “Oh, what bliss! Oh, what bliss!” | T: “What bliss! What bliss!”
+ud2.10:2.1 | S: Several mendicants heard him | T: A large number of monks heard Ven. Bhaddiya, Kāḷigodhā’s son, on going to the wilderness, to the root of a tree, or to an empty dwelling, repeatedly exclaim,
+ud2.10:2.2 | P: “aho sukhaṁ, aho sukhan”ti. | T: “What bliss! What bliss!” and on hearing him,
+ud2.10:2.3 | S: and thought, | T: the thought occurred to them,
+ud2.10:2.4 | S: “Without a doubt, Venerable Bhaddiya leads the spiritual life dissatisfied. | T: “There’s no doubt but that Ven. Bhaddiya, Kāḷigodhā’s son, doesn’t enjoy leading the holy life,
+ud2.10:2.5 | S: It’s when recalling the pleasures of royalty he formerly enjoyed as a layperson that, even in the wilderness, at the foot of a tree, or in an empty dwelling, he frequently expresses this heartfelt sentiment: | T: for when he was a householder he knew the bliss of kingship, so that now, on recollecting that when going to the wilderness, to the root of a tree, or to an empty dwelling, he is repeatedly exclaiming,
+ud2.10:2.6 | S: ‘Oh, what bliss! Oh, what bliss!’” | T: ‘What bliss! What bliss!’”
+ud2.10:3.1 | S: Then those mendicants went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: So they went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they told him,
+ud2.10:3.2 | P: “āyasmā, bhante, bhaddiyo kāḷīgodhāya putto araññagatopi rukkhamūlagatopi suññāgāragatopi abhikkhaṇaṁ udānaṁ udānesi: | T: “Ven. Bhaddiya, Kāḷigodhā’s son, lord, on going to the wilderness, to the root of a tree, or to an empty dwelling, repeatedly exclaims,
+ud2.10:3.3 | P: ‘aho sukhaṁ, aho sukhan’ti. | T: ‘What bliss! What bliss!’
+ud2.10:3.4 | P: Nissaṁsayaṁ kho, bhante, āyasmā bhaddiyo kāḷīgodhāya putto anabhirato brahmacariyaṁ carati. | T: There’s no doubt but that Ven. Bhaddiya doesn’t enjoy leading the holy life,
+ud2.10:3.5 | P: Yaṁsa pubbe agāriyabhūtassa rajjasukhaṁ, so tamanussaramāno araññagatopi rukkhamūlagatopi suññāgāragatopi abhikkhaṇaṁ udānaṁ udānesi: | T: for when he was a householder he knew the bliss of kingship, so that now, on recollecting that when going to the wilderness, to the root of a tree, or to an empty dwelling, he is repeatedly exclaiming,
+ud2.10:3.6 | P: ‘aho sukhaṁ, aho sukhan’”ti. | T: ‘What bliss! What bliss!’”
+ud2.10:4.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One told a certain monk,
+ud2.10:4.2 | S: “Please, monk, in my name tell the mendicant Bhaddiya that | T: “Come, monk. In my name, call Bhaddiya, saying,
+ud2.10:4.3 | S: the Teacher summons him.” | T: ‘The Teacher calls you, friend Bhaddiya.’”
+ud2.10:5.1 | S: “Yes, sir,” that monk replied. He went to Bhaddiya and said to him, | T: Responding, “As you say, lord,” to the Blessed One, the monk went to Ven. Bhaddiya, Kāḷigodhā’s son, and on arrival he said to him,
+ud2.10:5.2 | S: “Reverend Bhaddiya, the Teacher summons you.” | T: “The Teacher calls you, friend Bhaddiya.”
+ud2.10:5.3 | S: “Yes, reverend,” Bhaddiya replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Responding, “As you say, my friend,” to the monk, Ven. Bhaddiya, Kāḷigodhā’s son, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him,
+ud2.10:6.1 | S: “Is it really true, Bhaddiya, that even in the wilderness, at the foot of a tree, or in an empty dwelling, you frequently express this heartfelt sentiment: | T: “Is it true, Bhaddiya that–on going to the wilderness, to the root of a tree, or to an empty dwelling–you repeatedly exclaim,
+ud2.10:6.2 | S: ‘Oh, what bliss! Oh, what bliss!’?” | T: ‘What bliss! What bliss!’?”
+ud2.10:6.3 | S: “Yes, sir.” | T: “Yes, lord.”
+ud2.10:7.1 | S: “But why do you say this?” | T: “What compelling reason do you have in mind that–when going to the wilderness, to the root of a tree, or to an empty dwelling–you repeatedly exclaim,
+ud2.10:7.2 | P: ‘aho sukhaṁ, aho sukhan’”ti. | T: ‘What bliss! What bliss!’?”
+ud2.10:7.3 | S: “Formerly, as a layperson ruling the land, my guard was well organized within and without the royal compound, within and without the city, and within and without the country. | T: “Before, when I has a householder, maintaining the bliss of kingship, lord, I had guards posted within and without the royal apartments, within and without the city, within and without the countryside.
+ud2.10:7.4 | S: But although I was guarded and defended in this way, I remained fearful, scared, suspicious, and nervous. | T: But even though I was thus guarded, thus protected, I dwelled in fear–agitated, distrustful, & afraid.
+ud2.10:7.5 | S: But these days, even when alone in the wilderness, at the foot of a tree, or in an empty dwelling, I’m not fearful, scared, suspicious, or nervous. I live relaxed, unruffled, surviving on charity, my heart free as a wild deer. | T: But now, on going alone to the wilderness, to the root of a tree, or to an empty dwelling, I dwell without fear, unagitated, confident, & unafraid–unconcerned, unruffled, living on the gifts of others, with my mind like a wild deer.
+ud2.10:7.6 | S: It is for this reason that, even in the wilderness, at the foot of a tree, or in an empty dwelling, I frequently expressed this heartfelt sentiment: | T: This is the compelling reason I have in mind that–when going to the wilderness, to the root of a tree, or to an empty dwelling–I repeatedly exclaim,
+ud2.10:7.7 | S: ‘Oh, what bliss! Oh, what bliss!’” | T: ‘What bliss! What bliss!’”
+ud2.10:8.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.10:9.1 | S: “They who hide no anger within, | T: From whose heart there is no provocation,
+ud2.10:9.2 | S: passed beyond any kind of existence; | T: & for whom becoming & non-becoming are overcome,
+ud2.10:9.3 | S: happy, free from fear and sorrow— | T: he– beyond fear, blissful, with no grief–
+ud2.10:9.4 | S: even the gods can’t see them.” | T: is one the devas can’t see.
+ud2.10:9.5 | P: Dasamaṁ. | T: (none)
+ud2.10:9.6 | P: Mucalindavaggo dutiyo. | T: (none)
+ud2.10:10.0 | P: Tassuddānaṁ | T: (none)
+ud2.10:10.1 | P: Mucalindo rājā daṇḍena, | T: (none)
+ud2.10:10.2 | P: sakkāro upāsakena ca; | T: (none)
+ud2.10:10.3 | P: Gabbhinī ekaputto ca, | T: (none)
+ud2.10:10.4 | P: suppavāsā visākhā ca; | T: (none)
+ud2.10:10.5 | P: Kāḷīgodhāya bhaddiyoti. | T: (none)
+
+## ud2.1
+ud2.1:1.1 | S: So I have heard. | T: I have heard that
+ud2.1:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the Mucalinda tree on the bank of the Nerañjarā River. | T: on one occasion, the Blessed One was staying at Uruvelā on the bank of the Nerañjarā River at the root of the Muccalinda tree, newly awakened.
+ud2.1:1.3 | S: There the Buddha sat cross-legged for seven days without moving, experiencing the bliss of freedom. | T: And on that occasion he sat for seven days in one session, sensitive to the bliss of release.
+ud2.1:2.1 | S: Just then a large storm blew up out of season, bringing seven days of precipitation, with cold winds and overcast skies. | T: And on that occasion a great, out-of-season storm-cloud rose up, with seven days of rainy weather, cold winds, & intense darkness.
+ud2.1:2.2 | S: Mucalinda, the dragon king, came out from his abode, encircled the Buddha’s body with seven coils and spread his large hood over his head, thinking, | T: Then Muccalinda the nāga king–leaving his dwelling place and encircling the Blessed One’s body seven times with his coils–stood with his great hood spread over the Blessed One, (thinking,)
+ud2.1:2.3 | S: “May the Buddha not be hot or cold, nor be bothered by flies, mosquitoes, wind, sun, or reptiles.” | T: “Don’t let the Blessed One be disturbed by cold. Don’t let the Blessed One be disturbed by heat. Don’t let the Blessed One be disturbed by the touch of flies, mosquitoes, wind, sun, & creeping things.”
+ud2.1:3.1 | S: When seven days had passed, the Buddha emerged from that state of immersion. | T: Then, with the passing of seven days, the Blessed One emerged from that concentration.
+ud2.1:3.2 | S: When he knew the heavens were clear and cloudless, Mucalinda unwrapped his coils from the Buddha’s body. Hiding his own form, he manifested in the form of a brahmin youth. He stood in front of the Buddha, venerating him with cupped palms. | T: Muccalinda the nāga king, realizing that the sky had cleared and was free of clouds, unraveled his coils from the body of the Blessed One, dropped his own appearance and, assuming the appearance of a young man, stood in front of the Blessed One with hands before his heart, paying homage.
+ud2.1:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.1:5.1 | S: “Seclusion is happiness for the contented | T: Blissful is solitude for one who’s content,
+ud2.1:5.2 | S: who see the teaching they have learned. | T: who has heard the Dhamma, who sees.
+ud2.1:5.3 | S: Kindness for the world is happiness | T: Blissful is non-affliction with regard for the world,
+ud2.1:5.4 | S: for one who’d not harm a living creature. | T: restraint for living beings.
+ud2.1:6.1 | S: Dispassion for the world is happiness | T: Blissful is dispassion with regard for the world,
+ud2.1:6.2 | S: for one who has gone beyond sensual pleasures. | T: the overcoming of sensuality.
+ud2.1:6.3 | S: But dispelling the conceit ‘I am’ | T: But the subduing of the conceit “I am”–
+ud2.1:6.4 | S: is truly the ultimate happiness.” | T: That is truly the ultimate bliss.
+ud2.1:6.5 | P: Paṭhamaṁ. | T: (none)
+
+## ud2.2
+ud2.2:1.1 | S: So I have heard. | T: I have heard that
+ud2.2:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.2:1.3 | S: Now at that time, after the meal, on return from almsround, several mendicants sat together in the assembly hall and this discussion came up among them: | T: And on that occasion a large number of monks, after the meal, on returning from their alms round, were sitting gathered together in the assembly hall when this discussion arose:
+ud2.2:1.4 | S: “Which of these two kings has greater wealth, riches, treasury, dominion, vehicles, forces, might, and power: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?” | T: “Friends, which of these two kings has greater wealth, greater possessions, the greater treasury, the larger realm, the greater stock of riding animals, the greater army, greater power, greater might: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?”
+ud2.2:1.5 | S: At that point the conversation among those mendicants was left unfinished. | T: And this discussion came to no conclusion.
+ud2.2:2.1 | S: Then in the late afternoon, the Buddha came out of retreat, went to the assembly hall, sat down on the seat spread out, | T: Then the Blessed One, emerging from his seclusion in the late afternoon, went to the assembly hall and, on arrival, sat down on a seat laid out.
+ud2.2:2.2 | S: and addressed the mendicants: | T: Seated, he addressed the monks:
+ud2.2:2.3 | S: “Mendicants, what were you sitting talking about just now? What conversation was left unfinished?” | T: “For what topic are you sitting together here? And what was the discussion that came to no conclusion?”
+ud2.2:3.1 | S: So the mendicants told him what they had been talking about when the Buddha arrived. The Buddha said, | T: “Just now, lord, after the meal, on returning from our alms round, we were sitting gathered here at the assembly hall when this discussion arose:
+ud2.2:3.2 | P: ‘ko nu kho, āvuso, imesaṁ dvinnaṁ rājūnaṁ mahaddhanataro vā mahābhogataro vā mahākosataro vā mahāvijitataro vā mahāvāhanataro vā mahabbalataro vā mahiddhikataro vā mahānubhāvataro vā rājā vā māgadho seniyo bimbisāro, rājā vā pasenadi kosalo’ti? | T: ‘Friends, which of these two kings has greater wealth, greater possessions, the greater treasury, the larger realm, the greater stock of riding animals, the greater army, greater power, greater might: King Seniya Bimbisāra of Magadha or King Pasenadi of Kosala?’
+ud2.2:3.3 | P: Ayaṁ kho no, bhante, antarākathā vippakatā, atha bhagavā anuppatto”ti. | T: This was the discussion that had come to no conclusion when the Blessed One arrived.”
+ud2.2:4.1 | S: “Mendicants, it is not appropriate for you gentlemen who have gone forth out of faith from the lay life to homelessness to talk about such things. | T: “It isn’t proper, monks, that sons of good families, on having gone forth out of faith from home to the homeless life, should talk on such a topic.
+ud2.2:4.2 | S: When you’re sitting together you should do one of two things: | T: When you have gathered you have two duties:
+ud2.2:4.3 | S: discuss the teachings or keep noble silence.” | T: either Dhamma-talk or noble silence.”
+ud2.2:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.2:6.1 | S: “Neither the pleasures of the senses, | T: Any sensual bliss in the world,
+ud2.2:6.2 | S: nor even divine happiness, | T: any heavenly bliss,
+ud2.2:6.3 | S: is worth even a sixteenth part | T: isn’t worth one sixteenth-sixteenth
+ud2.2:6.4 | S: of the happiness of craving’s end.” | T: of the bliss of the ending of craving.
+ud2.2:6.5 | P: Dutiyaṁ. | T: (none)
+
+## ud2.4
+ud2.4:1.1 | S: So I have heard. | T: I have heard that
+ud2.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.4:1.3 | S: Now at that time the Buddha was honored, respected, revered, venerated, and esteemed. And he received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: And on that occasion the Blessed One was worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:1.4 | S: And the mendicant Saṅgha was also honored, respected, revered, venerated, and esteemed. And they received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: The community of monks was also worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:1.5 | S: But the wanderers who followed other religions were not honored, respected, revered, venerated, and esteemed. And they didn’t receive robes, almsfood, lodgings, and medicines and supplies for the sick. | T: But the wanderers of other sects were not worshipped, revered, honored, venerated, or given homage; nor were they recipients of robes, alms food, lodgings, or medicinal requisites for the sick.
+ud2.4:1.6 | S: Then those wanderers who followed other religions, unable to bear the esteem of the mendicant Saṅgha, abused, attacked, harassed, and troubled the mendicants in the village and the wilderness. | T: So the wanderers of other sects, unable to stand the veneration given to the Blessed One and the community of monks, on seeing monks in village or wilderness, would insult, revile, irritate, & harass them with discourteous, abusive language.
+ud2.4:2.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then a large number of monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to him,
+ud2.4:2.2 | P: “etarahi, bhante, bhagavā sakkato garukato mānito pūjito apacito, lābhī cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: “At present the Blessed One is worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:2.3 | P: Bhikkhusaṅghopi sakkato garukato mānito pūjito apacito, lābhī cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: The community of monks is also worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick.
+ud2.4:2.4 | P: Aññatitthiyā pana paribbājakā asakkatā agarukatā amānitā apūjitā anapacitā, na lābhino cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ. | T: But the wanderers of other sects are not worshipped, revered, honored, venerated, or given homage; nor are they recipients of robes, alms food, lodgings, or medicinal requisites for the sick.
+ud2.4:2.5 | P: Atha kho te, bhante, aññatitthiyā paribbājakā bhagavato sakkāraṁ asahamānā bhikkhusaṅghassa ca, gāme ca araññe ca bhikkhū disvā asabbhāhi pharusāhi vācāhi akkosanti paribhāsanti rosenti vihesantī”ti. | T: So the wanderers of other sects, unable to stand the veneration given to the Blessed One and the community of monks, on seeing monks in village or wilderness, insult, revile, irritate, & harass them with discourteous, abusive language.”
+ud2.4:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.4:4.1 | S: “When struck by pleasure and pain <j>in the village or wilderness, | T: When in contact with pleasure or pain in village or wilderness,
+ud2.4:4.2 | S: regard it not as self or alien. | T: don’t take it as yours or as others’.
+ud2.4:4.3 | S: Contacts strike because of attachment; | T: Contacts make contact dependent on a sense of acquisition.
+ud2.4:4.4 | S: how would contacts strike one free of attachment?” | T: Where there’s no sense of acquisition, contacts would make contact with what?
+ud2.4:4.5 | P: Catutthaṁ. | T: (none)
+
+## ud2.5
+ud2.5:1.1 | S: So I have heard. | T: I have heard that
+ud2.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.5:1.3 | S: Now at that time a certain lay follower from Icchānaṅgalaka arrived at Sāvatthī on some business. | T: And on that occasion a certain lay follower from Icchānaṅgalaka had arrived in Sāvatthī on some business affairs.
+ud2.5:1.4 | S: Having concluded his business in Sāvatthī he went to the Buddha, bowed, and sat down to one side. | T: Having settled his affairs in Sāvatthī, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud2.5:1.5 | S: The Buddha said this to him: | T: As he was sitting there, the Blessed One said to him,
+ud2.5:1.6 | S: “It’s been a long time, lay follower, since you took the opportunity to come here.” | T: “At long last you have managed to come here.”
+ud2.5:2.1 | S: “For a long time I’ve wanted to come and see the Buddha, but I wasn’t able, being prevented by my many duties and responsibilities.” | T: “For a long time, lord, have I wanted to come see the Blessed One, but being involved in one business affair after another, I have not been able to do so.”
+ud2.5:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.5:4.1 | S: “One who has nothing is happy indeed, | T: How blissful it is, for one who has nothing,
+ud2.5:4.2 | S: a learned person who has appraised the teaching. | T: who has mastered the Dhamma, is learned.
+ud2.5:4.3 | S: See how troubled are those with attachments, | T: See him suffering, one who has something,
+ud2.5:4.4 | S: a person bound tight to people.” | T: a person bound in body with people.
+ud2.5:4.5 | P: Pañcamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the whole file. I’m checking a few verse passages where phrase order differs, to avoid treating wording differences as placement errors.
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-086.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+32,987
+0 lines reported.

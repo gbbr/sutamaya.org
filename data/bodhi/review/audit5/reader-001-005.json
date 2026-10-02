@@ -1,0 +1,547 @@
+{
+  "translator": "bodhi",
+  "round": "audit5",
+  "reader": "bodhi_exceptions",
+  "independent": true,
+  "scope": "Batches 001–005 only, every segment row fully read against appended original Pali. No previous judgments inspected.",
+  "prompt": "data/upstream/review-rounds.md Reading prompt, with parent original-Pali-authority instruction",
+  "batches": [
+    {
+      "batch": "001",
+      "input_sha256": "33d213ed72d727362bf7c47ed7353361d2918f8925f0d950e69a8260a5e65c16",
+      "physical_lines": 508,
+      "rows_read": 488,
+      "per_text_rows": {
+        "sn35.18": 19,
+        "sn22.34": 14,
+        "sn35.131": 25,
+        "sn45.170": 25,
+        "an10.24": 194,
+        "sn35.75": 49,
+        "an3.59": 47,
+        "sn35.97": 44,
+        "sn47.34": 8,
+        "sn12.33": 63
+      },
+      "error_keys": [
+        "sn35.97:1.12",
+        "sn35.97:2.10"
+      ],
+      "findings_count": 2,
+      "full_read": true
+    },
+    {
+      "batch": "002",
+      "input_sha256": "ffd1d33719219b6f533b572584e8ca3758c2e30faeee97c9dbc193792a6c8557",
+      "physical_lines": 383,
+      "rows_read": 369,
+      "per_text_rows": {
+        "sn35.76": 17,
+        "sn46.51": 100,
+        "an3.183-352": 63,
+        "sn35.99": 16,
+        "an8.22": 73,
+        "sn35.63": 42,
+        "sn11.4": 58
+      },
+      "error_keys": [
+        "sn35.76:1.9",
+        "sn35.63:2.8",
+        "sn11.4:2.2",
+        "sn11.4:2.3",
+        "sn11.4:9.4",
+        "sn11.4:10.2",
+        "sn11.4:12.2",
+        "sn11.4:12.3"
+      ],
+      "findings_count": 8,
+      "full_read": true
+    },
+    {
+      "batch": "003",
+      "input_sha256": "ee14d7f760caeff02d20498db71eebe77084062b02bd258da08bb5ef7e48712c",
+      "physical_lines": 404,
+      "rows_read": 379,
+      "per_text_rows": {
+        "sn11.18": 35,
+        "sn35.229": 18,
+        "sn4.11": 9,
+        "sn47.28": 12,
+        "sn21.12": 37,
+        "sn12.27": 35,
+        "an4.25": 13,
+        "sn1.43": 12,
+        "sn46.4": 28,
+        "sn4.3": 14,
+        "sn1.35": 51,
+        "sn35.138": 21,
+        "an8.30": 94
+      },
+      "error_keys": [
+        "sn11.18:5.2",
+        "sn11.18:5.4",
+        "sn11.18:6.2",
+        "sn11.18:7.2",
+        "sn11.18:7.4",
+        "sn35.229:3.4",
+        "sn4.11:3.2",
+        "an4.25:2.2",
+        "an4.25:2.3",
+        "an4.25:3.4",
+        "sn1.43:3.4",
+        "sn4.3:3.2",
+        "sn1.35:2.2",
+        "sn1.35:2.3",
+        "sn1.35:3.4",
+        "sn1.35:4.6",
+        "sn1.35:7.2",
+        "sn1.35:11.2",
+        "sn35.138:1.6",
+        "sn35.138:1.17"
+      ],
+      "findings_count": 20,
+      "full_read": true
+    },
+    {
+      "batch": "004",
+      "input_sha256": "aff589bc6650ea248c59afe1283ddd2cb0b19b2efbdb3cfebdf16faca95c3d17",
+      "physical_lines": 299,
+      "rows_read": 287,
+      "per_text_rows": {
+        "an8.30": 22,
+        "sn1.39": 20,
+        "an3.34": 45,
+        "sn4.6": 28,
+        "an3.61": 114,
+        "an3.58": 58
+      },
+      "error_keys": [
+        "an8.30:24.2",
+        "sn1.39:2.3",
+        "sn1.39:4.2",
+        "sn1.39:5.2",
+        "an3.34:13.2",
+        "an3.34:13.3",
+        "an3.34:14.2",
+        "an3.34:14.3",
+        "sn4.6:5.2"
+      ],
+      "findings_count": 9,
+      "full_read": true
+    },
+    {
+      "batch": "005",
+      "input_sha256": "27d1b519267d7c53883a50aacdd286205db183f26d7bdfeb254f2da7cfb42a5e",
+      "physical_lines": 278,
+      "rows_read": 261,
+      "per_text_rows": {
+        "sn36.11": 47,
+        "an10.15": 21,
+        "an10.3": 27,
+        "an10.59": 7,
+        "an10.61": 66,
+        "an3.28": 15,
+        "an3.46": 7,
+        "an3.53": 21,
+        "an3.63": 50
+      },
+      "error_keys": [],
+      "findings_count": 0,
+      "full_read": true
+    }
+  ],
+  "error_groups": [
+    {
+      "batch": "001",
+      "keys": [
+        "sn35.97:1.12",
+        "sn35.97:2.10"
+      ],
+      "rationale": "English names ear/sounds on literal tongue/taste Pali. Absorb each abbreviated ear rendering into the preceding eye-plus-ellipsis span; do not equate ear with tongue.",
+      "span": "sn35.97:1.11–1.12;2.9–2.10",
+      "action": "group_abbreviated_faculties"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn35.76:1.9"
+      ],
+      "rationale": "English ear is attached to retained tongue Pali; preceding eye-feeling line includes the omitted-faculty ellipsis. Group into that preceding abbreviated span.",
+      "span": "sn35.76:1.8–1.9",
+      "action": "group_abbreviated_faculties"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn35.63:2.8"
+      ],
+      "rationale": "Mental phenomena is attached to literal tongue/tastes Pali. Previous ellipsis row contains the expanded faculty list including tastes. Group the list and mental continuation on its earliest ellipsis key; no individual mind equivalence is asserted.",
+      "span": "sn35.63:2.7–2.8",
+      "action": "group_abbreviated_faculties"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn11.4:2.2",
+        "sn11.4:2.3"
+      ],
+      "rationale": "Bodhi starts with face-to-face Vepacitti, the fourth Pali line, before fear/weakness and harsh words. Current subdivisions follow reordered Sujato. Group the question stanza on 2.1.",
+      "span": "sn11.4:2.1–2.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn11.4:9.4"
+      ],
+      "rationale": "English no-one-can-reproach precedes strong-and-Dhamma-guarded, reversing these Pali lines. Group the two on 9.3.",
+      "span": "sn11.4:9.3–9.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn11.4:10.2"
+      ],
+      "rationale": "English repaying anger precedes making oneself worse, reversing the first two Pali lines. Group on 10.1.",
+      "span": "sn11.4:10.1–10.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "002",
+      "keys": [
+        "sn11.4:12.2",
+        "sn11.4:12.3"
+      ],
+      "rationale": "The people considering him a fool belongs to Jana maññanti bāloti (12.3), not attano ca parassa ca (12.2). Bodhi has already rendered self/other in 12.1. Move the distinct people clause to 12.3.",
+      "span": "sn11.4:12.1–12.4",
+      "action": "move_clause"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn11.18:5.2",
+        "sn11.18:5.4"
+      ],
+      "rationale": "Bodhi leads with worship, which occurs on the fourth Pali line, then householders/virtue and righteous maintenance of wife. Group the complete stanza on 5.1 to avoid mapping wife to worship.",
+      "span": "sn11.18:5.1–5.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn11.18:6.2"
+      ],
+      "rationale": "Those whom you worship precedes best-in-world in English; original Pali puts best-in-world first. Group this pair on 6.1.",
+      "span": "sn11.18:6.1–6.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn11.18:7.2",
+        "sn11.18:7.4"
+      ],
+      "rationale": "English explanation/worship/king and Suja/chief attributes overlap original Pali lines 1–4 in a different order. Group the concluding stanza on 7.1.",
+      "span": "sn11.18:7.1–7.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn35.229:3.4"
+      ],
+      "rationale": "English crossing precedes shark/demon/wave dangers; Pali names sharks/demons on 3.3 and crossing on 3.4. Group this pair on 3.3.",
+      "span": "sn35.229:3.3–3.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn4.11:3.2"
+      ],
+      "rationale": "English puts Vulture Peak first and entirety second; Pali puts entirety first and Vulture Peak/quaking second. Group the pair on 3.1.",
+      "span": "sn4.11:3.1–3.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "an4.25:2.2",
+        "an4.25:2.3"
+      ],
+      "rationale": "English Buddha-teaching, nontradition/nibbana and restraint/abandoning crosses the original first four verse lines. Group on 2.1, leaving the path lines separately.",
+      "span": "an4.25:2.1–2.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "an4.25:3.4"
+      ],
+      "rationale": "English following teacher guidance precedes ending suffering; Pali puts ending suffering before following guidance. Group on 3.3.",
+      "span": "an4.25:3.3–3.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.43:3.4"
+      ],
+      "rationale": "English support-for-beings precedes other-world; Pali puts merit/other-world before support-for-beings. Group this pair on 3.3.",
+      "span": "sn1.43:3.3–3.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn4.3:3.2"
+      ],
+      "rationale": "English well restrained precedes body/speech/mind; Pali names body/speech on 3.1 and mind/restraint on 3.2. Group the pair.",
+      "span": "sn4.3:3.1–3.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.35:2.2",
+        "sn1.35:2.3"
+      ],
+      "rationale": "The first pair reverses actual-being and self-presentation; English then puts theft before the cheating gambler while Pali puts the gambler before theft. Group the four-line stanza on 2.1.",
+      "span": "sn1.35:2.1–2.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.35:3.4"
+      ],
+      "rationale": "English wise discernment precedes not-practicing-what-one-says; Pali puts not-doing/speaking before wise discernment. Group this pair.",
+      "span": "sn1.35:3.3–3.4",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.35:4.6"
+      ],
+      "rationale": "English meditators appears in 4.5 although jhāyino is on 4.6; release is on 4.5 although English puts release in 4.6. Group the pair.",
+      "span": "sn1.35:4.5–4.6",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.35:7.2"
+      ],
+      "rationale": "English granting pardon precedes confession; original Pali confession precedes granting pardon. Group this pair.",
+      "span": "sn1.35:7.1–7.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn1.35:11.2"
+      ],
+      "rationale": "Repeated pardon/confession pair has the same reversal of original Pali. Group on 11.1.",
+      "span": "sn1.35:11.1–11.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "003",
+      "keys": [
+        "sn35.138:1.6",
+        "sn35.138:1.17"
+      ],
+      "rationale": "English ear is attached to retained tongue Pali in each repetition. Put each ear abbreviation in the preceding eye-plus-ellipsis span, leaving no false tongue equivalence.",
+      "span": "sn35.138:1.5–1.6;1.15–1.17",
+      "action": "group_abbreviated_faculties"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "an8.30:24.2"
+      ],
+      "rationale": "English taught-more precedes my thoughts; original Pali my thoughts precedes taught-more. Group on 24.1.",
+      "span": "an8.30:24.1–24.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "sn1.39:2.3"
+      ],
+      "rationale": "English worship in 2.1 renders abhivande in 2.3, before dwelling/Buddha/Kokanada. Group through 2.3 on the earliest covered line, retaining the following daughter identification.",
+      "span": "sn1.39:2.1–2.3",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "sn1.39:4.2"
+      ],
+      "rationale": "English ignorant-people/go-about on 4.1 belongs to 4.2 while noble-Dhamma on 4.2 belongs to 4.1. Group the pair.",
+      "span": "sn1.39:4.1–4.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "sn1.39:5.2"
+      ],
+      "rationale": "English peace/acquiescence precedes noble Dhamma; original Pali noble Dhamma precedes peace/acquiescence. Group this pair.",
+      "span": "sn1.39:5.1–5.2",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "an3.34:13.2",
+        "an3.34:13.3"
+      ],
+      "rationale": "English kamma-done/ignorant-person precedes greed/hatred/delusion; original Pali puts greed/hatred, delusion/ignorance, then kamma-done. Group the first three lines; retain quantity/result lines.",
+      "span": "an3.34:13.1–13.3",
+      "action": "group_source_order"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "an3.34:14.2",
+        "an3.34:14.3"
+      ],
+      "rationale": "Bhikkhu giving rise to knowledge renders vijjaṁ uppādayaṁ bhikkhu on 14.3, not delusion/wise-person on 14.2. Move this distinct clause to 14.3; initial English sentence already covers 14.1–14.2.",
+      "span": "an3.34:14.1–14.4",
+      "action": "move_clause"
+    },
+    {
+      "batch": "004",
+      "keys": [
+        "sn4.6:5.2"
+      ],
+      "rationale": "English many terrors is in 5.2 but bheravā bahū occurs on 5.1. English first names creatures, then terrors/flies/serpents; group the short pair to avoid the misplaced terrors.",
+      "span": "sn4.6:5.1–5.2",
+      "action": "group_source_order"
+    }
+  ],
+  "correspondence_concerns": [
+    {
+      "texts": [
+        "sn35.18",
+        "sn22.34",
+        "sn35.131",
+        "sn35.75",
+        "sn47.34",
+        "an3.59",
+        "sn12.27",
+        "an8.22"
+      ],
+      "kind": "source_reference_coverage",
+      "rationale": "Source references stand in for whole repeated passages, sometimes at a late representative key. They are not literal translations of their anchor key and are not alignment errors. Store covered Pali spans separately for eventual reveal."
+    },
+    {
+      "text": "sn45.170",
+      "kind": "source_scope_or_omission",
+      "rationale": "English gives one thirst discourse; original rows continue into a second thirst discourse with an added English setting at 2.1 and remaining second-discourse content absent. Do not invent missing translation or miscut the first discourse."
+    },
+    {
+      "text": "sn12.33",
+      "kind": "source_reference_coverage",
+      "rationale": "Definitions replaced by a reference; the abbreviated volitional-formation/definition passage crosses nearby paragraph boundaries. No confidently separable misplaced meaning."
+    },
+    {
+      "text": "sn46.51",
+      "kind": "accepted_compressed_groups",
+      "rationale": "Repeated single sentences combine attention and nourishment predicates across adjacent Pali rows. These are acceptable first-key groups under Reading prompt, not errors."
+    },
+    {
+      "text": "an3.183-352",
+      "kind": "nonmonotonic_shared_formula",
+      "rationale": "Purpose formula is shared/preposed in English while the Pali repeats it through later trait/purpose permutations. Do not fabricate per-key equivalents; preserve correspondence across the shared formula and omitted permutations."
+    },
+    {
+      "texts": [
+        "sn35.63",
+        "sn35.229"
+      ],
+      "kind": "edition_ellipsis_scope",
+      "rationale": "English expands intermediate faculties which original Pali abbreviates around a retained tongue representative. Where a row includes its literal tongue or mind and expanded variants, leave the valid broad rendering. Proposed grouping of SN35.63:2.7–2.8 covers an actual mental-on-tongue mismatch, without claiming a literal mind key exists in this edition."
+    },
+    {
+      "text": "an8.30",
+      "kind": "accepted_sentence_scope",
+      "rationale": "Similes 8–12 mention the monk’s possession before its literal second Pali row, then put the benefit predicate there. This is a normal English sentence across the two rows; report no error merely for proleptic subject order."
+    },
+    {
+      "text": "an3.53",
+      "kind": "source_omission",
+      "rationale": "Literal Pali misconduct and knowledge/welfare variants at 2.3–2.6 are omitted by Bodhi’s displayed source. No translated words exist to recover by moving boundaries."
+    },
+    {
+      "texts": [
+        "an3.34",
+        "an4.25",
+        "an8.30",
+        "sn1.35",
+        "sn1.39",
+        "sn1.43",
+        "sn11.18",
+        "sn11.4",
+        "sn35.229",
+        "sn4.11",
+        "sn4.3",
+        "sn4.6"
+      ],
+      "kind": "verse_correspondence_after_grouping",
+      "rationale": "Small grouped repairs preserve source order. A future correspondence layer can expose the component Pali lines within these groups without asserting monotonic individual verse matches."
+    }
+  ],
+  "total_rows_read": 1784,
+  "per_text_rows": {
+    "sn35.18": 19,
+    "sn22.34": 14,
+    "sn35.131": 25,
+    "sn45.170": 25,
+    "an10.24": 194,
+    "sn35.75": 49,
+    "an3.59": 47,
+    "sn35.97": 44,
+    "sn47.34": 8,
+    "sn12.33": 63,
+    "sn35.76": 17,
+    "sn46.51": 100,
+    "an3.183-352": 63,
+    "sn35.99": 16,
+    "an8.22": 73,
+    "sn35.63": 42,
+    "sn11.4": 58,
+    "sn11.18": 35,
+    "sn35.229": 18,
+    "sn4.11": 9,
+    "sn47.28": 12,
+    "sn21.12": 37,
+    "sn12.27": 35,
+    "an4.25": 13,
+    "sn1.43": 12,
+    "sn46.4": 28,
+    "sn4.3": 14,
+    "sn1.35": 51,
+    "sn35.138": 21,
+    "an8.30": 116,
+    "sn1.39": 20,
+    "an3.34": 45,
+    "sn4.6": 28,
+    "an3.61": 114,
+    "an3.58": 58,
+    "sn36.11": 47,
+    "an10.15": 21,
+    "an10.3": 27,
+    "an10.59": 7,
+    "an10.61": 66,
+    "an3.28": 15,
+    "an3.46": 7,
+    "an3.53": 21,
+    "an3.63": 50
+  },
+  "total_findings": 39,
+  "total_error_groups": 29
+}

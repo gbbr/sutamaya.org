@@ -1,0 +1,8 @@
+{
+  "translator": "thanissaro",
+  "round": "cross-codex1",
+  "batches": 1,
+  "candidateKeys": 3,
+  "status": "all candidates judged against original Pali",
+  "judgments": "../codex-read/followup-rounds.json"
+}

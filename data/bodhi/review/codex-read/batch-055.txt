@@ -1,0 +1,283 @@
+## an10.9
+an10.9:1.1 | S: “A mendicant is faithful, but not ethical. … | T: (1) “Bhikkhus, a bhikkhu may be endowed with faith but he is not virtuous … (2) … endowed with faith and virtuous,
+an10.9:1.2 | S: they’re not learned. … | T: but he is not learned …
+an10.9:1.3 | S: they’re not a Dhamma speaker … | T: (3) … learned, but not a speaker on the Dhamma … (4) … a speaker on the Dhamma,
+an10.9:1.4 | S: they don’t frequent assemblies … | T: but not one who frequents assemblies … (5) … one who frequents assemblies,
+an10.9:1.5 | S: they don’t teach Dhamma to the assembly with assurance … | T: but not one who confidently teaches the Dhamma to an assembly … (6) … one who confidently teaches the Dhamma to an assembly,
+an10.9:1.6 | S: they’re not an expert in the training … | T: but not an expert on the discipline … (7) … an expert on the discipline,
+an10.9:1.7 | S: they don’t stay in the wilderness, in remote lodgings … | T: but not a forest-dweller who resorts to remote lodgings … (8) … a forest-dweller who resorts to remote lodgings,
+an10.9:1.8 | S: they don’t have direct meditative experience of the peaceful liberations that are formless, transcending form … | T: but not one who contacts with the body and dwells in those peaceful emancipations, transcending forms, that are formless … (9) … one who contacts with the body and dwells in those peaceful emancipations, transcending forms, that are formless,
+an10.9:1.9 | S: they don’t realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: but not one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it.
+an10.9:1.10 | S: So they’re incomplete in that respect, | T: “Thus he is incomplete with respect to that factor.
+an10.9:1.11 | S: and should fulfill it, thinking: | T: He should fulfill that factor, thinking:
+an10.9:1.12 | S: ‘How can I become faithful, ethical, and learned, a Dhamma speaker, one who frequents assemblies, one who teaches Dhamma to the assembly with assurance, an expert in the training, one who lives in the wilderness, in remote lodgings, one who gets the formless liberations, and one who lives having realized the ending of defilements?’ | T: ‘How can I be endowed with faith … and also be one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it?’
+an10.9:2.1 | S: When they’re faithful, ethical, and learned, a Dhamma speaker, one who frequents assemblies, one who teaches Dhamma to the assembly with assurance, an expert in the monastic law, one who lives in the wilderness, in remote lodgings, one who gets the formless liberations, and one who lives having realized the ending of defilements, | T: (10) “But when a bhikkhu is i endowed with faith, ii virtuous, and iii learned; iv a speaker on the Dhamma; v one who frequents assemblies; vi one who confidently teaches the Dhamma to an assembly; vii an expert on the discipline; viii a forest-dweller who resorts to remote lodgings; ix one who dwells having contacted with the body those peaceful emancipations, transcending forms, that are formless; and x one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it,
+an10.9:2.2 | S: they’re complete in that respect. | T: then he is complete with respect to that factor.
+an10.9:2.3 | S: A mendicant who possesses these ten qualities is impressive all around, and is complete in every respect.” | T: “A bhikkhu who possesses these ten qualities is one who inspires confidence in all respects and who is complete in all aspects.”
+an10.9:2.4 | P: Navamaṁ. | T: (none)
+
+## an3.10
+an3.10:1.1 | S: “Anyone who has three qualities, and has not given up three stains, is placed in hell as if delivered there. | T: “Bhikkhus, possessing three qualities and without having abandoned three stains, one is deposited in hell as if brought there.
+an3.10:1.2 | S: What three? | T: What three?
+an3.10:1.3 | S: They’re unethical, and haven’t given up the stain of immorality. | T: (1) One is immoral and has not abandoned the stain of immorality.
+an3.10:1.4 | S: They’re jealous, and haven’t given up the stain of jealousy. | T: (2) One is envious and has not abandoned the stain of envy.
+an3.10:1.5 | S: They’re stingy, and haven’t given up the stain of stinginess. | T: (3) One is miserly and has not abandoned the stain of miserliness.
+an3.10:1.6 | S: Anyone who possesses these three qualities, and has not given up these three stains, is placed in hell as if delivered there. | T: Possessing these three qualities and without having abandoned these three stains, one is deposited in hell as if brought there.
+an3.10:2.1 | S: Anyone who has three qualities, and has given up three stains, is placed in heaven as if delivered there. | T: “Bhikkhus, possessing three qualities and having abandoned three stains, one is deposited in heaven as if brought there.
+an3.10:2.2 | S: What three? | T: What three?
+an3.10:2.3 | S: They’re ethical, and have given up the stain of immorality. | T: (1) One is virtuous and has abandoned the stain of immorality.
+an3.10:2.4 | S: They’re not jealous, and have given up the stain of jealousy. | T: (2) One is not envious and has abandoned the stain of envy.
+an3.10:2.5 | S: They’re not stingy, and have given up the stain of stinginess. | T: (3) One is not miserly and has abandoned the stain of miserliness.
+an3.10:2.6 | S: Anyone who possesses these three qualities, and has given up these three stains, is placed in heaven as if delivered there.” | T: Possessing these three qualities and having abandoned these three stains, one is deposited in heaven as if brought there.”
+an3.10:2.7 | P: Dasamaṁ. | T: (none)
+an3.10:2.8 | P: Bālavaggo paṭhamo. | T: (none)
+an3.10:3.0 | P: Tassuddānaṁ | T: (none)
+an3.10:3.1 | P: Bhayaṁ lakkhaṇacintī ca, | T: (none)
+an3.10:3.2 | P: accayañca ayoniso; | T: (none)
+an3.10:3.3 | P: Akusalañca sāvajjaṁ, | T: (none)
+an3.10:3.4 | P: sabyābajjhakhataṁ malanti. | T: (none)
+
+## an3.11
+an3.11:1.1 | S: “Mendicants, a well-known mendicant with three qualities is acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. | T: “Bhikkhus, possessing three qualities, a well-known bhikkhu is acting for the harm of many people, for the unhappiness of many people, for the ruin, harm, and suffering of many people, of devas and human beings.
+an3.11:1.2 | S: What three? | T: What three?
+an3.11:1.3 | S: They encourage deeds of body and speech, as well as principles, that aren’t in line with good qualities. | T: He encourages them in discordant bodily action, discordant verbal action, and discordant mental qualities.
+an3.11:1.4 | S: A well-known mendicant who possesses these three qualities is acting for the detriment and unhappiness of the people, against the people, for the harm, detriment, and suffering of gods and humans. | T: Possessing these three qualities, a well-known bhikkhu is acting for the harm of many people, for the unhappiness of many people, for the ruin, harm, and suffering of many people, of devas and human beings.
+an3.11:2.1 | S: A well-known mendicant with three qualities is acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans. | T: “Bhikkhus, possessing three qualities, a well-known bhikkhu is acting for the welfare of many people, for the happiness of many people, for the good, welfare, and happiness of many people, of devas and human beings.
+an3.11:2.2 | S: What three? | T: What three?
+an3.11:2.3 | S: They encourage deeds of body and speech, as well as principles, that are in line with good qualities. | T: He encourages them in concordant bodily action, concordant verbal action, and concordant mental qualities.
+an3.11:2.4 | S: A well-known mendicant who possesses these three qualities is acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans.” | T: Possessing these three qualities, a well-known bhikkhu is acting for the welfare of many people, for the happiness of many people, for the good, welfare, and happiness of many people, of devas and human beings.”
+an3.11:2.5 | P: Paṭhamaṁ. | T: (none)
+
+## an3.15
+an3.15:1.1 | S: At one time the Buddha was staying near Varanasi in the deer park at Isipatana. | T: On one occasion the Blessed One was dwelling at Bārāṇasī in the deer park at Isipatana.
+an3.15:1.2 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an3.15:1.3 | S: “Mendicants!” | T: “Bhikkhus!”
+an3.15:1.4 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an3.15:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+an3.15:2.1 | S: “Once upon a time, there was a king named Pacetana. | T: “Bhikkhus, in the past there was a king named Pacetana.
+an3.15:2.2 | S: Then King Pacetana addressed his chariot-maker, | T: Then King Pacetana addressed a chariotmaker:
+an3.15:2.3 | S: ‘In six months’ time, my good chariot-maker, there will be a battle. | T: ‘Friend chariotmaker, six months from now there will be a battle.
+an3.15:2.4 | S: Are you able to make me a new pair of wheels?’ | T: Can you make me a new pair of wheels?’—
+an3.15:2.5 | S: ‘I can, Your Majesty,’ replied the chariot-maker. | T: ‘I can, lord,’ the chariotmaker replied.
+an3.15:2.6 | S: Then, when it was six days less than six months later, the chariot-maker had finished one wheel. | T: After six months less six days the chariotmaker had finished one wheel.
+an3.15:2.7 | S: Then King Pacetana addressed his chariot-maker, | T: King Pacetana then addressed the chariotmaker:
+an3.15:2.8 | S: ‘In six days’ time there will be a battle. Is my new pair of wheels finished?’ | T: ‘Six days from now there will be a battle. Is the new pair of wheels finished?’
+an3.15:2.9 | S: ‘Now that it is six days less than six months, Your Majesty, I have finished one wheel.’ | T: The chariotmaker replied: ‘In the past six months less six days, lord, I have finished one wheel.’—
+an3.15:2.10 | S: ‘Are you able to finish the second wheel in these six days?’ | T: ‘But, friend chariotmaker, can you finish a second wheel for me in the next six days?’—
+an3.15:2.11 | S: Saying, ‘I can, Your Majesty,’ the chariot-maker finished the second wheel in six days. Taking the pair of wheels he went up to King Pacetana, and said this to the king, | T: ‘I can, lord,’ the chariotmaker replied. Then, over the next six days, the chariotmaker finished the second wheel. He brought the new pair of wheels to King Pacetana and said:
+an3.15:2.12 | S: ‘Your Majesty, these are your two new wheels, finished.’ | T: ‘This is the new pair of wheels that I have made for you, lord.’—
+an3.15:2.13 | S: ‘But, my good chariot-maker, what is the difference between the wheel that was finished in six days less than six months, and the wheel finished in just six days? | T: ‘What is the difference, friend chariotmaker, between the wheel that took six months less six days to complete and the one that took six days to complete?
+an3.15:2.14 | S: Because I can’t see any difference between them.’ | T: I do not see any difference between them.’—
+an3.15:2.15 | S: ‘But, Your Majesty, there is a difference. | T: ‘There is a difference, lord.
+an3.15:2.16 | S: See now what it is.’ | T: Observe the difference.’
+an3.15:3.1 | S: Then the chariot-maker rolled forth the wheel that had been finished in six days. | T: “Then the chariotmaker rolled the wheel that took six days to finish.
+an3.15:3.2 | S: It rolled as far as the original impetus took it, then wobbled and fell down. | T: It rolled as far as the impetus carried it, and then it wobbled and fell to the ground.
+an3.15:3.3 | S: Then he rolled forth the wheel that had been finished in six days less than six months. | T: But the wheel that took six months less six days to finish
+an3.15:3.4 | S: It rolled as far as the original impetus took it, then stood still as if fixed to an axle. | T: rolled as far as the impetus carried it and then stood still as if fixed on an axle.
+an3.15:4.1 | S: ‘But what is the cause, my good chariot-maker, what is the reason why the wheel that was finished in six days wobbled and fell, | T: “The king asked: ‘Why is it, friend chariotmaker, that the wheel that took six days to finish rolled as far as the impetus carried it, and then wobbled and fell to the ground,
+an3.15:4.2 | S: while the one that was finished in six days less than six months stood still as if fixed to an axle?’ | T: while the wheel that took six months less six days to finish rolled as far as the impetus carried it and then stood still as if fixed on an axle?’
+an3.15:4.3 | S: ‘The wheel that was finished in six days, Your Majesty, is crooked, flawed, and defective in rim, spoke, and hub. | T: “The chariotmaker replied: ‘The wheel that took six days to finish, lord, has a rim that is crooked, faulty, and defective; spokes that are crooked, faulty, and defective; and a nave that is crooked, faulty, and defective.
+an3.15:4.4 | S: That’s why it wobbled and fell. | T: For this reason, it rolled as far as the impetus carried it and then it wobbled and fell to the ground.
+an3.15:4.5 | S: The wheel that was finished in six days less than six months, Your Majesty, is not crooked, flawed, and defective in rim, spoke, and hub. | T: But the wheel that took six months less six days to finish has a rim without crookedness, faults, and defects; it has spokes without crookedness, faults, and defects; and it has a nave that is without crookedness, faults, and defects.
+an3.15:4.6 | S: That’s why it stood still as if fixed to an axle.’ | T: For this reason, it rolled as far as the impetus carried it and then stood still as if fixed on an axle.’
+an3.15:5.1 | S: Now, mendicants, you might think: | T: “It may be, bhikkhus, that you think:
+an3.15:5.2 | S: ‘Surely that chariot-maker must have been someone else at that time?’ | T: ‘On that occasion the chariotmaker was someone else.’
+an3.15:5.3 | S: But you should not see it like that. | T: But you should not think in such a way.
+an3.15:5.4 | S: I myself was the chariot-maker at that time. | T: On that occasion, I myself was the chariotmaker.
+an3.15:5.5 | S: Then I was skilled in the crooks, flaws, and defects of wood. | T: Then I was skilled in crookedness, faults, and defects in wood.
+an3.15:5.6 | S: Now that I am a perfected one, a fully awakened Buddha, I am skilled in the crooks, flaws, and defects of actions by body, speech, and mind. | T: But now I am the Arahant, the Perfectly Enlightened One, (1) skilled in crookedness, faults, and defects of the body; (2) skilled in crookedness, faults, and defects of speech; and (3) skilled in crookedness, faults, and defects of mind.
+an3.15:5.7 | S: Whatever monk or nun has not given up the crooks, flaws, and defects of body, speech, and mind has fallen from the teaching and training, just like the wheel that was finished in six days. | T: “Any bhikkhu or bhikkhunī who has not abandoned crookedness, faults, and defects of the body, speech, and mind has fallen down from this Dhamma and discipline, just as the wheel that was finished in six days fell to the ground.
+an3.15:6.1 | S: Whatever monk or nun has given up the crooks, flaws, and defects of body, speech, and mind is established in the teaching and training, just like the wheel that was finished in six days less than six months. | T: “Any bhikkhu or bhikkhunī who has abandoned crookedness, faults, and defects of the body, speech, and mind is established in this Dhamma and discipline, just as the wheel that was finished in six months less six days remained standing.
+an3.15:7.1 | S: So you should train like this: | T: “Therefore, bhikkhus, you should train yourselves thus:
+an3.15:7.2 | S: ‘We will give up the crooks, flaws, and defects of body, speech, and mind.’ | T: ‘We will abandon crookedness, faults, and defects of the body; we will abandon crookedness, faults, and defects of speech; we will abandon crookedness, faults, and defects of the mind.’
+an3.15:7.3 | S: That’s how you should train.” | T: It is in this way that you should train yourselves.”
+an3.15:7.4 | P: Pañcamaṁ. | T: (none)
+
+## an3.16
+an3.16:1.1 | S: “Mendicants, when a mendicant has three things their practice is a sure bet, and they have laid the groundwork for ending the defilements. | T: “Bhikkhus, possessing three qualities, a bhikkhu is practicing the unmistaken way and has laid the groundwork for the destruction of the taints.
+an3.16:1.2 | S: What three? | T: What three?
+an3.16:1.3 | S: It’s when a mendicant guards the sense doors, eats in moderation, and is dedicated to wakefulness. | T: Here, a bhikkhu guards the doors of the sense faculties, observes moderation in eating, and is intent on wakefulness.
+an3.16:2.1 | S: And how does a mendicant guard the sense doors? | T: (1) “And how, bhikkhus, does a bhikkhu guard the doors of the sense faculties?
+an3.16:2.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: Here, having seen a form with the eye, a bhikkhu does not grasp its marks and features.
+an3.16:2.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: Since, if he left the eye faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the eye faculty, he undertakes the restraint of the eye faculty.
+an3.16:2.4 | S: When they hear a sound with their ears … | T: Having heard a sound with the ear …
+an3.16:2.5 | S: When they smell an odor with their nose … | T: Having smelled an odor with the nose …
+an3.16:2.6 | S: When they taste a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an3.16:2.7 | S: When they feel a touch with their body … | T: Having felt a tactile object with the body …
+an3.16:2.8 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: Having cognized a mental phenomenon with the mind, a bhikkhu does not grasp its marks and features.
+an3.16:2.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: Since, if he left the mind faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the mind faculty, he undertakes the restraint of the mind faculty.
+an3.16:2.10 | S: That’s how a mendicant guards the sense doors. | T: It is in this way that a bhikkhu guards the doors of the sense faculties.
+an3.16:3.1 | S: And how does a mendicant eat in moderation? | T: (2) “And how does a bhikkhu observe moderation in eating?
+an3.16:3.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: Here, reflecting carefully, a bhikkhu consumes food
+an3.16:3.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: neither for amusement nor for intoxication nor for the sake of physical beauty and attractiveness, but only for the support and maintenance of this body, for avoiding harm, and for assisting the spiritual life, considering: ‘Thus I shall terminate the old feeling and not arouse a new feeling, and I shall be healthy and blameless and dwell at ease.’
+an3.16:3.4 | S: That’s how a mendicant eats in moderation. | T: It is in this way that a bhikkhu observes moderation in eating.
+an3.16:4.1 | S: And how is a mendicant dedicated to wakefulness? | T: (3) “And how is a bhikkhu intent on wakefulness?
+an3.16:4.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. In the first watch of the night, they continue to practice walking and sitting meditation. In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: Here, during the day, while walking back and forth and sitting, a bhikkhu purifies his mind of obstructive qualities. In the first watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities. In the middle watch of the night he lies down on the right side in the lion’s posture, with one foot overlapping the other, mindful and clearly comprehending, after noting in his mind the idea of rising. After rising, in the last watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities.
+an3.16:4.3 | S: This is how a mendicant is dedicated to wakefulness. | T: It is in this way that a bhikkhu is intent on wakefulness.
+an3.16:4.4 | S: When a mendicant possesses these three things their practice is a sure bet, and they have laid the groundwork for ending the defilements.” | T: “A bhikkhu who possesses these three qualities is practicing the unmistaken way and has laid the groundwork for the destruction of the taints.”
+an3.16:4.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.17
+an3.17:1.1 | S: “These three things, mendicants, lead to hurting yourself, hurting others, and hurting both. | T: “Bhikkhus, these three qualities lead to one’s own affliction, the affliction of others, and the affliction of both.
+an3.17:1.2 | S: What three? | T: What three?
+an3.17:1.3 | S: Bad conduct by way of body, speech, and mind. | T: Bodily misconduct, verbal misconduct, and mental misconduct.
+an3.17:1.4 | S: These are three things that lead to hurting yourself, hurting others, and hurting both. | T: These three qualities lead to one’s own affliction, the affliction of others, and the affliction of both.
+an3.17:2.1 | S: These three things, mendicants, don’t lead to hurting yourself, hurting others, or hurting both. | T: “These three other qualities do not lead to one’s own affliction, the affliction of others, and the affliction of both.
+an3.17:2.2 | S: What three? | T: What three?
+an3.17:2.3 | S: Good conduct by way of body, speech, and mind. | T: Bodily good conduct, verbal good conduct, and mental good conduct.
+an3.17:2.4 | S: These are three things that don’t lead to hurting yourself, hurting others, or hurting both.” | T: These three qualities do not lead to one’s own affliction, the affliction of others, and the affliction of both.”
+an3.17:2.5 | P: Sattamaṁ. | T: (none)
+
+## an3.18
+an3.18:1.1 | S: “Mendicants, if wanderers who follow another religion were to ask you: | T: “Bhikkhus, if wanderers of other sects were to ask you thus:
+an3.18:1.2 | S: ‘Reverend, do you lead the spiritual life with the ascetic Gotama so that you can be reborn in the realm of the gods?’ | T: ‘Friends, do you lead the spiritual life under the ascetic Gotama for the sake of rebirth in the deva world?’
+an3.18:1.3 | S: Being questioned like this, wouldn’t you be horrified, repelled, and disgusted?” | T: wouldn’t you be repelled, humiliated, and disgusted?”
+an3.18:1.4 | S: “Yes, sir.” | T: “Yes, Bhante.”
+an3.18:1.5 | S: “So it seems that you are horrified, repelled, and disgusted by heavenly lifespan, beauty, happiness, glory, and sovereignty. | T: “Thus, bhikkhus, since you are repelled, humiliated, and disgusted with a celestial life span, celestial beauty, celestial happiness, celestial glory, and celestial authority,
+an3.18:1.6 | S: How much more then should you be horrified, embarrassed, and disgusted by bad conduct by way of body, speech, and mind.” | T: so much more then should you be repelled, humiliated, and disgusted with bodily misconduct, verbal misconduct, and mental misconduct.”
+an3.18:1.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.19
+an3.19:1.1 | S: “Mendicants, a shopkeeper who has three factors is unable to acquire more wealth or to increase the wealth they’ve already acquired. | T: “Bhikkhus, possessing three factors, a shopkeeper is incapable of acquiring wealth not yet acquired or of increasing wealth already acquired.
+an3.19:1.2 | S: What three? | T: What three?
+an3.19:1.3 | S: It’s when a shopkeeper doesn’t carefully focus on their work in the morning, at midday, and in the afternoon. | T: Here, a shopkeeper does not diligently apply himself to his work in the morning, in the middle of the day, or in the evening.
+an3.19:1.4 | S: A shopkeeper who has these three factors is unable to acquire more wealth or to increase the wealth they’ve already acquired. | T: Possessing these three factors, a shopkeeper is incapable of acquiring wealth not yet acquired or of increasing wealth already acquired.
+an3.19:2.1 | S: In the same way, a mendicant with three qualities is unable to acquire more skillful qualities or to increase the skillful qualities they’ve already acquired. | T: “So too, possessing three factors, a bhikkhu is incapable of achieving a wholesome state not yet attained or of increasing a wholesome state already attained.
+an3.19:2.2 | S: What three? | T: What three?
+an3.19:2.3 | S: It’s when a mendicant doesn’t carefully focus on a meditation subject as a basis of immersion in the morning, at midday, and in the afternoon. | T: Here, a bhikkhu does not diligently apply himself to an object of concentration in the morning, in the middle of the day, or in the evening.
+an3.19:2.4 | S: A mendicant who possesses these three qualities is unable to acquire more skillful qualities or to increase the skillful qualities they’ve already acquired. | T: Possessing these three factors, a bhikkhu is incapable of achieving a wholesome state not yet attained or of increasing a wholesome state already attained.
+an3.19:3.1 | S: A shopkeeper who has three factors is able to acquire more wealth or to increase the wealth they’ve already acquired. | T: “Bhikkhus, possessing three factors, a shopkeeper is capable of acquiring wealth not yet acquired and of increasing wealth already acquired.
+an3.19:3.2 | S: What three? | T: What three?
+an3.19:3.3 | S: It’s when a shopkeeper carefully focuses on their work in the morning, at midday, and in the afternoon. | T: Here, a shopkeeper diligently applies himself to his work in the morning, in the middle of the day, and in the evening.
+an3.19:3.4 | S: A shopkeeper who has these three factors is able to acquire more wealth or to increase the wealth they’ve already acquired. | T: Possessing these three factors, a shopkeeper is capable of acquiring wealth not yet acquired and of increasing wealth already acquired.
+an3.19:4.1 | S: In the same way, a mendicant with three qualities is able to acquire more skillful qualities or to increase the skillful qualities they’ve already acquired. | T: “So too, possessing three factors, a bhikkhu is capable of achieving a wholesome state not yet attained and of increasing a wholesome state already attained.
+an3.19:4.2 | S: What three? | T: What three?
+an3.19:4.3 | S: It’s when a mendicant carefully focuses on a meditation subject as a basis of immersion in the morning, at midday, and in the afternoon. | T: Here, a bhikkhu diligently applies himself to an object of concentration in the morning, in the middle of the day, and in the evening.
+an3.19:4.4 | S: A mendicant who possesses these three qualities is able to acquire more skillful qualities or to increase the skillful qualities they’ve already acquired.” | T: Possessing these three factors, a bhikkhu is capable of achieving a wholesome state not yet attained and of increasing a wholesome state already attained.”
+an3.19:4.5 | P: Navamaṁ. | T: (none)
+
+## an3.20
+an3.20:1.1 | S: “Mendicants, a shopkeeper who has three factors soon acquires great and abundant wealth. | T: “Bhikkhus, possessing three factors, a shopkeeper soon attains vast and abundant wealth.
+an3.20:1.2 | S: What three? | T: What three?
+an3.20:1.3 | S: It’s when a shopkeeper sees clearly, is indefatigable, and has supporters. | T: Here, a shopkeeper has keen eyes, is responsible, and has benefactors.
+an3.20:1.4 | S: And how does a shopkeeper see clearly? | T: (1) “And how, bhikkhus, does a shopkeeper have keen eyes?
+an3.20:1.5 | S: It’s when a shopkeeper knows of a product: | T: Here, a shopkeeper knows of an item:
+an3.20:1.6 | S: ‘This product is bought at this price and is selling at this price. With this much investment, it’ll bring this much profit.’ | T: ‘If this item is bought at such a price and sold at such a price, it will require this much capital and bring this much profit.’
+an3.20:1.7 | S: That’s how a shopkeeper sees clearly. | T: It is in this way that a shopkeeper has keen eyes.
+an3.20:2.1 | S: And how is a shopkeeper indefatigable? | T: (2) “And how is a shopkeeper responsible?
+an3.20:2.2 | S: It’s when a shopkeeper is skilled in buying and selling products. | T: Here, a shopkeeper is skilled in buying and selling goods.
+an3.20:2.3 | S: That’s how a shopkeeper is indefatigable. | T: It is in this way that a shopkeeper is responsible.
+an3.20:3.1 | S: And how does a shopkeeper have supporters? | T: (3) “And how does a shopkeeper have benefactors?
+an3.20:3.2 | S: It’s when rich, affluent, and wealthy householders or householders’ children know of him: | T: Here, rich, wealthy, affluent householders and householders’ sons know him thus:
+an3.20:3.3 | S: ‘This good shopkeeper sees clearly and is indefatigable. They are capable of providing for their wives and children, and paying us back from time to time.’ | T: ‘This good shopkeeper has keen eyes and is responsible; he is able to support his wife and children and pay us back from time to time.’
+an3.20:3.4 | S: They deposit money with the shopkeeper, saying: | T: So they deposit wealth with him, saying:
+an3.20:3.5 | S: ‘With this, my good shopkeeper, earn money to provide for your wives and children, and pay us back from time to time.’ | T: ‘Having earned wealth with this, friend shopkeeper, support your wife and children and pay us back from time to time.’
+an3.20:3.6 | S: That’s how a shopkeeper has supporters. | T: It is in this way that a shopkeeper has benefactors.
+an3.20:3.7 | S: A shopkeeper who has these three factors soon acquires great and abundant wealth. | T: “Possessing these three factors, a shopkeeper soon attains vast and abundant wealth.
+an3.20:4.1 | S: In the same way, a mendicant with three qualities soon acquires great and abundant skillful qualities. | T: “So too, bhikkhus, possessing three qualities, a bhikkhu soon attains vast and abundant wholesome qualities.
+an3.20:4.2 | S: What three? | T: What three?
+an3.20:4.3 | S: It’s when a mendicant sees clearly, is indefatigable, and has supporters. | T: Here, a bhikkhu has keen eyes, is responsible, and has benefactors.
+an3.20:4.4 | S: And how does a mendicant see clearly? | T: (1) “And how, bhikkhus, does a bhikkhu have keen eyes?
+an3.20:4.5 | S: It’s when a mendicant truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: Here, a bhikkhu understands as it really is: ‘This is suffering’ … ‘This is the way leading to the cessation of suffering.’
+an3.20:4.6 | S: That’s how a mendicant sees clearly. | T: It is in this way that a bhikkhu has keen eyes.
+an3.20:5.1 | S: And how is a mendicant indefatigable? | T: (2) “And how is a bhikkhu responsible?
+an3.20:5.2 | S: It’s when a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: Here, a bhikkhu has aroused energy for abandoning unwholesome qualities and acquiring wholesome qualities; he is strong, firm in exertion, not casting off the duty of cultivating wholesome qualities.
+an3.20:5.3 | S: That’s how a mendicant is indefatigable. | T: It is in this way that a bhikkhu is responsible.
+an3.20:6.1 | S: And how does a mendicant have supporters? | T: (3) “And how does a bhikkhu have benefactors?
+an3.20:6.2 | S: It’s when from time to time a mendicant goes up to those mendicants who are very learned—inheritors of the heritage, who have memorized the teachings, the monastic law, and the outlines—and asks them questions: | T: Here, from time to time a bhikkhu approaches those bhikkhus who are learned, heirs to the heritage, experts on the Dhamma, experts on the discipline, experts on the outlines, and inquires:
+an3.20:6.3 | S: ‘Why, sir, does it say this? What does that mean?’ | T: ‘How is this, Bhante? What is the meaning of this?’
+an3.20:6.4 | S: Those venerables reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: Those venerable ones then disclose to him what has not been disclosed, clear up what is obscure, and dispel his perplexity about numerous perplexing points.
+an3.20:6.5 | S: That’s how a mendicant has supporters. | T: It is in this way that a bhikkhu has benefactors.
+an3.20:6.6 | S: A mendicant with these three qualities soon acquires great and abundant skillful qualities.” | T: “Possessing these three qualities, a bhikkhu soon attains vast and abundant wholesome qualities.”
+an3.20:6.7 | P: Dasamaṁ. | T: (none)
+an3.20:6.8 | P: Paṭhamabhāṇavāro niṭṭhito. | T: (none)
+an3.20:6.9 | P: Rathakāravaggo dutiyo. | T: (none)
+an3.20:7.0 | P: Tassuddānaṁ | T: (none)
+an3.20:7.1 | P: Ñāto sāraṇīyo bhikkhu, | T: (none)
+an3.20:7.2 | P: cakkavattī sacetano; | T: (none)
+an3.20:7.3 | P: Apaṇṇakattā devo ca, | T: (none)
+an3.20:7.4 | P: duve pāpaṇikena cāti. | T: (none)
+
+## an3.22
+an3.22:1.1 | S: “These three patients are found in the world. | T: “Bhikkhus, there are these three kinds of patients found existing in the world.
+an3.22:1.2 | S: What three? | T: What three?
+an3.22:1.3 | S: In some cases a patient won’t recover from an illness, regardless of whether or not they get suitable food and medicines, and a capable carer. | T: (1) Here, one patient will not recover from his illness whether or not he gets suitable food, suitable medicine, and a competent attendant.
+an3.22:2.1 | S: In some cases a patient will recover from an illness, regardless of whether or not they get suitable food and medicines, and a capable carer. | T: (2) Another patient will recover from his illness whether or not he gets suitable food, suitable medicine, and a competent attendant.
+an3.22:3.1 | S: In some cases a patient can recover from an illness, but only if they get suitable food and medicines, and a capable carer, and not if they don’t get these things. | T: (3) Still another patient will recover from his illness only if he gets suitable food, not if he fails to get it; only if he gets suitable medicine, not if he fails to get it; and only if he gets a competent attendant, not if he fails to get one.
+an3.22:4.1 | S: Now, it’s for the sake of the last patient—who will recover only if they get suitable food and medicines, and a capable carer—that food, medicines, and a carer are prescribed. | T: “Food and medicine and a competent attendant are prescribed particularly for the sake of the patient who will recover from his illness only if he gets suitable food, not if he fails to get it; only if he gets suitable medicine, not if he fails to get it; and only if he gets a competent attendant, not if he fails to get one.
+an3.22:4.2 | S: But also, for the sake of this patient, the other patients should be looked after. | T: But because of this patient, the other patients should also be served.
+an3.22:4.3 | S: These are the three kinds of patients found in the world. | T: These are the three kinds of patients found existing in the world.
+an3.22:5.1 | S: In the same way, these three individuals similar to patients are found in the world. | T: “So too, bhikkhus, there are these three kinds of persons similar to patients found existing in the world.
+an3.22:5.2 | S: What three? | T: What three?
+an3.22:5.3 | S: Some people don’t step into the sure path with regard to skillful qualities, regardless of whether or not they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: (1) Here, some person will not enter upon the fixed course consisting in rightness in wholesome qualities whether or not he gets to see the Tathāgata and whether or not he gets to hear the Dhamma and discipline proclaimed by the Tathāgata.
+an3.22:6.1 | S: Some people do step into the sure path with regard to skillful qualities, regardless of whether or not they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: (2) Then another person will enter upon the fixed course consisting in rightness in wholesome qualities whether or not he gets to see the Tathāgata and whether or not he gets to hear the Dhamma and discipline proclaimed by the Tathāgata.
+an3.22:7.1 | S: Some people can step into the sure path with regard to skillful qualities, but only if they get to see a Realized One, and to hear the teaching and training that he proclaims, and not when they don’t get those things. | T: (3) And still another person will enter upon the fixed course consisting in rightness in wholesome qualities only if he gets to see the Tathāgata, not if he fails to see him; only if he gets to hear the Dhamma and discipline proclaimed by the Tathāgata, not if he fails to hear it.
+an3.22:8.1 | S: Now, it’s for the sake of this last individual that teaching the Dhamma is prescribed, that is, the one who can step into the sure path with regard to skillful qualities, but only if they get to see a Realized One, and to hear the teaching and training that he proclaims. | T: “The teaching of the Dhamma is prescribed particularly for the sake of the person who will enter upon the fixed course consisting in rightness in wholesome qualities only if he gets to see the Tathāgata, not if he fails to see him; only if he gets to hear the Dhamma and discipline proclaimed by the Tathāgata, not if he fails to hear it.
+an3.22:8.2 | S: But also, for the sake of this individual, the other people should be taught Dhamma. | T: But because of this person, the Dhamma should also be taught to the others.
+an3.22:8.3 | S: These are the three individuals similar to patients found in the world.” | T: These are the three kinds of persons similar to patients found existing in the world.”
+an3.22:8.4 | P: Dutiyaṁ. | T: (none)
+
+## an3.23
+an3.23:1.1 | S: “These three individuals are found in the world. | T: “Bhikkhus, there are three kinds of persons found existing in the world.
+an3.23:1.2 | S: What three? | T: What three?
+an3.23:1.3 | S: Firstly, a certain individual makes hurtful choices by way of body, speech, and mind. | T: (1) “Here, bhikkhus, some person generates afflictive bodily activities, afflictive verbal activities, and afflictive mental activities.
+an3.23:1.4 | S: Having made these choices, they’re reborn in a hurtful world, | T: In consequence, he is reborn in an afflictive world. When he is reborn in an afflictive world,
+an3.23:1.5 | S: where hurtful contacts strike them. | T: afflictive contacts touch him.
+an3.23:1.6 | S: Touched by hurtful contacts, they experience hurtful feelings that are absolutely painful—like the beings in hell. | T: Being touched by afflictive contacts, he feels afflictive feelings, exclusively painful, as in the case of hell-beings.
+an3.23:2.1 | S: Furthermore, another individual makes pleasing choices by way of body, speech, and mind. | T: (2) “Someone else generates unafflictive bodily activities, unafflictive verbal activities, and unafflictive mental activities.
+an3.23:2.2 | S: Having made these choices, they are reborn in a pleasing world, | T: In consequence, he is reborn in an unafflictive world. When he is reborn in an unafflictive world,
+an3.23:2.3 | S: where pleasing contacts strike them. | T: unafflictive contacts touch him.
+an3.23:2.4 | S: Touched by pleasing contacts, they experience pleasing feelings of absolute happiness—like the gods of universal beauty. | T: Being touched by unafflictive contacts, he feels unafflictive feelings, exclusively pleasant, as in the case of the devas of refulgent glory.
+an3.23:3.1 | S: Furthermore, another individual makes both hurtful and pleasing choices by way of body, speech, and mind. | T: (3) “Still another generates bodily activities that are both afflictive and unafflictive, verbal activities that are both afflictive and unafflictive, and mental activities that are both afflictive and unafflictive.
+an3.23:3.2 | S: Having made these choices, they are reborn in a world that is both hurtful and pleasing, | T: In consequence, he is reborn in a world that is both afflictive and unafflictive. When he is reborn in a world that is both afflictive and unafflictive,
+an3.23:3.3 | S: where hurtful and pleasing contacts strike them. | T: both afflictive and unafflictive contacts touch him.
+an3.23:3.4 | S: Touched by both hurtful and pleasing contacts, they experience both hurtful and pleasing feelings that are a mixture of pleasure and pain—like humans, some gods, and some beings in the underworld. | T: Being touched by both afflictive and unafflictive contacts, he feels both afflictive and unafflictive feelings, mingled pleasure and pain, as in the case of human beings, some devas, and some beings in the lower worlds.
+an3.23:3.5 | S: These are the three individuals found in the world.” | T: “These, bhikkhus, are the three kinds of persons found existing in the world.”
+an3.23:3.6 | P: Tatiyaṁ. | T: (none)
+
+## an3.24
+an3.24:1.1 | S: “Mendicants, these three individuals are very helpful to another. | T: “Bhikkhus, these three persons are helpful to another person.
+an3.24:1.2 | S: What three? | T: What three?
+an3.24:1.3 | S: The individual who has enabled you to go for refuge to the Buddha, the teaching, and the Saṅgha. | T: (1) “The person through whom another has gone for refuge to the Buddha, the Dhamma, and the Saṅgha.
+an3.24:1.4 | S: This individual is very helpful to another. | T: This person is helpful to the other person.
+an3.24:2.1 | S: Furthermore, the individual who has enabled you to truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: (2) “Again, the person through whom another comes to understand as it really is: ‘This is suffering,’ and ‘This is the origin of suffering,’ and ‘This is the cessation of suffering,’ and ‘This is the way leading to the cessation of suffering.’
+an3.24:2.2 | S: This individual is very helpful to another. | T: This person is helpful to the other person.
+an3.24:3.1 | S: Furthermore, the individual who has enabled you to realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with your own insight in this very life due to the ending of defilements. | T: (3) “Again, the person through whom, with the destruction of the taints, another realizes for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it.
+an3.24:3.2 | S: This individual is very helpful to another. | T: This person is helpful to the other person.
+an3.24:3.3 | S: These are the three individuals who are very helpful to another individual. | T: “These three persons are helpful to another person.
+an3.24:4.1 | S: And I say that there is no one more helpful to another than these three individuals. | T: “I say, bhikkhus, that there is no one more helpful to another person than these three persons.
+an3.24:4.2 | S: And I also say that it’s not easy to repay these three individuals by bowing down to them, rising up for them, greeting them with cupped palms, and observing proper etiquette for them; or by providing them with robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: I say, too, that it is not easy to repay these three persons by paying homage to them, by rising up for them, by reverential salutation, by proper conduct, and by presenting them with robes, almsfood, lodging, and medicines and provisions for the sick.”
+an3.24:4.3 | P: Catutthaṁ. | T: (none)
+
+## an3.26
+an3.26:1.1 | S: “These three individuals are found in the world. | T: “Bhikkhus, there are these three kinds of persons found existing in the world.
+an3.26:1.2 | S: What three? | T: What three?
+an3.26:1.3 | S: There is an individual you shouldn’t associate with, accompany, or attend. | T: (1) There is a person who is not to be associated with, followed, and served;
+an3.26:1.4 | S: There is an individual you should associate with, accompany, and attend. | T: (2) a person who is to be associated with, followed, and served;
+an3.26:1.5 | S: There is an individual you should associate with, accompany, and attend with honor and respect. | T: and (3) a person who is to be associated with, followed, and served with honor and respect.
+an3.26:1.6 | S: Who is the individual you shouldn’t associate with, accompany, or attend? | T: (1) “And what kind of person, bhikkhus, is not to be associated with, followed, and served?
+an3.26:1.7 | S: It’s an individual who is inferior in terms of ethics, immersion, and wisdom. | T: Here, some person is inferior to oneself in virtuous behavior, concentration, and wisdom.
+an3.26:1.8 | S: You shouldn’t associate with, accompany, or attend such an individual, except out of kindness and sympathy. | T: Such a person is not to be associated with, followed, and served except out of sympathy and compassion.
+an3.26:2.1 | S: Who is the individual you should associate with, accompany, and attend? | T: (2) “And what kind of person is to be associated with, followed, and served?
+an3.26:2.2 | S: It’s an individual who is similar in terms of ethics, immersion, and wisdom. | T: Here, some person is similar to oneself in virtuous behavior, concentration, and wisdom.
+an3.26:2.3 | S: You should associate with, accompany, and attend such an individual. | T: Such a person is to be associated with, followed, and served.
+an3.26:2.4 | S: Why is that? | T: For what reason? Because one considers:
+an3.26:2.5 | S: Thinking, ‘Since our ethical conduct is similar, we can discuss ethics, the conversation will flow, and we’ll both be at ease. | T: ‘Since we are similar with regard to virtuous behavior, we will have a discussion on virtuous behavior, and it will flow on smoothly between us, and we will feel at ease.
+an3.26:2.6 | S: Since our immersion is similar, we can discuss immersion, the conversation will flow, and we’ll both be at ease. | T: Since we are similar with regard to concentration, we will have a discussion on concentration, and it will flow on smoothly between us, and we will feel at ease.
+an3.26:2.7 | S: Since our wisdom is similar, we can discuss wisdom, the conversation will flow, and we’ll both be at ease.’ | T: Since we are similar with regard to wisdom, we will have a discussion on wisdom, and it will flow on smoothly between us, and we will feel at ease.’
+an3.26:2.8 | S: That’s why you should associate with, accompany, and attend such an individual. | T: Therefore such a person is to be associated with, followed, and served.
+an3.26:3.1 | S: Who is the individual you should associate with, accompany, and attend with honor and respect? | T: (3) “And what kind of person is to be associated with, followed, and served with honor and respect?
+an3.26:3.2 | S: It’s an individual who is superior in terms of ethics, immersion, and wisdom. | T: Here, some person is superior to oneself in virtuous behavior, concentration, and wisdom.
+an3.26:3.3 | S: You should associate with, accompany, and attend such an individual with honor and respect. | T: Such a person is to be associated with, followed, and served with honor and respect.
+an3.26:3.4 | S: Why is that? | T: For what reason? Because one considers:
+an3.26:3.5 | S: Thinking, ‘I’ll fulfill the entire spectrum of ethical conduct I haven’t yet fulfilled, or support with wisdom in every situation the ethical conduct I’ve already fulfilled. | T: ‘In such a way I will fulfill the aggregate of virtuous behavior that I have not yet fulfilled or assist with wisdom in various respects the aggregate of virtuous behavior that I have fulfilled.
+an3.26:3.6 | S: I’ll fulfill the entire spectrum of immersion I haven’t yet fulfilled, or support with wisdom in every situation the immersion I’ve already fulfilled. | T: I will fulfill the aggregate of concentration that I have not yet fulfilled or assist with wisdom in various respects the aggregate of concentration that I have fulfilled.
+an3.26:3.7 | S: I’ll fulfill the entire spectrum of wisdom I haven’t yet fulfilled, or support with wisdom in every situation the wisdom I’ve already fulfilled.’ | T: I will fulfill the aggregate of wisdom that I have not yet fulfilled or assist with wisdom in various respects the aggregate of wisdom that I have fulfilled.’
+an3.26:3.8 | S: That’s why you should associate with, accompany, and attend this individual with honor and respect. | T: Therefore such a person is to be associated with, followed, and served with honor and respect.
+an3.26:3.9 | S: These are the three individuals found in the world. | T: “These, bhikkhus, are the three kinds of persons found existing in the world.”
+an3.26:4.1 | S: A man who associates with an inferior goes downhill, | T: One who associates with an inferior person declines;
+an3.26:4.2 | S: but associating with an equal, you’ll never decline; | T: one who associates with an equal does not decline;
+an3.26:4.3 | S: following the best, you’ll quickly rise up, | T: attending on a superior person one develops quickly;
+an3.26:4.4 | S: so you should keep company <j>with people better than you.” | T: therefore you should follow one superior to yourself.
+an3.26:4.5 | P: Chaṭṭhaṁ. | T: (none)
+

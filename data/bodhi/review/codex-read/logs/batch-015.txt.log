@@ -1,0 +1,550 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd81-62ab-7e00-8ca3-a4b90ae8af56
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the line starts that are clearly misplaced.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.83
+sn22.83:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.83:1.2 | S: There Ānanda addressed the mendicants: | T: There the Venerable Ānanda addressed the bhikkhus thus:
+sn22.83:1.3 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus!”
+sn22.83:1.4 | S: “Reverend,” they replied. | T: “Friend!” those bhikkhus replied.
+sn22.83:1.5 | S: Ānanda said this: | T: The Venerable Ānanda said this:
+sn22.83:2.1 | S: “Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, the Venerable Puṇṇa Mantaniputta was very helpful to us when we were newly ordained.
+sn22.83:2.2 | S: He gave me this advice: | T: He exhorted us with the following exhortation:
+sn22.83:2.3 | S: ‘Reverend Ānanda, the thought “I am” occurs because of grasping, not without grasping. | T: “It is by clinging, Ānanda, that the notion ‘I am’ occurs, not without clinging.
+sn22.83:2.4 | S: Grasping what? | T: And by clinging to what does ‘I am’ occur, not without clinging?
+sn22.83:2.5 | S: The thought “I am” occurs because of grasping form, | T: It is by clinging to form that ‘I am’ occurs, not without clinging.
+sn22.83:2.6 | S: feeling, | T: It is by clinging to feeling …
+sn22.83:2.7 | S: perception, | T: to perception …
+sn22.83:2.8 | S: choices, | T: to volitional formations …
+sn22.83:2.9 | S: and consciousness, not without grasping. | T: to consciousness that ‘I am’ occurs, not without clinging.
+sn22.83:3.1 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments, and they check their own reflection in a clean bright mirror or a clear bowl of water. They’d look because of grasping, not without grasping. | T: “Suppose, friend Ānanda, a young woman—or a man—youthful and fond of ornaments, would examine her own facial image in a mirror or in a bowl filled with pure, clear, clean water: she would look at it with clinging, not without clinging.
+sn22.83:3.2 | S: In the same way, the thought “I am” occurs because of grasping form, | T: So too, it is by clinging to form that ‘I am’ occurs, not without clinging.
+sn22.83:3.3 | S: feeling, | T: It is by clinging to feeling …
+sn22.83:3.4 | S: perception, | T: to perception …
+sn22.83:3.5 | S: choices, | T: to volitional formations …
+sn22.83:3.6 | S: and consciousness, not without grasping. | T: to consciousness that ‘I am’ occurs, not without clinging.
+sn22.83:4.1 | S: What do you think, Reverend Ānanda? | T: “What do you think, friend Ānanda,
+sn22.83:4.2 | S: Is form permanent or impermanent?’ | T: is form permanent or impermanent?”…
+sn22.83:4.3 | S: ‘Impermanent, reverend.’ | T: as in preceding sutta …
+sn22.83:4.4 | S: ‘Is feeling … | T: (none)
+sn22.83:4.5 | S: perception … | T: (none)
+sn22.83:4.6 | S: choices … | T: (none)
+sn22.83:4.7 | S: consciousness permanent or impermanent?’ | T: (none)
+sn22.83:4.8 | S: ‘Impermanent, reverend.’ … | T: (none)
+sn22.83:4.9 | S: ‘So you should truly see … | T: (none)
+sn22.83:4.10 | S: Seeing this … | T: “Seeing thus …
+sn22.83:4.11 | S: They understand: “… there is nothing further for this place.”’ | T: He understands: ‘… there is no more for this state of being.’”
+sn22.83:4.12 | S: Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, the Venerable Puṇṇa Mantaniputta was very helpful to us when we were newly ordained.
+sn22.83:4.13 | S: He gave me this advice. | T: He exhorted us with that exhortation.
+sn22.83:4.14 | S: And when I heard this teaching from Venerable Puṇṇa son of Mantāṇī, I comprehended the teaching.” | T: And when I heard his Dhamma teaching I made the breakthrough to the Dhamma.”
+sn22.83:4.15 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.29
+sn35.29:1.1 | S: So I have heard. | T: Thus have I heard.
+sn35.29:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn35.29:1.3 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus thus:
+sn35.29:1.4 | S: “Mendicants, all is overcome. | T: “Bhikkhus, all is weighed down.
+sn35.29:1.5 | S: And what is the all that is overcome? | T: And what, bhikkhus, is the all that is weighed down?
+sn35.29:1.6 | S: The eye is overcome. Sights are overcome. Eye consciousness is overcome. Eye contact is overcome. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also overcome. | T: The eye is weighed down, forms are weighed down, eye-consciousness is weighed down, eye-contact is weighed down, and whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is weighed down.
+sn35.29:1.7 | S: Overcome by what? | T: Weighed down by what?
+sn35.29:1.8 | S: Overcome by the fires of greed, hate, and delusion. Overcome by rebirth, old age, and death, by sorrow, lamentation, pain, sadness, and distress, I say. | T: Weighed down by birth, aging, and death; by sorrow, lamentation, pain, displeasure, and despair, I say.
+sn35.29:1.9 | S: The ear … nose … tongue … | T: “The ear is weighed down …
+sn35.29:1.10 | P: Kena addhabhūtaṁ? | T: (none)
+sn35.29:1.11 | P: ‘Jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi addhabhūtan’ti vadāmi. | T: (none)
+sn35.29:1.12 | S: body … | T: (none)
+sn35.29:1.13 | S: mind is overcome. Ideas are overcome. Mind consciousness is overcome. Mind contact is overcome. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also overcome. | T: The mind is weighed down …
+sn35.29:1.14 | S: Overcome by what? | T: Weighed down by what?
+sn35.29:1.15 | S: Overcome by greed, hate, and delusion. Overcome by rebirth, old age, and death, by sorrow, lamentation, pain, sadness, and distress, I say. | T: Weighed down by birth … by despair, I say.
+sn35.29:1.16 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on eye contact. | T: “Seeing thus …
+sn35.29:1.17 | S: They grow disillusioned with the ear … nose … tongue … body … mind … painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: (none)
+sn35.29:1.18 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: (none)
+sn35.29:1.19 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn35.29:1.20 | P: Sattamaṁ. | T: (none)
+
+## sn11.20
+sn11.20:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: (none)
+sn11.20:1.2 | P: Tatra kho …pe… etadavoca: | T: As above down to:
+sn11.20:1.3 | S: “Once upon a time, mendicants, Sakka, lord of gods, addressed his chariot handler Mātali, | T: (none)
+sn11.20:1.4 | S: ‘My dear Mātali, harness the chariot with its team of a thousand thoroughbreds. We will go to a park and see the scenery.’ | T: (none)
+sn11.20:1.5 | S: ‘Yes, lord,’ replied Mātali. He harnessed the chariot and informed Sakka, | T: (none)
+sn11.20:1.6 | S: ‘Good fellow, the chariot with its team of a thousand thoroughbreds has been harnessed. | T: (none)
+sn11.20:1.7 | S: Please go at your convenience.’ | T: (none)
+sn11.20:1.8 | S: Then Sakka descended from the Palace of Victory, raised his cupped palms, and revered the mendicant Saṅgha. | T: “Then, bhikkhus, Sakka, lord of the devas, descending from the Vejayanta Palace, raised his joined hands in reverential salutation and worshipped the Saṅgha of bhikkhus.
+sn11.20:1.9 | S: So Mātali the chariot handler addressed Sakka in verse: | T: Then Matali the charioteer addressed Sakka, lord of the devas, in verse:
+sn11.20:2.1 | S: ‘It’s these who should worship you, | T: “‘It is these that should worship you—
+sn11.20:2.2 | S: namely the humans stuck in their putrid bodies, | T: The humans stuck in a putrid body,
+sn11.20:2.3 | S: sunk in a carcass, | T: Those submerged inside a corpse,
+sn11.20:2.4 | S: stricken by hunger and thirst. | T: Afflicted with hunger and thirst.
+sn11.20:3.1 | S: Why then do you envy those | T: Why then do you envy them,
+sn11.20:3.2 | S: who are homeless, Vāsava? | T: These who dwell homeless, Vasava?
+sn11.20:3.3 | S: Relate the seers’ way of life, | T: Tell us about the seers’ conduct;
+sn11.20:3.4 | S: let us hear what you say.’ | T: Let us hear what you have to say.’
+sn11.20:4.1 | S: ‘This is why I envy the | T: Sakka: “‘This is why I envy them,
+sn11.20:4.2 | S: homeless, Mātali. | T: Those who dwell homeless, Matali:
+sn11.20:4.3 | S: When they leave a village, | T: Whatever village they depart from,
+sn11.20:4.4 | S: they proceed without concern. | T: They leave it without concern.
+sn11.20:5.1 | S: They hoard no goods in storerooms, | T: “‘They do not keep their goods in storage,
+sn11.20:5.2 | S: nor in pots or baskets. | T: Neither in a pot nor in a box.
+sn11.20:5.3 | S: They seek food prepared by others, | T: Seeking what has been prepared by others,
+sn11.20:5.4 | S: and, true to their vows, live on that. | T: By this they live, firm in vows:
+sn11.20:6.1 | S: The attentive, whose words are full of wisdom, | T: Those wise ones who give good counsel,
+sn11.20:6.2 | S: live peacefully and quietly. | T: Maintaining silence, of even faring.
+sn11.20:6.3 | S: Gods fight with titans, | T: “‘While devas fight with asuras
+sn11.20:6.4 | S: and mortals fight each other, Mātali. | T: And people fight with one another,
+sn11.20:7.1 | S: Not fighting among those who fight, | T: Among those who fight, they do not fight;
+sn11.20:7.2 | S: quenched among those who have taken up arms, | T: Among the violent, they are quenched;
+sn11.20:7.3 | S: not grasping among those who grasp: | T: Among those who grasp, they do not grasp:
+sn11.20:7.4 | S: they’re who I worship, Mātali.’ | T: These are the ones whom I worship, Matali.’
+sn11.20:8.1 | S: ‘Those who you worship | T: Matali: “‘Those whom you worship,
+sn11.20:8.2 | S: seem to be the best in the world, Sakka. | T: my lord Sakka, Are indeed the best in the world.
+sn11.20:8.3 | S: I too will worship | T: I too will worship them—
+sn11.20:8.4 | S: those who you worship, Vāsava.’ | T: Those whom you worship, Vasava.’
+sn11.20:9.1 | S: After saying this, Maghavā the chief, | T: The Blessed One: “Having given this explanation, Having worshipped the Bhikkhu Saṅgha,
+sn11.20:9.2 | S: king of gods, Sujā’s husband, | T: The deva-king Maghava, Suja’s husband, The chief,
+sn11.20:9.3 | S: having worshiped the mendicant Saṅgha, | T: (none)
+sn11.20:9.4 | S: climbed into his chariot.” | T: climbed into his chariot.”
+sn11.20:9.5 | P: Dutiyo vaggo. | T: (none)
+sn11.20:10.0 | P: Tassuddānaṁ | T: (none)
+sn11.20:10.1 | P: Devā pana tayo vuttā, | T: (none)
+sn11.20:10.2 | P: daliddañca rāmaṇeyyakaṁ; | T: (none)
+sn11.20:10.3 | P: Yajamānañca vandanā, | T: (none)
+sn11.20:10.4 | P: tayo sakkanamassanāti. | T: (none)
+
+## an5.28
+an5.28:1.1 | S: “Mendicants, I will teach you how to develop noble right immersion with five factors. | T: “Bhikkhus, I will teach you the development of noble five-factored right concentration.
+an5.28:1.2 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely. I will speak.”
+an5.28:1.3 | S: “Yes, sir,” they replied. | T: “Yes, Bhante,” those bhikkhus replied.
+an5.28:1.4 | S: The Buddha said this: | T: The Blessed One said this:
+an5.28:2.1 | S: “And how do you develop noble right immersion with five factors? | T: “And what, bhikkhus, is the development of noble five-factored right concentration?
+an5.28:2.2 | S: Firstly, a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: (1) “Here, secluded from sensual pleasures, secluded from unwholesome states, a bhikkhu enters and dwells in the first jhāna, which consists of rapture and pleasure born of seclusion, accompanied by thought and examination.
+an5.28:2.3 | S: They drench, steep, fill, and spread themselves with rapture and bliss born of seclusion. There’s no part of the body that’s not spread with rapture and bliss born of seclusion. | T: He makes the rapture and happiness born of seclusion drench, steep, fill, and pervade this body, so that there is no part of his whole body that is not pervaded by the rapture and happiness born of seclusion.
+an5.28:2.4 | S: It’s like when a deft bathroom attendant or their apprentice pours bath powder into a bronze dish, sprinkling it little by little with water. They knead it until the ball of bath powder is soaked and saturated with moisture, spread through inside and out; yet no moisture oozes out. | T: Just as a skillful bath man or a bath man’s apprentice might heap bath powder in a metal basin and, sprinkling it gradually with water, would knead it until the moisture wets his ball of bath powder, soaks it, and pervades it inside and out, yet the ball itself does not ooze;
+an5.28:2.5 | S: In the same way, a mendicant drenches, steeps, fills, and spreads themselves with rapture and bliss born of seclusion. | T: so too, the bhikkhu makes the rapture and happiness born of seclusion drench, steep, fill, and pervade this body,
+an5.28:2.6 | S: There’s no part of the body that’s not spread with rapture and bliss born of seclusion. | T: so that there is no part of his whole body that is not pervaded by the rapture and happiness born of seclusion.
+an5.28:2.7 | S: This is the first way to develop noble right immersion with five factors. | T: This is the first development of noble five-factored right concentration.
+an5.28:3.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: (2) “Again, with the subsiding of thought and examination, a bhikkhu enters and dwells in the second jhāna, which has internal placidity and unification of mind and consists of rapture and pleasure born of concentration, without thought and examination.
+an5.28:3.2 | S: They drench, steep, fill, and spread themselves with rapture and bliss born of immersion. | T: He makes the rapture and happiness born of concentration drench, steep, fill, and pervade this body,
+an5.28:3.3 | S: There’s no part of the body that’s not spread with rapture and bliss born of immersion. | T: so that there is no part of his whole body that is not pervaded by the rapture and happiness born of concentration.
+an5.28:3.4 | S: It’s like a deep lake fed by spring water. There’s no inlet to the east, west, north, or south, and the heavens would not properly bestow showers from time to time. | T: Just as there might be a lake whose waters welled up from below with no inflow from east, west, north, or south, and the lake would not be replenished from time to time by showers of rain,
+an5.28:3.5 | S: But the stream of cool water welling up in the lake drenches, steeps, fills, and spreads throughout the lake. There’s no part of the lake that’s not spread through with cool water. | T: then the cool fount of water welling up in the lake would make the cool water drench, steep, fill, and pervade the lake, so that there would be no part of the whole lake that is not pervaded by cool water;
+an5.28:3.6 | S: In the same way, a mendicant drenches, steeps, fills, and spreads themselves with rapture and bliss born of immersion. | T: so too, the bhikkhu makes the rapture and happiness born of concentration drench, steep, fill, and pervade this body,
+an5.28:3.7 | S: There’s no part of the body that’s not spread with rapture and bliss born of immersion. | T: so that there is no part of his whole body that is not pervaded by the rapture and happiness born of concentration.
+an5.28:3.8 | S: This is the second way to develop noble right immersion with five factors. | T: This is the second development of noble five-factored right concentration.
+an5.28:4.1 | S: Furthermore, with the fading away of rapture, a mendicant enters and remains in the third absorption. They meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: (3) “Again, with the fading away as well of rapture, a bhikkhu dwells equanimous and, mindful and clearly comprehending, he experiences pleasure with the body; he enters and dwells in the third jhāna of which the noble ones declare: ‘He is equanimous, mindful, one who dwells happily.’
+an5.28:4.2 | S: They drench, steep, fill, and spread themselves with bliss free of rapture. | T: He makes the happiness divested of rapture drench, steep, fill, and pervade this body,
+an5.28:4.3 | S: There’s no part of the body that’s not spread with bliss free of rapture. | T: so that there is no part of his whole body that is not pervaded by the happiness divested of rapture.
+an5.28:4.4 | S: It’s like a pool with blue water lilies, or pink or white lotuses. Some of them sprout and grow in the water without rising above it, thriving underwater. | T: Just as, in a pond of blue or red or white lotuses, some lotuses that are born and grow in the water might thrive immersed in the water without rising out of it,
+an5.28:4.5 | S: From the tip to the root they’re drenched, steeped, filled, and soaked with cool water. | T: and cool water would drench, steep, fill, and pervade them to their tips and their roots,
+an5.28:4.6 | S: There’s no part of them that’s not spread through with cool water. | T: so that there would be no part of those lotuses that would not be pervaded by cool water;
+an5.28:4.7 | S: In the same way, a mendicant drenches, steeps, fills, and spreads themselves with bliss free of rapture. | T: so too, the bhikkhu makes the happiness divested of rapture drench, steep, fill, and pervade this body,
+an5.28:4.8 | S: There’s no part of the body that’s not spread with bliss free of rapture. | T: so that there is no part of his whole body that is not pervaded by the happiness divested of rapture.
+an5.28:4.9 | S: This is the third way to develop noble right immersion with five factors. | T: This is the third development of noble five-factored right concentration.
+an5.28:5.1 | S: Furthermore, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, a mendicant enters and remains in the fourth absorption. It is without pleasure or pain, with pure equanimity and mindfulness. | T: (4) “Again, with the abandoning of pleasure and pain, and with the previous passing away of joy and dejection, a bhikkhu enters and dwells in the fourth jhāna, neither painful nor pleasant, which has purification of mindfulness by equanimity.
+an5.28:5.2 | S: They sit spreading their body through with pure bright mind. | T: He sits pervading this body with a pure bright mind,
+an5.28:5.3 | S: There’s no part of the body that’s not spread with pure bright mind. | T: so that there is no part of his whole body that is not pervaded by the pure bright mind.
+an5.28:5.4 | S: It’s like someone sitting wrapped from head to foot with white cloth. | T: Just as a man might be sitting covered from the head down with a white cloth,
+an5.28:5.5 | S: There’s no part of the body that’s not spread over with white cloth. | T: so that there would be no part of his whole body that is not pervaded by the white cloth;
+an5.28:5.6 | S: In the same way, they sit spreading their body through with pure bright mind. | T: so too, the bhikkhu sits pervading this body with a pure bright mind,
+an5.28:5.7 | S: There’s no part of the body that’s not spread with pure bright mind. | T: so that there is no part of his whole body that is not pervaded by the pure bright mind.
+an5.28:5.8 | S: This is the fourth way to develop noble right immersion with five factors. | T: This is the fourth development of noble five-factored right concentration.
+an5.28:6.1 | S: Furthermore, the meditation that is a basis for reviewing is properly grasped, focused on, borne in mind, and penetrated with wisdom by a mendicant. | T: (5) “Again, a bhikkhu has grasped well the object of reviewing, attended to it well, sustained it well, and penetrated it well with wisdom.
+an5.28:6.2 | S: It’s like when someone views someone else. Someone standing might view someone sitting, or someone sitting might view someone lying down. | T: Just as one person might look upon another—as one standing might look upon one sitting down, or one sitting down might look upon one lying down—
+an5.28:6.3 | S: In the same way, the meditation that is a basis for reviewing is properly grasped, focused on, borne in mind, and penetrated with wisdom by a mendicant. | T: so too, a bhikkhu has grasped well the object of reviewing, attended to it well, sustained it well, and penetrated it well with wisdom.
+an5.28:6.4 | S: This is the fifth way to develop noble right immersion with five factors. | T: This is the fifth development of noble five-factored right concentration.
+an5.28:7.1 | S: When the noble right immersion with five factors is developed and cultivated in this way, a mendicant extends the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: “When, bhikkhus, noble five-factored right concentration has been developed and cultivated in this way, then, there being a suitable basis, he is capable of realizing any state realizable by direct knowledge toward which he might incline his mind.
+an5.28:8.1 | S: Suppose a water jar was placed on a stand, full to the brim so a crow could drink from it. | T: “Suppose a water jug full of water has been set out on a stand, the jug being full of water right up to the brim so that crows could drink from it.
+an5.28:8.2 | S: If a strong man was to tip it any which way, would water pour out?” | T: If a strong man would tip it in any direction, would water come out?”
+an5.28:8.3 | S: “Yes, sir.” | T: “Yes, Bhante.”
+an5.28:8.4 | S: “In the same way, when noble right immersion with five factors is developed and cultivated in this way, a mendicant extends the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: “So too, bhikkhus, when noble five-factored right concentration has been developed and cultivated in this way, then, there being a suitable basis, he is capable of realizing any state realizable by direct knowledge toward which he might incline his mind.
+an5.28:9.1 | S: Suppose there was a square, walled lotus pond on level ground, full to the brim so a crow could drink from it. | T: “Suppose on level ground there was a four-sided pond, contained by an embankment, full of water right up to the brim so that crows could drink from it.
+an5.28:9.2 | S: If a strong man was to open the wall on any side, would water pour out?” | T: If a strong man were to remove the embankment on any side, would water come out?”
+an5.28:9.3 | S: “Yes, sir.” | T: “Yes, Bhante.”
+an5.28:9.4 | S: “In the same way, when noble right immersion with five factors is developed and cultivated in this way, a mendicant extends the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: “So too, bhikkhus, when noble five-factored right concentration has been developed and cultivated in this way, then, there being a suitable basis, he is capable of realizing any state realizable by direct knowledge toward which he might incline his mind.
+an5.28:10.1 | S: Suppose a chariot stood harnessed to thoroughbreds at a level crossroads, with a goad ready. | T: “Suppose on even ground at a crossroads a chariot was standing harnessed to thoroughbreds, with a goad ready at hand,
+an5.28:10.2 | S: A deft horse trainer, a master charioteer, might mount the chariot, taking the reins in his right hand and goad in the left. He’d drive out and back wherever he wishes, whenever he wishes. | T: so that a skillful trainer, the charioteer, could mount it, and taking the reins in his left hand and the goad in his right, might drive out and return wherever and whenever he likes.
+an5.28:10.3 | S: In the same way, when noble right immersion with five factors is developed and cultivated in this way, | T: So too, bhikkhus, when noble five-factored right concentration has been developed and cultivated in this way,
+an5.28:10.4 | S: a mendicant extends the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: then, there being a suitable basis, he is capable of realizing any state realizable by direct knowledge toward which he might incline his mind.
+an5.28:11.1 | S: If you wish: ‘May I wield the many kinds of psychic power: multiplying myself and becoming one again … controlling the body as far as the realm of divinity.’ | T: “If he wishes: ‘May I wield the various kinds of psychic potency: having been one, may I become many … here and below as in AN5.23 … may I exercise mastery with the body as far as the brahmā world,’
+an5.28:11.2 | S: You’re capable of realizing it, since each and every one is within range. | T: he is capable of realizing it, there being a suitable basis.
+an5.28:12.1 | S: If you wish: ‘With clairaudience that is purified and superhuman, may I hear both kinds of sounds, human and heavenly, whether near or far.’ | T: “If he wishes: ‘May I, with the divine ear element, which is purified and surpasses the human, hear both kinds of sounds, the divine and human, those that are far as well as near,’
+an5.28:12.2 | S: You’re capable of realizing it, since each and every one is within range. | T: he is capable of realizing it, there being a suitable basis.
+an5.28:13.1 | S: If you wish: ‘May I understand the minds of other beings and individuals, having encompassed them with my mind. | T: “If he wishes: ‘May I understand the minds of other beings and persons, having encompassed them with my own mind.
+an5.28:13.2 | S: May I understand mind with greed as “mind with greed”, | T: May I understand …
+an5.28:13.3 | S: and mind without greed as “mind without greed”; | T: (none)
+an5.28:13.4 | S: mind with hate as “mind with hate”, | T: (none)
+an5.28:13.5 | S: and mind without hate as “mind without hate”; | T: (none)
+an5.28:13.6 | S: mind with delusion as “mind with delusion”, | T: (none)
+an5.28:13.7 | S: and mind without delusion as “mind without delusion”; | T: (none)
+an5.28:13.8 | S: constricted mind as “constricted mind”, | T: (none)
+an5.28:13.9 | S: and scattered mind as “scattered mind”; | T: (none)
+an5.28:13.10 | S: expansive mind as “expansive mind”, | T: (none)
+an5.28:13.11 | S: and unexpansive mind as “unexpansive mind”; | T: (none)
+an5.28:13.12 | S: mind that is not supreme as “mind that is not supreme”, | T: (none)
+an5.28:13.13 | S: and mind that is supreme as “mind that is supreme”; | T: (none)
+an5.28:13.14 | S: mind immersed in samādhi as “mind immersed in samādhi”, | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.28:13.15 | S: and mind not immersed in samādhi as “mind not immersed in samādhi”; | T: (none)
+an5.28:13.16 | S: freed mind as “freed mind”, | T: (none)
+an5.28:13.17 | S: and unfreed mind as “unfreed mind”.’ | T: an unliberated mind as unliberated,’
+an5.28:13.18 | S: You’re capable of realizing it, since each and every one is within range. | T: he is capable of realizing it, there being a suitable basis.
+an5.28:14.1 | S: If you wish: ‘May I recollect many kinds of past lives, with features and details.’ | T: “If he wishes: ‘May I recollect my manifold past abodes … with their aspects and details,’
+an5.28:14.2 | S: You’re capable of realizing it, since each and every one is within range. | T: he is capable of realizing it, there being a suitable basis.
+an5.28:15.1 | S: If you wish: ‘With clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn according to their deeds.’ | T: “If he wishes: ‘May I, with the divine eye, which is purified and surpasses the human, see beings passing away and being reborn … and understand how beings fare in accordance with their kamma,’
+an5.28:15.2 | S: You’re capable of realizing it, since each and every one is within range. | T: he is capable of realizing it, there being a suitable basis.
+an5.28:16.1 | S: If you wish: ‘May I realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with my own insight in this very life due to the ending of defilements.’ | T: “If he wishes: ‘May I, with the destruction of the taints, in this very life realize for myself with direct knowledge the taintless liberation of mind, liberation by wisdom, and having entered upon it, may I dwell in it,’
+an5.28:16.2 | S: You’re capable of realizing it, since each and every one is within range.” | T: he is capable of realizing it, there being a suitable basis.”
+an5.28:16.3 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn12.60
+sn12.60:1.1 | S: At one time the Buddha was staying in the land of the Kurus, near the Kuru town named Kammāsadamma. | T: On one occasion the Blessed One was dwelling among the Kurus, where there was a town of the Kurus named Kammasadamma.
+sn12.60:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.60:1.3 | S: “It’s incredible, sir! It’s amazing, | T: “It is wonderful, venerable sir! It is amazing, venerable sir!
+sn12.60:1.4 | S: in that this dependent origination is deep and appears deep, yet to me it seems as plain as can be.” | T: This dependent origination is so deep and so deep in implications, yet to me it seems as clear as clear can be.”
+sn12.60:2.1 | S: “Not so, Ānanda! Not so, Ānanda! | T: “Not so, Ānanda! Not so, Ānanda!
+sn12.60:2.2 | S: This dependent origination is deep and appears deep. | T: This dependent origination is deep and deep in implications.
+sn12.60:2.3 | S: It is because of not understanding and not penetrating this teaching that this population has become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: It is because of not understanding and not penetrating this Dhamma, Ānanda, that this generation has become like a tangled skein, like a knotted ball of thread, like matted reeds and rushes, and does not pass beyond the plane of misery, the bad destinations, the nether world, saṁsara.
+sn12.60:3.1 | S: There are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: “Ānanda, when one dwells contemplating gratification in things that can be clung to, craving increases.
+sn12.60:3.2 | S: Craving is a requirement for grasping. | T: With craving as condition, clinging comes to be….
+sn12.60:3.3 | S: Grasping is a requirement for continued existence. | T: (none)
+sn12.60:3.4 | S: Continued existence is a requirement for rebirth. | T: (none)
+sn12.60:3.5 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: (none)
+sn12.60:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.60:4.1 | S: Suppose there was a great tree. | T: “Suppose, Ānanda, there was a great tree,
+sn12.60:4.2 | S: And its roots going downwards and across all draw the sap upwards. | T: and all its roots going downwards and across would send the sap upwards.
+sn12.60:4.3 | S: Fed and fuelled by that, the great tree would stand for a long time. | T: Sustained by that sap, nourished by it, that great tree would stand for a very long time.
+sn12.60:4.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one lives contemplating gratification in things that can be clung to, craving increases….
+sn12.60:4.5 | S: Craving is a requirement for grasping. | T: (none)
+sn12.60:4.6 | S: Grasping is a requirement for continued existence. … | T: (none)
+sn12.60:4.7 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.60:5.1 | S: There are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “When, Ānanda, one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.60:5.2 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging….
+sn12.60:5.3 | S: When grasping ceases, continued existence ceases. … | T: (none)
+sn12.60:5.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.60:6.1 | S: Suppose there was a great tree. | T: “Suppose, Ānanda, there was a great tree.
+sn12.60:6.2 | S: Then a person comes along with a spade and basket. | T: Then a man would come along bringing a shovel and a basket.
+sn12.60:6.3 | S: They’d cut the tree down at the roots, dig them up, and pull them out, down to the fibers and stems. | T: He would cut down the tree at its foot …
+sn12.60:6.4 | S: Then they’d split the tree apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or float them away down a swift stream. | T: he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.
+sn12.60:6.5 | P: Khaṇḍākhaṇḍikaṁ chinditvā phāleyya; | T: (none)
+sn12.60:6.6 | P: phāletvā sakalikaṁ sakalikaṁ kareyya, sakalikaṁ sakalikaṁ karitvā vātātape visoseyya, vātātape visosetvā agginā ḍaheyya, agginā ḍahetvā masiṁ kareyya, masiṁ karitvā mahāvāte vā ophuṇeyya, nadiyā vā sīghasotāya pavāheyya. | T: (none)
+sn12.60:6.7 | S: In this way the great tree is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that great tree would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.60:6.8 | S: In the same way, there are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “So too, Ānanda, when one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.60:6.9 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging;
+sn12.60:6.10 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.60:6.11 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.60:6.12 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.60:6.13 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.60:6.14 | P: Dasamaṁ. | T: (none)
+sn12.60:6.15 | P: Dukkhavaggo chaṭṭho. | T: (none)
+sn12.60:7.0 | P: Tassuddānaṁ | T: (none)
+sn12.60:7.1 | P: Parivīmaṁsanupādānaṁ, | T: (none)
+sn12.60:7.2 | P: dve ca saṁyojanāni ca; | T: (none)
+sn12.60:7.3 | P: Mahārukkhena dve vuttā, | T: (none)
+sn12.60:7.4 | P: taruṇena ca sattamaṁ; | T: (none)
+sn12.60:7.5 | P: Nāmarūpañca viññāṇaṁ, | T: (none)
+sn12.60:7.6 | P: nidānena ca te dasāti. | T: (none)
+
+## sn47.13
+sn47.13:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn47.13:1.2 | S: At that time Venerable Sāriputta was staying in the Magadhan lands near the little village of Nālaka, and he was sick, suffering, gravely ill. | T: Now on that occasion the Venerable Sāriputta was dwelling among the Magadhans at Nalakagama—sick, afflicted, gravely ill—
+sn47.13:1.3 | S: And the novice Cunda was his carer. | T: and the novice Cunda was his attendant.
+sn47.13:2.1 | S: Then Venerable Sāriputta was fully extinguished from that sickness. | T: Then, because of that illness, the Venerable Sāriputta attained final Nibbāna.
+sn47.13:2.2 | S: Then Cunda took Sāriputta’s bowl and robes and set out for Sāvatthī. He went to see Venerable Ānanda at Jeta’s grove, Anāthapiṇḍika’s monastery, bowed, sat down to one side, and said to him: | T: The novice Cunda, taking the Venerable Sāriputta’s bowl and robe, went to Savatthi, to Jeta’s Grove, Anathapiṇḍika’s Park. There he approached the Venerable Ānanda, paid homage to him, sat down to one side, and said to him:
+sn47.13:2.3 | S: “Sir, Venerable Sāriputta has become fully quenched. | T: “Venerable sir, the Venerable Sāriputta has attained final Nibbāna.
+sn47.13:2.4 | S: This is his bowl and robe.” | T: This is his bowl and robe.”
+sn47.13:3.1 | S: “Reverend Cunda, we should see the Buddha about this matter. | T: “Friend Cunda, we should see the Blessed One about this piece of news.
+sn47.13:3.2 | S: Come, let’s go to the Buddha and inform him about this.” | T: Come, friend Cunda, let us go to the Blessed One and report this matter to him.”
+sn47.13:3.3 | S: “Yes, sir,” replied Cunda. | T: “Yes, venerable sir,” the novice Cunda replied.
+sn47.13:4.1 | S: Then Ānanda and Cunda went to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda and the novice Cunda approached the Blessed One, paid homage to him, and sat down to one side. The Venerable Ānanda then said to the Blessed One:
+sn47.13:4.2 | S: “Sir, this novice Cunda says that | T: “This novice Cunda, venerable sir, says that
+sn47.13:4.3 | S: Venerable Sāriputta has become fully quenched. | T: the Venerable Sāriputta has attained final Nibbāna,
+sn47.13:4.4 | S: This is his bowl and robe. | T: and this is his bowl and robe.
+sn47.13:4.5 | S: Since I heard this, my body feels like it’s drugged. I’m disorientated, and the teachings don’t spring to mind.” | T: Venerable sir, since I heard that the Venerable Sāriputta has attained final Nibbāna, my body seems as if it has been drugged, I have become disoriented, the teachings are no longer clear to me.”
+sn47.13:5.1 | S: “Well, Ānanda, when Sāriputta was fully quenched, did he take away your entire spectrum of ethical conduct, of immersion, of wisdom, of freedom, or of the knowledge and vision of freedom?” | T: “Why, Ānanda, when Sāriputta attained final Nibbāna, did he take away your aggregate of virtue, or your aggregate of concentration, or your aggregate of wisdom, or your aggregate of liberation, or your aggregate of the knowledge and vision of liberation?”
+sn47.13:5.2 | S: “No, sir, he did not. | T: “No, he did not, venerable sir.
+sn47.13:5.3 | P: paññākkhandhaṁ vā …pe… | T: (none)
+sn47.13:5.4 | P: vimuttikkhandhaṁ vā …pe… | T: (none)
+sn47.13:5.5 | P: vimuttiñāṇadassanakkhandhaṁ vā ādāya parinibbuto. | T: (none)
+sn47.13:5.6 | S: But Venerable Sāriputta was my adviser and counselor. He educated, encouraged, fired up, and inspired me. He never tired of teaching the Dhamma, and he supported his spiritual companions. | T: But for me the Venerable Sāriputta was an advisor and counsellor, one who instructed, exhorted, inspired, and gladdened me. He was unwearying in teaching the Dhamma; he was helpful to his brothers in the holy life.
+sn47.13:5.7 | S: I remember the nectar of the teaching, the riches of the teaching, the support of the teaching given by Venerable Sāriputta.” | T: We recollect the nourishment of Dhamma, the wealth of Dhamma, the help of Dhamma given by the Venerable Sāriputta.”
+sn47.13:6.1 | S: “Ānanda, did I not prepare for this when I explained that | T: “But have I not already declared, Ānanda,
+sn47.13:6.2 | S: we must be parted and separated from all we hold dear and beloved? | T: that we must be parted, separated, and severed from all who are dear and agreeable to us?
+sn47.13:6.3 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: How, Ānanda, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate!’?
+sn47.13:6.4 | S: That is not possible. | T: That is impossible.
+sn47.13:6.5 | S: Suppose there was a large tree standing with heartwood, and the largest branch broke off. | T: It is just as if the largest branch would break off a great tree standing possessed of heartwood:
+sn47.13:6.6 | S: In the same way, in the great Saṅgha that stands with heartwood, Sāriputta has become fully quenched. | T: so too, Ānanda, in the great Bhikkhu Saṅgha standing possessed of heartwood, Sāriputta has attained final Nibbāna.
+sn47.13:6.7 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: How, Ānanda, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate!’?
+sn47.13:6.8 | S: That is not possible. | T: That is impossible.
+sn47.13:6.9 | S: So Ānanda, live as your own island, your own refuge, with no other refuge. Let the teaching be your island and your refuge, with no other refuge. | T: “Therefore, Ānanda, dwell with yourselves as your own island, with yourselves as your own refuge, with no other refuge; dwell with the Dhamma as your island, with the Dhamma as your refuge, with no other refuge … as in §9 …
+sn47.13:7.1 | S: And how does a mendicant do this? | T: (none)
+sn47.13:7.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.13:7.3 | S: They meditate observing an aspect of feelings … | T: (none)
+sn47.13:7.4 | S: mind … | T: (none)
+sn47.13:7.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.13:7.6 | S: That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. | T: (none)
+sn47.13:7.7 | S: Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” | T: Those bhikkhus, Ānanda, either now or after I am gone, who dwell with themselves as their own island, with themselves as their own refuge, with no other refuge; who dwell with the Dhamma as their island, with the Dhamma as their refuge, with no other refuge—it is these bhikkhus, Ānanda, who will be for me topmost of those keen on the training.”
+sn47.13:7.8 | P: Tatiyaṁ. | T: (none)
+
+## sn12.51
+sn12.51:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.51:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn12.51:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus thus:
+sn12.51:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+sn12.51:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn12.51:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.51:2.1 | S: “Mendicants, when a mendicant is inquiring, how do you define when they are inquiring for the complete ending of suffering?” | T: “Bhikkhus, when a bhikkhu is making a thorough investigation, in what way should he thoroughly investigate for the utterly complete destruction of suffering?”
+sn12.51:2.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Venerable sir, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will remember it.”
+sn12.51:2.3 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, bhikkhus, I will speak.”
+sn12.51:2.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.51:2.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.51:3.1 | S: “Mendicants, take a mendicant who makes an inquiry: | T: “Here, bhikkhus, when he makes a thorough investigation, a bhikkhu thoroughly investigates thus:
+sn12.51:3.2 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death:
+sn12.51:3.3 | S: What is the source, origin, birthplace, and inception of this suffering? | T: what is the source of this suffering, what is its origin, from what is it born and produced?
+sn12.51:3.4 | S: When what exists do old age and death come to be? When what does not exist do old age and death not come to be?’ | T: When what exists does aging-and-death come to be? When what does not exist does aging-and-death not come to be?’
+sn12.51:3.5 | S: While making an inquiry they understand: | T: “As he thoroughly investigates he understands thus:
+sn12.51:3.6 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. The source of this suffering is rebirth. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death: this suffering has birth as its source, birth as its origin; it is born and produced from birth.
+sn12.51:3.7 | S: When rebirth exists, old age and death come to be. When rebirth doesn’t exist, old age and death don’t come to be.’ | T: When there is birth, aging-and-death comes to be; when there is no birth, aging-and-death does not come to be.’
+sn12.51:4.1 | S: They understand old age and death, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He understands aging-and-death, its origin, its cessation, and the way leading on that is in conformity with its cessation. He practises that way and conducts himself accordingly.
+sn12.51:4.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of old age and death. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of aging-and-death.
+sn12.51:5.1 | S: Then they inquire further: | T: “Then, investigating further,
+sn12.51:5.2 | S: ‘But what is the source of this rebirth? When what exists does rebirth come to be? And when what does not exist does rebirth not come to be?’ | T: he thoroughly investigates thus: ‘What is the source of this birth, what is its origin, from what is it born and produced?…
+sn12.51:5.3 | S: While making an inquiry they understand: | T: (none)
+sn12.51:5.4 | S: ‘Continued existence is the source of rebirth. | T: (none)
+sn12.51:5.5 | S: When continued existence exists, rebirth comes to be. When continued existence does not exist, rebirth doesn’t come to be.’ | T: (none)
+sn12.51:6.1 | S: They understand rebirth, its origin, its cessation, and the fitting practice for its cessation. And they practice in line with that path. | T: (none)
+sn12.51:6.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of rebirth. | T: (none)
+sn12.51:7.1 | S: Then they inquire further: | T: (none)
+sn12.51:7.2 | S: ‘But what is the source of this continued existence? …’ … | T: What is the source of this existence?…
+sn12.51:7.3 | S: ‘But what is the source of this grasping? …’ … | T: this clinging?…
+sn12.51:7.4 | S: ‘But what is the source of this craving? …’ … | T: this craving?…
+sn12.51:7.5 | S: ‘But what is the source of this feeling? …’ … | T: this feeling?…
+sn12.51:7.6 | S: ‘But what is the source of this contact? …’ … | T: this contact?…
+sn12.51:7.7 | S: ‘But what is the source of these six sense fields? …’ … | T: these six sense bases?…
+sn12.51:7.8 | S: ‘But what is the source of this name and form? …’ … | T: this name-and-form?…
+sn12.51:7.9 | S: ‘But what is the source of this consciousness? …’ … | T: this consciousness? …
+sn12.51:7.10 | S: ‘But what is the source of these choices? | T: What is the source of these volitional formations, what is their origin, from what are they born and produced?
+sn12.51:7.11 | S: When what exists do choices come to be? When what does not exist do choices not come to be?’ | T: When what exists do volitional formations come to be? When what does not exist do volitional formations not come to be?’
+sn12.51:7.12 | S: While making an inquiry they understand: | T: “As he thoroughly investigates he understands thus:
+sn12.51:7.13 | S: ‘Ignorance is the source of choices. | T: ‘Volitional formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+sn12.51:7.14 | S: When ignorance exists, choices come to be. When ignorance does not exist, choices don’t come to be.’ | T: When there is ignorance, volitional formations come to be; when there is no ignorance, volitional formations do not come to be.’
+sn12.51:8.1 | S: They understand choices, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He understands volitional formations, their origin, their cessation, and the way leading on that is in conformity with their cessation. He practises that way and conducts himself accordingly.
+sn12.51:8.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of choices. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of volitional formations.
+sn12.51:9.1 | S: If an ignoramus makes a good choice, consciousness passes on by means of goodness. | T: “Bhikkhus, if a person immersed in ignorance generates a meritorious volitional formation, consciousness fares on to the meritorious;
+sn12.51:9.2 | S: If they make a bad choice, consciousness passes on by means of badness. | T: if he generates a demeritorious volitional formation, consciousness fares on to the demeritorious;
+sn12.51:9.3 | S: If they make an imperturbable choice, consciousness passes on by means of imperturbability. | T: if he generates an imperturbable volitional formation, consciousness fares on to the imperturbable.
+sn12.51:9.4 | S: When a mendicant has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t make a good choice, a bad choice, or an imperturbable choice. | T: But when a bhikkhu has abandoned ignorance and aroused true knowledge, then, with the fading away of ignorance and the arising of true knowledge, he does not generate a meritorious volitional formation, or a demeritorious volitional formation, or an imperturbable volitional formation. Since he does not generate or fashion volitional formations,
+sn12.51:9.5 | S: Not choosing or intending, they don’t grasp at anything in the world. | T: he does not cling to anything in the world.
+sn12.51:9.6 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Not being agitated, he personally attains Nibbāna.
+sn12.51:9.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn12.51:10.1 | S: If they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “If he feels a pleasant feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.2 | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a painful feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.3 | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a neither-painful-nor-pleasant feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.4 | S: If they feel a pleasant feeling, they feel it detached. | T: “If he feels a pleasant feeling, he feels it detached;
+sn12.51:10.5 | S: If they feel a painful feeling, they feel it detached. | T: if he feels a painful feeling, he feels it detached;
+sn12.51:10.6 | S: If they feel a neutral feeling, they feel it detached. | T: if he feels a neither-painful-nor-pleasant feeling, he feels it detached.
+sn12.51:11.1 | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: “When he feels a feeling terminating with the body, he understands: ‘I feel a feeling terminating with the body.’ When he feels a feeling terminating with life, he understands: ‘I feel a feeling terminating with life.’
+sn12.51:11.2 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He understands: ‘With the breakup of the body, following the exhaustion of life, all that is felt, not being delighted in, will become cool right here; mere bodily remains will be left.’
+sn12.51:12.1 | S: Suppose a person were to remove a hot clay pot from a potter’s kiln and place it down on level ground. | T: “Suppose, bhikkhus, a man would remove a hot clay pot from a potter’s kiln and set it on smooth ground:
+sn12.51:12.2 | S: Its heat would dissipate right there, and the shards would be left behind. | T: its heat would be dissipated right there and potsherds would be left.
+sn12.51:12.3 | S: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: So too, when he feels a feeling terminating with the body … terminating with life….
+sn12.51:12.4 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He understands: ‘With the breakup of the body, following the exhaustion of life, all that is felt, not being delighted in, will become cool right here; mere bodily remains will be left.’
+sn12.51:13.1 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn12.51:13.2 | S: Would a mendicant who has ended the defilements still make good choices, bad choices, or imperturbable choices?” | T: can a bhikkhu whose taints are destroyed generate a meritorious volitional formation, or a demeritorious volitional formation, or an imperturbable volitional formation?”
+sn12.51:13.3 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:14.1 | S: “And when there are no choices at all, with the cessation of choices, would consciousness still be found?” | T: “When there are utterly no volitional formations, with the cessation of volitional formations, would consciousness be discerned?”
+sn12.51:14.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:15.1 | S: “And when there’s no consciousness at all, would name and form still be found?” | T: “When there is utterly no consciousness, with the cessation of consciousness, would name-and-form be discerned?”
+sn12.51:15.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:16.1 | S: “And when there are no name and form at all, would the six sense fields still be found?” | T: “When there is utterly no name-and-form … no six sense bases …
+sn12.51:16.2 | S: “No, sir.” | T: …
+sn12.51:17.1 | S: “And when there are no six sense fields at all, would contact still be found?” | T: (none)
+sn12.51:17.2 | S: “No, sir.” | T: (none)
+sn12.51:18.1 | S: “And when there’s no contact at all, would feeling still be found?” | T: no contact … no feeling …
+sn12.51:18.2 | S: “No, sir.” | T: (none)
+sn12.51:19.1 | S: “And when there’s no feeling at all, would craving still be found?” | T: (none)
+sn12.51:19.2 | S: “No, sir.” | T: (none)
+sn12.51:20.1 | S: “And when there’s no craving at all, would grasping still be found?” | T: no craving … no clinging …
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.51:20.2 | S: “No, sir.” | T: (none)
+sn12.51:21.1 | S: “And when there’s no grasping at all, would continued existence still be found?” | T: (none)
+sn12.51:21.2 | S: “No, sir.” | T: (none)
+sn12.51:22.1 | S: “And when there’s no continued existence at all, would rebirth still be found?” | T: no existence …
+sn12.51:22.2 | S: “No, sir.” | T: (none)
+sn12.51:23.1 | S: “And when there’s no rebirth at all, would old age and death still be found?” | T: no birth, with the cessation of birth, would aging-and-death be discerned?”
+sn12.51:23.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:24.1 | S: “Good, good, mendicants! That’s how it is, not otherwise. | T: “Good, good, bhikkhus! It is exactly so and not otherwise!
+sn12.51:24.2 | S: Trust me on this, mendicants; be convinced. Have no doubts or uncertainties in this matter. | T: Place faith in me about this, bhikkhus, resolve on this. Be free from perplexity and doubt about this.
+sn12.51:24.3 | S: Just this is the end of suffering.” | T: Just this is the end of suffering.”
+sn12.51:24.4 | P: Paṭhamaṁ. | T: (none)
+
+
+codex
+I’ve read the full batch. I found misplaced sentence openings and ellipsis-separated list items; I’m checking the start words before writing the findings.
+exec
+/bin/bash -lc "sed -n '282,380p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.51
+sn12.51:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.51:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn12.51:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus thus:
+sn12.51:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+sn12.51:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn12.51:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.51:2.1 | S: “Mendicants, when a mendicant is inquiring, how do you define when they are inquiring for the complete ending of suffering?” | T: “Bhikkhus, when a bhikkhu is making a thorough investigation, in what way should he thoroughly investigate for the utterly complete destruction of suffering?”
+sn12.51:2.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Venerable sir, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will remember it.”
+sn12.51:2.3 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, bhikkhus, I will speak.”
+sn12.51:2.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.51:2.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.51:3.1 | S: “Mendicants, take a mendicant who makes an inquiry: | T: “Here, bhikkhus, when he makes a thorough investigation, a bhikkhu thoroughly investigates thus:
+sn12.51:3.2 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death:
+sn12.51:3.3 | S: What is the source, origin, birthplace, and inception of this suffering? | T: what is the source of this suffering, what is its origin, from what is it born and produced?
+sn12.51:3.4 | S: When what exists do old age and death come to be? When what does not exist do old age and death not come to be?’ | T: When what exists does aging-and-death come to be? When what does not exist does aging-and-death not come to be?’
+sn12.51:3.5 | S: While making an inquiry they understand: | T: “As he thoroughly investigates he understands thus:
+sn12.51:3.6 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. The source of this suffering is rebirth. | T: ‘The many diverse kinds of suffering that arise in the world headed by aging-and-death: this suffering has birth as its source, birth as its origin; it is born and produced from birth.
+sn12.51:3.7 | S: When rebirth exists, old age and death come to be. When rebirth doesn’t exist, old age and death don’t come to be.’ | T: When there is birth, aging-and-death comes to be; when there is no birth, aging-and-death does not come to be.’
+sn12.51:4.1 | S: They understand old age and death, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He understands aging-and-death, its origin, its cessation, and the way leading on that is in conformity with its cessation. He practises that way and conducts himself accordingly.
+sn12.51:4.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of old age and death. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of aging-and-death.
+sn12.51:5.1 | S: Then they inquire further: | T: “Then, investigating further,
+sn12.51:5.2 | S: ‘But what is the source of this rebirth? When what exists does rebirth come to be? And when what does not exist does rebirth not come to be?’ | T: he thoroughly investigates thus: ‘What is the source of this birth, what is its origin, from what is it born and produced?…
+sn12.51:5.3 | S: While making an inquiry they understand: | T: (none)
+sn12.51:5.4 | S: ‘Continued existence is the source of rebirth. | T: (none)
+sn12.51:5.5 | S: When continued existence exists, rebirth comes to be. When continued existence does not exist, rebirth doesn’t come to be.’ | T: (none)
+sn12.51:6.1 | S: They understand rebirth, its origin, its cessation, and the fitting practice for its cessation. And they practice in line with that path. | T: (none)
+sn12.51:6.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of rebirth. | T: (none)
+sn12.51:7.1 | S: Then they inquire further: | T: (none)
+sn12.51:7.2 | S: ‘But what is the source of this continued existence? …’ … | T: What is the source of this existence?…
+sn12.51:7.3 | S: ‘But what is the source of this grasping? …’ … | T: this clinging?…
+sn12.51:7.4 | S: ‘But what is the source of this craving? …’ … | T: this craving?…
+sn12.51:7.5 | S: ‘But what is the source of this feeling? …’ … | T: this feeling?…
+sn12.51:7.6 | S: ‘But what is the source of this contact? …’ … | T: this contact?…
+sn12.51:7.7 | S: ‘But what is the source of these six sense fields? …’ … | T: these six sense bases?…
+sn12.51:7.8 | S: ‘But what is the source of this name and form? …’ … | T: this name-and-form?…
+sn12.51:7.9 | S: ‘But what is the source of this consciousness? …’ … | T: this consciousness? …
+sn12.51:7.10 | S: ‘But what is the source of these choices? | T: What is the source of these volitional formations, what is their origin, from what are they born and produced?
+sn12.51:7.11 | S: When what exists do choices come to be? When what does not exist do choices not come to be?’ | T: When what exists do volitional formations come to be? When what does not exist do volitional formations not come to be?’
+sn12.51:7.12 | S: While making an inquiry they understand: | T: “As he thoroughly investigates he understands thus:
+sn12.51:7.13 | S: ‘Ignorance is the source of choices. | T: ‘Volitional formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+sn12.51:7.14 | S: When ignorance exists, choices come to be. When ignorance does not exist, choices don’t come to be.’ | T: When there is ignorance, volitional formations come to be; when there is no ignorance, volitional formations do not come to be.’
+sn12.51:8.1 | S: They understand choices, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He understands volitional formations, their origin, their cessation, and the way leading on that is in conformity with their cessation. He practises that way and conducts himself accordingly.
+sn12.51:8.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of choices. | T: This is called a bhikkhu who is practising for the utterly complete destruction of suffering, for the cessation of volitional formations.
+sn12.51:9.1 | S: If an ignoramus makes a good choice, consciousness passes on by means of goodness. | T: “Bhikkhus, if a person immersed in ignorance generates a meritorious volitional formation, consciousness fares on to the meritorious;
+sn12.51:9.2 | S: If they make a bad choice, consciousness passes on by means of badness. | T: if he generates a demeritorious volitional formation, consciousness fares on to the demeritorious;
+sn12.51:9.3 | S: If they make an imperturbable choice, consciousness passes on by means of imperturbability. | T: if he generates an imperturbable volitional formation, consciousness fares on to the imperturbable.
+sn12.51:9.4 | S: When a mendicant has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t make a good choice, a bad choice, or an imperturbable choice. | T: But when a bhikkhu has abandoned ignorance and aroused true knowledge, then, with the fading away of ignorance and the arising of true knowledge, he does not generate a meritorious volitional formation, or a demeritorious volitional formation, or an imperturbable volitional formation. Since he does not generate or fashion volitional formations,
+sn12.51:9.5 | S: Not choosing or intending, they don’t grasp at anything in the world. | T: he does not cling to anything in the world.
+sn12.51:9.6 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Not being agitated, he personally attains Nibbāna.
+sn12.51:9.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn12.51:10.1 | S: If they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “If he feels a pleasant feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.2 | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a painful feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.3 | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: If he feels a neither-painful-nor-pleasant feeling, he understands: ‘It is impermanent’; he understands: ‘It is not held to’; he understands: ‘It is not delighted in.’
+sn12.51:10.4 | S: If they feel a pleasant feeling, they feel it detached. | T: “If he feels a pleasant feeling, he feels it detached;
+sn12.51:10.5 | S: If they feel a painful feeling, they feel it detached. | T: if he feels a painful feeling, he feels it detached;
+sn12.51:10.6 | S: If they feel a neutral feeling, they feel it detached. | T: if he feels a neither-painful-nor-pleasant feeling, he feels it detached.
+sn12.51:11.1 | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: “When he feels a feeling terminating with the body, he understands: ‘I feel a feeling terminating with the body.’ When he feels a feeling terminating with life, he understands: ‘I feel a feeling terminating with life.’
+sn12.51:11.2 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He understands: ‘With the breakup of the body, following the exhaustion of life, all that is felt, not being delighted in, will become cool right here; mere bodily remains will be left.’
+sn12.51:12.1 | S: Suppose a person were to remove a hot clay pot from a potter’s kiln and place it down on level ground. | T: “Suppose, bhikkhus, a man would remove a hot clay pot from a potter’s kiln and set it on smooth ground:
+sn12.51:12.2 | S: Its heat would dissipate right there, and the shards would be left behind. | T: its heat would be dissipated right there and potsherds would be left.
+sn12.51:12.3 | S: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: So too, when he feels a feeling terminating with the body … terminating with life….
+sn12.51:12.4 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He understands: ‘With the breakup of the body, following the exhaustion of life, all that is felt, not being delighted in, will become cool right here; mere bodily remains will be left.’
+sn12.51:13.1 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn12.51:13.2 | S: Would a mendicant who has ended the defilements still make good choices, bad choices, or imperturbable choices?” | T: can a bhikkhu whose taints are destroyed generate a meritorious volitional formation, or a demeritorious volitional formation, or an imperturbable volitional formation?”
+sn12.51:13.3 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:14.1 | S: “And when there are no choices at all, with the cessation of choices, would consciousness still be found?” | T: “When there are utterly no volitional formations, with the cessation of volitional formations, would consciousness be discerned?”
+sn12.51:14.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:15.1 | S: “And when there’s no consciousness at all, would name and form still be found?” | T: “When there is utterly no consciousness, with the cessation of consciousness, would name-and-form be discerned?”
+sn12.51:15.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:16.1 | S: “And when there are no name and form at all, would the six sense fields still be found?” | T: “When there is utterly no name-and-form … no six sense bases …
+sn12.51:16.2 | S: “No, sir.” | T: …
+sn12.51:17.1 | S: “And when there are no six sense fields at all, would contact still be found?” | T: (none)
+sn12.51:17.2 | S: “No, sir.” | T: (none)
+sn12.51:18.1 | S: “And when there’s no contact at all, would feeling still be found?” | T: no contact … no feeling …
+sn12.51:18.2 | S: “No, sir.” | T: (none)
+sn12.51:19.1 | S: “And when there’s no feeling at all, would craving still be found?” | T: (none)
+sn12.51:19.2 | S: “No, sir.” | T: (none)
+sn12.51:20.1 | S: “And when there’s no craving at all, would grasping still be found?” | T: no craving … no clinging …
+sn12.51:20.2 | S: “No, sir.” | T: (none)
+sn12.51:21.1 | S: “And when there’s no grasping at all, would continued existence still be found?” | T: (none)
+sn12.51:21.2 | S: “No, sir.” | T: (none)
+sn12.51:22.1 | S: “And when there’s no continued existence at all, would rebirth still be found?” | T: no existence …
+sn12.51:22.2 | S: “No, sir.” | T: (none)
+sn12.51:23.1 | S: “And when there’s no rebirth at all, would old age and death still be found?” | T: no birth, with the cessation of birth, would aging-and-death be discerned?”
+sn12.51:23.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn12.51:24.1 | S: “Good, good, mendicants! That’s how it is, not otherwise. | T: “Good, good, bhikkhus! It is exactly so and not otherwise!
+sn12.51:24.2 | S: Trust me on this, mendicants; be convinced. Have no doubts or uncertainties in this matter. | T: Place faith in me about this, bhikkhus, resolve on this. Be free from perplexity and doubt about this.
+sn12.51:24.3 | S: Just this is the end of suffering.” | T: Just this is the end of suffering.”
+sn12.51:24.4 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-015.findings.tmp <<'EOF'
+sn12.51:5.2 starts: ‘What is the source of this birth,
+sn12.51:9.5 starts: Since he does not generate or fashion volitional
+sn12.51:17.1 starts: no six sense bases …
+sn12.51:19.1 starts: no feeling …
+sn12.51:21.1 starts: no clinging …
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+5 lines reported.
+tokens used
+33,335
+5 lines reported.

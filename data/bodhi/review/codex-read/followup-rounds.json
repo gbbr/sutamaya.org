@@ -1,0 +1,33 @@
+[
+  {
+    "translator": "bodhi",
+    "text": "sn35.95",
+    "round": "cross-codex1",
+    "action": "split",
+    "key": "sn35.95:37.1",
+    "reason": "Editorial notice that the Buddha repeats the verses covers the repeated verse group, rather than his preceding praise."
+  },
+  {
+    "translator": "bodhi",
+    "text": "sn44.1",
+    "round": "cross-codex1",
+    "action": "retain",
+    "reason": "First question is followed by ellipsis; final question and shared answer are already at 5.10 and 5.11. Splitting an omitted first answer would invent English."
+  },
+  {
+    "translator": "bodhi",
+    "text": "sn35.97",
+    "round": "cross-codex2",
+    "key": "sn35.97:1.12",
+    "action": "retain",
+    "reason": "Literal Pali at the candidate key is tongue, while English only names ear and abbreviates. Ear belongs to the preceding Pali ellipsis expansion. Do not reverse the audit correction on Sujato proxy evidence; record expansion coverage."
+  },
+  {
+    "translator": "bodhi",
+    "text": "sn35.97",
+    "round": "cross-codex2",
+    "key": "sn35.97:2.10",
+    "action": "retain",
+    "reason": "Literal Pali at the candidate key is tongue, while English only names ear and abbreviates. Ear belongs to the preceding Pali ellipsis expansion. Do not reverse the audit correction on Sujato proxy evidence; record expansion coverage."
+  }
+]

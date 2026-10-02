@@ -1,0 +1,564 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd93-42fe-7bb2-a914-5b2637dd3327
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-placement errors, and write the findings to the requested file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## snp1.5
+snp1.5:1.1 | S: “I ask the sage abounding in wisdom,” | T: Cunda the smith: I ask the sage of abundant discernment,
+snp1.5:1.2 | S: said Cunda the smith, | T: (none)
+snp1.5:1.3 | S: “the Buddha, master of the teaching, free of craving, | T: awakened, lord of the Dhamma, free of craving,
+snp1.5:1.4 | S: best of men, excellent charioteer, please tell me this: | T: supreme among two-legged beings, best of charioteers:
+snp1.5:1.5 | S: how many ascetics are there in the world?” | T: How many contemplatives are there in the world? Please tell me.
+snp1.5:2.1 | S: “There are four ascetics, not a fifth.” | T: The Buddha: Four contemplatives, there is no fifth.
+snp1.5:2.2 | S: said the Buddha to Cunda, | T: (none)
+snp1.5:2.3 | S: “Being asked to bear witness, <j>I will explain them to you: | T: Being asked in person, I disclose them to you:
+snp1.5:2.4 | S: the path-victor, the path-teacher, | T: the path-victor, the path-explainer,
+snp1.5:2.5 | S: the path-liver, and the path-wrecker.” | T: one who lives by the path, and the path-corrupter.
+snp1.5:3.1 | S: “Who is a path-victor according to the Buddhas?” | T: Cunda: Whom do the awakened call the path-victor?
+snp1.5:3.2 | S: said Cunda the smith, | T: (none)
+snp1.5:3.3 | S: “and how is one an unequaled explainer of the path? | T: How is one unequaled in pointing out the path?
+snp1.5:3.4 | S: Tell me when asked about one who lives the path, | T: When asked, tell me about the one who lives by the path.
+snp1.5:3.5 | S: then declare the path-wrecker.” | T: Then disclose the path-corrupter to me.
+snp1.5:4.1 | S: “Rid of indecision, free of thorns, | T: The Buddha: Whoever, de-arrowed, has crossed over doubt,
+snp1.5:4.2 | S: delighting in extinguishment, not fawning, | T: is refreshed in unbinding, devoid of greed,
+snp1.5:4.3 | S: a guide for the world with its gods. | T: a guide to the world along with its devas:
+snp1.5:4.4 | S: The Buddhas say one such is victor of the path. | T: The awakened call such a person path-victor.
+snp1.5:5.1 | S: Knowing the ultimate as ultimate, | T: Whoever here knowing the foremost as foremost,
+snp1.5:5.2 | S: they explain and analyze the teaching right here. | T: who points out, who analyzes the Dhamma right here,
+snp1.5:5.3 | S: That sage unstirred, with doubt cut off, | T: he, the cutter of doubt, the sage unperturbed,
+snp1.5:5.4 | S: is the second mendicant, I say, the teacher of the path. | T: is called the second of monks: path-explainer.
+snp1.5:6.1 | S: Living restrained and mindful on the path | T: Whoever lives by the path, the Dhamma-way well-explained, restrained, mindful,
+snp1.5:6.2 | S: of the well-taught passage of teaching, | T: (none)
+snp1.5:6.3 | S: cultivating blameless states, | T: partaking of blameless ways,
+snp1.5:6.4 | S: is the third mendicant, I say, the path-liver. | T: is called the third of monks: with the path as his life.
+snp1.5:7.1 | S: Dressed like one true to their vows, | T: Making a façade of good practices,
+snp1.5:7.2 | S: pushy, rude, a corrupter of families, | T: brash, reckless, a corrupter of families,
+snp1.5:7.3 | S: devious, unrestrained, chaff, | T: idle, deceitful, unrestrained,
+snp1.5:7.4 | S: the path-wrecker’s life is a sham. | T: & going about as a counterfeit: He is a path-corrupter.
+snp1.5:8.1 | S: A layperson who gets this, | T: And when any householder
+snp1.5:8.2 | S: a learned, wise noble disciple, | T: —an instructed disciple of the noble ones, discerning— understands these,
+snp1.5:8.3 | S: knows that ‘They are not all like that one’. | T: knowing, “Not all are like that one,”
+snp1.5:8.4 | S: So when they see them they don’t lose their faith. | T: seeing one like that doesn’t kill his conviction.
+snp1.5:8.5 | S: For how could one equate them— | T: For how would one equate
+snp1.5:8.6 | S: the corrupt with the uncorrupt, <j>the pure with the impure?” | T: the corrupt with the uncorrupt, the impure with the pure?
+snp1.5:8.7 | P: Cundasuttaṁ pañcamaṁ. | T: (none)
+
+## sn35.231
+sn35.231:1.1 | S: “Mendicants, take any monk or nun who, when it comes to sights known by the eye, still has greed, hate, and delusion, and has not given them up. If even trivial sights come into their range of vision they overcome their mind, let alone those that are compelling. | T: “Monks, for any monk or nun who, with regard to forms cognizable via the eye, if there is passion, there is aversion, there is delusion; in whom passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned, even if trifling forms cognizable via the eye come into the range of the eye—to say nothing of impressive ones—the mind is consumed.
+sn35.231:1.2 | S: Why is that? | T: Why is that?
+sn35.231:1.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: Because there is passion, there is aversion, there is delusion; passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned.
+sn35.231:2.1 | S: When it comes to sounds … smells … tastes … touches … | T: “For any monk or nun who, with regard to sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body…
+sn35.231:3.1 | S: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. | T: “For any monk or nun who, with regard to ideas cognizable via the intellect, if there is passion, there is aversion, there is delusion; in whom passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned, even if trifling ideas cognizable via the intellect come into the range of the intellect—to say nothing of impressive ones—the mind is consumed.
+sn35.231:3.2 | S: Why is that? | T: Why is that?
+sn35.231:3.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: Because there is passion, there is aversion, there is delusion; passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned.
+sn35.231:4.1 | S: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s a tender young sapling. | T: “Suppose, monks, that there was a milk sap tree—an assattha, a banyan, a milakkhu, or an udambara [fig trees with milky sap]—fresh, young, tender.
+sn35.231:4.2 | S: If a man were to chop it here and there with a sharp axe, would latex come out?” | T: Wherever a man with a sharp ax would split it, would milk sap come out?”
+sn35.231:4.3 | S: “Yes, sir. | T: “Yes, lord.
+sn35.231:4.4 | S: Why is that? | T: Why is that?
+sn35.231:4.5 | S: Because it still has latex.” | T: Because there is milk sap.”
+sn35.231:5.1 | S: “In the same way, take any monk or nun who, when it comes to sights known by the eye, still has greed, hate, and delusion, and has not given them up. If even trivial sights come into their range of vision they overcome their mind, let alone those that are compelling. | T: “In the same way, monks, for any monk or nun who, with regard to forms cognizable via the eye…
+sn35.231:5.2 | S: Why is that? | T: (none)
+sn35.231:5.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: (none)
+sn35.231:6.1 | S: When it comes to sounds … smells … tastes … touches … | T: sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body…
+sn35.231:7.1 | S: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. | T: “For any monk or nun who, with regard to ideas cognizable via the intellect, if there is passion, there is aversion, there is delusion; in whom passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned, even if trifling ideas cognizable via the intellect come into the range of the intellect—to say nothing of impressive ones—the mind is consumed.
+sn35.231:7.2 | S: Why is that? | T: Why is that?
+sn35.231:7.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: Because there is passion, there is aversion, there is delusion; passion has not been abandoned, aversion has not been abandoned, delusion has not been abandoned.
+sn35.231:8.1 | S: Take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. | T: “But, monks, for any monk or nun who, with regard to forms cognizable via the eye, if there is no passion, there is no aversion, there is no delusion; in whom passion has been abandoned, aversion has been abandoned, delusion has been abandoned, even if impressive forms cognizable via the eye come into the range of the eye—to say nothing of trifling ones—the mind isn’t consumed.
+sn35.231:8.2 | S: Why is that? | T: Why is that?
+sn35.231:8.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: Because there is no passion, there is no aversion, there is no delusion; passion has been abandoned, aversion has been abandoned, delusion has been abandoned.
+sn35.231:9.1 | S: When it comes to sounds … smells … tastes … touches … ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling ideas come into the range of the mind they don’t overcome their mind, let alone those that are trivial. | T: “For any monk or nun who, with regard to sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… “For any monk or nun who, with regard to ideas cognizable via the intellect, if there is no passion, there is no aversion, there is no delusion; in whom passion has been abandoned, aversion has been abandoned, delusion has been abandoned, even if impressive ideas cognizable via the intellect come into the range of the intellect—to say nothing of trifling ones—the mind isn’t consumed.
+sn35.231:9.2 | S: Why is that? | T: Why is that?
+sn35.231:9.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: Because there is no passion, there is no aversion, there is no delusion; passion has been abandoned, aversion has been abandoned, delusion has been abandoned.
+sn35.231:9.4 | S: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s dried up, withered, and decrepit. | T: “Suppose, monks, that there was a milk sap tree—an assattha, a banyan, a milakkhu, or an udambara—dry, hollow, old.
+sn35.231:9.5 | S: If a man were to chop it here and there with a sharp axe, would latex come out?” | T: Wherever a man with a sharp ax would split it, would milk sap come out?”
+sn35.231:9.6 | S: “No, sir. | T: “No, lord.
+sn35.231:9.7 | S: Why is that? | T: Why is that?
+sn35.231:9.8 | S: Because it has no latex left.” | T: Because there is no milk sap.”
+sn35.231:10.1 | S: “In the same way, take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. | T: “In the same way, monks, for any monk or nun who, with regard to forms cognizable via the eye…
+sn35.231:10.2 | S: Why is that? | T: (none)
+sn35.231:10.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: (none)
+sn35.231:11.1 | S: When it comes to sounds … smells … tastes … touches … | T: sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body…
+sn35.231:12.1 | S: ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling thoughts come into the range of the mind they don’t overcome their mind, let alone those that are trivial. | T: “For any monk or nun who, with regard to ideas cognizable via the intellect, if there is no passion, there is no aversion, there is no delusion; in whom passion has been abandoned, aversion has been abandoned, delusion has been abandoned, even if impressive ideas cognizable via the intellect come into the range of the intellect—to say nothing of trifling ones—the mind isn’t consumed.
+sn35.231:12.2 | S: Why is that? | T: Why is that?
+sn35.231:12.3 | S: Because they have no greed, hate, and delusion left, and have given them up.” | T: Because there is no passion, there is no aversion, there is no delusion; passion has been abandoned, aversion has been abandoned, delusion has been abandoned.”
+sn35.231:12.4 | P: Catutthaṁ. | T: (none)
+
+## an4.38
+an4.38:1.1 | S: “Mendicants, a mendicant has cast aside idiosyncratic interpretations of the truth, has totally given up searching, has stilled the physical process, and is said to be ‘withdrawn’. | T: “Monks, a monk who has shaken off idiosyncratic truths [pacceka-sacca], who has thoroughly given up searching, who is calmed in his bodily fabrication, is said to be detached.
+an4.38:1.2 | S: And how has a mendicant cast aside idiosyncratic interpretations of the truth? | T: “And how has a monk shaken off idiosyncratic truths?
+an4.38:1.3 | S: Different ascetics and brahmins have different idiosyncratic interpretations of the truth. For example: | T: There is the case where a monk has shaken off the run-of-the-mill idiosyncratic truths of run-of-the-mill contemplatives & brahmans—in other words,
+an4.38:1.4 | S: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: ‘The cosmos is eternal,’ ‘The cosmos is not eternal,’ ‘The cosmos is finite,’ ‘The cosmos is infinite,’ ‘The soul & the body are the same,’ ‘The soul is one thing and the body another,’ ‘After death a Tathāgata exists,’ ‘After death a Tathāgata does not exist,’ ‘After death a Tathāgata both does & does not exist,’ ‘After death a Tathāgata neither does nor does not exist.’
+an4.38:1.5 | S: A mendicant has cast out, cast aside, thrown out, discarded, let go of, given up, and relinquished all these. | T: All of these he has thrown off, shaken off, renounced, vomited up, let go, abandoned, relinquished.
+an4.38:1.6 | S: That’s how a mendicant has cast aside idiosyncratic interpretations of the truth. | T: This is how a monk has shaken off idiosyncratic truths.
+an4.38:2.1 | S: And how has a mendicant totally given up searching? | T: “And how has a monk thoroughly given up searching?
+an4.38:2.2 | S: It’s when they’ve given up searching for sensual pleasures, for continued existence, and for a spiritual path. | T: There is the case where a monk has abandoned his search for sensuality, has abandoned his search for becoming, and has allayed his search for a holy life.
+an4.38:2.3 | S: That’s how a mendicant has totally given up searching. | T: This is how a monk has thoroughly given up searching.
+an4.38:3.1 | S: And how has a mendicant stilled the physical process? | T: “And how is a monk calmed in his bodily fabrication?
+an4.38:3.2 | S: It’s when, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: There is the case where a monk, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an4.38:3.3 | S: That’s how a mendicant has stilled the physical process. | T: This is how a monk is calmed in his bodily fabrication.
+an4.38:4.1 | S: And how is a mendicant withdrawn? | T: “And how is a monk detached?
+an4.38:4.2 | S: It’s when they’ve given up the conceit ‘I am’, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: There is the case where a monk’s conceit, ‘I am,’ is abandoned, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+an4.38:4.3 | S: That’s how a mendicant is withdrawn. | T: This is how a monk is detached.”
+an4.38:4.4 | S: A mendicant has cast aside idiosyncratic interpretations of the truth, has totally given up searching, has stilled the physical process, and is said to be ‘withdrawn’. | T: (none)
+an4.38:5.1 | S: The search for sensual pleasures, <j>for continued existence, | T: Sensuality-search, becoming-search,
+an4.38:5.2 | S: and the search for a spiritual path; | T: together with the holy-life search—
+an4.38:5.3 | S: the holding tight to the thought, ‘this is the truth’, | T: i.e., grasping at ‘such is the truth’
+an4.38:5.4 | S: and the mass of grounds for views— | T: based on an accumulation of viewpoints:
+an4.38:6.1 | S: for one detached from all lusts, | T: Through the relinquishing of searches & the abolishing of viewpoints of one dispassionate to all passion,
+an4.38:6.2 | S: freed by the ending of craving, | T: and released in the ending of craving,
+an4.38:6.3 | S: that searching has been relinquished, | T: (none)
+an4.38:6.4 | S: and those grounds for views eradicated. | T: (none)
+an4.38:7.1 | S: That mendicant is peaceful and mindful, | T: he, a monk peaceful, mindful,
+an4.38:7.2 | S: tranquil and undefeated. | T: calmed, undefeated,
+an4.38:7.3 | S: And when they’re awakened <j>by comprehending conceit, | T: awakened with the breaking-through of conceit,
+an4.38:7.4 | S: they’re called ‘withdrawn’.” | T: is said to be detached.
+an4.38:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an4.50
+an4.50:1.1 | S: “Mendicants, these four corruptions obscure the sun and moon, so they don’t glow and shine and dazzle. | T: “Monks, there are these four obscurations of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:1.2 | S: What four? | T: Which four?
+an4.50:1.3 | S: Stormclouds … | T: “Clouds are an obscuration of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:2.1 | S: Fog … | T: “Fog is an obscuration.…
+an4.50:3.1 | S: Smoke … | T: “Smoke and dust is an obscuration.…
+an4.50:4.1 | S: An eclipse of Rāhu, lord of titans … | T: “Rāhu, the king of the asuras [believed to be the cause of an eclipse] is an obscuration of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:4.2 | S: These are four corruptions that obscure the sun and moon, so they don’t glow and shine and dazzle. | T: “These are the four obscurations of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+an4.50:5.1 | S: In the same way, these four things corrupt ascetics and brahmins, so they don’t glow and shine and dazzle. | T: “In the same way, there are four obscurations of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:5.2 | S: What four? | T: Which four?
+an4.50:5.3 | S: There are some ascetics and brahmins who drink beer and wine, not refraining from drinking beer and wine. | T: “There are some contemplatives & brahmans who drink alcohol and fermented liquor, who don’t refrain from drinking alcohol and fermented liquor.
+an4.50:5.4 | S: This is the first thing that corrupts ascetics and brahmins … | T: This is the first obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:6.1 | S: There are some ascetics and brahmins who have sex, not refraining from sex. | T: “There are some contemplatives & brahmans who engage in sexual intercourse, who don’t refrain from sexual intercourse.
+an4.50:6.2 | S: This is the second thing that corrupts ascetics and brahmins … | T: This is the second obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:7.1 | S: There are some ascetics and brahmins who accept gold and currency, not refraining from receiving gold and currency. | T: “There are some contemplatives & brahmans who consent to gold & silver, who don’t refrain from accepting gold & silver.
+an4.50:7.2 | S: This is the third thing that corrupts ascetics and brahmins … | T: This is the third obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:8.1 | S: There are some ascetics and brahmins who make a living the wrong way, not refraining from wrong livelihood. | T: “There are some contemplatives & brahmans who maintain life through wrong livelihood, who don’t refrain from wrong livelihood.
+an4.50:8.2 | S: This is the fourth thing that corrupts ascetics and brahmins … | T: This is the fourth obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:8.3 | S: These are four things that corrupt ascetics and brahmins, so they don’t glow and shine and dazzle. | T: “These are the four obscurations, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.”
+an4.50:9.1 | S: Some ascetics and brahmins | T: (none)
+an4.50:9.2 | S: are plagued by greed and hate; | T: Obscured by passion & aversion —some brahmans & contemplatives—
+an4.50:9.3 | S: men shrouded by ignorance, | T: people entrenched in ignorance,
+an4.50:9.4 | S: enjoying things that seem pleasant. | T: delighting in endearing forms,
+an4.50:10.1 | S: Drinking beer and wine, | T: drink alcohol & fermented liquor,
+an4.50:10.2 | S: having sex, | T: engage in sexual intercourse, unwise,
+an4.50:10.3 | S: accepting currency and gold: | T: consent to gold & silver,
+an4.50:10.4 | S: they’re ignorant. | T: (none)
+an4.50:10.5 | S: Some ascetics and brahmins | T: live by means of wrong livelihood —some brahmans & contemplatives.
+an4.50:10.6 | S: make a living the wrong way. | T: (none)
+an4.50:11.1 | S: These corruptions were spoken of | T: (none)
+an4.50:11.2 | S: by the Buddha, Kinsman of the Sun. | T: These are said to be obscurations by the Awakened One, kinsman of the Sun.
+an4.50:11.3 | S: When corrupted by these, | T: Because of these obscurations
+an4.50:11.4 | S: some ascetics and brahmins | T: some brahmans & contemplatives
+an4.50:11.5 | S: don’t shine or glow. | T: don’t glow, don’t shine,
+an4.50:11.6 | S: Impure, dirty creatures, | T: are impure, dusty, dead.
+an4.50:12.1 | S: swathed in darkness, | T: Covered with darkness,
+an4.50:12.2 | S: bondservants of craving, full of attachments, | T: slaves to craving, led on,
+an4.50:12.3 | S: swell the horrors of the charnel ground, | T: they swell the terrible charnel ground,
+an4.50:12.4 | S: taking up future lives.” | T: they grab at further becoming.
+an4.50:12.5 | P: Dasamaṁ. | T: (none)
+an4.50:12.6 | P: Rohitassavaggo pañcamo. | T: (none)
+an4.50:13.0 | P: Tassuddānaṁ | T: (none)
+an4.50:13.1 | P: Samādhipañhā dve kodhā, | T: (none)
+an4.50:13.2 | P: Rohitassāpare duve; | T: (none)
+an4.50:13.3 | P: Suvidūravisākhavipallāsā, | T: (none)
+an4.50:13.4 | P: Upakkilesena te dasāti. | T: (none)
+an4.50:13.5 | P: Paṭhamo paṇṇāsako samatto. | T: (none)
+
+## ud8.10
+ud8.10:1.1 | S: So I have heard. | T: I have heard that
+ud8.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud8.10:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+ud8.10:1.4 | S: “Mendicants!” | T: “Monks!”
+ud8.10:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+ud8.10:1.6 | S: The Buddha said this: | T: The Blessed One said,
+ud8.10:2.1 | S: “Mendicants, when Dabba the Mallian rose into the air and, sitting cross-legged in midair, entered and withdrew from the fire element before becoming fully quenched, his body burning and combusting left neither ashes nor soot to be found. | T: “When Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.
+ud8.10:2.2 | S: It’s like when ghee or oil blaze and burn, and neither ashes nor soot are found. | T: Just as when ghee or oil is burned and consumed, neither ashes nor soot can be discerned,
+ud8.10:2.3 | S: In the same way, when Dabba the Mallian rose into the air and, sitting cross-legged in midair, entered and withdrew from the fire element before becoming fully quenched, his body burning and combusting left neither ashes nor soot to be found.” | T: in the same way, when Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.”
+ud8.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.10:4.1 | S: “Just as the glow of iron struck | T: Just as the destination of a glowing fire
+ud8.10:4.2 | S: by a hammer in the fire of Jātaveda | T: struck with a [blacksmith’s] iron hammer,
+ud8.10:4.3 | S: gradually dissipates, | T: gradually growing calm,
+ud8.10:4.4 | S: its destiny unknown; | T: isn’t known:
+ud8.10:5.1 | S: in the same way, for the rightly released, | T: Even so, there’s no destination to describe for those rightly released
+ud8.10:5.2 | S: who have crossed the flood of sensual bonds, | T: –having crossed over the flood of sensuality’s bond–
+ud8.10:5.3 | S: there is no destination to describe— | T: (none)
+ud8.10:5.4 | S: they have found unshakable happiness.” | T: for those who’ve attained unwavering bliss.
+ud8.10:5.5 | P: Dasamaṁ. | T: (none)
+ud8.10:5.6 | P: Pāṭaligāmiyavaggo aṭṭhamo. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+ud8.10:6.0 | P: Tassuddānaṁ | T: (none)
+ud8.10:6.1 | P: Nibbānā caturo vuttā, | T: (none)
+ud8.10:6.2 | P: cundo pāṭaligāmiyā; | T: (none)
+ud8.10:6.3 | P: Dvidhāpatho visākhā ca, | T: (none)
+ud8.10:6.4 | P: dabbena saha te dasāti. | T: (none)
+ud8.10:7.0 | P: Udāne vaggānamuddānaṁ | T: (none)
+ud8.10:7.1 | P: Vaggamidaṁ paṭhamaṁ varabodhi, | T: (none)
+ud8.10:7.2 | P: Vaggamidaṁ dutiyaṁ mucalindo; | T: (none)
+ud8.10:7.3 | P: Nandakavaggavaro tatiyo tu, | T: (none)
+ud8.10:7.4 | P: Meghiyavaggavaro ca catuttho. | T: (none)
+ud8.10:8.1 | P: Pañcamavaggavarantidha soṇo, | T: (none)
+ud8.10:8.2 | P: Chaṭṭhamavaggavaranti jaccandho; | T: (none)
+ud8.10:8.3 | P: Sattamavaggavaranti ca cūḷo, | T: (none)
+ud8.10:8.4 | P: Pāṭaligāmiyamaṭṭhamavaggo. | T: (none)
+ud8.10:9.1 | P: Asītimanūnakasuttavaraṁ, | T: (none)
+ud8.10:9.2 | P: Vaggamidaṭṭhakaṁ suvibhattaṁ; | T: (none)
+ud8.10:9.3 | P: Dassitaṁ cakkhumatā vimalena, | T: (none)
+ud8.10:9.4 | P: Addhā hi taṁ udānamitīdamāhu. | T: (none)
+ud8.10:9.5 | S: The Heartfelt Sayings are finished. | T: (none)
+
+## sn11.24
+sn11.24:1.1 | S: At Sāvatthī. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn11.24:1.2 | S: Now at that time two mendicants had clashed. | T: And on that occasion two monks were quarreling, and one of them committed a transgression.
+sn11.24:1.3 | S: One of them transgressed against the other. | T: (none)
+sn11.24:1.4 | S: The transgressor confessed to the other mendicant, | T: So, in the presence of the other, he confessed his transgression as a transgression,
+sn11.24:1.5 | S: but they didn’t accept it. | T: but the other didn’t pardon him.
+sn11.24:1.6 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: So a large number of monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to the Blessed One,
+sn11.24:1.7 | P: “idha, bhante, dve bhikkhū sampayojesuṁ, tatreko bhikkhu accasarā. | T: “Just now, lord, two monks were quarreling, and one of them committed a transgression.
+sn11.24:1.8 | P: Atha kho so, bhante, bhikkhu tassa bhikkhuno santike accayaṁ accayato deseti, so bhikkhu nappaṭiggaṇhātī”ti. | T: So, in the presence of the other, he confessed his transgression as a transgression, but the other didn’t pardon him.
+sn11.24:2.1 | S: “Mendicants, there are two fools. | T: “Monks, there are these two fools. Which two?
+sn11.24:2.2 | S: One who doesn’t recognize when they’ve made a mistake. And one who doesn’t properly accept the confession of someone who’s made a mistake. | T: The one who doesn’t see his transgression as a transgression, and the one who doesn’t rightfully pardon another who has confessed his transgression.
+sn11.24:2.3 | S: These are the two fools. | T: These two are fools.
+sn11.24:2.4 | S: There are two who are astute. | T: “There are these two wise people. Which two?
+sn11.24:2.5 | S: One who recognizes when they’ve made a mistake. And one who properly accepts the confession of someone who’s made a mistake. | T: The one who sees his transgression as a transgression, and the one who rightfully pardons another who has confessed his transgression.
+sn11.24:2.6 | S: These are the two who are astute. | T: These two are wise people.
+sn11.24:3.1 | S: Once upon a time, mendicants, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Once, monks, Sakka the deva-king, having conciliated the devas of the Thirty-three in the Sudhamma assembly hall, on that occasion recited this verse:
+sn11.24:4.1 | S: ‘Control your anger; | T: “‘Bring your anger under control.
+sn11.24:4.2 | S: don’t let friendships decay. | T: Don’t let friendships decay.
+sn11.24:4.3 | S: Don’t blame the blameless, | T: Don’t blame the blameless.
+sn11.24:4.4 | S: and don’t backbite. | T: Don’t speak divisively,
+sn11.24:4.5 | S: For anger crushes bad people | T: for anger, like a mountain avalanche, crushes evil people.’”
+sn11.24:4.6 | S: like a mountain.’” | T: (none)
+
+## an5.41
+an5.41:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: (none)
+an5.41:1.2 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Anāthapiṇḍika the householder went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him:
+an5.41:1.3 | S: “Householder, there are these five reasons to get rich. | T: “There are these five benefits that can be obtained from wealth.
+an5.41:1.4 | S: What five? | T: Which five?
+an5.41:1.5 | S: Firstly, with his legitimate wealth—earned by his efforts and initiative, built up with his own hands, gathered by the sweat of the brow—a noble disciple makes himself happy and pleased, keeping himself properly happy. | T: “There is the case where the disciple of the noble ones—using the wealth earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow, righteous wealth righteously gained—provides himself with pleasure & satisfaction, and maintains that pleasure rightly.
+an5.41:1.6 | S: He makes his mother and father happy … | T: He provides his mother & father with pleasure & satisfaction, and maintains that pleasure rightly.
+an5.41:1.7 | S: He makes his children, partners, bondservants, workers, and staff happy … | T: He provides his children, his wife, his slaves, servants, & assistants with pleasure & satisfaction, and maintains that pleasure rightly.
+an5.41:1.8 | S: This is the first reason to get rich. | T: This is the first benefit that can be obtained from wealth.
+an5.41:2.1 | S: Furthermore, with his legitimate wealth he makes his friends and colleagues happy … | T: “And further, the disciple of the noble ones—using the wealth earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow, righteous wealth righteously gained—provides his friends & associates with pleasure & satisfaction, and maintains that pleasure rightly.
+an5.41:2.2 | S: This is the second reason to get rich. | T: This is the second benefit that can be obtained from wealth.
+an5.41:3.1 | S: Furthermore, with his legitimate wealth he protects himself against losses from such things as fire, water, kings, bandits, or unloved heirs. | T: “And further, the disciple of the noble ones—using the wealth earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow, righteous wealth righteously gained—wards off calamities
+an5.41:3.2 | P: aggito vā udakato vā rājato vā corato vā appiyato vā dāyādato— | T: coming from fire, flood, kings, thieves, or hateful heirs,
+an5.41:3.3 | S: He keeps himself safe. | T: and keeps himself safe.
+an5.41:3.4 | S: This is the third reason to get rich. | T: This is the third benefit that can be obtained from wealth.
+an5.41:4.1 | S: Furthermore, with his legitimate wealth he makes five spirit-offerings: | T: “And further, the disciple of the noble ones—using the wealth earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow, righteous wealth righteously gained—performs the five oblations:
+an5.41:4.2 | S: to relatives, guests, ancestors, king, and deities. | T: to relatives, guests, the dead, kings, & devas.
+an5.41:4.3 | S: This is the fourth reason to get rich. | T: This is the fourth benefit that can be obtained from wealth.
+an5.41:5.1 | S: Furthermore, with his legitimate wealth he establishes an uplifting religious donation for ascetics and brahmins—those who refrain from intoxication and negligence, are settled in patience and gentleness, and who tame, calm, and extinguish themselves—that’s conducive to heaven, ripens in happiness, and leads to heaven. | T: “And further, the disciple of the noble ones—using the wealth earned through his efforts & enterprise, amassed through the strength of his arm, and piled up through the sweat of his brow, righteous wealth righteously gained—institutes offerings of supreme aim, heavenly, resulting in happiness, leading to heaven, given to contemplatives & brahmans who abstain from intoxication & heedlessness, who endure all things with patience & humility, each taming himself, each restraining himself, each taking himself to unbinding.
+an5.41:5.2 | S: This is the fifth reason to get rich. | T: This is the fifth benefit that can be obtained from wealth.
+an5.41:5.3 | S: These are the five reasons to get rich. | T: (none)
+an5.41:6.1 | S: Now if the riches a noble disciple gets for these five reasons run out, he thinks: | T: “If it so happens that, when a disciple of the noble ones obtains these five benefits from wealth, his wealth goes to depletion, the thought occurs to him,
+an5.41:6.2 | S: ‘So, the riches I have obtained for these reasons are running out.’ | T: ‘Even though my wealth has gone to depletion, I have obtained the five benefits that can be obtained from wealth,’
+an5.41:6.3 | S: And so he has no regrets. | T: and he feels no remorse.
+an5.41:6.4 | S: But if the riches a noble disciple gets for these five reasons increase, he thinks: | T: If it so happens that, when a disciple of the noble ones obtains these five benefits from wealth, his wealth increases, the thought occurs to him,
+an5.41:6.5 | S: ‘So, the riches I have obtained for these reasons are increasing.’ | T: ‘I have obtained the five benefits that can be obtained from wealth, and my wealth has increased,’
+an5.41:6.6 | S: And so he has no regrets in both cases. | T: and he feels no remorse. So he feels no remorse in either case.”
+an5.41:7.1 | S: ‘I’ve enjoyed my wealth, <j>supporting those who depend on me; | T: ‘My wealth has been enjoyed, my dependents supported,
+an5.41:7.2 | S: I’ve overcome losses; | T: protected from calamities by me.
+an5.41:7.3 | S: I’ve given uplifting religious donations; | T: I have given supreme offerings
+an5.41:7.4 | S: and made the five spirit-offerings. | T: & performed the five oblations.
+an5.41:7.5 | S: I have looked after the ethical and | T: I have provided for the virtuous,
+an5.41:7.6 | S: disciplined spiritual practitioners. | T: the restrained, followers of the holy life.
+an5.41:8.1 | S: I’ve achieved the goal | T: For whatever aim a wise householder would desire wealth, that aim have I attained.
+an5.41:8.2 | S: for which an astute layperson | T: (none)
+an5.41:8.3 | S: wishes to gain wealth. | T: (none)
+an5.41:8.4 | S: I don’t regret what I’ve done.’ | T: I have done what will not lead to future distress.’
+an5.41:9.1 | S: A mortal man who recollects this | T: When this is recollected by a mortal,
+an5.41:9.2 | S: stands firm in the teaching of the noble ones. | T: a person established in the Dhamma of the noble ones,
+an5.41:9.3 | S: They’re praised in this life by the astute, | T: he is praised in this life
+an5.41:9.4 | S: and they depart to rejoice in heaven.” | T: and, after death, rejoices in heaven.
+an5.41:9.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn10.8
+sn10.8:1.1 | S: At one time the Buddha was staying near Rājagaha in the Cool Grove. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Cool Forest.
+sn10.8:1.2 | S: Now at that time the householder Anāthapiṇḍika had arrived at Rājagaha on some business. | T: Now at that time Anāthapiṇḍika the householder had arrived in Rājagaha on some business.
+sn10.8:1.3 | S: He heard | T: He heard,
+sn10.8:1.4 | S: a rumor that a Buddha had arisen in the world. | T: “An Awakened One, they say, has appeared in the world,”
+sn10.8:1.5 | S: Right away he wanted to go and see the Buddha, but he thought, | T: and he wanted to go right then to see the Blessed One. Then the thought occurred to him,
+sn10.8:1.6 | S: “It’s too late to go and see the Buddha today. | T: “Today is not the proper time to go to see the Blessed One.
+sn10.8:1.7 | S: I’ll go and see him tomorrow.” He went to bed thinking of the Buddha. | T: Tomorrow I will go to see the Blessed One at the proper time.” With his mindfulness immersed in the Awakened One he lay down to sleep.
+sn10.8:1.8 | S: During the night he got up three times thinking it was sunup. | T: Three times he got up during the night, thinking it was light.
+sn10.8:1.9 | S: Then he approached the Sivaka Gate, | T: Then he went to the gate to the charnel ground.
+sn10.8:1.10 | S: and non-human beings opened it for him. | T: Non-human beings opened the gate.
+sn10.8:1.11 | S: But as he was leaving the city, light vanished and darkness appeared to him. He felt fear, terror, and goosebumps, and wanted to turn back. | T: When Anāthapiṇḍika the householder had left the city, the light vanished and darkness appeared. Fear, terror, & horripilation arose, and because of that he wanted to turn back.
+sn10.8:1.12 | S: Then the invisible spirit Sivaka called out: | T: Then Sivaka the yakkha-spirit, invisible, proclaimed:
+sn10.8:2.1 | S: “A hundred elephants, a hundred horses, | T: “A hundred elephants, a hundred horses,
+sn10.8:2.2 | S: a hundred mule-drawn chariots, | T: a hundred mule-drawn carts,
+sn10.8:2.3 | S: a hundred thousand maidens | T: a hundred-thousand maidens
+sn10.8:2.4 | S: bedecked with jeweled earrings: | T: adorned with jewels & earrings
+sn10.8:2.5 | S: these are not worth a sixteenth part | T: aren’t worth one-sixteenth
+sn10.8:2.6 | S: of a single forward stride! | T: of one step forward.
+sn10.8:3.1 | S: Forward, householder! | T: Go forward, householder!
+sn10.8:3.2 | S: Forward, householder! | T: Go forward, householder!
+sn10.8:3.3 | S: Going forward is better for you, | T: Going forward is better for you,
+sn10.8:3.4 | S: not turning back!” | T: not back!”
+sn10.8:4.1 | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: The darkness then vanished for Anāthapiṇḍika and the light appeared. The fear, terror, & horripilation he had felt subsided.
+sn10.8:4.2 | S: But for a second time, light vanished and darkness appeared to him. … | T: For a second time…
+sn10.8:4.3 | S: For a second time the invisible spirit Sivaka called out … | T: (none)
+sn10.8:5.1 | P: “Sataṁ hatthī sataṁ assā, | T: (none)
+sn10.8:5.2 | P: …pe… | T: (none)
+sn10.8:5.3 | P: Kalaṁ nāgghanti soḷasiṁ. | T: (none)
+sn10.8:6.1 | P: Abhikkama gahapati, | T: (none)
+sn10.8:6.2 | P: abhikkama gahapati; | T: (none)
+sn10.8:6.3 | S: “… Going forward is better for you, | T: (none)
+sn10.8:6.4 | S: not turning back!” | T: (none)
+sn10.8:7.1 | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: (none)
+sn10.8:7.2 | S: But for a third time, light vanished and darkness appeared to him. … | T: a third time, the light vanished and darkness appeared. Fear, terror, & horripilation arose, and because of that Anāthapiṇḍika wanted to turn back.
+sn10.8:7.3 | S: For a third time the invisible spirit Sivaka called out … | T: Then for a third time, Sivaka the yakkha-spirit, invisible, proclaimed:
+sn10.8:8.1 | P: “Sataṁ hatthī sataṁ assā, | T: “A hundred elephants, a hundred horses, a hundred mule-drawn carts, a hundred-thousand maidens
+sn10.8:8.2 | P: …pe… | T: adorned with jewels & earrings
+sn10.8:8.3 | P: Kalaṁ nāgghanti soḷasiṁ. | T: aren’t worth one-sixteenth of one step forward.
+sn10.8:9.1 | P: Abhikkama gahapati, | T: Go forward, householder!
+sn10.8:9.2 | P: abhikkama gahapati; | T: Go forward, householder!
+sn10.8:9.3 | S: “… Going forward is better for you, | T: Going forward is better for you,
+sn10.8:9.4 | S: not turning back!” | T: not back!”
+sn10.8:10.1 | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: The darkness then vanished for Anāthapiṇḍika and the light appeared. The fear, terror, & horripilation he had felt subsided.
+sn10.8:10.2 | S: Then the householder Anāthapiṇḍika went to the Cool Grove and approached the Buddha. | T: So Anāthapiṇḍika went to the Cool Forest.
+sn10.8:11.1 | S: Now at that time the Buddha had risen at the crack of dawn and was walking mindfully in the open. | T: Now at that time, the Blessed One—having gotten up as the night was ending—was pacing back & forth in the open air.
+sn10.8:11.2 | S: He saw Anāthapiṇḍika coming off in the distance. | T: He saw Anāthapiṇḍika the householder coming from afar.
+sn10.8:11.3 | S: So he stepped down from the walking path, sat down on the seat spread out, | T: On seeing him, he got down from his meditation path and sat on a seat made ready.
+sn10.8:11.4 | S: and said to Anāthapiṇḍika, | T: As he was sitting there he said to Anāthapiṇḍika,
+sn10.8:11.5 | S: “Come, Sudatta.” | T: “Come, Sudatta.”
+sn10.8:11.6 | S: Then Anāthapiṇḍika thought, “The Buddha calls me by name!” Smiling and elated, he bowed with his head to the Buddha’s feet and said to him, | T: Then Anāthapiṇḍika, (thinking,) “The Blessed One is calling me by my given name!” threw himself down right there at the Blessed One’s feet and said to him,
+sn10.8:11.7 | S: “Sir, I trust the Buddha slept well?” | T: “Lord, I hope the Blessed One has slept in ease.”
+sn10.8:12.1 | S: “A brahmin who is fully quenched | T: The Buddha: “Always, always, he sleeps in ease: the brahman totally unbound,
+sn10.8:12.2 | S: always sleeps at ease. | T: (none)
+sn10.8:12.3 | S: Sensual pleasures slip off them, | T: who doesn’t adhere to sensual pleasures,
+sn10.8:12.4 | S: they’re cooled, free of attachments. | T: who’s without acquisitions & cooled.
+sn10.8:13.1 | S: Since they’ve cut off all clinging, | T: Having cut all ties
+sn10.8:13.2 | S: and removed the stress from the heart, | T: & subdued fear in the heart,
+sn10.8:13.3 | S: the peaceful sleep at ease, | T: calmed, he sleeps in ease,
+sn10.8:13.4 | S: having found peace of mind.” | T: having reached peace of awareness.”
+
+## an10.118
+an10.118:1.1 | S: “Mendicants, I will teach you the near shore and the far shore. | T: “Monks, I will teach you the near shore & the far shore.
+an10.118:1.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an10.118:1.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+an10.118:1.4 | S: The Buddha said this: | T: The Blessed One said,
+an10.118:2.1 | S: “And what, mendicants, is the near shore? What is the far shore? | T: “And which is the near shore? And which is the far shore?
+an10.118:2.2 | S: Wrong view is the near shore, and right view is the far shore. … | T: “Wrong view is the near shore; right view, the far shore. “Wrong resolve is the near shore; right resolve, the far shore. “Wrong speech is the near shore; right speech, the far shore. “Wrong action is the near shore; right action, the far shore. “Wrong livelihood is the near shore; right livelihood, the far shore. “Wrong effort is the near shore; right effort, the far shore. “Wrong mindfulness is the near shore; right mindfulness, the far shore. “Wrong concentration is the near shore; right concentration, the far shore. “Wrong knowledge is the near shore; right knowledge, the far shore.
+an10.118:2.3 | S: Wrong freedom is the near shore, and right freedom is the far shore. | T: “Wrong release is the near shore; right release, the far shore.
+an10.118:2.4 | S: This is the near shore, and this is the far shore. | T: “This, monks, is the near shore; this, the far shore.”
+an10.118:3.1 | S: Few are those among humans | T: Few are the people
+an10.118:3.2 | S: who cross to the far shore. | T: who reach the far shore.
+an10.118:3.3 | S: The rest just run | T: These others
+an10.118:3.4 | S: around on the near shore. | T: simply scurry along this shore.
+an10.118:4.1 | S: When the teaching is well explained, | T: But those who practice Dhamma in line with the well-taught Dhamma,
+an10.118:4.2 | S: the people who practice accordingly | T: (none)
+an10.118:4.3 | S: will cross over | T: (none)
+an10.118:4.4 | S: Death’s dominion so hard to pass. | T: will cross over the realm of Death so hard to transcend.
+an10.118:5.1 | S: Rid of dark qualities, | T: Forsaking dark practices,
+an10.118:5.2 | S: an astute person would develop the bright. | T: the wise person should develop the bright,
+an10.118:5.3 | S: Having left home for homelessness | T: having gone from home to no-home
+an10.118:5.4 | S: in seclusion, where joy is hard, | T: in seclusion, so hard to enjoy.
+an10.118:6.1 | S: they’d long for satisfaction there. | T: There he should wish for delight,
+an10.118:6.2 | S: Forsaking sensual pleasures, owning nothing, | T: discarding sensuality— he who has nothing.
+an10.118:6.3 | S: an astute person would cleanse themselves | T: He should cleanse himself—wise—
+an10.118:6.4 | S: of mental corruptions. | T: of what defiles the mind.
+an10.118:7.1 | S: And those whose minds are rightly developed | T: Whose minds are well-developed
+an10.118:7.2 | S: in the awakening factors; | T: in the factors for self-awakening,
+an10.118:7.3 | S: letting go of attachments, | T: (none)
+an10.118:7.4 | S: they delight in not grasping. | T: who delight in non-clinging, relinquishing grasping—
+an10.118:7.5 | S: With defilements ended, brilliant, | T: resplendent, their effluents ended:
+an10.118:7.6 | S: they are quenched in this world.” | T: They, in the world, are unbound.
+an10.118:7.7 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## snp2.3
+snp2.3:1.1 | S: Flouting conscience, loathing it, | T: One who, flouting, despising a sense of shame,
+snp2.3:1.2 | S: saying “I’m on your side”, | T: saying, “I am your friend,”
+snp2.3:1.3 | S: but not following up in deeds— | T: but not grasping what he could do [to help]:
+snp2.3:1.4 | S: know they’re not on your side. | T: Know him as “Not one of mine.”
+snp2.3:2.1 | S: Some say nice things to their friends | T: One who, among friends, speaks endearing words
+snp2.3:2.2 | S: without following it up. | T: to which he doesn’t conform,
+snp2.3:2.3 | S: The wise will recognize | T: the wise recognize
+snp2.3:2.4 | S: one who talks without doing. | T: as speaking without doing.
+snp2.3:3.1 | S: No true friend relentlessly | T: He’s not a friend who’s always wary,
+snp2.3:3.2 | S: suspects betrayal, looking for fault. | T: suspecting a split, focusing just on your weakness.
+snp2.3:3.3 | S: One on whom you rest, like a child on the breast, | T: But him on whom you can depend, like a child on its parent’s breast:
+snp2.3:3.4 | S: is a true friend, not split from you by others. | T: That’s a true friend whom others can’t split from you.
+snp2.3:4.1 | S: One whose reward is the fruit | T: Carrying one’s manly burden, the fruits & rewards develop the conditions that make for joy,
+snp2.3:4.2 | S: of bearing the burden of service | T: (none)
+snp2.3:4.3 | S: develops a happy state, | T: (none)
+snp2.3:4.4 | S: producing joy and attracting praise. | T: the bliss that brings praise.
+snp2.3:5.1 | S: One who has drunk the nectar of seclusion | T: Drinking the savor of seclusion,
+snp2.3:5.2 | S: and the nectar of peace, | T: the savor of calm,
+snp2.3:5.3 | S: free of stress, free of evil, | T: one is freed from evil, devoid of distress,
+snp2.3:5.4 | S: drinks the joyous nectar of Dhamma. | T: refreshed with the savor of rapture in the Dhamma.
+snp2.3:5.5 | P: Hirisuttaṁ tatiyaṁ. | T: (none)
+
+## thag5.1
+thag5.1:1.1 | S: I, a monk, went to a charnel ground | T: I, a monk, gone to the charnel ground,
+thag5.1:1.2 | S: and saw a woman’s body abandoned there, | T: saw a woman cast away,
+thag5.1:1.3 | S: dumped in a cemetery, | T: discarded there in the cemetery.
+thag5.1:1.4 | S: full of worms that devoured. | T: (none)
+thag5.1:2.1 | S: Some men were disgusted, | T: Though some were disgusted,
+thag5.1:2.2 | S: seeing her dead and rotten; | T: seeing her—dead, evil—
+thag5.1:2.3 | S: but sexual desire arose in me, | T: lust appeared,
+thag5.1:2.4 | S: I was as if blind to her oozing body. | T: as if I were blind to the oozings.
+thag5.1:3.1 | S: Quicker than the cooking of rice | T: In less time than it takes for rice to cook,
+thag5.1:3.2 | S: I left that place! | T: I got out of that place.
+thag5.1:3.3 | S: Mindful and aware, | T: Mindful, alert, I
+thag5.1:3.4 | S: I retired to a discreet place. | T: sat down to one side.
+thag5.1:4.1 | S: Then the realization | T: Then apt attention arose in me,
+thag5.1:4.2 | S: came upon me— | T: (none)
+thag5.1:4.3 | S: the danger became clear, | T: the drawbacks appeared,
+thag5.1:4.4 | S: and I was firmly disillusioned. | T: disenchantment stood at an even keel:
+thag5.1:5.1 | S: Then my mind was freed— | T: With that, my heart was released.
+thag5.1:5.2 | S: behold the clear rightness of the teaching! | T: See the Dhamma’s true rightness!
+thag5.1:5.3 | S: I’ve attained the three knowledges | T: The three knowledges have been attained;
+thag5.1:5.4 | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, done.
+thag5.1:5.5 | P: … Rājadatto thero …. | T: (none)
+
+
+codex
+I’ve read the full batch. I found a few clear cases where text starts on a later line than its meaning belongs; I’m checking the exact starting words before writing the findings.
+exec
+/bin/bash -lc "sed -n '122,147p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.50:5.3 | S: There are some ascetics and brahmins who drink beer and wine, not refraining from drinking beer and wine. | T: “There are some contemplatives & brahmans who drink alcohol and fermented liquor, who don’t refrain from drinking alcohol and fermented liquor.
+an4.50:5.4 | S: This is the first thing that corrupts ascetics and brahmins … | T: This is the first obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:6.1 | S: There are some ascetics and brahmins who have sex, not refraining from sex. | T: “There are some contemplatives & brahmans who engage in sexual intercourse, who don’t refrain from sexual intercourse.
+an4.50:6.2 | S: This is the second thing that corrupts ascetics and brahmins … | T: This is the second obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:7.1 | S: There are some ascetics and brahmins who accept gold and currency, not refraining from receiving gold and currency. | T: “There are some contemplatives & brahmans who consent to gold & silver, who don’t refrain from accepting gold & silver.
+an4.50:7.2 | S: This is the third thing that corrupts ascetics and brahmins … | T: This is the third obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:8.1 | S: There are some ascetics and brahmins who make a living the wrong way, not refraining from wrong livelihood. | T: “There are some contemplatives & brahmans who maintain life through wrong livelihood, who don’t refrain from wrong livelihood.
+an4.50:8.2 | S: This is the fourth thing that corrupts ascetics and brahmins … | T: This is the fourth obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+an4.50:8.3 | S: These are four things that corrupt ascetics and brahmins, so they don’t glow and shine and dazzle. | T: “These are the four obscurations, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.”
+an4.50:9.1 | S: Some ascetics and brahmins | T: (none)
+an4.50:9.2 | S: are plagued by greed and hate; | T: Obscured by passion & aversion —some brahmans & contemplatives—
+an4.50:9.3 | S: men shrouded by ignorance, | T: people entrenched in ignorance,
+an4.50:9.4 | S: enjoying things that seem pleasant. | T: delighting in endearing forms,
+an4.50:10.1 | S: Drinking beer and wine, | T: drink alcohol & fermented liquor,
+an4.50:10.2 | S: having sex, | T: engage in sexual intercourse, unwise,
+an4.50:10.3 | S: accepting currency and gold: | T: consent to gold & silver,
+an4.50:10.4 | S: they’re ignorant. | T: (none)
+an4.50:10.5 | S: Some ascetics and brahmins | T: live by means of wrong livelihood —some brahmans & contemplatives.
+an4.50:10.6 | S: make a living the wrong way. | T: (none)
+an4.50:11.1 | S: These corruptions were spoken of | T: (none)
+an4.50:11.2 | S: by the Buddha, Kinsman of the Sun. | T: These are said to be obscurations by the Awakened One, kinsman of the Sun.
+an4.50:11.3 | S: When corrupted by these, | T: Because of these obscurations
+an4.50:11.4 | S: some ascetics and brahmins | T: some brahmans & contemplatives
+an4.50:11.5 | S: don’t shine or glow. | T: don’t glow, don’t shine,
+an4.50:11.6 | S: Impure, dirty creatures, | T: are impure, dusty, dead.
+an4.50:12.1 | S: swathed in darkness, | T: Covered with darkness,
+
+exec
+/bin/bash -lc "sed -n '322,359p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn10.8:12.4 | S: they’re cooled, free of attachments. | T: who’s without acquisitions & cooled.
+sn10.8:13.1 | S: Since they’ve cut off all clinging, | T: Having cut all ties
+sn10.8:13.2 | S: and removed the stress from the heart, | T: & subdued fear in the heart,
+sn10.8:13.3 | S: the peaceful sleep at ease, | T: calmed, he sleeps in ease,
+sn10.8:13.4 | S: having found peace of mind.” | T: having reached peace of awareness.”
+
+## an10.118
+an10.118:1.1 | S: “Mendicants, I will teach you the near shore and the far shore. | T: “Monks, I will teach you the near shore & the far shore.
+an10.118:1.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an10.118:1.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+an10.118:1.4 | S: The Buddha said this: | T: The Blessed One said,
+an10.118:2.1 | S: “And what, mendicants, is the near shore? What is the far shore? | T: “And which is the near shore? And which is the far shore?
+an10.118:2.2 | S: Wrong view is the near shore, and right view is the far shore. … | T: “Wrong view is the near shore; right view, the far shore. “Wrong resolve is the near shore; right resolve, the far shore. “Wrong speech is the near shore; right speech, the far shore. “Wrong action is the near shore; right action, the far shore. “Wrong livelihood is the near shore; right livelihood, the far shore. “Wrong effort is the near shore; right effort, the far shore. “Wrong mindfulness is the near shore; right mindfulness, the far shore. “Wrong concentration is the near shore; right concentration, the far shore. “Wrong knowledge is the near shore; right knowledge, the far shore.
+an10.118:2.3 | S: Wrong freedom is the near shore, and right freedom is the far shore. | T: “Wrong release is the near shore; right release, the far shore.
+an10.118:2.4 | S: This is the near shore, and this is the far shore. | T: “This, monks, is the near shore; this, the far shore.”
+an10.118:3.1 | S: Few are those among humans | T: Few are the people
+an10.118:3.2 | S: who cross to the far shore. | T: who reach the far shore.
+an10.118:3.3 | S: The rest just run | T: These others
+an10.118:3.4 | S: around on the near shore. | T: simply scurry along this shore.
+an10.118:4.1 | S: When the teaching is well explained, | T: But those who practice Dhamma in line with the well-taught Dhamma,
+an10.118:4.2 | S: the people who practice accordingly | T: (none)
+an10.118:4.3 | S: will cross over | T: (none)
+an10.118:4.4 | S: Death’s dominion so hard to pass. | T: will cross over the realm of Death so hard to transcend.
+an10.118:5.1 | S: Rid of dark qualities, | T: Forsaking dark practices,
+an10.118:5.2 | S: an astute person would develop the bright. | T: the wise person should develop the bright,
+an10.118:5.3 | S: Having left home for homelessness | T: having gone from home to no-home
+an10.118:5.4 | S: in seclusion, where joy is hard, | T: in seclusion, so hard to enjoy.
+an10.118:6.1 | S: they’d long for satisfaction there. | T: There he should wish for delight,
+an10.118:6.2 | S: Forsaking sensual pleasures, owning nothing, | T: discarding sensuality— he who has nothing.
+an10.118:6.3 | S: an astute person would cleanse themselves | T: He should cleanse himself—wise—
+an10.118:6.4 | S: of mental corruptions. | T: of what defiles the mind.
+an10.118:7.1 | S: And those whose minds are rightly developed | T: Whose minds are well-developed
+an10.118:7.2 | S: in the awakening factors; | T: in the factors for self-awakening,
+an10.118:7.3 | S: letting go of attachments, | T: (none)
+an10.118:7.4 | S: they delight in not grasping. | T: who delight in non-clinging, relinquishing grasping—
+an10.118:7.5 | S: With defilements ended, brilliant, | T: resplendent, their effluents ended:
+an10.118:7.6 | S: they are quenched in this world.” | T: They, in the world, are unbound.
+an10.118:7.7 | P: Chaṭṭhaṁ. | T: (none)
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-019.findings.tmp <<'EOF'
+an4.50:9.1 starts: Obscured by passion & aversion —some brahmans
+an4.50:9.2 none
+an4.50:11.1 starts: These are said to be obscurations
+an4.50:11.2 starts: by the Awakened One, kinsman of the Sun.
+an10.118:4.3 starts: will cross over the realm of Death
+an10.118:4.4 starts: the realm of Death so hard to
+an10.118:7.3 starts: who delight in non-clinging, relinquishing grasping—
+an10.118:7.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+30,336
+8 lines reported.

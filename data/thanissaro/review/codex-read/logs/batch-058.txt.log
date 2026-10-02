@@ -1,0 +1,386 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-036c-7fc1-9c6f-5dbf7c8f825c
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## ud8.5, continued
+ud8.5:17.2 | S: Before the group of mendicants, in the middle, <j>the Buddha, | T: Honored, surrounded, in the midst of the group of monks, the Blessed One,
+ud8.5:17.3 | S: the Teacher who rolled forth <j>the present dispensation, | T: Teacher, proceeding here in the Dhamma,
+ud8.5:17.4 | S: the great seer went to the mango grove. | T: the great seer, went to the mango grove.
+ud8.5:17.5 | S: He addressed the mendicant named Cundaka: | T: He addressed the monk named Cundaka,
+ud8.5:17.6 | S: “Spread out my folded robe so I can lie down.” | T: “Spread it out, folded in four for me to lie down.”
+ud8.5:18.1 | S: The evolved one urged Cunda, | T: Ordered by the One of developed mind,
+ud8.5:18.2 | S: who quickly spread the folded robe. | T: Cundaka quickly set it out, folded in four.
+ud8.5:18.3 | S: The Teacher lay down so tired, | T: The Teacher lay down, seeming very tired,
+ud8.5:18.4 | S: while Cunda sat there before him. | T: and Cundaka sat down there before him.
+ud8.5:19.1 | S: Then the Buddha said to Venerable Ānanda, | T: Then the Blessed One addressed Ven. Ānanda,
+ud8.5:19.2 | S: “Now it may happen, Ānanda, that others may give rise to some regret for Cunda the smith: | T: “Ānanda, if anyone tries to incite remorse in Cunda the silversmith, saying,
+ud8.5:19.3 | S: ‘It’s your loss, respectable Cunda, it’s your misfortune, in that the Realized One was fully quenched after eating his last almsmeal from you.’ | T: ‘It’s no gain for you, friend Cunda, it’s ill-done by you, that the Tathāgata, having eaten your last alms, was totally unbound,’
+ud8.5:19.4 | S: You should dispel remorse in Cunda the smith like this: | T: then Cunda’s remorse should be allayed (in this way):
+ud8.5:20.1 | S: ‘You’re fortunate, respectable Cunda, you’re so very fortunate, | T: ‘It’s a gain for you, friend Cunda, it’s well-done by you,
+ud8.5:20.2 | S: in that the Realized One was fully quenched after eating his last almsmeal from you. | T: that the Tathāgata, having eaten your last alms, was totally unbound.
+ud8.5:20.3 | S: I have heard and learned this in the presence of the Buddha. | T: Face to face with the Blessed One have I heard it, face to face have I learned it,
+ud8.5:20.4 | S: There are two almsmeal offerings that have identical fruit and result, and are more fruitful and beneficial than other almsmeal offerings. | T: “These two alms are equal to each other in fruit, equal to each other in result, of much greater fruit & reward than any other alms.
+ud8.5:20.5 | S: What two? | T: Which two?
+ud8.5:20.6 | S: The almsmeal after eating which a Realized One awakens to the supreme perfect awakening; and the almsmeal after eating which he becomes fully extinguished in the element of extinguishment with no residue. | T: The alms that, after having eaten it, the Tathāgata awakens to the unexcelled right self-awakening. And the alms that, after having eaten it, the Tathāgata is unbound by means of the unbinding property with no fuel remaining.
+ud8.5:20.7 | S: These two almsmeal offerings have identical fruit and result, and are more fruitful and beneficial than other almsmeal offerings. | T: These are the two alms that are equal to each other in fruit, equal to each other in result, of much greater fruit & reward than any other alms.
+ud8.5:21.1 | S: You’ve accumulated a deed that leads to long life, beauty, happiness, glory, heaven, and sovereignty.’ | T: Venerable Cunda the silversmith has accumulated kamma that leads to long life. Venerable Cunda the silversmith has accumulated kamma that leads to beauty. Venerable Cunda the silversmith has accumulated kamma that leads to happiness. Venerable Cunda the silversmith has accumulated kamma that leads to heaven. Venerable Cunda the silversmith has accumulated kamma that leads to rank. Venerable Cunda the silversmith has accumulated kamma that leads to sovereignty.”’
+ud8.5:21.2 | S: You should dispel remorse in Cunda the smith like this.” | T: In this way, Ānanda, Cunda the silversmith’s remorse should be allayed.”
+ud8.5:22.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.5:23.1 | S: “A giver’s merit grows; | T: For a person giving, merit increases.
+ud8.5:23.2 | S: enmity doesn’t build up when you have self-control. | T: For one self-restraining, no animosity is amassed.
+ud8.5:23.3 | S: A skillful person gives up bad things— | T: One who is skillful leaves evil behind
+ud8.5:23.4 | S: with the end of greed, hate, and delusion, <j>they’re quenched.” | T: and –from the ending of passion, aversion, delusion– is totally unbound.
+ud8.5:23.5 | P: Pañcamaṁ. | T: (none)
+
+## sn46.51
+sn46.51:1.1 | S: At Sāvatthī. | T: (none)
+sn46.51:1.2 | S: “Mendicants, I will teach you what fuels and what starves the five hindrances and the seven awakening factors. | T: “Monks, I will teach you the feeding & starving of the five hindrances & of the seven factors for awakening.
+sn46.51:1.3 | S: Listen … | T: Listen & pay close attention. I will speak.…
+sn46.51:1.4 | S: And what fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow? | T: Feeding the hindrances “And what is the food for the arising of unarisen sensual desire, or for the growth & increase of sensual desire once it has arisen?
+sn46.51:1.5 | S: There is the feature of beauty. | T: There is the theme of beauty.
+sn46.51:1.6 | S: Frequent irrational application of mind to that | T: To foster inappropriate attention to it:
+sn46.51:1.7 | S: fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow. | T: This is the food for the arising of unarisen sensual desire, or for the growth & increase of sensual desire once it has arisen.
+sn46.51:2.1 | S: And what fuels the arising of ill will, or, when it has arisen, makes it increase and grow? | T: “And what is the food for the arising of unarisen ill will, or for the growth & increase of ill will once it has arisen?
+sn46.51:2.2 | S: There is the feature of aversion. | T: There is the theme of irritation.
+sn46.51:2.3 | S: Frequent irrational application of mind to that | T: To foster inappropriate attention to it:
+sn46.51:2.4 | S: fuels the arising of ill will, or, when it has arisen, makes it increase and grow. | T: This is the food for the arising of unarisen ill will, or for the growth & increase of ill will once it has arisen.
+sn46.51:3.1 | S: And what fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow? | T: “And what is the food for the arising of unarisen sloth & drowsiness, or for the growth & increase of sloth & drowsiness once it has arisen?
+sn46.51:3.2 | S: There is discontent, sloth, yawning, sleepiness after eating, and mental sluggishness. | T: There are boredom, weariness, yawning, drowsiness after a meal, & sluggishness of awareness.
+sn46.51:3.3 | S: Frequent irrational application of mind to that | T: To foster inappropriate attention to them:
+sn46.51:3.4 | S: fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow. | T: This is the food for the arising of unarisen sloth & drowsiness, or for the growth & increase of sloth & drowsiness once it has arisen.
+sn46.51:4.1 | S: And what fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow? | T: “And what is the food for the arising of unarisen restlessness & anxiety, or for the growth & increase of restlessness & anxiety once it has arisen?
+sn46.51:4.2 | S: There is the unsettled mind. | T: There is non-stillness of awareness.
+sn46.51:4.3 | S: Frequent irrational application of mind to that | T: To foster inappropriate attention to that:
+sn46.51:4.4 | S: fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow. | T: This is the food for the arising of unarisen restlessness & anxiety, or for the growth & increase of restlessness & anxiety once it has arisen.
+sn46.51:5.1 | S: And what fuels the arising of doubt, or, when it has arisen, makes it increase and grow? | T: “And what is the food for the arising of unarisen uncertainty, or for the growth & increase of uncertainty once it has arisen?
+sn46.51:5.2 | S: There are things that are grounds for doubt. | T: There are phenomena that act as a foothold for uncertainty.
+sn46.51:5.3 | S: Frequent irrational application of mind to them | T: To foster inappropriate attention to them:
+sn46.51:5.4 | S: fuels the arising of doubt, or, when it has arisen, makes it increase and grow. | T: This is the food for the arising of unarisen uncertainty, or for the growth & increase of uncertainty once it has arisen.
+sn46.51:6.1 | S: And what fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it? | T: Feeding the factors for awakening “Now, what is the food for the arising of unarisen mindfulness as a factor for awakening, or for the growth & increase of mindfulness as a factor for awakening once it has arisen?
+sn46.51:6.2 | S: There are things that are grounds for the awakening factor of mindfulness. | T: There are mental qualities that act as a foothold for mindfulness as a factor for awakening [well-purified virtue & views made straight].
+sn46.51:6.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:6.4 | S: fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen mindfulness as a factor for awakening, or for the growth & increase of mindfulness as a factor for awakening once it has arisen.
+sn46.51:7.1 | S: And what fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen analysis of qualities as a factor for awakening, or for the growth & increase of analysis of qualities… once it has arisen?
+sn46.51:7.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are mental qualities that are skillful & unskillful, blameworthy & blameless, gross & refined, siding with darkness & with light.
+sn46.51:7.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:7.4 | S: fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen analysis of qualities as a factor for awakening, or for the growth & increase of analysis of qualities… once it has arisen.
+sn46.51:8.1 | S: And what fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen persistence as a factor for awakening, or for the growth & increase of persistence… once it has arisen?
+sn46.51:8.2 | S: There are the elements of initiative, persistence, and exertion. | T: There is the potential for effort, the potential for exertion, the potential for striving.
+sn46.51:8.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:8.4 | S: fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen persistence as a factor for awakening, or for the growth & increase of persistence… once it has arisen.
+sn46.51:9.1 | S: And what fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen rapture as a factor for awakening, or for the growth & increase of rapture… once it has arisen?
+sn46.51:9.2 | S: There are things that are grounds for the awakening factor of rapture. | T: There are mental qualities that act as a foothold for rapture as a factor for awakening.
+sn46.51:9.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:9.4 | S: fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen rapture as a factor for awakening, or for the growth & increase of rapture… once it has arisen.
+sn46.51:10.1 | S: And what fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen calm as a factor for awakening, or for the growth & increase of calm… once it has arisen?
+sn46.51:10.2 | S: There is tranquility of the body and of the mind. | T: There is physical calm & there is mental calm.
+sn46.51:10.3 | S: Frequent rational application of mind to that | T: To foster appropriate attention to them:
+sn46.51:10.4 | S: fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen calm as a factor for awakening, or for the growth & increase of calm… once it has arisen.
+sn46.51:11.1 | S: And what fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen concentration as a factor for awakening, or for the growth & increase of concentration… once it has arisen?
+sn46.51:11.2 | S: There are things that are the basis of serenity and freedom from distraction. | T: There are themes for tranquility, themes for non-distraction [these are the four establishings of mindfulness—see MN44].
+sn46.51:11.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:11.4 | S: fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen concentration as a factor for awakening, or for the growth & increase of concentration… once it has arisen.
+sn46.51:12.1 | S: And what fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it? | T: “And what is the food for the arising of unarisen equanimity as a factor for awakening, or for the growth & increase of equanimity… once it has arisen?
+sn46.51:12.2 | S: There are things that are grounds for the awakening factor of equanimity. | T: There are mental qualities that act as a foothold for equanimity as a factor for awakening.
+sn46.51:12.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:12.4 | S: fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it. | T: This is the food for the arising of unarisen equanimity as a factor for awakening, or for the growth & increase of equanimity as a factor for awakening once it has arisen.
+sn46.51:13.1 | S: And what starves the arising of sensual desire, or, when it has arisen, starves its increase and growth? | T: Starving the hindrances “Now, what is lack of food for the arising of unarisen sensual desire, or for the growth & increase of sensual desire once it has arisen?
+sn46.51:13.2 | S: There is the feature of ugliness. | T: There is the theme of unattractiveness.
+sn46.51:13.3 | S: Frequent rational application of mind to that | T: To foster appropriate attention to it:
+sn46.51:13.4 | S: starves the arising of sensual desire, or, when it has arisen, starves its increase and growth. | T: This is lack of food for the arising of unarisen sensual desire, or for the growth & increase of sensual desire once it has arisen.
+sn46.51:14.1 | S: And what starves the arising of ill will, or, when it has arisen, starves its increase and growth? | T: “And what is lack of food for the arising of unarisen ill will, or for the growth & increase of ill will once it has arisen?
+sn46.51:14.2 | S: There is the heart’s release by love. | T: There is awareness-release [through goodwill, compassion, empathetic joy, or equanimity].
+sn46.51:14.3 | S: Frequent rational application of mind to that | T: To foster appropriate attention to that:
+sn46.51:14.4 | S: starves the arising of ill will, or, when it has arisen, starves its increase and growth. | T: This is lack of food for the arising of unarisen ill will, or for the growth & increase of ill will once it has arisen.
+sn46.51:15.1 | S: And what starves the arising of dullness and drowsiness, or, when they have arisen, starves their increase and growth? | T: “And what is lack of food for the arising of unarisen sloth & drowsiness, or for the growth & increase of sloth & drowsiness once it has arisen?
+sn46.51:15.2 | S: There are the elements of initiative, persistence, and exertion. | T: There is the potential for effort, the potential for exertion, the potential for striving.
+sn46.51:15.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:15.4 | S: starves the arising of dullness and drowsiness, or, when they have arisen, starves their increase and growth. | T: This is lack of food for the arising of unarisen sloth & drowsiness, or for the growth & increase of sloth & drowsiness once it has arisen.
+sn46.51:16.1 | S: And what starves the arising of restlessness and remorse, or, when they have arisen, starves their increase and growth? | T: “And what is lack of food for the arising of unarisen restlessness & anxiety, or for the growth & increase of restlessness & anxiety once it has arisen?
+sn46.51:16.2 | S: There is the settled mind. | T: There is stillness of awareness.
+sn46.51:16.3 | S: Frequent rational application of mind to that | T: To foster appropriate attention to that:
+sn46.51:16.4 | S: starves the arising of restlessness and remorse, or, when they have arisen, starves their increase and growth. | T: This is lack of food for the arising of unarisen restlessness & anxiety, or for the growth & increase of restlessness & anxiety once it has arisen.
+sn46.51:17.1 | S: And what starves the arising of doubt, or, when it has arisen, starves its increase and growth? | T: “And what is lack of food for the arising of unarisen uncertainty, or for the growth & increase of uncertainty once it has arisen?
+sn46.51:17.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are mental qualities that are skillful & unskillful, blameworthy & blameless, gross & refined, siding with darkness & with light.
+sn46.51:17.3 | S: Frequent rational application of mind to them | T: To foster appropriate attention to them:
+sn46.51:17.4 | S: starves the arising of doubt, or, when it has arisen, starves its increase and growth. | T: This is lack of food for the arising of unarisen uncertainty, or for the growth & increase of uncertainty once it has arisen.
+sn46.51:18.1 | S: And what starves the arising of the awakening factor of mindfulness, or, when it has arisen, starves its full development? | T: Starving the factors for awakening “Now, what is lack of food for the arising of unarisen mindfulness as a factor for awakening, or for the growth & increase of mindfulness as a factor for awakening once it has arisen?
+sn46.51:18.2 | S: There are things that are grounds for the awakening factor of mindfulness. | T: There are mental qualities that act as a foothold for mindfulness as a factor for awakening.
+sn46.51:18.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:18.4 | S: starves the arising of the awakening factor of mindfulness, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen mindfulness as a factor for awakening, or for the growth & increase of mindfulness as a factor for awakening once it has arisen.
+sn46.51:19.1 | S: And what starves the arising of the awakening factor of investigation of principles, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen analysis of qualities as a factor for awakening, or for the growth & increase of analysis of qualities… once it has arisen?
+sn46.51:19.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are mental qualities that are skillful & unskillful, blameworthy & blameless, gross & refined, siding with darkness & with light.
+sn46.51:19.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:19.4 | S: starves the arising of the awakening factor of investigation of principles, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen analysis of qualities as a factor for awakening, or for the growth & increase of analysis of qualities… once it has arisen.
+sn46.51:20.1 | S: And what starves the arising of the awakening factor of energy, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen persistence as a factor for awakening, or for the growth & increase of persistence… once it has arisen?
+sn46.51:20.2 | S: There are the elements of initiative, persistence, and exertion. | T: There is the potential for effort, the potential for exertion, the potential for striving.
+sn46.51:20.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:20.4 | S: starves the arising of the awakening factor of energy, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen persistence as a factor for awakening, or for the growth & increase of persistence… once it has arisen.
+sn46.51:21.1 | S: And what starves the arising of the awakening factor of rapture, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen rapture as a factor for awakening, or for the growth & increase of rapture… once it has arisen?
+sn46.51:21.2 | S: There are things that are grounds for the awakening factor of rapture. | T: There are mental qualities that act as a foothold for rapture as a factor for awakening.
+sn46.51:21.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:21.4 | S: starves the arising of the awakening factor of rapture, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen rapture as a factor for awakening, or for the growth & increase of rapture… once it has arisen.
+sn46.51:22.1 | S: And what starves the arising of the awakening factor of tranquility, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen calm as a factor for awakening, or for the growth & increase of calm… once it has arisen?
+sn46.51:22.2 | S: There is tranquility of the body and of the mind. | T: There is physical calm & there is mental calm.
+sn46.51:22.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:22.4 | S: starves the arising of the awakening factor of tranquility, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen calm as a factor for awakening, or for the growth & increase of calm… once it has arisen.
+sn46.51:23.1 | S: And what starves the arising of the awakening factor of immersion, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen concentration as a factor for awakening, or for the growth & increase of concentration… once it has arisen?
+sn46.51:23.2 | S: There are things that are the basis of serenity and freedom from distraction. | T: There are the themes for tranquility, themes for non-distraction.
+sn46.51:23.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:23.4 | S: starves the arising of the awakening factor of immersion, or, when it has arisen, starves its full development. | T: This is lack of food for the arising of unarisen concentration as a factor for awakening, or for the growth & increase of concentration… once it has arisen.
+sn46.51:24.1 | S: And what starves the arising of the awakening factor of equanimity, or, when it has arisen, starves its full development? | T: “And what is lack of food for the arising of unarisen equanimity as a factor for awakening, or for the growth & increase of equanimity as a factor for awakening once it has arisen?
+sn46.51:24.2 | S: There are things that are grounds for the awakening factor of equanimity. | T: There are mental qualities that act as a foothold for equanimity as a factor for awakening.
+sn46.51:24.3 | S: Not frequently applying the mind to that | T: Not fostering attention to them:
+sn46.51:24.4 | S: starves the arising of the awakening factor of equanimity, or, when it has arisen, starves its full development.” | T: This is lack of food for the arising of unarisen equanimity as a factor for awakening, or for the growth & increase of equanimity as a factor for awakening once it has arisen.”
+sn46.51:24.5 | P: Paṭhamaṁ. | T: (none)
+
+## an10.29
+an10.29:1.1 | S: “As far as Kāsi and Kosala extend, and as far as the dominion of King Pasenadi of Kosala extends, King Pasenadi is said to be the foremost. | T: [1] “Monks, as far as Kāsi & Kosala extend, as far as the rule of King Pasenadi the Kosalan extends, King Pasenadi the Kosalan is reckoned supreme.
+an10.29:1.2 | S: But even King Pasenadi decays and perishes. | T: Yet even in King Pasenadi the Kosalan there is still aberration, there is change.
+an10.29:1.3 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:1.4 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:2.1 | S: A galaxy extends a thousand times as far as the moon and sun revolve and the dazzling ones light up the quarters. | T: [2] “As far as the sun & moon revolve, illumining the directions with their light, there extends the thousand-fold cosmos.
+an10.29:2.2 | S: In that galaxy there are a thousand moons, a thousand suns, a thousand Sinerus king of mountains, a thousand Black Plum Tree Lands, a thousand lands west of Godāvarī, a thousand lands north of Kuru, a thousand lands east of Videha, four thousand oceans, four thousand great kings, a thousand realms of the gods of the four great kings, a thousand realms of the gods of the thirty-three, of the gods of Yama, of the joyful gods, of the gods who love to create, of the gods who control what is created by others, and a thousand realms of divinity. | T: In that thousand-fold cosmos there are a thousand moons, a thousand suns, a thousand Sunerus—kings of mountains; a thousand Rose-apple continents, a thousand Deathless Ox-cart (continents), a thousand northern Kuru (continents), a thousand eastern Videha (continents); four thousand great oceans, four thousand Great Kings, a thousand (heavens of the) Four Great Kings, a thousand (heavens of the) Thirty-three, a thousand (heavens of the) Hours, a thousand (heavens of the) Contented, a thousand heavens of the Devas Delighting in Creation, a thousand heavens of the Devas Wielding Power over the Creations of Others, and a thousand Brahmā worlds.
+an10.29:2.3 | S: As far as the galaxy extends, the Great Divinity is said to be the foremost. | T: And in that thousand-fold cosmos, the Great Brahmā is reckoned supreme.
+an10.29:2.4 | S: But even the Great Divinity decays and perishes. | T: Yet even in the Great Brahmā there is still aberration, there is change.
+an10.29:2.5 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:2.6 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:3.1 | S: There comes a time when this cosmos contracts. | T: [3] “There comes a time when this cosmos devolves.
+an10.29:3.2 | S: As it contracts, most sentient beings migrate to the realm of sublime luminosity. | T: When the cosmos is devolving, most beings head to (the heaven of) the Radiant.
+an10.29:3.3 | S: There they are mind-made, feeding on rapture, self-radiant, wandering in midair, steadily glorious, and they remain like that for a very long time. | T: There they remain for a long, long time—mind-made, feeding on rapture, self-radiant, faring through the sky, abiding in splendor.
+an10.29:3.4 | S: When the cosmos is contracting, the gods of sublime luminosity are said to be the foremost. | T: When the cosmos is devolving, the Radiant Devas are reckoned supreme.
+an10.29:3.5 | S: But even the gods of sublime luminosity decay and perish. | T: Yet even in the Radiant Devas, there is still aberration, there is change.
+an10.29:3.6 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:3.7 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:4.1 | S: There are these ten universal dimensions of meditation. | T: [4] “There are these ten totality-dimensions.
+an10.29:4.2 | S: What ten? | T: Which ten?
+an10.29:4.3 | S: Someone perceives the meditation on universal earth above, below, across, undivided and limitless. | T: One perceives the earth-totality above, below, all-around: non-dual [advayaṁ], immeasurable.
+an10.29:4.4 | S: They perceive the meditation on universal water … | T: One perceives the water-totality…
+an10.29:4.5 | S: the meditation on universal fire … | T: the fire-totality…
+an10.29:4.6 | S: the meditation on universal air … | T: the wind-totality…
+an10.29:4.7 | S: the meditation on universal blue … | T: the blue-totality…
+an10.29:4.8 | S: the meditation on universal yellow … | T: the yellow-totality…
+an10.29:4.9 | S: the meditation on universal red … | T: the red-totality…
+an10.29:4.10 | S: the meditation on universal white … | T: the white-totality…
+an10.29:4.11 | S: the meditation on universal space … | T: the space-totality…
+an10.29:4.12 | S: They perceive the meditation on universal consciousness above, below, across, undivided and limitless. | T: the consciousness-totality above, below, all-around: non-dual, immeasurable.
+an10.29:4.13 | S: These are the ten universal dimensions of meditation. | T: These are the ten totality-dimensions.
+an10.29:5.1 | S: The best of these ten universal dimensions of meditation is when someone perceives the meditation on universal consciousness above, below, across, undivided and limitless. | T: Now, of these ten totality-dimensions, this is supreme: when one perceives the consciousness-totality above, below, all-around: non-dual, immeasurable.
+an10.29:5.2 | S: Some sentient beings perceive like this. | T: And there are beings who are percipient in this way.
+an10.29:5.3 | S: But even the sentient beings who perceive like this decay and perish. | T: Yet even in the beings who are percipient in this way there is still aberration, there is change.
+an10.29:5.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:5.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:6.1 | S: There are these eight dimensions of mastery. | T: [5] “There are these eight dimensions of (mental) mastery.
+an10.29:6.2 | S: What eight? | T: Which eight?
+an10.29:6.3 | S: Perceiving form internally, someone sees forms externally, limited, both pretty and ugly. | T: (a) “One percipient of form internally sees forms externally as limited, beautiful & ugly.
+an10.29:6.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:6.5 | S: This is the first dimension of mastery. | T: This is the first dimension of (mental) mastery.
+an10.29:7.1 | S: Perceiving form internally, someone sees forms externally, limitless, both pretty and ugly. | T: (b) “One percipient of form internally sees forms externally as immeasurable, beautiful & ugly.
+an10.29:7.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:7.3 | S: This is the second dimension of mastery. | T: This is the second dimension of (mental) mastery.
+an10.29:8.1 | S: Not perceiving form internally, someone sees forms externally, limited, both pretty and ugly. | T: (c) “One percipient of the formless internally sees forms externally as limited, beautiful & ugly.
+an10.29:8.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:8.3 | S: This is the third dimension of mastery. | T: This is the third dimension of (mental) mastery.
+an10.29:9.1 | S: Not perceiving form internally, someone sees forms externally, limitless, both pretty and ugly. | T: (d) “One percipient of the formless internally sees forms externally as immeasurable, beautiful & ugly.
+an10.29:9.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:9.3 | S: This is the fourth dimension of mastery. | T: This is the fourth dimension of (mental) mastery.
+an10.29:10.1 | S: Not perceiving form internally, someone sees forms externally, blue, with blue color and blue appearance. | T: (e) “One percipient of the formless internally sees forms externally as blue, blue in their color, blue in their features, blue in their glow.
+an10.29:10.2 | S: They’re like a flax flower that’s blue, with blue color and blue appearance. Or a cloth from Varanasi that’s smoothed on both sides, blue, with blue color and blue appearance. | T: Just as a flax-flower is blue, blue in its color, blue in its features, blue in its glow, or just as Vārāṇasī muslin, smooth on both sides, is blue, blue in its color, blue in its features, blue in its glow,
+an10.29:10.3 | S: In the same way, not perceiving form internally, someone sees forms externally, blue, with blue color and blue appearance. | T: in the same way one percipient of the formless internally sees forms externally as blue, blue in their color, blue in their features, blue in their glow.
+an10.29:10.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:10.5 | S: This is the fifth dimension of mastery. | T: This is the fifth dimension of (mental) mastery.
+an10.29:11.1 | S: Not perceiving form internally, someone sees forms externally, yellow, with yellow color and yellow appearance. | T: (f) “One percipient of the formless internally sees forms externally as yellow, yellow in their color, yellow in their features, yellow in their glow.
+an10.29:11.2 | S: They’re like a champak flower that’s yellow, with yellow color and yellow appearance. Or a cloth from Varanasi that’s smoothed on both sides, yellow, with yellow color and yellow appearance. | T: Just as a kaṇṇikāra-flower is yellow, yellow in its color, yellow in its features, yellow in its glow, or just as Vārāṇasī muslin, smooth on both sides, is yellow, yellow in its color, yellow in its features, yellow in its glow,
+an10.29:11.3 | S: In the same way, not perceiving form internally, someone sees forms externally, yellow, with yellow color and yellow appearance. | T: in the same way one percipient of the formless internally sees forms externally as yellow, yellow in their color, yellow in their features, yellow in their glow.
+an10.29:11.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:11.5 | S: This is the sixth dimension of mastery. | T: This is the sixth dimension of (mental) mastery.
+an10.29:12.1 | S: Not perceiving form internally, someone sees forms externally, red, with red color and red appearance. | T: (g) “One percipient of the formless internally sees forms externally as red, red in their color, red in their features, red in their glow.
+an10.29:12.2 | S: They’re like a scarlet mallow flower that’s red, with red color and red appearance. Or a cloth from Varanasi that’s smoothed on both sides, red, with red color and red appearance. | T: Just as a bandha-jīvaka-flower is red, red in its color, red in its features, red in its glow, or just as Vārāṇasī muslin, smooth on both sides, is red, red in its color, red in its features, red in its glow,
+an10.29:12.3 | S: In the same way, not perceiving form internally, someone sees forms externally, red, with red color and red appearance. | T: in the same way one percipient of the formless internally sees forms externally as red, red in their color, red in their features, red in their glow.
+an10.29:12.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:12.5 | S: This is the seventh dimension of mastery. | T: This is the seventh dimension of (mental) mastery.
+an10.29:13.1 | S: Not perceiving form internally, someone sees forms externally, white, with white color and white appearance. | T: (h) “One percipient of the formless internally sees forms externally as white, white in their color, white in their features, white in their glow.
+an10.29:13.2 | S: They’re like the morning star that’s white, with white color and white appearance. Or a cloth from Varanasi that’s smoothed on both sides, white, with white color and white appearance. | T: Just as the morning star is white, white in its color, white in its features, white in its glow, or just as Vārāṇasī muslin, smooth on both sides, is white, white in its color, white in its features, white in its glow,
+an10.29:13.3 | S: In the same way, not perceiving form internally, someone sees forms externally, white, with white color and white appearance. | T: in the same way one percipient of the formless internally sees forms externally as white, white in their color, white in their features, white in their glow.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.29:13.4 | S: Mastering them, they perceive: ‘I know and see.’ | T: Mastering them, he is percipient of ‘I know; I see.’
+an10.29:13.5 | S: This is the eighth dimension of mastery. | T: This is the eighth dimension of (mental) mastery.
+an10.29:13.6 | S: These are the eight dimensions of mastery. | T: “These are the eight dimensions of mental mastery.
+an10.29:14.1 | S: The best of these dimensions of mastery is when someone, not perceiving form internally, sees forms externally, white, with white color and white appearance. | T: Now, of these eight dimensions of mastery, this is supreme: when one percipient of the formless internally sees forms externally as white, white in their color, white in their features, white in their glow.
+an10.29:14.2 | S: Mastering them, they perceive: ‘I know and see.’ | T: (none)
+an10.29:14.3 | S: Some sentient beings perceive like this. | T: And there are beings who are percipient in this way.
+an10.29:14.4 | S: But even the sentient beings who perceive like this decay and perish. | T: Yet even in the beings who are percipient in this way there is still aberration, there is change.
+an10.29:14.5 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:14.6 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:15.1 | S: There are four ways of practice. | T: [6] “There are these four modes of practice.
+an10.29:15.2 | S: What four? | T: Which four?
+an10.29:15.3 | S: Painful practice with slow insight, | T: Painful practice with slow intuition,
+an10.29:15.4 | S: painful practice with swift insight, | T: painful practice with quick intuition,
+an10.29:15.5 | S: pleasant practice with slow insight, and | T: pleasant practice with slow intuition,
+an10.29:15.6 | S: pleasant practice with swift insight. | T: and pleasant practice with quick intuition.
+an10.29:15.7 | S: These are the four ways of practice. | T: These are the four modes of practice.
+an10.29:16.1 | S: The best of these four ways of practice is the pleasant practice with swift insight. | T: Now, of these four modes of practice, this is supreme: pleasant practice with quick intuition.
+an10.29:16.2 | S: Some sentient beings practice like this. | T: And there are beings whose practice is like this.
+an10.29:16.3 | S: But even the sentient beings who practice like this decay and perish. | T: Yet even in the beings whose practice is like this there is still aberration, there is change.
+an10.29:16.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:16.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:17.1 | S: There are these four perceptions. | T: [7] “There are these four perceptions.
+an10.29:17.2 | S: What four? | T: Which four?
+an10.29:17.3 | S: One individual perceives the limited. | T: One perceives the limited [ordinary perceptions].
+an10.29:17.4 | S: One individual perceives the expansive. | T: One perceives the enlarged [the mind in jhāna].
+an10.29:17.5 | S: One individual perceives the limitless. | T: One perceives the immeasurable [the mind in the brahmavihāras].
+an10.29:17.6 | S: One individual, aware that ‘there is nothing at all’, perceives the dimension of nothingness. | T: One perceives the dimension of nothingness: ‘There is nothing.’
+an10.29:17.7 | S: These are the four perceptions. | T: These are the four perceptions.
+an10.29:18.1 | S: The best of these four perceptions is when someone, aware that ‘there is nothing at all’, perceives the dimension of nothingness. | T: Now, of these four perceptions, this is supreme: when one perceives the dimension of nothingness: ‘There is nothing.’
+an10.29:18.2 | S: Some sentient beings perceive like this. | T: And there are beings who are percipient in this way.
+an10.29:18.3 | S: But even the sentient beings who perceive like this decay and perish. | T: Yet even in the beings who are percipient in this way there is still aberration, there is change.
+an10.29:18.4 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:18.5 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:19.1 | S: This is the best of the convictions of outsiders, that is: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: [8] “The supreme view-point external (to the Dhamma) is this: ‘I should not be; it should not occur to me; I will not be; it will not occur to me.’
+an10.29:19.2 | S: When someone has such a view, you can expect | T: Of one with this view it may be expected that
+an10.29:19.3 | S: that they will not be attracted to continued existence, | T: ‘the unloathsomeness of becoming will not occur to him,
+an10.29:19.4 | S: and they will not be repulsed by the cessation of continued existence. | T: and the loathsomeness of the cessation of becoming will not occur to him.’
+an10.29:19.5 | S: Some sentient beings have such a view. | T: And there are beings who have this view.
+an10.29:19.6 | S: But even the sentient beings who have views like this decay and perish. | T: Yet even in the beings who have this view there is still aberration, there is change.
+an10.29:19.7 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:19.8 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:20.1 | S: There are some ascetics and brahmins who advocate the ultimate purity of the spirit. | T: [9] “There are some contemplatives & brahmans who declare the foremost purity of the spirit.
+an10.29:20.2 | S: This is the best of the advocates of the ultimate purity of the spirit, that is, when someone, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. | T: Now, of those who proclaim the foremost purity of the spirit, these are supreme: those who, with the complete transcending of the dimension of nothingness, enter & remain in the dimension of neither perception nor non-perception
+an10.29:20.3 | S: They teach Dhamma in order to directly know and realize this. | T: and who, having directly known & realized this, teach their Dhamma.
+an10.29:20.4 | S: Some sentient beings have such a doctrine. | T: And there are beings who teach in this way.
+an10.29:20.5 | S: But even the sentient beings who have such a doctrine decay and perish. | T: Yet even in the beings who teach in this way there is still aberration, there is change.
+an10.29:20.6 | S: Seeing this, a learned noble disciple grows disillusioned with it. | T: Seeing this, the instructed disciple of the noble ones grows disenchanted with that.
+an10.29:20.7 | S: Their desire fades away even for the foremost, let alone the inferior. | T: Being disenchanted with that, he becomes dispassionate toward what is supreme, and even more so toward what is inferior.
+an10.29:21.1 | S: There are some ascetics and brahmins who advocate ultimate extinguishment in this very life. | T: [10] “There are some contemplatives & brahmans who proclaim the foremost unbinding in the here & now.
+an10.29:21.2 | S: This is the best of those who advocate extinguishment in this very life, that is, liberation by not grasping after truly understanding the origin, disappearance, gratification, drawback, and escape of the six fields of contact. | T: Now, of those who proclaim the foremost unbinding in the here & now, this is supreme: liberation through non-clinging, having known, as they have come to be, the origination, the passing away, the allure, the drawbacks of, & the escape from the six sense-contact media.
+an10.29:21.3 | S: Though I state and assert this, certain ascetics and brahmins misrepresent me with the incorrect, hollow, false, untruthful claim: | T: And when I teach that, when I point that out, some contemplatives & brahmans accuse me of being false, unfactual, hollow, vain, (saying,)
+an10.29:21.4 | S: ‘The ascetic Gotama doesn’t advocate the complete understanding of sensual pleasures, forms, or feelings.’ | T: ‘The contemplative Gotama does not declare the full comprehension of sensuality, does not declare the full comprehension of forms, does not declare the full comprehension of feelings.’
+an10.29:21.5 | S: But I do advocate the complete understanding of sensual pleasures, forms, and feelings. And I advocate complete extinguishment with no fuel for grasping in this very life, wishless, quenched, and cooled.” | T: But I do declare the full comprehension of sensuality, I do declare the full comprehension of forms, I do declare the full comprehension of feelings. Unhungering, unbound, cooled in the here & now, I declare total unbinding through lack of clinging/sustenance.”
+an10.29:21.6 | P: Navamaṁ. | T: (none)
+
+## an6.63
+an6.63:1.1 | S: “Mendicants, I will teach you a penetrative exposition of the teaching. | T: “Monks, I will teach you the penetrative explanation that is a Dhamma explanation.
+an6.63:1.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an6.63:1.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+an6.63:1.4 | S: The Buddha said this: | T: The Blessed One said:
+an6.63:2.1 | S: “Mendicants, what is the penetrative exposition of the teaching? | T: “And which penetrative explanation is a Dhamma explanation?
+an6.63:2.2 | S: Sensual pleasures should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known. | T: “Sensuality should be known. The cause by which sensuality comes into play should be known. The diversity in sensuality should be known. The result of sensuality should be known. The cessation of sensuality should be known. The path of practice for the cessation of sensuality should be known.
+an6.63:3.1 | S: Feelings should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known. | T: “Feeling should be known. The cause by which feeling comes into play should be known. The diversity in feeling should be known. The result of feeling should be known. The cessation of feeling should be known. The path of practice for the cessation of feeling should be known.
+an6.63:4.1 | S: Perceptions should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known. | T: “Perception should be known. The cause by which perception comes into play should be known. The diversity in perception should be known. The result of perception should be known. The cessation of perception should be known. The path of practice for the cessation of perception should be known.
+an6.63:5.1 | S: Defilements should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known. | T: “Effluents [āsava] should be known. The cause by which effluents come into play should be known. The diversity in effluents should be known. The result of effluents should be known. The cessation of effluents should be known. The path of practice for the cessation of effluents should be known
+an6.63:6.1 | S: Deeds should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known. | T: “Kamma should be known. The cause by which kamma comes into play should be known. The diversity in kamma should be known. The result of kamma should be known. The cessation of kamma should be known. The path of practice for the cessation of kamma should be known.
+an6.63:7.1 | S: Suffering should be known. And its source, diversity, result, cessation, and the practice that leads to its cessation should be known. | T: “Stress should be known. The cause by which stress comes into play should be known. The diversity in stress should be known. The result of stress should be known. The cessation of stress should be known. The path of practice for the cessation of stress should be known.
+an6.63:8.1 | S: ‘Sensual pleasures should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ That’s what I said, | T: [1] “‘Sensuality should be known. The cause by which sensuality comes into play… The diversity in sensuality… The result of sensuality… The cessation of sensuality… The path of practice for the cessation of sensuality should be known.’ Thus it has been said.
+an6.63:8.2 | S: but why did I say it? | T: In reference to what was it said?
+an6.63:8.3 | S: There are these five kinds of sensual stimulation. | T: “There are these five strings of sensuality:
+an6.63:8.4 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire;
+an6.63:8.5 | S: Sounds known by the ear … | T: sounds cognizable via the ear…
+an6.63:8.6 | S: Smells known by the nose … | T: aromas cognizable via the nose…
+an6.63:8.7 | S: Tastes known by the tongue … | T: flavors cognizable via the tongue…
+an6.63:8.8 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+an6.63:8.9 | S: However, these are not sensual pleasures. In the training of the Noble One they’re called ‘kinds of sensual stimulation’. | T: But these are not sensuality. They are called strings of sensuality in the discipline of the noble ones.
+an6.63:8.10 | S: Greedy intention is a person’s sensual pleasure. | T: The passion for his resolves is a man’s sensuality,
+an6.63:8.11 | S: The world’s pretty things aren’t sensual pleasures. | T: not the beautiful sensual pleasures found in the world.
+an6.63:8.12 | S: Greedy intention is a person’s sensual pleasure. | T: The passion for his resolves is a man’s sensuality.
+an6.63:8.13 | S: The world’s pretty things stay just as they are, | T: The beauties remain as they are in the world,
+an6.63:8.14 | S: but the attentive remove desire for them. | T: while, in this regard, the enlightened subdue their desire.
+an6.63:9.1 | S: And what is the source of sensual pleasures? | T: “And what is the cause by which sensuality comes into play?
+an6.63:10.2 | S: Contact is their source. | T: Contact is the cause by which sensuality comes into play.
+an6.63:11.1 | S: And what is the diversity of sensual pleasures? | T: “And what is the diversity in sensuality?
+an6.63:11.2 | S: The sensual desire for sights, sounds, smells, tastes, and touches are all different. | T: Sensuality with regard to forms is one thing, sensuality with regard to sounds is another, sensuality with regard to aromas is another, sensuality with regard to flavors is another, sensuality with regard to tactile sensations is another.
+an6.63:11.3 | S: This is called the diversity of sensual pleasures. | T: This is called the diversity in sensuality.
+an6.63:12.1 | S: And what is the result of sensual pleasures? | T: “And what is the result of sensuality?
+an6.63:12.2 | S: When one who desires sensual pleasures generates a corresponding incarnation, partaking of either good or bad deeds—this is called the result of sensual pleasures. | T: One who wants sensuality produces a corresponding state of existence, on the side of merit or demerit. This is called the result of sensuality.
+an6.63:13.1 | S: And what is the cessation of sensual pleasures? | T: “And what is the cessation of sensuality?
+an6.63:13.2 | S: When contact ceases, sensual pleasures cease. | T: From the cessation of contact is the cessation of sensuality;
+an6.63:13.3 | S: The practice that leads to the cessation of sensual pleasures is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:13.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the way leading to the cessation of sensuality.
+an6.63:14.1 | S: When a noble disciple understands sensual pleasures in this way—and understands their source, diversity, result, cessation, and the practice that leads to their cessation—they understand that this penetrative spiritual life is the cessation of sensual pleasures. | T: “Now when a disciple of the noble ones discerns sensuality in this way, the cause by which sensuality comes into play in this way, the diversity in sensuality in this way, the result of sensuality in this way, the cessation of sensuality in this way, & the path of practice leading to the cessation of sensuality in this way, then he discerns this penetrative holy life as the cessation of sensuality.
+an6.63:14.2 | S: ‘Sensual pleasures should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: “‘Sensuality should be known. The cause by which sensuality comes into play… The diversity in sensuality… The result of sensuality… The cessation of sensuality… The path of practice for the cessation of sensuality should be known.’
+an6.63:14.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:15.1 | S: ‘Feelings should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: [2] “‘Feeling should be known. The cause by which feeling comes into play… The diversity in feeling… The result of feeling… The cessation of feeling… The path of practice for the cessation of feeling should be known.’
+an6.63:15.2 | S: That’s what I said, but why did I say it? | T: Thus it has been said. In reference to what was it said?
+an6.63:15.3 | S: There are these three feelings: | T: “There are these three kinds of feeling:
+an6.63:15.4 | S: pleasant, painful, and neutral. | T: a feeling of pleasure, a feeling of pain, & feeling of neither pleasure nor pain.
+an6.63:16.1 | S: And what is the source of feelings? | T: “And what is the cause by which feeling comes into play?
+an6.63:16.2 | S: Contact is their source. | T: Contact is the cause by which feeling comes into play.
+an6.63:17.1 | S: And what is the diversity of feelings? | T: “And what is the diversity in feeling?
+an6.63:17.2 | S: There are pleasant feelings of the flesh, pleasant feelings not of the flesh, painful feelings of the flesh, painful feelings not of the flesh, neutral feelings of the flesh, and neutral feelings not of the flesh. | T: There is the feeling of pleasure connected with the baits of the world. There is the feeling of pleasure not connected with the baits of the world. There is the feeling of pain connected with the baits of the world. There is the feeling of pain not connected with the baits of the world. There is the feeling of neither pleasure nor pain connected with the baits of the world. There is the feeling of neither pleasure nor pain not connected with the baits of the world.
+an6.63:17.3 | S: This is called the disparity of feelings. | T: This is called the diversity in feeling.
+an6.63:18.1 | S: And what is the result of feelings? | T: “And what is the result of feeling?
+an6.63:18.2 | S: When one who feels generates a corresponding incarnation, partaking of either good or bad deeds— | T: One who feels a feeling produces a corresponding state of existence, on the side of merit or demerit.
+an6.63:18.3 | S: this is called the result of feelings. | T: This is called the result of feeling.
+an6.63:19.1 | S: And what is the cessation of feelings? | T: “And what is the cessation of feeling?
+an6.63:19.2 | S: When contact ceases, feelings cease. | T: From the cessation of contact is the cessation of feeling;
+an6.63:19.3 | S: The practice that leads to the cessation of feelings is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:19.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the way leading to the cessation of feeling.
+an6.63:20.1 | S: When a noble disciple understands feelings in this way … they understand that this penetrative spiritual life is the cessation of feelings. | T: “Now when a disciple of the noble ones discerns feeling in this way, the cause by which feeling comes into play in this way, the diversity in feeling in this way, the result of feeling in this way, the cessation of feeling in this way, & the path of practice leading to the cessation of feeling in this way, then he discerns this penetrative holy life as the cessation of feeling.
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-058.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+20,965
+0 lines reported.

@@ -1533,12 +1533,10 @@
   "offer"
  ],
  "afterlif": [
-  "spontaneous",
-  "reborn"
+  "spontaneous"
  ],
  "comport": [
-  "spontaneous",
-  "reborn"
+  "spontaneous"
  ],
  "brahmana": [
   "samana"
@@ -1557,11 +1555,14 @@
  "animal": [
   "hell",
   "womb",
+  "realm",
   "hungry",
   "ghost"
  ],
  "realm": [
-  "animal"
+  "animal",
+  "hungry",
+  "ghost"
  ],
  "ghost": [
   "animal",
@@ -1572,7 +1573,6 @@
  "hell": [
   "realm",
   "bad",
-  "destination",
   "plan",
   "deprivation"
  ],

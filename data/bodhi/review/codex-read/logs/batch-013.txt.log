@@ -1,0 +1,507 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd80-e332-7ca2-a44a-a33055ee5aae
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clear line-placement corrections to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.28
+sn22.28:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.28:1.2 | S: “Mendicants, if there were no gratification in form, sentient beings wouldn’t be aroused by it. | T: “Bhikkhus, if there were no gratification in form, beings would not become enamoured with it;
+sn22.28:1.3 | S: But since there is gratification in form, sentient beings are aroused by it. | T: but because there is gratification in form, beings become enamoured with it.
+sn22.28:1.4 | S: If form had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: If there were no danger in form, beings would not experience revulsion towards it;
+sn22.28:1.5 | S: But since form has a drawback, sentient beings do grow disillusioned with it. | T: but because there is danger in form, beings experience revulsion towards it.
+sn22.28:1.6 | S: If there were no escape from form, sentient beings wouldn’t escape from it. | T: If there were no escape from form, beings would not escape from it;
+sn22.28:1.7 | S: But since there is an escape from form, sentient beings do escape from it. | T: but because there is an escape from form, beings escape from it.
+sn22.28:1.8 | S: If there were no gratification in feeling … | T: “Bhikkhus, if there were no gratification in feeling …
+sn22.28:1.9 | S: perception … | T: in perception …
+sn22.28:1.10 | S: choices … | T: in volitional formations …
+sn22.28:1.11 | P: Yasmā ca kho, bhikkhave, atthi saṅkhārānaṁ nissaraṇaṁ, tasmā sattā saṅkhārehi nissaranti. | T: (none)
+sn22.28:1.12 | S: consciousness, sentient beings wouldn’t be aroused by it. | T: in consciousness, beings would not become enamoured with it …
+sn22.28:1.13 | S: But since there is gratification in consciousness, sentient beings are aroused by it. | T: (none)
+sn22.28:1.14 | S: If consciousness had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: (none)
+sn22.28:1.15 | S: But since consciousness has a drawback, sentient beings do grow disillusioned with it. | T: (none)
+sn22.28:1.16 | S: If there were no escape from consciousness, sentient beings wouldn’t escape from it. | T: (none)
+sn22.28:1.17 | S: But since there is an escape from consciousness, sentient beings do escape from it. | T: but because there is an escape from consciousness, beings escape from it.
+sn22.28:2.1 | S: As long as sentient beings don’t truly understand these five grasping aggregates’ gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of limits. | T: “So long, bhikkhus, as beings have not directly known as they really are the gratification as gratification, the danger as danger, and the escape as escape in the case of these five aggregates subject to clinging, they have not escaped from this world with its devas, Mara, and Brahma, from this generation with its ascetics and brahmins, its devas and humans; they have not become detached from it, released from it, nor do they dwell with a mind rid of barriers.
+sn22.28:2.2 | P: neva tāva, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaṁyuttā vippamuttā vimariyādīkatena cetasā vihariṁsu. | T: (none)
+sn22.28:2.3 | S: But when sentient beings truly understand these five grasping aggregates’ gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of limits.” | T: But when beings have directly known all this as it really is, then they have escaped from this world with … its devas and humans; they have become detached from it, released from it, and they dwell with a mind rid of barriers.”
+sn22.28:2.4 | P: atha, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaṁyuttā vippamuttā vimariyādīkatena cetasā viharanti”. | T: (none)
+sn22.28:2.5 | P: Sattamaṁ. | T: (none)
+
+## sn35.17
+sn35.17:1.1 | S: “Mendicants, if there were no gratification in the eye, sentient beings wouldn’t be aroused by it. | T: “Bhikkhus, if there were no gratification in the eye, beings would not become enamoured with it;
+sn35.17:1.2 | S: But since there is gratification in the eye, sentient beings are aroused by it. | T: but because there is gratification in the eye, beings become enamoured with it.
+sn35.17:1.3 | S: If the eye had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: If there were no danger in the eye, beings would not experience revulsion towards it;
+sn35.17:1.4 | S: But since the eye has a drawback, sentient beings do grow disillusioned with it. | T: but because there is danger in the eye, beings experience revulsion towards it.
+sn35.17:1.5 | S: If there were no escape from the eye, sentient beings wouldn’t escape from it. | T: If there were no escape from the eye, beings would not escape from it;
+sn35.17:1.6 | S: But since there is an escape from the eye, sentient beings do escape from it. | T: but because there is an escape from the eye, beings escape from it.
+sn35.17:1.7 | S: If there were no gratification in the ear … | T: “Bhikkhus, if there were no gratification in the ear … …
+sn35.17:1.8 | S: nose … | T: in the nose …
+sn35.17:1.9 | S: tongue … | T: in the tongue …
+sn35.17:1.10 | P: Yasmā ca kho, bhikkhave, atthi jivhāya assādo, tasmā sattā jivhāya sārajjanti. | T: (none)
+sn35.17:1.11 | P: No cedaṁ, bhikkhave, jivhāya ādīnavo abhavissa, nayidaṁ sattā jivhāya nibbindeyyuṁ. | T: (none)
+sn35.17:1.12 | P: Yasmā ca kho, bhikkhave, atthi jivhāya ādīnavo, tasmā sattā jivhāya nibbindanti. | T: (none)
+sn35.17:1.13 | P: No cedaṁ, bhikkhave, jivhāya nissaraṇaṁ abhavissa, nayidaṁ sattā jivhāya nissareyyuṁ. | T: (none)
+sn35.17:1.14 | P: Yasmā ca kho, bhikkhave, atthi jivhāya nissaraṇaṁ, tasmā sattā jivhāya nissaranti. | T: (none)
+sn35.17:1.15 | S: body … | T: in the body …
+sn35.17:1.16 | S: mind, sentient beings wouldn’t be aroused by it. | T: in the mind, beings would not become enamoured with it …
+sn35.17:1.17 | S: But since there is gratification in the mind, sentient beings are aroused by it. | T: (none)
+sn35.17:1.18 | S: If the mind had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: (none)
+sn35.17:1.19 | S: But since the mind has a drawback, sentient beings do grow disillusioned with it. | T: (none)
+sn35.17:1.20 | S: If there were no escape from the mind, sentient beings wouldn’t escape from it. | T: (none)
+sn35.17:1.21 | S: But since there is an escape from the mind, sentient beings do escape from it. | T: but because there is an escape from the mind, beings escape from it.
+sn35.17:2.1 | S: As long as sentient beings don’t truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “So long, bhikkhus, as beings have not directly known as they really are the gratification as gratification, the danger as danger, and the escape as escape in the case of these six internal sense bases, they have not escaped from this world with its devas, Mara, and Brahma, from this generation with its ascetics and brahmins, its devas and humans; they have not become detached from it, released from it, nor do they dwell with a mind rid of barriers.
+sn35.17:2.2 | S: But when sentient beings truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: But when beings have directly known all this as it really is, then they have escaped from this world with its devas and humans … they have become detached from it, released from it, and they dwell with a mind rid of barriers.”
+sn35.17:2.3 | P: Pañcamaṁ. | T: (none)
+
+## sn35.24
+sn35.24:1.1 | S: “Mendicants, I will teach you the principle for giving up the all. | T: “Bhikkhus, I will teach you the Dhamma for abandoning all.
+sn35.24:1.2 | S: Listen … | T: Listen to that….
+sn35.24:1.3 | S: And what is the principle for giving up the all? | T: “And what, bhikkhus, is the Dhamma for abandoning all?
+sn35.24:1.4 | S: The eye should be given up. Sights should be given up. Eye consciousness should be given up. Eye contact should be given up. The painful, pleasant, or neutral feeling that arises dependent on eye contact should also be given up. | T: The eye is to be abandoned, forms are to be abandoned, eye-consciousness is to be abandoned, eye-contact is to be abandoned, and whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is to be abandoned.
+sn35.24:1.5 | S: The ear … nose … | T: “The ear is to be abandoned …
+sn35.24:1.6 | S: tongue … | T: (none)
+sn35.24:1.7 | S: body … | T: (none)
+sn35.24:1.8 | S: mind should be given up. Ideas should be given up. Mind consciousness should be given up. Mind contact should be given up. The painful, pleasant, or neutral feeling that arises dependent on mind contact should be given up. | T: The mind is to be abandoned, mental phenomena are to be abandoned, mind-consciousness is to be abandoned, mind-contact is to be abandoned, and whatever feeling arises with mind-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is to be abandoned.
+sn35.24:1.9 | S: This is the principle for giving up the all.” | T: “This, bhikkhus, is the Dhamma for abandoning all.”
+sn35.24:1.10 | P: Dutiyaṁ. | T: (none)
+
+## sn35.25
+sn35.25:1.1 | S: “Mendicants, I will teach you the principle for giving up the all by direct knowledge and complete understanding. | T: “Bhikkhus, I will teach you the Dhamma for abandoning all through direct knowledge and full understanding.
+sn35.25:1.2 | S: Listen … | T: Listen to that….
+sn35.25:1.3 | S: And what is the principle for giving up the all by direct knowledge and complete understanding? | T: “And what, bhikkhus, is the Dhamma for abandoning all through direct knowledge and full understanding?
+sn35.25:1.4 | S: The eye should be given up by direct knowledge and complete understanding. Sights should be given up by direct knowledge and complete understanding. Eye consciousness should be given up by direct knowledge and complete understanding. Eye contact should be given up by direct knowledge and complete understanding. The painful, pleasant, or neutral feeling that arises dependent on eye contact should be given up by direct knowledge and complete understanding. | T: The eye is to be abandoned through direct knowledge and full understanding, forms are to be so abandoned, eye-consciousness is to be so abandoned, eye-contact is to be so abandoned, and whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is to be abandoned through direct knowledge and full understanding.
+sn35.25:1.5 | S: The ear … nose … | T: “The ear is to be abandoned through direct knowledge and full understanding …
+sn35.25:1.6 | S: tongue … | T: (none)
+sn35.25:1.7 | S: body … | T: (none)
+sn35.25:1.8 | S: mind should be given up by direct knowledge and complete understanding. Ideas should be given up by direct knowledge and complete understanding. Mind consciousness should be given up by direct knowledge and complete understanding. Mind contact should be given up by direct knowledge and complete understanding. The painful, pleasant, or neutral feeling that arises dependent on mind contact should be given up by direct knowledge and complete understanding. | T: The mind is to be abandoned through direct knowledge and full understanding, mental phenomena are to be so abandoned, mind-consciousness is to be so abandoned, mind-contact is to be so abandoned, and whatever feeling arises with mind-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is to be abandoned through direct knowledge and full understanding.
+sn35.25:1.9 | S: This is the principle for giving up the all by direct knowledge and complete understanding.” | T: “This, bhikkhus, is the Dhamma for abandoning all through direct knowledge and full understanding.”
+sn35.25:1.10 | P: Tatiyaṁ. | T: (none)
+
+## sn56.19
+sn56.19:1.1 | S: “Mendicants, I’ve declared: ‘This is the noble truth of suffering.’ | T: “‘This is the noble truth of suffering’: such has been made known by me.
+sn56.19:1.2 | S: For that there are limitless arrangements, phrasings, and illustrations: | T: In this statement, ‘This is the noble truth of suffering,’ there are innumerable nuances, innumerable details, innumerable implications.
+sn56.19:1.3 | S: ‘This is another way of saying that this is the noble truth of suffering.’ | T: (none)
+sn56.19:1.4 | S: I’ve declared: ‘This is the noble truth of the origin of suffering.’ … | T: “‘This is the noble truth of the origin of suffering’ …
+sn56.19:1.5 | S: I’ve declared: ‘This is the noble truth of the cessation of suffering.’ … | T: ‘This is the noble truth of the cessation of suffering’ …
+sn56.19:1.6 | S: I’ve declared: ‘This is the noble truth of the practice that leads to the cessation of suffering.’ | T: ‘This is the noble truth of the way leading to the cessation of suffering’: such has been made known by me.
+sn56.19:1.7 | S: For that there are limitless arrangements, phrasings, and illustrations: | T: In this statement, ‘This is the noble truth of the way leading to the cessation of suffering,’ there are innumerable nuances, innumerable details, innumerable implications.
+sn56.19:1.8 | S: ‘This is another way of saying that this is the noble truth of the practice that leads to the cessation of suffering.’ | T: (none)
+sn56.19:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.19:2.2 | P: Navamaṁ. | T: (none)
+
+## sn22.93
+sn22.93:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.93:1.2 | S: “Suppose, mendicants, there was a mountain river that flowed swiftly, going far, carrying all before it. If wild sugarcane, kusa grass, reeds, vetiver, or trees grew on either bank, they’d overhang the river. And if a person who was being swept along by the current grabbed the wild sugarcane, kusa grass, reeds, vetiver, or trees, it’d fall apart, and they’d come to ruin because of that. | T: “Bhikkhus, suppose there was a mountain river sweeping downwards, flowing into the distance with a swift current. If on either bank of the river kasa grass or kusa grass were to grow, it would overhang it; if rushes, reeds, or trees were to grow, they would overhang it. If a man being carried along by the current should grasp the kasa grass, it would break off and he would thereby meet with calamity and disaster; if he should grasp the kusa grass, it would break off and he would thereby meet with calamity and disaster; if he should grasp the rushes, reeds, or trees, they would break off and he would thereby meet with calamity and disaster.
+sn22.93:1.3 | S: In the same way, an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “So too, bhikkhus, the uninstructed worldling …
+sn22.93:1.4 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.93:1.5 | S: But their form falls apart, | T: That form of his disintegrates
+sn22.93:1.6 | S: and they come to ruin because of that. | T: and he thereby meets with calamity and disaster.
+sn22.93:1.7 | S: They regard feeling … | T: He regards feeling as self …
+sn22.93:1.8 | S: perception … | T: perception as self …
+sn22.93:1.9 | S: choices … | T: volitional formations as self …
+sn22.93:1.10 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.93:1.11 | S: But their consciousness falls apart, | T: That consciousness of his disintegrates
+sn22.93:1.12 | S: and they come to ruin because of that. | T: and he thereby meets with calamity and disaster.
+sn22.93:1.13 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn22.93:1.14 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.93:1.15 | S: “Impermanent, sir.” … | T: “Impermanent, venerable sir.”…—
+sn22.93:1.16 | P: …pe… | T: (none)
+sn22.93:1.17 | S: “Is feeling … | T: (none)
+sn22.93:1.18 | S: perception … | T: (none)
+sn22.93:1.19 | S: choices … | T: (none)
+sn22.93:1.20 | S: consciousness permanent or impermanent?” | T: (none)
+sn22.93:1.21 | S: “Impermanent, sir.” | T: (none)
+sn22.93:1.22 | S: “So you should truly see … | T: “Therefore …
+sn22.93:1.23 | S: Seeing this … | T: Seeing thus …
+sn22.93:1.24 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn22.93:1.25 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.231
+sn35.231:1.1 | S: “Mendicants, take any monk or nun who, when it comes to sights known by the eye, still has greed, hate, and delusion, and has not given them up. If even trivial sights come into their range of vision they overcome their mind, let alone those that are compelling. | T: “Bhikkhus, in regard to forms cognizable by the eye, if in any bhikkhu or bhikkhunī lust still exists and has not been abandoned, if hatred still exists and has not been abandoned, if delusion still exists and has not been abandoned, then even trifling forms that enter into range of the eye obsess the mind, not to speak of those that are prominent.
+sn35.231:1.2 | S: Why is that? | T: For what reason?
+sn35.231:1.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: Because lust still exists and has not been abandoned, hatred still exists and has not been abandoned, delusion still exists and has not been abandoned.
+sn35.231:2.1 | S: When it comes to sounds … smells … tastes … touches … | T: The same in regard to sounds cognizable by the ear …
+sn35.231:3.1 | S: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. | T: mental phenomena cognizable by the mind.
+sn35.231:3.2 | S: Why is that? | T: (none)
+sn35.231:3.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: (none)
+sn35.231:4.1 | S: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s a tender young sapling. | T: “Suppose, bhikkhus, there was a milk-sap tree —an assattha or a banyan or a pilakkha or an udumbara-fresh, young, tender.
+sn35.231:4.2 | S: If a man were to chop it here and there with a sharp axe, would latex come out?” | T: If a man breaks it here and there with a sharp axe, would sap come out?”
+sn35.231:4.3 | S: “Yes, sir. | T: “Yes, venerable sir.
+sn35.231:4.4 | S: Why is that? | T: For what reason?
+sn35.231:4.5 | S: Because it still has latex.” | T: Because there is sap.”
+sn35.231:5.1 | S: “In the same way, take any monk or nun who, when it comes to sights known by the eye, still has greed, hate, and delusion, and has not given them up. If even trivial sights come into their range of vision they overcome their mind, let alone those that are compelling. | T: “So too, bhikkhus, in regard to forms cognizable by the eye … even trifling forms that enter into range of the eye obsess the mind, not to speak of those that are prominent.
+sn35.231:5.2 | S: Why is that? | T: For what reason?
+sn35.231:5.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: Because lust still exists and has not been abandoned, hatred still exists and has not been abandoned, delusion still exists and has not been abandoned.
+sn35.231:6.1 | S: When it comes to sounds … smells … tastes … touches … | T: The same in regard to sounds cognizable by the ear …
+sn35.231:7.1 | S: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. | T: mental phenomena cognizable by the mind.
+sn35.231:7.2 | S: Why is that? | T: (none)
+sn35.231:7.3 | S: Because they still have greed, hate, and delusion, and have not given them up. | T: (none)
+sn35.231:8.1 | S: Take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. | T: “Bhikkhus, in regard to forms cognizable by the eye, if in any bhikkhu or bhikkhunī lust does not exist and has been abandoned, if hatred does not exist and has been abandoned, if delusion does not exist and has been abandoned, then even prominent forms that enter into range of the eye do not obsess the mind, not to speak of those that are trifling.
+sn35.231:8.2 | S: Why is that? | T: For what reason?
+sn35.231:8.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: Because lust does not exist and has been abandoned, hatred does not exist and has been abandoned, delusion does not exist and has been abandoned.
+sn35.231:9.1 | S: When it comes to sounds … smells … tastes … touches … ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling ideas come into the range of the mind they don’t overcome their mind, let alone those that are trivial. | T: The same in regard to sounds cognizable by the ear … mental phenomena cognizable by the mind.
+sn35.231:9.2 | S: Why is that? | T: (none)
+sn35.231:9.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: (none)
+sn35.231:9.4 | S: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s dried up, withered, and decrepit. | T: “Suppose, bhikkhus, there was a milk-sap tree—an assattha or a banyan or a pilakkha or an udumbara—dried up, desiccated, past its prime.
+sn35.231:9.5 | S: If a man were to chop it here and there with a sharp axe, would latex come out?” | T: If a man breaks it here and there with a sharp axe, would sap come out?”
+sn35.231:9.6 | S: “No, sir. | T: “No, venerable sir.
+sn35.231:9.7 | S: Why is that? | T: For what reason?
+sn35.231:9.8 | S: Because it has no latex left.” | T: Because there is no sap.”
+sn35.231:10.1 | S: “In the same way, take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. | T: “So too, bhikkhus, in regard to forms cognizable by the eye … even prominent forms that enter into range of the eye do not obsess the mind, not to speak of those that are trifling.
+sn35.231:10.2 | S: Why is that? | T: For what reason?
+sn35.231:10.3 | S: Because they have no greed, hate, and delusion left, and have given them up. | T: Because lust does not exist and has been abandoned, hatred does not exist and has been abandoned, delusion does not exist and has been abandoned.
+sn35.231:11.1 | S: When it comes to sounds … smells … tastes … touches … | T: The same in regard to sounds cognizable by the ear …
+sn35.231:12.1 | S: ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling thoughts come into the range of the mind they don’t overcome their mind, let alone those that are trivial. | T: mental phenomena cognizable by the mind.”
+sn35.231:12.2 | S: Why is that? | T: (none)
+sn35.231:12.3 | S: Because they have no greed, hate, and delusion left, and have given them up.” | T: (none)
+sn35.231:12.4 | P: Catutthaṁ. | T: (none)
+
+## an3.183-352
+an3.183-352:1.1 | S: “For insight into greed, three things should be developed. | T: “Bhikkhus, for direct knowledge of lust, three things are to be developed.
+an3.183-352:1.2 | S: What three? | T: What three?
+an3.183-352:1.3 | S: Emptiness immersion; signless immersion; and undirected immersion. | T: Emptiness concentration, markless concentration, and wishless concentration.
+an3.183-352:1.4 | S: For insight into greed, these three things should be developed. | T: For direct knowledge of lust, these three things are to be developed.”
+an3.183-352:2.1 | S: For the complete understanding of greed … | T: “Bhikkhus, for full understanding of lust …
+an3.183-352:2.2 | S: complete ending … | T: for the utter destruction …
+an3.183-352:2.3 | S: giving up … | T: for the abandoning …
+an3.183-352:2.4 | S: ending … | T: for the destruction …
+an3.183-352:2.5 | S: vanishing … | T: for the vanishing …
+an3.183-352:2.6 | S: fading away … | T: for the fading away …
+an3.183-352:2.7 | S: cessation … | T: for the cessation …
+an3.183-352:2.8 | S: giving away … | T: for the giving up …
+an3.183-352:2.9 | S: letting go … | T: For the relinquishment of lust, these three things are to be developed.
+an3.183-352:3.1 | S: hate … | T: “Bhikkhus, for direct knowledge … for full understanding … for the utter destruction … for the abandoning … for the destruction … for the vanishing … for the fading away … for the cessation … for the giving up … for the relinquishment of hatred …
+an3.183-352:3.2 | S: delusion … | T: delusion …
+an3.183-352:3.3 | S: anger … | T: anger …
+an3.183-352:3.4 | S: acrimony … | T: hostility …
+an3.183-352:3.5 | S: disdain … | T: denigration …
+an3.183-352:3.6 | S: contempt … | T: insolence …
+an3.183-352:3.7 | S: jealousy … | T: envy …
+an3.183-352:3.8 | S: stinginess … | T: miserliness …
+an3.183-352:3.9 | S: deceitfulness … | T: deceitfulness …
+an3.183-352:3.10 | S: deviousness … | T: craftiness …
+an3.183-352:3.11 | S: obstinacy … | T: obstinacy …
+an3.183-352:3.12 | S: aggression … | T: vehemence …
+an3.183-352:3.13 | S: conceit … | T: conceit …
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.183-352:3.14 | S: arrogance … | T: arrogance …
+an3.183-352:3.15 | S: vanity … | T: intoxication …
+an3.183-352:3.16 | S: negligence … | T: heedlessness,
+an3.183-352:3.17 | S: insight … | T: (none)
+an3.183-352:3.18 | S: complete understanding … | T: (none)
+an3.183-352:3.19 | S: complete ending … | T: (none)
+an3.183-352:3.20 | S: giving up … | T: (none)
+an3.183-352:3.21 | S: ending … | T: (none)
+an3.183-352:3.22 | S: vanishing … | T: (none)
+an3.183-352:3.23 | S: fading away … | T: (none)
+an3.183-352:3.24 | S: cessation … | T: (none)
+an3.183-352:3.25 | S: giving away … | T: (none)
+an3.183-352:3.26 | S: For the letting go of negligence, these three things should be developed.” | T: three things are to be developed. What three? Emptiness concentration, markless concentration, and wishless concentration. For the relinquishment of heedlessness, these three things are to be developed.”
+an3.183-352:4.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+an3.183-352:4.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+an3.183-352:4.3 | P: Rāgapeyyālaṁ niṭṭhitaṁ. | T: (none)
+an3.183-352:5.0 | P: Tassuddānaṁ | T: (none)
+an3.183-352:5.1 | P: Rāgaṁ dosañca mohañca, | T: (none)
+an3.183-352:5.2 | P: kodhūpanāhapañcamaṁ; | T: (none)
+an3.183-352:5.3 | P: Makkhapaḷāsaissā ca, | T: (none)
+an3.183-352:5.4 | P: maccharimāyāsāṭheyyā. | T: (none)
+an3.183-352:6.1 | P: Thambhasārambhamānañca, | T: (none)
+an3.183-352:6.2 | P: atimānamadassa ca; | T: (none)
+an3.183-352:6.3 | P: Pamādā sattarasa vuttā, | T: (none)
+an3.183-352:6.4 | P: rāgapeyyālanissitā. | T: (none)
+an3.183-352:7.1 | P: Ete opammayuttena, | T: (none)
+an3.183-352:7.2 | P: āpādena abhiññāya; | T: (none)
+an3.183-352:7.3 | P: Pariññāya parikkhayā, | T: (none)
+an3.183-352:7.4 | P: pahānakkhayabbayena; | T: (none)
+an3.183-352:7.5 | P: Virāganirodhacāgaṁ, | T: (none)
+an3.183-352:7.6 | P: paṭinissagge ime dasa. | T: (none)
+an3.183-352:8.1 | P: Suññato animitto ca, | T: (none)
+an3.183-352:8.2 | P: appaṇihito ca tayo; | T: (none)
+an3.183-352:8.3 | P: Samādhimūlakā peyyā— | T: (none)
+an3.183-352:8.4 | P: lesupi vavatthitā cāti. | T: (none)
+an3.183-352:8.5 | P: Tatiyo paṇṇāsako niṭṭhito. | T: (none)
+an3.183-352:8.6 | S: The Book of the Threes is finished. | T: The Book of the Threes is finished.
+
+## sn47.37
+sn47.37:1.1 | S: “Mendicants, there are these four kinds of mindfulness meditation. | T: “Bhikkhus, there are these four establishments of mindfulness.
+sn47.37:1.2 | S: What four? | T: What four?
+sn47.37:1.3 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.37:1.4 | S: As they do so they give up desire for the body. | T: As he dwells thus contemplating the body in the body, whatever desire he has for the body is abandoned.
+sn47.37:1.5 | S: When desire is given up they realize freedom from death. | T: With the abandoning of desire, the Deathless is realized.
+sn47.37:2.1 | S: They meditate observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “He dwells contemplating feelings in feelings …
+sn47.37:2.2 | S: As they do so they give up desire for feelings. | T: …
+sn47.37:2.3 | S: When desire is given up they realize freedom from death. | T: (none)
+sn47.37:3.1 | S: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mind in mind …
+sn47.37:3.2 | S: As they do so they give up desire for the mind. | T: (none)
+sn47.37:3.3 | S: When desire is given up they realize freedom from death. | T: (none)
+sn47.37:4.1 | S: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena … having removed covetousness and displeasure in regard to the world.
+sn47.37:4.2 | S: As they do so they give up desire for principles. | T: As he dwells thus contemplating phenomena in phenomena, whatever desire he has for phenomena is abandoned.
+sn47.37:4.3 | S: When desire is given up they realize freedom from death.” | T: With the abandoning of desire, the Deathless is realized.”
+sn47.37:4.4 | P: Sattamaṁ. | T: (none)
+
+## sn11.19
+sn11.19:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: As above down to:
+sn11.19:1.2 | S: “Once upon a time, mendicants, Sakka, lord of gods, addressed his chariot handler Mātali, | T: (none)
+sn11.19:1.3 | S: ‘My dear Mātali, harness the chariot with its team of a thousand thoroughbreds. We will go to a park and see the scenery.’ | T: (none)
+sn11.19:1.4 | S: ‘Yes, lord,’ replied Mātali. He harnessed the chariot and informed Sakka, | T: (none)
+sn11.19:1.5 | S: ‘Good fellow, the chariot with its team of a thousand thoroughbreds has been harnessed. | T: (none)
+sn11.19:1.6 | S: Please go at your convenience.’ | T: (none)
+sn11.19:1.7 | S: Then Sakka descended from the Palace of Victory, raised his cupped palms, and revered the Buddha. | T: “Then, bhikkhus, Sakka, lord of the devas, descending from the Vejayanta Palace, raised his joined hands in reverential salutation and worshipped the Blessed One.
+sn11.19:1.8 | S: So Mātali the chariot handler addressed Sakka in verse: | T: Then Matali the charioteer addressed Sakka, lord of the devas, in verse:
+sn11.19:2.1 | S: ‘Gods and men | T: “‘Both devas and human beings
+sn11.19:2.2 | S: worship you, Vāsava. | T: Humbly worship you, Vasava.
+sn11.19:2.3 | S: So what’s the name of the spirit | T: So who, O Sakka, is that spirit
+sn11.19:2.4 | S: that you worship, Sakka?’ | T: To whom you bow in worship?’
+sn11.19:3.1 | S: ‘It’s the fully awakened Buddha, | T: Sakka: “‘The Perfectly Enlightened One here In this world with its devas,
+sn11.19:3.2 | S: the Teacher of peerless name | T: The Teacher of perfect name:
+sn11.19:3.3 | S: in this world with its gods— | T: (none)
+sn11.19:3.4 | S: that’s who I worship, Mātali. | T: He is the one whom I worship, Matali.
+sn11.19:4.1 | S: Those in whom greed, hate, and ignorance | T: “‘Those for whom lust and hatred And ignorance have been expunged,
+sn11.19:4.2 | S: have faded away; | T: (none)
+sn11.19:4.3 | S: the perfected ones with defilements ended— | T: The arahants with taints destroyed:
+sn11.19:4.4 | S: they’re who I worship, Mātali. | T: These are the ones whom I worship, Matali.
+sn11.19:5.1 | S: The trainees who enjoy reducing suffering, | T: “‘The trainees who delight in dismantling,
+sn11.19:5.2 | S: diligently pursuing the training | T: Who diligently pursue the training
+sn11.19:5.3 | S: for getting rid of greed and hate, | T: For the removal of lust and hatred,
+sn11.19:5.4 | S: and going past ignorance— | T: For transcending ignorance:
+sn11.19:5.5 | S: they’re who I worship, Mātali.’ | T: These are the ones whom I worship, Matali.’
+sn11.19:6.1 | S: ‘Those who you worship | T: Matali: “‘Those whom you worship,
+sn11.19:6.2 | S: seem to be the best in the world, Sakka. | T: my lord Sakka, Are indeed the best in the world.
+sn11.19:6.3 | S: I too will worship | T: I too will worship them—
+sn11.19:6.4 | S: those who you worship, Sakka.’ | T: Those whom you worship, Vasava.’
+sn11.19:7.1 | S: After saying this, Maghavā the chief, | T: The Blessed One: “Having given this explanation, Having worshipped the Blessed One,
+sn11.19:7.2 | S: king of gods, Sujā’s husband, | T: The deva-king Maghava, Suja’s husband,
+sn11.19:7.3 | S: having worshiped the Buddha, | T: The chief,
+sn11.19:7.4 | S: climbed into his chariot.” | T: climbed into his chariot.”
+
+## an10.10
+an10.10:1.1 | S: “A mendicant is faithful, but not ethical. | T: (1) “Bhikkhus, a bhikkhu may be endowed with faith but he is not virtuous … …
+an10.10:1.2 | S: So they’re incomplete in that respect, | T: (none)
+an10.10:1.3 | S: and should fulfill it, thinking: | T: (none)
+an10.10:1.4 | S: ‘How can I become faithful and ethical?’ | T: (none)
+an10.10:1.5 | S: When the mendicant is faithful and ethical, they’re complete in that respect. | T: (none)
+an10.10:2.1 | S: A mendicant is faithful and ethical, but not learned … | T: (2) … endowed with faith and virtuous, but he is not learned …
+an10.10:2.2 | S: they’re not a Dhamma speaker … | T: (3) … learned, but not a speaker on the Dhamma …
+an10.10:2.3 | S: they don’t frequent assemblies … | T: (4) … a speaker on the Dhamma, but not one who frequents assemblies …
+an10.10:2.4 | S: they don’t teach Dhamma to the assembly with assurance … | T: (5) … one who frequents assemblies, but not one who confidently teaches the Dhamma to an assembly …
+an10.10:2.5 | S: they’re not an expert in the monastic law … | T: (6) … one who confidently teaches the Dhamma to an assembly, but not an expert on the discipline …
+an10.10:2.6 | S: they don’t recollect their many kinds of past lives … | T: (7) … an expert on the discipline, but not one who recollects his manifold past abodes, that is, one birth, two births … as in AN6.2 §4 … thus he does not recollect his manifold past abodes with their aspects and details …
+an10.10:2.7 | S: they don’t, with clairvoyance that is purified and superhuman, see sentient beings passing away and being reborn … | T: (8) … one who recollects his manifold past abodes … but not one who, with the divine eye, which is purified and surpasses the human … as in AN6.2 §5 … understands how beings fare in accordance with their kamma …
+an10.10:2.8 | S: they don’t realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: (9) … one who, with the divine eye … understands how beings fare in accordance with their kamma, but not one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it.
+an10.10:2.9 | S: So they’re incomplete in that respect, | T: “Thus he is incomplete with respect to that factor.
+an10.10:2.10 | S: and should fulfill it, thinking: | T: He should fulfill that factor, thinking:
+an10.10:2.11 | S: ‘How can I become faithful, ethical, and learned, a Dhamma speaker, one who frequents assemblies, one who teaches Dhamma to the assembly with assurance, an expert in the training, one who recollects their many kinds of past lives, one who with clairvoyance that surpasses the human sees sentient beings passing away and being reborn, and one who lives having realized the ending of defilements?’ | T: ‘How can I be endowed with faith … … and also be one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it?’
+an10.10:3.1 | S: When they are faithful, ethical, and learned, a Dhamma speaker, one who frequents assemblies, one who teaches Dhamma to the assembly with assurance, an expert in the training, one who recollects their many kinds of past lives, one who with clairvoyance that surpasses the human sees sentient beings passing away and being reborn, and one who lives having realized the ending of defilements, | T: (10) “But when a bhikkhu is i endowed with faith, ii virtuous, and iii learned; iv a speaker on the Dhamma; v one who frequents assemblies; vi one who confidently teaches the Dhamma to an assembly; vii an expert on the discipline; viii one who recollects his manifold past abodes … with their aspects and details; ix one who, with the divine eye … understands how beings fare in accordance with their kamma; and x one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it,
+an10.10:3.2 | S: they’re complete in that respect. | T: then he is complete with respect to that factor.
+an10.10:3.3 | S: A mendicant who possesses these ten qualities is impressive all around, and is complete in every respect.” | T: “A bhikkhu who possesses these ten qualities is one who inspires confidence in all respects and who is complete in all aspects.”
+an10.10:3.4 | P: Dasamaṁ. | T: (none)
+an10.10:3.5 | P: Ānisaṁsavaggo paṭhamo. | T: (none)
+an10.10:4.0 | P: Tassuddānaṁ | T: (none)
+an10.10:4.1 | P: Kimatthiyaṁ cetanā ca, | T: (none)
+an10.10:4.2 | P: tayo upanisāpi ca; | T: (none)
+an10.10:4.3 | P: Samādhi sāriputto ca, | T: (none)
+an10.10:4.4 | P: jhānaṁ santena vijjayāti. | T: (none)
+
+## sn46.2
+sn46.2:1.1 | S: At Sāvatthī. | T: i. The nutriments for the hindrances At Savatthī.
+sn46.2:1.2 | S: “Mendicants, this body is sustained by food. It depends on food to continue, and without food it doesn’t continue. | T: “Bhikkhus, just as this body, sustained by nutriment, subsists in dependence on nutriment and does not subsist without nutriment,
+sn46.2:1.3 | S: In the same way, the five hindrances are sustained by fuel. They depend on fuel to continue, and without fuel they don’t continue. | T: so too the five hindrances, sustained by nutriment, subsist in dependence on nutriment and do not subsist without nutriment.
+sn46.2:2.1 | S: And what fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen sensual desire and for the increase and expansion of arisen sensual desire?
+sn46.2:2.2 | S: There is the feature of beauty. | T: There is, bhikkhus, the sign of the beautiful:
+sn46.2:2.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen sensual desire and for the increase and expansion of arisen sensual desire.
+sn46.2:2.4 | S: fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.2:3.1 | S: And what fuels the arising of ill will, or, when it has arisen, makes it increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen ill will and for the increase and expansion of arisen ill will?
+sn46.2:3.2 | S: There is the feature of aversion. | T: There is, bhikkhus, the sign of the repulsive:
+sn46.2:3.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen ill will and for the increase and expansion of arisen ill will.
+sn46.2:3.4 | S: fuels the arising of ill will, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.2:4.1 | S: And what fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen sloth and torpor and for the increase and expansion of arisen sloth and torpor?
+sn46.2:4.2 | S: There is discontent, sloth, yawning, sleepiness after eating, and mental sluggishness. | T: There are, bhikkhus, discontent, lethargy, lazy stretching, drowsiness after meals, sluggishness of mind:
+sn46.2:4.3 | S: Frequent irrational application of mind to them | T: frequently giving careless attention to them is the nutriment for the arising of unarisen sloth and torpor and for the increase and expansion of arisen sloth and torpor.
+sn46.2:4.4 | S: fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow. | T: (none)
+sn46.2:5.1 | S: And what fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen restlessness and remorse and for the increase and expansion of arisen restlessness and remorse?
+sn46.2:5.2 | S: There is the unsettled mind. | T: There is, bhikkhus, unsettledness of mind:
+sn46.2:5.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen restlessness and remorse and for the increase and expansion of arisen restlessness and remorse.
+sn46.2:5.4 | S: fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow. | T: (none)
+sn46.2:6.1 | S: And what fuels the arising of doubt, or, when it has arisen, makes it increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen doubt and for the increase and expansion of arisen doubt?
+sn46.2:6.2 | S: There are things that are grounds for doubt. | T: There are, bhikkhus, things that are the basis for doubt:
+sn46.2:6.3 | S: Frequent irrational application of mind to them | T: frequently giving careless attention to them is the nutriment for the arising of unarisen doubt and for the increase and expansion of arisen doubt.
+sn46.2:6.4 | S: fuels the arising of doubt, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.2:7.1 | S: This body is sustained by food. It depends on food to continue, and without food it doesn’t continue. | T: “Just as this body, bhikkhus, sustained by nutriment, subsists in dependence on nutriment and does not subsist without nutriment,
+sn46.2:7.2 | S: In the same way, the five hindrances are sustained by fuel. They depend on fuel to continue, and without fuel they don’t continue. | T: so too the five hindrances, sustained by nutriment, subsist in dependence on nutriment and do not subsist without nutriment.
+sn46.2:8.1 | S: This body is sustained by food. It depends on food to continue, and without food it doesn’t continue. | T: ii. The nutriments for the enlightenment factors “Bhikkhus, just as this body, sustained by nutriment, subsists in dependence on nutriment and does not subsist without nutriment,
+sn46.2:8.2 | S: In the same way, the seven awakening factors are sustained by fuel. They depend on fuel to continue, and without fuel they don’t continue. | T: so too the seven factors of enlightenment, sustained by nutriment, subsist in dependence on nutriment and do not subsist without nutriment.
+sn46.2:9.1 | S: And what fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of mindfulness and for the fulfilment by development of the arisen enlightenment factor of mindfulness?
+sn46.2:9.2 | S: There are things that are grounds for the awakening factor of mindfulness. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of mindfulness:
+sn46.2:9.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of mindfulness and for the fulfilment by development of the arisen enlightenment factor of mindfulness.
+sn46.2:9.4 | S: fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:10.1 | S: And what fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of discrimination of states and for the fulfilment by development of the arisen enlightenment factor of discrimination of states?
+sn46.2:10.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are, bhikkhus, wholesome and unwholesome states, blameable and blameless states, inferior and superior states, dark and bright states with their counterparts:
+sn46.2:10.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of discrimination of states and for the fulfilment by development of the arisen enlightenment factor of discrimination of states.
+sn46.2:10.4 | S: fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:11.1 | S: And what fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of energy and for the fulfilment by development of the arisen enlightenment factor of energy?
+sn46.2:11.2 | S: There are the elements of initiative, persistence, and exertion. | T: There are, bhikkhus, the element of arousal, the element of endeavour, the element of exertion:
+sn46.2:11.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of energy and for the fulfilment by development of the arisen enlightenment factor of energy.
+sn46.2:11.4 | S: fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:12.1 | S: And what fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of rapture and for the fulfilment by development of the arisen enlightenment factor of rapture?
+sn46.2:12.2 | S: There are things that are grounds for the awakening factor of rapture. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of rapture:
+sn46.2:12.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of rapture and for the fulfilment by development of the arisen enlightenment factor of rapture.
+sn46.2:12.4 | S: fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:13.1 | S: And what fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of tranquillity and for the fulfilment by development of the arisen enlightenment factor of tranquillity?
+sn46.2:13.2 | S: There is tranquility of the body and of the mind. | T: There are, bhikkhus, tranquillity of body, tranquillity of mind:
+sn46.2:13.3 | S: Frequent rational application of mind to that | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of tranquillity and for the fulfilment by development of the arisen enlightenment factor of tranquillity.
+sn46.2:13.4 | S: fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:14.1 | S: And what fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of concentration and for the fulfilment by development of the arisen enlightenment factor of concentration?
+sn46.2:14.2 | S: There are things that are the basis of serenity and freedom from distraction. | T: There are, bhikkhus, the sign of serenity, the sign of nondispersal:
+sn46.2:14.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of concentration and for the fulfilment by development of the arisen enlightenment factor of concentration.
+sn46.2:14.4 | S: fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:15.1 | S: And what fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of equanimity and for the fulfilment by development of the arisen enlightenment factor of equanimity?
+sn46.2:15.2 | S: There are things that are grounds for the awakening factor of equanimity. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of equanimity:
+sn46.2:15.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of equanimity and for the fulfilment by development of the arisen enlightenment factor of equanimity.
+sn46.2:15.4 | S: fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it. | T: (none)
+sn46.2:16.1 | S: This body is sustained by food. It depends on food to continue, and without food it doesn’t continue. | T: “Just as this body, bhikkhus, sustained by nutriment, subsists in dependence on nutriment and does not subsist without nutriment,
+sn46.2:16.2 | S: In the same way, the seven awakening factors are sustained by fuel. They depend on fuel to continue, and without fuel they don’t continue.” | T: so too these seven factors of enlightenment, sustained by nutriment, subsist in dependence on nutriment and do not subsist without nutriment.”
+sn46.2:16.3 | P: Dutiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full batch. I’m checking the remaining candidates against the exception for several lines combined into one sentence.
+exec
+/bin/bash -lc "sed -n '180,210p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt
+sed -n '250,284p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.183-352:3.13 | S: conceit … | T: conceit …
+an3.183-352:3.14 | S: arrogance … | T: arrogance …
+an3.183-352:3.15 | S: vanity … | T: intoxication …
+an3.183-352:3.16 | S: negligence … | T: heedlessness,
+an3.183-352:3.17 | S: insight … | T: (none)
+an3.183-352:3.18 | S: complete understanding … | T: (none)
+an3.183-352:3.19 | S: complete ending … | T: (none)
+an3.183-352:3.20 | S: giving up … | T: (none)
+an3.183-352:3.21 | S: ending … | T: (none)
+an3.183-352:3.22 | S: vanishing … | T: (none)
+an3.183-352:3.23 | S: fading away … | T: (none)
+an3.183-352:3.24 | S: cessation … | T: (none)
+an3.183-352:3.25 | S: giving away … | T: (none)
+an3.183-352:3.26 | S: For the letting go of negligence, these three things should be developed.” | T: three things are to be developed. What three? Emptiness concentration, markless concentration, and wishless concentration. For the relinquishment of heedlessness, these three things are to be developed.”
+an3.183-352:4.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+an3.183-352:4.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+an3.183-352:4.3 | P: Rāgapeyyālaṁ niṭṭhitaṁ. | T: (none)
+an3.183-352:5.0 | P: Tassuddānaṁ | T: (none)
+an3.183-352:5.1 | P: Rāgaṁ dosañca mohañca, | T: (none)
+an3.183-352:5.2 | P: kodhūpanāhapañcamaṁ; | T: (none)
+an3.183-352:5.3 | P: Makkhapaḷāsaissā ca, | T: (none)
+an3.183-352:5.4 | P: maccharimāyāsāṭheyyā. | T: (none)
+an3.183-352:6.1 | P: Thambhasārambhamānañca, | T: (none)
+an3.183-352:6.2 | P: atimānamadassa ca; | T: (none)
+an3.183-352:6.3 | P: Pamādā sattarasa vuttā, | T: (none)
+an3.183-352:6.4 | P: rāgapeyyālanissitā. | T: (none)
+an3.183-352:7.1 | P: Ete opammayuttena, | T: (none)
+an3.183-352:7.2 | P: āpādena abhiññāya; | T: (none)
+an3.183-352:7.3 | P: Pariññāya parikkhayā, | T: (none)
+an3.183-352:7.4 | P: pahānakkhayabbayena; | T: (none)
+an3.183-352:7.5 | P: Virāganirodhacāgaṁ, | T: (none)
+sn11.19:3.2 | S: the Teacher of peerless name | T: The Teacher of perfect name:
+sn11.19:3.3 | S: in this world with its gods— | T: (none)
+sn11.19:3.4 | S: that’s who I worship, Mātali. | T: He is the one whom I worship, Matali.
+sn11.19:4.1 | S: Those in whom greed, hate, and ignorance | T: “‘Those for whom lust and hatred And ignorance have been expunged,
+sn11.19:4.2 | S: have faded away; | T: (none)
+sn11.19:4.3 | S: the perfected ones with defilements ended— | T: The arahants with taints destroyed:
+sn11.19:4.4 | S: they’re who I worship, Mātali. | T: These are the ones whom I worship, Matali.
+sn11.19:5.1 | S: The trainees who enjoy reducing suffering, | T: “‘The trainees who delight in dismantling,
+sn11.19:5.2 | S: diligently pursuing the training | T: Who diligently pursue the training
+sn11.19:5.3 | S: for getting rid of greed and hate, | T: For the removal of lust and hatred,
+sn11.19:5.4 | S: and going past ignorance— | T: For transcending ignorance:
+sn11.19:5.5 | S: they’re who I worship, Mātali.’ | T: These are the ones whom I worship, Matali.’
+sn11.19:6.1 | S: ‘Those who you worship | T: Matali: “‘Those whom you worship,
+sn11.19:6.2 | S: seem to be the best in the world, Sakka. | T: my lord Sakka, Are indeed the best in the world.
+sn11.19:6.3 | S: I too will worship | T: I too will worship them—
+sn11.19:6.4 | S: those who you worship, Sakka.’ | T: Those whom you worship, Vasava.’
+sn11.19:7.1 | S: After saying this, Maghavā the chief, | T: The Blessed One: “Having given this explanation, Having worshipped the Blessed One,
+sn11.19:7.2 | S: king of gods, Sujā’s husband, | T: The deva-king Maghava, Suja’s husband,
+sn11.19:7.3 | S: having worshiped the Buddha, | T: The chief,
+sn11.19:7.4 | S: climbed into his chariot.” | T: climbed into his chariot.”
+
+## an10.10
+an10.10:1.1 | S: “A mendicant is faithful, but not ethical. | T: (1) “Bhikkhus, a bhikkhu may be endowed with faith but he is not virtuous … …
+an10.10:1.2 | S: So they’re incomplete in that respect, | T: (none)
+an10.10:1.3 | S: and should fulfill it, thinking: | T: (none)
+an10.10:1.4 | S: ‘How can I become faithful and ethical?’ | T: (none)
+an10.10:1.5 | S: When the mendicant is faithful and ethical, they’re complete in that respect. | T: (none)
+an10.10:2.1 | S: A mendicant is faithful and ethical, but not learned … | T: (2) … endowed with faith and virtuous, but he is not learned …
+an10.10:2.2 | S: they’re not a Dhamma speaker … | T: (3) … learned, but not a speaker on the Dhamma …
+an10.10:2.3 | S: they don’t frequent assemblies … | T: (4) … a speaker on the Dhamma, but not one who frequents assemblies …
+an10.10:2.4 | S: they don’t teach Dhamma to the assembly with assurance … | T: (5) … one who frequents assemblies, but not one who confidently teaches the Dhamma to an assembly …
+an10.10:2.5 | S: they’re not an expert in the monastic law … | T: (6) … one who confidently teaches the Dhamma to an assembly, but not an expert on the discipline …
+an10.10:2.6 | S: they don’t recollect their many kinds of past lives … | T: (7) … an expert on the discipline, but not one who recollects his manifold past abodes, that is, one birth, two births … as in AN6.2 §4 … thus he does not recollect his manifold past abodes with their aspects and details …
+an10.10:2.7 | S: they don’t, with clairvoyance that is purified and superhuman, see sentient beings passing away and being reborn … | T: (8) … one who recollects his manifold past abodes … but not one who, with the divine eye, which is purified and surpasses the human … as in AN6.2 §5 … understands how beings fare in accordance with their kamma …
+an10.10:2.8 | S: they don’t realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: (9) … one who, with the divine eye … understands how beings fare in accordance with their kamma, but not one who, with the destruction of the taints, has realized for himself with direct knowledge, in this very life, the taintless liberation of mind, liberation by wisdom, and having entered upon it, dwells in it.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-013.findings.tmp <<'EOF'
+an3.183-352:3.26 starts: For the relinquishment of heedlessness, these three things
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+1 line reported.
+tokens used
+30,026
+1 line reported.

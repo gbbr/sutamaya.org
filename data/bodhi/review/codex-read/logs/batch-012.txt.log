@@ -1,0 +1,565 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd80-8063-7133-879c-647615496a89
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch, check for clear placement errors, and write only the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.16
+an4.16:1.1 | S: “Mendicants, there are these four kinds of subtlety. | T: “Bhikkhus, there are these four kinds of exquisiteness.
+an4.16:1.2 | S: What four? | T: What four?
+an4.16:1.3 | S: A mendicant has ultimate subtlety of form. | T: (1) Here, a bhikkhu possesses supreme exquisiteness of form.
+an4.16:1.4 | S: They don’t see any other subtlety of form that’s better or finer than that, | T: He does not perceive any other exquisiteness of form more excellent or sublime than that one; he does not yearn for any other exquisiteness of form more excellent or sublime than that one.
+an4.16:1.5 | S: nor do they aim for it. | T: (none)
+an4.16:1.6 | S: A mendicant has ultimate subtlety of feeling. | T: (2) He possesses supreme exquisiteness of feeling …
+an4.16:1.7 | S: They don’t see any other subtlety of feeling that’s better or finer than that, | T: (none)
+an4.16:1.8 | S: nor do they aim for it. | T: (none)
+an4.16:1.9 | S: A mendicant has ultimate subtlety of perception. | T: (3) … supreme exquisiteness of perception …
+an4.16:1.10 | S: They don’t see any other subtlety of perception that’s better or finer than that, | T: (none)
+an4.16:1.11 | S: nor do they aim for it. | T: (none)
+an4.16:1.12 | S: A mendicant has ultimate subtlety of choices. | T: (4) … supreme exquisiteness of volitional activities.
+an4.16:1.13 | S: They don’t see any other subtlety of choices that’s better or finer than that, | T: He does not perceive any other exquisiteness of volitional activities more excellent or sublime than that one; he does not yearn for any other exquisiteness of volitional activities more excellent or sublime than that one.
+an4.16:1.14 | S: nor do they aim for it. | T: (none)
+an4.16:1.15 | S: These are the four kinds of subtlety. | T: “These are the four kinds of exquisiteness.”
+an4.16:2.1 | S: Knowing the subtlety of form, | T: Having known the exquisiteness of form,
+an4.16:2.2 | S: the cause of feelings, | T: the origination of feelings,
+an4.16:2.3 | S: where perception comes from, | T: how perception arises,
+an4.16:2.4 | S: and where it ends; | T: and where it disappears;
+an4.16:2.5 | S: and knowing choices as alien, | T: having known volitional activities as alien,
+an4.16:2.6 | S: as suffering and as not-self, | T: as suffering, and not as self,
+an4.16:3.1 | S: that mendicant sees rightly, | T: truly that bhikkhu who sees rightly,
+an4.16:3.2 | S: peaceful, in love with the state of peace. | T: peaceful, delights in the peaceful state.
+an4.16:3.3 | S: They bear their final body, | T: He bears his final body,
+an4.16:3.4 | S: having vanquished Māra with his legions.” | T: having conquered Māra and his mount.
+an4.16:3.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn47.14
+sn47.14:1.1 | S: At one time the Buddha was staying in the land of the Vajjis near Ukkacelā on the bank of the Ganges River, together with a large Saṅgha of mendicants. It was not long after Sāriputta and Moggallāna had become fully quenched. | T: On one occasion the Blessed One was dwelling among the Vajjians at Ukkacela on the bank of the river Ganges, together with a great Bhikkhu Saṅgha, not long after Sāriputta and Moggallana had attained final Nibbāna.
+sn47.14:1.2 | S: Now, at that time the Buddha was sitting in the open, surrounded by the Saṅgha of mendicants. | T: Now on that occasion the Blessed One was sitting in the open air in the midst of the Bhikkhu Saṅgha.
+sn47.14:2.1 | S: Then the Buddha looked around the Saṅgha of mendicants, who were silent. He addressed them: | T: Then the Blessed One, having surveyed the silent Bhikkhu Saṅgha, addressed the bhikkhus thus:
+sn47.14:2.2 | S: “Mendicants, this assembly seems empty to me now that Sāriputta and Moggallāna have become fully quenched. | T: “Bhikkhus, this assembly appears to me empty now that Sāriputta and Moggallana have attained final Nibbāna.
+sn47.14:2.3 | S: My assembly never used to be empty; I had no concern for any region where Sāriputta and Moggallāna stayed. | T: This assembly was not empty for me earlier, and I had no concern for whatever quarter Sāriputta and Moggallana were dwelling in.
+sn47.14:2.4 | S: The Buddhas of the past or the future have pairs of chief disciples who at best were like | T: “The Arahants, the Perfectly Enlightened Ones, who arose in the past also had just such a supreme pair of disciples as I had in Sāriputta and Moggallana.
+sn47.14:2.5 | S: Sāriputta and Moggallāna were to me. | T: (none)
+sn47.14:2.6 | P: Yepi te, bhikkhave, bhavissanti anāgatamaddhānaṁ arahanto sammāsambuddhā, tesampi bhagavantānaṁ etapparamaṁyeva sāvakayugaṁ bhavissati—seyyathāpi mayhaṁ sāriputtamoggallānā. | T: The Arahants, the Perfectly Enlightened Ones, who will arise in the future will also have just such a supreme pair of disciples as I had in Sāriputta and Moggallana.
+sn47.14:2.7 | S: It’s an incredible and amazing quality of such disciples | T: “It is wonderful, bhikkhus, on the part of the disciples, it is amazing on the part of the disciples,
+sn47.14:2.8 | S: that they fulfill the Teacher’s instructions and follow his advice. And they’re liked and approved, respected and admired by the four assemblies. | T: that they will act in accordance with the Teacher’s instructions and comply with his admonitions, that they will be dear and agreeable to the four assemblies, that they will be revered and esteemed by them.
+sn47.14:2.9 | S: And it’s an incredible and amazing quality of the Realized One | T: It is wonderful, bhikkhus, on the part of the Tathagata, it is amazing on the part of the Tathagata,
+sn47.14:2.10 | S: that when such a pair of disciples becomes fully quenched he does not sorrow or lament. | T: that when such a pair of disciples has attained final Nibbāna, there is no sorrow or lamentation in the Tathagata.
+sn47.14:2.11 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: “How, bhikkhus, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate! ’?
+sn47.14:2.12 | S: That is not possible. | T: That is impossible.
+sn47.14:2.13 | S: Suppose there was a large tree standing with heartwood, and the largest branches broke off. | T: It is just as if the largest branches would break off a great tree standing possessed of heartwood:
+sn47.14:2.14 | S: In the same way, in the great Saṅgha that stands with heartwood, Sāriputta and Moggallāna have become fully quenched. | T: so too, bhikkhus, in the great Bhikkhu Saṅgha standing possessed of heartwood, Sāriputta and Moggallana have attained final Nibbāna.
+sn47.14:2.15 | S: How could it possibly be so that what is born, created, conditioned, and liable to wear out should not wear out? | T: How, bhikkhus, is it to be obtained here: ‘May what is born, come to be, conditioned, and subject to disintegration not disintegrate!’?
+sn47.14:2.16 | S: That is not possible. | T: That is impossible.
+sn47.14:2.17 | S: So mendicants, live as your own island, your own refuge, with no other refuge. Let the teaching be your island and your refuge, with no other refuge. | T: “Therefore, bhikkhus, dwell with yourselves as your own island, with yourselves as your own refuge, with no other refuge; dwell with the Dhamma as your island, with the Dhamma as your refuge, with no other refuge
+sn47.14:3.1 | S: And how does a mendicant do this? | T: (none)
+sn47.14:3.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.14:3.3 | S: They meditate observing an aspect of feelings … | T: (none)
+sn47.14:3.4 | S: mind … | T: (none)
+sn47.14:3.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.14:3.6 | S: That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. | T: … as in §9 …
+sn47.14:3.7 | S: Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” | T: Those bhikkhus, either now or after I am gone, who dwell with themselves as their own island, with themselves as their own refuge, with no other refuge; with the Dhamma as their island, with the Dhamma as their refuge, with no other refuge—it is these bhikkhus who will be for me topmost of those keen on the training.”
+sn47.14:3.8 | P: Catutthaṁ. | T: (none)
+
+## sn22.81
+sn22.81:1.1 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: On one occasion the Blessed One was dwelling at Kosambi in Ghosita’s Park.
+sn22.81:1.2 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: Then, in the morning, the Blessed One dressed and, taking bowl and robe, entered Kosambi for alms.
+sn22.81:1.3 | S: After the meal, on his return from almsround, he set his lodgings in order himself. Taking his bowl and robe, without informing his supporters or taking leave of the mendicant Saṅgha, he set out to go wandering alone, with no companion. | T: When he had walked for alms in Kosambi and had returned from the alms round, after his meal he set his lodging in order himself, took his bowl and robe, and without informing his personal attendants, without taking leave of the Bhikkhu Saṅgha, he set out on tour alone, without a companion.
+sn22.81:2.1 | S: Then, not long after the Buddha had left, one of the mendicants went to Venerable Ānanda and told him what had happened. | T: Then, not long after the Blessed One had departed, a certain bhikkhu approached the Venerable Ānanda and told him:
+sn22.81:2.2 | P: “esāvuso ānanda, bhagavā sāmaṁ senāsanaṁ saṁsāmetvā pattacīvaramādāya anāmantetvā upaṭṭhāke anapaloketvā bhikkhusaṅghaṁ eko adutiyo cārikaṁ pakkanto”ti. | T: “Friend Ānanda, the Blessed One has set his lodging in order himself, taken his bowl and robe, and without informing his personal attendants, without taking leave of the Bhikkhu Saṅgha, he has set out on tour alone, without a companion.”
+sn22.81:2.3 | S: Ānanda said, “Reverend, when the Buddha leaves like this it means he wants to stay alone. | T: “Friend, whenever the Blessed One sets out like that he wishes to dwell alone.
+sn22.81:2.4 | S: At this time no one should follow him.” | T: On such an occasion the Blessed One should not be followed by anyone.”
+sn22.81:3.1 | S: Then the Buddha, traveling stage by stage, arrived at Pārileyyaka, | T: Then the Blessed One, wandering by stages, arrived at Parileyyaka.
+sn22.81:3.2 | S: where he stayed at the root of a sacred sal tree. | T: There at Parileyyaka the Blessed One dwelt at the foot of an auspicious sal tree.
+sn22.81:3.3 | S: Then several mendicants went up to Venerable Ānanda and exchanged greetings with him. | T: Then a number of bhikkhus approached the Venerable Ānanda and exchanged greetings with him.
+sn22.81:3.4 | S: When the greetings and polite conversation were over, they sat down to one side and said to him, | T: When they had concluded their greetings and cordial talk, they sat down to one side and said to the Venerable Ānanda:
+sn22.81:3.5 | S: “Reverend, it’s been a long time since we’ve heard a Dhamma talk from the Buddha. | T: “Friend Ānanda, it has been a long time since we heard a Dhamma talk in the presence of the Blessed One.
+sn22.81:3.6 | S: We wish to hear a Dhamma talk from the Buddha.” | T: We should like to hear such a talk, friend Ānanda.”
+sn22.81:4.1 | S: Then Venerable Ānanda together with those mendicants went to Pārileyyaka to see the Buddha. They bowed and sat down to one side, | T: Then the Venerable Ānanda together with those bhikkhus approached the Blessed One at Parileyyaka, at the foot of the auspicious sal tree. Having approached, they paid homage to the Blessed One and sat down to one side.
+sn22.81:4.2 | S: and the Buddha educated, encouraged, fired up, and inspired them with a Dhamma talk. | T: The Blessed One then instructed, exhorted, inspired, and gladdened those bhikkhus with a Dhamma talk.
+sn22.81:4.3 | S: Now at that time one of the monks had the thought, | T: Now on that occasion a reflection arose in the mind of a certain bhikkhu thus:
+sn22.81:4.4 | S: “How do you know and see in order to end the defilements without delay?” | T: “How should one know, how should one see, for the immediate destruction of the taints to occur?”
+sn22.81:4.5 | S: Then the Buddha, knowing that monk’s train of thought, addressed the mendicants: | T: The Blessed One, having known with his own mind the reflection in that bhikkhu’s mind, addressed the bhikkhus thus:
+sn22.81:4.6 | S: “Mendicants, I’ve taught the Dhamma analytically. | T: “Bhikkhus, this Dhamma has been taught by me discriminately.
+sn22.81:4.7 | S: I’ve analytically taught the four kinds of mindfulness meditation, | T: The four establishments of mindfulness have been taught by me discriminately.
+sn22.81:4.8 | S: the four right efforts, | T: The four right strivings …
+sn22.81:4.9 | S: the four bases of psychic power, | T: The four bases for spiritual power …
+sn22.81:4.10 | S: the five faculties, | T: The five spiritual faculties …
+sn22.81:4.11 | S: the five powers, | T: The five powers …
+sn22.81:4.12 | S: the seven awakening factors, | T: The seven factors of enlightenment …
+sn22.81:4.13 | S: and the noble eightfold path. | T: The Noble Eightfold Path has been taught by me discriminately.
+sn22.81:4.14 | S: That’s how I’ve taught the Dhamma analytically. | T: (none)
+sn22.81:4.15 | S: Though I’ve taught the Dhamma analytically, still a certain mendicant present here has this thought: | T: Bhikkhus, in regard to the Dhamma that has been thus taught by me discriminately, a reflection arose in the mind of a certain bhikkhu thus:
+sn22.81:4.16 | S: ‘How do you know and see in order to end the defilements without delay?’ | T: ‘How should one know, how should one see, for the immediate destruction of the taints to occur?’
+sn22.81:5.1 | S: And how, mendicants, do you know and see in order to end the defilements without delay? | T: “And how, bhikkhus, should one know, how should one see, for the immediate destruction of the taints to occur?
+sn22.81:5.2 | S: Take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: Here, bhikkhus, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.81:5.3 | S: They regard form as self. | T: regards form as self.
+sn22.81:5.4 | S: But that regarding is just a conditioned phenomenon. | T: That regarding, bhikkhus, is a formation.
+sn22.81:5.5 | S: And what’s the source, origin, birthplace, and inception of that conditioned phenomenon? | T: That formation—what is its source, what is its origin, from what is it born and produced?
+sn22.81:5.6 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: When the uninstructed worldling is contacted by a feeling born of ignorance-contact, craving arises:
+sn22.81:5.7 | S: That conditioned phenomenon is born from that. | T: thence that formation is born.
+sn22.81:5.8 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: “Thus, bhikkhus, that formation is impermanent, conditioned, dependently arisen;
+sn22.81:5.9 | S: And that craving, | T: that craving is impermanent, conditioned, dependently arisen;
+sn22.81:5.10 | S: that feeling, that contact, | T: that feeling is impermanent, conditioned, dependently arisen; that contact is impermanent, conditioned, dependently arisen;
+sn22.81:5.11 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: that ignorance is impermanent, conditioned, dependently arisen.
+sn22.81:5.12 | S: That’s how you should know and see in order to end the defilements without delay. | T: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs.
+sn22.81:6.1 | S: Perhaps they don’t regard form as self, | T: “He may not regard form as self,
+sn22.81:6.2 | S: but they still regard self as possessing form. | T: but he regards self as possessing form.
+sn22.81:6.3 | S: But that regarding is just a conditioned phenomenon. … | T: That regarding is a formation …
+sn22.81:6.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:6.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:6.6 | P: tatojo so saṅkhāro. | T: all as above …
+sn22.81:6.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:6.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:6.9 | P: sāpi vedanā … | T: (none)
+sn22.81:6.10 | P: sopi phasso … | T: (none)
+sn22.81:6.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:6.12 | P: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. | T: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs.
+sn22.81:7.1 | S: Perhaps they don’t regard form as self, or self as possessing form, | T: “He may not regard form as self or self as possessing form,
+sn22.81:7.2 | S: but they still regard form in self. | T: but he regards form as in self.
+sn22.81:7.3 | S: But that regarding is just a conditioned phenomenon. … | T: That regarding is a formation….
+sn22.81:7.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:7.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:7.6 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:7.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:7.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:7.9 | P: sāpi vedanā … | T: (none)
+sn22.81:7.10 | P: sopi phasso … | T: (none)
+sn22.81:7.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:7.12 | P: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. | T: (none)
+sn22.81:8.1 | S: Perhaps they don’t regard form as self, or self as possessing form, or form in self, | T: “He may not regard form as self or self as possessing form or form as in self,
+sn22.81:8.2 | S: but they still regard self in form. | T: but he regards self as in form.
+sn22.81:8.3 | S: But that regarding is just a conditioned phenomenon. … | T: That regarding is a formation….
+sn22.81:8.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:8.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:8.6 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:8.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:8.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:8.9 | P: sāpi vedanā … | T: (none)
+sn22.81:8.10 | P: sopi phasso … | T: (none)
+sn22.81:8.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:8.12 | P: Evampi kho, bhikkhave, jānato …pe… āsavānaṁ khayo hoti. | T: (none)
+sn22.81:9.1 | S: Perhaps they don’t regard form as self, or self as possessing form, or form in self, or self in form. | T: “He may not regard form as self … or self as in form,
+sn22.81:9.2 | S: But they regard feeling as self … | T: but he regards feeling as self …
+sn22.81:9.3 | S: perception as self … | T: perception as self …
+sn22.81:9.4 | S: choices as self … | T: volitional formations as self …
+sn22.81:9.5 | S: consciousness as self … | T: consciousness as self … self as in consciousness.
+sn22.81:9.6 | S: But that regarding is just a conditioned phenomenon. | T: That regarding is a formation….
+sn22.81:9.7 | S: And what’s the source of that conditioned phenomenon? | T: (none)
+sn22.81:9.8 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: (none)
+sn22.81:9.9 | S: That conditioned phenomenon is born from that. | T: (none)
+sn22.81:9.10 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: (none)
+sn22.81:9.11 | S: And that craving, | T: (none)
+sn22.81:9.12 | S: that feeling, | T: (none)
+sn22.81:9.13 | S: that contact, | T: (none)
+sn22.81:9.14 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: (none)
+sn22.81:9.15 | S: That’s how you should know and see in order to end the defilements without delay. | T: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs.
+sn22.81:10.1 | S: Perhaps they don’t regard form | T: “He may not regard form as self …
+sn22.81:10.2 | S: or feeling | T: (none)
+sn22.81:10.3 | S: or perception | T: (none)
+sn22.81:10.4 | S: or choices | T: …
+sn22.81:10.5 | S: or consciousness as self. | T: or self as in consciousness,
+sn22.81:10.6 | S: Still, they have such a view: | T: but he holds such a view as this:
+sn22.81:10.7 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: ‘That which is the self is the world; having passed away, that I shall be—permanent, stable, eternal, not subject to change.’
+sn22.81:10.8 | S: But that eternalist view is just a conditioned phenomenon. | T: That eternalist view is a formation….
+sn22.81:10.9 | S: And what’s the source of that conditioned phenomenon? … | T: (none)
+sn22.81:10.10 | S: That’s how you should know and see in order to end the defilements without delay. | T: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs.
+sn22.81:11.1 | S: Perhaps they don’t regard form | T: “He may not regard form as self …
+sn22.81:11.2 | S: or feeling | T: (none)
+sn22.81:11.3 | S: or perception | T: (none)
+sn22.81:11.4 | S: or choices | T: (none)
+sn22.81:11.5 | S: or consciousness as self. | T: (none)
+sn22.81:11.6 | S: Nor do they have such a view: | T: or hold such an eternalist view,
+sn22.81:11.7 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: (none)
+sn22.81:11.8 | S: Still, they have such a view: | T: but he holds such a view as this:
+sn22.81:11.9 | S: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: ‘I might not be, and it might not be for me; I will not be, and it will not be for me.’
+sn22.81:11.10 | S: But that annihilationist view is just a conditioned phenomenon. | T: That annihilationist view is a formation….
+sn22.81:11.11 | S: And what’s the source of that conditioned phenomenon? … | T: (none)
+sn22.81:11.12 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:11.13 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:11.14 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco …pe… | T: (none)
+sn22.81:11.15 | S: That’s how you should know and see in order to end the defilements without delay. | T: (none)
+sn22.81:12.1 | S: Perhaps they don’t regard form or feeling | T: “He may not regard form as self …
+sn22.81:12.2 | S: or perception | T: (none)
+sn22.81:12.3 | S: or choices | T: (none)
+sn22.81:12.4 | S: or consciousness as self. | T: (none)
+sn22.81:12.5 | S: Nor do they have such a view: | T: (none)
+sn22.81:12.6 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: (none)
+sn22.81:12.7 | S: Nor do they have such a view: | T: or hold such an annihilationist view,
+sn22.81:12.8 | S: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: (none)
+sn22.81:12.9 | S: Still, they have doubts and uncertainties. They’re undecided about the true teaching. | T: but he is perplexed, doubtful, indecisive in regard to the true Dhamma.
+sn22.81:12.10 | S: That doubt and uncertainty, the indecision about the true teaching, is just a conditioned phenomenon. | T: That perplexity, doubtfulness, indecisive-ness in regard to the true Dhamma is a formation.
+sn22.81:12.11 | S: And what’s the source of that conditioned phenomenon? | T: That formation—what is its source, what is its origin, from what is it born and produced?
+sn22.81:12.12 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: When the uninstructed worldling is contacted by a feeling born of ignorance-contact, craving arises:
+sn22.81:12.13 | S: That conditioned phenomenon is born from that. | T: thence that formation is born.
+sn22.81:12.14 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: “So that formation, bhikkhus, is impermanent, conditioned, dependently arisen;
+sn22.81:12.15 | S: And that craving, | T: that craving is impermanent, conditioned, dependently arisen;
+sn22.81:12.16 | S: that feeling, | T: that feeling is impermanent, conditioned, dependently arisen;
+sn22.81:12.17 | S: that contact, | T: that contact is impermanent, conditioned, dependently arisen;
+sn22.81:12.18 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: that ignorance is impermanent, conditioned, dependently arisen.
+sn22.81:12.19 | S: That’s how you should know and see in order to end the defilements without delay.” | T: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs.”
+sn22.81:12.20 | P: Navamaṁ. | T: (none)
+
+## an5.43
+an5.43:1.1 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the householder Anāthapiṇḍika approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+an5.43:2.1 | S: “Householder, these five things, which are likable, desirable, and agreeable are hard to get in the world. | T: “Householder, there are these five things that are wished for, desired, agreeable, and rarely gained in the world.
+an5.43:2.2 | S: What five? | T: What five?
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.43:2.3 | S: Long life, | T: Long life, householder, is wished for, desired, agreeable, and rarely gained in the world.
+an5.43:2.4 | S: beauty, | T: Beauty …
+an5.43:2.5 | S: happiness, | T: Happiness …
+an5.43:2.6 | S: fame, | T: Fame …
+an5.43:2.7 | S: and heaven. | T: The heavens are wished for, desired, agreeable, and rarely gained in the world.
+an5.43:2.8 | S: These are the five things, which are likable, desirable, and agreeable, but hard to get in the world. | T: These are the five things that are wished for, desired, agreeable, and rarely gained in the world.
+an5.43:3.1 | S: And I say that these five things are not got by supplication or wishing for them. | T: “These five things, householder, that are wished for, desired, agreeable, and rarely gained in the world, I say, are not obtained by means of prayers or aspirations.
+an5.43:3.2 | S: If they were, who would lack them? | T: If these five things that are wished for, desired, agreeable, and rarely gained in the world could be obtained by means of prayers or aspirations, who here would be lacking in anything?
+an5.43:4.1 | S: A noble disciple who wants to live long ought not pray for it, or hope for it, or pine for it. | T: (1) “Householder, the noble disciple who desires long life ought not to pray for long life or delight in it or passively yearn for it.
+an5.43:4.2 | S: Instead, they should practice the way that leads to long life. | T: A noble disciple who desires long life should practice the way conducive to long life.
+an5.43:4.3 | S: For by practicing that way they gain long life | T: For when he practices the way conducive to long life, it leads to obtaining long life, and he gains long life either celestial or human.
+an5.43:4.4 | S: as a god or a human being. | T: (none)
+an5.43:5.1 | S: A noble disciple who wants to be beautiful ought not pray for it, or hope for it, or pine for it. | T: (2) “Householder, the noble disciple who desires beauty …
+an5.43:5.2 | S: Instead, they should practice the way that leads to beauty. | T: (none)
+an5.43:5.3 | S: For by practicing that way they gain beauty | T: (none)
+an5.43:5.4 | S: as a god or a human being. | T: (none)
+an5.43:6.1 | S: A noble disciple who wants to be happy ought not pray for it, or hope for it, or pine for it. | T: (3) … who desires happiness …
+an5.43:6.2 | S: Instead, they should practice the way that leads to happiness. | T: (none)
+an5.43:6.3 | S: For by practicing that way they gain happiness | T: (none)
+an5.43:6.4 | S: as a god or a human being. | T: (none)
+an5.43:7.1 | S: A noble disciple who wants to be famous ought not pray for it, or hope for it, or pine for it. | T: (4) … who desires fame ought not to pray for fame or delight in it or passively yearn for it.
+an5.43:7.2 | S: Instead, they should practice the way that leads to fame. | T: A noble disciple who desires fame should practice the way conducive to fame.
+an5.43:7.3 | S: For by practicing that way they gain fame | T: For when he practices the way conducive to fame, it leads to obtaining fame, and he gains fame either celestial or human.
+an5.43:7.4 | S: as a god or a human being. | T: (none)
+an5.43:8.1 | S: A noble disciple who wants to go to heaven ought not pray for it, or hope for it, or pine for it. | T: (5) “Householder, the noble disciple who desires the heavens ought not to pray for the heavens or delight in them or passively yearn for them.
+an5.43:8.2 | S: Instead, they should practice the way that leads to heaven. | T: A noble disciple who desires the heavens should practice the way conducive to heaven.
+an5.43:8.3 | S: For by practicing that way they gain heaven, | T: For when he practices the way conducive to heaven, it leads to obtaining the heavens,
+an5.43:8.4 | S: they are one who gains the heavens. | T: and he gains the heavens.”
+an5.43:9.1 | S: For one who desires lofty delights | T: (none)
+an5.43:9.2 | S: again and again— | T: (none)
+an5.43:9.3 | S: long life, beauty, fame and reputation, | T: For one desiring long life, beauty, fame, acclaim,
+an5.43:9.4 | S: heaven, and an eminent family— | T: heaven, high families, and lofty delights following in succession,
+an5.43:10.1 | S: the astute praise diligence | T: the wise praise heedfulness
+an5.43:10.2 | S: in making merit. | T: in doing deeds of merit.
+an5.43:10.3 | S: Being diligent, an astute person | T: Being heedful, the wise person
+an5.43:10.4 | S: secures both benefits: | T: secures both kinds of good:
+an5.43:11.1 | S: the benefit in this life, | T: the good in this life,
+an5.43:11.2 | S: and in lives to come. | T: and the good of the future life.
+an5.43:11.3 | S: An attentive one, comprehending the meaning, | T: By attaining the good, the steadfast one
+an5.43:11.4 | S: is said to be astute.” | T: is called one of wisdom.
+an5.43:11.5 | P: Tatiyaṁ. | T: (none)
+
+## sn22.27
+sn22.27:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.27:1.2 | S: “Mendicants, I went in search of form’s gratification, | T: “Bhikkhus, I set out seeking the gratification in form.
+sn22.27:1.3 | S: and I found it. | T: Whatever gratification there is in form—that I discovered.
+sn22.27:1.4 | S: I’ve seen clearly with wisdom the full extent of form’s gratification. | T: I have clearly seen with wisdom just how far the gratification in form extends.
+sn22.27:1.5 | S: I went in search of form’s drawback, | T: “Bhikkhus, I set out seeking the danger in form.
+sn22.27:1.6 | S: and I found it. | T: Whatever danger there is in form—that I discovered.
+sn22.27:1.7 | S: I’ve seen clearly with wisdom the full extent of form’s drawback. | T: I have clearly seen with wisdom just how far the danger in form extends.
+sn22.27:1.8 | S: I went in search of form’s escape, | T: “Bhikkhus, I set out seeking the escape from form.
+sn22.27:1.9 | S: and I found it. | T: Whatever escape there is from form—that I discovered.
+sn22.27:1.10 | S: I’ve seen clearly with wisdom the full extent of form’s escape. | T: I have clearly seen with wisdom just how far the escape from form extends.
+sn22.27:1.11 | S: I went in search of the gratification of feeling … | T: “Bhikkhus, I set out seeking the gratification in … the danger in … the escape from feeling …
+sn22.27:1.12 | S: perception … | T: from perception …
+sn22.27:1.13 | S: choices … | T: from volitional formations …
+sn22.27:1.14 | S: and consciousness, | T: from consciousness.
+sn22.27:1.15 | S: and I found it. | T: (none)
+sn22.27:1.16 | S: I’ve seen clearly with wisdom the full extent of consciousness’s gratification. | T: (none)
+sn22.27:1.17 | S: I went in search of consciousness’s drawback, | T: (none)
+sn22.27:1.18 | S: and I found it. | T: (none)
+sn22.27:1.19 | S: I’ve seen clearly with wisdom the full extent of consciousness’s drawback. | T: (none)
+sn22.27:1.20 | S: I went in search of consciousness’s escape, | T: (none)
+sn22.27:1.21 | S: and I found it. | T: Whatever escape there is from consciousness—that I discovered.
+sn22.27:1.22 | S: I’ve seen clearly with wisdom the full extent of consciousness’s escape. | T: I have clearly seen with wisdom just how far the escape from consciousness extends.
+sn22.27:1.23 | S: As long as I didn’t truly understand these five grasping aggregates’ gratification, drawback, and escape for what they are, I didn’t announce my supreme perfect awakening … | T: “So long, bhikkhus, as I did not directly know as they really are the gratification, the danger, and the escape in the case of these five aggregates subject to clinging, I did not claim to have awakened to the unsurpassed perfect enlightenment in this world with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans.
+sn22.27:1.24 | S: But when I did truly understand these five grasping aggregates’ gratification, drawback, and escape for what they are, I announced my supreme perfect awakening … | T: But when I directly knew all this as it really is, then I claimed to have awakened to the unsurpassed perfect enlightenment in this world with … its devas and humans.
+sn22.27:1.25 | S: Knowledge and vision arose in me: | T: “The knowledge and vision arose in me:
+sn22.27:1.26 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unshakable is my liberation of mind; this is my last birth; now there is no more renewed existence.’”
+sn22.27:1.27 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.15
+sn35.15:1.1 | S: “Mendicants, I went in search of the eye’s gratification, | T: “Bhikkhus, I set out seeking the gratification in the eye.
+sn35.15:1.2 | S: and I found it. | T: Whatever gratification there is in the eye—that I discovered.
+sn35.15:1.3 | S: I’ve seen clearly with wisdom the full extent of the eye’s gratification. | T: I have clearly seen with wisdom just how far the gratification in the eye extends.
+sn35.15:1.4 | S: I went in search of the eye’s drawback, | T: “Bhikkhus, I set out seeking the danger in the eye.
+sn35.15:1.5 | S: and I found it. | T: Whatever danger there is in the eye—that I discovered.
+sn35.15:1.6 | S: I’ve seen clearly with wisdom the full extent of the eye’s drawback. | T: I have clearly seen with wisdom just how far the danger in the eye extends.
+sn35.15:1.7 | S: I went in search of escape from the eye, | T: “Bhikkhus, I set out seeking the escape from the eye.
+sn35.15:1.8 | S: and I found it. | T: Whatever escape there is from the eye—that I discovered.
+sn35.15:1.9 | S: I’ve seen clearly with wisdom the full extent of escape from the eye. | T: I have clearly seen with wisdom just how far the escape from the eye extends.
+sn35.15:1.10 | S: I went in search of the ear’s … | T: “Bhikkhus, I set out seeking the gratification in … the danger in … the escape from the ear …
+sn35.15:1.11 | S: nose’s … | T: the nose …
+sn35.15:1.12 | S: tongue’s … | T: the tongue …
+sn35.15:1.13 | P: Yo jivhāya assādo tadajjhagamaṁ. | T: (none)
+sn35.15:1.14 | P: Yāvatā jivhāya assādo paññāya me so sudiṭṭho. | T: (none)
+sn35.15:1.15 | P: Jivhāyāhaṁ, bhikkhave, ādīnavapariyesanaṁ acariṁ. | T: (none)
+sn35.15:1.16 | P: Yo jivhāya ādīnavo tadajjhagamaṁ. | T: (none)
+sn35.15:1.17 | P: Yāvatā jivhāya ādīnavo paññāya me so sudiṭṭho. | T: (none)
+sn35.15:1.18 | P: Jivhāyāhaṁ, bhikkhave, nissaraṇapariyesanaṁ acariṁ. | T: (none)
+sn35.15:1.19 | P: Yaṁ jivhāya nissaraṇaṁ tadajjhagamaṁ. | T: (none)
+sn35.15:1.20 | S: body’s … | T: the body …
+sn35.15:1.21 | S: mind’s gratification, | T: the mind.
+sn35.15:1.22 | S: and I found it. | T: (none)
+sn35.15:1.23 | S: I’ve seen clearly with wisdom the full extent of the mind’s gratification. | T: (none)
+sn35.15:1.24 | S: I went in search of the mind’s drawback, | T: (none)
+sn35.15:1.25 | S: and I found it. | T: (none)
+sn35.15:1.26 | S: I’ve seen clearly with wisdom the full extent of the mind’s drawback. | T: (none)
+sn35.15:1.27 | S: I went in search of escape from the mind, | T: (none)
+sn35.15:1.28 | S: and I found it. | T: Whatever escape there is from the mind—that I discovered.
+sn35.15:1.29 | S: I’ve seen clearly with wisdom the full extent of escape from the mind. | T: I have clearly seen with wisdom just how far the escape from the mind extends.
+sn35.15:2.1 | S: As long as I didn’t truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, I didn’t announce my supreme perfect awakening … | T: “So long, bhikkhus, as I did not directly know as they really are the gratification, the danger, and the escape in the case of these six internal sense bases, I did not claim to have awakened to the unsurpassed perfect enlightenment in this world with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans.
+sn35.15:2.2 | S: But when I did truly understand … | T: But when I directly knew all this as it really is, then I claimed to have awakened to the unsurpassed perfect enlightenment in this world with … its devas and humans.
+sn35.15:2.3 | S: Knowledge and vision arose in me: | T: “The knowledge and vision arose in me:
+sn35.15:2.4 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unshakable is my liberation of mind; this is my last birth; now there is no more renewed existence.’”
+sn35.15:2.5 | P: Tatiyaṁ. | T: (none)
+
+## sn35.69
+sn35.69:1.1 | S: At one time the venerables Sāriputta and Upasena were staying near Rājagaha in the Cool Grove, under the Cobra’s Hood Grotto. | T: On one occasion the Venerable Sāriputta and the Venerable Upasena were dwelling at Rajagaha in the Cool Grove, in the Snake’s Hood Grotto.
+sn35.69:1.2 | S: Now at that time a viper fell on Upasena’s body. | T: Now on that occasion a viper had fallen on the Venerable Upasena’s body.
+sn35.69:1.3 | S: He addressed the mendicants, | T: Then the Venerable Upasena addressed the bhikkhus thus:
+sn35.69:1.4 | S: “Come, reverends, lift this body onto a cot and carry it outside | T: “Come, friends, lift this body of mine on to the bed and carry it outside before it is scattered right here like a handful of chaff.”
+sn35.69:1.5 | S: before it’s scattered right here | T: (none)
+sn35.69:1.6 | S: like a handful of hay.” | T: (none)
+sn35.69:2.1 | S: When he said this, Sāriputta said to him, | T: When this was said, the Venerable Sāriputta said to the Venerable Upasena:
+sn35.69:2.2 | S: “But we don’t see any impairment in your body or deterioration of your faculties. | T: “We do not see any alteration in the Venerable Upasena’s body nor any change in his faculties;
+sn35.69:2.3 | S: Yet you say: | T: yet the Venerable Upasena says:
+sn35.69:2.4 | S: ‘Come, reverends, lift this body onto a cot and carry it outside | T: ‘Come, friends, lift this body of mine on to the bed and carry it outside before it is scattered right here like a handful of chaff.’”
+sn35.69:2.5 | S: before it’s scattered right here | T: (none)
+sn35.69:2.6 | S: like a handful of hay.’” | T: (none)
+sn35.69:2.7 | S: “Reverend Sāriputta, there may be an impairment in body or deterioration of faculties for someone who thinks: | T: “Friend Sāriputta, for one who thinks,
+sn35.69:2.8 | S: ‘I am the eye’ or ‘the eye is mine.’ | T: ‘I am the eye’ or ‘The eye is mine’;
+sn35.69:2.9 | S: Or ‘I am the ear … nose … tongue … body …’ | T: ‘I am the ear’ or ‘The ear is mine’ …
+sn35.69:2.10 | S: Or ‘I am the mind’ or ‘the mind is mine.’ | T: ‘I am the mind’ or ‘The mind is mine,’
+sn35.69:2.11 | P: Tassa, āvuso sāriputta, siyā kāyassa vā aññathattaṁ indriyānaṁ vā vipariṇāmo. | T: there might be alteration of the body or a change of the faculties.
+sn35.69:2.12 | S: But I don’t think like that. | T: But, friend Sāriputta, it does not occur to me,
+sn35.69:2.13 | P: ‘ahaṁ cakkhūti vā mama cakkhūti vā …pe… | T: ‘I am the eye’ or ‘The eye is mine’;
+sn35.69:2.14 | P: ahaṁ jivhāti vā mama jivhāti vā …pe… | T: ‘I am the ear’ or ‘The ear is mine’ …
+sn35.69:2.15 | P: ahaṁ manoti vā mama manoti vā’. | T: ‘I am the mind’ or ‘The mind is mine,’
+sn35.69:2.16 | S: So why would there be an impairment in my body or deterioration of my faculties?” | T: so why should there be any alteration in my body or any change in my faculties?”
+sn35.69:3.1 | S: “That must be because Venerable Upasena has long ago totally eradicated I-making, mine-making, and the underlying tendency to conceit. | T: “It must be because I-making, mine-making, and the underlying tendency to conceit have been thoroughly uprooted in the Venerable Upasena for a long time
+sn35.69:3.2 | S: That’s why it doesn’t occur to you: | T: that it does not occur to him,
+sn35.69:3.3 | S: ‘I am the eye’ or ‘the eye is mine.’ Or ‘I am the ear … | T: ‘I am the eye’ or ‘The eye is mine’; ‘I am the ear’ or ‘The ear is mine’ …
+sn35.69:3.4 | S: nose … tongue … body …’ | T: (none)
+sn35.69:3.5 | S: Or ‘I am the mind’ or ‘the mind is mine.’” | T: ‘I am the mind’ or ‘The mind is mine.’”
+sn35.69:3.6 | S: Then those mendicants lifted Upasena’s body onto a cot and carried it outside. | T: Then those bhikkhus lifted the Venerable Upasena’s body on to the bed and carried it outside.
+sn35.69:3.7 | S: And his body was scattered right there | T: Then the Venerable Upasena’s body was scattered right there just like a handful of chaff.
+sn35.69:3.8 | S: like a handful of hay. | T: (none)
+sn35.69:3.9 | P: Sattamaṁ. | T: (none)
+
+## an8.6
+an8.6:1.1 | S: “Mendicants, the eight worldly conditions revolve around the world, and the world revolves around the eight worldly conditions. | T: “Bhikkhus, these eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions.
+an8.6:1.2 | S: What eight? | T: What eight?
+an8.6:1.3 | S: Gain and loss, fame and disgrace, blame and praise, pleasure and pain. | T: Gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.6:1.4 | S: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions. | T: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions.
+an8.6:2.1 | S: An unlearned ordinary person encounters gain and loss, fame and disgrace, blame and praise, and pleasure and pain. | T: “Bhikkhus, an uninstructed worldling meets gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.6:2.2 | S: And so does a learned noble disciple. | T: An instructed noble disciple also meets gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.6:2.3 | S: What, then, is the difference between a learned noble disciple and an ordinary unlearned person?” | T: What is the distinction, the disparity, the difference between an instructed noble disciple and an uninstructed worldling with regard to this?”
+an8.6:2.4 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Bhante, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will retain it in mind.”
+an8.6:3.1 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen, bhikkhus, and attend closely. I will speak.”
+an8.6:3.2 | S: “Yes, sir,” they replied. | T: “Yes, Bhante,” those bhikkhus replied.
+an8.6:3.3 | S: The Buddha said this: | T: The Blessed One said this:
+an8.6:3.4 | S: “Mendicants, an unlearned ordinary person encounters gain. | T: “(1) Bhikkhus, when an uninstructed worldling meets with gain,
+an8.6:3.5 | S: They don’t reflect: | T: he does not reflect thus:
+an8.6:3.6 | S: ‘I’ve encountered this gain. | T: (none)
+an8.6:3.7 | S: It’s impermanent, suffering, and perishable.’ They don’t truly understand it. | T: ‘This gain that I have met is impermanent, suffering, and subject to change.’ He does not understand it as it really is.
+an8.6:3.8 | S: They encounter loss … | T: (2) When he meets with loss …
+an8.6:3.9 | S: fame … | T: (3) … fame …
+an8.6:3.10 | S: disgrace … | T: (4) … disrepute …
+an8.6:3.11 | S: blame … | T: (5) … blame …
+an8.6:3.12 | S: praise … | T: (6) … praise …
+an8.6:3.13 | S: pleasure … | T: (7) … pleasure …
+an8.6:3.14 | S: pain. | T: (8) … pain,
+an8.6:3.15 | S: They don’t reflect: | T: he does not reflect thus:
+an8.6:3.16 | S: ‘I’ve encountered this pain. | T: (none)
+an8.6:3.17 | S: It’s impermanent, suffering, and perishable.’ They don’t truly understand it. | T: ‘This pain that I have met is impermanent, suffering, and subject to change.’ He does not understand it as it really is.
+an8.6:4.1 | S: So gain and loss, fame and disgrace, blame and praise, and pleasure and pain occupy their mind. | T: “Gain obsesses his mind, and loss obsesses his mind. Fame obsesses his mind, and disrepute obsesses his mind. Blame obsesses his mind, and praise obsesses his mind. Pleasure obsesses his mind, and pain obsesses his mind.
+an8.6:4.2 | S: They favor gain and oppose loss. | T: He is attracted to gain and repelled by loss.
+an8.6:4.3 | S: They favor fame and oppose disgrace. | T: He is attracted to fame and repelled by disrepute.
+an8.6:4.4 | S: They favor praise and oppose blame. | T: He is attracted to praise and repelled by blame.
+an8.6:4.5 | S: They favor pleasure and oppose pain. | T: He is attracted to pleasure and repelled by pain.
+an8.6:4.6 | S: Being so full of favoring and opposing, they’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Thus involved with attraction and repulsion, he is not freed from birth, from old age and death, from sorrow, lamentation, pain, dejection, and anguish;
+an8.6:4.7 | S: They’re not freed from suffering, I say. | T: he is not freed from suffering, I say.
+an8.6:5.1 | S: A learned noble disciple encounters gain. | T: “But, bhikkhus, (1) when an instructed noble disciple meets with gain,
+an8.6:5.2 | S: They reflect: | T: he reflects thus:
+an8.6:5.3 | S: ‘I’ve encountered this gain. | T: (none)
+an8.6:5.4 | S: It’s impermanent, suffering, and perishable.’ They truly understand it. | T: ‘This gain that I have met is impermanent, suffering, and subject to change.’ He thus understands it as it really is.
+an8.6:5.5 | S: They encounter loss … | T: (2) When he meets with loss …
+an8.6:5.6 | S: fame … | T: (3) … fame …
+an8.6:5.7 | S: disgrace … | T: (4) … disrepute …
+an8.6:5.8 | S: blame … | T: (5) … blame …
+an8.6:5.9 | S: praise … | T: (6) … praise …
+an8.6:5.10 | S: pleasure … | T: (7) … pleasure …
+an8.6:5.11 | S: pain. | T: (8) … pain,
+an8.6:5.12 | S: They reflect: | T: he reflects thus:
+an8.6:5.13 | S: ‘I’ve encountered this pain. | T: (none)
+an8.6:5.14 | S: It’s impermanent, suffering, and perishable.’ They truly understand it. | T: ‘This pain that I have met is impermanent, suffering, and subject to change.’ He thus understands it as it really is.
+an8.6:6.1 | S: So gain and loss, fame and disgrace, blame and praise, and pleasure and pain don’t occupy their mind. | T: “Gain does not obsess his mind, and loss does not obsess his mind. Fame does not obsess his mind, and disrepute does not obsess his mind. Blame does not obsess his mind, and praise does not obsess his mind. Pleasure does not obsess his mind, and pain does not obsess his mind.
+an8.6:6.2 | S: They don’t favor gain or oppose loss. | T: He is not attracted to gain or repelled by loss.
+an8.6:6.3 | S: They don’t favor fame or oppose disgrace. | T: He is not attracted to fame or repelled by disrepute.
+an8.6:6.4 | S: They don’t favor praise or oppose blame. | T: He is not attracted to praise or repelled by blame.
+an8.6:6.5 | S: They don’t favor pleasure or oppose pain. | T: He is not attracted to pleasure or repelled by pain.
+an8.6:6.6 | S: Having given up favoring and opposing, they’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Having thus discarded attraction and repulsion, he is freed from birth, from old age and death, from sorrow, lamentation, pain, dejection, and anguish;
+an8.6:6.7 | S: They’re freed from suffering, I say. | T: he is freed from suffering, I say.
+an8.6:6.8 | S: This is the difference between a learned noble disciple and an unlearned ordinary person. | T: “This, bhikkhus, is the distinction, the disparity, the difference between an instructed noble disciple and an uninstructed worldling.”
+an8.6:7.1 | S: Gain and loss, fame and disgrace, | T: The verses are identical with those of AN8.5.
+an8.6:7.2 | S: blame and praise, and pleasure and pain. | T: (none)
+an8.6:7.3 | S: These qualities among mankind are impermanent, | T: (none)
+an8.6:7.4 | S: transient, and perishable. | T: (none)
+an8.6:8.1 | S: An intelligent and mindful person knows these things, | T: (none)
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.6:8.2 | S: seeing that they’re perishable. | T: (none)
+an8.6:8.3 | S: Desirable things don’t disturb their mind, | T: (none)
+an8.6:8.4 | S: nor are they repelled by the undesirable. | T: (none)
+an8.6:9.1 | S: Both favoring and opposing | T: (none)
+an8.6:9.2 | S: are cleared and disappeared, they are no more. | T: (none)
+an8.6:9.3 | S: Knowing the stainless, sorrowless state, | T: (none)
+an8.6:9.4 | S: they who have gone beyond rebirth <j>understand rightly.” | T: (none)
+an8.6:9.5 | P: Chaṭṭhaṁ. | T: (none)
+
+
+codex
+I found clear shifts in the openings of four quoted reflections, plus a verse opening placed two lines too low. I’m checking the exact boundary words before writing the findings.
+exec
+/bin/bash -lc "sed -n '230,248p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.43:9.2 | S: again and again— | T: (none)
+an5.43:9.3 | S: long life, beauty, fame and reputation, | T: For one desiring long life, beauty, fame, acclaim,
+an5.43:9.4 | S: heaven, and an eminent family— | T: heaven, high families, and lofty delights following in succession,
+an5.43:10.1 | S: the astute praise diligence | T: the wise praise heedfulness
+an5.43:10.2 | S: in making merit. | T: in doing deeds of merit.
+an5.43:10.3 | S: Being diligent, an astute person | T: Being heedful, the wise person
+an5.43:10.4 | S: secures both benefits: | T: secures both kinds of good:
+an5.43:11.1 | S: the benefit in this life, | T: the good in this life,
+an5.43:11.2 | S: and in lives to come. | T: and the good of the future life.
+an5.43:11.3 | S: An attentive one, comprehending the meaning, | T: By attaining the good, the steadfast one
+an5.43:11.4 | S: is said to be astute.” | T: is called one of wisdom.
+an5.43:11.5 | P: Tatiyaṁ. | T: (none)
+
+## sn22.27
+sn22.27:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.27:1.2 | S: “Mendicants, I went in search of form’s gratification, | T: “Bhikkhus, I set out seeking the gratification in form.
+sn22.27:1.3 | S: and I found it. | T: Whatever gratification there is in form—that I discovered.
+sn22.27:1.4 | S: I’ve seen clearly with wisdom the full extent of form’s gratification. | T: I have clearly seen with wisdom just how far the gratification in form extends.
+sn22.27:1.5 | S: I went in search of form’s drawback, | T: “Bhikkhus, I set out seeking the danger in form.
+
+exec
+/bin/bash -lc "sed -n '345,385p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.6:1.4 | S: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions. | T: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions.
+an8.6:2.1 | S: An unlearned ordinary person encounters gain and loss, fame and disgrace, blame and praise, and pleasure and pain. | T: “Bhikkhus, an uninstructed worldling meets gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.6:2.2 | S: And so does a learned noble disciple. | T: An instructed noble disciple also meets gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.6:2.3 | S: What, then, is the difference between a learned noble disciple and an ordinary unlearned person?” | T: What is the distinction, the disparity, the difference between an instructed noble disciple and an uninstructed worldling with regard to this?”
+an8.6:2.4 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Bhante, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will retain it in mind.”
+an8.6:3.1 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen, bhikkhus, and attend closely. I will speak.”
+an8.6:3.2 | S: “Yes, sir,” they replied. | T: “Yes, Bhante,” those bhikkhus replied.
+an8.6:3.3 | S: The Buddha said this: | T: The Blessed One said this:
+an8.6:3.4 | S: “Mendicants, an unlearned ordinary person encounters gain. | T: “(1) Bhikkhus, when an uninstructed worldling meets with gain,
+an8.6:3.5 | S: They don’t reflect: | T: he does not reflect thus:
+an8.6:3.6 | S: ‘I’ve encountered this gain. | T: (none)
+an8.6:3.7 | S: It’s impermanent, suffering, and perishable.’ They don’t truly understand it. | T: ‘This gain that I have met is impermanent, suffering, and subject to change.’ He does not understand it as it really is.
+an8.6:3.8 | S: They encounter loss … | T: (2) When he meets with loss …
+an8.6:3.9 | S: fame … | T: (3) … fame …
+an8.6:3.10 | S: disgrace … | T: (4) … disrepute …
+an8.6:3.11 | S: blame … | T: (5) … blame …
+an8.6:3.12 | S: praise … | T: (6) … praise …
+an8.6:3.13 | S: pleasure … | T: (7) … pleasure …
+an8.6:3.14 | S: pain. | T: (8) … pain,
+an8.6:3.15 | S: They don’t reflect: | T: he does not reflect thus:
+an8.6:3.16 | S: ‘I’ve encountered this pain. | T: (none)
+an8.6:3.17 | S: It’s impermanent, suffering, and perishable.’ They don’t truly understand it. | T: ‘This pain that I have met is impermanent, suffering, and subject to change.’ He does not understand it as it really is.
+an8.6:4.1 | S: So gain and loss, fame and disgrace, blame and praise, and pleasure and pain occupy their mind. | T: “Gain obsesses his mind, and loss obsesses his mind. Fame obsesses his mind, and disrepute obsesses his mind. Blame obsesses his mind, and praise obsesses his mind. Pleasure obsesses his mind, and pain obsesses his mind.
+an8.6:4.2 | S: They favor gain and oppose loss. | T: He is attracted to gain and repelled by loss.
+an8.6:4.3 | S: They favor fame and oppose disgrace. | T: He is attracted to fame and repelled by disrepute.
+an8.6:4.4 | S: They favor praise and oppose blame. | T: He is attracted to praise and repelled by blame.
+an8.6:4.5 | S: They favor pleasure and oppose pain. | T: He is attracted to pleasure and repelled by pain.
+an8.6:4.6 | S: Being so full of favoring and opposing, they’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Thus involved with attraction and repulsion, he is not freed from birth, from old age and death, from sorrow, lamentation, pain, dejection, and anguish;
+an8.6:4.7 | S: They’re not freed from suffering, I say. | T: he is not freed from suffering, I say.
+an8.6:5.1 | S: A learned noble disciple encounters gain. | T: “But, bhikkhus, (1) when an instructed noble disciple meets with gain,
+an8.6:5.2 | S: They reflect: | T: he reflects thus:
+an8.6:5.3 | S: ‘I’ve encountered this gain. | T: (none)
+an8.6:5.4 | S: It’s impermanent, suffering, and perishable.’ They truly understand it. | T: ‘This gain that I have met is impermanent, suffering, and subject to change.’ He thus understands it as it really is.
+an8.6:5.5 | S: They encounter loss … | T: (2) When he meets with loss …
+an8.6:5.6 | S: fame … | T: (3) … fame …
+an8.6:5.7 | S: disgrace … | T: (4) … disrepute …
+an8.6:5.8 | S: blame … | T: (5) … blame …
+an8.6:5.9 | S: praise … | T: (6) … praise …
+an8.6:5.10 | S: pleasure … | T: (7) … pleasure …
+an8.6:5.11 | S: pain. | T: (8) … pain,
+an8.6:5.12 | S: They reflect: | T: he reflects thus:
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-012.findings.tmp <<'EOF'
+an5.43:9.1 starts: For one desiring long life, beauty, fame, acclaim,
+an5.43:9.3 starts: long life, beauty, fame, acclaim, heaven,
+an8.6:3.6 starts: ‘This gain that I have met
+an8.6:3.7 starts: is impermanent, suffering, and subject to change.’
+an8.6:3.16 starts: ‘This pain that I have met
+an8.6:3.17 starts: is impermanent, suffering, and subject to change.’
+an8.6:5.3 starts: ‘This gain that I have met
+an8.6:5.4 starts: is impermanent, suffering, and subject to change.’
+an8.6:5.13 starts: ‘This pain that I have met
+an8.6:5.14 starts: is impermanent, suffering, and subject to change.’
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+10 lines reported.
+tokens used
+28,662
+10 lines reported.

@@ -1,0 +1,358 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8a-0ee7-7be2-9924-7c84fbe691c5
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write only the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.63
+an3.63:1.1 | S: At one time the Buddha was wandering in the land of the Kosalans together with a large Saṅgha of mendicants when he arrived at a village of the Kosalan brahmins named Venāgapura. | T: On one occasion the Blessed One was wandering on tour among the Kosalans together with a large Saṅgha of bhikkhus when he reached the Kosalan brahmin village named Venāgapura.
+an3.63:1.2 | S: The brahmins and householders of Venāgapura heard: | T: The brahmin householders of Venāgapura heard:
+an3.63:1.3 | S: “It seems the ascetic Gotama—a Sakyan, gone forth from a Sakyan family—has arrived at Venāgapura. | T: “It is said that the ascetic Gotama, the son of the Sakyans who went forth from a Sakyan family, has arrived at Venāgapura.
+an3.63:1.4 | S: He has this good reputation: | T: Now a good report about that Master Gotama has circulated thus:
+an3.63:1.5 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘That Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed leader of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.
+an3.63:1.6 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: Having realized by his own direct knowledge this world with its devas, Māra, and Brahmā, this population with its ascetics and brahmins, its devas and humans, he makes it known to others.
+an3.63:1.7 | S: He teaches Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And he reveals a spiritual practice that’s entirely full and pure. | T: He teaches a Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; he reveals a spiritual life that is perfectly complete and pure.’
+an3.63:1.8 | S: It’s good to see such perfected ones.” | T: Now it is good to see such arahants.”
+an3.63:2.1 | S: Then the brahmins and householders of Venāgapura went up to the Buddha. Before sitting down to one side, some bowed, some exchanged greetings and polite conversation, some held up their cupped palms toward the Buddha, some announced their name and clan, while some kept silent. Then the brahmin Vacchagotta of Venāgapura said to the Buddha: | T: Then the brahmin householders of Venāgapura approached the Blessed One. Some paid homage to the Blessed One and sat down to one side; some exchanged greetings with him and, when they had concluded their greetings and cordial talk, sat down to one side; some reverentially saluted him and sat down to one side; some pronounced their name and clan and sat down to one side; some kept silent and sat down to one side. The brahmin Vacchagotta of Venāgapura then said to the Blessed One:
+an3.63:3.1 | S: “It’s incredible, worthy Gotama, it’s amazing, | T: “It is astounding and amazing, Master Gotama,
+an3.63:3.2 | S: how your faculties are so very clear, and the complexion of your skin is pure and bright. | T: how Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.3 | S: It’s like a golden brown jujube in the autumn, | T: Just as a yellow jujube fruit in the autumn is pure and bright,
+an3.63:3.4 | P: evamevaṁ bhoto gotamassa vippasannāni indriyāni parisuddho chavivaṇṇo pariyodāto. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.5 | S: or a ripe palmyra fruit freshly plucked from the stalk, | T: Just as a palm fruit that has just been removed from its stalk is pure and bright,
+an3.63:3.6 | P: evamevaṁ bhoto gotamassa vippasannāni indriyāni parisuddho chavivaṇṇo pariyodāto. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.7 | S: or a pendant of Black Plum River gold, fashioned by a deft smith, well-wrought in the forge, and placed on a cream rug where it shines and glows and dazzles. | T: Just as an ornament of finest gold, well prepared by a skilled goldsmith and very skillfully wrought in the furnace, placed on red brocade, shines and beams and radiates,
+an3.63:3.8 | S: In the same way, your faculties are so very clear, and the complexion of your skin is pure and bright. | T: so Master Gotama’s faculties are tranquil and the color of his skin is pure and bright.
+an3.63:3.9 | S: Surely the worthy Gotama gets when he wants, without trouble or difficulty, various kinds of high and luxurious bedding, such as: | T: “Whatever high and luxurious kinds of bedding there are—that is,
+an3.63:3.10 | S: sofas, couches, woolen covers—shag-piled, colorful, white, embroidered with flowers, quilted, embroidered with animals, double or single fringed—and silk covers studded with gems, as well as silken sheets, wollen carpets, rugs for elephants, horses, or chariots, black antelope hides and woven rugs, and spreads of fine deer hide, with a canopy above and red cushions at both ends.” | T: a sofa, a divan, a long-haired coverlet, a coverlet of diverse colors, a white coverlet, a woolen coverlet with floral designs, a quilt of cotton wool, a woolen coverlet ornamented with animal figures, a woolen coverlet with double borders, a woolen coverlet with a single border, a silken sheet studded with gems, a sheet made with silk threads and studded with gems, a dancer’s rug, an elephant rug, a horse rug, a chariot rug, a rug of antelope hide, a spread made of the hide of the kadali-deer, a bed with a canopy above and red bolsters at both ends—Master Gotama surely gains them at will, without trouble or difficulty.”
+an3.63:4.1 | S: “Brahmin, these various kinds of high and luxurious bedding | T: “Brahmin, those high and luxurious kinds of bedding
+an3.63:4.2 | P: āsandi pallaṅko gonako cittako paṭikā paṭalikā tūlikā vikatikā uddalomī ekantalomī kaṭṭissaṁ koseyyaṁ kuttakaṁ hatthattharaṁ assattharaṁ rathattharaṁ ajinappaveṇī kadalimigapavarapaccattharaṇaṁ sauttaracchadaṁ ubhatolohitakūpadhānaṁ. | T: (none)
+an3.63:4.3 | S: are hard for renunciates to find. And even if they do get them, they’re not allowed. | T: are rarely obtained by those who have gone forth, and if they are obtained, they are not allowed.
+an3.63:5.1 | S: There are, brahmin, these three high and luxurious beds that I get these days when I want, without trouble or difficulty. | T: “But, brahmin, there are three kinds of high and luxurious beds that at present I gain at will, without trouble or difficulty.
+an3.63:5.2 | S: What three? | T: What three?
+an3.63:5.3 | S: The heavenly high and luxurious bed, the divine high and luxurious bed, and the noble high and luxurious bed. | T: The celestial high and luxurious bed, the divine high and luxurious bed, and the noble high and luxurious bed.
+an3.63:5.4 | S: These are the three high and luxurious beds that I get these days when I want, without trouble or difficulty.” | T: These are the three kinds of high and luxurious beds that at present I gain at will, without trouble or difficulty.”
+an3.63:6.1 | S: “But what, worthy Gotama, is the heavenly high and luxurious bed?” | T: (1) “But, Master Gotama, what is the celestial high and luxurious bed that at present you gain at will, without trouble or difficulty?”
+an3.63:6.2 | S: “Brahmin, when I am living supported by a village or town, I robe up in the morning and, taking my bowl and robe, enter the town or village for alms. | T: “Here, brahmin, when I am dwelling in dependence on a village or town, in the morning I dress, take my bowl and robe, and enter that village or town for alms.
+an3.63:6.3 | S: After the meal, on my return from almsround, I enter within a forest. | T: After the meal, when I have returned from the alms round, I enter a grove.
+an3.63:6.4 | S: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present. | T: I collect some grass or leaves that I find there into a pile and then sit down. Having folded my legs crosswise and straightened my body, I establish mindfulness in front of me.
+an3.63:6.5 | S: Quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Then, secluded from sensual pleasures, secluded from unwholesome states, I enter and dwell in the first jhāna, which consists of rapture and pleasure born of seclusion, accompanied by thought and examination.
+an3.63:6.6 | S: As the placing of the mind and keeping it connected are stilled, I enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the subsiding of thought and examination, I enter and dwell in the second jhāna, which has internal placidity and unification of mind and consists of rapture and pleasure born of concentration, without thought and examination.
+an3.63:6.7 | S: And with the fading away of rapture, I enter and remain in the third absorption, where I meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading away as well of rapture, I dwell equanimous and, mindful and clearly comprehending, I experience pleasure with the body; I enter and dwell in the third jhāna of which the noble ones declare: ‘He is equanimous, mindful, one who dwells happily.’
+an3.63:6.8 | S: With the giving up of pleasure and pain, and the disappearance of former happiness and sadness, I enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: With the abandoning of pleasure and pain, and with the previous passing away of joy and dejection, I enter and dwell in the fourth jhāna, neither painful nor pleasant, which has purification of mindfulness by equanimity.
+an3.63:6.9 | S: When I’m practicing like this, if I walk, at that time my walking is heavenly. | T: “Then, brahmin, when I am in such a state, if I walk back and forth, on that occasion my walking back and forth is celestial.
+an3.63:6.10 | S: When I’m practicing like this, if I stand, at that time my standing is heavenly. | T: If I am standing, on that occasion my standing is celestial.
+an3.63:6.11 | S: When I’m practicing like this, if I sit, at that time my sitting is heavenly. | T: If I am sitting, on that occasion my sitting is celestial.
+an3.63:6.12 | S: When I’m practicing like this, if I lie down, at that time my lying is heavenly. | T: If I lie down, on that occasion this is my celestial high and luxurious bed.
+an3.63:6.13 | S: This is the heavenly high and luxurious bed that I get these days when I want, without trouble or difficulty.” | T: This is that celestial high and luxurious bed that at present I can gain at will, without trouble or difficulty.”
+an3.63:7.1 | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It is astounding and amazing, Master Gotama!
+an3.63:7.2 | S: Who but the worthy Gotama could get such a heavenly high and luxurious bed when he wants, without trouble or difficulty? | T: Who else, apart from Master Gotama, can gain at will, without trouble or difficulty, such a celestial high and luxurious bed?
+an3.63:8.1 | S: But what, worthy Gotama, is the divine high and luxurious bed?” | T: (2) “But, Master Gotama, what is the divine high and luxurious bed that at present you gain at will, without trouble or difficulty?”
+an3.63:8.2 | S: “Brahmin, when I am living supported by a village or town, I robe up in the morning and, taking my bowl and robe, enter the town or village for alms. | T: “Here, brahmin, when I am dwelling in dependence on a village or town, in the morning I dress, take my bowl and robe, and enter that village or town for alms.
+an3.63:8.3 | S: After the meal, on my return from almsround, I enter within a forest. | T: After the meal, when I have returned from the alms round, I enter a grove.
+an3.63:8.4 | S: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present. | T: I collect some grass or leaves that I find there into a pile and then sit down. Having folded my legs crosswise and straightened my body, I establish mindfulness in front of me.
+an3.63:8.5 | S: I meditate spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, I spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: Then I dwell pervading one quarter with a mind imbued with loving-kindness, likewise the second quarter, the third quarter, and the fourth quarter. Thus above, below, across, and everywhere, and to all as to myself, I dwell pervading the entire world with a mind imbued with loving-kindness, vast, exalted, measureless, without enmity, without ill will.
+an3.63:8.6 | S: I meditate spreading a heart full of compassion to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, I spread a heart full of compassion to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: I dwell pervading one quarter with a mind imbued with compassion …
+an3.63:8.7 | S: I meditate spreading a heart full of rejoicing to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, I spread a heart full of rejoicing to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: with a mind imbued with altruistic joy …
+an3.63:8.8 | S: I meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, I spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: with a mind imbued with equanimity, likewise the second quarter, the third quarter, and the fourth quarter. Thus above, below, across, and everywhere, and to all as to myself, I dwell pervading the entire world with a mind imbued with equanimity, vast, exalted, measureless, without enmity, without ill will.
+an3.63:8.9 | S: When I’m practicing like this, if I walk, at that time my walking is divine. | T: “Then, brahmin, when I am in such a state, if I walk back and forth, on that occasion my walking back and forth is divine.
+an3.63:8.10 | S: … my standing is divine. | T: If I am standing, on that occasion my standing is divine.
+an3.63:8.11 | S: … my sitting is divine. | T: If I am sitting, on that occasion my sitting is divine.
+an3.63:8.12 | S: When I’m practicing like this, if I lie down, at that time my lying is divine. | T: If I lie down, on that occasion this is my divine high and luxurious bed.
+an3.63:8.13 | S: This is the divine high and luxurious bed that I get these days when I want, without trouble or difficulty.” | T: This is that divine high and luxurious bed that at present I can gain at will, without trouble or difficulty.”
+an3.63:9.1 | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It is astounding and amazing, Master Gotama!
+an3.63:9.2 | S: Who but the worthy Gotama could get such a divine high and luxurious bed when he wants, without trouble or difficulty? | T: Who else, apart from Master Gotama, can gain at will, without trouble or difficulty, such a high and luxurious bed?
+an3.63:10.1 | S: But what, worthy Gotama, is the noble high and luxurious bed?” | T: (3) “But, Master Gotama, what is the noble high and luxurious bed that at present you gain at will, without trouble or difficulty?”
+an3.63:10.2 | S: “Brahmin, when I am living supported by a village or town, I robe up in the morning and, taking my bowl and robe, enter the town or village for alms. | T: “Here, brahmin, when I am dwelling in dependence on a village or town, in the morning I dress, take my bowl and robe, and enter that village or town for alms.
+an3.63:10.3 | S: After the meal, on my return from almsround, I enter within a forest. | T: After the meal, when I have returned from the alms round, I enter a grove.
+an3.63:10.4 | S: I gather up some grass or leaves into a pile and sit down cross-legged, setting my body straight, and bringing mindfulness to the present. | T: I collect some grass or leaves that I find there into a pile and then sit down. Having folded my legs crosswise and straightened my body, I establish mindfulness in front of me.
+an3.63:10.5 | S: I know this: | T: Then I understand thus:
+an3.63:10.6 | S: ‘I’ve given up greed, hate, and delusion, cut them off at the root, made them like a palm stump, obliterated them, so they’re unable to arise in the future.’ | T: ‘I have abandoned greed, cut it off at the root, made it like a palm stump, obliterated it so that it is no more subject to future arising.
+an3.63:10.7 | P: doso me pahīno ucchinnamūlo tālāvatthukato anabhāvaṅkato āyatiṁ anuppādadhammo; | T: I have abandoned hatred, cut it off at the root, made it like a palm stump, obliterated it so that it is no more subject to future arising.
+an3.63:10.8 | P: moho me pahīno ucchinnamūlo tālāvatthukato anabhāvaṅkato āyatiṁ anuppādadhammo’. | T: I have abandoned delusion, cut it off at the root, made it like a palm stump, obliterated it so that it is no more subject to future arising.’
+an3.63:10.9 | S: When I’m practicing like this, if I walk, at that time my walking is noble. | T: “Then, brahmin, when I am in such a state, if I walk back and forth, on that occasion my walking back and forth is noble.
+an3.63:10.10 | S: … my standing is noble. | T: If I am standing, on that occasion my standing is noble.
+an3.63:10.11 | S: … my sitting is noble. | T: If I am sitting, on that occasion my sitting is noble.
+an3.63:10.12 | S: When I’m practicing like this, if I lie down, at that time my lying is noble. | T: If I lie down, on that occasion this is my noble high and luxurious bed.
+an3.63:10.13 | S: This is the noble high and luxurious bed that I get these days when I want, without trouble or difficulty.” | T: This is that noble high and luxurious bed that at present I can gain at will, without trouble or difficulty.”
+an3.63:11.1 | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It is astounding and amazing, Master Gotama!
+an3.63:11.2 | S: Who but the worthy Gotama could get such a noble high and luxurious bed when he wants, without trouble or difficulty? | T: Who else, apart from Master Gotama, can gain at will, without trouble or difficulty, such a noble high and luxurious bed?
+an3.63:12.1 | S: Excellent, worthy Gotama! Excellent! | T: “Excellent, Master Gotama! Excellent, Master Gotama!
+an3.63:12.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. | T: Master Gotama has made the Dhamma clear in many ways, as though he were turning upright what had been overthrown, revealing what was hidden, showing the way to one who was lost, or holding up a lamp in the darkness so those with good eyesight can see forms.
+an3.63:12.3 | S: We go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: We now go for refuge to Master Gotama, to the Dhamma, and to the Saṅgha of bhikkhus.
+an3.63:12.4 | S: From this day forth, may the worthy Gotama remember us as lay followers who have gone for refuge for life.” | T: Let Master Gotama consider us lay followers who from today have gone for refuge for life.”
+an3.63:12.5 | P: Tatiyaṁ. | T: (none)
+
+## an3.6
+an3.6:1.1 | S: “A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.6:1.2 | S: What three? | T: What three?
+an3.6:1.3 | S: Unskillful deeds by way of body, speech, and mind. | T: Unwholesome bodily action, unwholesome verbal action, and unwholesome mental action.
+an3.6:1.4 | S: These are the three things by which a fool is known. | T: One who possesses these three qualities should be known as a fool.
+an3.6:2.1 | S: An astute person is known by three things. | T: “One who possesses three qualities should be known as a wise person.
+an3.6:2.2 | S: What three? | T: What three?
+an3.6:2.3 | S: Skillful deeds by way of body, speech, and mind. | T: Wholesome bodily action, wholesome verbal action, and wholesome mental action.
+an3.6:2.4 | S: These are the three things by which an astute person is known. | T: One who possesses these three qualities should be known as a wise person.
+an3.6:2.5 | S: So you should train …” | T: “Therefore … It is in this way that you should train yourselves.”
+an3.6:2.6 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.7
+an3.7:1.1 | S: “A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.7:1.2 | S: What three? | T: What three?
+an3.7:1.3 | S: Blameworthy deeds by way of body, speech, and mind. … An astute person is known by blameless deeds by way of body, speech, and mind. …” | T: Blameworthy bodily action, blameworthy verbal action, and blameworthy mental action. One who possesses these three qualities should be known as a fool. “One who possesses three qualities should be known as a wise person. What three? Blameless bodily action, blameless verbal action, and blameless mental action. One who possesses these three qualities should be known as a wise person. “Therefore … It is in this way that you should train yourselves.”
+an3.7:1.4 | P: Sattamaṁ. | T: (none)
+
+## an3.8
+an3.8:1.1 | S: “A fool is known by three things. | T: “Bhikkhus, one who possesses three qualities should be known as a fool.
+an3.8:1.2 | S: What three? | T: What three?
+an3.8:1.3 | S: Hurtful deeds by way of body, speech, and mind. … An astute person is known by kind deeds by way of body, speech, and mind. | T: Afflictive bodily action, afflictive verbal action, and afflictive mental action. One who possesses these three qualities should be known as a fool. “One who possesses three qualities should be known as a wise person. What three? Unafflictive bodily action, unafflictive verbal action, and unafflictive mental action.
+an3.8:1.4 | S: These are the three things by which an astute person is known. | T: One who possesses these three qualities should be known as a wise person.
+an3.8:2.1 | S: So you should train like this: | T: “Therefore, bhikkhus, you should train yourselves thus:
+an3.8:2.2 | S: ‘We will shun the three qualities by which a fool is known, and we will proceed having undertaken the three qualities by which an astute person is known.’ | T: ‘We will avoid the three qualities possessing which one is known as a fool, and we will undertake and observe the three qualities possessing which one is known as a wise person.’
+an3.8:2.3 | S: That’s how you should train.” | T: It is in this way that you should train yourselves.”
+an3.8:2.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.9
+an3.9:1.1 | S: “When a foolish, incompetent, untrue person has three qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: “Bhikkhus, possessing three qualities, the foolish, incompetent, bad person maintains himself in a maimed and injured condition; he is blameworthy and subject to reproach by the wise; and he generates much demerit.
+an3.9:1.2 | S: What three? | T: What three?
+an3.9:1.3 | S: Bad conduct by way of body, speech, and mind. | T: Bodily misconduct, verbal misconduct, and mental misconduct.
+an3.9:1.4 | S: When a foolish, incompetent untrue person possesses these three qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: Possessing these three qualities, the foolish, incompetent, bad person maintains himself in a maimed and injured condition; he is blameworthy and subject to reproach by the wise; and he generates much demerit.
+an3.9:2.1 | S: When an astute, competent true person has three qualities they keep themselves healthy and whole. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit. | T: “Bhikkhus, possessing three qualities, the wise, competent, good person preserves himself unmaimed and uninjured; he is blameless and beyond reproach by the wise; and he generates much merit.
+an3.9:2.2 | S: What three? | T: What three?
+an3.9:2.3 | S: Good conduct by way of body, speech, and mind. | T: Bodily good conduct, verbal good conduct, and mental good conduct.
+an3.9:2.4 | S: When an astute, competent true person possesses these three qualities they keep themselves healthy and whole. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit.” | T: Possessing these three qualities, the wise, competent, good person preserves himself unmaimed and uninjured; he is blameless and beyond reproach by the wise; and he generates much merit.”
+an3.9:2.5 | P: Navamaṁ. | T: (none)
+
+## an4.10
+an4.10:1.1 | S: “Mendicants, there are these four yokes. | T: “Bhikkhus, there are these four bonds.
+an4.10:1.2 | S: What four? | T: What four?
+an4.10:1.3 | S: The yokes of sensual pleasures, future lives, views, and ignorance. | T: The bond of sensuality, the bond of existence, the bond of views, and the bond of ignorance.
+an4.10:1.4 | S: And what is the yoke of sensual pleasures? | T: (1) “And what, bhikkhus, is the bond of sensuality?
+an4.10:1.5 | S: It’s when you don’t truly understand sensual pleasures’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to sensual pleasures.
+an4.10:1.6 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for sensual pleasures linger on inside. | T: When one does not understand these things as they really are, then sensual lust, sensual delight, sensual affection, sensual infatuation, sensual thirst, sensual passion, sensual attachment, and sensual craving lie deep within one in regard to sensual pleasures.
+an4.10:1.7 | S: This is called the yoke of sensual pleasures. | T: This is called the bond of sensuality.
+an4.10:1.8 | S: Such is the yoke of sensual pleasures. | T: (2) “Such is the bond of sensuality.
+an4.10:2.1 | S: And what is the yoke of future lives? | T: And how is there the bond of existence?
+an4.10:2.2 | S: It’s when you don’t truly understand future lives’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to states of existence.
+an4.10:2.3 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for continued existence linger on inside. | T: When one does not understand these things as they really are, then lust for existence, delight in existence, affection for existence, infatuation with existence, thirst for existence, passion for existence, attachment to existence, and craving for existence lie deep within one in regard to states of existence.
+an4.10:2.4 | S: This is called the yoke of future lives. | T: This is called the bond of existence.
+an4.10:2.5 | S: Such are the yokes of sensual pleasures and future lives. | T: (3)“Such are the bond of sensuality and the bond of existence.
+an4.10:3.1 | S: And what is the yoke of views? | T: And how is there the bond of views?
+an4.10:3.2 | S: It’s when you don’t truly understand views’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to views.
+an4.10:3.3 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for views linger on inside. | T: When one does not understand these things as they really are, then lust for views, delight in views, affection for views, infatuation with views, thirst for views, passion for views, attachment to views, and craving for views lie deep within one in regard to views.
+an4.10:3.4 | S: This is called the yoke of views. | T: This is called the bond of views.
+an4.10:3.5 | S: Such are the yokes of sensual pleasures, future lives, and views. | T: (4) “Such are the bond of sensuality, the bond of existence, and the bond of views.
+an4.10:4.1 | S: And what is the yoke of ignorance? | T: And how is there the bond of ignorance?
+an4.10:4.2 | S: It’s when you don’t truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape, | T: Here, someone does not understand as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to the six bases for contact.
+an4.10:4.3 | S: so ignorance and unknowing of the six fields of contact linger on inside. | T: When one does not understand these things as they really are, then, ignorance and unknowing lie deep within one in regard to the six bases for contact.
+an4.10:4.4 | S: This is called the yoke of ignorance. | T: This is called the bond of ignorance.
+an4.10:4.5 | S: Such are the yokes of sensual pleasures, future lives, views, and ignorance. | T: Such are the bond of sensuality, the bond of existence, the bond of views, and the bond of ignorance.
+an4.10:4.6 | S: These are bad, unskillful qualities that are corrupting, leading to future lives, hurtful, resulting in suffering and future rebirth, old age, and death. That’s why someone yoked to them is called: ‘one who has not found sanctuary from the yoke’. | T: “One is fettered by bad unwholesome states that are defiling, conducive to renewed existence, troublesome, ripening in suffering, leading to future birth, old age, and death; therefore one is said to be ‘not secure from bondage.’
+an4.10:4.7 | S: These are the four yokes. | T: These are the four bonds.
+an4.10:5.1 | S: There are these four kinds of unyoking. | T: “There are, bhikkhus, these four severances of bonds.
+an4.10:5.2 | S: What four? | T: What four?
+an4.10:5.3 | S: Unyoking from sensual pleasures, future lives, views, and ignorance. | T: The severance of the bond of sensuality, the severance of the bond of existence, the severance of the bond of views, and the severance of the bond of ignorance.
+an4.10:5.4 | S: And what is unyoking from sensual pleasures? | T: (1) “And what, bhikkhus, is the severance of the bond of sensuality?
+an4.10:5.5 | S: It’s when you truly understand sensual pleasures’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to sensual pleasures.
+an4.10:5.6 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for sensual pleasures don’t linger on inside. | T: When one understands these things as they really are, then sensual lust, sensual delight, sensual affection, sensual infatuation, sensual thirst, sensual passion, sensual attachment, and sensual craving do not lie within one in regard to sensual pleasures.
+an4.10:5.7 | S: This is called unyoking from sensual pleasures. | T: This is called the severance of the bond of sensuality.
+an4.10:5.8 | S: Such is unyoking from sensual pleasures. | T: (2) “Such is the severance of the bond of sensuality.
+an4.10:6.1 | S: And what is unyoking from future lives? | T: And how is there the severance of the bond of existence?
+an4.10:6.2 | S: It’s when you truly understand future lives’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to states of existence.
+an4.10:6.3 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for continued existence don’t linger on inside. | T: When one understands these things as they really are, then lust for existence, delight in existence, affection for existence, infatuation with existence, thirst for existence, passion for existence, attachment to existence, and craving for existence do not lie within one in regard to states of existence.
+an4.10:6.4 | S: This is called unyoking from future lives. | T: This is called the severance of the bond of existence.
+an4.10:6.5 | S: Such is unyoking from sensual pleasures and future lives. | T: (3) “Such are the severance of the bond of sensuality and the severance of the bond of existence.
+an4.10:7.1 | S: And what is unyoking from views? | T: And how is there the severance of the bond of views?
+an4.10:7.2 | S: It’s when you truly understand views’ origin, disappearance, gratification, drawback, and escape. | T: Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to views.
+an4.10:7.3 | S: So greed, relishing, affection, infatuation, thirst, passion, attachment, and craving for views don’t linger on inside. | T: When one understands these things as they really are, then lust for views, delight in views, affection for views, infatuation with views, thirst for views, passion for views, attachment to views, and craving for views do not lie within one in regard to views.
+an4.10:7.4 | S: This is called unyoking from views. | T: This is called the severance of the bond of views.
+an4.10:7.5 | S: Such is unyoking from sensual pleasures, future lives, and views. | T: (4) “Such are the severance of the bond of sensuality, the severance of the bond of existence, and the severance of the bond of views.
+an4.10:8.1 | S: And what is unyoking from ignorance? | T: And how is there the severance of the bond of ignorance?
+an4.10:8.2 | S: It’s when you truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape, | T: Here, someone understands as they really are the origin and the passing away, the gratification, the danger, and the escape in regard to the six bases for contact.
+an4.10:8.3 | S: so ignorance and unknowing of the six fields of contact don’t linger on inside. | T: When one understands these things as they really are, then ignorance and unknowing do not lie within one in regard to the six bases for contact.
+an4.10:8.4 | S: This is called unyoking from ignorance. | T: This is called the severance of the bond of ignorance.
+an4.10:8.5 | S: Such is unyoking from sensual pleasures, future lives, views, and ignorance. | T: Such are the severance of the bond of sensuality, the severance of the bond of existence, the severance of the bond of views, and the severance of the bond of ignorance.
+an4.10:8.6 | S: These are bad, unskillful qualities that are corrupting, leading to future lives, hurtful, resulting in suffering and future rebirth, old age, and death. That’s why someone unyoked from them is called: ‘one who has found sanctuary from the yoke’. | T: “One is detached from bad unwholesome states that are defiling, conducive to renewed existence, troublesome, ripening in suffering, leading to future birth, old age, and death; therefore one is said to be ‘secure from bondage.’
+an4.10:8.7 | S: These are the four kinds of unyoking. | T: These are the four severances of bonds.”
+an4.10:9.1 | S: Yoked to both sensual pleasures | T: Fettered by the bond of sensuality
+an4.10:9.2 | S: and the desire to be reborn in a future life; | T: and the bond of existence,
+an4.10:9.3 | S: yoked also to views, | T: fettered by the bond of views,
+an4.10:9.4 | S: and governed by ignorance, | T: preceded by ignorance,
+an4.10:10.1 | S: sentient beings continue to transmigrate, | T: beings go on in saṁsāra,
+an4.10:10.2 | S: with ongoing birth and death. | T: led on in birth and death.
+an4.10:10.3 | S: But those who fully understand sensual pleasures, | T: But having entirely understood sense pleasures
+an4.10:10.4 | S: and the yoke to all future lives; | T: and the bond of existence,
+an4.10:11.1 | S: with the yoke of views eradicated, | T: having uprooted the bond of views
+an4.10:11.2 | S: and ignorance dispelled, | T: and dissolved ignorance,
+an4.10:11.3 | S: unyoked from all yokes, | T: the sages have severed all bonds;
+an4.10:11.4 | S: truly those sages have slipped their yoke.” | T: they have gone beyond bondage.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.10:11.5 | P: Dasamaṁ. | T: (none)
+an4.10:11.6 | P: Bhaṇḍagāmavaggo paṭhamo. | T: (none)
+an4.10:12.0 | P: Tassuddānaṁ | T: (none)
+an4.10:12.1 | P: Anubuddhaṁ papatitaṁ dve, | T: (none)
+an4.10:12.2 | P: Khatā anusotapañcamaṁ; | T: (none)
+an4.10:12.3 | P: Appassuto ca sobhanaṁ, | T: (none)
+an4.10:12.4 | P: Vesārajjaṁ taṇhāyogena te dasāti. | T: (none)
+
+## an4.11
+an4.11:1.1 | S: “Mendicants, suppose a mendicant has a sensual, malicious, or cruel thought while walking. | T: (1) “Bhikkhus, if a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while walking,
+an4.11:1.2 | S: They tolerate it and don’t give it up, dispel it, eliminate it, and obliterate it. | T: and he tolerates it, does not abandon it, dispel it, terminate it, and obliterate it,
+an4.11:1.3 | S: Such a mendicant is said to be ‘not keen or prudent, always lazy, and lacking energy’ when walking. | T: then that bhikkhu is said to be devoid of ardor and moral dread; he is constantly and continuously lazy and lacking in energy while walking.
+an4.11:2.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … | T: (2) “If a sensual thought … arises in a bhikkhu while standing …
+an4.11:2.2 | P: Tañce bhikkhu adhivāseti, nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti, | T: (none)
+an4.11:2.3 | P: ṭhitopi, bhikkhave, bhikkhu evaṁbhūto ‘anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyo’ti vuccati. | T: (none)
+an4.11:3.1 | S: sitting … | T: (3) If a sensual thought … arises in a bhikkhu while sitting …
+an4.11:3.2 | P: Tañce bhikkhu adhivāseti, nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti, | T: (none)
+an4.11:3.3 | P: nisinnopi, bhikkhave, bhikkhu evaṁbhūto ‘anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyo’ti vuccati. | T: (none)
+an4.11:4.1 | S: or when lying down while awake. | T: (4) If a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while wakefully lying down,
+an4.11:4.2 | S: They tolerate it and don’t give it up, dispel it, eliminate it, and obliterate it. | T: and he tolerates it, does not abandon it, dispel it, terminate it, and obliterate it,
+an4.11:4.3 | S: Such a mendicant is said to be ‘not keen or prudent, always lazy, and lacking energy’ when lying down while awake. | T: then that bhikkhu is said to be devoid of ardor and moral dread; he is constantly and continuously lazy and lacking in energy while wakefully lying down.
+an4.11:5.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while walking. | T: (1) “But, bhikkhus, if a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while walking,
+an4.11:5.2 | S: They don’t tolerate it, but give it up, dispel it, eliminate it, and obliterate it. | T: and he does not tolerate it but abandons it, dispels it, terminates it, and obliterates it,
+an4.11:5.3 | S: Such a mendicant is said to be ‘keen and prudent, always energetic and resolute’ when walking. | T: then that bhikkhu is said to be ardent and to dread wrongdoing; he is constantly and continuously energetic and resolute while walking.
+an4.11:6.1 | S: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … | T: (2) “If a sensual thought … arises in a bhikkhu while standing …
+an4.11:6.2 | P: Tañce bhikkhu nādhivāseti, pajahati vinodeti byantīkaroti anabhāvaṁ gameti; | T: (none)
+an4.11:6.3 | P: ṭhitopi, bhikkhave, bhikkhu evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccati. | T: (none)
+an4.11:7.1 | S: sitting … | T: (3) If a sensual thought … arises in a bhikkhu while sitting …
+an4.11:7.2 | P: Tañce bhikkhu nādhivāseti, pajahati vinodeti byantīkaroti anabhāvaṁ gameti; | T: (none)
+an4.11:7.3 | P: nisinnopi, bhikkhave, bhikkhu evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccati. | T: (none)
+an4.11:8.1 | S: or when lying down while awake. | T: (4) If a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while wakefully lying down,
+an4.11:8.2 | S: They don’t tolerate it, but give it up, dispel it, eliminate it, and obliterate it. | T: and he does not tolerate it but abandons it, dispels it, terminates it, and obliterates it,
+an4.11:8.3 | S: Such a mendicant is said to be ‘keen and prudent, always energetic and resolute’ when lying down while awake. | T: then that bhikkhu is said to be ardent and to dread wrongdoing; he is constantly and continuously energetic and resolute while walking.”
+an4.11:9.1 | S: Whether walking or standing, | T: Whether walking or standing,
+an4.11:9.2 | S: sitting or lying down, | T: sitting or lying down,
+an4.11:9.3 | S: if you think a bad thought | T: one who thinks bad thoughts
+an4.11:9.4 | S: to do with the domestic life, | T: connected with the household life
+an4.11:10.1 | S: you’re on the wrong path, | T: has entered upon a dire path,
+an4.11:10.2 | S: lost among things that delude. | T: infatuated by delusive things:
+an4.11:10.3 | S: Such a mendicant is incapable | T: such a bhikkhu cannot reach
+an4.11:10.4 | S: of experiencing the highest awakening. | T: the highest enlightenment.
+an4.11:11.1 | S: But one who, whether standing or walking, | T: But one who, whether walking, standing,
+an4.11:11.2 | S: sitting or lying down, | T: sitting, or lying down,
+an4.11:11.3 | S: has calmed their thoughts, | T: has calmed his thoughts
+an4.11:11.4 | S: loving peace of mind; | T: and delights in the stilling of thought:
+an4.11:11.5 | S: such a mendicant is capable | T: a bhikkhu such as this can reach
+an4.11:11.6 | S: of experiencing the highest awakening.” | T: the highest enlightenment.
+an4.11:11.7 | P: Paṭhamaṁ. | T: (none)
+
+## an4.13
+an4.13:1.1 | S: “Mendicants, there are these four right efforts. | T: “Bhikkhus, there are these four right strivings.
+an4.13:1.2 | S: What four? | T: What four?
+an4.13:1.3 | S: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. | T: (1) Here, a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states; he makes an effort, arouses energy, applies his mind, and strives.
+an4.13:1.4 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities that have arisen are given up. | T: (2) He generates desire for the abandoning of arisen bad unwholesome states; he makes an effort, arouses energy, applies his mind, and strives.
+an4.13:1.5 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities arise. | T: (3) He generates desire for the arising of unarisen wholesome states; he makes an effort, arouses energy, applies his mind, and strives.
+an4.13:1.6 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. | T: (4) He generates desire for the persistence of arisen wholesome states, for their non-decline, increase, expansion, and fulfillment by development; he makes an effort, arouses energy, applies his mind, and strives.
+an4.13:1.7 | S: These are the four right efforts. | T: These are the four right strivings.”
+an4.13:2.1 | S: By rightly striving, <j>they’ve crushed Māra’s sovereignty; | T: Those who strive rightly overcome the realm of Māra;
+an4.13:2.2 | S: unattached, they’ve gone beyond  <j>the peril of birth and death. | T: they are unattached, gone beyond fear of birth and death.
+an4.13:2.3 | S: Contented and unstirred, they’ve vanquished Māra with his legions; | T: They are contented and unstirred, having conquered Māra and his mount;
+an4.13:2.4 | S: now they’ve gone beyond all Namuci’s forces, <j>they’re happy.” | T: those happy ones have overcome all Namuci’s armies.
+an4.13:2.5 | P: Tatiyaṁ. | T: (none)
+
+## an4.14
+an4.14:1.1 | S: “Mendicants, there are these four efforts. | T: “Bhikkhus, there are these four strivings.
+an4.14:1.2 | S: What four? | T: What four?
+an4.14:1.3 | S: The efforts to restrain, to give up, to develop, and to preserve. | T: Striving by restraint, striving by abandonment, striving by development, and striving by protection.
+an4.14:1.4 | S: And what, mendicants, is the effort to restrain? | T: (1) “And what, bhikkhus, is striving by restraint?
+an4.14:1.5 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: Here, having seen a form with the eye, a bhikkhu does not grasp its marks and features.
+an4.14:1.6 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: Since, if he left the eye faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it, he guards the eye faculty, he undertakes the restraint of the eye faculty.
+an4.14:1.7 | S: When they hear a sound with their ears … | T: Having heard a sound with the ear …
+an4.14:1.8 | S: When they smell an odor with their nose … | T: Having smelled an odor with the nose …
+an4.14:1.9 | S: When they taste a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an4.14:1.10 | S: When they feel a touch with their body … | T: Having felt a tactile object with the body …
+an4.14:1.11 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: Having cognized a mental phenomenon with the mind, a bhikkhu does not grasp its marks and features.
+an4.14:1.12 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: Since, if he left the mind faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it, he guards the mind faculty, he undertakes the restraint of the mind faculty.
+an4.14:1.13 | S: This is called the effort to restrain. | T: This is called striving by restraint.
+an4.14:2.1 | S: And what, mendicants, is the effort to give up? | T: (2) “And what is striving by abandonment?
+an4.14:2.2 | S: It’s when a mendicant doesn’t tolerate a sensual, | T: Here, a bhikkhu does not tolerate an arisen sensual thought; he abandons it, dispels it, terminates it, and obliterates it.
+an4.14:2.3 | S: malicious, | T: He does not tolerate an arisen thought of ill will …
+an4.14:2.4 | S: or cruel thought that’s arisen, but gives it up, dispels it, eliminates it, and obliterates it. | T: an arisen thought of harming …
+an4.14:2.5 | S: They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, eliminate them, and obliterate them. | T: bad unwholesome states whenever they arise; he abandons them, dispels them, terminates them, and obliterates them.
+an4.14:2.6 | S: This is called the effort to give up. | T: This is called striving by abandonment.
+an4.14:3.1 | S: And what, mendicants, is the effort to develop? | T: (3) “And what is striving by development?
+an4.14:3.2 | S: It’s when a mendicant develops the awakening factors of mindfulness, | T: Here, a bhikkhu develops the enlightenment factor of mindfulness, which is based upon seclusion, dispassion, and cessation, maturing in release.
+an4.14:3.3 | S: investigation of principles, | T: He develops the enlightenment factor of discrimination of phenomena …
+an4.14:3.4 | S: energy, | T: the enlightenment factor of energy …
+an4.14:3.5 | S: rapture, | T: the enlightenment factor of rapture …
+an4.14:3.6 | S: tranquility, | T: the enlightenment factor of tranquility …
+an4.14:3.7 | S: immersion, | T: the enlightenment factor of concentration …
+an4.14:3.8 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: the enlightenment factor of equanimity, which is based upon seclusion, dispassion, and cessation, maturing in release.
+an4.14:3.9 | S: This is called the effort to develop. | T: This is called striving by development.
+an4.14:4.1 | S: And what, mendicants, is the effort to preserve? | T: (4) “And what is striving by protection?
+an4.14:4.2 | S: It’s when a mendicant preserves a meditation subject that’s a fine basis of immersion: the perception of a skeleton, a worm-infested corpse, a livid corpse, a split open corpse, or a bloated corpse. | T: Here, a bhikkhu protects an arisen excellent object of concentration: the perception of a skeleton, the perception of a worm-infested corpse, the perception of a livid corpse, the perception of a festering corpse, the perception of a fissured corpse, the perception of a bloated corpse.
+an4.14:4.3 | S: This is called the effort to preserve. | T: This is called striving by protection.
+an4.14:4.4 | S: These are the four efforts. | T: “These, bhikkhus, are the four kinds of striving.”
+an4.14:5.1 | S: Restraint and giving up, | T: Restraint and abandonment,
+an4.14:5.2 | S: development and preservation: | T: development and protection:
+an4.14:5.3 | S: these are the four efforts | T: these four strivings
+an4.14:5.4 | S: taught by the Kinsman of the Sun. | T: were taught by the Kinsman of the Sun.
+an4.14:5.5 | S: Any mendicant who keenly applies these | T: By these means an ardent bhikkhu here
+an4.14:5.6 | S: may attain the ending of suffering.” | T: can attain the destruction of suffering.
+an4.14:5.7 | P: Catutthaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-057.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+19,327
+0 lines reported.

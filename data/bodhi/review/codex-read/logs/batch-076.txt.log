@@ -1,0 +1,354 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8c-d716-71b3-8abe-97eebaad4ef6
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.228
+sn35.228:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “Bhikkhus, the uninstructed worldling speaks of ‘the ocean, the ocean.’
+sn35.228:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that is not the ocean in the Noble One’s Discipline;
+sn35.228:1.3 | S: That’s just a large body of water, a large sea of water. | T: that is only a great mass of water, a great expanse of water.
+sn35.228:1.4 | S: For a person, the eye is an ocean, | T: “The eye, bhikkhus, is the ocean for a person;
+sn35.228:1.5 | S: and its currents are made of sights. | T: its current consists of forms.
+sn35.228:2.1 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the eye, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: One who withstands that current consisting of forms is said to have crossed the ocean of the eye with its waves, whirlpools, sharks, and demons.
+sn35.228:2.2 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground. | T: Crossed over, gone beyond, the brahmin stands on high ground.
+sn35.228:2.3 | S: For a person, the ear … nose … tongue … body … | T: “The ear, bhikkhus, is the ocean for a person….
+sn35.228:2.4 | P: tassa rasamayo vego. | T: (none)
+sn35.228:2.5 | P: Yo taṁ rasamayaṁ vegaṁ sahati, ayaṁ vuccati, bhikkhave, atari jivhāsamuddaṁ saūmiṁ sāvaṭṭaṁ sagāhaṁ sarakkhasaṁ; | T: (none)
+sn35.228:2.6 | P: tiṇṇo pāraṅgato thale tiṭṭhati brāhmaṇo …pe… | T: (none)
+sn35.228:2.7 | S: mind is an ocean, | T: The mind is the ocean for a person;
+sn35.228:2.8 | S: and its currents are made of ideas. | T: its current consists of mental phenomena.
+sn35.228:2.9 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the mind, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: One who withstands that current consisting of mental phenomena is said to have crossed the ocean of the mind with its waves, whirlpools, sharks, and demons.
+sn35.228:2.10 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground.” | T: Crossed over, gone beyond, the brahmin stands on high ground.”
+sn35.228:2.11 | S: That is what the Buddha said. | T: This is what the Blessed One said. Having said this,
+sn35.228:2.12 | S: Then the Holy One, the Teacher, went on to say: | T: the Fortunate One, the Teacher, further said this:
+sn35.228:3.1 | S: “A knowledge master who’s crossed <j>the ocean so hard to cross, | T: “One who has crossed this ocean so hard to cross,
+sn35.228:3.2 | S: with its saltwater crocodiles and monsters, <j>its waves, whirlpools, and dangers; | T: With its dangers of sharks, demons, waves,
+sn35.228:3.3 | S: they’ve completed the spiritual journey and gone to the end of the world, | T: The knowledge-master who has lived the holy life, Reached the world’s end,
+sn35.228:3.4 | S: they’re called ‘one who has gone beyond’.” | T: is called one gone beyond.”
+sn35.228:3.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.234
+sn35.234:1.1 | S: At one time the venerables Ānanda and Udāyī were staying near Kosambī in Ghosita’s monastery. | T: On one occasion the Venerable Ānanda and the Venerable Udayī were dwelling at Kosambī in Ghosita’s Park.
+sn35.234:1.2 | S: Then in the late afternoon, Venerable Udāyī came out of retreat, went to Venerable Ānanda, and exchanged greetings with him. | T: Then, in the evening, the Venerable Udayī emerged from seclusion and approached the Venerable Ānanda. He exchanged greetings with the Venerable Ānanda and,
+sn35.234:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Ānanda: | T: when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn35.234:2.1 | S: “Reverend Ānanda, the Buddha has explained, opened, and revealed in many ways how this body is not-self. | T: “Friend Ānanda, in many ways the nature of this body has been declared, disclosed, and revealed by the Blessed One thus: ‘For such a reason this body is nonself.’
+sn35.234:2.2 | S: Is it possible to explain consciousness in the same way? To teach, assert, establish, clarify, analyze, and reveal how consciousness is not-self?” | T: Is it possible to explain the nature of this consciousness in a similar way—to teach, proclaim, establish, disclose, analyse, and elucidate it thus: ‘For such a reason this consciousness is nonself’?”
+sn35.234:3.1 | P: “Yatheva kho, āvuso udāyī, ayaṁ kāyo bhagavatā anekapariyāyena akkhāto vivaṭo pakāsito: | T: (none)
+sn35.234:3.2 | S: “It is possible, Reverend Udāyī. | T: “It is possible, friend Udayī.
+sn35.234:4.1 | S: Does eye consciousness arise dependent on the eye and sights?” | T: Doesn’t eye-consciousness arise in dependence on the eye and forms?”
+sn35.234:4.2 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn35.234:4.3 | S: “If the cause and reason that gives rise to eye consciousness were to totally and utterly cease without remainder, would eye consciousness still be found?” | T: “If the cause and condition for the arising of eye-consciousness would cease completely and totally without remainder, could eye-consciousness be discerned?”
+sn35.234:4.4 | S: “No, reverend.” | T: “No, friend.”
+sn35.234:4.5 | S: “In this way, too, it can be understood how consciousness is not-self. | T: “In this way, friend, this has been declared, disclosed, and revealed by the Blessed One thus: ‘For such a reason this consciousness is nonself.’
+sn35.234:5.1 | S: Does ear … nose … tongue … body … | T: “Doesn’t ear-consciousness arise in dependence on the ear and sounds?…
+sn35.234:5.2 | P: “Evamāvuso”ti. | T: (none)
+sn35.234:5.3 | P: “Yo cāvuso, hetu yo ca paccayo jivhāviññāṇassa uppādāya, so ca hetu, so ca paccayo sabbena sabbaṁ sabbathā sabbaṁ aparisesaṁ nirujjheyya, api nu kho jivhāviññāṇaṁ paññāyethā”ti? | T: (none)
+sn35.234:5.4 | P: “No hetaṁ, āvuso”. | T: (none)
+sn35.234:5.5 | P: “Imināpi kho etaṁ, āvuso, pariyāyena bhagavatā akkhātaṁ vivaṭaṁ pakāsitaṁ: ‘itipidaṁ viññāṇaṁ anattā’”ti …pe…. | T: (none)
+sn35.234:6.1 | S: mind consciousness arise dependent on the mind and ideas?” | T: Doesn’t mind-consciousness arise in dependence on the mind and mental phenomena?”
+sn35.234:6.2 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn35.234:6.3 | S: “If the cause and reason that gives rise to mind consciousness were to totally and utterly cease without remainder, would mind consciousness still be found?” | T: “If the cause and condition for the arising of mind-consciousness would cease completely and totally without remainder, could mind-consciousness be discerned?”
+sn35.234:6.4 | S: “No, reverend.” | T: “No, friend.”
+sn35.234:6.5 | S: “In this way, too, it can be understood how consciousness is not-self. | T: “In this way too, friend, this has been declared, disclosed, and revealed by the Blessed One thus: ‘For such a reason this consciousness is nonself.’
+sn35.234:7.1 | S: Suppose there was a person in need of heartwood. Wandering in search of heartwood, they’d take a sharp axe and enter a forest. There they’d see a big banana trunk, straight and young and grown unskewed. They’d cut it down at the base, cut off the root, cut off the top, and unroll the coiled sheaths. But they wouldn’t even find sapwood, much less heartwood. | T: “Suppose, friend, a man needing heartwood, seeking heartwood, wandering in search of heartwood, would take a sharp axe and enter a forest. There he would see the trunk of a large plantain tree, straight, fresh, without a fruit-bud core. He would cut it down at the root, cut off the crown, and unroll the coil. As he unrolls the coil, he would not find even softwood, let alone heartwood.
+sn35.234:7.2 | S: In the same way, a mendicant sees these six fields of contact as neither self nor belonging to self. | T: “So too, a bhikkhu does not recognize either a self or anything belonging to a self in these six bases for contact.
+sn35.234:7.3 | S: So seeing, they don’t grasp anything in the world. | T: Since he does not recognize anything thus, he does not cling to anything in the world.
+sn35.234:7.4 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Being unagitated, he personally attains Nibbāna.
+sn35.234:7.5 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn35.234:7.6 | P: Sattamaṁ. | T: (none)
+
+## sn35.235
+sn35.235:1.1 | S: “Mendicants, I will teach you an exposition of the teaching on burning. | T: “Bhikkhus, I will teach you a Dhamma exposition on the theme of burning.
+sn35.235:1.2 | S: Listen … | T: Listen to that….
+sn35.235:1.3 | S: And what is the exposition of the teaching on burning? | T: “And what, bhikkhus, is the Dhamma exposition on the theme of burning?
+sn35.235:1.4 | S: You’d be better off mutilating your eye faculty with a red-hot iron nail, burning, blazing, and glowing, than getting caught up in the features by way of the details in sights known by the eye. | T: It would be better, bhikkhus, for the eye faculty to be lacerated by a red-hot iron pin burning, blazing, and glowing, than for one to grasp the sign through the features in a form cognizable by the eye.
+sn35.235:1.5 | S: Should consciousness tied to gratification in the features or details continue to remain, and you were to die at that time, it’s possible you would go to one of two destinations: | T: For if consciousness should stand tied to gratification in the sign or in the features, and if one should die on that occasion, it is possible that one will go to one of two destinations:
+sn35.235:1.6 | S: hell or the animal realm. | T: hell or the animal realm.
+sn35.235:1.7 | S: I speak having seen this drawback. | T: Having seen this danger, I speak thus.
+sn35.235:2.1 | S: You’d be better off mutilating your ear faculty with a sharp iron spike … | T: “It would be better, bhikkhus, for the ear faculty to be lacerated by a sharp iron stake burning, blazing, and glowing, than for one to grasp the sign through the features in a sound cognizable by the ear.
+sn35.235:2.2 | P: Nimittassādagathitaṁ vā, bhikkhave, viññāṇaṁ tiṭṭhamānaṁ tiṭṭheyya, anubyañjanassādagathitaṁ vā tasmiñce samaye kālaṁ kareyya, ṭhānametaṁ vijjati, yaṁ dvinnaṁ gatīnaṁ aññataraṁ gatiṁ gaccheyya— | T: For if consciousness should stand tied to gratification in the sign or in the features, and if one should die on that occasion, it is possible that one will go to one of two destinations:
+sn35.235:2.3 | P: nirayaṁ vā tiracchānayoniṁ vā. | T: hell or the animal realm.
+sn35.235:2.4 | P: Imaṁ khvāhaṁ, bhikkhave, ādīnavaṁ disvā evaṁ vadāmi. | T: Having seen this danger, I speak thus.
+sn35.235:3.1 | S: You’d be better off mutilating your nose faculty with a sharp nail cutter … | T: “It would be better, bhikkhus, for the nose faculty to be lacerated by a sharp nail cutter burning, blazing, and glowing, than for one to grasp the sign through the features in an odour cognizable by the nose.
+sn35.235:3.2 | P: Nimittassādagathitaṁ vā, bhikkhave, viññāṇaṁ tiṭṭhamānaṁ tiṭṭheyya, anubyañjanassādagathitaṁ vā tasmiñce samaye kālaṁ kareyya. | T: For if consciousness should stand tied to gratification in the sign or in the features, and if one should die on that occasion,
+sn35.235:3.3 | P: Ṭhānametaṁ vijjati, yaṁ dvinnaṁ gatīnaṁ aññataraṁ gatiṁ gaccheyya— | T: it is possible that one will go to one of two destinations:
+sn35.235:3.4 | P: nirayaṁ vā tiracchānayoniṁ vā. | T: hell or the animal realm.
+sn35.235:3.5 | P: Imaṁ khvāhaṁ, bhikkhave, ādīnavaṁ disvā evaṁ vadāmi. | T: Having seen this danger, I speak thus.
+sn35.235:4.1 | S: You’d be better off mutilating your tongue faculty with a sharp razor … | T: “It would be better, bhikkhus, for the tongue faculty to be lacerated by a sharp razor burning, blazing, and glowing, than for one to grasp the sign through the features in a taste cognizable by the tongue.
+sn35.235:4.2 | P: Nimittassādagathitaṁ vā, bhikkhave, viññāṇaṁ tiṭṭhamānaṁ tiṭṭheyya, anubyañjanassādagathitaṁ vā tasmiñce samaye kālaṁ kareyya. | T: For if consciousness should stand tied to gratification in the sign or in the features, and if one should die on that occasion,
+sn35.235:4.3 | P: Ṭhānametaṁ vijjati, yaṁ dvinnaṁ gatīnaṁ aññataraṁ gatiṁ gaccheyya— | T: it is possible that one will go to one of two destinations:
+sn35.235:4.4 | P: nirayaṁ vā tiracchānayoniṁ vā. | T: hell or the animal realm.
+sn35.235:4.5 | P: Imaṁ khvāhaṁ, bhikkhave, ādīnavaṁ disvā evaṁ vadāmi. | T: Having seen this danger, I speak thus.
+sn35.235:5.1 | S: You’d be better off mutilating your body faculty with a sharp spear, burning, blazing, and glowing, than getting caught up in the features by way of the details in touches known by the body. | T: “It would be better, bhikkhus, for the body faculty to be lacerated by a sharp spear burning, blazing, and glowing, than for one to grasp the sign through the features in a tactile object cognizable by the body.
+sn35.235:5.2 | S: Should consciousness tied to gratification in the features or details continue to remain, and you were to die at that time, it’s possible you would go to one of two destinations: | T: For if consciousness should stand tied to gratification in the sign or in the features, and if one should die on that occasion,
+sn35.235:5.3 | P: Ṭhānametaṁ vijjati, yaṁ dvinnaṁ gatīnaṁ aññataraṁ gatiṁ gaccheyya— | T: it is possible that one will go to one of two destinations:
+sn35.235:5.4 | S: hell or the animal realm. | T: hell or the animal realm.
+sn35.235:5.5 | S: I speak having seen this drawback. | T: Having seen this danger, I speak thus.
+sn35.235:6.1 | S: You’d be better off sleeping. | T: “It would be better, bhikkhus, to sleep—
+sn35.235:6.2 | S: For I say that sleep is useless, fruitless, and folly for the living. But while you’re asleep you won’t fall under the sway of such thoughts that would make you create a schism in the Saṅgha. | T: for sleep, I say, is barren for the living, fruitless for the living, insensibility for the living—than to think such thoughts as would induce one who has come under their control to bring about a schism in the Saṅgha.
+sn35.235:6.3 | S: I speak having seen this drawback. | T: Having seen this danger, I speak thus.
+sn35.235:7.1 | S: A learned noble disciple reflects on this: | T: “In regard to this, bhikkhus, the instructed noble disciple reflects thus:
+sn35.235:7.2 | S: ‘Forget mutilating the eye faculty with a red-hot iron nail, burning, blazing, and glowing! | T: ‘Leave off lacerating the eye faculty with a red-hot iron pin burning, blazing, and glowing.
+sn35.235:7.3 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:7.4 | S: the eye, sights, eye consciousness, and eye contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on eye contact is also impermanent. | T: So the eye is impermanent, forms are impermanent, eye-consciousness is impermanent, eye-contact is impermanent, whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is impermanent.
+sn35.235:8.1 | S: Forget mutilating the ear faculty with a sharp iron spike, burning, blazing, and glowing! | T: “‘Leave off lacerating the ear faculty with a sharp iron stake burning, blazing, and glowing.
+sn35.235:8.2 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:8.3 | S: the ear, sounds, ear consciousness, and ear contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on ear contact is also impermanent. | T: So the ear is impermanent, sounds are impermanent, ear-consciousness is impermanent, ear-contact is impermanent, whatever feeling arises with ear-contact as condition … that too is impermanent.
+sn35.235:9.1 | S: Forget mutilating the nose faculty with a sharp nail cutter, burning, blazing, and glowing! | T: “‘Leave off lacerating the nose faculty with a sharp nail cutter burning, blazing, and glowing.
+sn35.235:9.2 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:9.3 | S: the nose, smells, nose consciousness, and nose contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on nose contact is also impermanent. | T: So the nose is impermanent, odours are impermanent, nose-consciousness is impermanent, nose-contact is impermanent, whatever feeling arises with nose-contact as condition … that too is impermanent.
+sn35.235:10.1 | S: Forget mutilating the tongue faculty with a sharp razor, burning, blazing, and glowing! | T: “‘Leave off lacerating the tongue faculty with a sharp razor burning, blazing, and glowing.
+sn35.235:10.2 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:10.3 | S: the tongue, tastes, tongue consciousness, and tongue contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on tongue contact is also impermanent. | T: So the tongue is impermanent, tastes are impermanent, tongue-consciousness is impermanent, tongue-contact is impermanent, whatever feeling arises with tongue-contact as condition … that too is impermanent.
+sn35.235:11.1 | S: Forget mutilating the body faculty with a sharp spear, burning, blazing, and glowing! | T: “‘Leave off lacerating the body faculty with a sharp spear burning, blazing, and glowing.
+sn35.235:11.2 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:11.3 | S: the body, touches, body consciousness, and body contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on body contact is also impermanent. | T: So the body is impermanent, tactile objects are impermanent, body-consciousness is impermanent, body-contact is impermanent, whatever feeling arises with body-contact as condition … that too is impermanent.
+sn35.235:12.1 | S: Forget sleeping! | T: “‘Leave off sleeping.
+sn35.235:12.2 | S: I’d better focus on the fact that | T: Let me attend only to this:
+sn35.235:12.3 | S: the mind, ideas, mind consciousness, and mind contact are impermanent. And the painful, pleasant, or neutral feeling that arises dependent on mind contact is also impermanent.’ | T: So the mind is impermanent, mental phenomena are impermanent, mind-consciousness is impermanent, mind-contact is impermanent, whatever feeling arises with mind-contact as condition … that too is impermanent.’
+sn35.235:13.1 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on eye contact. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards the eye, forms, eye-consciousness, eye-contact, and whatever feeling arises with eye-contact as condition—
+sn35.235:13.2 | S: They grow disillusioned with the ear … nose … tongue … body … mind … painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: whether pleasant or painful or neither-painful-nor-pleasant … towards the mind, mental phenomena, mind-consciousness, mind-contact, and whatever feeling arises with mind-contact as condition….
+sn35.235:13.3 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.235:13.4 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn35.235:13.5 | S: This is the exposition of the teaching on burning.” | T: “This, bhikkhus, is the Dhamma exposition on the theme of burning.”
+sn35.235:13.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.236
+sn35.236:1.1 | S: “Mendicants, when there are hands, picking up and putting down are found. | T: “Bhikkhus, when there are hands, picking up and putting down are discerned.
+sn35.236:1.2 | S: When there are feet, coming and going are found. | T: When there are feet, coming and going are discerned.
+sn35.236:1.3 | S: When there are joints, contracting and extending are found. | T: When there are limbs, bending and stretching are discerned.
+sn35.236:1.4 | S: When there’s a belly, hunger and thirst are found. | T: When there is the belly, hunger and thirst are discerned.
+sn35.236:1.5 | S: In the same way, when there’s an eye, pleasure and pain arise internally conditioned by eye contact. | T: “So too, bhikkhus, when there is the eye, pleasure and pain arise internally with eye-contact as condition.
+sn35.236:1.6 | S: When there’s an ear … nose … tongue … body … | T: When there is the ear, pleasure and pain arise internally with ear-contact as condition….
+sn35.236:1.7 | S: mind, pleasure and pain arise internally conditioned by mind contact. | T: When there is the mind, pleasure and pain arise internally with mind-contact as condition.
+sn35.236:2.1 | S: When there are no hands, picking up and putting down aren’t found. | T: “When, bhikkhus, there are no hands, picking up and putting down are not discerned.
+sn35.236:2.2 | S: When there are no feet, coming and going aren’t found. | T: When there are no feet, coming and going are not discerned.
+sn35.236:2.3 | S: When there are no joints, contracting and extending aren’t found. | T: When there are no limbs, bending and stretching are not discerned.
+sn35.236:2.4 | S: When there’s no belly, hunger and thirst aren’t found. | T: When there is no belly, hunger and thirst are not discerned.
+sn35.236:2.5 | S: In the same way, when there’s no eye, pleasure and pain don’t arise internally conditioned by eye contact. | T: “So too, bhikkhus, when there is no eye, no pleasure and pain arise internally with eye-contact as condition.
+sn35.236:2.6 | S: When there’s no ear … nose … tongue … body … | T: When there is no ear, no pleasure and pain arise internally with ear-contact as condition….
+sn35.236:2.7 | S: mind, pleasure and pain don’t arise internally conditioned by mind contact.” | T: When there is no mind, no pleasure and pain arise internally with mind-contact as condition.”
+sn35.236:2.8 | P: Navamaṁ. | T: (none)
+
+## sn35.238
+sn35.238:1.1 | S: “Mendicants, suppose there were four venomous vipers of awesome might. | T: “Bhikkhus, suppose there were four vipers of fierce heat and deadly venom.
+sn35.238:1.2 | S: Then a person would come along who wants to live and doesn’t want to die, who wants to be happy and recoils from pain. | T: Then a man would come along wanting to live, not wanting to die, desiring happiness and averse to suffering.
+sn35.238:1.3 | S: They’d say to him, | T: They would tell him:
+sn35.238:1.4 | S: ‘My man, here are four venomous vipers of awesome might. They must be periodically picked up, washed, fed, and put to sleep. | T: ‘Good man, these four vipers are of fierce heat and deadly venom. From time to time they must be lifted up; from time to time they must be bathed; from time to time they must be fed; from time to time they must be laid to rest.
+sn35.238:1.5 | S: But when one or other of these four venomous vipers gets angry with you, you’ll meet with death or deadly pain. | T: But if one or another of these vipers ever becomes angry with you, then, good man, you will meet death or deadly suffering.
+sn35.238:1.6 | S: So then, my man, do what has to be done.’ | T: Do whatever has to be done, good man!’
+sn35.238:2.1 | S: Then that man, terrified of those four venomous vipers, would flee this way or that. | T: “Then, bhikkhus, afraid of the four vipers of fierce heat and deadly venom, that man would flee in one direction or another.
+sn35.238:2.2 | S: They’d say to him, | T: They would tell him:
+sn35.238:2.3 | S: ‘My man, there are five deadly enemies chasing you, thinking: “When we catch sight of him, we’ll murder him right there!” | T: ‘Good man, five murderous enemies are pursuing you, thinking, “Wherever we see him, we will take his life right on the spot.”
+sn35.238:2.4 | S: So then, my man, do what has to be done.’ | T: Do whatever has to be done, good man!’
+sn35.238:3.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies, would flee this way or that. | T: “Then, bhikkhus, afraid of the four vipers of fierce heat and deadly venom, and of the five murderous enemies, that man would flee in one direction or another.
+sn35.238:3.2 | S: They’d say to him, | T: They would tell him:
+sn35.238:3.3 | S: ‘My man, there’s a sixth hidden killer chasing you with a drawn sword, thinking: “When I catch sight of him, I’ll chop off his head right there!” | T: ‘Good man, a sixth murderer, an intimate companion, is pursuing you with drawn sword, thinking, “Wherever I see him I will cut off his head right on the spot.”
+sn35.238:3.4 | S: So then, my man, do what has to be done.’ | T: Do whatever has to be done, good man!’
+sn35.238:4.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies and the hidden killer, would flee this way or that. | T: “Then, bhikkhus, afraid of the four vipers of fierce heat and deadly venom, and of the five murderous enemies, and of the sixth murderer, the intimate companion with drawn sword, that man would flee in one direction or another.
+sn35.238:4.2 | S: He’d see an empty village. | T: He would see an empty village.
+sn35.238:4.3 | S: But whatever house he enters is vacant, deserted, and empty. | T: Whatever house he enters is void, deserted, empty.
+sn35.238:4.4 | S: And whatever vessel he touches is vacant, hollow, and empty. | T: Whatever pot he takes hold of is void, hollow, empty.
+sn35.238:4.5 | S: They’d say to him, | T: They would tell him:
+sn35.238:4.6 | S: ‘My man, there are bandits who raid villages, and they’re striking now. | T: ‘Good man, just now village-attacking dacoits will raid this empty village.
+sn35.238:4.7 | S: So then, my man, do what has to be done.’ | T: Do whatever has to be done, good man!’
+sn35.238:5.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies and the hidden killer and the bandits, would flee this way or that. | T: “Then, bhikkhus, afraid of the four vipers of fierce heat and deadly venom, and of the five murderous enemies, and of the sixth murderer—the intimate companion with drawn sword—and of the village-attacking dacoits, that man would flee in one direction or another.
+sn35.238:5.2 | S: He’d see a large deluge, whose near shore is dubious and perilous, while the far shore is a sanctuary free of peril. | T: He would see a great expanse of water whose near shore was dangerous and fearful, and whose further shore was safe and free from danger,
+sn35.238:5.3 | S: But there’s no ferryboat or bridge for crossing over. | T: but there would be no ferryboat or bridge for crossing over from the near shore to the far shore.
+sn35.238:5.4 | S: Then that man would think, | T: “Then the man would think:
+sn35.238:5.5 | P: ‘ayaṁ kho mahāudakaṇṇavo orimaṁ tīraṁ sāsaṅkaṁ sappaṭibhayaṁ, pārimaṁ tīraṁ khemaṁ appaṭibhayaṁ, natthi ca nāvā santāraṇī uttarasetu vā apārā pāraṁ gamanāya. | T: ‘There is this great expanse of water whose near shore is dangerous and fearful, and whose further shore is safe and free from danger, but there is no ferryboat or bridge for crossing over.
+sn35.238:5.6 | S: ‘Why don’t I gather grass, sticks, branches, and leaves and make a raft? Riding on the raft, and paddling with my hands and feet, I can safely reach the far shore.’ | T: Let me collect grass, twigs, branches, and foliage, and bind them together into a raft, so that by means of that raft, making an effort with my hands and feet, I can get safely across to the far shore.’
+sn35.238:6.1 | S: And so that man did exactly that. Having crossed over and gone to the far shore, the brahmin stands on solid ground. | T: “Then the man would collect grass, twigs, branches, and foliage, and bind them together into a raft, so that by means of that raft, making an effort with his hands and feet, he would get safely across to the far shore. Crossed over, gone beyond, the brahmin stands on high ground.
+sn35.238:7.1 | S: I’ve made up this simile to make a point. | T: “I have made up this simile, bhikkhus, in order to convey a meaning.
+sn35.238:7.2 | S: And this is the point. | T: This is the meaning here:
+sn35.238:7.3 | S: ‘Four venomous vipers of awesome might’ is a term for the four principal states: | T: ‘The four vipers of fierce heat and deadly venom’: this is a designation for the four great elements—
+sn35.238:7.4 | S: the elements of earth, water, fire, and air. | T: the earth element, the water element, the heat element, the air element.
+sn35.238:8.1 | S: ‘Five deadly enemies’ is a term for the five grasping aggregates, that is: | T: “‘The five murderous enemies’: this is a designation for the five aggregates subject to clinging; that is,
+sn35.238:8.2 | S: form, feeling, perception, choices, and consciousness. | T: the material form aggregate subject to clinging, the feeling aggregate subject to clinging, the perception aggregate subject to clinging, the volitional formations aggregate subject to clinging, the consciousness aggregate subject to clinging.
+sn35.238:9.1 | S: ‘The sixth hidden killer with a drawn sword’ is a term for relishing and greed. | T: “‘The sixth murderer, the intimate companion with drawn sword’: this is a designation for delight and lust.
+sn35.238:10.1 | S: ‘Empty village’ is a term for the six interior sense fields. | T: “‘The empty village’: this is a designation for the six internal sense bases.
+sn35.238:10.2 | S: If an astute, competent, intelligent person investigates that in relation to the eye, it appears vacant, hollow, and empty. | T: If, bhikkhus, a wise, competent, intelligent person examines them by way of the eye, they appear to be void, hollow, empty.
+sn35.238:10.3 | S: If an astute, competent, intelligent person investigates that in relation to the ear … nose … tongue … body … | T: If he examines them by way of the ear…
+sn35.238:10.4 | S: mind, it appears vacant, hollow, and empty. | T: by way of the mind, they appear to be void, hollow, empty.
+sn35.238:11.1 | S: ‘Bandits who raid villages’ is a term for the six exterior sense fields. | T: “‘Village-attacking dacoits’: this is a designation for the six external sense bases.
+sn35.238:11.2 | S: The eye is struck by both agreeable and disagreeable sights. | T: The eye, bhikkhus, is attacked by agreeable and disagreeable forms.
+sn35.238:11.3 | S: The ear … | T: The ear …
+sn35.238:11.4 | S: nose … | T: The nose …
+sn35.238:11.5 | S: tongue … | T: The tongue …
+sn35.238:11.6 | S: body … | T: The body …
+sn35.238:11.7 | S: mind is struck by both agreeable and disagreeable ideas. | T: The mind is attacked by agreeable and disagreeable mental phenomena.
+sn35.238:12.1 | S: ‘Large deluge’ is a term for the four floods: | T: “‘The great expanse of water’: this is a designation for the four floods:
+sn35.238:12.2 | S: the floods of sensual pleasures, desire to be reborn, views, and ignorance. | T: the flood of sensuality, the flood of existence, the flood of views, and the flood of ignorance.
+sn35.238:13.1 | S: ‘The near shore that’s dubious and perilous’ is a term for substantial reality. | T: “‘The near shore, which is dangerous and fearful’: this is a designation for identity.
+sn35.238:14.1 | S: ‘The far shore, a sanctuary free of peril’ is a term for extinguishment. | T: “‘The further shore, which is safe and free from danger’: this is a designation for Nibbāna.
+sn35.238:15.1 | S: ‘The raft’ is a term for the noble eightfold path, that is: | T: “‘The raft’: this is a designation for the Noble Eightfold Path; that is,
+sn35.238:15.2 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn35.238:16.1 | S: ‘Paddling with hands and feet’ is a term for rousing energy. | T: “‘Making effort with hands and feet’: this is a designation for the arousing of energy.
+sn35.238:17.1 | S: ‘Crossed over, gone to the far shore, the brahmin stands on solid ground’ is a term for a perfected one.” | T: “‘Crossed over, gone beyond, the brahmin stands on high ground’: this is a designation for the arahant.”
+sn35.238:17.2 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.239
+sn35.239:1.1 | S: “Mendicants, when a mendicant has three qualities they’re full of joy and happiness in this very life, and they have laid the groundwork for ending the defilements. | T: “Bhikkhus, by possessing three qualities, a bhikkhu lives full of happiness and joy in this very life, and he has laid a foundation for the destruction of the taints.
+sn35.239:1.2 | S: What three? | T: What are the three?
+sn35.239:1.3 | S: They guard the sense doors, eat in moderation, and are committed to wakefulness. | T: He is one who guards the doors of the sense faculties, who is moderate in eating, and who is devoted to wakefulness.
+sn35.239:2.1 | S: And how does a mendicant guard the sense doors? | T: “And how, bhikkhus, is a bhikkhu one who guards the doors of the sense faculties?
+sn35.239:2.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: Here, having seen a form with the eye, a bhikkhu does not grasp its signs and features.
+sn35.239:2.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: Since, if he left the eye faculty unrestrained, evil unwholesome states of covetousness and displeasure might invade him, he practises the way of its restraint, he guards the eye faculty, he undertakes the restraint of the eye faculty.
+sn35.239:2.4 | S: When they hear a sound with their ears … | T: Having heard a sound with the ear …
+sn35.239:2.5 | S: When they smell an odor with their nose … | T: Having smelt an odour with the nose …
+sn35.239:2.6 | S: When they taste a flavor with their tongue … | T: Having tasted a taste with the tongue …
+sn35.239:2.7 | S: When they feel a touch with their body … | T: Having felt a tactile object with the body …
+sn35.239:2.8 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: Having cognized a mental phenomenon with the mind, a bhikkhu does not grasp its signs and its features.
+sn35.239:2.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: Since, if he left the mind faculty unrestrained, evil unwholesome states of covetousness and displeasure might invade him, he practises the way of its restraint, he guards the mind faculty, he undertakes the restraint of the mind faculty.
+sn35.239:2.10 | S: Suppose a chariot stood harnessed to thoroughbreds at a level crossroads, with a goad ready. A deft horse trainer, a master charioteer, might mount the chariot, taking the reins in his right hand and goad in the left. He’d drive out and back wherever he wishes, whenever he wishes. | T: “Suppose, bhikkhus, a chariot harnessed to thoroughbreds was standing ready on even ground at a crossroads, with a goad on hand. Then a skilful trainer, a charioteer of horses to be tamed, would mount it and, taking the reins in his left hand and the goad in his right, would drive away and return by any route he wants, whenever he wants.
+sn35.239:2.11 | S: In the same way, a mendicant trains to protect, control, tame, and pacify these six senses. | T: So too, a bhikkhu trains in protecting these six sense faculties, trains in controlling them, trains in taming them, trains in pacifying them.
+sn35.239:2.12 | S: That’s how a mendicant guards the sense doors. | T: It is in this way, bhikkhus, that a bhikkhu guards the doors of the sense faculties.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.239:3.1 | S: And how does a mendicant eat in moderation? | T: “And how, bhikkhus, is a bhikkhu moderate in eating?
+sn35.239:3.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: Here, reflecting wisely, a bhikkhu takes food
+sn35.239:3.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: neither for amusement nor for intoxication nor for the sake of physical beauty and attractiveness, but only for the support and maintenance of this body, for ending discomfort, and for assisting the holy life, considering: ‘Thus I shall terminate the old feeling and not arouse a new feeling, and I shall be healthy and blameless and live in comfort. ’
+sn35.239:3.4 | S: It’s like a person who puts ointment on a wound only so that it can heal; or who oils an axle only so that it can carry a load. | T: Just as a person anoints a wound only for the purpose of enabling it to heal, or just as one greases an axle only for the sake of transporting a load,
+sn35.239:3.5 | S: In the same way, a mendicant reflects rationally on the food that they eat: | T: so a bhikkhu, reflecting wisely, takes food …
+sn35.239:3.6 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: for assisting the holy life.
+sn35.239:3.7 | S: That’s how a mendicant eats in moderation. | T: It is in this way, bhikkhus, that a bhikkhu is moderate in eating.
+sn35.239:4.1 | S: And how is a mendicant committed to wakefulness? | T: “And how, bhikkhus, is a bhikkhu devoted to wakefulness?
+sn35.239:4.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. | T: Here, during the day, while walking back and forth and sitting, a bhikkhu purifies his mind of obstructive states.
+sn35.239:4.3 | S: In the first watch of the night, they continue to practice walking and sitting meditation. | T: In the first watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive states.
+sn35.239:4.4 | S: In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: In the middle watch of the night he lies down on the right side in the lion’s posture with one foot overlapping the other, mindful and clearly comprehending, after noting in his mind the idea of rising.
+sn35.239:4.5 | S: In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: After rising, in the last watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive states.
+sn35.239:4.6 | S: This is how a mendicant is committed to wakefulness. | T: It is in this way, bhikkhus, that a bhikkhu is devoted to wakefulness.
+sn35.239:4.7 | S: When a mendicant possesses these three qualities they’re full of joy and happiness in this very life, and they have laid the groundwork for ending the defilements.” | T: “Bhikkhus, it is by possessing these three qualities that a bhikkhu lives full of happiness and joy in this very life, and he has laid the foundation for the destruction of the taints.”
+sn35.239:4.8 | P: Dutiyaṁ. | T: (none)
+
+## sn35.23
+sn35.23:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn35.23:1.2 | S: “Mendicants, I will teach you the all. | T: “Bhikkhus, I will teach you the all.
+sn35.23:1.3 | S: Listen … | T: Listen to that….
+sn35.23:1.4 | S: And what is the all? | T: “And what, bhikkhus, is the all?
+sn35.23:1.5 | S: It’s just the eye and sights, the ear and sounds, the nose and smells, the tongue and tastes, the body and touches, and the mind and ideas. | T: The eye and forms, the ear and sounds, the nose and odours, the tongue and tastes, the body and tactile objects, the mind and mental phenomena.
+sn35.23:1.6 | S: This is called the all. | T: This is called the all.
+sn35.23:1.7 | S: Mendicants, suppose someone was to say: | T: “If anyone, bhikkhus, should speak thus:
+sn35.23:1.8 | S: ‘I’ll deny this all and describe another all.’ They’d have no grounds for that claim, | T: ‘Having rejected this all, I shall make known another all’—that would be a mere empty boast on his part.
+sn35.23:1.9 | S: they’d be stumped by questions, and, in addition, they’d get frustrated. | T: If he were questioned he would not be able to reply and, further, he would meet with vexation.
+sn35.23:1.10 | S: Why is that? | T: For what reason?
+sn35.23:1.11 | S: Because they’re out of their element.” | T: Because, bhikkhus, that would not be within his domain.”
+sn35.23:1.12 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.241
+sn35.241:1.1 | S: At one time the Buddha was staying near Kosambī on the bank of the Ganges River. | T: On one occasion the Blessed One was dwelling at Kosambī on the bank of the river Ganges.
+sn35.241:1.2 | S: Seeing a large tree trunk being carried along by the current, | T: The Blessed One saw a great log being carried along by the current of the river Ganges,
+sn35.241:1.3 | S: he addressed the mendicants, | T: and he addressed the bhikkhus thus:
+sn35.241:1.4 | S: “Mendicants, do you see that large tree trunk being carried along by the current of the Ganges River?” | T: “Do you see, bhikkhus, that great log being carried along by the current of the river Ganges?”
+sn35.241:1.5 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn35.241:1.6 | S: “Mendicants, assume that that tree trunk doesn’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And assume that it doesn’t get taken by humans or non-humans or caught up in a whirlpool, and that it doesn’t rot away. | T: “If, bhikkhus, that log does not veer towards the near shore, does not veer towards the far shore, does not sink in mid-stream, does not get cast up on high ground, does not get caught by human beings, does not get caught by nonhuman beings, does not get caught in a whirlpool, and does not become inwardly rotten,
+sn35.241:1.7 | S: In that case, that tree trunk will slant, slope, and incline toward the ocean. | T: it will slant, slope, and incline towards the ocean.
+sn35.241:1.8 | S: Why is that? | T: For what reason?
+sn35.241:1.9 | S: Because the current of the Ganges River slants, slopes, and inclines toward the ocean. | T: Because the current of the river Ganges slants, slopes, and inclines towards the ocean.
+sn35.241:2.1 | S: In the same way, assume that you don’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And assume that you don’t get taken by humans or non-humans or caught up in a whirlpool, and that you don’t rot away. | T: “So too, bhikkhus, if you do not veer towards the near shore, do not veer towards the far shore, do not sink in mid-stream, do not get cast up on high ground, do not get caught by human beings, do not get caught by nonhuman beings, do not get caught in a whirlpool,
+sn35.241:2.2 | P: na majjhe saṁsīdissatha, na thale ussīdissatha, na manussaggāho gahessati, na amanussaggāho gahessati, na āvaṭṭaggāho gahessati, na antopūtī bhavissatha; | T: and do not become inwardly rotten,
+sn35.241:2.3 | S: In that case, you will slant, slope, and incline toward extinguishment. | T: you will slant, slope, and incline towards Nibbāna.
+sn35.241:2.4 | S: Why is that? | T: For what reason?
+sn35.241:2.5 | S: Because right view slants, slopes, and inclines toward extinguishment.” | T: Because right view slants, slopes, and inclines towards Nibbāna.”
+sn35.241:2.6 | S: When he said this, one of the mendicants said to the Buddha: | T: When this was said, a certain bhikkhu asked the Blessed One:
+sn35.241:2.7 | S: “But sir, what’s the near shore and what’s the far shore? What’s sinking in the middle? What’s getting stranded on high ground? What’s getting taken by humans or non-humans? What’s getting caught up in a whirlpool? And what’s rotting away?” | T: “What, venerable sir, is the near shore? What is the far shore? What is sinking in mid-stream? What is getting cast up on high ground? What is getting caught by human beings, what is getting caught by nonhuman beings, what is getting caught in a whirlpool? What is inward rottenness?”
+sn35.241:3.1 | S: “‘The near shore’, mendicant, is a term for the six interior sense fields. | T: “‘The near shore,’ bhikkhu: this is a designation for the six internal sense bases.
+sn35.241:3.2 | S: ‘The far shore’ is a term for the six exterior sense fields. | T: ‘The far shore’: this is a designation for the six external sense bases.
+sn35.241:3.3 | S: ‘Sinking in the middle’ is a term for greed and relishing. | T: ‘Sinking in mid-stream’: this is a designation for delight and lust.
+sn35.241:3.4 | S: ‘Stranded on high ground’ is a term for the conceit ‘I am’. | T: ‘Getting cast up on high ground’: this is a designation for the conceit ‘I am.’
+sn35.241:4.1 | S: And what’s getting taken by humans? | T: “And what, bhikkhu, is getting caught by human beings?
+sn35.241:4.2 | S: It’s when someone mixes closely with laypeople, sharing their joys and sorrows—happy when they’re happy and sad when they’re sad—and getting themselves involved in their business. | T: Here, someone lives in association with laypeople; he rejoices with them and sorrows with them, he is happy when they are happy and sad when they are sad, and he involves himself in their affairs and duties.
+sn35.241:4.3 | S: That’s called getting taken by humans. | T: This is called getting caught by human beings.
+sn35.241:5.1 | S: And what’s getting taken by non-humans? | T: “And what, bhikkhu, is getting caught by nonhuman beings?
+sn35.241:5.2 | S: It’s when someone leads the spiritual life wishing to be reborn in one of the orders of gods: ‘By this precept or observance or fervent austerity or spiritual practice, may I become one of the gods!’ | T: Here, someone lives the holy life with the aspiration to be reborn into a certain order of devas, thinking: ‘By this virtue or vow or austerity or holy life I will become a deva or one among the devas.’
+sn35.241:5.3 | S: That’s called getting taken by non-humans. | T: This is called getting caught by nonhuman beings.
+sn35.241:5.4 | S: ‘Caught up in a whirlpool’ is a term for the five kinds of sensual stimulation. | T: “‘Getting caught in a whirlpool’: this, bhikkhu, is a designation for the five cords of sensual pleasure.
+sn35.241:6.1 | S: And what’s rotting away? | T: “And what, bhikkhu, is inward rottenness?
+sn35.241:6.2 | S: It’s when some person is unethical, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved. | T: Here someone is immoral, one of evil character, of impure and suspect behaviour, secretive in his acts, no ascetic though claiming to be one, not a celibate though claiming to be one, inwardly rotten, corrupt, depraved.
+sn35.241:6.3 | S: This is called ‘rotting away’.” | T: This is called inward rottenness.”
+sn35.241:7.1 | S: Now at that time Nanda the cowherd was sitting not far from the Buddha. | T: Now on that occasion the cowherd Nanda was standing near the Blessed One.
+sn35.241:7.2 | S: Then he said to the Buddha: | T: He then said to the Blessed One:
+sn35.241:7.3 | S: “I won’t drift toward the near shore or the far shore, or sink in the middle, or get stranded on high ground. And I won’t get taken by humans or non-humans or caught up in a whirlpool, and I won’t rot away. | T: “Venerable sir, I will not veer towards the near shore, I will not veer towards the far shore, I will not sink in mid-stream, I will not get cast up on high ground, I will not get caught by human beings, I will not get caught by nonhuman beings, I will not get caught in a whirlpool, I will not become inwardly rotten.
+sn35.241:7.4 | S: Sir, may I receive the going forth, the ordination in the Buddha’s presence?” | T: May I receive the going forth under the Blessed One, may I receive the higher ordination?”
+sn35.241:7.5 | S: “Well then, Nanda, return the cows to their owners.” | T: “In that case, Nanda, return the cows to their owners.”
+sn35.241:7.6 | S: “Sir, the cows will go back by themselves, since they love their calves.” | T: “The cows will go back of their own accord, venerable sir, out of attachment to the calves.”
+sn35.241:7.7 | S: “Still, Nanda, you should return them to their owners.” | T: “Return the cows to their owners, Nanda.”
+sn35.241:7.8 | S: Then Nanda, after returning the cows to their owners, went up to the Buddha and said to him, | T: Then the cowherd Nanda returned the cows to their owners, came back to the Blessed One, and said:
+sn35.241:7.9 | S: “Sir, I have delivered the cows to their owners. | T: “The cows have been returned to their owners, venerable sir.
+sn35.241:7.10 | S: May I receive the going forth, the ordination in the Buddha’s presence?” | T: May I receive the going forth under the Blessed One, may I receive the higher ordination?”
+sn35.241:7.11 | S: And the cowherd Nanda received the going forth, the ordination in the Buddha’s presence. | T: Then the cowherd Nanda received the going forth under the Blessed One, and he received the higher ordination.
+sn35.241:7.12 | S: Not long after his ordination, | T: And soon, not long after his higher ordination, dwelling alone, withdrawn, diligent, ardent, and resolute …
+sn35.241:7.13 | S: Venerable Nanda became one of the perfected. | T: the Venerable Nanda became one of the arahants.”
+sn35.241:7.14 | P: Catutthaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-076.findings.tmp <<'EOF'
+sn35.228:2.12 starts: Having said this, the Fortunate One, the Teacher,
+sn35.235:13.2 starts: towards the mind, mental phenomena, mind-consciousness, mind-contact, and
+sn35.241:2.2 starts: do not sink in mid-stream, do not
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+23,206
+3 lines reported.

@@ -1,0 +1,525 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd93-5322-7053-bfc6-fbbed8eaf5d2
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.35
+an4.35:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest at the Squirrels’ Sanctuary.
+an4.35:1.2 | S: Then Vassakāra the brahmin, a chief minister of Magadha, went up to the Buddha, and exchanged greetings with him. | T: Then Vassakāra the brahman, the chief minister of Magadha, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an4.35:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+an4.35:2.1 | S: “Worthy Gotama, when someone has four qualities we describe him as a great man with great wisdom. | T: “Master Gotama, we declare a person endowed with four qualities to be one of great discernment, a great man.
+an4.35:2.2 | S: What four? | T: Which four?
+an4.35:2.3 | S: They are very learned in diverse fields of learning. | T: “There is the case where he is learned.
+an4.35:2.4 | S: They understand the meaning of diverse statements, saying: ‘This is what that statement means; that is what this statement means.’ | T: “Whatever he hears, he immediately understands the meaning of the statement, ‘This is the meaning of that statement. This is the meaning of that statement.’
+an4.35:2.5 | S: They are mindful, able to remember and recollect what was said and done long ago. | T: “He is mindful, able to remember & recollect what was done & said a long time ago.
+an4.35:2.6 | S: They are deft and tireless in household duties, understanding how to go about things in order to complete and organize the work. | T: “He is adept in the affairs of the household life, vigorous, endowed with enough quick-wittedness in their techniques to organize them and get them done.
+an4.35:2.7 | S: When someone possesses these four qualities we describe him as a great man with great wisdom. | T: “Master Gotama, we declare a person endowed with these four qualities to be one of great discernment, a great man.
+an4.35:2.8 | S: If the worthy Gotama agrees with me, please say so. | T: If you think that I am worthy of agreement, Master Gotama, may you agree with me.
+an4.35:2.9 | S: If he disagrees, please say so.” | T: If you think I am worthy of criticism, criticize me.”
+an4.35:3.1 | S: “Brahmin, I neither agree nor disagree with you, | T: “I neither agree with you, brahman, nor do I criticize you.
+an4.35:3.2 | S: but when someone has four qualities I describe him as a great man with great wisdom. | T: I declare a person endowed with four qualities to be one of great discernment, a great man.
+an4.35:3.3 | S: What four? | T: Which four?
+an4.35:3.4 | S: It’s when someone practices for the welfare and happiness of the people. | T: “There is the case, brahman, where he practices for the welfare & happiness of many people and has established many people in the noble method, i.e., the rightness of what is admirable, the rightness of what is skillful.
+an4.35:3.5 | S: They’ve established many people in the noble system, that is, the principles of goodness and skillfulness. | T: (none)
+an4.35:3.6 | S: They think what they want to think, and don’t think what they don’t want to think. | T: “He thinks any thought he wants to think, and doesn’t think any thought he doesn’t want to think.
+an4.35:3.7 | S: They consider what they want to consider, and don’t consider what they don’t want to consider. | T: He wills any resolve he wants to will, and doesn’t will any resolve he doesn’t want to will.
+an4.35:3.8 | S: Thus they have achieved mental mastery of the paths of thought. | T: He has attained mastery of the mind with regard to the pathways of thought.
+an4.35:3.9 | S: They get the four absorptions—blissful meditations in this life that belong to the higher mind—when they want, without trouble or difficulty. | T: “He attains—whenever he wants, without strain, without difficulty—the four jhānas that are heightened mental states, pleasant abidings in the here & now.
+an4.35:3.10 | S: They realize the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: “With the ending of effluents—he remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.
+an4.35:3.11 | S: Brahmin, I neither agree nor disagree with you, | T: “I neither agree with you, brahman, nor do I criticize you.
+an4.35:3.12 | S: but when someone possesses these four qualities I describe him as a great man with great wisdom.” | T: I declare a person endowed with these four qualities to be one of great discernment, a great man.”
+an4.35:4.1 | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It’s amazing, Master Gotama, and astounding,
+an4.35:4.2 | S: How well said this was by the worthy Gotama! | T: how well that has been said by Master Gotama.
+an4.35:4.3 | S: And we will remember the worthy Gotama as someone who possesses these four qualities. | T: And I hold Master Gotama to be endowed with these same four qualities.
+an4.35:4.4 | S: For the worthy Gotama practices for the welfare and happiness of the people … | T: “Master Gotama practices for the welfare & happiness of many people
+an4.35:4.5 | P: bahu te janatā ariye ñāye patiṭṭhāpitā, yadidaṁ kalyāṇadhammatā kusaladhammatā. | T: and has established many people in the noble method, i.e., the rightness of what is admirable, the rightness of what is skillful.
+an4.35:4.6 | P: Bhavañhi gotamo yaṁ vitakkaṁ ākaṅkhati vitakketuṁ taṁ vitakkaṁ vitakketi, yaṁ vitakkaṁ nākaṅkhati vitakketuṁ na taṁ vitakkaṁ vitakketi, yaṁ saṅkappaṁ ākaṅkhati saṅkappetuṁ taṁ saṅkappaṁ saṅkappeti, yaṁ saṅkappaṁ nākaṅkhati saṅkappetuṁ na taṁ saṅkappaṁ saṅkappeti. | T: “Master Gotama thinks whatever thought he wants to think, and doesn’t think any thought he doesn’t want to think. He wills any resolve he wants to will, and doesn’t will any resolve he doesn’t want to will.
+an4.35:4.7 | S: The worthy Gotama has achieved mental mastery of the paths of thought. | T: He has attained mastery of the mind with regard to the pathways of thought.
+an4.35:4.8 | S: The worthy Gotama gets the four absorptions … when he wants, without trouble or difficulty. | T: “Master Gotama attains—whenever he wants, without strain, without difficulty—the four jhānas that are heightened mental states, pleasant abidings in the here & now.
+an4.35:4.9 | S: The worthy Gotama has realized the undefiled freedom of heart and freedom by wisdom. He lives having realized it with his own insight in this very life due to the ending of defilements.” | T: “Master Gotama, with the ending of effluents remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.”
+an4.35:5.1 | S: “Your words are clearly invasive and intrusive, brahmin. | T: “Well, brahman, you are certainly being rude & presumptuous in making this statement,
+an4.35:5.2 | S: Nevertheless, I will answer you. | T: but still I will respond to you.
+an4.35:5.3 | S: For I do practice for the welfare and happiness of the people … | T: “Yes, brahman, I practice for the welfare & happiness of many people
+an4.35:5.4 | P: bahu me janatā ariye ñāye patiṭṭhāpitā, yadidaṁ kalyāṇadhammatā kusaladhammatā. | T: and have established many people in the noble method, i.e., the rightness of what is admirable, the rightness of what is skillful.
+an4.35:5.5 | P: Ahañhi, brāhmaṇa, yaṁ vitakkaṁ ākaṅkhāmi vitakketuṁ taṁ vitakkaṁ vitakkemi, yaṁ vitakkaṁ nākaṅkhāmi vitakketuṁ na taṁ vitakkaṁ vitakkemi, yaṁ saṅkappaṁ ākaṅkhāmi saṅkappetuṁ taṁ saṅkappaṁ saṅkappemi, yaṁ saṅkappaṁ nākaṅkhāmi saṅkappetuṁ na taṁ saṅkappaṁ saṅkappemi. | T: “And, yes, I think whatever thought I want to think, and don’t think any thought I don’t want to think. I will any resolve I want to will, and don’t will any resolve I don’t want to will.
+an4.35:5.6 | S: I have achieved mental mastery of the paths of thought. | T: I have attained mastery of the mind with regard to the pathways of thought.
+an4.35:5.7 | S: I do get the four absorptions … when I want, without trouble or difficulty. | T: “And, yes, I attain—whenever I want, without strain, without difficulty—the four jhānas that are heightened mental states, pleasant abidings in the here & now.
+an4.35:5.8 | S: I have realized the undefiled freedom of heart and freedom by wisdom. I live having realized it with my own insight in this very life due to the ending of defilements. | T: “And, yes, with the ending of effluents I remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for myself right in the here & now.”
+an4.35:6.1 | S: He discovered release from the snare of death | T: He who, knowing, declared release for all beings from the snare of death,
+an4.35:6.2 | S: for all beings, | T: (none)
+an4.35:6.3 | S: and explained the system of the teaching | T: welfare for human beings & devas, the methodical Dhamma—
+an4.35:6.4 | S: for the welfare of gods and humans. | T: (none)
+an4.35:6.5 | S: When they see him or hear him, | T: seeing & hearing which,
+an4.35:6.6 | S: many people become confident. | T: many people grow clear & calm;
+an4.35:7.1 | S: He is skilled in what is the path <j>and what is not the path, | T: who is skilled in what is & is not the path,
+an4.35:7.2 | S: he has completed the task <j>and is free of defilements. | T: his task done, effluent-free:
+an4.35:7.3 | S: The Buddha, bearing his final body, | T: is called one of great discernment, bearing his last body, awake.
+an4.35:7.4 | S: is called ‘a great man, of great wisdom’.” | T: (none)
+an4.35:7.5 | P: Pañcamaṁ. | T: (none)
+
+## snp2.14
+snp2.14:1.1 | S: So I have heard. | T: I have heard that
+snp2.14:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+snp2.14:1.3 | S: Then the lay follower Dhammika, together with five hundred lay followers, went up to the Buddha, bowed, sat down to one side, and addressed him in verse: | T: Then Dhammika the lay follower, together with 500 other lay followers, approached the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he addressed the Blessed One in verses:
+snp2.14:2.1 | S: “I ask you, Gotama, whose wisdom is vast: | T: “I ask you, Gotama, Deeply Discerning:
+snp2.14:2.2 | S: what does one do to become a good disciple, | T: How-acting does one become a good disciple—
+snp2.14:2.3 | S: both one who has left the home, | T: either one gone from home into homelessness,
+snp2.14:2.4 | S: and the lay followers staying at home? | T: or a lay follower with a home?
+snp2.14:3.1 | S: For you understand the course and destiny | T: For you discern the destination & future course
+snp2.14:3.2 | S: of the world with all its gods. | T: of the world along with its devas
+snp2.14:3.3 | S: There is no equal to you who sees the subtle meaning, | T: —there is no one equal to you in seeing the subtle goal;
+snp2.14:3.4 | S: for you are the Buddha most excellent, they say. | T: for they call you foremost, awakened.
+snp2.14:4.1 | S: Having experienced all knowledge, | T: Understanding all knowledge the whole Dhamma,
+snp2.14:4.2 | S: you reveal the teaching out of sympathy for beings. | T: you proclaim it to beings with sympathetic mind.
+snp2.14:4.3 | S: All-seer, you have cast off the veil, | T: Your roof opened up, All-around Eye,
+snp2.14:4.4 | S: and immaculate, you dazzle the whole world. | T: you, stainless, illumine the whole world.
+snp2.14:5.1 | S: The dragon king Erāvaṇa, <j>hearing you called ‘Victor’, | T: He came to your presence— Erāvaṇa, the nāga king,
+snp2.14:5.2 | S: came into your presence. | T: having heard, ‘Conqueror.’
+snp2.14:5.3 | S: He consulted with you then, <j>having heard your words, | T: Having consulted with you, having heard, he understood and,
+snp2.14:5.4 | S: left consoled, saying ‘Excellent!’ | T: satisfied, (thought,) ‘Good.’
+snp2.14:6.1 | S: And King Kuvera Vessavaṇa also | T: And King Vessavaṇa Kuvera
+snp2.14:6.2 | S: approached to ask about the teaching. | T: came, inquiring about the Dhamma.
+snp2.14:6.3 | S: You also answered him, O attentive one, | T: To him, too, you spoke when asked.
+snp2.14:6.4 | S: and hearing you he too was consoled. | T: And he too, having heard, was satisfied.
+snp2.14:7.1 | S: Those monastics of other religions given to debate, | T: And these sectarians, debaters by habit,
+snp2.14:7.2 | S: whether Ājīvakas or Jains, | T: whether Ājīvakas or Nigaṇṭhas,
+snp2.14:7.3 | S: all fail to overtake you in wisdom, | T: don’t overtake you in terms of discernment,
+snp2.14:7.4 | S: like a standing man next to a sprinter. | T: as a person standing doesn’t catch up with one going quickly.
+snp2.14:8.1 | S: Those brahmins given to debate, | T: And these brahmans, debaters by habit,
+snp2.14:8.2 | S: some of whom are quite senior, | T: any elderly brahmans,
+snp2.14:8.3 | S: all end up beholden to you for the meaning, | T: (none)
+snp2.14:8.4 | S: and others too who think themselves debaters. | T: and any others who consider themselves debaters, all depend on you for the meaning.
+snp2.14:9.1 | S: So subtle and pleasant is the teaching | T: For this Dhamma is subtle & blissful.
+snp2.14:9.2 | S: that is well proclaimed by you, Blessed One. | T: This, Blessed One, well set-forth by you:
+snp2.14:9.3 | S: It’s all we long to hear. So when asked, | T: We all want to hear it.
+snp2.14:9.4 | S: O Best of Buddhas, tell us! | T: Tell it to us, Excellent Awakened, when asked.
+snp2.14:10.1 | S: All these mendicants have gathered, | T: All these monks are sitting together—
+snp2.14:10.2 | S: and the layfolk too are here to listen. | T: and the lay followers, right there—to hear.
+snp2.14:10.3 | S: Let them hear the teaching <j>the immaculate one discovered, | T: Let them listen to the Dhamma awakened to by one who is stainless,
+snp2.14:10.4 | S: like gods listening to the fine words of Vāsava.” | T: as the devas listen to Vasavant’s well-spoken word.”
+snp2.14:11.1 | S: “Listen to me, mendicants, I will educate you | T: The Buddha: “Listen to me, monks. I will let you hear
+snp2.14:11.2 | S: in the cleansing teaching; all bear it in mind. | T: the Dhamma of polishing away. Live by it, all of you.
+snp2.14:11.3 | S: A thoughtful person, seeing the meaning, | T: May those who are thoughtful, seeing the purpose,
+snp2.14:11.4 | S: would adopt the deportment <j>proper to a renunciate. | T: partake of the duties proper for one gone forth.
+snp2.14:12.1 | S: No way would a mendicant go out at the wrong time; | T: A monk should surely not wander at the wrong time.
+snp2.14:12.2 | S: at the right time, they’d walk the village for alms. | T: He should go for alms in the village at the right time.
+snp2.14:12.3 | S: For chains bind one who wanders at the wrong time, | T: For attachments get attached to one going at the wrong time.
+snp2.14:12.4 | S: which is why the Buddhas avoid it. | T: That’s why they don’t wander at the wrong time, the awakened.
+snp2.14:13.1 | S: Sights, sounds, tastes, smells, and touches, | T: Sights, sounds, tastes, smells, & tactile sensations
+snp2.14:13.2 | S: which drive beings mad— | T: intoxicate beings.
+snp2.14:13.3 | S: dispel desire for such things, | T: Subduing desire for these things,
+snp2.14:13.4 | S: and enter for the morning meal at the right time. | T: one should, at the right time, enter for alms.
+snp2.14:14.1 | S: After receiving alms for the day, | T: Having received alms in proper season,
+snp2.14:14.2 | S: on returning a mendicant would sit in private alone. | T: a monk, returning alone, should sit down in solitude.
+snp2.14:14.3 | S: Inwardly reflective, they’d curb their mind | T: Pondering what’s inside,
+snp2.14:14.4 | S: from outside things, keeping themselves collected. | T: his mind-state collected, he should not let his heart wander outside.
+snp2.14:15.1 | S: Should they converse with a disciple, | T: If he should converse with a disciple,
+snp2.14:15.2 | S: with anyone else, or with a mendicant, | T: a monk, or anyone else,
+snp2.14:15.3 | S: they’d bring up only the sublime teaching, | T: he should utter the exquisite Dhamma,
+snp2.14:15.4 | S: not dividing or blaming. | T: and not divisive speech or disparagement of others.
+snp2.14:16.1 | S: For some contend in debate, | T: For some retaliate against arguments.
+snp2.14:16.2 | S: but we praise not those of little wisdom. | T: We don’t praise those of limited discernment.
+snp2.14:16.3 | S: In place after place they are bound in chains, | T: Attachments get attached on account of this & that,
+snp2.14:16.4 | S: for they send their mind over there far away. | T: for they send their minds far away from there.
+snp2.14:17.1 | S: Alms, a dwelling, a bed and seat, | T: (none)
+snp2.14:17.2 | S: and water for rinsing the dust from the cloak— | T: (none)
+snp2.14:17.3 | S: after hearing the teaching of the Holy One, | T: Having heard the Dhamma taught by the One Well-Gone,
+snp2.14:17.4 | S: a disciple of outstanding wisdom <j>would use these after appraisal. | T: the disciple of foremost discernment, having considered it, should resort to almsfood, a dwelling, a place to sit & lie down, and water for washing dust from his robe.
+snp2.14:18.1 | S: That’s why, when it comes to alms and lodgings, | T: So a monk should stay unsmeared by these things— almsfood, a dwelling, a place to sit & lie down, and water for washing dust from his robe—
+snp2.14:18.2 | S: and water for rinsing the dust from the cloak, | T: (none)
+snp2.14:18.3 | S: a mendicant is unsullied in the midst of these things, | T: (none)
+snp2.14:18.4 | S: like a droplet on a lotus-leaf. | T: like a water-drop on a lotus.
+snp2.14:19.1 | S: Now I shall tell you the householder’s duty, | T: As for the householder protocol, I will tell you how-acting
+snp2.14:19.2 | S: doing which one becomes a good disciple. | T: one becomes a good disciple,
+snp2.14:19.3 | S: For one burdened with possessions <j>does not get to realize | T: since the entire monk-practice can’t be managed by those wealthy in property.
+snp2.14:19.4 | S: the whole of the mendicant’s practice. | T: (none)
+snp2.14:20.1 | S: They’d not kill any creature, nor have them killed, | T: (none)
+snp2.14:20.2 | S: nor grant permission for others to kill. | T: (none)
+snp2.14:20.3 | S: They’ve laid aside violence toward all creatures | T: Laying aside violence toward all living creatures,
+snp2.14:20.4 | S: frail or firm that there are in the world. | T: both the firm & unfirm in the world, one should not kill a living being, nor have it killed, nor condone killing by others.
+snp2.14:21.1 | S: Next, a disciple would avoid knowingly | T: Then the disciple should avoid
+snp2.14:21.2 | S: taking anything not given at all, | T: consciously (taking) what’s not given, —anything, anywhere—
+snp2.14:21.3 | S: they’d not get others to do it, <j>nor grant them permission to steal; | T: should not have it taken nor condone its taking.
+snp2.14:21.4 | S: they’d avoid <em>all</em> theft. | T: He should avoid all (taking of) what’s not given.
+snp2.14:22.1 | S: A sensible person would avoid the unchaste life, | T: The observant person should avoid uncelibate behavior
+snp2.14:22.2 | S: like a burning pit of coals. | T: like a pit of glowing embers.
+snp2.14:22.3 | S: But if unable to remain chaste, | T: But if he’s incapable of celibate behavior,
+snp2.14:22.4 | S: they’d not transgress with another’s partner. | T: he should not transgress with the wife of another.
+snp2.14:23.1 | S: In a council or assembly, | T: When gone to an audience hall or assembly,
+snp2.14:23.2 | S: or one on one, they would not lie. | T: or one-on-one, he should not tell a lie,
+snp2.14:23.3 | S: They’d not get others to lie, <j>nor grant them permission to lie; | T: nor have it told, nor condone its being told.
+snp2.14:23.4 | S: they’d avoid <em>all</em> untruths. | T: He should avoid every untruth.
+snp2.14:24.1 | S: A householder espousing this teaching | T: Any householder who approves of this Dhamma
+snp2.14:24.2 | S: would not consume liquor or drink. | T: should not take intoxicating drink,
+snp2.14:24.3 | S: They’d not get others to drink, <j>nor grant them permission to drink; | T: nor have others drink it, nor condone its being drunk,
+snp2.14:24.4 | S: knowing that ends in intoxication. | T: knowing that it ends in madness.
+snp2.14:25.1 | S: For drunken fools do bad things, | T: For from intoxication, fools do evil things
+snp2.14:25.2 | S: and encourage other heedless folk. | T: and get others, heedless, to do them.
+snp2.14:25.3 | S: Shun this field of demerit, | T: One should avoid this opening to demerit—
+snp2.14:25.4 | S: the maddening, deluding frolic of fools. | T: madness, delusion—appealing to fools.
+snp2.14:26.1 | S: You shouldn’t kill living creatures, or steal, | T: One should not kill a living being, take what’s not given,
+snp2.14:26.2 | S: or lie, or drink liquor. | T: tell a lie, nor be a drinker.
+snp2.14:26.3 | S: Be chaste, refraining from sex, | T: One should abstain from uncelibate behavior— sexual intercourse—
+snp2.14:26.4 | S: and don’t eat at night, the wrong time. | T: should not eat at night, a meal at the wrong time,
+snp2.14:27.1 | S: Not wearing garlands or applying fragrance, | T: should not wear a garland or use scents,
+snp2.14:27.2 | S: you should sleep on a low bed, <j>or a mat on the ground. | T: should sleep on a bed, on the ground, or on a mat,
+snp2.14:27.3 | S: This is the eight-factored sabbath, they say, | T: For this, they say, is the eightfold uposatha,
+snp2.14:27.4 | S: revealed by the Buddha, <j>who has gone to suffering’s end. | T: proclaimed by the Awakened One who has gone to the end of suffering & stress.
+snp2.14:28.1 | S: Then having rightly undertaken the sabbath | T: Then, having kept, well-accomplished, the eightfold uposatha
+snp2.14:28.2 | S: complete in all its eight factors | T: (none)
+snp2.14:28.3 | S: on the fourteenth, fifteenth, <j>and eighth of the fortnight, | T: on the fourteenth, fifteenth, & eighth of the fortnight,
+snp2.14:28.4 | S: as well as on the fortnightly special displays, | T: and on special days of the fortnight,
+snp2.14:29.1 | S: at daybreak after the sabbath | T: (none)
+snp2.14:29.2 | S: a clever person, rejoicing with confident heart, | T: with clear & confident mind, the observant person at dawn after the uposatha, confident, rejoicing,
+snp2.14:29.3 | S: would distribute food and drink | T: should share food & drink,
+snp2.14:29.4 | S: to the mendicant Saṅgha as is fitting. | T: as is proper, with the Saṅgha of monks.
+snp2.14:30.1 | S: One should rightfully support one’s parents, | T: One should righteously support mother & father,
+snp2.14:30.2 | S: and undertake a legitimate business. | T: should engage in righteous trade,
+snp2.14:30.3 | S: A diligent layperson observing these duties | T: One heedful in this householder protocol
+snp2.14:30.4 | S: ascends to the gods named ‘self-radiant’.” | T: goes to the devas called Self-radiant.”
+snp2.14:30.5 | P: Dhammikasuttaṁ cuddasamaṁ. | T: (none)
+snp2.14:30.6 | P: Cūḷavaggo dutiyo. | T: (none)
+snp2.14:31.0 | P: Tassuddānaṁ | T: (none)
+snp2.14:31.1 | P: Ratanāmagandho hiri ca, | T: (none)
+snp2.14:31.2 | P: maṅgalaṁ sūcilomena; | T: (none)
+snp2.14:31.3 | P: Dhammacariyañca brāhmaṇo, | T: (none)
+snp2.14:31.4 | P: nāvā kiṁsīlamuṭṭhānaṁ. | T: (none)
+snp2.14:32.1 | P: Rāhulo puna kappo ca, | T: (none)
+snp2.14:32.2 | P: paribbājaniyaṁ tathā; | T: (none)
+snp2.14:32.3 | P: Dhammikañca viduno āhu, | T: (none)
+snp2.14:32.4 | P: cūḷavagganti cuddasāti. | T: (none)
+
+## an7.53
+an7.53:1.1 | S: So I have heard. | T: I have heard that
+an7.53:1.2 | S: At one time the venerables Sāriputta and Mahāmoggallāna were wandering in the Southern Hills together with a large Saṅgha of mendicants. | T: on one occasion Ven. Sāriputta & Ven. Mahā Moggallāna were on a wandering tour of the Southern Mountains with a large Saṅgha of monks.
+an7.53:1.3 | S: Now at that time the laywoman Veḷukaṇṭakī, Nanda’s mother, rose at the crack of dawn and recited the verses of “The Way to the Far Shore”. | T: And on that occasion, the female lay follower Veḷukaṇṭakin Nandamātar, having risen as night approached dawn, chanted the Pārāyana.
+an7.53:2.1 | S: And at that time the great king Vessavaṇa was on his way from the north to the south on some business. | T: And on that occasion the great [deva] king Vessavaṇṇa was traveling from north to south on some business or other.
+an7.53:2.2 | S: He heard Nanda’s Mother reciting, and stood waiting for her to finish. | T: He heard the female lay follower Nandamātar chanting the Pārāyana, and on hearing her, stood waiting for the end of her chant.
+an7.53:3.1 | S: Then when her recital was over she fell silent. | T: Then the female lay follower Nandamātar, having chanted the Pārāyana, fell silent.
+an7.53:3.2 | S: Then, knowing she had finished, Vessavaṇa applauded, saying, | T: Then the great king Vessavaṇṇa, knowing that her chant was ended, applauded her:
+an7.53:3.3 | S: “Good, sister! Good, sister!” | T: “Excellent, sister! Excellent!”
+an7.53:3.4 | S: “But who might you be, dearest?” | T: “But who’s there, O One of the Auspicious Face?”
+an7.53:3.5 | S: “Sister, I am your brother Vessavaṇa, the great king.” | T: “I’m your brother, sister: the great king Vessavaṇṇa.”
+an7.53:3.6 | S: “Good, dearest! Then may my recital of the teaching be my offering to you as my guest.” | T: “Excellent, O One of the Auspicious Face! Excellent! Then let this Dhamma sequence that I’ve chanted be your guest gift.”
+an7.53:3.7 | S: “Good, sister! And let this also be your offering to me as your guest. | T: “Excellent, sister! And let this also be my guest gift.
+an7.53:3.8 | S: Tomorrow, the mendicant Saṅgha headed by Sāriputta and Moggallāna will arrive at Veḷukaṇṭa before breakfast. When you’ve served the Saṅgha, please dedicate the religious donation to me. | T: This morning a Saṅgha of monks headed by Sāriputta & Moggallāna will be coming to Veḷukaṇṭaka before breakfast. Having served them, dedicate the offering to me.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an7.53:3.9 | S: Then that will also be your offering to me as your guest.” | T: That will also be my guest gift.”
+an7.53:4.1 | S: And when the night had passed the lay woman Nanda’s Mother had delicious fresh and cooked foods prepared in her own home. | T: So Nandamātar, as the night was ending, prepared exquisite staple & non-staple foods in her home.
+an7.53:4.2 | S: Then the Saṅgha of mendicants headed by Sāriputta and Moggallāna arrived at Veḷukaṇṭa. | T: Then the Saṅgha of monks headed by Sāriputta & Moggallāna arrived at Veḷukaṇṭaka before breakfast.
+an7.53:4.3 | S: Then Nanda’s Mother addressed a man, | T: Nandamātar addressed a man,
+an7.53:4.4 | S: “Please, my man, go to the monastery and announce the time to the Saṅgha, saying: | T: “Come, my good man. Having gone to the monastery, announce the time (of the meal) to the Saṅgha of monks, (saying,)
+an7.53:4.5 | S: ‘Sirs, it’s time. The meal is ready in the home of the lady Nanda’s Mother.’” | T: ‘It’s time, venerable sirs. The meal is ready at Lady Nandamātar’s home.’”
+an7.53:4.6 | S: “Yes, ma’am,” that man replied, and he did as she said. | T: Responding, “As you say, lady,” to Nandamātar, the man went to the monastery and announced the time to the Saṅgha of monks,
+an7.53:4.7 | P: “kālo, bhante, ayyāya nandamātuyā nivesane niṭṭhitaṁ bhattan”ti. | T: “It’s time, venerable sirs. The meal is ready at Lady Nandamātar’s home.”
+an7.53:4.8 | S: And then the Saṅgha of mendicants headed by Sāriputta and Moggallāna robed up in the morning and, taking their bowls and robes, went to the home of Nanda’s Mother, where they sat on the seats spread out. | T: Then early in the morning, having adjusted their under robes and carrying their robes & bowls, the Saṅgha of monks headed by Sāriputta & Moggallāna went to Nandamātar’s home. On arrival, they sat down on seats laid out.
+an7.53:4.9 | S: Then Nanda’s Mother served and satisfied them with her own hands with delicious fresh and cooked foods. | T: Nandamātar, with her own hands, served & satisfied the Saṅgha of monks headed by Sāriputta & Moggallāna with exquisite staple & non-staple food.
+an7.53:5.1 | S: When Sāriputta had eaten and washed his hand and bowl, Nanda’s Mother sat down to one side. | T: Then, when Ven. Sāriputta had finished his meal and had rinsed his bowl & hands, Nandamātar, taking a low seat, sat to one side.
+an7.53:5.2 | S: Sāriputta said to her, | T: As she was sitting there, Ven. Sāriputta said to her,
+an7.53:5.3 | S: “Nanda’s Mother, who told you that the Saṅgha of mendicants was about to arrive?” | T: “Nandamātar, who informed you of the arrival of the Saṅgha of monks?”
+an7.53:6.1 | S: “Sir, last night I rose at the crack of dawn and recited the verses of ‘The Way to the Far Shore’, and then I fell silent. | T: “Just now, venerable sir, after having risen as night approached dawn and having chanted the Pārāyana, I fell silent.
+an7.53:6.2 | S: Then the great king Vessavaṇa, knowing I had finished, applauded me, | T: Then the great king Vessavaṇṇa, knowing that my chant was ended, applauded me:
+an7.53:6.3 | S: ‘Good, sister! Good, sister!’ | T: ‘Excellent, sister! Excellent!’
+an7.53:6.4 | S: I asked: ‘But who might you be, dearest?’ | T: “‘But who’s there, O One of the Auspicious Face?’
+an7.53:6.5 | S: ‘Sister, I am your brother Vessavaṇa, the great king.’ | T: “‘I’m your brother, sister: the great king Vessavaṇṇa.’
+an7.53:6.6 | S: ‘Good, dearest! Then may my recital of the teaching be my offering to you as my guest.’ | T: “‘Excellent, O One of the Auspicious Face! Excellent! Then let this Dhamma sequence that I’ve chanted be your guest gift.’
+an7.53:6.7 | S: ‘Good, sister! And let this also be your offering to me as your guest. | T: “‘Excellent, sister! And let this also be my guest gift.
+an7.53:6.8 | S: Tomorrow, the mendicant Saṅgha headed by Sāriputta and Moggallāna will arrive at Veḷukaṇṭa before breakfast. When you’ve served the Saṅgha, please dedicate the religious donation to me. | T: Tomorrow a Saṅgha of monks headed by Sāriputta & Moggallāna will be coming to Veḷukaṇṭaka before breakfast. Having served them, dedicate the offering to me.
+an7.53:6.9 | S: Then that will also be your offering to me as your guest.’ | T: That will also be my guest gift.’
+an7.53:6.10 | S: And so, sir, may the merit and the flourishing of merit of this gift be for the happiness of the great king Vessavaṇa.” | T: So in other words, may the merit of this gift be for the happiness of the great king Vessavaṇṇa.”
+an7.53:7.1 | S: “It’s incredible, Nanda’s Mother, it’s amazing | T: “It’s amazing, Nandamātar! It’s astounding,
+an7.53:7.2 | S: that you converse face to face with a mighty and illustrious godling like the great king Vessavaṇa.” | T: that you would converse face to face with the great king Vessavaṇṇa, the young deva of such great power & such great might!”
+an7.53:8.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:8.2 | S: there is another. | T: (none)
+an7.53:8.3 | S: I had an only son named Nanda who I loved dearly. | T: I had an only son: Nanda, dear & appealing.
+an7.53:8.4 | S: The rulers forcibly abducted him on some pretext and had him executed. | T: The rulers seized & abducted him on some pretext and had him executed.
+an7.53:8.5 | S: But I can’t recall getting upset when my boy was under arrest or being arrested, imprisoned or being put in prison, killed or being killed.” | T: But when the boy had been arrested or was being arrested, when he had been imprisoned or was being imprisoned, when he had been killed or was being killed, I don’t recall any alteration of my mind.”
+an7.53:8.6 | S: “It’s incredible, Nanda’s Mother, it’s amazing | T: “It’s amazing, Nandamātar! It’s astounding,
+an7.53:8.7 | S: that you purify even the arising of a thought.” | T: that you can purify even as little as the arising of a thought.”
+an7.53:9.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:9.2 | S: there is another. | T: (none)
+an7.53:9.3 | S: When my husband passed away he was reborn in one of the realms of spirits. | T: When my husband died, he reappeared in the yakkha realm.
+an7.53:9.4 | S: He revealed to me his previous incarnation. | T: He appeared to me in his earlier bodily form,
+an7.53:9.5 | S: But I can’t recall getting upset on that account.” | T: but I don’t recall, from that cause, any alteration of my mind.”
+an7.53:9.6 | S: “It’s incredible, Nanda’s Mother, it’s amazing | T: “It’s amazing, Nandamātar! It’s astounding,
+an7.53:9.7 | S: that you purify even the arising of a thought.” | T: that you can purify even as little as the arising of a thought.”
+an7.53:10.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:10.2 | S: there is another. | T: (none)
+an7.53:10.3 | S: Ever since we were both young, and I was given in marriage to my husband, I can’t recall betraying him even in thought, still less in deed.” | T: I was given in marriage to my young husband when I was a young girl, but I don’t recall ever transgressing against him in mind, much less in body.”
+an7.53:10.4 | S: “It’s incredible, Nanda’s Mother, it’s amazing | T: “It’s amazing, Nandamātar! It’s astounding,
+an7.53:10.5 | S: that you purify even the arising of a thought.” | T: that you can purify even as little as the arising of a thought.”
+an7.53:11.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:11.2 | S: there is another. | T: (none)
+an7.53:11.3 | S: Ever since I declared myself a lay follower, I can’t recall deliberately breaking any precept.” | T: Since declaring myself a lay follower, I don’t recall ever deliberately overstepping any training rule.”
+an7.53:11.4 | S: “It’s incredible, Nanda’s Mother, it’s amazing!” | T: “It’s amazing, Nandamātar! It’s astounding!”
+an7.53:12.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:12.2 | S: there is another. | T: (none)
+an7.53:12.3 | S: Whenever I want, quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: To whatever extent I want, quite secluded from sensuality, secluded from unskillful qualities, I enter & remain in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an7.53:12.4 | S: As the placing of the mind and keeping it connected are stilled, I enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the stilling of directed thoughts & evaluations, I enter & remain in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an7.53:12.5 | S: And with the fading away of rapture, I enter and remain in the third absorption, where I meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading of rapture, I remain equanimous, mindful, & alert, and sense pleasure with the body. I enter & remain in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, one has a pleasant abiding.’
+an7.53:12.6 | S: With the giving up of pleasure and pain, and the disappearance of former happiness and sadness, I enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness.” | T: With the abandoning of pleasure & pain—as with the earlier disappearance of joy & distress—I enter & remain in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.”
+an7.53:12.7 | S: “It’s incredible, Nanda’s Mother, it’s amazing!” | T: “It’s amazing, Nandamātar! It’s astounding!”
+an7.53:13.1 | S: “Sir, this is not my only incredible and amazing quality; | T: “I don’t have only that amazing & astounding quality, venerable sir. I have another amazing & astounding quality.
+an7.53:13.2 | S: there is another. | T: (none)
+an7.53:13.3 | S: Of the five lower fetters taught by the Buddha, I don’t see any that I haven’t given up.” | T: Of the five lower fetters taught by the Blessed One, I don’t see in myself any that are unabandoned.”
+an7.53:13.4 | S: “It’s incredible, Nanda’s Mother, it’s amazing!” | T: “It’s amazing, Nandamātar! It’s astounding!”
+an7.53:14.1 | S: Then Venerable Sāriputta educated, encouraged, fired up, and inspired Nanda’s Mother with a Dhamma talk, after which he rose from his seat and left. | T: Then Ven. Sāriputta—having instructed, urged, roused, & encouraged the female lay follower Nandamātar with a talk on Dhamma—got up from his seat & left.
+an7.53:14.2 | P: Dasamaṁ. | T: (none)
+an7.53:14.3 | P: Mahāyaññavaggo pañcamo. | T: (none)
+an7.53:15.0 | P: Tassuddānaṁ | T: (none)
+an7.53:15.1 | P: Ṭhiti ca parikkhāraṁ dve, | T: (none)
+an7.53:15.2 | P: aggī saññā ca dve parā; | T: (none)
+an7.53:15.3 | P: Methunā saṁyogo dānaṁ, | T: (none)
+an7.53:15.4 | P: nandamātena te dasāti. | T: (none)
+an7.53:15.5 | P: Paṇṇāsako samatto. | T: (none)
+
+## snp4.1
+snp4.1:1.1 | S: If a mortal desires sensual pleasure | T: If one, longing for sensual pleasure,
+snp4.1:1.2 | S: and their desire succeeds, | T: achieves it, yes,
+snp4.1:1.3 | S: they definitely become elated, | T: he’s enraptured at heart.
+snp4.1:1.4 | S: having got what they want. | T: The mortal gets what he wants.
+snp4.1:2.1 | S: But for that personage in the throes of pleasure, | T: But if for that person
+snp4.1:2.2 | S: aroused by desire, | T: —longing, desiring—
+snp4.1:2.3 | S: when those pleasures fade, | T: the pleasures diminish,
+snp4.1:2.4 | S: it inflicts them like an arrow strike. | T: he’s afflicted, as if shot with an arrow.
+snp4.1:3.1 | S: One who, being mindful, | T: Whoever avoids sensual desires
+snp4.1:3.2 | S: avoids sensual pleasures | T: (none)
+snp4.1:3.3 | S: like side-stepping a snake’s head, | T: —as he would, with his foot, the head of a snake—
+snp4.1:3.4 | S: transcends attachment to the world. | T: goes beyond, mindful, this attachment in the world.
+snp4.1:4.1 | S: There are many objects of sensual desire: | T: A man who is greedy
+snp4.1:4.2 | S: fields, lands, and gold; cattle and horses; | T: for fields, land, gold, cattle, horses,
+snp4.1:4.3 | S: slaves and servants; women and relatives. | T: servants, employees, women, relatives, many sensual pleasures,
+snp4.1:4.4 | S: When a man lusts over these, | T: (none)
+snp4.1:5.1 | S: the weak overpower him | T: is overpowered with weakness
+snp4.1:5.2 | S: and adversities crush him. | T: and trampled by trouble,
+snp4.1:5.3 | S: Suffering follows him | T: for pain invades him
+snp4.1:5.4 | S: like water in a leaky boat. | T: as water, a cracked boat.
+snp4.1:6.1 | S: That’s why a personage, ever mindful, | T: So one, always mindful,
+snp4.1:6.2 | S: should avoid sensual pleasures. | T: should avoid sensual desires.
+snp4.1:6.3 | S: Give them up and cross the flood, | T: Letting them go, he’d cross over the flood
+snp4.1:6.4 | S: as a bailed-out boat reaches the far shore. | T: like one who, having bailed out the boat, has reached the far shore.
+snp4.1:6.5 | P: Kāmasuttaṁ paṭhamaṁ. | T: (none)
+
+## thag3.10
+thag3.10:1.1 | S: In the past you had faith, | T: Before, you had faith.
+thag3.10:1.2 | S: today you have none. | T: Today you don’t.
+thag3.10:1.3 | S: What’s yours is yours alone— | T: What is yours is just for you.
+thag3.10:1.4 | S: I’ve done nothing wrong. | T: I’ve done nothing wrong.
+thag3.10:2.1 | S: Faith is impermanent, fickle: | T: For I’ve seen that faith is inconstant, wavering.
+thag3.10:2.2 | S: or so I have seen. | T: (none)
+thag3.10:2.3 | S: Passions wax and wane: | T: Even they who are passionate lose their passion.
+thag3.10:2.4 | S: why would a sage waste away on that account? | T: Why should a sage waste away over that?
+thag3.10:3.1 | S: The meal of a sage is cooked | T: A sage’s meal is cooked
+thag3.10:3.2 | S: bit by bit in this family or that. | T: little by little, in this family and that.
+thag3.10:3.3 | S: I’ll walk for alms, | T: I will go for alms.
+thag3.10:3.4 | S: for my legs are strong. | T: I have the strength of my legs.
+thag3.10:3.5 | P: … Sāṭimattiyo thero …. | T: (none)
+
+## thag6.10
+thag6.10:1.1 | S: I was only seven years old | T: When I was seven
+thag6.10:1.2 | S: and had just gone forth | T: & newly gone forth,
+thag6.10:1.3 | S: when I overcame the mighty serpent king | T: having conquered with my power the great powerful serpent,
+thag6.10:1.4 | S: with my psychic powers. | T: (none)
+thag6.10:2.1 | S: I brought water for my mentor | T: I was fetching water for my preceptor
+thag6.10:2.2 | S: from the great lake Anotatta. | T: from the great lake, Anotatta,
+thag6.10:2.3 | S: When he saw me, | T: when the Teacher saw me & said:
+thag6.10:2.4 | S: my teacher declared: | T: (none)
+thag6.10:3.1 | S: “Sāriputta, see this | T: “Look, Sāriputta, at that one,
+thag6.10:3.2 | S: young boy coming, | T: the young boy coming there,
+thag6.10:3.3 | S: carrying a water pot, | T: carrying a pot of water,
+thag6.10:3.4 | S: serene inside himself. | T: well-centered within,
+thag6.10:4.1 | S: His conduct inspires confidence, | T: his practices—inspiring;
+thag6.10:4.2 | S: he is of lovely deportment: | T: his bearing—admirable.
+thag6.10:4.3 | S: he is Anuruddha’s novice, | T: He’s Anuruddha’s novice,
+thag6.10:4.4 | S: self-assured in psychic powers. | T: mature in his powers,
+thag6.10:5.1 | S: Made a thoroughbred by a thoroughbred, | T: made thoroughbred by a thoroughbred,
+thag6.10:5.2 | S: made good by the good, | T: good by one who is good,
+thag6.10:5.3 | S: educated and trained by Anuruddha, | T: tamed by Anuruddha,
+thag6.10:5.4 | S: who has completed his task. | T: trained by one whose task is done.
+thag6.10:6.1 | S: Having attained ultimate peace | T: He, having reached the highest peace
+thag6.10:6.2 | S: and witnessed the unshakable, | T: & realized the unshakable,
+thag6.10:6.3 | S: that novice Sumana has the wish: | T: Sumana the novice wants this:
+thag6.10:6.4 | S: ‘May no one find me out!’” | T: ‘Don’t let anyone know me.’”
+thag6.10:6.5 | P: … Sumano thero …. | T: (none)
+
+## thig6.3
+thig6.3:1.1 | S: “You’re so young and beautiful! | T: Māra: “You, a beautiful young woman;
+thig6.3:1.2 | S: I too am young, just a youth. | T: I, a young man, full of youth.
+thig6.3:1.3 | S: Come, Khemā, let us enjoy | T: Come, Khemā, let’s enjoy ourselves
+thig6.3:1.4 | S: the music of a five-piece band.” | T: to the music of a five-piece band.”
+thig6.3:2.1 | S: “This body is rotting, | T: Khemā: “I’m disgusted, ashamed of this putrid body— disintegrating, dissolving.
+thig6.3:2.2 | S: ailing and frail, | T: (none)
+thig6.3:2.3 | S: I’m horrified and repelled by it, | T: (none)
+thig6.3:2.4 | S: and I’ve eradicated sensual craving. | T: Sensual craving is rooted out.
+thig6.3:3.1 | S: Sensual pleasures are like swords and spears; | T: Sensual pleasures are like swords & spears;
+thig6.3:3.2 | S: the aggregates are their chopping block. | T: the aggregates, their executioner’s block.
+thig6.3:3.3 | S: What you call erotic delight | T: What you call sensual delight
+thig6.3:3.4 | S: is now no delight for me. | T: is no delight for me.
+thig6.3:4.1 | S: Relishing is banished in every respect, | T: Everywhere enjoyment is defeated;
+thig6.3:4.2 | S: and the mass of darkness is shattered. | T: the mass of darkness, burst.
+thig6.3:4.3 | S: So know this, Wicked One: | T: So know, Evil One,
+thig6.3:4.4 | S: you’re beaten, terminator!” | T: that you have been, End-maker, struck down.”
+thig6.3:5.1 | S: “Worshiping the stars, | T: Paying homage to the zodiac stars,
+thig6.3:5.2 | S: serving the sacred flame in a grove; | T: tending the fire in the forest,
+thig6.3:5.3 | S: failing to grasp the true nature of things, | T: not knowing it as it actually was,
+thig6.3:5.4 | S: foolish me, I thought this was purity. | T: fools, you conceived it as purity.
+thig6.3:6.1 | S: But now I worship the Awakened One, | T: Whereas I am one who pays homage to the One Self-awakened,
+thig6.3:6.2 | S: supreme among men. | T: the utmost man.
+thig6.3:6.3 | S: Doing the Teacher’s bidding, | T: I’m one who has done the Teacher’s bidding,
+thig6.3:6.4 | S: I am released from all suffering.” | T: entirely released from sufferings & stress.
+thig6.3:7.1 | P: … Khemā therī …. | T: (none)
+
+## thig9.1
+thig9.1:1.1 | S: “Vaḍḍha, please never ever | T: Vaḍḍha’s Mother: Vaḍḍha, don’t have any
+thig9.1:1.2 | S: get snarled in the world. | T: underbrush-lust ever, in the world, at all.
+thig9.1:1.3 | S: My child, do not partake | T: Don’t, my little son,
+thig9.1:1.4 | S: in suffering again and again. | T: have a share in suffering again & again.
+thig9.1:2.1 | S: For happy dwell the sages, Vaḍḍha, | T: For happy are sages, Vaḍḍha,
+thig9.1:2.2 | S: unstirred, their doubts cut off, | T: unperturbed, with doubt cut through.
+thig9.1:2.3 | S: cooled and tamed, | T: Having become cool and self-controlled,
+thig9.1:2.4 | S: and free of defilements. | T: they dwell effluent-free.
+thig9.1:3.1 | S: Vaḍḍha, foster the path | T: Foster the path,
+thig9.1:3.2 | S: that the seers have walked, | T: pursued by seers,
+thig9.1:3.3 | S: for the attainment of vision, | T: for the attainment of vision,
+thig9.1:3.4 | S: and for making an end of suffering.” | T: for the ending of stress.
+thig9.1:4.1 | S: “Mother, you speak with such assurance | T: Vaḍḍha: Undaunted, mother, you speak this matter to me.
+thig9.1:4.2 | S: to me on this matter. | T: (none)
+thig9.1:4.3 | S: My dear mom, I can’t help thinking | T: I suspect that now in you
+thig9.1:4.4 | S: that no snarls are found in you.” | T: no underbrush is found.
+thig9.1:5.1 | S: “Vaḍḍha, not a jot or a skerrick | T: Vaḍḍha’s Mother: Whatever fabrications
+thig9.1:5.2 | S: of snarl is found in me | T: (none)
+thig9.1:5.3 | S: for any conditions at all, | T: (none)
+thig9.1:5.4 | S: whether low, high, or middling. | T: are lowly, middling, or exalted: No underbrush for them in me —not a bit, not the least little bit— is found.
+thig9.1:6.1 | S: All defilements are ended for me, | T: All effluents are ended for me—
+thig9.1:6.2 | S: meditating and diligent. | T: heedful, doing jhāna.
+thig9.1:6.3 | S: I’ve attained the three knowledges | T: The three knowledges are attained;
+thig9.1:6.4 | S: and fulfilled the Buddha’s instructions.” | T: the Buddha’s bidding, done.
+thig9.1:7.1 | S: “Oh so excellent was the goad | T: Vaḍḍha: With what a vast goad
+thig9.1:7.2 | S: my mother spurred me with! | T: my mother poked me—
+thig9.1:7.3 | S: Owing to her compassion, she spoke | T: because of her sympathy—
+thig9.1:7.4 | S: verses on the ultimate goal. | T: verses connected to the ultimate goal.
+thig9.1:8.1 | S: On hearing her words, | T: Having heard her words—
+thig9.1:8.2 | S: advised by my mother, | T: my mother’s instruction—
+thig9.1:8.3 | S: I was struck with righteous urgency | T: Dhamma-saṁvega arose
+thig9.1:8.4 | S: for the sake of sanctuary from the yoke. | T: for attaining rest from the yoke.
+thig9.1:9.1 | S: Striving, resolute, | T: Resolute in exertion,
+thig9.1:9.2 | S: tireless all day and night, | T: relentlessly, both day & night,
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+thig9.1:9.3 | S: urged on by my mother, | T: I, roused by my mother,
+thig9.1:9.4 | S: I realized supreme peace. | T: touched the highest peace.
+thig9.1:10.1 | P: … Vaḍḍhamātā therī …. | T: (none)
+thig9.1:11.1 | P: Navakanipāto niṭṭhito. | T: (none)
+
+## sn16.13
+sn16.13:1.1 | S: So I have heard. | T: (none)
+sn16.13:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn16.13:1.3 | S: Then Venerable Mahākassapa went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Mahā Kassapa went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn16.13:1.4 | S: “What is the cause, sir, what is the reason why there used to be fewer training rules but more enlightened mendicants? | T: “What is the cause, lord, what is the reason, why before there were fewer training rules and yet more monks established in final gnosis,
+sn16.13:1.5 | S: And what is the cause, what is the reason why these days there are more training rules and fewer enlightened mendicants?” | T: whereas now there are more training rules and yet fewer monks established in final gnosis?”
+sn16.13:1.6 | S: “That’s how it is, Kassapa. When sentient beings are in decline and the true teaching is disappearing there are more training rules and fewer enlightened mendicants. | T: “That’s the way it is, Kassapa. When beings are degenerating and the true Dhamma is disappearing, there are more training rules and yet fewer monks established in final gnosis.
+sn16.13:1.7 | S: The true teaching doesn’t disappear as long as the counterfeit of the true teaching hasn’t appeared in the world. | T: There is no disappearance of the true Dhamma as long as a counterfeit of the true Dhamma has not arisen in the world,
+sn16.13:1.8 | S: But when the counterfeit of the true teaching appears in the world then the true teaching disappears. | T: but there is the disappearance of the true Dhamma when a counterfeit of the true Dhamma has arisen in the world.
+sn16.13:2.1 | S: It’s like native gold, which doesn’t disappear as long as counterfeit gold hasn’t appeared in the world. | T: Just as there is no disappearance of gold as long as a counterfeit of gold has not arisen in the world,
+sn16.13:2.2 | S: But when counterfeit gold appears in the world then native gold disappears. | T: but there is the disappearance of gold when a counterfeit of gold has arisen in the world,
+sn16.13:2.3 | S: In the same way, the true teaching doesn’t disappear as long as the counterfeit of the true teaching hasn’t appeared in the world. | T: in the same way there is no disappearance of the true Dhamma as long as a counterfeit of the true Dhamma has not arisen in the world,
+sn16.13:2.4 | S: But when the counterfeit of the true teaching appears in the world then the true teaching disappears. | T: but there is the disappearance of the true Dhamma when a counterfeit of the true Dhamma has arisen in the world.
+sn16.13:3.1 | S: It’s not the elements of earth, water, fire, or air that make the true teaching disappear. | T: “It’s not the earth property that makes the true Dhamma disappear. It’s not the water property… the fire property… the wind property that makes the true Dhamma disappear.
+sn16.13:3.2 | S: Rather, it’s the futile people who appear right here that make the true teaching disappear. | T: It’s worthless people who arise right here [within the Saṅgha] who make the true Dhamma disappear.
+sn16.13:3.3 | S: The true teaching doesn’t disappear like a ship that sinks all at once. | T: The true Dhamma doesn’t disappear the way a ship sinks all at once.
+sn16.13:3.4 | P: na kho, kassapa, evaṁ saddhammassa antaradhānaṁ hoti. | T: (none)
+sn16.13:4.1 | S: There are five detrimental things that lead to the decline and disappearance of the true teaching. | T: “These five downward-leading qualities tend to the confusion and disappearance of the true Dhamma.
+sn16.13:4.2 | S: What five? | T: Which five?
+sn16.13:4.3 | S: It’s when the monks, nuns, laymen, and laywomen lack respect and reverence for the Teacher, the teaching, the Saṅgha, the training, and immersion. | T: There is the case where the monks, nuns, male lay followers, & female lay followers live without respect, without deference, for the Teacher. They live without respect, without deference, for the Dhamma… for the Saṅgha… for the training… for concentration.
+sn16.13:4.4 | S: These five detrimental things lead to the decline and disappearance of the true teaching. | T: These are the five downward-leading qualities that tend to the confusion and disappearance of the true Dhamma.
+sn16.13:5.1 | S: There are five things that lead to the continuation, persistence, and enduring of the true teaching. | T: “But these five qualities tend to the stability, the non-confusion, the non-disappearance of the true Dhamma.
+sn16.13:5.2 | S: What five? | T: Which five?
+sn16.13:5.3 | S: It’s when the monks, nuns, laymen, and laywomen maintain respect and reverence for the Teacher, the teaching, the Saṅgha, the training, and immersion. | T: There is the case where the monks, nuns, male lay followers, & female lay followers live with respect, with deference, for the Teacher. They live with respect, with deference, for the Dhamma… for the Saṅgha… for the training… for concentration.
+sn16.13:5.4 | S: These five things lead to the continuation, persistence, and enduring of the true teaching.” | T: These are the five qualities that tend to the stability, the non-confusion, the non-disappearance of the true Dhamma.”
+sn16.13:5.5 | P: Terasamaṁ. | T: (none)
+sn16.13:5.6 | P: Kassapavaggo paṭhamo. | T: (none)
+sn16.13:6.0 | P: Tassuddānaṁ | T: (none)
+sn16.13:6.1 | P: Santuṭṭhañca anottappī, | T: (none)
+sn16.13:6.2 | P: candūpamaṁ kulūpakaṁ; | T: (none)
+sn16.13:6.3 | P: Jiṇṇaṁ tayo ca ovādā, | T: (none)
+sn16.13:6.4 | P: jhānābhiññā upassayaṁ; | T: (none)
+sn16.13:6.5 | P: Cīvaraṁ paraṁmaraṇaṁ, | T: (none)
+sn16.13:6.6 | P: saddhammappatirūpakanti. | T: (none)
+sn16.13:6.7 | S: The Linked Discourses with Kassapa are complete. | T: (none)
+
+
+codex
+I’ve read the full batch. I found six places where a separate sentence belongs on the next line, and I’m recording those changes.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-023.findings.tmp <<'EOF'
+an7.53:8.2 starts: I have another amazing & astounding quality.
+an7.53:9.2 starts: I have another amazing & astounding quality.
+an7.53:10.2 starts: I have another amazing & astounding quality.
+an7.53:11.2 starts: I have another amazing & astounding quality.
+an7.53:12.2 starts: I have another amazing & astounding quality.
+an7.53:13.2 starts: I have another amazing & astounding quality.
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+28,480
+6 lines reported.

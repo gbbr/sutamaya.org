@@ -1,0 +1,425 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd99-661d-74f2-bd6c-2e7ef875fc9d
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn1.20
+sn1.20:1.1 | S: So I have heard. | T: I have heard that
+sn1.20:1.2 | S: At one time the Buddha was staying near Rājagaha in the Hot Springs Monastery. | T: on one occasion the Blessed One was staying near Rājagaha at Tapodā monastery.
+sn1.20:1.3 | S: Then Venerable Samiddhi rose at the crack of dawn and went to the hot springs to bathe. | T: Then Ven. Samiddhi, as night was ending, got up & went to the Tapodā Hot Springs to bathe his limbs.
+sn1.20:1.4 | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed his limbs and gotten out of the springs, he stood wearing only his lower robe, letting his limbs dry.
+sn1.20:1.5 | S: Then, late at night, a glorious deity, lighting up the entire hot springs, went up to Samiddhi, and, standing in the air, addressed him in verse: | T: Then a certain devatā, in the far extreme of the night, her extreme radiance lighting up the entire Tapodā Hot Springs, went to Ven. Samiddhi. On arrival, while standing in the air, she addressed him with this verse:
+sn1.20:2.1 | S: “Mendicant, you seek alms before you eat; | T: “Without having enjoyed (sensual pleasures), you go for alms, monk.
+sn1.20:2.2 | S: you don’t seek alms after eating. | T: You don’t go for alms after having enjoyed.
+sn1.20:2.3 | S: But you should eat first, then seek alms: | T: Having enjoyed, monk, then go for alms.
+sn1.20:2.4 | S: don’t let the time pass you by.” | T: Don’t let time pass you by.”
+sn1.20:3.1 | S: “I actually don’t know the time; | T: Ven. Samiddhi: “I don’t know my time.
+sn1.20:3.2 | S: it’s hidden and unseen. | T: My time is hidden. It can’t be seen.
+sn1.20:3.3 | S: That’s why I seek alms before eating, | T: That’s why, not having enjoyed, I go for alms:
+sn1.20:3.4 | S: so that the time may not pass me by!” | T: Don’t let my time pass me by.”
+sn1.20:4.1 | S: Then that deity landed on the ground and said to Samiddhi, | T: Then the devatā, coming down to earth, said to Ven. Samiddhi,
+sn1.20:4.2 | S: “You’ve gone forth while young, mendicant. With pristine black hair, you’re blessed with youth, in the prime of life, and you’ve never flirted with sensual pleasures. | T: “You have gone forth while young, monk—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality.
+sn1.20:4.3 | S: Enjoy human sensual pleasures! | T: Enjoy human sensuality, monk.
+sn1.20:4.4 | S: Don’t give up what is apparent in the present to chase after what takes effect over time.” | T: Don’t drop what is visible here & now in pursuit of what’s subject to time.”
+sn1.20:5.1 | S: “I’m not, respectable sir. | T: “My friend, I’m not dropping what’s visible here & now in pursuit of what’s subject to time.
+sn1.20:5.2 | S: I’m giving up what takes effect over time to chase after what is apparent in the present. | T: I’m dropping what’s subject to time in pursuit of what’s visible here & now.
+sn1.20:5.3 | S: For the Buddha has said that sensual pleasures take effect over time, with much suffering and distress, and they’re all the more full of drawbacks. | T: For the Blessed One has said that sensuality is subject to time, of much stress, much despair, & greater drawbacks;
+sn1.20:5.4 | S: But this teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: whereas this Dhamma is well taught by the Blessed One, visible here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.”
+sn1.20:6.1 | S: “But in what way, mendicant, has the Buddha said that sensual pleasures take effect over time, with much suffering and distress, and they’re all the more full of drawbacks? | T: “But, monk, in what way has the Blessed One said that sensuality is subject to time, of much stress, much despair, & greater drawbacks?
+sn1.20:6.2 | S: And how is this teaching apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves?” | T: And how is this Dhamma visible here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves?”
+sn1.20:7.1 | S: “I’m junior, respectable sir, recently gone forth, newly come to this teaching and training. | T: “I’m new, my friend, not long gone forth, only recently come to this Dhamma & discipline.
+sn1.20:7.2 | S: I’m not able to explain this in detail. | T: I can’t explain it in detail.
+sn1.20:7.3 | S: But he, that Blessed One, the perfected one, the fully awakened Buddha, is staying near Rājagaha in the Hot Springs Monastery. | T: But the Blessed One, worthy & rightly self-awakened, is staying here near Rājagaha at Tapodā monastery.
+sn1.20:7.4 | S: You should approach him and ask about this matter. | T: Having gone to him, ask him this matter.
+sn1.20:7.5 | S: And you should remember it in line with the Buddha’s answer.” | T: As he explains it, that’s how you should remember it.”
+sn1.20:8.1 | S: “It’s not easy for us to approach the Buddha, as he is surrounded by other illustrious deities. | T: “Monk, it’s not easy for us to go to the Blessed One, as he is surrounded by other devas of great influence.
+sn1.20:8.2 | S: If you go to the Buddha and ask him about this matter, we’ll come along and listen to the teaching.” | T: But if you go to the Blessed One and ask him this matter, I will come along to hear the Dhamma.”
+sn1.20:8.3 | S: “Yes, reverend,” Venerable Samiddhi replied. He went to the Buddha, bowed, sat down to one side, and told him what had happened. Then he added: | T: Responding to the devatā, “As you say, my friend,” Ven. Samiddhi went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there [he told the Blessed One his entire conversation with the devatā].
+sn1.20:9.1 | P: “Idhāhaṁ, bhante, rattiyā paccūsasamayaṁ paccuṭṭhāya yena tapodā tenupasaṅkamiṁ gattāni parisiñcituṁ. | T: (none)
+sn1.20:9.2 | P: Tapode gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsiṁ gattāni pubbāpayamāno. | T: (none)
+sn1.20:9.3 | P: Atha kho, bhante, aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ tapodaṁ obhāsetvā yenāhaṁ tenupasaṅkami; upasaṅkamitvā vehāsaṁ ṭhitā imāya gāthāya ajjhabhāsi: | T: (none)
+sn1.20:10.1 | P: ‘Abhutvā bhikkhasi bhikkhu, | T: (none)
+sn1.20:10.2 | P: na hi bhutvāna bhikkhasi; | T: (none)
+sn1.20:10.3 | P: Bhutvāna bhikkhu bhikkhassu, | T: (none)
+sn1.20:10.4 | P: mā taṁ kālo upaccagā’ti. | T: (none)
+sn1.20:11.1 | P: Evaṁ vutte, ahaṁ, bhante, taṁ devataṁ gāthāya paccabhāsiṁ: | T: (none)
+sn1.20:12.1 | P: ‘Kālaṁ vohaṁ na jānāmi, | T: (none)
+sn1.20:12.2 | P: channo kālo na dissati; | T: (none)
+sn1.20:12.3 | P: Tasmā abhutvā bhikkhāmi, | T: (none)
+sn1.20:12.4 | P: mā maṁ kālo upaccagā’ti. | T: (none)
+sn1.20:13.1 | P: Atha kho, bhante, sā devatā pathaviyaṁ patiṭṭhahitvā maṁ etadavoca: | T: (none)
+sn1.20:13.2 | P: ‘daharo tvaṁ, bhikkhu, pabbajito susu kāḷakeso, bhadrena yobbanena samannāgato, paṭhamena vayasā, anikkīḷitāvī kāmesu. | T: (none)
+sn1.20:13.3 | P: Bhuñja, bhikkhu, mānusake kāme; | T: (none)
+sn1.20:13.4 | P: mā sandiṭṭhikaṁ hitvā kālikaṁ anudhāvī’ti. | T: (none)
+sn1.20:14.1 | P: Evaṁ vuttāhaṁ, bhante, taṁ devataṁ etadavocaṁ: | T: (none)
+sn1.20:14.2 | P: ‘na khvāhaṁ, āvuso, sandiṭṭhikaṁ hitvā kālikaṁ anudhāvāmi; | T: (none)
+sn1.20:14.3 | P: kālikañca khvāhaṁ, āvuso, hitvā sandiṭṭhikaṁ anudhāvāmi. | T: (none)
+sn1.20:14.4 | P: Kālikā hi, āvuso, kāmā vuttā bhagavatā bahudukkhā bahupāyāsā; ādīnavo ettha bhiyyo. | T: (none)
+sn1.20:14.5 | P: Sandiṭṭhiko ayaṁ dhammo akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhī’ti. | T: (none)
+sn1.20:15.1 | P: Evaṁ vutte, bhante, sā devatā maṁ etadavoca: | T: (none)
+sn1.20:15.2 | P: ‘kathañca, bhikkhu, kālikā kāmā vuttā bhagavatā bahudukkhā bahupāyāsā; ādīnavo ettha bhiyyo? | T: (none)
+sn1.20:15.3 | P: Kathaṁ sandiṭṭhiko ayaṁ dhammo akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhī’ti? | T: (none)
+sn1.20:16.1 | P: Evaṁ vuttāhaṁ, bhante, taṁ devataṁ etadavocaṁ: | T: (none)
+sn1.20:16.2 | P: ‘ahaṁ kho, āvuso, navo acirapabbajito adhunāgato imaṁ dhammavinayaṁ, na tāhaṁ sakkomi vitthārena ācikkhituṁ. | T: (none)
+sn1.20:16.3 | P: Ayaṁ so bhagavā arahaṁ sammāsambuddho rājagahe viharati tapodārāme. | T: (none)
+sn1.20:16.4 | P: Taṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ puccha. | T: (none)
+sn1.20:16.5 | P: Yathā te bhagavā byākaroti tathā naṁ dhāreyyāsī’ti. | T: (none)
+sn1.20:17.1 | P: Evaṁ vutte, bhante, sā devatā maṁ etadavoca: | T: (none)
+sn1.20:17.2 | P: ‘na kho, bhikkhu, sukaro so bhagavā amhehi upasaṅkamituṁ, aññāhi mahesakkhāhi devatāhi parivuto. | T: (none)
+sn1.20:17.3 | P: Sace kho tvaṁ, bhikkhu, taṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ puccheyyāsi, mayampi āgaccheyyāma dhammassavanāyā’ti. | T: (none)
+sn1.20:17.4 | S: “Sir, if that deity spoke the truth, he’ll be close by.” | T: “Now, lord, if that devatā was telling the truth, she is not far from here.”
+sn1.20:18.1 | S: When he had spoken, that deity said to Samiddhi, | T: When this was said, the devatā said to Ven. Samiddhi,
+sn1.20:18.2 | S: “Ask, mendicant, ask! For I have arrived.” | T: “Ask, monk! Ask! I’ve gotten through.”
+sn1.20:19.1 | S: Then the Buddha addressed the deity in verse: | T: Then the Blessed One recited this verse to the devatā:
+sn1.20:20.1 | S: “Sentient beings who perceive the communicable, | T: “Perceiving in terms of signs, beings
+sn1.20:20.2 | S: become established in the communicable. | T: take a stand on signs.
+sn1.20:20.3 | S: Not understanding the communicable, | T: Not fully comprehending signs, they
+sn1.20:20.4 | S: they fall under the yoke of Death. | T: come into the bonds of death.
+sn1.20:21.1 | S: But having fully understood the communicable, | T: But fully comprehending signs, one
+sn1.20:21.2 | S: they don’t conceive a communicator, | T: doesn’t suppose a signifier.
+sn1.20:21.3 | S: for they have nothing | T: Yet nothing exists for him
+sn1.20:21.4 | S: by which they might be described. | T: by which one would say, ‘To him no thought occurs.’
+sn1.20:21.5 | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+sn1.20:22.1 | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+sn1.20:22.2 | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if the Blessed One would speak in such a way that I would understand the detailed meaning of the Blessed One’s brief statement.”
+sn1.20:23.1 | S: “If you think that ‘I’m equal, | T: The Buddha: “Whoever supposes ‘equal,’
+sn1.20:23.2 | S: special, or worse’, you’ll dispute about that. | T: ‘superior,’ or ‘inferior,’ by that he’d dispute.
+sn1.20:23.3 | S: Unwavering in the face of the three discriminations, | T: Whereas to one unaffected by these three,
+sn1.20:23.4 | S: they have no thought, ‘I’m equal or special’. | T: ‘equal’ ‘superior’ do not occur.
+sn1.20:23.5 | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+sn1.20:24.1 | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+sn1.20:24.2 | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if the Blessed One would speak in such a way that I would understand the detailed meaning of the Blessed One’s brief statement.”
+sn1.20:25.1 | S: “They gave up judgment without falling into conceit; | T: The Buddha: “Having shed classifications, gone beyond conceit,
+sn1.20:25.2 | S: craving for name and form was cut off right here. | T: he has here cut through craving for name & form:
+sn1.20:25.3 | S: They cut the ties, untroubled, <j>with no need for hope. | T: This one— his bonds cut through, free from trouble, from longing—
+sn1.20:25.4 | S: Though gods and humans search for them | T: though they search,
+sn1.20:25.5 | S: in this life or the next, they never find them, | T: they can’t find him, human beings & devas, here & beyond,
+sn1.20:25.6 | S: not in heaven nor in any abode. | T: in heaven or any abode.
+sn1.20:26.1 | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+sn1.20:27.1 | S: “This is how I understand the detailed meaning of the Buddha’s brief statement: | T: “Lord, here’s how I understand the detailed meaning of the Blessed One’s brief statement:
+sn1.20:28.1 | S: You should never do anything bad | T: In all the world, every world, you should do no evil with speech, body, or mind.
+sn1.20:28.2 | S: by speech or mind or body in all the world. | T: (none)
+sn1.20:28.3 | S: Having given up sensual pleasures, <j>mindful and aware, | T: Having abandoned sensuality —mindful, alert—
+sn1.20:28.4 | S: you shouldn’t keep doing  <j>what’s painful and pointless.” | T: don’t consort with suffering & stress, with what doesn’t pertain to the goal.”
+sn1.20:28.5 | P: Nandanavaggo dutiyo. | T: (none)
+sn1.20:29.0 | P: Tassuddānaṁ | T: (none)
+sn1.20:29.1 | P: Nandanā nandati ceva, | T: (none)
+sn1.20:29.2 | P: Natthiputtasamena ca; | T: (none)
+sn1.20:29.3 | P: Khattiyo saṇamāno ca, | T: (none)
+sn1.20:29.4 | P: Niddātandī ca dukkaraṁ; | T: (none)
+sn1.20:29.5 | P: Hirī kuṭikā navamo, | T: (none)
+sn1.20:29.6 | P: Dasamo vutto samiddhināti. | T: (none)
+
+## sn2.23
+sn2.23:1.1 | S: Standing to one side, the godling Serī addressed the Buddha in verse: | T: As he was standing there, Serī the deva’s son recited these verses in the Blessed One’s presence:
+sn2.23:2.1 | S: “Both gods and humans | T: “Truly, they delight in food, both devas & human beings,
+sn2.23:2.2 | S: enjoy their food. | T: (none)
+sn2.23:2.3 | S: So what’s the name of the spirit | T: so what is the spirit
+sn2.23:2.4 | S: who doesn’t like food?” | T: who doesn’t delight in food?”
+sn2.23:3.1 | S: “Those who give with faith | T: The Buddha: “Those who give it through conviction,
+sn2.23:3.2 | S: and a clear and confident heart, | T: with clear, bright awareness:
+sn2.23:3.3 | S: partake of food | T: One eats that food,
+sn2.23:3.4 | S: in this world and the next. | T: in this world & the next.
+sn2.23:4.1 | S: So you should dispel stinginess, | T: So, having subdued miserliness,
+sn2.23:4.2 | S: overcoming that stain, and give a gift. | T: one who conquers [that] stain, should give a gift.
+sn2.23:4.3 | S: The good deeds of sentient beings | T: Deeds of merit are the support for beings
+sn2.23:4.4 | S: support them in the next world.” | T: when they arise in the other world.”
+sn2.23:5.1 | S: “It’s incredible, sir, it’s amazing, | T: “How amazing, lord! How astounding!
+sn2.23:5.2 | S: how well said this was by the Buddha.” He repeated the Buddha’s verses, and said: | T: How well this was stated by the Lord Blessed One!”
+sn2.23:6.1 | P: ‘Ye naṁ dadanti saddhāya, | T: “‘Those who give it through conviction,
+sn2.23:6.2 | P: vippasannena cetasā; | T: with clear, bright awareness:
+sn2.23:6.3 | P: Tameva annaṁ bhajati, | T: One eats that food,
+sn2.23:6.4 | P: asmiṁ loke paramhi ca. | T: in this world & the next.
+sn2.23:7.1 | P: Tasmā vineyya maccheraṁ, | T: So, having subdued miserliness,
+sn2.23:7.2 | P: dajjā dānaṁ malābhibhū; | T: one who conquers [that] stain, should give a gift.
+sn2.23:7.3 | P: Puññāni paralokasmiṁ, | T: Deeds of merit are the support for beings
+sn2.23:7.4 | P: patiṭṭhā honti pāṇinan’ti. | T: when they arise in the other world.’”
+sn2.23:8.1 | S: “Once upon a time, sir, I was a king named Serī, a giver, a donor, who praised giving. | T: “In the past, lord, I was a king named Serī—a donor, a lord of giving, one who spoke in praise of giving.
+sn2.23:8.2 | S: I gave gifts at the four gates to ascetics and brahmins, to paupers, vagrants, supplicants, and beggars. | T: At my four gates I had gifts given to contemplatives & brahmans, poor people & travelers, mendicants & beggars.
+sn2.23:8.3 | S: Then the ladies of my harem approached me and said, | T: “Then my harem women came to me and said,
+sn2.23:8.4 | S: ‘Your Majesty gives gifts, but we don’t. | T: ‘Your majesty, you give gifts, but we don’t give gifts.
+sn2.23:8.5 | S: Your Majesty, please support us to give gifts and make merit.’ | T: It would be good if, depending on you, we gave gifts & did deeds of merit.’
+sn2.23:8.6 | S: Then it occurred to me, | T: “Then the thought occurred to me,
+sn2.23:8.7 | S: ‘I’m a giver, a donor, who praises giving. | T: ‘Here I am, a donor, a lord of giving, one who speaks in praise of giving.
+sn2.23:8.8 | S: When they say, “We would give gifts”, what am I to say?’ | T: So when they say, “Let us give gifts,” what am I to say?’
+sn2.23:8.9 | S: And so I gave the first gate to the ladies of my harem. | T: So I gave the first gate to the harem women.
+sn2.23:8.10 | S: There they gave gifts, while my own giving dwindled. | T: There the harem women gave gifts, and my gifts returned to me.
+sn2.23:9.1 | S: Then my aristocrat vassals approached me and said, | T: “Then my noble-warrior subordinates came to me and said,
+sn2.23:9.2 | S: ‘Your Majesty gives gifts, the ladies of your harem give gifts, but we don’t. | T: ‘Your majesty, you give gifts, the harem women give gifts, but we don’t give gifts.
+sn2.23:9.3 | S: Your Majesty, please support us to give gifts and make merit.’ | T: It would be good if, depending on you, we gave gifts & did deeds of merit.’
+sn2.23:9.4 | S: Then it occurred to me, | T: “Then the thought occurred to me,
+sn2.23:9.5 | S: ‘I’m a giver, a donor, who praises giving. | T: ‘Here I am, a donor, a lord of giving, one who speaks in praise of giving.
+sn2.23:9.6 | S: When they say, “We would give gifts”, what am I to say?’ | T: So when they say, “Let us give gifts,” what am I to say?’
+sn2.23:9.7 | S: And so I gave the second gate to my aristocrat vassals. | T: So I gave the second gate to my noble-warrior subordinates.
+sn2.23:9.8 | S: There they gave gifts, while my own giving dwindled. | T: There the noble-warrior subordinates gave gifts, and my gifts returned to me.
+sn2.23:10.1 | S: Then my troops approached me and said, | T: “Then my troops came to me and said,
+sn2.23:10.2 | S: ‘Your Majesty gives gifts, the ladies of your harem give gifts, your aristocrat vassals give gifts, but we don’t. | T: ‘Your majesty, you give gifts, the harem women give gifts, the noble-warrior subordinates give gifts, but we don’t give gifts.
+sn2.23:10.3 | S: Your Majesty, please support us to give gifts and make merit.’ | T: It would be good if, depending on you, we gave gifts & did deeds of merit.’
+sn2.23:10.4 | S: Then it occurred to me, | T: “Then the thought occurred to me,
+sn2.23:10.5 | S: ‘I’m a giver, a donor, who praises giving. | T: ‘Here I am, a donor, a lord of giving, one who speaks in praise of giving.
+sn2.23:10.6 | S: When they say, “We would give gifts”, what am I to say?’ | T: So when they say, “Let us give gifts,” what am I to say?’
+sn2.23:10.7 | S: And so I gave the third gate to my troops. | T: So I gave the third gate to my troops.
+sn2.23:10.8 | S: There they gave gifts, while my own giving dwindled. | T: There the troops gave gifts, and my gifts returned to me.
+sn2.23:11.1 | S: Then my brahmins and householders approached me and said, | T: “Then brahmans & householders came to me and said,
+sn2.23:11.2 | S: ‘Your Majesty gives gifts, the ladies of your harem give gifts, your aristocrat vassals give gifts, your troops give gifts, but we don’t. | T: ‘Your majesty, you give gifts, the harem women give gifts, the noble-warrior subordinates give gifts, the troops give gifts, but we don’t give gifts.
+sn2.23:11.3 | S: Your Majesty, please support us to give gifts and make merit.’ | T: It would be good if, depending on you, we gave gifts & did deeds of merit.’
+sn2.23:11.4 | S: Then it occurred to me, | T: “Then the thought occurred to me,
+sn2.23:11.5 | S: ‘I’m a giver, a donor, who praises giving. | T: ‘Here I am, a donor, a lord of giving, one who speaks in praise of giving.
+sn2.23:11.6 | S: When they say, “We would give gifts”, what am I to say?’ | T: So when they say, “Let us give gifts,” what am I to say?’
+sn2.23:11.7 | S: And so I gave the fourth gate to my brahmins and householders. | T: So I gave the fourth gate to the brahmans & householders.
+sn2.23:11.8 | S: There they gave gifts, while my own giving dwindled. | T: There the brahmans & householders gave gifts, and my gifts returned to me.
+sn2.23:12.1 | S: Then my men approached me and said, | T: “Then my men came to me and said,
+sn2.23:12.2 | S: ‘Now Your Majesty is not giving gifts anywhere!’ | T: ‘Now your majesty isn’t giving any gifts.’
+sn2.23:12.3 | S: When they said this, I said to those men, | T: “When that was said, I said to my men,
+sn2.23:12.4 | S: ‘Well then, lads, deposit half the revenue generated in the outer districts in the royal compound. Give the other half as charity to ascetics and brahmins, to paupers, vagrants, supplicants, and beggars in those districts.’ | T: ‘In that case, I say, bring half of the revenue generated in the outlying districts into the city, and give half of it as gifts to contemplatives & brahmans, poor people & travelers, mendicants & beggars.’
+sn2.23:12.5 | S: Sir, for a long time I made so much merit and did so many skillful deeds. I never reached any limit so as to say | T: “And so, lord, in the meritorious deeds I did for such a long time, in the skillful deeds I did for such a long time, I didn’t reach a limit of
+sn2.23:12.6 | S: ‘there’s this much merit’ or ‘there’s this much result of merit’ or ‘for so long I’ll remain in heaven’. | T: ‘so much merit’ or ‘so much fruit of merit’ or ‘so long I should stay in heaven.’
+sn2.23:12.7 | S: It’s incredible, sir, it’s amazing, | T: “How amazing, lord! How astounding!
+sn2.23:12.8 | S: how well said this was by the Buddha. | T: How well this was stated by the lord Blessed One!”
+sn2.23:13.1 | S: ‘Those who give with faith | T: “‘Those who give it through conviction,
+sn2.23:13.2 | S: and a clear and confident heart, | T: with clear, bright awareness:
+sn2.23:13.3 | S: partake of food | T: One eats that food,
+sn2.23:13.4 | S: in this world and the next. | T: in this world & the next.
+sn2.23:14.1 | S: So you should dispel stinginess, | T: So, having subdued miserliness,
+sn2.23:14.2 | S: overcoming that stain, and give a gift. | T: one who conquers [that] stain, should give a gift.
+sn2.23:14.3 | S: The good deeds of sentient beings | T: Deeds of merit are the support for beings
+sn2.23:14.4 | S: support them in the next world.’” | T: when they arise in the other world.’”
+
+## sn22.86
+sn22.86:1.1 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: I have heard that on one occasion the Blessed One was staying near Vesāli, in the Great Forest, at the Hall of the Gabled Pavilion.
+sn22.86:1.2 | S: Now at that time Venerable Anurādha was staying not far from the Buddha in a wilderness hut. | T: At that time Ven. Anurādha was staying not far from the Blessed One in a wilderness hut.
+sn22.86:1.3 | S: Then several wanderers of other religions went up to Venerable Anurādha and exchanged greetings with him. | T: Then a large number of wandering sectarians went to Ven. Anurādha and on arrival exchanged courteous greetings with him.
+sn22.86:1.4 | S: When the greetings and polite conversation were over, they sat down to one side and said to him: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they said to Ven. Anurādha,
+sn22.86:1.5 | S: “Reverend Anurādha, when a Realized One is describing a realized one—a supreme person, highest of people, who has reached the highest point—they describe them in these four ways: | T: “Friend Anurādha, the Tathāgata—the supreme man, the superlative man, attainer of the superlative attainment—being described, is described with (one of) these four positions:
+sn22.86:1.6 | S: After death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists.” | T: The Tathāgata exists after death, does not exist after death, both does & does not exist after death, neither exists nor does not exist after death.”
+sn22.86:2.1 | S: When they said this, Venerable Anurādha said to those wanderers: | T: When this was said, Ven. Anurādha said to the wandering sectarians,
+sn22.86:2.2 | S: “Reverends, when a Realized One is describing a realized one—a supreme person, highest of people, who has reached the highest point—they describe them other than these four ways: | T: “Friends, the Tathāgata—the supreme man, the superlative man, attainer of the superlative attainment—being described, is described otherwise than with these four positions:
+sn22.86:2.3 | S: After death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists.” | T: The Tathāgata exists after death, does not exist after death, both does & does not exist after death, neither exists nor does not exist after death.”
+sn22.86:2.4 | S: When he said this, the wanderers said to him: | T: When this was said, the wandering sectarians said to Ven. Anurādha,
+sn22.86:2.5 | S: “This mendicant must be junior, recently gone forth, or else a foolish, incompetent senior mendicant.” | T: “This monk is either a newcomer, not long gone forth, or else an elder who is foolish & inexperienced.”
+sn22.86:2.6 | S: Then, after rebuking Venerable Anurādha by calling him “junior” and “foolish”, the wanderers rose from their seats and left. | T: So the wandering sectarians, addressing Ven. Anurādha as they would a newcomer or a fool, got up from their seats and left.
+sn22.86:3.1 | S: Soon after they had left, Anurādha thought: | T: Then not long after the wandering sectarians had left, this thought occurred to Ven. Anurādha:
+sn22.86:3.2 | S: “If those wanderers were to inquire further, | T: “If I am questioned again by those wandering sectarians,
+sn22.86:3.3 | S: how should I answer them so as to repeat what the Buddha has said, and not misrepresent him with an untruth? How should I explain in line with his teaching, so that there would be no legitimate grounds for rebuttal and criticism?” | T: how will I answer in such a way that I will speak in line with what the Blessed One has said, will not misrepresent the Blessed One with what is unfactual, will answer in line with the Dhamma, so that no one whose thinking is in line with the Dhamma will have grounds for criticizing me?”
+sn22.86:4.1 | S: Then Venerable Anurādha went up to the Buddha, bowed, sat down to one side, and told him all that had happened. | T: Then Ven. Anurādha went to the Blessed One and on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there he said to the Blessed One:
+sn22.86:4.2 | P: “idhāhaṁ, bhante, bhagavato avidūre araññakuṭikāyaṁ viharāmi. | T: “Just now I was staying not far from the Blessed One in a wilderness hut.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.86:4.3 | P: Atha kho, bhante, sambahulā aññatitthiyā paribbājakā yenāhaṁ tenupasaṅkamiṁsu …pe… maṁ etadavocuṁ: | T: Then a large number of wandering sectarians came and.… said to me,
+sn22.86:4.4 | P: ‘yo so, āvuso anurādha, tathāgato uttamapuriso paramapuriso paramapattipatto taṁ tathāgato imesu catūsu ṭhānesu paññāpayamāno paññāpeti— | T: ‘Friend Anurādha, the Tathāgata—the supreme man, the superlative man, attainer of the superlative attainment—being described, is described with (one of) these four positions:
+sn22.86:4.5 | P: hoti tathāgato paraṁ maraṇāti vā, na hoti … | T: The Tathāgata exists after death, does not exist after death,
+sn22.86:4.6 | P: hoti ca na ca hoti, neva hoti na na hoti tathāgato paraṁ maraṇāti vā’”ti? | T: both does & does not exist after death, neither exists nor does not exist after death.’
+sn22.86:5.1 | P: Evaṁ vuttāhaṁ, bhante, te aññatitthiye paribbājake etadavocaṁ: | T: “When this was said, I said to them,
+sn22.86:5.2 | P: “yo so, āvuso, tathāgato uttamapuriso paramapuriso paramapattipatto, taṁ tathāgato aññatra imehi catūhi ṭhānehi paññāpayamāno paññāpeti: | T: ‘Friends, the Tathāgata—the supreme man, the superlative man, attainer of the superlative attainment—being described, is described otherwise than with these four positions:
+sn22.86:5.3 | P: ‘hoti tathāgato paraṁ maraṇā’ti vā …pe… | T: The Tathāgata exists after death, does not exist after death, both does & does not exist after death,
+sn22.86:5.4 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vāti. | T: neither exists nor does not exist after death.’
+sn22.86:5.5 | P: Evaṁ vutte, bhante, te aññatitthiyā paribbājakā maṁ etadavocuṁ: | T: “When this was said, the wandering sectarians said to me,
+sn22.86:5.6 | P: ‘so cāyaṁ bhikkhu na vo bhavissati acirapabbajito thero vā pana bālo abyatto’ti. | T: ‘This monk is either a newcomer, not long gone forth, or else an elder who is foolish & inexperienced.’
+sn22.86:5.7 | P: Atha kho maṁ, bhante, te aññatitthiyā paribbājakā navavādena ca bālavādena ca apasādetvā uṭṭhāyāsanā pakkamiṁsu. | T: So, addressing me as they would a newcomer or a fool, they got up from their seats and left.
+sn22.86:6.1 | P: Tassa mayhaṁ, bhante, acirapakkantesu tesu aññatitthiyesu paribbājakesu etadahosi: | T: “Then not long after the wandering sectarians had left, this thought occurred to me:
+sn22.86:6.2 | P: ‘sace kho maṁ te aññatitthiyā paribbājakā uttariṁ pañhaṁ puccheyyuṁ. | T: ‘If I am questioned again by those wandering sectarians,
+sn22.86:6.3 | P: Kathaṁ byākaramāno nu khvāhaṁ tesaṁ aññatitthiyānaṁ paribbājakānaṁ vuttavādī ceva bhagavato assaṁ, na ca bhagavantaṁ abhūtena abbhācikkheyyaṁ, dhammassa cānudhammaṁ byākareyyaṁ, na ca koci sahadhammiko vādānuvādo gārayhaṁ ṭhānaṁ āgaccheyyā’”ti? | T: how will I answer in such a way that I will speak in line with what the Blessed One has said, will not misrepresent the Blessed One with what is unfactual, will answer in line with the Dhamma, and no one whose thinking is in line with the Dhamma will have grounds for criticizing me?’”
+sn22.86:7.1 | S: “What do you think, Anurādha? | T: “What do you think, Anurādha?
+sn22.86:7.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.86:7.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.86:7.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+sn22.86:7.5 | S: “Suffering, sir.” | T: “Stressful, lord.”
+sn22.86:7.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it proper to regard what is inconstant, stressful, subject to change as:
+sn22.86:7.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn22.86:7.8 | S: “No, sir.” | T: “No, lord.”
+sn22.86:7.9 | S: “Is feeling …” … | T: “… Is feeling constant or inconstant?”—“Inconstant, lord.” …
+sn22.86:7.10 | S: “… perception …” … | T: “… Is perception constant or inconstant?”—“Inconstant, lord.” …
+sn22.86:7.11 | S: “… choices …” … | T: “… Are fabrications constant or inconstant?”—“Inconstant, lord.” …
+sn22.86:7.12 | S: “Is consciousness permanent or impermanent?” | T: “Is consciousness constant or inconstant?
+sn22.86:7.13 | S: “Impermanent, sir.” … | T: “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it proper to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.”
+sn22.86:7.14 | S: “So you should truly see … | T: “Thus, Anurādha, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’ “Any feeling whatsoever.… “Any perception whatsoever.… “Any fabrications whatsoever.… “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.86:7.15 | S: Seeing this … | T: “Seeing thus, Anurādha, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.86:7.16 | S: They understand: ‘… there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+sn22.86:8.1 | S: What do you think, Anurādha? | T: “What do you think, Anurādha?
+sn22.86:8.2 | S: Do you consider that the label ‘realized one’ applies to form?” | T: Do you regard form as the Tathāgata?”
+sn22.86:8.3 | S: “No, sir.” | T: “No, lord.”
+sn22.86:8.4 | S: “Do you consider that the label ‘realized one’ applies to feeling?” … | T: “Do you regard feeling as the Tathāgata?” “No, lord.”
+sn22.86:8.5 | S: “… perception?” … | T: “Do you regard perception as the Tathāgata?” “No, lord.”
+sn22.86:8.6 | S: “… choices?” … | T: “Do you regard fabrications as the Tathāgata?” “No, lord.”
+sn22.86:8.7 | S: “… consciousness?” | T: “Do you regard consciousness as the Tathāgata?”
+sn22.86:8.8 | S: “No, sir.” | T: “No, lord.”
+sn22.86:9.1 | S: “What do you think, Anurādha? | T: “What do you think, Anurādha?
+sn22.86:9.2 | S: Do you consider that the label ‘realized one’ applies in relation to form?” | T: Do you regard the Tathāgata as being in form?
+sn22.86:9.3 | S: “No, sir.” | T: …
+sn22.86:9.4 | S: “Do you consider that the label ‘realized one’ applies apart from form?” | T: Elsewhere than form?
+sn22.86:9.5 | S: “No, sir.” | T: …
+sn22.86:9.6 | S: “Do you consider that the label ‘realized one’ applies in relation to feeling?” … | T: In feeling?
+sn22.86:9.7 | S: “… apart from feeling?” … | T: … Elsewhere than feeling? …
+sn22.86:9.8 | S: “… in relation to perception?” … | T: In perception?
+sn22.86:9.9 | S: “… apart from perception?” … | T: … Elsewhere than perception? …
+sn22.86:9.10 | S: “… in relation to choices?” … | T: In fabrications?
+sn22.86:9.11 | S: “… apart from choices?” … | T: … Elsewhere than fabrications? …
+sn22.86:9.12 | S: “… in relation to consciousness?” … | T: In consciousness?
+sn22.86:9.13 | S: “… apart from consciousness?” | T: … Elsewhere than consciousness?”
+sn22.86:9.14 | S: “No, sir.” | T: “No, lord.”
+sn22.86:10.1 | S: “What do you think, Anurādha? | T: “What do you think, Anurādha?
+sn22.86:10.2 | S: Do you consider that the label ‘realized one’ applies to one who has form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” | T: Do you regard the Tathāgata as form-feeling-perception-fabrications-consciousness?”
+sn22.86:10.3 | S: “No, sir.” | T: “No, lord.”
+sn22.86:11.1 | S: “What do you think, Anurādha? | T: (none)
+sn22.86:11.2 | S: Do you consider that the label ‘realized one’ applies to that one who is without form?” … “… feeling?” … “… perception?” … “… choices?” … “… consciousness?” | T: “Do you regard the Tathāgata as that which is without form, without feeling, without perception, without fabrications, without consciousness?”
+sn22.86:11.3 | S: “No, sir.” | T: “No, lord.”
+sn22.86:12.1 | S: “In that case, Anurādha, since a realized one is not found by you as a genuine fact in this very life, is it cogent for you to declare: | T: “And so, Anurādha—when you can’t pin down the Tathāgata as a truth or reality even in the present life—is it proper for you to declare,
+sn22.86:12.2 | S: ‘Reverends, when a Realized One is describing a realized one—a supreme person, highest of people, who has reached the highest point—they describe them other than these four ways: | T: ‘Friends, the Tathāgata—the supreme man, the superlative man, attainer of the superlative attainment—being described, is described otherwise than with these four positions:
+sn22.86:12.3 | S: After death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists’?” | T: The Tathāgata exists after death, does not exist after death, both does & does not exist after death, neither exists nor does not exist after death’?”
+sn22.86:12.4 | S: “No, sir.” | T: “No, lord.”
+sn22.86:13.1 | S: “Good, good, Anurādha! | T: “Very good, Anurādha. Very good.
+sn22.86:13.2 | S: In the past, as today, what I describe is suffering and the cessation of suffering.” | T: Both formerly & now, it is only stress that I describe, and the cessation of stress.”
+sn22.86:13.3 | P: Catutthaṁ. | T: (none)
+
+## ud4.1
+ud4.1:1.1 | S: So I have heard. | T: I have heard that
+ud4.1:1.2 | S: At one time the Buddha was staying near Cālikā, on the Cālikā mountain. | T: on one occasion the Blessed One was staying among the Cālikans, at Cālikā Mountain.
+ud4.1:1.3 | S: Now, at that time Venerable Meghiya was the Buddha’s attendant. | T: And on that occasion Ven. Meghiya was his attendant.
+ud4.1:1.4 | S: Then Venerable Meghiya went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Ven. Meghiya went to the Blessed One and, on arrival, having bowed down to him, stood to one side. As he was standing there he said to the Blessed One,
+ud4.1:1.5 | S: “Sir, I’d like to enter Jantu village for alms.” | T: “I would like to go into Jantu Village for alms.”
+ud4.1:1.6 | S: “Please, Meghiya, go at your convenience.” | T: “Then do, Meghiya, what you think it is now time to do.”
+ud4.1:2.1 | S: Then Meghiya robed up in the morning and, taking his bowl and robe, entered Jantu village for alms. | T: Then in the early morning, Ven. Meghiya adjusted his under robe and–carrying his bowl & robes–went into Jantu Village for alms.
+ud4.1:2.2 | S: After the meal, on his return from almsround in Jantu village, he went to the shore of Kimikālā River. | T: Having gone for alms in Jantu Village, after the meal, returning from his alms round, he went to the bank of the Kimikālā River.
+ud4.1:2.3 | S: As he was going for a walk along the shore of the river he saw a lovely and delightful mango grove. | T: As he was walking up & down along the bank of the river to exercise his legs, he saw a pleasing, charming mango grove.
+ud4.1:2.4 | S: Seeing this, it occurred to him, | T: Seeing it, the thought occurred to him:
+ud4.1:2.5 | S: “Oh, this mango grove is lovely and delightful! This is good enough for striving for a gentleman wanting to strive. | T: “How pleasing & charming this mango grove! It’s enough for a young man of good family intent on exertion to exert himself [in meditation].
+ud4.1:2.6 | S: If the Buddha allows me, I’ll come back to this mango grove to meditate.” | T: If the Blessed One gives me permission, I would like to exert myself [in meditation] in this mango grove.”
+ud4.1:3.1 | S: Then Venerable Meghiya went up to the Buddha, bowed, sat down to one side, and told him what had happened, adding, | T: So Ven. Meghiya went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud4.1:3.2 | P: Ekamantaṁ nisinno kho āyasmā meghiyo bhagavantaṁ etadavoca: | T: As he was sitting there he said to the Blessed One,
+ud4.1:4.1 | P: “Idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya jantugāmaṁ piṇḍāya pāvisiṁ. | T: “Just now, in the early morning, I adjusted my under robe and–carrying my bowl & robes–went into Jantu Village for alms.
+ud4.1:4.2 | P: Jantugāme piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto yena kimikāḷāya nadiyā tīraṁ tenupasaṅkamiṁ. | T: Having gone for alms in Jantu Village, after the meal, returning from my alms round, I went to the bank of the Kimikālā River.
+ud4.1:4.3 | P: Addasaṁ kho ahaṁ, bhante, kimikāḷāya nadiyā tīre jaṅghāvihāraṁ anucaṅkamamāno anuvicaramāno ambavanaṁ pāsādikaṁ manuññaṁ ramaṇīyaṁ. | T: As I was walking up & down along the bank of the river to exercise my legs, I saw a pleasing, charming mango grove.
+ud4.1:4.4 | P: Disvāna me etadahosi: | T: Seeing it, the thought occurred to me:
+ud4.1:4.5 | P: ‘pāsādikaṁ vatidaṁ ambavanaṁ manuññaṁ ramaṇīyaṁ. | T: ‘How pleasing & charming this mango grove!
+ud4.1:4.6 | P: Alaṁ vatidaṁ kulaputtassa padhānatthikassa padhānāya. | T: It’s enough for a young man of good family intent on exertion to exert himself [in meditation].
+ud4.1:4.7 | P: Sace maṁ bhagavā anujāneyya, āgaccheyyāhaṁ imaṁ ambavanaṁ padhānāyā’ti. | T: If the Blessed One gives me permission, I would like to exert myself [in meditation] in this mango grove.’
+ud4.1:4.8 | S: “If the Buddha allows me, I’ll go back to that mango grove to meditate.” | T: If the Blessed One gives me permission, I would like to go to the mango grove to exert myself [in meditation].”
+ud4.1:5.1 | S: When he had spoken, the Buddha said to him, | T: When this was said, the Blessed One responded to Ven. Meghiya,
+ud4.1:5.2 | S: “We’re alone, Meghiya. Wait until another mendicant comes.” | T: “As long as I am still alone, stay here until another monk comes.”
+ud4.1:6.1 | S: For a second time Meghiya said to the Buddha, | T: A second time, Ven. Meghiya said to the Blessed One,
+ud4.1:6.2 | S: “Sir, the Buddha has nothing more to do, and nothing that needs improvement. | T: “Lord, the Blessed One has nothing further to do, and nothing further to add to what he has done.
+ud4.1:6.3 | S: But I have. | T: I, however, have something further to do, and something further to add to what I have done.
+ud4.1:6.4 | S: If you allow me, I’ll go back to that mango grove to meditate.” | T: If the Blessed One gives me permission, I would like to go to the mango grove to exert myself [in meditation].”
+ud4.1:6.5 | S: For a second time the Buddha said, | T: A second time, the Blessed One responded to Ven. Meghiya,
+ud4.1:6.6 | S: “We’re alone, Meghiya. Wait until another mendicant comes.” | T: “As long as I am still alone, stay here until another monk comes.”
+ud4.1:7.1 | S: For a third time Meghiya said to the Buddha, | T: A third time, Ven. Meghiya said to the Blessed One,
+ud4.1:7.2 | S: “Sir, the Buddha has nothing more to do, and nothing that needs improvement. | T: “Lord, the Blessed One has nothing further to do, and nothing further to add to what he has done.
+ud4.1:7.3 | S: But I have. | T: I, however, have something further to do, and something further to add to what I have done.
+ud4.1:7.4 | S: If you allow me, I’ll go back to that mango grove to meditate.” | T: If the Blessed One gives me permission, I would like to go to the mango grove to exert myself [in meditation].”
+ud4.1:7.5 | S: “Meghiya, since you speak of striving in meditation, what can I say? | T: “As you are talking about exertion, Meghiya, what can we say?
+ud4.1:7.6 | S: Please, Meghiya, go at your convenience.” | T: Do what you think it is now time to do.”
+ud4.1:8.1 | S: Then Meghiya got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right. Then he went to that mango grove, and, having plunged deep into it, sat at the root of a certain tree for the day’s meditation. | T: Then Ven. Meghiya, rising from his seat, bowing down to the Blessed One and, circling him to the right, went to the mango grove. On arrival, having gone deep into the grove, he sat down at the root of a certain tree for the day’s abiding.
+ud4.1:8.2 | S: But while Meghiya was meditating in that mango grove he was beset mostly by three kinds of bad, unskillful thoughts, namely, | T: Now while Ven. Meghiya was staying in the mango grove, he was for the most part assailed by three kinds of unskillful thoughts:
+ud4.1:8.3 | S: sensual, malicious, and cruel thoughts. | T: thoughts of sensuality, thoughts of ill will, and thoughts of doing harm.
+ud4.1:9.1 | S: Then he thought, | T: The thought occurred to him:
+ud4.1:9.2 | S: “Oh lord, how incredible, how amazing! | T: “How amazing! How astounding!
+ud4.1:9.3 | S: I’ve gone forth out of faith from the lay life to homelessness, | T: Even though it was through faith that I went forth from home to the homeless life,
+ud4.1:9.4 | S: but I’m still harassed by these three kinds of bad, unskillful thoughts: | T: still I am overpowered by these three kinds of unskillful thoughts:
+ud4.1:9.5 | S: sensual, malicious, and cruel thoughts.” | T: thoughts of sensuality, thoughts of ill will, and thoughts of doing harm.”
+ud4.1:10.1 | S: Then in the late afternoon, Venerable Meghiya came out of retreat and went to the Buddha. He bowed, sat down to one side, and told the Buddha what had happened. | T: Emerging from his seclusion in the late afternoon, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+ud4.1:10.2 | P: “idha mayhaṁ, bhante, tasmiṁ ambavane viharantassa yebhuyyena tayo pāpakā akusalā vitakkā samudācaranti, seyyathidaṁ— | T: “Just now, while I was staying in the mango grove, I was for the most part assailed by three kinds of unskillful thoughts:
+ud4.1:10.3 | P: kāmavitakko, byāpādavitakko, vihiṁsāvitakko. | T: thoughts of sensuality, thoughts of ill will, and thoughts of doing harm.
+ud4.1:10.4 | P: Tassa mayhaṁ, bhante, etadahosi: | T: The thought occurred to me:
+ud4.1:10.5 | P: ‘acchariyaṁ vata bho, abbhutaṁ vata bho. | T: ‘How amazing! How astounding!
+ud4.1:10.6 | P: Saddhāya ca vatamhā agārasmā anagāriyaṁ pabbajitā. | T: Even though it was through faith that I went forth from home to the homeless life,
+ud4.1:10.7 | P: Atha ca panimehi tīhi pāpakehi akusalehi vitakkehi anvāsattā, seyyathidaṁ— | T: still I am overpowered by these three kinds of unskillful thoughts:
+ud4.1:10.8 | P: kāmavitakkena, byāpādavitakkena, vihiṁsāvitakkena’”. | T: thoughts of sensuality, thoughts of ill will, and thoughts of doing harm.’”
+ud4.1:11.1 | S: “Meghiya, when the heart’s release is not ripe, five things help it ripen. | T: “Meghiya, in one whose awareness-release is still immature, five qualities bring it to maturity.
+ud4.1:11.2 | S: What five? | T: Which five?
+ud4.1:12.1 | S: Firstly, a mendicant has good friends, companions, and associates. | T: “There is the case where a monk has admirable people as friends, companions, & colleagues.
+ud4.1:12.2 | S: This is the first thing … | T: In one whose awareness-release is still immature, this is the first quality that brings it to maturity.
+ud4.1:13.1 | S: Furthermore, a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: “Furthermore, the monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & range of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest faults.
+ud4.1:13.2 | S: This is the second thing … | T: In one whose awareness-release is still immature, this is the second quality that brings it to maturity.
+ud4.1:14.1 | S: Furthermore, a mendicant gets to take part in talk about self-effacement that helps open the heart and leads solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment when they want, without trouble or difficulty. That is, talk about fewness of wishes, contentment, seclusion, aloofness, arousing energy, ethics, immersion, wisdom, freedom, and the knowledge and vision of freedom. | T: “Furthermore, he gets to hear at will, easily and without difficulty, talk that is truly sobering and conducive to the opening of awareness, i.e., talk on modesty, contentment, seclusion, non-entanglement, arousing persistence, virtue, concentration, discernment, release, and the knowledge & vision of release.
+ud4.1:14.2 | S: This is the third thing … | T: In one whose awareness-release is still immature, this is the third quality that brings it to maturity.
+ud4.1:15.1 | S: Furthermore, a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “Furthermore, he keeps his persistence aroused for abandoning unskillful [mental] qualities and for taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+ud4.1:15.2 | S: This is the fourth thing … | T: In one whose awareness-release is still immature, this is the fourth quality that brings it to maturity.
+ud4.1:16.1 | S: Furthermore, a mendicant is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “Furthermore, he is discerning, endowed with the discernment related to arising & passing away–noble, penetrating, leading to the right ending of stress.
+ud4.1:16.2 | S: This is the fifth thing that, when the heart’s release is not ripe, helps it ripen. | T: In one whose awareness-release is still immature, this is the fifth quality that brings it to maturity.
+ud4.1:16.3 | S: These are the five things that, when the heart’s release is not ripe, help it ripen. | T: “Meghiya, in one whose awareness-release is still immature, these are the five qualities that bring it to maturity.
+ud4.1:17.1 | S: A mendicant with good friends, companions, and associates can expect to be ethical … | T: “Meghiya, when a monk has admirable people as friends, companions, & colleagues, it is to be expected that he will be virtuous, will dwell restrained in accordance with the Pāṭimokkha, consummate in his behavior & range of activity, and will train himself, having undertaken the training rules, seeing danger in the slightest faults.
+ud4.1:18.1 | S: A mendicant with good friends, companions, and associates can expect to take part in talk about self-effacement that helps open the heart … | T: “When a monk has admirable people as friends & colleagues, it is to be expected that he will get to hear at will, easily and without difficulty, talk that is truly sobering and conducive to the opening of awareness, i.e., talk on modesty, contentment, seclusion, non-entanglement, arousing persistence, virtue, concentration, discernment, release, and the knowledge & vision of release.
+ud4.1:19.1 | S: A mendicant with good friends, companions, and associates can expect to be energetic … | T: “When a monk has admirable people as friends, companions, & colleagues, it is to be expected that he will keep his persistence aroused for abandoning unskillful qualities and for taking on skillful qualities–steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+ud4.1:20.1 | S: A mendicant with good friends, companions, and associates can expect to be wise … | T: “When a monk has admirable people as friends, companions, & colleagues, it is to be expected that he will be discerning, endowed with the discernment relating to arising & passing away–noble, penetrating, leading to the right ending of stress.
+ud4.1:21.1 | S: But then, a mendicant grounded on these five things should develop four further things. | T: “And furthermore, when the monk is established in these five qualities, there are four additional qualities he should develop:
+ud4.1:21.2 | S: They should develop the perception of ugliness to give up greed, love to give up hate, mindfulness of breathing to cut off thinking, and perception of impermanence to uproot the conceit ‘I am’. | T: He should develop [contemplation of] the unattractive so as to abandon passion. He should develop good will so as to abandon ill will. He should develop mindfulness of in-&-out breathing so as to cut off thinking. He should develop the perception of inconstancy so as to uproot the conceit, ‘I am.’
+ud4.1:21.3 | S: When you perceive impermanence, the perception of not-self becomes stabilized. | T: For a monk perceiving inconstancy, the perception of not-self is made steady.
+ud4.1:21.4 | S: Perceiving not-self, you uproot the conceit ‘I am’ and attain extinguishment in this very life.” | T: One perceiving not-self attains the uprooting of the conceit, ‘I am’–unbinding right in the here-&-now.”
+ud4.1:22.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.1:23.1 | S: “Lesser thoughts and subtle thoughts | T: Little thoughts, subtle thoughts,
+ud4.1:23.2 | S: arise, springing up in the mind. | T: when followed, stir up the heart.
+ud4.1:23.3 | S: Not understanding these thoughts, | T: Not comprehending the thoughts of the heart,
+ud4.1:23.4 | S: one with mind astray runs from one thing to the next. | T: one runs here & there, the mind out of control.
+ud4.1:24.1 | S: Having understood these thoughts | T: But comprehending the thoughts of the heart,
+ud4.1:24.2 | S: that arise, springing up in the mind, | T: (none)
+ud4.1:24.3 | S: an awakened one—keen, restrained, and mindful— | T: one who is ardent, mindful, restrains them. When, followed, they stir up the heart, one awakened
+ud4.1:24.4 | S: has given them up without remainder.” | T: lets them go without trace.
+ud4.1:24.5 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf '%s\\n' 'none' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-055.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+23,074
+0 lines reported.

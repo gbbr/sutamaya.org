@@ -1,0 +1,562 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd97-84d2-7321-82d5-9c306ae2b824
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.54
+sn22.54:1.1 | S: At Sāvatthī. | T: Near Sāvatthī. There the Blessed One addressed the monks: “Monks.” “Yes, lord,” the monks responded to him. The Blessed One said:
+sn22.54:1.2 | S: “Mendicants, there are five kinds of plants. | T: “Monks, there are these five means of propagation.
+sn22.54:1.3 | S: What five? | T: Which five?
+sn22.54:1.4 | S: Plants propagated from roots, trunks, cuttings, or joints; and those from regular seeds are the fifth. | T: Root-propagation, stem-propagation, joint-propagation, cutting-propagation, & seed-propagation as the fifth.
+sn22.54:1.5 | S: Suppose these five kinds of plants were intact, unspoiled, not weather-damaged, fertile, and well-kept. But there’s no earth or water. | T: And if these five means of propagation are not broken, not rotten, not damaged by wind & sun, mature, and well-buried, but there is no earth and no water, would they exhibit growth, increase, & proliferation?” “No, lord.” “And if these five means of propagation are broken, rotten, damaged by wind & sun, immature, and poorly-buried, but there is earth & water,
+sn22.54:1.6 | S: Then would these five kinds of plants reach growth, increase, and maturity?” | T: would they exhibit growth, increase, & proliferation?”
+sn22.54:1.7 | S: “No, sir.” | T: “No, lord.”
+sn22.54:1.8 | S: “Suppose these five kinds of plants were intact, unspoiled, not weather-damaged, fertile, and well-kept. And there is earth and water. | T: “And if these five means of propagation are not broken, not rotten, not damaged by wind & sun, mature, and well-buried, and there is earth & water,
+sn22.54:1.9 | S: Then would these five kinds of plants reach growth, increase, and maturity?” | T: would they exhibit growth, increase, & proliferation?”
+sn22.54:1.10 | S: “Yes, sir.” | T: “Yes, lord.”
+sn22.54:1.11 | S: “The four establishings of consciousness should be seen as like the earth element. | T: “Like the earth property, monks, is how the four standing-spots for consciousness should be seen.
+sn22.54:1.12 | S: Relishing and greed should be seen as like the water element. | T: Like the liquid property is how delight & passion should be seen.
+sn22.54:1.13 | S: Consciousness with its fuel should be seen as like the five kinds of plants. | T: Like the five means of propagation is how consciousness together with its nutriment should be seen.
+sn22.54:2.1 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Should consciousness, when standing, stand attached to (a physical) form, supported by form (as its object), landing on form, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.54:2.2 | S: Or should consciousness involved with feeling remain … | T: “Should consciousness, when standing, stand attached to feeling, supported by feeling (as its object), landing on feeling, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.54:2.3 | S: Or should consciousness involved with perception remain … | T: “Should consciousness, when standing, stand attached to perception, supported by perception (as its object), landing on perception, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.54:2.4 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Should consciousness, when standing, stand attached to fabrications, supported by fabrications (as its object), landing on fabrications, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.54:3.1 | S: Mendicants, suppose you say: | T: “Were someone to say,
+sn22.54:3.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘I will describe a coming, a going, a passing away, an arising, a growth, an increase, or a proliferation of consciousness apart from form, from feeling, from perception, from fabrications,’ that would be impossible.
+sn22.54:4.1 | S: If a mendicant has given up greed for the form element, | T: “If a monk abandons passion for the property of form.…
+sn22.54:4.2 | S: the support is cut off, and there is no establishment of consciousness. | T: (none)
+sn22.54:4.3 | S: If a mendicant has given up greed for the feeling element … | T: “If a monk abandons passion for the property of feeling.…
+sn22.54:4.4 | S: perception element … | T: “If a monk abandons passion for the property of perception.…
+sn22.54:4.5 | S: choices element … | T: “If a monk abandons passion for the property of fabrications.…
+sn22.54:4.6 | S: consciousness element, | T: “If a monk abandons passion for the property of consciousness,
+sn22.54:4.7 | S: the support is cut off, and there is no establishment of consciousness. | T: then owing to the abandonment of passion, the support is cut off, and there is no landing of consciousness.
+sn22.54:4.8 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: Consciousness, thus not having landed, not increasing, not concocting, is released.
+sn22.54:4.9 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: Owing to its release, it is steady. Owing to its steadiness, it is contented. Owing to its contentment, it is not agitated. Not agitated, he (the monk) is totally unbound right within.
+sn22.54:4.10 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.54:4.11 | P: Dutiyaṁ. | T: (none)
+
+## an5.38
+an5.38:1.1 | S: “Mendicants, a faithful gentleman gets five benefits. | T: “These are the five rewards of conviction in a lay person.
+an5.38:1.2 | S: What five? | T: Which five?
+an5.38:1.3 | S: The true persons in the world show sympathy first to the faithful, not so much to the unfaithful. | T: “When the truly good people in the world show compassion, they will first show compassion to people of conviction, and not to people without conviction.
+an5.38:1.4 | S: They first approach the faithful, not so much the unfaithful. | T: When visiting, they first visit people of conviction, and not people without conviction.
+an5.38:1.5 | S: They first receive alms from the faithful, not so much the unfaithful. | T: When accepting gifts, they will first accept those from people with conviction, and not from people without conviction.
+an5.38:1.6 | S: They first teach Dhamma to the faithful, not so much the unfaithful. | T: When teaching the Dhamma, they will first teach those with conviction, and not those without conviction.
+an5.38:1.7 | S: When their body breaks up, after death, the faithful are reborn in a good place, a heavenly realm. | T: A person of conviction, on the break-up of the body, after death, will arise in a good destination, a heavenly world.
+an5.38:1.8 | S: A faithful gentleman gets these five benefits. | T: These are the five rewards of conviction in a lay person.
+an5.38:2.1 | S: Suppose there was a great banyan tree at a level crossroads. It would become a refuge for birds from all around. | T: “Just as a large banyan tree, on level ground where four roads meet, is a haven for the birds all around,
+an5.38:2.2 | S: In the same way, a faithful gentleman becomes a refuge for many people—monks, nuns, laywomen, and laymen. | T: even so a lay person of conviction is a haven for many people: monks, nuns, male lay followers, & female lay followers.”
+an5.38:3.1 | S: With its branches, leaves, and fruit, | T: A massive tree whose branches carry fruits & leaves,
+an5.38:3.2 | S: a great tree with its strong trunk, | T: with trunks & roots
+an5.38:3.3 | S: firmly-rooted and fruit-bearing, | T: & an abundance of fruits:
+an5.38:3.4 | S: supports many birds. | T: There the birds find rest.
+an5.38:4.1 | S: It’s a lovely place, | T: In that delightful sphere
+an5.38:4.2 | S: frequented by the sky-soarers. | T: they make their home.
+an5.38:4.3 | S: Those that need shade go in the shade, | T: Those seeking shade come to the shade,
+an5.38:4.4 | S: those that need fruit enjoy the fruit. | T: those seeking fruit find fruit to eat.
+an5.38:5.1 | S: So too, a faithful individual | T: So with the person consummate
+an5.38:5.2 | S: is perfect in ethics, | T: in virtue & conviction,
+an5.38:5.3 | S: placid in manner and amenable, | T: humble, sensitive,
+an5.38:5.4 | S: gentle, courteous, and tender. | T: gentle, delightful, & mild:
+an5.38:6.1 | S: Those free of greed, freed of hate, | T: To him come those without effluent— free from passion, free from aversion,
+an5.38:6.2 | S: free of delusion, undefiled, | T: free from delusion—
+an5.38:6.3 | S: fields of merit for the world, | T: the field of merit for the world.
+an5.38:6.4 | S: associate with such a person. | T: (none)
+an5.38:7.1 | S: They teach them the Dhamma, | T: They teach him the Dhamma
+an5.38:7.2 | S: that casts aside all suffering. | T: that dispels all stress.
+an5.38:7.3 | S: Having understood this teaching, | T: And when he understands,
+an5.38:7.4 | S: the undefiled one is fully extinguished.” | T: he is freed from effluents, totally unbound.
+an5.38:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## ud4.5
+ud4.5:1.1 | S: So I have heard. | T: I have heard that
+ud4.5:1.2 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: on one occasion the Blessed One was staying near Kosambī at Kosita’s monastery.
+ud4.5:1.3 | S: Now at that time Buddha lived crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. | T: And on that occasion the Blessed One lived hemmed in with monks, nuns, male & female lay followers, kings, royal ministers, sectarians, & their disciples.
+ud4.5:1.4 | S: Crowded, he lived in suffering and discomfort. | T: Hemmed in, he lived unpleasantly and not in ease.
+ud4.5:1.5 | S: Then he thought, | T: The thought occurred to him:
+ud4.5:1.6 | S: “These days I live crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. | T: “I now live hemmed in by monks, nuns, male & female lay followers, kings, royal ministers, sectarians, & their disciples.
+ud4.5:1.7 | S: Crowded, I live in suffering and discomfort. | T: Hemmed in, I live unpleasantly and not in ease.
+ud4.5:1.8 | S: Why don’t I live alone, withdrawn from the group?” | T: What if I were to live alone, apart from the crowd?”
+ud4.5:2.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: So, early in the morning, the Blessed One adjusted his under robe and–carrying his bowl & robes–went into Kosambī for alms.
+ud4.5:2.2 | S: After the meal, on his return from almsround, he set his lodgings in order himself. Taking his bowl and robe, without informing his supporters or taking leave of the mendicant Saṅgha, he set out to go wandering alone toward Pārileyyaka, with no companion. | T: Then, having gone for alms in Kosambī, after the meal, returning from his alms round, he set his own lodgings in order and, carrying his bowl & robes, without telling his attendant, without informing the community of monks–alone & without a companion–left on a wandering tour toward Palileyyaka.
+ud4.5:2.3 | S: When he eventually arrived, | T: After wandering by stages, he reached Palileyyaka.
+ud4.5:2.4 | S: he stayed in a protected forest grove, at the foot of a sacred sal tree. | T: There he stayed in Palileyyaka in the protected forest grove at the root of the auspicious sal tree.
+ud4.5:3.1 | S: A certain bull elephant was also living crowded by other males, females, younglings, and cubs. He ate the grass they’d trampled, and they ate the broken branches he dragged down. He drank muddy water, and after his bath the female elephants bumped into him. | T: It so happened that a certain bull elephant was living hemmed in by elephants, cow-elephants, calf-elephants, & baby elephants. He fed off grass with cut-off tips. They chewed up his stash of broken-off branches. He drank disturbed water. And when he came up from his bathing-place, cow-elephants went along, banging up against his body.
+ud4.5:3.2 | S: Crowded, he lived in suffering and discomfort. | T: Hemmed in, he lived unpleasantly and not in ease.
+ud4.5:3.3 | S: Then he thought, | T: The thought occurred to him:
+ud4.5:3.4 | S: “These days I live crowded by other males, females, younglings, and cubs. I eat the grass they’ve trampled, and they eat the broken branches I’ve dragged down. I drink muddy water, and after my bath the female elephants bump into me. Crowded, I live in suffering and discomfort. | T: “I now live hemmed in by elephants, cow-elephants, calf-elephants, & baby elephants. I feed off grass with cut-off tips. They chew up my stash of broken-off branches. I drink disturbed water. And when I come up from my bathing place, cow-elephants go along, banging up against my body. Hemmed in, I live unpleasantly and not in ease.
+ud4.5:3.5 | S: Why don’t I live alone, withdrawn from the herd?” | T: What if I were to live alone, apart from the crowd?”
+ud4.5:4.1 | S: So he left the herd and went to Pārileyyaka, where he approached the Buddha in the protected forest grove at the foot of a sacred sal tree. | T: So the bull elephant, leaving the herd, went to Palileyyaka, to the protected forest grove and the root of the auspicious sal tree–to where the Blessed One was staying.
+ud4.5:4.2 | S: There he attended on the Buddha, clearing the vegetation from the place where the Buddha stayed, and using his trunk to set out water for drinking and washing. | T: There he kept the grass down in the area where the Blessed One was staying, and brought drinking water and washing water for the Blessed One with his trunk.
+ud4.5:5.1 | S: Then as the Buddha was in private retreat this thought came to his mind, | T: Then, when the Blessed One was alone in seclusion, this train of thought appeared to his awareness:
+ud4.5:5.2 | S: “Formerly I lived crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. Crowded, I live in suffering and discomfort. | T: “Before, I lived hemmed in by monks, nuns, male & female lay followers, kings, royal ministers, sectarians, & their disciples. Hemmed in, I lived unpleasantly and not in ease.
+ud4.5:5.3 | S: But now I live uncrowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. Being uncrowded, I live in happiness and comfort.” | T: But now I live not hemmed in by monks, nuns, male & female lay followers, kings, royal ministers, sectarians, & their disciples. Not hemmed in, I live pleasantly and in ease.”
+ud4.5:6.1 | S: And to the bull elephant also this thought came to mind, | T: And this train of thought appeared to the awareness of the bull elephant,
+ud4.5:6.2 | S: “Formerly I lived crowded by other males, females, younglings, and cubs. I ate the grass they’d trampled, and they ate the broken branches I’d dragged down. I drank muddy water, and after my bath the female elephants bumped into me. Crowded, I lived in suffering and discomfort. | T: “Before, I lived hemmed in by elephants, cow-elephants, calf-elephants, & baby elephants. I fed off grass with cut-off tips. They chewed up my stash of broken-off branches. I drank disturbed water. And when I came up from my bathing place, cow-elephants went along, banging up against my body. Hemmed in, I lived unpleasantly and not in ease.
+ud4.5:6.3 | S: But now I live uncrowded by other males, females, younglings, and cubs. I eat untrampled grass, and other elephants don’t eat the broken branches I have dragged down. I don’t drink muddy water, and the female elephants don’t bump into me after my bath. Being uncrowded, I live in happiness and comfort.” | T: But now I live not hemmed in by elephants, cow-elephants, calf-elephants, & baby elephants. I feed off grass with uncut tips. They don’t chew up my stash of broken-off branches. I drink undisturbed water. When I come up from my bathing place, cow-elephants don’t go along, banging up against my body. Not hemmed in, I live pleasantly and in ease.”
+ud4.5:7.1 | S: Then, understanding his own seclusion and knowing that elephant’s train of thought, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then the Blessed One, realizing his own seclusion and knowing the train of thought in the bull elephant’s awareness, on that occasion exclaimed:
+ud4.5:8.1 | S: “The giant elephant, | T: This harmonizes mind with mind– the great one’s with the great one’s–
+ud4.5:8.2 | S: with tusks like draft-poles, | T: the elephant with tusks like chariot poles:
+ud4.5:8.3 | S: agrees heart to heart with the spiritual giant, | T: (none)
+ud4.5:8.4 | S: since each finds joy in the woods alone.” | T: that each finds joy, alone, in the forest.
+ud4.5:8.5 | P: Pañcamaṁ. | T: (none)
+
+## ud5.3
+ud5.3:1.1 | S: So I have heard. | T: I have heard that
+ud5.3:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ Sanctuary.
+ud5.3:1.3 | S: At that time in Rājagaha there was a leper called Suppabuddha. | T: And on that occasion in Rājagaha there was a leper named Suppabuddha,
+ud5.3:1.4 | S: He was a poor person, destitute, and pitiful. | T: a poor, pitiful wretch of a person.
+ud5.3:1.5 | S: Now, at that time the Buddha was teaching Dhamma, surrounded by a large assembly. | T: And on that occasion the Blessed One was sitting surrounded by a large assembly, teaching the Dhamma.
+ud5.3:2.1 | S: Suppabuddha saw the crowd seated off in the distance | T: Suppabuddha the leper saw the large gathering of people from afar and thought to himself,
+ud5.3:2.2 | S: and thought, | T: (none)
+ud5.3:2.3 | S: “Surely some fresh and cooked foods will be distributed there. | T: “Without a doubt, someone must be distributing staple or non-staple food there.
+ud5.3:2.4 | S: Why don’t I approach the crowd? | T: Why don’t I go over to that large group of people,
+ud5.3:2.5 | S: Hopefully I’ll get something to eat.” | T: and maybe there I’ll get some staple or non-staple food.”
+ud5.3:3.1 | S: So he approached the crowd | T: So he went over to the large group of people.
+ud5.3:3.2 | S: where he saw the Buddha teaching Dhamma, surrounded by a large assembly. | T: Then he saw the Blessed One sitting surrounded by a large assembly, teaching the Dhamma.
+ud5.3:3.3 | S: When he saw this he thought, | T: On seeing this, he realized,
+ud5.3:3.4 | S: “There’s no food being distributed here. | T: “There’s no one distributing staple or non-staple food there.
+ud5.3:3.5 | S: The ascetic Gotama is teaching Dhamma in an assembly. | T: That’s Gotama the contemplative (sitting) surrounded, teaching the Dhamma.
+ud5.3:3.6 | S: Why don’t I also listen to the teaching?” | T: Why don’t I listen to the Dhamma?”
+ud5.3:3.7 | S: Right there he sat down to one side, thinking, | T: So he sat down to one side right there, [thinking,]
+ud5.3:3.8 | S: “I also will listen to the teaching.” | T: “I, too, will listen to the Dhamma.”
+ud5.3:4.1 | S: Then the Buddha focused on encompassing the minds of everyone in the assembly, thinking, | T: Then the Blessed One, having encompassed the awareness of the entire assembly with his awareness, asked himself,
+ud5.3:4.2 | S: “Who here is capable of understanding the teaching?” | T: “Now who here is capable of understanding the Dhamma?”
+ud5.3:4.3 | S: He saw Suppabuddha sitting in the assembly, | T: He saw Suppabuddha the leper sitting in the assembly,
+ud5.3:4.4 | S: and thought, | T: and on seeing him the thought occurred to him,
+ud5.3:4.5 | S: “He is capable of understanding the teaching.” | T: “This person here is capable of understanding the Dhamma.”
+ud5.3:4.6 | S: He gave a step by step talk especially for Suppabuddha | T: So, aiming at Suppabuddha the leper, he gave a step-by-step talk, i.e., he proclaimed a talk
+ud5.3:4.7 | S: on giving, ethical conduct, and heaven. He revealed the drawbacks of sensual pleasures, so sordid and corrupt, and the benefit of renunciation. | T: on generosity, on virtue, on heaven; he declared the drawbacks, degradation, & corruption of sensuality, and the rewards of renunciation.
+ud5.3:4.8 | S: When the Buddha knew that Suppabuddha’s mind was ready, pliable, rid of hindrances, elated, and confident he revealed the special teaching of the Buddhas: | T: Then when the Blessed One knew that Suppabuddha the leper’s mind was ready, malleable, free from hindrances, elevated, & clear, he then gave the Dhamma-talk peculiar to Awakened Ones,
+ud5.3:4.9 | S: suffering, its origin, its cessation, and the path. | T: i.e., stress, origination, cessation, & path.
+ud5.3:4.10 | S: Just as a clean cloth rid of stains would properly absorb dye, | T: And just as a clean cloth, free of stains, would properly absorb a dye,
+ud5.3:4.11 | S: in that very seat the stainless, immaculate vision of the Dhamma arose in Suppabuddha: | T: in the same way, as Suppabuddha the leper was sitting in that very seat, the dustless, stainless Dhamma eye arose within him,
+ud5.3:4.12 | S: “Everything that is liable to arise is liable to cease.” | T: “Whatever is subject to origination is all subject to cessation.”
+ud5.3:5.1 | S: Then Suppabuddha saw, attained, understood, and fathomed the Dhamma. He went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. He rose from his seat and went to the Buddha, bowed, sat down to one side, and said: | T: Having seen the Dhamma, reached the Dhamma, known the Dhamma, gained a foothold in the Dhamma, having crossed over & beyond doubt, having had no more perplexity, having gained fearlessness & independence from others with regard to the Teacher’s message, he got up from his seat and went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side. As he was sitting there he said to the Blessed One,
+ud5.3:6.1 | S: “Excellent, sir! Excellent! | T: “Magnificent, lord! Magnificent!
+ud5.3:6.2 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, the Buddha has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One–through many lines of reasoning–made the Dhamma clear.
+ud5.3:6.3 | S: I go for refuge to the Buddha, to the teaching, and to the mendicant Saṅgha. | T: I go to the Blessed One for refuge, to the Dhamma, and to the Community of monks.
+ud5.3:6.4 | S: From this day forth, may the Buddha remember me as a lay follower who has gone for refuge for life.” | T: May the Blessed One remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+ud5.3:7.1 | S: After Suppabuddha had been educated, encouraged, fired up, and inspired with a Dhamma talk by the Buddha, he got up from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then Suppabuddha the leper, having been instructed, urged, roused, & encouraged by the Blessed One’s Dhamma talk, delighting in & approving of the Blessed One’s words, got up from his seat, bowed down to the Blessed One and left, circling him to the right.
+ud5.3:7.2 | S: But soon after Suppabuddha had left, a cow with a baby calf charged at him and took his life. | T: Not long after his departure he was attacked & killed by a cow with a young calf.
+ud5.3:8.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and said, | T: Then a large number of monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud5.3:8.2 | P: Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: | T: As they were sitting there, they said to the Blessed One,
+ud5.3:8.3 | S: “The leper named Suppabuddha, after being educated, encouraged, fired up, and inspired with a Dhamma talk by the Buddha, has passed away. | T: “Lord, the leper named Suppabuddha, whom the Blessed One instructed, urged, roused, & encouraged with a Dhamma talk, has died.
+ud5.3:8.4 | S: Where has he been reborn in his next life?” | T: What is his destination? What is his future state?”
+ud5.3:9.1 | S: “Mendicants, Suppabuddha was astute. He practiced in line with the teaching, and did not trouble me about the teachings. | T: “Monks, Suppabuddha the leper was wise. He practiced the Dhamma in accordance with the Dhamma and did not pester me with issues related to the Dhamma.
+ud5.3:9.2 | S: With the ending of three fetters, Suppabuddha is a stream-enterer, not liable to be reborn in the underworld, assured, destined for awakening.” | T: With the destruction of the first three fetters, he is a stream-winner, not subject to states of deprivation, headed for self-awakening for sure.”
+ud5.3:10.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, one of the monks said to the Blessed One,
+ud5.3:10.2 | S: “What is the cause, sir, what is the reason why Suppabuddha became a leper, | T: “Lord, what was the cause, what was the reason, why Suppabuddha the leper was
+ud5.3:10.3 | S: a poor person, destitute, and pitiful?” | T: such a poor, pitiful wretch of a person?”
+ud5.3:11.1 | S: “Once upon a time, mendicants, Suppabuddha used to be a financier’s son right here in Rājagaha. | T: “Once, monks, in this very Rājagaha, Suppabuddha the leper was the son of a rich money-lender.
+ud5.3:11.2 | S: On his way to visit a park, he saw Tagarasikhī, an independent Buddha, entering the city for alms. | T: While being escorted to a pleasure park, he saw Tagarasikhin the Private Buddha going for alms in the city.
+ud5.3:11.3 | S: When he saw this he thought, | T: On seeing him, the thought occurred to him,
+ud5.3:11.4 | S: “Who is this leper wandering about with his leper’s robe?” | T: ‘Who is this leper prowling about?’
+ud5.3:11.5 | S: Before leaving, he spat on the ground and turned his left side to Tagarasikhī. | T: Spitting and disrespectfully turning his left side to Tagarasikhin the Private Buddha, he left.
+ud5.3:11.6 | S: As a result of that deed he burned in hell for many years, for many hundreds, many thousands, many hundreds of thousands of years. | T: As a result of that deed he boiled in hell for many years, many hundreds of years, many thousands of years, many hundreds of thousands of years.
+ud5.3:11.7 | S: And as a residual result of that same deed, he became a leper right here in Rājagaha, a poor person, destitute and pitiful. | T: And then as a remainder of the result of that deed he became a poor, pitiful wretch of a person in this very Rājagaha.
+ud5.3:11.8 | S: But owing to faith in the teaching and training proclaimed by the Realized One, he undertook ethics, learning, generosity, and wisdom. | T: But on encountering the Dhamma & Vinaya made known by the Tathāgata, he acquired conviction, virtue, learning, relinquishment, & discernment.
+ud5.3:11.9 | S: After undertaking these things, when his body broke up, after death, he was reborn in a good place, a heavenly realm, in the company of the gods of the thirty-three. | T: Having acquired conviction, virtue, learning, relinquishment, & discernment on encountering the Dhamma & Vinaya made known by the Tathāgata, now–on the break-up of the body, after death–he has reappeared in a good destination, a heavenly world, in company with the Devas of the Heaven of the Thirty-three.
+ud5.3:11.10 | S: There he outshines the other gods in beauty and glory.” | T: There he outshines the other devas both in beauty & in rank.”
+ud5.3:12.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.3:13.1 | S: “As a clear-eyed man would avoid rough paths, | T: As one with eyes & having energy would treacherous, uneven places,
+ud5.3:13.2 | S: so long as strength is found; | T: (none)
+ud5.3:13.3 | S: an astute person in the living world, | T: so a wise one, in the world of life,
+ud5.3:13.4 | S: would shun bad deeds.” | T: should avoid evil deeds.
+ud5.3:13.5 | P: Tatiyaṁ. | T: (none)
+
+## sn4.25
+sn4.25:1.1 | S: And then Māra the Wicked, after reciting these verses of disillusionment in the Buddha’s presence, left that place. He sat cross-legged on the ground not far from the Buddha, silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, scratching the ground with a stick. | T: (none)
+sn4.25:1.2 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked, and addressed him in verse: | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to Māra the Evil One and, on arrival, addressed him in verse:
+sn4.25:2.1 | S: “Why so downhearted, dad? | T: “Why are you depressed, Daddy?
+sn4.25:2.2 | S: What man are you upset about? | T: For which man do you grieve?
+sn4.25:2.3 | S: We’ll catch him with the snare of lust, | T: We—having bound him
+sn4.25:2.4 | S: like an elephant in the wild. | T: like a wilderness elephant
+sn4.25:2.5 | S: We’ll tie him up and bring him back— | T: with a snare of passion— will bring him to you.
+sn4.25:2.6 | S: he’ll fall under your sway!” | T: Under your power he’ll be.”
+sn4.25:3.1 | S: “In this world he is the perfected one, the Holy One. | T: Māra: “An arahant, well-gone in the world,
+sn4.25:3.2 | S: He’s not easily seduced by lust. | T: isn’t easily brought in by passion.
+sn4.25:3.3 | S: He has slipped free of Māra’s dominion; | T: He’s gone beyond Māra’s sway:
+sn4.25:3.4 | S: that’s why I’m so upset.” | T: That’s why I’m so violently sad.”
+sn4.25:4.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and said to him, | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to the Blessed One and, on arrival, said to him,
+sn4.25:4.2 | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+sn4.25:4.3 | S: But the Buddha ignored them, since he was freed with the supreme ending of attachments. | T: But the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:5.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and considered,
+sn4.25:5.2 | S: “Men have a diverse spectrum of tastes. | T: “Various are the appetites of men.
+sn4.25:5.3 | S: Why don’t we each manifest in the form of a hundred young maidens?” | T: Why don’t we each assume the form of a hundred girls?”
+sn4.25:5.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: So Māra’s daughters—Craving, Discontent, & Passion—having each assumed the form of a hundred girls, went to the Blessed One and, on arrival, said to him,
+sn4.25:5.5 | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+sn4.25:5.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:6.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: So Māra’s daughters—Craving, Discontent, & Passion—went off to one side and considered,
+sn4.25:6.2 | S: “Men have a diverse spectrum of tastes. | T: “Many & varied are the appetites of men.
+sn4.25:6.3 | S: Why don’t we each manifest in the form of a hundred women who have never given birth?” | T: Why don’t we each assume the form of a hundred women who have never given birth?”
+sn4.25:6.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: So Māra’s daughters—Craving, Discontent, & Passion—having each assumed the form of a hundred women who had never given birth, went to the Blessed One and, on arrival, said to him,
+sn4.25:6.5 | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+sn4.25:6.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:7.1 | S: Then Craving, Malignancy, and Lust … | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and considered, “Many & varied are the appetites of men.
+sn4.25:7.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ sakiṁ vijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:7.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:7.4 | S: each manifested in the form of a hundred women who have given birth once … | T: Why don’t we each assume the form of a hundred women who have borne one child …
+sn4.25:7.5 | P: “pāde te, samaṇa, paricāremā”ti. | T: (none)
+sn4.25:7.6 | P: Tampi bhagavā na manasākāsi, yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ duvijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:8.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.4 | S: women who have given birth twice … | T: a hundred women who have borne two children …
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn4.25:8.5 | P: yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.6 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.7 | P: majjhimitthivaṇṇasataṁ abhinimmineyyāmā”ti. | T: (none)
+sn4.25:8.8 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.9 | S: middle-aged women … | T: a hundred middle-aged women …
+sn4.25:8.10 | P: anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:9.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:9.2 | P: mahitthivaṇṇasataṁ abhinimmineyyāmāti. | T: a hundred older women?”
+sn4.25:9.3 | P: Atha kho taṇhā ca …pe… | T: So Māra’s daughters—Craving, Discontent, & Passion—
+sn4.25:9.4 | S: old women … | T: having each assumed the form of a hundred older women, went to the Blessed One and, on arrival, said to him, “We serve you at your feet, contemplative.”
+sn4.25:9.5 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:9.6 | S: Then Craving, Malignancy, and Lust withdrew to one side and said, | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and said,
+sn4.25:9.7 | S: “What our father said is true: | T: “Wow, it’s true what our father said:
+sn4.25:10.1 | S: ‘In this world he is the perfected one, the Holy One. | T: ‘An arahant, well-gone in the world,
+sn4.25:10.2 | S: He’s not easily seduced by lust. | T: isn’t easily brought in by passion.
+sn4.25:10.3 | S: He has slipped free of Māra’s dominion; | T: He’s gone beyond Māra’s sway:
+sn4.25:10.4 | S: that’s why I’m so upset.’ | T: That’s why I’m so violently sad.’
+sn4.25:11.1 | S: For if we had come on to any ascetic or brahmin like this who was not free of lust, his heart would explode, or he’d spew hot blood from his mouth, or he’d go mad or lose his mind. | T: “Any contemplative or brahman who hadn’t gone beyond passion, if we were to approach him with this approach: His heart would split or he would cough up hot blood or he would go mad, out of his mind.
+sn4.25:11.2 | S: He’d dry up, wither away, and shrivel up like a green reed that was mowed down.” | T: Just as a green reed cut down would dry out, wither, & fade,
+sn4.25:11.3 | P: evameva ussusseyya visusseyya milāyeyyā”ti. | T: in the same way, he would dry out, wither, & fade.”
+sn4.25:12.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and stood to one side. | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to the Blessed One and, on arrival, stood to one side.
+sn4.25:12.2 | S: Māra’s daughter Craving addressed the Buddha in verse: | T: As she was standing there, Māra’s daughter Craving addressed the Blessed One with verses:
+sn4.25:13.1 | S: “Are you swamped by sorrow <j>that you meditate in the forest? | T: “Practicing jhāna in the forest— are you overcome with grief?
+sn4.25:13.2 | S: Have you lost a fortune, or do you long for one? | T: Have you lost, or do you desire, wealth?
+sn4.25:13.3 | S: Or perhaps you’ve committed <j>some crime in the village? | T: Have you done something blameworthy in the village?
+sn4.25:13.4 | S: Why don’t you get too close to people? | T: Is it because you become intimate people,
+sn4.25:13.5 | S: And why does no one get close to you?” | T: but intimacy doesn’t prosper for you with anyone at all?”
+sn4.25:14.1 | S: “I’ve reached the goal, peace of heart. | T: The Buddha: “Having attained the goal— peace of the heart—
+sn4.25:14.2 | S: Having conquered the army <j>of the likable and pleasant, | T: having defeated the army of forms endearing & alluring,
+sn4.25:14.3 | S: alone, practicing absorption, I awakened to bliss. | T: practicing jhāna alone, I awakened to bliss.
+sn4.25:14.4 | S: That’s why I don’t get too close to people, | T: That’s why I don’t become intimate with people,
+sn4.25:14.5 | S: and no one gets too close to me.” | T: why intimacy doesn’t prosper with me when made by anyone at all.”
+sn4.25:15.1 | S: Then Māra’s daughter Malignancy addressed the Buddha in verse: | T: Then Māra’s daughter Discontent addressed the Blessed One in verse:
+sn4.25:16.1 | S: “How does a mendicant who has crossed five floods | T: “How does a monk here often dwell, who has crossed the five floods
+sn4.25:16.2 | S: usually meditate here while crossing the sixth? | T: and also the sixth?
+sn4.25:16.3 | S: How do they usually practice absorption <j>so that sensual perceptions | T: How, while cultivating jhāna, does he keep perceptions of sensuality far away?”
+sn4.25:16.4 | S: are blocked out and don’t get hold of them?” | T: (none)
+sn4.25:17.1 | S: “With tranquil body and mind well freed, | T: The Buddha: “Calmed in body, well released in mind,
+sn4.25:17.2 | S: without making choices, mindful, homeless; | T: without fabrications, mindful, homeless,
+sn4.25:17.3 | S: understanding the teaching, <j>they practice absorption without placing the mind; | T: having known the Dhamma, practicing jhāna without directed thought,
+sn4.25:17.4 | S: they’re not shaking or drifting or rigid. | T: he’s not provoked, doesn’t flow, isn’t slothful:
+sn4.25:18.1 | S: That’s how a mendicant who has crossed five floods | T: Like this a monk here often dwells, who has crossed the five floods
+sn4.25:18.2 | S: usually meditates here while crossing the sixth. | T: and also the sixth.
+sn4.25:18.3 | S: That’s how they usually practice absorption <j>so that sensual perceptions | T: Cultivating jhāna like this, he keeps perceptions of sensuality
+sn4.25:18.4 | S: are blocked out and don’t get hold of them.” | T: far away.”
+sn4.25:19.1 | S: Then Māra’s daughter Lust addressed the Buddha in verse: | T: Then Māra’s daughter Passion addressed the Blessed One in verse:
+sn4.25:20.1 | S: “He lives with his community after cutting off craving, | T: “Cutting off craving, practicing with a group:
+sn4.25:20.2 | S: and many of the faithful will cross over for sure. | T: Yes, many & faithful they’ll fare.
+sn4.25:20.3 | S: Alas, this homeless one will snatch many men away, | T: O, how this homeless one, having snatched them
+sn4.25:20.4 | S: and lead them past the King of Death!” | T: from the King of Death, will lead a great crowd away.”
+sn4.25:21.1 | S: “The great heroes they lead | T: The Buddha: “The Tathāgatas, great heroes, do lead
+sn4.25:21.2 | S: by means of the true teaching. | T: with the true Dhamma.
+sn4.25:21.3 | S: When the Realized Ones are leading by the teaching, | T: For those who know, leading by Dhamma,
+sn4.25:21.4 | S: how could anyone who knows be jealous?” | T: what’s the jealousy?”
+sn4.25:22.1 | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked. | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to Māra the Evil One.
+sn4.25:22.2 | S: Māra the Wicked saw them coming off in the distance, | T: He saw them coming from afar and, on seeing them,
+sn4.25:22.3 | S: and addressed them in verse: | T: addressed them with verses:
+sn4.25:23.1 | S: “Fools! You drill into a mountain | T: “Fools! Cleave a mountain
+sn4.25:23.2 | S: with lotus stalks! | T: with a lily-stalk.
+sn4.25:23.3 | S: You dig up a hill with your nails! | T: Dig up a crag with your fingernails.
+sn4.25:23.4 | S: You chew iron with your teeth! | T: Chew on iron with your teeth.
+sn4.25:24.1 | S: You seek a footing in the abyss, as it were, | T: Raising a rock
+sn4.25:24.2 | S: while lifting a rock with your head! | T: above your head, go over a cliff, into a pit.
+sn4.25:24.3 | S: After attacking a stump with your breast, as it were, | T: Like striking your chest on a stump—
+sn4.25:24.4 | S: you leave Gotama disappointed.” | T: you weary yourselves with Gotama.”
+sn4.25:25.1 | S: They came dazzling— | T: Blazing they came—
+sn4.25:25.2 | S: Craving, Malignancy, and Lust. | T: Craving, Discontent, & Passion—
+sn4.25:25.3 | S: But the Teacher brushed them off right there, | T: but the Teacher blew them off,
+sn4.25:25.4 | S: like the gale, a fallen tuft. | T: like the wind, a fallen tuft of cotton.
+sn4.25:25.5 | P: Tatiyo vaggo. | T: (none)
+sn4.25:26.0 | P: Tassuddānaṁ | T: (none)
+sn4.25:26.1 | P: Sambahulā samiddhi ca, | T: (none)
+sn4.25:26.2 | P: Godhikaṁ sattavassāni; | T: (none)
+sn4.25:26.3 | P: Dhītaraṁ desitaṁ buddha, | T: (none)
+sn4.25:26.4 | P: Seṭṭhena imaṁ mārapañcakanti. | T: (none)
+sn4.25:26.5 | S: The Linked Discourses with Māra are complete. | T: (none)
+
+## ud5.6
+ud5.6:1.1 | S: So I have heard. | T: I have heard that
+ud5.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.6:1.3 | S: Now at that time Venerable Mahākaccāna was staying in the land of the Avantis near Kuraraghara on Steep Mountain. | T: And on that occasion Ven. Mahā Kaccāna was living among the people of Avantī on Pavatta Mountain near the Osprey Habitat.
+ud5.6:1.4 | S: And the layman Soṇa of the Sharp Ears was Mahākaccāna’s attendant. | T: And at that time the lay follower Soṇa Koṭikaṇṇa was Ven. Mahā Kaccāna’s supporter.
+ud5.6:2.1 | S: Then as Soṇa was in private retreat this thought came to his mind, | T: Then as Soṇa Koṭikaṇṇa was alone in seclusion, this train of thought appeared to his awareness:
+ud5.6:2.2 | S: “As I understand Master Mahākaccāna’s teachings, it’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: “According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell. What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?” So he went to Ven. Mahā Kaccāna and on arrival, having bowed down to Ven. Mahā Kaccāna, sat to one side. As he was sitting there he said to Ven. Mahā Kaccāna, “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness: ‘According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell. What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?’ Give me the going-forth, Master Mahā Kaccāna!” When this was said, Ven. Mahā Kaccāna said to Soṇa Koṭikaṇṇa, “It’s hard, Soṇa, the life-long, one-meal-a-day, sleeping-alone holy life. Please, right there as you are a householder, devote yourself to the message of the Awakened Ones and to the proper-time [i.e., uposatha day], one-meal-a-day, sleeping-alone holy life.” And so Soṇa Koṭikaṇṇa’s idea of going-forth subsided. Then a second time as Soṇa Koṭikaṇṇa was alone in seclusion, this train of thought appeared to his awareness: “According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:2.3 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from lay life to homelessness?” | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?”
+ud5.6:3.1 | S: Then Soṇa went up to Mahākaccāna, bowed, sat down to one side, and told him what he was thinking. Then he said, | T: So he went to Ven. Mahā Kaccāna and on arrival, having bowed down to Ven. Mahā Kaccāna, sat to one side.
+ud5.6:3.2 | P: Ekamantaṁ nisinno kho soṇo upāsako kuṭikaṇṇo āyasmantaṁ mahākaccānaṁ etadavoca: | T: As he was sitting there he said to Ven. Mahā Kaccāna,
+ud5.6:4.1 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | T: “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness:
+ud5.6:4.2 | P: ‘yathā yathā kho ayyo mahākaccāno dhammaṁ deseti nayidaṁ sukaraṁ agāraṁ ajjhāvasatā ekantaparipuṇṇaṁ ekantaparisuddhaṁ saṅkhalikhitaṁ brahmacariyaṁ carituṁ. | T: ‘According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:4.3 | P: Yannūnāhaṁ kesamassuṁ ohāretvā kāsāyāni vatthāni acchādetvā agārasmā anagāriyaṁ pabbajeyyan’ti. | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?’
+ud5.6:4.4 | S: “May Master Mahākaccāna please give me the going forth!” | T: Give me the going-forth, Master Mahā Kaccāna!”
+ud5.6:5.1 | S: When this was said, Mahākaccāna said to him, | T: When this was said, Ven. Mahā Kaccāna said to Soṇa Koṭikaṇṇa,
+ud5.6:5.2 | S: “It’s hard to lead the spiritual life as long as you live, eating in one part of the day and sleeping alone. | T: “It’s hard, Soṇa, the life-long, one-meal-a-day, sleeping-alone holy life.
+ud5.6:5.3 | S: Come now, Soṇa, while remaining a layperson just as you are, devote yourself to the instructions of the Buddhas, leading the spiritual life at suitable times, eating in one part of the day and sleeping alone.” | T: Please, right there as you are a householder, devote yourself to the message of the Awakened Ones and to the proper-time, one-meal-a-day, sleeping-alone holy life.”
+ud5.6:5.4 | S: Then Soṇa’s aspiration to go forth died down. | T: (none)
+ud5.6:6.1 | S: For a second time, while in private retreat the thought came to Soṇa that he should go forth, but the outcome was the same. | T: (none)
+ud5.6:6.2 | P: dutiyampi kho āyasmā mahākaccāno soṇaṁ upāsakaṁ kuṭikaṇṇaṁ etadavoca: | T: (none)
+ud5.6:6.3 | P: “dukkaraṁ kho, soṇa, yāvajīvaṁ ekabhattaṁ ekaseyyaṁ brahmacariyaṁ. | T: (none)
+ud5.6:6.4 | P: Iṅgha tvaṁ, soṇa, tattheva āgārikabhūto samāno buddhānaṁ sāsanaṁ anuyuñja kālayuttaṁ ekabhattaṁ ekaseyyaṁ brahmacariyan”ti. | T: (none)
+ud5.6:6.5 | P: Dutiyampi kho soṇassa upāsakassa kuṭikaṇṇassa yo ahosi pabbajjābhisaṅkhāro so paṭipassambhi. | T: And so Soṇa Koṭikaṇṇa’s idea of going-forth subsided a second time.
+ud5.6:7.1 | S: For a third time, as Soṇa was in private retreat this thought came to his mind, | T: Then a third time as Soṇa Koṭikaṇṇa was alone in seclusion, this train of thought appeared to his awareness:
+ud5.6:7.2 | S: “As I understand Master Mahākaccāna’s teachings, it’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: “According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:7.3 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from lay life to homelessness?” | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?”
+ud5.6:7.4 | S: For a third time, Soṇa went up to Mahākaccāna, bowed, sat down to one side, and told him what he was thinking. Then he said, | T: So he went to Ven. Mahā Kaccāna and on arrival, having bowed down to Ven. Mahā Kaccāna, sat to one side.
+ud5.6:7.5 | P: Ekamantaṁ nisinno kho soṇo upāsako kuṭikaṇṇo āyasmantaṁ mahākaccānaṁ etadavoca: | T: As he was sitting there he said to Ven. Mahā Kaccāna,
+ud5.6:8.1 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | T: “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness:
+ud5.6:8.2 | P: ‘yathā yathā kho ayyo mahākaccāno dhammaṁ deseti nayidaṁ sukaraṁ agāraṁ ajjhāvasatā ekantaparipuṇṇaṁ ekantaparisuddhaṁ saṅkhalikhitaṁ brahmacariyaṁ carituṁ. | T: ‘According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:8.3 | P: Yannūnāhaṁ kesamassuṁ ohāretvā kāsāyāni vatthāni acchādetvā agārasmā anagāriyaṁ pabbajeyyan’ti. | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?’
+ud5.6:8.4 | S: “May Master Mahākaccāna please give me the going forth!” | T: Give me the going-forth, Master Mahā Kaccāna!”
+ud5.6:9.1 | S: Then Mahākaccāna gave Soṇa the going forth. | T: So Ven. Mahā Kaccāna gave Soṇa Koṭikaṇṇa the going-forth.
+ud5.6:9.2 | S: Now at that time the southern region, including Avanti, was short of monks. | T: Now at that time the southern country of Avantī was short of monks.
+ud5.6:9.3 | S: It took three years and much struggle and difficulty before Venerable Mahākaccāna was able to assemble from here and there a Saṅgha consisting of ten monks and give Venerable Soṇa the full ordination. | T: So only after three years–having gathered from here & there with hardship & difficulty a quorum-of-ten community of monks–did Ven. Mahā Kaccāna give full admission to Ven. Soṇa.
+ud5.6:10.1 | S: Then as Venerable Soṇa was in private retreat this thought came to his mind, | T: Then, after having completed the Rains retreat, as he was alone in seclusion, this train of thought appeared to Ven. Soṇa’s awareness:
+ud5.6:10.2 | S: “I have not personally seen the Buddha. I have only heard reports that | T: “I haven’t seen the Blessed One face-to-face.
+ud5.6:10.3 | S: that Blessed One is like this or like that. | T: I’ve simply heard that he is like this and like this.
+ud5.6:10.4 | S: If my mentor allows, I should go to see that Blessed One, the perfected one, the fully awakened Buddha.” | T: If my preceptor would give me permission, I would go to see the Blessed One, worthy & rightly self-awakened.”
+ud5.6:11.1 | S: Then in the late afternoon, Soṇa came out of retreat, went up to Mahākaccāna, bowed, sat down to one side, and told him what he was thinking. Then Mahākaccāna said, | T: So, leaving seclusion in the late afternoon, he went to Ven. Mahā Kaccāna and, on arrival, having bowed down to him, sat to one side.
+ud5.6:11.2 | P: Ekamantaṁ nisinno kho āyasmā soṇo āyasmantaṁ mahākaccānaṁ etadavoca: | T: As he was sitting there, he said to Ven. Mahā Kaccāna,
+ud5.6:12.1 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | T: “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness:
+ud5.6:12.2 | P: ‘na kho me so bhagavā sammukhā diṭṭho, api ca sutoyeva me— | T: ‘I haven’t seen the Blessed One face-to-face.
+ud5.6:12.3 | P: so bhagavā īdiso ca īdiso cā’ti. | T: I’ve simply heard that he is like this and like this.
+ud5.6:12.4 | P: Sace maṁ upajjhāyo anujāneyya, gaccheyyāhaṁ taṁ bhagavantaṁ dassanāya arahantaṁ sammāsambuddhan”ti. | T: If my preceptor would give me permission, I would go to see the Blessed One, worthy & rightly self-awakened.’”
+ud5.6:12.5 | P: (…) | T: (none)
+ud5.6:13.1 | S: “Good, good, Soṇa! | T: “Good, Soṇa. Very good.
+ud5.6:13.2 | S: Go to see the Blessed One, the perfected one, the fully awakened Buddha. | T: Go, Soṇa, to see the Blessed One, worthy & rightly self-awakened.
+ud5.6:13.3 | S: You will see that Blessed One who is impressive and inspiring, with peaceful faculties and heart, attained to the highest self-control and serenity, like an elephant with tamed, guarded, and controlled faculties. | T: You will see the Blessed One who is serene & inspires serene confidence, his senses at peace, his mind at peace, one who has attained the utmost tranquility & poise, tamed, guarded, his senses restrained, a Great One (nāga).
+ud5.6:13.4 | S: On seeing him, in my name bow with your head to his feet. Ask him if he is healthy and well, nimble, strong, and living comfortably, saying, | T: On seeing him, showing reverence with your head to his feet in my name, ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, [saying:
+ud5.6:13.5 | S: ‘Sir, my mentor Venerable Mahākaccāna bows with his head to your feet. He asks if you are healthy and well, nimble, strong, and living comfortably.’” | T: ‘My preceptor, lord, shows reverence with his head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.’”]
+ud5.6:14.1 | S: Saying, “Yes, sir,” Soṇa welcomed and agreed with Mahākaccāna’s words. He rose from his seat, bowed, and respectfully circled Mahākaccāna, keeping him on his right. Then he set his lodgings in order and, taking his bowl and robe, set out for Sāvatthī. | T: Saying, “As you say, venerable sir,” Ven. Soṇa–delighting in & approving of Ven. Mahā Kaccāna’s words–got up from his seat, bowed down to Ven. Mahā Kaccāna, circled him to the right, set his lodging in order, and–taking his bowl & robes–set off wandering toward Sāvatthī.
+ud5.6:14.2 | S: Eventually he came to Sāvatthī and Jeta’s Grove. He went up to the Buddha, bowed, and sat down to one side. | T: Wandering by stages, he arrived at Sāvatthī, Jeta’s Grove, Anāthapiṇḍika’s monastery. He went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud5.6:14.3 | S: Soṇa said to the Buddha, | T: As he was sitting there, he said to the Blessed One,
+ud5.6:14.4 | S: “Sir, my mentor Venerable Mahākaccāna bows with his head to your feet. He asks if you are healthy and well, nimble, strong, and living comfortably.” | T: “Lord, my preceptor, Ven. Mahā Kaccāna, shows reverence with his head to the Blessed One’s feet and asks whether the Blessed One is free from illness & affliction, is carefree, strong, & living in comfort.”
+ud5.6:15.1 | S: “I hope you’re keeping well, mendicant, I hope you’re all right. And I hope you have arrived from your journey unwearied, having had no trouble getting almsfood.” | T: “Are you well, monk? Are you in good health? Have you come along the road with only a little fatigue? And are you not tired of alms-food?”
+ud5.6:15.2 | S: “I’m keeping well, Blessed One, I’m all right. And I have arrived from my journey unwearied, having had no trouble getting almsfood.” | T: “I am well, Blessed One. I am in good health, Blessed One. I have come along the road, lord, with only a little fatigue and I am not tired of alms-food.”
+ud5.6:16.1 | S: Then the Buddha said to Venerable Ānanda, | T: Then the Blessed One addressed Ven. Ānanda, saying,
+ud5.6:16.2 | S: “Prepare lodgings for this visiting mendicant.” | T: “Ānanda, prepare bedding for this visiting monk.”
+ud5.6:16.3 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda,
+ud5.6:16.4 | S: “When the Buddha orders me | T: “When the Blessed One orders me,
+ud5.6:16.5 | S: to prepare lodgings for a specific mendicant, he wishes to stay in the same dwelling with that mendicant. The Buddha wishes to stay together with Venerable Soṇa.” | T: ‘Ānanda, prepare bedding for this visiting monk,’ he wants to stay in the same dwelling with that monk. The Blessed One wants to stay in the same dwelling with Ven. Soṇa.”
+ud5.6:16.6 | S: He prepared lodgings for Soṇa in the same dwelling where the Buddha was staying. | T: So he prepared bedding for Ven. Soṇa in the dwelling in which the Blessed One was staying.
+ud5.6:17.1 | S: The Buddha spent much of the night sitting meditation in the open. Then he got up from his seat, washed his feet, and entered the dwelling. | T: Then the Blessed One, having spent much of the night sitting in the open air, washed his feet and entered the dwelling.
+ud5.6:17.2 | S: Venerable Soṇa did the same. | T: Likewise, Ven. Soṇa, having spent much of the night sitting in the open air, washed his feet and entered the dwelling.
+ud5.6:17.3 | S: Then the Buddha rose at the crack of dawn and addressed Soṇa, | T: Then, getting up toward the end of the night, the Blessed One invited Ven. Mahā Soṇa, saying,
+ud5.6:17.4 | S: “Speak some Dhamma, mendicant, as you feel inspired.” | T: “Monk, I would like you to recite the Dhamma.”
+ud5.6:18.1 | S: “Yes, sir,” replied Soṇa. He intoned all sixteen discourses in the Chapter of the Eights. | T: Responding, “As you say, lord,” to the Blessed One, Ven. Soṇa chanted all sixteen parts of the Aṭṭhaka Vagga.
+ud5.6:18.2 | S: When Soṇa finished his intoning, the Buddha applauded, saying, | T: The Blessed One, at the conclusion of Ven. Soṇa’s intonation, expressed high approval:
+ud5.6:18.3 | S: “Good, good, mendicant! You have learned the sixteen discourses of the Chapter of the Eights well, you have applied the mind and remembered it well. You are a good speaker, with a polished, clear, and articulate voice that expresses the meaning. | T: “Good, monk. Very good. You have learned the Aṭṭhaka Vagga [verses] well, have considered them well, have borne them well in mind. You have a fine delivery, clear & faultless, that makes the meaning intelligible.
+ud5.6:18.4 | S: How many rains have you been ordained, mendicant?” | T: How many Rains [in the monkhood] do you have?”
+ud5.6:18.5 | S: “I have one rains, Blessed One.” | T: “I have one Rains, Blessed One.”
+ud5.6:18.6 | S: “But why did it take you so long to make it?” | T: “But why did you take so long [to ordain]?”
+ud5.6:18.7 | S: “Sir, I have long seen the drawbacks of sensual pleasures, | T: “For a long time, lord, I have seen the drawbacks in sensuality,
+ud5.6:18.8 | S: yet living in a house is cramped, with many duties and much to do.” | T: but the household life is confining with many duties, many things to be done.”
+ud5.6:19.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.6:20.1 | S: “Seeing the danger of the world, | T: Seeing the drawbacks of the world,
+ud5.6:20.2 | S: I understood the truth without attachments. | T: knowing the state without acquisitions,
+ud5.6:20.3 | S: The Noble One does not delight in evil, | T: a noble one doesn’t find joy in evil,
+ud5.6:20.4 | S: the Pure One does not delight in evil.” | T: in evil a clean one doesn’t find joy.
+ud5.6:20.5 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found a passage in UD 5.6 where the first exchange is piled onto an earlier line, and some ellipsis-separated list items in SN 4.25 that sit on the wrong lines. I’m checking the remaining boundaries before writing the findings.
+exec
+/bin/bash -lc "sed -n '180,214p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn4.25:5.2 | S: “Men have a diverse spectrum of tastes. | T: “Various are the appetites of men.
+sn4.25:5.3 | S: Why don’t we each manifest in the form of a hundred young maidens?” | T: Why don’t we each assume the form of a hundred girls?”
+sn4.25:5.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: So Māra’s daughters—Craving, Discontent, & Passion—having each assumed the form of a hundred girls, went to the Blessed One and, on arrival, said to him,
+sn4.25:5.5 | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+sn4.25:5.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:6.1 | S: Then Craving, Malignancy, and Lust withdrew to one side to think up a plan. | T: So Māra’s daughters—Craving, Discontent, & Passion—went off to one side and considered,
+sn4.25:6.2 | S: “Men have a diverse spectrum of tastes. | T: “Many & varied are the appetites of men.
+sn4.25:6.3 | S: Why don’t we each manifest in the form of a hundred women who have never given birth?” | T: Why don’t we each assume the form of a hundred women who have never given birth?”
+sn4.25:6.4 | S: So that’s what they did. Then they went up to the Buddha and said to him, | T: So Māra’s daughters—Craving, Discontent, & Passion—having each assumed the form of a hundred women who had never given birth, went to the Blessed One and, on arrival, said to him,
+sn4.25:6.5 | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+sn4.25:6.6 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:7.1 | S: Then Craving, Malignancy, and Lust … | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and considered, “Many & varied are the appetites of men.
+sn4.25:7.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ sakiṁ vijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:7.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:7.4 | S: each manifested in the form of a hundred women who have given birth once … | T: Why don’t we each assume the form of a hundred women who have borne one child …
+sn4.25:7.5 | P: “pāde te, samaṇa, paricāremā”ti. | T: (none)
+sn4.25:7.6 | P: Tampi bhagavā na manasākāsi, yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.2 | P: yannūna mayaṁ ekasataṁ ekasataṁ duvijātavaṇṇasataṁ abhinimmineyyāmāti. | T: (none)
+sn4.25:8.3 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.4 | S: women who have given birth twice … | T: a hundred women who have borne two children …
+sn4.25:8.5 | P: yathā taṁ anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:8.6 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.7 | P: majjhimitthivaṇṇasataṁ abhinimmineyyāmā”ti. | T: (none)
+sn4.25:8.8 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:8.9 | S: middle-aged women … | T: a hundred middle-aged women …
+sn4.25:8.10 | P: anuttare upadhisaṅkhaye vimutto. | T: (none)
+sn4.25:9.1 | P: Atha kho taṇhā ca …pe… | T: (none)
+sn4.25:9.2 | P: mahitthivaṇṇasataṁ abhinimmineyyāmāti. | T: a hundred older women?”
+sn4.25:9.3 | P: Atha kho taṇhā ca …pe… | T: So Māra’s daughters—Craving, Discontent, & Passion—
+sn4.25:9.4 | S: old women … | T: having each assumed the form of a hundred older women, went to the Blessed One and, on arrival, said to him, “We serve you at your feet, contemplative.”
+sn4.25:9.5 | S: But the Buddha still ignored them, since he was freed with the supreme ending of attachments. | T: Again, the Blessed One paid them no attention, as he was released in the unexcelled ending of acquisitions.
+sn4.25:9.6 | S: Then Craving, Malignancy, and Lust withdrew to one side and said, | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and said,
+sn4.25:9.7 | S: “What our father said is true: | T: “Wow, it’s true what our father said:
+sn4.25:10.1 | S: ‘In this world he is the perfected one, the Holy One. | T: ‘An arahant, well-gone in the world,
+
+exec
+/bin/bash -lc "sed -n '296,355p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+ud5.6:6.1 | S: For a second time, while in private retreat the thought came to Soṇa that he should go forth, but the outcome was the same. | T: (none)
+ud5.6:6.2 | P: dutiyampi kho āyasmā mahākaccāno soṇaṁ upāsakaṁ kuṭikaṇṇaṁ etadavoca: | T: (none)
+ud5.6:6.3 | P: “dukkaraṁ kho, soṇa, yāvajīvaṁ ekabhattaṁ ekaseyyaṁ brahmacariyaṁ. | T: (none)
+ud5.6:6.4 | P: Iṅgha tvaṁ, soṇa, tattheva āgārikabhūto samāno buddhānaṁ sāsanaṁ anuyuñja kālayuttaṁ ekabhattaṁ ekaseyyaṁ brahmacariyan”ti. | T: (none)
+ud5.6:6.5 | P: Dutiyampi kho soṇassa upāsakassa kuṭikaṇṇassa yo ahosi pabbajjābhisaṅkhāro so paṭipassambhi. | T: And so Soṇa Koṭikaṇṇa’s idea of going-forth subsided a second time.
+ud5.6:7.1 | S: For a third time, as Soṇa was in private retreat this thought came to his mind, | T: Then a third time as Soṇa Koṭikaṇṇa was alone in seclusion, this train of thought appeared to his awareness:
+ud5.6:7.2 | S: “As I understand Master Mahākaccāna’s teachings, it’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: “According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:7.3 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from lay life to homelessness?” | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?”
+ud5.6:7.4 | S: For a third time, Soṇa went up to Mahākaccāna, bowed, sat down to one side, and told him what he was thinking. Then he said, | T: So he went to Ven. Mahā Kaccāna and on arrival, having bowed down to Ven. Mahā Kaccāna, sat to one side.
+ud5.6:7.5 | P: Ekamantaṁ nisinno kho soṇo upāsako kuṭikaṇṇo āyasmantaṁ mahākaccānaṁ etadavoca: | T: As he was sitting there he said to Ven. Mahā Kaccāna,
+ud5.6:8.1 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | T: “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness:
+ud5.6:8.2 | P: ‘yathā yathā kho ayyo mahākaccāno dhammaṁ deseti nayidaṁ sukaraṁ agāraṁ ajjhāvasatā ekantaparipuṇṇaṁ ekantaparisuddhaṁ saṅkhalikhitaṁ brahmacariyaṁ carituṁ. | T: ‘According to the Dhamma that Master Mahā Kaccāna teaches, it’s not easy living at home to practice the holy life totally perfect, totally pure, like a polished shell.
+ud5.6:8.3 | P: Yannūnāhaṁ kesamassuṁ ohāretvā kāsāyāni vatthāni acchādetvā agārasmā anagāriyaṁ pabbajeyyan’ti. | T: What if I were to shave off my hair & beard, put on the ochre robes, and go forth from the household life into homelessness?’
+ud5.6:8.4 | S: “May Master Mahākaccāna please give me the going forth!” | T: Give me the going-forth, Master Mahā Kaccāna!”
+ud5.6:9.1 | S: Then Mahākaccāna gave Soṇa the going forth. | T: So Ven. Mahā Kaccāna gave Soṇa Koṭikaṇṇa the going-forth.
+ud5.6:9.2 | S: Now at that time the southern region, including Avanti, was short of monks. | T: Now at that time the southern country of Avantī was short of monks.
+ud5.6:9.3 | S: It took three years and much struggle and difficulty before Venerable Mahākaccāna was able to assemble from here and there a Saṅgha consisting of ten monks and give Venerable Soṇa the full ordination. | T: So only after three years–having gathered from here & there with hardship & difficulty a quorum-of-ten community of monks–did Ven. Mahā Kaccāna give full admission to Ven. Soṇa.
+ud5.6:10.1 | S: Then as Venerable Soṇa was in private retreat this thought came to his mind, | T: Then, after having completed the Rains retreat, as he was alone in seclusion, this train of thought appeared to Ven. Soṇa’s awareness:
+ud5.6:10.2 | S: “I have not personally seen the Buddha. I have only heard reports that | T: “I haven’t seen the Blessed One face-to-face.
+ud5.6:10.3 | S: that Blessed One is like this or like that. | T: I’ve simply heard that he is like this and like this.
+ud5.6:10.4 | S: If my mentor allows, I should go to see that Blessed One, the perfected one, the fully awakened Buddha.” | T: If my preceptor would give me permission, I would go to see the Blessed One, worthy & rightly self-awakened.”
+ud5.6:11.1 | S: Then in the late afternoon, Soṇa came out of retreat, went up to Mahākaccāna, bowed, sat down to one side, and told him what he was thinking. Then Mahākaccāna said, | T: So, leaving seclusion in the late afternoon, he went to Ven. Mahā Kaccāna and, on arrival, having bowed down to him, sat to one side.
+ud5.6:11.2 | P: Ekamantaṁ nisinno kho āyasmā soṇo āyasmantaṁ mahākaccānaṁ etadavoca: | T: As he was sitting there, he said to Ven. Mahā Kaccāna,
+ud5.6:12.1 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | T: “Just now, venerable sir, as I was alone in seclusion, this train of thought appeared to my awareness:
+ud5.6:12.2 | P: ‘na kho me so bhagavā sammukhā diṭṭho, api ca sutoyeva me— | T: ‘I haven’t seen the Blessed One face-to-face.
+ud5.6:12.3 | P: so bhagavā īdiso ca īdiso cā’ti. | T: I’ve simply heard that he is like this and like this.
+ud5.6:12.4 | P: Sace maṁ upajjhāyo anujāneyya, gaccheyyāhaṁ taṁ bhagavantaṁ dassanāya arahantaṁ sammāsambuddhan”ti. | T: If my preceptor would give me permission, I would go to see the Blessed One, worthy & rightly self-awakened.’”
+ud5.6:12.5 | P: (…) | T: (none)
+ud5.6:13.1 | S: “Good, good, Soṇa! | T: “Good, Soṇa. Very good.
+ud5.6:13.2 | S: Go to see the Blessed One, the perfected one, the fully awakened Buddha. | T: Go, Soṇa, to see the Blessed One, worthy & rightly self-awakened.
+ud5.6:13.3 | S: You will see that Blessed One who is impressive and inspiring, with peaceful faculties and heart, attained to the highest self-control and serenity, like an elephant with tamed, guarded, and controlled faculties. | T: You will see the Blessed One who is serene & inspires serene confidence, his senses at peace, his mind at peace, one who has attained the utmost tranquility & poise, tamed, guarded, his senses restrained, a Great One (nāga).
+ud5.6:13.4 | S: On seeing him, in my name bow with your head to his feet. Ask him if he is healthy and well, nimble, strong, and living comfortably, saying, | T: On seeing him, showing reverence with your head to his feet in my name, ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, [saying:
+ud5.6:13.5 | S: ‘Sir, my mentor Venerable Mahākaccāna bows with his head to your feet. He asks if you are healthy and well, nimble, strong, and living comfortably.’” | T: ‘My preceptor, lord, shows reverence with his head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.’”]
+ud5.6:14.1 | S: Saying, “Yes, sir,” Soṇa welcomed and agreed with Mahākaccāna’s words. He rose from his seat, bowed, and respectfully circled Mahākaccāna, keeping him on his right. Then he set his lodgings in order and, taking his bowl and robe, set out for Sāvatthī. | T: Saying, “As you say, venerable sir,” Ven. Soṇa–delighting in & approving of Ven. Mahā Kaccāna’s words–got up from his seat, bowed down to Ven. Mahā Kaccāna, circled him to the right, set his lodging in order, and–taking his bowl & robes–set off wandering toward Sāvatthī.
+ud5.6:14.2 | S: Eventually he came to Sāvatthī and Jeta’s Grove. He went up to the Buddha, bowed, and sat down to one side. | T: Wandering by stages, he arrived at Sāvatthī, Jeta’s Grove, Anāthapiṇḍika’s monastery. He went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud5.6:14.3 | S: Soṇa said to the Buddha, | T: As he was sitting there, he said to the Blessed One,
+ud5.6:14.4 | S: “Sir, my mentor Venerable Mahākaccāna bows with his head to your feet. He asks if you are healthy and well, nimble, strong, and living comfortably.” | T: “Lord, my preceptor, Ven. Mahā Kaccāna, shows reverence with his head to the Blessed One’s feet and asks whether the Blessed One is free from illness & affliction, is carefree, strong, & living in comfort.”
+ud5.6:15.1 | S: “I hope you’re keeping well, mendicant, I hope you’re all right. And I hope you have arrived from your journey unwearied, having had no trouble getting almsfood.” | T: “Are you well, monk? Are you in good health? Have you come along the road with only a little fatigue? And are you not tired of alms-food?”
+ud5.6:15.2 | S: “I’m keeping well, Blessed One, I’m all right. And I have arrived from my journey unwearied, having had no trouble getting almsfood.” | T: “I am well, Blessed One. I am in good health, Blessed One. I have come along the road, lord, with only a little fatigue and I am not tired of alms-food.”
+ud5.6:16.1 | S: Then the Buddha said to Venerable Ānanda, | T: Then the Blessed One addressed Ven. Ānanda, saying,
+ud5.6:16.2 | S: “Prepare lodgings for this visiting mendicant.” | T: “Ānanda, prepare bedding for this visiting monk.”
+ud5.6:16.3 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda,
+ud5.6:16.4 | S: “When the Buddha orders me | T: “When the Blessed One orders me,
+ud5.6:16.5 | S: to prepare lodgings for a specific mendicant, he wishes to stay in the same dwelling with that mendicant. The Buddha wishes to stay together with Venerable Soṇa.” | T: ‘Ānanda, prepare bedding for this visiting monk,’ he wants to stay in the same dwelling with that monk. The Blessed One wants to stay in the same dwelling with Ven. Soṇa.”
+ud5.6:16.6 | S: He prepared lodgings for Soṇa in the same dwelling where the Buddha was staying. | T: So he prepared bedding for Ven. Soṇa in the dwelling in which the Blessed One was staying.
+ud5.6:17.1 | S: The Buddha spent much of the night sitting meditation in the open. Then he got up from his seat, washed his feet, and entered the dwelling. | T: Then the Blessed One, having spent much of the night sitting in the open air, washed his feet and entered the dwelling.
+ud5.6:17.2 | S: Venerable Soṇa did the same. | T: Likewise, Ven. Soṇa, having spent much of the night sitting in the open air, washed his feet and entered the dwelling.
+ud5.6:17.3 | S: Then the Buddha rose at the crack of dawn and addressed Soṇa, | T: Then, getting up toward the end of the night, the Blessed One invited Ven. Mahā Soṇa, saying,
+ud5.6:17.4 | S: “Speak some Dhamma, mendicant, as you feel inspired.” | T: “Monk, I would like you to recite the Dhamma.”
+ud5.6:18.1 | S: “Yes, sir,” replied Soṇa. He intoned all sixteen discourses in the Chapter of the Eights. | T: Responding, “As you say, lord,” to the Blessed One, Ven. Soṇa chanted all sixteen parts of the Aṭṭhaka Vagga.
+ud5.6:18.2 | S: When Soṇa finished his intoning, the Buddha applauded, saying, | T: The Blessed One, at the conclusion of Ven. Soṇa’s intonation, expressed high approval:
+ud5.6:18.3 | S: “Good, good, mendicant! You have learned the sixteen discourses of the Chapter of the Eights well, you have applied the mind and remembered it well. You are a good speaker, with a polished, clear, and articulate voice that expresses the meaning. | T: “Good, monk. Very good. You have learned the Aṭṭhaka Vagga [verses] well, have considered them well, have borne them well in mind. You have a fine delivery, clear & faultless, that makes the meaning intelligible.
+ud5.6:18.4 | S: How many rains have you been ordained, mendicant?” | T: How many Rains [in the monkhood] do you have?”
+ud5.6:18.5 | S: “I have one rains, Blessed One.” | T: “I have one Rains, Blessed One.”
+ud5.6:18.6 | S: “But why did it take you so long to make it?” | T: “But why did you take so long [to ordain]?”
+ud5.6:18.7 | S: “Sir, I have long seen the drawbacks of sensual pleasures, | T: “For a long time, lord, I have seen the drawbacks in sensuality,
+ud5.6:18.8 | S: yet living in a house is cramped, with many duties and much to do.” | T: but the household life is confining with many duties, many things to be done.”
+ud5.6:19.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.6:20.1 | S: “Seeing the danger of the world, | T: Seeing the drawbacks of the world,
+ud5.6:20.2 | S: I understood the truth without attachments. | T: knowing the state without acquisitions,
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-044.findings.tmp <<'EOF'
+sn4.25:7.2 starts: Why don’t we each assume the form
+sn4.25:7.4 none
+sn4.25:8.2 starts: a hundred women who have borne two children
+sn4.25:8.4 none
+sn4.25:8.7 starts: a hundred middle-aged women …
+sn4.25:8.9 none
+ud5.6:2.3 starts: What if I were to shave off my
+ud5.6:3.1 starts: So he went to Ven. Mahā Kaccāna and
+ud5.6:3.2 starts: As he was sitting there he said to
+ud5.6:4.1 starts: “Just now, venerable sir, as I was alone
+ud5.6:4.2 starts: ‘According to the Dhamma that Master Mahā Kaccāna
+ud5.6:4.3 starts: What if I were to shave off my
+ud5.6:4.4 starts: Give me the going-forth, Master Mahā Kaccāna"'!”
+ud5.6:5.1 starts: When this was said, Ven. Mahā Kaccāna said
+ud5.6:5.2 starts: “It’s hard, Soṇa, the life-long, one-meal-a-day, sleeping-alone holy
+ud5.6:5.3 starts: Please, right there as you are a householder,
+ud5.6:5.4 starts: And so Soṇa Koṭikaṇṇa’s idea of going-forth subsided.
+ud5.6:6.1 starts: Then a second time as Soṇa Koṭikaṇṇa was
+ud5.6:6.2 starts: When this was said, Ven. Mahā Kaccāna said
+ud5.6:6.3 starts: “It’s hard, Soṇa, the life-long, one-meal-a-day, sleeping-alone holy
+ud5.6:6.4 starts: Please, right there as you are a householder,
+ud5.6:10.3 starts: he is like this and like this.
+ud5.6:12.3 starts: he is like this and like this.
+EOF' in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+23 lines reported.
+tokens used
+49,156
+23 lines reported.

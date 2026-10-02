@@ -1,0 +1,371 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9b-a6b5-7c73-940f-dcaa287f5d3e
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an5.37
+an5.37:1.1 | S: “Mendicants, when a giver gives food, they give the recipients five things. | T: “In giving a meal, the donor gives five things to the recipient.
+an5.37:1.2 | S: What five? | T: Which five?
+an5.37:1.3 | S: Long life, beauty, happiness, strength, and eloquence. | T: He/she gives life, beauty, happiness, strength, & quick-wittedness.
+an5.37:1.4 | S: Giving long life, they have long life as a god or human. | T: Having given life, he/she has a share in long life, either human or divine.
+an5.37:1.5 | S: Giving beauty, they have beauty as a god or human. | T: Having given beauty, he/she has a share in beauty, either human or divine.
+an5.37:1.6 | S: Giving happiness, they have happiness as a god or human. | T: Having given happiness, he/she has a share in happiness, either human or divine.
+an5.37:1.7 | S: Giving strength, they have strength as a god or human. | T: Having given strength, he/she has a share in strength, either human or divine.
+an5.37:1.8 | S: Giving eloquence, they are eloquent as a god or human. | T: Having given quick-wittedness, he/she has a share in quick-wittedness, either human or divine.
+an5.37:1.9 | S: When a giver gives food, they give the recipients five things. | T: In giving a meal, the donor gives these five things to the recipient.”
+an5.37:2.1 | S: Being attentive, one is a giver of life, strength, | T: The enlightened person giving life, strength,
+an5.37:2.2 | S: beauty, and eloquence. | T: beauty, quick-wittedness—
+an5.37:2.3 | S: An intelligent giver of happiness | T: the intelligent person, a giver of happiness—
+an5.37:2.4 | S: gains happiness in return. | T: attains happiness himself.
+an5.37:3.1 | S: Giving life, strength, beauty, | T: Having given life, strength, beauty,
+an5.37:3.2 | S: happiness, and eloquence, | T: happiness, & quick-wittedness,
+an5.37:3.3 | S: they’re long-lived and famous | T: he has long life & status
+an5.37:3.4 | S: wherever they’re reborn.” | T: wherever he arises.
+an5.37:3.5 | P: Sattamaṁ. | T: (none)
+
+## an5.49
+an5.49:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: Once the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an5.49:1.2 | S: Then King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. | T: Then King Pasenadi Kosala went to the Blessed One and, on arrival, having bowed down, sat to one side.
+an5.49:2.1 | P: Tena kho pana samayena mallikā devī kālaṅkatā hoti. | T: Now, at that time Queen Mallikā died.
+an5.49:2.2 | S: Then a man went up to the king and whispered in his ear, | T: Then a certain man went to the king and whispered in his ear:
+an5.49:2.3 | S: “Your Majesty, Queen Mallikā has passed away.” | T: “Your majesty, Queen Mallikā has died.”
+an5.49:2.4 | S: When this was said, King Pasenadi was miserable and sad. He sat with his shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, King Pasenadi Kosala sat there miserable, sick at heart, his shoulders drooping, his face down, brooding, at a loss for words.
+an5.49:3.1 | S: Knowing this, the Buddha said to him, | T: Then the Blessed One saw the king sitting there miserable, sick at heart… at a loss for words, and so said to him,
+an5.49:3.2 | S: “Great king, there are five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “There are these five things, great king, that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world.
+an5.49:3.3 | S: What five? | T: Which five?
+an5.49:3.4 | S: That someone liable to old age should not grow old. … Sorrowing and lamenting doesn’t do even a little bit of good … ‘The deed is powerful. What can I do now?’” | T: “‘May what is subject to aging not age.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to illness not grow ill.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to death not die.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to ending not end.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “‘May what is subject to destruction not be destroyed.’ This is something that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world. “Now, it happens to an uninstructed run-of-the-mill person that something that is subject to aging ages. With the aging of what is subject to aging, he does not reflect: ‘It doesn’t happen only to me that what is subject to aging will age. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to aging will age. And if, with the aging of what is subject to aging, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the aging of what is subject to aging, he sorrows, grieves, laments, beats his breast, & becomes distraught. This is called an uninstructed run-of-the-mill person pierced by the poisoned arrow of sorrow, tormenting himself. “And further, it happens to an uninstructed run-of-the-mill person that something that is subject to illness grows ill… that something subject to death dies… that something subject to ending ends… that something subject to destruction is destroyed. With the destruction of what is subject to destruction, he does not reflect: ‘It doesn’t happen only to me that what is subject to destruction will be destroyed. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to destruction will be destroyed. And if, with the destruction of what is subject to destruction, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the destruction of what is subject to destruction, he sorrows, grieves, laments, beats his breast, & becomes distraught. This is called an uninstructed run-of-the-mill person pierced by the poisoned arrow of sorrow, tormenting himself. “Now, it happens to an instructed disciple of the noble ones that something that is subject to aging ages. With the aging of what is subject to aging, he reflects: ‘It doesn’t happen only to me that what is subject to aging will age. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to aging will age. And if, with the aging of what is subject to aging, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the aging of what is subject to aging, he does not sorrow, grieve, or lament, does not beat his breast or become distraught. This is called an instructed disciple of the noble ones who has pulled out the poisoned arrow of sorrow pierced with which the uninstructed run-of-the-mill person torments himself. Sorrowless, arrowless, the disciple of the noble ones is totally unbound right within himself. “And further, it happens to an instructed disciple of the noble ones that something that is subject to illness grows ill… that something subject to death dies… that something subject to ending ends… that something subject to destruction is destroyed. With the destruction of what is subject to destruction, he reflects: ‘It doesn’t happen only to me that what is subject to destruction will be destroyed. To the extent that there are beings—past & future, passing away & re-arising—it happens to all of them that what is subject to destruction will be destroyed. And if, with the destruction of what is subject to destruction, I were to sorrow, grieve, lament, beat my breast, & become distraught, food would not agree with me, my body would become unattractive, my affairs would go untended, my enemies would be gratified and my friends unhappy.’ So, with the destruction of what is subject to destruction, he does not sorrow, grieve, or lament, does not beat his breast or become distraught. This is called an instructed disciple of the noble ones who has pulled out the poisoned arrow of sorrow pierced with which the uninstructed run-of-the-mill person torments himself. Sorrowless, arrowless, the disciple of the noble ones is totally unbound right within himself. “These are the five things, great king, that cannot be gotten by a contemplative, a brahman, a deva, a Māra, a Brahmā, or anyone at all in the world.” Not by sorrowing, not by lamenting, is any aim accomplished here, not even a bit. Knowing you’re sorrowing & in pain, your enemies are gratified. But when a sage with a sense for determining what is his aim doesn’t waver in the face of misfortune, his enemies are pained, seeing his face unchanged, as of old. Where & however an aim is accomplished through eulogies, chants, good sayings, donations, & family customs, follow them diligently there & that way. But if you discern that your own aim or that of others is not gained in this way, acquiesce (to the nature of things) unsorrowing, with the thought: ‘What important work am I doing now?’
+an5.49:3.5 | P: Navamaṁ. | T: (none)
+
+## an5.53
+an5.53:1.1 | S: “Mendicants, there are these five factors that support meditation. | T: “These are the five factors for exertion.
+an5.53:1.2 | S: What five? | T: Which five?
+an5.53:1.3 | S: It’s when a mendicant has faith in the Realized One’s awakening: | T: “There is the case where a monk has conviction, is convinced of the Tathāgata’s awakening:
+an5.53:1.4 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+an5.53:1.5 | S: They are rarely ill or unwell. | T: “He is free from illness & discomfort,
+an5.53:1.6 | S: Their stomach digests well, being neither too hot nor too cold, but just right, and fit for meditation. | T: endowed with good digestion—not too cold, not too hot, of moderate strength—fit for exertion.
+an5.53:1.7 | S: They’re not devious or deceitful. | T: “He is neither fraudulent nor deceitful.
+an5.53:1.8 | S: They reveal themselves honestly to the Teacher or sensible spiritual companions. | T: He declares himself to the Teacher or to his observant companions in the holy life in line with what he actually is.
+an5.53:1.9 | S: They live with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “He keeps his persistence aroused for abandoning unskillful qualities and taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+an5.53:1.10 | S: They’re wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “He is discerning, endowed with discernment leading to the arising of the goal—noble, penetrating, leading to the right ending of stress.
+an5.53:1.11 | S: These are the five factors that support meditation.” | T: “These are the five factors for exertion.”
+an5.53:1.12 | P: Tatiyaṁ. | T: (none)
+
+## an5.73
+an5.73:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+an5.73:1.2 | S: “Sir, they speak of ‘one who lives by the teaching’. | T: “‘One dwelling in the Dhamma, one dwelling in the Dhamma’: Thus it is said, lord.
+an5.73:1.3 | S: How is a mendicant who lives by the teaching defined?” | T: To what extent is a monk one dwelling in the Dhamma?”
+an5.73:2.1 | S: “Mendicant, take a mendicant who memorizes the teaching— | T: “Monk, there is the case where a monk studies the Dhamma:
+an5.73:2.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose & verse, explanations, verses, spontaneous exclamations [udāna], quotations [itivuttaka], birth stories [jātaka], amazing events, question & answer sessions [vedalla].
+an5.73:2.3 | S: They spend too much time studying that teaching. They neglect retreat, and are not committed to internal serenity of heart. | T: He spends the day in Dhamma-study. He neglects seclusion. He doesn’t devote himself to internal tranquility of awareness.
+an5.73:2.4 | S: That mendicant is called one who studies a lot, not one who lives by the teaching. | T: This is called a monk keen on study, not one dwelling in the Dhamma.
+an5.73:3.1 | S: Furthermore, a mendicant teaches Dhamma in detail to others as they learned and memorized it. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and teaches it in detail to others.
+an5.73:3.2 | S: They spend too much time advocating that teaching. They neglect retreat, and are not committed to internal serenity of heart. | T: He spends the day in Dhamma-description. He neglects seclusion. He doesn’t devote himself to internal tranquility of awareness.
+an5.73:3.3 | S: That mendicant is called one who advocates a lot, not one who lives by the teaching. | T: This is called a monk keen on description, not one dwelling in the Dhamma.
+an5.73:4.1 | S: Furthermore, a mendicant rehearses the teaching in detail as they learned and memorized it. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and recites it in full detail.
+an5.73:4.2 | S: They spend too much time reciting that teaching. They neglect retreat, and are not committed to internal serenity of heart. | T: He spends the day in Dhamma-recitation. He neglects seclusion. He doesn’t devote himself to internal tranquility of awareness.
+an5.73:4.3 | S: That mendicant is called one who rehearses a lot, not one who lives by the teaching. | T: This is called a monk keen on recitation, not one dwelling in the Dhamma.
+an5.73:5.1 | S: Furthermore, a mendicant thinks about and considers the teaching in their heart, examining it with the mind as they learned and memorized it. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and thinks about it, evaluates it, and examines it with his intellect.
+an5.73:5.2 | S: They spend too much time thinking about that teaching. They neglect retreat, and are not committed to internal serenity of heart. | T: He spends the day in Dhamma-thinking. He neglects seclusion. He doesn’t devote himself to internal tranquility of awareness.
+an5.73:5.3 | S: That mendicant is called one who thinks a lot, not one who lives by the teaching. | T: This is called a monk keen on thinking, not one dwelling in the Dhamma.
+an5.73:6.1 | S: Take a mendicant who memorizes the teaching— | T: “Then there is the case where a monk studies the Dhamma:
+an5.73:6.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose & verse, explanations, verses, spontaneous exclamations, quotations, birth stories, amazing events, question & answer sessions.
+an5.73:6.3 | S: They don’t spend too much time studying that teaching. They don’t neglect retreat, and they’re committed to internal serenity of heart. | T: He doesn’t spend the day in Dhamma-study. He doesn’t neglect seclusion. He devotes himself to internal tranquility of awareness.
+an5.73:6.4 | S: That’s how a mendicant is one who lives by the teaching. | T: This is called a monk dwelling in the Dhamma.
+an5.73:7.1 | S: So, mendicant, I’ve taught you the one who studies a lot, the one who advocates a lot, the one who rehearses a lot, the one who thinks a lot, and the one who lives by the teaching. | T: “Now, monk, I have taught you the one keen on study, the one keen on description, the one keen on recitation, the one keen on thinking, and the one dwelling in the Dhamma.
+an5.73:7.2 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever a teacher should do—seeking the welfare of his disciples, out of sympathy for them—that have I done for you.
+an5.73:7.3 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicant! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: Over there are the roots of trees; over there, empty dwellings. Practice jhāna, monk. Don’t be heedless. Don’t later fall into regret. This is our message to you.”
+an5.73:7.4 | P: Tatiyaṁ. | T: (none)
+
+## an5.74
+an5.74:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+an5.74:1.2 | S: “Sir, they speak of ‘one who lives by the teaching’. | T: “‘One dwelling in the Dhamma, one dwelling in the Dhamma’: Thus it is said, lord.
+an5.74:1.3 | S: How is a mendicant who lives by the teaching defined?” | T: To what extent is a monk one dwelling in the Dhamma?”
+an5.74:2.1 | S: “Mendicant, take a mendicant who memorizes the teaching— | T: “Monk, there is the case where a monk studies the Dhamma:
+an5.74:2.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose & verse, explanations, verses, spontaneous exclamations [udāna], quotations [itivuttaka], birth stories [jātaka], amazing events, question & answer sessions [vedalla]. He spends the day in Dhamma-study. He neglects seclusion.
+an5.74:2.3 | S: But they don’t understand the higher meaning. | T: He doesn’t, with his discernment, discern [the Dhamma’s] higher meaning/goal.
+an5.74:2.4 | S: That mendicant is called one who studies a lot, not one who lives by the teaching. | T: This is called a monk keen on study, not one dwelling in the Dhamma.
+an5.74:3.1 | S: Furthermore, a mendicant teaches Dhamma in detail to others as they learned and memorized it. But they don’t understand the higher meaning. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and teaches it in detail to others. He spends the day in Dhamma-description. He neglects seclusion. He doesn’t, with his discernment, discern [the Dhamma’s] higher meaning/goal.
+an5.74:3.2 | S: That mendicant is called one who advocates a lot, not one who lives by the teaching. | T: This is called a monk keen on description, not one dwelling in the Dhamma.
+an5.74:4.1 | S: Furthermore, a mendicant rehearses the teaching in detail as they learned and memorized it. But they don’t understand the higher meaning. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and recites it in full detail. He spends the day in Dhamma-recitation. He neglects seclusion. He doesn’t, with his discernment, discern [the Dhamma’s] higher meaning/goal.
+an5.74:4.2 | S: That mendicant is called one who rehearses a lot, not one who lives by the teaching. | T: This is called a monk keen on recitation, not one dwelling in the Dhamma.
+an5.74:5.1 | S: Furthermore, a mendicant thinks about and considers the teaching in their heart, examining it with the mind as they learned and memorized it. But they don’t understand the higher meaning. | T: “Then there is the case where a monk takes the Dhamma—as he has heard & studied it—and thinks about it, evaluates it, and examines it with his intellect. He spends the day in Dhamma-thinking. He neglects seclusion. He doesn’t, with his discernment, discern [the Dhamma’s] higher meaning/goal.
+an5.74:5.2 | S: That mendicant is called one who thinks a lot, not one who lives by the teaching. | T: This is called a monk keen on thinking, not one dwelling in the Dhamma.
+an5.74:6.1 | S: Take a mendicant who memorizes the teaching— | T: “Then there is the case where a monk studies the Dhamma:
+an5.74:6.2 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose & verse, explanations, verses, spontaneous exclamations, quotations, birth stories, amazing events, question & answer sessions. He doesn’t spend the day in Dhamma-study. He doesn’t neglect seclusion.
+an5.74:6.3 | S: And they do understand the higher meaning. | T: With his discernment, he discerns [the Dhamma’s] higher meaning/goal.
+an5.74:6.4 | S: That’s how a mendicant is one who lives by the teaching. | T: This is called a monk dwelling in the Dhamma.
+an5.74:7.1 | S: So, mendicant, I’ve taught you the one who studies a lot, the one who advocates a lot, the one who rehearses a lot, the one who thinks a lot, and the one who lives by the teaching. | T: “Now, monk, I have taught you the one keen on study, the one keen on description, the one keen on recitation, the one keen on thinking, and the one dwelling in the Dhamma.
+an5.74:7.2 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever a teacher should do—seeking the welfare of his disciples, out of sympathy for them—that have I done for you.
+an5.74:7.3 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicant! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: Over there are the roots of trees; over there, empty dwellings. Practice jhāna, monk. Don’t be heedless. Don’t later fall into regret. This is our message to you.”
+an5.74:7.4 | P: Catutthaṁ. | T: (none)
+
+## an5.75
+an5.75:1.1 | S: “Mendicants, these five warriors are found in the world. | T: “Monks, there are these five types of warriors who can be found existing in the world.
+an5.75:1.2 | S: What five? | T: Which five?
+an5.75:1.3 | S: Firstly, one warrior falters and founders at the mere sight of a cloud of dust. He doesn’t stay firm, and fails to plunge into battle. | T: “There is the case of a warrior who, on seeing a cloud of dust (stirred up by the enemy army), falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:1.4 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.75:1.5 | S: This is the first warrior found in the world. | T: This is the first type of warrior who can be found existing in the world.
+an5.75:2.1 | S: Furthermore, one warrior can prevail over a cloud of dust, | T: “Then there is the warrior who can handle the cloud of dust,
+an5.75:2.2 | S: but he falters and founders at the mere sight of a banner’s crest. He doesn’t stay firm, and fails to plunge into battle. | T: but on seeing the top of the enemy’s banner, he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:2.3 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.75:2.4 | S: This is the second warrior found in the world. | T: This is the second type of warrior who can be found existing in the world.
+an5.75:3.1 | S: Furthermore, one warrior can prevail over a cloud of dust and a banner’s crest, | T: “Then there is the warrior who can handle the cloud of dust & the top of the enemy’s banner,
+an5.75:3.2 | S: but he falters and founders at the mere sound of turmoil. He doesn’t stay firm, and fails to plunge into battle. | T: but on hearing the tumult (of the approaching forces), he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:3.3 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.75:3.4 | S: This is the third warrior found in the world. | T: This is the third type of warrior who can be found existing in the world.
+an5.75:4.1 | S: Furthermore, one warrior can prevail over a cloud of dust and a banner’s crest and turmoil, | T: “Then there is the warrior who can handle the cloud of dust, the top of the enemy’s banner, & the tumult,
+an5.75:4.2 | S: but he’s killed or injured when blows are struck. | T: but when in hand-to-hand combat he is struck and falls wounded.
+an5.75:4.3 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.75:4.4 | S: This is the fourth warrior found in the world. | T: This is the fourth type of warrior who can be found existing in the world.
+an5.75:5.1 | S: Furthermore, one warrior can prevail over a cloud of dust and a banner’s crest and turmoil and being struck. | T: “Then there is the warrior who can handle the cloud of dust, the top of the enemy’s banner, the tumult, & the hand-to-hand combat.
+an5.75:5.2 | S: He wins victory in battle, establishing himself as foremost in battle. | T: On winning the battle, victorious in battle, he comes out at the very head of the battle.
+an5.75:5.3 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.75:5.4 | S: This is the fifth warrior found in the world. | T: This is the fifth type of warrior who can be found existing in the world.
+an5.75:5.5 | S: These are the five warriors found in the world. | T: “These are the five types of warriors who can be found existing in the world.
+an5.75:6.1 | S: In the same way, these five individuals similar to warriors are found among the monks. | T: “In the same way, monks, there are these five warrior-like individuals who can be found existing among the monks.
+an5.75:6.2 | S: What five? | T: Which five?
+an5.75:6.3 | S: Firstly, one monk falters and founders at the mere sight of a cloud of dust. He doesn’t stay firm, and fails to keep up the spiritual life. | T: [1] “There is the case of the monk who, on seeing a cloud of dust, falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:6.4 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:6.5 | S: What is his ‘cloud of dust’? | T: What is the cloud of dust for him?
+an5.75:6.6 | S: It’s when a monk hears: | T: There is the case of the monk who hears,
+an5.75:6.7 | S: ‘In such-and-such village or town there’s a woman or a girl who is attractive, good-looking, lovely, of surpassing beauty.’ | T: ‘In that village or town over there is a woman or girl who is shapely, good-looking, charming, endowed with the foremost lotus-like complexion.’
+an5.75:6.8 | S: Hearing this, he falters and founders. He doesn’t stay firm, and fails to keep up the spiritual life. | T: On hearing this, he falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:6.9 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:6.10 | S: This is his ‘cloud of dust’. | T: That, for him, is the cloud of dust.
+an5.75:7.1 | S: I say that this individual is like the warrior who falters and founders at the mere sight of a cloud of dust. | T: This individual, I tell you, is like the warrior who, on seeing a cloud of dust, falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:7.2 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an5.75:7.3 | S: Some individuals are like that. | T: Some individuals are like this.
+an5.75:7.4 | S: This is the first individual similar to a warrior found among the monks. | T: This is the first type of warrior-like individual who can be found existing among the monks.
+an5.75:8.1 | S: Furthermore, one monk can prevail over a cloud of dust, | T: [2] “And further, there is the case of the monk who can handle the cloud of dust,
+an5.75:8.2 | S: but at the mere sight of a banner’s crest he falters and founders. He doesn’t stay firm, and fails to keep up the spiritual life. | T: but on seeing the top of the enemy’s banner, he falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:8.3 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:8.4 | S: What is his ‘banner’s crest’? | T: What is the top of the banner for him?
+an5.75:8.5 | S: It’s when a monk doesn’t hear: | T: There is the case of the monk who not only hears that
+an5.75:8.6 | S: ‘In such-and-such village or town there’s a woman or a girl who is attractive, good-looking, lovely, of surpassing beauty.’ | T: ‘In that village or town over there is a woman or girl who is shapely, good-looking, charming, endowed with the foremost lotus-like complexion.’
+an5.75:8.7 | S: But he sees for himself a woman or a girl who is attractive, good-looking, lovely, of surpassing beauty. | T: He sees for himself that in that village or town over there is a woman or girl who is shapely, good-looking, charming, endowed with the foremost lotus-like complexion.
+an5.75:8.8 | S: Seeing her, he falters and founders. He doesn’t stay firm, and fails to keep up the spiritual life. | T: On seeing her, he falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:8.9 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:8.10 | S: This is his ‘banner’s crest’. | T: That, for him, is the top of the banner.
+an5.75:9.1 | S: I say that this individual is like the warrior who can prevail over a cloud of dust, | T: This individual, I tell you, is like the warrior who can handle the cloud of dust,
+an5.75:9.2 | S: but he falters and founders at the mere sight of a banner’s crest. | T: but on seeing the top of the enemy’s banner, he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:9.3 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an5.75:9.4 | S: Some individuals are like that. | T: Some individuals are like this.
+an5.75:9.5 | S: This is the second individual similar to a warrior found among the monks. | T: This is the second type of warrior-like individual who can be found existing among the monks.
+an5.75:10.1 | S: Furthermore, one monk can prevail over a cloud of dust and a banner’s crest, | T: [3] “And further, there is the case of the monk who can handle the cloud of dust & the top of the enemy’s banner,
+an5.75:10.2 | S: but he falters and founders at the mere sound of turmoil. He doesn’t stay firm, and fails to keep up the spiritual life. | T: but on hearing the tumult (of the approaching forces), he falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:10.3 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:10.4 | S: What is his ‘turmoil’? | T: What is the tumult for him?
+an5.75:10.5 | S: It’s when a mendicant who has gone to a wilderness, or to the root of a tree, or to an empty hut is approached by a lady. She smiles, chats, laughs, and teases him. | T: There is the case of the monk who has gone to the wilderness, to the foot of a tree, or to an empty building. A woman approaches him and giggles at him, calls out to him, laughs aloud, & teases him.
+an5.75:10.6 | S: He falters and founders. He doesn’t stay firm, and fails to keep up the spiritual life. | T: On being giggled at, called out to, laughed at, & teased by the woman, he falters, faints, doesn’t steel himself, can’t continue in the holy life.
+an5.75:10.7 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: Declaring his weakness in the training, he leaves the training and returns to the lower life.
+an5.75:10.8 | S: This is his ‘turmoil’. | T: That, for him, is the tumult.
+an5.75:11.1 | S: I say that this individual is like the warrior who can prevail over a cloud of dust and a banner’s crest, | T: This individual, I tell you, is like the warrior who can handle the cloud of dust & the top of the enemy’s banner,
+an5.75:11.2 | S: but he falters and founders at the mere sound of turmoil. | T: but on hearing the tumult he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.75:11.3 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an5.75:11.4 | S: Some individuals are like that. | T: Some individuals are like this.
+an5.75:11.5 | S: This is the third individual similar to a warrior found among the monks. | T: This is the third type of warrior-like individual who can be found existing among the monks.
+an5.75:12.1 | S: Furthermore, one monk can prevail over a cloud of dust and a banner’s crest and turmoil, | T: [4] “And further, there is the case of the monk who can handle the cloud of dust, the top of the enemy’s banner, & the tumult,
+an5.75:12.2 | S: but he’s killed or injured when blows are struck. | T: but when in hand-to-hand combat he is struck and falls wounded.
+an5.75:12.3 | S: What is his ‘blows are struck’? | T: What is the hand-to-hand combat for him?
+an5.75:12.4 | S: It’s when a mendicant who has gone to a wilderness, or to the root of a tree, or to an empty hut is approached by a lady. She sits right by him, lies down, or embraces him. | T: There is the case of the monk who has gone to the wilderness, to the foot of a tree, or to an empty building. A woman approaches him and sits down right next to him, lies down right next to him, throws herself all over him.
+an5.75:12.5 | S: Without resigning the training and declaring his inability to continue, he indulges in sex. | T: When she sits down right next to him, lies down right next to him, and throws herself all over him, he—without renouncing the training, without declaring his weakness—engages in sexual intercourse.
+an5.75:12.6 | S: This is his ‘blows are struck’. | T: This, for him, is hand-to-hand combat.
+an5.75:13.1 | S: I say that this individual is like the warrior who can prevail over a cloud of dust and a banner’s crest and turmoil, but is killed or injured when blows are struck. | T: This individual, I tell you, is like the warrior who can handle the cloud of dust, the top of the enemy’s banner, & the tumult, but when in hand-to-hand combat he is struck and falls wounded.
+an5.75:13.2 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an5.75:13.3 | S: Some individuals are like that. | T: Some individuals are like this.
+an5.75:13.4 | S: This is the fourth individual similar to a warrior found among the monks. | T: This is the fourth type of warrior-like individual who can be found existing among the monks.
+an5.75:14.1 | S: Furthermore, one monk can prevail over a cloud of dust and a banner’s crest and turmoil, and being struck. He wins victory in battle, establishing himself as foremost in battle. | T: [5] “And further, there is the case of the monk who can handle the cloud of dust, the top of the enemy’s banner, the tumult, & hand-to-hand combat. On winning the battle, victorious in battle, he comes out at the very head of the battle.
+an5.75:14.2 | S: What is his ‘victory in battle’? | T: What is victory in the battle for him?
+an5.75:14.3 | S: It’s when a mendicant who has gone to a wilderness, or to the root of a tree, or to an empty hut is approached by a lady. She sits right by him, lies down, or embraces him. | T: There is the case of the monk who has gone to the wilderness, to the foot of a tree, or to an empty dwelling. A woman approaches him and sits down right next to him, lies down right next to him, throws herself all over him.
+an5.75:14.4 | S: But he disentangles and frees himself, and goes wherever he wants. | T: When she sits down right next to him, lies down right next to him, and throws herself all over him, he extricates himself, frees himself, and goes off where he will.
+an5.75:14.5 | S: He frequents a secluded lodging—a wilderness, the root of a tree, a hill, a ravine, a mountain cave, a charnel ground, a forest, the open air, a heap of straw. | T: “He resorts to a secluded dwelling place: the wilderness, the foot of a tree, a mountain, a glen, a hillside cave, a charnel ground, a forest grove, the open air, a haystack.
+an5.75:15.1 | S: Gone to a wilderness, or to the root of a tree, or to an empty hut, he sits down cross-legged, sets his body straight, and brings mindfulness to the present. | T: Having gone to the wilderness, the foot of a tree, or an empty building, he sits down, crosses his legs, holds his body erect, and brings mindfulness to the fore.
+an5.75:15.2 | S: Giving up covetousness for the world, he meditates with a heart rid of covetousness, cleansing the mind of covetousness. | T: “Abandoning covetousness with regard to the world, he dwells with an awareness devoid of covetousness. He cleanses his mind of covetousness.
+an5.75:15.3 | S: Giving up ill will and malevolence, he meditates with a mind rid of ill will, full of sympathy for all living beings, cleansing the mind of ill will. | T: Abandoning ill will & anger, he dwells with an awareness devoid of ill will, sympathetic with the welfare of all living beings. He cleanses his mind of ill will & anger.
+an5.75:15.4 | S: Giving up dullness and drowsiness, he meditates with a mind rid of dullness and drowsiness, perceiving light, mindful and aware, cleansing the mind of dullness and drowsiness. | T: Abandoning sloth & drowsiness, he dwells with an awareness devoid of sloth & drowsiness, mindful, alert, percipient of light. He cleanses his mind of sloth & drowsiness.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.75:15.5 | S: Giving up restlessness and remorse, he meditates without restlessness, his mind settled internally, cleansing the mind of restlessness and remorse. | T: Abandoning restlessness & anxiety, he dwells undisturbed, his mind inwardly stilled. He cleanses his mind of restlessness & anxiety.
+an5.75:15.6 | S: Giving up doubt, he meditates having gone beyond doubt, not undecided about skillful qualities, cleansing the mind of doubt. | T: Abandoning uncertainty, he dwells having crossed over uncertainty, with no perplexity with regard to skillful qualities. He cleanses his mind of uncertainty.
+an5.75:15.7 | S: He gives up these five hindrances, corruptions of the heart that weaken wisdom. | T: “Having abandoned these five hindrances, corruptions of awareness that weaken discernment,
+an5.75:15.8 | S: Then, quite secluded from sensual pleasures, secluded from unskillful qualities, he enters and remains in the first absorption … | T: then—quite secluded from sensuality, secluded from unskillful qualities—he enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an5.75:15.9 | S: second absorption … third absorption … fourth absorption. | T: With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance. With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’ With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an5.75:16.1 | S: When his mind has become immersed in samādhi like this—purified, bright, flawless, rid of corruptions, pliable, workable, steady, and imperturbable—he extends it toward knowledge of the ending of defilements. | T: “With his mind thus concentrated, purified, & bright, unblemished, free from defects, pliant, malleable, steady, & attained to imperturbability, he directs and inclines it to the knowledge of the ending of the effluents.
+an5.75:16.2 | S: He truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: He discerns, as it has come to be, that ‘This is stress … This is the origination of stress … This is the cessation of stress … This is the way leading to the cessation of stress …
+an5.75:16.3 | S: He truly understands: ‘These are defilements’ … ‘This is the origin of defilements’ … ‘This is the cessation of defilements’ … ‘This is the practice that leads to the cessation of defilements’. | T: These are effluents … This is the origination of effluents … This is the cessation of effluents … This is the way leading to the cessation of effluents.’
+an5.75:16.4 | S: Knowing and seeing like this, his mind is freed from the defilements of sensuality, desire to be reborn, and ignorance. | T: His heart, thus knowing, thus seeing, is released from the effluent of sensuality, released from the effluent of becoming, released from the effluent of ignorance.
+an5.75:16.5 | S: When he’s freed, he knows he’s freed. | T: With release, there is the knowledge, ‘Released.’
+an5.75:16.6 | S: He understands: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+an5.75:16.7 | S: This is his ‘victory in battle’. | T: “This, for him, is victory in the battle.
+an5.75:17.1 | S: I say that this individual is like the warrior who can prevail over a cloud of dust and a banner’s crest and turmoil and being struck. He wins victory in battle, establishing himself as foremost in battle. | T: This individual, I tell you, is like the warrior who can handle the cloud of dust, the top of the enemy’s banner, the tumult, & hand-to-hand combat. On winning the battle, victorious in battle, he comes out at the very head of the battle.
+an5.75:17.2 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an5.75:17.3 | S: Some individuals are like that. | T: Some individuals are like this.
+an5.75:17.4 | S: This is the fifth individual similar to a warrior found among the monks. | T: This is the fifth type of warrior-like individual who can be found existing among the monks.
+an5.75:17.5 | S: These five individuals similar to warriors are found among the monks.” | T: “These are the five warrior-like individuals who can be found existing among the monks.”
+an5.75:17.6 | P: Pañcamaṁ. | T: (none)
+
+## an5.76
+an5.76:1.1 | S: “Mendicants, these five warriors are found in the world. | T: “Monks, there are these five types of warriors who can be found existing in the world.
+an5.76:1.2 | S: What five? | T: Which five?
+an5.76:1.3 | S: Firstly, one warrior dons his sword and shield, fastens his bow and arrows, and plunges into the thick of battle. | T: “There is the case of a warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle.
+an5.76:1.4 | S: He strives and struggles in the battle, | T: There in the battle he strives & makes effort.
+an5.76:1.5 | S: but his foes kill him and finish him off. | T: But while he is striving & making an effort, his opponents strike him down and finish him off.
+an5.76:1.6 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.76:1.7 | S: This is the first warrior found in the world. | T: This is the first type of warrior who can be found existing in the world.
+an5.76:2.1 | S: Furthermore, one warrior dons his sword and shield, fastens his bow and arrows, and plunges into the thick of battle. | T: “And further, there is the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle.
+an5.76:2.2 | S: He strives and struggles in the battle, | T: There in the battle he strives & makes effort.
+an5.76:2.3 | S: but his foes wound him. | T: But while he is striving & making an effort, his opponents wound him.
+an5.76:2.4 | S: He’s carried off and taken to his relatives, | T: He gets carried out and taken to his relatives.
+an5.76:2.5 | S: but he dies on the road before he reaches them. | T: But while he is being taken to his relatives, before he has reached them he dies along the way.
+an5.76:2.6 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.76:2.7 | S: This is the second warrior found in the world. | T: This is the second type of warrior who can be found existing in the world.
+an5.76:3.1 | S: Furthermore, one warrior dons his sword and shield, fastens his bow and arrows, and plunges into the thick of battle. | T: “And further, there is the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle.
+an5.76:3.2 | S: He strives and struggles in the battle, | T: There in the battle he strives & makes effort.
+an5.76:3.3 | S: but his foes wound him. | T: But while he is striving & making an effort, his opponents wound him.
+an5.76:3.4 | S: He’s carried off and taken to his relatives, | T: He gets carried out and taken to his relatives,
+an5.76:3.5 | S: who nurse him and care for him. | T: who nurse him and care for him,
+an5.76:3.6 | S: But he dies of his injuries while in their care. | T: but he dies of that injury.
+an5.76:3.7 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.76:3.8 | S: This is the third warrior found in the world. | T: This is the third type of warrior who can be found existing in the world.
+an5.76:4.1 | S: Furthermore, one warrior dons his sword and shield, fastens his bow and arrows, and plunges into the thick of battle. | T: “And further, there is the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle.
+an5.76:4.2 | S: He strives and struggles in the battle, | T: There in the battle he strives & makes effort.
+an5.76:4.3 | S: but his foes wound him. | T: But while he is striving & making an effort, his opponents wound him.
+an5.76:4.4 | S: He’s carried off and taken to his relatives, | T: He gets carried out and taken to his relatives.
+an5.76:4.5 | S: who nurse him and care for him. | T: His relatives nurse him and care for him,
+an5.76:4.6 | S: And while in their care, he recovers from his injuries. | T: and he recovers from his injury.
+an5.76:4.7 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.76:4.8 | S: This is the fourth warrior found in the world. | T: This is the fourth type of warrior who can be found existing in the world.
+an5.76:5.1 | S: Furthermore, one warrior dons his sword and shield, fastens his bow and arrows, and plunges into the thick of battle. | T: “And further, there is the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle.
+an5.76:5.2 | S: He wins victory in battle, establishing himself as foremost in battle. | T: On winning the battle, victorious in battle, he comes out at the very head of the battle.
+an5.76:5.3 | S: Some warriors are like that. | T: Some warriors are like this.
+an5.76:5.4 | S: This is the fifth warrior found in the world. | T: This is the fifth type of warrior who can be found existing in the world.
+an5.76:5.5 | S: These are the five warriors found in the world. | T: “These are the five types of warriors who can be found existing in the world.
+an5.76:6.1 | S: In the same way, these five individuals similar to warriors are found among the monks. | T: “In the same way, monks, there are these five warrior-like individuals who can be found existing among the monks.
+an5.76:6.2 | S: What five? | T: Which five?
+an5.76:6.3 | S: Firstly, a mendicant lives supported by a town or village. | T: [1] “There is the case of the monk who dwells in dependence on a certain village or town.
+an5.76:6.4 | S: He robes up in the morning and, taking his bowl and robe, enters a village or town for alms without guarding body, speech, and mind, without establishing mindfulness, and without restraining the sense faculties. | T: Early in the morning, having adjusted his lower robe and carrying his bowl & outer robe, he goes into the village or town for alms—with his body, speech, & mind unprotected, with mindfulness unestablished, with his sense faculties unguarded.
+an5.76:6.5 | S: There he sees a lady scantily clad, with revealing clothes. | T: There he sees a woman improperly dressed or half-naked.
+an5.76:6.6 | S: Lust infects his mind, | T: As he sees her improperly dressed or half-naked, lust ravages his mind.
+an5.76:6.7 | S: and, without resigning the training and declaring his inability to continue, he indulges in sex. | T: With his mind ravaged by lust, he—without renouncing the training, without declaring his weakness—engages in sexual intercourse.
+an5.76:7.1 | S: I say that this individual is like the warrior who is killed and finished off by his foes. Some individuals are like that. | T: This individual, I tell you, is like the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle. There in the battle he strives & makes effort. But while he is striving & making an effort, his opponents strike him down and finish him off. Some individuals are like this.
+an5.76:7.2 | S: This is the first individual similar to a warrior found among the monks. | T: This is the first type of warrior-like individual who can be found existing among the monks.
+an5.76:8.1 | S: Furthermore, a mendicant lives supported by a town or village. | T: [2] “And further, there is the case of the monk who dwells in dependence on a certain village or town.
+an5.76:8.2 | S: He robes up in the morning and, taking his bowl and robe, enters a village or town for alms without guarding body, speech, and mind, without establishing mindfulness, and without restraining the sense faculties. | T: Early in the morning, having adjusted his lower robe and carrying his bowl & outer robe, he goes into the village or town for alms—with his body, speech, & mind unprotected, with mindfulness unestablished, with his sense faculties unguarded.
+an5.76:8.3 | S: There he sees a lady scantily clad, with revealing clothes. | T: There he sees a woman improperly dressed or half-naked.
+an5.76:8.4 | S: Lust infects his mind, | T: As he sees her improperly dressed or half-naked, lust ravages his mind.
+an5.76:8.5 | S: and his body and mind burn with it. | T: With his mind ravaged by lust, he burns in body & mind.
+an5.76:8.6 | S: He thinks: | T: The thought occurs to him:
+an5.76:8.7 | S: ‘Why don’t I visit the monastery and tell the monks: | T: ‘What if I were to go to the monastery and tell the monks:
+an5.76:8.8 | S: “Reverends, I am overcome with lust, mired in lust. I am unable to keep up the spiritual life. | T: “Friends, I am assailed by lust, overcome by lust. I can’t continue in the holy life.
+an5.76:8.9 | S: I declare my inability to continue training. I resign it and will return to a lesser life.”’ | T: Declaring my weakness in the training, renouncing the training, I will return to the lower life.”’
+an5.76:8.10 | S: But while traveling on the road, before he reaches the monastery he declares his inability to continue training. He resigns and returns to a lesser life. | T: He heads toward the monastery, but before he arrives there, along the way, he declares his weakness in the training, renounces the training, and returns to the lower life.
+an5.76:9.1 | S: I say that they are like the warrior who is taken to his relatives for care, but he dies on the road before he reaches them. Some individuals are like that. | T: This individual, I tell you, is like the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle. There in the battle he strives & makes effort. But while he is striving & making an effort, his opponents wound him. He gets carried out and taken to his relatives. But while he is being taken to his relatives, before he has reached them he dies along the way. Some individuals are like this.
+an5.76:9.2 | S: This is the second individual similar to a warrior found among the monks. | T: This is the second type of warrior-like individual who can be found existing among the monks.
+an5.76:10.1 | S: Furthermore, a mendicant lives supported by a town or village. | T: [3] “And further, there is the case of the monk who dwells in dependence on a certain village or town.
+an5.76:10.2 | S: He robes up in the morning and, taking his bowl and robe, enters a village or town for alms without guarding body, speech, and mind, without establishing mindfulness, and without restraining the sense faculties. | T: Early in the morning, having adjusted his lower robe and carrying his bowl & outer robe, he goes into the village or town for alms—with his body, speech, & mind unprotected, with mindfulness unestablished, with his sense faculties unguarded.
+an5.76:10.3 | S: There he sees a lady scantily clad, with revealing clothes. | T: There he sees a woman improperly dressed or half-naked.
+an5.76:10.4 | S: Lust infects his mind, | T: As he sees her improperly dressed or half-naked, lust ravages his mind.
+an5.76:10.5 | S: and his body and mind burn with it. | T: With his mind ravaged by lust, he burns in body & mind.
+an5.76:10.6 | S: He thinks: | T: The thought occurs to him:
+an5.76:10.7 | S: ‘Why don’t I visit the monastery and tell the monks: | T: ‘What if I were to go to the monastery and tell the monks:
+an5.76:10.8 | S: “Reverends, I am overcome with lust, mired in lust. I am unable to keep up the spiritual life. | T: “Friends, I am assailed by lust, overcome by lust. I can’t continue in the holy life.
+an5.76:10.9 | S: I declare my inability to continue training. I resign and will return to a lesser life.”’ | T: Declaring my weakness in the training, renouncing the training, I will return to the lower life.”’
+an5.76:10.10 | S: He goes to the monastery and tells the monks: | T: Going to the monastery, he tells the monks,
+an5.76:10.11 | S: ‘Reverends, I am overcome with lust, mired in lust. I am unable to keep up the spiritual life. | T: ‘Friends, I am assailed by lust, overcome by lust. I can’t continue in the holy life.
+an5.76:10.12 | S: I declare my inability to continue training. I disavow it and will return to a lesser life.’ | T: Declaring my weakness in the training, renouncing the training, I will return to the lower life.’
+an5.76:11.1 | S: His spiritual companions advise and instruct him: | T: “Then his companions in the holy life admonish & instruct him,
+an5.76:11.2 | S: ‘Reverend, the Buddha says that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: ‘Friend, the Blessed One has said that sensual pleasures are of little satisfaction, of much stress, much despair, & greater drawbacks.
+an5.76:11.3 | S: With the similes of a skeleton … | T: The Blessed One has compared sensual pleasures to a chain of bones—of much stress, much despair, & greater drawbacks.
+an5.76:11.4 | S: a scrap of meat … | T: He has compared sensual pleasures to a lump of flesh…
+an5.76:11.5 | S: a grass torch … | T: a grass torch…
+an5.76:11.6 | S: a pit of glowing coals … | T: a pit of glowing embers…
+an5.76:11.7 | S: a dream … | T: a dream…
+an5.76:11.8 | S: borrowed goods … | T: borrowed goods…
+an5.76:11.9 | S: fruit on a tree … | T: the fruits of a tree…
+an5.76:11.10 | S: a butcher’s knife and chopping board … | T: a slaughterhouse…
+an5.76:11.11 | S: swords and spears … | T: spears & swords…
+an5.76:11.12 | S: a cobra’s head, the Buddha says that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks. | T: a poisonous snake—of much stress, much despair, & greater drawbacks.
+an5.76:11.13 | S: Be happy with the spiritual life. | T: Find delight, friend, in the holy life.
+an5.76:11.14 | S: Venerable, please don’t declare your inability to continue training, resign it and return to a lesser life.’ | T: Don’t declare your weakness in the training, renounce the training, or return to the lower life.’
+an5.76:12.1 | S: When thus advised and instructed by his spiritual companions, he says: | T: “Thus admonished & instructed by his companions in the holy life, he says,
+an5.76:12.2 | S: ‘Reverends, even though the Buddha says that sensual pleasures give little gratification and much suffering and distress, and they are all the more full of drawbacks, | T: ‘Even though the Blessed One has said that sensual pleasures are of little satisfaction, of much stress, much despair, & greater drawbacks,
+an5.76:12.3 | S: I am unable to keep up the spiritual life. I declare my inability to continue training. I resign it and will return to a lesser life.’ | T: still I can’t continue in the holy life. Declaring my weakness in the training, renouncing the training, I will return to the lower life.’
+an5.76:12.4 | S: Declaring his inability to continue training, he resigns it and returns to a lesser life. | T: So he declares his weakness in the training, renounces the training, and returns to the lower life.
+an5.76:13.1 | S: I say that they are like the warrior who dies of his injuries while in the care of his relatives. Some individuals are like that. | T: This individual, I tell you, is like the warrior who—taking his sword & shield, strapping on his bow & quiver—goes down into the thick of battle. There in the battle he strives & makes effort. But while he is striving & making an effort, his opponents wound him. He gets carried out and taken to his relatives, who nurse him and care for him, but he dies of that injury. Some individuals are like this.
+an5.76:13.2 | S: This is the third individual similar to a warrior found among the monks. | T: This is the third type of warrior-like individual who can be found existing among the monks.
+an5.76:14.1 | S: Furthermore, a mendicant lives supported by a town or village. | T: [4] “And further, there is the case of the monk who dwells in dependence on a certain village or town.
+an5.76:14.2 | S: He robes up in the morning and, taking his bowl and robe, enters a village or town for alms without guarding body, speech, and mind, without establishing mindfulness, and without restraining the sense faculties. | T: Early in the morning, having adjusted his lower robe and carrying his bowl & outer robe, he goes into the village or town for alms—with his body, speech, & mind unprotected, with mindfulness unestablished, with his sense faculties unguarded.
+an5.76:14.3 | S: There he sees a lady scantily clad, with revealing clothes. | T: There he sees a woman improperly dressed or half-naked.
+an5.76:14.4 | S: Lust infects his mind, | T: As he sees her improperly dressed or half-naked, lust ravages his mind.
+an5.76:14.5 | S: and his body and mind burn with it. | T: With his mind ravaged by lust, he burns in body & mind.
+an5.76:14.6 | S: He thinks: | T: The thought occurs to him:
+an5.76:14.7 | S: ‘Why don’t I visit the monastery and tell the monks: | T: ‘What if I were to go to the monastery and tell the monks:
+an5.76:14.8 | S: “Reverends, I am overcome with lust, mired in lust. I am unable to keep up the spiritual life. | T: “Friends, I am assailed by lust, overcome by lust. I can’t continue in the holy life.
+an5.76:14.9 | S: I declare my inability to continue training. I resign it and will return to a lesser life.”’ | T: Declaring my weakness in the training, renouncing the training, I will return to the lower life.”’
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-075.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+23,840
+0 lines reported.

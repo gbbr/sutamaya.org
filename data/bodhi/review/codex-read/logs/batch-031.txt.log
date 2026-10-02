@@ -1,0 +1,561 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd84-cb96-7302-8a0a-13fe2a943044
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an8.42
+an8.42:1.1 | S: “Mendicants, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. | T: “Bhikkhus, observed complete in eight factors, the uposatha is of great fruit and benefit, extraordinarily brilliant and pervasive.
+an8.42:1.2 | S: And how should it be observed? | T: And how is the uposatha observed complete in eight factors, so that it is of great fruit and benefit, extraordinarily brilliant and pervasive?
+an8.42:1.3 | S: It’s when a noble disciple reflects: | T: (1) “Here, bhikkhus, a noble disciple reflects thus:
+an8.42:1.4 | S: ‘As long as they live, the perfected ones give up killing living creatures, renouncing the rod and the sword. They are scrupulous and kind, and live full of sympathy for all living beings. | T: ‘As long as they live the arahants abandon and abstain from the destruction of life; with the rod and weapon laid aside, conscientious and kindly, they dwell compassionate toward all living beings.
+an8.42:1.5 | S: I, too, for this day and night will give up killing living creatures, renouncing the rod and the sword. I’ll be scrupulous and kind, and live full of sympathy for all living beings. | T: Today, for this night and day, I too shall abandon and abstain from the destruction of life; with the rod and weapon laid aside, conscientious and kindly, I too shall dwell compassionate toward all living beings.
+an8.42:1.6 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.42:1.7 | S: This is its first factor. … | T: This is the first factor it possesses … As in AN8.41 down to: …
+an8.42:2.1 | S: ‘As long as they live, the perfected ones give up high and luxurious beds. They sleep in a low place, either a cot or a grass mat. | T: (8) “‘As long as they live the arahants abandon and abstain from the use of high and luxurious beds; they lie down on a low resting place, either a small bed or a straw mat.
+an8.42:2.2 | S: I, too, for this day and night will give up high and luxurious beds. I’ll sleep in a low place, either a cot or a grass mat. | T: Today, for this night and day, I too shall abandon and abstain from the use of high and luxurious beds; I shall lie down on a low resting place, either a small bed or a straw mat.
+an8.42:2.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.42:2.4 | S: This is its eighth factor. | T: This is the eighth factor it possesses.
+an8.42:2.5 | S: The observance of the sabbath with its eight factors in this way is very fruitful and beneficial and brilliant and bountiful. | T: “It is in this way, bhikkhus, that the uposatha is observed complete in eight factors, so that it is of great fruit and benefit, extraordinarily brilliant and pervasive.
+an8.42:3.1 | S: How much so? | T: “To what extent is it of great fruit and benefit? To what extent is it extraordinarily brilliant and pervasive?
+an8.42:3.2 | S: Suppose you were to rule as sovereign lord over these sixteen great countries—Aṅga, Magadha, Kāsi, Kosala, Vajji, Malla, Cetī, Vaccha, Kuru, Pañcāla, Maccha, Sūrasena, Assaka, Avanti, Gandhāra, and Persia—full of the seven treasures. | T: Suppose one were to exercise sovereignty and kingship over these sixteen great countries abounding in the seven precious substances, that is, the countries of the Aṅgans, the Magadhans, the Kāsis, the Kosalans, the Vajjis, the Mallas, the Cetis, the Vaṅgas, the Kurus, the Pañcālas, the Macchas, the Sūrasenas, the Assakas, the Avantis, the Gandhārans, and the Kambojans:
+an8.42:3.3 | S: This wouldn’t be worth a sixteenth part of the sabbath with its eight factors. | T: this would not be worth a sixteenth part of the uposatha observance complete in those eight factors.
+an8.42:3.4 | S: Why is that? | T: For what reason?
+an8.42:3.5 | S: Because human kingship is a poor thing compared to the happiness of the gods. | T: Because human kingship is poor compared to celestial happiness.
+an8.42:4.1 | S: Fifty years in the human realm is one day and night for the gods of the four great kings. | T: “For the devas ruled by the four great kings, a single night and day is equivalent to fifty human years;
+an8.42:4.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:4.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:4.4 | S: The lifespan of the gods of the four great kings is five hundred of these heavenly years. | T: The life span of those devas is five hundred such celestial years.
+an8.42:4.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the gods of the four great kings. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the devas ruled by the four great kings.
+an8.42:4.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.
+an8.42:4.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:5.1 | S: A hundred years in the human realm is one day and night for the gods of the thirty-three. | T: “For the Tāvatiṁsa devas, a single night and day is equivalent to a hundred human years;
+an8.42:5.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:5.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:5.4 | S: The lifespan of the gods of the thirty-three is a thousand of these heavenly years. | T: The life span of those devas is a thousand such celestial years.
+an8.42:5.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the gods of the thirty-three. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the Tāvatiṁsa devas.
+an8.42:5.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.
+an8.42:5.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:6.1 | S: Two hundred years in the human realm is one day and night for the gods of Yama. | T: “For the Yāma devas, a single night and day is equivalent to two hundred human years;
+an8.42:6.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:6.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:6.4 | S: The lifespan of the gods of Yama is two thousand of these heavenly years. | T: The life span of those devas is two thousand such celestial years.
+an8.42:6.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the gods of Yama. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the Yāma devas.
+an8.42:6.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.
+an8.42:6.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:7.1 | S: Four hundred years in the human realm is one day and night for the joyful gods. | T: “For the Tusita devas, a single night and day is equivalent to four hundred human years;
+an8.42:7.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:7.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:7.4 | S: The lifespan of the joyful gods is four thousand of these heavenly years. | T: The life span of those devas is four thousand such celestial years.
+an8.42:7.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the joyful gods. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the Tusita devas.
+an8.42:7.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.
+an8.42:7.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:8.1 | S: Eight hundred years in the human realm is one day and night for the gods who love to create. | T: “For the devas who delight in creation, a single night and day is equivalent to eight hundred human years;
+an8.42:8.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:8.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:8.4 | S: The lifespan of the gods who love to create is eight thousand of these heavenly years. | T: The life span of those devas is eight thousand such celestial years.
+an8.42:8.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the gods who love to create. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the devas who delight in creation.
+an8.42:8.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.
+an8.42:8.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:9.1 | S: Sixteen hundred years in the human realm is one day and night for the gods who control what is created by others. | T: “For the devas who control what is created by others, a single night and day is equivalent to sixteen hundred human years;
+an8.42:9.2 | S: Thirty such days make up a month. | T: thirty such days make up a month,
+an8.42:9.3 | S: Twelve such months make up a year. | T: and twelve such months make up a year.
+an8.42:9.4 | S: The lifespan of the gods who control what is created by others is sixteen thousand of these heavenly years. | T: The life span of those devas is sixteen thousand such celestial years.
+an8.42:9.5 | S: It’s possible that some woman or man who has observed the eight-factored sabbath will—when their body breaks up, after death—be reborn in the company of the gods who control what is created by others. | T: It is possible, bhikkhus, for a woman or man who observes the uposatha complete in these eight factors, with the breakup of the body, after death, to be reborn in companionship with the devas who control what is created by others.
+an8.42:9.6 | S: This is what I was referring to when I said: | T: It was with reference to this that I said human kingship is poor compared to celestial happiness.”
+an8.42:9.7 | S: ‘Human kingship is a poor thing compared to the happiness of the gods.’ | T: (none)
+an8.42:10.1 | S: You shouldn’t kill living creatures, or steal, | T: One should not kill living beings or take what is not given;
+an8.42:10.2 | S: or lie, or drink liquor. | T: one should not speak falsehood or drink intoxicants;
+an8.42:10.3 | S: Be chaste, refraining from sex, | T: one should refrain from sexual activity, from unchastity;
+an8.42:10.4 | S: and don’t eat at night, the wrong time. | T: one should not eat at night or at an improper time.
+an8.42:11.1 | S: Not wearing garlands or applying fragrance, | T: One should not wear garlands or apply scents;
+an8.42:11.2 | S: you should sleep on a low bed, <j>or a mat on the ground. | T: one should sleep on a low bed or a mat on the ground;
+an8.42:11.3 | S: This is the eight-factored sabbath, they say, | T: this, they say, is the eight-factored uposatha
+an8.42:11.4 | S: revealed by the Buddha, <j>who has gone to suffering’s end. | T: proclaimed by the Buddha, who reached the end of suffering.
+an8.42:12.1 | S: The moon and sun are both fair to see, | T: As far as the sun and moon revolve,
+an8.42:12.2 | S: radiating as far as they revolve. | T: shedding light, so beautiful to gaze upon,
+an8.42:12.3 | S: Those dispellers of darkness, travelers in midair, | T: dispellers of darkness, moving through the firmament,
+an8.42:12.4 | S: shine in the firmament, dazzling the quarters. | T: they shine in the sky, brightening up the quarters.
+an8.42:13.1 | S: All of the wealth that’s found in this realm— | T: Whatever wealth exists in this sphere—
+an8.42:13.2 | S: pearls, gems, fine beryl too, | T: pearls, gems, and excellent beryl,
+an8.42:13.3 | S: mountain gold or lustrous gold, | T: horn gold and mountain gold,
+an8.42:13.4 | S: or the native gold called ‘coruscant’— | T: and the natural gold called haṭaka—
+an8.42:14.1 | S: they’re not worth a sixteenth part | T: those are not worth a sixteenth part
+an8.42:14.2 | S: of the sabbath with its eight factors, | T: of an uposatha complete in the eight factors,
+an8.42:14.3 | S: as starlight cannot rival the moon. | T: just as all the hosts of stars do not match the moon’s radiance.
+an8.42:15.1 | S: So an ethical woman or man, | T: Therefore a virtuous woman or man,
+an8.42:15.2 | S: who has observed the eight-factored sabbath, | T: having observed the uposatha complete in eight factors
+an8.42:15.3 | S: having made merit whose outcome is happiness, | T: and having made merit productive of happiness,
+an8.42:15.4 | S: blameless, they go to a heavenly place.” | T: blameless goes to a heavenly state.
+an8.42:15.5 | P: Dutiyaṁ. | T: (none)
+
+## sn12.43
+sn12.43:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.43:1.2 | S: “Mendicants, I will teach you the origin and disappearance of suffering. | T: “Bhikkhus, I will teach you the origin and the passing away of suffering.
+sn12.43:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn12.43:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.43:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.43:2.1 | S: “And what, mendicants, is the origin of suffering? | T: “And what, bhikkhus, is the origin of suffering?
+sn12.43:2.2 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.43:2.3 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.43:2.4 | S: Feeling is a requirement for craving. … | T: with feeling as condition, craving.
+sn12.43:2.5 | S: This is the origin of suffering. | T: This is the origin of suffering.
+sn12.43:3.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds …
+sn12.43:3.2 | S: Nose consciousness arises dependent on the nose and smells. … | T: In dependence on the nose and odours …
+sn12.43:3.3 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: In dependence on the tongue and tastes …
+sn12.43:3.4 | S: Body consciousness arises dependent on the body and touches. … | T: In dependence on the body and tactile objects …
+sn12.43:3.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.43:3.6 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.43:3.7 | S: Feeling is a requirement for craving. … | T: with feeling as condition, craving.
+sn12.43:3.8 | S: This is the origin of suffering. | T: This is the origin of suffering.
+sn12.43:4.1 | S: And what is the disappearance of suffering? | T: “And what, bhikkhus, is the passing away of suffering?
+sn12.43:4.2 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.43:4.3 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.43:4.4 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.43:4.5 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging;
+sn12.43:4.6 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.43:4.7 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.43:4.8 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.43:4.9 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.43:4.10 | S: This is the disappearance of suffering. | T: This is the passing away of suffering.
+sn12.43:5.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds …
+sn12.43:5.2 | S: Nose consciousness arises dependent on the nose and smells. … | T: (none)
+sn12.43:5.3 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: (none)
+sn12.43:5.4 | S: Body consciousness arises dependent on the body and touches. … | T: (none)
+sn12.43:5.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.43:5.6 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.43:5.7 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.43:5.8 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging …
+sn12.43:5.9 | S: When grasping ceases, continued existence ceases. | T: cessation of existence …
+sn12.43:5.10 | S: When continued existence ceases, rebirth ceases. | T: cessation of birth;
+sn12.43:5.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.43:5.12 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.43:5.13 | S: This is the disappearance of suffering.” | T: This is the passing away of suffering.”
+sn12.43:5.14 | P: Tatiyaṁ. | T: (none)
+
+## sn12.44
+sn12.44:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.44:1.2 | S: “Mendicants, I will teach you the origin and disappearance of the world. | T: “Bhikkhus, I will teach you the origin and the passing away of the world.
+sn12.44:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn12.44:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.44:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.44:2.1 | S: “And what, mendicants, is the origin of the world? | T: “And what, bhikkhus, is the origin of the world?
+sn12.44:2.2 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.44:2.3 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.44:2.4 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+sn12.44:2.5 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+sn12.44:2.6 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, existence;
+sn12.44:2.7 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn12.44:2.8 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.44:2.9 | S: This is the origin of the world. | T: This, bhikkhus, is the origin of the world.
+sn12.44:3.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds …
+sn12.44:3.2 | S: Nose consciousness arises dependent on the nose and smells. … | T: In dependence on the nose and odours …
+sn12.44:3.3 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: In dependence on the tongue and tastes …
+sn12.44:3.4 | S: Body consciousness arises dependent on the body and touches. … | T: In dependence on the body and tactile objects …
+sn12.44:3.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.44:3.6 | S: Contact is a requirement for feeling. … | T: With contact as condition, feeling comes to be; with feeling as condition, craving; with craving as condition, clinging … existence … birth;
+sn12.44:3.7 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.44:3.8 | S: This is the origin of the world. | T: This, bhikkhus, is the origin of the world.
+sn12.44:4.1 | S: And what is the ending of the world? | T: “And what, bhikkhus, is the passing away of the world?
+sn12.44:4.2 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.44:4.3 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.44:4.4 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.44:4.5 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging;
+sn12.44:4.6 | S: When grasping ceases, continued existence ceases. … | T: with the cessation of clinging, cessation of existence; with the cessation of existence, cessation of birth; with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.44:4.7 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.44:4.8 | S: This is the ending of the world. | T: This, bhikkhus, is the passing away of the world.
+sn12.44:5.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds … …
+sn12.44:5.2 | S: Nose consciousness arises dependent on the nose and smells. … | T: (none)
+sn12.44:5.3 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: (none)
+sn12.44:5.4 | S: Body consciousness arises dependent on the body and touches. … | T: (none)
+sn12.44:5.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.44:5.6 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.44:5.7 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.44:5.8 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging …
+sn12.44:5.9 | S: When grasping ceases, continued existence ceases. … | T: cessation of existence … cessation of birth; with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.44:5.10 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.44:5.11 | S: This is the ending of the world.” | T: This, bhikkhus, is the passing away of the world.”
+sn12.44:5.12 | P: Catutthaṁ. | T: (none)
+
+## an8.29
+an8.29:1.1 | S: “‘Now is the time! Now is the time!’ So says an unlearned ordinary person. But they don’t know whether it’s time or not. | T: “Bhikkhus, the uninstructed worldling says: ‘The world has gained the opportunity! The world has gained the opportunity!’ but he does not know what is an opportunity and what is not an opportunity.
+an8.29:1.2 | S: Mendicants, there are eight lost opportunities for spiritual practice. | T: There are, bhikkhus, these eight inopportune moments that are not right occasions for living the spiritual life.
+an8.29:1.3 | S: What eight? | T: What eight?
+an8.29:1.4 | S: Firstly, a Realized One has arisen in the world—perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. He teaches the Dhamma leading to peace, extinguishment, awakening, as proclaimed by the Holy One. | T: (1) “Here, a Tathāgata has arisen in the world, an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, an Enlightened One, a Blessed One, and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:1.5 | S: But an individual has been reborn in hell. | T: But a person has been reborn in hell.
+an8.29:1.6 | S: This is the first lost opportunity for spiritual practice. | T: This is the first inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:2.1 | S: Furthermore, a Realized One has arisen in the world … He teaches the Dhamma leading to peace, extinguishment, awakening, as proclaimed by the Holy One. | T: (2) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:2.2 | S: But an individual has been reborn in the animal realm. This is the second lost opportunity … | T: But a person has been reborn in the animal realm. This is the second inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:3.1 | S: Furthermore, a Realized One has arisen in the world … | T: (3) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:3.2 | S: But an individual has been reborn in the ghost realm. This is the third lost opportunity … | T: But a person has been reborn in the sphere of afflicted spirits. This is the third inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:4.1 | S: Furthermore, a Realized One has arisen in the world … | T: (4) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:4.2 | S: But an individual has been reborn in one of the long-lived orders of gods. This is the fourth lost opportunity … | T: But a person has been reborn in a certain order of long-lived devas. This is the fourth inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:5.1 | S: Furthermore, a Realized One has arisen in the world … | T: (5) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:5.2 | S: But an individual has been reborn in the borderlands, among uneducated foreigners, where monks, nuns, laymen, and laywomen do not go. This is the fifth lost opportunity … | T: But a person has been reborn in the outlying provinces among the uncouth foreigners, a place to which bhikkhus, bhikkhunīs, male lay followers, and female lay followers do not travel. This is the fifth inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:6.1 | S: Furthermore, a Realized One has arisen in the world … And an individual is reborn in a central country. But they have wrong view and distorted perspective: | T: (6) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One. A person has been reborn in the central provinces, but he holds wrong view and has a distorted perspective:
+an8.29:6.2 | S: ‘There’s no meaning in giving, sacrifice, or offerings. There’s no fruit or result of good and bad deeds. There’s no afterlife. There’s no such thing as mother and father, or beings that are reborn spontaneously. And there’s no ascetic or brahmin who is rightly comported and rightly practiced, and who describes the afterlife after realizing it with their own insight.’ This is the sixth lost opportunity … | T: ‘There is nothing given, nothing sacrificed, nothing offered; there is no fruit or result of good and bad actions; there is no this world, no other world; there is no mother, no father; there are no beings spontaneously reborn; there are in the world no ascetics and brahmins of right conduct and right practice who, having realized this world and the other world for themselves by direct knowledge, make them known to others.’ This is the sixth inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:7.1 | S: Furthermore, a Realized One has arisen in the world … | T: (7) “Again, a Tathāgata has arisen in the world … and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One.
+an8.29:7.2 | S: And an individual is reborn in a central country. But they’re witless, dull, idiotic, and unable to distinguish what is well said from what is poorly said. | T: A person has been reborn in the central provinces, but he is unwise, stupid, obtuse, unable to understand the meaning of what has been well stated and badly stated.
+an8.29:7.3 | S: This is the seventh lost opportunity for spiritual practice. | T: This is the seventh inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:8.1 | S: Furthermore, a Realized One has not arisen in the world … | T: (8) “Again, a Tathāgata has not arisen in the world …
+an8.29:8.2 | S: So he doesn’t teach the Dhamma leading to peace, extinguishment, awakening, as proclaimed by the Holy One. And an individual is reborn in a central country. And they’re wise, bright, clever, and able to distinguish what is well said from what is poorly said. | T: and the Dhamma leading to peace, nibbāna, and enlightenment is not taught as proclaimed by a Fortunate One. But a person has been reborn in the central provinces, and he is wise, intelligent, astute, able to understand the meaning of what has been well stated and badly stated.
+an8.29:8.3 | S: This is the eighth lost opportunity for spiritual practice. | T: This is the eighth inopportune moment that is not the right occasion for living the spiritual life.
+an8.29:9.1 | S: There are these eight lost opportunities for spiritual practice. | T: “These are the eight inopportune moments that are not the right occasions for living the spiritual life.
+an8.29:10.1 | S: Mendicants, there is just one opportunity for spiritual practice. | T: “There is, bhikkhus, one unique opportune moment that is the right occasion for living the spiritual life.
+an8.29:10.2 | S: What is that one? | T: What is it?
+an8.29:10.3 | S: It’s when a Realized One has arisen in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: Here, a Tathāgata has arisen in the world, an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, an Enlightened One, a Blessed One,
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.29:10.4 | S: He teaches the Dhamma leading to peace, extinguishment, awakening, as proclaimed by the Holy One. And an individual is reborn in a central country. And they’re wise, bright, clever, and able to distinguish what is well said from what is poorly said. | T: and the Dhamma leading to peace, nibbāna, and enlightenment is taught as proclaimed by a Fortunate One. And a person has been reborn in the central provinces, and he is wise, intelligent, astute, able to understand the meaning of what has been well stated and badly stated.
+an8.29:10.5 | S: This is the one opportunity for spiritual practice. | T: This, bhikkhus, is the one unique opportune moment that is the right occasion for living the spiritual life.”
+an8.29:11.1 | S: When you’ve gained the human state, | T: Having obtained the human state
+an8.29:11.2 | S: and the true teaching has been so well proclaimed, | T: when the good Dhamma has been well proclaimed,
+an8.29:11.3 | S: those who don’t seize the moment | T: those who do not seize the moment
+an8.29:11.4 | S: are wasting their time. | T: have let the right moment slip by.
+an8.29:12.1 | S: For many wrong times are spoken of, | T: For many inopportune times are spoken of,
+an8.29:12.2 | S: which obstruct the path. | T: occasions obstructive to the path;
+an8.29:12.3 | S: Only on rare occasions | T: for it is only sometimes, on occasion,
+an8.29:12.4 | S: do Realized Ones arise. | T: that Tathāgatas arise in the world.
+an8.29:13.1 | S: If you find yourself in their presence, | T: If one has directly encountered them,
+an8.29:13.2 | S: so hard to find in the world, | T: fortune rarely gained in the world,
+an8.29:13.3 | S: and if you’ve gained a human birth, | T: if one has obtained the human state,
+an8.29:13.4 | S: and the teaching of the Dhamma; | T: and the good Dhamma is being taught,
+an8.29:13.5 | S: that’s enough to make an effort, | T: (none)
+an8.29:13.6 | S: for a personage who desires self-knowledge. | T: for a person desiring his own good, this is incentive enough to strive.
+an8.29:14.1 | S: How is the true teaching to be understood | T: How can one understand the good Dhamma,
+an8.29:14.2 | S: so that the moment doesn’t pass you by? | T: so that the moment won’t slip by?
+an8.29:14.3 | S: For if you miss your moment | T: For those who miss the moment grieve
+an8.29:14.4 | S: you’ll grieve when sent to hell. | T: when they are reborn in hell.
+an8.29:15.1 | S: If you fail to achieve | T: One here who has failed to obtain
+an8.29:15.2 | S: certainty regarding the true teaching | T: the fixed course of the good Dhamma,
+an8.29:15.3 | S: you’ll regret it for a long time, | T: will come to regret it for a long time
+an8.29:15.4 | S: like the merchant in the story of the past. | T: like a merchant who has missed a profit.
+an8.29:16.1 | S: A man shrouded by ignorance, | T: A person hindered by ignorance
+an8.29:16.2 | S: a failure in the true teaching, | T: who has failed in the good Dhamma
+an8.29:16.3 | S: will long undergo | T: will long experience wandering on
+an8.29:16.4 | S: transmigration through birth and death. | T: in the round of birth and death.
+an8.29:17.1 | S: Those who’ve gained the human state | T: But those who gain the human state
+an8.29:17.2 | S: when the true teaching has been so well proclaimed, | T: when the good Dhamma is well proclaimed,
+an8.29:17.3 | S: and have completed what the Teacher taught— | T: have accomplished the Teacher’s word,
+an8.29:17.4 | S: or will do so, or are doing so now— | T: or will do so, or are doing so now.
+an8.29:18.1 | S: have realized the right time in the world | T: Those who have practiced the path, proclaimed by the Tathāgata, have penetrated the right moment in the world
+an8.29:18.2 | S: for the supreme spiritual life. | T: the unsurpassed spiritual life.
+an8.29:18.3 | S: You should live guarded, ever mindful, | T: You should dwell without leakages, guarded, ever-mindful in the restraints
+an8.29:18.4 | S: not festering with defilements, | T: (none)
+an8.29:19.1 | S: among those restrained ones | T: (none)
+an8.29:19.2 | S: who have practiced the path | T: (none)
+an8.29:19.3 | S: proclaimed by the Realized One, the Clear-eyed One, | T: (none)
+an8.29:19.4 | S: and taught by the Kinsman of the Sun. | T: taught by the One with Vision, the Kinsman of the Sun.
+an8.29:20.1 | S: Having cut off all underlying tendencies | T: Having cut off all underlying tendencies
+an8.29:20.2 | S: that follow those drifting in Māra’s dominion, | T: that follow one drifting in Māra’s domain,
+an8.29:20.3 | S: they’re the ones in this world <j>who’ve truly crossed over, | T: those who attain the destruction of the taints,
+an8.29:20.4 | S: having reached the ending of defilements.” | T: though in the world, have gone beyond.
+an8.29:20.5 | P: Navamaṁ. | T: (none)
+
+## sn1.42
+sn1.42:1.1 | S: “Giving what do you give strength? | T: A devatā: “Giving what does one give strength?
+sn1.42:1.2 | S: Giving what do you give beauty? | T: Giving what does one give beauty?
+sn1.42:1.3 | S: Giving what do you give happiness? | T: Giving what does one give ease?
+sn1.42:1.4 | S: Giving what do you give vision? | T: Giving what does one give sight?
+sn1.42:1.5 | S: And who is the giver of all? | T: Who is the giver of all?
+sn1.42:1.6 | S: Please answer my question.” | T: Being asked, please explain to me.”
+sn1.42:2.1 | S: “Giving food you give strength. | T: The Blessed One: “Giving food, one gives strength;
+sn1.42:2.2 | S: Giving clothes you give beauty. | T: Giving clothes, one gives beauty;
+sn1.42:2.3 | S: Giving a vehicle you give happiness. | T: Giving a vehicle, one gives ease;
+sn1.42:2.4 | S: Giving a lamp you give vision. | T: Giving a lamp, one gives sight.
+sn1.42:3.1 | S: And the giver of all | T: “The one who gives a residence Is the giver of all.
+sn1.42:3.2 | S: is the one who gives monastic quarters. | T: (none)
+sn1.42:3.3 | S: But one who teaches the Dhamma | T: But the one who teaches the Dhamma
+sn1.42:3.4 | S: gives the gift of freedom from death.” | T: Is the giver of the Deathless.”
+
+## sn11.6
+sn11.6:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.6:1.2 | S: “Once upon a time, mendicants, a battle was fought between the gods and the titans. | T: “Bhikkhus, once in the past the devas and the asuras were arrayed for battle.
+sn11.6:1.3 | S: In that battle the titans won and the gods lost. | T: In that battle the asuras won and the devas were defeated.
+sn11.6:1.4 | S: Defeated, the gods fled north with the titans in pursuit. | T: In defeat the devas withdrew towards the north while the asuras pursued them.
+sn11.6:1.5 | S: Then Sakka, lord of gods, addressed his chariot handler Mātali in verse: | T: Then Sakka, lord of the devas, addressed his charioteer Matali in verse:
+sn11.6:2.1 | S: ‘Mātali, don’t ram the bird nests | T: “‘Avoid, O Matali, with your chariot pole The bird nests in the silk-cotton woods;
+sn11.6:2.2 | S: in the Red Silk-Cotton Woods with your draft-pole. | T: (none)
+sn11.6:2.3 | S: I’d rather give up our lives to the titans | T: Let’s surrender our lives to the asuras
+sn11.6:2.4 | S: than deprive these birds of their nests.’ | T: Rather than make these birds nestless.’
+sn11.6:3.1 | S: ‘Yes, lord,’ replied Mātali. And he turned the chariot back around, with its team of a thousand thoroughbreds. | T: “‘Yes, your lordship,’ Matali the charioteer replied, and he turned back the chariot with its team of a thousand thoroughbreds.
+sn11.6:3.2 | S: Then the titans thought, | T: “Then, bhikkhus, it occurred to the asuras:
+sn11.6:3.3 | S: ‘Now Sakka’s chariot has turned back. | T: ‘Now Sakka’s chariot with its team of a thousand thoroughbreds has turned back.
+sn11.6:3.4 | S: The titans will have to fight the gods a second time!’ Terrified, they retreated right away to the citadel of the titans. | T: The devas will engage in battle with the asuras for a second time.’ Stricken by fear, they entered the city of the asuras.
+sn11.6:3.5 | S: And that’s how Sakka came to win victory by principle.” | T: In this way, bhikkhus, Sakka, lord of the devas, won a victory by means of righteousness itself.”
+
+## sn16.1
+sn16.1:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn16.1:1.2 | S: “Mendicants, Kassapa is content with any kind of robe, and praises such contentment. | T: “Bhikkhus, this Kassapa is content with any kind of robe, and he speaks in praise of contentment with any kind of robe,
+sn16.1:1.3 | S: He doesn’t employ improper solicitation for the sake of a robe. He doesn’t worry if he doesn’t get a robe. And if he does get a robe, he uses it untied, uninfatuated, unattached, seeing the drawback, and understanding the escape. | T: and he does not engage in a wrong search, in what is improper, for the sake of a robe. If he does not get a robe he is not agitated, and if he gets one he uses it without being tied to it, uninfatuated with it, not blindly absorbed in it, seeing the danger in it, understanding the escape.
+sn16.1:2.1 | S: Kassapa is content with any kind of almsfood … | T: “Bhikkhus, this Kassapa is content with any kind of almsfood …
+sn16.1:3.1 | S: Kassapa is content with any kind of lodging … | T: with any kind of lodging …
+sn16.1:4.1 | S: Kassapa is content with any kind of medicines and supplies for the sick … | T: with any kind of medicinal requisites … and if he gets them he uses them without being tied to them, uninfatuated with them, not blindly absorbed in them, seeing the danger in them, understanding the escape.
+sn16.1:5.1 | S: So you should train like this: ‘We will be content with any kind of robe, and praise such contentment. We won’t employ improper solicitation for the sake of a robe. | T: “Therefore, bhikkhus, you should train yourselves thus: ‘We will be content with any kind of robe, and we will speak in praise of contentment with any kind of robe, and we will not engage in a wrong search, in what is improper, for the sake of a robe.
+sn16.1:5.2 | S: We won’t worry if we don’t get a robe. And if we do get a robe, we’ll use it untied, uninfatuated, unattached, seeing the drawback, and understanding the escape.’ | T: If we do not get a robe we will not be agitated, and if we get one we will use it without being tied to it, uninfatuated with it, not blindly absorbed in it, seeing the danger in it, understanding the escape.
+sn16.1:5.3 | S: (All should be told in full the same way.) | T: (none)
+sn16.1:6.1 | S: ‘We will be content with any kind of almsfood …’ | T: “‘We will be content with any kind of almsfood …
+sn16.1:6.2 | S: ‘We will be content with any kind of lodging …’ | T: with any kind of lodging …
+sn16.1:6.3 | S: ‘We will be content with any kind of medicines and supplies for the sick …’ | T: with any kind of medicinal requisites … and if we get them we will use them without being tied to them, uninfatuated with them, not blindly absorbed in them, seeing the danger in them, understanding the escape.’
+sn16.1:6.4 | S: That’s how you should train. | T: Thus should you train yourselves.
+sn16.1:6.5 | S: I will exhort you with the example of Kassapa or someone like him. You should practice accordingly.” | T: “Bhikkhus, I will exhort you by the example of Kassapa or one who is similar to Kassapa. Being exhorted, you should practise accordingly.”
+sn16.1:6.6 | P: Paṭhamaṁ. | T: (none)
+
+## sn21.9
+sn21.9:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn21.9:1.2 | S: Then Venerable Tissa—the Buddha’s cousin on his father’s side—went to the Buddha, bowed, and sat down to one side. He was miserable and sad, with tears flowing. Then the Buddha said to him: | T: Then the Venerable Tissa, the Blessed One’s paternal cousin, approached the Blessed One, paid homage to him, and sat down to one side—miserable, sorrowful, with tears streaming down. Then the Blessed One said to him:
+sn21.9:1.3 | S: “Tissa, why are you sitting there so miserable and sad, with tears flowing?” | T: “Tissa, why are you sitting there, miserable, sorrowful, with tears streaming down?”
+sn21.9:1.4 | S: “Sir, it’s because the mendicants beset me on all sides with sneering and jeering.” | T: “Because, venerable sir, the bhikkhus have attacked me on all sides with sharp words.”
+sn21.9:1.5 | S: “That’s because you admonish others, but don’t accept admonition yourself. | T: “That, Tissa, is because you admonish others but cannot bear being admonished yourself.
+sn21.9:1.6 | S: As a gentleman who has gone forth out of faith from the lay life to homelessness, it’s not appropriate for you to admonish others without accepting admonition yourself. | T: Tissa, this is not proper for you, a clansman who has gone forth out of faith from the household life into homelessness, that you admonish others but cannot accept admonition in turn.
+sn21.9:1.7 | S: It’s appropriate for you to | T: This is proper for you, Tissa, a clansman who has gone forth out of faith from the household life into homelessness,
+sn21.9:1.8 | S: admonish others and accept admonition yourself.” | T: that you admonish others and accept admonition in turn.”
+sn21.9:2.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn21.9:2.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn21.9:3.1 | S: “Why are you angry? Don’t be angry! | T: “Why are you angry? Don’t be angry!
+sn21.9:3.2 | S: It’s better to not be angry, Tissa. | T: Nonanger is better for you, Tissa.
+sn21.9:3.3 | S: For this spiritual life is lived | T: (none)
+sn21.9:3.4 | S: in order to remove anger, conceit, and denigration.” | T: It is to remove anger, conceit, and scorn, That the holy life is lived, O Tissa.”
+sn21.9:3.5 | P: Navamaṁ. | T: (none)
+
+## sn22.80
+sn22.80:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was dwelling among the Sakyans at Kapilavatthu in Nigrodha’s Park.
+sn22.80:1.2 | S: Then the Buddha, having dismissed the mendicant Saṅgha for some reason, robed up in the morning and, taking his bowl and robe, entered Kapilavatthu for alms. | T: Then the Blessed One, having dismissed the bhikkhus for a particular reason, dressed in the morning and, taking bowl and robe, entered Kapilavatthu for alms.
+sn22.80:1.3 | S: He wandered for alms in Kapilavatthu. After the meal, on his return from almsround, he went to the Great Wood for the day’s meditation, | T: When he had walked for alms in Kapilavatthu and had returned from the alms round, after his meal he went to the Great Wood for the day’s abiding.
+sn22.80:1.4 | S: plunged deep into it, and sat at the root of a young wood-apple tree to meditate. | T: Having plunged into the Great Wood, he sat down at the foot of a beluva sapling for the day’s abiding.
+sn22.80:2.1 | S: Then as he was in private retreat this thought came to his mind, | T: Then, while the Blessed One was alone in seclusion, a reflection arose in his mind thus:
+sn22.80:2.2 | S: “I have purged the mendicant Saṅgha. | T: “The Saṅgha of bhikkhus has been dismissed by me.
+sn22.80:2.3 | S: But there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: There are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline.
+sn22.80:2.4 | S: Not seeing me they may change and fall apart. | T: If they do not see me there may take place in them some alteration or change.
+sn22.80:2.5 | S: If a young calf doesn’t see its mother it may change and fall apart. … | T: Just as when a young calf does not see its mother there may take place in it some alteration or change,
+sn22.80:2.6 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ mamaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: so too there are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline. If they do not see me there may take place in them some alteration or change.
+sn22.80:2.7 | S: Or if young seedlings don’t get water they may change and fall apart. | T: Just as when young seedlings do not get water there may take place in them some alteration or change,
+sn22.80:2.8 | S: In the same way, there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: so too there are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline.
+sn22.80:2.9 | S: Not seeing me they may change and fall apart. | T: If they do not see me there may take place in them some alteration or change.
+sn22.80:2.10 | S: Why don’t I support the mendicant Saṅgha now as I did in the past?” | T: Let me assist the Saṅgha of bhikkhus now just as I have assisted it in the past.”
+sn22.80:3.1 | S: Then the divinity Sahampati knew the Buddha’s train of thought. As easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then Brahma Sahampati, having known with his own mind the reflection in the Blessed One’s mind, just as quickly as a strong man might extend his drawn-in arm or draw in his extended arm, disappeared from the brahma world and reappeared before the Blessed One.
+sn22.80:3.2 | S: He arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said: | T: He arranged his upper robe over one shoulder, raised his joined hands in reverential salutation towards the Blessed One, and said to him:
+sn22.80:3.3 | S: “That’s so true, Blessed One! That’s so true, Holy One! | T: “So it is, Blessed One! So it is, Fortunate One!
+sn22.80:3.4 | S: The Buddha has purged the mendicant Saṅgha. | T: The Saṅgha of bhikkhus has been dismissed by the Blessed One.
+sn22.80:3.5 | S: But there are mendicants who are junior, recently gone forth, newly come to this teaching and training. … | T: There are bhikkhus here who are newly ordained …
+sn22.80:3.6 | P: Tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: as above, including the similes …
+sn22.80:3.7 | P: Seyyathāpi nāma vacchassa taruṇassa mātaraṁ apassantassa siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.8 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: If they do not see the Blessed One there may take place in them some alteration or change.
+sn22.80:3.9 | P: Seyyathāpi nāma bījānaṁ taruṇānaṁ udakaṁ alabhantānaṁ siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.10 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, tesaṁ bhagavantaṁ alabhantānaṁ dassanāya siyā aññathattaṁ siyā vipariṇāmo. | T: (none)
+sn22.80:3.11 | S: May the Buddha be happy with the mendicant Saṅgha! | T: Venerable sir, let the Blessed One take delight in the Saṅgha of bhikkhus!
+sn22.80:3.12 | S: May the Buddha welcome the mendicant Saṅgha! | T: Let the Blessed One welcome the Saṅgha of bhikkhus!
+sn22.80:3.13 | S: May the Buddha support the mendicant Saṅgha now as he did in the past!” | T: Let the Blessed One assist the Saṅgha of bhikkhus now just as he has assisted it in the past.”
+sn22.80:4.1 | S: The Buddha consented with silence. | T: The Blessed One consented by silence.
+sn22.80:4.2 | S: Then the divinity Sahampati, knowing that the Buddha had consented, bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: Then Brahma Sahampati, having understood the Blessed One’s consent, paid homage to the Blessed One and, keeping him on his right, he disappeared right there.
+sn22.80:5.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the Banyan Tree Monastery, where he sat down on the seat spread out. | T: Then in the evening the Blessed One emerged from seclusion and went to Nigrodha’s Park. He sat down in the appointed seat
+sn22.80:5.2 | S: Then he used his psychic power to will that the mendicants would come to him timidly, alone or in pairs. | T: and performed such a feat of spiritual power that the bhikkhus would come to him, alone and in pairs, in a timid manner.
+sn22.80:5.3 | S: Those mendicants approached the Buddha timidly, bowed, and sat down to one side. The Buddha said to them: | T: Then those bhikkhus approached the Blessed One, alone and in pairs, in a timid manner. Having approached, they paid homage to the Blessed One and sat down to one side. The Blessed One then said to them:
+sn22.80:6.1 | S: “This is the last of lifestyles, mendicants, namely relying on alms. | T: “Bhikkhus, this is the lowest form of livelihood, that is, gathering alms.
+sn22.80:6.2 | S: The world curses you: ‘You beggar, walking bowl in hand!’ | T: In the world this is a term of abuse: ‘You alms-gatherer; you roam about with a begging bowl in your hand!’
+sn22.80:6.3 | S: Yet earnest gentlemen take it up for a good reason. | T: And yet, bhikkhus, clansmen intent on the good take up that way of life for a valid reason.
+sn22.80:6.4 | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: It is not because they have been driven to it by kings that they do so, nor because they have been driven to it by thieves, nor owing to debt, nor from fear, nor to earn a livelihood.
+sn22.80:6.5 | S: But because they’re swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. They’re swamped by suffering, mired in suffering. | T: But they do so with the thought: ‘I am immersed in birth, aging, and death; in sorrow, lamentation, pain, displeasure, and despair. I am immersed in suffering, oppressed by suffering.
+sn22.80:6.6 | S: And they think, ‘Hopefully I can make an end to this entire mass of suffering.’ | T: Perhaps an ending of this entire mass of suffering might be discerned!’
+sn22.80:7.1 | S: That’s how this gentleman has gone forth. | T: “It is in such a way, bhikkhus, that this clansman has gone forth.
+sn22.80:7.2 | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying mind and undisciplined faculties. | T: Yet he is covetous, inflamed by lust for sensual pleasures, with a mind full of ill will, with intentions corrupted by hate, muddle-minded, lacking clear comprehension, unconcentrated, scatter-brained, loose in his sense faculties.
+sn22.80:7.3 | S: Suppose there was a firebrand for lighting a funeral pyre, burning at both ends, and smeared with dung in the middle. It couldn’t be used as timber either in the village or the wilderness. | T: Just as a brand from a funeral pyre, burning at both ends and smeared with excrement in the middle, cannot be used as timber either in the village or in the forest,
+sn22.80:7.4 | S: I say that individual is just like this. They’ve missed out on the pleasures of the lay life, and haven’t fulfilled the goal of the ascetic life. | T: in just such a way do I speak about this person: he has missed out on the enjoyments of a householder, yet he does not fulfil the goal of asceticism.
+sn22.80:8.1 | S: There are these three unskillful thoughts. | T: “There are, bhikkhus, these three kinds of unwholesome thoughts:
+sn22.80:8.2 | S: Sensual, malicious, and cruel thoughts. | T: sensual thought, thought of ill will, thought of harming.
+sn22.80:8.3 | S: And where do these three unskillful thoughts cease without remainder? | T: And where, bhikkhus, do these three unwholesome thoughts cease without remainder?
+sn22.80:8.4 | S: In those who meditate with their mind firmly established in the four kinds of mindfulness meditation; or who develop signless immersion. | T: For one who dwells with a mind well established in the four establishments of mindfulness, or for one who develops the signless concentration.
+sn22.80:8.5 | S: This is quite enough motivation to develop signless immersion. | T: This is reason enough, bhikkhus, to develop the signless concentration.
+sn22.80:8.6 | S: When signless immersion is developed and cultivated it is very fruitful and beneficial. | T: When the signless concentration is developed and cultivated, bhikkhus, it is of great fruit and benefit.
+sn22.80:9.1 | S: There are these two views. | T: “There are, bhikkhus, these two views:
+sn22.80:9.2 | S: Views favoring existence and views favoring nonexistence. | T: the view of existence and the view of extermination.
+sn22.80:9.3 | S: A learned noble disciple reflects on this: | T: Therein, bhikkhus, the instructed noble disciple reflects thus:
+sn22.80:9.4 | S: ‘Is there anything in the world that I could grasp without fault?’ | T: ‘Is there anything in the world that I could cling to without being blameworthy?’
+sn22.80:9.5 | S: They understand: | T: He understand thus:
+sn22.80:9.6 | S: ‘There’s nothing in the world that I could grasp without fault. | T: ‘There is nothing in the world that I could cling to without being blameworthy.
+sn22.80:9.7 | S: For in grasping I would grasp only at form, feeling, | T: For if I should cling, it is only form that I would be clinging to, only feeling …
+sn22.80:9.8 | S: perception, | T: only perception …
+sn22.80:9.9 | S: choices, or consciousness. | T: only volitional formations … only consciousness that I would be clinging to.
+sn22.80:9.10 | S: That grasping of mine would be a condition for continued existence. | T: With that clinging of mine as condition, there would be existence;
+sn22.80:9.11 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn22.80:9.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair would come to be.
+sn22.80:9.13 | S: That is how this entire mass of suffering originates.’ | T: Such would be the origin of this whole mass of suffering.’
+sn22.80:10.1 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn22.80:10.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent? … Is feeling … perception … volitional formations … consciousness permanent or impermanent?”—
+sn22.80:10.3 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.80:10.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.80:10.5 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.80:10.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.80:10.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.80:10.8 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.80:10.9 | S: “Is feeling … | T: (none)
+sn22.80:10.10 | S: perception … | T: (none)
+sn22.80:10.11 | S: choices … | T: (none)
+sn22.80:10.12 | S: consciousness permanent or impermanent?” … | T: (none)
+sn22.80:10.13 | S: “So you should truly see … | T: (none)
+sn22.80:10.14 | S: Seeing this … | T: “Seeing thus …
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full batch. I’m checking the verse boundaries and an ellipsis-separated list before writing the findings.
+exec
+/bin/bash -lc "sed -n '215,265p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.29:13.5 | S: that’s enough to make an effort, | T: (none)
+an8.29:13.6 | S: for a personage who desires self-knowledge. | T: for a person desiring his own good, this is incentive enough to strive.
+an8.29:14.1 | S: How is the true teaching to be understood | T: How can one understand the good Dhamma,
+an8.29:14.2 | S: so that the moment doesn’t pass you by? | T: so that the moment won’t slip by?
+an8.29:14.3 | S: For if you miss your moment | T: For those who miss the moment grieve
+an8.29:14.4 | S: you’ll grieve when sent to hell. | T: when they are reborn in hell.
+an8.29:15.1 | S: If you fail to achieve | T: One here who has failed to obtain
+an8.29:15.2 | S: certainty regarding the true teaching | T: the fixed course of the good Dhamma,
+an8.29:15.3 | S: you’ll regret it for a long time, | T: will come to regret it for a long time
+an8.29:15.4 | S: like the merchant in the story of the past. | T: like a merchant who has missed a profit.
+an8.29:16.1 | S: A man shrouded by ignorance, | T: A person hindered by ignorance
+an8.29:16.2 | S: a failure in the true teaching, | T: who has failed in the good Dhamma
+an8.29:16.3 | S: will long undergo | T: will long experience wandering on
+an8.29:16.4 | S: transmigration through birth and death. | T: in the round of birth and death.
+an8.29:17.1 | S: Those who’ve gained the human state | T: But those who gain the human state
+an8.29:17.2 | S: when the true teaching has been so well proclaimed, | T: when the good Dhamma is well proclaimed,
+an8.29:17.3 | S: and have completed what the Teacher taught— | T: have accomplished the Teacher’s word,
+an8.29:17.4 | S: or will do so, or are doing so now— | T: or will do so, or are doing so now.
+an8.29:18.1 | S: have realized the right time in the world | T: Those who have practiced the path, proclaimed by the Tathāgata, have penetrated the right moment in the world
+an8.29:18.2 | S: for the supreme spiritual life. | T: the unsurpassed spiritual life.
+an8.29:18.3 | S: You should live guarded, ever mindful, | T: You should dwell without leakages, guarded, ever-mindful in the restraints
+an8.29:18.4 | S: not festering with defilements, | T: (none)
+an8.29:19.1 | S: among those restrained ones | T: (none)
+an8.29:19.2 | S: who have practiced the path | T: (none)
+an8.29:19.3 | S: proclaimed by the Realized One, the Clear-eyed One, | T: (none)
+an8.29:19.4 | S: and taught by the Kinsman of the Sun. | T: taught by the One with Vision, the Kinsman of the Sun.
+an8.29:20.1 | S: Having cut off all underlying tendencies | T: Having cut off all underlying tendencies
+an8.29:20.2 | S: that follow those drifting in Māra’s dominion, | T: that follow one drifting in Māra’s domain,
+an8.29:20.3 | S: they’re the ones in this world <j>who’ve truly crossed over, | T: those who attain the destruction of the taints,
+an8.29:20.4 | S: having reached the ending of defilements.” | T: though in the world, have gone beyond.
+an8.29:20.5 | P: Navamaṁ. | T: (none)
+
+## sn1.42
+sn1.42:1.1 | S: “Giving what do you give strength? | T: A devatā: “Giving what does one give strength?
+sn1.42:1.2 | S: Giving what do you give beauty? | T: Giving what does one give beauty?
+sn1.42:1.3 | S: Giving what do you give happiness? | T: Giving what does one give ease?
+sn1.42:1.4 | S: Giving what do you give vision? | T: Giving what does one give sight?
+sn1.42:1.5 | S: And who is the giver of all? | T: Who is the giver of all?
+sn1.42:1.6 | S: Please answer my question.” | T: Being asked, please explain to me.”
+sn1.42:2.1 | S: “Giving food you give strength. | T: The Blessed One: “Giving food, one gives strength;
+sn1.42:2.2 | S: Giving clothes you give beauty. | T: Giving clothes, one gives beauty;
+sn1.42:2.3 | S: Giving a vehicle you give happiness. | T: Giving a vehicle, one gives ease;
+sn1.42:2.4 | S: Giving a lamp you give vision. | T: Giving a lamp, one gives sight.
+sn1.42:3.1 | S: And the giver of all | T: “The one who gives a residence Is the giver of all.
+sn1.42:3.2 | S: is the one who gives monastic quarters. | T: (none)
+sn1.42:3.3 | S: But one who teaches the Dhamma | T: But the one who teaches the Dhamma
+sn1.42:3.4 | S: gives the gift of freedom from death.” | T: Is the giver of the Deathless.”
+
+## sn11.6
+sn11.6:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.6:1.2 | S: “Once upon a time, mendicants, a battle was fought between the gods and the titans. | T: “Bhikkhus, once in the past the devas and the asuras were arrayed for battle.
+
+exec
+/bin/bash -lc "sed -n '310,325p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn21.9:3.4 | S: in order to remove anger, conceit, and denigration.” | T: It is to remove anger, conceit, and scorn, That the holy life is lived, O Tissa.”
+sn21.9:3.5 | P: Navamaṁ. | T: (none)
+
+## sn22.80
+sn22.80:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was dwelling among the Sakyans at Kapilavatthu in Nigrodha’s Park.
+sn22.80:1.2 | S: Then the Buddha, having dismissed the mendicant Saṅgha for some reason, robed up in the morning and, taking his bowl and robe, entered Kapilavatthu for alms. | T: Then the Blessed One, having dismissed the bhikkhus for a particular reason, dressed in the morning and, taking bowl and robe, entered Kapilavatthu for alms.
+sn22.80:1.3 | S: He wandered for alms in Kapilavatthu. After the meal, on his return from almsround, he went to the Great Wood for the day’s meditation, | T: When he had walked for alms in Kapilavatthu and had returned from the alms round, after his meal he went to the Great Wood for the day’s abiding.
+sn22.80:1.4 | S: plunged deep into it, and sat at the root of a young wood-apple tree to meditate. | T: Having plunged into the Great Wood, he sat down at the foot of a beluva sapling for the day’s abiding.
+sn22.80:2.1 | S: Then as he was in private retreat this thought came to his mind, | T: Then, while the Blessed One was alone in seclusion, a reflection arose in his mind thus:
+sn22.80:2.2 | S: “I have purged the mendicant Saṅgha. | T: “The Saṅgha of bhikkhus has been dismissed by me.
+sn22.80:2.3 | S: But there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: There are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline.
+sn22.80:2.4 | S: Not seeing me they may change and fall apart. | T: If they do not see me there may take place in them some alteration or change.
+sn22.80:2.5 | S: If a young calf doesn’t see its mother it may change and fall apart. … | T: Just as when a young calf does not see its mother there may take place in it some alteration or change,
+sn22.80:2.6 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ mamaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: so too there are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline. If they do not see me there may take place in them some alteration or change.
+sn22.80:2.7 | S: Or if young seedlings don’t get water they may change and fall apart. | T: Just as when young seedlings do not get water there may take place in them some alteration or change,
+sn22.80:2.8 | S: In the same way, there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: so too there are bhikkhus here who are newly ordained, not long gone forth, recently come to this Dhamma and Discipline.
+
+exec
+/bin/bash -lc "sed -n '380,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.80:10.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.80:10.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.80:10.8 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.80:10.9 | S: “Is feeling … | T: (none)
+sn22.80:10.10 | S: perception … | T: (none)
+sn22.80:10.11 | S: choices … | T: (none)
+sn22.80:10.12 | S: consciousness permanent or impermanent?” … | T: (none)
+sn22.80:10.13 | S: “So you should truly see … | T: (none)
+sn22.80:10.14 | S: Seeing this … | T: “Seeing thus …
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-031.findings.tmp <<'EOF'
+an8.29:13.5 starts: for a person desiring his own good,
+an8.29:13.6 none
+sn21.9:3.3 starts: It is to remove anger, conceit, and
+sn21.9:3.4 none
+sn22.80:10.9 starts: Is feeling … perception … volitional formations … consciousness permanent
+sn22.80:10.10 starts: perception … volitional formations … consciousness permanent or impermanent?”—
+sn22.80:10.11 starts: volitional formations … consciousness permanent or impermanent?”—
+sn22.80:10.12 starts: consciousness permanent or impermanent?”—
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+29,891
+8 lines reported.

@@ -1,0 +1,565 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd82-7d09-7072-a170-063ac73dca8c
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn44.4
+sn44.4:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. … | T: (none)
+sn44.4:1.2 | S: (The same down as far as:) | T: As above down to:
+sn44.4:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: “What now, friend, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.4:1.4 | S: “Reverend, not truly knowing and seeing form, its origin, its cessation, and the practice that leads to its cessation, one thinks ‘a realized one still exists after death’ or | T: “Friend, it is one who does not know and see form as it really is, who does not know and see its origin, its cessation, and the way leading to its cessation, that thinks:
+sn44.4:1.5 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death,’ or ‘The Tathagata does not exist after death,’ or
+sn44.4:1.6 | S: ‘a realized one both still exists and no longer exists after death’ or | T: ‘The Tathagata both exists and does not exist after death,’ or
+sn44.4:1.7 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:1.8 | S: Not truly knowing or seeing feeling … | T: It is one who does not know and see feeling as it really is …
+sn44.4:1.9 | S: perception … | T: who does not know and see perception as it really is …
+sn44.4:1.10 | S: choices … | T: who does not know and see volitional formations as they really are …
+sn44.4:1.11 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation, one thinks ‘a realized one still exists after death’ or | T: who does not know and see consciousness as it really is, who does not know and see its origin, its cessation, and the way leading to its cessation, that thinks:
+sn44.4:1.12 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death’ … … or
+sn44.4:1.13 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.4:1.14 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:2.1 | S: Truly knowing and seeing form … | T: “But, friend, one who knows and sees form …
+sn44.4:2.2 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. | T: (none)
+sn44.4:2.3 | S: feeling … | T: feeling …
+sn44.4:2.4 | S: perception … | T: perception …
+sn44.4:2.5 | S: choices … | T: volitional formations …
+sn44.4:2.6 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation, one doesn’t think ‘a realized one still exists after death’ or | T: consciousness as it really is, who knows and sees its origin, its cessation, and the way leading to its cessation, does not think:
+sn44.4:2.7 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death’ … or
+sn44.4:2.8 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.4:2.9 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:2.10 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.4:2.11 | P: Catutthaṁ. | T: (none)
+
+## sn47.7
+sn47.7:1.1 | S: “Mendicants, in the Himalayas there are regions that are rugged and impassable. In some such regions, neither monkeys nor humans can go, | T: “Bhikkhus, in the Himalayas, the king of mountains, there are rugged and uneven zones where neither monkeys nor human beings can go;
+sn47.7:1.2 | S: while in others, monkeys can go but not humans. | T: there are rugged and uneven zones where monkeys can go but not human beings;
+sn47.7:1.3 | S: There are also level, pleasant places where both monkeys and humans can go. | T: there are even and delightful regions where both monkeys and human beings can go.
+sn47.7:1.4 | S: There hunters set snares of tar on the monkey trails to catch the monkeys. | T: There, along the monkey trails, hunters set out traps of pitch for catching monkeys.
+sn47.7:2.1 | S: The monkeys who are not foolhardy and reckless see the tar and avoid it from afar. | T: “Those monkeys who are not foolish and frivolous, when they see the pitch, avoid it from afar.
+sn47.7:2.2 | S: But a foolish and reckless monkey goes up to the tar and grabs it with a hand. | T: But a monkey who is foolish and frivolous approaches the pitch and seizes it with his hand;
+sn47.7:2.3 | S: He gets stuck there. | T: he gets caught there.
+sn47.7:2.4 | S: Thinking to free his hand, he grabs it with his other hand. | T: Thinking, ‘I will free my hand,’ he seizes it with his other hand;
+sn47.7:2.5 | S: He gets stuck there. | T: he gets caught there.
+sn47.7:2.6 | S: Thinking to free both hands, he grabs it with a foot. | T: Thinking, ‘I will free both hands,’ he seizes it with his foot;
+sn47.7:2.7 | S: He gets stuck there. | T: he gets caught there.
+sn47.7:2.8 | S: Thinking to free both hands and foot, he grabs it with his other foot. | T: Thinking, ‘I will free both hands and my foot,’ he seizes it with his other foot;
+sn47.7:2.9 | S: He gets stuck there. | T: he gets caught there.’
+sn47.7:2.10 | S: Thinking to free both hands and feet, he grabs it with his snout. | T: Thinking, ‘I will free both hands and feet,’ he applies his muzzle to it;
+sn47.7:2.11 | S: He gets stuck there. | T: he gets caught there.
+sn47.7:2.12 | S: And so the monkey, trapped at five points, just lies there screeching. He’d meet with tragedy and disaster, and the hunter can do what he wants with him. | T: “Thus, bhikkhus, that monkey, trapped at five points, lies there screeching. He has met with calamity and disaster and the hunter can do with him as he wishes.
+sn47.7:2.13 | S: The hunter spears him on that very banana tree, pries him off, and goes wherever he wants. | T: The hunter spears him, fastens him to that same block of wood, and goes off where he wants.
+sn47.7:2.14 | S: That’s what happens when you roam out of your territory into the domain of others. | T: So it is, bhikkhus, when one strays outside one’s own resort into the domain of others.
+sn47.7:3.1 | S: So, mendicants, don’t roam out of your own territory into the domain of others. | T: “Therefore, bhikkhus, do not stray outside your own resort into the domain of others.
+sn47.7:3.2 | S: If you roam out of your own territory into the domain of others, Māra will find a vulnerability and get an opportunity. | T: Mara will gain access to those who stray outside their own resort into the domain of others; Mara will get a hold on them.
+sn47.7:3.3 | S: And what is not a mendicant’s own territory but the domain of others? | T: “And what is not a bhikkhu’s own resort but the domain of others?
+sn47.7:3.4 | P: Yadidaṁ— | T: (none)
+sn47.7:3.5 | S: It’s the five kinds of sensual stimulation. | T: It is the five cords of sensual pleasure….
+sn47.7:3.6 | S: What five? | T: as above …
+sn47.7:3.7 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: (none)
+sn47.7:3.8 | S: Sounds known by the ear … | T: (none)
+sn47.7:3.9 | S: Smells known by the nose … | T: (none)
+sn47.7:3.10 | S: Tastes known by the tongue … | T: (none)
+sn47.7:3.11 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: (none)
+sn47.7:3.12 | S: This is not a mendicant’s own territory but the domain of others. | T: This is what is not a bhikkhu’s own resort but the domain of others.
+sn47.7:4.1 | S: You should roam inside your own territory, the domain of your fathers. | T: “Move in your own resort, bhikkhus, in your own ancestral domain.
+sn47.7:4.2 | S: If you roam inside your own territory, the domain of your fathers, Māra won’t find a vulnerability and get an opportunity. | T: Mara will not gain access to those who move in their own resort, in their own ancestral domain; Mara will not get a hold on them.
+sn47.7:4.3 | S: And what is a mendicant’s own territory, the domain of the fathers? | T: “And what is a bhikkhu’s resort, his own ancestral domain?
+sn47.7:4.4 | P: Yadidaṁ— | T: (none)
+sn47.7:4.5 | S: It’s the four kinds of mindfulness meditation. | T: It is the four establishments of mindfulness.
+sn47.7:4.6 | S: What four? | T: What four?
+sn47.7:4.7 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.7:4.8 | S: They meditate observing an aspect of feelings … | T: He dwells contemplating feelings in feelings …
+sn47.7:4.9 | S: mind … | T: mind in mind …
+sn47.7:4.10 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.7:4.11 | S: This is a mendicant’s own territory, the domain of the fathers.” | T: This is a bhikkhu’s resort, his own ancestral domain.”
+sn47.7:4.12 | P: Sattamaṁ. | T: (none)
+
+## an4.17
+an4.17:1.1 | S: “Mendicants, there are these four ways of making prejudiced decisions. | T: “Bhikkhus, there are these four ways of taking a wrong course.
+an4.17:1.2 | S: What four? | T: What four?
+an4.17:1.3 | S: Making decisions prejudiced by favoritism, hostility, stupidity, and cowardice. | T: One takes a wrong course because of desire, because of hatred, because of delusion, or because of fear.
+an4.17:1.4 | S: These are the four ways of making prejudiced decisions. | T: These are the four ways of taking a wrong course.”
+an4.17:2.1 | S: If you act against the teaching | T: If through desire, hate, fear, or delusion one transgresses against the Dhamma,
+an4.17:2.2 | S: out of favoritism, hostility, cowardice, or stupidity, | T: (none)
+an4.17:2.3 | S: your fame fades away, | T: one’s fame diminishes
+an4.17:2.4 | S: like the moon in the waning fortnight.” | T: like the moon in the dark fortnight.
+an4.17:2.5 | P: Sattamaṁ. | T: (none)
+
+## an4.18
+an4.18:1.1 | S: “Mendicants, there are these four ways of making unprejudiced decisions. | T: “Bhikkhus, there are these four ways of not taking a wrong course.
+an4.18:1.2 | S: What four? | T: What four?
+an4.18:1.3 | S: Making decisions unprejudiced by favoritism, hostility, stupidity, and cowardice. | T: One does not take a wrong course because of desire, because of hatred, because of delusion, or because of fear.
+an4.18:1.4 | S: These are the four ways of making unprejudiced decisions. | T: These are the four ways of not taking a wrong course.”
+an4.18:2.1 | S: If you don’t act against the teaching | T: If one does not transgress the Dhamma through desire, hate, fear, or delusion,
+an4.18:2.2 | S: out of favoritism, hostility, cowardice, and stupidity, | T: (none)
+an4.18:2.3 | S: your fame swells, | T: one’s fame becomes full
+an4.18:2.4 | S: like the moon in the waxing fortnight.” | T: like the moon in the bright fortnight.
+an4.18:2.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an4.19
+an4.19:1.1 | S: “Mendicants, there are these four ways of making prejudiced decisions. | T: “Bhikkhus, there are these four ways of taking a wrong course.
+an4.19:1.2 | S: What four? | T: What four?
+an4.19:1.3 | S: Making decisions prejudiced by favoritism, hostility, stupidity, and cowardice. | T: One takes a wrong course because of desire … as in AN4.17 …
+an4.19:1.4 | S: These are the four ways of making prejudiced decisions. | T: These are the four ways of taking a wrong course.
+an4.19:2.1 | S: There are these four ways of making unprejudiced decisions. | T: “Bhikkhus, there are these four ways of not taking a wrong course.
+an4.19:2.2 | S: What four? | T: What four?
+an4.19:2.3 | S: Making decisions unprejudiced by favoritism, hostility, stupidity, and cowardice. | T: One does not take a wrong course because of desire … as in AN4.18 …
+an4.19:2.4 | S: These are the four ways of making unprejudiced decisions. | T: These are the four ways of taking a wrong course.”
+an4.19:3.1 | S: If you act against the teaching | T: If through desire, hate, fear, or delusion one transgresses against the Dhamma,
+an4.19:3.2 | S: out of favoritism, hostility, cowardice, or stupidity, | T: (none)
+an4.19:3.3 | S: your fame fades away, | T: one’s fame diminishes
+an4.19:3.4 | S: like the moon in the waning fortnight. | T: like the moon in the dark fortnight.
+an4.19:4.1 | S: If you don’t act against the teaching | T: If one does not transgress the Dhamma through desire, hate, fear, or delusion,
+an4.19:4.2 | S: out of favoritism, hostility, cowardice, and stupidity, | T: (none)
+an4.19:4.3 | S: your fame swells, | T: one’s fame becomes full
+an4.19:4.4 | S: like the moon in the waxing fortnight.” | T: like the moon in the bright fortnight.
+an4.19:4.5 | P: Navamaṁ. | T: (none)
+
+## an4.39
+an4.39:1.1 | S: Then Ujjaya the brahmin went up to the Buddha, and exchanged greetings with him. | T: Then the brahmin Ujjaya approached the Blessed One and exchanged greetings with him.
+an4.39:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to the Blessed One:
+an4.39:1.3 | S: “Does the worthy Gotama praise sacrifice?” | T: “Does Master Gotama praise sacrifice?”
+an4.39:1.4 | S: “Brahmin, I don’t praise all sacrifices. | T: “I do not praise all sacrifice, brahmin, nor do I withhold praise from all sacrifice.
+an4.39:1.5 | S: Nor do I criticize all sacrifices. | T: (none)
+an4.39:1.6 | S: Take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are slaughtered. | T: (1) I do not praise a violent sacrifice at which cattle, goats, rams, chickens, and pigs are slain, at which various creatures are led to slaughter.
+an4.39:1.7 | S: I don’t praise that kind of violent sacrifice. | T: (none)
+an4.39:1.8 | S: Why is that? | T: (2) For what reason?
+an4.39:1.9 | S: Because neither perfected ones nor those who are on the path to perfection will attend such a violent sacrifice. | T: Because arahants and those who have entered the path to arahantship do not attend a violent sacrifice.
+an4.39:2.1 | S: But take the kind of sacrifice where cattle, goats and sheep, chickens and pigs, and various kinds of creatures are not slaughtered. | T: (3) “But I praise a non-violent sacrifice at which cattle, goats, rams, chickens, and pigs are not slain, where various creatures are not slaughtered,
+an4.39:2.2 | S: I do praise that kind of non-violent sacrifice; for example, a regular gift as a propitious sacrifice. | T: that is, a regular giving, a sacrifice offered by family custom.
+an4.39:2.3 | S: Why is that? | T: (4) For what reason?
+an4.39:2.4 | S: Because perfected ones and those who are on the path to perfection will attend such a non-violent sacrifice. | T: Because arahants and those who have entered the path to arahantship attend a nonviolent sacrifice.”
+an4.39:3.1 | S: Horse sacrifice, human sacrifice, | T: The horse sacrifice, human sacrifice,
+an4.39:3.2 | S: the sacrifices of the ‘casting of the yoke-pin’, | T: sammāpāsa, vājapeyya, niraggaḷa:
+an4.39:3.3 | S: the ‘royal soma drinking’, and the ‘unbarred’— | T: (none)
+an4.39:3.4 | S: these grand, violent sacrifices yield no great fruit. | T: these grand sacrifices, fraught with violence, do not bring great fruit.
+an4.39:4.1 | S: The great sages of right comportment | T: The great seers of right conduct
+an4.39:4.2 | S: don’t attend sacrifices | T: do not attend a sacrifice
+an4.39:4.3 | S: where goats, sheep, and cattle, | T: where goats, rams, cattle,
+an4.39:4.4 | S: and various creatures are killed. | T: and various creatures are slain.
+an4.39:5.1 | S: But the great sages of right comportment | T: (none)
+an4.39:5.2 | S: do attend those sacrifices | T: But when they regularly offer by family custom
+an4.39:5.3 | S: that are non-violent and propitious, | T: sacrifices free from violence,
+an4.39:5.4 | S: where goats, sheep, and cattle, | T: no goats, sheep, and cattle
+an4.39:5.5 | S: and various creatures are not killed. | T: or various creatures are slain.
+an4.39:5.6 | P: upayanti mahesino. | T: That is the sacrifice the great seers of right conduct attend.
+an4.39:6.1 | S: An intelligent person should sacrifice like this, | T: The wise person should offer this;
+an4.39:6.2 | S: for this sacrifice is very fruitful. | T: this sacrifice is very fruitful.
+an4.39:6.3 | S: For a sponsor of sacrifices like this, | T: For one who makes such sacrifice
+an4.39:6.4 | S: things get better, not worse. | T: it is indeed better, never worse.
+an4.39:6.5 | S: Such a sacrifice is truly abundant, | T: Such a sacrifice is truly vast
+an4.39:6.6 | S: and even the deities are pleased.” | T: and the deities too are pleased.
+an4.39:6.7 | P: Navamaṁ. | T: (none)
+
+## an5.23
+an5.23:1.1 | S: “Mendicants, there are these five corruptions of native gold. When native gold is corrupted by these it’s not pliable, workable, or radiant, but is brittle and not completely ready for working. | T: “Bhikkhus, there are these five defilements of gold, defiled by which gold is not malleable, wieldy, and luminous, but brittle and not properly fit for work.
+an5.23:1.2 | S: What five? | T: What five?
+an5.23:1.3 | S: Iron, copper, tin, lead, and silver. | T: Iron, copper, tin, lead, and silver.
+an5.23:1.4 | S: When native gold is corrupted by these five corruptions it’s not pliable, workable, or radiant, but is brittle and not completely ready for working. | T: These are the five defilements of gold, defiled by which gold is not malleable, wieldy, and luminous, but brittle and not properly fit for work.
+an5.23:1.5 | S: But when native gold is free of these five corruptions it becomes pliable, workable, and radiant, not brittle, and ready to be worked. | T: But when gold is freed from these five defilements, it is malleable, wieldy, and luminous, pliant and properly fit for work.
+an5.23:1.6 | S: Then the goldsmith can successfully create any kind of ornament they want, whether a ring, earrings, a necklace, or a golden garland. | T: Then whatever kind of ornament one wishes to make from it—whether a bracelet, earrings, a necklace, or a golden garland—one can achieve one’s purpose.
+an5.23:2.1 | S: In the same way, there are these five corruptions of the mind. When the mind is corrupted by these it’s not pliable, workable, or radiant. It’s brittle, and not rightly immersed in samādhi for the ending of defilements. | T: “So too, bhikkhus, there are these five defilements of the mind, defiled by which the mind is not malleable, wieldy, and luminous, but brittle and not properly concentrated for the destruction of the taints.
+an5.23:2.2 | S: What five? | T: What five?
+an5.23:2.3 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt.
+an5.23:2.4 | S: These are the five corruptions of the mind. When the mind is corrupted by these it’s not pliable, workable, or radiant. It’s brittle, and not rightly immersed in samādhi for the ending of defilements. | T: These are the five defilements of the mind, defiled by which the mind is not malleable, wieldy, and luminous, but brittle and not properly concentrated for the destruction of the taints.
+an5.23:2.5 | S: But when the mind is free of these five corruptions it’s pliable, workable, and radiant. It’s not brittle, and is rightly immersed in samādhi for the ending of defilements. | T: But when the mind is freed from these five defilements, it becomes malleable, wieldy, and luminous, pliant and properly concentrated for the destruction of the taints.
+an5.23:2.6 | S: You extend your mind to realize by insight each and every thing that can be realized by insight; and you are capable of realizing those things, since each and every one is within range. | T: Then, there being a suitable basis, one is capable of realizing any state realizable by direct knowledge toward which one might incline the mind.
+an5.23:3.1 | S: If you wish: ‘May I wield the many kinds of psychic power—multiplying myself and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful, controlling the body as far as the realm of divinity.’ | T: “If one wishes: ‘May I wield the various kinds of psychic potency: having been one, may I become many; having been many, may I become one; may I appear and vanish; may I go unhindered through a wall, through a rampart, through a mountain as though through space; may I dive in and out of the earth as though it were water; may I walk on water without sinking as though it were earth; seated cross-legged, may I travel in space like a bird; with my hand may I touch and stroke the moon and sun so powerful and mighty; may I exercise mastery with the body as far as the brahmā world,’
+an5.23:3.2 | S: You’re capable of realizing it, since each and every one is within range. | T: one is capable of realizing it, there being a suitable basis.
+an5.23:4.1 | S: If you wish: ‘With clairaudience that is purified and superhuman, may I hear both kinds of sounds, human and heavenly, whether near or far.’ | T: “If one wishes: ‘May I, with the divine ear element, which is purified and surpasses the human, hear both kinds of sounds, the divine and human, those that are far as well as near,’
+an5.23:4.2 | S: You’re capable of realizing it, since each and every one is within range. | T: one is capable of realizing it, there being a suitable basis.
+an5.23:5.1 | S: If you wish: ‘May I understand the minds of other beings and individuals, having encompassed them with my mind. | T: “If one wishes: ‘May I understand the minds of other beings and persons, having encompassed them with my own mind.
+an5.23:5.2 | S: May I understand mind with greed as “mind with greed”, | T: May I understand a mind with lust as a mind with lust,
+an5.23:5.3 | S: and mind without greed as “mind without greed”; | T: and a mind without lust as a mind without lust;
+an5.23:5.4 | S: mind with hate as “mind with hate”, | T: a mind with hatred as a mind with hatred,
+an5.23:5.5 | S: and mind without hate as “mind without hate”; | T: and a mind without hatred as a mind without hatred;
+an5.23:5.6 | S: mind with delusion as “mind with delusion”, | T: a mind with delusion as a mind with delusion,
+an5.23:5.7 | S: and mind without delusion as “mind without delusion”; | T: and a mind without delusion as a mind without delusion;
+an5.23:5.8 | S: constricted mind as “constricted mind”, | T: a contracted mind as contracted and a distracted mind as distracted;
+an5.23:5.9 | S: and scattered mind as “scattered mind”; | T: (none)
+an5.23:5.10 | S: expansive mind as “expansive mind”, | T: an exalted mind as exalted and an unexalted mind as unexalted;
+an5.23:5.11 | S: and unexpansive mind as “unexpansive mind”; | T: (none)
+an5.23:5.12 | S: mind that is not supreme as “mind that is not supreme”, | T: a surpassable mind as surpassable and an unsurpassable mind as unsurpassable;
+an5.23:5.13 | S: and mind that is supreme as “mind that is supreme”; | T: (none)
+an5.23:5.14 | S: mind immersed in samādhi as “mind immersed in samādhi”, | T: a concentrated mind as concentrated and an unconcentrated mind as unconcentrated;
+an5.23:5.15 | S: and mind not immersed in samādhi as “mind not immersed in samādhi”; | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.23:5.16 | S: freed mind as “freed mind”, | T: a liberated mind as liberated and an unliberated mind as unliberated,’
+an5.23:5.17 | S: and unfreed mind as “unfreed mind”.’ | T: (none)
+an5.23:5.18 | S: You’re capable of realizing it, since each and every one is within range. | T: one is capable of realizing it, there being a suitable basis.
+an5.23:6.1 | S: If you wish: ‘May I recollect many kinds of past lives. That is: one, two, three, four, five, ten, twenty, thirty, forty, fifty, a hundred, a thousand, a hundred thousand rebirths; many eons of the world contracting, many eons of the world expanding, many eons of the world contracting and expanding. May I remember: “There, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn somewhere else. There, too, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn here.” May I recollect my many past lives, with features and details.’ | T: “If one wishes: ‘May I recollect my manifold past abodes, that is, one birth, two births, three births, four births, five births, ten births, twenty births, thirty births, forty births, fifty births, a hundred births, a thousand births, a hundred thousand births, many eons of world-dissolution, many eons of world-evolution, many eons of world-dissolution and world-evolution thus: “There I was so named, of such a clan, with such an appearance, such was my food, such my experience of pleasure and pain, such my life span; passing away from there, I was reborn elsewhere, and there too I was so named, of such a clan, with such an appearance, such was my food, such my experience of pleasure and pain, such my life span; passing away from there, I was reborn here”—may I thus recollect my manifold past abodes with their aspects and details,’
+an5.23:6.2 | S: You’re capable of realizing it, since each and every one is within range. | T: one is capable of realizing it, there being a suitable basis.
+an5.23:7.1 | S: If you wish: ‘With clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place—and understand how sentient beings pass on according to their deeds: “These dear beings did bad things by way of body, speech, and mind. They denounced the noble ones; they had wrong view; and they chose to act out of that wrong view. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. These dear beings, however, did good things by way of body, speech, and mind. They never denounced the noble ones; they had right view; and they chose to act out of that right view. When their body broke up, after death, they were reborn in a good place, a heavenly realm.” And so, with clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. And may I understand how sentient beings pass on according to their deeds.’ | T: “If one wishes: ‘May I, with the divine eye, which is purified and surpasses the human, see beings passing away and being reborn, inferior and superior, beautiful and ugly, fortunate and unfortunate, and understand how beings fare in accordance with their kamma thus: “These beings who engaged in misconduct by body, speech, and mind, who reviled the noble ones, held wrong view, and undertook kamma based on wrong view, with the breakup of the body, after death, have been reborn in the plane of misery, in a bad destination, in the lower world, in hell; but these beings who engaged in good conduct by body, speech, and mind, who did not revile the noble ones, who held right view, and undertook kamma based on right view, with the breakup of the body, after death, have been reborn in a good destination, in a heavenly world”—thus with the divine eye, which is purified and surpasses the human, may I see beings passing away and being reborn, inferior and superior, beautiful and ugly, fortunate and unfortunate, and understand how beings fare in accordance with their kamma,’
+an5.23:7.2 | S: You’re capable of realizing it, since each and every one is within range. | T: one is capable of realizing it, there being a suitable basis.
+an5.23:8.1 | S: If you wish: ‘May I realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with my own insight in this very life due to the ending of defilements.’ | T: “If one wishes: ‘May I, with the destruction of the taints, in this very life realize for myself with direct knowledge the taintless liberation of mind, liberation by wisdom, and having entered upon it, may I dwell in it,’
+an5.23:8.2 | S: You’re capable of realizing it, since each and every one is within range.” | T: one is capable of realizing it, there being a suitable basis.”
+an5.23:8.3 | P: Tatiyaṁ. | T: (none)
+
+## an8.37
+an8.37:1.1 | S: “Mendicants, there are these eight gifts of a true person. | T: “Bhikkhus, there are these eight gifts of a good person.
+an8.37:1.2 | S: What eight? | T: What eight?
+an8.37:1.3 | S: Their gift is pure, good quality, timely, appropriate, intelligent, and regular. While giving their heart is confident, and afterwards they’re uplifted. | T: (1) He gives what is pure; (2) he gives what is excellent; (3) he gives a timely gift; (4) he gives what is allowable; (5) he gives after investigation; (6) he gives often; (7) while giving he settles his mind in confidence; and (8) having given, he is elated.
+an8.37:1.4 | S: These are the eight gifts of a true person. | T: These are the eight gifts of a good person.”
+an8.37:2.1 | S: He gives pure, good quality, and timely gifts | T: He gives what is pure and excellent,
+an8.37:2.2 | S: of appropriate food and drinks | T: allowable drinks and food at the proper time;
+an8.37:2.3 | S: regularly to spiritual practitioners | T: (none)
+an8.37:2.4 | S: who are fertile fields of merit. | T: he gives gifts often to fertile fields of merit, to those who lead the spiritual life.
+an8.37:3.1 | S: They never regret | T: He does not feel regret,
+an8.37:3.2 | S: giving away many things of the flesh. | T: having given away many material things.
+an8.37:3.3 | S: Discerning people praise | T: Those with deep insight praise
+an8.37:3.4 | S: giving such gifts. | T: the gifts given in this way.
+an8.37:4.1 | S: An intelligent person sacrifices like this, | T: Having thus practiced charity
+an8.37:4.2 | S: faithful, with a mind of letting go. | T: with a mind freely generous, one intelligent and wise, rich in faith,
+an8.37:4.3 | S: Such an astute person is reborn | T: is reborn in a pleasant, unafflicted world.
+an8.37:4.4 | S: in a happy, pleasing world.” | T: (none)
+an8.37:4.5 | P: Sattamaṁ. | T: (none)
+
+## sn1.18
+sn1.18:1.1 | S: “Can a person constrained by conscience | T: “Is there a person somewhere in the world Who is restrained by a sense of shame,
+sn1.18:1.2 | S: be found in the world, | T: (none)
+sn1.18:1.3 | S: who is cognizant of blame, | T: One who draws back from blame
+sn1.18:1.4 | S: like a fine horse of the whip?” | T: As a good horse does from the whip?”
+sn1.18:2.1 | S: “Few are those constrained by conscience, | T: “Few are those restrained by a sense of shame
+sn1.18:2.2 | S: who live always mindful. | T: Who fare always mindful;
+sn1.18:2.3 | S: Having reached the end of suffering, | T: Few, having reached the end of suffering,
+sn1.18:2.4 | S: smoothly they walk in the rough.” | T: Fare evenly amidst the uneven.”
+
+## sn1.24
+sn1.24:1.1 | S: “Whatever you’ve shielded the mind from | T: “From whatever one reins in the mind,
+sn1.24:1.2 | S: can’t cause you suffering. | T: From that no suffering comes to one.
+sn1.24:1.3 | S: So you should shield the mind from everything, | T: Should one rein in the mind from everything,
+sn1.24:1.4 | S: then you’re freed from all suffering.” | T: One is freed from all suffering.”
+sn1.24:2.1 | S: “You need not shield the mind from everything, | T: “One need not rein in the mind from everything
+sn1.24:2.2 | S: nor has the mind gained self-control. | T: When the mind has come under control.
+sn1.24:2.3 | S: The mind need only be shielded | T: (none)
+sn1.24:2.4 | S: from where the bad things come.” | T: From whatever it is that evil comes, From this one should rein in the mind.”
+
+## sn12.38
+sn12.38:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.38:1.2 | S: “Mendicants, what you intend or plan, and what you have underlying tendencies for become a support for the continuation of consciousness. | T: “Bhikkhus, what one intends, and what one plans, and whatever one has a tendency towards: this becomes a basis for the maintenance of consciousness.
+sn12.38:1.3 | S: When this support exists, consciousness becomes established. | T: When there is a basis there is a support for the establishing of consciousness.
+sn12.38:1.4 | S: When consciousness is established and grows, there is regeneration into a new state of existence in the future. | T: When consciousness is established and has come to growth, there is the production of future renewed existence.
+sn12.38:1.5 | S: When there is regeneration into a new state of existence in the future, future rebirth, old age, and death come to be, as do sorrow, lamentation, pain, sadness, and distress. | T: When there is the production of future renewed existence, future birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.38:1.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.38:2.1 | S: If you don’t intend or plan, but still have underlying tendencies, this becomes a support for the continuation of consciousness. | T: “If, bhikkhus, one does not intend, and one does not plan, but one still has a tendency towards something, this becomes a basis for the maintenance of consciousness.
+sn12.38:2.2 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness….
+sn12.38:2.3 | S: When consciousness is established and grows, there is regeneration into a new state of existence in the future. | T: (none)
+sn12.38:2.4 | S: When there is regeneration into a new state of existence in the future, future rebirth, old age, and death come to be, as do sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn12.38:2.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.38:3.1 | S: If you don’t intend or plan or have underlying tendencies, this doesn’t become a support for the continuation of consciousness. | T: “But, bhikkhus, when one does not intend, and one does not plan, and one does not have a tendency towards anything, no basis exists for the maintenance of consciousness.
+sn12.38:3.2 | S: With no support, consciousness is not established. | T: When there is no basis, there is no support for the establishing of consciousness.
+sn12.38:3.3 | S: When consciousness is not established and doesn’t grow, there’s no regeneration into a new state of existence in the future. | T: When consciousness is unestablished and does not come to growth, there is no production of future renewed existence.
+sn12.38:3.4 | S: When there is no regeneration into a new state of existence in the future, future rebirth, old age, and death cease, as do sorrow, lamentation, pain, sadness, and distress. | T: When there is no production of future renewed existence, future birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.38:3.5 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.38:3.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn45.71-75
+sn45.71-75:1.1 | S: At Sāvatthī. | T: (none)
+sn45.71-75:1.2 | S: “Mendicants, one thing helps give rise to the noble eightfold path. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path.
+sn45.71-75:1.3 | S: What one thing? | T: What one thing?
+sn45.71-75:1.4 | S: It’s accomplishment in ethics. …” | T: Accomplishment in virtue …
+sn45.71-75:1.5 | S: “… accomplishment in enthusiasm …” | T: Accomplishment in desire …
+sn45.71-75:1.6 | S: “… accomplishment in self-development …” | T: Accomplishment in self …
+sn45.71-75:1.7 | S: “… accomplishment in view …” | T: Accomplishment in view …
+sn45.71-75:1.8 | S: “… accomplishment in diligence …” | T: Accomplishment in diligence … Accomplishment in careful attention … complete as in §70 … He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion. It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.71-75:1.9 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn46.42
+sn46.42:1.1 | S: “Mendicants, when a Wheel-Turning Monarch appears seven treasures appear. | T: “Bhikkhus, with the manifestation of a wheel-turning monarch comes the manifestation of seven gems.
+sn46.42:1.2 | S: What seven? | T: What seven?
+sn46.42:1.3 | S: The wheel, the elephant, the horse, the jewel, the woman, the householder, and the commander. | T: There comes the manifestation of the wheel-gem, the elephant-gem, the horse-gem, the jewel-gem, the woman-gem, the steward-gem, and the commander-gem.
+sn46.42:1.4 | S: When a Wheel-Turning Monarch appears these seven treasures appear. | T: (none)
+sn46.42:2.1 | S: When a Realized One, a perfected one, a fully awakened Buddha appears the seven treasures of the awakening factors appear. | T: “With the manifestation of a Tathagata, bhikkhus, an Arahant, a Perfectly Enlightened One, comes the manifestation of the seven gems of the factors of enlightenment.
+sn46.42:2.2 | S: What seven? | T: What seven?
+sn46.42:2.3 | S: The treasures of the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: There comes the manifestation of the gem of the enlightenment factor of mindfulness … the gem of the enlightenment factor of equanimity.
+sn46.42:2.4 | S: When a Realized One, a perfected one, a fully awakened Buddha appears these seven treasures of the awakening factors appear.” | T: With the manifestation of a Tathagata, an Arahant, a Perfectly Enlightened One, comes the manifestation of these seven gems of the factors of enlightenment.”
+sn46.42:2.5 | P: Dutiyaṁ. | T: (none)
+
+## sn47.46
+sn47.46:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain bhikkhu approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn47.46:2.1 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn47.46:2.2 | S: “Well then, mendicant, you should purify the starting point of skillful qualities. | T: “In that case, bhikkhu, purify the very beginning of wholesome states.
+sn47.46:2.3 | S: What is the starting point of skillful qualities? | T: And what is the beginning of wholesome states?
+sn47.46:2.4 | S: Live restrained in the monastic code, conducting yourself well and resorting for alms in suitable places. Seeing danger in the slightest fault, keep the rules you’ve undertaken. | T: Here, bhikkhu, dwell restrained by the restraint of the Patimokkha, accomplished in good conduct and proper resort, seeing danger in the slightest faults. Having undertaken the training rules, train in them.
+sn47.46:2.5 | S: When you’ve done this, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. | T: When, bhikkhu, you dwell restrained by the restraint of the Patimokkha … seeing danger in the slightest faults, then, based upon virtue, established upon virtue, you should develop the four establishments of mindfulness.
+sn47.46:3.1 | S: What four? | T: “What four?
+sn47.46:3.2 | S: Meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhu, a bhikkhu dwells contemplating the body in the body …
+sn47.46:3.3 | S: Meditate observing an aspect of feelings … | T: feelings in feelings …
+sn47.46:3.4 | S: mind … | T: mind in mind …
+sn47.46:3.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.46:3.6 | S: When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” | T: “When, bhikkhu, based upon virtue, established upon virtue, you develop these four establishments of mindfulness in such a way, then, whether night or day comes, you may expect only growth in wholesome states, not decline.”
+sn47.46:3.7 | S: And then that mendicant approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then that bhikkhu, having delighted and rejoiced in the Blessed One’s statement, rose from his seat.…
+sn47.46:4.1 | S: Then that mendicant, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: (none)
+sn47.46:4.2 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: (none)
+sn47.46:4.3 | S: And that mendicant became one of the perfected. | T: And that bhikkhu became one of the arahants.
+sn47.46:4.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.97
+sn22.97:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.97:1.2 | S: Seated to one side, that mendicant said to the Buddha: | T: Sitting to one side, that bhikkhu said to the Blessed One:
+sn22.97:1.3 | S: “Sir, is there any form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever? | T: “Is there, venerable sir, any form that is permanent, stable, eternal, not subject to change, and that will remain the same just like eternity itself?
+sn22.97:1.4 | S: Is there any feeling … | T: Is there any feeling …
+sn22.97:1.5 | S: perception … | T: any perception …
+sn22.97:1.6 | S: choices … | T: any volitional formations …
+sn22.97:1.7 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever?” | T: any consciousness that is permanent, stable, eternal, not subject to change, and that will remain the same just like eternity itself?”
+sn22.97:1.8 | S: “Mendicant, there is no form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “Bhikkhu, there is no form …
+sn22.97:1.9 | S: There’s no feeling … | T: no feeling …
+sn22.97:1.10 | S: perception … | T: no perception …
+sn22.97:1.11 | S: choices … | T: no volitional formations …
+sn22.97:1.12 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever.” | T: no consciousness that is permanent, stable, eternal, not subject to change, and that will remain the same just like eternity itself.”
+sn22.97:2.1 | S: Then the Buddha, picking up a little bit of dirt on his fingernail, said to that mendicant: | T: Then the Blessed One took up a little bit of soil in his fingernail and said to that bhikkhu:
+sn22.97:2.2 | S: “There’s not even this much of any form that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “Bhikkhu, there is not even this much form that is permanent, stable, eternal, not subject to change, and that will remain the same just like eternity itself.
+sn22.97:2.3 | S: If there were, this living of the spiritual life for the complete ending of suffering would not be found. | T: If there was this much form that was permanent, stable, eternal, not subject to change, this living of the holy life for the complete destruction of suffering could not be discerned.
+sn22.97:2.4 | S: But since there isn’t, this living of the spiritual life for the complete ending of suffering is found. | T: But because there is not even this much form that is permanent, stable, eternal, not subject to change, this living of the holy life for the complete destruction of suffering is discerned.
+sn22.97:3.1 | S: There’s not even this much of any feeling … | T: “There is not even this much feeling …
+sn22.97:3.2 | P: Ettakā cepi, bhikkhu, vedanā abhavissa niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. | T: (none)
+sn22.97:3.3 | P: Yasmā ca kho, bhikkhu, ettakāpi vedanā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. | T: (none)
+sn22.97:4.1 | S: perception … | T: perception …
+sn22.97:4.2 | S: choices … | T: volitional formations …
+sn22.97:4.3 | P: Ettakā cepi, bhikkhu, saṅkhārā abhavissaṁsu niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. | T: (none)
+sn22.97:4.4 | P: Yasmā ca kho, bhikkhu, ettakāpi saṅkhārā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. | T: (none)
+sn22.97:5.1 | S: consciousness that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: consciousness that is permanent, stable, eternal, not subject to change, and that will remain the same just like eternity itself.
+sn22.97:5.2 | S: If there were, this living of the spiritual life for the complete ending of suffering would not be found. | T: If there was this much consciousness …
+sn22.97:5.3 | S: But since there isn’t, this living of the spiritual life for the complete ending of suffering is found. | T: But because there is not even this much consciousness that is permanent, stable, eternal, not subject to change, this living of the holy life for the complete destruction of suffering is discerned.
+sn22.97:6.1 | S: What do you think, mendicant? | T: “What do you think, bhikkhu,
+sn22.97:6.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.97:6.3 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”…
+sn22.97:6.4 | S: “Is feeling … | T: …—
+sn22.97:6.5 | S: perception … | T: (none)
+sn22.97:6.6 | S: choices … | T: (none)
+sn22.97:6.7 | S: consciousness permanent or impermanent?” | T: (none)
+sn22.97:6.8 | S: “Impermanent, sir.” … | T: (none)
+sn22.97:6.9 | S: “So you should truly see … | T: “Therefore …
+sn22.97:6.10 | S: Seeing this … | T: Seeing thus …
+sn22.97:6.11 | S: They understand: ‘… there is nothing further for this place.’” | T: He understands: ‘… there is no more for this state of being.’”
+sn22.97:6.12 | P: Pañcamaṁ. | T: (none)
+
+## sn11.4
+sn11.4:1.1 | S: At Sāvatthī. | T: At Savatthī. The Blessed One said this:
+sn11.4:1.2 | S: “Once upon a time, mendicants, a battle was fought between the gods and the titans. | T: “Once in the past, bhikkhus, the devas and the asuras were arrayed for battle.
+sn11.4:1.3 | S: Then Vepacitti, lord of titans, addressed the titans, | T: Then Vepacitti, lord of the asuras, addressed the asuras thus:
+sn11.4:1.4 | S: ‘My good fellows, if the titans defeat the gods in this battle, bind Sakka, the lord of gods, by his limbs and neck and bring him to my presence in the citadel of the titans.’ | T: ‘Dear sirs, in the impending battle between the devas and the asuras, if the asuras win and the devas are defeated, bind Sakka, lord of the devas, by his four limbs and neck and bring him to me in the city of the asuras.’
+sn11.4:1.5 | S: Meanwhile, Sakka, lord of gods, addressed the gods of the thirty-three, | T: And Sakka, lord of the devas, addressed the Tavatiṁsa devas thus:
+sn11.4:1.6 | S: ‘My good fellows, if the gods defeat the titans in this battle, bind Vepacitti by his limbs and neck and bring him to my presence in the Hall of Clear Right of the gods.’ | T: ‘Dear sirs, in the impending battle between the devas and the asuras, if the devas win and the asuras are defeated, bind Vepacitti, lord of the asuras, by his four limbs and neck and bring him to me in the Sudhamma assembly hall.’
+sn11.4:1.7 | S: In that battle the gods won and the titans lost. | T: “In that battle, bhikkhus, the devas won and the asuras were defeated.
+sn11.4:1.8 | S: So the gods of the thirty-three bound Vepacitti by his limbs and neck and brought him to Sakka’s presence in the Hall of Clear Right of the gods. | T: Then the Tavatiṁsa devas bound Vepacitti by his four limbs and neck and brought him to Sakka in the Sudhamma assembly hall.
+sn11.4:1.9 | S: And as Sakka was entering and leaving the hall, Vepacitti abused and insulted him with rude, harsh words. | T: When Sakka was entering and leaving the Sudhamma assembly hall, Vepacitti, bound by his four limbs and neck, abused and reviled him with rude, harsh words.
+sn11.4:1.10 | S: So Mātali the chariot handler addressed Sakka in verse: | T: Then, bhikkhus, Matali the charioteer addressed Sakka, lord of the devas, in verse:
+sn11.4:2.1 | S: ‘O Maghavā, O Sakka, | T: “‘When face to face with Vepacitti Is it, Maghava,
+sn11.4:2.2 | S: is it from fear or from weakness | T: from fear or weakness
+sn11.4:2.3 | S: that you endure such harsh words | T: That you endure him so patiently, Listening to his harsh words?’
+sn11.4:2.4 | S: in the presence of Vepacitti?’ | T: (none)
+sn11.4:3.1 | S: ‘It’s not out of fear or weakness | T: Sakka: “‘It is neither through fear nor weakness
+sn11.4:3.2 | S: that I’m patient with Vepacitti. | T: That I am patient with Vepacitti.
+sn11.4:3.3 | S: For how can a sensible person like me | T: How can a wise person like me
+sn11.4:3.4 | S: get in a fight with a fool?’ | T: Engage in combat with a fool?’
+sn11.4:4.1 | S: ‘Fools would vent even more | T: Matali: “‘Fools would vent their anger even more
+sn11.4:4.2 | S: if there’s no one to put a stop to them. | T: If no one would keep them in check.
+sn11.4:4.3 | S: So an attentive one should stop | T: Hence with drastic punishment The wise man should restrain the fool.’
+sn11.4:4.4 | S: a fool with forceful punishment.’ | T: (none)
+sn11.4:5.1 | S: ‘I think that this is the only way | T: Sakka: “‘I myself think this alone
+sn11.4:5.2 | S: to put a stop to a fool, | T: Is the way to check the fool:
+sn11.4:5.3 | S: when you know that the other is upset, | T: When one knows one’s foe is angry
+sn11.4:5.4 | S: be mindful and stay calm.’ | T: One mindfully maintains one’s peace.’
+sn11.4:6.1 | S: ‘In this mere endurance, Vāsava, | T: Matali: “‘I see this fault, O Vasava, In practising patient endurance:
+sn11.4:6.2 | S: I see a flaw. | T: (none)
+sn11.4:6.3 | S: When a fool thinks, | T: When the fool thinks of you thus,
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn11.4:6.4 | S: “He endures me out of fear,” | T: “He endures me out of fear,”
+sn11.4:6.5 | S: the simpleton will go after you even harder, | T: The dolt will chase you even more
+sn11.4:6.6 | S: like a cow chasing someone who runs away.’ | T: As a bull does one who flees.’
+sn11.4:7.1 | S: ‘Let him think this if he wishes, or not— | T: Sakka: “‘Let it be whether or not he thinks,
+sn11.4:7.2 | S: “He endures me out of fear.” | T: “He endures me out of fear,”
+sn11.4:7.3 | S: For the highest goal, one’s own, | T: Of goals that culminate in one’s own good
+sn11.4:7.4 | S: naught better than patience is found. | T: None is found better than patience.
+sn11.4:8.1 | S: When a strong person | T: “‘When a person endowed with strength
+sn11.4:8.2 | S: endures a weakling, | T: Patiently endures a weakling,
+sn11.4:8.3 | S: they call that the ultimate patience, | T: They call that the supreme patience;
+sn11.4:8.4 | S: for a weakling must always be patient. | T: The weakling must be patient always.
+sn11.4:9.1 | S: The strength of folly | T: “‘They call that strength no strength at all— The strength that is the strength of folly—
+sn11.4:9.2 | S: is really just weakness, they say. | T: (none)
+sn11.4:9.3 | S: But no one can challenge a person | T: But no one can reproach a person
+sn11.4:9.4 | S: who’s strong, guarded by the teaching. | T: Who is strong because guarded by Dhamma.
+sn11.4:10.1 | S: When you get angry at an angry person | T: “‘One who repays an angry man with anger
+sn11.4:10.2 | S: you just make things worse for yourself. | T: Thereby makes things worse for himself.
+sn11.4:10.3 | S: When you don’t get angry at an angry person | T: Not repaying an angry man with anger,
+sn11.4:10.4 | S: you win a battle hard to win. | T: One wins a battle hard to win.
+sn11.4:11.1 | S: When you know that the other is angry, | T: “‘He practises for the welfare of both, His own and the other’s, When, knowing that his foe is angry,
+sn11.4:11.2 | S: you act for the good of both | T: (none)
+sn11.4:11.3 | S: yourself and the other | T: (none)
+sn11.4:11.4 | S: if you’re mindful and stay calm. | T: He mindfully maintains his peace.
+sn11.4:12.1 | S: People inexpert in the teaching | T: “‘When he achieves the cure of both— His own and the other’s—
+sn11.4:12.2 | S: consider one who heals both | T: The people who consider him a fool
+sn11.4:12.3 | S: oneself and the other | T: (none)
+sn11.4:12.4 | S: to be a fool.’ | T: Are unskilled in the Dhamma.’
+sn11.4:13.1 | S: Since, mendicants, even that Sakka, lord of gods—while living off of the fruit of his good deeds, and ruling as sovereign lord over these gods of the thirty-three—will speak in praise of patience and gentleness, | T: “So, bhikkhus, if Sakka, lord of the devas, subsisting on the fruit of his own merit, exercising supreme sovereignty and rulership over the Tavatiṁsa devas, will be one who speaks in praise of patience and gentleness,
+sn11.4:13.2 | S: you can excel at this, for you who have gone forth in such a well explained teaching and training can develop patience and gentleness.” | T: then how much more would it be fitting here for you, who have gone forth in such a well-expounded Dhamma and Discipline, to be patient and gentle.”
+
+
+codex
+I’ve read the whole file. I’m checking the remaining candidates against the exceptions for shortened passages and sentences spanning several lines.
+exec
+/bin/bash -lc "sed -n '193,247p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.37:1.1 | S: “Mendicants, there are these eight gifts of a true person. | T: “Bhikkhus, there are these eight gifts of a good person.
+an8.37:1.2 | S: What eight? | T: What eight?
+an8.37:1.3 | S: Their gift is pure, good quality, timely, appropriate, intelligent, and regular. While giving their heart is confident, and afterwards they’re uplifted. | T: (1) He gives what is pure; (2) he gives what is excellent; (3) he gives a timely gift; (4) he gives what is allowable; (5) he gives after investigation; (6) he gives often; (7) while giving he settles his mind in confidence; and (8) having given, he is elated.
+an8.37:1.4 | S: These are the eight gifts of a true person. | T: These are the eight gifts of a good person.”
+an8.37:2.1 | S: He gives pure, good quality, and timely gifts | T: He gives what is pure and excellent,
+an8.37:2.2 | S: of appropriate food and drinks | T: allowable drinks and food at the proper time;
+an8.37:2.3 | S: regularly to spiritual practitioners | T: (none)
+an8.37:2.4 | S: who are fertile fields of merit. | T: he gives gifts often to fertile fields of merit, to those who lead the spiritual life.
+an8.37:3.1 | S: They never regret | T: He does not feel regret,
+an8.37:3.2 | S: giving away many things of the flesh. | T: having given away many material things.
+an8.37:3.3 | S: Discerning people praise | T: Those with deep insight praise
+an8.37:3.4 | S: giving such gifts. | T: the gifts given in this way.
+an8.37:4.1 | S: An intelligent person sacrifices like this, | T: Having thus practiced charity
+an8.37:4.2 | S: faithful, with a mind of letting go. | T: with a mind freely generous, one intelligent and wise, rich in faith,
+an8.37:4.3 | S: Such an astute person is reborn | T: is reborn in a pleasant, unafflicted world.
+an8.37:4.4 | S: in a happy, pleasing world.” | T: (none)
+an8.37:4.5 | P: Sattamaṁ. | T: (none)
+
+## sn1.18
+sn1.18:1.1 | S: “Can a person constrained by conscience | T: “Is there a person somewhere in the world Who is restrained by a sense of shame,
+sn1.18:1.2 | S: be found in the world, | T: (none)
+sn1.18:1.3 | S: who is cognizant of blame, | T: One who draws back from blame
+sn1.18:1.4 | S: like a fine horse of the whip?” | T: As a good horse does from the whip?”
+sn1.18:2.1 | S: “Few are those constrained by conscience, | T: “Few are those restrained by a sense of shame
+sn1.18:2.2 | S: who live always mindful. | T: Who fare always mindful;
+sn1.18:2.3 | S: Having reached the end of suffering, | T: Few, having reached the end of suffering,
+sn1.18:2.4 | S: smoothly they walk in the rough.” | T: Fare evenly amidst the uneven.”
+
+## sn1.24
+sn1.24:1.1 | S: “Whatever you’ve shielded the mind from | T: “From whatever one reins in the mind,
+sn1.24:1.2 | S: can’t cause you suffering. | T: From that no suffering comes to one.
+sn1.24:1.3 | S: So you should shield the mind from everything, | T: Should one rein in the mind from everything,
+sn1.24:1.4 | S: then you’re freed from all suffering.” | T: One is freed from all suffering.”
+sn1.24:2.1 | S: “You need not shield the mind from everything, | T: “One need not rein in the mind from everything
+sn1.24:2.2 | S: nor has the mind gained self-control. | T: When the mind has come under control.
+sn1.24:2.3 | S: The mind need only be shielded | T: (none)
+sn1.24:2.4 | S: from where the bad things come.” | T: From whatever it is that evil comes, From this one should rein in the mind.”
+
+## sn12.38
+sn12.38:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.38:1.2 | S: “Mendicants, what you intend or plan, and what you have underlying tendencies for become a support for the continuation of consciousness. | T: “Bhikkhus, what one intends, and what one plans, and whatever one has a tendency towards: this becomes a basis for the maintenance of consciousness.
+sn12.38:1.3 | S: When this support exists, consciousness becomes established. | T: When there is a basis there is a support for the establishing of consciousness.
+sn12.38:1.4 | S: When consciousness is established and grows, there is regeneration into a new state of existence in the future. | T: When consciousness is established and has come to growth, there is the production of future renewed existence.
+sn12.38:1.5 | S: When there is regeneration into a new state of existence in the future, future rebirth, old age, and death come to be, as do sorrow, lamentation, pain, sadness, and distress. | T: When there is the production of future renewed existence, future birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.38:1.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.38:2.1 | S: If you don’t intend or plan, but still have underlying tendencies, this becomes a support for the continuation of consciousness. | T: “If, bhikkhus, one does not intend, and one does not plan, but one still has a tendency towards something, this becomes a basis for the maintenance of consciousness.
+sn12.38:2.2 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness….
+sn12.38:2.3 | S: When consciousness is established and grows, there is regeneration into a new state of existence in the future. | T: (none)
+sn12.38:2.4 | S: When there is regeneration into a new state of existence in the future, future rebirth, old age, and death come to be, as do sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn12.38:2.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.38:3.1 | S: If you don’t intend or plan or have underlying tendencies, this doesn’t become a support for the continuation of consciousness. | T: “But, bhikkhus, when one does not intend, and one does not plan, and one does not have a tendency towards anything, no basis exists for the maintenance of consciousness.
+sn12.38:3.2 | S: With no support, consciousness is not established. | T: When there is no basis, there is no support for the establishing of consciousness.
+sn12.38:3.3 | S: When consciousness is not established and doesn’t grow, there’s no regeneration into a new state of existence in the future. | T: When consciousness is unestablished and does not come to growth, there is no production of future renewed existence.
+sn12.38:3.4 | S: When there is no regeneration into a new state of existence in the future, future rebirth, old age, and death cease, as do sorrow, lamentation, pain, sadness, and distress. | T: When there is no production of future renewed existence, future birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.38:3.5 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+
+exec
+/bin/bash -lc "sed -n '1,27p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn44.4
+sn44.4:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. … | T: (none)
+sn44.4:1.2 | S: (The same down as far as:) | T: As above down to:
+sn44.4:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: “What now, friend, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.4:1.4 | S: “Reverend, not truly knowing and seeing form, its origin, its cessation, and the practice that leads to its cessation, one thinks ‘a realized one still exists after death’ or | T: “Friend, it is one who does not know and see form as it really is, who does not know and see its origin, its cessation, and the way leading to its cessation, that thinks:
+sn44.4:1.5 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death,’ or ‘The Tathagata does not exist after death,’ or
+sn44.4:1.6 | S: ‘a realized one both still exists and no longer exists after death’ or | T: ‘The Tathagata both exists and does not exist after death,’ or
+sn44.4:1.7 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:1.8 | S: Not truly knowing or seeing feeling … | T: It is one who does not know and see feeling as it really is …
+sn44.4:1.9 | S: perception … | T: who does not know and see perception as it really is …
+sn44.4:1.10 | S: choices … | T: who does not know and see volitional formations as they really are …
+sn44.4:1.11 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation, one thinks ‘a realized one still exists after death’ or | T: who does not know and see consciousness as it really is, who does not know and see its origin, its cessation, and the way leading to its cessation, that thinks:
+sn44.4:1.12 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death’ … … or
+sn44.4:1.13 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.4:1.14 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:2.1 | S: Truly knowing and seeing form … | T: “But, friend, one who knows and sees form …
+sn44.4:2.2 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. | T: (none)
+sn44.4:2.3 | S: feeling … | T: feeling …
+sn44.4:2.4 | S: perception … | T: perception …
+sn44.4:2.5 | S: choices … | T: volitional formations …
+sn44.4:2.6 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation, one doesn’t think ‘a realized one still exists after death’ or | T: consciousness as it really is, who knows and sees its origin, its cessation, and the way leading to its cessation, does not think:
+sn44.4:2.7 | S: ‘a realized one no longer exists after death’ or | T: ‘The Tathagata exists after death’ … or
+sn44.4:2.8 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.4:2.9 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.4:2.10 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.4:2.11 | P: Catutthaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-021.findings.tmp <<'EOF'
+sn44.4:1.5 starts: ‘The Tathagata does not exist after death,’ or
+sn44.4:1.12 none
+sn44.4:2.7 none
+an8.37:2.3 starts: he gives gifts often to fertile fields
+an8.37:2.4 none
+sn1.24:2.3 starts: From whatever it is that evil comes,
+sn1.24:2.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 7 lines.
+tokens used
+30,226
+Reported 7 lines.

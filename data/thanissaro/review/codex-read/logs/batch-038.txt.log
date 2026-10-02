@@ -1,0 +1,483 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd96-8cfd-7fe0-bc0f-10f6749cc3e3
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an6.29
+an6.29:1.1 | S: Then the Buddha said to Udāyī, | T: Then the Blessed One addressed Ven. Udāyin,
+an6.29:1.2 | S: “Udāyī, how many topics for recollection are there?” | T: “Udāyin, how many bases for recollection are there?”
+an6.29:1.3 | S: When he said this, Udāyī kept silent. | T: When this was said, Ven. Udāyin was silent.
+an6.29:1.4 | S: And a second time … | T: A second time…
+an6.29:1.5 | P: “kati nu kho, udāyi, anussatiṭṭhānānī”ti? | T: (none)
+an6.29:1.6 | P: Dutiyampi kho āyasmā udāyī tuṇhī ahosi. | T: (none)
+an6.29:1.7 | S: and a third time, the Buddha said to him, | T: A third time, the Blessed One addressed Ven. Udāyin,
+an6.29:1.8 | S: “Udāyī, how many topics for recollection are there?” | T: “Udāyin, how many bases for recollection are there?”
+an6.29:1.9 | S: And a second time and a third time Udāyī kept silent. | T: When this was said, Ven. Udāyin was silent a third time.
+an6.29:2.1 | S: Then Venerable Ānanda said to Venerable Udāyī, | T: Then Ven. Ānanda said to Ven. Udāyin,
+an6.29:2.2 | S: “Reverend Udāyī, the Teacher is addressing you.” | T: “Friend Udāyin, the Blessed One addressed you.”
+an6.29:2.3 | S: “Reverend Ānanda, I hear the Buddha. | T: “I heard him, friend Ānanda.” Then to the Blessed One:
+an6.29:2.4 | S: It’s when a mendicant recollects many kinds of past lives. That is: one, two, three, four, five, ten, twenty, thirty, forty, fifty, a hundred, a thousand, a hundred thousand rebirths; many eons of the world contracting, many eons of the world expanding, many eons of the world contracting and expanding. They remember: ‘There, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn somewhere else. There, too, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn here.’ And so they recollect their many kinds of past lives, with features and details. | T: “Lord, there is the case where a monk recollects his many past lives, i.e., one birth, two…: ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he recollects his many past lives in their modes & details.
+an6.29:2.5 | S: This is a topic for recollection.” | T: “This, lord, is a basis for recollection.”
+an6.29:3.1 | S: Then the Buddha said to Venerable Ānanda: | T: Then the Blessed One addressed Ven. Ānanda,
+an6.29:3.2 | S: “Ānanda, I know that | T: “I knew, Ānanda,
+an6.29:3.3 | S: this futile man Udāyī is not committed to the higher mind. | T: that this worthless man doesn’t dwell devoted to the heightened mind.
+an6.29:3.4 | S: Ānanda, how many topics for recollection are there?” | T: “So, Ānanda, how many bases for recollection are there?”
+an6.29:4.1 | S: “Sir, there are five topics for recollection. | T: “There are five bases for recollection, lord.
+an6.29:4.2 | S: What five? | T: Which five?
+an6.29:4.3 | S: Firstly, a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … second absorption … third absorption. | T: [1] “There is the case where a monk, quite secluded from sensuality, secluded from unskillful qualities, enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation. “With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance. “With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an6.29:4.4 | S: When this topic of recollection is developed and cultivated in this way it leads to blissful meditation in this very life. | T: “This basis for recollection, lord, thus developed, thus pursued, leads to a pleasant abiding in the here & now.
+an6.29:5.1 | S: Furthermore, a mendicant focuses on the perception of light, focusing on the perception of day regardless of whether it’s night or day. | T: [2] “And further, the monk attends to the perception of light, determines on the perception of day, so that day is like night, night is like day.
+an6.29:5.2 | S: And so, with an open and unenveloped heart, they develop a mind that’s full of radiance. | T: By means of an awareness thus open & unhampered, he develops a brightened mind.
+an6.29:5.3 | S: When this topic of recollection is developed and cultivated in this way it leads to knowledge and vision. | T: “This basis for recollection, lord, thus developed, thus pursued, leads to the gaining of knowledge & vision.
+an6.29:6.1 | S: Furthermore, a mendicant examines their own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. | T: [3] “And further, the monk reflects on this very body from the soles of the feet on up, from the crown of the head on down, surrounded by skin and full of various kinds of unclean things:
+an6.29:6.2 | S: ‘In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ | T: ‘In this body there are head hairs, body hairs, nails, teeth, skin, flesh, tendons, bones, bone marrow, kidneys, heart, liver, pleura, spleen, lungs, large intestines, small intestines, gorge, feces, bile, phlegm, pus, blood, sweat, fat, tears, skin-oil, saliva, mucus, fluid in the joints, urine.’
+an6.29:6.3 | S: When this topic of recollection is developed and cultivated in this way it leads to giving up sensual desire. | T: “This basis for recollection, lord, thus developed, thus pursued, leads to the abandoning of sensual passion.
+an6.29:7.1 | S: Furthermore, suppose a mendicant were to see a corpse thrown in a charnel ground. And it had been dead for one, two, or three days, bloated, livid, and festering. | T: [4] “And further, as if he were to see a corpse cast away in a charnel ground—one day, two days, three days dead—bloated, livid, & festering,
+an6.29:7.2 | S: They’d compare it with their own body: | T: the monk applies it to this very body,
+an6.29:7.3 | S: ‘This body is also of that same nature, that same kind, and cannot go beyond that.’ | T: ‘This body, too: Such is its nature, such is its future, such its unavoidable fate.’
+an6.29:8.1 | S: Or suppose they were to see a corpse thrown in a charnel ground being devoured by crows, hawks, vultures, hounds, jackals, and many kinds of little creatures. | T: “Or, as if he were to see a corpse cast away in a charnel ground, being chewed by crows, being chewed by vultures, being chewed by hawks, being chewed by dogs, being chewed by hyenas, being chewed by various other creatures…
+an6.29:8.2 | S: They’d compare it with their own body: | T: (none)
+an6.29:8.3 | S: ‘This body is also of that same nature, that same kind, and cannot go beyond that.’ | T: (none)
+an6.29:9.1 | S: Furthermore, suppose they were to see a corpse thrown in a charnel ground, a skeleton with flesh and blood, held together by sinews … | T: a skeleton smeared with flesh & blood, connected with tendons…
+an6.29:9.2 | S: A skeleton without flesh but smeared with blood, and held together by sinews … | T: a fleshless skeleton smeared with blood, connected with tendons…
+an6.29:9.3 | S: A skeleton rid of flesh and blood, held together by sinews … | T: a skeleton without flesh or blood, connected with tendons…
+an6.29:9.4 | S: Bones rid of sinews scattered in every direction. Here a hand-bone, there a foot-bone, here a shin-bone, there a thigh-bone, here a hip-bone, there a rib-bone, here a back-bone, there an arm-bone, here a neck-bone, there a jaw-bone, here a tooth, there the skull … White bones, the color of shells … Decrepit bones, heaped in a pile … Bones rotted and crumbled to powder. | T: bones detached from their tendons, scattered in all directions—here a hand bone, there a foot bone, here a shin bone, there a thigh bone, here a hip bone, there a back bone, here a rib, there a chest bone, here a shoulder bone, there a neck bone, here a jaw bone, there a tooth, here a skull… the bones whitened, somewhat like the color of shells… the bones piled up, more than a year old… the bones decomposed into a powder:
+an6.29:9.5 | S: They’d compare it with their own body: | T: He applies it to this very body,
+an6.29:9.6 | S: ‘This body is also of that same nature, that same kind, and cannot go beyond that.’ | T: ‘This body, too: Such is its nature, such is its future, such its unavoidable fate.’
+an6.29:9.7 | S: When this topic of recollection is developed and cultivated in this way it leads to uprooting the conceit ‘I am’. | T: “This basis for recollection, lord, thus developed, thus pursued, leads to the uprooting of the conceit, ‘I am.’
+an6.29:10.1 | S: Furthermore, giving up pleasure and pain, and ending former happiness and sadness, a mendicant enters and remains in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: [5] “And further, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—the monk enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an6.29:10.2 | S: When this topic of recollection is developed and cultivated in this way it leads to the penetration of many elements. | T: “This basis for recollection, lord, thus developed, thus pursued, leads to the penetration of many properties.
+an6.29:10.3 | S: These are the five topics for recollection.” | T: “These, lord, are the five bases for recollection.”
+an6.29:11.1 | S: “Good, good, Ānanda. | T: “Excellent, Ānanda! Excellent!
+an6.29:11.2 | S: Well then, Ānanda, you should also remember this sixth topic for recollection. | T: In that case, Ānanda, remember this sixth basis for recollection:
+an6.29:11.3 | S: In this case, a mendicant goes out mindfully, returns mindfully, stands mindfully, sits mindfully, lies down mindfully, and focuses on work mindfully. | T: There is the case where a monk is always mindful as he goes forward, always mindful as he goes back, always mindful as he stands, always mindful as he sits, always mindful as he lies down to sleep, always mindful as he determines on an action.
+an6.29:11.4 | S: When this topic of recollection is developed and cultivated in this way it leads to mindfulness and situational awareness.” | T: “This basis for recollection, Ānanda, thus developed, thus pursued, leads to mindfulness & alertness.”
+an6.29:11.5 | P: Navamaṁ. | T: (none)
+
+## an6.49
+an6.49:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an6.49:1.2 | S: Now at that time Venerable Khema and Venerable Sumana were staying near Sāvatthī in the Dark Forest. | T: And at that time Ven. Khema and Ven. Sumana were staying near Sāvatthī in the Grove of the Blind.
+an6.49:1.3 | S: Then they went up to the Buddha, bowed, and sat down to one side. Venerable Khema said to the Buddha: | T: Then Ven. Khema and Ven. Sumana went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there, Ven. Khema said to the Blessed One,
+an6.49:2.1 | S: “Sir, a mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—does not think: | T: “When a monk is an arahant, with his effluents ended—one who has reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and is released through right gnosis—the thought doesn’t occur to him that
+an6.49:2.2 | S: ‘There is someone better than me, or equal to me, or worse than me.’” | T: ‘There is someone better than me,’ or ‘There is someone equal to me,’ or ‘There is someone worse than me.’”
+an6.49:2.3 | S: That is what Khema said, | T: That is what Ven. Khema said,
+an6.49:2.4 | S: and the Teacher concurred. | T: and the Teacher approved.
+an6.49:2.5 | S: Then Khema, knowing that the Teacher concurred, got up from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Sensing that “The Teacher approves of me,” Ven. Khema got up from his seat, bowed down to the Blessed One, circled him—keeping him on his right—and left.
+an6.49:3.1 | S: And then, not long after Khema had left, Sumana said to the Buddha: | T: Then Ven. Sumana, not long after Ven. Khema had left, said to the Blessed One,
+an6.49:3.2 | S: “Sir, a mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—does not think: | T: “When a monk is an arahant, with his effluents ended—one who has reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and is released through right gnosis—the thought doesn’t occur to him that
+an6.49:3.3 | S: ‘There is no one better than me, or equal to me, or worse than me.’” | T: ‘There is no one better than me,’ or ‘There is no one equal to me,’ or ‘There is no one worse than me.’”
+an6.49:3.4 | S: That is what Sumana said, | T: That is what Ven. Sumana said,
+an6.49:3.5 | S: and the Teacher concurred. | T: and the Teacher approved.
+an6.49:3.6 | S: Then Sumana, knowing that the Teacher concurred, got up from his seat, bowed, and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Sensing that “The Teacher approves of me,” Ven. Sumana got up from his seat, bowed down to the Blessed One, circled him—keeping him on his right—and left.
+an6.49:4.1 | S: Then, not long after Khema and Sumana had left, the Buddha addressed the mendicants: | T: Then the Blessed One, not long after Ven. Khema & Ven. Sumana had left, said to the monks,
+an6.49:4.2 | S: “Mendicants, this is how gentlemen declare enlightenment. | T: “Monks, this is how clansmen declare gnosis.
+an6.49:4.3 | S: The goal is spoken of, but the self is not involved. | T: The meaning (of gnosis) is stated, but without mention of self.
+an6.49:4.4 | S: But it seems that there are some futile men here who declare enlightenment as a joke. | T: Yet there are some worthless people who declare gnosis as if in jest.
+an6.49:4.5 | S: Later they will fall into distress. | T: They will fall into trouble afterwards.
+an6.49:5.1 | S: They don’t represent themselves | T: “Not as higher, lower, nor equal do they refer to themselves.
+an6.49:5.2 | S: as being among superiors, inferiors, or equals. | T: (none)
+an6.49:5.3 | S: Rebirth is ended, <j>the spiritual journey has been completed. | T: With birth ended, the holy life fulfilled
+an6.49:5.4 | S: They live freed from fetters.” | T: they go about totally freed from fetters.”
+an6.49:5.5 | P: Sattamaṁ. | T: (none)
+
+## sn12.19
+sn12.19:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.19:1.2 | S: “Mendicants, for a fool shrouded by ignorance and coupled to craving, this body has been produced. | T: “When a fool is obstructed by ignorance and conjoined with craving, this body thus results.
+sn12.19:1.3 | S: So there is this duality: this body and external name and form. Contact depends on this duality. When contacted through one or other of the six sense fields, the fool experiences pleasure and pain. | T: Now there is both this body and external name-&-form. Here, in dependence on this duality, there is contact at the six senses. Touched by these, or one or another of them, the fool is sensitive to pleasure & pain.
+sn12.19:2.1 | S: For an astute person shrouded by ignorance and coupled to craving, this body has been produced. | T: “When a wise person is obstructed by ignorance and conjoined with craving, this body thus results.
+sn12.19:2.2 | S: So there is this duality: this body and external name and form. Contact depends on this duality. When contacted through one or other of the six sense fields, the astute person experiences pleasure and pain. | T: Now there is both this body and external name-&-form. Here, in dependence on this duality, there is contact at the six senses. Touched by these, or one or another of them, the wise person is sensitive to pleasure & pain.
+sn12.19:3.1 | S: What, then, is the difference between the foolish and the astute?” | T: “So what difference, what distinction, what distinguishing factor is there between the wise person & the fool?”
+sn12.19:3.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn12.19:4.1 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “In that case, monks, listen & pay close attention. I will speak.”
+sn12.19:4.2 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded.
+sn12.19:4.3 | S: The Buddha said this: | T: The Blessed One said,
+sn12.19:5.1 | S: “For a fool shrouded by ignorance and coupled to craving, this body has been produced. But the fool has not given up that ignorance or finished that craving. | T: “The ignorance with which the fool is obstructed, the craving with which he is conjoined, through which this body results: That ignorance has not been abandoned by the fool; that craving has not been destroyed.
+sn12.19:5.2 | S: Why is that? | T: Why is that?
+sn12.19:5.3 | S: The fool has not completed the spiritual journey for the complete ending of suffering. | T: The fool has not practiced the holy life for the right ending of stress.
+sn12.19:5.4 | S: Therefore, when their body breaks up, the fool passes on to another body. | T: Therefore, at the break-up of the body, he is headed for a (new) body.
+sn12.19:5.5 | S: When they have passed on to another body, they’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Headed for a body, he is not entirely freed from birth, aging, death, sorrow, lamentation, pain, distress, & despair.
+sn12.19:5.6 | S: They’re not freed from suffering, I say. | T: I tell you, he is not entirely freed from stress & suffering.
+sn12.19:6.1 | S: For an astute person shrouded by ignorance and coupled to craving, this body has been produced. But the astute person has given up that ignorance and finished that craving. | T: “The ignorance with which the wise person is obstructed, the craving with which he is conjoined, through which this body results: That ignorance has been abandoned by the wise person; that craving has been destroyed.
+sn12.19:6.2 | S: Why is that? | T: Why is that?
+sn12.19:6.3 | S: The astute person has completed the spiritual journey for the complete ending of suffering. | T: The wise person has practiced the holy life for the right ending of stress.
+sn12.19:6.4 | S: Therefore, when their body breaks up, the astute person does not pass on to another body. | T: Therefore, at the break-up of the body, he is not headed for a (new) body.
+sn12.19:6.5 | S: Not passing on to another body, they’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Not headed for a body, he is entirely freed from birth, aging, death, sorrow, lamentation, pain, distress, & despair.
+sn12.19:6.6 | S: They’re freed from suffering, I say. | T: He is, I tell you, entirely freed from stress & suffering.”
+sn12.19:6.7 | S: This is the difference here between the foolish and the astute, that is, leading the spiritual life.” | T: (none)
+sn12.19:6.8 | P: Navamaṁ. | T: (none)
+
+## sn7.6
+sn7.6:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn7.6:1.2 | S: Then the brahmin Bhāradvāja of the Matted Hair went up to the Buddha, and exchanged greetings with him. | T: Then the brahman Jaṭā [“Tangle”] Bhāradvāja went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn7.6:1.3 | S: When the greetings and polite conversation were over, he sat down to one side, | T: After this exchange of friendly greetings & courtesies, he sat to one side.
+sn7.6:1.4 | S: and addressed the Buddha in verse: | T: As he was sitting there he addressed the Blessed One with a verse:
+sn7.6:2.1 | S: “Tangled within, tangled without: | T: “A tangle within, a tangle without,
+sn7.6:2.2 | S: these people are tangled in tangles. | T: people are entangled in a tangle.
+sn7.6:2.3 | S: I ask you this, Gotama: | T: Gotama, I ask you this:
+sn7.6:2.4 | S: who can untangle this tangle?” | T: Who can untangle this tangle?”
+sn7.6:3.1 | S: “A wise person grounded in ethics, | T: The Buddha: “A man established in virtue, discerning,
+sn7.6:3.2 | S: developing the mind and wisdom, | T: developing discernment & mind,
+sn7.6:3.3 | S: a keen and alert mendicant— | T: a monk ardent, astute:
+sn7.6:3.4 | S: they can untangle this tangle. | T: He can untangle this tangle.
+sn7.6:4.1 | S: Those in whom greed, hate, and ignorance | T: Those whose passion, aversion, & ignorance
+sn7.6:4.2 | S: have faded away; | T: have faded away,
+sn7.6:4.3 | S: the perfected ones with defilements ended— | T: arahants, their effluents ended:
+sn7.6:4.4 | S: they have untangled the tangle. | T: For them the tangle’s untangled.
+sn7.6:5.1 | S: Where name and form | T: Where name-&-form,
+sn7.6:5.2 | S: cease with no residue left behind; | T: (none)
+sn7.6:5.3 | S: as well as impingement and perception of form: | T: along with perception of impingement & form, totally stop without trace:
+sn7.6:5.4 | S: it’s here this tangle is cut.” | T: That’s where the tangle is cut.”
+sn7.6:6.1 | S: When he had spoken, Bhāradvāja of the Matted Hair said to the Buddha, | T: When this was said, the brahman Jaṭā Bhāradvāja said to the Blessed One,
+sn7.6:6.2 | S: “Excellent, worthy Gotama! …” … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks. Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance.” Then the brahman Jaṭā Bhāradvāja received the Going-forth in the Blessed One’s presence, he gained the Acceptance. And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now. He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+sn7.6:6.3 | S: And Venerable Bhāradvāja became one of the perfected. | T: And so Ven. Bhāradvāja became another one of the arahants.
+
+## sn22.80
+sn22.80:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was staying among the Sakyans at Kapilavatthu in the Banyan Park.
+sn22.80:1.2 | S: Then the Buddha, having dismissed the mendicant Saṅgha for some reason, robed up in the morning and, taking his bowl and robe, entered Kapilavatthu for alms. | T: Then, after having dismissed the Saṅgha of monks over a particular incident, he early in the morning adjusted his lower robes and, taking his bowl & outer robe, went into Kapilavatthu for alms.
+sn22.80:1.3 | S: He wandered for alms in Kapilavatthu. After the meal, on his return from almsround, he went to the Great Wood for the day’s meditation, | T: After having gone for alms in Kapilavatthu, after his meal, returning from his almsround, he went to the Great Forest for the day’s abiding.
+sn22.80:1.4 | S: plunged deep into it, and sat at the root of a young wood-apple tree to meditate. | T: Plunging into the Great Forest, he sat down at the root of a veḷuva sapling as his day’s abiding.
+sn22.80:2.1 | S: Then as he was in private retreat this thought came to his mind, | T: Then, as he was alone in seclusion, this line of thought arose in his awareness:
+sn22.80:2.2 | S: “I have purged the mendicant Saṅgha. | T: “I have turned away the Saṅgha of monks.
+sn22.80:2.3 | S: But there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: But here there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:2.4 | S: Not seeing me they may change and fall apart. | T: If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.5 | S: If a young calf doesn’t see its mother it may change and fall apart. … | T: Just as when a young calf does not see its mother, there may be alteration in it, there may be change;
+sn22.80:2.6 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ mamaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya. If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.7 | S: Or if young seedlings don’t get water they may change and fall apart. | T: Just as when young seedlings don’t get water, there may be alteration in them, there may be change;
+sn22.80:2.8 | S: In the same way, there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:2.9 | S: Not seeing me they may change and fall apart. | T: If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.10 | S: Why don’t I support the mendicant Saṅgha now as I did in the past?” | T: What if I were to aid the Saṅgha of monks as I did before?”
+sn22.80:3.1 | S: Then the divinity Sahampati knew the Buddha’s train of thought. As easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then Brahmā Sahampati—having known with his own awareness the line of thinking in the Blessed One’s awareness—just as a strong man might extend his flexed arm or flex his extended arm, disappeared from the Brahmā world and reappeared in front of the Blessed One.
+sn22.80:3.2 | S: He arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said: | T: Arranging his upper robe over one shoulder, he knelt down with his right knee on the ground, saluted the Blessed One with his hands before his heart, and said to him:
+sn22.80:3.3 | S: “That’s so true, Blessed One! That’s so true, Holy One! | T: “So it is, O Blessed One! So it is, O One Well-Gone!
+sn22.80:3.4 | S: The Buddha has purged the mendicant Saṅgha. | T: The Blessed One has turned away the Saṅgha of monks.
+sn22.80:3.5 | S: But there are mendicants who are junior, recently gone forth, newly come to this teaching and training. … | T: But here there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya. If they do not see the Blessed One, there may be alteration in them, there may be change. Just as when a young calf does not see its mother… Just as when young seedlings don’t get water… in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:3.6 | P: Tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: If they do not see the Blessed One, there may be alteration in them, there may be change.
+sn22.80:3.7 | P: Seyyathāpi nāma vacchassa taruṇassa mātaraṁ apassantassa siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.8 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: (none)
+sn22.80:3.9 | P: Seyyathāpi nāma bījānaṁ taruṇānaṁ udakaṁ alabhantānaṁ siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.10 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, tesaṁ bhagavantaṁ alabhantānaṁ dassanāya siyā aññathattaṁ siyā vipariṇāmo. | T: (none)
+sn22.80:3.11 | S: May the Buddha be happy with the mendicant Saṅgha! | T: Let the Blessed One delight in the Saṅgha of monks!
+sn22.80:3.12 | S: May the Buddha welcome the mendicant Saṅgha! | T: Let the Blessed One welcome the Saṅgha of monks!
+sn22.80:3.13 | S: May the Buddha support the mendicant Saṅgha now as he did in the past!” | T: Let the Blessed One aid the Saṅgha of monks as he did before!”
+sn22.80:4.1 | S: The Buddha consented with silence. | T: The Blessed One acquiesced with silence.
+sn22.80:4.2 | S: Then the divinity Sahampati, knowing that the Buddha had consented, bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: Then Brahmā Sahampati, sensing the Blessed One’s acquiescence, bowed down to the Blessed One and, after circumambulating him, keeping him to his right, disappeared right there.
+sn22.80:5.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the Banyan Tree Monastery, where he sat down on the seat spread out. | T: Then the Blessed One, emerging from his seclusion in the evening, went to the Banyan Park. On arrival he sat down on a seat made ready.
+sn22.80:5.2 | S: Then he used his psychic power to will that the mendicants would come to him timidly, alone or in pairs. | T: After he had sat down he worked a psychic feat such that the monks went to him contritely, in ones and twos.
+sn22.80:5.3 | S: Those mendicants approached the Buddha timidly, bowed, and sat down to one side. The Buddha said to them: | T: On arrival, they bowed down to him and sat to one side. As they were sitting there the Blessed One said to them,
+sn22.80:6.1 | S: “This is the last of lifestyles, mendicants, namely relying on alms. | T: “Monks, this is the lowliest form of livelihood, that of an almsgoer.
+sn22.80:6.2 | S: The world curses you: ‘You beggar, walking bowl in hand!’ | T: A term of abuse in the world is, ‘You go about as an almsgoer with a bowl in your hand!‘
+sn22.80:6.3 | S: Yet earnest gentlemen take it up for a good reason. | T: And yet sons of good family take up (this livelihood) with compelling reason,
+sn22.80:6.4 | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: in dependence on a compelling reason—not coerced by kings nor coerced by thieves nor from debt nor from fear nor to earn a livelihood,
+sn22.80:6.5 | S: But because they’re swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. They’re swamped by suffering, mired in suffering. | T: but (with the thought): ‘I am oppressed with birth, aging, & death, with sorrows, lamentations pains, distresses, & despairs. I am oppressed with stress, overcome with stress.
+sn22.80:6.6 | S: And they think, ‘Hopefully I can make an end to this entire mass of suffering.’ | T: Perhaps an ending of this entire mass of suffering & stress might be found!’
+sn22.80:7.1 | S: That’s how this gentleman has gone forth. | T: “And although this son of a good family has gone forth in this way,
+sn22.80:7.2 | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying mind and undisciplined faculties. | T: he is covetous, with strong passion for sensual desires, with a mind of ill will, of corrupt resolves, his mindfulness muddled, unalert, unconcentrated, his mind distracted, loose in his sense faculties.
+sn22.80:7.3 | S: Suppose there was a firebrand for lighting a funeral pyre, burning at both ends, and smeared with dung in the middle. It couldn’t be used as timber either in the village or the wilderness. | T: Just as a log from a funeral pyre, burning at both ends, smeared with excrement in the middle, fills no use as timber either in the village or in the wilderness:
+sn22.80:7.4 | S: I say that individual is just like this. They’ve missed out on the pleasures of the lay life, and haven’t fulfilled the goal of the ascetic life. | T: I speak of this person with this comparison. He has missed out on the enjoyments of the householder, and yet does not fulfill the goal of the contemplative life.
+sn22.80:8.1 | S: There are these three unskillful thoughts. | T: “Monks, there are these three types of unskillful thinking: thinking of sensuality, thinking of ill will, thinking of harm.
+sn22.80:8.2 | S: Sensual, malicious, and cruel thoughts. | T: (none)
+sn22.80:8.3 | S: And where do these three unskillful thoughts cease without remainder? | T: These three types of sensual thinking cease without remainder in one who dwells with his mind well established in the four establishing of mindfulness or who develops the themeless concentration.
+sn22.80:8.4 | S: In those who meditate with their mind firmly established in the four kinds of mindfulness meditation; or who develop signless immersion. | T: (none)
+sn22.80:8.5 | S: This is quite enough motivation to develop signless immersion. | T: This is reason enough, monks, to develop the themeless concentration.
+sn22.80:8.6 | S: When signless immersion is developed and cultivated it is very fruitful and beneficial. | T: The themeless concentration, when developed & pursued, is of great fruit, great benefit.
+sn22.80:9.1 | S: There are these two views. | T: “Monks, there are these two views:
+sn22.80:9.2 | S: Views favoring existence and views favoring nonexistence. | T: the view of becoming and the view of non-becoming.
+sn22.80:9.3 | S: A learned noble disciple reflects on this: | T: There the instructed disciple of the noble ones considers thus:
+sn22.80:9.4 | S: ‘Is there anything in the world that I could grasp without fault?’ | T: ‘Is there anything in the world to which I could cling without being blameworthy?’
+sn22.80:9.5 | S: They understand: | T: He discerns:
+sn22.80:9.6 | S: ‘There’s nothing in the world that I could grasp without fault. | T: ‘There is nothing in the world to which I could cling without being blameworthy.’
+sn22.80:9.7 | S: For in grasping I would grasp only at form, feeling, | T: He discerns: ‘In clinging, I would be clinging just to form. In clinging, I would be clinging just to feeling…
+sn22.80:9.8 | S: perception, | T: perception…
+sn22.80:9.9 | S: choices, or consciousness. | T: fabrications. In clinging, I would be clinging just to consciousness.
+sn22.80:9.10 | S: That grasping of mine would be a condition for continued existence. | T: From that clinging of mine as a requisite condition would come becoming.
+sn22.80:9.11 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition, birth.
+sn22.80:9.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging, illness, & death, sorrow, lamentation pain, distress, & despair would come into play.
+sn22.80:9.13 | S: That is how this entire mass of suffering originates.’ | T: Thus would be the origination of this entire mass of suffering & stress.’
+sn22.80:10.1 | S: What do you think, mendicants? | T: “What do you think, monks?
+sn22.80:10.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.80:10.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.80:10.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+sn22.80:10.5 | S: “Suffering, sir.” | T: “Stressful, lord.”
+sn22.80:10.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn22.80:10.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?” “No, lord.” “… Is feeling constant or inconstant?”—“Inconstant, lord.” … “… Is perception constant or inconstant?”—“Inconstant, lord.” … “… Are fabrications constant or inconstant?”—“Inconstant, lord.” … “What do you think, monks? Is consciousness constant or inconstant?” “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.” “Thus, monks, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.80:10.8 | S: “No, sir.” | T: (none)
+sn22.80:10.9 | S: “Is feeling … | T: “Any feeling whatsoever.…
+sn22.80:10.10 | S: perception … | T: “Any perception whatsoever.…
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.80:10.11 | S: choices … | T: “Any fabrications whatsoever.…
+sn22.80:10.12 | S: consciousness permanent or impermanent?” … | T: “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near:
+sn22.80:10.13 | S: “So you should truly see … | T: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.80:10.14 | S: Seeing this … | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.80:10.15 | S: They understand: ‘… there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.80:10.16 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.51
+an5.51:1.1 | S: So I have heard. | T: (none)
+an5.51:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an5.51:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+an5.51:1.4 | S: “Mendicants!” | T: “Monks!”
+an5.51:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an5.51:1.6 | S: The Buddha said this: | T: The Blessed One said:
+an5.51:2.1 | S: “Mendicants, there are these five obstacles and hindrances, parasites of the mind that weaken wisdom. | T: “These five are obstacles, hindrances that overwhelm awareness and weaken discernment.
+an5.51:2.2 | S: What five? | T: Which five?
+an5.51:2.3 | S: Sensual desire … | T: “Sensual desire is an obstacle, a hindrance that overwhelms awareness and weakens discernment.
+an5.51:2.4 | S: Ill will … | T: Ill will…
+an5.51:2.5 | S: Dullness and drowsiness … | T: Sloth & drowsiness…
+an5.51:2.6 | S: Restlessness and remorse … | T: Restlessness & anxiety…
+an5.51:2.7 | S: Doubt … | T: Uncertainty is an obstacle, a hindrance that overwhelms awareness and weakens discernment.
+an5.51:2.8 | S: These are the five obstacles and hindrances, parasites of the mind that weaken wisdom. | T: These are the five obstacles, hindrances that overwhelm awareness and weaken discernment.
+an5.51:3.1 | S: Take a mendicant who has feeble and weak wisdom, not having given up these five obstacles and hindrances, parasites of the mind that weaken wisdom. It is quite impossible that they would know what’s for their own good, the good of another, or the good of both; or that they would realize any superhuman distinction in knowledge and vision worthy of the noble ones. | T: And when a monk has not abandoned these five obstacles, hindrances that overwhelm awareness and weaken discernment, when he is without strength and weak in discernment: For him to understand what is for his own benefit, to understand what is for the benefit of others, to understand what is for the benefit of both, to realize a superior human state, a truly noble distinction in knowledge & vision—that is impossible.
+an5.51:3.2 | S: Suppose there was a mountain river that flowed swiftly, going far, carrying all before it. | T: “Suppose there were a river, flowing down from the mountains—going far, its current swift, carrying everything with it—
+an5.51:3.3 | S: But then a man would open channels on both sides, | T: and a man would open channels leading away from it on both sides,
+an5.51:3.4 | S: so the mid-river current would be dispersed, displaced, and separated. The river would no longer flow swiftly, going far, carrying all before it. | T: so that the current in the middle of the river would be dispersed, diffused, & dissipated; it wouldn’t go far, its current wouldn’t be swift, and it wouldn’t carry everything with it.
+an5.51:3.5 | S: In the same way, take a mendicant who has feeble and weak wisdom, not having given up these five obstacles and hindrances, parasites of the mind that weaken wisdom. It is not possible that they would know what’s for their own good, the good of another, or the good of both; or that they would realize any superhuman distinction in knowledge and vision worthy of the noble ones. | T: In the same way, when a monk has not abandoned these five obstacles, hindrances that overwhelm awareness and weaken discernment, when he is without strength and weak in discernment: For him to understand what is for his own benefit, to understand what is for the benefit of others, to understand what is for the benefit of both, to realize a superior human state, a truly noble distinction in knowledge & vision—that is impossible.
+an5.51:4.1 | S: Take a mendicant who has powerful wisdom, having given up these five obstacles and hindrances, parasites of the mind that weaken wisdom. It’s quite possible that they would know what’s for their own good, the good of another, or the good of both; or that they would realize any superhuman distinction in knowledge and vision worthy of the noble ones. | T: “Now, when a monk has abandoned these five obstacles, hindrances that overwhelm awareness and weaken discernment, when he is strong in discernment: For him to understand what is for his own benefit, to understand what is for the benefit of others, to understand what is for the benefit of both, to realize a superior human state, a truly noble distinction in knowledge & vision—that is possible.
+an5.51:4.2 | S: Suppose there was a mountain river that flowed swiftly, going far, carrying all before it. | T: “Suppose there were a river, flowing down from the mountains—going far, its current swift, carrying everything with it—
+an5.51:4.3 | S: But then a man would close up the channels on both sides, | T: and a man would close the channels leading away from it on both sides,
+an5.51:4.4 | S: so the mid-river current would not be dispersed, displaced, and separated. The river would keep flowing swiftly for a long way, carrying all before it. | T: so that the current in the middle of the river would be undispersed, undiffused, & undissipated; it would go far, its current swift, carrying everything with it.
+an5.51:4.5 | S: In the same way, take a mendicant who has powerful wisdom, having given up these five obstacles and hindrances, parasites of the mind that weaken wisdom. It’s quite possible that they would know what’s for their own good, the good of another, or the good of both; or that they would realize any superhuman distinction in knowledge and vision worthy of the noble ones.” | T: In the same way, when a monk has abandoned these five obstacles, hindrances that overwhelm awareness and weaken discernment, when he is strong in discernment: For him to understand what is for his own benefit, to understand what is for the benefit of others, to understand what is for the benefit of both, to realize a superior human state, a truly noble distinction in knowledge & vision—that is possible.”
+an5.51:4.6 | P: Paṭhamaṁ. | T: (none)
+
+## an8.22
+an8.22:1.1 | S: At one time the Buddha was staying in the land of the Vajjis at Elephant Village. | T: On one occasion the Blessed One was staying among the Vajjians near Hatthigāma.
+an8.22:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks:
+an8.22:1.3 | S: “Mendicants, you should remember the householder Uggata of Elephant Village as someone who has eight amazing and incredible qualities.” | T: “Monks, remember Ugga the householder of Hatthigāma as having eight amazing & astounding qualities.”
+an8.22:1.4 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+an8.22:1.5 | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said it, the One Well-gone rose from his seat & entered his dwelling.
+an8.22:2.1 | S: Then a certain mendicant robed up in the morning and, taking his bowl and robe, went to the home of the householder Uggata of Elephant Village, where he sat down on the seat spread out. | T: Then early in the morning, a certain monk—having adjusted his under robe and carrying his robes & bowl—went to the home of Ugga the householder of Hatthigāma and, on arrival, sat down on a seat laid out.
+an8.22:2.2 | S: Then Uggata of Elephant Village went up to that mendicant, bowed, and sat down to one side. The mendicant said to him: | T: Then Ugga the householder went to the monk and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the monk said to him,
+an8.22:2.3 | S: “Householder, the Buddha declared that you have eight amazing and incredible qualities. | T: “Householder, the Blessed One has declared that you are endowed with eight amazing & astounding qualities.
+an8.22:2.4 | S: What are the eight qualities that he spoke of?” | T: With which eight amazing & astounding qualities has the Blessed One declared that you are endowed?”
+an8.22:3.1 | S: “Sir, I don’t know | T: “Venerable sir, I don’t know with which eight amazing & astounding qualities the Blessed One has declared that I am endowed,
+an8.22:3.2 | S: what eight amazing and incredible qualities the Buddha was referring to. | T: (none)
+an8.22:3.3 | S: But these eight amazing and incredible qualities are found in me. | T: but there are eight amazing & astounding qualities to be found in me.
+an8.22:3.4 | S: Listen and apply your mind well, I will speak.” | T: Listen to them & pay careful attention. I will speak.”
+an8.22:3.5 | S: “Yes, householder,” replied the mendicant. | T: “As you say, householder,” the monk responded to Ugga the householder of Hatthigāma.
+an8.22:3.6 | S: Uggata of Elephant Village said this: | T: Ugga said,
+an8.22:3.7 | S: “Sir, when I first saw the Buddha off in the distance I was partying in the Dragon’s Park. | T: “Venerable sir, I was carousing in the Nāga forest when I saw the Blessed One in the distance for the first time.
+an8.22:3.8 | S: My heart was inspired as soon as I saw him, and I sobered up. | T: As soon as I saw the Blessed One, my heart felt confidence, and my liquor-intoxication left me.
+an8.22:3.9 | S: This is the first incredible and amazing quality found in me. | T: This is the first amazing & astounding quality to be found in me.
+an8.22:4.1 | S: With confident heart I paid homage to the Buddha. | T: “With a confident heart, I attended to the Blessed One.
+an8.22:4.2 | S: The Buddha taught me step by step, with | T: He gave me a graduated talk, i.e.,
+an8.22:4.3 | S: a talk on giving, ethical conduct, and heaven. He revealed the drawbacks of sensual pleasures, so sordid and corrupt, and the benefit of renunciation. | T: a talk on giving, a talk on virtue, a talk on heaven; he proclaimed the drawbacks of, degradation in, & defilement in sensuality, and the rewards of renunciation.
+an8.22:4.4 | S: And when he knew that my mind was ready, pliable, rid of hindrances, elated, and confident he revealed the special teaching of the Buddhas: | T: Then—when the Blessed One knew that I was of ready mind, malleable mind, unhindered mind, exultant mind, confident mind—he proclaimed to me the distinctive teaching of the Awakened Ones:
+an8.22:4.5 | S: suffering, its origin, its cessation, and the path. | T: stress, origination, cessation, path.
+an8.22:4.6 | S: Just as a clean cloth rid of stains would properly absorb dye, | T: Just as a white cloth with stains removed would rightly take dye,
+an8.22:4.7 | S: in that very seat the stainless, immaculate vision of the Dhamma arose in me: | T: in the same way there arose to me, in that very seat, the dustless, stainless Dhamma eye:
+an8.22:4.8 | S: ‘Everything that is liable to arise is liable to cease.’ | T: Whatever is subject to origination is all subject to cessation.
+an8.22:4.9 | S: I saw, attained, understood, and fathomed the Dhamma. I went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. Right there I went for refuge to the Buddha, his teaching, and the Saṅgha. And I undertook the five training rules with chastity as the fifth. | T: Then—having seen the Dhamma, having reached the Dhamma, known the Dhamma, gained a footing in the Dhamma, having crossed over & beyond doubt, having had no more questioning, having gained fearlessness & become independent of others with regard to the Teacher’s message, right there I went to the Buddha, the Dhamma, & the Saṅgha for refuge and undertook the training rules with celibacy as the fifth.
+an8.22:4.10 | S: This is the second incredible and amazing quality found in me. | T: This, venerable sir, is the second amazing & astounding quality to be found in me.
+an8.22:5.1 | S: I had four teenage wives. | T: “I had four young wives.
+an8.22:5.2 | S: And I went to them and said: | T: So I went to my wives and, on arrival, said to them,
+an8.22:5.3 | S: ‘Sisters, I’ve undertaken the five training rules with chastity as fifth. | T: ‘Sisters, I have undertaken the five training rules with celibacy as the fifth.
+an8.22:5.4 | S: If you wish, you may stay here, enjoy my wealth, and do good deeds. Or you can return to your own families. | T: Whoever wants to may partake of this wealth & make merit [here], or you may go to the homes of your relatives,
+an8.22:5.5 | S: Or would you prefer if I gave you to another man?’ | T: or, if you want (another) man, to whom shall I give you?’
+an8.22:5.6 | S: When I said this, my eldest wife said to me: | T: When this was said, the eldest wife said to me,
+an8.22:5.7 | S: ‘Master, please give me to the man named so-and-so.’ | T: ‘Young master, give me to the man named so-&-so.’
+an8.22:5.8 | S: Then I summoned that man. Taking my wife with my left hand and a ceremonial vase with my right, I presented her to that man with the pouring of water. | T: Having sent for that man, having taken that wife with my left hand, having taken the ceremonial vase with my right hand, I gave her to that man.
+an8.22:5.9 | S: But I can’t recall getting upset while giving away my teenage wife. | T: But even as I gave up my young wife as a gift, I don’t recall any alteration in my mind.
+an8.22:5.10 | S: This is the third incredible and amazing quality found in me. | T: This, venerable sir, is the third amazing & astounding quality to be found in me.
+an8.22:6.1 | S: And though my family has wealth, | T: “There is wealth to be found in my family,
+an8.22:6.2 | S: it’s shared without reserve with ethical people of good character. | T: but it is given unstintingly to virtuous people of admirable character.
+an8.22:6.3 | S: This is the fourth incredible and amazing quality found in me. | T: This, venerable sir, is the fourth amazing & astounding quality to be found in me.
+an8.22:7.1 | S: When I pay homage to a mendicant, | T: “Whatever monk I attend to,
+an8.22:7.2 | S: I do so carefully, not carelessly. | T: I attend to him attentively, not inattentively.
+an8.22:7.3 | S: If that venerable teaches me the Dhamma, | T: If that venerable one teaches me the Dhamma,
+an8.22:7.4 | S: I listen carefully, not carelessly. | T: I listen attentively, not inattentively.
+an8.22:7.5 | S: But if they don’t teach me the Dhamma, I teach them. | T: If he doesn’t teach me the Dhamma, I teach him the Dhamma.
+an8.22:7.6 | S: This is the fifth incredible and amazing quality found in me. | T: This, venerable sir, is the fifth amazing & astounding quality to be found in me.
+an8.22:8.1 | S: It’s not unusual for deities to come to me when the Saṅgha has been invited and announce: | T: “When I have invited the Saṅgha (for a meal), it’s not amazing for devas to come & inform me,
+an8.22:8.2 | S: ‘Householder, that mendicant is freed both ways. That one is freed by wisdom. That one is a direct witness. That one is attained to view. That one is freed by faith. That one is a follower of teachings. That one is a follower by faith. That one is ethical, of good character. That one is unethical, of bad character.’ | T: ‘That monk, householder, is released both ways. That monk is released through discernment. That monk is a bodily witness. That monk is attained to view. That monk is released through conviction. That monk is a Dhamma-follower. That monk is a conviction-follower. That monk is virtuous, of admirable character. That monk is unvirtuous, of evil character.’
+an8.22:8.3 | S: But while I’m serving the Saṅgha I don’t recall thinking: | T: Yet while I am serving the Saṅgha, I don’t recall giving rise to the thought,
+an8.22:8.4 | S: ‘Let me give this one just a little, and that one a lot.’ | T: ‘I will give this one a little’ or ‘I will give this one a lot.’
+an8.22:8.5 | S: Rather, I give impartially. | T: Instead, I give with an impartial mind.
+an8.22:8.6 | S: This is the sixth incredible and amazing quality found in me. | T: This, venerable sir, is the sixth amazing & astounding quality to be found in me.
+an8.22:9.1 | S: It’s not unusual for deities to come to me and announce: | T: “It’s not amazing for devas to come & inform me,
+an8.22:9.2 | S: ‘Householder, the Buddha’s teaching is well explained!’ | T: ‘Householder, the Blessed One’s Dhamma is well-taught.’
+an8.22:9.3 | S: When they say this I say to them: | T: When that is said, I say to those devas,
+an8.22:9.4 | S: ‘The Buddha’s teaching is well explained, regardless of whether or not you deities say so!’ | T: ‘Whether or not you devas say that, the Blessed One’s Dhamma is well-taught.’
+an8.22:9.5 | S: But I don’t recall getting too excited by the fact that | T: Still, I don’t recall any exaltation of mind because devas come to me or because I converse with devas.
+an8.22:9.6 | S: the deities come to me, and I have a conversation with them. | T: (none)
+an8.22:9.7 | S: This is the seventh incredible and amazing quality found in me. | T: This, venerable sir, is the seventh amazing & astounding quality to be found in me.
+an8.22:10.1 | S: If I pass away before the Buddha, it would be no wonder if the Buddha declares of me: | T: “And, venerable sir, if I die before the Blessed One, it won’t be amazing if the Blessed One declares of me,
+an8.22:10.2 | S: ‘The householder Uggata of Elephant Village is bound by no fetter that might return him to this world.’ | T: ‘There is no fetter, bound by which Ugga the householder of Hatthigāma will come back to this world.’
+an8.22:10.3 | S: This is the eighth incredible and amazing quality found in me. | T: This, venerable sir, is the eighth amazing & astounding quality to be found in me.
+an8.22:11.1 | S: These eight amazing and incredible qualities are found in me. | T: “These, venerable sir, are the eight amazing & astounding qualities to be found in me.
+an8.22:11.2 | S: But I don’t know | T: But I don’t know with which eight amazing & astounding qualities the Blessed One has declared I am endowed.”
+an8.22:11.3 | S: what eight amazing and incredible qualities the Buddha was referring to.” | T: (none)
+an8.22:12.1 | S: Then that mendicant, after taking almsfood in Uggata of Elephant Village’s home, rose from his seat and left. | T: Then the monk, having received almsfood at the home of Ugga the householder of Hatthigāma, got up from his seat & left.
+an8.22:12.2 | S: Then after the meal, on his return from almsround, he went to the Buddha, bowed, and sat down to one side. | T: Then, after his meal, returning from his alms round, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+an8.22:12.3 | S: He informed the Buddha of all he had discussed with the householder Uggata of Elephant Village. The Buddha said: | T: As he was sitting there, he told the Blessed One the entirety of his conversation with Ugga the householder of Hatthigāma.
+an8.22:13.1 | S: “Good, good, mendicant! | T: “Excellent, monk! Excellent!
+an8.22:13.2 | S: When I declared that the householder Uggata of Elephant Village was someone who has eight amazing and incredible qualities, I was referring to the same eight qualities that he rightly explained to you. | T: Just as Ugga has rightly declared them, these are the eight amazing & astounding qualities with which I had declared he is endowed.
+an8.22:13.3 | S: You should remember the householder Uggata of Elephant Village as someone who has these eight amazing and incredible qualities.” | T: Remember Ugga the householder of Hatthigāma as having these eight amazing & astounding qualities.”
+an8.22:13.4 | P: Dutiyaṁ. | T: (none)
+
+
+codex
+I found clear shifts in SN 22.80: the calf and seedling comparisons sit too early, and the questions about the aggregates share a line with later conclusions. I’m checking the exact starting words before writing the findings.
+exec
+/bin/bash -lc "sed -n '165,215p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.80:6.4 | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: in dependence on a compelling reason—not coerced by kings nor coerced by thieves nor from debt nor from fear nor to earn a livelihood,
+sn22.80:6.5 | S: But because they’re swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. They’re swamped by suffering, mired in suffering. | T: but (with the thought): ‘I am oppressed with birth, aging, & death, with sorrows, lamentations pains, distresses, & despairs. I am oppressed with stress, overcome with stress.
+sn22.80:6.6 | S: And they think, ‘Hopefully I can make an end to this entire mass of suffering.’ | T: Perhaps an ending of this entire mass of suffering & stress might be found!’
+sn22.80:7.1 | S: That’s how this gentleman has gone forth. | T: “And although this son of a good family has gone forth in this way,
+sn22.80:7.2 | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying mind and undisciplined faculties. | T: he is covetous, with strong passion for sensual desires, with a mind of ill will, of corrupt resolves, his mindfulness muddled, unalert, unconcentrated, his mind distracted, loose in his sense faculties.
+sn22.80:7.3 | S: Suppose there was a firebrand for lighting a funeral pyre, burning at both ends, and smeared with dung in the middle. It couldn’t be used as timber either in the village or the wilderness. | T: Just as a log from a funeral pyre, burning at both ends, smeared with excrement in the middle, fills no use as timber either in the village or in the wilderness:
+sn22.80:7.4 | S: I say that individual is just like this. They’ve missed out on the pleasures of the lay life, and haven’t fulfilled the goal of the ascetic life. | T: I speak of this person with this comparison. He has missed out on the enjoyments of the householder, and yet does not fulfill the goal of the contemplative life.
+sn22.80:8.1 | S: There are these three unskillful thoughts. | T: “Monks, there are these three types of unskillful thinking: thinking of sensuality, thinking of ill will, thinking of harm.
+sn22.80:8.2 | S: Sensual, malicious, and cruel thoughts. | T: (none)
+sn22.80:8.3 | S: And where do these three unskillful thoughts cease without remainder? | T: These three types of sensual thinking cease without remainder in one who dwells with his mind well established in the four establishing of mindfulness or who develops the themeless concentration.
+sn22.80:8.4 | S: In those who meditate with their mind firmly established in the four kinds of mindfulness meditation; or who develop signless immersion. | T: (none)
+sn22.80:8.5 | S: This is quite enough motivation to develop signless immersion. | T: This is reason enough, monks, to develop the themeless concentration.
+sn22.80:8.6 | S: When signless immersion is developed and cultivated it is very fruitful and beneficial. | T: The themeless concentration, when developed & pursued, is of great fruit, great benefit.
+sn22.80:9.1 | S: There are these two views. | T: “Monks, there are these two views:
+sn22.80:9.2 | S: Views favoring existence and views favoring nonexistence. | T: the view of becoming and the view of non-becoming.
+sn22.80:9.3 | S: A learned noble disciple reflects on this: | T: There the instructed disciple of the noble ones considers thus:
+sn22.80:9.4 | S: ‘Is there anything in the world that I could grasp without fault?’ | T: ‘Is there anything in the world to which I could cling without being blameworthy?’
+sn22.80:9.5 | S: They understand: | T: He discerns:
+sn22.80:9.6 | S: ‘There’s nothing in the world that I could grasp without fault. | T: ‘There is nothing in the world to which I could cling without being blameworthy.’
+sn22.80:9.7 | S: For in grasping I would grasp only at form, feeling, | T: He discerns: ‘In clinging, I would be clinging just to form. In clinging, I would be clinging just to feeling…
+sn22.80:9.8 | S: perception, | T: perception…
+sn22.80:9.9 | S: choices, or consciousness. | T: fabrications. In clinging, I would be clinging just to consciousness.
+sn22.80:9.10 | S: That grasping of mine would be a condition for continued existence. | T: From that clinging of mine as a requisite condition would come becoming.
+sn22.80:9.11 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition, birth.
+sn22.80:9.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging, illness, & death, sorrow, lamentation pain, distress, & despair would come into play.
+sn22.80:9.13 | S: That is how this entire mass of suffering originates.’ | T: Thus would be the origination of this entire mass of suffering & stress.’
+sn22.80:10.1 | S: What do you think, mendicants? | T: “What do you think, monks?
+sn22.80:10.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.80:10.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.80:10.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+sn22.80:10.5 | S: “Suffering, sir.” | T: “Stressful, lord.”
+sn22.80:10.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn22.80:10.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?” “No, lord.” “… Is feeling constant or inconstant?”—“Inconstant, lord.” … “… Is perception constant or inconstant?”—“Inconstant, lord.” … “… Are fabrications constant or inconstant?”—“Inconstant, lord.” … “What do you think, monks? Is consciousness constant or inconstant?” “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.” “Thus, monks, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.80:10.8 | S: “No, sir.” | T: (none)
+sn22.80:10.9 | S: “Is feeling … | T: “Any feeling whatsoever.…
+sn22.80:10.10 | S: perception … | T: “Any perception whatsoever.…
+sn22.80:10.11 | S: choices … | T: “Any fabrications whatsoever.…
+sn22.80:10.12 | S: consciousness permanent or impermanent?” … | T: “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near:
+sn22.80:10.13 | S: “So you should truly see … | T: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.80:10.14 | S: Seeing this … | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.80:10.15 | S: They understand: ‘… there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.80:10.16 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.51
+an5.51:1.1 | S: So I have heard. | T: (none)
+an5.51:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an5.51:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+an5.51:1.4 | S: “Mendicants!” | T: “Monks!”
+an5.51:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+an5.51:1.6 | S: The Buddha said this: | T: The Blessed One said:
+an5.51:2.1 | S: “Mendicants, there are these five obstacles and hindrances, parasites of the mind that weaken wisdom. | T: “These five are obstacles, hindrances that overwhelm awareness and weaken discernment.
+
+exec
+/bin/bash -lc "sed -n '136,165p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.80:2.3 | S: But there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: But here there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:2.4 | S: Not seeing me they may change and fall apart. | T: If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.5 | S: If a young calf doesn’t see its mother it may change and fall apart. … | T: Just as when a young calf does not see its mother, there may be alteration in it, there may be change;
+sn22.80:2.6 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ mamaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya. If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.7 | S: Or if young seedlings don’t get water they may change and fall apart. | T: Just as when young seedlings don’t get water, there may be alteration in them, there may be change;
+sn22.80:2.8 | S: In the same way, there are mendicants here who are junior, recently gone forth, newly come to this teaching and training. | T: in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:2.9 | S: Not seeing me they may change and fall apart. | T: If they do not see me, there may be alteration in them, there may be change.
+sn22.80:2.10 | S: Why don’t I support the mendicant Saṅgha now as I did in the past?” | T: What if I were to aid the Saṅgha of monks as I did before?”
+sn22.80:3.1 | S: Then the divinity Sahampati knew the Buddha’s train of thought. As easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then Brahmā Sahampati—having known with his own awareness the line of thinking in the Blessed One’s awareness—just as a strong man might extend his flexed arm or flex his extended arm, disappeared from the Brahmā world and reappeared in front of the Blessed One.
+sn22.80:3.2 | S: He arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said: | T: Arranging his upper robe over one shoulder, he knelt down with his right knee on the ground, saluted the Blessed One with his hands before his heart, and said to him:
+sn22.80:3.3 | S: “That’s so true, Blessed One! That’s so true, Holy One! | T: “So it is, O Blessed One! So it is, O One Well-Gone!
+sn22.80:3.4 | S: The Buddha has purged the mendicant Saṅgha. | T: The Blessed One has turned away the Saṅgha of monks.
+sn22.80:3.5 | S: But there are mendicants who are junior, recently gone forth, newly come to this teaching and training. … | T: But here there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya. If they do not see the Blessed One, there may be alteration in them, there may be change. Just as when a young calf does not see its mother… Just as when young seedlings don’t get water… in the same way, there are monks who are new—not long gone forth, only recently come to this Dhamma & Vinaya.
+sn22.80:3.6 | P: Tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: If they do not see the Blessed One, there may be alteration in them, there may be change.
+sn22.80:3.7 | P: Seyyathāpi nāma vacchassa taruṇassa mātaraṁ apassantassa siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.8 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. | T: (none)
+sn22.80:3.9 | P: Seyyathāpi nāma bījānaṁ taruṇānaṁ udakaṁ alabhantānaṁ siyā aññathattaṁ siyā vipariṇāmo; | T: (none)
+sn22.80:3.10 | P: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, tesaṁ bhagavantaṁ alabhantānaṁ dassanāya siyā aññathattaṁ siyā vipariṇāmo. | T: (none)
+sn22.80:3.11 | S: May the Buddha be happy with the mendicant Saṅgha! | T: Let the Blessed One delight in the Saṅgha of monks!
+sn22.80:3.12 | S: May the Buddha welcome the mendicant Saṅgha! | T: Let the Blessed One welcome the Saṅgha of monks!
+sn22.80:3.13 | S: May the Buddha support the mendicant Saṅgha now as he did in the past!” | T: Let the Blessed One aid the Saṅgha of monks as he did before!”
+sn22.80:4.1 | S: The Buddha consented with silence. | T: The Blessed One acquiesced with silence.
+sn22.80:4.2 | S: Then the divinity Sahampati, knowing that the Buddha had consented, bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: Then Brahmā Sahampati, sensing the Blessed One’s acquiescence, bowed down to the Blessed One and, after circumambulating him, keeping him to his right, disappeared right there.
+sn22.80:5.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the Banyan Tree Monastery, where he sat down on the seat spread out. | T: Then the Blessed One, emerging from his seclusion in the evening, went to the Banyan Park. On arrival he sat down on a seat made ready.
+sn22.80:5.2 | S: Then he used his psychic power to will that the mendicants would come to him timidly, alone or in pairs. | T: After he had sat down he worked a psychic feat such that the monks went to him contritely, in ones and twos.
+sn22.80:5.3 | S: Those mendicants approached the Buddha timidly, bowed, and sat down to one side. The Buddha said to them: | T: On arrival, they bowed down to him and sat to one side. As they were sitting there the Blessed One said to them,
+sn22.80:6.1 | S: “This is the last of lifestyles, mendicants, namely relying on alms. | T: “Monks, this is the lowliest form of livelihood, that of an almsgoer.
+sn22.80:6.2 | S: The world curses you: ‘You beggar, walking bowl in hand!’ | T: A term of abuse in the world is, ‘You go about as an almsgoer with a bowl in your hand!‘
+sn22.80:6.3 | S: Yet earnest gentlemen take it up for a good reason. | T: And yet sons of good family take up (this livelihood) with compelling reason,
+sn22.80:6.4 | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: in dependence on a compelling reason—not coerced by kings nor coerced by thieves nor from debt nor from fear nor to earn a livelihood,
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-038.findings.tmp <<'EOF'
+sn22.80:3.6 starts: If they do not see the Blessed
+sn22.80:3.7 starts: Just as when a young calf does
+sn22.80:3.9 starts: Just as when young seedlings don’t get
+sn22.80:3.10 starts: in the same way, there are monks
+sn22.80:6.4 starts: not coerced by kings nor coerced by
+sn22.80:10.8 starts: “No, lord.”
+sn22.80:10.9 starts: “… Is feeling constant or inconstant?”—“Inconstant, lord.”
+sn22.80:10.10 starts: “… Is perception constant or inconstant?”—“Inconstant, lord.”
+sn22.80:10.11 starts: “… Are fabrications constant or inconstant?”—“Inconstant, lord.”
+sn22.80:10.12 starts: “What do you think, monks? Is consciousness
+sn22.80:10.13 starts: “Thus, monks, any form whatsoever that is
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+11 lines reported.
+tokens used
+33,126
+11 lines reported.

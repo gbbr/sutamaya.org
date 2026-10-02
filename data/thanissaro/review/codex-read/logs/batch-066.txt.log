@@ -1,0 +1,377 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-f758-7403-9e27-df0ceee76eed
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clear line-placement corrections to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.87
+an3.87:1.1 | S: “Mendicants, each fortnight over a hundred and fifty training rules come up for recitation, in which gentlemen who desire self-knowledge train. | T: “Monks, this recitation of more than 150 training rules comes every fortnight, in reference to which sons of good families desiring the goal train themselves.
+an3.87:1.2 | S: These are all included in the three trainings. | T: There are these three trainings under which all that is gathered.
+an3.87:1.3 | S: What three? | T: Which three?
+an3.87:1.4 | S: The training in the higher ethics, the higher mind, and the higher wisdom. | T: The training in heightened virtue, the training in heightened mind, the training in heightened discernment.
+an3.87:1.5 | S: These are the three trainings that include them all. | T: These are the three trainings under which all that is gathered.
+an3.87:2.1 | S: Take the case of a mendicant who has fulfilled their ethics, but has limited immersion and wisdom. | T: “There is the case where a monk is wholly accomplished in virtue, moderately accomplished in concentration, and moderately accomplished in discernment.
+an3.87:2.2 | S: They break some lesser and minor training rules, but are restored. | T: With reference to the lesser and minor training rules, he falls into offenses and rehabilitates himself.
+an3.87:2.3 | S: Why is that? | T: Why is that?
+an3.87:2.4 | S: Because I don’t say they’re incapable of that. | T: Because I have not declared that to be a disqualification in these circumstances.
+an3.87:2.5 | S: But they’re constant and steady in their precepts regarding the training rules that are fundamental, befitting the spiritual life. They keep the rules they’ve undertaken. | T: But as for the training rules that are basic to the holy life and proper to the holy life, he is one of permanent virtue, one of steadfast virtue. Having undertaken them, he trains in reference to the training rules.
+an3.87:2.6 | S: With the ending of three fetters they have at most seven rebirths. | T: “With the ending of (the first) three fetters, he is one who has seven more times at most.
+an3.87:2.7 | S: They will transmigrate at most seven times among gods and humans and then make an end of suffering. | T: Having transmigrated and wandered on among devas and human beings, he will put an end to stress.
+an3.87:2.8 | S: With the ending of three fetters, they go from family to family. They will transmigrate between two or three families and then make an end of suffering. | T: “(Or) he is one going from good family to good family [i.e., rebirth in the human realm or any of the deva realms]. Having transmigrated and wandered on among two or three good families, he will put an end to stress.
+an3.87:2.9 | S: With the ending of three fetters, they’re a one-seeder. They will be reborn just one time in a human existence, then make an end of suffering. | T: “(Or) he is one with one seed. Having arisen only once more in the human realm, he will put an end to stress.
+an3.87:2.10 | S: With the ending of three fetters, and the weakening of greed, hate, and delusion, they’re a once-returner. They come back to this world once only, then make an end of suffering. | T: “(Or), with the ending of (the first) three fetters, and with the attenuation of passion, aversion, & delusion, he is a once-returner who—on returning only once more to this world—will put an end to stress.
+an3.87:3.1 | S: Take another case of a mendicant who has fulfilled their ethics and immersion, but has limited wisdom. | T: “There is the case where a monk is wholly accomplished in virtue, wholly accomplished in concentration, and moderately accomplished in discernment.
+an3.87:3.2 | S: They break some lesser and minor training rules, but are restored. | T: With reference to the lesser and minor training rules, he falls into offenses and rehabilitates himself.
+an3.87:3.3 | S: Why is that? | T: Why is that?
+an3.87:3.4 | S: Because I don’t say they’re incapable of that. | T: Because I have not declared that to be a disqualification in these circumstances.
+an3.87:3.5 | S: But they’re constant and steady in their precepts regarding the training rules that are fundamental, befitting the spiritual path. They keep the rules they’ve undertaken. | T: But as for the training rules that are basic to the holy life and proper to the holy life, he is one of permanent virtue, one of steadfast virtue. Having undertaken them, he trains in reference to the training rules.
+an3.87:3.6 | S: With the ending of the five lower fetters they head upstream, going to the Akaniṭṭha realm. | T: “With the ending of the five lower fetters, he is one going upstream to the Peerless [the Akaniṭṭha heaven, the highest of the Pure Abodes].
+an3.87:3.7 | S: With the ending of the five lower fetters they’re extinguished with extra effort. | T: “(Or), with the ending of the five lower fetters, he is one unbound with fabrication (of exertion).
+an3.87:3.8 | S: With the ending of the five lower fetters they’re extinguished without extra effort. | T: “(Or), with the ending of the five lower fetters, he is one unbound without fabrication (of exertion).
+an3.87:3.9 | S: With the ending of the five lower fetters they’re extinguished upon landing. | T: “(Or), with the ending of the five lower fetters, he is one unbound on arrival (in a Pure Abode).
+an3.87:3.10 | S: With the ending of the five lower fetters they’re extinguished between one life and the next. | T: “(Or), with the ending of the five lower fetters, he is one unbound in between.
+an3.87:4.1 | S: Take another case of a mendicant who has fulfilled their ethics, immersion, and wisdom. | T: “There is the case where a monk is wholly accomplished in virtue, wholly accomplished in concentration, wholly accomplished in discernment.
+an3.87:4.2 | S: They break some lesser and minor training rules, but are restored. | T: With reference to the lesser and minor training rules, he falls into offenses and rehabilitates himself.
+an3.87:4.3 | S: Why is that? | T: Why is that?
+an3.87:4.4 | S: Because I don’t say they’re incapable of that. | T: Because I have not declared that to be a disqualification in these circumstances.
+an3.87:4.5 | S: But they’re constant and steady in their precepts regarding the training rules that are fundamental, befitting the spiritual path. They keep the rules they’ve undertaken. | T: But as for the training rules that are basic to the holy life and proper to the holy life, he is one of permanent virtue, one of steadfast virtue. Having undertaken them, he trains in reference to the training rules.
+an3.87:4.6 | S: They realize the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: With the ending of effluents, he dwells in the effluent-free awareness-release and discernment-release, having directly known and realized them for himself right in the here-and-now.
+an3.87:5.1 | S: So, mendicants, if you practice partially you succeed partially. If you practice fully you succeed fully. But in any case, these training rules are not barren, I say.” | T: “Those who are partially accomplished attain a part; those who are wholly accomplished, the whole. The training rules, I tell you, are not in vain.”
+an3.87:5.2 | P: Sattamaṁ. | T: (none)
+
+## an3.89
+an3.89:1.1 | S: “Mendicants, these are the three trainings. | T: “There are these three trainings.
+an3.89:1.2 | S: What three? | T: Which three?
+an3.89:1.3 | S: The training in the higher ethics, the higher mind, and the higher wisdom. | T: The training in heightened virtue, the training in heightened mind, the training in heightened discernment.
+an3.89:2.1 | S: And what is the training in the higher ethics? | T: “And what is the training in heightened virtue?
+an3.89:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest fault.
+an3.89:2.3 | S: This is called the training in the higher ethics. | T: This is called the training in heightened virtue.
+an3.89:3.1 | S: And what is the training in the higher mind? | T: “And what is the training in heightened mind?
+an3.89:3.2 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … second absorption … third absorption … fourth absorption. | T: There is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation. With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance. With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’ With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an3.89:3.3 | S: This is called the training in the higher mind. | T: This is called the training in heightened mind.
+an3.89:4.1 | S: And what is the training in the higher wisdom? | T: “And what is the training in heightened discernment?
+an3.89:4.2 | S: They truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: There is the case where a monk discerns as it has come to be that ‘This is stress… This is the origination of stress… This is the cessation of stress… This is the path of practice leading to the cessation of stress.’
+an3.89:4.3 | S: This is called the training in the higher wisdom. | T: This is called the training in heightened discernment.
+an3.89:4.4 | S: These are the three trainings.” | T: “These are the three trainings.”
+an3.89:4.5 | P: Navamaṁ. | T: (none)
+
+## an3.92
+an3.92:1.1 | S: “Mendicants, a farmer has three urgent duties. | T: “There are these three urgent duties of a farming householder.
+an3.92:1.2 | S: What three? | T: Which three?
+an3.92:1.3 | S: A farmer swiftly makes sure the field is well ploughed and tilled. | T: “There is the case where a farming householder quickly gets his field well-plowed & well-harrowed.
+an3.92:1.4 | S: Next they swiftly plant seeds in season. | T: Having quickly gotten his field well-plowed & well-harrowed, he quickly plants the seed.
+an3.92:1.5 | S: When the time is right, they swiftly irrigate or drain the field. | T: Having quickly planted the seed, he quickly lets in the water & then lets it out.
+an3.92:1.6 | S: These are the three urgent duties of a farmer. | T: “These are the three urgent duties of a farming householder.
+an3.92:1.7 | S: That farmer has no special power or ability to say: | T: Now, that farming householder does not have the power or might (to say:)
+an3.92:1.8 | S: ‘Let the crops germinate today! Let them flower tomorrow! Let them ripen the day after!’ | T: ‘May my crops spring up today, may the grains appear tomorrow, and may they ripen the next day.’
+an3.92:1.9 | S: But there comes a time when that farmer’s crops germinate, flower, and ripen as the seasons change. | T: But when the time has come, the farming householder’s crops spring up, the grains appear, and they ripen.
+an3.92:2.1 | S: In the same way, a mendicant has three urgent duties. | T: “In the same way, there are these three urgent duties of a monk.
+an3.92:2.2 | S: What three? | T: Which three?
+an3.92:2.3 | S: Undertaking the training in the higher ethics, the higher mind, and the higher wisdom. | T: The undertaking of the training in heightened virtue, the undertaking of the training in heightened mind, the undertaking of the training in heightened discernment.
+an3.92:2.4 | S: These are the three urgent duties of a mendicant. | T: These are the three urgent duties of a monk.
+an3.92:2.5 | S: That mendicant has no special power or ability to say: | T: Now, that monk does not have the power or might (to say:)
+an3.92:2.6 | S: ‘Let my mind be freed from defilements by not grasping today! Or tomorrow! Or the day after!’ | T: ‘May my mind be released from effluents through lack of clinging/sustenance today or tomorrow or the next day.’
+an3.92:2.7 | S: But there comes a time—as that mendicant trains in the higher ethics, the higher mind, and the higher wisdom—that their mind is freed from defilements by not grasping. | T: But when the time has come, his mind is released from effluents through lack of clinging/sustenance.
+an3.92:3.1 | S: So you should train like this: | T: “Thus, monks, you should train yourselves:
+an3.92:3.2 | S: ‘We will have keen enthusiasm for undertaking the training in the higher ethics, the higher mind, and the higher wisdom.’ | T: ‘Strong will be our desire for the undertaking of the training in heightened virtue. Strong will be our desire for the undertaking of the training in heightened mind. Strong will be our desire for the undertaking of the training in heightened discernment.’
+an3.92:3.3 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an3.92:3.4 | P: Paṭhamaṁ. | T: (none)
+
+## an3.94
+an3.94:1.1 | S: “In the autumn, the heavens are sunny and cloudless. And as the sun is rising to the firmament, having dispelled all the darkness of space, it shines and glows and dazzles. | T: “Monks, just as in autumn, when the sky is clear & cloudless, the sun, on ascending the sky, overpowers the space immersed in darkness, shines, blazes, & dazzles;
+an3.94:2.1 | S: In the same way, when the stainless, immaculate vision of the teaching arises in a noble disciple, three fetters are given up: | T: in the same way, when the dustless, stainless Dhamma eye arises in a noble disciple, together with its arising three fetters are abandoned by the noble disciple:
+an3.94:2.2 | S: substantialist view, doubt, and misapprehension of precepts and observances. | T: self-identification view, doubt, and grasping at habits & practices.
+an3.94:3.1 | S: Afterwards they are delivered from two things: covetousness and ill will. | T: Afterwards, when he leaves two qualities—greed & ill will—
+an3.94:3.2 | S: Quite secluded from sensual pleasures, secluded from unskillful qualities, they enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: then, quite secluded from sensuality, secluded from unskillful qualities, he enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an3.94:3.3 | S: If that noble disciple passed away at that time, they’re bound by no fetter that might return them to this world.” | T: If the noble disciple passes away at that time, there is no fetter bound by which he would return to this world.”
+an3.94:3.4 | P: Tatiyaṁ. | T: (none)
+
+## an3.95
+an3.95:1.1 | S: “Mendicants, these are the three assemblies. | T: “Monks, there are these three assemblies.
+an3.95:1.2 | S: What three? | T: Which three?
+an3.95:1.3 | S: An assembly of the best, a divided assembly, and a harmonious assembly. | T: The assembly of the supreme, the factional assembly, the harmonious assembly.
+an3.95:2.1 | S: And what is an assembly of the best? | T: “And which is the assembly of the supreme?
+an3.95:2.2 | S: An assembly where the senior mendicants are not indulgent or slack, nor are they backsliders. Instead, they take the lead in seclusion, rousing energy for attaining the unattained, achieving the unachieved, and realizing the unrealized. And those who come afterwards follow their example. | T: There is the case where—in whatever assembly the elder monks are not lax or luxurious, have shunned the tossing away of their duties, have taken the lead in seclusion, and have aroused persistence for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized—the next generation follows their example.
+an3.95:2.3 | S: They too are not indulgent or slack, nor are they backsliders. Instead, they take the lead in seclusion, rousing energy for attaining the unattained, achieving the unachieved, and realizing the unrealized. | T: They, too, are not lax or luxurious. They shun the tossing away of their duties, they take the lead in seclusion, and they arouse persistence for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+an3.95:2.4 | S: This is called an assembly of the best. | T: This is called the assembly of the supreme.
+an3.95:3.1 | S: And what is a divided assembly? | T: “And which is the factional assembly?
+an3.95:3.2 | S: An assembly where the mendicants fight, quarrel, and dispute, continually wounding each other with barbed words. This is called a divided assembly. | T: There is the case where, in whatever assembly the monks keep arguing, quarreling, & disputing, stabbing one another with weapons of the mouth, that is called the factional assembly.
+an3.95:4.1 | S: And what is a harmonious assembly? | T: “And which is the harmonious assembly?
+an3.95:4.2 | S: An assembly where the mendicants live in harmony, appreciating each other, without dispute, blending like milk and water, and regarding each other with kindly eyes. This is called a harmonious assembly. | T: There is the case where, in whatever assembly the monks dwell in harmony, on friendly terms, without quarreling, like milk mixed with water, viewing one another with eyes of affection, that is called the harmonious assembly.
+an3.95:5.1 | S: When the mendicants live in harmony like this, they brim with much merit. | T: “Now, when the monks dwell in harmony, on friendly terms, without quarreling, like milk mixed with water, viewing one another with eyes of affection, at that time the monks produce much merit,
+an3.95:5.2 | S: At that time the mendicants live in a divine dwelling, that is, the heart’s release by rejoicing. | T: at that time they dwell in a Brahmā dwelling, i.e., empathetic joy as an awareness release.
+an3.95:5.3 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: When one is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+an3.95:6.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as when the devas pour rain in heavy drops on the upper mountains: The water, flowing down along the slopes, fills the branches of the mountain ravines & gullies. When the branches of the mountain ravines & gullies are full, they fill the little lakes. When the little lakes are full, they fill the large lakes… the little rivers… the large rivers. When the large rivers are full, they fill the ocean.
+an3.95:7.1 | S: In the same way, when the mendicants are in harmony, appreciating each other, without dispute, blending like milk and water, and regarding each other with kindly eyes, they brim with much merit. | T: In the same way, when the monks dwell in harmony, on friendly terms, without quarreling, like milk mixed with water, viewing one another with eyes of affection, at that time the monks produce much merit,
+an3.95:7.2 | S: At that time the mendicants live in a divine dwelling, that is, the heart’s release by rejoicing. | T: at that time they dwell in a Brahmā dwelling, i.e., empathetic joy as an awareness release.
+an3.95:7.3 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: When one is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+an3.95:7.4 | S: These are the three assemblies.” | T: “These, monks, are the three assemblies.”
+an3.95:7.5 | P: Catutthaṁ. | T: (none)
+
+## an3.96
+an3.96:1.1 | S: “Mendicants, a fine royal thoroughbred with three factors is worthy of a king, fit to serve a king, and reckoned as a factor of kingship. | T: “Endowed with three characteristics, a king’s excellent thoroughbred steed is worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.96:1.2 | S: What three? | T: Which three?
+an3.96:1.3 | S: It’s when a fine royal thoroughbred is beautiful, strong, and fast. | T: There is the case where a king’s excellent thoroughbred steed is consummate in beauty, consummate in strength, and consummate in speed.
+an3.96:1.4 | S: A fine royal thoroughbred with these three factors is worthy of a king. … | T: Endowed with these three characteristics is a king’s excellent thoroughbred steed worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.96:1.5 | S: In the same way, a mendicant with three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with these three qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.
+an3.96:1.6 | S: What three? | T: Which three?
+an3.96:1.7 | S: It’s when a mendicant is beautiful, strong, and fast. | T: There is the case where a monk is consummate in beauty, consummate in strength, and consummate in speed.
+an3.96:2.1 | S: And how is a mendicant beautiful? | T: “And how is a monk consummate in beauty?
+an3.96:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest fault.
+an3.96:2.3 | S: That’s how a mendicant is beautiful. | T: This is how a monk is consummate in beauty.
+an3.96:3.1 | S: And how is a mendicant strong? | T: “And how is a monk consummate in strength?
+an3.96:3.2 | S: It’s when a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: There is the case where a monk keeps his persistence aroused for abandoning unskillful mental qualities and taking on skillful mental qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful mental qualities.
+an3.96:3.3 | S: That’s how a mendicant is strong. | T: This is how a monk is consummate in strength.
+an3.96:4.1 | S: And how is a mendicant fast? | T: “And how is a monk consummate in speed?
+an3.96:4.2 | S: It’s when a mendicant truly understands: ‘This is suffering’ … | T: There is the case where a monk discerns as it has come to be that ‘This is stress.’
+an3.96:4.3 | S: ‘This is the origin of suffering’ … | T: He discerns as it has come to be that ‘This is the origination of stress.’
+an3.96:4.4 | S: ‘This is the cessation of suffering’ … | T: He discerns as it has come to be that ‘This is the cessation of stress.’
+an3.96:4.5 | S: ‘This is the practice that leads to the cessation of suffering’. | T: He discerns as it has come to be that ‘This is the path of practice leading to the cessation of stress.’1
+an3.96:4.6 | S: That’s how a mendicant is fast. | T: This is how a monk is consummate in speed.
+an3.96:4.7 | S: A mendicant with these three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world.” | T: “Endowed with these three qualities is a monk deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.”
+an3.96:4.8 | P: Pañcamaṁ. | T: (none)
+
+## an3.97
+an3.97:1.1 | S: “Mendicants, a fine royal thoroughbred with three factors is worthy of a king, fit to serve a king, and considered a factor of kingship. | T: “Endowed with three characteristics, a king’s excellent thoroughbred steed is worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.97:1.2 | S: What three? | T: Which three?
+an3.97:1.3 | S: It’s when a fine royal thoroughbred is beautiful, strong, and fast. | T: There is the case where a king’s excellent thoroughbred steed is consummate in beauty, consummate in strength, and consummate in speed.
+an3.97:1.4 | S: A fine royal thoroughbred with these three factors is worthy of a king, … | T: Endowed with these three characteristics is a king’s excellent thoroughbred steed worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.97:1.5 | S: In the same way, a mendicant with three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with these three qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.
+an3.97:1.6 | S: What three? | T: Which three?
+an3.97:1.7 | S: It’s when a mendicant is beautiful, strong, and fast. | T: There is the case where a monk is consummate in beauty, consummate in strength, and consummate in speed.
+an3.97:2.1 | S: And how is a mendicant beautiful? | T: “And how is a monk consummate in beauty?
+an3.97:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest fault.
+an3.97:2.3 | S: That’s how a mendicant is beautiful. | T: This is how a monk is consummate in beauty.
+an3.97:3.1 | S: And how is a mendicant strong? | T: “And how is a monk consummate in strength?
+an3.97:3.2 | S: It’s when a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: There is the case where a monk keeps his persistence aroused for abandoning unskillful mental qualities and taking on skillful mental qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful mental qualities.
+an3.97:3.3 | S: That’s how a mendicant is strong. | T: This is how a monk is consummate in strength.
+an3.97:4.1 | S: And how is a mendicant fast? | T: “And how is a monk consummate in speed?
+an3.97:4.2 | S: It’s when a mendicant, with the ending of the five lower fetters, is reborn spontaneously. They’re extinguished there, and are not liable to return from that world. | T: There is the case where a monk, with the wasting away of the five lower fetters, is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, destined never again to return from that world.
+an3.97:4.3 | S: That’s how a mendicant is fast. | T: This is how a monk is consummate in speed.
+an3.97:4.4 | S: A mendicant with these three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world.” | T: “Endowed with these three qualities a monk is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.”
+an3.97:4.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.98
+an3.98:1.1 | S: “Mendicants, a fine royal thoroughbred with three factors is worthy of a king, fit to serve a king, and considered a factor of kingship. | T: “Endowed with three characteristics, a king’s excellent thoroughbred steed is worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.98:1.2 | S: What three? | T: Which three?
+an3.98:1.3 | S: It’s when a fine royal thoroughbred is beautiful, strong, and fast. | T: There is the case where a king’s excellent thoroughbred steed is consummate in beauty, consummate in strength, and consummate in speed.
+an3.98:1.4 | S: A fine royal thoroughbred with these three factors is worthy of a king. … | T: Endowed with these three characteristics is a king’s excellent thoroughbred steed worthy of a king, the wealth of a king, and counts as one of the king’s own limbs.
+an3.98:1.5 | S: In the same way, a mendicant with three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with these three qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.
+an3.98:1.6 | S: What three? | T: Which three?
+an3.98:1.7 | S: It’s when a mendicant is beautiful, strong, and fast. | T: There is the case where a monk is consummate in beauty, consummate in strength, and consummate in speed.
+an3.98:2.1 | S: And how is a mendicant beautiful? | T: “And how is a monk consummate in beauty?
+an3.98:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: There is the case where a monk is virtuous. He dwells restrained in accordance with the Pāṭimokkha, consummate in his behavior & sphere of activity. He trains himself, having undertaken the training rules, seeing danger in the slightest fault.
+an3.98:2.3 | S: That’s how a mendicant is beautiful. | T: This is how a monk is consummate in beauty.
+an3.98:3.1 | S: And how is a mendicant strong? | T: “And how is a monk consummate in strength?
+an3.98:3.2 | S: It’s when a mendicant lives with energy roused up for giving up unskillful qualities and embracing skillful qualities. They are strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: There is the case where a monk keeps his persistence aroused for abandoning unskillful mental qualities and taking on skillful mental qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful mental qualities.
+an3.98:3.3 | S: That’s how a mendicant is strong. | T: This is how a monk is consummate in strength.
+an3.98:4.1 | S: And how is a mendicant fast? | T: “And how is a monk consummate in speed?
+an3.98:4.2 | S: It’s when a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: There is the case where a monk, with the ending of effluents, enters & remains in the effluent-free awareness-release & discernment-release, having directly known & realized it for himself right in the here & now.
+an3.98:4.3 | S: That’s how a mendicant is fast. | T: This is how a monk is consummate in speed.
+an3.98:4.4 | S: A mendicant with these three qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world.” | T: “Endowed with these three qualities a monk is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.”
+an3.98:4.5 | P: Sattamaṁ. | T: (none)
+
+## an3.99
+an3.99:1.1 | S: “Jute canvas is ugly, unpleasant to touch, and worthless whether it’s new, worn in, or worn out. | T: “Monks, a new piece of bark-fiber cloth is ugly, rough to the touch, and of next-to-no value. A piece of bark-fiber cloth of middle standing [in terms of its age] is ugly, rough to the touch, and of next-to-no value. An old piece of bark-fiber cloth is ugly, rough to the touch, and of next-to-no value.
+an3.99:1.2 | P: majjhimopi, bhikkhave, potthako dubbaṇṇo ca hoti dukkhasamphasso ca appaggho ca; | T: (none)
+an3.99:1.3 | P: jiṇṇopi, bhikkhave, potthako dubbaṇṇo ca hoti dukkhasamphasso ca appaggho ca. | T: (none)
+an3.99:1.4 | S: They use worn out jute canvas for scrubbing cauldrons, or else they just throw it away on the rubbish heap. | T: People use an old piece of bark-fiber cloth to scrub pots or they throw it away on a trash heap.
+an3.99:2.1 | S: In the same way, if a junior mendicant is unethical, of bad character, | T: “In the same way, monks, when a new monk is unvirtuous & of bad character,
+an3.99:2.2 | S: this is how they’re ugly, I say. | T: that, I tell you, is his ugliness.
+an3.99:2.3 | S: That individual is just as ugly as jute canvas. | T: Just as a piece of bark-fiber cloth is ugly, this person, I tell you, is like that.
+an3.99:2.4 | S: If you associate with, accompany, and attend to them, following their example, it’ll be for your lasting harm and suffering. | T: “For those who associate with him, resort to him, eat with him, attend to him, & follow his example, that will be for their long-term harm & suffering.
+an3.99:2.5 | S: This is how they’re unpleasant to touch, I say. | T: That, I tell you, is his being rough to the touch.
+an3.99:2.6 | S: That individual is just as unpleasant to touch as jute canvas. | T: Just as a piece of bark-fiber cloth is rough to the touch, this person, I tell you, is like that.
+an3.99:2.7 | S: Any robes, almsfood, lodgings, and medicines and supplies for the sick that they receive are not very fruitful or beneficial for the donor. | T: “For those from whom he receives robes, alms food, lodging, & medicinal requisites for curing the sick, there is no great fruit, no great reward.
+an3.99:2.8 | S: This is how they’re worthless, I say. | T: That, I tell you, is his being of next-to-no value.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.99:2.9 | S: That individual is just as worthless as jute canvas. | T: Just as a piece of bark-fiber cloth is of next-to-no value, this person, I tell you, is like that.
+an3.99:2.10 | S: If a middle mendicant is unethical, of bad character, this is how they’re ugly, I say. … | T: “When a monk of middle standing is unvirtuous & of bad character…
+an3.99:2.11 | S: If a senior mendicant is unethical, of bad character, this is how they’re ugly, I say. … | T: “When an elder monk is unvirtuous & of bad character, that, I tell you, is his ugliness.
+an3.99:2.12 | P: Seyyathāpi so, bhikkhave, potthako dubbaṇṇo tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: Just as a piece of bark-fiber cloth is ugly, this person, I tell you, is like that.
+an3.99:2.13 | S: If you associate with, accompany, and attend to them, following their example, it’ll be for your lasting harm and suffering. … | T: “For those who associate with him, resort to him, eat with him, attend to him, & follow his example, that will be for their long-term harm & suffering.
+an3.99:2.14 | P: Idamassa dukkhasamphassatāya vadāmi. | T: That, I tell you, is his being rough to the touch.
+an3.99:2.15 | P: Seyyathāpi so, bhikkhave, potthako dukkhasamphasso tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: Just as a piece of bark-fiber cloth is rough to the touch, this person, I tell you, is like that.
+an3.99:2.16 | P: Yesaṁ kho pana so paṭiggaṇhāti cīvarapiṇḍapātasenāsanagilānappaccayabhesajjaparikkhāraṁ, tesaṁ taṁ na mahapphalaṁ hoti na mahānisaṁsaṁ. | T: “For those from whom he receives robes, alms food, lodging, & medicinal requisites for curing the sick, there is no great fruit, no great reward.
+an3.99:2.17 | P: Idamassa appagghatāya vadāmi. | T: That, I tell you, is his being of next-to-no value.
+an3.99:2.18 | P: Seyyathāpi so, bhikkhave, potthako appaggho tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: Just as a piece of bark-fiber cloth is of next-to-no value, this person, I tell you, is like that.
+an3.99:3.1 | S: If such a senior mendicant speaks among the Saṅgha, | T: “And when an elder monk like this speaks in the midst of the Sangha,
+an3.99:3.2 | S: the mendicants say: | T: the monks say to him,
+an3.99:3.3 | S: ‘What’s an incompetent fool like you got to say? | T: ‘What’s the use of you—foolish, inexperienced—speaking?
+an3.99:3.4 | S: How on earth could you imagine you’ve got something worth saying!’ | T: One would suppose that you should be spoken to!’
+an3.99:3.5 | S: They become angry and upset, and blurt out things that make the Saṅgha throw them out, as if they were throwing jute canvas away on the rubbish heap. | T: “He, provoked & displeased, lets loose with the sorts of words such that the Sangha throws him out, just like a piece of bark-fiber cloth on a trash heap.
+an3.99:4.1 | S: Cloth from Kāsi is beautiful, pleasant to touch, and valuable whether it’s new, worn in, or worn out. | T: “Monks, a new piece of Kāsi cloth is beautiful, smooth to the touch, and of great value. A piece of Kāsi cloth of middle standing is beautiful, smooth to the touch, and of great value. An old piece of Kāsi cloth is beautiful, smooth to the touch, and of great value.
+an3.99:4.2 | S: They use worn out cloth from Kāsi for wrapping, or else they place it in a fragrant casket. | T: People use an old piece of Kāsi cloth as a wrapping for gems or they keep it in a scented chest.
+an3.99:5.1 | S: In the same way, if a junior mendicant is ethical, of good character, this is how they’re beautiful, I say. | T: “In the same way, monks, when a new monk is virtuous & of admirable character, that, I tell you, is his beauty.
+an3.99:5.2 | S: That individual is just as beautiful as cloth from Kāsi. | T: Just as a piece of Kāsi cloth is beautiful, this person, I tell you, is like that.
+an3.99:5.3 | S: If you associate with, accompany, and attend to such an individual, following their example, it will be for your lasting welfare and happiness. | T: “For those who associate with him, resort to him, eat with him, attend to him, & follow his example, that will be for their long-term welfare & happiness.
+an3.99:5.4 | S: This is how they’re pleasant to touch, I say. | T: That, I tell you, is his being smooth to the touch.
+an3.99:5.5 | S: That individual is just as pleasant to touch as cloth from Kāsi. | T: Just as a piece of Kāsi cloth is smooth to the touch, this person, I tell you, is like that.
+an3.99:5.6 | S: Any robes, almsfood, lodgings, and medicines and supplies for the sick that they receive are very fruitful and beneficial for the donor. | T: “For those from whom he receives robes, alms food, lodging, & medicinal requisites for curing the sick, there is great fruit, great reward.
+an3.99:5.7 | S: This is how they’re valuable, I say. | T: That, I tell you, is his being of great value.
+an3.99:5.8 | S: That individual is just as valuable as cloth from Kāsi. | T: Just as a piece of Kāsi cloth is of great value, this person, I tell you, is like that.
+an3.99:5.9 | S: If a middle mendicant is ethical, of good character, this is how they’re beautiful, I say. … | T: “When a monk of middle standing is virtuous & of admirable character…
+an3.99:5.10 | S: If a senior mendicant is ethical, of good character, this is how they’re beautiful, I say. … | T: “When an elder monk is virtuous & of admirable character, that, I tell you, is his beauty. Just as a piece of Kāsi cloth is beautiful, this person, I tell you, is like that. “For those who associate with him, resort to him, eat with him, attend to him, & follow his example, that will be for their long-term welfare & happiness. That, I tell you, is his being smooth to the touch. Just as a piece of Kāsi cloth is smooth to the touch, this person, I tell you, is like that. “For those from whom he receives robes, alms food, lodging, & medicinal requisites for curing the sick, there is great fruit, great reward. That, I tell you, is his being of great value. Just as a piece of Kāsi cloth is of great value, this person, I tell you, is like that.
+an3.99:6.1 | S: If such a senior mendicant speaks in the midst of the Saṅgha, | T: “And when an elder monk like this speaks in the midst of the Sangha,
+an3.99:6.2 | S: the mendicants say: | T: the monks say [to one another],
+an3.99:6.3 | S: ‘Venerables, be quiet! The senior mendicant is speaking on the teaching and training.’ | T: ‘Be quiet, friends. The elder monk is speaking Dhamma & Vinaya!’
+an3.99:6.4 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+an3.99:6.5 | S: ‘We will be like cloth from Kāsi, not like jute canvas.’ | T: ‘We will be like Kāsi cloth, and not like bark-fiber cloth.’
+an3.99:6.6 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+an3.99:6.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## an4.102
+an4.102:1.1 | S: “Mendicants, there are these four kinds of clouds. | T: “There are these four types of thunderheads.
+an4.102:1.2 | S: What four? | T: Which four?
+an4.102:1.3 | S: One thunders but doesn’t rain, | T: One that thunders but doesn’t rain,
+an4.102:1.4 | S: one rains but doesn’t thunder, | T: one that rains but doesn’t thunder,
+an4.102:1.5 | S: one neither thunders nor rains, and | T: one that neither thunders nor rains,
+an4.102:1.6 | S: one both rains and thunders. | T: and one that both thunders and rains.
+an4.102:1.7 | S: These are the four kinds of clouds. | T: There are these four types of thunderheads.
+an4.102:1.8 | S: In the same way, these four individuals similar to clouds are found in the world. | T: “In the same way, these four types of persons resembling thunderheads are to be found existing in the world.
+an4.102:1.9 | S: What four? | T: Which four?
+an4.102:1.10 | S: One thunders but doesn’t rain, | T: The one who thunders but doesn’t rain,
+an4.102:1.11 | S: one rains but doesn’t thunder, | T: the one who rains but doesn’t thunder,
+an4.102:1.12 | S: one neither thunders nor rains, and | T: the one who neither thunders nor rains,
+an4.102:1.13 | S: one both rains and thunders. | T: and the one who both thunders and rains.
+an4.102:2.1 | S: And how does an individual thunder but not rain? | T: “And how is one the type of person who thunders but doesn’t rain?
+an4.102:2.2 | S: It’s when an individual memorizes the teaching— | T: There is the case where a person has mastered the Dhamma:
+an4.102:2.3 | S: statements, mixed prose & verse, discussions, verses, inspired exclamations, legends, stories of past lives, amazing stories, and elaborations. | T: dialogues, narratives of mixed prose and verse, explanations, verses, spontaneous exclamations [udāna], quotations [itivuttaka], birth stories [jātaka], amazing events, question & answer sessions.
+an4.102:2.4 | S: But they don’t truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: Yet he doesn’t discern, as it has come to be, that ‘This is stress.’ He doesn’t discern, as it has come to be, that ‘This is the origination of stress.’ He doesn’t discern, as it has come to be, that ‘This is the cessation of stress.’ He doesn’t discern, as it has come to be, that ‘This is the path of practice leading to the cessation of stress.’
+an4.102:2.5 | S: That’s how an individual thunders but doesn’t rain. | T: This is the type of person who thunders but doesn’t rain.
+an4.102:2.6 | S: That individual is like a cloud that thunders but doesn’t rain, I say. | T: This type of person, I tell you, is like the thunderhead that thunders but doesn’t rain.
+an4.102:2.7 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: (none)
+an4.102:3.1 | S: And how does an individual rain but not thunder? | T: “And how is one the type of person who rains but doesn’t thunder?
+an4.102:3.2 | S: It’s when an individual doesn’t memorize the teaching … | T: There is the case where a person has not mastered the Dhamma:
+an4.102:3.3 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: dialogues… question & answer sessions.
+an4.102:3.4 | S: But they truly understand: ‘This is suffering’ … | T: Yet he does discern, as it has come to be, that ‘This is stress.’ He discerns, as it has come to be, that ‘This is the origination of stress.’ He discerns, as it has come to be, that ‘This is the cessation of stress.’ He discerns, as it has come to be, that ‘This is the path of practice leading to the cessation of stress.’
+an4.102:3.5 | P: Evaṁ kho, bhikkhave, puggalo vassitā hoti, no gajjitā. | T: This is the type of person who rains but doesn’t thunder.
+an4.102:3.6 | P: Seyyathāpi so, bhikkhave, valāhako vassitā, no gajjitā; | T: (none)
+an4.102:3.7 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: This type of person, I tell you, is like the thunderhead that rains but doesn’t thunder.
+an4.102:4.1 | S: And how does an individual neither thunder nor rain? | T: “And how is one the type of person who neither thunders nor rains?
+an4.102:4.2 | S: It’s when an individual doesn’t memorize the teaching … | T: There is the case where a person has not mastered the Dhamma:
+an4.102:4.3 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: dialogues… question & answer sessions.
+an4.102:4.4 | S: Nor do they truly understand: ‘This is suffering’ … | T: He doesn’t discern, as it has come to be, that ‘This is stress’ … ‘This is the origination of stress’ … ‘This is the cessation of stress’ … ‘This is the path of practice leading to the cessation of stress.’
+an4.102:4.5 | P: Evaṁ kho, bhikkhave, puggalo neva gajjitā hoti, no vassitā. | T: This is the type of person who neither thunders nor rains.
+an4.102:4.6 | P: Seyyathāpi so, bhikkhave, valāhako neva gajjitā, no vassitā; | T: (none)
+an4.102:4.7 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: This type of person, I tell you, is like the thunderhead that neither thunders nor rains.
+an4.102:5.1 | S: And how does an individual both thunder and rain? | T: “And how is one the type of person who both thunders and rains?
+an4.102:5.2 | S: It’s when an individual memorizes the teaching … | T: There is the case where a person has mastered the Dhamma:
+an4.102:5.3 | P: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. | T: dialogues … question & answer sessions.
+an4.102:5.4 | S: And they truly understand: ‘This is suffering’ … | T: He discerns, as it has come to be, that ‘This is stress’ … ‘This is the origination of stress’ … ‘This is the cessation of stress’ … ‘This is the path of practice leading to the cessation of stress.’
+an4.102:5.5 | P: Evaṁ kho, bhikkhave, puggalo gajjitā ca hoti vassitā ca. | T: This is the type of person who both thunders and rains.
+an4.102:5.6 | P: Seyyathāpi so, bhikkhave, valāhako gajjitā ca vassitā ca; | T: (none)
+an4.102:5.7 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi. | T: This type of person, I tell you, is like the thunderhead that both thunders and rains.
+an4.102:5.8 | S: These four individuals similar to clouds are found in the world.” | T: “These are the four types of people to be found existing in the world.”
+an4.102:5.9 | P: Dutiyaṁ. | T: (none)
+
+## an4.111
+an4.111:1.1 | S: Then Kesi the horse trainer went up to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: Then Kesin the horse trainer went to the Blessed One and, on arrival, having bowed down, sat to one side. As he was sitting there, the Blessed One said to him:
+an4.111:1.2 | S: “Kesi, you’re known as a horse trainer. | T: “You, Kesin, are well known as a trainer of tamable horses.
+an4.111:1.3 | S: Just how do you guide a horse in training?” | T: How do you train a tamable horse?”
+an4.111:1.4 | S: “Sir, I guide a horse in training sometimes gently, sometimes harshly, and sometimes both gently and harshly.” | T: “Lord, I train a tamable horse (sometimes) with mildness, (sometimes) with harshness, (sometimes) with both mildness & harshness.”
+an4.111:1.5 | S: “Kesi, what do you do with a horse in training that doesn’t follow these forms of training?” | T: “And if a tamable horse doesn’t submit either to a mild training or to a harsh training or to a mild & harsh training, Kesin, what do you do?”
+an4.111:1.6 | P: “Sace me, bhante, assadammo saṇhena vinayaṁ na upeti, pharusena vinayaṁ na upeti, saṇhapharusena vinayaṁ na upeti; | T: “If a tamable horse doesn’t submit either to a mild training or to a harsh training or to a mild and harsh training,
+an4.111:1.7 | S: “In that case, sir, I kill it. | T: lord, then I kill it.
+an4.111:1.8 | S: Why is that? | T: Why is that? (I think:)
+an4.111:1.9 | S: So that I don’t disgrace my tutor’s community. | T: ‘Don’t let this be a disgrace to my lineage of teachers.’
+an4.111:2.1 | S: But sir, the Buddha is the supreme guide for those fit for training. | T: But the Blessed One, lord, is the unexcelled trainer of tamable people.
+an4.111:2.2 | S: Just how do you guide a person in training?” | T: How do you train a tamable person?”
+an4.111:2.3 | S: “Kesi, I guide a person in training sometimes gently, sometimes harshly, and sometimes both gently and harshly. | T: “Kesin, I train a tamable person (sometimes) with mildness, (sometimes) with harshness, (sometimes) with both mildness & harshness.
+an4.111:2.4 | S: The gentle way is this: | T: “In using mildness, (I teach:)
+an4.111:2.5 | S: ‘This is good conduct by way of body, speech, and mind. This is the result of good conduct by way of body, speech, and mind. This is life as a god. This is life as a human.’ | T: ‘Such is good bodily conduct. Such is the result of good bodily conduct. Such is good verbal conduct. Such is the result of good verbal conduct. Such is good mental conduct. Such is the result of good mental conduct. Such are the devas. Such are human beings.’
+an4.111:2.6 | S: The harsh way is this: | T: “In using harshness, (I teach:)
+an4.111:2.7 | S: ‘This is bad conduct by way of body, speech, and mind. This is the result of bad conduct by way of body, speech, and mind. This is life in hell. This is life as an animal. This is life as a ghost.’ | T: ‘Such is bodily misconduct. Such is the result of bodily misconduct. Such is verbal misconduct. Such is the result of verbal misconduct. Such is mental misconduct. Such is the result of mental misconduct. Such is hell. Such is the animal womb. Such the realm of the hungry ghosts.’
+an4.111:3.1 | S: The both gentle and harsh way is this: | T: “In using mildness & harshness, (I teach:)
+an4.111:3.2 | S: ‘This is good conduct … this is bad conduct …’” | T: ‘Such is good bodily conduct. Such is the result of good bodily conduct. Such is bodily misconduct. Such is the result of bodily misconduct. Such is good verbal conduct. Such is the result of good verbal conduct. Such is verbal misconduct. Such is the result of verbal misconduct. Such is good mental conduct. Such is the result of good mental conduct. Such is mental misconduct. Such is the result of mental misconduct. Such are the devas. Such are human beings. Such is hell. Such is the animal womb. Such the realm of the hungry ghosts.’”
+an4.111:4.1 | S: “Sir, what do you do with a person in training who doesn’t follow these forms of training?” | T: “And if a tamable person doesn’t submit either to a mild training or to a harsh training or to a mild & harsh training, what do you do?”
+an4.111:4.2 | S: “In that case, Kesi, I kill them.” | T: “If a tamable person doesn’t submit either to a mild training or to a harsh training or to a mild & harsh training, then I kill him, Kesin.”
+an4.111:4.3 | S: “Sir, it’s not appropriate for the Buddha to kill living creatures. | T: “But it’s not proper for our Blessed One to take life!
+an4.111:4.4 | S: And yet you say | T: And yet the Blessed One just said,
+an4.111:4.5 | S: you kill them.” | T: ‘I kill him, Kesin.’”
+an4.111:4.6 | S: “It’s true, Kesi, | T: “It is true, Kesin,
+an4.111:4.7 | S: it’s not appropriate for a Realized One to kill living creatures. | T: that it’s not proper for a Tathāgata to take life.
+an4.111:4.8 | S: But when a person in training doesn’t follow any of these forms of training, the Realized One doesn’t think they’re worth advising or instructing, and neither do their sensible spiritual companions. | T: But if a tamable person doesn’t submit either to a mild training or to a harsh training or to a mild & harsh training, then the Tathāgata doesn’t regard him as being worth speaking to or admonishing. His observant companions in the holy life don’t regard him as being worth speaking to or admonishing.
+an4.111:4.9 | S: For it is killing in the training of the Noble One | T: This is what it means to be totally destroyed in the Dhamma & Vinaya,
+an4.111:4.10 | S: when the Realized One doesn’t think they’re worth advising or instructing, and neither do their sensible spiritual companions.” | T: when the Tathāgata doesn’t regard one as being worth speaking to or admonishing, and one’s observant companions in the holy life don’t regard one as being worth speaking to or admonishing.”
+an4.111:5.1 | S: “Well, they’re definitely dead | T: “Yes, lord, wouldn’t one be totally destroyed
+an4.111:5.2 | S: when the Realized One doesn’t think they’re worth advising or instructing, and neither do their sensible spiritual companions. | T: if the Tathāgata doesn’t regard one as being worth speaking to or admonishing, and one’s observant companions in the holy life don’t regard one as being worth speaking to or admonishing?
+an4.111:5.3 | S: Excellent, sir! … From this day forth, may the Buddha remember me as a lay follower who has gone for refuge for life.” | T: “Magnificent, lord! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear. I go to the Blessed One for refuge, to the Dhamma, and to the Saṅgha of monks. May the Blessed One remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+an4.111:5.4 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-066.findings.tmp <<'EOF'
+an3.99:1.2 starts: A piece of bark-fiber cloth of middle
+an3.99:1.3 starts: An old piece of bark-fiber cloth is
+an4.102:3.6 starts: This type of person, I tell you, is
+an4.102:3.7 none
+an4.102:4.6 starts: This type of person, I tell you, is
+an4.102:4.7 none
+an4.102:5.6 starts: This type of person, I tell you, is
+an4.102:5.7 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+36,516
+8 lines reported.

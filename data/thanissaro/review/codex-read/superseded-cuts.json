@@ -1,0 +1,13 @@
+{
+  "reason": "Old anchors belonged to the target set that skipped collapsed Pali documents; fresh target resolution and reviewed starts replace them.",
+  "removed": {
+    "sn45.62:1.1": {
+      "after": "riendship develops the noble eightfold path, pursues the noble eightfold path.”",
+      "placed": true
+    },
+    "sn56.104:1.1": {
+      "after": "born among devas. Far more are the beings who, on passing away from the deva realm, are reborn in hell… in the animal womb… in the domain of the hungry ghosts.",
+      "placed": true
+    }
+  }
+}

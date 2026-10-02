@@ -1,0 +1,538 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd94-29d1-7010-b637-829d62cec019
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, check for clear line-placement errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## ud6.1, continued
+ud6.1:17.3 | S: Happy inside, serene, | T: Inwardly joyful, centered,
+ud6.1:17.4 | S: he shattered self-creation like a suit of armor.” | T: he split his own coming-into-being like a coat of mail.
+ud6.1:17.5 | P: Paṭhamaṁ. | T: (none)
+
+## snp3.8
+snp3.8:1.1 | S: Unforeseen and unknown | T: Without sign, unknown
+snp3.8:1.2 | S: is the extent of this mortal life— | T: —the life here of mortals—
+snp3.8:1.3 | S: hard and short | T: difficult, short,
+snp3.8:1.4 | S: and bound to pain. | T: tied up with pain.
+snp3.8:2.1 | S: There is no way that | T: For there’s no way
+snp3.8:2.2 | S: those born will not die. | T: by which those who are born will not die.
+snp3.8:2.3 | S: On reaching old age death follows: | T: Beings are subject to death even when they attain old age.
+snp3.8:2.4 | S: such is the nature of living creatures. | T: (none)
+snp3.8:3.1 | S: As ripe fruit | T: Like ripe fruits
+snp3.8:3.2 | S: are always in danger of falling, | T: whose downfall, whose danger is falling,
+snp3.8:3.3 | S: so mortals once born | T: so for mortals, once born,
+snp3.8:3.4 | S: are always in danger of death. | T: the constant danger is death.
+snp3.8:4.1 | S: As clay pots | T: As clay vessels made by a potter
+snp3.8:4.2 | S: made by a potter | T: (none)
+snp3.8:4.3 | S: all end up being broken, | T: all end up broken,
+snp3.8:4.4 | S: so is the life of mortals. | T: so too life heads to death.
+snp3.8:5.1 | S: Young and old, | T: Young & old
+snp3.8:5.2 | S: foolish and wise— | T: wise & foolish:
+snp3.8:5.3 | S: all go under the sway of death; | T: All come under the sway of death; all have death as their end.
+snp3.8:5.4 | S: all are destined to die. | T: (none)
+snp3.8:6.1 | S: When those overcome by death | T: For those overcome by death,
+snp3.8:6.2 | S: leave this world for the next, | T: gone to the other world,
+snp3.8:6.3 | S: a father cannot protect his son, | T: father cannot shelter son,
+snp3.8:6.4 | S: nor relatives their kin. | T: nor relatives a relative.
+snp3.8:7.1 | S: See how, while relatives look on, | T: See: Even while relatives are looking on,
+snp3.8:7.2 | S: wailing profusely, | T: wailing heavily,
+snp3.8:7.3 | S: mortals are led away one by one, | T: mortals are one by one led away
+snp3.8:7.4 | S: like a cow to the slaughter. | T: like cows to the slaughter.
+snp3.8:8.1 | S: And so the world is stricken | T: In this way is the world afflicted
+snp3.8:8.2 | S: by old age and by death. | T: with aging & death,
+snp3.8:8.3 | S: That is why the attentive do not grieve, | T: and so the enlightened don’t grieve,
+snp3.8:8.4 | S: for they understand the way of the world. | T: knowing the way of the world.
+snp3.8:9.1 | S: For one whose path you do not know— | T: “You don’t know the path
+snp3.8:9.2 | S: not whence they came nor where they went— | T: of his coming or going:
+snp3.8:9.3 | S: you lament in vain, | T: seeing neither end, you lament in vain.”
+snp3.8:9.4 | S: seeing neither end. | T: (none)
+snp3.8:10.1 | S: If a bewildered person, | T: If, by lamenting, —confused, harming yourself—
+snp3.8:10.2 | S: lamenting and self-harming, | T: (none)
+snp3.8:10.3 | S: could extract any good from that, | T: any use could be gained
+snp3.8:10.4 | S: then those who see clearly would do the same. | T: the prudent would do it as well.
+snp3.8:11.1 | S: For not by weeping and wailing | T: But not by weeping & grief
+snp3.8:11.2 | S: will you find peace of heart. | T: do you gain peace of awareness.
+snp3.8:11.3 | S: It just gives rise to more suffering, | T: Pain arises all the more.
+snp3.8:11.4 | S: and distresses your body. | T: Your body is harmed.
+snp3.8:12.1 | S: Growing thin and pale, | T: You grow thin, pale,
+snp3.8:12.2 | S: you hurt yourself. | T: harming yourself by yourself.
+snp3.8:12.3 | S: It does nothing to help the dead: | T: Not in that way are the dead protected.
+snp3.8:12.4 | S: your lamentation is in vain. | T: Lamentation’s in vain.
+snp3.8:13.1 | S: Unless a personage gives up grief, | T: Not abandoning grief, a person
+snp3.8:13.2 | S: they fall into suffering all the more. | T: suffers all the more pain.
+snp3.8:13.3 | S: Bewailing those whose time has come, | T: Bewailing one whose time is done,
+snp3.8:13.4 | S: you fall under the sway of grief. | T: you fall under the sway of grief.
+snp3.8:14.1 | S: See, too, other folk departing, | T: Look at others going along, people arriving
+snp3.8:14.2 | S: passing on according to their deeds; | T: in line with their actions:
+snp3.8:14.3 | S: fallen under the sway of death, | T: falling under the sway of death,
+snp3.8:14.4 | S: beings flounder while still here. | T: beings simply shivering here.
+snp3.8:15.1 | S: For however they imagine it, | T: For however they imagine it,
+snp3.8:15.2 | S: it turns out to be something else. | T: it always turns out other than that.
+snp3.8:15.3 | S: Such is separation: | T: That’s the type of (their) separation.
+snp3.8:15.4 | S: see the way of the world! | T: See the way of the world.
+snp3.8:16.1 | S: Even if a human lives | T: Even if a person lives a century
+snp3.8:16.2 | S: a hundred years or more, | T: —or more—
+snp3.8:16.3 | S: they are parted from their family circle, | T: he’s parted from his community of relatives,
+snp3.8:16.4 | S: they leave this life behind. | T: he abandons his life right here.
+snp3.8:17.1 | S: Therefore, having learned from the Perfected One, | T: So, having heard the arahant,
+snp3.8:17.2 | S: dispel lamentation. | T: subduing lamentation,
+snp3.8:17.3 | S: Seeing the dead and departed, think: | T: seeing the dead one whose time is done, [think,]
+snp3.8:17.4 | S: “I cannot escape this.” | T: “I can’t fetch him back.”
+snp3.8:18.1 | S: As one would extinguish | T: Just as one would put out
+snp3.8:18.2 | S: a blazing refuge with water, | T: a burning refuge with water,
+snp3.8:18.3 | S: so too an attentive one—a wise, | T: so does the enlightened one— discerning,
+snp3.8:18.4 | S: astute, and skilled person— | T: skillful, & wise—
+snp3.8:18.5 | S: would swiftly blow away grief that comes up, | T: blow away any arisen grief,
+snp3.8:18.6 | S: like the wind a tuft of cotton. | T: like the wind, a bit of cotton fluff.
+snp3.8:19.1 | S: One who seeks their own happiness | T: Seeking your own happiness,
+snp3.8:19.2 | S: would pluck out the dart from themselves— | T: you should pull out your own arrow:
+snp3.8:19.3 | S: the wailing and praying, | T: your own lamentation, longing, & sorrow.
+snp3.8:19.4 | S: and sadness inside. | T: (none)
+snp3.8:20.1 | S: With dart plucked out, unattached, | T: With arrow pulled out, independent,
+snp3.8:20.2 | S: having found peace of mind, | T: attaining peace of awareness,
+snp3.8:20.3 | S: overcoming all sorrow, | T: all grief transcended,
+snp3.8:20.4 | S: one is sorrowless and quenched. | T: griefless you are unbound.
+snp3.8:20.5 | P: Sallasuttaṁ aṭṭhamaṁ. | T: (none)
+
+## snp4.7
+snp4.7:1.1 | S: “When someone indulges in sex,” | T: (none)
+snp4.7:1.2 | S: said Venerable Tissametteyya, | T: Tissa-metteyya:
+snp4.7:1.3 | S: “tell us, good fellow: what trouble befalls them? | T: “Tell the damage, dear sir, for one given over to sexual intercourse.
+snp4.7:1.4 | S: After hearing your instruction, | T: Having heard your teaching,
+snp4.7:1.5 | S: we shall train in seclusion.” | T: we’ll train in seclusion.”
+snp4.7:2.1 | S: “When someone indulges in sex,” | T: The Buddha: “In one given over to sexual intercourse,
+snp4.7:2.2 | S: replied the Buddha, | T: (none)
+snp4.7:2.3 | S: “they forget their instructions | T: the teaching is muddled
+snp4.7:2.4 | S: and go the wrong way— | T: and he practices wrongly:
+snp4.7:2.5 | S: that is something ignoble in them. | T: This is ignoble in him.
+snp4.7:3.1 | S: Someone who formerly lived alone | T: Whoever once went alone,
+snp4.7:3.2 | S: and then resorts to sex | T: but then resorts to sexual intercourse
+snp4.7:3.3 | S: is like a chariot careening off-track; | T: —like a carriage out of control—
+snp4.7:3.4 | S: in the world they call them a low, ordinary person. | T: is called vile in the world, a person run-of-the-mill.
+snp4.7:4.1 | S: Their former fame and reputation | T: His earlier honor & dignity:
+snp4.7:4.2 | S: also fall away. | T: lost.
+snp4.7:4.3 | S: Seeing this, they’d train | T: Seeing this, he should train himself
+snp4.7:4.4 | S: to give up sex. | T: to abandon sexual intercourse.
+snp4.7:5.1 | S: Oppressed by thoughts, | T: Overcome by resolves,
+snp4.7:5.2 | S: they brood like a wretch. | T: he broods like a miserable wretch.
+snp4.7:5.3 | S: When they hear what others are saying, | T: Hearing the scorn of others,
+snp4.7:5.4 | S: that sort is embarrassed. | T: he’s chagrined.
+snp4.7:6.1 | S: Then they lash out with verbal daggers | T: He makes weapons,
+snp4.7:6.2 | S: when reproached by others. | T: attacked by the words of others.
+snp4.7:6.3 | S: This is their great blind spot; | T: This, for him, is a great entanglement.
+snp4.7:6.4 | S: they sink to lies. | T: He sinks into lies.
+snp4.7:7.1 | S: They once were considered astute, | T: They thought him wise
+snp4.7:7.2 | S: committed to the solitary life. | T: when he committed himself to the life alone,
+snp4.7:7.3 | S: But then they indulged in sex, | T: but now that he’s given to sexual intercourse
+snp4.7:7.4 | S: dragged along by desire like a dullard. | T: they declare him a dullard.
+snp4.7:8.1 | S: Knowing this danger | T: Knowing these drawbacks, the sage
+snp4.7:8.2 | S: in falling from a former state here, | T: here—before & after—
+snp4.7:8.3 | S: a sage would firmly resolve to wander alone, | T: stays firm in the life alone;
+snp4.7:8.4 | S: and would not resort to sex. | T: doesn’t resort to sexual intercourse;
+snp4.7:9.1 | S: They’d train themselves only in seclusion; | T: would train himself in seclusion—
+snp4.7:9.2 | S: this, for the noble ones, is highest. | T: this, for the noble, is highest.
+snp4.7:9.3 | S: One who’d not think themselves ‘best’ due to that | T: He wouldn’t, because of that, suppose himself to be better than others:
+snp4.7:9.4 | S: has truly drawn near to extinguishment. | T: He’s on the verge of unbinding.
+snp4.7:10.1 | S: People tied to sensual pleasures envy them: | T: People enmeshed in sensual pleasures, envy him:
+snp4.7:10.2 | S: the isolated, wandering sage | T: a sage remote, leading his life unconcerned for sensual pleasures
+snp4.7:10.3 | S: who has crossed the flood, | T: —one who’s crossed over the flood.”
+snp4.7:10.4 | S: unconcerned for sensual pleasures.” | T: (none)
+snp4.7:10.5 | P: Tissametteyyasuttaṁ sattamaṁ. | T: (none)
+
+## thig3.2
+thig3.2:1.1 | S: Four or five times | T: Four times, five,
+thig3.2:1.2 | S: I left my dwelling. | T: I ran amok from my dwelling,
+thig3.2:1.3 | S: I had failed to find peace of heart, | T: having gained no peace of awareness,
+thig3.2:1.4 | S: or any control over my mind. | T: my thoughts out of control.
+thig3.2:2.1 | S: I approached a nun | T: So I went to a trustworthy nun.
+thig3.2:2.2 | S: in whom I had faith. | T: (none)
+thig3.2:2.3 | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig3.2:2.4 | S: the aggregates, sense fields, and elements. | T: aggregates, sense media, properties.
+thig3.2:3.1 | S: When I had heard her teaching, | T: Hearing the Dhamma,
+thig3.2:3.2 | S: in accordance with her instructions, | T: I did as she said.
+thig3.2:3.3 | S: I sat cross-legged for seven days without moving, | T: For seven days I sat in one spot,
+thig3.2:3.4 | S: given over to rapture and bliss. | T: absorbed in rapture & bliss.
+thig3.2:3.5 | S: On the eighth day I stretched out my feet, | T: On the eighth, I stretched out my legs,
+thig3.2:3.6 | S: having shattered the mass of darkness. | T: having burst the mass of darkness.
+thig3.2:4.1 | P: … Uttamā therī …. | T: (none)
+
+## thig3.5
+thig3.5:1.1 | S: “You cry ‘Live, my dear mother!’ in the forest. | T: [Ubbiri recalls the Buddha’s words:] “‘Jīva, my daughter,’ you cry in the woods.
+thig3.5:1.2 | S: Ubbirī, get a hold of yourself! | T: Come to your senses, Ubbiri.
+thig3.5:1.3 | S: Eighty-four thousand people, | T: 84,000
+thig3.5:1.4 | S: all named ‘Live’, | T: all named Jīva
+thig3.5:1.5 | S: have been burnt in this funeral ground: | T: have been burned in that charnel ground.
+thig3.5:1.6 | S: which one do you grieve for?” | T: For which of them do you grieve?”
+thig3.5:2.1 | S: “Oh! For you have plucked the arrow from me, | T: Pulling out —completely out— the arrow
+thig3.5:2.2 | S: so hard to see, stuck in the heart. | T: so hard to see, embedded in my heart,
+thig3.5:2.3 | S: You’ve swept away the grief for my daughter | T: he expelled from me —overcome with grief— the grief
+thig3.5:2.4 | S: in which I once was mired. | T: over my daughter.
+thig3.5:3.1 | S: Today I’ve plucked the arrow, | T: Today—with arrow removed,
+thig3.5:3.2 | S: I’m hungerless, quenched. | T: without hunger, entirely unbound—
+thig3.5:3.3 | S: I go for refuge to that sage, the Buddha, | T: to the Buddha, Dhamma, & Saṅgha I go, for refuge to the Sage.
+thig3.5:3.4 | S: to his teaching, and to the Saṅgha.” | T: (none)
+thig3.5:4.1 | P: … Ubbirī therī …. | T: (none)
+
+## ud1.8
+ud1.8:1.1 | S: So I have heard. | T: I have heard that
+ud1.8:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud1.8:1.3 | S: Now at that time Venerable Saṅgāmaji had arrived at Sāvatthī to see the Buddha. | T: And on that occasion Ven. Saṅgāmaji had arrived in Sāvatthī to see the Blessed One.
+ud1.8:1.4 | S: His former wife heard | T: His former wife heard,
+ud1.8:1.5 | S: that he had arrived, | T: “Master Saṅgāmaji, they say, has arrived in Sāvatthī.”
+ud1.8:1.6 | S: and went to the Jetavana, taking their boy. | T: Taking her small child, she went to Jeta’s Grove.
+ud1.8:2.1 | S: Now at that time Venerable Saṅgāmaji was sitting at the root of a tree for the day’s meditation. | T: On that occasion Ven. Saṅgāmaji was sitting at the root of a tree for the day’s abiding.
+ud1.8:2.2 | S: Then his former wife went up to him and said, | T: His former wife went to him and, on arrival, said to him,
+ud1.8:2.3 | S: “Ascetic, please raise this little boy.” | T: “Look after me, contemplative–(a woman) with a little son.”
+ud1.8:2.4 | S: When she said this, Saṅgāmaji kept silent. | T: When this was said, Ven. Saṅgāmaji remained silent.
+ud1.8:3.1 | S: For a second time she said, | T: A second time…
+ud1.8:3.2 | S: “Ascetic, please raise this little boy.” | T: (none)
+ud1.8:3.3 | S: For a second time, Saṅgāmaji kept silent. | T: (none)
+ud1.8:4.1 | S: For a third time she said, | T: A third time, his former wife said to him,
+ud1.8:4.2 | S: “Ascetic, please raise this little boy.” | T: “Look after me, contemplative–(a woman) with a little son.”
+ud1.8:4.3 | S: For a third time, Saṅgāmaji kept silent. | T: A third time, Ven. Saṅgāmaji remained silent.
+ud1.8:5.1 | S: Then she put down the boy in front of Saṅgāmaji, saying, | T: Then his former wife, taking the baby and leaving him in front of Ven. Saṅgāmaji, went away, saying,
+ud1.8:5.2 | S: “This is your child, ascetic. Please raise him.” | T: “That’s your son, contemplative. Look after him.”
+ud1.8:6.1 | S: But Saṅgāmaji neither looked at the boy nor spoke to him. | T: Then Ven. Saṅgāmaji neither looked at the child nor spoke to him.
+ud1.8:6.2 | S: Then his former wife went a little distance away. Looking back, she saw Saṅgāmaji ignoring the boy, and thought, | T: His wife, after going not far away, was looking back and saw Ven. Saṅgāmaji neither looking at the child nor speaking to him. On seeing this, the thought occurred to her,
+ud1.8:6.3 | S: “This ascetic doesn’t even want his child.” | T: “The contemplative doesn’t even care about his son.”
+ud1.8:6.4 | S: She returned to pick up the boy, then left. | T: Returning from there and taking the child, she left.
+ud1.8:6.5 | S: With clairvoyance that is purified and superhuman, the Buddha saw how Saṅgāmaji’s former wife went back for the child. | T: The Blessed One–with his divine eye, purified and surpassing the human–saw Ven. Saṅgāmaji’s former wife misbehaving in that way.
+ud1.8:7.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.8:8.1 | S: “When she came he was not glad, | T: At her coming, he didn’t delight;
+ud1.8:8.2 | S: when she left he did not grieve. | T: at her leaving, he didn’t grieve.
+ud1.8:8.3 | S: Victorious in battle, freed from chains, | T: A victor in battle, freed from the tie:
+ud1.8:8.4 | S: that’s who I declare a brahmin.” | T: He’s what I call a brahman.
+ud1.8:8.5 | P: Aṭṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn1.10
+sn1.10:1.1 | S: At Sāvatthī. | T: (none)
+sn1.10:1.2 | S: Standing to one side, that deity addressed the Buddha in verse: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.10:2.1 | S: “Living in the wilderness, | T: “Living in the wilderness,
+sn1.10:2.2 | S: peaceful spiritual practitioners | T: staying peaceful, remaining chaste,
+sn1.10:2.3 | S: eat just one meal a day: | T: eating just one meal a day:
+sn1.10:2.4 | S: so why is their complexion so clear?” | T: why are their faces so bright & serene?”
+sn1.10:3.1 | S: “They don’t grieve for the past, | T: The Buddha: “They don’t sorrow over the past,
+sn1.10:3.2 | S: nor do they pray for the future; | T: don’t long for the future.
+sn1.10:3.3 | S: they feed on whatever comes that day, | T: They survive on the present.
+sn1.10:3.4 | S: that’s why their complexion’s so clear. | T: That’s why their faces are bright & serene.
+sn1.10:4.1 | S: Because they pray for the future, | T: From longing for the future,
+sn1.10:4.2 | S: and grieve for the past, | T: from sorrowing over the past,
+sn1.10:4.3 | S: fools wither away, | T: fools wither away
+sn1.10:4.4 | S: like a green reed mowed down.” | T: like a green reed cut down.”
+sn1.10:4.5 | P: Naḷavaggo paṭhamo. | T: (none)
+sn1.10:5.0 | P: Tassuddānaṁ | T: (none)
+sn1.10:5.1 | P: Oghaṁ nimokkhaṁ upaneyyaṁ, | T: (none)
+sn1.10:5.2 | P: Accenti katichindi ca; | T: (none)
+sn1.10:5.3 | P: Jāgaraṁ appaṭividitā, | T: (none)
+sn1.10:5.4 | P: Susammuṭṭhā mānakāminā; | T: (none)
+sn1.10:5.5 | P: Araññe dasamo vutto, | T: (none)
+sn1.10:5.6 | P: Vaggo tena pavuccati. | T: (none)
+
+## sn1.42
+sn1.42:1.1 | S: “Giving what do you give strength? | T: A deva: “A giver of what is a giver of strength?
+sn1.42:1.2 | S: Giving what do you give beauty? | T: A giver of what, a giver of beauty?
+sn1.42:1.3 | S: Giving what do you give happiness? | T: A giver of what, a giver of ease?
+sn1.42:1.4 | S: Giving what do you give vision? | T: A giver of what, a giver of vision?
+sn1.42:1.5 | S: And who is the giver of all? | T: And who is a giver of everything?
+sn1.42:1.6 | S: Please answer my question.” | T: Being asked, please explain this to me.”
+sn1.42:2.1 | S: “Giving food you give strength. | T: The Buddha: “A giver of food is a giver of strength.
+sn1.42:2.2 | S: Giving clothes you give beauty. | T: A giver of clothes, a giver of beauty.
+sn1.42:2.3 | S: Giving a vehicle you give happiness. | T: A giver of a vehicle, a giver of ease.
+sn1.42:2.4 | S: Giving a lamp you give vision. | T: A giver of a lamp, a giver of vision.
+sn1.42:3.1 | S: And the giver of all | T: And the one who gives a residence is the one who’s a giver of everything.
+sn1.42:3.2 | S: is the one who gives monastic quarters. | T: (none)
+sn1.42:3.3 | S: But one who teaches the Dhamma | T: But the one who teaches the Dhamma
+sn1.42:3.4 | S: gives the gift of freedom from death.” | T: is a giver of the Deathless.”
+
+## sn10.4
+sn10.4:1.1 | S: At one time the Buddha was staying in the land of the Magadhans at the Maṇimālika Shrine, the haunt of the native spirit Maṇibhadda. | T: On one occasion the Blessed One was staying among the Magadhans at the Jewel-stand Shrine, the haunt of the yakkha-spirit, Maṇibhadda [Auspicious Jewel].
+sn10.4:1.2 | S: Then the native spirit Maṇibhadda went up to the Buddha, and spoke this verse in the Buddha’s presence: | T: Then Maṇibhadda the yakkha-spirit went to the Blessed One and, on arrival, recited this verse:
+sn10.4:2.1 | S: “It’s always auspicious for the mindful; | T: “It’s always auspicious for one who is mindful.
+sn10.4:2.2 | S: the mindful prosper in happiness. | T: The mindful one prospers happily—always.
+sn10.4:2.3 | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:2.4 | S: and they are freed from enmity.” | T: and is totally freed from animosity.”
+sn10.4:3.1 | S: “It’s always auspicious for the mindful; | T: The Buddha: “It’s always auspicious for one who is mindful.
+sn10.4:3.2 | S: the mindful prosper in happiness. | T: The mindful one prospers happily always.
+sn10.4:3.3 | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:3.4 | S: but they’re not freed from enmity. | T: but isn’t totally freed from animosity.
+sn10.4:4.1 | S: But someone whose mind delights in harmlessness, | T: Whoever’s heart, all day, all night, delights in harmlessness
+sn10.4:4.2 | S: all day and all night, | T: (none)
+sn10.4:4.3 | S: with love for all living creatures— | T: with goodwill for all beings
+sn10.4:4.4 | S: they have no enmity for anyone.” | T: has no animosity with anyone at all.
+
+## sn48.39
+sn48.39:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.39:1.2 | S: What five? | T: Which five?
+sn48.39:1.3 | S: The faculties of pleasure, pain, happiness, sadness, and equanimity. | T: The pleasure-faculty, the pain-faculty, the happiness-faculty, the distress-faculty, the equanimity-faculty.
+sn48.39:1.4 | S: The faculty of pleasure arises dependent on a contact to be experienced as pleasant. | T: “In dependence on a contact to be experienced as pleasure, the pleasure-faculty arises.
+sn48.39:1.5 | S: When in a state of pleasure, you understand: ‘I’m in a state of pleasure.’ | T: Being eased, one discerns, ‘I am eased.’
+sn48.39:1.6 | S: With the cessation of that contact to be experienced as pleasant, you understand that the corresponding faculty of pleasure that had arisen ceases and stops. | T: With the cessation of that very contact to be experienced as pleasure, one discerns, ‘What was experienced as coming from that—the pleasure-faculty arising in dependence on a contact to be experienced as pleasure—ceases & grows still.’
+sn48.39:2.1 | S: The faculty of pain arises dependent on a contact to be experienced as painful. | T: “In dependence on a contact to be experienced as pain, the pain-faculty arises.
+sn48.39:2.2 | S: When in a state of pain, you understand: ‘I’m in a state of pain.’ | T: Being pained, one discerns, ‘I am pained.’
+sn48.39:2.3 | S: With the cessation of that contact to be experienced as painful, you understand that the corresponding faculty of pain that had arisen ceases and stops. | T: With the cessation of that very contact to be experienced as pain, one discerns, ‘What was experienced as coming from that—the pain-faculty arising in dependence on a contact to be experienced as pain—ceases & grows still.’
+sn48.39:3.1 | S: The faculty of happiness arises dependent on a contact to be experienced as happiness. | T: “In dependence on a contact to be experienced as happiness, the happiness-faculty arises.
+sn48.39:3.2 | S: When in a state of happiness, you understand: ‘I’m in a state of happiness.’ | T: Being happy, one discerns, ‘I am happy.’
+sn48.39:3.3 | S: With the cessation of that contact to be experienced as happiness, you understand that the corresponding faculty of happiness that had arisen ceases and stops. | T: With the cessation of that very contact to be experienced as happiness, one discerns, ‘What was experienced as coming from that—the happiness-faculty arising in dependence on a contact to be experienced as happiness—ceases & grows still.’
+sn48.39:4.1 | S: The faculty of sadness arises dependent on a contact to be experienced as sadness. | T: “In dependence on a contact to be experienced as distress, the distress-faculty arises.
+sn48.39:4.2 | S: When in a state of sadness, you understand: ‘I’m in a state of sadness.’ | T: Being distressed, one discerns, ‘I am distressed.’
+sn48.39:4.3 | S: With the cessation of that contact to be experienced as sadness, you understand that the corresponding faculty of sadness that had arisen ceases and stops. | T: With the cessation of that very contact to be experienced as distress, one discerns, ‘What was experienced as coming from that—the distress-faculty arising in dependence on a contact to be experienced as distress—ceases & grows still.’
+sn48.39:5.1 | S: The faculty of equanimity arises dependent on a contact to be experienced as equanimous. | T: “In dependence on a contact to be experienced as equanimity, the equanimity-faculty arises.
+sn48.39:5.2 | S: When in a state of equanimity, you understand: ‘I’m in a state of equanimity.’ | T: Being equanimous, one discerns, ‘I am equanimous.’
+sn48.39:5.3 | S: With the cessation of that contact to be experienced as equanimous, you understand that the corresponding faculty of equanimity that had arisen ceases and stops. | T: With the cessation of that very contact to be experienced as equanimity, one discerns, ‘What was experienced as coming from that—the equanimity-faculty arising in dependence on a contact to be experienced as equanimity—ceases & grows still.’
+sn48.39:6.1 | S: When you rub two sticks together, heat is generated and fire is produced. But when you part the sticks and lay them aside, any corresponding heat ceases and stops. | T: “Just as when, from the conjunction & combining of two fire sticks, heat is generated & fire produced, while from the separation & laying down of those fire sticks the heat coming from them ceases & grows still;
+sn48.39:6.2 | S: In the same way, the faculty of pleasure arises dependent on a contact to be experienced as pleasant. | T: in the same way, in dependence on a contact to be experienced as pleasure, the pleasure-faculty arises…
+sn48.39:6.3 | S: When in a state of pleasure, you understand: ‘I’m in a state of pleasure.’ | T: (none)
+sn48.39:6.4 | S: With the cessation of that contact to be experienced as pleasant, you understand that the corresponding faculty of pleasure that arises ceases and stops. | T: (none)
+sn48.39:7.1 | S: The faculty of pain … | T: “In dependence on a contact to be experienced as pain, the pain-faculty arises…
+sn48.39:7.2 | S: happiness … | T: “In dependence on a contact to be experienced as happiness, the happiness-faculty arises…
+sn48.39:7.3 | S: sadness … | T: “In dependence on a contact to be experienced as distress, the distress-faculty arises…
+sn48.39:7.4 | S: equanimity arises dependent on a contact to be experienced as equanimous. | T: “In dependence on a contact to be experienced as equanimity, the equanimity-faculty arises.
+sn48.39:7.5 | S: When in a state of equanimity, you understand: ‘I’m in a state of equanimity.’ | T: Being equanimous, one discerns, ‘I am equanimous.’
+sn48.39:7.6 | S: With the cessation of that contact to be experienced as equanimous, you understand that the corresponding faculty of equanimity that arises ceases and stops.” | T: With the cessation of that very contact to be experienced as equanimity, one discerns, ‘What was experienced as coming from that—the equanimity-faculty arising in dependence on a contact to be experienced as equanimity—ceases & grows still.’”
+sn48.39:7.7 | P: Navamaṁ. | T: (none)
+
+## sn48.8
+sn48.8:1.1 | S: “Mendicants, there are these five faculties. | T: “Monks, there are these five faculties.
+sn48.8:1.2 | S: What five? | T: Which five?
+sn48.8:1.3 | S: The faculties of faith, energy, mindfulness, immersion, and wisdom. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, & the faculty of discernment.
+sn48.8:1.4 | S: And where should the faculty of faith be seen? | T: “Now, where is the faculty of conviction to be seen?
+sn48.8:1.5 | S: In the four factors of stream-entry. | T: In the four stream-entry factors:
+sn48.8:1.6 | P: ettha saddhindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of conviction is to be seen.
+sn48.8:1.7 | S: And where should the faculty of energy be seen? | T: “And where is the faculty of persistence to be seen?
+sn48.8:1.8 | S: In the four right efforts. | T: In the four right exertions:
+sn48.8:1.9 | P: ettha vīriyindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of persistence is to be seen.
+sn48.8:1.10 | S: And where should the faculty of mindfulness be seen? | T: “And where is the faculty of mindfulness to be seen?
+sn48.8:1.11 | S: In the four kinds of mindfulness meditation. | T: In the four establishings of mindfulness:
+sn48.8:1.12 | P: ettha satindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of mindfulness is to be seen.
+sn48.8:1.13 | S: And where should the faculty of immersion be seen? | T: “And where is the faculty of concentration to be seen?
+sn48.8:1.14 | S: In the four absorptions. | T: In the four jhānas:
+sn48.8:1.15 | P: ettha samādhindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of concentration is to be seen.
+sn48.8:1.16 | S: And where should the faculty of wisdom be seen? | T: “And where is the faculty of discernment to be seen?
+sn48.8:1.17 | S: In the four noble truths. | T: In the four noble truths:
+sn48.8:1.18 | P: ettha paññindriyaṁ daṭṭhabbaṁ. | T: Here the faculty of discernment is to be seen.” See also SN 45:8 and SN 56:11.
+sn48.8:1.19 | S: These are the five faculties.” | T: (none)
+sn48.8:1.20 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn52.9
+sn52.9:1.1 | S: At one time the venerables Anuruddha and Sāriputta were staying near Vesālī in Ambapālī’s Mango Grove. | T: I have heard that on one occasion Ven. Anuruddha & Ven. Sāriputta were staying near Vesālī in Ambapālīs forest.
+sn52.9:1.2 | S: Then in the late afternoon, Sāriputta came out of retreat, went to Anuruddha, and said to him: | T: Then Ven. Sāriputta, arising from his seclusion in the late afternoon, went to Ven. Anuruddha. On arrival, he exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Anuruddha,
+sn52.9:2.1 | S: “Reverend Anuruddha, your faculties are so very clear, and your complexion is pure and bright. | T: “Bright are your faculties, friend Anuruddha; pure your complexion, and clear.
+sn52.9:2.2 | S: What kind of meditation are you usually practicing these days?” | T: By means of what dwelling do you now often dwell?”
+sn52.9:2.3 | S: “These days, reverend, I usually meditate with my mind firmly established in the four kinds of mindfulness meditation. | T: “I now often dwell, friend, with a mind well-established in the four establishings of mindfulness.
+sn52.9:2.4 | S: What four? | T: Which four?
+sn52.9:2.5 | S: I meditate observing an aspect of the body … | T: There is the case where I remain focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn52.9:2.6 | S: feelings … | T: I remain focused on feelings in & of themselves… the mind in & of itself…
+sn52.9:2.7 | S: mind … | T: (none)
+sn52.9:2.8 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn52.9:2.9 | S: These days I usually meditate with my mind firmly established in these four kinds of mindfulness meditation. | T: “I now often dwell, friend, with a mind well-established in these four establishings of mindfulness.
+sn52.9:2.10 | S: A mendicant who is perfected—with defilements ended, who has completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and is rightly freed through enlightenment—usually meditates with their mind firmly established in these four kinds of mindfulness meditation.” | T: “Any monk whose effluents are ended—who has reached fulfillment, done the task, laid down the burden, attained the true goal, laid to waste the fetter of becoming, and who is released through right gnosis—often dwells with a mind well-established in these four establishings of mindfulness.”
+sn52.9:3.1 | S: “We’re so fortunate, reverend, so very fortunate, | T: “It is a gain for us, my friend, a great gain for us,
+sn52.9:3.2 | S: to have heard such a dramatic statement in the presence of Venerable Anuruddha.” | T: that we were right in Ven. Anuruddha’s presence when he said this bull-like statement!”
+sn52.9:3.3 | P: Navamaṁ. | T: (none)
+
+## an9.39
+an9.39:1.1 | S: “Once upon a time, mendicants, a battle was fought between the gods and the titans. | T: “Once, monks, a battle between the devas & asuras was in full swing.
+an9.39:1.2 | S: In that battle the titans won and the gods lost. | T: And in that battle, the asuras won and the devas lost.
+an9.39:1.3 | S: Defeated, the gods fled north with the titans in pursuit. | T: Having lost, the devas simply fled while the asuras, heading north, attacked them.
+an9.39:1.4 | S: Then the gods thought, | T: Then the thought occurred to the devas,
+an9.39:1.5 | S: ‘The titans are still in pursuit. | T: ‘The asuras are still attacking.
+an9.39:1.6 | S: Why don’t we engage them in battle a second time?’ | T: Why don’t we do battle a second time?’
+an9.39:1.7 | S: And so a second battle was fought between the gods and the titans. | T: “So the devas did battle with the asuras a second time.
+an9.39:1.8 | S: And for a second time the titans won and the gods lost. | T: And a second time, the asuras won and the devas lost.
+an9.39:1.9 | S: Defeated, the gods fled north with the titans in pursuit. | T: Having lost, the devas simply fled while the asuras, heading north, attacked them.
+an9.39:2.1 | S: Then the gods thought, | T: Then the thought occurred to the devas,
+an9.39:2.2 | S: ‘The titans are still in pursuit. | T: ‘The asuras are still attacking.
+an9.39:2.3 | S: Why don’t we engage them in battle a third time?’ | T: Why don’t we do battle a third time?’
+an9.39:2.4 | S: And so a third battle was fought between the gods and the titans. | T: “So the devas did battle with the asuras a third time.
+an9.39:2.5 | S: And for a third time the titans won and the gods lost. | T: And a third time, the asuras won and the devas lost.
+an9.39:2.6 | S: Defeated and terrified, the gods fled right into the castle of the gods. | T: Having lost, the devas, afraid, entered the deva capital.
+an9.39:2.7 | S: When they had entered their castle, they thought, | T: Having gone to their capital, the devas thought,
+an9.39:2.8 | S: ‘Now we’re in a secure location and the titans can’t do anything to us.’ | T: ‘Having come to this shelter for the fearful, we will now keep here to ourselves, having nothing to do with the asuras.’
+an9.39:2.9 | S: The titans also thought, | T: And the asuras also thought,
+an9.39:2.10 | S: ‘Now the gods are in a secure location and we can’t do anything to them.’ | T: ‘Having gone to this shelter for the fearful, the devas will now keep here to themselves, having nothing to do with us.’
+an9.39:3.1 | S: Once upon a time, a battle was fought between the gods and the titans. | T: “Once, monks, a battle between the devas & asuras was in full swing.
+an9.39:3.2 | S: In that battle the gods won and the titans lost. | T: And in that battle, the devas won and the asuras lost.
+an9.39:3.3 | S: Defeated, the titans fled south with the gods in pursuit. | T: Having lost, the asuras simply fled while the devas, heading south, attacked them.
+an9.39:3.4 | S: Then the titans thought, | T: Then the thought occurred to the asura,
+an9.39:3.5 | S: ‘The gods are still in pursuit. | T: ‘The devas are still attacking.
+an9.39:3.6 | S: Why don’t we engage them in battle a second time?’ | T: Why don’t we do battle a second time?’
+an9.39:3.7 | S: And so a second battle was fought between the gods and the titans. | T: “So the asuras did battle with the devas a second time.
+an9.39:3.8 | S: And for a second time the gods won and the titans lost. | T: And a second time, the devas won and the asuras lost.
+an9.39:3.9 | S: Defeated, the titans fled south with the gods in pursuit. | T: Having lost, the asuras simply fled while the devas, heading south, attacked them.
+an9.39:4.1 | S: Then the titans thought, | T: Then the thought occurred to the asuras,
+an9.39:4.2 | S: ‘The gods are still in pursuit. | T: ‘The devas are still attacking.
+an9.39:4.3 | S: Why don’t we engage them in battle a third time?’ | T: Why don’t we do battle a third time?’
+an9.39:4.4 | S: And so a third battle was fought between the gods and the titans. | T: “So the asuras did battle with the devas a third time.
+an9.39:4.5 | S: And for a third time the gods won and the titans lost. | T: And a third time, the devas won and the asuras lost.
+an9.39:4.6 | S: Defeated and terrified, the titans fled right into the citadel of the titans. | T: Having lost, the asuras, afraid, entered the asura capital.
+an9.39:4.7 | S: When they had entered their citadel, they thought, | T: Having gone to their capital, the asuras thought,
+an9.39:4.8 | S: ‘Now we’re in a secure location and the gods can’t do anything to us.’ | T: ‘Having come to this shelter for the fearful, we will now keep here to ourselves, having nothing to do with the devas.’
+an9.39:4.9 | S: And the gods also thought, | T: And the devas also thought,
+an9.39:4.10 | S: ‘Now the titans are in a secure location and we can’t do anything to them.’ | T: ‘Having gone to this shelter for the fearful, the asuras will now keep here to themselves, having nothing to do with us.’
+an9.39:5.1 | S: In the same way, there’s a time when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “In the same way, monks, on whatever occasion a monk—secluded from sensuality, secluded from unskillful qualities—enters the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation,
+an9.39:5.2 | S: At that time the mendicant thinks, | T: on that occasion the thought occurs to him,
+an9.39:5.3 | S: ‘Now I’m in a secure location and Māra can’t do anything to me.’ | T: ‘Having come to this shelter for the fearful, I will now keep here to myself, having nothing to do with Māra.’
+an9.39:5.4 | S: And Māra the Wicked also thinks, | T: And the thought occurs to Māra, the Evil One,
+an9.39:5.5 | S: ‘Now the mendicant is in a secure location and we can’t do anything to them.’ | T: ‘Having gone to this shelter for the fearful, the monk will now keep here to himself, having nothing to do with me.’
+an9.39:6.1 | S: There’s a time when, as the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption … | T: [Similarly with the second,
+an9.39:6.2 | S: third absorption … | T: third,
+an9.39:6.3 | S: fourth absorption. | T: & fourth jhānas.]
+an9.39:6.4 | S: At that time the mendicant thinks, | T: (none)
+an9.39:6.5 | S: ‘Now I’m in a secure location and Māra can’t do anything to me.’ | T: (none)
+an9.39:6.6 | S: And Māra the Wicked also thinks, | T: (none)
+an9.39:6.7 | S: ‘Now the mendicant is in a secure location and we can’t do anything to them.’ | T: (none)
+an9.39:7.1 | S: There’s a time when a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “On whatever occasion a monk, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ enters the dimension of the infinitude of space:
+an9.39:7.2 | S: This is called a mendicant who has blinded Māra, put out his eyes without a trace, and gone where the Wicked One cannot see. | T: He is said to be a monk who has put Māra in the dark. Having bound Māra’s eyes and leaving no trace, he has become invisible to the Evil One.
+an9.39:8.1 | S: There’s a time when a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. … | T: [Similarly with the dimensions of the infinitude of consciousness,
+an9.39:8.2 | S: Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. … | T: nothingness,
+an9.39:8.3 | S: Going totally beyond the dimension of nothingness, they enter and remain in the dimension of neither perception nor non-perception. … | T: and neither perception nor non-perception.]
+an9.39:8.4 | S: Going totally beyond the dimension of neither perception nor non-perception, they enter and remain in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. | T: “On whatever occasion, with the complete transcending of the dimension of neither perception nor non-perception, he enters & remains in the cessation of perception & feeling; and as he sees (that) with discernment, effluents are completely ended:
+an9.39:8.5 | S: This is called a mendicant who has blinded Māra, put out his eyes without a trace, and gone where the Wicked One cannot see. And they’ve crossed over clinging to the world.” | T: He is said to be a monk who has put Māra in the dark. Having bound Māra’s eyes and leaving no trace, he has become invisible to the Evil One, having crossed over attachment in the cosmos.”
+an9.39:8.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## an7.50
+an7.50:1.1 | S: Then the brahmin Jānussoṇi went up to the Buddha, and exchanged greetings with him. | T: Then Jāṇussoṇin the brahman went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an7.50:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+an7.50:1.3 | S: “Does Worthy Gotama claim to be chaste?” | T: “Does Master Gotama claim to be one who leads the holy life?”
+an7.50:1.4 | S: “Brahmin, if anyone should be rightly said to | T: “If, brahman, one could rightly say of anyone,
+an7.50:1.5 | S: live the chaste life intact, impeccable, spotless, and unmarred, full and pure, it’s me.” | T: ‘He leads the holy life without gap, without break, without spot, without blemish—perfect & pure,’ it would rightly be said of me.
+an7.50:1.6 | P: ‘ahañhi, brāhmaṇa, akhaṇḍaṁ acchiddaṁ asabalaṁ akammāsaṁ paripuṇṇaṁ parisuddhaṁ brahmacariyaṁ carāmī’”ti. | T: I lead the holy life without gap, without break, without spot, without blemish—perfect & pure.”
+an7.50:1.7 | S: “But what, Worthy Gotama, is a break, taint, stain, or mar in chastity?” | T: “But what, Master Gotama, is a gap, a break, a spot, a blemish of the holy life?”
+an7.50:2.1 | S: “Firstly, an ascetic or brahmin who claims to be perfectly chaste does not mutually engage in sex with a lady. | T: “There is the case, brahman, where a certain contemplative or brahman, while claiming to be one who rightly follows the holy life, doesn’t actually engage in copulating with a woman
+an7.50:2.2 | S: However, they consent to being anointed, massaged, bathed, and rubbed by a lady. | T: but he does consent to being anointed, rubbed down, bathed, or massaged by a woman.
+an7.50:2.3 | S: They enjoy it and like it and find it rewarding. | T: He enjoys that, wants more of that, and luxuriates in that.
+an7.50:2.4 | S: This is a break, taint, stain, or mar in chastity. | T: This is a gap, a break, a spot, a blemish of the holy life.
+an7.50:2.5 | S: This is called one who lives the chaste life impurely, yoked by the yoke of sex. They’re not freed from rebirth, old age, death, sorrow, lamentation, pain, sadness, and distress. They’re not freed from suffering, I say. | T: He is called one who lives the holy life in an impure way, one who is fettered by the fetter of sexuality. He is not freed from birth, aging, & death, from sorrows, lamentations, pains, griefs, & despairs. He is not freed, I tell you, from suffering & stress.
+an7.50:3.1 | S: Furthermore, an ascetic or brahmin who claims to be perfectly chaste does not mutually engage in sex with a lady. Nor do they consent to massage and bathing. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an7.50:3.2 | S: However, they giggle and play and have fun with ladies. … | T: “Or… he jokes, plays, and amuses himself with a woman. He enjoys that, wants more of that, and luxuriates in that.…
+an7.50:4.1 | P: Napi mātugāmena saddhiṁ sañjagghati saṅkīḷati saṅkelāyati; | T: (none)
+an7.50:4.2 | S: they gaze into a lady’s eyes. … | T: “Or… he stares into a woman’s eyes. He enjoys that, wants more of that, and luxuriates in that.…
+an7.50:5.1 | P: Napi mātugāmassa cakkhunā cakkhuṁ upanijjhāyati pekkhati; | T: (none)
+an7.50:5.2 | S: they listen through a wall or rampart to the sound of ladies laughing or chatting or singing or crying. … | T: “Or… he listens to the voices of women outside a wall as they laugh, speak, sing, or cry. He enjoys that, wants more of that, and luxuriates in that.…
+an7.50:6.1 | P: Napi mātugāmassa saddaṁ suṇāti tirokuṭṭaṁ vā tiropākāraṁ vā hasantiyā vā bhaṇantiyā vā gāyantiyā vā rodantiyā vā; | T: (none)
+an7.50:6.2 | S: they recall when they used to laugh, chat, and have fun with ladies. … | T: “Or… he recollects how he used to laugh, converse, and play with a woman. He enjoys that, wants more of that, and luxuriates in that.…
+an7.50:7.1 | P: Napi yānissa tāni pubbe mātugāmena saddhiṁ hasitalapitakīḷitāni tāni anussarati; | T: (none)
+an7.50:7.2 | S: they see a householder or their child amusing themselves, supplied and provided with the five kinds of sensual stimulation. … | T: “Or… he sees a householder or householder’s son enjoying himself endowed with the five strings of sensuality. He enjoys that, wants more of that, and luxuriates in that.…
+an7.50:8.1 | S: They don’t see a householder or their child amusing themselves, supplied and provided with the five kinds of sensual stimulation. | T: (none)
+an7.50:8.2 | S: However, they live the chaste life wishing to be reborn in one of the orders of gods. They think: ‘By this precept or observance or fervent austerity or spiritual practice, may I become one of the gods!’ | T: “Or… he practices the holy life intent on being born in one or another of the deva hosts, (thinking) ‘By this virtue or practice or abstinence or holy life I will be a deva of one sort or another.’
+an7.50:8.3 | S: They enjoy it and like it and find it rewarding. | T: He enjoys that, wants more of that, and luxuriates in that.
+an7.50:8.4 | S: This is a break, taint, stain, or mar in chastity. | T: This is a gap, a break, a spot, a blemish of the holy life.
+an7.50:8.5 | S: This is called one who lives the chaste life impurely, yoked by the yoke of sex. They’re not free from rebirth, old age, death, sorrow, lamentation, pain, sadness, and distress. They’re not free from suffering, I say. | T: He is called one who lives the holy life in an impure way, one who is fettered by the fetter of sexuality. He is not freed from birth, aging, & death, from sorrows, lamentations, pains, griefs, & despairs. He is not freed, I tell you, from suffering & stress.
+an7.50:9.1 | S: As long as I saw that these seven sexual yokes—or even one of them—had not been given up in me, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “And, brahman, as long as I saw that one or another of these seven fetters of sexuality was not abandoned in myself, I did not claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, their royalty & commonfolk.
+an7.50:10.1 | S: But when I saw that these seven sexual yokes—every one of them—had been given up in me, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did not see any one of these seven fetters of sexuality unabandoned in myself, then I did claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, their royalty & commonfolk.
+an7.50:10.2 | S: Knowledge and vision arose in me: | T: Knowledge & vision arose in me:
+an7.50:10.3 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further becoming.’”
+an7.50:11.1 | S: When he said this, the brahmin Jānussoṇi said to the Buddha, | T: When this was said, Jāṇussoṇin the brahman said to the Blessed One,
+an7.50:11.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+an7.50:11.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone for refuge from this day forward, for life.”
+an7.50:11.4 | P: Sattamaṁ. | T: (none)
+
+## sn48.53
+sn48.53:1.1 | S: So I have heard. | T: I have heard that
+sn48.53:1.2 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: on one occasion the Blessed One was staying near Kosambī at Ghosita’s monastery.
+sn48.53:1.3 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks,
+sn48.53:1.4 | S: “Mendicants, is there a way that a mendicant who is a trainee, standing at the level of a trainee, can understand that they are a trainee? And that a mendicant who is an adept, standing at the level of an adept, can understand that they are an adept?” | T: “Monks, is there a manner of reckoning whereby a monk who is a learner [i.e., a person who has attained at least stream-entry, but has not yet reached arahantship], standing at the level of a learner, can discern that ‘I am a learner,’ and whereby a monk who is an adept [i.e., an arahant], standing at the level of an adept, can discern that ‘I am an adept’?”
+sn48.53:2.1 | S: “Our teachings are rooted in the Buddha. …” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.” “In that case, monks, listen & pay close attention. I will speak.” “As you say, lord,” the monks responded. The Blessed One said,
+sn48.53:2.2 | S: “There is a way that a mendicant who is a trainee, standing at the level of a trainee, can understand that they are a trainee, and that a mendicant who is an adept, standing at the level of an adept, can understand that they are an adept. | T: “There is a manner of reckoning whereby a monk who is a learner, standing at the level of a learner, can discern that ‘I am a learner,’ and whereby a monk who is an adept, standing at the level of an adept, can discern that ‘I am an adept.’
+sn48.53:3.1 | S: And what is a way that a mendicant who is a trainee can understand that they are a trainee? | T: “And what is the manner of reckoning whereby a monk who is a learner, standing at the level of a learner, can discern that ‘I am a learner’?
+sn48.53:3.2 | S: It’s when a mendicant who is a trainee truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: There is the case where a monk is a learner. He discerns, as it has come to be, that ‘This is stress… This is the origination of stress… This is the cessation of stress… This is the path of practice leading to the cessation of stress.’
+sn48.53:3.3 | S: This is a way that a mendicant who is a trainee can understand that they are a trainee. | T: This is a manner of reckoning whereby a monk who is a learner, standing at the level of a learner, can discern that ‘I am a learner.’
+sn48.53:4.1 | S: Furthermore, a mendicant who is a trainee reflects: | T: “And further, the monk who is a learner reflects,
+sn48.53:4.2 | S: ‘Is there any other ascetic or brahmin elsewhere whose teaching is as true, as real, as accurate as that of the Buddha?’ | T: ‘Is there outside of this (Dhamma & Vinaya) any contemplative or brahman who teaches the true, genuine, & accurate Dhamma like the Blessed One?’
+sn48.53:4.3 | S: They understand: | T: And he discerns,
+sn48.53:4.4 | S: ‘There is no other ascetic or brahmin elsewhere whose teaching is as true, as real, as accurate as that of the Buddha.’ | T: ‘No, there is no contemplative or brahman outside of this who teaches the true, genuine, & accurate Dhamma like the Blessed One.’
+sn48.53:4.5 | S: This too is a way that a mendicant who is a trainee can understand that they are a trainee. | T: This too is a manner of reckoning whereby a monk who is a learner, standing at the level of a learner, can discern that ‘I am a learner.’
+sn48.53:5.1 | S: Furthermore, a mendicant who is a trainee understands the five faculties: | T: “And further, the monk who is a learner discerns the five faculties:
+sn48.53:5.2 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction… persistence… mindfulness… concentration… discernment.
+sn48.53:5.3 | S: And although they don’t have direct meditative experience of their destination, apex, fruit, and culmination, | T: He sees clear through with discernment their destiny, excellence, rewards, & consummation, but he does not touch them with his body.
+sn48.53:5.4 | S: they do see them with penetrating wisdom. | T: (none)
+sn48.53:5.5 | S: This too is a way that a mendicant who is a trainee can understand that they are a trainee. | T: This too is a manner of reckoning whereby a monk who is a learner, standing at the level of a learner, can discern that ‘I am a learner.’
+sn48.53:6.1 | S: And what is the way that a mendicant who is an adept can understand that they are an adept? | T: “And what is the manner of reckoning whereby a monk who is an adept, standing at the level of an adept, can discern that ‘I am an adept’?
+sn48.53:6.2 | S: It’s when a mendicant who is an adept understands the five faculties: | T: There is the case where a monk who is an adept discerns the five faculties:
+sn48.53:6.3 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction… persistence… mindfulness… concentration… discernment.
+sn48.53:6.4 | S: They have direct meditative experience of their destination, apex, fruit, and culmination, | T: He touches with his body and sees clear through with discernment what their destiny, excellence, rewards, & consummation are.
+sn48.53:6.5 | S: and they see them with penetrating wisdom. | T: (none)
+sn48.53:6.6 | S: This is a way that a mendicant who is an adept can understand that they are an adept. | T: This is a manner of reckoning whereby a monk who is an adept, standing at the level of an adept, can discern that ‘I am an adept.’
+sn48.53:7.1 | S: Furthermore, a mendicant who is an adept understands the six faculties: | T: “And further, the monk who is an adept discerns the six sense faculties:
+sn48.53:7.2 | S: eye, ear, nose, tongue, body, and mind. | T: the faculty of the eye… ear… nose…tongue… body… intellect.
+sn48.53:7.3 | S: They understand: ‘These six faculties will totally and utterly cease without remainder. And no other six faculties will arise anywhere anyhow.’ | T: He discerns, ‘These six sense faculties will disband entirely, everywhere, & in every way without remainder, and no other set of six sense faculties will arise anywhere or in any way.’
+sn48.53:7.4 | S: This too is a way that a mendicant who is an adept can understand that they are an adept.” | T: This too is a manner of reckoning whereby a monk who is an adept, standing at the level of an adept, can discern that ‘I am an adept.’”
+sn48.53:7.5 | P: Tatiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '601,800p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the whole file and found two clear boundary errors: “a century” belongs on the next line, and the mind item in an ellipsis-separated list needs its own line.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-026.findings.tmp <<'EOF'
+snp3.8:16.2 starts: a century —or more—
+sn52.9:2.7 starts: the mind in & of itself…
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+2 lines reported.
+tokens used
+28,406
+2 lines reported.

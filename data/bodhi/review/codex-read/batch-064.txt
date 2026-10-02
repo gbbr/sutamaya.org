@@ -1,0 +1,305 @@
+## an8.27
+an8.27:1.1 | S: “Mendicants, there are these eight powers. | T: “Bhikkhus, there are these eight powers.
+an8.27:1.2 | S: What eight? | T: What eight?
+an8.27:1.3 | S: Crying is the power of babies. Anger is the power of ladies. Weapons are the power of bandits. Authority is the power of rulers. Complaining is the power of fools. Reason is the power of the astute. Reflection is the power of the learned. Patience is the power of ascetics and brahmins. | T: (1) The power of children is weeping; (2) the power of women is anger; (3) the power of thieves is a weapon; (4) the power of kings is sovereignty; (5) the power of fools is to complain; (6) the power of the wise is to deliberate; (7) the power of the learned is reflection; (8) the power of ascetics and brahmins is patience.
+an8.27:1.4 | S: These are the eight powers.” | T: These are the eight powers.”
+an8.27:1.5 | P: Sattamaṁ. | T: (none)
+
+## an8.2
+an8.2:1.1 | S: “Mendicants, there are eight causes and reasons that lead to acquiring the wisdom fundamental to the spiritual life, and to its increase, growth, and full development once it has been acquired. | T: “Bhikkhus, there are these eight causes and conditions that lead to obtaining the wisdom fundamental to the spiritual life when it has not been obtained and to its increase, maturation, and fulfillment by development after it has been obtained.
+an8.2:1.2 | S: What eight? | T: What eight?
+an8.2:1.3 | S: It’s when a mendicant lives relying on the Teacher or a spiritual companion in a teacher’s role. And they set up a keen sense of conscience and prudence for them, with warmth and respect. | T: (1) “Here, a bhikkhu lives in dependence on the Teacher or on a certain fellow monk in the position of a teacher, toward whom he has set up a keen sense of moral shame and moral dread, affection and reverence.
+an8.2:1.4 | S: This is the first cause. | T: This is the first cause and condition that leads to obtaining the wisdom fundamental to the spiritual life when it has not been obtained and to its increase, maturation, and fulfillment by development after it has been obtained.
+an8.2:2.1 | S: When a mendicant lives relying on the Teacher or a spiritual companion in a teacher’s role—with a keen sense of conscience and prudence for them, with warmth and respect—from time to time they go and ask them questions: | T: (2) “As he is living in dependence on the Teacher or on a certain fellow monk in the position of a teacher, toward whom he has set up a keen sense of moral shame and moral dread, affection and reverence, he approaches them from time to time and inquires:
+an8.2:2.2 | S: ‘Why, sir, does it say this? What does that mean?’ | T: ‘How is this, Bhante? What is the meaning of this?’
+an8.2:2.3 | S: Those venerables reveal what is hidden, clarify what is unclear, and dispel doubt regarding the many doubtful matters. | T: Those venerable ones then disclose to him what has not been disclosed, clear up what is obscure, and dispel his perplexity about numerous perplexing points.
+an8.2:2.4 | S: This is the second cause. | T: This is the second cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:3.1 | S: After hearing that teaching they perfect withdrawal of both body and mind. | T: (3) “Having heard that Dhamma, he resorts to two kinds of withdrawal: withdrawal in body and withdrawal in mind.
+an8.2:3.2 | S: This is the third cause. | T: This is the third cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:4.1 | S: A mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: (4) “He is virtuous; he dwells restrained by the Pātimokkha, possessed of good conduct and resort, seeing danger in minute faults. Having undertaken the training rules, he trains in them.
+an8.2:4.2 | S: This is the fourth cause. | T: This is the fourth cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:5.1 | S: They’re very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s entirely full and pure. They are very learned in such teachings, remembering them, rehearsing them, mentally scrutinizing them, and penetrating them theoretically. | T: (5) “He has learned much, remembers what he has learned, and accumulates what he has learned. Those teachings that are good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing, which proclaim the perfectly complete and pure spiritual life—such teachings as these he has learned much of, retained in mind, recited verbally, mentally investigated, and penetrated well by view.
+an8.2:5.2 | S: This is the fifth cause. | T: This is the fifth cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:6.1 | S: They live with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: (6) “He has aroused energy for abandoning unwholesome qualities and acquiring wholesome qualities; he is strong, firm in exertion, not casting off the duty of cultivating wholesome qualities.
+an8.2:6.2 | S: This is the sixth cause. | T: This is the sixth cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:7.1 | S: When in the Saṅgha they don’t engage in motley talk or low talk. | T: (7) “In the midst of the Saṅgha, he does not engage in rambling and pointless talk.
+an8.2:7.2 | S: Either they talk on Dhamma, or they invite someone else to do so, or they respect noble silence. | T: Either he himself speaks on the Dhamma, or he requests someone else to do so, or he adopts noble silence.
+an8.2:7.3 | S: This is the seventh cause. | T: This is the seventh cause and condition that leads to obtaining the wisdom fundamental to the spiritual life….
+an8.2:8.1 | S: They meditate observing rise and fall in the five grasping aggregates. | T: (8) “He dwells contemplating arising and vanishing in the five aggregates subject to clinging:
+an8.2:8.2 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+an8.2:8.3 | S: Such is feeling, such is the origin of feeling, such is the disappearance of feeling. | T: such is feeling …
+an8.2:8.4 | S: Such is perception, such is the origin of perception, such is the disappearance of perception. | T: such is perception …
+an8.2:8.5 | S: Such are choices, such is the origin of choices, such is the disappearance of choices. | T: such are volitional activities …
+an8.2:8.6 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such is consciousness, such its origin, such its passing away.’
+an8.2:8.7 | S: This is the eighth cause. | T: This is the eighth cause and condition that leads to obtaining the wisdom fundamental to the spiritual life when it has not been obtained and to its increase, maturation, and fulfillment by development after it has been obtained.
+an8.2:9.1 | S: Their spiritual companions esteem them: | T: (1) “His fellow monks esteem him thus:
+an8.2:9.2 | S: ‘This venerable lives relying on the Teacher or a spiritual companion in a teacher’s role. They set up a keen sense of conscience and prudence for them, with warmth and respect. | T: ‘This venerable one lives in dependence on the Teacher or on a certain fellow monk in the position of a teacher, toward whom he has set up a keen sense of moral shame and moral dread, affection and reverence.
+an8.2:9.3 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:9.4 | S: This quality leads to fondness, respect, esteem, harmony, and unity. | T: This quality leads to affection, respect, esteem, accord, and unity.
+an8.2:10.1 | S: ‘This venerable lives relying on the Teacher or a spiritual companion in a teacher’s role, and from time to time they go and ask them questions … | T: (2) “‘As this venerable one is living in dependence on the Teacher or on a certain fellow monk in the position of a teacher … … those venerable ones …
+an8.2:10.2 | P: “idaṁ, bhante, kathaṁ; imassa ko attho”ti? | T: (none)
+an8.2:10.3 | P: Tassa te āyasmanto avivaṭañceva vivaranti, anuttānīkatañca uttānīkaronti, anekavihitesu ca kaṅkhāṭhāniyesu dhammesu kaṅkhaṁ paṭivinodenti. | T: dispel his perplexity about numerous perplexing points.
+an8.2:10.4 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:10.5 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:11.1 | S: ‘After hearing that teaching they perfect withdrawal of both body and mind. | T: (3) “‘Having heard that Dhamma, this venerable one resorts to two kinds of withdrawal: withdrawal in body and withdrawal in mind.
+an8.2:11.2 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:11.3 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:12.1 | S: ‘This venerable is ethical … | T: (4) “‘This venerable one is virtuous; he dwells restrained by the Pātimokkha … he trains in them.
+an8.2:12.2 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:12.3 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:13.1 | S: ‘This venerable is very learned, remembering and keeping what they’ve learned. … | T: (5) “‘This venerable one has learned much … and penetrated well by view.
+an8.2:13.2 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:13.3 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:14.1 | S: ‘This venerable lives with energy roused up … | T: (6) “‘This venerable one has aroused energy for abandoning unwholesome qualities … not casting off the duty of cultivating wholesome qualities.
+an8.2:14.2 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:14.3 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:15.1 | S: ‘When in the Saṅgha they don’t engage in motley talk or low talk. | T: (7) “‘In the midst of the Saṅgha, this venerable one does not engage in rambling and pointless talk …
+an8.2:15.2 | S: Either they talk on Dhamma, or they invite someone else to do so, or they respect noble silence. | T: or he adopts noble silence.
+an8.2:15.3 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:15.4 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:16.1 | S: ‘They meditate observing rise and fall in the five grasping aggregates. … | T: (8) “‘This venerable one dwells contemplating arising and vanishing in the five aggregates subject to clinging….
+an8.2:16.2 | P: iti rūpaṁ, iti rūpassa samudayo, iti rūpassa atthaṅgamo; | T: (none)
+an8.2:16.3 | P: iti vedanā …pe… | T: (none)
+an8.2:16.4 | P: iti saññā … | T: (none)
+an8.2:16.5 | P: iti saṅkhārā … | T: (none)
+an8.2:16.6 | P: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamoti. | T: (none)
+an8.2:16.7 | S: Clearly this venerable knows and sees.’ | T: This venerable one surely knows and sees.’
+an8.2:16.8 | S: This quality also leads to fondness, respect, esteem, harmony, and unity. | T: This quality, too, leads to affection, respect, esteem, accord, and unity.
+an8.2:17.1 | S: These are the eight causes and reasons that lead to acquiring the wisdom fundamental to the spiritual life, and to its increase, growth, and full development once it has been acquired.” | T: “These, bhikkhus, are the eight causes and conditions that lead to obtaining the wisdom fundamental to the spiritual life when it has not been obtained and to its increase, maturation, and fulfillment by development after it has been obtained.”
+an8.2:17.2 | P: Dutiyaṁ. | T: (none)
+
+## an8.32
+an8.32:1.1 | S: “Faith, conscience, and skillful giving | T: Faith, moral shame, and wholesome giving
+an8.32:1.2 | S: are qualities true persons follow. | T: are qualities pursued by the good person;
+an8.32:1.3 | S: For this, they say, is the path of the gods, | T: for this, they say, is the divine path
+an8.32:1.4 | S: which leads to the heavenly realm.” | T: by which one goes to the world of the devas.
+an8.32:1.5 | P: Dutiyaṁ. | T: (none)
+
+## an8.33
+an8.33:1.1 | S: “Mendicants, there are these eight grounds for giving. | T: “Bhikkhus, there are these eight grounds for giving.
+an8.33:1.2 | S: What eight? | T: What eight?
+an8.33:1.3 | S: Someone might give a gift out of favoritism or hostility or stupidity or cowardice. Or they give thinking, ‘Giving was practiced by my father and my father’s father. It would not be right for me to abandon this traditional family custom.’ Or they give thinking, ‘After I’ve given this gift, when my body breaks up, after death, I’ll be reborn in a good place, a heavenly realm.’ Or they give thinking, ‘When giving this gift my mind becomes clear, and I become happy and joyful.’ Or they give a gift thinking, ‘This is an adornment and requisite for the mind.’ | T: (1) One gives a gift from desire. (2) One gives a gift from hatred. (3) One gives a gift from delusion. (4) One gives a gift from fear. (5) One gives a gift, thinking: ‘Giving was practiced before by my father and forefathers; I should not abandon this ancient family custom.’ (6) One gives a gift, thinking: ‘Having given this gift, with the breakup of the body, after death, I will be reborn in a good destination, in a heavenly world.’ (7) One gives a gift, thinking: ‘When I am giving this gift my mind becomes placid, and elation and joy arise.’ (8) One gives a gift for the purpose of ornamenting the mind, equipping the mind.
+an8.33:1.4 | S: These are the eight grounds for giving.” | T: These are the eight grounds for giving.”
+an8.33:1.5 | P: Tatiyaṁ. | T: (none)
+
+## an8.34
+an8.34:1.1 | S: “Mendicants, when a field has eight factors a seed sown in it is not very fruitful or rewarding or productive. | T: “Bhikkhus, a seed sown in a field that possesses eight factors does not bring forth abundant fruits, its fruits are not delectable, and it does not yield a profit.
+an8.34:1.2 | S: What eight factors does it have? | T: What eight factors?
+an8.34:1.3 | S: It’s when a field has mounds and ditches. It has stones and gravel. It’s salty. It doesn’t have deep furrows. And it’s not equipped with water inlets, water outlets, irrigation channels, and boundaries. | T: “Here, (1) the field has mounds and ditches; (2) it contains stones and gravel; (3) it is salty; (4) it is not deeply furrowed; (5) it does not have inlets for the water to enter; (6) it does not have outlets for excess water to flow out; (7) it does not have irrigation channels; and (8) it does not have boundaries.
+an8.34:1.4 | S: When a field has these eight factors a seed sown in it is not fruitful or rewarding or productive. | T: A seed sown in a field that possesses these eight factors does not bring forth abundant fruits, its fruits are not delectable, and it does not yield a profit.
+an8.34:2.1 | S: In the same way, when an ascetic or brahmin has eight factors a gift given to them is not very fruitful or beneficial or brilliant or bountiful. | T: “So too, bhikkhus, a gift given to ascetics and brahmins who possess eight factors is not of great fruit and benefit, and it is not very brilliant or pervasive.
+an8.34:2.2 | S: What eight factors do they have? | T: What eight factors?
+an8.34:2.3 | S: It’s when an ascetic or brahmin has wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: Here, the ascetics and brahmins are of wrong view, wrong intention, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong concentration.
+an8.34:2.4 | S: When an ascetic or brahmin has these eight factors a gift given to them is not very fruitful or beneficial or brilliant or bountiful. | T: A gift given to ascetics and brahmins who possess these eight factors is not of great fruit and benefit, and it is not very brilliant or pervasive.
+an8.34:3.1 | S: When a field has eight factors a seed sown in it is very fruitful and rewarding and productive. | T: “Bhikkhus, a seed sown in a field that possesses eight factors brings forth abundant fruits, its fruits are delectable, and it yields a profit.
+an8.34:3.2 | S: What eight factors does it have? | T: What eight factors?
+an8.34:3.3 | S: It’s when a field doesn’t have mounds and ditches. It doesn’t have stones and gravel. It’s not salty. It has deep furrows. And it’s equipped with water inlets, water outlets, irrigation channels, and boundaries. | T: “Here, (1) the field does not have mounds and ditches; (2) it does not contain stones and gravel; (3) it is not salty; (4) it is deeply furrowed; (5) it has inlets for the water to enter; (6) it has outlets for excess water to flow out; (7) it has irrigation channels; and (8) it has boundaries.
+an8.34:3.4 | S: When a field has these eight factors a seed sown in it is very fruitful and rewarding and productive. | T: A seed sown in a field that possesses these eight factors brings forth abundant fruits, its fruits are delectable, and it yields a profit.
+an8.34:4.1 | S: In the same way, when an ascetic or brahmin has eight factors a gift given to them is very fruitful and beneficial and brilliant and bountiful. | T: “So too, bhikkhus, a gift given to ascetics and brahmins who possess eight factors is of great fruit and benefit, and it is extraordinarily brilliant and pervasive.
+an8.34:4.2 | S: What eight factors do they have? | T: What eight factors?
+an8.34:4.3 | S: It’s when an ascetic or brahmin has right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Here, the ascetics and brahmins are of right view, right intention, right speech, right action, right livelihood, right effort, right mindfulness, and right concentration.
+an8.34:4.4 | S: When an ascetic or brahmin has these eight factors a gift given to them is very fruitful and beneficial and brilliant and bountiful. | T: A gift given to ascetics and brahmins who possess these eight factors is of great fruit and benefit, and it is extraordinarily brilliant and pervasive.”
+an8.34:5.1 | S: When the field is excellent, | T: When the field is excellent,
+an8.34:5.2 | S: and the seed sown in it is excellent, | T: and the seed sown is excellent,
+an8.34:5.3 | S: and the rainfall is excellent, | T: and there is an excellent supply of rain,
+an8.34:5.4 | S: the crop of grain will be excellent. | T: the yield of grain is excellent.
+an8.34:6.1 | S: The absence of crop loss is excellent, | T: Its health is excellent;
+an8.34:6.2 | S: its growth is excellent, | T: its growth too is excellent;
+an8.34:6.3 | S: its maturation is excellent, | T: its maturation is excellent;
+an8.34:6.4 | S: and its fruit is excellent. | T: its fruit truly is excellent.
+an8.34:7.1 | S: So too, when you give excellent food | T: So too when one gives excellent food
+an8.34:7.2 | S: to those of excellent ethics, | T: to those accomplished in virtuous behavior,
+an8.34:7.3 | S: it leads to many excellences, | T: it arrives at several kinds of excellence,
+an8.34:7.4 | S: for what you did was excellent. | T: for what one has done is excellent.
+an8.34:8.1 | S: So if a person wants excellence, | T: Therefore if one desires excellence
+an8.34:8.2 | S: let them excel in this. | T: let a person here be accomplished;
+an8.34:8.3 | S: You should frequent those with excellent wisdom, | T: one should resort to those accomplished in wisdom;
+an8.34:8.4 | S: so that your own excellence will flourish. | T: thus one’s own accomplishments flourish.
+an8.34:9.1 | S: Excelling in knowledge and conduct, | T: One accomplished in true knowledge and conduct,
+an8.34:9.2 | S: and having excellence of mind, | T: having gained accomplishment of mind,
+an8.34:9.3 | S: you perform excellent deeds, | T: performs action that is accomplished
+an8.34:9.4 | S: and gain excellent benefits. | T: and accomplishes the good.
+an8.34:10.1 | S: Truly knowing the world, | T: Having known the world as it is,
+an8.34:10.2 | S: and having attained excellence of view, | T: one should attain accomplishment in view.
+an8.34:10.3 | S: one who excels in mind proceeds, | T: One accomplished in mind advances
+an8.34:10.4 | S: relying on excellence in the path. | T: by relying on accomplishment in the path.
+an8.34:11.1 | S: Shaking off all stains, | T: Having rubbed off all stains,
+an8.34:11.2 | S: and attaining the excellence of extinguishment, | T: having attained nibbāna,
+an8.34:11.3 | S: you’re freed from all sufferings: | T: one is then freed from all sufferings:
+an8.34:11.4 | S: this is complete excellence.” | T: this is total accomplishment.
+an8.34:11.5 | P: Catutthaṁ. | T: (none)
+
+## an8.35
+an8.35:1.1 | S: “Mendicants, there are these eight rebirths by giving. | T: “Bhikkhus, there are these eight kinds of rebirth on account of giving.
+an8.35:1.2 | S: What eight? | T: What eight?
+an8.35:1.3 | S: First, someone gives to ascetics or brahmins such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: (1) “Here, someone gives a gift to an ascetic or a brahmin: food and drink; clothing and vehicles; garlands, scents, and unguents; bedding, dwellings, and lighting.
+an8.35:1.4 | S: Whatever they give they expect back. | T: Whatever he gives, he expects something in return.
+an8.35:1.5 | S: They see a well-to-do aristocrat or brahmin or householder amusing themselves, supplied and provided with the five kinds of sensual stimulation. | T: He sees affluent khattiyas, affluent brahmins, or affluent householders enjoying themselves furnished and endowed with the five objects of sensual pleasure.
+an8.35:1.6 | S: It occurs to them: | T: It occurs to him:
+an8.35:1.7 | S: ‘If only, when my body breaks up, after death, I would be reborn in the company of well-to-do aristocrats or brahmins or householders!’ | T: ‘Oh, with the breakup of the body, after death, may I be reborn in companionship with affluent khattiyas, affluent brahmins, or affluent householders!’
+an8.35:1.8 | S: They settle on that thought, stabilize it, and develop it. | T: He sets his mind on this, fixes his mind on this, and develops this state of mind.
+an8.35:1.9 | S: As they’ve settled for less and not developed further, their thought leads to rebirth there. | T: That aspiration of his, resolved on what is inferior, not developed higher, leads to rebirth there.
+an8.35:1.10 | S: When their body breaks up, after death, they’re reborn in the company of well-to-do aristocrats or brahmins or householders. | T: With the breakup of the body, after death, he is reborn in companionship with affluent khattiyas, affluent brahmins, or affluent householders—
+an8.35:1.11 | S: But I say that this is only for those of ethical conduct, not for the unethical. | T: and that is for one who is virtuous, I say, not for one who is immoral.
+an8.35:1.12 | S: The heart’s wish of an ethical person succeeds because of their purity. | T: The heart’s wish of one who is virtuous succeeds because of his purity.
+an8.35:2.1 | S: Next, someone gives to ascetics or brahmins … | T: (2) “Someone else gives a gift to an ascetic or a brahmin: food and drink … and lighting.
+an8.35:2.2 | S: Whatever they give they expect back. | T: Whatever he gives, he expects something in return.
+an8.35:2.3 | S: And they’ve heard: | T: He has heard:
+an8.35:2.4 | S: ‘The gods of the four great kings are long-lived, beautiful, and very happy.’ | T: ‘The devas ruled by the four great kings are long-lived, beautiful, and abound in happiness.’
+an8.35:2.5 | S: It occurs to them: | T: It occurs to him:
+an8.35:2.6 | S: ‘If only, when my body breaks up, after death, I would be reborn in the company of the gods of the four great kings!’ … | T: ‘Oh, with the breakup of the body, after death, may I be reborn in companionship with the devas ruled by the four great kings!’
+an8.35:2.7 | P: So taṁ cittaṁ dahati, taṁ cittaṁ adhiṭṭhāti, taṁ cittaṁ bhāveti. | T: He sets his mind on this, fixes his mind on this, and develops this state of mind.
+an8.35:2.8 | P: Tassa taṁ cittaṁ hīne vimuttaṁ, uttari abhāvitaṁ, tatrūpapattiyā saṁvattati. | T: That aspiration of his, resolved on what is inferior, not developed higher, leads to rebirth there.
+an8.35:2.9 | S: When their body breaks up, after death, they’re reborn in the company of the gods of the four great kings. | T: With the breakup of the body, after death, he is reborn in companionship with the devas ruled by the four great kings—
+an8.35:2.10 | S: But I say that this is only for those of ethical conduct, not for the unethical. | T: and that is for one who is virtuous, I say, not for one who is immoral.
+an8.35:2.11 | S: The heart’s wish of an ethical person succeeds because of their purity. | T: The heart’s wish of one who is virtuous succeeds because of his purity.
+an8.35:3.1 | S: Next, someone gives to ascetics or brahmins … | T: (3)–(7) “Someone else gives a gift to an ascetic or a brahmin: food and drink … and lighting.
+an8.35:3.2 | S: Whatever they give they expect back. | T: Whatever he gives, he expects something in return.
+an8.35:3.3 | S: And they’ve heard: | T: He has heard:
+an8.35:3.4 | S: ‘The gods of the thirty-three …’ | T: ‘The Tāvatiṁsa devas …
+an8.35:3.5 | S: ‘The gods of Yama …’ | T: the Yāma devas …
+an8.35:3.6 | S: ‘The joyful gods …’ | T: the Tusita devas …
+an8.35:3.7 | S: ‘The gods who love to create …’ | T: the devas who delight in creation …
+an8.35:3.8 | S: ‘The gods who control what is created by others are long-lived, beautiful, and very happy.’ | T: the devas who control what is created by others are long-lived, beautiful, and abound in happiness.’
+an8.35:3.9 | S: It occurs to them: | T: It occurs to him:
+an8.35:3.10 | S: ‘If only, when my body breaks up, after death, I would be reborn in the company of the gods who control what is created by others!’ | T: ‘Oh, with the breakup of the body, after death, may I be reborn in companionship with the devas who control what is created by others!’
+an8.35:3.11 | S: They settle on that thought, stabilize it, and develop it. | T: He sets his mind on this, fixes his mind on this, and develops this state of mind.
+an8.35:3.12 | S: As they’ve settled for less and not developed further, their thought leads to rebirth there. | T: That aspiration of his, resolved on what is inferior, not developed higher, leads to rebirth there.
+an8.35:3.13 | S: When their body breaks up, after death, they’re reborn in the company of the gods who control what is created by others. | T: With the breakup of the body, after death, he is reborn in companionship with the devas who control what is created by others—
+an8.35:3.14 | S: But I say that this is only for those of ethical conduct, not for the unethical. | T: and that is for one who is virtuous, I say, not for one who is immoral.
+an8.35:3.15 | S: The heart’s wish of an ethical person succeeds because of their purity. | T: The heart’s wish of one who is virtuous succeeds because of his purity.
+an8.35:4.1 | S: Next, someone gives to ascetics or brahmins such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: (8) “Someone else gives a gift to an ascetic or a brahmin: food and drink … and lighting.
+an8.35:4.2 | S: Whatever they give they expect back. | T: Whatever he gives, he expects something in return.
+an8.35:4.3 | S: And they’ve heard: | T: He has heard:
+an8.35:4.4 | S: ‘The gods of the Divinity’s host are long-lived, beautiful, and very happy.’ | T: ‘The devas of Brahmā’s company are long-lived, beautiful, and abound in happiness.’
+an8.35:4.5 | S: It occurs to them: | T: It occurs to him:
+an8.35:4.6 | S: ‘If only, when my body breaks up, after death, I would be reborn in the company of the gods of the Divinity’s host!’ | T: ‘Oh, with the breakup of the body, after death, may I be reborn in companionship with the devas of Brahmā’s company!’
+an8.35:4.7 | S: They settle on that thought, stabilize it, and develop it. | T: He sets his mind on this, fixes his mind on this, and develops this state of mind.
+an8.35:4.8 | S: As they’ve settled for less and not developed further, their thought leads to rebirth there. | T: That aspiration of his, resolved on what is inferior, not developed higher, leads to rebirth there.
+an8.35:4.9 | S: When their body breaks up, after death, they’re reborn in the company of the gods of the Divinity’s host. | T: With the breakup of the body, after death, he is reborn in companionship with the devas of Brahmā’s company—
+an8.35:4.10 | S: But I say that this is only for those of ethical conduct, not for the unethical. | T: and that is for one who is virtuous, I say, not for one who is immoral;
+an8.35:4.11 | S: And for those free of desire, not those with desire. | T: for one without lust, not for one with lust.
+an8.35:4.12 | S: The heart’s wish of an ethical person succeeds because of their freedom from desire. | T: The heart’s wish of one who is virtuous succeeds because of his purity.
+an8.35:4.13 | S: These are the eight rebirths by giving.” | T: “These, bhikkhus, are the eight kinds of rebirth on account of giving.”
+an8.35:4.14 | P: Pañcamaṁ. | T: (none)
+
+## an8.36
+an8.36:1.1 | S: “Mendicants, there are these three grounds for making merit. | T: “Bhikkhus, there are these three bases of meritorious activity.
+an8.36:1.2 | S: What three? | T: What three?
+an8.36:1.3 | S: Giving, ethical conduct, and meditation are all grounds for making merit. | T: The basis of meritorious activity consisting in giving; the basis of meritorious activity consisting in virtuous behavior; and the basis of meritorious activity consisting in meditative development.
+an8.36:2.1 | S: First, someone has practiced a little giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (1) “Here, bhikkhus, someone has practiced the basis of meritorious activity consisting in giving to a limited extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a limited extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:2.2 | S: When their body breaks up, after death, they’re reborn among disadvantaged humans. | T: With the breakup of the body, after death, he is reborn among humans in an unfavorable condition.
+an8.36:3.1 | S: Next, someone has practiced a moderate amount of giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (2) “Someone else has practiced the basis of meritorious activity consisting in giving to a middling extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a middling extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:3.2 | S: When their body breaks up, after death, they’re reborn among well-off humans. | T: With the breakup of the body, after death, he is reborn among humans in a favorable condition.
+an8.36:4.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (3) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:4.2 | S: When their body breaks up, after death, they’re reborn in the company of the gods of the four great kings. | T: With the breakup of the body, after death, he is reborn in companionship with the devas ruled by the four great kings.
+an8.36:4.3 | S: There, the four great kings themselves have practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So they surpass them in ten respects: | T: There the four great kings, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior surpass the devas ruled by the four great kings in ten respects:
+an8.36:4.4 | S: heavenly lifespan, beauty, happiness, glory, sovereignty, sights, sounds, smells, tastes, and touches. | T: in celestial life span, celestial beauty, celestial happiness, celestial glory, and celestial authority; and in celestial forms, sounds, odors, tastes, and tactile objects.
+an8.36:5.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (4) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:5.2 | S: When their body breaks up, after death, they’re reborn in the company of the gods of the thirty-three. | T: With the breakup of the body, after death, he is reborn in companionship with the Tāvatiṁsa devas.
+an8.36:5.3 | S: There, Sakka, lord of gods, has practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So he surpasses them in ten respects … | T: There Sakka, ruler of the devas, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior, surpasses the Tāvatiṁsa devas in ten respects:
+an8.36:5.4 | P: dibbena āyunā …pe… | T: in celestial life span …
+an8.36:5.5 | P: dibbehi phoṭṭhabbehi. | T: and tactile objects.
+an8.36:6.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (5) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:6.2 | S: When their body breaks up, after death, they’re reborn in the company of the gods of Yama. | T: With the breakup of the body, after death, he is reborn in companionship with the Yāma devas.
+an8.36:6.3 | S: There, the godling Suyāma has practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So he surpasses them in ten respects … | T: There the young deva Suyāma, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior, surpasses the Yāma devas in ten respects:
+an8.36:6.4 | P: dibbena āyunā …pe… | T: in celestial life span …
+an8.36:6.5 | P: dibbehi phoṭṭhabbehi. | T: and tactile objects.
+an8.36:7.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (6) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:7.2 | S: When their body breaks up, after death, they’re reborn in the company of the joyful gods. | T: With the breakup of the body, after death, he is reborn in companionship with the Tusita devas.
+an8.36:7.3 | S: There, the godling Santusita has practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So he surpasses them in ten respects … | T: There the young deva Santusita, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior, surpasses the Tusita devas in ten respects:
+an8.36:7.4 | P: dibbena āyunā …pe… | T: in celestial life span …
+an8.36:7.5 | P: dibbehi phoṭṭhabbehi. | T: and tactile objects.
+an8.36:8.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (7) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:8.2 | S: When their body breaks up, after death, they’re reborn in the company of the gods who love to create. | T: With the breakup of the body, after death, he is reborn in companionship with the devas who delight in creation.
+an8.36:8.3 | S: There, the godling Sunimmita has practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So he surpasses them in ten respects … | T: There the young deva Sunimmita, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior, surpasses the devas who delight in creation in ten respects:
+an8.36:8.4 | P: dibbena āyunā …pe… | T: in celestial life span …
+an8.36:8.5 | P: dibbehi phoṭṭhabbehi. | T: and tactile objects.
+an8.36:9.1 | S: Next, someone has practiced to an extraordinary degree giving and ethical conduct as grounds for making merit, but they haven’t got as far as meditation as a ground for making merit. | T: (8) “Someone else has practiced the basis of meritorious activity consisting in giving to a superior extent; he has practiced the basis of meritorious activity consisting in virtuous behavior to a superior extent; but he has not undertaken the basis of meritorious activity consisting in meditative development.
+an8.36:9.2 | S: When their body breaks up, after death, they’re reborn in the company of the gods who control what is created by others. | T: With the breakup of the body, after death, he is reborn in companionship with the devas who control what is created by others.
+an8.36:9.3 | S: There, the godling Vasavattī has practiced giving and ethical conduct as grounds for making merit to a greater degree than the other gods. So he surpasses them in ten respects: | T: There the young deva Vasavattī, who had practiced superlatively the basis of meritorious activity consisting in giving and the basis of meritorious activity consisting in virtuous behavior, surpasses the devas who control what is created by others in ten respects:
+an8.36:9.4 | S: heavenly lifespan, beauty, happiness, glory, sovereignty, sights, sounds, smells, tastes, and touches. | T: in celestial life span, celestial beauty, celestial happiness, celestial glory, and celestial authority; and in celestial forms, sounds, odors, tastes, and tactile objects.
+an8.36:9.5 | S: These are the three grounds for making merit.” | T: “These, bhikkhus, are the three bases of meritorious activity.”
+an8.36:9.6 | P: Chaṭṭhaṁ. | T: (none)
+
+## an8.3
+an8.3:1.1 | S: “Mendicants, a mendicant with eight qualities is disliked and disapproved by their spiritual companions, not respected or admired. | T: “Bhikkhus, possessing eight qualities, a bhikkhu is displeasing and disagreeable to his fellow monks and is neither respected nor esteemed by them.
+an8.3:1.2 | S: What eight? | T: What eight?
+an8.3:1.3 | S: It’s when a mendicant praises the disliked and criticizes the liked. They desire material things and honor. They lack conscience and prudence. They have corrupt wishes and wrong view. | T: Here, (1) a bhikkhu praises those who are displeasing and (2) criticizes those who are pleasing; (3) he is desirous of gains and (4) honor; (5) he is morally shameless and (6) morally reckless; (7) he has evil desires and (8) holds wrong view.
+an8.3:1.4 | S: A mendicant with these eight qualities is disliked and disapproved by their spiritual companions, not respected or admired. | T: Possessing these eight qualities, a bhikkhu is displeasing and disagreeable to his fellow monks and is neither respected nor esteemed by them.
+an8.3:2.1 | S: A mendicant with eight qualities is liked and approved by their spiritual companions, and respected and admired. | T: “Bhikkhus, possessing eight qualities, a bhikkhu is pleasing and agreeable to his fellow monks and is respected and esteemed by them.
+an8.3:2.2 | S: What eight? | T: What eight?
+an8.3:2.3 | S: It’s when a mendicant doesn’t praise the disliked and criticize the liked. They don’t desire material things and honor. They have conscience and prudence. They have few desires and right view. | T: Here, (1) a bhikkhu does not praise those who are displeasing or (2) criticize those who are pleasing; (3) he is not desirous of gains or (4) honor; (5) he has a sense of moral shame and (6) moral dread; (7) he has few desires and (8) holds right view.
+an8.3:2.4 | S: A mendicant with these eight qualities is liked and approved by their spiritual companions, and respected and admired.” | T: Possessing these eight qualities, a bhikkhu is pleasing and agreeable to his fellow monks and is respected and esteemed by them.”
+an8.3:2.5 | P: Tatiyaṁ. | T: (none)
+
+## an8.40
+an8.40:1.1 | S: “Mendicants, the killing of living creatures, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (1) “Bhikkhus, the destruction of life, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:1.2 | S: The minimum result it leads to for a human being is a short lifespan. | T: for one reborn as a human being the destruction of life at minimum conduces to a short life span.
+an8.40:2.1 | S: Stealing, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (2) “Taking what is not given, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:2.2 | S: The minimum result it leads to for a human being is loss of wealth. | T: for one reborn as a human being taking what is not given at minimum conduces to loss of wealth.
+an8.40:3.1 | S: Sexual misconduct, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (3) “Sexual misconduct, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:3.2 | S: The minimum result it leads to for a human being is rivalry and enmity. | T: for one reborn as a human being sexual misconduct at minimum conduces to enmity and rivalry.
+an8.40:4.1 | S: Lying, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (4) “False speech, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:4.2 | S: The minimum result it leads to for a human being is false accusations. | T: for one reborn as a human being false speech at minimum conduces to false accusations.
+an8.40:5.1 | S: Backbiting, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (5) “Divisive speech, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:5.2 | S: The minimum result it leads to for a human being is being divided against friends. | T: for one reborn as a human being divisive speech at minimum conduces to being divided from one’s friends.
+an8.40:6.1 | S: Harsh speech, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (6) “Harsh speech, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:6.2 | S: The minimum result it leads to for a human being is hearing disagreeable things. | T: for one reborn as a human being harsh speech at minimum conduces to disagreeable sounds.
+an8.40:7.1 | S: Talking nonsense, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (7) “Idle chatter, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:7.2 | S: The minimum result it leads to for a human being is that no one takes what you say seriously. | T: for one reborn as a human being idle chatter at minimum conduces to others distrusting one’s words.
+an8.40:8.1 | S: Drinking beer and wine, when cultivated, developed, and practiced, leads to hell, the animal realm, or the ghost realm. | T: (8) “Drinking liquor and wine, repeatedly pursued, developed, and cultivated, is conducive to hell, to the animal realm, and to the sphere of afflicted spirits;
+an8.40:8.2 | S: The minimum result it leads to for a human being is madness.” | T: for one reborn as a human being drinking liquor and wine at minimum conduces to madness.”
+an8.40:8.3 | P: Dasamaṁ. | T: (none)
+an8.40:8.4 | P: Dānavaggo catuttho. | T: (none)
+an8.40:9.0 | P: Tassuddānaṁ | T: (none)
+an8.40:9.1 | P: Dve dānāni vatthuñca, | T: (none)
+an8.40:9.2 | P: khettaṁ dānūpapattiyo; | T: (none)
+an8.40:9.3 | P: Kiriyaṁ dve sappurisā, | T: (none)
+an8.40:9.4 | P: abhisando vipāko cāti. | T: (none)
+
+## an8.41
+an8.41:1.1 | S: So I have heard. | T: Thus have I heard.
+an8.41:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an8.41:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an8.41:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+an8.41:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an8.41:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+an8.41:2.1 | S: “Mendicants, the observance of the sabbath with its eight factors is very fruitful and beneficial and brilliant and bountiful. | T: “Bhikkhus, observed complete in eight factors, the uposatha is of great fruit and benefit, extraordinarily brilliant and pervasive.
+an8.41:2.2 | S: And how should it be observed? | T: And how is the uposatha observed complete in eight factors, so that it is of great fruit and benefit, extraordinarily brilliant and pervasive?
+an8.41:2.3 | S: It’s when a noble disciple reflects: | T: (1) “Here, bhikkhus, a noble disciple reflects thus:
+an8.41:2.4 | S: ‘As long as they live, the perfected ones give up killing living creatures, renouncing the rod and the sword. They are scrupulous and kind, and live full of sympathy for all living beings. | T: ‘As long as they live the arahants abandon and abstain from the destruction of life; with the rod and weapon laid aside, conscientious and kindly, they dwell compassionate toward all living beings.
+an8.41:2.5 | S: I, too, for this day and night will give up killing living creatures, renouncing the rod and the sword. I’ll be scrupulous and kind, and live full of sympathy for all living beings. | T: Today, for this night and day, I too shall abandon and abstain from the destruction of life; with the rod and weapon laid aside, conscientious and kindly, I too shall dwell compassionate toward all living beings.
+an8.41:2.6 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:2.7 | S: This is its first factor. | T: This is the first factor it possesses.
+an8.41:3.1 | S: ‘As long as they live, the perfected ones give up stealing. They take only what’s given, and expect only what’s given. They keep themselves clean by not thieving. | T: (2) “‘As long as they live the arahants abandon and abstain from taking what is not given; they take only what is given, expect only what is given, and dwell honestly without thoughts of theft.
+an8.41:3.2 | S: I, too, for this day and night will give up stealing. I’ll take only what’s given, and expect only what’s given. I’ll keep myself clean by not thieving. | T: Today, for this night and day, I too shall abandon and abstain from taking what is not given; I shall accept only what is given, expect only what is given, and dwell honestly without thoughts of theft.
+an8.41:3.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:3.4 | S: This is its second factor. | T: This is the second factor it possesses.
+an8.41:4.1 | S: ‘As long as they live, the perfected ones give up unchastity. They are chaste, set apart, refraining from the vulgar act of sex. | T: (3) “‘As long as they live the arahants abandon sexual activity and observe celibacy, living apart, abstaining from sexual intercourse, the common person’s practice.
+an8.41:4.2 | S: I, too, for this day and night will give up unchastity. I will be chaste, set apart, refraining from the vulgar act of sex. | T: Today, for this night and day, I too shall abandon sexual activity and observe celibacy, living apart, abstaining from sexual intercourse, the common person’s practice.
+an8.41:4.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:4.4 | S: This is its third factor. | T: This is the third factor it possesses.
+an8.41:5.1 | S: ‘As long as they live, the perfected ones give up lying. They speak the truth and stick to the truth. They’re honest and dependable, and don’t trick the world with their words. | T: (4) “‘As long as they live the arahants abandon and abstain from false speech; they speak truth, adhere to truth; they are trustworthy and reliable, no deceivers of the world.
+an8.41:5.2 | S: I, too, for this day and night will give up lying. I’ll speak the truth and stick to the truth. I’ll be honest and dependable, and won’t trick the world with my words. | T: Today, for this night and day, I too shall abandon and abstain from false speech; I shall speak truth, adhere to truth; I shall be trustworthy and reliable, no deceiver of the world.
+an8.41:5.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:5.4 | S: This is its fourth factor. | T: This is the fourth factor it possesses.
+an8.41:6.1 | S: ‘As long as they live, the perfected ones give up intoxicants of beer, wine, and liquor. | T: (5) “‘As long as they live the arahants abandon and abstain from liquor, wine, and intoxicants, the basis for heedlessness.
+an8.41:6.2 | S: I, too, for this day and night will give up intoxicants of beer, wine, and liquor. | T: Today, for this night and day, I too shall abandon and abstain from liquor, wine, and intoxicants, the basis for heedlessness.
+an8.41:6.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:6.4 | S: This is its fifth factor. | T: This is the fifth factor it possesses.
+an8.41:7.1 | S: ‘As long as they live, the perfected ones eat in one part of the day, abstaining from eating at night and from food at the wrong time. | T: (6) “‘As long as they live the arahants eat once a day, abstaining from eating at night and from food outside the proper time.
+an8.41:7.2 | S: I, too, for this day and night will eat in one part of the day, abstaining from eating at night and food at the wrong time. | T: Today, for this night and day, I too shall eat once a day, abstaining from eating at night and from food outside the proper time.
+an8.41:7.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:7.4 | S: This is its sixth factor. | T: This is the sixth factor it possesses.
+an8.41:8.1 | S: ‘As long as they live, the perfected ones give up seeing shows of dancing, singing, and music; and attiring and adorning themselves with garlands, fragrance, and makeup. | T: (7) “‘As long as they live the arahants abstain from dancing, singing, instrumental music, and unsuitable shows, and from adorning and beautifying themselves by wearing garlands and applying scents and unguents.
+an8.41:8.2 | S: I, too, for this day and night will give up seeing shows of dancing, singing, and music; and attiring and adorning myself with garlands, fragrance, and makeup. | T: Today, for this night and day, I too shall abstain from dancing, singing, instrumental music, and unsuitable shows, and from adorning and beautifying myself by wearing garlands and applying scents and unguents.
+an8.41:8.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:8.4 | S: This is its seventh factor. | T: This is the seventh factor it possesses.
+an8.41:9.1 | S: ‘As long as they live, the perfected ones give up high and luxurious beds. They sleep in a low place, either a cot or a grass mat. | T: (8) “‘As long as they live the arahants abandon and abstain from the use of high and luxurious beds; they lie down on a low resting place, either a small bed or a straw mat.
+an8.41:9.2 | S: I, too, for this day and night will give up high and luxurious beds. I’ll sleep in a low place, either a cot or a grass mat. | T: Today, for this night and day, I too shall abandon and abstain from the use of high and luxurious beds; I shall lie down on a low resting place, either a small bed or a straw mat.
+an8.41:9.3 | S: I will observe the sabbath by doing as the perfected ones do in this respect.’ | T: I shall imitate the arahants in this respect and the uposatha will be observed by me.’
+an8.41:9.4 | S: This is its eighth factor. | T: This is the eighth factor it possesses.
+an8.41:10.1 | S: The observance of the sabbath with its eight factors in this way is very fruitful and beneficial and brilliant and bountiful.” | T: “It is in this way, bhikkhus, that the uposatha is observed complete in eight factors, so that it is of great fruit and benefit, extraordinarily brilliant and pervasive.”
+an8.41:10.2 | P: Paṭhamaṁ. | T: (none)
+

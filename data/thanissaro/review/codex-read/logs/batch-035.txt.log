@@ -1,0 +1,536 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd96-0b30-71a0-82f0-d09debed4b73
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch and record only clear line-boundary misplacements.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## thag10.5
+thag10.5:1.1 | S: Filled with different kinds of dirt, | T: Full of the many clans of impurities,
+thag10.5:1.2 | S: a great producer of dung, | T: the great manufacturer of excrement,
+thag10.5:1.3 | S: like a stagnant cesspool, | T: like a stagnant pool,
+thag10.5:1.4 | S: a big boil, a bad wound, | T: a great tumor, great wound,
+thag10.5:2.1 | S: full of pus and blood, | T: full of blood & lymph,
+thag10.5:2.2 | S: sunk in a toilet-pit, | T: immersed in a cesspool,
+thag10.5:2.3 | S: trickling with fluids, | T: trickling liquids,
+thag10.5:2.4 | S: this rotting body always oozes. | T: the body is oozing foulness—always.
+thag10.5:3.1 | S: Bound by sixty tendons, | T: Bound together with sixty sinews,
+thag10.5:3.2 | S: coated with a fleshy coating, | T: plastered with a stucco of muscle,
+thag10.5:3.3 | S: clothed in a jacket of skin, | T: wrapped in a jacket of skin,
+thag10.5:3.4 | S: this rotting body is worthless. | T: this foul body is of no worth at all.
+thag10.5:4.1 | S: Held together by a skeleton of bones, | T: Linked together with a chain of bones, stitched together with tendon-threads,
+thag10.5:4.2 | S: and bound by sinews; | T: (none)
+thag10.5:4.3 | S: it assumes postures | T: it produces its various postures,
+thag10.5:4.4 | S: due to a complex of many things. | T: from being hitched up together.
+thag10.5:5.1 | S: We set out in the certainty of death, | T: Headed surely to death,
+thag10.5:5.2 | S: in the presence of the King of Death; | T: in the presence of the King of Mortality,
+thag10.5:5.3 | S: and having discarded the body right here, | T: the man who learns to discard it right here,
+thag10.5:5.4 | S: a person goes where he likes. | T: goes wherever he wants.
+thag10.5:6.1 | S: Shrouded by ignorance, | T: Covered with ignorance,
+thag10.5:6.2 | S: tied by the four ties, | T: the body’s tied down with a four-fold tie,
+thag10.5:6.3 | S: this body is sinking in the flood, | T: sunk in the floods,
+thag10.5:6.4 | S: caught in the net of the underlying tendencies. | T: caught in the net of obsessions,
+thag10.5:7.1 | S: Yoked to the five hindrances, | T: conjoined with five hindrances,
+thag10.5:7.2 | S: afflicted by thought, | T: given over to thought,
+thag10.5:7.3 | S: stuck to the root of craving, | T: accompanied with the root of craving,
+thag10.5:7.4 | S: hidden by delusion: | T: roofed with delusion’s roofing.
+thag10.5:8.1 | S: that is how the body goes on, | T: That’s how the body functions,
+thag10.5:8.2 | S: propelled by the mechanism of deeds. | T: compelled by the compulsion of kamma,
+thag10.5:8.3 | S: But existence ends in perishing; | T: but its attainment ends in ruin.
+thag10.5:8.4 | S: separated, the body perishes. | T: Its many becomings go to ruin.
+thag10.5:9.1 | S: Those blind, ordinary people | T: These who hold to this body as mine —blind fools, people run-of-the-mill—
+thag10.5:9.2 | S: who think of this body as theirs, | T: (none)
+thag10.5:9.3 | S: swell the horrors of the charnel ground, | T: fill the horrific cemetery,
+thag10.5:9.4 | S: taking hold of future lives. | T: taking on further becoming.
+thag10.5:10.1 | S: The undefiled who shun this body | T: Those who stay uninvolved with this body
+thag10.5:10.2 | S: like a serpent smeared with dung, | T: —as they would with a serpent smeared with dung—
+thag10.5:10.3 | S: having expelled the root of rebirth, | T: disgorging the root of becoming,
+thag10.5:10.4 | S: will be fully quenched. | T: will, without effluent, totally unbind.
+thag10.5:10.5 | P: … Kappo thero …. | T: (none)
+
+## thag16.4
+thag16.4:1.1 | S: “See this fancy puppet, | T: Look at the image beautified,
+thag16.4:1.2 | S: a body built of sores, | T: a heap of festering wounds, shored up:
+thag16.4:1.3 | S: diseased, obsessed over, | T: ill, but the object of many resolves,
+thag16.4:1.4 | S: in which nothing lasts at all. | T: where there is nothing lasting or sure.
+thag16.4:2.1 | S: See this fancy figure, | T: Look at the form beautified
+thag16.4:2.2 | S: with its gems and earrings; | T: with earrings & gems:
+thag16.4:2.3 | S: it is bones swathed in skin, | T: a skeleton wrapped in skin,
+thag16.4:2.4 | S: made pretty by its clothes. | T: made attractive with clothes.
+thag16.4:3.1 | S: Rouged feet | T: Feet reddened with henna,
+thag16.4:3.2 | S: and powdered face | T: a face smeared with powder:
+thag16.4:3.3 | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:3.4 | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+thag16.4:4.1 | S: Hair in eight braids | T: Hair plaited in eight pleats,
+thag16.4:4.2 | S: and eyeshadow | T: eyes smeared with unguent:
+thag16.4:4.3 | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:4.4 | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+thag16.4:5.1 | S: A rotting body all adorned | T: Like a newly painted unguent pot— a putrid body adorned:
+thag16.4:5.2 | S: like a freshly painted makeup box | T: (none)
+thag16.4:5.3 | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:5.4 | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+thag16.4:6.1 | S: The hunter laid his snare, | T: The hunter set out the snares,
+thag16.4:6.2 | S: but the deer didn’t spring the trap. | T: but the deer didn’t go near the trap.
+thag16.4:6.3 | S: I’ve eaten the bait and now I go, | T: Having eaten the bait, we go,
+thag16.4:6.4 | S: leaving the trapper to lament. | T: leaving the hunters to weep.
+thag16.4:7.1 | S: The hunter’s snare is broken, | T: The hunter’s snares are broken;
+thag16.4:7.2 | S: but the deer didn’t spring the trap. | T: the deer didn’t go near the trap.
+thag16.4:7.3 | S: I’ve eaten the bait and now I go, | T: Having eaten the bait, we go,
+thag16.4:7.4 | S: leaving the deer-hunter to grieve.” | T: leaving the hunters to grieve.
+thag16.4:8.1 | S: “I see rich people in the world who, | T: I see in the world people with wealth who,
+thag16.4:8.2 | S: because of delusion, <j>give not the wealth they’ve earned. | T: from delusion, don’t make a gift of the treasure they’ve gained.
+thag16.4:8.3 | S: Greedily, they hoard their riches, | T: Greedy, they stash it away,
+thag16.4:8.4 | S: yearning for ever more sensual pleasures. | T: hoping for even more sensual pleasures.
+thag16.4:9.1 | S: A king who conquered the earth by force, | T: A king who, by force, has conquered the world
+thag16.4:9.2 | S: ruling the land from sea to sea, | T: and rules over the earth to the edge of the sea,
+thag16.4:9.3 | S: unsatisfied with the near shore of the ocean, | T: dissatisfied with the ocean’s near shore,
+thag16.4:9.4 | S: would still yearn for the further shore. | T: longs for the ocean’s far shore as well.
+thag16.4:10.1 | S: Not just the king, but others too, | T: Kings & others —plenty of people—
+thag16.4:10.2 | S: reach death not rid of craving. | T: go to death with craving unabated.
+thag16.4:10.3 | S: They leave the body still wanting, | T: Unsated, they leave the body behind,
+thag16.4:10.4 | S: for in this world sensual pleasures never satisfy. | T: having not had enough of the world’s sensual pleasures.
+thag16.4:11.1 | S: Relatives lament, their hair disheveled, | T: One’s relatives weep & pull out their hair.
+thag16.4:11.2 | S: saying ‘Ah! Alas! They’re not immortal!’ | T: ‘Oh woe, our loved one is dead,’ they cry.
+thag16.4:11.3 | S: They take out the body wrapped in a shroud, | T: Carrying him off, wrapped in a piece of cloth,
+thag16.4:11.4 | S: heap up a pyre, and burn it there. | T: they place him on a pyre, then set him on fire.
+thag16.4:12.1 | S: It’s poked with stakes while being burnt, | T: So he burns, poked with sticks,
+thag16.4:12.2 | S: in just a single cloth, all wealth gone. | T: in just one piece of cloth, leaving all his possessions behind.
+thag16.4:12.3 | S: Relatives, friends, and companions | T: They are not shelters for one who has died— not relatives, friends, or companions.
+thag16.4:12.4 | S: can’t help you when you’re dying. | T: (none)
+thag16.4:13.1 | S: Heirs take your riches, | T: Heirs take over his wealth,
+thag16.4:13.2 | S: while beings fare on according to their deeds. | T: while the being goes on, in line with his kamma.
+thag16.4:13.3 | S: Riches don’t follow you when you die; | T: No wealth at all follows the dead one—
+thag16.4:13.4 | S: nor do children, wife, wealth, nor kingdom. | T: not children, wives, dominion, or riches.
+thag16.4:14.1 | S: Longevity isn’t gained by riches, | T: Long life can’t be gotten with wealth,
+thag16.4:14.2 | S: nor does wealth banish old age; | T: nor aging warded off with treasure.
+thag16.4:14.3 | S: for the attentive say this life is short, | T: The wise say this life is next to nothing—
+thag16.4:14.4 | S: it’s perishable and not eternal. | T: impermanent, subject to change.
+thag16.4:15.1 | S: The rich and the poor feel its touch; | T: The rich & the poor touch the touch of Death.
+thag16.4:15.2 | S: the fool and the attentive one feel it too. | T: The foolish & wise are touched by it, too.
+thag16.4:15.3 | S: But the fool lies stricken by their own folly, | T: But while fools lie as if slain by their folly,
+thag16.4:15.4 | S: while the attentive don’t tremble at the touch. | T: the wise don’t tremble when touched by the touch.
+thag16.4:16.1 | S: Therefore wisdom’s much better than wealth, | T: Thus the discernment by which one attains to mastery, is better than wealth—
+thag16.4:16.2 | S: since by wisdom <j>you reach consummation in this life. | T: (none)
+thag16.4:16.3 | S: But if because of delusion <j>you don’t reach consummation, | T: for those who haven’t reached mastery
+thag16.4:16.4 | S: you’ll do evil deeds in life after life. | T: go from existence to existence, out of delusion, doing bad deeds.
+thag16.4:17.1 | S: One who enters a womb and the world beyond, | T: One goes to a womb & to the next world,
+thag16.4:17.2 | S: will transmigrate from one life to the next. | T: falling into the wandering on —one thing after another—
+thag16.4:17.3 | S: While someone of little wisdom, <j>placing faith in them, | T: while those of weak discernment, trusting in one,
+thag16.4:17.4 | S: also enters a womb and the world beyond. | T: also go to a womb & to the next world.
+thag16.4:18.1 | S: As a bandit caught in a window | T: Just as an evil thief caught at the break-in
+thag16.4:18.2 | S: is punished for his own bad deeds; | T: is destroyed by his own act,
+thag16.4:18.3 | S: so after departing, in the world beyond, | T: so evil people —after dying, in the next world—
+thag16.4:18.4 | S: people are punished for their own bad deeds. | T: are destroyed by their own acts.
+thag16.4:19.1 | S: Sensual pleasures are diverse, sweet, delightful; | T: Sensual pleasures— variegated, enticing, sweet—
+thag16.4:19.2 | S: appearing in disguise they disturb the mind. | T: in various ways disturb the mind.
+thag16.4:19.3 | S: Seeing danger in sensual stimulations, | T: Seeing the drawbacks in sensual objects:
+thag16.4:19.4 | S: I went forth, O King. | T: that’s why, O king, I went forth.
+thag16.4:20.1 | S: As fruit falls from a tree, so the sons of Manu fall, | T: Just like fruits, people fall
+thag16.4:20.2 | S: young and old, when the body breaks up. | T: —young & old— at the break-up of the body.
+thag16.4:20.3 | S: Seeing this, too, I went forth, O King; | T: Knowing this, O king, I went forth.
+thag16.4:20.4 | S: it’s a sure bet that the ascetic life is better.” | T: The contemplative life is better for sure.
+thag16.4:21.1 | S: “I went forth out of faith | T: Out of conviction, I went forth
+thag16.4:21.2 | S: joining the victor’s dispensation. | T: equipped with the Victor’s message.
+thag16.4:21.3 | S: My going forth wasn’t wasted; | T: Blameless was my going-forth:
+thag16.4:21.4 | S: I enjoy my food free of debt. | T: Debtless I eat my food.
+thag16.4:22.1 | S: I saw sensual pleasures as burning, | T: Seeing sensuality as burning,
+thag16.4:22.2 | S: gold as a cutting blade, | T: gold as a knife,
+thag16.4:22.3 | S: conception in a womb as suffering, | T: pain in the entry into the womb
+thag16.4:22.4 | S: and the hells as very fearful. | T: & great danger in hells—
+thag16.4:23.1 | S: Knowing this danger, | T: seeing this peril, I was then dismayed—
+thag16.4:23.2 | S: I was struck with a sense of urgency. | T: (none)
+thag16.4:23.3 | S: I was stabbed, but then I found peace, | T: pierced (with dismay), then calmed
+thag16.4:23.4 | S: attaining the end of defilements. | T: on attaining the end of the effluents.
+thag16.4:24.1 | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag16.4:24.2 | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, done;
+thag16.4:24.3 | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag16.4:24.4 | S: the leash to existence is eradicated. | T: the guide to becoming, uprooted.
+thag16.4:25.1 | S: I’ve attained the goal | T: And the goal for which I went forth
+thag16.4:25.2 | S: for the sake of which I went forth | T: (none)
+thag16.4:25.3 | S: from the lay life to homelessness— | T: from home life into homelessness I’ve reached:
+thag16.4:25.4 | S: the ending of all fetters.” | T: the end of all fetters.
+thag16.4:25.5 | P: … Raṭṭhapālo thero …. | T: (none)
+
+## thig5.12
+thig5.12:1.1 | S: I used to be in a sorry state. | T: Before, I had fallen on evil times:
+thig5.12:1.2 | S: As a childless widow, | T: no husband, no children,
+thig5.12:1.3 | S: bereft of friends or relatives, | T: no relatives, friends,
+thig5.12:1.4 | S: I got neither food nor clothes. | T: no way to obtain clothing & food.
+thig5.12:2.1 | S: I took a bowl and a staff | T: So, taking a staff & bowl in hand,
+thig5.12:2.2 | S: and went begging from family to family. | T: begging for alms from house to house,
+thig5.12:2.3 | S: For seven years I wandered, | T: feverish from the cold & heat, I wandered for seven full years.
+thig5.12:2.4 | S: burned by heat and cold. | T: (none)
+thig5.12:3.1 | S: Then I saw a nun | T: Then seeing a nun
+thig5.12:3.2 | S: receiving food and drink. | T: obtaining food & drink,
+thig5.12:3.3 | S: Approaching her, I said: | T: I approached her & said:
+thig5.12:3.4 | S: “Send me forth to homelessness.” | T: “Let me go forth into homelessness.”
+thig5.12:4.1 | S: Out of sympathy for me, | T: She, Paṭācārā, from sympathy,
+thig5.12:4.2 | S: Paṭācārā gave me the going forth. | T: let me go forth;
+thig5.12:4.3 | S: Then, having advised me, | T: then, exhorting me,
+thig5.12:4.4 | S: she urged me on to the ultimate goal. | T: urged me on to the highest goal.
+thig5.12:5.1 | S: After hearing her words, | T: Hearing her words,
+thig5.12:5.2 | S: I did her bidding. | T: I did her bidding.
+thig5.12:5.3 | S: The lady’s advice was not in vain: | T: Her exhortation was not in vain.
+thig5.12:5.4 | S: master of the three knowledges, <j>I am free of defilements. | T: Endowed with the three knowledges, I’m effluent- free.
+thig5.12:6.1 | P: … Candā therī …. | T: (none)
+thig5.12:7.1 | P: Pañcakanipāto niṭṭhito. | T: (none)
+
+## thig5.6
+thig5.6:1.1 | S: Having gone forth in faith | T: Going forth through conviction
+thig5.6:1.2 | S: from the lay life to homelessness, | T: from home into homelessness,
+thig5.6:1.3 | S: I wandered here and there, | T: I wandered this place & that,
+thig5.6:1.4 | S: jealous of possessions and honors. | T: greedy for tribute & gains.
+thig5.6:2.1 | S: Neglecting the highest goal, | T: Missing out on the foremost goal,
+thig5.6:2.2 | S: I pursued the lowest. | T: I pursued a lowly one.
+thig5.6:2.3 | S: Under the sway of corruptions, | T: Under the sway of defilements,
+thig5.6:2.4 | S: I never knew the goal of the ascetic life. | T: I didn’t awaken to the goal of the contemplative life.
+thig5.6:3.1 | S: I was struck with a sense of urgency | T: Then, sitting in my dwelling, I suddenly came to my senses:
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+thig5.6:3.2 | S: as I was sitting in my hut: | T: (none)
+thig5.6:3.3 | S: “I’m walking the wrong path, | T: I’m following a miserable path.
+thig5.6:3.4 | S: under the sway of craving. | T: I’m under the sway of craving.
+thig5.6:4.1 | S: My life is short, | T: Next to nothing, my life,
+thig5.6:4.2 | S: trampled by old age and sickness. | T: crushed by aging & illness.
+thig5.6:4.3 | S: Before this body breaks apart, | T: Before the body breaks apart,
+thig5.6:4.4 | S: there is no time for me to be careless.” | T: I have no time for heedlessness.
+thig5.6:5.1 | S: I examined in line with the truth | T: After watching, as it actually was,
+thig5.6:5.2 | S: the rise and fall of the aggregates. | T: the arising-disbanding of aggregates,
+thig5.6:5.3 | S: I stood up with mind liberated, | T: I stood up with mind released,
+thig5.6:5.4 | S: having fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding done.
+thig5.6:6.1 | P: … Mittā kāḷī therī …. | T: (none)
+
+## thig5.8
+thig5.8:1.1 | S: I gave birth to ten sons | T: Ten children I bore
+thig5.8:1.2 | S: in this form, this bag of bones. | T: from this physical heap.
+thig5.8:1.3 | S: Then, when feeble and old, | T: Then weak from that, aged,
+thig5.8:1.4 | S: I approached a nun. | T: I went to a nun.
+thig5.8:2.1 | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig5.8:2.2 | S: the aggregates, sense fields, and elements. | T: aggregates, sense media, & properties.
+thig5.8:2.3 | S: When I heard her teaching, | T: Hearing her Dhamma,
+thig5.8:2.4 | S: I shaved off my hair and went forth. | T: I cut off my hair & ordained.
+thig5.8:3.1 | S: When I was a trainee nun, | T: Having purified the divine eye while still a trainee,
+thig5.8:3.2 | S: my clairvoyance was clarified, | T: (none)
+thig5.8:3.3 | S: and I knew my past lives, | T: I know my previous lives,
+thig5.8:3.4 | S: the places I used to live. | T: where I lived in the past.
+thig5.8:4.1 | S: I meditate on the signless, | T: I develop the theme-less meditation,
+thig5.8:4.2 | S: my mind unified and serene. | T: well-focused oneness.
+thig5.8:4.3 | S: I achieved the immediate liberation, | T: I gain the liberation of immediacy—
+thig5.8:4.4 | S: quenched by not grasping. | T: from lack of clinging, unbound.
+thig5.8:5.1 | S: The five aggregates are fully understood; | T: The five aggregates, comprehended,
+thig5.8:5.2 | S: they remain, but their root is cut. | T: stand like a tree with its root cut through.
+thig5.8:5.3 | S: Curse you, wretched old age! | T: I spit on wretched birth old age.
+thig5.8:5.4 | S: now there’ll be no more future lives. | T: There is now no further becoming.
+thig5.8:6.1 | P: … Soṇā therī …. | T: (none)
+
+## sn16.2
+sn16.2:1.1 | S: So I have heard. | T: I have heard that
+sn16.2:1.2 | S: At one time Venerable Mahākassapa and Venerable Sāriputta were staying near Varanasi in the deer park at Isipatana. | T: on one occasion Ven. Mahā Kassapa and Ven. Sāriputta were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn16.2:1.3 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākassapa, and exchanged greetings with him. | T: Then Ven. Sāriputta, emerging from his seclusion in the evening, went to Ven. Mahā Kassapa and, on arrival, exchanged courteous greetings with him.
+sn16.2:1.4 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākassapa: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Mahā Kassapa,
+sn16.2:1.5 | S: “Reverend Kassapa, it’s said that without being keen and prudent you can’t achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: “It is said, friend Kassapa, that a person without ardency, without compunction, is incapable of self-awakening, incapable of unbinding, incapable of attaining the unexcelled security from bondage.
+sn16.2:1.6 | S: But if you are keen and prudent you can achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: (none)
+sn16.2:2.1 | S: To what extent is this the case?” | T: Now, how is a person without ardency, without compunction, incapable of self-awakening, incapable of unbinding, incapable of attaining the unexcelled security from bondage?
+sn16.2:2.2 | P: kittāvatā ca panāvuso, ātāpī hoti ottappī bhabbo sambodhāya bhabbo nibbānāya bhabbo anuttarassa yogakkhemassa adhigamāyā”ti? | T: And how is a person ardent & compunctious capable of self-awakening, capable of unbinding, capable of attaining the unexcelled security from bondage?”
+sn16.2:2.3 | S: “Reverend, take a mendicant who doesn’t foster keenness by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: Ven. Mahā Kassapa: “There is the case, friend, where a monk, (thinking,) ‘Unarisen evil, unskillful qualities arising in me would lead to what is unbeneficial,’ arouses no ardency. (Thinking,) ‘Arisen evil, unskillful qualities not being abandoned in me…’ … ‘Unarisen skillful qualities not arising in me …’ … ‘Arisen skillful qualities ceasing in me would lead to what is unbeneficial,’ he arouses no ardency.
+sn16.2:2.4 | S: That’s how you’re not keen. | T: This is how one is without ardency.
+sn16.2:3.1 | S: And how are you not prudent? | T: “And how is one a person without compunction?
+sn16.2:3.2 | S: Take a mendicant who doesn’t foster prudence by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: There is the case where a monk, (thinking,) ‘Unarisen evil, unskillful qualities arising in me would lead to what is unbeneficial,’ feels no compunction. (Thinking,) ‘Arisen evil, unskillful qualities not being abandoned in me…’ … ‘Unarisen skillful qualities not arising in me …’ … ‘Arisen skillful qualities ceasing in me would lead to what is unbeneficial,’ he feels no compunction.
+sn16.2:3.3 | S: That’s how you’re not prudent. | T: This is how one is without compunction.
+sn16.2:3.4 | S: That’s how without being keen and prudent you can’t achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: “This is how a person without ardency, without compunction, is incapable of self-awakening, incapable of unbinding, incapable of attaining the unexcelled security from bondage.
+sn16.2:4.1 | S: And how are you keen? | T: “And how is one ardent?
+sn16.2:4.2 | S: Take a mendicant who fosters keenness by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: There is the case where a monk, (thinking,) ‘Unarisen evil, unskillful qualities arising in me would lead to what is unbeneficial,’ arouses ardency. (Thinking,) ‘Arisen evil, unskillful qualities not being abandoned in me…’ … ‘Unarisen skillful qualities not arising in me …’ … ‘Arisen skillful qualities ceasing in me would lead to what is unbeneficial,’ he arouses ardency.
+sn16.2:4.3 | S: That’s how you’re keen. | T: This is how one is ardent.
+sn16.2:5.1 | S: And how are you prudent? | T: “And how is one compunctious?
+sn16.2:5.2 | S: Take a mendicant who fosters prudence by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: There is the case where a monk, (thinking,) ‘Unarisen evil, unskillful qualities arising in me would lead to what is unbeneficial,’ feels compunction. (Thinking,) ‘Arisen evil, unskillful qualities not being abandoned in me…’ … ‘Unarisen skillful qualities not arising in me …’ … ‘Arisen skillful qualities ceasing in me would lead to what is unbeneficial,’ he feels compunction.
+sn16.2:5.3 | S: That’s how you’re prudent. | T: This is how one is compunctious.
+sn16.2:5.4 | S: That’s how if you’re keen and prudent you can achieve awakening, extinguishment, and the supreme sanctuary from the yoke.” | T: “This is how a person ardent & compunctious is capable of self-awakening, capable of unbinding, capable of attaining the unexcelled security from bondage.”
+sn16.2:5.5 | P: Dutiyaṁ. | T: (none)
+
+## sn54.6
+sn54.6:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn54.6:1.2 | S: There the Buddha … said: | T: There the Blessed One said,
+sn54.6:1.3 | S: “Mendicants, do you develop mindfulness of breathing?” | T: “Monks, do you develop mindfulness of in-&-out breathing?”
+sn54.6:1.4 | S: When he said this, Venerable Ariṭṭha said to him: | T: When this was said, Ven. Ariṭṭha replied to the Blessed One,
+sn54.6:1.5 | S: “Sir, I develop mindfulness of breathing.” | T: “I develop mindfulness of in-&-out breathing, lord.”
+sn54.6:1.6 | S: “But mendicant, how do you develop it?” | T: “But how do you develop mindfulness of in-&-out breathing, Ariṭṭha?”
+sn54.6:1.7 | S: “Sir, I’ve given up desire for sensual pleasures of the past. I’m rid of desire for sensual pleasures of the future. And I have eliminated perception of aversion regarding phenomena internally and externally. | T: “Having abandoned sensual desire for past sensual pleasures, lord, having done away with sensual desire for future sensual pleasures, and having thoroughly subdued perceptions of resistance with regard to internal & external events,
+sn54.6:1.8 | S: Just mindful, I will breathe in. Mindful, I will breathe out. | T: I breathe in mindfully and breathe out mindfully.”
+sn54.6:1.9 | S: That’s how I develop mindfulness of breathing.” | T: (none)
+sn54.6:2.1 | S: “That is mindfulness of breathing, Ariṭṭha; I don’t deny it. | T: “There is that mindfulness of in-&-out breathing, Ariṭṭha. I don’t say that there isn’t.
+sn54.6:2.2 | S: But as to how mindfulness of breathing is fulfilled in detail, | T: But as to how mindfulness of in-&-out breathing is brought in detail to its culmination,
+sn54.6:2.3 | S: listen and apply your mind well, I will speak.” | T: listen and pay close attention. I will speak.”
+sn54.6:2.4 | S: “Yes, sir,” Ariṭṭha replied. | T: “As you say, lord,” Ven. Ariṭṭha responded to the Blessed One.
+sn54.6:2.5 | S: The Buddha said this: | T: The Blessed One said,
+sn54.6:3.1 | S: “And how is mindfulness of breathing fulfilled in detail? | T: “And how, Ariṭṭha, is mindfulness of in-&-out breathing brought in detail to its culmination?
+sn54.6:3.2 | S: It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, sets their body straight, and brings mindfulness to the present. | T: There is the case where a monk, having gone to the wilderness, to the shade of a tree, or to an empty building, sits down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+sn54.6:3.3 | S: Just mindful, they breathe in. Mindful, they breathe out. | T: Always mindful, he breathes in; mindful he breathes out.
+sn54.6:3.4 | S: Breathing in heavily they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ … | T: “[1] Breathing in long, he discerns, ‘I am breathing in long’; or breathing out long, he discerns, ‘I am breathing out long.’ [2] Or breathing in short, he discerns, ‘I am breathing in short’; or breathing out short, he discerns, ‘I am breathing out short.’ [3] He trains himself, ‘I will breathe in sensitive to the entire body.’ He trains himself, ‘I will breathe out sensitive to the entire body.’ [4] He trains himself, ‘I will breathe in calming bodily fabrication.’ He trains himself, ‘I will breathe out calming bodily fabrication.’ “[5] He trains himself, ‘I will breathe in sensitive to rapture.’ He trains himself, ‘I will breathe out sensitive to rapture.’ [6] He trains himself, ‘I will breathe in sensitive to pleasure.’ He trains himself, ‘I will breathe out sensitive to pleasure.’ [7] He trains himself, ‘I will breathe in sensitive to mental fabrication.’ He trains himself, ‘I will breathe out sensitive to mental fabrication.’ [8] He trains himself, ‘I will breathe in calming mental fabrication.’ He trains himself, ‘I will breathe out calming mental fabrication.’ “[9] He trains himself, ‘I will breathe in sensitive to the mind.’ He trains himself, ‘I will breathe out sensitive to the mind.’ [10] He trains himself, ‘I will breathe in satisfying the mind.’ He trains himself, ‘I will breathe out satisfying the mind.’ [11] He trains himself, ‘I will breathe in steadying the mind.’ He trains himself, ‘I will breathe out steadying the mind. [12] He trains himself, ‘I will breathe in releasing the mind.’ He trains himself, ‘I will breathe out releasing the mind.’ “[13] He trains himself, ‘I will breathe in focusing on inconstancy.’ He trains himself, ‘I will breathe out focusing on inconstancy.’ [14] He trains himself, ‘I will breathe in focusing on dispassion [lit: fading].’ He trains himself, ‘I will breathe out focusing on dispassion.’ [15] He trains himself, ‘I will breathe in focusing on cessation.’ He trains himself, ‘I will breathe out focusing on cessation.’
+sn54.6:3.5 | S: They practice like this: ‘I’ll breathe in observing letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: [16] He trains himself, ‘I will breathe in focusing on relinquishment.’ He trains himself, ‘I will breathe out focusing on relinquishment.’
+sn54.6:3.6 | S: This is how mindfulness of breathing is fulfilled in detail.” | T: “This, Ariṭṭha, is how mindfulness of in-&-out breathing is brought in detail to its culmination.”
+sn54.6:3.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## snp4.14
+snp4.14:1.1 | S: “Great seer, I ask you, the Kinsman of the Sun, | T: “I ask the Kinsman of the Sun, the Great Seer,
+snp4.14:1.2 | S: about seclusion and the state of peace. | T: about seclusion & the state of peace.
+snp4.14:1.3 | S: How, having seen, is a mendicant extinguished, | T: Seeing in what way is a monk unbound,
+snp4.14:1.4 | S: not grasping anything in this world?” | T: clinging to nothing in the world?”
+snp4.14:2.1 | S: “They would cut off the idea, ‘I am the thinker’,” | T: “He should put an entire stop to the root of objectification-classifications: ‘I am the thinker.’
+snp4.14:2.2 | S: said the Buddha, | T: (none)
+snp4.14:2.3 | S: “which is the root of all judgments <j>that emerge from proliferation. | T: (none)
+snp4.14:2.4 | S: Ever mindful, they would train to remove | T: He should train, always mindful, to subdue any craving inside him.
+snp4.14:2.5 | S: any internal cravings. | T: (none)
+snp4.14:3.1 | S: Regardless of what things they know, | T: Whatever truth he may know,
+snp4.14:3.2 | S: whether internal or external, | T: within or without,
+snp4.14:3.3 | S: they wouldn’t be proud because of that, | T: he shouldn’t, because of it, make himself hardened,
+snp4.14:3.4 | S: for that is not quenching, say the good. | T: for that isn’t called unbinding by the good.
+snp4.14:4.1 | S: They wouldn’t let that make them conceited, | T: He shouldn’t, because of it,
+snp4.14:4.2 | S: thinking themselves better or worse or alike. | T: think himself better, lower, or equal.
+snp4.14:4.3 | S: When questioned in many ways, | T: Touched by contact in various ways,
+snp4.14:4.4 | S: they wouldn’t keep justifying themselves. | T: he shouldn’t keep theorizing about self.
+snp4.14:5.1 | S: A mendicant would be settled internally, | T: Stilled right within,
+snp4.14:5.2 | S: and not seek peace from another. | T: a monk shouldn’t seek peace from another, from anything else.
+snp4.14:5.3 | S: For one at peace inside themselves, | T: For one stilled right within,
+snp4.14:5.4 | S: there’s no picking up, whence putting down? | T: there’s nothing embraced, so how rejected?
+snp4.14:6.1 | S: Just as, in the middle of the ocean, | T: As in the middle of the sea
+snp4.14:6.2 | S: no waves arise, it stays still; | T: it is still, with no waves upwelling,
+snp4.14:6.3 | S: so too one unstirred is still— | T: so the monk—unperturbed, still—
+snp4.14:6.4 | S: a mendicant would make <j>no pretension regarding anything.” | T: should not swell himself anywhere.”
+snp4.14:7.1 | S: “He whose eyes are open has explained | T: “He whose eyes are open has described
+snp4.14:7.2 | S: the truth he witnessed, <j>where adversities are removed. | T: the Dhamma he’s witnessed, subduing danger.
+snp4.14:7.3 | S: Please now speak of the practice, sir, | T: Now tell us, sir, the practice:
+snp4.14:7.4 | S: the monastic code and immersion in samādhi.” | T: the Pāṭimokkha & concentration.”
+snp4.14:8.1 | S: “With eyes not wanton, | T: “One shouldn’t be careless with his eyes,
+snp4.14:8.2 | S: they’d turn their ears from village gossip. | T: should close his ears to village-talk,
+snp4.14:8.3 | S: They wouldn’t be greedy for flavors, | T: shouldn’t hunger for flavors,
+snp4.14:8.4 | S: nor possessive about anything in the world. | T: or view anything in the world as mine.
+snp4.14:9.1 | S: Though struck by contacts, | T: When touched by contact,
+snp4.14:9.2 | S: a mendicant would not lament at all. | T: he shouldn’t lament,
+snp4.14:9.3 | S: They wouldn’t pray for another life, | T: shouldn’t covet anywhere any states of becoming,
+snp4.14:9.4 | S: nor tremble in the face of dangers. | T: or tremble at terrors.
+snp4.14:10.1 | S: When they receive food and drink, | T: When gaining food & drink,
+snp4.14:10.2 | S: edibles and clothes, | T: staples & cloth,
+snp4.14:10.3 | S: they wouldn’t store them up, | T: he should not make a hoard.
+snp4.14:10.4 | S: nor worry about not getting them. | T: Nor should he be upset when receiving no gains.
+snp4.14:11.1 | S: Meditative, not footloose, | T: Doing jhāna, not footloose,
+snp4.14:11.2 | S: they’d avoid remorse and not be negligent. | T: he should refrain from restlessness, shouldn’t be heedless,
+snp4.14:11.3 | S: Then a mendicant would stay | T: should live in a noise-less abode.
+snp4.14:11.4 | S: in quiet places to sit and rest. | T: (none)
+snp4.14:12.1 | S: They wouldn’t take much sleep, | T: Not making much of sleep,
+snp4.14:12.2 | S: but, being keen, <j>would apply themselves to wakefulness. | T: ardent, given to wakefulness,
+snp4.14:12.3 | S: They’d give up sloth, illusion, mirth, and play, | T: he should abandon weariness, deception, laughter, sports,
+snp4.14:12.4 | S: and sex and ornamentation. | T: sexual intercourse, & all that goes with it;
+snp4.14:13.1 | S: They wouldn’t cast Artharvaṇa spells, <j>interpret dreams | T: should not practice casting spells, interpret dreams,
+snp4.14:13.2 | S: or omens, or practice astrology. | T: physical marks, the stars,
+snp4.14:13.3 | S: My followers would not study ominous animal cries, | T: animal cries;
+snp4.14:13.4 | S: work as a doctor, or treat an impacted fetus. | T: should not be devoted to doing cures or inducing fertility.
+snp4.14:14.1 | S: Not shaken by criticism, | T: A monk shouldn’t tremble at blame
+snp4.14:14.2 | S: a mendicant would not gloat when praised. | T: or grow haughty with praise;
+snp4.14:14.3 | S: They’d cast aside greed and stinginess, | T: should dispel stinginess, greed,
+snp4.14:14.4 | S: anger, and slander. | T: divisive speech, anger;
+snp4.14:15.1 | S: They’d not stand for buying and selling; | T: shouldn’t buy or sell
+snp4.14:15.2 | S: a mendicant would not speak ill at all. | T: or revile anyone anywhere;
+snp4.14:15.3 | S: They wouldn’t linger in the village, | T: shouldn’t linger in villages,
+snp4.14:15.4 | S: nor cajole people from desire for profit. | T: or flatter people in hope of gains.
+snp4.14:16.1 | S: A mendicant would be no boaster, | T: A monk shouldn’t boast
+snp4.14:16.2 | S: nor would they speak suggestively. | T: or speak with ulterior motive,
+snp4.14:16.3 | S: They wouldn’t train in impudence, | T: shouldn’t train in insolence
+snp4.14:16.4 | S: nor speak argumentatively. | T: or speak quarrelsome words;
+snp4.14:17.1 | S: They wouldn’t be led into lying, | T: shouldn’t engage in lies
+snp4.14:17.2 | S: nor be deliberately devious. | T: or knowingly cheat;
+snp4.14:17.3 | S: And they’d never look down on another | T: shouldn’t despise others for their
+snp4.14:17.4 | S: because of livelihood, wisdom, or precepts and vows. | T: life, discernment, habits, or practices.
+snp4.14:18.1 | S: Though provoked from hearing much talk | T: Annoyed on hearing many words
+snp4.14:18.2 | S: from ascetics saying all different things, | T: from contemplatives or ordinary people,
+snp4.14:18.3 | S: they wouldn’t react harshly, | T: he shouldn’t respond harshly,
+snp4.14:18.4 | S: for the virtuous do not retaliate. | T: for those who retaliate aren’t calm.
+snp4.14:19.1 | S: Having understood this teaching, | T: Knowing this teaching,
+snp4.14:19.2 | S: inquiring, a mendicant would always train mindfully. | T: a monk inquiring should always train in it mindfully.
+snp4.14:19.3 | S: Knowing quenching as peace, | T: Knowing unbinding as peace,
+snp4.14:19.4 | S: they’d not be negligent in Gotama’s bidding. | T: he shouldn’t be heedless of Gotama’s message—
+snp4.14:20.1 | S: For he is the vanquisher, the unvanquished, | T: for he, the Conqueror unconquered,
+snp4.14:20.2 | S: seer of the truth as witness, not by legends— | T: witnessed the Dhamma, not by hearsay, but directly, himself.
+snp4.14:20.3 | S: that’s why, being diligent, they would always train | T: So, heedful, you should always do homage & train
+snp4.14:20.4 | S: respectfully in the Buddha’s teaching.” | T: in line with that Blessed One’s message,” the Blessed One said.
+snp4.14:20.5 | P: Tuvaṭakasuttaṁ cuddasamaṁ. | T: (none)
+
+## sn12.70
+sn12.70:1.1 | S: So I have heard. | T: I have heard that
+sn12.70:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn12.70:1.3 | S: Now at that time the Buddha was honored, respected, revered, venerated, and esteemed. And he received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: Now at that time the Blessed One was worshipped, revered, honored, venerated, given homage—a recipient of robes, alms food, lodgings, & medical requisites for the sick.
+sn12.70:1.4 | S: And the mendicant Saṅgha was also honored, respected, revered, venerated, and esteemed. And they received robes, almsfood, lodgings, and medicines and supplies for the sick. | T: The Saṅgha of monks was also worshipped, revered, honored, venerated, given homage—a recipient of robes, alms food, lodgings, & medical requisites for the sick.
+sn12.70:1.5 | S: But the wanderers who followed other religions were not honored, respected, revered, venerated, and esteemed. And they didn’t receive robes, almsfood, lodgings, and medicines and supplies for the sick. | T: But the wanderers of other sects were not worshipped, revered, honored, venerated, or given homage, nor were they recipients of robes, alms food, lodgings, or medical requisites for the sick.
+sn12.70:2.1 | S: Now at that time the wanderer Susīma was residing at Rājagaha together with a large community of wanderers. | T: Now at that time Susima the wanderer was living in Rājagaha with a large following of wanderers.
+sn12.70:2.2 | S: Then his community said to Susīma, | T: And so Susima’s following of wanderers said to him,
+sn12.70:2.3 | S: “Reverend Susīma, please lead the spiritual life with the ascetic Gotama. | T: “Come now, friend Susima. Go live the holy life under Gotama the contemplative.
+sn12.70:2.4 | S: Memorize that teaching and have us recite it with you. | T: When you have completely mastered the Dhamma, tell it to us;
+sn12.70:2.5 | S: When we’ve memorized it we’ll recite it to the laity. | T: when we have completely mastered it, we will teach it to householders
+sn12.70:2.6 | S: In this way we too will be honored, respected, revered, venerated, and esteemed. And we’ll receive robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: and then we, too, will be worshipped, revered, honored, venerated, given homage; we too will become recipients of robes, alms food, lodgings, & medical requisites for the sick.”
+sn12.70:2.7 | S: “Yes, reverends,” replied Susīma to his own assembly. Then he went to Venerable Ānanda, and exchanged greetings with him. | T: Responding, “As you say, friends,” to his own following, Susima the wanderer went to Ven. Ānanda and, on arrival, exchanged courteous greetings with him.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.70:2.8 | S: When the greetings and polite conversation were over, he sat down to one side and said to Ānanda, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Ānanda,
+sn12.70:2.9 | S: “Reverend Ānanda, I wish to lead the spiritual life in this teaching and training.” | T: “Friend Ānanda, I want to live the holy life in this Dhamma & Vinaya.”
+sn12.70:3.1 | S: Then Ānanda took Susīma to the Buddha, bowed, sat down to one side, and said to him, | T: Then Ven. Ānanda took Susima the wanderer to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there he said to the Blessed One,
+sn12.70:3.2 | S: “Sir, this wanderer Susīma says that | T: “Lord, this wanderer, Susima, has said,
+sn12.70:3.3 | S: he wishes to lead the spiritual life in this teaching and training.” | T: ‘Friend Ānanda, I want to live the holy life in this Dhamma & Vinaya.’”
+sn12.70:3.4 | S: “Well then, Ānanda, give Susīma the going forth.” | T: “Then in that case, Ānanda, give him the Going Forth.”
+sn12.70:3.5 | S: And the wanderer Susīma received the going forth, the ordination in the Buddha’s presence. | T: So Susima the wanderer gained the Going Forth in the presence of the Blessed One, he gained the Acceptance (into the Saṅgha of monks).
+sn12.70:4.1 | S: Now at that time several mendicants had declared their enlightenment in the Buddha’s presence: | T: Now at that time a large number of monks had declared final gnosis in the Blessed One’s presence:
+sn12.70:4.2 | S: “We understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: “We discern that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.’”
+sn12.70:4.3 | S: Venerable Susīma heard about this. | T: Ven. Susima heard that
+sn12.70:4.4 | P: “sambahulehi kira bhikkhūhi bhagavato santike aññā byākatā: | T: “A large number of monks, it seems, have declared final gnosis in the Blessed One’s presence:
+sn12.70:4.5 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāmā”ti. | T: ‘We discern that “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”’”
+sn12.70:4.6 | S: He went up to those mendicants, and exchanged greetings with them. | T: Then Ven. Susima went to those monks and, on arrival, exchanged courteous greetings with them.
+sn12.70:4.7 | S: When the greetings and polite conversation were over, he sat down to one side and said to those mendicants, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to them,
+sn12.70:4.8 | S: “Is it really true that the venerables have declared enlightenment in the Buddha’s presence?” | T: “Is it true, as they say, that you have declared final gnosis in the Blessed One’s presence:
+sn12.70:4.9 | P: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāmā”ti? | T: ‘We discern that “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world”’?”
+sn12.70:4.10 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn12.70:5.1 | S: “But knowing and seeing thus, do you wield the many kinds of psychic power? That is, multiplying yourselves and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful. Do you control the body as far as the realm of divinity?” | T: “Then, having known thus, having seen thus, do you wield manifold supranormal powers? Having been one you become many; having been many you become one? You appear? You vanish? You go unimpeded through walls, ramparts, & mountains as if through space? You dive in & out of the earth as if it were water? You walk on water without sinking as if it were dry land? Sitting cross-legged you fly through the air like a winged bird? With your hand you touch and stroke even the sun & moon, so mighty & powerful? You exercise influence with your body even as far as the Brahmā worlds?”
+sn12.70:5.2 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:6.1 | S: “Well, knowing and seeing thus do you, with clairaudience that is purified and superhuman, hear both kinds of sounds, human and heavenly, whether near or far?” | T: “Then, having known thus, having seen thus, do you hear—by means of the divine ear-element, purified & surpassing the human—both kinds of sounds: divine & human, whether near or far?”
+sn12.70:6.2 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:7.1 | S: “Well, knowing and seeing thus, do you understand the minds of other beings and individuals, having encompassed them with your mind? | T: “Then, having known thus, having seen thus, do you know the awareness of other beings, other individuals, having encompassed it with your own awareness?
+sn12.70:7.2 | S: Do you understand mind with greed as ‘mind with greed’, | T: Do you discern a mind with passion as a mind with passion,
+sn12.70:7.3 | S: and mind without greed as ‘mind without greed’? | T: and a mind without passion as a mind without passion;
+sn12.70:7.4 | S: Do you understand mind with hate as ‘mind with hate’, | T: a mind with aversion as a mind with aversion,
+sn12.70:7.5 | S: and mind without hate as ‘mind without hate’? | T: and a mind without aversion as a mind without aversion;
+sn12.70:7.6 | S: Do you understand mind with delusion as ‘mind with delusion’, | T: a mind with delusion as a mind with delusion,
+sn12.70:7.7 | S: and mind without delusion as ‘mind without delusion’? | T: and a mind without delusion as a mind without delusion;
+sn12.70:7.8 | S: Do you understand constricted mind as ‘constricted mind’, | T: a restricted mind as a restricted mind,
+sn12.70:7.9 | S: and scattered mind as ‘scattered mind’? | T: and a scattered mind as a scattered mind;
+sn12.70:7.10 | S: Do you understand expansive mind as ‘expansive mind’, | T: an enlarged mind as an enlarged mind,
+sn12.70:7.11 | S: and unexpansive mind as ‘unexpansive mind’? | T: and an unenlarged mind as an unenlarged mind;
+sn12.70:7.12 | S: Do you understand mind that is not supreme as ‘mind that is not supreme’, | T: an excelled mind [one that is not on the most excellent level] as an excelled mind,
+sn12.70:7.13 | S: and mind that is supreme as ‘mind that is supreme’? | T: and an unexcelled mind as an unexcelled mind;
+sn12.70:7.14 | S: Do you understand mind immersed in samādhi as ‘mind immersed in samādhi’, | T: a concentrated mind as a concentrated mind,
+sn12.70:7.15 | S: and mind not immersed in samādhi as ‘mind not immersed in samādhi’? | T: and an unconcentrated mind as an unconcentrated mind;
+sn12.70:7.16 | S: Do you understand freed mind as ‘freed mind’, | T: a released mind as a released mind,
+sn12.70:7.17 | S: and unfreed mind as ‘unfreed mind’?” | T: and an unreleased mind as an unreleased mind?”
+sn12.70:7.18 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:8.1 | S: “Well, knowing and seeing thus, do you recollect many kinds of past lives? That is: one, two, three, four, five, ten, twenty, thirty, forty, fifty, a hundred, a thousand, a hundred thousand rebirths; many eons of the world contracting, many eons of the world expanding, many eons of the world contracting and expanding? Do you remember: ‘There, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn somewhere else. There, too, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn here.’ Do you recollect your many kinds of past lives, with features and details?” | T: “Then, having known thus, having seen thus, do you recollect your manifold past lives [lit: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand births, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting), ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here’?”
+sn12.70:8.2 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:9.1 | S: “Well, knowing and seeing thus, do you, with clairvoyance that is purified and superhuman, see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place—and understand how sentient beings pass on according to their deeds? ‘These dear beings did bad things by way of body, speech, and mind. They denounced the noble ones; they had wrong view; and they chose to act out of that wrong view. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. These dear beings, however, did good things by way of body, speech, and mind. They never denounced the noble ones; they had right view; and they chose to act out of that right view. When their body broke up, after death, they were reborn in a good place, a heavenly realm.’ And so, with clairvoyance that is purified and superhuman, do you see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. And do you understand how sentient beings pass on according to their deeds?” | T: “Then, having known thus, having seen thus, do you see—by means of the divine eye, purified & surpassing the human—beings passing away and re-appearing, and do you discern how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world’?”
+sn12.70:9.2 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:10.1 | S: “Well, knowing and seeing thus, do you have direct meditative experience of the peaceful liberations that are formless, transcending form?” | T: “Then, having known thus, having seen thus, do you dwell touching with your body the peaceful emancipations, the formless states beyond form [the formless jhānas]?”
+sn12.70:10.2 | S: “No, reverend.” | T: “No, friend.”
+sn12.70:11.1 | S: “Well now, venerables, how could there be such a declaration when these things are not attained?” | T: “So just now, friends, didn’t you make that declaration without having attained any of these Dhammas?”
+sn12.70:11.2 | S: “Reverend Susīma, we are freed by wisdom.” | T: “We’re released through discernment, friend Susima.”
+sn12.70:12.1 | S: “I don’t understand the detailed meaning of what you have said in brief. | T: “I don’t understand the detailed meaning of your brief statement.
+sn12.70:12.2 | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if you would speak in such a way that I would understand its detailed meaning.”
+sn12.70:12.3 | S: “Reverend Susīma, whether you understand or not, we are freed by wisdom.” | T: “Whether or not you understand, friend Susima, we are still released through discernment.”
+sn12.70:13.1 | S: Then Susīma went to the Buddha, bowed, sat down to one side, | T: So Ven. Susima got up from his seat and went to the Blessed One. On arrival, having bowed down to the Blessed One, he sat to one side.
+sn12.70:13.2 | S: and informed the Buddha of all he had discussed with those mendicants. | T: As he was sitting there, he told the Blessed One the entire conversation he had had with those monks.
+sn12.70:13.3 | S: “Susīma, first comes knowledge of the stability of natural principles. Afterwards there is knowledge of extinguishment.” | T: (The Blessed One said:) “First, Susima, there is the knowledge of the regularity of the Dhamma [dependent co-arising], after which there is the knowledge of unbinding.”
+sn12.70:14.1 | S: “Sir, I don’t understand the detailed meaning of what you have said in brief. | T: “I don’t understand the detailed meaning of the Blessed One’s brief statement.
+sn12.70:14.2 | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if the Blessed One would speak in such a way that I would understand its detailed meaning.”
+sn12.70:14.3 | S: “Susīma, whether you understand or not, first comes knowledge of the stability of natural principles. Afterwards there is knowledge of extinguishment. | T: “Whether or not you understand, Susima, it is still the case that first there is the knowledge of the regularity of the Dhamma, after which there is the knowledge of unbinding.
+sn12.70:15.1 | S: What do you think, Susīma? | T: “What do you think, Susima?
+sn12.70:15.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”—
+sn12.70:15.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”—
+sn12.70:15.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”—
+sn12.70:15.5 | S: “Suffering, sir.” | T: “Stressful, lord.”—
+sn12.70:15.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn12.70:15.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn12.70:15.8 | S: “No, sir.” | T: “No, lord.”
+sn12.70:15.9 | S: “Is feeling permanent or impermanent?” | T: “… Is feeling constant or inconstant?”—
+sn12.70:15.10 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn12.70:15.11 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn12.70:15.12 | S: “Suffering, sir.” | T: …
+sn12.70:15.13 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+sn12.70:15.14 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+sn12.70:15.15 | S: “No, sir.” | T: (none)
+sn12.70:15.16 | S: “Is perception permanent or impermanent?” | T: “… Is perception constant or inconstant?”—
+sn12.70:15.17 | S: “Impermanent, sir.” … | T: “Inconstant, lord.” …
+sn12.70:15.18 | S: “Are choices permanent or impermanent?” | T: “… Are fabrications constant or inconstant?”—
+sn12.70:15.19 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn12.70:15.20 | S: “But if they’re impermanent, are they suffering or happiness?” | T: (none)
+sn12.70:15.21 | S: “Suffering, sir.” | T: …
+sn12.70:15.22 | S: “But if they’re impermanent, suffering, and perishable, are they fit to be regarded thus: | T: (none)
+sn12.70:15.23 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+sn12.70:15.24 | S: “No, sir.” | T: (none)
+sn12.70:15.25 | S: “Is consciousness permanent or impermanent?” | T: “What do you think, Susima? Is consciousness constant or inconstant?”—
+sn12.70:15.26 | S: “Impermanent, sir.” | T: “Inconstant, lord.”—
+sn12.70:15.27 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”—
+sn12.70:15.28 | S: “Suffering, sir.” | T: “Stressful, lord.”—
+sn12.70:15.29 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn12.70:15.30 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn12.70:15.31 | S: “No, sir.” | T: “No, lord.”
+sn12.70:16.1 | S: “So, Susīma, you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Thus, Susima, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn12.70:16.2 | S: You should truly see any kind of feeling at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> feeling—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any feeling whatsoever.…
+sn12.70:16.3 | S: You should truly see any kind of perception at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> perception—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any perception whatsoever.…
+sn12.70:16.4 | S: You should truly see any kind of choices at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> choices—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any fabrications whatsoever.…
+sn12.70:16.5 | S: You should truly see any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle, common or sublime, far or near: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn12.70:17.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness.
+sn12.70:17.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn12.70:17.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn12.70:18.1 | S: Susīma, do you see that rebirth is a requirement for old age and death?” | T: “Susima, do you see that from birth as a requisite condition there is aging-&-death?”
+sn12.70:18.2 | S: “Yes, sir.” | T: “Yes, lord.”
+sn12.70:18.3 | S: “Do you see that continued existence is a requirement for rebirth?” | T: “Do you see that from becoming as a requisite condition there is birth?”
+
+exec
+/bin/bash -lc "sed -n '541,720p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-035.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+27,537
+0 lines reported.

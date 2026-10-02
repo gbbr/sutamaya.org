@@ -1,0 +1,401 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9b-53c3-7933-8b87-04ae2e83e35f
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.237
+an4.237:1.1 | S: “Mendicants, I declare these four kinds of deeds, having realized them with my own insight. | T: “Monks, these four types of kamma have been directly known, verified, & made known by me.
+an4.237:1.2 | S: What four? | T: Which four?
+an4.237:1.3 | S: There are dark deeds with dark results; | T: There is kamma that is dark with dark result.
+an4.237:1.4 | S: bright deeds with bright results; | T: There is kamma that is bright with bright result.
+an4.237:1.5 | S: dark and bright deeds with dark and bright results; and | T: There is kamma that is dark & bright with dark & bright result.
+an4.237:1.6 | S: neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: There is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.237:2.1 | S: And what are dark deeds with dark results? | T: “And what is kamma that is dark with dark result?
+an4.237:2.2 | S: It’s when someone makes hurtful choices by way of body, speech, and mind. These are called dark deeds with dark results. | T: There is the case where a certain person fabricates an injurious bodily fabrication, fabricates an injurious verbal fabrication, fabricates an injurious mental fabrication. Having fabricated an injurious bodily fabrication, having fabricated an injurious verbal fabrication, having fabricated an injurious mental fabrication, he rearises in an injurious world. On rearising in an injurious world, he is there touched by injurious contacts. Touched by injurious contacts, he experiences feelings that are exclusively painful, like those of the beings in hell. This is called kamma that is dark with dark result.
+an4.237:3.1 | S: And what are bright deeds with bright results? | T: “And what is kamma that is bright with bright result?
+an4.237:3.2 | S: It’s when someone makes pleasing choices by way of body, speech, and mind. These are called bright deeds with bright results. | T: There is the case where a certain person fabricates a non-injurious bodily fabrication… a non-injurious verbal fabrication… a non-injurious mental fabrication.… He rearises in a non-injurious world.… There he is touched by non-injurious contacts.… He experiences feelings that are exclusively pleasant, like those of the Beautiful Black Devas. This is called kamma that is bright with bright result.
+an4.237:4.1 | S: And what are dark and bright deeds with dark and bright results? | T: “And what is kamma that is dark & bright with dark & bright result?
+an4.237:4.2 | S: It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. | T: There is the case where a certain person fabricates a bodily fabrication that is injurious & non-injurious… a verbal fabrication that is injurious & non-injurious… a mental fabrication that is injurious & non-injurious.… He rearises in an injurious & non-injurious world.… There he is touched by injurious & non-injurious contacts.… He experiences injurious & non-injurious feelings, pleasure mingled with pain, like those of human beings, some devas, and some beings in the lower realms. This is called kamma that is dark & bright with dark & bright result.
+an4.237:5.1 | S: And what are neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds? | T: “And what is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma?
+an4.237:5.2 | S: Right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+an4.237:5.3 | S: These are called neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: This is called kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.237:5.4 | S: These are the four kinds of deeds that I declare, having realized them with my own insight.” | T: “These, monks, are the four types of kamma directly known, verified, & made known by me.”
+an4.237:5.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an4.238
+an4.238:1.1 | S: “Mendicants, I declare these four kinds of deeds, having realized them with my own insight. … | T: “Monks, these four types of kamma have been directly known, verified, & made known by me. Which four? There is kamma that is dark with dark result. There is kamma that is bright with bright result. There is kamma that is dark & bright with dark & bright result. There is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.238:1.2 | S: And what are dark deeds with dark results? It’s when someone makes hurtful choices by way of body, speech, and mind. These are called dark deeds with dark results. | T: “And what is kamma that is dark with dark result? There is the case where a certain person fabricates an injurious bodily fabrication, fabricates an injurious verbal fabrication, fabricates an injurious mental fabrication. Having fabricated an injurious bodily fabrication, having fabricated an injurious verbal fabrication, having fabricated an injurious mental fabrication, he rearises in an injurious world. On rearising in an injurious world, there he is touched by injurious contacts. Touched by injurious contacts, he experiences feelings that are exclusively painful, like those of the beings in hell. This is called kamma that is dark with dark result.
+an4.238:2.1 | S: And what are bright deeds with bright results? | T: “And what is kamma that is bright with bright result?
+an4.238:2.2 | S: It’s when someone makes pleasing choices by way of body, speech, and mind. These are called bright deeds with bright results. | T: There is the case where a certain person fabricates a non-injurious bodily fabrication… a non-injurious verbal fabrication… a non-injurious mental fabrication.… He rearises in a non-injurious world.… There he is touched by non-injurious contacts.… He experiences feelings that are exclusively pleasant, like those of the Beautiful Dark Devas. This is called kamma that is bright with bright result.
+an4.238:3.1 | S: And what are dark and bright deeds with dark and bright results? | T: “And what is kamma that is dark & bright with dark & bright result?
+an4.238:3.2 | S: It’s when someone makes both hurtful and pleasing choices by way of body, speech, and mind. These are called dark and bright deeds with dark and bright results. | T: There is the case where a certain person fabricates a bodily fabrication that is injurious & non-injurious… a verbal fabrication that is injurious & non-injurious… a mental fabrication that is injurious & non-injurious.… He rearises in an injurious & non-injurious world.… There he is touched by injurious & non-injurious contacts.… He experiences injurious & non-injurious feelings, pleasure mingled with pain, like those of human beings, some devas, and some beings in the lower realms. This is called kamma that is dark & bright with dark & bright result.
+an4.238:4.1 | S: And what are neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds? | T: “And what is kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma?
+an4.238:4.2 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: Mindfulness as a factor for awakening, analysis of qualities as a factor for awakening, persistence as a factor for awakening, rapture as a factor for awakening, calm as a factor for awakening, concentration as a factor for awakening, equanimity as a factor for awakening.
+an4.238:4.3 | S: These are called neither dark nor bright deeds with neither dark nor bright results, which lead to the ending of deeds. | T: This is called kamma that is neither dark nor bright with neither dark nor bright result, leading to the ending of kamma.
+an4.238:4.4 | S: These are the four kinds of deeds that I declare, having realized them with my own insight.” | T: “These, monks, are the four types of kamma directly known, verified, & made known by me.”
+an4.238:4.5 | P: Sattamaṁ. | T: (none)
+
+## an4.245
+an4.245:1.1 | S: “Mendicants, this spiritual life is lived with training as its benefit, with wisdom as its overseer, with freedom as its core, and with mindfulness as its ruler. | T: “Monks, this holy life is lived with training as a reward, with discernment as its surpassing state, with release as its heartwood, and with mindfulness as its governing principle.
+an4.245:1.2 | S: And how is training its benefit? | T: “And how is training a reward?
+an4.245:1.3 | S: Firstly, I laid down for my disciples the training that deals with supplementary regulations in order to inspire confidence in those without it and to increase confidence in those who have it. | T: There is the case where the training I have formulated for my disciples with regard to good conduct is for the arousing of faith in those without faith, and for the increase of the faithful.
+an4.245:1.4 | S: They undertake whatever supplementary regulations I have laid down, keeping them intact, impeccable, spotless, and unmarred. | T: And however I have formulated the training for my disciples with regard to good conduct for the arousing of faith in those without faith, and for the increase of the faithful, one behaves in a way that is untorn in line with that training—unbroken, unspotted, unsplattered. Having undertaken them, one trains in line with the training rules.
+an4.245:2.1 | S: Furthermore, I laid down for my disciples the training that deals with the fundamentals of the spiritual life in order to rightly end suffering in every way. | T: “And further, the training I have formulated for my disciples with regard to the basics of the holy life is entirely for the right ending of suffering & stress.
+an4.245:2.2 | S: They undertake whatever training that deals with the fundamentals of the spiritual life I have laid down, keeping it intact, impeccable, spotless, and unmarred. | T: And however I have formulated the training for my disciples with regard to the basics of the holy life for the right ending of suffering & stress, one behaves in a way that is untorn in line with that training—unbroken, unspotted, unsplattered. Having undertaken them, one trains in line with the training rules.
+an4.245:2.3 | S: That’s how training is its benefit. | T: “This is how training is a reward.
+an4.245:3.1 | S: And how is wisdom its overseer? | T: “And how is discernment the surpassing state?
+an4.245:3.2 | S: I taught the Dhamma to my disciples in order to rightly end suffering in every way. | T: There is the case where the Dhammas I have pointed out to my disciples are entirely for the right ending of suffering & stress.
+an4.245:3.3 | S: They examine with wisdom any teachings I taught them. | T: And however I have pointed out Dhammas for my disciples entirely for the right ending of suffering & stress, one has scrutinized them all with discernment.
+an4.245:3.4 | S: That’s how wisdom is its overseer. | T: “This is how discernment is the surpassing state.
+an4.245:4.1 | S: And how is freedom its core? | T: “And how is release the heartwood?
+an4.245:4.2 | S: I taught the Dhamma to my disciples in order to rightly end suffering in every way. | T: There is the case where the Dhammas I have pointed out to my disciples are entirely for the right ending of suffering & stress.
+an4.245:4.3 | S: They experience through freedom any teachings I taught them. | T: And however I have pointed out Dhammas for my disciples entirely for the right ending of suffering & stress, one has touched them all through release.
+an4.245:4.4 | S: That’s how freedom is its core. | T: “This is how release is the heartwood.
+an4.245:5.1 | S: And how is mindfulness its ruler? | T: “And how is mindfulness the governing principle?
+an4.245:5.2 | S: Mindfulness is well established in oneself: ‘In this way I’ll fulfill the training dealing with supplementary regulations, or support with wisdom in every situation the training dealing with supplementary regulations I’ve already fulfilled.’ | T: The mindfulness that ‘I will make complete any training with regard to good conduct that is not yet complete, or I will protect with discernment any training with regard to good conduct that is complete’ is well established right within.
+an4.245:5.3 | S: Mindfulness is well established in oneself: ‘In this way I’ll fulfill the training dealing with the fundamentals of the spiritual life, or support with wisdom in every situation the training dealing with the fundamentals of the spiritual life I’ve already fulfilled.’ | T: The mindfulness that ‘I will make complete any training with regard to the basics of the holy life that is not yet complete, or I will protect with discernment any training with regard to the basics of the holy life that is complete’ is well established right within.
+an4.245:5.4 | S: Mindfulness is well established in oneself: ‘In this way I’ll examine with wisdom the teaching that I haven’t yet examined, or support with wisdom in every situation the teaching I’ve already examined.’ | T: The mindfulness that ‘I will scrutinize with discernment any Dhamma that is not yet scrutinized, or I will protect with discernment any Dhamma that has been scrutinized’ is well established right within.
+an4.245:5.5 | S: Mindfulness is well established in oneself: ‘In this way I’ll experience through freedom the teaching that I haven’t yet experienced, or support with wisdom in every situation the teaching I’ve already experienced.’ | T: The mindfulness that ‘I will touch through release any Dhamma that is not yet touched, or I will protect with discernment any Dhamma that has been touched’ is well established right within.
+an4.245:5.6 | S: That’s how mindfulness is its ruler. | T: “This is how mindfulness is the governing principle.
+an4.245:5.7 | S: ‘This spiritual life is lived with training as its benefit, with wisdom as its overseer, with freedom as its core, and with mindfulness as its ruler.’ | T: “‘Monks, this holy life is lived with training as a reward, with discernment as its surpassing state, with release as its heartwood, and with mindfulness as its governing principle’:
+an4.245:5.8 | S: That’s what I said, and this is why I said it.” | T: Thus it was said. And in reference to this was it said.”
+an4.245:5.9 | P: Tatiyaṁ. | T: (none)
+
+## an4.255
+an4.255:1.1 | S: “Mendicants, there are these four ignoble searches. | T: “Monks, these four are ignoble searches.
+an4.255:1.2 | S: What four? | T: Which four?
+an4.255:1.3 | S: Someone liable to old age searches only for what grows old. | T: There is the case where a person, being subject himself to aging, seeks (happiness in) what is subject to aging.
+an4.255:1.4 | S: Someone liable to sickness searches only for what gets sick. | T: Being subject himself to illness, he seeks (happiness in) what is subject to illness.
+an4.255:1.5 | S: Someone liable to death searches only for what dies. | T: Being subject himself to death, he seeks (happiness in) what is subject to death.
+an4.255:1.6 | S: Someone liable to become corrupted searches only for what is defiled. | T: Being subject himself to defilement, he seeks (happiness in) what is subject to defilement.
+an4.255:1.7 | S: These are the four ignoble searches. | T: These are four ignoble searches.
+an4.255:2.1 | S: There are these four noble searches. | T: “Now, these four are noble searches.
+an4.255:2.2 | S: What four? | T: Which four?
+an4.255:2.3 | S: Someone who is liable to grow old, knowing the drawback in what grows old, searches for that which is free of old age, the supreme sanctuary from the yoke, extinguishment. | T: There is the case where a person, being subject himself to aging, realizing the drawbacks of what is subject to aging, seeks the unaging, unsurpassed rest from the yoke: unbinding.
+an4.255:2.4 | S: Someone who is liable to get sick, knowing the drawback in what gets sick, searches for that which is free of sickness, the supreme sanctuary from the yoke, extinguishment. | T: Being subject himself to illness, realizing the drawbacks of what is subject to illness, he seeks the unailing, unsurpassed rest from the yoke: unbinding.
+an4.255:2.5 | S: Someone who is liable to die, knowing the drawback in what dies, searches for that which is free of death, the supreme sanctuary from the yoke, extinguishment. | T: Being subject himself to death, realizing the drawbacks of what is subject to death, he seeks the undying, unsurpassed rest from the yoke: unbinding.
+an4.255:2.6 | S: Someone liable to become corrupted, knowing the drawback in what is defiled, searches for the undefiled supreme sanctuary from the yoke, extinguishment. | T: Being subject himself to defilement, realizing the drawbacks of what is subject to defilement, he seeks the undefiled, unsurpassed rest from the yoke: unbinding.
+an4.255:2.7 | S: These are the four noble searches.” | T: “These are four noble searches.”
+an4.255:2.8 | P: Dutiyaṁ. | T: (none)
+
+## an4.258
+an4.258:1.1 | S: “Mendicants, when families don’t stay wealthy for long, it’s always for one or more of these four reasons. | T: “In every case where a family cannot hold onto its great wealth for long, it is for one or another of these four reasons.
+an4.258:1.2 | S: What four? | T: Which four?
+an4.258:1.3 | S: They don’t look for what’s lost; they don’t repair old things; they eat and drink too much; or they put an unethical woman or man in charge. | T: They don’t look for things that are lost. They don’t repair things that have gotten old. They are immoderate in consuming food and drink. They place a woman or man of no virtue or principles in the position of authority.
+an4.258:1.4 | S: When families don’t stay wealthy for long, it’s always for one or more of these four reasons. | T: In every case where a family cannot hold onto its great wealth for long, it is for one or another of these four reasons.
+an4.258:2.1 | S: When families do stay wealthy for long, it’s always for one or more of these four reasons. | T: “In every case where a family can hold onto its great wealth for long, it is for one or another of these four reasons.
+an4.258:2.2 | S: What four? | T: Which four?
+an4.258:2.3 | S: They look for what’s lost; they repair old things; they eat and drink in moderation; and they put an ethical woman or man in charge. | T: They look for things that are lost. They repair things that have gotten old. They are moderate in consuming food and drink. They place a virtuous, principled woman or man in the position of authority.
+an4.258:2.4 | S: When families do stay wealthy for long, it’s always for one or more of these four reasons.” | T: In every case where a family can hold onto its great wealth for long, it is for one or another of these four reasons.”
+an4.258:2.5 | P: Pañcamaṁ. | T: (none)
+
+## an4.262
+an4.262:1.1 | S: “Mendicants, when a mendicant has four qualities they’re not ready to frequent remote lodgings in the wilderness and the forest. | T: “Endowed with (any of) four qualities, a monk isn’t fit to stay in isolated forest & wilderness lodgings.
+an4.262:1.2 | S: What four? | T: Which four?
+an4.262:1.3 | S: They have sensual, malicious, and cruel thoughts; or they’re witless, dull, and idiotic. | T: (He is endowed) with thoughts of sensuality, with thoughts of ill will, with thoughts of harmfulness, and he is a person of weak discernment, dull, a drooling idiot.
+an4.262:1.4 | S: When a mendicant possesses these four qualities they’re not ready to frequent remote lodgings in the wilderness and the forest. | T: Endowed with (any of) these four qualities, a monk isn’t fit to stay in isolated forest & wilderness dwellings.
+an4.262:2.1 | S: When a mendicant has four qualities they’re ready to frequent remote lodgings in the wilderness and the forest. | T: “Endowed with four qualities, a monk is fit to stay in isolated forest & wilderness lodgings.
+an4.262:2.2 | S: What four? | T: Which four?
+an4.262:2.3 | S: They have thoughts of renunciation, good will, and harmlessness; and they’re wise, bright, and clever. | T: (He is endowed) with thoughts of renunciation, with thoughts of non-ill will, with thoughts of harmlessness, and he is a discerning person, not dull, not a drooling idiot.
+an4.262:2.4 | S: When a mendicant possesses these four qualities they’re ready to frequent remote lodgings in the wilderness and the forest.” | T: Endowed with these four qualities, a monk is fit to stay in isolated forest & wilderness dwellings.”
+an4.262:2.5 | P: Navamaṁ. | T: (none)
+
+## an4.31
+an4.31:1.1 | S: “Mendicants, there are these four situations. When these situations come about, any god or human who takes advantage of them will soon acquire great and abundant wealth. | T: “There are these four wheels, endowed with which human beings & devas develop a four-wheeled prosperity; endowed with which human beings & devas in no long time achieve greatness & abundance in terms of wealth.
+an4.31:1.2 | S: What four? | T: Which four?
+an4.31:1.3 | S: Living in a suitable region, relying on true persons, being rightly resolved in oneself, and past merit. | T: Living in a civilized land, associating with people of integrity, directing oneself rightly, and having done merit in the past.
+an4.31:1.4 | S: These are the four situations. When these situations come about, any god or human who takes advantage of them will soon acquire great and abundant wealth. | T: These are the four wheels, endowed with which human beings & devas develop a four-wheeled prosperity; endowed with which human beings & devas in no long time achieve greatness & abundance in terms of wealth.
+an4.31:2.1 | S: When a man lives in a suitable region, | T: “If you dwell in a civilized place,
+an4.31:2.2 | S: making friends with noble ones, | T: make friends with the noble ones,
+an4.31:2.3 | S: possessing right resolve, | T: rightly direct yourself,
+an4.31:2.4 | S: and having merit from the past, | T: and have made merit in the past,
+an4.31:2.5 | S: grain, riches, fame, reputation, | T: there will roll to you crops, wealth, status, honor,
+an4.31:2.6 | S: and happiness come to them.” | T: & happiness.”
+an4.31:2.7 | P: Paṭhamaṁ. | T: (none)
+
+## an4.41
+an4.41:1.1 | S: “Mendicants, there are these four ways of developing immersion further. | T: “Monks, these are the four developments of concentration.
+an4.41:1.2 | S: What four? | T: Which four?
+an4.41:1.3 | S: There is a way of developing immersion further that leads to blissful meditation in this life. | T: There is the development of concentration that, when developed & pursued, leads to a pleasant abiding in the here & now.
+an4.41:1.4 | S: There is a way of developing immersion further that leads to gaining knowledge and vision. | T: There is the development of concentration that, when developed & pursued, leads to the attainment of knowledge & vision.
+an4.41:1.5 | S: There is a way of developing immersion further that leads to mindfulness and awareness. | T: There is the development of concentration that, when developed & pursued, leads to mindfulness & alertness.
+an4.41:1.6 | S: There is a way of developing immersion further that leads to the ending of defilements. | T: There is the development of concentration that, when developed & pursued, leads to the ending of the effluents.
+an4.41:2.1 | S: And what is the way of developing immersion further that leads to blissful meditation in this life? | T: “And what is the development of concentration that, when developed & pursued, leads to a pleasant abiding in the here & now?
+an4.41:2.2 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … second absorption … third absorption … fourth absorption. | T: There is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation. With the stilling of directed thoughts & evaluations, he enters & remains in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance. With the fading of rapture, he remains equanimous, mindful, & alert, and senses pleasure with the body. He enters & remains in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’ With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—he enters & remains in the fourth jhāna: purity of equanimity & mindfulness, neither pleasure nor pain.
+an4.41:2.3 | S: This is the way of developing immersion further that leads to blissful meditation in this life. | T: This is the development of concentration that, when developed & pursued, leads to a pleasant abiding in the here & now.
+an4.41:3.1 | S: And what is the way of developing immersion further that leads to gaining knowledge and vision? | T: “And what is the development of concentration that, when developed & pursued, leads to the attainment of knowledge & vision?
+an4.41:3.2 | S: It’s when a mendicant applies their mind to the perception of light, focusing on the perception of day: | T: There is the case where a monk attends to the perception of light and is resolved on the perception of daytime (at any hour of the day).
+an4.41:3.3 | S: as by day, so by night; as by night, so by day. | T: Day (for him) is the same as night, night is the same as day.
+an4.41:3.4 | S: And so, with an open and unenveloped heart, they develop a mind that’s full of radiance. | T: By means of an awareness open & unhampered, he develops a brightened mind.
+an4.41:3.5 | S: This is the way of developing immersion further that leads to gaining knowledge and vision. | T: This is the development of concentration that, when developed & pursued, leads to the attainment of knowledge & vision.
+an4.41:4.1 | S: And what is the way of developing immersion further that leads to mindfulness and awareness? | T: “And what is the development of concentration that, when developed & pursued, leads to mindfulness & alertness?
+an4.41:4.2 | S: It’s when a mendicant knows feelings as they arise, as they remain, and as they go away. | T: There is the case where feelings are known to the monk as they arise, known as they persist, known as they subside.
+an4.41:4.3 | S: They know perceptions as they arise, as they remain, and as they go away. They know thoughts as they arise, as they remain, and as they go away. | T: Perceptions are known to him as they arise, known as they persist, known as they subside. Thoughts are known to him as they arise, known as they persist, known as they subside.
+an4.41:4.4 | S: This is the way of developing immersion further that leads to mindfulness and awareness. | T: This is the development of concentration that, when developed & pursued, leads to mindfulness & alertness.
+an4.41:5.1 | S: And what is the way of developing immersion further that leads to the ending of defilements? | T: “And what is the development of concentration that, when developed & pursued, leads to the ending of the effluents?
+an4.41:5.2 | S: It’s when a mendicant meditates observing rise and fall in the five grasping aggregates. | T: There is the case where a monk remains focused on arising & falling away with reference to the five clinging-aggregates:
+an4.41:5.3 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its passing away.
+an4.41:5.4 | S: Such is feeling, such is the origin of feeling, such is the disappearance of feeling. | T: Such is feeling, such its origination, such its passing away.
+an4.41:5.5 | S: Such is perception, such is the origin of perception, such is the disappearance of perception. | T: Such is perception, such its origination, such its passing away.
+an4.41:5.6 | S: Such are choices, such is the origin of choices, such is the disappearance of choices. | T: Such are fabrications, such their origination, such their passing away.
+an4.41:5.7 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its passing away.’
+an4.41:5.8 | S: This is the way of developing immersion further that leads to the ending of defilements. | T: This is the development of concentration that, when developed & pursued, leads to the ending of the effluents.
+an4.41:5.9 | S: These are the four ways of developing immersion further. | T: “These are the four developments of concentration.
+an4.41:5.10 | S: And it was in this connection that I said in ‘The Way to the Far Shore’, in ‘The Questions of Puṇṇaka’: | T: “And it was in connection with this that I stated in Puṇṇaka’s Question in the Way to the Far Shore [Snp5.4]:
+an4.41:6.1 | S: ‘Having appraised the world high and low, | T: ‘He who has fathomed the far & near in the world,
+an4.41:6.2 | S: there is nothing in the world that disturbs them. | T: for whom there is nothing perturbing in the world—
+an4.41:6.3 | S: Peaceful, unclouded, untroubled, <j>with no need for hope, | T: his vices evaporated, undesiring, untroubled, at peace—
+an4.41:6.4 | S: they’ve crossed over rebirth and old age, I declare.’” | T: he, I tell you, has crossed over birth & aging.’”
+an4.41:6.5 | P: Paṭhamaṁ. | T: (none)
+
+## an4.53
+an4.53:1.1 | S: At one time the Buddha was traveling along the road between Madhurā and Verañjā, | T: On one occasion the Blessed One was traveling along the highway between Madhurā and Verañjā.
+an4.53:1.2 | S: as were several householders, both women and men. | T: And many male & female householders were also traveling along the highway between Madhurā and Verañjā.
+an4.53:1.3 | S: The Buddha left the road and sat at the root of a tree, | T: Then the Blessed One, coming down from the highway, sat at the root of a tree.
+an4.53:1.4 | S: where the householders saw him. | T: The male & female householders saw him sitting at the root of the tree
+an4.53:1.5 | S: They went up to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: and, on seeing him, approached him. On arrival, having bowed down to him, they sat to one side. As they were sitting there, he said to them,
+an4.53:2.1 | S: “Householders, there are four ways of living together. | T: “Householders, there are four ways of living together.
+an4.53:2.2 | S: What four? | T: Which four?
+an4.53:2.3 | S: A male zombie living with a female zombie; | T: A corpse lives together with a corpse.
+an4.53:2.4 | S: a male zombie living with a goddess; | T: A corpse lives together with a female deva.
+an4.53:2.5 | S: a god living with a female zombie; | T: A male deva lives together with a corpse.
+an4.53:2.6 | S: a god living with a goddess. | T: A male deva lives together with a female deva.
+an4.53:3.1 | S: And how does a male zombie live with a female zombie? | T: “And how does a corpse live together with a corpse?
+an4.53:3.2 | S: It’s when the husband kills living creatures, steals, commits sexual misconduct, lies, and consumes intoxicants of beer, wine, and liquor. He’s unethical, of bad character, living at home with his heart full of the stain of stinginess, abusing and insulting ascetics and brahmins. | T: There is the case where a husband is one who takes life, takes what is not given (steals), engages in sexual misconduct, tells lies, and drinks liquor, wine, & spirits that are a cause for heedlessness. He is unvirtuous, of bad character, one who lives at home obsessed with the stain of stinginess and who insults & verbally abuses brahmans & contemplatives.
+an4.53:3.3 | S: And the wife is also … unethical, of bad character … | T: And his wife is one who takes life, takes what is not given, engages in sexual misconduct, tells lies, and drinks liquor, wine, & spirits that are a cause for heedlessness. She is unvirtuous, of bad character, one who lives at home obsessed with the stain of stinginess and who insults & verbally abuses brahmans & contemplatives.
+an4.53:3.4 | S: That’s how a male zombie lives with a female zombie. | T: “That, householders, is how a corpse lives together with a corpse.
+an4.53:4.1 | S: And how does a male zombie live with a goddess? | T: “And how does a corpse live together with a female deva?
+an4.53:4.2 | S: It’s when the husband … is unethical, of bad character … | T: There is the case where a husband is one who takes life … and who insults & verbally abuses brahmans & contemplatives.
+an4.53:4.3 | S: But the wife doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume beer, wine, and liquor intoxicants. She’s ethical, of good character, living at home with heart rid of the stain of stinginess, not abusing and insulting ascetics and brahmins. | T: But his wife is one who refrains from taking life, refrains from taking what is not given, refrains from engaging in sexual misconduct, refrains from telling lies, and refrains from drinking liquor, wine, & spirits that are a cause for heedlessness. She is virtuous, of admirable character, one who lives at home devoid of the stain of stinginess and who doesn’t insult or verbally abuse brahmans & contemplatives.
+an4.53:4.4 | S: That’s how a male zombie lives with a goddess. | T: “That, householders, is how a corpse lives together with a female deva.
+an4.53:5.1 | S: And how does a god live with a female zombie? | T: “And how does a male deva live together with a corpse?
+an4.53:5.2 | S: It’s when the husband … is ethical, of good character … | T: There is the case where a husband is one who refrains from taking life, refrains from taking what is not given, refrains from engaging in sexual misconduct, refrains from telling lies, and refrains from drinking liquor, wine, & spirits that are a cause for heedlessness. He is virtuous, of admirable character, one who lives at home devoid of the stain of stinginess and who doesn’t insult or verbally abuse brahmans & contemplatives.
+an4.53:5.3 | S: But the wife … is unethical, of bad character … | T: But his wife is one who takes life, takes what is not given, engages in sexual misconduct, tells lies, and drinks liquor, wine, & spirits that are a cause for heedlessness. She is unvirtuous, of bad character, one who lives at home obsessed with the stain of stinginess and who insults & verbally abuses brahmans & contemplatives.
+an4.53:5.4 | S: That’s how a god lives with a female zombie. | T: “That, householders, is how a male deva lives together with a corpse.
+an4.53:6.1 | S: And how does a god live with a goddess? | T: “And how does a male deva live together with a female deva?
+an4.53:6.2 | S: It’s when the husband … is ethical, of good character … | T: There is the case where a husband is one who refrains from taking life, refrains from taking what is not given, refrains from engaging in sexual misconduct, refrains from telling lies, and refrains from drinking liquor, wine, & spirits that are a cause for heedlessness. He is virtuous, of admirable character, one who lives at home devoid of the stain of stinginess and who doesn’t insult or verbally abuse brahmans & contemplatives.
+an4.53:6.3 | S: And the wife is also … ethical, of good character … | T: And his wife is one who refrains from taking life, refrains from taking what is not given, refrains from engaging in sexual misconduct, refrains from telling lies, and refrains from drinking liquor, wine, & spirits that are a cause for heedlessness. She is virtuous, of admirable character, one who lives at home devoid of the stain of stinginess and who doesn’t insult or verbally abuse brahmans & contemplatives.
+an4.53:6.4 | S: That’s how a god lives with a goddess. | T: “That, householders, is how a male deva lives together with a female deva.
+an4.53:6.5 | S: These are the four ways of living together. | T: “And these, householders, are the four ways of living together.”
+an4.53:7.1 | S: When both are unethical, | T: When both are unvirtuous,
+an4.53:7.2 | S: miserly and abusive, | T: miserly, abusive,
+an4.53:7.3 | S: then wife and husband | T: they, husband & wife,
+an4.53:7.4 | S: live together as zombies. | T: live together as corpses.
+an4.53:8.1 | S: When the husband is unethical, | T: When the husband is unvirtuous,
+an4.53:8.2 | S: miserly and abusive, | T: miserly, abusive,
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.53:8.3 | S: but the wife is ethical, | T: but the wife is virtuous,
+an4.53:8.4 | S: bountiful, rid of stinginess, | T: responsive, free from stinginess,
+an4.53:8.5 | S: she’s a goddess living | T: they live together as a female deva
+an4.53:8.6 | S: with a zombie for a husband. | T: with a corpse for a husband.
+an4.53:9.1 | S: When the husband is ethical, | T: When the husband is virtuous,
+an4.53:9.2 | S: bountiful, rid of stinginess, | T: responsive, free from stinginess,
+an4.53:9.3 | S: but the wife is unethical, | T: but the wife is unvirtuous,
+an4.53:9.4 | S: miserly and abusive, | T: miserly, abusive,
+an4.53:9.5 | S: she’s a zombie living | T: they live together as a female corpse
+an4.53:9.6 | S: with a god for a husband. | T: with a male deva for a husband.
+an4.53:10.1 | S: When both are faithful and bountiful, | T: When both have conviction and are responsive,
+an4.53:10.2 | S: disciplined, living righteously, | T: restrained, living the Dhamma,
+an4.53:10.3 | S: then wife and husband | T: they, husband & wife,
+an4.53:10.4 | S: say nice things to each other. | T: speak endearingly to each other.
+an4.53:11.1 | S: Their needs are amply satisfied, | T: Many benefits come to them
+an4.53:11.2 | S: so they live at ease. | T: and comfort appears.
+an4.53:11.3 | S: Their enemies are downhearted, | T: Their enemies are disheartened,
+an4.53:11.4 | S: when both are equal in ethics. | T: as both have virtue in tune.
+an4.53:12.1 | S: Having practiced the teaching here, | T: Having practiced the Dhamma here,
+an4.53:12.2 | S: both equal in precepts and observances, | T: both with habits & practices in tune,
+an4.53:12.3 | S: they delight in the heavenly realm, | T: delighting (after death) in the world of the devas,
+an4.53:12.4 | S: enjoying all the pleasures they desire.” | T: they rejoice, enjoying sensual pleasures.
+an4.53:12.5 | P: Tatiyaṁ. | T: (none)
+
+## an4.5
+an4.5:1.1 | S: “These four individuals are found in the world. | T: “These four types of individuals are to be found existing in the world.
+an4.5:1.2 | S: What four? | T: Which four?
+an4.5:1.3 | S: An individual who goes with the stream; an individual who goes against the stream; a steadfast individual; and a brahmin who has crossed over, gone to the far shore, and stands on solid ground. | T: The individual who goes with the flow, the individual who goes against the flow, the individual who stands fast, and the one who has crossed over, gone beyond, who stands on firm ground: a brahman.
+an4.5:1.4 | S: And who is the individual who goes with the stream? | T: “And how is one an individual who goes with the flow?
+an4.5:1.5 | S: It’s an individual who indulges in sensual pleasures and does bad deeds. | T: There is the case where an individual indulges in sensual passions and does evil deeds.
+an4.5:1.6 | S: This is called an individual who goes with the stream. | T: This is called the individual who goes with the flow.
+an4.5:2.1 | S: And who is the individual who goes against the stream? | T: “And how is one an individual who goes against the flow?
+an4.5:2.2 | S: It’s an individual who doesn’t indulge in sensual pleasures or do bad deeds. They live the full and pure spiritual life in pain and sadness, weeping, with tearful faces. | T: There is the case where an individual doesn’t indulge in sensual passions and doesn’t do evil deeds. Even though it may be with pain, even though it may be with sorrow, even though he may be crying, his face in tears, he lives the holy life that is perfect & pure.
+an4.5:2.3 | S: This is called an individual who goes against the stream. | T: This is called the individual who goes against the flow.
+an4.5:3.1 | S: And who is the steadfast individual? | T: “And how is one an individual who stands fast?
+an4.5:3.2 | S: It’s an individual who, with the ending of the five lower fetters, is reborn spontaneously. They’re extinguished there, and are not liable to return from that world. | T: There is the case where an individual, with the total ending of the five lower fetters, is due to arise spontaneously (in the Pure Abodes), there to be totally unbound, never again to return from that world.
+an4.5:3.3 | S: This is called a steadfast individual. | T: This is called the individual who stands fast.
+an4.5:4.1 | S: And who is a brahmin who has crossed over, gone to the far shore, and stands on solid ground? | T: “And how is one an individual who has crossed over, gone beyond, who stands on firm ground: a brahman?
+an4.5:4.2 | S: It’s an individual who realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: There is the case where an individual, through the ending of effluents, enters & remains in the effluent-free awareness-release & release of discernment, having directly known & realized them for himself right in the here & now.
+an4.5:4.3 | S: This is called a brahmin who has crossed over, gone to the far shore, and stands on solid ground. | T: This is called the individual who has crossed over, gone beyond, who stands on firm ground: a brahman.
+an4.5:4.4 | S: These are the four individuals found in the world. | T: “These are the four types of individuals to be found existing in the world.”
+an4.5:5.1 | S: All those people with unbridled sensuality, | T: People unrestrained in sensual passions,
+an4.5:5.2 | S: not free of lust, enjoying sensual pleasures in this life: | T: not devoid of passion, indulging in sensuality:
+an4.5:5.3 | S: again and again, they return to birth and old age; | T: They return to birth & aging, again & again—
+an4.5:5.4 | S: those who go with the stream are sunk in craving. | T: seized by craving, going with the flow.
+an4.5:6.1 | S: So the attentive in this life, <j>with mindfulness established, | T: Thus the enlightened one, with mindfulness here established,
+an4.5:6.2 | S: don’t take part in sensual pleasures and bad deeds. | T: not indulging in sensuality & evil,
+an4.5:6.3 | S: In pain they’d give up sensual pleasures: | T: though it may be with pain, would abandon sensuality.
+an4.5:6.4 | S: they call that individual <j>‘one who goes against the stream’. | T: They call him one who goes against the flow.
+an4.5:7.1 | S: Someone who’s given up five corruptions, | T: Whoever, having abandoned the five defilements,
+an4.5:7.2 | S: a perfect trainee, not liable to decline, | T: is perfect in training, not destined to fall back,
+an4.5:7.3 | S: who’s mastered their mind, <j>with faculties immersed in samādhi, | T: skilled in awareness, with faculties composed:
+an4.5:7.4 | S: that man is called ‘steadfast’. | T: He’s called one who stands fast
+an4.5:8.1 | S: The sage who has comprehended all things, <j>high and low, | T: In one who, having known, qualities high & low
+an4.5:8.2 | S: cleared them and ended them, so they are no more; | T: have been destroyed, have gone to their end, do not exist:
+an4.5:8.3 | S: they’ve completed the spiritual journey <j>and gone to the end of the world, | T: He’s called a master of knowledge, one who has fulfilled the holy life, gone to the world’s end,
+an4.5:8.4 | S: they’re called ‘one who has gone beyond’.” | T: gone beyond.
+an4.5:8.5 | P: Pañcamaṁ. | T: (none)
+
+## an4.67
+an4.67:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an4.67:1.2 | S: Now, at that time a monk in Sāvatthī passed away due to a snake bite. | T: Now, at that time in Sāvatthī a certain monk had died after having been bitten by a snake.
+an4.67:1.3 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then a large number of monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they said to him,
+an4.67:1.4 | S: “Sir, a monk in Sāvatthī has passed away due to a snake bite.” | T: “Lord, just now in Sāvatthī a certain monk died after having been bitten by a snake.”
+an4.67:2.1 | S: “Mendicants, that monk mustn’t have spread a mind of love to the four royal snake families. | T: “Then it’s certain, monks, that that monk didn’t suffuse the four royal snake lineages with a mind of goodwill.
+an4.67:2.2 | S: If he had, he wouldn’t have died due to a snake bite. | T: For if he had suffused the four royal snake lineages with a mind of goodwill, he would not have died after having been bitten by a snake.
+an4.67:3.1 | S: What four? | T: Which four?
+an4.67:3.2 | S: The royal snake families of Virūpakkha, Erāpatha, Chabyāputta, and Kaṇhāgotamaka. … | T: The Virūpakkha royal snake lineage, the Erāpatha royal snake lineage, the Chabyāputta royal snake lineage, the Dark Gotamaka royal snake lineage.
+an4.67:3.3 | P: Na hi nūna so, bhikkhave, bhikkhu imāni cattāri ahirājakulāni mettena cittena phari. | T: It’s certain that that monk didn’t suffuse these four royal snake lineages with a mind of goodwill.
+an4.67:3.4 | P: Sace hi so, bhikkhave, bhikkhu imāni cattāri ahirājakulāni mettena cittena phareyya, na hi so, bhikkhave, bhikkhu ahinā daṭṭho kālaṁ kareyya. | T: For if he had suffused these four royal snake lineages with a mind of goodwill, he would not have died after having been bitten by a snake.
+an4.67:4.1 | S: Mendicants, I urge you to spread a mind of love to the four royal snake families, for your own safety, security, and protection. | T: I allow you, monks, to suffuse these four royal snake lineages with a mind of goodwill for the sake of self-guarding, self-safeguarding, self-protection.”
+an4.67:5.1 | S: I love the Virūpakkhas, | T: I have goodwill for the Virūpakkhas,
+an4.67:5.2 | S: the Erāpathas I love, | T: goodwill for the Erāpathas,
+an4.67:5.3 | S: I love the Chabyāputtas, | T: goodwill for the Chabyāputtas,
+an4.67:5.4 | S: the Kaṇhāgotamakas I love. | T: goodwill for the Dark Gotamakas.
+an4.67:6.1 | S: I love the footless creatures, | T: I have goodwill for footless beings,
+an4.67:6.2 | S: the two-footed I love, | T: goodwill for two-footed beings,
+an4.67:6.3 | S: I love the four-footed, | T: goodwill for four-footed beings,
+an4.67:6.4 | S: the many-footed I love. | T: goodwill for many-footed beings.
+an4.67:7.1 | S: May the footless not harm me! | T: May footless beings do me no harm.
+an4.67:7.2 | S: May I not be harmed by the two-footed! | T: May two-footed beings do me no harm.
+an4.67:7.3 | S: May the four-footed not harm me! | T: May four-footed beings do me no harm.
+an4.67:7.4 | S: May I not be harmed by the many-footed! | T: May many-footed beings do me no harm.
+an4.67:8.1 | S: All sentient beings, all living things, | T: May all creatures, all breathing things,
+an4.67:8.2 | S: all creatures, every one: | T: all beings —each & every one—
+an4.67:8.3 | S: may they see only nice things, | T: meet with good fortune.
+an4.67:8.4 | S: may bad not come to anyone. | T: May none of them come to any evil.
+an4.67:9.1 | S: The Buddha is immeasurable, | T: Limitless is the Buddha,
+an4.67:9.2 | S: the teaching is immeasurable, | T: limitless the Dhamma,
+an4.67:9.3 | S: the Saṅgha is immeasurable. | T: limitless the Saṅgha.
+an4.67:9.4 | S: But limited are reptiles, | T: There is a limit to creeping things:
+an4.67:10.1 | S: snakes and scorpions, centipedes, | T: snakes, scorpions, centipedes,
+an4.67:10.2 | S: spiders and lizards and mice. | T: spiders, lizards, & rats.
+an4.67:10.3 | S: I’ve made this safeguard, I’ve made this protection: | T: I have made this safeguard, I have made this protection.
+an4.67:10.4 | S: go away, creatures! | T: May the beings depart.
+an4.67:10.5 | S: And so I revere the Blessed One, | T: I pay homage to the Blessed One,
+an4.67:10.6 | S: I revere the seven perfectly awakened Buddhas.” | T: homage to the seven rightly self-awakened ones.
+an4.67:10.7 | P: Sattamaṁ. | T: (none)
+
+## an4.77
+an4.77:1.1 | S: “Mendicants, these four things are unthinkable. They should not be thought about, and anyone who tries to think about them will go mad or get frustrated. | T: “There are these four inconceivables that are not to be conjectured about, that would bring madness & vexation to anyone who conjectured about them.
+an4.77:1.2 | S: What four? | T: Which four?
+an4.77:1.3 | S: The domain of the Buddhas … | T: “The Buddha-range of the Buddhas [i.e., the range of powers a Buddha develops as a result of becoming a Buddha] is an inconceivable that is not to be conjectured about,
+an4.77:1.4 | P: yaṁ cintento ummādassa vighātassa bhāgī assa. | T: that would bring madness & vexation to anyone who conjectured about it.
+an4.77:1.5 | S: The domain of one in absorption … | T: “The jhāna-range of a person in jhāna [i.e, the range of powers that one may obtain while absorbed in jhāna].…
+an4.77:1.6 | P: yaṁ cintento ummādassa vighātassa bhāgī assa. | T: (none)
+an4.77:1.7 | S: The results of deeds … | T: “The [precise working out of the] results of kamma.…
+an4.77:1.8 | P: yaṁ cintento ummādassa vighātassa bhāgī assa. | T: (none)
+an4.77:1.9 | S: Speculation about the world … | T: “Conjecture about [the origin, etc., of] the world is an inconceivable that is not to be conjectured about,
+an4.77:1.10 | P: yaṁ cintento ummādassa vighātassa bhāgī assa. | T: that would bring madness & vexation to anyone who conjectured about it.
+an4.77:1.11 | S: These are the four unthinkable things. They should not be thought about, and anyone who tries to think about them will go mad or get frustrated.” | T: “These are the four inconceivables that are not to be conjectured about, that would bring madness & vexation to anyone who conjectured about them.”
+an4.77:1.12 | P: Sattamaṁ. | T: (none)
+
+## an4.85
+an4.85:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “There are these four types of people to be found existing in the world.
+an4.85:1.2 | S: What four? | T: Which four?
+an4.85:1.3 | S: The dark bound for darkness, | T: One in darkness who is headed for darkness,
+an4.85:1.4 | S: the dark bound for light, | T: one in darkness who is headed for light,
+an4.85:1.5 | S: the light bound for darkness, and | T: one in light who is headed for darkness,
+an4.85:1.6 | S: the light bound for light. | T: and one in light who is headed for light.
+an4.85:2.1 | S: And how is an individual dark and bound for darkness? | T: “And how is one the type of person in darkness who is headed for darkness?
+an4.85:2.2 | S: It’s when an individual is reborn in a low family—a family of corpse-workers, bamboo-workers, hunters, chariot-makers, or scavengers—poor, with little to eat or drink, where life is tough, and food and shelter are hard to find. | T: There is the case where a person is born into a lower class family—the family of a scavenger, a hunter, a basket-weaver, a wheelwright, or a sweeper—a family that is poor, with little food or drink, living in hardship, where food & clothing are hard to come by.
+an4.85:2.3 | S: And they’re ugly, unsightly, deformed, sickly—one-eyed, crippled, lame, or half-paralyzed. They don’t get to have food, drink, clothes, and vehicles; garlands, fragrance, and makeup; or bed, house, and lighting. | T: And he is ugly, misshapen, stunted, & sickly: half-blind or deformed or lame or crippled. He doesn’t receive any (gifts of) food, drink, clothing, or vehicles; garlands, perfumes, or ointments; bedding, shelter, or lamps.
+an4.85:2.4 | S: And they do bad things by way of body, speech, and mind. | T: He engages in bodily misconduct, verbal misconduct, & mental misconduct.
+an4.85:2.5 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in a plane of deprivation, a bad destination, a lower realm, hell.
+an4.85:2.6 | S: That’s how an individual is dark and bound for darkness. | T: This is the type of person in darkness who is headed for darkness.
+an4.85:3.1 | S: And how is an individual dark and bound for light? | T: “And how is one the type of person in darkness who is headed for light?
+an4.85:3.2 | S: It’s when an individual is reborn in a low family … | T: There is the case where a person is born into a lower class family—the family of a scavenger, a hunter, a basket-weaver, a wheelwright, or a sweeper—a family that is poor, with little food or drink, living in hardship, where food & clothing are hard to come by.
+an4.85:3.3 | P: so ca hoti dubbaṇṇo duddasiko okoṭimako bavhābādho kāṇo vā kuṇī vā khañjo vā pakkhahato vā na lābhī annassa pānassa vatthassa yānassa mālāgandhavilepanassa seyyāvasathapadīpeyyassa. | T: And he is ugly, misshapen, stunted, & sickly: half-blind or deformed or lame or crippled. He doesn’t receive any (gifts of) food, drink, clothing, or vehicles; garlands, perfumes, or ointments; bedding, shelter, or lamps.
+an4.85:3.4 | S: But they do good things by way of body, speech, and mind. | T: He engages in good bodily conduct, good verbal conduct, & good mental conduct.
+an4.85:3.5 | S: When their body breaks up, after death, they’re reborn in a good place, a heavenly realm. | T: Having engaged in good bodily conduct, good verbal conduct, & good mental conduct, he—on the break-up of the body, after death—reappears in a good destination, a heavenly world.
+an4.85:3.6 | S: That’s how an individual is dark and bound for light. | T: This is the type of person in darkness who is headed for light.
+an4.85:4.1 | S: And how is an individual light and bound for darkness? | T: “And how is one the type of person in light who is headed for darkness?
+an4.85:4.2 | S: It’s when an individual is reborn in an eminent family—a well-to-do family of aristocrats, brahmins, or householders—rich, affluent, and wealthy, with lots of gold and silver, lots of property and assets, and lots of money and grain. | T: There is the case where a person is born into an upper class family—a noble warrior family, a brahman family, a prosperous householder family—a family that is rich, with much wealth, with many possessions, with a great deal of money, a great many accoutrements of wealth, a great many commodities.
+an4.85:4.3 | S: And they’re attractive, good-looking, lovely, of surpassing beauty. They get to have food, drink, clothes, and vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: And he is well-built, handsome, extremely inspiring, endowed with a lotus-like complexion. He receives (gifts of) food, drink, clothing, & vehicles; garlands, perfumes, & ointments; bedding, shelter, & lamps.
+an4.85:4.4 | S: But they do bad things by way of body, speech, and mind. | T: He engages in bodily misconduct, verbal misconduct, & mental misconduct.
+an4.85:4.5 | S: When their body breaks up, after death, they’re reborn in a place of loss, a bad place, the underworld, hell. | T: Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in a plane of deprivation, a bad destination, a lower realm, hell.
+an4.85:4.6 | S: That’s how an individual is light and bound for darkness. | T: This is the type of person in light who is headed for darkness.
+an4.85:5.1 | S: And how is an individual light and bound for light? | T: “And how is one the type of person in light who is headed for light?
+an4.85:5.2 | S: It’s when an individual is reborn in an eminent family … | T: There is the case where a person is born into an upper class family—a noble warrior family, a brahman family, a prosperous householder family—a family that is rich, with much wealth, with many possessions, with a great deal of money, a great many accoutrements of wealth, a great many commodities.
+an4.85:5.3 | P: so ca hoti abhirūpo dassanīyo pāsādiko paramāya vaṇṇapokkharatāya samannāgato, lābhī annassa pānassa vatthassa yānassa mālāgandhavilepanassa seyyāvasathapadīpeyyassa. | T: And he is well-built, handsome, extremely inspiring, endowed with a lotus-like complexion. He receives (gifts of) food, drink, clothing, & vehicles; garlands, perfumes, & ointments; bedding, shelter, & lamps.
+an4.85:5.4 | S: And they do good things by way of body, speech, and mind. | T: He engages in good bodily conduct, good verbal conduct, & good mental conduct.
+an4.85:5.5 | S: When their body breaks up, after death, they’re reborn in a good place, a heavenly realm. | T: Having engaged in good bodily conduct, good verbal conduct, & good mental conduct, he—on the break-up of the body, after death—reappears in a good destination, a heavenly world.
+an4.85:5.6 | S: That’s how an individual is light and bound for light. | T: This is the type of person in light who is headed for light.
+an4.85:5.7 | S: These are the four individuals found in the world.” | T: “These are the four types of people to be found existing in the world.”
+an4.85:5.8 | P: Pañcamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-070.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+39,726
+0 lines reported.

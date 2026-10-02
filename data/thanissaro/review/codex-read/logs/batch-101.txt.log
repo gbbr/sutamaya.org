@@ -1,0 +1,429 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9e-281f-72c2-90f0-b7d32bf65345
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear placement errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.28
+sn35.28:1.1 | S: At one time the Buddha was staying near Gayā on Gayā Head together with a thousand mendicants. | T: I have heard that on one occasion the Blessed One was staying near Gayā at Gayā Head with 1,000 monks.
+sn35.28:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks:
+sn35.28:1.3 | S: “Mendicants, all is burning. | T: “Monks, the All is aflame.
+sn35.28:1.4 | S: And what is the all that is burning? | T: Which All is aflame?
+sn35.28:1.5 | S: The eye is burning. Sights are burning. Eye consciousness is burning. Eye contact is burning. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also burning. | T: The eye is aflame. Forms are aflame. Eye-consciousness is aflame. Eye-contact is aflame. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is aflame.
+sn35.28:1.6 | S: Burning with what? | T: Aflame with what?
+sn35.28:1.7 | S: Burning with the fires of greed, hate, and delusion. Burning with rebirth, old age, and death, with sorrow, lamentation, pain, sadness, and distress. | T: Aflame with the fire of passion, the fire of aversion, the fire of delusion. Aflame, I tell you, with birth, aging & death, with sorrows, lamentations, pains, distresses, & despairs.
+sn35.28:1.8 | S: The ear … nose … tongue … body … | T: “The ear is aflame. Sounds are aflame… “The nose is aflame. Aromas are aflame… “The tongue is aflame. Flavors are aflame… “The body is aflame. Tactile sensations are aflame…
+sn35.28:1.9 | P: Kena ādittaṁ? | T: (none)
+sn35.28:1.10 | P: ‘Rāgagginā, dosagginā, mohagginā ādittaṁ, jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi ādittan’ti vadāmi …pe… | T: (none)
+sn35.28:1.11 | S: The mind is burning. Ideas are burning. Mind consciousness is burning. Mind contact is burning. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also burning. | T: “The intellect is aflame. Ideas are aflame. Intellect-consciousness is aflame. Intellect-contact is aflame. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is aflame.
+sn35.28:1.12 | S: Burning with what? | T: Aflame with what?
+sn35.28:1.13 | S: Burning with the fires of greed, hate, and delusion. Burning with rebirth, old age, and death, with sorrow, lamentation, pain, sadness, and distress, I say. | T: Aflame with the fire of passion, the fire of aversion, the fire of delusion. Aflame, I say, with birth, aging & death, with sorrows, lamentations, pains, distresses, & despairs.
+sn35.28:1.14 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on eye contact. | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with the eye, disenchanted with forms, disenchanted with eye-consciousness, disenchanted with eye-contact. And whatever there is that arises in dependence on eye-contact, experienced as pleasure, pain or neither-pleasure-nor-pain: With that, too, he grows disenchanted.
+sn35.28:1.15 | S: They grow disillusioned with the ear … nose … tongue … body … mind … painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: “He grows disenchanted with the ear… “He grows disenchanted with the nose… “He grows disenchanted with the tongue… “He grows disenchanted with the body… “He grows disenchanted with the intellect, disenchanted with ideas, disenchanted with intellect-consciousness, disenchanted with intellect-contact. And whatever there is that arises in dependence on intellect-contact, experienced as pleasure, pain or neither-pleasure-nor-pain: With that, too, he grows disenchanted.
+sn35.28:1.16 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn35.28:1.17 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn35.28:2.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn35.28:2.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+sn35.28:2.3 | S: And while this discourse was being spoken, the minds of the thousand mendicants were freed from defilements by not grasping. | T: And while this explanation was being given, the minds of the 1,000 monks, through lack of clinging/sustenance, were released from effluents.
+sn35.28:2.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.82
+sn35.82:1.1 | S: Then a mendicant went up to the Buddha … and said to him: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One:
+sn35.82:2.1 | S: “Sir, they speak of this thing called ‘the world’. | T: “‘The world, the world [loka],’ it is said.
+sn35.82:2.2 | S: How is the world defined?” | T: In what respect does the word ‘world’ apply?”
+sn35.82:2.3 | S: “It wears away, mendicant, that’s why it’s called ‘the world’. | T: “Insofar as it disintegrates [lujjati], monk, it is called the ‘world.’
+sn35.82:2.4 | S: And what is wearing away? | T: Now what disintegrates?
+sn35.82:2.5 | S: The eye is wearing away. | T: The eye disintegrates.
+sn35.82:2.6 | S: Sights … eye consciousness … eye contact is wearing away. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also wearing away. | T: Forms disintegrate. Eye-consciousness disintegrates. Eye-contact disintegrates. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.
+sn35.82:2.7 | S: The ear … nose … tongue … body …. | T: “The ear disintegrates. Sounds disintegrate… “The nose disintegrates. Aromas disintegrate… “The tongue disintegrates. Tastes disintegrate… “The body disintegrates. Tactile sensations disintegrate…
+sn35.82:2.8 | S: The mind … ideas … mind consciousness … mind contact is wearing away. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also wearing away. | T: “The intellect disintegrates. Ideas disintegrate. Intellect-consciousness disintegrates. Intellect-contact disintegrates. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates. “Insofar as it disintegrates, it is called the ‘world.’” [Because the word loka can also mean ‘cosmos,’ this discourse can also be translated as follows:] Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One: “‘The cosmos, the cosmos [loka],’ it is said. In what respect does the word ‘cosmos’ apply?” “Insofar as it disintegrates [lujjati], monk, it is called the ‘cosmos.’ Now what disintegrates? The eye disintegrates. Forms disintegrate. Eye-consciousness disintegrates. Eye-contact disintegrates. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates. “The ear disintegrates. Sounds disintegrate… “The nose disintegrates. Aromas disintegrate… “The tongue disintegrates. Tastes disintegrate… “The body disintegrates. Tactile sensations disintegrate… “The intellect disintegrates. Ideas disintegrate. Intellect-consciousness disintegrates. Intellect-contact disintegrates. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.
+sn35.82:2.9 | S: It wears away, mendicant, that’s why it’s called ‘the world’.” | T: “Insofar as it disintegrates, it is called the ‘cosmos.’”
+sn35.82:2.10 | P: Navamaṁ. | T: (none)
+
+## sn35.85
+sn35.85:1.1 | S: And then Venerable Ānanda … said to the Buddha: | T: Then Ven. Ānanda went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn35.85:1.2 | S: “Sir, they say that ‘the world is empty’. | T: “It is said that ‘the world is empty, the world is empty,’ lord.
+sn35.85:1.3 | S: What does the saying ‘the world is empty’ refer to?” | T: In what respect is it said that ‘the world is empty?’”
+sn35.85:1.4 | S: “Ānanda, they say that ‘the world is empty’ because it’s empty of self or what belongs to self. | T: “Insofar as it is empty of a self or of anything pertaining to a self: Thus it is said, Ānanda, that ‘the world is empty.’
+sn35.85:1.5 | S: And what is empty of self or what belongs to self? | T: And what is empty of a self or of anything pertaining to a self?
+sn35.85:1.6 | S: The eye, | T: The eye is empty of a self or of anything pertaining to a self.
+sn35.85:1.7 | S: sights, eye consciousness, and eye contact are empty of self or what belongs to self. … | T: Forms… Eye-consciousness… Eye-contact is empty of a self or of anything pertaining to a self.
+sn35.85:1.8 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact is also empty of self or what belongs to self. | T: And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is empty of a self or of anything pertaining to a self. “The ear is empty.… “The nose is empty.… “The tongue is empty.… “The body is empty.… “The intellect is empty of a self or of anything pertaining to a self. Ideas… Intellect-consciousness… Intellect-contact is empty of a self or of anything pertaining to a self. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is empty of a self or of anything pertaining to a self.
+sn35.85:1.9 | S: They say that ‘the world is empty’ because it’s empty of self or what belongs to self.” | T: “Thus it is said that ‘the world is empty.’”
+sn35.85:1.10 | P: Dutiyaṁ. | T: (none)
+
+## sn35.97
+sn35.97:1.1 | S: “Mendicants, I will teach you who lives negligently and who lives diligently. | T: “Monks, I will teach you about one who dwells in heedlessness and one who dwells in heedfulness.
+sn35.97:1.2 | S: Listen … | T: Listen & pay careful attention, I will speak.”
+sn35.97:1.3 | S: And how does someone live negligently? | T: “As you say, lord,” the monks responded to the Blessed One. The Blessed One said: “And how does one dwell in heedlessness?
+sn35.97:1.4 | S: When you live with the eye faculty unrestrained, your mind becomes polluted when it comes to sights known by the eye. | T: When a monk dwells without restraint over the faculty of the eye, the mind is stained with forms cognizable via the eye.
+sn35.97:1.5 | S: When the mind is polluted, there’s no joy. | T: When the mind is stained, there is no joy.
+sn35.97:1.6 | S: When there’s no joy, there’s no rapture. | T: There being no joy, there is no rapture.
+sn35.97:1.7 | S: When there’s no rapture, there’s no tranquility. | T: There being no rapture, there is no calm.
+sn35.97:1.8 | S: When there’s no tranquility, there’s suffering. | T: There being no calm, he dwells in pain.
+sn35.97:1.9 | S: When one is suffering, the mind does not become immersed in samādhi. | T: When pained, the mind does not become centered.
+sn35.97:1.10 | S: When the mind is not immersed in samādhi, principles do not become clear. | T: When the mind is uncentered, phenomena don’t become manifest.
+sn35.97:1.11 | S: Because principles have not become clear, you’re reckoned to live negligently. | T: When phenomena aren’t manifest, he is reckoned simply as one who dwells in heedlessness.
+sn35.97:1.12 | S: When you live with the ear … nose … tongue … body … | T: “When a monk dwells without restraint over the ear… nose… tongue… body…
+sn35.97:1.13 | P: tassa byāsittacittassa …pe… | T: (none)
+sn35.97:1.14 | P: pamādavihārītveva saṅkhaṁ gacchati …pe… | T: (none)
+sn35.97:1.15 | S: mind faculty unrestrained, your mind becomes polluted when it comes to ideas known by the mind. | T: “When a monk dwells without restraint over the faculty of the intellect, the mind is stained with ideas cognizable via the intellect.
+sn35.97:1.16 | S: When the mind is polluted, there’s no joy. | T: When the mind is stained, there is no joy.
+sn35.97:1.17 | S: When there’s no joy, there’s no rapture. | T: There being no joy, there is no rapture.
+sn35.97:1.18 | S: When there’s no rapture, there’s no tranquility. | T: There being no rapture, there is no calm.
+sn35.97:1.19 | S: When there’s no tranquility, there’s suffering. | T: There being no calm, he dwells in pain.
+sn35.97:1.20 | S: When one is suffering, the mind does not become immersed in samādhi. | T: When pained, the mind does not become centered.
+sn35.97:1.21 | S: When the mind is not immersed in samādhi, principles do not become clear. | T: When the mind is uncentered, phenomena don’t become manifest.
+sn35.97:1.22 | S: Because principles have not become clear, you’re reckoned to live negligently. | T: When phenomena aren’t manifest, he is reckoned simply as one who dwells in heedlessness.
+sn35.97:1.23 | S: That’s how someone lives negligently. | T: “This is how one dwells in heedlessness.
+sn35.97:2.1 | S: And how does someone live diligently? | T: “And how does one dwell in heedfulness?
+sn35.97:2.2 | S: When you live with the eye faculty restrained, your mind doesn’t become polluted when it comes to sights known by the eye. | T: When a monk dwells with restraint over the faculty of the eye, the mind is not stained with forms cognizable via the eye.
+sn35.97:2.3 | S: When the mind isn’t polluted, joy springs up. | T: When the mind is not stained, joy is born.
+sn35.97:2.4 | S: Being joyful, rapture springs up. | T: In one who has joy, rapture is born.
+sn35.97:2.5 | S: When the mind is full of rapture, the body becomes tranquil. | T: The body of one enraptured at heart grows calm.
+sn35.97:2.6 | S: When the body is tranquil, one feels bliss. | T: When the body is calm, one feels pleasure.
+sn35.97:2.7 | S: And when blissful, the mind becomes immersed in samādhi. | T: Feeling pleasure, the mind becomes centered.
+sn35.97:2.8 | S: When the mind is immersed in samādhi, principles become clear. | T: When the mind is centered, phenomena become manifest.
+sn35.97:2.9 | S: Because principles have become clear, you’re reckoned to live diligently. | T: When phenomena are manifest, he is reckoned as one who dwells in heedfulness.
+sn35.97:2.10 | S: When you live with the ear … nose … tongue … body … | T: “When a monk dwells with restraint over the ear… nose… tongue… body…
+sn35.97:2.11 | P: appamādavihārītveva saṅkhaṁ gacchati. | T: (none)
+sn35.97:2.12 | S: mind faculty restrained, your mind doesn’t become polluted when it comes to ideas known by the mind. | T: “When a monk dwells with restraint over the faculty of the intellect, the mind is not stained with ideas cognizable via the intellect.
+sn35.97:2.13 | S: When the mind isn’t polluted, joy springs up. | T: When the mind is not stained, joy is born.
+sn35.97:2.14 | S: Being joyful, rapture springs up. | T: In one who has joy, rapture is born.
+sn35.97:2.15 | S: When the mind is full of rapture, the body becomes tranquil. | T: The body of one enraptured at heart grows calm.
+sn35.97:2.16 | S: When the body is tranquil, one feels bliss. | T: When the body is calm, one feels pleasure.
+sn35.97:2.17 | S: And when blissful, the mind becomes immersed in samādhi. | T: Feeling pleasure, the mind becomes centered.
+sn35.97:2.18 | S: When the mind is immersed in samādhi, principles become clear. | T: When the mind is centered, phenomena become manifest.
+sn35.97:2.19 | S: Because principles have become clear, you’re reckoned to live diligently. | T: When phenomena are manifest, he is reckoned as one who dwells in heedfulness.
+sn35.97:2.20 | S: That’s how someone lives diligently.” | T: “This is how one dwells in heedfulness.”
+sn35.97:2.21 | P: Catutthaṁ. | T: (none)
+
+## sn35.99
+sn35.99:1.1 | S: “Mendicants, develop immersion. | T: “Develop concentration, monks.
+sn35.99:1.2 | S: A mendicant who has immersion truly understands. | T: A concentrated monk discerns things as they have come to be.
+sn35.99:1.3 | S: What do they truly understand? | T: And what does he discern as it has come to be?
+sn35.99:1.4 | S: They truly understand that the eye is impermanent. | T: “He discerns, as it has come to be, that ‘The eye is inconstant’ …
+sn35.99:1.5 | S: They truly understand that sights … | T: ‘Forms are inconstant’ …
+sn35.99:1.6 | S: eye consciousness … | T: ‘Eye-consciousness is inconstant’ …
+sn35.99:1.7 | S: eye contact … | T: ‘Eye-contact is inconstant’ …
+sn35.99:1.8 | S: the pleasant, painful, or neutral feeling that arises dependent on eye contact is impermanent. … | T: ‘Whatever arises in dependence on eye-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too is inconstant.’ “He discerns, as it has come to be, that ‘The ear is inconstant’ … ‘The nose is inconstant’ … ‘The tongue is inconstant’ … ‘The body is inconstant’ …
+sn35.99:1.9 | S: They truly understand that the mind is impermanent. | T: “He discerns, as it has come to be, that ‘The intellect is inconstant’ …
+sn35.99:1.10 | S: They truly understand that ideas … | T: ‘Ideas are inconstant’ …
+sn35.99:1.11 | S: mind consciousness … | T: ‘Intellect-consciousness is inconstant’ …
+sn35.99:1.12 | S: mind contact … | T: ‘Intellect-contact is inconstant’ …
+sn35.99:1.13 | S: the pleasant, painful, or neutral feeling that arises dependent on mind contact is impermanent. | T: ‘Whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too is inconstant.’
+sn35.99:1.14 | S: Mendicants, develop immersion. | T: “So develop concentration, monks.
+sn35.99:1.15 | S: A mendicant who has immersion truly understands.” | T: A concentrated monk discerns things as they have come to be.”
+sn35.99:1.16 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn36.11
+sn36.11:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+sn36.11:1.2 | S: “Just now, sir, as I was in private retreat this thought came to mind. | T: “Just now, lord, while I was alone in seclusion, this train of thought arose in my awareness:
+sn36.11:1.3 | S: The Buddha has spoken of three feelings. | T: ‘Three feelings have been spoken of by the Blessed One:
+sn36.11:1.4 | S: Pleasant, painful, and neutral feeling. | T: a feeling of pleasure, a feeling of pain (stress), & a feeling of neither pleasure nor pain.
+sn36.11:1.5 | S: These are the three feelings the Buddha has spoken of. | T: These are the three feelings spoken of by the Blessed One.
+sn36.11:1.6 | S: But the Buddha has also said: | T: But the Blessed One has said:
+sn36.11:1.7 | S: ‘Suffering includes whatever is felt.’ | T: “Whatever is felt comes under stress (pain).”
+sn36.11:1.8 | S: What was the Buddha referring to when he said this?” | T: Now in what connection was this stated by the Blessed One:
+sn36.11:1.9 | P: ‘yaṁ kiñci vedayitaṁ taṁ dukkhasmin’”ti? | T: “Whatever is felt comes under stress (pain)?”’”
+sn36.11:2.1 | S: “Good, good, mendicant! | T: “Excellent, monk. Excellent.
+sn36.11:2.2 | S: I have spoken of these three feelings. | T: These three feelings have been spoken of by me:
+sn36.11:2.3 | S: Pleasant, painful, and neutral feeling. | T: a feeling of pleasure, a feeling of pain (stress), & a feeling of neither pleasure nor pain.
+sn36.11:2.4 | S: These are the three feelings I have spoken of. | T: These are the three feelings spoken of by me.
+sn36.11:2.5 | S: But I have also said: | T: But I have also said:
+sn36.11:2.6 | S: ‘Suffering includes whatever is felt.’ | T: ‘Whatever is felt comes under stress (pain).’
+sn36.11:2.7 | S: When I said this I was referring to the impermanence of conditions, to the fact that conditions are | T: That I have stated simply in connection with the inconstancy of fabrications.
+sn36.11:2.8 | P: ‘yaṁ kiñci vedayitaṁ taṁ dukkhasmin’ti. | T: (none)
+sn36.11:2.9 | S: liable to end, | T: That I have stated simply in connection with the nature of fabrications to end…
+sn36.11:2.10 | S: vanish, | T: in connection with the nature of fabrications to fall away…
+sn36.11:2.11 | S: fade away, | T: to fade away…
+sn36.11:2.12 | S: cease, | T: to cease…
+sn36.11:2.13 | S: and perish. | T: in connection with the nature of fabrications to change.
+sn36.11:2.14 | P: ‘yaṁ kiñci vedayitaṁ taṁ dukkhasmin’ti. | T: (none)
+sn36.11:2.15 | S: But I have also explained the progressive cessation of activities. | T: “And I have also taught the step-by-step cessation of fabrications.
+sn36.11:2.16 | S: For someone who has attained the first absorption, speech has ceased. | T: When one has attained the first jhāna, speech has ceased.
+sn36.11:2.17 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have ceased. | T: When one has attained the second jhāna, directed thought & evaluation have ceased.
+sn36.11:2.18 | S: For someone who has attained the third absorption, rapture has ceased. | T: When one has attained the third jhāna, rapture has ceased.
+sn36.11:2.19 | S: For someone who has attained the fourth absorption, breathing has ceased. | T: When one has attained the fourth jhāna, in-and-out breathing has ceased.
+sn36.11:2.20 | S: For someone who has attained the dimension of infinite space, the perception of form has ceased. | T: When one has attained the dimension of the infinitude of space, the perception of forms has ceased.
+sn36.11:2.21 | S: For someone who has attained the dimension of infinite consciousness, the perception of the dimension of infinite space has ceased. | T: When one has attained the dimension of the infinitude of consciousness, the perception of the dimension of the infinitude of space has ceased.
+sn36.11:2.22 | S: For someone who has attained the dimension of nothingness, the perception of the dimension of infinite consciousness has ceased. | T: When one has attained the dimension of nothingness, the perception of the dimension of the infinitude of consciousness has ceased.
+sn36.11:2.23 | S: For someone who has attained the dimension of neither perception nor non-perception, the perception of the dimension of nothingness has ceased. | T: When one has attained the dimension of neither perception nor non-perception, the perception of the dimension of nothingness has ceased.
+sn36.11:2.24 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have ceased. | T: When one has attained the cessation of perception & feeling, perception & feeling have ceased.
+sn36.11:2.25 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have ceased. | T: When a monk’s effluents have ended, passion has ceased, aversion has ceased, delusion has ceased.
+sn36.11:2.26 | S: And I have also explained the progressive settling of activities. | T: “Then, monk, I have also taught the step-by-step total stilling of fabrications.
+sn36.11:2.27 | S: For someone who has attained the first absorption, speech has stilled. | T: When one has attained the first jhāna, speech has been totally stilled.
+sn36.11:2.28 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have stilled. … | T: When one has attained the second jhāna, directed thought & evaluation have been totally stilled. When one has attained the third jhāna, rapture has been totally stilled. When one has attained the fourth jhāna, in-and-out breathing has been totally stilled. When one has attained the dimension of the infinitude of space, the perception of forms has been totally stilled. When one has attained the dimension of the infinitude of consciousness, the perception of the dimension of the infinitude of space has been totally stilled. When one has attained the dimension of nothingness, the perception of the dimension of the infinitude of consciousness has been totally stilled. When one has attained the dimension of neither perception nor non-perception, the perception of the dimension of nothingness has been totally stilled.
+sn36.11:2.29 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have stilled. | T: When one has attained the cessation of perception & feeling, perception & feeling have been totally stilled.
+sn36.11:2.30 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have stilled. | T: When a monk’s effluents have ended, passion has been totally stilled, aversion has been totally stilled, delusion has been totally stilled.
+sn36.11:2.31 | S: There are these six levels of tranquility. | T: “There are these six calmings.
+sn36.11:2.32 | S: For someone who has attained the first absorption, speech has been tranquilized. | T: When one has attained the first jhāna, speech has been calmed.
+sn36.11:2.33 | S: For someone who has attained the second absorption, the placing of the mind and keeping it connected have been tranquilized. | T: When one has attained the second jhāna, directed thought & evaluation have been calmed.
+sn36.11:2.34 | S: For someone who has attained the third absorption, rapture has been tranquilized. | T: When one has attained the third jhāna, rapture has been calmed.
+sn36.11:2.35 | S: For someone who has attained the fourth absorption, breathing has been tranquilized. | T: When one has attained the fourth jhāna, in-and-out breathing has been calmed.
+sn36.11:2.36 | S: For someone who has attained the cessation of perception and feeling, perception and feeling have been tranquilized. | T: When one has attained the cessation of perception & feeling, perception & feeling have been calmed.
+sn36.11:2.37 | S: For a mendicant who has ended the defilements, greed, hate, and delusion have been tranquilized.” | T: When a monk’s effluents have ended, passion has been calmed, aversion has been calmed, delusion has been calmed.”
+sn36.11:2.38 | P: Paṭhamaṁ. | T: (none)
+
+## sn36.21
+sn36.21:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrel’s Sanctuary.
+sn36.21:1.2 | S: Then the wanderer Moḷiyasīvaka went up to the Buddha and exchanged greetings with him. | T: There Moḷiyasivaka the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn36.21:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+sn36.21:1.4 | S: “Worthy Gotama, there are some ascetics and brahmins who have this doctrine and view: | T: “Master Gotama, there are some contemplatives & brahmans who are of this doctrine, this view:
+sn36.21:1.5 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of past deeds.’ | T: Whatever an individual feels—pleasure, pain, neither-pleasure-nor-pain—is entirely caused by what was done before.
+sn36.21:1.6 | S: What does the worthy Gotama say about this?” | T: Now what does Master Gotama say to that?”
+sn36.21:2.1 | S: “Sīvaka, some feelings stem from bile disorders. | T: [The Buddha:] “There are cases where some feelings arise based on bile [i.e., diseases and pains that come from a malfunction of the gall bladder].
+sn36.21:2.2 | S: You can know this from your own personal experience, | T: You yourself should know how some feelings arise based on bile.
+sn36.21:2.3 | S: and it is generally deemed to be true. | T: Even the world is agreed on how some feelings arise based on bile.
+sn36.21:2.4 | S: Since this is so, the ascetics and brahmins whose view is that | T: So any contemplatives & brahmans who are of the doctrine & view that whatever an individual feels—
+sn36.21:2.5 | S: everything an individual person experiences is because of past deeds | T: pleasure, pain, neither-pleasure-nor-pain—is entirely caused by what was done before—
+sn36.21:2.6 | S: go beyond personal experience and beyond what is generally deemed to be true. | T: slip past what they themselves know, slip past what is agreed on by the world.
+sn36.21:2.7 | S: So those ascetics and brahmins are wrong, I say. | T: Therefore I say that those contemplatives & brahmans are wrong.”
+sn36.21:3.1 | S: Some feelings stem from phlegm disorders … | T: “There are cases where some feelings arise based on phlegm…
+sn36.21:3.2 | S: wind disorders … | T: based on internal winds…
+sn36.21:3.3 | S: their conjunction … | T: based on a combination of bodily humors…
+sn36.21:3.4 | S: change in weather … | T: from the change of the seasons…
+sn36.21:3.5 | S: not taking care of yourself … | T: from uneven [‘out-of-tune’] care of the body…
+sn36.21:3.6 | S: exertion … | T: from harsh treatment…
+sn36.21:3.7 | S: Some feelings are the result of past deeds. | T: from the result of kamma.
+sn36.21:3.8 | S: You can know this from your own personal experience, | T: You yourself should know how some feelings arise from the result of kamma.
+sn36.21:3.9 | P: Yathā kammavipākajānipi idhekaccāni vedayitāni uppajjanti; | T: (none)
+sn36.21:3.10 | S: and it is generally deemed to be true. | T: Even the world is agreed on how some feelings arise from the result of kamma.
+sn36.21:3.11 | P: Yathā kammavipākajānipi idhekaccāni vedayitāni uppajjanti; | T: (none)
+sn36.21:3.12 | S: Since this is so, the ascetics and brahmins whose view is that | T: So any contemplatives & brahmans who are of the doctrine & view that whatever an individual feels—
+sn36.21:3.13 | S: everything an individual person experiences is because of past deeds | T: pleasure, pain, neither pleasure-nor-pain—is entirely caused by what was done before—
+sn36.21:3.14 | S: go beyond personal experience and beyond what is generally deemed to be true. | T: slip past what they themselves know, slip past what is agreed on by the world.
+sn36.21:3.15 | S: So those ascetics and brahmins are wrong, I say.” | T: Therefore I say that those contemplatives & brahmans are wrong.”
+sn36.21:4.1 | S: When he said this, the wanderer Moḷiyasīvaka said to the Buddha, | T: When this was said, Moḷiyasivaka the wanderer said to the Blessed One:
+sn36.21:4.2 | S: “Excellent, worthy Gotama! Excellent! … | T: "Magnificent, lord! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to point out the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear.
+sn36.21:4.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: I go to the Blessed One for refuge, to the Dhamma, & to the Saṅgha of monks. May the Blessed One remember me as a lay follower who has gone for refuge from this day forward, for life."
+sn36.21:5.1 | S: “Bile, phlegm, and wind, | T: “Bile, phlegm, wind,
+sn36.21:5.2 | S: their conjunction, and the weather, | T: a combination,
+sn36.21:5.3 | S: not taking care of yourself, exertion, | T: Season, uneven, harsh treatment,
+sn36.21:5.4 | S: and the result of deeds is the eighth.” | T: and through the result of kamma as the eighth.”
+sn36.21:5.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn36.22
+sn36.22:1.1 | S: “Mendicants, I will teach you an exposition of the teaching on the hundred and eight. | T: “Monks, I will teach you a one-hundred-and-eight exposition that is a Dhamma exposition.
+sn36.22:1.2 | S: Listen … | T: Listen & pay close attention. I will speak.” “As you say, lord,” the monks responded to him.
+sn36.22:1.3 | S: And what is the exposition of the teaching on the hundred and eight? | T: The Blessed One said: “And which one-hundred-and-eight exposition is a Dhamma exposition?
+sn36.22:1.4 | S: Mendicants, in one explanation I’ve spoken of two feelings. In another explanation I’ve spoken of three feelings, or five, six, eighteen, thirty-six, or a hundred and eight feelings. | T: There is the exposition whereby I have spoken of two feelings, the exposition whereby I have spoken of three feelings… five… six… eighteen… thirty-six… one hundred and eight feelings.
+sn36.22:1.5 | P: tissopi mayā vedanā vuttā pariyāyena; | T: (none)
+sn36.22:1.6 | P: pañcapi mayā vedanā vuttā pariyāyena; | T: (none)
+sn36.22:1.7 | P: chapi mayā vedanā vuttā pariyāyena; | T: (none)
+sn36.22:1.8 | P: aṭṭhārasāpi mayā vedanā vuttā pariyāyena; | T: (none)
+sn36.22:1.9 | P: chattiṁsāpi mayā vedanā vuttā pariyāyena; | T: (none)
+sn36.22:1.10 | P: aṭṭhasatampi mayā vedanā vuttā pariyāyena. | T: (none)
+sn36.22:2.1 | S: And what are the two feelings? | T: “And which are the two feelings?
+sn36.22:2.2 | S: Physical and mental. | T: Physical & mental.
+sn36.22:2.3 | S: These are called the two feelings. | T: These are the two feelings.
+sn36.22:2.4 | S: And what are the three feelings? | T: “And which are the three feelings?
+sn36.22:2.5 | S: Pleasant, painful, and neutral feelings. … | T: A feeling of pleasure, a feeling of pain, a feeling of neither pleasure nor pain.
+sn36.22:2.6 | P: imā vuccanti, bhikkhave, tisso vedanā. | T: These are the three feelings.
+sn36.22:2.7 | S: And what are the five feelings? | T: “And which are the five feelings?
+sn36.22:2.8 | S: The faculties of pleasure, pain, happiness, sadness, and equanimity. … | T: The pleasure-faculty, the pain-faculty, the happiness-faculty, the distress-faculty, the equanimity-faculty.
+sn36.22:2.9 | P: imā vuccanti, bhikkhave, pañca vedanā. | T: These are the five feelings.
+sn36.22:2.10 | S: And what are the six feelings? | T: “And which are the six feelings?
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn36.22:2.11 | S: Feeling born of eye contact … ear contact … nose contact … tongue contact … body contact … | T: A feeling born of eye-contact, a feeling born of ear-contact… nose-contact… tongue-contact… body-contact…
+sn36.22:2.12 | S: mind contact. … | T: intellect-contact.
+sn36.22:2.13 | P: imā vuccanti, bhikkhave, cha vedanā. | T: These are the six feelings.
+sn36.22:2.14 | S: And what are the eighteen feelings? | T: “And which are the eighteen feelings?
+sn36.22:2.15 | S: There are six preoccupations with happiness, six preoccupations with sadness, and six preoccupations with equanimity. … | T: Six happiness-explorations, six distress-explorations, six equanimity-explorations.
+sn36.22:2.16 | P: imā vuccanti, bhikkhave, aṭṭhārasa vedanā. | T: These are the eighteen feelings.
+sn36.22:2.17 | S: And what are the thirty-six feelings? | T: “And which are the thirty-six feelings?
+sn36.22:2.18 | S: Six kinds of domestic happiness and six kinds of renunciate happiness. Six kinds of domestic sadness and six kinds of renunciate sadness. Six kinds of domestic equanimity and six kinds of renunciate equanimity. … | T: Six kinds of house-based happiness & six kinds of renunciation-based happiness; six kinds of house-based distress & six kinds of renunciation-based distress; six kinds of house-based equanimity & six kinds of renunciation-based equanimity.
+sn36.22:2.19 | P: imā vuccanti, bhikkhave, chattiṁsa vedanā. | T: These are the thirty-six feelings.
+sn36.22:2.20 | S: And what are the hundred and eight feelings? | T: “And which are the one hundred and eight feelings?
+sn36.22:2.21 | S: Thirty six feelings in the past, future, and present. | T: Thirty-six past feelings, thirty-six future feelings, and thirty-six present feelings.
+sn36.22:2.22 | S: These are called the hundred and eight feelings. | T: These are the one hundred and eight feelings.
+sn36.22:2.23 | S: This is the exposition of the teaching on the hundred and eight.” | T: “And this, monks, is the one-hundred-and-eight exposition that is a Dhamma exposition.”
+sn36.22:2.24 | P: Dutiyaṁ. | T: (none)
+
+## sn36.23
+sn36.23:1.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain bhikkhu went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn36.23:1.2 | S: “Sir, what is feeling? What’s the origin of feeling? What’s the practice that leads to the origin of feeling? | T: “What, lord, is feeling? What is the origination of feeling? What is the path of practice leading to the origination of feeling?
+sn36.23:1.3 | S: What’s the cessation of feeling? What’s the practice that leads to the cessation of feeling? | T: What is the cessation of feeling? What is the path of practice leading to the cessation of feeling?
+sn36.23:1.4 | S: And what is feeling’s gratification, drawback, and escape?” | T: What is the allure of feeling, what is its drawback, what is the escape from it?”
+sn36.23:2.1 | S: “Mendicant, there are these three feelings: | T: “Monk, there are three feelings:
+sn36.23:2.2 | S: pleasant, painful, and neutral. | T: a feeling of pleasure, a feeling of pain, a feeling of neither pleasure nor pain.
+sn36.23:2.3 | S: These are called feelings. | T: These are called feelings.
+sn36.23:2.4 | S: Feeling originates from contact. | T: “From the origination of contact comes the origination of feeling.
+sn36.23:2.5 | S: Craving is the practice that leads to the origin of feeling. | T: “Craving is the path of practice leading to the origination of feeling.
+sn36.23:2.6 | S: When contact ceases, feeling ceases. | T: “From the cessation of contact is the cessation of feeling.
+sn36.23:2.7 | S: The practice that leads to the cessation of feelings is simply this noble eightfold path, that is: | T: “This very noble eightfold path is the path of practice leading to the cessation of feeling. In other words,
+sn36.23:2.8 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn36.23:2.9 | S: The pleasure and happiness that arise from feeling: this is its gratification. | T: “Whatever pleasure & happiness arise in dependence on feeling: That is the allure of feeling.
+sn36.23:2.10 | S: That feeling is impermanent, suffering, and perishable: this is its drawback. | T: “The fact that feeling is inconstant, stressful, subject to change: That is the drawback of feeling.
+sn36.23:2.11 | S: Removing and giving up desire and greed for feeling: this is its escape.” | T: “The subduing of desire-passion for feeling, the abandoning of desire-passion for feeling: That is the escape from feeling.”
+sn36.23:2.12 | P: Tatiyaṁ. | T: (none)
+
+## sn36.4
+sn36.4:1.1 | S: “Mendicants, when an unlearned ordinary person says that | T: “Monks, when an uninstructed run-of-the-mill person makes the statement,
+sn36.4:1.2 | S: there’s an abyss under the ocean, | T: ‘There is a bottomless chasm in the ocean,’
+sn36.4:1.3 | S: they’re speaking of something that doesn’t exist. | T: he is talking about something that doesn’t exist, that can’t be found.
+sn36.4:1.4 | P: ‘atthi mahāsamudde pātālo’ti. | T: (none)
+sn36.4:1.5 | S: ‘Abyss’ is a term for painful physical feelings. | T: The word ‘bottomless chasm’ is actually a designation for painful bodily feeling.
+sn36.4:1.6 | S: When an unlearned ordinary person experiences painful physical feelings they sorrow and wail and lament, beating their breast and falling into confusion. | T: “When an uninstructed run-of-the-mill person is touched by a painful bodily feeling, he sorrows, grieves, & laments, beats his breast, becomes distraught.
+sn36.4:1.7 | S: They’re called an unlearned ordinary person who hasn’t stood up in the abyss and has found no footing. | T: This is called an uninstructed run-of-the-mill person who has not risen up out of the bottomless chasm, who has not gained a foothold.
+sn36.4:1.8 | S: When a learned noble disciple experiences painful physical feelings they don’t sorrow or wail or lament, beating their breast and falling into confusion. | T: “When a well-instructed disciple of the noble ones is touched by a painful bodily feeling, he does not sorrow, grieve, or lament, does not beat his breast or become distraught.
+sn36.4:1.9 | S: They’re called a learned noble disciple who has stood up in the abyss and found a footing. | T: This is called a well-instructed disciple of the noble ones who has risen up out of the bottomless chasm, whose foothold is gained.”
+sn36.4:2.1 | S: If you can’t abide | T: Whoever can’t endure them
+sn36.4:2.2 | S: those painful physical feelings | T: once they’ve arisen— painful bodily feelings
+sn36.4:2.3 | S: that arise and sap your vitality; | T: that could kill living beings—
+sn36.4:2.4 | S: if you tremble at their touch, | T: who trembles at their touch,
+sn36.4:3.1 | S: weeping and wailing, | T: who cries & wails,
+sn36.4:3.2 | S: a weakling lacking strength— | T: a weakling with no resilience:
+sn36.4:3.3 | S: you won’t stand up in the abyss | T: He hasn’t risen up out of the bottomless chasm
+sn36.4:3.4 | S: and find a footing. | T: or even gained a foothold.
+sn36.4:4.1 | S: If you can endure | T: Whoever endures them
+sn36.4:4.2 | S: those painful physical feelings | T: once they’ve arisen— painful bodily feelings
+sn36.4:4.3 | S: that arise and sap your vitality; | T: that could kill living beings—
+sn36.4:4.4 | S: if you don’t tremble at their touch— | T: who doesn’t tremble at their touch:
+sn36.4:4.5 | S: you stand up in the abyss | T: He’s risen up out of the bottomless chasm;
+sn36.4:4.6 | S: and find a footing.” | T: his foothold is gained.
+sn36.4:4.7 | P: Catutthaṁ. | T: (none)
+
+## sn36.6
+sn36.6:1.1 | S: “Mendicants, an unlearned ordinary person feels pleasant, painful, and neutral feelings. | T: “Monks, an uninstructed run-of-the-mill person feels feelings of pleasure, feelings of pain, feelings of neither-pleasure-nor-pain.
+sn36.6:1.2 | S: A learned noble disciple also feels pleasant, painful, and neutral feelings. | T: A well-instructed disciple of the noble ones also feels feelings of pleasure, feelings of pain, feelings of neither-pleasure-nor-pain.
+sn36.6:1.3 | S: What, then, is the difference between a learned noble disciple and an ordinary unlearned person?” | T: So what difference, what distinction, what distinguishing factor is there between the well-instructed disciple of the noble ones and the uninstructed run-of-the-mill person?”
+sn36.6:1.4 | S: “Our teachings are rooted in the Buddha. …” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.” “In that case, monks, listen & pay close attention. I will speak.” “As you say, lord,” the monks responded to him. The Blessed One said,
+sn36.6:1.5 | S: “When an unlearned ordinary person experiences painful physical feelings they sorrow and wail and lament, beating their breast and falling into confusion. | T: “When touched with a feeling of pain, the uninstructed run-of-the-mill person sorrows, grieves, & laments, beats his breast, becomes distraught.
+sn36.6:1.6 | S: They experience two feelings: | T: So he feels two pains,
+sn36.6:1.7 | S: physical and mental. | T: physical & mental.
+sn36.6:1.8 | S: It’s like a person who is struck with an arrow, | T: Just as if they were to shoot a man with an arrow and,
+sn36.6:1.9 | S: only to be struck with a second arrow. | T: right afterward, were to shoot him with another one,
+sn36.6:1.10 | S: That person experiences the feeling of two arrows. | T: so that he would feel the pains of two arrows,
+sn36.6:1.11 | S: In the same way, when an unlearned ordinary person experiences painful physical feelings they sorrow and wail and lament, beating their breast and falling into confusion. | T: in the same way, when touched with a feeling of pain, the uninstructed run-of-the-mill person sorrows, grieves, & laments, beats his breast, becomes distraught.
+sn36.6:1.12 | S: They experience two feelings: | T: So he feels two pains,
+sn36.6:1.13 | S: physical and mental. | T: physical & mental.
+sn36.6:1.14 | S: When they’re touched by painful feeling, they resist it. | T: “As he is touched by that painful feeling, he is resistant.
+sn36.6:1.15 | S: The underlying tendency for aversion toward painful feeling underlies that. | T: Any resistance-obsession with regard to that painful feeling obsesses him.
+sn36.6:1.16 | S: When touched by painful feeling they look forward to enjoying sensual pleasures. | T: Touched by that painful feeling, he delights in sensuality.
+sn36.6:1.17 | S: Why is that? | T: Why is that?
+sn36.6:1.18 | S: Because an unlearned ordinary person doesn’t understand any escape from painful feeling apart from sensual pleasures. | T: Because the uninstructed run-of-the-mill person does not discern any escape from painful feeling aside from sensuality.
+sn36.6:1.19 | S: Since they look forward to enjoying sensual pleasures, the underlying tendency to greed for pleasant feeling underlies that. | T: As he is delighting in sensuality, any passion-obsession with regard to that feeling of pleasure obsesses him.
+sn36.6:1.20 | S: They don’t truly understand feelings’ origin, disappearance, gratification, drawback, and escape. | T: He does not discern, as it has come to be, the origination, passing away, allure, drawback, or escape from that feeling.
+sn36.6:1.21 | S: The underlying tendency to ignorance about neutral feeling underlies that. | T: As he does not discern the origination, passing away, allure, drawback, or escape from that feeling, then any ignorance-obsession with regard to that feeling of neither-pleasure-nor-pain obsesses him.
+sn36.6:1.22 | S: If they feel a pleasant feeling, they feel it attached. | T: “Sensing a feeling of pleasure, he senses it as though joined with it.
+sn36.6:1.23 | S: If they feel a painful feeling, they feel it attached. | T: Sensing a feeling of pain, he senses it as though joined with it.
+sn36.6:1.24 | S: If they feel a neutral feeling, they feel it attached. | T: Sensing a feeling of neither-pleasure-nor-pain, he senses it as though joined with it.
+sn36.6:1.25 | S: They’re called an unlearned ordinary person who is attached to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress. They are attached to suffering, I say. | T: This is called an uninstructed run-of-the-mill person joined with birth, aging, & death; with sorrows, lamentations, pains, distresses, & despairs. He is joined, I tell you, with suffering & stress.
+sn36.6:2.1 | S: When a learned noble disciple experiences painful physical feelings they don’t sorrow or wail or lament, beating their breast and falling into confusion. | T: “Now, the well-instructed disciple of the noble ones, when touched with a feeling of pain, does not sorrow, grieve, or lament, does not beat his breast or become distraught.
+sn36.6:2.2 | S: They experience one feeling: | T: So he feels one pain:
+sn36.6:2.3 | S: physical, not mental. | T: physical, but not mental.
+sn36.6:3.1 | S: It’s like a person who is struck with an arrow, | T: Just as if they were to shoot a man with an arrow and,
+sn36.6:3.2 | S: but was not struck with a second arrow. | T: right afterward, did not shoot him with another one,
+sn36.6:3.3 | S: That person would experience the feeling of one arrow. | T: so that he would feel the pain of only one arrow,
+sn36.6:3.4 | S: In the same way, when a learned noble disciple experiences painful physical feelings they don’t sorrow or wail or lament, beating their breast and falling into confusion. | T: in the same way, when touched with a feeling of pain, the well-instructed disciple of the noble ones does not sorrow, grieve, or lament, does not beat his breast or become distraught.
+sn36.6:3.5 | S: They experience one feeling: | T: He feels one pain:
+sn36.6:3.6 | S: physical, not mental. | T: physical, but not mental.
+sn36.6:3.7 | S: When they’re touched by painful feeling, they don’t resist it. | T: “As he is touched by that painful feeling, he is not resistant.
+sn36.6:3.8 | S: There’s no underlying tendency for aversion toward painful feeling underlying that. | T: No resistance-obsession with regard to that painful feeling obsesses him.
+sn36.6:3.9 | S: When touched by painful feeling they don’t look forward to enjoying sensual pleasures. | T: Touched by that painful feeling, he does not delight in sensuality.
+sn36.6:3.10 | S: Why is that? | T: Why is that?
+sn36.6:3.11 | S: Because a learned noble disciple understands an escape from painful feeling apart from sensual pleasures. | T: Because the well-instructed disciple of the noble ones discerns an escape from painful feeling aside from sensuality.
+sn36.6:3.12 | S: Since they don’t look forward to enjoying sensual pleasures, there’s no underlying tendency to greed for pleasant feeling underlying that. | T: As he is not delighting in sensuality, no passion-obsession with regard to that feeling of pleasure obsesses him.
+sn36.6:3.13 | S: They truly understand feelings’ origin, disappearance, gratification, drawback, and escape. | T: He discerns, as it has come to be, the origination, passing away, allure, drawback, and escape from that feeling.
+sn36.6:3.14 | S: There’s no underlying tendency to ignorance about neutral feeling underlying that. | T: As he discerns the origination, passing away, allure, drawback, and escape from that feeling, no ignorance-obsession with regard to that feeling of neither-pleasure-nor-pain obsesses him.
+sn36.6:3.15 | S: If they feel a pleasant feeling, they feel it detached. | T: “Sensing a feeling of pleasure, he senses it disjoined from it.
+sn36.6:3.16 | S: If they feel a painful feeling, they feel it detached. | T: Sensing a feeling of pain, he senses it disjoined from it.
+sn36.6:3.17 | S: If they feel a neutral feeling, they feel it detached. | T: Sensing a feeling of neither-pleasure-nor-pain, he senses it disjoined from it.
+sn36.6:3.18 | S: They’re called a learned noble disciple who is detached from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are detached from suffering, I say. | T: This is called a well-instructed disciple of the noble ones disjoined from birth, aging, & death; from sorrows, lamentations, pains, distresses, & despairs. He is disjoined, I tell you, from suffering & stress.
+sn36.6:3.19 | S: This is the difference between a learned noble disciple and an unlearned ordinary person. | T: “This is the difference, this the distinction, this the distinguishing factor between the well-instructed disciple of the noble ones and the uninstructed run-of-the-mill person.”
+sn36.6:4.1 | S: A wise and learned person does not not feel | T: The discerning person, learned, doesn’t sense a (mental) feeling
+sn36.6:4.2 | S: the feeling of pleasure and pain. | T: of pleasure or pain:
+sn36.6:4.3 | S: This is the great difference of skill | T: This is the difference in skillfulness
+sn36.6:4.4 | S: between the attentive one and the ordinary. | T: between the sage & the person run-of-the-mill.
+sn36.6:5.1 | S: A learned person who has appraised the teaching | T: For a learned person who has fathomed the Dhamma,
+sn36.6:5.2 | S: discerns this world and the next. | T: clearly seeing this world & the next,
+sn36.6:5.3 | S: Desirable things don’t disturb their mind, | T: desirable things don’t charm the mind,
+sn36.6:5.4 | S: nor are they repelled by the undesirable. | T: undesirable ones bring no resistance.
+sn36.6:6.1 | S: Both favoring and opposing | T: His acceptance & rejection
+sn36.6:6.2 | S: are cleared and ended, and are no more. | T: are scattered, gone to their end, do not exist.
+sn36.6:6.3 | S: Knowing the stainless, sorrowless state, | T: Knowing the dustless, sorrowless state,
+sn36.6:6.4 | S: they who have gone beyond rebirth <j>understand rightly.” | T: he discerns rightly, has gone, beyond becoming, to the Further Shore.
+sn36.6:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full file. I found clear boundary shifts in the quoted view, refuge statement, verse, and list of feelings. I’m checking the start words before writing the findings.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-101.findings.tmp <<'EOF'
+sn35.82:2.9 starts: “Insofar as it disintegrates, it is called
+sn36.21:2.5 starts: whatever an individual feels—
+sn36.21:3.13 starts: whatever an individual feels—
+sn36.21:4.3 starts: May the Blessed One remember me as a
+sn36.21:5.3 starts: uneven, harsh treatment,
+sn36.22:1.5 starts: the exposition whereby I have spoken of three
+sn36.22:1.6 starts: five… six… eighteen… thirty-six… one hundred and eight
+sn36.22:1.7 starts: six… eighteen… thirty-six… one hundred and eight feelings.
+sn36.22:1.8 starts: eighteen… thirty-six… one hundred and eight feelings.
+sn36.22:1.9 starts: thirty-six… one hundred and eight feelings.
+sn36.22:1.10 starts: one hundred and eight feelings.
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+11 lines reported.
+tokens used
+23,856
+11 lines reported.

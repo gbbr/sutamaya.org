@@ -1,0 +1,387 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fda3-039d-7f70-ada2-8933efe287a4
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clear line-placement fixes to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn48.52
+sn48.52:1.1 | S: So I have heard. | T: I have heard that
+sn48.52:1.2 | S: At one time the Buddha was staying in the land of the Mallas, near the Mallian town named Uruvelakappa. | T: on one occasion the Blessed One was staying among the Mallans. Now, there is a town of the Mallans named Uruvelakappa,
+sn48.52:1.3 | S: There the Buddha addressed the mendicants: | T: and there the Blessed One addressed the monks:
+sn48.52:1.4 | S: “Mendicants, as long as noble knowledge hasn’t arisen for a noble disciple the four faculties are not stable and fixed. | T: “Monks, as long as noble knowledge has not arisen in a disciple of the noble ones, four faculties are not stable, four faculties are not firm;
+sn48.52:1.5 | S: But when noble knowledge has arisen for a noble disciple the four faculties become stable and fixed. | T: but when noble knowledge has arisen in a disciple of the noble ones, four faculties are stable, four faculties are firm.
+sn48.52:2.1 | S: It’s just like in a bungalow. As long as the roof peak is not lifted into place, the rafters are not stable or fixed. | T: “Just as—as long as the ridge-beam of a house with a ridged roof, is not in place—the rafters are not stable, the rafters are not firm,
+sn48.52:2.2 | S: But when the roof peak is lifted into place, the rafters become stable and fixed. | T: but when the ridge-beam of the house with a ridged roof is in place, the rafters are stable, the rafters are firm;
+sn48.52:2.3 | S: In the same way, as long as noble knowledge hasn’t arisen for a noble disciple the four faculties are not stable and fixed. | T: in the same way, as long as noble knowledge has not arisen in a disciple of the noble ones, four faculties are not stable, four faculties are not firm;
+sn48.52:2.4 | S: But when noble knowledge has arisen for a noble disciple the four faculties become stable and fixed. | T: but when noble knowledge has arisen in a disciple of the noble ones, four faculties are stable, four faculties are firm.
+sn48.52:3.1 | S: What four? | T: Which four?
+sn48.52:3.2 | S: The faculties of faith, energy, mindfulness, and immersion. | T: The faculty of conviction, the faculty of persistence, the faculty of mindfulness, & the faculty of concentration.
+sn48.52:3.3 | S: When a noble disciple has wisdom, the faith, energy, mindfulness, and immersion that follow along with that become stabilized.” | T: “When a disciple of the noble ones is discerning, the conviction that follows from that is stable. The persistence that follows from that is stable. The mindfulness that follows from that is stable. The concentration that follows from that is stable.”
+sn48.52:3.4 | P: Dutiyaṁ. | T: (none)
+
+## sn48.56
+sn48.56:1.1 | S: “Mendicants, when a mendicant is grounded in one thing the five faculties become developed, well developed. | T: “Monks, when one quality is established in a monk, the five faculties are developed & developed well.
+sn48.56:1.2 | S: What one thing? | T: Which one quality?
+sn48.56:1.3 | S: Diligence. | T: Heedfulness.
+sn48.56:1.4 | S: And what is diligence? | T: “And what is heedfulness?
+sn48.56:1.5 | S: It’s when a mendicant looks after their mind when it comes to defilements and things accompanied by defilements. | T: There is the case where a monk guards his mind with regard to effluents and qualities accompanied by effluents.
+sn48.56:1.6 | S: As they do so the faculties of faith, | T: When his mind is guarded with regard to effluents and mental qualities accompanied by effluents, the faculty of conviction goes to the culmination of its development.
+sn48.56:1.7 | S: energy, | T: The faculty of persistence…
+sn48.56:1.8 | S: mindfulness, | T: mindfulness…
+sn48.56:1.9 | S: immersion, | T: concentration…
+sn48.56:1.10 | S: and wisdom are fully developed. | T: discernment goes to the culmination of its development.
+sn48.56:1.11 | S: That’s how when a mendicant is grounded in one thing the five faculties become developed, well developed.” | T: “This is how when one quality is established in a monk, the five faculties are developed & developed well.”
+sn48.56:1.12 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn5.1
+sn5.1:1.1 | S: So I have heard. | T: I have heard that
+sn5.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn5.1:1.3 | S: Then the nun Āḷavikā robed up in the morning and, taking her bowl and robe, entered Sāvatthī for alms. | T: Then, early in the morning, Āḷavikā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms.
+sn5.1:1.4 | S: She wandered for alms in Sāvatthī. After the meal, on her return from almsround, she went to the Dark Forest seeking seclusion. | T: When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind, aiming at seclusion.
+sn5.1:1.5 | S: Then Māra the Wicked, wanting to make the nun Āḷavikā feel fear, terror, and goosebumps, wanting to make her fall away from seclusion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.1:2.1 | S: “There’s no escape in the world, | T: “There’s no escape in the world,
+sn5.1:2.2 | S: so what will seclusion do for you? | T: so what are you trying to do with seclusion?
+sn5.1:2.3 | S: Enjoy erotic delights; | T: Enjoy sensual delights.
+sn5.1:2.4 | S: don’t regret it later.” | T: Don’t be someone who later regrets.”
+sn5.1:3.1 | S: Then the nun Āḷavikā thought, | T: Then the thought occurred to Āḷavikā the nun:
+sn5.1:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+sn5.1:3.3 | S: Then she thought, | T: Then it occurred to her:
+sn5.1:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from seclusion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from seclusion.”
+sn5.1:3.5 | S: Then Āḷavikā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.1:4.1 | S: “There is an escape in the world, | T: “There is an escape in the world,
+sn5.1:4.2 | S: and I’ve personally experienced it with wisdom. | T: well touched by me with discernment—
+sn5.1:4.3 | S: O Wicked One, kinsman of the negligent, | T: something that you, you Evil One, kinsman of the heedless,
+sn5.1:4.4 | S: you don’t know that state. | T: don’t know.
+sn5.1:5.1 | S: Sensual pleasures are like swords and spears; | T: Sensual pleasures are like swords & spears;
+sn5.1:5.2 | S: the aggregates are their chopping block. | T: the aggregates, their executioner’s block.
+sn5.1:5.3 | S: What you call erotic delight | T: What you call sensual delight
+sn5.1:5.4 | S: is now no delight for me.” | T: is no delight for me.”
+sn5.1:6.1 | S: Then Māra the Wicked, thinking, “The nun Āḷavikā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Āḷavikā the nun knows me”—vanished right there.
+
+## sn5.2
+sn5.2:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.2:1.2 | S: Then the nun Somā robed up in the morning and, taking her bowl and robe, entered Sāvatthī for alms. | T: Then, early in the morning, Somā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms.
+sn5.2:1.3 | S: She wandered for alms in Sāvatthī. After the meal, on her return from almsround, she went to the Dark Forest for the day’s meditation, | T: When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day.
+sn5.2:1.4 | S: plunged deep into it, and sat at the root of a tree to meditate. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.2:1.5 | S: Then Māra the Wicked, wanting to make the nun Somā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.2:2.1 | S: “That state’s very challenging; | T: “That which is to be attained by seers
+sn5.2:2.2 | S: it’s for the sages to attain. | T: —the place so very hard to reach— women can’t
+sn5.2:2.3 | S: With her two-inch wisdom, | T: —with their two-inch discernment—
+sn5.2:2.4 | S: it’s not possible for a woman.” | T: attain.”
+sn5.2:3.1 | S: Then the nun Somā thought, | T: Then the thought occurred to Somā the nun:
+sn5.2:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+sn5.2:3.3 | S: Then she thought, | T: Then it occurred to her:
+sn5.2:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+sn5.2:3.5 | S: Then Somā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.2:4.1 | S: “What difference does womanhood make | T: “What difference does being a woman make
+sn5.2:4.2 | S: when the mind is serene, | T: when the mind’s well-centered,
+sn5.2:4.3 | S: and knowledge is present | T: when knowledge is progressing,
+sn5.2:4.4 | S: as you rightly discern the Dhamma. | T: seeing clearly, rightly, into the Dhamma.
+sn5.2:5.1 | S: Surely someone who might think: | T: Anyone who thinks
+sn5.2:5.2 | S: ‘I am woman’, or ‘I am man’, | T: ‘I’m a woman’ or ‘a man’
+sn5.2:5.3 | S: or ‘I am’ anything at all, | T: or ‘Am I anything at all?’—
+sn5.2:5.4 | S: is fit for Māra to address.” | T: that’s who Māra’s fit to address.”
+sn5.2:6.1 | S: Then Māra the Wicked, thinking, “The nun Somā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Somā the nun knows me”—vanished right there.
+
+## sn5.3
+sn5.3:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.3:1.2 | S: Then the nun Kisāgotamī robed up in the morning and, taking her bowl and robe, entered Sāvatthī for alms. | T: Then, early in the morning, Kisā Gotamī the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms.
+sn5.3:1.3 | S: She wandered for alms in Sāvatthī. After the meal, on her return from almsround, she went to the Dark Forest for the day’s meditation, | T: When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day.
+sn5.3:1.4 | S: plunged deep into it, and sat at the root of a tree to meditate. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.3:1.5 | S: Then Māra the Wicked, wanting to make the nun Kisāgotamī feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.3:2.1 | S: “Why do you sit alone and cry | T: “Why, with your sons killed, do you sit all alone,
+sn5.3:2.2 | S: as if your children have died? | T: your face in tears?
+sn5.3:2.3 | S: You’ve come to the woods all alone— | T: All alone, immersed in the midst of the forest,
+sn5.3:2.4 | S: are you looking for a man?” | T: are you looking for a man?”
+sn5.3:3.1 | S: Then the nun Kisāgotamī thought, | T: Then the thought occurred to Kisā Gotamī the nun:
+sn5.3:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+sn5.3:3.3 | S: Then she thought, | T: Then it occurred to her:
+sn5.3:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+sn5.3:4.1 | S: Then Kisāgotamī, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.3:5.1 | S: “I’ve got over the death of children, | T: “I’ve gotten past the killing of sons,
+sn5.3:5.2 | S: and I’m finished with men. | T: have made that the end to (my search for) men.
+sn5.3:5.3 | S: I don’t grieve or lament, | T: I don’t grieve, I don’t weep—
+sn5.3:5.4 | S: and I’m not afraid of you, sir! | T: and I’m not afraid of you, my friend.
+sn5.3:6.1 | S: Relishing is banished in every respect, | T: It’s everywhere destroyed—delight.
+sn5.3:6.2 | S: and the mass of darkness is shattered. | T: The mass of darkness is shattered.
+sn5.3:6.3 | S: I’ve defeated the army of death, | T: Having defeated the army of death,
+sn5.3:6.4 | S: and live without defilements.” | T: free of effluents I dwell.”
+sn5.3:7.1 | S: Then Māra the Wicked, thinking, “The nun Kisāgotamī knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Kisā Gotamī the nun knows me”—vanished right there.
+
+## sn5.6
+sn5.6:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.6:1.2 | S: Then the nun Cālā robed up in the morning … | T: Then, early in the morning, Cālā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms. When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day.
+sn5.6:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.6:1.4 | S: Then Māra the Wicked went up to Cālā and said to her, | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & said,
+sn5.6:1.5 | S: “Nun, what don’t you approve of?” | T: “What is it that you don’t approve of, nun?”
+sn5.6:1.6 | S: “I don’t approve of rebirth, sir.” | T: “I don’t approve of birth, my friend.”
+sn5.6:2.1 | S: “Why don’t you approve of rebirth? | T: Māra: “Why don’t you approve of birth?
+sn5.6:2.2 | S: When you’re born, you get to enjoy sensual pleasures. | T: One who is born enjoys sensual pleasures.
+sn5.6:2.3 | S: Who put this idea in your head: | T: Who on earth ever persuaded you:
+sn5.6:2.4 | S: ‘Nun, don’t approve of rebirth’?” | T: ‘Nun, don’t approve of birth’?”
+sn5.6:3.1 | S: “Death comes to those who are born, | T: Sister Cālā: “For one who is born there’s death.
+sn5.6:3.2 | S: when you’re born you undergo sufferings— | T: One who is born sees pain.
+sn5.6:3.3 | S: killing, caging, misery— | T: It’s a binding, a flogging, a torment.
+sn5.6:3.4 | S: that’s why you shouldn’t approve of rebirth. | T: That’s why one shouldn’t approve of birth.
+sn5.6:4.1 | S: The Buddha taught me the Dhamma | T: The Awakened One taught me the Dhamma
+sn5.6:4.2 | S: for transcending rebirth, | T: —the overcoming of birth—
+sn5.6:4.3 | S: for giving up all suffering; | T: for the abandoning of all pain,
+sn5.6:4.4 | S: he settled me in the truth. | T: he established me in the truth.
+sn5.6:5.1 | S: There are beings in the realm of luminous form, | T: But beings who have come to form
+sn5.6:5.2 | S: and others stuck in the formless. | T: & those with a share in the formless,
+sn5.6:5.3 | S: Not understanding cessation, | T: if they don’t discern cessation,
+sn5.6:5.4 | S: they return in future lives.” | T: return to becoming-again.”
+sn5.6:6.1 | S: Then Māra the Wicked, thinking, “The nun Cālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Cālā the nun knows me”—vanished right there.
+
+## sn5.8
+sn5.8:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.8:1.2 | S: Then the nun Sīsupacālā robed up in the morning … | T: Then, early in the morning, Sīsupacālā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms. When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day.
+sn5.8:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.8:1.4 | S: Then Māra the Wicked went up to Sīsupacālā and said to her, | T: Then Māra the Evil One approached her & said,
+sn5.8:1.5 | S: “Nun, whose creed do you approve of?” | T: “Whose philosophy do you approve of, nun?”
+sn5.8:1.6 | S: “I don’t approve anyone’s creed, sir.” | T: “I don’t approve of anyone’s philosophy, my friend.”
+sn5.8:2.1 | S: “In whose name did you shave your head? | T: Māra: “For whose sake have you shaved your head?
+sn5.8:2.2 | S: You look like an ascetic, | T: You look like a contemplative
+sn5.8:2.3 | S: but you don’t approve any creed. | T: but don’t approve of a philosophy,
+sn5.8:2.4 | S: Why do you wander as if lost?” | T: so why are you wandering here confused?”
+sn5.8:3.1 | S: “Followers of other creeds | T: Sister Sīsupacālā: “Outside philosophers
+sn5.8:3.2 | S: are confident in their views. | T: place their confidence in views.
+sn5.8:3.3 | S: But I don’t approve their teaching, | T: I don’t approve of their teaching.
+sn5.8:3.4 | S: for they’re no experts in the Dhamma. | T: They’re not adept in the Dhamma.
+sn5.8:4.1 | S: But there is one born in the Sakyan clan, | T: But there is the Awakened One, born in the Sakyan clan,
+sn5.8:4.2 | S: the unrivaled Buddha, | T: a person without peer:
+sn5.8:4.3 | S: vanquisher of all, dispeller of Māra, | T: all-conquering, Māra’s subduer,
+sn5.8:4.4 | S: everywhere undefeated, | T: everywhere undefeated,
+sn5.8:5.1 | S: everywhere freed, and unattached, | T: everywhere freed, independent;
+sn5.8:5.2 | S: the Clear-eyed One sees all. | T: endowed with an Eye all-seeing,
+sn5.8:5.3 | S: He has attained the end of all deeds, | T: reaching the end of all kamma—
+sn5.8:5.4 | S: freed with the ending of attachments. | T: with the ending of acquisitions, released.
+sn5.8:5.5 | S: That Blessed One is my Teacher, | T: He, that Blessed One, is my teacher.
+sn5.8:5.6 | S: and I approve his instruction.” | T: It’s in his Dhamma that I delight.”
+sn5.8:6.1 | S: Then Māra the Wicked, thinking, “The nun Sīsupacālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Sīsupacālā the nun knows me”—vanished right there.
+
+## sn5.9
+sn5.9:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.9:1.2 | S: Then the nun Selā robed up in the morning … | T: Then, early in the morning, Selā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms. When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day.
+sn5.9:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+sn5.9:1.4 | S: Then Māra the Wicked, wanting to make the nun Selā feel fear, terror, and goosebumps … | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration,
+sn5.9:1.5 | S: addressed her in verse: | T: approached her & addressed her in verse:
+sn5.9:2.1 | S: “Who created this puppet? | T: “By whom was this doll created?
+sn5.9:2.2 | S: Where is its maker? | T: Where is the doll’s maker?
+sn5.9:2.3 | S: Where has the puppet arisen? | T: Where has the doll originated?
+sn5.9:2.4 | S: And where does it cease?” | T: Where does it cease?”
+sn5.9:3.1 | S: Then the nun Selā thought, | T: Then the thought occurred to Selā the nun:
+sn5.9:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+sn5.9:3.3 | S: Then she thought, | T: Then it occurred to her:
+sn5.9:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+sn5.9:3.5 | S: Then Selā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.9:4.1 | S: “This puppet isn’t self-made, | T: “This doll isn’t self-made,
+sn5.9:4.2 | S: nor is this gloom made by another. | T: nor is this misery made by another.*
+sn5.9:4.3 | S: It comes to be because of a cause, | T: In dependence on a cause it comes into play.
+sn5.9:4.4 | S: and ceases when the cause breaks up. | T: With the dissolution of the cause it ceases.
+sn5.9:5.1 | S: It’s like a seed that’s sown | T: Just as a seed grows
+sn5.9:5.2 | S: in a field; it grows | T: —when planted in a field—
+sn5.9:5.3 | S: relying on both the soil’s nutrients | T: because of the soil’s savor
+sn5.9:5.4 | S: as well as moisture. | T: together with moisture;
+sn5.9:6.1 | S: In the same way the aggregates and elements | T: in the same way, these aggregates, properties,
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn5.9:6.2 | S: and these six sense fields | T: sense media
+sn5.9:6.3 | S: come to be because of a cause, | T: —in dependence on a cause— come into play.
+sn5.9:6.4 | S: and cease when the cause breaks up.” | T: With the dissolution of the cause they cease.”
+sn5.9:7.1 | S: Then Māra the Wicked, thinking, “The nun Selā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Selā the nun knows me”—vanished right there. *Alternative reading: This doll, this misery, isn’t created.
+
+## sn51.14
+sn51.14:1.1 | S: So I have heard. | T: I have heard that
+sn51.14:1.2 | S: At one time the Buddha was staying near Sāvatthī in the stilt longhouse of Migāra’s mother in the Eastern Monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in the Eastern Monastery, the palace of Migāra’s mother.
+sn51.14:1.3 | S: Now at that time several mendicants were staying beneath the longhouse. They were haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: And on that occasion a large number of monks were dwelling on the lower floor of the palace: high-strung, rowdy, flighty, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+sn51.14:2.1 | S: Then the Buddha addressed Venerable Mahāmoggallāna, | T: Then the Blessed One addressed Ven. Mahā Moggallāna,
+sn51.14:2.2 | S: “These spiritual companions of yours staying beneath the longhouse are haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: “Moggallāna, your fellows in the holy life dwelling on the lower floor of the palace of Migāra’s mother are high-strung, rowdy, flighty, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+sn51.14:2.3 | S: Go, Moggallāna, and strike awe in those mendicants!” | T: Go, Moggallāna, and terrify those monks.”
+sn51.14:3.1 | S: “Yes, sir,” replied Mahāmoggallāna. Then he used his psychic power to make the longhouse shake and rock and tremble with his big toe. | T: Responding, “As you say, lord,” to the Blessed One, Ven. Moggallāna willed a feat of psychic power such that with his toe he made the palace of Migāra’s mother shake, quiver, & quake.
+sn51.14:3.2 | S: Then those mendicants stood to one side, shocked and awestruck. | T: Then those monks, standing to one side terrified, their hair on end,
+sn51.14:3.3 | S: “Oh lord, how incredible, how amazing! | T: (exclaimed,) “How amazing! How astounding!—
+sn51.14:3.4 | S: There’s no wind at all; and this stilt longhouse of Migāra’s mother has deep foundations. It’s firmly embedded, imperturbable and unshakable. And yet it shakes and rocks and quivers!” | T: how, although there is no wind, the palace of Migāra’s mother—deeply-rooted, well-implanted, immovable, unshakable—still shook, quivered, and quaked!”
+sn51.14:4.1 | S: Then the Buddha went up to those mendicants and said: | T: Then the Blessed One went to those monks and, on arrival, said to them,
+sn51.14:4.2 | S: “Why do you, mendicants, stand to one side, shocked and awestruck?” | T: “Why monks, are you standing to one side terrified, your hair on end?”
+sn51.14:4.3 | S: “It’s incredible, sir, it’s amazing! | T: “It’s amazing, lord! It’s astounding!—
+sn51.14:4.4 | S: There’s no wind at all; and this stilt longhouse of Migāra’s mother has deep foundations. It’s firmly embedded, imperturbable and unshakable. And yet it shakes and rocks and quivers!” | T: how, although there is no wind, the palace of Migāra’s mother—deeply-rooted, well-implanted, immovable, unshakable—still shook, quivered, and quaked!”
+sn51.14:4.5 | S: “Wanting to strike awe in you, the mendicant Moggallāna made the longhouse shake and rock and quiver with his big toe. | T: “Monks, wanting to terrify you, the monk Moggallāna with his toe made the palace of Migāra’s mother shake, quiver, & quake.
+sn51.14:4.6 | S: What do you think, mendicants? | T: What do you think, monks?
+sn51.14:4.7 | S: What things has the mendicant Moggallāna developed and cultivated so as to have such power and might?” | T: Having developed & pursued which qualities is the monk Moggallāna of such power, such might?”
+sn51.14:4.8 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn51.14:5.1 | S: “Well then, mendicants, listen. | T: “In that case, monks, listen:
+sn51.14:5.2 | S: The mendicant Moggallāna has become so powerful and mighty by developing and cultivating the four bases of psychic power. | T: It’s through having developed & pursued the four bases of power that the monk Moggallāna is of such power, such might.
+sn51.14:5.3 | S: What four? | T: Which four?
+sn51.14:5.4 | S: Moggallāna develops the basis of psychic power that has immersion due to enthusiasm … | T: “There is the case where the monk Moggallāna develops the base of power endowed with concentration founded on desire & the fabrications of exertion, thinking, ‘This desire of mine will be neither overly sluggish nor overly active, neither inwardly constricted nor outwardly scattered.’ He keeps perceiving what is in front & behind so that what is in front is the same as what is behind, what is behind is the same as what is in front. What is below is the same as what is above, what is above is the same as what is below. (He dwells) by night as by day, and by day as by night. By means of an awareness thus open & unhampered, he develops a brightened mind.
+sn51.14:5.5 | S: energy … | T: “He develops the base of power endowed with concentration founded on persistence…
+sn51.14:5.6 | S: mental development … | T: “He develops the base of power endowed with concentration founded on intent…
+sn51.14:5.7 | S: inquiry, and active effort. | T: “He develops the base of power endowed with concentration founded on discrimination & the fabrications of exertion,
+sn51.14:5.8 | S: He thinks: ‘My inquiry won’t be too lax or too tense. And it’ll be neither constricted internally nor scattered externally.’ | T: thinking, ‘This discrimination of mine will be neither overly sluggish nor overly active, neither inwardly constricted nor outwardly scattered.’
+sn51.14:5.9 | P: na ca ajjhattaṁ saṅkhittā bhavissati, na ca bahiddhā vikkhittā bhavissati. | T: (none)
+sn51.14:5.10 | S: And he meditates perceiving before and behind: | T: He keeps perceiving what is in front & behind
+sn51.14:5.11 | S: as before, so behind; as behind, so before; | T: so that what is in front is the same as what is behind, what is behind is the same as what is in front.
+sn51.14:5.12 | S: as below, so above; as above, so below; | T: What is below is the same as what is above, what is above is the same as what is below.
+sn51.14:5.13 | S: as by day, so by night; as by night, so by day. | T: (He dwells) by night as by day, and by day as by night.
+sn51.14:5.14 | S: And so, with an open and unenveloped heart, he develops a mind that’s full of radiance. | T: By means of an awareness thus open & unhampered, he develops a brightened mind.
+sn51.14:5.15 | S: The mendicant Moggallāna has become so powerful and mighty by developing and cultivating these four bases of psychic power. | T: “It’s through having developed & pursued these four bases of power that the monk Moggallāna is of such power, such might.
+sn51.14:5.16 | S: And by developing and cultivating these four bases of psychic power, the mendicant Moggallāna wields the many kinds of psychic power … controlling the body as far as the realm of divinity. … | T: “Having developed & pursued these four bases of power, the monk Moggallāna experiences manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, & mountains as if through space. He dives in & out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting cross-legged he flies through the air like a winged bird. With his hand he touches & strokes even the sun & moon, so mighty & powerful. He exercises influence with his body even as far as the Brahmā worlds. “Having developed & pursued these four bases of power, the monk Moggallāna hears—by means of the divine ear-element, purified & surpassing the human—both kinds of sounds: divine & human, whether near or far.
+sn51.14:5.17 | S: And by developing and cultivating these four bases of psychic power, the mendicant Moggallāna realizes the undefiled freedom of heart and freedom by wisdom. And he lives having realized it with his own insight in this very life due to the ending of defilements.” | T: “Having developed & pursued these four bases of power, the monk Moggallāna knows the awareness of other beings, other individuals, having encompassed it with his own awareness. He discerns a mind with passion as ‘a mind with passion,’ and a mind without passion as ‘a mind without passion.’ He discerns a mind with aversion as ‘a mind with aversion,’ and a mind without aversion as ‘a mind without aversion.’ He discerns a mind with delusion as ‘a mind with delusion,’ and a mind without delusion as ‘a mind without delusion.’ He discerns a restricted mind as ‘a restricted mind,’ and a scattered mind as ‘a scattered mind.’ He discerns an enlarged mind as ‘an enlarged mind,’ and an unenlarged mind as ‘an unenlarged mind.’ He discerns a surpassed mind [one that is not at the most excellent level] as ‘a surpassed mind,’ and an unsurpassed mind as ‘an unsurpassed mind.’ He discerns a concentrated mind as ‘a concentrated mind,’ and an unconcentrated mind as ‘an unconcentrated mind.’ He discerns a released mind as ‘a released mind,’ and an unreleased mind as ‘an unreleased mind.’ “Having developed & pursued these four bases of power, the monk Moggallāna recollects his manifold past lives [lit: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he remembers his manifold past lives in their modes & details. “Having developed & pursued these four bases of power, the monk Moggallāna sees—by means of the divine eye, purified & surpassing the human—beings passing away and re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus—by means of the divine eye, purified & surpassing the human—he sees beings passing away and re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma. “Having developed & pursued these four bases of power, the monk Moggallāna—through the ending of the effluents—enters & remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.”
+sn51.14:5.18 | P: Catutthaṁ. | T: (none)
+
+## sn51.22
+sn51.22:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn51.22:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One,
+sn51.22:1.3 | S: “Sir, do you have personal experience of having gone to the realm of divinity by psychic power with a mind-made body?” | T: “Lord, does the Blessed One have direct experience of going to the Brahmā world by means of supranormal power with a mind-made body?
+sn51.22:1.4 | S: “I do, Ānanda.” | T: “Yes, Ānanda, I have direct experience of going to the Brahmā world by means of supranormal power with a mind-made body.”
+sn51.22:1.5 | S: “But do you have personal experience of having gone to the realm of divinity by psychic power with this body made up of the four principal states?” | T: “But does the Blessed One also have direct experience of going to the Brahmā world by means of supranormal power with this very physical body, composed of the four great elements?”
+sn51.22:1.6 | S: “I do, Ānanda.” | T: “Yes, Ānanda, I have direct experience of going to the Brahmā world by means of supranormal power with this very physical body, composed of the four great elements.”
+sn51.22:2.1 | S: “It’s incredible and amazing that the Buddha is at least able to go to the realm of divinity by psychic power with a mind-made body! And that he has personal experience of going to the realm of divinity by psychic power with this body made up of the four principal states!” | T: “It’s amazing & astounding that the Blessed One is capable of going to the Brahmā world by means of supranormal power with a mind-made body and has direct experience of going to the Brahmā world by means of supranormal power with this very physical body, composed of the four great elements.”
+sn51.22:2.2 | S: “Ānanda, the Realized Ones are incredible and have incredible qualities. They’re amazing and have amazing qualities. | T: “Tathāgatas are both amazing, Ānanda, and endowed with amazing qualities. They are both astounding and endowed with astounding qualities.
+sn51.22:3.1 | S: Sometimes the Realized One submerges his body in his mind and his mind in his body. He meditates after sinking into a perception of bliss and lightness in the body. | T: Whenever the Tathāgata merges his body with his mind and his mind with his body and remains having alighted on the perception of ease & buoyancy with regard to the body,
+sn51.22:3.2 | S: At that time his body becomes lighter, softer, more workable, and more radiant. | T: then his body becomes lighter, more pliant, more malleable, & more radiant.
+sn51.22:4.1 | S: Suppose there was an iron ball that had been heated all day. It’d become lighter, softer, more workable, and more radiant. | T: “Just as when an iron ball heated all day becomes lighter, more pliant, more malleable, & more radiant;
+sn51.22:4.2 | S: In the same way, sometimes the Realized One submerges his body in his mind and his mind in his body. He meditates after sinking into a perception of bliss and lightness in the body. | T: in the same way, whenever the Tathāgata merges his body with his mind and his mind with his body and remains having alighted on the perception of ease & buoyancy with regard to the body,
+sn51.22:4.3 | S: At that time his body becomes lighter, softer, more workable, and more radiant. | T: then his body becomes lighter, more pliant, more malleable, & more radiant.
+sn51.22:5.1 | S: Sometimes the Realized One submerges his body in his mind and his mind in his body. He meditates after sinking into a perception of bliss and lightness in the body. | T: “Whenever the Tathāgata merges his body with his mind and his mind with his body, and remains having alighted on the perception of ease & buoyancy with regard to the body,
+sn51.22:5.2 | S: At that time his body easily rises up from the ground into the air. | T: then his body rises effortlessly from the earth up into the sky.
+sn51.22:5.3 | S: He wields the many kinds of psychic power: multiplying himself and becoming one again … controlling the body as far as the realm of divinity. | T: He then experiences manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, & mountains as if through space. He dives in & out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting cross-legged he flies through the air like a winged bird. With his hand he touches & strokes even the sun & moon, so mighty & powerful. He exercises influence with his body even as far as the Brahmā worlds.
+sn51.22:6.1 | S: Suppose there was a light tuft of cotton-wool or kapok. Taken up by the wind, it would easily rise up from the ground into the air. | T: “Just as a tuft of cotton seed or a ball of thistle down, lightly wafted by the wind, rises effortlessly from the earth up into the sky,
+sn51.22:6.2 | S: In the same way, sometimes the Realized One submerges his body in his mind and his mind in his body. He meditates after sinking into a perception of bliss and lightness in the body. | T: in the same way, whenever the Tathāgata merges his body with his mind and his mind with his body, and remains having alighted on the perception of ease & buoyancy with regard to the body,
+sn51.22:6.3 | S: At that time his body easily rises up from the ground into the air. | T: then his body rises effortlessly from the earth up into the sky.
+sn51.22:6.4 | S: He wields the many kinds of psychic power: multiplying himself and becoming one again … controlling the body as far as the realm of divinity.” | T: He then experiences manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, & mountains as if through space. He dives in & out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting cross-legged he flies through the air like a winged bird. With his hand he touches & strokes even the sun & moon, so mighty & powerful. He exercises influence with his body even as far as the Brahmā worlds.”
+sn51.22:6.5 | P: Dutiyaṁ. | T: (none)
+
+## sn54.11
+sn54.11:1.1 | S: At one time the Buddha was staying in a forest near Icchānaṅgala. | T: On one occasion the Blessed One was staying in Icchānaṅgala in the Icchānaṅgala forest grove.
+sn54.11:1.2 | S: There he addressed the mendicants, | T: There he addressed the monks:
+sn54.11:1.3 | S: “Mendicants, I wish to go on retreat for three months. | T: “Monks, I wish to go into seclusion for three months.
+sn54.11:1.4 | S: No-one should approach me, except the one who brings my almsfood.” | T: I am not to be approached by anyone at all except for the one who brings almsfood.”
+sn54.11:1.5 | S: “Yes, sir,” replied those mendicants. And no-one approached him, except the one who brought the almsfood. | T: “As you say, lord,” the monks responded to him. And no one approached the Blessed One except for the one who brought almsfood.
+sn54.11:2.1 | S: Then after three months had passed, the Buddha came out of retreat and addressed the mendicants: | T: Then the Blessed One, having emerged from seclusion after the passing of three months, addressed the monks:
+sn54.11:2.2 | S: “Mendicants, if wanderers who follow another religion were to ask you: | T: “Monks, if wanderers of other sects ask you,
+sn54.11:2.3 | S: ‘Reverends, what was the ascetic Gotama’s usual meditation during the rainy season residence?’ You should answer them like this. | T: ‘By means of what dwelling, friends, did Gotama the contemplative mostly dwell during the rains residence?’: You, thus asked, should answer them in this way:
+sn54.11:2.4 | S: ‘Reverends, the ascetic Gotama’s usual meditation during the rainy season residence was immersion due to mindfulness of breathing.’ | T: ‘It was by means of the concentration of mindfulness of breathing that the Blessed One mostly dwelled.’
+sn54.11:2.5 | S: In this regard: mindful, I breathe in. Mindful, I breathe out. | T: “There is the case, monks, where mindful I breathe in; mindful I breathe out.
+sn54.11:2.6 | S: Breathing in heavily I know: ‘I’m breathing in heavily.’ Breathing out heavily I know: ‘I’m breathing out heavily.’ | T: “[1] Breathing in long, I discern, ‘I am breathing in long’; or breathing out long, I discern, ‘I am breathing out long.’
+sn54.11:2.7 | S: Breathing in lightly I know: ‘I’m breathing in lightly.’ Breathing out lightly I know: ‘I’m breathing out lightly.’ | T: [2] Or breathing in short, I discern, ‘I am breathing in short’; or breathing out short, I discern, ‘I am breathing out short.’
+sn54.11:2.8 | S: I know: ‘I’ll breathe in experiencing the whole body.’ … | T: [3] I discern, ‘I will breathe in sensitive to the entire body.’ I discern, ‘I will breathe out sensitive to the entire body.’ [4] I discern, ‘I will breathe in calming bodily fabrication [in-&-out breathing].’ I discern, ‘I will breathe out calming bodily fabrication.’ “[5] I discern, ‘I will breathe in sensitive to rapture.’ I discern, ‘I will breathe out sensitive to rapture.’ [6] I discern, ‘I will breathe in sensitive to pleasure.’ I discern, ‘I will breathe out sensitive to pleasure.’ [7] I discern, ‘I will breathe in sensitive to mental fabrication [feeling & perception].’ I discern, ‘I will breathe out sensitive to mental fabrication.’ [8] I discern, ‘I will breathe in calming mental fabrication.’ I discern, ‘I will breathe out calming mental fabrication.’ “[9] I discern, ‘I will breathe in sensitive to the mind.’ I discern, ‘I will breathe out sensitive to the mind.’ [10] I discern, ‘I will breathe in gladdening the mind.’ I discern, ‘I will breathe out gladdening the mind.’ [11] I discern, ‘I will breathe in concentrating the mind.’ I discern, ‘I will breathe out concentrating the mind.’ [12] I discern, ‘I will breathe in releasing the mind.’ I discern, ‘I will breathe out releasing the mind.’ “[13] I discern, ‘I will breathe in focusing on inconstancy.’ I discern, ‘I will breathe out focusing on inconstancy.’ [14] I discern, ‘I will breathe in focusing on dispassion [lit: fading].’ I discern, ‘I will breathe out focusing on dispassion.’ [15] I discern, ‘I will breathe in focusing on cessation.’ I discern, ‘I will breathe out focusing on cessation.’
+sn54.11:2.9 | S: I know: ‘I’ll breathe in observing letting go.’ I know: ‘I’ll breathe out observing letting go.’ | T: [16] I discern, ‘I will breathe in focusing on relinquishment.’ I discern, ‘I will breathe out focusing on relinquishment.’
+sn54.11:3.1 | S: For if anything should be rightly called | T: “For whatever one rightly speaking would call,
+sn54.11:3.2 | S: ‘a noble meditation’, or else ‘a divine meditation’, or else ‘a realized one’s meditation’, | T: ‘a noble dwelling,’ ‘a brahmā dwelling,’ ‘a Tathāgata dwelling,’
+sn54.11:3.3 | S: it’s immersion due to mindfulness of breathing. | T: it would be the concentration of mindfulness of breathing that he, speaking rightly, would call,
+sn54.11:3.4 | P: ‘ariyavihāro’ itipi, ‘brahmavihāro’ itipi, ‘tathāgatavihāro’ itipi. | T: ‘a noble dwelling,’ ‘a brahmā dwelling,’ ‘a Tathāgata dwelling.’
+sn54.11:3.5 | S: For those mendicants who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—the development and cultivation of immersion due to mindfulness of breathing leads to the ending of defilements. | T: “Those monks who are learners, who have yet to attain their hearts’ aspiration, who stay resolved on the unexcelled security from bondage: When the concentration of mindfulness of breathing is developed & pursued by them, it leads to the ending of the effluents.
+sn54.11:3.6 | S: For those mendicants who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—the development and cultivation of immersion due to mindfulness of breathing leads to blissful meditation in this life, and to mindfulness and awareness. | T: “Those monks who are arahants, whose effluents are ended, who have reached fulfillment, done the task, laid down the burden, attained the true goal, totally destroyed the fetter of becoming, and who are released through right gnosis: When the concentration of mindfulness of breathing is developed & pursued by them, it leads to a pleasant abiding here-&-now and to mindfulness & alertness.
+sn54.11:4.1 | S: For if anything should be rightly called | T: “For whatever one rightly speaking would call,
+sn54.11:4.2 | S: ‘a noble meditation’, or else ‘a divine meditation’, or else ‘a realized one’s meditation’, | T: ‘a noble dwelling,’ ‘a brahmā dwelling,’ ‘a Tathāgata dwelling,’
+sn54.11:4.3 | S: it’s immersion due to mindfulness of breathing.” | T: it would be the concentration of mindfulness of breathing that he, speaking rightly, would call,
+sn54.11:4.4 | P: ‘ariyavihāro’ itipi, ‘brahmavihāro’ itipi, ‘tathāgatavihāro’ itipī”ti. | T: ‘a noble dwelling,’ ‘a brahmā dwelling,’ ‘a Tathāgata dwelling.’”
+sn54.11:4.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn54.9
+sn54.9:1.1 | S: So I have heard. | T: I have heard that
+sn54.9:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: on one occasion the Blessed One was staying near Vesālī at the Gabled Hall in the Great Forest.
+sn54.9:1.3 | S: Now at that time the Buddha spoke in many ways to the mendicants about the meditation on ugliness. He praised the meditation on ugliness and its development. | T: Now on that occasion the Blessed One, with many lines of reasoning, was giving the monks a talk on the unattractiveness (of the body), was speaking in praise of (the perception of) unattractiveness, was speaking in praise of the development of (the perception of) unattractiveness.
+sn54.9:2.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the monks:
+sn54.9:2.2 | S: “Mendicants, I wish to go on retreat for a fortnight. | T: “Monks, I wish to go into seclusion for half a month.
+sn54.9:2.3 | S: No-one should approach me, except the one who brings my almsfood.” | T: I am not to be approached by anyone at all except for the one who brings almsfood.”
+sn54.9:2.4 | S: “Yes, sir,” replied those mendicants. And no-one approached him, except the one who brought the almsfood. | T: “As you say, lord,” the monks responded to him. And no one approached the Blessed One except for the one who brought almsfood.
+sn54.9:3.1 | S: Then those mendicants thought, | T: Then the monks—(thinking,)
+sn54.9:3.2 | S: “The Buddha spoke in many ways about the meditation on ugliness. He praised the meditation on ugliness and its development.” They committed themselves to developing the many different facets of the meditation on ugliness. | T: “The Blessed One, with many lines of reasoning, has given a talk on the unattractiveness (of the body), has spoken in praise of (the perception of) unattractiveness, has spoken in praise of the development of (the perception of) unattractiveness”—remained committed to the development of (the perception of) unattractiveness in many modes & manners.
+sn54.9:3.3 | S: Becoming horrified, repelled, and disgusted with this body, they looked for a suicide weapon. | T: They—ashamed, repelled, & disgusted with this body—sought for an assassin.
+sn54.9:3.4 | S: Each day ten, twenty, or thirty mendicants committed suicide. | T: In one day, ten monks took the knife. In one day, twenty monks took the knife. In one day, thirty monks took the knife.
+sn54.9:4.1 | S: Then after a fortnight had passed, the Buddha came out of retreat and addressed Ānanda, | T: Then the Blessed One, emerging from his seclusion after half a month’s time, said to Ven. Ānanda,
+sn54.9:4.2 | S: “Ānanda, why does the mendicant Saṅgha seem so diminished?” | T: “Ānanda, why does the Saṅgha of monks seem so depleted?”
+sn54.9:4.3 | S: Ānanda told the Buddha all that had happened, and said, | T: “Because, lord, the Blessed One, with many lines of reasoning, gave the monks a talk on the unattractiveness (of the body), spoke in praise of (the perception of) unattractiveness, spoke in praise of the development of (the perception of) unattractiveness. The monks—(thinking,) ‘The Blessed One, with many lines of reasoning, has given a talk on the unattractiveness (of the body), has spoken in praise of (the perception of) unattractiveness, has spoken in praise of the development of (the perception of) unattractiveness’—remained committed to the development of (the perception of) unattractiveness in many modes & manners.
+sn54.9:4.4 | P: Te iminā kāyena aṭṭīyamānā harāyamānā jigucchamānā satthahārakaṁ pariyesanti. | T: They—ashamed, repelled, & disgusted with this body—sought for an assassin.
+sn54.9:4.5 | P: Dasapi bhikkhū ekāhena satthaṁ āharanti, vīsampi bhikkhū … tiṁsampi bhikkhū ekāhena satthaṁ āharanti. | T: In one day, ten monks took the knife. In one day, twenty monks took the knife. In one day, thirty monks took the knife.
+sn54.9:4.6 | S: “Sir, please explain another way the mendicant Saṅgha might be settled in enlightenment.” | T: It would be good, lord, if the Blessed One would explain another method so that this Saṅgha of monks might be established in gnosis.”
+sn54.9:5.1 | S: “Well then, Ānanda, gather all the mendicants staying in the vicinity of Vesālī together in the assembly hall.” | T: “In that case, Ānanda, gather in the assembly hall all the monks who live in dependence on Vesālī.”
+sn54.9:5.2 | S: “Yes, sir,” replied Ānanda. He did what the Buddha asked, went up to him, and said, | T: “As you say, lord,” Ven. Ānanda responded. When he had gathered in the assembly hall all the monks who lived in dependence on Vesālī, he went to the Blessed One and said,
+sn54.9:5.3 | S: “Sir, the mendicant Saṅgha has assembled. | T: “The Saṅgha of monks is gathered, lord.
+sn54.9:5.4 | S: Please, sir, come at your convenience.” | T: Now is the time to do as the Blessed One sees fit.”
+sn54.9:6.1 | S: Then the Buddha went to the assembly hall, sat down on the seat spread out, | T: Then the Blessed One went to the assembly hall and sat down on a seat made ready. Having sat down,
+sn54.9:6.2 | S: and addressed the mendicants: | T: he addressed the monks:
+sn54.9:6.3 | S: “Mendicants, when this immersion due to mindfulness of breathing is developed and cultivated it’s peaceful and sublime, a delectable and blissful meditation. And it disperses and settles unskillful qualities on the spot whenever they arise. | T: “Monks, this concentration through mindfulness of in-&-out breathing, when developed & pursued, is both peaceful & exquisite, a refreshing & pleasant abiding that immediately disperses & allays any evil, unskillful (mental) qualities that have arisen.
+sn54.9:7.1 | S: In the last month of summer, when the dust and dirt is stirred up, a large storm out of season disperses and settles it on the spot. | T: Just as when, in the last month of the hot season, a great rain-cloud out of season immediately disperses & allays the dust & dirt that have stirred up,
+sn54.9:7.2 | S: In the same way, when this immersion due to mindfulness of breathing is developed and cultivated it’s peaceful and sublime, a delectable and blissful meditation. And it disperses and settles unskillful qualities on the spot whenever they arise. | T: in the same way this concentration through mindfulness of in-&-out breathing, when developed & pursued, is both peaceful & exquisite, a refreshing & pleasant abiding that immediately disperses & allays any evil, unskillful (mental) qualities that have arisen.
+sn54.9:7.3 | S: And how is it so developed and cultivated? | T: “And how is concentration through mindfulness of in-&-out breathing developed & pursued so as to be both peaceful & exquisite, a refreshing & pleasant abiding that immediately disperses & allays any evil, unskillful (mental) qualities that have arisen?
+sn54.9:8.1 | S: It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, sets their body straight, and brings mindfulness to the present. | T: “There is the case where a monk, having gone to the wilderness, to the shade of a tree, or to an empty building, sits down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+sn54.9:8.2 | S: Just mindful, they breathe in. Mindful, they breathe out. … | T: Always mindful, he breathes in; mindful he breathes out.
+sn54.9:8.3 | S: They practice like this: ‘I’ll breathe in observing letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: “[1] Breathing in long, he discerns, ‘I am breathing in long’; or breathing out long, he discerns, ‘I am breathing out long.’ [2] Or breathing in short, he discerns, ‘I am breathing in short’; or breathing out short, he discerns, ‘I am breathing out short.’ [3] He trains himself, ‘I will breathe in sensitive to the entire body.’ He trains himself, ‘I will breathe out sensitive to the entire body.’ [4] He trains himself, ‘I will breathe in calming bodily fabrication [in-&-out breathing].’ He trains himself, ‘I will breathe out calming bodily fabrication.’ “[5] He trains himself, ‘I will breathe in sensitive to rapture.’ He trains himself, ‘I will breathe out sensitive to rapture.’ [6] He trains himself, ‘I will breathe in sensitive to pleasure.’ He trains himself, ‘I will breathe out sensitive to pleasure.’ [7] He trains himself, ‘I will breathe in sensitive to mental fabrication [feeling & perception].’ He trains himself, ‘I will breathe out sensitive to mental fabrication.’ [8] He trains himself, ‘I will breathe in calming mental fabrication.’ He trains himself, ‘I will breathe out calming mental fabrication.’ “[9] He trains himself, ‘I will breathe in sensitive to the mind.’ He trains himself, ‘I will breathe out sensitive to the mind.’ [10] He trains himself, ‘I will breathe in gladdening the mind.’ He trains himself, ‘I will breathe out gladdening the mind.’ [11] He trains himself, ‘I will breathe in steadying the mind.’ He trains himself, ‘I will breathe out steadying the mind. [12] He trains himself, ‘I will breathe in releasing the mind.’ He trains himself, ‘I will breathe out releasing the mind.’ “[13] He trains himself, ‘I will breathe in focusing on inconstancy.’ He trains himself, ‘I will breathe out focusing on inconstancy.’ [14] He trains himself, ‘I will breathe in focusing on dispassion [lit: fading].’ He trains himself, ‘I will breathe out focusing on dispassion.’ [15] He trains himself, ‘I will breathe in focusing on cessation.’ He trains himself, ‘I will breathe out focusing on cessation.’ [16] He trains himself, ‘I will breathe in focusing on relinquishment.’ He trains himself, ‘I will breathe out focusing on relinquishment.’
+sn54.9:8.4 | S: That’s how this immersion due to mindfulness of breathing is developed and cultivated so that it’s peaceful and sublime, a delectable and blissful  meditation. And it disperses and settles unskillful qualities on the spot whenever they arise.” | T: “This is how concentration through mindfulness of in-&-out breathing is developed & pursued so as to be both peaceful & exquisite, a refreshing & pleasant abiding that immediately disperses & allays any evil, unskillful (mental) qualities that have arisen.”
+sn54.9:8.5 | P: Navamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full batch. I found three clear boundary shifts: an introductory clause and two passages that start before the line they belong on.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-109.findings.tmp <<'EOF'
+sn51.14:5.17 starts: “Having developed & pursued these four bases of
+sn54.9:6.2 starts: Having sat down, he addressed the monks:
+sn54.9:8.3 starts: [16] He trains himself, ‘I will breathe in
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+23,415
+3 lines reported.

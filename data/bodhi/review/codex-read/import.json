@@ -1,0 +1,815 @@
+{
+  "sourceArchive": "/Users/azzalos/Desktop/findings.zip",
+  "archiveSha256": "bbe46234d083857054680d09303154bc36d7626b5395a9fb4edc03dada2511b2",
+  "baseCommit": "8ab727a2",
+  "batches": [
+    {
+      "translator": "bodhi",
+      "batch": "batch-001.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1bb11694e8c8322df69d5a0d1bb1c8011c9b37eb58a94672769750e4b9be4c8b",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "1595e7c0142ceb459d3e8a483f4a761c2d4581ce48df8ddcb4e3e5e38760cca6"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-002.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1ef6364edf45dab812a8a3cfa3c3db877c341b8ef1150aa70054dc71ffe13437",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "24741ca9b99e7e7a4d1f5b67c228042e60dadec4d3df474df1a2102b326e9730"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-003.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1b90f343cb8fbf0c3f43ce8c2c9a2fe2918004f20e495402e920c8425a876c1b",
+      "findingsSha256": "daaf29f14979ae36e3db2904af10923fdc23b690baeeb4bfeab8d9d7e425c970",
+      "logSha256": "5f91c4441a413bd041b1d50d6da32410faa28d6af349e4a6864a04795b89e4f8"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-004.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "237d74179b36630f92e942fec9fcb0d05a5e984a673bb157d0f33e14a60ac096",
+      "findingsSha256": "a738080e23b7ee60270ac4fc167dd80bee3ee1004eb9018b97d59a88a35d4839",
+      "logSha256": "7de177278a56ec47beb8bbed0b0b3447ee596dea90ed410fc6dd945f221309b7"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-005.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "708767f3fb833cc154ae30426aaf412ff6a1bcb7972fa4e7a5665612de42f9be",
+      "findingsSha256": "410d6c0a67a94d6b9da0c1fc1d50754afc4a90883f7e522b9a629aefe3723ac1",
+      "logSha256": "7fdaf010e9dd56a03dfcdce16b18dbdccecf4e6d706ee82e191a2f962643ce8d"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-006.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "de108e8944e9c543a7502040ec66cfc963cff5dc8083c9a7d281f7d6a17ec627",
+      "findingsSha256": "bde8e0ec04c02dbf72067a1d673dc56164f1d5b4874bc985d80b6ce6756387d4",
+      "logSha256": "4f030f1f778b54e1d92d3677a749ece9780d68bad94d4b88e0a584157a3e737f"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-007.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6a38c4957772f430e04227c25e5b84a594d3d718441c49f61cb3cf81bd8c6d3a",
+      "findingsSha256": "8b07da6964602dff2f33c1f12fdb7c09fc4b9069a7c9acd10cebbe37f020f0a1",
+      "logSha256": "3faba2c3037532b4f4be9e92294764f85aa6757dbc185d4d594805b2637f824a"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-008.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "83b5f7e930b7e1805f00f67a4771a0f9d4cb8e7844732103bd5c9ff1d646a554",
+      "findingsSha256": "b0ecff9e6e7bd3210b0004cf72aab4edcad31effa99c7f026d25eced9cf8ce9c",
+      "logSha256": "5521750a3e221216e4d49486fe7b9d4cf56a631b1e4caee42c03e1473c609c3b"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-009.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7c733f89e590150fca14a5153e970d11b9fb00cb2f79072e5cff96fd5989f459",
+      "findingsSha256": "1205ac84b044c417612b11bd0a7933b11b422461a9f0a6515bb8360f677c35a3",
+      "logSha256": "eb2fad72664dfc40d22ebe288846c7fe196e05502b51ff4499bad2954cde63db"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-010.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7d0616321f39fcec416d879c122f4cf1a65d27572e129730c32b7b040f5e0d04",
+      "findingsSha256": "4b03513f23d2fa600a4f5cf757e6aae89a08cdb91012aa6d65c2f77751f9fce7",
+      "logSha256": "4c1d92f892fb412dda9bc9f3b27a21d2b78c63e54dfa94eb14f3ec100a8ea5f6"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-011.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "f753e05f739de7ab8dd72ccdfe57eb24d1840fc151a8975feba4e1e5e1f29b10",
+      "findingsSha256": "e0b6779165c10abb66a9ffbe145a75362596df1e7324951d5d13edb25c7993d2",
+      "logSha256": "b8c75fe848a31fe4b62134916d5188d3a22ec0166fc0c7aa297e7e5251a29354"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-012.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "acae108d8bf33562fa931a2c864daaa0142ab9f03fca1356324063bb8e9ed92c",
+      "findingsSha256": "d17bbf2410edb93f0aa8fdc8aa6f407205171b6ef43e4ce556faed7c49b11bea",
+      "logSha256": "2a17613049c0387042ae0db33a6820abb6f501cc1187dde81d56f2cb3f8641a4"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-013.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "8b59624f4691a43a4027e0271a15915251a7e454f0b1a32272a9659893e2bb7c",
+      "findingsSha256": "c41cf9ce94529df1158f703d1deec4c1b65d54c77794b7ee17ab2bb0d75074ed",
+      "logSha256": "d3b7e6250321189403f253713bb4c522189ec29cccb362fdc10a2d3e65defa9b"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-014.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "067ff49503d328921398a923298c39ee5f50e2bc4d8d9633b28316c66123d304",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "f02a2cb1fcc0bf50456f4164c3fc2bb78e8ed0e91f1a25af01821ea679ebd3c6"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-015.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6f0a318afcdf90e408533547ddea3645b9e7a4ed59ba1cb7b95e0b70b91eb2ff",
+      "findingsSha256": "8015414e9777b03c2e2978713034f4d53dbf569453b36d6b94c465e8c60e9f3e",
+      "logSha256": "b6e9f61c6d3fb9205180f189432fae18f7bb071d598b08e5dd8f2e657edc7dea"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-016.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "71ca532bd95207b8a8ab3804351ea04a48ef89c4f1306269ece0250557748a1d",
+      "findingsSha256": "f31c6cf6d97b6f4cd9f751103c50ae96b9d9e49c11ab8876e1cf93001cef56a3",
+      "logSha256": "afa13bf94854878d2120c0f423e56b7c4c5ee30c58a7061c0a8c93da5873dc35"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-017.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6f75ee9e4fbfd32a48fa867ce73194f89ece82b88d3a8a445fcba7aab865bf2c",
+      "findingsSha256": "dd66fc169e2f2b44c3410cea6001e2c2d0a46aae8d55dae5b77061b00c3960e6",
+      "logSha256": "3138615a634ec08df25636a5ae08e476c7d34ee6d48efdd5bb1a80af54551315"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-018.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "bc400036c1075d155e4f153a47942bf3453bce0aece3d8b8ba92b9cc46f60c4c",
+      "findingsSha256": "54c717355c0ad4ef3dc5033a33700ad981fd204eacb9dcb304afbebf68378b0c",
+      "logSha256": "b7bf78f1b3508dce7cf52b6f1039fd7b876e4643217670dfe10bb5f0eba2dab2"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-019.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "67e6744a4b5ffaca3e70b3deba489e3c03a7bdb848abce4b45b02642eca8293c",
+      "findingsSha256": "705bab73c285d29175a39111a7871d9b65b5b5113272adb0ef8d2a75431a6aa7",
+      "logSha256": "b1b8df30b073a26093dc43d4b49fc35872b56cb4d99b1e976db7af37c6a674fa"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-020.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "dc08dfa23259bbe9f2ccf41dabf6150ac937d2fdff878cef452b8a0c5acc8205",
+      "findingsSha256": "b47025df152df777874602306eb3930a8950fa9aa41d48e5c3ae9f7e940f3f0e",
+      "logSha256": "6224ac32447420e4a35901c32995859ed87e40369cfe54a0c40d5424ccdce6a5"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-021.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "691487728c6c68266ab577aa31aa4b13475810b7ca1ff28c7f68c25da249980f",
+      "findingsSha256": "56c838fb178d2a89b5213fc13c9b93fc839976363e38ecef361a09f97ca17ca4",
+      "logSha256": "7bbb9bf719569fc2a4b9df6a449f5ce6d745a556f8513d8f42a4b3fde710f0f8"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-022.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5953e79a73bb447b00c3615a4bc1b500af375ac1e52d45f68960aa9fcf138136",
+      "findingsSha256": "505905e0302da5d8e37429a861a6754cbaed5255a217782fe543645a3bb16ab2",
+      "logSha256": "fcd91658c5b13d65c8765c1f6560f7a1e9d286c89908d83189e6f004c66b1dd7"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-023.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "714ca0d0fee187d0c47e85a896024793afceb3c814f49023aa1880469b59c5f8",
+      "findingsSha256": "5312ed686f4cd056cf3113034dc033e34a1c8e289ddd87e5cb9e2cb5dfea40d5",
+      "logSha256": "d9dd44d1cafb8221cc5550e90b0b8973e60772b00317d53fde2df24ad03920f1"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-024.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ca086dccdca541ffb44e9240658e562978c77e027bb92765a8d4549265172cf4",
+      "findingsSha256": "69e760bf642c7f07aae7146aa663cfff3520278f06f0c94275ef1c7d102f77b2",
+      "logSha256": "cbf24b34ef40669404aa273c4fec85600dbb6ebbd134185567b9d494a531ce39"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-025.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5746b953d2b8448ecef8fe83777cb2883f6c2003f6802a71ace656fee1029226",
+      "findingsSha256": "aa5449eed5b642698ff93f611b1fdcbbc058d9f7976a6853053401a6f25a9e27",
+      "logSha256": "d85f13808dc8d41828bdd3f1cec5f452976628649de780661590ec805ed4f89c"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-026.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "582affbf54c98571e1c3faf3bc687131f74eb9b8009d05611707c0fe561a03fa",
+      "findingsSha256": "28af315a43cff72e24a702a92ea8b6e7683b899f1f1c83810fbed1be7cc991ef",
+      "logSha256": "e8a92b869f4c100c4aea8d222c5cee3cf13b07d1fe48baf42cc80cafc6e4fa54"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-027.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b54c3e7b39aaa15571ed0f6a7982625c5cb85ec7ef6b11889733d61b694e3f7f",
+      "findingsSha256": "bbc3bea2a34efa28ef4f1ddd3fb719692e7b59cccfe75c7db0798c99b1322c1b",
+      "logSha256": "dc7fe206b3de4e26136553d6337aecc24a6250bc3ec2b39cbab2f8b25929c3cc"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-028.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "0b93d83483e1afa93a5cdbac84f80949759f47b670272dd644729c22e8c7efa8",
+      "findingsSha256": "c1c6faec169abc66fa0c3e7e01c00d89387e4661eb244f5dc06d31367a7c5fff",
+      "logSha256": "ce1b3738a668090cb1d9c25bb9be94f2046e3c8c4ae6d332cee29443faec4fe8"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-029.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6115de9f52d920558bc1710005de8bd746d027a3ad7485fba466528f9dfd881a",
+      "findingsSha256": "4288fa190faf9c85f258985b4fbb993254ab7d9de53c698d430a690d41041877",
+      "logSha256": "4f99b02c4325992fec8ffe6dd96d38ba436031f69f55697e083c371bbf29fafc"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-030.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "590e32cb4593be6d898ea10826985b28cb96dea1c9fa8d8c7d74275037c5b51c",
+      "findingsSha256": "5e22327681801222b04ddef1d34de8d81a95a08d14e772ae837ea8291be7be8f",
+      "logSha256": "0cbc0678f8de509a708a6746f7392f785dc863db795b86ba42fd88fe940f35a7"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-031.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "024cb87116ebe166d982a976e698fe11c91a8951c066e758adeb14b338c8460e",
+      "findingsSha256": "1f691368e521c9515e7672452ac7ff0cc9f74b10dc62cd38ec571bebf6cf5e97",
+      "logSha256": "ec170762a87065625ef05827525a1792acec87f0198df10724bdeadb24f0e454"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-032.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e34ce7dcfbac3d157a27bfa5b5da3e03e6f4dee5bcc22c51c95568cc6dbbd0f8",
+      "findingsSha256": "a6d9a3b2cf1da854b655b944ad4657f35bc832fca0332507547d9aa8c91a1417",
+      "logSha256": "59c59ba0cc01730a4efc57a51b54b64818a844dabffc7a29c9f6fff543505e19"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-033.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "0159e546c22ff94c085871e7f05736ccd5f7aeba981112e48f63721bd0ccc92f",
+      "findingsSha256": "125755bdc20ced412eda3ef1796ad5688de44d129cbb5fd76978a93839149e94",
+      "logSha256": "1cf7749618eed462b0179cf49724eece60442363002ab977e3ef1287655bc232"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-034.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "71e344f6fbe7ba87201d0773c68234e46e9acb348677b058460f2a25297ff14e",
+      "findingsSha256": "e8f530b343d086ac7cb38e789a0124381488060c42bb60224fb015530d561677",
+      "logSha256": "26cb6c0ce9d0c497edc7f6800f94951b494aad992ebedabc90e9d0188002b677"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-035.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a87e261af2e2bfa83ab92eb8b2fe21217b715326021964a029b7db5dfe29182a",
+      "findingsSha256": "e429988ca59e83dfcbf5d7d4111f86f8e0b798f4ad1fec692bee972b0c7471fa",
+      "logSha256": "c140d3508ebd9f7ec784482426bf2998dea75bbbfc48e44a8e46c316d1eefbcb"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-036.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "80dd14a76c32d1c152329bb307df0db13a8ebcbf9a2575e09fe7ae25a21a1538",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "1a391fff1aca4796686b35eb3589a05f8209137044ad8c7ec3ff41d0aa80532e"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-037.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "37f0298ec5761ea8ccb15ddbf63500b9acaad5febefc75aafe8da6c10adb119e",
+      "findingsSha256": "ca98770c5b83de53254e437f181978bfd85aac3e3d73176708a23c45d811531d",
+      "logSha256": "0e23eb1643fdb8dbd1853d4a76151cdc587767e747bacdaf61df36ced9de2ecd"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-038.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3f822e3ce2bbb7403c66b04e4cdbc3009743295c8e3ad7f2e75e8ff903e1fea0",
+      "findingsSha256": "9f3834aaae539e7aee7516cf6e1072fd2e5c6e0981df29073cf4d53e8dcfbbde",
+      "logSha256": "7d0522df604e1697c3498e70007bdad8594ccf88eacf0d953b231aec62b27863"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-039.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "18dfbae8157241d5e723e1f1356707240dd7c4aefab5a5a303373a4ebe4bd8cb",
+      "findingsSha256": "b2477b78cdf09750cd467c210cd662c20a46bc6e1a0a5f199705035005c3ebcc",
+      "logSha256": "230981616f6068118d0a9cedfd3ebb7a0200beacbf0535ae338d04779caf59eb"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-040.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ceab6eceb06092c3a7885e21a090b05334d18715ba77dd73cad10423bdeafb2c",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "bf0481a8fe55cd59fb35a89f0d160178a2a5c0b05581db5be49afe843a22f8f1"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-041.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "273e37fa418c71d7cf71bea12f9d8b70fadc0f3765ece05a26080d0a527c349d",
+      "findingsSha256": "5667352021e103219aa2d6014ab3c42cf67c6934388677f9910bed49d6691867",
+      "logSha256": "39d2cd76246ca7e878962146c599f15116c1d5fc79fb2f448416649492c762fd"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-042.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6ec440ae8ae2f776db4be170586d55d5a40f5015c23392e6e173bbec1759869d",
+      "findingsSha256": "b82d460c48aeb1d6d727fd4e5ae01354b823588fc9aa30648c741021c9e86849",
+      "logSha256": "21ba6519169ef22c0509cc9a359e89f2d0235aca1b6fb9331f0ab7ad8f763e00"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-043.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3d45ea8990a33621ef2e5ee6b6031a28355a91e3289539fdd32b415d5054a88c",
+      "findingsSha256": "f8b9b8fdce3ca19655878ece4fde9e8be2d7dbe1e9d83c38b7a5741d624351c2",
+      "logSha256": "69d3d10e7d4eda17df37115e85e6b43a49dd7706f5922307e4b1aa93dde26184"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-044.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "07cadd38adc3859161c3dea2784fad3041465b18d5b9a282c1d4a50aeb945b6a",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "6695f045809ac3aa3ef672221bf74a24a227eafc072bf726febcab196539d07f"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-045.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a62396d6e3996e2ab1e03845d39a3204d19ef7d61c2af94d3e75bd4f48c73631",
+      "findingsSha256": "cb3a648ea84b274b59f1cb6548795ad67b6aa5daba791d5bc8b01ca1dab54edc",
+      "logSha256": "f70c4c6d0023adb3a83fa2d2a9582a3599ebffe32212223779766c22e98a3f68"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-046.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e952a18d0e501de389df12bce35eff790274b69ad6e98290cda8b98a8739ffdc",
+      "findingsSha256": "216f531f5e958e3951e90e497c1eb5bf6d49ec5a9679e497afce8667eaa8bbde",
+      "logSha256": "6406b20314556ce30a311d8579570c0f249eed7dc816cb0989a584eaa4811eea"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-047.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "22a21c5b6b83e31b5ea4663546b10dac769beea3158b87c41dc8e9b257d727ff",
+      "findingsSha256": "0f5f1a130c30bc86f541e78bc270e2a16694096285fe165cda00da3c5993fdef",
+      "logSha256": "51b06f1b4bdbe5ee0edb62e169f299cf866283dd7d08d98aebbdd2b3f9768cf8"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-048.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4b6031f85e24f2988dfa5db8ae935f962ff107f9f877b23019cf7207d16e6db6",
+      "findingsSha256": "a5e596383e31ad35eaa5ecf5c0bd9686d6fea58b60f570153a379cbfffb41604",
+      "logSha256": "77a7f7c8e6ea7b6df331a785e8afbbf58bd46800cca7c0f545d775fdfcac2f21"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-049.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1746299159d73678868b252886da70fed7792d115c4e258487e0e103b728602d",
+      "findingsSha256": "426ec9f44221a656b911462e5e27dddbc88dc08ee7d5a1bebae12e066fb64c96",
+      "logSha256": "359b003b51c22143091c58ea3efde70e613ba98083720f9f7e8c296a030ac80a"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-050.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "bf6731a7882ee3405026da3d9d68736dcbf76e16cb26222b1450e8a5882181ef",
+      "findingsSha256": "f4750f51635900940e87f9ba507b8db453904a3ebdd62ca9bf0a3268510b9752",
+      "logSha256": "e6347fb1f0adecde15a92928f854300816b662fc8faa7d6c9d565f1ff755ca2a"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-051.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "155bec407d5aa7f1aee1a37263c0193aeac4eb2c87ba6581771869dbcefe8896",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "2d04fd77bfb8647d6e1178e365cabb2c0d9323d3d95ebf5bca8505f12b756672"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-052.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2614190006d200a8376b98b9525722d8d411f72bfc55921f24ecdcabb147ee10",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "23b145f63c9b1ae2d5c74146bc77e131fb650a43af4793fce590e933a08d5b1b"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-053.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "66cd6d85db9826d855f5bf183b9bb3b123bc7ef363c1fa9a98c66a09fd4f11d2",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "2e7c6657f76386ff8cc42b58feba55173b6dc897a2b3bcfeae5e93b223fdb624"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-054.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "13ce2d607f38c1e86175f530002d652bb179da8e5399273fa4103758a925635f",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "ae130806c4a16a3aabfbc09de096a7b556f6bd3edeb3c8daa27091c1b7f95679"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-055.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a7ff18e1beb339316397d1947e668e12a020ebdb37787e1070d3ce27c9ccf084",
+      "findingsSha256": "4c4748fef6829671cb15157ec61ca41dfdf61df9766114d9ec83b87d4ff0ac47",
+      "logSha256": "7e324c981be6aa995d852611d43cab5b402ec6253a2b59fd4f7ee0ddbc1b2ea3"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-056.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3265bfb7a5fa461635d6236a40b153933957e817a359b7c320115362f0cb8e1e",
+      "findingsSha256": "9187945a83fe91c0ecf78510a8d0264e85f87ab7f3e646a75ba62f9b7d332e61",
+      "logSha256": "1398a344ed5faecc4e0e56bac60c4e34dcba67542b36fe7db381f6577e0136d4"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-057.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e94ffe669807681a3cb34ae6f52ea5251211475c37d3658cdcc3a55f7a72bbc2",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "6115ef5b62b734be64efb669ff39f254dca7d93de4f062e1d3eb8b3d4f3fcd53"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-058.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "80fc9b1cf21e536335811f558761fdd8c8b43e02aa6a740226d07b60a06ffdc0",
+      "findingsSha256": "72db43679d6981abbb77f2f7f72288a565526a1d1625df070882d7900505ef8c",
+      "logSha256": "6c8f985fdccf3c36fac55fcdf76e736c256b69aeda4931e9a3763d65d8469c7a"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-059.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "cc3dc5e228f6011e422c9e10d80c4b7e3b1c68a15445c0366e8e4d6f55cc287f",
+      "findingsSha256": "128deb7b07235ff9a405d4802c38e9a384ebba0bc6cd1d703798b2fc1383e2b0",
+      "logSha256": "a98b4dd0b6945b14853eff1091b73f8ba67ac2baf3226f8482080db41efd4789"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-060.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "9ada9153a55e49b4613adb28a494b740c7059c6f1e31e5d4d7d8e73852979992",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "1915585e0e6e762df26a325ab9757b676bf469b97b98213c4c278c043211dfe2"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-061.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e24c07e0bdd031937ed369ed27aa6c44df14e3a8614435ede2a2d9152c80de1c",
+      "findingsSha256": "923fbba405940633cee963d76e1a7382bdf02cc04ac8e26fe3a5cdaa60394bad",
+      "logSha256": "14bec4e686094a8e9c1abf334d7bfe91df16b73aab2dc5d7bfb00a7ea0cbb978"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-062.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a70a7fd952ef36936c0661b921cb0163d9fdb7aa4afb2f4b4298aee4feaf6e00",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "a11f7a92b53bfd56f2c19f5c4ce41d9a94e079f10f1ae2418e09f281e42a07ec"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-063.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3f6addabc1dabe687fd0c3514fb6dbf21406a833bb25909a0f1f15d4df901327",
+      "findingsSha256": "404567811bd502f7623ba91bbe74592ddb3393b4caa70f5cc9bc092314b2c8f6",
+      "logSha256": "345040a966fe941de5cd0405ad3d9d80730b3d99c63b0f7da8c90aee89d3095a"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-064.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ae36b766702122ec94cfd8658b39a2fc24be593a62a4a6d6f197f44648006722",
+      "findingsSha256": "5a1daec9ceabc5177213682a76ddd359c2fa4d72702f81163728896f7f46a460",
+      "logSha256": "7772a6c5f3ddea3afb66c8a6a5b92692358d7e4dc53aad1005bb79d91fd7a0d4"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-065.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "44f4e9ba2b762e6bd44ddebd277c41806e8220643a52231d4cbc729050a252a6",
+      "findingsSha256": "4b2e5516f5b840cefb24a74ac6c34e1b9247aa7ac28c03ce64f63f50bd83a6f4",
+      "logSha256": "3b3415a483e7582adf2355bef6f08d35f332f281347c080b01972f8cdc25b6af"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-066.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "90d70fb8572f3ca86a080c7aeda6de64a45fbcbbc23dfb9258ec57e6f0219ad1",
+      "findingsSha256": "8218cc6a85d50e8349d233a4f8868238429b54564c2fd1dc2c4decda0b9f70a4",
+      "logSha256": "218af61a00a26da8206cd02573c90b6c185ee94e5a739814514440e5042b8425"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-067.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "375ea1a30e88bcc2b20e50f2b987e4d216005056034130dfe1947bc61ad3017b",
+      "findingsSha256": "c22168d2708a2cddc74520a1720ae9c0c31023217ea35ceaae1218d28ce183a2",
+      "logSha256": "64ec7e3881b0d53c4022010c1b6d0ee6c67df375e478a1ba271b58922c483fb5"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-068.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "95a802bac199e84e668112db3db8fb4fdac80324e295ce94cf427d8ed74ff116",
+      "findingsSha256": "d864a59e03952e98068dd9b845d28a29564bb3cb1b402b2231a336cc2a634e17",
+      "logSha256": "d7265db21debca89575d03578c31daa0fabf6185d36af0c02fe9fe82968af814"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-069.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b74425b29de6b73c542b5b9d18d7423adc818968ab80d15fe9208ace86c5c280",
+      "findingsSha256": "436477a1bac92d174040438e575e36bae9d1f8e45886225dcc548664a41316e6",
+      "logSha256": "bce2309b78ae211a611f07676eba5b9c0b2c23cc32f27914584ebc3cd07e2524"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-070.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5c38dbdd2eea169429f7fd0346b19b2364e35a479e411bc89013bac6172b97ed",
+      "findingsSha256": "409304959393b3836371f6fc6161e6ae9fcf4ac5a1a80c4c9fc990ac76eb9647",
+      "logSha256": "b513937314ae1ffc39287e5eebddd65c9f1bdcd5275aa9342fc15a0bbda01d22"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-071.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "34c13836bd971addcaa6e71d48a35e20658a617b0e29a12543e519094fe8dd6d",
+      "findingsSha256": "3965f72f1d2ada22f3b2d97302073c9efa006dd66594506c93b61bc08640f23e",
+      "logSha256": "433ca9c0b89131ed1275e3ef8a54915befc7373f256e86bcec0b9f47d6c2b7a5"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-072.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "337dfa108f82fe370e0e95ba1c12703e780636de055ddbd100121e6a1315187d",
+      "findingsSha256": "c0ce820fddbe5bde6729f7f8935aba4198fd0401caaf9ce449a4e9dc185f69dc",
+      "logSha256": "a80a056ccc4c0a820ad5fd79916670006ac1b27b5c372ef2c91fec766be45edf"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-073.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "61f4a9d699463eed5c6d9e23956a50b1f4e486a01ee75394b0563bdf75879f3d",
+      "findingsSha256": "9ac8762ae137b603cc52ba585a4ff24124ac42b3063557142e5a1f50fcf81656",
+      "logSha256": "26ee34064c65bd044f1ff9f1cccc67e3d7a201be9c41a085a7f2f622fb5c9ccf"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-074.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2dd8b516f79a4c820ccb76fb660f087a58ed687dec7eb678df0e466fc4717819",
+      "findingsSha256": "c8717d53669d107b1293fa9a6549b51566aee028c639e12e9ddbc4158d1c8b73",
+      "logSha256": "11831172591b2de3772b244c9097126447a68bd9fe20ae22e2c110444b4c6fc3"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-075.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "11d96817fdd5c488cf06d99f8502ee3e0e51252c60e6bd2cf66d386c01143ae3",
+      "findingsSha256": "a8703ca30ff20452729e64fba3fd5664c4ec0cf1d49f64ec428de5b14e818272",
+      "logSha256": "0315eb40c96ee1789e5d67664e7bfc2be181ce7e63d0c1c05ef3158b793b6923"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-076.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "32703ab4cd19053bb13a672646b631b1e679cb96339e817661bcb3199702dc74",
+      "findingsSha256": "b1441a0d3a9713335d3341d51371238d8924141bcb50ba4abba2cdc9a142e5e0",
+      "logSha256": "76b0b1c28cc9a912d6529f6048dcad3d46d8115b9f3de25bef3786e807234c5f"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-077.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ae55e8080e09a186a5ad07049b525085bdf0ffeceb28c641c908c2599942b932",
+      "findingsSha256": "ce1d2fa844bf7877d7459e185d9b11971434c42e224b326a365c069add1c3c6c",
+      "logSha256": "723d001f505c3bc29d97b5d24b1f8ceff90b65c00c0724c0487bc7594b2b8236"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-078.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6be5b615909bd187dbf647a52ad560c832c999a9b86f733a099d19aca01d7b58",
+      "findingsSha256": "ca95992a0c3f4de26e3747e08fcd4d511ca4697973ccc99e37edbfe0b6ad9d05",
+      "logSha256": "f0a70562bb853b64406bf789bc54ce3cadec876e7db41950dbad671f8ffe9f25"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-079.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ac8291ba026f7b48a57416d1388df883e8eac79105d01e36e47d80d195b1a4d5",
+      "findingsSha256": "05064549eb9880a4c60e92755c7118b040607496025195c1c5c15ebd353acf6f",
+      "logSha256": "d7a939675ed6fa6913bc517da0beba8cfc2cde305ef59bcc6fc2d3cb37912ee3"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-080.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6e5b70e49dfad832c4a9edb9ac5b93d63338429eb041d2a8a26cbcdc4fcce829",
+      "findingsSha256": "e2219348f446a20c3222fa8c8c391a64bea2b7bd9f6c5317e390ad622e64fd52",
+      "logSha256": "8296f3af09a3bc6e6bc7e2c7d496a5bd73340acc8e5150099171a22a16f1cdfc"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-081.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a609f6c4c666e146c0295ff144a11bb456203af1c85891281a33c2f6ef610605",
+      "findingsSha256": "15b2f6c1d241a47d6c46dfc6a0a6c2f70e36bc650a3c269f3a203fd321720458",
+      "logSha256": "cdbddc915d5933f71b03a9cce8b363c9fe50b1569af3be41a3adf65a8c633f39"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-082.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7d03573e1b97c14ae11e388511ea773fe44a4056339446c4e8dbaea81a01d3e1",
+      "findingsSha256": "ad35a35d44858d312d03a154f71f85272eef395371c5ea4d30ddbfc81b283d33",
+      "logSha256": "b1298ed58a28a0ecd6db15449743481bad05190907b572a177233c75a431128c"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-083.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "13b7694eaa87a4e59a2f1d0d0121e452ae713991fd9ed1db41c24d1434d74d92",
+      "findingsSha256": "920f01322506cfbaca8c910b1f1606739d941a115de858ecbd71b8e0a0959f6a",
+      "logSha256": "ee4c7ecc0be8bd15acca4e6401b5209161fdd036569f1db1c4a0ab64f4962eaa"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-084.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a9bf02750934920ca2ffa70076e788a3a845c354d5391c116da92382c4487fde",
+      "findingsSha256": "0dff5b1e16e652f46de93392928a139d884963bff0a5d624f3569d408b951404",
+      "logSha256": "f02d79e9bf5b895306a7102e46be68d018ed4bc1c0c8215cfa6e1a717f3e7f6f"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-085.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5a8b5a38c25d87ab27f1e8ea597211ebb0800808f83f40b0ccdbdd319ef812d2",
+      "findingsSha256": "54816f036157f72b3f7fc3faab44f9c0b8350cc434e2c711cc628070c5439bf5",
+      "logSha256": "108a54adaa6a22474579550a1d18a8acd448f366fc1bd49c7993d6fc2dde0a67"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-086.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4e45b36aa2dbfa52969a7204fa75a80939babd43706233dd36984b12a8df98a4",
+      "findingsSha256": "396d1b3502f73f8eee000a5b7bb8d7383880b6ac1be72ab6ffe907aec054fa1e",
+      "logSha256": "f5dde13a4a518e32810e64f9547da66f70985add768fecc55500ea8cbf6ccd8d"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-087.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4b35238c07aaf3ad88b9495ba8c90c217b91e7ce9e6a9f2d703ca67ac42d2356",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "6cccd836bd888b3512c429852991ed1ba394fb04e2f9c108fc21c28b65d9bf7c"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-088.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "cd86e605cb7180c94059330c845ee6abf1a6deee850d480e78ae0c5f1ded10d7",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "da63bfce2dd748f69a3dce1282bc2620675a1a7bef41f6d975d71ff191ca2533"
+    },
+    {
+      "translator": "bodhi",
+      "batch": "batch-089.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "57738a44448d4e089be87040428c6e8f605d9aac8135b77bb4483221e12b19e4",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "94ec65e5e507fa5bc7113e341f7df0b24a914ad9274eb7a5a292eda6581ede5e"
+    }
+  ],
+  "scope": [
+    "sn",
+    "an",
+    "kn"
+  ],
+  "appChanges": false,
+  "commitAuthorizedAtImport": false
+}

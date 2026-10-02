@@ -1,0 +1,512 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8d-9218-7800-9452-67eb851e4040
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-placement errors, and write only the findings to the requested file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn45.30
+sn45.30:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.30:1.2 | S: Then Venerable Uttiya went up to the Buddha … and asked him, | T: Then the Venerable Uttiya approached the Blessed One … and said to him:
+sn45.30:1.3 | S: “Just now, sir, as I was in private retreat this thought came to mind. | T: “Here, venerable sir, when I was alone in seclusion a reflection arose in my mind thus:
+sn45.30:1.4 | S: ‘The Buddha has spoken of the five kinds of sensual stimulation. | T: ‘Five cords of sensual pleasure have been spoken of by the Blessed One.
+sn45.30:1.5 | S: What are they?’” | T: But what now are those five cords of sensual pleasure?’”
+sn45.30:1.6 | S: “Good, good, Uttiya! | T: “Good, good, Uttiya!
+sn45.30:1.7 | S: I have spoken of these five kinds of sensual stimulation. | T: These five cords of sensual pleasure have been spoken of by me.
+sn45.30:1.8 | S: What five? | T: What five?
+sn45.30:1.9 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn45.30:1.10 | S: Sounds known by the ear … | T: Sounds cognizable by the ear …
+sn45.30:1.11 | S: Smells known by the nose … | T: Odours cognizable by the nose …
+sn45.30:1.12 | S: Tastes known by the tongue … | T: Tastes cognizable by the tongue …
+sn45.30:1.13 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Tactile objects cognizable by the body that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn45.30:1.14 | S: These are the five kinds of sensual stimulation that I’ve spoken of. | T: These are the five cords of sensual pleasure spoken of by me.
+sn45.30:1.15 | S: The noble eightfold path should be developed to give up these five kinds of sensual stimulation. | T: “The Noble Eightfold Path, Uttiya, is to be developed for the abandoning of these five cords of sensual pleasure.
+sn45.30:1.16 | S: What is the noble eightfold path? | T: And what is the Noble Eightfold Path?
+sn45.30:1.17 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: It is: right view … right concentration.
+sn45.30:1.18 | S: This is the noble eightfold path that should be developed to give up these five kinds of sensual stimulation.” | T: This Noble Eightfold Path is to be developed for the abandoning of these five cords of sensual pleasure.”
+sn45.30:1.19 | P: Dasamaṁ. | T: (none)
+sn45.30:1.20 | P: Micchattavaggo tatiyo. | T: (none)
+sn45.30:2.0 | P: Tassuddānaṁ | T: (none)
+sn45.30:2.1 | P: Micchattaṁ akusalaṁ dhammaṁ, | T: (none)
+sn45.30:2.2 | P: Duve paṭipadāpi ca; | T: (none)
+sn45.30:2.3 | P: Asappurisena dve kumbho, | T: (none)
+sn45.30:2.4 | P: Samādhi vedanuttiyenāti. | T: (none)
+
+## sn45.31
+sn45.31:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.31:1.2 | S: “Mendicants, I will teach you the wrong practice and the right practice. | T: “Bhikkhus, I will teach you wrong practice and right practice.
+sn45.31:1.3 | S: Listen … | T: Listen to that….
+sn45.31:1.4 | S: And what’s the wrong practice? | T: “And what, bhikkhus, is wrong practice?
+sn45.31:1.5 | S: It is wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: It is: wrong view …. wrong concentration.
+sn45.31:1.6 | S: This is called the wrong practice. | T: This is called wrong practice.
+sn45.31:1.7 | S: And what’s the right practice? | T: “And what, bhikkhus, is right practice?
+sn45.31:1.8 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: It is: right view … right concentration.
+sn45.31:1.9 | S: This is called the right practice.” | T: This is called right practice.”
+sn45.31:1.10 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.32
+sn45.32:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.32:1.2 | S: “Mendicants, I will teach you one practicing wrongly and one practicing rightly. | T: “Bhikkhus, I will teach you the one practising wrongly and the one practising rightly.
+sn45.32:1.3 | S: Listen … | T: Listen to that….
+sn45.32:1.4 | S: And who is practicing wrongly? | T: “And what, bhikkhus, is the one practising wrongly?
+sn45.32:1.5 | S: It’s someone who has wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: Here someone is of wrong view … wrong concentration.
+sn45.32:1.6 | S: This is called one practicing wrongly. | T: This is called the one practising wrongly.
+sn45.32:1.7 | S: And who is practicing rightly? | T: “And what, bhikkhus, is the one practising rightly?
+sn45.32:1.8 | S: It’s someone who has right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Here someone is of right view … right concentration.
+sn45.32:1.9 | S: This is called one practicing rightly.” | T: This is called the one practising rightly.”
+sn45.32:1.10 | P: Dutiyaṁ. | T: (none)
+
+## sn45.33
+sn45.33:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.33:1.2 | S: “Mendicants, whoever has missed out on the noble eightfold path has missed out on the noble path to the complete ending of suffering. | T: “Bhikkhus, those who have neglected the Noble Eightfold Path have neglected the noble path leading to the complete destruction of suffering.
+sn45.33:1.3 | S: Whoever has undertaken the noble eightfold path has undertaken the noble path to the complete ending of suffering. | T: Those who have undertaken the Noble Eightfold Path have undertaken the noble path leading to the complete destruction of suffering.
+sn45.33:1.4 | S: And what is the noble eightfold path? | T: “And what, bhikkhus, is the Noble Eightfold Path?
+sn45.33:1.5 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: It is: right view … right concentration.
+sn45.33:1.6 | S: Whoever has missed out on the noble eightfold path has missed out on the noble path to the complete ending of suffering. | T: Those who have neglected this Noble Eightfold Path …
+sn45.33:1.7 | S: Whoever has undertaken the noble eightfold path has undertaken the noble path to the complete ending of suffering.” | T: Those who have undertaken this Noble Eightfold Path have undertaken the noble path leading to the complete destruction of suffering.”
+sn45.33:1.8 | P: Tatiyaṁ. | T: (none)
+
+## sn45.34
+sn45.34:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.34:1.2 | S: “Mendicants, when these eight things are developed and cultivated they lead to going from the near shore to the far shore. | T: “Bhikkhus, these eight things, when developed and cultivated, lead to going beyond from the near shore to the far shore.
+sn45.34:1.3 | S: What eight? | T: What eight?
+sn45.34:1.4 | S: They are right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Right view … right concentration.
+sn45.34:1.5 | S: When these eight things are developed and cultivated they lead to going from the near shore to the far shore.” | T: These eight things, when developed and cultivated, lead to going beyond from the near shore to the far shore.”
+sn45.34:2.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn45.34:2.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn45.34:3.1 | S: “Few are those among humans | T: “Few are those among humankind
+sn45.34:3.2 | S: who cross to the far shore. | T: Who go beyond to the far shore.
+sn45.34:3.3 | S: The rest just run | T: The rest of the people merely run
+sn45.34:3.4 | S: around on the near shore. | T: Up and down along the bank.
+sn45.34:4.1 | S: When the teaching is well explained, | T: “When the Dhamma is rightly expounded
+sn45.34:4.2 | S: the people who practice accordingly | T: Those who practise in accord with the Dhamma
+sn45.34:4.3 | S: will cross over | T: Are the people who will go beyond
+sn45.34:4.4 | S: Death’s dominion so hard to pass. | T: The realm of Death so hard to cross.
+sn45.34:5.1 | S: Rid of dark qualities, | T: “Having left behind the dark qualities,
+sn45.34:5.2 | S: an astute person would develop the bright. | T: The wise man should develop the bright ones.
+sn45.34:5.3 | S: Having left home for homelessness | T: Having come from home into homelessness,
+sn45.34:5.4 | S: in seclusion, where joy is hard, | T: Where it is hard to take delight—
+sn45.34:6.1 | S: they’d long for satisfaction there. | T: “There in seclusion he should seek delight,
+sn45.34:6.2 | S: Forsaking sensual pleasures, owning nothing, | T: Having left behind sensual pleasures. Owning nothing, the wise man
+sn45.34:6.3 | S: an astute person would cleanse themselves | T: Should cleanse himself
+sn45.34:6.4 | S: of mental corruptions. | T: of mental defilements.
+sn45.34:7.1 | S: And those whose minds are rightly developed | T: “Those whose minds are well developed
+sn45.34:7.2 | S: in the awakening factors; | T: In the factors of enlightenment,
+sn45.34:7.3 | S: who, letting go of attachments, | T: Who through nonclinging find delight
+sn45.34:7.4 | S: delight in not grasping— | T: In the relinquishment of grasping:
+sn45.34:7.5 | S: with defilements ended, brilliant, | T: Those luminous ones with taints destroyed
+sn45.34:7.6 | S: they are quenched in this world.” | T: Are fully quenched in the world.”
+sn45.34:7.7 | P: Catutthaṁ. | T: (none)
+
+## sn45.35
+sn45.35:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.35:1.2 | S: “Mendicants, I will teach you the ascetic life and the fruits of the ascetic life. | T: “Bhikkhus, I will teach you asceticism and the fruits of asceticism.
+sn45.35:1.3 | S: Listen … | T: Listen to that….
+sn45.35:1.4 | S: And what is the ascetic life? | T: “And what, bhikkhus, is asceticism?
+sn45.35:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.35:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.35:1.7 | S: This is called the ascetic life. | T: This is called asceticism.
+sn45.35:1.8 | S: And what are the fruits of the ascetic life? | T: “And what, bhikkhus, are the fruits of asceticism?
+sn45.35:1.9 | S: The fruits of stream-entry, once-return, non-return, and perfection. | T: The fruit of stream-entry, the fruit of once-returning, the fruit of nonreturning, the fruit of arahantship.
+sn45.35:1.10 | S: These are called the fruits of the ascetic life.” | T: These are called the fruits of asceticism.”
+sn45.35:1.11 | P: Pañcamaṁ. | T: (none)
+
+## sn45.36
+sn45.36:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.36:1.2 | S: “Mendicants, I will teach you the ascetic life and the goal of the ascetic life. | T: “Bhikkhus, I will teach you asceticism and the goal of asceticism.
+sn45.36:1.3 | S: Listen … | T: Listen to that….
+sn45.36:1.4 | S: And what is the ascetic life? | T: “And what, bhikkhus, is asceticism?
+sn45.36:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.36:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.36:1.7 | S: This is called the ascetic life. | T: This is called asceticism.
+sn45.36:1.8 | S: And what is the goal of the ascetic life? | T: “And what, bhikkhus, is the goal of asceticism?
+sn45.36:1.9 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion.
+sn45.36:1.10 | S: This is called the goal of the ascetic life.” | T: This is called the goal of asceticism.”
+sn45.36:1.11 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn45.37
+sn45.37:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.37:1.2 | S: “Mendicants, I will teach you life as a brahmin and the fruits of life as a brahmin. | T: “Bhikkhus, I will teach you brahminhood and the fruits of brahminhood.
+sn45.37:1.3 | S: Listen … | T: Listen to that….
+sn45.37:1.4 | S: And what is life as a brahmin? | T: “And what, bhikkhus, is brahminhood?
+sn45.37:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.37:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.37:1.7 | S: This is called life as a brahmin. | T: This is called brahminhood.
+sn45.37:1.8 | S: And what are the fruits of life as a brahmin? | T: “And what, bhikkhus, are the fruits of brahminhood?
+sn45.37:1.9 | S: The fruits of stream-entry, once-return, non-return, and perfection. | T: The fruit of stream-entry, the fruit of once-returning, the fruit of nonreturning, the fruit of arahantship.
+sn45.37:1.10 | S: These are called the fruits of life as a brahmin.” | T: These are called the fruits of brahminhood.”
+sn45.37:1.11 | P: Sattamaṁ. | T: (none)
+
+## sn45.38
+sn45.38:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.38:1.2 | S: “Mendicants, I will teach you life as a brahmin and the goal of life as a brahmin. | T: “Bhikkhus, I will teach you brahminhood and the goal of brahminhood.
+sn45.38:1.3 | S: Listen … | T: Listen to that….
+sn45.38:1.4 | S: And what is life as a brahmin? | T: “And what, bhikkhus, is brahminhood?
+sn45.38:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.38:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.38:1.7 | S: This is called life as a brahmin. | T: This is called brahminhood.
+sn45.38:1.8 | S: And what is the goal of life as a brahmin? | T: “And what, bhikkhus, is the goal of brahminhood?
+sn45.38:1.9 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion.
+sn45.38:1.10 | S: This is called the goal of life as a brahmin.” | T: This is called the goal of brahminhood.”
+sn45.38:1.11 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn45.39
+sn45.39:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.39:1.2 | S: “Mendicants, I will teach you the spiritual path and the fruits of the spiritual path. | T: “Bhikkhus, I will teach you the holy life and the fruits of the holy life.
+sn45.39:1.3 | S: Listen … | T: Listen to that….
+sn45.39:1.4 | S: And what is the spiritual path? | T: “And what, bhikkhus, is the holy life?
+sn45.39:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.39:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.39:1.7 | S: This is called the spiritual path. | T: This is called the holy life.
+sn45.39:1.8 | S: And what are the fruits of the spiritual path? | T: “And what, bhikkhus, are the fruits of the holy life?
+sn45.39:1.9 | S: The fruits of stream-entry, once-return, non-return, and perfection. | T: The fruit of stream-entry, the fruit of once-returning, the fruit of nonreturning, the fruit of arahantship.
+sn45.39:1.10 | S: These are called the fruits of the spiritual path.” | T: These are called the fruits of the holy life.”
+sn45.39:1.11 | P: Navamaṁ. | T: (none)
+
+## sn45.40
+sn45.40:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.40:1.2 | S: “Mendicants, I will teach you the spiritual path and the goal of the spiritual path. | T: “Bhikkhus, I will teach you the holy life and the goal of the holy life.
+sn45.40:1.3 | S: Listen … | T: Listen to that….
+sn45.40:1.4 | S: And what is the spiritual path? | T: “And what, bhikkhus, is the holy life?
+sn45.40:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.40:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.40:1.7 | S: This is called the spiritual path. | T: This is called the holy life.
+sn45.40:1.8 | S: And what is the goal of the spiritual path? | T: “And what, bhikkhus, is the goal of the holy life?
+sn45.40:1.9 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion.
+sn45.40:1.10 | S: This is called the goal of the spiritual path.” | T: This is called the goal of the holy life.”
+sn45.40:1.11 | P: Dasamaṁ. | T: (none)
+sn45.40:1.12 | P: Paṭipattivaggo catuttho. | T: (none)
+sn45.40:2.0 | P: Tassuddānaṁ | T: (none)
+sn45.40:2.1 | P: Paṭipatti paṭipanno ca, | T: (none)
+sn45.40:2.2 | P: viraddhañca pāraṅgamā; | T: (none)
+sn45.40:2.3 | P: Sāmaññena ca dve vuttā, | T: (none)
+sn45.40:2.4 | P: brahmaññā apare duve; | T: (none)
+sn45.40:2.5 | P: Brahmacariyena dve vuttā, | T: (none)
+sn45.40:2.6 | P: vaggo tena pavuccatīti. | T: (none)
+
+## sn45.41
+sn45.41:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.41:1.2 | S: “Mendicants, if wanderers who follow another religion were to ask you: | T: “Bhikkhus, if wanderers of other sects ask you:
+sn45.41:1.3 | S: ‘Reverends, what’s the goal of leading the spiritual life under the ascetic Gotama?’ You should answer them like this: | T: ‘For what purpose, friends, is the holy life lived under the ascetic Gotama?’—being asked thus, you should answer them thus:
+sn45.41:1.4 | S: ‘The goal of leading the spiritual life under the Buddha is the fading away of greed.’ | T: ‘It is, friends, for the fading away of lust that the holy life is lived under the Blessed One.’
+sn45.41:1.5 | S: If wanderers of other religions were to ask you: | T: “Then, bhikkhus, if the wanderers of other sects ask you:
+sn45.41:1.6 | S: ‘Is there a path and a practice for the fading away of greed?’ You should answer them like this: | T: ‘But, friends, is there a path, is there a way for the fading away of lust?’—being asked thus, you should answer them thus:
+sn45.41:1.7 | S: ‘There is a path and a practice for the fading away of greed.’ | T: ‘There is a path, friends, there is a way for the fading away of lust.’
+sn45.41:1.8 | S: And what is that path, what is that practice for the fading away of greed? | T: “And what, bhikkhus, is that path, what is that way for the fading away of lust?
+sn45.41:1.9 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.41:1.10 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.41:1.11 | S: This is the path, this is the practice for the fading away of greed. | T: This is the path, this is the way for the fading away of lust.
+sn45.41:1.12 | S: When questioned by wanderers of other religions, that’s how you should answer them.” | T: “Being asked thus, bhikkhus, you should answer those wanderers of other sects in such a way.”
+sn45.41:1.13 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.42-47
+sn45.42-47:1.1 | S: “Mendicants, if wanderers who follow another religion were to ask you: | T: “Bhikkhus, if wanderers of other sects ask you:
+sn45.42-47:1.2 | S: ‘Reverends, what’s the goal of leading the spiritual life under the ascetic Gotama?’ You should answer them like this: | T: ‘For what purpose, friends, is the holy life lived under the ascetic Gotama?’—being asked thus, you should answer them thus:
+sn45.42-47:1.3 | S: ‘The goal of leading the spiritual life under the Buddha is to give up the fetters.’ … | T: ‘It is, friends, for the abandoning of the fetters …
+sn45.42-47:1.4 | S: ‘… to uproot the underlying tendencies.’ … | T: for the uprooting of the underlying tendencies …
+sn45.42-47:1.5 | S: ‘… to completely understand the course of time.’ … | T: for the full understanding of the course …
+sn45.42-47:1.6 | S: ‘… to end the defilements.’ … | T: for the destruction of the taints …
+sn45.42-47:1.7 | S: ‘… to realize the fruit of knowledge and freedom.’ … | T: for the realization of the fruit of true knowledge and liberation …
+sn45.42-47:1.8 | S: ‘… for knowledge and vision.’ …” | T: for the sake of knowledge and vision … … for the sake of final Nibbāna without clinging that the holy life is lived under the Blessed One.’ “Then, bhikkhus, if the wanderers of other sects ask you: ‘But, friends, is there a path, is there a way for attaining final Nibbāna without clinging?’—being asked thus, you should answer them thus: ‘There is a path, friends, there is a way for attaining final Nibbāna without clinging.’ “And what, bhikkhus, is that path, what is that way for attaining final Nibbāna without clinging? It is this Noble Eightfold Path; that is, right view … right concentration. This is the path, this is the way for attaining final Nibbāna without clinging. “Being asked thus, bhikkhus, you should answer those wanderers of other sects in such a way.”
+sn45.42-47:1.9 | P: Sattamaṁ. | T: (none)
+
+## sn45.49
+sn45.49:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.49:1.2 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn45.49:1.3 | S: In the same way good friendship is the forerunner and harbinger of the noble eightfold path for a mendicant. | T: So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, good friendship.
+sn45.49:1.4 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate this Noble Eightfold Path.
+sn45.49:1.5 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.49:1.6 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.49:1.7 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.49:1.8 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.55
+sn45.55:1.1 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn45.55:1.2 | S: In the same way accomplishment in rational application of mind is the forerunner and harbinger of the noble eightfold path for a mendicant. | T: So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, accomplishment in virtue … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … … accomplishment in careful attention.
+sn45.55:1.3 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu is accomplished in careful attention, it is to be expected that he will develop and cultivate this Noble Eightfold Path.
+sn45.55:1.4 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who is accomplished in careful attention develop and cultivate the Noble Eightfold Path?
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn45.55:1.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.55:1.6 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.55:1.7 | P: Sattamaṁ. | T: (none)
+
+## sn45.56
+sn45.56:1.1 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn45.56:1.2 | S: In the same way good friendship is the forerunner and harbinger of the noble eightfold path for a mendicant. | T: So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, good friendship.
+sn45.56:1.3 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate this Noble Eightfold Path.
+sn45.56:1.4 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.56:1.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion.
+sn45.56:1.6 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.56:1.7 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.5
+sn45.5:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.5:1.2 | S: Then several mendicants went up to the Buddha … and said to him: | T: Then a number of bhikkhus approached the Blessed One…. Sitting to one side, those bhikkhus said to the Blessed One:
+sn45.5:2.1 | S: “Sir, sometimes wanderers of other religions ask us: | T: “Here, venerable sir, wanderers of other sects ask us:
+sn45.5:2.2 | S: ‘Reverends, what’s the goal of leading the spiritual life under the ascetic Gotama?’ | T: ‘For what purpose, friends, is the holy life lived under the ascetic Gotama?’
+sn45.5:2.3 | S: We answer them like this: | T: When we are asked thus, venerable sir, we answer those wanderers thus:
+sn45.5:2.4 | S: ‘The goal of leading the spiritual life under the Buddha is to completely understand suffering.’ | T: ‘It is, friends, for the full understanding of suffering that the holy life is lived under the Blessed One.’
+sn45.5:2.5 | S: Answering this way, we trust that we repeat what the Buddha has said, and don’t misrepresent him with an untruth. We trust our explanation is in line with the teaching, and that there are no legitimate grounds for rebuttal or criticism.” | T: We hope, venerable sir, that when we answer thus we state what has been said by the Blessed One and do not misrepresent him with what is contrary to fact; that we explain in accordance with the Dhamma, and that no reasonable consequence of our assertion gives ground for criticism.”
+sn45.5:3.1 | S: “Indeed, in answering this way you repeat what I’ve said, and don’t misrepresent me with an untruth. Your explanation is in line with the teaching, and there are no legitimate grounds for rebuttal or criticism. | T: “Surely, bhikkhus, when you answer thus you state what has been said by me and do not misrepresent me with what is contrary to fact; you explain in accordance with the Dhamma, and no reasonable consequence of your assertion gives ground for criticism.
+sn45.5:3.2 | S: For the goal of leading the spiritual life under me is to completely understand suffering. | T: For, bhikkhus, it is for the full understanding of suffering that the holy life is lived under me.
+sn45.5:3.3 | S: If wanderers of other religions were to ask you: | T: “If, bhikkhus, wanderers of other sects ask you:
+sn45.5:3.4 | S: ‘Is there a path and a practice for completely understanding that suffering?’ You should answer them like this: | T: ‘But, friends, is there a path, is there a way for the full understanding of this suffering? ’—being asked thus, you should answer them thus:
+sn45.5:3.5 | S: ‘There is.’ | T: ‘There is a path, friends, there is a way for the full understanding of this suffering.’
+sn45.5:4.1 | S: And what is that path? | T: “And what, bhikkhus, is that path, what is that way for the full understanding of this suffering?
+sn45.5:4.2 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.5:4.3 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.5:4.4 | S: This is the path and the practice for completely understanding suffering. | T: This is the path, this is the way for the full understanding of this suffering.
+sn45.5:4.5 | S: When questioned by wanderers of other religions, that’s how you should answer them.” | T: “Being asked thus, bhikkhus, you should answer those wanderers of other sects in such a way.”
+sn45.5:4.6 | P: Pañcamaṁ. | T: (none)
+
+## sn45.62
+sn45.62:1.1 | S: “… accomplishment in rational application of mind. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn. So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, accomplishment in virtue … … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … accomplishment in careful attention.
+sn45.62:1.2 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu is accomplished in careful attention, it is to be expected that he will develop and cultivate this Noble Eightfold Path.
+sn45.62:1.3 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who is accomplished in careful attention develop and cultivate the Noble Eightfold Path?
+sn45.62:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion.
+sn45.62:1.5 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.62:1.6 | P: Sattamaṁ. | T: (none)
+sn45.62:1.7 | P: Sūriyapeyyālaṁ. | T: (none)
+sn45.62:2.0 | P: Tassuddānaṁ | T: (none)
+sn45.62:2.1 | P: Kalyāṇamittaṁ sīlañca, | T: (none)
+sn45.62:2.2 | P: chando ca attasampadā; | T: (none)
+sn45.62:2.3 | P: Diṭṭhi ca appamādo ca, | T: (none)
+sn45.62:2.4 | P: yoniso bhavati sattamaṁ. | T: (none)
+
+## sn45.63
+sn45.63:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.63:1.2 | S: “Mendicants, one thing helps give rise to the noble eightfold path. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path.
+sn45.63:1.3 | S: What one thing? | T: What one thing?
+sn45.63:1.4 | S: It’s good friendship. | T: Good friendship.
+sn45.63:1.5 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the Noble Eightfold Path.
+sn45.63:1.6 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.63:1.7 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.63:1.8 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.63:1.9 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.64-68
+sn45.64-68:1.1 | S: “Mendicants, one thing helps give rise to the noble eightfold path. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path.
+sn45.64-68:1.2 | S: What one thing? | T: What one thing?
+sn45.64-68:1.3 | S: It’s accomplishment in ethics. …” | T: Accomplishment in virtue …
+sn45.64-68:1.4 | S: “… accomplishment in enthusiasm …” | T: Accomplishment in desire …
+sn45.64-68:1.5 | S: “… accomplishment in self-development …” | T: Accomplishment in self …
+sn45.64-68:1.6 | S: “… accomplishment in view …” | T: Accomplishment in view …
+sn45.64-68:1.7 | S: “… accomplishment in diligence …” | T: Accomplishment in diligence … Accomplishment in careful attention … complete as in §63 … He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release. It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.64-68:1.8 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn45.6
+sn45.6:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.6:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain bhikkhu approached the Blessed One…. Sitting to one side, that bhikkhu said to the Blessed One:
+sn45.6:1.3 | S: “Sir, they speak of this thing called the ‘spiritual path’. | T: “Venerable sir, it is said, ‘the holy life, the holy life.’
+sn45.6:1.4 | S: What is the spiritual path? And what is the culmination of the spiritual path?” | T: What, venerable sir, is the holy life? What is the final goal of the holy life?”
+sn45.6:2.1 | S: “Mendicant, the spiritual path is simply this noble eightfold path, that is: | T: “This Noble Eightfold Path, bhikkhu, is the holy life; that is,
+sn45.6:2.2 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.6:2.3 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion:
+sn45.6:2.4 | S: This is the culmination of the spiritual path.” | T: this is the final goal of the holy life.”
+sn45.6:2.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn45.70
+sn45.70:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.70:1.2 | S: “Mendicants, one thing helps give rise to the noble eightfold path. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path.
+sn45.70:1.3 | S: What one thing? | T: What one thing?
+sn45.70:1.4 | S: It’s good friendship. | T: Good friendship.
+sn45.70:1.5 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the Noble Eightfold Path.
+sn45.70:1.6 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.70:1.7 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion.
+sn45.70:1.8 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.70:1.9 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.84
+sn45.84:1.1 | S: “Mendicants, I do not see a single thing that gives rise to the noble eightfold path, or, if it’s already arisen, fully develops it like good friendship. | T: “Bhikkhus, I do not see even one other thing by means of which the unarisen Noble Eightfold Path arises and the arisen Noble Eightfold Path goes to fulfilment by development so effectively as by this: good friendship.
+sn45.84:1.2 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the Noble Eightfold Path.
+sn45.84:1.3 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.84:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion.
+sn45.84:1.5 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.84:1.6 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.8
+sn45.8:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.8:1.2 | S: “Mendicants, I will teach and analyze for you the noble eightfold path. | T: “Bhikkhus, I will teach you the Noble Eightfold Path and I will analyse it for you.
+sn45.8:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn45.8:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn45.8:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn45.8:2.1 | S: “And what is the noble eightfold path? | T: “And what, bhikkhus, is the Noble Eightfold Path?
+sn45.8:2.2 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: Right view … right concentration.
+sn45.8:3.1 | S: And what is right view? | T: “And what, bhikkhus, is right view?
+sn45.8:3.2 | S: Knowing about suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: Knowledge of suffering, knowledge of the origin of suffering, knowledge of the cessation of suffering, knowledge of the way leading to the cessation of suffering:
+sn45.8:3.3 | S: This is called right view. | T: this is called right view.
+sn45.8:4.1 | S: And what is right purpose? | T: “And what, bhikkhus, is right intention?
+sn45.8:4.2 | S: The purpose of renunciation, good will, and harmlessness. | T: Intention of renunciation, intention of non-ill will, intention of harmlessness:
+sn45.8:4.3 | S: This is called right purpose. | T: this is called right intention.
+sn45.8:5.1 | S: And what is right speech? | T: “And what, bhikkhus, is right speech?
+sn45.8:5.2 | S: Refraining from speech that’s false, backbiting, harsh, or nonsensical. | T: Abstinence from false speech, abstinence from divisive speech, abstinence from harsh speech, abstinence from idle chatter:
+sn45.8:5.3 | S: This is called right speech. | T: this is called right speech.
+sn45.8:6.1 | S: And what is right action? | T: “And what, bhikkhus, is right action?
+sn45.8:6.2 | S: Refraining from killing living creatures, stealing, and unchastity. | T: Abstinence from the destruction of life, abstinence from taking what is not given, abstinence from sexual misconduct:
+sn45.8:6.3 | S: This is called right action. | T: this is called right action.
+sn45.8:7.1 | S: And what is right livelihood? | T: “And what, bhikkhus, is right livelihood?
+sn45.8:7.2 | S: It’s when a noble disciple gives up wrong livelihood and earns a living by right livelihood. | T: Here a noble disciple, having abandoned a wrong mode of livelihood, earns his living by a right livelihood:
+sn45.8:7.3 | S: This is called right livelihood. | T: this is called right livelihood.
+sn45.8:8.1 | S: And what is right effort? | T: “And what, bhikkhus, is right effort?
+sn45.8:8.2 | S: It’s when a mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. | T: Here, bhikkhus, a bhikkhu generates desire for the nonarising of unarisen evil unwholesome states; he makes an effort, arouses energy, applies his mind, and strives.
+sn45.8:8.3 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities that have arisen are given up. | T: He generates desire for the abandoning of arisen evil unwholesome states….
+sn45.8:8.4 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities arise. | T: He generates desire for the arising of unarisen wholesome states….
+sn45.8:8.5 | S: They generate enthusiasm, try, make an effort, exert the mind, and strive so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. | T: He generates desire for the maintenance of arisen wholesome states, for their nondecay, increase, expansion, and fulfilment by development; he makes an effort, arouses energy, applies his mind, and strives.
+sn45.8:8.6 | S: This is called right effort. | T: This is called right effort.
+sn45.8:9.1 | S: And what is right mindfulness? | T: “And what, bhikkhus is right mindfulness?
+sn45.8:9.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn45.8:9.3 | S: They meditate observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: He dwells contemplating feelings in feelings, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn45.8:9.4 | S: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: He dwells contemplating mind in mind, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn45.8:9.5 | S: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: He dwells contemplating phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn45.8:9.6 | S: This is called right mindfulness. | T: This is called right mindfulness.
+sn45.8:10.1 | S: And what is right immersion? | T: “And what, bhikkhus, is right concentration?
+sn45.8:10.2 | S: It’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Here, bhikkhus, secluded from sensual pleasures, secluded from unwholesome states, a bhikkhu enters and dwells in the first jhana, which is accompanied by thought and examination, with rapture and happiness born of seclusion.
+sn45.8:10.3 | S: As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: With the subsiding of thought and examination, he enters and dwells in the second jhana, which has internal confidence and unification of mind, is without thought and examination, and has rapture and happiness born of concentration.
+sn45.8:10.4 | S: And with the fading away of rapture, they enter and remain in the third absorption, where they meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, ‘Equanimous and mindful, one meditates in bliss.’ | T: With the fading away as well of rapture, he dwells equanimous and, mindful and clearly comprehending, he experiences happiness with the body; he enters and dwells in the third jhana of which the noble ones declare: ‘He is equanimous, mindful, one who dwells happily.’
+sn45.8:10.5 | S: With the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: With the abandoning of pleasure and pain, and with the previous passing away of joy and displeasure, he enters and dwells in the fourth jhana, which is neither painful nor pleasant and includes the purification of mindfulness by equanimity.
+sn45.8:10.6 | S: This is called right immersion.” | T: This is called right concentration.”
+sn45.8:10.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn45.91
+sn45.91:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.91:1.2 | S: “Mendicants, the Ganges River slants, slopes, and inclines to the east. | T: “Bhikkhus, just as the river Ganges slants, slopes, and inclines towards the east,
+sn45.91:1.3 | S: In the same way, a mendicant who develops and cultivates the noble eightfold path slants, slopes, and inclines to extinguishment. | T: so too a bhikkhu who develops and cultivates the Noble Eightfold Path slants, slopes, and inclines towards Nibbāna.
+sn45.91:1.4 | S: And how does a mendicant who develops the noble eightfold path slant, slope, and incline to extinguishment? | T: “And how, bhikkhus, does a bhikkhu develop and cultivate the Noble Eightfold Path so that he slants, slopes, and inclines towards Nibbāna?
+sn45.91:1.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.91:1.6 | S: That’s how a mendicant who develops and cultivates the noble eightfold path slants, slopes, and inclines to extinguishment.” | T: It is in this way, bhikkhus, that a bhikkhu develops and cultivates the Noble Eightfold Path so that he slants, slopes, and inclines towards Nibbāna.”
+sn45.91:1.7 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.92-95
+sn45.92-95:1.1 | S: “Mendicants, the Yamunā River slants, slopes, and inclines to the east. …” | T: “Bhikkhus, just as the river Yamuna … … the river Aciravati … the river Sarabhū… the river Mahī … whatever great rivers there are—that is, the Ganges, the Yamuna,
+sn45.92-95:1.2 | P: evameva kho, bhikkhave …pe… | T: (none)
+sn45.92-95:1.3 | S: “… the Aciravatī River …” | T: the Aciravati,
+sn45.92-95:1.4 | P: evameva kho, bhikkhave …pe… | T: (none)
+sn45.92-95:1.5 | S: “… the Sarabhū River …” | T: the Sarabhū,
+sn45.92-95:1.6 | P: evameva kho, bhikkhave …pe… | T: (none)
+sn45.92-95:1.7 | S: “… the Mahī River …” | T: the Mahī—all slant, slope, and incline towards the east, so too a bhikkhu who develops and cultivates the Noble Eightfold Path slants, slopes, and inclines towards Nibbāna.” Complete as in §91.
+sn45.92-95:1.8 | P: Pañcamaṁ. | T: (none)
+
+## sn45.97
+sn45.97:1.1 | S: “Mendicants, the Ganges River slants, slopes, and inclines to the ocean. | T: “Bhikkhus, just as the river Ganges … … whatever great rivers there are … all slant, slope, and incline towards the ocean,
+sn45.97:1.2 | S: In the same way, a mendicant who develops the noble eightfold path slants, slopes, and inclines to extinguishment. …” | T: so too a bhikkhu who develops and cultivates the Noble Eightfold Path slants, slopes, and inclines towards Nibbāna.”
+sn45.97:1.3 | P: Kathañca, bhikkhave, bhikkhu ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvento ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro? | T: (none)
+sn45.97:1.4 | P: Idha, bhikkhave, bhikkhu sammādiṭṭhiṁ bhāveti vivekanissitaṁ …pe… sammāsamādhiṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. | T: Complete as in §§91–96.
+sn45.97:1.5 | P: Evaṁ kho, bhikkhave, bhikkhu ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvento ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro”ti. | T: (none)
+sn45.97:1.6 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found one misplaced verse boundary and three river-list items. I’m checking the exact wording before writing the findings.
+exec
+/bin/bash -lc "sed -n '85,112p;411,429p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn45.34:6.4 | S: of mental corruptions. | T: of mental defilements.
+sn45.34:7.1 | S: And those whose minds are rightly developed | T: “Those whose minds are well developed
+sn45.34:7.2 | S: in the awakening factors; | T: In the factors of enlightenment,
+sn45.34:7.3 | S: who, letting go of attachments, | T: Who through nonclinging find delight
+sn45.34:7.4 | S: delight in not grasping— | T: In the relinquishment of grasping:
+sn45.34:7.5 | S: with defilements ended, brilliant, | T: Those luminous ones with taints destroyed
+sn45.34:7.6 | S: they are quenched in this world.” | T: Are fully quenched in the world.”
+sn45.34:7.7 | P: Catutthaṁ. | T: (none)
+
+## sn45.35
+sn45.35:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.35:1.2 | S: “Mendicants, I will teach you the ascetic life and the fruits of the ascetic life. | T: “Bhikkhus, I will teach you asceticism and the fruits of asceticism.
+sn45.35:1.3 | S: Listen … | T: Listen to that….
+sn45.35:1.4 | S: And what is the ascetic life? | T: “And what, bhikkhus, is asceticism?
+sn45.35:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+sn45.35:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration.
+sn45.35:1.7 | S: This is called the ascetic life. | T: This is called asceticism.
+sn45.35:1.8 | S: And what are the fruits of the ascetic life? | T: “And what, bhikkhus, are the fruits of asceticism?
+sn45.35:1.9 | S: The fruits of stream-entry, once-return, non-return, and perfection. | T: The fruit of stream-entry, the fruit of once-returning, the fruit of nonreturning, the fruit of arahantship.
+sn45.35:1.10 | S: These are called the fruits of the ascetic life.” | T: These are called the fruits of asceticism.”
+sn45.35:1.11 | P: Pañcamaṁ. | T: (none)
+
+## sn45.36
+sn45.36:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.36:1.2 | S: “Mendicants, I will teach you the ascetic life and the goal of the ascetic life. | T: “Bhikkhus, I will teach you asceticism and the goal of asceticism.
+sn45.36:1.3 | S: Listen … | T: Listen to that….
+sn45.36:1.4 | S: And what is the ascetic life? | T: “And what, bhikkhus, is asceticism?
+sn45.36:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is,
+
+exec
+/bin/bash -lc "rg '"'^sn45'"\\.(34:6\\.[123]|92-95:1\\.[1357]) ' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn45.34:6.1 | S: they’d long for satisfaction there. | T: “There in seclusion he should seek delight,
+sn45.34:6.2 | S: Forsaking sensual pleasures, owning nothing, | T: Having left behind sensual pleasures. Owning nothing, the wise man
+sn45.34:6.3 | S: an astute person would cleanse themselves | T: Should cleanse himself
+sn45.92-95:1.1 | S: “Mendicants, the Yamunā River slants, slopes, and inclines to the east. …” | T: “Bhikkhus, just as the river Yamuna … … the river Aciravati … the river Sarabhū… the river Mahī … whatever great rivers there are—that is, the Ganges, the Yamuna,
+sn45.92-95:1.3 | S: “… the Aciravatī River …” | T: the Aciravati,
+sn45.92-95:1.5 | S: “… the Sarabhū River …” | T: the Sarabhū,
+sn45.92-95:1.7 | S: “… the Mahī River …” | T: the Mahī—all slant, slope, and incline towards the east, so too a bhikkhu who develops and cultivates the Noble Eightfold Path slants, slopes, and inclines towards Nibbāna.” Complete as in §91.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-082.findings.tmp <<'EOF'
+sn45.34:6.3 starts: the wise man Should cleanse himself
+sn45.92-95:1.3 starts: the river Aciravati … the river Sarabhū…
+sn45.92-95:1.5 starts: the river Sarabhū… the river Mahī …
+sn45.92-95:1.7 starts: the river Mahī … whatever great rivers
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+4 lines reported.
+tokens used
+27,277
+4 lines reported.

@@ -1,0 +1,559 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd84-e04e-7bd1-872d-5f7742accf8a
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.2
+sn22.2:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.2:1.2 | S: At one time the Buddha was staying in the land of the Sakyans, where they have a town named Devadaha. | T: On one occasion the Blessed One was dwelling among the Sakyans where there was a town of the Sakyans named Devadaha.
+sn22.2:1.3 | S: Then several mendicants who were heading for the west went up to the Buddha, bowed, sat down to one side, and said to him, | T: Then a number of westward-bound bhikkhus approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn22.2:1.4 | S: “Sir, we wish to go to a western land to take up residence there.” | T: “Venerable sir, we wish to go to the western province in order to take up residence there.”
+sn22.2:2.1 | S: “But mendicants, have you taken leave of Sāriputta?” | T: “Have you taken leave of Sāriputta, bhikkhus?”
+sn22.2:2.2 | S: “No, sir, we haven’t.” | T: “No, venerable sir.”
+sn22.2:2.3 | S: “You should take leave of Sāriputta. | T: “Then take leave of Sāriputta, bhikkhus.
+sn22.2:2.4 | S: He’s astute, and supports his spiritual companions, the mendicants.” | T: Sāriputta is wise, he is one who helps his brothers in the holy life.”
+sn22.2:2.5 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn22.2:3.1 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha in a clump of golden shower trees. | T: Now on that occasion the Venerable Sāriputta was sitting not far from the Blessed One in a cassia bush.
+sn22.2:3.2 | S: And then those mendicants approved and agreed with what the Buddha said. They got up from their seat, bowed and respectfully circled the Buddha, keeping him on their right. Then they went up to Venerable Sāriputta, and exchanged greetings with him. | T: Then those bhikkhus, having delighted and rejoiced in the Blessed One’s statement, rose from their seats and paid homage to the Blessed One. Then, keeping him on their right, they approached the Venerable Sāriputta. They exchanged greetings with the Venerable Sāriputta and,
+sn22.2:3.3 | S: When the greetings and polite conversation were over, they sat down to one side and said to him, | T: when they had concluded their greetings and cordial talk, they sat down to one side and said to him:
+sn22.2:3.4 | S: “Reverend Sāriputta, we wish to go to a western land to take up residence there. | T: “Friend Sāriputta, we wish to go to the western province in order to take up residence there.
+sn22.2:3.5 | S: We have taken leave of the Teacher.” | T: We have taken leave of the Teacher.”
+sn22.2:4.1 | S: “Reverends, there are those who question a mendicant who has gone abroad— | T: “Friends, there are wise khattiyas, wise brahmins, wise householders, and wise ascetics who question a bhikkhu when he has gone abroad —
+sn22.2:4.2 | S: astute aristocrats, brahmins, householders, and ascetics— | T: (none)
+sn22.2:4.3 | S: for astute people are inquisitive: | T: for wise people, friends, are inquisitive:
+sn22.2:4.4 | S: ‘But what does the venerables’ Teacher teach? What does he explain?’ I trust the venerables have properly heard, learned, applied the mind, and remembered the teachings, and penetrated them with wisdom. That way, when answering you will repeat what the Buddha has said and not misrepresent him with an untruth. You will explain in line with the teaching, with no legitimate grounds for rebuttal and criticism.” | T: ‘What does your teacher say, what does he teach?’ I hope that you venerable ones have learned the teachings well, grasped them well, attended to them well, reflected on them well, and penetrated them well with wisdom, so that when you answer you will state what has been said by the Blessed One and will not misrepresent him with what is contrary to fact; so that you will explain in accordance with the Dhamma, and no reasonable consequence of your assertion would give ground for criticism.”
+sn22.2:5.1 | S: “Reverend, we would travel a long way to learn the meaning of this statement in the presence of Venerable Sāriputta. | T: “We would come from far away, friend, to learn the meaning of this statement from the Venerable Sāriputta.
+sn22.2:5.2 | S: May Venerable Sāriputta himself please clarify the meaning of this.” | T: It would be good indeed if the Venerable Sāriputta would clear up the meaning of this statement.”
+sn22.2:5.3 | S: “Well then, reverends, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, friends, I will speak.”
+sn22.2:5.4 | S: “Yes, reverend,” they replied. | T: “Yes, friend,” those bhikkhus replied.
+sn22.2:5.5 | S: Sāriputta said this: | T: The Venerable Sāriputta said this:
+sn22.2:6.1 | S: “Reverends, there are those who question a mendicant who has gone abroad— | T: “There are, friends,
+sn22.2:6.2 | S: astute aristocrats, brahmins, householders, and ascetics— | T: wise khattiyas, wise brahmins, wise householders, and wise ascetics who question a bhikkhu when he has gone abroad—
+sn22.2:6.3 | S: for astute people are inquisitive: | T: for wise people, friends, are inquisitive:
+sn22.2:6.4 | S: ‘But what does the venerables’ Teacher teach? What does he explain?’ | T: ‘What does your teacher say, what does he teach?’
+sn22.2:6.5 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer:
+sn22.2:6.6 | S: ‘Reverend, our Teacher explained the removal of desire and lust.’ | T: ‘Our teacher, friends, teaches the removal of desire and lust.’
+sn22.2:7.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:7.2 | P: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. | T: (none)
+sn22.2:7.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:7.4 | S: ‘But regarding what does the venerables’ teacher explain the removal of desire and lust?’ | T: ‘In regard to what does your teacher teach the removal of desire and lust?’
+sn22.2:7.5 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer:
+sn22.2:7.6 | S: ‘Our teacher explains the removal of desire and lust for form, | T: ‘Our teacher, friends, teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:7.7 | S: feeling, | T: (none)
+sn22.2:7.8 | S: perception, | T: perception …
+sn22.2:7.9 | S: choices, | T: volitional formations …
+sn22.2:7.10 | S: and consciousness.’ | T: consciousness. ’
+sn22.2:8.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:8.2 | P: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. | T: (none)
+sn22.2:8.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:8.4 | S: ‘But what drawback has he seen that he teaches the removal of desire and lust for form, | T: ‘Having seen what danger does your teacher teach the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:8.5 | S: feeling, | T: (none)
+sn22.2:8.6 | S: perception, | T: perception …
+sn22.2:8.7 | S: choices, | T: volitional formations …
+sn22.2:8.8 | S: and consciousness?’ | T: consciousness?’
+sn22.2:8.9 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer thus:
+sn22.2:8.10 | S: ‘If you’re not free of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. | T: ‘If, friends, one is not devoid of lust, desire, affection, thirst, passion, and craving in regard to form, then with the change and alteration of form there arise in one sorrow, lamentation, pain, displeasure, and despair.
+sn22.2:8.11 | S: If you’re not free of greed, desire, fondness, thirst, passion, and craving for feeling … | T: If, friends, one is not devoid of lust, desire, affection, thirst, passion, and craving in regard to feeling …
+sn22.2:8.12 | S: perception … | T: perception …
+sn22.2:8.13 | S: choices … | T: volitional formations …
+sn22.2:8.14 | P: avigatataṇhassa tesaṁ saṅkhārānaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. | T: (none)
+sn22.2:8.15 | S: consciousness, when that consciousness decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. | T: consciousness, then with the change and alteration of consciousness there arise in one sorrow, lamentation, pain, displeasure, and despair.
+sn22.2:8.16 | S: This is the drawback our Teacher has seen that he teaches the removal of desire and lust for form, | T: Having seen this danger, our teacher teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:8.17 | S: feeling, | T: (none)
+sn22.2:8.18 | S: perception, | T: perception …
+sn22.2:8.19 | S: choices, | T: volitional formations …
+sn22.2:8.20 | S: and consciousness.’ | T: consciousness. ’
+sn22.2:9.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:9.2 | P: khattiyapaṇḍitāpi brāhmaṇapaṇḍitāpi gahapatipaṇḍitāpi samaṇapaṇḍitāpi. | T: (none)
+sn22.2:9.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:9.4 | S: ‘But what benefit has he seen that he teaches the removal of desire and lust for form, | T: ‘Having seen what benefit does your teacher teach the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:9.5 | S: feeling, | T: (none)
+sn22.2:9.6 | S: perception, | T: perception …
+sn22.2:9.7 | S: choices, | T: volitional formations …
+sn22.2:9.8 | S: and consciousness?’ | T: consciousness?’
+sn22.2:9.9 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer thus:
+sn22.2:9.10 | S: ‘If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: ‘If, friends, one is devoid of lust, desire, affection, thirst, passion, and craving in regard to form, then with the change and alteration of form sorrow, lamentation, pain, displeasure, and despair do not arise in one.
+sn22.2:9.11 | S: If you are rid of greed, desire, fondness, thirst, passion, and craving for feeling … | T: If one is devoid of lust, desire, affection, thirst, passion, and craving in regard to feeling …
+sn22.2:9.12 | S: perception … | T: perception …
+sn22.2:9.13 | S: choices … | T: volitional formations …
+sn22.2:9.14 | S: consciousness, when that consciousness decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: consciousness, then with the change and alteration of consciousness sorrow, lamentation, pain, displeasure, and despair do not arise in one.
+sn22.2:9.15 | S: This is the benefit our Teacher has seen that he teaches the removal of desire and lust for form, feeling, | T: Having seen this benefit, our teacher teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:9.16 | S: perception, | T: perception …
+sn22.2:9.17 | S: choices, | T: volitional formations …
+sn22.2:9.18 | S: and consciousness.’ | T: consciousness.’
+sn22.2:10.1 | S: If those who acquired and kept unskillful qualities were to live happily in the present life, free of distress, anguish, and fever; and if, when their body breaks up, after death, they could expect to go to a good place, the Buddha would not praise giving up unskillful qualities. | T: “If, friends, one who enters and dwells amidst unwholesome states could dwell happily in this very life, without vexation, despair, and fever, and if, with the breakup of the body, after death, he could expect a good destination, then the Blessed One would not praise the abandoning of unwholesome states.
+sn22.2:10.2 | S: But since those who acquire and keep unskillful qualities live unhappily in the present life, full of distress, anguish, and fever; and since, when their body breaks up, after death, they can expect to go to a bad place, the Buddha praises giving up unskillful qualities. | T: But because one who enters and dwells amidst unwholesome states dwells in suffering in this very life, with vexation, despair, and fever, and because he can expect a bad destination with the breakup of the body, after death, the Blessed One praises the abandoning of unwholesome states.
+sn22.2:11.1 | S: If those who embraced and kept skillful qualities were to live unhappily in the present life, full of distress, anguish, and fever; and if, when their body breaks up, after death, they could expect to go to a bad place, the Buddha would not praise embracing skillful qualities. | T: “If, friends, one who enters and dwells amidst wholesome states would dwell in suffering in this very life, with vexation, despair, and fever, and if, with the breakup of the body, after death, he could expect a bad destination, then the Blessed One would not praise the acquisition of wholesome states.
+sn22.2:11.2 | S: But since those who embrace and keep skillful qualities live happily in the present life, free of distress, anguish, and fever; and since, when their body breaks up, after death, they can expect to go to a good place, the Buddha praises embracing skillful qualities.” | T: But because one who enters and dwells amidst wholesome states dwells happily in this very life, without vexation, despair, and fever, and because he can expect a good destination with the breakup of the body, after death, the Blessed One praises the acquisition of wholesome states.”
+sn22.2:12.1 | S: That is what Venerable Sāriputta said. | T: This is what the Venerable Sāriputta said.
+sn22.2:12.2 | S: Satisfied, the mendicants approved what Sāriputta said. | T: Elated, those bhikkhus delighted in the Venerable Sāriputta’s statement.
+sn22.2:12.3 | P: Dutiyaṁ. | T: (none)
+
+## sn44.6
+sn44.6:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: On one occasion the Venerable Sāriputta and the Venerable Mahakoṭṭhita were dwelling at Baraṇasī in the Deer Park at Isipatana.
+sn44.6:1.2 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākoṭṭhita, and they greeted each other. | T: Then, in the evening, the Venerable Sāriputta emerged from seclusion and approached the Venerable Mahakoṭṭhita.
+sn44.6:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākoṭṭhita: | T: He exchanged greetings with the Venerable Mahakoṭṭhita and, when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn44.6:1.4 | S: “Reverend Koṭṭhita, does a realized one still exist after death?” … | T: “How is it, friend Koṭṭhita, does the Tathagata exist after death?”
+sn44.6:1.5 | S: “Reverend, when asked these questions, you say that this has not been declared by the Buddha. | T: (none)
+sn44.6:1.6 | P: ‘etampi kho, āvuso, abyākataṁ bhagavatā— | T: All as above down to:
+sn44.6:1.7 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.6:1.8 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: “What now, friend, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.6:2.1 | S: “Reverend, if you like, love, and enjoy form, and don’t truly see the cessation of form, you think ‘a realized one still exists after death’ or | T: i. Delight in the aggregates “Friend, it is one who delights in form, who takes delight in form, who rejoices in form, and who does not know and see the cessation of form as it really is, that thinks: ‘The Tathagata exists after death’ … or
+sn44.6:2.2 | S: ‘a realized one no longer exists after death’ or | T: (none)
+sn44.6:2.3 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.6:2.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:2.5 | S: If you like, love, and enjoy feeling … | T: It is one who delights in feeling …
+sn44.6:2.6 | S: perception … | T: who delights in perception …
+sn44.6:2.7 | S: choices … | T: who delights in volitional formations …
+sn44.6:2.8 | S: consciousness, and don’t truly see the cessation of consciousness, you think ‘a realized one still exists after death’ … | T: who delights in consciousness, who takes delight in consciousness, who rejoices in consciousness, and who does not know and see the cessation of consciousness as it really is, that thinks: ‘The Tathagata exists after death’ …
+sn44.6:2.9 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:3.1 | S: If you don’t like, love, and enjoy form … | T: “But, friend, one who does not delight in form …
+sn44.6:3.2 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. | T: (none)
+sn44.6:3.3 | S: feeling … | T: who does not delight in feeling …
+sn44.6:3.4 | S: perception … | T: who does not delight in perception …
+sn44.6:3.5 | S: choices … | T: who does not delight in volitional formations …
+sn44.6:3.6 | S: consciousness, and you truly see the cessation of consciousness, you don’t think ‘a realized one still exists after death’ … | T: who does not delight in consciousness, who does not take delight in consciousness, who does not rejoice in consciousness, and who knows and sees the cessation of consciousness as it really is, does not think: ‘The Tathagata exists after death’ …
+sn44.6:3.7 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:3.8 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.6:4.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: ii. Delight in existence “But, friend, could there be another method of explaining why this has not been declared by the Blessed One?”
+sn44.6:4.2 | S: “There could, reverend. | T: “There could be, friend.
+sn44.6:4.3 | S: If you like, love, and enjoy existence, and don’t truly see the cessation of continued existence, you think ‘a realized one still exists after death’ … | T: It is one who delights in existence, who takes delight in existence, who rejoices in existence, and who does not know and see the cessation of existence as it really is, that thinks: ‘The Tathagata exists after death’ … or
+sn44.6:4.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:4.5 | S: If you don’t like, love, and enjoy existence, and you truly see the cessation of continued existence, you don’t think ‘a realized one still exists after death’ … | T: “But, friend, one who does not delight in existence, who does not take delight in existence, who does not rejoice in existence, and who knows and sees the cessation of existence as it really is, does not think: ‘The Tathagata exists after death’ …
+sn44.6:4.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:4.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.6:5.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: iii. Delight in clinging “But, friend, could there be another method of explaining why this has not been declared by the Blessed One?”
+sn44.6:5.2 | S: “There could, reverend. | T: “There could be, friend.
+sn44.6:5.3 | S: If you like, love, and enjoy grasping, and don’t truly see the cessation of grasping, you think ‘a realized one still exists after death’ … | T: It is one who delights in clinging, who takes delight in clinging, who rejoices in clinging, and who does not know and see the cessation of clinging as it really is, that thinks: ‘The Tathagata exists after death’ …
+sn44.6:5.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:5.5 | S: If you don’t like, love, and enjoy grasping, and you truly see the cessation of grasping, you don’t think ‘a realized one still exists after death’ … | T: “But, friend, one who does not delight in clinging, who does not take delight in clinging, who does not rejoice in clinging, and who knows and sees the cessation of clinging as it really is, does not think: ‘The Tathagata exists after death’ …
+sn44.6:5.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:5.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.6:6.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: iv. Delight in craving “But, friend, could there be another method of explaining why this has not been declared by the Blessed One?”
+sn44.6:6.2 | S: “There could, reverend. | T: “There could be, friend.
+sn44.6:6.3 | S: If you like, love, and enjoy craving, and don’t truly see the cessation of craving, you think ‘a realized one still exists after death’ … | T: It is one who delights in craving, who takes delight in craving, who rejoices in craving, and who does not know and see the cessation of craving as it really is, that thinks: ‘The Tathagata exists after death’ …
+sn44.6:6.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:6.5 | S: If you don’t like, love, and enjoy craving, and you truly see the cessation of craving, you don’t think ‘a realized one still exists after death’ … | T: “But, friend, one who does not delight in craving, who does not take delight in craving, who does not rejoice in craving, and who knows and sees the cessation of craving as it really is, does not think: ‘The Tathagata exists after death’ …
+sn44.6:6.6 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:6.7 | S: This too is a way of explaining why this was not declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.6:7.1 | S: “But reverend, could there be another way of explaining why this was not declared by the Buddha?” | T: v. Another method? “But, friend, could there be another method of explaining why this has not been declared by the Blessed One?”
+sn44.6:7.2 | S: “Seriously, reverend, what more could you want? | T: “Here now, friend Sāriputta, why should you want anything additional to this?
+sn44.6:7.3 | S: For one who is freed due to the ending of craving, there is no cycle of rebirths to be found.” | T: Friend Sāriputta, when a bhikkhu is liberated by the destruction of craving, there is no round for describing him.”
+sn44.6:7.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## an5.47
+an5.47:1.1 | S: “Mendicants, there are these five kinds of wealth. | T: “Bhikkhus, there are these five kinds of wealth.
+an5.47:1.2 | S: What five? | T: What five?
+an5.47:1.3 | S: The wealth of faith, ethics, learning, generosity, and wisdom. | T: The wealth of faith, the wealth of virtuous behavior, the wealth of learning, the wealth of generosity, and the wealth of wisdom.
+an5.47:2.1 | S: And what is the wealth of faith? | T: (1) “And what, bhikkhus, is the wealth of faith?
+an5.47:2.2 | S: It’s when a noble disciple has faith in the Realized One’s awakening: | T: Here, a noble disciple is endowed with faith. He places faith in the enlightenment of the Tathāgata thus:
+an5.47:2.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘The Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.’
+an5.47:2.4 | S: This is called the wealth of faith. | T: This is called the wealth of faith.
+an5.47:3.1 | S: And what is the wealth of ethics? | T: (2) “And what is the wealth of virtuous behavior?
+an5.47:3.2 | S: It’s when a noble disciple doesn’t kill living creatures, steal, commit sexual misconduct, lie, or consume intoxicants of beer, wine, and liquor. | T: Here, a noble disciple abstains from the destruction of life, abstains from taking what is not given, abstains from sexual misconduct, abstains from false speech, abstains from liquor, wine, and intoxicants, the basis for heedlessness.
+an5.47:3.3 | S: This is called the wealth of ethics. | T: This is called the wealth of virtuous behavior.
+an5.47:4.1 | S: And what is the wealth of learning? | T: (3) “And what is the wealth of learning?
+an5.47:4.2 | S: It’s when a noble disciple is very learned, remembering and keeping what they’ve learned. These teachings are good in the beginning, good in the middle, and good in the end, meaningful and well-phrased, describing a spiritual practice that’s totally full and pure. They are very learned in such teachings, remembering them, reciting them, mentally scrutinizing them, and penetrating them theoretically. | T: Here, a noble disciple has learned much, remembers what he has learned, and accumulates what he has learned. Those teachings that are good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing, which proclaim the perfectly complete and pure spiritual life—such teachings as these he has learned much of, retained in mind, recited verbally, mentally investigated, and penetrated well by view.
+an5.47:4.3 | S: This is called the wealth of learning. | T: (none)
+an5.47:5.1 | S: And what is the wealth of generosity? | T: (4) “And what is the wealth of generosity?
+an5.47:5.2 | S: It’s when a noble disciple lives at home with heart rid of the stain of stinginess, freely generous, open-handed, loving to let go, committed to charity, loving to give and to share. | T: Here, a noble disciple dwells at home with a heart devoid of the stain of miserliness, freely generous, openhanded, delighting in relinquishment, devoted to charity, delighting in giving and sharing.
+an5.47:5.3 | S: This is called the wealth of generosity. | T: This is called the wealth of generosity.
+an5.47:6.1 | S: And what is the wealth of wisdom? | T: (5) “And what is the wealth of wisdom?
+an5.47:6.2 | S: It’s when a noble disciple is wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: Here, a noble disciple is wise; he possesses the wisdom that discerns arising and passing away, which is noble and penetrative and leads to the complete destruction of suffering.
+an5.47:6.3 | S: This is called the wealth of wisdom. | T: This is called the wealth of wisdom.
+an5.47:6.4 | S: These are the five kinds of wealth. | T: “These, bhikkhus, are the five kinds of wealth.”
+an5.47:7.1 | S: Whoever has faith in the Realized One, | T: When one has faith in the Tathāgata,
+an5.47:7.2 | S: unwavering and well grounded; | T: unshakable and well established,
+an5.47:7.3 | S: whose ethical conduct is good, | T: and virtuous behavior that is good,
+an5.47:7.4 | S: praised and loved by the noble ones; | T: loved and praised by the noble ones;
+an5.47:8.1 | S: who has confidence in the Saṅgha, | T: when one has confidence in the Saṅgha
+an5.47:8.2 | S: and correct view: | T: and one’s view has been straightened out,
+an5.47:8.3 | S: they’re said to be prosperous, | T: they say that one is not poor,
+an5.47:8.4 | S: their life is not in vain. | T: that one’s life is not lived in vain.
+an5.47:9.1 | S: So let the wise devote themselves | T: Therefore an intelligent person, remembering the Buddhas’ teaching,
+an5.47:9.2 | S: to faith, ethical behavior, | T: should be intent on faith and virtuous behavior,
+an5.47:9.3 | S: confidence, and insight into the teaching, | T: confidence and vision of the Dhamma.
+an5.47:9.4 | S: remembering the instructions of the Buddhas.” | T: (none)
+an5.47:9.5 | P: Sattamaṁ. | T: (none)
+
+## an8.5
+an8.5:1.1 | S: “Mendicants, the eight worldly conditions revolve around the world, and the world revolves around the eight worldly conditions. | T: “Bhikkhus, these eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions.
+an8.5:1.2 | S: What eight? | T: What eight?
+an8.5:1.3 | S: Gain and loss, fame and disgrace, blame and praise, pleasure and pain. | T: Gain and loss, disrepute and fame, blame and praise, and pleasure and pain.
+an8.5:1.4 | S: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions. | T: These eight worldly conditions revolve around the world, and the world revolves around these eight worldly conditions.”
+an8.5:2.1 | S: Gain and loss, fame and disgrace, | T: Gain and loss, disrepute and fame,
+an8.5:2.2 | S: blame and praise, and pleasure and pain. | T: blame and praise, pleasure and pain:
+an8.5:2.3 | S: These qualities among mankind are impermanent, | T: these conditions that people meet are impermanent,
+an8.5:2.4 | S: transient, and perishable. | T: transient, and subject to change.
+an8.5:3.1 | S: An intelligent and mindful person knows these things, | T: A wise and mindful person knows them
+an8.5:3.2 | S: seeing that they’re perishable. | T: and sees that they are subject to change.
+an8.5:3.3 | S: Desirable things don’t disturb their mind, | T: Desirable conditions don’t excite his mind
+an8.5:3.4 | S: nor are they repelled by the undesirable. | T: nor is he repelled by undesirable conditions.
+an8.5:4.1 | S: Both favoring and opposing | T: (none)
+an8.5:4.2 | S: are cleared and disappeared, they are no more. | T: He has dispelled attraction and repulsion; they are gone and no longer present.
+an8.5:4.3 | S: Knowing the stainless, sorrowless state, | T: Having known the dustless, sorrowless state,
+an8.5:4.4 | S: they who have gone beyond rebirth <j>understand rightly.” | T: he understands rightly and has transcended existence.
+an8.5:4.5 | P: Pañcamaṁ. | T: (none)
+
+## sn1.23
+sn1.23:1.1 | S: “Tangled within, tangled without: | T: “A tangle inside, a tangle outside,
+sn1.23:1.2 | S: these people are tangled in tangles. | T: This generation is entangled in a tangle.
+sn1.23:1.3 | S: I ask you this, Gotama: | T: I ask you this, O Gotama,
+sn1.23:1.4 | S: who can untangle this tangle?” | T: Who can disentangle this tangle?”
+sn1.23:2.1 | S: “A wise person grounded in ethics, | T: “A man established on virtue, wise,
+sn1.23:2.2 | S: developing the mind and wisdom, | T: Developing the mind and wisdom,
+sn1.23:2.3 | S: a keen and alert mendicant— | T: A bhikkhu ardent and discreet:
+sn1.23:2.4 | S: they can untangle this tangle. | T: He can disentangle this tangle.
+sn1.23:3.1 | S: Those in whom greed, hate, and ignorance | T: “Those for whom lust and hatred Along with ignorance have been expunged,
+sn1.23:3.2 | S: have faded away; | T: (none)
+sn1.23:3.3 | S: the perfected ones with defilements ended— | T: The arahants with taints destroyed:
+sn1.23:3.4 | S: they have untangled the tangle. | T: For them the tangle is disentangled.
+sn1.23:4.1 | S: And where name and form | T: “Where name-and-form ceases,
+sn1.23:4.2 | S: cease with no residue left behind; | T: Stops without remainder,
+sn1.23:4.3 | S: and impingement and perception of form: | T: And also impingement and perception of form:
+sn1.23:4.4 | S: it’s here this tangle is cut.” | T: It is here this tangle is cut.”
+
+## sn1.40
+sn1.40:1.1 | S: So I have heard. | T: Thus have I heard.
+sn1.40:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: On one occasion the Blessed One was dwelling at Vesali in the Great Wood, in the Hall with the Peaked Roof.
+sn1.40:1.3 | S: Then, late at night, the glorious Kokanadā the Younger, Pajjunna’s daughter, lighting up the entire Great Wood, went up to the Buddha, bowed, stood to one side, | T: Then, when the night had advanced, Cūḷakokanada, Pajjunna’s younger daughter, of stunning beauty, illuminating the entire Great Wood, approached the Blessed One. Having approached, she paid homage to the Blessed One, stood to one side,
+sn1.40:1.4 | S: and recited these verses in the Buddha’s presence: | T: and recited these verses in the presence of the Blessed One:
+sn1.40:2.1 | S: “She came here, beautiful as a flash of lightning, | T: “Here came Kokanada, Pajjunna’s daughter, Beautiful as the gleam of lightning.
+sn1.40:2.2 | S: Kokanadā, Pajjunna’s daughter. | T: (none)
+sn1.40:2.3 | S: Revering the Buddha and the teaching, | T: Venerating the Buddha and the Dhamma,
+sn1.40:2.4 | S: she spoke these verses full of meaning. | T: She spoke these verses full of meaning.
+sn1.40:3.1 | S: The teaching is such that | T: “Though the Dhamma is of such a nature
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn1.40:3.2 | S: I could analyze it in many different ways. | T: That I might analyse it in many ways,
+sn1.40:3.3 | S: However, I will state the meaning in brief | T: I will state its meaning briefly
+sn1.40:3.4 | S: as far as I have learned it by heart. | T: To the extent I have learnt it by heart.
+sn1.40:4.1 | S: You should never do anything bad | T: “One should do no evil in all the world,
+sn1.40:4.2 | S: by speech or mind or body in all the world. | T: Not by speech, mind, or body.
+sn1.40:4.3 | S: Having given up sensual pleasures,  <j>mindful and aware, | T: Having abandoned sense pleasures, Mindful and clearly comprehending,
+sn1.40:4.4 | S: you shouldn’t keep doing  <j>what’s painful and pointless.” | T: One should not pursue a course That is painful and harmful.”
+sn1.40:4.5 | P: Satullapakāyikavaggo catuttho. | T: (none)
+sn1.40:5.0 | P: Tassuddānaṁ | T: (none)
+sn1.40:5.1 | P: Sabbhimaccharinā sādhu, | T: (none)
+sn1.40:5.2 | P: na santujjhānasaññino; | T: (none)
+sn1.40:5.3 | P: Saddhā samayo sakalikaṁ, | T: (none)
+sn1.40:5.4 | P: ubho pajjunnadhītaroti. | T: (none)
+
+## sn12.59
+sn12.59:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.59:1.2 | S: “There are things that tighten the fetters. When you concentrate on the gratification provided by these things, consciousness is conceived. | T: “Bhikkhus, when one dwells contemplating gratification in things that can fetter, there is a descent of consciousness.
+sn12.59:1.3 | S: Consciousness is a requirement for name and form. … | T: With consciousness as condition, name-and-form comes to be….
+sn12.59:1.4 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.59:2.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree,
+sn12.59:2.2 | S: And its roots going downwards and across all draw the sap upwards. … | T: and all its roots going downwards and across would send the sap upwards. Sustained by that sap, nourished by it, that great tree would stand for a very long time.
+sn12.59:2.3 | S: In the same way, there are things that tighten the fetters. When you concentrate on the gratification provided by these things, consciousness is conceived. … | T: So too, when one lives contemplating gratification in things that can fetter, there is a descent of consciousness…. Such is the origin of this whole mass of suffering.
+sn12.59:3.1 | S: There are things that tighten the fetters. When you concentrate on the drawbacks of these things, consciousness is not conceived. | T: “When, bhikkhus, one dwells contemplating danger in things that can fetter, there is no descent of consciousness.
+sn12.59:3.2 | S: When consciousness ceases, name and form cease. … | T: With the cessation of consciousness comes cessation of name-and-form….
+sn12.59:3.3 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.59:4.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree.
+sn12.59:4.2 | S: Then a person comes along with a spade and basket. … | T: Then a man would come along bringing a shovel and a basket.
+sn12.59:4.3 | S: In this way the great tree is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: He would cut down the tree at its foot … he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river. Thus that great tree would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.59:4.4 | S: In the same way, there are things that tighten the fetters. When you concentrate on the drawbacks of these things, consciousness is not conceived. | T: “So too, bhikkhus, when one dwells contemplating danger in things that can fetter, there is no descent of consciousness….
+sn12.59:4.5 | S: When consciousness ceases, name and form cease. … | T: (none)
+sn12.59:4.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.59:4.7 | P: Navamaṁ. | T: (none)
+
+## sn36.5
+sn36.5:1.1 | S: “Mendicants, there are these three feelings. | T: “Bhikkhus, there are these three feelings.
+sn36.5:1.2 | S: What three? | T: What three?
+sn36.5:1.3 | S: Pleasant, painful, and neutral feeling. | T: Pleasant feeling, painful feeling, neither-painful-nor-pleasant feeling.
+sn36.5:1.4 | S: Pleasant feeling should be seen as suffering. Painful feeling should be seen as a dart. Neutral feeling should be seen as impermanent. | T: Pleasant feeling, bhikkhus, should be seen as painful; painful feeling should be seen as a dart; neither-painful-nor-pleasant feeling should be seen as impermanent.
+sn36.5:1.5 | S: When a mendicant has seen these three feelings in this way, | T: “When, bhikkhus, a bhikkhu has seen pleasant feeling as painful, painful feeling as a dart, and neither-painful-nor-pleasant feeling as impermanent,
+sn36.5:1.6 | S: they’re called a mendicant who sees rightly, has cut off craving, cast off the fetters, and by rightly comprehending conceit has made an end of suffering. | T: he is called a bhikkhu who sees rightly. He has cut off craving, severed the fetters, and by completely breaking through conceit, he has made an end to suffering.”
+sn36.5:2.1 | S: A mendicant who sees pleasure as pain, | T: One who has seen the pleasant as painful
+sn36.5:2.2 | S: and suffering as a dart, | T: And the painful as a dart,
+sn36.5:2.3 | S: and that peaceful, neutral feeling | T: Seen as impermanent the peaceful feeling Neither painful nor pleasant:
+sn36.5:2.4 | S: as impermanent | T: (none)
+sn36.5:3.1 | S: sees rightly; | T: He is a bhikkhu who sees rightly,
+sn36.5:3.2 | S: they completely understand feelings. | T: One who fully understands feelings.
+sn36.5:3.3 | S: Completely understanding feelings, | T: Having fully understood feelings,
+sn36.5:3.4 | S: they’re without defilements in this very life. | T: He is taintless in this very life.
+sn36.5:3.5 | S: That knowledge master is firm in principle; | T: Standing in Dhamma,
+sn36.5:3.6 | S: when their body breaks up, they can’t be reckoned.” | T: with the body’s breakup The knowledge-master cannot be reckoned.
+sn36.5:3.7 | P: Pañcamaṁ. | T: (none)
+
+## sn44.10
+sn44.10:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha and exchanged greetings with him. | T: Then the wanderer Vacchagotta approached the Blessed One … and said to him:
+sn44.10:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: (none)
+sn44.10:1.3 | S: “Worthy Gotama, does the self survive?” | T: “How is it now, Master Gotama, is there a self?”
+sn44.10:1.4 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One was silent.
+sn44.10:1.5 | S: “Then does the self not survive?” | T: “Then, Master Gotama, is there no self?”
+sn44.10:1.6 | S: But for a second time the Buddha kept silent. | T: A second time the Blessed One was silent.
+sn44.10:1.7 | S: Then the wanderer Vacchagotta rose from his seat and left. | T: Then the wanderer Vacchagotta rose from his seat and departed.
+sn44.10:2.1 | S: And then, not long after Vacchagotta had left, Venerable Ānanda said to the Buddha: | T: Then, not long after the wanderer Vacchagotta had left, the Venerable Ānanda said to the Blessed One:
+sn44.10:2.2 | S: “Sir, why didn’t you answer Vacchagotta’s question?” | T: “Why is it, venerable sir, that when the Blessed One was questioned by the wanderer Vacchagotta, he did not answer?”
+sn44.10:2.3 | S: “Ānanda, when Vacchagotta asked me whether the self survives, if I had answered that ‘the self survives’ I would have been siding with the ascetics and brahmins who are eternalists. | T: “If, Ānanda, when I was asked by the wanderer Vacchagotta, ‘Is there a self?’ I had answered, ‘There is a self,’ this would have been siding with those ascetics and brahmins who are eternalists.
+sn44.10:2.4 | S: When Vacchagotta asked me whether the self does not survive, if I had answered that ‘the self does not survive’ I would have been siding with the ascetics and brahmins who are annihilationists. | T: And if, when I was asked by him, ‘Is there no self?’ I had answered, ‘There is no self,’ this would have been siding with those ascetics and brahmins who are annihilationists.
+sn44.10:2.5 | S: When Vacchagotta asked me whether the self survives, if I had answered that ‘the self survives’, would that have facilitated the arising of the knowledge that | T: “If, Ānanda, when I was asked by the wanderer Vacchagotta, ‘Is there a self?’ I had answered, ‘There is a self,’ would this have been consistent on my part with the arising of the knowledge that
+sn44.10:2.6 | S: all things are not-self?” | T: ‘all phenomena are nonself’?”
+sn44.10:2.7 | S: “No, sir.” | T: “No, venerable sir.”
+sn44.10:2.8 | S: “When Vacchagotta asked me whether the self does not survive, if I had answered that ‘the self does not survive’, Vacchagotta—who is already confused—would have got even more confused, thinking: | T: “And if, when I was asked by him, ‘Is there no self?’ I had answered, ‘There is no self,’ the wanderer Vacchagotta, already confused, would have fallen into even greater confusion, thinking,
+sn44.10:2.9 | S: ‘It seems that the self that I once had no longer survives.’” | T: ‘It seems that the self I formerly had does not exist now.’”
+sn44.10:2.10 | P: Dasamaṁ. | T: (none)
+
+## sn44.5
+sn44.5:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. … | T: (none)
+sn44.5:1.2 | S: (The same down as far as:) | T: As above down to:
+sn44.5:1.3 | S: “What’s the cause, reverend, what’s the reason why this has not been declared by the Buddha?” | T: “What now, friend, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.5:1.4 | S: “Reverend, if you’re not rid of greed, desire, fondness, thirst, passion, and craving for form … | T: “Friend, it is one who is not devoid of lust for form, who is not devoid of desire, affection, thirst, passion, and craving for form, that thinks: ‘The Tathagata exists after death,’ or ‘The Tathagata does not exist after death,’ or ‘The Tathagata both exists and does not exist after death,’
+sn44.5:1.5 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa hoti. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.5:1.6 | S: feeling … | T: It is one who is not devoid of lust for feeling …
+sn44.5:1.7 | S: perception … | T: who is not devoid of lust for perception …
+sn44.5:1.8 | S: choices … | T: who is not devoid of lust for volitional formations …
+sn44.5:1.9 | S: consciousness, you think ‘a realized one still exists after death’ … | T: who is not devoid of lust for consciousness, who is not devoid of desire, affection, thirst, passion, and craving for consciousness, that thinks:
+sn44.5:1.10 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata exists after death’ … or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.5:1.11 | S: If you are rid of greed for form … | T: “But, friend, one who is devoid of lust for form …
+sn44.5:1.12 | S: feeling … | T: who is devoid of lust for feeling …
+sn44.5:1.13 | S: perception … | T: who is devoid of lust for perception …
+sn44.5:1.14 | S: choices … | T: who is devoid of lust for volitional formations …
+sn44.5:1.15 | S: consciousness, you don’t think ‘a realized one still exists after death’ … | T: who is devoid of lust for consciousness, who is devoid of desire, affection, thirst, passion, and craving for consciousness, does not think: ‘The Tathagata exists after death’ …
+sn44.5:1.16 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.5:1.17 | S: This is the cause, this is the reason why this has not been declared by the Buddha.” | T: “This, friend, is the cause and reason why this has not been declared by the Blessed One.”
+sn44.5:1.18 | P: Pañcamaṁ. | T: (none)
+
+## sn44.7
+sn44.7:1.1 | S: Then the wanderer Vacchagotta went up to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: Then the wanderer Vacchagotta approached the Venerable Mahamoggallana and exchanged greetings with him.
+sn44.7:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to Mahāmoggallāna: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to the Venerable Mahamoggallana:
+sn44.7:2.1 | S: “Worthy Moggallāna, is this right: ‘the cosmos is eternal’?” | T: “How is it, Master Moggallana, is the world eternal?”
+sn44.7:2.2 | S: “Vaccha, this has not been declared by the Buddha.” | T: “Vaccha, the Blessed One has not declared this:
+sn44.7:2.3 | P: ‘sassato loko’”ti. | T: ‘The world is eternal.’”
+sn44.7:2.4 | S: “Then is this right: ‘the cosmos is not eternal’ … | T: “Then, Master Moggallana, is the world not eternal?”
+sn44.7:2.5 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.6 | P: ‘asassato loko’”ti. | T: ‘The world is not eternal.’”
+sn44.7:2.7 | S: ‘the cosmos is finite’ … | T: “How is it then, Master Moggallana, is the world finite?”
+sn44.7:2.8 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: “Vaccha, the Blessed One has not declared this:
+sn44.7:2.9 | P: ‘antavā loko’”ti. | T: ‘The world is finite.’”
+sn44.7:2.10 | S: ‘the cosmos is infinite’ … | T: “Then, Master Moggallana, is the world infinite?”
+sn44.7:2.11 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.12 | P: ‘anantavā loko’”ti. | T: ‘The world is infinite.’”
+sn44.7:2.13 | S: ‘the soul and the body are one and the same’ … | T: “How is it then, Master Moggallana, are the soul and the body the same?”
+sn44.7:2.14 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: “Vaccha, the Blessed One has not declared this:
+sn44.7:2.15 | P: ‘taṁ jīvaṁ taṁ sarīran’”ti. | T: ‘The soul and the body are the same.’”
+sn44.7:2.16 | S: ‘the soul is one thing, the body another’ … | T: “Then, Master Moggallana, is the soul one thing, the body another?”
+sn44.7:2.17 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.18 | P: ‘aññaṁ jīvaṁ aññaṁ sarīran’”ti. | T: ‘The soul is one thing, the body is another.’”
+sn44.7:2.19 | S: ‘a realized one still exists after death’ … | T: “How is it, Master Moggallana, does the Tathagata exist after death?”
+sn44.7:2.20 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: “Vaccha, the Blessed One has not declared this:
+sn44.7:2.21 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata exists after death.’”
+sn44.7:2.22 | S: ‘a realized one no longer exists after death’ … | T: “Then, Master Moggallana, does the Tathagata not exist after death?”
+sn44.7:2.23 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.24 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata does not exist after death.’”
+sn44.7:2.25 | S: ‘a realized one both still exists and no longer exists after death’ … | T: “How is it, then, Master Moggallana, does the Tathagata both exist and not exist after death?”
+sn44.7:2.26 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.27 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata both exists and does not exist after death.’”
+sn44.7:2.28 | S: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Then, Master Moggallana, does the Tathagata neither exist nor not exist after death?”
+sn44.7:2.29 | S: “This too has not been declared by the Buddha.” | T: “Vaccha, the Blessed One has not declared this either:
+sn44.7:2.30 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata neither exists nor does not exist after death.’”
+sn44.7:3.1 | S: “What’s the cause, worthy Moggallāna, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “What, Master Moggallana, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.7:3.2 | P: sassato lokoti vā, asassato lokoti vā, antavā lokoti vā, anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā? | T: ‘The world is eternal’ or ‘The world is not eternal’; or ‘The world is finite’ or ‘The world is infinite’; or ‘The soul and the body are the same’ or ‘The soul is one thing, the body is another’; or ‘The Tathagata exists after death,’ or ‘The Tathagata does not exist after death,’ or ‘The Tathagata both exists and does not exist after death,’ or ‘The Tathagata neither exists nor does not exist after death’?
+sn44.7:3.3 | S: And what’s the reason why, when the ascetic Gotama is asked these questions, he does not declare one of these to be true?” | T: And what is the cause and reason why, when the ascetic Gotama is asked such questions, he does not give such answers?”
+sn44.7:3.4 | P: sassato lokotipi, asassato lokotipi, antavā lokotipi, anantavā lokotipi, taṁ jīvaṁ taṁ sarīrantipi, aññaṁ jīvaṁ aññaṁ sarīrantipi, hoti tathāgato paraṁ maraṇātipi, na hoti tathāgato paraṁ maraṇātipi, hoti ca na ca hoti tathāgato paraṁ maraṇātipi, neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti? | T: (none)
+sn44.7:4.1 | S: “Vaccha, the wanderers of other religions regard the eye like this: ‘This is mine, I am this, this is my self.’ They regard the ear … nose … | T: “Vaccha, wanderers of other sects regard the eye thus: ‘This is mine, this I am, this is my self.’ They regard the ear … the nose …
+sn44.7:4.2 | S: tongue … body … | T: the tongue … the body …
+sn44.7:4.3 | S: mind like this: ‘This is mine, I am this, this is my self.’ | T: the mind thus: ‘This is mine, this I am, this is my self.’
+sn44.7:4.4 | S: That’s why, when asked, they declare one of those answers to be true. | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+sn44.7:4.5 | P: sassato lokoti vā …pe… | T: ‘The world is eternal’ …
+sn44.7:4.6 | P: neva hoti na na hoti tathāgato paraṁ maraṇāti vā. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.7:4.7 | S: The Realized One, the perfected one, the fully awakened Buddha regards the eye like this: ‘This is not mine, I am not this, this is not my self.’ He regards the ear … nose … | T: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, regards the eye thus: ‘This is not mine, this I am not, this is not my self.’ He regards the ear …
+sn44.7:4.8 | S: tongue … body … | T: (none)
+sn44.7:4.9 | S: mind like this: ‘This is not mine, I am not this, this is not my self.’ | T: the mind thus: ‘This is not mine, this I am not, this is not my self.’
+sn44.7:4.10 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: Therefore, when the Tathagata is asked such questions, he does not give such answers.”
+sn44.7:4.11 | P: sassato lokotipi …pe… | T: (none)
+sn44.7:4.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti. | T: (none)
+sn44.7:5.1 | S: Then the wanderer Vacchagotta rose from his seat and went to the Buddha and exchanged greetings with him. | T: Then the wanderer Vacchagotta rose from his seat and approached the Blessed One. He exchanged greetings with the Blessed One …and said to him:
+sn44.7:5.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked the Buddha the same questions, and received the same answers. | T: (none)
+sn44.7:5.3 | P: “kiṁ nu kho, bho gotama, sassato loko”ti? | T: “How is it, good Gotama, is the world eternal?”
+sn44.7:5.4 | P: “Abyākataṁ kho etaṁ, vaccha, mayā: ‘sassato loko’ti …pe…. | T: All as above down to:
+sn44.7:5.5 | P: “Kiṁ pana, bho gotama, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | T: (none)
+sn44.7:5.6 | P: “Etampi kho, vaccha, abyākataṁ mayā: | T: “Vaccha, I have not declared this either:
+sn44.7:5.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata neither exists nor does not exist after death.’”
+sn44.7:6.1 | P: “Ko nu kho, bho gotama, hetu ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: “What, Master Gotama, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.7:6.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.7:6.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: or ‘The Tathagata neither exists nor does not exist after death’?
+sn44.7:6.4 | P: Ko pana, bho gotama, hetu ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: And what is the cause and reason why, when the ascetic Gotama is asked such questions,
+sn44.7:6.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.7:6.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: he does not give such answers?”
+sn44.7:7.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: “Vaccha, wanderers of other sects regard the eye …
+sn44.7:7.2 | P: jivhaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | T: (none)
+sn44.7:7.3 | P: manaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti. | T: the mind thus: ‘This is mine, this I am, this is my self.’
+sn44.7:7.4 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+sn44.7:7.5 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.7:7.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.7:7.7 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho cakkhuṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, regards the eye …
+sn44.7:7.8 | P: jivhaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | T: (none)
+sn44.7:7.9 | P: manaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati. | T: the mind thus: ‘This is not mine, this I am not, this is not my self.’
+sn44.7:7.10 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: Therefore, when the Tathagata is asked such questions, he does not give such answers.”
+sn44.7:7.11 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.7:8.1 | S: He said, “It’s incredible, worthy Gotama, it’s amazing! | T: “It is wonderful, Master Gotama! It is amazing, Master Gotama!
+sn44.7:8.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and the phrasing of both teacher and disciple coincide and agree with each other and do not diverge, that is, in regard to the chief matter.
+sn44.7:8.3 | S: Just now I went to the ascetic Mahāmoggallāna and asked him about this matter. | T: Just now, Master Gotama, I approached the ascetic Moggallana and asked him about this matter.
+sn44.7:8.4 | S: And he explained it to me with these words and phrases, just like the worthy Gotama. | T: The ascetic Moggallana explained this matter to me in exactly the same terms and phrases that Master Gotama used.
+sn44.7:8.5 | S: It’s incredible, worthy Gotama, it’s amazing! | T: It is wonderful, Master Gotama! It is amazing, Master Gotama!
+sn44.7:8.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and the phrasing of both teacher and disciple coincide and agree with each other and do not diverge, that is, in regard to the chief matter.”
+sn44.7:8.7 | P: Sattamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found several list items merged onto the preceding line, plus a few sentence openings and endings on the wrong line. I’m checking the boundaries before writing the findings.
+exec
+/bin/bash -lc "sed -n '30,105p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.2:6.6 | S: ‘Reverend, our Teacher explained the removal of desire and lust.’ | T: ‘Our teacher, friends, teaches the removal of desire and lust.’
+sn22.2:7.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:7.2 | P: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. | T: (none)
+sn22.2:7.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:7.4 | S: ‘But regarding what does the venerables’ teacher explain the removal of desire and lust?’ | T: ‘In regard to what does your teacher teach the removal of desire and lust?’
+sn22.2:7.5 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer:
+sn22.2:7.6 | S: ‘Our teacher explains the removal of desire and lust for form, | T: ‘Our teacher, friends, teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:7.7 | S: feeling, | T: (none)
+sn22.2:7.8 | S: perception, | T: perception …
+sn22.2:7.9 | S: choices, | T: volitional formations …
+sn22.2:7.10 | S: and consciousness.’ | T: consciousness. ’
+sn22.2:8.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:8.2 | P: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. | T: (none)
+sn22.2:8.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:8.4 | S: ‘But what drawback has he seen that he teaches the removal of desire and lust for form, | T: ‘Having seen what danger does your teacher teach the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:8.5 | S: feeling, | T: (none)
+sn22.2:8.6 | S: perception, | T: perception …
+sn22.2:8.7 | S: choices, | T: volitional formations …
+sn22.2:8.8 | S: and consciousness?’ | T: consciousness?’
+sn22.2:8.9 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer thus:
+sn22.2:8.10 | S: ‘If you’re not free of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. | T: ‘If, friends, one is not devoid of lust, desire, affection, thirst, passion, and craving in regard to form, then with the change and alteration of form there arise in one sorrow, lamentation, pain, displeasure, and despair.
+sn22.2:8.11 | S: If you’re not free of greed, desire, fondness, thirst, passion, and craving for feeling … | T: If, friends, one is not devoid of lust, desire, affection, thirst, passion, and craving in regard to feeling …
+sn22.2:8.12 | S: perception … | T: perception …
+sn22.2:8.13 | S: choices … | T: volitional formations …
+sn22.2:8.14 | P: avigatataṇhassa tesaṁ saṅkhārānaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā. | T: (none)
+sn22.2:8.15 | S: consciousness, when that consciousness decays and perishes it gives rise to sorrow, lamentation, pain, sadness, and distress. | T: consciousness, then with the change and alteration of consciousness there arise in one sorrow, lamentation, pain, displeasure, and despair.
+sn22.2:8.16 | S: This is the drawback our Teacher has seen that he teaches the removal of desire and lust for form, | T: Having seen this danger, our teacher teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:8.17 | S: feeling, | T: (none)
+sn22.2:8.18 | S: perception, | T: perception …
+sn22.2:8.19 | S: choices, | T: volitional formations …
+sn22.2:8.20 | S: and consciousness.’ | T: consciousness. ’
+sn22.2:9.1 | S: When you answer like this, such astute people may inquire further: | T: “When you have answered thus, friends, there may be wise khattiyas … wise ascetics who will question you further—
+sn22.2:9.2 | P: khattiyapaṇḍitāpi brāhmaṇapaṇḍitāpi gahapatipaṇḍitāpi samaṇapaṇḍitāpi. | T: (none)
+sn22.2:9.3 | P: Paṇḍitā hāvuso, manussā vīmaṁsakā: | T: for wise people, friends, are inquisitive:
+sn22.2:9.4 | S: ‘But what benefit has he seen that he teaches the removal of desire and lust for form, | T: ‘Having seen what benefit does your teacher teach the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:9.5 | S: feeling, | T: (none)
+sn22.2:9.6 | S: perception, | T: perception …
+sn22.2:9.7 | S: choices, | T: volitional formations …
+sn22.2:9.8 | S: and consciousness?’ | T: consciousness?’
+sn22.2:9.9 | S: When questioned like this, reverends, you should answer: | T: Being asked thus, friends, you should answer thus:
+sn22.2:9.10 | S: ‘If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: ‘If, friends, one is devoid of lust, desire, affection, thirst, passion, and craving in regard to form, then with the change and alteration of form sorrow, lamentation, pain, displeasure, and despair do not arise in one.
+sn22.2:9.11 | S: If you are rid of greed, desire, fondness, thirst, passion, and craving for feeling … | T: If one is devoid of lust, desire, affection, thirst, passion, and craving in regard to feeling …
+sn22.2:9.12 | S: perception … | T: perception …
+sn22.2:9.13 | S: choices … | T: volitional formations …
+sn22.2:9.14 | S: consciousness, when that consciousness decays and perishes it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: consciousness, then with the change and alteration of consciousness sorrow, lamentation, pain, displeasure, and despair do not arise in one.
+sn22.2:9.15 | S: This is the benefit our Teacher has seen that he teaches the removal of desire and lust for form, feeling, | T: Having seen this benefit, our teacher teaches the removal of desire and lust for form, the removal of desire and lust for feeling …
+sn22.2:9.16 | S: perception, | T: perception …
+sn22.2:9.17 | S: choices, | T: volitional formations …
+sn22.2:9.18 | S: and consciousness.’ | T: consciousness.’
+sn22.2:10.1 | S: If those who acquired and kept unskillful qualities were to live happily in the present life, free of distress, anguish, and fever; and if, when their body breaks up, after death, they could expect to go to a good place, the Buddha would not praise giving up unskillful qualities. | T: “If, friends, one who enters and dwells amidst unwholesome states could dwell happily in this very life, without vexation, despair, and fever, and if, with the breakup of the body, after death, he could expect a good destination, then the Blessed One would not praise the abandoning of unwholesome states.
+sn22.2:10.2 | S: But since those who acquire and keep unskillful qualities live unhappily in the present life, full of distress, anguish, and fever; and since, when their body breaks up, after death, they can expect to go to a bad place, the Buddha praises giving up unskillful qualities. | T: But because one who enters and dwells amidst unwholesome states dwells in suffering in this very life, with vexation, despair, and fever, and because he can expect a bad destination with the breakup of the body, after death, the Blessed One praises the abandoning of unwholesome states.
+sn22.2:11.1 | S: If those who embraced and kept skillful qualities were to live unhappily in the present life, full of distress, anguish, and fever; and if, when their body breaks up, after death, they could expect to go to a bad place, the Buddha would not praise embracing skillful qualities. | T: “If, friends, one who enters and dwells amidst wholesome states would dwell in suffering in this very life, with vexation, despair, and fever, and if, with the breakup of the body, after death, he could expect a bad destination, then the Blessed One would not praise the acquisition of wholesome states.
+sn22.2:11.2 | S: But since those who embrace and keep skillful qualities live happily in the present life, free of distress, anguish, and fever; and since, when their body breaks up, after death, they can expect to go to a good place, the Buddha praises embracing skillful qualities.” | T: But because one who enters and dwells amidst wholesome states dwells happily in this very life, without vexation, despair, and fever, and because he can expect a good destination with the breakup of the body, after death, the Blessed One praises the acquisition of wholesome states.”
+sn22.2:12.1 | S: That is what Venerable Sāriputta said. | T: This is what the Venerable Sāriputta said.
+sn22.2:12.2 | S: Satisfied, the mendicants approved what Sāriputta said. | T: Elated, those bhikkhus delighted in the Venerable Sāriputta’s statement.
+sn22.2:12.3 | P: Dutiyaṁ. | T: (none)
+
+## sn44.6
+sn44.6:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: On one occasion the Venerable Sāriputta and the Venerable Mahakoṭṭhita were dwelling at Baraṇasī in the Deer Park at Isipatana.
+sn44.6:1.2 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākoṭṭhita, and they greeted each other. | T: Then, in the evening, the Venerable Sāriputta emerged from seclusion and approached the Venerable Mahakoṭṭhita.
+sn44.6:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākoṭṭhita: | T: He exchanged greetings with the Venerable Mahakoṭṭhita and, when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn44.6:1.4 | S: “Reverend Koṭṭhita, does a realized one still exist after death?” … | T: “How is it, friend Koṭṭhita, does the Tathagata exist after death?”
+sn44.6:1.5 | S: “Reverend, when asked these questions, you say that this has not been declared by the Buddha. | T: (none)
+sn44.6:1.6 | P: ‘etampi kho, āvuso, abyākataṁ bhagavatā— | T: All as above down to:
+sn44.6:1.7 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.6:1.8 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: “What now, friend, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.6:2.1 | S: “Reverend, if you like, love, and enjoy form, and don’t truly see the cessation of form, you think ‘a realized one still exists after death’ or | T: i. Delight in the aggregates “Friend, it is one who delights in form, who takes delight in form, who rejoices in form, and who does not know and see the cessation of form as it really is, that thinks: ‘The Tathagata exists after death’ … or
+sn44.6:2.2 | S: ‘a realized one no longer exists after death’ or | T: (none)
+sn44.6:2.3 | S: ‘a realized one both still exists and no longer exists after death’ or | T: (none)
+sn44.6:2.4 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:2.5 | S: If you like, love, and enjoy feeling … | T: It is one who delights in feeling …
+sn44.6:2.6 | S: perception … | T: who delights in perception …
+sn44.6:2.7 | S: choices … | T: who delights in volitional formations …
+sn44.6:2.8 | S: consciousness, and don’t truly see the cessation of consciousness, you think ‘a realized one still exists after death’ … | T: who delights in consciousness, who takes delight in consciousness, who rejoices in consciousness, and who does not know and see the cessation of consciousness as it really is, that thinks: ‘The Tathagata exists after death’ …
+sn44.6:2.9 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.6:3.1 | S: If you don’t like, love, and enjoy form … | T: “But, friend, one who does not delight in form …
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-033.findings.tmp <<'EOF'
+sn22.2:7.7 starts: the removal of desire and lust for feeling
+sn22.2:8.5 starts: the removal of desire and lust for feeling
+sn22.2:8.17 starts: the removal of desire and lust for feeling
+sn22.2:9.5 starts: the removal of desire and lust for feeling
+sn44.6:1.3 starts: when they had concluded their greetings and cordial
+an8.5:4.1 starts: He has dispelled attraction and repulsion;
+an8.5:4.2 starts: they are gone and no longer present.
+sn12.59:4.3 starts: Thus that great tree would be cut
+sn44.5:1.10 starts: or ‘The Tathagata neither exists nor does not
+sn44.7:6.6 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 10 lines.
+tokens used
+35,829
+Reported 10 lines.

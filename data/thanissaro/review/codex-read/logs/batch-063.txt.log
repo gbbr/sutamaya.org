@@ -1,0 +1,452 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-a4a4-7e31-8668-c06ed0575098
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, check the line boundaries, and write only clear misplacements to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.102
+an3.102:1.1 | S: “Mendicants, a mendicant committed to the higher mind should focus on three bases from time to time: | T: “A monk intent on heightened mind should attend periodically to three themes:
+an3.102:1.2 | S: the basis of immersion, the basis of exertion, and the basis of equanimity. | T: He should attend periodically to the theme of concentration; he should attend periodically to the theme of uplifted energy; he should attend periodically to the theme of equanimity.
+an3.102:1.3 | S: If a mendicant dedicated to the higher mind focuses solely on the basis of immersion, it’s likely their mind will incline to laziness. | T: If the monk intent on heightened mind were to attend solely to the theme of concentration, it’s possible that his mind would tend to laziness.
+an3.102:1.4 | S: If they focus solely on the basis of exertion, it’s likely their mind will incline to restlessness. | T: If he were to attend solely to the theme of uplifted energy, it’s possible that his mind would tend to restlessness.
+an3.102:1.5 | S: If they focus solely on the basis of equanimity, it’s likely their mind won’t properly become immersed in samādhi for the ending of defilements. | T: If he were to attend solely to the theme of equanimity, it’s possible that his mind would not be rightly concentrated for the ending of the effluents.
+an3.102:1.6 | S: But when a mendicant dedicated to the higher mind focuses from time to time on the basis of immersion, the basis of exertion, and the basis of equanimity, their mind becomes pliable, workable, and radiant, not brittle, and has become rightly immersed in samādhi for the ending of defilements. | T: But when he attends periodically to the theme of concentration, attends periodically to the theme of uplifted energy, attends periodically to the theme of equanimity, his mind is pliant, malleable, luminous, & not brittle. It is rightly concentrated for the ending of the effluents.
+an3.102:2.1 | S: It’s like when a goldsmith or a goldsmith’s apprentice prepares a forge, fires the crucible, picks up some native gold with tongs and puts it in the crucible. From time to time they fan it, from time to time they sprinkle water on it, and from time to time they just watch over it. | T: “Just as if a goldsmith or goldsmith’s apprentice were to set up a smelter. Having set up the smelter, he would fire the receptacle. Having fired the receptacle, he would take hold of some gold with his tongs and place it in the receptacle. Periodically he would blow on it, periodically sprinkle it with water, periodically examine it closely.
+an3.102:2.2 | S: If they solely fanned it, the native gold would likely be scorched. | T: If he were solely to blow on it, it’s possible that the gold would burn up.
+an3.102:2.3 | S: If they solely sprinkled water on it, the native gold would likely cool down. | T: If he were solely to sprinkle it with water, it’s possible that the gold would grow cold.
+an3.102:2.4 | S: If they solely watched over it, the native gold would likely not be properly processed. | T: If he were solely to examine it closely, it’s possible that the gold would not come to full perfection.
+an3.102:2.5 | S: But when that goldsmith fans it from time to time, sprinkles water on it from time to time, and watches over it from time to time, that native gold becomes pliable, workable, and radiant, not brittle, and is ready to be worked. | T: But when he periodically blows on it, periodically sprinkles it with water, periodically examines it closely, the gold becomes pliant, malleable, & luminous. It is not brittle, and is ready to be worked.
+an3.102:2.6 | S: Then the goldsmith can successfully create any kind of ornament they want, whether a bracelet, earrings, a necklace, or a golden garland. | T: Then whatever sort of ornament he has in mind—whether a belt, an earring, a necklace, or a gold chain—the gold would serve his purpose.
+an3.102:3.1 | S: In the same way, a mendicant committed to the higher mind should focus on three bases from time to time: | T: “In the same way, a monk intent on heightened mind should attend periodically to three themes:
+an3.102:3.2 | S: the basis of immersion, the basis of exertion, and the basis of equanimity. … | T: He should attend periodically to the theme of concentration; he should attend periodically to the theme of uplifted energy; he should attend periodically to the theme of equanimity.
+an3.102:3.3 | P: Sace, bhikkhave, adhicittamanuyutto bhikkhu ekantaṁ samādhinimittaṁyeva manasi kareyya, ṭhānaṁ taṁ cittaṁ kosajjāya saṁvatteyya. | T: If the monk intent on heightened mind were to attend solely to the theme of concentration, it’s possible that his mind would tend to laziness.
+an3.102:3.4 | P: Sace, bhikkhave, adhicittamanuyutto bhikkhu ekantaṁ paggahanimittaṁyeva manasi kareyya, ṭhānaṁ taṁ cittaṁ uddhaccāya saṁvatteyya. | T: If he were to attend solely to the theme of uplifted energy, it’s possible that his mind would tend to restlessness.
+an3.102:3.5 | P: Sace, bhikkhave, adhicittamanuyutto bhikkhu ekantaṁ upekkhānimittaṁyeva manasi kareyya, ṭhānaṁ taṁ cittaṁ na sammā samādhiyeyya āsavānaṁ khayāya. | T: If he were to attend solely to the theme of equanimity, it’s possible that his mind would not be rightly concentrated for the ending of the effluents.
+an3.102:3.6 | S: When a mendicant dedicated to the higher mind focuses from time to time on the basis of immersion, the basis of exertion, and the basis of equanimity, their mind becomes pliable, workable, and radiant, not brittle, and has become rightly immersed in samādhi for the ending of defilements. | T: But when he attends periodically to the theme of concentration, attends periodically to the theme of uplifted energy, attends periodically to the theme of equanimity, his mind is pliant, malleable, luminous, and not brittle. It is rightly concentrated for the ending of the effluents.
+an3.102:3.7 | S: They extend the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: “And then whichever of the higher knowledges he turns his mind to know & realize, he can witness them for himself whenever there is an opening.
+an3.102:4.1 | S: If they wish: ‘May I wield the many kinds of psychic power’ … | T: “If he wants, he wields manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, and mountains as if through space. He dives in and out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting crosslegged he flies through the air like a winged bird. With his hand he touches and strokes even the sun and moon, so mighty and powerful. He exercises influence with his body even as far as the Brahmā worlds. He can witness this for himself whenever there is an opening.
+an3.102:4.2 | S: ‘With clairaudience that is purified and superhuman, may I hear both kinds of sounds, human and heavenly, whether near or far.’ … | T: “If he wants, he hears—by means of the divine ear-element, purified and surpassing the human—both kinds of sounds: divine and human, whether near or far. He can witness this for himself whenever there is an opening. “If he wants, he discerns the awareness of other beings, other individuals, having encompassed it with his own awareness. He discerns a mind with passion as a mind with passion, and a mind without passion as a mind without passion. He discerns a mind with aversion as a mind with aversion, and a mind without aversion as a mind without aversion. He discerns a mind with delusion as a mind with delusion, and a mind without delusion as a mind without delusion. He discerns a restricted mind as a restricted mind, and a scattered mind as a scattered mind. He discerns an enlarged mind as an enlarged mind, and an unenlarged mind as an unenlarged mind. He discerns an excelled mind [one that is not at the most excellent level] as an excelled mind, and an unexcelled mind as an unexcelled mind. He discerns a concentrated mind as a concentrated mind, and an unconcentrated mind as an unconcentrated mind. He discerns a released mind as a released mind, and an unreleased mind as an unreleased mind. He can witness this for himself whenever there is an opening.
+an3.102:4.3 | S: ‘May I recollect many kinds of past lives.’ … | T: “If he wants, he recollects his manifold past lives [literally: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction and expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure and pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure and pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he remembers his manifold past lives in their modes and details. He can witness this for himself whenever there is an opening.
+an3.102:4.4 | S: ‘With clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn.’ … | T: “If he wants, he sees—by means of the divine eye, purified and surpassing the human—beings passing away and re-appearing, and he discerns how they are inferior and superior, beautiful and ugly, fortunate and unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, and mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, and mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus—by means of the divine eye, purified and surpassing the human—he sees beings passing away and re-appearing, and he discerns how they are inferior and superior, beautiful and ugly, fortunate and unfortunate in accordance with their kamma. He can witness this for himself whenever there is an opening.
+an3.102:4.5 | S: ‘May I realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with my own insight in this very life due to the ending of defilements.’ | T: “If he wants, then through the ending of the effluents, he enters & remains in the effluent-free awareness-release & discernment-release, having directly known and realized them for himself right in the here & now.
+an3.102:4.6 | S: They are capable of realizing these things, since each and every one is within range.” | T: He can witness this for himself whenever there is an opening.”
+an3.102:4.7 | P: Ekādasamaṁ. | T: (none)
+an3.102:4.8 | P: Loṇakapallavaggo pañcamo. | T: (none)
+an3.102:5.0 | P: Tassuddānaṁ | T: (none)
+an3.102:5.1 | P: Accāyikaṁ pavivekaṁ, | T: (none)
+an3.102:5.2 | P: Sarado parisā tayo; | T: (none)
+an3.102:5.3 | P: Ājānīyā potthako ca, | T: (none)
+an3.102:5.4 | P: Loṇaṁ dhovati nimittānīti. | T: (none)
+an3.102:5.5 | P: Dutiyo paṇṇāsako samatto. | T: (none)
+
+## an3.103
+an3.103:1.1 | S: “Mendicants, before my awakening—when I was still unawakened but intent on awakening—I thought: | T: “Monks, before my self-awakening, when I was still just an unawakened bodhisatta, the thought occurred to me:
+an3.103:1.2 | S: ‘What’s the gratification in the world? What’s the drawback? What’s the escape?’ | T: ‘What is the allure of the cosmos? What is the drawback of the cosmos? What is the escape from the cosmos?’
+an3.103:1.3 | S: Then it occurred to me: | T: “Then the thought occurred to me,
+an3.103:1.4 | S: ‘The pleasure and happiness that arise from the world: this is its gratification. | T: ‘Whatever pleasure & joy arises dependent on the cosmos: That is the allure of the cosmos.
+an3.103:1.5 | S: That the world is impermanent, suffering, and perishable: this is its drawback. | T: The fact that the cosmos is inconstant, stressful, subject to change: That is the drawback of the cosmos.
+an3.103:1.6 | S: Removing and giving up desire and greed for the world: this is its escape.’ | T: The subduing of desire & passion, the abandoning of desire & passion for the cosmos: That is the escape from the cosmos.
+an3.103:1.7 | S: As long as I didn’t truly understand the world’s gratification, drawback, and escape in this way for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Now, as long as I did not have direct knowledge, as it has come to be, of the allure as the allure, of the drawback as the drawback, and of the escape as the escape with regard to the cosmos, I did not claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+an3.103:1.8 | S: But when I did truly understand the world’s gratification, drawback, and escape in this way for what they are, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did have direct knowledge (of these things) as they have come to be, then I did claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+an3.103:1.9 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+an3.103:1.10 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further-becoming.’”
+an3.103:1.11 | P: Paṭhamaṁ. | T: (none)
+
+## an3.104
+an3.104:1.1 | S: “Mendicants, I went in search of the world’s gratification, and I found it. | T: “Monks, I set out in search of the allure of the cosmos. Whatever allure there is in the cosmos, that I found.
+an3.104:1.2 | S: I’ve seen clearly with wisdom the full extent of gratification in the world. | T: However far the allure of the cosmos extends, that I have seen well with discernment.
+an3.104:1.3 | S: I went in search of the world’s drawbacks, and I found them. | T: “I set out in search of the drawback of the cosmos. Whatever drawback there is in the cosmos, that I found.
+an3.104:1.4 | S: I’ve seen clearly with wisdom the full extent of the drawbacks in the world. | T: However far the drawback of the cosmos extends, that I have seen well with discernment.
+an3.104:1.5 | S: I went in search of escape from the world, and I found it. | T: “I set out in search of the escape from the cosmos. Whatever escape there is from the cosmos, that I found.
+an3.104:1.6 | S: I’ve seen clearly with wisdom the full extent of escape from the world. | T: However far the escape from the cosmos extends, that I have seen well with discernment.
+an3.104:1.7 | S: As long as I didn’t truly understand the world’s gratification, drawback, and escape for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Now, as long as I did not have direct knowledge, as it has come to be, of the allure as the allure, of the drawback as the drawback, and of the escape as the escape with regard to the cosmos, I did not claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+an3.104:1.8 | S: But when I did truly understand the world’s gratification, drawback, and escape for what they are, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did have direct knowledge (of these things) as they have come to be, then I did claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+an3.104:1.9 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+an3.104:1.10 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further-becoming.’”
+an3.104:1.11 | P: Dutiyaṁ. | T: (none)
+
+## an3.105
+an3.105:1.1 | S: “Mendicants, if there were no gratification in the world, sentient beings wouldn’t be aroused by it. | T: “Monks, if there were not this allure to the cosmos, beings would not become impassioned with the cosmos.
+an3.105:1.2 | S: But because there is gratification in the world, sentient beings are aroused by it. | T: But because there is an allure to the cosmos, beings become impassioned with the cosmos.
+an3.105:1.3 | S: If the world had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not this drawback to the cosmos, beings would not become disenchanted with the cosmos.
+an3.105:1.4 | S: But since the world has a drawback, sentient beings do grow disillusioned with it. | T: But because there is a drawback to the cosmos, beings become disenchanted with the cosmos.
+an3.105:1.5 | S: If there were no escape from the world, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the cosmos, beings would not escape from the cosmos.
+an3.105:1.6 | S: But since there is an escape from the world, sentient beings do escape from it. | T: But because there is an escape from the cosmos, beings escape from the cosmos.
+an3.105:1.7 | S: As long as sentient beings don’t truly understand the world’s gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+an3.105:1.8 | S: But when sentient beings truly understand the world’s gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: “But when beings know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+an3.105:1.9 | P: Tatiyaṁ. | T: (none)
+
+## an3.108
+an3.108:1.1 | S: “Mendicants, there are three indulgences that never satisfy. | T: “There is no satiation through indulging in three things.
+an3.108:1.2 | S: What three? | T: Which three?
+an3.108:1.3 | S: Sleep, | T: There is no satiation through indulging in sleep.
+an3.108:1.4 | S: drinking beer and wine, | T: There is no satiation through indulging in distilled & fermented drinks.
+an3.108:1.5 | S: and sexual intercourse. | T: There is no satiation through indulging in the climax of sexual intercourse.
+an3.108:1.6 | S: These are the three indulgences that never satisfy.” | T: There is no satiation through indulging in these three things.”
+an3.108:1.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.109
+an3.109:1.1 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Anāthapiṇḍika the householder went to the Blessed One and, on arrival, having bowed to him, sat to one side. As he was sitting there, the Blessed One said to him:
+an3.109:1.2 | S: “Householder, when the mind is unprotected, deeds of body, speech, and mind are unprotected. | T: “Householder, when the mind is unprotected, bodily actions are unprotected as well, verbal actions are unprotected as well, mental actions are unprotected as well.
+an3.109:1.3 | S: When deeds are unprotected, they fester. | T: When one’s bodily actions, verbal actions, & mental actions are unprotected, one’s bodily actions get soggy, one’s verbal actions get soggy, one’s mental actions get soggy.
+an3.109:1.4 | S: When deeds fester, they become rotten. | T: When one’s bodily actions, verbal actions, & mental actions are soggy, one’s bodily actions… verbal actions… mental actions rot.
+an3.109:1.5 | S: Someone whose deeds of body, speech, and mind are rotten will not have a good death. | T: When one’s bodily actions, verbal actions, & mental actions rot, inauspicious is one’s death, inauspicious one’s passing away.
+an3.109:2.1 | S: It’s like a bungalow with a bad roof. The roof peak, rafters, and walls are unprotected. | T: “Just as when a peak-roofed house is poorly roofed: The peak of the roof is unprotected, the roof beams are unprotected, the walls are unprotected.
+an3.109:2.2 | S: They fester, | T: The peak of the roof… the roof beams… the walls get soggy.
+an3.109:2.3 | S: and become rotten. | T: The peak of the roof… the roof beams… the walls then rot.
+an3.109:3.1 | S: In the same way, when the mind is unprotected, bodily, verbal, and mental deeds are unprotected. … | T: “In the same way, when the mind is unprotected, bodily actions… verbal actions… mental actions are unprotected as well.…
+an3.109:3.2 | P: Tassa arakkhitakāyakammantassa arakkhitavacīkammantassa arakkhitamanokammantassa kāyakammampi avassutaṁ hoti, vacīkammampi avassutaṁ hoti, manokammampi avassutaṁ hoti. | T: One’s bodily… verbal… mental actions get soggy…
+an3.109:3.3 | P: Tassa avassutakāyakammantassa avassutavacīkammantassa avassutamanokammantassa kāyakammampi pūtikaṁ hoti, vacīkammampi pūtikaṁ hoti, manokammampi pūtikaṁ hoti. | T: One’s bodily… verbal… mental actions rot.
+an3.109:3.4 | S: Someone whose deeds of body, speech, and mind are rotten will not have a good death. | T: When one’s bodily actions, verbal actions, & mental actions rot, inauspicious is one’s death, inauspicious one’s passing away.
+an3.109:4.1 | S: When the mind is protected, bodily, verbal, and mental deeds are protected. | T: “Now, when the mind is protected, bodily actions are protected as well, verbal actions are protected as well, mental actions are protected as well.
+an3.109:4.2 | S: When deeds are protected, they don’t fester. | T: When one’s bodily actions, verbal actions, & mental actions are protected, one’s bodily actions… verbal actions… mental actions don’t get soggy.
+an3.109:4.3 | S: When deeds don’t fester, they don’t become rotten. | T: When one’s bodily actions, verbal actions, & mental actions aren’t soggy, one’s bodily actions… verbal actions… mental actions don’t rot.
+an3.109:4.4 | S: Someone whose deeds of body, speech, and mind aren’t rotten will have a good death. | T: When one’s bodily actions, verbal actions, & mental actions don’t rot, auspicious is one’s death, auspicious one’s passing away.
+an3.109:5.1 | S: It’s like a bungalow with a good roof. The roof peak, rafters, and walls are protected. | T: “Just as when a peak-roofed house is well roofed: The peak of the roof is protected, the roof beams are protected, the walls are protected.
+an3.109:5.2 | S: They don’t get soaked, | T: The peak of the roof… the roof beams… the walls don’t get soggy.
+an3.109:5.3 | S: and they don’t become rotten. | T: The peak of the roof… the roof beams… the walls don’t rot.
+an3.109:6.1 | S: In the same way, when the mind is protected, bodily, verbal, and mental deeds are protected. … | T: “In the same way, when the mind is protected, bodily actions… verbal actions… mental actions are protected as well… One’s bodily… verbal… mental actions don’t get soggy… One’s bodily… verbal… mental actions don’t rot.
+an3.109:6.2 | P: Tassa rakkhitakāyakammantassa rakkhitavacīkammantassa rakkhitamanokammantassa kāyakammampi anavassutaṁ hoti, vacīkammampi anavassutaṁ hoti, manokammampi anavassutaṁ hoti. | T: (none)
+an3.109:6.3 | P: Tassa anavassutakāyakammantassa anavassutavacīkammantassa anavassutamanokammantassa kāyakammampi apūtikaṁ hoti, vacīkammampi apūtikaṁ hoti, manokammampi apūtikaṁ hoti. | T: (none)
+an3.109:6.4 | S: Someone whose deeds of body, speech, and mind aren’t rotten will have a good death.” | T: When one’s bodily actions, verbal actions, & mental actions don’t rot, auspicious is one’s death, auspicious one’s passing away.”
+an3.109:6.5 | P: Sattamaṁ. | T: (none)
+
+## an3.10
+an3.10:1.1 | S: “Anyone who has three qualities, and has not given up three stains, is placed in hell as if delivered there. | T: “Monks, when one is endowed with three qualities, without abandoning three impurities, then as if one had been carried off, one would thus be placed in hell.
+an3.10:1.2 | S: What three? | T: Which three?
+an3.10:1.3 | S: They’re unethical, and haven’t given up the stain of immorality. | T: One is unvirtuous and hasn’t abandoned the impurity of being unvirtuous.
+an3.10:1.4 | S: They’re jealous, and haven’t given up the stain of jealousy. | T: One is envious and hasn’t abandoned the impurity of envy.
+an3.10:1.5 | S: They’re stingy, and haven’t given up the stain of stinginess. | T: One is stingy and hasn’t abandoned the impurity of stinginess.
+an3.10:1.6 | S: Anyone who possesses these three qualities, and has not given up these three stains, is placed in hell as if delivered there. | T: When one is endowed with these three qualities, without abandoning these three impurities, then as if one had been carried off, one would thus be placed in hell.
+an3.10:2.1 | S: Anyone who has three qualities, and has given up three stains, is placed in heaven as if delivered there. | T: “Monks, when one is endowed with three qualities, having abandoned three impurities, then as if one had been carried off, one would thus be placed in heaven.
+an3.10:2.2 | S: What three? | T: Which three?
+an3.10:2.3 | S: They’re ethical, and have given up the stain of immorality. | T: One is virtuous and has abandoned the impurity of being unvirtuous.
+an3.10:2.4 | S: They’re not jealous, and have given up the stain of jealousy. | T: One is not envious and has abandoned the impurity of envy.
+an3.10:2.5 | S: They’re not stingy, and have given up the stain of stinginess. | T: One is not stingy and has abandoned the impurity of stinginess.
+an3.10:2.6 | S: Anyone who possesses these three qualities, and has given up these three stains, is placed in heaven as if delivered there.” | T: When one is endowed with these three qualities, having abandoned these three impurities, then as if one had been carried off, one would thus be placed in heaven.”
+an3.10:2.7 | P: Dasamaṁ. | T: (none)
+an3.10:2.8 | P: Bālavaggo paṭhamo. | T: (none)
+an3.10:3.0 | P: Tassuddānaṁ | T: (none)
+an3.10:3.1 | P: Bhayaṁ lakkhaṇacintī ca, | T: (none)
+an3.10:3.2 | P: accayañca ayoniso; | T: (none)
+an3.10:3.3 | P: Akusalañca sāvajjaṁ, | T: (none)
+an3.10:3.4 | P: sabyābajjhakhataṁ malanti. | T: (none)
+
+## an3.111
+an3.111:1.1 | S: “Mendicants, there are these three sources that give rise to deeds. | T: “Monks, there are three causes for the origination of action.
+an3.111:1.2 | S: What three? | T: Which three?
+an3.111:1.3 | S: Greed, hate, and delusion are sources that give rise to deeds. | T: Greed is a cause for the origination of action. Aversion is a cause for the origination of action. Delusion is a cause for the origination of action.
+an3.111:1.4 | S: Any deed that emerges from greed, hate, or delusion—born, sourced, and originated from greed, hate, or delusion—is unskillful, blameworthy, results in suffering, and leads to the creation of more deeds, not their cessation. | T: “Any action fashioned by greed, born of greed, caused by greed, originated through greed is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action. “Any action fashioned by aversion, born of aversion, caused by aversion, originated through aversion is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action. “Any action fashioned by delusion, born of delusion, caused by delusion, originated through delusion is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action.
+an3.111:1.5 | P: Yaṁ, bhikkhave, dosapakataṁ kammaṁ dosajaṁ dosanidānaṁ dosasamudayaṁ, taṁ kammaṁ akusalaṁ taṁ kammaṁ sāvajjaṁ taṁ kammaṁ dukkhavipākaṁ, taṁ kammaṁ kammasamudayāya saṁvattati, na taṁ kammaṁ kammanirodhāya saṁvattati. | T: (none)
+an3.111:1.6 | P: Yaṁ, bhikkhave, mohapakataṁ kammaṁ mohajaṁ mohanidānaṁ mohasamudayaṁ, taṁ kammaṁ akusalaṁ taṁ kammaṁ sāvajjaṁ taṁ kammaṁ dukkhavipākaṁ, taṁ kammaṁ kammasamudayāya saṁvattati, na taṁ kammaṁ kammanirodhāya saṁvattati. | T: (none)
+an3.111:1.7 | S: These are three sources that give rise to deeds. | T: “These, monks, are three causes for the origination of action.
+an3.111:2.1 | S: There are these three sources that give rise to deeds. | T: “There are three (other) causes for the origination of action.
+an3.111:2.2 | S: What three? | T: Which three?
+an3.111:2.3 | S: Contentment, love, and understanding are sources that give rise to deeds. | T: Non-greed is a cause for the origination of action. Non-aversion is a cause for the origination of action. Non-delusion is a cause for the origination of action.
+an3.111:2.4 | S: Any deed that emerges from contentment, love, or understanding—born, sourced, and originated from contentment, love, or understanding—is skillful, blameless, results in happiness, and leads to the cessation of more deeds, not their creation. | T: “Any action fashioned by non-greed, born of non-greed, caused by non-greed, originated through non-greed is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action. “Any action fashioned by non-aversion, born of non-aversion, caused by non-aversion, originated through non-aversion is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action. “Any action fashioned by non-delusion, born of non-delusion, caused by non-delusion, originated through non-delusion is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action.
+an3.111:2.5 | P: Yaṁ, bhikkhave, adosapakataṁ kammaṁ adosajaṁ adosanidānaṁ adosasamudayaṁ, taṁ kammaṁ kusalaṁ taṁ kammaṁ anavajjaṁ taṁ kammaṁ sukhavipākaṁ, taṁ kammaṁ kammanirodhāya saṁvattati, na taṁ kammaṁ kammasamudayāya saṁvattati. | T: (none)
+an3.111:2.6 | P: Yaṁ, bhikkhave, amohapakataṁ kammaṁ amohajaṁ amohanidānaṁ amohasamudayaṁ, taṁ kammaṁ kusalaṁ taṁ kammaṁ anavajjaṁ taṁ kammaṁ sukhavipākaṁ, taṁ kammaṁ kammanirodhāya saṁvattati, na taṁ kammaṁ kammasamudayāya saṁvattati. | T: (none)
+an3.111:2.7 | S: These are three sources that give rise to deeds.” | T: “These, monks, are three causes for the origination of action.”
+an3.111:2.8 | P: Navamaṁ. | T: (none)
+
+## an3.112
+an3.112:1.1 | S: “Mendicants, there are these three sources that give rise to deeds. | T: “Monks, there are three causes for the origination of action.
+an3.112:1.2 | S: What three? | T: Which three?
+an3.112:1.3 | S: Desire comes up for things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, desire is born.
+an3.112:1.4 | P: anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando jāyati; | T: With reference to things in the future that provide the occasion for desire & passion, desire is born.
+an3.112:1.5 | P: paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: With reference to things in the present that provide the occasion for desire & passion, desire is born.
+an3.112:1.6 | S: And how does desire come up for things that stimulate desire and greed in the past, future, or present? | T: “And how is it that, with reference to things in the past that provide the occasion for desire & passion, desire is born?
+an3.112:1.7 | S: In your heart you think about and consider things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:1.8 | S: When you do this, desire comes up, | T: To one who—with reference to things in the past that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:1.9 | S: and you get attached to those things. | T: With the birth of desire, one is joined to those things.
+an3.112:1.10 | S: This lust in the heart is what I call a fetter. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:1.11 | S: That’s how desire comes up for things that stimulate desire and greed in the past, future, or present. | T: This is how, with reference to things in the past that provide the occasion for desire & passion, desire is born.
+an3.112:2.1 | P: Kathañca, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando jāyati? | T: “And how is it that, with reference to things in the future that provide the occasion for desire & passion, desire is born?
+an3.112:2.2 | P: Anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakketi anuvicāreti. | T: With reference to things in the future that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:2.3 | P: Tassa anāgate chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakkayato anuvicārayato chando jāyati. | T: To one who—with reference to things in the future that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:2.4 | P: Chandajāto tehi dhammehi saṁyutto hoti. | T: With the birth of desire, one is joined to those things.
+an3.112:2.5 | P: Etamahaṁ, bhikkhave, saṁyojanaṁ vadāmi yo cetaso sārāgo. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:2.6 | P: Evaṁ kho, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: This is how, with reference to things in the future that provide the occasion for desire & passion, desire is born.
+an3.112:3.1 | P: Kathañca, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando jāyati? | T: “And how is it that, with reference to things in the present that provide the occasion for desire & passion, desire is born?
+an3.112:3.2 | P: Paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakketi anuvicāreti. | T: With reference to things in the present that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:3.3 | P: Tassa paccuppanne chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakkayato anuvicārayato chando jāyati. | T: To one who—with reference to things in the present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:3.4 | P: Chandajāto tehi dhammehi saṁyutto hoti. | T: With the birth of desire, one is joined to those things.
+an3.112:3.5 | P: Etamahaṁ, bhikkhave, saṁyojanaṁ vadāmi yo cetaso sārāgo. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:3.6 | P: Evaṁ kho, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: This is how, with reference to things in the present that provide the occasion for desire & passion, desire is born.
+an3.112:3.7 | S: These are three sources that give rise to deeds. | T: “There are these three causes for the origination of action.”
+an3.112:4.1 | S: There are these three sources that give rise to deeds. | T: “Monks, there are three [other] causes for the origination of action.
+an3.112:4.2 | S: What three? | T: Which three?
+an3.112:4.3 | S: Desire doesn’t come up for things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, desire is not born.
+an3.112:4.4 | P: anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati; | T: With reference to things in the future that provide the occasion for desire & passion, desire is not born.
+an3.112:4.5 | P: paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati. | T: With reference to things in the present that provide the occasion for desire & passion, desire is not born.
+an3.112:5.1 | S: And how does desire not come up for things that stimulate desire and greed in the past, future, or present? | T: “And how is it that, with reference to things in the past that provide the occasion for desire & passion, desire is not born?
+an3.112:5.2 | S: You understand the future result of things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, one discerns their future (kammic) results.
+an3.112:5.3 | S: When you know this, you grow disillusioned, | T: Knowing their future results, one drops them.
+an3.112:5.4 | S: your heart becomes dispassionate, and you see it with penetrating wisdom. | T: Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.
+an3.112:5.5 | S: That’s how desire doesn’t come up for things that stimulate desire and greed in the past, future, or present. | T: This is how, with reference to things in the past that provide the occasion for desire & passion, desire is not born.
+
+exec
+/bin/bash -lc "sed -n '60,145p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.104:1.11 | P: Dutiyaṁ. | T: (none)
+
+## an3.105
+an3.105:1.1 | S: “Mendicants, if there were no gratification in the world, sentient beings wouldn’t be aroused by it. | T: “Monks, if there were not this allure to the cosmos, beings would not become impassioned with the cosmos.
+an3.105:1.2 | S: But because there is gratification in the world, sentient beings are aroused by it. | T: But because there is an allure to the cosmos, beings become impassioned with the cosmos.
+an3.105:1.3 | S: If the world had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not this drawback to the cosmos, beings would not become disenchanted with the cosmos.
+an3.105:1.4 | S: But since the world has a drawback, sentient beings do grow disillusioned with it. | T: But because there is a drawback to the cosmos, beings become disenchanted with the cosmos.
+an3.105:1.5 | S: If there were no escape from the world, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the cosmos, beings would not escape from the cosmos.
+an3.105:1.6 | S: But since there is an escape from the world, sentient beings do escape from it. | T: But because there is an escape from the cosmos, beings escape from the cosmos.
+an3.105:1.7 | S: As long as sentient beings don’t truly understand the world’s gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+an3.105:1.8 | S: But when sentient beings truly understand the world’s gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: “But when beings know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+an3.105:1.9 | P: Tatiyaṁ. | T: (none)
+
+## an3.108
+an3.108:1.1 | S: “Mendicants, there are three indulgences that never satisfy. | T: “There is no satiation through indulging in three things.
+an3.108:1.2 | S: What three? | T: Which three?
+an3.108:1.3 | S: Sleep, | T: There is no satiation through indulging in sleep.
+an3.108:1.4 | S: drinking beer and wine, | T: There is no satiation through indulging in distilled & fermented drinks.
+an3.108:1.5 | S: and sexual intercourse. | T: There is no satiation through indulging in the climax of sexual intercourse.
+an3.108:1.6 | S: These are the three indulgences that never satisfy.” | T: There is no satiation through indulging in these three things.”
+an3.108:1.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## an3.109
+an3.109:1.1 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Anāthapiṇḍika the householder went to the Blessed One and, on arrival, having bowed to him, sat to one side. As he was sitting there, the Blessed One said to him:
+an3.109:1.2 | S: “Householder, when the mind is unprotected, deeds of body, speech, and mind are unprotected. | T: “Householder, when the mind is unprotected, bodily actions are unprotected as well, verbal actions are unprotected as well, mental actions are unprotected as well.
+an3.109:1.3 | S: When deeds are unprotected, they fester. | T: When one’s bodily actions, verbal actions, & mental actions are unprotected, one’s bodily actions get soggy, one’s verbal actions get soggy, one’s mental actions get soggy.
+an3.109:1.4 | S: When deeds fester, they become rotten. | T: When one’s bodily actions, verbal actions, & mental actions are soggy, one’s bodily actions… verbal actions… mental actions rot.
+an3.109:1.5 | S: Someone whose deeds of body, speech, and mind are rotten will not have a good death. | T: When one’s bodily actions, verbal actions, & mental actions rot, inauspicious is one’s death, inauspicious one’s passing away.
+an3.109:2.1 | S: It’s like a bungalow with a bad roof. The roof peak, rafters, and walls are unprotected. | T: “Just as when a peak-roofed house is poorly roofed: The peak of the roof is unprotected, the roof beams are unprotected, the walls are unprotected.
+an3.109:2.2 | S: They fester, | T: The peak of the roof… the roof beams… the walls get soggy.
+an3.109:2.3 | S: and become rotten. | T: The peak of the roof… the roof beams… the walls then rot.
+an3.109:3.1 | S: In the same way, when the mind is unprotected, bodily, verbal, and mental deeds are unprotected. … | T: “In the same way, when the mind is unprotected, bodily actions… verbal actions… mental actions are unprotected as well.…
+an3.109:3.2 | P: Tassa arakkhitakāyakammantassa arakkhitavacīkammantassa arakkhitamanokammantassa kāyakammampi avassutaṁ hoti, vacīkammampi avassutaṁ hoti, manokammampi avassutaṁ hoti. | T: One’s bodily… verbal… mental actions get soggy…
+an3.109:3.3 | P: Tassa avassutakāyakammantassa avassutavacīkammantassa avassutamanokammantassa kāyakammampi pūtikaṁ hoti, vacīkammampi pūtikaṁ hoti, manokammampi pūtikaṁ hoti. | T: One’s bodily… verbal… mental actions rot.
+an3.109:3.4 | S: Someone whose deeds of body, speech, and mind are rotten will not have a good death. | T: When one’s bodily actions, verbal actions, & mental actions rot, inauspicious is one’s death, inauspicious one’s passing away.
+an3.109:4.1 | S: When the mind is protected, bodily, verbal, and mental deeds are protected. | T: “Now, when the mind is protected, bodily actions are protected as well, verbal actions are protected as well, mental actions are protected as well.
+an3.109:4.2 | S: When deeds are protected, they don’t fester. | T: When one’s bodily actions, verbal actions, & mental actions are protected, one’s bodily actions… verbal actions… mental actions don’t get soggy.
+an3.109:4.3 | S: When deeds don’t fester, they don’t become rotten. | T: When one’s bodily actions, verbal actions, & mental actions aren’t soggy, one’s bodily actions… verbal actions… mental actions don’t rot.
+an3.109:4.4 | S: Someone whose deeds of body, speech, and mind aren’t rotten will have a good death. | T: When one’s bodily actions, verbal actions, & mental actions don’t rot, auspicious is one’s death, auspicious one’s passing away.
+an3.109:5.1 | S: It’s like a bungalow with a good roof. The roof peak, rafters, and walls are protected. | T: “Just as when a peak-roofed house is well roofed: The peak of the roof is protected, the roof beams are protected, the walls are protected.
+an3.109:5.2 | S: They don’t get soaked, | T: The peak of the roof… the roof beams… the walls don’t get soggy.
+an3.109:5.3 | S: and they don’t become rotten. | T: The peak of the roof… the roof beams… the walls don’t rot.
+an3.109:6.1 | S: In the same way, when the mind is protected, bodily, verbal, and mental deeds are protected. … | T: “In the same way, when the mind is protected, bodily actions… verbal actions… mental actions are protected as well… One’s bodily… verbal… mental actions don’t get soggy… One’s bodily… verbal… mental actions don’t rot.
+an3.109:6.2 | P: Tassa rakkhitakāyakammantassa rakkhitavacīkammantassa rakkhitamanokammantassa kāyakammampi anavassutaṁ hoti, vacīkammampi anavassutaṁ hoti, manokammampi anavassutaṁ hoti. | T: (none)
+an3.109:6.3 | P: Tassa anavassutakāyakammantassa anavassutavacīkammantassa anavassutamanokammantassa kāyakammampi apūtikaṁ hoti, vacīkammampi apūtikaṁ hoti, manokammampi apūtikaṁ hoti. | T: (none)
+an3.109:6.4 | S: Someone whose deeds of body, speech, and mind aren’t rotten will have a good death.” | T: When one’s bodily actions, verbal actions, & mental actions don’t rot, auspicious is one’s death, auspicious one’s passing away.”
+an3.109:6.5 | P: Sattamaṁ. | T: (none)
+
+## an3.10
+an3.10:1.1 | S: “Anyone who has three qualities, and has not given up three stains, is placed in hell as if delivered there. | T: “Monks, when one is endowed with three qualities, without abandoning three impurities, then as if one had been carried off, one would thus be placed in hell.
+an3.10:1.2 | S: What three? | T: Which three?
+an3.10:1.3 | S: They’re unethical, and haven’t given up the stain of immorality. | T: One is unvirtuous and hasn’t abandoned the impurity of being unvirtuous.
+an3.10:1.4 | S: They’re jealous, and haven’t given up the stain of jealousy. | T: One is envious and hasn’t abandoned the impurity of envy.
+an3.10:1.5 | S: They’re stingy, and haven’t given up the stain of stinginess. | T: One is stingy and hasn’t abandoned the impurity of stinginess.
+an3.10:1.6 | S: Anyone who possesses these three qualities, and has not given up these three stains, is placed in hell as if delivered there. | T: When one is endowed with these three qualities, without abandoning these three impurities, then as if one had been carried off, one would thus be placed in hell.
+an3.10:2.1 | S: Anyone who has three qualities, and has given up three stains, is placed in heaven as if delivered there. | T: “Monks, when one is endowed with three qualities, having abandoned three impurities, then as if one had been carried off, one would thus be placed in heaven.
+an3.10:2.2 | S: What three? | T: Which three?
+an3.10:2.3 | S: They’re ethical, and have given up the stain of immorality. | T: One is virtuous and has abandoned the impurity of being unvirtuous.
+an3.10:2.4 | S: They’re not jealous, and have given up the stain of jealousy. | T: One is not envious and has abandoned the impurity of envy.
+an3.10:2.5 | S: They’re not stingy, and have given up the stain of stinginess. | T: One is not stingy and has abandoned the impurity of stinginess.
+an3.10:2.6 | S: Anyone who possesses these three qualities, and has given up these three stains, is placed in heaven as if delivered there.” | T: When one is endowed with these three qualities, having abandoned these three impurities, then as if one had been carried off, one would thus be placed in heaven.”
+an3.10:2.7 | P: Dasamaṁ. | T: (none)
+an3.10:2.8 | P: Bālavaggo paṭhamo. | T: (none)
+an3.10:3.0 | P: Tassuddānaṁ | T: (none)
+an3.10:3.1 | P: Bhayaṁ lakkhaṇacintī ca, | T: (none)
+an3.10:3.2 | P: accayañca ayoniso; | T: (none)
+an3.10:3.3 | P: Akusalañca sāvajjaṁ, | T: (none)
+an3.10:3.4 | P: sabyābajjhakhataṁ malanti. | T: (none)
+
+## an3.111
+an3.111:1.1 | S: “Mendicants, there are these three sources that give rise to deeds. | T: “Monks, there are three causes for the origination of action.
+an3.111:1.2 | S: What three? | T: Which three?
+an3.111:1.3 | S: Greed, hate, and delusion are sources that give rise to deeds. | T: Greed is a cause for the origination of action. Aversion is a cause for the origination of action. Delusion is a cause for the origination of action.
+an3.111:1.4 | S: Any deed that emerges from greed, hate, or delusion—born, sourced, and originated from greed, hate, or delusion—is unskillful, blameworthy, results in suffering, and leads to the creation of more deeds, not their cessation. | T: “Any action fashioned by greed, born of greed, caused by greed, originated through greed is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action. “Any action fashioned by aversion, born of aversion, caused by aversion, originated through aversion is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action. “Any action fashioned by delusion, born of delusion, caused by delusion, originated through delusion is unskillful, it’s blameworthy, it ripens in pain, it leads to the origination of (further) action, it doesn’t lead to the cessation of action.
+an3.111:1.5 | P: Yaṁ, bhikkhave, dosapakataṁ kammaṁ dosajaṁ dosanidānaṁ dosasamudayaṁ, taṁ kammaṁ akusalaṁ taṁ kammaṁ sāvajjaṁ taṁ kammaṁ dukkhavipākaṁ, taṁ kammaṁ kammasamudayāya saṁvattati, na taṁ kammaṁ kammanirodhāya saṁvattati. | T: (none)
+an3.111:1.6 | P: Yaṁ, bhikkhave, mohapakataṁ kammaṁ mohajaṁ mohanidānaṁ mohasamudayaṁ, taṁ kammaṁ akusalaṁ taṁ kammaṁ sāvajjaṁ taṁ kammaṁ dukkhavipākaṁ, taṁ kammaṁ kammasamudayāya saṁvattati, na taṁ kammaṁ kammanirodhāya saṁvattati. | T: (none)
+an3.111:1.7 | S: These are three sources that give rise to deeds. | T: “These, monks, are three causes for the origination of action.
+an3.111:2.1 | S: There are these three sources that give rise to deeds. | T: “There are three (other) causes for the origination of action.
+an3.111:2.2 | S: What three? | T: Which three?
+an3.111:2.3 | S: Contentment, love, and understanding are sources that give rise to deeds. | T: Non-greed is a cause for the origination of action. Non-aversion is a cause for the origination of action. Non-delusion is a cause for the origination of action.
+an3.111:2.4 | S: Any deed that emerges from contentment, love, or understanding—born, sourced, and originated from contentment, love, or understanding—is skillful, blameless, results in happiness, and leads to the cessation of more deeds, not their creation. | T: “Any action fashioned by non-greed, born of non-greed, caused by non-greed, originated through non-greed is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action. “Any action fashioned by non-aversion, born of non-aversion, caused by non-aversion, originated through non-aversion is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action. “Any action fashioned by non-delusion, born of non-delusion, caused by non-delusion, originated through non-delusion is skillful, it’s blameless, it ripens in pleasure, it leads to the cessation of action, it doesn’t lead to the origination of action.
+an3.111:2.5 | P: Yaṁ, bhikkhave, adosapakataṁ kammaṁ adosajaṁ adosanidānaṁ adosasamudayaṁ, taṁ kammaṁ kusalaṁ taṁ kammaṁ anavajjaṁ taṁ kammaṁ sukhavipākaṁ, taṁ kammaṁ kammanirodhāya saṁvattati, na taṁ kammaṁ kammasamudayāya saṁvattati. | T: (none)
+an3.111:2.6 | P: Yaṁ, bhikkhave, amohapakataṁ kammaṁ amohajaṁ amohanidānaṁ amohasamudayaṁ, taṁ kammaṁ kusalaṁ taṁ kammaṁ anavajjaṁ taṁ kammaṁ sukhavipākaṁ, taṁ kammaṁ kammanirodhāya saṁvattati, na taṁ kammaṁ kammasamudayāya saṁvattati. | T: (none)
+an3.111:2.7 | S: These are three sources that give rise to deeds.” | T: “These, monks, are three causes for the origination of action.”
+an3.111:2.8 | P: Navamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '146,255p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.112
+an3.112:1.1 | S: “Mendicants, there are these three sources that give rise to deeds. | T: “Monks, there are three causes for the origination of action.
+an3.112:1.2 | S: What three? | T: Which three?
+an3.112:1.3 | S: Desire comes up for things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, desire is born.
+an3.112:1.4 | P: anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando jāyati; | T: With reference to things in the future that provide the occasion for desire & passion, desire is born.
+an3.112:1.5 | P: paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: With reference to things in the present that provide the occasion for desire & passion, desire is born.
+an3.112:1.6 | S: And how does desire come up for things that stimulate desire and greed in the past, future, or present? | T: “And how is it that, with reference to things in the past that provide the occasion for desire & passion, desire is born?
+an3.112:1.7 | S: In your heart you think about and consider things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:1.8 | S: When you do this, desire comes up, | T: To one who—with reference to things in the past that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:1.9 | S: and you get attached to those things. | T: With the birth of desire, one is joined to those things.
+an3.112:1.10 | S: This lust in the heart is what I call a fetter. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:1.11 | S: That’s how desire comes up for things that stimulate desire and greed in the past, future, or present. | T: This is how, with reference to things in the past that provide the occasion for desire & passion, desire is born.
+an3.112:2.1 | P: Kathañca, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando jāyati? | T: “And how is it that, with reference to things in the future that provide the occasion for desire & passion, desire is born?
+an3.112:2.2 | P: Anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakketi anuvicāreti. | T: With reference to things in the future that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:2.3 | P: Tassa anāgate chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakkayato anuvicārayato chando jāyati. | T: To one who—with reference to things in the future that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:2.4 | P: Chandajāto tehi dhammehi saṁyutto hoti. | T: With the birth of desire, one is joined to those things.
+an3.112:2.5 | P: Etamahaṁ, bhikkhave, saṁyojanaṁ vadāmi yo cetaso sārāgo. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:2.6 | P: Evaṁ kho, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: This is how, with reference to things in the future that provide the occasion for desire & passion, desire is born.
+an3.112:3.1 | P: Kathañca, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando jāyati? | T: “And how is it that, with reference to things in the present that provide the occasion for desire & passion, desire is born?
+an3.112:3.2 | P: Paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakketi anuvicāreti. | T: With reference to things in the present that provide the occasion for desire & passion, one thinks about & evaluates with one’s awareness.
+an3.112:3.3 | P: Tassa paccuppanne chandarāgaṭṭhāniye dhamme ārabbha cetasā anuvitakkayato anuvicārayato chando jāyati. | T: To one who—with reference to things in the present that provide the occasion for desire & passion—is thinking & evaluating with one’s awareness, desire is born.
+an3.112:3.4 | P: Chandajāto tehi dhammehi saṁyutto hoti. | T: With the birth of desire, one is joined to those things.
+an3.112:3.5 | P: Etamahaṁ, bhikkhave, saṁyojanaṁ vadāmi yo cetaso sārāgo. | T: That, I tell you, is a fetter: that one’s awareness is impassioned.
+an3.112:3.6 | P: Evaṁ kho, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando jāyati. | T: This is how, with reference to things in the present that provide the occasion for desire & passion, desire is born.
+an3.112:3.7 | S: These are three sources that give rise to deeds. | T: “There are these three causes for the origination of action.”
+an3.112:4.1 | S: There are these three sources that give rise to deeds. | T: “Monks, there are three [other] causes for the origination of action.
+an3.112:4.2 | S: What three? | T: Which three?
+an3.112:4.3 | S: Desire doesn’t come up for things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, desire is not born.
+an3.112:4.4 | P: anāgate, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati; | T: With reference to things in the future that provide the occasion for desire & passion, desire is not born.
+an3.112:4.5 | P: paccuppanne, bhikkhave, chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati. | T: With reference to things in the present that provide the occasion for desire & passion, desire is not born.
+an3.112:5.1 | S: And how does desire not come up for things that stimulate desire and greed in the past, future, or present? | T: “And how is it that, with reference to things in the past that provide the occasion for desire & passion, desire is not born?
+an3.112:5.2 | S: You understand the future result of things that stimulate desire and greed in the past, future, or present. | T: With reference to things in the past that provide the occasion for desire & passion, one discerns their future (kammic) results.
+an3.112:5.3 | S: When you know this, you grow disillusioned, | T: Knowing their future results, one drops them.
+an3.112:5.4 | S: your heart becomes dispassionate, and you see it with penetrating wisdom. | T: Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.
+an3.112:5.5 | S: That’s how desire doesn’t come up for things that stimulate desire and greed in the past, future, or present. | T: This is how, with reference to things in the past that provide the occasion for desire & passion, desire is not born.
+an3.112:6.1 | P: Kathañca, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati? | T: “And how is it that, with reference to things in the future that provide the occasion for desire & passion, desire is not born?
+an3.112:6.2 | P: Anāgatānaṁ, bhikkhave, chandarāgaṭṭhāniyānaṁ dhammānaṁ āyatiṁ vipākaṁ pajānāti. | T: With reference to things in the future that provide the occasion for desire & passion, one discerns their future (kammic) results.
+an3.112:6.3 | P: Āyatiṁ vipākaṁ viditvā tadabhinivatteti. | T: Knowing their future results, one drops them.
+an3.112:6.4 | P: Tadabhinivattetvā cetasā abhinivijjhitvā paññāya ativijjha passati. | T: Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.
+an3.112:6.5 | P: Evaṁ kho, bhikkhave, anāgate chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati. | T: This is how, with reference to things in the future that provide the occasion for desire & passion, desire is not born.
+an3.112:7.1 | P: Kathañca, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati? | T: “And how is it that, with reference to things in the present that provide the occasion for desire & passion, desire is not born?
+an3.112:7.2 | P: Paccuppannānaṁ, bhikkhave, chandarāgaṭṭhāniyānaṁ dhammānaṁ āyatiṁ vipākaṁ pajānāti, āyatiṁ vipākaṁ viditvā tadabhinivatteti, tadabhinivattetvā cetasā abhinivijjhitvā paññāya ativijjha passati. | T: With reference to things in the present that provide the occasion for desire & passion, one discerns their future (kammic) results. Knowing their future results, one drops them. Dropping them, making them fade from one’s awareness, piercing them with discernment, one sees.
+an3.112:7.3 | P: Evaṁ kho, bhikkhave, paccuppanne chandarāgaṭṭhāniye dhamme ārabbha chando na jāyati. | T: This is how, with reference to things in the present that provide the occasion for desire & passion, desire is not born.
+an3.112:7.4 | S: These are three sources that give rise to deeds.” | T: “Monks, there are these three causes for the origination of action.”
+an3.112:7.5 | P: Dasamaṁ. | T: (none)
+an3.112:7.6 | P: Sambodhavaggo paṭhamo. | T: (none)
+an3.112:8.0 | P: Tassuddānaṁ | T: (none)
+an3.112:8.1 | P: Pubbeva duve assādā, | T: (none)
+an3.112:8.2 | P: Samaṇo ruṇṇapañcamaṁ; | T: (none)
+an3.112:8.3 | P: Atitti dve ca vuttāni, | T: (none)
+an3.112:8.4 | P: Nidānāni apare duveti. | T: (none)
+
+## an3.114
+an3.114:1.1 | S: “Mendicants, the appearance of three individuals is rare in the world. | T: “Monks, the appearance of three [persons] is rare in the world.
+an3.114:1.2 | S: What three? | T: Which three?
+an3.114:1.3 | S: A Realized One, a perfected one, a fully awakened Buddha. A teacher of the teaching and training proclaimed by a Realized One. An individual who is grateful and thankful. | T: The appearance of the Tathāgatha, worthy & rightly self-awakened, is rare in the world. A person who teaches the Dhamma & Vinaya proclaimed by the Tathāgata is rare in the world. A person who is grateful & thankful is rare in the world.
+an3.114:1.4 | S: The appearance of these three individuals is rare in the world.” | T: “Monks, the appearance of these three is rare in the world.”
+an3.114:1.5 | P: Dutiyaṁ. | T: (none)
+
+## an3.115
+an3.115:1.1 | S: “Mendicants, these three individuals are found in the world. | T: “Monks, these three persons are to be found existing in the world.
+an3.115:1.2 | S: What three? | T: Which three?
+an3.115:1.3 | S: Someone easy to measure, someone hard to measure, and someone who is immeasurable. | T: One who is easy to measure, one who is hard to measure, & one who is immeasurable.
+an3.115:1.4 | S: And who is the individual easy to measure? | T: “And which is the person who is easy to measure?
+an3.115:1.5 | S: It’s an individual who is haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying mind and undisciplined faculties. | T: There is the case where a certain person is high-strung, rowdy, unruly, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, his mind scattered, his faculties left wide open.
+an3.115:1.6 | S: This is called ‘an individual easy to measure’. | T: This is called a person who is easy to measure.
+an3.115:2.1 | S: And who is the individual hard to measure? | T: “And which is the person who is hard to measure?
+an3.115:2.2 | S: It’s an individual who is not haughty, insolent, fickle, scurrilous, or loose-tongued. They have established mindfulness, situational awareness and immersion, with unified mind and restrained faculties. | T: There is the case where a certain person is not high-strung, not rowdy, not unruly, not talkative, not of loose words—one with mindfulness established, alert, concentrated, his mind gathered into singleness, his faculties restrained.
+an3.115:2.3 | S: This is called ‘an individual hard to measure’. | T: This is called a person who is hard to measure.
+an3.115:3.1 | S: And who is the immeasurable individual? | T: “And which is the person who is immeasurable?
+an3.115:3.2 | S: It’s a mendicant who is perfected, and has ended defilements. | T: There is the case where a monk is an arahant, his effluents ended.
+an3.115:3.3 | S: This is called ‘an immeasurable individual’. | T: This is called a person who is immeasurable.
+an3.115:3.4 | S: These are the three individuals found in the world.” | T: “These, monks, are three persons to be found existing in the world.”
+an3.115:3.5 | P: Tatiyaṁ. | T: (none)
+
+## an3.116
+an3.116:1.1 | S: “Mendicants, these three individuals are found in the world. | T: “Monks, these three persons are to be found existing in the world.
+an3.116:1.2 | S: What three? | T: Which three?
+an3.116:1.3 | S: First, an individual, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “There is the case where a certain person who—with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity—(perceiving,) ‘Infinite space,’ enters & remains in the dimension of the infinitude of space.
+an3.116:1.4 | S: They enjoy it and like it and find it rewarding. If they’re set on that, committed to it, and meditate on it often without losing it, when they die they’re reborn in the company of the gods of the dimension of infinite space. | T: He enjoys it, takes pleasure in it, & finds satisfaction in it. Staying firmly there, often remaining there, and dying without having abandoned it, he reappears in the company of the devas of the dimension of the infinitude of space.
+an3.116:1.5 | S: The lifespan of the gods of infinite space is twenty thousand eons. | T: The life span of the devas of the dimension of the infinitude of space is 20,000 eons.
+an3.116:1.6 | S: An ordinary person stays there until the lifespan of those gods is spent, then they go to hell or the animal realm or the ghost realm. | T: A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts.
+an3.116:1.7 | S: But a disciple of the Buddha stays there until the lifespan of those gods is spent, then they’re extinguished in that very life. | T: But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.
+an3.116:1.8 | S: This is the difference between a learned noble disciple and an unlearned ordinary person as regards their place of rebirth. | T: This, monks, is the difference, this the distinction, this the distinguishing factor, between an educated disciple of the noble ones and an uneducated run-of-the-mill person, when there is a destination, a reappearing.
+an3.116:2.1 | S: Furthermore, an individual, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. | T: “Then, monks, there is the case where a certain person who—with the complete transcending of the dimension of the infinitude of space—(perceiving,) ‘Infinite consciousness,’ enters & remains in the dimension of the infinitude of consciousness.
+an3.116:2.2 | S: They enjoy it and like it and find it rewarding. If they’re set on that, committed to it, and meditate on it often without losing it, when they die they’re reborn in the company of the gods of the dimension of infinite consciousness. | T: He enjoys it, takes pleasure in it, & finds satisfaction in it. Staying firmly there, often remaining there, and dying without having abandoned it, he reappears in the company of the devas of the dimension of the infinitude of consciousness.
+an3.116:2.3 | S: The lifespan of the gods of infinite consciousness is forty thousand eons. | T: The life span of the devas of the dimension of the infinitude of consciousness is 40,000 eons.
+an3.116:2.4 | S: An ordinary person stays there until the lifespan of those gods is spent, then they go to hell or the animal realm or the ghost realm. | T: A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts.
+an3.116:2.5 | S: But a disciple of the Buddha stays there until the lifespan of those gods is spent, then they’re extinguished in that very life. | T: But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.
+an3.116:2.6 | S: This is the difference between a learned noble disciple and an unlearned ordinary person as regards their place of rebirth. | T: This, monks, is the difference, this the distinction, this the distinguishing factor, between an educated disciple of the noble ones and an uneducated run-of-the-mill person, when there is a destination, a reappearing.
+an3.116:3.1 | S: Furthermore, an individual, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. | T: “Then, monks, there is the case where a certain person who—with the complete transcending of the dimension of the infinitude of consciousness—(perceiving,) ‘There is nothing,’ enters & remains in the dimension of nothingness.
+an3.116:3.2 | S: They enjoy it and like it and find it rewarding. If they’re set on that, committed to it, and meditate on it often without losing it, when they die they’re reborn in the company of the gods of the dimension of nothingness. | T: He enjoys it, takes pleasure in it, & finds satisfaction in it. Staying firmly there, often remaining there, and dying without having abandoned it, he reappears in the company of the devas of the dimension of nothingness.
+an3.116:3.3 | S: The lifespan of the gods of nothingness is sixty thousand eons. | T: The life span of the devas of the dimension of the nothingness is 60,000 eons.
+an3.116:3.4 | S: An ordinary person stays there until the lifespan of those gods is spent, then they go to hell or the animal realm or the ghost realm. | T: A run-of-the-mill person, remaining there all his life, having completed the entire life span of those devas, goes to hell, to the animal womb, or to the realm of the hungry ghosts.
+an3.116:3.5 | S: But a disciple of the Buddha stays there until the lifespan of those gods is spent, then they’re extinguished in that very life. | T: But a disciple of the Blessed One, remaining there all his life, having completed the entire life span of those devas, is unbound in that very level of becoming.
+an3.116:3.6 | S: This is the difference between a learned noble disciple and an unlearned ordinary person as regards their place of rebirth. | T: This, monks, is the difference, this the distinction, this the distinguishing factor, between an educated disciple of the noble ones and an uneducated run-of-the-mill person, when there is a destination, a reappearing.
+an3.116:3.7 | S: These are the three individuals found in the world.” | T: “These, monks, are three persons to be found existing in the world.”
+an3.116:3.8 | P: Catutthaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '256,355p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found six clear boundary changes: two in the protected-actions passage and four where separate sentences about the sources of action share a line. I’ll write those findings now.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-063.findings.tmp <<'EOF'
+an3.109:6.2 starts: One’s bodily… verbal… mental actions don’t get soggy…
+an3.109:6.3 starts: One’s bodily… verbal… mental actions don’t rot.
+an3.111:1.5 starts: “Any action fashioned by aversion, born of
+an3.111:1.6 starts: “Any action fashioned by delusion, born of
+an3.111:2.5 starts: “Any action fashioned by non-aversion, born of
+an3.111:2.6 starts: “Any action fashioned by non-delusion, born of
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+47,588
+6 lines reported.

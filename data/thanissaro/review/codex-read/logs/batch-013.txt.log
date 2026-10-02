@@ -1,0 +1,394 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd91-a814-7f70-97a0-d7de1ffbd330
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the lines whose text is clearly misplaced.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.30
+an3.30:1.1 | S: “These three individuals are found in the world. | T: “Monks, there are these three types of persons to be found existing in the world.
+an3.30:1.2 | S: What three? | T: Which three?
+an3.30:1.3 | S: One with upside-down wisdom, one with wisdom on their lap, and one with widespread wisdom. | T: The person of upside down discernment, the person of lap discernment, and the person of wide-open discernment.
+an3.30:1.4 | S: And who is the individual with upside-down wisdom? | T: “And which is the person of upside-down discernment?
+an3.30:1.5 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:1.6 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:1.7 | S: But even while sitting there, that person doesn’t apply the mind to the beginning, middle, or end of the discussion. | T: He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:1.8 | S: And when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:1.9 | S: It’s like when a pot full of water is tipped over, so the water drains out and doesn’t stay. | T: Just as when a pot is turned upside down, water poured there runs off and doesn’t stay;
+an3.30:1.10 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:1.11 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:1.12 | S: But even while sitting there, that person doesn’t apply the mind to the discussion in the beginning, middle, or end. | T: He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:1.13 | S: And when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:1.14 | S: This is called an individual with upside-down wisdom. | T: This is called a person of upside down discernment.
+an3.30:2.1 | S: And who is the individual with wisdom on their lap? | T: “And which is the person of lap discernment?
+an3.30:2.2 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:2.3 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:2.4 | S: While sitting there, that person applies the mind to the discussion in the beginning, middle, and end. | T: He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:2.5 | S: But when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:2.6 | S: It’s like a person who has different kinds of food crammed on their lap— | T: Just as when a person has various foods strewn over his lap—
+an3.30:2.7 | S: such as sesame, rice, sweets, or jujube— | T: sesame seeds, husked rice, cakes, & jujubes—
+an3.30:2.8 | S: so that if they rise from the seat without mindfulness, everything gets scattered. | T: and when getting up, his mindfulness lapsed, he would scatter them;
+an3.30:2.9 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:2.10 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:2.11 | S: While sitting there, that person applies the mind to the discussion in the beginning, middle, and end. | T: He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:2.12 | S: But when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end.
+an3.30:2.13 | S: This is called an individual with wisdom on their lap. | T: This is called a person of lap discernment.
+an3.30:3.1 | S: And who is the individual with widespread wisdom? | T: “And which is the person of wide open discernment?
+an3.30:3.2 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:3.3 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:3.4 | S: While sitting there, they apply the mind to the discussion in the beginning, middle, and end. | T: He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:3.5 | S: And when they rise from their seat, they continue to apply the mind to the beginning, middle, or end of the discussion. | T: And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:3.6 | S: It’s like when a pot full of water is set straight, so the water stays and doesn’t drain out. | T: Just as when a pot is set right side up, water poured there stays and doesn’t run off;
+an3.30:3.7 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks.
+an3.30:3.8 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure.
+an3.30:3.9 | S: While sitting there, they apply the mind to the discussion in the beginning, middle, and end. | T: He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:3.10 | S: And when they rise from their seat, they continue to apply the mind to the beginning, middle, or end of the discussion. | T: And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end.
+an3.30:3.11 | S: This is called an individual with widespread wisdom. | T: This is called a person of wide open discernment.”
+an3.30:3.12 | S: These are the three individuals found in the world. | T: (none)
+an3.30:4.1 | S: A person with upside-down wisdom, | T: A man of upside down discernment—
+an3.30:4.2 | S: is a simpleton and cannot see, | T: stupid, injudicious,
+an3.30:4.3 | S: and even if they frequently | T: even if he often goes in the presence of the monks,
+an3.30:4.4 | S: go into the mendicants’ presence, | T: (none)
+an3.30:5.1 | S: such a person can’t learn | T: can’t grasp anything
+an3.30:5.2 | S: the beginning, middle, or end | T: like the beginning, middle, or end of a talk,
+an3.30:5.3 | S: of the discussion, | T: (none)
+an3.30:5.4 | S: for their wisdom is lacking. | T: for discernment isn’t found in him.
+an3.30:6.1 | S: the individual with wisdom on their lap | T: A man of lap discernment
+an3.30:6.2 | S: is better than that, it’s said; | T: is said to be better than that one.
+an3.30:6.3 | S: but even if they frequently | T: If he often goes in the presence of the monks,
+an3.30:6.4 | S: go into the mendicants’ presence, | T: (none)
+an3.30:7.1 | S: such a person can only learn | T: (none)
+an3.30:7.2 | S: the beginning, middle, and end | T: (none)
+an3.30:7.3 | S: while sitting in that seat; | T: while sitting in that seat,
+an3.30:7.4 | S: but they’ve only grasped the phrasing, | T: grasps the words of the beginning, middle, & end of the talk,
+an3.30:7.5 | S: for when they rise their understanding fails, | T: but getting up, he doesn’t discern anything like that,
+an3.30:7.6 | S: and what they’ve learned is lost. | T: for he forgets what he had grasped.
+an3.30:8.1 | S: The person with widespread wisdom | T: But a man of wide open discernment
+an3.30:8.2 | S: is better than that, it’s said; | T: is said to be better than those ones.
+an3.30:8.3 | S: and if they, too, frequently | T: If he often goes in the presence of the monks,
+an3.30:8.4 | S: go into the mendicants’ presence, | T: (none)
+an3.30:9.1 | S: one such can learn | T: (none)
+an3.30:9.2 | S: the beginning, middle, and end | T: (none)
+an3.30:9.3 | S: while sitting in that seat; | T: while sitting in that seat,
+an3.30:9.4 | S: and when they’ve grasped the phrasing, | T: he grasps the words of the beginning, middle, & end of the talk.
+an3.30:10.1 | S: they remember it with the best of intentions. | T: He remembers—the person of undivided mind, with the best of resolves.
+an3.30:10.2 | S: That peaceful-hearted man, | T: (none)
+an3.30:10.3 | S: practicing in line with the teaching, | T: Practicing the Dhamma in line with the Dhamma,
+an3.30:10.4 | S: would make an end of suffering.” | T: he’ll put an end to suffering & stress.
+an3.30:10.5 | P: Dasamaṁ. | T: (none)
+an3.30:10.6 | P: Puggalavaggo tatiyo. | T: (none)
+an3.30:11.0 | P: Tassuddānaṁ | T: (none)
+an3.30:11.1 | P: Samiddha gilāna saṅkhārā, | T: (none)
+an3.30:11.2 | P: bahukārā vajirena ca; | T: (none)
+an3.30:11.3 | P: Sevi jiguccha gūthabhāṇī, | T: (none)
+an3.30:11.4 | P: andho ca avakujjatāti. | T: (none)
+
+## iti99
+iti99:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti99:2.1 | S: “Mendicants, I define a brahmin in terms of the teaching as one who is master of the three knowledges, not the other who merely repeats what they are told. | T: “It’s with reference to Dhamma, monks, that I describe [a person as] a brahman with threefold knowledge, and not another as measured by citing & reciting.
+iti99:3.1 | S: How so? | T: And how is it with reference to Dhamma that I describe [a person as] a brahman with threefold knowledge, and not another as measured by citing & reciting?
+iti99:3.2 | S: It’s when a mendicant recollects many kinds of past lives. That is: one, two, three, four, five, ten, twenty, thirty, forty, fifty, a hundred, a thousand, a hundred thousand rebirths; many eons of the world contracting, many eons of the world expanding, many eons of the world contracting and expanding. They remember: ‘There, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn somewhere else. There, too, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn here.’ And so they recollect their many kinds of past lives, with features and details. | T: “There is the case where a monk recollects his manifold past lives, i.e., one birth, two… five, ten… fifty, a hundred, a thousand, a hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion: ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my sensitivity to pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my sensitivity to pleasure & pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he recollects his manifold past lives in their modes & details.
+iti99:3.3 | S: This is the first knowledge they achieved. Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: “This is the first knowledge he has attained. Ignorance has been destroyed; knowledge has arisen; darkness has been destroyed; light has arisen–as happens in one who remains heedful, ardent, & resolute.
+iti99:4.1 | S: Furthermore, with clairvoyance that is purified and superhuman, a mendicant sees sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. They understand how sentient beings pass on according to their deeds: ‘These dear beings did bad things by way of body, speech, and mind. They denounced the noble ones; they had wrong view; and they chose to act out of that wrong view. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. These dear beings, however, did good things by way of body, speech, and mind. They never denounced the noble ones; they had right view; and they chose to act out of that right view. When their body broke up, after death, they were reborn in a good place, a heavenly realm.’ And so, with clairvoyance that is purified and superhuman, they see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. They understand how sentient beings pass on according to their deeds. | T: “Then again, the monk sees–by means of the divine eye, purified & surpassing the human–beings passing away & re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their actions: ‘These beings–who were endowed with bodily misconduct, verbal misconduct, & mental misconduct; who reviled noble ones, held wrong views and undertook actions under the influence of wrong views–at the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings–who were endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus–by means of the divine eye, purified & surpassing the human–he sees beings passing away & re-appearing, and discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their actions.
+iti99:4.2 | S: This is the second knowledge they achieved. Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: “This is the second knowledge he has attained. Ignorance has been destroyed; knowledge has arisen; darkness has been destroyed; light has arisen–as happens in one who remains heedful, ardent, & resolute.
+iti99:5.1 | S: Furthermore, a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements. | T: “Then again, the monk–with the ending of effluents–remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing it for himself right in the here-&-now.
+iti99:5.2 | S: This is the third knowledge which they achieved. Ignorance was banished and knowledge arose; darkness was banished and light arose, as happens for a meditator who is diligent, keen, and resolute. | T: “This is the third knowledge he has attained. Ignorance has been destroyed; knowledge has arisen; darkness has been destroyed; light has arisen–as happens in one who remains heedful, ardent, & resolute.
+iti99:5.3 | S: That’s how I define a brahmin in terms of the teaching as one who is master of the three knowledges, not the other who merely repeats what they are told.” | T: “It’s in this way that, with reference to Dhamma, I describe [a person as] a brahman with threefold knowledge, and not another as measured by citing & reciting.”
+iti99:5.4 | S: The Buddha spoke this matter. | T: (none)
+iti99:5.5 | S: On this it is said: | T: (none)
+iti99:6.1 | S: “One who knows their past lives, | T: He knows his former lives.
+iti99:6.2 | S: sees heaven and places of loss, | T: He sees heavens & states of woe,
+iti99:6.3 | S: and has attained the end of rebirth, | T: has attained the ending of birth,
+iti99:6.4 | S: is a sage of perfect insight. | T: is a sage who has mastered direct-knowing.
+iti99:7.1 | S: Because of these three knowledges | T: By means of these three knowledges
+iti99:7.2 | S: a brahmin is a master of the three knowledges. | T: he becomes a three-knowledge brahman.
+iti99:7.3 | S: That’s who I call a three-knowledge master, | T: He’s what I call a three-knowledge man–
+iti99:7.4 | S: and not the other <j>who repeats what they are told.” | T: not another, citing, reciting.
+iti99:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti99:8.2 | P: Dasamaṁ. | T: (none)
+iti99:8.3 | P: Pañcamo vaggo. | T: (none)
+iti99:9.0 | P: Tassuddānaṁ | T: (none)
+iti99:9.1 | P: Pasāda jīvita saṅghāṭi, | T: (none)
+iti99:9.2 | P: aggi upaparikkhayā; | T: (none)
+iti99:9.3 | P: Upapatti kāma kalyāṇaṁ, | T: (none)
+iti99:9.4 | P: dānaṁ dhammena te dasāti. | T: (none)
+iti99:9.5 | P: Tikanipāto niṭṭhito. | T: (none)
+
+## iti82
+iti82:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti82:2.1 | S: “Mendicants, these three cries are uttered among the gods on occasion. | T: “Monks, these three divine sounds sound forth among the devas on appropriate occasions.
+iti82:2.2 | S: What three? | T: Which three?
+iti82:2.3 | S: When a noble disciple shaves off their hair and beard, dresses in ocher robes, and goes forth from the lay life to homelessness, the gods cry out: | T: When a disciple of the noble ones, shaving off his hair & beard, clothing himself in the ochre robe, makes up his mind to go forth from the home life into homelessness, on that occasion the divine sound sounds forth among the devas:
+iti82:2.4 | S: ‘This noble disciple intends to join battle with Māra!’ | T: ‘This disciple of the noble ones has made up his mind to do battle with Māra.’
+iti82:2.5 | S: This is the first occasion a cry is uttered among the gods. | T: This is the first divine sound that sounds forth among the devas on appropriate occasions.
+iti82:3.1 | S: Furthermore, when a noble disciple meditates pursuing the development of the seven qualities on the side of awakening, the gods cry out: | T: “When a disciple of the noble ones lives devoted to developing the seven [sets of] qualities that are wings to awakening, on that occasion the divine sound sounds forth among the devas:
+iti82:3.2 | S: ‘This noble disciple is joining battle with Māra!’ | T: ‘This disciple of the noble ones is doing battle with Māra.’
+iti82:3.3 | S: This is the second occasion a cry is uttered among the gods. | T: This is the second divine sound that sounds forth among the devas on appropriate occasions.
+iti82:4.1 | S: Furthermore, when a noble disciple realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements, the gods cry out: | T: “When a disciple of the noble ones, through the ending of effluents, enters & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing it for himself right in the here-&-now, on that occasion the divine sound sounds forth among the devas:
+iti82:4.2 | S: ‘This noble disciple has won victory in battle, establishing himself as foremost in battle!’ | T: ‘This disciple of the noble ones, having won the battle, now rules victorious at the head of the battle.’
+iti82:4.3 | S: This is the third occasion a cry is uttered among the gods. | T: This is the third divine sound that sounds forth among the devas on appropriate occasions.
+iti82:4.4 | S: These are the three cries that are uttered among the gods on occasion.” | T: “These are the three divine sounds that sound forth among the devas on appropriate occasions.”
+iti82:4.5 | S: The Buddha spoke this matter. | T: (none)
+iti82:4.6 | S: On this it is said: | T: (none)
+iti82:5.1 | S: “Seeing the winner of the battle— | T: Seeing he’s won the battle
+iti82:5.2 | S: a disciple of the Buddha, | T: –the disciple of the Rightly Self-awakened One–
+iti82:5.3 | S: great of heart, intrepid— | T: even the devas pay homage to this great one, thoroughly mature.
+iti82:5.4 | S: even the deities revere them: | T: (none)
+iti82:6.1 | S: ‘Homage to you, O thoroughbred! | T: “Homage to you, O thoroughbred man–
+iti82:6.2 | S: You won a battle hard to win! | T: you who have won the hard victory,
+iti82:6.3 | S: Having defeated the army of death, | T: defeating the army of Death,
+iti82:6.4 | S: your liberation is unhindered.’ | T: unhindered in emancipation.”
+iti82:7.1 | S: And so the deities revere the one, | T: Thus they pay homage, the devas,
+iti82:7.2 | S: who has achieved their heart’s desire. | T: to one who has reached the heart’s goal,
+iti82:7.3 | S: For they see nothing in them by means of which | T: for they see in him no means
+iti82:7.4 | S: they might fall under the sway of Death.” | T: that would bring him under Death’s sway.
+iti82:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti82:8.2 | P: Tatiyaṁ. | T: (none)
+
+## sn45.171
+sn45.171:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn45.171:1.2 | S: “Mendicants, there are these four floods. | T: “Monks, there are these four floods.
+sn45.171:1.3 | S: What four? | T: Which four?
+sn45.171:1.4 | S: The floods of sensuality, desire to be reborn, views, and ignorance. | T: The flood of sensuality, the flood of becoming, the flood of views, & the flood of ignorance.
+sn45.171:1.5 | S: These are the four floods. | T: These are the four floods.
+sn45.171:1.6 | S: The noble eightfold path should be developed for the direct knowledge, complete understanding, finishing, and giving up of these four floods.” | T: “Now, this noble eightfold path is to be developed for direct knowledge of, comprehension of, the total ending of, & the abandoning of these four floods. Which noble eightfold path? There is the case where a monk develops right view dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in relinquishment. He develops right resolve… right speech… right action… right livelihood… right effort… right mindfulness… right concentration dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in relinquishment. This noble eightfold path is to be developed for direct knowledge of, for comprehension of, for the total ending of, & for the abandoning of these four floods.”
+sn45.171:1.7 | S: (Tell in full as in the section on searches.) | T: (none)
+sn45.171:1.8 | P: Paṭhamaṁ. | T: (none)
+
+## sn46.29
+sn46.29:1.1 | S: “Mendicants, I do not see a single thing that, when it is developed and cultivated like this, leads to giving up the things that tighten the fetters like the seven awakening factors. | T: “Monks, I don’t envision any one other quality that, when thus developed & pursued, leads to the abandoning of things conducive to the fetters, aside from the seven factors for awakening.
+sn46.29:1.2 | S: What seven? | T: Which seven?
+sn46.29:1.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: (none)
+sn46.29:1.4 | S: And how are the seven awakening factors developed and cultivated so as to lead to giving up the things that tighten the fetters? | T: (none)
+sn46.29:2.1 | S: It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, | T: “There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn46.29:2.2 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go.
+sn46.29:2.3 | S: That’s how the seven awakening factors are developed and cultivated so as to lead to giving up the things that tighten the fetters. | T: “When thus developed & pursued, the seven factors for awakening lead to the abandoning of things conducive to the fetters.
+sn46.29:3.1 | S: And what are the things that tighten the fetters? | T: “And what are the things conducive to the fetters?
+sn46.29:3.2 | S: The eye is something that tightens the fetters. | T: The eye is a thing conducive to the fetters.
+sn46.29:3.3 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+sn46.29:3.4 | S: The ear … nose … tongue … body … | T: “The ear… the nose… the tongue… the body…
+sn46.29:3.5 | P: Etthete uppajjanti saṁyojanavinibandhā ajjhosānā …pe… | T: (none)
+sn46.29:3.6 | S: mind is something that tightens the fetters. | T: the intellect is a thing conducive to the fetters.
+sn46.29:3.7 | S: This is where these fetters, shackles, and attachments arise. | T: It is here that these fetters, shackles, & graspings arise.
+sn46.29:3.8 | S: These are called the things that tighten the fetters.” | T: These are called the things conducive to the fetters.”
+sn46.29:3.9 | P: Navamaṁ. | T: (none)
+
+## sn54.13
+sn54.13:1.1 | S: At Sāvatthī. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn54.13:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he asked the Blessed One,
+sn54.13:1.3 | S: “Sir, is there one thing that, when developed and cultivated, fulfills four things; and those four things, when developed and cultivated, fulfill seven things; and those seven things, when developed and cultivated, fulfill two things?” | T: “Is there one quality that, when developed & pursued, brings four qualities to completion? And four qualities that, when developed & pursued, bring seven qualities to completion? And seven qualities that, when developed & pursued, bring two qualities to completion?”
+sn54.13:2.1 | S: “There is, Ānanda.” | T: “Yes, Ānanda, there is one quality that, when developed & pursued, brings four qualities to completion; and four qualities that, when developed & pursued, bring seven qualities to completion; and seven qualities that, when developed & pursued, bring two qualities to completion.
+sn54.13:3.1 | S: “Sir, what is that one thing?” | T: And what is the one quality that, when developed & pursued, brings four qualities to completion? What are the four qualities that, when developed & pursued, bring seven qualities to completion? What are the seven qualities that, when developed & pursued, bring two qualities to completion?
+sn54.13:3.2 | S: “Immersion due to mindfulness of breathing is one thing that, when developed and cultivated, fulfills the four kinds of mindfulness meditation. And the four kinds of mindfulness meditation, when developed and cultivated, fulfill the seven awakening factors. And the seven awakening factors, when developed and cultivated, fulfill knowledge and freedom. | T: “Concentration through mindfulness of in-&-out breathing, when developed & pursued, brings the four establishings of mindfulness to completion. The four establishings of mindfulness, when developed & pursued, bring the seven factors for awakening to completion. The seven factors for awakening, when developed & pursued, bring clear knowing & release to completion.
+sn54.13:4.1 | S: And how is mindfulness of breathing developed and cultivated so as to fulfill the four kinds of mindfulness meditation? | T: “Now how does a monk develop & pursue concentration through mindfulness of in-&-out breathing so that it brings the four establishings of mindfulness to completion?
+sn54.13:4.2 | S: It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, sets their body straight, and brings mindfulness to the present. | T: “There is the case where a monk, having gone to the wilderness, to the shade of a tree, or to an empty building, sits down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+sn54.13:4.3 | S: Just mindful, they breathe in. Mindful, they breathe out. | T: Always mindful, he breathes in; mindful he breathes out.
+sn54.13:4.4 | S: Breathing in heavily they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ … | T: “[1] Breathing in long, he discerns, ‘I am breathing in long’; or breathing out long, he discerns, ‘I am breathing out long.’ [2] Or breathing in short, he discerns, ‘I am breathing in short’; or breathing out short, he discerns, ‘I am breathing out short.’ [3] He trains himself, ‘I will breathe in sensitive to the entire body.’ He trains himself, ‘I will breathe out sensitive to the entire body.’ [4] He trains himself, ‘I will breathe in calming bodily fabrication.’ He trains himself, ‘I will breathe out calming bodily fabrication.’ “[5] He trains himself, ‘I will breathe in sensitive to rapture.’ He trains himself, ‘I will breathe out sensitive to rapture.’ [6] He trains himself, ‘I will breathe in sensitive to pleasure.’ He trains himself, ‘I will breathe out sensitive to pleasure.’ [7] He trains himself, ‘I will breathe in sensitive to mental fabrication.’ He trains himself, ‘I will breathe out sensitive to mental fabrication.’ [8] He trains himself, ‘I will breathe in calming mental fabrication.’ He trains himself, ‘I will breathe out calming mental fabrication.’ “[9] He trains himself, ‘I will breathe in sensitive to the mind.’ He trains himself, ‘I will breathe out sensitive to the mind.’ [10] He trains himself, ‘I will breathe in gladdening the mind.’ He trains himself, ‘I will breathe out gladdening the mind.’ [11] He trains himself, ‘I will breathe in steadying the mind.’ He trains himself, ‘I will breathe out steadying the mind. [12] He trains himself, ‘I will breathe in releasing the mind.’ He trains himself, ‘I will breathe out releasing the mind.’ “[13] He trains himself, ‘I will breathe in focusing on inconstancy.’ He trains himself, ‘I will breathe out focusing on inconstancy.’ [14] He trains himself, ‘I will breathe in focusing on dispassion [or: fading].’ He trains himself, ‘I will breathe out focusing on dispassion.’ [15] He trains himself, ‘I will breathe in focusing on cessation.’ He trains himself, ‘I will breathe out focusing on cessation.’
+sn54.13:4.5 | S: They practice like this: ‘I’ll breathe in observing letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: [16] He trains himself, ‘I will breathe in focusing on relinquishment.’ He trains himself, ‘I will breathe out focusing on relinquishment.’
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn54.13:5.1 | S: There’s a time when a mendicant is breathing in heavily, and they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ | T: “[1] On whatever occasion a monk breathing in long discerns, ‘I am breathing in long’; or breathing out long, discerns, ‘I am breathing out long’;
+sn54.13:5.2 | S: … | T: or breathing in short, discerns, ‘I am breathing in short’; or breathing out short, discerns, ‘I am breathing out short’; trains himself, ‘I will breathe in…&… out sensitive to the entire body’;
+sn54.13:5.3 | S: They practice like this: ‘I’ll breathe in stilling the physical process.’ They practice like this: ‘I’ll breathe out stilling the physical process.’ | T: trains himself, ‘I will breathe in…&…out calming bodily fabrication’:
+sn54.13:5.4 | S: At such a time a mendicant is meditating by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:5.5 | S: Why is that? | T: (none)
+sn54.13:5.6 | S: Because the breath is a certain aspect of the body, I say. | T: I tell you, Ānanda, that this—the in-&-out breath—is classed as a body among bodies,
+sn54.13:5.7 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:6.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing rapture … | T: “[2] On whatever occasion a monk trains himself, ‘I will breathe in…&…out sensitive to rapture’;
+sn54.13:6.2 | S: bliss … | T: trains himself, ‘I will breathe in…&…out sensitive to pleasure’;
+sn54.13:6.3 | S: mind …’ … | T: trains himself, ‘I will breathe in…&…out sensitive to mental fabrication’;
+sn54.13:6.4 | S: They practice like this: ‘I’ll breathe in stilling the mental process.’ They practice like this: ‘I’ll breathe out stilling the mental process.’ | T: trains himself, ‘I will breathe in…&…out calming mental fabrication’:
+sn54.13:6.5 | S: At such a time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:6.6 | S: Why is that? | T: (none)
+sn54.13:6.7 | S: Because careful application of mind to the in-breaths and out-breaths is a certain aspect of feelings, I say. | T: I tell you, Ānanda, that this—careful attention to in-&-out breaths—is classed as a feeling among feelings,
+sn54.13:6.8 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:7.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing the mind.’ They practice like this: ‘I’ll breathe out experiencing the mind.’ | T: “[3] On whatever occasion a monk trains himself, ‘I will breathe in…&…out sensitive to the mind’;
+sn54.13:7.2 | S: They practice like this: ‘I’ll breathe in gladdening the mind … | T: trains himself, ‘I will breathe in…&…out gladdening the mind’;
+sn54.13:7.3 | S: immersing the mind in samādhi … | T: trains himself, ‘I will breathe in…&…out steadying the mind’;
+sn54.13:7.4 | S: freeing the mind.’ They practice like this: ‘I’ll breathe out freeing the mind.’ | T: trains himself, ‘I will breathe in…&…out releasing the mind’:
+sn54.13:7.5 | S: At such a time a mendicant is meditating by observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:7.6 | S: Why is that? | T: (none)
+sn54.13:7.7 | S: Because there is no development of immersion due to mindfulness of breathing for someone who is unmindful and lacks awareness, I say. | T: I don’t say that there is mindfulness of in-&-out breathing in one of lapsed mindfulness and no alertness,
+sn54.13:7.8 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:8.1 | S: There’s a time when a mendicant practices like this: ‘I’ll breathe in observing impermanence … | T: “[4] On whatever occasion a monk trains himself, ‘I will breathe in…&…out focusing on inconstancy’;
+sn54.13:8.2 | S: fading away … | T: trains himself, ‘I will breathe in…&…out focusing on dispassion’;
+sn54.13:8.3 | S: cessation … | T: trains himself, ‘I will breathe in…&…out focusing on cessation’;
+sn54.13:8.4 | S: letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: trains himself, ‘I will breathe in…&…out focusing on relinquishing’:
+sn54.13:8.5 | S: At such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: On that occasion the monk remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:8.6 | S: Having seen with wisdom the giving up of covetousness and displeasure, they watch closely over with equanimity. | T: He who sees with discernment the abandoning of greed & distress is one who watches carefully with equanimity,
+sn54.13:8.7 | S: Therefore, at such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: which is why the monk on that occasion remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn54.13:9.1 | S: That’s how immersion due to mindfulness of breathing is developed and cultivated so as to fulfill the four kinds of mindfulness meditation. | T: “This is how concentration through mindfulness of in-&-out breathing, when developed & pursued, brings the four establishings of mindfulness to their culmination.
+sn54.13:10.1 | S: And how are the four kinds of mindfulness meditation developed and cultivated so as to fulfill the seven awakening factors? | T: “And how are the four establishings of mindfulness developed & pursued so that the seven factors for awakening come to completion?
+sn54.13:10.2 | S: Whenever a mendicant meditates by observing an aspect of the body, | T: “[1] On whatever occasion the monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world,
+sn54.13:10.3 | S: their mindfulness is established and lucid. | T: on that occasion his mindfulness is steady & without lapse.
+sn54.13:10.4 | S: At such a time, a mendicant has initiated the awakening factor of mindfulness; they develop it and perfect it. | T: When his mindfulness is steady & without lapse, then mindfulness as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:11.1 | S: As they live mindfully in this way they investigate, explore, and inquire into that principle with wisdom. | T: “[2] Remaining mindful in this way, he examines, analyzes, & comes to a comprehension of that quality with discernment.
+sn54.13:11.2 | S: At such a time, a mendicant has activated the awakening factor of investigation of principles; they develop it and perfect it. | T: When he remains mindful in this way, examining, analyzing, & coming to a comprehension of that quality with discernment,
+sn54.13:11.3 | P: dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, dhammavicayasambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: then analysis of qualities as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:12.1 | S: As they investigate principles with wisdom in this way their energy is roused up and unflagging. | T: “[3] In one who examines, analyzes, & comes to a comprehension of that quality with discernment, persistence is aroused unflaggingly.
+sn54.13:12.2 | S: At such a time, a mendicant has initiated the awakening factor of energy; they develop it and perfect it. | T: When persistence is aroused unflaggingly in one who examines, analyzes, & comes to a comprehension of that quality with discernment,
+sn54.13:12.3 | P: vīriyasambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, vīriyasambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, vīriyasambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: then persistence as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:13.1 | S: When you’re energetic, rapture not of the flesh arises. | T: “[4] In one whose persistence is aroused, a rapture not of the flesh arises.
+sn54.13:13.2 | S: At such a time, a mendicant has initiated the awakening factor of rapture; they develop it and perfect it. | T: When a rapture not of the flesh arises in one whose persistence is aroused,
+sn54.13:13.3 | P: pītisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, pītisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, pītisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: then rapture as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:14.1 | S: When the mind is full of rapture, the body and mind become tranquil. | T: “[5] For one enraptured at heart, the body grows calm and the mind grows calm.
+sn54.13:14.2 | S: At such a time, a mendicant has activated the awakening factor of tranquility; they develop it and perfect it. | T: When the body & mind of a monk enraptured at heart grow calm,
+sn54.13:14.3 | P: passaddhisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, passaddhisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, passaddhisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: then calm as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:15.1 | S: When the body is tranquil and one feels bliss, the mind becomes immersed in samādhi. | T: “[6] For one who is at ease—his body calmed—the mind becomes concentrated.
+sn54.13:15.2 | S: At such a time, a mendicant has activated the awakening factor of immersion; they develop it and perfect it. | T: When the mind of one who is at ease—his body calmed—becomes concentrated,
+sn54.13:15.3 | P: samādhisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, samādhisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, samādhisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: then concentration as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:16.1 | S: They closely watch over that mind immersed in samādhi. | T: “[7] He carefully watches the mind thus concentrated with equanimity.
+sn54.13:16.2 | S: At such a time, a mendicant has activated the awakening factor of equanimity; they develop it and perfect it. | T: When he carefully watches the mind thus concentrated with equanimity, equanimity as a factor for awakening is aroused in him. He develops it, and for him it goes to the culmination of its development.
+sn54.13:16.3 | P: upekkhāsambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, upekkhāsambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, upekkhāsambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: (none)
+sn54.13:17.1 | S: Whenever a mendicant meditates by observing an aspect of feelings … | T: (none)
+sn54.13:17.2 | S: mind … | T: (none)
+sn54.13:17.3 | S: principles, | T: (none)
+sn54.13:17.4 | S: their mindfulness is established and lucid. | T: (none)
+sn54.13:17.5 | S: At such a time, a mendicant has activated the awakening factor of mindfulness; they develop it and perfect it. … | T: (none)
+sn54.13:17.6 | P: satisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, satisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, satisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: (none)
+sn54.13:17.7 | S: (Tell in full as for the first kind of mindfulness meditation.) | T: [Similarly with the other three establishings of mindfulness: in feelings, mind, & mental qualities.]
+sn54.13:18.1 | S: They closely watch over that mind immersed in samādhi. | T: (none)
+sn54.13:18.2 | S: At such a time, a mendicant has activated the awakening factor of equanimity; they develop it and perfect it. | T: (none)
+sn54.13:18.3 | P: upekkhāsambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, upekkhāsambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, upekkhāsambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. | T: (none)
+sn54.13:18.4 | S: That’s how the four kinds of mindfulness meditation are developed and cultivated so as to fulfill the seven awakening factors. | T: “This is how the four establishings of mindfulness, when developed & pursued, lead to the culmination of the seven factors for awakening.
+sn54.13:19.1 | S: And how are the seven awakening factors developed and cultivated so as to fulfill knowledge and freedom? | T: “And how are the seven factors for awakening developed & pursued so as to lead to the culmination of clear knowing & release?
+sn54.13:19.2 | S: It’s when a mendicant develops the awakening factors of mindfulness, | T: There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion… dispassion… cessation, resulting in relinquishment.
+sn54.13:19.3 | S: investigation of principles, energy, rapture, tranquility, immersion, | T: He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening…
+sn54.13:19.4 | S: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: equanimity as a factor for awakening dependent on seclusion… dispassion… cessation, resulting in relinquishment.
+sn54.13:19.5 | S: That’s how the seven awakening factors are developed and cultivated so as to fulfill knowledge and freedom.” | T: “This is how the seven factors for awakening, when developed & pursued, lead to the culmination of clear knowing & release.” That is what the Blessed One said. Gratified, Ven. Ānanda delighted in the Blessed One’s words.
+sn54.13:19.6 | P: Tatiyaṁ. | T: (none)
+
+## thig5.11
+thig5.11:1.1 | S: “Taking a pestle, | T: [Paṭācārā taught:] “Taking the pestle,
+thig5.11:1.2 | S: young men pound grain. | T: young men grind the corn.
+thig5.11:1.3 | S: Providing for partners and children, | T: Supporting their wives & children,
+thig5.11:1.4 | S: young men acquire wealth. | T: they gather up wealth.
+thig5.11:2.1 | S: Do the Buddha’s bidding, | T: Do the Awakened One’s bidding,
+thig5.11:2.2 | S: you won’t regret it. | T: which, having done, you’ll have no regret. Intent on tranquility of awareness, do the Awakened One’s bidding.
+thig5.11:2.3 | S: Having quickly washed your feet, | T: Quickly: Having washed your feet,
+thig5.11:2.4 | S: sit in a discreet place to meditate. | T: go sit to one side.”
+thig5.11:2.5 | S: Devoted to serenity of heart, | T: (none)
+thig5.11:2.6 | S: do the Buddha’s bidding.” | T: (none)
+thig5.11:3.1 | S: After hearing her words, | T: Hearing these words,
+thig5.11:3.2 | S: the instructions of Paṭācārā, | T: Paṭācārā’s bidding,
+thig5.11:3.3 | S: they washed their feet | T: they washed their feet
+thig5.11:3.4 | S: and retired to a discreet place. | T: and retired to one side.
+thig5.11:3.5 | S: Devoted to serenity of heart, | T: Intent on tranquility of awareness,
+thig5.11:3.6 | S: they did the Buddha’s bidding. | T: they did the Awakened One’s bidding.
+thig5.11:4.1 | S: In the first watch of the night, | T: In the first watch of the night,
+thig5.11:4.2 | S: they recollected their past lives. | T: they recollected their previous lives.
+thig5.11:4.3 | S: In the middle watch of the night, | T: In the middle watch,
+thig5.11:4.4 | S: they purified their clairvoyance. | T: purified the divine eye.
+thig5.11:4.5 | S: In the last watch of the night, | T: In the last,
+thig5.11:4.6 | S: they shattered the mass of darkness. | T: burst the mass of darkness.
+thig5.11:5.1 | S: They rose and paid homage at her feet: | T: Getting up, they bowed down to her feet.
+thig5.11:5.2 | S: “We have done your bidding; | T: “We have done your bidding.
+thig5.11:5.3 | S: we shall abide honoring you, | T: Like the thirty devas honoring Indra,
+thig5.11:5.4 | S: as the Thirty gods honor Indra, | T: (none)
+thig5.11:5.5 | S: undefeated in battle. | T: unvanquished in battle,
+thig5.11:5.6 | S: Masters of the three knowledges, <j>we are free of defilements.” | T: we— endowed with the three knowledges, effluent-free— will continue honoring you.”
+thig5.11:6.1 | S: That is how thirty senior nuns declared their enlightenment in the presence of Paṭācārā. | T: (none)
+
+
+codex
+I’ve read the full batch. I’m checking the verse passages carefully to distinguish misplaced sentence boundaries from combined lines and reordered phrasing.
+
+exec
+/bin/bash -lc "sed -n '250,340p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn54.13:19.6 | P: Tatiyaṁ. | T: (none)
+
+## thig5.11
+thig5.11:1.1 | S: “Taking a pestle, | T: [Paṭācārā taught:] “Taking the pestle,
+thig5.11:1.2 | S: young men pound grain. | T: young men grind the corn.
+thig5.11:1.3 | S: Providing for partners and children, | T: Supporting their wives & children,
+thig5.11:1.4 | S: young men acquire wealth. | T: they gather up wealth.
+thig5.11:2.1 | S: Do the Buddha’s bidding, | T: Do the Awakened One’s bidding,
+thig5.11:2.2 | S: you won’t regret it. | T: which, having done, you’ll have no regret. Intent on tranquility of awareness, do the Awakened One’s bidding.
+thig5.11:2.3 | S: Having quickly washed your feet, | T: Quickly: Having washed your feet,
+thig5.11:2.4 | S: sit in a discreet place to meditate. | T: go sit to one side.”
+thig5.11:2.5 | S: Devoted to serenity of heart, | T: (none)
+thig5.11:2.6 | S: do the Buddha’s bidding.” | T: (none)
+thig5.11:3.1 | S: After hearing her words, | T: Hearing these words,
+thig5.11:3.2 | S: the instructions of Paṭācārā, | T: Paṭācārā’s bidding,
+thig5.11:3.3 | S: they washed their feet | T: they washed their feet
+thig5.11:3.4 | S: and retired to a discreet place. | T: and retired to one side.
+thig5.11:3.5 | S: Devoted to serenity of heart, | T: Intent on tranquility of awareness,
+thig5.11:3.6 | S: they did the Buddha’s bidding. | T: they did the Awakened One’s bidding.
+thig5.11:4.1 | S: In the first watch of the night, | T: In the first watch of the night,
+thig5.11:4.2 | S: they recollected their past lives. | T: they recollected their previous lives.
+thig5.11:4.3 | S: In the middle watch of the night, | T: In the middle watch,
+thig5.11:4.4 | S: they purified their clairvoyance. | T: purified the divine eye.
+thig5.11:4.5 | S: In the last watch of the night, | T: In the last,
+thig5.11:4.6 | S: they shattered the mass of darkness. | T: burst the mass of darkness.
+thig5.11:5.1 | S: They rose and paid homage at her feet: | T: Getting up, they bowed down to her feet.
+thig5.11:5.2 | S: “We have done your bidding; | T: “We have done your bidding.
+thig5.11:5.3 | S: we shall abide honoring you, | T: Like the thirty devas honoring Indra,
+thig5.11:5.4 | S: as the Thirty gods honor Indra, | T: (none)
+thig5.11:5.5 | S: undefeated in battle. | T: unvanquished in battle,
+thig5.11:5.6 | S: Masters of the three knowledges, <j>we are free of defilements.” | T: we— endowed with the three knowledges, effluent-free— will continue honoring you.”
+thig5.11:6.1 | S: That is how thirty senior nuns declared their enlightenment in the presence of Paṭācārā. | T: (none)
+
+
+exec
+/bin/bash -lc "printf '%s\\n' 'thig5.11:2.5 starts: Intent on tranquility of awareness, do the Awakened' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-013.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+1 line reported.
+tokens used
+25,445
+1 line reported.

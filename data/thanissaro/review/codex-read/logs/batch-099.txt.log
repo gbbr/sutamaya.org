@@ -1,0 +1,617 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9e-0bf4-7762-a1a6-aee24309a870
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch and write only the clear placement errors to the findings file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.127
+sn35.127:1.1 | S: At one time Venerable Bhāradvāja the Alms-Gatherer was staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Piṇḍola Bhāradvāja was staying near Kosambī at Ghosita’s monastery.
+sn35.127:1.2 | S: Then King Udena went up to Bhāradvāja the Alms-Gatherer and exchanged greetings with him. | T: Then King Udena went to him and, on arrival, exchanged courteous greetings with him.
+sn35.127:1.3 | S: When the greetings and polite conversation were over, he sat down to one side, and said to him: | T: After this exchange of friendly greetings & courtesies, the king sat to one side. As he was sitting there he said to Ven. Piṇḍola Bhāradvāja:
+sn35.127:1.4 | S: “Worthy Bhāradvāja, there are these young monks who are youthful, with pristine black hair, blessed with youth, in the prime of life; and they’ve never played around with sensual pleasures. What is the cause, what is the reason why they practice the full and pure spiritual life as long as they live, maintaining it for a long time?” | T: “What is the reason, Master Bhāradvāja, what is the cause why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:1.5 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:1.6 | S: ‘Please, monks, think of women your mother’s age as your mother. Think of women your sister’s age as your sister. And think of women your daughter’s age as your daughter.’ | T: ‘Come now, monks: with regard to women who are old enough to be your mother, establish the attitude you would have toward your mother. With regard to women who are old enough to be your sister, establish the attitude you’d have toward a sister. With regard to women who are young enough to be your daughter, establish the attitude you’d have toward a daughter.’
+sn35.127:1.7 | S: This is a cause, Great King, this is a reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time.” | T: This is one reason, this is one cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:2.1 | S: “But worthy Bhāradvāja, the mind is wanton. | T: “The mind is unruly, Master Bhāradvāja.
+sn35.127:2.2 | S: Sometimes thoughts of desire come up even for women your mother’s age, your sister’s age, or your daughter’s age. | T: Sometimes thoughts of greed arise even for women who are old enough to be your mother… your sister… young enough to be your daughter.
+sn35.127:2.3 | S: Is there another cause, another reason why these young monks live the full and pure spiritual life for their entire life?” | T: Is there another reason, another cause, why young monks… without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:3.1 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:3.2 | S: ‘Please, monks, examine your own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. | T: ‘Come now, monks: reflect on this very body, from the soles of the feet on up, from the crown of the head on down, surrounded by skin, full of all sorts of unclean things:
+sn35.127:3.3 | S: In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ | T: “In this body there are head hairs, body hairs, nails, teeth, skin, flesh, tendons, bones, bone marrow, kidneys, heart, liver, pleura, spleen, lungs, large intestines, small intestines, gorge, feces, bile, phlegm, pus, blood, sweat, fat, tears, skin-oil, saliva, mucus, fluid in the joints, urine.”’
+sn35.127:3.4 | S: This is also a cause, Great King, this is a reason why these young monks live the full and pure spiritual life for their entire life, maintaining it for a long time.” | T: This too is a reason, this too is a cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:3.5 | S: “This is easy to do for those mendicants who have developed their physical endurance, ethics, mind, and wisdom. | T: “For those who are developed in body, developed in virtue, developed in mind, developed in discernment, Master Bhāradvāja, that isn’t hard to do.
+sn35.127:3.6 | S: But it’s hard to do for those mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: But for those who are undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment, that is hard to do.
+sn35.127:3.7 | S: Sometimes I plan to focus on something as ugly, but only its beauty comes to mind. | T: Sometimes when one thinks, ‘Let’s regard this as unattractive,’ it actually comes to be attractive.
+sn35.127:3.8 | S: Is there another cause, another reason why these young monks live the full and pure spiritual life for their entire life?” | T: Is there another reason, another cause, why young monks… without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:4.1 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:4.2 | S: ‘Please, monks, live with sense doors guarded. | T: ‘Come now, monks: Keep guarding the doors to your sense faculties.
+sn35.127:4.3 | S: When you see a sight with your eyes, don’t get caught up in the features and details. | T: On seeing a form with the eye, do not grasp at any theme or variations by which—
+sn35.127:4.4 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protect the faculty of sight, and achieve its restraint. | T: if you were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail you. Practice with restraint. Guard the faculty of the eye. Achieve restraint with regard to the faculty of the eye.
+sn35.127:4.5 | S: When you hear a sound with your ears … | T: “‘On hearing a sound with the ear…
+sn35.127:4.6 | S: When you smell an odor with your nose … | T: “‘On smelling an aroma with the nose…
+sn35.127:4.7 | S: When you taste a flavor with your tongue … | T: “‘On tasting a flavor with the tongue…
+sn35.127:4.8 | S: When you feel a touch with your body … | T: “‘On feeling a tactile sensation with the body…
+sn35.127:4.9 | S: When you know an idea with your mind, don’t get caught up in the features and details. | T: “‘On cognizing an idea with the intellect, do not grasp at any theme or variations by which—
+sn35.127:4.10 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protect the faculty of mind, and achieve its restraint.’ | T: if you were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail you. Practice with restraint. Guard the faculty of the intellect. Achieve restraint with regard to the faculty of the intellect.’
+sn35.127:4.11 | S: This is also a cause, Great King, this is a reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time.” | T: “This too is a reason, this too is a cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:5.1 | S: “It’s incredible, worthy Bhāradvāja, it’s amazing! | T: “Amazing, Master Bhāradvāja! Astounding!
+sn35.127:5.2 | S: How well this was said by the Buddha! | T: How well that has been said by the Blessed One who knows & sees, worthy & rightly self-awakened!
+sn35.127:5.3 | S: This is the real cause, this is the reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time. | T: This is the very reason, this the very cause, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.
+sn35.127:5.4 | S: For sometimes I too enter the harem with unprotected body, speech, mind, mindfulness, and sense faculties. At those times powerful thoughts of desire get the better of me. | T: I myself, Master Bhāradvāja: Whenever I enter the inner apartments of the palace unguarded in body, unguarded in speech, unguarded in mind, with mindfulness unestablished and my senses unrestrained, I’m overcome with thoughts of greed.
+sn35.127:5.5 | S: But sometimes I enter the harem with protected body, speech, mind, mindfulness, and sense faculties. At those times such thoughts of desire don’t get the better of me. | T: But whenever I enter the inner apartments of the palace guarded in body, guarded in speech, guarded in mind, with mindfulness established and my senses restrained, then I’m not.
+sn35.127:5.6 | S: Excellent, worthy Bhāradvāja! Excellent! | T: “Magnificent, Master Bhāradvāja! Magnificent!
+sn35.127:5.7 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, the worthy Bhāradvāja has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Bhāradvāja—through many lines of reasoning—made the Dhamma clear.
+sn35.127:5.8 | S: I go for refuge to the Buddha, to the teaching, and to the mendicant Saṅgha. | T: I go to the Blessed One for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn35.127:5.9 | S: From this day forth, may the worthy Bhāradvāja remember me as a lay follower who has gone for refuge for life.” | T: May Master Bhāradvāja remember me as a lay follower who has gone for refuge from this day forward, for life.”
+sn35.127:5.10 | P: Catutthaṁ. | T: (none)
+
+## sn35.134
+sn35.134:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near the Sakyan town named Devadaha. | T: On one occasion the Blessed One was staying among the Sakyans near a Sakyan town named Devadaha.
+sn35.134:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks,
+sn35.134:1.3 | S: “When it comes to the six fields of contact, mendicants, I don’t say that all mendicants have work to do with diligence, nor do I say that none of them have work to do with diligence. | T: “Monks, I don’t say of all monks that they have work to do with heedfulness with regard to the six contact-media. But I don’t say of all monks that they don’t have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.4 | S: I say that, when it comes to the six fields of contact, mendicants don’t have work to do with diligence if they are perfected, with defilements ended, having completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and become rightly freed through enlightenment. | T: “Those monks who are arahants—whose effluents are ended, who have reached fulfillment, done the task, laid down the burden, attained the true goal, laid to waste the fetter of becoming, and who are released through right gnosis: Of them I say that they don’t have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.5 | S: Why is that? | T: Why is that?
+sn35.134:1.6 | S: They’ve done their work with diligence, and are incapable of negligence. | T: They have completed their work with heedfulness. They are incapable of falling back.
+sn35.134:1.7 | S: I say that, when it comes to the six fields of contact, mendicants do have work to do with diligence if they are trainees, who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke. | T: “But as for those monks who are in training, who have not attained the heart’s goal but remain intent on the unsurpassed safety from bondage: Of them I say that they still have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.8 | S: Why is that? | T: Why is that?
+sn35.134:1.9 | S: There are sights known by the eye that are pleasant and also those that are unpleasant. | T: “There are forms cognizable via the eye that are agreeable & disagreeable.
+sn35.134:1.10 | S: Though experiencing them again and again they don’t occupy the mind. | T: [When one is heedful] they don’t persist in consuming the mind, even when contacted again & again.
+sn35.134:1.11 | S: Their energy is roused up and unflagging, their mindfulness is established and lucid, their body is tranquil and undisturbed, and their mind is immersed and unified in samādhi. | T: When awareness isn’t consumed, persistence is aroused & untiring, the mind concentrated & gathered into singleness.
+sn35.134:1.12 | S: Seeing this fruit of diligence, I say that those mendicants have work to do with diligence when it comes to the six fields of contact. … | T: Seeing this fruit of heedfulness, I say of those monks that they still have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.13 | S: There are ideas known by the mind that are pleasant and also those that are unpleasant. | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… “There are ideas cognizable via the intellect that are agreeable & disagreeable.
+sn35.134:1.14 | S: Though experiencing them again and again they don’t occupy the mind. | T: [When one is heedful] they don’t persist in consuming the mind, even when contacted again & again.
+sn35.134:1.15 | S: Their energy is roused up and unflagging, their mindfulness is established and lucid, their body is tranquil and undisturbed, and their mind is immersed and unified in samādhi. | T: When awareness isn’t consumed, persistence is aroused & untiring, the mind concentrated & gathered into singleness.
+sn35.134:1.16 | S: Seeing this fruit of diligence, I say that those mendicants have work to do with diligence when it comes to the six fields of contact.” | T: Seeing this fruit of heedfulness, I say of those monks that they still have work to do with heedfulness with regard to the six contact-media.”
+sn35.134:1.17 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.135
+sn35.135:1.1 | S: “You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.2 | S: to have the opportunity to lead the spiritual life. | T: that you’ve gained the opportunity to live the holy life.
+sn35.135:1.3 | S: I’ve seen the hell named ‘Related to the Six Fields of Contact’. | T: I have seen a hell named ‘Six Media of Contact.’
+sn35.135:1.4 | S: There, whatever sight you see with your eye is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: Whatever form one sees there with the eye is undesirable, never desirable; displeasing, never pleasing; disagreeable, never agreeable.
+sn35.135:1.5 | S: Whatever sound you hear … | T: Whatever sound one hears there with the ear…
+sn35.135:1.6 | S: Whatever odor you smell … | T: Whatever aroma one smells there with the nose…
+sn35.135:1.7 | S: Whatever flavor you taste … | T: Whatever flavor one tastes there with the tongue…
+sn35.135:1.8 | S: Whatever touch you feel … | T: Whatever tactile sensation one touches there with the body…
+sn35.135:1.9 | S: Whatever idea you know with your mind is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: Whatever idea one cognizes there with the intellect is undesirable, never desirable; displeasing, never pleasing; disagreeable, never agreeable.
+sn35.135:1.10 | S: You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.11 | S: to have the opportunity to lead the spiritual life. | T: that you’ve gained the opportunity to live the holy life.
+sn35.135:1.12 | S: I’ve seen the heaven called ‘Related to the Six Fields of Contact’. | T: I have seen a heaven named ‘Six Media of Contact.’
+sn35.135:1.13 | S: There, whatever sight you see with your eye is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: Whatever form one sees there with the eye is desirable, never undesirable; pleasing, never displeasing; agreeable, never disagreeable.
+sn35.135:1.14 | S: Whatever sound … odor … flavor … touch … | T: Whatever sound one hears there with the ear… Whatever aroma one smells there with the nose… Whatever flavor one tastes there with the tongue… Whatever tactile sensation one touches there with the body…
+sn35.135:1.15 | S: Whatever idea you know with your mind is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: Whatever idea one cognizes there with the intellect is desirable, never undesirable; pleasing, never displeasing; agreeable, never disagreeable.
+sn35.135:1.16 | S: You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.17 | S: to have the opportunity to lead the spiritual life.” | T: that you’ve gained the opportunity to live the holy life.”
+sn35.135:1.18 | P: Dutiyaṁ. | T: (none)
+
+## sn35.146
+sn35.146:1.1 | S: “Mendicants, I will teach you old deeds, new deeds, the cessation of deeds, and the practice that leads to the cessation of deeds. | T: “Monks, I will teach you new & old kamma, the cessation of kamma, and the path of practice leading to the cessation of kamma.
+sn35.146:1.2 | S: Listen and apply your mind well, I will speak. … | T: Listen & pay close attention. I will speak.
+sn35.146:1.3 | S: And what is old deeds? | T: “Now what, monks, is old kamma?
+sn35.146:1.4 | S: The eye is old deeds. It should be seen as produced by choices and intentions, as something to be felt. | T: The eye is to be seen as old kamma, fabricated & willed, capable of being felt.
+sn35.146:1.5 | S: The ear … nose … tongue … body … | T: The ear… The nose…The tongue… The body…
+sn35.146:1.6 | S: mind is old deeds. It should be seen as produced by choices and intentions, as something to be felt. | T: The intellect is to be seen as old kamma, fabricated & willed, capable of being felt.
+sn35.146:1.7 | S: This is called old deeds. | T: This is called old kamma.
+sn35.146:1.8 | S: And what is new deeds? | T: “And what is new kamma?
+sn35.146:1.9 | S: The deeds you currently perform by way of body, speech, and mind. | T: Whatever kamma one does now with the body, with speech, or with the intellect:
+sn35.146:1.10 | S: These are called new deeds. | T: This is called new kamma.
+sn35.146:1.11 | S: And what is the cessation of deeds? | T: “And what is the cessation of kamma?
+sn35.146:1.12 | S: When you experience freedom due to the cessation of deeds by body, speech, and mind. | T: Whoever touches the release that comes from the cessation of bodily kamma, verbal kamma, & mental kamma:
+sn35.146:1.13 | S: This is called the cessation of deeds. | T: This is called the cessation of kamma.
+sn35.146:1.14 | S: And what’s the practice that leads to the cessation of deeds? | T: “And what is the path of practice leading to the cessation of kamma?
+sn35.146:1.15 | S: It is simply this noble eightfold path, that is: | T: Just this noble eightfold path:
+sn35.146:1.16 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn35.146:1.17 | S: This is called the practice that leads to the cessation of deeds. | T: This is called the path of practice leading to the cessation of kamma.
+sn35.146:1.18 | S: So, mendicants, I’ve taught you old deeds, new deeds, the cessation of deeds, and the practice that leads to the cessation of deeds. | T: “So, monks, I have taught you new & old kamma, the cessation of kamma, and the path of practice leading to the cessation of kamma.
+sn35.146:1.19 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever a teacher should do—seeking the welfare of his disciples, out of sympathy for them—that have I done for you.
+sn35.146:1.20 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: Over there are the roots of trees; over there, empty dwellings. Practice jhāna, monks. Don’t be heedless. Don’t later fall into regret. This is our message to you.”
+sn35.146:1.21 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.154
+sn35.154:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn35.154:1.2 | S: “Sir, they speak of someone who is ‘accomplished in the faculties’. | T: “‘Consummate in faculties, consummate in faculties,’ it is said.
+sn35.154:1.3 | S: How is someone accomplished in the faculties defined?” | T: To what extent is one consummate in faculties?”
+sn35.154:2.1 | S: “Mendicant, if someone meditates observing rise and fall in the eye faculty, they grow disillusioned with the eye faculty. | T: “If a monk, while keeping track of arising & passing away with regard to the eye-faculty, becomes disenchanted with the eye-faculty;
+sn35.154:2.2 | S: If they meditate observing rise and fall in the ear faculty … nose faculty … tongue faculty … body faculty … | T: if, while keeping track of arising & passing away with regard to the ear-faculty… the nose-faculty… the tongue-faculty… the body faculty…
+sn35.154:2.3 | S: mind faculty, they grow disillusioned with the mind faculty. | T: the intellect-faculty, he becomes disenchanted with the intellect-faculty;
+sn35.154:2.4 | S: Being disillusioned, desire fades away. … When they’re freed, they know they’re freed. | T: and, disenchanted, he becomes dispassionate; through dispassion, he is released; with release, there is the knowledge, ‘Released’;
+sn35.154:2.5 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: he discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world,’
+sn35.154:2.6 | S: This is how someone who is accomplished in the faculties is defined.” | T: it is to this extent that one is consummate in faculties.”
+sn35.154:2.7 | P: Navamaṁ. | T: (none)
+
+## sn35.17
+sn35.17:1.1 | S: “Mendicants, if there were no gratification in the eye, sentient beings wouldn’t be aroused by it. | T: “Monks, if there were not this allure to the eye, beings would not become impassioned with the eye.
+sn35.17:1.2 | S: But since there is gratification in the eye, sentient beings are aroused by it. | T: But because there is an allure to the eye, beings become impassioned with the eye.
+sn35.17:1.3 | S: If the eye had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not these drawbacks to the eye, beings would not become disenchanted with the eye.
+sn35.17:1.4 | S: But since the eye has a drawback, sentient beings do grow disillusioned with it. | T: But because there are drawbacks to the eye, beings become disenchanted with the eye.
+sn35.17:1.5 | S: If there were no escape from the eye, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the eye, beings would not escape from the eye.
+sn35.17:1.6 | S: But since there is an escape from the eye, sentient beings do escape from it. | T: But because there is an escape from the eye, beings escape from the eye.
+sn35.17:1.7 | S: If there were no gratification in the ear … | T: “If there were not this allure to the ear…
+sn35.17:1.8 | S: nose … | T: “If there were not this allure to the nose…
+sn35.17:1.9 | S: tongue … | T: “If there were not this allure to the tongue…
+sn35.17:1.10 | P: Yasmā ca kho, bhikkhave, atthi jivhāya assādo, tasmā sattā jivhāya sārajjanti. | T: (none)
+sn35.17:1.11 | P: No cedaṁ, bhikkhave, jivhāya ādīnavo abhavissa, nayidaṁ sattā jivhāya nibbindeyyuṁ. | T: (none)
+sn35.17:1.12 | P: Yasmā ca kho, bhikkhave, atthi jivhāya ādīnavo, tasmā sattā jivhāya nibbindanti. | T: (none)
+sn35.17:1.13 | P: No cedaṁ, bhikkhave, jivhāya nissaraṇaṁ abhavissa, nayidaṁ sattā jivhāya nissareyyuṁ. | T: (none)
+sn35.17:1.14 | P: Yasmā ca kho, bhikkhave, atthi jivhāya nissaraṇaṁ, tasmā sattā jivhāya nissaranti. | T: (none)
+sn35.17:1.15 | S: body … | T: “If there were not this allure to the body…
+sn35.17:1.16 | S: mind, sentient beings wouldn’t be aroused by it. | T: “If there were not this allure to the intellect, beings would not become impassioned with the intellect.
+sn35.17:1.17 | S: But since there is gratification in the mind, sentient beings are aroused by it. | T: But because there is an allure to the intellect, beings become impassioned with the intellect.
+sn35.17:1.18 | S: If the mind had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not these drawbacks to the intellect, beings would not become disenchanted with the intellect.
+sn35.17:1.19 | S: But since the mind has a drawback, sentient beings do grow disillusioned with it. | T: But because there are drawbacks to the intellect, beings become disenchanted with the intellect.
+sn35.17:1.20 | S: If there were no escape from the mind, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the intellect, beings would not escape from the intellect.
+sn35.17:1.21 | S: But since there is an escape from the mind, sentient beings do escape from it. | T: But because there is an escape from the intellect, beings escape from the intellect.
+sn35.17:2.1 | S: As long as sentient beings don’t truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to these six internal sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+sn35.17:2.2 | S: But when sentient beings truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: “But when beings know as it has come to be—with regard to these six internal sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+sn35.17:2.3 | P: Pañcamaṁ. | T: (none)
+
+## sn35.18
+sn35.18:1.1 | S: “Mendicants, if there were no gratification in sights, sentient beings wouldn’t be aroused by them. …” | T: “Monks, if there were not this allure to forms, beings would not become impassioned with forms. But because there is an allure to forms, beings become impassioned with forms. “If there were not these drawbacks to forms, beings would not become disenchanted with forms. But because there are drawbacks to forms, beings become disenchanted with forms. “If there were not this escape from forms, beings would not escape from forms. But because there is an escape from forms, beings escape from forms. “If there were not this allure to sounds… “If there were not this allure to aromas… “If there were not this allure to flavors… “If there were not this allure to tactile sensations… “If there were not this allure to ideas, beings would not become impassioned with ideas. But because there is an allure to ideas, beings become impassioned with ideas. “If there were not these drawbacks to ideas, beings would not become disenchanted with ideas. But because there are drawbacks to ideas, beings become disenchanted with ideas. “If there were not this escape from ideas, beings would not escape from ideas. But because there is an escape from ideas, beings escape from ideas.
+sn35.18:1.2 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ assādo, tasmā sattā rūpesu sārajjanti. | T: (none)
+sn35.18:1.3 | P: No cedaṁ, bhikkhave, rūpānaṁ ādīnavo abhavissa, nayidaṁ sattā rūpesu nibbindeyyuṁ. | T: (none)
+sn35.18:1.4 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ ādīnavo, tasmā sattā rūpesu nibbindanti. | T: (none)
+sn35.18:1.5 | P: No cedaṁ, bhikkhave, rūpānaṁ nissaraṇaṁ abhavissa, nayidaṁ sattā rūpehi nissareyyuṁ. | T: (none)
+sn35.18:1.6 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ nissaraṇaṁ, tasmā sattā rūpehi nissaranti. | T: (none)
+sn35.18:1.7 | P: No cedaṁ, bhikkhave, saddānaṁ … | T: (none)
+sn35.18:1.8 | P: gandhānaṁ … | T: (none)
+sn35.18:1.9 | P: rasānaṁ … | T: (none)
+sn35.18:1.10 | P: phoṭṭhabbānaṁ … | T: (none)
+sn35.18:1.11 | P: dhammānaṁ assādo abhavissa, nayidaṁ sattā dhammesu sārajjeyyuṁ. | T: (none)
+sn35.18:1.12 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ assādo, tasmā sattā dhammesu sārajjanti. | T: (none)
+sn35.18:1.13 | P: No cedaṁ, bhikkhave, dhammānaṁ ādīnavo abhavissa, nayidaṁ sattā dhammesu nibbindeyyuṁ. | T: (none)
+sn35.18:1.14 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ ādīnavo, tasmā sattā dhammesu nibbindanti. | T: (none)
+sn35.18:1.15 | P: No cedaṁ, bhikkhave, dhammānaṁ nissaraṇaṁ abhavissa, nayidaṁ sattā dhammehi nissareyyuṁ. | T: (none)
+sn35.18:1.16 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ nissaraṇaṁ, tasmā sattā dhammehi nissaranti. | T: (none)
+sn35.18:2.1 | P: Yāvakīvañca, bhikkhave, sattā imesaṁ channaṁ bāhirānaṁ āyatanānaṁ assādañca assādato, ādīnavañca ādīnavato, nissaraṇañca nissaraṇato yathābhūtaṁ nābbhaññaṁsu, neva tāva, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaññuttā vippamuttā vimariyādīkatena cetasā vihariṁsu. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to these six external sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+sn35.18:2.2 | P: Yato ca kho, bhikkhave, sattā imesaṁ channaṁ bāhirānaṁ āyatanānaṁ assādañca assādato, ādīnavañca ādīnavato, nissaraṇañca nissaraṇato yathābhūtaṁ abbhaññaṁsu, atha, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaññuttā vippamuttā vimariyādīkatena cetasā viharantī”ti. | T: “But when beings know as it has come to be—with regard to these six external sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+sn35.18:2.3 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.20
+sn35.20:1.1 | S: “Mendicants, if you take pleasure in sights, you take pleasure in suffering. | T: “Monks, whoever delights in forms delights in stress.
+sn35.20:1.2 | S: If you take pleasure in suffering, you’re not free from suffering, I say. …” | T: Whoever delights in stress is not released from stress, I tell you.
+sn35.20:1.3 | P: Yo sadde …pe… | T: “Whoever delights in sounds delights in stress…
+sn35.20:1.4 | P: gandhe … | T: “Whoever delights in aromas delights in stress…
+sn35.20:1.5 | P: rase … | T: “Whoever delights in flavors delights in stress…
+sn35.20:1.6 | P: phoṭṭhabbe … | T: “Whoever delights in tactile sensations delights in stress…
+sn35.20:1.7 | P: dhamme abhinandati, dukkhaṁ so abhinandati. | T: “Monks, whoever delights in ideas delights in stress.
+sn35.20:1.8 | P: Yo dukkhaṁ abhinandati, ‘aparimutto so dukkhasmā’ti vadāmi. | T: Whoever delights in stress is not released from stress, I tell you.
+sn35.20:2.1 | P: “Yo ca kho, bhikkhave, rūpe nābhinandati, dukkhaṁ so nābhinandati. | T: “Monks, whoever doesn’t delight in forms doesn’t delight in stress.
+sn35.20:2.2 | P: Yo dukkhaṁ nābhinandati, ‘aparimutto so dukkhasmā’ti vadāmi. | T: Whoever doesn’t delight in stress is released from stress, I tell you.
+sn35.20:2.3 | P: Yo sadde …pe… | T: “Whoever doesn’t delight in sounds doesn’t delight in stress…
+sn35.20:2.4 | P: gandhe … | T: “Whoever doesn’t delight in aromas doesn’t delight in stress…
+sn35.20:2.5 | P: rase … | T: “Whoever doesn’t delight in flavors doesn’t delight in stress…
+sn35.20:2.6 | P: phoṭṭhabbe … | T: “Whoever doesn’t delight in tactile sensations doesn’t delight in stress…
+sn35.20:2.7 | P: dhamme nābhinandati, dukkhaṁ so nābhinandati. | T: “Monks, whoever doesn’t delight in ideas doesn’t delight in stress.
+sn35.20:2.8 | P: Yo dukkhaṁ nābhinandati, ‘aparimutto so dukkhasmā’ti vadāmi.” | T: Whoever doesn’t delight in stress is released from stress, I tell you.”
+sn35.20:2.9 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.228
+sn35.228:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “‘The ocean, the ocean,’ says the uninstructed run-of-the-mill person.
+sn35.228:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that’s not the ocean in the discipline of the noble ones.
+sn35.228:1.3 | S: That’s just a large body of water, a large sea of water. | T: It’s a great mass of water, a great body of water.
+sn35.228:1.4 | S: For a person, the eye is an ocean, | T: “The eye is a person’s ocean,
+sn35.228:1.5 | S: and its currents are made of sights. | T: and its current consists of forms.
+sn35.228:2.1 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the eye, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: Whoever resists that current consisting of forms is said to have crossed over the ocean of the eye with its waves, whirlpools, sharks, & demons.
+sn35.228:2.2 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground. | T: Crossed over, gone beyond, one stands on high ground, a brahman.
+sn35.228:2.3 | S: For a person, the ear … nose … tongue … body … | T: “The ear is a person’s ocean… “The nose is a person’s ocean… “The tongue is a person’s ocean… “The body is a person’s ocean…
+sn35.228:2.4 | P: tassa rasamayo vego. | T: (none)
+sn35.228:2.5 | P: Yo taṁ rasamayaṁ vegaṁ sahati, ayaṁ vuccati, bhikkhave, atari jivhāsamuddaṁ saūmiṁ sāvaṭṭaṁ sagāhaṁ sarakkhasaṁ; | T: (none)
+sn35.228:2.6 | P: tiṇṇo pāraṅgato thale tiṭṭhati brāhmaṇo …pe… | T: (none)
+sn35.228:2.7 | S: mind is an ocean, | T: “The intellect is a person’s ocean,
+sn35.228:2.8 | S: and its currents are made of ideas. | T: and its current consists of ideas.
+sn35.228:2.9 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the mind, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: Whoever resists that current consisting of ideas is said to have crossed over the ocean of the intellect with its waves, whirlpools, sharks, & demons.
+sn35.228:2.10 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground.” | T: Crossed over, gone beyond, one stands on firm ground, a brahman.”
+sn35.228:2.11 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn35.228:2.12 | S: Then the Holy One, the Teacher, went on to say: | T: When the One Well-gone had said that, he—the Teacher—said further:
+sn35.228:3.1 | S: “A knowledge master who’s crossed <j>the ocean so hard to cross, | T: Whoever crosses over this ocean,
+sn35.228:3.2 | S: with its saltwater crocodiles and monsters, <j>its waves, whirlpools, and dangers; | T: with its danger of sharks, demons, waves, so very hard to cross
+sn35.228:3.3 | S: they’ve completed the spiritual journey and gone to the end of the world, | T: is called: an attainer of wisdom who has lived the holy life, one who’s attained the end of the cosmos,
+sn35.228:3.4 | S: they’re called ‘one who has gone beyond’.” | T: one gone beyond.
+sn35.228:3.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.234
+sn35.234:1.1 | S: At one time the venerables Ānanda and Udāyī were staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Ānanda and Ven. Udāyin were staying near Kosambī at Ghosita’s monastery.
+sn35.234:1.2 | S: Then in the late afternoon, Venerable Udāyī came out of retreat, went to Venerable Ānanda, and exchanged greetings with him. | T: Then Ven. Udāyin, emerging from his seclusion in the evening, went to Ven. Ānanda and exchanged courteous greetings with him.
+sn35.234:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Ānanda: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Ānanda,
+sn35.234:2.1 | S: “Reverend Ānanda, the Buddha has explained, opened, and revealed in many ways how this body is not-self. | T: “In many ways the body has been pointed out, revealed, and announced by the Blessed One (with these words): ‘For this reason the body is not-self.’
+sn35.234:2.2 | S: Is it possible to explain consciousness in the same way? To teach, assert, establish, clarify, analyze, and reveal how consciousness is not-self?” | T: Can consciousness in the same way be declared, taught, described, set forth, revealed, explained, & made plain (with these words): ‘For this reason consciousness is not-self’?”
+sn35.234:3.1 | P: “Yatheva kho, āvuso udāyī, ayaṁ kāyo bhagavatā anekapariyāyena akkhāto vivaṭo pakāsito: | T: (none)
+sn35.234:3.2 | S: “It is possible, Reverend Udāyī. | T: “It can…
+sn35.234:4.1 | S: Does eye consciousness arise dependent on the eye and sights?” | T: Doesn’t eye-consciousness arise in dependence on the eye & forms?”
+sn35.234:4.2 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn35.234:4.3 | S: “If the cause and reason that gives rise to eye consciousness were to totally and utterly cease without remainder, would eye consciousness still be found?” | T: “And if the cause & reason for the arising of eye-consciousness were to cease totally everywhere, totally in every way without remainder, would eye-consciousness be discerned?”
+sn35.234:4.4 | S: “No, reverend.” | T: “No, friend.”
+sn35.234:4.5 | S: “In this way, too, it can be understood how consciousness is not-self. | T: “It’s in this way, friend, that consciousness has been pointed out, revealed, and announced by the Blessed One: ‘For this reason consciousness is not-self.’
+sn35.234:5.1 | S: Does ear … nose … tongue … body … | T: “Doesn’t ear-consciousness arise in dependence on the ear & sounds?” … “Doesn’t nose-consciousness arise in dependence on the nose & aromas?” … “Doesn’t tongue-consciousness arise in dependence on the tongue & flavors?” … “Doesn’t body-consciousness arise in dependence on the body & tactile sensations?”
+sn35.234:5.2 | P: “Evamāvuso”ti. | T: …
+
+exec
+/bin/bash -lc "sed -n '95,170p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.146:1.14 | S: And what’s the practice that leads to the cessation of deeds? | T: “And what is the path of practice leading to the cessation of kamma?
+sn35.146:1.15 | S: It is simply this noble eightfold path, that is: | T: Just this noble eightfold path:
+sn35.146:1.16 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn35.146:1.17 | S: This is called the practice that leads to the cessation of deeds. | T: This is called the path of practice leading to the cessation of kamma.
+sn35.146:1.18 | S: So, mendicants, I’ve taught you old deeds, new deeds, the cessation of deeds, and the practice that leads to the cessation of deeds. | T: “So, monks, I have taught you new & old kamma, the cessation of kamma, and the path of practice leading to the cessation of kamma.
+sn35.146:1.19 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever a teacher should do—seeking the welfare of his disciples, out of sympathy for them—that have I done for you.
+sn35.146:1.20 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: Over there are the roots of trees; over there, empty dwellings. Practice jhāna, monks. Don’t be heedless. Don’t later fall into regret. This is our message to you.”
+sn35.146:1.21 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.154
+sn35.154:1.1 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn35.154:1.2 | S: “Sir, they speak of someone who is ‘accomplished in the faculties’. | T: “‘Consummate in faculties, consummate in faculties,’ it is said.
+sn35.154:1.3 | S: How is someone accomplished in the faculties defined?” | T: To what extent is one consummate in faculties?”
+sn35.154:2.1 | S: “Mendicant, if someone meditates observing rise and fall in the eye faculty, they grow disillusioned with the eye faculty. | T: “If a monk, while keeping track of arising & passing away with regard to the eye-faculty, becomes disenchanted with the eye-faculty;
+sn35.154:2.2 | S: If they meditate observing rise and fall in the ear faculty … nose faculty … tongue faculty … body faculty … | T: if, while keeping track of arising & passing away with regard to the ear-faculty… the nose-faculty… the tongue-faculty… the body faculty…
+sn35.154:2.3 | S: mind faculty, they grow disillusioned with the mind faculty. | T: the intellect-faculty, he becomes disenchanted with the intellect-faculty;
+sn35.154:2.4 | S: Being disillusioned, desire fades away. … When they’re freed, they know they’re freed. | T: and, disenchanted, he becomes dispassionate; through dispassion, he is released; with release, there is the knowledge, ‘Released’;
+sn35.154:2.5 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: he discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world,’
+sn35.154:2.6 | S: This is how someone who is accomplished in the faculties is defined.” | T: it is to this extent that one is consummate in faculties.”
+sn35.154:2.7 | P: Navamaṁ. | T: (none)
+
+## sn35.17
+sn35.17:1.1 | S: “Mendicants, if there were no gratification in the eye, sentient beings wouldn’t be aroused by it. | T: “Monks, if there were not this allure to the eye, beings would not become impassioned with the eye.
+sn35.17:1.2 | S: But since there is gratification in the eye, sentient beings are aroused by it. | T: But because there is an allure to the eye, beings become impassioned with the eye.
+sn35.17:1.3 | S: If the eye had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not these drawbacks to the eye, beings would not become disenchanted with the eye.
+sn35.17:1.4 | S: But since the eye has a drawback, sentient beings do grow disillusioned with it. | T: But because there are drawbacks to the eye, beings become disenchanted with the eye.
+sn35.17:1.5 | S: If there were no escape from the eye, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the eye, beings would not escape from the eye.
+sn35.17:1.6 | S: But since there is an escape from the eye, sentient beings do escape from it. | T: But because there is an escape from the eye, beings escape from the eye.
+sn35.17:1.7 | S: If there were no gratification in the ear … | T: “If there were not this allure to the ear…
+sn35.17:1.8 | S: nose … | T: “If there were not this allure to the nose…
+sn35.17:1.9 | S: tongue … | T: “If there were not this allure to the tongue…
+sn35.17:1.10 | P: Yasmā ca kho, bhikkhave, atthi jivhāya assādo, tasmā sattā jivhāya sārajjanti. | T: (none)
+sn35.17:1.11 | P: No cedaṁ, bhikkhave, jivhāya ādīnavo abhavissa, nayidaṁ sattā jivhāya nibbindeyyuṁ. | T: (none)
+sn35.17:1.12 | P: Yasmā ca kho, bhikkhave, atthi jivhāya ādīnavo, tasmā sattā jivhāya nibbindanti. | T: (none)
+sn35.17:1.13 | P: No cedaṁ, bhikkhave, jivhāya nissaraṇaṁ abhavissa, nayidaṁ sattā jivhāya nissareyyuṁ. | T: (none)
+sn35.17:1.14 | P: Yasmā ca kho, bhikkhave, atthi jivhāya nissaraṇaṁ, tasmā sattā jivhāya nissaranti. | T: (none)
+sn35.17:1.15 | S: body … | T: “If there were not this allure to the body…
+sn35.17:1.16 | S: mind, sentient beings wouldn’t be aroused by it. | T: “If there were not this allure to the intellect, beings would not become impassioned with the intellect.
+sn35.17:1.17 | S: But since there is gratification in the mind, sentient beings are aroused by it. | T: But because there is an allure to the intellect, beings become impassioned with the intellect.
+sn35.17:1.18 | S: If the mind had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not these drawbacks to the intellect, beings would not become disenchanted with the intellect.
+sn35.17:1.19 | S: But since the mind has a drawback, sentient beings do grow disillusioned with it. | T: But because there are drawbacks to the intellect, beings become disenchanted with the intellect.
+sn35.17:1.20 | S: If there were no escape from the mind, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the intellect, beings would not escape from the intellect.
+sn35.17:1.21 | S: But since there is an escape from the mind, sentient beings do escape from it. | T: But because there is an escape from the intellect, beings escape from the intellect.
+sn35.17:2.1 | S: As long as sentient beings don’t truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to these six internal sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+sn35.17:2.2 | S: But when sentient beings truly understand these six interior sense fields’ gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: “But when beings know as it has come to be—with regard to these six internal sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+sn35.17:2.3 | P: Pañcamaṁ. | T: (none)
+
+## sn35.18
+sn35.18:1.1 | S: “Mendicants, if there were no gratification in sights, sentient beings wouldn’t be aroused by them. …” | T: “Monks, if there were not this allure to forms, beings would not become impassioned with forms. But because there is an allure to forms, beings become impassioned with forms. “If there were not these drawbacks to forms, beings would not become disenchanted with forms. But because there are drawbacks to forms, beings become disenchanted with forms. “If there were not this escape from forms, beings would not escape from forms. But because there is an escape from forms, beings escape from forms. “If there were not this allure to sounds… “If there were not this allure to aromas… “If there were not this allure to flavors… “If there were not this allure to tactile sensations… “If there were not this allure to ideas, beings would not become impassioned with ideas. But because there is an allure to ideas, beings become impassioned with ideas. “If there were not these drawbacks to ideas, beings would not become disenchanted with ideas. But because there are drawbacks to ideas, beings become disenchanted with ideas. “If there were not this escape from ideas, beings would not escape from ideas. But because there is an escape from ideas, beings escape from ideas.
+sn35.18:1.2 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ assādo, tasmā sattā rūpesu sārajjanti. | T: (none)
+sn35.18:1.3 | P: No cedaṁ, bhikkhave, rūpānaṁ ādīnavo abhavissa, nayidaṁ sattā rūpesu nibbindeyyuṁ. | T: (none)
+sn35.18:1.4 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ ādīnavo, tasmā sattā rūpesu nibbindanti. | T: (none)
+sn35.18:1.5 | P: No cedaṁ, bhikkhave, rūpānaṁ nissaraṇaṁ abhavissa, nayidaṁ sattā rūpehi nissareyyuṁ. | T: (none)
+sn35.18:1.6 | P: Yasmā ca kho, bhikkhave, atthi rūpānaṁ nissaraṇaṁ, tasmā sattā rūpehi nissaranti. | T: (none)
+sn35.18:1.7 | P: No cedaṁ, bhikkhave, saddānaṁ … | T: (none)
+sn35.18:1.8 | P: gandhānaṁ … | T: (none)
+sn35.18:1.9 | P: rasānaṁ … | T: (none)
+sn35.18:1.10 | P: phoṭṭhabbānaṁ … | T: (none)
+sn35.18:1.11 | P: dhammānaṁ assādo abhavissa, nayidaṁ sattā dhammesu sārajjeyyuṁ. | T: (none)
+sn35.18:1.12 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ assādo, tasmā sattā dhammesu sārajjanti. | T: (none)
+sn35.18:1.13 | P: No cedaṁ, bhikkhave, dhammānaṁ ādīnavo abhavissa, nayidaṁ sattā dhammesu nibbindeyyuṁ. | T: (none)
+sn35.18:1.14 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ ādīnavo, tasmā sattā dhammesu nibbindanti. | T: (none)
+sn35.18:1.15 | P: No cedaṁ, bhikkhave, dhammānaṁ nissaraṇaṁ abhavissa, nayidaṁ sattā dhammehi nissareyyuṁ. | T: (none)
+sn35.18:1.16 | P: Yasmā ca kho, bhikkhave, atthi dhammānaṁ nissaraṇaṁ, tasmā sattā dhammehi nissaranti. | T: (none)
+sn35.18:2.1 | P: Yāvakīvañca, bhikkhave, sattā imesaṁ channaṁ bāhirānaṁ āyatanānaṁ assādañca assādato, ādīnavañca ādīnavato, nissaraṇañca nissaraṇato yathābhūtaṁ nābbhaññaṁsu, neva tāva, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaññuttā vippamuttā vimariyādīkatena cetasā vihariṁsu. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to these six external sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+sn35.18:2.2 | P: Yato ca kho, bhikkhave, sattā imesaṁ channaṁ bāhirānaṁ āyatanānaṁ assādañca assādato, ādīnavañca ādīnavato, nissaraṇañca nissaraṇato yathābhūtaṁ abbhaññaṁsu, atha, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaññuttā vippamuttā vimariyādīkatena cetasā viharantī”ti. | T: “But when beings know as it has come to be—with regard to these six external sense media—the allure as the allure, the drawbacks as the drawbacks, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+sn35.18:2.3 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn35.20
+sn35.20:1.1 | S: “Mendicants, if you take pleasure in sights, you take pleasure in suffering. | T: “Monks, whoever delights in forms delights in stress.
+sn35.20:1.2 | S: If you take pleasure in suffering, you’re not free from suffering, I say. …” | T: Whoever delights in stress is not released from stress, I tell you.
+sn35.20:1.3 | P: Yo sadde …pe… | T: “Whoever delights in sounds delights in stress…
+sn35.20:1.4 | P: gandhe … | T: “Whoever delights in aromas delights in stress…
+sn35.20:1.5 | P: rase … | T: “Whoever delights in flavors delights in stress…
+sn35.20:1.6 | P: phoṭṭhabbe … | T: “Whoever delights in tactile sensations delights in stress…
+sn35.20:1.7 | P: dhamme abhinandati, dukkhaṁ so abhinandati. | T: “Monks, whoever delights in ideas delights in stress.
+
+exec
+/bin/bash -lc "sed -n '221,300p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.234:5.3 | P: “Yo cāvuso, hetu yo ca paccayo jivhāviññāṇassa uppādāya, so ca hetu, so ca paccayo sabbena sabbaṁ sabbathā sabbaṁ aparisesaṁ nirujjheyya, api nu kho jivhāviññāṇaṁ paññāyethā”ti? | T: (none)
+sn35.234:5.4 | P: “No hetaṁ, āvuso”. | T: (none)
+sn35.234:5.5 | P: “Imināpi kho etaṁ, āvuso, pariyāyena bhagavatā akkhātaṁ vivaṭaṁ pakāsitaṁ: ‘itipidaṁ viññāṇaṁ anattā’”ti …pe…. | T: (none)
+sn35.234:6.1 | S: mind consciousness arise dependent on the mind and ideas?” | T: “Doesn’t intellect-consciousness arise in dependence on the intellect & ideas?”
+sn35.234:6.2 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn35.234:6.3 | S: “If the cause and reason that gives rise to mind consciousness were to totally and utterly cease without remainder, would mind consciousness still be found?” | T: “And if the cause & reason for the arising of intellect-consciousness were to cease totally everywhere, totally in every way without remainder, would intellect-consciousness be discerned?”
+sn35.234:6.4 | S: “No, reverend.” | T: “No, friend.”
+sn35.234:6.5 | S: “In this way, too, it can be understood how consciousness is not-self. | T: “It’s in this way, friend, that consciousness has been pointed out, revealed, and announced by the Blessed One: ‘For this reason consciousness is not-self.’
+sn35.234:7.1 | S: Suppose there was a person in need of heartwood. Wandering in search of heartwood, they’d take a sharp axe and enter a forest. There they’d see a big banana trunk, straight and young and grown unskewed. They’d cut it down at the base, cut off the root, cut off the top, and unroll the coiled sheaths. But they wouldn’t even find sapwood, much less heartwood. | T: “It’s just as if a man going around wanting heartwood, seeking heartwood, searching for heartwood, would take a sharp ax and enter a forest. There he would see a large banana tree trunk: straight, young, without shoots. He would cut off the root, cut off the crown, and unfurl the coil of the stem. There he wouldn’t even find softwood, much less heartwood.
+sn35.234:7.2 | S: In the same way, a mendicant sees these six fields of contact as neither self nor belonging to self. | T: “In the same way, a monk assumes neither a self nor anything pertaining to a self in the six media of contact.
+sn35.234:7.3 | S: So seeing, they don’t grasp anything in the world. | T: Assuming in this way, he doesn’t cling to anything in the world.
+sn35.234:7.4 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Unagitated, he is totally unbound right within.
+sn35.234:7.5 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn35.234:7.6 | P: Sattamaṁ. | T: (none)
+
+## sn35.238
+sn35.238:1.1 | S: “Mendicants, suppose there were four venomous vipers of awesome might. | T: I have heard that on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove. Then he addressed the monks, “Monks, suppose there were four vipers of utmost heat & horrible venom.
+sn35.238:1.2 | S: Then a person would come along who wants to live and doesn’t want to die, who wants to be happy and recoils from pain. | T: Then a man would come along—desiring life, desiring not to die, desiring happiness, & loathing pain—
+sn35.238:1.3 | S: They’d say to him, | T: and people would tell him:
+sn35.238:1.4 | S: ‘My man, here are four venomous vipers of awesome might. They must be periodically picked up, washed, fed, and put to sleep. | T: ‘Good man, these four vipers, of utmost heat & horrible venom, are yours. Time after time they must be lifted up, time after time they must be bathed, time after time they must be fed, time after time put to rest.
+sn35.238:1.5 | S: But when one or other of these four venomous vipers gets angry with you, you’ll meet with death or deadly pain. | T: And if any of these vipers ever gets provoked with you, then you will meet with death or death-like suffering.
+sn35.238:1.6 | S: So then, my man, do what has to be done.’ | T: Do what you think should be done.’
+sn35.238:2.1 | S: Then that man, terrified of those four venomous vipers, would flee this way or that. | T: “Then the man—afraid of the four vipers of utmost heat & horrible venom—would flee this way or that.
+sn35.238:2.2 | S: They’d say to him, | T: They would tell him,
+sn35.238:2.3 | S: ‘My man, there are five deadly enemies chasing you, thinking: “When we catch sight of him, we’ll murder him right there!” | T: ‘Good man, there are five enemy executioners chasing right on your heels, (thinking,) “Wherever we see him, we’ll kill him right on the spot.”
+sn35.238:2.4 | S: So then, my man, do what has to be done.’ | T: Do what you think should be done.’
+sn35.238:3.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies, would flee this way or that. | T: “Then the man—afraid of the four vipers of utmost heat & horrible venom, afraid of the five enemy executioners—would flee this way or that.
+sn35.238:3.2 | S: They’d say to him, | T: They would tell him,
+sn35.238:3.3 | S: ‘My man, there’s a sixth hidden killer chasing you with a drawn sword, thinking: “When I catch sight of him, I’ll chop off his head right there!” | T: ‘Good man, there is a sixth executioner, a fellow-traveler, chasing right on your heels with upraised sword, (thinking,) “Wherever I see him, I’ll kill him right on the spot.”
+sn35.238:3.4 | S: So then, my man, do what has to be done.’ | T: Do what you think should be done.’
+sn35.238:4.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies and the hidden killer, would flee this way or that. | T: “Then the man—afraid of the four vipers of utmost heat & horrible venom, afraid of the five enemy executioners, afraid of the sixth fellow-traveling executioner with upraised sword—would flee this way or that.
+sn35.238:4.2 | S: He’d see an empty village. | T: He would see an empty village.
+sn35.238:4.3 | S: But whatever house he enters is vacant, deserted, and empty. | T: Whatever house he entered would be abandoned, void, & empty as he entered it.
+sn35.238:4.4 | S: And whatever vessel he touches is vacant, hollow, and empty. | T: Whatever pot he grabbed hold of would be abandoned, void, & empty as he grabbed hold of it.
+sn35.238:4.5 | S: They’d say to him, | T: They would tell him,
+sn35.238:4.6 | S: ‘My man, there are bandits who raid villages, and they’re striking now. | T: ‘Good man, right now, village-plundering bandits are entering this empty village.
+sn35.238:4.7 | S: So then, my man, do what has to be done.’ | T: Do what you think should be done.’
+sn35.238:5.1 | S: Then that man, terrified of those four venomous vipers and those five deadly enemies and the hidden killer and the bandits, would flee this way or that. | T: “Then the man—afraid of the four vipers of utmost heat & horrible venom, afraid of the five enemy executioners, afraid of the sixth fellow-traveling executioner with upraised sword, afraid of the village-plundering bandits—would flee this way or that.
+sn35.238:5.2 | S: He’d see a large deluge, whose near shore is dubious and perilous, while the far shore is a sanctuary free of peril. | T: He would see a great expanse of water, with the near shore dubious & risky, the further shore secure & free from risk,
+sn35.238:5.3 | S: But there’s no ferryboat or bridge for crossing over. | T: but with neither a ferryboat nor a bridge going from this shore to the other.
+sn35.238:5.4 | S: Then that man would think, | T: The thought would occur to him,
+sn35.238:5.5 | P: ‘ayaṁ kho mahāudakaṇṇavo orimaṁ tīraṁ sāsaṅkaṁ sappaṭibhayaṁ, pārimaṁ tīraṁ khemaṁ appaṭibhayaṁ, natthi ca nāvā santāraṇī uttarasetu vā apārā pāraṁ gamanāya. | T: ‘Here is this great expanse of water, with the near shore dubious & risky, the further shore secure & free from risk, but with neither a ferryboat nor a bridge going from this shore to the other.
+sn35.238:5.6 | S: ‘Why don’t I gather grass, sticks, branches, and leaves and make a raft? Riding on the raft, and paddling with my hands and feet, I can safely reach the far shore.’ | T: What if I were to gather grass, twigs, branches, & leaves and, having bound them together to make a raft, were to cross over to safety on the other shore in dependence on the raft, making an effort with my hands & feet?’
+sn35.238:6.1 | S: And so that man did exactly that. Having crossed over and gone to the far shore, the brahmin stands on solid ground. | T: Then the man, having gathered grass, twigs, branches, & leaves, having bound them together to make a raft, would cross over to safety on the other shore in dependence on the raft, making an effort with his hands & feet. Crossed over, having gone to the other shore, he would stand on high ground, a brahman.
+sn35.238:7.1 | S: I’ve made up this simile to make a point. | T: “Monks, I have made this simile to convey a meaning.
+sn35.238:7.2 | S: And this is the point. | T: Here the meaning is this:
+sn35.238:7.3 | S: ‘Four venomous vipers of awesome might’ is a term for the four principal states: | T: ‘The four vipers of utmost heat & horrible venom’ stands for the four great elements:
+sn35.238:7.4 | S: the elements of earth, water, fire, and air. | T: the earth property, the liquid property, the fire-property, & the wind property.
+sn35.238:8.1 | S: ‘Five deadly enemies’ is a term for the five grasping aggregates, that is: | T: ‘The five enemy executioners’ stands for the five clinging-aggregates:
+sn35.238:8.2 | S: form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate.
+sn35.238:9.1 | S: ‘The sixth hidden killer with a drawn sword’ is a term for relishing and greed. | T: ‘The sixth fellow-traveling executioner with upraised sword’ stands for passion & delight.
+sn35.238:10.1 | S: ‘Empty village’ is a term for the six interior sense fields. | T: “‘The empty village’ stands for the six internal sense media.
+sn35.238:10.2 | S: If an astute, competent, intelligent person investigates that in relation to the eye, it appears vacant, hollow, and empty. | T: If a wise, competent, intelligent person examines them from the point of view of the eye, they appear abandoned, void, & empty.
+sn35.238:10.3 | S: If an astute, competent, intelligent person investigates that in relation to the ear … nose … tongue … body … | T: If he examines them from the point of view of the ear… the nose… the tongue… the body…
+sn35.238:10.4 | S: mind, it appears vacant, hollow, and empty. | T: the intellect, they appear abandoned, void, & empty.
+sn35.238:11.1 | S: ‘Bandits who raid villages’ is a term for the six exterior sense fields. | T: ‘The village-plundering bandits’ stands for the six external sense-media.
+sn35.238:11.2 | S: The eye is struck by both agreeable and disagreeable sights. | T: The eye is attacked by agreeable & disagreeable forms.
+sn35.238:11.3 | S: The ear … | T: The ear is attacked by agreeable & disagreeable sounds.
+sn35.238:11.4 | S: nose … | T: The nose is attacked by agreeable & disagreeable aromas.
+sn35.238:11.5 | S: tongue … | T: The tongue is attacked by agreeable & disagreeable flavors.
+sn35.238:11.6 | S: body … | T: The body is attacked by agreeable & disagreeable tactile sensations.
+sn35.238:11.7 | S: mind is struck by both agreeable and disagreeable ideas. | T: The intellect is attacked by agreeable & disagreeable ideas.
+sn35.238:12.1 | S: ‘Large deluge’ is a term for the four floods: | T: “‘The great expanse of water’ stands for the fourfold flood:
+sn35.238:12.2 | S: the floods of sensual pleasures, desire to be reborn, views, and ignorance. | T: the flood of sensuality, the flood of becoming, the flood of views, & the flood of ignorance.
+sn35.238:13.1 | S: ‘The near shore that’s dubious and perilous’ is a term for substantial reality. | T: ‘The near shore, dubious & risky’ stands for self-identification.
+sn35.238:14.1 | S: ‘The far shore, a sanctuary free of peril’ is a term for extinguishment. | T: ‘The further shore, secure and free from risk’ stands for unbinding.
+sn35.238:15.1 | S: ‘The raft’ is a term for the noble eightfold path, that is: | T: ‘The raft’ stands for just this noble eightfold path:
+sn35.238:15.2 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn35.238:16.1 | S: ‘Paddling with hands and feet’ is a term for rousing energy. | T: ‘Making an effort with hands & feet’ stands for the arousing of persistence.
+sn35.238:17.1 | S: ‘Crossed over, gone to the far shore, the brahmin stands on solid ground’ is a term for a perfected one.” | T: ‘Crossed over, having gone to the other shore, he would stand on high ground, a brahman’ stands for the arahant.”
+sn35.238:17.2 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '1,94p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn35.127
+sn35.127:1.1 | S: At one time Venerable Bhāradvāja the Alms-Gatherer was staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Piṇḍola Bhāradvāja was staying near Kosambī at Ghosita’s monastery.
+sn35.127:1.2 | S: Then King Udena went up to Bhāradvāja the Alms-Gatherer and exchanged greetings with him. | T: Then King Udena went to him and, on arrival, exchanged courteous greetings with him.
+sn35.127:1.3 | S: When the greetings and polite conversation were over, he sat down to one side, and said to him: | T: After this exchange of friendly greetings & courtesies, the king sat to one side. As he was sitting there he said to Ven. Piṇḍola Bhāradvāja:
+sn35.127:1.4 | S: “Worthy Bhāradvāja, there are these young monks who are youthful, with pristine black hair, blessed with youth, in the prime of life; and they’ve never played around with sensual pleasures. What is the cause, what is the reason why they practice the full and pure spiritual life as long as they live, maintaining it for a long time?” | T: “What is the reason, Master Bhāradvāja, what is the cause why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:1.5 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:1.6 | S: ‘Please, monks, think of women your mother’s age as your mother. Think of women your sister’s age as your sister. And think of women your daughter’s age as your daughter.’ | T: ‘Come now, monks: with regard to women who are old enough to be your mother, establish the attitude you would have toward your mother. With regard to women who are old enough to be your sister, establish the attitude you’d have toward a sister. With regard to women who are young enough to be your daughter, establish the attitude you’d have toward a daughter.’
+sn35.127:1.7 | S: This is a cause, Great King, this is a reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time.” | T: This is one reason, this is one cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:2.1 | S: “But worthy Bhāradvāja, the mind is wanton. | T: “The mind is unruly, Master Bhāradvāja.
+sn35.127:2.2 | S: Sometimes thoughts of desire come up even for women your mother’s age, your sister’s age, or your daughter’s age. | T: Sometimes thoughts of greed arise even for women who are old enough to be your mother… your sister… young enough to be your daughter.
+sn35.127:2.3 | S: Is there another cause, another reason why these young monks live the full and pure spiritual life for their entire life?” | T: Is there another reason, another cause, why young monks… without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:3.1 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:3.2 | S: ‘Please, monks, examine your own body up from the soles of the feet and down from the tips of the hairs, wrapped in skin and full of many kinds of filth. | T: ‘Come now, monks: reflect on this very body, from the soles of the feet on up, from the crown of the head on down, surrounded by skin, full of all sorts of unclean things:
+sn35.127:3.3 | S: In this body there is head hair, body hair, nails, teeth, skin, flesh, sinews, bones, bone marrow, kidneys, heart, liver, diaphragm, spleen, lungs, intestines, mesentery, undigested food, feces, bile, phlegm, pus, blood, sweat, fat, tears, grease, saliva, snot, synovial fluid, urine.’ | T: “In this body there are head hairs, body hairs, nails, teeth, skin, flesh, tendons, bones, bone marrow, kidneys, heart, liver, pleura, spleen, lungs, large intestines, small intestines, gorge, feces, bile, phlegm, pus, blood, sweat, fat, tears, skin-oil, saliva, mucus, fluid in the joints, urine.”’
+sn35.127:3.4 | S: This is also a cause, Great King, this is a reason why these young monks live the full and pure spiritual life for their entire life, maintaining it for a long time.” | T: This too is a reason, this too is a cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:3.5 | S: “This is easy to do for those mendicants who have developed their physical endurance, ethics, mind, and wisdom. | T: “For those who are developed in body, developed in virtue, developed in mind, developed in discernment, Master Bhāradvāja, that isn’t hard to do.
+sn35.127:3.6 | S: But it’s hard to do for those mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: But for those who are undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment, that is hard to do.
+sn35.127:3.7 | S: Sometimes I plan to focus on something as ugly, but only its beauty comes to mind. | T: Sometimes when one thinks, ‘Let’s regard this as unattractive,’ it actually comes to be attractive.
+sn35.127:3.8 | S: Is there another cause, another reason why these young monks live the full and pure spiritual life for their entire life?” | T: Is there another reason, another cause, why young monks… without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives?”
+sn35.127:4.1 | S: “Great king, this has been stated by the Blessed One, who knows and sees, the perfected one, the fully awakened Buddha: | T: “Great king, this was said by the Blessed One who knows & sees, worthy & rightly self-awakened:
+sn35.127:4.2 | S: ‘Please, monks, live with sense doors guarded. | T: ‘Come now, monks: Keep guarding the doors to your sense faculties.
+sn35.127:4.3 | S: When you see a sight with your eyes, don’t get caught up in the features and details. | T: On seeing a form with the eye, do not grasp at any theme or variations by which—
+sn35.127:4.4 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protect the faculty of sight, and achieve its restraint. | T: if you were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail you. Practice with restraint. Guard the faculty of the eye. Achieve restraint with regard to the faculty of the eye.
+sn35.127:4.5 | S: When you hear a sound with your ears … | T: “‘On hearing a sound with the ear…
+sn35.127:4.6 | S: When you smell an odor with your nose … | T: “‘On smelling an aroma with the nose…
+sn35.127:4.7 | S: When you taste a flavor with your tongue … | T: “‘On tasting a flavor with the tongue…
+sn35.127:4.8 | S: When you feel a touch with your body … | T: “‘On feeling a tactile sensation with the body…
+sn35.127:4.9 | S: When you know an idea with your mind, don’t get caught up in the features and details. | T: “‘On cognizing an idea with the intellect, do not grasp at any theme or variations by which—
+sn35.127:4.10 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protect the faculty of mind, and achieve its restraint.’ | T: if you were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail you. Practice with restraint. Guard the faculty of the intellect. Achieve restraint with regard to the faculty of the intellect.’
+sn35.127:4.11 | S: This is also a cause, Great King, this is a reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time.” | T: “This too is a reason, this too is a cause, great king, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.”
+sn35.127:5.1 | S: “It’s incredible, worthy Bhāradvāja, it’s amazing! | T: “Amazing, Master Bhāradvāja! Astounding!
+sn35.127:5.2 | S: How well this was said by the Buddha! | T: How well that has been said by the Blessed One who knows & sees, worthy & rightly self-awakened!
+sn35.127:5.3 | S: This is the real cause, this is the reason why these young monks practice the full and pure spiritual life as long as they live, maintaining it for a long time. | T: This is the very reason, this the very cause, why young monks—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality nevertheless follow the lifelong celibate life, perfect & pure, and make it last their entire lives.
+sn35.127:5.4 | S: For sometimes I too enter the harem with unprotected body, speech, mind, mindfulness, and sense faculties. At those times powerful thoughts of desire get the better of me. | T: I myself, Master Bhāradvāja: Whenever I enter the inner apartments of the palace unguarded in body, unguarded in speech, unguarded in mind, with mindfulness unestablished and my senses unrestrained, I’m overcome with thoughts of greed.
+sn35.127:5.5 | S: But sometimes I enter the harem with protected body, speech, mind, mindfulness, and sense faculties. At those times such thoughts of desire don’t get the better of me. | T: But whenever I enter the inner apartments of the palace guarded in body, guarded in speech, guarded in mind, with mindfulness established and my senses restrained, then I’m not.
+sn35.127:5.6 | S: Excellent, worthy Bhāradvāja! Excellent! | T: “Magnificent, Master Bhāradvāja! Magnificent!
+sn35.127:5.7 | S: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, the worthy Bhāradvāja has made the teaching clear in many ways. | T: Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Bhāradvāja—through many lines of reasoning—made the Dhamma clear.
+sn35.127:5.8 | S: I go for refuge to the Buddha, to the teaching, and to the mendicant Saṅgha. | T: I go to the Blessed One for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn35.127:5.9 | S: From this day forth, may the worthy Bhāradvāja remember me as a lay follower who has gone for refuge for life.” | T: May Master Bhāradvāja remember me as a lay follower who has gone for refuge from this day forward, for life.”
+sn35.127:5.10 | P: Catutthaṁ. | T: (none)
+
+## sn35.134
+sn35.134:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near the Sakyan town named Devadaha. | T: On one occasion the Blessed One was staying among the Sakyans near a Sakyan town named Devadaha.
+sn35.134:1.2 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks,
+sn35.134:1.3 | S: “When it comes to the six fields of contact, mendicants, I don’t say that all mendicants have work to do with diligence, nor do I say that none of them have work to do with diligence. | T: “Monks, I don’t say of all monks that they have work to do with heedfulness with regard to the six contact-media. But I don’t say of all monks that they don’t have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.4 | S: I say that, when it comes to the six fields of contact, mendicants don’t have work to do with diligence if they are perfected, with defilements ended, having completed the spiritual journey, done what had to be done, laid down the burden, achieved their heart’s goal, utterly ended the fetter of continued existence, and become rightly freed through enlightenment. | T: “Those monks who are arahants—whose effluents are ended, who have reached fulfillment, done the task, laid down the burden, attained the true goal, laid to waste the fetter of becoming, and who are released through right gnosis: Of them I say that they don’t have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.5 | S: Why is that? | T: Why is that?
+sn35.134:1.6 | S: They’ve done their work with diligence, and are incapable of negligence. | T: They have completed their work with heedfulness. They are incapable of falling back.
+sn35.134:1.7 | S: I say that, when it comes to the six fields of contact, mendicants do have work to do with diligence if they are trainees, who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke. | T: “But as for those monks who are in training, who have not attained the heart’s goal but remain intent on the unsurpassed safety from bondage: Of them I say that they still have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.8 | S: Why is that? | T: Why is that?
+sn35.134:1.9 | S: There are sights known by the eye that are pleasant and also those that are unpleasant. | T: “There are forms cognizable via the eye that are agreeable & disagreeable.
+sn35.134:1.10 | S: Though experiencing them again and again they don’t occupy the mind. | T: [When one is heedful] they don’t persist in consuming the mind, even when contacted again & again.
+sn35.134:1.11 | S: Their energy is roused up and unflagging, their mindfulness is established and lucid, their body is tranquil and undisturbed, and their mind is immersed and unified in samādhi. | T: When awareness isn’t consumed, persistence is aroused & untiring, the mind concentrated & gathered into singleness.
+sn35.134:1.12 | S: Seeing this fruit of diligence, I say that those mendicants have work to do with diligence when it comes to the six fields of contact. … | T: Seeing this fruit of heedfulness, I say of those monks that they still have work to do with heedfulness with regard to the six contact-media.
+sn35.134:1.13 | S: There are ideas known by the mind that are pleasant and also those that are unpleasant. | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… “There are ideas cognizable via the intellect that are agreeable & disagreeable.
+sn35.134:1.14 | S: Though experiencing them again and again they don’t occupy the mind. | T: [When one is heedful] they don’t persist in consuming the mind, even when contacted again & again.
+sn35.134:1.15 | S: Their energy is roused up and unflagging, their mindfulness is established and lucid, their body is tranquil and undisturbed, and their mind is immersed and unified in samādhi. | T: When awareness isn’t consumed, persistence is aroused & untiring, the mind concentrated & gathered into singleness.
+sn35.134:1.16 | S: Seeing this fruit of diligence, I say that those mendicants have work to do with diligence when it comes to the six fields of contact.” | T: Seeing this fruit of heedfulness, I say of those monks that they still have work to do with heedfulness with regard to the six contact-media.”
+sn35.134:1.17 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.135
+sn35.135:1.1 | S: “You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.2 | S: to have the opportunity to lead the spiritual life. | T: that you’ve gained the opportunity to live the holy life.
+sn35.135:1.3 | S: I’ve seen the hell named ‘Related to the Six Fields of Contact’. | T: I have seen a hell named ‘Six Media of Contact.’
+sn35.135:1.4 | S: There, whatever sight you see with your eye is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: Whatever form one sees there with the eye is undesirable, never desirable; displeasing, never pleasing; disagreeable, never agreeable.
+sn35.135:1.5 | S: Whatever sound you hear … | T: Whatever sound one hears there with the ear…
+sn35.135:1.6 | S: Whatever odor you smell … | T: Whatever aroma one smells there with the nose…
+sn35.135:1.7 | S: Whatever flavor you taste … | T: Whatever flavor one tastes there with the tongue…
+sn35.135:1.8 | S: Whatever touch you feel … | T: Whatever tactile sensation one touches there with the body…
+sn35.135:1.9 | S: Whatever idea you know with your mind is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: Whatever idea one cognizes there with the intellect is undesirable, never desirable; displeasing, never pleasing; disagreeable, never agreeable.
+sn35.135:1.10 | S: You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.11 | S: to have the opportunity to lead the spiritual life. | T: that you’ve gained the opportunity to live the holy life.
+sn35.135:1.12 | S: I’ve seen the heaven called ‘Related to the Six Fields of Contact’. | T: I have seen a heaven named ‘Six Media of Contact.’
+sn35.135:1.13 | S: There, whatever sight you see with your eye is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: Whatever form one sees there with the eye is desirable, never undesirable; pleasing, never displeasing; agreeable, never disagreeable.
+sn35.135:1.14 | S: Whatever sound … odor … flavor … touch … | T: Whatever sound one hears there with the ear… Whatever aroma one smells there with the nose… Whatever flavor one tastes there with the tongue… Whatever tactile sensation one touches there with the body…
+sn35.135:1.15 | S: Whatever idea you know with your mind is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: Whatever idea one cognizes there with the intellect is desirable, never undesirable; pleasing, never displeasing; agreeable, never disagreeable.
+sn35.135:1.16 | S: You’re fortunate, mendicants, so very fortunate, | T: “It’s a gain for you, monks, a great gain,
+sn35.135:1.17 | S: to have the opportunity to lead the spiritual life.” | T: that you’ve gained the opportunity to live the holy life.”
+sn35.135:1.18 | P: Dutiyaṁ. | T: (none)
+
+## sn35.146
+sn35.146:1.1 | S: “Mendicants, I will teach you old deeds, new deeds, the cessation of deeds, and the practice that leads to the cessation of deeds. | T: “Monks, I will teach you new & old kamma, the cessation of kamma, and the path of practice leading to the cessation of kamma.
+sn35.146:1.2 | S: Listen and apply your mind well, I will speak. … | T: Listen & pay close attention. I will speak.
+sn35.146:1.3 | S: And what is old deeds? | T: “Now what, monks, is old kamma?
+sn35.146:1.4 | S: The eye is old deeds. It should be seen as produced by choices and intentions, as something to be felt. | T: The eye is to be seen as old kamma, fabricated & willed, capable of being felt.
+sn35.146:1.5 | S: The ear … nose … tongue … body … | T: The ear… The nose…The tongue… The body…
+sn35.146:1.6 | S: mind is old deeds. It should be seen as produced by choices and intentions, as something to be felt. | T: The intellect is to be seen as old kamma, fabricated & willed, capable of being felt.
+sn35.146:1.7 | S: This is called old deeds. | T: This is called old kamma.
+sn35.146:1.8 | S: And what is new deeds? | T: “And what is new kamma?
+sn35.146:1.9 | S: The deeds you currently perform by way of body, speech, and mind. | T: Whatever kamma one does now with the body, with speech, or with the intellect:
+sn35.146:1.10 | S: These are called new deeds. | T: This is called new kamma.
+sn35.146:1.11 | S: And what is the cessation of deeds? | T: “And what is the cessation of kamma?
+sn35.146:1.12 | S: When you experience freedom due to the cessation of deeds by body, speech, and mind. | T: Whoever touches the release that comes from the cessation of bodily kamma, verbal kamma, & mental kamma:
+sn35.146:1.13 | S: This is called the cessation of deeds. | T: This is called the cessation of kamma.
+
+exec
+/bin/bash -lc "sed -n '301,380p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '171,220p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.20:1.8 | P: Yo dukkhaṁ abhinandati, ‘aparimutto so dukkhasmā’ti vadāmi. | T: Whoever delights in stress is not released from stress, I tell you.
+sn35.20:2.1 | P: “Yo ca kho, bhikkhave, rūpe nābhinandati, dukkhaṁ so nābhinandati. | T: “Monks, whoever doesn’t delight in forms doesn’t delight in stress.
+sn35.20:2.2 | P: Yo dukkhaṁ nābhinandati, ‘aparimutto so dukkhasmā’ti vadāmi. | T: Whoever doesn’t delight in stress is released from stress, I tell you.
+sn35.20:2.3 | P: Yo sadde …pe… | T: “Whoever doesn’t delight in sounds doesn’t delight in stress…
+sn35.20:2.4 | P: gandhe … | T: “Whoever doesn’t delight in aromas doesn’t delight in stress…
+sn35.20:2.5 | P: rase … | T: “Whoever doesn’t delight in flavors doesn’t delight in stress…
+sn35.20:2.6 | P: phoṭṭhabbe … | T: “Whoever doesn’t delight in tactile sensations doesn’t delight in stress…
+sn35.20:2.7 | P: dhamme nābhinandati, dukkhaṁ so nābhinandati. | T: “Monks, whoever doesn’t delight in ideas doesn’t delight in stress.
+sn35.20:2.8 | P: Yo dukkhaṁ nābhinandati, ‘aparimutto so dukkhasmā’ti vadāmi.” | T: Whoever doesn’t delight in stress is released from stress, I tell you.”
+sn35.20:2.9 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn35.228
+sn35.228:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “‘The ocean, the ocean,’ says the uninstructed run-of-the-mill person.
+sn35.228:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that’s not the ocean in the discipline of the noble ones.
+sn35.228:1.3 | S: That’s just a large body of water, a large sea of water. | T: It’s a great mass of water, a great body of water.
+sn35.228:1.4 | S: For a person, the eye is an ocean, | T: “The eye is a person’s ocean,
+sn35.228:1.5 | S: and its currents are made of sights. | T: and its current consists of forms.
+sn35.228:2.1 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the eye, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: Whoever resists that current consisting of forms is said to have crossed over the ocean of the eye with its waves, whirlpools, sharks, & demons.
+sn35.228:2.2 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground. | T: Crossed over, gone beyond, one stands on high ground, a brahman.
+sn35.228:2.3 | S: For a person, the ear … nose … tongue … body … | T: “The ear is a person’s ocean… “The nose is a person’s ocean… “The tongue is a person’s ocean… “The body is a person’s ocean…
+sn35.228:2.4 | P: tassa rasamayo vego. | T: (none)
+sn35.228:2.5 | P: Yo taṁ rasamayaṁ vegaṁ sahati, ayaṁ vuccati, bhikkhave, atari jivhāsamuddaṁ saūmiṁ sāvaṭṭaṁ sagāhaṁ sarakkhasaṁ; | T: (none)
+sn35.228:2.6 | P: tiṇṇo pāraṅgato thale tiṭṭhati brāhmaṇo …pe… | T: (none)
+sn35.228:2.7 | S: mind is an ocean, | T: “The intellect is a person’s ocean,
+sn35.228:2.8 | S: and its currents are made of ideas. | T: and its current consists of ideas.
+sn35.228:2.9 | S: Someone who can prevail over those currents is said to have crossed over the ocean of the mind, with its waves and whirlpools, its saltwater crocodiles and monsters. | T: Whoever resists that current consisting of ideas is said to have crossed over the ocean of the intellect with its waves, whirlpools, sharks, & demons.
+sn35.228:2.10 | S: Crossed over, gone to the far shore, the brahmin stands on solid ground.” | T: Crossed over, gone beyond, one stands on firm ground, a brahman.”
+sn35.228:2.11 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn35.228:2.12 | S: Then the Holy One, the Teacher, went on to say: | T: When the One Well-gone had said that, he—the Teacher—said further:
+sn35.228:3.1 | S: “A knowledge master who’s crossed <j>the ocean so hard to cross, | T: Whoever crosses over this ocean,
+sn35.228:3.2 | S: with its saltwater crocodiles and monsters, <j>its waves, whirlpools, and dangers; | T: with its danger of sharks, demons, waves, so very hard to cross
+sn35.228:3.3 | S: they’ve completed the spiritual journey and gone to the end of the world, | T: is called: an attainer of wisdom who has lived the holy life, one who’s attained the end of the cosmos,
+sn35.228:3.4 | S: they’re called ‘one who has gone beyond’.” | T: one gone beyond.
+sn35.228:3.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.234
+sn35.234:1.1 | S: At one time the venerables Ānanda and Udāyī were staying near Kosambī in Ghosita’s monastery. | T: On one occasion Ven. Ānanda and Ven. Udāyin were staying near Kosambī at Ghosita’s monastery.
+sn35.234:1.2 | S: Then in the late afternoon, Venerable Udāyī came out of retreat, went to Venerable Ānanda, and exchanged greetings with him. | T: Then Ven. Udāyin, emerging from his seclusion in the evening, went to Ven. Ānanda and exchanged courteous greetings with him.
+sn35.234:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Ānanda: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Ānanda,
+sn35.234:2.1 | S: “Reverend Ānanda, the Buddha has explained, opened, and revealed in many ways how this body is not-self. | T: “In many ways the body has been pointed out, revealed, and announced by the Blessed One (with these words): ‘For this reason the body is not-self.’
+sn35.234:2.2 | S: Is it possible to explain consciousness in the same way? To teach, assert, establish, clarify, analyze, and reveal how consciousness is not-self?” | T: Can consciousness in the same way be declared, taught, described, set forth, revealed, explained, & made plain (with these words): ‘For this reason consciousness is not-self’?”
+sn35.234:3.1 | P: “Yatheva kho, āvuso udāyī, ayaṁ kāyo bhagavatā anekapariyāyena akkhāto vivaṭo pakāsito: | T: (none)
+sn35.234:3.2 | S: “It is possible, Reverend Udāyī. | T: “It can…
+sn35.234:4.1 | S: Does eye consciousness arise dependent on the eye and sights?” | T: Doesn’t eye-consciousness arise in dependence on the eye & forms?”
+sn35.234:4.2 | S: “Yes, reverend.” | T: “Yes, friend.”
+sn35.234:4.3 | S: “If the cause and reason that gives rise to eye consciousness were to totally and utterly cease without remainder, would eye consciousness still be found?” | T: “And if the cause & reason for the arising of eye-consciousness were to cease totally everywhere, totally in every way without remainder, would eye-consciousness be discerned?”
+sn35.234:4.4 | S: “No, reverend.” | T: “No, friend.”
+sn35.234:4.5 | S: “In this way, too, it can be understood how consciousness is not-self. | T: “It’s in this way, friend, that consciousness has been pointed out, revealed, and announced by the Blessed One: ‘For this reason consciousness is not-self.’
+sn35.234:5.1 | S: Does ear … nose … tongue … body … | T: “Doesn’t ear-consciousness arise in dependence on the ear & sounds?” … “Doesn’t nose-consciousness arise in dependence on the nose & aromas?” … “Doesn’t tongue-consciousness arise in dependence on the tongue & flavors?” … “Doesn’t body-consciousness arise in dependence on the body & tactile sensations?”
+sn35.234:5.2 | P: “Evamāvuso”ti. | T: …
+
+codex
+The clearest errors are in SN 35.18, where separate sentences and ellipsis items are all on the first line. I also found preceding sense examples attached to the mind line in SN 35.134.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-099.findings.tmp <<'EOF'
+sn35.134:1.13 starts: “There are ideas cognizable via the intellect that
+sn35.18:1.2 starts: But because there is an allure to forms,
+sn35.18:1.3 starts: “If there were not these drawbacks to forms,
+sn35.18:1.4 starts: But because there are drawbacks to forms, beings
+sn35.18:1.5 starts: “If there were not this escape from forms,
+sn35.18:1.6 starts: But because there is an escape from forms,
+sn35.18:1.7 starts: “If there were not this allure to sounds…
+sn35.18:1.8 starts: “If there were not this allure to aromas…
+sn35.18:1.9 starts: “If there were not this allure to flavors…
+sn35.18:1.10 starts: “If there were not this allure to tactile
+sn35.18:1.11 starts: “If there were not this allure to ideas,
+sn35.18:1.12 starts: But because there is an allure to ideas,
+sn35.18:1.13 starts: “If there were not these drawbacks to ideas,
+sn35.18:1.14 starts: But because there are drawbacks to ideas, beings
+sn35.18:1.15 starts: “If there were not this escape from ideas,
+sn35.18:1.16 starts: But because there is an escape from ideas,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+16 lines reported.
+tokens used
+27,768
+16 lines reported.

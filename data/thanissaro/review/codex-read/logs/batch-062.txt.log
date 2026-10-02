@@ -1,0 +1,333 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-8e24-7a51-8bea-61b91e4085cb
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and check for clear line-boundary misplacements, then write the findings.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an11.11, continued
+an11.11:8.10 | S: A noble disciple whose mind is unswerving finds inspiration in the meaning and the teaching, and finds joy connected with the teaching. | T: And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma.
+an11.11:8.11 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated.
+an11.11:8.12 | S: This is called a noble disciple who lives in balance among people who are unbalanced, and lives untroubled among people who are troubled. They’ve entered the stream of the teaching and developed the recollection of the deities.” | T: “Of one who does this, Mahānāma, it is said: ‘Among those who are out of tune, the disciple of the noble ones dwells in tune; among those who are malicious, he dwells without malice; having attained the stream of Dhamma, he develops the recollection of the devas.’”
+an11.11:8.13 | P: Paṭhamaṁ. | T: (none)
+
+## an11.12
+an11.12:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: I have heard that on one occasion the Blessed One was staying among the Sakyans at Kapilavatthu in the Banyan Park.
+an11.12:1.2 | S: Now at that time Mahānāma the Sakyan had recently recovered from an illness. | T: Now at that time Mahānāma the Sakyan had recovered from being ill, was not long recovered from his illness.
+an11.12:1.3 | S: At that time several mendicants were making a robe for the Buddha … | T: And at that time many monks were at work making robes for the Blessed One,
+an11.12:1.4 | P: “niṭṭhitacīvaro bhagavā temāsaccayena cārikaṁ pakkamissatī”ti. | T: (thinking,) “When the robes are finished, at the end of the three months (of the Rains retreat), the Blessed One will set out wandering.”
+an11.12:2.1 | S: Mahānāma the Sakyan heard about this. | T: Mahānāma the Sakyan heard that
+an11.12:2.2 | P: “sambahulā kira bhikkhū bhagavato cīvarakammaṁ karonti: | T: many monks were at work making robes for the Blessed One,
+an11.12:2.3 | P: ‘niṭṭhitacīvaro bhagavā temāsaccayena cārikaṁ pakkamissatī’”ti. | T: (thinking,) “When the robes are finished, at the end of the three months, the Blessed One will set out wandering.”
+an11.12:2.4 | S: He went up to the Buddha, bowed, sat down to one side, and said to him: | T: So he approached the Blessed One and, on arrival, having bowed down, sat to one side. As he was sitting there he said to the Blessed One:
+an11.12:2.5 | S: “Sir, I have heard that | T: “I have heard that
+an11.12:2.6 | S: several mendicants are making a robe for the Buddha, thinking that | T: many monks are at work making robes for the Blessed One, (thinking,)
+an11.12:2.7 | S: when his robe was finished and the three months of the rains residence had passed the Buddha would set out wandering. | T: ‘When the robes are finished, at the end of the three months, the Blessed One will set out wandering.’
+an11.12:2.8 | S: Now, we spend our life in various ways. Which of these should we practice?” | T: For those of us living by means of various dwelling places (for the mind), by means of which dwelling place should we live?”
+an11.12:3.1 | S: “Good, good, Mahānāma! | T: “Excellent, Mahānāma, excellent!
+an11.12:3.2 | S: It’s appropriate that gentlemen such as you come to me and ask: | T: It is fitting for clansmen like you to approach the Tathāgata and ask,
+an11.12:3.3 | S: ‘We spend our life in various ways. Which of these should we practice?’ | T: ‘For those of us living by means of various dwelling places (for the mind), by means of which dwelling place should we live?’
+an11.12:3.4 | S: The faithful succeed, not the faithless. | T: “One who is aroused to practice is one of conviction, not without conviction.
+an11.12:3.5 | S: The energetic succeed, not the lazy. | T: One aroused to practice is one with persistence aroused, not lazy.
+an11.12:3.6 | S: The mindful succeed, not the unmindful. | T: One aroused to practice is one of established mindfulness, not muddled mindfulness.
+an11.12:3.7 | S: Those with immersion succeed, not those without immersion. | T: One aroused to practice is centered in concentration, not uncentered.
+an11.12:3.8 | S: The wise succeed, not the witless. | T: One aroused to practice is discerning, not undiscerning.
+an11.12:3.9 | S: When you’re grounded on these five things, go on to develop six further things. | T: “Established in these five qualities, you should further develop six qualities:
+an11.12:4.1 | S: Firstly, you should recollect the Realized One: | T: [1] “There is the case where you recollect the Tathāgata:
+an11.12:4.2 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+an11.12:4.3 | S: When a noble disciple recollects the Realized One their mind is not full of greed, hate, and delusion. | T: At any time when a disciple of the noble ones is recollecting the Tathāgata, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion.
+an11.12:4.4 | S: At that time their mind is quite unswerving, based on the Realized One. | T: His mind heads straight, based on the Tathāgata.
+an11.12:4.5 | S: A noble disciple whose mind is unswerving finds inspiration in the meaning and the teaching, and finds joy connected with the teaching. | T: And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma.
+an11.12:4.6 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated.
+an11.12:4.7 | S: You should develop this recollection of the Buddha while walking, standing, sitting, lying down, while working, and while at home with your children. | T: “Mahānāma, you should develop this recollection of the Buddha while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.
+an11.12:5.1 | S: Furthermore, you should recollect the teaching … | T: [2] “Then there is the case where you recollect the Dhamma: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’ At any time when a disciple of the noble ones is recollecting the Dhamma, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion. His mind heads straight, based on the Dhamma. And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma. In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated. “Mahānāma, you should develop this recollection of the Dhamma while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.
+an11.12:5.2 | S: the Saṅgha … | T: [3] “Then there is the case where you recollect the Saṅgha: ‘The Saṅgha of the Blessed One’s disciples who have practiced well…who have practiced straight-forwardly…who have practiced methodically…who have practiced masterfully—in other words, the four types (of noble disciples) when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, the incomparable field of merit for the world.’ At any time when a disciple of the noble ones is recollecting the Saṅgha, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion. His mind heads straight, based on the Saṅgha. And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma. In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated. “Mahānāma, you should develop this recollection of the Saṅgha while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.
+an11.12:5.3 | S: your own ethical conduct … | T: [4] “Then there is the case where you recollect your own virtues: ‘(They are) untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, conducive to concentration.’ At any time when a disciple of the noble ones is recollecting virtue, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion. His mind heads straight, based on virtue. And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma. In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated. “Mahānāma, you should develop this recollection of virtue while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.
+an11.12:5.4 | S: your own generosity … | T: [5] “Then there is the case where you recollect your own generosity: ‘It is a gain, a great gain for me, that—among people overcome with the stain of possessiveness—I live at home, my awareness cleansed of the stain of possessiveness, freely generous, openhanded, delighting in being magnanimous, responsive to requests, delighting in the distribution of alms.’ At any time when a disciple of the noble ones is recollecting generosity, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion. His mind heads straight, based on generosity. And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma. In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated. “Mahānāma, you should develop this recollection of generosity while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.
+an11.12:5.5 | S: the deities … | T: [6] “Then you should recollect the devas:
+an11.12:5.6 | P: ‘santi devā cātumahārājikā …pe… santi devā tatuttari. | T: ‘There are the Devas of the Four Great Kings, the Devas of the Thirty-three, the Devas of the Hours, the Contented Devas, the Devas Delighting in Creation, the Devas Wielding Power over the Creations of Others, the Devas of Brahmā’s retinue, the devas beyond them.
+an11.12:5.7 | P: Yathārūpāya saddhāya samannāgatā tā devatā ito cutā tatthūpapannā, mayhampi tathārūpā saddhā saṁvijjati. | T: Whatever conviction they were endowed with, so that—when falling away from this life—they re-arose there, the same sort of conviction is present in me as well.
+an11.12:5.8 | P: Yathārūpena sīlena … | T: Whatever virtue they were endowed with, so that—when falling away from this life—they re-arose there, the same sort of virtue is present in me as well.
+an11.12:5.9 | P: sutena … | T: Whatever learning they were endowed with, so that—when falling away from this life—they re-arose there, the same sort of learning is present in me as well.
+an11.12:5.10 | P: cāgena … | T: Whatever generosity they were endowed with, so that—when falling away from this life—they re-arose there, the same sort of generosity is present in me as well.
+an11.12:5.11 | P: paññāya samannāgatā tā devatā ito cutā tatthūpapannā, mayhampi tathārūpā paññā saṁvijjatī’ti. | T: Whatever discernment they were endowed with, so that—when falling away from this life—they re-arose there, the same sort of discernment is present in me as well.’
+an11.12:5.12 | S: When a noble disciple recollects the faith, ethics, learning, generosity, and wisdom of both themselves and the deities their mind is not full of greed, hate, and delusion. | T: At any time when a disciple of the noble ones is recollecting the conviction, virtue, learning, generosity, and discernment found both in himself and the devas, his mind is not overcome with passion, not overcome with aversion, not overcome with delusion.
+an11.12:5.13 | S: At that time their mind is quite unswerving, based on the deities. | T: His mind heads straight, based on the (qualities of the) devas.
+an11.12:5.14 | S: A noble disciple whose mind is unswerving finds inspiration in the meaning and the teaching, and finds joy connected with the teaching. | T: And when the mind is headed straight, the disciple of the noble ones gains a sense of the goal, gains a sense of the Dhamma, gains joy connected with the Dhamma.
+an11.12:5.15 | S: When they’re joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, they feel bliss. And when they’re blissful, the mind becomes immersed in samādhi. | T: In one who is joyful, rapture arises. In one whose mind is enraptured, the body grows calm. One whose body is calmed experiences ease. In one at ease, the mind becomes concentrated.
+an11.12:5.16 | S: You should develop this recollection of the deities while walking, standing, sitting, lying down, while working, and while at home with your children.” | T: “Mahānāma, you should develop this recollection of the devas while you are walking, while you are standing, while you are sitting, while you are lying down, while you are busy at work, while you are resting in your home crowded with children.”
+an11.12:5.17 | P: Dutiyaṁ. | T: (none)
+
+## an11.15
+an11.15:1.1 | S: “Mendicants, you can expect eleven benefits when the heart’s release by love has been cultivated, developed, and practiced, made a vehicle and a basis, kept up, consolidated, and properly implemented. | T: “Monks, for one whose awareness-release through goodwill is cultivated, developed, pursued, given a means of transport, given a grounding, steadied, consolidated, and well-undertaken, eleven benefits can be expected.
+an11.15:2.1 | S: What eleven? | T: Which eleven?
+an11.15:2.2 | S: You sleep at ease. You wake happily. You don’t have bad dreams. Humans love you. Non-humans love you. Deities protect you. You can’t be harmed by fire, poison, or blade. Your mind quickly enters immersion. Your face is clear and bright. You don’t feel lost when you die. If you don’t penetrate any higher, you’ll be reborn in a realm of divinity. | T: “One sleeps easily, wakes easily, dreams no evil dreams. One is dear to human beings, dear to non-human beings. The devas protect one. Neither fire, poison, nor weapons can touch one. One’s mind gains concentration quickly. One’s complexion is bright. One dies unconfused and—if penetrating no higher—is headed for a Brahmā world.
+an11.15:2.3 | S: You can expect eleven benefits when the heart’s release by love has been cultivated, developed, and practiced, made a vehicle and a basis, kept up, consolidated, and properly implemented.” | T: “These are the eleven benefits that can be expected for one whose awareness-release through goodwill is cultivated, developed, pursued, handed the reins, taken as a basis, steadied, consolidated, and well-undertaken.”
+an11.15:2.4 | P: Pañcamaṁ. | T: (none)
+
+## an11.1
+an11.1:1.1 | S: So I have heard. | T: I have heard that
+an11.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an11.1:1.3 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda went to the Blessed One and on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+an11.1:1.4 | S: “Sir, what is the goal and benefit of skillful ethics?” | T: “What is the purpose of skillful virtues? What is their reward?”
+an11.1:1.5 | S: “Ānanda, having no regrets is the goal and benefit of skillful ethics.” | T: “Skillful virtues have freedom from remorse as their purpose, Ānanda, and freedom from remorse as their reward.”
+an11.1:2.1 | S: “But what is the goal and benefit of having no regrets?” | T: “And what is the purpose of freedom from remorse? What is its reward?”
+an11.1:2.2 | S: “Joy is the goal and benefit of having no regrets.” | T: “Freedom from remorse has joy as its purpose, joy as its reward.”
+an11.1:3.1 | S: “But what is the goal and benefit of joy?” | T: “And what is the purpose of joy? What is its reward?”
+an11.1:3.2 | S: “Rapture …” | T: “Joy has rapture as its purpose, rapture as its reward.”
+an11.1:4.1 | S: “But what is the goal and benefit of rapture?” | T: “And what is the purpose of rapture? What is its reward?”
+an11.1:4.2 | S: “Tranquility …” | T: “Rapture has calm as its purpose, calm as its reward.”
+an11.1:5.1 | S: “But what is the goal and benefit of tranquility?” | T: “And what is the purpose of calm? What is its reward?”
+an11.1:5.2 | S: “Bliss …” | T: “Calm has pleasure as its purpose, pleasure as its reward.”
+an11.1:6.1 | S: “But what is the goal and benefit of bliss?” | T: “And what is the purpose of pleasure? What is its reward?”
+an11.1:6.2 | S: “Immersion …” | T: “Pleasure has concentration as its purpose, concentration as its reward.”
+an11.1:7.1 | S: “But what is the goal and benefit of immersion?” | T: “And what is the purpose of concentration? What is its reward?”
+an11.1:7.2 | S: “Truly knowing and seeing …” | T: “Concentration has knowledge & vision of things as they have come to be as its purpose, knowledge & vision of things as they have come to be as its reward.”
+an11.1:8.1 | S: “But what is the goal and benefit of truly knowing and seeing?” | T: “And what is the purpose of knowledge & vision of things as they have come to be? What is its reward?”
+an11.1:8.2 | S: “Disillusionment …” | T: “Knowledge & vision of things as they have come to be has disenchantment as its purpose, disenchantment as its reward.”
+an11.1:9.1 | S: “But what is the goal and benefit of disillusionment?” | T: “And what is the purpose of disenchantment? What is its reward?”
+an11.1:9.2 | S: “Dispassion …” | T: “Disenchantment has dispassion as its purpose, dispassion as its reward.”
+an11.1:10.1 | S: “But what is the goal and benefit of dispassion?” | T: “And what is the purpose of dispassion? What is its reward?”
+an11.1:10.2 | S: “Knowledge and vision of freedom is the goal and benefit of dispassion. | T: “Dispassion has knowledge & vision of release as its purpose, knowledge & vision of release as its reward.
+an11.1:11.1 | S: So, Ānanda, the goal and benefit of skillful ethics is not having regrets. | T: “Thus in this way, Ānanda, skillful virtues have freedom from remorse as their purpose, freedom from remorse as their reward.
+an11.1:11.2 | S: Joy is the goal and benefit of not having regrets. | T: Freedom from remorse has joy as its purpose, joy as its reward.
+an11.1:11.3 | S: Rapture is the goal and benefit of joy. | T: Joy has rapture as its purpose, rapture as its reward.
+an11.1:11.4 | S: Tranquility is the goal and benefit of rapture. | T: Rapture has calm as its purpose, calm as its reward.
+an11.1:11.5 | S: Bliss is the goal and benefit of tranquility. | T: Calm has pleasure as its purpose, pleasure as its reward.
+an11.1:11.6 | S: Immersion is the goal and benefit of bliss. | T: Pleasure has concentration as its purpose, concentration as its reward.
+an11.1:11.7 | S: Truly knowing and seeing is the goal and benefit of immersion. | T: Concentration has knowledge & vision of things as they have come to be as its purpose, knowledge & vision of things as they have come to be as its reward.
+an11.1:11.8 | S: Disillusionment is the goal and benefit of truly knowing and seeing. | T: Knowledge & vision of things as they have come to be has disenchantment as its purpose, disenchantment as its reward.
+an11.1:11.9 | S: Dispassion is the goal and benefit of disillusionment. | T: Disenchantment has dispassion as its purpose, dispassion as its reward.
+an11.1:11.10 | S: And knowledge and vision of freedom is the goal and benefit of dispassion. | T: Dispassion has knowledge & vision of release as its purpose, knowledge & vision of release as its reward.
+an11.1:11.11 | S: So, Ānanda, skillful ethics progressively lead up to the highest.” | T: “In this way, Ānanda, skillful virtues lead step-by-step to the consummation of arahantship.”
+an11.1:11.12 | P: Paṭhamaṁ. | T: (none)
+
+## an11.2
+an11.2:1.1 | S: “Mendicants, an ethical person, who has fulfilled ethical conduct, need not make a wish: | T: “For a person endowed with virtue, consummate in virtue, there is no need for an act of will,
+an11.2:1.2 | S: ‘May I have no regrets!’ | T: ‘May freedom from remorse arise in me.’
+an11.2:1.3 | S: It’s only natural that an ethical person has no regrets. | T: It is in the nature of things that freedom from remorse arises in a person endowed with virtue, consummate in virtue.
+an11.2:2.1 | S: When you have no regrets you need not make a wish: | T: “For a person free from remorse, there is no need for an act of will,
+an11.2:2.2 | S: ‘May I feel joy!’ | T: ‘May joy arise in me.’
+an11.2:2.3 | S: It’s only natural that joy springs up when you have no regrets. | T: It is in the nature of things that joy arises in a person free from remorse.
+an11.2:3.1 | S: When you feel joy you need not make a wish: | T: “For a joyful person, there is no need for an act of will,
+an11.2:3.2 | S: ‘May I experience rapture!’ | T: ‘May rapture arise in me.’
+an11.2:3.3 | S: It’s only natural that rapture arises when you’re joyful. | T: It is in the nature of things that rapture arises in a joyful person.
+an11.2:4.1 | S: When your mind is full of rapture you need not make a wish: | T: “For a rapturous person, there is no need for an act of will,
+an11.2:4.2 | S: ‘May my body become tranquil!’ | T: ‘May my body be calm.’
+an11.2:4.3 | S: It’s only natural that your body becomes tranquil when your mind is full of rapture. | T: It is in the nature of things that a rapturous person grows calm in body.
+an11.2:5.1 | S: When your body is tranquil you need not make a wish: | T: “For a person calm in body, there is no need for an act of will,
+an11.2:5.2 | S: ‘May I feel bliss!’ | T: ‘May I experience pleasure.’
+an11.2:5.3 | S: It’s only natural to feel bliss when your body is tranquil. | T: It is in the nature of things that a person calm in body experiences pleasure.
+an11.2:6.1 | S: When you feel bliss you need not make a wish: | T: “For a person experiencing pleasure, there is no need for an act of will,
+an11.2:6.2 | S: ‘May my mind be immersed in samādhi!’ | T: ‘May my mind grow concentrated.’
+an11.2:6.3 | S: It’s only natural for the mind to become immersed in samādhi when you feel bliss. | T: It is in the nature of things that the mind of a person experiencing pleasure grows concentrated.
+an11.2:7.1 | S: When your mind is immersed in samādhi you need not make a wish: | T: “For a person whose mind is concentrated, there is no need for an act of will,
+an11.2:7.2 | S: ‘May I truly know and see!’ | T: ‘May I know & see things as they have come to be.’
+an11.2:7.3 | S: It’s only natural to truly know and see when your mind is immersed in samādhi. | T: It is in the nature of things that a person whose mind is concentrated knows & sees things as they have come to be.
+an11.2:8.1 | S: When you truly know and see you need not make a wish: | T: “For a person who knows & sees things as they have come to be, there is no need for an act of will,
+an11.2:8.2 | S: ‘May I grow disillusioned!’ | T: ‘May I feel disenchantment.’
+an11.2:8.3 | S: It’s only natural to grow disillusioned when you truly know and see. | T: It is in the nature of things that a person who knows & sees things as they have come to be feels disenchantment.
+an11.2:9.1 | S: When you’re disillusioned you need not make a wish: | T: “For a person who feels disenchantment, there is no need for an act of will,
+an11.2:9.2 | S: ‘May I become dispassionate!’ | T: ‘May I grow dispassionate.’
+an11.2:9.3 | S: It’s only natural to grow dispassionate when you’re disillusioned. | T: It is in the nature of things that a person who feels disenchantment grows dispassionate.
+an11.2:10.1 | S: When you’re dispassionate you need not make a wish: | T: “For a dispassionate person, there is no need for an act of will,
+an11.2:10.2 | S: ‘May I realize the knowledge and vision of freedom!’ | T: ‘May I realize the knowledge & vision of release.’
+an11.2:10.3 | S: It’s only natural to realize the knowledge and vision of freedom when you’re dispassionate. | T: It is in the nature of things that a dispassionate person realizes the knowledge & vision of release.
+an11.2:11.1 | S: And so, mendicants, the knowledge and vision of freedom is the goal and benefit of dispassion. Dispassion is the goal and benefit of disillusionment. Disillusionment is the goal and benefit of truly knowing and seeing. Truly knowing and seeing is the goal and benefit of immersion. Immersion is the goal and benefit of bliss. Bliss is the goal and benefit of tranquility. Tranquility is the goal and benefit of rapture. Rapture is the goal and benefit of joy. Joy is the goal and benefit of not having regrets. Not having regrets is the goal and benefit of skillful ethics. | T: “In this way, dispassion has knowledge & vision of release as its purpose, knowledge & vision of release as its reward. Disenchantment has dispassion as its purpose, dispassion as its reward. Knowledge & vision of things as they have come to be has disenchantment as its purpose, disenchantment as its reward. Concentration has knowledge & vision of things as they have come to be as its purpose, knowledge & vision of things as they have come to be as its reward. Pleasure has concentration as its purpose, concentration as its reward. Calm has pleasure as its purpose, pleasure as its reward. Rapture has calm as its purpose, calm as its reward. Joy has rapture as its purpose, rapture as its reward. Freedom from remorse has joy as its purpose, joy as its reward. Skillful virtues have freedom from remorse as their purpose, freedom from remorse as their reward.
+an11.2:11.2 | S: And so, mendicants, good qualities flow on and fill up from one to the other, for going from the near shore to the far shore.” | T: “In this way, mental qualities lead on to mental qualities, mental qualities bring mental qualities to their consummation, for the sake of going from the near to the Further Shore.”
+an11.2:11.3 | P: Dutiyaṁ. | T: (none)
+
+## an3.100
+an3.100:1.1 | S: “Mendicants, suppose you say: | T: “Monks, for anyone who says,
+an3.100:1.2 | S: ‘No matter how this person performs a deed, they experience it the same way.’ This being so, the spiritual life could not be lived, and there’d be no chance of making a complete end of suffering. | T: ‘In whatever way a person makes kamma, that is how it is experienced,’ there is no living of the holy life, there is no opportunity for the right ending of stress.
+an3.100:1.3 | S: Suppose you say: | T: But for anyone who says,
+an3.100:1.4 | S: ‘No matter how this person performs a deed, they experience the result as it should be experienced.’ This being so, the spiritual life can be lived, and there is a chance of making a complete end of suffering. | T: ‘When a person makes kamma to be felt in such & such a way, that is how its result is experienced,’ there is the living of the holy life, there is the opportunity for the right ending of stress.
+an3.100:1.5 | S: Take the case of the individual who does a trivial bad deed, but it lands them in hell. | T: “There is the case where a trifling evil deed done by a certain individual takes him to hell.
+an3.100:1.6 | S: Meanwhile, another individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot. | T: There is the case where the very same sort of trifling deed done by another individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:2.1 | S: What kind of individual does a trivial bad deed, but it lands them in hell? | T: “Now, a trifling evil deed done by what sort of individual takes him to hell?
+an3.100:2.2 | S: An individual who hasn’t developed their physical endurance, ethics, mind, or wisdom. They’re small-minded and mean-spirited, living in suffering. | T: There is the case where a certain individual is undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment: restricted, small-hearted, dwelling with suffering.
+an3.100:2.3 | S: That kind of individual does a trivial bad deed, but it lands them in hell. | T: A trifling evil deed done by this sort of individual takes him to hell.
+an3.100:3.1 | S: What kind of individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot? | T: “Now, a trifling evil deed done by what sort of individual is experienced in the here & now, and for the most part barely appears for a moment?
+an3.100:3.2 | S: An individual who has developed their physical endurance, ethics, mind, and wisdom. They’re not small-minded, but are big-hearted, meditating on the immeasurables. | T: There is the case where a certain individual is developed in body, developed in virtue, developed in mind, developed in discernment: unrestricted, large-hearted, dwelling with the immeasurable.
+an3.100:3.3 | S: That kind of individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot. | T: A trifling evil deed done by this sort of individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:4.1 | S: Suppose a person was to drop a lump of salt into a mug of water. | T: “Suppose that a man were to drop a salt crystal into a small amount of water in a cup.
+an3.100:4.2 | S: What do you think, mendicants? | T: What do you think?
+an3.100:4.3 | S: Would that mug of water become salty and undrinkable?” | T: Would the water in the cup become salty because of the salt crystal, and unfit to drink?”
+an3.100:4.4 | S: “Yes, sir. | T: “Yes, lord.
+an3.100:4.5 | S: Why is that? | T: Why is that?
+an3.100:4.6 | S: Because there is only a little water in the bowl.” | T: There being only a small amount of water in the cup, it would become salty because of the salt crystal, and unfit to drink.”
+an3.100:4.7 | S: “Suppose a person was to drop a lump of salt into the Ganges River. | T: “Now suppose that a man were to drop a salt crystal into the River Ganges.
+an3.100:4.8 | S: What do you think, mendicants? | T: What do you think?
+an3.100:4.9 | S: Would the Ganges River become salty and undrinkable?” | T: Would the water in the River Ganges become salty because of the salt crystal, and unfit to drink?”
+an3.100:4.10 | S: “No, sir. | T: “No, lord.
+an3.100:4.11 | S: Why is that? | T: Why is that?
+an3.100:4.12 | S: Because the Ganges River is a vast mass of water.” | T: There being a great mass of water in the River Ganges, it would not become salty because of the salt crystal or unfit to drink.”
+an3.100:5.1 | S: “This is how it is in the case of an individual who does a trivial bad deed, but it lands them in hell. | T: “In the same way, there is the case where a trifling evil deed done by one individual (the first) takes him to hell;
+an3.100:5.2 | S: Meanwhile, another individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot. … | T: and there is the case where the very same sort of trifling deed done by the other individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:6.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa appamattakampi pāpakammaṁ kataṁ tamenaṁ nirayaṁ upaneti? | T: “Now, a trifling evil deed done by what sort of individual takes him to hell?
+an3.100:6.2 | P: Idha, bhikkhave, ekacco puggalo abhāvitakāyo hoti abhāvitasīlo abhāvitacitto abhāvitapañño paritto appātumo appadukkhavihārī. | T: There is the case where a certain individual is undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment: restricted, small-hearted, dwelling with suffering.
+an3.100:6.3 | P: Evarūpassa, bhikkhave, puggalassa appamattakampi pāpakammaṁ kataṁ tamenaṁ nirayaṁ upaneti. | T: A trifling evil deed done by this sort of individual takes him to hell.
+an3.100:7.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva? | T: “Now, a trifling evil deed done by what sort of individual is experienced in the here & now, and for the most part barely appears for a moment?
+an3.100:7.2 | P: Idha, bhikkhave, ekacco puggalo bhāvitakāyo hoti bhāvitasīlo bhāvitacitto bhāvitapañño aparitto mahatto appamāṇavihārī. | T: There is the case where a certain individual is developed in body, developed in virtue, developed in mind, developed in discernment: unrestricted, large-hearted, dwelling with the immeasurable.
+an3.100:7.3 | P: Evarūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva. | T: A trifling evil deed done by this sort of individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:8.1 | S: Take the case of someone who is thrown in jail for stealing half a dollar, a dollar, or a hundred dollars. | T: “There is the case where a certain person is thrown into jail for half a dollar [kahāpaṇa], is thrown into jail for a dollar, is thrown into jail for one hundred dollars.
+an3.100:8.2 | S: While someone else isn’t thrown in jail for stealing half a dollar, a dollar, or a hundred dollars. | T: And there is the case where another person is not thrown into jail for half a dollar, is not thrown into jail for a dollar, is not thrown into jail for one hundred dollars.
+an3.100:9.1 | S: What sort of person is thrown in jail for stealing half a dollar, a dollar, or a hundred dollars? | T: Now what sort of person is thrown into jail for half a dollar… for a dollar… for one hundred dollars?
+an3.100:9.2 | S: Someone who is poor, with few possessions and little wealth. | T: There is the case where a person is poor, of little wealth, of few possessions.
+an3.100:9.3 | S: That kind of person is thrown in jail for stealing half a dollar, a dollar, or a hundred dollars. | T: This is the sort of person who is thrown into jail for half a dollar… for a dollar… for one hundred dollars.
+an3.100:10.1 | S: What sort of person isn’t thrown in jail for stealing half a dollar, a dollar, or a hundred dollars? | T: And what sort of person is not thrown into jail for half a dollar… for a dollar… for one hundred dollars?
+an3.100:10.2 | S: Someone who is rich, affluent, and wealthy. | T: There is the case where a person is wealthy, with many belongings, many possessions.
+an3.100:10.3 | S: That kind of person isn’t thrown in jail for stealing half a dollar, a dollar, or a hundred dollars. | T: This is the sort of person who is not thrown into jail for half a dollar… for a dollar… for one hundred dollars.
+an3.100:10.4 | S: This is how it is in the case of an individual who does a trivial bad deed, but they go to hell. | T: “In the same way, there is the case where a trifling evil deed done by one individual
+an3.100:10.5 | P: Tamenaṁ nirayaṁ upaneti. | T: takes him to hell;
+an3.100:10.6 | S: Meanwhile, another individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot. … | T: and there is the case where the very same sort of trifling deed done by the other individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:11.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa appamattakaṁ pāpakammaṁ kataṁ, tamenaṁ nirayaṁ upaneti? | T: “Now, a trifling evil deed done by what sort of individual takes him to hell?
+an3.100:11.2 | P: Idha, bhikkhave, ekacco puggalo abhāvitakāyo hoti abhāvitasīlo abhāvitacitto abhāvitapañño paritto appātumo appadukkhavihārī. | T: There is the case where a certain individual is undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment: restricted, small-hearted, dwelling with suffering.
+an3.100:11.3 | P: Evarūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ tamenaṁ nirayaṁ upaneti. | T: A trifling evil deed done by this sort of individual takes him to hell.
+an3.100:12.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva? | T: “Now, a trifling evil deed done by what sort of individual is experienced in the here & now, and for the most part barely appears for a moment?
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.100:12.2 | P: Idha, bhikkhave, ekacco puggalo bhāvitakāyo hoti bhāvitasīlo bhāvitacitto bhāvitapañño aparitto mahatto appamāṇavihārī. | T: There is the case where a certain individual is developed in body, developed in virtue, developed in mind, developed in discernment: unrestricted, large-hearted, dwelling with the immeasurable.
+an3.100:12.3 | P: Evarūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva. | T: (none)
+an3.100:13.1 | P: Idha, bhikkhave, ekacco puggalo bhāvitakāyo hoti bhāvitasīlo bhāvitacitto bhāvitapañño aparitto mahatto appamāṇavihārī. | T: (none)
+an3.100:13.2 | P: Evarūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva. | T: A trifling evil deed done by this sort of individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:13.3 | S: It’s like a sheep dealer or butcher. They can execute, jail, fine, or otherwise punish one person who steals from them, but not another. | T: “It’s just as when a goat butcher is empowered to beat or bind or slay or treat as he likes a certain person who steals a goat, but is not empowered to beat or bind or slay or treat as he likes another person who steals a goat.
+an3.100:14.1 | S: What sort of person can they punish? | T: Now, when what sort of person has stolen a goat is the goat butcher empowered to beat him or bind him or slay him or treat him as he likes?
+an3.100:14.2 | S: Someone who is poor, with few possessions and little wealth. | T: There is the case where a person is poor, of little wealth, of few possessions.
+an3.100:14.3 | S: That’s the kind of person they can punish. | T: This is the sort of person who, when he has stolen a goat, the goat butcher is empowered to beat or bind or slay or treat as he likes.
+an3.100:15.1 | S: What sort of person can’t they punish? | T: And when what sort of person has stolen a goat is the goat butcher not empowered to beat him or bind him or slay him or treat him as he likes?
+an3.100:15.2 | S: A ruler or their chief minister who is rich, affluent, and wealthy. | T: There is the case where a person is wealthy, with many belongings, many possessions; a king or a king’s minister.
+an3.100:15.3 | S: That’s the kind of person they can’t punish. | T: This is the sort of person who, when he has stolen a goat, the goat butcher is not empowered to beat or bind or slay or treat as he likes.
+an3.100:15.4 | S: In fact, all they can do is raise their cupped palms and ask: | T: All he can do is go with his hands clasped before his heart and beg:
+an3.100:15.5 | S: ‘Please, good fellow, give me my sheep or pay me for it.’ | T: ‘Please, dear sir, give me a goat or the price of a goat.’
+an3.100:15.6 | S: This is how it is in the case of an individual who does a trivial bad deed, but it lands them in hell. | T: “In the same way, there is the case where a trifling evil deed done by one individual takes him to hell;
+an3.100:15.7 | S: Meanwhile, another individual does the same trivial bad deed, but experiences it in this life, so that not even a little remains, let alone a lot. … | T: and there is the case where the very same sort of trifling deed done by the other individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:16.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa appamattakampi pāpakammaṁ kataṁ tamenaṁ nirayaṁ upaneti? | T: “Now, a trifling evil deed done by what sort of individual takes him to hell?
+an3.100:16.2 | P: Idha, bhikkhave, ekacco puggalo abhāvitakāyo hoti abhāvitasīlo abhāvitacitto abhāvitapañño paritto appātumo appadukkhavihārī. | T: There is the case where a certain individual is undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment: restricted, small-hearted, dwelling with suffering.
+an3.100:16.3 | P: Evarūpassa, bhikkhave, puggalassa appamattakampi pāpakammaṁ kataṁ tamenaṁ nirayaṁ upaneti. | T: A trifling evil deed done by this sort of individual takes him to hell.
+an3.100:17.1 | P: Kathaṁrūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva? | T: “Now, a trifling evil deed done by what sort of individual is experienced in the here & now, and for the most part barely appears for a moment?
+an3.100:17.2 | P: Idha, bhikkhave, ekacco puggalo bhāvitakāyo hoti bhāvitasīlo bhāvitacitto bhāvitapañño aparitto mahatto appamāṇavihārī. | T: There is the case where a certain individual is developed in body, developed in virtue, developed in mind, developed in discernment: unrestricted, large-hearted, dwelling with the immeasurable.
+an3.100:17.3 | P: Evarūpassa, bhikkhave, puggalassa tādisaṁyeva appamattakaṁ pāpakammaṁ kataṁ diṭṭhadhammavedanīyaṁ hoti, nāṇupi khāyati, kiṁ bahudeva. | T: A trifling evil deed done by this sort of individual is experienced in the here & now, and for the most part barely appears for a moment.
+an3.100:18.1 | S: Mendicants, suppose you say: | T: “Monks, for anyone who says,
+an3.100:18.2 | S: ‘No matter how this person performs a deed, they experience it the same way.’ This being so, the spiritual life could not be lived, and there’d be no chance of making a complete end of suffering. | T: ‘In whatever way a person makes kamma, that is how it is experienced,’ there is no living of the holy life, there is no opportunity for the right ending of stress.
+an3.100:18.3 | S: Suppose you say: | T: But for anyone who says,
+an3.100:18.4 | S: ‘No matter how this person performs a deed, they experience the result as it should be experienced.’ This being so, the spiritual life can be lived, and there is a chance of making a complete end of suffering.” | T: ‘When a person makes kamma to be felt in such & such a way, that is how its result is experienced,’ there is the living of the holy life, there is the opportunity for the right ending of stress.”
+an3.100:18.5 | P: Navamaṁ. | T: (none)
+
+## an3.101
+an3.101:1.1 | S: “Native gold has coarse corruptions: sand, soil, and gravel. | T: “There are these gross impurities in gold: dirty sand, gravel, & grit.
+an3.101:1.2 | S: A panner or their apprentice pours it into a pan, where they wash, rinse, and clean it. | T: The dirt-washer or his apprentice, having placed (the gold) in a vat, washes it again & again until he has washed them away.
+an3.101:1.3 | S: When that’s been eliminated, there are medium corruptions in the native gold: fine grit and coarse sand. | T: “When he is rid of them, there remain the moderate impurities in the gold: coarse sand & fine grit.
+an3.101:1.4 | S: The panner washes it again. | T: He washes the gold again & again until he has washed them away.
+an3.101:1.5 | S: When that’s been eliminated, there are fine corruptions in the native gold: fine sand and black grime. | T: “When he is rid of them, there remain the fine impurities in the gold: fine sand & black dust.
+an3.101:1.6 | S: The panner washes it again. | T: The dirt-washer or his apprentice washes the gold again & again until he has washed them away.
+an3.101:1.7 | S: When that’s been eliminated, only golden flecks remain. | T: “When he is rid of them, there remains just the gold dust.
+an3.101:1.8 | S: A goldsmith or their apprentice places the native gold in a crucible where they blow, melt, and smelt it. | T: The goldsmith or his apprentice, having placed it in a crucible, blows on it again & again to blow away the dross.
+an3.101:1.9 | S: Still the native gold is not settled and the dross is not totally gone. It’s not pliable, workable, or radiant, but is brittle and not completely ready for working. | T: The gold, as long as it has not been blown on again & again to the point where the impurities are blown away, as long as it is not refined & free from dross, is not pliant, malleable, or luminous. It is brittle and not ready to be worked.
+an3.101:1.10 | S: But the goldsmith keeps on blowing, melting, and smelting it. | T: But there comes a time when the goldsmith or his apprentice has blown on the gold again & again until the dross is blown away.
+an3.101:1.11 | S: The native gold becomes pliable, workable, and radiant, not brittle, and ready to be worked. | T: The gold, having been blown on again & again to the point where the impurities are blown away, is then refined, free from dross, pliant, malleable, & luminous. It is not brittle, and is ready to be worked.
+an3.101:1.12 | S: Then the goldsmith can successfully create any kind of ornament they want, whether a bracelet, earrings, a necklace, or a golden garland. | T: Then whatever sort of ornament he has in mind—whether a belt, an earring, a necklace, or a gold chain—the gold would serve his purpose.
+an3.101:2.1 | S: In the same way, a mendicant who is committed to the higher mind has coarse corruptions: bad bodily, verbal, and mental conduct. A sincere, proficient mendicant gives these up, dispels, eliminates, and obliterates them. | T: “In the same way, there are these gross impurities in a monk intent on heightened mind: misconduct in body, speech, & mind. These the monk—aware & able by nature—abandons, destroys, dispels, wipes out of existence.
+an3.101:2.2 | S: When they’ve been given up and eliminated, there are middling corruptions: sensual, malicious, or cruel thoughts. A sincere, proficient mendicant gives these up, dispels, eliminates, and obliterates them. | T: When he is rid of them, there remain in him the moderate impurities: thoughts of sensuality, ill will, & harmfulness. These he abandons, destroys, dispels, wipes out of existence.
+an3.101:2.3 | S: When they’ve been given up and eliminated, there are fine corruptions: thoughts of family, country, and status. A sincere, proficient mendicant gives these up, dispels, eliminates, and obliterates them. | T: When he is rid of them there remain in him the fine impurities: thoughts of his caste, thoughts of his home district, thoughts related to not wanting to be despised. These he abandons, destroys, dispels, wipes out of existence.
+an3.101:2.4 | S: When they’ve been given up and eliminated, only thoughts about the teaching are left. | T: “When he is rid of them, there remain only thoughts of the Dhamma.
+an3.101:2.5 | S: That immersion is not peaceful or sublime or tranquil or unified, but is held in place by forceful suppression. | T: His concentration is neither peaceful nor refined, has not yet attained calm or unification, and is kept in place by the fabrication of forceful restraint.
+an3.101:2.6 | S: But there comes a time when that mind is stilled internally; it settles, unifies, and becomes immersed in samādhi. | T: But there comes a time when his mind grows steady inwardly, settles down, grows unified & concentrated.
+an3.101:2.7 | S: That immersion is peaceful and sublime and tranquil and unified, not held in place by forceful suppression. | T: His concentration is peaceful & refined, has attained calm & unification, and is no longer kept in place by the fabrication of forceful restraint.
+an3.101:2.8 | S: They extend the mind to realize by insight each and every thing that can be realized by insight; and they are capable of realizing those things, since each and every one is within range. | T: “And then whichever of the higher knowledges he turns his mind to know & realize, he can witness them for himself whenever there is an opening.
+an3.101:3.1 | S: If they wish: ‘May I wield the many kinds of psychic power: multiplying myself and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful; controlling the body as far as the realm of divinity.’ | T: “If he wants, he wields manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, and mountains as if through space. He dives in and out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting crosslegged he flies through the air like a winged bird. With his hand he touches and strokes even the sun and moon, so mighty and powerful. He exercises influence with his body even as far as the Brahmā worlds.
+an3.101:3.2 | S: They are capable of realizing these things, since each and every one is within range. | T: He can witness this for himself whenever there is an opening.
+an3.101:4.1 | S: If they wish: ‘With clairaudience that is purified and superhuman, may I hear both kinds of sounds, human and heavenly, whether near or far.’ | T: “If he wants, he hears—by means of the divine ear-element, purified and surpassing the human—both kinds of sounds: divine and human, whether near or far.
+an3.101:4.2 | S: They are capable of realizing these things, since each and every one is within range. | T: He can witness this for himself whenever there is an opening.
+an3.101:5.1 | S: If they wish: ‘May I understand the minds of other beings and individuals, having encompassed them with my mind. | T: “If he wants, he discerns the awareness of other beings, other individuals, having encompassed it with his own awareness.
+an3.101:5.2 | S: May I understand mind with greed as “mind with greed”, | T: He discerns a mind with passion as ‘a mind with passion,’
+an3.101:5.3 | S: and mind without greed as “mind without greed”; | T: and a mind without passion as ‘a mind without passion.’
+an3.101:5.4 | S: mind with hate as “mind with hate”, | T: He discerns a mind with aversion as ‘a mind with aversion,’
+an3.101:5.5 | S: and mind without hate as “mind without hate”; | T: and a mind without aversion as ‘a mind without aversion.’
+an3.101:5.6 | S: mind with delusion as “mind with delusion”, | T: He discerns a mind with delusion as ‘a mind with delusion,’
+an3.101:5.7 | S: and mind without delusion as “mind without delusion”; | T: and a mind without delusion as ‘a mind without delusion.’
+an3.101:5.8 | S: constricted mind as “constricted mind”, | T: He discerns a restricted mind as ‘a restricted mind,’
+an3.101:5.9 | S: and scattered mind as “scattered mind”; | T: and a scattered mind as ‘a scattered mind.’
+an3.101:5.10 | S: expansive mind as “expansive mind”, | T: He discerns an enlarged mind as ‘an enlarged mind,’
+an3.101:5.11 | S: and unexpansive mind as “unexpansive mind”; | T: and an unenlarged mind as ‘an unenlarged mind.’
+an3.101:5.12 | S: mind that is not supreme as “mind that is not supreme”, | T: He discerns a surpassed mind [one that is not at the most excellent level] as ‘a surpassed mind,’
+an3.101:5.13 | S: and mind that is supreme as “mind that is supreme”; | T: and an unsurpassed mind as ‘an unsurpassed mind.’
+an3.101:5.14 | S: mind immersed in samādhi as “mind immersed in samādhi”, | T: He discerns a concentrated mind as ‘a concentrated mind,’
+an3.101:5.15 | S: and mind not immersed in samādhi as “mind not immersed in samādhi”; | T: and an unconcentrated mind as ‘an unconcentrated mind.’
+an3.101:5.16 | S: freed mind as “freed mind”, | T: He discerns a released mind as ‘a released mind,’
+an3.101:5.17 | S: and unfreed mind as “unfreed mind”.’ | T: and an unreleased mind as ‘an unreleased mind.’
+an3.101:5.18 | S: They are capable of realizing these things, since each and every one is within range. | T: He can witness this for himself whenever there is an opening.
+an3.101:6.1 | S: If they wish: ‘May I recollect many kinds of past lives. That is: one, two, three, four, five, ten, twenty, thirty, forty, fifty, a hundred, a thousand, a hundred thousand rebirths; many eons of the world contracting, many eons of the world expanding, many eons of the world contracting and expanding. May I remember: “There, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn somewhere else. There, too, I was named this, my clan was that, I looked like this, and that was my food. This was how I felt pleasure and pain, and that was how my life ended. When I passed away from that place I was reborn here.” May I recollect my many past lives, with features and details.’ | T: “If he wants, he recollects his manifold past lives [literally: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction and expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure and pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure and pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he remembers his manifold past lives in their modes and details.
+an3.101:6.2 | S: They are capable of realizing these things, since each and every one is within range. | T: He can witness this for himself whenever there is an opening.
+an3.101:7.1 | S: If they wish: ‘With clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place—and understand how sentient beings pass on according to their deeds: “These dear beings did bad things by way of body, speech, and mind. They denounced the noble ones; they had wrong view; and they chose to act out of that wrong view. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. These dear beings, however, did good things by way of body, speech, and mind. They never denounced the noble ones; they had right view; and they chose to act out of that right view. When their body broke up, after death, they were reborn in a good place, a heavenly realm.” And so, with clairvoyance that is purified and superhuman, may I see sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. And may I understand how sentient beings pass on according to their deeds.’ | T: “If he wants, he sees—by means of the divine eye, purified and surpassing the human—beings passing away and re-appearing, and he discerns how they are inferior and superior, beautiful and ugly, fortunate and unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, and mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, and mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus—by means of the divine eye, purified and surpassing the human—he sees beings passing away and re-appearing, and he discerns how they are inferior and superior, beautiful and ugly, fortunate and unfortunate in accordance with their kamma.
+an3.101:7.2 | S: They are capable of realizing these things, since each and every one is within range. | T: He can witness this for himself whenever there is an opening.
+an3.101:8.1 | S: If they wish: ‘May I realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with my own insight in this very life due to the ending of defilements.’ | T: “If he wants, then through the ending of the effluents, he enters & remains in the effluent-free awareness-release & discernment-release, having directly known and realized them for himself right in the here & now.
+an3.101:8.2 | S: They are capable of realizing these things, since each and every one is within range.” | T: He can witness this for himself whenever there is an opening.”
+an3.101:8.3 | P: Dasamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-062.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+24,004
+0 lines reported.

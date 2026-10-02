@@ -1,0 +1,385 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9c-cb9c-7991-b68d-f7a3cf8210d4
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## ud2.6
+ud2.6:1.1 | S: So I have heard. | T: I have heard that
+ud2.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.6:1.3 | S: Now at that time a certain wanderer had a young brahmin wife who was pregnant and about to give birth. | T: And on that occasion the young wife of a certain wanderer was pregnant and on the verge of delivery.
+ud2.6:1.4 | S: She said to him, | T: So she said to the wanderer,
+ud2.6:1.5 | S: “Go, brahmin, bring oil for my delivery.” | T: “Go, brahman, get some oil for my delivery.”
+ud2.6:2.1 | S: The wanderer said, | T: When this was said, the wanderer said to her,
+ud2.6:2.2 | S: “But where, my dear, can I get oil?” | T: “But where can I get any oil?”
+ud2.6:2.3 | S: For a second time, she said, | T: A second time, she said to him,
+ud2.6:2.4 | S: “Go, brahmin, bring oil for my delivery.” | T: “Go, brahman, get some oil for my delivery.”
+ud2.6:2.5 | S: For a second time, the wanderer said, | T: A second time, he said to her,
+ud2.6:2.6 | S: “But where, my dear, can I get oil?” | T: “But where can I get any oil?”
+ud2.6:2.7 | S: For a third time, she said, | T: A third time, she said to him,
+ud2.6:2.8 | S: “Go, brahmin, bring oil for my delivery.” | T: “Go, brahman get some oil for my delivery.”
+ud2.6:3.1 | S: Now at that time ghee and oil were being given away to any ascetic or brahmin at the storehouse of King Pasenadi of Kosala. But it was only to drink there, not to take away. | T: Now on that occasion at the storehouse of King Pasenadi Kosala contemplatives & brahmans were being given as much oil or ghee as they needed to drink, but not to take away.
+ud2.6:4.1 | S: Knowing this, the wanderer thought, | T: So the thought occurred to the wanderer,
+ud2.6:4.2 | P: “rañño kho pana pasenadissa kosalassa koṭṭhāgāre samaṇassa vā brāhmaṇassa vā sappissa vā telassa vā yāvadatthaṁ pātuṁ dīyati, no nīharituṁ. | T: “At present at the storehouse of King Pasenadi Kosala contemplatives & brahmans are being given as much oil or ghee as they need to drink, but not to take away.
+ud2.6:4.3 | S: “Why don’t I go to the king’s storehouse, drink as much oil as I can, then come home and throw it up so it can be used for the delivery?” | T: Suppose, having gone there, I were to drink as much oil as I need and, on returning home, vomiting it up, were to give it to use at this delivery?”
+ud2.6:5.1 | S: Then he did just that. But when he got home he was unable to either bring it up or pass it out. | T: So, having gone to the storehouse of King Pasenadi Kosala, he drank as much oil as he needed but, on returning home, was unable to bring it up or pass it down.
+ud2.6:5.2 | S: He rolled to and fro, suffering painful, sharp, severe, acute feelings. | T: So he rolled back & forth, suffering from fierce pains, sharp & severe.
+ud2.6:6.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then early in the morning the Blessed One adjusted his under robe and–carrying his bowl & robes–went into Sāvatthī for alms.
+ud2.6:6.2 | S: He saw the wanderer in agony. | T: He saw the wanderer rolling back & forth, suffering from fierce pains, sharp & severe.
+ud2.6:7.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.6:8.1 | S: “Oh! How happy are those with nothing! | T: How blissful it is, for one who has nothing.
+ud2.6:8.2 | S: Hence knowledge masters are people with nothing. | T: Attainers-of-wisdom are people with nothing.
+ud2.6:8.3 | S: See how troubled are those with attachments, | T: See him suffering, one who has something,
+ud2.6:8.4 | S: a person bound tight to people.” | T: a person bound in mind with people.
+ud2.6:8.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## ud2.8
+ud2.8:1.1 | S: So I have heard. | T: I have heard that
+ud2.8:1.2 | S: At one time the Buddha was staying near Kuṇḍiyā in the Kuṇḍadhāna Grove. | T: on one occasion the Blessed One was staying near Kuṇḍiya in the Kuṇḍiṭṭhāna forest.
+ud2.8:1.3 | S: Now at that time Suppavāsā the Koliyan had been pregnant for seven years, and in obstructed labor for seven days. | T: And on that occasion Suppavāsā the Koliyan-daughter had been seven years pregnant and seven days in difficult labor.
+ud2.8:1.4 | S: While suffering painful, sharp, severe, acute feelings, three thoughts helped her endure: | T: She–touched by fierce, sharp pains–endured them with three thoughts:
+ud2.8:1.5 | S: “Oh! The Blessed One is indeed a fully awakened Buddha, who teaches the Dhamma for giving up suffering such as this. | T: “How rightly self-awakened is the Blessed One who, abandoning this sort of suffering, teaches the Dhamma!
+ud2.8:1.6 | S: Oh! The Saṅgha of the Buddha’s disciples is indeed practicing well, who practice for giving up suffering such as this. | T: How well-practiced is the community of the Blessed One’s disciples who practice, abandoning this sort of suffering!
+ud2.8:1.7 | S: Oh! Extinguishment is so very blissful, where such suffering as this is not found.” | T: How truly blissful is unbinding, where this sort of pain is not found!”
+ud2.8:2.1 | S: Then Suppavāsā addressed her husband, | T: Then Suppavāsā said to her husband,
+ud2.8:2.2 | S: “Please, master, go to the Buddha, and in my name bow with your head to his feet. Ask him if he is healthy and well, nimble, strong, and living comfortably. | T: “Come, young master. Go to the Blessed One and, on arrival, showing reverence with your head to his feet in my name, ask whether he is free from illness & affliction, is carefree, strong, & living in comfort, saying:
+ud2.8:2.3 | P: ‘suppavāsā, bhante, koliyadhītā bhagavato pāde sirasā vandati; appābādhaṁ appātaṅkaṁ lahuṭṭhānaṁ balaṁ phāsuvihāraṁ pucchatī’ti. | T: ‘Suppavāsā the Koliyan-daughter, lord, shows reverence with her head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.’
+ud2.8:2.4 | S: And then say: | T: And say this:
+ud2.8:2.5 | S: ‘Suppavāsā the Koliyan has been pregnant for seven years, and in obstructed labor for seven days. | T: ‘Suppavāsā has been seven years pregnant and seven days in difficult labor.
+ud2.8:2.6 | S: While suffering painful, sharp, severe, acute feelings, three thoughts help her endure: | T: She–touched by fierce, sharp pains–endures them with three thoughts:
+ud2.8:2.7 | S: “Oh! The Blessed One is indeed a fully awakened Buddha, who teaches the Dhamma for giving up suffering such as this. | T: “How rightly self-awakened is the Blessed One who, abandoning this sort of suffering, teaches the Dhamma!
+ud2.8:2.8 | S: Oh! The Saṅgha of the Buddha’s disciples is indeed practicing well, who practice for giving up suffering such as this. | T: How well-practiced is the community of the Blessed One’s disciples who practice, abandoning this sort of suffering!
+ud2.8:2.9 | S: Oh! Extinguishment is so very blissful, where such suffering as this is not found.”’” | T: How truly blissful is unbinding, where this sort of pain is not found!”’”
+ud2.8:3.1 | S: “Excellent idea,” he replied. He went to the Buddha and told him of his wife’s struggles. The Buddha said: | T: Responding, “Excellent!” to Suppavāsā the Koliyan-daughter, the Koliyan-son went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side.
+ud2.8:3.2 | P: Ekamantaṁ nisinno kho koliyaputto bhagavantaṁ etadavoca: | T: As he was sitting there he said to the Blessed One,
+ud2.8:3.3 | P: “suppavāsā, bhante, koliyadhītā bhagavato pāde sirasā vandati, appābādhaṁ appātaṅkaṁ lahuṭṭhānaṁ balaṁ phāsuvihāraṁ pucchati; | T: “Suppavāsā the Koliyan-daughter, lord, shows reverence with her head to your feet and asks whether you are free from illness & affliction, are carefree, strong, & living in comfort.
+ud2.8:3.4 | P: evañca vadeti: | T: And she says this:
+ud2.8:3.5 | P: ‘suppavāsā, bhante, koliyadhītā satta vassāni gabbhaṁ dhāreti. | T: ‘Suppavāsā has been seven years pregnant
+ud2.8:3.6 | P: Sattāhaṁ mūḷhagabbhā sā dukkhāhi tibbāhi kharāhi kaṭukāhi vedanāhi phuṭṭhā tīhi vitakkehi adhivāseti— | T: and seven days in difficult labor. She–touched by fierce, sharp pains–endures them with three thoughts:
+ud2.8:3.7 | P: sammāsambuddho vata so bhagavā yo imassa evarūpassa dukkhassa pahānāya dhammaṁ deseti; | T: “How rightly self-awakened is the Blessed One who, abandoning this sort of suffering, teaches the Dhamma!
+ud2.8:3.8 | P: suppaṭipanno vata tassa bhagavato sāvakasaṅgho yo imassa evarūpassa dukkhassa pahānāya paṭipanno; | T: How well-practiced is the community of the Blessed One’s disciples who practice, abandoning this sort of suffering!
+ud2.8:3.9 | P: susukhaṁ vata nibbānaṁ yatthidaṁ evarūpaṁ dukkhaṁ na saṁvijjatī’”ti. | T: How truly blissful is unbinding, where this sort of pain is not found!”’”
+ud2.8:4.1 | S: “May Suppavāsā the Koliyan be happy and healthy! May she give birth to a healthy child!” | T: [The Blessed One said:] “May Suppavāsā the Koliyan-daughter be well & free from disease. And may she deliver a son free from disease.”
+ud2.8:4.2 | S: As soon as he spoke, Suppavāsā, happy and healthy, gave birth to a healthy child. | T: And at the same time as the Blessed One’s statement, Suppavāsā the Koliyan-daughter–well & free from disease–delivered a son free from disease.
+ud2.8:5.1 | S: Saying “Yes, sir,” the Koliyan gentleman approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right. Then he returned to his own house. | T: Saying, “Very well, lord,” the Koliyan-son, delighting in & approving of the Blessed One’s words, got up from his seat, bowed down to the Blessed One and–circling him to the right–returned to his home.
+ud2.8:5.2 | S: He saw that his wife, happy and healthy, had given birth to a healthy child, | T: He saw that Suppavāsā the Koliyan-daughter–well & free from disease–had delivered a son free from disease.
+ud2.8:5.3 | S: and thought, | T: On seeing this, the thought occurred to him,
+ud2.8:5.4 | S: “Oh lord, how incredible, how amazing! The Realized One has such psychic power and might! For as soon as he spoke, Suppavāsā, happy and healthy, gave birth to a healthy child.” | T: “How amazing! How astounding!–the Tathāgata’s great power, great might, in that, at the same time as the Blessed One’s statement, Suppavāsā the Koliyan-daughter–well & free from disease–would deliver a son free from disease!”
+ud2.8:5.5 | S: He became uplifted and overjoyed, full of rapture and happiness. | T: Gratified, he was joyful, rapturous, & happy.
+ud2.8:6.1 | S: Then Suppavāsā addressed her husband, | T: Then Suppavāsā said to her husband,
+ud2.8:6.2 | S: “Please, master, go to the Buddha, and in my name bow with your head to his feet. | T: “Come, young master. Go to the Blessed One and, on arrival, showing reverence with your head to his feet in my name, saying:
+ud2.8:6.3 | P: ‘suppavāsā, bhante, koliyadhītā bhagavato pāde sirasā vandatī’ti; | T: ‘Suppavāsā the Koliyan-daughter, lord, shows reverence with her head to your feet.’
+ud2.8:6.4 | S: And then say, | T: And say this:
+ud2.8:6.5 | S: ‘Suppavāsā the Koliyan, who was pregnant for seven years, and in obstructed labor for seven days, | T: ‘Suppavāsā, who was seven years pregnant and seven days in difficult labor,
+ud2.8:6.6 | S: is now happy and healthy and has given birth to a healthy child. | T: has now–well & free from disease–delivered a son free from disease.
+ud2.8:6.7 | S: She invites the mendicant Saṅgha headed by the Buddha to a meal for seven days. | T: She invites the community of monks, with the Buddha at its head, for seven days of meals.
+ud2.8:6.8 | S: Sir, would the Buddha please accept seven meals from Suppavāsā?’” | T: May the Blessed One acquiesce to Suppavāsā’s seven meals, together with the community of monks.’”
+ud2.8:7.1 | S: “Excellent idea,” he replied. He went to the Buddha, told him the good news, and conveyed his wife’s invitation. | T: Responding, “Excellent!” to Suppavāsā the Koliyan-daughter, the Koliyan-son went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side.
+ud2.8:7.2 | P: Ekamantaṁ nisinno kho so koliyaputto bhagavantaṁ etadavoca: | T: As he was sitting there he said to the Blessed One,
+ud2.8:8.1 | P: “Suppavāsā, bhante, koliyadhītā bhagavato pāde sirasā vandati; | T: “Suppavāsā the Koliyan-daughter, lord, shows reverence with her head to your feet.
+ud2.8:8.2 | P: evañca vadeti: | T: And she says this:
+ud2.8:8.3 | P: ‘suppavāsā, bhante, koliyadhītā satta vassāni gabbhaṁ dhāreti. | T: ‘Suppavāsā, who was seven years pregnant
+ud2.8:8.4 | P: Sattāhaṁ mūḷhagabbhā sā etarahi sukhinī arogā arogaṁ puttaṁ vijātā. | T: and seven days in difficult labor, has now–well & free from disease–delivered a son free from disease.
+ud2.8:8.5 | P: Sā sattāhaṁ buddhappamukhaṁ bhikkhusaṅghaṁ bhattena nimanteti. | T: She invites the community of monks, with the Buddha at its head, for seven days of meals.
+ud2.8:8.6 | P: Adhivāsetu kira, bhante, bhagavā suppavāsāya koliyadhītāya satta bhattāni saddhiṁ bhikkhusaṅghenā’”ti. | T: May the Blessed One acquiesce to Suppavāsā’s seven meals, together with the community of monks.’”
+ud2.8:9.1 | S: Now at that time a certain lay follower had already invited the Saṅgha of monks headed by the Buddha for the meal on the following day. | T: Now at that time a certain lay follower had invited the community of monks, with the Buddha at its head, for the next day’s meal.
+ud2.8:9.2 | S: That lay follower was Venerable Mahāmoggallāna’s supporter. | T: That lay follower was a supporter of Ven. Mahā Moggallāna.
+ud2.8:9.3 | S: Then the Buddha addressed Venerable Mahāmoggallāna, | T: So the Blessed One addressed Ven. Mahā Moggallāna,
+ud2.8:9.4 | S: “Please, Moggallāna, go to that lay follower and say to him, | T: “Come, Moggallāna. Go to the lay follower and, on arrival, say to him,
+ud2.8:9.5 | S: ‘Suppavāsā the Koliyan, who was pregnant for seven years, and in obstructed labor for seven days, | T: ‘Suppavāsā the Koliyan-daughter, who was seven years pregnant and seven days in difficult labor,
+ud2.8:9.6 | S: is now happy and healthy and has given birth to a healthy child. | T: has now–well & free from disease–delivered a son free from disease.
+ud2.8:9.7 | S: She invites the mendicant Saṅgha headed by the Buddha to a meal for seven days. | T: She has invited the community of monks, with the Buddha at its head, for seven days of meals.
+ud2.8:9.8 | S: Let Suppavāsā make seven meals, afterwards you can make yours.’ | T: Let Suppavāsā do seven meals. Afterward, you will do yours.’
+ud2.8:9.9 | S: He is your supporter.” | T: He’s your supporter.”
+ud2.8:10.1 | S: “Yes, sir,” replied Mahāmoggallāna. He went to that lay follower and conveyed the Buddha’s request. | T: Responding, “As you say, lord,” to the Blessed One, Ven. Moggallāna went to the lay follower and, on arrival, said to him,
+ud2.8:10.2 | P: “suppavāsā, āvuso, koliyadhītā satta vassāni gabbhaṁ dhāreti. | T: “Suppavāsā the Koliyan-daughter, who was seven years pregnant
+ud2.8:10.3 | P: Sattāhaṁ mūḷhagabbhā sā etarahi sukhinī arogā arogaṁ puttaṁ vijātā. | T: and seven days in difficult labor, has now–well & free from disease–delivered a son free from disease.
+ud2.8:10.4 | P: Sā sattāhaṁ buddhappamukhaṁ bhikkhusaṅghaṁ bhattena nimanteti. | T: She has invited the community of monks, with the Buddha at its head, for seven days of meals.
+ud2.8:10.5 | P: Karotu suppavāsā koliyadhītā satta bhattāni, pacchā tvaṁ karissasī”ti. | T: Let Suppavāsā do seven meals; afterward, you will do yours.”
+ud2.8:11.1 | S: “If, sir, Master Mahāmoggallāna can guarantee me three things— | T: “Venerable sir, if Ven. Moggallāna will be my guarantor for three things–
+ud2.8:11.2 | S: wealth, life, and faith— | T: (my) wealth, life, & faith–
+ud2.8:11.3 | S: then let Suppavāsā make seven meals, afterwards I shall make mine.” | T: then let Suppavāsā do seven meals; afterward, I will do mine.”
+ud2.8:11.4 | S: “I can guarantee you two things— | T: “For two things, friend, will I be your guarantor:
+ud2.8:11.5 | S: wealth and life. | T: your wealth & life.
+ud2.8:11.6 | S: But as for faith, you alone are the guarantor.” | T: Only you are the guarantor of your faith.”
+ud2.8:12.1 | S: “If, sir Master Mahāmoggallāna can guarantee me two things— | T: “Venerable sir, if Ven. Moggallāna will be my guarantor for two things–
+ud2.8:12.2 | S: wealth and life— | T: (my) wealth & life–
+ud2.8:12.3 | S: then let Suppavāsā make seven meals, afterwards I shall make mine.” | T: then let Suppavāsā do seven meals; afterward, I will do mine.”
+ud2.8:13.1 | S: Having persuaded that lay follower, Mahāmoggallāna went to the Buddha and said, | T: Then Ven. Moggallāna, having conciliated the lay follower, went to the Blessed One and, on arrival, said,
+ud2.8:13.2 | S: “I’ve persuaded the lay follower. | T: “The lay follower, lord, has been conciliated.
+ud2.8:13.3 | S: Let Suppavāsā make seven meals, afterwards he shall make his.” | T: Let Suppavāsā do seven meals; afterward, he will do his.”
+ud2.8:14.1 | S: For seven days Suppavāsā served and satisfied the mendicant Saṅgha headed by the Buddha with her own hands with delicious fresh and cooked foods. | T: So for seven days Suppavāsā the Koliyan-daughter with her own hand served & satisfied the community of monks, with the Buddha at its head, with exquisite staple & non-staple food.
+ud2.8:14.2 | S: And she made her little boy bow to the Buddha and the mendicant Saṅgha. | T: And she had the child show reverence to the Blessed One and the community of monks.
+ud2.8:15.1 | S: Then Sāriputta said to the boy, | T: Then Ven. Sāriputta said to the child,
+ud2.8:15.2 | S: “I hope you’re keeping well, little boy, I hope you’re all right. I hope you are not in pain.” | T: “I trust, child, that things are bearable for you. I trust that things are comfortable for you. I trust that there’s no pain.”
+ud2.8:15.3 | S: “How could I be keeping well? How could I be getting by? | T: “From where, Ven. Sāriputta, would things be bearable for me? From where would they be comfortable for me
+ud2.8:15.4 | S: For seven years I lived in a pot of blood.” | T: living seven years in a belly of blood?”
+ud2.8:16.1 | S: Then Suppavāsā, thinking, | T: Then Suppavāsā–(thinking,)
+ud2.8:16.2 | S: “My child is conversing with the General of the Dhamma!” was uplifted and overjoyed, full of rapture and happiness. | T: “My son is conversing with the Dhamma General!”–was gratified, joyful, rapturous, & happy.
+ud2.8:16.3 | S: Knowing this, the Buddha said to her, | T: The Blessed One, knowing that Suppavāsā was gratified, joyful, rapturous, & happy, said to her,
+ud2.8:16.4 | S: “Would you like to have another child like this?” | T: “Suppavāsā, would you like to have another son like this?”
+ud2.8:16.5 | S: “Sir, I would like to have seven more children like this!” | T: “Lord Blessed One, I would like to have seven more sons like this!”
+ud2.8:17.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.8:18.1 | S: “Pain in the guise of pleasure, | T: The disagreeable in the guise of the agreeable,
+ud2.8:18.2 | S: the disliked in the guise of the liked, | T: the unlovable in the guise of the lovable,
+ud2.8:18.3 | S: suffering in the guise of happiness, | T: pain in the guise of bliss,
+ud2.8:18.4 | S: overpower the negligent.” | T: overcome one who is heedless.
+ud2.8:18.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## ud3.2
+ud3.2:1.1 | S: So I have heard. | T: I have heard that
+ud3.2:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.2:1.3 | S: Now at that time Venerable Nanda, the Buddha’s brother and maternal cousin, informed several mendicants: | T: And on that occasion Ven. Nanda–the Blessed One’s brother, son of his maternal aunt–announced to a large number of monks:
+ud3.2:1.4 | S: “I lead the spiritual life dissatisfied. | T: “I don’t enjoy leading the holy life, my friends.
+ud3.2:1.5 | S: I am unable to keep up the spiritual life. I shall resign the training and return to a lesser life.” | T: I can’t keep up the holy life. Giving up the training, I will return to the common life.”
+ud3.2:2.1 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and told him what was happening. | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he told the Blessed One:
+ud3.2:2.2 | P: “āyasmā, bhante, nando bhagavato bhātā mātucchāputto sambahulānaṁ bhikkhūnaṁ evamāroceti: | T: “Lord, Ven. Nanda–the Blessed One’s brother, son of his maternal aunt–has announced to a large number of monks:
+ud3.2:2.3 | P: ‘anabhirato ahaṁ, āvuso, brahmacariyaṁ carāmi, na sakkomi brahmacariyaṁ sandhāretuṁ, sikkhaṁ paccakkhāya hīnāyāvattissāmī’”ti. | T: ‘I don’t enjoy leading the holy life, my friends. I can’t keep up the holy life. Giving up the training, I will return to the common life.’”
+ud3.2:3.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One told a certain monk,
+ud3.2:3.2 | S: “Please, monk, in my name tell the mendicant Nanda that | T: “Come, monk. In my name, call Nanda, saying,
+ud3.2:3.3 | S: the Teacher summons him.” | T: ‘The Teacher calls you, friend Nanda.’”
+ud3.2:3.4 | S: “Yes, sir,” that monk replied. He went to Nanda and said to him, | T: Responding, “As you say, lord,” to the Blessed One, the monk went to Ven. Nanda, on arrival he said,
+ud3.2:3.5 | S: “Reverend Nanda, the Teacher summons you.” | T: “The Teacher calls you, friend Nanda.”
+ud3.2:4.1 | S: “Yes, reverend,” Nanda replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Responding, “As you say, my friend,” to the monk, Ven. Nanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him,
+ud3.2:5.1 | S: “Is it really true, Nanda, that you informed several mendicants that | T: “Is it true, Nanda, that you have announced to a large number of monks:
+ud3.2:5.2 | S: you are unable to keep up the spiritual life; that you shall resign the training and return to a lesser life?” | T: ‘I don’t enjoy leading the holy life, my friends. I can’t keep up the holy life. Giving up the training, I will return to the common life’?”
+ud3.2:5.3 | S: “Yes, sir,” he replied. | T: “Yes, lord.”
+ud3.2:6.1 | S: “But why are you so dissatisfied with the spiritual life?” | T: “But why, Nanda, don’t you enjoy leading the holy life? Why can’t you keep up the holy life? Why, giving up the training, will you return to the common life?”
+ud3.2:6.2 | S: “As I left my house, sir, the finest lady of the Sakyan land, her hair half-combed, glanced at me and said, | T: “Lord, as I was leaving home, a Sakyan girl–the envy of the countryside–glanced up at me, with her hair half-combed, and said,
+ud3.2:6.3 | S: ‘Hurry back, master.’ | T: ‘Hurry back, master.’
+ud3.2:6.4 | S: Recalling that, I am dissatisfied and shall resign the training.” | T: Recollecting that, I don’t enjoy leading the holy life. I can’t keep up the holy life. Giving up the training, I will return to the common life.”
+ud3.2:7.1 | S: Then the Buddha took Nanda by the arm and, as easily as a strong person would extend or contract their arm, vanished from Jeta’s Grove and reappeared among the gods of the thirty-three. | T: Then, taking Ven. Nanda by the arm–as a strong man might flex his extended arm or extend his flexed arm–the Blessed One disappeared from Jeta’s Grove and reappeared among the Devas of the Heaven of the Thirty-three [Tāvatiṁsa].
+ud3.2:8.1 | S: Now at that time five hundred dove-footed nymphs had come to attend to Sakka, the lord of gods. | T: Now on that occasion about 500 dove-footed nymphs had come to wait upon Sakka, the ruler of the devas.
+ud3.2:8.2 | S: Then the Buddha said to Nanda, | T: The Blessed One said to Ven. Nanda,
+ud3.2:8.3 | S: “Nanda, do you see these five hundred dove-footed nymphs?” | T: “Nanda, do you see these 500 dove-footed nymphs?”
+ud3.2:8.4 | S: “Yes, sir,” he replied. | T: “Yes, lord.”
+ud3.2:9.1 | S: “What do you think, Nanda? Who is more attractive, good-looking, and lovely—the finest lady of the Sakyan land, or these five hundred dove-footed nymphs?” | T: “What do you think, Nanda? Which is lovelier, better looking, more charming: the Sakyan girl, the envy of the countryside, or these 500 dove-footed nymphs?”
+ud3.2:9.2 | S: “Compared to these five hundred dove-footed nymphs, the finest lady of the Sakyan land is like a deformed monkey with its ears and nose cut off. | T: “Lord, compared to these 500 dove-footed nymphs, the Sakyan girl, the envy of the countryside, is like a cauterized monkey with its ears & nose cut off.
+ud3.2:9.3 | S: She doesn’t count, there’s no comparison, she’s not worth a fraction. | T: She doesn’t count. She’s not even a small fraction. There’s no comparison.
+ud3.2:9.4 | S: These five hundred dove-footed nymphs are far more attractive, good-looking, and lovely.” | T: The 500 dove-footed nymphs are lovelier, better looking, more charming.”
+ud3.2:10.1 | S: “Rejoice, Nanda, rejoice! | T: “Then take joy, Nanda. Take joy!
+ud3.2:10.2 | S: I guarantee you five hundred dove-footed nymphs.” | T: I am your guarantor for getting 500 dove-footed nymphs.”
+ud3.2:10.3 | S: “If, sir, you guarantee me five hundred dove-footed nymphs, I shall happily lead the spiritual life under the Buddha.” | T: “If the Blessed One is my guarantor for getting 500 dove-footed nymphs, I will enjoy leading the holy life under the Blessed One.”
+ud3.2:11.1 | S: Then the Buddha took Nanda by the arm and, as easily as a strong person would extend or contract their arm, vanished from the gods of the thirty-three and reappeared at Jeta’s Grove. | T: Then, taking Ven. Nanda by the arm–as a strong man might flex his extended arm or extend his flexed arm–the Blessed One disappeared from among the Devas of the Heaven of the Thirty-three and reappeared at Jeta’s Grove.
+ud3.2:12.1 | S: The mendicants heard, | T: The monks heard,
+ud3.2:12.2 | S: “It seems Venerable Nanda—who is both the Buddha’s half-brother and maternal cousin—leads the spiritual life for the sake of nymphs. | T: “They say that Ven. Nanda–the Blessed One’s brother, son of his maternal aunt–is leading the holy life for the sake of nymphs.
+ud3.2:12.3 | S: And it seems that the Buddha guaranteed him five hundred dove-footed nymphs.” | T: They say that the Blessed One is his guarantor for getting 500 dove-footed nymphs.”
+ud3.2:13.1 | S: Monks who were his friends accused him of being a hireling and a lackey, | T: Then the monks who were companions of Ven. Nanda went around addressing him as they would a hired hand & a person who had been bought:
+ud3.2:13.2 | S: “It seems Nanda is a hireling, it seems he is a lackey: he leads the spiritual life for the sake of nymphs. | T: “Venerable Nanda, they say, has been hired. Venerable Nanda, they say, has been bought. He’s leading the holy life for the sake of nymphs.
+ud3.2:13.3 | S: And it seems that the Buddha guaranteed him five hundred dove-footed nymphs.” | T: The Blessed One is his guarantor for getting 500 dove-footed nymphs.”
+ud3.2:14.1 | S: Then Nanda—embarrassed, ashamed, and disgusted at being called a hireling and a lackey—living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then Ven. Nanda–humiliated, ashamed, & disgusted that the monks who were his companions were addressing him as they would a hired hand & a person who had been bought–went to dwell alone, secluded, heedful, ardent, & resolute. He in no long time entered & remained in the supreme goal of the holy life for which clansmen rightly go forth from home into homelessness, knowing & realizing it for himself right in the here-&-now.
+ud3.2:14.2 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He knew, “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+ud3.2:14.3 | S: Venerable Nanda became one of the perfected. | T: And thus Ven. Nanda became another one of the arahants.
+ud3.2:15.1 | S: Then, late at night, a glorious deity, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, stood to one side, and said to him: | T: Then a certain devatā, in the far extreme of the night, her extreme radiance lighting up the entirety of Jeta’s Grove, approached the Blessed One. On arrival, having bowed down to him, she stood to one side. As she was standing there, she said to the Blessed One,
+ud3.2:15.2 | S: “Sir, Venerable Nanda—who is both the Buddha’s half-brother and maternal cousin—has realized the undefiled freedom of heart and freedom by wisdom. He lives having realized it with his own insight in this very life due to the ending of defilements.” | T: “Lord, Ven. Nanda–the Blessed One’s brother, son of his maternal aunt–through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now.”
+ud3.2:15.3 | S: And the knowledge also came to the Buddha: | T: And within the Blessed One, the knowledge arose:
+ud3.2:15.4 | S: “Nanda has realized the undefiled freedom of heart and freedom by wisdom. He lives having realized it with his own insight in this very life due to the ending of defilements.” | T: “Nanda, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now.”
+ud3.2:16.1 | S: Then, when the night had passed, Nanda went to the Buddha, bowed, sat down to one side, and said to him, | T: Then, when the night had passed, Ven. Nanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One,
+ud3.2:16.2 | S: “Worthy sir, you guaranteed me five hundred dove-footed nymphs. I release you from that promise.” | T: “Lord, about the Blessed One’s being my guarantor for getting 500 dove-footed nymphs: I hereby release the Blessed One from that promise.”
+ud3.2:16.3 | S: “Nanda, I encompassed your mind and knew that | T: “Nanda, having comprehended your awareness with my own awareness, I realized that
+ud3.2:16.4 | S: you had realized the undefiled freedom of heart and freedom by wisdom. | T: ‘Nanda, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now.’
+ud3.2:16.5 | S: And deities also told me about this. | T: And a devatā informed me that
+ud3.2:16.6 | P: ‘āyasmā, bhante, nando bhagavato bhātā mātucchāputto āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharatī’ti. | T: ‘Ven. Nanda, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, directly knowing & realizing them for himself right in the here-&-now.’
+ud3.2:16.7 | S: As soon as your mind was freed from defilements by not grasping, I was released from that promise.” | T: When your mind, through lack of clinging, was released from the effluents, I was thereby released from that promise.”
+ud3.2:17.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.2:18.1 | S: “The mendicant who has crossed over the bog, | T: In whom the mire of sensuality is crossed over,
+ud3.2:18.2 | S: who has crushed the thorn of sensuality, | T: the thorn of sensuality crushed,
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+ud3.2:18.3 | S: who has reached the end of delusion, | T: the ending of delusion reached:
+ud3.2:18.4 | S: trembles not at pleasure and pain.” | T: He doesn’t quiver from pleasures & pains : a monk.
+ud3.2:18.5 | P: Dutiyaṁ. | T: (none)
+
+## ud3.3
+ud3.3:1.1 | S: So I have heard. | T: I have heard that
+ud3.3:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.3:1.3 | S: Now at that time five hundred mendicants headed by Yasoja arrived at Sāvatthī to see the Buddha. | T: And on that occasion approximately 500 monks, headed by Ven. Yasoja, had arrived in Sāvatthī to see the Blessed One.
+ud3.3:1.4 | S: At that, those visiting mendicants, while exchanging pleasantries with the resident mendicants, preparing their lodgings, and putting away their bowls and robes, made a colossal racket. | T: As these visiting monks were exchanging greetings with the resident monks, setting their lodgings in order, and putting away their robes & bowls, they made a loud racket, a great racket.
+ud3.3:2.1 | S: Then the Buddha said to Venerable Ānanda, | T: Then the Blessed One said to Ven. Ānanda,
+ud3.3:2.2 | S: “Ānanda, who’s making that colossal racket? You’d think it was fishermen hauling in a catch!” | T: “Ānanda, what is that loud racket, that great racket like fishermen with a catch of fish?”
+ud3.3:2.3 | S: “Sir, those five hundred mendicants headed by Yasoja have arrived at Sāvatthī to see the Buddha. | T: “Lord, those are approximately 500 monks, headed by Ven. Yasoja, who have arrived in Sāvatthī to see the Blessed One.
+ud3.3:2.4 | S: It’s those visiting mendicants who, while exchanging pleasantries with the resident mendicants, preparing their lodgings, and putting away their bowls and robes, made a colossal racket.” | T: As these visiting monks are exchanging greetings with the resident monks, setting their lodgings in order, and putting away their robes & bowls, they are making a loud racket, a great racket.”
+ud3.3:2.5 | S: “Well then, Ānanda, in my name tell those mendicants that | T: “In that case, Ānanda, tell those monks in my name,
+ud3.3:2.6 | S: the Teacher summons them.” | T: ‘The Teacher calls you, friends.’”
+ud3.3:3.1 | S: “Yes, sir,” Ānanda replied. He went to those mendicants and said, | T: Responding, “As you say, lord,” to the Blessed One, Ven. Ānanda went to the monks and said,
+ud3.3:3.2 | S: “Venerables, the Teacher summons you.” | T: “The Teacher calls you, friends.”
+ud3.3:3.3 | S: “Yes, reverend,” replied those mendicants. Then they rose from their seats and went to the Buddha, bowed, and sat down to one side. The Buddha said to them, | T: Responding, “As you say, friend,” to Ven. Ānanda, the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, the Blessed One said to them,
+ud3.3:4.1 | S: “Mendicants, what’s with that colossal racket? You’d think it was fishermen hauling in a catch!” | T: “Monks, why were you making that loud racket, that great racket, like fishermen with a catch of fish?”
+ud3.3:4.2 | S: When he said this, Venerable Yasoja said to the Buddha, | T: When this was said, Ven. Yasoja said to the Blessed One,
+ud3.3:4.3 | S: “Sir, these five hundred mendicants have arrived at Sāvatthī to see the Buddha. | T: “Lord, these 500 monks have arrived in Sāvatthī to see the Blessed One.
+ud3.3:4.4 | S: It’s these visiting mendicants who, while exchanging pleasantries with the resident mendicants, preparing their lodgings, and putting away their bowls and robes, made a colossal racket.” | T: As they were exchanging greetings with the resident monks, setting their lodgings in order, and putting away their robes & bowls, they made a loud racket, a great racket.”
+ud3.3:4.5 | S: “Go away, mendicants, I dismiss you. You are not to stay in my presence.” | T: “Go away, monks. I dismiss you. You are not to stay in my vicinity.”
+ud3.3:5.1 | S: “Yes, sir,” replied those mendicants. They got up from their seats, bowed and respectfully circled the Buddha, keeping him on their right. They set their lodgings in order and left, taking their bowls and robes. | T: Responding, “As you say, lord,” to the Blessed One, the monks got up from their seats, bowed down to the Blessed One, and left, circling him to the right. Setting their lodgings in order and taking their robes & bowls, they went wandering among the Vajjians.
+ud3.3:5.2 | S: Traveling stage by stage in the land of the Vajjis, they arrived at the Vaggumudā River. They built leaf huts near the riverbank and there they entered the rainy season. | T: After wandering by stages among the Vajjians, they came to the River Vaggamudā. There on the bank of the River Vaggamudā they made leaf-huts and entered the Rains Retreat.
+ud3.3:6.1 | S: Then Venerable Yasoja, having entered the rainy season, addressed the mendicants: | T: Then Ven. Yasoja addressed the monks as they entered the Rains Retreat:
+ud3.3:6.2 | S: “Out of sympathy, reverends, the Buddha dismissed us, wanting what’s best for us. | T: “Friends, the Blessed One dismissed us, wishing for our benefit, seeking our wellbeing, being sympathetic, and acting out of sympathy.
+ud3.3:6.3 | S: Come, let us live in such a way that the Buddha would be pleased with us.” | T: Let’s live in such a way that the Blessed One will be gratified by our way of living.”
+ud3.3:6.4 | S: “Yes, reverend,” they replied. | T: “As you say, friend,” the monks responded to Ven. Yasoja.
+ud3.3:6.5 | S: Then those mendicants, living alone, withdrawn, diligent, keen, and resolute, all realized the three knowledges in that same rainy season. | T: And so, living secluded, ardent, & resolute, every one of them realized the Three Knowledges [remembrance of past lives, knowledge of the arising & passing away of living beings, and knowledge of the ending of mental effluents] in the course of that very Rains Retreat.
+ud3.3:7.1 | S: When the Buddha had stayed in Sāvatthī as long as he pleased, he set out for Vesālī. | T: Then the Blessed One, having stayed as long as he liked in Sāvatthī, went wandering in the direction of Vesālī.
+ud3.3:7.2 | S: Traveling stage by stage, he arrived at Vesālī, | T: After wandering by stages, he arrived in Vesālī
+ud3.3:7.3 | S: where he stayed in the hall with the peaked roof. | T: and stayed there in the Gabled Pavilion in the Great Forest.
+ud3.3:8.1 | S: Then, having applied his mind to comprehending the minds of the mendicants staying on the bank of the Vaggumudā River, the Buddha said to Venerable Ānanda, | T: Then, encompassing with his awareness the awareness of the monks staying on the bank of the River Vaggamudā, he said to Ven. Ānanda,
+ud3.3:8.2 | S: “A light, it appears to me, has arisen in this quarter, Ānanda; a brightness has arisen. | T: “This direction seems bright to me, Ānanda. This direction seems dazzling to me.
+ud3.3:8.3 | S: I’m not put off at the thought of going to where the mendicants are staying on the bank of the Vaggumudā River. | T: It’s not at all repugnant for me to go & pay attention to where the monks on the bank of the River Vaggamudā are staying.
+ud3.3:8.4 | S: Send a message to those mendicants: | T: Send a messenger into their presence to say,
+ud3.3:8.5 | S: ‘Venerables, the Teacher summons you. He wants to see you.’” | T: ‘The Teacher calls you, friends. The Teacher wants to see you.’”
+ud3.3:9.1 | S: “Yes, sir,” Ānanda replied. He went to one of the mendicants and said, | T: Responding, “As you say, lord,” to the Blessed One, Ven. Ānanda went to a certain monk and said,
+ud3.3:9.2 | S: “Please, Reverend, go to the mendicants staying on the bank of the Vaggumudā River and say to them, | T: “Come now, friend. Go to the monks on the bank of the River Vaggamudā and say to them,
+ud3.3:9.3 | S: ‘Venerables, the Teacher summons you. He wants to see you.’” | T: ‘The Teacher calls you, friends. The Teacher wants to see you.’”
+ud3.3:10.1 | S: “Yes, reverend,” replied that mendicant. | T: Responding, “As you say, friend,” to Ven. Ānanda, the monk–
+ud3.3:10.2 | S: Then, as easily as a strong person would extend or contract their arm, he vanished from the Great Wood, in the hall with the peaked roof, and reappeared in front of those mendicants on the bank of the Vaggumudā River. | T: just as a strong man might extend his flexed arm or flex his extended arm–disappeared from the Gabled Pavilion in the Great Forest and appeared in front of the monks on the bank of the River Vaggamudā.
+ud3.3:10.3 | S: Then he said to those mendicants, | T: Then he said to them,
+ud3.3:10.4 | S: “Venerables, the Teacher summons you. He wants to see you.” | T: “The Teacher calls you, friends. The Teacher wants to see you.”
+ud3.3:11.1 | S: “Yes, reverend,” replied those mendicants. They set their lodgings in order and took their bowls and robes. | T: Responding, “As you say, friend,” to the monk, the monks set their lodgings in order and, taking their robes & bowls,
+ud3.3:11.2 | S: Then, as easily as a strong person would extend or contract their arm, they vanished from the bank of the Vaggumudā River, and reappeared in the presence of the Buddha in the Great Wood, in the hall with the peaked roof. | T: disappeared from the bank of the River Vaggamudā–just as a strong man might extend his flexed arm or flex his extended arm–and appeared in the presence of the Blessed One in the Gabled Pavilion in the Great Forest.
+ud3.3:11.3 | S: But at that time the Buddha was sitting immersed in imperturbable meditation. | T: Now, at that time the Blessed One was sitting in imperturbable concentration [either in the fourth jhāna, the dimension of the infinitude of space, or the dimension of the infinitude of consciousness].
+ud3.3:11.4 | S: Then those mendicants thought, | T: The thought occurred to the monks,
+ud3.3:11.5 | S: “What kind of meditation is the Buddha practicing right now?” | T: “Now, in which mental dwelling is the Blessed One now residing?”
+ud3.3:11.6 | S: They thought, | T: Then they realized,
+ud3.3:11.7 | S: “He is practicing the imperturbable meditation.” | T: “He is residing in the imperturbable dwelling.”
+ud3.3:11.8 | S: They all sat in imperturbable meditation. | T: So they all sat in imperturbable concentration.
+ud3.3:12.1 | S: And then, as the night was getting late, in the first watch of the night, Venerable Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then Ven. Ānanda–when the night was far advanced, at the end of the first watch–got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage with his hands placed palm-to-palm over his heart, and said to him,
+ud3.3:12.2 | S: “Sir, the night is getting late. It is the first watch of the night, and the visiting mendicants have been sitting long. | T: “The night, lord, is far advanced. The first watch has ended. The visiting monks have been sitting here a long time.
+ud3.3:12.3 | S: Sir, please greet the visiting mendicants.” | T: May the Blessed One greet them.”
+ud3.3:12.4 | S: But the Buddha kept silent. | T: When this was said, the Blessed One remained silent.
+ud3.3:13.1 | S: For a second time, as the night was getting late, in the middle watch of the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then a second time, when the night was far advanced, at the end of the middle watch, Ven. Ānanda got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage to him with his hands placed palm-to-palm over his heart, and said to him,
+ud3.3:13.2 | S: “Sir, the night is getting late. It is the second watch of the night, and the visiting mendicants have been sitting long. | T: “The night, lord, is far advanced.
+ud3.3:13.3 | P: nikkhanto majjhimo yāmo; | T: The middle watch has ended.
+ud3.3:13.4 | P: ciranisinnā āgantukā bhikkhū; | T: The visiting monks have been sitting here a long time.
+ud3.3:13.5 | S: Sir, please greet the visiting mendicants.” | T: May the Blessed One greet them.”
+ud3.3:13.6 | S: But for a second time the Buddha kept silent. | T: When this was said, the Blessed One remained silent.
+ud3.3:14.1 | S: For a third time, as the night was getting late, in the last watch of the night, as dawn stirred, bringing joy to the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then a third time, when the night was far advanced, at the end of the last watch, as dawn was approaching and the face of the night was beaming, Ven. Ānanda got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage to him with his hands placed palm-to-palm over his heart, and said to him,
+ud3.3:14.2 | S: “Sir, the night is getting late. It is the last watch of the night; dawn stirs, bringing joy to the night, and the visiting mendicants have been sitting long. | T: “The night, lord, is far advanced.
+ud3.3:14.3 | P: nikkhanto pacchimo yāmo; | T: The last watch has ended.
+ud3.3:14.4 | P: uddhasto aruṇo; | T: Dawn is approaching
+ud3.3:14.5 | P: nandimukhī ratti; | T: and the face of the night is beaming.
+ud3.3:14.6 | P: ciranisinnā āgantukā bhikkhū; | T: The visiting monks have been sitting here a long time.
+ud3.3:14.7 | S: Sir, please greet the visiting mendicants.” | T: May the Blessed One greet them.”
+ud3.3:15.1 | S: Then the Buddha emerged from that immersion and addressed Ānanda, | T: Then the Blessed One, emerging from his imperturbable concentration, said to Ven. Ānanda,
+ud3.3:15.2 | S: “If you’d known, Ānanda, you wouldn’t have said so much. | T: “Ānanda, if you had known, not even that much would have occurred to you (to say).
+ud3.3:15.3 | S: Both I and these five hundred mendicants have been sitting in imperturbable meditation.” | T: I, along with all 500 of these monks, have been sitting in imperturbable concentration.”
+ud3.3:16.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.3:17.1 | S: “A mendicant who has beaten <j>the thorn of sensuality— | T: In whom they’re defeated– the thorn of sensuality,
+ud3.3:17.2 | S: and abuse, killing, and caging— | T: insult, assault, & imprisonment:
+ud3.3:17.3 | S: steady as a mountain, imperturbable, | T: Like a mountain standing unperturbed,
+ud3.3:17.4 | S: trembles not at pleasure and pain.” | T: he doesn’t quiver from pleasures & pains : a monk.
+ud3.3:17.5 | P: Tatiyaṁ. | T: (none)
+
+## ud3.4
+ud3.4:1.1 | S: So I have heard. | T: I have heard that
+ud3.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.4:1.3 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha, cross-legged, his body set straight, and mindfulness brought to the present. | T: And on that occasion Ven. Sāriputta was sitting not far from the Blessed One, his legs crossed, his body held erect, having set mindfulness to the fore.
+ud3.4:1.4 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Sāriputta sitting not far away, his legs crossed, his body held erect, having set mindfulness to the fore.
+ud3.4:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.4:3.1 | S: “As a rocky mountain | T: As a mountain of rock
+ud3.4:3.2 | S: is unwavering and well grounded, | T: is unwavering, well-settled,
+ud3.4:3.3 | S: so when delusion ends, | T: so a monk whose delusion is ended
+ud3.4:3.4 | S: a monk, like a mountain, doesn’t tremble.” | T: doesn’t quiver– just like a mountain.
+ud3.4:3.5 | P: Catutthaṁ. | T: (none)
+
+## ud3.5
+ud3.5:1.1 | S: So I have heard. | T: I have heard that
+ud3.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.5:1.3 | S: Now at that time Venerable Mahāmoggallāna was sitting not far from the Buddha, cross-legged, with his body straight and mindfulness of the body well-established in himself. | T: And on that occasion Ven. Mahā Moggallāna was sitting not far from the Blessed One, his legs crossed, his body held erect, having mindfulness immersed in the body well-established within.
+ud3.5:1.4 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Mahā Moggallāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established within.
+ud3.5:2.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.5:3.1 | S: “With mindfulness of the body established, | T: With mindfulness immersed in the body well-established,
+ud3.5:3.2 | S: restrained in the six fields of contact, | T: restrained with regard to the six contact-media–
+ud3.5:3.3 | S: a mendicant always immersed in samādhi | T: continually centered, a monk
+ud3.5:3.4 | S: would know extinguishment in themselves.” | T: can know unbinding for himself.
+ud3.5:3.5 | P: Pañcamaṁ. | T: (none)
+
+## ud3.6
+ud3.6:1.1 | S: So I have heard. | T: I have heard that
+ud3.6:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ refuge.
+ud3.6:1.3 | S: Now at that time Venerable Pilindavaccha addressed the mendicants as “lowlifes”. | T: Now at on that occasion Ven. Pilindavaccha went around addressing the monks as if they were outcastes.
+ud3.6:1.4 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and said to him, | T: So a large number of monks went to the Blessed One and, on arrival, bowed down to him and sat to one side. As they were sitting there they said to him,
+ud3.6:1.5 | S: “Sir, Venerable Pilindavaccha addresses the mendicants as ‘lowlifes’.” | T: “Lord, Ven. Pilindavaccha goes around addressing the monks as if they were outcastes.”
+ud3.6:2.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One told a certain monk,
+ud3.6:2.2 | S: “Please, monk, in my name tell the mendicant Pilindavaccha that | T: “Come, monk. In my name, call Pilindavaccha, saying,
+ud3.6:2.3 | S: the Teacher summons him.” | T: ‘The Teacher calls you, friend Vaccha.’”
+ud3.6:2.4 | S: “Yes, sir,” that monk replied. He went to Pilindavaccha and said to him, | T: Responding, “As you say, lord,” to the Blessed One, the monk went to Ven. Pilindavaccha and on arrival said to him,
+ud3.6:2.5 | S: “Reverend Pilindavaccha, the Teacher summons you.” | T: “The Teacher calls you, friend Vaccha.”
+ud3.6:3.1 | S: “Yes, reverend,” Pilindavaccha replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Responding, “As you say, my friend,” to the monk, Ven. Pilindavaccha went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him,
+ud3.6:3.2 | S: “Is it really true, Vaccha, that you addressed the mendicants as ‘lowlifes’?” | T: “Is it true, Pilindavaccha, that you go around addressing the monks as if they were outcastes?”
+ud3.6:3.3 | S: “Yes, sir,” he replied. | T: “Yes, lord.”
+ud3.6:4.1 | S: Then, having applied his mind to Pilindavaccha’s past lives, the Buddha said to the mendicants, | T: Then the Blessed One, having directed attention to Ven. Pilindavaccha’s previous lives, said to the monks,
+ud3.6:4.2 | S: “Mendicants, don’t complain about the mendicant Vaccha. | T: “Don’t take offense at the monk Vaccha.
+ud3.6:4.3 | S: He doesn’t address the mendicants as ‘lowlifes’ out of hate. | T: It’s not out of inner hatred that he goes around addressing the monks as if they were outcastes.
+ud3.6:4.4 | S: For five hundred lives without interruption he was reborn in a brahmin family. | T: For 500 consecutive lifetimes the monk Vaccha has been born in brahman families.
+ud3.6:4.5 | S: For a long time, he has addressed people as ‘lowlife’. | T: For a long time he has been accustomed to addressing people as outcastes.
+ud3.6:4.6 | S: That’s why he addresses the mendicants as ‘lowlifes’.” | T: That’s why he goes around addressing the monks as if they were outcastes.”
+ud3.6:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.6:6.1 | S: “In whom dwells no deceit or conceit, | T: In whom there’s no deceit or conceit,
+ud3.6:6.2 | S: rid of greed, unselfish, <j>with no need for hope, | T: his greed ended, unpossessive, free from longing,
+ud3.6:6.3 | S: with anger cast aside, quenched: | T: his anger dispelled, his mind unbound:
+ud3.6:6.4 | S: they are a brahmin, an ascetic, a mendicant.” | T: He’s a contemplative. He’s a brahman : a monk.
+ud3.6:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-087.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+24,038
+0 lines reported.

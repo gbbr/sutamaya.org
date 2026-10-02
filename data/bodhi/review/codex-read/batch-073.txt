@@ -1,0 +1,365 @@
+## sn22.58
+sn22.58:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.58:1.2 | S: “Mendicants, a Realized One, a perfected one, a fully awakened Buddha is freed by not grasping, due to disillusionment, dispassion, and cessation regarding form. They’re called a fully awakened Buddha. | T: “Bhikkhus, the Tathagata, the Arahant, the Perfectly Enlightened One, liberated by nonclinging through revulsion towards form, through its fading away and cessation, is called a Perfectly Enlightened One.
+sn22.58:1.3 | S: A mendicant freed by wisdom is also freed by not grasping, due to disillusionment, dispassion, and cessation regarding form. They’re called a mendicant freed by wisdom. | T: A bhikkhu liberated by wisdom, liberated by nonclinging through revulsion towards form, through its fading away and cessation, is called one liberated by wisdom.
+sn22.58:2.1 | S: A Realized One, a perfected one, a fully awakened Buddha is freed by not grasping, due to disillusionment, dispassion, and cessation regarding feeling … | T: “The Tathagata, the Arahant, the Perfectly Enlightened One, liberated by nonclinging through revulsion towards feeling …
+sn22.58:2.2 | P: Bhikkhupi, bhikkhave, paññāvimutto vedanāya nibbidā …pe… paññāvimuttoti vuccati. | T: (none)
+sn22.58:3.1 | S: perception … | T: perception …
+sn22.58:3.2 | S: choices … | T: volitional formations …
+sn22.58:3.3 | S: consciousness. They’re called a fully awakened Buddha. | T: consciousness, through its fading away and cessation, is called a Perfectly Enlightened One.
+sn22.58:3.4 | S: A mendicant freed by wisdom is also freed by not grasping, due to disillusionment, dispassion, and cessation regarding consciousness. They’re called a mendicant freed by wisdom. | T: A bhikkhu liberated by wisdom, liberated by nonclinging through revulsion towards feeling … perception … volitional formations … consciousness, through its fading away and cessation, is called one liberated by wisdom.
+sn22.58:4.1 | S: What, then, is the difference between a Realized One, a perfected one, a fully awakened Buddha, and a mendicant freed by wisdom?” | T: “Therein, bhikkhus, what is the distinction, what is the disparity, what is the difference between the Tathagata, the Arahant, the Perfectly Enlightened One, and a bhikkhu liberated by wisdom?”
+sn22.58:4.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Venerable sir, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will remember it.”
+sn22.58:4.3 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, bhikkhus, I will speak.”
+sn22.58:4.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn22.58:4.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn22.58:5.1 | S: “The Realized One, the perfected one, the fully awakened Buddha gave rise to the unarisen path, gave birth to the unborn path, and explained the unexplained path. He is the knower of the path, the discoverer of the path, the expert on the path. | T: “The Tathagata, bhikkhus, the Arahant, the Perfectly Enlightened One, is the originator of the path unarisen before, the producer of the path unproduced before, the declarer of the path undeclared before. He is the knower of the path, the discoverer of the path, the one skilled in the path.
+sn22.58:5.2 | S: And now the disciples live following the path; they acquire it later. | T: And his disciples now dwell following that path and become possessed of it afterwards.
+sn22.58:5.3 | S: This is the difference between a Realized One, a perfected one, a fully awakened Buddha, and a mendicant freed by wisdom.” | T: “This, bhikkhus, is the distinction, the disparity, the difference between the Tathagata, the Arahant, the Perfectly Enlightened One, and a bhikkhu liberated by wisdom.”
+sn22.58:5.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.59
+sn22.59:1.1 | S: At one time the Buddha was staying near Varanasi in the deer park at Isipatana. | T: Thus have I heard. On one occasion the Blessed One was dwelling at Baraṇasi in the Deer Park at Isipatana.
+sn22.59:1.2 | S: There the Buddha addressed the group of five mendicants: | T: There the Blessed One addressed the bhikkhus of the group of five thus:
+sn22.59:1.3 | S: “Mendicants!” | T: “Bhikkhus!”
+sn22.59:1.4 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn22.59:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn22.59:2.1 | S: “Mendicants, form is not-self. | T: “Bhikkhus, form is nonself.
+sn22.59:2.2 | S: For if form were self, it wouldn’t lead to affliction. And you could compel form: | T: For if, bhikkhus, form were self, this form would not lead to affliction, and it would be possible to have it of form:
+sn22.59:2.3 | S: ‘May my form be like this! May it not be like that!’ | T: ‘Let my form be thus; let my form not be thus.’
+sn22.59:2.4 | S: But because form is not-self, it leads to affliction. And you can’t compel form: | T: But because form is nonself, form leads to affliction, and it is not possible to have it of form:
+sn22.59:2.5 | S: ‘May my form be like this! May it not be like that!’ | T: ‘Let my form be thus; let my form not be thus.’
+sn22.59:3.1 | S: Feeling is not-self … | T: “Feeling is nonself….
+sn22.59:3.2 | P: Vedanā ca hidaṁ, bhikkhave, attā abhavissa, nayidaṁ vedanā ābādhāya saṁvatteyya, labbhetha ca vedanāya: | T: (none)
+sn22.59:3.3 | P: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. | T: …
+sn22.59:3.4 | P: Yasmā ca kho, bhikkhave, vedanā anattā, tasmā vedanā ābādhāya saṁvattati, na ca labbhati vedanāya: | T: (none)
+sn22.59:3.5 | P: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. | T: (none)
+sn22.59:4.1 | S: Perception is not-self … | T: Perception is nonself….
+sn22.59:4.2 | S: Choices are not-self … | T: Volitional formations are nonself….
+sn22.59:4.3 | P: Saṅkhārā ca hidaṁ, bhikkhave, attā abhavissaṁsu, nayidaṁ saṅkhārā ābādhāya saṁvatteyyuṁ, labbhetha ca saṅkhāresu: | T: (none)
+sn22.59:4.4 | P: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. | T: (none)
+sn22.59:4.5 | P: Yasmā ca kho, bhikkhave, saṅkhārā anattā, tasmā saṅkhārā ābādhāya saṁvattanti, na ca labbhati saṅkhāresu: | T: (none)
+sn22.59:4.6 | P: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. | T: (none)
+sn22.59:5.1 | S: Consciousness is not-self. | T: Consciousness is nonself.
+sn22.59:5.2 | S: For if consciousness were self, it wouldn’t lead to affliction. And you could compel consciousness: | T: For if, bhikkhus, consciousness were self, this consciousness would not lead to affliction, and it would be possible to have it of consciousness:
+sn22.59:5.3 | S: ‘May my consciousness be like this! May it not be like that!’ | T: ‘Let my consciousness be thus; let my consciousness not be thus.’
+sn22.59:5.4 | S: But because consciousness is not-self, it leads to affliction. And you can’t compel consciousness: | T: But because consciousness is nonself, consciousness leads to affliction, and it is not possible to have it of consciousness:
+sn22.59:5.5 | S: ‘May my consciousness be like this! May it not be like that!’ | T: ‘Let my consciousness be thus; let my consciousness not be thus.’
+sn22.59:6.1 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn22.59:6.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.59:6.3 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.59:6.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.59:6.5 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.59:6.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.59:6.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.59:6.8 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.59:6.9 | S: “Is feeling permanent or impermanent?” … | T: “Is feeling permanent or impermanent?…
+sn22.59:6.10 | S: “Is perception permanent or impermanent?” … | T: Is perception permanent or impermanent?…
+sn22.59:6.11 | S: “Are choices permanent or impermanent?” … | T: Are volitional formations permanent or impermanent?…
+sn22.59:6.12 | S: “Is consciousness permanent or impermanent?” | T: Is consciousness permanent or impermanent?”—
+sn22.59:6.13 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.59:6.14 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.59:6.15 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.59:6.16 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.59:6.17 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.59:6.18 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.59:7.1 | S: “So you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Therefore, bhikkhus, any kind of form whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all form should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.59:8.1 | S: Any kind of feeling at all … | T: “Any kind of feeling whatsoever …
+sn22.59:9.1 | S: Any kind of perception at all … | T: Any kind of perception whatsoever …
+sn22.59:9.2 | S: Any kind of choices at all … | T: Any kind of volitional formations whatsoever …
+sn22.59:10.1 | S: You should truly see any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all consciousness should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.59:11.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn22.59:11.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn22.59:11.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.59:12.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn22.59:12.2 | S: Satisfied, the group of five mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+sn22.59:12.3 | S: And while this discourse was being spoken, the minds of the group of five mendicants were freed from defilements by not grasping. | T: And while this discourse was being spoken, the minds of the bhikkhus of the group of five were liberated from the taints by nonclinging.
+sn22.59:12.4 | P: Sattamaṁ. | T: (none)
+
+## sn22.60
+sn22.60:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.60:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: On one occasion the Blessed One was dwelling at Vesali in the Great Wood in the Hall with the Peaked Roof.
+sn22.60:1.3 | S: Then Mahāli the Licchavi went up to the Buddha … and said to him: | T: Then Mahali the Licchavi approached the Blessed One … and said to him:
+sn22.60:2.1 | S: “Sir, Pūraṇa Kassapa says this: | T: “Venerable sir, Pūraṇa Kassapa speaks thus:
+sn22.60:2.2 | S: ‘There is no cause or reason for the corruption of sentient beings. | T: ‘There is no cause or condition for the defilement of beings;
+sn22.60:2.3 | S: Sentient beings are corrupted without cause or reason. | T: beings are defiled without cause or condition.
+sn22.60:2.4 | S: There’s no cause or reason for the purification of sentient beings. | T: There is no cause or condition for the purification of beings;
+sn22.60:2.5 | S: Sentient beings are purified without cause or reason.’ | T: beings are purified without cause or condition.
+sn22.60:2.6 | S: What does the Buddha say about this?” | T: ’ What does the Blessed One say about this?”
+sn22.60:3.1 | S: “Mahāli, there is a cause and reason for the corruption of sentient beings. | T: “There is, Mahali, a cause and condition for the defilement of beings;
+sn22.60:3.2 | S: Sentient beings are corrupted with cause and reason. | T: beings are defiled with cause and condition.
+sn22.60:3.3 | S: There is a cause and reason for the purification of sentient beings. | T: There is a cause and condition for the purification of beings;
+sn22.60:3.4 | S: Sentient beings are purified with cause and reason.” | T: beings are purified with cause and condition.”
+sn22.60:4.1 | S: “But sir, what is the cause and reason for the corruption of sentient beings? | T: “But, venerable sir, what is the cause and condition for the defilement of beings?
+sn22.60:4.2 | S: How are sentient beings corrupted with cause and reason?” | T: How is it that beings are defiled with cause and condition?”
+sn22.60:5.1 | S: “Mahāli, if form were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. | T: “If, Mahali, this form were exclusively suffering, immersed in suffering, steeped in suffering, and if it were not also steeped in pleasure, beings would not become enamoured with it.
+sn22.60:5.2 | S: But because form is pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings are aroused by it. | T: But because form is pleasurable, immersed in pleasure, steeped in pleasure, and is not steeped only in suffering, beings become enamoured with it.
+sn22.60:5.3 | S: Since they are aroused by it, they’re caught up in it, and so they become corrupted. | T: By being enamoured with it, they are captivated by it, and by being captivated by it they are defiled.
+sn22.60:5.4 | S: This is a cause and reason for the corruption of sentient beings. | T: This, Mahali, is a cause and condition for the defilement of beings;
+sn22.60:5.5 | S: This is how sentient beings are corrupted with cause and reason. | T: it is thus that beings are defiled with cause and condition.
+sn22.60:6.1 | S: If feeling … | T: “If, Mahali, this feeling were exclusively suffering …
+sn22.60:6.2 | P: Yasmā ca kho, mahāli, vedanā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā vedanāya sārajjanti; | T: (none)
+sn22.60:6.3 | P: sārāgā saṁyujjanti; | T: (none)
+sn22.60:6.4 | P: saṁyogā saṅkilissanti. | T: (none)
+sn22.60:6.5 | P: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. | T: (none)
+sn22.60:6.6 | P: Evampi sahetū sappaccayā sattā saṅkilissanti. | T: (none)
+sn22.60:7.1 | S: perception … | T: If this perception …
+sn22.60:7.2 | S: choices … | T: these volitional formations …
+sn22.60:7.3 | P: Yasmā ca kho, mahāli, saṅkhārā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā saṅkhāresu sārajjanti; | T: (none)
+sn22.60:7.4 | P: sārāgā saṁyujjanti; | T: …
+sn22.60:7.5 | P: saṁyogā saṅkilissanti. | T: (none)
+sn22.60:7.6 | P: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. | T: (none)
+sn22.60:7.7 | P: Evampi sahetū sappaccayā sattā saṅkilissanti. | T: (none)
+sn22.60:8.1 | S: consciousness were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. | T: this consciousness were exclusively suffering … beings would not become enamoured with it.
+sn22.60:8.2 | S: But because consciousness is pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings are aroused by it. | T: But because consciousness is pleasurable … beings become enamoured with it.
+sn22.60:8.3 | S: Since they are aroused by it, they’re caught up in it, and so they become corrupted. | T: By being enamoured with it, they are captivated by it, and by being captivated by it they are defiled.
+sn22.60:8.4 | S: This is a cause and reason for the corruption of sentient beings. | T: This too, Mahali, is a cause and condition for the defilement of beings;
+sn22.60:8.5 | S: This is how sentient beings are corrupted with cause and reason.” | T: it is thus that beings are defiled with cause and condition.”
+sn22.60:9.1 | S: “But sir, what is the cause and reason for the purification of sentient beings? | T: “But, venerable sir, what is the cause and condition for the purification of beings?
+sn22.60:9.2 | S: How are sentient beings purified with cause and reason?” | T: How is it that beings are purified with cause and condition?”
+sn22.60:9.3 | S: “Mahāli, if form was absolutely pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings wouldn’t grow disillusioned with it. | T: “If, Mahali, this form were exclusively pleasurable, immersed in pleasure, steeped in pleasure, and if it were not also steeped in suffering, beings would not experience revulsion towards it.
+sn22.60:9.4 | S: But because form is painful—soaked and steeped in pain and not steeped in pleasure—sentient beings do grow disillusioned with it. | T: But because form is suffering, immersed in suffering, steeped in suffering, and is not steeped only in pleasure, beings experience revulsion towards it.
+sn22.60:9.5 | S: Being disillusioned, desire fades away. When desire fades away they are purified. | T: Experiencing revulsion, they become dispassionate, and through dispassion they are purified.
+sn22.60:9.6 | S: This is a cause and reason for the purification of sentient beings. | T: This, Mahali, is a cause and condition for the purification of beings;
+sn22.60:9.7 | S: This is how sentient beings are purified with cause and reason. | T: it is thus that beings are purified with cause and condition.
+sn22.60:10.1 | S: If feeling … | T: “If, Mahali, this feeling were exclusively pleasurable …
+sn22.60:10.2 | S: perception … | T: If this perception …
+sn22.60:10.3 | S: choices … | T: these volitional formations …
+sn22.60:10.4 | S: consciousness was absolutely pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings wouldn’t grow disillusioned with it. | T: this consciousness were exclusively pleasurable … beings would not experience revulsion towards it.
+sn22.60:10.5 | S: But because consciousness is painful—soaked and steeped in pain and not steeped in pleasure—sentient beings do grow disillusioned with it. | T: But because consciousness is suffering … beings experience revulsion towards it.
+sn22.60:10.6 | S: Being disillusioned, desire fades away. When desire fades away they are purified. | T: Experiencing revulsion, they become dispassionate, and through dispassion they are purified.
+sn22.60:10.7 | S: This is a cause and reason for the purification of sentient beings. | T: This too, Mahali, is a cause and condition for the purification of beings;
+sn22.60:10.8 | S: This is how sentient beings are purified with cause and reason.” | T: it is thus that beings are purified with cause and condition.”
+sn22.60:10.9 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.61
+sn22.61:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.61:1.2 | S: “Mendicants, form, feeling, perception, choices, and consciousness are burning. | T: “Bhikkhus, form is burning, feeling is burning, perception is burning, volitional formations are burning, consciousness is burning.
+sn22.61:1.3 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn22.61:1.4 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn22.61:1.5 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn22.61:1.6 | P: Navamaṁ. | T: (none)
+
+## sn22.62
+sn22.62:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.62:1.2 | S: “Mendicants, there are these three scopes of definition, labeling, and description. They’re uncorrupted, as they have been since the beginning. They’re not being corrupted now, nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “Bhikkhus, there are these three pathways of language, pathways of designation, pathways of description, that are unmixed, that were never mixed, that are not being mixed, that will not be mixed, that are not rejected by wise ascetics and brahmins.
+sn22.62:1.3 | S: What three? | T: What three?
+sn22.62:1.4 | S: When form has passed, ceased, and perished, its designation, label, and description is ‘was’. | T: “Whatever form, bhikkhus, has passed, ceased, changed: the term, label, and description ‘was’ applies to it,
+sn22.62:1.5 | S: It’s not ‘is’ or ‘will be’. | T: not the term ‘is’ or the term ‘will be.’
+sn22.62:2.1 | S: When feeling … | T: “Whatever feeling …
+sn22.62:2.2 | P: na tassā saṅkhā ‘atthī’ti, na tassā saṅkhā ‘bhavissatī’ti. | T: (none)
+sn22.62:3.1 | S: perception … | T: Whatever perception …
+sn22.62:3.2 | S: choices … | T: Whatever volitional formations …
+sn22.62:3.3 | P: na tesaṁ saṅkhā ‘atthī’ti, na tesaṁ saṅkhā ‘bhavissantī’ti. | T: (none)
+sn22.62:4.1 | S: consciousness has passed, ceased, and perished, its designation, label, and description is ‘was’. | T: Whatever consciousness has passed, ceased, changed: the term, label, and description ‘was’ applies to it,
+sn22.62:4.2 | S: It’s not ‘is’ or ‘will be’. | T: not the term ‘is’ or the term ‘will be.’
+sn22.62:5.1 | S: When form is not yet born, and has not yet appeared, its designation, label, and description is ‘will be’. | T: “Whatever form, bhikkhus, has not been born, has not become manifest: the term, label, and description ‘will be’ applies to it,
+sn22.62:5.2 | S: It’s not ‘is’ or ‘was’. | T: not the term ‘is’ or the term ‘was.’
+sn22.62:6.1 | S: When feeling … | T: “Whatever feeling …
+sn22.62:6.2 | P: na tassā saṅkhā ‘atthī’ti, na tassā saṅkhā ‘ahosī’ti. | T: (none)
+sn22.62:7.1 | S: perception … | T: Whatever perception …
+sn22.62:7.2 | S: choices … | T: Whatever volitional formations …
+sn22.62:7.3 | P: na tesaṁ saṅkhā ‘atthī’ti, na tesaṁ saṅkhā ‘ahesun’ti. | T: (none)
+sn22.62:8.1 | S: consciousness is not yet born, and has not yet appeared, its designation, label, and description is ‘will be’. | T: Whatever consciousness has not been born, has not become manifest: the term, label, and description ‘will be’ applies to it,
+sn22.62:8.2 | S: It’s not ‘is’ or ‘was’. | T: not the term ‘is’ or the term ‘was.’
+sn22.62:9.1 | S: When form has been born, and has appeared, its designation, label, and description is ‘is’. | T: “Whatever form, bhikkhus, has been born, has become manifest: the term, label, and description ‘is’ applies to it,
+sn22.62:9.2 | S: It’s not ‘was’ or ‘will be’. | T: not the term ‘was’ or the term ‘will be.’
+sn22.62:10.1 | S: When feeling … | T: “Whatever feeling …
+sn22.62:10.2 | P: na tassā saṅkhā ‘ahosī’ti, na tassā saṅkhā ‘bhavissatī’ti. | T: (none)
+sn22.62:11.1 | S: perception … | T: Whatever perception …
+sn22.62:11.2 | S: choices … | T: Whatever volitional formations …
+sn22.62:11.3 | P: na tesaṁ saṅkhā ‘ahesun’ti, na tesaṁ saṅkhā, ‘bhavissantī’ti. | T: (none)
+sn22.62:12.1 | S: consciousness has been born, and has appeared, its designation, label, and description is ‘is’. | T: Whatever consciousness has been born, has become manifest: the term, label, and description ‘is’ applies to it,
+sn22.62:12.2 | S: It’s not ‘was’ or ‘will be’. | T: not the term ‘was’ or the term ‘will be.’
+sn22.62:13.1 | S: These are the three scopes of definition, labeling, and description. They’re uncorrupted, as they have been since the beginning. They’re not being corrupted now, nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These, bhikkhus, are the three pathways of language, pathways of designation, pathways of description, that are unmixed, that were never mixed, that are not being mixed, that will not be mixed, that are not rejected by wise ascetics and brahmins.
+sn22.62:13.2 | S: Even those who were loud and bold advocates of the doctrines of no-cause, inaction, and nihilism, didn’t imagine that these three scopes of definition should be criticized or rejected. | T: “Bhikkhus, even Vassa and Bañña of Ukkala, proponents of noncausality, of the inefficacy of action, and of nihilism, did not think that these three pathways of language, pathways of designation, pathways of description should be criticized or scorned.
+sn22.62:13.3 | S: Why is that? | T: For what reason?
+sn22.62:13.4 | S: For fear of being blamed, attacked, provoked, and faulted.” | T: Because they fear blame, attack, and condemnation.”
+sn22.62:13.5 | P: Majjhimapaṇṇāsakassa upayavaggo paṭhamo. | T: (none)
+sn22.62:14.0 | P: Tassuddānaṁ | T: (none)
+sn22.62:14.1 | P: Upayo bījaṁ udānaṁ, | T: (none)
+sn22.62:14.2 | P: Upādānaparivattaṁ; | T: (none)
+sn22.62:14.3 | P: Sattaṭṭhānañca sambuddho, | T: (none)
+sn22.62:14.4 | P: Pañcamahāli ādittā; | T: (none)
+sn22.62:14.5 | P: Vaggo niruttipathena cāti. | T: (none)
+
+## sn22.6
+sn22.6:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.6:1.2 | S: “Mendicants, meditate in retreat. | T: “Bhikkhus, make an exertion in seclusion.
+sn22.6:1.3 | S: A mendicant in retreat truly understands. | T: A bhikkhu who is secluded understands things as they really are.
+sn22.6:1.4 | S: What do they truly understand? | T: “And what does he understand as it really is?
+sn22.6:1.5 | S: The origin and disappearance of form, feeling, perception, choices, and consciousness. …” | T: The origin and passing away of form; the origin and passing away of feeling; the origin and passing away of perception; the origin and passing away of volitional formations; the origin and passing away of consciousness. “And what, bhikkhus, is the origin of form?…”
+sn22.6:1.6 | S: (Tell in full as in the previous discourse.) | T: The rest of this sutta is identical with the preceding one.
+sn22.6:1.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.71
+sn22.71:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.71:1.2 | S: Then Venerable Rādha went up to the Buddha … and asked him, | T: Then the Venerable Radha approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn22.71:1.3 | S: “Sir, how does one know and see so that there’s no I-making, mine-making, or underlying tendency to conceit for this conscious body and externally for all signs?” | T: “Venerable sir, how should one know, how should one see so that, in regard to this body with consciousness and in regard to all external signs, I-making, mine-making, and the underlying tendency to conceit no longer occur within?”
+sn22.71:1.4 | S: “Rādha, one truly sees any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any kind of form whatsoever, Radha, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—one sees all form as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.71:1.5 | S: One truly sees any kind of feeling … | T: “Any kind of feeling whatsoever …
+sn22.71:1.6 | S: perception … | T: Any kind of perception whatsoever …
+sn22.71:1.7 | S: choices … | T: Any kind of volitional formations whatsoever …
+sn22.71:1.8 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—one sees all consciousness as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.71:1.9 | S: That’s how to know and see so that there’s no I-making, mine-making, or underlying tendency to conceit for this conscious body and externally for all signs.” … | T: “When one knows and sees thus, Radha, then in regard to this body with consciousness and in regard to all external signs, I-making, mine-making, and the underlying tendency to conceit no longer occur within.”
+sn22.71:1.10 | S: And Venerable Rādha became one of the perfected. | T: Then the Venerable Radha … became one of the arahants.
+sn22.71:1.11 | P: Navamaṁ. | T: (none)
+
+## sn22.72
+sn22.72:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.72:1.2 | S: Then Venerable Surādha said to the Buddha: | T: Then the Venerable Suradha approached the Blessed One … and said to him:
+sn22.72:1.3 | S: “Sir, how does one know and see so that the heart is rid of I-making, mine-making, and conceit for this conscious body and externally for all signs; and going beyond discrimination, it’s peaceful and well freed?” | T: “Venerable sir, how should one know, how should one see so that, in regard to this body with consciousness and in regard to all external signs, the mind is rid of I-making, mine-making, and conceit, has transcended discrimination, and is peaceful and well liberated?”
+sn22.72:1.4 | S: “Surādha, one is freed by not grasping having truly seen any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any kind of form whatsoever, Suradha, whether past, future, or present … far or near—having seen all form as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self,’ one is liberated by nonclinging.
+sn22.72:1.5 | S: One is freed by not grasping having truly seen any kind of feeling … | T: “Any kind of feeling whatsoever …
+sn22.72:1.6 | S: perception … | T: Any kind of perception whatsoever …
+sn22.72:1.7 | S: choices … | T: Any kind of volitional formations whatsoever …
+sn22.72:1.8 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—having seen all consciousness as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self,’
+sn22.72:1.9 | P: sabbā saññā … | T: (none)
+sn22.72:1.10 | P: sabbe saṅkhārā … | T: (none)
+sn22.72:1.11 | P: sabbaṁ viññāṇaṁ: ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya disvā anupādāvimutto hoti. | T: one is liberated by nonclinging.
+sn22.72:1.12 | S: That’s how to know and see so that the heart is rid of I-making, mine-making, and conceit for this conscious body and externally for all signs; and going beyond discrimination, it’s peaceful and well freed.” … | T: “When one knows and sees thus, Suradha, then in regard to this body with consciousness and in regard to all external signs, the mind is rid of I-making, mine-making, and conceit, has transcended discrimination, and is peaceful and well liberated.”
+sn22.72:1.13 | S: And Venerable Surādha became one of the perfected. | T: Then the Venerable Suradha … became one of the arahants.
+sn22.72:1.14 | P: Dasamaṁ. | T: (none)
+sn22.72:1.15 | P: Arahantavaggo dutiyo. | T: (none)
+sn22.72:2.0 | P: Tassuddānaṁ | T: (none)
+sn22.72:2.1 | P: Upādiyamaññamānā, | T: (none)
+sn22.72:2.2 | P: Athābhinandamāno ca; | T: (none)
+sn22.72:2.3 | P: Aniccaṁ dukkhaṁ anattā ca, | T: (none)
+sn22.72:2.4 | P: Anattaniyaṁ rajanīyasaṇṭhitaṁ; | T: (none)
+sn22.72:2.5 | P: Rādhasurādhena te dasāti. | T: (none)
+
+## sn22.73
+sn22.73:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.73:1.2 | S: “Mendicants, an unlearned ordinary person doesn’t truly understand the gratification, the drawback, and the escape when it comes to form, | T: “Bhikkhus, the uninstructed worldling does not understand as it really is the gratification, the danger, and the escape in the case of form,
+sn22.73:1.3 | S: feeling, | T: feeling,
+sn22.73:1.4 | S: perception, | T: perception,
+sn22.73:1.5 | S: choices, | T: volitional formations,
+sn22.73:1.6 | S: and consciousness. | T: and consciousness.
+sn22.73:1.7 | S: A learned noble disciple does truly understand the gratification, the drawback, and the escape when it comes to form, | T: “But, bhikkhus, the instructed noble disciple understands as it really is the gratification, the danger, and the escape in the case of form,
+sn22.73:1.8 | S: feeling, | T: feeling,
+sn22.73:1.9 | S: perception, | T: perception,
+sn22.73:1.10 | S: choices, | T: volitional formations,
+sn22.73:1.11 | S: and consciousness.” | T: and consciousness.”
+sn22.73:1.12 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.74
+sn22.74:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.74:1.2 | S: “Mendicants, an unlearned ordinary person doesn’t truly understand the origin, the disappearance, the gratification, the drawback, and the escape when it comes to form, | T: “Bhikkhus, the uninstructed worldling does not understand as it really is the origin and the passing away, the gratification, the danger, and the escape in the case of form,
+sn22.74:1.3 | S: feeling, | T: feeling,
+sn22.74:1.4 | S: perception, | T: perception,
+sn22.74:1.5 | S: choices, | T: volitional formations,
+sn22.74:1.6 | S: and consciousness. | T: and consciousness.
+sn22.74:1.7 | S: A learned noble disciple does truly understand the origin, the disappearance, the gratification, the drawback, and the escape when it comes to form, | T: “But, bhikkhus, the instructed noble disciple understands as it really is the origin and the passing away, the gratification, the danger, and the escape in the case of form,
+sn22.74:1.8 | S: feeling, | T: feeling,
+sn22.74:1.9 | S: perception, | T: perception,
+sn22.74:1.10 | S: choices, | T: volitional formations,
+sn22.74:1.11 | S: and consciousness.” | T: and consciousness.”
+sn22.74:1.12 | P: Dutiyaṁ. | T: (none)
+
+## sn22.75
+sn22.75:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.75:1.2 | S: “Mendicants, a learned noble disciple truly understands the origin, the disappearance, the gratification, the drawback, and the escape when it comes to form, | T: “Bhikkhus, the instructed noble disciple understands as it really is the origin and the passing away, the gratification, the danger, and the escape in the case of form,
+sn22.75:1.3 | S: feeling, | T: feeling,
+sn22.75:1.4 | S: perception, | T: perception,
+sn22.75:1.5 | S: choices, | T: volitional formations,
+sn22.75:1.6 | S: and consciousness.” | T: and consciousness.”
+sn22.75:1.7 | P: Tatiyaṁ. | T: (none)
+
+## sn22.7
+sn22.7:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.7:1.2 | S: “Mendicants, I will teach you how grasping leads to anxiety, and how not grasping leads to freedom from anxiety. | T: “Bhikkhus, I will teach you agitation through clinging and nonagitation through nonclinging.
+sn22.7:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn22.7:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn22.7:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn22.7:2.1 | S: “And how does grasping lead to anxiety? | T: “And how, bhikkhus, is there agitation through clinging?
+sn22.7:2.2 | S: It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: Here, bhikkhus, the uninstructed worldling, who is not a seer of the noble ones and is unskilled and undisciplined in their Dhamma, who is not a seer of superior persons and is unskilled and undisciplined in their Dhamma,
+sn22.7:2.3 | S: They regard form as self, self as having form, form in self, or self in form. | T: regards form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.7:2.4 | S: But that form of theirs decays and perishes, | T: That form of his changes and alters.
+sn22.7:2.5 | S: and consciousness latches on to the perishing of form. | T: With the change and alteration of form, his consciousness becomes preoccupied with the change of form.
+sn22.7:2.6 | S: Anxieties occupy their mind, born of latching on to the perishing of form, and originating in accordance with natural principles. | T: Agitation and a constellation of mental states born of preoccupation with the change of form remain obsessing his mind.
+sn22.7:2.7 | S: So they become frightened, worried, concerned, and anxious because of grasping. | T: Because his mind is obsessed, he is frightened, distressed, and anxious, and through clinging he becomes agitated.
+sn22.7:3.1 | S: They regard feeling as self … | T: “He regards feeling as self …
+sn22.7:3.2 | P: Tassa sā vedanā vipariṇamati aññathā hoti. | T: (none)
+sn22.7:3.3 | P: Tassa vedanāvipariṇāmaññathābhāvā vedanāvipariṇāmānuparivatti viññāṇaṁ hoti. | T: (none)
+sn22.7:3.4 | P: Tassa vedanāvipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. | T: (none)
+sn22.7:3.5 | P: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca upādāya ca paritassati. | T: (none)
+sn22.7:4.1 | S: They regard perception as self … | T: perception as self …
+sn22.7:4.2 | S: They regard choices as self … | T: volitional formations as self …
+sn22.7:4.3 | P: Tassa te saṅkhārā vipariṇamanti aññathā honti. | T: (none)
+sn22.7:4.4 | P: Tassa saṅkhāravipariṇāmaññathābhāvā saṅkhāravipariṇāmānuparivatti viññāṇaṁ hoti. | T: (none)
+sn22.7:4.5 | P: Tassa saṅkhāravipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. | T: (none)
+sn22.7:4.6 | P: Cetaso pariyādānā uttāsavā ca hoti vighātavā ca apekkhavā ca upādāya ca paritassati. | T: (none)
+sn22.7:5.1 | S: They regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.7:5.2 | S: But that consciousness of theirs decays and perishes, | T: That consciousness of his changes and alters.
+sn22.7:5.3 | S: and consciousness latches on to the perishing of consciousness. | T: With the change and alteration of consciousness, his consciousness becomes preoccupied with the change of consciousness.
+sn22.7:5.4 | S: Anxieties occupy their mind, born of latching on to the perishing of consciousness, and originating in accordance with natural principles. | T: Agitation and a constellation of mental states born of preoccupation with the change of consciousness remain obsessing his mind.
+sn22.7:5.5 | S: So they become frightened, worried, concerned, and anxious because of grasping. | T: Because his mind is obsessed, he is frightened, distressed, and anxious, and through clinging he becomes agitated.
+sn22.7:5.6 | S: That’s how grasping leads to anxiety. | T: “It is in such a way, bhikkhus, that there is agitation through clinging.
+sn22.7:6.1 | S: And how does not grasping lead to freedom from anxiety? | T: “And how, bhikkhus, is there nonagitation through nonclinging?
+sn22.7:6.2 | S: It’s when a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: Here, bhikkhus, the instructed noble disciple, who is a seer of the noble ones and is skilled and disciplined in their Dhamma, who is a seer of superior persons and is skilled and disciplined in their Dhamma,
+sn22.7:6.3 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: does not regard form as self, or self as possessing form, or form as in self, or self as in form.
+sn22.7:6.4 | S: When that form of theirs decays and perishes, | T: That form of his changes and alters.
+sn22.7:6.5 | S: consciousness doesn’t latch on to the perishing of form. | T: Despite the change and alteration of form, his consciousness does not become preoccupied with the change of form.
+sn22.7:6.6 | S: Anxieties—born of latching on to the perishing of form and originating in accordance with natural principles—don’t occupy their mind. | T: No agitation and constellation of mental states born of preoccupation with the change of form remain obsessing his mind.
+sn22.7:6.7 | S: So they don’t become frightened, worried, concerned, or anxious because of grasping. | T: Because his mind is not obsessed, he is not frightened, distressed, or anxious, and through nonclinging he does not become agitated.
+sn22.7:7.1 | S: They don’t regard feeling as self … | T: “He does not regard feeling as self …
+sn22.7:7.2 | P: Tassa sā vedanā vipariṇamati aññathā hoti. | T: (none)
+sn22.7:7.3 | P: Tassa vedanāvipariṇāmaññathābhāvā na vedanāvipariṇāmānuparivatti viññāṇaṁ hoti. | T: (none)
+sn22.7:7.4 | P: Tassa na vedanāvipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. | T: (none)
+sn22.7:7.5 | P: Cetaso apariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā, anupādāya ca na paritassati. | T: (none)
+sn22.7:8.1 | S: They don’t regard perception as self … | T: perception as self …
+sn22.7:8.2 | S: They don’t regard choices as self … | T: volitional formations as self …
+sn22.7:8.3 | P: na saṅkhāravantaṁ vā attānaṁ; | T: …
+sn22.7:8.4 | P: Tassa te saṅkhārā vipariṇamanti aññathā honti. | T: (none)
+sn22.7:8.5 | P: Tassa saṅkhāravipariṇāmaññathābhāvā na saṅkhāravipariṇāmānuparivatti viññāṇaṁ hoti. | T: (none)
+sn22.7:8.6 | P: Tassa na saṅkhāravipariṇāmānuparivattijā paritassanā dhammasamuppādā cittaṁ pariyādāya tiṭṭhanti. | T: (none)
+sn22.7:8.7 | P: Cetaso apariyādānā na cevuttāsavā hoti na ca vighātavā na ca apekkhavā, anupādāya ca na paritassati. | T: (none)
+sn22.7:9.1 | S: They don’t regard consciousness as self … | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn22.7:9.2 | S: When that consciousness of theirs decays and perishes, | T: That consciousness of his changes and alters.
+sn22.7:9.3 | S: consciousness doesn’t latch on to the perishing of consciousness. | T: Despite the change and alteration of consciousness, his consciousness does not become preoccupied with the change of consciousness.
+sn22.7:9.4 | S: Anxieties—born of latching on to the perishing of consciousness and originating in accordance with natural principles—don’t occupy their mind. | T: No agitation and constellation of mental states born of preoccupation with the change of consciousness remain obsessing his mind.
+sn22.7:9.5 | S: So they don’t become frightened, worried, concerned, or anxious because of grasping. | T: Because his mind is not obsessed, he is not frightened, distressed, or anxious, and through nonclinging he does not become agitated.
+sn22.7:9.6 | S: That’s how not grasping leads to freedom from anxiety.” | T: “It is in such a way, bhikkhus, that there is nonagitation through nonclinging.”
+sn22.7:9.7 | P: Sattamaṁ. | T: (none)
+
+## sn22.8
+sn22.8:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.8:1.2 | S: “Mendicants, I will teach you how grasping leads to anxiety, and how not grasping leads to freedom from anxiety. | T: “Bhikkhus, I will teach you agitation through clinging and nonagitation through nonclinging.
+sn22.8:1.3 | S: Listen and apply your mind well, I will speak. | T: Listen to that and attend closely….
+sn22.8:1.4 | S: And how does grasping lead to anxiety? | T: “And how, bhikkhus, is there agitation through clinging?
+sn22.8:1.5 | S: It’s when an unlearned ordinary person regards form like this: ‘This is mine, I am this, this is my self.’ | T: Here, bhikkhus, the uninstructed worldling regards form thus: ‘This is mine, this I am, this is my self.’
+sn22.8:1.6 | S: But that form of theirs decays and perishes, | T: That form of his changes and alters. With the change and alteration of form,
+sn22.8:1.7 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.8:1.8 | S: They regard feeling … | T: “He regards feeling thus …
+sn22.8:1.9 | S: perception … | T: perception thus …
+sn22.8:1.10 | S: choices … | T: volitional formations thus …
+sn22.8:1.11 | S: consciousness like this: ‘This is mine, I am this, this is my self.’ | T: consciousness thus: ‘This is mine, this I am, this is my self.’
+sn22.8:1.12 | S: But that consciousness of theirs decays and perishes, | T: That consciousness of his changes and alters. With the change and alteration of consciousness,
+sn22.8:1.13 | S: which gives rise to sorrow, lamentation, pain, sadness, and distress. | T: there arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.8:1.14 | S: That’s how grasping leads to anxiety. | T: “It is in such a way, bhikkhus, that there is agitation through clinging.
+sn22.8:2.1 | S: And how does not grasping lead to freedom from anxiety? | T: “And how, bhikkhus, is there nonagitation through nonclinging?
+sn22.8:2.2 | S: It’s when a learned noble disciple regards form like this: ‘This is not mine, I am not this, this is not my self.’ | T: Here, bhikkhus, the instructed noble disciple does not regard form thus: ‘This is mine, this I am, this is my self.’
+sn22.8:2.3 | S: When that form of theirs decays and perishes, | T: That form of his changes and alters. With the change and alteration of form,
+sn22.8:2.4 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.8:2.5 | S: They regard feeling … | T: “He does not regard feeling thus …
+sn22.8:2.6 | S: perception … | T: perception thus …
+sn22.8:2.7 | S: choices … | T: volitional formations thus …
+sn22.8:2.8 | S: consciousness like this: ‘This is not mine, I am not this, this is not my self.’ | T: consciousness thus: ‘This is mine, this I am, this is my self.’
+sn22.8:2.9 | S: When that consciousness of theirs decays and perishes, | T: That consciousness of his changes and alters. With the change and alteration of consciousness,
+sn22.8:2.10 | S: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. | T: there do not arise in him sorrow, lamentation, pain, displeasure, and despair.
+sn22.8:2.11 | S: That’s how not grasping leads to freedom from anxiety.” | T: “It is in such a way, bhikkhus, that there is nonagitation through nonclinging.”
+sn22.8:2.12 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.91
+sn22.91:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.91:1.2 | S: Then Venerable Rāhula went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Rahula approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn22.91:1.3 | S: “Sir, how does one know and see so that there’s no I-making, mine-making, or underlying tendency to conceit for this conscious body and externally for all signs?” | T: “Venerable sir, how should one know, how should one see so that, in regard to this body with consciousness and in regard to all external signs, I-making, mine-making, and the underlying tendency to conceit no longer occur within?”
+sn22.91:2.1 | S: “Rāhula, one truly sees any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any kind of form whatsoever, Rahula, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—one sees all form as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.91:2.2 | S: One truly sees any kind of feeling … | T: “Any kind of feeling whatsoever …
+sn22.91:2.3 | S: perception … | T: Any kind of perception whatsoever …
+sn22.91:2.4 | S: choices … | T: Any kind of volitional formations whatsoever …
+sn22.91:2.5 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—one sees all consciousness as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.91:2.6 | P: sabbaṁ viññāṇaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya passati. | T: (none)
+sn22.91:2.7 | S: That’s how to know and see so that there’s no I-making, mine-making, or underlying tendency to conceit for this conscious body and externally for all signs.” | T: “When one knows and sees thus, Rahula, then in regard to this body with consciousness and in regard to all external signs, I-making, mine-making, and the underlying tendency to conceit no longer occur within.”
+sn22.91:2.8 | P: Navamaṁ. | T: (none)
+

@@ -1,0 +1,674 @@
+## snp2.5
+snp2.5:1.1 | S: So I have heard. | T: I have heard that
+snp2.5:1.2 | S: At one time the Buddha was staying near Gayā on the cut-stone ledge in the haunt of Spiky the native spirit. | T: on one occasion the Blessed One was staying in Gayā at Ṭaṁkitamañca, the haunt of Suciloma [NeedleHair] the yakkha.
+snp2.5:1.3 | S: Now at that time the native spirits Shaggy and Spiky were passing by not far from the Buddha. | T: And on that occasion Khara [Rough] the yakkha and Suciloma the yakkha passed by not far from the Blessed One.
+snp2.5:1.4 | S: So Shaggy said to Spiky, | T: Khara the yakkha said to Suciloma the yakkha,
+snp2.5:1.5 | S: “That’s an ascetic.” | T: “That’s a contemplative.”
+snp2.5:1.6 | S: “That’s no ascetic, he’s a faker! | T: “That’s not a contemplative. That’s a fake contemplative.
+snp2.5:1.7 | S: I’ll soon find out whether he’s an ascetic or a faker.” | T: I’ll find out whether that’s a contemplative or a fake contemplative.”
+snp2.5:2.1 | S: Then Spiky went up to the Buddha and leaned up against his body, | T: So Suciloma the yakkha approached the Blessed One and on arrival leaned his body up against the Blessed One.
+snp2.5:2.2 | S: but the Buddha pulled away. | T: The Blessed One leaned his body away.
+snp2.5:2.3 | S: Then Spiky said to the Buddha, | T: So Suciloma the yakkha said to the Blessed One,
+snp2.5:2.4 | S: “Are you afraid, ascetic?” | T: “Are you afraid of me, contemplative?”
+snp2.5:2.5 | S: “No, respectable sir, I’m not afraid. | T: “No, I’m not afraid of you, friend,
+snp2.5:2.6 | S: But your touch is nasty.” | T: just that your touch is evil.”
+snp2.5:3.1 | S: “I will ask you a question, ascetic. | T: “I will ask you a question, contemplative.
+snp2.5:3.2 | S: If you don’t answer me, I’ll drive you insane, or explode your heart, or grab you by the feet and throw you to the far shore of the Ganges!” | T: If you can’t answer me, I will hurl out your mind or rip open your heart or, grabbing you by the feet, hurl you across the Ganges.”
+snp2.5:4.1 | S: “I don’t see anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans who could do that to me. | T: “My friend, I see no one in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, who could hurl out my mind or rip open my heart or, grabbing me by the feet, hurl me across the Ganges.
+snp2.5:4.2 | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+snp2.5:4.3 | S: Then Spiky addressed the Buddha in verse: | T: So Suciloma the yakkha addressed the Blessed One in verse:
+snp2.5:5.1 | S: “Where do greed and hate come from? | T: Passion & aversion come from what cause?
+snp2.5:5.2 | S: From where spring discontent, desire, and terror? | T: Displeasure, delight, horripilation are born from what?
+snp2.5:5.3 | S: Where do the mind’s thoughts originate, | T: Arising from what do thoughts fling the mind around,
+snp2.5:5.4 | S: like a crow let loose by boys.” | T: as boys, a (captive) crow?
+snp2.5:6.1 | S: “Greed and hate come from here; | T: The Buddha: Passion & aversion come from this as a cause;
+snp2.5:6.2 | S: from here spring discontent, desire, and terror; | T: displeasure, delight, horripilation are born from this;
+snp2.5:6.3 | S: here’s where the mind’s thoughts originate, | T: arising from this thoughts fling the mind around,
+snp2.5:6.4 | S: like a crow let loose by boys. | T: as boys, a (captive) crow:
+snp2.5:7.1 | S: Born of affection, originating in oneself, | T: They’re born from affection arisen from the mind, from oneself,
+snp2.5:7.2 | S: like prop roots sprouting from a banyan; | T: like the trunk-born (shoots) of a banyan tree,
+snp2.5:7.3 | S: the many kinds of attachment to sensual pleasures | T: thick, attached to sensuality,
+snp2.5:7.4 | S: are like camel’s foot creeper <j>creeping through the woods. | T: like a māluva vine spread in a forest.
+snp2.5:8.1 | S: Those who understand where they come from | T: Those who discern where it’s born
+snp2.5:8.2 | S: dispel them—listen up, spirit! | T: drive it out—listen, yakkha!
+snp2.5:8.3 | S: They cross this flood so hard to cross, | T: They cross over this flood, so hard to cross,
+snp2.5:8.4 | S: not crossed before, so as to not be reborn.” | T: never crossed before, for the sake of no further becoming.
+snp2.5:8.5 | P: Sūcilomasuttaṁ pañcamaṁ. | T: (none)
+
+## snp4.11
+snp4.11:1.1 | S: “Where do quarrels and disputes come from? | T: “From where have there arisen quarrels, disputes,
+snp4.11:1.2 | S: And lamentation and sorrow, and stinginess? | T: lamentation, sorrows, along with stinginess,
+snp4.11:1.3 | S: What of conceit and arrogance, and slander too— | T: conceit & pride, along with divisiveness?
+snp4.11:1.4 | S: tell me please, where do they come from?” | T: From where have they arisen? Please tell me.”
+snp4.11:2.1 | S: “Quarrels and disputes come from what we hold dear, | T: “From what is dear there have arisen quarrels, disputes,
+snp4.11:2.2 | S: as do lamentation and sorrow, stinginess, | T: lamentation, sorrows, along with stinginess,
+snp4.11:2.3 | S: conceit and arrogance. | T: conceit & pride, along with divisiveness.
+snp4.11:2.4 | S: Quarrels and disputes are linked to stinginess, | T: Tied up with stinginess are quarrels & disputes.
+snp4.11:2.5 | S: and when disputes have arisen there is slander.” | T: In the arising of disputes is divisiveness.”
+snp4.11:3.1 | S: “So where do things held dear <j>in the world spring from? | T: “Where is the cause of things dear in the world,
+snp4.11:3.2 | S: And the lusts that are loose in the world? | T: along with the greeds that go about in the world?
+snp4.11:3.3 | S: Where spring the hopes and aims | T: And where is the cause of the hopes & aims
+snp4.11:3.4 | S: a man has for lives to come?” | T: for the sake of a person’s next life?”
+snp4.11:4.1 | S: “What we hold dear in the world spring from desire, | T: “Desires are the cause of things dear in the world,
+snp4.11:4.2 | S: as do the lusts that are loose in the world. | T: along with the greeds that go about in the world.
+snp4.11:4.3 | S: From there spring the hopes and aims | T: And here too is the cause of the hopes & aims
+snp4.11:4.4 | S: a man has for lives to come.” | T: for the sake of a person’s next life.”
+snp4.11:5.1 | S: “So where does desire in the world spring from? | T: “Now where is the cause of desire in the world?
+snp4.11:5.2 | S: And evaluations, too, where do they come from? | T: And from where have there arisen decisions,
+snp4.11:5.3 | S: And anger, lies, and indecision, | T: anger, lies, & perplexity,
+snp4.11:5.4 | S: and other things spoken of by the Ascetic?” | T: and all the qualities described by the Contemplative?”
+snp4.11:6.1 | S: “What they call pleasure and pain in the world— | T: “What they call ‘appealing’ & ‘unappealing’ in the world:
+snp4.11:6.2 | S: based on that, desire comes about. | T: In dependence on that, desire arises.
+snp4.11:6.3 | S: Seeing the manifestation and vanishing of forms, | T: Having seen becoming & not- with regard to forms,
+snp4.11:6.4 | S: a personage makes evaluations in the world. | T: a person gives rise to decisions in the world;
+snp4.11:7.1 | S: Anger, lies, and indecision— | T: anger, lies, & perplexity:
+snp4.11:7.2 | S: these things are, too, when that pair is present. | T: these qualities, too, when there exists that very pair.
+snp4.11:7.3 | S: One who is indecisive should train <j>in the path of knowledge; | T: A person perplexed should train for the path of knowledge,
+snp4.11:7.4 | S: it is from knowledge <j>that the Ascetic speaks of these things.” | T: for it’s in having known that the Contemplative has spoken of qualities/dhammas.”
+snp4.11:8.1 | S: “Where do pleasure and pain spring from? | T: “Where is the cause of appealing & un-?
+snp4.11:8.2 | S: When what is absent do these things not occur? | T: When what isn’t do they not exist?
+snp4.11:8.3 | S: And also, on the topic of <j>manifesting and vanishing— | T: And whatever is meant by becoming & not- :
+snp4.11:8.4 | S: tell me where they spring from.” | T: Tell me, Where is their cause?”
+snp4.11:9.1 | S: “Pleasure and pain spring from contact; | T: “Contact is the cause of appealing & un-.
+snp4.11:9.2 | S: when contact is absent they do not occur. | T: When contact isn’t, they do not exist,
+snp4.11:9.3 | S: And on the topic of <j>manifesting and vanishing— | T: along with what’s meant by becoming & not- :
+snp4.11:9.4 | S: I tell you they spring from there.” | T: I tell you, from here is their cause.”
+snp4.11:10.1 | S: “So where does contact in the world spring from? | T: “Now where is the cause of contact in the world,
+snp4.11:10.2 | S: And possessions, too, where do they come from? | T: and from where have graspings, possessions, arisen?
+snp4.11:10.3 | S: When what is absent is there no possessiveness? | T: When what isn’t does there not exist mine-ness?
+snp4.11:10.4 | S: When what vanishes do contacts not strike?” | T: When what has disappeared do contacts not touch?”
+snp4.11:11.1 | S: “Name and form cause contact; | T: “Conditioned by name-&-form is contact.
+snp4.11:11.2 | S: possessions spring from wishing; | T: In longing do graspings, possessions have their cause.
+snp4.11:11.3 | S: when wishing is absent there is no possessiveness; | T: When longing isn’t, mine-ness doesn’t exist.
+snp4.11:11.4 | S: when form vanishes, contacts don’t strike.” | T: When forms have disappeared contacts don’t touch.”
+snp4.11:12.1 | S: “Form vanishes for one proceeding how? | T: “For one how-arriving does form disappear?
+snp4.11:12.2 | S: And how do happiness and suffering vanish? | T: How do pleasure & pain disappear?
+snp4.11:12.3 | S: Tell me how they vanish; | T: Tell me this.
+snp4.11:12.4 | S: I think we ought to know these things.” | T: My heart is set on knowing how they disappear.”
+snp4.11:13.1 | S: “Without normal perception <j>or distorted perception; | T: “One not percipient of perceptions not percipient of aberrant perceptions,
+snp4.11:13.2 | S: not lacking perception, <j>nor perceiving what has vanished. | T: not unpercipient, nor percipient of what’s disappeared:
+snp4.11:13.3 | S: Form vanishes for one proceeding thus; | T: For one thus-arriving, form disappears—
+snp4.11:13.4 | S: for judgments due to proliferation <j>spring from perception.” | T: for objectification-classifications have their cause in perception.”
+snp4.11:14.1 | S: “Whatever I asked you have explained to me. | T: “What we have asked, you’ve expounded to us.
+snp4.11:14.2 | S: I ask you once more, please tell me this: | T: We ask one thing more. Please tell it.
+snp4.11:14.3 | S: Do some astute folk here say that this <j>is the highest extent | T: Do some of the wise say that just this much is the utmost,
+snp4.11:14.4 | S: of purity of the spirit? | T: that purity of spirit is here?
+snp4.11:14.5 | S: Or do they say it is something else?” | T: Or do they say that it’s other than this?”
+snp4.11:15.1 | S: “Some astute folk do say that this <j>is the highest extent | T: “Some of the wise say that just this much is the utmost,
+snp4.11:15.2 | S: of purity of the spirit. | T: that purity of spirit is here.
+snp4.11:15.3 | S: But some of them, claiming to be experts, | T: But some of them, who say they are skilled,
+snp4.11:15.4 | S: speak of an occasion when there is no residue. | T: say it’s the moment with no clinging remaining.
+snp4.11:16.1 | S: Knowing that these states are dependent, | T: But knowing, ‘Having known, they still are dependent,’
+snp4.11:16.2 | S: and knowing what they depend on, <j>the inquiring sage, | T: the sage ponders dependencies.
+snp4.11:16.3 | S: having understood, is freed, and enters no dispute. | T: On knowing them, released, he doesn’t get into disputes,
+snp4.11:16.4 | S: The attentive do not proceed to life after life.” | T: doesn’t meet with becoming & not- : He’s enlightened.”
+snp4.11:16.5 | P: Kalahavivādasuttaṁ ekādasamaṁ. | T: (none)
+
+## snp4.2
+snp4.2:1.1 | S: Trapped in a cave, thickly overspread, | T: Staying attached to the cave, covered heavily over,
+snp4.2:1.2 | S: sunk in delusion they stay. | T: a person sunk in confusion
+snp4.2:1.3 | S: That sort is far from seclusion, | T: is far from seclusion—
+snp4.2:1.4 | S: for sensual pleasures in the world <j>are not easy to give up. | T: for sensual pleasures sensual desires in the world are not lightly let go.
+snp4.2:2.1 | S: The chains of desire, the bonds of life’s pleasures | T: Those chained by desire, bound by becoming’s allure,
+snp4.2:2.2 | S: are hard to escape, for one cannot free another. | T: aren’t easily released for there’s no liberation by others.
+snp4.2:2.3 | S: Looking to the past or the future, | T: Intent, in front or behind,
+snp4.2:2.4 | S: they pray for these pleasures or former ones. | T: on hunger for sensual pleasures here or before—
+snp4.2:3.1 | S: Greedy, fixated, infatuated by sensual pleasures, | T: greedy for sensual pleasures, busy, deluded,
+snp4.2:3.2 | S: they are incorrigible, habitually immoral. | T: ungenerous, entrenched in the discordant way,
+snp4.2:3.3 | S: When led to suffering they lament, | T: they—impelled into pain—lament:
+snp4.2:3.4 | S: “What will become of us <j>when we pass away from here?” | T: “What will we be when we pass on from here?”
+snp4.2:4.1 | S: That’s why a personage should train in this life: | T: So a person should train right here-&-now.
+snp4.2:4.2 | S: should you know that anything in the world is wrong, | T: Whatever you know as discordant in the world,
+snp4.2:4.3 | S: don’t act wrongly on account of that; | T: don’t, for its sake, act discordantly,
+snp4.2:4.4 | S: for the attentive say this life is short. | T: for that life, the enlightened say, is short.
+snp4.2:5.1 | S: I see the world’s population floundering, | T: I see them, in the world, floundering around,
+snp4.2:5.2 | S: given to craving for future lives. | T: people immersed in craving for states of becoming.
+snp4.2:5.3 | S: Base men wail in the jaws of death, | T: Base people moan in the mouth of death,
+snp4.2:5.4 | S: not rid of craving for life after life. | T: their craving, for states of becoming & not-, unallayed.
+snp4.2:6.1 | S: See them flounder over belongings, | T: See them, floundering in their sense of mine,
+snp4.2:6.2 | S: like fish in puddles of a dried-up stream. | T: like fish in the puddles of a dried-up stream—
+snp4.2:6.3 | S: Seeing this, live unselfishly, | T: and, seeing this, live with no mine,
+snp4.2:6.4 | S: forming no attachment to future lives. | T: not forming attachment for states of becoming.
+snp4.2:7.1 | S: Rid of desire for both ends, | T: Subdue desire for both sides,
+snp4.2:7.2 | S: having completely understood contact, free of greed, | T: comprehending sensory contact, with no greed.
+snp4.2:7.3 | S: doing nothing for which they’d blame themselves, | T: Doing nothing for which he himself would rebuke himself,
+snp4.2:7.4 | S: the attentive don’t cling to the seen and the heard. | T: the enlightened person doesn’t adhere to what’s seen, to what’s heard.
+snp4.2:8.1 | S: Having completely understood perception <j>and having crossed the flood, | T: Comprehending perception, he’d cross over the flood—
+snp4.2:8.2 | S: the sage, not clinging to possessions, | T: the sage not stuck on possessions.
+snp4.2:8.3 | S: with dart plucked out, living diligently, | T: Then, with arrow removed, living heedfully,
+snp4.2:8.4 | S: does not hope for this world or the next. | T: he longs for neither— this world, the next.
+snp4.2:8.5 | P: Guhaṭṭhakasuttaṁ dutiyaṁ. | T: (none)
+
+## thag1.100
+thag1.100:1.1 | S: Accomplished in the four right efforts, | T: Consummate in the right exertions,
+thag1.100:1.2 | S: mindfulness meditation is your range; | T: the establishings of mindfulness his range,
+thag1.100:1.3 | S: festooned with the flowers of liberation, | T: blanketed with the flowers of release,
+thag1.100:1.4 | S: undefiled, you’ll be fully quenched. | T: he will, without effluent, totally unbind.
+thag1.100:1.5 | P: … Devasabho thero …. | T: (none)
+thag1.100:1.6 | P: vaggo dasamo. | T: (none)
+thag1.100:2.0 | P: Tassuddānaṁ | T: (none)
+thag1.100:2.1 | P: Paripuṇṇako ca vijayo, | T: (none)
+thag1.100:2.2 | P: erako mettajī muni; | T: (none)
+thag1.100:2.3 | P: Cakkhupālo khaṇḍasumano, | T: (none)
+thag1.100:2.4 | P: tisso ca abhayo tathā; | T: (none)
+thag1.100:2.5 | P: Uttiyo ca mahāpañño, | T: (none)
+thag1.100:2.6 | P: thero devasabhopi cāti. | T: (none)
+
+## thag1.101
+thag1.101:1.1 | S: He’s given up the household life, <j>but is far from perfect. | T: Abandoning the householder’s state, but with no mastery,
+thag1.101:1.2 | S: Living for his belly, lazy, <j>he uses his snout as a plow, | T: lazy, gluttonous, using his mouth as a plough
+thag1.101:1.3 | S: like a great hog stuffed with grain. | T: like a great hog fattened on fodder:
+thag1.101:1.4 | S: That dullard is reborn again and again. | T: Again & again he goes to the womb— the dullard.
+thag1.101:1.5 | P: … Belaṭṭhāniko thero …. | T: (none)
+
+## thag1.109
+thag1.109:1.1 | S: Even on retreat he doesn’t heed the counsel | T: Why, having gone into solitude, does he not take account of the message
+thag1.109:1.2 | S: of the one with supreme compassion for his welfare. | T: of the one sympathetic to his foremost well-being?
+thag1.109:1.3 | S: He lives with unrestrained faculties, | T: Because he dwells with his faculties exposed,
+thag1.109:1.4 | S: like a young deer in the woods. | T: like a tender deer in the forest.
+thag1.109:1.5 | P: … Saṅgharakkhito thero …. | T: (none)
+
+## thag1.111
+thag1.111:1.1 | S: Going forth is hard; living at home is hard; | T: Going forth is hard; houses are hard places to live;
+thag1.111:1.2 | S: Dhamma is profound; money is hard to come by. | T: the Dhamma is deep; wealth, hard to obtain;
+thag1.111:1.3 | S: Getting by is difficult for we <j>who accept whatever comes, | T: it’s hard to keep going with whatever we get:
+thag1.111:1.4 | S: so we should always think about impermanence. | T: So it’s right that we ponder continually continual inconstancy.
+thag1.111:1.5 | P: … Jento thero …. | T: (none)
+
+## thag1.113
+thag1.113:1.1 | S: The water’s clear and the rocks are broad, | T: With clear waters & massive boulders,
+thag1.113:1.2 | S: monkeys and deer are all around; | T: frequented by monkeys & deer,
+thag1.113:1.3 | S: festooned with dewy moss, | T: covered with moss & water weeds:
+thag1.113:1.4 | S: these rocky crags delight me! | T: Those rocky crags refresh me.
+thag1.113:1.5 | P: … Vanavaccho thero …. | T: (none)
+
+## thag1.119
+thag1.119:1.1 | S: You’ve left for the jungle, the root of a tree, | T: Coming to the bower at the root of a tree,
+thag1.119:1.2 | S: having laid extinguishment in your heart. | T: placing unbinding in your heart,
+thag1.119:1.3 | S: Meditate, Gotama, don’t be negligent! | T: do jhāna, Gotama, & don’t be heedless.
+thag1.119:1.4 | S: What use is this hullabaloo to you? | T: What use is this chitter-chatter to you?
+thag1.119:1.5 | P: … Vajjiputto thero …. | T: (none)
+
+## thag1.120
+thag1.120:1.1 | S: The five aggregates are fully understood, | T: The five aggregates, having been comprehended,
+thag1.120:1.2 | S: they remain, but their root is cut. | T: stand with their root cut through.
+thag1.120:1.3 | S: I have reached the end of suffering | T: For me the ending of stress is reached;
+thag1.120:1.4 | S: and attained the ending of defilements. | T: the ending of effluents, attained.
+thag1.120:1.5 | P: … Isidatto thero … | T: (none)
+thag1.120:1.6 | P: vaggo dvādasamo. | T: (none)
+thag1.120:2.0 | P: Tassuddānaṁ | T: (none)
+thag1.120:2.1 | P: Jento ca vacchagotto ca, | T: (none)
+thag1.120:2.2 | P: vaccho ca vanasavhayo; | T: (none)
+thag1.120:2.3 | P: Adhimutto mahānāmo, | T: (none)
+thag1.120:2.4 | P: pārāpariyo yasopi ca; | T: (none)
+thag1.120:2.5 | P: Kimilo vajjiputto ca, | T: (none)
+thag1.120:2.6 | P: isidatto mahāyasoti. | T: (none)
+thag1.120:2.7 | P: Ekakanipāto niṭṭhito. | T: (none)
+thag1.120:3.0 | P: Tatruddānaṁ | T: (none)
+thag1.120:3.1 | P: Vīsuttarasataṁ therā, | T: (none)
+thag1.120:3.2 | P: katakiccā anāsavā; | T: (none)
+thag1.120:3.3 | P: Ekakeva nipātamhi, | T: (none)
+thag1.120:3.4 | P: susaṅgītā mahesibhīti. | T: (none)
+
+## thag1.13
+thag1.13:1.1 | S: Glistening, they look like blue stormclouds, | T: The color of blue-dark clouds, glistening,
+thag1.13:1.2 | S: with waters cool and streams so clear, | T: cooled with the waters of clear-flowing streams
+thag1.13:1.3 | S: and covered all in ladybugs: | T: covered with ladybugs:
+thag1.13:1.4 | S: these rocky crags delight me! | T: Those rocky crags refresh me.
+thag1.13:1.5 | P: … Vanavaccho thero …. | T: (none)
+
+## thag1.14
+thag1.14:1.1 | S: My mentor said to me: | T: My preceptor said to me:
+thag1.14:1.2 | S: “Let’s leave here, Sīvaka.” | T: Let’s go from here, Sīvaka.
+thag1.14:1.3 | S: My body lives in the village, | T: My body stays in the village;
+thag1.14:1.4 | S: but my mind has gone to the wilderness. | T: my mind has gone to the wilds.
+thag1.14:1.5 | S: I go there even when lying down— | T: Even though lying down, I go.
+thag1.14:1.6 | S: you can’t chain those who know. | T: There’s no tying down one who knows.
+thag1.14:1.7 | P: … Vanavacchassa therassa (siviko) sāmaṇero …. | T: (none)
+
+## thag1.18
+thag1.18:1.1 | S: There was an heir of the Buddha, | T: There was an heir to the One Awakened,
+thag1.18:1.2 | S: a monk in Bhesakaḷā forest, | T: a monk in the Bhesakaḷā forest,
+thag1.18:1.3 | S: who suffused the entire earth | T: who suffused this whole earth
+thag1.18:1.4 | S: with the perception of bones. | T: with the perception of “bones.”
+thag1.18:1.5 | S: I think he will quickly | T: Quickly, I’d say,
+thag1.18:1.6 | S: get rid of sensual desire. | T: he abandoned sensual passion.
+thag1.18:1.7 | P: … Siṅgālapitā thero …. | T: (none)
+
+## thag1.21
+thag1.21:1.1 | S: I’m not afraid of fear, | T: I’m not afraid of danger, of fear.
+thag1.21:1.2 | S: for our teacher is expert in freedom from death. | T: Our Teacher’s adept in the deathless.
+thag1.21:1.3 | S: Mendicants advance by the path | T: Where danger, where fear do not remain: That’s the path
+thag1.21:1.4 | S: where no fear remains. | T: by which the monks go.
+thag1.21:1.5 | P: … Nigrodho thero …. | T: (none)
+
+## thag1.22
+thag1.22:1.1 | S: Crested peacocks with beautiful blue necks | T: Peacocks, crested, blue, with gorgeous necks,
+thag1.22:1.2 | S: cry out in Karaṁvī. | T: cry out in the Kāraṁvī woods,
+thag1.22:1.3 | S: Stirred by a cool breeze, | T: thrilled by the cold wind.
+thag1.22:1.4 | S: they wake the sleeper to practice absorption. | T: They awaken the sleeper to meditate.
+thag1.22:1.5 | P: … Cittako thero …. | T: (none)
+
+## thag1.26
+thag1.26:1.1 | S: Having heard the fine words | T: Hearing the well-spoken words
+thag1.26:1.2 | S: of the Buddha, Kinsman of the Sun, | T: of the Awakened One, Kinsman of the Sun,
+thag1.26:1.3 | S: I penetrated the subtle truth, | T: I pierced what is subtle—
+thag1.26:1.4 | S: like a hair-tip with an arrow. | T: as if, with an arrow, the tip of a horse-tail hair.
+thag1.26:1.5 | P: … Abhayo thero …. | T: (none)
+
+## thag1.32
+thag1.32:1.1 | S: I’ll swap old age for the unaging, | T: I’ll make a trade: aging for the ageless,
+thag1.32:1.2 | S: burning for quenching— | T: burning for the unbound—
+thag1.32:1.3 | S: the ultimate peace, | T: the highest peace,
+thag1.32:1.4 | S: the supreme sanctuary from the yoke. | T: the unexcelled rest from the yoke.
+thag1.32:1.5 | P: … Suppiyo thero …. | T: (none)
+
+## thag1.39
+thag1.39:1.1 | S: Like they’re struck by a sword, | T: As if struck by a sword,
+thag1.39:1.2 | S: like their head was on fire, | T: as if his head were on fire,
+thag1.39:1.3 | S: a mendicant should wander mindful | T: a monk should live the wandering life —mindful—
+thag1.39:1.4 | S: to give up sensual desire. | T: for the abandoning of sensual passion.
+thag1.39:1.5 | P: … Tisso thero …. | T: (none)
+
+## thag1.49
+thag1.49:1.1 | S: Even with all the sounds, | T: Even with all the whistles & whistling,
+thag1.49:1.2 | S: the chirping and cheeping of the birds, | T: the calls of the birds,
+thag1.49:1.3 | S: my mind doesn’t flounder, | T: this, my mind, doesn’t waver,
+thag1.49:1.4 | S: for I’m devoted to oneness. | T: for my delight is in oneness.
+thag1.49:1.5 | P: … Rāmaṇeyyako thero …. | T: (none)
+
+## thag1.50
+thag1.50:1.1 | S: The celestial lake Dharaṇī pours, <j>the heavenly gale blows, | T: The earth’s sprinkled with rain, wind is blowing,
+thag1.50:1.2 | S: and lightning flashes across the sky! | T: lightning wanders the sky,
+thag1.50:1.3 | S: But my thoughts are stilled, | T: but my thoughts are stilled,
+thag1.50:1.4 | S: my mind is serene. | T: well-centered my mind.
+thag1.50:1.5 | P: … Vimalo thero … | T: (none)
+thag1.50:1.6 | P: vaggo pañcamo. | T: (none)
+thag1.50:2.0 | P: Tassuddānaṁ | T: (none)
+thag1.50:2.1 | P: Sirīvaḍḍho revato thero, | T: (none)
+thag1.50:2.2 | P: sumaṅgalo sānusavhayo; | T: (none)
+thag1.50:2.3 | P: Ramaṇīyavihārī ca, | T: (none)
+thag1.50:2.4 | P: samiddhiujjayasañjayā; | T: (none)
+thag1.50:2.5 | P: Rāmaṇeyyo ca so thero, | T: (none)
+thag1.50:2.6 | P: vimalo ca raṇañjahoti. | T: (none)
+
+## thag1.56
+thag1.56:1.1 | S: “Who is in this hut?” “A monk is in this hut, | T: Who’s in the hut? A monk’s in the hut—
+thag1.56:1.2 | S: free of lust, his mind serene. | T: free from passion, with well-centered mind.
+thag1.56:1.3 | S: Reverend, you should know this: | T: Know this, my friend:
+thag1.56:1.4 | S: your hut wasn’t built in vain.” | T: The hut you built wasn’t wasted.
+thag1.56:1.5 | P: … Kuṭivihāritthero …. | T: (none)
+
+## thag1.57
+thag1.57:1.1 | S: This was your old hut, | T: This was your old hut,
+thag1.57:1.2 | S: but you still want a new hut. | T: and you aspire to another, new hut.
+thag1.57:1.3 | S: Let go of hope for a hut, monk! | T: Discard your hope for a hut, monk.
+thag1.57:1.4 | S: A new hut will only bring more suffering. | T: A new hut will be painful all over again.
+thag1.57:1.5 | P: … Dutiyakuṭivihāritthero …. | T: (none)
+
+## thag1.68
+thag1.68:1.1 | S: A sage of higher consciousness, diligent, | T: Of heightened awareness & heedful,
+thag1.68:1.2 | S: training in the ways of sagacity: | T: the sage trained in sagacity’s ways:
+thag1.68:1.3 | S: there are no sorrows for the unaffected, | T: He has no sorrows, one who is Such,
+thag1.68:1.4 | S: calm and ever mindful. | T: calmed & ever mindful.
+thag1.68:1.5 | P: … Ekudāniyo thero …. | T: (none)
+
+## thag1.73
+thag1.73:1.1 | S: Seeing an old person, and one suffering from disease, | T: On seeing an old person; & a person in pain, diseased;
+thag1.73:1.2 | S: and a corpse come to the end of life, | T: & a person dead, gone to life’s end,
+thag1.73:1.3 | S: I went forth, becoming a wanderer, | T: I left for the life gone forth,
+thag1.73:1.4 | S: and giving up the pleasures of the senses. | T: abandoning the sensuality that entices the heart.
+thag1.73:1.5 | P: … Māṇavo thero …. | T: (none)
+
+## thag1.75
+thag1.75:1.1 | S: Good is the sight of those who’ve practiced well: | T: Good the sight of the well-rectified:
+thag1.75:1.2 | S: doubt is cut off and intelligence grows— | T: Doubt is cut off, intelligence grows.
+thag1.75:1.3 | S: even a fool grows wise! | T: Even fools they make wise—
+thag1.75:1.4 | S: That’s why it’s good to meet good people. | T: so the company of the true is good.
+thag1.75:1.5 | P: … Susārado thero …. | T: (none)
+
+## thag1.84
+thag1.84:1.1 | S: Sleeping all night, | T: Asleep the whole night,
+thag1.84:1.2 | S: happily socializing by day, | T: delighting in company by day:
+thag1.84:1.3 | S: when will the simpleton | T: When, when will the fool
+thag1.84:1.4 | S: make an end of suffering? | T: bring suffering & stress to an end?
+thag1.84:1.5 | P: … Nīto thero …. | T: (none)
+
+## thag1.85
+thag1.85:1.1 | S: Skilled in the patterns of the mind, | T: Adept in a theme for the mind,
+thag1.85:1.2 | S: understanding the nectar of seclusion, | T: sensing the savor of solitude,
+thag1.85:1.3 | S: practicing absorption, alert, mindful: | T: practicing jhāna, masterful, mindful,
+thag1.85:1.4 | S: such a person would realize pleasure not of the flesh. | T: you’d attain a pleasure not of the flesh.
+thag1.85:1.5 | P: … Sunāgo thero …. | T: (none)
+
+## thag1.88
+thag1.88:1.1 | S: I was able to lift myself up | T: Able was I to raise myself
+thag1.88:1.2 | S: from the water to the shore. | T: from water to dry land.
+thag1.88:1.3 | S: While being swept away by the great flood, | T: Swept along by the great flood,
+thag1.88:1.4 | S: I penetrated the truths. | T: I penetrated the truths.
+thag1.88:1.5 | P: … Ajjuno thero …. | T: (none)
+
+## thag1.93
+thag1.93:1.1 | S: Sensual pleasures are suffering, Eraka! | T: Sensual pleasures are stressful, Eraka.
+thag1.93:1.2 | S: Sensual pleasures aren’t happiness, Eraka! | T: Sensual pleasures aren’t ease.
+thag1.93:1.3 | S: One who enjoys sensual pleasures | T: Whoever loves sensual pleasures
+thag1.93:1.4 | S: enjoys suffering, Eraka! | T: loves stress, Eraka.
+thag1.93:1.5 | S: One who doesn’t enjoy sensual pleasures | T: Whoever doesn’t,
+thag1.93:1.6 | S: doesn’t enjoy suffering, Eraka! | T: doesn’t love stress.
+thag1.93:1.7 | P: … Erako thero …. | T: (none)
+
+## thag1.95
+thag1.95:1.1 | S: I’m blind, my eyes are ruined, | T: I’m blind, my eyes are destroyed.
+thag1.95:1.2 | S: I’m traveling a desolate road. | T: I’ve stumbled on a wilderness track.
+thag1.95:1.3 | S: Even if I have to crawl I’ll keep going— | T: Even if I must crawl, I’ll go on,
+thag1.95:1.4 | S: though not with wicked companions. | T: but not with an evil companion.
+thag1.95:1.5 | P: … Cakkhupālo thero …. | T: (none)
+
+## thag2.11
+thag2.11:1.1 | S: It’s from eagerness to learn that learning grows; | T: Listening well increases learning.
+thag2.11:1.2 | S: when you’re learned, wisdom grows; | T: What is learned increases discernment.
+thag2.11:1.3 | S: by wisdom, you know the goal; | T: Through discernment one knows the goal.
+thag2.11:1.4 | S: knowing the goal brings happiness. | T: When known, the goal brings bliss.
+thag2.11:2.1 | S: You should frequent remote lodgings | T: Stay in isolated lodgings;
+thag2.11:2.2 | S: and practice to be released from fetters. | T: live for freedom from fetters.
+thag2.11:2.3 | S: If you don’t find enjoyment there, | T: If you don’t attain delight there,
+thag2.11:2.4 | S: live in the Saṅgha, self-protected and mindful. | T: then live in the Saṅgha, your mind protected, mindful.
+thag2.11:2.5 | P: … Mahācundo thero …. | T: (none)
+
+## thag2.16
+thag2.16:1.1 | S: There’s a big black woman who looks like a crow. | T: This swarthy woman [preparing a corpse for cremation] —crow-like, enormous—
+thag2.16:1.2 | S: She broke off thigh-bones, first one then another; | T: breaking a thigh & then the other thigh,
+thag2.16:1.3 | S: she broke off arm-bones, first one then another; | T: breaking an arm & then the other arm,
+thag2.16:1.4 | S: she broke off a skull like a curd-bowl, and then | T: cracking open the head, like a pot of curds,
+thag2.16:1.5 | S: arranged them and sat nearby. | T: she sits with them heaped up beside her.
+thag2.16:2.1 | S: When an ignorant person builds up attachments, | T: Whoever, unknowing, makes acquisitions
+thag2.16:2.2 | S: that dullard returns to suffering again and again. | T: —the fool— returns over & over to suffering & stress.
+thag2.16:2.3 | S: So let one who understands <j>not build up attachments: | T: So, discerning, don’t make acquisitions.
+thag2.16:2.4 | S: may I never again lie with a broken skull! | T: May I never lie with my head cracked open again.
+thag2.16:2.5 | P: … Mahākāḷo thero …. | T: (none)
+
+## thag2.19
+thag2.19:1.1 | S: Because of focusing on the wrong things, | T: From inappropriate attention
+thag2.19:1.2 | S: I was addicted to ornamentation. | T: I was devoted to ornament,
+thag2.19:1.3 | S: I was vain, fickle, | T: restless & vain,
+thag2.19:1.4 | S: racked by desire for pleasures of the senses. | T: driven by sensual passion.
+thag2.19:2.1 | S: But with the help of the Buddha, | T: With the help of the Buddha,
+thag2.19:2.2 | S: the Kinsman of the Sun, so skilled in means, | T: the Kinsman of the Sun, skilled in strategies,
+thag2.19:2.3 | S: I practiced rationally and extracted | T: I, practicing appropriately,
+thag2.19:2.4 | S: attachment to continued existence from my mind. | T: plucked my mind out of becoming.
+thag2.19:2.5 | P: … Nando thero …. | T: (none)
+
+## thag2.24
+thag2.24:1.1 | S: The duty of one whose energy is strong; | T: What needs to be done with firm persistence,
+thag2.24:1.2 | S: the duty of one who longs to wake up: | T: what needs to be done by one who hopes for awakening,
+thag2.24:1.3 | S: that I’ll do, I won’t fail— | T: that I will do. I will not fail.
+thag2.24:1.4 | S: see my energy and vigor! | T: See: persistence & striving!
+thag2.24:2.1 | S: Teach me the path, | T: You show me the path:
+thag2.24:2.2 | S: the direct route whose objective is freedom from death. | T: the straight, the plunge into deathlessness.
+thag2.24:2.3 | S: I’ll know it with wisdom, | T: I, through sagacity, will reach it, know it,
+thag2.24:2.4 | S: as the Ganges knows the ocean. | T: as the stream of the Ganges, the sea.
+thag2.24:2.5 | P: … Valliyo thero …. | T: (none)
+
+## thag2.26
+thag2.26:1.1 | S: I gave up the five hindrances | T: Shedding five hindrances
+thag2.26:1.2 | S: for the sake of sanctuary from the yoke. | T: to reach rest from the yoke,
+thag2.26:1.3 | S: I took Dhamma as a mirror | T: taking the Dhamma as mirror
+thag2.26:1.4 | S: for knowing and seeing myself. | T: my own knowledge & vision,
+thag2.26:2.1 | S: I examined this body, | T: I reflected on this body—
+thag2.26:2.2 | S: all of it, inside and out. | T: the whole thing, inside & out,
+thag2.26:2.3 | S: Internally and externally | T: my own & others’.
+thag2.26:2.4 | S: my body appeared hollow. | T: How vain & empty the body appeared!
+thag2.26:2.5 | P: … Puṇṇamāso thero …. | T: (none)
+
+## thag2.27
+thag2.27:1.1 | S: Though a fine thoroughbred may stumble, | T: Just as a fine thoroughbred steed stumbling,
+thag2.27:1.2 | S: it soon stands firm again. | T: regains its stance,
+thag2.27:1.3 | S: It gains even more urgency, | T: feeling all the more urgency,
+thag2.27:1.4 | S: and draws its load undeterred. | T: & draws its burden undaunted.
+thag2.27:2.1 | S: Even so is one accomplished in vision, | T: In the same way, remember me: consummate in vision,
+thag2.27:2.2 | S: a disciple of the Buddha. | T: a disciple of the Rightly Self-awakened One,
+thag2.27:2.3 | S: Remember me as a thoroughbred, | T: the Awakened One’s thoroughbred child,
+thag2.27:2.4 | S: the Buddha’s bosom son. | T: his son.
+thag2.27:2.5 | P: … Nandako thero …. | T: (none)
+
+## thag2.32
+thag2.32:1.1 | S: Houses are impermanent— | T: Inconstant little houses:
+thag2.32:1.2 | S: on and on, life after life. | T: now here, now there, again & again,
+thag2.32:1.3 | S: I’ve been searching for the house-builder— | T: I sought the house-builder.
+thag2.32:1.4 | S: painful is birth again and again. | T: Painful is birth, again & again.
+thag2.32:2.1 | S: I’ve seen you, house-builder! | T: House-builder, you’re seen!
+thag2.32:2.2 | S: You won’t build a house again. | T: You will not build a house again.
+thag2.32:2.3 | S: Your rafters are all broken, | T: All your rafters are broken,
+thag2.32:2.4 | S: your ridgepole is shattered. | T: and your gables torn down.
+thag2.32:2.5 | S: My mind is without boundaries: | T: Released from restriction, the mind
+thag2.32:2.6 | S: in this very life it will dissipate. | T: will be blown out right here.
+thag2.32:2.7 | P: … Sivako thero …. | T: (none)
+
+## thag2.3
+thag2.3:1.1 | S: A monkey went up to the little hut | T: A monkey, coming to the little hut
+thag2.3:1.2 | S: with five doors. | T: with five doors,
+thag2.3:1.3 | S: He circles around, knocking | T: goes from door to door, knocking
+thag2.3:1.4 | S: on each door, again and again. | T: moment by moment.
+thag2.3:2.1 | S: Stand still monkey, don’t run! | T: Stand still, monkey, don’t run.
+thag2.3:2.2 | S: Things are different now; | T: It’s not yours as it was before.
+thag2.3:2.3 | S: you’ve been caught by wisdom— | T: You’re bound by discernment.
+thag2.3:2.4 | S: you won’t go far. | T: You won’t get far away.
+thag2.3:2.5 | P: … Valliyo thero …. | T: (none)
+
+## thag2.42
+thag2.42:1.1 | S: The young monk | T: The young monk
+thag2.42:1.2 | S: who is devoted to the teaching of the Buddha, | T: devoted to the Buddha’s message,
+thag2.42:1.3 | S: wakeful while others sleep— | T: is wakeful among those who sleep.
+thag2.42:1.4 | S: his life is not in vain. | T: His life is not in vain.
+thag2.42:2.1 | S: So let the wise devote themselves | T: So, intelligent, one should commit oneself
+thag2.42:2.2 | S: to faith, ethical behavior, | T: to conviction & virtue,
+thag2.42:2.3 | S: confidence, and insight into the teaching, | T: confidence & Dhamma-vision,
+thag2.42:2.4 | S: remembering the instructions of the Buddhas. | T: remembering the Buddhas’ message.
+thag2.42:2.5 | P: … Dhammapālo thero …. | T: (none)
+
+## thag2.43
+thag2.43:1.1 | S: Whose faculties have become serene, | T: Whose faculties have been made tranquil,
+thag2.43:1.2 | S: like horses tamed by a charioteer? | T: like horses well-tamed by a charioteer —
+thag2.43:1.3 | S: With conceit and defilements given up, | T: effluents abandoned,
+thag2.43:1.4 | S: who is such as envied by even the gods? | T: envied even by devas, Such?
+thag2.43:2.1 | S: My faculties have become serene, | T: My faculties have been made tranquil
+thag2.43:2.2 | S: like horses tamed by a charioteer. | T: like horses well-tamed by a charioteer —
+thag2.43:2.3 | S: With conceit and defilements given up, | T: effluents abandoned,
+thag2.43:2.4 | S: I am such as envied by even the gods. | T: I’m envied even by devas. Such.
+thag2.43:2.5 | P: … Brahmāli thero …. | T: (none)
+
+## thag3.13
+thag3.13:1.1 | S: Listen up, all my relatives, | T: Listen, kinsmen, all of you,
+thag3.13:1.2 | S: those who have gathered here: | T: as many as are assembled here.
+thag3.13:1.3 | S: I’ll teach you Dhamma! | T: I will teach you the Dhamma:
+thag3.13:1.4 | S: Painful is birth again and again. | T: Painful is birth, again & again.
+thag3.13:2.1 | S: Rouse yourselves, try harder! | T: Rouse yourselves. Go forth.
+thag3.13:2.2 | S: Devote yourselves to the instructions of the Buddha! | T: Apply yourselves to the Awakened One’s bidding.
+thag3.13:2.3 | S: Crush the army of death, | T: Scatter the army of Death
+thag3.13:2.4 | S: as an elephant a hut of reeds. | T: as an elephant would a shed made of reeds.
+thag3.13:3.1 | S: Whoever shall meditate diligently | T: He who,
+thag3.13:3.2 | S: in this teaching and training, | T: in this Dhamma & Vinaya, stays heedful,
+thag3.13:3.3 | S: giving up transmigration, | T: abandoning birth, the wandering-on,
+thag3.13:3.4 | S: will make an end to suffering. | T: will put an end to suffering & stress.
+thag3.13:3.5 | P: … Abhibhūto thero …. | T: (none)
+
+## thag3.14
+thag3.14:1.1 | S: Transmigrating, I went to hell, | T: While wandering on I went to hell;
+thag3.14:1.2 | S: and to the ghost realm time and again. | T: went again & again to the world of the hungry ghosts;
+thag3.14:1.3 | S: Many times I dwelt long | T: stayed countless times, long,
+thag3.14:1.4 | S: in the animal realm, so full of pain. | T: in the pain of the animal womb;
+thag3.14:2.1 | S: I was also reborn as a human, | T: enjoyed the human state;
+thag3.14:2.2 | S: and from time to time I went to heaven. | T: went to heaven from time to time;
+thag3.14:2.3 | S: I’ve stayed in realms <j>of luminous form and formlessness, | T: settled in the elements of form, the elements of formlessness,
+thag3.14:2.4 | S: among the neither-percipient-nor-non-percipient, <j>and the non-percipient. | T: neither perception, perception-less.
+thag3.14:3.1 | S: I know well these created states are insubstantial— | T: Ways of taking birth are now known: devoid of essence,
+thag3.14:3.2 | S: conditioned, quivering, always in motion. | T: unstable, conditioned, always blown along.
+thag3.14:3.3 | S: When I understood that this is created in myself, | T: Knowing them as born from my self,
+thag3.14:3.4 | S: mindful, I found peace. | T: mindful I went right to peace.
+thag3.14:3.5 | P: … Gotamo thero …. | T: (none)
+
+## thag4.10
+thag4.10:1.1 | S: “Dhamma surely protects <j>one who practices Dhamma. | T: The Dhamma protects those who live by the Dhamma.
+thag4.10:1.2 | S: The teaching brings happiness when practiced well. | T: The Dhamma well-practiced brings bliss.
+thag4.10:1.3 | S: This is the benefit of practicing Dhamma: | T: This—the reward when the Dhamma’s well-practiced:
+thag4.10:1.4 | S: one doesn’t go to a bad destination. | T: One who lives by the Dhamma doesn’t go to a bad destination.
+thag4.10:2.1 | S: It’s not the case that Dhamma <j>and what is not Dhamma | T: For Dhamma and non-
+thag4.10:2.2 | S: lead to the same results. | T: don’t bear equal results.
+thag4.10:2.3 | S: What is not Dhamma leads to hell, | T: Non-Dhamma leads you to hell;
+thag4.10:2.4 | S: while Dhamma takes you to a good place. | T: Dhamma, to a good destination.
+thag4.10:3.1 | S: So you should rouse up enthusiasm for the teachings; | T: So you should engender desire for acts of Dhamma,
+thag4.10:3.2 | S: such rejoicing is owing to the Holy One, <j>the unaffected. | T: rejoicing in the One Well-Gone, the one who is Such.
+thag4.10:3.3 | S: The disciples of the excellent Holy One <j>are firm in the teaching; | T: Standing firm in the Dhamma, of the foremost One Well-Gone, his disciples
+thag4.10:3.4 | S: those attentive ones are led on, <j>headed to the very best of refuges.” | T: are guided —enlightened— to the foremost refuge supreme.
+thag4.10:4.1 | S: “The boil has been burst from its root, | T: Burst is the root of the boil;
+thag4.10:4.2 | S: the net of craving is eradicated. | T: the net of craving uprooted.
+thag4.10:4.3 | S: He has ended transmigration, he has nothing, | T: He, having ended his wandering-on, has no stain—
+thag4.10:4.4 | S: he’s like the full moon on a bright night.” | T: like the moon on a clear full-moon night.
+thag4.10:4.5 | P: … Dhammiko thero …. | T: (none)
+
+## thag5.8
+thag5.8:1.1 | S: “Struck by a wind ailment | T: Stricken by sharp, wind-like pains,
+thag5.8:1.2 | S: while dwelling in a forest grove, | T: you, monk, living in the forest grove
+thag5.8:1.3 | S: you’ve entered a tough place for gathering alms— | T: —harsh, with limited range for alms—
+thag5.8:1.4 | S: how will you get by, monk?” | T: what, what will you do?
+thag5.8:2.1 | S: “Pervading this bag of bones | T: Suffusing my body
+thag5.8:2.2 | S: with abundant rapture and happiness, | T: with abundant rapture & joy,
+thag5.8:2.3 | S: putting up with what’s tough, | T: & enduring what’s harsh,
+thag5.8:2.4 | S: I’ll dwell in the forest. | T: I’ll stay in the grove.
+thag5.8:3.1 | S: Developing mindfulness meditation, | T: Developing the establishings of mindfulness,
+thag5.8:3.2 | S: the faculties and the powers, | T: strengths, faculties,
+thag5.8:3.3 | S: developing the factors of awakening, | T: the factors for awakening,
+thag5.8:3.4 | S: I’ll dwell in the forest. | T: I’ll stay in the grove.
+thag5.8:4.1 | S: Having seen those who are energetic, resolute, | T: Reflecting on those who are resolute, their persistence aroused,
+thag5.8:4.2 | S: always staunchly vigorous, | T: constantly firm in their effort,
+thag5.8:4.3 | S: harmonious and united, | T: united in concord,
+thag5.8:4.4 | S: I’ll dwell in the forest. | T: I’ll stay in the grove.
+thag5.8:5.1 | S: Recollecting the Buddha— | T: Recollecting the One Self-awakened,
+thag5.8:5.2 | S: the best, the tamed, the serene— | T: self-tamed & centered,
+thag5.8:5.3 | S: tireless all day and night | T: untiring both day & night,
+thag5.8:5.4 | S: I’ll dwell in the forest.” | T: I’ll stay in the grove.
+thag5.8:5.5 | P: … Vakkalitthero …. | T: (none)
+
+## thag6.2
+thag6.2:1.1 | S: “The rice has been harvested | T: The grain: harvested.
+thag6.2:1.2 | S: and gathered on the threshing-floor— | T: The rice: gone to be threshed.
+thag6.2:1.3 | S: but I don’t get any almsfood! | T: But I don’t get any alms.
+thag6.2:1.4 | S: How will I get by?” | T: How will I get by?
+thag6.2:2.1 | S: “In faith, recollect the immeasurable Buddha! | T: Confident, recollect the immeasurable Buddha.
+thag6.2:2.2 | S: Your body soaked with rapture, <j>you’ll always be full of joy. | T: Your body pervaded with rapture, you’ll be at the height of continual joy.
+thag6.2:3.1 | S: In faith, recollect the immeasurable teaching! | T: Confident, recollect the immeasurable Dhamma.
+thag6.2:3.2 | S: Your body soaked with rapture, <j>you’ll always be full of joy. | T: Your body pervaded with rapture, you’ll be at the height of continual joy.
+thag6.2:4.1 | S: In faith, recollect the immeasurable Saṅgha! | T: Confident, recollect the immeasurable Saṅgha.
+thag6.2:4.2 | S: Your body soaked with rapture, <j>you’ll always be full of joy.” | T: Your body pervaded with rapture, you’ll be at the height of continual joy.
+thag6.2:5.1 | S: “You stay in the open, | T: You live in the open air.
+thag6.2:5.2 | S: though these winter nights are cold. | T: Cold are these wintry nights.
+thag6.2:5.3 | S: Don’t perish, overcome with cold; | T: Don’t suffer, overcome with the cold.
+thag6.2:5.4 | S: enter your dwelling, with door shut fast.” | T: Go into your hut, with its fastened bolt.
+thag6.2:6.1 | S: “I’ll realize the four immeasurable states, | T: I’ll fasten the four immeasurables.
+thag6.2:6.2 | S: and meditate happily in them. | T: With them, I’ll dwell in comfort.
+thag6.2:6.3 | S: I won’t perish, overcome with cold; | T: I won’t suffer from the cold,
+thag6.2:6.4 | S: I’ll dwell unperturbed.” | T: dwelling unperturbed.
+thag6.2:6.5 | P: … Tekicchakārī thero …. | T: (none)
+
+## thag9.1
+thag9.1:1.1 | S: When an astute person knows, <j>“Old age and death are suffering; | T: When, knowing, “stress, aging-&-death”—
+thag9.1:1.2 | S: yet an ignorant ordinary person is bound to them”, | T: where people run-of-the-mill are attached—
+thag9.1:1.3 | S: completely understanding suffering, being mindful, <j>practicing absorption: | T: comprehending stress, the wise man does jhāna, mindful,
+thag9.1:1.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:2.1 | S: When clinging, the carrier <j>of suffering, | T: When, striking down attachment, the bringer of stress
+thag9.1:2.2 | S: and craving, the carrier  <j>of this painful mass of proliferation, | T: & craving, the bringer of stress bound up with objectification,
+thag9.1:2.3 | S: are destroyed, and one is mindful, <j>practicing absorption: | T: he does jhāna, mindful,
+thag9.1:2.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:3.1 | S: When the eightfold way, so full of grace, | T: When, touching with discernment the auspicious, two-times-four road,
+thag9.1:3.2 | S: the supreme path, cleanser of all corruptions, | T: the ultimate path, cleansing away all defilement,
+thag9.1:3.3 | S: is seen with wisdom; and one is mindful, <j>practicing absorption: | T: he does jhāna, mindful,
+thag9.1:3.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:4.1 | S: When one develops that peaceful state, | T: When he develops the peaceful state,
+thag9.1:4.2 | S: sorrowless, stainless, unconditioned, | T: —sorrowless, stainless, unfabricated,
+thag9.1:4.3 | S: cleanser of all corruptions, <j>cutter of fetters and bonds: | T: cleansing away all defilement, cutting through fetters & bonds—
+thag9.1:4.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:5.1 | S: When the thundercloud rumbles in the sky, | T: When, in the sky, the thundercloud roars,
+thag9.1:5.2 | S: while the rain pours on the path of birds all around, | T: with torrents of rain on all sides of the path of the birds,
+thag9.1:5.3 | S: and a monk has gone to a mountain cave, <j>practicing absorption: | T: and the monk, having gone to a cave, does jhāna,
+thag9.1:5.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:6.1 | S: When sitting on a riverbank covered in flowers, | T: When, seated on the bank of rivers covered with flowers,
+thag9.1:6.2 | S: garlanded with brightly colored forest plants, | T: garlanded with various forest plants,
+thag9.1:6.3 | S: one is truly happy, <j>practicing absorption: | T: happy at heart, he does jhāna,
+thag9.1:6.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:7.1 | S: When it is midnight in a lonely forest, | T: When, at midnight in the secluded grove,
+thag9.1:7.2 | S: and the lions roar as the heavens pour, | T: the devas drizzle, the fanged animals roar,
+thag9.1:7.3 | S: and a monk has gone to a mountain cave, <j>practicing absorption: | T: and the monk, having gone to a cave, does jhāna,
+thag9.1:7.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:8.1 | S: When one’s own thoughts have been cut off, | T: When, having kept his own thoughts in check,
+thag9.1:8.2 | S: between the mountains, sheltered inside a cleft, | T: taking refuge in the mountains in a mountain fissure,
+thag9.1:8.3 | S: without stress or heartlessness, <j>practicing absorption: | T: free from disturbance, free from barrenness, he does jhāna,
+thag9.1:8.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:9.1 | S: When one is happy, destroyer of stains, heartlessness, and sorrow, | T: When, happy, destroying stain, barrenness, grief,
+thag9.1:9.2 | S: free of obstructions, snarls, and thorns, | T: free from door-bolts, free from underbrush, free from arrows,
+thag9.1:9.3 | S: and with all defilements annihilated, <j>practicing absorption: | T: having put an end to all effluents, he does jhāna,
+thag9.1:9.4 | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+thag9.1:9.5 | P: … Bhūto thero … | T: (none)
+thag9.1:9.6 | P: Navakanipāto niṭṭhito. | T: (none)
+thag9.1:10.0 | P: Tatruddānaṁ | T: (none)
+thag9.1:10.1 | P: Bhūto tathaddaso thero, | T: (none)
+thag9.1:10.2 | P: eko khaggavisāṇavā; | T: (none)
+thag9.1:10.3 | P: Navakamhi nipātamhi, | T: (none)
+thag9.1:10.4 | P: gāthāyopi imā navāti. | T: (none)
+
+## thig1.17
+thig1.17:1.1 | S: I wandered for alms | T: Wandering for alms—
+thig1.17:1.2 | S: though feeble, leaning on a staff. | T: weak, leaning on a staff,
+thig1.17:1.3 | S: My limbs wobbled | T: with trembling limbs—
+thig1.17:1.4 | S: and I fell to the ground right there. | T: I fell down right there on the ground.
+thig1.17:1.5 | S: Seeing the danger of the body, | T: Seeing the drawbacks of the body,
+thig1.17:1.6 | S: my mind was freed. | T: my mind was then set free.
+thig1.17:2.1 | P: … Dhammā therī …. | T: (none)
+
+## thig10.1
+thig10.1:1.1 | S: “Pointing out how the world works, | T: Having admirable friends
+thig10.1:1.2 | S: the sages have praised good friendship. | T: has been praised by the Sage with reference to the world.
+thig10.1:1.3 | S: Associating with good friends, | T: Associating with an admirable friend
+thig10.1:1.4 | S: even a fool becomes astute. | T: even a fool becomes wise.
+thig10.1:2.1 | S: Associate with true persons, | T: People of integrity should be associated with.
+thig10.1:2.2 | S: for that is how wisdom grows. | T: In that way discernment grows.
+thig10.1:2.3 | S: Should you associate with true persons, | T: Associating with people of integrity
+thig10.1:2.4 | S: you would be freed from all suffering. | T: one would be released from all suffering & stress,
+thig10.1:3.1 | S: And you would understand suffering, | T: would know stress,
+thig10.1:3.2 | S: its origin and cessation, | T: the origination of stress, cessation
+thig10.1:3.3 | S: the eightfold path, | T: & the eightfold path:
+thig10.1:3.4 | S: and so the four noble truths.” | T: the four noble truths.
+thig10.1:4.1 | S: “‘A woman’s life is painful,’ | T: Stressful, painful, is the woman’s state:
+thig10.1:4.2 | S: explained the Buddha, <j>guide for those fit to train, | T: So says the tamer of tamable people.
+thig10.1:4.3 | S: ‘and for a co-wife it’s especially so. | T: Being a co-wife is painful.
+thig10.1:4.4 | S: After giving birth just once, | T: Some, on giving birth once,
+thig10.1:5.1 | S: some women even cut their own throat, | T: slit their throats.
+thig10.1:5.2 | S: while delicate ladies take poison. | T: Others, of delicate constitution, take poison.
+thig10.1:5.3 | S: Being guilty of killing a person, | T: In the midst of a breech-birth
+thig10.1:5.4 | S: they both undergo ruin.’” | T: both [mother & child] suffer destruction.
+thig10.1:6.1 | S: “I was on the road, near to giving birth, | T: Going along, about to give birth,
+thig10.1:6.2 | S: when I saw my husband dead. | T: I saw my husband dead.
+thig10.1:6.3 | S: I gave birth there on the road | T: Giving birth in the road,
+thig10.1:6.4 | S: before I’d reached my own house. | T: I hadn’t reached my own home.
+thig10.1:7.1 | S: My two children have died, | T: Two children deceased,
+thig10.1:7.2 | S: and on the road my husband lies dead—<j>oh woe is me! | T: my husband dead in the road —miserable me!
+thig10.1:7.3 | S: Mother, father, and brother | T: My mother, father, & brother
+thig10.1:7.4 | S: all burning up on the same pyre.” | T: were burning on a single pyre.
+thig10.1:8.1 | S: “Oh woe is you whose family is lost, | T: “Your family all gone, miserable,
+thig10.1:8.2 | S: the suffering you have undergone has no measure; | T: you’ve suffered pain without measure.
+thig10.1:8.3 | S: you have been shedding tears | T: Your tears have flowed
+thig10.1:8.4 | S: for many thousands of lives.” | T: for many thousands of lives.”
+thig10.1:9.1 | S: “While staying in the charnel ground, | T: Then I saw, in the midst of the charnel ground,
+thig10.1:9.2 | S: I saw my son’s flesh being eaten. | T: the muscles of sons being chewed.
+thig10.1:9.3 | S: With my family destroyed, condemned by all, | T: With family killed, despised by all,
+thig10.1:9.4 | S: and my husband dead, I realized freedom from death. | T: my husband dead, I reached the deathless.
+thig10.1:10.1 | S: I’ve developed the noble eightfold path | T: I’ve developed this path, noble, eightfold,
+thig10.1:10.2 | S: leading to freedom from death. | T: going to the deathless.
+thig10.1:10.3 | S: I’ve realized extinguishment, | T: Having realized unbinding,
+thig10.1:10.4 | S: as seen in the mirror of the Dhamma. | T: I’ve gazed in the mirror of Dhamma.
+thig10.1:11.1 | S: I’ve plucked out the dart, | T: I’ve extracted the arrow,
+thig10.1:11.2 | S: laid down the burden, <j>and done what needed to be done.” | T: put down the burden, done the task.
+thig10.1:11.3 | S: The senior nun Kisāgotamī, | T: I, Kīsā Gotamī Therī,
+thig10.1:11.4 | S: her mind released, said this. | T: my heart well released, have said this.
+thig10.1:12.1 | P: … Kisā gotamī therī …. | T: (none)
+thig10.1:13.1 | P: Ekādasakanipāto niṭṭhito. | T: (none)
+

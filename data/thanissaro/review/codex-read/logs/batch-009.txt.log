@@ -1,0 +1,634 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd90-21d8-7d92-bd0a-b15d368d3bb8
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear line-boundary misplacements.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## iti71
+iti71:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti71:2.1 | S: “Mendicants, I’ve seen beings who engaged in good conduct of body, speech, and mind, who did not denounce the noble ones, who held right view and acted accordingly. | T: “Monks, I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–
+iti71:2.2 | S: At the breaking up of the body, after death, they were reborn in a good destination, a heavenly realm. | T: at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.
+iti71:3.1 | S: Now, I don’t say this because I’ve heard it from some other ascetic or brahmin. | T: It’s not from having heard this from another contemplative or brahman that I tell you that
+iti71:3.2 | P: Diṭṭhā mayā, bhikkhave, sattā kāyasucaritena samannāgatā vacīsucaritena samannāgatā manosucaritena samannāgatā ariyānaṁ anupavādakā sammādiṭṭhikā sammādiṭṭhikammasamādānā. | T: I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–
+iti71:3.3 | P: Te kāyassa bhedā paraṁ maraṇā sugatiṁ saggaṁ lokaṁ upapannā. | T: at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.
+iti71:3.4 | S: I only say it because I’ve known, seen, and realized it for myself.” | T: It’s from having known it myself, seen it myself, realized it myself that I tell you that
+iti71:4.1 | P: Diṭṭhā mayā, bhikkhave, sattā kāyasucaritena samannāgatā vacīsucaritena samannāgatā manosucaritena samannāgatā ariyānaṁ anupavādakā sammādiṭṭhikā sammādiṭṭhikammasamādānā. | T: I have seen beings who–endowed with bodily good conduct, verbal good conduct, & mental good conduct; who did not revile noble ones, who held right views and undertook actions under the influence of right views–
+iti71:4.2 | P: Te kāyassa bhedā paraṁ maraṇā sugatiṁ saggaṁ lokaṁ upapannā”ti. | T: at the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.”
+iti71:4.3 | S: The Buddha spoke this matter. | T: (none)
+iti71:4.4 | S: On this it is said: | T: (none)
+iti71:5.1 | S: “When the mind has been directed right, | T: With mind rightly directed,
+iti71:5.2 | S: and words rightly spoken, | T: speaking right speech,
+iti71:5.3 | S: and right bodily deeds have been done, | T: doing right deeds with the body:
+iti71:5.4 | S: an individual here | T: a person here
+iti71:6.1 | S: learned, doer of good deeds, | T: of much learning, a doer of merit
+iti71:6.2 | S: though their life may be short, | T: here in this next-to-nothing life,
+iti71:6.3 | S: when their body breaks up, that wise person | T: at the break-up of the body, discerning,
+iti71:6.4 | S: is reborn in heaven.” | T: reappears in heaven.
+iti71:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti71:7.2 | P: Dutiyaṁ. | T: (none)
+
+## iti72
+iti72:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti72:2.1 | S: “Mendicants, there are these three elements of escape. | T: “Monks, there are these three properties for escape.
+iti72:2.2 | S: What three? | T: Which three?
+iti72:2.3 | S: Renunciation is the escape from sensual pleasures. Formlessness is the escape from form. Cessation is the escape from whatever is created, conditioned, and dependently originated. | T: This is the escape from sensuality: renunciation. This is the escape from form: formlessness. And as for whatever has come into being, is fabricated & dependently co-arisen, the escape from that is cessation.
+iti72:2.4 | S: These are the three elements of escape.” | T: These are the three properties for escape.”
+iti72:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti72:2.6 | S: On this it is said: | T: (none)
+iti72:3.1 | S: “Knowing the escape from sensuality, | T: Knowing the escape from sensuality,
+iti72:3.2 | S: and form’s transcendence, | T: & the overcoming of forms
+iti72:3.3 | S: one always keen touches | T: –ardent always– touching the stilling
+iti72:3.4 | S: the stilling of all activities. | T: of all fabrications:
+iti72:4.1 | S: That mendicant sees rightly, | T: he is a monk who’s seen rightly.
+iti72:4.2 | S: and when freed in regards to that, | T: From that he is there released.
+iti72:4.3 | S: that peaceful sage, with perfect insight, | T: A master of direct knowing, at peace, he is a sage
+iti72:4.4 | S: has truly slipped their yoke.” | T: gone beyond bonds.
+iti72:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti72:5.2 | P: Tatiyaṁ. | T: (none)
+
+## iti80
+iti80:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti80:2.1 | S: “Mendicants, there are these three unskillful thoughts. | T: “Monks, there are these three kinds of unskillful thinking.
+iti80:2.2 | S: What three? | T: Which three?
+iti80:2.3 | S: The thought of status; of getting material things, honor, and popularity; and of fondness for others. | T: Thinking concerned with not wanting to be despised; thinking concerned with gains, offerings, & tribute; thinking concerned with an empathy for others.
+iti80:2.4 | S: These are the three unskillful thoughts.” | T: There are three kinds of unskillful thinking.”
+iti80:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti80:2.6 | S: On this it is said: | T: (none)
+iti80:3.1 | S: “One concerned with being looked up to, | T: Fettered to not wanting to be despised;
+iti80:3.2 | S: with possessions, honor, and respect, | T: to gains, offerings, respect;
+iti80:3.3 | S: with sharing joys with friends, | T: to delight in companions:
+iti80:3.4 | S: is far from the ending of fetters. | T: you’re far from the ending of fetters.
+iti80:4.1 | S: But one who gives up children and herds, | T: But whoever here, having abandoned sons, cattle,
+iti80:4.2 | S: marriage and acquisitions— | T: marriage, intimates:
+iti80:4.3 | S: such a mendicant is capable | T: he’s capable –a monk like this–
+iti80:4.4 | S: of experiencing the highest awakening.” | T: of touching superlative self-awakening.
+iti80:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti80:5.2 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.35
+sn12.35:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.35:1.2 | S: “Ignorance is a requirement for choices. | T: (the Blessed One said,) “From ignorance as a requisite condition come fabrications.…From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, & despair come into play.
+sn12.35:1.3 | S: Choices are a requirement for consciousness. … | T: (none)
+sn12.35:1.4 | S: That is how this entire mass of suffering originates.” | T: Such is the origination of this entire mass of stress & suffering.”
+sn12.35:1.5 | S: When this was said, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One:
+sn12.35:1.6 | S: “What are old age and death, sir, and who do they belong to?” | T: “Which is the aging-&-death, lord, and whose is the aging-&-death?”
+sn12.35:1.7 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What are old age and death, and who do they belong to?’ Or you might say, ‘Old age and death are one thing, who they belong to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said. “If one were to ask, ‘Which is the aging-&-death, and whose is the aging-&-death?’ and if one were to say, ‘Aging-&-death are one thing, and the aging-&-death are something/someone else’s,’ both of them would have the same meaning, even though their words would differ.
+sn12.35:1.8 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: When one is of the view that the soul is the same as the body, there is no leading the holy life.
+sn12.35:1.9 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: And when one is of the view that the soul is one thing and the body another, there is no leading the holy life.
+sn12.35:1.10 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn12.35:1.11 | S: ‘Rebirth is a requirement for old age and death.’” | T: From birth as a requisite condition comes aging-&-death.”
+sn12.35:2.1 | S: “What is rebirth, sir, and who does it belong to?” | T: “Which is the birth, lord, and whose is the birth?”
+sn12.35:2.2 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is rebirth, and who does it belong to?’ Or you might say, ‘Rebirth is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said.…
+sn12.35:2.3 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: (none)
+sn12.35:2.4 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: (none)
+sn12.35:2.5 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: (none)
+sn12.35:2.6 | S: ‘Continued existence is a requirement for rebirth.’” | T: “From becoming as a requisite condition comes birth.”
+sn12.35:3.1 | S: “What is continued existence, sir, and who is it for?” | T: “Which is the becoming, lord, and whose is the becoming?”
+sn12.35:3.2 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is continued existence, and who does it belong to?’ Or you might say, ‘Continued existence is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said.…
+sn12.35:3.3 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: (none)
+sn12.35:3.4 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: (none)
+sn12.35:3.5 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: (none)
+sn12.35:3.6 | S: ‘Grasping is a requirement for continued existence.’ … | T: “From clinging as a requisite condition comes becoming.” “Which is the clinging, lord, and whose is the clinging?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.7 | S: ‘Craving is a requirement for grasping.’ … | T: “From craving as a requisite condition comes clinging.” “Which is the craving, lord, and whose is the craving?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.8 | S: ‘Feeling is a requirement for craving.’ … | T: “From feeling as a requisite condition comes craving.” “Which is the feeling, lord, and whose is the feeling?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.9 | S: ‘Contact is a requirement for feeling.’ … | T: “From contact as a requisite condition comes feeling.” “Which is the contact, lord, and whose is the contact?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.10 | S: ‘The six sense fields are requirements for contact.’ … | T: “From the six sense media as a requisite condition comes contact.” “Which are the six sense media, lord, and whose are the six sense media?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.11 | S: ‘Name and form are requirements for the six sense fields.’ … | T: “From name-&-form as a requisite condition come the six sense media.” “Which is the name-&-form, lord, and whose is the name-&-form?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.12 | S: ‘Consciousness is a requirement for name and form.’ … | T: “From consciousness as a requisite condition comes name-&-form.” “Which is the consciousness, lord, and whose is the consciousness?” “Not a valid question,” the Blessed One said.…
+sn12.35:3.13 | S: ‘Choices are a requirement for consciousness.’” | T: “From fabrications as a requisite condition comes consciousness.”
+sn12.35:4.1 | S: “What are choices, sir, and who do they belong to?” | T: “Which are the fabrications, lord, and whose are the fabrications?”
+sn12.35:4.2 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What are choices, and who do they belong to?’ Or you might say, ‘Choices are one thing, who they belong to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said. “If one were to ask, ‘Which are the fabrications, and whose are the fabrications?’ and if one were to say, ‘Fabrications are one thing, and these fabrications are something/someone else’s,’ both of them would have the same meaning, even though their words would differ.
+sn12.35:4.3 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: When one is of the view that the life-principle is the same as the body, there is no leading the holy life.
+sn12.35:4.4 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: And when one is of the view that the life-principle is one thing and the body another, there is no leading the holy life.
+sn12.35:4.5 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn12.35:4.6 | S: ‘Ignorance is a requirement for choices.’ | T: From ignorance as a requisite condition come fabrications.
+sn12.35:5.1 | S: When ignorance fades away and ceases with no residue left behind, then any twists, ducks, and dodges are given up: | T: “Now from the remainderless fading & cessation of that very ignorance, every one of these writhings & wrigglings & wigglings—
+sn12.35:5.2 | S: ‘What are old age and death, and who do they belong to?’ or ‘old age and death are one thing, who they belong to is another’, or ‘the soul and the body are one and the same’, or ‘the soul is one thing, the body another.’ | T: ‘Which aging-&-death, and whose aging-&-death?’ or ‘Aging-&-death are one thing, and this aging-&-death are something/someone else’s’ or ‘The life-principle is the same as the body,’ or ‘The life-principle is one thing and the body another’—
+sn12.35:5.3 | S: These are all cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: are abandoned, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+sn12.35:6.1 | S: When ignorance fades away and ceases no residue left behind, then any twists, ducks, and dodges are given up: | T: “From the remainderless fading & cessation of that very ignorance, every one of these writhings & wrigglings & wigglings—
+sn12.35:6.2 | S: ‘What is rebirth, and who does it belong to?’ or ‘rebirth is one thing, who it belongs to is another’, or ‘the soul and the body are one and the same’, or ‘the soul is one thing, the body another.’ | T: ‘Which is the birth.…
+sn12.35:6.3 | S: These are all cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: (none)
+sn12.35:7.1 | S: When ignorance fades away and ceases no residue left behind, then any twists, ducks, and dodges are given up: | T: (none)
+sn12.35:7.2 | S: ‘What is continued existence …’ | T: Which is the becoming.…
+sn12.35:7.3 | S: ‘What is grasping …’ | T: Which is the clinging.…
+sn12.35:7.4 | S: ‘What is craving …’ | T: Which is the craving.…
+sn12.35:7.5 | S: ‘What is feeling …’ | T: Which is the feeling.…
+sn12.35:7.6 | S: ‘What is contact …’ | T: Which is the contact.…
+sn12.35:7.7 | S: ‘What are the six sense fields …’ | T: Which are the six sense media.…
+sn12.35:7.8 | S: ‘What are name and form …’ | T: Which is the name-&-form.…
+sn12.35:7.9 | S: ‘What is consciousness …’ | T: Which is the consciousness.…
+sn12.35:8.1 | S: When ignorance fades away and ceases no residue left behind, then any twists, ducks, and dodges are given up: | T: (none)
+sn12.35:8.2 | S: ‘What are choices, and who do they belong to?’ or ‘choices are one thing, who they belong to is another’, or ‘the soul and the body are one and the same’, or ‘the soul is one thing, the body another.’ | T: Which are the fabrications, and whose are the fabrications?’ or ‘Fabrications are one thing, and these fabrications are something/someone else’s’ or ‘The soul is the same as the body,’ or ‘The soul is one thing and the body another’—
+sn12.35:8.3 | S: These are all cut off at the root, made like a palm stump, obliterated, and unable to arise in the future.” | T: are abandoned, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.”
+sn12.35:8.4 | P: Pañcamaṁ. | T: (none)
+
+## iti28
+iti28:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti28:2.1 | S: “Mendicants, when a mendicant has two qualities they live unhappily in this very life—with distress, anguish, and fever— | T: “Endowed with two things, monks, a monk lives in stress in the present life–troubled, distressed, & feverish–
+iti28:2.2 | S: and when the body breaks up, after death, they can expect a bad rebirth. | T: and at the break-up of the body, after death, a bad destination can be expected.
+iti28:2.3 | S: What two? | T: Which two?
+iti28:2.4 | S: Not guarding the sense doors and eating too much. | T: A lack of guarding of the doors of the sense faculties, and knowing no moderation in food.
+iti28:2.5 | S: When a mendicant possesses these two qualities they live unhappily in this very life—with distress, anguish, and fever— | T: Endowed with these two things, a monk lives in stress in the present life–troubled, distressed, & feverish–
+iti28:2.6 | S: and when the body breaks up, after death, they can expect a bad rebirth.” | T: and at the break-up of the body, after death, a bad destination can be expected.”
+iti28:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti28:2.8 | S: On this it is said: | T: (none)
+iti28:3.1 | S: “Eye, ear, nose, | T: Eye & ear & nose,
+iti28:3.2 | S: tongue, body, and likewise mind: | T: tongue, body & mind:
+iti28:3.3 | S: a mendicant who leaves these | T: when a monk leaves these doors unguarded
+iti28:3.4 | S: sense doors unguarded— | T: (none)
+iti28:4.1 | S: immoderate in eating, | T: –knowing no moderation in food,
+iti28:4.2 | S: sense faculties unrestrained— | T: not restraining his senses–
+iti28:4.3 | S: reaps suffering | T: he experiences stress:
+iti28:4.4 | S: both physical and mental. | T: stress in body, stress in mind.
+iti28:5.1 | S: Burning in body, | T: Burning in body,
+iti28:5.2 | S: burning in mind, | T: burning in mind,
+iti28:5.3 | S: by day or by night | T: whether by day or by night,
+iti28:5.4 | S: such a person lives in suffering.” | T: one like this lives in suffering & stress.
+iti28:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti28:6.2 | P: Paṭhamaṁ. | T: (none)
+
+## iti41
+iti41:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti41:2.1 | S: “Those sentient beings are truly bereft, mendicants, who are bereft of noble wisdom. | T: “Monks, those beings are truly deprived who are deprived of noble discernment.
+iti41:2.2 | S: They live unhappily in this very life—with distress, anguish, and fever— | T: They live in stress in the present life–troubled, distressed, & feverish–
+iti41:2.3 | S: and when the body breaks up, after death, they can expect a bad rebirth. | T: and at the break-up of the body, after death, a bad destination can be expected.
+iti41:2.4 | S: Those sentient beings are not bereft who are not bereft of noble wisdom. | T: “Those beings are not deprived who are not deprived of noble discernment.
+iti41:2.5 | S: In this very life they’re happy—free of distress, anguish, and fever— | T: They live in ease in the present life–untroubled, undistressed, & not feverish–
+iti41:2.6 | S: and when the body breaks up, after death, they can expect a good rebirth.” | T: and at the break-up of the body, after death, a good destination can be expected.
+iti41:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti41:2.8 | S: On this it is said: | T: (none)
+iti41:3.1 | S: “See the world with its gods, | T: Look at the world –including its heavenly beings:
+iti41:3.2 | S: bereft of wisdom, | T: deprived of discernment,
+iti41:3.3 | S: habituated to name and form, | T: making an abode in name-&-form,
+iti41:3.4 | S: imagining this is truth. | T: it conceives that ‘This is the truth.’
+iti41:4.1 | S: Wisdom is best in the world, | T: The best discernment in the world
+iti41:4.2 | S: as it leads to penetration, | T: is what leads to penetration,
+iti41:4.3 | S: through which one rightly understands | T: for it rightly discerns
+iti41:4.4 | S: the ending of rebirth and continued existence. | T: the total ending of birth & becoming.
+iti41:5.1 | S: Gods and humans envy them, | T: Human & heavenly beings hold them dear:
+iti41:5.2 | S: the Buddhas, ever mindful, | T: those who are self-awakened, mindful,
+iti41:5.3 | S: of laughing wisdom, | T: (none)
+iti41:5.4 | S: bearing their final body.” | T: bearing their last bodies with joyful discernment.
+iti41:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti41:6.2 | P: Catutthaṁ. | T: (none)
+
+## sn12.51
+sn12.51:1.1 | S: So I have heard. | T: I have heard that
+sn12.51:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn12.51:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks:
+sn12.51:1.4 | S: “Mendicants!” | T: “Monks!”
+sn12.51:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+sn12.51:1.6 | S: The Buddha said this: | T: The Blessed One said,
+sn12.51:2.1 | S: “Mendicants, when a mendicant is inquiring, how do you define when they are inquiring for the complete ending of suffering?” | T: “To what extent should a monk, when investigating, investigate for the total right ending of suffering & stress?”
+sn12.51:2.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would elaborate on the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn12.51:2.3 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “In that case, monks, listen & pay close attention. I will speak.”
+sn12.51:2.4 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+sn12.51:2.5 | S: The Buddha said this: | T: The Blessed One said:
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.51:3.1 | S: “Mendicants, take a mendicant who makes an inquiry: | T: “There is the case where a monk, when investigating, investigates (in this way).
+sn12.51:3.2 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. | T: ‘The aging-&-death that arises in the world as many different kinds of suffering & stress:
+sn12.51:3.3 | S: What is the source, origin, birthplace, and inception of this suffering? | T: What is its cause, what is its origination, what is its source, what brings it into play?
+sn12.51:3.4 | S: When what exists do old age and death come to be? When what does not exist do old age and death not come to be?’ | T: When what exists does aging-&death exist? When what does not exist does aging-&-death not exist?’
+sn12.51:3.5 | S: While making an inquiry they understand: | T: “As he is investigating, he discerns:
+sn12.51:3.6 | S: ‘The suffering that arises in the world starting with old age and death takes many and diverse forms. The source of this suffering is rebirth. | T: ‘The aging-&-death that arises in the world as many different kinds of suffering & stress has birth as its cause, birth as its origination, birth as its source, birth as what brings it into play.
+sn12.51:3.7 | S: When rebirth exists, old age and death come to be. When rebirth doesn’t exist, old age and death don’t come to be.’ | T: When birth exists, aging-&-death exists. When birth does not exist, aging-&-death doesn’t exist.’
+sn12.51:4.1 | S: They understand old age and death, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He discerns aging-&-death; he discerns the origination of aging-&-death; he discerns the cessation of aging-&-death. And as for the path of practice that is proper for leading to the cessation of aging-&-death, he discerns that and practices accordingly.
+sn12.51:4.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of old age and death. | T: This is called a monk who practices for the total right ending of suffering & stress, for the cessation of aging-&-death.
+sn12.51:5.1 | S: Then they inquire further: | T: “Investigating further, he investigates:
+sn12.51:5.2 | S: ‘But what is the source of this rebirth? When what exists does rebirth come to be? And when what does not exist does rebirth not come to be?’ | T: ‘Birth: What is its cause, what is its origination, what is its source, what brings it into play? When what exists does birth exist? When what does not exist does birth not exist?’
+sn12.51:5.3 | S: While making an inquiry they understand: | T: “As he is investigating, he discerns:
+sn12.51:5.4 | S: ‘Continued existence is the source of rebirth. | T: ‘Birth has becoming as its cause, becoming as its origination, becoming as its source, becoming as what brings it into play.
+sn12.51:5.5 | S: When continued existence exists, rebirth comes to be. When continued existence does not exist, rebirth doesn’t come to be.’ | T: When becoming exists, birth exists. When becoming does not exist, birth doesn’t exist.’
+sn12.51:6.1 | S: They understand rebirth, its origin, its cessation, and the fitting practice for its cessation. And they practice in line with that path. | T: “He discerns birth; he discerns the origination of birth; he discerns the cessation of birth. And as for the path of practice that is proper for leading to the cessation of birth, he discerns that and practices accordingly.
+sn12.51:6.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of rebirth. | T: This is called a monk who practices for the total right ending of suffering & stress, for the cessation of birth.
+sn12.51:7.1 | S: Then they inquire further: | T: “Investigating further, he investigates:
+sn12.51:7.2 | S: ‘But what is the source of this continued existence? …’ … | T: ‘Becoming: What is its cause? …
+sn12.51:7.3 | S: ‘But what is the source of this grasping? …’ … | T: Clinging: What is its cause? …
+sn12.51:7.4 | S: ‘But what is the source of this craving? …’ … | T: Craving: What is its cause? …
+sn12.51:7.5 | S: ‘But what is the source of this feeling? …’ … | T: Feeling: What is its cause? …
+sn12.51:7.6 | S: ‘But what is the source of this contact? …’ … | T: Contact: What is its cause? …
+sn12.51:7.7 | S: ‘But what is the source of these six sense fields? …’ … | T: The sixfold sense-media: What is its cause? …
+sn12.51:7.8 | S: ‘But what is the source of this name and form? …’ … | T: Name-&-form: What is its cause? …
+sn12.51:7.9 | S: ‘But what is the source of this consciousness? …’ … | T: Consciousness: What is its cause? …
+sn12.51:7.10 | S: ‘But what is the source of these choices? | T: Fabrications: What is their cause, what is their origination, what is their source, what brings them into play?
+sn12.51:7.11 | S: When what exists do choices come to be? When what does not exist do choices not come to be?’ | T: When what exists do fabrications exist? When what does not exist do fabrications not exist?’
+sn12.51:7.12 | S: While making an inquiry they understand: | T: “As he is investigating, he discerns:
+sn12.51:7.13 | S: ‘Ignorance is the source of choices. | T: ‘Fabrications have ignorance as their cause, ignorance as their origination, ignorance as their source, ignorance as what brings them into play.
+sn12.51:7.14 | S: When ignorance exists, choices come to be. When ignorance does not exist, choices don’t come to be.’ | T: When ignorance exists, fabrications exist. When ignorance does not exist, fabrications don’t exist.’
+sn12.51:8.1 | S: They understand choices, their origin, their cessation, and the fitting practice for their cessation. And they practice in line with that path. | T: “He discerns fabrications; he discerns the origination of fabrications; he discerns the cessation of fabrications. And as for the path of practice that is proper for leading to the cessation of fabrications, he discerns that and practices accordingly.
+sn12.51:8.2 | S: This is called a mendicant who is practicing for the complete ending of suffering, for the cessation of choices. | T: This is called a monk who practices for the total right ending of suffering & stress, for the cessation of fabrications.
+sn12.51:9.1 | S: If an ignoramus makes a good choice, consciousness passes on by means of goodness. | T: “A person immersed in ignorance: If he fabricates a meritorious fabrication, his consciousness goes on to merit.
+sn12.51:9.2 | S: If they make a bad choice, consciousness passes on by means of badness. | T: If he fabricates a demeritorious fabrication, his consciousness goes on to demerit.
+sn12.51:9.3 | S: If they make an imperturbable choice, consciousness passes on by means of imperturbability. | T: If he fabricates an imperturbable fabrication, his consciousness goes on to the imperturbable.
+sn12.51:9.4 | S: When a mendicant has given up ignorance and given rise to knowledge, with the fading away of ignorance and the arising of knowledge they don’t make a good choice, a bad choice, or an imperturbable choice. | T: “When ignorance is abandoned by a monk, clear knowing arises. From the fading of ignorance and the arising of clear knowing, he neither fabricates a meritorious fabrication nor a demeritorious fabrication nor an imperturbable fabrication.
+sn12.51:9.5 | S: Not choosing or intending, they don’t grasp at anything in the world. | T: Neither fabricating nor willing, he is not sustained by [does not cling to] anything in the world.
+sn12.51:9.6 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Unsustained, he is not agitated. Unagitated, he is totally unbound right within.
+sn12.51:9.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+sn12.51:10.1 | S: If they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “He senses a feeling of pleasure. He discerns, ‘It is fleeting.’ He discerns, ‘It is not grasped at.’ He discerns, ‘It is not relished.’
+sn12.51:10.2 | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: He senses a feeling of pain. He discerns, ‘It is fleeting.’ He discerns, ‘It is not grasped at.’ He discerns, ‘It is not relished.’
+sn12.51:10.3 | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: He senses a feeling of neither-pleasure-nor-pain. He discerns, ‘It is fleeting.’ He discerns, ‘It is not grasped at.’ He discerns, ‘It is not relished.’
+sn12.51:10.4 | S: If they feel a pleasant feeling, they feel it detached. | T: Sensing a feeling of pleasure, he senses it disjoined from it.
+sn12.51:10.5 | S: If they feel a painful feeling, they feel it detached. | T: Sensing a feeling of pain, he senses it disjoined from it.
+sn12.51:10.6 | S: If they feel a neutral feeling, they feel it detached. | T: Sensing a feeling of neither-pleasure-nor-pain, he senses it disjoined from it.
+sn12.51:11.1 | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: When sensing a feeling limited to the body, he discerns that ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, he discerns that ‘I am sensing a feeling limited to life.’
+sn12.51:11.2 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He discerns that ‘With the break-up of the body, after the termination of life, all that is experienced, not being relished, will grow cold right here, while the corpse will remain.’
+sn12.51:12.1 | S: Suppose a person were to remove a hot clay pot from a potter’s kiln and place it down on level ground. | T: “Just as if a man, having removed a heated jar from a kiln, were to place it on level ground:
+sn12.51:12.2 | S: Its heat would dissipate right there, and the shards would be left behind. | T: Whatever heat in the jar would subside right there, while the fired clay would remain.
+sn12.51:12.3 | S: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: In the same way, when sensing a feeling limited to the body, he discerns that ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, he discerns that ‘I am sensing a feeling limited to life.’
+sn12.51:12.4 | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here. Only bodily remains will be left.’ | T: He discerns that ‘With the break-up of the body, after the termination of life, all that is experienced, not being relished, will grow cold right here, while the corpse will remain.’”
+sn12.51:13.1 | S: What do you think, mendicants? | T: “What do you think, monks?
+sn12.51:13.2 | S: Would a mendicant who has ended the defilements still make good choices, bad choices, or imperturbable choices?” | T: Would a monk whose effluents were ended fabricate a meritorious or a demeritorious or an imperturbable fabrication?”
+sn12.51:13.3 | S: “No, sir.” | T: “No, lord.”
+sn12.51:14.1 | S: “And when there are no choices at all, with the cessation of choices, would consciousness still be found?” | T: “With the total non-existence of fabrications, from the cessation of fabrications, would consciousness be discernible [manifest]?”
+sn12.51:14.2 | S: “No, sir.” | T: “No, lord.”
+sn12.51:15.1 | S: “And when there’s no consciousness at all, would name and form still be found?” | T: (none)
+sn12.51:15.2 | S: “No, sir.” | T: (none)
+sn12.51:16.1 | S: “And when there are no name and form at all, would the six sense fields still be found?” | T: (none)
+sn12.51:16.2 | S: “No, sir.” | T: (none)
+sn12.51:17.1 | S: “And when there are no six sense fields at all, would contact still be found?” | T: (none)
+sn12.51:17.2 | S: “No, sir.” | T: (none)
+sn12.51:18.1 | S: “And when there’s no contact at all, would feeling still be found?” | T: (none)
+sn12.51:18.2 | S: “No, sir.” | T: (none)
+sn12.51:19.1 | S: “And when there’s no feeling at all, would craving still be found?” | T: (none)
+sn12.51:19.2 | S: “No, sir.” | T: (none)
+sn12.51:20.1 | S: “And when there’s no craving at all, would grasping still be found?” | T: (none)
+sn12.51:20.2 | S: “No, sir.” | T: (none)
+sn12.51:21.1 | S: “And when there’s no grasping at all, would continued existence still be found?” | T: (none)
+sn12.51:21.2 | S: “No, sir.” | T: (none)
+sn12.51:22.1 | S: “And when there’s no continued existence at all, would rebirth still be found?” | T: (none)
+sn12.51:22.2 | S: “No, sir.” | T: (none)
+sn12.51:23.1 | S: “And when there’s no rebirth at all, would old age and death still be found?” | T: [And similarly down to:] “With the total non-existence of birth, from the cessation of birth, would aging-&-death be discernible?”
+sn12.51:23.2 | S: “No, sir.” | T: “No, lord.”
+sn12.51:24.1 | S: “Good, good, mendicants! That’s how it is, not otherwise. | T: “Very good, monks. Very good. Just so should you suppose it.
+sn12.51:24.2 | S: Trust me on this, mendicants; be convinced. Have no doubts or uncertainties in this matter. | T: Just so should you be convinced. Just so should you believe. Do not be doubtful; do not be uncertain.
+sn12.51:24.3 | S: Just this is the end of suffering.” | T: This, just this, is the end of suffering & stress.”
+sn12.51:24.4 | P: Paṭhamaṁ. | T: (none)
+
+## sn9.14
+sn9.14:1.1 | S: At one time one of the mendicants was staying in the land of the Kosalans in a certain forest grove. | T: I have heard that on one occasion a certain monk was staying among the Kosalans in a forest grove.
+sn9.14:1.2 | S: Now at that time, after the meal, on their return from almsround, that mendicant plunged into a lotus pond and sniffed a pink lotus. | T: Now at that time, after his meal, returning from his almsround, he went down to a lotus pond and sniffed a red lotus.
+sn9.14:1.3 | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.14:2.1 | S: “This water flower has not been given. | T: “You sniff this water-born flower that hasn’t been given to you.
+sn9.14:2.2 | S: When you sniff it, | T: (none)
+sn9.14:2.3 | S: this is one factor of theft. | T: This, dear sir, is a factor of stealing.
+sn9.14:2.4 | S: Good fellow, you are a thief of scent!” | T: You are a thief of a scent.”
+sn9.14:3.1 | S: “I do not take, nor do I break; | T: The monk: “I don’t take, don’t damage.
+sn9.14:3.2 | S: I sniff the water flower from afar. | T: I sniff at the lotus from far away.
+sn9.14:3.3 | S: So how do you explain why | T: So why do you call me a thief of a scent?
+sn9.14:3.4 | S: you call me a thief of scent? | T: (none)
+sn9.14:4.1 | S: Why don’t you accuse someone | T: One who digs up the stalks,
+sn9.14:4.2 | S: who does such vandalizing | T: (none)
+sn9.14:4.3 | S: as digging up the roots, | T: (none)
+sn9.14:4.4 | S: or breaking off the flowers?” | T: damages flowers, one of such ruthless behavior: why don’t you say it of him?”
+sn9.14:5.1 | S: “I have nothing to say | T: (none)
+sn9.14:5.2 | S: to a person who is a crude vandal, | T: The devatā: “A person ruthless & grasping,
+sn9.14:5.3 | S: soiled like a used nappy. | T: smeared like a nursing diaper: to him I have nothing to say.
+sn9.14:5.4 | S: You’re the one who deserves to be spoken to. | T: It’s you to whom I should speak.
+sn9.14:6.1 | S: To the man who has not a blemish, | T: To a person unblemished,
+sn9.14:6.2 | S: who is always seeking purity, | T: constantly searching for purity,
+sn9.14:6.3 | S: even a hair-tip of evil | T: a hair-tip’s worth of evil
+sn9.14:6.4 | S: seems as big as a stormcloud.” | T: seems as large as a cloud.”
+sn9.14:7.1 | S: “Indeed, O spirit, you understand me, | T: The monk: “Yes, yakkha, you understand me
+sn9.14:7.2 | S: and you empathize with me. | T: and show me sympathy.
+sn9.14:7.3 | S: Please speak to me again, | T: Warn me again, yakkha,
+sn9.14:7.4 | S: whenever you see something like this.” | T: whenever again you see something like this.”
+sn9.14:8.1 | S: “We are no dependent of yours, | T: The devatā: “I don’t depend on you for my living
+sn9.14:8.2 | S: nor are we your servant. | T: nor am I your hired hand.
+sn9.14:8.3 | S: You yourself should know, mendicant, | T: You, monk, you yourself should know
+sn9.14:8.4 | S: the way that leads to a good place.” | T: how to go to the good destination.”
+sn9.14:9.1 | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+sn9.14:9.2 | P: Vanavaggo paṭhamo. | T: (none)
+sn9.14:10.0 | P: Tassuddānaṁ | T: (none)
+sn9.14:10.1 | P: Vivekaṁ upaṭṭhānañca, | T: (none)
+sn9.14:10.2 | P: Kassapagottena sambahulā; | T: (none)
+sn9.14:10.3 | P: Ānando anuruddho ca, | T: (none)
+sn9.14:10.4 | P: Nāgadattañca kulagharaṇī. | T: (none)
+sn9.14:11.1 | P: Vajjiputto ca vesālī, | T: (none)
+sn9.14:11.2 | P: Sajjhāyena ayoniso; | T: (none)
+sn9.14:11.3 | P: Majjhanhikālamhi pākatindriya— | T: (none)
+sn9.14:11.4 | P: Padumapupphena cuddasa bhaveti. | T: (none)
+sn9.14:11.5 | S: The Linked Discourses in the Forest are complete. | T: (none)
+
+## sn10.12
+sn10.12:1.1 | S: So I have heard. | T: I have heard that
+sn10.12:1.2 | S: At one time the Buddha was staying near Āḷavī in the haunt of the native spirit Āḷavaka. | T: on one occasion the Blessed One was staying near Āḷavī in the haunt of the Āḷavaka yakkha.
+sn10.12:1.3 | S: Then the native spirit Āḷavaka went up to the Buddha, and said to him: | T: Then the Āḷavaka yakkha went to the Blessed One and on arrival said to him:
+sn10.12:1.4 | S: “Get out, ascetic!” | T: “Get out, contemplative!”
+sn10.12:1.5 | S: Saying, “All right, respectable sir,” the Buddha went out. | T: (Saying,) “All right, my friend,” the Blessed One went out.
+sn10.12:1.6 | S: “Get in, ascetic!” | T: “Come in, contemplative!”
+sn10.12:1.7 | S: Saying, “All right, respectable sir,” the Buddha went in. | T: (Saying,) “All right, my friend,” the Blessed One went in.
+sn10.12:1.8 | S: And for a second time the native spirit Āḷavaka said to the Buddha, | T: A second time…
+sn10.12:1.9 | S: “Get out, ascetic!” | T: (none)
+sn10.12:1.10 | S: Saying, “All right, respectable sir,” the Buddha went out. | T: (none)
+sn10.12:1.11 | S: “Get in, ascetic!” | T: (none)
+sn10.12:1.12 | S: Saying, “All right, respectable sir,” the Buddha went in. | T: (none)
+sn10.12:1.13 | S: And for a third time the native spirit Āḷavaka said to the Buddha, | T: A third time, the Āḷavaka yakkha said to the Blessed One,
+sn10.12:1.14 | S: “Get out, ascetic!” | T: “Get out, contemplative!”
+sn10.12:1.15 | S: Saying, “All right, respectable sir,” the Buddha went out. | T: (Saying,) “All right, my friend,” the Blessed One went out.
+sn10.12:1.16 | S: “Get in, ascetic!” | T: “Come in, contemplative!”
+sn10.12:1.17 | S: Saying, “All right, respectable sir,” the Buddha went in. | T: (Saying,) “All right, my friend,” the Blessed One went in.
+sn10.12:1.18 | S: And for a fourth time the native spirit Āḷavaka said to the Buddha, | T: Then a fourth time, the Āḷavaka yakkha said to the Blessed One,
+sn10.12:1.19 | S: “Get out, ascetic!” | T: “Get out, contemplative!”
+sn10.12:1.20 | S: “No, respectable sir, I won’t get out. | T: “I won’t go out, my friend.
+sn10.12:1.21 | S: Do what you must.” | T: Do what you have to do.”
+sn10.12:1.22 | S: “I will ask you a question, ascetic. | T: “I will ask you a question, contemplative.
+sn10.12:1.23 | S: If you don’t answer me, I’ll drive you insane, or explode your heart, or grab you by the feet and throw you to the far shore of the Ganges!” | T: If you can’t answer me, I will possess your mind or rip open your heart or, grabbing you by the feet, hurl you across the Ganges.”
+sn10.12:1.24 | S: “I don’t see anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans who could do that to me. | T: “My friend, I see no one in the cosmos with its devas, Māras & Brahmās, its contemplatives & brahmans, its royalty & commonfolk, who could possess my mind or rip open my heart or, grabbing me by the feet, hurl me across the Ganges.
+sn10.12:1.25 | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+sn10.12:2.1 | S: “What’s a person’s best wealth? | T: Āḷavaka: “What is a person’s highest wealth?
+sn10.12:2.2 | S: What brings happiness when practiced well? | T: What, when well-practiced, brings bliss?
+sn10.12:2.3 | S: What’s the sweetest taste of all? | T: What is the highest of savors?
+sn10.12:2.4 | S: The one they say has the best life: how do they live?” | T: Living in what way is one’s life called the best?”
+sn10.12:3.1 | S: “Faith here is a person’s best wealth. | T: The Buddha: “Conviction is a person’s highest wealth.
+sn10.12:3.2 | S: The teaching brings happiness when practiced well. | T: Dhamma, well-practiced, brings bliss.
+sn10.12:3.3 | S: Truth is the sweetest taste of all. | T: Truth is the highest of savors.
+sn10.12:3.4 | S: The one they say has the best life lives by wisdom.” | T: Living with discernment, one’s life is called best.”
+sn10.12:4.1 | S: “How do you cross the flood? | T: Āḷavaka: “How does one cross over the flood?
+sn10.12:4.2 | S: How do you cross the deluge? | T: How cross over the sea?
+sn10.12:4.3 | S: How do you get over suffering? | T: How does one overcome suffering & stress?
+sn10.12:4.4 | S: How do you get purified?” | T: How is a person purified?”
+sn10.12:5.1 | S: “By faith you cross the flood, | T: The Buddha: “Through conviction one crosses over the flood.
+sn10.12:5.2 | S: and by diligence the deluge. | T: Through heedfulness, the sea.
+sn10.12:5.3 | S: By energy you get past suffering, | T: Through persistence one overcomes suffering & stress.
+sn10.12:5.4 | S: and you’re purified by wisdom.” | T: Through discernment a person is purified.”
+sn10.12:6.1 | S: “How do you get wisdom? | T: Āḷavaka: “How does one gain discernment?
+sn10.12:6.2 | S: How do you earn wealth? | T: How does one find wealth?
+sn10.12:6.3 | S: How do you get a good reputation? | T: How does one attain honor?
+sn10.12:6.4 | S: How do you hold on to friends? | T: How bind friends to oneself?
+sn10.12:6.5 | S: How do the departed not grieve | T: (none)
+sn10.12:6.6 | S: when passing from this world to the next?” | T: Passing from this world to the next world, how does one not grieve?”
+sn10.12:7.1 | S: “One who is diligent and discerning | T: The Buddha: “Convinced of the arahants’ Dhamma for attaining unbinding, —heedful, observant—
+sn10.12:7.2 | S: gains wisdom by wanting to learn, | T: one listening well gains discernment.
+sn10.12:7.3 | S: having faith in the perfected ones, | T: (none)
+sn10.12:7.4 | S: and the teaching for becoming extinguished. | T: (none)
+sn10.12:8.1 | S: Being responsible, acting appropriately, | T: Doing what’s fitting, enduring burdens,
+sn10.12:8.2 | S: and working hard you earn wealth. | T: one with initiative finds wealth.
+sn10.12:8.3 | S: Truthfulness wins you a good reputation. | T: Through truth one attains honor.
+sn10.12:8.4 | S: You hold on to friends by giving. | T: Giving binds friends to oneself.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn10.12:8.5 | S: That’s how the departed do not grieve | T: (none)
+sn10.12:8.6 | S: when passing from this world to the next. | T: (none)
+sn10.12:9.1 | S: A faithful householder of discernment | T: (none)
+sn10.12:9.2 | S: who possesses these four qualities | T: Endowed with these four qualities, —truth, self-control, stamina, relinquishment— a householder of conviction,
+sn10.12:9.3 | S: does not grieve after passing away: | T: on passing away, doesn’t grieve.
+sn10.12:9.4 | S: truth, principle, steadfastness, and generosity. | T: (none)
+sn10.12:10.1 | S: Go ahead, ask others as well, | T: Now, go ask others,
+sn10.12:10.2 | S: there are many ascetics and brahmins. | T: common brahmans & contemplatives,
+sn10.12:10.3 | S: See whether anything better is found | T: if anything better than truth, self-control, stamina, & relinquishment here can be found.”
+sn10.12:10.4 | S: than truth, principle, generosity, and patience.” | T: (none)
+sn10.12:11.1 | S: “Why now would I question | T: Āḷavaka: “How could I go ask
+sn10.12:11.2 | S: the many ascetics and brahmins? | T: common brahmans & contemplatives?—
+sn10.12:11.3 | S: Today I understand | T: now that today I understand
+sn10.12:11.4 | S: what’s good for lives to come. | T: what benefits the next life.
+sn10.12:12.1 | S: It was truly for my benefit | T: It was truly for my well-being
+sn10.12:12.2 | S: that the Buddha came to stay at Āḷavī. | T: that the Awakened One came to stay in Āḷavī.
+sn10.12:12.3 | S: Today I understand | T: Today I understand
+sn10.12:12.4 | S: where a gift is very fruitful. | T: where what is given bears great fruit.
+sn10.12:13.1 | S: I myself will journey | T: (none)
+sn10.12:13.2 | S: village to village, town to town, | T: I’ll wander from village to village, town to town,
+sn10.12:13.3 | S: paying homage to the Buddha, | T: paying homage to the Self-awakened One
+sn10.12:13.4 | S: and the clear rightness of the teaching!” | T: & the true rightness of the Dhamma.”
+sn10.12:13.5 | P: Indakavaggo paṭhamo. | T: (none)
+sn10.12:14.0 | P: Tassuddānaṁ | T: (none)
+sn10.12:14.1 | P: Indako sakka sūci ca, | T: (none)
+sn10.12:14.2 | P: Maṇibhaddo ca sānu ca; | T: (none)
+sn10.12:14.3 | P: Piyaṅkara punabbasu sudatto ca, | T: (none)
+sn10.12:14.4 | P: Dve sukkā cīraāḷavīti dvādasa. | T: (none)
+sn10.12:14.5 | S: The Linked Discourses with Native Spirits are complete. | T: (none)
+
+## an5.196
+an5.196:1.1 | S: “Mendicants, before his awakening five great dreams appeared to the Realized One, the perfected one, the fully awakened Buddha, when he was still not awake but intent on awakening. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, five great dreams appeared to him.
+an5.196:1.2 | S: What five? | T: Which five?
+an5.196:1.3 | S: This great earth was his bed. Himalaya, king of mountains, was his pillow. His left hand was laid down in the eastern sea. His right hand was laid down in the western sea. And both his feet were laid down in the southern sea. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this great earth was his great bed. The Himalayas, king of mountains, was his pillow. His left hand rested in the eastern sea, his right hand in the western sea, and both feet in the southern sea.
+an5.196:1.4 | S: This is the first great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the first great dream that appeared to him.
+an5.196:2.1 | S: Next, a kind of grass called ‘the crosser’ grew up from his navel and stood pressing against the cloudy sky. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, a woody vine growing out of his navel stood reaching to the sky.
+an5.196:2.2 | S: This is the second great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the second great dream that appeared to him.
+an5.196:3.1 | S: Next, white caterpillars with black heads crawled up from his feet and covered his knees. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, white worms with black heads crawling up from his feet covered him as far as his knees.
+an5.196:3.2 | S: This is the third great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the third great dream that appeared to him.
+an5.196:4.1 | S: Next, four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, four different-colored birds coming from the four directions fell at his feet and turned entirely white.
+an5.196:4.2 | S: This is the fourth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fourth great dream that appeared to him.
+an5.196:5.1 | S: Next, he walked back and forth on top of a big mountain of filth while remaining unsoiled. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, he walked back & forth on top of a giant mountain of excrement but was not soiled by the excrement.
+an5.196:5.2 | S: This is the fifth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fifth great dream that appeared to him.
+an5.196:6.1 | S: Now, as to when, before his awakening, the Realized One, the perfected one, the fully awakened Buddha was still not awake but intent on awakening. This great earth was his bed. Himalaya, king of mountains, was his pillow. His left hand was laid down in the eastern sea. His right hand was laid down in the western sea. And both his feet were laid down in the southern sea. | T: “Now, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and this great earth was his great bed, the Himalayas, king of mountains, was his pillow, his left hand rested in the eastern sea, his right hand in the western sea, and both feet in the southern sea:
+an5.196:6.2 | S: This was fulfilled when the Buddha awakened to the perfect awakening. | T: (none)
+an5.196:6.3 | S: This was the first great dream that appeared to him while he was still not awakened. | T: this first great dream appeared to let him know that he would awaken to the unexcelled right self-awakening.
+an5.196:7.1 | S: As to when a kind of grass called ‘the crosser’ grew up from his navel and stood pressing against the cloudy sky. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and a woody vine growing out of his navel stood reaching to the sky:
+an5.196:7.2 | S: This was fulfilled when, after the Buddha had awakened to the noble eightfold path, it was fully revealed among gods and humans. | T: this second great dream appeared to let him know that when he had awakened to the noble eightfold path, he would proclaim it well as far as there are devas & human beings.
+an5.196:7.3 | S: This was the second great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:8.1 | S: As to when white caterpillars with black heads crawled up from his feet and covered his knees. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and white worms with black heads crawling up from his feet covered him as far as his knees:
+an5.196:8.2 | S: This was fulfilled when many white-clothed laypeople went for refuge to him for life. | T: this third great dream appeared to let him know that many white-clothed householders would go for life-long refuge to the Tathāgata.
+an5.196:8.3 | S: This was the third great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:9.1 | S: As to when four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and four different-colored birds coming from the four directions fell at his feet and turned entirely white:
+an5.196:9.2 | S: This was fulfilled when members of the four classes—aristocrats, brahmins, peasants, and menials—went forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One and realized supreme freedom. | T: this fourth great dream appeared to let him know that people from the four castes—brahmans, noble-warriors, merchants, and laborers—having gone forth from the home life into homelessness in the Dhamma & Vinaya taught by the Tathāgata, would realize unexcelled release.
+an5.196:9.3 | S: This was the fourth great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:10.1 | S: As to when he walked back and forth on top of a big mountain of filth while remaining unsoiled. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and he walked back & forth on top of a giant mountain of excrement but was not soiled by the excrement:
+an5.196:10.2 | S: This was fulfilled when the Realized One received robes, almsfood, lodgings, and medicines and supplies for the sick. And he used them untied, uninfatuated, unattached, seeing the drawbacks, and understanding the escape. | T: this fifth great dream appeared to let him know that the Tathāgata would receive gifts of robes, alms food, lodgings, & medicinal requisites to cure the sick, but he would use them unattached to them, uninfatuated, guiltless, seeing the drawbacks (of attachment to them), and discerning the escape from them.
+an5.196:10.3 | S: This was the fifth great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:11.1 | S: Before his awakening these five great dreams appeared to the Realized One, the perfected one, the fully awakened Buddha, when he was still not awake but intent on awakening.” | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, these five great dreams appeared to him.”
+an5.196:11.2 | P: Chaṭṭhaṁ. | T: (none)
+
+
+codex
+I’ve read the whole file. I’m reviewing the verse passages where word order differs, to separate clear boundary errors from sentences that legitimately span several lines.
+exec
+/bin/bash -lc "sed -n '25,45p;68,85p;145,165p;340,380p;398,414p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti72:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti72:2.1 | S: “Mendicants, there are these three elements of escape. | T: “Monks, there are these three properties for escape.
+iti72:2.2 | S: What three? | T: Which three?
+iti72:2.3 | S: Renunciation is the escape from sensual pleasures. Formlessness is the escape from form. Cessation is the escape from whatever is created, conditioned, and dependently originated. | T: This is the escape from sensuality: renunciation. This is the escape from form: formlessness. And as for whatever has come into being, is fabricated & dependently co-arisen, the escape from that is cessation.
+iti72:2.4 | S: These are the three elements of escape.” | T: These are the three properties for escape.”
+iti72:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti72:2.6 | S: On this it is said: | T: (none)
+iti72:3.1 | S: “Knowing the escape from sensuality, | T: Knowing the escape from sensuality,
+iti72:3.2 | S: and form’s transcendence, | T: & the overcoming of forms
+iti72:3.3 | S: one always keen touches | T: –ardent always– touching the stilling
+iti72:3.4 | S: the stilling of all activities. | T: of all fabrications:
+iti72:4.1 | S: That mendicant sees rightly, | T: he is a monk who’s seen rightly.
+iti72:4.2 | S: and when freed in regards to that, | T: From that he is there released.
+iti72:4.3 | S: that peaceful sage, with perfect insight, | T: A master of direct knowing, at peace, he is a sage
+iti72:4.4 | S: has truly slipped their yoke.” | T: gone beyond bonds.
+iti72:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti72:5.2 | P: Tatiyaṁ. | T: (none)
+
+## iti80
+iti80:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti80:2.1 | S: “Mendicants, there are these three unskillful thoughts. | T: “Monks, there are these three kinds of unskillful thinking.
+sn12.35:1.6 | S: “What are old age and death, sir, and who do they belong to?” | T: “Which is the aging-&-death, lord, and whose is the aging-&-death?”
+sn12.35:1.7 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What are old age and death, and who do they belong to?’ Or you might say, ‘Old age and death are one thing, who they belong to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said. “If one were to ask, ‘Which is the aging-&-death, and whose is the aging-&-death?’ and if one were to say, ‘Aging-&-death are one thing, and the aging-&-death are something/someone else’s,’ both of them would have the same meaning, even though their words would differ.
+sn12.35:1.8 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: When one is of the view that the soul is the same as the body, there is no leading the holy life.
+sn12.35:1.9 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: And when one is of the view that the soul is one thing and the body another, there is no leading the holy life.
+sn12.35:1.10 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn12.35:1.11 | S: ‘Rebirth is a requirement for old age and death.’” | T: From birth as a requisite condition comes aging-&-death.”
+sn12.35:2.1 | S: “What is rebirth, sir, and who does it belong to?” | T: “Which is the birth, lord, and whose is the birth?”
+sn12.35:2.2 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is rebirth, and who does it belong to?’ Or you might say, ‘Rebirth is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said.…
+sn12.35:2.3 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: (none)
+sn12.35:2.4 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: (none)
+sn12.35:2.5 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: (none)
+sn12.35:2.6 | S: ‘Continued existence is a requirement for rebirth.’” | T: “From becoming as a requisite condition comes birth.”
+sn12.35:3.1 | S: “What is continued existence, sir, and who is it for?” | T: “Which is the becoming, lord, and whose is the becoming?”
+sn12.35:3.2 | S: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is continued existence, and who does it belong to?’ Or you might say, ‘Continued existence is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. | T: “Not a valid question,” the Blessed One said.…
+sn12.35:3.3 | S: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. | T: (none)
+sn12.35:3.4 | S: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. | T: (none)
+sn12.35:3.5 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: (none)
+sn12.35:3.6 | S: ‘Grasping is a requirement for continued existence.’ … | T: “From clinging as a requisite condition comes becoming.” “Which is the clinging, lord, and whose is the clinging?” “Not a valid question,” the Blessed One said.…
+iti41:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti41:2.1 | S: “Those sentient beings are truly bereft, mendicants, who are bereft of noble wisdom. | T: “Monks, those beings are truly deprived who are deprived of noble discernment.
+iti41:2.2 | S: They live unhappily in this very life—with distress, anguish, and fever— | T: They live in stress in the present life–troubled, distressed, & feverish–
+iti41:2.3 | S: and when the body breaks up, after death, they can expect a bad rebirth. | T: and at the break-up of the body, after death, a bad destination can be expected.
+iti41:2.4 | S: Those sentient beings are not bereft who are not bereft of noble wisdom. | T: “Those beings are not deprived who are not deprived of noble discernment.
+iti41:2.5 | S: In this very life they’re happy—free of distress, anguish, and fever— | T: They live in ease in the present life–untroubled, undistressed, & not feverish–
+iti41:2.6 | S: and when the body breaks up, after death, they can expect a good rebirth.” | T: and at the break-up of the body, after death, a good destination can be expected.
+iti41:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti41:2.8 | S: On this it is said: | T: (none)
+iti41:3.1 | S: “See the world with its gods, | T: Look at the world –including its heavenly beings:
+iti41:3.2 | S: bereft of wisdom, | T: deprived of discernment,
+iti41:3.3 | S: habituated to name and form, | T: making an abode in name-&-form,
+iti41:3.4 | S: imagining this is truth. | T: it conceives that ‘This is the truth.’
+iti41:4.1 | S: Wisdom is best in the world, | T: The best discernment in the world
+iti41:4.2 | S: as it leads to penetration, | T: is what leads to penetration,
+iti41:4.3 | S: through which one rightly understands | T: for it rightly discerns
+iti41:4.4 | S: the ending of rebirth and continued existence. | T: the total ending of birth & becoming.
+iti41:5.1 | S: Gods and humans envy them, | T: Human & heavenly beings hold them dear:
+iti41:5.2 | S: the Buddhas, ever mindful, | T: those who are self-awakened, mindful,
+iti41:5.3 | S: of laughing wisdom, | T: (none)
+iti41:5.4 | S: bearing their final body.” | T: bearing their last bodies with joyful discernment.
+sn10.12:4.2 | S: How do you cross the deluge? | T: How cross over the sea?
+sn10.12:4.3 | S: How do you get over suffering? | T: How does one overcome suffering & stress?
+sn10.12:4.4 | S: How do you get purified?” | T: How is a person purified?”
+sn10.12:5.1 | S: “By faith you cross the flood, | T: The Buddha: “Through conviction one crosses over the flood.
+sn10.12:5.2 | S: and by diligence the deluge. | T: Through heedfulness, the sea.
+sn10.12:5.3 | S: By energy you get past suffering, | T: Through persistence one overcomes suffering & stress.
+sn10.12:5.4 | S: and you’re purified by wisdom.” | T: Through discernment a person is purified.”
+sn10.12:6.1 | S: “How do you get wisdom? | T: Āḷavaka: “How does one gain discernment?
+sn10.12:6.2 | S: How do you earn wealth? | T: How does one find wealth?
+sn10.12:6.3 | S: How do you get a good reputation? | T: How does one attain honor?
+sn10.12:6.4 | S: How do you hold on to friends? | T: How bind friends to oneself?
+sn10.12:6.5 | S: How do the departed not grieve | T: (none)
+sn10.12:6.6 | S: when passing from this world to the next?” | T: Passing from this world to the next world, how does one not grieve?”
+sn10.12:7.1 | S: “One who is diligent and discerning | T: The Buddha: “Convinced of the arahants’ Dhamma for attaining unbinding, —heedful, observant—
+sn10.12:7.2 | S: gains wisdom by wanting to learn, | T: one listening well gains discernment.
+sn10.12:7.3 | S: having faith in the perfected ones, | T: (none)
+sn10.12:7.4 | S: and the teaching for becoming extinguished. | T: (none)
+sn10.12:8.1 | S: Being responsible, acting appropriately, | T: Doing what’s fitting, enduring burdens,
+sn10.12:8.2 | S: and working hard you earn wealth. | T: one with initiative finds wealth.
+sn10.12:8.3 | S: Truthfulness wins you a good reputation. | T: Through truth one attains honor.
+sn10.12:8.4 | S: You hold on to friends by giving. | T: Giving binds friends to oneself.
+sn10.12:8.5 | S: That’s how the departed do not grieve | T: (none)
+sn10.12:8.6 | S: when passing from this world to the next. | T: (none)
+sn10.12:9.1 | S: A faithful householder of discernment | T: (none)
+sn10.12:9.2 | S: who possesses these four qualities | T: Endowed with these four qualities, —truth, self-control, stamina, relinquishment— a householder of conviction,
+sn10.12:9.3 | S: does not grieve after passing away: | T: on passing away, doesn’t grieve.
+sn10.12:9.4 | S: truth, principle, steadfastness, and generosity. | T: (none)
+sn10.12:10.1 | S: Go ahead, ask others as well, | T: Now, go ask others,
+sn10.12:10.2 | S: there are many ascetics and brahmins. | T: common brahmans & contemplatives,
+sn10.12:10.3 | S: See whether anything better is found | T: if anything better than truth, self-control, stamina, & relinquishment here can be found.”
+sn10.12:10.4 | S: than truth, principle, generosity, and patience.” | T: (none)
+sn10.12:11.1 | S: “Why now would I question | T: Āḷavaka: “How could I go ask
+sn10.12:11.2 | S: the many ascetics and brahmins? | T: common brahmans & contemplatives?—
+sn10.12:11.3 | S: Today I understand | T: now that today I understand
+sn10.12:11.4 | S: what’s good for lives to come. | T: what benefits the next life.
+sn10.12:12.1 | S: It was truly for my benefit | T: It was truly for my well-being
+sn10.12:12.2 | S: that the Buddha came to stay at Āḷavī. | T: that the Awakened One came to stay in Āḷavī.
+sn10.12:12.3 | S: Today I understand | T: Today I understand
+sn10.12:12.4 | S: where a gift is very fruitful. | T: where what is given bears great fruit.
+sn10.12:13.1 | S: I myself will journey | T: (none)
+sn10.12:13.2 | S: village to village, town to town, | T: I’ll wander from village to village, town to town,
+an5.196:3.1 | S: Next, white caterpillars with black heads crawled up from his feet and covered his knees. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, white worms with black heads crawling up from his feet covered him as far as his knees.
+an5.196:3.2 | S: This is the third great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the third great dream that appeared to him.
+an5.196:4.1 | S: Next, four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, four different-colored birds coming from the four directions fell at his feet and turned entirely white.
+an5.196:4.2 | S: This is the fourth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fourth great dream that appeared to him.
+an5.196:5.1 | S: Next, he walked back and forth on top of a big mountain of filth while remaining unsoiled. | T: “And further, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, he walked back & forth on top of a giant mountain of excrement but was not soiled by the excrement.
+an5.196:5.2 | S: This is the fifth great dream that appeared to the Realized One before his awakening. | T: When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, this was the fifth great dream that appeared to him.
+an5.196:6.1 | S: Now, as to when, before his awakening, the Realized One, the perfected one, the fully awakened Buddha was still not awake but intent on awakening. This great earth was his bed. Himalaya, king of mountains, was his pillow. His left hand was laid down in the eastern sea. His right hand was laid down in the western sea. And both his feet were laid down in the southern sea. | T: “Now, when the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and this great earth was his great bed, the Himalayas, king of mountains, was his pillow, his left hand rested in the eastern sea, his right hand in the western sea, and both feet in the southern sea:
+an5.196:6.2 | S: This was fulfilled when the Buddha awakened to the perfect awakening. | T: (none)
+an5.196:6.3 | S: This was the first great dream that appeared to him while he was still not awakened. | T: this first great dream appeared to let him know that he would awaken to the unexcelled right self-awakening.
+an5.196:7.1 | S: As to when a kind of grass called ‘the crosser’ grew up from his navel and stood pressing against the cloudy sky. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and a woody vine growing out of his navel stood reaching to the sky:
+an5.196:7.2 | S: This was fulfilled when, after the Buddha had awakened to the noble eightfold path, it was fully revealed among gods and humans. | T: this second great dream appeared to let him know that when he had awakened to the noble eightfold path, he would proclaim it well as far as there are devas & human beings.
+an5.196:7.3 | S: This was the second great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:8.1 | S: As to when white caterpillars with black heads crawled up from his feet and covered his knees. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and white worms with black heads crawling up from his feet covered him as far as his knees:
+an5.196:8.2 | S: This was fulfilled when many white-clothed laypeople went for refuge to him for life. | T: this third great dream appeared to let him know that many white-clothed householders would go for life-long refuge to the Tathāgata.
+an5.196:8.3 | S: This was the third great dream that appeared to him while he was still not awakened. | T: (none)
+an5.196:9.1 | S: As to when four birds of different colors came from the four quarters. They fell at his feet, turning pure white. | T: “When the Tathāgata—worthy & rightly self-awakened—was still just an unawakened bodhisatta, and four different-colored birds coming from the four directions fell at his feet and turned entirely white:
+an5.196:9.2 | S: This was fulfilled when members of the four classes—aristocrats, brahmins, peasants, and menials—went forth from the lay life to homelessness in the teaching and training proclaimed by the Realized One and realized supreme freedom. | T: this fourth great dream appeared to let him know that people from the four castes—brahmans, noble-warriors, merchants, and laborers—having gone forth from the home life into homelessness in the Dhamma & Vinaya taught by the Tathāgata, would realize unexcelled release.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-009.findings.tmp <<'EOF'
+iti72:3.4 starts: the stilling of all fabrications:
+sn12.35:1.3 starts: From birth as a requisite condition, then
+iti41:5.3 starts: bearing their last bodies with joyful discernment.
+iti41:5.4 none
+sn10.12:6.5 starts: Passing from this world to the next
+sn10.12:6.6 none
+sn10.12:9.1 starts: Endowed with these four qualities, —truth, self-control,
+sn10.12:9.2 none
+sn10.12:13.1 starts: I’ll wander from village to village, town
+sn10.12:13.2 starts: from village to village, town to town,
+an5.196:6.2 starts: this first great dream appeared to let
+an5.196:6.3 none
+EOF
+" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+12 lines reported.
+tokens used
+39,121
+12 lines reported.

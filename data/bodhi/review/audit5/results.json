@@ -1,0 +1,79 @@
+{
+  "status": "read independently, all 16 batches across both translators complete; proposals judged and repairs applied",
+  "reader": "Codex independent subagents using inherited session model",
+  "seed": 20261005,
+  "readRows": 2482,
+  "correctionKeys": 46,
+  "collections": {
+    "sn": {
+      "texts": 62,
+      "readRows": 1239,
+      "correctionKeys": 37,
+      "percent": 2.9863,
+      "errorKeys": [
+        "sn35.97:1.12",
+        "sn35.97:2.10",
+        "sn35.76:1.9",
+        "sn35.63:2.8",
+        "sn11.4:2.2",
+        "sn11.4:2.3",
+        "sn11.4:9.4",
+        "sn11.4:10.2",
+        "sn11.4:12.2",
+        "sn11.4:12.3",
+        "sn11.18:5.2",
+        "sn11.18:5.4",
+        "sn11.18:6.2",
+        "sn11.18:7.2",
+        "sn11.18:7.4",
+        "sn35.229:3.4",
+        "sn4.11:3.2",
+        "sn1.43:3.4",
+        "sn4.3:3.2",
+        "sn1.35:2.2",
+        "sn1.35:2.3",
+        "sn1.35:3.4",
+        "sn1.35:4.6",
+        "sn1.35:7.2",
+        "sn1.35:11.2",
+        "sn35.138:1.6",
+        "sn35.138:1.17",
+        "sn1.39:2.3",
+        "sn1.39:4.2",
+        "sn1.39:5.2",
+        "sn4.6:5.2",
+        "sn1.41:5.2",
+        "sn1.71:3.4",
+        "sn11.15:2.4",
+        "sn45.143:3.2",
+        "sn46.43:1.4",
+        "sn46.43:1.5"
+      ]
+    },
+    "an": {
+      "texts": 31,
+      "readRows": 1243,
+      "correctionKeys": 9,
+      "percent": 0.7241,
+      "errorKeys": [
+        "an4.25:2.2",
+        "an4.25:2.3",
+        "an4.25:3.4",
+        "an8.30:24.2",
+        "an3.34:13.2",
+        "an3.34:13.3",
+        "an3.34:14.2",
+        "an3.34:14.3",
+        "an5.35:2.4"
+      ]
+    },
+    "kn": {
+      "texts": 0,
+      "readRows": 0,
+      "correctionKeys": 0,
+      "percent": null,
+      "errorKeys": []
+    }
+  },
+  "rateMeaning": "Distinct reviewed boundary directives divided by displayed read --every rows, measured before audit repairs; not a post-repair estimate or corpus-wide certificate. Story headings at :0 remain in the displayed denominator."
+}

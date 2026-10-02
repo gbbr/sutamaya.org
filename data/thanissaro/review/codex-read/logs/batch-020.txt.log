@@ -1,0 +1,549 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd93-4888-7fd1-86ac-2831868d3955
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear line-boundary misplacements, and write only those findings to the specified output file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## thag7.1
+thag7.1:1.1 | S: Adorned with jewelry and all dressed up, | T: Ornamented, finely clothed,
+thag7.1:1.2 | S: with her garland and her makeup on, | T: garlanded, adorned,
+thag7.1:1.3 | S: and her feet so brightly rouged: | T: her feet stained red with lac,
+thag7.1:1.4 | S: the courtesan was wearing slippers. | T: she wore slippers: a courtesan.
+thag7.1:2.1 | S: Taking off her slippers in front of me, | T: Stepping out of her slippers—
+thag7.1:2.2 | S: her palms joined in greeting, | T: her hands raised before me, palm-to-palm over her heart—
+thag7.1:2.3 | S: smiling, she spoke to me | T: she softly, tenderly, in measured words spoke to me first:
+thag7.1:2.4 | S: so softly and so sweet: | T: (none)
+thag7.1:3.1 | S: “You’re too young to go forth— | T: “You are young, recluse.
+thag7.1:3.2 | S: come, stay in my teaching! | T: Heed my message:
+thag7.1:3.3 | S: Enjoy human sensual pleasures, | T: Partake of human sensuality.
+thag7.1:3.4 | S: I’ll give you riches. | T: I will give you luxury.
+thag7.1:3.5 | S: I promise this is the truth— | T: Truly I vow to you,
+thag7.1:3.6 | S: I swear it by the Sacred Flame. | T: I will tend to you as to a fire.
+thag7.1:4.1 | S: And when we’ve grown old together, | T: When we are old,
+thag7.1:4.2 | S: both of us leaning on staffs, | T: both leaning on canes,
+thag7.1:4.3 | S: we shall both go forth, | T: then we will both become recluses,
+thag7.1:4.4 | S: and hold a winning hand on both counts.” | T: winning the benefits of both worlds.”
+thag7.1:5.1 | S: I saw the courtesan seducing me, | T: And seeing her before me— a courtesan, ornamented, finely clothed,
+thag7.1:5.2 | S: her palms joined in greeting, | T: hands palm-to-palm over her heart—
+thag7.1:5.3 | S: adorned with jewelry and all dressed up, | T: (none)
+thag7.1:5.4 | S: set up like a snare of death. | T: like a snare of death laid out,
+thag7.1:6.1 | S: Then the realization | T: apt attention arose in me,
+thag7.1:6.2 | S: came upon me— | T: (none)
+thag7.1:6.3 | S: the danger became clear | T: the drawbacks appeared,
+thag7.1:6.4 | S: and I grew firmly disillusioned. | T: disenchantment stood at an even keel:
+thag7.1:7.1 | S: Then my mind was freed— | T: With that, my heart was released.
+thag7.1:7.2 | S: see the excellence of the Dhamma! | T: See the Dhamma’s true rightness!
+thag7.1:7.3 | S: I’ve attained the three knowledges, | T: The three knowledges have been attained;
+thag7.1:7.4 | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, done.
+thag7.1:7.5 | P: … Sundarasamuddo thero …. | T: (none)
+
+## sn1.21
+sn1.21:1.1 | S: At Sāvatthī. | T: (none)
+sn1.21:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: As she was standing there, the devatā recited this verse in the Blessed One’s presence:
+sn1.21:2.1 | S: “Like they’re struck by a sword, | T: “As if struck by a sword,
+sn1.21:2.2 | S: like their head was on fire, | T: as if his head were on fire,
+sn1.21:2.3 | S: a mendicant, mindful, should go forth, | T: a monk should live the wandering life —mindful—
+sn1.21:2.4 | S: to give up sensual desire.” | T: for the abandoning of sensual passion.”
+sn1.21:3.1 | S: “Like they’re struck by a sword, | T: The Buddha: “As if struck by a sword,
+sn1.21:3.2 | S: like their head was on fire, | T: as if his head were on fire,
+sn1.21:3.3 | S: a mendicant, mindful, should go forth, | T: a monk should live the wandering life —mindful—
+sn1.21:3.4 | S: to give up substantialist view.” | T: for the abandoning of self-identity.”
+
+## sn1.36
+sn1.36:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn1.36:1.2 | S: Then, late at night, several glorious deities of the host of a hundred felicities, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then many devatās of the Satullapa host, in the far extreme of the night, their extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One and, on arrival, having bowed down to him, stood to one side.
+sn1.36:1.3 | S: Standing to one side, one deity spoke this verse in the Buddha’s presence: | T: As they were standing there, one devatā recited these verses in the Blessed One’s presence:
+sn1.36:2.1 | S: “Faith is a person’s partner. | T: Conviction is a person’s companion.
+sn1.36:2.2 | S: If faithlessness doesn’t linger, | T: When you don’t take a stand in lack of conviction,
+sn1.36:2.3 | S: fame and renown are theirs, | T: prestige & honor come to you from that.
+sn1.36:2.4 | S: and when they discard this corpse they go to heaven.” | T: You go to heaven on abandoning the body.
+sn1.36:3.1 | S: Then another deity recited these verses in the Buddha’s presence: | T: (none)
+sn1.36:4.1 | S: “Give up anger, get rid of conceit, | T: You should discard anger, abandon conceit,
+sn1.36:4.2 | S: and get past all the fetters. | T: transcend all fetters.
+sn1.36:4.3 | S: Chains don’t torment one who has nothing, | T: When you’re not adhering to name & form, you have nothing—
+sn1.36:4.4 | S: not clinging to name and form.” | T: no bonds attack you.
+sn1.36:5.1 | S: “Fools and simpletons | T: They’re devoted to heedlessness —dullards, fools—
+sn1.36:5.2 | S: devote themselves to negligence. | T: (none)
+sn1.36:5.3 | S: But the wise protect diligence | T: while one who is wise protects heedfulness
+sn1.36:5.4 | S: as their best treasure. | T: as his highest wealth.
+sn1.36:6.1 | S: Don’t devote yourself to negligence, | T: Don’t devote yourself to heedlessness
+sn1.36:6.2 | S: or delight in erotic intimacy. | T: or to intimacy with sensual delight—
+sn1.36:6.3 | S: For if you’re diligent and practice absorption, | T: for a heedful person, absorbed in jhāna,
+sn1.36:6.4 | S: you’ll attain ultimate happiness.” | T: attains the foremost ease.
+
+## sn1.7
+sn1.7:1.1 | S: At Sāvatthī. | T: (none)
+sn1.7:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.7:2.1 | S: “Those have not deciphered the teachings | T: “Those in whom phenomena are unpenetrated,
+sn1.7:2.2 | S: may be led astray by the doctrines of others. | T: who may be led by the teachings of others:
+sn1.7:2.3 | S: Asleep, they have not woken up: | T: Asleep are they; they haven’t awakened.
+sn1.7:2.4 | S: it is time for them to wake!” | T: It’s time for them to awaken.”
+sn1.7:3.1 | S: “Those who have well deciphered the teachings | T: The Buddha: “Those in whom phenomena are well-penetrated,
+sn1.7:3.2 | S: won’t be led astray by the doctrines of others. | T: may not be led by the teachings of others.
+sn1.7:3.3 | S: They have woken up, they rightly know, | T: Awakened through right knowing,
+sn1.7:3.4 | S: smoothly they walk in the rough.” | T: they go among the discordant harmoniously.”
+
+## sn1.8
+sn1.8:1.1 | S: At Sāvatthī. | T: (none)
+sn1.8:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Like the similar sutta SN 1:7, this sutta offers evidence in support of the translation, “awakened” for the Pali term, Buddha. The verses draw a direct connection between two words derived from the same root: the adjective sambuddha, a variant of buddha, and the verb pābujjhati, which in context clearly means to awaken from sleep. Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.8:2.1 | S: “Those who are very confused about the teachings | T: “Those for whom phenomena are thoroughly confused,
+sn1.8:2.2 | S: may be led astray by the doctrines of others. | T: who may be led by the teachings of others:
+sn1.8:2.3 | S: Asleep, they have not woken up: | T: Asleep are they; they haven’t awakened.
+sn1.8:2.4 | S: it is time for them to wake!” | T: It’s time for them to awaken.”
+sn1.8:3.1 | S: “Those who are unconfused about the teachings, | T: The Buddha: “Those for whom phenomena are not confused,
+sn1.8:3.2 | S: won’t be led astray by the doctrines of others. | T: may not be led by the teachings of others.
+sn1.8:3.3 | S: They have woken up, they rightly know, | T: Awakened through right knowing,
+sn1.8:3.4 | S: smoothly they walk in the rough.” | T: they go among the discordant harmoniously.”
+
+## sn1.9
+sn1.9:1.1 | S: At Sāvatthī. | T: (none)
+sn1.9:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.9:2.1 | S: “One fond of conceit can’t be tamed, | T: “Here there’s no taming for one fond of conceit,
+sn1.9:2.2 | S: no sage is lacking immersion. | T: no sagacity for one unconcentrated.
+sn1.9:2.3 | S: Living negligent alone in the wilderness, | T: One dwelling alone in the wilderness heedlessly
+sn1.9:2.4 | S: they can’t cross beyond Death’s dominion.” | T: won’t cross over beyond Deaths’ realm.
+sn1.9:3.1 | S: “Having given up conceit, serene within oneself, | T: The Buddha: “Abandoning conceit, his mind well-concentrated,
+sn1.9:3.2 | S: with a good heart, everywhere free; | T: well-aware, everywhere released,
+sn1.9:3.3 | S: living diligent alone in the wilderness, | T: one dwelling alone in the wilderness heedfully:
+sn1.9:3.4 | S: they cross beyond Death’s dominion.” | T: He will cross over beyond Death’s realm.
+
+## sn4.18
+sn4.18:1.1 | S: At one time the Buddha was staying in the land of the Magadhans near the brahmin village of Pañcasālā. | T: On one occasion the Blessed One was staying among the Magadhans near the brahman village of Pañcasālā.
+sn4.18:1.2 | S: Now at that time in Pañcasālā the young maidens were occupied with guests. | T: And on that occasion there were young people’s presents (being given) in Pañcasālā.
+sn4.18:1.3 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Pañcasālā for alms. | T: Then early in the morning, the Blessed One, having adjusted his under robe and carrying his bowl & outer robe, went into Pañcasālā for alms.
+sn4.18:1.4 | S: Now at that time Māra had possessed the brahmins and householders of Pañcasālā, so that they thought, | T: And at that time Māra, the Evil One, had taken possession of the brahman householders of Pañcasālā [with the thought,]
+sn4.18:1.5 | S: “Don’t let the ascetic Gotama get any alms!” | T: “Don’t let Gotama the contemplative get alms.”
+sn4.18:2.1 | S: Then the Buddha left the village with his bowl as clean-washed as it was when he entered for alms. | T: Then the Blessed One left Pañcasālā with his bowl as clean as it had been when he entered.
+sn4.18:2.2 | S: Then Māra the Wicked went up to the Buddha and said to him, | T: Then Māra the Evil One went to the Blessed One and, on arrival, said to him,
+sn4.18:2.3 | S: “Well, ascetic, did you get any alms?” | T: “Did you get any alms, contemplative?”
+sn4.18:2.4 | S: “Wicked One, did you make sure I didn’t get any alms?” | T: “So was it you, Evil One, who arranged that I didn’t get alms?”
+sn4.18:2.5 | S: “Well then, sir, let the Buddha enter Pañcasālā a second time for alms. | T: “In that case, lord, let the Blessed One go into Pañcasālā a second time.
+sn4.18:2.6 | S: I’ll make sure you get alms.” | T: I’ll arrange that you get alms.”
+sn4.18:3.1 | S: “Māra has produced wickedness | T: The Buddha: “You’ve produced demerit, Evil One,
+sn4.18:3.2 | S: in attacking the Realized One. | T: insulting the Tathāgata.
+sn4.18:3.3 | S: Wicked One, do you imagine that | T: (none)
+sn4.18:3.4 | S: your wickedness won’t bear fruit? | T: (none)
+sn4.18:4.1 | S: Let us live so very happily, | T: How very happily we live,
+sn4.18:4.2 | S: we who have nothing. | T: we who have nothing.
+sn4.18:4.3 | S: We shall feed on rapture, | T: We will feed on rapture
+sn4.18:4.4 | S: like the gods of sublime luminosity.” | T: like the Radiant devas.”
+sn4.18:5.1 | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-gone knows me”—vanished right there.
+
+## sn44.11
+sn44.11:1.1 | S: At one time Venerable Sabhiya Kaccāna was staying at Ñātika in the brick house. | T: On one occasion Ven. Sabhiya Kaccāna was staying at Ñātika in the Brick Hall.
+sn44.11:1.2 | S: Then the wanderer Vacchagotta went up to him, and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to him and, on arrival, exchanged courteous greetings with him.
+sn44.11:1.3 | S: When the greetings and polite conversation were over, he sat down to one side, and said to Sabhiya Kaccāna: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sabhiya Kaccāna,
+sn44.11:1.4 | S: “Worthy Kaccāna, does a realized one still exist after death?” | T: “Now then, Master Kaccāna, does the Tathāgata exist after death?”
+sn44.11:1.5 | S: “Vaccha, this has not been declared by the Buddha.” | T: “Vaccha, that has not been declared by the Blessed One:
+sn44.11:1.6 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata exists after death.’”
+sn44.11:1.7 | S: “Well then, does a realized one no longer exist after death?” | T: “Well then, Master Kaccāna, does the Tathāgata not exist after death?”
+sn44.11:1.8 | S: “This too has not been declared by the Buddha.” | T: “Vaccha, that too has not been declared by the Blessed One:
+sn44.11:1.9 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata does not exist after death.’”
+sn44.11:2.1 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: “Then does the Tathāgata both exist and not exist after death?”
+sn44.11:2.2 | S: “This has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One:
+sn44.11:2.3 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata both exists and does not exist after death.’”
+sn44.11:2.4 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: “Well then, does the Tathāgata neither exist nor not exist after death?”
+sn44.11:2.5 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One:
+sn44.11:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.11:3.1 | S: “Worthy Kaccāna, when asked these questions, you say that this has not been declared by the Buddha. | T: “Now, Master Kaccāna, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata does not exist after death.”’ When asked if the Tathāgata both exists and does not exist after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata both exists and does not exist after death.”’ When asked if the Tathāgata neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One:
+sn44.11:3.2 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.4 | P: ‘Kiṁ pana, bho kaccāna, na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.5 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.7 | P: ‘Kiṁ nu kho, bho kaccāna, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.8 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.10 | P: ‘Kiṁ pana, bho kaccāna, neva hoti na na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.11 | P: ‘etampi kho, vaccha, abyākataṁ bhagavatā— | T: (none)
+sn44.11:3.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.11:3.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the contemplative Gotama?”
+sn44.11:3.14 | S: “In order to describe him as ‘formed’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’, there must be some cause or reason for doing so. But if that cause and reason were to totally and utterly cease without remainder, | T: “Vaccha, whatever cause, whatever reason there would be for describing him as ‘possessed of form’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’: If that cause, that reason, were to cease totally everywhere, totally in every way without remainder,
+sn44.11:3.15 | S: how could you describe him in any such terms?” | T: then describing him by what means would one describe him as ‘possessed of form’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’?”
+sn44.11:3.16 | S: “Worthy Kaccāna, how long has it been since you went forth?” | T: “How long has it been since you went forth, Master Kaccāna?”
+sn44.11:3.17 | S: “Not long, reverend: three years.” | T: “Not long, my friend. Three years.”
+sn44.11:3.18 | S: “One who has learned this much in this time, reverend, has learned a lot, who can say what lies ahead!” | T: “Whoever has gained just this much in this much time has gained a great deal, my friend—to say nothing of what he has thus gone beyond.”
+sn44.11:3.19 | P: Ekādasamaṁ. | T: (none)
+sn44.11:3.20 | P: Abyākatavaggo paṭhamo. | T: (none)
+sn44.11:4.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:4.1 | P: Khemātherī anurādho, | T: (none)
+sn44.11:4.2 | P: sāriputtoti koṭṭhiko; | T: (none)
+sn44.11:4.3 | P: Moggallāno ca vaccho ca, | T: (none)
+sn44.11:4.4 | P: kutūhalasālānando; | T: (none)
+sn44.11:4.5 | P: Sabhiyo ekādasamanti. | T: (none)
+sn44.11:4.6 | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+sn44.11:5.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:5.1 | P: Saḷāyatanavedanā, | T: (none)
+sn44.11:5.2 | P: mātugāmo jambukhādako; | T: (none)
+sn44.11:5.3 | P: Sāmaṇḍako moggallāno, | T: (none)
+sn44.11:5.4 | P: citto gāmaṇi saṅkhataṁ; | T: (none)
+sn44.11:5.5 | P: Abyākatanti dasadhāti. | T: (none)
+sn44.11:5.6 | P: Saḷāyatanavaggo catuttho. | T: (none)
+sn44.11:5.7 | S: The Book of the Six Sense Fields is finished. | T: (none)
+
+## sn7.18
+sn7.18:1.1 | S: At one time the Buddha was staying in the land of the Kosalans in a certain forest grove. | T: On one occasion the Blessed One was staying among the Kosalans in a certain forest grove.
+sn7.18:1.2 | S: Then several students, pupils of one of the Bhāradvāja brahmins, approached a forest grove while collecting firewood. They saw the Buddha sitting down cross-legged at the root of a certain sal tree, his body set straight, and mindfulness brought to the present. Seeing this, they went up to Bhāradvāja and said to him, | T: Then a large number of firewood-gathering youths—students of a certain brahman of the Bhāradvāja clan—went to the forest grove. On arrival, they saw the Blessed One sitting in the grove—his legs folded crosswise, his body set straight, mindfulness established to the fore. On seeing him, they went to the brahman of the Bhāradvāja clan and, on arrival, said to him,
+sn7.18:1.3 | S: “Please sir, you should know this. | T: “Sir, you should know that
+sn7.18:1.4 | S: In such-and-such forest grove the ascetic Gotama is sitting down cross-legged, his body set straight, and mindfulness brought to the present.” | T: Gotama the contemplative is in that grove over there, sitting with his legs folded crosswise, his body set straight, mindfulness established to the fore.
+sn7.18:1.5 | S: Then Bhāradvāja together with those young students went to that forest grove | T: So the brahman of the Bhāradvāja clan, together with the youths, went to the forest grove.
+sn7.18:1.6 | S: where he saw the Buddha sitting down cross-legged, his body set straight, and mindfulness brought to the present. | T: On arrival, he saw the Blessed One sitting in the grove—his legs folded crosswise, his body set straight, mindfulness established to the fore.
+sn7.18:1.7 | S: He went up to the Buddha and addressed him in verse: | T: On seeing him, he went to the Blessed One and, on arrival, addressed him in verse:
+sn7.18:2.1 | S: “Deep in the jungle so full of terrors, | T: “In the deep-looking forest, teeming with terrors,
+sn7.18:2.2 | S: you’ve plunged into the empty, desolate wilderness. | T: having plunged into the wilderness —desolate, empty—
+sn7.18:2.3 | S: Still, steady, and graceful: | T: unflinchingly, steadfastly, compellingly,
+sn7.18:2.4 | S: how beautifully you meditate, mendicant! | T: you practice jhāna, monk: How very lovely you look!
+sn7.18:3.1 | S: Where there is no song or music, | T: Where no song is sung, where no music is played,
+sn7.18:3.2 | S: a lonely sage resorts to the wilderness. | T: alone in the wilderness: the forest-dwelling sage.
+sn7.18:3.3 | S: This strikes me as an amazing thing, | T: This looks amazing to me—
+sn7.18:3.4 | S: that you dwell so joyfully alone in the jungle. | T: that you live alone in the forest with rapturous mind.
+sn7.18:4.1 | S: I suppose you wish to be reborn in the company | T: I suppose it’s in longing
+sn7.18:4.2 | S: of the supreme world-sovereign <j>of the Third Heaven. | T: for the three heavens unexcelled, in the company of the ruling lord of the worlds,
+sn7.18:4.3 | S: Is that why you resort to the desolate wilderness, | T: that, staying here in the wilderness, desolate,
+sn7.18:4.4 | S: to practice fervor for attaining divinity?” | T: you practice austerities for attaining Brahmā.”
+sn7.18:5.1 | S: “Any wishes and hopes that are always attached | T: The Buddha: “Whatever the longings or delights attached—always—
+sn7.18:5.2 | S: to the many and various realms— | T: to various levels of being,
+sn7.18:5.3 | S: the prayers sprung from the root of unknowing— | T: or yearnings born from the root of unknowing:
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn7.18:5.4 | S: I’ve eliminated them all down to the root. | T: I’ve destroyed them all, down to the root.
+sn7.18:6.1 | S: So I’m wishless, unattached, uninvolved; | T: I— without longing, unattached, uninvolved,
+sn7.18:6.2 | S: amongst all things, my vision is clear. | T: with purified vision with regard to all things,
+sn7.18:6.3 | S: I’ve attained the state of grace, <j>the supreme awakening; | T: having reached self-awakening, sublime, unexcelled—
+sn7.18:6.4 | S: I meditate alone, brahmin, and self-assured.” | T: practice jhāna hidden from Brahmā, matured.”
+sn7.18:7.1 | S: When he had spoken, Bhāradvāja said to the Buddha, | T: (none)
+sn7.18:7.2 | S: “Excellent, worthy Gotama! Excellent! … | T: (none)
+sn7.18:7.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: (none)
+
+## an7.57
+an7.57:1.1 | S: So I have heard. | T: I have heard that
+an7.57:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: on one occasion the Blessed One was staying near Vesālī in the Great Forest at the Gabled Pavilion.
+an7.57:1.3 | S: Then General Sīha went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then General Sīha went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One:
+an7.57:1.4 | S: “Sir, can you point out a fruit of giving that’s apparent in the present life?” | T: “Is it possible, lord, to point out a fruit of giving visible in the here & now?”
+an7.57:2.1 | S: “Well then, Sīha, I’ll ask you about this in return, and you can answer as you like. | T: “Very well then, Sīha, I will cross-question you on this matter. Answer as you see fit.
+an7.57:2.2 | S: What do you think, Sīha? | T: (none)
+an7.57:2.3 | S: Consider two people. | T: There is the case where there are two men:
+an7.57:2.4 | S: One is faithless, stingy, miserly, and abusive. One is a faithful donor who loves charity. | T: one without conviction, stingy, miserly, abusive; and one of conviction, a master of giving, one who delights in providing support.
+an7.57:2.5 | S: Which do you think the perfected ones will show sympathy for first?” | T: What do you think? To which of the two would arahants, on feeling sympathy, first show sympathy:
+an7.57:2.6 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: to the man without conviction, stingy, miserly, abusive; or to the man of conviction, a master of giving, one who delights in providing support?”
+an7.57:3.1 | S: “Why would the perfected ones first show sympathy for the person who is faithless, stingy, miserly, and abusive? | T: “Why, lord, would arahants, when feeling sympathy, first show sympathy to the man without conviction, stingy, miserly, abusive?
+an7.57:3.2 | S: They’d show sympathy first for the faithful donor who loves charity.” | T: The man of conviction, a master of giving, one who delights in providing support: He’s the one to whom arahants, on feeling sympathy, would first show sympathy.”
+an7.57:4.1 | S: “Which do you think the perfected ones will first approach?” | T: “What do you think, Sīha? Whom would arahants, when visiting, first visit…?”
+an7.57:4.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:4.3 | P: “Yo so, bhante, puriso assaddho maccharī kadariyo paribhāsako, kintaṁ arahanto paṭhamaṁ upasaṅkamantā upasaṅkamissanti. | T: (none)
+an7.57:4.4 | S: “They’d first approach the faithful donor who loves charity.” | T: “…The man of conviction, a master of giving, one who delights in providing support…”
+an7.57:5.1 | S: “Which do you think the perfected ones will receive alms from first?” | T: “What do you think, Sīha? From whom would arahants, when receiving (gifts), first receive (gifts)…?”
+an7.57:5.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:5.3 | P: “Yo so, bhante, puriso assaddho maccharī kadariyo paribhāsako, kintaṁ tassa arahanto paṭhamaṁ paṭiggaṇhantā paṭiggaṇhissanti. | T: (none)
+an7.57:5.4 | S: “They’d receive alms first from the faithful donor who loves charity.” | T: “…The man of conviction, a master of giving, one who delights in providing support…”
+an7.57:6.1 | S: “Which do you think the perfected ones will teach the Dhamma to first?” | T: “What do you think, Sīha? Whom would arahants, when teaching, first teach…?”
+an7.57:6.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:6.3 | P: “Yo so, bhante, puriso assaddho maccharī kadariyo paribhāsako, kintaṁ tassa arahanto paṭhamaṁ dhammaṁ desentā desessanti. | T: (none)
+an7.57:6.4 | S: “They’d first teach the Dhamma to the faithful donor who loves charity.” | T: “…The man of conviction, a master of giving, one who delights in providing support…”
+an7.57:7.1 | S: “Which do you think would get a good reputation?” | T: “What do you think, Sīha? Of whom would a fine reputation spread abroad…?”
+an7.57:7.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:7.3 | P: “Yo so, bhante, puriso assaddho maccharī kadariyo paribhāsako, kintaṁ tassa kalyāṇo kittisaddo abbhuggacchissati. | T: (none)
+an7.57:7.4 | S: “The faithful donor who loves charity would get a good reputation.” | T: “…The man of conviction, a master of giving, one who delights in providing support…”
+an7.57:8.1 | S: “Which do you think would enter any kind of assembly bold and self-assured, whether it’s an assembly of aristocrats, brahmins, householders, or ascetics?” | T: “What do you think, Sīha? Who would approach any assembly of people—noble warriors, brahmans, householders, or contemplatives—confidently & without embarrassment…?”
+an7.57:8.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:8.3 | S: “How could the person who is faithless, stingy, miserly, and abusive enter any kind of assembly bold and self-assured, whether it’s an assembly of aristocrats, brahmins, householders, or ascetics? | T: (none)
+an7.57:8.4 | S: The faithful donor who loves charity would enter any kind of assembly bold and self-assured, whether it’s an assembly of aristocrats, brahmins, householders, or ascetics.” | T: “…The man of conviction, a master of giving, one who delights in providing support…”
+an7.57:9.1 | S: “When their body breaks up, after death, which do you think would be reborn in a good place, a heavenly realm?” | T: “What do you think, Sīha? Which of the two would—with the breakup of the body, after death—appear in a good destination, a heavenly world: the man without conviction, stingy, miserly, abusive; or the man of conviction, a master of giving, one who delights in providing support?”
+an7.57:9.2 | P: ‘yo vā so puriso assaddho maccharī kadariyo paribhāsako, yo vā so puriso saddho dānapati anuppadānarato’”ti? | T: (none)
+an7.57:9.3 | S: “Why would the person who is faithless, stingy, miserly, and abusive be reborn in a good place, a heavenly realm? | T: “Lord, why would the man without conviction, stingy, miserly, abusive—with the breakup of the body, after death—reappear in a good destination, a heavenly world?
+an7.57:9.4 | S: The faithful donor who loves charity would, when their body breaks up, after death, be reborn in a good place, a heavenly realm. | T: The man of conviction, a master of giving, one who delights in providing support: He’s the one who would—with the breakup of the body, after death—appear in a good destination, a heavenly world.
+an7.57:10.1 | S: When it comes to these fruits of giving that are apparent in the present life, I don’t rely on faith in the Buddha, | T: “Lord, as for the six fruits of giving visible in the here & now that have been pointed out by the Blessed One, it’s not the case that I go by conviction in the Blessed One with regard to them.
+an7.57:10.2 | S: for I know them too. | T: I know them, too.
+an7.57:10.3 | S: I’m a giver, a donor, and the perfected ones show sympathy for me first. | T: I am one who gives, a master of giving, and arahants, when feeling sympathy, show sympathy to me first.
+an7.57:10.4 | S: I’m a giver, and the perfected ones approach me first. | T: I am one who gives, a master of giving, and arahants, when visiting, visit me first.
+an7.57:10.5 | S: I’m a giver, and the perfected ones receive alms from me first. | T: I am one who gives, a master of giving, and arahants when receiving (gifts), receive (gifts) from me first.
+an7.57:10.6 | S: I’m a giver, and the perfected ones teach me Dhamma first. | T: I am one who gives, a master of giving, and arahants when teaching, teach me first.
+an7.57:10.7 | S: I’m a giver, and I have this good reputation: | T: I am one who gives, a master of giving, and my fine reputation is spread far & wide:
+an7.57:10.8 | S: ‘General Sīha gives, serves, and attends on the Saṅgha.’ | T: ‘Sīha is one who gives, a doer, a supporter of the Saṅgha.’
+an7.57:10.9 | S: I’m a giver, I enter any kind of assembly bold and self-assured, whether it’s an assembly of aristocrats, brahmins, householders, or ascetics. | T: I am one who gives, a master of giving, and when I approach any assembly of people—noble warriors, brahmans, householders, or contemplatives—I do so confidently & without embarrassment.
+an7.57:10.10 | S: When it comes to these fruits of giving that are apparent in the present life, I don’t rely on faith in the Buddha, | T: (none)
+an7.57:10.11 | S: for I know them too. | T: (none)
+an7.57:10.12 | S: But when the Buddha says: | T: “But when the Blessed One says to me,
+an7.57:10.13 | S: ‘When a giver’s body breaks up, after death, they’re reborn in a good place, a heavenly realm.’ I don’t know this, | T: ‘With the breakup of the body, after death, one who gives, a master of giving, reappears in a good destination, a heavenly world,’ that I don’t know.
+an7.57:10.14 | S: so I rely on faith in the Buddha.” | T: That is where I go by conviction in the Blessed One.”
+an7.57:10.15 | S: “That’s so true, Sīha! That’s so true! | T: “So it is, Sīha. So it is.
+an7.57:10.16 | S: When a giver’s body breaks up, after death, they’re reborn in a good place, a heavenly realm.” | T: With the breakup of the body, after death, one who gives, a master of giving, reappears in a good destination, a heavenly world.”
+an7.57:10.17 | P: Catutthaṁ. | T: (none)
+
+## iti27
+iti27:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti27:2.1 | S: “Mendicants, of all the grounds for making worldly merit, none are worth a sixteenth part of the heart’s release by love. | T: “Monks, all the grounds for making merit leading to spontaneously arising [in heaven] do not equal one-sixteenth of the awareness-release through good will.
+iti27:2.2 | S: Surpassing them, the heart’s release by love shines and glows and dazzles. | T: Good will–surpassing them–shines, blazes, & dazzles.
+iti27:3.1 | S: It’s like how the radiance of all the stars is not worth a sixteenth part of the moon’s radiance. Surpassing them, the moon’s radiance shines and glows and dazzles. | T: “Just as the radiance of all the stars does not equal one-sixteenth of the radiance of the moon, as the moon–surpassing them–shines, blazes, & dazzles,
+iti27:3.2 | S: In the same way, of all the grounds for making worldly merit, none are worth a sixteenth part of the heart’s release by love. Surpassing them, the heart’s release by love shines and glows and dazzles. | T: even so, all the grounds for making merit leading to spontaneously arising [in heaven] do not equal one-sixteenth of the awareness-release through good will. Good will–surpassing them–shines, blazes, & dazzles.
+iti27:4.1 | S: It’s like the last month of the rainy season, in autumn, when the heavens are sunny and cloudless. And as the sun is rising to the firmament, having dispelled all the darkness of space, it shines and glows and dazzles. | T: “Just as in the last month of the rains, in autumn, when the sky is clear & cloudless, the sun, on ascending the sky, overpowers the space immersed in darkness, shines, blazes, & dazzles,
+iti27:4.2 | S: In the same way, of all the grounds for making worldly merit, none are worth a sixteenth part of the heart’s release by love. Surpassing them, the heart’s release by love shines and glows and dazzles. | T: even so, all the grounds for making merit leading to spontaneously arising [in heaven] do not equal one-sixteenth of the awareness-release through good will. Good will–surpassing them–shines, blazes, & dazzles.
+iti27:5.1 | S: It’s like how, at the crack of dawn, the morning star shines and glows and dazzles. | T: “Just as in the last stage of the night the morning star shines, blazes, & dazzles,
+iti27:5.2 | S: In the same way, of all the grounds for making worldly merit, none are worth a sixteenth part of the heart’s release by love. Surpassing them, the heart’s release by love shines and glows and dazzles.” | T: even so, all the grounds for making merit leading to spontaneously arising [in heaven] do not equal one-sixteenth of the awareness-release through good will. Good will–surpassing them–shines, blazes, & dazzles.”
+iti27:5.3 | S: The Buddha spoke this matter. | T: (none)
+iti27:5.4 | S: On this it is said: | T: (none)
+iti27:6.1 | S: “A mindful one who develops | T: When one develops–mindful–
+iti27:6.2 | S: limitless love | T: good will without limit,
+iti27:6.3 | S: weakens the fetters, | T: fetters are worn through,
+iti27:6.4 | S: seeing the ending of attachments. | T: on seeing the ending of acquisitions.
+iti27:7.1 | S: Loving just one creature with a hateless heart | T: If with uncorrupted mind you feel good will for even one being,
+iti27:7.2 | S: makes you a good person. | T: you become skilled from that.
+iti27:7.3 | S: Sympathetic for all creatures, | T: But a noble one produces a mind of sympathy for all beings,
+iti27:7.4 | S: a noble one creates abundant merit. | T: an abundance of merit.
+iti27:8.1 | S: The royal potentates conquered this land | T: Kingly seers, who conquered the earth swarming with beings,
+iti27:8.2 | S: and traveled around sponsoring sacrifices— | T: went about making sacrifices:
+iti27:8.3 | S: horse sacrifice, human sacrifice, | T: the horse sacrifice, human sacrifice,
+iti27:8.4 | S: the sacrifices of the ‘casting of the yoke-pin’, <j>the ‘royal soma drinking’, and the ‘unimpeded’. | T: water rites, soma rites, & the “Unobstructed,”
+iti27:9.1 | S: These are not worth a sixteenth part | T: but these don’t equal one sixteenth
+iti27:9.2 | S: of the mind developed with love, | T: of a well-developed mind of good will–
+iti27:9.3 | S: as starlight cannot rival the moon. | T: as all the constellations don’t, one sixteenth of the radiance of the moon.
+iti27:10.1 | S: Don’t kill or cause others to kill, | T: One who neither kills nor gets others to kill,
+iti27:10.2 | S: don’t conquer or encourage others to conquer, | T: neither conquers, nor gets others to conquer,
+iti27:10.3 | S: with love for all living creatures— | T: with good will for all beings,
+iti27:10.4 | S: you’ll have no enmity for anyone.” | T: has no hostility with anyone at all.
+iti27:11.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti27:11.2 | P: Sattamaṁ. | T: (none)
+iti27:11.3 | P: Tatiyo vaggo. | T: (none)
+iti27:12.0 | P: Tassuddānaṁ | T: (none)
+iti27:12.1 | P: Cittaṁ mettaṁ ubho atthe, | T: (none)
+iti27:12.2 | P: puñjaṁ vepullapabbataṁ; | T: (none)
+iti27:12.3 | P: Sampajānamusāvādo, | T: (none)
+iti27:12.4 | P: dānañca mettabhāvanā. | T: (none)
+iti27:13.1 | P: Sattimāni ca suttāni, | T: (none)
+iti27:13.2 | P: purimāni ca vīsati; | T: (none)
+iti27:13.3 | P: Ekadhammesu suttantā, | T: (none)
+iti27:13.4 | P: sattavīsatisaṅgahāti. | T: (none)
+iti27:13.5 | P: Ekakanipāto niṭṭhito. | T: (none)
+
+## sn22.26
+sn22.26:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.26:1.2 | S: “Mendicants, before my awakening—when I was still unawakened but intent on awakening—I thought: | T: “Monks, before my self-awakening, when I was still just an unawakened bodhisatta, the thought occurred to me:
+sn22.26:1.3 | S: ‘What’s the gratification, the drawback, and the escape when it comes to form … | T: ‘What is the allure of form? What is its drawback? What is its escape?
+sn22.26:1.4 | S: feeling … | T: “‘What is the allure of feeling? What is its drawback? What is its escape?
+sn22.26:1.5 | S: perception … | T: “‘What is the allure of perception? What is its drawback? What is its escape?
+sn22.26:1.6 | S: choices … | T: “‘What is the allure of fabrications? What is their drawback? What is their escape?
+sn22.26:1.7 | S: and consciousness?’ | T: “‘What is the allure of consciousness? What is its drawback? What is its escape?’
+sn22.26:1.8 | S: Then it occurred to me: | T: “Then the thought occurred to me,
+sn22.26:1.9 | S: ‘The pleasure and happiness that arise from form: this is its gratification. | T: ‘Whatever pleasure & joy arises dependent on form: That is the allure of form.
+sn22.26:1.10 | S: That form is impermanent, suffering, and perishable: this is its drawback. | T: The fact that form is inconstant, stressful, subject to change: That is the drawback of form.
+sn22.26:1.11 | S: Removing and giving up desire and greed for form: this is its escape. | T: The subduing of desire & passion, the abandoning of desire & passion for form: That is the escape from form.
+sn22.26:1.12 | S: The pleasure and happiness that arise from feeling … | T: [Similarly with feeling,
+sn22.26:1.13 | P: Yaṁ vedanā aniccā dukkhā vipariṇāmadhammā, ayaṁ vedanāya ādīnavo. | T: (none)
+sn22.26:1.14 | P: Yo vedanāya chandarāgavinayo chandarāgappahānaṁ, idaṁ vedanāya nissaraṇaṁ. | T: (none)
+sn22.26:1.15 | S: perception … | T: perception,
+sn22.26:1.16 | S: choices … | T: fabrications,
+sn22.26:1.17 | P: Yaṁ saṅkhārā aniccā dukkhā vipariṇāmadhammā, ayaṁ saṅkhārānaṁ ādīnavo. | T: (none)
+sn22.26:1.18 | P: Yo saṅkhāresu chandarāgavinayo chandarāgappahānaṁ, idaṁ saṅkhārānaṁ nissaraṇaṁ. | T: (none)
+sn22.26:1.19 | S: consciousness: this is its gratification. | T: & consciousness.]
+sn22.26:1.20 | S: That consciousness is impermanent, suffering, and perishable: this is its drawback. | T: (none)
+sn22.26:1.21 | S: Removing and giving up desire and greed for consciousness: this is its escape.’ | T: (none)
+sn22.26:2.1 | S: As long as I didn’t truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Monks, as long as I did not have direct knowledge, as it had come to be, of the allure as allure, of the drawback as drawback, and of the escape as escape, with regard to these five clinging-aggregates, I did not claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn22.26:2.2 | S: But when I did truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “But when I did have direct knowledge, as it had come to be, of the allure as allure, the drawback as drawback, and the escape as escape, with regard to these five clinging-aggregates, then I did claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people.
+sn22.26:2.3 | P: athāhaṁ, bhikkhave, sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddhoti paccaññāsiṁ. | T: (none)
+sn22.26:2.4 | S: Knowledge and vision arose in me: | T: “Knowledge & vision arose in me:
+sn22.26:2.5 | S: ‘My freedom is unshakable; this is my last rebirth; now there’ll be no more future lives.’” | T: ‘Unprovoked is my release. This is the last birth. There is now no further-becoming.’”
+sn22.26:2.6 | P: Pañcamaṁ. | T: (none)
+
+## sn35.232
+sn35.232:1.1 | S: At one time Venerable Sāriputta and Venerable Mahākoṭṭhita were staying near Varanasi in the deer park at Isipatana. | T: Once, Ven. Sāriputta and Ven. Mahā Koṭṭhita were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn35.232:1.2 | S: Then in the late afternoon, Venerable Mahākoṭṭhita came out of retreat, went to Venerable Sāriputta, and exchanged greetings with him. | T: Then Ven. Mahā Koṭṭhita, in the evening, left his seclusion and went to Ven. Sāriputta. On arrival, he exchanged courteous greetings with him.
+sn35.232:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Sāriputta: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Sāriputta,
+sn35.232:2.1 | S: “Reverend Sāriputta, which is it? Is the eye the fetter of sights, or are sights the fetter of the eye? | T: “Now tell me, friend Sāriputta, is the eye the fetter of forms, or are forms the fetter of the eye?
+sn35.232:2.2 | S: Is the ear … nose … tongue … body … | T: Is the ear… Is the nose… Is the tongue… Is the body…
+sn35.232:2.3 | S: mind the fetter of ideas, or are ideas the fetter of the mind?” | T: Is the intellect the fetter of ideas, or are ideas the fetter of the intellect?”
+sn35.232:3.1 | S: “Reverend Koṭṭhita, the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “No, my friend. The eye is not the fetter of forms, nor are forms the fetter of the eye.
+sn35.232:3.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:3.3 | S: The ear … nose … tongue … body … | T: The ear is not the fetter of sounds… The nose is not the fetter of aromas… The tongue is not the fetter of flavors… The body is not the fetter of tactile sensations…
+sn35.232:3.4 | P: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo taṁ tattha saṁyojanaṁ …pe… | T: (none)
+sn35.232:3.5 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect.
+sn35.232:3.6 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:4.1 | S: Suppose there was a black ox and a white ox yoked by a single harness or yoke. | T: “Suppose that a black ox and a white ox were joined with a single collar or yoke.
+sn35.232:4.2 | S: Would it be right to say that | T: If someone were to say,
+sn35.232:4.3 | S: the black ox is the yoke of the white ox, or the white ox is the yoke of the black ox?” | T: ‘The black ox is the fetter of the white ox, the white ox is the fetter of the black’—speaking this way, would he be speaking rightly?”
+sn35.232:4.4 | S: “No, reverend. | T: “No, my friend.
+sn35.232:4.5 | S: The black ox is not the yoke of the white ox, nor is the white ox the yoke of the black ox. | T: The black ox is not the fetter of the white ox, nor is the white ox the fetter of the black.
+sn35.232:4.6 | S: The yoke there is the single harness or yoke that they’re yoked by.” | T: The single collar or yoke by which they are joined: That is the fetter there.”
+sn35.232:5.1 | S: “In the same way, the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “In the same way, the eye is not the fetter of forms, nor are forms the fetter of the eye.
+sn35.232:5.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:5.3 | S: The ear … nose … tongue … body … | T: The ear is not the fetter of sounds…The nose is not the fetter of aromas…The tongue is not the fetter of flavors…The body is not the fetter of tactile sensations…
+sn35.232:5.4 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect.
+sn35.232:5.5 | S: The fetter there is the desire and greed that arises from the pair of them. | T: Whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:6.1 | S: If the eye were the fetter of sights, or if sights were the fetter of the eye, this living of the spiritual life for the complete ending of suffering would not be found. | T: “If the eye were the fetter of forms, or if forms were the fetter of the eye, then this holy life for the right ending of stress & suffering would not be proclaimed.
+sn35.232:6.2 | S: However, since this is not the case, but | T: (none)
+sn35.232:6.3 | S: the fetter there is the desire and greed that arises from the pair of them, this living of the spiritual life for the complete ending of suffering is found. | T: But because whatever desire-passion arises in dependence on the two of them is the fetter there, that is why this holy life for the right ending of stress & suffering is proclaimed.
+sn35.232:7.1 | S: If the ear … nose … tongue … body … | T: “If the ear were the fetter… “If the nose were the fetter… “If the tongue were the fetter… “If the body were the fetter…
+sn35.232:7.2 | P: Yasmā ca kho, āvuso, na jivhā rasānaṁ saṁyojanaṁ, na rasā jivhāya saṁyojanaṁ; yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya …pe…. | T: (none)
+sn35.232:8.1 | S: mind were the fetter of ideas, or if ideas were the fetter of the mind, this living of the spiritual life for the complete ending of suffering would not be found. | T: “If the intellect were the fetter of ideas, or if ideas were the fetter of the intellect, then this holy life for the right ending of stress & suffering would not be proclaimed.
+sn35.232:8.2 | S: However, since this is not the case, but | T: (none)
+sn35.232:8.3 | S: the fetter there is the desire and greed that arises from the pair of them, this living of the spiritual life for the complete ending of suffering is found. | T: But because whatever desire-passion arises in dependence on the two of them is the fetter there, that is why this holy life for the right ending of stress & suffering is proclaimed.
+sn35.232:9.1 | S: This too is a way to understand how this is so. | T: “And through this line of reasoning one may know how the eye is not the fetter of forms, nor are forms the fetter of the eye,
+sn35.232:9.2 | P: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ …pe… | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there. The ear is not the fetter of sounds… The nose is not the fetter of aromas…
+sn35.232:9.3 | P: na jivhā rasānaṁ saṁyojanaṁ …pe… | T: The tongue is not the fetter of flavors… The body is not the fetter of tactile sensations…
+sn35.232:9.4 | P: na mano dhammānaṁ saṁyojanaṁ, na dhammā manassa saṁyojanaṁ. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect,
+sn35.232:9.5 | P: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ. | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:10.1 | S: The Buddha has an eye | T: There is an eye in the Blessed One.
+sn35.232:10.2 | S: with which he sees a sight. | T: The Blessed One sees forms with the eye.
+sn35.232:10.3 | S: But he has no desire and greed, | T: There is no desire or passion in the Blessed One.
+sn35.232:10.4 | S: for his mind is well freed. | T: The Blessed One is well released in mind.
+sn35.232:10.5 | S: The Buddha has an ear … | T: “There is an ear in the Blessed One…
+sn35.232:10.6 | P: Suṇāti bhagavā sotena saddaṁ. | T: (none)
+sn35.232:10.7 | P: Chandarāgo bhagavato natthi. | T: (none)
+sn35.232:10.8 | P: Suvimuttacitto bhagavā. | T: (none)
+sn35.232:10.9 | S: nose … | T: “There is a nose in the Blessed One…
+sn35.232:10.10 | P: Ghāyati bhagavā ghānena gandhaṁ. | T: (none)
+sn35.232:10.11 | P: Chandarāgo bhagavato natthi. | T: (none)
+sn35.232:10.12 | P: Suvimuttacitto bhagavā. | T: (none)
+sn35.232:10.13 | S: tongue … | T: “There is a tongue in the Blessed One…
+sn35.232:10.14 | P: Sāyati bhagavā jivhāya rasaṁ. | T: (none)
+sn35.232:10.15 | P: Chandarāgo bhagavato natthi. | T: (none)
+sn35.232:10.16 | P: Suvimuttacitto bhagavā. | T: (none)
+sn35.232:10.17 | S: The Buddha has a body | T: “There is a body in the Blessed One…
+sn35.232:10.18 | S: with which he senses touch. | T: (none)
+sn35.232:10.19 | S: But he has no desire and greed, | T: (none)
+sn35.232:10.20 | S: for his mind is well freed. | T: (none)
+sn35.232:10.21 | S: The Buddha has a mind | T: “There is an intellect in the Blessed One.
+sn35.232:10.22 | S: with which he knows ideas. | T: The Blessed One knows ideas with the intellect.
+sn35.232:10.23 | S: But he has no desire and greed, | T: There is no desire or passion in the Blessed One.
+sn35.232:10.24 | S: for his mind is well freed. | T: The Blessed One is well released in mind.
+sn35.232:11.1 | S: This too is a way to understand how the eye is not the fetter of sights, nor are sights the fetter of the eye. | T: “It is through this line of reasoning that one may know how the eye is not the fetter of forms, nor are forms the fetter of the eye,
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.232:11.2 | S: The fetter there is the desire and greed that arises from the pair of them. | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there.
+sn35.232:11.3 | S: The ear … | T: The ear is not the fetter of sounds…
+sn35.232:11.4 | S: nose … | T: The nose is not the fetter of aromas…
+sn35.232:11.5 | S: tongue … | T: The tongue is not the fetter of flavors…
+sn35.232:11.6 | P: yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo taṁ tattha saṁyojanaṁ. | T: (none)
+sn35.232:11.7 | S: body … | T: The body is not the fetter of tactile sensations…
+sn35.232:11.8 | S: mind is not the fetter of ideas, nor are ideas the fetter of the mind. | T: The intellect is not the fetter of ideas, nor are ideas the fetter of the intellect,
+sn35.232:11.9 | S: The fetter there is the desire and greed that arises from the pair of them.” | T: but whatever desire-passion arises in dependence on the two of them: That is the fetter there.”
+sn35.232:11.10 | P: Pañcamaṁ. | T: (none)
+
+
+codex
+I’ve read the full file. I found a passage where repeated questions and replies are packed into an earlier line; I’m checking the exact start words for the findings.
+exec
+/bin/bash -lc "sed -n '151,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn44.11:3.10 | P: ‘Kiṁ pana, bho kaccāna, neva hoti na na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.11 | P: ‘etampi kho, vaccha, abyākataṁ bhagavatā— | T: (none)
+sn44.11:3.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: “The Tathāgata neither exists nor does not exist after death.”’
+sn44.11:3.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: Now, what is the cause, what is the reason, why that has not been declared by the contemplative Gotama?”
+sn44.11:3.14 | S: “In order to describe him as ‘formed’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’, there must be some cause or reason for doing so. But if that cause and reason were to totally and utterly cease without remainder, | T: “Vaccha, whatever cause, whatever reason there would be for describing him as ‘possessed of form’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’: If that cause, that reason, were to cease totally everywhere, totally in every way without remainder,
+sn44.11:3.15 | S: how could you describe him in any such terms?” | T: then describing him by what means would one describe him as ‘possessed of form’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’?”
+sn44.11:3.16 | S: “Worthy Kaccāna, how long has it been since you went forth?” | T: “How long has it been since you went forth, Master Kaccāna?”
+sn44.11:3.17 | S: “Not long, reverend: three years.” | T: “Not long, my friend. Three years.”
+sn44.11:3.18 | S: “One who has learned this much in this time, reverend, has learned a lot, who can say what lies ahead!” | T: “Whoever has gained just this much in this much time has gained a great deal, my friend—to say nothing of what he has thus gone beyond.”
+sn44.11:3.19 | P: Ekādasamaṁ. | T: (none)
+sn44.11:3.20 | P: Abyākatavaggo paṭhamo. | T: (none)
+sn44.11:4.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:4.1 | P: Khemātherī anurādho, | T: (none)
+sn44.11:4.2 | P: sāriputtoti koṭṭhiko; | T: (none)
+sn44.11:4.3 | P: Moggallāno ca vaccho ca, | T: (none)
+sn44.11:4.4 | P: kutūhalasālānando; | T: (none)
+sn44.11:4.5 | P: Sabhiyo ekādasamanti. | T: (none)
+sn44.11:4.6 | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+sn44.11:5.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:5.1 | P: Saḷāyatanavedanā, | T: (none)
+sn44.11:5.2 | P: mātugāmo jambukhādako; | T: (none)
+sn44.11:5.3 | P: Sāmaṇḍako moggallāno, | T: (none)
+sn44.11:5.4 | P: citto gāmaṇi saṅkhataṁ; | T: (none)
+sn44.11:5.5 | P: Abyākatanti dasadhāti. | T: (none)
+sn44.11:5.6 | P: Saḷāyatanavaggo catuttho. | T: (none)
+sn44.11:5.7 | S: The Book of the Six Sense Fields is finished. | T: (none)
+
+## sn7.18
+sn7.18:1.1 | S: At one time the Buddha was staying in the land of the Kosalans in a certain forest grove. | T: On one occasion the Blessed One was staying among the Kosalans in a certain forest grove.
+sn7.18:1.2 | S: Then several students, pupils of one of the Bhāradvāja brahmins, approached a forest grove while collecting firewood. They saw the Buddha sitting down cross-legged at the root of a certain sal tree, his body set straight, and mindfulness brought to the present. Seeing this, they went up to Bhāradvāja and said to him, | T: Then a large number of firewood-gathering youths—students of a certain brahman of the Bhāradvāja clan—went to the forest grove. On arrival, they saw the Blessed One sitting in the grove—his legs folded crosswise, his body set straight, mindfulness established to the fore. On seeing him, they went to the brahman of the Bhāradvāja clan and, on arrival, said to him,
+
+exec
+/bin/bash -lc "sed -n '140,152p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn44.11:2.5 | S: “This too has not been declared by the Buddha.” | T: “That too has not been declared by the Blessed One:
+sn44.11:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.11:3.1 | S: “Worthy Kaccāna, when asked these questions, you say that this has not been declared by the Buddha. | T: “Now, Master Kaccāna, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata does not exist after death.”’ When asked if the Tathāgata both exists and does not exist after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata both exists and does not exist after death.”’ When asked if the Tathāgata neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One:
+sn44.11:3.2 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.4 | P: ‘Kiṁ pana, bho kaccāna, na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.5 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.7 | P: ‘Kiṁ nu kho, bho kaccāna, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.8 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.10 | P: ‘Kiṁ pana, bho kaccāna, neva hoti na na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.11 | P: ‘etampi kho, vaccha, abyākataṁ bhagavatā— | T: (none)
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-020.findings.tmp <<'EOF'
+sn44.11:3.2 starts: ‘That has not been declared by the
+sn44.11:3.3 starts: “The Tathāgata exists after death.”’
+sn44.11:3.4 starts: When asked if the Tathāgata does not
+sn44.11:3.5 starts: ‘That too has not been declared by
+sn44.11:3.6 starts: “The Tathāgata does not exist after death.”’
+sn44.11:3.7 starts: When asked if the Tathāgata both exists
+sn44.11:3.8 starts: ‘That has not been declared by the
+sn44.11:3.9 starts: “The Tathāgata both exists and does not
+sn44.11:3.10 starts: When asked if the Tathāgata neither exists
+sn44.11:3.11 starts: ‘That too has not been declared by
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+10 lines reported.
+tokens used
+52,379
+10 lines reported.

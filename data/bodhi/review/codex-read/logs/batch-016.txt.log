@@ -1,0 +1,637 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd81-89cf-7a73-ad78-60ed1a2bf471
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear alignment errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.15
+an4.15:1.1 | S: “Mendicants, these four are regarded as foremost. | T: “Bhikkhus, there are these four proclamations of the foremost.
+an4.15:1.2 | S: What four? | T: What four?
+an4.15:1.3 | S: The foremost in size of incarnation is | T: (1) “The foremost of those with bodies is
+an4.15:1.4 | S: Rāhu, lord of titans. | T: Rāhu, lord of the asuras.
+an4.15:1.5 | S: The foremost pleasure seeker is | T: (2) The foremost of those who enjoy sensual pleasures is King Mandhātā.
+an4.15:1.6 | S: King Mandhātā. | T: (none)
+an4.15:1.7 | S: The foremost in sovereignty is | T: (3) The foremost of those who exercise authority is Māra the Evil One.
+an4.15:1.8 | S: Māra the Wicked. | T: (none)
+an4.15:1.9 | S: In this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—a Realized One, the perfected one, the fully awakened Buddha is said to be the best. | T: (4) In this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, the Tathāgata, the Arahant, the Perfectly Enlightened One is declared foremost.
+an4.15:1.10 | S: These are the four regarded as foremost. | T: These are the four proclamations of those who are foremost.”
+an4.15:2.1 | S: Rāhu is foremost in size of incarnation, | T: Rāhu is the foremost of those with bodies,
+an4.15:2.2 | S: Mandhātā in enjoying sensual pleasures, | T: Mandhātā, of those enjoying sense pleasures;
+an4.15:2.3 | S: Māra in sovereignty, | T: Māra is the foremost of rulers,
+an4.15:2.4 | S: shining with power and glory. | T: blazing with power and glory.
+an4.15:3.1 | S: Above, below, all round, | T: In this world together with its devas above, across, and below,
+an4.15:3.2 | S: as far as the planet extends; | T: as far as the world extends,
+an4.15:3.3 | S: in all the world with its gods, | T: (none)
+an4.15:3.4 | S: the Buddha is declared foremost.” | T: the Buddha is declared foremost.
+an4.15:3.5 | P: Pañcamaṁ. | T: (none)
+
+## an8.22
+an8.22:1.1 | S: At one time the Buddha was staying in the land of the Vajjis at Elephant Village. | T: On one occasion the Blessed One was dwelling among the Vajjis at Hatthigāma.
+an8.22:1.2 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus….
+an8.22:1.3 | S: “Mendicants, you should remember the householder Uggata of Elephant Village as someone who has eight amazing and incredible qualities.” | T: “Bhikkhus, you should remember the householder Ugga of Hatthigāma as one who possesses eight astounding and amazing qualities.”
+an8.22:1.4 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+an8.22:1.5 | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said this, the Fortunate One rose from his seat and entered his dwelling.
+an8.22:2.1 | S: Then a certain mendicant robed up in the morning and, taking his bowl and robe, went to the home of the householder Uggata of Elephant Village, where he sat down on the seat spread out. | T: Then, in the morning, a certain bhikkhu dressed, took his bowl and robe, and went to the residence of the householder Ugga of Hatthigāma. When he arrived, he sat down on the seat that was prepared for him.
+an8.22:2.2 | S: Then Uggata of Elephant Village went up to that mendicant, bowed, and sat down to one side. The mendicant said to him: | T: Then the householder Ugga of Hatthigāma approached that bhikkhu, paid homage to him, and sat down to one side. The bhikkhu then said to him:
+an8.22:2.3 | S: “Householder, the Buddha declared that you have eight amazing and incredible qualities. | T: “Householder, the Blessed One declared that you possess eight astounding and amazing qualities.
+an8.22:2.4 | S: What are the eight qualities that he spoke of?” | T: What are they?”
+an8.22:3.1 | S: “Sir, I don’t know | T: “I don’t know, Bhante,
+an8.22:3.2 | S: what eight amazing and incredible qualities the Buddha was referring to. | T: what eight astounding and amazing qualities the Blessed One declared that I possess.
+an8.22:3.3 | S: But these eight amazing and incredible qualities are found in me. | T: However, there are found in me eight astounding and amazing qualities.
+an8.22:3.4 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely. I will speak.”
+an8.22:3.5 | S: “Yes, householder,” replied the mendicant. | T: “Yes, householder,” the bhikkhu replied.
+an8.22:3.6 | S: Uggata of Elephant Village said this: | T: The householder Ugga of Hatthigāma said this:
+an8.22:3.7 | S: “Sir, when I first saw the Buddha off in the distance I was partying in the Dragon’s Park. | T: (1) “Bhante, I was carousing in the Nāga Grove when I first saw the Blessed One in the distance.
+an8.22:3.8 | S: My heart was inspired as soon as I saw him, and I sobered up. | T: As soon as I saw him my mind acquired confidence in him and my drunkenness vanished.
+an8.22:3.9 | S: This is the first incredible and amazing quality found in me. | T: This is the first astounding and amazing quality found in me.
+an8.22:4.1 | S: With confident heart I paid homage to the Buddha. | T: (2) “With a confident mind, I attended on the Blessed One.
+an8.22:4.2 | S: The Buddha taught me step by step, with | T: The Blessed One then gave me a progressive discourse…. as in AN8.21 …
+an8.22:4.3 | S: a talk on giving, ethical conduct, and heaven. He revealed the drawbacks of sensual pleasures, so sordid and corrupt, and the benefit of renunciation. | T: (none)
+an8.22:4.4 | S: And when he knew that my mind was ready, pliable, rid of hindrances, elated, and confident he revealed the special teaching of the Buddhas: | T: (none)
+an8.22:4.5 | S: suffering, its origin, its cessation, and the path. | T: (none)
+an8.22:4.6 | S: Just as a clean cloth rid of stains would properly absorb dye, | T: (none)
+an8.22:4.7 | S: in that very seat the stainless, immaculate vision of the Dhamma arose in me: | T: (none)
+an8.22:4.8 | S: ‘Everything that is liable to arise is liable to cease.’ | T: (none)
+an8.22:4.9 | S: I saw, attained, understood, and fathomed the Dhamma. I went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. Right there I went for refuge to the Buddha, his teaching, and the Saṅgha. And I undertook the five training rules with chastity as the fifth. | T: Right there I went for refuge to the Buddha, the Dhamma, and the Saṅgha, and undertook the training rules with celibacy as the fifth.
+an8.22:4.10 | S: This is the second incredible and amazing quality found in me. | T: This is the second astounding and amazing quality found in me.
+an8.22:5.1 | S: I had four teenage wives. | T: (3) “I had four young wives.
+an8.22:5.2 | S: And I went to them and said: | T: I then went to them …
+an8.22:5.3 | S: ‘Sisters, I’ve undertaken the five training rules with chastity as fifth. | T: (none)
+an8.22:5.4 | S: If you wish, you may stay here, enjoy my wealth, and do good deeds. Or you can return to your own families. | T: (none)
+an8.22:5.5 | S: Or would you prefer if I gave you to another man?’ | T: (none)
+an8.22:5.6 | S: When I said this, my eldest wife said to me: | T: as in AN8.21 …
+an8.22:5.7 | S: ‘Master, please give me to the man named so-and-so.’ | T: (none)
+an8.22:5.8 | S: Then I summoned that man. Taking my wife with my left hand and a ceremonial vase with my right, I presented her to that man with the pouring of water. | T: (none)
+an8.22:5.9 | S: But I can’t recall getting upset while giving away my teenage wife. | T: But even while giving away my young wife, I don’t recall that any alteration took place in my mind.
+an8.22:5.10 | S: This is the third incredible and amazing quality found in me. | T: This is the third astounding and amazing quality found in me.
+an8.22:6.1 | S: And though my family has wealth, | T: (4) “My family is wealthy
+an8.22:6.2 | S: it’s shared without reserve with ethical people of good character. | T: but the wealth is shared unreservedly with virtuous people of good character.
+an8.22:6.3 | S: This is the fourth incredible and amazing quality found in me. | T: This is the fourth astounding and amazing quality found in me.
+an8.22:7.1 | S: When I pay homage to a mendicant, | T: (5) “Whenever I attend on a bhikkhu,
+an8.22:7.2 | S: I do so carefully, not carelessly. | T: I attend on him respectfully, not without respect.
+an8.22:7.3 | S: If that venerable teaches me the Dhamma, | T: If that venerable one teaches me the Dhamma,
+an8.22:7.4 | S: I listen carefully, not carelessly. | T: I listen to it respectfully, not without respect.
+an8.22:7.5 | S: But if they don’t teach me the Dhamma, I teach them. | T: If he doesn’t teach me the Dhamma, then I teach him the Dhamma.
+an8.22:7.6 | S: This is the fifth incredible and amazing quality found in me. | T: This is the fifth astounding and amazing quality found in me.
+an8.22:8.1 | S: It’s not unusual for deities to come to me when the Saṅgha has been invited and announce: | T: (6) “It isn’t unusual that when the Saṅgha has been invited by me for a meal, deities come and report to me:
+an8.22:8.2 | S: ‘Householder, that mendicant is freed both ways. That one is freed by wisdom. That one is a direct witness. That one is attained to view. That one is freed by faith. That one is a follower of teachings. That one is a follower by faith. That one is ethical, of good character. That one is unethical, of bad character.’ | T: ‘That bhikkhu, householder, is liberated in both respects. That one is liberated by wisdom. That one is a body witness. That one is attained to view. That one is liberated by faith. That one is a Dhamma follower. That one is a faith follower. That one is virtuous, of good character. That one is immoral, of bad character.’
+an8.22:8.3 | S: But while I’m serving the Saṅgha I don’t recall thinking: | T: Still, when I am serving the Saṅgha, I do not recall thinking:
+an8.22:8.4 | S: ‘Let me give this one just a little, and that one a lot.’ | T: ‘Let me give this one little, let me give that one a lot.’
+an8.22:8.5 | S: Rather, I give impartially. | T: Rather, I give with an equal mind.
+an8.22:8.6 | S: This is the sixth incredible and amazing quality found in me. | T: This is the sixth astounding and amazing quality found in me.
+an8.22:9.1 | S: It’s not unusual for deities to come to me and announce: | T: (7) “It isn’t unusual for deities to come and report to me:
+an8.22:9.2 | S: ‘Householder, the Buddha’s teaching is well explained!’ | T: ‘‘Householder, the Dhamma is well expounded by the Blessed One.’
+an8.22:9.3 | S: When they say this I say to them: | T: I then say to those deities:
+an8.22:9.4 | S: ‘The Buddha’s teaching is well explained, regardless of whether or not you deities say so!’ | T: ‘Whether you deities say so or not, the Dhamma is well expounded by the Blessed One.’
+an8.22:9.5 | S: But I don’t recall getting too excited by the fact that | T: Still, I do not recall any mental exultation arising because deities come to me or because I converse with deities.
+an8.22:9.6 | S: the deities come to me, and I have a conversation with them. | T: (none)
+an8.22:9.7 | S: This is the seventh incredible and amazing quality found in me. | T: This is the seventh astounding and amazing quality found in me.
+an8.22:10.1 | S: If I pass away before the Buddha, it would be no wonder if the Buddha declares of me: | T: (8) “If I were to pass away before the Blessed One, it wouldn’t be surprising if the Blessed One would declare of me:
+an8.22:10.2 | S: ‘The householder Uggata of Elephant Village is bound by no fetter that might return him to this world.’ | T: ‘There is no fetter bound by which the householder Ugga of Hatthigāma might return to this world.’
+an8.22:10.3 | S: This is the eighth incredible and amazing quality found in me. | T: This is the eighth astounding and amazing quality found in me.
+an8.22:11.1 | S: These eight amazing and incredible qualities are found in me. | T: “These, Bhante, are eight astounding and amazing qualities found in me.
+an8.22:11.2 | S: But I don’t know | T: But I don’t know
+an8.22:11.3 | S: what eight amazing and incredible qualities the Buddha was referring to.” | T: what eight astounding and amazing qualities the Blessed One declared that I possess.”
+an8.22:12.1 | S: Then that mendicant, after taking almsfood in Uggata of Elephant Village’s home, rose from his seat and left. | T: Then that bhikkhu, having received almsfood at the residence of the householder Ugga of Hatthigāma, rose from his seat and departed.
+an8.22:12.2 | S: Then after the meal, on his return from almsround, he went to the Buddha, bowed, and sat down to one side. | T: After his meal, on returning from his alms round, he approached the Blessed One, paid homage to him, sat down to one side,
+an8.22:12.3 | S: He informed the Buddha of all he had discussed with the householder Uggata of Elephant Village. The Buddha said: | T: and reported to him the entire conversation he had had with the householder Ugga of Hatthigāma. The Blessed One said:
+an8.22:13.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+an8.22:13.2 | S: When I declared that the householder Uggata of Elephant Village was someone who has eight amazing and incredible qualities, I was referring to the same eight qualities that he rightly explained to you. | T: I had declared that the householder Ugga of Hatthigāma possesses these same eight astounding and amazing qualities that he rightly explained to you.
+an8.22:13.3 | S: You should remember the householder Uggata of Elephant Village as someone who has these eight amazing and incredible qualities.” | T: You should remember the householder Ugga of Hatthigāma as one who possesses these eight astounding and amazing qualities.”
+an8.22:13.4 | P: Dutiyaṁ. | T: (none)
+
+## sn1.47
+sn1.47:1.1 | S: “Whose merit always grows | T: “For whom does merit always increase,
+sn1.47:1.2 | S: by day and by night? | T: Both by day and by night?
+sn1.47:1.3 | S: What people—firm in principle, <j>accomplished in conduct— | T: (none)
+sn1.47:1.4 | S: are going to heaven?” | T: Who are the people going to heaven, Established in Dhamma, endowed with virtue?”
+sn1.47:2.1 | S: “Planters of parks or groves, | T: “Those who set up a park or a grove,
+sn1.47:2.2 | S: those who build a bridge, | T: The people who construct a bridge,
+sn1.47:2.3 | S: a drinking place and well, | T: A place to drink and a well,
+sn1.47:2.4 | S: and those who give monastic quarters. | T: Those who give a residence:
+sn1.47:3.1 | S: Their merit always grows | T: “For them merit always increases,
+sn1.47:3.2 | S: by day and by night. | T: Both by day and by night;
+sn1.47:3.3 | S: Those people—firm in principle, <j>accomplished in conduct— | T: (none)
+sn1.47:3.4 | S: are going to heaven.” | T: Those are the people going to heaven, Established in Dhamma, endowed with virtue.”
+
+## sn11.25
+sn11.25:1.1 | S: So I have heard. | T: Thus have I heard.
+sn11.25:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn11.25:1.3 | S: There the Buddha addressed the mendicants: | T: There the Blessed One said this:
+sn11.25:1.4 | S: “Once upon a time, mendicants, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Bhikkhus, once in the past Sakka, lord of the devas, instructing the Tavatiṁsa devas in the Sudhamma assembly hall, on that occasion recited this verse:
+sn11.25:2.1 | S: ‘Don’t let anger be your master, | T: “‘Do not let anger overpower you;
+sn11.25:2.2 | S: don’t get angry at angry people. | T: Do not become angry at those who are angry.
+sn11.25:2.3 | S: Kindness and harmlessness | T: Nonanger and harmlessness always dwell
+sn11.25:2.4 | S: are always present in the noble ones. | T: Within the hearts of the noble ones.
+sn11.25:2.5 | S: For anger crushes bad people | T: Like a mountain avalanche Anger crushes evil people.’”
+sn11.25:2.6 | S: like a mountain.’” | T: (none)
+sn11.25:2.7 | P: Tatiyo vaggo. | T: (none)
+sn11.25:3.0 | P: Tassuddānaṁ | T: (none)
+sn11.25:3.1 | P: Chetvā dubbaṇṇiya māyā, | T: (none)
+sn11.25:3.2 | P: accayena akodhano; | T: (none)
+sn11.25:3.3 | P: Desitaṁ buddhaseṭṭhena, | T: (none)
+sn11.25:3.4 | P: idañhi sakkapañcakanti. | T: (none)
+sn11.25:3.5 | S: The Linked Discourses with Sakka are complete. | T: (none)
+sn11.25:3.6 | P: Sagāthāvaggo paṭhamo. | T: (none)
+sn11.25:4.0 | P: Tassuddānaṁ | T: (none)
+sn11.25:4.1 | P: Devatā devaputto ca, | T: (none)
+sn11.25:4.2 | P: rājā māro ca bhikkhunī; | T: (none)
+sn11.25:4.3 | P: Brahmā brāhmaṇa vaṅgīso, | T: (none)
+sn11.25:4.4 | P: vanayakkhena vāsavoti. | T: (none)
+sn11.25:4.5 | S: The Book With Verses is finished. | T: The Book with Verses is finished.
+
+## sn12.55
+sn12.55:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.55:1.2 | S: “There are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: “Bhikkhus, when one dwells contemplating gratification in things that can be clung to, craving increases.
+sn12.55:1.3 | S: Craving is a requirement for grasping. | T: With craving as condition,
+sn12.55:1.4 | S: Grasping is a requirement for continued existence. … | T: clinging comes to be….
+sn12.55:1.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.55:2.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree,
+sn12.55:2.2 | S: And its roots going downwards and across all draw the sap upwards. | T: and all its roots going downwards and across would send the sap upwards.
+sn12.55:2.3 | S: Fed and fuelled by that, the great tree would stand for a long time. | T: Sustained by that sap, nourished by it, that great tree would stand for a very long time.
+sn12.55:2.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one lives contemplating gratification in things that can be clung to, craving increases….
+sn12.55:2.5 | S: Craving is a requirement for grasping. … | T: (none)
+sn12.55:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.55:3.1 | S: There are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “When, bhikkhus, one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.55:3.2 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging….
+sn12.55:3.3 | S: When grasping ceases, continued existence ceases. … | T: (none)
+sn12.55:3.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.55:4.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree.
+sn12.55:4.2 | S: Then a person comes along with a spade and basket. | T: Then a man would come along bringing a shovel and a basket.
+sn12.55:4.3 | S: They’d cut the tree down at the roots, dig it up, and pull the roots out, down to the fibers and stems. | T: He would cut down the tree at its foot, dig it up, and pull out the roots, even the fine rootlets and root-fibre.
+sn12.55:4.4 | S: They’d cut the tree apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or float them away down a swift stream. | T: He would cut the tree into pieces, split the pieces, and reduce them to slivers. Then he would dry the slivers in the wind and sun, burn them in a fire, and collect the ashes. Having done so, he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.
+sn12.55:4.5 | P: vātātape visosetvā agginā ḍaheyya, agginā ḍahetvā masiṁ kareyya, masiṁ karitvā mahāvāte vā ophuṇeyya nadiyā vā sīghasotāya pavāheyya. | T: (none)
+sn12.55:4.6 | S: In this way the great tree is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that great tree would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.55:4.7 | S: In the same way, there are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “So too, bhikkhus, when one dwells contemplating danger in things that can be clung to, craving ceases….
+sn12.55:4.8 | S: When craving ceases, grasping ceases. | T: (none)
+sn12.55:4.9 | S: When grasping ceases, continued existence ceases. … | T: (none)
+sn12.55:4.10 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.55:4.11 | P: Pañcamaṁ. | T: (none)
+
+## sn21.6
+sn21.6:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn21.6:1.2 | S: Then Venerable Bhaddiya the Dwarf went to the Buddha. | T: Then the Venerable Lakuṇṭaka Bhaddiya approached the Blessed One.
+sn21.6:1.3 | S: The Buddha saw him coming off in the distance, | T: The Blessed One saw him coming in the distance and addressed the bhikkhus thus:
+sn21.6:1.4 | S: and addressed the mendicants: | T: (none)
+sn21.6:1.5 | S: “Mendicants, do you see this monk coming—ugly, unsightly, deformed, and despised by the mendicants?” | T: “Bhikkhus, do you see that bhikkhu coming, ugly, unsightly, deformed, despised among the bhikkhus?”
+sn21.6:1.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn21.6:1.7 | S: “That mendicant is very mighty and powerful. It’s not easy to find an attainment that he has not already attained. | T: “That bhikkhu is of great spiritual power and might. It is not easy to find an attainment which that bhikkhu has not already attained.
+sn21.6:1.8 | S: And he has realized the supreme culmination of the spiritual path in this very life. He lives having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.” | T: And he is one who, by realizing it for himself with direct knowledge, in this very life enters and dwells in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.”
+sn21.6:1.9 | S: That is what the Buddha said. | T: This is what the Blessed One said … who further said this:
+sn21.6:1.10 | S: Then the Holy One, the Teacher, went on to say: | T: (none)
+sn21.6:2.1 | S: “Geese, herons, and peacocks, | T: “Geese, herons, and peacocks,
+sn21.6:2.2 | S: elephants and spotted deer— | T: Elephants, and spotted deer,
+sn21.6:2.3 | S: though their bodies are not equal, | T: All are frightened of the lion Regardless of their bodies’ size.
+sn21.6:2.4 | S: they all fear the lion. | T: (none)
+sn21.6:3.1 | S: So it is for humans— | T: “In the same way among human beings
+sn21.6:3.2 | S: if a little person is wise, | T: The small one endowed with wisdom—
+sn21.6:3.3 | S: they’re the truly great one, | T: He is the one that is truly great,
+sn21.6:3.4 | S: not the fool with a good body.” | T: Not the fool with a well-built body.”
+sn21.6:3.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.33
+sn22.33:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.33:1.2 | S: “Mendicants, give up what’s not yours. | T: “Bhikkhus, whatever is not yours, abandon it.
+sn22.33:1.3 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn22.33:1.4 | S: And what isn’t yours? | T: And what is it, bhikkhus, that is not yours?
+sn22.33:1.5 | S: Form isn’t yours: give it up. | T: Form is not yours: abandon it.
+sn22.33:1.6 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn22.33:1.7 | S: Feeling … | T: Feeling is not yours …
+sn22.33:1.8 | P: Sā vo pahīnā hitāya sukhāya bhavissati. | T: (none)
+sn22.33:1.9 | S: Perception … | T: Perception is not yours …
+sn22.33:1.10 | S: Choices … | T: Volitional formations are not yours …
+sn22.33:1.11 | P: Te vo pahīnā hitāya sukhāya bhavissanti. | T: (none)
+sn22.33:1.12 | S: Consciousness isn’t yours: give it up. | T: Consciousness is not yours: abandon it.
+sn22.33:1.13 | S: Giving it up will be for your welfare and happiness. | T: When you have abandoned it, that will lead to your welfare and happiness.
+sn22.33:2.1 | S: Suppose a person was to carry off the grass, sticks, branches, and leaves in this Jeta’s Grove, or burn them, or do what they want with them. | T: “Suppose, bhikkhus, people were to carry off the grass, sticks, branches, and foliage in this Jeta’s Grove, or to burn them, or to do with them as they wish.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.33:2.2 | S: Would you think: | T: Would you think:
+sn22.33:2.3 | S: ‘This person is carrying us off, burning us, or doing what they want with us’?” | T: ‘People are carrying us off, or burning us, or doing with us as they wish’?”
+sn22.33:2.4 | S: “No, sir. | T: “No, venerable sir.
+sn22.33:2.5 | S: Why is that? | T: For what reason?
+sn22.33:2.6 | S: Because to us that’s neither self nor belonging to self.” | T: Because, venerable sir, that is neither our self nor what belongs to our self.”
+sn22.33:2.7 | S: “In the same way, mendicants, form isn’t yours: give it up. | T: “So too, bhikkhus, form is not yours …
+sn22.33:2.8 | S: Giving it up will be for your welfare and happiness. | T: (none)
+sn22.33:2.9 | S: Feeling … | T: (none)
+sn22.33:2.10 | P: Sā vo pahīnā hitāya sukhāya bhavissati. | T: (none)
+sn22.33:2.11 | S: Perception … | T: (none)
+sn22.33:2.12 | S: Choices … | T: (none)
+sn22.33:2.13 | S: Consciousness isn’t yours: give it up. | T: consciousness is not yours: abandon it.
+sn22.33:2.14 | S: Giving it up will be for your welfare and happiness.” | T: When you have abandoned it, that will lead to your welfare and happiness.”
+sn22.33:2.15 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.51
+sn22.51:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.51:1.2 | S: “Mendicants, form really is impermanent. A mendicant sees that it is impermanent: that’s their right view. | T: “Bhikkhus, a bhikkhu sees as impermanent form which is actually impermanent: that is his right view.
+sn22.51:1.3 | S: Seeing rightly, they grow disillusioned. | T: Seeing rightly, he experiences revulsion.
+sn22.51:1.4 | S: When relishing ends, greed ends. When greed ends, relishing ends. | T: With the destruction of delight comes the destruction of lust; with the destruction of lust comes the destruction of delight.
+sn22.51:1.5 | S: When relishing and greed end, the mind is freed, and is said to be well freed. | T: With the destruction of delight and lust the mind is liberated and is said to be well liberated.
+sn22.51:1.6 | S: Feeling … | T: “A bhikkhu sees as impermanent feeling which is actually impermanent …
+sn22.51:1.7 | P: Sammā passaṁ nibbindati. | T: (none)
+sn22.51:1.8 | P: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. | T: (none)
+sn22.51:1.9 | P: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. | T: (none)
+sn22.51:1.10 | S: Perception … | T: perception which is actually impermanent …
+sn22.51:1.11 | S: Choices … | T: volitional formations which are actually impermanent …
+sn22.51:1.12 | P: Sammā passaṁ nibbindati. | T: (none)
+sn22.51:1.13 | P: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. | T: (none)
+sn22.51:1.14 | P: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. | T: (none)
+sn22.51:1.15 | S: Consciousness really is impermanent. A mendicant sees that it is impermanent: that’s their right view. | T: consciousness which is actually impermanent: that is his right view….
+sn22.51:1.16 | S: Seeing rightly, they grow disillusioned. | T: (none)
+sn22.51:1.17 | S: When relishing ends, greed ends. When greed ends, relishing ends. | T: (none)
+sn22.51:1.18 | S: When relishing and greed end, the mind is freed, and is said to be well freed.” | T: With the destruction of delight and lust the mind is liberated and is said to be well liberated.”
+sn22.51:1.19 | P: Navamaṁ. | T: (none)
+
+## sn22.52
+sn22.52:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.52:1.2 | S: “Mendicants, rationally apply the mind to form. Truly see the impermanence of form. | T: “Bhikkhus, attend carefully to form. Recognize the impermanence of form as it really is. When a bhikkhu attends carefully to form and recognizes the impermanence of form as it really is,
+sn22.52:1.3 | S: When a mendicant does this, they grow disillusioned with form. | T: he experiences revulsion towards form.
+sn22.52:1.4 | S: When relishing ends, greed ends. When greed ends, relishing ends. | T: With the destruction of delight comes the destruction of lust; with the destruction of lust comes the destruction of delight.
+sn22.52:1.5 | S: When relishing and greed end, the mind is freed, and is said to be well freed. | T: With the destruction of delight and lust the mind is liberated and is said to be well liberated.
+sn22.52:1.6 | S: Rationally apply the mind to feeling … | T: “Bhikkhus, attend carefully to feeling …
+sn22.52:1.7 | P: Vedanaṁ, bhikkhave, bhikkhu yoniso manasi karonto, vedanāniccatañca yathābhūtaṁ samanupassanto vedanāya nibbindati. | T: (none)
+sn22.52:1.8 | P: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. | T: (none)
+sn22.52:1.9 | P: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. | T: (none)
+sn22.52:1.10 | S: perception … | T: to perception …
+sn22.52:1.11 | S: choices … | T: to volitional formations …
+sn22.52:1.12 | P: Saṅkhāre, bhikkhave, bhikkhu yoniso manasi karonto, saṅkhārāniccataṁ yathābhūtaṁ samanupassanto saṅkhāresu nibbindati. | T: (none)
+sn22.52:1.13 | P: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. | T: (none)
+sn22.52:1.14 | P: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. | T: (none)
+sn22.52:1.15 | S: consciousness. Truly see the impermanence of consciousness. | T: to consciousness….
+sn22.52:1.16 | S: When a mendicant does this, they grow disillusioned with consciousness. | T: (none)
+sn22.52:1.17 | S: When relishing ends, greed ends. When greed ends, relishing ends. | T: (none)
+sn22.52:1.18 | S: When relishing and greed end, the mind is freed, and is said to be well freed.” | T: With the destruction of delight and lust the mind is liberated and is said to be well liberated.”
+sn22.52:1.19 | P: Dasamaṁ. | T: (none)
+sn22.52:1.20 | P: Attadīpavaggo pañcamo. | T: (none)
+sn22.52:2.0 | P: Tassuddānaṁ | T: (none)
+sn22.52:2.1 | P: Attadīpā paṭipadā, | T: (none)
+sn22.52:2.2 | P: Dve ca honti aniccatā; | T: (none)
+sn22.52:2.3 | P: Samanupassanā khandhā, | T: (none)
+sn22.52:2.4 | P: Dve soṇā dve nandikkhayena cāti. | T: (none)
+sn22.52:2.5 | P: Mūlapaṇṇāsako samatto. | T: (none)
+sn22.52:3.0 | P: Tassa mūlapaṇṇāsakassa vagguddānaṁ | T: (none)
+sn22.52:3.1 | P: Nakulapitā anicco ca, | T: (none)
+sn22.52:3.2 | P: Bhāro natumhākena ca; | T: (none)
+sn22.52:3.3 | P: Attadīpena paññāso, | T: (none)
+sn22.52:3.4 | P: Paṭhamo tena pavuccatīti. | T: (none)
+
+## sn35.118
+sn35.118:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was dwelling at Rajagaha on Mount Vulture Peak.
+sn35.118:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, and said to him: | T: Then Sakka, lord of the devas, approached the Blessed One, paid homage to him, stood to one side, and said to him:
+sn35.118:1.3 | S: “What is the cause, sir, what is the reason why some sentient beings are not fully extinguished in this very life? | T: “Venerable sir, what is the cause and reason why some beings here do not attain Nibbāna in this very life?
+sn35.118:1.4 | S: What is the cause, what is the reason why some sentient beings are fully extinguished in this very life?” | T: And what is the cause and reason why some beings here attain Nibbāna in this very life?”
+sn35.118:2.1 | S: “Lord of gods, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, lord of the devas, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.118:2.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.118:2.3 | S: their consciousness has that as support and fuel for grasping. | T: his consciousness becomes dependent upon them and clings to them.
+sn35.118:2.4 | S: A mendicant with fuel for grasping does not become extinguished. | T: A bhikkhu with clinging does not attain Nibbāna.
+sn35.118:3.1 | S: There are sounds … smells … tastes … touches … | T: “There are, lord of the devas, sounds cognizable by the ear …
+sn35.118:3.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.118:3.3 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.118:3.4 | S: their consciousness has that as support and fuel for grasping. | T: his consciousness becomes dependent upon them and clings to them.
+sn35.118:3.5 | S: A mendicant with fuel for grasping does not become extinguished. | T: A bhikkhu with clinging does not attain Nibbāna.
+sn35.118:3.6 | S: That’s the cause, that’s the reason why some sentient beings are not fully extinguished in this very life. | T: “This is the cause and reason, lord of the devas, why some beings here do not attain Nibbāna in this very life.
+sn35.118:4.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, lord of the devas, forms cognizable by the eye …
+sn35.118:4.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: (none)
+sn35.118:4.3 | S: their consciousness doesn’t have that as support and fuel for grasping. | T: (none)
+sn35.118:4.4 | S: A mendicant free of grasping becomes extinguished. | T: (none)
+sn35.118:5.1 | S: There are sounds … smells … tastes … touches … | T: (none)
+sn35.118:5.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.118:5.3 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them,
+sn35.118:5.4 | S: their consciousness doesn’t have that as support and fuel for grasping. | T: his consciousness does not become dependent upon them or cling to them.
+sn35.118:5.5 | S: A mendicant free of grasping becomes extinguished. | T: A bhikkhu without clinging attains Nibbāna.
+sn35.118:5.6 | S: That’s the cause, that’s the reason why some sentient beings are fully extinguished in this very life.” | T: “This is the cause and reason, lord of the devas, why some beings here attain Nibbāna in this very life.”
+sn35.118:5.7 | P: Pañcamaṁ. | T: (none)
+
+## sn35.79
+sn35.79:1.1 | S: Then a mendicant went up to the Buddha … | T: Then a certain bhikkhu approached the Blessed One …
+sn35.79:1.2 | S: and said to him: | T: and said to him:
+sn35.79:1.3 | S: “Sir, is there one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge?” | T: “Venerable sir, is there one thing through the abandoning of which ignorance is abandoned by a bhikkhu and true knowledge arises?”
+sn35.79:2.1 | S: “There is, mendicant.” | T: “There is one thing, bhikkhu, through the abandoning of which ignorance is abandoned by a bhikkhu and true knowledge arises.”
+sn35.79:3.1 | S: “But what is that one thing?” | T: “And what is that one thing, venerable sir?”
+sn35.79:4.1 | S: “Ignorance is one thing such that by giving it up a mendicant gives up ignorance and gives rise to knowledge.” | T: “Ignorance, bhikkhu, is that one thing through the abandoning of which ignorance is abandoned by a bhikkhu and true knowledge arises.”
+sn35.79:5.1 | S: “But how does a mendicant know and see so as to give up ignorance and give rise to knowledge?” | T: “But, venerable sir, how should a bhikkhu know, how should he see, for ignorance to be abandoned by him and true knowledge to arise?”
+sn35.79:6.1 | S: “When a mendicant knows and sees the eye, sights, eye consciousness, and eye contact as impermanent, ignorance is given up and knowledge arises. | T: “Bhikkhu, when a bhikkhu knows and sees the eye as impermanent, ignorance is abandoned by him and true knowledge arises. When he knows and sees forms as impermanent …
+sn35.79:6.2 | S: And also knowing and seeing the pleasant, painful, or neutral feeling that arises dependent on eye contact as impermanent, ignorance is given up and knowledge arises. … | T: (none)
+sn35.79:6.3 | S: Knowing and seeing the mind, ideas, mind consciousness, and mind contact as impermanent, ignorance is given up and knowledge arises. | T: (none)
+sn35.79:6.4 | S: And also knowing and seeing the pleasant, painful, or neutral feeling that arises dependent on mind contact as impermanent, ignorance is given up and knowledge arises. | T: When he knows and sees as impermanent whatever feeling arises with mind-contact as condition … ignorance is abandoned by him and true knowledge arises.
+sn35.79:6.5 | S: That’s how a mendicant knows and sees so as to give up ignorance and give rise to knowledge.” | T: “When, bhikkhu, a bhikkhu knows and sees thus, ignorance is abandoned by him and true knowledge arises.”
+sn35.79:6.6 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn43.11
+sn43.11:1.1 | S: “And what is the path that leads to the unconditioned? | T: … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.11:1.2 | S: The noble eightfold path. | T: The Noble Eightfold Path:
+sn43.11:1.3 | S: This is called the path that leads to the unconditioned. | T: this is called the path leading to the unconditioned.
+sn43.11:1.4 | S: So, mendicants, I’ve taught you the unconditioned and the path that leads to the unconditioned. | T: “Thus, bhikkhus, I have taught you the unconditioned and the path leading to the unconditioned….
+sn43.11:1.5 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: (none)
+sn43.11:1.6 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: This is our instruction to you.”
+sn43.11:1.7 | P: Ekādasamaṁ. | T: (none)
+sn43.11:1.8 | P: Asaṅkhatasaṁyuttassa paṭhamo vaggo. | T: (none)
+sn43.11:2.0 | P: Tassuddānaṁ | T: (none)
+sn43.11:2.1 | P: Kāyo samatho savitakko, | T: (none)
+sn43.11:2.2 | P: suññato satipaṭṭhānā; | T: (none)
+sn43.11:2.3 | P: Sammappadhānā iddhipādā, | T: (none)
+sn43.11:2.4 | P: indriyabalabojjhaṅgā; | T: (none)
+sn43.11:2.5 | P: Maggena ekādasamaṁ, | T: (none)
+sn43.11:2.6 | P: Tassuddānaṁ pavuccati. | T: (none)
+
+## sn45.77
+sn45.77:1.1 | S: At Sāvatthī. | T: (none)
+sn45.77:1.2 | S: “Mendicants, I do not see a single thing that gives rise to the noble eightfold path, or, if it’s already arisen, fully develops it like good friendship. | T: “Bhikkhus, I do not see even one other thing by means of which the unarisen Noble Eightfold Path arises and the arisen Noble Eightfold Path goes to fulfilment by development so effectively as by this: good friendship.
+sn45.77:1.3 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the Noble Eightfold Path.
+sn45.77:1.4 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path?
+sn45.77:1.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.77:1.6 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.”
+sn45.77:1.7 | P: Paṭhamaṁ. | T: (none)
+
+## sn47.25
+sn47.25:1.1 | S: So I have heard. | T: Thus have I heard.
+sn47.25:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi, in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn47.25:1.3 | S: Then a certain brahmin went up to the Buddha, and exchanged greetings with him. | T: Then a certain brahmin approached the Blessed One and exchanged greetings with him.
+sn47.25:1.4 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to the Blessed One:
+sn47.25:1.5 | S: “What is the cause, worthy Gotama, what is the reason why the true teaching does not last long after the final quenching of the Realized One? | T: “Master Gotama, what is the cause and reason why the true Dhamma does not endure long after a Tathagata has attained final Nibbāna?
+sn47.25:1.6 | S: And what is the cause, what is the reason why the true teaching does last long after the final quenching of the Realized One?” | T: And what is the cause and reason why the true Dhamma endures long after a Tathagata has attained final Nibbāna?”
+sn47.25:2.1 | S: “Brahmin, it’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. | T: “It is, brahmin, because the four establishments of mindfulness are not developed and cultivated that the true Dhamma does not endure long after a Tathagata has attained final Nibbāna.
+sn47.25:2.2 | S: It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One. | T: And it is because the four establishments of mindfulness are developed and cultivated that the true Dhamma endures long after a Tathagata has attained final Nibbāna.
+sn47.25:3.1 | S: What four? | T: What four?
+sn47.25:3.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: … as in §22 …
+sn47.25:3.3 | S: They meditate observing an aspect of feelings … | T: (none)
+sn47.25:3.4 | S: mind … | T: (none)
+sn47.25:3.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.25:3.6 | S: It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. | T: It is because these four establishments of mindfulness are not developed and cultivated …
+sn47.25:3.7 | S: It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One.” | T: are developed and cultivated that the true Dhamma endures long after a Tathagata has attained final Nibbāna.”
+sn47.25:4.1 | S: When he said this, the brahmin said to the Buddha, | T: When this was said, that brahmin said to the Blessed One:
+sn47.25:4.2 | S: “Excellent, worthy Gotama! Excellent! … | T: ‘Magnificent, Master Gotama!…
+sn47.25:4.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn47.25:4.4 | P: Pañcamaṁ. | T: (none)
+
+## sn47.63-72
+sn47.63-72:1.1 | S: “Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet …” | T: (none)
+sn47.63-72:1.2 | S: (Tell in full as in SN 45.139–148.) | T: (To be elaborated by way of the establishments of mindfulness parallel to SN45.139.)
+sn47.63-72:1.3 | P: Appamādavaggo sattamo. | T: (none)
+sn47.63-72:2.0 | P: Tassuddānaṁ | T: (none)
+sn47.63-72:2.1 | S: The Realized One, footprint, roof peak, | T: Tathagata, footprint, roof peak,
+sn47.63-72:2.2 | S: roots, heartwood, jasmine, | T: Roots, heartwood, jasmine,
+sn47.63-72:2.3 | S: monarch, sun and moon, | T: Monarch, the moon and sun,
+sn47.63-72:2.4 | S: and cloth is the tenth. | T: Together with the cloth as tenth.
+
+## sn47.73-84
+sn47.73-84:1.1 | S: “Mendicants, all the hard work that gets done depends on the earth and is grounded on the earth. …” | T: (none)
+sn47.73-84:1.2 | S: (Tell in full as in SN 45.149–160.) | T: (To be elaborated parallel to SN45.149.)
+sn47.73-84:1.3 | P: Balakaraṇīyavaggo aṭṭhamo. | T: (none)
+sn47.73-84:2.0 | P: Tassuddānaṁ | T: (none)
+sn47.73-84:2.1 | S: Hard work, seeds, and dragons, | T: Strenuous, seeds, and nagas,
+sn47.73-84:2.2 | S: a tree, a pot, and a spike, | T: The tree, the pot, the spike,
+sn47.73-84:2.3 | S: the atmosphere, and two on clouds, | T: The sky, and two on clouds,
+sn47.73-84:2.4 | S: a ship, a guest house, and a river. | T: The ship, guest house, and river.
+
+## sn56.4
+sn56.4:1.1 | S: “Mendicants, whatever gentlemen—past, | T: “Bhikkhus, whatever clansmen in the past rightly went forth from the household life into homelessness and made the breakthrough to things as they really are,
+sn56.4:1.2 | S: future, | T: (none)
+sn56.4:1.3 | S: or present—truly comprehend after rightly going forth from the lay life to homelessness, all of them truly comprehend the four noble truths. | T: all made the breakthrough to the Four Noble Truths as they really are. Whatever clansmen in the future will rightly go forth from the household life into homelessness and make the breakthrough to things as they really are, all will make the breakthrough to the Four Noble Truths as they really are. Whatever clansmen at present have rightly gone forth from the household life into homelessness and make the breakthrough to things as they really are, all make the breakthrough to the Four Noble Truths as they really are.
+sn56.4:2.1 | S: What four? | T: “What four?
+sn56.4:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.4:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ kulaputtā sammā agārasmā anagāriyaṁ pabbajitā yathābhūtaṁ abhisamesuṁ …pe… | T: Whatever clansmen made the breakthrough …
+sn56.4:2.4 | P: abhisamessanti …pe… | T: will make the breakthrough …
+sn56.4:2.5 | P: abhisamenti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisamenti. | T: make the breakthrough to things as they really are, all make the breakthrough to these Four Noble Truths as they really are.
+sn56.4:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.4:3.2 | P: Catutthaṁ. | T: (none)
+
+## sn56.5
+sn56.5:1.1 | S: “Mendicants, whatever ascetics and brahmins truly awaken—in the past, | T: “Bhikkhus, whatever ascetics or brahmins in the past fully awakened to things as they really are,
+sn56.5:1.2 | S: future, | T: (none)
+sn56.5:1.3 | S: or present—all of them truly awaken to the four noble truths. | T: all fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins in the future will fully awaken to things as they really are, all will fully awaken to the Four Noble Truths as they really are. Whatever ascetics or brahmins at present have fully awakened to things as they really are, all have fully awakened to the Four Noble Truths as they really are.
+sn56.5:2.1 | S: What four? | T: “What four?
+sn56.5:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.5:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ samaṇā vā brāhmaṇā vā yathābhūtaṁ abhisambojjhiṁsu …pe… | T: Whatever ascetics or brahmins fully awakened … will fully awaken …
+sn56.5:2.4 | P: abhisambojjhissanti …pe… | T: (none)
+sn56.5:2.5 | P: abhisambojjhanti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisambojjhanti. | T: have fully awakened to things as they really are, all have fully awakened to these Four Noble Truths as they really are.
+sn56.5:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn56.5:3.2 | P: Pañcamaṁ. | T: (none)
+
+## sn56.6
+sn56.6:1.1 | S: “Mendicants, whatever ascetics and brahmins—past, | T: “Bhikkhus, whatever ascetics or brahmins in the past revealed themselves as having fully awakened to things as they really are,
+sn56.6:1.2 | S: future, | T: (none)
+sn56.6:1.3 | S: or present—reveal that they are awakened, all of them reveal that they truly awakened to the four noble truths. | T: all revealed themselves as having fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins in the future will reveal themselves as having fully awakened to things as they really are, all will reveal themselves as having fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins at present reveal themselves as having fully awakened to things as they really are, all reveal themselves as having fully awakened to the Four Noble Truths as they really are.
+sn56.6:2.1 | S: What four? | T: “What four?
+sn56.6:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.6:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ samaṇā vā brāhmaṇā vā yathābhūtaṁ abhisambuddhaṁ pakāsesuṁ …pe… | T: Whatever ascetics or brahmins revealed themselves … will reveal themselves …
+sn56.6:2.4 | P: pakāsessanti …pe… | T: (none)
+sn56.6:2.5 | P: pakāsenti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisambuddhaṁ pakāsenti. | T: reveal themselves as having fully awakened to things as they really are, all reveal themselves as having fully awakened to these Four Noble Truths as they really are.
+sn56.6:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.6:3.2 | P: Chaṭṭhaṁ. | T: (none)
+
+
+codex
+The full batch is read. I’m checking the remaining cases against your exceptions for combined sentences and shortened passages before writing the findings.
+exec
+/bin/bash -lc "sed -n '90,160p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.22:12.2 | S: Then after the meal, on his return from almsround, he went to the Buddha, bowed, and sat down to one side. | T: After his meal, on returning from his alms round, he approached the Blessed One, paid homage to him, sat down to one side,
+an8.22:12.3 | S: He informed the Buddha of all he had discussed with the householder Uggata of Elephant Village. The Buddha said: | T: and reported to him the entire conversation he had had with the householder Ugga of Hatthigāma. The Blessed One said:
+an8.22:13.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+an8.22:13.2 | S: When I declared that the householder Uggata of Elephant Village was someone who has eight amazing and incredible qualities, I was referring to the same eight qualities that he rightly explained to you. | T: I had declared that the householder Ugga of Hatthigāma possesses these same eight astounding and amazing qualities that he rightly explained to you.
+an8.22:13.3 | S: You should remember the householder Uggata of Elephant Village as someone who has these eight amazing and incredible qualities.” | T: You should remember the householder Ugga of Hatthigāma as one who possesses these eight astounding and amazing qualities.”
+an8.22:13.4 | P: Dutiyaṁ. | T: (none)
+
+## sn1.47
+sn1.47:1.1 | S: “Whose merit always grows | T: “For whom does merit always increase,
+sn1.47:1.2 | S: by day and by night? | T: Both by day and by night?
+sn1.47:1.3 | S: What people—firm in principle, <j>accomplished in conduct— | T: (none)
+sn1.47:1.4 | S: are going to heaven?” | T: Who are the people going to heaven, Established in Dhamma, endowed with virtue?”
+sn1.47:2.1 | S: “Planters of parks or groves, | T: “Those who set up a park or a grove,
+sn1.47:2.2 | S: those who build a bridge, | T: The people who construct a bridge,
+sn1.47:2.3 | S: a drinking place and well, | T: A place to drink and a well,
+sn1.47:2.4 | S: and those who give monastic quarters. | T: Those who give a residence:
+sn1.47:3.1 | S: Their merit always grows | T: “For them merit always increases,
+sn1.47:3.2 | S: by day and by night. | T: Both by day and by night;
+sn1.47:3.3 | S: Those people—firm in principle, <j>accomplished in conduct— | T: (none)
+sn1.47:3.4 | S: are going to heaven.” | T: Those are the people going to heaven, Established in Dhamma, endowed with virtue.”
+
+## sn11.25
+sn11.25:1.1 | S: So I have heard. | T: Thus have I heard.
+sn11.25:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn11.25:1.3 | S: There the Buddha addressed the mendicants: | T: There the Blessed One said this:
+sn11.25:1.4 | S: “Once upon a time, mendicants, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Bhikkhus, once in the past Sakka, lord of the devas, instructing the Tavatiṁsa devas in the Sudhamma assembly hall, on that occasion recited this verse:
+sn11.25:2.1 | S: ‘Don’t let anger be your master, | T: “‘Do not let anger overpower you;
+sn11.25:2.2 | S: don’t get angry at angry people. | T: Do not become angry at those who are angry.
+sn11.25:2.3 | S: Kindness and harmlessness | T: Nonanger and harmlessness always dwell
+sn11.25:2.4 | S: are always present in the noble ones. | T: Within the hearts of the noble ones.
+sn11.25:2.5 | S: For anger crushes bad people | T: Like a mountain avalanche Anger crushes evil people.’”
+sn11.25:2.6 | S: like a mountain.’” | T: (none)
+sn11.25:2.7 | P: Tatiyo vaggo. | T: (none)
+sn11.25:3.0 | P: Tassuddānaṁ | T: (none)
+sn11.25:3.1 | P: Chetvā dubbaṇṇiya māyā, | T: (none)
+sn11.25:3.2 | P: accayena akodhano; | T: (none)
+sn11.25:3.3 | P: Desitaṁ buddhaseṭṭhena, | T: (none)
+sn11.25:3.4 | P: idañhi sakkapañcakanti. | T: (none)
+sn11.25:3.5 | S: The Linked Discourses with Sakka are complete. | T: (none)
+sn11.25:3.6 | P: Sagāthāvaggo paṭhamo. | T: (none)
+sn11.25:4.0 | P: Tassuddānaṁ | T: (none)
+sn11.25:4.1 | P: Devatā devaputto ca, | T: (none)
+sn11.25:4.2 | P: rājā māro ca bhikkhunī; | T: (none)
+sn11.25:4.3 | P: Brahmā brāhmaṇa vaṅgīso, | T: (none)
+sn11.25:4.4 | P: vanayakkhena vāsavoti. | T: (none)
+sn11.25:4.5 | S: The Book With Verses is finished. | T: The Book with Verses is finished.
+
+## sn12.55
+sn12.55:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.55:1.2 | S: “There are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: “Bhikkhus, when one dwells contemplating gratification in things that can be clung to, craving increases.
+sn12.55:1.3 | S: Craving is a requirement for grasping. | T: With craving as condition,
+sn12.55:1.4 | S: Grasping is a requirement for continued existence. … | T: clinging comes to be….
+sn12.55:1.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.55:2.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree,
+sn12.55:2.2 | S: And its roots going downwards and across all draw the sap upwards. | T: and all its roots going downwards and across would send the sap upwards.
+sn12.55:2.3 | S: Fed and fuelled by that, the great tree would stand for a long time. | T: Sustained by that sap, nourished by it, that great tree would stand for a very long time.
+sn12.55:2.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one lives contemplating gratification in things that can be clung to, craving increases….
+sn12.55:2.5 | S: Craving is a requirement for grasping. … | T: (none)
+sn12.55:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.55:3.1 | S: There are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “When, bhikkhus, one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.55:3.2 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging….
+sn12.55:3.3 | S: When grasping ceases, continued existence ceases. … | T: (none)
+sn12.55:3.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.55:4.1 | S: Suppose there was a great tree. | T: “Suppose, bhikkhus, there was a great tree.
+sn12.55:4.2 | S: Then a person comes along with a spade and basket. | T: Then a man would come along bringing a shovel and a basket.
+sn12.55:4.3 | S: They’d cut the tree down at the roots, dig it up, and pull the roots out, down to the fibers and stems. | T: He would cut down the tree at its foot, dig it up, and pull out the roots, even the fine rootlets and root-fibre.
+sn12.55:4.4 | S: They’d cut the tree apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or float them away down a swift stream. | T: He would cut the tree into pieces, split the pieces, and reduce them to slivers. Then he would dry the slivers in the wind and sun, burn them in a fire, and collect the ashes. Having done so, he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.
+sn12.55:4.5 | P: vātātape visosetvā agginā ḍaheyya, agginā ḍahetvā masiṁ kareyya, masiṁ karitvā mahāvāte vā ophuṇeyya nadiyā vā sīghasotāya pavāheyya. | T: (none)
+sn12.55:4.6 | S: In this way the great tree is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that great tree would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.55:4.7 | S: In the same way, there are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “So too, bhikkhus, when one dwells contemplating danger in things that can be clung to, craving ceases….
+sn12.55:4.8 | S: When craving ceases, grasping ceases. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '365,450p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn47.63-72:2.2 | S: roots, heartwood, jasmine, | T: Roots, heartwood, jasmine,
+sn47.63-72:2.3 | S: monarch, sun and moon, | T: Monarch, the moon and sun,
+sn47.63-72:2.4 | S: and cloth is the tenth. | T: Together with the cloth as tenth.
+
+## sn47.73-84
+sn47.73-84:1.1 | S: “Mendicants, all the hard work that gets done depends on the earth and is grounded on the earth. …” | T: (none)
+sn47.73-84:1.2 | S: (Tell in full as in SN 45.149–160.) | T: (To be elaborated parallel to SN45.149.)
+sn47.73-84:1.3 | P: Balakaraṇīyavaggo aṭṭhamo. | T: (none)
+sn47.73-84:2.0 | P: Tassuddānaṁ | T: (none)
+sn47.73-84:2.1 | S: Hard work, seeds, and dragons, | T: Strenuous, seeds, and nagas,
+sn47.73-84:2.2 | S: a tree, a pot, and a spike, | T: The tree, the pot, the spike,
+sn47.73-84:2.3 | S: the atmosphere, and two on clouds, | T: The sky, and two on clouds,
+sn47.73-84:2.4 | S: a ship, a guest house, and a river. | T: The ship, guest house, and river.
+
+## sn56.4
+sn56.4:1.1 | S: “Mendicants, whatever gentlemen—past, | T: “Bhikkhus, whatever clansmen in the past rightly went forth from the household life into homelessness and made the breakthrough to things as they really are,
+sn56.4:1.2 | S: future, | T: (none)
+sn56.4:1.3 | S: or present—truly comprehend after rightly going forth from the lay life to homelessness, all of them truly comprehend the four noble truths. | T: all made the breakthrough to the Four Noble Truths as they really are. Whatever clansmen in the future will rightly go forth from the household life into homelessness and make the breakthrough to things as they really are, all will make the breakthrough to the Four Noble Truths as they really are. Whatever clansmen at present have rightly gone forth from the household life into homelessness and make the breakthrough to things as they really are, all make the breakthrough to the Four Noble Truths as they really are.
+sn56.4:2.1 | S: What four? | T: “What four?
+sn56.4:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.4:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ kulaputtā sammā agārasmā anagāriyaṁ pabbajitā yathābhūtaṁ abhisamesuṁ …pe… | T: Whatever clansmen made the breakthrough …
+sn56.4:2.4 | P: abhisamessanti …pe… | T: will make the breakthrough …
+sn56.4:2.5 | P: abhisamenti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisamenti. | T: make the breakthrough to things as they really are, all make the breakthrough to these Four Noble Truths as they really are.
+sn56.4:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.4:3.2 | P: Catutthaṁ. | T: (none)
+
+## sn56.5
+sn56.5:1.1 | S: “Mendicants, whatever ascetics and brahmins truly awaken—in the past, | T: “Bhikkhus, whatever ascetics or brahmins in the past fully awakened to things as they really are,
+sn56.5:1.2 | S: future, | T: (none)
+sn56.5:1.3 | S: or present—all of them truly awaken to the four noble truths. | T: all fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins in the future will fully awaken to things as they really are, all will fully awaken to the Four Noble Truths as they really are. Whatever ascetics or brahmins at present have fully awakened to things as they really are, all have fully awakened to the Four Noble Truths as they really are.
+sn56.5:2.1 | S: What four? | T: “What four?
+sn56.5:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.5:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ samaṇā vā brāhmaṇā vā yathābhūtaṁ abhisambojjhiṁsu …pe… | T: Whatever ascetics or brahmins fully awakened … will fully awaken …
+sn56.5:2.4 | P: abhisambojjhissanti …pe… | T: (none)
+sn56.5:2.5 | P: abhisambojjhanti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisambojjhanti. | T: have fully awakened to things as they really are, all have fully awakened to these Four Noble Truths as they really are.
+sn56.5:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.5:3.2 | P: Pañcamaṁ. | T: (none)
+
+## sn56.6
+sn56.6:1.1 | S: “Mendicants, whatever ascetics and brahmins—past, | T: “Bhikkhus, whatever ascetics or brahmins in the past revealed themselves as having fully awakened to things as they really are,
+sn56.6:1.2 | S: future, | T: (none)
+sn56.6:1.3 | S: or present—reveal that they are awakened, all of them reveal that they truly awakened to the four noble truths. | T: all revealed themselves as having fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins in the future will reveal themselves as having fully awakened to things as they really are, all will reveal themselves as having fully awakened to the Four Noble Truths as they really are. Whatever ascetics or brahmins at present reveal themselves as having fully awakened to things as they really are, all reveal themselves as having fully awakened to the Four Noble Truths as they really are.
+sn56.6:2.1 | S: What four? | T: “What four?
+sn56.6:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. … | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.6:2.3 | P: Ye hi keci, bhikkhave, atītamaddhānaṁ samaṇā vā brāhmaṇā vā yathābhūtaṁ abhisambuddhaṁ pakāsesuṁ …pe… | T: Whatever ascetics or brahmins revealed themselves … will reveal themselves …
+sn56.6:2.4 | P: pakāsessanti …pe… | T: (none)
+sn56.6:2.5 | P: pakāsenti, sabbe te imāni cattāri ariyasaccāni yathābhūtaṁ abhisambuddhaṁ pakāsenti. | T: reveal themselves as having fully awakened to things as they really are, all reveal themselves as having fully awakened to these Four Noble Truths as they really are.
+sn56.6:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.6:3.2 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-016.findings.tmp <<'EOF'
+sn1.47:1.3 starts: Who are the people going to heaven,
+sn1.47:1.4 none
+sn1.47:3.3 starts: Those are the people going to heaven,
+sn1.47:3.4 none
+sn11.25:2.4 starts: always dwell Within the hearts of the
+sn12.55:1.4 none
+sn12.55:4.5 starts: Then he would dry the slivers in
+sn22.52:1.3 starts: When a bhikkhu attends carefully to form
+sn56.4:1.2 starts: Whatever clansmen in the future will rightly
+sn56.4:1.3 starts: Whatever clansmen at present have rightly gone
+sn56.5:1.2 starts: Whatever ascetics or brahmins in the future
+sn56.5:1.3 starts: Whatever ascetics or brahmins at present have
+sn56.5:2.4 starts: will fully awaken …
+sn56.6:1.2 starts: Whatever ascetics or brahmins in the future
+sn56.6:1.3 starts: Whatever ascetics or brahmins at present reveal
+sn56.6:2.4 starts: will reveal themselves …
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+16 lines reported.
+tokens used
+51,979
+16 lines reported.

@@ -1,0 +1,8 @@
+{
+  "translator": "bodhi",
+  "round": "cross-codex2",
+  "batches": 1,
+  "candidateKeys": 2,
+  "status": "all candidates judged against original Pali",
+  "judgments": "../codex-read/followup-rounds.json"
+}

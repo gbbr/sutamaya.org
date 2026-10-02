@@ -1,0 +1,600 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd90-41f9-7a33-ab9a-ef7dcb44103f
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, then write only the clear placement errors to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## iti103
+iti103:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti103:2.1 | S: “Mendicants, there are ascetics and brahmins who don’t truly understand about suffering, its origin, its cessation, and the path. | T: “Monks, any contemplatives or brahmans who do not discern, as it has come to be, that ‘This is stress,’ … that ‘This is the origination of stress,’ … that ‘This is the cessation of stress,’ who do not discern, as it has come to be, that ‘This is the path of practice leading to the cessation of stress’:
+iti103:2.2 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: to me these contemplatives & brahmans do not count as contemplatives among contemplatives or as brahmans among brahmans. Furthermore, they do not enter & remain in the goal of the contemplative life or the goal of brahmanly life, having directly known & realized it for themselves right in the here-&-now.
+iti103:3.1 | S: There are ascetics and brahmins who truly understand about suffering, its origin, its cessation, and the path. | T: “But any contemplatives or brahmans who discern, as it has come to be, that ‘This is stress,’ … that ‘This is the origination of stress,’ … that ‘This is the cessation of stress,’ who discern, as it has come to be, that ‘This is the path of practice leading to the cessation of stress’:
+iti103:3.2 | S: I regard them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: to me these contemplatives & brahmans count as contemplatives among contemplatives and as brahmans among brahmans. Furthermore, they enter & remain in the goal of the contemplative life & the goal of the brahmanly life, having directly known & realized it for themselves right in the here-&-now.”
+iti103:3.3 | S: The Buddha spoke this matter. | T: (none)
+iti103:3.4 | S: On this it is said: | T: (none)
+iti103:4.1 | S: “There are those who don’t understand suffering | T: Those who don’t discern stress,
+iti103:4.2 | S: and suffering’s cause, | T: stress’s coming into play,
+iti103:4.3 | S: and where all suffering | T: (none)
+iti103:4.4 | S: cease with no residue left behind. | T: & where it totally stops, without trace,
+iti103:4.5 | S: And they do not know the path | T: who don’t know the path,
+iti103:4.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress:
+iti103:5.1 | S: They lack the heart’s release, | T: lowly in their awareness-release
+iti103:5.2 | S: as well as the release by wisdom. | T: & discernment-release,
+iti103:5.3 | S: Unable to make an end, | T: incapable of making an end,
+iti103:5.4 | S: they continue to be reborn and grow old. | T: they’re headed to birth & aging.
+iti103:6.1 | S: But there are those who understand suffering | T: But those who discern stress,
+iti103:6.2 | S: and suffering’s cause, | T: stress’s coming into play,
+iti103:6.3 | S: and where all suffering | T: (none)
+iti103:6.4 | S: cease with no residue left behind. | T: & where it totally stops, without trace,
+iti103:6.5 | S: And they understand the path | T: who discern the path,
+iti103:6.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress:
+iti103:7.1 | S: They’re endowed with the heart’s release, | T: consummate in their awareness-release
+iti103:7.2 | S: as well as the release by wisdom. | T: & discernment-release,
+iti103:7.3 | S: Able to make an end, | T: capable of making an end,
+iti103:7.4 | S: they don’t continue to be reborn and grow old.” | T: they are not headed to birth & aging.
+iti103:8.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti103:8.2 | P: Catutthaṁ. | T: (none)
+
+## iti106
+iti106:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti106:2.1 | S: “Mendicants, a family where the children honor their parents in their home is said to live with Divinity. | T: “Monks, living with Brahma are those families where, in the home, mother & father are revered by the children.
+iti106:2.2 | S: A family where the children honor their parents in their home is said to live with the elder gods. | T: Living with the first devas are those families where, in the home, mother & father are revered by the children.
+iti106:2.3 | S: A family where the children honor their parents in their home is said to live with the first tutors. | T: Living with the first teachers are those families where, in the home, mother & father are revered by the children.
+iti106:2.4 | S: A family where the children honor their parents in their home is said to live with those worthy of offerings dedicated to the gods. | T: Living with those worthy of gifts are those families where, in the home, mother & father are revered by the children.
+iti106:3.1 | S: ‘Divinity’ is a term for your parents. | T: ‘Brahma’ is a synonym for mother & father.
+iti106:3.2 | S: ‘Elder gods’ is a term for your parents. | T: ‘The first devas’ is a synonym for mother & father.
+iti106:3.3 | S: ‘First tutors’ is a term for your parents. | T: ‘The first teachers’ is a synonym for mother & father.
+iti106:3.4 | S: ‘Worthy of offerings dedicated to the gods’ is a term for your parents. | T: ‘Those worthy of gifts’ is a synonym for mother & father.
+iti106:3.5 | S: Why is that? | T: Why is that?
+iti106:3.6 | S: Parents are very helpful to their children, they raise them, nurture them, and show them the world.” | T: Mother & father do much for their children. They care for them, nourish them, introduce them to this world.”
+iti106:3.7 | S: The Buddha spoke this matter. | T: (none)
+iti106:3.8 | S: On this it is said: | T: (none)
+iti106:4.1 | S: “Parents are said to be ‘Divinity’ | T: Mother & father, compassionate to their family, are called Brahma,
+iti106:4.2 | S: and ‘first tutors’. | T: first teachers,
+iti106:4.3 | S: They’re worthy of offerings dedicated to the gods <j>from their children, | T: those worthy of gifts from their children.
+iti106:4.4 | S: for they love their offspring. | T: (none)
+iti106:5.1 | S: Therefore an astute person | T: So the wise should pay them
+iti106:5.2 | S: would revere them and honor them | T: homage, honor,
+iti106:5.3 | S: with food and drink, | T: with food & drink,
+iti106:5.4 | S: clothes and bedding, | T: clothing & bedding,
+iti106:5.5 | S: anointing and bathing, | T: anointing & bathing,
+iti106:5.6 | S: and by washing their feet. | T: & washing their feet.
+iti106:6.1 | S: Because they serve | T: Performing these services to their parents,
+iti106:6.2 | S: their parents like this, | T: (none)
+iti106:6.3 | S: they’re praised in this life by the astute, | T: the wise are praised right here
+iti106:6.4 | S: and they depart to rejoice in heaven.” | T: and after death rejoice in heaven.
+iti106:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti106:7.2 | P: Sattamaṁ. | T: (none)
+
+## iti31
+iti31:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti31:2.1 | S: “These two things, mendicants, are not mortifying. | T: “Monks, there are these two things that cause no remorse.
+iti31:2.2 | S: What two? | T: Which two?
+iti31:2.3 | S: It’s when someone has done good and skillful things that keep them safe, but has not done bad things, violence and sin. | T: There is the case of the person who has done what is admirable, has done what is skillful, has given protection to those in fear, and has done nothing that is evil, savage, or cruel.
+iti31:2.4 | S: Thinking, ‘I have done good things’, they’re not mortified. Thinking, ‘I haven’t done bad things’, they’re not mortified. | T: Thinking, ‘I have done what is admirable,’ he feels no remorse. Thinking, ‘I have not done what is evil,’ he feels no remorse.
+iti31:2.5 | S: These are the two things that are not mortifying.” | T: These are the two things that cause no remorse.”
+iti31:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti31:2.7 | S: On this it is said: | T: (none)
+iti31:3.1 | S: “Having given up bad conduct | T: Having abandoned bodily misconduct,
+iti31:3.2 | S: by way of body, | T: verbal misconduct,
+iti31:3.3 | S: speech, and mind, | T: misconduct of mind,
+iti31:3.4 | S: and whatever else is corrupt; | T: & whatever else is flawed,
+iti31:4.1 | S: not having done bad deeds, | T: not having done what’s not skillful,
+iti31:4.2 | S: and having done many good, | T: having done much that is,
+iti31:4.3 | S: when their body breaks up, that wise person | T: at the break-up of the body, the discerning one reappears
+iti31:4.4 | S: is reborn in heaven.” | T: in heaven.
+iti31:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti31:5.2 | P: Catutthaṁ. | T: (none)
+
+## iti81
+iti81:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti81:2.1 | S: “I’ve seen, mendicants, sentient beings whose minds are overcome and overwhelmed by honor. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: “Monks, I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:3.1 | S: I’ve seen sentient beings whose minds are overcome and overwhelmed by not being honored. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:4.1 | S: I’ve seen sentient beings whose minds are overcome and overwhelmed by both honor and by not being honored. When their body broke up, after death, they were reborn in a place of loss, a bad place, the underworld, hell. | T: I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:5.1 | S: Now, I don’t say this because I’ve heard it from some other ascetic or brahmin. | T: “It’s not through having heard it from another contemplative or brahman that I say, ‘I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell. I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.’
+iti81:5.2 | S: I only say it because I’ve known, seen, and realized it for myself.” | T: “Instead, it’s from having known it myself, seen it myself, observed it myself that I say,
+iti81:6.1 | P: Diṭṭhā mayā, bhikkhave, sattā sakkārena abhibhūtā, pariyādinnacittā, kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapannā. | T: ‘I have seen beings conquered by receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:7.1 | P: Diṭṭhā mayā, bhikkhave, sattā asakkārena abhibhūtā, pariyādinnacittā, kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapannā. | T: I have seen beings conquered by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.
+iti81:8.1 | P: Diṭṭhā mayā, bhikkhave, sattā sakkārena ca asakkārena ca tadubhayena abhibhūtā, pariyādinnacittā, kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapannā”ti. | T: I have seen beings conquered both by receiving offerings & by not receiving offerings–their minds overwhelmed–at the break-up of the body, after death, reappearing in a plane of deprivation, a bad destination, a lower realm, hell.’”
+iti81:8.2 | S: The Buddha spoke this matter. | T: (none)
+iti81:8.3 | S: On this it is said: | T: (none)
+iti81:9.1 | S: “Whether they’re honored | T: Both when receiving offerings
+iti81:9.2 | S: or not honored, or both, | T: & not,
+iti81:9.3 | S: their immersion doesn’t waver | T: his concentration doesn’t waver;
+iti81:9.4 | S: as they abide in the immeasurables. | T: he remains heedful:
+iti81:10.1 | S: They persistently practice absorption | T: he–continually absorbed in jhāna,
+iti81:10.2 | S: with subtle view and discernment. | T: subtle in view & clear-seeing,
+iti81:10.3 | S: Rejoicing in the ending of grasping, | T: enjoying the ending of clinging–
+iti81:10.4 | S: they’re said to be a true person.” | T: is called a man of integrity.
+iti81:11.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti81:11.2 | P: Dutiyaṁ. | T: (none)
+
+## iti107
+iti107:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti107:2.1 | S: “Mendicants, brahmins and householders are very helpful to you, as they provide you with robes, almsfood, lodgings, and medicines and supplies for the sick. | T: “Monks, brahmans & householders are very helpful to you, as they provide you with the requisites of robes, alms food, lodgings, & medical requisites for the sick.
+iti107:2.2 | S: And you are very helpful to brahmins and householders, as you teach them the Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And you reveal a spiritual practice that’s entirely full and pure. | T: And you, monks, are very helpful to brahmans & householders, as you teach them the Dhamma admirable in the beginning, admirable in the middle, admirable in the end; as you expound the holy life both in its particulars & in its essence, entirely complete, surpassingly pure.
+iti107:2.3 | S: That is how this spiritual path is lived supporting each other in order to cross over the flood and make a complete end of suffering.” | T: In this way the holy life is lived in mutual dependence, for the purpose of crossing over the flood, for making a right end to stress.”
+iti107:2.4 | S: The Buddha spoke this matter. | T: (none)
+iti107:2.5 | S: On this it is said: | T: (none)
+iti107:3.1 | S: “The home-dweller and the homeless, | T: Householders & the homeless
+iti107:3.2 | S: supporting each other, | T: in mutual dependence
+iti107:3.3 | S: find success in the true teaching, | T: both reach the true Dhamma:
+iti107:3.4 | S: the supreme sanctuary from the yoke. | T: the unsurpassed safety from bondage.
+iti107:4.1 | S: The homeless receive requisites | T: From householders, the homeless receive requisites:
+iti107:4.2 | S: from the home-dwellers: | T: (none)
+iti107:4.3 | S: robes and lodgings | T: robes, lodgings,
+iti107:4.4 | S: to shelter from harsh conditions. | T: protection from inclemencies.
+iti107:5.1 | S: Relying on the Holy One, | T: While in dependence on those well-gone,
+iti107:5.2 | S: layfolk and householders of discernment | T: home-loving householders
+iti107:5.3 | S: place faith in the perfected ones, | T: have conviction in Arahants
+iti107:5.4 | S: meditators of noble wisdom. | T: of noble discernment, absorbed in jhāna.
+iti107:6.1 | S: Having practiced the teaching here, | T: Having practiced the Dhamma here–
+iti107:6.2 | S: the path that goes to a good place, | T: the path leading to good destinations–
+iti107:6.3 | S: they delight in the heavenly realm, | T: delighting in the deva world,
+iti107:6.4 | S: enjoying all the pleasures they desire.” | T: they rejoice, enjoying sensual pleasures.
+iti107:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti107:7.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## iti24
+iti24:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti24:2.1 | S: “Mendicants, one individual roaming and transmigrating for an eon would amass a heap of bones the size of this Mount Vepulla, if they were gathered together and not lost.” | T: “Monks, if a single person were to wander & transmigrate on for an eon, he/she would leave behind a chain of bones, a pile of bones, a heap of bones, as large as this Mount Vepulla, if there were someone to collect them and the collection were not destroyed.”
+iti24:2.2 | S: The Buddha spoke this matter. | T: (none)
+iti24:2.3 | S: On this it is said: | T: (none)
+iti24:3.1 | S: “If the bones of a single individual | T: The accumulation of a single person’s
+iti24:3.2 | S: for a single eon were gathered up, | T: bones for an eon
+iti24:3.3 | S: they’d make a pile the size of a mountain: | T: would be a heap on a par with the mountain,
+iti24:3.4 | S: so said the great seer. | T: so said the Great Seer.
+iti24:4.1 | S: And this is declared to be | T: (He declared this to be
+iti24:4.2 | S: as big as Mount Vepulla, | T: the great Mount Vepulla
+iti24:4.3 | S: higher than the Vulture’s Peak | T: to the north of Vulture Peak
+iti24:4.4 | S: in the Mountainfold of the Magadhans. | T: in the mountain-ring of the Magadhans.)
+iti24:5.1 | S: But then, with right understanding, | T: But when that person sees with right discernment
+iti24:5.2 | S: one sees the noble truths— | T: the four Noble Truths–
+iti24:5.3 | S: suffering, suffering’s origin, | T: stress, the cause of stress,
+iti24:5.4 | S: suffering’s transcendence, | T: the transcending of stress,
+iti24:5.5 | S: and the noble eightfold path | T: & the noble eightfold path,
+iti24:5.6 | S: that leads to the stilling of suffering. | T: the way to the stilling of stress–
+iti24:6.1 | S: After roaming on seven times at most, | T: having wandered on seven times at most,
+iti24:6.2 | S: that individual | T: then,
+iti24:6.3 | S: makes an end of suffering, | T: with the ending of all fetters, he makes an end of stress.
+iti24:6.4 | S: with the ending of all fetters.” | T: (none)
+iti24:7.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti24:7.2 | P: Catutthaṁ. | T: (none)
+
+## iti83
+iti83:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: (none)
+iti83:2.1 | S: “Mendicants, when a god is due to pass away from the realm of the gods, five harbingers appear. | T: “Monks, when a deva is about to pass away from the company of devas, five omens appear:
+iti83:2.2 | S: Their flower-garlands wither; their clothes become soiled; they sweat from the armpits; their physical appearance deteriorates; and they no longer delight in their heavenly throne. | T: his garlands wither, his clothes get soiled, sweat comes out of his armpits, a dullness descends on his body, he no longer delights in his own deva-seat.
+iti83:2.3 | S: When the other gods know that that godling is due to pass away, they wish them well in three ways: | T: The devas, knowing from this that ‘This deva-son is about to pass away,’ encourage him with three sayings:
+iti83:2.4 | S: ‘Sir, may you go from here to a good place! | T: ‘Go from here, honorable sir, to a good destination.
+iti83:3.1 | S: When you have gone to a good place, may you be blessed with good fortune! | T: Having gone to a good destination, gain the gain that is good to gain.
+iti83:4.1 | S: When you have been blessed with good fortune, may you become well grounded!’” | T: Having gained the gain that is good to gain, become well-established.’”
+iti83:5.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One,
+iti83:5.2 | S: “Sir, what do the gods reckon to be going to a good place? | T: “What, lord, is the devas’ reckoning of going to a good destination?
+iti83:6.1 | S: What do they reckon to be blessed with good fortune? | T: What is their reckoning of the gain that is good to gain?
+iti83:7.1 | S: What do they reckon to become well grounded?” | T: What is their reckoning of becoming well-established?”
+iti83:8.1 | S: “It is human existence, mendicant, that the gods reckon to be going to a good place. | T: “The human state, monks, is the devas’ reckoning of going to a good destination.
+iti83:9.1 | S: When a human being gains faith in the teaching and training proclaimed by the Realized One, | T: Having become a human being, acquiring conviction in the Dhamma-&-Vinaya taught by the Tathāgata:
+iti83:9.2 | S: that is what the gods reckon to be blessed with good fortune. | T: this is the devas’ reckoning of the gain that is good to gain.
+iti83:10.1 | S: When that faith in the Realized One is settled, rooted, and planted deep; when it’s strong and can’t be shifted by any ascetic or brahmin or god or Māra or divinity or by anyone in the world, | T: When that conviction is settled within one–rooted, established, & strong, not to be destroyed by any brahman or contemplative; deva, Māra, or Brahma; or anyone else in the world:
+iti83:10.2 | S: that is what the gods reckon to become well grounded.” | T: this is the devas’ reckoning of becoming well-established.”
+iti83:11.1 | S: The Buddha spoke this matter. | T: (none)
+iti83:11.2 | S: On this it is said: | T: (none)
+iti83:12.1 | S: “When, with the fading of life, | T: (none)
+iti83:12.2 | S: a god passes from the realm of the gods, | T: When a deva passes away from the company of devas through his life-span’s ending,
+iti83:12.3 | S: the gods utter three cries | T: three sounds sound forth
+iti83:12.4 | S: of well-wishing: | T: –the devas’ encouragement.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti83:13.1 | S: ‘Go, worthy sir, from here to a good place, | T: ‘Go from here, honorable sir, to a good destination,
+iti83:13.2 | S: in the company of humans. | T: to companionship with human beings.
+iti83:13.3 | S: As a human being, gain supreme faith | T: On becoming a human being, acquire a conviction unsurpassed
+iti83:13.4 | S: in the true teaching. | T: in True Dhamma.
+iti83:14.1 | S: May that faith of yours be settled, | T: That conviction of yours in True Dhamma, well-taught, should be settled,
+iti83:14.2 | S: with roots planted deep, | T: rooted, established,
+iti83:14.3 | S: unfaltering all life long | T: –undestroyed as long as you live.
+iti83:14.4 | S: in the true teaching so well proclaimed. | T: (none)
+iti83:15.1 | S: Having given up bad conduct | T: Having abandoned bodily misconduct,
+iti83:15.2 | S: by way of body, | T: verbal misconduct,
+iti83:15.3 | S: speech, and mind, | T: mental misconduct,
+iti83:15.4 | S: and whatever else is corrupt; | T: and whatever else is flawed;
+iti83:16.1 | S: and having done much good, | T: having done with the body what’s skillful,
+iti83:16.2 | S: by way of body, | T: (none)
+iti83:16.3 | S: speech, and mind, | T: and much that is skillful with speech, having done what’s skillful
+iti83:16.4 | S: limitless, free of attachments; | T: with a heart without limit, with no acquisitions,
+iti83:17.1 | S: then, having made much worldly merit | T: then–having made much of the merit that’s a ground for spontaneously arising [in heaven]
+iti83:17.2 | S: by giving gifts, | T: through giving–
+iti83:17.3 | S: establish other colleagues | T: establish other mortals
+iti83:17.4 | S: in the true teaching, the spiritual life.’ | T: in True Dhamma & the holy life.’
+iti83:18.1 | S: It is due to such sympathy | T: With this sympathy, the devas–
+iti83:18.2 | S: that when the gods know a god | T: when they know a deva is passing away–
+iti83:18.3 | S: is due to pass away, they wish them well: | T: (none)
+iti83:18.4 | S: ‘Come back, god, again and again!’” | T: encourage him: ‘Come back, deva, again & again.’
+iti83:19.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti83:19.2 | P: Catutthaṁ. | T: (none)
+
+## an3.49
+an3.49:1.1 | S: “In three situations, mendicants, you should be keen. | T: “In three instances, monks, ardency should be exercised.
+an3.49:1.2 | S: What three? | T: Which three?
+an3.49:1.3 | S: You should be keen to prevent bad, unskillful qualities from arising. You should be keen to give rise to skillful qualities. And you should be keen to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. | T: “Ardency should be exercised for the non-arising of unarisen evil, unskillful qualities. “Ardency should be exercised for the arising of unarisen skillful qualities. “Ardency should be exercised for enduring bodily feelings that have arisen and are painful, racking, sharp, piercing, disagreeable, displeasing, & menacing to life.
+an3.49:1.4 | S: In these three situations, you should be keen. | T: (none)
+an3.49:2.1 | S: It’s a mendicant who is keen to prevent bad, unskillful qualities from arising. They’re keen to give rise to skillful qualities. And they’re keen to endure physical pain—sharp, severe, acute, unpleasant, disagreeable, life-threatening. | T: “When one exercises ardency for the non-arising of unarisen evil, unskillful qualities, when one exercises ardency for the arising of unarisen skillful qualities, and when one exercises ardency for enduring bodily feelings that have arisen and are painful, racking, sharp, piercing, disagreeable, displeasing, & menacing to life,
+an3.49:2.2 | S: This is called a mendicant who is keen, alert, and mindful so as to rightly make an end of suffering.” | T: then one is said to be a monk who is ardent, adept, & mindful for the right ending of suffering & stress.”
+an3.49:2.3 | P: Dasamaṁ. | T: (none)
+
+## iti23
+iti23:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti23:2.1 | S: “This one thing, mendicants, when developed and cultivated, secures equal benefits for both | T: “This one quality, monks, when developed & pursued, keeps both kinds of benefit secure:
+iti23:2.2 | S: this life and lives to come. | T: benefit in this life & in lives to come.
+iti23:2.3 | S: What one thing? | T: Which one quality?
+iti23:2.4 | S: Diligence in skillful qualities. | T: Heedfulness with regard to skillful qualities.
+iti23:2.5 | S: This is the one thing that, when developed and cultivated, secures equal benefits for both | T: This is the one quality that, when developed & pursued, keeps both kinds of benefit secure:
+iti23:2.6 | S: this life and lives to come.” | T: benefit in this life & in lives to come.”
+iti23:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti23:2.8 | S: On this it is said: | T: (none)
+iti23:3.1 | S: “The astute praise diligence | T: They praise heedfulness, the wise,
+iti23:3.2 | S: in making merit. | T: in doing acts of merit.
+iti23:3.3 | S: Being diligent, an astute person | T: When heedful, wise,
+iti23:3.4 | S: secures both benefits: | T: you achieve both kinds of benefit:
+iti23:4.1 | S: the benefit in this life, | T: benefits in this life,
+iti23:4.2 | S: and in lives to come. | T: & benefits in lives to come.
+iti23:4.3 | S: Attentive, comprehending the meaning, | T: By breaking through to your benefit, you’re called enlightened,
+iti23:4.4 | S: they are said to be astute.” | T: wise.
+iti23:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti23:5.2 | P: Tatiyaṁ. | T: (none)
+
+## iti40
+iti40:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti40:2.1 | S: “Mendicants, ignorance leads the attainment of unskillful qualities, with lack of conscience and prudence following along. | T: “Monks, ignorance precedes the arrival of unskillful qualities; lack of shame & lack of compunction follow after.
+iti40:2.2 | S: Knowledge leads the attainment of skillful qualities, with conscience and prudence following along.” | T: Clear knowing precedes the arrival of skillful qualities; shame & compunction follow after.”
+iti40:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti40:2.4 | S: On this it is said: | T: (none)
+iti40:3.1 | S: “Bad destinies of whatever kind, | T: Any bad destinations
+iti40:3.2 | S: in this world or the next, | T: in this world, in the next,
+iti40:3.3 | S: are all rooted in ignorance, | T: are rooted in ignorance–all–
+iti40:3.4 | S: compounded of greed and desire. | T: accumulations of desire & greed.
+iti40:4.1 | S: Since one of corrupt wishes is | T: And when a person of evil desires
+iti40:4.2 | S: unconscientious, lacking regard for others, | T: lacks shame & respect,
+iti40:4.3 | S: they brim with much wickedness, | T: evil comes from that,
+iti40:4.4 | S: which sends them to a place of loss. | T: and by that he goes to deprivation.
+iti40:5.1 | S: Therefore, dispelling desire | T: So cleansing away
+iti40:5.2 | S: and greed and ignorance, | T: ignorance, desire, & greed,
+iti40:5.3 | S: a mendicant arousing knowledge | T: a monk giving rise to clear knowing
+iti40:5.4 | S: would abandon all bad destinies.” | T: would abandon all bad destinations.
+iti40:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti40:6.2 | P: Tatiyaṁ. | T: (none)
+iti40:6.3 | P: Paṭhamabhāṇavāro. | T: (none)
+
+## iti42
+iti42:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti42:2.1 | S: “These two bright things, mendicants, protect the world. | T: “Monks, these two bright qualities safeguard the world.
+iti42:2.2 | S: What two? | T: Which two?
+iti42:2.3 | S: Conscience and prudence. | T: Shame & compunction.
+iti42:2.4 | S: If these two bright things did not protect the world, there would be no recognition of the status of mother, aunts, or wives and partners of tutors and respected people. | T: If these two bright qualities did not safeguard the world, there would be no discerning of “mother,” “aunt,” “uncle’s wife,” “teacher’s wife,” or “wife of those deserving respect.”
+iti42:2.5 | S: The world would become dissolute, like goats and sheep, chickens and pigs, and hounds and jackals. | T: The world would fall into promiscuity, like rams with goats, roosters with pigs, or dogs with jackals.
+iti42:2.6 | S: But because the two bright things protect the world, there is recognition of the status of mother, aunts, and wives and partners of tutors and respected people.” | T: But because these two bright qualities do safeguard the world, there is the discerning of “mother,” “aunt,” “uncle’s wife,” “teacher’s wife,” & “wife of those deserving respect.”
+iti42:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti42:2.8 | S: On this it is said: | T: (none)
+iti42:3.1 | S: “Those in whom conscience and prudence | T: Those in whom shame & compunction
+iti42:3.2 | S: are never found at all, | T: are not always found
+iti42:3.3 | S: have lost their bright roots, | T: have strayed from the bright root,
+iti42:3.4 | S: and fare on in birth and death. | T: are headed to birth & death.
+iti42:4.1 | S: Those in whom conscience and prudence | T: But those in whom shame & compunction
+iti42:4.2 | S: are always rightly established, | T: always are rightly established,
+iti42:4.3 | S: thrive in the spiritual life; | T: who are mature in the holy life:
+iti42:4.4 | S: being at peace, they will not be reborn again.” | T: they are calm, their further becoming ended.
+iti42:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti42:5.2 | P: Pañcamaṁ. | T: (none)
+
+## iti51
+iti51:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti51:2.1 | S: “Mendicants, there are these three elements. | T: “Monks, there are these three properties.
+iti51:2.2 | S: What three? | T: Which three?
+iti51:2.3 | S: The realm of luminous form, the formless realm, and cessation. | T: The property of form, the property of formlessness, the property of cessation.
+iti51:2.4 | S: These are the three elements.” | T: These are the three properties.”
+iti51:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti51:2.6 | S: On this it is said: | T: (none)
+iti51:3.1 | S: “Comprehending the realm of luminous form, | T: Comprehending the property of form,
+iti51:3.2 | S: not stuck in the formless, | T: not taking a stance in the formless,
+iti51:3.3 | S: those who are released in cessation, | T: those released in cessation
+iti51:3.4 | S: they are conquerors of death. | T: are people who’ve left death behind.
+iti51:4.1 | S: Having directly experienced <j>the element free of death, | T: Having touched with his body the deathless property free
+iti51:4.2 | S: free of attachments; | T: from acquisitions,
+iti51:4.3 | S: having realized relinquishment | T: having realized the relinquishing
+iti51:4.4 | S: of attachments, the undefiled | T: of acquisitions, effluent-free,
+iti51:4.5 | S: fully awakened Buddha teaches | T: the Rightly Self-awakened One teaches the state
+iti51:4.6 | S: the sorrowless, stainless state.” | T: with no sorrow, no dust.
+iti51:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti51:5.2 | P: Dutiyaṁ. | T: (none)
+
+## iti61
+iti61:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti61:2.1 | S: “Mendicants, there are these three eyes. | T: “Monks, there are these three eyes.
+iti61:2.2 | S: What three? | T: Which three?
+iti61:2.3 | S: The eye of the flesh, the eye of clairvoyance, and the eye of wisdom. | T: The eye of flesh, the divine eye, & the eye of discernment.
+iti61:2.4 | S: These are the three eyes.” | T: These are the three eyes.”
+iti61:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti61:2.6 | S: On this it is said: | T: (none)
+iti61:3.1 | S: “The eye of flesh, the clairvoyant eye, | T: The eye of flesh, the eye divine,
+iti61:3.2 | S: the supreme eye of wisdom: | T: the eye of discernment unsurpassed:
+iti61:3.3 | S: these three eyes | T: these three eyes were taught
+iti61:3.4 | S: were taught by the supreme person. | T: by the Superlative Person.
+iti61:4.1 | S: The arising of the eye of flesh | T: The arising of the eye of flesh
+iti61:4.2 | S: is the path to the clairvoyant eye. | T: is the path to the eye divine.
+iti61:4.3 | S: When knowledge arises— | T: When knowledge arises,
+iti61:4.4 | S: the supreme eye of wisdom— | T: the eye of discernment unsurpassed:
+iti61:4.5 | S: one who gains that eye | T: whoever gains this eye
+iti61:4.6 | S: is released from all suffering.” | T: is–from all suffering & stress– released.
+iti61:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti61:5.2 | P: Dutiyaṁ. | T: (none)
+
+## iti78
+iti78:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti78:2.1 | S: “Mendicants, sentient beings join together and converge because of an element: | T: “Monks, it’s in accordance with their properties that beings come together & associate with one another.
+iti78:2.2 | S: Those who have inferior convictions join together and converge with those who have inferior convictions. | T: Beings of low dispositions come together & associate with beings of low dispositions.
+iti78:2.3 | S: Those who have good convictions join together and converge with those who have good convictions. | T: Beings of admirable dispositions come together & associate with beings of admirable dispositions.
+iti78:3.1 | S: In the past … | T: In the past, it was in accordance with their properties that beings came together & associated with one another.…
+iti78:3.2 | P: Hīnādhimuttikā sattā hīnādhimuttikehi sattehi saddhiṁ saṁsandiṁsu samiṁsu, | T: (none)
+iti78:3.3 | P: kalyāṇādhimuttikā sattā kalyāṇādhimuttikehi sattehi saddhiṁ saṁsandiṁsu samiṁsu. | T: (none)
+iti78:4.1 | S: In the future … | T: In the future, it will be in accordance with their properties that beings will come together & associate with one another.…
+iti78:4.2 | P: Hīnādhimuttikā sattā hīnādhimuttikehi sattehi saddhiṁ saṁsandissanti samessanti, | T: (none)
+iti78:4.3 | P: kalyāṇādhimuttikā sattā kalyāṇādhimuttikehi sattehi saddhiṁ saṁsandissanti samessanti. | T: (none)
+iti78:5.1 | S: At present, too, sentient beings join together and converge because of an element. | T: And now at present, it’s in accordance with their properties that beings come together & associate with one another.
+iti78:5.2 | S: Those who have inferior convictions join together and converge with those who have inferior convictions. | T: Beings of low dispositions come together & associate with beings of low dispositions.
+iti78:5.3 | S: Those who have good convictions join together and converge with those who have good convictions.” | T: Beings of admirable dispositions come together & associate with beings of admirable dispositions.”
+iti78:5.4 | S: The Buddha spoke this matter. | T: (none)
+iti78:5.5 | S: On this it is said: | T: (none)
+iti78:6.1 | S: “Socializing creates a snarl; | T: The underbrush born of association
+iti78:6.2 | S: they’re cut off by being aloof. | T: is cut away by non-association.
+iti78:6.3 | S: If you’re lost in the middle of a great sea, | T: Just as one riding a small wooden plank would sink in the great sea,
+iti78:6.4 | S: and you clamber up on a little log, you’ll sink. | T: (none)
+iti78:7.1 | S: So too, a person who lives well | T: so does even one of right living
+iti78:7.2 | S: sinks by relying on a lazy person. | T: sink, associating with the lazy.
+iti78:7.3 | S: Hence you should avoid such | T: So avoid the lazy,
+iti78:7.4 | S: a lazy person who lacks energy. | T: those with low persistence.
+iti78:8.1 | S: Dwell with the noble ones | T: Live with the noble ones–
+iti78:8.2 | S: who are secluded and determined | T: secluded, resolute, absorbed in jhāna,
+iti78:8.3 | S: constantly energetic, | T: their persistence constantly aroused
+iti78:8.4 | S: the astute who practice absorption.” | T: : the wise.
+iti78:9.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti78:9.2 | P: Navamaṁ. | T: (none)
+
+## iti85
+iti85:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti85:2.1 | S: “Mendicants, meditate observing the ugliness of the body. | T: “Remain focused, monks, on foulness in the body.
+iti85:2.2 | S: Let mindfulness of breathing be well-established internally on the present. | T: Have mindfulness of in-&-out breathing well-established to the fore within you.
+iti85:2.3 | S: Meditate observing the impermanence of all conditions. | T: Remain focused on the inconstancy of all fabrications.
+iti85:2.4 | S: As you meditate observing the ugliness of the body, you will give up desire for the body. | T: For one who remains focused on the foulness of the body, the obsession with passion for the property of beauty is abandoned.
+iti85:2.5 | S: When mindfulness of breathing is well-established internally on the present, there will be no distressing external thoughts or wishes. | T: For one who has mindfulness of in-&-out breathing well-established to the fore within oneself, annoying external thoughts & inclinations don’t exist.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti85:2.6 | S: When you meditate observing the impermanence of all conditions, ignorance is given up and knowledge arises.” | T: For one who remains focused on the inconstancy of all fabrications, ignorance is abandoned, clear knowing arises.”
+iti85:2.7 | S: The Buddha spoke this matter. | T: (none)
+iti85:2.8 | S: On this it is said: | T: (none)
+iti85:3.1 | S: “Observing the ugliness of the body, | T: Focusing on foulness in the body,
+iti85:3.2 | S: mindful of the breath, | T: mindful of in-&-out breathing,
+iti85:3.3 | S: one always keen sees | T: seeing
+iti85:3.4 | S: the stilling of all activities. | T: the pacification of all fabrications –ardent always:
+iti85:4.1 | S: That mendicant sees rightly, | T: he is a monk who’s seen rightly.
+iti85:4.2 | S: and when freed in regards to that, | T: From that he is there released.
+iti85:4.3 | S: that peaceful sage, with perfect insight, | T: A master of direct knowing, at peace, he is a sage
+iti85:4.4 | S: has truly slipped their yoke.” | T: gone beyond bonds.
+iti85:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti85:5.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## snp5.4
+snp5.4:1.1 | S: “To the imperturbable, the seer of the root,” | T: To the one unperturbed, who has seen the roots,
+snp5.4:1.2 | S: said Venerable Puṇṇaka, | T: (none)
+snp5.4:1.3 | S: “I have come seeking with a question. | T: I have come with a question.
+snp5.4:1.4 | S: On what grounds have seers and men, | T: Because of what have many human seers
+snp5.4:1.5 | S: aristocrats and brahmins here in the world | T: —noble warriors, brahmans—
+snp5.4:1.6 | S: performed so many different <j>sacrifices to the gods? | T: offered sacrifices to devas here in the world?
+snp5.4:1.7 | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. Please tell me.
+snp5.4:2.1 | S: “Whatever seers and men,” | T: The Buddha: Those many human seers
+snp5.4:2.2 | S: replied the Buddha, | T: (none)
+snp5.4:2.3 | S: “aristocrats and brahmins here in the world | T: —noble warriors, brahmans—
+snp5.4:2.4 | S: have performed so many different <j>sacrifices to the gods: | T: who have offered sacrifices to devas here in the world,
+snp5.4:2.5 | S: all performed sacrifices bound to old age, | T: Puṇṇaka, hoping for more of this state of being, offered their sacrifices
+snp5.4:2.6 | S: longing for this place.” | T: because of aging.
+snp5.4:3.1 | S: “As to those seers and men,” | T: Puṇṇaka: These many human seers
+snp5.4:3.2 | S: said Venerable Puṇṇaka, | T: (none)
+snp5.4:3.3 | S: “and aristocrats and brahmins here in the world | T: —noble warriors, brahmans—
+snp5.4:3.4 | S: who have performed so many different <j>sacrifices to the gods: | T: who have offered sacrifices to devas here in the world:
+snp5.4:3.5 | S: being diligent in the technique of sacrifice, | T: Have they, Blessed One, heeding the path of sacrifice,
+snp5.4:3.6 | S: have they crossed over rebirth and old age, good fellow? | T: dear sir, crossed over birth & aging?
+snp5.4:3.7 | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. Please tell me.
+snp5.4:4.1 | S: “Hoping, invoking, praying, and worshiping,” | T: The Buddha: They hoped for, liked, longed for, so they sacrificed—
+snp5.4:4.2 | S: replied the Buddha, | T: (none)
+snp5.4:4.3 | S: “they pray for pleasure derived from profit. | T: they longed for sensuality, dependent on gain.
+snp5.4:4.4 | S: Devoted to sacrifice, besotted by rebirth, | T: I tell you: Those who take on the yoke of sacrifice, impassioned with the passion for becoming,
+snp5.4:4.5 | S: they’ve not crossed over rebirth and old age, <j>I declare.” | T: have not crossed over birth & aging.
+snp5.4:5.1 | S: “If those devoted to sacrifice,” | T: Puṇṇaka: If those who take on the yoke of sacrifice
+snp5.4:5.2 | S: said Venerable Puṇṇaka, | T: (none)
+snp5.4:5.3 | S: “have not, by sacrificing, <j>crossed over rebirth and old age, | T: haven’t crossed over birth & aging,
+snp5.4:5.4 | S: who then in the world of gods and humans | T: then who in the world, dear sir, of beings divine & human
+snp5.4:5.5 | S: has crossed over rebirth and old age, good fellow? | T: has crossed over birth & aging?
+snp5.4:5.6 | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. Please tell me.
+snp5.4:6.1 | S: “Having appraised the world high and low,” | T: The Buddha: He who has fathomed the high & low in the world,
+snp5.4:6.2 | S: replied the Buddha, | T: (none)
+snp5.4:6.3 | S: “there is nothing in the world that disturbs them. | T: for whom there is nothing perturbing in the world—
+snp5.4:6.4 | S: Peaceful, unclouded, untroubled, <j>with no need for hope— | T: evaporated, undesiring, untroubled, at peace—
+snp5.4:6.5 | S: they’ve crossed over rebirth and old age, I declare.” | T: he, I tell you, has crossed over birth & aging.
+snp5.4:6.6 | P: Puṇṇakamāṇavapucchā tatiyā. | T: (none)
+
+## snp5.6
+snp5.6:1.1 | S: “I ask you, Blessed One; please tell me this,” | T: I ask you, Blessed One. Please tell me.
+snp5.6:1.2 | S: said Venerable Dhotaka, | T: (none)
+snp5.6:1.3 | S: “I long for your voice, great seer. | T: I hope for your words, Great Seer.
+snp5.6:1.4 | S: After hearing your message, | T: Having heard your pronouncement,
+snp5.6:1.5 | S: I shall train myself for extinguishment.” | T: I’ll train for my own unbinding.
+snp5.6:2.1 | S: “Well then, be keen, alert,” | T: The Buddha: In that case, be ardent—
+snp5.6:2.2 | S: replied the Buddha, | T: (none)
+snp5.6:2.3 | S: “and mindful right here. | T: astute & mindful right here.
+snp5.6:2.4 | S: After hearing this message, go on | T: Then, having heard my pronouncement,
+snp5.6:2.5 | S: and train yourself for extinguishment.” | T: train for your own unbinding.
+snp5.6:3.1 | S: “I see in the world of gods and humans | T: Dhotaka: I see in the world of beings divine & human,
+snp5.6:3.2 | S: a brahmin traveling with nothing. | T: a brahman who lives possessing nothing.
+snp5.6:3.3 | S: I bow especially to you, All-seer: | T: I pay homage to him, the All-around Eye.
+snp5.6:3.4 | S: release me, Sakyan, from my indecisions.” | T: From my perplexities, Sakyan, release me!
+snp5.6:4.1 | S: “I am not able to release anyone | T: (none)
+snp5.6:4.2 | S: in the world who is indecisive, Dhotaka. | T: The Buddha: No one in the world, Dhotaka, can I release from perplexity.
+snp5.6:4.3 | S: But when you understand the best of teachings, | T: But knowing the most excellent Dhamma,
+snp5.6:4.4 | S: you shall cross this flood.” | T: you will cross over this flood.
+snp5.6:5.1 | S: “Teach me, brahmin, out of compassion, | T: Dhotaka: Teach with compassion, brahman,
+snp5.6:5.2 | S: the principle of seclusion so that I may understand. | T: the Dhamma of seclusion so that I may know—
+snp5.6:5.3 | S: I wish to practice right here, peaceful, independent, | T: so that I, unafflicted as space, may go about right here, independent,
+snp5.6:5.4 | S: unobstructed as space itself.” | T: at peace.
+snp5.6:6.1 | S: “I shall extol that peace for you,” | T: The Buddha: I will expound to you peace
+snp5.6:6.2 | S: replied the Buddha, | T: (none)
+snp5.6:6.3 | S: “that is apparent in the present, not relying on legends. | T: —here-&-now, not quoted words—
+snp5.6:6.4 | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.6:6.5 | S: may cross over clinging in the world.” | T: you’ll go beyond entanglement in the world.
+snp5.6:7.1 | S: “And I rejoice, great seer, | T: Dhotaka: And I relish, Great Seer,
+snp5.6:7.2 | S: in that supreme peace, | T: that peace supreme,
+snp5.6:7.3 | S: having understood which, one who lives mindfully | T: knowing which, living mindfully,
+snp5.6:7.4 | S: may cross over clinging in the world.” | T: I’ll go beyond entanglement in the world.
+snp5.6:8.1 | S: “Once you have understood that everything,” | T: The Buddha: Whatever you’re alert to,
+snp5.6:8.2 | S: replied the Buddha, | T: (none)
+snp5.6:8.3 | S: “you are aware of in the world— | T: (none)
+snp5.6:8.4 | S: above, below, all round, between— | T: above, below, across, in between:
+snp5.6:8.5 | S: is a chain, don’t crave for life after life.” | T: Knowing it as a bond in the world, don’t create craving for becoming or non-.
+snp5.6:8.6 | P: Dhotakamāṇavapucchā pañcamī. | T: (none)
+
+## thag1.16
+thag1.16:1.1 | S: Just as a fine thoroughbred | T: Just as a fine thoroughbred steed,
+thag1.16:1.2 | S: proceeds with ease, | T: with swishing tail & mane runs with next-to-no effort,
+thag1.16:1.3 | S: tail and mane flying in the wind; | T: (none)
+thag1.16:1.4 | S: so my days and nights | T: so my days & nights
+thag1.16:1.5 | S: proceed with ease, | T: run with next-to-no effort
+thag1.16:1.6 | S: full of joy not of the flesh. | T: now that I’ve gained a pleasure not of the flesh.
+thag1.16:1.7 | P: … Belaṭṭhasīso thero …. | T: (none)
+
+## thag2.36
+thag2.36:1.1 | S: Whose mind is like a rock, | T: Whose mind, standing like rock,
+thag2.36:1.2 | S: steady, never trembling— | T: doesn’t shake,
+thag2.36:1.3 | S: free of desire for desirable things, | T: dispassionate for things that spark passion,
+thag2.36:1.4 | S: not getting annoyed when things are annoying? | T: unprovoked by things that spark provocation?
+thag2.36:1.5 | S: From where will suffering strike one | T: (none)
+thag2.36:1.6 | S: whose mind is developed like this? | T: When one’s mind is developed like this, from where can there come to him suffering & stress?
+thag2.36:2.1 | S: My mind is like a rock, | T: My mind, standing like rock,
+thag2.36:2.2 | S: steady, never trembling— | T: doesn’t shake,
+thag2.36:2.3 | S: free of desire for desirable things, | T: dispassionate for things that spark passion,
+thag2.36:2.4 | S: not getting annoyed when things are annoying. | T: unprovoked by things that spark provocation.
+thag2.36:2.5 | S: From where will suffering strike me | T: When my mind is developed like this, from where can there come to me suffering & stress?
+thag2.36:2.6 | S: whose mind is developed like this? | T: (none)
+thag2.36:2.7 | P: … Nitako thero …. | T: (none)
+
+## thag3.15
+thag3.15:1.1 | S: Whoever wishes to do afterwards | T: Whoever wants to do later what he should have done first,
+thag3.15:1.2 | S: tasks they should have done before | T: (none)
+thag3.15:1.3 | S: has lost the causes for happiness, | T: falls away from the easeful state
+thag3.15:1.4 | S: and afterwards they’re tormented by regrets. | T: & later repents.
+thag3.15:2.1 | S: You should only say what you would do; | T: One should speak as one would act,
+thag3.15:2.2 | S: you shouldn’t say what you wouldn’t do. | T: & not as one wouldn’t.
+thag3.15:2.3 | S: The wise will recognize | T: (none)
+thag3.15:2.4 | S: one who talks without doing. | T: When one speaks without acting, the wise, they can tell.
+thag3.15:3.1 | S: Oh! Extinguishment is so very blissful, | T: How very easeful: unbinding,
+thag3.15:3.2 | S: as taught by the fully awakened Buddha: | T: as taught by the Rightly Self-awakened One—
+thag3.15:3.3 | S: sorrowless, stainless, secure, | T: sorrowless, dustless, secure,
+thag3.15:3.4 | S: where suffering all ceases. | T: where stress & suffering cease.
+thag3.15:3.5 | P: … Hārito thero …. | T: (none)
+
+
+codex
+I’ve found a few clear boundary errors, including sentences that begin on the second line they translate. I’m checking the remaining cases against the exception for sentences kept together on their first line.
+exec
+/bin/bash -lc "sed -n '541,720p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-010.findings.tmp <<'EOF'
+iti103:4.3 starts: & where it totally stops, without trace,
+iti103:4.4 none
+iti103:6.3 starts: & where it totally stops, without trace,
+iti103:6.4 none
+iti106:5.2 starts: pay them homage, honor, with food &
+iti31:3.2 none
+iti31:3.3 starts: verbal misconduct, misconduct of mind, & whatever
+iti31:4.4 starts: reappears in heaven.
+iti24:3.2 starts: for an eon would be a heap
+iti83:12.1 starts: When a deva passes away from the
+iti83:12.2 none
+iti83:15.2 none
+iti83:15.3 starts: verbal misconduct, mental misconduct, and whatever else
+iti83:16.4 starts: without limit, with no acquisitions,
+iti83:18.3 starts: is passing away– encourage him: ‘Come back,
+iti83:18.4 starts: ‘Come back, deva, again & again.’
+iti23:4.4 starts: you’re called enlightened, wise.
+iti51:4.2 starts: free from acquisitions, having realized the relinquishing
+iti51:4.6 starts: the state with no sorrow, no dust.
+iti61:3.4 starts: were taught by the Superlative Person.
+iti78:7.4 starts: the lazy, those with low persistence.
+snp5.6:2.3 starts: & mindful right here.
+snp5.6:4.1 starts: The Buddha: No one in the world,
+snp5.6:4.2 none
+thag2.36:1.5 starts: When one’s mind is developed like this,
+thag2.36:1.6 none
+thag3.15:2.3 starts: When one speaks without acting, the wise,
+thag3.15:2.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+28 lines reported.
+tokens used
+31,252
+28 lines reported.

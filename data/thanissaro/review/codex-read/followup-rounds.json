@@ -1,0 +1,24 @@
+[
+  {
+    "translator": "thanissaro",
+    "text": "an8.30",
+    "round": "cross-codex1",
+    "action": "split",
+    "key": "an8.30:12.2",
+    "reason": "Separate sentence about contentment, delight and alighting on unbinding renders santuṭṭhassa viharato ratiyā ... okkamanāya nibbānassa in 12.2."
+  },
+  {
+    "translator": "thanissaro",
+    "text": "sn44.8",
+    "round": "cross-codex1",
+    "action": "retain",
+    "reason": "One parenthetical summary abbreviates repeated questions and answers; no individual rendered questions can be separated."
+  },
+  {
+    "translator": "thanissaro",
+    "text": "sn22.58",
+    "round": "lists-codex1",
+    "action": "retain",
+    "reason": "Perception and fabrication occur inside two earlier aggregate lists before their respective liberation refrains. Splitting would misplace refrains; requires noncontiguous correspondence."
+  }
+]

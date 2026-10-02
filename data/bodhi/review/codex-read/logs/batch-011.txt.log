@@ -1,0 +1,559 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd80-4062-7212-a074-fc2d7677e4d2
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clear placement errors to the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.35, continued
+sn12.35:8.3 | S: These are all cut off at the root, made like a palm stump, obliterated, and unable to arise in the future.” | T: all these are abandoned, cut off at the root, made like a palm stump, obliterated so that they are no more subject to future arising.”
+sn12.35:8.4 | P: Pañcamaṁ. | T: (none)
+
+## sn35.73
+sn35.73:1.1 | S: “Mendicants, anyone who doesn’t truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape | T: (none)
+sn35.73:1.2 | S: has not completed the spiritual journey and is far from this teaching and training.” | T: The first two paragraphs as in §71.
+sn35.73:2.1 | S: When he said this, one of the mendicants said to the Buddha, | T: (none)
+sn35.73:2.2 | S: “Here, sir, I’m discouraged, really discouraged. | T: (none)
+sn35.73:2.3 | S: For I don’t truly understand the six fields of contact’s origin, disappearance, gratification, drawback, and escape.” | T: (none)
+sn35.73:3.1 | S: “What do you think, mendicant? | T: “What do you think, bhikkhu,
+sn35.73:3.2 | S: Is the eye permanent or impermanent?” | T: is the eye permanent or impermanent?”—
+sn35.73:4.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn35.73:5.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn35.73:6.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn35.73:7.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn35.73:7.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn35.73:8.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.73:9.1 | S: “Is the ear … | T: “Is the ear …
+sn35.73:9.2 | S: nose … | T: (none)
+sn35.73:9.3 | S: tongue … | T: (none)
+sn35.73:9.4 | S: body … | T: (none)
+sn35.73:9.5 | S: mind permanent or impermanent?” | T: the mind permanent or impermanent?”—
+sn35.73:10.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn35.73:11.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn35.73:12.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn35.73:13.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn35.73:13.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn35.73:14.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.73:15.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, ear, nose, tongue, body, and mind. | T: “Seeing thus, bhikkhu, the instructed noble disciple experiences revulsion towards the eye … revulsion towards the mind.
+sn35.73:15.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.73:15.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn35.73:15.4 | P: Ekādasamaṁ. | T: (none)
+sn35.73:15.5 | P: Migajālavaggo dutiyo. | T: (none)
+sn35.73:16.0 | P: Tassuddānaṁ | T: (none)
+sn35.73:16.1 | P: Migajālena dve vuttā, | T: (none)
+sn35.73:16.2 | P: Cattāro ca samiddhinā; | T: (none)
+sn35.73:16.3 | P: Upaseno upavāṇo, | T: (none)
+sn35.73:16.4 | P: Chaphassāyatanikā tayoti. | T: (none)
+
+## an3.21
+an3.21:1.1 | S: So I have heard. | T: Thus have I heard.
+an3.21:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+an3.21:1.3 | S: Then Venerable Saviṭṭha and Venerable Mahākoṭṭhita went up to Venerable Sāriputta, and exchanged greetings with him. | T: Then the Venerable Saviṭṭha and the Venerable Mahākoṭṭhita approached the Venerable Sāriputta and exchanged greetings with him.
+an3.21:1.4 | S: When the greetings and polite conversation were over, they sat down to one side and Venerable Sāriputta said to Venerable Saviṭṭha, | T: When they had concluded their greetings and cordial talk, they sat down to one side. The Venerable Sāriputta then said to the Venerable Saviṭṭha:
+an3.21:2.1 | S: “Reverend Saviṭṭha, these three individuals are found in the world. | T: “Friend Saviṭṭha, there are these three kinds of persons found existing in the world.
+an3.21:2.2 | S: What three? | T: What three?
+an3.21:2.3 | S: The direct witness, the one attained to view, and the one freed by faith. | T: The body witness, the one attained to view, and the one liberated by faith.
+an3.21:2.4 | S: These are the three individuals found in the world. | T: These are the three kinds of persons found existing in the world.
+an3.21:2.5 | S: Of these three individuals, who do you believe to be the finest?” | T: Which of these three kinds of persons do you consider the most excellent and sublime?”
+an3.21:3.1 | S: “Reverend Sāriputta, these three individuals are found in the world. | T: “Friend Sāriputta,
+an3.21:3.2 | S: What three? | T: (none)
+an3.21:3.3 | S: The direct witness, the one attained to view, and the one freed by faith. | T: (none)
+an3.21:3.4 | S: These are the three individuals found in the world. | T: (none)
+an3.21:3.5 | S: Of these three individuals, I believe the individual freed by faith to be finest. | T: of those three kinds of persons, I consider the one liberated by faith to be the most excellent and sublime.
+an3.21:3.6 | S: Why is that? | T: For what reason?
+an3.21:3.7 | S: Because this individual’s faculty of faith is extraordinary.” | T: Because this person’s faculty of faith is predominant.”
+an3.21:4.1 | S: Then Sāriputta said to Mahākoṭṭhita, | T: Then the Venerable Sāriputta said to the Venerable Mahākoṭṭhita:
+an3.21:4.2 | S: “Reverend Koṭṭhita, these three people are found in the world. | T: “Friend Koṭṭhita, there are these three kinds of persons found existing in the world….
+an3.21:4.3 | S: What three? | T: (none)
+an3.21:4.4 | S: The direct witness, the one attained to view, and the one freed by faith. | T: (none)
+an3.21:4.5 | S: These are the three individuals found in the world. | T: (none)
+an3.21:4.6 | S: Of these three individuals, who do you believe to be the finest?” | T: Which of these three kinds of persons do you consider the most excellent and sublime?”
+an3.21:5.1 | S: “Reverend Sāriputta, these three individuals are found in the world. | T: “Friend Sāriputta,
+an3.21:5.2 | S: What three? | T: (none)
+an3.21:5.3 | S: The direct witness, the one attained to view, and the one freed by faith. | T: (none)
+an3.21:5.4 | S: These are the three individuals found in the world. | T: (none)
+an3.21:5.5 | S: Of these three individuals, I believe the direct witness to be finest. | T: of those three kinds of persons, I consider the body witness to be the most excellent and sublime.
+an3.21:5.6 | S: Why is that? | T: For what reason?
+an3.21:5.7 | S: Because this individual’s faculty of immersion is extraordinary.” | T: Because this person’s faculty of concentration is predominant.”
+an3.21:6.1 | S: Then Mahākoṭṭhita said to Sāriputta, | T: Then the Venerable Mahākoṭṭhita said to the Venerable Sāriputta:
+an3.21:6.2 | S: “Reverend Sāriputta, these three individuals are found in the world. | T: “Friend Sāriputta, there are these three kinds of persons found existing in the world….
+an3.21:6.3 | S: What three? | T: (none)
+an3.21:6.4 | S: The direct witness, the one attained to view, and the one freed by faith. | T: (none)
+an3.21:6.5 | S: These are the three individuals found in the world. | T: (none)
+an3.21:6.6 | S: Of these three individuals, who do you believe to be the finest?” | T: Which of these three kinds of persons do you consider the most excellent and sublime?”
+an3.21:7.1 | S: “Reverend Koṭṭhita, these three people are found in the world. | T: “Friend Koṭṭhita,
+an3.21:7.2 | S: What three? | T: (none)
+an3.21:7.3 | S: The direct witness, the one attained to view, and the one freed by faith. | T: (none)
+an3.21:7.4 | S: These are the three individuals found in the world. | T: (none)
+an3.21:7.5 | S: Of these three individuals, I believe the individual attained to view to be finest. | T: of those three kinds of persons, I consider the one attained to view to be the most excellent and sublime.
+an3.21:7.6 | S: Why is that? | T: For what reason?
+an3.21:7.7 | S: Because this individual’s faculty of wisdom is extraordinary.” | T: Because this person’s faculty of wisdom is predominant.”
+an3.21:8.1 | S: Then Sāriputta said to Saviṭṭha and Mahākoṭṭhita, | T: Then the Venerable Sāriputta said to the Venerable Saviṭṭha and the Venerable Mahākoṭṭhita:
+an3.21:8.2 | S: “Each of us has spoken from the heart. | T: “Friends, we have each explained according to our own ideal.
+an3.21:8.3 | S: Come, reverends, let’s go to the Buddha, and tell him about this. | T: Come, let’s approach the Blessed One and report this matter to him.
+an3.21:8.4 | S: As he answers, so we’ll remember it.” | T: We will retain it in mind as he explains it to us.”
+an3.21:8.5 | S: “Yes, reverend,” they replied. | T: “Yes, friend,” the Venerable Saviṭṭha and the Venerable Mahākoṭṭhita replied.
+an3.21:8.6 | S: Then Sāriputta, Saviṭṭha, and Mahākoṭṭhita went up to the Buddha, bowed, and sat down to one side. | T: Then the Venerable Sāriputta, the Venerable Saviṭṭha, and the Venerable Mahākoṭṭhita approached the Blessed One, paid homage to him, and sat down to one side.
+an3.21:8.7 | S: Then Sāriputta told the Buddha of all they had discussed. | T: The Venerable Sāriputta then reported to him the entire conversation that had taken place.
+an3.21:9.1 | S: “In this matter, Sāriputta, it’s not easy to categorically declare that | T: The Blessed One said: “It isn’t easy, Sāriputta, to make a definitive declaration about this matter and say:
+an3.21:9.2 | S: one of these three individuals is finest. | T: ‘Of these three kinds of persons, this one is the most excellent and sublime.’
+an3.21:9.3 | S: In some cases, an individual freed by faith is practicing for perfection, while the direct witness and the one attained to view are once-returners or non-returners. | T: (1) “For it is possible that a person liberated by faith is practicing for arahantship, while a body witness and one attained to view are once-returners or non-returners.
+an3.21:10.1 | S: In this matter, it’s not easy to categorically declare that | T: It isn’t easy, Sāriputta, to make a definitive declaration about this matter and say:
+an3.21:10.2 | S: one of these three individuals is finest. | T: ‘Of these three kinds of persons, this one is the most excellent and sublime.’
+an3.21:10.3 | S: In some cases, a direct witness is practicing for perfection, while the one freed by faith and the one attained to view are once-returners or non-returners. | T: (2) “It is possible that a person who is a body witness is practicing for arahantship, while one liberated by faith and one attained to view are once-returners or non-returners.
+an3.21:11.1 | S: In this matter, it’s not easy to categorically declare that | T: It isn’t easy, Sāriputta, to make a definitive declaration about this matter and say:
+an3.21:11.2 | S: one of these three individuals is finest. | T: ‘Of these three kinds of persons, this one is the most excellent and sublime.’
+an3.21:11.3 | S: In some cases, one attained to view is practicing for perfection, while the one freed by faith and the direct witness are once-returners or non-returners. | T: (3) “It is possible that a person attained to view is practicing for arahantship, while one liberated by faith and a body witness are once-returners or non-returners.
+an3.21:12.1 | S: In this matter, it’s not easy to categorically declare that | T: It isn’t easy, Sāriputta, to make a definitive declaration about this matter and say:
+an3.21:12.2 | S: one of these three individuals is finest.” | T: ‘Of these three kinds of persons, this one is the most excellent and sublime.’”
+an3.21:12.3 | P: Paṭhamaṁ. | T: (none)
+
+## sn1.44
+sn1.44:1.1 | S: “One the root, two the loops, | T: A devatā: “The seer has crossed over the abyss With its one root, two whirlpools,
+sn1.44:1.2 | S: three the stains, five the spreads, | T: Three stains, five extensions,
+sn1.44:1.3 | S: and the ocean, the twelfth whirlpool: | T: An ocean with twelve eddies.”
+sn1.44:1.4 | S: such is the abyss crossed by the seer.” | T: (none)
+
+## sn35.76
+sn35.76:1.1 | S: Then Venerable Rādha went up to the Buddha … | T: Then the Venerable Radha approached the Blessed One …
+sn35.76:1.2 | S: and said to him, | T: and said to him:
+sn35.76:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn35.76:1.4 | S: “Rādha, you should give up desire for what is impermanent. | T: “Radha, you should abandon desire for whatever is impermanent.
+sn35.76:1.5 | S: And what is impermanent? | T: And what is impermanent?
+sn35.76:1.6 | S: The eye, sights, eye consciousness, | T: The eye is impermanent; you should abandon desire for it. Forms are impermanent … Eye-consciousness is impermanent …
+sn35.76:1.7 | S: and eye contact are impermanent. | T: Eye-contact is impermanent …
+sn35.76:1.8 | S: And the pleasant, painful, or neutral feeling that arises dependent on eye contact is also impermanent. You should give up desire for it. | T: Whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is impermanent; you should abandon desire for it.
+sn35.76:1.9 | S: The ear … nose … tongue … | T: “The ear …
+sn35.76:1.10 | S: body … | T: (none)
+sn35.76:1.11 | S: The mind, | T: The mind is impermanent …
+sn35.76:1.12 | S: ideas, | T: (none)
+sn35.76:1.13 | S: mind consciousness, | T: (none)
+sn35.76:1.14 | S: and mind contact are impermanent. | T: (none)
+sn35.76:1.15 | S: And the pleasant, painful, or neutral feeling that arises dependent on mind contact is also impermanent. You should give up desire for it. | T: Whatever feeling arises with mind-contact as condition … that too is impermanent; you should abandon desire for it.
+sn35.76:1.16 | S: You should give up desire for what is impermanent.” | T: Radha, you should abandon desire for whatever is impermanent.”
+sn35.76:1.17 | P: Tatiyaṁ. | T: (none)
+
+## sn36.30
+sn36.30:1.1 | S: “Mendicants, there are these three feelings. | T: “Bhikkhus, there are these three feelings.
+sn36.30:1.2 | S: What three? | T: What three?
+sn36.30:1.3 | S: Pleasant, painful, and neutral feelings. | T: Pleasant feeling, painful feeling, neither-painful-nor-pleasant feeling.”
+sn36.30:1.4 | S: These are the three feelings.” | T: (none)
+sn36.30:1.5 | P: Dasamaṁ. | T: (none)
+
+## sn44.8
+sn44.8:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha and exchanged greetings with him. | T: Then the wanderer Vacchagotta approached the Blessed One and exchanged greetings with him.
+sn44.8:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn44.8:1.3 | S: “Worthy Gotama, is this right: ‘the cosmos is eternal’?” | T: “How is it, Master Gotama, is the world eternal?”…
+sn44.8:1.4 | S: “This has not been declared by me, Vaccha.” … | T: (none)
+sn44.8:1.5 | S: “Then is this right: ‘a realized one neither still exists nor no longer exists after death’?” | T: (none)
+sn44.8:1.6 | S: “This too has not been declared by me.” | T: (none)
+sn44.8:1.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: as above …
+sn44.8:2.1 | S: “What’s the cause, worthy Gotama, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “What, Master Gotama, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:2.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:2.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.8:2.4 | S: And what’s the reason why, when the worthy Gotama is asked these questions, he does not declare one of these to be true?” | T: And what is the cause and reason why, when Master Gotama is asked such questions, he does not give such answers?”
+sn44.8:2.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.8:3.1 | S: “Vaccha, the wanderers of other religions regard form as self, self as having form, form in self, or self in form. | T: “Vaccha, wanderers of other sects regard form as self, or self as possessing form, or form as in self, or self as in form.
+sn44.8:3.2 | S: They regard feeling … | T: They regard feeling as self …
+sn44.8:3.3 | S: perception … | T: perception as self …
+sn44.8:3.4 | S: choices … | T: volitional formations as self …
+sn44.8:3.5 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn44.8:3.6 | S: That’s why, when asked, they declare one of those answers to be true. | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:3.7 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:3.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.8:3.9 | S: The Realized One doesn’t regard form as self, self as having form, form in self, or self in form. | T: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, does not regard form as self …
+sn44.8:3.10 | S: He doesn’t regard feeling … | T: (none)
+sn44.8:3.11 | S: perception … | T: (none)
+sn44.8:3.12 | S: choices … | T: (none)
+sn44.8:3.13 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: or self as in consciousness.
+sn44.8:3.14 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: Therefore, when the Tathagata is asked such questions, he does not give such answers.”
+sn44.8:3.15 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:3.16 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.8:4.1 | S: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: Then the wanderer Vacchagotta rose from his seat and approached the Venerable Mahamoggallana. He exchanged greetings with the Venerable Mahamoggallana … and said to him:
+sn44.8:4.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. | T: (none)
+sn44.8:4.3 | P: “kiṁ nu kho, bho moggallāna, sassato loko”ti? | T: “How is it, Master Moggallana, is the world eternal?”
+sn44.8:4.4 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: ‘sassato loko’ti …pe…. | T: All as above down to:
+sn44.8:4.5 | P: “Kiṁ pana, bho moggallāna, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti? | T: (none)
+sn44.8:4.6 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.8:4.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata neither exists nor does not exist after death.’”
+sn44.8:5.1 | P: “Ko nu kho, bho moggallāna, hetu, ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: “What, Master Moggallana, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:5.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:5.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: or ‘The Tathagata neither exists nor does not exist after death’?
+sn44.8:5.4 | P: Ko pana, bho moggallāna, hetu, ko paccayo yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: And what is the cause and reason why when the ascetic Gotama is asked such questions,
+sn44.8:5.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:5.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: he does not give such answers?”
+sn44.8:6.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. | T: “Vaccha, wanderers of other sects regard form as self …
+sn44.8:6.2 | P: Vedanaṁ attato samanupassanti …pe… | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn44.8:6.3 | P: saññaṁ …pe… | T: (none)
+sn44.8:6.4 | P: saṅkhāre …pe… | T: (none)
+sn44.8:6.5 | P: viññāṇaṁ attato samanupassanti, viññāṇavantaṁ vā attānaṁ, attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. | T: or self as in consciousness.
+sn44.8:6.6 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:6.7 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:6.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.8:6.9 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho na rūpaṁ attato samanupassati, na rūpavantaṁ vā attānaṁ, na attani vā rūpaṁ, na rūpasmiṁ vā attānaṁ. | T: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, does not regard form as self …
+sn44.8:6.10 | P: Na vedanaṁ attato samanupassati …pe… | T: (none)
+sn44.8:6.11 | P: na saññaṁ …pe… | T: (none)
+sn44.8:6.12 | P: na saṅkhāre …pe… | T: (none)
+sn44.8:6.13 | P: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. | T: or self as in consciousness.
+sn44.8:6.14 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: Therefore, when the Tathagata is asked such questions, he does not give such answers.”
+sn44.8:6.15 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.8:7.1 | S: He said, “It’s incredible, worthy Moggallāna, it’s amazing. | T: “It is wonderful, Master Moggallana! It is amazing, Master Moggallana!
+sn44.8:7.2 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and the phrasing of both teacher and disciple coincide and agree with each other and do not diverge, that is, in regard to the chief matter.
+sn44.8:7.3 | S: Just now I went to the ascetic Gotama and asked him about this matter. | T: Just now, Master Moggallana, I approached the ascetic Gotama and asked him about this matter.
+sn44.8:7.4 | S: And he explained it to me with these words and phrases, just like the worthy Moggallāna. | T: The ascetic Gotama explained this matter to me in exactly the same terms and phrases that Master Moggallana used.
+sn44.8:7.5 | S: It’s incredible, worthy Moggallāna, it’s amazing! | T: It is wonderful, Master Moggallana! It is amazing, Master Moggallana!
+sn44.8:7.6 | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and the phrasing of both teacher and disciple coincide and agree with each other and do not diverge, that is, in regard to the chief matter.”
+sn44.8:7.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn46.51
+sn46.51:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn46.51:1.2 | S: “Mendicants, I will teach you what fuels and what starves the five hindrances and the seven awakening factors. | T: “Bhikkhus, I will teach you the nutriment and the denourishment in regard to the five hindrances and the seven factors of enlightenment.
+sn46.51:1.3 | S: Listen … | T: Listen to that.…
+sn46.51:1.4 | S: And what fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow? | T: i. The nutriments for the hindrances “And what, bhikkhus, is the nutriment for the arising of unarisen sensual desire and for the increase and expansion of arisen sensual desire?
+sn46.51:1.5 | S: There is the feature of beauty. | T: There is, bhikkhus, the sign of the beautiful:
+sn46.51:1.6 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen sensual desire and for the increase and expansion of arisen sensual desire.
+sn46.51:1.7 | S: fuels the arising of sensual desire, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.51:2.1 | S: And what fuels the arising of ill will, or, when it has arisen, makes it increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen ill will and for the increase and expansion of arisen ill will?
+sn46.51:2.2 | S: There is the feature of aversion. | T: There is, bhikkhus, the sign of the repulsive:
+sn46.51:2.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen ill will and for the increase and expansion of arisen ill will.
+sn46.51:2.4 | S: fuels the arising of ill will, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.51:3.1 | S: And what fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen sloth and torpor and for the increase and expansion of arisen sloth and torpor?
+sn46.51:3.2 | S: There is discontent, sloth, yawning, sleepiness after eating, and mental sluggishness. | T: There are, bhikkhus, discontent, lethargy, lazy stretching, drowsiness after meals, sluggishness of mind:
+sn46.51:3.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to them is the nutriment for the arising of unarisen sloth and torpor and for the increase and expansion of arisen sloth and torpor.
+sn46.51:3.4 | S: fuels the arising of dullness and drowsiness, or, when they have arisen, makes them increase and grow. | T: (none)
+sn46.51:4.1 | S: And what fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen restlessness and remorse and for the increase and expansion of arisen restlessness and remorse?
+sn46.51:4.2 | S: There is the unsettled mind. | T: There is, bhikkhus, unsettledness of mind:
+sn46.51:4.3 | S: Frequent irrational application of mind to that | T: frequently giving careless attention to it is the nutriment for the arising of unarisen restlessness and remorse and for the increase and expansion of arisen restlessness and remorse.
+sn46.51:4.4 | S: fuels the arising of restlessness and remorse, or, when they have arisen, makes them increase and grow. | T: (none)
+sn46.51:5.1 | S: And what fuels the arising of doubt, or, when it has arisen, makes it increase and grow? | T: “And what, bhikkhus, is the nutriment for the arising of unarisen doubt and for the increase and expansion of arisen doubt?
+sn46.51:5.2 | S: There are things that are grounds for doubt. | T: There are, bhikkhus, things that are the basis for doubt:
+sn46.51:5.3 | S: Frequent irrational application of mind to them | T: frequently giving careless attention to them is the nutriment for the arising of unarisen doubt and for the increase and expansion of arisen doubt.
+sn46.51:5.4 | S: fuels the arising of doubt, or, when it has arisen, makes it increase and grow. | T: (none)
+sn46.51:6.1 | S: And what fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it? | T: ii. The nutriments for the enlightenment factors “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of mindfulness and for the fulfilment by development of the arisen enlightenment factor of mindfulness?
+sn46.51:6.2 | S: There are things that are grounds for the awakening factor of mindfulness. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of mindfulness:
+sn46.51:6.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of mindfulness and for the fulfilment by development of the arisen enlightenment factor of mindfulness.
+sn46.51:6.4 | S: fuels the arising of the awakening factor of mindfulness, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:7.1 | S: And what fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of discrimination of states and for the fulfilment by development of the arisen enlightenment factor of discrimination of states?
+sn46.51:7.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are, bhikkhus, wholesome and unwholesome states, blameable and blameless states, inferior and superior states, dark and bright states with their counterparts:
+sn46.51:7.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of discrimination of states and for the fulfilment by development of the arisen enlightenment factor of discrimination of states.
+sn46.51:7.4 | S: fuels the arising of the awakening factor of investigation of principles, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:8.1 | S: And what fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of energy and for the fulfilment by development of the arisen enlightenment factor of energy?
+sn46.51:8.2 | S: There are the elements of initiative, persistence, and exertion. | T: There are, bhikkhus, the element of arousal, the element of endeavour, the element of exertion:
+sn46.51:8.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of energy and for the fulfilment by development of the arisen enlightenment factor of energy.
+sn46.51:8.4 | S: fuels the arising of the awakening factor of energy, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:9.1 | S: And what fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of rapture and for the fulfilment by development of the arisen enlightenment factor of rapture?
+sn46.51:9.2 | S: There are things that are grounds for the awakening factor of rapture. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of rapture:
+sn46.51:9.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of rapture and for the fulfilment by development of the arisen enlightenment factor of rapture.
+sn46.51:9.4 | S: fuels the arising of the awakening factor of rapture, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:10.1 | S: And what fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of tranquillity and for the fulfilment by development of the arisen enlightenment factor of tranquillity?
+sn46.51:10.2 | S: There is tranquility of the body and of the mind. | T: There are, bhikkhus, tranquillity of body, tranquillity of mind:
+sn46.51:10.3 | S: Frequent rational application of mind to that | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of tranquillity and for the fulfilment by development of the arisen enlightenment factor of tranquillity.
+sn46.51:10.4 | S: fuels the arising of the awakening factor of tranquility, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:11.1 | S: And what fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of concentration and for the fulfilment by development of the arisen enlightenment factor of concentration?
+sn46.51:11.2 | S: There are things that are the basis of serenity and freedom from distraction. | T: There are, bhikkhus, the sign of serenity, the sign of nondispersal:
+sn46.51:11.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of concentration and for the fulfilment by development of the arisen enlightenment factor of concentration.
+sn46.51:11.4 | S: fuels the arising of the awakening factor of immersion, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:12.1 | S: And what fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it? | T: “And what, bhikkhus, is the nutriment for the arising of the unarisen enlightenment factor of equanimity and for the fulfilment by development of the arisen enlightenment factor of equanimity?
+sn46.51:12.2 | S: There are things that are grounds for the awakening factor of equanimity. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of equanimity:
+sn46.51:12.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the nutriment for the arising of the unarisen enlightenment factor of equanimity and for the fulfilment by development of the arisen enlightenment factor of equanimity.
+sn46.51:12.4 | S: fuels the arising of the awakening factor of equanimity, or, when it has arisen, fully develops it. | T: (none)
+sn46.51:13.1 | S: And what starves the arising of sensual desire, or, when it has arisen, starves its increase and growth? | T: iii. The denourishment of the hindrances “And what, bhikkhus, is the denourishment that prevents unarisen sensual desire from arising and arisen sensual desire from increasing and expanding?
+sn46.51:13.2 | S: There is the feature of ugliness. | T: There is, bhikkhus, the sign of foulness:
+sn46.51:13.3 | S: Frequent rational application of mind to that | T: frequently giving careful attention to it is the denourishment that prevents unarisen sensual desire from arising and arisen sensual desire from increasing and expanding.
+sn46.51:13.4 | S: starves the arising of sensual desire, or, when it has arisen, starves its increase and growth. | T: (none)
+sn46.51:14.1 | S: And what starves the arising of ill will, or, when it has arisen, starves its increase and growth? | T: “And what, bhikkhus, is the denourishment that prevents unarisen ill will from arising and arisen ill will from increasing and expanding?
+sn46.51:14.2 | S: There is the heart’s release by love. | T: There is, bhikkhus, the liberation of mind through lovingkindness:
+sn46.51:14.3 | S: Frequent rational application of mind to that | T: frequently giving careful attention to it is the denourishment that prevents unarisen ill will from arising and arisen ill will from increasing and expanding.
+sn46.51:14.4 | S: starves the arising of ill will, or, when it has arisen, starves its increase and growth. | T: (none)
+sn46.51:15.1 | S: And what starves the arising of dullness and drowsiness, or, when they have arisen, starves their increase and growth? | T: “And what, bhikkhus, is the denourishment that prevents unarisen sloth and torpor from arising and arisen sloth and torpor from increasing and expanding?
+sn46.51:15.2 | S: There are the elements of initiative, persistence, and exertion. | T: There are, bhikkhus, the element of arousal, the element of endeavour, the element of exertion:
+sn46.51:15.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the denourishment that prevents unarisen sloth and torpor from arising and arisen sloth and torpor from increasing and expanding.
+sn46.51:15.4 | S: starves the arising of dullness and drowsiness, or, when they have arisen, starves their increase and growth. | T: (none)
+sn46.51:16.1 | S: And what starves the arising of restlessness and remorse, or, when they have arisen, starves their increase and growth? | T: “And what, bhikkhus, is the denourishment that prevents unarisen restlessness and remorse from arising and arisen restlessness and remorse from increasing and expanding?
+sn46.51:16.2 | S: There is the settled mind. | T: There is, bhikkhus, peacefulness of mind:
+sn46.51:16.3 | S: Frequent rational application of mind to that | T: frequently giving careful attention to it is the denourishment that prevents unarisen restlessness and remorse from arising and arisen restlessness and remorse from increasing and expanding.
+sn46.51:16.4 | S: starves the arising of restlessness and remorse, or, when they have arisen, starves their increase and growth. | T: (none)
+sn46.51:17.1 | S: And what starves the arising of doubt, or, when it has arisen, starves its increase and growth? | T: “And what, bhikkhus, is the denourishment that prevents unarisen doubt from arising and arisen doubt from increasing and expanding?
+sn46.51:17.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are, bhikkhus, wholesome and unwholesome states, blameable and blameless states, inferior and superior states, dark and bright states with their counterparts:
+sn46.51:17.3 | S: Frequent rational application of mind to them | T: frequently giving careful attention to them is the denourishment that prevents unarisen doubt from arising and arisen doubt from increasing and expanding.
+sn46.51:17.4 | S: starves the arising of doubt, or, when it has arisen, starves its increase and growth. | T: (none)
+sn46.51:18.1 | S: And what starves the arising of the awakening factor of mindfulness, or, when it has arisen, starves its full development? | T: iv. The denourishment of the enlightenment factors “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of mindfulness from arising and the arisen enlightenment factor of mindfulness from reaching fulfilment by development?
+sn46.51:18.2 | S: There are things that are grounds for the awakening factor of mindfulness. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of mindfulness:
+sn46.51:18.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of mindfulness from arising and the arisen enlightenment factor of mindfulness from reaching fulfilment by development.
+sn46.51:18.4 | S: starves the arising of the awakening factor of mindfulness, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:19.1 | S: And what starves the arising of the awakening factor of investigation of principles, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of discrimination of states from arising and the arisen enlightenment factor of discrimination of states from reaching fulfilment by development?
+sn46.51:19.2 | S: There are qualities that are skillful and unskillful, blameworthy and blameless, inferior and superior, and those with a portion of dark or bright. | T: There are, bhikkhus, wholesome and unwholesome states, blameable and blameless states, inferior and superior states, dark and bright states with their counterparts:
+sn46.51:19.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of discrimination of states from arising and the arisen enlightenment factor of discrimination of states from reaching fulfilment by development.
+sn46.51:19.4 | S: starves the arising of the awakening factor of investigation of principles, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:20.1 | S: And what starves the arising of the awakening factor of energy, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of energy from arising and the arisen enlightenment factor of energy from reaching fulfilment by development?
+sn46.51:20.2 | S: There are the elements of initiative, persistence, and exertion. | T: There are, bhikkhus, the element of arousal, the element of endeavour, the element of exertion:
+sn46.51:20.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of energy from arising and the arisen enlightenment factor of energy from reaching fulfilment by development.
+sn46.51:20.4 | S: starves the arising of the awakening factor of energy, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:21.1 | S: And what starves the arising of the awakening factor of rapture, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of rapture from arising and the arisen enlightenment factor of rapture from reaching fulfilment by development?
+sn46.51:21.2 | S: There are things that are grounds for the awakening factor of rapture. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of rapture:
+sn46.51:21.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of rapture from arising and the arisen enlightenment factor of rapture from reaching fulfilment by development.
+sn46.51:21.4 | S: starves the arising of the awakening factor of rapture, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:22.1 | S: And what starves the arising of the awakening factor of tranquility, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of tranquillity from arising and the arisen enlightenment factor of tranquillity from reaching fulfilment by development?
+sn46.51:22.2 | S: There is tranquility of the body and of the mind. | T: There are, bhikkhus, tranquillity of body, tranquillity of mind:
+sn46.51:22.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of tranquillity from arising and the arisen enlightenment factor of tranquillity from reaching fulfilment by development.
+sn46.51:22.4 | S: starves the arising of the awakening factor of tranquility, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:23.1 | S: And what starves the arising of the awakening factor of immersion, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of concentration from arising and the arisen enlightenment factor of concentration from reaching fulfilment by development?
+sn46.51:23.2 | S: There are things that are the basis of serenity and freedom from distraction. | T: There are, bhikkhus, the sign of serenity, the sign of nondispersal:
+sn46.51:23.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of concentration from arising and the arisen enlightenment factor of concentration from reaching fulfilment by development.
+sn46.51:23.4 | S: starves the arising of the awakening factor of immersion, or, when it has arisen, starves its full development. | T: (none)
+sn46.51:24.1 | S: And what starves the arising of the awakening factor of equanimity, or, when it has arisen, starves its full development? | T: “And what, bhikkhus, is the denourishment that prevents the unarisen enlightenment factor of equanimity from arising and the arisen enlightenment factor of equanimity from reaching fulfilment by development.
+sn46.51:24.2 | S: There are things that are grounds for the awakening factor of equanimity. | T: There are, bhikkhus, things that are the basis for the enlightenment factor of equanimity:
+sn46.51:24.3 | S: Not frequently applying the mind to that | T: not frequently giving attention to them is the denourishment that prevents the unarisen enlightenment factor of equanimity from arising and the arisen enlightenment factor of equanimity from reaching fulfilment by development.”
+sn46.51:24.4 | S: starves the arising of the awakening factor of equanimity, or, when it has arisen, starves its full development.” | T: (none)
+sn46.51:24.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.90
+sn22.90:1.1 | S: At one time several senior mendicants were staying near Varanasi in the deer park at Isipatana. | T: On one occasion a number of bhikkhus were dwelling at Baraṇasi in the Deer Park at Isipatana.
+sn22.90:1.2 | S: Then in the late afternoon, Venerable Channa came out of retreat. Taking a latchkey, he went from dwelling to dwelling, going up to the senior mendicants and saying, | T: Then, in the evening, the Venerable Channa emerged from seclusion and, taking his key, went from dwelling to dwelling saying to the elder bhikkhus:
+sn22.90:1.3 | S: “May the venerable senior mendicants advise me and instruct me! May they give me a Dhamma talk so that I can see the teaching!” | T: “Let the elder venerable ones exhort me, let them instruct me, let them give me a Dhamma talk in such a way that I might see the Dhamma.”
+sn22.90:2.1 | S: When he said this, the senior mendicants said to Venerable Channa: | T: When this was said, the elder bhikkhus said to the Venerable Channa:
+sn22.90:2.2 | S: “Reverend Channa, form, | T: “Form, friend Channa, is impermanent,
+sn22.90:2.3 | S: feeling, | T: feeling is impermanent,
+sn22.90:2.4 | S: perception, | T: perception is impermanent,
+sn22.90:2.5 | S: choices, | T: volitional formations are impermanent,
+sn22.90:2.6 | S: and consciousness are impermanent. | T: consciousness is impermanent.
+sn22.90:2.7 | S: Form, | T: Form is nonself,
+sn22.90:2.8 | S: feeling, | T: feeling is nonself,
+sn22.90:2.9 | S: perception, | T: perception is nonself,
+sn22.90:2.10 | S: choices, | T: volitional formations are nonself,
+sn22.90:2.11 | S: and consciousness are not-self. | T: consciousness is nonself.
+sn22.90:2.12 | S: All conditions are impermanent. | T: All formations are impermanent;
+sn22.90:2.13 | S: All things are not-self.” | T: all phenomena are nonself.”
+sn22.90:3.1 | S: Then Venerable Channa thought, | T: Then it occurred to the Venerable Channa:
+sn22.90:3.2 | S: “I too think in this way. … | T: “I too think in this way:
+sn22.90:3.3 | P: ‘rūpaṁ aniccaṁ, vedanā … | T: ‘Form is impermanent …
+sn22.90:3.4 | P: saññā … | T: (none)
+sn22.90:3.5 | P: saṅkhārā … | T: (none)
+sn22.90:3.6 | P: viññāṇaṁ aniccaṁ; | T: consciousness is impermanent.
+sn22.90:3.7 | P: rūpaṁ anattā, vedanā … | T: Form is nonself …
+sn22.90:3.8 | P: saññā … | T: (none)
+sn22.90:3.9 | P: saṅkhārā … | T: (none)
+sn22.90:3.10 | P: viññāṇaṁ anattā. | T: consciousness is nonself.
+sn22.90:3.11 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: All formations are impermanent; all phenomena are nonself.’
+sn22.90:3.12 | S: And yet my mind does not leap forth, gain confidence, settle down, and become decided about the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: But my mind does not launch out upon the stilling of all formations, the relinquishing of all acquisitions, the destruction of craving, dispassion, cessation, Nibbāna; nor does it acquire confidence, settle down, and resolve on it.
+sn22.90:3.13 | S: Because of anxiety, grasping arises | T: Instead, agitation and clinging arise
+sn22.90:3.14 | S: and keeps turning back to the thought: | T: and the mind turns back,
+sn22.90:3.15 | S: ‘So who then is my self?’ | T: thinking: ‘But who is my self?’
+sn22.90:3.16 | S: But that doesn’t happen for someone who sees the teaching. | T: But such does not happen to one who sees the Dhamma.
+sn22.90:3.17 | S: Who can teach me the Dhamma so that I can see the teaching?” | T: So who can teach me the Dhamma in such a way that I might see the Dhamma?”
+sn22.90:4.1 | S: Then Venerable Channa thought, | T: Then it occurred to the Venerable Channa:
+sn22.90:4.2 | S: “Venerable Ānanda is staying near Kosambī in Ghosita’s monastery. He’s praised by the Buddha and esteemed by his sensible spiritual companions. He’s quite capable of teaching me the Dhamma so that I can see the teaching. | T: “This Venerable Ānanda is dwelling at Kosambi in Ghosita’s Park, and he has been praised by the Teacher and is esteemed by his wise brothers in the holy life. The Venerable Ānanda is capable of teaching me the Dhamma in such a way that I might see the Dhamma.
+sn22.90:4.3 | S: Since I have so much trust in Venerable Ānanda, | T: Since I have so much trust in the Venerable Ānanda,
+sn22.90:4.4 | S: why don’t I go to see him?” | T: let me approach him.”
+sn22.90:4.5 | S: Then Channa set his lodgings in order and, taking his bowl and robe, set out for Kosambī. He went to see Ānanda in Ghosita’s monastery, exchanged greetings with him, and told him what had happened. Then he said, | T: Then the Venerable Channa set his lodging in order, took his bowl and robe, and went to Ghosita’s Park in Kosambi, where he approached the Venerable Ānanda and exchanged greetings with him. When they had concluded their greetings and cordial talk, he sat down to one side and told the Venerable Ānanda everything that had happened, adding:
+sn22.90:5.1 | P: “Ekamidāhaṁ, āvuso ānanda, samayaṁ bārāṇasiyaṁ viharāmi isipatane migadāye. | T: (none)
+sn22.90:5.2 | P: Atha khvāhaṁ, āvuso, sāyanhasamayaṁ paṭisallānā vuṭṭhito avāpuraṇaṁ ādāya vihārena vihāraṁ upasaṅkamiṁ; | T: (none)
+sn22.90:5.3 | P: upasaṅkamitvā there bhikkhū etadavocaṁ: | T: (none)
+sn22.90:5.4 | P: ‘ovadantu maṁ āyasmanto therā, anusāsantu maṁ āyasmanto therā, karontu me āyasmanto therā dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan’ti. | T: (none)
+sn22.90:5.5 | P: Evaṁ vutte, maṁ, āvuso, therā bhikkhū etadavocuṁ: | T: (none)
+sn22.90:5.6 | P: ‘rūpaṁ kho, āvuso channa, aniccaṁ; | T: (none)
+sn22.90:5.7 | P: vedanā … | T: (none)
+sn22.90:5.8 | P: saññā … | T: (none)
+sn22.90:5.9 | P: saṅkhārā … | T: (none)
+sn22.90:5.10 | P: viññāṇaṁ aniccaṁ; | T: (none)
+sn22.90:5.11 | P: rūpaṁ anattā …pe… | T: (none)
+sn22.90:5.12 | P: viññāṇaṁ anattā. | T: (none)
+sn22.90:5.13 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: (none)
+sn22.90:6.1 | P: Tassa mayhaṁ, āvuso, etadahosi: | T: (none)
+sn22.90:6.2 | P: ‘mayhampi kho etaṁ evaṁ hoti— | T: (none)
+sn22.90:6.3 | P: rūpaṁ aniccaṁ …pe… | T: (none)
+sn22.90:6.4 | P: viññāṇaṁ aniccaṁ, rūpaṁ anattā, vedanā … | T: (none)
+sn22.90:6.5 | P: saññā … | T: (none)
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.90:6.6 | P: saṅkhārā … | T: (none)
+sn22.90:6.7 | P: viññāṇaṁ anattā. | T: (none)
+sn22.90:6.8 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: (none)
+sn22.90:6.9 | P: Atha ca pana me sabbasaṅkhārasamathe sabbūpadhipaṭinissagge taṇhākkhaye virāge nirodhe nibbāne cittaṁ na pakkhandati nappasīdati na santiṭṭhati nādhimuccati. | T: (none)
+sn22.90:6.10 | P: Paritassanā upādānaṁ uppajjati; | T: (none)
+sn22.90:6.11 | P: paccudāvattati mānasaṁ: | T: (none)
+sn22.90:6.12 | P: ‘atha ko carahi me attā’ti? | T: (none)
+sn22.90:6.13 | P: Na kho panevaṁ dhammaṁ passato hoti. | T: (none)
+sn22.90:6.14 | P: Ko nu kho me tathā dhammaṁ deseyya yathāhaṁ dhammaṁ passeyyanti. | T: (none)
+sn22.90:7.1 | P: Tassa mayhaṁ, āvuso, etadahosi: | T: (none)
+sn22.90:7.2 | P: ‘ayaṁ kho āyasmā ānando kosambiyaṁ viharati ghositārāme satthu ceva saṁvaṇṇito sambhāvito ca viññūnaṁ sabrahmacārīnaṁ, pahoti ca me āyasmā ānando tathā dhammaṁ desetuṁ yathāhaṁ dhammaṁ passeyyaṁ. | T: (none)
+sn22.90:7.3 | P: Atthi ca me āyasmante ānande tāvatikā vissaṭṭhi. | T: (none)
+sn22.90:7.4 | P: Yannūnāhaṁ yenāyasmā ānando tenupasaṅkameyyan’ti. | T: (none)
+sn22.90:7.5 | S: “May Venerable Ānanda advise me and instruct me! May he give me a Dhamma talk so that I can see the teaching!” | T: “Let the Venerable Ānanda exhort me, let him instruct me, let him give me a Dhamma talk in such a way that I might see the Dhamma.”
+sn22.90:7.6 | P: anusāsatu maṁ, āyasmā ānando; | T: (none)
+sn22.90:7.7 | P: karotu me, āyasmā ānando dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan”ti. | T: (none)
+sn22.90:8.1 | S: “I’m already delighted with Venerable Channa. Hopefully you’ve opened yourself up and severed your hard-heartedness. | T: “Even by this much am I pleased with the Venerable Channa. Perhaps the Venerable Channa has opened himself up and broken through his barrenness.
+sn22.90:8.2 | S: Listen well, Channa. | T: Lend your ear, friend Channa,
+sn22.90:8.3 | S: You are capable of understanding the teaching.” | T: you are capable of understanding the Dhamma.”
+sn22.90:8.4 | S: Then right away Channa was filled with lofty rapture and joy, | T: Then at once a lofty rapture and gladness arose in the Venerable Channa as he thought:
+sn22.90:8.5 | S: “It seems I’m capable of understanding the teaching!” | T: “It seems that I am capable of understanding the Dhamma.”
+sn22.90:9.1 | S: “Reverend Channa, I heard and learned in the presence of the Buddha his advice to the mendicant Kaccānagotta: | T: The Venerable Ānanda then said: “In the presence of the Blessed One I have heard this, friend Channa, in his presence I have received the exhortation he spoke to the bhikkhu Kaccanagotta:
+sn22.90:9.2 | S: ‘Kaccāna, this world mostly relies on the duality of existence and non-existence. | T: “This world, Kaccana, for the most part relies upon a duality …
+sn22.90:9.3 | S: But for one who truly sees the origin of the world with right understanding, the concept of non-existence regarding the world does not occur. | T: (none)
+sn22.90:9.4 | S: And for one who truly sees the cessation of the world with right understanding, the concept of existence regarding the world does not occur. | T: (none)
+sn22.90:9.5 | S: This world is for the most part shackled by getting involved, grasping, and insisting. | T: (none)
+sn22.90:9.6 | S: But if—for all that getting involved and grasping, mental fixation, and insistence and underlying tendency—they do not get attracted, grasp, and fixate on the thought, ‘my self’, | T: (none)
+sn22.90:9.7 | S: they’ll have no doubt or uncertainty that what arises is just suffering arising, and what ceases is just suffering ceasing. | T: (none)
+sn22.90:9.8 | S: Their knowledge of this is independent of others. | T: (none)
+sn22.90:9.9 | S: This is how right view is defined. | T: (none)
+sn22.90:9.10 | S: “All exists”: this is one extreme. | T: (none)
+sn22.90:9.11 | S: “All does not exist”: this is the second extreme. | T: (none)
+sn22.90:9.12 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: (none)
+sn22.90:9.13 | S: “Ignorance is a requirement for choices. | T: (none)
+sn22.90:9.14 | S: Choices are a requirement for consciousness. … | T: (none)
+sn22.90:9.15 | S: That is how this entire mass of suffering originates. | T: (the entire sutta SN12.15 is cited here) …
+sn22.90:9.16 | S: When ignorance fades away and ceases with no residue left behind, choices cease. … | T: (none)
+sn22.90:9.17 | S: That is how this entire mass of suffering ceases.”’” | T: Such is the cessation of this whole mass of suffering.”
+sn22.90:10.1 | S: “Reverend Ānanda, this is how it is when you have such venerables as spiritual companions to advise and instruct you out of kindness and sympathy. | T: “So it is, friend Ānanda, for those venerable ones who have such compassionate and benevolent brothers in the holy life to admonish and instruct them.
+sn22.90:10.2 | S: And now that I’ve heard this teaching from Venerable Ānanda, I’ve comprehended the teaching.” | T: And now that I have heard this Dhamma teaching of the Venerable Ānanda, I have made the breakthrough to the Dhamma.”
+sn22.90:10.3 | P: Aṭṭhamaṁ. | T: (none)
+
+
+codex
+I’ve read the full batch. I’m checking the few apparent boundary shifts against the exceptions for combined sentences and shortened passages.
+exec
+/bin/bash -lc "sed -n '112,184p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.76:1.2 | S: and said to him, | T: and said to him:
+sn35.76:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn35.76:1.4 | S: “Rādha, you should give up desire for what is impermanent. | T: “Radha, you should abandon desire for whatever is impermanent.
+sn35.76:1.5 | S: And what is impermanent? | T: And what is impermanent?
+sn35.76:1.6 | S: The eye, sights, eye consciousness, | T: The eye is impermanent; you should abandon desire for it. Forms are impermanent … Eye-consciousness is impermanent …
+sn35.76:1.7 | S: and eye contact are impermanent. | T: Eye-contact is impermanent …
+sn35.76:1.8 | S: And the pleasant, painful, or neutral feeling that arises dependent on eye contact is also impermanent. You should give up desire for it. | T: Whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—that too is impermanent; you should abandon desire for it.
+sn35.76:1.9 | S: The ear … nose … tongue … | T: “The ear …
+sn35.76:1.10 | S: body … | T: (none)
+sn35.76:1.11 | S: The mind, | T: The mind is impermanent …
+sn35.76:1.12 | S: ideas, | T: (none)
+sn35.76:1.13 | S: mind consciousness, | T: (none)
+sn35.76:1.14 | S: and mind contact are impermanent. | T: (none)
+sn35.76:1.15 | S: And the pleasant, painful, or neutral feeling that arises dependent on mind contact is also impermanent. You should give up desire for it. | T: Whatever feeling arises with mind-contact as condition … that too is impermanent; you should abandon desire for it.
+sn35.76:1.16 | S: You should give up desire for what is impermanent.” | T: Radha, you should abandon desire for whatever is impermanent.”
+sn35.76:1.17 | P: Tatiyaṁ. | T: (none)
+
+## sn36.30
+sn36.30:1.1 | S: “Mendicants, there are these three feelings. | T: “Bhikkhus, there are these three feelings.
+sn36.30:1.2 | S: What three? | T: What three?
+sn36.30:1.3 | S: Pleasant, painful, and neutral feelings. | T: Pleasant feeling, painful feeling, neither-painful-nor-pleasant feeling.”
+sn36.30:1.4 | S: These are the three feelings.” | T: (none)
+sn36.30:1.5 | P: Dasamaṁ. | T: (none)
+
+## sn44.8
+sn44.8:1.1 | S: Then the wanderer Vacchagotta went up to the Buddha and exchanged greetings with him. | T: Then the wanderer Vacchagotta approached the Blessed One and exchanged greetings with him.
+sn44.8:1.2 | S: When the greetings and polite conversation were over, he sat down to one side, and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn44.8:1.3 | S: “Worthy Gotama, is this right: ‘the cosmos is eternal’?” | T: “How is it, Master Gotama, is the world eternal?”…
+sn44.8:1.4 | S: “This has not been declared by me, Vaccha.” … | T: (none)
+sn44.8:1.5 | S: “Then is this right: ‘a realized one neither still exists nor no longer exists after death’?” | T: (none)
+sn44.8:1.6 | S: “This too has not been declared by me.” | T: (none)
+sn44.8:1.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: as above …
+sn44.8:2.1 | S: “What’s the cause, worthy Gotama, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “What, Master Gotama, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:2.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:2.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.8:2.4 | S: And what’s the reason why, when the worthy Gotama is asked these questions, he does not declare one of these to be true?” | T: And what is the cause and reason why, when Master Gotama is asked such questions, he does not give such answers?”
+sn44.8:2.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: (none)
+sn44.8:3.1 | S: “Vaccha, the wanderers of other religions regard form as self, self as having form, form in self, or self in form. | T: “Vaccha, wanderers of other sects regard form as self, or self as possessing form, or form as in self, or self as in form.
+sn44.8:3.2 | S: They regard feeling … | T: They regard feeling as self …
+sn44.8:3.3 | S: perception … | T: perception as self …
+sn44.8:3.4 | S: choices … | T: volitional formations as self …
+sn44.8:3.5 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+sn44.8:3.6 | S: That’s why, when asked, they declare one of those answers to be true. | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:3.7 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:3.8 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | T: or ‘The Tathagata neither exists nor does not exist after death.’
+sn44.8:3.9 | S: The Realized One doesn’t regard form as self, self as having form, form in self, or self in form. | T: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, does not regard form as self …
+sn44.8:3.10 | S: He doesn’t regard feeling … | T: (none)
+sn44.8:3.11 | S: perception … | T: (none)
+sn44.8:3.12 | S: choices … | T: (none)
+sn44.8:3.13 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: or self as in consciousness.
+sn44.8:3.14 | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: Therefore, when the Tathagata is asked such questions, he does not give such answers.”
+sn44.8:3.15 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:3.16 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | T: (none)
+sn44.8:4.1 | S: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: Then the wanderer Vacchagotta rose from his seat and approached the Venerable Mahamoggallana. He exchanged greetings with the Venerable Mahamoggallana … and said to him:
+sn44.8:4.2 | S: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. | T: (none)
+sn44.8:4.3 | P: “kiṁ nu kho, bho moggallāna, sassato loko”ti? | T: “How is it, Master Moggallana, is the world eternal?”
+sn44.8:4.4 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: ‘sassato loko’ti …pe…. | T: All as above down to:
+sn44.8:4.5 | P: “Kiṁ pana, bho moggallāna, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti? | T: (none)
+sn44.8:4.6 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | T: “Vaccha, the Blessed One has not declared this either:
+sn44.8:4.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata neither exists nor does not exist after death.’”
+sn44.8:5.1 | P: “Ko nu kho, bho moggallāna, hetu, ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: “What, Master Moggallana, is the cause and reason why, when wanderers of other sects are asked such questions, they give such answers as:
+sn44.8:5.2 | P: ‘sassato loko’ti vā …pe… | T: ‘The world is eternal’ …
+sn44.8:5.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | T: or ‘The Tathagata neither exists nor does not exist after death’?
+sn44.8:5.4 | P: Ko pana, bho moggallāna, hetu, ko paccayo yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | T: And what is the cause and reason why when the ascetic Gotama is asked such questions,
+sn44.8:5.5 | P: ‘sassato loko’tipi …pe… | T: (none)
+sn44.8:5.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | T: he does not give such answers?”
+sn44.8:6.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. | T: “Vaccha, wanderers of other sects regard form as self …
+sn44.8:6.2 | P: Vedanaṁ attato samanupassanti …pe… | T: (none)
+sn44.8:6.3 | P: saññaṁ …pe… | T: (none)
+sn44.8:6.4 | P: saṅkhāre …pe… | T: (none)
+sn44.8:6.5 | P: viññāṇaṁ attato samanupassanti, viññāṇavantaṁ vā attānaṁ, attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. | T: or self as in consciousness.
+sn44.8:6.6 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | T: Therefore, when the wanderers of other sects are asked such questions, they give such answers as:
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-011.findings.tmp <<'EOF'
+sn44.8:4.2 starts: and said to him:
+sn44.8:5.6 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+2 lines reported.
+tokens used
+32,618
+2 lines reported.

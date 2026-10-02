@@ -1,0 +1,457 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd82-fccc-7c83-87e2-d3408318d438
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write only the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.24
+sn12.24:1.1 | S: Near Rājagaha, in the Bamboo Grove. | T: At Rajagaha in the Bamboo Grove.
+sn12.24:1.2 | S: Then Venerable Sāriputta robed up in the morning and, taking his bowl and robe, entered Rājagaha for alms. | T: i Then, in the morning, the Venerable Sāriputta dressed and, taking bowl and robe, entered Rajagaha for alms.
+sn12.24:1.3 | S: Then it occurred to him, | T: Then it occurred to him:
+sn12.24:1.4 | S: “It’s too early to wander for alms in Rājagaha. | T: “It is still too early to walk for alms in Rajagaha.
+sn12.24:1.5 | S: Why don’t I visit the monastery for the wanderers of other religions?” | T: Let me go to the park of the wanderers of other sects.”
+sn12.24:2.1 | S: Then he went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: Then the Venerable Sāriputta went to the park of the wanderers of other sects. He exchanged greetings with those wanderers and,
+sn12.24:2.2 | S: When the greetings and polite conversation were over, he sat down to one side. The wanderers said to him: | T: when they had concluded their greetings and cordial talk, he sat down to one side. The wanderers then said to him:
+sn12.24:3.1 | S: “Reverend Sāriputta, there are ascetics and brahmins who teach the efficacy of deeds. Some of them assert that suffering is made by oneself. | T: “Friend Sāriputta, some ascetics and brahmins, proponents of kamma, maintain that suffering is created by oneself;
+sn12.24:3.2 | S: Some of them assert that suffering is made by another. | T: some ascetics and brahmins, proponents of kamma, maintain that suffering is created by another;
+sn12.24:3.3 | S: Some of them assert that suffering is made by both oneself and another. | T: some ascetics and brahmins, proponents of kamma, maintain that suffering is created both by oneself and by another;
+sn12.24:3.4 | S: Some of them assert that suffering arises anomalously, not made by oneself or another. | T: some ascetics and brahmins, proponents of kamma, maintain that suffering has arisen fortuitously, being created neither by oneself nor by another.
+sn12.24:3.5 | S: What does the ascetic Gotama say about this? How does he explain it? | T: Now, friend Sāriputta, what does the ascetic Gotama say about this?
+sn12.24:3.6 | S: How should we answer so as to repeat what the ascetic Gotama has said, and not misrepresent him with an untruth? How should we explain in line with his teaching, with no legitimate grounds for rebuttal and criticism?” | T: What does he teach? How should we answer if we are to state what has been said by the ascetic Gotama and not misrepresent him with what is contrary to fact? And how should we explain in accordance with the Dhamma so that no reasonable consequence of our assertion would give ground for criticism?”
+sn12.24:4.1 | S: “Reverends, the Buddha has said that suffering is dependently originated. | T: “Friends, the Blessed One has said that suffering is dependently arisen.
+sn12.24:4.2 | S: Dependent on what? | T: Dependent on what?
+sn12.24:4.3 | S: Dependent on contact. | T: Dependent on contact.
+sn12.24:4.4 | S: In speaking like this, you would repeat what the Buddha has said, and not misrepresent him with an untruth. You would explain in line with his teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by the Blessed One and would not misrepresent him with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.24:5.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that suffering is made by oneself, that’s dependent on contact. | T: “Therein, friends, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by oneself, that is conditioned by contact.
+sn12.24:5.2 | S: In the case of those who assert that suffering is made by another, that’s also dependent on contact. | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by another, that too is conditioned by contact.
+sn12.24:5.3 | S: In the case of those who assert that suffering is made by oneself and another, that’s also dependent on contact. | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created both by oneself and by another, that too is conditioned by contact.
+sn12.24:5.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, that’s also dependent on contact. | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another, that too is conditioned by contact.
+sn12.24:6.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that suffering is made by oneself, it’s impossible that they will experience that without contact. | T: “Therein, friends, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by oneself, it is impossible that they will experience anything without contact.
+sn12.24:6.2 | S: In the case of those who declare that suffering is made by another, it’s impossible that they will experience that without contact. | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by another, it is impossible that they will experience anything without contact.
+sn12.24:6.3 | S: In the case of those who assert that suffering is made by oneself and another, it’s impossible that they will experience that without contact. | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created both by oneself and by another, it is impossible that they will experience anything without contact.
+sn12.24:6.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, it’s impossible that they will experience that without contact.” | T: Also, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another, it is impossible that they will experience anything without contact.”
+sn12.24:7.1 | S: Venerable Ānanda heard this discussion between Venerable Sāriputta and those wanderers of other religions. | T: ii The Venerable Ānanda heard this conversation between the Venerable Sāriputta and the wanderers of other sects.
+sn12.24:7.2 | S: Then Ānanda wandered for alms in Rājagaha. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, | T: Then, when he had walked for alms in Rajagaha and had returned from the alms round, after his meal he approached the Blessed One, paid homage to him, sat down to one side,
+sn12.24:7.3 | S: and informed the Buddha of all they had discussed. | T: and reported to the Blessed One the entire conversation between the Venerable Sāriputta and those wanderers of other sects. The Blessed One said:
+sn12.24:8.1 | S: “Good, good, Ānanda! It’s just as Sāriputta has so rightly explained. | T: “Good, good, Ānanda! Anyone answering rightly would answer just as Sāriputta has done.
+sn12.24:8.2 | S: I have said that suffering is dependently originated. | T: I have said, Ānanda, that suffering is dependently arisen.
+sn12.24:8.3 | S: Dependent on what? | T: Dependent on what?
+sn12.24:8.4 | S: Dependent on contact. | T: Dependent on contact.
+sn12.24:8.5 | S: Saying this you would repeat what I have said, and not misrepresent me with an untruth. You would explain in line with my teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by me and would not misrepresent me with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.24:9.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that suffering is made by oneself, that’s dependent on contact. … | T: “Therein, Ānanda, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by oneself …
+sn12.24:9.2 | P: Yepi te …pe… | T: …
+sn12.24:9.3 | P: yepi te …pe… | T: (none)
+sn12.24:9.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, that’s also dependent on contact. | T: and those who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another, that too is conditioned by contact.
+sn12.24:10.1 | S: In the case of those who assert that suffering is made by oneself, it’s impossible that they will experience that without contact. … | T: “Therein, Ānanda, in the case of those ascetics and brahmins, proponents of kamma, who maintain that suffering is created by oneself …
+sn12.24:10.2 | P: Yepi te …pe… | T: (none)
+sn12.24:10.3 | P: yepi te …pe… | T: (none)
+sn12.24:10.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, it’s impossible that they will experience that without contact. | T: and those who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another, it is impossible that they will experience anything without contact.
+sn12.24:11.1 | S: Ānanda, this one time I was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: “On one occasion, Ānanda, I was dwelling right here in Rajagaha, in the Bamboo Grove, the Squirrel Sanctuary.
+sn12.24:11.2 | S: Then I robed up in the morning and, taking my bowl and robe, entered Rājagaha for alms. | T: Then, in the morning, I dressed and, taking bowl and robe, I entered Rajagaha for alms.
+sn12.24:11.3 | S: Then I thought: | T: Then it occurred to me:
+sn12.24:11.4 | S: ‘It’s too early to wander for alms in Rājagaha. | T: ‘It is still too early to walk for alms in Rajagaha.
+sn12.24:11.5 | S: Why don’t I visit the monastery for the wanderers of other religions?’ | T: Let me go to the park of the wanderers of other sects.’
+sn12.24:12.1 | S: Then I went to the monastery for the wanderers of other religions and exchanged greetings with the wanderers there. | T: Then I went to the park of the wanderers of other sects. I exchanged greetings with those wanderers and,
+sn12.24:12.2 | S: When the greetings and polite conversation were over, I sat down to one side. …” | T: when we had concluded our greetings and cordial talk, I sat down to one side.
+sn12.24:13.1 | S: (The wanderers asked the Buddha the very same questions, and he gave the same answers.) | T: The wanderers then said to me as I was sitting to one side: … the wanderers ask exactly the same question as they had asked Sāriputta and receive an identical reply …
+sn12.24:13.2 | P: Santi panāvuso gotama, eke samaṇabrāhmaṇā kammavādā paraṅkataṁ dukkhaṁ paññapenti. | T: (none)
+sn12.24:13.3 | P: Santāvuso gotama, eke samaṇabrāhmaṇā kammavādā sayaṅkatañca paraṅkatañca dukkhaṁ paññapenti. | T: (none)
+sn12.24:13.4 | P: Santi panāvuso gotama, eke samaṇabrāhmaṇā kammavādā asayaṅkāraṁ aparaṅkāraṁ adhiccasamuppannaṁ dukkhaṁ paññapenti. | T: (none)
+sn12.24:13.5 | P: Idha no āyasmā gotamo kiṁvādī kimakkhāyī? | T: (none)
+sn12.24:13.6 | P: Kathaṁ byākaramānā ca mayaṁ vuttavādino ceva āyasmato gotamassa assāma, na ca āyasmantaṁ gotamaṁ abhūtena abbhācikkheyyāma, dhammassa cānudhammaṁ byākareyyāma, na ca koci sahadhammiko vādānupāto gārayhaṁ ṭhānaṁ āgaccheyyā’ti? | T: (none)
+sn12.24:14.1 | P: Evaṁ vuttāhaṁ, ānanda, te aññatitthiye paribbājake etadavocaṁ: | T: (none)
+sn12.24:14.2 | P: ‘paṭiccasamuppannaṁ kho, āvuso, dukkhaṁ vuttaṁ mayā. | T: (none)
+sn12.24:14.3 | P: Kiṁ paṭicca? | T: (none)
+sn12.24:14.4 | P: Phassaṁ paṭicca. | T: (none)
+sn12.24:14.5 | P: Iti vadaṁ vuttavādī ceva me assa, na ca maṁ abhūtena abbhācikkheyya, dhammassa cānudhammaṁ byākareyya, na ca koci sahadhammiko vādānupāto gārayhaṁ ṭhānaṁ āgaccheyyāti. | T: (none)
+sn12.24:15.1 | P: Tatrāvuso, ye te samaṇabrāhmaṇā kammavādā sayaṅkataṁ dukkhaṁ paññapenti tadapi phassapaccayā. | T: (none)
+sn12.24:15.2 | P: Yepi te …pe… | T: (none)
+sn12.24:15.3 | P: yepi te …pe… | T: (none)
+sn12.24:15.4 | P: yepi te samaṇabrāhmaṇā kammavādā asayaṅkāraṁ aparaṅkāraṁ adhiccasamuppannaṁ dukkhaṁ paññapenti tadapi phassapaccayā. | T: (none)
+sn12.24:16.1 | P: Tatrāvuso, ye te samaṇabrāhmaṇā kammavādā sayaṅkataṁ dukkhaṁ paññapenti, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjati. | T: (none)
+sn12.24:16.2 | P: Yepi te …pe… | T: (none)
+sn12.24:16.3 | P: yepi te …pe… | T: (none)
+sn12.24:16.4 | P: yepi te samaṇabrāhmaṇā kammavādā asayaṅkāraṁ aparaṅkāraṁ adhiccasamuppannaṁ dukkhaṁ paññapenti, te vata aññatra phassā paṭisaṁvedissantīti netaṁ ṭhānaṁ vijjatī’”ti. | T: it is impossible that they will experience anything without contact.”
+sn12.24:17.1 | S: “It’s incredible, sir, it’s amazing, | T: “It is wonderful, venerable sir! It is amazing, venerable sir!
+sn12.24:17.2 | S: how the whole matter is stated with one phrase. | T: How the entire meaning can be stated by a single phrase!
+sn12.24:17.3 | S: Could there be a detailed explanation of this matter that is both deep and appears deep?” | T: Can this same meaning be stated in detail in a way that is deep and deep in implications?”
+sn12.24:18.1 | S: “Well then, Ānanda, clarify this matter yourself.” | T: “Well then, Ānanda, clear up that same matter yourself.”
+sn12.24:18.2 | S: “Sir, suppose they were to ask me: | T: “Venerable sir, if they were to ask me:
+sn12.24:18.3 | S: ‘Reverend Ānanda, what is the source, origin, birthplace, and inception of old age and death?’ | T: ‘Friend Ānanda, what is the source of aging-and-death, what is its origin, from what is it born and produced?’—
+sn12.24:18.4 | S: I’d answer like this: | T: being asked thus, I would answer thus:
+sn12.24:18.5 | S: ‘Reverends, rebirth is the source, origin, birthplace, and inception of old age and death.’ | T: ‘Friends, aging-and-death has birth as its source, birth as its origin; it is born and produced from birth.’
+sn12.24:18.6 | S: That’s how I’d answer such a question. | T: Being asked thus, I would answer in such a way.
+sn12.24:19.1 | S: Suppose they were to ask me: | T: “Venerable sir, if they were to ask me:
+sn12.24:19.2 | S: ‘What is the source of rebirth?’ | T: ‘Friend Ānanda, what is the source of birth, what is its origin, from what is it born and produced?’—
+sn12.24:19.3 | S: I’d answer like this: | T: being asked thus, I would answer thus:
+sn12.24:19.4 | S: ‘Continued existence is the source of rebirth.’ | T: ‘Friends, birth has existence as its source, existence as its origin; it is born and produced from existence….
+sn12.24:19.5 | S: That’s how I’d answer such a question. | T: (none)
+sn12.24:20.1 | S: Suppose they were to ask me: | T: (none)
+sn12.24:20.2 | S: ‘What is the source of continued existence?’ | T: (none)
+sn12.24:20.3 | S: I’d answer like this: | T: (none)
+sn12.24:20.4 | S: ‘Grasping is the source of continued existence.’ | T: Existence has clinging as its source …
+sn12.24:20.5 | S: That’s how I’d answer such a question. | T: (none)
+sn12.24:21.1 | S: Suppose they were to ask me: | T: (none)
+sn12.24:21.2 | S: ‘What is the source of grasping?’ … | T: Clinging has craving as its source …
+sn12.24:21.3 | S: craving … | T: Craving has feeling as its source …
+sn12.24:21.4 | S: feeling … | T: Feeling has contact as its source …
+sn12.24:21.5 | S: Suppose they were to ask me: | T: (none)
+sn12.24:21.6 | S: ‘What is the source of contact?’ | T: (none)
+sn12.24:21.7 | S: I’d answer like this: | T: (none)
+sn12.24:21.8 | S: ‘The six sense fields are the source, origin, birthplace, and inception of contact.’ | T: Contact has the six sense bases as its source, the six sense bases as its origin; it is born and produced from the six sense bases.
+sn12.24:21.9 | S: ‘When the six fields of contact fade away and cease with no residue left behind, contact ceases. | T: But with the remainderless fading away and cessation of the six bases for contact comes cessation of contact;
+sn12.24:21.10 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+sn12.24:21.11 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+sn12.24:21.12 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+sn12.24:21.13 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.24:21.14 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.24:21.15 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.24:21.16 | S: That is how this entire mass of suffering ceases.’ | T: Such is the cessation of this whole mass of suffering.’
+sn12.24:21.17 | S: That’s how I’d answer such a question.” | T: Being asked thus, venerable sir, I would answer in such a way.”
+sn12.24:21.18 | P: Catutthaṁ. | T: (none)
+
+## sn22.89
+sn22.89:1.1 | S: At one time several senior mendicants were staying near Kosambī in Ghosita’s monastery. | T: On one occasion a number of elder bhikkhus were dwelling at Kosambi in Ghosita’s Park.
+sn22.89:1.2 | S: Now at that time Venerable Khemaka was staying in the Jujube Tree Monastery, and he was sick, suffering, gravely ill. | T: Now on that occasion the Venerable Khemaka was living at Jujube Tree Park, sick, afflicted, gravely ill.
+sn22.89:1.3 | S: In the late afternoon those senior mendicants came out of retreat and addressed Venerable Dāsaka, | T: Then, in the evening, those elder bhikkhus emerged from seclusion and addressed the Venerable Dasaka thus:
+sn22.89:1.4 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dasaka, approach the bhikkhu Khemaka and say to him:
+sn22.89:1.5 | S: ‘Reverend Khemaka, the seniors | T: ‘The elders say to you, friend Khemaka:
+sn22.89:1.6 | S: hope you’re keeping well; they hope you’re all right. They hope your pain is fading, not growing; that its fading is evident, not its growing.’” | T: We hope that you are bearing up, friend, we hope that you are getting better. We hope that your painful feelings are subsiding and not increasing, and that their subsiding, not their increase, is to be discerned.’”
+sn22.89:1.7 | S: “Yes, reverends,” replied Dāsaka. He went to Khemaka and said to him: | T: “Yes, friends,” the Venerable Dasaka replied, and he approached the Venerable Khemaka and delivered his message.
+sn22.89:1.8 | S: “Reverend Khemaka, the seniors | T: The Venerable Khemaka answered:
+sn22.89:1.9 | S: hope you’re keeping well; they hope you’re all right. They hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: (none)
+sn22.89:1.10 | S: “Reverend, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: “I am not bearing up, friend, I am not getting better. Strong painful feelings are increasing in me, not subsiding, and their increase, not their subsiding, is to be discerned.”
+sn22.89:2.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said, | T: Then the Venerable Dasaka approached the elder bhikkhus and reported what the Venerable Khemaka had said. They told him:
+sn22.89:2.2 | P: “khemako, āvuso, bhikkhu evamāha: | T: (none)
+sn22.89:2.3 | P: ‘na me, āvuso, khamanīyaṁ …pe… abhikkamosānaṁ paññāyati no paṭikkamo’”ti. | T: (none)
+sn22.89:2.4 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dasaka, approach the bhikkhu Khemaka and say to him:
+sn22.89:2.5 | S: ‘Reverend Khemaka, the seniors say that | T: ‘The elders say to you, friend Khemaka:
+sn22.89:2.6 | S: these five grasping aggregates have been taught by the Buddha, that is: | T: These five aggregates subject to clinging, friend, have been spoken of by the Blessed One; that is,
+sn22.89:2.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form aggregate subject to clinging, the feeling aggregate subject to clinging, the perception aggregate subject to clinging, the volitional formations aggregate subject to clinging, the consciousness aggregate subject to clinging.
+sn22.89:2.8 | S: Do you regard anything among these five grasping aggregates as self or as belonging to self?’” | T: Does the Venerable Khemaka regard anything as self or as belonging to self among these five aggregates subject to clinging?’”
+sn22.89:3.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: “Yes, friends,” the Venerable Dasaka replied, and he approached the Venerable Khemaka and delivered his message. The Venerable Khemaka replied:
+sn22.89:3.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: (none)
+sn22.89:3.3 | P: “pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:3.4 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. | T: (none)
+sn22.89:3.5 | P: Imesu āyasmā khemako pañcasu upādānakkhandhesu kiñci attaṁ vā attaniyaṁ vā samanupassatī”ti? | T: (none)
+sn22.89:3.6 | S: “These five grasping aggregates have been taught by the Buddha, that is: | T: “These five aggregates subject to clinging have been spoken of by the Blessed One; that is,
+sn22.89:3.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form aggregate subject to clinging … the consciousness aggregate subject to clinging.
+sn22.89:3.8 | S: I do not regard anything among these five grasping aggregates as self or as belonging to self.” | T: Among these five aggregates subject to clinging, I do not regard anything as self or as belonging to self.”
+sn22.89:4.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said: | T: Then the Venerable Dasaka approached the elder bhikkhus and reported what the Venerable Khemaka had said. They replied:
+sn22.89:4.2 | P: “khemako, āvuso, bhikkhu evamāha: | T: (none)
+sn22.89:4.3 | P: ‘pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:4.4 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. | T: (none)
+sn22.89:4.5 | P: Imesu khvāhaṁ, āvuso, pañcasu upādānakkhandhesu na kiñci attaṁ vā attaniyaṁ vā samanupassāmī’”ti. | T: (none)
+sn22.89:4.6 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dasaka, approach the bhikkhu Khemaka and say to him:
+sn22.89:4.7 | S: ‘Reverend Khemaka, the seniors say that | T: ‘The elders say to you, friend Khemaka:
+sn22.89:4.8 | S: these five grasping aggregates have been taught by the Buddha, that is: | T: These five aggregates subject to clinging, friend, have been spoken of by the Blessed One; that is,
+sn22.89:4.9 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form aggregate subject to clinging … the consciousness aggregate subject to clinging.
+sn22.89:4.10 | S: If, as it seems, Venerable Khemaka does not regard anything among these five grasping aggregates as self or as belonging to self, | T: If the Venerable Khemaka does not regard anything among these five aggregates subject to clinging as self or as belonging to self,
+sn22.89:4.11 | S: then he is a perfected one, with defilements ended.’” | T: then he is an arahant, one whose taints are destroyed.’”
+sn22.89:5.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: “Yes, friends,” the Venerable Dasaka replied, and he approached the Venerable Khemaka and delivered his message. The Venerable Khemaka replied:
+sn22.89:5.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: (none)
+sn22.89:5.3 | P: “pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:5.4 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho; | T: (none)
+sn22.89:5.5 | P: no ce kirāyasmā khemako imesu pañcasu upādānakkhandhesu kiñci attaṁ vā attaniyaṁ vā samanupassati, tenahāyasmā khemako arahaṁ khīṇāsavo”ti. | T: (none)
+sn22.89:5.6 | S: “These five grasping aggregates have been taught by the Buddha, that is: | T: “These five aggregates subject to clinging have been spoken of by the Blessed One; that is,
+sn22.89:5.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form aggregate subject to clinging … the consciousness aggregate subject to clinging.
+sn22.89:5.8 | S: I do not regard anything among these five grasping aggregates as self or as belonging to self, yet I am not a perfected one, with defilements ended. | T: I do not regard anything among these five aggregates subject to clinging as self or as belonging to self, yet I am not an arahant, one whose taints are destroyed.
+sn22.89:5.9 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’.” | T: Friends, the notion ‘I am’ has not yet vanished in me in relation to these five aggregates subject to clinging, but I do not regard anything among them as ‘This I am.’”
+sn22.89:6.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said: | T: Then the Venerable Dasaka approached the elder bhikkhus and reported what the Venerable Khemaka had said. They replied:
+sn22.89:6.2 | P: there bhikkhū etadavoca: | T: (none)
+sn22.89:6.3 | P: “khemako, āvuso, bhikkhu evamāha— | T: (none)
+sn22.89:6.4 | P: pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:6.5 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. | T: (none)
+sn22.89:6.6 | P: Imesu khvāhaṁ, āvuso, pañcasu upādānakkhandhesu na kiñci attaṁ vā attaniyaṁ vā samanupassāmi, na camhi arahaṁ khīṇāsavo; | T: (none)
+sn22.89:6.7 | P: api ca me, āvuso, pañcasu upādānakkhandhesu ‘asmī’ti adhigataṁ, ‘ayamahamasmī’ti na ca samanupassāmī”ti. | T: (none)
+sn22.89:7.1 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dasaka, approach the bhikkhu Khemaka and say to him:
+sn22.89:7.2 | S: ‘Reverend Khemaka, the seniors ask, | T: ‘The elders say to you, friend Khemaka:
+sn22.89:7.3 | S: when you say “I am”, what is it that you’re talking about? | T: Friend Khemaka, when you speak of this “I am”—what is it that you speak of as “I am”?
+sn22.89:7.4 | S: Is it form or apart from form? | T: Do you speak of form as “I am,” or do you speak of “I am” apart from form?
+sn22.89:7.5 | S: Is it feeling … | T: Do you speak of feeling …
+sn22.89:7.6 | S: perception … | T: of perception …
+sn22.89:7.7 | S: choices … | T: of volitional formations …
+sn22.89:7.8 | S: consciousness, or apart from consciousness? | T: of consciousness as “I am,” or do you speak of “I am” apart from consciousness?
+sn22.89:7.9 | S: When you say “I am”, what is it that you’re talking about?” | T: When you speak of this “I am,” friend Khemaka, what is it that you speak of as “I am”?’”
+sn22.89:8.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: “Yes, friends,” the Venerable Dasaka replied, and he approached the Venerable Khemaka and delivered his message.
+sn22.89:8.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: (none)
+sn22.89:8.3 | P: “yametaṁ, āvuso khemaka, ‘asmī’ti vadesi, kimetaṁ ‘asmī’ti vadesi? | T: (none)
+sn22.89:8.4 | P: Rūpaṁ ‘asmī’ti vadesi aññatra rūpā ‘asmī’ti vadesi? | T: (none)
+sn22.89:8.5 | P: Vedanaṁ … | T: (none)
+sn22.89:8.6 | P: saññaṁ … | T: (none)
+sn22.89:8.7 | P: saṅkhāre … | T: (none)
+sn22.89:8.8 | P: viññāṇaṁ ‘asmī’ti vadesi aññatra viññāṇā ‘asmī’ti vadesi? | T: (none)
+sn22.89:8.9 | P: Yametaṁ, āvuso khemaka, ‘asmī’ti vadesi, kimetaṁ ‘asmī’ti vadesī”ti? | T: (none)
+sn22.89:8.10 | S: “Enough, Reverend Dāsaka! What’s the point in running back and forth? | T: “Enough, friend Dasaka! Why keep running back and forth?
+sn22.89:8.11 | S: Bring my staff, | T: Bring me my staff, friend.
+sn22.89:8.12 | S: I’ll go to see the senior mendicants myself.” | T: I’ll go to the elder bhikkhus myself.”
+sn22.89:9.1 | S: Then Venerable Khemaka, leaning on a staff, went to those senior mendicants and exchanged greetings with them. | T: Then the Venerable Khemaka, leaning on his staff, approached the elder bhikkhus, exchanged greetings with them,
+sn22.89:9.2 | S: When the greetings and polite conversation were over, he sat down to one side. They said to him: | T: and sat down to one side. The elder bhikkhus then said to him:
+sn22.89:9.3 | S: “Reverend Khemaka, when you say ‘I am’, what is it that you’re talking about? | T: “Friend Khemaka, when you speak of this ‘I am’ …
+sn22.89:9.4 | S: Is it form or apart from form? | T: (none)
+sn22.89:9.5 | S: Is it feeling … | T: (none)
+sn22.89:9.6 | S: perception … | T: (none)
+sn22.89:9.7 | S: choices … | T: (none)
+sn22.89:9.8 | S: consciousness, or apart from consciousness? | T: (none)
+sn22.89:9.9 | S: When you say ‘I am’, what is it that you’re talking about?” | T: what is it that you speak of as ‘I am’?”
+sn22.89:9.10 | S: “Reverends, I don’t say ‘I am’ with reference to form, or apart from form. | T: “Friends, I do not speak of form as ‘I am,’ nor do I speak of ‘I am’ apart from form.
+sn22.89:9.11 | S: I don’t say ‘I am’ with reference to feeling … | T: I do not speak of feeling as ‘I am’ …
+sn22.89:9.12 | S: perception … | T: nor of perception as ‘I am’ …
+sn22.89:9.13 | S: choices … | T: nor of volitional formations as ‘I am’ …
+sn22.89:9.14 | S: consciousness, or apart from consciousness. | T: nor of consciousness as ‘I am,’ nor do I speak of ‘I am’ apart from consciousness.
+sn22.89:9.15 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’. | T: Friends, although the notion ‘I am’ has not yet vanished in me in relation to these five aggregates subject to clinging, still I do not regard anything among them as ‘This I am.’
+sn22.89:10.1 | S: It’s like the scent of a blue water lily, or a pink or white lotus. | T: “Suppose, friends, there is the scent of a blue, red, or white lotus.
+sn22.89:10.2 | S: Would it be right to say that the scent belongs to the petals or the stalk or the pistil?” | T: Would one be speaking rightly if one would say, ‘The scent belongs to the petals,’ or ‘The scent belongs to the stalk,’ or ‘The scent belongs to the pistils’?”
+sn22.89:10.3 | S: “No, reverend.” | T: “No, friend.”
+sn22.89:10.4 | S: “Then, reverends, how should it be said?” | T: “And how, friends, should one answer if one is to answer rightly?”
+sn22.89:10.5 | S: “It would be right to say that the scent belongs to the flower.” | T: “Answering rightly, friend, one should answer: ‘The scent belongs to the flower.’”
+sn22.89:10.6 | S: “In the same way, reverends, I don’t say ‘I am’ with reference to form, or apart from form. | T: “So too, friends, I do not speak of form as ‘I am,’ nor do I speak of ‘I am’ apart from form.
+sn22.89:10.7 | S: I don’t say ‘I am’ with reference to feeling … | T: I do not speak of feeling as ‘I am’ …
+sn22.89:10.8 | S: perception … | T: nor of perception as ‘I am’ …
+sn22.89:10.9 | S: choices … | T: nor of volitional formations as ‘I am’ …
+sn22.89:10.10 | S: consciousness, or apart from consciousness. | T: nor of consciousness as ‘I am,’ nor do I speak of ‘I am’ apart from consciousness.
+sn22.89:10.11 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’. | T: Friends, although the notion ‘I am’ has not yet vanished in me in relation to these five aggregates subject to clinging, still I do not regard anything among them as ‘This I am.’
+sn22.89:11.1 | S: Although a noble disciple has given up the five lower fetters, they still have a lingering residue of the conceit ‘I am’, the desire ‘I am’, and the underlying tendency ‘I am’ which has not been eradicated. | T: “Friends, even though a noble disciple has abandoned the five lower fetters, still, in relation to the five aggregates subject to clinging, there lingers in him a residual conceit ‘I am,’ a desire ‘I am,’ an underlying tendency ‘I am’ that has not yet been uprooted.
+sn22.89:11.2 | S: After some time they meditate observing rise and fall in the five grasping aggregates. | T: Sometime later he dwells contemplating rise and fall in the five aggregates subject to clinging:
+sn22.89:11.3 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+sn22.89:11.4 | S: Such is feeling … | T: such is feeling …
+sn22.89:11.5 | S: Such is perception … | T: such is perception …
+sn22.89:11.6 | S: Such are choices … | T: such are volitional formations …
+sn22.89:11.7 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such is consciousness, such its origin, such its passing away.’
+sn22.89:11.8 | S: As they do so, that lingering residue is eradicated. | T: As he dwells thus contemplating rise and fall in the five aggregates subject to clinging, the residual conceit ‘I am,’ the desire ‘I am,’ the underlying tendency ‘I am’ that had not yet been uprooted—this comes to be uprooted.
+sn22.89:12.1 | S: Suppose there was a cloth that was dirty and soiled, so the owners give it to a launderer. | T: “Suppose, friends, a cloth has become soiled and stained, and its owners give it to a laundryman.
+sn22.89:12.2 | S: The launderer kneads it thoroughly with salt, lye, and cow dung, and rinses it in clear water. | T: The laundryman would scour it evenly with cleaning salt, lye, or cowdung, and rinse it in clean water.
+sn22.89:12.3 | S: Although that cloth is clean and bright, it still has a lingering scent of salt, lye, or cow dung that had not been eradicated. | T: Even though that cloth would become pure and clean, it would still retain a residual smell of cleaning salt, lye, or cowdung that had not yet vanished.
+sn22.89:12.4 | S: The launderer returns it to its owners, who store it in a fragrant casket. | T: The laundryman would then give it back to the owners. The owners would put it in a sweet-scented casket,
+sn22.89:12.5 | S: And that lingering scent would be eradicated. | T: and the residual smell of cleaning salt, lye, or cowdung that had not yet vanished would vanish.
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.89:12.6 | S: In the same way, although a noble disciple has given up the five lower fetters, they still have a lingering residue of the conceit ‘I am’, the desire ‘I am’, and the underlying tendency ‘I am’ which has not been eradicated. | T: “So too, friends, even though a noble disciple has abandoned the five lower fetters, still, in relation to the five aggregates subject to clinging, there lingers in him a residual conceit ‘I am,’ a desire ‘I am,’ an underlying tendency ‘I am’ that has not yet been uprooted….
+sn22.89:12.7 | S: After some time they meditate observing rise and fall in the five grasping aggregates. | T: As he dwells thus contemplating rise and fall in the five aggregates subject to clinging,
+sn22.89:12.8 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: (none)
+sn22.89:12.9 | S: Such is feeling … | T: (none)
+sn22.89:12.10 | S: Such is perception … | T: (none)
+sn22.89:12.11 | S: Such are choices … | T: (none)
+sn22.89:12.12 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: (none)
+sn22.89:12.13 | S: As they do so, that lingering residue is eradicated.” | T: the residual conceit ‘I am,’ the desire ‘I am,’ the underlying tendency ‘I am’ that had not yet been uprooted—this comes to be uprooted.”
+sn22.89:13.1 | S: When he said this, the senior mendicants said to Venerable Khemaka, | T: When this was said, the elder bhikkhus said to the Venerable Khemaka:
+sn22.89:13.2 | S: “We didn’t want to trouble Venerable Khemaka with our questions. But you’re capable of explaining, teaching, asserting, establishing, clarifying, analyzing, and revealing the Buddha’s instructions in detail. | T: “We did not ask our questions in order to trouble the Venerable Khemaka, but we thought that the Venerable Khemaka would be capable of explaining, teaching, proclaiming, establishing, disclosing, analysing, and elucidating the Blessed One’s teaching in detail.
+sn22.89:13.3 | S: And that’s just what you’ve done.” | T: And the Venerable Khemaka has explained, taught, proclaimed, established, disclosed, analysed, and elucidated the Blessed One’s teaching in detail.”
+sn22.89:14.1 | S: That is what Venerable Khemaka said. | T: This is what the Venerable Khemaka said.
+sn22.89:14.2 | S: Satisfied, the senior mendicants approved what Khemaka said. | T: Elated, the elder bhikkhus delighted in the Venerable Khemaka’s statement.
+sn22.89:14.3 | S: And while this discourse was being spoken, the minds of sixty senior mendicants and of Venerable Khemaka were freed from defilements by not grasping. | T: And while this discourse was being spoken, the minds of sixty elder bhikkhus and of the Venerable Khemaka were liberated from the taints by nonclinging.
+sn22.89:14.4 | P: Sattamaṁ. | T: (none)
+
+## sn35.114
+sn35.114:1.1 | S: “Mendicants, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Bhikkhus, there are forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.114:1.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.114:1.3 | S: they’re called a mendicant trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: he is called a bhikkhu who has entered Mara’s lair, who has come under Mara’s control;
+sn35.114:1.4 | S: They’re bound by Māra’s bonds, and the Wicked One can do with them what he wants. | T: Mara’s snare has been fastened to him so that he is bound by the bondage of Mara and the Evil One can do with him as he wishes.
+sn35.114:2.1 | S: There are sounds … smells … tastes … touches … | T: “There are, bhikkhus, sounds cognizable by the ear …
+sn35.114:2.2 | P: Tañce bhikkhu abhinandati abhivadati ajjhosāya tiṭṭhati— | T: (none)
+sn35.114:2.3 | P: ayaṁ vuccati, bhikkhave, bhikkhu āvāsagato mārassa, mārassa vasaṁ gato, paṭimukkassa mārapāso. Baddho so mārabandhanena …pe…. | T: (none)
+sn35.114:3.1 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.114:3.2 | S: If a mendicant approves, welcomes, and keep clinging to them, | T: If a bhikkhu seeks delight in them … …
+sn35.114:3.3 | S: they’re called a mendicant trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: (none)
+sn35.114:3.4 | S: They’re bound by Māra, and the Wicked One can do with them what he wants. | T: the Evil One can do with him as he wishes.
+sn35.114:4.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, bhikkhus, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.114:4.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them,
+sn35.114:4.3 | S: they’re called a mendicant not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: he is called a bhikkhu who has not entered Mara’s lair, who has not come under Mara’s control;
+sn35.114:4.4 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants. | T: Mara’s snare has been unfastened from him so that he is not bound by the bondage of Mara and the Evil One cannot do with him as he wishes.
+sn35.114:5.1 | S: There are sounds … smells … tastes … touches … | T: “There are, bhikkhus, sounds cognizable by the ear …
+sn35.114:5.2 | P: Tañce bhikkhu nābhinandati nābhivadati nājjhosāya tiṭṭhati— | T: (none)
+sn35.114:5.3 | P: ayaṁ vuccati, bhikkhave, bhikkhu nāvāsagato mārassa, na mārassa vasaṁ gato, ummukkassa mārapāso. Mutto so mārabandhanena na yathākāmakaraṇīyo pāpimato …pe…. | T: (none)
+sn35.114:6.1 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.114:6.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them …
+sn35.114:6.3 | S: they’re called a mendicant not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: (none)
+sn35.114:6.4 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants.” | T: the Evil One cannot do with him as he wishes.”
+sn35.114:6.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.115
+sn35.115:1.1 | S: “Mendicants, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Bhikkhus, there are forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.115:1.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.115:1.3 | S: they’re called a mendicant who is bound in sights known by the eye. They’re trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: he is called a bhikkhu who is bound among forms cognizable by the eye, who has entered Mara’s lair, who has come under Mara’s control;
+sn35.115:1.4 | S: They’re bound by Māra’s bonds, and the Wicked One can do with them what he wants. | T: Mara’s snare has been fastened to him so that he is bound by the bondage of Mara and the Evil One can do with him as he wishes.
+sn35.115:2.1 | S: There are sounds … smells … tastes … touches … | T: “There are, bhikkhus, sounds cognizable by the ear …
+sn35.115:2.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.115:2.3 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them …
+sn35.115:2.4 | S: they’re called a mendicant who is bound in ideas known by the mind. They’re trapped in Māra’s lair, fallen under Māra’s sway, and caught in Māra’s snare. | T: (none)
+sn35.115:2.5 | S: They’re bound by Māra’s bonds, and the Wicked One can do with them what he wants. | T: the Evil One can do with him as he wishes.
+sn35.115:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, bhikkhus, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.115:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them,
+sn35.115:3.3 | S: they’re called a mendicant who is freed from sights known by the eye. They’re not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: he is called a bhikkhu who is free among forms cognizable by the eye, who has not entered Mara’s lair, who has not come under Mara’s control;
+sn35.115:3.4 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants. | T: Mara’s snare has been unfastened from him so that he is not bound by the bondage of Mara and the Evil One cannot do with him as he wishes.
+sn35.115:4.1 | S: There are sounds … smells … tastes … touches … | T: “There are, bhikkhus, sounds cognizable by the ear …
+sn35.115:4.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.115:4.3 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them …
+sn35.115:4.4 | S: they’re called a mendicant who is freed from ideas known by the mind. They’re not trapped in Māra’s lair, not fallen under Māra’s sway, and released from Māra’s snare. | T: (none)
+sn35.115:4.5 | S: They’re free from Māra’s bonds, and the Wicked One cannot do with them what he wants.” | T: the Evil One cannot do with him as he wishes.”
+sn35.115:4.6 | P: Dutiyaṁ. | T: (none)
+
+## sn4.11
+sn4.11:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was dwelling at Rajagaha on Mount Vulture Peak.
+sn4.11:1.2 | S: Now at that time the Buddha was meditating in the open during the dark of night, while a gentle rain drizzled down. | T: Now on that occasion the Blessed One was sitting out in the open in the thick darkness of the night while it was drizzling.
+sn4.11:1.3 | S: Then Māra the Wicked, wanting to make the Buddha feel fear, terror, and goosebumps, approached him, and crushed some large boulders close by him. | T: Then Mara the Evil One, wishing to arouse fear, trepidation, and terror in the Blessed One, shattered a number of huge boulders not far away from him.
+sn4.11:2.1 | S: Then the Buddha, knowing that this was Māra the Wicked, addressed him in verse: | T: Then the Blessed One, having understood, “This is Mara the Evil One,” addressed Mara the Evil One in verse:
+sn4.11:3.1 | S: “Even if you shake | T: “Even if you make this Vulture Peak
+sn4.11:3.2 | S: this entire Vulture’s Peak, | T: Quake all over in its entirety,
+sn4.11:3.3 | S: the rightly released, | T: (none)
+sn4.11:3.4 | S: the awakened, are unshaken.” | T: The enlightened are not perturbed, For they are are fully liberated.”
+sn4.11:4.1 | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing, “The Blessed One knows me, the Fortunate One knows me,” sad and disappointed, disappeared right there.
+
+## sn45.162
+sn45.162:1.1 | S: “Mendicants, there are three kinds of discrimination. | T: “Bhikkhus, there are these three discriminations.
+sn45.162:1.2 | S: What three? | T: What three?
+sn45.162:1.3 | S: One discriminates, thinking that ‘I’m better’ or ‘I’m equal’ or ‘I’m worse’. | T: The discrimination ‘I am superior,’ the discrimination ‘I am equal,’ the discrimination ‘I am inferior.’
+sn45.162:1.4 | S: These are the three kinds of discrimination. | T: These are the three discriminations.
+sn45.162:1.5 | S: The noble eightfold path should be developed for the direct knowledge, complete understanding, finishing, and giving up of these three kinds of discrimination. | T: The Noble Eightfold Path is to be developed for direct knowledge of these three discriminations, for the full understanding of them, for their utter destruction, for their abandoning.
+sn45.162:1.6 | S: What is the noble eightfold path? | T: “What Noble Eightfold Path?
+sn45.162:1.7 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view … right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.162:1.8 | S: This is the noble eightfold path that should be developed for the direct knowledge, complete understanding, finishing, and giving up of these three kinds of discrimination.” | T: This Noble Eightfold Path is to be developed for the direct knowledge of these three discriminations … for their abandoning.”
+sn45.162:1.9 | S: (Tell in full as in the section on searches.) | T: (none)
+sn45.162:1.10 | P: Dutiyaṁ. | T: (none)
+
+## sn46.3
+sn46.3:1.1 | S: “Mendicants, when a mendicant is accomplished in ethics, immersion, knowledge, freedom, or the knowledge and vision of freedom, even the sight of them is very helpful, I say. | T: “Bhikkhus, those bhikkhus who are accomplished in virtue, accomplished in concentration, accomplished in wisdom, accomplished in liberation, accomplished in the knowledge and vision of liberation: even the sight of those bhikkhus is helpful, I say;
+sn46.3:1.2 | S: Even to hear them, | T: even listening to them …
+sn46.3:1.3 | S: approach them, | T: even approaching them …
+sn46.3:1.4 | S: pay homage to them, | T: even attending on them …
+sn46.3:1.5 | S: recollect them, | T: even recollecting them …
+sn46.3:1.6 | S: or go forth following them is very helpful, I say. | T: even going forth after them is helpful, I say.
+sn46.3:1.7 | S: Why is that? | T: For what reason?
+sn46.3:1.8 | S: Because after hearing the teaching of such mendicants, a mendicant will live withdrawn in both body and mind, | T: Because when one has heard the Dhamma from such bhikkhus one dwells withdrawn by way of two kinds of withdrawal—withdrawal of body and withdrawal of mind.
+sn46.3:1.9 | S: as they recollect and think about that teaching. | T: “Dwelling thus withdrawn, one recollects that Dhamma and thinks it over.
+sn46.3:2.1 | S: At such a time, a mendicant has initiated the awakening factor of mindfulness; | T: Whenever, bhikkhus, a bhikkhu dwelling thus withdrawn recollects that Dhamma and thinks it over, on that occasion the enlightenment factor of mindfulness is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of mindfulness; on that occasion the enlightenment factor of mindfulness comes to fulfilment by development in the bhikkhu.
+sn46.3:2.2 | S: they develop it | T: (none)
+sn46.3:2.3 | S: and perfect it. | T: (none)
+sn46.3:2.4 | S: As they live mindfully in this way they investigate, explore, and inquire into that teaching with wisdom. | T: “Dwelling thus mindfully, he discriminates that Dhamma with wisdom, examines it, makes an investigation of it.
+sn46.3:3.1 | S: At such a time, a mendicant has initiated the awakening factor of investigation of principles; | T: Whenever, bhikkhus, a bhikkhu dwelling thus mindfully discriminates that Dhamma with wisdom, examines it, makes an investigation of it, on that occasion the enlightenment factor of discrimination of states is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of discrimination of states; on that occasion the enlightenment factor of discrimination of states comes to fulfilment by development in the bhikkhu.
+sn46.3:3.2 | S: they develop it | T: (none)
+sn46.3:3.3 | S: and perfect it. | T: (none)
+sn46.3:3.4 | S: As they investigate principles with wisdom in this way their energy is roused up and unflagging. | T: “While he discriminates that Dhamma with wisdom, examines it, makes an investigation of it, his energy is aroused without slackening.
+sn46.3:4.1 | S: At such a time, a mendicant has initiated the awakening factor of energy; they develop it and perfect it. | T: Whenever, bhikkhus, a bhikkhu’s energy is aroused without slackening as he discriminates that Dhamma with wisdom, examines it, makes an investigation of it, on that occasion the enlightenment factor of energy is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of energy; on that occasion the enlightenment factor of energy comes to fulfilment by development in the bhikkhu.
+sn46.3:4.2 | S: When they’re energetic, rapture not of the flesh arises. | T: “When his energy is aroused, there arises in him spiritual rapture.
+sn46.3:5.1 | S: At such a time, a mendicant has initiated the awakening factor of rapture; they develop it and perfect it. | T: Whenever, bhikkhus, spiritual rapture arises in a bhikkhu whose energy is aroused, on that occasion the enlightenment factor of rapture is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of rapture; on that occasion the enlightenment factor of rapture comes to fulfilment by development in the bhikkhu.
+sn46.3:5.2 | S: When the mind is full of rapture, the body and mind become tranquil. | T: “For one whose mind is uplifted by rapture the body becomes tranquil and the mind becomes tranquil.
+sn46.3:6.1 | S: At such a time, a mendicant has initiated the awakening factor of tranquility; they develop it and perfect it. | T: Whenever, bhikkhus, the body becomes tranquil and the mind becomes tranquil in a bhikkhu whose mind is uplifted by rapture, on that occasion the enlightenment factor of tranquillity is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of tranquillity; on that occasion the enlightenment factor of tranquillity comes to fulfilment by development in the bhikkhu.
+sn46.3:6.2 | S: When the body is tranquil and one feels bliss, the mind becomes immersed in samādhi. | T: “For one whose body is tranquil and who is happy the mind becomes concentrated.
+sn46.3:7.1 | S: At such a time, a mendicant has initiated the awakening factor of immersion; they develop it and perfect it. | T: Whenever, bhikkhus, the mind becomes concentrated in a bhikkhu whose body is tranquil and who is happy, on that occasion the enlightenment factor of concentration is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of concentration; on that occasion the enlightenment factor of concentration comes to fulfilment by development in the bhikkhu.
+sn46.3:7.2 | S: They closely watch over that mind immersed in samādhi. | T: “He closely looks on with equanimity at the mind thus concentrated.
+sn46.3:8.1 | S: At such a time, a mendicant has initiated the awakening factor of equanimity; they develop it and perfect it. | T: Whenever, bhikkhus, a bhikkhu closely looks on with equanimity at the mind thus concentrated, on that occasion the enlightenment factor of equanimity is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of equanimity; on that occasion the enlightenment factor of equanimity comes to fulfilment by development in the bhikkhu.
+sn46.3:9.1 | S: When the seven awakening factors are developed and cultivated in this way they can expect seven fruits and benefits. | T: “Bhikkhus, when these seven factors of enlightenment have been developed and cultivated in this way, seven fruits and benefits may be expected.
+sn46.3:9.2 | S: What seven? | T: What are the seven fruits and benefits?
+sn46.3:9.3 | S: They attain enlightenment early on in this very life. | T: “One attains final knowledge early in this very life.
+sn46.3:9.4 | S: If not, they attain enlightenment at the time of death. | T: “If one does not attain final knowledge early in this very life, then one attains final knowledge at the time of death.
+sn46.3:9.5 | S: If not, with the ending of the five lower fetters, they’re extinguished between one life and the next. | T: “If one does not attain final knowledge early in this very life or at the time of death, then with the utter destruction of the five lower fetters one becomes an attainer of Nibbāna in the interval.
+sn46.3:9.6 | S: If not, with the ending of the five lower fetters they’re extinguished upon landing. | T: “If one does not attain final knowledge early in this very life … or become an attainer of Nibbāna in the interval, then with the utter destruction of the five lower fetters one becomes an attainer of Nibbāna upon landing.
+sn46.3:9.7 | S: If not, with the ending of the five lower fetters they’re extinguished without extra effort. | T: “If one does not attain final knowledge early in this very life … … or become an attainer of Nibbāna upon landing, then with the utter destruction of the five lower fetters one becomes an attainer of Nibbāna without exertion.
+sn46.3:9.8 | S: If not, with the ending of the five lower fetters they’re extinguished with extra effort. | T: “If one does not attain final knowledge early in this very life … or become an attainer of Nibbāna without exertion, then with the utter destruction of the five lower fetters one becomes an attainer of Nibbāna with exertion.
+sn46.3:9.9 | S: If not, with the ending of the five lower fetters they head upstream, going to the Akaniṭṭha realm. | T: “If one does not attain final knowledge early in this very life … or become an attainer of Nibbāna with exertion, then with the utter destruction of the five lower fetters one becomes one bound upstream, heading towards the Akaniṭṭha realm.
+sn46.3:9.10 | S: When the seven awakening factors are developed and cultivated in this way these are the seven fruits and benefits they can expect.” | T: “When, bhikkhus, the seven factors of enlightenment have been developed and cultivated in this way, these seven fruits and benefits may be expected.”
+sn46.3:9.11 | P: Tatiyaṁ. | T: (none)
+
+
+codex
+I’ve read the batch and found a few clear boundary shifts. I’m checking the abbreviated passages and verse against your exclusions before writing the findings.
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '145,165p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.89:5.1 | S: “Yes, reverends,” replied Dāsaka. He relayed the message to Khemaka, who replied: | T: “Yes, friends,” the Venerable Dasaka replied, and he approached the Venerable Khemaka and delivered his message. The Venerable Khemaka replied:
+sn22.89:5.2 | P: therā taṁ, āvuso khemaka, evamāhaṁsu: | T: (none)
+sn22.89:5.3 | P: “pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:5.4 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho; | T: (none)
+sn22.89:5.5 | P: no ce kirāyasmā khemako imesu pañcasu upādānakkhandhesu kiñci attaṁ vā attaniyaṁ vā samanupassati, tenahāyasmā khemako arahaṁ khīṇāsavo”ti. | T: (none)
+sn22.89:5.6 | S: “These five grasping aggregates have been taught by the Buddha, that is: | T: “These five aggregates subject to clinging have been spoken of by the Blessed One; that is,
+sn22.89:5.7 | S: the grasping aggregates of form, feeling, perception, choices, and consciousness. | T: the form aggregate subject to clinging … the consciousness aggregate subject to clinging.
+sn22.89:5.8 | S: I do not regard anything among these five grasping aggregates as self or as belonging to self, yet I am not a perfected one, with defilements ended. | T: I do not regard anything among these five aggregates subject to clinging as self or as belonging to self, yet I am not an arahant, one whose taints are destroyed.
+sn22.89:5.9 | S: For when it comes to the five grasping aggregates I’m not rid of the conceit ‘I am’. But I don’t regard anything as ‘I am this’.” | T: Friends, the notion ‘I am’ has not yet vanished in me in relation to these five aggregates subject to clinging, but I do not regard anything among them as ‘This I am.’”
+sn22.89:6.1 | S: Then Dāsaka went to those senior mendicants and told them what had happened. They said: | T: Then the Venerable Dasaka approached the elder bhikkhus and reported what the Venerable Khemaka had said. They replied:
+sn22.89:6.2 | P: there bhikkhū etadavoca: | T: (none)
+sn22.89:6.3 | P: “khemako, āvuso, bhikkhu evamāha— | T: (none)
+sn22.89:6.4 | P: pañcime, āvuso, upādānakkhandhā vuttā bhagavatā, seyyathidaṁ— | T: (none)
+sn22.89:6.5 | P: rūpupādānakkhandho …pe… viññāṇupādānakkhandho. | T: (none)
+sn22.89:6.6 | P: Imesu khvāhaṁ, āvuso, pañcasu upādānakkhandhesu na kiñci attaṁ vā attaniyaṁ vā samanupassāmi, na camhi arahaṁ khīṇāsavo; | T: (none)
+sn22.89:6.7 | P: api ca me, āvuso, pañcasu upādānakkhandhesu ‘asmī’ti adhigataṁ, ‘ayamahamasmī’ti na ca samanupassāmī”ti. | T: (none)
+sn22.89:7.1 | S: “Please, Reverend Dāsaka, go to the mendicant Khemaka and say to him: | T: “Come, friend Dasaka, approach the bhikkhu Khemaka and say to him:
+sn22.89:7.2 | S: ‘Reverend Khemaka, the seniors ask, | T: ‘The elders say to you, friend Khemaka:
+sn22.89:7.3 | S: when you say “I am”, what is it that you’re talking about? | T: Friend Khemaka, when you speak of this “I am”—what is it that you speak of as “I am”?
+sn22.89:7.4 | S: Is it form or apart from form? | T: Do you speak of form as “I am,” or do you speak of “I am” apart from form?
+sn22.89:7.5 | S: Is it feeling … | T: Do you speak of feeling …
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-023.findings.tmp <<'EOF'
+sn12.24:3.6 starts: How should we answer if we are
+sn22.89:1.8 none
+sn22.89:1.10 starts: The Venerable Khemaka answered: “I am not
+sn22.89:12.7 none
+sn22.89:12.13 starts: As he dwells thus contemplating rise and
+sn35.114:1.4 starts: so that he is bound by the
+sn35.114:4.4 starts: so that he is not bound by
+sn35.115:1.4 starts: so that he is bound by the
+sn35.115:3.4 starts: so that he is not bound by
+sn4.11:3.3 starts: The enlightened are not perturbed, For they
+sn4.11:3.4 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+11 lines reported.
+tokens used
+31,146
+11 lines reported.

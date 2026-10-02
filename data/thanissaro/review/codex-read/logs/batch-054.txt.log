@@ -1,0 +1,437 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd99-6307-7c41-8e52-b8f06c955115
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn3.25
+sn3.25:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn3.25:1.2 | S: King Pasenadi of Kosala sat to one side, and the Buddha said to him, | T: Then King Pasenadi Kosala went to the Blessed One in the middle of the day and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him:
+sn3.25:1.3 | S: “So, Great King, where are you coming from in the middle of the day?” | T: “Well now, great king, where are you coming from in the middle of the day?”
+sn3.25:1.4 | S: “Sir, there are anointed aristocratic kings who are infatuated with authority, and obsessed with greed for sensual pleasures. They have attained stability in the country, occupying a vast conquered territory. Today I have been busy fulfilling the duties of such kings.” | T: “Just now, lord, I was engaged in the sort of royal affairs typical of head-anointed noble-warrior kings intoxicated with the intoxication of sovereignty, obsessed by greed for sensuality, who have attained stable control in their country, and who rule having conquered a great sphere of territory on earth.”
+sn3.25:2.1 | S: “What do you think, Great King? | T: “What do you think, great king?
+sn3.25:2.2 | S: Suppose a trustworthy and dependable man were to come from the east. | T: Suppose a trustworthy, reliable man were to come to you from the east.
+sn3.25:2.3 | S: He’d approach you and say: | T: On arrival he would say to you,
+sn3.25:2.4 | S: ‘Please, Great King, you should know this. I come from the east. | T: ‘May it please your majesty to know, I have come from the east.
+sn3.25:2.5 | S: There I saw a big mountain that reached the clouds. And it was coming this way, crushing all creatures. | T: There I saw a great mountain, as high as the clouds, coming this way, crushing all living beings (in its path).
+sn3.25:2.6 | S: So then, Great King, do what you must!’ | T: Do whatever you think should be done.’
+sn3.25:2.7 | S: Then a second trustworthy and dependable man were to come from the west … | T: Then a second man were to come to you from the west…
+sn3.25:2.8 | S: a third from the north … | T: Then a third man were to come to you from the north…
+sn3.25:2.9 | S: and a fourth from the south. | T: Then a fourth trustworthy, reliable man were to come to you from the south.
+sn3.25:2.10 | S: He’d approach you and say: | T: On arrival he would say to you,
+sn3.25:2.11 | S: ‘Please, Great King, you should know this. I come from the south. | T: ‘May it please your majesty to know that I have come from the south.
+sn3.25:2.12 | S: There I saw a big mountain that reached the clouds. And it was coming this way, crushing all creatures. | T: There I saw a great mountain, as high as the clouds, coming this way, crushing all living beings.
+sn3.25:2.13 | S: So then, Great King, do what you must!’ | T: Do whatever you think should be done.’
+sn3.25:2.14 | S: Should such a dire threat arise—a grim loss of human life, when human birth is so rare—what would you do?” | T: If, your majesty, such a great peril should arise, such a terrible destruction of human life—the human state being so hard to obtain—what should be done?”
+sn3.25:3.1 | S: “Sir, what could I do but practice the teachings, practice morality, doing skillful and good actions?” | T: “If, lord, such a great peril should arise, such a terrible destruction of human life—the human state being so hard to obtain—what else should be done but Dhamma-conduct, right conduct, skillful deeds, meritorious deeds?”
+sn3.25:4.1 | S: “I tell you, Great King, I announce to you: old age and death are advancing upon you. | T: “I inform you, great king, I announce to you, great king: aging & death are rolling in on you.
+sn3.25:4.2 | S: Since old age and death are advancing upon you, what would you do?” | T: When aging & death are rolling in on you, what should be done?”
+sn3.25:4.3 | S: “Sir, what can I do but practice the teachings, practice morality, doing skillful and good actions? | T: “As aging & death are rolling in on me, lord, what else should be done but Dhamma-conduct, right conduct, skillful deeds, meritorious deeds?
+sn3.25:4.4 | S: Sir, there are anointed aristocratic kings who are infatuated with authority, and obsessed with greed for sensual pleasures. They have attained stability in the country, occupying a vast conquered territory. Such kings engage in battles of elephants, | T: “There are, lord, elephant battles (fought by) head-anointed noble-warrior kings intoxicated with the intoxication of sovereignty, obsessed by greed for sensuality, who have attained stable control in their country, and who rule having conquered a great sphere of territory on earth;
+sn3.25:4.5 | P: tesampi, bhante, hatthiyuddhānaṁ natthi gati natthi visayo adhivattamāne jarāmaraṇe. | T: but there is no use for those elephant battles, no scope for them, when aging & death are rolling in.
+sn3.25:4.6 | P: Yānipi tāni, bhante, raññaṁ khattiyānaṁ muddhāvasittānaṁ …pe… | T: (none)
+sn3.25:4.7 | S: cavalry, | T: There are cavalry battles…
+sn3.25:4.8 | S: chariots, | T: chariot battles…
+sn3.25:4.9 | S: or infantry. | T: infantry battles…
+sn3.25:4.10 | S: But there is no place, no domain for such battles when old age and death are advancing. | T: but there is no use for those infantry battles, no scope for them, when aging & death are rolling in.
+sn3.25:4.11 | S: In this royal court there are ministers of wise counsel who are capable of dividing an approaching enemy by wise counsel. | T: In this royal court there are counselors who, when the enemies arrive, are capable of dividing them by their wits;
+sn3.25:4.12 | S: But there is no place, no domain for such diplomatic battles when old age and death are advancing. | T: but there is no use for those battles of wits, no scope for them, when aging & death are rolling in.
+sn3.25:4.13 | S: In this royal court there is abundant gold, both coined and uncoined, stored above and below ground. Using this wealth we can bribe an approaching enemy. | T: In this royal court there is abundant bullion & gold stored in vaults & depositories, and with such wealth we are capable of buying off enemies when they come;
+sn3.25:4.14 | S: But there is no place, no domain for such monetary battles when old age and death are advancing. | T: but there is no use for those battles of wealth, no scope for them, when aging & death are rolling in.
+sn3.25:4.15 | S: When old age and death are advancing, what can I do but practice the teachings, practice morality, doing skillful and good actions?” | T: As aging & death are rolling in on me, lord, what else should be done but Dhamma-conduct, right conduct, skillful deeds, meritorious deeds?”
+sn3.25:5.1 | S: “That’s so true, Great King! That’s so true! | T: “So it is, great king! So it is, great king!
+sn3.25:5.2 | S: When old age and death are advancing, what can you do but practice the teachings, practice morality, doing skillful and good actions?” | T: As aging & death are rolling in on you, what else should be done but Dhamma-conduct, right conduct, skillful deeds, meritorious deeds?”
+sn3.25:5.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn3.25:5.4 | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, further said this:
+sn3.25:6.1 | S: “Suppose there were vast mountains | T: “Like massive boulders,
+sn3.25:6.2 | S: of solid rock pressing against the sky | T: mountains pressing against the sky,
+sn3.25:6.3 | S: drawing in from all sides | T: moving in from all sides,
+sn3.25:6.4 | S: and crushing the four quarters. | T: crushing the four directions,
+sn3.25:7.1 | S: So too old age and death | T: so aging & death
+sn3.25:7.2 | S: advance upon all living creatures— | T: come rolling over living beings:
+sn3.25:7.3 | S: aristocrats, brahmins, peasants, | T: noble warriors, brahmans, merchants,
+sn3.25:7.4 | S: menials, corpse-workers, and scavengers. | T: workers, outcastes, & scavengers.
+sn3.25:7.5 | S: They spare nothing. | T: They spare nothing.
+sn3.25:7.6 | S: They crush all beneath them. | T: They trample everything.
+sn3.25:8.1 | S: There’s nowhere for elephants to take a stand, | T: Here elephant troops can hold no ground,
+sn3.25:8.2 | S: nor chariots nor infantry. | T: nor can chariots or infantry,
+sn3.25:8.3 | S: They can’t be defeated | T: nor can a battle of wits
+sn3.25:8.4 | S: by diplomatic battles or by wealth. | T: or wealth win out.
+sn3.25:9.1 | S: That’s why an astute person, | T: So a wise person,
+sn3.25:9.2 | S: seeing what’s good for themselves, | T: seeing his own good,
+sn3.25:9.3 | S: being wise, would place faith | T: steadfast, secures confidence
+sn3.25:9.4 | S: in the Buddha, the teaching, and the Saṅgha. | T: in the Buddha, Dhamma, & Saṅgha.
+sn3.25:10.1 | S: Whoever lives by the teaching | T: One who practices the Dhamma
+sn3.25:10.2 | S: in body, speech, and mind, | T: in thought, word, & deed,
+sn3.25:10.3 | S: is praised in this life | T: receives praise here on earth
+sn3.25:10.4 | S: and departs to rejoice in heaven.” | T: and after death rejoices in heaven.”
+sn3.25:10.5 | P: Tatiyo vaggo. | T: (none)
+sn3.25:11.0 | P: Tassuddānaṁ | T: (none)
+sn3.25:11.1 | P: Puggalo ayyikā loko, | T: (none)
+sn3.25:11.2 | P: issattaṁ pabbatūpamā; | T: (none)
+sn3.25:11.3 | P: Desitaṁ buddhaseṭṭhena, | T: (none)
+sn3.25:11.4 | P: imaṁ kosalapañcakanti. | T: (none)
+sn3.25:11.5 | S: The Linked Discourses with the Kosalan are complete. | T: (none)
+
+## sn6.14
+sn6.14:1.1 | S: So I have heard. | T: (none)
+sn6.14:1.2 | S: At one time the Buddha was staying near Sāvatthī. | T: On one occasion the Blessed One was dwelling in Sāvatthī.
+sn6.14:1.3 | S: There he addressed the mendicants, | T: There he addressed the monks,
+sn6.14:1.4 | S: “Mendicants!” | T: “Monks!”
+sn6.14:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to the Blessed One.
+sn6.14:1.6 | S: The Buddha said this: | T: The Blessed One said,
+sn6.14:2.1 | S: “Once upon a time, mendicants, there was a king named Aruṇavā. | T: “In the past, monks, was a king named Aruṇavant
+sn6.14:2.2 | S: He had a capital named Aruṇavatī. | T: whose royal city was named Aruṇavatī.
+sn6.14:2.3 | S: Sikhī the Blessed One, the perfected one, the fully awakened Buddha lived supported by Aruṇavatī. | T: And in dependence on that royal city of Aruṇavatī there dwelled Sikhī the Blessed One, worthy & fully self-awakened.
+sn6.14:2.4 | S: Sikhī had a fine pair of chief disciples named Abhibhū and Sambhava. | T: And Sikhī the Blessed One, worthy & fully self-awakened, had a pair of disciples named Abhibhū & Sambhava as his foremost pair, his excellent pair.
+sn6.14:2.5 | S: Then the Buddha Sikhī addressed the mendicant Abhibhū, | T: “Then Sikhī the Blessed One, worthy & fully self-awakened, addressed the monk Abhibhū:
+sn6.14:2.6 | S: ‘Come, brahmin, let’s go to one of the realms of divinity until it’s time for our meal.’ | T: ‘Come, brahman, let’s go to a certain Brahmā world until the time for the meal.’
+sn6.14:2.7 | S: ‘Yes, sir,’ replied Abhibhū. | T: “‘As you say, lord,’ the monk Abhibhū responded to Sikhī the Blessed One, worthy & fully self-awakened.
+sn6.14:2.8 | S: Then, as easily as a strong person would extend or contract their arm, they vanished from Aruṇavatī and appeared in that realm of divinity. | T: “Then—just as a strong man might extend his flexed arm or flex his extended arm—Sikhī the Blessed One, worthy & fully self-awakened, & the monk Abhibhū disappeared from the royal city of Aruṇavatī and reappeared in that Brahmā world.
+sn6.14:3.1 | S: Then the Buddha Sikhī addressed the mendicant Abhibhū, | T: “Then Sikhī the Blessed One, worthy & fully self-awakened, addressed the monk Abhibhū:
+sn6.14:3.2 | S: ‘Brahmin, teach the Dhamma as you feel inspired for that divinity, his assembly, and the members of his retinue.’ | T: ‘Let a Dhamma talk come to you, brahman, for Brahmā, Brahmā’s retinue, & Brahmā’s assembly.’
+sn6.14:3.3 | S: ‘Yes, sir,’ replied Abhibhū. Then he educated, encouraged, fired up, and inspired them with a Dhamma talk. | T: “Responding, ‘As you say, lord,’ to Sikhī the Blessed One, worthy & fully self-awakened, the monk Abhibhū instructed, urged, roused, & encouraged Brahmā, Brahmā’s retinue, & Brahmā’s assembly with a Dhamma talk.
+sn6.14:3.4 | S: But the Divinity, his assembly, and his retinue complained, grumbled, and objected, | T: “With that, Brahmā, Brahmā’s retinue, & Brahmā’s assembly were indignant, annoyed, & complained:
+sn6.14:3.5 | S: ‘Oh lord, how incredible, how amazing! How on earth can a disciple teach Dhamma in the presence of the Teacher?’ | T: ‘Isn’t it amazing, good sirs! Isn’t it astounding! How can this disciple, in the presence of his teacher, teach the Dhamma?’
+sn6.14:4.1 | S: Then the Buddha Sikhī addressed the mendicant Abhibhū, | T: “Then Sikhī the Blessed One, worthy & fully self-awakened, addressed the monk Abhibhū:
+sn6.14:4.2 | S: ‘Brahmin, the Divinity, his assembly, and his retinue are complaining | T: ‘Brahmā, Brahmā’s retinue, & Brahmā’s assembly are indignant & annoyed with you. They complain:
+sn6.14:4.3 | S: that a disciple teaches Dhamma in the presence of the Teacher. | T: “Isn’t it amazing, good sirs! Isn’t it astounding! How can this disciple, in the presence of his teacher, teach the Dhamma?”
+sn6.14:4.4 | S: Well then, brahmin, stir them up even more!’ | T: Very well then, strike terror in Brahmā, Brahmā’s retinue, & Brahmā’s assembly to an even greater degree.’
+sn6.14:4.5 | S: ‘Yes, sir,’ replied Abhibhū. Then he taught Dhamma with his body visible; with his body invisible; with the lower half visible and the upper half invisible; and with the upper half visible and the lower half invisible. | T: “Responding, ‘As you say, lord,’ to Sikhī the Blessed One, worthy & fully self-awakened, the monk Abhibhū taught the Dhamma with his body visible, taught the Dhamma with his body invisible, taught the Dhamma with the lower half of his body visible & the upper half invisible, taught the Dhamma with the upper half of his body visible & the lower half invisible.
+sn6.14:4.6 | S: And the Divinity, his assembly, and his retinue, their minds full of wonder and amazement, thought, | T: “With that, the minds of Brahmā, Brahmā’s retinue, & Brahmā’s assembly were overcome with amazement & astonishment:
+sn6.14:4.7 | S: ‘Oh lord, how incredible, how amazing! The ascetic has such psychic power and might!’ | T: ‘Isn’t it amazing, good sirs! Isn’t it astounding!—the contemplative’s great power & great might!’
+sn6.14:5.1 | S: Then Abhibhū said to the Buddha Sikhī, | T: “Then the monk Abhibhū said to Sikhī the Blessed One, worthy & fully self-awakened,
+sn6.14:5.2 | S: ‘Sir, I recall having said this in the middle of the Saṅgha: | T: ‘I recall, lord, having made this statement while standing in the midst of the Saṅgha of monks:
+sn6.14:5.3 | S: “Standing in the realm of divinity, I can make my voice heard throughout the thousandfold galaxy.”’ | T: “I can, friends, while standing in the Brahmā world, make my voice heard throughout the thousand-fold cosmos.”’
+sn6.14:5.4 | S: ‘Now is the time, brahmin! Now is the time, brahmin! | T: “‘This is the time, brahman! This is the time, brahman,
+sn6.14:5.5 | S: Standing in the realm of divinity, make your voice heard throughout the thousandfold galaxy.’ | T: for you, while standing in the Brahmā world, to make your voice heard throughout the thousand-fold cosmos!’
+sn6.14:5.6 | S: ‘Yes, sir,’ replied Abhibhū. Standing in the realm of divinity, he spoke this verse: | T: “Responding, ‘As you say, lord,’ to Sikhī the Blessed One, worthy & fully self-awakened, the monk Abhibhū, while standing in the Brahmā world, recited these verses:
+sn6.14:6.1 | S: ‘Rouse yourselves! Try harder! | T: ‘Rouse yourselves. Go forth.
+sn6.14:6.2 | S: Devote yourselves to the teachings of the Buddha! | T: Commit yourselves to the Awakened One’s bidding.
+sn6.14:6.3 | S: Crush the army of Death, | T: Scatter the army of Death
+sn6.14:6.4 | S: as an elephant a hut of reeds. | T: as an elephant would a shed made of reeds.
+sn6.14:7.1 | S: Whoever shall meditate diligently | T: He who,
+sn6.14:7.2 | S: in this teaching and training, | T: in this Dhamma & Vinaya, stays heedful,
+sn6.14:7.3 | S: giving up transmigration through rebirths, | T: abandoning birth, the wandering-on,
+sn6.14:7.4 | S: will make an end of suffering.’ | T: will put an end to suffering & stress.’
+sn6.14:8.1 | S: Having inspired that divinity, his assembly, and his retinue with a sense of awe, | T: “Then—having struck terror in Brahmā, Brahmā’s retinue, & Brahmā’s assembly—Sikhī the Blessed One, worthy & fully self-awakened, & the monk Abhibhū—
+sn6.14:8.2 | S: as easily as a strong person would extend or contract their arm, Sikhī and Abhibhū vanished from that realm of divinity and appeared in Aruṇavatī. | T: just as a strong man might extend his flexed arm or flex his extended arm—disappeared from that Brahmā world and reappeared in the royal city of Aruṇavatī.
+sn6.14:8.3 | S: Then the Buddha Sikhī addressed the mendicants, | T: “Then, monks, Sikhī the Blessed One, worthy & fully self-awakened, addressed the monks,
+sn6.14:8.4 | S: ‘Mendicants, did you hear the mendicant Abhibhū speaking a verse while standing in a realm of divinity?’ | T: ‘Monks, did you hear the monk Abhibhū reciting verses while standing in the Brahmā world?’
+sn6.14:8.5 | S: ‘We did, sir.’ | T: “‘Lord, we heard the monk Abhibhū reciting verses while standing in the Brahmā world.’
+sn6.14:8.6 | S: ‘But what exactly did you hear?’ | T: “‘But what verses did you hear the monk Abhibhū reciting while standing in the Brahmā world?’
+sn6.14:8.7 | S: ‘This is what we heard, sir: | T: “‘Lord, we heard the monk Abhibhū reciting these verses while standing in the Brahmā world:
+sn6.14:9.1 | S: “Rouse yourselves! Try harder! | T: “Rouse yourselves. Go forth.
+sn6.14:9.2 | S: Devote yourselves to the teachings of the Buddha! | T: Commit yourselves to the Awakened One’s bidding.
+sn6.14:9.3 | S: Crush the army of Death, | T: Scatter the army of Death
+sn6.14:9.4 | S: as an elephant a hut of reeds. | T: as an elephant would a shed made of reeds.
+sn6.14:10.1 | S: Whoever shall meditate diligently | T: He who,
+sn6.14:10.2 | S: in this teaching and training, | T: in this Dhamma & Vinaya, stays heedful,
+sn6.14:10.3 | S: giving up transmigration through rebirths, | T: abandoning birth, the wandering-on,
+sn6.14:10.4 | S: will make an end of suffering.” | T: will put an end to suffering & stress.”
+sn6.14:11.1 | S: That’s what we heard, sir.’ | T: “‘These, lord, are the verses we heard the monk Abhibhū reciting while standing in the Brahmā world.’
+sn6.14:11.2 | S: ‘Good, good, mendicants! | T: “‘Good, monks.
+sn6.14:11.3 | S: It’s good that you heard the mendicant Abhibhū speaking this verse while standing in a realm of divinity.’” | T: It’s good that you heard the monk Abhibhū reciting verses while standing in the Brahmā world.’”
+sn6.14:12.1 | S: That is what the Buddha said. Satisfied, the mendicants approved what the Buddha said. | T: That is what the Blessed One said. Gratified, the monks delighted in the Blessed One’s words.
+
+## an4.184
+an4.184:1.1 | S: Then the brahmin Jānussoṇi went up to the Buddha, and exchanged greetings with him. | T: Then Jānussoṇi the brahman went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an4.184:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One:
+an4.184:2.1 | S: “Worthy Gotama, this is my doctrine and view: | T: “I am of the view & opinion
+an4.184:2.2 | S: ‘All those liable to death are frightened and terrified of death.’” | T: that there is no one who, subject to death, is not afraid or in terror of death.”
+an4.184:2.3 | S: “Brahmin, some of those liable to death are frightened and terrified of death. | T: (The Blessed One said:) “Brahman, there are those who, subject to death, are afraid & in terror of death.
+an4.184:2.4 | S: But some of those liable to death are not frightened and terrified of death. | T: And there are those who, subject to death, are not afraid or in terror of death.
+an4.184:3.1 | S: Who are those frightened of death? | T: “And who is the person who, subject to death, is afraid & in terror of death?
+an4.184:3.2 | S: It’s someone who isn’t free of greed, desire, fondness, thirst, passion, and craving for sensual pleasures. | T: There is the case of the person who has not abandoned passion, desire, fondness, thirst, fever, & craving for sensuality.
+an4.184:3.3 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:3.4 | S: they think: | T: the thought occurs to him,
+an4.184:3.5 | S: ‘The sensual pleasures that I love so much will leave me, and I’ll leave them.’ | T: ‘O, those beloved sensual pleasures will be taken from me, and I will be taken from them!’
+an4.184:3.6 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: He grieves & is tormented, weeps, beats his breast, & grows delirious.
+an4.184:3.7 | S: This is someone who is frightened of death. | T: This is a person who, subject to death, is afraid & in terror of death.
+an4.184:4.1 | S: Furthermore, it’s someone who isn’t free of greed, desire, fondness, thirst, passion, and craving for the body. | T: “Then there is the case of the person who has not abandoned passion, desire, fondness, thirst, fever, & craving for the body.
+an4.184:4.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:4.3 | S: they think: | T: the thought occurs to him,
+an4.184:4.4 | S: ‘This body that I love so much will leave me, and I’ll leave it.’ | T: ‘O, my beloved body will be taken from me, and I will be taken from my body!’
+an4.184:4.5 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: He grieves & is tormented, weeps, beats his breast, & grows delirious.
+an4.184:4.6 | S: This, too, is someone who is frightened of death. | T: This, too, is a person who, subject to death, is afraid & in terror of death.
+an4.184:5.1 | S: Furthermore, it’s someone who hasn’t done good and skillful things that keep them safe, but has done bad things, violence and sin. | T: “Then there is the case of the person who has not done what is good, has not done what is skillful, has not given protection to those in fear, and instead has done what is evil, savage, & cruel.
+an4.184:5.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:5.3 | S: they think: | T: the thought occurs to him,
+an4.184:5.4 | S: ‘Well, I haven’t done good and skillful things that keep me safe. | T: ‘I have not done what is good, have not done what is skillful, have not given protection to those in fear,
+an4.184:5.5 | S: And I have done bad things, violence and sin. | T: and instead have done what is evil, savage, & cruel.
+an4.184:5.6 | S: When I depart, I’ll go to the place where people who’ve done such things go.’ | T: To the extent that there is a destination for those who have not done what is good, have not done what is skillful, have not given protection to those in fear, and instead have done what is evil, savage, & cruel, that’s where I’m headed after death.’
+an4.184:5.7 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: He grieves & is tormented, weeps, beats his breast, & grows delirious.
+an4.184:5.8 | S: This, too, is someone who is frightened of death. | T: This, too, is a person who, subject to death, is afraid & in terror of death.
+an4.184:6.1 | S: Furthermore, it’s someone who’s doubtful, uncertain, and undecided about the true teaching. | T: “Then there is the case of the person in doubt & perplexity, who has not arrived at certainty with regard to the True Dhamma.
+an4.184:6.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:6.3 | S: they think: | T: the thought occurs to him,
+an4.184:6.4 | S: ‘I’m doubtful, uncertain, and undecided about the true teaching.’ | T: ‘How doubtful & perplexed I am! I have not arrived at any certainty with regard to the True Dhamma!’
+an4.184:6.5 | S: They sorrow and wail and lament, beating their breast and falling into confusion. | T: He grieves & is tormented, weeps, beats his breast, & grows delirious.
+an4.184:6.6 | S: This, too, is someone who is frightened of death. | T: This, too, is a person who, subject to death, is afraid & in terror of death.
+an4.184:6.7 | S: These are the four individuals liable to death who are frightened and terrified of death. | T: “These, brahman, are four people who, subject to death, are afraid & in terror of death.
+an4.184:7.1 | S: Who are those not frightened of death? | T: “And who is the person who, subject to death, is not afraid or in terror of death?
+an4.184:7.2 | S: It’s someone who is rid of greed, desire, fondness, thirst, passion, and craving for sensual pleasures. | T: “There is the case of the person who has abandoned passion, desire, fondness, thirst, fever, & craving for sensuality.
+an4.184:7.3 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:7.4 | S: they don’t think: | T: the thought doesn’t occur to him,
+an4.184:7.5 | S: ‘The sensual pleasures that I love so much will leave me, and I’ll leave them.’ | T: ‘O, those beloved sensual pleasures will be taken from me, and I will be taken from them!’
+an4.184:7.6 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: He doesn’t grieve, isn’t tormented; doesn’t weep, beat his breast, or grow delirious.
+an4.184:7.7 | S: This is someone who’s not frightened of death. | T: This is a person who, subject to death, is not afraid or in terror of death.
+an4.184:8.1 | S: Furthermore, it’s someone who is rid of greed, desire, fondness, thirst, passion, and craving for the body. | T: “Then there is the case of the person who has abandoned passion, desire, fondness, thirst, fever, & craving for the body.
+an4.184:8.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:8.3 | S: they don’t think: | T: the thought doesn’t occur to him,
+an4.184:8.4 | S: ‘This body that I love so much will leave me, and I’ll leave it.’ | T: ‘O, my beloved body will be taken from me, and I will be taken from my body!’
+an4.184:8.5 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: He doesn’t grieve, isn’t tormented; doesn’t weep, beat his breast, or grow delirious.
+an4.184:8.6 | S: This, too, is someone who’s not frightened of death. | T: This, too, is a person who, subject to death, is not afraid or in terror of death.
+an4.184:9.1 | S: Furthermore, it’s someone who hasn’t done bad things, violence and sin, but has done good and skillful deeds that keep them safe. | T: “Then there is the case of the person who has done what is good, has done what is skillful, has given protection to those in fear, and has not done what is evil, savage, or cruel.
+an4.184:9.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:9.3 | S: they think: | T: the thought occurs to him,
+an4.184:9.4 | S: ‘Well, I haven’t done bad things, violence and sin. | T: ‘I have done what is good, have done what is skillful, have given protection to those in fear, and I have not done what is evil, savage, or cruel.
+an4.184:9.5 | S: And I have done good and skillful deeds that keep me safe. | T: (none)
+an4.184:9.6 | S: When I depart, I’ll go to the place where people who’ve done such things go.’ | T: To the extent that there is a destination for those who have done what is good, what is skillful, have given protection to those in fear, and have not done what is evil, savage, or cruel, that’s where I’m headed after death.’
+an4.184:9.7 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: He doesn’t grieve, isn’t tormented; doesn’t weep, beat his breast, or grow delirious.
+an4.184:9.8 | S: This, too, is someone who’s not frightened of death. | T: This, too, is a person who, subject to death, is not afraid or in terror of death.
+an4.184:10.1 | S: Furthermore, it’s someone who’s not doubtful, uncertain, or undecided about the true teaching. | T: “Then there is the case of the person who has no doubt or perplexity, who has arrived at certainty with regard to the True Dhamma.
+an4.184:10.2 | S: When they fall seriously ill, | T: Then he comes down with a serious disease. As he comes down with a serious disease,
+an4.184:10.3 | S: they think: | T: the thought occurs to him,
+an4.184:10.4 | S: ‘I’m not doubtful, uncertain, or undecided about the true teaching.’ | T: ‘I have no doubt or perplexity. I have arrived at certainty with regard to the True Dhamma.’
+an4.184:10.5 | S: They don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: He doesn’t grieve, isn’t tormented; doesn’t weep, beat his breast, or grow delirious.
+an4.184:10.6 | S: This, too, is someone who’s not frightened of death. | T: This, too, is a person who, subject to death, is not afraid or in terror of death.
+an4.184:10.7 | S: These are the four individuals liable to death who are not frightened and terrified of death.” | T: “These, brahman, are four people who, subject to death, are not afraid or in terror of death.”
+an4.184:11.1 | S: “Excellent, worthy Gotama! … From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: (When this was said, Jānussoṇi the brahman said to the Blessed One:) “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks. May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+an4.184:11.2 | P: Catutthaṁ. | T: (none)
+
+## snp1.12
+snp1.12:1.1 | S: Peril stems from intimacy, | T: Danger is born from intimacy,
+snp1.12:1.2 | S: dust comes from an abode. | T: a home gives birth to dust.
+snp1.12:1.3 | S: Freedom from abode and intimacy: | T: Free from a home, free from intimacy:
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+snp1.12:1.4 | S: that is the sage’s vision. | T: Such is the vision of the sage.
+snp1.12:2.1 | S: Having cut down what’s grown, <j>they wouldn’t replant, | T: Who, destroying what’s born, wouldn’t plant (again)
+snp1.12:2.2 | S: nor would they nurture what’s growing. | T: or nourish what’s taking birth:
+snp1.12:2.3 | S: That’s who they call a sage wandering alone, | T: They call him the wandering, solitary sage.
+snp1.12:2.4 | S: the great seer has seen the state of peace. | T: He, the great seer has seen the state of peace.
+snp1.12:3.1 | S: Having appraised the fields and measured the seeds, | T: Considering the ground, crushing the seed,
+snp1.12:3.2 | S: they wouldn’t nurture them with moisture. | T: he wouldn’t nourish the sap
+snp1.12:3.3 | S: Truly that sage who sees the ending of rebirth | T: —truly a sage— seer of the ending of birth,
+snp1.12:3.4 | S: has left speculation behind and is beyond reckoning. | T: abandoning conjecture, he cannot be classified.
+snp1.12:4.1 | S: Understanding all the planes of rebirth, | T: Knowing all dwellings,
+snp1.12:4.2 | S: not wanting a single one of them; | T: not longing for any one anywhere
+snp1.12:4.3 | S: truly that sage freed of greed | T: —truly a sage— with no coveting, without greed,
+snp1.12:4.4 | S: need not swim, <j>for they have reached the far shore. | T: he does not build, for he has gone beyond.
+snp1.12:5.1 | S: The vanquisher of all, knower of all, so very intelligent, | T: Conquering all knowing all, wise.
+snp1.12:5.2 | S: unsullied in the midst of all things, | T: With regard to all things: unsmeared.
+snp1.12:5.3 | S: has given up all, freed in the ending of craving: | T: Abandoning all, in the ending of craving, released:
+snp1.12:5.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:6.1 | S: Strong in wisdom, <j>with precepts and observances intact, | T: With discernment his strength, well-endowed in habit & practice,
+snp1.12:6.2 | S: serene, loving absorption, mindful, | T: centered, delighting in jhāna, mindful,
+snp1.12:6.3 | S: released from chains, kind, undefiled: | T: released from attachments, free from rigidity, free from effluent:
+snp1.12:6.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:7.1 | S: The diligent sage wandering alone, | T: The solitary wandering sage, uncomplacent,
+snp1.12:7.2 | S: is unshaken by blame and praise— | T: unshaken by praise or blame—
+snp1.12:7.3 | S: like a lion not startled by sounds, | T: unstartled, like a lion at sounds,
+snp1.12:7.4 | S: like wind not caught in a net, | T: uncaught, like the wind in a net,
+snp1.12:7.5 | S: like water not sticking to a lotus. | T: unsmeared, like a lotus in water,
+snp1.12:7.6 | S: Leader of others, not by others led: | T: leader of others, by others unled:
+snp1.12:7.7 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:8.1 | S: Steady as a post in a bathing-place | T: Who becomes like the pillar at a bathing ford,
+snp1.12:8.2 | S: when others speak endlessly against them, | T: when others speak in extremes;
+snp1.12:8.3 | S: freed of greed, with senses stilled: | T: he, without passion, his senses well-centered:
+snp1.12:8.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:9.1 | S: Steadfast, straight as a spindle, | T: Truly poised, straight as a shuttle,
+snp1.12:9.2 | S: horrified by wicked deeds, | T: he loathes evil actions.
+snp1.12:9.3 | S: discerning the just and the unjust: | T: Pondering what is consonant & discordant:
+snp1.12:9.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:10.1 | S: Restrained, they do no evil, | T: Restrained in mind, he does no evil.
+snp1.12:10.2 | S: young or middle-aged, the sage is self-controlled. | T: Young & middle-aged, the sage self-controlled,
+snp1.12:10.3 | S: Irreproachable, he does not insult anyone: | T: never angered, he angers none:
+snp1.12:10.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:11.1 | S: When one who lives on charity receives alms, | T: From the best the middling the leftovers he receives alms. Sustaining himself on what others give,
+snp1.12:11.2 | S: from the top, the middle, or the leftovers, | T: (none)
+snp1.12:11.3 | S: they think it unworthy to praise or put down: | T: neither flattering nor speaking disparagement:
+snp1.12:11.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:12.1 | S: The sage lives refraining from sex, | T: The wandering sage abstaining from sex,
+snp1.12:12.2 | S: even when young is not tied down, | T: in youth bound by no one,
+snp1.12:12.3 | S: refraining from indulgence and negligence, freed: | T: abstaining from intoxication complacency, totally apart:
+snp1.12:12.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:13.1 | S: Understanding the world, <j>the seer of the ultimate goal, | T: Knowing the world, seeing the highest goal,
+snp1.12:13.2 | S: the unaffected one, <j>having crossed the flood and the ocean, | T: crossing the ocean, the flood, —Such—
+snp1.12:13.3 | S: has cut the ties, unattached and undefiled: | T: his chains broken, unattached, without effluent:
+snp1.12:13.4 | S: that’s who the attentive know as a sage. | T: The enlightened call him a sage.
+snp1.12:14.1 | S: The two are not the same, <j>far apart in lifestyle and conduct— | T: These two are different, they dwell far apart:
+snp1.12:14.2 | S: the householder providing for a wife, <j>and the selfless one true to their vows. | T: the householder supporting a wife and the unselfish one, of good practices.
+snp1.12:14.3 | S: The unrestrained householder kills other creatures, | T: Slaying other beings, the householder is unrestrained.
+snp1.12:14.4 | S: while the restrained sage <j>always protects living creatures. | T: Constantly the sage protects other beings, is controlled.
+snp1.12:15.1 | S: As the crested blue-necked peacock <j>flying through the sky | T: Just as the crested, blue-necked peacock, when flying,
+snp1.12:15.2 | S: never approaches the speed of the swan, | T: never matches the wild goose in speed,
+snp1.12:15.3 | S: so the householder cannot compete <j>with the mendicant, | T: even so the householder never keeps up with the monk—
+snp1.12:15.4 | S: the sage meditating secluded in the woods. | T: the sage secluded in the forest, doing jhāna.
+snp1.12:15.5 | P: Munisuttaṁ dvādasamaṁ. | T: (none)
+snp1.12:15.6 | P: Uragavaggo paṭhamo. | T: (none)
+snp1.12:16.0 | P: Tassuddānaṁ | T: (none)
+snp1.12:16.1 | P: Urago dhaniyo ceva, | T: (none)
+snp1.12:16.2 | P: visāṇañca tathā kasi; | T: (none)
+snp1.12:16.3 | P: Cundo parābhavo ceva, | T: (none)
+snp1.12:16.4 | P: vasalo mettabhāvanā. | T: (none)
+snp1.12:17.1 | P: Sātāgiro āḷavako, | T: (none)
+snp1.12:17.2 | P: Vijayo ca tathā muni; | T: (none)
+snp1.12:17.3 | P: Dvādasetāni suttāni, | T: (none)
+snp1.12:17.4 | P: Uragavaggoti vuccatīti. | T: (none)
+
+## sn55.26
+sn55.26:1.1 | S: At Sāvatthī. | T: At Sāvatthī.
+sn55.26:1.2 | S: Now at that time the householder Anāthapiṇḍika was sick, suffering, gravely ill. | T: Now, on that occasion Anāthapiṇḍika the householder was diseased, in pain, severely ill.
+sn55.26:1.3 | S: Then he addressed a man, | T: Then he said to one of his men,
+sn55.26:1.4 | S: “Please, my man, go to Venerable Sāriputta, and in my name bow with your head to his feet. Say to him: | T: “Come, my good man. Go to Ven. Sāriputta and, on arrival, pay homage to his feet with your head in my name and say
+sn55.26:1.5 | S: ‘Sir, the householder Anāthapiṇḍika is sick, suffering, gravely ill. | T: ‘Venerable sir, Anāthapiṇḍika the householder is diseased, in pain, severely ill.
+sn55.26:1.6 | S: He bows with his head to your feet.’ | T: He pays homage with his head to your feet.’
+sn55.26:1.7 | S: And then say: | T: Then say:
+sn55.26:1.8 | S: ‘Sir, please visit him at his home out of sympathy.’” | T: ‘It would be good if Ven. Sāriputta would visit Anāthapiṇḍika’s home, out of sympathy for him.’”
+sn55.26:2.1 | S: “Yes, sir,” that man replied. He did as Anāthapiṇḍika asked. | T: Responding, “As you say, lord,” to Anāthapiṇḍika the householder, the man went to Ven. Sāriputta and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said,
+sn55.26:3.1 | P: “Anāthapiṇḍiko, bhante, gahapati ābādhiko dukkhito bāḷhagilāno. | T: “Venerable sir, Anāthapiṇḍika the householder is diseased, in pain, severely ill.
+sn55.26:3.2 | P: So āyasmato sāriputtassa pāde sirasā vandati. | T: He pays homage with his head to your feet.”
+sn55.26:3.3 | P: Evañca vadati: | T: Then he said,
+sn55.26:3.4 | P: ‘sādhu kira, bhante, āyasmā sāriputto yena anāthapiṇḍikassa gahapatissa nivesanaṁ tenupasaṅkamatu anukampaṁ upādāyā’”ti. | T: “It would be good if Ven. Sāriputta would visit Anāthapiṇḍika’s home, out of sympathy for him.”
+sn55.26:3.5 | S: Sāriputta consented with silence. | T: Ven. Sāriputta acquiesced with silence.
+sn55.26:4.1 | S: Then Venerable Sāriputta robed up in the morning and, taking his bowl and robe, went with Venerable Ānanda as his second monk to Anāthapiṇḍika’s home. He sat down on the seat spread out and said to Anāthapiṇḍika, | T: Then early in the morning, Ven. Sāriputta—having adjusted his under robe and carrying his bowl & outer robe—went to Anāthapiṇḍika’s home with Ven. Ānanda as his companion. On arrival, he sat down on a seat made ready. Seated, he said to Anāthapiṇḍika:
+sn55.26:4.2 | S: “I hope you’re keeping well, householder; I hope you’re all right. I hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: “I hope you are getting better, householder. I hope you are comfortable. I hope that your pains are lessening and not increasing. I hope that there are signs of their lessening, and not of their increasing.”
+sn55.26:4.3 | S: “Sir, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: “I am not getting better, venerable sir. I am not comfortable. My extreme pains are increasing, not lessening. There are signs of their increasing, and not of their lessening.”
+sn55.26:5.1 | S: “Householder, you don’t have the distrust in the Buddha that causes an unlearned ordinary person to be reborn—when their body breaks up, after death—in a place of loss, a bad place, the underworld, hell. | T: “Householder, you don’t have the type of suspicion of the Buddha endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:5.2 | S: And you have experiential confidence in the Buddha: | T: You have verified confidence in the Buddha:
+sn55.26:5.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+sn55.26:5.4 | S: Seeing in yourself that experiential confidence in the Buddha, that pain may die down on the spot. | T: As you see that verified confidence in the Buddha in yourself, your pains may immediately grow calm.
+sn55.26:6.1 | S: You don’t have the distrust in the teaching that causes an unlearned ordinary person to be reborn—when their body breaks up, after death—in a place of loss, a bad place, the underworld, hell. | T: “Householder, you don’t have the type of suspicion of the Dhamma endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:6.2 | S: And you have experiential confidence in the teaching: | T: You have verified confidence in the Dhamma:
+sn55.26:6.3 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.’
+sn55.26:6.4 | S: Seeing in yourself that experiential confidence in the teaching, that pain may die down on the spot. | T: As you see that verified confidence in the Dhamma in yourself, your pains may immediately grow calm.
+sn55.26:7.1 | S: You don’t have the distrust in the Saṅgha that causes an unlearned ordinary person to be reborn—when their body breaks up, after death—in a place of loss, a bad place, the underworld, hell. | T: “Householder, you don’t have the type of suspicion of the Saṅgha endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:7.2 | S: And you have experiential confidence in the Saṅgha: | T: You have verified confidence in the Saṅgha:
+sn55.26:7.3 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This Saṅgha of the Buddha’s disciples is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, and worthy of veneration with cupped palms. It is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four types of noble disciples when taken as pairs, the eight when taken as individual types—they are the Saṅgha of the Blessed One’s disciples: worthy of gifts, worthy of hospitality, worthy of offerings, worthy of respect, the incomparable field of merit for the world.’
+sn55.26:7.4 | S: Seeing in yourself that experiential confidence in the Saṅgha, that pain may die down on the spot. | T: As you see that verified confidence in the Saṅgha in yourself, your pains may immediately grow calm.
+sn55.26:8.1 | S: You don’t have the unethical conduct that causes an unlearned ordinary person to be reborn—when their body breaks up, after death—in a place of loss, a bad place, the underworld, hell. | T: “Householder, you don’t have the type of poor virtue endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:8.2 | S: Your ethical conduct is loved by the noble ones, unbroken, impeccable, spotless, and unmarred, liberating, praised by sensible people, not mistaken, and leading to immersion. | T: You have virtues appealing to the noble ones: untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, leading to concentration.
+sn55.26:8.3 | S: Seeing in yourself that ethical conduct loved by the noble ones, that pain may die down on the spot. | T: As you see those virtues appealing to the noble ones in yourself, your pains may immediately grow calm.
+sn55.26:9.1 | S: You don’t have the wrong view that causes an unlearned ordinary person to be reborn—when their body breaks up, after death—in a place of loss, a bad place, the underworld, hell. | T: “Householder, you don’t have the type of wrong view endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:9.2 | S: You have right view. | T: You have right view.
+sn55.26:9.3 | S: Seeing in yourself that right view, that pain may die down on the spot. | T: As you see that right view in yourself, your pains may immediately grow calm.
+sn55.26:10.1 | S: You don’t have the wrong purpose … | T: “Householder, you don’t have the type of wrong resolve…
+sn55.26:10.2 | P: Atthi ca kho te, gahapati, sammāsaṅkappo. | T: (none)
+sn55.26:10.3 | P: Tañca pana te sammāsaṅkappaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:11.1 | S: wrong speech … | T: wrong speech…
+sn55.26:11.2 | P: Atthi ca kho te, gahapati, sammāvācā. | T: (none)
+sn55.26:11.3 | P: Tañca pana te sammāvācaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:12.1 | S: wrong action … | T: wrong action…
+sn55.26:12.2 | P: Atthi ca kho te, gahapati, sammākammanto. | T: (none)
+sn55.26:12.3 | P: Tañca pana te sammākammantaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:13.1 | S: wrong livelihood … | T: wrong livelihood…
+sn55.26:13.2 | P: Atthi ca kho te, gahapati, sammāājīvo. | T: (none)
+sn55.26:13.3 | P: Tañca pana te sammāājīvaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:14.1 | S: wrong effort … | T: wrong effort…
+sn55.26:14.2 | P: Atthi ca kho te, gahapati, sammāvāyāmo. | T: (none)
+sn55.26:14.3 | P: Tañca pana te sammāvāyāmaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:15.1 | S: wrong mindfulness … | T: wrong mindfulness…
+sn55.26:15.2 | P: Atthi ca kho te, gahapati, sammāsati. | T: (none)
+sn55.26:15.3 | P: Tañca pana te sammāsatiṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:16.1 | S: wrong immersion … | T: wrong concentration…
+sn55.26:16.2 | P: Atthi ca kho te, gahapati, sammāsamādhi. | T: (none)
+sn55.26:16.3 | P: Tañca pana te sammāsamādhiṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:17.1 | S: wrong knowledge … | T: wrong knowledge…
+sn55.26:17.2 | P: Atthi ca kho te, gahapati, sammāñāṇaṁ. | T: (none)
+sn55.26:17.3 | P: Tañca pana te sammāñāṇaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. | T: (none)
+sn55.26:18.1 | S: wrong freedom … | T: wrong release endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell.
+sn55.26:18.2 | S: You have right freedom. | T: You have right release.
+sn55.26:18.3 | S: Seeing in yourself that right freedom, that pain may die down on the spot.” | T: As you see that right release in yourself, your pains may immediately grow calm.”
+sn55.26:19.1 | S: And then Anāthapiṇḍika’s pain died down on the spot. | T: Then Anāthapiṇḍika’s pains immediately grew calm.
+sn55.26:19.2 | S: Then he served Sāriputta and Ānanda from his own dish. | T: So he served Ven. Sāriputta & Ven. Ānanda from his very own dish.
+sn55.26:19.3 | S: When Sāriputta had eaten and washed his hand and bowl, Anāthapiṇḍika took a low seat and sat to one side. | T: Then, when Ven. Sāriputta had finished his meal and had rinsed his bowl & hands, Anāthapiṇḍika the householder, taking a low seat, sat to one side.
+sn55.26:19.4 | S: Venerable Sāriputta expressed his appreciation to him with these verses. | T: As he was sitting there, Ven. Sāriputta gave his approval with these verses:
+sn55.26:20.1 | S: “Whoever has faith in the Realized One, | T: One whose conviction in the Tathāgata
+sn55.26:20.2 | S: unwavering and well grounded; | T: is well-established, unshakable;
+sn55.26:20.3 | S: whose ethical conduct is good, | T: whose virtue is admirable,
+sn55.26:20.4 | S: praised and loved by the noble ones; | T: appealing to the noble ones, praised;
+sn55.26:21.1 | S: who has confidence in the Saṅgha, | T: who has confidence in the Saṅgha,
+sn55.26:21.2 | S: and correct view: | T: & vision made straight:
+sn55.26:21.3 | S: they’re said to be prosperous, | T: “Not poor,” they say of him.
+sn55.26:21.4 | S: their life is not in vain. | T: Not in vain his life.
+sn55.26:22.1 | S: So let the wise devote themselves | T: (none)
+sn55.26:22.2 | S: to faith, ethical behaviour, | T: So conviction & virtue,
+sn55.26:22.3 | S: confidence, and insight into the teaching, | T: confidence & Dhamma-vision should be cultivated by the intelligent,
+sn55.26:22.4 | S: remembering the instructions of the Buddhas.” | T: remembering the Buddhas’ teachings.
+sn55.26:23.1 | S: After expressing his appreciation to Anāthapiṇḍika with these verses, Sāriputta rose from his seat and left. | T: Then Ven. Sāriputta, having given his approval to Anāthapiṇḍika the householder, got up from his seat and left.
+sn55.26:24.1 | S: Then Ānanda went up to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: Then Ven. Ānanda went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him,
+sn55.26:24.2 | S: “So, Ānanda, where are you coming from in the middle of the day?” | T: “Well, now, Ānanda, where are you coming from in the middle of the day?”
+sn55.26:24.3 | S: “Sir, Venerable Sāriputta advised the householder Anāthapiṇḍika in this way and that.” | T: “Lord, Anāthapiṇḍika the householder was instructed by Ven. Sāriputta with this & this instruction.”
+sn55.26:24.4 | S: “Sāriputta is astute, Ānanda. | T: “Sāriputta is wise, Ānanda,
+sn55.26:24.5 | S: He has great wisdom, since he can analyze the four factors of stream-entry in ten respects.” | T: & greatly discerning, in that he analyzes the four factors of stream entry into ten implications.”
+sn55.26:24.6 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found one clear boundary error: the subject of the return journey starts on the preceding line. I’ll record that correction.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-054.findings.tmp <<'EOF'
+sn6.14:8.2 starts: Sikhī the Blessed One, worthy & fully self-awakened,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+1 line reported.
+tokens used
+26,024
+1 line reported.

@@ -1,0 +1,438 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd99-445c-7200-82da-1f34b8fd3a41
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch and report only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn42.11
+sn42.11:1.1 | S: At one time the Buddha was staying in the land of the Mallas, near the Mallian town named Uruvelakappa. | T: On one occasion the Blessed One was staying among the Mallans in a Mallan town named Uruvelakappa.
+sn42.11:1.2 | S: Then Bhadraka the village chief went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then Gandhabhaka the headman went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One:
+sn42.11:1.3 | S: “Please, sir, let the Blessed One teach me the origin and disappearance of suffering.” | T: “It would be good, lord, if the Blessed One would teach me the origination & ending of stress.”
+sn42.11:1.4 | S: “Chief, if I were to teach you about the origin and disappearance of suffering in connection with the past, saying | T: “Headman, if I were to teach you the origination & ending of stress with reference to the past, saying,
+sn42.11:1.5 | S: ‘this is how it was in the past,’ you might have doubts or uncertainties about that. | T: ‘Thus it was in the past,’ you would be doubtful and perplexed.
+sn42.11:1.6 | S: If I were to teach you about the origin and disappearance of suffering in connection with the future, saying | T: If I were to teach you the origination & ending of stress with reference to the future, saying,
+sn42.11:1.7 | S: ‘this is how it will be in the future,’ you might have doubts or uncertainties about that. | T: ‘Thus it will be in the future,’ you would be doubtful and perplexed.
+sn42.11:1.8 | S: Rather, chief, I will teach you about the origin and disappearance of suffering as I am sitting right here and you are sitting right there. | T: So instead, I—sitting right here—will teach you sitting right there the origination & ending of stress.
+sn42.11:1.9 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+sn42.11:1.10 | S: “Yes, sir,” Bhadraka replied. | T: “As you say, lord,” Gandhabhaka the headman responded to him.
+sn42.11:1.11 | S: The Buddha said this: | T: The Blessed One said:
+sn42.11:2.1 | S: “What do you think, chief? | T: “Now what do you think, headman?
+sn42.11:2.2 | S: Are there any people here in Uruvelakappa who, if they were executed, imprisoned, fined, or condemned, it would cause you sorrow, lamentation, pain, sadness, and distress?” | T: Are there any people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause sorrow, lamentation, pain, distress, or despair to arise in you?”
+sn42.11:2.3 | S: “There are, sir.” | T: “Yes, lord, there are people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause sorrow, lamentation, pain, distress, or despair to arise in me.”
+sn42.11:2.4 | S: “But are there any people here in Uruvelakappa who, if they were executed, imprisoned, fined, or condemned, it would not cause you sorrow, lamentation, pain, sadness, and distress?” | T: “And are there any people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause no sorrow, lamentation, pain, distress, or despair to arise in you?”
+sn42.11:2.5 | S: “There are, sir.” | T: “Yes, lord, there are people in Uruvelakappa who, if they were murdered or imprisoned or fined or censured, would cause no sorrow, lamentation, pain, distress, or despair to arise in me.”
+sn42.11:2.6 | S: “What’s the cause, chief, what’s the reason why, if this was to happen to some people it could cause you sorrow, while if it happens to others it does not?” | T: “Now what is the cause, what is the reason, why the murder, imprisonment, fining, or censure of some of the people in Uruvelakappa would cause you sorrow, lamentation, pain, distress, or despair, whereas the murder, imprisonment, fining, or censure of others would cause you no sorrow, lamentation, pain, distress, or despair?“
+sn42.11:2.7 | S: “The people regarding whom this would give rise to sorrow are those I have desire and passion. | T: “Those people in Uruvelakappa whose murder, imprisonment, fining, or censure would cause me sorrow, lamentation, pain, distress, or despair are those for whom I feel desire-passion.
+sn42.11:2.8 | S: The people regarding whom this would not give rise to sorrow are those I don’t have desire and passion.” | T: Those people in Uruvelakappa whose murder, imprisonment, fining, or censure would cause me no sorrow, lamentation, pain, distress, or despair are those for whom I feel no desire-passion.”
+sn42.11:2.9 | S: “With this present phenomenon that you have seen, understood, immediately attained, and fathomed, you can apply the same method to the past and future: | T: “Now, headman, from what you have realized, fathomed, attained right now in the present, without regard to time, you may draw an inference with regard to the past and future:
+sn42.11:2.10 | S: ‘All the suffering that arose in the past was rooted and sourced in desire. | T: ‘Whatever stress, in arising, arose for me in the past, all of it had desire as its root, had desire as its cause—
+sn42.11:2.11 | S: For desire is the root of suffering. | T: for desire is the cause of stress.
+sn42.11:2.12 | S: All the suffering that will arise in the future will be rooted and sourced in desire. | T: And whatever stress, in arising, will arise for me in the future, all of it will have desire as the root, will have desire as its cause—
+sn42.11:2.13 | S: For desire is the root of suffering.’” | T: for desire is the cause of stress.’”
+sn42.11:2.14 | S: “It’s incredible, sir, it’s amazing! | T: “Amazing, lord! Astounding!
+sn42.11:2.15 | S: How well said this was by the Buddha! | T: How well the Blessed One has put it:
+sn42.11:2.16 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: ‘Whatever stress, in arising, arose for me in the past, all of it had desire as its root, had desire as its cause—for desire is the cause of stress. And whatever stress, in arising, will arise for me in the future, all of it will have desire as the root, will have desire as its cause—
+sn42.11:2.17 | S: For desire is the root of suffering.’ | T: for desire is the cause of stress.’
+sn42.11:2.18 | S: I have a boy called Ciravāsi, who resides in a house away from here. | T: I have a son, lord, named Ciravāsi, who lives far away from here.
+sn42.11:2.19 | S: I rise early and dispatch someone, saying: | T: When I get up in the morning, I send a man, saying,
+sn42.11:2.20 | S: ‘Go, lad, and check on my boy Ciravāsi.’ | T: ‘Go, learn how Ciravāsi is doing.’
+sn42.11:2.21 | S: Until they get back I worry: | T: And as long as that man has not returned, I am simply beside myself, (thinking,)
+sn42.11:2.22 | S: ‘I hope nothing’s wrong with Ciravāsi!’” | T: ‘Don’t let Ciravāsi be sick!’”
+sn42.11:3.1 | S: “What do you think, chief? | T: “Now, what do you think, headman?
+sn42.11:3.2 | S: If Ciravāsi was executed, imprisoned, fined, or condemned, would it cause you sorrow, lamentation, pain, sadness, and distress?” | T: If Ciravāsi were to be murdered or imprisoned or fined or censured, would you feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:3.3 | S: “How could it not, sir?” | T: “Lord, if my son Ciravāsi were to be murdered or imprisoned or fined or censured, my very life would be altered. So how could I not feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:3.4 | S: “This too is a way to understand: | T: “Thus, headman, by this line of reasoning it may be realized how stress, when arising, arises:
+sn42.11:3.5 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: All of it has desire as its root, has desire as its cause—
+sn42.11:3.6 | S: For desire is the root of suffering.’ | T: for desire is the cause of stress.”
+sn42.11:4.1 | S: What do you think, chief? | T: “Now what do you think, headman?
+sn42.11:4.2 | S: Before you’d seen or heard of Ciravāsi’s mother, did you have any desire or passion or fondness for her?” | T: Before you had seen or heard of Ciravāsi’s mother, did you feel desire, passion, or love for her?”
+sn42.11:4.3 | S: “No, sir.” | T: “No, lord.”
+sn42.11:4.4 | S: “Then was it because you saw or heard of her that you had | T: “And after you had seen or heard of Ciravāsi’s mother,
+sn42.11:4.5 | S: desire or passion or fondness for her?” | T: did you feel desire, passion, or love for her?”
+sn42.11:4.6 | S: “Yes, sir.” | T: “Yes, lord.”
+sn42.11:5.1 | S: “What do you think, chief? | T: “What do you think?
+sn42.11:5.2 | S: If Ciravāsi’s mother was executed, imprisoned, fined, or condemned, would it cause you sorrow, lamentation, pain, sadness, and distress?” | T: If Ciravāsi’s mother were to be murdered or imprisoned or fined or censured, would you feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:5.3 | S: “How could it not, sir?” | T: “Lord, if Ciravāsi’s mother were to be murdered or imprisoned or fined or censured, my very life would be altered. So how could I not feel sorrow, lamentation, pain, distress, & despair?”
+sn42.11:5.4 | S: “This too is a way to understand: | T: “Thus, headman, by this line of reasoning it may be realized how stress, when arising, arises:
+sn42.11:5.5 | S: ‘All the suffering that arises is rooted and sourced in desire. | T: All of it has desire as its root, has desire as its cause—for desire is the cause of stress.”
+sn42.11:5.6 | S: For desire is the root of suffering.’” | T: (none)
+sn42.11:5.7 | P: Ekādasamaṁ. | T: (none)
+
+## sn55.54
+sn55.54:1.1 | S: At one time the Buddha was staying in the land of the Sakyans, near Kapilavatthu in the Banyan Tree Monastery. | T: On one occasion the Blessed One was staying among the Sakyans at Kapilavatthu in the Banyan Park.
+sn55.54:1.2 | S: At that time several mendicants were making a robe for the Buddha, thinking that | T: Now at that time many monks were at work making robes for the Blessed One, (thinking,)
+sn55.54:1.3 | S: when his robe was finished and the three months of the rains residence had passed the Buddha would set out wandering. | T: “When the robes are finished, at the end of the three months, the Blessed One will set out wandering.”
+sn55.54:1.4 | S: Mahānāma the Sakyan heard about this. | T: Mahānāma the Sakyan heard that
+sn55.54:1.5 | P: “sambahulā kira bhikkhū bhagavato cīvarakammaṁ karonti: | T: many monks were at work making robes for the Blessed One, (thinking,)
+sn55.54:1.6 | P: ‘niṭṭhitacīvaro bhagavā temāsaccayena cārikaṁ pakkamissatī’”ti. | T: “When the robes are finished, at the end of the three months, the Blessed One will set out wandering.”
+sn55.54:1.7 | S: Then he went up to the Buddha, bowed, sat down to one side, and told him that he had heard that the Buddha was leaving. He added, | T: So he approached the Blessed One and, on arrival, having bowed down, sat to one side. As he was sitting there he said to the Blessed One:
+sn55.54:1.8 | P: “sutametaṁ, bhante: | T: “I have heard that
+sn55.54:1.9 | P: ‘sambahulā kira bhikkhū bhagavato cīvarakammaṁ karonti— | T: many monks are at work making robes for the Blessed One, (thinking,)
+sn55.54:1.10 | P: niṭṭhitacīvaro bhagavā temāsaccayena cārikaṁ pakkamissatī’ti. | T: ‘When the robes are finished, at the end of the three months, the Blessed One will set out wandering.’
+sn55.54:1.11 | S: “Sir, I haven’t heard and learned it in the presence of the Buddha | T: But I haven’t heard in the Blessed One’s presence, haven’t learned in the Blessed One’s presence,
+sn55.54:1.12 | S: how a wise lay follower should advise another wise lay follower who is sick, suffering, gravely ill.” | T: how a discerning lay follower who is diseased, in pain, severely ill should be instructed by (another) discerning lay follower.”
+sn55.54:2.1 | S: “Mahānāma, a wise lay follower should put at ease another wise lay follower who is sick, suffering, gravely ill with four consolations. | T: “Mahānāma, a discerning lay follower who is diseased, in pain, severely ill should be reassured by another discerning lay follower with four reassurances:
+sn55.54:2.2 | S: ‘Be at ease, sir. | T: ‘Be reassured, friend,
+sn55.54:2.3 | S: You have experiential confidence in the Buddha … | T: that you are endowed with verified confidence in the Awakened One: “Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.”
+sn55.54:2.4 | P: Assāsatāyasmā— | T: (none)
+sn55.54:2.5 | S: the teaching … | T: “‘Be reassured, friend, that you have verified confidence in the Dhamma: “The Dhamma is well taught by the Blessed One, to be seen here & now, timeless, inviting verification, pertinent, to be experienced by the observant for themselves.”
+sn55.54:2.6 | S: the Saṅgha … | T: “‘Be reassured, friend, that you have verified confidence in the Saṅgha: “The Saṅgha of the Blessed One's disciples who have practiced well… who have practiced straight-forwardly… who have practiced methodically… who have practiced masterfully—in other words, the four pairs, the eight individuals—they are the Saṅgha of the Blessed One's disciples: deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, the incomparable field of merit for the world.”
+sn55.54:2.7 | S: And you have the ethical conduct loved by the noble ones … leading to immersion.’ | T: “‘Be reassured, friend, that you have virtues that are appealing to the noble ones: untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, leading to concentration.’
+sn55.54:3.1 | S: When a wise lay follower has put at ease another wise lay follower who is sick, suffering, gravely ill with these four consolations, they should say: | T: “Mahānāma, when a discerning lay follower who is diseased, in pain, severely ill has been reassured by another discerning lay follower with these four reassurances, he should be asked:
+sn55.54:3.2 | S: ‘Are you concerned for your mother and father?’ | T: ‘Friend, are you concerned for your mother & father?’
+sn55.54:3.3 | S: If they reply, | T: If he should say,
+sn55.54:3.4 | S: ‘I am,’ they should say: | T: ‘I am concerned for my mother & father,’ he should be told,
+sn55.54:3.5 | S: ‘But sir, it’s your nature to die. | T: ‘You, my dear friend, are subject to death.
+sn55.54:3.6 | S: Whether or not you are concerned for your mother and father, | T: If you feel concern for your mother & father, you’re still going to die. If you don’t feel concern for your mother & father,
+sn55.54:3.7 | S: you will die anyway. | T: you’re still going to die.
+sn55.54:3.8 | S: It would be good to give up concern for your mother and father.’ | T: It would be good if you abandoned concern for your mother & father.’
+sn55.54:4.1 | S: If they reply, | T: “If he should say,
+sn55.54:4.2 | S: ‘I have given up concern for my mother and father,’ they should say: | T: ‘My concern for my mother & father has been abandoned,’ he should be asked,
+sn55.54:4.3 | S: ‘But are you concerned for your partners and children?’ | T: ‘Friend, are you concerned for your wife & children?’
+sn55.54:4.4 | S: If they reply, | T: If he should say,
+sn55.54:4.5 | S: ‘I am,’ they should say: | T: ‘I am concerned for my wife & children,’ he should be told,
+sn55.54:4.6 | S: ‘But sir, it’s your nature to die. | T: ‘You, my dear friend, are subject to death.
+sn55.54:4.7 | S: Whether or not you are concerned for your partners and children, | T: If you feel concern for your wife & children, you’re still going to die. If you don’t feel concern for your wife & children,
+sn55.54:4.8 | S: you will die anyway. | T: you’re still going to die.
+sn55.54:4.9 | S: It would be good to give up concern for your partners and children.’ | T: It would be good if you abandoned concern for your wife & children.’
+sn55.54:5.1 | S: If they reply, | T: “If he should say,
+sn55.54:5.2 | S: ‘I have given up concern for my partners and children,’ they should say: | T: ‘My concern for my wife & children has been abandoned,’ he should be asked,
+sn55.54:5.3 | S: ‘But are you concerned for the five kinds of human sensual stimulation?’ | T: ‘Friend, are you concerned for the five strings of human sensuality?’
+sn55.54:5.4 | S: If they reply, | T: If he should say,
+sn55.54:5.5 | S: ‘I am,’ they should say: | T: ‘I am concerned for the five strings of human sensuality,’ he should be told,
+sn55.54:5.6 | S: ‘Respectable sir, heavenly sensual pleasures are better than human sensual pleasures. | T: ‘Friend, divine sensual pleasures are more splendid & more refined than human sensual pleasures.
+sn55.54:5.7 | S: It would be good to turn your mind away from human sensual pleasures and focus it on the gods of the four great kings.’ | T: It would be good if, having raised your mind above human sensual pleasures, you set it on the Devas of the Four Great Kings.’
+sn55.54:6.1 | S: If they reply, | T: “If he should say,
+sn55.54:6.2 | S: ‘I have done so,’ they should say: | T: ‘My mind is raised above human sensual pleasures and is set on the Devas of the Four Great Kings,’ he should be told,
+sn55.54:6.3 | S: ‘Respectable sir, the gods of the thirty-three are better than the gods of the four great kings … | T: ‘Friend, the Devas of the Thirty-three are more splendid & more refined than the Devas of the Four Great Kings.
+sn55.54:6.4 | P: Sādhāyasmā, cātumahārājikehi devehi cittaṁ vuṭṭhāpetvā tāvatiṁsesu devesu cittaṁ adhimocehī’ti. | T: It would be good if, having raised your mind above the Devas of the Four Great Kings, you set it on the Devas of the Thirty-three.’
+sn55.54:7.1 | P: So ce evaṁ vadeyya: | T: “If he should say,
+sn55.54:7.2 | P: ‘cātumahārājikehi me devehi cittaṁ vuṭṭhitaṁ, tāvatiṁsesu devesu cittaṁ adhimocitan’ti, so evamassa vacanīyo: | T: ‘My mind is raised above the Devas of the Four Great Kings and is set on the Devas of the Thirty-three,’ he should be told,
+sn55.54:7.3 | S: Respectable sir, the gods of Yama … | T: ‘Friend, the Devas of the Hours are more splendid & more refined than the Devas of the Thirty-three. It would be good if, having raised your mind above the Devas of the Thirty-three, you set it on the Devas of the Hours.’ “If he should say, ‘My mind is raised above the Devas of the Thirty-three and is set on the Devas of the Hours,’ he should be told, ‘Friend,
+sn55.54:7.4 | S: the joyful gods … | T: the Contented Devas are more splendid & more refined than the Devas of the Hours…
+sn55.54:7.5 | S: the gods who love to create … | T: the Devas Delighting in Creation are more splendid & more refined than the Contented Devas…
+sn55.54:7.6 | S: the gods who control what is created by others … | T: the Devas [Muses?] Wielding Power over the Creations of Others are more splendid & more refined than the Devas Delighting in Creation…
+sn55.54:7.7 | S: the gods of the realm of divinity are better than the gods who control what is created by others. | T: the Brahmā world is more splendid and more refined than the Devas Wielding Power over the Creations of Others.
+sn55.54:7.8 | S: It would be good to turn your mind away from the gods who control what is created by others and focus it on the gods of the realm of divinity.’ | T: It would be good if, having raised your mind above the Devas Wielding Power over the Creations of Others, you set it on the Brahmā world.’
+sn55.54:7.9 | S: If they reply, | T: “If he should say,
+sn55.54:7.10 | S: ‘I have done so,’ they should say: | T: ‘My mind is raised above the Devas Wielding Power over the Creations of Others and is set on the Brahmā world,’ he should be told,
+sn55.54:7.11 | S: ‘Respectable sir, the realm of divinity is impermanent, not lasting, and included within substantial reality. | T: ‘Friend, even the Brahmā world is inconstant, impermanent, included in self-identity.
+sn55.54:7.12 | S: It would be good to turn your mind away from the realm of divinity and apply it to the cessation of substantial reality.’ | T: It would be good if, having raised your mind above the Brahmā world, you brought it to the cessation of self-identity.’
+sn55.54:8.1 | S: If they reply, | T: “If he should say,
+sn55.54:8.2 | S: ‘I have done so,’ | T: ‘My mind is raised above the Brahmā world and is brought to the cessation of self-identity,’
+sn55.54:8.3 | S: then there is no difference between a lay follower whose mind is freed in this way and a mendicant whose mind is freed from defilements; that is, | T: then, I tell you, Mahānāma, there is no difference—in terms of release—between the release of that lay follower whose mind is released and the release of a monk whose mind is released.”
+sn55.54:8.4 | S: between the freedom of one and the other.” | T: (none)
+sn55.54:8.5 | P: Catutthaṁ. | T: (none)
+
+## an3.61
+an3.61:1.1 | S: “Mendicants, these three sectarian tenets—as pursued, pressed, and grilled by the astute—when taken to their conclusion, end with inaction. | T: “Monks, there are these three sectarian guilds that—when cross-examined, pressed for reasons, & rebuked by wise people—even though they may explain otherwise, remain stuck in (a doctrine of) inaction.
+an3.61:1.2 | S: What three? | T: Which three?
+an3.61:1.3 | S: There are some ascetics and brahmins who have this doctrine and view: | T: “There are contemplatives & brahmans who hold this teaching, hold this view:
+an3.61:1.4 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of past deeds.’ | T: ‘Whatever a person experiences—pleasant, painful, or neither pleasant nor painful—is all caused by what was done in the past.’
+an3.61:1.5 | S: There are some ascetics and brahmins who have this doctrine and view: | T: There are contemplatives & brahmans who hold this teaching, hold this view:
+an3.61:1.6 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of God Almighty’s creation.’ | T: ‘Whatever a person experiences—pleasant, painful, or neither pleasant nor painful—is all caused by a supreme being’s act of creation.’
+an3.61:1.7 | S: There are some ascetics and brahmins who have this doctrine and view: | T: There are contemplatives & brahmans who hold this teaching, hold this view:
+an3.61:1.8 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—has no cause or reason.’ | T: ‘Whatever a person experiences—pleasant, painful, or neither pleasant nor painful—is all without cause & without condition.’
+an3.61:2.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: “Having approached the contemplatives & brahmans who hold that…
+an3.61:2.2 | S: everything an individual person experiences is because of past deeds, and I said to them: | T: ‘Whatever a person experiences… is all caused by what was done in the past,’ I said to them: ‘Is it true that you hold that… whatever a person experiences… is all caused by what was done in the past?’
+an3.61:2.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: (none)
+an3.61:2.4 | P: “yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ pubbekatahetū”’ti? | T: (none)
+an3.61:2.5 | S: And they answered, ‘Yes’. | T: Thus asked by me, they admitted, ‘Yes.’
+an3.61:2.6 | S: I said to them: | T: Then I said to them,
+an3.61:2.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all because of past deeds.’ | T: ‘Then in that case, a person is a killer of living beings because of what was done in the past. A person is a thief… uncelibate… a liar… a divisive speaker… a harsh speaker… an idle chatterer… greedy… malicious… a holder of wrong views because of what was done in the past.’
+an3.61:3.1 | S: Those who believe that past deeds are the most important thing have no enthusiasm or effort, no idea that there are things that should and should not be done. | T: When one falls back on what was done in the past as being essential, monks, there is no desire, no effort (at the thought), ‘This should be done. This shouldn’t be done.’
+an3.61:3.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: When one can’t pin down as a truth or reality what should & shouldn’t be done, one dwells bewildered & unprotected. One cannot righteously refer to oneself as a contemplative.
+an3.61:3.3 | S: This is my first legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my first righteous refutation of those contemplatives & brahmans who hold to such teachings, such views.
+an3.61:4.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: “Having approached the contemplatives & brahmans who hold that…
+an3.61:4.2 | S: everything that an individual person experiences is because of God Almighty’s creation, and I said to them: | T: ‘Whatever a person experiences… is all caused by a supreme being’s act of creation,’ I said to them: ‘Is it true that you hold that… whatever a person experiences… is all caused by a supreme being’s act of creation?’
+an3.61:4.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: (none)
+an3.61:4.4 | P: yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ issaranimmānahetū’ti? | T: (none)
+an3.61:4.5 | S: And they answered, ‘Yes’. | T: Thus asked by me, they admitted, ‘Yes.’
+an3.61:4.6 | S: I said to them: | T: Then I said to them,
+an3.61:4.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all because of God Almighty’s creation.’ | T: ‘Then in that case, a person is a killer of living beings because of a supreme being’s act of creation. A person is a thief… uncelibate… a liar… a divisive speaker… a harsh speaker… an idle chatterer… greedy… malicious… a holder of wrong views because of a supreme being’s act of creation.’
+an3.61:5.1 | S: Those who believe that God Almighty’s creative power is the most important thing have no enthusiasm, no effort, no idea that there are things that should and should not be done. | T: When one falls back on a supreme being’s act of creation as being essential, monks, there is no desire, no effort (at the thought), ‘This should be done. This shouldn’t be done.’
+an3.61:5.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: When one can’t pin down as a truth or reality what should & shouldn’t be done, one dwells bewildered & unprotected. One cannot righteously refer to oneself as a contemplative.
+an3.61:5.3 | S: This is my second legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my second righteous refutation of those contemplatives & brahmans who hold to such teachings, such views.
+an3.61:6.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: “Having approached the contemplatives & brahmans who hold that…
+an3.61:6.2 | S: everything that an individual person experiences has no cause or reason, and I said to them: | T: ‘Whatever a person experiences… is all without cause, without condition,’ I said to them:
+an3.61:6.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: ‘Is it true that you hold that…
+an3.61:6.4 | P: yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ ahetuappaccayā’ti? | T: whatever a person experiences… is all without cause, without condition?’
+an3.61:6.5 | S: And they answered, ‘Yes’. | T: Thus asked by me, they admitted, ‘Yes.’
+an3.61:6.6 | S: I said to them: | T: Then I said to them,
+an3.61:6.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all without cause or reason.’ | T: ‘Then in that case, a person is a killer of living beings without cause, without condition. A person is a thief… uncelibate… a liar… a divisive speaker… a harsh speaker… an idle chatterer… greedy… malicious… a holder of wrong views without cause, without condition.’
+an3.61:7.1 | S: Those who believe that the absence of cause or reason is the most important thing have no enthusiasm, no effort, no idea that there are things that should and should not be done. | T: When one falls back on lack of cause and lack of condition as being essential, monks, there is no desire, no effort (at the thought), ‘This should be done. This shouldn’t be done.’
+an3.61:7.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: When one can’t pin down as a truth or reality what should & shouldn’t be done, one dwells bewildered & unprotected. One cannot righteously refer to oneself as a contemplative.
+an3.61:7.3 | S: This is my third legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my third righteous refutation of those contemplatives & brahmans who hold to such teachings, such views.
+an3.61:8.1 | S: These are the three sectarian tenets—as pursued, pressed, and grilled by the astute—which, when taken to their conclusion, end with inaction. | T: “These are the three sectarian guilds that—when cross-examined, pressed for reasons, & rebuked by wise people—even though they may explain otherwise, remain stuck in inaction.
+an3.61:9.1 | S: But the Dhamma that I’ve taught is irrefutable, uncorrupted, beyond reproach, and not scorned by sensible ascetics and brahmins. | T: “But this Dhamma taught by me is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans.
+an3.61:9.2 | S: What is the Dhamma that I’ve taught? | T: And which Dhamma taught by me is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans?
+an3.61:9.3 | S: ‘These are the six elements’: this is the Dhamma I’ve taught … | T: ‘There are these six properties’ is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans.
+an3.61:9.4 | S: ‘These are the six fields of contact’: this is the Dhamma I’ve taught … | T: ‘There are these six media of sensory contact’ is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans.
+an3.61:9.5 | S: ‘These are the eighteen mental preoccupations’: this is the Dhamma I’ve taught … | T: ‘There are these eighteen explorations for the intellect’ is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans.
+an3.61:9.6 | S: ‘These are the four noble truths’: this is the Dhamma I’ve taught that is irrefutable, uncorrupted, beyond reproach, and is not scorned by sensible ascetics and brahmins. | T: ‘There are these four noble truths’ is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans.
+an3.61:10.1 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: “‘“There are these six properties” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:10.2 | S: That’s what I said, | T: Thus was it said.
+an3.61:10.3 | S: but why did I say it? | T: And in reference to what was it said?
+an3.61:10.4 | S: There are these six elements: | T: These are the six properties:
+an3.61:10.5 | S: the elements of earth, water, fire, air, space, and consciousness. | T: earth-property, liquid-property, fire-property, wind-property, space-property, consciousness-property.
+an3.61:10.6 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: ‘“There are these six properties” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:10.7 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+an3.61:11.1 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: “‘“There are these six media of sensory contact” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:11.2 | S: That’s what I said, | T: Thus was it said.
+an3.61:11.3 | S: but why did I say it? | T: And in reference to what was it said?
+an3.61:11.4 | S: There are these six fields of contact: | T: These are the six media of sensory contact:
+an3.61:11.5 | S: eye, ear, nose, tongue, body, and mind contact. | T: the eye as a medium of sensory contact, the ear as a medium of sensory contact, the nose as a medium of sensory contact, the tongue as a medium of sensory contact, the body as a medium of sensory contact, the intellect as a medium of sensory contact.
+an3.61:11.6 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: ‘“There are these six media of sensory contact” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:11.7 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+an3.61:12.1 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: “‘“There are these eighteen explorations for the intellect” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:12.2 | S: This is what I said, | T: Thus was it said.
+an3.61:12.3 | S: but why did I say it? | T: And in reference to what was it said?
+an3.61:12.4 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: Seeing a form via the eye, one explores a form that can act as the basis for happiness, one explores a form that can act as the basis for unhappiness, one explores a form that can act as the basis for equanimity.
+an3.61:12.5 | S: Hearing a sound with their ears … | T: Hearing a sound via the ear…
+an3.61:12.6 | S: Smelling an odor with their nose … | T: Smelling an aroma via the nose…
+an3.61:12.7 | S: Tasting a flavor with their tongue … | T: Tasting a flavor via the tongue…
+an3.61:12.8 | S: Encountering a touch with their body … | T: Touching a tactile sensation via the body…
+an3.61:12.9 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: Cognizing an idea via the intellect, one explores an idea that can act as the basis for happiness, one explores an idea that can act as the basis for unhappiness, one explores an idea that can act as the basis for equanimity.
+an3.61:12.10 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: ‘“There are these eighteen explorations for the intellect” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:12.11 | S: That’s what I said, and this is why I said it. | T: Thus was it said. And in reference to this was it said.
+an3.61:13.1 | S: ‘“These are the four noble truths”: this is the Dhamma I’ve taught …’ | T: “‘“There are these four noble truths” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:13.2 | S: That’s what I said, | T: Thus was it said.
+an3.61:13.3 | S: but why did I say it? | T: And in reference to what was it said?
+an3.61:13.4 | S: Supported by the six elements, an embryo is conceived. | T: “Sustained by/clinging to the six properties, there is an alighting of an embryo.
+an3.61:13.5 | S: When it is conceived, there are name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling. | T: There being an alighting, there is name-&-form. From name-&-form as a requisite condition come the six sense media. From the six sense media as a requisite condition comes contact. From contact as a requisite condition comes feeling.
+an3.61:13.6 | S: It’s for one who feels that I declare: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: To one experiencing feeling I declare, ‘This is stress.’ I declare, ‘This is the origination of stress.’ I declare, ‘This is the cessation of stress.’ I declare, ‘This is the path of practice leading to the cessation of stress.’
+an3.61:14.1 | S: And what is the noble truth of suffering? | T: “And what is the noble truth of stress?
+an3.61:14.2 | S: Rebirth is suffering; old age is suffering; death is suffering; sorrow, lamentation, pain, sadness, and distress are suffering; being coupled with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering. | T: Birth is stress, aging is stress, death is stress; sorrow, lamentation, pain, distress, & despair are stress; association with what is not loved is stress, separation from what is loved is stress, not getting what is wanted is stress. In short, the five clinging-aggregates are stress.
+an3.61:14.3 | S: This is called the noble truth of suffering. | T: This is called the noble truth of stress.
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.61:15.1 | S: And what is the noble truth of the origin of suffering? | T: “And what is the noble truth of the origination of stress?
+an3.61:15.2 | S: Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+an3.61:15.3 | S: Choices are a requirement for consciousness. | T: From fabrications as a requisite condition comes consciousness.
+an3.61:15.4 | S: Consciousness is a requirement for name and form. | T: From consciousness as a requisite condition comes name-&-form.
+an3.61:15.5 | S: Name and form are requirements for the six sense fields. | T: From name-&-form as a requisite condition come the six sense media.
+an3.61:15.6 | S: The six sense fields are requirements for contact. | T: From the six sense media as a requisite condition comes contact.
+an3.61:15.7 | S: Contact is a requirement for feeling. | T: From contact as a requisite condition comes feeling.
+an3.61:15.8 | S: Feeling is a requirement for craving. | T: From feeling as a requisite condition comes craving.
+an3.61:15.9 | S: Craving is a requirement for grasping. | T: From craving as a requisite condition comes clinging/sustenance.
+an3.61:15.10 | S: Grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+an3.61:15.11 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+an3.61:15.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then old age & death, sorrow, lamentation, pain, distress, & despair come into play.
+an3.61:15.13 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+an3.61:15.14 | S: This is called the noble truth of the origin of suffering. | T: This is called the noble truth of the origination of stress.
+an3.61:16.1 | S: And what is the noble truth of the cessation of suffering? | T: “And what is the noble truth of the cessation of stress?
+an3.61:16.2 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: From the remainderless fading & cessation of that very ignorance comes the cessation of fabrications.
+an3.61:16.3 | S: When choices cease, consciousness ceases. | T: From the cessation of fabrications comes the cessation of consciousness.
+an3.61:16.4 | S: When consciousness ceases, name and form cease. | T: From the cessation of consciousness comes the cessation of name-&-form.
+an3.61:16.5 | S: When name and form cease, the six sense fields cease. | T: From the cessation of name-&-form comes the cessation of the six sense media.
+an3.61:16.6 | S: When the six sense fields cease, contact ceases. | T: From the cessation of the six sense media comes the cessation of contact.
+an3.61:16.7 | S: When contact ceases, feeling ceases. | T: From the cessation of contact comes the cessation of feeling.
+an3.61:16.8 | S: When feeling ceases, craving ceases. | T: From the cessation of feeling comes the cessation of craving.
+an3.61:16.9 | S: When craving ceases, grasping ceases. | T: From the cessation of craving comes the cessation of clinging/sustenance.
+an3.61:16.10 | S: When grasping ceases, continued existence ceases. | T: From the cessation of clinging/sustenance comes the cessation of becoming.
+an3.61:16.11 | S: When continued existence ceases, rebirth ceases. | T: From the cessation of becoming comes the cessation of birth.
+an3.61:16.12 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: From the cessation of birth, then old age & death, sorrow, lamentation, pain, distress, & despair all cease.
+an3.61:16.13 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this entire mass of stress & suffering.
+an3.61:16.14 | S: This is called the noble truth of the cessation of suffering. | T: “This is called the noble truth of the cessation of stress.
+an3.61:17.1 | S: And what is the noble truth of the practice that leads to the cessation of suffering? | T: “And what is the noble truth of the path of practice leading to the cessation of stress?
+an3.61:17.2 | S: It is simply this noble eightfold path, that is: | T: Just this noble eightfold path:
+an3.61:17.3 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+an3.61:17.4 | S: This is called the noble truth of the practice that leads to the cessation of suffering. | T: This is called the noble truth of the path of practice leading to the cessation of stress.
+an3.61:17.5 | S: ‘“These are the four noble truths”: this is the Dhamma I’ve taught that is irrefutable, uncorrupted, beyond reproach, and is not scorned by sensible ascetics and brahmins.’ | T: “‘“There are these four noble truths” is a Dhamma taught by me that is unrefuted, undefiled, blameless, not faulted by knowledgeable contemplatives & brahmans’:
+an3.61:17.6 | S: That’s what I said, and this is why I said it.” | T: Thus was it said. And in reference to this was it said.”
+an3.61:17.7 | P: Paṭhamaṁ. | T: (none)
+
+## thag14.1
+thag14.1:1.1 | S: Since I’ve gone forth | T: Since I went forth
+thag14.1:1.2 | S: from the lay life to homelessness, | T: from home into homelessness,
+thag14.1:1.3 | S: I’ve not been aware of any thought | T: I haven’t known
+thag14.1:1.4 | S: that is ignoble and hateful. | T: an ignoble, aversive resolve.
+thag14.1:2.1 | S: “May these beings be killed! | T: “May these beings be destroyed,
+thag14.1:2.2 | S: May they be slaughtered! May they suffer!”— | T: be slaughtered, fall into pain”—
+thag14.1:2.3 | S: I’ve not been aware of any such thought | T: I’ve not known this resolve
+thag14.1:2.4 | S: in all this long while. | T: in this long, long time.
+thag14.1:3.1 | S: I have been aware of loving-kindness, | T: But I have known goodwill,
+thag14.1:3.2 | S: limitless and well-developed; | T: unlimited, fully developed,
+thag14.1:3.3 | S: gradually consolidated | T: nurtured step after step,
+thag14.1:3.4 | S: as it was taught by the Buddha. | T: as taught by the One Awake:
+thag14.1:4.1 | S: I’m friend and comrade to all, | T: to all, a friend; to all, a comrade;
+thag14.1:4.2 | S: sympathetic for all beings! | T: for all beings, sympathetic.
+thag14.1:4.3 | S: I develop a mind of love, | T: And I develop a mind of goodwill,
+thag14.1:4.4 | S: always delighting in harmlessness. | T: delighting in non-malevolence —always.
+thag14.1:5.1 | S: The unfaltering, the unshakable: | T: Unvanquished, unshaken,
+thag14.1:5.2 | S: I gladden that mind. | T: I gladden the mind.
+thag14.1:5.3 | S: I develop a divine meditation, | T: I develop the sublime abiding,
+thag14.1:5.4 | S: which reprobates do not cultivate. | T: not frequented by the lowly.
+thag14.1:6.1 | S: When in a meditation  free of placing the mind, | T: Attaining no-thinking,
+thag14.1:6.2 | S: a disciple of the Buddha | T: the disciple of the Rightly Self-awakened One
+thag14.1:6.3 | S: is at that moment blessed | T: is endowed
+thag14.1:6.4 | S: with noble silence. | T: with noble silence straightaway.
+thag14.1:7.1 | S: As a rocky mountain | T: As a mountain of rock
+thag14.1:7.2 | S: is unwavering and well grounded, | T: is unmoving, firmly established,
+thag14.1:7.3 | S: so when delusion ends, | T: so a monk, with the ending of delusion,
+thag14.1:7.4 | S: a monk, like a mountain, doesn’t tremble. | T: like a mountain, doesn’t quake.
+thag14.1:8.1 | S: To the man who has not a blemish, | T: To a person without blemish,
+thag14.1:8.2 | S: who is always seeking purity, | T: in constant quest of what’s pure,
+thag14.1:8.3 | S: even a hair-tip of evil | T: a hair-tip of evil
+thag14.1:8.4 | S: seems as big as a stormcloud. | T: seems a storm cloud.
+thag14.1:9.1 | S: As a frontier city | T: As a frontier fortress
+thag14.1:9.2 | S: is guarded inside and out, | T: is guarded within & without,
+thag14.1:9.3 | S: so you should ward yourselves— | T: you should safeguard yourselves.
+thag14.1:9.4 | S: don’t let the moment pass you by. | T: Don’t let the moment pass you by.
+thag14.1:10.1 | S: I don’t long for death; | T: I don’t delight in death,
+thag14.1:10.2 | S: I don’t long for life; | T: don’t delight in living.
+thag14.1:10.3 | S: I await my time, | T: I await my time
+thag14.1:10.4 | S: like a worker waiting for their wages. | T: like a worker his wage.
+thag14.1:11.1 | S: I don’t long for death; | T: I don’t delight in death,
+thag14.1:11.2 | S: I don’t long for life; | T: don’t delight in living.
+thag14.1:11.3 | S: I await my time, | T: I await my time,
+thag14.1:11.4 | S: aware and mindful. | T: mindful, alert.
+thag14.1:12.1 | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag14.1:12.2 | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, done;
+thag14.1:12.3 | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag14.1:12.4 | S: the leash to existence is eradicated. | T: the guide to becoming, uprooted.
+thag14.1:13.1 | S: I’ve attained the goal | T: And the goal for which I went forth
+thag14.1:13.2 | S: for the sake of which I went forth | T: (none)
+thag14.1:13.3 | S: from the lay life to homelessness— | T: from home life into homelessness I’ve reached:
+thag14.1:13.4 | S: the ending of all fetters. | T: the end of all fetters.
+thag14.1:14.1 | S: Persist with diligence: | T: Attain consummation through heedfulness:
+thag14.1:14.2 | S: this is my instruction. | T: That is my message.
+thag14.1:14.3 | S: Come, I’ll be fully quenched— | T: So then, I’m about to unbind.
+thag14.1:14.4 | S: I’m liberated in every way. | T: I’m released everywhere.
+thag14.1:14.5 | P: … Khadiravaniyarevato thero …. | T: (none)
+
+## sn22.101
+sn22.101:1.1 | S: At Sāvatthī. | T: Near Sāvatthī. There the Blessed One said,
+sn22.101:1.2 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “I tell you, monks: It is for one who knows & sees that there is the ending of effluents.
+sn22.101:1.3 | S: For one who knows and sees what? | T: For one who knows & sees what is there the ending of effluents?
+sn22.101:1.4 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its passing away.
+sn22.101:1.5 | S: Such is feeling … | T: Such is feeling.…
+sn22.101:1.6 | S: Such is perception … | T: Such is perception.…
+sn22.101:1.7 | S: Such are choices … | T: Such are fabrications.…
+sn22.101:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its passing away.’
+sn22.101:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: It is for one who knows & sees in this way that there is the ending of effluents.
+sn22.101:2.1 | S: When a mendicant is not committed to development, they might wish: | T: “Even though this wish may occur to a monk who dwells without devoting himself to development—
+sn22.101:2.2 | S: ‘If only my mind were freed from the defilements by not grasping!’ Even so, their mind is not freed from defilements by not grasping. | T: ‘O that my mind might be released from effluents through lack of clinging!’—still his mind is not released from effluents through lack of clinging.
+sn22.101:2.3 | S: Why is that? | T: Why is that?
+sn22.101:2.4 | S: You should say: ‘It’s because they’re undeveloped.’ | T: From lack of developing, it should be said.
+sn22.101:2.5 | S: Undeveloped in what? | T: Lack of developing what?
+sn22.101:2.6 | S: Undeveloped in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: The four establishing of mindfulness, the four right exertions, the four bases of power, the five faculties, the five strengths, the seven factors for awakening, the noble eightfold path.
+sn22.101:3.1 | S: Suppose there was a chicken with eight or ten or twelve eggs. | T: “Suppose a hen has eight, ten, or twelve eggs:
+sn22.101:3.2 | S: But she had not properly sat on them to keep them warm and incubated. | T: If she doesn’t cover them rightly, warm them rightly, or incubate them rightly,
+sn22.101:3.3 | S: That chicken might wish: | T: then even though this wish may occur to her—
+sn22.101:3.4 | S: ‘If only my chicks could break out of the eggshell with their claws and beak and hatch safely!’ | T: ‘O that my chicks might break through the egg shells with their spiked claws or beaks and hatch out safely!’—
+sn22.101:3.5 | S: But they can’t break out and hatch safely. | T: still it is not possible that the chicks will break through the egg shells with their spiked claws or beaks and hatch out safely.
+sn22.101:3.6 | S: Why is that? | T: Why is that?
+sn22.101:3.7 | S: Because that chicken with eight or ten or twelve eggs | T: Because the hen
+sn22.101:3.8 | S: has not properly sat on them to keep them warm and incubated. | T: has not covered them rightly, warmed them rightly, or incubated them rightly.
+sn22.101:3.9 | S: In the same way, when a mendicant is not committed to development, they might wish: | T: In the same way, even though this wish may occur to a monk who dwells without devoting himself to development—
+sn22.101:3.10 | S: ‘If only my mind were freed from the defilements by not grasping!’ Even so, their mind is not freed from defilements by not grasping. | T: ‘O that my mind might be released from effluents through lack of clinging!’—still his mind is not released from effluents through lack of clinging.
+sn22.101:3.11 | S: Why is that? | T: Why is that?
+sn22.101:3.12 | S: You should say: ‘It’s because they’re undeveloped.’ | T: From lack of developing, it should be said.
+sn22.101:3.13 | S: Undeveloped in what? | T: Lack of developing what?
+sn22.101:3.14 | S: Undeveloped in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: The four establishing of mindfulness, the four right exertions, the four bases of power, the five faculties, the five strengths, the seven factors for awakening, the noble eightfold path.
+sn22.101:4.1 | S: When a mendicant is committed to development, they might not wish: | T: “Even though this wish may not occur to a monk who dwells devoting himself to development—
+sn22.101:4.2 | S: ‘If only my mind were freed from the defilements by not grasping!’ Even so, their mind is freed from defilements by not grasping. | T: ‘O that my mind might be released from effluents through lack of clinging!’—still his mind is released from effluents through lack of clinging.
+sn22.101:4.3 | S: Why is that? | T: Why is that?
+sn22.101:4.4 | S: You should say: ‘It’s because they are developed.’ | T: From developing, it should be said.
+sn22.101:4.5 | S: Developed in what? | T: Developing what?
+sn22.101:4.6 | S: Developed in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: The four establishing of mindfulness, the four right exertions, the four bases of power, the five faculties, the five strengths, the seven factors for awakening, the noble eightfold path.
+sn22.101:5.1 | S: Suppose there was a chicken with eight or ten or twelve eggs. | T: “Suppose a hen has eight, ten, or twelve eggs
+sn22.101:5.2 | S: And she properly sat on them to keep them warm and incubated. | T: that she covers rightly, warms rightly, & incubates rightly:
+sn22.101:5.3 | S: That chicken might not wish: | T: Even though this wish may not occur to her—
+sn22.101:5.4 | S: ‘If only my chicks could break out of the eggshell with their claws and beak and hatch safely!’ | T: ‘O that my chicks might break through the egg shells with their spiked claws or beaks and hatch out safely!’—
+sn22.101:5.5 | S: But still they can break out and hatch safely. | T: still it is possible that the chicks will break through the egg shells with their spiked claws or beaks and hatch out safely.
+sn22.101:5.6 | S: Why is that? | T: Why is that?
+sn22.101:5.7 | S: Because that chicken with eight or ten or twelve eggs | T: Because the hen
+sn22.101:5.8 | S: properly sat on them to keep them warm and incubated. | T: has covered them, warmed them, & incubated them rightly.
+sn22.101:5.9 | S: In the same way, when a mendicant is committed to development, they might not wish: | T: In the same way, even though this wish may not occur to a monk who dwells devoting himself to development—
+sn22.101:5.10 | S: ‘If only my mind were freed from the defilements by not grasping!’ Even so, their mind is freed from defilements by not grasping. | T: ‘O that my mind might be released from effluents through lack of clinging!’—still his mind is released from effluents through lack of clinging.
+sn22.101:5.11 | S: Why is that? | T: Why is that?
+sn22.101:5.12 | S: You should say: ‘It’s because they are developed.’ | T: From developing, it should be said.
+sn22.101:5.13 | S: Developed in what? | T: Developing what?
+sn22.101:5.14 | S: Developed in the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: The four establishing of mindfulness, the four right exertions, the four bases of power, the five faculties, the five strengths, the seven factors for awakening, the noble eightfold path.
+sn22.101:6.1 | S: Suppose a mason or their apprentice sees the marks of his fingers and thumb on the handle of his adze. | T: “Just as when a carpenter or carpenter’s apprentice sees the marks of his fingers or thumb on the handle of his adze but does not know,
+sn22.101:6.2 | S: They don’t know | T: (none)
+sn22.101:6.3 | S: how much of the handle was worn away today, how much yesterday, and how much previously. | T: ‘Today my adze handle wore down this much, or yesterday it wore down that much, or the day before yesterday it wore down this much,’
+sn22.101:6.4 | S: They just know what has been worn away. | T: still he knows it is worn through when it is worn through.
+sn22.101:6.5 | S: In the same way, when a mendicant is committed to development, they don’t know | T: In the same way, when a monk dwells devoting himself to development, he does not know,
+sn22.101:6.6 | S: how much of the defilements were worn away today, how much yesterday, and how much previously. They just know what has been worn away. | T: ‘Today my effluents wore down this much, or yesterday they wore down that much, or the day before yesterday they wore down this much,’ still he knows they are worn through when they are worn through.
+sn22.101:6.7 | S: Suppose there was a sea-faring ship bound together with ropes. For six months they deteriorated in the water. Then in the cold season it was hauled up on dry land, where the ropes were weathered by wind and sun. When the monsoon clouds soaked it with rain, the ropes would readily collapse and rot away. | T: “Just as when an ocean-going ship, rigged with masts & stays, after six months on the water, is left on shore for the winter: Its stays, weathered by the heat & wind, moistened by the clouds of the rainy season, easily wither & rot away.
+sn22.101:6.8 | S: In the same way, when a mendicant is committed to development their fetters readily collapse and rot away.” | T: In the same way, when a monk dwells devoting himself to development, his fetters easily wither & rot away.”
+sn22.101:6.9 | P: Navamaṁ. | T: (none)
+
+
+codex
+I’ve read the batch. I’m checking the remaining candidates against the exception for several lines translated as one sentence.
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-053.findings.tmp <<'EOF'
+sn55.54:2.4 starts: “‘Be reassured, friend,
+sn55.54:2.5 starts: that you have verified confidence in the Dhamma:
+sn55.54:7.4 starts: ‘Friend, the Contented Devas are more splendid
+an3.61:2.3 starts: ‘Is it true that you hold that…
+an3.61:4.3 starts: ‘Is it true that you hold that…
+sn22.101:6.2 starts: but does not know,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 6 lines.
+tokens used
+29,048
+Reported 6 lines.

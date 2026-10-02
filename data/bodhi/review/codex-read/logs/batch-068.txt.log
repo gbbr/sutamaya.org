@@ -1,0 +1,627 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8b-3a4d-75f0-97b5-482b2526158e
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear placement errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.1
+sn12.1:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn12.1:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus thus:
+sn12.1:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+sn12.1:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+sn12.1:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.1:1.7 | S: “Mendicants, I will teach you dependent origination. | T: “Bhikkhus, I will teach you dependent origination.
+sn12.1:1.8 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”–
+sn12.1:1.9 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn12.1:1.10 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.1:2.1 | S: “And what is dependent origination? | T: “And what, bhikkhus, is dependent origination?
+sn12.1:2.2 | S: Ignorance is a requirement for choices. | T: With ignorance as condition, volitional formations come to be;
+sn12.1:2.3 | S: Choices are a requirement for consciousness. | T: with volitional formations as condition, consciousness;
+sn12.1:2.4 | S: Consciousness is a requirement for name and form. | T: with consciousness as condition, name-and-form;
+sn12.1:2.5 | S: Name and form are requirements for the six sense fields. | T: with name-and-form as condition, the six sense bases;
+sn12.1:2.6 | S: The six sense fields are requirements for contact. | T: with the six sense bases as condition, contact;
+sn12.1:2.7 | S: Contact is a requirement for feeling. | T: with contact as condition, feeling;
+sn12.1:2.8 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+sn12.1:2.9 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+sn12.1:2.10 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, existence;
+sn12.1:2.11 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn12.1:2.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.1:2.13 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.1:2.14 | S: This is called dependent origination. | T: This, bhikkhus, is called dependent origination.
+sn12.1:3.1 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: “But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.1:3.2 | S: When choices cease, consciousness ceases. | T: cessation of consciousness;
+sn12.1:3.3 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of name-and-form;
+sn12.1:3.4 | S: When name and form cease, the six sense fields cease. | T: with the cessation of name-and-form, cessation of the six sense bases;
+sn12.1:3.5 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the six sense bases, cessation of contact;
+sn12.1:3.6 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+sn12.1:3.7 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+sn12.1:3.8 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+sn12.1:3.9 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.1:3.10 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.1:3.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.1:3.12 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.1:3.13 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn12.1:3.14 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+sn12.1:3.15 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.20
+sn12.20:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.20:1.2 | S: “Mendicants, I will teach you dependent origination and dependently originated phenomena. | T: “Bhikkhus, I will teach you dependent origination and dependently arisen phenomena.
+sn12.20:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen and attend closely, I will speak.”
+sn12.20:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn12.20:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.20:2.1 | S: “And what is dependent origination? | T: “And what, bhikkhus, is dependent origination?
+sn12.20:2.2 | S: Rebirth is a requirement for old age and death. | T: ‘With birth as condition, aging-and-death comes to be’:
+sn12.20:2.3 | S: Whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles, specific conditionality. | T: whether there is an arising of Tathagatas or no arising of Tathagatas, that element still persists, the stableness of the Dhamma, the fixed course of the Dhamma, specific conditionality.
+sn12.20:2.4 | S: A Realized One awakens to this and comprehends it, | T: A Tathagata awakens to this and breaks through to it.
+sn12.20:2.5 | S: then he explains, teaches, asserts, establishes, clarifies, analyzes, and discloses it. | T: Having done so, he explains it, teaches it, proclaims it, establishes it, discloses it, analyses it, elucidates it.
+sn12.20:2.6 | S: ‘Look,’ he says, | T: And he says: ‘See!
+sn12.20:2.7 | S: ‘Rebirth is a requirement for old age and death.’ | T: With birth as condition, bhikkhus, aging-and-death.’
+sn12.20:3.1 | S: Continued existence is a requirement for rebirth … | T: “‘With existence as condition, birth’ …
+sn12.20:3.2 | S: Grasping is a requirement for continued existence … | T: ‘With clinging as condition, existence’ …
+sn12.20:3.3 | S: Craving is a requirement for grasping … | T: ‘With craving as condition, clinging’ …
+sn12.20:3.4 | S: Feeling is a requirement for craving … | T: ‘With feeling as condition, craving’ …
+sn12.20:3.5 | S: Contact is a requirement for feeling … | T: ‘With contact as condition, feeling’ …
+sn12.20:3.6 | S: The six sense fields are requirements for contact … | T: ‘With the six sense bases as condition, contact’ …
+sn12.20:3.7 | S: Name and form are requirements for the six sense fields … | T: ‘With name-and-form as condition, the six sense bases’ …
+sn12.20:3.8 | S: Consciousness is a requirement for name and form … | T: ‘With consciousness as condition, name-and-form’ …
+sn12.20:3.9 | S: Choices are a requirement for consciousness … | T: ‘With volitional formations as condition, consciousness’ …
+sn12.20:3.10 | S: Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations’:
+sn12.20:3.11 | S: Whether Realized Ones arise or not, this law of nature persists, this regularity of natural principles, this surety of natural principles, specific conditionality. | T: whether there is an arising of Tathagatas or no arising of Tathagatas, that element still persists, the stableness of the Dhamma, the fixed course of the Dhamma, specific conditionality.
+sn12.20:3.12 | S: A Realized One awakens to this and comprehends it, | T: A Tathagata awakens to this and breaks through to it.
+sn12.20:3.13 | S: then he explains, teaches, asserts, establishes, clarifies, analyzes, and discloses it. | T: Having done so, he explains it, teaches it, proclaims it, establishes it, discloses it, analyses it, elucidates it.
+sn12.20:3.14 | S: ‘Look,’ he says, | T: And he says: ‘See!
+sn12.20:3.15 | S: ‘Ignorance is a requirement for choices.’ | T: With ignorance as condition, bhikkhus, volitional formations.’
+sn12.20:3.16 | S: So the fact that this is real, not unreal, not otherwise; the specific conditionality of it: | T: “Thus, bhikkhus, the actuality in this, the inerrancy, the nototherwiseness, specific conditionality:
+sn12.20:3.17 | S: this is called dependent origination. | T: this is called dependent origination.
+sn12.20:4.1 | S: And what are the dependently originated phenomena? | T: “And what, bhikkhus, are the dependently arisen phenomena?
+sn12.20:4.2 | S: Old age and death are impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. | T: Aging-and-death, bhikkhus, is impermanent, conditioned, dependently arisen, subject to destruction, vanishing, fading away, and cessation.
+sn12.20:4.3 | S: Rebirth … | T: Birth is impermanent …
+sn12.20:4.4 | S: Continued existence … | T: Existence is impermanent …
+sn12.20:4.5 | S: Grasping … | T: Clinging is impermanent …
+sn12.20:4.6 | S: Craving … | T: Craving is impermanent …
+sn12.20:4.7 | S: Feeling … | T: Feeling is impermanent …
+sn12.20:4.8 | S: Contact … | T: Contact is impermanent …
+sn12.20:4.9 | S: The six sense fields … | T: The six sense bases are impermanent …
+sn12.20:4.10 | S: Name and form … | T: Name-and-form is impermanent …
+sn12.20:4.11 | S: Consciousness … | T: Consciousness is impermanent …
+sn12.20:4.12 | S: Choices … | T: Volitional formations are impermanent …
+sn12.20:4.13 | S: Ignorance is impermanent, conditioned, dependently originated, liable to end, vanish, fade away, and cease. | T: Ignorance is impermanent, conditioned, dependently arisen, subject to destruction, vanishing, fading away, and cessation.
+sn12.20:4.14 | S: These are called the dependently originated phenomena. | T: These, bhikkhus, are called the dependently arisen phenomena.
+sn12.20:5.1 | S: When a noble disciple has clearly seen with right wisdom this dependent origination and these dependently originated phenomena as they are, it will be quite impossible for them to turn back to the first beginning, thinking: | T: “When, bhikkhus, a noble disciple has clearly seen with correct wisdom as it really is this dependent origination and these dependently arisen phenomena, it is impossible that he will run back into the past, thinking:
+sn12.20:5.2 | S: ‘Did I exist in the past? Did I not exist in the past? What was I in the past? How was I in the past? After being what, what did I become in the past?’ | T: ‘Did I exist in the past? Did I not exist in the past? What was I in the past? How was I in the past? Having been what, what did I become in the past?’
+sn12.20:5.3 | S: Or to turn forward to the final end, thinking: | T: Or that he will run forward into the future, thinking:
+sn12.20:5.4 | S: ‘Will I exist in the future? Will I not exist in the future? What will I be in the future? How will I be in the future? After being what, what will I become in the future?’ | T: ‘Will I exist in the future? Will I not exist in the future? What will I be in the future? How will I be in the future? Having been what, what will I become in the future?’
+sn12.20:5.5 | S: Or to be undecided about the present, thinking: | T: Or that he will now be inwardly confused about the present thus:
+sn12.20:5.6 | S: ‘Am I? Am I not? What am I? How am I? This sentient being—where did it come from? And where will it go?’ | T: ‘Do I exist? Do I not exist? What am I? How am I? This being—where has it come from, and where will it go?’
+sn12.20:5.7 | P: netaṁ ṭhānaṁ vijjati. | T: (none)
+sn12.20:5.8 | S: Why is that? | T: “For what reason is this impossible?
+sn12.20:5.9 | S: Because that noble disciple has clearly seen with right wisdom this dependent origination and these dependently originated phenomena as they are.” | T: Because, bhikkhus, the noble disciple has clearly seen with correct wisdom as it really is this dependent origination and these dependently arisen phenomena.”
+sn12.20:5.10 | P: Dasamaṁ. | T: (none)
+sn12.20:5.11 | P: Āhāravaggo dutiyo. | T: (none)
+sn12.20:6.0 | P: Tassuddānaṁ | T: (none)
+sn12.20:6.1 | P: Āhāraṁ phagguno ceva, | T: (none)
+sn12.20:6.2 | P: Dve ca samaṇabrāhmaṇā; | T: (none)
+sn12.20:6.3 | P: Kaccānagotta dhammakathikaṁ, | T: (none)
+sn12.20:6.4 | P: Acelaṁ timbarukena ca; | T: (none)
+sn12.20:6.5 | P: Bālapaṇḍitato ceva, | T: (none)
+sn12.20:6.6 | P: Dasamo paccayena cāti. | T: (none)
+
+## sn12.21
+sn12.21:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.21:1.2 | S: “Mendicants, a Realized One has ten powers and four kinds of self-assurance. With these he claims the bull’s place, roars his lion’s roar in the assemblies, and turns the divine wheel. | T: “Bhikkhus, possessing the ten powers and the four grounds of self-confidence, the Tathagata claims the place of the chief bull of the herd, roars his lion’s roar in the assemblies, and sets rolling the Brahma-wheel thus:
+sn12.21:1.3 | S: Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+sn12.21:1.4 | S: Such is feeling, such is the origin of feeling, such is the disappearance of feeling. | T: such is feeling, such its origin, such its passing away;
+sn12.21:1.5 | S: Such is perception, such is the origin of perception, such is the disappearance of perception. | T: such is perception, such its origin, such its passing away;
+sn12.21:1.6 | S: Such are choices, such is the origin of choices, such is the disappearance of choices. | T: such are volitional formations, such their origin, such their passing away;
+sn12.21:1.7 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness. | T: such is consciousness, such its origin, such its passing away.
+sn12.21:1.8 | S: So, when this exists, this comes to be; due to the arising of this, this arises. | T: Thus when this exists, that comes to be; with the arising of this, that arises.
+sn12.21:1.9 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this does not exist, that does not come to be; with the cessation of this, that ceases. That is,
+sn12.21:1.10 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, volitional formations come to be;
+sn12.21:1.11 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.21:1.12 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.21:1.13 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.21:1.14 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.21:1.15 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.21:1.16 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.23
+sn12.23:1.1 | S: At Sāvatthī. | T: At Sāvatthī.
+sn12.23:1.2 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “Bhikkhus, I say that the destruction of the taints is for one who knows and sees, not for one who does not know and does not see.
+sn12.23:1.3 | S: For one who knows and sees what? | T: For one who knows what, for one who sees what, does the destruction of the taints come about?
+sn12.23:1.4 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+sn12.23:1.5 | S: Such is feeling … | T: such is feeling …
+sn12.23:1.6 | S: Such is perception … | T: such is perception …
+sn12.23:1.7 | S: Such are choices … | T: such are volitional formations …
+sn12.23:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such is consciousness, such its origin, such its passing away’:
+sn12.23:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: it is for one who knows thus, for one who sees thus, that the destruction of the taints comes about.
+sn12.23:2.1 | S: I say that this knowledge of ending has a vital condition, it doesn’t lack a vital condition. | T: “I say, bhikkhus, that the knowledge of destruction in regard to destruction has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.2 | S: And what is it? | T: And what is the proximate cause for the knowledge of destruction?
+sn12.23:2.3 | S: You should say: ‘Freedom.’ | T: It should be said: liberation.
+sn12.23:2.4 | S: I say that freedom has a vital condition, it doesn’t lack a vital condition. | T: “I say, bhikkhus, that liberation too has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.5 | S: And what is it? | T: And what is the proximate cause for liberation?
+sn12.23:2.6 | S: You should say: ‘Dispassion.’ | T: It should be said: dispassion.
+sn12.23:2.7 | S: I say that dispassion has a vital condition. | T: “I say, bhikkhus, that dispassion too has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.8 | S: And what is it? | T: And what is the proximate cause for dispassion?
+sn12.23:2.9 | S: You should say: ‘Disillusionment.’ | T: It should be said: revulsion.
+sn12.23:2.10 | S: I say that disillusionment has a vital condition. | T: “I say, bhikkhus, that revulsion too has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.11 | S: And what is it? | T: And what is the proximate cause for revulsion?
+sn12.23:2.12 | S: You should say: ‘Truly knowing and seeing.’ | T: It should be said: the knowledge and vision of things as they really are.
+sn12.23:2.13 | S: I say that truly knowing and seeing has a vital condition. | T: “I say, bhikkhus, that the knowledge and vision of things as they really are too has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.14 | S: And what is it? | T: And what is the proximate cause for the knowledge and vision of things as they really are?
+sn12.23:2.15 | S: You should say: ‘Immersion.’ | T: It should be said: concentration.
+sn12.23:2.16 | S: I say that immersion has a vital condition. | T: “I say, bhikkhus, that concentration too has a proximate cause; it does not lack a proximate cause.
+sn12.23:3.1 | S: And what is it? | T: And what is the proximate cause for concentration?
+sn12.23:3.2 | S: You should say: ‘Bliss.’ | T: It should be said: happiness.
+sn12.23:3.3 | S: I say that bliss has a vital condition. | T: “I say, bhikkhus, that happiness too has a proximate cause; it does not lack a proximate cause.
+sn12.23:3.4 | S: And what is it? | T: And what is the proximate cause for happiness?
+sn12.23:3.5 | S: You should say: ‘Tranquility.’ | T: It should be said: tranquillity.
+sn12.23:3.6 | S: I say that tranquility has a vital condition. | T: “I say, bhikkhus, that tranquillity too has a proximate cause; it does not lack a proximate cause.
+sn12.23:3.7 | S: And what is it? | T: And what is the proximate cause for tranquillity?
+sn12.23:3.8 | S: You should say: ‘Rapture.’ | T: It should be said: rapture.
+sn12.23:3.9 | S: I say that rapture has a vital condition. | T: “I say, bhikkhus, that rapture too has a proximate cause; it does not lack a proximate cause.
+sn12.23:3.10 | S: And what is it? | T: And what is the proximate cause for rapture?
+sn12.23:3.11 | S: You should say: ‘Joy.’ | T: It should be said: gladness.
+sn12.23:3.12 | S: I say that joy has a vital condition. | T: “I say, bhikkhus, that gladness too has a proximate cause; it does not lack a proximate cause.
+sn12.23:3.13 | S: And what is it? | T: And what is the proximate cause for gladness?
+sn12.23:3.14 | S: You should say: ‘Faith.’ | T: It should be said: faith.
+sn12.23:3.15 | S: I say that faith has a vital condition. | T: “I say, bhikkhus, that faith too has a proximate cause; it does not lack a proximate cause.
+sn12.23:4.1 | S: And what is it? | T: And what is the proximate cause for faith?
+sn12.23:4.2 | S: You should say: ‘Suffering.’ | T: It should be said: suffering.
+sn12.23:4.3 | S: I say that suffering has a vital condition. | T: “I say, bhikkhus, that suffering too has a proximate cause; it does not lack a proximate cause.
+sn12.23:4.4 | S: And what is it? | T: And what is the proximate cause for suffering?
+sn12.23:4.5 | S: You should say: ‘Rebirth.’ | T: It should be said: birth.
+sn12.23:4.6 | S: I say that rebirth has a vital condition. | T: “I say, bhikkhus, that birth too has a proximate cause; it does not lack a proximate cause.
+sn12.23:4.7 | S: And what is it? | T: And what is the proximate cause for birth?
+sn12.23:4.8 | S: You should say: ‘Continued existence.’ | T: It should be said: existence.
+sn12.23:4.9 | S: I say that continued existence has a vital condition. | T: “I say, bhikkhus, that existence too has a proximate cause; it does not lack a proximate cause.
+sn12.23:4.10 | S: And what is it? | T: And what is the proximate cause for existence?
+sn12.23:4.11 | S: You should say: ‘Grasping.’ | T: It should be said: clinging.
+sn12.23:4.12 | S: I say that grasping has a vital condition. | T: “I say, bhikkhus, that clinging too has a proximate cause; it does not lack a proximate cause.
+sn12.23:4.13 | S: And what is it? | T: And what is the proximate cause for clinging?
+sn12.23:4.14 | S: You should say: ‘Craving.’ | T: It should be said: craving.
+sn12.23:4.15 | S: I say that craving has a vital condition. | T: “I say, bhikkhus, that craving too has a proximate cause; it does not lack a proximate cause.
+sn12.23:5.1 | S: And what is it? | T: And what is the proximate cause for craving?
+sn12.23:5.2 | S: You should say: ‘Feeling.’ … | T: It should be said: feeling.
+sn12.23:5.3 | S: You should say: ‘Contact.’ … | T: “For feeling, it should be said: contact. For contact:
+sn12.23:5.4 | S: You should say: ‘The six sense fields.’ … | T: the six sense bases. For the six sense bases:
+sn12.23:5.5 | S: You should say: ‘Name and form.’ … | T: name-and-form. For name-and-form:
+sn12.23:5.6 | S: You should say: ‘Consciousness.’ … | T: consciousness. For consciousness:
+sn12.23:5.7 | S: You should say: ‘Choices.’ … | T: volitional formations.
+sn12.23:5.8 | S: I say that choices have a vital condition, they don’t lack a vital condition. | T: “I say, bhikkhus, that volitional formations too have a proximate cause; they do not lack a proximate cause.
+sn12.23:5.9 | S: And what is the vital condition for choices? | T: And what is the proximate cause for volitional formations?
+sn12.23:5.10 | S: You should say: ‘Ignorance.’ | T: It should be said: ignorance.
+sn12.23:6.1 | S: So, mendicants: ignorance is the vital condition for choices. | T: “Thus, bhikkhus, with ignorance as proximate cause, volitional formations come to be;
+sn12.23:6.2 | S: Choices are the vital condition for consciousness. | T: with volitional formations as proximate cause, consciousness;
+sn12.23:6.3 | S: Consciousness is the vital condition for name and form. | T: with consciousness as proximate cause, name-and-form;
+sn12.23:6.4 | S: Name and form are the vital conditions for the six sense fields. | T: with name-and-form as proximate cause, the six sense bases;
+sn12.23:6.5 | S: The six sense fields are the vital conditions for contact. | T: with the six sense bases as proximate cause, contact;
+sn12.23:6.6 | S: Contact is the vital condition for feeling. | T: with contact as proximate cause, feeling;
+sn12.23:6.7 | S: Feeling is the vital condition for craving. | T: with feeling as proximate cause, craving;
+sn12.23:6.8 | S: Craving is the vital condition for grasping. | T: with craving as proximate cause, clinging;
+sn12.23:6.9 | S: Grasping is the vital condition for continued existence. | T: with clinging as proximate cause, existence;
+sn12.23:6.10 | S: Continued existence is the vital condition for rebirth. | T: with existence as proximate cause, birth;
+sn12.23:6.11 | S: Rebirth is the vital condition for suffering. | T: with birth as proximate cause, suffering;
+sn12.23:6.12 | S: Suffering is the vital condition for faith. | T: with suffering as proximate cause, faith;
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.23:6.13 | S: Faith is the vital condition for joy. | T: with faith as proximate cause, gladness;
+sn12.23:6.14 | S: Joy is the vital condition for rapture. | T: with gladness as proximate cause, rapture;
+sn12.23:6.15 | S: Rapture is the vital condition for tranquility. | T: with rapture as proximate cause, tranquillity;
+sn12.23:6.16 | S: Tranquility is the vital condition for bliss. | T: with tranquillity as proximate cause, happiness;
+sn12.23:6.17 | S: Bliss is the vital condition for immersion. | T: with happiness as proximate cause, concentration;
+sn12.23:6.18 | S: Immersion is the vital condition for truly knowing and seeing. | T: with concentration as proximate cause, the knowledge and vision of things as they really are;
+sn12.23:6.19 | S: Truly knowing and seeing is the vital condition for disillusionment. | T: with the knowledge and vision of things as they really are as proximate cause, revulsion;
+sn12.23:6.20 | S: Disillusionment is the vital condition for dispassion. | T: with revulsion as proximate cause, dispassion;
+sn12.23:6.21 | S: Dispassion is the vital condition for freedom. | T: with dispassion as proximate cause, liberation;
+sn12.23:6.22 | S: Freedom is the vital condition for the knowledge of ending. | T: with liberation as proximate cause, the knowledge of destruction.
+sn12.23:7.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as, bhikkhus, when rain pours down in thick droplets on a mountain top, the water flows down along the slope and fills the cleft, gullies, and creeks; these being full fill up the pools; these being full fill up the lakes; these being full fill up the streams; these being full fill up the rivers; and these being full fill up the great ocean;
+sn12.23:8.1 | S: In the same way, ignorance is the vital condition for choices. … Freedom is the vital condition for the knowledge of ending.” | T: so too, with ignorance as proximate cause, volitional formations come to be; with volitional formations as proximate cause, consciousness … with liberation as proximate cause, the knowledge of destruction.”
+sn12.23:8.2 | P: Tatiyaṁ. | T: (none)
+
+## sn12.25
+sn12.25:1.1 | S: At Sāvatthī. | T: At Sāvatthī.
+sn12.25:1.2 | S: Then in the late afternoon, Venerable Bhūmija came out of retreat, went to Venerable Sāriputta, and exchanged greetings with him. | T: i Then, in the evening, the Venerable Bhūmija emerged from seclusion and approached the Venerable Sāriputta. He exchanged greetings with the Venerable Sāriputta and,
+sn12.25:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to him: | T: when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.25:2.1 | S: “Reverend Sāriputta, there are ascetics and brahmins who teach the efficacy of deeds. Some of them assert that pleasure and pain are made by oneself. | T: “Friend Sāriputta, some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created by oneself;
+sn12.25:2.2 | S: Some of them assert that pleasure and pain are made by another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created by another;
+sn12.25:2.3 | S: Some of them assert that pleasure and pain are made by both oneself and another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created both by oneself and by another;
+sn12.25:2.4 | S: Some of them assert that pleasure and pain arise anomalously, not made by oneself or another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain have arisen fortuitously, being created neither by oneself nor by another.
+sn12.25:2.5 | S: What does the Buddha say about this? How does he explain it? | T: Now, friend Sāriputta, what does the Blessed One say about this?
+sn12.25:2.6 | S: How should we answer so as to repeat what the Buddha has said, and not misrepresent him with an untruth? How should we explain in line with his teaching, with no legitimate grounds for rebuttal and criticism?” | T: What does he teach? How should we answer if we are to state what has been said by the Blessed One and not misrepresent him with what is contrary to fact? And how should we explain in accordance with the Dhamma so that no reasonable consequence of our assertion would give ground for criticism?”
+sn12.25:3.1 | S: “Reverend, the Buddha has said that pleasure and pain are dependently originated. | T: “Friend, the Blessed One has said that pleasure and pain are dependently arisen.
+sn12.25:3.2 | S: Dependent on what? | T: Dependent on what?
+sn12.25:3.3 | S: Dependent on contact. | T: Dependent on contact.
+sn12.25:3.4 | S: In speaking like this, you would repeat what the Buddha has said, and not misrepresent him with an untruth. You would explain in line with his teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by the Blessed One and would not misrepresent him with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.25:4.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, that’s dependent on contact. … | T: “Therein, friend, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself,
+sn12.25:4.2 | P: Yepi te …pe… | T: and those who maintain that pleasure and pain are created by another,
+sn12.25:4.3 | P: yepi te …pe… | T: and those who maintain that pleasure and pain are created both by oneself and by another,
+sn12.25:4.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, that’s also dependent on contact. | T: and those who maintain that pleasure and pain have arisen fortuitously, being created neither by oneself nor by another—in each case that is conditioned by contact.
+sn12.25:5.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, it’s impossible that they will experience that without contact. … | T: “Therein, friends, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself,
+sn12.25:5.2 | P: Yepi te …pe… | T: and those who maintain that pleasure and pain are created by another,
+sn12.25:5.3 | P: yepi te …pe… | T: and those who maintain that pleasure and pain are created both by oneself and by another,
+sn12.25:5.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, it’s impossible that they will experience that without contact.” | T: and those who maintain that pleasure and pain have arisen fortuitously, being created neither by oneself nor by another—in each case it is impossible that they will experience anything without contact.”
+sn12.25:6.1 | S: Venerable Ānanda heard this discussion between Venerable Sāriputta and Venerable Bhūmija. | T: ii The Venerable Ānanda heard this conversation between the Venerable Sāriputta and the Venerable Bhūmija.
+sn12.25:6.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, | T: He then approached the Blessed One, paid homage to him, sat down to one side,
+sn12.25:6.3 | S: and informed the Buddha of all they had discussed. | T: and reported to the Blessed One the entire conversation between the Venerable Sāriputta and the Venerable Bhūmija.
+sn12.25:7.1 | S: “Good, good, Ānanda! It’s just as Sāriputta has so rightly explained. | T: The Blessed One said: “Good, good, Ānanda! Anyone answering rightly would answer just as Sāriputta has done.
+sn12.25:7.2 | S: I have said that pleasure and pain are dependently originated. | T: I have said, Ānanda, that pleasure and pain are dependently arisen.
+sn12.25:7.3 | S: Dependent on what? | T: Dependent on what?
+sn12.25:7.4 | S: Dependent on contact. | T: Dependent on contact.
+sn12.25:7.5 | S: In speaking like this, you would repeat what I have said, and not misrepresent me with an untruth. You would explain in line with my teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by me and would not misrepresent me with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.25:8.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, that’s dependent on contact. … | T: “Therein, Ānanda, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself …
+sn12.25:8.2 | P: Yepi te …pe… | T: (none)
+sn12.25:8.3 | P: yepi te …pe… | T: (none)
+sn12.25:8.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, that’s also dependent on contact. | T: and those who maintain that pleasure and pain have arisen fortuitously … in each case that is conditioned by contact.
+sn12.25:9.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, it’s impossible that they will experience that without contact. … | T: “Therein, Ānanda, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself …
+sn12.25:9.2 | P: Yepi te …pe… | T: (none)
+sn12.25:9.3 | P: yepi te …pe… | T: (none)
+sn12.25:9.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, it’s impossible that they will experience that without contact. | T: and those who maintain that pleasure and pain have arisen fortuitously … in each case it is impossible that they will experience anything without contact.
+sn12.25:10.1 | S: Ānanda, as long as there’s a body, the intention that gives rise to bodily action causes pleasure and pain to arise in oneself. | T: iii “Ānanda, when there is the body, because of bodily volition pleasure and pain arise internally;
+sn12.25:10.2 | S: As long as there’s a voice, the intention that gives rise to verbal action causes pleasure and pain to arise in oneself. | T: when there is speech, because of verbal volition pleasure and pain arise internally;
+sn12.25:10.3 | S: As long as there’s a mind, the intention that gives rise to mental action causes pleasure and pain to arise in oneself. But this is only when dependent on ignorance. | T: when there is the mind, because of mental volition pleasure and pain arise internally—and with ignorance as condition.
+sn12.25:11.1 | S: By oneself one instigates the choice that gives rise to bodily, verbal, and mental action, conditioned by which that pleasure and pain arise in oneself. | T: “Either on one’s own initiative, Ānanda one generates that bodily volitional formation conditioned by which pleasure and pain arise internally; or prompted by others one generates that bodily volitional formation conditioned by which pleasure and pain arise internally. Either deliberately, Ānanda, one generates that bodily volitional formation conditioned by which pleasure and pain arise internally; or undeliberately one generates that bodily volitional formation conditioned by which pleasure and pain arise internally. “Either on one’s own initiative, Ānanda, one generates that verbal volitional formation conditioned by which pleasure and pain arise internally; or prompted by others one generates that verbal volitional formation conditioned by which pleasure and pain arise internally. Either deliberately, Ānanda, one generates that verbal volitional formation conditioned by which pleasure and pain arise internally; or undeliberately one generates that verbal volitional formation conditioned by which pleasure and pain arise internally. “Either on one’s own initiative, Ānanda, one generates that mental volitional formation conditioned by which pleasure and pain arise internally;
+sn12.25:11.2 | S: Or else others instigate the choice … | T: or prompted by others one generates that mental volitional formation conditioned by which pleasure and pain arise internally.
+sn12.25:11.3 | S: One instigates the choice after deliberation … | T: Either deliberately, Ānanda, one generates that mental volitional formation conditioned by which pleasure and pain arise internally;
+sn12.25:11.4 | S: Or else one instigates the choice without deliberation … | T: or undeliberately one generates that mental volitional formation conditioned by which pleasure and pain arise internally.
+sn12.25:12.1 | P: Sāmaṁ vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:12.2 | P: Pare vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharonti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:12.3 | P: Sampajāno vā taṁ, ānanda …pe… | T: (none)
+sn12.25:12.4 | P: asampajāno vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.1 | P: Sāmaṁ vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.2 | P: Pare vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharonti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.3 | P: Sampajāno vā taṁ, ānanda …pe… | T: (none)
+sn12.25:13.4 | P: asampajāno vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:14.1 | S: Ignorance is included in all these things. | T: “Ignorance is comprised within these states.
+sn12.25:14.2 | S: But when ignorance fades away and ceases with no residue left behind, that body, that voice, and that mind no longer exist dependent on which that pleasure and pain arise in oneself. | T: But with the remainderless fading away and cessation of ignorance that body does not exist conditioned by which that pleasure and pain arise internally; that speech does not exist conditioned by which that pleasure and pain arise internally; that mind does not exist conditioned by which that pleasure and pain arise internally.
+sn12.25:14.3 | S: That field does not exist, that ground does not exist, that dimension does not exist, that foundation does not exist, dependent on which that pleasure and pain arise in oneself.” | T: That field does not exist, that site does not exist, that base does not exist, that foundation does not exist conditioned by which that pleasure and pain arise internally.”
+sn12.25:14.4 | P: Pañcamaṁ. | T: (none)
+
+## sn12.26
+sn12.26:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.26:1.2 | S: Then Venerable Upavāṇa went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Upavaṇa approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.26:2.1 | S: “Sir, there are some ascetics and brahmins who assert that suffering is made by oneself. | T: “Venerable sir, some ascetics and brahmins maintain that suffering is created by oneself;
+sn12.26:2.2 | S: There are some who assert that suffering is made by another. | T: some ascetics and brahmins maintain that suffering is created by another;
+sn12.26:2.3 | S: There are some who assert that suffering is made by both oneself and another. | T: some ascetics and brahmins maintain that suffering is created both by oneself and by another;
+sn12.26:2.4 | S: There are some who assert that suffering arises anomalously, not made by oneself or another. | T: some ascetics and brahmins maintain that suffering has arisen fortuitously, being created neither by oneself nor by another.
+sn12.26:2.5 | S: What does the Buddha say about this? How does he explain it? How should we answer so as to repeat what the Buddha has said, and not misrepresent him with an untruth? How should we explain in line with his teaching, with no legitimate grounds for rebuttal and criticism?” | T: Now, venerable sir, what does the Blessed One say about this? What does he teach? How should we answer if we are to state what has been said by the Blessed One and not misrepresent him with what is contrary to fact? And how should we explain in accordance with the Dhamma so that no reasonable consequence of our assertion would give ground for criticism?”
+sn12.26:3.1 | S: “Upavāṇa, I have said that suffering is dependently originated. | T: “Upavaṇa, I have said that suffering is dependently arisen.
+sn12.26:3.2 | S: Dependent on what? | T: Dependent on what?
+sn12.26:3.3 | S: Dependent on contact. | T: Dependent on contact.
+sn12.26:3.4 | S: In speaking like this, you would repeat what I have said, and not misrepresent me with an untruth. You would explain in line with my teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by me and would not misrepresent me with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.26:4.1 | S: In the case of those ascetics and brahmins who assert that suffering is made by oneself, that’s dependent on contact. … | T: “Therein, Upavaṇa, in the case of those ascetics and brahmins who maintain that suffering is created by oneself,
+sn12.26:4.2 | P: Yepi te …pe… | T: and those who maintain that suffering is created by another,
+sn12.26:4.3 | P: yepi te …pe… | T: and those who maintain that suffering is created both by oneself and by another,
+sn12.26:4.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, that’s also dependent on contact. | T: and those who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another—in each case that is conditioned by contact.
+sn12.26:5.1 | S: In the case of those ascetics and brahmins who assert that suffering is made by oneself, it’s impossible that they will experience that without contact. … | T: “Therein, Upavaṇa, in the case of those ascetics and brahmins who maintain that suffering is created by oneself,
+sn12.26:5.2 | P: Yepi te …pe… | T: and those who maintain that suffering is created by another,
+sn12.26:5.3 | P: yepi te …pe… | T: and those who maintain that suffering is created both by oneself and by another,
+sn12.26:5.4 | S: In the case of those who assert that suffering arises anomalously, not made by oneself or another, it’s impossible that they will experience that without contact.” | T: and those who maintain that suffering has arisen fortuitously, being created neither by oneself nor by another—in each case it is impossible that they will experience anything without contact.”
+sn12.26:5.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn12.34
+sn12.34:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.34:1.2 | S: “Mendicants, I will teach seventy-seven grounds for knowledge. | T: “Bhikkhus, I will teach you seventy-seven cases of knowledge.
+sn12.34:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn12.34:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn12.34:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.34:2.1 | S: “And what are the seventy-seven grounds for knowledge? | T: “Bhikkhus, what are the seventy-seven cases of knowledge?
+sn12.34:2.2 | S: The knowledge that rebirth is a requirement for old age and death, | T: The knowledge: ‘Aging-and-death has birth as its condition.’
+sn12.34:2.3 | S: and the knowledge that when rebirth doesn’t exist, there is no old age and death. | T: The knowledge: ‘When there is no birth, there is no aging-and-death.’
+sn12.34:2.4 | S: Also regarding the past: the knowledge that rebirth is a requirement for old age and death, and the knowledge that when rebirth doesn’t exist, there is no old age and death. | T: The knowledge: ‘In the past too aging-and-death had birth as its condition.’ The knowledge: ‘In the past too, had there been no birth, there would have been no aging-and-death.’
+sn12.34:2.5 | S: Also regarding the future: the knowledge that rebirth is a requirement for old age and death, and the knowledge that when rebirth doesn’t exist, there is no old age and death. | T: The knowledge: ‘In the future too aging-and-death will have birth as its condition.’ The knowledge: ‘In the future too, should there be no birth, there will be no aging-and-death.’
+sn12.34:2.6 | S: And also their knowledge that even this knowledge of the stability of natural principles is liable to end, vanish, fade away, and cease. | T: The knowledge: ‘That knowledge of the stability of the Dhamma is also subject to destruction, vanishing, fading away, and cessation.’
+sn12.34:3.1 | S: The knowledge that continued existence is a requirement for rebirth … | T: “The knowledge: ‘Birth has existence as its condition.’…
+sn12.34:3.2 | P: upādānapaccayā bhavoti ñāṇaṁ … | T: (none)
+sn12.34:3.3 | P: taṇhāpaccayā upādānanti ñāṇaṁ … | T: (none)
+sn12.34:3.4 | P: vedanāpaccayā taṇhāti ñāṇaṁ … | T: (none)
+sn12.34:3.5 | P: phassapaccayā vedanāti ñāṇaṁ … | T: (none)
+sn12.34:3.6 | P: saḷāyatanapaccayā phassoti ñāṇaṁ … | T: (none)
+sn12.34:3.7 | P: nāmarūpapaccayā saḷāyatananti ñāṇaṁ … | T: (none)
+sn12.34:3.8 | P: viññāṇapaccayā nāmarūpanti ñāṇaṁ … | T: (none)
+sn12.34:3.9 | P: saṅkhārapaccayā viññāṇanti ñāṇaṁ; | T: (none)
+sn12.34:3.10 | S: The knowledge that ignorance is a requirement for choices, and the knowledge that when ignorance doesn’t exist, there are no choices. | T: The knowledge: ‘Volitional formations have ignorance as their condition. ’ The knowledge: ‘When there is no ignorance, there are no volitional formations.’
+sn12.34:3.11 | S: Also regarding the past: the knowledge that ignorance is a requirement for choices, and the knowledge that when ignorance doesn’t exist, there are no choices. | T: The knowledge: ‘In the past too volitional formations had ignorance as their condition.’ The knowledge: ‘In the past too, had there been no ignorance, there would have been no volitional formations.’
+sn12.34:3.12 | S: Also regarding the future: the knowledge that ignorance is a requirement for choices, and the knowledge that when ignorance doesn’t exist, there are no choices. | T: The knowledge: ‘In the future too volitional formations will have ignorance as their condition.’ The knowledge: ‘In the future too, should there be no ignorance, there will be no volitional formations.’
+sn12.34:3.13 | S: And also their knowledge that even this knowledge of the stability of natural principles is liable to end, vanish, fade away, and cease. | T: The knowledge: ‘That knowledge of the stability of the Dhamma is also subject to destruction, vanishing, fading away, and cessation.’
+sn12.34:3.14 | S: These are called the seventy-seven grounds for knowledge.” | T: “These, bhikkhus, are called the seventy-seven cases of knowledge.”
+sn12.34:3.15 | P: Catutthaṁ. | T: (none)
+
+## sn12.37
+sn12.37:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.37:1.2 | S: “Mendicants, this body doesn’t belong to you or to anyone else. | T: “Bhikkhus, this body is not yours, nor does it belong to others.
+sn12.37:1.3 | S: It’s old deeds, and should be seen as produced by choices and intentions, as something to be felt. | T: It is old kamma, to be seen as generated and fashioned by volition, as something to be felt.
+sn12.37:2.1 | S: A learned noble disciple carefully and rationally applies the mind to dependent origination itself: | T: Therein, bhikkhus, the instructed noble disciple attends carefully and closely to dependent origination itself thus:
+sn12.37:2.2 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.37:2.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this does not exist, that does not come to be; with the cessation of this, that ceases. That is,
+sn12.37:2.4 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, volitional formations come to be;
+sn12.37:2.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.37:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.37:2.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.37:2.8 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.37:2.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.”
+sn12.37:2.10 | P: Sattamaṁ. | T: (none)
+
+## sn12.39
+sn12.39:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.39:1.2 | S: “Mendicants, what you intend or plan, and what you have underlying tendencies for become a support for the continuation of consciousness. | T: “Bhikkhus, what one intends, and what one plans, and whatever one has a tendency towards: this becomes a basis for the maintenance of consciousness.
+sn12.39:1.3 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness.
+sn12.39:1.4 | S: When consciousness is established and grows, name and form are conceived. | T: When consciousness is established and has come to growth, there is a descent of name-and-form.
+sn12.39:1.5 | S: Name and form are requirements for the six sense fields. | T: With name-and-form as condition, the six sense bases come to be;
+sn12.39:1.6 | S: The six sense fields are requirements for contact. | T: with the six sense bases as condition, contact;
+sn12.39:1.7 | S: Contact is a requirement for feeling. … | T: with contact as condition, feeling …
+sn12.39:1.8 | S: craving … | T: craving …
+sn12.39:1.9 | S: grasping … | T: clinging …
+sn12.39:1.10 | S: continued existence … | T: existence …
+sn12.39:1.11 | S: rebirth … | T: birth;
+sn12.39:1.12 | S: old age and death, | T: with birth as condition, aging-and-death,
+sn12.39:1.13 | S: sorrow, lamentation, pain, sadness, and distress come to be. | T: sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.39:1.14 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.39:2.1 | S: If you don’t intend or plan, but still have underlying tendencies, this becomes a support for the continuation of consciousness. | T: “If, bhikkhus, one does not intend, and one does not plan, but one still has a tendency towards something, this becomes a basis for the maintenance of consciousness.
+sn12.39:2.2 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness.
+sn12.39:2.3 | S: When consciousness is established and grows, name and form are conceived. | T: When consciousness is established and has come to growth, there is a descent of name-and-form.
+sn12.39:2.4 | S: Name and form are requirements for the six sense fields. … | T: With name-and-form as condition, the six sense bases come to be….
+sn12.39:2.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.39:3.1 | S: If you don’t intend or plan or have underlying tendencies, this doesn’t become a support for the continuation of consciousness. | T: “But, bhikkhus, when one does not intend, and one does not plan, and one does not have a tendency towards anything, no basis exists for the maintenance of consciousness.
+sn12.39:3.2 | S: With no support, consciousness is not established. | T: When there is no basis, there is no support for the establishing of consciousness.
+sn12.39:3.3 | S: When consciousness is not established and doesn’t grow, name and form are not conceived. | T: When consciousness is unestablished and does not come to growth, there is no descent of name-and-form.
+sn12.39:3.4 | S: When name and form cease, the six sense fields cease. … | T: With the cessation of name-and-form comes cessation of the six sense bases….
+sn12.39:3.5 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.39:3.6 | P: Navamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I found several sentence openings on the preceding line, plus a passage where the bodily, verbal, and mental actions are grouped under the wrong keys. I’m checking the exact wording before writing the findings.
+exec
+/bin/bash -lc "sed -n '20,40p;125,138p;185,195p;215,233p;266,287p;341,355p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.1:2.9 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+sn12.1:2.10 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, existence;
+sn12.1:2.11 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn12.1:2.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.1:2.13 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.1:2.14 | S: This is called dependent origination. | T: This, bhikkhus, is called dependent origination.
+sn12.1:3.1 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: “But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.1:3.2 | S: When choices cease, consciousness ceases. | T: cessation of consciousness;
+sn12.1:3.3 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of name-and-form;
+sn12.1:3.4 | S: When name and form cease, the six sense fields cease. | T: with the cessation of name-and-form, cessation of the six sense bases;
+sn12.1:3.5 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the six sense bases, cessation of contact;
+sn12.1:3.6 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+sn12.1:3.7 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+sn12.1:3.8 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+sn12.1:3.9 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+sn12.1:3.10 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+sn12.1:3.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.1:3.12 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.1:3.13 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn12.1:3.14 | S: Satisfied, the mendicants approved what the Buddha said. | T: Elated, those bhikkhus delighted in the Blessed One’s statement.
+sn12.1:3.15 | P: Paṭhamaṁ. | T: (none)
+sn12.23:1.2 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “Bhikkhus, I say that the destruction of the taints is for one who knows and sees, not for one who does not know and does not see.
+sn12.23:1.3 | S: For one who knows and sees what? | T: For one who knows what, for one who sees what, does the destruction of the taints come about?
+sn12.23:1.4 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origin, such its passing away;
+sn12.23:1.5 | S: Such is feeling … | T: such is feeling …
+sn12.23:1.6 | S: Such is perception … | T: such is perception …
+sn12.23:1.7 | S: Such are choices … | T: such are volitional formations …
+sn12.23:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: such is consciousness, such its origin, such its passing away’:
+sn12.23:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: it is for one who knows thus, for one who sees thus, that the destruction of the taints comes about.
+sn12.23:2.1 | S: I say that this knowledge of ending has a vital condition, it doesn’t lack a vital condition. | T: “I say, bhikkhus, that the knowledge of destruction in regard to destruction has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.2 | S: And what is it? | T: And what is the proximate cause for the knowledge of destruction?
+sn12.23:2.3 | S: You should say: ‘Freedom.’ | T: It should be said: liberation.
+sn12.23:2.4 | S: I say that freedom has a vital condition, it doesn’t lack a vital condition. | T: “I say, bhikkhus, that liberation too has a proximate cause; it does not lack a proximate cause.
+sn12.23:2.5 | S: And what is it? | T: And what is the proximate cause for liberation?
+sn12.23:2.6 | S: You should say: ‘Dispassion.’ | T: It should be said: dispassion.
+sn12.23:5.7 | S: You should say: ‘Choices.’ … | T: volitional formations.
+sn12.23:5.8 | S: I say that choices have a vital condition, they don’t lack a vital condition. | T: “I say, bhikkhus, that volitional formations too have a proximate cause; they do not lack a proximate cause.
+sn12.23:5.9 | S: And what is the vital condition for choices? | T: And what is the proximate cause for volitional formations?
+sn12.23:5.10 | S: You should say: ‘Ignorance.’ | T: It should be said: ignorance.
+sn12.23:6.1 | S: So, mendicants: ignorance is the vital condition for choices. | T: “Thus, bhikkhus, with ignorance as proximate cause, volitional formations come to be;
+sn12.23:6.2 | S: Choices are the vital condition for consciousness. | T: with volitional formations as proximate cause, consciousness;
+sn12.23:6.3 | S: Consciousness is the vital condition for name and form. | T: with consciousness as proximate cause, name-and-form;
+sn12.23:6.4 | S: Name and form are the vital conditions for the six sense fields. | T: with name-and-form as proximate cause, the six sense bases;
+sn12.23:6.5 | S: The six sense fields are the vital conditions for contact. | T: with the six sense bases as proximate cause, contact;
+sn12.23:6.6 | S: Contact is the vital condition for feeling. | T: with contact as proximate cause, feeling;
+sn12.23:6.7 | S: Feeling is the vital condition for craving. | T: with feeling as proximate cause, craving;
+## sn12.25
+sn12.25:1.1 | S: At Sāvatthī. | T: At Sāvatthī.
+sn12.25:1.2 | S: Then in the late afternoon, Venerable Bhūmija came out of retreat, went to Venerable Sāriputta, and exchanged greetings with him. | T: i Then, in the evening, the Venerable Bhūmija emerged from seclusion and approached the Venerable Sāriputta. He exchanged greetings with the Venerable Sāriputta and,
+sn12.25:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to him: | T: when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.25:2.1 | S: “Reverend Sāriputta, there are ascetics and brahmins who teach the efficacy of deeds. Some of them assert that pleasure and pain are made by oneself. | T: “Friend Sāriputta, some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created by oneself;
+sn12.25:2.2 | S: Some of them assert that pleasure and pain are made by another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created by another;
+sn12.25:2.3 | S: Some of them assert that pleasure and pain are made by both oneself and another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain are created both by oneself and by another;
+sn12.25:2.4 | S: Some of them assert that pleasure and pain arise anomalously, not made by oneself or another. | T: some ascetics and brahmins, proponents of kamma, maintain that pleasure and pain have arisen fortuitously, being created neither by oneself nor by another.
+sn12.25:2.5 | S: What does the Buddha say about this? How does he explain it? | T: Now, friend Sāriputta, what does the Blessed One say about this?
+sn12.25:2.6 | S: How should we answer so as to repeat what the Buddha has said, and not misrepresent him with an untruth? How should we explain in line with his teaching, with no legitimate grounds for rebuttal and criticism?” | T: What does he teach? How should we answer if we are to state what has been said by the Blessed One and not misrepresent him with what is contrary to fact? And how should we explain in accordance with the Dhamma so that no reasonable consequence of our assertion would give ground for criticism?”
+sn12.25:3.1 | S: “Reverend, the Buddha has said that pleasure and pain are dependently originated. | T: “Friend, the Blessed One has said that pleasure and pain are dependently arisen.
+sn12.25:3.2 | S: Dependent on what? | T: Dependent on what?
+sn12.25:3.3 | S: Dependent on contact. | T: Dependent on contact.
+sn12.25:3.4 | S: In speaking like this, you would repeat what the Buddha has said, and not misrepresent him with an untruth. You would explain in line with his teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by the Blessed One and would not misrepresent him with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.25:4.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, that’s dependent on contact. … | T: “Therein, friend, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself,
+sn12.25:4.2 | P: Yepi te …pe… | T: and those who maintain that pleasure and pain are created by another,
+sn12.25:4.3 | P: yepi te …pe… | T: and those who maintain that pleasure and pain are created both by oneself and by another,
+sn12.25:4.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, that’s also dependent on contact. | T: and those who maintain that pleasure and pain have arisen fortuitously, being created neither by oneself nor by another—in each case that is conditioned by contact.
+sn12.25:5.1 | S: Consider the ascetics and brahmins who teach the efficacy of deeds. In the case of those who assert that pleasure and pain are made by oneself, it’s impossible that they will experience that without contact. … | T: “Therein, friends, in the case of those ascetics and brahmins, proponents of kamma, who maintain that pleasure and pain are created by oneself,
+sn12.25:13.3 | P: Sampajāno vā taṁ, ānanda …pe… | T: (none)
+sn12.25:13.4 | P: asampajāno vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:14.1 | S: Ignorance is included in all these things. | T: “Ignorance is comprised within these states.
+sn12.25:14.2 | S: But when ignorance fades away and ceases with no residue left behind, that body, that voice, and that mind no longer exist dependent on which that pleasure and pain arise in oneself. | T: But with the remainderless fading away and cessation of ignorance that body does not exist conditioned by which that pleasure and pain arise internally; that speech does not exist conditioned by which that pleasure and pain arise internally; that mind does not exist conditioned by which that pleasure and pain arise internally.
+sn12.25:14.3 | S: That field does not exist, that ground does not exist, that dimension does not exist, that foundation does not exist, dependent on which that pleasure and pain arise in oneself.” | T: That field does not exist, that site does not exist, that base does not exist, that foundation does not exist conditioned by which that pleasure and pain arise internally.”
+sn12.25:14.4 | P: Pañcamaṁ. | T: (none)
+
+## sn12.26
+sn12.26:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.26:1.2 | S: Then Venerable Upavāṇa went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Upavaṇa approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.26:2.1 | S: “Sir, there are some ascetics and brahmins who assert that suffering is made by oneself. | T: “Venerable sir, some ascetics and brahmins maintain that suffering is created by oneself;
+sn12.26:2.2 | S: There are some who assert that suffering is made by another. | T: some ascetics and brahmins maintain that suffering is created by another;
+sn12.26:2.3 | S: There are some who assert that suffering is made by both oneself and another. | T: some ascetics and brahmins maintain that suffering is created both by oneself and by another;
+sn12.26:2.4 | S: There are some who assert that suffering arises anomalously, not made by oneself or another. | T: some ascetics and brahmins maintain that suffering has arisen fortuitously, being created neither by oneself nor by another.
+sn12.26:2.5 | S: What does the Buddha say about this? How does he explain it? How should we answer so as to repeat what the Buddha has said, and not misrepresent him with an untruth? How should we explain in line with his teaching, with no legitimate grounds for rebuttal and criticism?” | T: Now, venerable sir, what does the Blessed One say about this? What does he teach? How should we answer if we are to state what has been said by the Blessed One and not misrepresent him with what is contrary to fact? And how should we explain in accordance with the Dhamma so that no reasonable consequence of our assertion would give ground for criticism?”
+sn12.26:3.1 | S: “Upavāṇa, I have said that suffering is dependently originated. | T: “Upavaṇa, I have said that suffering is dependently arisen.
+sn12.26:3.2 | S: Dependent on what? | T: Dependent on what?
+sn12.26:3.3 | S: Dependent on contact. | T: Dependent on contact.
+sn12.26:3.4 | S: In speaking like this, you would repeat what I have said, and not misrepresent me with an untruth. You would explain in line with my teaching, and there would be no legitimate grounds for rebuttal and criticism. | T: If one were to speak thus one would be stating what has been said by me and would not misrepresent me with what is contrary to fact; one would explain in accordance with the Dhamma, and no reasonable consequence of one’s assertion would give ground for criticism.
+sn12.26:4.1 | S: In the case of those ascetics and brahmins who assert that suffering is made by oneself, that’s dependent on contact. … | T: “Therein, Upavaṇa, in the case of those ascetics and brahmins who maintain that suffering is created by oneself,
+sn12.26:4.2 | P: Yepi te …pe… | T: and those who maintain that suffering is created by another,
+sn12.26:4.3 | P: yepi te …pe… | T: and those who maintain that suffering is created both by oneself and by another,
+sn12.39:1.3 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness.
+sn12.39:1.4 | S: When consciousness is established and grows, name and form are conceived. | T: When consciousness is established and has come to growth, there is a descent of name-and-form.
+sn12.39:1.5 | S: Name and form are requirements for the six sense fields. | T: With name-and-form as condition, the six sense bases come to be;
+sn12.39:1.6 | S: The six sense fields are requirements for contact. | T: with the six sense bases as condition, contact;
+sn12.39:1.7 | S: Contact is a requirement for feeling. … | T: with contact as condition, feeling …
+sn12.39:1.8 | S: craving … | T: craving …
+sn12.39:1.9 | S: grasping … | T: clinging …
+sn12.39:1.10 | S: continued existence … | T: existence …
+sn12.39:1.11 | S: rebirth … | T: birth;
+sn12.39:1.12 | S: old age and death, | T: with birth as condition, aging-and-death,
+sn12.39:1.13 | S: sorrow, lamentation, pain, sadness, and distress come to be. | T: sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.39:1.14 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.39:2.1 | S: If you don’t intend or plan, but still have underlying tendencies, this becomes a support for the continuation of consciousness. | T: “If, bhikkhus, one does not intend, and one does not plan, but one still has a tendency towards something, this becomes a basis for the maintenance of consciousness.
+sn12.39:2.2 | S: When this support exists, consciousness becomes established. | T: When there is a basis, there is a support for the establishing of consciousness.
+sn12.39:2.3 | S: When consciousness is established and grows, name and form are conceived. | T: When consciousness is established and has come to growth, there is a descent of name-and-form.
+
+exec
+/bin/bash -lc "sed -n '109,122p;178,186p;251,267p;323,339p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.21:1.4 | S: Such is feeling, such is the origin of feeling, such is the disappearance of feeling. | T: such is feeling, such its origin, such its passing away;
+sn12.21:1.5 | S: Such is perception, such is the origin of perception, such is the disappearance of perception. | T: such is perception, such its origin, such its passing away;
+sn12.21:1.6 | S: Such are choices, such is the origin of choices, such is the disappearance of choices. | T: such are volitional formations, such their origin, such their passing away;
+sn12.21:1.7 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness. | T: such is consciousness, such its origin, such its passing away.
+sn12.21:1.8 | S: So, when this exists, this comes to be; due to the arising of this, this arises. | T: Thus when this exists, that comes to be; with the arising of this, that arises.
+sn12.21:1.9 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this does not exist, that does not come to be; with the cessation of this, that ceases. That is,
+sn12.21:1.10 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, volitional formations come to be;
+sn12.21:1.11 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.21:1.12 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.21:1.13 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.21:1.14 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.21:1.15 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.21:1.16 | P: Paṭhamaṁ. | T: (none)
+
+sn12.23:4.15 | S: I say that craving has a vital condition. | T: “I say, bhikkhus, that craving too has a proximate cause; it does not lack a proximate cause.
+sn12.23:5.1 | S: And what is it? | T: And what is the proximate cause for craving?
+sn12.23:5.2 | S: You should say: ‘Feeling.’ … | T: It should be said: feeling.
+sn12.23:5.3 | S: You should say: ‘Contact.’ … | T: “For feeling, it should be said: contact. For contact:
+sn12.23:5.4 | S: You should say: ‘The six sense fields.’ … | T: the six sense bases. For the six sense bases:
+sn12.23:5.5 | S: You should say: ‘Name and form.’ … | T: name-and-form. For name-and-form:
+sn12.23:5.6 | S: You should say: ‘Consciousness.’ … | T: consciousness. For consciousness:
+sn12.23:5.7 | S: You should say: ‘Choices.’ … | T: volitional formations.
+sn12.23:5.8 | S: I say that choices have a vital condition, they don’t lack a vital condition. | T: “I say, bhikkhus, that volitional formations too have a proximate cause; they do not lack a proximate cause.
+sn12.25:9.3 | P: yepi te …pe… | T: (none)
+sn12.25:9.4 | S: In the case of those who assert that pleasure and pain arise anomalously, not made by oneself or another, it’s impossible that they will experience that without contact. | T: and those who maintain that pleasure and pain have arisen fortuitously … in each case it is impossible that they will experience anything without contact.
+sn12.25:10.1 | S: Ānanda, as long as there’s a body, the intention that gives rise to bodily action causes pleasure and pain to arise in oneself. | T: iii “Ānanda, when there is the body, because of bodily volition pleasure and pain arise internally;
+sn12.25:10.2 | S: As long as there’s a voice, the intention that gives rise to verbal action causes pleasure and pain to arise in oneself. | T: when there is speech, because of verbal volition pleasure and pain arise internally;
+sn12.25:10.3 | S: As long as there’s a mind, the intention that gives rise to mental action causes pleasure and pain to arise in oneself. But this is only when dependent on ignorance. | T: when there is the mind, because of mental volition pleasure and pain arise internally—and with ignorance as condition.
+sn12.25:11.1 | S: By oneself one instigates the choice that gives rise to bodily, verbal, and mental action, conditioned by which that pleasure and pain arise in oneself. | T: “Either on one’s own initiative, Ānanda one generates that bodily volitional formation conditioned by which pleasure and pain arise internally; or prompted by others one generates that bodily volitional formation conditioned by which pleasure and pain arise internally. Either deliberately, Ānanda, one generates that bodily volitional formation conditioned by which pleasure and pain arise internally; or undeliberately one generates that bodily volitional formation conditioned by which pleasure and pain arise internally. “Either on one’s own initiative, Ānanda, one generates that verbal volitional formation conditioned by which pleasure and pain arise internally; or prompted by others one generates that verbal volitional formation conditioned by which pleasure and pain arise internally. Either deliberately, Ānanda, one generates that verbal volitional formation conditioned by which pleasure and pain arise internally; or undeliberately one generates that verbal volitional formation conditioned by which pleasure and pain arise internally. “Either on one’s own initiative, Ānanda, one generates that mental volitional formation conditioned by which pleasure and pain arise internally;
+sn12.25:11.2 | S: Or else others instigate the choice … | T: or prompted by others one generates that mental volitional formation conditioned by which pleasure and pain arise internally.
+sn12.25:11.3 | S: One instigates the choice after deliberation … | T: Either deliberately, Ānanda, one generates that mental volitional formation conditioned by which pleasure and pain arise internally;
+sn12.25:11.4 | S: Or else one instigates the choice without deliberation … | T: or undeliberately one generates that mental volitional formation conditioned by which pleasure and pain arise internally.
+sn12.25:12.1 | P: Sāmaṁ vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:12.2 | P: Pare vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharonti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:12.3 | P: Sampajāno vā taṁ, ānanda …pe… | T: (none)
+sn12.25:12.4 | P: asampajāno vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.1 | P: Sāmaṁ vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.2 | P: Pare vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharonti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+sn12.25:13.3 | P: Sampajāno vā taṁ, ānanda …pe… | T: (none)
+sn12.25:13.4 | P: asampajāno vā taṁ, ānanda, manosaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. | T: (none)
+## sn12.37
+sn12.37:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.37:1.2 | S: “Mendicants, this body doesn’t belong to you or to anyone else. | T: “Bhikkhus, this body is not yours, nor does it belong to others.
+sn12.37:1.3 | S: It’s old deeds, and should be seen as produced by choices and intentions, as something to be felt. | T: It is old kamma, to be seen as generated and fashioned by volition, as something to be felt.
+sn12.37:2.1 | S: A learned noble disciple carefully and rationally applies the mind to dependent origination itself: | T: Therein, bhikkhus, the instructed noble disciple attends carefully and closely to dependent origination itself thus:
+sn12.37:2.2 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.37:2.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this does not exist, that does not come to be; with the cessation of this, that ceases. That is,
+sn12.37:2.4 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, volitional formations come to be;
+sn12.37:2.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.37:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.37:2.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.37:2.8 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.37:2.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.”
+sn12.37:2.10 | P: Sattamaṁ. | T: (none)
+
+## sn12.39
+sn12.39:1.1 | S: At Sāvatthī. | T: At Savatthī.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-068.findings.tmp <<'EOF'
+sn12.1:3.2 starts: with the cessation of volitional formations, cessation
+sn12.21:1.14 starts: with the cessation of volitional formations, cessation
+sn12.23:5.4 starts: For contact: the six sense bases.
+sn12.23:5.5 starts: For the six sense bases: name-and-form.
+sn12.23:5.6 starts: For name-and-form: consciousness.
+sn12.23:5.7 starts: For consciousness: volitional formations.
+sn12.25:2.6 starts: How should we answer if we are
+sn12.25:11.2 starts: or prompted by others one generates that bodily
+sn12.25:11.3 starts: Either deliberately, Ānanda, one generates that bodily volitional
+sn12.25:11.4 starts: or undeliberately one generates that bodily volitional formation
+sn12.25:12.1 starts: “Either on one’s own initiative, Ānanda, one generates
+sn12.25:12.2 starts: or prompted by others one generates that verbal
+sn12.25:12.3 starts: Either deliberately, Ānanda, one generates that verbal volitional
+sn12.25:12.4 starts: or undeliberately one generates that verbal volitional formation
+sn12.25:13.1 starts: “Either on one’s own initiative, Ānanda, one generates
+sn12.25:13.2 starts: or prompted by others one generates that mental
+sn12.25:13.3 starts: Either deliberately, Ānanda, one generates that mental volitional
+sn12.25:13.4 starts: or undeliberately one generates that mental volitional formation
+sn12.37:2.8 starts: with the cessation of volitional formations, cessation
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+19 lines reported.
+tokens used
+31,310
+19 lines reported.

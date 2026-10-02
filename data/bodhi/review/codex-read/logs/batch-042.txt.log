@@ -1,0 +1,581 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd87-433a-7472-833b-3d59dd78fb0c
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-boundary errors, and write only the findings to the requested file.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.28
+an4.28:1.1 | S: “Mendicants, these four noble customs are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now, nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “Bhikkhus, there are these four noble lineages, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.
+an4.28:1.2 | S: What four? | T: What four?
+an4.28:1.3 | S: Firstly, a mendicant is content with any kind of robe, and praises such contentment. They don’t employ improper solicitation for the sake of a robe. They don’t worry if they don’t get a robe. And if they do get a robe, they use it untied, uninfatuated, unattached, seeing the drawback, and understanding the escape. | T: (1) “Here, a bhikkhu is content with any kind of robe, and he speaks in praise of contentment with any kind of robe, and he does not engage in a wrong search, in what is improper, for the sake of a robe. If he does not get a robe he is not agitated, and if he gets one he uses it without being tied to it, infatuated with it, and blindly absorbed in it, seeing the danger in it and understanding the escape from it.
+an4.28:1.4 | S: But they don’t glorify themselves or put others down on account of their contentment. | T: Yet he does not extol himself or disparage others because of this.
+an4.28:1.5 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: Any bhikkhu who is skillful in this, diligent, clearly comprehending and ever mindful, is said to be standing in an ancient, primal noble lineage.
+an4.28:2.1 | S: Furthermore, a mendicant is content with any kind of almsfood … | T: (2) “Again, a bhikkhu is content with any kind of almsfood, and he speaks in praise of contentment with any kind of almsfood, and he does not engage in a wrong search, in what is improper, for the sake of almsfood. If he does not get almsfood he is not agitated, and if he gets some he uses it without being tied to it, infatuated with it, and blindly absorbed in it, seeing the danger in it and understanding the escape from it.
+an4.28:2.2 | P: tāya ca pana itarītarapiṇḍapātasantuṭṭhiyā nevattānukkaṁseti, no paraṁ vambheti. | T: Yet he does not extol himself or disparage others because of this.
+an4.28:2.3 | P: Yo hi tattha dakkho analaso sampajāno patissato, ayaṁ vuccati, bhikkhave, bhikkhu porāṇe aggaññe ariyavaṁse ṭhito. | T: Any bhikkhu who is skillful in this, diligent, clearly comprehending and ever mindful, is said to be standing in an ancient, primal noble lineage.
+an4.28:3.1 | S: Furthermore, a mendicant is content with any kind of lodgings … | T: (3) “Again, a bhikkhu is content with any kind of lodging, and he speaks in praise of contentment with any kind of lodging, and he does not engage in a wrong search, in what is improper, for the sake of lodging. If he does not get lodging he is not agitated, and if he gets it he uses it without being tied to it, infatuated with it, and blindly absorbed in it, seeing the danger in it and understanding the escape from it.
+an4.28:3.2 | P: tāya ca pana itarītarasenāsanasantuṭṭhiyā nevattānukkaṁseti, no paraṁ vambheti. | T: Yet he does not extol himself or disparage others because of this.
+an4.28:3.3 | P: Yo hi tattha dakkho analaso sampajāno patissato, ayaṁ vuccati, bhikkhave, bhikkhu porāṇe aggaññe ariyavaṁse ṭhito. | T: Any bhikkhu who is skillful in this, diligent, clearly comprehending and ever mindful, is said to be standing in an ancient, primal noble lineage.
+an4.28:4.1 | S: Furthermore, a mendicant enjoys meditation and loves to meditate. They enjoy giving up and love to give up. | T: (4) “Again, a bhikkhu finds delight in development, is delighted with development, finds delight in abandoning, is delighted with abandoning.
+an4.28:4.2 | S: But they don’t glorify themselves or put down others on account of their love for meditation and giving up. | T: Yet he does not extol himself or disparage others because of this.
+an4.28:4.3 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: Any bhikkhu who is skillful in this, diligent, clearly comprehending and ever mindful, is said to be standing in an ancient, primal noble lineage.
+an4.28:4.4 | S: These four noble customs are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These, bhikkhus, are the four noble lineages, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.
+an4.28:5.1 | S: When a mendicant possesses these four noble customs, if they live in the east they prevail over discontent, and discontent doesn’t prevail over them. | T: “Bhikkhus, when a bhikkhu possesses these four noble lineages, if he dwells in the east he vanquishes discontent, discontent does not vanquish him;
+an4.28:5.2 | S: If they live in the west … | T: if he dwells in the west he vanquishes discontent, discontent does not vanquish him;
+an4.28:5.3 | S: the north … | T: if he dwells in the north he vanquishes discontent, discontent does not vanquish him;
+an4.28:5.4 | S: the south, they prevail over discontent, and discontent doesn’t prevail over them. | T: if he dwells in the south he vanquishes discontent, discontent does not vanquish him.
+an4.28:5.5 | S: Why is that? | T: For what reason?
+an4.28:5.6 | S: Because the attentive prevail over desire and discontent. | T: Because he is a steadfast one who vanquishes discontent and delight.”
+an4.28:6.1 | S: Discontent cannot prevail over the attentive; | T: Discontent does not vanquish the steadfast one,
+an4.28:6.2 | S: the attentive are not prevailed over by discontent. | T: for the steadfast one is not vanquished by discontent.
+an4.28:6.3 | S: The attentive can prevail over discontent, | T: The steadfast one vanquishes discontent,
+an4.28:6.4 | S: for the attentive are those who prevail over discontent. | T: for the steadfast one is a vanquisher of discontent.
+an4.28:7.1 | S: Who can hold back the dispeller, | T: Who can obstruct the dispeller
+an4.28:7.2 | S: who’s cast aside all deeds? | T: who has discarded all kamma?
+an4.28:7.3 | S: Like a pendant of Black Plum River gold, | T: Who is fit to blame one who is like a coin of refined gold?
+an4.28:7.4 | S: who is worthy to criticize them? | T: (none)
+an4.28:7.5 | S: Even the gods praise them, | T: Even the devas praise such a one;
+an4.28:7.6 | S: and by the Divinity, too, they’re praised.” | T: by Brahmā too he is praised.
+an4.28:7.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## an4.3
+an4.3:1.1 | S: “When a foolish, incompetent untrue person has four qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: “Bhikkhus, possessing four qualities, the foolish, incompetent, bad person maintains himself in a maimed and injured condition; he is blameworthy and subject to reproach by the wise; and he generates much demerit.
+an4.3:1.2 | S: What four? | T: What four?
+an4.3:1.3 | S: Without examining or scrutinizing, they praise those deserving of criticism, | T: (1) “Without investigating and scrutinizing, he speaks praise of one who deserves dispraise.
+an4.3:1.4 | S: and they criticize those deserving of praise. | T: (2) Without investigating and scrutinizing, he speaks dispraise of one who deserves praise.
+an4.3:1.5 | S: They arouse faith in things that are dubious, | T: (3) Without investigating and scrutinizing, he believes a matter that merits suspicion.
+an4.3:1.6 | S: and they don’t arouse faith in things that are inspiring. | T: (4) Without investigating and scrutinizing, he is suspicious about a matter that merits belief.
+an4.3:1.7 | S: When a foolish, incompetent untrue person has these four qualities they keep themselves broken and damaged. They deserve to be blamed and criticized by sensible people, and they brim with much wickedness. | T: Possessing these four qualities, the foolish, incompetent, bad person maintains himself in a maimed and injured condition; he is blameworthy and subject to reproach by the wise; and he generates much demerit.
+an4.3:2.1 | S: When an astute, competent true person has four qualities they keep themselves intact and unscathed. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit. | T: “Bhikkhus, possessing four qualities, the wise, competent, good person preserves himself unmaimed and uninjured; he is blameless and beyond reproach by the wise; and he generates much merit.
+an4.3:2.2 | S: What four? | T: What four?
+an4.3:2.3 | S: After examining and scrutinizing, they criticize those deserving of criticism, | T: (1) “Having investigated and scrutinized, he speaks dispraise of one who deserves dispraise.
+an4.3:2.4 | S: and they praise those deserving of praise. | T: (2) Having investigated and scrutinized, he speaks praise of one who deserves praise.
+an4.3:2.5 | S: They don’t arouse faith in things that are dubious, | T: (3) Having investigated and scrutinized, he is suspicious about a matter that merits suspicion.
+an4.3:2.6 | S: and they do arouse faith in things that are inspiring. | T: (4) Having investigated and scrutinized, he believes a matter that merits belief.
+an4.3:2.7 | S: When an astute, competent true person has these four qualities they keep themselves healthy and whole. They don’t deserve to be blamed and criticized by sensible people, and they brim with much merit. | T: Possessing these four qualities, the wise, competent, good person preserves himself unmaimed and uninjured; he is blameless and beyond reproach by the wise; and he generates much merit.”
+an4.3:3.1 | S: When you praise someone worthy of criticism, | T: He who praises one deserving blame,
+an4.3:3.2 | S: or criticize someone worthy of praise, | T: or blames one deserving praise,
+an4.3:3.3 | S: you choose a losing hand with your own mouth: | T: casts with his mouth an unlucky throw
+an4.3:3.4 | S: you’ll never find happiness that way. | T: by which he finds no happiness.
+an4.3:4.1 | S: A losing hand at dice is a trivial thing, | T: Slight is the unlucky throw at dice
+an4.3:4.2 | S: if all you lose is your money | T: that results in the loss of one’s wealth,
+an4.3:4.3 | S: and all you own, even yourself. | T: the loss of all, oneself included;
+an4.3:4.4 | S: What’s a really terrible hand | T: much worse is this unlucky throw
+an4.3:4.5 | S: is to hate the holy ones. | T: of harboring hate against the fortunate ones.
+an4.3:5.1 | S: For a hundred thousand times a hundred million, | T: (none)
+an4.3:5.2 | S: times five hundred and thirty-six times <j>a thousand times ten million years | T: For a hundred thousand and thirty-six nirabbudas, plus five abbudas,
+an4.3:5.3 | S: a slanderer of noble ones goes to hell, | T: the slanderer of noble ones goes to hell,
+an4.3:5.4 | S: having aimed bad words and thoughts at them.” | T: having defamed them with evil speech and mind.
+an4.3:5.5 | P: Tatiyaṁ. | T: (none)
+
+## sn1.32
+sn1.32:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn1.32:1.2 | S: Then, late at night, several glorious deities of the host of a hundred felicities, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then, when the night had advanced, a number of devatās belonging to the Satullapa host, of stunning beauty, illuminating the entire Jeta’ s Grove, approached the Blessed One. Having approached, they paid homage to the Blessed One and stood to one side.
+sn1.32:1.3 | S: Standing to one side, one deity spoke this verse in the Buddha’s presence: | T: Then one devatā, standing to one side, recited this verse in the presence of the Blessed One:
+sn1.32:2.1 | S: “Because of stinginess and negligence | T: “Through stinginess and negligence
+sn1.32:2.2 | S: a gift is not given. | T: A gift is not given.
+sn1.32:2.3 | S: Wanting merit, | T: One who knows, desiring merit,
+sn1.32:2.4 | S: a smart person would give.” | T: Should surely give a gift.”
+sn1.32:3.1 | S: Then another deity recited these verses in the Buddha’s presence: | T: Then another devatā recited these verses in the presence of the Blessed One:
+sn1.32:4.1 | S: “When a miser fails to give because of fear, | T: “That which the miser fears when he does not give
+sn1.32:4.2 | S: the very thing they’re afraid of comes to pass. | T: Is the very danger that comes to the nongiver.
+sn1.32:4.3 | S: The hunger and thirst | T: The hunger and thirst
+sn1.32:4.4 | S: that a miser fears | T: that the miser fears
+sn1.32:4.5 | S: hurt the fool | T: Afflict that fool
+sn1.32:4.6 | S: in this world and the next. | T: in this world and the next.
+sn1.32:5.1 | S: So you should dispel stinginess, | T: “Therefore, having removed stinginess,
+sn1.32:5.2 | S: overcoming that stain, and give a gift. | T: The conqueror of the stain should give a gift.
+sn1.32:5.3 | S: The good deeds of sentient beings | T: Deeds of merit are the support for living beings
+sn1.32:5.4 | S: support them in the next world.” | T: When they arise in the other world.”
+sn1.32:6.1 | S: Then another deity recited these verses in the Buddha’s presence: | T: Then another devatā recited these verses in the presence of the Blessed One:
+sn1.32:7.1 | S: “Among the dead they do not die, | T: “They do not die among the dead
+sn1.32:7.2 | S: those who, like fellow travelers on the road, | T: Who, like fellow travellers on the road,
+sn1.32:7.3 | S: are happy to provide, though they have but little. | T: Provide though they have but a little:
+sn1.32:7.4 | S: This is an ancient teaching. | T: This is an ancient principle.
+sn1.32:8.1 | S: Some who have little are happy to provide, | T: “Some provide from the little they have,
+sn1.32:8.2 | S: while some who have much don’t wish to give. | T: Others who are affluent don’t like to give.
+sn1.32:8.3 | S: An offering given from little | T: An offering given from what little one has
+sn1.32:8.4 | S: is multiplied a thousand times.” | T: Is worth a thousand times its value.”
+sn1.32:9.1 | S: Then another deity recited these verses in the Buddha’s presence: | T: Then another devatā recited these verses in the presence of the Blessed One:
+sn1.32:10.1 | S: “Giving what’s hard to give, | T: “The bad do not emulate the good, Who give what is hard to give
+sn1.32:10.2 | S: doing what’s hard to do; | T: And do deeds hard to do:
+sn1.32:10.3 | S: the wicked don’t act like this, | T: (none)
+sn1.32:10.4 | S: for the teaching of the good is hard to follow. | T: The Dhamma of the good is hard to follow.
+sn1.32:11.1 | S: That’s why the virtuous and the wicked | T: “Therefore their destination after death
+sn1.32:11.2 | S: have different destinations after here. | T: Differs for the good and the bad:
+sn1.32:11.3 | S: The wicked go to hell, | T: The bad go to hell,
+sn1.32:11.4 | S: while the virtuous are bound for heaven.” | T: The good are bound for heaven.”
+sn1.32:12.1 | S: Then another deity said to the Buddha, | T: Then another devatā said to the Blessed One:
+sn1.32:12.2 | S: “Sir, who has spoken well?” | T: “Which one, Blessed One, has spoken well?”
+sn1.32:13.1 | S: “You’ve all spoken well in your own way. However, listen to me also: | T: “You have all spoken well in a way. But listen to me too:
+sn1.32:14.1 | S: A hundred thousand people <j>making a thousand sacrifices | T: “If one practises the Dhamma Though getting on by gleaning, If while one supports one’s wife One gives from the little one has, Then a hundred thousand offerings Of those who sacrifice a thousand
+sn1.32:14.2 | S: isn’t worth a fraction of that sort, | T: Are not worth even a fraction
+sn1.32:14.3 | S: who lives rightly, wandering for gleanings, | T: (none)
+sn1.32:14.4 | S: or one who supports their partner <j>with what little they have.” | T: Of the gift of one like him.”
+sn1.32:15.1 | S: Then another deity addressed the Buddha in verse: | T: Then another devatā addressed the Blessed One in verse:
+sn1.32:16.1 | S: “Why doesn’t that sacrifice of theirs, <j>so abundant and magnificent, | T: “Why does their sacrifice, vast and grand,
+sn1.32:16.2 | S: equal the value of a moral person’s gift? | T: Not share the value of the righteous one’s gift?
+sn1.32:16.3 | S: How is it that a hundred thousand people  <j>making a thousand sacrifices | T: Why are a hundred thousand offerings Of those who sacrifice a thousand
+sn1.32:16.4 | S: isn’t worth a fraction of what’s offered by that sort?” | T: Not worth even a fraction Of the gift of one like him?”
+sn1.32:17.1 | S: “Some give based on immorality— | T: Then the Blessed One answered that devatā in verse: “Since they give while settled in unrighteousness,
+sn1.32:17.2 | S: after slaying, killing, and tormenting. | T: Having slain and killed, causing sorrow,
+sn1.32:17.3 | S: Such an offering—tearful, violent— | T: Their offering—tearful, fraught with violence—
+sn1.32:17.4 | S: in no way equals the value of a moral person’s gift. | T: Shares not the value of the righteous one’s gift.
+sn1.32:18.1 | S: That’s how it is that a hundred thousand people  <j>making a thousand sacrifices | T: That is why a hundred thousand offerings Of those who sacrifice a thousand
+sn1.32:18.2 | S: isn’t worth a fraction of what’s offered by that sort.” | T: Are not worth even a fraction Of the gift of one like him.”
+
+## sn22.79
+sn22.79:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.79:1.2 | S: “Mendicants, whatever ascetics and brahmins recollect many kinds of past lives, all recollect the five grasping aggregates, or one of them. | T: “Bhikkhus, those ascetics and brahmins who recollect their manifold past abodes all recollect the five aggregates subject to clinging or a certain one among them.
+sn22.79:1.3 | S: What five? | T: What five?
+sn22.79:1.4 | S: ‘I had such form in the past.’ | T: “When recollecting thus, bhikkhus: ‘I had such form in the past,’
+sn22.79:1.5 | S: Recollecting thus, it’s only form that they recollect. | T: it is just form that one recollects.
+sn22.79:1.6 | S: ‘I had such feeling … | T: When recollecting: ‘I had such a feeling in the past,’ it is just feeling that one recollects.
+sn22.79:1.7 | P: iti vā hi, bhikkhave, anussaramāno vedanaṁyeva anussarati. | T: (none)
+sn22.79:1.8 | S: perception … | T: When recollecting: ‘I had such a perception in the past,’ it is just perception that one recollects.
+sn22.79:1.9 | S: choices … | T: When recollecting: ‘I had such volitional formations in the past,’ it is just volitional formations that one recollects.
+sn22.79:1.10 | S: consciousness in the past.’ | T: When recollecting: ‘I had such consciousness in the past,’
+sn22.79:1.11 | S: Recollecting thus, it’s only consciousness that they recollect. | T: it is just consciousness that one recollects.
+sn22.79:2.1 | S: And why do you call it form? | T: “And why, bhikkhus, do you call it form?
+sn22.79:2.2 | S: It’s deformed; that’s why it’s called ‘form’. | T: ‘It is deformed,’ bhikkhus, therefore it is called form.
+sn22.79:2.3 | S: Deformed by what? | T: Deformed by what?
+sn22.79:2.4 | S: Deformed by cold, heat, hunger, and thirst, and deformed by the touch of flies, mosquitoes, wind, sun, and reptiles. | T: Deformed by cold, deformed by heat, deformed by hunger, deformed by thirst, deformed by contact with flies, mosquitoes, wind, sun, and serpents.
+sn22.79:2.5 | S: It’s deformed; that’s why it’s called ‘form’. | T: ‘It is deformed,’ bhikkhus, therefore it is called form.
+sn22.79:3.1 | S: And why do you call it feeling? | T: “And why, bhikkhus, do you call it feeling?
+sn22.79:3.2 | S: It feels; that’s why it’s called ‘feeling’. | T: ‘It feels,’ bhikkhus, therefore it is called feeling.
+sn22.79:3.3 | S: And what does it feel? | T: And what does it feel?
+sn22.79:3.4 | S: It feels pleasure, pain, and neutral. | T: It feels pleasure, it feels pain, it feels neither-pain-nor-pleasure.
+sn22.79:3.5 | S: It feels; that’s why it’s called ‘feeling’. | T: ‘It feels,’ bhikkhus, therefore it is called feeling.
+sn22.79:4.1 | S: And why do you call it perception? | T: “And why, bhikkhus, do you call it perception?
+sn22.79:4.2 | S: It perceives; that’s why it’s called ‘perception’. | T: ‘It perceives,’ bhikkhus, therefore it is called perception.
+sn22.79:4.3 | S: And what does it perceive? | T: And what does it perceive?
+sn22.79:4.4 | S: It perceives blue, yellow, red, and white. | T: It perceives blue, it perceives yellow, it perceives red, it perceives white.
+sn22.79:4.5 | S: It perceives; that’s why it’s called ‘perception’. | T: ‘It perceives,’ bhikkhus, therefore it is called perception.
+sn22.79:5.1 | S: And why do you call them choices? | T: “And why, bhikkhus, do you call them volitional formations?
+sn22.79:5.2 | S: Choices produce conditioned phenomena; that’s why they’re called ‘choices’. | T: ‘They construct the conditioned,’ bhikkhus, therefore they are called volitional formations.
+sn22.79:5.3 | S: And what are the conditioned phenomena that they produce? | T: And what is the conditioned that they construct?
+sn22.79:5.4 | S: Form is a conditioned phenomenon; choices are what make it into form. Feeling is a conditioned phenomenon; choices are what make it into feeling. Perception is a conditioned phenomenon; choices are what make it into perception. Choices are conditioned phenomena; choices are what make them into choices. Consciousness is a conditioned phenomenon; choices are what make it into consciousness. | T: They construct conditioned form as form; they construct conditioned feeling as feeling; they construct conditioned perception as perception; they construct conditioned volitional formations as volitional formations; they construct conditioned consciousness as consciousness.
+sn22.79:5.5 | S: Choices produce conditioned phenomena; that’s why they’re called ‘choices’. | T: ‘They construct the conditioned,’ bhikkhus, therefore they are called volitional formations.
+sn22.79:6.1 | S: And why do you call it consciousness? | T: “And why, bhikkhus, do you call it consciousness?
+sn22.79:6.2 | S: It cognizes; that’s why it’s called ‘consciousness’. | T: ‘It cognizes, ’ bhikkhus, therefore it is called consciousness.
+sn22.79:6.3 | S: And what does it cognize? | T: And what does it cognize?
+sn22.79:6.4 | S: It cognizes sour, bitter, pungent, sweet, hot, mild, salty, and bland. | T: It cognizes sour, it cognizes bitter, it cognizes pungent, it cognizes sweet, it cognizes sharp, it cognizes mild, it cognizes salty, it cognizes bland.
+sn22.79:6.5 | S: It cognizes; that’s why it’s called ‘consciousness’. | T: ‘It cognizes,’ bhikkhus, therefore it is called consciousness.
+sn22.79:7.1 | S: A learned noble disciple reflects on this: | T: “Therein, bhikkhus, the instructed noble disciple reflects thus:
+sn22.79:7.2 | S: ‘Currently I’m bitten by form. | T: ‘I am now being devoured by form.
+sn22.79:7.3 | S: In the past I was also bitten by form just like now. | T: In the past too I was devoured by form in the very same way that I am now being devoured by present form.
+sn22.79:7.4 | S: If I were to look forward to enjoying form in the future, I’d be bitten by form in the future just as I am today.’ | T: If I were to seek delight in future form, then in the future too I shall be devoured by form in the very same way that I am now being devoured by present form.’
+sn22.79:7.5 | S: Reflecting like this they are not concerned with past form, | T: Having reflected thus, he becomes indifferent towards past form,
+sn22.79:7.6 | S: they don’t look forward to enjoying future form, | T: he does not seek delight in future form,
+sn22.79:7.7 | S: and they practice for disillusionment, dispassion, and cessation regarding present form. | T: and he is practising for revulsion towards present form, for its fading away and cessation.
+sn22.79:8.1 | S: ‘Currently I’m bitten by feeling … | T: “He reflects thus: ‘I am now being devoured by feeling.’
+sn22.79:8.2 | P: Atītampāhaṁ addhānaṁ evameva vedanāya khajjiṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmi. | T: (none)
+sn22.79:8.3 | P: Ahañceva kho pana anāgataṁ vedanaṁ abhinandeyyaṁ; | T: …
+sn22.79:8.4 | P: anāgatampāhaṁ addhānaṁ evameva vedanāya khajjeyyaṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmī’ti. | T: (none)
+sn22.79:8.5 | P: So iti paṭisaṅkhāya atītāya vedanāya anapekkho hoti; | T: (none)
+sn22.79:8.6 | P: anāgataṁ vedanaṁ nābhinandati; | T: …
+sn22.79:8.7 | P: paccuppannāya vedanāya nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn22.79:9.1 | S: perception … | T: ‘I am now being devoured by perception.’ …
+sn22.79:9.2 | S: choices … | T: ‘I am now being devoured by volitional formations.’
+sn22.79:9.3 | P: Atītampāhaṁ addhānaṁ evameva saṅkhārehi khajjiṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmīti. | T: (none)
+sn22.79:9.4 | P: Ahañceva kho pana anāgate saṅkhāre abhinandeyyaṁ; | T: (none)
+sn22.79:9.5 | P: anāgatampāhaṁ addhānaṁ evameva saṅkhārehi khajjeyyaṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmī’ti. | T: (none)
+sn22.79:9.6 | P: So iti paṭisaṅkhāya atītesu saṅkhāresu anapekkho hoti; | T: (none)
+sn22.79:9.7 | P: anāgate saṅkhāre nābhinandati; | T: (none)
+sn22.79:9.8 | P: paccuppannānaṁ saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: …
+sn22.79:10.1 | S: consciousness. | T: ‘I am now being devoured by consciousness.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.79:10.2 | S: In the past I was also bitten by consciousness just like now. | T: In the past too I was devoured by consciousness in the very same way that I am now being devoured by present consciousness.
+sn22.79:10.3 | S: If I were to look forward to enjoying consciousness in the future, I’d be bitten by consciousness in the future just as I am today.’ | T: If I were to seek delight in future consciousness, then in the future too I shall be devoured by consciousness in the very same way that I am now being devoured by present consciousness.’
+sn22.79:10.4 | P: anāgatampāhaṁ addhānaṁ evameva viññāṇena khajjeyyaṁ, seyyathāpi etarahi paccuppannena viññāṇena khajjāmī’ti. | T: (none)
+sn22.79:10.5 | S: Reflecting like this they are not concerned with past consciousness, | T: Having reflected thus, he becomes indifferent towards past consciousness,
+sn22.79:10.6 | S: they don’t look forward to enjoying future consciousness, | T: he does not seek delight in future consciousness,
+sn22.79:10.7 | S: and they practice for disillusionment, dispassion, and cessation regarding present consciousness. | T: and he is practising for revulsion towards present consciousness, for its fading away and cessation.
+sn22.79:11.1 | S: What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn22.79:11.2 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?
+sn22.79:11.3 | S: “Impermanent, sir.” | T: (none)
+sn22.79:11.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn22.79:11.5 | S: “Suffering, sir.” | T: (none)
+sn22.79:11.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+sn22.79:11.7 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+sn22.79:11.8 | S: “No, sir.” | T: …
+sn22.79:11.9 | S: “Is feeling … | T: Is feeling …
+sn22.79:11.10 | S: perception … | T: perception …
+sn22.79:11.11 | S: choices … | T: volitional formations …
+sn22.79:11.12 | S: consciousness permanent or impermanent?” | T: consciousness permanent or impermanent?”—
+sn22.79:11.13 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn22.79:11.14 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn22.79:11.15 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn22.79:11.16 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn22.79:11.17 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn22.79:11.18 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.79:11.19 | S: “So you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Therefore, bhikkhus, any kind of form whatsoever …
+sn22.79:11.20 | S: You should truly see any kind of feeling … | T: Any kind of feeling whatsoever …
+sn22.79:11.21 | S: perception … | T: Any kind of perception whatsoever …
+sn22.79:11.22 | S: choices … | T: Any kind of volitional formations whatsoever …
+sn22.79:11.23 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near, all consciousness should be seen as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self.’
+sn22.79:12.1 | S: This is called a noble disciple who gets rid of and doesn’t accumulate; | T: “This is called, bhikkhus, a noble disciple who dismantles and does not build up;
+sn22.79:12.2 | S: who gives up and doesn’t grasp; | T: who abandons and does not cling;
+sn22.79:12.3 | S: who unmeshes and doesn’t enmesh; | T: who scatters and does not amass;
+sn22.79:12.4 | S: who dissipates and doesn’t get clouded. | T: who extinguishes and does not kindle.
+sn22.79:12.5 | S: And what things do they get rid of and not accumulate? | T: “And what is it that he dismantles and does not build up?
+sn22.79:12.6 | S: They get rid of form and don’t accumulate it. | T: He dismantles form and does not build it up.
+sn22.79:12.7 | S: They get rid of feeling … | T: He dismantles feeling …
+sn22.79:12.8 | S: perception … | T: perception …
+sn22.79:12.9 | S: choices … | T: volitional formations …
+sn22.79:12.10 | S: consciousness and don’t accumulate it. | T: consciousness and does not build it up.
+sn22.79:12.11 | S: And what things do they give up and not grasp? | T: “And what is it that he abandons and does not cling to?
+sn22.79:12.12 | S: They give up form and don’t grasp it. | T: He abandons form and does not cling to it.
+sn22.79:12.13 | S: They give up feeling … | T: He abandons feeling …
+sn22.79:12.14 | S: perception … | T: perception …
+sn22.79:12.15 | S: choices … | T: volitional formations …
+sn22.79:12.16 | S: consciousness and don’t grasp it. | T: consciousness and does not cling to it.
+sn22.79:12.17 | S: And what things do they unmesh and not enmesh? | T: “And what is it that he scatters and does not amass?
+sn22.79:12.18 | S: They unmesh form and don’t enmesh it. | T: He scatters form and does not amass it.
+sn22.79:12.19 | S: They unmesh feeling … | T: He scatters feeling …
+sn22.79:12.20 | S: perception … | T: perception …
+sn22.79:12.21 | S: choices … | T: volitional formations …
+sn22.79:12.22 | S: consciousness and don’t enmesh it. | T: consciousness and does not amass it.
+sn22.79:12.23 | S: And what things do they dissipate and not get clouded by? | T: “And what is it that he extinguishes and does not kindle?
+sn22.79:12.24 | S: They dissipate form and don’t get clouded by it. | T: He extinguishes form and does not kindle it.
+sn22.79:12.25 | S: They dissipate feeling … | T: He extinguishes feeling …
+sn22.79:12.26 | S: perception … | T: perception …
+sn22.79:12.27 | S: choices … | T: volitional formations …
+sn22.79:12.28 | S: consciousness and don’t get clouded by it. | T: consciousness and does not kindle it.
+sn22.79:13.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn22.79:13.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn22.79:13.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn22.79:14.1 | S: This is called a mendicant who neither gets rid of nor accumulates, but remains after getting rid. They neither give up nor grasp, but remain after giving up. They neither unmesh nor enmesh, but remain after unmeshing. They neither dissipate nor get clouded, but remain after dissipating. | T: “This is called, bhikkhus, a noble disciple who neither builds up nor dismantles, but who abides having dismantled; who neither abandons nor clings, but who abides having abandoned; who neither scatters nor amasses, but who abides having scattered; who neither extinguishes nor kindles, but who abides having extinguished.
+sn22.79:14.2 | S: And what things do they neither get rid of nor accumulate, but remain after getting rid of them? | T: “And what is it, bhikkhus, that he neither builds up nor dismantles, but abides having dismantled?
+sn22.79:14.3 | S: They neither get rid of nor accumulate form, but remain after getting rid of it. | T: He neither builds up nor dismantles form, but abides having dismantled it.
+sn22.79:14.4 | S: They neither get rid of nor accumulate feeling … | T: He neither builds up nor dismantles feeling …
+sn22.79:14.5 | S: perception … | T: perception …
+sn22.79:14.6 | S: choices … | T: volitional formations …
+sn22.79:14.7 | S: consciousness, but remain after getting rid of it. | T: consciousness, but abides having dismantled it.
+sn22.79:14.8 | S: And what things do they neither give up nor grasp, but remain after giving them up? | T: “And what is it that he neither abandons nor clings to, but abides having abandoned?
+sn22.79:14.9 | S: They neither give up nor grasp form, but remain after giving it up. | T: He neither abandons nor clings to form, but abides having abandoned it.
+sn22.79:14.10 | S: They neither give up nor grasp feeling … | T: He neither abandons nor clings to feeling …
+sn22.79:14.11 | S: perception … | T: perception …
+sn22.79:14.12 | S: choices … | T: volitional formations …
+sn22.79:14.13 | S: consciousness, but remain after giving it up. | T: consciousness, but abides having abandoned it.
+sn22.79:14.14 | S: And what things do they neither discard nor amass, but remain after discarding them? | T: “And what is it that he neither scatters nor amasses, but abides having scattered?
+sn22.79:14.15 | S: They neither unmesh nor enmesh form, but remain after unmeshing it. | T: He neither scatters nor amasses form, but abides having scattered it.
+sn22.79:14.16 | S: They neither unmesh nor enmesh feeling … | T: He neither scatters nor amasses feeling …
+sn22.79:14.17 | S: perception … | T: perception …
+sn22.79:14.18 | S: choices … | T: volitional formations …
+sn22.79:14.19 | S: consciousness, but remain after unmeshing it. | T: consciousness, but abides having scattered it.
+sn22.79:14.20 | S: And what things do they neither dissipate nor get clouded by, but remain after dissipating them? | T: “And what is it that he neither extinguishes nor kindles, but abides having extinguished?
+sn22.79:14.21 | S: They neither dissipate nor get clouded by form, but remain after dissipating it. | T: He neither extinguishes nor kindles form, but abides having extinguished it.
+sn22.79:14.22 | S: They neither dissipate nor get clouded by feeling … | T: He neither extinguishes nor kindles feeling …
+sn22.79:14.23 | S: perception … | T: perception …
+sn22.79:14.24 | S: choices … | T: volitional formations …
+sn22.79:14.25 | S: consciousness, but remain after dissipating it. | T: consciousness, but abides having extinguished it.
+sn22.79:14.26 | S: When a mendicant’s mind is freed like this, the gods together with Indra, the Divinity, and the Progenitor worship them from afar: | T: “When, bhikkhus, a bhikkhu is thus liberated in mind, the devas together with Indra, Brahma, and Pajapati pay homage to him from afar:
+sn22.79:15.1 | S: ‘Homage to you, O thoroughbred! | T: “‘Homage to you, O thoroughbred man!
+sn22.79:15.2 | S: Homage to you, supreme among men! | T: Homage to you, O highest among men!
+sn22.79:15.3 | S: We don’t understand | T: We ourselves do not directly know
+sn22.79:15.4 | S: the basis of your absorption.’” | T: Dependent upon what you meditate.’”
+sn22.79:15.5 | P: Sattamaṁ. | T: (none)
+
+## sn5.9
+sn5.9:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn5.9:1.2 | S: Then the nun Selā robed up in the morning … | T: Then, in the morning, the bhikkhuni Sela dressed …
+sn5.9:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: she sat down at the foot of a tree for the day’s abiding.
+sn5.9:1.4 | S: Then Māra the Wicked, wanting to make the nun Selā feel fear, terror, and goosebumps … | T: Then Mara the Evil One, desiring to arouse fear, trepidation, and terror in the bhikkhuni Sela, desiring to make her fall away from concentration,
+sn5.9:1.5 | S: addressed her in verse: | T: approached her and addressed her in verse:
+sn5.9:2.1 | S: “Who created this puppet? | T: By whom has this puppet been created?
+sn5.9:2.2 | S: Where is its maker? | T: Where is the maker of the puppet?
+sn5.9:2.3 | S: Where has the puppet arisen? | T: Where has the puppet arisen?
+sn5.9:2.4 | S: And where does it cease?” | T: Where does the puppet cease?”
+sn5.9:3.1 | S: Then the nun Selā thought, | T: Then it occurred to the bhikkhuni Sela:
+sn5.9:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who is this…?
+sn5.9:3.3 | S: Then she thought, | T: (none)
+sn5.9:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: This is Mara the Evil One … desiring to make me fall away from concentration.”
+sn5.9:3.5 | S: Then Selā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then the bhikkhuni Sela, having understood, “This is Mara the Evil One,” replied to him in verses:
+sn5.9:4.1 | S: “This puppet isn’t self-made, | T: “This puppet is not made by itself,
+sn5.9:4.2 | S: nor is this gloom made by another. | T: Nor is this misery made by another.
+sn5.9:4.3 | S: It comes to be because of a cause, | T: It has come to be dependent on a cause;
+sn5.9:4.4 | S: and ceases when the cause breaks up. | T: With the cause’s breakup it will cease.
+sn5.9:5.1 | S: It’s like a seed that’s sown | T: “As when a seed is sown in a field
+sn5.9:5.2 | S: in a field; it grows | T: It grows depending on a pair of factors:
+sn5.9:5.3 | S: relying on both the soil’s nutrients | T: It requires both the soil’s nutrients
+sn5.9:5.4 | S: as well as moisture. | T: And a steady supply of moisture:
+sn5.9:6.1 | S: In the same way the aggregates and elements | T: “Just so the aggregates and elements,
+sn5.9:6.2 | S: and these six sense fields | T: And these six bases of sensory contact,
+sn5.9:6.3 | S: come to be because of a cause, | T: Have come to be dependent on a cause;
+sn5.9:6.4 | S: and cease when the cause breaks up.” | T: With the cause’s breakup they will cease.”
+sn5.9:7.1 | S: Then Māra the Wicked, thinking, “The nun Selā knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing, “The bhikkhuni Sela knows me,” sad and disappointed, disappeared right there.
+
+## an3.61
+an3.61:1.1 | S: “Mendicants, these three sectarian tenets—as pursued, pressed, and grilled by the astute—when taken to their conclusion, end with inaction. | T: “Bhikkhus, there are these three sectarian tenets which, when questioned, interrogated, and cross-examined by the wise, and taken to their conclusion, will eventuate in non-doing.
+an3.61:1.2 | S: What three? | T: What are the three?
+an3.61:1.3 | S: There are some ascetics and brahmins who have this doctrine and view: | T: (1) “There are, bhikkhus, some ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:1.4 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of past deeds.’ | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-pain-nor-pleasure—all that is caused by what was done in the past.’
+an3.61:1.5 | S: There are some ascetics and brahmins who have this doctrine and view: | T: (2) There are other ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:1.6 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—is because of God Almighty’s creation.’ | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-pain-nor-pleasure—all that is caused by God’s creative activity.’
+an3.61:1.7 | S: There are some ascetics and brahmins who have this doctrine and view: | T: (3) And there are still other ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:1.8 | S: ‘Everything this individual person experiences—pleasurable, painful, or neutral—has no cause or reason.’ | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-pain-nor-pleasure—all that occurs without a cause or condition.’
+an3.61:2.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: (1) “Bhikkhus, I approached those ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:2.2 | S: everything an individual person experiences is because of past deeds, and I said to them: | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-pain-nor-pleasure—all that is caused by past deeds,’ and I said to them:
+an3.61:2.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: ‘Is it true that you venerable ones hold such a doctrine and view?’
+an3.61:2.4 | P: “yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ pubbekatahetū”’ti? | T: (none)
+an3.61:2.5 | S: And they answered, ‘Yes’. | T: When I ask them this, they affirm it.
+an3.61:2.6 | S: I said to them: | T: Then I say to them:
+an3.61:2.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all because of past deeds.’ | T: ‘In such a case, it is due to past deeds that you might destroy life, take what is not given, indulge in sexual activity, speak falsehood, utter divisive speech, speak harshly, indulge in idle chatter; that you might be full of longing, have a mind of ill will, and hold wrong view.’
+an3.61:3.1 | S: Those who believe that past deeds are the most important thing have no enthusiasm or effort, no idea that there are things that should and should not be done. | T: “Those who fall back on past deeds as the essential truth have no desire to do what should be done and to avoid doing what should not be done, nor do they make an effort in this respect.
+an3.61:3.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: Since they do not apprehend as true and valid anything that should be done or should not be done, they are muddle-minded, they do not guard themselves, and even the personal designation ‘ascetic’ could not be legitimately applied to them.
+an3.61:3.3 | S: This is my first legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my first legitimate refutation of those ascetics and brahmins who hold such a doctrine and view.
+an3.61:4.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: (2) “Then, bhikkhus, I approached those ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:4.2 | S: everything that an individual person experiences is because of God Almighty’s creation, and I said to them: | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-pain-nor-pleasure—all that is caused by God’s creative activity,’ and I said to them:
+an3.61:4.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: ‘Is it true that you venerable ones hold such a doctrine and view?’
+an3.61:4.4 | P: yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ issaranimmānahetū’ti? | T: (none)
+an3.61:4.5 | S: And they answered, ‘Yes’. | T: When I ask them this, they affirm it.
+an3.61:4.6 | S: I said to them: | T: Then I say to them:
+an3.61:4.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all because of God Almighty’s creation.’ | T: ‘In such a case, it is due to God’s creative activity that you might destroy life … and hold wrong view.’
+an3.61:5.1 | S: Those who believe that God Almighty’s creative power is the most important thing have no enthusiasm, no effort, no idea that there are things that should and should not be done. | T: “Those who fall back on God’s creative activity as the essential truth have no desire to do what should be done and to avoid doing what should not be done, nor do they make an effort in this respect.
+an3.61:5.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: Since they do not apprehend as true and valid anything that should be done or should not be done, they are muddle-minded, they do not guard themselves, and even the personal designation ‘ascetic’ could not be legitimately applied to them.
+an3.61:5.3 | S: This is my second legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my second legitimate refutation of those ascetics and brahmins who hold such a doctrine and view.
+an3.61:6.1 | S: Regarding this, I went up to the ascetics and brahmins whose view is that | T: (3) “Then, bhikkhus, I approached those ascetics and brahmins who hold such a doctrine and view as this:
+an3.61:6.2 | S: everything that an individual person experiences has no cause or reason, and I said to them: | T: ‘Whatever this person experiences—whether pleasure, pain, or neither-painnor-pleasure—all that occurs without a cause or condition,’ and I said to them:
+an3.61:6.3 | S: ‘Is it really true that this is the venerables’ view?’ | T: ‘Is it true that you venerable ones hold such a doctrine and view?’
+an3.61:6.4 | P: yaṁ kiñcāyaṁ purisapuggalo paṭisaṁvedeti sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā sabbaṁ taṁ ahetuappaccayā’ti? | T: (none)
+an3.61:6.5 | S: And they answered, ‘Yes’. | T: When I ask them this, they affirm it.
+an3.61:6.6 | S: I said to them: | T: Then I say to them:
+an3.61:6.7 | S: ‘In that case, you might kill living creatures, steal, be unchaste; use speech that’s false, backbiting, harsh, or nonsensical; be covetous, malicious, or have wrong view, all without cause or reason.’ | T: ‘In such a case, it is without a cause or condition that you might destroy life … and hold wrong view.’
+an3.61:7.1 | S: Those who believe that the absence of cause or reason is the most important thing have no enthusiasm, no effort, no idea that there are things that should and should not be done. | T: “Those who fall back on absence of cause and condition as the essential truth have no desire to do what should be done and to avoid doing what should not be done, nor do they make an effort in this respect.
+an3.61:7.2 | S: Not finding as a genuine fact that there are things that should and should not be done, they’re unmindful and careless, and can’t rightly be called ascetics. | T: Since they do not apprehend as true and valid anything that should be done or should not be done, they are muddle-minded, they do not guard themselves, and even the personal designation ‘ascetic’ could not be legitimately applied to them.
+an3.61:7.3 | S: This is my third legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my third legitimate refutation of those ascetics and brahmins who hold such a doctrine and view.
+an3.61:8.1 | S: These are the three sectarian tenets—as pursued, pressed, and grilled by the astute—which, when taken to their conclusion, end with inaction. | T: “These, bhikkhus, are the three sectarian tenets which, when questioned, interrogated, and cross-examined by the wise, and taken to their conclusion, will eventuate in non-doing.
+an3.61:9.1 | S: But the Dhamma that I’ve taught is irrefutable, uncorrupted, beyond reproach, and not scorned by sensible ascetics and brahmins. | T: “But, bhikkhus, this Dhamma taught by me is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins.
+an3.61:9.2 | S: What is the Dhamma that I’ve taught? | T: And what is the Dhamma taught by me that is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins?
+an3.61:9.3 | S: ‘These are the six elements’: this is the Dhamma I’ve taught … | T: “‘These are the six elements’: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins.
+an3.61:9.4 | S: ‘These are the six fields of contact’: this is the Dhamma I’ve taught … | T: ‘These are the six bases for contact’ …
+an3.61:9.5 | S: ‘These are the eighteen mental preoccupations’: this is the Dhamma I’ve taught … | T: ‘These are the eighteen mental examinations’ …
+an3.61:9.6 | S: ‘These are the four noble truths’: this is the Dhamma I’ve taught that is irrefutable, uncorrupted, beyond reproach, and is not scorned by sensible ascetics and brahmins. | T: ‘These are the four noble truths’: this, bhikkhus, is the Dhamma taught by me that is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins.
+an3.61:10.1 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the six elements”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:10.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:10.3 | S: but why did I say it? | T: (none)
+an3.61:10.4 | S: There are these six elements: | T: There are these six elements:
+an3.61:10.5 | S: the elements of earth, water, fire, air, space, and consciousness. | T: the earth element, the water element, the fire element, the air element, the space element, and the consciousness element.
+an3.61:10.6 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the six elements”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:10.7 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:11.1 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the six bases for contact”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:11.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:11.3 | S: but why did I say it? | T: (none)
+an3.61:11.4 | S: There are these six fields of contact: | T: There are these six bases for contact:
+an3.61:11.5 | S: eye, ear, nose, tongue, body, and mind contact. | T: the eye as a base for contact, the ear as a base for contact, the nose as a base for contact, the tongue as a base for contact, the body as a base for contact, and the mind as a base for contact.
+an3.61:11.6 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the six bases for contact”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.61:11.7 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:12.1 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the eighteen mental examinations”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:12.2 | S: This is what I said, | T: for what reason was this said?
+an3.61:12.3 | S: but why did I say it? | T: (none)
+an3.61:12.4 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: Having seen a form with the eye, one examines a form that is a basis for joy; one examines a form that is a basis for dejection; one examines a form that is a basis for equanimity.
+an3.61:12.5 | S: Hearing a sound with their ears … | T: Having heard a sound with the ear …
+an3.61:12.6 | S: Smelling an odor with their nose … | T: Having smelled an odor with the nose …
+an3.61:12.7 | S: Tasting a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an3.61:12.8 | S: Encountering a touch with their body … | T: Having felt a tactile object with the body …
+an3.61:12.9 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: Having cognized a mental phenomenon with the mind, one examines a mental phenomenon that is a basis for joy; one examines a mental phenomenon that is a basis for dejection; one examines a mental phenomenon that is a basis for equanimity.
+an3.61:12.10 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the eighteen mental examinations”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:12.11 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:13.1 | S: ‘“These are the four noble truths”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the four noble truths”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:13.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:13.3 | S: but why did I say it? | T: (none)
+an3.61:13.4 | S: Supported by the six elements, an embryo is conceived. | T: In dependence on the six elements the descent of a future embryo occurs.
+an3.61:13.5 | S: When it is conceived, there are name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling. | T: When the descent takes place, there is name-and-form; with name-and-form as condition, there are the six sense bases; with the six sense bases as condition, there is contact; with contact as condition, there is feeling.
+an3.61:13.6 | S: It’s for one who feels that I declare: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: Now it is for one who feels that I proclaim: ‘This is suffering,’ and ‘This is the origin of suffering,’ and ‘This is the cessation of suffering,’ and ‘This is the way leading to the cessation of suffering.’
+an3.61:14.1 | S: And what is the noble truth of suffering? | T: “And what, bhikkhus, is the noble truth of suffering?
+an3.61:14.2 | S: Rebirth is suffering; old age is suffering; death is suffering; sorrow, lamentation, pain, sadness, and distress are suffering; being coupled with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering. | T: Birth is suffering, old age is suffering, illness is suffering, death is suffering; sorrow, lamentation, pain, dejection, and anguish are suffering; not to get what one wants is suffering; in brief, the five aggregates subject to clinging are suffering.
+an3.61:14.3 | S: This is called the noble truth of suffering. | T: This is called the noble truth of suffering.
+an3.61:15.1 | S: And what is the noble truth of the origin of suffering? | T: “And what, bhikkhus, is the noble truth of the origin of suffering?
+an3.61:15.2 | S: Ignorance is a requirement for choices. | T: With ignorance as condition, volitional activities come to be;
+an3.61:15.3 | S: Choices are a requirement for consciousness. | T: with volitional activities as condition, consciousness;
+an3.61:15.4 | S: Consciousness is a requirement for name and form. | T: with consciousness as condition, name-and-form;
+an3.61:15.5 | S: Name and form are requirements for the six sense fields. | T: with name-and-form as condition, the six sense bases;
+an3.61:15.6 | S: The six sense fields are requirements for contact. | T: with the six sense bases as condition, contact;
+an3.61:15.7 | S: Contact is a requirement for feeling. | T: with contact as condition, feeling;
+an3.61:15.8 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+an3.61:15.9 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+an3.61:15.10 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, existence;
+an3.61:15.11 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+an3.61:15.12 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, old age and death, sorrow, lamentation, pain, dejection, and anguish come to be.
+an3.61:15.13 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+an3.61:15.14 | S: This is called the noble truth of the origin of suffering. | T: This is called the noble truth of the origin of suffering.
+an3.61:16.1 | S: And what is the noble truth of the cessation of suffering? | T: “And what, bhikkhus, is the noble truth of the cessation of suffering?
+an3.61:16.2 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: With the remainderless fading away and cessation of ignorance comes cessation of volitional activities;
+an3.61:16.3 | S: When choices cease, consciousness ceases. | T: with the cessation of volitional activities, cessation of consciousness;
+an3.61:16.4 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of name-and-form;
+an3.61:16.5 | S: When name and form cease, the six sense fields cease. | T: with the cessation of name-and-form, cessation of the six sense bases;
+an3.61:16.6 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the six sense bases, cessation of contact;
+an3.61:16.7 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+an3.61:16.8 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+an3.61:16.9 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+an3.61:16.10 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence;
+an3.61:16.11 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of existence, cessation of birth;
+an3.61:16.12 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, old age and death, sorrow, lamentation, pain, dejection, and anguish cease.
+an3.61:16.13 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+
+codex
+I’ve read the full batch. I’m checking a few boundary shifts against the exceptions for combined sentences and reordered phrasing before writing the findings.
+
+exec
+/bin/bash -lc "sed -n '55,68p;281,303p;340,380p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.3:4.2 | S: if all you lose is your money | T: that results in the loss of one’s wealth,
+an4.3:4.3 | S: and all you own, even yourself. | T: the loss of all, oneself included;
+an4.3:4.4 | S: What’s a really terrible hand | T: much worse is this unlucky throw
+an4.3:4.5 | S: is to hate the holy ones. | T: of harboring hate against the fortunate ones.
+an4.3:5.1 | S: For a hundred thousand times a hundred million, | T: (none)
+an4.3:5.2 | S: times five hundred and thirty-six times <j>a thousand times ten million years | T: For a hundred thousand and thirty-six nirabbudas, plus five abbudas,
+an4.3:5.3 | S: a slanderer of noble ones goes to hell, | T: the slanderer of noble ones goes to hell,
+an4.3:5.4 | S: having aimed bad words and thoughts at them.” | T: having defamed them with evil speech and mind.
+an4.3:5.5 | P: Tatiyaṁ. | T: (none)
+
+## sn1.32
+sn1.32:1.1 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn1.32:1.2 | S: Then, late at night, several glorious deities of the host of a hundred felicities, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then, when the night had advanced, a number of devatās belonging to the Satullapa host, of stunning beauty, illuminating the entire Jeta’ s Grove, approached the Blessed One. Having approached, they paid homage to the Blessed One and stood to one side.
+sn1.32:1.3 | S: Standing to one side, one deity spoke this verse in the Buddha’s presence: | T: Then one devatā, standing to one side, recited this verse in the presence of the Blessed One:
+sn5.9:2.3 | S: Where has the puppet arisen? | T: Where has the puppet arisen?
+sn5.9:2.4 | S: And where does it cease?” | T: Where does the puppet cease?”
+sn5.9:3.1 | S: Then the nun Selā thought, | T: Then it occurred to the bhikkhuni Sela:
+sn5.9:3.2 | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who is this…?
+sn5.9:3.3 | S: Then she thought, | T: (none)
+sn5.9:3.4 | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: This is Mara the Evil One … desiring to make me fall away from concentration.”
+sn5.9:3.5 | S: Then Selā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then the bhikkhuni Sela, having understood, “This is Mara the Evil One,” replied to him in verses:
+sn5.9:4.1 | S: “This puppet isn’t self-made, | T: “This puppet is not made by itself,
+sn5.9:4.2 | S: nor is this gloom made by another. | T: Nor is this misery made by another.
+sn5.9:4.3 | S: It comes to be because of a cause, | T: It has come to be dependent on a cause;
+sn5.9:4.4 | S: and ceases when the cause breaks up. | T: With the cause’s breakup it will cease.
+sn5.9:5.1 | S: It’s like a seed that’s sown | T: “As when a seed is sown in a field
+sn5.9:5.2 | S: in a field; it grows | T: It grows depending on a pair of factors:
+sn5.9:5.3 | S: relying on both the soil’s nutrients | T: It requires both the soil’s nutrients
+sn5.9:5.4 | S: as well as moisture. | T: And a steady supply of moisture:
+sn5.9:6.1 | S: In the same way the aggregates and elements | T: “Just so the aggregates and elements,
+sn5.9:6.2 | S: and these six sense fields | T: And these six bases of sensory contact,
+sn5.9:6.3 | S: come to be because of a cause, | T: Have come to be dependent on a cause;
+sn5.9:6.4 | S: and cease when the cause breaks up.” | T: With the cause’s breakup they will cease.”
+sn5.9:7.1 | S: Then Māra the Wicked, thinking, “The nun Selā knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing, “The bhikkhuni Sela knows me,” sad and disappointed, disappeared right there.
+
+## an3.61
+an3.61:1.1 | S: “Mendicants, these three sectarian tenets—as pursued, pressed, and grilled by the astute—when taken to their conclusion, end with inaction. | T: “Bhikkhus, there are these three sectarian tenets which, when questioned, interrogated, and cross-examined by the wise, and taken to their conclusion, will eventuate in non-doing.
+an3.61:7.3 | S: This is my third legitimate refutation of the ascetics and brahmins who have this doctrine and view. | T: This was my third legitimate refutation of those ascetics and brahmins who hold such a doctrine and view.
+an3.61:8.1 | S: These are the three sectarian tenets—as pursued, pressed, and grilled by the astute—which, when taken to their conclusion, end with inaction. | T: “These, bhikkhus, are the three sectarian tenets which, when questioned, interrogated, and cross-examined by the wise, and taken to their conclusion, will eventuate in non-doing.
+an3.61:9.1 | S: But the Dhamma that I’ve taught is irrefutable, uncorrupted, beyond reproach, and not scorned by sensible ascetics and brahmins. | T: “But, bhikkhus, this Dhamma taught by me is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins.
+an3.61:9.2 | S: What is the Dhamma that I’ve taught? | T: And what is the Dhamma taught by me that is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins?
+an3.61:9.3 | S: ‘These are the six elements’: this is the Dhamma I’ve taught … | T: “‘These are the six elements’: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins.
+an3.61:9.4 | S: ‘These are the six fields of contact’: this is the Dhamma I’ve taught … | T: ‘These are the six bases for contact’ …
+an3.61:9.5 | S: ‘These are the eighteen mental preoccupations’: this is the Dhamma I’ve taught … | T: ‘These are the eighteen mental examinations’ …
+an3.61:9.6 | S: ‘These are the four noble truths’: this is the Dhamma I’ve taught that is irrefutable, uncorrupted, beyond reproach, and is not scorned by sensible ascetics and brahmins. | T: ‘These are the four noble truths’: this, bhikkhus, is the Dhamma taught by me that is unrefuted, undefiled, irreproachable, and uncensured by wise ascetics and brahmins.
+an3.61:10.1 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the six elements”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:10.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:10.3 | S: but why did I say it? | T: (none)
+an3.61:10.4 | S: There are these six elements: | T: There are these six elements:
+an3.61:10.5 | S: the elements of earth, water, fire, air, space, and consciousness. | T: the earth element, the water element, the fire element, the air element, the space element, and the consciousness element.
+an3.61:10.6 | S: ‘“These are the six elements”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the six elements”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:10.7 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:11.1 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the six bases for contact”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:11.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:11.3 | S: but why did I say it? | T: (none)
+an3.61:11.4 | S: There are these six fields of contact: | T: There are these six bases for contact:
+an3.61:11.5 | S: eye, ear, nose, tongue, body, and mind contact. | T: the eye as a base for contact, the ear as a base for contact, the nose as a base for contact, the tongue as a base for contact, the body as a base for contact, and the mind as a base for contact.
+an3.61:11.6 | S: ‘“These are the six fields of contact”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the six bases for contact”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:11.7 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:12.1 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the eighteen mental examinations”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:12.2 | S: This is what I said, | T: for what reason was this said?
+an3.61:12.3 | S: but why did I say it? | T: (none)
+an3.61:12.4 | S: Seeing a sight with their eyes, one is preoccupied with a sight that’s a basis for happiness or sadness or equanimity. | T: Having seen a form with the eye, one examines a form that is a basis for joy; one examines a form that is a basis for dejection; one examines a form that is a basis for equanimity.
+an3.61:12.5 | S: Hearing a sound with their ears … | T: Having heard a sound with the ear …
+an3.61:12.6 | S: Smelling an odor with their nose … | T: Having smelled an odor with the nose …
+an3.61:12.7 | S: Tasting a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an3.61:12.8 | S: Encountering a touch with their body … | T: Having felt a tactile object with the body …
+an3.61:12.9 | S: Becoming conscious of an idea with their mind, one is preoccupied with an idea that’s a basis for happiness or sadness or equanimity. | T: Having cognized a mental phenomenon with the mind, one examines a mental phenomenon that is a basis for joy; one examines a mental phenomenon that is a basis for dejection; one examines a mental phenomenon that is a basis for equanimity.
+an3.61:12.10 | S: ‘“These are the eighteen mental preoccupations”: this is the Dhamma I’ve taught …’ | T: When it was said: ‘“These are the eighteen mental examinations”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:12.11 | S: That’s what I said, and this is why I said it. | T: it is because of this that this was said.
+an3.61:13.1 | S: ‘“These are the four noble truths”: this is the Dhamma I’ve taught …’ | T: “When it was said: ‘“These are the four noble truths”: this, bhikkhus, is the Dhamma taught by me that is unrefuted … uncensured by wise ascetics and brahmins,’
+an3.61:13.2 | S: That’s what I said, | T: for what reason was this said?
+an3.61:13.3 | S: but why did I say it? | T: (none)
+an3.61:13.4 | S: Supported by the six elements, an embryo is conceived. | T: In dependence on the six elements the descent of a future embryo occurs.
+an3.61:13.5 | S: When it is conceived, there are name and form. Name and form are requirements for the six sense fields. The six sense fields are requirements for contact. Contact is a requirement for feeling. | T: When the descent takes place, there is name-and-form; with name-and-form as condition, there are the six sense bases; with the six sense bases as condition, there is contact; with contact as condition, there is feeling.
+an3.61:13.6 | S: It’s for one who feels that I declare: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: Now it is for one who feels that I proclaim: ‘This is suffering,’ and ‘This is the origin of suffering,’ and ‘This is the cessation of suffering,’ and ‘This is the way leading to the cessation of suffering.’
+an3.61:14.1 | S: And what is the noble truth of suffering? | T: “And what, bhikkhus, is the noble truth of suffering?
+an3.61:14.2 | S: Rebirth is suffering; old age is suffering; death is suffering; sorrow, lamentation, pain, sadness, and distress are suffering; being coupled with the disliked is suffering; separation from the liked is suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering. | T: Birth is suffering, old age is suffering, illness is suffering, death is suffering; sorrow, lamentation, pain, dejection, and anguish are suffering; not to get what one wants is suffering; in brief, the five aggregates subject to clinging are suffering.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-042.findings.tmp <<'EOF'
+an4.3:5.1 starts: For a hundred thousand and thirty-six nirabbudas,
+an4.3:5.2 none
+sn5.9:5.2 starts: in a field It grows depending on
+an3.61:10.2 none
+an3.61:10.3 starts: for what reason was this said?
+an3.61:11.2 none
+an3.61:11.3 starts: for what reason was this said?
+an3.61:12.2 none
+an3.61:12.3 starts: for what reason was this said?
+an3.61:13.2 none
+an3.61:13.3 starts: for what reason was this said?
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+11 lines reported.
+tokens used
+31,622
+11 lines reported.

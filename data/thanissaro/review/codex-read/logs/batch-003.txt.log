@@ -1,0 +1,535 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8e-f73a-7a60-acf0-da26732767bd
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.23
+sn12.23:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī …
+sn12.23:1.2 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “Monks, the ending of effluents is for one who knows & sees, I tell you, not for one who does not know & does not see.
+sn12.23:1.3 | S: For one who knows and sees what? | T: For one who knows what & sees what is there the ending of effluents?
+sn12.23:1.4 | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its disappearance.
+sn12.23:1.5 | S: Such is feeling … | T: Such is feeling, such its origination, such its disappearance.
+sn12.23:1.6 | S: Such is perception … | T: Such is perception, such its origination, such its disappearance.
+sn12.23:1.7 | S: Such are choices … | T: Such are fabrications, such their origination, such their disappearance.
+sn12.23:1.8 | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its disappearance.’
+sn12.23:1.9 | S: The ending of the defilements is for one who knows and sees this. | T: The ending of effluents is for one who knows in this way & sees in this way.
+sn12.23:2.1 | S: I say that this knowledge of ending has a vital condition, it doesn’t lack a vital condition. | T: “The knowledge of ending in the presence of ending has its prerequisite, I tell you. It is not without a prerequisite.
+sn12.23:2.2 | S: And what is it? | T: And what is the prerequisite for the knowledge of ending?
+sn12.23:2.3 | S: You should say: ‘Freedom.’ | T: Release, it should be said.
+sn12.23:2.4 | S: I say that freedom has a vital condition, it doesn’t lack a vital condition. | T: Release has its prerequisite, I tell you. It is not without a prerequisite.
+sn12.23:2.5 | S: And what is it? | T: And what is its prerequisite?
+sn12.23:2.6 | S: You should say: ‘Dispassion.’ | T: Dispassion.…
+sn12.23:2.7 | S: I say that dispassion has a vital condition. | T: (none)
+sn12.23:2.8 | S: And what is it? | T: (none)
+sn12.23:2.9 | S: You should say: ‘Disillusionment.’ | T: Disenchantment.…
+sn12.23:2.10 | S: I say that disillusionment has a vital condition. | T: (none)
+sn12.23:2.11 | S: And what is it? | T: (none)
+sn12.23:2.12 | S: You should say: ‘Truly knowing and seeing.’ | T: Knowledge & vision of things as they have come to be.…
+sn12.23:2.13 | S: I say that truly knowing and seeing has a vital condition. | T: (none)
+sn12.23:2.14 | S: And what is it? | T: (none)
+sn12.23:2.15 | S: You should say: ‘Immersion.’ | T: Concentration.…
+sn12.23:2.16 | S: I say that immersion has a vital condition. | T: (none)
+sn12.23:3.1 | S: And what is it? | T: (none)
+sn12.23:3.2 | S: You should say: ‘Bliss.’ | T: Pleasure.…
+sn12.23:3.3 | S: I say that bliss has a vital condition. | T: (none)
+sn12.23:3.4 | S: And what is it? | T: (none)
+sn12.23:3.5 | S: You should say: ‘Tranquility.’ | T: Serenity.…
+sn12.23:3.6 | S: I say that tranquility has a vital condition. | T: (none)
+sn12.23:3.7 | S: And what is it? | T: (none)
+sn12.23:3.8 | S: You should say: ‘Rapture.’ | T: Rapture.…
+sn12.23:3.9 | S: I say that rapture has a vital condition. | T: (none)
+sn12.23:3.10 | S: And what is it? | T: (none)
+sn12.23:3.11 | S: You should say: ‘Joy.’ | T: Joy.…
+sn12.23:3.12 | S: I say that joy has a vital condition. | T: (none)
+sn12.23:3.13 | S: And what is it? | T: (none)
+sn12.23:3.14 | S: You should say: ‘Faith.’ | T: Conviction.…
+sn12.23:3.15 | S: I say that faith has a vital condition. | T: (none)
+sn12.23:4.1 | S: And what is it? | T: (none)
+sn12.23:4.2 | S: You should say: ‘Suffering.’ | T: Stress.…
+sn12.23:4.3 | S: I say that suffering has a vital condition. | T: (none)
+sn12.23:4.4 | S: And what is it? | T: (none)
+sn12.23:4.5 | S: You should say: ‘Rebirth.’ | T: Birth.…
+sn12.23:4.6 | S: I say that rebirth has a vital condition. | T: (none)
+sn12.23:4.7 | S: And what is it? | T: (none)
+sn12.23:4.8 | S: You should say: ‘Continued existence.’ | T: Becoming.…
+sn12.23:4.9 | S: I say that continued existence has a vital condition. | T: (none)
+sn12.23:4.10 | S: And what is it? | T: (none)
+sn12.23:4.11 | S: You should say: ‘Grasping.’ | T: Clinging.…
+sn12.23:4.12 | S: I say that grasping has a vital condition. | T: (none)
+sn12.23:4.13 | S: And what is it? | T: (none)
+sn12.23:4.14 | S: You should say: ‘Craving.’ | T: Craving.…
+sn12.23:4.15 | S: I say that craving has a vital condition. | T: (none)
+sn12.23:5.1 | S: And what is it? | T: (none)
+sn12.23:5.2 | S: You should say: ‘Feeling.’ … | T: Feeling.…
+sn12.23:5.3 | S: You should say: ‘Contact.’ … | T: Contact.…
+sn12.23:5.4 | S: You should say: ‘The six sense fields.’ … | T: The six sense media.…
+sn12.23:5.5 | S: You should say: ‘Name and form.’ … | T: Name-&-form.…
+sn12.23:5.6 | S: You should say: ‘Consciousness.’ … | T: Consciousness.…
+sn12.23:5.7 | S: You should say: ‘Choices.’ … | T: Fabrications.…
+sn12.23:5.8 | S: I say that choices have a vital condition, they don’t lack a vital condition. | T: Fabrications have their prerequisite, I tell you. They are not without a prerequisite.
+sn12.23:5.9 | S: And what is the vital condition for choices? | T: And what is their prerequisite?
+sn12.23:5.10 | S: You should say: ‘Ignorance.’ | T: Ignorance, it should be said.
+sn12.23:6.1 | S: So, mendicants: ignorance is the vital condition for choices. | T: “Thus fabrications have ignorance as their prerequisite,
+sn12.23:6.2 | S: Choices are the vital condition for consciousness. | T: consciousness has fabrications as its prerequisite,
+sn12.23:6.3 | S: Consciousness is the vital condition for name and form. | T: name-&-form has consciousness as its prerequisite,
+sn12.23:6.4 | S: Name and form are the vital conditions for the six sense fields. | T: the six sense media have name-&-form as their prerequisite,
+sn12.23:6.5 | S: The six sense fields are the vital conditions for contact. | T: contact has the six sense media as its prerequisite,
+sn12.23:6.6 | S: Contact is the vital condition for feeling. | T: feeling has contact as its prerequisite,
+sn12.23:6.7 | S: Feeling is the vital condition for craving. | T: craving has feeling as its prerequisite,
+sn12.23:6.8 | S: Craving is the vital condition for grasping. | T: clinging has craving as its prerequisite,
+sn12.23:6.9 | S: Grasping is the vital condition for continued existence. | T: becoming has clinging as its prerequisite,
+sn12.23:6.10 | S: Continued existence is the vital condition for rebirth. | T: birth has becoming as its prerequisite,
+sn12.23:6.11 | S: Rebirth is the vital condition for suffering. | T: stress has birth as its prerequisite,
+sn12.23:6.12 | S: Suffering is the vital condition for faith. | T: conviction has stress as its prerequisite,
+sn12.23:6.13 | S: Faith is the vital condition for joy. | T: joy has conviction as its prerequisite,
+sn12.23:6.14 | S: Joy is the vital condition for rapture. | T: rapture has joy as its prerequisite,
+sn12.23:6.15 | S: Rapture is the vital condition for tranquility. | T: calm has rapture as its prerequisite,
+sn12.23:6.16 | S: Tranquility is the vital condition for bliss. | T: pleasure has calm as its prerequisite,
+sn12.23:6.17 | S: Bliss is the vital condition for immersion. | T: concentration has pleasure as its prerequisite,
+sn12.23:6.18 | S: Immersion is the vital condition for truly knowing and seeing. | T: knowledge & vision of things as they have come to be has concentration as its prerequisite,
+sn12.23:6.19 | S: Truly knowing and seeing is the vital condition for disillusionment. | T: disenchantment has knowledge & vision of things as they have come to be as its prerequisite,
+sn12.23:6.20 | S: Disillusionment is the vital condition for dispassion. | T: dispassion has disenchantment as its prerequisite,
+sn12.23:6.21 | S: Dispassion is the vital condition for freedom. | T: release has dispassion as its prerequisite,
+sn12.23:6.22 | S: Freedom is the vital condition for the knowledge of ending. | T: knowledge of ending has release as its prerequisite.
+sn12.23:7.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as when the devas pour rain in heavy drops & crash thunder on the upper mountains: The water, flowing down along the slopes, fills the branches of the mountain ravines & gullies. When the branches of the mountain ravines & gullies are full, they fill the little lakes. When the little lakes are full, they fill the big lakes… the little rivers… the big rivers. When the big rivers are full, they fill the great ocean.
+sn12.23:8.1 | S: In the same way, ignorance is the vital condition for choices. … Freedom is the vital condition for the knowledge of ending.” | T: In the same way: fabrications have ignorance as their prerequisite, consciousness has fabrications as its prerequisite, name-&-form has consciousness as their prerequisite, the six sense media have name-&-form as their prerequisite, contact has the six sense media as its prerequisite, feeling has contact as its prerequisite, craving has feeling as its prerequisite, clinging has craving as its prerequisite, becoming has clinging as its prerequisite, birth has becoming as its prerequisite, stress has birth as its prerequisite, conviction has stress as its prerequisite, joy has conviction as its prerequisite, rapture has joy as its prerequisite, calm has rapture as its prerequisite, pleasure has calm as its prerequisite, concentration has pleasure as its prerequisite, knowledge & vision of things as they have come to be has concentration as its prerequisite, disenchantment has knowledge & vision of things as they have come to be as its prerequisite, dispassion has disenchantment as its prerequisite, release has dispassion as its prerequisite, knowledge of ending has release as its prerequisite.”
+sn12.23:8.2 | P: Tatiyaṁ. | T: (none)
+
+## iti91
+iti91:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti91:2.1 | S: “This is the last of lifestyles, mendicants, namely relying on alms. | T: “Monks, this is a lowly means of livelihood, alms gathering.
+iti91:2.2 | S: The world curses you: ‘You beggar, walking bowl in hand!’ | T: It’s a form of abuse in the world [to say], ‘You go around as an alms gatherer with a bowl in your hand!’
+iti91:2.3 | S: Yet earnest gentlemen take it up for a good reason. | T: Yet reasonable young men of good families have taken it up for a compelling reason.
+iti91:2.4 | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: They have not been forced into it by kings or robbers, nor through debt, through fear, nor through the loss of their livelihood,
+iti91:2.5 | S: Rather, because they think: ‘I’m swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. I’m swamped by suffering, mired in suffering. | T: but through the thought: ‘We are beset by birth, aging, & death, by sorrows, lamentations, pains, distresses, & despairs, beset by stress, overcome with stress.
+iti91:2.6 | S: Hopefully I can make an end to this entire mass of suffering.’ | T: O, that the end of this entire mass of suffering & stress might be known!’
+iti91:2.7 | S: That’s how this gentleman has gone forth. | T: But this young man of good family, having gone forth in this way,
+iti91:2.8 | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: may be greedy for sensual pleasures, strong in his passions, malevolent in mind, corrupt in his resolves, his mindfulness muddled, unalert, uncentered, his mind scattered, & his faculties uncontrolled.
+iti91:2.9 | S: Suppose there was a firebrand for lighting a funeral pyre, burning at both ends, and smeared with dung in the middle. It couldn’t be used as timber either in the village or the wilderness. | T: Just as a firebrand from a funeral pyre–burning at both ends, covered with excrement in the middle–is used as fuel neither in a village nor in the wilderness:
+iti91:2.10 | S: I say that individual is just like this. They’ve missed out on the pleasures of the lay life, and haven’t fulfilled the goal of the ascetic life.” | T: I tell you that this is a simile for this person. He has missed out on the householder’s enjoyments and does not fulfill the purpose of the contemplative life.”
+iti91:2.11 | S: The Buddha spoke this matter. | T: (none)
+iti91:2.12 | S: On this it is said: | T: (none)
+iti91:3.1 | S: “They’ve left behind the pleasures of the lay life, | T: He’s missed out on the householder’s enjoyment
+iti91:3.2 | S: and miss out on the goal of the ascetic life. | T: & the purpose of the contemplative life –unfortunate man!
+iti91:3.3 | S: Ruining it, they throw it away, | T: Ruining it, he throws it away,
+iti91:3.4 | S: and perish like a funeral firebrand. | T: perishes like a firebrand used at a funeral.
+iti91:4.1 | S: Many who wear a scrap of ocher cloth | T: (none)
+iti91:4.2 | S: are unrestrained and wicked. | T: (none)
+iti91:4.3 | S: Being wicked, they are reborn in hell | T: (none)
+iti91:4.4 | S: due to their bad deeds. | T: (none)
+iti91:5.1 | S: It’d be better for the immoral and unrestrained | T: Better to eat an iron ball
+iti91:5.2 | S: to eat an iron ball, | T: –glowing, aflame–
+iti91:5.3 | S: scorching, like a burning flame, | T: (none)
+iti91:5.4 | S: than to eat the nation’s alms.” | T: than that, unprincipled & unrestrained, he should eat the alms of the country.
+iti91:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti91:6.2 | P: Dutiyaṁ. | T: (none)
+
+## iti7
+iti7:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti7:2.1 | S: “Mendicants, without directly knowing and completely understanding the all, without dispassion for it and giving it up, you can’t end suffering. | T: “Monks, one who has not fully known & fully understood the All, whose mind has not been cleansed of passion for it, has not abandoned it, is incapable of putting an end to stress.
+iti7:2.2 | S: By directly knowing and completely understanding the all, having dispassion for it and giving it up, you can end suffering.” | T: But one who has fully known & fully understood the All, whose mind has been cleansed of passion for it and has abandoned it, is capable of putting an end to stress.”
+iti7:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti7:2.4 | S: On this it is said: | T: (none)
+iti7:3.1 | S: “Those who know the all as all, | T: Knowing the All from all around,
+iti7:3.2 | S: are not attracted to anything. | T: not stirred by passion in all places:
+iti7:3.3 | S: They completely understand all, | T: he, having comprehended the All,
+iti7:3.4 | S: and have risen above all suffering.” | T: has gone beyond all stress.
+iti7:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti7:4.2 | P: Sattamaṁ. | T: (none)
+
+## iti94
+iti94:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti94:2.1 | S: “A mendicant should examine in whatever way such that, while examining, consciousness would neither be scattered nor diffused externally, nor stuck internally, and they would not be anxious because of grasping. | T: “Monks, a monk should investigate in such a way that–his consciousness neither externally scattered & diffused, nor internally positioned–he is, from lack of clinging/sustenance, unagitated,
+iti94:2.2 | S: When consciousness is neither scattered nor diffused externally, nor stuck internally, and they are not anxious because of grasping, there is no coming to be of the origin of suffering—of rebirth, old age, and death in the future.” | T: and there is no coming into being of the origination of future birth, aging, death, or stress.”
+iti94:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti94:2.4 | S: On this it is said: | T: (none)
+iti94:3.1 | S: “For one who has given up seven chains, | T: For a monk who has abandoned seven attachments
+iti94:3.2 | S: a mendicant who has cut the cord, | T: and cut the guide:
+iti94:3.3 | S: transmigration through births is finished, | T: the wandering-on in birth is finished;
+iti94:3.4 | S: there’ll be no more future lives for them.” | T: there is, for him, no further becoming.
+iti94:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti94:4.2 | P: Pañcamaṁ. | T: (none)
+
+## an11.16
+an11.16:1.1 | S: At one time Venerable Ānanda was staying near Vesālī in the little village of Beluva. | T: On one occasion Ven. Ananda was staying near Vesali at Veluvagamaka.
+an11.16:1.2 | S: Now at that time the householder Dasama, a wealthy citizen, had arrived at Pāṭaliputta on some business. | T: Now on that occasion Dasama the householder from Atthakanagara had arrived at Pataliputta on some business.
+an11.16:2.1 | S: He went to the Chicken Monastery, approached a certain mendicant, and said to him, | T: Then he went to a certain monk at Kukkata Monastery and on arrival said to him,
+an11.16:2.2 | S: “Sir, where is Venerable Ānanda now staying? | T: “Where is Ven. Ananda staying now?
+an11.16:2.3 | S: For I want to see him.” | T: I’d like to see him.”
+an11.16:2.4 | S: “Householder, Venerable Ānanda is staying near Vesālī in the little village of Beluva.” | T: “Householder, the Ven. Ananda is staying near Vesali at Veluvagamaka.”
+an11.16:3.1 | S: Then the householder Dasama, having concluded his business there, went to the little village of Beluva in Vesālī to see Ānanda. He bowed, sat down to one side, and said to Ānanda: | T: Then Dasama the householder from Atthakanagara, on completing his business at Pataliputta, went to Ven. Ananda at Veluvagamaka near Vesali. On arrival, having bowed down to him, he sat to one side. As he was sitting there, he said to Ven. Ananda:
+an11.16:3.2 | S: “Honorable Ānanda, is there one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke?” | T: “Venerable sir, is there a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before?”
+an11.16:3.3 | S: “There is, householder.” | T: “Yes, householder, there is…”
+an11.16:4.1 | S: “And what is that one thing?” | T: “And what is that one quality, venerable sir…?”
+an11.16:4.2 | S: “Householder, it’s when a mendicant, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “There is the case, householder, where a monk, withdrawn from sensuality, withdrawn from unskillful qualities, enters & remains in the first jhana: rapture & pleasure born from withdrawal, accompanied by directed thought & evaluation.
+an11.16:4.3 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:4.4 | S: ‘Even this first absorption is produced by choices and intentions.’ | T: ‘This first jhana is fabricated & intended.
+an11.16:4.5 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:4.6 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:4.7 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+an11.16:4.8 | S: This is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. | T: “This, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:5.1 | S: Furthermore, as the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption … | T: (Similarly with the second,
+an11.16:5.2 | S: third absorption … | T: third,
+an11.16:5.3 | S: fourth absorption. | T: and fourth jhanas.)
+an11.16:5.4 | S: Then they reflect: | T: (none)
+an11.16:5.5 | S: ‘Even this fourth absorption is produced by choices and intentions.’ | T: (none)
+an11.16:5.6 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:5.7 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:5.8 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:5.9 | S: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. | T: (none)
+an11.16:6.1 | S: Furthermore, a mendicant meditates spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: “Then again, a monk keeps pervading the first direction with an awareness imbued with good will, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with good will—abundant, expansive, immeasurable, without hostility, without ill will.
+an11.16:6.2 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:6.3 | S: ‘Even this heart’s release by love is produced by choices and intentions.’ | T: ‘This awareness-release through good will is fabricated & intended.
+an11.16:6.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:6.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:6.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an11.16:6.7 | S: This too is one thing that has been rightly explained by the Blessed One … | T: “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:7.1 | S: Furthermore, a mendicant meditates spreading a heart full of compassion … | T: (Similarly with awareness-release through compassion,
+an11.16:7.2 | S: They meditate spreading a heart full of rejoicing … | T: through appreciation,
+an11.16:7.3 | S: They meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. | T: & through equanimity.)
+an11.16:7.4 | S: In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. | T: (none)
+an11.16:7.5 | S: Then they reflect: | T: (none)
+an11.16:7.6 | S: ‘Even this heart’s release by equanimity is produced by choices and intentions.’ | T: (none)
+an11.16:7.7 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:7.8 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:7.9 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:7.10 | S: This too is one thing that has been rightly explained by the Blessed One … | T: (none)
+an11.16:8.1 | S: Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: “Then again, a monk—with the complete transcending of perceptions of [physical] form, with the disappearance of perceptions of resistance, and not heeding perceptions of diversity, [perceiving,] ‘Infinite space’—enters & remains in the dimension of the infinitude of space.
+an11.16:8.2 | S: Then they reflect: | T: He reflects on this and discerns,
+an11.16:8.3 | S: ‘Even this attainment of the dimension of infinite space is produced by choices and intentions.’ | T: ‘This attainment of the infinitude of space is fabricated & intended.
+an11.16:8.4 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: Now whatever is fabricated & intended is inconstant & subject to cessation.’
+an11.16:8.5 | S: Abiding in that they attain the ending of defilements. | T: Staying right there, he reaches the ending of the mental fermentations.
+an11.16:8.6 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: Or, if not, then—through this very Dhamma-passion, this Dhamma-delight, and from the total wasting away of the first five Fetters—he is due to be reborn [in the Pure Abodes], there to be totally unbound, never again to return from that world.
+an11.16:8.7 | S: This too is one thing that has been rightly explained by the Blessed One … | T: “This too, householder, is a single quality declared by the Blessed One—the one who knows, the one who sees, worthy & rightly self-awakened—where the unreleased mind of a monk who dwells there heedful, ardent, & resolute becomes released, or his unended fermentations go to their total ending, or he attains the unexcelled security from the yoke that he had not attained before.
+an11.16:9.1 | S: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. … | T: (Similarly with the dimension of the infinitude of consciousness and the dimension of nothingness.)
+an11.16:9.2 | S: Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. … | T: (none)
+an11.16:9.3 | S: Then they reflect: | T: (none)
+an11.16:9.4 | S: ‘Even this attainment of the dimension of nothingness is produced by choices and intentions.’ | T: (none)
+an11.16:9.5 | S: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ | T: (none)
+an11.16:9.6 | S: Abiding in that they attain the ending of defilements. | T: (none)
+an11.16:9.7 | S: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. | T: (none)
+an11.16:9.8 | S: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they reach the supreme sanctuary from the yoke.” | T: (none)
+an11.16:10.1 | S: When he said this, the householder Dasama said to Venerable Ānanda: | T: When this was said, Dasama the householder from Atthakanagara said to Ven. Ananda,
+an11.16:10.2 | S: “Honorable Ānanda, suppose a person was looking for the entrance to a treasure trove. And all at once they’d come across eleven entrances! | T: “Venerable Ananda, just as if a man seeking a single opening onto treasure were all at once to come upon eleven openings onto treasure,
+an11.16:10.3 | S: In the same way, I was searching for the door to freedom from death. And all at once I found eleven doors to freedom from death for cultivation. | T: in the same way I—seeking a single doorway to the Deathless—have all at once come to hear of eleven doorways to the Deathless.
+an11.16:10.4 | S: Suppose a person had a house with eleven doors. If the house caught fire they’d be able to flee to safety through any one of those doors. | T: And just as if a man whose house had eleven doors could take himself to safety by means of any one of those doors,
+an11.16:10.5 | S: In the same way, I’m able to flee to safety through any one of these eleven doors to freedom from death. | T: in the same way I can take myself to safety by means of any one of these eleven doors to the Deathless.
+an11.16:10.6 | S: Sir, those of other religions will seek a fee for the tutor. | T: Venerable sir, when sectarians search for a teacher’s fee for their teachers,
+an11.16:10.7 | S: Why shouldn’t I make an offering to Venerable Ānanda?” | T: why shouldn’t I pay homage to Ven. Ananda?”
+an11.16:11.1 | S: Then the householder Dasama, having assembled the Saṅgha from Vesālī and Pāṭaliputta, served and satisfied them with his own hands with delicious fresh and cooked foods. | T: So Dasama the householder from Atthakanagara, having assembled the community of monks from Vesali and Pataliputta, with his own hands served & satisfied them with refined staple & non-staple foods.
+an11.16:11.2 | S: He clothed each and every mendicant in a pair of garments, with a set of three robes for Ānanda. | T: He presented a pair of cloths to each monk, and a triple robe to Ven. Ananda.
+an11.16:11.3 | S: And he had a dwelling worth five hundred built for Ānanda. | T: And, for Ven. Ananda, he had a dwelling built worth five hundred [kahapanas].
+an11.16:11.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti14
+iti14:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti14:2.1 | S: “Mendicants, I do not see a single shroud, shrouded by which people wander and transmigrate for a long time like the shroud of ignorance. | T: “Monks, I don’t envision even one other hindrance–hindered by which people go wandering & transmigrating on for a long, long time–like the hindrance of ignorance.
+iti14:2.2 | S: Shrouded by ignorance, people wander and transmigrate for a long time.” | T: Hindered by the hindrance of ignorance, people go wandering & transmigrating on for a long, long time.”
+iti14:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti14:2.4 | S: On this it is said: | T: (none)
+iti14:3.1 | S: “There is no other thing | T: No one other thing
+iti14:3.2 | S: that shrouds people like ignorance. | T: so hinders people
+iti14:3.3 | S: Veiled by delusion, | T: (none)
+iti14:3.4 | S: they transmigrate day and night. | T: that they wander on, day & night, as when they’re obstructed by delusion.
+iti14:4.1 | S: Those who have given up delusion, | T: But those who, letting go of delusion,
+iti14:4.2 | S: shattering the mass of darkness, | T: shatter the mass of darkness,
+iti14:4.3 | S: wander no more, | T: wander no further.
+iti14:4.4 | S: the root is not found in them.” | T: Their cause isn’t found.
+iti14:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti14:5.2 | P: Catutthaṁ. | T: (none)
+
+## iti86
+iti86:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti86:2.1 | S: “Regarding a mendicant practicing in line with the teaching, it is in line with the teaching to declare that | T: “Monks, with reference to a monk who practices the Dhamma in accordance with the Dhamma,
+iti86:2.2 | S: this is what it means to practice in line with the teaching. When speaking, they speak on the teaching, not against it. When thinking, they think on the teaching, not against it. And rejecting both, they meditate staying equanimous, mindful and aware.” | T: it is this way of according with the Dhamma that he should be described as practicing the Dhamma in accordance with the Dhamma. When speaking, he speaks Dhamma and not non-Dhamma. When thinking, he thinks about Dhamma and not about non-Dhamma. Avoiding both these things, he stays equanimous, mindful, alert.”
+iti86:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti86:2.4 | S: On this it is said: | T: (none)
+iti86:3.1 | S: “Delighting in the teaching, enjoying the teaching, | T: Dhamma his dwelling, Dhamma his delight,
+iti86:3.2 | S: contemplating the teaching, | T: (none)
+iti86:3.3 | S: a mendicant who recollects the teaching | T: a monk pondering Dhamma, calling Dhamma to mind,
+iti86:3.4 | S: doesn’t fall away from the true teaching. | T: doesn’t fall away from true Dhamma.
+iti86:4.1 | S: Whether walking or standing, | T: Whether walking, standing,
+iti86:4.2 | S: sitting or lying down, | T: sitting, or lying down
+iti86:4.3 | S: with mind collected inside, | T: –his mind inwardly restrained–
+iti86:4.4 | S: they attain only peace.” | T: he arrives right at peace.
+iti86:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti86:5.2 | P: Sattamaṁ. | T: (none)
+
+## sn22.81
+sn22.81:1.1 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Kosambī at Ghosita’s monastery.
+sn22.81:1.2 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: Then in the early morning, having adjusted his lower robes and taking his bowl & outer robe, he went into Kosambī for alms.
+sn22.81:1.3 | S: After the meal, on his return from almsround, he set his lodgings in order himself. Taking his bowl and robe, without informing his supporters or taking leave of the mendicant Saṅgha, he set out to go wandering alone, with no companion. | T: Having gone for alms in Kosambī, after the meal, returning from his alms round, he set his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—set out wandering, alone & without a companion.
+sn22.81:2.1 | S: Then, not long after the Buddha had left, one of the mendicants went to Venerable Ānanda and told him what had happened. | T: Then, not long after the Blessed One had left, a certain monk went to Ven. Ānanda and on arrival said to him,
+sn22.81:2.2 | P: “esāvuso ānanda, bhagavā sāmaṁ senāsanaṁ saṁsāmetvā pattacīvaramādāya anāmantetvā upaṭṭhāke anapaloketvā bhikkhusaṅghaṁ eko adutiyo cārikaṁ pakkanto”ti. | T: “Just now, my friend Ānanda, the Blessed One set his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—set out wandering, alone & without a companion.”
+sn22.81:2.3 | S: Ānanda said, “Reverend, when the Buddha leaves like this it means he wants to stay alone. | T: “Whenever the Blessed One sets his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—sets out wandering, alone & without a companion, he wants to live alone.
+sn22.81:2.4 | S: At this time no one should follow him.” | T: He is not to be followed by anyone at such times.”
+sn22.81:3.1 | S: Then the Buddha, traveling stage by stage, arrived at Pārileyyaka, | T: Then, after wandering by stages, the Blessed One came to Pālileyyaka.
+sn22.81:3.2 | S: where he stayed at the root of a sacred sal tree. | T: There he stayed at the root of the Auspicious Sal Tree.
+sn22.81:3.3 | S: Then several mendicants went up to Venerable Ānanda and exchanged greetings with him. | T: Then a large number of monks went to Ven. Ānanda and on arrival exchanged courteous greetings.
+sn22.81:3.4 | S: When the greetings and polite conversation were over, they sat down to one side and said to him, | T: After an exchange of friendly courtesies & greetings they sat to one side. As they were sitting there, they said to Ven. Ānanda,
+sn22.81:3.5 | S: “Reverend, it’s been a long time since we’ve heard a Dhamma talk from the Buddha. | T: “It has been a long time since we heard a Dhamma talk in the Blessed One’s presence.
+sn22.81:3.6 | S: We wish to hear a Dhamma talk from the Buddha.” | T: We want to hear a Dhamma talk in the Blessed One’s presence.”
+sn22.81:4.1 | S: Then Venerable Ānanda together with those mendicants went to Pārileyyaka to see the Buddha. They bowed and sat down to one side, | T: Then Ven. Ānanda went with those monks to where the Blessed One was staying in Pālileyyaka, at the root of the Auspicious Sal Tree, and on arrival, after bowing down to him, sat to one side.
+sn22.81:4.2 | S: and the Buddha educated, encouraged, fired up, and inspired them with a Dhamma talk. | T: As they were sitting there, the Blessed One instructed, urged, roused, & encouraged them with a talk on Dhamma.
+sn22.81:4.3 | S: Now at that time one of the monks had the thought, | T: Now, on that occasion this train of thought appeared in the awareness of one of the monks:
+sn22.81:4.4 | S: “How do you know and see in order to end the defilements without delay?” | T: “Now I wonder—knowing in what way, seeing in what way, does one without delay put an end to effluents?”
+sn22.81:4.5 | S: Then the Buddha, knowing that monk’s train of thought, addressed the mendicants: | T: The Blessed One, perceiving with his awareness the train of thought in the monk’s awareness, said to the monks,
+sn22.81:4.6 | S: “Mendicants, I’ve taught the Dhamma analytically. | T: “I have analyzed & taught you the Dhamma, monks.
+sn22.81:4.7 | S: I’ve analytically taught the four kinds of mindfulness meditation, | T: I have analyzed & taught you the four establishings of mindfulness,
+sn22.81:4.8 | S: the four right efforts, | T: the four right exertions,
+sn22.81:4.9 | S: the four bases of psychic power, | T: the four bases of power,
+sn22.81:4.10 | S: the five faculties, | T: the five faculties,
+sn22.81:4.11 | S: the five powers, | T: the five strengths,
+sn22.81:4.12 | S: the seven awakening factors, | T: the seven factors for awakening,
+sn22.81:4.13 | S: and the noble eightfold path. | T: & the noble eightfold path.
+sn22.81:4.14 | S: That’s how I’ve taught the Dhamma analytically. | T: (none)
+sn22.81:4.15 | S: Though I’ve taught the Dhamma analytically, still a certain mendicant present here has this thought: | T: And yet, even though I have analyzed & taught you the Dhamma, still there appears this train of thought in the awareness of one of the monks:
+sn22.81:4.16 | S: ‘How do you know and see in order to end the defilements without delay?’ | T: ‘Now I wonder—knowing in what way, seeing in what way, does one without delay put an end to effluents?’
+sn22.81:5.1 | S: And how, mendicants, do you know and see in order to end the defilements without delay? | T: “Well then—knowing in what way, seeing in what way, does one without delay put an end to effluents?
+sn22.81:5.2 | S: Take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: There is the case where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.81:5.3 | S: They regard form as self. | T: assumes form to be the self.
+sn22.81:5.4 | S: But that regarding is just a conditioned phenomenon. | T: That assumption is a fabrication.
+sn22.81:5.5 | S: And what’s the source, origin, birthplace, and inception of that conditioned phenomenon? | T: Now what is the cause, what is the origination, what is the birth, what is the coming-into-existence of that fabrication?
+sn22.81:5.6 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: To an uninstructed, run-of-the-mill person, touched by that which is felt born of contact with ignorance, craving arises.
+sn22.81:5.7 | S: That conditioned phenomenon is born from that. | T: That fabrication is born of that.
+sn22.81:5.8 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: And that fabrication is inconstant, fabricated, dependently co-arisen.
+sn22.81:5.9 | S: And that craving, | T: That craving…
+sn22.81:5.10 | S: that feeling, that contact, | T: That feeling… That contact…
+sn22.81:5.11 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: That ignorance is inconstant, fabricated, dependently co-arisen.
+sn22.81:5.12 | S: That’s how you should know and see in order to end the defilements without delay. | T: It is by knowing & seeing in this way that one without delay puts an end to effluents.
+sn22.81:6.1 | S: Perhaps they don’t regard form as self, | T: “Or he doesn’t assume form to be the self,
+sn22.81:6.2 | S: but they still regard self as possessing form. | T: but he assumes the self as possessing form…
+sn22.81:6.3 | S: But that regarding is just a conditioned phenomenon. … | T: (none)
+sn22.81:6.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:6.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:6.6 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:6.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:6.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:6.9 | P: sāpi vedanā … | T: (none)
+sn22.81:6.10 | P: sopi phasso … | T: (none)
+sn22.81:6.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:6.12 | P: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. | T: (none)
+sn22.81:7.1 | S: Perhaps they don’t regard form as self, or self as possessing form, | T: (none)
+sn22.81:7.2 | S: but they still regard form in self. | T: form as in the self…
+sn22.81:7.3 | S: But that regarding is just a conditioned phenomenon. … | T: (none)
+sn22.81:7.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:7.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:7.6 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:7.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:7.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:7.9 | P: sāpi vedanā … | T: (none)
+sn22.81:7.10 | P: sopi phasso … | T: (none)
+sn22.81:7.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:7.12 | P: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. | T: (none)
+sn22.81:8.1 | S: Perhaps they don’t regard form as self, or self as possessing form, or form in self, | T: (none)
+sn22.81:8.2 | S: but they still regard self in form. | T: self as in form…
+sn22.81:8.3 | S: But that regarding is just a conditioned phenomenon. … | T: (none)
+sn22.81:8.4 | P: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? | T: (none)
+sn22.81:8.5 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:8.6 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:8.7 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. | T: (none)
+sn22.81:8.8 | P: Sāpi taṇhā … | T: (none)
+sn22.81:8.9 | P: sāpi vedanā … | T: (none)
+sn22.81:8.10 | P: sopi phasso … | T: (none)
+sn22.81:8.11 | P: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. | T: (none)
+sn22.81:8.12 | P: Evampi kho, bhikkhave, jānato …pe… āsavānaṁ khayo hoti. | T: (none)
+sn22.81:9.1 | S: Perhaps they don’t regard form as self, or self as possessing form, or form in self, or self in form. | T: (none)
+sn22.81:9.2 | S: But they regard feeling as self … | T: or feeling to be the self… the self as possessing feeling… feeling as in the self… self as in feeling…
+sn22.81:9.3 | S: perception as self … | T: or perception to be the self… the self as possessing perception… perception as in the self… self as in perception…
+sn22.81:9.4 | S: choices as self … | T: or fabrications to be the self… the self as possessing fabrications… fabrications as in the self… self as in fabrications…
+sn22.81:9.5 | S: consciousness as self … | T: or consciousness to be the self… the self as possessing consciousness… consciousness as in the self… self as in consciousness.
+sn22.81:9.6 | S: But that regarding is just a conditioned phenomenon. | T: “Now that assumption is a fabrication.
+sn22.81:9.7 | S: And what’s the source of that conditioned phenomenon? | T: What is the cause, what is the origination, what is the birth, what is the coming-into-existence of that fabrication?
+sn22.81:9.8 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: To an uninstructed, run-of-the-mill person, touched by the feeling born of contact with ignorance, craving arises.
+sn22.81:9.9 | S: That conditioned phenomenon is born from that. | T: That fabrication is born of that.
+sn22.81:9.10 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: And that fabrication is inconstant, fabricated, dependently co-arisen.
+sn22.81:9.11 | S: And that craving, | T: That craving…
+sn22.81:9.12 | S: that feeling, | T: That feeling…
+sn22.81:9.13 | S: that contact, | T: That contact…
+sn22.81:9.14 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: That ignorance is inconstant, fabricated, dependently co-arisen.
+sn22.81:9.15 | S: That’s how you should know and see in order to end the defilements without delay. | T: It is by knowing & seeing in this way that one without delay puts an end to effluents.
+sn22.81:10.1 | S: Perhaps they don’t regard form | T: “Or he doesn’t assume form to be the self…
+sn22.81:10.2 | S: or feeling | T: (none)
+sn22.81:10.3 | S: or perception | T: (none)
+sn22.81:10.4 | S: or choices | T: (none)
+sn22.81:10.5 | S: or consciousness as self. | T: (none)
+sn22.81:10.6 | S: Still, they have such a view: | T: but he may have a view such as this:
+sn22.81:10.7 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: ‘This self is the same as the cosmos. This I will be after death, constant, lasting, eternal, not subject to change.’
+sn22.81:10.8 | S: But that eternalist view is just a conditioned phenomenon. | T: This eternalist view is a fabrication.…
+sn22.81:10.9 | S: And what’s the source of that conditioned phenomenon? … | T: (none)
+sn22.81:10.10 | S: That’s how you should know and see in order to end the defilements without delay. | T: (none)
+sn22.81:11.1 | S: Perhaps they don’t regard form | T: (none)
+sn22.81:11.2 | S: or feeling | T: (none)
+sn22.81:11.3 | S: or perception | T: (none)
+sn22.81:11.4 | S: or choices | T: (none)
+sn22.81:11.5 | S: or consciousness as self. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.81:11.6 | S: Nor do they have such a view: | T: (none)
+sn22.81:11.7 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: (none)
+sn22.81:11.8 | S: Still, they have such a view: | T: Or… he may have a view such as this:
+sn22.81:11.9 | S: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: ‘I would not be, neither would there be what is mine. I will not be, neither will there be what is mine.’
+sn22.81:11.10 | S: But that annihilationist view is just a conditioned phenomenon. | T: This annihilationist view is a fabrication.…
+sn22.81:11.11 | S: And what’s the source of that conditioned phenomenon? … | T: (none)
+sn22.81:11.12 | P: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; | T: (none)
+sn22.81:11.13 | P: tatojo so saṅkhāro. | T: (none)
+sn22.81:11.14 | P: Iti kho, bhikkhave, sopi saṅkhāro anicco …pe… | T: (none)
+sn22.81:11.15 | S: That’s how you should know and see in order to end the defilements without delay. | T: (none)
+sn22.81:12.1 | S: Perhaps they don’t regard form or feeling | T: (none)
+sn22.81:12.2 | S: or perception | T: (none)
+sn22.81:12.3 | S: or choices | T: (none)
+sn22.81:12.4 | S: or consciousness as self. | T: (none)
+sn22.81:12.5 | S: Nor do they have such a view: | T: (none)
+sn22.81:12.6 | S: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ | T: (none)
+sn22.81:12.7 | S: Nor do they have such a view: | T: (none)
+sn22.81:12.8 | S: ‘I might not be, and it might not be mine. I will not be, and it will not be mine.’ | T: (none)
+sn22.81:12.9 | S: Still, they have doubts and uncertainties. They’re undecided about the true teaching. | T: Or… he may be doubtful & uncertain, having come to no conclusion with regard to the true Dhamma.
+sn22.81:12.10 | S: That doubt and uncertainty, the indecision about the true teaching, is just a conditioned phenomenon. | T: That doubt, uncertainty, & coming-to-no-conclusion is a fabrication.
+sn22.81:12.11 | S: And what’s the source of that conditioned phenomenon? | T: “What is the cause, what is the origination, what is the birth, what is the coming-into-existence of that fabrication?
+sn22.81:12.12 | S: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. | T: To an uninstructed, run-of-the-mill person, touched by what is felt born of contact with ignorance, craving arises.
+sn22.81:12.13 | S: That conditioned phenomenon is born from that. | T: That fabrication is born of that.
+sn22.81:12.14 | S: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. | T: And that fabrication is inconstant, fabricated, dependently co-arisen.
+sn22.81:12.15 | S: And that craving, | T: That craving…
+sn22.81:12.16 | S: that feeling, | T: That feeling…
+sn22.81:12.17 | S: that contact, | T: That contact…
+sn22.81:12.18 | S: and that ignorance are also impermanent, conditioned, and dependently originated. | T: That ignorance is inconstant, fabricated, dependently co-arisen.
+sn22.81:12.19 | S: That’s how you should know and see in order to end the defilements without delay.” | T: It is by knowing & seeing in this way that one without delay puts an end to effluents.”
+sn22.81:12.20 | P: Navamaṁ. | T: (none)
+
+
+codex
+I’ve read the whole file. I found six line boundaries to correct and am checking the exact wording before writing them.
+exec
+/bin/bash -lc "sed -n '113,127p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti91:4.3 | S: Being wicked, they are reborn in hell | T: (none)
+iti91:4.4 | S: due to their bad deeds. | T: (none)
+iti91:5.1 | S: It’d be better for the immoral and unrestrained | T: Better to eat an iron ball
+iti91:5.2 | S: to eat an iron ball, | T: –glowing, aflame–
+iti91:5.3 | S: scorching, like a burning flame, | T: (none)
+iti91:5.4 | S: than to eat the nation’s alms.” | T: than that, unprincipled & unrestrained, he should eat the alms of the country.
+iti91:6.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti91:6.2 | P: Dutiyaṁ. | T: (none)
+
+## iti7
+iti7:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti7:2.1 | S: “Mendicants, without directly knowing and completely understanding the all, without dispassion for it and giving it up, you can’t end suffering. | T: “Monks, one who has not fully known & fully understood the All, whose mind has not been cleansed of passion for it, has not abandoned it, is incapable of putting an end to stress.
+iti7:2.2 | S: By directly knowing and completely understanding the all, having dispassion for it and giving it up, you can end suffering.” | T: But one who has fully known & fully understood the All, whose mind has been cleansed of passion for it and has abandoned it, is capable of putting an end to stress.”
+iti7:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti7:2.4 | S: On this it is said: | T: (none)
+
+exec
+/bin/bash -lc "sed -n '244,263p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti86:3.3 | S: a mendicant who recollects the teaching | T: a monk pondering Dhamma, calling Dhamma to mind,
+iti86:3.4 | S: doesn’t fall away from the true teaching. | T: doesn’t fall away from true Dhamma.
+iti86:4.1 | S: Whether walking or standing, | T: Whether walking, standing,
+iti86:4.2 | S: sitting or lying down, | T: sitting, or lying down
+iti86:4.3 | S: with mind collected inside, | T: –his mind inwardly restrained–
+iti86:4.4 | S: they attain only peace.” | T: he arrives right at peace.
+iti86:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti86:5.2 | P: Sattamaṁ. | T: (none)
+
+## sn22.81
+sn22.81:1.1 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: I have heard that on one occasion the Blessed One was staying near Kosambī at Ghosita’s monastery.
+sn22.81:1.2 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: Then in the early morning, having adjusted his lower robes and taking his bowl & outer robe, he went into Kosambī for alms.
+sn22.81:1.3 | S: After the meal, on his return from almsround, he set his lodgings in order himself. Taking his bowl and robe, without informing his supporters or taking leave of the mendicant Saṅgha, he set out to go wandering alone, with no companion. | T: Having gone for alms in Kosambī, after the meal, returning from his alms round, he set his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—set out wandering, alone & without a companion.
+sn22.81:2.1 | S: Then, not long after the Buddha had left, one of the mendicants went to Venerable Ānanda and told him what had happened. | T: Then, not long after the Blessed One had left, a certain monk went to Ven. Ānanda and on arrival said to him,
+sn22.81:2.2 | P: “esāvuso ānanda, bhagavā sāmaṁ senāsanaṁ saṁsāmetvā pattacīvaramādāya anāmantetvā upaṭṭhāke anapaloketvā bhikkhusaṅghaṁ eko adutiyo cārikaṁ pakkanto”ti. | T: “Just now, my friend Ānanda, the Blessed One set his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—set out wandering, alone & without a companion.”
+sn22.81:2.3 | S: Ānanda said, “Reverend, when the Buddha leaves like this it means he wants to stay alone. | T: “Whenever the Blessed One sets his own lodging in order and—without calling his attendant or informing the Saṅgha of monks—sets out wandering, alone & without a companion, he wants to live alone.
+sn22.81:2.4 | S: At this time no one should follow him.” | T: He is not to be followed by anyone at such times.”
+sn22.81:3.1 | S: Then the Buddha, traveling stage by stage, arrived at Pārileyyaka, | T: Then, after wandering by stages, the Blessed One came to Pālileyyaka.
+sn22.81:3.2 | S: where he stayed at the root of a sacred sal tree. | T: There he stayed at the root of the Auspicious Sal Tree.
+sn22.81:3.3 | S: Then several mendicants went up to Venerable Ānanda and exchanged greetings with him. | T: Then a large number of monks went to Ven. Ānanda and on arrival exchanged courteous greetings.
+
+exec
+/bin/bash -lc "sed -n '233,245p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+iti14:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti14:5.2 | P: Catutthaṁ. | T: (none)
+
+## iti86
+iti86:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti86:2.1 | S: “Regarding a mendicant practicing in line with the teaching, it is in line with the teaching to declare that | T: “Monks, with reference to a monk who practices the Dhamma in accordance with the Dhamma,
+iti86:2.2 | S: this is what it means to practice in line with the teaching. When speaking, they speak on the teaching, not against it. When thinking, they think on the teaching, not against it. And rejecting both, they meditate staying equanimous, mindful and aware.” | T: it is this way of according with the Dhamma that he should be described as practicing the Dhamma in accordance with the Dhamma. When speaking, he speaks Dhamma and not non-Dhamma. When thinking, he thinks about Dhamma and not about non-Dhamma. Avoiding both these things, he stays equanimous, mindful, alert.”
+iti86:2.3 | S: The Buddha spoke this matter. | T: (none)
+iti86:2.4 | S: On this it is said: | T: (none)
+iti86:3.1 | S: “Delighting in the teaching, enjoying the teaching, | T: Dhamma his dwelling, Dhamma his delight,
+iti86:3.2 | S: contemplating the teaching, | T: (none)
+iti86:3.3 | S: a mendicant who recollects the teaching | T: a monk pondering Dhamma, calling Dhamma to mind,
+iti86:3.4 | S: doesn’t fall away from the true teaching. | T: doesn’t fall away from true Dhamma.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-003.findings.tmp <<'EOF'
+iti91:5.1 none
+iti91:5.2 starts: Better to eat an iron ball
+iti91:5.3 starts: –glowing, aflame–
+iti86:2.2 starts: practicing the Dhamma in accordance with the
+iti86:3.2 starts: a monk pondering Dhamma, calling Dhamma to mind,
+iti86:3.3 starts: calling Dhamma to mind,
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+6 lines reported.
+tokens used
+28,714
+6 lines reported.

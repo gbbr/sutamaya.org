@@ -1,0 +1,245 @@
+{
+  "translator": "thanissaro",
+  "round": "audit5",
+  "assigned_batches": [
+    "006",
+    "007",
+    "008"
+  ],
+  "independent_read": true,
+  "read_prior_judgments": false,
+  "authority": "Appended Pali; Sujato comparison does not override Pali order. Preserve English order, accept omissions and indivisible grouping.",
+  "total_rows_read": 685,
+  "total_finding_lines": 10,
+  "per_text_rows": {
+    "dhp414": 7,
+    "dhp46": 5,
+    "dhp51": 5,
+    "dhp59": 5,
+    "dhp94": 5,
+    "dhp95": 5,
+    "thag2.24": 9,
+    "thag2.27": 9,
+    "thig5.4": 21,
+    "thig6.8": 26,
+    "ud1.9": 12,
+    "ud3.5": 10,
+    "ud5.1": 22,
+    "ud5.6": 80,
+    "ud6.10": 26,
+    "ud7.10": 24,
+    "ud8.3": 9,
+    "sn1.56": 8,
+    "sn1.73": 8,
+    "sn12.15": 21,
+    "sn12.18": 43,
+    "sn20.6": 14,
+    "sn21.1": 21,
+    "sn22.122": 22,
+    "sn25.6": 10,
+    "sn27.6": 10,
+    "sn3.15": 37,
+    "sn3.3": 13,
+    "sn3.6": 15,
+    "sn38.14": 14,
+    "sn4.13": 24,
+    "sn43.26": 2,
+    "sn43.38": 2,
+    "sn44.4": 25,
+    "sn45.153": 6,
+    "sn46.14": 16,
+    "sn47.33": 10,
+    "sn47.6": 37,
+    "sn48.41": 22,
+    "sn56.42": 25
+  },
+  "batches": [
+    {
+      "batch": "006",
+      "rows_read": 360,
+      "physical_lines_read": 402,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "62a4eaa02b91bed418b3e64bc6527415a3509d6c0203884dba84bfc93ef54004",
+      "per_text_rows": {
+        "dhp414": 7,
+        "dhp46": 5,
+        "dhp51": 5,
+        "dhp59": 5,
+        "dhp94": 5,
+        "dhp95": 5,
+        "thag2.24": 9,
+        "thag2.27": 9,
+        "thig5.4": 21,
+        "thig6.8": 26,
+        "ud1.9": 12,
+        "ud3.5": 10,
+        "ud5.1": 22,
+        "ud5.6": 80,
+        "ud6.10": 26,
+        "ud7.10": 24,
+        "ud8.3": 9,
+        "sn1.56": 8,
+        "sn1.73": 8,
+        "sn12.15": 21,
+        "sn12.18": 43
+      },
+      "finding_lines": 7,
+      "error_keys": [
+        "dhp414:4",
+        "dhp51:4",
+        "thag2.27:1.2",
+        "thag2.27:2.2",
+        "thag2.27:2.3",
+        "thag2.27:2.4",
+        "thig6.8:6.2"
+      ],
+      "findings_path": "data/thanissaro/review/audit5/batch-006.findings"
+    },
+    {
+      "batch": "007",
+      "rows_read": 278,
+      "physical_lines_read": 312,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "e31a069796146933df1dc9ca9baa7bc7a6f6a4e411671043f0e46f73b835bd2c",
+      "per_text_rows": {
+        "sn20.6": 14,
+        "sn21.1": 21,
+        "sn22.122": 22,
+        "sn25.6": 10,
+        "sn27.6": 10,
+        "sn3.15": 37,
+        "sn3.3": 13,
+        "sn3.6": 15,
+        "sn38.14": 14,
+        "sn4.13": 24,
+        "sn43.26": 2,
+        "sn43.38": 2,
+        "sn44.4": 25,
+        "sn45.153": 6,
+        "sn46.14": 16,
+        "sn47.33": 10,
+        "sn47.6": 37
+      },
+      "finding_lines": 2,
+      "error_keys": [
+        "sn3.15:3.2",
+        "sn3.3:1.7"
+      ],
+      "findings_path": "data/thanissaro/review/audit5/batch-007.findings"
+    },
+    {
+      "batch": "008",
+      "rows_read": 47,
+      "physical_lines_read": 51,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "ebb75877221b3d5e1cc5af81f0633e01eda6af57de0eb41f4d83b67d62e84b82",
+      "per_text_rows": {
+        "sn48.41": 22,
+        "sn56.42": 25
+      },
+      "finding_lines": 1,
+      "error_keys": [
+        "sn56.42:3.2"
+      ],
+      "findings_path": "data/thanissaro/review/audit5/batch-008.findings"
+    }
+  ],
+  "errors": [
+    {
+      "keys": [
+        "dhp414:4"
+      ],
+      "batch": "006",
+      "rationale": "English places freedom from want/perplexity before meditation; Pali puts meditation on 3 and freedom on 4. Group 3/4 at earliest key 3."
+    },
+    {
+      "keys": [
+        "dhp51:4"
+      ],
+      "batch": "006",
+      "rationale": "Fruitlessness is the aphala predicate on Pali 4, not the well-spoken-word subject on 3. Move predicate plus condition to 4."
+    },
+    {
+      "keys": [
+        "thag2.27:1.2"
+      ],
+      "batch": "006",
+      "rationale": "Stumbling renders khalitva on 1.2 along with regaining stance; current 1.1 places the stumbling under the thoroughbred comparison."
+    },
+    {
+      "keys": [
+        "thag2.27:2.2",
+        "thag2.27:2.3",
+        "thag2.27:2.4"
+      ],
+      "batch": "006",
+      "rationale": "The whole second-stanza sentence reorders remember-me and Buddha-child terms across Pali 2.1-2.4. Preserve English order as one group on earliest key 2.1 rather than retain misleading fine cuts."
+    },
+    {
+      "keys": [
+        "thig6.8:6.2"
+      ],
+      "batch": "006",
+      "rationale": "English reverses the meditation/suffusion predicate and rapture/pleasure body phrase across Pali 6.1/6.2. Group the sentence at 6.1."
+    },
+    {
+      "keys": [
+        "sn3.15:3.2"
+      ],
+      "batch": "007",
+      "rationale": "Returning from alms, approaching the Buddha, bowing and sitting render Pali 3.2. Current 3.1 wrongly includes those whole sentences after going for alms."
+    },
+    {
+      "keys": [
+        "sn3.3:1.7"
+      ],
+      "batch": "007",
+      "rationale": "English 1.7 continues only the brahman wealth/death clause begun on 1.6. Pali 1.7 is the separate householder clause, which this translation omits. Keep the whole brahman clause on 1.6."
+    },
+    {
+      "keys": [
+        "sn56.42:3.2"
+      ],
+      "batch": "008",
+      "rationale": "The fourth-truth item follows ellipses in English and renders the explicit path-truth clause opening Pali 3.2; currently it is prematurely on 3.1."
+    }
+  ],
+  "concerns": [
+    {
+      "keys": [
+        "sn21.1:3.5",
+        "sn21.1:3.6"
+      ],
+      "batch": "007",
+      "kind": "valid grouped sentence",
+      "rationale": "One English sentence contains first quoted predicate, the speaker identification, then a repeated predicate corresponding to 3.6. Keeping it at earliest covered key 3.5 is valid under the reading prompt. Optional finer reveal would need duplicate-quote disambiguation; no correction proposed."
+    },
+    {
+      "keys": [
+        "sn44.4:2.1",
+        "sn44.4:2.2"
+      ],
+      "batch": "007",
+      "kind": "valid grouped sentence",
+      "rationale": "The four alternative thoughts share a single negative predicate at the end. Whole English sentence grouped on 2.1 is valid; no forced split proposed."
+    },
+    {
+      "keys": [
+        "sn12.18:3.3",
+        "thig6.8:3.2"
+      ],
+      "batch": "006",
+      "kind": "translator omission",
+      "rationale": "The both-self-and-other question and the powers item respectively are omitted in this English; those omissions are not cut errors."
+    },
+    {
+      "keys": [
+        "sn47.6:4.4"
+      ],
+      "batch": "007",
+      "kind": "translator shortening",
+      "rationale": "Yadidam is not separately rendered in English. The four-establishings noun phrase correctly stays on explicit Pali 4.5."
+    }
+  ],
+  "changes": "Only assigned audit5 findings and this coverage report. No cut, translation, app, script or main-data edits; no segmenter or commit."
+}

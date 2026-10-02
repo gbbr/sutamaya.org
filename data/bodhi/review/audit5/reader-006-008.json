@@ -1,0 +1,229 @@
+{
+  "translator": "bodhi",
+  "round": "audit5",
+  "assigned_batches": [
+    "006",
+    "007",
+    "008"
+  ],
+  "independent_read": true,
+  "read_prior_judgments": false,
+  "authority": "Appended Pali; Sujato comparison does not override Pali order. Preserve English order, accept omissions and indivisible grouping.",
+  "total_rows_read": 698,
+  "total_finding_lines": 7,
+  "per_text_rows": {
+    "an3.63": 26,
+    "an4.23": 46,
+    "an4.274": 6,
+    "an5.14": 24,
+    "an5.2": 24,
+    "an5.303": 4,
+    "an5.306": 4,
+    "an5.307": 4,
+    "an5.35": 17,
+    "an5.37": 18,
+    "an5.52": 7,
+    "an5.61": 5,
+    "an5.9": 17,
+    "an8.14": 87,
+    "an8.16": 17,
+    "sn1.41": 22,
+    "sn1.71": 12,
+    "sn1.75": 10,
+    "sn11.15": 11,
+    "sn12.71": 9,
+    "sn21.1": 21,
+    "sn22.10": 15,
+    "sn22.25": 12,
+    "sn22.32": 22,
+    "sn35.135": 18,
+    "sn35.31": 26,
+    "sn35.84": 11,
+    "sn43.10": 3,
+    "sn43.27": 2,
+    "sn43.35": 2,
+    "sn43.5": 3,
+    "sn43.8": 3,
+    "sn45.143": 3,
+    "sn45.157": 6,
+    "sn45.164": 6,
+    "sn45.172": 6,
+    "sn45.28": 8,
+    "sn45.31": 10,
+    "sn45.33": 8,
+    "sn45.40": 19,
+    "sn45.62": 12,
+    "sn45.70": 9,
+    "sn46.33": 13,
+    "sn46.43": 9,
+    "sn47.17": 8,
+    "sn47.24": 9,
+    "sn47.47": 16,
+    "sn5.6": 23,
+    "sn56.38": 16,
+    "sn56.8": 9
+  },
+  "batches": [
+    {
+      "batch": "006",
+      "rows_read": 328,
+      "physical_lines_read": 360,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "72a7f8f67c584d7b8600fc8bfd56e10dc039552f9277b1cf15331baa7dd1dded",
+      "per_text_rows": {
+        "an3.63": 26,
+        "an4.23": 46,
+        "an4.274": 6,
+        "an5.14": 24,
+        "an5.2": 24,
+        "an5.303": 4,
+        "an5.306": 4,
+        "an5.307": 4,
+        "an5.35": 17,
+        "an5.37": 18,
+        "an5.52": 7,
+        "an5.61": 5,
+        "an5.9": 17,
+        "an8.14": 87,
+        "an8.16": 17,
+        "sn1.41": 22
+      },
+      "finding_lines": 2,
+      "error_keys": [
+        "an5.35:2.4",
+        "sn1.41:5.2"
+      ],
+      "findings_path": "data/bodhi/review/audit5/batch-006.findings"
+    },
+    {
+      "batch": "007",
+      "rows_read": 361,
+      "physical_lines_read": 427,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "2d419881b00872d123bf9bfc26800e1c33b342c90b8d93301d59a0e8a472d55f",
+      "per_text_rows": {
+        "sn1.71": 12,
+        "sn1.75": 10,
+        "sn11.15": 11,
+        "sn12.71": 9,
+        "sn21.1": 21,
+        "sn22.10": 15,
+        "sn22.25": 12,
+        "sn22.32": 22,
+        "sn35.135": 18,
+        "sn35.31": 26,
+        "sn35.84": 11,
+        "sn43.10": 3,
+        "sn43.27": 2,
+        "sn43.35": 2,
+        "sn43.5": 3,
+        "sn43.8": 3,
+        "sn45.143": 3,
+        "sn45.157": 6,
+        "sn45.164": 6,
+        "sn45.172": 6,
+        "sn45.28": 8,
+        "sn45.31": 10,
+        "sn45.33": 8,
+        "sn45.40": 19,
+        "sn45.62": 12,
+        "sn45.70": 9,
+        "sn46.33": 13,
+        "sn46.43": 9,
+        "sn47.17": 8,
+        "sn47.24": 9,
+        "sn47.47": 16,
+        "sn5.6": 23,
+        "sn56.38": 16
+      },
+      "finding_lines": 5,
+      "error_keys": [
+        "sn1.71:3.4",
+        "sn11.15:2.4",
+        "sn45.143:3.2",
+        "sn46.43:1.4",
+        "sn46.43:1.5"
+      ],
+      "findings_path": "data/bodhi/review/audit5/batch-007.findings"
+    },
+    {
+      "batch": "008",
+      "rows_read": 9,
+      "physical_lines_read": 11,
+      "coverage": "entire file, all rows read against appended Pali",
+      "sha256": "6367cd804c733aee6eefc594954dd578b78d0e4d9759dbfa179b09aa979f9332",
+      "per_text_rows": {
+        "sn56.8": 9
+      },
+      "finding_lines": 0,
+      "error_keys": [],
+      "findings_path": "data/bodhi/review/audit5/batch-008.findings"
+    }
+  ],
+  "errors": [
+    {
+      "keys": [
+        "an5.35:2.4"
+      ],
+      "batch": "006",
+      "rationale": "The association predicate follows the self-controlled-monks noun phrase in English; Pali reverses these across 2.3/2.4. Group both at 2.3 to avoid a false split."
+    },
+    {
+      "keys": [
+        "sn1.41:5.2"
+      ],
+      "batch": "006",
+      "rationale": "The body is the object on Pali 5.2 together with possessions; English currently places the body on 5.1. Move the complete object phrase to 5.2."
+    },
+    {
+      "keys": [
+        "sn1.71:3.4"
+      ],
+      "batch": "007",
+      "rationale": "English moves killing/deity before the poisoned-root and honeyed-tip descriptors, reversing Pali 3.3/3.4. Group 3.3/3.4 at 3.3; the separate noble-approval clause at 3.5 remains correct."
+    },
+    {
+      "keys": [
+        "sn11.15:2.4"
+      ],
+      "batch": "007",
+      "rationale": "The sixteenth-part predicate precedes the delightful-human comparison in English, reversing Pali 2.3/2.4. Group at 2.3."
+    },
+    {
+      "keys": [
+        "sn45.143:3.2"
+      ],
+      "batch": "007",
+      "rationale": "The short application after the sandalwood comparison renders explicit evameva on 3.2 and currently sits at the end of 3.1."
+    },
+    {
+      "keys": [
+        "sn46.43:1.4",
+        "sn46.43:1.5"
+      ],
+      "batch": "007",
+      "rationale": "The definition introduction renders Yadidam on 1.4; the seven factors render sattabojjhanga on 1.5. Their words can be separated without changing source order."
+    }
+  ],
+  "concerns": [
+    {
+      "keys": [
+        "sn45.62:1.1"
+      ],
+      "batch": "007",
+      "kind": "source-range coverage",
+      "rationale": "The only shown Pali is Yadidam-yonisomanasikarasampada, appropriate attention. T here contains the full sun/dawn preamble and virtue, desire, self, view, diligence and careful-attention items. Earlier grouped-source targets are absent from this snapshot; an isolated cut at 62 would not recover them. Parent will investigate the source range."
+    },
+    {
+      "keys": [
+        "sn35.31:1.8",
+        "sn35.31:1.9",
+        "sn35.135:1.14"
+      ],
+      "batch": "007",
+      "kind": "Pali elision",
+      "rationale": "English may expand chains that the appended Pali contracts by ellipses. Preserve the implicit elided coverage rather than misclassify every expanded ear/nose/tongue/body phrase as shifted."
+    }
+  ],
+  "changes": "Only assigned audit5 findings and this coverage report. No cut, translation, app, script or main-data edits; no segmenter or commit."
+}

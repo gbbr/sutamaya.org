@@ -1,0 +1,475 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd81-dd96-7580-8742-c5ca796ed6d7
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn47.18
+sn47.18:1.1 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: On one occasion the Blessed One was dwelling at Uruvela on the bank of the river Nerañjara at the foot of the Goatherd’s Banyan Tree just after he had become fully enlightened.
+sn47.18:1.2 | S: Then as he was in private retreat this thought came to his mind, | T: Then, while the Blessed One was alone in seclusion, a reflection arose in his mind thus:
+sn47.18:1.3 | S: “The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. | T: “This is the one-way path for the purification of beings, for the overcoming of sorrow and lamentation, for the passing away of pain and displeasure, for the achievement of the method, for the realization of Nibbāna, that is, the four establishments of mindfulness.
+sn47.18:2.1 | S: What four? | T: What four?
+sn47.18:2.2 | S: A mendicant would meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.18:2.3 | S: Or they’d meditate observing an aspect of feelings … | T: He dwells contemplating feelings in feelings …
+sn47.18:2.4 | S: or mind … | T: mind in mind …
+sn47.18:2.5 | S: or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.18:2.6 | S: The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” | T: This is the one-way path for the purification of beings … that is, the four establishments of mindfulness.”
+sn47.18:3.1 | S: Then the divinity Sahampati knew the Buddha’s train of thought. As easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then Brahma Sahampati, having known with his own mind the reflection in the Blessed One’s mind, just as quickly as a strong man might extend his drawn-in arm or draw in his extended arm, disappeared from the brahma world and reappeared before the Blessed One.
+sn47.18:3.2 | S: He arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said: | T: He arranged his upper robe over one shoulder, raised his joined hands in reverential salutation towards the Blessed One, and said to him:
+sn47.18:3.3 | S: “That’s so true, Blessed One! That’s so true, Holy One! | T: “So it is, Blessed One! So it is, Fortunate One!
+sn47.18:3.4 | S: Sir, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. | T: Venerable sir, this is the one-way path for the purification of beings …
+sn47.18:4.1 | S: What four? | T: all as above …
+sn47.18:4.2 | S: A mendicant would meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.18:4.3 | S: Or they’d meditate observing an aspect of feelings … | T: (none)
+sn47.18:4.4 | S: or mind … | T: (none)
+sn47.18:4.5 | S: or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.18:4.6 | S: The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” | T: that is, the four establishments of mindfulness.”
+sn47.18:5.1 | S: That is what the divinity Sahampati said. | T: This is what Brahma Sahampati said.
+sn47.18:5.2 | S: Then he went on to say: | T: Having said this, he further said this:
+sn47.18:6.1 | S: “The compassionate one, <j>who sees the ending of rebirth, | T: “The seer of the destruction of birth, Compassionate,
+sn47.18:6.2 | S: understands the path to convergence. | T: knows the one-way path
+sn47.18:6.3 | S: By this path people crossed over before, | T: By which in the past they crossed the flood,
+sn47.18:6.4 | S: will cross, and are crossing.” | T: By which they will cross and cross over now.”
+sn47.18:6.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.30
+an3.30:1.1 | S: “These three individuals are found in the world. | T: “Bhikkhus, there are these three kinds of persons found existing in the world.
+an3.30:1.2 | S: What three? | T: What three?
+an3.30:1.3 | S: One with upside-down wisdom, one with wisdom on their lap, and one with widespread wisdom. | T: The person with inverted wisdom, the person with lap-like wisdom, and the person with wide wisdom.
+an3.30:1.4 | S: And who is the individual with upside-down wisdom? | T: (1) “And what, bhikkhus, is the person with inverted wisdom?
+an3.30:1.5 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: Here, some person often goes to the monastery to listen to the Dhamma from the bhikkhus.
+an3.30:1.6 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The bhikkhus teach him the Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; they reveal the perfectly complete and pure spiritual life.
+an3.30:1.7 | S: But even while sitting there, that person doesn’t apply the mind to the beginning, middle, or end of the discussion. | T: While he is sitting in his seat, he does not attend to that talk at the beginning, in the middle, or at the end.
+an3.30:1.8 | S: And when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: After he has risen from his seat, he still does not attend to that talk at the beginning, in the middle, or at the end.
+an3.30:1.9 | S: It’s like when a pot full of water is tipped over, so the water drains out and doesn’t stay. | T: Just as, when a pot is turned upside down, the water that had been poured into it runs off and does not remain there,
+an3.30:1.10 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus….
+an3.30:1.11 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: (none)
+an3.30:1.12 | S: But even while sitting there, that person doesn’t apply the mind to the discussion in the beginning, middle, or end. | T: (none)
+an3.30:1.13 | S: And when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: After he has risen from his seat, he still does not attend to that talk at the beginning, in the middle, or at the end.
+an3.30:1.14 | S: This is called an individual with upside-down wisdom. | T: This is called the person with inverted wisdom.
+an3.30:2.1 | S: And who is the individual with wisdom on their lap? | T: (2) “And what is the person with lap-like wisdom?
+an3.30:2.2 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: Here, some person often goes to the monastery to listen to the Dhamma from the bhikkhus.
+an3.30:2.3 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The bhikkhus teach him the Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; they reveal the perfectly complete and pure spiritual life.
+an3.30:2.4 | S: While sitting there, that person applies the mind to the discussion in the beginning, middle, and end. | T: While he is sitting in his seat, he attends to that talk at the beginning, in the middle, and at the end.
+an3.30:2.5 | S: But when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: But after he has risen from his seat, he does not attend to that talk at the beginning, in the middle, or at the end.
+an3.30:2.6 | S: It’s like a person who has different kinds of food crammed on their lap— | T: Just as, when a person has various food stuffs strewn over his lap—
+an3.30:2.7 | S: such as sesame, rice, sweets, or jujube— | T: sesamum seeds, rice grains, cakes, and jujubes—
+an3.30:2.8 | S: so that if they rise from the seat without mindfulness, everything gets scattered. | T: if he loses his mindfulness when rising from that seat, he would scatter them all over,
+an3.30:2.9 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus….
+an3.30:2.10 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: (none)
+an3.30:2.11 | S: While sitting there, that person applies the mind to the discussion in the beginning, middle, and end. | T: (none)
+an3.30:2.12 | S: But when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. | T: But after he has risen from his seat, he does not attend to that talk at the beginning, in the middle, or at the end.
+an3.30:2.13 | S: This is called an individual with wisdom on their lap. | T: This is called the person with lap-like wisdom.
+an3.30:3.1 | S: And who is the individual with widespread wisdom? | T: (3) “And what is the person with wide wisdom?
+an3.30:3.2 | S: It’s an individual who often goes to the monastery to hear the teaching in the presence of the mendicants. | T: Here, some person often goes to the monastery to listen to the Dhamma from the bhikkhus.
+an3.30:3.3 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: The bhikkhus teach him the Dhamma that is good in the beginning, good in the middle, and good in the end, with the right meaning and phrasing; they reveal the perfectly complete and pure spiritual life.
+an3.30:3.4 | S: While sitting there, they apply the mind to the discussion in the beginning, middle, and end. | T: While he is sitting in his seat, he attends to that talk at the beginning, in the middle, and at the end.
+an3.30:3.5 | S: And when they rise from their seat, they continue to apply the mind to the beginning, middle, or end of the discussion. | T: After he has risen from his seat, again he attends to that talk at the beginning, in the middle, and at the end.
+an3.30:3.6 | S: It’s like when a pot full of water is set straight, so the water stays and doesn’t drain out. | T: Just as, when a pot is kept upright, the water that had been poured into it stays there and does not run off,
+an3.30:3.7 | S: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. | T: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus….
+an3.30:3.8 | S: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. | T: (none)
+an3.30:3.9 | S: While sitting there, they apply the mind to the discussion in the beginning, middle, and end. | T: (none)
+an3.30:3.10 | S: And when they rise from their seat, they continue to apply the mind to the beginning, middle, or end of the discussion. | T: After he has risen from his seat, again he attends to that talk at the beginning, in the middle, and at the end.
+an3.30:3.11 | S: This is called an individual with widespread wisdom. | T: This is called the person with wide wisdom.
+an3.30:3.12 | S: These are the three individuals found in the world. | T: “These, bhikkhus, are the three kinds of persons found existing in the world.”
+an3.30:4.1 | S: A person with upside-down wisdom, | T: The person with inverted wisdom,
+an3.30:4.2 | S: is a simpleton and cannot see, | T: stupid and undiscerning,
+an3.30:4.3 | S: and even if they frequently | T: often goes to visit bhikkhus
+an3.30:4.4 | S: go into the mendicants’ presence, | T: to hear them teach the Dhamma.
+an3.30:5.1 | S: such a person can’t learn | T: Yet this person cannot grasp anything from the talk,
+an3.30:5.2 | S: the beginning, middle, or end | T: at its beginning, middle, and end,
+an3.30:5.3 | S: of the discussion, | T: (none)
+an3.30:5.4 | S: for their wisdom is lacking. | T: for he utterly lacks wisdom.
+an3.30:6.1 | S: the individual with wisdom on their lap | T: The person with lap-like wisdom
+an3.30:6.2 | S: is better than that, it’s said; | T: is said to be better than the former.
+an3.30:6.3 | S: but even if they frequently | T: He too often goes to visit bhikkhus
+an3.30:6.4 | S: go into the mendicants’ presence, | T: to hear them teach the Dhamma.
+an3.30:7.1 | S: such a person can only learn | T: (none)
+an3.30:7.2 | S: the beginning, middle, and end | T: (none)
+an3.30:7.3 | S: while sitting in that seat; | T: While sitting in his seat,
+an3.30:7.4 | S: but they’ve only grasped the phrasing, | T: he grasps the phrasing of the talk, at its beginning, middle, and end.
+an3.30:7.5 | S: for when they rise their understanding fails, | T: But after rising, he no longer understands,
+an3.30:7.6 | S: and what they’ve learned is lost. | T: but forgets what he had learned.
+an3.30:8.1 | S: The person with widespread wisdom | T: The person with wide wisdom
+an3.30:8.2 | S: is better than that, it’s said; | T: is said to be the best of these.
+an3.30:8.3 | S: and if they, too, frequently | T: He too often goes to visit bhikkhus
+an3.30:8.4 | S: go into the mendicants’ presence, | T: to hear them teach the Dhamma.
+an3.30:9.1 | S: one such can learn | T: (none)
+an3.30:9.2 | S: the beginning, middle, and end | T: (none)
+an3.30:9.3 | S: while sitting in that seat; | T: While sitting in his seat,
+an3.30:9.4 | S: and when they’ve grasped the phrasing, | T: he comprehends the phrasing, at the beginning, middle, and end of the talk given by the bhikkhu.
+an3.30:10.1 | S: they remember it with the best of intentions. | T: This person of the best intentions,
+an3.30:10.2 | S: That peaceful-hearted man, | T: his mind undivided, retains what he hears.
+an3.30:10.3 | S: practicing in line with the teaching, | T: Practicing in accordance with the Dhamma,
+an3.30:10.4 | S: would make an end of suffering.” | T: he can make an end of suffering.
+an3.30:10.5 | P: Dasamaṁ. | T: (none)
+an3.30:10.6 | P: Puggalavaggo tatiyo. | T: (none)
+an3.30:11.0 | P: Tassuddānaṁ | T: (none)
+an3.30:11.1 | P: Samiddha gilāna saṅkhārā, | T: (none)
+an3.30:11.2 | P: bahukārā vajirena ca; | T: (none)
+an3.30:11.3 | P: Sevi jiguccha gūthabhāṇī, | T: (none)
+an3.30:11.4 | P: andho ca avakujjatāti. | T: (none)
+
+## an4.51
+an4.51:1.1 | S: At Sāvatthī. | T: (none)
+an4.51:1.2 | S: “Mendicants, there are these four kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness. | T: “Bhikkhus, there are these four streams of merit, streams of the wholesome, nutriments of happiness—heavenly, ripening in happiness, conducive to heaven—that lead to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an4.51:1.3 | S: What four? | T: What four?
+an4.51:1.4 | S: When a mendicant enters and remains in a limitless immersion of the heart while using a robe, the overflowing of merit for the donor is limitless … | T: “(1) When a bhikkhu enters and dwells in a measureless concentration of mind while using a robe that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.
+an4.51:2.1 | S: When a mendicant enters and remains in a limitless immersion of the heart while eating almsfood, the overflowing of merit for the donor is limitless … | T: (2) When a bhikkhu enters and dwells in a measureless concentration of mind while using almsfood that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.
+an4.51:3.1 | S: When a mendicant enters and remains in a limitless immersion of the heart while using lodgings, the overflowing of merit for the donor is limitless … | T: (3) When a bhikkhu enters and dwells in a measureless concentration of mind while using a lodging that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.
+an4.51:4.1 | S: When a mendicant enters and remains in a limitless immersion of the heart while using medicines and supplies for the sick, the overflowing of merit for the donor is limitless … | T: (4) When a bhikkhu enters and dwells in a measureless concentration of mind while using medicines and provisions for the sick that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads to one’s welfare and happiness.
+an4.51:4.2 | S: These are the four kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness. | T: “These are the four streams of merit, streams of the wholesome, nutriments of happiness—heavenly, ripening in happiness, conducive to heaven—that lead to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an4.51:5.1 | S: When a noble disciple has these four kinds of overflowing merit and goodness, it’s not easy to grasp how much merit they have by saying that this is the extent of their overflowing merit … that leads to happiness. It’s simply reckoned as an incalculable, immeasurable, great mass of merit. | T: “When, bhikkhus, a noble disciple possesses these four streams of merit, streams of the wholesome, it is not easy to measure his merit thus: ‘Just so much is his stream of merit, stream of the wholesome, nutriment of happiness … that leads to … one’s welfare and happiness’; rather, it is reckoned simply as an incalculable, immeasurable, great mass of merit.
+an4.51:6.1 | S: It’s like trying to grasp how much water is in the ocean. It’s not easy to say how many gallons, how many hundreds, thousands, hundreds of thousands of gallons there are. It’s simply reckoned as an incalculable, immeasurable, great mass of water. | T: “Bhikkhus, just as it is not easy to measure the water in the great ocean thus: ‘There are so many gallons of water,’ or ‘There are so many hundreds of gallons of water,’ or ‘There are so many thousands of gallons of water,’ or ‘There are so many hundreds of thousands of gallons of water,’ but rather it is reckoned simply as an incalculable, immeasurable, great mass of water;
+an4.51:6.2 | S: In the same way, when a noble disciple has these four kinds of overflowing merit it’s simply reckoned as an incalculable, immeasurable, great mass of merit. | T: so too, when a noble disciple possesses these four streams of merit … it is reckoned simply as an incalculable, immeasurable, great mass of merit.”
+an4.51:7.1 | S: Hosts of people use the rivers, | T: Just as the many rivers used by the hosts of people,
+an4.51:7.2 | S: and though the rivers are many, | T: (none)
+an4.51:7.3 | S: all reach the great deep, the boundless ocean, | T: flowing downstream, reach the ocean, the great mass of water, the boundless sea,
+an4.51:7.4 | S: the cruel sea that’s home to precious gems. | T: the fearsome receptacle of heaps of gems;
+an4.51:8.1 | S: In the same way, when a person gives <j>food, drink, and clothes; | T: so the streams of merit reach the wise man who is a giver of food, drink, and cloth;
+an4.51:8.2 | S: and they’re a giver of beds, seats, and mats— | T: they reach the donor of beds, seats, and covers
+an4.51:8.3 | S: the streams of merit reach that astute person, | T: (none)
+an4.51:8.4 | S: as the rivers bring their waters to the sea.” | T: like rivers carrying their waters to the sea.
+an4.51:8.5 | P: Paṭhamaṁ. | T: (none)
+
+## sn35.32
+sn35.32:1.1 | S: “Mendicants, I will teach you the practice that’s conducive to uprooting all conceiving. | T: “Bhikkhus, I will teach you the way that is suitable for uprooting all conceivings.
+sn35.32:1.2 | S: Listen … | T: Listen to that….
+sn35.32:1.3 | S: And what is the practice that’s conducive to uprooting all conceiving? | T: “And what, bhikkhus, is the way that is suitable for uprooting all conceivings?
+sn35.32:2.1 | S: What do you think, mendicants? | T: What do you think, bhikkhus,
+sn35.32:2.2 | S: Is the eye permanent or impermanent?” | T: is the eye permanent or impermanent?”—
+sn35.32:3.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn35.32:4.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn35.32:5.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn35.32:6.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn35.32:6.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn35.32:7.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.32:8.1 | S: “Are sights … | T: “Are forms permanent or impermanent?…
+sn35.32:8.2 | S: eye consciousness … | T: Is eye-consciousness …
+sn35.32:8.3 | S: eye contact … | T: Is eye-contact …
+sn35.32:9.1 | P: “Anicco, bhante” …pe…. | T: (none)
+sn35.32:10.1 | S: The pleasant, painful, or neutral feeling that arises dependent on eye contact: is that permanent or impermanent?” | T: Is any feeling that arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—permanent or impermanent?…
+sn35.32:11.1 | S: “Impermanent, sir.” | T: (none)
+sn35.32:12.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: (none)
+sn35.32:13.1 | S: “Suffering, sir.” | T: (none)
+sn35.32:14.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: (none)
+sn35.32:14.2 | S: ‘This is mine, I am this, this is my self’?” | T: (none)
+sn35.32:15.1 | S: “No, sir.” … | T: (none)
+sn35.32:16.1 | S: “Is the ear … nose … tongue … | T: “Is the ear permanent or impermanent?…
+sn35.32:17.1 | P: “Aniccā, bhante” …pe…. | T: (none)
+sn35.32:18.1 | P: “Rasā … | T: (none)
+sn35.32:18.2 | P: jivhāviññāṇaṁ … | T: (none)
+sn35.32:18.3 | P: jivhāsamphasso …pe… | T: (none)
+sn35.32:18.4 | P: yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi niccaṁ vā aniccaṁ vā”ti? | T: (none)
+sn35.32:19.1 | P: “Aniccaṁ, bhante” …pe… | T: (none)
+sn35.32:20.1 | S: body … mind … | T: Is the mind …
+sn35.32:20.2 | P: manoviññāṇaṁ … | T: (none)
+sn35.32:20.3 | P: manosamphasso nicco vā anicco vā”ti? | T: (none)
+sn35.32:21.1 | P: “Anicco, bhante”. | T: (none)
+sn35.32:22.1 | S: The pleasant, painful, or neutral feeling that arises dependent on mind contact: is that permanent or impermanent?” | T: Is any feeling that arises with mind-contact as condition permanent or impermanent?”—
+sn35.32:23.1 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”—
+sn35.32:24.1 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “Is what is impermanent suffering or happiness?”—
+sn35.32:25.1 | S: “Suffering, sir.” | T: “Suffering, venerable sir.”—
+sn35.32:26.1 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “Is what is impermanent, suffering, and subject to change fit to be regarded thus:
+sn35.32:26.2 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine, this I am, this is my self’?”—
+sn35.32:27.1 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.32:28.1 | S: “Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, and eye contact. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards the eye, towards forms, towards eye-consciousness, towards eye-contact,
+sn35.32:28.2 | S: And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on eye contact. | T: towards whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant.
+sn35.32:28.3 | S: They grow disillusioned with the ear … nose … tongue … body … | T: He experiences revulsion towards the ear …
+sn35.32:28.4 | S: They grow disillusioned with the mind, ideas, mind consciousness, and mind contact. | T: towards the mind …
+sn35.32:28.5 | S: And they grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on mind contact. | T: towards whatever feeling arises with mind-contact as condition….
+sn35.32:28.6 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn35.32:28.7 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’
+sn35.32:28.8 | S: This is the practice that’s conducive to uprooting all conceiving.” | T: “This, bhikkhus, is the way that is suitable for uprooting all conceivings.”
+sn35.32:28.9 | P: Dasamaṁ. | T: (none)
+sn35.32:28.10 | P: Sabbavaggo tatiyo. | T: (none)
+sn35.32:29.0 | P: Tassuddānaṁ | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.32:29.1 | P: Sabbañca dvepi pahānā, | T: (none)
+sn35.32:29.2 | P: parijānāpare duve; | T: (none)
+sn35.32:29.3 | P: Ādittaṁ addhabhūtañca, | T: (none)
+sn35.32:29.4 | P: sāruppā dve ca sappāyā; | T: (none)
+sn35.32:29.5 | P: Vaggo tena pavuccatīti. | T: (none)
+
+## an10.218
+an10.218:1.1 | S: “Mendicants, I don’t say that intentional deeds that have been performed and accumulated are eliminated without being experienced. | T: “Bhikkhus, I do not say that there is a termination of volitional kamma that has been done and accumulated so long as one has not experienced its results,
+an10.218:1.2 | S: And that may be in this very life, or in the next life, or in some subsequent period. | T: and that may be in this very life, or in the next rebirth, or on some subsequent occasion.
+an10.218:1.3 | S: But in any case, there is no making an end of suffering without experiencing intentional deeds that have been performed and accumulated, I say. | T: But I do not say that there is making an end of suffering so long as one has not experienced the results of volitional kamma that has been done and accumulated.
+an10.218:2.1 | S: Now, there are three kinds of corruption and failure of bodily action that have unskillful intention, with suffering as their outcome and result. | T: “As to this, bhikkhus, there is a threefold corruption and failure of bodily kamma, arisen from unwholesome volition, having a painful outcome and result;
+an10.218:2.2 | S: There are four kinds of corruption and failure of verbal action that have unskillful intention, with suffering as their outcome and result. | T: a fourfold corruption and failure of verbal kamma, arisen from unwholesome volition, having a painful outcome and result;
+an10.218:2.3 | S: There are three kinds of corruption and failure of mental action that have unskillful intention, with suffering as their outcome and result. | T: and a threefold corruption and failure of mental kamma, arisen from unwholesome volition, having a painful outcome and result.
+an10.218:3.1 | S: And what are the three kinds of corruption and failure of bodily action? … | T: (1)–(10) “And how, bhikkhus, is there a threefold corruption and failure of bodily kamma …
+an10.218:3.2 | S: These are the three kinds of corruption and failure of bodily action. | T: (none)
+an10.218:4.1 | S: And what are the four kinds of corruption and failure of verbal action? … | T: a fourfold corruption and failure of verbal kamma … …
+an10.218:4.2 | S: These are the four kinds of corruption and failure of verbal action. | T: (none)
+an10.218:5.1 | S: And what are the three kinds of corruption and failure of mental action? … | T: a threefold corruption and failure of mental kamma? …
+an10.218:5.2 | S: These are the three kinds of corruption and failure of mental action. | T: all as in AN10.217 … having a painful outcome and result.
+an10.218:6.1 | S: When their body breaks up, after death, sentient beings are reborn in a place of loss, a bad place, the underworld, hell because of these three kinds of corruption and failure of bodily action, these four kinds of corruption and failure of verbal action, or these three kinds of corruption and failure of mental action that have unskillful intention, with suffering as their outcome and result. | T: “It is, bhikkhus, because of the threefold corruption and failure of bodily kamma, arisen from unwholesome volition … or it is because of the fourfold corruption and failure of verbal kamma, arisen from unwholesome volition … or it is because of the threefold corruption and failure of mental kamma, arisen from unwholesome volition, that with the breakup of the body, after death, beings are reborn in the plane of misery, in a bad destination, in the lower world, in hell.
+an10.218:7.1 | S: I don’t say that intentional deeds that have been performed and accumulated are eliminated without being experienced. | T: “Bhikkhus, I do not say that there is a termination of volitional kamma that has been done and accumulated so long as one has not experienced its results,
+an10.218:7.2 | S: And that may be in this very life, or in the next life, or in some subsequent period. | T: and that may be in this very life, or in the next rebirth, or on some subsequent occasion.
+an10.218:7.3 | S: But in any case, there is no making an end of suffering without experiencing intentional deeds that have been performed and accumulated, I say. | T: But I do not say that there is making an end of suffering so long as one has not experienced the results of volitional kamma that has been done and accumulated.
+an10.218:8.1 | S: Now, there are three kinds of successful bodily action that have skillful intention, with happiness as their outcome and result. | T: “As to this, bhikkhus, there is a threefold success of bodily kamma, arisen from wholesome volition, having a pleasant outcome and result.
+an10.218:8.2 | S: There are four kinds of successful verbal action that have skillful intention, with happiness as their outcome and result. | T: There is a fourfold success of verbal kamma, arisen from wholesome volition, having a pleasant outcome and result.
+an10.218:8.3 | S: There are three kinds of successful mental action that have skillful intention, with happiness as their outcome and result. | T: There is a threefold success of mental kamma, arisen from wholesome volition, having a pleasant outcome and result.
+an10.218:9.1 | S: And what are the three kinds of successful bodily action? … | T: (1)–(10) “And how, bhikkhus, is there a threefold success of bodily kamma …
+an10.218:9.2 | S: These are the three kinds of successful bodily action. | T: (none)
+an10.218:10.1 | S: And what are the four kinds of successful verbal action? … | T: a fourfold success of verbal kamma … …
+an10.218:10.2 | S: These are the four kinds of successful verbal action. | T: (none)
+an10.218:11.1 | S: And what are the three kinds of successful mental action? … | T: a threefold success of mental kamma? …
+an10.218:11.2 | S: These are the three kinds of successful mental action. | T: all as in AN10.217 … having a painful outcome and result.
+an10.218:12.1 | S: When their body breaks up, after death, sentient beings are reborn in a good place, in heaven because of these three kinds of successful bodily action, these four kinds of successful verbal action, or these three kinds of successful mental action that have skillful intention, with happiness as their outcome and result. …” | T: “It is, bhikkhus, because of the threefold success of bodily kamma … or it is because of the fourfold success of verbal kamma … or it is because of the threefold success of mental kamma, arisen from wholesome volition, that with the breakup of the body, after death, beings are reborn in a good destination, in a heavenly world. “Bhikkhus, I do not say that there is a termination of volitional kamma that has been done and accumulated so long as one has not experienced its results, and that may be in this very life, or in the next rebirth, or on some subsequent occasion. But I do not say that there is making an end of suffering so long as one has not experienced the results of volitional kamma that has been done and accumulated.”
+an10.218:12.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.64
+sn22.64:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.64:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain bhikkhu approached the Blessed One … and said to him:
+sn22.64:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief….”
+sn22.64:1.4 | S: “When you conceive, mendicant, you’re bound by Māra. | T: “Bhikkhu, in conceiving one is bound by Mara;
+sn22.64:1.5 | S: Not conceiving, you’re free from the Wicked One.” | T: by not conceiving one is freed from the Evil One.”
+sn22.64:1.6 | S: “Understood, Blessed One! Understood, Holy One!” | T: “Understood, Blessed One! Understood, Fortunate One!”
+sn22.64:2.1 | S: “But how do you see the detailed meaning of my brief statement?” | T: “In what way, bhikkhu, do you understand in detail the meaning of what was stated by me in brief?”
+sn22.64:2.2 | S: “Sir, when you conceive form you’re bound by Māra. | T: “In conceiving form, venerable sir, one is bound by Mara;
+sn22.64:2.3 | S: Not conceiving, you’re free from the Wicked One. | T: by not conceiving it one is freed from the Evil One.
+sn22.64:2.4 | S: When you conceive feeling … | T: In conceiving feeling …
+sn22.64:2.5 | S: perception … | T: perception …
+sn22.64:2.6 | S: choices … | T: volitional formations …
+sn22.64:2.7 | S: consciousness, you’re bound by Māra. | T: consciousness one is bound by Mara;
+sn22.64:2.8 | S: Not conceiving, you’re free from the Wicked One. | T: by not conceiving it one is freed from the Evil One.
+sn22.64:2.9 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It is in such a way, venerable sir, that I understand in detail the meaning of what was stated by the Blessed One in brief.”
+sn22.64:3.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+sn22.64:3.2 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this. | T: It is good that you understand in detail the meaning of what was stated by me in brief.
+sn22.64:3.3 | S: When you conceive form you’re bound by Māra. | T: In conceiving form, bhikkhu, one is bound by Mara …
+sn22.64:3.4 | S: Not conceiving, you’re free from the Wicked One. | T: (none)
+sn22.64:3.5 | S: When you conceive feeling … | T: (none)
+sn22.64:3.6 | S: perception … | T: as above in full …
+sn22.64:3.7 | S: choices … | T: (none)
+sn22.64:3.8 | S: consciousness, you’re bound by Māra. | T: (none)
+sn22.64:3.9 | S: Not conceiving, you’re free from the Wicked One. | T: by not conceiving it one is freed from the Evil One.
+sn22.64:3.10 | S: This is how to see the detailed meaning of what I said in brief.” … | T: It is in such a way that the meaning of what was stated by me in brief should be understood in detail.”
+sn22.64:3.11 | S: And that mendicant became one of the perfected. | T: … And that bhikkhu became one of the arahants.
+sn22.64:3.12 | P: Dutiyaṁ. | T: (none)
+
+## sn22.65
+sn22.65:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.65:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain bhikkhu approached the Blessed One … and said to him:
+sn22.65:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief….”
+sn22.65:1.4 | S: “When you take pleasure, mendicant, you’re bound by Māra. | T: “Bhikkhu, in seeking delight one is bound by Mara;
+sn22.65:1.5 | S: Not taking pleasure, you’re free from the Wicked One.” | T: by not seeking delight one is freed from the Evil One.”
+sn22.65:1.6 | S: “Understood, Blessed One! Understood, Holy One!” | T: “Understood, Blessed One! Understood, Fortunate One!”
+sn22.65:2.1 | S: “But how do you see the detailed meaning of my brief statement?” | T: “In what way, bhikkhu, do you understand in detail the meaning of what was stated by me in brief?”
+sn22.65:2.2 | S: “Sir, when you take pleasure in form you’re bound by Māra. | T: “In seeking delight in form, venerable sir, one is bound by Mara;
+sn22.65:2.3 | S: Not taking pleasure, you’re free from the Wicked One. | T: by not seeking delight in it one is freed from the Evil One.
+sn22.65:2.4 | S: When you take pleasure in feeling … | T: In seeking delight in feeling …
+sn22.65:2.5 | S: perception … | T: in perception …
+sn22.65:2.6 | S: choices … | T: in volitional formations …
+sn22.65:2.7 | S: consciousness you’re bound by Māra. | T: in consciousness one is bound by Mara;
+sn22.65:2.8 | S: Not taking pleasure, you’re free from the Wicked One. | T: by not seeking delight in it one is freed from the Evil One.
+sn22.65:2.9 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It is in such a way, venerable sir, that I understand in detail the meaning of what was stated by the Blessed One in brief.”
+sn22.65:3.1 | S: “Good, good, mendicant! | T: “Good, good, bhikkhu!
+sn22.65:3.2 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this. | T: It is good that you understand in detail the meaning of what was stated by me in brief.
+sn22.65:3.3 | S: When you take pleasure in form you’re bound by Māra. | T: In seeking delight in form, bhikkhu, one is bound by Mara …
+sn22.65:3.4 | S: Not taking pleasure, you’re free from the Wicked One. | T: (none)
+sn22.65:3.5 | S: When you take pleasure in feeling … | T: (none)
+sn22.65:3.6 | S: perception … | T: as above in full …
+sn22.65:3.7 | S: choices … | T: (none)
+sn22.65:3.8 | S: consciousness you’re bound by Māra. | T: (none)
+sn22.65:3.9 | S: Not taking pleasure, you’re free from the Wicked One. | T: by not seeking delight in it one is freed from the Evil One.
+sn22.65:3.10 | S: This is how to see the detailed meaning of what I said in brief.” … | T: It is in such a way that the meaning of what was stated by me in brief should be understood in detail.”
+sn22.65:3.11 | S: And that mendicant became one of the perfected. | T: … And that bhikkhu became one of the arahants.
+sn22.65:3.12 | P: Tatiyaṁ. | T: (none)
+
+## sn35.61
+sn35.61:1.1 | S: “Mendicants, I will teach you the principle for depleting all fuel for grasping. | T: “Bhikkhus, I will teach you the Dhamma for the exhaustion of all clinging.
+sn35.61:1.2 | S: Listen … | T: Listen to that….
+sn35.61:1.3 | S: And what is the principle for depleting all fuel for grasping? | T: “And what, bhikkhus, is the Dhamma for the exhaustion of all clinging?
+sn35.61:1.4 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: In dependence on the eye and forms, eye-consciousness arises….
+sn35.61:1.5 | S: Contact is a requirement for feeling. | T: as above …
+sn35.61:1.6 | S: Seeing this, a learned noble disciple grows disillusioned with the eye, sights, eye consciousness, eye contact, and feeling. | T: (none)
+sn35.61:1.7 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they are liberated, they understand: ‘I have completely depleted fuel for grasping.’ | T: With its deliverance he understands: ‘Clinging has been exhausted by me.’
+sn35.61:1.8 | S: Ear … nose … tongue … body … | T: “In dependence on the ear and sounds …
+sn35.61:1.9 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: the mind and mental phenomena, mind-consciousness arises….
+sn35.61:1.10 | S: Contact is a requirement for feeling. | T: …
+sn35.61:1.11 | S: Seeing this, a learned noble disciple grows disillusioned with the mind, ideas, mind consciousness, mind contact, and feeling. | T: (none)
+sn35.61:1.12 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they are liberated, they understand: ‘I have completely depleted fuel for grasping.’ | T: With its deliverance he understands: ‘Clinging has been exhausted by me.’
+sn35.61:1.13 | S: This is the principle for depleting all fuel for grasping.” | T: “This, bhikkhus, is the Dhamma for the exhaustion of all clinging.”
+sn35.61:1.14 | P: Navamaṁ. | T: (none)
+
+## sn35.63
+sn35.63:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn35.63:1.2 | S: Then Venerable Migajāla went up to the Buddha … | T: Then the Venerable Migajala approached the Blessed One, paid homage to him, sat down to one side,
+sn35.63:1.3 | S: and said to him: | T: and said to him:
+sn35.63:1.4 | S: “Sir, they speak of one who lives alone. | T: “Venerable sir, it is said, ‘a lone dweller, a lone dweller.’
+sn35.63:1.5 | S: How is one who lives alone defined? And how is living with a partner defined?” | T: In what way, venerable sir, is one a lone dweller, and in what way is one dwelling with a partner?”
+sn35.63:2.1 | S: “Migajāla, there are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, Migajala, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.63:2.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them, welcomes them, and remains holding to them,
+sn35.63:2.3 | S: this gives rise to relishing. | T: delight arises.
+sn35.63:2.4 | S: When there’s relishing there’s lust. | T: When there is delight, there is infatuation.
+sn35.63:2.5 | S: When there’s lust there is yoking. | T: When there is infatuation, there is bondage.
+sn35.63:2.6 | S: A mendicant who is fettered by relishing is said to live with a partner. | T: Bound by the fetter of delight, Migajala, a bhikkhu is called one dwelling with a partner.
+sn35.63:2.7 | S: There are sounds … smells … tastes … touches … | T: “There are, Migajala, sounds cognizable by the ear … odours cognizable by the nose … tastes cognizable by the tongue … tactile objects cognizable by the body …
+sn35.63:2.8 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.63:2.9 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a bhikkhu seeks delight in them …
+sn35.63:2.10 | S: this gives rise to relishing. | T: (none)
+sn35.63:2.11 | S: When there’s relishing there’s lust. | T: (none)
+sn35.63:2.12 | S: When there’s lust there is yoking. | T: (none)
+sn35.63:2.13 | S: A mendicant who is fettered by relishing is said to live with a partner. | T: he is called one dwelling with a partner.
+sn35.63:2.14 | S: A mendicant who lives like this is said to live with a partner, even if they frequent remote lodgings in the wilderness and the forest that are quiet and still, far from the madding crowd, remote from human settlements, and fit for retreat. | T: “Migajala, even though a bhikkhu who dwells thus resorts to forests and groves, to remote lodgings where there are few sounds and little noise, desolate, hidden from people, appropriate for seclusion, he is still called one dwelling with a partner.
+sn35.63:2.15 | P: atha kho sadutiyavihārīti vuccati. | T: (none)
+sn35.63:2.16 | S: Why is that? | T: For what reason?
+sn35.63:2.17 | S: For craving is their partner, and they haven’t given it up. | T: Because craving is his partner, and he has not abandoned it;
+sn35.63:2.18 | S: That’s why they’re said to live with a partner. | T: therefore he is called one dwelling with a partner.
+sn35.63:3.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are, Migajala, forms cognizable by the eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.63:3.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them, does not welcome them, and does not remain holding to them,
+sn35.63:3.3 | S: relishing ceases. | T: delight ceases.
+sn35.63:3.4 | S: When there’s no relishing there’s no lust. | T: When there is no delight, there is no infatuation.
+sn35.63:3.5 | S: When there’s no lust there’s no yoking. | T: When there is no infatuation, there is no bondage.
+sn35.63:3.6 | S: A mendicant who is not fettered by relishing is said to live alone. | T: Released from the fetter of delight, Migajala, a bhikkhu is called a lone dweller.
+sn35.63:3.7 | S: There are sounds … smells … tastes … touches … | T: “There are, Migajala, sounds cognizable by the ear … odours cognizable by the nose … tastes cognizable by the tongue … tactile objects cognizable by the body …
+sn35.63:3.8 | S: There are ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: mental phenomena cognizable by the mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing.
+sn35.63:3.9 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, | T: If a bhikkhu does not seek delight in them …
+sn35.63:3.10 | S: relishing ceases. | T: (none)
+sn35.63:3.11 | S: When there’s no relishing there’s no lust. | T: (none)
+sn35.63:3.12 | S: When there’s no lust there’s no yoking. | T: (none)
+sn35.63:3.13 | S: A mendicant who is not fettered by relishing is said to live alone. | T: he is called a lone dweller.
+sn35.63:3.14 | S: A mendicant who lives like this is said to live alone, even if they live within a village crowded by monks, nuns, laymen, and laywomen; by rulers and their chief ministers, and monastics of other religions and their disciples. | T: “Migajala, even though a bhikkhu who dwells thus lives in the vicinity of a village, associating with bhikkhus and bhikkhunis, with male and female lay followers, with kings and royal ministers, with sectarian teachers and their disciples,
+sn35.63:3.15 | P: Atha kho ekavihārīti vuccati. | T: he is still called a lone dweller.
+sn35.63:3.16 | S: Why is that? | T: For what reason?
+sn35.63:3.17 | S: For craving is their partner, and they have given it up. | T: Because craving is his partner, and he has abandoned it;
+sn35.63:3.18 | S: That’s why they’re said to live alone.” | T: therefore he is called a lone dweller.”
+sn35.63:3.19 | P: Paṭhamaṁ. | T: (none)
+
+## sn45.7
+sn45.7:1.1 | S: At Sāvatthī. | T: (none)
+sn45.7:1.2 | S: Then a mendicant went up to the Buddha … and said to him: | T: (none)
+sn45.7:2.1 | S: “Sir, they speak of ‘the removal of greed, hate, and delusion’. | T: “Venerable sir, it is said, ‘the removal of lust, the removal of hatred, the removal of delusion.’
+sn45.7:2.2 | S: What is this a term for?” | T: Of what now, venerable sir, is this the designation?”
+sn45.7:2.3 | P: ‘rāgavinayo dosavinayo mohavinayo’”ti? | T: (none)
+sn45.7:2.4 | S: “Mendicant, the removal of greed, hate, and delusion is a term for an element of extinguishment. | T: “This, bhikkhu, is a designation for the element of Nibbāna:
+sn45.7:2.5 | P: ‘rāgavinayo dosavinayo mohavinayo’ti. | T: the removal of lust, the removal of hatred, the removal of delusion.
+sn45.7:2.6 | S: It’s used to speak of the ending of defilements.” | T: The destruction of the taints is spoken of in that way.”
+sn45.7:3.1 | S: When he said this, the mendicant said to the Buddha: | T: When this was said, that bhikkhu said to the Blessed One:
+sn45.7:3.2 | S: “Sir, they speak of ‘freedom from death’. | T: “Venerable sir, it is said, ‘the Deathless, the Deathless.’
+sn45.7:3.3 | S: What is freedom from death? And what is the path that leads to freedom from death?” | T: What now, venerable sir, is the Deathless? What is the path leading to the Deathless?”
+sn45.7:3.4 | S: “The ending of greed, hate, and delusion. | T: “The destruction of lust, the destruction of hatred, the destruction of delusion:
+sn45.7:3.5 | S: This is called freedom from death. | T: this is called the Deathless.
+sn45.7:3.6 | S: The path that leads to freedom from death is simply this noble eightfold path, that is: | T: This Noble Eightfold Path is the path leading to the Deathless; that is,
+sn45.7:3.7 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion.” | T: right view … right concentration.”
+sn45.7:3.8 | P: Sattamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '73,112p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.30:5.1 | S: such a person can’t learn | T: Yet this person cannot grasp anything from the talk,
+an3.30:5.2 | S: the beginning, middle, or end | T: at its beginning, middle, and end,
+an3.30:5.3 | S: of the discussion, | T: (none)
+an3.30:5.4 | S: for their wisdom is lacking. | T: for he utterly lacks wisdom.
+an3.30:6.1 | S: the individual with wisdom on their lap | T: The person with lap-like wisdom
+an3.30:6.2 | S: is better than that, it’s said; | T: is said to be better than the former.
+an3.30:6.3 | S: but even if they frequently | T: He too often goes to visit bhikkhus
+an3.30:6.4 | S: go into the mendicants’ presence, | T: to hear them teach the Dhamma.
+an3.30:7.1 | S: such a person can only learn | T: (none)
+an3.30:7.2 | S: the beginning, middle, and end | T: (none)
+an3.30:7.3 | S: while sitting in that seat; | T: While sitting in his seat,
+an3.30:7.4 | S: but they’ve only grasped the phrasing, | T: he grasps the phrasing of the talk, at its beginning, middle, and end.
+an3.30:7.5 | S: for when they rise their understanding fails, | T: But after rising, he no longer understands,
+an3.30:7.6 | S: and what they’ve learned is lost. | T: but forgets what he had learned.
+an3.30:8.1 | S: The person with widespread wisdom | T: The person with wide wisdom
+an3.30:8.2 | S: is better than that, it’s said; | T: is said to be the best of these.
+an3.30:8.3 | S: and if they, too, frequently | T: He too often goes to visit bhikkhus
+an3.30:8.4 | S: go into the mendicants’ presence, | T: to hear them teach the Dhamma.
+an3.30:9.1 | S: one such can learn | T: (none)
+an3.30:9.2 | S: the beginning, middle, and end | T: (none)
+an3.30:9.3 | S: while sitting in that seat; | T: While sitting in his seat,
+an3.30:9.4 | S: and when they’ve grasped the phrasing, | T: he comprehends the phrasing, at the beginning, middle, and end of the talk given by the bhikkhu.
+an3.30:10.1 | S: they remember it with the best of intentions. | T: This person of the best intentions,
+an3.30:10.2 | S: That peaceful-hearted man, | T: his mind undivided, retains what he hears.
+an3.30:10.3 | S: practicing in line with the teaching, | T: Practicing in accordance with the Dhamma,
+an3.30:10.4 | S: would make an end of suffering.” | T: he can make an end of suffering.
+an3.30:10.5 | P: Dasamaṁ. | T: (none)
+an3.30:10.6 | P: Puggalavaggo tatiyo. | T: (none)
+an3.30:11.0 | P: Tassuddānaṁ | T: (none)
+an3.30:11.1 | P: Samiddha gilāna saṅkhārā, | T: (none)
+an3.30:11.2 | P: bahukārā vajirena ca; | T: (none)
+an3.30:11.3 | P: Sevi jiguccha gūthabhāṇī, | T: (none)
+an3.30:11.4 | P: andho ca avakujjatāti. | T: (none)
+
+## an4.51
+an4.51:1.1 | S: At Sāvatthī. | T: (none)
+an4.51:1.2 | S: “Mendicants, there are these four kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness. | T: “Bhikkhus, there are these four streams of merit, streams of the wholesome, nutriments of happiness—heavenly, ripening in happiness, conducive to heaven—that lead to what is wished for, desired, and agreeable, to one’s welfare and happiness.
+an4.51:1.3 | S: What four? | T: What four?
+an4.51:1.4 | S: When a mendicant enters and remains in a limitless immersion of the heart while using a robe, the overflowing of merit for the donor is limitless … | T: “(1) When a bhikkhu enters and dwells in a measureless concentration of mind while using a robe that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.
+an4.51:2.1 | S: When a mendicant enters and remains in a limitless immersion of the heart while eating almsfood, the overflowing of merit for the donor is limitless … | T: (2) When a bhikkhu enters and dwells in a measureless concentration of mind while using almsfood that one has given him, one acquires a measureless stream of merit, stream of the wholesome, a nutriment of happiness … that leads … to one’s welfare and happiness.
+
+codex
+I’ve read the whole file. I’m reviewing the verse boundaries to separate clear shifts from differences in phrasing and word order.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-017.findings.tmp <<'EOF'
+an3.30:4.4 starts: goes to visit bhikkhus to hear them
+an3.30:6.4 starts: goes to visit bhikkhus to hear them
+an3.30:8.4 starts: goes to visit bhikkhus to hear them
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+44,623
+3 lines reported.

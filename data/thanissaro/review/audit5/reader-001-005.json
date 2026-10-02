@@ -1,0 +1,601 @@
+{
+  "audit": "audit5",
+  "translator": "Thanissaro",
+  "assigned_batches": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005"
+  ],
+  "reading_method": "Every assigned displayed row read in full, using appended original Pali as primary authority. Sujato used only as secondary guidance. No earlier semantic decisions or other readers' findings consulted for this fresh read.",
+  "inputs_directory": "data/thanissaro/review/audit5",
+  "total_rows_read": 1819,
+  "total_non_title_rows_read": 1808,
+  "total_english_nonempty_rows": 1495,
+  "total_texts_read": 75,
+  "per_text_rows_read": {
+    "iti13": 13,
+    "iti10": 19,
+    "dhp113": 5,
+    "sn43.8": 3,
+    "an1.37": 4,
+    "an10.70": 33,
+    "dhp170": 5,
+    "dhp221": 4,
+    "dhp257": 4,
+    "dhp298": 4,
+    "dhp307": 5,
+    "dhp79": 5,
+    "dhp91": 5,
+    "iti9": 13,
+    "thag1.114": 5,
+    "an4.73": 40,
+    "iti33": 15,
+    "iti45": 16,
+    "iti80": 17,
+    "sn12.51": 89,
+    "dhp252": 7,
+    "snp5.16": 20,
+    "an4.195": 86,
+    "an4.10": 69,
+    "thag1.43": 9,
+    "iti74": 43,
+    "an5.43": 44,
+    "an4.100": 45,
+    "sn45.27": 10,
+    "iti76": 41,
+    "snp4.7": 43,
+    "sn35.229": 18,
+    "sn12.31": 63,
+    "sn42.8": 102,
+    "sn54.6": 21,
+    "thig12.1": 68,
+    "thag13.1": 63,
+    "sn5.10": 35,
+    "sn12.66": 114,
+    "an8.13": 37,
+    "iti112": 66,
+    "an1.28": 4,
+    "an1.45": 8,
+    "an1.77": 7,
+    "an10.104": 22,
+    "an3.10": 19,
+    "an3.125": 15,
+    "an3.130": 17,
+    "an3.20": 40,
+    "an3.96": 21,
+    "an3.97": 18,
+    "an5.109": 9,
+    "an5.140": 56,
+    "an5.151": 9,
+    "an5.200": 38,
+    "an5.20": 14,
+    "an5.23": 41,
+    "an6.104": 5,
+    "an6.92": 5,
+    "an8.63": 34,
+    "an8.6": 67,
+    "dhp130": 5,
+    "dhp152": 5,
+    "dhp184": 4,
+    "dhp189": 4,
+    "dhp192": 4,
+    "dhp253": 5,
+    "dhp284": 4,
+    "dhp310": 4,
+    "dhp321": 4,
+    "dhp333": 5,
+    "dhp350": 4,
+    "dhp365": 5,
+    "dhp390": 4,
+    "dhp413": 5
+  },
+  "batches": {
+    "001": {
+      "physical_lines": 456,
+      "rows_read": 411,
+      "non_title_rows_read": 405,
+      "pali_nonempty_rows": 411,
+      "english_nonempty_rows": 287,
+      "per_text_rows_read": {
+        "iti13": 13,
+        "iti10": 19,
+        "dhp113": 5,
+        "sn43.8": 3,
+        "an1.37": 4,
+        "an10.70": 33,
+        "dhp170": 5,
+        "dhp221": 4,
+        "dhp257": 4,
+        "dhp298": 4,
+        "dhp307": 5,
+        "dhp79": 5,
+        "dhp91": 5,
+        "iti9": 13,
+        "thag1.114": 5,
+        "an4.73": 40,
+        "iti33": 15,
+        "iti45": 16,
+        "iti80": 17,
+        "sn12.51": 89,
+        "dhp252": 7,
+        "snp5.16": 20,
+        "an4.195": 80
+      },
+      "per_text_non_title_rows_read": {
+        "iti13": 13,
+        "iti10": 19,
+        "dhp113": 4,
+        "sn43.8": 3,
+        "an1.37": 4,
+        "an10.70": 33,
+        "dhp170": 4,
+        "dhp221": 4,
+        "dhp257": 4,
+        "dhp298": 4,
+        "dhp307": 4,
+        "dhp79": 4,
+        "dhp91": 4,
+        "iti9": 13,
+        "thag1.114": 5,
+        "an4.73": 40,
+        "iti33": 15,
+        "iti45": 16,
+        "iti80": 17,
+        "sn12.51": 89,
+        "dhp252": 6,
+        "snp5.16": 20,
+        "an4.195": 80
+      },
+      "read_physical_ranges": [
+        [
+          1,
+          100
+        ],
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          300
+        ],
+        [
+          301,
+          400
+        ],
+        [
+          401,
+          456
+        ]
+      ],
+      "findings_file": "batch-001.findings",
+      "error_keys": [
+        "iti13:3.1",
+        "iti13:4.1",
+        "dhp113:2",
+        "dhp113:3",
+        "dhp113:4",
+        "dhp170:2",
+        "dhp170:3",
+        "dhp257:3",
+        "iti33:3.4",
+        "iti33:3.5",
+        "an4.195:3.1"
+      ],
+      "boundary_directives": {
+        "iti13:3.1": "[The verses for these discourses are identical",
+        "iti13:4.1": null,
+        "dhp113:2": "without seeing arising & passing away,",
+        "dhp113:3": "is one day lived seeing arising &",
+        "dhp113:4": "seeing arising & passing away.",
+        "dhp170:2": "see it as a mirage: one who",
+        "dhp170:3": "one who regards the world this way",
+        "dhp257:3": "guarding the Dhamma, guarded by Dhamma, intelligent:",
+        "iti33:3.4": null,
+        "iti33:3.5": null,
+        "an4.195:3.1": "when, in the late afternoon, the Blessed"
+      }
+    },
+    "002": {
+      "physical_lines": 413,
+      "rows_read": 391,
+      "non_title_rows_read": 391,
+      "pali_nonempty_rows": 391,
+      "english_nonempty_rows": 324,
+      "per_text_rows_read": {
+        "an4.195": 6,
+        "an4.10": 69,
+        "thag1.43": 9,
+        "iti74": 43,
+        "an5.43": 44,
+        "an4.100": 45,
+        "sn45.27": 10,
+        "iti76": 41,
+        "snp4.7": 43,
+        "sn35.229": 18,
+        "sn12.31": 63
+      },
+      "per_text_non_title_rows_read": {
+        "an4.195": 6,
+        "an4.10": 69,
+        "thag1.43": 9,
+        "iti74": 43,
+        "an5.43": 44,
+        "an4.100": 45,
+        "sn45.27": 10,
+        "iti76": 41,
+        "snp4.7": 43,
+        "sn35.229": 18,
+        "sn12.31": 63
+      },
+      "read_physical_ranges": [
+        [
+          1,
+          100
+        ],
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          300
+        ],
+        [
+          301,
+          413
+        ]
+      ],
+      "findings_file": "batch-002.findings",
+      "error_keys": [
+        "an4.10:4.3",
+        "an4.10:8.3",
+        "iti74:6.2",
+        "an5.43:9.1",
+        "an5.43:9.2",
+        "an5.43:9.3",
+        "an5.43:9.4",
+        "iti76:3.2",
+        "iti76:3.3",
+        "iti76:3.4",
+        "iti76:7.2",
+        "iti76:8.2",
+        "iti76:9.2",
+        "snp4.7:1.1",
+        "snp4.7:1.2",
+        "snp4.7:1.3",
+        "snp4.7:10.2",
+        "snp4.7:10.3",
+        "sn35.229:3.4",
+        "sn35.229:4.2",
+        "sn12.31:2.4",
+        "sn12.31:5.4",
+        "sn12.31:9.4"
+      ],
+      "boundary_directives": {
+        "an4.10:4.3": "When he doesn’t discern, as it has",
+        "an4.10:8.3": "When he discerns, as it has come",
+        "iti74:6.2": null,
+        "an5.43:9.1": "Long life, beauty, status, honor,",
+        "an5.43:9.2": "heaven, high birth: To those who delight",
+        "an5.43:9.3": "To those who delight in aspiring for",
+        "an5.43:9.4": "in great measure, continuously,",
+        "iti76:3.2": "aspiring to three forms of bliss: praise;",
+        "iti76:3.3": "praise; the obtaining of wealth; and, after",
+        "iti76:3.4": "and, after death, rejoicing in heaven.",
+        "iti76:7.2": null,
+        "iti76:8.2": null,
+        "iti76:9.2": null,
+        "snp4.7:1.1": "Tissa-metteyya: “Tell the damage, dear sir, for",
+        "snp4.7:1.2": null,
+        "snp4.7:1.3": null,
+        "snp4.7:10.2": null,
+        "snp4.7:10.3": null,
+        "sn35.229:3.4": "waves, so very hard to cross.",
+        "sn35.229:4.2": null,
+        "sn12.31:2.4": null,
+        "sn12.31:5.4": null,
+        "sn12.31:9.4": null
+      }
+    },
+    "003": {
+      "physical_lines": 415,
+      "rows_read": 403,
+      "non_title_rows_read": 403,
+      "pali_nonempty_rows": 403,
+      "english_nonempty_rows": 347,
+      "per_text_rows_read": {
+        "sn42.8": 102,
+        "sn54.6": 21,
+        "thig12.1": 68,
+        "thag13.1": 63,
+        "sn5.10": 35,
+        "sn12.66": 114
+      },
+      "per_text_non_title_rows_read": {
+        "sn42.8": 102,
+        "sn54.6": 21,
+        "thig12.1": 68,
+        "thag13.1": 63,
+        "sn5.10": 35,
+        "sn12.66": 114
+      },
+      "read_physical_ranges": [
+        [
+          1,
+          100
+        ],
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          300
+        ],
+        [
+          301,
+          415
+        ]
+      ],
+      "findings_file": "batch-003.findings",
+      "error_keys": [
+        "sn42.8:6.4",
+        "sn42.8:7.7",
+        "thag13.1:7.3",
+        "thag13.1:7.4",
+        "thag13.1:11.4"
+      ],
+      "boundary_directives": {
+        "sn42.8:6.4": "and the thought occurs to him,",
+        "sn42.8:7.7": "and reflects:",
+        "thag13.1:7.3": null,
+        "thag13.1:7.4": null,
+        "thag13.1:11.4": null
+      }
+    },
+    "004": {
+      "physical_lines": 367,
+      "rows_read": 339,
+      "non_title_rows_read": 339,
+      "pali_nonempty_rows": 339,
+      "english_nonempty_rows": 289,
+      "per_text_rows_read": {
+        "an8.13": 37,
+        "iti112": 66,
+        "an1.28": 4,
+        "an1.45": 8,
+        "an1.77": 7,
+        "an10.104": 22,
+        "an3.10": 19,
+        "an3.125": 15,
+        "an3.130": 17,
+        "an3.20": 40,
+        "an3.96": 21,
+        "an3.97": 18,
+        "an5.109": 9,
+        "an5.140": 56
+      },
+      "per_text_non_title_rows_read": {
+        "an8.13": 37,
+        "iti112": 66,
+        "an1.28": 4,
+        "an1.45": 8,
+        "an1.77": 7,
+        "an10.104": 22,
+        "an3.10": 19,
+        "an3.125": 15,
+        "an3.130": 17,
+        "an3.20": 40,
+        "an3.96": 21,
+        "an3.97": 18,
+        "an5.109": 9,
+        "an5.140": 56
+      },
+      "read_physical_ranges": [
+        [
+          1,
+          100
+        ],
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          300
+        ],
+        [
+          301,
+          367
+        ]
+      ],
+      "findings_file": "batch-004.findings",
+      "error_keys": [
+        "an8.13:2.11",
+        "iti112:9.2",
+        "an10.104:2.5",
+        "an10.104:4.5",
+        "an5.140:11.3",
+        "an5.140:11.9"
+      ],
+      "boundary_directives": {
+        "an8.13:2.11": "so that the Teacher or his observant",
+        "iti112:9.2": null,
+        "an10.104:2.5": "whatever mental deeds he undertakes in line",
+        "an10.104:4.5": "whatever mental deeds he undertakes in line",
+        "an5.140:11.3": "by which— if he were to dwell",
+        "an5.140:11.9": "by which— if he were to dwell"
+      }
+    },
+    "005": {
+      "physical_lines": 319,
+      "rows_read": 275,
+      "non_title_rows_read": 270,
+      "pali_nonempty_rows": 275,
+      "english_nonempty_rows": 248,
+      "per_text_rows_read": {
+        "an5.151": 9,
+        "an5.200": 38,
+        "an5.20": 14,
+        "an5.23": 41,
+        "an6.104": 5,
+        "an6.92": 5,
+        "an8.63": 34,
+        "an8.6": 67,
+        "dhp130": 5,
+        "dhp152": 5,
+        "dhp184": 4,
+        "dhp189": 4,
+        "dhp192": 4,
+        "dhp253": 5,
+        "dhp284": 4,
+        "dhp310": 4,
+        "dhp321": 4,
+        "dhp333": 5,
+        "dhp350": 4,
+        "dhp365": 5,
+        "dhp390": 4,
+        "dhp413": 5
+      },
+      "per_text_non_title_rows_read": {
+        "an5.151": 9,
+        "an5.200": 38,
+        "an5.20": 14,
+        "an5.23": 41,
+        "an6.104": 5,
+        "an6.92": 5,
+        "an8.63": 34,
+        "an8.6": 67,
+        "dhp130": 4,
+        "dhp152": 4,
+        "dhp184": 4,
+        "dhp189": 4,
+        "dhp192": 4,
+        "dhp253": 4,
+        "dhp284": 4,
+        "dhp310": 4,
+        "dhp321": 4,
+        "dhp333": 5,
+        "dhp350": 4,
+        "dhp365": 4,
+        "dhp390": 4,
+        "dhp413": 4
+      },
+      "read_physical_ranges": [
+        [
+          1,
+          100
+        ],
+        [
+          101,
+          200
+        ],
+        [
+          201,
+          319
+        ]
+      ],
+      "findings_file": "batch-005.findings",
+      "error_keys": [
+        "an5.200:6.2",
+        "dhp284:2",
+        "dhp321:4"
+      ],
+      "boundary_directives": {
+        "an5.200:6.2": "he is called a monk without attachment.",
+        "dhp284:2": null,
+        "dhp321:4": null
+      }
+    }
+  },
+  "total_boundary_directives": 48,
+  "rationale_by_issue": {
+    "iti13:3.1": "The bracketed identical-verses summary describes the omitted verse, not the closing prose colophon; begin it on the first verse line.",
+    "dhp113:2": "The unseen rise/fall qualification belongs to Pali line2; the single-day comparison and its seeing qualification belong to lines3 and4 respectively.",
+    "dhp170:2": "The mirage simile belongs to Pali line2, before the world-regarding clause at line3.",
+    "dhp257:3": "The unhurried/Dhamma method belongs to lines1–2, while guarding/intelligence begins line3; English reverses the first pair, so keep it grouped at line1 and start line3 at guarding.",
+    "iti33:3.4": "English reorders person/discerning and endowed-with-two-things relative to Pali3.3–3.5; group the complete condition at its first covered line3.3, leaving rebirth separate at3.6.",
+    "an4.195:3.1": "The temporal connector 'when' opens the following Buddha-arrival clause rather than ending the unfinished-conversation statement.",
+    "an4.10:4.3": "The repeated not-discerning condition renders the appajānato clause on4.3, not the first uncomprehending statement on4.2.",
+    "an4.10:8.3": "The repeated discerning condition renders pajānato on8.3, not the preceding statement on8.2.",
+    "iti74:6.2": "The child object precedes the wise-person predicate in Pali but follows it in English; keep the inseparable reversed sentence at its first Pali line6.1.",
+    "an5.43:9.1": "Verse list and qualifiers are shifted by two lines: life/beauty/status/honor belong9.1, heaven/highbirth9.2, aspiration9.3, and great/repeated9.4.",
+    "iti76:3.2": "Original Pali places guarding virtue3.1, aspiring to three happinesses3.2, praise/wealth3.3, and heaven after death3.4; English has separable clauses for all four.",
+    "iti76:7.2": "English reverses the wrapping subject and object relative to Pali7.1–7.2; group the complete clause at7.1.",
+    "iti76:8.2": "English reverses the wrapping subject and object relative to Pali8.1–8.2; group the complete clause at8.1.",
+    "iti76:9.2": "English knowing/outcome precedes the leaf-wrapper simile while Pali orders them inversely; group the complete clause at9.1.",
+    "snp4.7:1.1": "The first utterance covers the sexual-intercourse condition at1.1 as well as the request at1.3; its interlocutor heading is between them. Preserve source order by grouping at the first covered Pali line1.1.",
+    "snp4.7:10.2": "The closing verse reverses the people-who-envy and the remote-sage/flood-crossing descriptions relative to Pali; preserve its source order by grouping all four lines at10.1.",
+    "sn35.229:3.4": "Sharks and demons translate sagāhaṁ sarakkhasaṁ on3.3; only waves and difficulty of crossing begin3.4.",
+    "sn35.229:4.2": "Acquisition-free translates nirupadhi on4.1 but English places it after abandoning stress on4.2; group the reordered pair at4.1.",
+    "sn12.31:2.4": "The question's astute/manner-of-life line and asked/tell/address line are reversed/overlapping in English; preserve its complete two-line request at2.3.",
+    "sn12.31:5.4": "The repeated question's manner-of-life object belongs5.3 but follows asked/tell on5.4 in English; group the pair at5.3.",
+    "sn12.31:9.4": "Same reordered question as2.3–2.4; group its whole request at9.3.",
+    "sn42.8:6.4": "The independent thought-arising clause translates tassa evaṁ hoti on6.4, following the faith-in-teacher statement on6.3.",
+    "sn42.8:7.7": "The reflection predicate translates so iti paṭisañcikkhati on7.7 and can stand after the preceding faith-in-teacher clause.",
+    "thag13.1:7.3": "The One-with-Eyes epithet from7.4 is moved next to the Teacher at7.2 before the lute simile7.3; preserve the reordered subject/predicate unit at7.2, clearing7.3 and7.4.",
+    "thag13.1:11.4": "English reverses nothing-to-do (Pali11.4) and nothing-to-add (Pali11.3); group the pair at11.3.",
+    "an8.13:2.11": "The purpose/result clause about companions straightening faults belongs2.11 and separates naturally from revealing faults on2.10.",
+    "iti112:9.2": "English moves awakened (buddho) from Pali9.1 after trouble (anīgho) from9.2; group the reordered description at9.1.",
+    "an10.104:2.5": "Original Pali2.4 includes bodily and verbal actions after the wrong-view list;2.5 begins mental actions. Move the English body/verbal clauses back to2.4.",
+    "an10.104:4.5": "Original Pali4.4 includes bodily/verbal actions after the right-view list;4.5 begins mental actions. Split English at the same original-Pali boundary.",
+    "an5.140:11.3": "The causal relative connector by which (yatvādhikaraṇam) opens the unrestrained-eye consequence on11.3, rather than concluding the non-grasping statement on11.2. Quote crosses the currently split rows with normalized whitespace.",
+    "an5.140:11.9": "The parallel causal relative connector belongs the unrestrained-intellect consequence on11.9, rather than the preceding non-grasping statement. Quote crosses the currently split rows with normalized whitespace.",
+    "an5.200:6.2": "The lack-of-obsession conditions translate the second half of Pali6.1;6.2 begins only with calling him a monk without attachment (ayaṁ vuccati...). Move the separable causal list back to6.1.",
+    "dhp284:2": "English places the least-bit qualifier (Pali2) before the not-cleared predicate (Pali1); group the intertwined condition at line1.",
+    "dhp321:4": "English reverses enduring accusation (Pali4) and being best among humans (Pali3); group the complete description at line3."
+  },
+  "coverage_and_source_variant_concerns": [
+    {
+      "text": "iti10/iti13",
+      "kind": "shared excerpt and summary",
+      "note": "The prose of several consecutive discourses is combined under Iti10; Iti13 has only a verses-summary note. These are source condensation/coverage issues, not missing-English boundary errors."
+    },
+    {
+      "text": "an10.70",
+      "kind": "source expansion",
+      "note": "The long opening narrative is expanded in the English where this Pali layout abbreviates its opening topic list; retain translator words without claiming separate exact Pali matches for all narrative clauses."
+    },
+    {
+      "text": "an4.73",
+      "kind": "source excerpt",
+      "note": "The final bride/newly ordained simile is omitted by this translation; empty9.x rows are genuine source omissions."
+    },
+    {
+      "text": "sn35.229",
+      "kind": "source wording variant",
+      "note": "Verse4.3 English 'has no measure' differs from appended Pali 'na puneti' (does not return). This is source/translation wording, not a displaced boundary."
+    },
+    {
+      "text": "sn12.31",
+      "kind": "discontinuous quotation wrapper",
+      "note": "The English concludes its quotation-introduction with the understanding statement before quoting, whereas original Pali concludes after quoting at10.1/14.1. Preserve this source restructuring; do not treat the empty closing wrapper as omitted quoted material."
+    },
+    {
+      "text": "thig12.1",
+      "kind": "possible source variant",
+      "note": "At16.3 English adds 'safe' before 'consummate in knowledge'; appended Pali16.4 has sottiyo. This may reflect the sotthiyo/sottiyo reading or translator interpretation, so it is not counted as a clear displaced standalone boundary."
+    },
+    {
+      "text": "sn12.66",
+      "kind": "source wording conflict",
+      "note": "At13.10 the English says long-term harm/suffering while appended Pali reads hitāya sukhāya (benefit/happiness) after na piveyya; this looks like a source-text reading problem rather than an alignment shift."
+    },
+    {
+      "text": "an1.77",
+      "kind": "numbering variant",
+      "note": "English source labels this discourse78 while the Pali/Sujato key is77; content matches."
+    },
+    {
+      "text": "an3.125",
+      "kind": "source variant",
+      "note": "English3.3 says ten-thousand-fold cosmos while Pali has sahassī (thousandfold); content otherwise belongs the right key."
+    }
+  ],
+  "scope_note": "Findings are review proposals only. No translation data, cuts, scripts, app, or main integration files were changed; no commit was made.",
+  "denominator_note": "All 1,819 displayed Pali/English rows were read, including 11 Dhammapada :0 story headings. The non-title count excludes those :0 or 0.* keys but includes numbered 1.0 rows and untranslated colophons/uddana; English-empty rows remain in the read denominator.",
+  "quote_validation": "Every starts quote occurs literally in normalized same-text concatenation of displayed T fields. A few whole short phrases use fewer than six words; causal-connector quotes cross an existing row boundary."
+}

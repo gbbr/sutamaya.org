@@ -1,0 +1,464 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd96-ded9-72b0-8ce0-a8785685c1eb
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch and report only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## snp4.13
+snp4.13:1.1 | S: “Regarding those who maintain their own view, | T: “Those who, dwelling on views,
+snp4.13:1.2 | S: disputing that, ‘This is the only truth’: | T: dispute, saying, ‘Only this is true’:
+snp4.13:1.3 | S: are all of them subject only to criticism, | T: Do they all incur blame,
+snp4.13:1.4 | S: or do some also win praise for that?” | T: or also earn praise there?”
+snp4.13:2.1 | S: “That is a small thing, insufficient for peace, | T: “[The praise:] It’s such a small thing, not at all appeasing.
+snp4.13:2.2 | S: these two fruits of dispute, I say. | T: I speak of two fruits of dispute;
+snp4.13:2.3 | S: Seeing this, one ought not dispute, | T: and seeing this, you shouldn’t dispute—
+snp4.13:2.4 | S: looking for sanctuary in the land of no dispute. | T: seeing the state where there’s no dispute as secure.
+snp4.13:3.1 | S: One who knows does not get involved | T: One who knows doesn’t enter into
+snp4.13:3.2 | S: with any of the many different conventions. | T: any conventions born of the run-of-the mill at all.
+snp4.13:3.3 | S: Why would the uninvolved get involved, | T: One who’s uninvolved: When he’s forming no predilection for what’s seen, for what’s heard, why would he get involved?
+snp4.13:3.4 | S: since they do not believe <j>based on the seen or the heard? | T: (none)
+snp4.13:4.1 | S: Those for whom ethics are the highest speak of purity through self-control; | T: Those for whom habits are ultimate say that purity’s a matter of self-restraint.
+snp4.13:4.2 | S: having undertaken a vow, they stick to it: | T: Undertaking a practice, they devote themselves to it:
+snp4.13:4.3 | S: ‘Let us train right here, then we will be pure.’ | T: ‘Let’s train just in this, and then there would be purity.’
+snp4.13:4.4 | S: Professing to be experts, they are led on to future lives. | T: Those who say they are skilled are [thus] led on to becoming.
+snp4.13:5.1 | S: If they fall away from their precepts and vows, | T: But if one of them falls from his habits or practice,
+snp4.13:5.2 | S: they tremble, having failed in their task. | T: he trembles, having failed in his actions.
+snp4.13:5.3 | S: They pray and long for purity, | T: He hopes for, longs for, purity,
+snp4.13:5.4 | S: like one who has lost their caravan <j>while journeying far from home. | T: like a caravan leader lost far from home.
+snp4.13:6.1 | S: But having given up all precepts and vows, | T: But one who’s abandoned habits & practices —all—
+snp4.13:6.2 | S: and these deeds blameworthy or blameless; | T: things that are blamable, blameless,
+snp4.13:6.3 | S: not longing for ‘purity’ or ‘impurity’, | T: not hoping for ‘pure’ or ‘impure,’
+snp4.13:6.4 | S: live detached, fostering peace. | T: would live in kindness & peace, without taking up peace, detached.
+snp4.13:7.1 | S: Relying on mortification in disgust of sin, | T: Dependent on taboos, austerities,
+snp4.13:7.2 | S: or else on what is seen, heard, or thought, | T: or what’s seen, heard, or sensed,
+snp4.13:7.3 | S: they moan that purification <j>comes through heading upstream, | T: they speak of purity through wandering further on through becoming & not-,
+snp4.13:7.4 | S: not rid of craving for life after life. | T: their craving not gone for becoming & not-.
+snp4.13:8.1 | S: For one who longs there are muttered prayers, | T: For one who aspires has longings
+snp4.13:8.2 | S: and trembling too over ideas they have formed. | T: & trembling with regard to theorizings.
+snp4.13:8.3 | S: But one here for whom there is no passing away <j>or reappearing: | T: But one who here has no passing away & arising:
+snp4.13:8.4 | S: why would they tremble? For what would they pray?” | T: Why would he tremble? For what would he long?”
+snp4.13:9.1 | S: “The very same teaching that some say is ‘ultimate’, | T: “The teaching some say is ‘supreme,’
+snp4.13:9.2 | S: others say is inferior. | T: is the very one others call ‘lowly.’
+snp4.13:9.3 | S: Which of these statements is true, | T: Which statement is true
+snp4.13:9.4 | S: for all of them profess to be experts?” | T: when all of these claim to be skilled?”
+snp4.13:10.1 | S: “They say their own teaching is perfect, | T: “They say their own teaching is perfect
+snp4.13:10.2 | S: while the teaching of others is inferior. | T: while the doctrine of others is lowly.
+snp4.13:10.3 | S: So arguing, they dispute, | T: Thus quarreling, they dispute,
+snp4.13:10.4 | S: each saying their own conventions are the truth. | T: each saying his agreed-on opinion is true.
+snp4.13:11.1 | S: If someone else’s disparagement makes you inferior, | T: If something, because of an opponent’s say-so, were lowly,
+snp4.13:11.2 | S: no one in any teaching would be distinguished. | T: then none among teachings would be superlative,
+snp4.13:11.3 | S: For each of them says the other’s teaching is lacking, | T: for many say that another’s teaching’s inferior
+snp4.13:11.4 | S: while forcefully advocating their own. | T: when firmly asserting their own.
+snp4.13:12.1 | S: But if they honor their own teachings | T: If their worship of their teaching were true,
+snp4.13:12.2 | S: just as they praise their own journeys, | T: in line with the way they praise their own path,
+snp4.13:12.3 | S: then all doctrines would be equally valid, | T: then all doctrines would be true—
+snp4.13:12.4 | S: and purity would be specific to them. | T: for purity’s theirs, according to each.
+snp4.13:13.1 | S: After judging among the teachings, <j>a brahmin has adopted nothing | T: The brahman has nothing led by another, when considering what’s grasped among doctrines.
+snp4.13:13.2 | S: that requires interpretation by another. | T: (none)
+snp4.13:13.3 | S: That’s why they’ve gotten over disputes, | T: Thus he has gone beyond disputes,
+snp4.13:13.4 | S: for they see no other doctrine as best. | T: for he doesn’t regard as best the knowledge of a doctrine, any other doctrine.
+snp4.13:14.1 | S: Saying, ‘I know, I see, that’s how it is’, | T: ‘I know. I see. That’s just how it is!’—
+snp4.13:14.2 | S: some believe that purity stems from view. | T: Some believe purity’s in terms of view.
+snp4.13:14.3 | S: But if they’ve really seen, <j>what use is that view to them? | T: But even if a person has seen, what good does it do him?
+snp4.13:14.4 | S: Overlooking what matters, <j>they say purity comes from another. | T: Having slipped past, they speak of purity in connection with something or somebody else.
+snp4.13:15.1 | S: When a person sees, they see name and form, | T: A person, in seeing, sees name-&-form.
+snp4.13:15.2 | S: and having seen, they will know just these things. | T: Having seen, he’ll know only these things.
+snp4.13:15.3 | S: Gladly let them see much or little, | T: No matter if he’s seen little, a lot,
+snp4.13:15.4 | S: for those who are skilled say this is no way to purity. | T: the skilled don’t say purity’s in connection with that.
+snp4.13:16.1 | S: It’s not easy to educate someone who is dogmatic, | T: A person entrenched in his teachings, preferring a theorized view, isn’t easy to discipline.
+snp4.13:16.2 | S: promoting a view they have formulated. | T: (none)
+snp4.13:16.3 | S: Speaking of the beauty <j>in that on which they depend, | T: Whatever he depends on he describes it as lovely,
+snp4.13:16.4 | S: they talk of purity in accord with what they saw there. | T: says that it’s purity, that there he saw truth.
+snp4.13:17.1 | S: The brahmin does not get involved <j>with formulating and calculating; | T: The brahman, evaluating, doesn’t enter into a theory,
+snp4.13:17.2 | S: they’re not followers of views, <j>nor kinsmen of notions. | T: doesn’t follow views, isn’t tied even to knowledge.
+snp4.13:17.3 | S: Having understood the many different conventions, | T: And on knowing whatever’s conventional, commonplace,
+snp4.13:17.4 | S: they look on when others grasp. | T: he remains equanimous: ‘That’s what others hold onto.’
+snp4.13:18.1 | S: Having untied the knots here in the world, | T: Having untied the knots here in the world,
+snp4.13:18.2 | S: the sage takes no side among disputes. | T: the sage here in the world doesn’t follow a faction when disputes have arisen.
+snp4.13:18.3 | S: Peaceful among the peaceless, equanimous, | T: At peace among those not at peace, he’s equanimous,
+snp4.13:18.4 | S: they don’t grasp when others grasp. | T: doesn’t hold on: ‘That’s what others hold onto.’
+snp4.13:19.1 | S: Having given up former defilements <j>and not making new ones, | T: Giving up old effluents, not forming new,
+snp4.13:19.2 | S: not swayed by preference, <j>nor a proponent of dogma, | T: neither pursuing desire, nor entrenched in his teachings,
+snp4.13:19.3 | S: that attentive one is released from views, | T: he’s totally released from viewpoints, enlightened.
+snp4.13:19.4 | S: not clinging to the world, <j>nor reproaching themselves. | T: He doesn’t adhere to the world, is without self-rebuke;
+snp4.13:20.1 | S: They are remote from all things | T: is enemy-free with regard to all things
+snp4.13:20.2 | S: seen, heard, or thought. | T: seen, heard, or sensed.
+snp4.13:20.3 | S: With burden put down, the sage is released: | T: His burden laid down, the sage totally released
+snp4.13:20.4 | S: not formulating, not abstaining, not longing.” | T: is improper :: is theory-free hasn’t stopped :: isn’t impassioned isn’t worth wanting :: doesn’t desire,” the Blessed One said.
+snp4.13:20.5 | P: Mahābyūhasuttaṁ terasamaṁ. | T: (none)
+
+## an4.28
+an4.28:1.1 | S: “Mendicants, these four noble customs are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now, nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These four traditions of the noble ones—original, long-standing, traditional, ancient, unadulterated, unadulterated from the beginning—are not open to suspicion, will never be open to suspicion, and are unfaulted by knowledgeable contemplatives & brahmans.
+an4.28:1.2 | S: What four? | T: Which four?
+an4.28:1.3 | S: Firstly, a mendicant is content with any kind of robe, and praises such contentment. They don’t employ improper solicitation for the sake of a robe. They don’t worry if they don’t get a robe. And if they do get a robe, they use it untied, uninfatuated, unattached, seeing the drawback, and understanding the escape. | T: “There is the case where a monk is content with any old robe cloth at all. He speaks in praise of being content with any old robe cloth at all. He doesn’t, for the sake of robe cloth, do anything unseemly or inappropriate. Not getting cloth, he isn’t agitated. Getting cloth, he uses it unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them.
+an4.28:1.4 | S: But they don’t glorify themselves or put others down on account of their contentment. | T: He doesn’t, on account of his contentment with any old robe cloth at all, exalt himself or disparage others.
+an4.28:1.5 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: In this he is diligent, deft, alert, & mindful. This is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+an4.28:2.1 | S: Furthermore, a mendicant is content with any kind of almsfood … | T: “And further, the monk is content with any old almsfood at all. He speaks in praise of being content with any old almsfood at all. He doesn’t, for the sake of almsfood, do anything unseemly or inappropriate. Not getting almsfood, he isn’t agitated. Getting almsfood, he uses it unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them.
+an4.28:2.2 | P: tāya ca pana itarītarapiṇḍapātasantuṭṭhiyā nevattānukkaṁseti, no paraṁ vambheti. | T: He doesn’t, on account of his contentment with any old almsfood at all, exalt himself or disparage others.
+an4.28:2.3 | P: Yo hi tattha dakkho analaso sampajāno patissato, ayaṁ vuccati, bhikkhave, bhikkhu porāṇe aggaññe ariyavaṁse ṭhito. | T: In this he is diligent, deft, alert, & mindful. This is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+an4.28:3.1 | S: Furthermore, a mendicant is content with any kind of lodgings … | T: “And further, the monk is content with any old lodging at all. He speaks in praise of being content with any old lodging at all. He doesn’t, for the sake of lodging, do anything unseemly or inappropriate. Not getting lodging, he isn’t agitated. Getting lodging, he uses it unattached to it, uninfatuated, guiltless, seeing the drawbacks (of attachment to it), and discerning the escape from them.
+an4.28:3.2 | P: tāya ca pana itarītarasenāsanasantuṭṭhiyā nevattānukkaṁseti, no paraṁ vambheti. | T: He doesn’t, on account of his contentment with any old lodging at all, exalt himself or disparage others.
+an4.28:3.3 | P: Yo hi tattha dakkho analaso sampajāno patissato, ayaṁ vuccati, bhikkhave, bhikkhu porāṇe aggaññe ariyavaṁse ṭhito. | T: In this he is diligent, deft, alert, & mindful. This is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+an4.28:4.1 | S: Furthermore, a mendicant enjoys meditation and loves to meditate. They enjoy giving up and love to give up. | T: “And further, the monk finds pleasure & delight in developing (skillful qualities), finds pleasure & delight in abandoning (unskillful qualities).
+an4.28:4.2 | S: But they don’t glorify themselves or put down others on account of their love for meditation and giving up. | T: He doesn’t, on account of his pleasure & delight in developing & abandoning, exalt himself or disparage others.
+an4.28:4.3 | S: A mendicant who is deft, tireless, aware, and mindful in this is said to stand in the ancient, primordial noble custom. | T: In this he is diligent, deft, alert, & mindful. This is said to be a monk standing firm in the ancient, original traditions of the noble ones.
+an4.28:4.4 | S: These four noble customs are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These are the four traditions of the noble ones—original, long-standing, traditional, ancient, unadulterated, unadulterated from the beginning—which are not open to suspicion, will never be open to suspicion, and are unfaulted by knowledgeable contemplatives & brahmans.
+an4.28:5.1 | S: When a mendicant possesses these four noble customs, if they live in the east they prevail over discontent, and discontent doesn’t prevail over them. | T: “And further, a monk endowed with these four traditions of the noble ones, if he lives in the east, conquers displeasure and is not conquered by displeasure.
+an4.28:5.2 | S: If they live in the west … | T: If he lives in the west…
+an4.28:5.3 | S: the north … | T: the north…
+an4.28:5.4 | S: the south, they prevail over discontent, and discontent doesn’t prevail over them. | T: the south, he conquers displeasure and is not conquered by displeasure.
+an4.28:5.5 | S: Why is that? | T: Why is that?
+an4.28:5.6 | S: Because the attentive prevail over desire and discontent. | T: Because the enlightened one endures both delight & displeasure.”
+an4.28:6.1 | S: Discontent cannot prevail over the attentive; | T: Displeasure doesn’t conquer the enlightened one.
+an4.28:6.2 | S: the attentive are not prevailed over by discontent. | T: Displeasure doesn’t suppress the enlightened one.
+an4.28:6.3 | S: The attentive can prevail over discontent, | T: The enlightened one conquers displeasure
+an4.28:6.4 | S: for the attentive are those who prevail over discontent. | T: because the enlightened one endures it.
+an4.28:7.1 | S: Who can hold back the dispeller, | T: Having cast away all deeds: Who could obstruct him?
+an4.28:7.2 | S: who’s cast aside all deeds? | T: (none)
+an4.28:7.3 | S: Like a pendant of Black Plum River gold, | T: Like an ornament of finest gold:
+an4.28:7.4 | S: who is worthy to criticize them? | T: Who is fit to find fault with him?
+an4.28:7.5 | S: Even the gods praise them, | T: Even the devas praise him.
+an4.28:7.6 | S: and by the Divinity, too, they’re praised.” | T: Even by Brahmā he’s praised.
+an4.28:7.7 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.80
+an5.80:1.1 | S: “Mendicants, these five future perils have not currently arisen, but they will arise in the future. | T: “Monks, these five future dangers, unarisen at present, will arise in the future.
+an5.80:1.2 | S: You should look out for them | T: Be alert to them and,
+an5.80:1.3 | S: and try to give them up. | T: being alert, work to get rid of them.
+an5.80:2.1 | S: What five? | T: Which five?
+an5.80:2.2 | S: In a future time there will be mendicants who like nice robes. | T: “There will be, in the course of the future, monks desirous of fine robes.
+an5.80:2.3 | S: They will neglect the practice of wearing rag robes and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine robes, will neglect the practice of wearing cast-off cloth; will neglect isolated forest & wilderness dwellings;
+an5.80:2.4 | S: They will come down to the villages, towns, and capital cities and make their homes there. And they will employ many kinds of improper solicitation for the sake of a robe. | T: will move to towns, cities, & royal capitals, taking up residence there. For the sake of a robe they will do many kinds of unseemly, inappropriate things.
+an5.80:2.5 | S: This is the first future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the first future danger, unarisen at present, that will arise in the future.
+an5.80:2.6 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:2.7 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:3.1 | S: Furthermore, in a future time there will be mendicants who like nice almsfood. | T: “And further, in the course of the future there will be monks desirous of fine food.
+an5.80:3.2 | S: They will neglect the practice of walking for almsfood and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine food, will neglect the practice of going for alms; will neglect isolated forest & wilderness dwellings;
+an5.80:3.3 | S: They will come down to the villages, towns, and capital cities and make their home there. And they will employ many kinds of improper solicitation for the sake of almsfood. | T: will move to towns, cities, & royal capitals, taking up residence there and searching out the tip-top tastes with the tip of the tongue. For the sake of food they will do many kinds of unseemly, inappropriate things.
+an5.80:3.4 | S: This is the second future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the second future danger, unarisen at present, that will arise in the future.
+an5.80:3.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:3.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:4.1 | S: Furthermore, in a future time there will be mendicants who like nice lodgings. | T: “And further, in the course of the future there will be monks desirous of fine lodgings.
+an5.80:4.2 | S: They will neglect the practice of staying at the root of a tree and the practice of frequenting remote lodgings in the wilderness and the forest. | T: They, desirous of fine lodgings, will neglect the practice of living in the wilds; will neglect isolated forest & wilderness dwellings;
+an5.80:4.3 | S: They will come down to the villages, towns, and capital cities and make their home there. And they will employ many kinds of improper solicitation for the sake of lodgings. | T: will move to towns, cities, & royal capitals, taking up residence there. For the sake of lodgings they will do many kinds of unseemly, inappropriate things.
+an5.80:4.4 | S: This is the third future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the third future danger, unarisen at present, that will arise in the future.
+an5.80:4.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:4.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:5.1 | S: Furthermore, in a future time there will be mendicants who mix closely with nuns, trainee nuns, and novice nuns. | T: “And further, in the course of the future there will be monks who will live in close association with nuns, female trainees, & female novices.
+an5.80:5.2 | S: In such conditions, it can be expected that | T: As they interact with nuns, female trainees, & female novices,
+an5.80:5.3 | S: they will lead the spiritual life dissatisfied, or commit one of the corrupt offenses, or resign the training and return to a lesser life. | T: they can be expected either to lead the holy life dissatisfied or to fall into one of the defiling offenses, leaving the training, returning to a lower way of life.
+an5.80:5.4 | S: This is the fourth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fourth future danger, unarisen at present, that will arise in the future.
+an5.80:5.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:5.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:6.1 | S: Furthermore, in a future time there will be mendicants who mix closely with monastery attendants and novices. | T: “And further, in the course of the future there will be monks who will live in close association with monastery attendants & novices.
+an5.80:6.2 | S: In such conditions it can be expected that | T: As they interact with monastery attendants & novices, they can be expected to live committed to many kinds of stored-up possessions and to making large boundary posts for fields & crops.
+an5.80:6.3 | S: they will engage in storing up goods for their own use, and making obvious hints about digging the earth and cutting plants. | T: (none)
+an5.80:6.4 | S: This is the fifth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fifth future danger, unarisen at present, that will arise in the future.
+an5.80:6.5 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.80:6.6 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.80:7.1 | S: These are the five future perils that have not currently arisen, but will arise in the future. | T: “These, monks, are the five future dangers, unarisen at present, that will arise in the future.
+an5.80:7.2 | S: You should look out for them | T: Be alert to them and,
+an5.80:7.3 | S: and try to give them up.” | T: being alert, work to get rid of them.”
+an5.80:7.4 | P: Dasamaṁ. | T: (none)
+an5.80:7.5 | P: Yodhājīvavaggo tatiyo. | T: (none)
+an5.80:8.0 | P: Tassuddānaṁ | T: (none)
+an5.80:8.1 | P: Dve cetovimuttiphalā, | T: (none)
+an5.80:8.2 | P: dve ca dhammavihārino; | T: (none)
+an5.80:8.3 | P: Yodhājīvā ca dve vuttā, | T: (none)
+an5.80:8.4 | P: cattāro ca anāgatāti. | T: (none)
+
+## an8.39
+an8.39:1.1 | S: “Mendicants, there are these eight kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness. | T: “Monks, there are these eight bonanzas of merit, rewards of skillfulness, nourishments of happiness, celestial, resulting in happiness, leading to heaven, leading to what is desirable, pleasurable, & appealing, to welfare & happiness.
+an8.39:1.2 | S: What eight? | T: Which eight?
+an8.39:1.3 | S: Firstly, a noble disciple has gone for refuge to the Buddha. | T: “There is the case where a disciple of the noble ones has gone to the Buddha for refuge.
+an8.39:1.4 | S: This is the first kind of overflowing merit … | T: This is the first bonanza of merit, bonanza of skillfulness, nourishment of happiness, celestial, resulting in happiness, leading to heaven, leading to what is desirable, pleasurable, & appealing; to welfare & to happiness.
+an8.39:2.1 | S: Furthermore, a noble disciple has gone for refuge to the teaching. | T: “And further, the disciple of the noble ones has gone to the Dhamma for refuge.
+an8.39:2.2 | S: This is the second kind of overflowing merit … | T: This is the second bonanza of merit.…
+an8.39:3.1 | S: Furthermore, a noble disciple has gone for refuge to the Saṅgha. | T: “And further, the disciple of the noble ones has gone to the Saṅgha for refuge.
+an8.39:3.2 | S: This is the third kind of overflowing merit … | T: This is the third bonanza of merit.…
+an8.39:3.3 | S: Mendicants, these five gifts are great, primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “Now, there are these five gifts, five great gifts—original, long-standing, traditional, ancient, unadulterated, unadulterated from the beginning—that are not open to suspicion, will never be open to suspicion, and are unfaulted by knowledgeable contemplatives & brahmans.
+an8.39:3.4 | S: What five? | T: Which five?
+an8.39:3.5 | S: Firstly, a noble disciple gives up killing living creatures. | T: “There is the case where a disciple of the noble ones, abandoning the taking of life, abstains from taking life.
+an8.39:3.6 | S: By so doing they give to countless sentient beings the gift of freedom from fear, enmity, and ill will. | T: In doing so, he gives freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings.
+an8.39:3.7 | S: And they themselves also enjoy unlimited freedom from fear, enmity, and ill will. | T: In giving freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings, he gains a share in limitless freedom from danger, freedom from animosity, and freedom from oppression.
+an8.39:3.8 | S: This is the first gift that is a great offering, primordial, long-standing, customary, and traditional. It is uncorrupted, as it has been since the beginning. It’s not being corrupted now nor will it be. Sensible ascetics and brahmins don’t look down on it. | T: This is the first gift, the first great gift—original, long-standing, traditional, ancient, unadulterated, unadulterated from the beginning—that is not open to suspicion, will never be open to suspicion, and is unfaulted by knowledgeable contemplatives & brahmans.
+an8.39:3.9 | S: This is the fourth kind of overflowing merit … | T: And this is the fourth bonanza of merit.…
+an8.39:4.1 | S: Furthermore, a noble disciple gives up stealing. … | T: “And further, abandoning taking what is not given [stealing], the disciple of the noble ones abstains from taking what is not given. In doing so, he gives freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings. In giving freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings, he gains a share in limitless freedom from danger, freedom from animosity, and freedom from oppression.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an8.39:4.2 | S: This is the fifth kind of overflowing merit … | T: This is the second gift, the second great gift… and this is the fifth bonanza of merit.…
+an8.39:5.1 | S: Furthermore, a noble disciple gives up sexual misconduct. … | T: “And further, abandoning sexual misconduct, the disciple of the noble ones abstains from sexual misconduct. In doing so, he gives freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings. In giving freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings, he gains a share in limitless freedom from danger, freedom from animosity, and freedom from oppression.
+an8.39:5.2 | S: This is the sixth kind of overflowing merit … | T: This is the third gift, the third great gift… and this is the sixth bonanza of merit.…
+an8.39:6.1 | S: Furthermore, a noble disciple gives up lying. … | T: “And further, abandoning the telling of lie, the disciple of the noble ones abstains from telling lies. In doing so, he gives freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings. In giving freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings, he gains a share in limitless freedom from danger, freedom from animosity, and freedom from oppression.
+an8.39:6.2 | S: This is the seventh kind of overflowing merit … | T: This is the fourth gift, the fourth great gift… and this is the seventh bonanza of merit.…
+an8.39:7.1 | S: Furthermore, a noble disciple gives up intoxicants of beer, wine, and liquor. | T: “And further, abandoning the use of intoxicants, the disciple of the noble ones abstains from taking intoxicants.
+an8.39:7.2 | S: By so doing they give to countless sentient beings the gift of freedom from fear, enmity, and ill will. | T: In doing so, he gives freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings.
+an8.39:7.3 | S: And they themselves also enjoy unlimited freedom from fear, enmity, and ill will. | T: In giving freedom from danger, freedom from animosity, freedom from oppression to limitless numbers of beings, he gains a share in limitless freedom from danger, freedom from animosity, and freedom from oppression.
+an8.39:7.4 | S: This is the fifth gift that is a great offering, primordial, long-standing, customary, and traditional. It is uncorrupted, as it has been since the beginning. It’s not being corrupted now nor will it be. Sensible ascetics and brahmins don’t look down on it. | T: This is the fifth gift, the fifth great gift—original, long-standing, traditional, ancient, unadulterated, unadulterated from the beginning—that is not open to suspicion, will never be open to suspicion, and is unfaulted by knowledgeable contemplatives & brahmans.
+an8.39:7.5 | S: This is the eighth kind of overflowing merit … | T: And this is the eighth bonanza of merit, bonanza of skillfulness, nourishment of happiness, celestial, resulting in happiness, leading to heaven, leading to what is desirable, pleasurable, & appealing; to welfare & to happiness.”
+an8.39:8.1 | S: These are the eight kinds of overflowing merit, overflowing goodness. They nurture happiness and are conducive to heaven, ripening in happiness and leading to heaven. They lead to what is likable, desirable, agreeable, to welfare and happiness.” | T: (none)
+an8.39:8.2 | P: Navamaṁ. | T: (none)
+
+## snp4.15
+snp4.15:1.1 | S: Peril stems from those who take up arms— | T: “When embraced, the rod of violence breeds danger & fear:
+snp4.15:1.2 | S: just look how people conflict! | T: Look at people in strife.
+snp4.15:1.3 | S: I shall extol how I came to be | T: I will tell how
+snp4.15:1.4 | S: stirred with a sense of urgency. | T: I experienced terror:
+snp4.15:2.1 | S: I saw this population flounder, | T: Seeing people floundering
+snp4.15:2.2 | S: like a fish in a little puddle. | T: like fish in small puddles,
+snp4.15:2.3 | S: Seeing them at odds with each other, | T: competing with one another— as I saw this,
+snp4.15:2.4 | S: fear came upon me. | T: fear came into me.
+snp4.15:3.1 | S: The world around was volatile, | T: The world was entirely without substance.
+snp4.15:3.2 | S: all directions were in turmoil. | T: All the directions were knocked out of line.
+snp4.15:3.3 | S: Wanting a home for myself, | T: Wanting a haven for myself,
+snp4.15:3.4 | S: I saw nowhere unsettled. | T: I saw nothing that wasn’t laid claim to.
+snp4.15:4.1 | S: Yet even in their settlement they were at odds— | T: Seeing nothing in the end but competition,
+snp4.15:4.2 | S: seeing that, I grew uneasy. | T: I felt discontent.
+snp4.15:4.3 | S: Then I saw a dart there, | T: And then I saw an arrow here,
+snp4.15:4.4 | S: so hard to see, stuck in the heart. | T: so very hard to see, embedded in the heart.
+snp4.15:5.1 | S: When struck by that dart, | T: Overcome by this arrow
+snp4.15:5.2 | S: you run around in all directions. | T: you run in all directions.
+snp4.15:5.3 | S: But when that same dart has been plucked out, | T: But simply on pulling it out
+snp4.15:5.4 | S: you neither run around nor sink down. | T: you don’t run, you don’t sink.
+snp4.15:6.1 | S: (On that topic, the trainings are recited.) | T: [Here the trainings are recited.]
+snp4.15:6.2 | S: Whatever attachments there are in the world, | T: Whatever things are tied down in the world,
+snp4.15:6.3 | S: don’t pursue them. | T: you shouldn’t be set on them.
+snp4.15:6.4 | S: Having pierced through sensual pleasures <j>in every way, | T: Having totally penetrated sensual pleasures, sensual passions,
+snp4.15:6.5 | S: train yourself for extinguishment. | T: you should train for your own unbinding.
+snp4.15:7.1 | S: Be truthful, not rude, | T: Be truthful, not insolent,
+snp4.15:7.2 | S: free of deceit, and rid of slander; | T: not deceptive, remote from divisiveness.
+snp4.15:7.3 | S: without anger, a sage would cross over | T: Without anger, the sage should cross over
+snp4.15:7.4 | S: the evils of greed and avarice. | T: the evil of greed & avarice.
+snp4.15:8.1 | S: Prevail over sleepiness, sloth, and drowsiness, | T: He should conquer drowsiness, weariness, sloth;
+snp4.15:8.2 | S: don’t abide in negligence, | T: shouldn’t consort with heedlessness,
+snp4.15:8.3 | S: A person intent on quenching | T: shouldn’t stand firm in his pride— the man with his heart set on unbinding.
+snp4.15:8.4 | S: would not stand for arrogance. | T: (none)
+snp4.15:9.1 | S: Don’t be led into lying, | T: He shouldn’t engage in lying,
+snp4.15:9.2 | S: or get caught up in affection for form. | T: shouldn’t create affection for form,
+snp4.15:9.3 | S: Completely understand conceit, | T: should fully fathom conceit,
+snp4.15:9.4 | S: and desist from hasty conduct. | T: and live refraining from impulsiveness;
+snp4.15:10.1 | S: Don’t relish the old, | T: shouldn’t delight in what’s old,
+snp4.15:10.2 | S: or welcome the new. | T: prefer what’s new,
+snp4.15:10.3 | S: Don’t grieve for what is running out, | T: grieve over decline,
+snp4.15:10.4 | S: or get attached to things that pull you in. | T: get entangled in what’s dazzling & bright.
+snp4.15:11.1 | S: Greed, I say, is the great flood, | T: I call greed a great flood;
+snp4.15:11.2 | S: and longing is the current— | T: hunger, a swift current.
+snp4.15:11.3 | S: the basis, the compulsion, | T: Preoccupations are ripples;
+snp4.15:11.4 | S: the swamp of sensuality so hard to get past. | T: sensuality, a bog hard to cross over.
+snp4.15:12.1 | S: The sage never strays from the truth; | T: Not deviating from truth,
+snp4.15:12.2 | S: the brahmin stands on solid ground. | T: a sage stands on high ground : a brahman.
+snp4.15:12.3 | S: Having given up everything, | T: Having relinquished in every way,
+snp4.15:12.4 | S: they are said to be at peace. | T: he is said to be at peace;
+snp4.15:13.1 | S: They have truly known, they’re a knowledge master, | T: having clearly known, he is an attainer-of-knowledge;
+snp4.15:13.2 | S: understanding the teaching, they are independent. | T: knowing the Dhamma, he’s independent.
+snp4.15:13.3 | S: They rightly proceed in the world, | T: Moving rightly through the world,
+snp4.15:13.4 | S: not coveting anything here. | T: he doesn’t envy anyone here.
+snp4.15:14.1 | S: One who has crossed over sensuality here, | T: Whoever here has gone beyond sensual passions—
+snp4.15:14.2 | S: the chain in the world so hard to get past, | T: an attachment hard to transcend in the world—
+snp4.15:14.3 | S: grieves not, nor hopes; | T: doesn’t sorrow, doesn’t fret.
+snp4.15:14.4 | S: they’ve cut the strings, they’re no longer bound. | T: He, his stream cut, is free from bonds.
+snp4.15:15.1 | S: What came before, let wither away, | T: Burn up what’s before,
+snp4.15:15.2 | S: and after, let there be nothing. | T: and have nothing for after.
+snp4.15:15.3 | S: If you don’t grasp at the middle, | T: If you don’t grasp at what’s in between,
+snp4.15:15.4 | S: you will live at peace. | T: you will go about, calm.
+snp4.15:16.1 | S: One who has no sense of ownership | T: For whom, in name-&-form, in every way, there’s no sense of mine,
+snp4.15:16.2 | S: in the whole realm of name and form, | T: (none)
+snp4.15:16.3 | S: does not grieve for that which is not, | T: and who doesn’t grieve over what is not:
+snp4.15:16.4 | S: they suffer no loss in the world. | T: He, in the world, isn’t defeated, suffers no loss.
+snp4.15:17.1 | S: If you don’t think of anything | T: To whom there doesn’t occur
+snp4.15:17.2 | S: as belonging to yourself or others, | T: ‘This is mine,’ for whom nothing is others’:
+snp4.15:17.3 | S: not finding any possessiveness, | T: He, feeling no sense of mine-ness,
+snp4.15:17.4 | S: you won’t grieve, thinking “I don’t have it”. | T: doesn’t grieve at the thought ‘I have nothing.’
+snp4.15:18.1 | S: Not bitter, not fawning, | T: Not harsh, not greedy,
+snp4.15:18.2 | S: unstirred, everywhere even; | T: not perturbed, everywhere concordant:
+snp4.15:18.3 | S: when asked about one who is unwavering, | T: This is the reward —I say when asked— for those who are free from theorizing.
+snp4.15:18.4 | S: I declare that that is the benefit. | T: (none)
+snp4.15:19.1 | S: For the unstirred who understand, | T: For one unperturbed —who knows—
+snp4.15:19.2 | S: there’s no performance of deeds. | T: there’s no accumulating.
+snp4.15:19.3 | S: Desisting from instigation, | T: Abstaining, unaroused,
+snp4.15:19.4 | S: they see sanctuary everywhere. | T: he everywhere sees security.
+snp4.15:20.1 | S: A sage doesn’t speak of themselves as being | T: The sage doesn’t speak of himself
+snp4.15:20.2 | S: among superiors, inferiors, or equals. | T: as among those who are higher, equal, or lower.
+snp4.15:20.3 | S: Peaceful, rid of stinginess, | T: At peace, free of stinginess,
+snp4.15:20.4 | S: they are neither ditching nor taking up. | T: he doesn’t embrace, doesn’t reject,” the Blessed One said.
+snp4.15:20.5 | P: Attadaṇḍasuttaṁ pannarasamaṁ. | T: (none)
+
+## sn35.240
+sn35.240:1.1 | S: “Once upon a time, mendicants, a tortoise was grazing along the bank of a river in the afternoon. | T: “Once upon a time, monks, a hard-shelled turtle was foraging for food in the evening along the shore of a lake.
+sn35.240:1.2 | S: At the same time, a jackal was also hunting along the river bank. | T: And a jackal was also foraging for food in the evening along the shore of the lake.
+sn35.240:1.3 | S: The tortoise saw the jackal off in the distance hunting, | T: The turtle saw the jackal from afar, foraging for food,
+sn35.240:1.4 | S: so it drew its limbs and neck inside its shell, and kept passive and silent. | T: and so—withdrawing its four legs, with its neck as a fifth, into its own shell—it remained perfectly quiet and still.
+sn35.240:1.5 | S: But the jackal also saw the tortoise off in the distance grazing. | T: But the jackal also saw the turtle from afar, foraging for food,
+sn35.240:1.6 | S: So it went up to the tortoise and waited nearby, thinking, | T: and so it went to the turtle and, on arrival, hovered around it, (thinking,)
+sn35.240:1.7 | S: ‘When that tortoise sticks one or other of its limbs or neck out from its shell, I’ll grab it right there, rip it out, and eat it!’ | T: “As soon as the turtle stretches out one or another of its four limbs—or its neck as a fifth—I’ll seize it right there, tear it off, and eat it.”
+sn35.240:1.8 | S: But when that tortoise didn’t stick one or other of its limbs or neck out from its shell, the jackal left disappointed, since it couldn’t find a vulnerability. | T: But when the turtle didn’t stretch out any of its four limbs—or its neck as a fifth—the jackal, not having gotten any opportunity, lost interest and left.
+sn35.240:2.1 | S: In the same way, Māra the Wicked is always waiting nearby, thinking: | T: “In the same way, monks, Māra is continually, ceaselessly, hovering around you, (thinking,)
+sn35.240:2.2 | S: ‘Hopefully I can find a vulnerability in the eye, | T: “Perhaps I’ll get an opportunity by means of the eye…
+sn35.240:2.3 | S: ear, nose, tongue, body, or | T: the ear… the nose… the tongue… the body.
+sn35.240:2.4 | S: mind.’ | T: Perhaps I’ll get an opportunity by means of the intellect.”
+sn35.240:2.5 | S: That’s why you should live with sense doors guarded. | T: Thus, monks, you should dwell with the doors to your senses well-guarded.
+sn35.240:2.6 | S: When you see a sight with your eyes, don’t get caught up in the features and details. | T: “On seeing a form with the eye, do not grasp at any theme or details by which—
+sn35.240:2.7 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if you were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail you. Practice for its restraint. Guard the faculty of the eye. Secure your restraint with regard to the faculty of the eye.
+sn35.240:2.8 | S: When you hear a sound with your ears … | T: “On hearing a sound with the ear…
+sn35.240:2.9 | S: When you smell an odor with your nose … | T: “On smelling an aroma with the nose…
+sn35.240:2.10 | S: When you taste a flavor with your tongue … | T: “On tasting a flavor with the tongue…
+sn35.240:2.11 | S: When you feel a touch with your body … | T: “On touching a tactile sensation with the body…
+sn35.240:2.12 | S: When you know an idea with your mind, don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, do not grasp at any theme or details by which—
+sn35.240:2.13 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if you were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail you. Practice for its restraint. Guard the faculty of the intellect. Secure your restraint with regard to the faculty of the intellect.
+sn35.240:2.14 | S: When you live with your sense doors guarded, Māra will leave you disappointed, since he can’t find a vulnerability, | T: “When you dwell with the doors to your senses well-guarded, Māra, not getting any opportunity, will lose interest and leave,
+sn35.240:2.15 | S: just like the jackal left the tortoise. | T: just as the jackal did with the turtle.”
+sn35.240:3.1 | S: A mendicant should collect their thoughts | T: Like a turtle with its limbs withdrawn in its shell, so the monk, the thoughts of the heart:
+sn35.240:3.2 | S: as a tortoise draws its limbs into its shell. | T: (none)
+sn35.240:3.3 | S: Independent, not disturbing others, | T: Not dependent, harming no others,
+sn35.240:3.4 | S: quenched: they wouldn’t blame anyone.” | T: totally unbound, he would berate no one.
+sn35.240:3.5 | P: Tatiyaṁ. | T: (none)
+
+## sn48.43
+sn48.43:1.1 | S: So I have heard. | T: I have heard that
+sn48.43:1.2 | S: At one time the Buddha was staying near Sāketa in the deer park at the Añjana Wood. | T: on one occasion the Blessed One was staying in Sāketa at the Deer Park in the Añjana Forest.
+sn48.43:1.3 | S: There the Buddha addressed the mendicants: | T: There he addressed the monks:
+sn48.43:1.4 | S: “Mendicants, is there a method in which the five faculties become the five powers, and the five powers become the five faculties?” | T: “Monks, is there a manner of explanation whereby the five faculties are the same as the five strengths, and the five strengths the same as the five faculties?”
+sn48.43:2.1 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “For us, lord, the teachings have the Blessed One as their root, their guide, & their arbitrator. It would be good if the Blessed One himself would explicate the meaning of this statement. Having heard it from the Blessed One, the monks will remember it.”
+sn48.43:3.1 | S: “Mendicants, there is a method in which the five faculties become the five powers, and the five powers become the five faculties. | T: “In that case, monks, listen & pay close attention. I will speak.” “As you say, lord,” the monks responded to him. The Blessed One said, “Monks, there is a manner of explanation whereby the five faculties are the same as the five strengths, and the five strengths the same as the five faculties.
+sn48.43:4.1 | S: And what is that method? | T: And what is that manner of explanation?
+sn48.43:4.2 | S: The faculty of faith is the power of faith, and the power of faith is the faculty of faith. | T: “Whatever is the faculty of conviction, that is the strength of conviction. Whatever is the strength of conviction, that is the faculty of conviction.
+sn48.43:4.3 | S: The faculty of energy is the power of energy, and the power of energy is the faculty of energy. | T: “Whatever is the faculty of persistence, that is the strength of persistence. Whatever is the strength of persistence, that is the faculty of persistence.
+sn48.43:4.4 | S: The faculty of mindfulness is the power of mindfulness, and the power of mindfulness is the faculty of mindfulness. | T: “Whatever is the faculty of mindfulness, that is the strength of mindfulness. Whatever is the strength of mindfulness, that is the faculty of mindfulness.
+sn48.43:4.5 | S: The faculty of immersion is the power of immersion, and the power of immersion is the faculty of immersion. | T: “Whatever is the faculty of concentration, that is the strength of concentration. Whatever is the strength of concentration, that is the faculty of concentration.
+sn48.43:4.6 | S: The faculty of wisdom is the power of wisdom, and the power of wisdom is the faculty of wisdom. | T: “Whatever is the faculty of discernment, that is the strength of discernment. Whatever is the strength of discernment, that is the faculty of discernment.
+sn48.43:4.7 | S: Suppose there was a river slanting, sloping, and inclining to the east, and in the middle was an island. | T: “Imagine a river—flowing, sloping, inclining toward the east—in whose midst is an island.
+sn48.43:4.8 | S: There’s a method in which that river can be reckoned to have just one stream. | T: There is a manner of explanation whereby the river is classified as one current,
+sn48.43:4.9 | S: But there’s also a method in which that river can be reckoned to have two streams. | T: and another manner of explanation whereby it is classified as two.
+sn48.43:5.1 | S: And what’s the method in which that river can be reckoned to have just one stream? | T: “And what is the manner of explanation whereby the river is classified as one current?
+sn48.43:5.2 | S: By taking into account the water to the east and the west of the island, | T: Whatever water lies to the east of the island, and whatever water lies to the west.
+sn48.43:5.3 | S: that river can be reckoned to have just one stream. | T: This is the manner of explanation whereby the river is classified as one current.
+sn48.43:6.1 | S: And what’s the method in which that river can be reckoned to have two streams? | T: “And what is the manner of explanation whereby the river is classified as two currents?
+sn48.43:6.2 | S: By taking into account the water to the north and the south of the island, | T: Whatever water lies to the north of the island, and whatever water lies to the south.
+sn48.43:6.3 | S: that river can be reckoned to have two streams. | T: This is the manner of explanation whereby the river is classified as two currents.
+sn48.43:6.4 | S: By the same method, the faculty of faith is the power of faith, and the power of faith is the faculty of faith. | T: “In the same way, whatever is the faculty of conviction, that is the strength of conviction. Whatever is the strength of conviction, that is the faculty of conviction.
+sn48.43:6.5 | S: The faculty of energy is the power of energy, and the power of energy is the faculty of energy. | T: “Whatever is the faculty of persistence, that is the strength of persistence. Whatever is the strength of persistence, that is the faculty of persistence.
+sn48.43:6.6 | S: The faculty of mindfulness is the power of mindfulness, and the power of mindfulness is the faculty of mindfulness. | T: “Whatever is the faculty of mindfulness, that is the strength of mindfulness. Whatever is the strength of mindfulness, that is the faculty of mindfulness.
+sn48.43:6.7 | S: The faculty of immersion is the power of immersion, and the power of immersion is the faculty of immersion. | T: “Whatever is the faculty of concentration, that is the strength of concentration. Whatever is the strength of concentration, that is the faculty of concentration.
+sn48.43:6.8 | S: The faculty of wisdom is the power of wisdom, and the power of wisdom is the faculty of wisdom. | T: “Whatever is the faculty of discernment, that is the strength of discernment. Whatever is the strength of discernment, that is the faculty of discernment.”
+sn48.43:6.9 | S: It’s because of developing and cultivating the five faculties that a mendicant realizes the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements.” | T: (none)
+sn48.43:6.10 | P: Tatiyaṁ. | T: (none)
+
+## sn5.7
+sn5.7:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn5.7:1.2 | S: Then the nun Upacālā robed up in the morning … | T: Then, early in the morning, Upacālā the nun adjusted her robes and, taking her bowl & outer robe, went into Sāvatthī for alms. When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind to spend the day. Having gone deep into the Grove of the Blind,
+sn5.7:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: she sat down at the foot of a tree for the day’s abiding.
+sn5.7:1.4 | S: Then Māra the Wicked went up to Upacālā and said to her, | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & said,
+sn5.7:1.5 | S: “Nun, where do you want to be reborn?” | T: “Where do you want to reappear [be reborn], nun?”
+sn5.7:1.6 | S: “I don’t want to be reborn anywhere, sir.” | T: “I don’t want to reappear anywhere, my friend.”
+sn5.7:2.1 | S: “There are the gods of the thirty-three, <j>and those of Yama; | T: Māra: “The Devas of the Thirty-three, the Hours,
+sn5.7:2.2 | S: also the Joyful Deities, | T: the Contented,
+sn5.7:2.3 | S: the gods who love to create, | T: devas who delight in creation,
+sn5.7:2.4 | S: and the gods who control what is created by others. | T: & devas in control:
+sn5.7:2.5 | S: Set your heart on such places, | T: Direct your mind there
+sn5.7:2.6 | S: and you’ll undergo delight.” | T: and it will enjoy delight.”
+sn5.7:3.1 | S: “The gods of the thirty-three, <j>and those of Yama; | T: Sister Upacālā: “The Devas of the Thirty-three, the Hours,
+sn5.7:3.2 | S: also the Joyful Deities, | T: the Contented,
+sn5.7:3.3 | S: the gods who love to create, | T: devas who delight in creation,
+sn5.7:3.4 | S: and the gods who control what is created by others— | T: & devas in control:
+sn5.7:3.5 | S: they’re bound with the bonds of sensuality; | T: They are bound with the bonds of sensuality;
+sn5.7:3.6 | S: they fall under your sway again. | T: they come again under Māra’s sway.
+sn5.7:4.1 | S: All the world is on fire, | T: The whole world is burning.
+sn5.7:4.2 | S: all the world is smoldering, | T: The whole world is aflame.
+sn5.7:4.3 | S: all the world is ablaze, | T: The whole world is blazing.
+sn5.7:4.4 | S: all the world is rocking. | T: The whole world is shaken.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn5.7:5.1 | S: My mind adores that place | T: The unshaken, untrembling
+sn5.7:5.2 | S: where Māra cannot go; | T: —
+sn5.7:5.3 | S: it’s not shaking or burning, | T: (none)
+sn5.7:5.4 | S: and not frequented by ordinary people.” | T: of which people run-of-the-mill don’t partake, where Māra’s never been— that’s where my heart truly delights.”
+sn5.7:6.1 | S: Then Māra the Wicked, thinking, “The nun Upacālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Upacālā the nun knows me”—vanished right there.
+
+
+codex
+I’ve read the whole batch. I’m checking the few suspected shifts against the exception for sentences spanning several lines before writing the findings.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.findings.tmp <<'EOF'
+an5.80:5.3 starts: either to lead the holy life dissatisfied
+an8.39:4.2 starts: and this is the fifth bonanza of
+an8.39:5.2 starts: and this is the sixth bonanza of
+an8.39:6.2 starts: and this is the seventh bonanza of
+sn5.7:5.1 starts: that’s where my heart truly delights.”
+sn5.7:5.2 starts: where Māra’s never been— that’s where my
+sn5.7:5.3 starts: The unshaken, untrembling
+sn5.7:5.4 starts: of which people run-of-the-mill don’t partake, where
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-041.findings.tmp <<'EOF'
+an5.80:5.3 starts: either to lead the holy life dissatisfied
+an8.39:4.2 starts: and this is the fifth bonanza of
+an8.39:5.2 starts: and this is the sixth bonanza of
+an8.39:6.2 starts: and this is the seventh bonanza of
+sn5.7:5.1 starts: that’s where my heart truly delights.”
+sn5.7:5.2 starts: where Māra’s never been— that’s where my
+sn5.7:5.3 starts: The unshaken, untrembling — of which people
+sn5.7:5.4 starts: of which people run-of-the-mill don’t partake, where
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+8 lines reported.
+tokens used
+24,876
+8 lines reported.

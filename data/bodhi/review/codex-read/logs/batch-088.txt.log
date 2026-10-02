@@ -1,0 +1,399 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8e-9a26-7b30-b509-f2b314016329
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clear line-placement corrections to the findings file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn56.24
+sn56.24:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn56.24:1.2 | S: “Mendicants, whatever perfected ones, fully awakened Buddhas truly awaken—in the past, | T: “Bhikkhus, whatever Arahants, Perfectly Enlightened Ones, in the past fully awakened to things as they really are, all fully awakened to the Four Noble Truths as they really are.
+sn56.24:1.3 | S: future, | T: Whatever Arahants, Perfectly Enlightened Ones, in the future will fully awaken to things as they really are, all will fully awaken to the Four Noble Truths as they really are.
+sn56.24:1.4 | S: or present—all of them truly awaken to the four noble truths. | T: Whatever Arahants, Perfectly Enlightened Ones, at present have fully awakened to things as they really are, all have fully awakened to the Four Noble Truths as they really are.
+sn56.24:2.1 | S: What four? | T: “What four?
+sn56.24:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.24:2.3 | S: Whatever perfected ones, fully awakened Buddhas truly awaken—in the past, | T: Whatever Arahants, Perfectly Enlightened Ones, fully awakened …
+sn56.24:2.4 | S: future, | T: will fully awaken …
+sn56.24:2.5 | S: or present—all of them truly awaken to the four noble truths. | T: have fully awakened to things as they really are, all have fully awakened to these Four Noble Truths as they really are.
+sn56.24:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.24:3.2 | P: Catutthaṁ. | T: (none)
+
+## sn56.25
+sn56.25:1.1 | S: “Mendicants, I say that the ending of defilements is for one who knows and sees, not for one who does not know or see. | T: “Bhikkhus, I say that the destruction of the taints is for one who knows and sees, not for one who does not know and does not see.
+sn56.25:1.2 | S: For one who knows and sees what? | T: For one who knows what, for one who sees what, does the destruction of the taints come about?
+sn56.25:1.3 | S: The ending of defilements is for one who knows and sees suffering, its origin, its cessation, and the path. | T: The destruction of the taints comes about for one who knows and sees: ‘This is suffering’; for one who knows and sees: ‘This is the origin of suffering’; for one who knows and sees: ‘This is the cessation of suffering’; for one who knows and sees: ‘This is the way leading to the cessation of suffering.’
+sn56.25:1.4 | S: The ending of the defilements is for one who knows and sees this. | T: It is for one who knows thus, for one who sees thus, that the destruction of the taints comes about.
+sn56.25:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.25:2.2 | P: Pañcamaṁ. | T: (none)
+
+## sn56.26
+sn56.26:1.1 | S: “Mendicants, those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true comprehension of the four noble truths. | T: “Bhikkhus, those for whom you have compassion and who think you should be heeded—whether friends or colleagues, relatives or kinsmen— these you should exhort, settle, and establish for making the breakthrough to the Four Noble Truths as they really are.
+sn56.26:2.1 | S: What four? | T: “What four?
+sn56.26:2.2 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.26:2.3 | S: Those who you have sympathy for, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the true comprehension of these four noble truths. | T: “Those for whom you have compassion … these you should exhort, settle, and establish for making the breakthrough to these Four Noble Truths as they really are.
+sn56.26:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.26:3.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn56.27
+sn56.27:1.1 | S: “Mendicants, there are these four noble truths. | T: “Bhikkhus, there are these Four Noble Truths.
+sn56.27:1.2 | S: What four? | T: What four?
+sn56.27:1.3 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.27:1.4 | S: These four noble truths are real, not unreal, not otherwise. | T: These Four Noble Truths, bhikkhus, are actual, unerring, not otherwise.
+sn56.27:1.5 | S: That’s why they’re called ‘noble truths’. | T: Therefore they are called noble truths.
+sn56.27:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.27:2.2 | P: Sattamaṁ. | T: (none)
+
+## sn56.28
+sn56.28:1.1 | S: “Mendicants, there are these four noble truths. | T: “Bhikkhus, these are these Four Noble Truths.
+sn56.28:1.2 | S: What four? | T: What four?
+sn56.28:1.3 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.28:1.4 | S: In this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans, the Realized One is the Noble One. | T: In this world, with its devas, Mara, and Brahma, in this generation with its ascetics and brahmins, its devas and humans, the Tathagata is the noble one.
+sn56.28:1.5 | S: That’s why they’re called ‘noble truths’. | T: Therefore they are called noble truths.
+sn56.28:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.28:2.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn56.29
+sn56.29:1.1 | S: “Mendicants, there are these four noble truths. | T: “Bhikkhus, there are these Four Noble Truths.
+sn56.29:1.2 | S: What four? | T: What four?
+sn56.29:1.3 | S: The noble truths of suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: The noble truth of suffering, the noble truth of the origin of suffering, the noble truth of the cessation of suffering, the noble truth of the way leading to the cessation of suffering.
+sn56.29:1.4 | S: These are the four noble truths. | T: These are the Four Noble Truths.
+sn56.29:1.5 | S: Of these four noble truths, there is one to be completely understood, one to be given up, one to be realized, and one to be developed. | T: “Of these Four Noble Truths, bhikkhus, there is a noble truth that is to be fully understood; there is a noble truth that is to be abandoned; there is a noble truth that is to be realized; there is a noble truth that is to be developed.
+sn56.29:2.1 | S: And which noble truth should be completely understood? | T: “And what, bhikkhus, is the noble truth that is to be fully understood?
+sn56.29:2.2 | S: The noble truth of suffering should be completely understood. The noble truth of the origin of suffering should be given up. The noble truth of the cessation of suffering should be realized. The noble truth of the practice that leads to the cessation of suffering should be developed. | T: The noble truth of suffering is to be fully understood; the noble truth of the origin of suffering is to be abandoned; the noble truth of the cessation of suffering is to be realized; the noble truth of the way leading to the cessation of suffering is to be developed.
+sn56.29:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.29:3.2 | P: Navamaṁ. | T: (none)
+
+## sn56.2
+sn56.2:1.1 | S: “Mendicants, meditate in retreat. | T: “Bhikkhus, make an exertion in seclusion.
+sn56.2:1.2 | S: A mendicant in retreat truly understands. | T: A bhikkhu who is secluded understands things as they really are.
+sn56.2:1.3 | S: What do they truly understand? | T: “And what does he understand as it really is?
+sn56.2:1.4 | S: They truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: He understands as it really is: ‘This is suffering.’… ‘This is the origin of suffering. ’… ‘This is the cessation of suffering.’… ‘This is the way leading to the cessation of suffering.’
+sn56.2:1.5 | S: Meditate in retreat. | T: “Bhikkhus, make an exertion in seclusion.
+sn56.2:1.6 | S: A mendicant in retreat truly understands. | T: A bhikkhu who is secluded understands things as they really are.
+sn56.2:2.1 | S: That’s why you should practice meditation to understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’.” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.2:2.2 | P: Dutiyaṁ. | T: (none)
+
+## sn56.30
+sn56.30:1.1 | S: At one time several mendicants were staying in the land of the Cetīs at Sahajāti. | T: On one occasion a number of elder bhikkhus were dwelling among the Cetiyans at Sahajati.
+sn56.30:1.2 | S: Now at that time, after the meal, on return from almsround, several senior mendicants sat together in the pavilion and this discussion came up among them: | T: Now on that occasion when the elder bhikkhus had returned from their alms round, after their meal they had assembled in the pavilion and were sitting together when this conversation arose:
+sn56.30:1.3 | S: “Reverends, does someone who sees suffering also see the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering?” | T: “Friend, does one who sees suffering also see the origin of suffering, also see the cessation of suffering, also see the way leading to the cessation of suffering?”
+sn56.30:2.1 | S: When they said this, Venerable Gavampati said to those senior mendicants: | T: When this was said, the Venerable Gavampati said to the elder bhikkhus:
+sn56.30:2.2 | S: “Reverends, I have heard and learned this in the presence of the Buddha: | T: “Friends, in the presence of the Blessed One I have heard and learnt this:
+sn56.30:2.3 | S: ‘Someone who sees suffering also sees the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: ‘Bhikkhus, one who sees suffering also sees the origin of suffering, also sees the cessation of suffering, also sees the way leading to the cessation of suffering.
+sn56.30:2.4 | S: Someone who sees the origin of suffering also sees suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: One who sees the origin of suffering also sees suffering, also sees the cessation of suffering, also sees the way leading to the cessation of suffering.
+sn56.30:2.5 | S: Someone who sees the cessation of suffering also sees suffering, the origin of suffering, and the practice that leads to the cessation of suffering. | T: One who sees the cessation of suffering also sees suffering, also sees the origin of suffering, also sees the way leading to the cessation of suffering.
+sn56.30:2.6 | S: Someone who sees the practice that leads to the cessation of suffering also sees suffering, the origin of suffering, and the cessation of suffering.’” | T: One who sees the way leading to the cessation of suffering also sees suffering, also sees the origin of suffering, also sees the cessation of suffering.’”
+sn56.30:2.7 | P: Dasamaṁ. | T: (none)
+sn56.30:2.8 | P: Koṭigāmavaggo tatiyo. | T: (none)
+sn56.30:3.0 | P: Tassuddānaṁ | T: (none)
+sn56.30:3.1 | P: Dve vajjī sammāsambuddho, | T: (none)
+sn56.30:3.2 | P: arahaṁ āsavakkhayo; | T: (none)
+sn56.30:3.3 | P: Mittaṁ tathā ca loko ca, | T: (none)
+sn56.30:3.4 | P: pariññeyyaṁ gavampatīti. | T: (none)
+
+## sn56.31
+sn56.31:1.1 | S: At one time the Buddha was staying near Kosambī in a rosewood grove. | T: On one occasion the Blessed One was dwelling at Kosambi in a siṁsapa grove.
+sn56.31:1.2 | S: Then the Buddha picked up a few rosewood leaves in his hand and addressed the mendicants: | T: Then the Blessed One took up a few siṁsapa leaves in his hand and addressed the bhikkhus thus:
+sn56.31:1.3 | S: “What do you think, mendicants? | T: “What do you think, bhikkhus,
+sn56.31:1.4 | S: Which is more: | T: which is more numerous:
+sn56.31:1.5 | S: the few leaves in my hand, or those in the grove above?” | T: these few siṁsapa leaves that I have taken up in my hand or those in the siṁsapa grove overhead?”
+sn56.31:1.6 | S: “Sir, the few leaves in your hand are a tiny amount. | T: “Venerable sir, the siṁsapa leaves that the Blessed One has taken up in his hand are few,
+sn56.31:1.7 | S: There are far more leaves in the grove above.” | T: but those in the siṁsapa grove overhead are numerous.”
+sn56.31:1.8 | S: “In the same way, there is much more that I have directly known but have not explained to you. What I have explained is a tiny amount. | T: “So too, bhikkhus, the things I have directly known but have not taught you are numerous, while the things I have taught you are few.
+sn56.31:1.9 | S: And why haven’t I explained it? | T: And why, bhikkhus, have I not taught those many things?
+sn56.31:1.10 | S: Because it’s not beneficial or relevant to the fundamentals of the spiritual life. It doesn’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because they are unbeneficial, irrelevant to the fundamentals of the holy life, and do not lead to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn56.31:1.11 | S: That’s why I haven’t explained it. | T: Therefore I have not taught them.
+sn56.31:2.1 | S: And what have I explained? | T: “And what, bhikkhus, have I taught?
+sn56.31:2.2 | S: I have explained: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: I have taught: ‘This is suffering’; I have taught: ‘This is the origin of suffering’; I have taught: ‘This is the cessation of suffering’; I have taught: ‘This is the way leading to the cessation of suffering.’
+sn56.31:3.1 | S: And why have I explained this? | T: And why, bhikkhus, have I taught this?
+sn56.31:3.2 | S: Because it’s beneficial and relevant to the fundamentals of the spiritual life. It leads to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because this is beneficial, relevant to the fundamentals of the holy life, and leads to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn56.31:3.3 | S: That’s why I’ve explained it. | T: Therefore I have taught this.
+sn56.31:4.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.31:4.2 | P: Paṭhamaṁ. | T: (none)
+
+## sn56.32
+sn56.32:1.1 | S: “Mendicants, suppose someone were to say: | T: “Bhikkhus, if anyone should speak thus:
+sn56.32:1.2 | S: ‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ | T: ‘Without having made the breakthrough to the noble truth of suffering as it really is, without having made the breakthrough to the noble truth of the origin of suffering as it really is, without having made the breakthrough to the noble truth of the cessation of suffering as it really is, without having made the breakthrough to the noble truth of the way leading to the cessation of suffering as it really is, I will completely make an end to suffering’—
+sn56.32:1.3 | S: That is not possible. | T: this is impossible.
+sn56.32:2.1 | S: It’s as if someone were to say: | T: “Just as, bhikkhus, if someone should speak thus:
+sn56.32:2.2 | S: ‘I’ll make a basket out of acacia leaves or pine needles or myrobalan leaves, and use it to carry water or ripe palmyra fruit.’ | T: ‘Having made a basket of acacia leaves or of pine needles or of myrobalan leaves, I will bring water or a palm fruit,’
+sn56.32:2.3 | S: That is not possible. | T: this would be impossible;
+sn56.32:2.4 | S: In the same way, suppose someone were to say: | T: so too, if anyone should speak thus:
+sn56.32:2.5 | S: ‘Without truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ | T: ‘Without having made the breakthrough to the noble truth of suffering as it really is… I will completely make an end to suffering’—
+sn56.32:2.6 | S: That is not possible. | T: this is impossible.
+sn56.32:3.1 | S: But suppose someone were to say: | T: “But, bhikkhus, if anyone should speak thus:
+sn56.32:3.2 | S: ‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ | T: ‘Having made the breakthrough to the noble truth of suffering as it really is, having made the breakthrough to the noble truth of the origin of suffering as it really is, having made the breakthrough to the noble truth of the cessation of suffering as it really is, having made the breakthrough to the noble truth of the way leading to the cessation of suffering as it really is, I will completely make an end to suffering’—
+sn56.32:3.3 | S: That is possible. | T: this is possible.
+sn56.32:4.1 | S: It’s as if someone were to say: | T: “Just as, bhikkhus, if someone should speak thus:
+sn56.32:4.2 | S: ‘I’ll make a basket out of lotus leaves or flame-of-the-forest leaves or camel’s foot creeper leaves, and use it to carry water or ripe palmyra fruit.’ | T: ‘Having made a basket of lotus leaves or of kino leaves or of maluva leaves, I will bring water or a palm fruit,’
+sn56.32:4.3 | S: That is possible. | T: this would be possible;
+sn56.32:4.4 | S: In the same way, suppose someone were to say: | T: so too, if anyone should speak thus:
+sn56.32:4.5 | S: ‘After truly comprehending the noble truths of suffering, its origin, its cessation, and the path, I will completely make an end of suffering.’ | T: ‘Having made the breakthrough to the noble truth of suffering as it really is… I will completely make an end to suffering’—
+sn56.32:4.6 | S: That is possible. | T: this is possible.
+sn56.32:5.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.32:5.2 | P: Dutiyaṁ. | T: (none)
+
+## sn56.33
+sn56.33:1.1 | S: “Mendicants, suppose a stick was tossed up in the air. Sometimes it’d fall on its bottom and sometimes the top. | T: “Bhikkhus, just as a stick thrown up into the air falls now on its bottom, now on its top,
+sn56.33:1.2 | S: It’s the same for sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. Sometimes they go from this world to the other world, and sometimes they come from the other world to this world. | T: so too as beings roam and wander on, hindered by ignorance and fettered by craving, now they go from this world to the other world, now they come from the other world to this world.
+sn56.33:1.3 | S: Why is that? | T: For what reason?
+sn56.33:1.4 | S: It’s because they haven’t seen the four noble truths. | T: Because they have not seen the Four Noble Truths.
+sn56.33:1.5 | S: What four? | T: What four?
+sn56.33:1.6 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.33:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.33:2.2 | P: Tatiyaṁ. | T: (none)
+
+## sn56.34
+sn56.34:1.1 | S: “Mendicants, if your clothes or head were on fire, what would you do about it?” | T: “Bhikkhus, if one’s clothes or head were ablaze, what should be done about it?”
+sn56.34:1.2 | S: “Sir, if our clothes or head were on fire, we’d apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness in order to extinguish it.” | T: “Venerable sir, if one’s clothes or head were ablaze, to extinguish one’s blazing clothes or head one should arouse extraordinary desire, make an extraordinary effort, stir up zeal and enthusiasm, be unremitting, and exercise mindfulness and clear comprehension.”
+sn56.34:2.1 | S: “Mendicants, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness to truly comprehending the four noble truths. | T: “Bhikkhus, one might look on equanimously at one’s blazing clothes or head, paying no attention to them, but so long as one has not made the breakthrough to the Four Noble Truths as they really are, in order to make the breakthrough one should arouse extraordinary desire, make an extraordinary effort, stir up zeal and enthusiasm, be unremitting, and exercise mindfulness and clear comprehension.
+sn56.34:2.2 | S: What four? | T: What four?
+sn56.34:2.3 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.34:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.34:3.2 | P: Catutthaṁ. | T: (none)
+
+## sn56.35
+sn56.35:1.1 | S: “Mendicants, suppose there was a man with a lifespan of a hundred years. | T: “Bhikkhus, suppose there were a man with a life span of a hundred years, who could live a hundred years.
+sn56.35:1.2 | S: And someone might say to him: | T: Someone would say to him:
+sn56.35:1.3 | S: ‘Come now, my man, they’ll strike you with a hundred spears in the morning, at midday, and in the late afternoon. | T: ‘Come, good man, in the morning they will strike you with a hundred spears; at noon they will strike you with a hundred spears; in the evening they will strike you with a hundred spears.
+sn56.35:1.4 | S: And you’ll live for a hundred years being struck with three hundred spears every day. But when a hundred years have passed, you will comprehend the four noble truths for the first time.’ | T: And you, good man, being struck day after day by three hundred spears will have a life span of a hundred years, will live a hundred years; and then, after a hundred years have passed, you will make the breakthrough to the Four Noble Truths, to which you had not broken through earlier.’
+sn56.35:2.1 | S: For an earnest gentleman this is sufficient reason to submit. | T: “It is fitting, bhikkhus, for a clansman intent on his good to accept the offer.
+sn56.35:2.2 | S: Why is that? | T: For what reason?
+sn56.35:2.3 | S: This transmigration has no known beginning. | T: Because this saṁsara is without discoverable beginning;
+sn56.35:2.4 | S: No first point is found of blows by spears, swords, arrows, and axes. | T: a first point cannot be discerned of blows by spears, blows by swords, blows by axes.
+sn56.35:2.5 | S: Now this may be so. | T: And even though this may be so,
+sn56.35:2.6 | S: But the comprehension of the four noble truths doesn’t come with pain or sadness, I say. | T: bhikkhus, I do not say that the breakthrough to the Four Noble Truths is accompanied by suffering or displeasure.
+sn56.35:2.7 | S: Rather, the comprehension of the four noble truths comes only with pleasure and happiness, I say. | T: Rather, the breakthrough to the Four Noble Truths is accompanied only by happiness and joy.
+sn56.35:2.8 | S: What four? | T: What four?
+sn56.35:2.9 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.35:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.35:3.2 | P: Pañcamaṁ. | T: (none)
+
+## sn56.36
+sn56.36:1.1 | S: “Suppose a person was to strip all the grass, sticks, branches, and leaves in the Black Plum Tree Land, gather them together into one pile, | T: “Bhikkhus, suppose a man were to cut up whatever grass, sticks, branches, and foliage there is in this Jambudipa and collect them into a single heap.
+sn56.36:1.2 | S: and make them into stakes. | T: Having done so,
+sn56.36:1.3 | S: Then they’d impale the large creatures in the ocean on large stakes; the medium-sized creatures on medium-sized stakes; and the small creatures on small stakes. | T: he would impale the large creatures in the ocean on the large stakes, the middle-sized creatures on the middle-sized stakes, and the small creatures on the small stakes.
+sn56.36:1.4 | S: They wouldn’t run out of sizable creatures in the ocean before | T: Still, bhikkhus, the gross creatures in the ocean would not be exhausted even after
+sn56.36:2.1 | S: using up all the grass, sticks, branches, and leaves in the Black Plum Tree Land. | T: all the grass, sticks, branches, and foliage in Jambudipa had been used up and exhausted.
+sn56.36:2.2 | S: There are far more small creatures in the ocean than this, so it wouldn’t be feasible to impale them on stakes. | T: The small creatures in the ocean that could not easily be impaled on stakes would be even more numerous than this.
+sn56.36:2.3 | S: Why is that? | T: For what reason?
+sn56.36:2.4 | S: Because of the small size of those life-forms. | T: Because of the minuteness of their bodies.
+sn56.36:2.5 | S: That’s how big the plane of loss is. | T: “So vast, bhikkhus, is the plane of misery.
+sn56.36:2.6 | S: An individual accomplished in view, exempt from that vast plane of loss, truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: The person who is accomplished in view, freed from that vast plane of misery, understands as it really is: ‘This is suffering.’… ‘This is the way leading to the cessation of suffering.’
+sn56.36:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.36:3.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn56.37
+sn56.37:1.1 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn56.37:1.2 | S: In the same way, for a mendicant right view is the forerunner and harbinger of truly comprehending the four noble truths. | T: So too, bhikkhus, for a bhikkhu this is the forerunner and precursor of the breakthrough to the Four Noble Truths as the really are, that is, right view.
+sn56.37:1.3 | S: That mendicant can expect to truly understand: | T: It is to be expected that a bhikkhu with right view will understand as it really is:
+sn56.37:1.4 | S: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: ‘This is suffering.’… ‘This is the way leading to the cessation of suffering.’
+sn56.37:2.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.37:2.2 | P: Sattamaṁ. | T: (none)
+
+## sn56.38
+sn56.38:1.1 | S: “Mendicants, as long as the moon and the sun don’t arise in the world, no great light or great radiance appears. | T: “Bhikkhus, so long as the sun and moon have not arisen in the world, for just so long there is no manifestation of great light and radiance,
+sn56.38:1.2 | S: Darkness prevails then, utter darkness. | T: but then blinding darkness prevails, a dense mass of darkness;
+sn56.38:1.3 | S: Day and night aren’t found, nor months and fortnights, nor seasons and years. | T: for just so long day and night are not discerned, the month and fortnight are not discerned, the seasons and the year are not discerned.
+sn56.38:2.1 | S: But when the moon and the sun arise in the world, a great light, a great radiance appears. | T: “But, bhikkhus, when the sun and moon arise in the world, then there is the manifestation of great light and radiance;
+sn56.38:2.2 | S: Darkness no longer prevails. | T: then there is no blinding darkness, no dense mass of darkness;
+sn56.38:2.3 | S: Day and night are found, and months and fortnights, and seasons and years. | T: then day and night are discerned, the month and fortnight are discerned, the seasons and year are discerned.
+sn56.38:2.4 | S: In the same way, as long as the Realized One doesn’t arise in the world, no great light or great radiance appears. | T: “So too, bhikkhus, so long as a Tathagata has not arisen in the world, an Arahant, a Perfectly Enlightened One, for just so long there is no manifestation of great light and radiance,
+sn56.38:2.5 | S: Darkness prevails then, utter darkness. | T: but then blinding darkness prevails, a dense mass of darkness;
+sn56.38:2.6 | S: There’s no explanation of the four noble truths, no teaching, advocating, establishing, clarifying, analyzing, and revealing of them. | T: for just so long there is no explaining, teaching, proclaiming, establishing, disclosing, analysing, or elucidating of the Four Noble Truths.
+sn56.38:3.1 | S: But when the Realized One arises in the world, a great light, a great radiance appears. | T: “But, bhikkhus, when a Tathagata arises in the world, an Arahant, a Perfectly Enlightened One, then there is the manifestation of great light and radiance;
+sn56.38:3.2 | S: Darkness no longer prevails. | T: then no blinding darkness prevails, no dense mass of darkness;
+sn56.38:3.3 | S: Then there’s the explanation of the four noble truths, the teaching, advocating, establishing, clarifying, analyzing, and revealing of them. | T: then there is the explaining, teaching, proclaiming, establishing, disclosing, analysing, and elucidating of the Four Noble Truths.
+sn56.38:3.4 | S: What four? | T: What four?
+sn56.38:3.5 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.38:4.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.38:4.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn56.39
+sn56.39:1.1 | S: “Mendicants, there are ascetics and brahmins who don’t truly understand about suffering, its origin, its cessation, and the path. | T: “Bhikkhus, those ascetics or brahmins who do not understand as it really is ‘This is suffering’ … ‘This is the way leading to the cessation of suffering’—
+sn56.39:1.2 | S: They gaze up at the face of another ascetic or brahmin, thinking: | T: they look up at the face of another ascetic or brahmin, thinking:
+sn56.39:1.3 | S: ‘Surely this worthy one knows and sees.’ | T: ‘This worthy is surely one who really knows, who really sees.’
+sn56.39:2.1 | S: Suppose there was a light tuft of cotton-wool or kapok which was taken up by the wind and landed on level ground. | T: “Suppose, bhikkhus, a tuft of cotton wool or kapok, light, wafted by the wind, had settled on an even piece of ground.
+sn56.39:2.2 | S: The east wind wafts it west; the west wind wafts it east; the north wind wafts it south; and the south wind wafts it north. | T: An easterly wind would drive it westward; a westerly wind would drive it eastward; a northerly wind would drive it southward; a southerly wind would drive it northward.
+sn56.39:2.3 | S: Why is that? | T: For what reason?
+sn56.39:2.4 | S: It’s because the tuft of cotton-wool is so light. | T: Because of the lightness of the tuft.
+sn56.39:2.5 | S: In the same way, there are ascetics and brahmins who don’t truly understand about suffering, its origin, its cessation, and the path. | T: “So too, bhikkhus, those ascetics or brahmins who do not understand as it really is ‘This is suffering’ … ‘This is the way leading to the cessation of suffering’—
+sn56.39:2.6 | S: They gaze up at the face of another ascetic or brahmin, thinking: | T: they look up at the face of another ascetic or brahmin, thinking:
+sn56.39:2.7 | S: ‘Surely this worthy one knows and sees.’ | T: ‘This worthy is surely one who really knows, who really sees.’
+sn56.39:2.8 | S: Why is that? | T: For what reason?
+sn56.39:2.9 | S: It’s because they haven’t seen the four noble truths. | T: Because they have not seen the Four Noble Truths.
+sn56.39:3.1 | S: There are ascetics and brahmins who truly understand about suffering, its origin, its cessation, and the path. | T: “But, bhikkhus, those ascetics or brahmins who understand as it really is ‘This is suffering’ … ‘This is the way leading to the cessation of suffering’—
+sn56.39:3.2 | S: They don’t gaze up at the face of another ascetic or brahmin, thinking: | T: they do not look up at the face of another ascetic or brahmin, thinking:
+sn56.39:3.3 | S: ‘Surely this worthy one knows and sees.’ | T: ‘This worthy is surely one who really knows, who really sees.’
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn56.39:4.1 | S: Suppose there was an iron pillar or an Indra’s pillar with deep foundations, firmly embedded, imperturbable and unshakable. | T: “Suppose, bhikkhus, there was an iron pillar or an Indra’s pillar with a deep base, securely planted, immobile, unshaking.
+sn56.39:4.2 | S: Even if violent storms were to blow up out of the east, the west, the north, and the south, they couldn’t make it shake or rock or tremble. | T: Even if a forceful blast of wind comes—whether from the east, the west, the north, or the south—that pillar would not shake, quake, or tremble.
+sn56.39:4.3 | S: Why is that? | T: For what reason?
+sn56.39:4.4 | S: It’s because that Indra’s pillar is firmly embedded, with deep foundations. | T: Because the pillar has a deep base and is securely planted.
+sn56.39:4.5 | S: In the same way, there are ascetics and brahmins who truly understand about suffering, its origin, its cessation, and the path. | T: “So too, bhikkhus, those ascetics or brahmins who understand as it really is ‘This is suffering’ … ‘This is the way leading to the cessation of suffering’—
+sn56.39:4.6 | S: They don’t gaze up at the face of another ascetic or brahmin, thinking: | T: they do not look up at the face of another ascetic or brahmin, thinking:
+sn56.39:4.7 | S: ‘Surely this worthy one knows and sees.’ | T: ‘This worthy is surely one who really knows, who really sees.’
+sn56.39:4.8 | S: Why is that? | T: For what reason?
+sn56.39:4.9 | S: It’s because they have clearly seen the four noble truths. | T: Because, bhikkhus, they have clearly seen the Four Noble Truths.
+sn56.39:4.10 | S: What four? | T: What four?
+sn56.39:4.11 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.39:5.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.39:5.2 | P: Navamaṁ. | T: (none)
+
+## sn56.40
+sn56.40:1.1 | S: “Mendicants, take any mendicant who truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “Bhikkhus, if any bhikkhu understands as it really is: ‘This is suffering’ … ‘This is the way leading to the cessation of suffering,’
+sn56.40:1.2 | S: An ascetic or brahmin might come from the east, west, north, or south wanting to debate, seeking a debate, thinking: | T: and then an ascetic or brahmin comes along—whether from the east, the west, the north, or the south—seeking an argument, searching for an argument, thinking:
+sn56.40:1.3 | S: ‘I’ll refute their doctrine!’ It’s simply impossible for them to legitimately make that mendicant shake or rock or tremble. | T: ‘I will refute his thesis,’ it is impossible that he could make that bhikkhu shake, quake, or tremble.
+sn56.40:1.4 | P: Pacchimāya cepi disāya …pe… | T: (none)
+sn56.40:1.5 | P: uttarāya cepi disāya …pe… | T: (none)
+sn56.40:1.6 | P: dakkhiṇāya cepi disāya āgaccheyya samaṇo vā brāhmaṇo vā vādatthiko vādagavesī: | T: (none)
+sn56.40:1.7 | P: ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. | T: (none)
+sn56.40:2.1 | S: Suppose there was a stone post, sixteen feet long. | T: “Suppose, bhikkhus, there was a stone column sixteen yards long:
+sn56.40:2.2 | S: Eight feet were buried underground, and eight above ground. | T: an eight yards’ portion of it would be sunk in the ground, an eight yards’ portion above ground.
+sn56.40:2.3 | S: Even if violent storms were to blow up out of the east, the west, the north, and the south, they couldn’t make it shake or rock or tremble. | T: Even if a forceful blast of wind comes along—whether from the east, the west, the north, or the south—the column would not shake, quake, or tremble.
+sn56.40:2.4 | S: Why is that? | T: For what reason?
+sn56.40:2.5 | S: It’s because that stone post is firmly embedded, with deep foundations. | T: Because it has a deep base and is securely planted.
+sn56.40:2.6 | S: In the same way, take any mendicant who truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “So too, bhikkhus, if any bhikkhu understands as it really is ‘This is suffering’ … ‘This is the way leading to the cessation of suffering,’
+sn56.40:2.7 | S: An ascetic or brahmin might come from the east, west, north, or south wanting to debate, seeking a debate, thinking: ‘I’ll refute their doctrine!’ It’s simply impossible for them to legitimately make that mendicant shake or rock or tremble. | T: and then an ascetic or a brahmin comes along … it is impossible that he could make that bhikkhu shake, quake, or tremble.
+sn56.40:2.8 | P: Pacchimāya cepi disāya …pe… | T: (none)
+sn56.40:2.9 | P: uttarāya cepi disāya …pe… | T: (none)
+sn56.40:2.10 | P: dakkhiṇāya cepi disāya āgaccheyya samaṇo vā brāhmaṇo vā vādatthiko vādagavesī: ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. | T: (none)
+sn56.40:2.11 | S: Why is that? | T: For what reason?
+sn56.40:2.12 | S: It’s because they have clearly seen the four noble truths. | T: Because he has clearly seen the Four Noble Truths.
+sn56.40:2.13 | S: What four? | T: What four?
+sn56.40:2.14 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering.
+sn56.40:3.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.40:3.2 | P: Dasamaṁ. | T: (none)
+sn56.40:3.3 | P: Sīsapāvanavaggo catuttho. | T: (none)
+sn56.40:4.0 | P: Tassuddānaṁ | T: (none)
+sn56.40:4.1 | P: Sīsapā khadiro daṇḍo, | T: (none)
+sn56.40:4.2 | P: celā sattisatena ca; | T: (none)
+sn56.40:4.3 | P: Pāṇā sūriyūpamā dvedhā, | T: (none)
+sn56.40:4.4 | P: indakhīlo ca vādinoti. | T: (none)
+
+## sn56.41
+sn56.41:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn56.41:1.2 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus thus:
+sn56.41:1.3 | S: “Once upon a time, mendicants, a certain person left Rājagaha, thinking ‘I’ll speculate about the world.’ They went to the Sumāgadhā lotus pond and sat down on the bank speculating about the world. | T: “Bhikkhus, once in the past a certain man set out from Rajagaha and went to the Sumagadha Lotus Pond, thinking: ‘I will reflect about the world.’ He then sat down on the bank of the Sumagadha Lotus Pond reflecting about the world.
+sn56.41:1.4 | S: Then that person saw an army of four divisions enter a lotus stalk. | T: Then, bhikkhus, the man saw a four-division army entering a lotus stalk on the bank of the pond.
+sn56.41:1.5 | S: When he saw this he thought, | T: Having seen this, he thought:
+sn56.41:1.6 | S: ‘I’ve gone mad, really, I’ve lost my mind! | T: ‘I must be mad! I must be insane!
+sn56.41:1.7 | S: I’m seeing things that don’t exist in the world.’ | T: I’ve seen something that doesn’t exist in the world.’
+sn56.41:2.1 | S: Then that person entered the city and informed a large crowd, | T: The man returned to the city and informed a great crowd of people:
+sn56.41:2.2 | S: ‘I’ve gone mad, really, I’ve lost my mind! | T: ‘I must be mad, sirs! I must be insane!
+sn56.41:2.3 | S: I’m seeing things that don’t exist in the world.’ | T: I’ve seen something that doesn’t exist in the world.’
+sn56.41:2.4 | S: ‘But how is it that you’re mad? How have you lost your mind? | T: “They said to him: ‘But how is it, good man, that you are mad? How are you insane?
+sn56.41:2.5 | S: And what have you seen that doesn’t exist in the world?’ | T: And what have you seen that doesn’t exist in the world?’
+sn56.41:2.6 | S: ‘Sirs, I left Rājagaha, thinking “I’ll speculate about the world.” I went to the Sumāgadhā lotus pond and sat down on the bank speculating about the world. | T: “‘Here, sirs, I left Rajagaha and approached the Sumagadha Lotus Pond … as above …
+sn56.41:2.7 | S: Then I saw an army of four divisions enter a lotus stalk. | T: I saw a four-division army entering a lotus stalk on the bank of the pond.
+sn56.41:2.8 | S: That’s why I’m mad, that’s why I’ve lost my mind. | T: That’s why I’m mad, that’s why I’m insane,
+sn56.41:2.9 | S: And that’s what I’ve seen that doesn’t exist in the world.’ | T: and that’s what I’ve seen that doesn’t exist in the world.’
+sn56.41:2.10 | S: ‘Well, my man, you’re definitely mad, you’ve definitely lost your mind. | T: “‘Surely you’re mad, good man! Surely you’re insane!
+sn56.41:2.11 | S: And you’re seeing things that don’t exist in the world.’ | T: And what you have seen doesn’t exist in the world.’
+sn56.41:3.1 | S: But what that person saw was in fact real, not unreal. | T: “Nevertheless, bhikkhus, what that man saw was actually real, not unreal.
+sn56.41:3.2 | S: Once upon a time, a battle was fought between the gods and the titans. | T: Once in the past the devas and the asuras were arrayed for battle.
+sn56.41:3.3 | S: In that battle the gods won and the titans lost. | T: In that battle the devas won and the asuras were defeated.
+sn56.41:3.4 | S: The defeated and terrified titans entered the citadel of the titans through the lotus stalk only to confuse the gods. | T: In their defeat, the asuras were frightened and entered the asura city through the lotus stalk, to the bewilderment of the devas.
+sn56.41:4.1 | S: So mendicants, don’t speculate about the world. | T: “Therefore, bhikkhus, do not reflect about the world, thinking:
+sn56.41:4.2 | S: For example: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: ‘The world is eternal’ or ‘The world is not eternal’; or ‘The world is finite’ or ‘The world is infinite’; or ‘The soul and the body are the same’ or ‘The soul is one thing, the body is another’; or ‘The Tathagata exists after death,’ or ‘The Tathagata does not exist after death,’ or ‘The Tathagata both exists and does not exist after death,’ or ‘The Tathagata neither exists nor does not exist after death.’
+sn56.41:4.3 | S: Why is that? | T: For what reason?
+sn56.41:4.4 | S: Because those thoughts aren’t beneficial or relevant to the fundamentals of the spiritual life. They don’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because, bhikkhus, this reflection is unbeneficial, irrelevant to the fundamentals of the holy life, and does not lead to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn56.41:5.1 | S: When you think something up, you should think: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “When you reflect, bhikkhus, you should reflect: ‘This is suffering’; you should reflect: ‘This is the origin of suffering’; you should reflect: ‘This is the cessation of suffering’; you should reflect: ‘This is the way leading to the cessation of suffering.’
+sn56.41:5.2 | S: Why is that? | T: For what reason?
+sn56.41:5.3 | S: Because those thoughts are beneficial and relevant to the fundamentals of the spiritual life. They lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because, bhikkhus, this reflection is beneficial, relevant to the fundamentals of the holy life, and leads to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn56.41:6.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.41:6.2 | P: Paṭhamaṁ. | T: (none)
+
+## sn56.42
+sn56.42:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was dwelling at Rajagaha on Mount Vulture Peak.
+sn56.42:1.2 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+sn56.42:1.3 | S: “Come, mendicants, let’s go to Inspiration Peak for the day’s meditation.” | T: “Come, bhikkhus, let us go to Paṭibhana Peak for the day’s abiding.”
+sn56.42:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn56.42:1.5 | S: Then the Buddha together with several mendicants went to Inspiration Peak. | T: Then the Blessed One, together with a number of bhikkhus, went to Paṭibhana Peak.
+sn56.42:1.6 | S: A certain mendicant saw the big cliff there | T: A certain bhikkhu saw the steep precipice off Paṭibhana Peak
+sn56.42:1.7 | S: and said to the Buddha, | T: and said to the Blessed One:
+sn56.42:1.8 | S: “Sir, that big cliff is really big and scary. | T: “That precipice is indeed steep, venerable sir; that precipice is extremely frightful.
+sn56.42:1.9 | S: Is there any other cliff bigger and scarier than this one?” | T: But is there, venerable sir, any other precipice steeper and more frightful than that one?”
+sn56.42:1.10 | S: “There is, mendicant.” | T: “There is, bhikkhu.”
+sn56.42:2.1 | S: “But sir, what is it?” | T: “But what, venerable sir, is that precipice steeper and more frightful than that one?”
+sn56.42:2.2 | S: “Mendicant, there are ascetics and brahmins who don’t truly understand about suffering, its origin, its cessation, and the path. | T: “Those ascetics and brahmins, bhikkhu, who do not understand as it really is: ‘This is suffering’; who do not understand as it really is: ‘This is the origin of suffering’; who do not understand as it really is: ‘This is the cessation of suffering’; who do not understand as it really is: ‘This is the way leading to the cessation of suffering’—
+sn56.42:2.3 | S: They take pleasure in choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress. | T: they delight in volitional formations that lead to birth, in volitional formations that lead to aging, in volitional formations that lead to death, in volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:2.4 | S: Since they take pleasure in such choices, they continue to make them. | T: Delighting in such volitional formations, they generate volitional formations that lead to birth, generate volitional formations that lead to aging, generate volitional formations that lead to death, generate volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:2.5 | S: Having made choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. | T: Having generated such volitional formations, they tumble down the precipice of birth, tumble down the precipice of aging, tumble down the precipice of death, tumble down the precipice of sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:2.6 | S: They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: They are not freed from birth, aging, and death; not freed from sorrow, lamentation, pain, displeasure, and despair;
+sn56.42:2.7 | S: They’re not freed from suffering, I say. | T: not freed from suffering, I say.
+sn56.42:3.1 | S: There are ascetics and brahmins who truly understand about suffering, its origin, its cessation, and the path. | T: “But, bhikkhu, those ascetics and brahmins who understand as it really is: ‘This is suffering’ … ‘This is the way leading to the cessation of suffering’—
+sn56.42:3.2 | S: They don’t take pleasure in choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress. | T: they do not delight in volitional formations that lead to birth, nor in volitional formations that lead to aging, nor in volitional formations that lead to death, nor in volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:3.3 | S: Since they don’t take pleasure in such choices, they stop making them. | T: Not delighting in such volitional formations, they do not generate volitional formations that lead to birth, nor generate volitional formations that lead to aging, nor generate volitional formations that lead to death, nor generate volitional formations that lead to sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:3.4 | S: Having stopped making choices that lead to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress, they don’t fall down the cliff of rebirth, old age, and death, of sorrow, lamentation, pain, sadness, and distress. | T: Not having generated such volitional formations, they do not tumble down the precipice of birth, nor tumble down the precipice of aging, nor tumble down the precipice of death, nor tumble down the precipice of sorrow, lamentation, pain, displeasure, and despair.
+sn56.42:3.5 | S: They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: They are freed from birth, aging, and death; freed from sorrow, lamentation, pain, displeasure, and despair;
+sn56.42:3.6 | S: They’re freed from suffering, I say. | T: freed from suffering, I say.
+sn56.42:4.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’”
+sn56.42:4.2 | P: Dutiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '441,660p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-088.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+33,332
+0 lines reported.

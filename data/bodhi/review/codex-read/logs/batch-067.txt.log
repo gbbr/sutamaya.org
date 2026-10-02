@@ -1,0 +1,592 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8b-1bbe-78c2-a451-cc7b6563822c
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole batch, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn1.73
+sn1.73:1.1 | S: “What’s a person’s best wealth? | T: “What here is a man’s best treasure?
+sn1.73:1.2 | S: What brings happiness when practiced well? | T: What practised well brings happiness?
+sn1.73:1.3 | S: What’s the sweetest taste of all? | T: What is really the sweetest of tastes?
+sn1.73:1.4 | S: The one they say has the best life: how do they live?” | T: How lives the one whom they say lives best?”
+sn1.73:2.1 | S: “Faith here is a person’s best wealth. | T: “Faith is here a man’s best treasure;
+sn1.73:2.2 | S: The teaching brings happiness when practiced well. | T: Dhamma practised well brings happiness;
+sn1.73:2.3 | S: Truth is the sweetest taste of all. | T: Truth is really the sweetest of tastes;
+sn1.73:2.4 | S: The one they say has the best life lives by wisdom.” | T: One living by wisdom they say lives best.”
+
+## sn1.74
+sn1.74:1.1 | S: “What’s the best of things that rise? | T: A devatā: “What is the best of things that rise up?
+sn1.74:1.2 | S: And what’s the finest thing to fall? | T: What excels among things that fall down?
+sn1.74:1.3 | S: And what of the things that go forth? | T: What is the best of things that go forth?
+sn1.74:1.4 | S: And who’s the finest speaker?” | T: Who is the most excellent of speakers?”
+sn1.74:2.1 | S: “A seed’s the best of things that rise. | T: Another devatā: “A seed is the best of things that rise up;
+sn1.74:2.2 | S: Rain’s the finest thing to fall. | T: Rain excels among things that fall down;
+sn1.74:2.3 | S: Cattle, of things that go forth. | T: Cattle are the best of things that go forth;
+sn1.74:2.4 | S: And a child is the finest speaker.” | T: A son is the most excellent of speakers.”
+sn1.74:3.1 | S: “Knowledge is best of things that rise. | T: The Blessed One: “Knowledge is the best of things that rise up;
+sn1.74:3.2 | S: Ignorance the finest thing to fall. | T: Ignorance excels among things that fall down;
+sn1.74:3.3 | S: The Saṅgha, of things that go forth. | T: The Saṅgha is the best of things that go forth;
+sn1.74:3.4 | S: And the Buddha is the finest speaker.” | T: The most excellent of speakers is the Buddha.”
+
+## sn1.75
+sn1.75:1.1 | S: “Why are so many people here afraid, | T: “Why are so many people here afraid
+sn1.75:1.2 | S: when the path has been taught <j>with so many dimensions? | T: When the path has been taught with many bases?
+sn1.75:1.3 | S: I ask you, Gotama, whose wisdom is vast: | T: I ask you, O Gotama, broad of wisdom:
+sn1.75:1.4 | S: Standing on what need one not fear the next world?” | T: On what should one take a stand To have no fear of the other world?”
+sn1.75:2.1 | S: “When speech and mind are directed right, | T: “Having directed speech and mind rightly,
+sn1.75:2.2 | S: and you don’t do anything bad with the body | T: Doing no evil deeds with the body,
+sn1.75:2.3 | S: while dwelling at home with plenty of food and drink. | T: Dwelling at home with ample food and drink,
+sn1.75:2.4 | S: Faithful, gentle, charitable, and bountiful: | T: Faithful, gentle, generous, amiable:
+sn1.75:2.5 | S: one who stands on these four principles, | T: When one stands on these four things,
+sn1.75:2.6 | S: who stands on the teaching <j>need not fear the next world.” | T: Standing firmly on the Dhamma, One need not fear the other world.”
+
+## sn1.76
+sn1.76:1.1 | S: “What ages, what does not age? | T: “What decays, what does not decay?
+sn1.76:1.2 | S: What’s called a deviation? | T: What is declared the deviant path?
+sn1.76:1.3 | S: What’s a roadblock for skillful qualities? | T: What is the impediment to wholesome states?
+sn1.76:1.4 | S: What is ending day and night? | T: What undergoes destruction night and day?
+sn1.76:1.5 | S: What’s the stain of celibacy? | T: What is the stain of the holy life?
+sn1.76:1.6 | S: What’s the waterless bath? | T: What is the bath without water?
+sn1.76:2.1 | S: How many holes are there in the world, | T: “How many fissures are there in the world
+sn1.76:2.2 | S: where one’s wealth leaks out? | T: Wherein the mind does not stand firm?
+sn1.76:2.3 | S: We’ve come to ask the worthy sir: | T: We’ve come to ask the Blessed One this:
+sn1.76:2.4 | S: how are we to understand this?” | T: How are we to understand it?”
+sn1.76:3.1 | S: “The physical form of mortals gets old, | T: “The physical form of mortals decays,
+sn1.76:3.2 | S: but their name and clan don’t. | T: Their name and clan does not decay.
+sn1.76:3.3 | S: Lust is called a deviation, | T: Lust is declared the deviant path,
+sn1.76:4.1 | S: and greed is a roadblock for skillful qualities. | T: Greed the impediment to wholesome states.
+sn1.76:4.2 | S: Youth is ending day and night. | T: “Life undergoes destruction night and day;
+sn1.76:4.3 | S: Women are the stain of chastity, | T: Women are the stain of the holy life:
+sn1.76:4.4 | S: to which this generation clings. | T: Here’s where menfolk are enmeshed.
+sn1.76:4.5 | S: Fervor and chastity | T: Austerity and the holy life—
+sn1.76:4.6 | S: are the waterless bath. | T: That is the bath without water.
+sn1.76:5.1 | S: There are six holes in the world, | T: “There are six fissures in the world
+sn1.76:5.2 | S: where one’s wealth leaks out: | T: Wherein the mind does not stand firm:
+sn1.76:5.3 | S: laziness and negligence, | T: Laziness and negligence,
+sn1.76:5.4 | S: lack of initiative and lack of restraint, | T: Indolence, lack of self-control,
+sn1.76:5.5 | S: sleepiness and sloth. | T: Drowsiness and lethargy—
+sn1.76:5.6 | S: You should completely get rid of these holes!” | T: Avoid these fissures completely.”
+
+## sn1.77
+sn1.77:1.1 | S: “What is authority in the world? | T: “What is sovereignty in the world?
+sn1.77:1.2 | S: What’s the best of valuables? | T: What ranks as the best of goods?
+sn1.77:1.3 | S: What in the world is a rusty sword? | T: What in the world is a rusty sword?
+sn1.77:1.4 | S: Who is a pest in the world? | T: What in the world is considered a plague?
+sn1.77:2.1 | S: Who gets arrested when they take things away? | T: “Whom do they arrest when he takes away?
+sn1.77:2.2 | S: And who is loved when they take things away? | T: And who, when he takes away, is dear?
+sn1.77:2.3 | S: And who is approved by the astute | T: In whom do the wise take delight
+sn1.77:2.4 | S: when they come again and again?” | T: When he returns again and again?”
+sn1.77:3.1 | S: “Sway is authority in the world. | T: “Mastery is sovereignty in the world;
+sn1.77:3.2 | S: A woman is the best of valuables. | T: A woman ranks as the best of goods;
+sn1.77:3.3 | S: Anger in the world is a rusty sword. | T: In the world anger is a rusty sword;
+sn1.77:3.4 | S: A bandit is a pest in the world. | T: Thieves in the world are considered a plague.
+sn1.77:4.1 | S: A bandit gets arrested when they take things away. | T: “They arrest a thief when he takes away,
+sn1.77:4.2 | S: And an ascetic is loved when they take things away. | T: But an ascetic who takes away is dear.
+sn1.77:4.3 | S: An ascetic is approved by the astute | T: The wise take delight in an ascetic
+sn1.77:4.4 | S: when they come again and again.” | T: When he returns again and again.”
+
+## sn1.78
+sn1.78:1.1 | S: “What should one who wants what’s best <j>not give away? | T: “What should he not give who loves the good?
+sn1.78:1.2 | S: What should a mortal not forsake? | T: What should a mortal not relinquish?
+sn1.78:1.3 | S: What should be released when it’s good, | T: What should one release when it’s good,
+sn1.78:1.4 | S: but not when it’s bad?” | T: But not release when it’s bad?”
+sn1.78:2.1 | S: “A man shouldn’t give away himself. | T: “A person should not give himself away;
+sn1.78:2.2 | S: He shouldn’t forsake himself. | T: He should not relinquish himself.
+sn1.78:2.3 | S: Speech should be released when it’s good, | T: One should release speech that is good,
+sn1.78:2.4 | S: but not when it’s bad.” | T: But not speech that is bad.”
+
+## sn1.79
+sn1.79:1.1 | S: “What binds the provisions for a journey? | T: “What secures provisions for a journey?
+sn1.79:1.2 | S: What’s the vault of wealth? | T: What is the abode of wealth?
+sn1.79:1.3 | S: What drags a person around? | T: What drags a person around?
+sn1.79:1.4 | S: What in the world is hard to give up? | T: What in the world is hard to discard?
+sn1.79:1.5 | S: With what are ordinary beings bound, | T: By what are many beings bound
+sn1.79:1.6 | S: like birds in a snare?” | T: Like birds caught in a snare?”
+sn1.79:2.1 | S: “Faith binds the provisions for a journey. | T: “Faith secures provisions for a journey;
+sn1.79:2.2 | S: Majesty is the vault of wealth. | T: Fortune is the abode of wealth;
+sn1.79:2.3 | S: Desire drags a person around. | T: Desire drags a person around;
+sn1.79:2.4 | S: Desire in the world is hard to give up. | T: Desire is hard to discard in the world.
+sn1.79:2.5 | S: Ordinary beings are bound by desire, | T: By desire many beings are bound
+sn1.79:2.6 | S: like birds in a snare.” | T: Like birds caught in a snare.”
+
+## sn1.7
+sn1.7:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn1.7:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, that devatā recited this verse in the presence of the Blessed One:
+sn1.7:2.1 | S: “Those have not deciphered the teachings | T: “Those who have not penetrated things,
+sn1.7:2.2 | S: may be led astray by the doctrines of others. | T: Who may be led into others’ doctrines,
+sn1.7:2.3 | S: Asleep, they have not woken up: | T: Fast asleep, they have not yet awakened:
+sn1.7:2.4 | S: it is time for them to wake!” | T: It is time for them to awaken.”
+sn1.7:3.1 | S: “Those who have well deciphered the teachings | T: The Blessed One: “Those who have penetrated things well,
+sn1.7:3.2 | S: won’t be led astray by the doctrines of others. | T: Who cannot be led into others’ doctrines,
+sn1.7:3.3 | S: They have woken up, they rightly know, | T: Those awakened ones, having rightly known,
+sn1.7:3.4 | S: smoothly they walk in the rough.” | T: Fare evenly amidst the uneven.”
+
+## sn1.80
+sn1.80:1.1 | S: “What’s the lamp for the world? | T: “What is the source of light in the world?
+sn1.80:1.2 | S: What in the world is wakeful? | T: What in the world is the wakeful one?
+sn1.80:1.3 | S: Who are one’s work colleagues? | T: What are the colleagues of those living by work?
+sn1.80:1.4 | S: What is one’s walk of life? | T: What is one’s course of movement?
+sn1.80:2.1 | S: What nurtures the idle and the tireless, | T: “What nurtures both the slack and active
+sn1.80:2.2 | S: like a mother her child? | T: Just as a mother nurtures her child?
+sn1.80:2.3 | S: By what do the creatures who live off the earth | T: The creatures who dwell on the earth—
+sn1.80:2.4 | S: sustain their life?” | T: By what do they sustain their life?”
+sn1.80:3.1 | S: “Wisdom is the lamp for the world. | T: “Wisdom is the source of light in the world;
+sn1.80:3.2 | S: Mindfulness in the world is wakeful. | T: Mindfulness, in the world, is the wakeful one;
+sn1.80:3.3 | S: Cattle are one’s work colleagues, | T: Cattle are the colleagues of those living by work;
+sn1.80:3.4 | S: and the furrow is one’s walk of life. | T: One’s course of movement is the furrow.
+sn1.80:4.1 | S: Rain nurtures the idle and the tireless, | T: “Rain nurtures both the slack and active
+sn1.80:4.2 | S: like a mother her child. | T: Just as a mother nurtures her child.
+sn1.80:4.3 | S: The creatures who live off the earth | T: Those creatures who dwell on the earth
+sn1.80:4.4 | S: sustain their life by rain.” | T: Sustain their life by rain.”
+
+## sn1.8
+sn1.8:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn1.8:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, that devatā recited this verse in the presence of the Blessed One:
+sn1.8:2.1 | S: “Those who are very confused about the teachings | T: “Those who are utterly muddled about things,
+sn1.8:2.2 | S: may be led astray by the doctrines of others. | T: Who may be led into others’ doctrines,
+sn1.8:2.3 | S: Asleep, they have not woken up: | T: Fast asleep, they have not yet awakened:
+sn1.8:2.4 | S: it is time for them to wake!” | T: It is time for them to awaken.”
+sn1.8:3.1 | S: “Those who are unconfused about the teachings, | T: The Blessed One: “Those who aren’t muddled about things,
+sn1.8:3.2 | S: won’t be led astray by the doctrines of others. | T: Who cannot be led into others’ doctrines,
+sn1.8:3.3 | S: They have woken up, they rightly know, | T: Those awakened ones, having rightly known,
+sn1.8:3.4 | S: smoothly they walk in the rough.” | T: Fare evenly amidst the uneven.”
+
+## sn1.9
+sn1.9:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn1.9:1.2 | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, that devatā recited this verse in the presence of the Blessed One:
+sn1.9:2.1 | S: “One fond of conceit can’t be tamed, | T: “There is no taming here for one fond of conceit,
+sn1.9:2.2 | S: no sage is lacking immersion. | T: Nor is there sagehood for the unconcentrated:
+sn1.9:2.3 | S: Living negligent alone in the wilderness, | T: Though dwelling alone in the forest, heedless,
+sn1.9:2.4 | S: they can’t cross beyond Death’s dominion.” | T: One cannot cross beyond the realm of Death.”
+sn1.9:3.1 | S: “Having given up conceit, serene within oneself, | T: The Blessed One: “Having abandoned conceit, well concentrated,
+sn1.9:3.2 | S: with a good heart, everywhere free; | T: With lofty mind, everywhere released:
+sn1.9:3.3 | S: living diligent alone in the wilderness, | T: While dwelling alone in the forest, diligent,
+sn1.9:3.4 | S: they cross beyond Death’s dominion.” | T: One can cross beyond the realm of Death.”
+
+## sn11.10
+sn11.10:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.10:1.2 | S: “Once upon a time, mendicants, several seers who were ethical, of good character, settled in leaf huts on the ocean shore. | T: “Bhikkhus, once in the past a number of seers who were virtuous and of good character had settled down in leaf huts along the shore of the ocean.
+sn11.10:1.3 | S: Now at that time a battle was fought between the gods and the titans. | T: Now on that occasion the devas and the asuras were arrayed for a battle.
+sn11.10:1.4 | S: Then the seers thought, | T: Then it occurred to those seers who were virtuous and of good character:
+sn11.10:1.5 | S: ‘The gods are principled, the titans are unprincipled. | T: ‘The devas are righteous, the asuras unrighteous.
+sn11.10:1.6 | S: We may be at risk from the titans. | T: There may be danger to us from the asuras.
+sn11.10:1.7 | S: Why don’t we approach Sambara, lord of titans, and beg him for a pledge of safety?’ | T: Let us approach Sambara, lord of the asuras, and ask him for a guarantee of safety.’
+sn11.10:1.8 | S: Then, as easily as a strong person would extend or contract their arm, those seers vanished from those leaf huts on the ocean shore and reappeared in Sambara’s presence. | T: “Then, bhikkhus, just as quickly as a strong man might extend his drawn-in arm or draw in his extended arm, those seers who were virtuous and of good character disappeared from their leaf huts along the shore of the ocean and reappeared in the presence of Sambara, lord of the asuras.
+sn11.10:1.9 | S: Then those seers addressed Sambara in verse: | T: Then those seers addressed Sambara in verse:
+sn11.10:2.1 | S: ‘The seers have come to Sambara | T: “‘The seers who have come to Sambara
+sn11.10:2.2 | S: to beg for a pledge of safety. | T: Ask him for a guarantee of safety.
+sn11.10:2.3 | S: For you can give them what you wish, | T: For you can give them what you wish,
+sn11.10:2.4 | S: whether danger or safety.’ | T: Whether it be danger or safety.’
+sn11.10:3.1 | S: ‘There is no safety for seers, | T: Sambara: “‘I’ll grant no safety to the seers,
+sn11.10:3.2 | S: the hated associates of Sakka! | T: For they are hated devotees of Sakka;
+sn11.10:3.3 | S: Though you beg me for your safety, | T: Though you appeal to me for safety,
+sn11.10:3.4 | S: I’ll only give you fear!’ | T: I’ll give you only danger.’
+sn11.10:4.1 | S: ‘Though we beg you for our safety, | T: The seers: “‘Though we have asked for safety,
+sn11.10:4.2 | S: you give us only fear. | T: You give us only danger.
+sn11.10:4.3 | S: This is what we get from you: | T: We receive this at your hands:
+sn11.10:4.4 | S: may endless peril come to you! | T: May ceaseless danger come to you!
+sn11.10:5.1 | S: Whatever kind of seed you sow, | T: “‘Whatever sort of seed is sown,
+sn11.10:5.2 | S: that is the fruit you reap. | T: That is the sort of fruit one reaps:
+sn11.10:5.3 | S: A doer of good gets good, | T: The doer of good reaps good;
+sn11.10:5.4 | S: a doer of bad gets bad. | T: The doer of evil reaps evil.
+sn11.10:5.5 | S: You, my dear, have sown your own seed, | T: By you, dear, has the seed been sown;
+sn11.10:5.6 | S: now you’ll experience the fruit.’ | T: Thus you will experience the fruit.’
+sn11.10:6.1 | S: Then those seers, having cursed Sambara, as easily as a strong person would extend or contract their arm, vanished from Sambara’s presence and reappeared in those leaf huts on the ocean shore. | T: “Then, bhikkhus, having put a curse on Sambara, lord of the asuras, just as quickly as a strong man might extend his drawn-in arm or draw in his extended arm, those seers who were virtuous and of good character disappeared from the presence of Sambara and reappeared in their leaf huts on the shore of the ocean.
+sn11.10:6.2 | S: But after being cursed by the seers, Sambara woke in alarm three times that night.” | T: But after being cursed by those seers who were virtuous and of good character, Sambara, lord of the asuras, was gripped by alarm three times in the course of the night.”
+sn11.10:6.3 | P: Paṭhamo vaggo. | T: (none)
+sn11.10:7.0 | P: Tassuddānaṁ | T: (none)
+sn11.10:7.1 | P: Suvīraṁ susīmañceva, | T: (none)
+sn11.10:7.2 | P: dhajaggaṁ vepacittino; | T: (none)
+sn11.10:7.3 | P: Subhāsitaṁ jayañceva, | T: (none)
+sn11.10:7.4 | P: kulāvakaṁ nadubbhiyaṁ; | T: (none)
+sn11.10:7.5 | P: Verocana asurindo, | T: (none)
+sn11.10:7.6 | P: isayo araññakañceva; | T: (none)
+sn11.10:7.7 | P: Isayo ca samuddakāti. | T: (none)
+
+## sn11.11
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn11.11:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.11:1.2 | S: “Mendicants, in a former life, when Sakka was a human being, he undertook seven vows. And it was because of undertaking these that he achieved the status of Sakka. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he adopted and undertook seven vows by the undertaking of which he achieved the status of Sakka.
+sn11.11:1.3 | S: What seven? | T: What were the seven vows?
+sn11.11:1.4 | S: As long as I live, may I support my parents. | T: (1) “‘As long as I live may I support my parents.’
+sn11.11:1.5 | S: As long as I live, may I honor the elders in the family. | T: (2) “‘As long as I live may I respect the family elders.’
+sn11.11:1.6 | S: As long as I live, may I speak gently. | T: (3) “‘As long as I live may I speak gently.’
+sn11.11:1.7 | S: As long as I live, may I not backbite. | T: (4) “‘As long as I live may I not speak divisively.’
+sn11.11:1.8 | S: As long as I live, may I live at home with heart rid of the stain of stinginess, freely generous, open-handed, loving to let go, committed to charity, loving to give and to share. | T: (5) “‘As long as I live may I dwell at home with a mind devoid of the stain of stinginess, freely generous, open-handed, delighting in relinquishment, devoted to charity, delighting in giving and sharing.’
+sn11.11:1.9 | S: As long as I live, may I speak the truth. | T: (6) “‘As long as I live may I speak the truth.’
+sn11.11:1.10 | S: As long as I live, may I be free of anger, or should anger arise, may I quickly get rid of it. | T: (7) “‘As long as I live may I be free from anger, and if anger should arise in me may I dispel it quickly.’
+sn11.11:1.11 | S: In a former life, when Sakka was a human being, he undertook seven vows. And it was because of undertaking these that he achieved the status of Sakka. | T: “In the past, bhikkhus, when Sakka, lord of the devas, was a human being, he adopted and undertook these seven vows by the undertaking of which he achieved the status of Sakka.
+sn11.11:2.1 | S: A child who respects their parents, | T: “When a person supports his parents,
+sn11.11:2.2 | S: and honors the elders in the family, | T: And respects the family elders;
+sn11.11:2.3 | S: whose speech is gentle and courteous, | T: When his speech is gentle and courteous,
+sn11.11:2.4 | S: and has given up backbiting; | T: And he refrains from divisive words;
+sn11.11:3.1 | S: who’s committed to getting rid of stinginess, | T: When he strives to remove meanness,
+sn11.11:3.2 | S: is truthful, and has mastered anger: | T: Is truthful, and vanquishes anger,
+sn11.11:3.3 | S: the gods of the thirty-three declare | T: The Tavatiṁsa devas call him
+sn11.11:3.4 | S: them to be a true person.” | T: Truly a superior person.”
+
+## sn11.15
+sn11.15:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove.
+sn11.15:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Sakka, lord of the devas, approached the Blessed One, paid homage to him, stood to one side, and said to him:
+sn11.15:1.3 | S: “Sir, what is a delightful place?” | T: “Venerable sir, what is a delightful place?”
+sn11.15:2.1 | S: “Shrines in parks and forests, | T: The Blessed One: “Shrines in parks and woodland shrines,
+sn11.15:2.2 | S: well-made lotus ponds, | T: Well-constructed lotus ponds:
+sn11.15:2.3 | S: are not worth a sixteenth part | T: These are not worth a sixteenth part
+sn11.15:2.4 | S: of a delightful human being. | T: Of a delightful human being.
+sn11.15:3.1 | S: Whether in village or wilderness, | T: “Whether in a village or forest,
+sn11.15:3.2 | S: in a valley or the uplands, | T: In a valley or on the plain—
+sn11.15:3.3 | S: wherever the perfected ones live | T: Wherever the arahants dwell
+sn11.15:3.4 | S: is a delightful place.” | T: Is truly a delightful place.”
+
+## sn11.16
+sn11.16:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was dwelling at Rajagaha on Mount Vulture Peak.
+sn11.16:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, | T: Then Sakka, lord of the devas, approached the Blessed One, paid homage to him, and stood to one side.
+sn11.16:1.3 | S: and addressed him in verse: | T: Standing to one side, he addressed the Blessed One in verse:
+sn11.16:2.1 | S: “For humans, those merit-seeking creatures, | T: “For those people who bestow alms,
+sn11.16:2.2 | S: who sponsor sacrifices, | T: For living beings in quest of merit,
+sn11.16:2.3 | S: making worldly merit, | T: Performing merit of the mundane type,
+sn11.16:2.4 | S: where is a gift very fruitful?” | T: Where does a gift bear great fruit?”
+sn11.16:3.1 | S: “Four practicing the path, | T: The Blessed One: “The four practising the way
+sn11.16:3.2 | S: and four established in the fruit. | T: And the four established in the fruit:
+sn11.16:3.3 | S: This is the upright Saṅgha, | T: This is the Saṅgha of upright conduct
+sn11.16:3.4 | S: with wisdom, ethics, and immersion. | T: Endowed with wisdom and virtue.
+sn11.16:4.1 | S: For humans, those merit-seeking creatures, | T: “For those people who bestow alms,
+sn11.16:4.2 | S: who sponsor sacrifices, | T: For living beings in quest of merit,
+sn11.16:4.3 | S: making worldly merit, | T: Performing merit of the mundane type,
+sn11.16:4.4 | S: what is given to the Saṅgha is very fruitful.” | T: A gift to the Saṅgha bears great fruit.”
+
+## sn11.17
+sn11.17:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove.
+sn11.17:1.2 | S: Now at that time the Buddha had gone into retreat for the day’s meditation. | T: Now on that occasion the Blessed One had gone for his day’s abiding and was in seclusion.
+sn11.17:1.3 | S: Then Sakka, lord of gods, and the divinity Sahampati approached the Buddha and stationed themselves one by each door-post. | T: Then Sakka, lord of the devas, and Brahma Sahampati approached the Blessed One and stood one at each doorpost.
+sn11.17:1.4 | S: Then Sakka spoke this verse in the Buddha’s presence: | T: Then Sakka, lord of the devas, recited this verse in the presence of the Blessed One:
+sn11.17:2.1 | S: “Rise, hero! Victor in battle, with burden put down, | T: “Rise up, O hero, victor in battle! Your burden lowered,
+sn11.17:2.2 | S: wander the world free of debt. | T: debt-free one, wander in the world.
+sn11.17:2.3 | S: Your mind is fully liberated, | T: Your mind is fully liberated
+sn11.17:2.4 | S: like the moon on the fifteenth night.” | T: Like the moon on the fifteenth night.”
+sn11.17:3.1 | S: “Lord of gods, that’s not how to pay homage to the Realized Ones. | T: Brahma Sahampati: “It is not in such a way that the Tathagatas are to be venerated, lord of the devas.
+sn11.17:3.2 | S: This is how it should be done: | T: The Tathagatas are to be venerated thus:
+sn11.17:4.1 | S: ‘Rise, hero! Victor in battle, caravan leader, | T: “Rise up, O hero, victor in battle! O caravan leader,
+sn11.17:4.2 | S: wander the world free of debt. | T: debt-free one, wander in the world.
+sn11.17:4.3 | S: Let the Blessed One teach the Dhamma! | T: Teach the Dhamma, O Blessed One:
+sn11.17:4.4 | S: There will be those who understand!’” | T: There will be those who will understand.”
+
+## sn11.21
+sn11.21:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove.
+sn11.21:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, | T: Then Sakka, lord of the devas, approached the Blessed One, paid homage to him, and stood to one side.
+sn11.21:1.3 | S: and addressed him in verse: | T: Standing to one side, Sakka, lord of the devas, addressed the Blessed One in verse:
+sn11.21:2.1 | S: “When what is slain do you sleep at ease? | T: “Having slain what does one sleep soundly?
+sn11.21:2.2 | S: When what is slain is there no sorrow? | T: Having slain what does one not sorrow?
+sn11.21:2.3 | S: What is the one thing | T: What is the one thing,
+sn11.21:2.4 | S: whose killing you approve?” | T: O Gotama, Whose killing you approve?”
+sn11.21:3.1 | S: “When anger’s slain you sleep at ease. | T: The Blessed One: “Having slain anger, one sleeps soundly;
+sn11.21:3.2 | S: When anger’s slain there is no sorrow. | T: Having slain anger, one does not sorrow;
+sn11.21:3.3 | S: Anger has a poisonous root | T: The killing of anger,
+sn11.21:3.4 | S: and a sweet tip, O Vāsava. | T: O Vasava, With its poisoned root and honeyed tip:
+sn11.21:3.5 | S: The noble ones praise its killing, | T: This is the killing the noble ones praise,
+sn11.21:3.6 | S: for when it’s slain there is no sorrow.” | T: For having slain that, one does not sorrow.”
+
+## sn11.22
+sn11.22:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove.
+sn11.22:1.2 | P: Tatra kho …pe… etadavoca: | T: There the Blessed One said this:
+sn11.22:1.3 | S: “Once upon a time, mendicants, there was a native spirit who was ugly and deformed. He sat on the throne of Sakka, lord of gods. | T: “Bhikkhus, once in the past a certain ugly deformed yakkha sat down on the seat of Sakka, lord of the devas.
+sn11.22:1.4 | S: But the gods of the thirty-three complained, grumbled, and objected, | T: Thereupon the Tavatiṁsa devas found fault with this, grumbled, and complained about it, saying:
+sn11.22:1.5 | S: ‘Oh lord, how incredible, how amazing! | T: ‘It is wonderful indeed, sir! It is amazing indeed, sir!
+sn11.22:1.6 | S: This ugly and deformed spirit is sitting on the throne of Sakka, the lord of gods.’ | T: This ugly deformed yakkha has sat down on the seat of Sakka, lord of the devas!’
+sn11.22:1.7 | S: But the more the gods complained, the more attractive, good-looking, and lovely that spirit became. | T: But to whatever extent the Tavatiṁsa devas found fault with this, grumbled, and complained about it, to the same extent that yakkha became more and more handsome, more and more comely, more and more graceful.
+sn11.22:2.1 | S: So the gods went up to Sakka and told him what had happened. He replied, | T: “Then, bhikkhus, the Tavatiṁsa devas approached Sakka and said to him:
+sn11.22:2.2 | P: ‘idha te, mārisa, aññataro yakkho dubbaṇṇo okoṭimako sakkassa devānamindassa āsane nisinno. | T: ‘Here, dear sir, an ugly deformed yakkha has sat down on your seat….
+sn11.22:2.3 | P: Tatra sudaṁ, mārisa, devā tāvatiṁsā ujjhāyanti khiyyanti vipācenti: | T: (none)
+sn11.22:2.4 | P: “acchariyaṁ vata bho, abbhutaṁ vata bho. | T: (none)
+sn11.22:2.5 | P: Ayaṁ yakkho dubbaṇṇo okoṭimako sakkassa devānamindassa āsane nisinno”ti. | T: (none)
+sn11.22:2.6 | P: Yathā yathā kho, mārisa, devā ujjhāyanti khiyyanti vipācenti tathā tathā so yakkho abhirūpataro ceva hoti dassanīyataro ca pāsādikataro cāti. | T: But to whatever extent the devas found fault with this … that yakkha became more and more handsome, more and more comely, more and more graceful.’—
+sn11.22:2.7 | S: ‘Surely, good fellow, that must be the anger-eating spirit!’ | T: ‘That must be the anger-eating yakkha.’
+sn11.22:3.1 | S: Then Sakka went up to that spirit, arranged his robe over one shoulder, knelt on his right knee, raised his joined palms toward the anger-eating spirit, and pronounced his name three times: | T: “Then, bhikkhus, Sakka, lord of the devas, approached that anger-eating yakkha. Having approached, he arranged his upper robe over one shoulder, knelt down with his right knee on the ground, and, raising his joined hands in reverential salutation towards that yakkha, he announced his name three times:
+sn11.22:3.2 | S: ‘Good fellow, I am Sakka, lord of gods! Good fellow, I am Sakka, the lord of gods!’ | T: ‘I, dear sir, am Sakka, lord of the devas! I, dear sir, am Sakka, lord of the devas!’
+sn11.22:3.3 | S: But the more Sakka pronounced his name, the uglier and more deformed the spirit became, | T: To whatever extent Sakka announced his name, to the same extent that yakkha became uglier and uglier and more and more deformed
+sn11.22:3.4 | S: until eventually it vanished right there. | T: until he disappeared right there.
+sn11.22:3.5 | S: Then Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Then, bhikkhus, having sat down on his own seat, instructing the Tavatiṁsa devas, Sakka, lord of the devas, on that occasion recited these verses:
+sn11.22:4.1 | S: ‘My mind isn’t easily upset; | T: “‘I am not one afflicted in mind,
+sn11.22:4.2 | S: I’m not easily drawn into the maelstrom. | T: Nor easily drawn by anger’s whirl.
+sn11.22:4.3 | S: I don’t get angry for long, | T: I never become angry for long,
+sn11.22:4.4 | S: anger doesn’t last in me. | T: Nor does anger persist in me.
+sn11.22:5.1 | S: When I do get angry I don’t speak harshly, | T: “‘When I’m angry I don’t speak harshly
+sn11.22:5.2 | S: nor do I advertise my own virtues. | T: And I don’t praise my virtues.
+sn11.22:5.3 | S: I carefully restrain myself | T: I keep myself well restrained
+sn11.22:5.4 | S: out of regard for my own welfare.’” | T: Out of regard for my own good.’”
+
+## sn11.9
+sn11.9:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn11.9:1.2 | S: “Once upon a time, mendicants, several seers who were ethical, of good character, settled in leaf huts in a wilderness region. | T: “Bhikkhus, once in the past a number of seers who were virtuous and of good character had settled down in leaf huts in a tract of forest.
+sn11.9:1.3 | S: Then Sakka, lord of gods, and Vepacitti, lord of titans, went to those seers. | T: Then Sakka, lord of the devas, and Vepacitti, lord of the asuras, approached those seers.
+sn11.9:1.4 | S: Vepacitti put on his lined sandals, strapped on his sword, and, carrying a sunshade, entered the hermitage through the main gate. He walked right past those seers, keeping them at arm’s length. | T: “Vepacitti, lord of the asuras, put on his boots, bound his sword on tightly, and, with a parasol borne aloft, entered the hermitage through the main gate; then, having turned his left side towards them, he walked past those seers who were virtuous and of good character.
+sn11.9:1.5 | S: Sakka took off his lined sandals, gave his sword to others, and, putting down his sunshade, entered the hermitage through the same gate. He stood downwind of those seers, revering them with cupped palms. | T: But Sakka, lord of the devas, took off his boots, handed over his sword to others, lowered his parasol, and entered the hermitage through an ordinary gate; then he stood on the lee side, raising his joined hands in reverential salutation, paying homage to those seers who were virtuous and of good character.
+sn11.9:1.6 | S: Then those seers addressed Sakka in verse: | T: “Then, bhikkhus, those seers addressed Sakka in verse:
+sn11.9:2.1 | S: ‘When seers have been long initiated, | T: “‘The odour of the seers long bound by their vows,
+sn11.9:2.2 | S: the odor of their bodies goes with the gale. | T: Emitted from their bodies, goes with the wind.
+sn11.9:2.3 | S: You’d better leave, O thousand-eyed! | T: Turn away from here, O thousand-eyed god,
+sn11.9:2.4 | S: The odor of the seers is unclean, king of gods.’ | T: For the seers’ odour is foul, O deva-king.’
+sn11.9:3.1 | S: ‘When seers have been long initiated, | T: Sakka: “‘Let the odour of the seers long bound by their vows,
+sn11.9:3.2 | S: let the odor of their bodies go with the gale. | T: Emitted from their bodies, go with the wind;
+sn11.9:3.3 | S: We yearn for this odor, sirs, | T: We yearn for this odour, O venerable sirs,
+sn11.9:3.4 | S: like a colorful crown of flowers. | T: As for a garland of flowers on the head.
+sn11.9:3.5 | S: The gods don’t see it as repulsive.’” | T: The devas do not perceive it as repulsive.’”
+
+## sn12.11
+sn12.11:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.11:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. … | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park….
+sn12.11:1.3 | S: “Mendicants, these four fuels maintain sentient beings that have been born and help those about to be born. | T: “Bhikkhus, there are these four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:1.4 | S: What four? | T: What four?
+sn12.11:1.5 | S: Edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: The nutriment edible food, gross or subtle; second, contact; third, mental volition; fourth, consciousness.
+sn12.11:1.6 | S: These are the four fuels that maintain sentient beings that have been born and help those about to be born. | T: These are the four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:2.1 | S: What is the source, origin, birthplace, and inception of these four fuels? | T: “Bhikkhus, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.2 | S: Craving. | T: These four kinds of nutriment have craving as their source, craving as their origin; they are born and produced from craving.
+sn12.11:2.3 | S: And what is the source, origin, birthplace, and inception of craving? | T: “And this craving has what as its source, what as its origin, from what is it born and produced?
+sn12.11:2.4 | S: Feeling. | T: This craving has feeling as its source, feeling as its origin; it is born and produced from feeling.
+sn12.11:2.5 | S: And what is the source of feeling? | T: “And this feeling has what as its source…?
+sn12.11:2.6 | S: Contact. | T: Feeling has contact as its source….
+sn12.11:2.7 | S: And what is the source of contact? | T: And this contact has what as its source…?
+sn12.11:2.8 | S: The six sense fields. | T: Contact has the six sense bases as its source….
+sn12.11:2.9 | S: And what is the source of the six sense fields? | T: And these six sense bases have what as their source…?
+sn12.11:2.10 | S: Name and form. | T: The six sense bases have name-and-form as their source….
+sn12.11:2.11 | S: And what is the source of name and form? | T: And this name-and-form has what as its source…?
+sn12.11:2.12 | S: Consciousness. | T: Name-and-form has consciousness as its source….
+sn12.11:2.13 | S: And what is the source of consciousness? | T: And this consciousness has what as its source…?
+sn12.11:2.14 | S: Choices. | T: Consciousness has volitional formations as its source….
+sn12.11:2.15 | S: And what is the source of choices? | T: And these volitional formations have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.16 | S: Ignorance. | T: Volitional formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+sn12.11:3.1 | S: And so, mendicants, ignorance is a requirement for choices. | T: “Thus, bhikkhus, with ignorance as condition, volitional formations come to be;
+sn12.11:3.2 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.11:3.3 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.11:3.4 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.11:3.5 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.11:3.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.11:3.7 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.15
+sn12.15:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.15:1.2 | S: Then Venerable Kaccānagotta went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Kaccanagotta approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.15:1.3 | S: “Sir, they speak of this thing called ‘right view’. | T: “Venerable sir, it is said, ‘right view, right view.’
+sn12.15:1.4 | S: How is right view defined?” | T: In what way, venerable sir, is there right view?”
+sn12.15:2.1 | S: “Kaccāna, this world mostly relies on the duality of existence and non-existence. | T: “This world, Kaccana, for the most part depends upon a duality—
+sn12.15:2.2 | S: But for one who truly sees the origin of the world with right understanding, the concept of non-existence regarding the world does not occur. | T: upon the notion of existence and the notion of nonexistence. But for one who sees the origin of the world as it really is with correct wisdom, there is no notion of nonexistence in regard to the world.
+sn12.15:2.3 | S: And for one who truly sees the cessation of the world with right understanding, the concept of existence regarding the world does not occur. | T: And for one who sees the cessation of the world as it really is with correct wisdom, there is no notion of existence in regard to the world.
+sn12.15:2.4 | S: This world is for the most part shackled by getting involved, grasping, and insisting. | T: “This world, Kaccana, is for the most part shackled by engagement, clinging, and adherence.
+sn12.15:2.5 | S: But if, when it comes to this getting involved & grasping, mental fixation, and insistence & underlying tendency, they are not attracted, do not grasp, and do not fixate on the thought, “my self”, | T: But this one with right view does not become engaged and cling through that engagement and clinging, mental standpoint, adherence, underlying tendency; he does not take a stand about ‘my self.’
+sn12.15:2.6 | S: they’ll have no doubt or uncertainty that what arises is just suffering arising, and what ceases is just suffering ceasing. Their knowledge of this is independent of others. | T: He has no perplexity or doubt that what arises is only suffering arising, what ceases is only suffering ceasing. His knowledge about this is independent of others.
+sn12.15:2.7 | S: This is how right view is defined. | T: It is in this way, Kaccana, that there is right view.
+sn12.15:3.1 | S: ‘All exists’: this is one extreme. | T: “‘All exists’: Kaccana, this is one extreme.
+sn12.15:3.2 | S: ‘All does not exist’: this is the second extreme. | T: ‘All does not exist’: this is the second extreme.
+sn12.15:3.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.15:3.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.15:3.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.15:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.15:3.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.15:3.8 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.15:3.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.”
+sn12.15:3.10 | P: Pañcamaṁ. | T: (none)
+
+## sn12.18
+sn12.18:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.18:1.2 | S: Then the wanderer Timbaruka went up to the Buddha, and exchanged greetings with him. | T: Then the wanderer Timbaruka approached the Blessed One and exchanged greetings with him.
+sn12.18:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.18:2.1 | S: “Well, worthy Gotama, are pleasure and pain made by oneself?” | T: “How is it, Master Gotama: are pleasure and pain created by oneself?”
+sn12.18:2.2 | S: “Not so, Timbaruka,” said the Buddha. | T: “Not so, Timbaruka,” the Blessed One said.
+sn12.18:2.3 | S: “Then are pleasure and pain made by another?” | T: “Then, Master Gotama, are pleasure and pain created by another?”
+sn12.18:2.4 | S: “Not so, Timbaruka,” said the Buddha. | T: “Not so, Timbaruka,” the Blessed One said.
+sn12.18:2.5 | S: “Well, are pleasure and pain made by both oneself and another?” | T: “How is it then, Master Gotama: are pleasure and pain created both by oneself and by another?”
+sn12.18:2.6 | S: “Not so, Timbaruka,” said the Buddha. | T: “Not so, Timbaruka,” the Blessed One said.
+sn12.18:2.7 | S: “Then do pleasure and pain arise anomalously, not made by oneself or another?” | T: “Then, Master Gotama, have pleasure and pain arisen fortuitously, being created neither by oneself nor by another?”
+sn12.18:2.8 | S: “Not so, Timbaruka,” said the Buddha. | T: “Not so, Timbaruka,” the Blessed One said.
+sn12.18:2.9 | S: “Well, is there no such thing as pleasure and pain?” | T: “How is it then, Master Gotama: is there no pleasure and pain?”
+sn12.18:2.10 | S: “It’s not that there’s no such thing as pleasure and pain. | T: “It is not that there is no pleasure and pain, Timbaruka;
+sn12.18:2.11 | S: Pleasure and pain are real.” | T: there is pleasure and pain.”
+sn12.18:2.12 | S: “Then does the worthy Gotama not know or see suffering?” | T: “Then is it that Master Gotama does not know and see pleasure and pain?”
+sn12.18:2.13 | S: “It’s not that I don’t know or see pleasure and pain. | T: “It is not that I do not know and see pleasure and pain, Timbaruka.
+sn12.18:2.14 | S: I do know pleasure and pain, | T: I know pleasure and pain,
+sn12.18:2.15 | S: I do see pleasure and pain.” | T: I see pleasure and pain.”
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.18:3.1 | S: “Worthy Gotama, when asked these questions, you say ‘not so’. | T: “Whether you are asked: ‘How is it, Master Gotama: are pleasure and pain created by oneself?’
+sn12.18:3.2 | P: ‘Kiṁ pana, bho gotama, paraṅkataṁ sukhadukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, timbarukā’ti vadesi. | T: or ‘Are they created by another? ’
+sn12.18:3.3 | P: ‘Kiṁ nu kho, bho gotama, sayaṅkatañca paraṅkatañca sukhadukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, timbarukā’ti vadesi. | T: or ‘Are they created by both?’
+sn12.18:3.4 | P: ‘Kiṁ pana, bho gotama, asayaṅkāraṁ aparaṅkāraṁ adhiccasamuppannaṁ sukhadukkhan’ti iti puṭṭho samāno ‘mā hevaṁ, timbarukā’ti vadesi. | T: or ‘Are they created by neither?’ in each case you say: ‘Not so, Timbaruka.’
+sn12.18:3.5 | S: Yet you say that there is such a thing as pleasure and pain. | T: When you are asked: ‘How is it then, Master Gotama: is there no pleasure and pain?’ you say: ‘It is not that there is no pleasure and pain, Timbaruka; there is pleasure and pain.’
+sn12.18:3.6 | P: atthi kho, timbaruka, sukhadukkhan’ti vadesi. | T: (none)
+sn12.18:3.7 | P: ‘Tena hi bhavaṁ gotamo sukhadukkhaṁ na jānāti, na passatī’ti iti puṭṭho samāno ‘na khvāhaṁ, timbaruka, sukhadukkhaṁ na jānāmi, na passāmi. | T: When asked: ‘Then is it that Master Gotama does not know and see pleasure and pain?’ you say: ‘It is not that I do not know and see pleasure and pain, Timbaruka.
+sn12.18:3.8 | S: And you say that you do know pleasure and pain, | T: I know pleasure and pain,
+sn12.18:3.9 | S: and you do see pleasure and pain. | T: I see pleasure and pain.’
+sn12.18:3.10 | S: Sir, explain pleasure and pain to me! | T: Venerable sir, let the Blessed One explain pleasure and pain to me.
+sn12.18:3.11 | S: Teach me about pleasure and pain!” | T: Let the Blessed One teach me about pleasure and pain.”
+sn12.18:4.1 | S: “Suppose that the feeling and the one who feels it are one and the same. Then for one who has existed since the beginning, pleasure and pain is made by oneself. I don’t say this. | T: “Timbaruka, if one thinks, ‘The feeling and the one who feels it are the same,’ then one asserts with reference to one existing from the beginning: ‘Pleasure and pain are created by oneself.’ I do not speak thus.
+sn12.18:4.2 | S: Suppose that the feeling is one thing and the one who feels it is another. Then for one stricken by feeling, pleasure and pain is made by another. I don’t say this. | T: But, Timbaruka, if one thinks, ‘The feeling is one, the one who feels it is another,’ then one asserts with reference to one stricken by feeling: ‘Pleasure and pain are created by another.’ Neither do I speak thus.
+sn12.18:4.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.18:4.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.18:4.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.18:4.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.18:4.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations;
+sn12.18:4.8 | S: When choices cease, consciousness ceases. … | T: with the cessation of volitional formations, cessation of consciousness….
+sn12.18:4.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.18:5.1 | S: When he said this, the wanderer Timbaruka said to the Buddha, | T: When this was said, the naked ascetic Timbaruka said to the Blessed One:
+sn12.18:5.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama!…
+sn12.18:5.3 | S: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. | T: I go for refuge to Master Gotama, and to the Dhamma, and to the Bhikkhu Saṅgha.
+sn12.18:5.4 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn12.18:5.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn12.19
+sn12.19:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.19:1.2 | S: “Mendicants, for a fool shrouded by ignorance and coupled to craving, this body has been produced. | T: “Bhikkhus, for the fool, hindered by ignorance and fettered by craving, this body has thereby originated.
+sn12.19:1.3 | S: So there is this duality: this body and external name and form. Contact depends on this duality. When contacted through one or other of the six sense fields, the fool experiences pleasure and pain. | T: So there is this body and external name-and-form: thus this dyad. Dependent on the dyad there is contact. There are just six sense bases, contacted through which—or through a certain one among them—the fool experiences pleasure and pain.
+sn12.19:2.1 | S: For an astute person shrouded by ignorance and coupled to craving, this body has been produced. | T: “Bhikkhus, for the wise man, hindered by ignorance and fettered by craving, this body has thereby originated.
+sn12.19:2.2 | S: So there is this duality: this body and external name and form. Contact depends on this duality. When contacted through one or other of the six sense fields, the astute person experiences pleasure and pain. | T: So there is this body and external name-and-form: thus this dyad. Dependent on the dyad there is contact. There are just six sense bases, contacted through which—or through a certain one among them—the wise man experiences pleasure and pain.
+sn12.19:3.1 | S: What, then, is the difference between the foolish and the astute?” | T: What, bhikkhus, is the distinction here, what is the disparity, what is the difference between the wise man and the fool?”
+sn12.19:3.2 | S: “Our teachings are rooted in the Buddha. He is our guide and our refuge. Sir, may the Buddha himself please clarify the meaning of this. The mendicants will listen and remember it.” | T: “Venerable sir, our teachings are rooted in the Blessed One, guided by the Blessed One, take recourse in the Blessed One. It would be good if the Blessed One would clear up the meaning of this statement. Having heard it from him, the bhikkhus will remember it.”
+sn12.19:4.1 | S: “Well then, mendicants, listen and apply your mind well, I will speak.” | T: “Then listen and attend closely, bhikkhus, I will speak.”
+sn12.19:4.2 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” the bhikkhus replied.
+sn12.19:4.3 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.19:5.1 | S: “For a fool shrouded by ignorance and coupled to craving, this body has been produced. But the fool has not given up that ignorance or finished that craving. | T: “Bhikkhus, for the fool, hindered by ignorance and fettered by craving, this body has originated. For the fool that ignorance has not been abandoned and that craving has not been utterly destroyed.
+sn12.19:5.2 | S: Why is that? | T: For what reason?
+sn12.19:5.3 | S: The fool has not completed the spiritual journey for the complete ending of suffering. | T: Because the fool has not lived the holy life for the complete destruction of suffering.
+sn12.19:5.4 | S: Therefore, when their body breaks up, the fool passes on to another body. | T: Therefore, with the breakup of the body, the fool fares on to another body.
+sn12.19:5.5 | S: When they have passed on to another body, they’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Faring on to another body, he is not freed from birth, aging, and death; not freed from sorrow, lamentation, pain, displeasure, and despair;
+sn12.19:5.6 | S: They’re not freed from suffering, I say. | T: not freed from suffering, I say.
+sn12.19:6.1 | S: For an astute person shrouded by ignorance and coupled to craving, this body has been produced. But the astute person has given up that ignorance and finished that craving. | T: “Bhikkhus, for the wise man, hindered by ignorance and fettered by craving, this body has originated. For the wise man that ignorance has been abandoned and that craving has been utterly destroyed.
+sn12.19:6.2 | S: Why is that? | T: For what reason?
+sn12.19:6.3 | S: The astute person has completed the spiritual journey for the complete ending of suffering. | T: Because the wise man has lived the holy life for the complete destruction of suffering.
+sn12.19:6.4 | S: Therefore, when their body breaks up, the astute person does not pass on to another body. | T: Therefore, with the breakup of the body, the wise man does not fare on to another body.
+sn12.19:6.5 | S: Not passing on to another body, they’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Not faring on to another body, he is freed from birth, aging, and death; freed from sorrow, lamentation, pain, displeasure, and despair;
+sn12.19:6.6 | S: They’re freed from suffering, I say. | T: freed from suffering, I say.
+sn12.19:6.7 | S: This is the difference here between the foolish and the astute, that is, leading the spiritual life.” | T: “This, bhikkhus, is the distinction, the disparity, the difference between the wise man and the fool, that is, the living of the holy life.”
+sn12.19:6.8 | P: Navamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '601,800p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the whole batch and found three clear boundary errors. I’m making a final pass over those passages before writing the findings.
+exec
+/bin/bash -lc "sed -n '325,380p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn11.9:3.4 | S: like a colorful crown of flowers. | T: As for a garland of flowers on the head.
+sn11.9:3.5 | S: The gods don’t see it as repulsive.’” | T: The devas do not perceive it as repulsive.’”
+
+## sn12.11
+sn12.11:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.11:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. … | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park….
+sn12.11:1.3 | S: “Mendicants, these four fuels maintain sentient beings that have been born and help those about to be born. | T: “Bhikkhus, there are these four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:1.4 | S: What four? | T: What four?
+sn12.11:1.5 | S: Edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: The nutriment edible food, gross or subtle; second, contact; third, mental volition; fourth, consciousness.
+sn12.11:1.6 | S: These are the four fuels that maintain sentient beings that have been born and help those about to be born. | T: These are the four kinds of nutriment for the maintenance of beings that have already come to be and for the assistance of those about to come to be.
+sn12.11:2.1 | S: What is the source, origin, birthplace, and inception of these four fuels? | T: “Bhikkhus, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.2 | S: Craving. | T: These four kinds of nutriment have craving as their source, craving as their origin; they are born and produced from craving.
+sn12.11:2.3 | S: And what is the source, origin, birthplace, and inception of craving? | T: “And this craving has what as its source, what as its origin, from what is it born and produced?
+sn12.11:2.4 | S: Feeling. | T: This craving has feeling as its source, feeling as its origin; it is born and produced from feeling.
+sn12.11:2.5 | S: And what is the source of feeling? | T: “And this feeling has what as its source…?
+sn12.11:2.6 | S: Contact. | T: Feeling has contact as its source….
+sn12.11:2.7 | S: And what is the source of contact? | T: And this contact has what as its source…?
+sn12.11:2.8 | S: The six sense fields. | T: Contact has the six sense bases as its source….
+sn12.11:2.9 | S: And what is the source of the six sense fields? | T: And these six sense bases have what as their source…?
+sn12.11:2.10 | S: Name and form. | T: The six sense bases have name-and-form as their source….
+sn12.11:2.11 | S: And what is the source of name and form? | T: And this name-and-form has what as its source…?
+sn12.11:2.12 | S: Consciousness. | T: Name-and-form has consciousness as its source….
+sn12.11:2.13 | S: And what is the source of consciousness? | T: And this consciousness has what as its source…?
+sn12.11:2.14 | S: Choices. | T: Consciousness has volitional formations as its source….
+sn12.11:2.15 | S: And what is the source of choices? | T: And these volitional formations have what as their source, what as their origin, from what are they born and produced?
+sn12.11:2.16 | S: Ignorance. | T: Volitional formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+sn12.11:3.1 | S: And so, mendicants, ignorance is a requirement for choices. | T: “Thus, bhikkhus, with ignorance as condition, volitional formations come to be;
+sn12.11:3.2 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.11:3.3 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.11:3.4 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.11:3.5 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.11:3.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.11:3.7 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.15
+sn12.15:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.15:1.2 | S: Then Venerable Kaccānagotta went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Kaccanagotta approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.15:1.3 | S: “Sir, they speak of this thing called ‘right view’. | T: “Venerable sir, it is said, ‘right view, right view.’
+sn12.15:1.4 | S: How is right view defined?” | T: In what way, venerable sir, is there right view?”
+sn12.15:2.1 | S: “Kaccāna, this world mostly relies on the duality of existence and non-existence. | T: “This world, Kaccana, for the most part depends upon a duality—
+sn12.15:2.2 | S: But for one who truly sees the origin of the world with right understanding, the concept of non-existence regarding the world does not occur. | T: upon the notion of existence and the notion of nonexistence. But for one who sees the origin of the world as it really is with correct wisdom, there is no notion of nonexistence in regard to the world.
+sn12.15:2.3 | S: And for one who truly sees the cessation of the world with right understanding, the concept of existence regarding the world does not occur. | T: And for one who sees the cessation of the world as it really is with correct wisdom, there is no notion of existence in regard to the world.
+sn12.15:2.4 | S: This world is for the most part shackled by getting involved, grasping, and insisting. | T: “This world, Kaccana, is for the most part shackled by engagement, clinging, and adherence.
+sn12.15:2.5 | S: But if, when it comes to this getting involved & grasping, mental fixation, and insistence & underlying tendency, they are not attracted, do not grasp, and do not fixate on the thought, “my self”, | T: But this one with right view does not become engaged and cling through that engagement and clinging, mental standpoint, adherence, underlying tendency; he does not take a stand about ‘my self.’
+sn12.15:2.6 | S: they’ll have no doubt or uncertainty that what arises is just suffering arising, and what ceases is just suffering ceasing. Their knowledge of this is independent of others. | T: He has no perplexity or doubt that what arises is only suffering arising, what ceases is only suffering ceasing. His knowledge about this is independent of others.
+sn12.15:2.7 | S: This is how right view is defined. | T: It is in this way, Kaccana, that there is right view.
+sn12.15:3.1 | S: ‘All exists’: this is one extreme. | T: “‘All exists’: Kaccana, this is one extreme.
+sn12.15:3.2 | S: ‘All does not exist’: this is the second extreme. | T: ‘All does not exist’: this is the second extreme.
+sn12.15:3.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.15:3.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.15:3.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.15:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.15:3.7 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.15:3.8 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.15:3.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.”
+sn12.15:3.10 | P: Pañcamaṁ. | T: (none)
+
+exec
+/bin/bash -lc "printf '%s\\n' 'sn12.11:3.5 starts: with the cessation of volitional formations, cessation' 'sn12.15:2.2 starts: But for one who sees the origin' 'sn12.15:3.8 starts: with the cessation of volitional formations, cessation' > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-067.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+27,157
+3 lines reported.

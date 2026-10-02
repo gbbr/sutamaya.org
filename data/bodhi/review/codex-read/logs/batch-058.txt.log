@@ -1,0 +1,509 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8a-10c1-7422-abe2-2533f58e3aa3
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file, check for clear boundary errors, and write only the findings to the requested file.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an4.1
+an4.1:1.1 | S: So I have heard. | T: Thus have I heard.
+an4.1:1.2 | S: At one time the Buddha was staying in the land of the Vajjis at Wares Village. | T: On one occasion the Blessed One was dwelling among the Vajjis at Bhaṇḍagāma.
+an4.1:1.3 | S: There the Buddha addressed the mendicants, | T: There the Blessed One addressed the bhikkhus:
+an4.1:1.4 | S: “Mendicants!” | T: “Bhikkhus!”
+an4.1:1.5 | S: “Venerable sir,” they replied. | T: “Venerable sir!” those bhikkhus replied.
+an4.1:1.6 | S: The Buddha said this: | T: The Blessed One said this:
+an4.1:2.1 | S: “Mendicants, due to not understanding and not penetrating four things, both you and I have wandered and transmigrated for such a very long time. | T: “Bhikkhus, it is because of not understanding and penetrating four things that you and I have roamed and wandered for such a long stretch of time.
+an4.1:2.2 | S: What four? | T: What four?
+an4.1:2.3 | S: Noble ethics, | T: “It is, bhikkhus, because of not understanding and penetrating noble virtuous behavior,
+an4.1:2.4 | S: immersion, | T: noble concentration,
+an4.1:2.5 | S: wisdom, | T: noble wisdom,
+an4.1:2.6 | S: and freedom. | T: and noble liberation that you and I have roamed and wandered for such a long stretch of time.
+an4.1:2.7 | S: These noble ethics, immersion, wisdom, and freedom have been understood and comprehended. Craving for continued existence has been cut off; the leash to existence is ended; now there’ll be no more future lives.” | T: “Noble virtuous behavior has been understood and penetrated. Noble concentration has been understood and penetrated. Noble wisdom has been understood and penetrated. Noble liberation has been understood and penetrated. Craving for existence has been cut off; the conduit to existence has been destroyed; now there is no more renewed existence.”
+an4.1:3.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+an4.1:3.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+an4.1:4.1 | S: “Ethics, immersion, and wisdom, | T: “Virtuous behavior, concentration, wisdom,
+an4.1:4.2 | S: and the supreme freedom: | T: and unsurpassed liberation:
+an4.1:4.3 | S: these things have been understood | T: these things the illustrious Gotama
+an4.1:4.4 | S: by Gotama the renowned. | T: understood by himself.
+an4.1:5.1 | S: And so the Buddha, having insight, | T: “Having directly known these things,
+an4.1:5.2 | S: explained this teaching to the mendicants. | T: the Buddha taught the Dhamma to the bhikkhus.
+an4.1:5.3 | S: The teacher made an end of suffering, | T: The Teacher, the end-maker of suffering,
+an4.1:5.4 | S: seeing clearly, he is fully quenched.” | T: the One with Vision, has attained nibbāna.”
+an4.1:5.5 | P: Paṭhamaṁ. | T: (none)
+
+## an4.20
+an4.20:1.1 | S: “Mendicants, a meal assigner who has four qualities is placed in hell as if delivered there. | T: “Bhikkhus, if an assigner of meals possesses four qualities, he is deposited in hell as if brought there.
+an4.20:1.2 | S: What four? | T: What four?
+an4.20:1.3 | S: They make decisions prejudiced by favoritism, hostility, stupidity, and cowardice. | T: He takes a wrong course because of desire, because of hatred, because of delusion, or because of fear.
+an4.20:1.4 | S: A meal assigner who has these four qualities is placed in hell as if delivered there. | T: If an assigner of meals possesses these four qualities, he is deposited in hell as if brought there.
+an4.20:2.1 | S: A meal designator who has four qualities is placed in heaven as if delivered there. | T: “Bhikkhus, if an assigner of meals possesses four qualities, he is deposited in heaven as if brought there.
+an4.20:2.2 | S: What four? | T: What four?
+an4.20:2.3 | S: They make decisions unprejudiced by favoritism, hostility, stupidity, and cowardice. | T: He does not take a wrong course because of desire, because of hatred, because of delusion, or because of fear.
+an4.20:2.4 | S: A meal assigner who has these four qualities is placed in heaven as if delivered there. | T: If an assigner of meals possesses these four qualities, he is deposited in heaven as if brought there.”
+an4.20:3.1 | S: All those people with unbridled sensuality, | T: Those people uncontrolled in sensual pleasures,
+an4.20:3.2 | S: unprincipled, with no respect for principle, | T: who are unrighteous, not revering the Dhamma,
+an4.20:3.3 | S: led astray by favoritism or hostility, <j>stupidity or cowardice, | T: gone astray through desire, hate, and fear
+an4.20:3.4 | S: are called ‘an assembly of the dregs’: | T: are called a stained assembly.
+an4.20:4.1 | S: that’s what was said by the ascetic who knows. | T: Such is said by the Ascetic who knows.
+an4.20:4.2 | S: And so those praiseworthy true persons, | T: Therefore those good persons who are praiseworthy,
+an4.20:4.3 | S: standing on principle, doing nothing wrong, | T: firm in the Dhamma, who do nothing bad,
+an4.20:4.4 | S: not led astray by favoritism or hostility, <j>stupidity or cowardice, | T: unswayed by desire, hate, and fear,
+an4.20:4.5 | S: are called ‘an assembly of the cream’: | T: are called an elite assembly.
+an4.20:4.6 | S: that’s what was said by the ascetic who knows.” | T: Such is said by the Ascetic who knows.
+an4.20:4.7 | P: Dasamaṁ. | T: (none)
+an4.20:4.8 | P: Caravaggo dutiyo. | T: (none)
+an4.20:5.0 | P: Tassuddānaṁ | T: (none)
+an4.20:5.1 | P: Caraṁ sīlaṁ padhānāni, | T: (none)
+an4.20:5.2 | P: saṁvaraṁ paññatti pañcamaṁ; | T: (none)
+an4.20:5.3 | P: Sokhummaṁ tayo agatī, | T: (none)
+an4.20:5.4 | P: bhattuddesena te dasāti. | T: (none)
+
+## an4.23
+an4.23:1.1 | S: “Mendicants, the world has been understood by the Realized One; | T: “Bhikkhus, the Tathāgata has fully awakened to the world;
+an4.23:1.2 | S: and he is detached from the world. | T: the Tathāgata is detached from the world.
+an4.23:1.3 | S: The origin of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the origin of the world;
+an4.23:1.4 | S: and he has given up the origin of the world. | T: the Tathāgata has abandoned the origin of the world.
+an4.23:1.5 | S: The cessation of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the cessation of the world;
+an4.23:1.6 | S: and he has realized the cessation of the world. | T: the Tathāgata has realized the cessation of the world.
+an4.23:1.7 | S: The practice that leads to the cessation of the world has been understood by the Realized One; | T: The Tathāgata has fully awakened to the way leading to the cessation of the world;
+an4.23:1.8 | S: and he has developed the practice that leads to the cessation of the world. | T: the Tathāgata has developed the way leading to the cessation of the world.
+an4.23:2.1 | S: In this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—whatever is seen, heard, thought, known, attained, sought, and explored by the mind, all that has been understood by the Realized One. | T: (1) “Bhikkhus, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, whatever is seen, heard, sensed, cognized, reached, sought after, examined by the mind—all that the Tathāgata has fully awakened to;
+an4.23:2.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:3.1 | S: From the night when the Realized One awakens to the supreme perfect awakening until the night he becomes fully extinguished—in the element of extinguishment with no residue—everything he speaks, says, and expresses is real, not otherwise. | T: (2) “Bhikkhus, whatever the Tathāgata speaks, utters, or expounds in the interval between the night when he awakens to the unsurpassed perfect enlightenment and the night when he attains final nibbāna, all that is just so and not otherwise;
+an4.23:3.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:4.1 | S: The Realized One does as he says, and says as he does. | T: (3) “Bhikkhus, as the Tathāgata speaks, so he does; as he does, so he speaks.
+an4.23:4.2 | S: Since this is so, | T: Since he does as he speaks and speaks as he does,
+an4.23:4.3 | S: that’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.
+an4.23:5.1 | S: In this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—the Realized One is the vanquisher, the unvanquished, the universal seer, the wielder of power. | T: (4) “Bhikkhus, in this world with its devas, Māra, and Brahmā, among this population with its ascetics and brahmins, its devas and humans, the Tathāgata is the vanquisher, the unvanquished, the universal seer, the wielder of mastery;
+an4.23:5.2 | S: That’s why he’s called the ‘Realized One’. | T: therefore he is called the Tathāgata.”
+an4.23:6.1 | S: Directly knowing the whole world as it is, | T: Having directly known all the world—
+an4.23:6.2 | S: and everything in it, | T: all in the world just as it is—
+an4.23:6.3 | S: he is detached from the whole world, | T: he is detached from all the world,
+an4.23:6.4 | S: uninvolved with the whole world. | T: disengaged from all the world.
+an4.23:7.1 | S: That attentive one is the vanquisher of all | T: He is the vanquisher of all,
+an4.23:7.2 | S: who is released from all ties. | T: the wise one who has untied all knots.
+an4.23:7.3 | S: He has reached ultimate peace: | T: He has reached the supreme peace,
+an4.23:7.4 | S: extinguishment, fearing nothing from any quarter. | T: nibbāna, inaccessible to fear.
+an4.23:8.1 | S: He is the Buddha, with defilements ended, | T: He is the Buddha, his taints destroyed,
+an4.23:8.2 | S: untroubled, with doubts cut off. | T: untroubled, all doubts cut off;
+an4.23:8.3 | S: He has attained the end of all deeds, | T: having reached the destruction of all kamma,
+an4.23:8.4 | S: freed with the ending of attachments. | T: he is liberated in the extinction of acquisitions.
+an4.23:9.1 | S: That Blessed One is the Buddha, | T: He is the Blessed One, the Buddha,
+an4.23:9.2 | S: he is the supreme lion, | T: he is the lion unsurpassed;
+an4.23:9.3 | S: in all the world with its gods, | T: in this world with its devas,
+an4.23:9.4 | S: he turns the divine wheel. | T: he set in motion the wheel of Brahmā.
+an4.23:10.1 | S: And so those gods and humans, | T: Thus those devas and human beings
+an4.23:10.2 | S: who have gone to the Buddha for refuge, | T: who have gone for refuge to the Buddha
+an4.23:10.3 | S: come together and revere him, | T: assemble and pay homage to him,
+an4.23:10.4 | S: great of heart and intrepid: | T: the great one free from diffidence:
+an4.23:11.1 | S: ‘Tamed, he is the best of tamers, | T: “Tamed, he is the best of tamers;
+an4.23:11.2 | S: peaceful, he is the seer among the peaceful, | T: peaceful, he is the seer among peace-bringers;
+an4.23:11.3 | S: liberated, he is the foremost of liberators, | T: freed, he is the chief of liberators;
+an4.23:11.4 | S: crossed over, he is the most excellent of guides across.’ | T: crossed over, he is the best of guides across.”
+an4.23:12.1 | S: And so they revere him, | T: Thus indeed they pay him homage,
+an4.23:12.2 | S: great of heart and intrepid. | T: the great one free from diffidence.
+an4.23:12.3 | S: In the world with its gods, | T: In this world together with its devas,
+an4.23:12.4 | S: he has no rival.” | T: there is no one who can rival you.
+an4.23:12.5 | P: Tatiyaṁ. | T: (none)
+
+## an4.26
+an4.26:1.1 | S: “Mendicants, those mendicants who are deceivers and flatterers, pompous and fake, insolent, and scattered: those mendicants are no followers of mine. | T: (1) “Bhikkhus, those bhikkhus who are deceivers, stubborn, talkers, imposters, haughty, and unconcentrated are not bhikkhus of mine.
+an4.26:1.2 | S: They’ve left this teaching and training, and they don’t achieve growth, improvement, or maturity in this teaching and training. | T: (2) They have strayed from this Dhamma and discipline, and they do not achieve growth, progress, and maturity in this Dhamma and discipline.
+an4.26:1.3 | S: But those mendicants who are genuine, not flatterers, attentive, amenable, and serene: those mendicants are followers of mine. | T: (3) But those bhikkhus who are honest, sincere, steadfast, compliant, and well concentrated are bhikkhus of mine.
+an4.26:1.4 | S: They haven’t left this teaching and training, and they achieve growth, improvement, or maturity in this teaching and training. | T: (4) They have not strayed from this Dhamma and discipline, and they achieve growth, progress, and maturity in this Dhamma and discipline.”
+an4.26:2.1 | S: Those who are deceivers and flatterers, <j>pompous and fake, | T: Those who are deceivers, stubborn, talkers, imposters,
+an4.26:2.2 | S: insolent and scattered: | T: haughty, unconcentrated,
+an4.26:2.3 | S: these don’t grow in the teaching | T: do not make progress in the Dhamma
+an4.26:2.4 | S: that was taught by the perfected Buddha. | T: that the Perfectly Enlightened One has taught.
+an4.26:3.1 | S: But those who are genuine, not flatterers, attentive, | T: But those who are honest and sincere, steadfast,
+an4.26:3.2 | S: amenable, and serene: | T: compliant, and well concentrated,
+an4.26:3.3 | S: these do grow in the teaching | T: make progress in the Dhamma
+an4.26:3.4 | S: that was taught by the perfected Buddha.” | T: that the Perfectly Enlightened One has taught.
+an4.26:3.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an4.274
+an4.274:1.1 | S: “For insight into greed, four things should be developed. | T: “Bhikkhus, for direct knowledge of lust, four things are to be developed.
+an4.274:1.2 | S: What four? | T: What four?
+an4.274:1.3 | S: Firstly, a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (1) Here, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed longing and dejection in regard to the world.
+an4.274:1.4 | S: They meditate observing an aspect of feelings … mind … principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (2) He dwells contemplating feelings in feelings … (3) … mind in mind … (4) … phenomena in phenomena, ardent, clearly comprehending, mindful, having removed longing and dejection in regard to the world.
+an4.274:1.5 | S: For insight into greed, these four things should be developed.” | T: For direct knowledge of lust, these four things are to be developed.”
+an4.274:1.6 | P: Paṭhamaṁ. | T: (none)
+
+## an4.275
+an4.275:1.1 | S: “For insight into greed, four things should be developed. | T: “Bhikkhus, for direct knowledge of lust, four things are to be developed.
+an4.275:1.2 | S: What four? | T: What four?
+an4.275:1.3 | S: Firstly, a mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. | T: (1) Here, a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states; he makes an effort, arouses energy, applies his mind, and strives.
+an4.275:1.4 | S: …so that unskillful qualities that have arisen are given up … so that skillful qualities arise … so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. | T: (2) He generates desire for the abandoning of arisen bad unwholesome states … (3) … for the arising of unarisen wholesome states … (4) … for the maintenance of arisen wholesome states, for their non-decline, increase, expansion, and fulfillment by development; he makes an effort, arouses energy, applies his mind, and strives.
+an4.275:1.5 | S: For insight into greed, these four things should be developed.” | T: For direct knowledge of lust, these four things are to be developed.”
+an4.275:1.6 | P: Dutiyaṁ. | T: (none)
+
+## an4.276
+an4.276:1.1 | S: “For insight into greed, four things should be developed. | T: “Bhikkhus, for direct knowledge of lust, four things are to be developed.
+an4.276:1.2 | S: What four? | T: What four?
+an4.276:1.3 | S: It’s when a mendicant develops the basis of psychic power that has immersion due to enthusiasm, and active effort. | T: (1) Here, a bhikkhu develops the basis for psychic potency that possesses concentration due to desire and activities of striving.
+an4.276:1.4 | S: They develop the basis of psychic power that has immersion due to energy … | T: (2) He develops the basis for psychic potency that possesses concentration due to energy …
+an4.276:1.5 | S: mental development … | T: (3) … that possesses concentration due to mind …
+an4.276:1.6 | S: inquiry, and active effort. | T: (4) … that possesses concentration due to investigation and activities of striving.
+an4.276:1.7 | S: For insight into greed, these four things should be developed.” | T: For direct knowledge of lust, these four things are to be developed.”
+an4.276:1.8 | P: Tatiyaṁ. | T: (none)
+
+## an4.277-303
+an4.277-303:1.1 | S: “For the complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go of greed, four things should be developed.” | T: “Bhikkhus, for full understanding of lust … for the utter destruction … for the abandoning … … for the destruction … for the vanishing … for the fading away … for the cessation … for the giving up … For the relinquishment of lust, these four things are to be developed.”
+an4.277-303:1.2 | P: Tiṁsatimaṁ. | T: (none)
+
+## an4.27
+an4.27:1.1 | S: “Mendicants, these four trifles are easy to find and are blameless. | T: “Bhikkhus, there are these four trifles, easily gained and blameless.
+an4.27:1.2 | S: What four? | T: What four?
+an4.27:1.3 | S: Rag-robes … | T: (1) “A rag-robe is a trifle among robes, easily gained and blameless.
+an4.27:1.4 | S: A lump of almsfood … | T: (2) A lump of almsfood is a trifle among meals, easily gained and blameless.
+an4.27:1.5 | S: Lodgings at the root of a tree … | T: (3) The foot of a tree is a trifle among lodgings, easily gained and blameless.
+an4.27:1.6 | S: Rancid urine as medicine … | T: (4) Putrid urine is a trifle among medicines, easily gained and blameless.
+an4.27:1.7 | S: These four trifles are easy to find and are blameless. | T: “These are the four trifles, easily gained and blameless.
+an4.27:1.8 | S: When a mendicant is content with trifles that are easy to find, they have one of the factors of the ascetic life, I say. | T: When a bhikkhu is satisfied with what is trifling and easily gained, I say that he has one of the factors of the ascetic life.”
+an4.27:2.1 | S: When you’re content with what’s blameless, | T: When one is content with what is blameless,
+an4.27:2.2 | S: trifling, and easy to find, | T: trifling and easily gained;
+an4.27:2.3 | S: you don’t get upset | T: when one’s mind is not distressed
+an4.27:2.4 | S: about lodgings, robes, | T: because of a lodging, robe,
+an4.27:2.5 | S: food, and drink, | T: drink, and food,
+an4.27:2.6 | S: and you’re not obstructed anywhere. | T: one is not hindered anywhere.
+an4.27:3.1 | S: These qualities are said to be | T: These qualities, rightly said
+an4.27:3.2 | S: integral to the ascetic life. | T: to conform to the ascetic life,
+an4.27:3.3 | S: They’re mastered by one who trains, | T: are acquired by a bhikkhu
+an4.27:3.4 | S: content and diligent.” | T: who is content and heedful.
+an4.27:3.5 | P: Sattamaṁ. | T: (none)
+
+## an4.29
+an4.29:1.1 | S: “Mendicants, these four footprints of the Dhamma are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “Bhikkhus, there are these four Dhamma factors, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.
+an4.29:1.2 | S: What four? | T: What four?
+an4.29:1.3 | S: Contentment, good will, right mindfulness, and right immersion. | T: (1) “Non-longing is a Dhamma factor, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which is not being adulterated and will not be adulterated, which is not repudiated by wise ascetics and brahmins.
+an4.29:2.1 | P: Abyāpādo, bhikkhave, dhammapadaṁ aggaññaṁ rattaññaṁ vaṁsaññaṁ porāṇaṁ asaṅkiṇṇaṁ asaṅkiṇṇapubbaṁ, na saṅkīyati na saṅkīyissati, appaṭikuṭṭhaṁ samaṇehi brāhmaṇehi viññūhi. | T: (2) Good will is a Dhamma factor, primal, of long standing …
+an4.29:3.1 | P: Sammāsati, bhikkhave, dhammapadaṁ aggaññaṁ rattaññaṁ vaṁsaññaṁ porāṇaṁ asaṅkiṇṇaṁ asaṅkiṇṇapubbaṁ, na saṅkīyati na saṅkīyissati, appaṭikuṭṭhaṁ samaṇehi brāhmaṇehi viññūhi. | T: (3) Right mindfulness is a Dhamma factor, primal, of long standing …
+an4.29:4.1 | P: Sammāsamādhi, bhikkhave, dhammapadaṁ aggaññaṁ rattaññaṁ vaṁsaññaṁ porāṇaṁ asaṅkiṇṇaṁ asaṅkiṇṇapubbaṁ, na saṅkīyati na saṅkīyissati, appaṭikuṭṭhaṁ samaṇehi brāhmaṇehi viññūhi. | T: (4) Right concentration is a Dhamma factor, primal, of long standing … not repudiated by wise ascetics and brahmins.
+an4.29:4.2 | S: These four footprints of the Dhamma are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These are the four Dhamma factors, primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.”
+an4.29:5.1 | S: You should live with contentment, | T: One should dwell free from longing
+an4.29:5.2 | S: and a heart of good will, | T: with a heart of good will.
+an4.29:5.3 | S: mindful, with unified mind, | T: One should be mindful and one-pointed in mind,
+an4.29:5.4 | S: serene within.” | T: internally well concentrated.
+an4.29:5.5 | P: Navamaṁ. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+
+## an4.2
+an4.2:1.1 | S: “Someone without four things is said to have ‘fallen from this teaching and training’. | T: At Sāvatthī. “Bhikkhus, one who does not possess four things is said to have fallen from this Dhamma and discipline.
+an4.2:1.2 | S: What four? | T: What four?
+an4.2:1.3 | S: Noble ethics, | T: (1) One who does not possess noble virtuous behavior is said to have fallen from this Dhamma and discipline.
+an4.2:1.4 | S: immersion, | T: (2) One who does not possess noble concentration …
+an4.2:1.5 | S: wisdom, | T: (3) One who does not possess noble wisdom …
+an4.2:1.6 | S: and freedom. | T: (4) One who does not possess noble liberation is said to have fallen from this Dhamma and discipline.
+an4.2:1.7 | S: Someone without these four things is said to have ‘fallen from this teaching and training’. | T: One who does not possess these four things is said to have fallen from this Dhamma and discipline.
+an4.2:2.1 | S: Someone with four things is said to be ‘secure in this teaching and training’. | T: “But, bhikkhus, one who possesses four things is said to be secure in this Dhamma and discipline.
+an4.2:2.2 | S: What four? | T: What four?
+an4.2:2.3 | S: Noble ethics, | T: (1) One who possesses noble virtuous behavior is said to be secure in this Dhamma and discipline.
+an4.2:2.4 | S: immersion, | T: (2) One who possesses noble concentration …
+an4.2:2.5 | S: wisdom, | T: (3) One who possesses noble wisdom …
+an4.2:2.6 | S: and freedom. | T: (4) One who possesses noble liberation is said to be secure in this Dhamma and discipline.
+an4.2:2.7 | S: Someone with these four things is said to be ‘secure in this teaching and training’. | T: One who possesses these four things is said to be secure in this Dhamma and discipline.”
+an4.2:3.1 | S: They fall, collapsed and fallen; | T: Collapsed and fallen, they fall away;
+an4.2:3.2 | S: greedy, they return. | T: the greedy ones come back again.
+an4.2:3.3 | S: The work is done, the joyful is enjoyed, | T: Done is the task, the delightful is delighted in;
+an4.2:3.4 | S: happiness is found through happiness.” | T: happiness is reached by happiness.
+an4.2:3.5 | P: Dutiyaṁ. | T: (none)
+
+## an4.304-783
+an4.304-783:1.1 | S: “Of hate … delusion … anger … acrimony … disdain … contempt … jealousy … stinginess … deceit … deviousness … obstinacy … aggression … conceit … arrogance … vanity … negligence … for insight … complete understanding … finishing … giving up … ending … vanishing … fading away … cessation … giving away … letting go … four things should be developed.” | T: “Bhikkhus, for direct knowledge … for full understanding … for the utter destruction … for the abandoning … for the destruction … for the vanishing … for the fading away … for the cessation … for the giving up … for the relinquishment of hatred … of delusion … of anger … of hostility … of denigration … of insolence … of envy … of miserliness … of deceitfulness … of craftiness … of obstinacy … of vehemence … of conceit … of arrogance … of intoxication … of heedlessness, these four things are to be developed. What four? (1) Here, a bhikkhu dwells contemplating the body in the body … (2) … feelings in feelings … (3) … mind in mind … (4) … phenomena in phenomena, ardent, clearly comprehending, mindful, having removed longing and dejection in regard to the world. (1) Here, a bhikkhu generates desire for the non-arising of unarisen bad unwholesome states … (2) … for the abandoning of arisen bad unwholesome states … (3) … for the arising of unarisen wholesome states … (4) … for the maintenance of arisen wholesome states, for their non-decline, increase, expansion, and fulfillment by development; he makes an effort, arouses energy, applies his mind, and strives. (1) Here, a bhikkhu develops the basis for psychic potency that possesses concentration due to desire … (2) … that possesses concentration due to energy … (3) … that possesses concentration due to mind … (4) … that possesses concentration due to investigation and activities of striving. For the relinquishment of heedlessness, these four things are to be developed.” This is what the Blessed One said. Elated, those bhikkhus delighted in the Blessed One’s statement.
+an4.304-783:1.2 | P: Dasuttarapañcasatimaṁ. | T: (none)
+an4.304-783:1.3 | P: Rāgapeyyālaṁ niṭṭhitaṁ. | T: (none)
+an4.304-783:1.4 | P: Pañcamo paṇṇāsako samatto. | T: (none)
+an4.304-783:1.5 | S: The Book of the Fours is finished. | T: The Book of the Fours is finished.
+
+## an4.30
+an4.30:1.1 | S: At one time the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain. | T: On one occasion the Blessed One was dwelling at Rājagaha on Mount Vulture Peak.
+an4.30:1.2 | S: Now at that time several very well-known wanderers were residing in their monastery on the bank of the Serpentine River. They included Annabhāra, Varadhara, Sakuludāyī, and other very well-known wanderers. | T: Now on that occasion a number of very well-known wanderers were residing at the wanderers’ park on the bank of the river Sappinī, namely, Annabhāra, Varadhara, Sakuludāyī the wanderer, and other very well-known wanderers.
+an4.30:1.3 | S: Then in the late afternoon, the Buddha came out of retreat and went to the wanderer’s monastery on the bank of the Serpentine River. He sat down on the seat spread out and said to the wanderers: | T: Then, in the evening, the Blessed One emerged from seclusion and went to the wanderers’ park on the bank of the Sappinī. He sat down on a seat that was prepared and said to those wanderers:
+an4.30:2.1 | S: “Wanderers, these four footprints of the Dhamma are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “Wanderers, there are these four Dhamma factors that are primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.
+an4.30:2.2 | S: What four? | T: What four?
+an4.30:2.3 | S: Contentment … | T: (1) “Non-longing is a Dhamma factor that is primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which is not being adulterated and will not be adulterated, which is not repudiated by wise ascetics and brahmins.
+an4.30:2.4 | S: Good will … Right mindfulness … Right immersion … | T: (2) Good will is a Dhamma factor that is primal, of long standing … (3) Right mindfulness is a Dhamma factor that is primal, of long standing … (4) Right concentration is a Dhamma factor that is primal, of long standing … not repudiated by wise ascetics and brahmins.
+an4.30:2.5 | S: These four footprints of the Dhamma are primordial, long-standing, customary, and traditional. They are uncorrupted, as they have been since the beginning. They’re not being corrupted now nor will they be. Sensible ascetics and brahmins don’t look down on them. | T: “These are the four Dhamma factors that are primal, of long standing, traditional, ancient, unadulterated and never before adulterated, which are not being adulterated and will not be adulterated, which are not repudiated by wise ascetics and brahmins.
+an4.30:3.1 | S: Wanderers, if someone should say: | T: (1) “If, wanderers, anyone should say:
+an4.30:3.2 | S: ‘I’ll deny this Dhamma footprint of contentment, and describe a true ascetic or brahmin who covets sensual pleasures with acute lust.’ Then I’d say to them: | T: ‘I will reject this Dhamma factor of non-longing and point out a real ascetic or brahmin who is full of longing, deeply passionate about sensual pleasures,’ I would respond to him thus:
+an4.30:3.3 | S: ‘Let them come, speak, and discuss. We’ll see how powerful they are.’ | T: ‘Let him come, speak, and converse. Let me see how mighty he is!’
+an4.30:3.4 | S: It is quite impossible to deny this Dhamma footprint of contentment, and point out a true ascetic or brahmin who covets sensual pleasures with acute lust. | T: Indeed, it would be impossible for him to reject non-longing as a Dhamma factor and to point out a real ascetic or brahmin who is full of longing, deeply passionate about sensual pleasures.
+an4.30:4.1 | S: If someone should say: | T: (2) “If anyone should say:
+an4.30:4.2 | S: ‘I’ll deny this Dhamma footprint of good will, and describe a true ascetic or brahmin who has ill will and malicious intent.’ Then I’d say to them: | T: ‘I will reject this Dhamma factor of good will and point out a real ascetic or brahmin who has a mind of ill will and intentions of hate,’ I would respond to him thus:
+an4.30:4.3 | S: ‘Let them come, speak, and discuss. We’ll see how powerful they are.’ | T: ‘Let him come, speak, and converse. Let me see how mighty he is!’
+an4.30:4.4 | S: It is quite impossible to deny this Dhamma footprint of good will, and point out a true ascetic or brahmin who has ill will and malicious intent. | T: Indeed, it would be impossible for him to reject good will as a Dhamma factor and to point out a real ascetic or brahmin who has a mind of ill will and intentions of hate.
+an4.30:5.1 | S: If someone should say: | T: (3) “If anyone should say:
+an4.30:5.2 | S: ‘I’ll deny this Dhamma footprint of right mindfulness, and describe a true ascetic or brahmin who is unmindful, with no situational awareness.’ Then I’d say to them: | T: ‘I will reject this Dhamma factor of right mindfulness and point out a real ascetic or brahmin who is muddled in mind and lacks clear comprehension,’ I would respond to him thus:
+an4.30:5.3 | S: ‘Let them come, speak, and discuss. We’ll see how powerful they are.’ | T: ‘Let him come, speak, and converse. Let me see how mighty he is!’
+an4.30:5.4 | S: It is quite impossible to deny this Dhamma footprint of right mindfulness, and point out a true ascetic or brahmin who is unmindful, with no situational awareness. | T: Indeed, it would be impossible for him to reject right mindfulness as a Dhamma factor and to point out a real ascetic or brahmin who is muddled in mind and lacks clear comprehension.
+an4.30:6.1 | S: If someone should say: | T: (4) “If anyone should say:
+an4.30:6.2 | S: ‘I’ll deny this Dhamma footprint of right immersion, and describe a true ascetic or brahmin who is scattered, with straying mind.’ Then I’d say to them: | T: ‘I will reject this Dhamma factor of right concentration and point out a real ascetic or brahmin who is unconcentrated, with a wandering mind,’ I would respond to him thus:
+an4.30:6.3 | S: ‘Let them come, speak, and discuss. We’ll see how powerful they are.’ | T: ‘Let him come, speak, and converse. Let me see how mighty he is!’
+an4.30:6.4 | S: It is quite impossible to deny this Dhamma footprint of right immersion, and point out a true ascetic or brahmin who is scattered, with straying mind. | T: Indeed, it would be impossible for him to reject right concentration as a Dhamma factor and to point out a real ascetic or brahmin who is unconcentrated, with a wandering mind.
+an4.30:7.1 | S: If anyone imagines they can criticize and reject these four footprints of the Dhamma, they deserve rebuttal and criticism on four legitimate grounds in this very life. | T: “If, wanderers, anyone thinks these four Dhamma factors should be censured and repudiated, then, in this very life, he incurs four reasonable criticisms and grounds for censure.
+an4.30:7.2 | S: What four? | T: What four?
+an4.30:7.3 | S: If you reject the Dhamma footprint of contentment, then you must honor and praise those ascetics and brahmins who covet sensual pleasures with acute lust. | T: “‘If you censure and repudiate this Dhamma factor of non-longing, then you must regard as worthy of worship and praise those ascetics and brahmins who are full of longing and deeply passionate about sensual pleasures.
+an4.30:7.4 | S: If you reject the Dhamma footprint of good will, you must honor and praise those ascetics and brahmins who have ill will and malicious intent. | T: If you censure and repudiate this Dhamma factor of good will, then you must regard as worthy of worship and praise those ascetics and brahmins who have minds of ill will and intentions of hate.
+an4.30:7.5 | S: If you reject the Dhamma footprint of right mindfulness, then you must honor and praise those ascetics and brahmins who are unmindful, with no situational awareness. | T: If you censure and repudiate this Dhamma factor of right mindfulness, then you must regard as worthy of worship and praise those ascetics and brahmins who are muddle-minded and lack clear comprehension.
+an4.30:7.6 | S: If you reject the Dhamma footprint of right immersion, you must honor and praise those ascetics and brahmins who are scattered, with straying minds. | T: If you censure and repudiate this Dhamma factor of right concentration, then you must regard as worthy of worship and praise those ascetics and brahmins who are unconcentrated, with wandering minds.’
+an4.30:8.1 | S: If anyone imagines they can criticize and reject these four footprints of the Dhamma, they deserve rebuttal and criticism on four legitimate grounds in this very life. | T: “If, wanderers, anyone thinks these four Dhamma factors should be censured and repudiated, then, in this very life, he incurs these four reasonable criticisms and grounds for censure.
+an4.30:8.2 | S: Even those who were loud and bold advocates of the doctrines of no-cause, inaction, and nihilism didn’t imagine that these four footprints of the Dhamma should be criticized or rejected. | T: Even those wanderers Vassa and Bhañña of Ukkalā, who were proponents of non-causality, inactivity, and nihilism, did not think that these four Dhamma factors should be censured and repudiated.
+an4.30:8.3 | S: Why is that? | T: For what reason?
+an4.30:8.4 | S: For fear of being blamed, provoked, and faulted. | T: From fear of blame, attack, and refutation.”
+an4.30:9.1 | S: One who has good will, ever mindful, | T: One of good will, ever mindful,
+an4.30:9.2 | S: serene within, | T: inwardly well concentrated,
+an4.30:9.3 | S: training to remove desire, | T: training to remove longing,
+an4.30:9.4 | S: is called ‘a diligent one’.” | T: is said to be heedful.
+an4.30:9.5 | P: Dasamaṁ. | T: (none)
+an4.30:9.6 | P: Uruvelavaggo tatiyo. | T: (none)
+an4.30:10.0 | P: Tassuddānaṁ | T: (none)
+an4.30:10.1 | P: Dve uruvelā loko kāḷako, | T: (none)
+an4.30:10.2 | P: Brahmacariyena pañcamaṁ; | T: (none)
+an4.30:10.3 | P: Kuhaṁ santuṭṭhi vaṁso ca, | T: (none)
+an4.30:10.4 | P: Dhammapadaṁ paribbājakena cāti. | T: (none)
+
+## an4.31
+an4.31:1.1 | S: “Mendicants, there are these four situations. When these situations come about, any god or human who takes advantage of them will soon acquire great and abundant wealth. | T: “Bhikkhus, there are these four wheels. When these four wheels turn, those devas and humans who possess them soon attain greatness and abundance of wealth.
+an4.31:1.2 | S: What four? | T: What four?
+an4.31:1.3 | S: Living in a suitable region, relying on true persons, being rightly resolved in oneself, and past merit. | T: Dwelling in a suitable locality, relying on good persons, right resolution, and merits done in the past.
+an4.31:1.4 | S: These are the four situations. When these situations come about, any god or human who takes advantage of them will soon acquire great and abundant wealth. | T: These are the four wheels. When these four wheels turn, those devas and humans who possess them soon attain greatness and abundance of wealth.”
+an4.31:2.1 | S: When a man lives in a suitable region, | T: When a person dwells in a suitable locality
+an4.31:2.2 | S: making friends with noble ones, | T: and makes friends with the noble ones,
+an4.31:2.3 | S: possessing right resolve, | T: when he has formed right resolutions,
+an4.31:2.4 | S: and having merit from the past, | T: and done deeds of merit in the past,
+an4.31:2.5 | S: grain, riches, fame, reputation, | T: grain, riches, fame, and reputation,
+an4.31:2.6 | S: and happiness come to them.” | T: along with happiness accrue to him.
+an4.31:2.7 | P: Paṭhamaṁ. | T: (none)
+
+## an4.32
+an4.32:1.1 | S: “Mendicants, there are these four ways of being inclusive. | T: “Bhikkhus, there are these four means of sustaining a favorable relationship.
+an4.32:1.2 | S: What four? | T: What four?
+an4.32:1.3 | S: Giving, kindly words, taking care, and equality. | T: Giving, endearing speech, beneficent conduct, and impartiality.
+an4.32:1.4 | S: These are the four ways of being inclusive. | T: These are the four means of sustaining a favorable relationship.”
+an4.32:2.1 | S: Giving and kindly words, | T: Giving, endearing speech,
+an4.32:2.2 | S: taking care here, | T: beneficent conduct, and impartiality
+an4.32:2.3 | S: and treating equally in worldly conditions, | T: under diverse worldly conditions,
+an4.32:2.4 | S: as they deserve in each case. | T: as is suitable to fit each case:
+an4.32:2.5 | S: These ways of being inclusive in the world | T: these means of sustaining a favorable relationship
+an4.32:2.6 | S: are like a moving chariot’s linchpin. | T: are like the linchpin of a rolling chariot.
+an4.32:3.1 | S: If there were no such ways of being inclusive, | T: If there were no such means of sustaining a favorable relationship,
+an4.32:3.2 | S: neither mother nor father | T: neither mother nor father
+an4.32:3.3 | S: would be respected and honored | T: would be able to obtain esteem
+an4.32:3.4 | S: for what they’ve done for their children. | T: and veneration from their children.
+an4.32:4.1 | S: But since these ways of being inclusive do exist, | T: But since there exist these means of sustaining a favorable relationship,
+an4.32:4.2 | S: the astute do regard them well, | T: wise people respect them;
+an4.32:4.3 | S: so they achieve greatness | T: thus they attain to greatness
+an4.32:4.4 | S: and are praised.” | T: and are highly praised.
+an4.32:4.5 | P: Dutiyaṁ. | T: (none)
+
+## an4.37
+an4.37:1.1 | S: “Mendicants, a mendicant who possesses four qualities can’t decline, and has drawn near to extinguishment. | T: “Bhikkhus, a bhikkhu who possesses four qualities is incapable of decline and is in the vicinity of nibbāna.
+an4.37:1.2 | S: What four? | T: What four?
+an4.37:1.3 | S: A mendicant is accomplished in ethics, guards the sense doors, eats in moderation, and is dedicated to wakefulness. | T: Here, a bhikkhu is accomplished in virtuous behavior, guards the doors of the sense faculties, observes moderation in eating, and is intent on wakefulness.
+an4.37:2.1 | S: And how is a mendicant accomplished in ethics? | T: (1) “And how is a bhikkhu accomplished in virtuous behavior?
+an4.37:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: Here, a bhikkhu is virtuous; he dwells restrained by the Pātimokkha, possessed of good conduct and resort, seeing danger in minute faults. Having undertaken the training rules, he trains in them.
+an4.37:2.3 | S: That’s how a mendicant is accomplished in ethics. | T: It is in this way that a bhikkhu is accomplished in virtuous behavior.
+an4.37:3.1 | S: And how does a mendicant guard the sense doors? | T: (2) “And how does a bhikkhu guard the doors of the sense faculties?
+an4.37:3.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: Here, having seen a form with the eye, a bhikkhu does not grasp its marks and features.
+an4.37:3.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: Since, if he left the eye faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the eye faculty, he undertakes the restraint of the eye faculty.
+an4.37:3.4 | S: Hearing a sound with their ears … | T: Having heard a sound with the ear …
+an4.37:3.5 | S: Smelling an odor with their nose … | T: Having smelled an odor with the nose …
+an4.37:3.6 | S: Tasting a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an4.37:3.7 | S: Encountering a touch with their body … | T: Having felt a tactile object with the body …
+an4.37:3.8 | S: Knowing an idea with their mind, they don’t get caught up in the features and details. | T: Having cognized a mental phenomenon with the mind, a bhikkhu does not grasp its marks and features.
+an4.37:3.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: Since, if he left the mind faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the mind faculty, he undertakes the restraint of the mind faculty.
+an4.37:3.10 | S: That’s how a mendicant guards the sense doors. | T: It is in this way that a bhikkhu guards the doors of the sense faculties.
+an4.37:4.1 | S: And how does a mendicant eat in moderation? | T: (3) “And how does a bhikkhu observe moderation in eating?
+an4.37:4.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: Here, reflecting carefully, a bhikkhu consumes food
+an4.37:4.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: neither for amusement nor for intoxication nor for the sake of physical beauty and attractiveness, but only for the support and maintenance of this body, for avoiding harm, and for assisting the spiritual life, considering: ‘Thus I shall terminate the old feeling and not arouse a new feeling, and I shall be healthy and blameless and dwell at ease.’
+an4.37:4.4 | S: That’s how a mendicant eats in moderation. | T: It is in this way that a bhikkhu observes moderation in eating.
+an4.37:5.1 | S: And how is a mendicant dedicated to wakefulness? | T: (4) “And how is a bhikkhu intent on wakefulness?
+an4.37:5.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. | T: Here, during the day, while walking back and forth and sitting, a bhikkhu purifies his mind of obstructive qualities.
+an4.37:5.3 | S: In the first watch of the night, they continue to practice walking and sitting meditation. | T: In the first watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities.
+an4.37:5.4 | S: In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: In the middle watch of the night he lies down on the right side in the lion’s posture, with one foot overlapping the other, mindful and clearly comprehending, after noting in his mind the idea of rising.
+an4.37:5.5 | S: In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: After rising, in the last watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities.
+an4.37:5.6 | S: This is how a mendicant is dedicated to wakefulness. | T: It is in this way that a bhikkhu is intent on wakefulness.
+an4.37:5.7 | S: A mendicant who possesses these four qualities can’t decline, and has drawn near to extinguishment. | T: “A bhikkhu who possesses these four qualities is incapable of decline and is in the vicinity of nibbāna.”
+an4.37:6.1 | S: Established in ethics, | T: Established in virtuous behavior,
+an4.37:6.2 | S: restrained in the sense faculties, | T: restrained in the sense faculties,
+an4.37:6.3 | S: eating in moderation, | T: moderate in eating,
+an4.37:6.4 | S: and dedicated to wakefulness; | T: intent on wakefulness:
+an4.37:7.1 | S: a mendicant lives like this, with keen energy, | T: a bhikkhu dwells thus ardently,
+an4.37:7.2 | S: tireless all night and day, | T: unwearying by day and night,
+an4.37:7.3 | S: developing skillful qualities, | T: developing wholesome qualities
+an4.37:7.4 | S: for the sake of sanctuary from the yoke. | T: to attain security from bondage.
+an4.37:8.1 | S: A mendicant who loves diligence, | T: A bhikkhu who delights in heedfulness,
+an4.37:8.2 | S: seeing fear in negligence, | T: seeing the danger in heedlessness,
+an4.37:8.3 | S: can’t decline, | T: is incapable of decline:
+an4.37:8.4 | S: and has drawn near to extinguishment.” | T: he is close to nibbāna.
+an4.37:8.5 | P: Sattamaṁ. | T: (none)
+
+## an4.38
+an4.38:1.1 | S: “Mendicants, a mendicant has cast aside idiosyncratic interpretations of the truth, has totally given up searching, has stilled the physical process, and is said to be ‘withdrawn’. | T: “Bhikkhus, a bhikkhu who has dispelled personal truths, totally renounced seeking, and tranquilized bodily activity is said to have drawn back.
+an4.38:1.2 | S: And how has a mendicant cast aside idiosyncratic interpretations of the truth? | T: (1) “And how, bhikkhus, has a bhikkhu dispelled personal truths?
+an4.38:1.3 | S: Different ascetics and brahmins have different idiosyncratic interpretations of the truth. For example: | T: Here, whatever ordinary personal truths may be held by ordinary ascetics and brahmins—that is,
+an4.38:1.4 | S: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: ‘The world is eternal’ or ‘The world is not eternal’; ‘The world is finite’ or ‘The world is infinite’; ‘The soul and the body are the same’ or ‘The soul is one thing, the body another’; ‘The Tathāgata exists after death,’ or ‘The Tathāgata does not exist after death,’ or ‘The Tathāgata both exists and does not exist after death,’ or ‘The Tathāgata neither exists nor does not exist after death’—
+an4.38:1.5 | S: A mendicant has cast out, cast aside, thrown out, discarded, let go of, given up, and relinquished all these. | T: a bhikkhu has discarded and dispelled them all, given them up, rejected them, let go of them, abandoned and relinquished them.
+an4.38:1.6 | S: That’s how a mendicant has cast aside idiosyncratic interpretations of the truth. | T: It is in this way that a bhikkhu has dispelled personal truths.
+an4.38:2.1 | S: And how has a mendicant totally given up searching? | T: (2) “And how has a bhikkhu totally renounced seeking?
+an4.38:2.2 | S: It’s when they’ve given up searching for sensual pleasures, for continued existence, and for a spiritual path. | T: Here, a bhikkhu has abandoned the search for sensual pleasures and the search for existence and has allayed the search for a spiritual life.
+an4.38:2.3 | S: That’s how a mendicant has totally given up searching. | T: It is in this way that a bhikkhu has totally renounced seeking.
+an4.38:3.1 | S: And how has a mendicant stilled the physical process? | T: (3) “And how has a bhikkhu tranquilized bodily activity?
+an4.38:3.2 | S: It’s when, with the giving up of pleasure and pain and the disappearance of former happiness and sadness, they enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness. | T: Here, with the abandoning of pleasure and pain, and with the previous passing away of joy and dejection, a bhikkhu enters and dwells in the fourth jhāna, neither painful nor pleasant, which has purification of mindfulness by equanimity.
+an4.38:3.3 | S: That’s how a mendicant has stilled the physical process. | T: It is in this way that a bhikkhu has tranquilized bodily activity.
+an4.38:4.1 | S: And how is a mendicant withdrawn? | T: (4) “And how has a bhikkhu drawn back?
+an4.38:4.2 | S: It’s when they’ve given up the conceit ‘I am’, cut it off at the root, made it like a palm stump, obliterated it, so it’s unable to arise in the future. | T: Here, a bhikkhu has abandoned the conceit ‘I am,’ cut it off at the root, made it like a palm stump, obliterated it so that it is no longer subject to future arising.
+an4.38:4.3 | S: That’s how a mendicant is withdrawn. | T: It is in this way that a bhikkhu has drawn back.
+an4.38:4.4 | S: A mendicant has cast aside idiosyncratic interpretations of the truth, has totally given up searching, has stilled the physical process, and is said to be ‘withdrawn’. | T: “Bhikkhus, a bhikkhu who has dispelled personal truths, totally renounced seeking, and tranquilized bodily activity is said to have drawn back.”
+an4.38:5.1 | S: The search for sensual pleasures, <j>for continued existence, | T: Seeking for sense pleasures, seeking for existence,
+an4.38:5.2 | S: and the search for a spiritual path; | T: seeking for a spiritual life;
+an4.38:5.3 | S: the holding tight to the thought, ‘this is the truth’, | T: the tight grasp “Such is the truth,”
+an4.38:5.4 | S: and the mass of grounds for views— | T: viewpoints that are swellings:
+an4.38:6.1 | S: for one detached from all lusts, | T: for one entirely detached from lust,
+an4.38:6.2 | S: freed by the ending of craving, | T: liberated by the destruction of craving,
+an4.38:6.3 | S: that searching has been relinquished, | T: such seeking has been relinquished,
+an4.38:6.4 | S: and those grounds for views eradicated. | T: and viewpoints are uprooted.
+an4.38:7.1 | S: That mendicant is peaceful and mindful, | T: That peaceful, mindful bhikkhu,
+an4.38:7.2 | S: tranquil and undefeated. | T: tranquil, undefeated,
+an4.38:7.3 | S: And when they’re awakened <j>by comprehending conceit, | T: enlightened by breaking through conceit,
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.38:7.4 | S: they’re called ‘withdrawn’.” | T: is called “one who has drawn back.”
+an4.38:7.5 | P: Aṭṭhamaṁ. | T: (none)
+
+
+codex
+I’ve read the whole file. I’m checking a few verse boundaries carefully so that wording differences don’t become false positives.
+
+exec
+/bin/bash -lc "sed -n '16,30p;83,95p;288,317p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an4.1:3.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+an4.1:4.1 | S: “Ethics, immersion, and wisdom, | T: “Virtuous behavior, concentration, wisdom,
+an4.1:4.2 | S: and the supreme freedom: | T: and unsurpassed liberation:
+an4.1:4.3 | S: these things have been understood | T: these things the illustrious Gotama
+an4.1:4.4 | S: by Gotama the renowned. | T: understood by himself.
+an4.1:5.1 | S: And so the Buddha, having insight, | T: “Having directly known these things,
+an4.1:5.2 | S: explained this teaching to the mendicants. | T: the Buddha taught the Dhamma to the bhikkhus.
+an4.1:5.3 | S: The teacher made an end of suffering, | T: The Teacher, the end-maker of suffering,
+an4.1:5.4 | S: seeing clearly, he is fully quenched.” | T: the One with Vision, has attained nibbāna.”
+an4.1:5.5 | P: Paṭhamaṁ. | T: (none)
+
+## an4.20
+an4.20:1.1 | S: “Mendicants, a meal assigner who has four qualities is placed in hell as if delivered there. | T: “Bhikkhus, if an assigner of meals possesses four qualities, he is deposited in hell as if brought there.
+an4.20:1.2 | S: What four? | T: What four?
+an4.20:1.3 | S: They make decisions prejudiced by favoritism, hostility, stupidity, and cowardice. | T: He takes a wrong course because of desire, because of hatred, because of delusion, or because of fear.
+an4.23:8.4 | S: freed with the ending of attachments. | T: he is liberated in the extinction of acquisitions.
+an4.23:9.1 | S: That Blessed One is the Buddha, | T: He is the Blessed One, the Buddha,
+an4.23:9.2 | S: he is the supreme lion, | T: he is the lion unsurpassed;
+an4.23:9.3 | S: in all the world with its gods, | T: in this world with its devas,
+an4.23:9.4 | S: he turns the divine wheel. | T: he set in motion the wheel of Brahmā.
+an4.23:10.1 | S: And so those gods and humans, | T: Thus those devas and human beings
+an4.23:10.2 | S: who have gone to the Buddha for refuge, | T: who have gone for refuge to the Buddha
+an4.23:10.3 | S: come together and revere him, | T: assemble and pay homage to him,
+an4.23:10.4 | S: great of heart and intrepid: | T: the great one free from diffidence:
+an4.23:11.1 | S: ‘Tamed, he is the best of tamers, | T: “Tamed, he is the best of tamers;
+an4.23:11.2 | S: peaceful, he is the seer among the peaceful, | T: peaceful, he is the seer among peace-bringers;
+an4.23:11.3 | S: liberated, he is the foremost of liberators, | T: freed, he is the chief of liberators;
+an4.23:11.4 | S: crossed over, he is the most excellent of guides across.’ | T: crossed over, he is the best of guides across.”
+an4.32:4.4 | S: and are praised.” | T: and are highly praised.
+an4.32:4.5 | P: Dutiyaṁ. | T: (none)
+
+## an4.37
+an4.37:1.1 | S: “Mendicants, a mendicant who possesses four qualities can’t decline, and has drawn near to extinguishment. | T: “Bhikkhus, a bhikkhu who possesses four qualities is incapable of decline and is in the vicinity of nibbāna.
+an4.37:1.2 | S: What four? | T: What four?
+an4.37:1.3 | S: A mendicant is accomplished in ethics, guards the sense doors, eats in moderation, and is dedicated to wakefulness. | T: Here, a bhikkhu is accomplished in virtuous behavior, guards the doors of the sense faculties, observes moderation in eating, and is intent on wakefulness.
+an4.37:2.1 | S: And how is a mendicant accomplished in ethics? | T: (1) “And how is a bhikkhu accomplished in virtuous behavior?
+an4.37:2.2 | S: It’s when a mendicant is ethical, restrained in the monastic code, conducting themselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, they keep the rules they’ve undertaken. | T: Here, a bhikkhu is virtuous; he dwells restrained by the Pātimokkha, possessed of good conduct and resort, seeing danger in minute faults. Having undertaken the training rules, he trains in them.
+an4.37:2.3 | S: That’s how a mendicant is accomplished in ethics. | T: It is in this way that a bhikkhu is accomplished in virtuous behavior.
+an4.37:3.1 | S: And how does a mendicant guard the sense doors? | T: (2) “And how does a bhikkhu guard the doors of the sense faculties?
+an4.37:3.2 | S: When a mendicant sees a sight with their eyes, they don’t get caught up in the features and details. | T: Here, having seen a form with the eye, a bhikkhu does not grasp its marks and features.
+an4.37:3.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: Since, if he left the eye faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the eye faculty, he undertakes the restraint of the eye faculty.
+an4.37:3.4 | S: Hearing a sound with their ears … | T: Having heard a sound with the ear …
+an4.37:3.5 | S: Smelling an odor with their nose … | T: Having smelled an odor with the nose …
+an4.37:3.6 | S: Tasting a flavor with their tongue … | T: Having tasted a taste with the tongue …
+an4.37:3.7 | S: Encountering a touch with their body … | T: Having felt a tactile object with the body …
+an4.37:3.8 | S: Knowing an idea with their mind, they don’t get caught up in the features and details. | T: Having cognized a mental phenomenon with the mind, a bhikkhu does not grasp its marks and features.
+an4.37:3.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: Since, if he left the mind faculty unrestrained, bad unwholesome states of longing and dejection might invade him, he practices restraint over it; he guards the mind faculty, he undertakes the restraint of the mind faculty.
+an4.37:3.10 | S: That’s how a mendicant guards the sense doors. | T: It is in this way that a bhikkhu guards the doors of the sense faculties.
+an4.37:4.1 | S: And how does a mendicant eat in moderation? | T: (3) “And how does a bhikkhu observe moderation in eating?
+an4.37:4.2 | S: It’s when a mendicant reflects rationally on the food that they eat: | T: Here, reflecting carefully, a bhikkhu consumes food
+an4.37:4.3 | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: neither for amusement nor for intoxication nor for the sake of physical beauty and attractiveness, but only for the support and maintenance of this body, for avoiding harm, and for assisting the spiritual life, considering: ‘Thus I shall terminate the old feeling and not arouse a new feeling, and I shall be healthy and blameless and dwell at ease.’
+an4.37:4.4 | S: That’s how a mendicant eats in moderation. | T: It is in this way that a bhikkhu observes moderation in eating.
+an4.37:5.1 | S: And how is a mendicant dedicated to wakefulness? | T: (4) “And how is a bhikkhu intent on wakefulness?
+an4.37:5.2 | S: It’s when a mendicant practices walking and sitting meditation by day, purifying their mind from obstacles. | T: Here, during the day, while walking back and forth and sitting, a bhikkhu purifies his mind of obstructive qualities.
+an4.37:5.3 | S: In the first watch of the night, they continue to practice walking and sitting meditation. | T: In the first watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities.
+an4.37:5.4 | S: In the middle watch, they lie down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: In the middle watch of the night he lies down on the right side in the lion’s posture, with one foot overlapping the other, mindful and clearly comprehending, after noting in his mind the idea of rising.
+an4.37:5.5 | S: In the last watch, they get up and continue to practice walking and sitting meditation, purifying their mind from obstacles. | T: After rising, in the last watch of the night, while walking back and forth and sitting, he purifies his mind of obstructive qualities.
+an4.37:5.6 | S: This is how a mendicant is dedicated to wakefulness. | T: It is in this way that a bhikkhu is intent on wakefulness.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-058.findings.tmp <<'EOF'
+an4.1:5.2 starts: taught the Dhamma to the bhikkhus.
+an4.23:7.2 starts: who has untied all knots.
+an4.32:2.3 starts: and impartiality under diverse worldly conditions,
+an4.32:3.4 starts: from their children.
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+4 lines reported.
+tokens used
+28,772
+4 lines reported.

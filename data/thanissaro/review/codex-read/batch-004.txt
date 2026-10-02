@@ -1,0 +1,390 @@
+## iti55
+iti55:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti55:2.1 | S: “Mendicants, there are these three searches. | T: “Monks, there are these three searches.
+iti55:2.2 | S: What three? | T: Which three?
+iti55:2.3 | S: The search for sensual pleasures, the search for continued existence, and the search for a spiritual path. | T: The search for sensuality, the search for becoming, the search for a holy life.
+iti55:2.4 | S: These are the three searches.” | T: These are the three searches.”
+iti55:2.5 | S: The Buddha spoke this matter. | T: (none)
+iti55:2.6 | S: On this it is said: | T: (none)
+iti55:3.1 | S: “The search for sensual pleasures, <j>for continued existence, | T: Sensuality-search, becoming-search,
+iti55:3.2 | S: and the search for a spiritual path; | T: together with the holy-life search–
+iti55:3.3 | S: the holding tight to the thought, ‘this is the truth’, | T: i.e., grasping at ‘such is the truth’
+iti55:3.4 | S: and the mass of grounds for views— | T: based on an accumulation of viewpoints:
+iti55:4.1 | S: for one detached from all lusts, | T: through the relinquishing of searches & the abolishing of viewpoints of one dispassionate to all passion,
+iti55:4.2 | S: freed by the ending of craving, | T: and released in the ending of craving,
+iti55:4.3 | S: that searching has been relinquished, | T: (none)
+iti55:4.4 | S: and those grounds for views eradicated. | T: (none)
+iti55:4.5 | S: With the ending of searches, a mendicant | T: through the ending of searches, the monk
+iti55:4.6 | S: is free of hope and indecision.” | T: is without perplexity, free of longing.
+iti55:5.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti55:5.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti77
+iti77:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti77:2.1 | S: “This body is fragile, mendicants, consciousness is liable to fade away, and all attachments are impermanent, suffering, and perishable.” | T: “Monks, this body falls apart; consciousness is subject to fading; all acquisitions are inconstant, stressful, subject to change.”
+iti77:2.2 | S: The Buddha spoke this matter. | T: (none)
+iti77:2.3 | S: On this it is said: | T: (none)
+iti77:3.1 | S: “Knowing that the body is fragile, | T: Knowing the body as falling apart,
+iti77:3.2 | S: that consciousness is faded, | T: & consciousness as dissolving away,
+iti77:3.3 | S: and seeing the danger in attachments, | T: seeing the danger in acquisitions,
+iti77:3.4 | S: they go beyond birth and death. | T: you’ve gone beyond birth & death.
+iti77:3.5 | S: Having attained ultimate peace, | T: Having reached the foremost peace,
+iti77:3.6 | S: evolved, they await their time.” | T: you bide your time, composed.
+iti77:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti77:4.2 | P: Aṭṭhamaṁ. | T: (none)
+
+## iti75
+iti75:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti75:2.1 | S: “Mendicants, these three individuals are found in the world. | T: “Monks, these three types of persons can be found existing in the world.
+iti75:2.2 | S: What three? | T: Which three?
+iti75:2.3 | S: One like a rainless cloud, one who rains locally, one who rains all over. | T: One like a cloud without rain, one who rains locally, and one who rains everywhere.
+iti75:3.1 | S: And how is an individual like a rainless cloud? | T: “And how is a person like a cloud without rain?
+iti75:3.2 | S: It’s when an individual doesn’t give to anyone at all—whether ascetics and brahmins, paupers, vagrants, supplicants, or beggars—such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: There is the case where a person is not a giver of food, drink, clothing, vehicles, garlands, scents, ointments, beds, dwellings, or lights to anyone at all: to contemplatives or brahmans, to any of the miserable, the homeless, or beggars.
+iti75:3.3 | S: That’s how an individual is like a rainless cloud. | T: This is how a person is like a cloud without rain.
+iti75:4.1 | S: And how does an individual rain locally? | T: “And how is a person one who rains locally?
+iti75:4.2 | S: It’s when an individual gives to some but not to others—whether ascetics and brahmins, paupers, vagrants, supplicants, or beggars—such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: There is the case where a person is a giver of food, drink, clothing, vehicles, garlands, scents, ointments, beds, dwellings, & lights to some contemplatives & brahmans, to some of the miserable, the homeless, & beggars, but not to others.
+iti75:4.3 | S: That’s how an individual rains locally. | T: This is how a person is one who rains locally.
+iti75:5.1 | S: And how does an individual rain all over? | T: “And how is a person one who rains everywhere?
+iti75:5.2 | S: It’s when an individual gives to everyone—whether ascetics and brahmins, paupers, vagrants, supplicants, or beggars—such things as food, drink, clothing, vehicles; garlands, fragrance, and makeup; and bed, house, and lighting. | T: There is the case where a person gives food, drink, clothing, vehicles, garlands, scents, ointments, beds, dwellings, & lights to all contemplatives & brahmans, to all of the miserable, the homeless, & beggars.
+iti75:5.3 | S: That’s how an individual rains all over. | T: This is how a person is one who rains everywhere.
+iti75:5.4 | S: These are the three individuals found in the world.” | T: “These are the three types of persons who can be found existing in the world.”
+iti75:5.5 | S: The Buddha spoke this matter. | T: (none)
+iti75:5.6 | S: On this it is said: | T: (none)
+iti75:6.1 | S: “They don’t share the food and drink | T: Not to contemplatives, to brahmans, to the miserable, nor to the homeless does he share what he’s gained: food, drinks,
+iti75:6.2 | S: they have acquired | T: (none)
+iti75:6.3 | S: with ascetics or brahmins, | T: (none)
+iti75:6.4 | S: with paupers, vagrants, or supplicants. | T: nourishment. He, that lowest of people,
+iti75:6.5 | S: They’re like a rainless cloud, | T: is called a cloud with no rain.
+iti75:6.6 | S: they say, the meanest of men. | T: (none)
+iti75:7.1 | S: They don’t give to some, | T: To some he doesn’t give,
+iti75:7.2 | S: to some they provide. | T: to others he does:
+iti75:7.3 | S: They rain locally, | T: the intelligent call him one who rains locally.
+iti75:7.4 | S: so say the wise. | T: (none)
+iti75:8.1 | S: Compassionate for all beings, | T: A person responsive to requests, sympathetic to all beings,
+iti75:8.2 | S: that person distributes | T: delighting in distributing alms:
+iti75:8.3 | S: abundant food upon request, | T: (none)
+iti75:8.4 | S: saying, ‘Give! Give!’ | T: “Give to them! Give!” he says.
+iti75:9.1 | S: The rain cloud rains forth, | T: As a cloud–resounding, thundering–rains,
+iti75:9.2 | S: having thundered and roared, | T: (none)
+iti75:9.3 | S: drenching the earth with water, | T: filling with water, drenching the plateaus & gullies:
+iti75:9.4 | S: soaking the uplands and valleys. | T: (none)
+iti75:10.1 | S: Even so, such an individual, | T: a person like this is like that.
+iti75:10.2 | S: having accumulated wealth | T: (none)
+iti75:10.3 | S: by legitimate means, | T: Having rightly amassed
+iti75:10.4 | S: through their own hard work, | T: wealth attained through initiative,
+iti75:10.5 | S: rightly satisfies with food and drink | T: he satisfies rightly with food & drink
+iti75:10.6 | S: those who have become supplicants.” | T: those fallen into the homeless state.
+iti75:11.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti75:11.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## iti2
+iti2:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti2:2.1 | S: “Mendicants, give up one thing | T: “Abandon one quality, monks,
+iti2:2.2 | S: and I guarantee you non-return. | T: and I guarantee you non-return.
+iti2:2.3 | S: What one thing? | T: Which one quality?
+iti2:2.4 | S: Hate is the one thing. Give it up, | T: Abandon aversion as the one quality,
+iti2:2.5 | S: and I guarantee you non-return.” | T: and I guarantee you non-return.”
+iti2:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti2:2.7 | S: On this it is said: | T: (none)
+iti2:3.1 | S: “When overcome by hate | T: The aversion with which
+iti2:3.2 | S: beings go to a bad place. | T: beings go to a bad destination, upset:
+iti2:3.3 | S: Having rightly understood that hate, | T: from rightly knowing that aversion,
+iti2:3.4 | S: the discerning give it up. | T: those who see clearly let go.
+iti2:3.5 | S: Once they’ve given it up, | T: Letting go, they never come to this world again.
+iti2:3.6 | S: they never return to this world.” | T: (none)
+iti2:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti2:4.2 | P: Dutiyaṁ. | T: (none)
+
+## iti3
+iti3:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti3:2.1 | S: “Mendicants, give up one thing | T: “Abandon one quality, monks,
+iti3:2.2 | S: and I guarantee you non-return. | T: and I guarantee you non-return.
+iti3:2.3 | S: What one thing? | T: Which one quality?
+iti3:2.4 | S: Delusion is the one thing. Give it up, | T: Abandon delusion as the one quality,
+iti3:2.5 | S: and I guarantee you non-return.” | T: and I guarantee you non-return.”
+iti3:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti3:2.7 | S: On this it is said: | T: (none)
+iti3:3.1 | S: “When overcome by delusion | T: The delusion with which
+iti3:3.2 | S: beings go to a bad place. | T: beings go to a bad destination, confused:
+iti3:3.3 | S: Having rightly understood that delusion, | T: from rightly knowing that delusion,
+iti3:3.4 | S: the discerning give it up. | T: those who see clearly let go.
+iti3:3.5 | S: Once they’ve given it up, | T: Letting go, they never come to this world again.
+iti3:3.6 | S: they never return to this world.” | T: (none)
+iti3:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti3:4.2 | P: Tatiyaṁ. | T: (none)
+
+## iti4
+iti4:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti4:2.1 | S: “Mendicants, give up one thing | T: “Abandon one quality, monks,
+iti4:2.2 | S: and I guarantee you non-return. | T: and I guarantee you non-return.
+iti4:2.3 | S: What one thing? | T: Which one quality?
+iti4:2.4 | S: Anger is the one thing. Give it up, | T: Abandon anger as the one quality,
+iti4:2.5 | S: and I guarantee you non-return.” | T: and I guarantee you non-return.”
+iti4:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti4:2.7 | S: On this it is said: | T: (none)
+iti4:3.1 | S: “When overcome by anger | T: The anger with which
+iti4:3.2 | S: beings go to a bad place. | T: beings go to a bad destination, enraged:
+iti4:3.3 | S: Having rightly understood that anger, | T: from rightly knowing that anger,
+iti4:3.4 | S: the discerning give it up. | T: those who see clearly let go.
+iti4:3.5 | S: Once they’ve given it up, | T: Letting go, they never come to this world again.
+iti4:3.6 | S: they never return to this world.” | T: (none)
+iti4:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti4:4.2 | P: Catutthaṁ. | T: (none)
+
+## iti5
+iti5:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti5:2.1 | S: “Mendicants, give up one thing | T: “Abandon one quality, monks,
+iti5:2.2 | S: and I guarantee you non-return. | T: and I guarantee you non-return.
+iti5:2.3 | S: What one thing? | T: Which one quality?
+iti5:2.4 | S: Disdain is the one thing. Give it up, | T: Abandon contempt as the one quality,
+iti5:2.5 | S: and I guarantee you non-return.” | T: and I guarantee you non-return.”
+iti5:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti5:2.7 | S: On this it is said: | T: (none)
+iti5:3.1 | S: “When overcome by disdain | T: The contempt with which
+iti5:3.2 | S: beings go to a bad place. | T: beings go to a bad destination, disdainful:
+iti5:3.3 | S: Having rightly understood that disdain, | T: from rightly knowing that contempt,
+iti5:3.4 | S: the discerning give it up. | T: those who see clearly let go.
+iti5:3.5 | S: Once they’ve given it up, | T: Letting go, they never come to this world again.
+iti5:3.6 | S: they never return to this world.” | T: (none)
+iti5:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti5:4.2 | P: Pañcamaṁ. | T: (none)
+
+## iti6
+iti6:1.1 | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti6:2.1 | S: “Mendicants, give up one thing | T: “Abandon one quality, monks,
+iti6:2.2 | S: and I guarantee you non-return. | T: and I guarantee you non-return.
+iti6:2.3 | S: What one thing? | T: Which one quality?
+iti6:2.4 | S: Conceit is the one thing. Give it up, | T: Abandon conceit as the one quality,
+iti6:2.5 | S: and I guarantee you non-return.” | T: and I guarantee you non-return.”
+iti6:2.6 | S: The Buddha spoke this matter. | T: (none)
+iti6:2.7 | S: On this it is said: | T: (none)
+iti6:3.1 | S: “Drunk on conceit, | T: The conceit with which
+iti6:3.2 | S: beings go to a bad place. | T: beings go to a bad destination, proud:
+iti6:3.3 | S: Having rightly understood that conceit, | T: from rightly knowing that conceit,
+iti6:3.4 | S: the discerning give it up. | T: those who see clearly let go.
+iti6:3.5 | S: Once they’ve given it up, | T: Letting go, they never come to this world again.
+iti6:3.6 | S: they never return to this world.” | T: (none)
+iti6:4.1 | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti6:4.2 | P: Chaṭṭhaṁ. | T: (none)
+
+## an9.38
+an9.38:1.1 | S: Then two brahmin cosmologists went up to the Buddha, and exchanged greetings with him. | T: Then two brahman cosmologists [Ājīvakas] went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an9.38:1.2 | S: When the greetings and polite conversation were over, they sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they said to the Blessed One,
+an9.38:2.1 | S: “Worthy Gotama, Pūraṇa Kassapa claims to be all-knowing and all-seeing, to know and see everything without exception, thus: | T: “Master Gotama, Pūraṇa Kassapa—all-knowing, all-seeing—claims exhaustive knowledge & vision:
+an9.38:2.2 | S: ‘Knowledge and vision are constantly and continually present to me, while walking, standing, sleeping, and waking.’ | T: ‘Whether I am standing or walking, awake or asleep, continual, unflagging knowledge & vision is established within me.’
+an9.38:2.3 | S: He says: | T: He says,
+an9.38:2.4 | S: ‘With infinite knowledge I know and see that the cosmos is infinite.’ | T: ‘I dwell with infinite knowledge, knowing & seeing the finite cosmos.’
+an9.38:2.5 | S: And the Jain ascetic of the Ñātika clan also claims to be all-knowing and all-seeing, to know and see everything without exception, thus: | T: Yet Nigaṇṭha Nāṭaputta—all-knowing, all-seeing—also claims exhaustive knowledge & vision:
+an9.38:2.6 | S: ‘Knowledge and vision are constantly and continually present to me, while walking, standing, sleeping, and waking.’ | T: ‘Whether I am standing or walking, awake or asleep, continual, unflagging knowledge & vision is established within me.’
+an9.38:2.7 | S: He says: | T: He says,
+an9.38:2.8 | S: ‘With infinite knowledge I know and see that the cosmos is finite.’ | T: ‘I dwell with infinite knowledge, knowing & seeing the infinite cosmos.’
+an9.38:2.9 | S: These two claim to speak from knowledge, but they directly contradict each other. Which one of them speaks the truth, and which falsehood?” | T: Of these two speakers of knowledge, these two who contradict each other, which is telling the truth, and which is lying?”
+an9.38:3.1 | S: “Enough, brahmins, let that be. | T: “Enough, brahmans.
+an9.38:3.2 | P: Tiṭṭhatetaṁ: | T: Put this question aside.
+an9.38:3.3 | P: ‘imesaṁ ubhinnaṁ ñāṇavādānaṁ ubhinnaṁ aññamaññaṁ vipaccanīkavādānaṁ ko saccaṁ āha ko musā’ti. | T: (none)
+an9.38:3.4 | S: I will teach you the Dhamma. | T: I will teach you the Dhamma.
+an9.38:3.5 | S: Listen and apply your mind well, I will speak.” | T: Listen and pay close attention. I will speak.”
+an9.38:3.6 | S: “Yes, worthy sir,” those brahmins replied. | T: “Yes, sir,” the brahmans responded to the Blessed One,
+an9.38:3.7 | S: The Buddha said this: | T: and the Blessed One said,
+an9.38:4.1 | S: “Suppose there were four men standing in the four quarters. Each of them was extremely fast, with an extremely mighty stride. | T: “Suppose that there were four men standing at the four directions, endowed with supreme speed & stride.
+an9.38:4.2 | S: They’re as fast as a light arrow easily shot across the shadow of a palm tree by a well-trained expert archer with a strong bow. | T: Like that of a strong archer—well-trained, a practiced hand, a practiced sharp-shooter—shooting a light arrow across the shadow of a palm tree: Such would be the speed with which they were endowed.
+an9.38:4.3 | S: Their stride was such that it spanned from the eastern ocean to the western ocean. | T: As far as the east sea is from the west: Such would be the stride with which they were endowed.
+an9.38:4.4 | S: Then the man standing in the east would say: | T: Then the man standing at the eastern direction would say,
+an9.38:4.5 | S: ‘I will reach the end of the world by traveling.’ | T: ‘I, by walking, will reach the end [or: edge (anta)] of the cosmos.’
+an9.38:4.6 | S: Though he’d travel for his whole lifespan of a hundred years—pausing only to eat and drink, go to the toilet, and sleep to dispel weariness—he’d die along the way, never reaching the end of the world. | T: He—with a one-hundred year life, a one-hundred year span—would spend one hundred years traveling—apart from the time spent on eating, drinking, chewing & tasting, urinating & defecating, and sleeping to fight off weariness—but without reaching the end of the cosmos he would die along the way.
+an9.38:4.7 | S: Then the man standing in the west … | T: [Similarly with the men standing at the western, southern,
+an9.38:4.8 | S: Then the man standing in the north … | T: & northern directions.]
+an9.38:4.9 | S: Then the man standing in the south would say: | T: (none)
+an9.38:4.10 | S: ‘I will reach the end of the world by traveling.’ | T: (none)
+an9.38:4.11 | S: Though he’d travel for his whole lifespan of a hundred years—pausing only to eat and drink, go to the toilet, and sleep to dispel weariness—he’d die along the way, never reaching the end of the world. | T: (none)
+an9.38:4.12 | S: Why is that? | T: Why is that? I tell you,
+an9.38:4.13 | S: I say it’s not possible to know or see or reach the end of the world by running like this. | T: it isn’t through that sort of traveling that the end of the cosmos is known, seen, or reached.
+an9.38:4.14 | S: But I also say there’s no making an end of suffering without reaching the end of the world. | T: But at the same time, I tell you that there is no making an end of suffering & stress without reaching the end of the cosmos.
+an9.38:5.1 | S: These five kinds of sensual stimulation are called the world in the training of the Noble One. | T: “These five strings of sensuality are, in the discipline of the noble ones, called the cosmos.
+an9.38:5.2 | S: What five? | T: Which five?
+an9.38:5.3 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: Forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire;
+an9.38:5.4 | S: Sounds known by the ear … | T: sounds cognizable via the ear…
+an9.38:5.5 | S: Smells known by the nose … | T: aromas cognizable via the nose…
+an9.38:5.6 | S: Tastes known by the tongue … | T: flavors cognizable via the tongue…
+an9.38:5.7 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+an9.38:5.8 | S: These five kinds of sensual stimulation are called the world in the training of the Noble One. | T: These are the five strings of sensuality that, in the discipline of the noble ones, are called the cosmos.
+an9.38:6.1 | S: Take a mendicant who, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: “There is the case where a monk—quite secluded from sensuality, secluded from unskillful qualities—enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an9.38:6.2 | S: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. | T: This is called a monk who, coming to the end of the cosmos, remains at the end of the cosmos.
+an9.38:6.3 | S: Others say of them: | T: Others say of him,
+an9.38:6.4 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: ‘He is encompassed in the cosmos; he has not escaped from the cosmos.’
+an9.38:6.5 | S: And I also say this: | T: And I too say of him,
+an9.38:6.6 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: ‘He is encompassed in the cosmos; he has not escaped from the cosmos.’
+an9.38:7.1 | S: Furthermore, take a mendicant who, as the placing of the mind and keeping it connected are stilled, enters and remains in the second absorption … | T: [Similarly with the second,
+an9.38:7.2 | S: third absorption … | T: third,
+an9.38:7.3 | S: fourth absorption. | T: & fourth jhānas,
+an9.38:7.4 | S: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. | T: (none)
+an9.38:7.5 | S: Others say of them: | T: (none)
+an9.38:7.6 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:7.7 | S: And I also say this: | T: (none)
+an9.38:7.8 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:8.1 | S: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. | T: and with the attainment of the dimensions of the infinitude of space,
+an9.38:8.2 | S: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. | T: (none)
+an9.38:8.3 | S: Others say of them: | T: (none)
+an9.38:8.4 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:8.5 | S: And I also say this: | T: (none)
+an9.38:8.6 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:9.1 | S: Furthermore, take a mendicant who enters and remains in the dimension of infinite consciousness. … | T: the infinitude of consciousness,
+an9.38:9.2 | S: the dimension of nothingness … | T: nothingness,
+an9.38:9.3 | S: the dimension of neither perception nor non-perception. | T: and neither perception nor non-perception.]
+an9.38:9.4 | S: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. | T: (none)
+an9.38:9.5 | S: Others say of them: | T: (none)
+an9.38:9.6 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:9.7 | S: And I also say this: | T: (none)
+an9.38:9.8 | S: ‘They’re included in the world, and haven’t yet left the world.’ | T: (none)
+an9.38:10.1 | S: Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. | T: “And further, with the complete transcending of the dimension of neither perception nor non-perception, he enters & remains in the cessation of perception & feeling. And as he sees (that) with discernment, effluents are completely ended.
+an9.38:10.2 | S: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. And they’ve crossed over clinging to the world.” | T: This is called a monk who, coming to the end of the cosmos, remains at the end of the cosmos, having crossed over attachment in the cosmos.”
+an9.38:10.3 | P: Sattamaṁ. | T: (none)
+
+## an9.41
+an9.41:1.1 | S: At one time the Buddha was staying in the land of the Mallas, near the Mallian town named Uruvelakappa. | T: I have heard that on one occasion the Blessed One was staying among the Mallans near a Mallan town named Uruvelakappa.
+an9.41:1.2 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Uruvelakappa for alms. | T: Then early in the morning the Blessed One—having adjusted his lower robe and carrying his bowl & outer robe—went into Uruvelakappa for alms.
+an9.41:1.3 | S: Then, after the meal, on his return from almsround, he addressed Venerable Ānanda, | T: Having gone into Uruvelakappa for alms, after his meal, on his return from his alms round, he said to Ven. Ānanda,
+an9.41:1.4 | S: “Ānanda, you stay right here, while I plunge deep into the Great Wood for the day’s meditation.” | T: “Stay right here, Ānanda, while I go into the Great Forest for the day’s abiding.”
+an9.41:1.5 | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to him.
+an9.41:1.6 | S: Then the Buddha plunged deep into the Great Wood and sat at the root of a tree for the day’s meditation. | T: Then the Blessed One went into the Great Forest and sat down at the root of a certain tree for the day’s abiding.
+an9.41:2.1 | S: The householder Tapussa went up to Venerable Ānanda, bowed, sat down to one side, and said to him: | T: Then Tapussa the householder went to Ven. Ānanda and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to Ven. Ānanda:
+an9.41:3.1 | S: “Honorable Ānanda, we are laypeople who enjoy sensual pleasures. We like sensual pleasures, we love them and take joy in them. | T: “Venerable Ānanda, sir, we are householders who indulge in sensuality, delight in sensuality, enjoy sensuality, rejoice in sensuality.
+an9.41:3.2 | S: But renunciation seems like an abyss. | T: For us—indulging in sensuality, delighting in sensuality, enjoying sensuality, rejoicing in sensuality—renunciation seems like a sheer drop-off.
+an9.41:3.3 | S: I have heard that in this teaching and training there are very young mendicants whose minds leap forth, gain confidence, settle down, and become decided in renunciation. They see it as peaceful. | T: Yet I’ve heard that in this Dhamma & Vinaya the hearts of the very young monks leap up at renunciation, grow confident, steadfast, & released, seeing it as peace.
+an9.41:3.4 | S: Renunciation is the dividing line between the multitude and the mendicants in this teaching and training.” | T: So right here is where this Dhamma & Vinaya is contrary to the great mass of people: i.e., (this issue of) renunciation.”
+an9.41:4.1 | S: “Householder, we should see the Buddha about this matter. | T: “This calls for a talk, householder.
+an9.41:4.2 | S: Come, let’s go to the Buddha and inform him about this. | T: Let’s go see the Blessed One. Let’s approach him and, on arrival, tell him this matter.
+an9.41:4.3 | S: As he answers, so we’ll remember it.” | T: However he explains it to us, we will bear it in mind.”
+an9.41:5.1 | S: “Yes, sir,” replied Tapussa. | T: “As you say, sir,” Tapussa the householder responded to Ven. Ānanda.
+an9.41:5.2 | S: Then Ānanda together with Tapussa went to the Buddha, bowed, and sat down to one side. Ānanda told him what had happened. | T: Then Ven. Ānanda, together with Tapussa the householder, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there Ven. Ānanda said to the Blessed One:
+an9.41:6.1 | P: “Ayaṁ, bhante, tapusso gahapati evamāha: | T: “Tapussa the householder, here, has said to me,
+an9.41:6.2 | P: ‘mayaṁ, bhante ānanda, gihī kāmabhogino kāmārāmā kāmaratā kāmasammuditā, tesaṁ no, bhante, amhākaṁ gihīnaṁ kāmabhogīnaṁ kāmārāmānaṁ kāmaratānaṁ kāmasammuditānaṁ papāto viya khāyati, yadidaṁ nekkhammaṁ’. | T: ‘Venerable Ānanda, sir, we are householders who indulge in sensuality, delight in sensuality, enjoy sensuality, rejoice in sensuality. For us—indulging in sensuality, delighting in sensuality, enjoying sensuality, rejoicing in sensuality—renunciation seems like a sheer drop-off.
+an9.41:6.3 | P: Sutaṁ metaṁ, bhante, ‘imasmiṁ dhammavinaye daharānaṁ daharānaṁ bhikkhūnaṁ nekkhamme cittaṁ pakkhandati pasīdati santiṭṭhati vimuccati etaṁ santanti passato. | T: Yet I’ve heard that in this Dhamma & Vinaya the hearts of the very young monks leap up at renunciation, grow confident, steadfast, & released, seeing it as peace.
+an9.41:6.4 | P: Tayidaṁ, bhante, imasmiṁ dhammavinaye bhikkhūnaṁ bahunā janena visabhāgo yadidaṁ nekkhamman’”ti. | T: So right here is where this Dhamma & Vinaya is contrary to the great mass of people: i.e., (this issue of) renunciation.’”
+an9.41:7.1 | S: “That’s so true, Ānanda! That’s so true! | T: “So it is, Ānanda. So it is.
+an9.41:7.2 | S: Before my awakening—when I was still unawakened but intent on awakening—I too thought, | T: Even I myself, before my self-awakening, when I was still an unawakened bodhisatta, thought:
+an9.41:7.3 | S: ‘Renunciation is good! Seclusion is good!’ | T: ‘Renunciation is good. Seclusion is good.’
+an9.41:7.4 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in renunciation. I didn’t see it as peaceful. | T: But my heart didn’t leap up at renunciation, didn’t grow confident, steadfast, or released, (though) seeing it as peace.
+an9.41:7.5 | S: Then I thought, | T: The thought occurred to me:
+an9.41:7.6 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in renunciation? Why don’t I see it as peaceful?’ | T: ‘What is the cause, what is the reason, why my heart doesn’t leap up at renunciation, doesn’t grow confident, steadfast, or released, (though) seeing it as peace?’
+an9.41:7.7 | S: Then I thought, | T: Then the thought occurred to me:
+an9.41:7.8 | S: ‘I haven’t seen the drawbacks of sensual pleasures, and so I haven’t cultivated that. I haven’t realized the benefits of renunciation, and so I haven’t developed that. | T: ‘I haven’t seen the drawback of sensuality; I haven’t pursued (that theme). I haven’t understood the reward of renunciation; I haven’t familiarized myself with it.
+an9.41:7.9 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in renunciation. And it’s why I don’t see it as peaceful.’ | T: That’s why my heart doesn’t leap up at renunciation, doesn’t grow confident, steadfast, or released, (though) seeing it as peace.’
+an9.41:7.10 | S: Then I thought, | T: [1] “Then the thought occurred to me:
+an9.41:7.11 | S: ‘Suppose that, seeing the drawbacks of sensual pleasures, I were to cultivate that. And suppose that, realizing the benefits of renunciation, I were to develop that. | T: ‘If, having seen the drawback of sensuality, I were to pursue that theme; and if, having understood the reward of renunciation, I were to familiarize myself with it,
+an9.41:7.12 | S: It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in renunciation. And I would see it as peaceful.’ | T: there’s the possibility that my heart would leap up at renunciation, grow confident, steadfast, & released, seeing it as peace.’
+an9.41:7.13 | S: And so, after some time, I saw the drawbacks of sensual pleasures and cultivated that, and I realized the benefits of renunciation and developed that. | T: “So at a later time, having seen the drawback of sensuality, I pursued that theme; having understood the reward of renunciation, I familiarized myself with it.
+an9.41:7.14 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in renunciation. I saw it as peaceful. | T: My heart leaped up at renunciation, grew confident, steadfast, & released, seeing it as peace.
+an9.41:7.15 | S: And so, quite secluded from sensual pleasures, secluded from unskillful qualities, I entered and remained in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: Then, quite secluded from sensuality, secluded from unskillful qualities, I entered & remained in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an9.41:7.16 | S: While I was in that meditation, perception and focus accompanied by sensual pleasures beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with sensuality. That was an affliction for me.
+an9.41:7.17 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:7.18 | S: In the same way, when perception and focus accompanied by sensual pleasures beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with sensuality that beset me was an affliction for me.
+an9.41:8.1 | S: Then I thought, | T: [2] “The thought occurred to me:
+an9.41:8.2 | S: ‘Why don’t I, as the placing of the mind and keeping it connected are stilled … enter and remain in the second absorption?’ | T: ‘What if, with the stilling of directed thoughts & evaluations, I were to enter & remain in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.’
+an9.41:8.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in not placing the mind. I didn’t see it as peaceful. | T: But my heart didn’t leap up at being without directed thought, didn’t grow confident, steadfast, or released, (though) seeing it as peace.
+an9.41:8.4 | S: Then I thought, | T: The thought occurred to me:
+an9.41:8.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in not placing the mind? Why don’t I see it as peaceful?’ | T: ‘What is the cause, what is the reason, why my heart doesn’t leap up at being without directed thought, doesn’t grow confident, steadfast, or released, (though) seeing it as peace?’
+an9.41:8.6 | S: Then I thought, | T: Then the thought occurred to me:
+an9.41:8.7 | S: ‘I haven’t seen the drawbacks of placing the mind, and so I haven’t cultivated that. I haven’t realized the benefits of not placing the mind, and so I haven’t developed that. | T: ‘I haven’t seen the drawback of directed thought; I haven’t pursued that theme. I haven’t understood the reward of being without directed thought; I haven’t familiarized myself with it.
+an9.41:8.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in not placing the mind. And it’s why I don’t see it as peaceful.’ | T: That’s why my heart doesn’t leap up at being without directed thought, doesn’t grow confident, steadfast, or released, (though) seeing it as peace.’
+an9.41:8.9 | S: Then I thought, | T: “Then the thought occurred to me:
+an9.41:8.10 | S: ‘Suppose that, seeing the drawbacks of placing the mind, I were to cultivate that. And suppose that, realizing the benefits of not placing the mind, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in not placing the mind. And I would see it as peaceful.’ | T: ‘If, having seen the drawback of directed thought, I were to pursue that theme; and if, having understood the reward of being without directed thought, I were to familiarize myself with it, there’s the possibility that my heart would leap up at being without directed thought, grow confident, steadfast, & released, seeing it as peace.’
+an9.41:8.11 | S: And so, after some time, I saw the drawbacks of placing the mind and cultivated that, and I realized the benefits of not placing the mind and developed that. | T: “So at a later time, having seen the drawback of directed thought, I pursued that theme; having understood the reward of being without directed thought, I familiarized myself with it.
+an9.41:8.12 | S: Then my mind did leap forth, gain confidence, settle down, and become decided in not placing the mind. I saw it as peaceful. | T: My heart leaped up at being without directed thought, grew confident, steadfast, & released, seeing it as peace.
+an9.41:8.13 | S: And so, as the placing of the mind and keeping it connected were stilled … I entered and remained in the second absorption. | T: With the stilling of directed thoughts & evaluations, I entered & remained in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance.
+an9.41:8.14 | S: While I was in that meditation, perception and focus accompanied by placing the mind beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with directed thought. That was an affliction for me.
+an9.41:8.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:8.16 | S: In the same way, when perception and focus accompanied by placing the mind and keeping it connected beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with directed thought that beset me was an affliction for me.
+an9.41:9.1 | S: Then I thought, | T: [3] “The thought occurred to me:
+an9.41:9.2 | S: ‘Why don’t I, with the fading away of rapture, enter and remain in the third absorption, where I will meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, “Equanimous and mindful, one meditates in bliss”?’ | T: ‘What if, with the fading of rapture, I were to remain equanimous, mindful, & alert, to sense pleasure with the body, and to enter & remain in the third jhāna, of which the noble ones declare, “Equanimous & mindful, he has a pleasant abiding”?’
+an9.41:9.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in freedom from rapture. I didn’t see it as peaceful. | T: But my heart didn’t leap up at being without rapture, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:9.4 | S: Then I thought, | T: (none)
+an9.41:9.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in freedom from rapture? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:9.6 | S: Then I thought, | T: (none)
+an9.41:9.7 | S: ‘I haven’t seen the drawbacks of rapture, and so I haven’t cultivated that. I haven’t realized the benefits of freedom from rapture, and so I haven’t developed that. | T: (none)
+an9.41:9.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in freedom from rapture. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:9.9 | S: Then I thought, | T: (none)
+an9.41:9.10 | S: ‘Suppose that, seeing the drawbacks of rapture, I were to cultivate that. And suppose that, realizing the benefits of freedom from rapture, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in being free from rapture. And I would see it as peaceful.’ | T: (none)
+an9.41:9.11 | S: And so, after some time, I saw the drawbacks of rapture and cultivated that, and I realized the benefits of freedom from rapture and developed that. | T: So at a later time, having seen the drawback of rapture, I pursued that theme; having understood the reward of being without rapture, I familiarized myself with it.
+an9.41:9.12 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in freedom from rapture. I saw it as peaceful. | T: My heart leaped up at being without rapture, grew confident, steadfast, & released, seeing it as peace.
+an9.41:9.13 | S: And so, with the fading away of rapture … I entered and remained in the third absorption. | T: With the fading of rapture, I remained equanimous, mindful, & alert, sensed pleasure with the body, and entered & remained in the third jhāna, of which the noble ones declare, ‘Equanimous & mindful, he has a pleasant abiding.’
+an9.41:9.14 | S: While I was in that meditation, perception and focus accompanied by rapture beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with rapture. That was an affliction for me.
+an9.41:9.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:9.16 | S: In the same way, when perception and focus accompanied by rapture beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with rapture that beset me was an affliction for me.
+an9.41:10.1 | S: Then I thought, | T: [4] “The thought occurred to me:
+an9.41:10.2 | S: ‘Why don’t I, with the giving up of pleasure and pain, and the disappearance of former happiness and sadness, enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness?’ | T: ‘What if, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—I were to enter & remain in the fourth jhāna: purity of equanimity & mindfulness, neither-pleasure-nor-pain?’
+an9.41:10.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. I didn’t see it as peaceful. | T: But my heart didn’t leap up at being without the pleasure of equanimity, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:10.4 | S: Then I thought, | T: (none)
+an9.41:10.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:10.6 | S: Then I thought, | T: (none)
+an9.41:10.7 | S: ‘I haven’t seen the drawbacks of bliss with equanimity, and so I haven’t cultivated that. I haven’t realized the benefits of being without pleasure and pain, and so I haven’t developed that. | T: (none)
+an9.41:10.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:10.9 | S: Then I thought, | T: (none)
+an9.41:10.10 | S: ‘Suppose that, seeing the drawbacks of bliss with equanimity, I were to cultivate that. And suppose that, realizing the benefits of being without pleasure and pain, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. And I would see it as peaceful.’ | T: (none)
+an9.41:10.11 | S: And so, after some time, I saw the drawbacks of bliss with equanimity and cultivated that, and I realized the benefits of being without pleasure and pain and developed that. | T: So at a later time, having seen the drawback of the pleasure of equanimity, I pursued that theme; having understood the reward of neither-pleasure-nor-pain, I familiarized myself with it.
+an9.41:10.12 | S: Then my mind did leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. I saw it as peaceful. | T: My heart leaped up at neither-pleasure-nor-pain, grew confident, steadfast, & released, seeing it as peace.
+an9.41:10.13 | S: And so, giving up pleasure and pain … I entered and remained in the fourth absorption. | T: With the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—I entered & remained in the fourth jhāna: purity of equanimity & mindfulness, neither-pleasure-nor-pain.
+an9.41:10.14 | S: While I was in that meditation, perception and focus accompanied by bliss with equanimity beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with equanimity. That was an affliction for me.
+an9.41:10.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:10.16 | S: In the same way, when perception and focus accompanied by bliss with equanimity beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with equanimity that beset me was an affliction for me.
+an9.41:11.1 | S: Then I thought, | T: [5] “The thought occurred to me:
+an9.41:11.2 | S: ‘Why don’t I, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that “space is infinite”, enter and remain in the dimension of infinite space?’ | T: ‘What if, with the complete transcending of perceptions of form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) “Infinite space,” I were to enter & remain in the dimension of the infinitude of space?’
+an9.41:11.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. I didn’t see it as peaceful. | T: But my heart didn’t leap up at the dimension of the infinitude of space, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:11.4 | S: Then I thought, | T: (none)
+an9.41:11.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:11.6 | S: Then I thought, | T: (none)
+an9.41:11.7 | S: ‘I haven’t seen the drawbacks of forms, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of infinite space, and so I haven’t developed that. | T: (none)
+an9.41:11.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:11.9 | S: Then I thought, | T: (none)
+an9.41:11.10 | S: ‘Suppose that, seeing the drawbacks of forms, I were to cultivate that. And suppose that, realizing the benefits of the dimension of infinite space, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. And I would see it as peaceful.’ | T: (none)
+an9.41:11.11 | S: And so, after some time, I saw the drawbacks of forms and cultivated that, and I realized the benefits of the dimension of infinite space and developed that. | T: So at a later time, having seen the drawback of forms, I pursued that theme; having understood the reward of the dimension of the infinitude of space, I familiarized myself with it.
+an9.41:11.12 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in the dimension of infinite space. I saw it as peaceful. | T: My heart leaped up at the dimension of the infinitude of space, grew confident, steadfast, & released, seeing it as peace.
+an9.41:11.13 | S: And so, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, I entered and remained in the dimension of infinite space. | T: With the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ I entered & remained in the dimension of the infinitude of space.
+an9.41:11.14 | S: While I was in that meditation, perception and focus accompanied by forms beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with forms. That was an affliction for me.
+an9.41:11.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:11.16 | S: In the same way, when perception and focus accompanied by forms beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with forms that beset me was an affliction for me.
+an9.41:12.1 | S: Then I thought, | T: [6] “The thought occurred to me:
+an9.41:12.2 | S: ‘Why don’t I, going totally beyond the dimension of infinite space, aware that “consciousness is infinite”, enter and remain in the dimension of infinite consciousness?’ | T: ‘What if, with the complete transcending of the dimension of the infinitude of space, (perceiving,) “Infinite consciousness,” I were to enter & remain in the dimension of the infinitude of consciousness?’
+an9.41:12.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. I didn’t see it as peaceful. | T: But my heart didn’t leap up at the dimension of the infinitude of consciousness, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:12.4 | S: Then I thought, | T: (none)
+an9.41:12.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:12.6 | S: Then I thought, | T: (none)
+an9.41:12.7 | S: ‘I haven’t seen the drawbacks of the dimension of infinite space, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of infinite consciousness, and so I haven’t developed that. | T: (none)
+an9.41:12.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:12.9 | S: Then I thought, | T: (none)
+an9.41:12.10 | S: ‘Suppose that, seeing the drawbacks of the dimension of infinite space, I were to cultivate that. And suppose that, realizing the benefits of the dimension of infinite consciousness, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. And I would see it as peaceful.’ | T: (none)
+an9.41:12.11 | S: And so, after some time, I saw the drawbacks of the dimension of infinite space and cultivated that, and I realized the benefits of the dimension of infinite consciousness and developed that. | T: So at a later time, having seen the drawback of the dimension of the infinitude of space, I pursued that theme; having understood the reward of the dimension of the infinitude of consciousness, I familiarized myself with it.
+an9.41:12.12 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in the dimension of infinite consciousness. I saw it as peaceful. | T: My heart leaped up at the dimension of the infinitude of consciousness, grew confident, steadfast, & released, seeing it as peace.
+an9.41:12.13 | S: And so, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, I entered and remained in the dimension of infinite consciousness. | T: With the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ I entered & remained in the dimension of the infinitude of consciousness.
+an9.41:12.14 | S: While I was in that meditation, perception and focus accompanied by the dimension of infinite space beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with the dimension of the infinitude of space. That was an affliction for me.
+an9.41:12.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:12.16 | S: In the same way, when perception and focus accompanied by the dimension of infinite space beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with the dimension of the infinitude of space that beset me was an affliction for me.
+an9.41:13.1 | S: Then I thought, | T: [7] “The thought occurred to me:
+an9.41:13.2 | S: ‘Why don’t I, going totally beyond the dimension of infinite consciousness, aware that “there is nothing at all”, enter and remain in the dimension of nothingness?’ | T: ‘What if, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) “There is nothing,” I were to enter & remain in the dimension of nothingness?’
+an9.41:13.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. I didn’t see it as peaceful. | T: But my heart didn’t leap up at the dimension of nothingness, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:13.4 | S: Then I thought, | T: (none)
+an9.41:13.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:13.6 | S: Then I thought, | T: (none)
+an9.41:13.7 | S: ‘I haven’t seen the drawbacks of the dimension of infinite consciousness, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of nothingness, and so I haven’t developed that. | T: (none)
+an9.41:13.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:13.9 | S: Then I thought, | T: (none)
+an9.41:13.10 | S: ‘Suppose that, seeing the drawbacks of the dimension of infinite consciousness, I were to cultivate that. And suppose that, realizing the benefits of the dimension of nothingness, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. And I would see it as peaceful.’ | T: (none)
+an9.41:13.11 | S: And so, after some time, I saw the drawbacks of the dimension of infinite consciousness and cultivated that, and I realized the benefits of the dimension of nothingness and developed that. | T: So at a later time, having seen the drawback of the dimension of the infinitude of consciousness, I pursued that theme; having understood the reward of the dimension of nothingness, I familiarized myself with it.
+an9.41:13.12 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in the dimension of nothingness. I saw it as peaceful. | T: My heart leaped up at the dimension of nothingness, grew confident, steadfast, & released, seeing it as peace.
+an9.41:13.13 | S: And so, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, I entered and remained in the dimension of nothingness. | T: With the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ I entered & remained in the dimension of nothingness.
+an9.41:13.14 | S: While I was in that meditation, perception and focus accompanied by the dimension of infinite consciousness beset me, and that was an affliction for me. | T: “As I remained there, I was beset with attention to perceptions dealing with the dimension of the infinitude of consciousness. That was an affliction for me.
+an9.41:13.15 | S: Suppose a happy person were to experience pain; that would be an affliction for them. | T: Just as pain arises as an affliction for a healthy person,
+an9.41:13.16 | S: In the same way, when perception and focus accompanied by the dimension of infinite consciousness beset me, that was an affliction for me. | T: even so the attention to perceptions dealing with the dimension of the infinitude of consciousness that beset me was an affliction for me.
+an9.41:14.1 | S: Then I thought, | T: [8] “The thought occurred to me:
+an9.41:14.2 | S: ‘Why don’t I, going totally beyond the dimension of nothingness, enter and remain in the dimension of neither perception nor non-perception?’ | T: ‘What if I, with the complete transcending of the dimension of nothingness, were to enter & remain in the dimension of neither perception nor non-perception?’
+an9.41:14.3 | S: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. I didn’t see it as peaceful. | T: But my heart didn’t leap up at the dimension of neither perception nor non-perception, didn’t grow confident, steadfast, or released, (though) seeing it as peace.…
+an9.41:14.4 | S: Then I thought, | T: (none)
+an9.41:14.5 | S: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception? Why don’t I see it as peaceful?’ | T: (none)
+an9.41:14.6 | S: Then I thought, | T: (none)
+an9.41:14.7 | S: ‘I haven’t seen the drawbacks of the dimension of nothingness, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of neither perception nor non-perception, and so I haven’t developed that. | T: (none)
+an9.41:14.8 | S: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. And it’s why I don’t see it as peaceful.’ | T: (none)
+an9.41:14.9 | S: Then I thought, | T: (none)
+an9.41:14.10 | S: ‘Suppose that, seeing the drawbacks of the dimension of nothingness, I were to cultivate that. And suppose that, realizing the benefits of the dimension of neither perception nor non-perception, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. And I would see it as peaceful.’ | T: (none)
+an9.41:14.11 | S: And so, after some time, I saw the drawbacks of the dimension of nothingness and cultivated that, and I realized the benefits of the dimension of neither perception nor non-perception and developed that. | T: So at a later time, having seen the drawback of the dimension of nothingness, I pursued that theme; having understood the reward of the dimension of neither perception nor non-perception, I familiarized myself with it.
+an9.41:14.12 | S: Then my mind leapt forth, gained confidence, settled down, and became decided in the dimension of neither perception nor non-perception. I saw it as peaceful. | T: My heart leaped up at the dimension of neither perception nor non-perception, grew confident, steadfast, & released, seeing it as peace.
+an9.41:14.13 | S: And so, going totally beyond the dimension of nothingness, I entered and remained in the dimension of neither perception nor non-perception. | T: With the complete transcending of the dimension of nothingness, I entered & remained in the dimension of neither perception nor non-perception.

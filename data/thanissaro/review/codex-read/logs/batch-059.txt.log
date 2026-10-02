@@ -1,0 +1,431 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9a-6101-77f0-8a3d-8eb62776a0bd
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and check for clear shifts between adjacent lines, then write the findings.
+
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an6.63, continued
+an6.63:20.2 | S: ‘Feelings should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: “‘Feeling should be known. The cause by which feeling comes into play… The diversity in feeling… The result of feeling… The cessation of feeling… The path of practice for the cessation of feeling should be known.’
+an6.63:20.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:21.1 | S: ‘Perceptions should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: [3] “‘Perception should be known. The cause by which perception comes into play… The diversity in perception… The result of perception… The cessation of perception… The path of practice for the cessation of perception should be known.’
+an6.63:21.2 | S: That’s what I said, but why did I say it? | T: Thus it has been said. In reference to what was it said?
+an6.63:21.3 | S: There are these six perceptions: | T: “There are these six kinds of perception:
+an6.63:21.4 | S: perceptions of sights, sounds, smells, tastes, touches, and ideas. | T: the perception of form, the perception of sound, the perception of aroma, the perception of flavor, the perception of tactile sensation, the perception of ideas.
+an6.63:22.1 | S: And what is the source of perceptions? | T: “And what is the cause by which perception comes into play?
+an6.63:22.2 | S: Contact is their source. | T: Contact is the cause by which perception comes into play.
+an6.63:23.1 | S: And what is the diversity of perceptions? | T: “And what is the diversity in perception?
+an6.63:23.2 | S: The perceptions of sights, sounds, smells, tastes, touches, and ideas are all different. | T: Perception with regard to forms is one thing, perception with regard to sounds is another, perception with regard to aromas is another, perception with regard to flavors is another, perception with regard to tactile sensations is another, perception with regard to ideas is another.
+an6.63:23.3 | S: This is called the diversity of perceptions. | T: This is called the diversity in perception.
+an6.63:24.1 | S: And what is the result of perceptions? | T: “And what is the result of perception?
+an6.63:24.2 | S: Communication is the result of perception, I say. | T: Perception has expression as its result, I tell you.
+an6.63:24.3 | S: You communicate something in whatever manner you perceive it, saying ‘That’s what I perceived.’ | T: However a person perceives something, that is how he expresses it: ‘I have this sort of perception.’
+an6.63:24.4 | S: This is called the result of perceptions. | T: This is called the result of perception.
+an6.63:25.1 | S: And what is the cessation of perception? | T: “And what is the cessation of perception?
+an6.63:25.2 | S: When contact ceases, perception ceases. | T: From the cessation of contact is the cessation of perception;
+an6.63:25.3 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:25.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the way leading to the cessation of perception.
+an6.63:26.1 | S: When a noble disciple understands perception in this way … they understand that this penetrative spiritual life is the cessation of perception. | T: “Now when a disciple of the noble ones discerns perception in this way, the cause by which perception comes into play in this way, the diversity in perception in this way, the result of perception in this way, the cessation of perception in this way, & the path of practice leading to the cessation of perception in this way, then he discerns this penetrative holy life as the cessation of perception.
+an6.63:26.2 | S: ‘Perceptions should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: “‘Perception should be known. The cause by which perception comes into play… The diversity in perception… The result of perception… The cessation of perception… The path of practice for the cessation of perception should be known.’
+an6.63:26.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:27.1 | S: ‘Defilements should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: [4] “‘Effluents should be known. The cause by which effluents come into play… The diversity in effluents… The result of effluents… The cessation of effluents… The path of practice for the cessation of effluents should be known.’
+an6.63:27.2 | S: That’s what I said, but why did I say it? | T: Thus it has been said. In reference to what was it said?
+an6.63:27.3 | S: There are these three defilements: | T: “There are these three kinds of effluents:
+an6.63:27.4 | S: the defilements of sensuality, desire to be reborn, and ignorance. | T: the effluent of sensuality, the effluent of becoming, the effluent of ignorance.
+an6.63:28.1 | S: And what is the source of defilements? | T: “And what is the cause by which effluents come into play?
+an6.63:28.2 | S: Ignorance is the source of defilements. | T: Ignorance is the cause by which effluents come into play.
+an6.63:29.1 | S: And what is the disparity of defilements? | T: “And what is the diversity in effluents?
+an6.63:29.2 | S: There are defilements that lead to rebirth in hell, the animal realm, the ghost realm, the human world, and the world of the gods. | T: There are effluents that lead to hell, those that lead to the animal womb, those that lead to the realm of the hungry ghosts, those that lead to the human world, those that lead to the world of the devas.
+an6.63:29.3 | S: This is called the disparity of defilements. | T: This is called the diversity in effluents.
+an6.63:30.1 | S: And what is the result of defilements? | T: “And what is the result of effluents?
+an6.63:30.2 | S: When one who is ignorant generates a corresponding incarnation, partaking of either good or bad deeds—this is called the result of defilements. | T: One who is immersed in ignorance produces a corresponding state of existence, on the side of merit or demerit. This is called the result of effluents.
+an6.63:31.1 | S: And what is the cessation of defilements? | T: “And what is the cessation of effluents?
+an6.63:31.2 | S: When ignorance ceases, defilements cease. | T: From the cessation of ignorance is the cessation of effluents;
+an6.63:31.3 | S: The practice that leads to the cessation of defilements is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:31.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the way leading to the cessation of effluents.
+an6.63:32.1 | S: When a noble disciple understands defilements in this way … they understand that this penetrative spiritual life is the cessation of defilements. | T: “Now when a disciple of the noble ones discerns effluents in this way, the cause by which effluents come into play in this way, the diversity in effluents in this way, the result of effluents in this way, the cessation of effluents in this way, & the path of practice leading to the cessation of effluents in this way, then he discerns this penetrative holy life as the cessation of effluents.
+an6.63:32.2 | S: ‘Defilements should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: “‘Effluents should be known. The cause by which effluents come into play… The diversity in effluents… The result of effluents… The cessation of effluents… The path of practice for the cessation of effluents should be known.’
+an6.63:32.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:33.1 | S: ‘Deeds should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ That’s what I said, | T: [5] “‘Kamma should be known. The cause by which kamma comes into play should be known. The diversity in kamma should be known. The result of kamma should be known. The cessation of kamma should be known. The path of practice for the cessation of kamma should be known.’ Thus it has been said.
+an6.63:33.2 | S: but why did I say it? | T: In reference to what was it said?
+an6.63:33.3 | S: It is intention that I call deeds. | T: “Intention, I tell you, is kamma.
+an6.63:33.4 | S: For after making a choice one acts | T: Intending, one does kamma by way of body, speech, & intellect.
+an6.63:33.5 | S: by way of body, speech, and mind. | T: (none)
+an6.63:34.1 | S: And what is the source of deeds? | T: “And what is the cause by which kamma comes into play?
+an6.63:34.2 | S: Contact is their source. | T: Contact is the cause by which kamma comes into play.
+an6.63:35.1 | S: And what is the disparity of deeds? | T: “And what is the diversity in kamma?
+an6.63:35.2 | S: There are deeds that lead to rebirth in hell, the animal realm, the ghost realm, the human world, and the world of the gods. | T: There is kamma to be experienced in hell, kamma to be experienced in the realm of common animals, kamma to be experienced in the realm of the hungry ghosts, kamma to be experienced in the human world, kamma to be experienced in the world of the devas.
+an6.63:35.3 | S: This is called the disparity of deeds. | T: This is called the diversity in kamma.
+an6.63:36.1 | S: And what is the result of deeds? | T: “And what is the result of kamma?
+an6.63:36.2 | S: The result of deeds is threefold, I say: | T: The result of kamma is of three sorts, I tell you:
+an6.63:36.3 | S: in this very life, on rebirth in the next life, or at some later time. | T: that which arises right here & now, that which arises later (in this lifetime), and that which arises following that.
+an6.63:36.4 | S: This is called the result of deeds. | T: This is called the result of kamma.
+an6.63:37.1 | S: And what is the cessation of deeds? | T: “And what is the cessation of kamma?
+an6.63:37.2 | S: When contact ceases, deeds cease. | T: From the cessation of contact is the cessation of kamma;
+an6.63:37.3 | S: The practice that leads to the cessation of deeds is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:37.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the way leading to the cessation of kamma.
+an6.63:38.1 | S: When a noble disciple understands deeds in this way … they understand that this penetrative spiritual life is the cessation of deeds. | T: “Now when a disciple of the noble ones discerns kamma in this way, the cause by which kamma comes into play in this way, the diversity in kamma in this way, the result of kamma in this way, the cessation of kamma in this way, & the path of practice leading to the cessation of kamma in this way, then he discerns this penetrative holy life as the cessation of kamma.
+an6.63:38.2 | S: ‘Deeds should be known. And their source, diversity, result, cessation, and the practice that leads to their cessation should be known.’ | T: “‘Kamma should be known. The cause by which kamma comes into play… The diversity in kamma… The result of kamma… The cessation of kamma… The path of practice for the cessation of kamma should be known.’
+an6.63:38.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:39.1 | S: ‘Suffering should be known. And its source, disparity, result, cessation, and the practice that leads to its cessation should be known.’ | T: [6] “‘Stress should be known. The cause by which stress comes into play should be known. The diversity in stress should be known. The result of stress should be known. The cessation of stress should be known. The path of practice for the cessation of stress should be known.’
+an6.63:39.2 | S: That’s what I said, but why did I say it? | T: Thus it has been said. In reference to what was it said?
+an6.63:39.3 | S: Rebirth is suffering; old age is suffering; illness is suffering; death is suffering; sorrow, lamentation, pain, sadness, and distress are suffering; not getting what you wish for is suffering. In brief, the five grasping aggregates are suffering. | T: “Birth is stress, aging is stress, death is stress; sorrow, lamentation, pain, distress, & despair are stress; association with what is not loved is stress, separation from what is loved is stress, not getting what is wanted is stress. In short, the five clinging-aggregates are stress.
+an6.63:40.1 | S: And what is the source of suffering? | T: “And what is the cause by which stress comes into play?
+an6.63:40.2 | S: Craving is the source of suffering. | T: Craving is the cause by which stress comes into play.
+an6.63:41.1 | S: And what is the disparity of suffering? | T: “And what is the diversity in stress?
+an6.63:41.2 | S: There is suffering that is severe, mild, slow to fade, and quick to fade. | T: There is major stress & minor, slowly fading & quickly fading.
+an6.63:41.3 | S: This is called the disparity of suffering. | T: This is called the diversity in stress.
+an6.63:42.1 | S: And what is the result of suffering? | T: “And what is the result of stress?
+an6.63:42.2 | S: It’s when someone who is overcome and overwhelmed by suffering sorrows and wails and laments, beating their breast and falling into confusion. Or else, overcome by that suffering, they begin an external search, wondering: | T: There are some cases in which a person overcome with pain, his mind exhausted, grieves, mourns, laments, beats his breast, & becomes bewildered. Or one overcome with pain, his mind exhausted, comes to search outside,
+an6.63:42.3 | S: ‘Who knows one or two phrases to stop this suffering?’ | T: ‘Who knows a way or two to the cessation of this pain?’
+an6.63:42.4 | S: The result of suffering is either confusion or a search, I say. | T: I tell you, monks, that stress results either in bewilderment or in search.
+an6.63:42.5 | S: This is called the result of suffering. | T: This is called the result of stress.
+an6.63:43.1 | S: And what is the cessation of suffering? | T: “And what is the cessation of stress?
+an6.63:43.2 | S: When craving ceases, suffering ceases. | T: From the cessation of craving is the cessation of stress;
+an6.63:43.3 | S: The practice that leads to the cessation of suffering is simply this noble eightfold path, that is: | T: and just this noble eightfold path—
+an6.63:43.4 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration—is the path of practice leading to the cessation of stress.
+an6.63:44.1 | S: When a noble disciple understands suffering in this way … they understand that this penetrative spiritual life is the cessation of suffering. | T: “Now when a disciple of the noble ones discerns stress in this way, the cause by which stress comes into play in this way, the diversity in stress in this way, the result of stress in this way, the cessation of stress in this way, & the path of practice leading to the cessation of stress in this way, then he discerns this penetrative holy life as the cessation of stress.
+an6.63:44.2 | S: ‘Suffering should be known. And its source, diversity, result, cessation, and the practice that leads to its cessation should be known.’ | T: “‘Stress should be known. The cause by which stress comes into play… The diversity in stress… The result of stress… The cessation of stress… The path of practice for the cessation of stress should be known.’
+an6.63:44.3 | S: That’s what I said, and this is why I said it. | T: Thus it has been said, and in reference to this was it said.
+an6.63:45.1 | S: This is the penetrative exposition of the teaching.” | T: “And this is the penetrative explanation that is a Dhamma explanation.”
+an6.63:45.2 | P: Navamaṁ. | T: (none)
+
+## an10.101
+an10.101:1.1 | S: “Mendicants, when these three perceptions for ascetics are developed and cultivated they fulfill seven things. | T: “Monks, three contemplative perceptions, when developed & pursued, bring seven things to completion.
+an10.101:1.2 | S: What three? | T: Which three?
+an10.101:1.3 | S: ‘I have secured freedom from class.’ ‘My livelihood is tied up with others.’ ‘My behavior should be different.’ | T: “‘I have become casteless. “‘My life is dependent on others. “‘My behavior should be different (from that of householders).’
+an10.101:1.4 | S: When these three perceptions for ascetics are developed and cultivated they fulfill seven things. | T: “These three contemplative perceptions, when developed & pursued, bring seven things to completion.
+an10.101:2.1 | S: What seven? | T: Which seven?
+an10.101:2.2 | S: Their deeds and behavior are always consistent with the precepts. They’re content, kind-hearted, and humble. They are eager to train. They use the necessities of life after reflecting on their purpose. They’re energetic. | T: “One acts & behaves consistently with the virtues. “One isn’t greedy. “One is devoid of ill will. “One is devoid of arrogance. “One desires training. “One thinks, ‘They have this purpose,’ with regard to the requisites of life. “One remains with one’s persistence aroused.
+an10.101:2.3 | S: When those three perceptions for ascetics are developed and cultivated they fulfill these seven things.” | T: “Monks, these three contemplative perceptions, when developed & pursued, bring these seven things to completion.”
+an10.101:2.4 | P: Paṭhamaṁ. | T: (none)
+
+## an10.103
+an10.103:1.1 | S: “Mendicants, relying on the wrong way leads to failure, not success. | T: “From wrongness comes failure, not success.
+an10.103:1.2 | S: And how does relying on the wrong way lead to failure, not success? | T: And how is it, monks, that from wrongness comes failure, not success?
+an10.103:1.3 | S: Wrong view produces wrong purpose. Wrong purpose produces wrong speech. Wrong speech produces wrong action. Wrong action produces wrong livelihood. Wrong livelihood produces wrong effort. Wrong effort produces wrong mindfulness. Wrong mindfulness produces wrong immersion. Wrong immersion produces wrong knowledge. Wrong knowledge produces wrong freedom. | T: “In a person of wrong view, wrong resolve comes into being. In a person of wrong resolve, wrong speech. In a person of wrong speech, wrong action. In a person of wrong action, wrong livelihood. In a person of wrong livelihood, wrong effort. In a person of wrong effort, wrong mindfulness. In a person of wrong mindfulness, wrong concentration. In a person of wrong concentration, wrong knowledge. In a person of wrong knowledge, wrong release.
+an10.103:1.4 | S: That’s how relying on the wrong way leads to failure, not success. | T: “This is how from wrongness comes failure, not success.
+an10.103:2.1 | S: Relying on the right way leads to success, not failure. | T: “From rightness comes success, not failure.
+an10.103:2.2 | S: And how does relying on the right way lead to success, not failure? | T: And how is it, monks, that from rightness comes success, not failure?
+an10.103:2.3 | S: Right view produces right purpose. Right purpose produces right speech. Right speech produces right action. Right action produces right livelihood. Right livelihood produces right effort. Right effort produces right mindfulness. Right mindfulness produces right immersion. Right immersion produces right knowledge. Right knowledge produces right freedom. | T: “In a person of right view, right resolve comes into being. In a person of right resolve, right speech. In a person of right speech, right action. In a person of right action, right livelihood. In a person of right livelihood, right effort. In a person of right effort, right mindfulness. In a person of right mindfulness, right concentration. In a person of right concentration, right knowledge. In a person of right knowledge, right release.
+an10.103:2.4 | S: That’s how relying on the right way leads to success, not failure.” | T: “This is how from rightness comes success, not failure.”
+an10.103:2.5 | P: Tatiyaṁ. | T: (none)
+
+## an10.104
+an10.104:1.1 | S: “Mendicants, consider an individual who has wrong view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: “When a person has wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, wrong concentration, wrong knowledge, & wrong release,
+an10.104:1.2 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is unlikable, undesirable, disagreeable, harmful, and suffering. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever determinations, whatever vows, whatever fabrications, all lead to what is disagreeable, unpleasing, unappealing, unprofitable, & stressful.
+an10.104:1.3 | S: Why is that? | T: Why is that?
+an10.104:1.4 | S: Because their view is bad. | T: Because the view is evil.
+an10.104:2.1 | S: Suppose a seed of neem, angled gourd, or bitter gourd was planted in moist earth. Whatever nutrients it takes up from the earth and water would lead to its bitter, acerbic, and unpleasant taste. | T: “Just as when a neem-tree seed, a bitter creeper seed, or a bitter melon seed is placed in moist soil, whatever nutriment it takes from the soil & the water, all conduces to its bitterness, acridity, & distastefulness.
+an10.104:2.2 | S: Why is that? | T: Why is that?
+an10.104:2.3 | S: Because the seed is bad. | T: Because the seed is evil.
+an10.104:2.4 | S: In the same way, consider an individual who has wrong view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: In the same way, when a person has wrong view… wrong release,
+an10.104:2.5 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is unlikable, undesirable, disagreeable, harmful, and suffering. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever determinations, whatever vows, whatever fabrications, all lead to what is disagreeable, unpleasing, unappealing, unprofitable, & stressful.
+an10.104:2.6 | S: Why is that? | T: Why is that?
+an10.104:2.7 | S: Because their view is bad. | T: Because the view is evil.
+an10.104:3.1 | S: Consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is likable, desirable, agreeable, beneficial, and pleasant. | T: “When a person has right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration, right knowledge, & right release, then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever vows, whatever determinations, whatever fabrications, all lead to what is agreeable, pleasing, charming, profitable, & easeful.
+an10.104:3.2 | S: Why is that? | T: Why is that?
+an10.104:3.3 | S: Because their view is good. | T: Because the view is auspicious.
+an10.104:4.1 | S: Suppose a seed of sugarcane, fine rice, or grape was planted in moist earth. Whatever nutrients it takes up from the earth and water would lead to its sweet, pleasant, delectable flavor. | T: “Just as when a sugar cane seed, a rice grain, or a grape seed is placed in moist soil, whatever nutriment it takes from the soil & the water, all conduces to its sweetness, tastiness, & unalloyed delectability.
+an10.104:4.2 | S: Why is that? | T: Why is that?
+an10.104:4.3 | S: Because the seed is good. | T: Because the seed is auspicious.
+an10.104:4.4 | S: In the same way, consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: In the same way, when a person has right view… right release,
+an10.104:4.5 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is likable, desirable, agreeable, beneficial, and pleasant. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever vows, whatever determinations, whatever fabrications, all lead to what is agreeable, pleasing, charming, profitable, & easeful.
+an10.104:4.6 | S: Why is that? | T: Why is that?
+an10.104:4.7 | S: Because their view is good.” | T: Because the view is auspicious.”
+an10.104:4.8 | P: Catutthaṁ. | T: (none)
+
+## an10.108
+an10.108:1.1 | S: “Mendicants, doctors prescribe a purgative for eliminating illnesses stemming from disorders of bile, phlegm, and wind. | T: “Monks, doctors give a purgative for warding off diseases caused by bile, diseases caused by phlegm, diseases caused by the internal wind property.
+an10.108:1.2 | S: There is such a purgative, I don’t deny it. | T: There is a purging there; I don’t say that there’s not,
+an10.108:1.3 | S: But this kind of purgative sometimes works and sometimes fails. | T: but it sometimes succeeds and sometimes fails.
+an10.108:2.1 | S: I will teach a noble purgative that works without fail. Relying on that purgative, sentient beings who are liable to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress are freed from all these things. | T: So I will teach you the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair.
+an10.108:2.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an10.108:2.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+an10.108:2.4 | S: The Buddha said this: | T: The Blessed One said:
+an10.108:3.1 | S: “And what is the noble purgative that works without fail? | T: “Now, what is the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair?
+an10.108:4.1 | S: For one of right view, wrong view is purged. | T: “In one who has right view, wrong view is purged away,
+an10.108:4.2 | S: And the many bad, unskillful qualities produced by wrong view are purged. | T: and the many evil, unskillful mental qualities that come into play in dependence on wrong view are purged away as well,
+an10.108:4.3 | S: And because of right view, many skillful qualities are fully developed. | T: while the many skillful mental qualities that depend on right view go to the culmination of their development.
+an10.108:5.1 | S: For one of right purpose, wrong purpose is purged. … | T: “In one who has right resolve, wrong resolve is purged away.…
+an10.108:5.2 | S: For one of right speech, wrong speech is purged. … | T: “In one who has right speech, wrong speech is purged away.…
+an10.108:5.3 | S: For one of right action, wrong action is purged. … | T: “In one who has right action, wrong action is purged away.…
+an10.108:5.4 | S: For one of right livelihood, wrong livelihood is purged. … | T: “In one who has right livelihood, wrong livelihood is purged away.…
+an10.108:5.5 | S: For one of right effort, wrong effort is purged. … | T: “In one who has right effort, wrong effort is purged away.…
+an10.108:5.6 | S: For one of right mindfulness, wrong mindfulness is purged. … | T: “In one who has right mindfulness, wrong mindfulness is purged away.…
+an10.108:5.7 | S: For one of right immersion, wrong immersion is purged. … | T: “In one who has right concentration, wrong concentration is purged away.…
+an10.108:5.8 | S: For one of right knowledge, wrong knowledge is purged. … | T: “In one who has right knowledge, wrong knowledge is purged away.…
+an10.108:6.1 | S: For one of right freedom, wrong freedom is purged. | T: “In one who has right release, wrong release is purged away,
+an10.108:6.2 | S: And the many bad, unskillful qualities produced by wrong freedom are purged. | T: and the many evil, unskillful mental qualities that come into play in dependence on wrong release are purged away as well,
+an10.108:6.3 | S: And because of right freedom, many skillful qualities are fully developed. | T: while the many skillful mental qualities that depend on right release go to the culmination of their development.
+an10.108:6.4 | S: This is the noble purgative that works without fail. Relying on this purgative, sentient beings who are liable to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress are freed from all these things.” | T: “This, monks, is the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair.”
+an10.108:6.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an10.13
+an10.13:1.1 | S: “Mendicants, there are ten fetters. | T: “There are these ten fetters.
+an10.13:1.2 | S: What ten? | T: Which ten?
+an10.13:1.3 | S: The five lower fetters and the five higher fetters. | T: Five lower fetters & five higher fetters.
+an10.13:1.4 | S: What are the five lower fetters? | T: And which are the five lower fetters?
+an10.13:1.5 | S: Substantialist view, doubt, misapprehension of precepts and observances, sensual desire, and ill will. | T: Self-identification views, uncertainty, grasping at habits & practices, sensual desire, & ill will.
+an10.13:1.6 | S: These are the five lower fetters. | T: These are the five lower fetters.
+an10.13:2.1 | S: What are the five higher fetters? | T: And which are the five higher fetters?
+an10.13:2.2 | S: Desire for rebirth in the realm of luminous form, desire for rebirth in the formless realm, conceit, restlessness, and ignorance. | T: Passion for form, passion for what is formless, conceit, restlessness, & ignorance.
+an10.13:2.3 | S: These are the five higher fetters. | T: These are the five higher fetters.
+an10.13:2.4 | S: These are the ten fetters.” | T: And these are the ten fetters.”
+an10.13:2.5 | P: Tatiyaṁ. | T: (none)
+
+## an10.15
+an10.15:1.1 | S: “Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: “To the extent that there are animals—footless, two-footed, four-footed, many footed; with form or formless; percipient, non-percipient, or neither percipient nor non-percipient—the Tathāgata, worthy & rightly self-awakened, is reckoned the foremost among them.
+an10.15:1.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: In the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:2.1 | S: The footprints of all creatures that walk can fit inside an elephant’s footprint, so an elephant’s footprint is said to be the biggest of them all. | T: “Just as the footprints of all legged animals are encompassed by the footprint of the elephant, and the elephant’s footprint is reckoned the foremost among them in terms of size;
+an10.15:2.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:3.1 | S: The rafters of a bungalow all lean to the peak, slope to the peak, and meet at the peak, so the peak is said to be the topmost of them all. | T: “Just as the rafters in a peak-roofed house all go to the roof-peak, incline to the roof-peak, converge at the roof-peak, and the roof-peak is reckoned the foremost among them;
+an10.15:3.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:4.1 | S: Of all kinds of fragrant root, spikenard is said to be the best. | T: “Just as, of all root fragrances, black aloes-root is reckoned the foremost;
+an10.15:4.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:5.1 | S: Of all kinds of fragrant heartwood, red sandalwood is said to be the best. | T: “Just as, of all wood fragrances, red sandalwood is reckoned the foremost;
+an10.15:5.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:6.1 | S: Of all kinds of fragrant flower, jasmine is said to be the best. | T: “Just as, of all flower fragrances, jasmine is reckoned the foremost;
+an10.15:6.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:7.1 | S: All lesser kings are vassals of a wheel-turning monarch, so the wheel-turning monarch is said to be the foremost of them all. | T: “Just as all wattle-and-daub-town princes fall subject to a wheel-turning emperor, and the wheel-turning emperor is reckoned the foremost among them;
+an10.15:7.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:8.1 | S: The radiance of all the stars is not worth a sixteenth part of the moon’s radiance, so the moon’s radiance is said to be the best of them all. | T: “Just as all the light of the constellations does not equal one sixteenth of the light of the moon, and the light of the moon is reckoned the foremost among them;
+an10.15:8.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:9.1 | S: In the autumn the heavens are sunny and cloudless. And as the sun is rising to the firmament, having dispelled all the darkness of space, it shines and glows and dazzles. | T: “Just as in the last month of the rains, in autumn, when the sky is clear & cloudless, the sun, on ascending the sky, overpowers the space immersed in darkness, shines, blazes, & dazzles;
+an10.15:9.2 | S: In the same way … | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.
+an10.15:10.1 | S: All the great rivers—that is, the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—flow, slant, slope, and incline toward the ocean, and the ocean is said to be the greatest of them. | T: “Just as the great rivers—such as the Ganges, the Yamunā, the Aciravatī, the Sarabhū, & the Mahī—all go to the ocean, incline to the ocean, slope to the ocean, tend toward the ocean, and the ocean is reckoned the foremost among them;
+an10.15:10.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them.” | T: in the same way, all skillful qualities are rooted in heedfulness, converge in heedfulness, and heedfulness is reckoned the foremost among them.”
+an10.15:10.3 | P: Pañcamaṁ. | T: (none)
+
+## an10.176
+an10.176:1.1 | S: So I have heard. | T: I have heard that
+an10.176:1.2 | S: At one time the Buddha was staying near Pāvā in Cunda the smith’s mango grove. | T: on one occasion the Blessed One was staying near Pāva in Cunda the silversmith’s mango grove.
+an10.176:1.3 | S: Then Cunda the smith went to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: Then Cunda the silversmith went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him:
+an10.176:1.4 | S: “Cunda, whose purity do you believe in?” | T: “Cunda, of whose rites of purification do you approve?”
+an10.176:1.5 | S: “Sir, I believe in the purity advocated by the western brahmins garlanded with aquatic flowers who carry pitchers, serve the sacred flame, and immerse themselves in water.” | T: “The brahmans of the Western lands, lord—those who carry water pots, wear garlands of water plants, worship fire, & purify with water: they have declared purification rites of which I approve.”
+an10.176:2.1 | S: “But Cunda, what kind of purity do these western brahmins advocate?” | T: “And what kind of purification rites have they declared, those brahmans of the Western lands who carry water pots, wear garlands of water plants, worship fire, & purify with water?”
+an10.176:2.2 | S: “The western brahmins encourage their disciple like this: | T: “There is the case where the brahmans of the Western lands… get their disciples to undertake their practice thus:
+
+exec
+/bin/bash -lc "sed -n '90,160p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.101:1.4 | S: When these three perceptions for ascetics are developed and cultivated they fulfill seven things. | T: “These three contemplative perceptions, when developed & pursued, bring seven things to completion.
+an10.101:2.1 | S: What seven? | T: Which seven?
+an10.101:2.2 | S: Their deeds and behavior are always consistent with the precepts. They’re content, kind-hearted, and humble. They are eager to train. They use the necessities of life after reflecting on their purpose. They’re energetic. | T: “One acts & behaves consistently with the virtues. “One isn’t greedy. “One is devoid of ill will. “One is devoid of arrogance. “One desires training. “One thinks, ‘They have this purpose,’ with regard to the requisites of life. “One remains with one’s persistence aroused.
+an10.101:2.3 | S: When those three perceptions for ascetics are developed and cultivated they fulfill these seven things.” | T: “Monks, these three contemplative perceptions, when developed & pursued, bring these seven things to completion.”
+an10.101:2.4 | P: Paṭhamaṁ. | T: (none)
+
+## an10.103
+an10.103:1.1 | S: “Mendicants, relying on the wrong way leads to failure, not success. | T: “From wrongness comes failure, not success.
+an10.103:1.2 | S: And how does relying on the wrong way lead to failure, not success? | T: And how is it, monks, that from wrongness comes failure, not success?
+an10.103:1.3 | S: Wrong view produces wrong purpose. Wrong purpose produces wrong speech. Wrong speech produces wrong action. Wrong action produces wrong livelihood. Wrong livelihood produces wrong effort. Wrong effort produces wrong mindfulness. Wrong mindfulness produces wrong immersion. Wrong immersion produces wrong knowledge. Wrong knowledge produces wrong freedom. | T: “In a person of wrong view, wrong resolve comes into being. In a person of wrong resolve, wrong speech. In a person of wrong speech, wrong action. In a person of wrong action, wrong livelihood. In a person of wrong livelihood, wrong effort. In a person of wrong effort, wrong mindfulness. In a person of wrong mindfulness, wrong concentration. In a person of wrong concentration, wrong knowledge. In a person of wrong knowledge, wrong release.
+an10.103:1.4 | S: That’s how relying on the wrong way leads to failure, not success. | T: “This is how from wrongness comes failure, not success.
+an10.103:2.1 | S: Relying on the right way leads to success, not failure. | T: “From rightness comes success, not failure.
+an10.103:2.2 | S: And how does relying on the right way lead to success, not failure? | T: And how is it, monks, that from rightness comes success, not failure?
+an10.103:2.3 | S: Right view produces right purpose. Right purpose produces right speech. Right speech produces right action. Right action produces right livelihood. Right livelihood produces right effort. Right effort produces right mindfulness. Right mindfulness produces right immersion. Right immersion produces right knowledge. Right knowledge produces right freedom. | T: “In a person of right view, right resolve comes into being. In a person of right resolve, right speech. In a person of right speech, right action. In a person of right action, right livelihood. In a person of right livelihood, right effort. In a person of right effort, right mindfulness. In a person of right mindfulness, right concentration. In a person of right concentration, right knowledge. In a person of right knowledge, right release.
+an10.103:2.4 | S: That’s how relying on the right way leads to success, not failure.” | T: “This is how from rightness comes success, not failure.”
+an10.103:2.5 | P: Tatiyaṁ. | T: (none)
+
+## an10.104
+an10.104:1.1 | S: “Mendicants, consider an individual who has wrong view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: “When a person has wrong view, wrong resolve, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, wrong concentration, wrong knowledge, & wrong release,
+an10.104:1.2 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is unlikable, undesirable, disagreeable, harmful, and suffering. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever determinations, whatever vows, whatever fabrications, all lead to what is disagreeable, unpleasing, unappealing, unprofitable, & stressful.
+an10.104:1.3 | S: Why is that? | T: Why is that?
+an10.104:1.4 | S: Because their view is bad. | T: Because the view is evil.
+an10.104:2.1 | S: Suppose a seed of neem, angled gourd, or bitter gourd was planted in moist earth. Whatever nutrients it takes up from the earth and water would lead to its bitter, acerbic, and unpleasant taste. | T: “Just as when a neem-tree seed, a bitter creeper seed, or a bitter melon seed is placed in moist soil, whatever nutriment it takes from the soil & the water, all conduces to its bitterness, acridity, & distastefulness.
+an10.104:2.2 | S: Why is that? | T: Why is that?
+an10.104:2.3 | S: Because the seed is bad. | T: Because the seed is evil.
+an10.104:2.4 | S: In the same way, consider an individual who has wrong view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: In the same way, when a person has wrong view… wrong release,
+an10.104:2.5 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is unlikable, undesirable, disagreeable, harmful, and suffering. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever determinations, whatever vows, whatever fabrications, all lead to what is disagreeable, unpleasing, unappealing, unprofitable, & stressful.
+an10.104:2.6 | S: Why is that? | T: Why is that?
+an10.104:2.7 | S: Because their view is bad. | T: Because the view is evil.
+an10.104:3.1 | S: Consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is likable, desirable, agreeable, beneficial, and pleasant. | T: “When a person has right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration, right knowledge, & right release, then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever vows, whatever determinations, whatever fabrications, all lead to what is agreeable, pleasing, charming, profitable, & easeful.
+an10.104:3.2 | S: Why is that? | T: Why is that?
+an10.104:3.3 | S: Because their view is good. | T: Because the view is auspicious.
+an10.104:4.1 | S: Suppose a seed of sugarcane, fine rice, or grape was planted in moist earth. Whatever nutrients it takes up from the earth and water would lead to its sweet, pleasant, delectable flavor. | T: “Just as when a sugar cane seed, a rice grain, or a grape seed is placed in moist soil, whatever nutriment it takes from the soil & the water, all conduces to its sweetness, tastiness, & unalloyed delectability.
+an10.104:4.2 | S: Why is that? | T: Why is that?
+an10.104:4.3 | S: Because the seed is good. | T: Because the seed is auspicious.
+an10.104:4.4 | S: In the same way, consider an individual who has right view, purpose, speech, action, livelihood, effort, mindfulness, immersion, knowledge, and freedom. | T: In the same way, when a person has right view… right release,
+an10.104:4.5 | S: Whatever bodily, verbal, or mental deeds they undertake in line with that view, their intentions, aims, wishes, and choices all lead to what is likable, desirable, agreeable, beneficial, and pleasant. | T: then whatever bodily deeds he undertakes in line with that view, whatever verbal deeds… whatever mental deeds he undertakes in line with that view, whatever intentions, whatever vows, whatever determinations, whatever fabrications, all lead to what is agreeable, pleasing, charming, profitable, & easeful.
+an10.104:4.6 | S: Why is that? | T: Why is that?
+an10.104:4.7 | S: Because their view is good.” | T: Because the view is auspicious.”
+an10.104:4.8 | P: Catutthaṁ. | T: (none)
+
+## an10.108
+an10.108:1.1 | S: “Mendicants, doctors prescribe a purgative for eliminating illnesses stemming from disorders of bile, phlegm, and wind. | T: “Monks, doctors give a purgative for warding off diseases caused by bile, diseases caused by phlegm, diseases caused by the internal wind property.
+an10.108:1.2 | S: There is such a purgative, I don’t deny it. | T: There is a purging there; I don’t say that there’s not,
+an10.108:1.3 | S: But this kind of purgative sometimes works and sometimes fails. | T: but it sometimes succeeds and sometimes fails.
+an10.108:2.1 | S: I will teach a noble purgative that works without fail. Relying on that purgative, sentient beings who are liable to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress are freed from all these things. | T: So I will teach you the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair.
+an10.108:2.2 | S: Listen and apply your mind well, I will speak.” | T: Listen & pay close attention. I will speak.”
+an10.108:2.3 | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+an10.108:2.4 | S: The Buddha said this: | T: The Blessed One said:
+an10.108:3.1 | S: “And what is the noble purgative that works without fail? | T: “Now, what is the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair?
+an10.108:4.1 | S: For one of right view, wrong view is purged. | T: “In one who has right view, wrong view is purged away,
+an10.108:4.2 | S: And the many bad, unskillful qualities produced by wrong view are purged. | T: and the many evil, unskillful mental qualities that come into play in dependence on wrong view are purged away as well,
+an10.108:4.3 | S: And because of right view, many skillful qualities are fully developed. | T: while the many skillful mental qualities that depend on right view go to the culmination of their development.
+an10.108:5.1 | S: For one of right purpose, wrong purpose is purged. … | T: “In one who has right resolve, wrong resolve is purged away.…
+an10.108:5.2 | S: For one of right speech, wrong speech is purged. … | T: “In one who has right speech, wrong speech is purged away.…
+an10.108:5.3 | S: For one of right action, wrong action is purged. … | T: “In one who has right action, wrong action is purged away.…
+an10.108:5.4 | S: For one of right livelihood, wrong livelihood is purged. … | T: “In one who has right livelihood, wrong livelihood is purged away.…
+an10.108:5.5 | S: For one of right effort, wrong effort is purged. … | T: “In one who has right effort, wrong effort is purged away.…
+an10.108:5.6 | S: For one of right mindfulness, wrong mindfulness is purged. … | T: “In one who has right mindfulness, wrong mindfulness is purged away.…
+an10.108:5.7 | S: For one of right immersion, wrong immersion is purged. … | T: “In one who has right concentration, wrong concentration is purged away.…
+an10.108:5.8 | S: For one of right knowledge, wrong knowledge is purged. … | T: “In one who has right knowledge, wrong knowledge is purged away.…
+an10.108:6.1 | S: For one of right freedom, wrong freedom is purged. | T: “In one who has right release, wrong release is purged away,
+an10.108:6.2 | S: And the many bad, unskillful qualities produced by wrong freedom are purged. | T: and the many evil, unskillful mental qualities that come into play in dependence on wrong release are purged away as well,
+an10.108:6.3 | S: And because of right freedom, many skillful qualities are fully developed. | T: while the many skillful mental qualities that depend on right release go to the culmination of their development.
+an10.108:6.4 | S: This is the noble purgative that works without fail. Relying on this purgative, sentient beings who are liable to rebirth, old age, and death, to sorrow, lamentation, pain, sadness, and distress are freed from all these things.” | T: “This, monks, is the noble purgative that always succeeds and never fails, a purgative whereby beings subject to birth are freed from birth; beings subject to aging are freed from aging; beings subject to death are freed from death; beings subject to sorrow, lamentation, pain, distress & despair are freed from sorrow, lamentation, pain, distress & despair.”
+an10.108:6.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an10.13
+an10.13:1.1 | S: “Mendicants, there are ten fetters. | T: “There are these ten fetters.
+an10.13:1.2 | S: What ten? | T: Which ten?
+an10.13:1.3 | S: The five lower fetters and the five higher fetters. | T: Five lower fetters & five higher fetters.
+
+exec
+/bin/bash -lc "sed -n '201,290p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.176:2.3 | S: ‘Please, my man, rising early you should stroke the earth from your bed. | T: ‘Come, now, my good man: Get up at the proper time from your bed and touch the earth.
+an10.176:2.4 | S: If you don’t stroke the earth, stroke fresh cow dung. | T: If you don’t touch the earth, touch wet cow dung.
+an10.176:2.5 | S: If you don’t stroke fresh cow dung, stroke green grass. | T: If you don’t touch wet cow dung, touch green grass.
+an10.176:2.6 | S: If you don’t stroke green grass, serve the sacred flame. | T: If you don’t touch green grass, worship a fire.
+an10.176:2.7 | S: If you don’t serve the sacred flame, revere the sun with cupped palms. | T: If you don’t worship a fire, pay homage to the sun with clasped hands.
+an10.176:2.8 | S: If you don’t revere the sun with cupped palms, immerse yourself in water three times, including at dusk.’ | T: If you don’t pay homage to the sun with clasped hands, go down into the water three times by nightfall.’
+an10.176:2.9 | S: The western brahmins advocate this kind of purity.” | T: These are the purification rites declared by the brahmans of the Western lands… of which I approve.”
+an10.176:3.1 | S: “The purity advocated by the western brahmins is quite different from that in the training of the Noble One.” | T: “Cunda, the purification rites declared by the brahmans of the Western lands… are one thing; the purification in the discipline of the noble ones is something else entirely.”
+an10.176:3.2 | S: “But what, sir, is purity in the training of the Noble One? | T: “But how is there purification in the discipline of the noble ones, venerable sir?
+an10.176:3.3 | S: Sir, please teach me this.” | T: It would be good if the Blessed One would teach me how there is purification in the discipline of the noble ones.”
+an10.176:4.1 | S: “Well then, brahmin, listen and apply your mind well, I will speak.” | T: “Then in that case, Cunda, listen & pay close attention. I will speak.”
+an10.176:4.2 | S: “Yes, sir,” Cunda replied. | T: “As you say, lord,” Cunda the silversmith responded to him.
+an10.176:4.3 | S: The Buddha said this: | T: The Blessed One said:
+an10.176:5.1 | S: “Cunda, impurity is threefold by way of body, | T: “There are three ways in which one is made impure by bodily action,
+an10.176:5.2 | S: fourfold by way of speech, | T: four ways in which one is made impure by verbal action,
+an10.176:5.3 | S: and threefold by way of mind. | T: and three ways in which one is made impure by mental action.
+an10.176:6.1 | S: And how is impurity threefold by way of body? | T: Unskillful Bodily Action “And how is one made impure in three ways by bodily action?
+an10.176:6.2 | S: It’s when someone kills living creatures. They’re violent, bloody-handed, a hardened killer, merciless to all living beings. | T: There is the case where a certain person takes life, is brutal, bloody-handed, devoted to killing & slaying, showing no mercy to living beings.
+an10.176:7.1 | S: They steal. With the intention to commit theft, they take the wealth or belongings of others from village or wilderness. | T: He takes what is not given. He takes, in the manner of a thief, things in a village or a wilderness that belong to others and have not been given by them.
+an10.176:8.1 | S: They commit sexual misconduct. They have relations with women who have their mother, father, both mother and father, brother, sister, relatives, or clan as guardian. They have relations with a woman who is protected on principle, or who has a husband, or whose violation is punishable by law, or even one who has been garlanded as a token of betrothal. | T: He engages in sexual misconduct. He gets sexually involved with those who are protected by their mothers, their fathers, their brothers, their sisters, their relatives, or their Dhamma; those with husbands, those who entail punishments, or even those crowned with flowers by another man.
+an10.176:9.1 | S: This is the threefold impurity by way of body. | T: This is how one is made impure in three ways by bodily action.
+an10.176:10.1 | S: And how is impurity fourfold by way of speech? | T: Unskillful Verbal Action “And how is one made impure in four ways by verbal action?
+an10.176:10.2 | S: It’s when someone lies. They’re summoned to a council, an assembly, a family meeting, a guild, or to the royal court, and asked to bear witness: ‘Please, my friend, say what you know.’ Not knowing, they say ‘I know.’ Knowing, they say ‘I don’t know.’ Not seeing, they say ‘I see.’ And seeing, they say ‘I don’t see.’ So they deliberately lie for the sake of themselves or another, or for some trivial worldly reason. | T: There is the case where a certain person tells lies. When he has been called to a town meeting, a group meeting, a gathering of his relatives, his guild, or of the royalty [i.e., a royal court proceeding], if he is asked as a witness, ‘Come & tell, good man, what you know’: If he doesn’t know, he says, ‘I know.’ If he does know, he says, ‘I don’t know.’ If he hasn’t seen, he says, ‘I have seen.’ If he has seen, he says, ’I haven’t seen.’ Thus he consciously tells lies for his own sake, for the sake of another, or for the sake of a certain reward.
+an10.176:11.1 | S: They backbite. They repeat in one place what they heard in another so as to divide people against each other. And so they divide those who are harmonious, supporting division, delighting in division, loving division, speaking words that promote division. | T: He engages in divisive speech. What he has heard here he tells there to break those people apart from these people here. What he has heard there he tells here to break these people apart from those people there. Thus breaking apart those who are united and stirring up strife between those who have broken apart, he loves factionalism, delights in factionalism, enjoys factionalism, speaks things that create factionalism.
+an10.176:12.1 | S: They speak harshly. They use the kinds of words that are cruel, nasty, hurtful, offensive, bordering on anger, not leading to immersion. | T: He engages in harsh speech. He speaks words that are insolent, cutting, mean to others, reviling others, provoking anger and destroying concentration.
+an10.176:13.1 | S: They talk nonsense. Their speech is untimely, and is neither factual nor beneficial. It has nothing to do with the teaching or the training. Their words have no value, and are untimely, unreasonable, rambling, and pointless. | T: He engages in idle chatter. He speaks out of season, speaks what isn’t factual, what isn’t in accordance with the goal, the Dhamma, & the Vinaya, words that are not worth treasuring: unseasonable, unreasonable, uncircumscribed, unconnected with the goal.
+an10.176:13.2 | S: This is the fourfold impurity by way of speech. | T: This is how one is made impure in four ways by verbal action.
+an10.176:14.1 | S: And how is impurity threefold by way of mind? | T: Unskillful Mental Action “And how is one made impure in three ways by mental action?
+an10.176:14.2 | S: It’s when someone is covetous. They covet the wealth and belongings of others: ‘Oh, if only their belongings were mine!’ | T: There is the case where a certain person is covetous. He covets the belongings of others, thinking, ‘O, that what belongs to others would be mine!’
+an10.176:15.1 | S: They have ill will and malicious intentions: ‘May these sentient beings be killed, slaughtered, slain, destroyed, or annihilated!’ | T: He bears ill will, corrupt in the resolves of his heart: ‘May these beings be killed or cut apart or crushed or destroyed, or may they not exist at all!’
+an10.176:16.1 | S: They have wrong view. Their perspective is distorted: | T: He has wrong view, is warped in the way he sees things:
+an10.176:16.2 | S: ‘There’s no meaning in giving, sacrifice, or offerings. There’s no fruit or result of good and bad deeds. There’s no afterlife. There’s no such thing as mother and father, or beings that are reborn spontaneously. And there’s no ascetic or brahmin who is rightly comported and rightly practiced, and who describes the afterlife after realizing it with their own insight.’ | T: ‘There is nothing given, nothing offered, nothing sacrificed. There is no fruit or result of good or bad actions. There is no this world, no next world, no mother, no father, no spontaneously reborn beings; no contemplatives or brahmans who, faring rightly & practicing rightly, proclaim this world & the next after having directly known & realized it for themselves.’
+an10.176:16.3 | S: This is the threefold impurity by way of mind. | T: This is how one is made impure in three ways by mental action.
+an10.176:17.1 | S: These are the ten ways of doing unskillful deeds. | T: “These, Cunda, are the ten courses of unskillful action.
+an10.176:17.2 | S: When you have these ten ways of doing unskillful deeds, then if you rise early, whether or not you stroke the earth from your bed, you’re still impure. | T: When a person is endowed with these ten courses of unskillful action, then even if he gets up at the proper time from his bed and touches the earth, he is still impure. If he doesn’t touch the earth, he is still impure.
+an10.176:18.1 | S: Whether or not you stroke fresh cow dung, you’re still impure. | T: If he touches wet cow dung, he is still impure. If he doesn’t touch wet cow dung, he is still impure.
+an10.176:19.1 | S: Whether or not you stroke green grass, you’re still impure. | T: If he touches green grass… If he doesn’t touch green grass…
+an10.176:20.1 | S: Whether or not you serve the sacred flame, you’re still impure. | T: If he worships a fire… If he doesn’t worship a fire…
+an10.176:21.1 | S: Whether or not you revere the sun with cupped palms, you’re still impure. | T: If he pays homage to the sun with clasped hands… If he doesn’t pay homage to the sun with clasped hands…
+an10.176:22.1 | S: Whether or not you immerse yourself in water three times, you’re still impure. | T: If he goes down into the water three times by nightfall… If he doesn’t go down into the water three times by nightfall, he is still impure.
+an10.176:22.2 | S: Why is that? | T: Why is that?
+an10.176:22.3 | S: These ten ways of doing unskillful deeds are impure and make things impure. | T: Because these ten courses of unskillful action are impure and cause impurity.
+an10.176:23.1 | S: It’s because of those who do these ten kinds of unskillful deeds that hell, the animal realm, the ghost realm, or any other bad places are found. | T: And further, as a result of being endowed with these ten courses of unskillful action, (rebirth in) hell is declared, (rebirth in) an animal womb is declared, (rebirth in) the realm of hungry ghosts is declared—that or any other bad destination.
+an10.176:24.1 | S: Cunda, purity is threefold by way of body, | T: “Now, Cunda, there are three ways in which one is made pure by bodily action,
+an10.176:24.2 | S: fourfold by way of speech, | T: four ways in which one is made pure by verbal action,
+an10.176:24.3 | S: and threefold by way of mind. | T: and three ways in which one is made pure by mental action.
+an10.176:25.1 | S: And how is purity threefold by way of body? | T: Skillful Bodily Action “And how is one made pure in three ways by bodily action?
+an10.176:25.2 | S: It’s when someone gives up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings. | T: There is the case where a certain person, abandoning the taking of life, abstains from the taking of life. He dwells with his rod laid down, his knife laid down, scrupulous, merciful, compassionate for the welfare of all living beings.
+an10.176:26.1 | S: They give up stealing. They don’t, with the intention to commit theft, take the wealth or belongings of others from village or wilderness. | T: Abandoning the taking of what is not given, he abstains from taking what is not given. He does not take, in the manner of a thief, things in a village or a wilderness that belong to others and have not been given by them.
+an10.176:27.1 | S: They give up sexual misconduct. They don’t have relations with women who have their mother, father, both mother and father, brother, sister, relatives, or clan as guardian. They don’t have relations with a woman who is protected on principle, or who has a husband, or whose violation is punishable by law, or even one who has been garlanded as a token of betrothal. | T: Abandoning sexual misconduct, he abstains from sexual misconduct. He does not get sexually involved with those who are protected by their mothers, their fathers, their brothers, their sisters, their relatives, or their Dhamma; those with husbands, those who entail punishments, or even those crowned with flowers by another man.
+an10.176:28.1 | S: This is the threefold purity by way of body. | T: This is how one is made pure in three ways by bodily action.
+an10.176:29.1 | S: And how is purity fourfold by way of speech? | T: Skillful Verbal Action “And how is one made pure in four ways by verbal action?
+an10.176:29.2 | S: It’s when someone gives up lying. They’re summoned to a council, an assembly, a family meeting, a guild, or to the royal court, and asked to bear witness: ‘Please, my friend, say what you know.’ Not knowing, they say ‘I don’t know.’ Knowing, they say ‘I know.’ Not seeing, they say ‘I don’t see.’ And seeing, they say ‘I see.’ So they don’t deliberately lie for the sake of themselves or another, or for some trivial worldly reason. | T: There is the case where a certain person, abandoning the telling of lies, abstains from telling lies. When he has been called to a town meeting, a group meeting, a gathering of his relatives, his guild, or of the royalty, if he is asked as a witness, ‘Come & tell, good man, what you know’: If he doesn’t know, he says, ‘I don’t know.’ If he does know, he says, ‘I know.’ If he hasn’t seen, he says, ‘I haven’t seen.’ If he has seen, he says, ’I have seen.’ Thus he doesn’t consciously tell a lie for his own sake, for the sake of another, or for the sake of any reward.
+an10.176:30.1 | S: They give up backbiting. They don’t repeat in one place what they heard in another so as to divide people against each other. Instead, they reconcile those who are divided and support those who are united, delighting in harmony, loving harmony, speaking words that promote harmony. | T: Abandoning divisive speech, he abstains from divisive speech. What he has heard here he does not tell there to break those people apart from these people here. What he has heard there he does not tell here to break these people apart from those people there. Thus reconciling those who have broken apart or cementing those who are united, he loves concord, delights in concord, enjoys concord, speaks things that create concord.
+an10.176:31.1 | S: They give up harsh speech. They speak in a way that’s mellow, pleasing to the ear, endearing, going to the heart, polite, and likable and agreeable to the people. | T: Abandoning harsh speech, he abstains from harsh speech. He speaks words that are soothing, pleasing to the ear, that are affectionate, that go to the heart, that are polite, appealing & pleasing to people at large.
+an10.176:32.1 | S: They give up talking nonsense. Their words are timely, true, and meaningful, in line with the teaching and training. | T: Abandoning idle chatter, he abstains from idle chatter. He speaks in season, speaks what is based in fact, what is in accordance with the goal, the Dhamma, & the Vinaya.
+an10.176:32.2 | S: They say things at the right time which are valuable, reasonable, succinct, and beneficial. | T: He speaks words worth treasuring, timely, reasonable, circumscribed, connected with the goal.
+an10.176:33.1 | S: This is the fourfold purity by way of speech. | T: This is how one is made pure in four ways by verbal action.
+an10.176:34.1 | S: And how is purity threefold by way of mind? | T: Skillful Mental Action “And how is one made pure in three ways by mental action?
+an10.176:34.2 | S: It’s when someone is content. They don’t covet the wealth and belongings of others: ‘Oh, if only their belongings were mine!’ | T: There is the case where a certain person is not covetous. He does not covet the belongings of others, thinking, ‘O, that what belongs to others would be mine!’
+an10.176:35.1 | S: They have a kind heart and loving intentions: ‘May these sentient beings live free of enmity and ill will, untroubled and happy!’ | T: He bears no ill will and is not corrupt in the resolves of his heart. (He thinks,) ‘May these beings be free from animosity, free from oppression, free from trouble, and may they look after themselves with ease!’
+an10.176:36.1 | S: They have right view, an undistorted perspective: | T: He has right view and is not warped in the way he sees things:
+an10.176:36.2 | S: ‘There is meaning in giving, sacrifice, and offerings. There are fruits and results of good and bad deeds. There is an afterlife. There are such things as mother and father, and beings that are reborn spontaneously. And there are ascetics and brahmins who are rightly comported and rightly practiced, and who describe the afterlife after realizing it with their own insight.’ | T: ‘There is what is given, what is offered, what is sacrificed. There are fruits & results of good & bad actions. There is this world & the next world. There is mother & father. There are spontaneously reborn beings; there are contemplatives & brahmans who, faring rightly & practicing rightly, proclaim this world & the next after having directly known & realized it for themselves.’
+an10.176:37.1 | S: This is the threefold purity by way of mind. | T: This is how one is made pure in three ways by mental action.
+an10.176:38.1 | S: These are the ten ways of doing skillful deeds. | T: “These, Cunda, are the ten courses of skillful action.
+an10.176:38.2 | S: When you have these ten ways of doing skillful deeds, then if you rise early, whether or not you stroke the earth from your bed, you’re still pure. | T: When a person is endowed with these ten courses of skillful action, then even if he gets up at the proper time from his bed and touches the earth, he is still pure. If he doesn’t touch the earth, he is still pure.
+an10.176:39.1 | S: Whether or not you stroke fresh cow dung, you’re still pure. | T: If he touches wet cow dung, he is still pure. If he doesn’t touch wet cow dung, he is still pure.
+an10.176:40.1 | S: Whether or not you stroke green grass, you’re still pure. | T: If he touches green grass… If he doesn’t touch green grass…
+an10.176:41.1 | S: Whether or not you serve the sacred flame, you’re still pure. | T: If he worships a fire… If he doesn’t worship a fire…
+an10.176:42.1 | S: Whether or not you revere the sun with cupped palms, you’re still pure. | T: If he pays homage to the sun with clasped hands… If he doesn’t pay homage to the sun with clasped hands…
+an10.176:43.1 | S: Whether or not you immerse yourself in water three times, you’re still pure. | T: If he goes down into the water three times by nightfall… If he doesn’t go down into the water three times by nightfall, he is still pure.
+an10.176:43.2 | S: Why is that? | T: Why is that?
+an10.176:43.3 | S: These ten ways of doing skillful deeds are pure and make things pure. | T: Because these ten courses of skillful action are pure and cause purity.
+an10.176:44.1 | S: It’s because of those who do these ten kinds of skillful deeds that gods, humans, or any other good places are found.” | T: And further, as a result of being endowed with these ten courses of skillful action, (rebirth among) the devas is declared, (rebirth among) human beings is declared—that or any other good destination.”
+an10.176:45.1 | S: When he said this, Cunda the smith said to the Buddha, | T: When this was said, Cunda the silversmith said to the Blessed One:
+an10.176:45.2 | S: “Excellent, sir! Excellent! … | T: “Magnificent, venerable sir! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear. I go to the Blessed One for refuge, to the Dhamma, and to the Saṅgha of monks.
+an10.176:45.3 | S: From this day forth, may the Buddha remember me as a lay follower who has gone for refuge for life.” | T: May the Blessed One remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+an10.176:45.4 | P: Dasamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '291,380p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-059.findings.tmp <<'EOF'
+none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+27,151
+0 lines reported.

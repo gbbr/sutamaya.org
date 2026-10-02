@@ -1,0 +1,586 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd95-4d42-7531-924a-2e758de38be6
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.51
+an3.51:1.1 | S: Then two old brahmins—elderly and senior, who were advanced in years and had reached the final stage of life, a hundred and twenty years old—went up to the Buddha, and exchanged greetings with him. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. Then two brahmans—feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old—went to the Blessed One. On arrival, they exchanged courteous greetings with him and,
+an3.51:1.2 | S: When the greetings and polite conversation were over, they sat down to one side, and said to the Buddha: | T: after an exchange of friendly greetings & courtesies, sat to one side. As they were sitting there, they said to him:
+an3.51:1.3 | S: “We brahmins, worthy Gotama, are old, elderly and senior, we’re advanced in years and have reached the final stage of life; we’re a hundred and twenty years old. | T: “Master Gotama, we are brahmans—feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old.
+an3.51:1.4 | S: And we haven’t done what is good and skillful, nor have we made a shelter from fear. | T: And we have done no admirable deeds, no skillful deeds, no deeds that allay our fears.
+an3.51:1.5 | S: Advise us, worthy Gotama, instruct us! It will be for our lasting welfare and happiness.” | T: Teach us, Master Gotama. Instruct us, Master Gotama, for our long-term benefit & happiness.”
+an3.51:2.1 | S: “Indeed, brahmins, you’re old, elderly and senior. | T: “Indeed, brahmans, you are feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old.
+an3.51:2.2 | S: And you haven’t done what is good and skillful, nor have you made a shelter from fear. | T: And you have done no admirable deeds, no skillful deeds, no deeds that allay your fears.
+an3.51:2.3 | S: This world is led onward by old age, sickness, and death. | T: This world is swept away by aging, by illness, by death. With the world thus swept away by aging, illness, & death,
+an3.51:2.4 | S: But restraint here by way of body, speech, and mind is the shelter, asylum, island, refuge, and final haven for the departed. | T: any restraint of body, speech, & intellect practiced here will be one’s shelter, cave, island, & refuge after death in the world beyond.”
+an3.51:3.1 | S: This life, so very short, is led onward. | T: It’s swept along: life, its next-to-nothing span.
+an3.51:3.2 | S: One led on to old age has no shelter. | T: For one swept on by aging no shelters exist.
+an3.51:3.3 | S: Seeing this peril in death, | T: Keeping sight of this danger in death,
+an3.51:3.4 | S: do good deeds that bring you joy. | T: do merit-deeds that bring bliss.
+an3.51:4.1 | S: The restraint practiced here— | T: When you’re restrained here
+an3.51:4.2 | S: of body, speech, and mind— | T: in body, speech, & awareness;
+an3.51:4.3 | S: leads the departed to happiness, | T: (none)
+an3.51:4.4 | S: as the good deeds done while living.” | T: when you make merit while still alive: That will be for your bliss after death.
+an3.51:4.5 | P: Paṭhamaṁ. | T: (none)
+
+## an4.183
+an4.183:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+an4.183:1.2 | S: Then Vassakāra the brahmin, a chief minister of Magadha, went up to the Buddha, and exchanged greetings with him. | T: Then Vassakāra the brahman, the minister to the king of Magadha, approached the Blessed One and, on arrival, exchanged courteous greetings with him.
+an4.183:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One:
+an4.183:2.1 | S: “Worthy Gotama, this is my doctrine and view: | T: “I am of the view, of the opinion,
+an4.183:2.2 | S: There’s nothing wrong with talking about what you’ve seen, saying: | T: that when anyone speaks of what he has seen, (saying,)
+an4.183:2.3 | S: ‘So I have seen.’ | T: ‘Thus have I seen,’ there is no fault in that.
+an4.183:2.4 | S: There’s nothing wrong with talking about what you’ve heard, saying: | T: When anyone speaks of what he has heard, (saying,)
+an4.183:2.5 | S: ‘So I have heard.’ | T: ‘Thus have I heard,’ there is no fault in that.
+an4.183:2.6 | S: There’s nothing wrong with talking about what you’ve thought, saying: | T: When anyone speaks of what he has sensed, (saying,)
+an4.183:2.7 | S: ‘So I have thought.’ | T: ‘Thus have I sensed,’ there is no fault in that.
+an4.183:2.8 | S: There’s nothing wrong with talking about what you’ve known, saying: | T: When anyone speaks of what he has cognized, (saying,)
+an4.183:2.9 | S: ‘So I have known.’” | T: ‘Thus have I cognized,’ there is no fault in that.”
+an4.183:3.1 | S: “Brahmin, I don’t say you should talk about everything you see, hear, think, and know. | T: (The Blessed One responded:) “I do not say, brahman, that everything that has been seen should be spoken about. Nor do I say that everything that has been seen should not be spoken about. I do not say that everything that has been heard… everything that has been sensed… everything that has been cognized should be spoken about. Nor do I say that everything that has been cognized should not be spoken about.
+an4.183:3.2 | S: But I also don’t say you should talk about nothing you see, hear, think, and know. | T: (none)
+an4.183:3.3 | P: nāhaṁ, brāhmaṇa, sabbaṁ sutaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.4 | P: na panāhaṁ, brāhmaṇa, sabbaṁ sutaṁ na bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.5 | P: nāhaṁ, brāhmaṇa, sabbaṁ mutaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.6 | P: na panāhaṁ, brāhmaṇa, sabbaṁ mutaṁ na bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.7 | P: nāhaṁ, brāhmaṇa, sabbaṁ viññātaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.8 | P: na panāhaṁ, brāhmaṇa, sabbaṁ viññātaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:4.1 | S: When talking about certain things you’ve seen, heard, thought, or known, unskillful qualities grow while skillful qualities decline. I say that you shouldn’t talk about those things. | T: “When, for one who speaks of what has been seen, unskillful qualities increase and skillful qualities decrease, then that sort of thing should not be spoken about. But when, for one who speaks of what has been seen, unskillful qualities decrease and skillful qualities increase, then that sort of thing should be spoken about.
+an4.183:4.2 | S: When talking about other things you’ve seen, heard, thought, or known, unskillful qualities decline while skillful qualities grow. I say that you should talk about those things.” | T: “When, for one who speaks of what has been heard… what has been sensed… what has been cognized, unskillful qualities increase and skillful qualities decrease, then that sort of thing should not be spoken about. But when, for one who speaks of what has been cognized, unskillful qualities decrease and skillful qualities increase, then that sort of thing should be spoken about.”
+an4.183:5.1 | P: Yañhi, brāhmaṇa, sutaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ sutaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:5.2 | P: Yañca khvassa, brāhmaṇa, sutaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ sutaṁ bhāsitabbanti vadāmi. | T: (none)
+an4.183:6.1 | P: Yañhi, brāhmaṇa, mutaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ mutaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:6.2 | P: Yañca khvassa, brāhmaṇa, mutaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ mutaṁ bhāsitabbanti vadāmi. | T: (none)
+an4.183:7.1 | P: Yañhi, brāhmaṇa, viññātaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ viññātaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:7.2 | P: Yañca khvassa, brāhmaṇa, viññātaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ viññātaṁ bhāsitabbanti vadāmī”ti. | T: (none)
+an4.183:8.1 | S: Then Vassakāra the brahmin, having approved and agreed with what the Buddha said, rose from his seat and left. | T: Then Vassakāra the brahman, delighting & rejoicing in the Blessed One’s words, got up from his seat and left.
+an4.183:8.2 | P: Tatiyaṁ. | T: (none)
+
+## an4.36
+an4.36:1.1 | S: At one time the Buddha was traveling along the road between Ukkaṭṭhā and Setavyā, | T: I have heard that on one occasion the Blessed One was traveling along the road between Ukkaṭṭha and Setabya, and Doṇa the brahman was also traveling along the road between Ukkaṭṭha and Setabya.
+an4.36:1.2 | S: as was the brahmin Doṇa. | T: (none)
+an4.36:1.3 | S: Doṇa saw that the Buddha’s footprints had thousand-spoked wheels, with rims and hubs, complete in every detail. | T: Doṇa the brahman saw, in the Blessed One’s footprints, wheels with 1,000 spokes, together with rims and hubs, complete in all their features.
+an4.36:1.4 | S: It occurred to him, | T: On seeing them, the thought occurred to him,
+an4.36:1.5 | S: “Oh lord, how incredible, how amazing! | T: “How amazing! How astounding!
+an4.36:1.6 | S: Surely these couldn’t be the footprints of a human being?” | T: These are not the footprints of a human being!”
+an4.36:1.7 | S: The Buddha had left the road and sat at the root of a tree cross-legged, setting his body straight, and bringing mindfulness to the present. | T: Then the Blessed One, leaving the road, went to sit at the root of a certain tree—his legs crossed, his body erect, with mindfulness established to the fore.
+an4.36:1.8 | S: Then Doṇa, following the Buddha’s footprints, saw him sitting at the tree root—impressive and inspiring, with peaceful faculties and heart, attained to the highest self-control and serenity, like an elephant with tamed, guarded, and controlled faculties. | T: Then Doṇa, following the Blessed One’s footprints, saw him sitting at the root of the tree: confident, inspiring confidence, his senses calmed, his mind calmed, having attained the utmost control & tranquility, tamed, guarded, his senses restrained, a nāga.
+an4.36:1.9 | S: He went up to the Buddha and said to him: | T: On seeing him, he went to him and said,
+an4.36:2.1 | S: “Sir, might you be a god?” | T: “Master, are you a deva?”
+an4.36:2.2 | S: “I will not be a god, brahmin.” | T: “No, brahman, I am not a deva.”
+an4.36:2.3 | S: “Might you be a centaur?” | T: “Are you a gandhabba?”
+an4.36:2.4 | S: “I will not be a centaur.” | T: “No….”
+an4.36:2.5 | S: “Might you be a spirit?” | T: “… a yakkha?”
+an4.36:2.6 | S: “I will not be a spirit.” | T: “No….”
+an4.36:2.7 | S: “Might you be a human?” | T: “… a human being?”
+an4.36:2.8 | S: “I will not be a human.” | T: “No, brahman, I am not a human being.”
+an4.36:3.1 | S: “When asked whether you might be a god, centaur, spirit, or human, | T: “When asked, ‘Are you a deva?’
+an4.36:3.2 | S: you answer that you will not be any of these. | T: you answer, ‘No, brahman, I am not a deva.’
+an4.36:3.3 | P: ‘Gandhabbo no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a gandhabba?’
+an4.36:3.4 | P: ‘na kho ahaṁ, brāhmaṇa, gandhabbo bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a gandhabba.’
+an4.36:3.5 | P: ‘Yakkho no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a yakkha?’
+an4.36:3.6 | P: ‘na kho ahaṁ, brāhmaṇa, yakkho bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a yakkha.’
+an4.36:3.7 | P: ‘Manusso no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a human being?’
+an4.36:3.8 | P: ‘na kho ahaṁ, brāhmaṇa, manusso bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a human being.’
+an4.36:3.9 | S: So what then might you be?” | T: Then what sort of being are you?”
+an4.36:4.1 | S: “Brahmin, if I had not given up defilements I might have become a god … a centaur … a spirit … or a human. But I have given up those defilements, cut them off at the root, made them like a palm stump, obliterated them so they are unable to arise in the future. | T: “Brahman, the effluents by which—if they were not abandoned—I would be a deva: Those are abandoned by me, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+an4.36:4.2 | P: Yesaṁ kho ahaṁ, brāhmaṇa, āsavānaṁ appahīnattā gandhabbo bhaveyyaṁ … yakkho bhaveyyaṁ … manusso bhaveyyaṁ, te me āsavā pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: The effluents by which—if they were not abandoned—I would be a gandhabba… a yakkha… a human being: Those are abandoned by me, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+an4.36:4.3 | S: Suppose there was a blue water lily, or a pink or white lotus. Though it sprouted and grew in the water, it would rise up above the water and stand with no water clinging to it. | T: “Just like a red, blue, or white lotus—born in the water, grown in the water, rising up above the water—stands unsmeared by the water,
+an4.36:4.4 | S: In the same way, though I was born and grew up in the world, I live having mastered the world, unsullied by the world. | T: in the same way I—born in the world, grown in the world, having overcome the world—live unsmeared by the world.
+an4.36:4.5 | S: Remember me, brahmin, as a Buddha. | T: Remember me, brahman, as ‘awakened.’
+an4.36:5.1 | S: I could have been reborn as a god, | T: “The effluents by which I would go to a deva-state,
+an4.36:5.2 | S: or as a centaur flying through the sky. | T: or become a gandhabba in the sky,
+an4.36:5.3 | S: I could have become a spirit, | T: or go to a yakkha-state & human-state:
+an4.36:5.4 | S: or returned as a human. | T: (none)
+an4.36:5.5 | S: But I’ve ended those defilements, | T: Those have been destroyed by me,
+an4.36:5.6 | S: they’re blown away and mown down. | T: ruined, their stems removed.
+an4.36:6.1 | S: Like a graceful lotus, | T: Like a blue lotus, rising up,
+an4.36:6.2 | S: to which water does not cling, | T: unsmeared by water,
+an4.36:6.3 | S: the world doesn’t cling to me, | T: unsmeared am I by the world,
+an4.36:6.4 | S: and so, brahmin, I am a Buddha.” | T: and so, brahman, I’m awake.”
+an4.36:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an4.94
+an4.94:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “Monks, these four types of individuals are to be found existing in world.
+an4.94:1.2 | S: What four? | T: Which four?
+an4.94:1.3 | S: One individual has internal serenity of heart, but not the higher wisdom of discernment of principles. | T: “There is the case of the individual who has attained internal tranquility of awareness, but not insight into phenomena through heightened discernment.
+an4.94:1.4 | S: One individual has the higher wisdom of discernment of principles, but not internal serenity of heart. | T: Then there is the case of the individual who has attained insight into phenomena through heightened discernment, but not internal tranquility of awareness.
+an4.94:1.5 | S: One individual has neither internal serenity of heart, nor the higher wisdom of discernment of principles. | T: Then there is the case of the individual who has attained neither internal tranquility of awareness nor insight into phenomena through heightened discernment.
+an4.94:1.6 | S: One individual has both internal serenity of heart, and the higher wisdom of discernment of principles. | T: And then there is the case of the individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:2.1 | S: As for the individual who has serenity but not discernment: they should approach someone who has discernment and ask: | T: “The individual who has attained internal tranquility of awareness, but not insight into phenomena through heightened discernment, should approach an individual who has attained insight into phenomena through heightened discernment and ask him:
+an4.94:2.2 | S: ‘Reverend, how should conditions be seen? | T: ‘How should fabrications be regarded? How should they be investigated? How should they be seen with insight?’
+an4.94:2.3 | S: How should they be comprehended? | T: (none)
+an4.94:2.4 | S: How should they be discerned?’ | T: (none)
+an4.94:2.5 | S: They would answer from their own experience: | T: The other will answer in line with what he has seen & experienced:
+an4.94:2.6 | S: ‘This is how conditions should be seen, comprehended, and discerned.’ | T: ‘Fabrications should be regarded in this way. Fabrications should be investigated in this way. Fabrications should be seen in this way with insight.’
+an4.94:2.7 | S: After some time they have both serenity and discernment. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:3.1 | S: As for the individual who has discernment but not serenity: they should approach someone who has serenity and ask: | T: “As for the individual who has attained insight into phenomena through heightened discernment, but not internal tranquility of awareness, he should approach an individual who has attained internal tranquility of awareness… and ask him:
+an4.94:3.2 | S: ‘Reverend, how should the mind be stilled? | T: ‘How should the mind be steadied?
+an4.94:3.3 | S: How should it be settled? | T: How should it be made to settle down?
+an4.94:3.4 | S: How should it be unified? | T: How should it be unified?
+an4.94:3.5 | S: How should it be immersed in samādhi?’ | T: How should it be concentrated?’
+an4.94:3.6 | S: They would answer from their own experience: | T: The other will answer in line with what he has seen & experienced:
+an4.94:3.7 | S: ‘Reverend, this is how the mind should be stilled, settled, unified, and immersed in samādhi.’ | T: ‘The mind should be steadied in this way. The mind should be made to settle down in this way. The mind should be unified in this way. The mind should be concentrated in this way.’
+an4.94:3.8 | S: After some time they have both discernment and serenity. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:4.1 | S: As for the individual who has neither serenity nor discernment: they should approach someone who has serenity and discernment and ask: | T: “As for the individual who has attained neither internal tranquility of awareness nor insight into phenomena through heightened discernment, he should approach an individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment… and ask him:
+an4.94:4.2 | S: ‘Reverend, how should the mind be stilled? | T: ‘How should the mind be steadied?
+an4.94:4.3 | S: How should it be settled? | T: How should it be made to settle down?
+an4.94:4.4 | S: How should it be unified? | T: How should it be unified?
+an4.94:4.5 | S: How should it be immersed in samādhi?’ | T: How should it be concentrated?
+an4.94:4.6 | S: How should conditions be seen? | T: How should fabrications be regarded?
+an4.94:4.7 | S: How should they be comprehended? | T: How should they be investigated?
+an4.94:4.8 | S: How should they be discerned?’ | T: How should they be seen with insight?’
+an4.94:4.9 | S: They would answer as they’ve seen and known: | T: The other will answer in line with what he has seen & experienced:
+an4.94:4.10 | S: ‘Reverend, this is how the mind should be stilled, settled, unified, and immersed in samādhi. And this is how conditions should be seen, comprehended, and discerned.’ | T: ‘The mind should be steadied in this way. The mind should be made to settle down in this way. The mind should be unified in this way. The mind should be concentrated in this way. Fabrications should be regarded in this way. Fabrications should be investigated in this way. Fabrications should be seen in this way with insight.’
+an4.94:4.11 | S: After some time they have both serenity and discernment. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:5.1 | S: As for the individual who has both serenity and discernment: grounded on those skillful qualities, they should practice meditation further to end the defilements. | T: “As for the individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment, his duty is to make an effort in establishing [‘tuning’] those very same skillful qualities to a higher degree for the ending of the effluents.
+an4.94:5.2 | S: These are the four individuals found in the world.” | T: “These are four types of individuals to be found existing in world.”
+an4.94:5.3 | P: Catutthaṁ. | T: (none)
+
+## snp1.1
+snp1.1:1.1 | S: When anger surges, they drive it out, | T: The monk who subdues his arisen anger
+snp1.1:1.2 | S: as with medicine a cobra’s spreading venom. | T: as, with herbs, snake-venom once it has spread,
+snp1.1:1.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:1.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:2.1 | S: They’ve cut off greed entirely, | T: The monk who has cut off passion without leaving a trace,
+snp1.1:2.2 | S: like a lotus plucked flower and stalk. | T: as he would, plunging into a lake, a lotus,
+snp1.1:2.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:2.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:3.1 | S: They’ve cut off craving entirely, | T: The monk who has cut off craving without leaving a trace,
+snp1.1:3.2 | S: drying up that swift-flowing stream. | T: drying up the swift-flowing flood,
+snp1.1:3.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:3.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:4.1 | S: They’ve swept away conceit entirely, | T: The monk who has uprooted conceit without leaving a trace,
+snp1.1:4.2 | S: as a fragile bridge of reeds by a great flood. | T: as a great flood, a very weak bridge made of reeds,
+snp1.1:4.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:4.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:5.1 | S: In future lives they find no worth, | T: The monk seeing in states of becoming no essence,
+snp1.1:5.2 | S: as an inspector of fig trees finds no flower. | T: as he would, when examining fig trees, no flowers,
+snp1.1:5.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:5.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:6.1 | S: They hide no anger within, | T: The monk with no inner anger,
+snp1.1:6.2 | S: passed beyond any kind of existence. | T: who has thus gone beyond becoming & not-,
+snp1.1:6.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:6.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:7.1 | S: Their mental vibrations are cleared away, | T: The monk whose discursive thoughts are dispersed,
+snp1.1:7.2 | S: internally clipped off entirely. | T: well-dealt with inside without leaving a trace,
+snp1.1:7.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:7.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:8.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:8.2 | S: but have gone beyond all this proliferation. | T: transcending all this objectification,
+snp1.1:8.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:8.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:9.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:9.2 | S: for they know that nothing in the world <j>is what it seems. | T: knowing with regard to the world that “All this is unreal,”
+snp1.1:9.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:9.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:10.1 | S: They have not run too far nor run back, | T: (none)
+snp1.1:10.2 | S: knowing nothing is what it seems, free of greed. | T: (none)
+snp1.1:10.3 | S: Such a mendicant sheds the near shore and the far, | T: (none)
+snp1.1:10.4 | S: as a serpent its old worn-out skin. | T: (none)
+snp1.1:11.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:11.2 | S: knowing nothing is what it seems, free of lust. | T: without greed, as “All this is unreal,”
+snp1.1:11.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:11.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:12.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:12.2 | S: knowing nothing is what it seems, free of hate. | T: without aversion, as “All this is unreal,”
+snp1.1:12.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:12.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:13.1 | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or turned back,
+snp1.1:13.2 | S: knowing nothing is what it seems, free of delusion. | T: without delusion, as “All this is unreal,”
+snp1.1:13.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:13.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:14.1 | S: They have no underlying tendencies at all, | T: The monk in whom there are no obsessions
+snp1.1:14.2 | S: and are rid of unskillful roots, | T: —the roots of unskillfulness totally destroyed—
+snp1.1:14.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:14.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:15.1 | S: They have nothing born of distress at all | T: The monk in whom there’s nothing born of disturbance
+snp1.1:15.2 | S: to make them to return to the near shore. | T: that would lead him back to this shore,
+snp1.1:15.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:15.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:16.1 | S: No snarl grows in them at all, | T: The monk in whom there’s nothing born of the underbrush
+snp1.1:16.2 | S: that would shackle them to a new life. | T: that would act as a cause for binding him to becoming,
+snp1.1:16.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:16.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:17.1 | S: They’ve given up the five hindrances, | T: The monk who’s abandoned five hindrances,
+snp1.1:17.2 | S: untroubled, rid of indecision, free of thorns. | T: who, untroubled, de-arrowed, has crossed over doubt,
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+snp1.1:17.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:17.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:17.5 | P: Uragasuttaṁ paṭhamaṁ. | T: (none)
+
+## ud2.7
+ud2.7:1.1 | S: So I have heard. | T: I have heard that
+ud2.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud2.7:1.3 | S: Now at that time a certain lay follower’s dear and beloved only child passed away. | T: And on that occasion the dear and beloved only son of a certain lay follower had died.
+ud2.7:2.1 | S: Then in the middle of the day several lay followers with wet clothes and hair went up to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: So a large number of lay followers–their clothes wet, their hair wet–went to the Blessed One in the middle of the day and, on arrival, having bowed down to him, sat to one side. As they were sitting there the Blessed One said to them:
+ud2.7:2.2 | S: “Why, lay followers, have you come here in the middle of the day with wet clothes and hair?” | T: “Why have you come here–your clothes wet, your hair wet–in the middle of the day?”
+ud2.7:3.1 | S: The lay follower replied, | T: When this was said, the lay follower said to the Blessed One,
+ud2.7:3.2 | S: “Sir, my dear and beloved only child has passed away. | T: “My dear and beloved only son, lord, has died.
+ud2.7:3.3 | S: That’s why we came here in the middle of the day with wet clothes and hair.” | T: This is why we have come here–our clothes wet, our hair wet–in the middle of the day.”
+ud2.7:4.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.7:5.1 | S: “Hosts of gods and most human beings are bound | T: Tied down by the allure of what seems dear, hosts of devas, most human beings,
+ud2.7:5.2 | S: to what seems dear and pleasant. | T: (none)
+ud2.7:5.3 | S: Gloomy and exhausted, | T: worn out with misery,
+ud2.7:5.4 | S: they fall under the sway of the King of Death. | T: fall under the sway of the King of Death.
+ud2.7:6.1 | S: The diligent, who day and night | T: But those who, day & night,
+ud2.7:6.2 | S: give up what seems pleasant, | T: heedfully abandon what seems dear,
+ud2.7:6.3 | S: dig out the root of gloom— | T: dig up misery by the root–
+ud2.7:6.4 | S: Death’s bait so hard to escape.” | T: Death’s bait so hard to overcome.
+ud2.7:6.5 | P: Sattamaṁ. | T: (none)
+
+## ud5.4
+ud5.4:1.1 | S: So I have heard. | T: I have heard that
+ud5.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.4:1.3 | S: Now at that time, between Sāvatthī and the Jeta Grove, several boys were tormenting some fish. | T: And on that occasion, a large number of boys on the road between Sāvatthī & Jeta’s Grove were catching fish.
+ud5.4:2.1 | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then early in the morning the Blessed One adjusted his under robe and–carrying his bowl & robes–went into Sāvatthī for alms.
+ud5.4:2.2 | S: He saw the boys tormenting the fish. | T: He saw the large number of boys on the road between Sāvatthī & Jeta’s Grove catching little fish.
+ud5.4:2.3 | S: He went to them and said, | T: Seeing them, he went up to them and, on arrival, said to them,
+ud5.4:2.4 | S: “Boys, do you fear pain? Do you dislike pain?” | T: “Boys, do you fear pain? Do you dislike pain?”
+ud5.4:2.5 | S: “Yes, sir,” they replied. “We dislike pain.” | T: “Yes, lord, we fear pain. We dislike pain.”
+ud5.4:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.4:4.1 | S: “If you fear pain, | T: If you fear pain,
+ud5.4:4.2 | S: if you dislike pain, | T: if you dislike pain,
+ud5.4:4.3 | S: don’t do bad deeds | T: don’t anywhere do an evil deed
+ud5.4:4.4 | S: either openly or in secret. | T: in open or in secret.
+ud5.4:5.1 | S: If you should do a bad deed, | T: If you’re doing or will do an evil deed,
+ud5.4:5.2 | S: now or in the future, | T: (none)
+ud5.4:5.3 | S: you won’t be freed from suffering, | T: you won’t escape pain
+ud5.4:5.4 | S: though you fly away and flee.” | T: catching up as you run away.
+ud5.4:5.5 | P: Catutthaṁ. | T: (none)
+
+## sn35.229
+sn35.229:1.1 | S: “Mendicants, an unlearned ordinary person speaks of the ocean. | T: “‘The ocean, the ocean,’ says the uninstructed run-of-the-mill person.
+sn35.229:1.2 | S: But that’s not the ocean in the training of the Noble One. | T: But that’s not the ocean in the discipline of the noble ones.
+sn35.229:1.3 | S: That’s just a large body of water, a large sea of water. | T: It’s a great mass of water, a great body of water.
+sn35.229:1.4 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked with sensual desire.
+sn35.229:1.5 | S: This is called the ocean in the training of the Noble One. | T: These are called the ocean in the discipline of the noble ones.
+sn35.229:1.6 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this cosmos—with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk—is, for the most part, submerged, like a tangled skein, a knotted ball of string, like matted rushes & reeds, and doesn’t go beyond the plane of deprivation, the bad destination, the lower realm, the wandering-on.
+sn35.229:2.1 | S: There are sounds … smells … tastes … touches … ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked with sensual desire.
+sn35.229:2.2 | S: This is called the ocean in the training of the Noble One. | T: These are called the ocean in the discipline of the noble ones.
+sn35.229:2.3 | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this cosmos—with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk—is, for the most part, submerged, like a tangled skein, a knotted ball of string, like matted rushes & reeds, and doesn’t go beyond the plane of deprivation, the bad destination, the lower realm, the wandering-on.
+sn35.229:3.1 | S: Those in whom greed, hate, and ignorance | T: Whoever has become dispassionate to passion, aversion, & ignorance,
+sn35.229:3.2 | S: have faded away; | T: (none)
+sn35.229:3.3 | S: have crossed the ocean so hard to cross, | T: crosses over this ocean,
+sn35.229:3.4 | S: with its saltwater crocodiles and monsters, <j>its waves and dangers. | T: with its danger of sharks, demons, waves, so very hard to cross.
+sn35.229:4.1 | S: They’ve slipped their chains, given up death, and have no attachments. | T: He’s one who has overcome ties, forsaken death,
+sn35.229:4.2 | S: They’ve given up suffering, <j>so there are no more future lives. | T: abandoned suffering & stress, is acquisition-free with no further becoming.
+sn35.229:4.3 | S: They’ve disappeared, and cannot be measured; | T: Having gone to his end, he has no measure,
+sn35.229:4.4 | S: and they’ve confounded the King of Death, I say.” | T: has bewildered, I tell you, Death’s king.
+sn35.229:4.5 | P: Dutiyaṁ. | T: (none)
+
+## sn35.230
+sn35.230:1.1 | S: “Mendicants, suppose an angler was to cast a baited hook into a deep lake. | T: “Monks, just as if a fisherman were to cast a baited hook into a deep lake and a fish with its eye out for food would swallow it—
+sn35.230:1.2 | S: Seeing the bait, a fish would swallow it. | T: (none)
+sn35.230:1.3 | S: And so the fish that swallowed the hook would meet with tragedy and disaster, and the angler can do what he wants with it. | T: so that the fish that had thus swallowed the fisherman’s hook would fall into misfortune & disaster, and the fisherman could do with it as he will—
+sn35.230:2.1 | S: In the same way, there are these six hooks in the world that mean tragedy and slaughter for living creatures. | T: in the same way, there are these six hooks in the world for the misfortune of beings, for the slaughter of those that breathe.
+sn35.230:2.2 | S: What six? | T: Which six?
+sn35.230:2.3 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are forms, monks, cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:2.4 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.230:2.5 | S: they’re called a mendicant who has swallowed Māra’s hook. They’ve met with tragedy and disaster, and the Wicked One can do with them what he wants. | T: he is said to be a monk who has swallowed Māra’s hook, who has fallen into misfortune & disaster. The Evil One can do with him as he will.
+sn35.230:2.6 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.230:3.1 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:3.2 | S: If a mendicant approves, welcomes, and keeps clinging to them, | T: If a monk relishes them, welcomes them, & remains fastened to them,
+sn35.230:3.3 | S: they’re called a mendicant who has swallowed Māra’s hook. They’ve met with tragedy and disaster, and the Wicked One can do with them what he wants. | T: he is said to be a monk who has swallowed Māra’s hook, who has fallen into misfortune & disaster. The Evil One can do with him as he will.
+sn35.230:4.1 | S: There are sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “Now, there are forms cognizable via the eye—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:4.2 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, they’re called a mendicant who hasn’t swallowed Māra’s hook. They’ve broken the hook, destroyed it. They haven’t met with tragedy and disaster, and the Wicked One cannot do with them what he wants. | T: If a monk does not relish them, welcome them, or remain fastened to them, he is said to be a monk who has not swallowed Māra’s hook, who has snapped the hook, who has broken the hook, who has not fallen into misfortune & disaster. The Evil One cannot do with him as he will.
+sn35.230:5.1 | S: There are sounds … smells … tastes … touches … | T: “There are sounds cognizable via the ear… “There are aromas cognizable via the nose… “There are flavors cognizable via the tongue… “There are tactile sensations cognizable via the body…
+sn35.230:5.2 | S: ideas known by the mind, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: “There are ideas cognizable via the intellect—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+sn35.230:5.3 | S: If a mendicant doesn’t approve, welcome, and keep clinging to them, they’re called a mendicant who hasn’t swallowed Māra’s hook. They’ve broken the hook, destroyed it. They haven’t met with tragedy and disaster, and the Wicked One cannot do with them what he wants.” | T: If a monk does not relish them, welcome them, or remain fastened to them, he is said to be a monk who has not swallowed Māra’s hook, who has snapped the hook, who has broken the hook, who has not fallen into misfortune & disaster. The Evil One cannot do with him as he will.”
+sn35.230:5.4 | P: Tatiyaṁ. | T: (none)
+
+## sn42.10
+sn42.10:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was staying near Rājagaha at the Squirrels’ Sanctuary.
+sn42.10:1.2 | S: Now at that time while the king’s retinue was sitting together in the royal compound this discussion came up among them, | T: Now at that time, when the king’s assembly had gathered and was sitting together in the royal palace, this topic of conversation arose:
+sn42.10:1.3 | S: “Gold and currency are proper for ascetics who follow the Sakyan. They accept and receive gold and currency.” | T: “Money [lit: gold & silver] is allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives consent to money. The Sakyan-son contemplatives accept money.”
+sn42.10:2.1 | S: Now at that time the chief Maṇicūḷaka was sitting in that assembly. | T: At that time Maṇicūḷaka the headman was sitting in that assembly,
+sn42.10:2.2 | S: He said to that retinue, | T: so he said to them,
+sn42.10:2.3 | S: “Good masters, don’t say that. | T: “Don’t say that, masters.
+sn42.10:2.4 | S: Gold and currency are not proper for ascetics who follow the Sakyan. They neither accept nor receive gold and currency. They have set aside gems and gold, and quit using gold and currency.” | T: Money is not allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives do not consent to money. The Sakyan-son contemplatives do not accept money. The Sakyan-son contemplatives have given up gold & jewelry, have renounced money.”
+sn42.10:2.5 | S: He was able to persuade that assembly. | T: And he was able to convince the assembly.
+sn42.10:2.6 | S: Then Maṇicūḷaka went up to the Buddha, bowed, sat down to one side, and told him what had happened. He then said, | T: Then he went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn42.10:2.7 | P: “idha, bhante, rājantepure rājaparisāya sannisinnānaṁ sannipatitānaṁ ayamantarākathā udapādi: | T: “Just now, lord, when the king’s assembly had gathered and was sitting together in the royal palace, this topic of conversation arose:
+sn42.10:2.8 | P: ‘kappati samaṇānaṁ sakyaputtiyānaṁ jātarūparajataṁ, sādiyanti samaṇā sakyaputtiyā jātarūparajataṁ, paṭiggaṇhanti samaṇā sakyaputtiyā jātarūparajatan’ti. | T: ‘Money is allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives consent to money. The Sakyan-son contemplatives accept money.’
+sn42.10:2.9 | P: Evaṁ vutte, ahaṁ, bhante, taṁ parisaṁ etadavocaṁ: | T: When this was said, I said to them,
+sn42.10:2.10 | P: ‘mā ayyo evaṁ avacuttha. | T: ‘Don’t say that, masters.
+sn42.10:2.11 | P: Na kappati samaṇānaṁ sakyaputtiyānaṁ jātarūparajataṁ, na sādiyanti samaṇā sakyaputtiyā jātarūparajataṁ, nappaṭiggaṇhanti samaṇā sakyaputtiyā jātarūparajataṁ, nikkhittamaṇisuvaṇṇā samaṇā sakyaputtiyā apetajātarūparajatā’ti. | T: Money is not allowable for the Sakyan-son contemplatives. The Sakyan-son contemplatives do not consent to money. The Sakyan-son contemplatives do not accept money. The Sakyan-son contemplatives have given up gold & jewelry, have renounced money.’
+sn42.10:2.12 | P: Asakkhiṁ khvāhaṁ, bhante, taṁ parisaṁ saññāpetuṁ. | T: And I was able to convince the assembly.
+sn42.10:2.13 | S: “Answering this way, I trust that I repeat what the Buddha has said, and don’t misrepresent him with an untruth. I trust my explanation is in line with the teaching, and that there are no legitimate grounds for rebuttal or criticism.” | T: Answering in this way, lord, am I speaking in line with what the Blessed One has said, am I not misrepresenting the Blessed One with what is unfactual, am I answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing me?”
+sn42.10:3.1 | S: “Indeed, in answering this way you repeat what I’ve said, and don’t misrepresent me with an untruth. Your explanation is in line with the teaching, and there are no legitimate grounds for rebuttal or criticism. | T: “Yes, headman, in answering in this way you are speaking in line with what I have said, you are not misrepresenting me with what is unfactual, and you are answering in line with the Dhamma so that no one whose thinking is in line with the Dhamma will have grounds for criticizing you.
+sn42.10:3.2 | S: Gold and currency are not proper for ascetics who follow the Sakyan. They neither accept nor receive gold and currency. They have set aside gems and gold, and quit using gold and currency. | T: For money is not allowable for the Sakyan-son contemplatives, the Sakyan-son contemplatives do not consent to money, the Sakyan-son contemplatives do not accept money, the Sakyan-son contemplatives have given up gold & jewelry, have renounced money.
+sn42.10:3.3 | S: If gold and currency were proper for them, then the five kinds of sensual stimulation would also be proper. | T: For anyone for whom money is allowable, the five strings of sensuality are also allowable.
+sn42.10:3.4 | S: And if the five kinds of sensual stimulation are proper for them, you should categorically regard them as not having the qualities of an ascetic or a follower of the Sakyan. | T: For anyone for whom the five strings of sensuality are allowable, money is allowable. That you can unequivocally recognize as not the quality of a contemplative, not the quality of a Sakyan son.
+sn42.10:3.5 | S: Rather, chief, I say this: | T: “Now I do say that thatch may be sought for by one needing thatch, wood may be sought for by one needing wood, a cart may be sought for by one needing a cart, a workman may be sought for by one needing a workman,
+sn42.10:3.6 | S: Straw may be looked for by one needing straw; wood may be looked for by one needing wood; a cart may be looked for by one needing a cart; a workman may be looked for by one needing a workman. | T: (none)
+sn42.10:3.7 | S: But in any case, there is no way they can accept or look for gold and currency, I say.” | T: but by no means do I say that money may be consented to or sought for in any way at all.”
+sn42.10:3.8 | P: Dasamaṁ. | T: (none)
+
+## sn6.2
+sn6.2:1.1 | S: So I have heard. | T: I have heard that
+sn6.2:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: on one occasion, when the Blessed One was newly self-awakened, he was staying near Uruvelā on the bank of the Nerañjarā River, at the foot of the Goatherd’s Banyan Tree.
+sn6.2:1.3 | S: Then as he was in private retreat this thought came to his mind, | T: Then, while he was alone & in seclusion, this line of thinking arose in his awareness:
+sn6.2:1.4 | S: “One without respect and reverence lives in suffering. What ascetic or brahmin should I honor and respect and rely on?” | T: “One suffers if dwelling without reverence or deference. Now on what contemplative or brahman can I dwell in dependence, honoring & respecting him?”
+sn6.2:2.1 | S: Then it occurred to him: | T: Then the thought occurred to him:
+sn6.2:2.2 | S: “I’d honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of ethics, if it were incomplete. | T: “It would be for the sake of perfecting an unperfected aggregate of virtue that I would dwell in dependence on another contemplative or brahman, honoring & respecting him.
+sn6.2:2.3 | S: But I don’t see any other ascetic or brahmin in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who is more accomplished than myself in ethics, who I should honor and respect and rely on. | T: However, in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, I do not see another contemplative or brahman more consummate in virtue than I, on whom I could dwell in dependence, honoring & respecting him.
+sn6.2:3.1 | S: I’d honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of immersion, if it were incomplete. | T: “It would be for the sake of perfecting an unperfected aggregate of concentration that I would dwell in dependence on another contemplative or brahman, honoring & respecting him.
+sn6.2:3.2 | S: But I don’t see any other ascetic or brahmin … who is more accomplished than myself in immersion … | T: However, in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, I do not see another contemplative or brahman more consummate in concentration than I, on whom I could dwell in dependence, honoring & respecting him.
+sn6.2:4.1 | S: I’d honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of wisdom, if it were incomplete. | T: “It would be for the sake of perfecting an unperfected aggregate of discernment that I would dwell in dependence on another contemplative or brahman, honoring & respecting him.
+sn6.2:4.2 | S: But I don’t see any other ascetic or brahmin … who is more accomplished than myself in wisdom … | T: However, in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, I do not see another contemplative or brahman more consummate in discernment than I, on whom I could dwell in dependence, honoring & respecting him.
+sn6.2:5.1 | S: I’d honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of freedom, if it were incomplete. | T: “It would be for the sake of perfecting an unperfected aggregate of release that I would dwell in dependence on another contemplative or brahman, honoring & respecting him.
+sn6.2:5.2 | S: But I don’t see any other ascetic or brahmin … who is more accomplished than myself in freedom … | T: However, in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, I do not see another contemplative or brahman more consummate in release than I, on whom I could dwell in dependence, honoring & respecting him.
+sn6.2:6.1 | S: I’d honor and respect and rely on another ascetic or brahmin so as to complete the entire spectrum of the knowledge and vision of freedom, if it were incomplete. | T: “It would be for the sake of perfecting an unperfected aggregate of knowledge & vision of release that I would dwell in dependence on another contemplative or brahman, honoring & respecting him.
+sn6.2:6.2 | S: But I don’t see any other ascetic or brahmin in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who is more accomplished than myself in the knowledge and vision of freedom, who I should honor and respect and rely on. | T: However, in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, I do not see another contemplative or brahman more consummate in knowledge & vision of release than I, on whom I could dwell in dependence, honoring & respecting him.
+sn6.2:6.3 | S: Why don’t I honor and respect and rely on the same Dhamma to which I was awakened?” | T: “What if I were to dwell in dependence on this very Dhamma to which I have fully awakened, honoring & respecting it?”
+sn6.2:7.1 | S: Then the divinity Sahampati knew the Buddha’s train of thought. As easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then, having known with his own awareness the line of thinking in the Blessed One’s awareness—just as a strong man might extend his flexed arm or flex his extended arm—Brahmā Sahampati disappeared from the Brahmā world and reappeared in front of the Blessed One.
+sn6.2:7.2 | S: He arranged his robe over one shoulder, raised his cupped palms toward the Buddha, and said: | T: Arranging his upper robe over one shoulder, he saluted the Blessed One with his hands before his heart and said to him:
+sn6.2:7.3 | S: “That’s so true, Blessed One! That’s so true, Holy One! | T: “So it is, Blessed One! So it is, One-Well-Gone!
+sn6.2:7.4 | S: All the perfected ones, the fully awakened Buddhas who lived in the past honored and respected and relied on this same teaching. | T: Those who were arahants, Rightly Self-awakened Ones in the past—they, too, dwelled in dependence on the very Dhamma itself, honoring & respecting it.
+sn6.2:7.5 | S: All the perfected ones, the fully awakened Buddhas who will live in the future will honor and respect and rely on this same teaching. | T: Those who will be arahants, Rightly Self-awakened Ones in the future—they, too, will dwell in dependence on the very Dhamma itself, honoring & respecting it.
+sn6.2:7.6 | S: May the Blessed One, who is the perfected one, the fully awakened Buddha at present, also honor and respect and rely on this same teaching.” | T: And let the Blessed One, who is at present the arahant, the Rightly Self-awakened One, dwell in dependence on the very Dhamma itself, honoring & respecting it.”
+sn6.2:7.7 | S: That is what the divinity Sahampati said. Then he went on to say: | T: That is what Brahmā Sahampati said. Having said that, he further said this:
+sn6.2:8.1 | S: “All Buddhas in the past, | T: “Past Buddhas,
+sn6.2:8.2 | S: the Buddhas of the future, | T: future Buddhas,
+sn6.2:8.3 | S: and the Buddha at present— | T: & he who is the Buddha now,
+sn6.2:8.4 | S: destroyer of the sorrows of many— | T: removing the sorrow of many—
+sn6.2:9.1 | S: respecting the true teaching | T: all have dwelt, will dwell, he dwells, revering the true Dhamma.
+sn6.2:9.2 | S: they did live, they do live, | T: (none)
+sn6.2:9.3 | S: and they also will live. | T: (none)
+sn6.2:9.4 | S: This is the nature of the Buddhas. | T: This, for Buddhas, is a natural law.
+sn6.2:10.1 | S: Therefore someone who desires self-knowledge, | T: Therefore one who desires his own good,
+sn6.2:10.2 | S: and aspires to greatness themselves, | T: aspiring for greatness,
+sn6.2:10.3 | S: should respect the true teaching, | T: should respect the true Dhamma,
+sn6.2:10.4 | S: remembering the instructions of the Buddhas.” | T: recollecting the Buddhas’ Teaching.”
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+I’ve read the full file. I’m checking the sentence boundaries and ellipsis-separated items before writing the findings.
+exec
+/bin/bash -lc "sed -n '1,145p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an3.51
+an3.51:1.1 | S: Then two old brahmins—elderly and senior, who were advanced in years and had reached the final stage of life, a hundred and twenty years old—went up to the Buddha, and exchanged greetings with him. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. Then two brahmans—feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old—went to the Blessed One. On arrival, they exchanged courteous greetings with him and,
+an3.51:1.2 | S: When the greetings and polite conversation were over, they sat down to one side, and said to the Buddha: | T: after an exchange of friendly greetings & courtesies, sat to one side. As they were sitting there, they said to him:
+an3.51:1.3 | S: “We brahmins, worthy Gotama, are old, elderly and senior, we’re advanced in years and have reached the final stage of life; we’re a hundred and twenty years old. | T: “Master Gotama, we are brahmans—feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old.
+an3.51:1.4 | S: And we haven’t done what is good and skillful, nor have we made a shelter from fear. | T: And we have done no admirable deeds, no skillful deeds, no deeds that allay our fears.
+an3.51:1.5 | S: Advise us, worthy Gotama, instruct us! It will be for our lasting welfare and happiness.” | T: Teach us, Master Gotama. Instruct us, Master Gotama, for our long-term benefit & happiness.”
+an3.51:2.1 | S: “Indeed, brahmins, you’re old, elderly and senior. | T: “Indeed, brahmans, you are feeble old men, aged, advanced in years, having come to the last stage of life, 120 years old.
+an3.51:2.2 | S: And you haven’t done what is good and skillful, nor have you made a shelter from fear. | T: And you have done no admirable deeds, no skillful deeds, no deeds that allay your fears.
+an3.51:2.3 | S: This world is led onward by old age, sickness, and death. | T: This world is swept away by aging, by illness, by death. With the world thus swept away by aging, illness, & death,
+an3.51:2.4 | S: But restraint here by way of body, speech, and mind is the shelter, asylum, island, refuge, and final haven for the departed. | T: any restraint of body, speech, & intellect practiced here will be one’s shelter, cave, island, & refuge after death in the world beyond.”
+an3.51:3.1 | S: This life, so very short, is led onward. | T: It’s swept along: life, its next-to-nothing span.
+an3.51:3.2 | S: One led on to old age has no shelter. | T: For one swept on by aging no shelters exist.
+an3.51:3.3 | S: Seeing this peril in death, | T: Keeping sight of this danger in death,
+an3.51:3.4 | S: do good deeds that bring you joy. | T: do merit-deeds that bring bliss.
+an3.51:4.1 | S: The restraint practiced here— | T: When you’re restrained here
+an3.51:4.2 | S: of body, speech, and mind— | T: in body, speech, & awareness;
+an3.51:4.3 | S: leads the departed to happiness, | T: (none)
+an3.51:4.4 | S: as the good deeds done while living.” | T: when you make merit while still alive: That will be for your bliss after death.
+an3.51:4.5 | P: Paṭhamaṁ. | T: (none)
+
+## an4.183
+an4.183:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: I have heard that on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+an4.183:1.2 | S: Then Vassakāra the brahmin, a chief minister of Magadha, went up to the Buddha, and exchanged greetings with him. | T: Then Vassakāra the brahman, the minister to the king of Magadha, approached the Blessed One and, on arrival, exchanged courteous greetings with him.
+an4.183:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One:
+an4.183:2.1 | S: “Worthy Gotama, this is my doctrine and view: | T: “I am of the view, of the opinion,
+an4.183:2.2 | S: There’s nothing wrong with talking about what you’ve seen, saying: | T: that when anyone speaks of what he has seen, (saying,)
+an4.183:2.3 | S: ‘So I have seen.’ | T: ‘Thus have I seen,’ there is no fault in that.
+an4.183:2.4 | S: There’s nothing wrong with talking about what you’ve heard, saying: | T: When anyone speaks of what he has heard, (saying,)
+an4.183:2.5 | S: ‘So I have heard.’ | T: ‘Thus have I heard,’ there is no fault in that.
+an4.183:2.6 | S: There’s nothing wrong with talking about what you’ve thought, saying: | T: When anyone speaks of what he has sensed, (saying,)
+an4.183:2.7 | S: ‘So I have thought.’ | T: ‘Thus have I sensed,’ there is no fault in that.
+an4.183:2.8 | S: There’s nothing wrong with talking about what you’ve known, saying: | T: When anyone speaks of what he has cognized, (saying,)
+an4.183:2.9 | S: ‘So I have known.’” | T: ‘Thus have I cognized,’ there is no fault in that.”
+an4.183:3.1 | S: “Brahmin, I don’t say you should talk about everything you see, hear, think, and know. | T: (The Blessed One responded:) “I do not say, brahman, that everything that has been seen should be spoken about. Nor do I say that everything that has been seen should not be spoken about. I do not say that everything that has been heard… everything that has been sensed… everything that has been cognized should be spoken about. Nor do I say that everything that has been cognized should not be spoken about.
+an4.183:3.2 | S: But I also don’t say you should talk about nothing you see, hear, think, and know. | T: (none)
+an4.183:3.3 | P: nāhaṁ, brāhmaṇa, sabbaṁ sutaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.4 | P: na panāhaṁ, brāhmaṇa, sabbaṁ sutaṁ na bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.5 | P: nāhaṁ, brāhmaṇa, sabbaṁ mutaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.6 | P: na panāhaṁ, brāhmaṇa, sabbaṁ mutaṁ na bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.7 | P: nāhaṁ, brāhmaṇa, sabbaṁ viññātaṁ bhāsitabbanti vadāmi; | T: (none)
+an4.183:3.8 | P: na panāhaṁ, brāhmaṇa, sabbaṁ viññātaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:4.1 | S: When talking about certain things you’ve seen, heard, thought, or known, unskillful qualities grow while skillful qualities decline. I say that you shouldn’t talk about those things. | T: “When, for one who speaks of what has been seen, unskillful qualities increase and skillful qualities decrease, then that sort of thing should not be spoken about. But when, for one who speaks of what has been seen, unskillful qualities decrease and skillful qualities increase, then that sort of thing should be spoken about.
+an4.183:4.2 | S: When talking about other things you’ve seen, heard, thought, or known, unskillful qualities decline while skillful qualities grow. I say that you should talk about those things.” | T: “When, for one who speaks of what has been heard… what has been sensed… what has been cognized, unskillful qualities increase and skillful qualities decrease, then that sort of thing should not be spoken about. But when, for one who speaks of what has been cognized, unskillful qualities decrease and skillful qualities increase, then that sort of thing should be spoken about.”
+an4.183:5.1 | P: Yañhi, brāhmaṇa, sutaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ sutaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:5.2 | P: Yañca khvassa, brāhmaṇa, sutaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ sutaṁ bhāsitabbanti vadāmi. | T: (none)
+an4.183:6.1 | P: Yañhi, brāhmaṇa, mutaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ mutaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:6.2 | P: Yañca khvassa, brāhmaṇa, mutaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ mutaṁ bhāsitabbanti vadāmi. | T: (none)
+an4.183:7.1 | P: Yañhi, brāhmaṇa, viññātaṁ bhāsato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyanti, evarūpaṁ viññātaṁ na bhāsitabbanti vadāmi. | T: (none)
+an4.183:7.2 | P: Yañca khvassa, brāhmaṇa, viññātaṁ abhāsato kusalā dhammā parihāyanti, akusalā dhammā abhivaḍḍhanti, evarūpaṁ viññātaṁ bhāsitabbanti vadāmī”ti. | T: (none)
+an4.183:8.1 | S: Then Vassakāra the brahmin, having approved and agreed with what the Buddha said, rose from his seat and left. | T: Then Vassakāra the brahman, delighting & rejoicing in the Blessed One’s words, got up from his seat and left.
+an4.183:8.2 | P: Tatiyaṁ. | T: (none)
+
+## an4.36
+an4.36:1.1 | S: At one time the Buddha was traveling along the road between Ukkaṭṭhā and Setavyā, | T: I have heard that on one occasion the Blessed One was traveling along the road between Ukkaṭṭha and Setabya, and Doṇa the brahman was also traveling along the road between Ukkaṭṭha and Setabya.
+an4.36:1.2 | S: as was the brahmin Doṇa. | T: (none)
+an4.36:1.3 | S: Doṇa saw that the Buddha’s footprints had thousand-spoked wheels, with rims and hubs, complete in every detail. | T: Doṇa the brahman saw, in the Blessed One’s footprints, wheels with 1,000 spokes, together with rims and hubs, complete in all their features.
+an4.36:1.4 | S: It occurred to him, | T: On seeing them, the thought occurred to him,
+an4.36:1.5 | S: “Oh lord, how incredible, how amazing! | T: “How amazing! How astounding!
+an4.36:1.6 | S: Surely these couldn’t be the footprints of a human being?” | T: These are not the footprints of a human being!”
+an4.36:1.7 | S: The Buddha had left the road and sat at the root of a tree cross-legged, setting his body straight, and bringing mindfulness to the present. | T: Then the Blessed One, leaving the road, went to sit at the root of a certain tree—his legs crossed, his body erect, with mindfulness established to the fore.
+an4.36:1.8 | S: Then Doṇa, following the Buddha’s footprints, saw him sitting at the tree root—impressive and inspiring, with peaceful faculties and heart, attained to the highest self-control and serenity, like an elephant with tamed, guarded, and controlled faculties. | T: Then Doṇa, following the Blessed One’s footprints, saw him sitting at the root of the tree: confident, inspiring confidence, his senses calmed, his mind calmed, having attained the utmost control & tranquility, tamed, guarded, his senses restrained, a nāga.
+an4.36:1.9 | S: He went up to the Buddha and said to him: | T: On seeing him, he went to him and said,
+an4.36:2.1 | S: “Sir, might you be a god?” | T: “Master, are you a deva?”
+an4.36:2.2 | S: “I will not be a god, brahmin.” | T: “No, brahman, I am not a deva.”
+an4.36:2.3 | S: “Might you be a centaur?” | T: “Are you a gandhabba?”
+an4.36:2.4 | S: “I will not be a centaur.” | T: “No….”
+an4.36:2.5 | S: “Might you be a spirit?” | T: “… a yakkha?”
+an4.36:2.6 | S: “I will not be a spirit.” | T: “No….”
+an4.36:2.7 | S: “Might you be a human?” | T: “… a human being?”
+an4.36:2.8 | S: “I will not be a human.” | T: “No, brahman, I am not a human being.”
+an4.36:3.1 | S: “When asked whether you might be a god, centaur, spirit, or human, | T: “When asked, ‘Are you a deva?’
+an4.36:3.2 | S: you answer that you will not be any of these. | T: you answer, ‘No, brahman, I am not a deva.’
+an4.36:3.3 | P: ‘Gandhabbo no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a gandhabba?’
+an4.36:3.4 | P: ‘na kho ahaṁ, brāhmaṇa, gandhabbo bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a gandhabba.’
+an4.36:3.5 | P: ‘Yakkho no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a yakkha?’
+an4.36:3.6 | P: ‘na kho ahaṁ, brāhmaṇa, yakkho bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a yakkha.’
+an4.36:3.7 | P: ‘Manusso no bhavaṁ bhavissatī’ti, iti puṭṭho samāno: | T: When asked, ‘Are you a human being?’
+an4.36:3.8 | P: ‘na kho ahaṁ, brāhmaṇa, manusso bhavissāmī’ti vadesi. | T: you answer, ‘No, brahman, I am not a human being.’
+an4.36:3.9 | S: So what then might you be?” | T: Then what sort of being are you?”
+an4.36:4.1 | S: “Brahmin, if I had not given up defilements I might have become a god … a centaur … a spirit … or a human. But I have given up those defilements, cut them off at the root, made them like a palm stump, obliterated them so they are unable to arise in the future. | T: “Brahman, the effluents by which—if they were not abandoned—I would be a deva: Those are abandoned by me, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+an4.36:4.2 | P: Yesaṁ kho ahaṁ, brāhmaṇa, āsavānaṁ appahīnattā gandhabbo bhaveyyaṁ … yakkho bhaveyyaṁ … manusso bhaveyyaṁ, te me āsavā pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: The effluents by which—if they were not abandoned—I would be a gandhabba… a yakkha… a human being: Those are abandoned by me, their root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising.
+an4.36:4.3 | S: Suppose there was a blue water lily, or a pink or white lotus. Though it sprouted and grew in the water, it would rise up above the water and stand with no water clinging to it. | T: “Just like a red, blue, or white lotus—born in the water, grown in the water, rising up above the water—stands unsmeared by the water,
+an4.36:4.4 | S: In the same way, though I was born and grew up in the world, I live having mastered the world, unsullied by the world. | T: in the same way I—born in the world, grown in the world, having overcome the world—live unsmeared by the world.
+an4.36:4.5 | S: Remember me, brahmin, as a Buddha. | T: Remember me, brahman, as ‘awakened.’
+an4.36:5.1 | S: I could have been reborn as a god, | T: “The effluents by which I would go to a deva-state,
+an4.36:5.2 | S: or as a centaur flying through the sky. | T: or become a gandhabba in the sky,
+an4.36:5.3 | S: I could have become a spirit, | T: or go to a yakkha-state & human-state:
+an4.36:5.4 | S: or returned as a human. | T: (none)
+an4.36:5.5 | S: But I’ve ended those defilements, | T: Those have been destroyed by me,
+an4.36:5.6 | S: they’re blown away and mown down. | T: ruined, their stems removed.
+an4.36:6.1 | S: Like a graceful lotus, | T: Like a blue lotus, rising up,
+an4.36:6.2 | S: to which water does not cling, | T: unsmeared by water,
+an4.36:6.3 | S: the world doesn’t cling to me, | T: unsmeared am I by the world,
+an4.36:6.4 | S: and so, brahmin, I am a Buddha.” | T: and so, brahman, I’m awake.”
+an4.36:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an4.94
+an4.94:1.1 | S: “Mendicants, these four individuals are found in the world. | T: “Monks, these four types of individuals are to be found existing in world.
+an4.94:1.2 | S: What four? | T: Which four?
+an4.94:1.3 | S: One individual has internal serenity of heart, but not the higher wisdom of discernment of principles. | T: “There is the case of the individual who has attained internal tranquility of awareness, but not insight into phenomena through heightened discernment.
+an4.94:1.4 | S: One individual has the higher wisdom of discernment of principles, but not internal serenity of heart. | T: Then there is the case of the individual who has attained insight into phenomena through heightened discernment, but not internal tranquility of awareness.
+an4.94:1.5 | S: One individual has neither internal serenity of heart, nor the higher wisdom of discernment of principles. | T: Then there is the case of the individual who has attained neither internal tranquility of awareness nor insight into phenomena through heightened discernment.
+an4.94:1.6 | S: One individual has both internal serenity of heart, and the higher wisdom of discernment of principles. | T: And then there is the case of the individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:2.1 | S: As for the individual who has serenity but not discernment: they should approach someone who has discernment and ask: | T: “The individual who has attained internal tranquility of awareness, but not insight into phenomena through heightened discernment, should approach an individual who has attained insight into phenomena through heightened discernment and ask him:
+an4.94:2.2 | S: ‘Reverend, how should conditions be seen? | T: ‘How should fabrications be regarded? How should they be investigated? How should they be seen with insight?’
+an4.94:2.3 | S: How should they be comprehended? | T: (none)
+an4.94:2.4 | S: How should they be discerned?’ | T: (none)
+an4.94:2.5 | S: They would answer from their own experience: | T: The other will answer in line with what he has seen & experienced:
+an4.94:2.6 | S: ‘This is how conditions should be seen, comprehended, and discerned.’ | T: ‘Fabrications should be regarded in this way. Fabrications should be investigated in this way. Fabrications should be seen in this way with insight.’
+an4.94:2.7 | S: After some time they have both serenity and discernment. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:3.1 | S: As for the individual who has discernment but not serenity: they should approach someone who has serenity and ask: | T: “As for the individual who has attained insight into phenomena through heightened discernment, but not internal tranquility of awareness, he should approach an individual who has attained internal tranquility of awareness… and ask him:
+an4.94:3.2 | S: ‘Reverend, how should the mind be stilled? | T: ‘How should the mind be steadied?
+an4.94:3.3 | S: How should it be settled? | T: How should it be made to settle down?
+an4.94:3.4 | S: How should it be unified? | T: How should it be unified?
+an4.94:3.5 | S: How should it be immersed in samādhi?’ | T: How should it be concentrated?’
+an4.94:3.6 | S: They would answer from their own experience: | T: The other will answer in line with what he has seen & experienced:
+an4.94:3.7 | S: ‘Reverend, this is how the mind should be stilled, settled, unified, and immersed in samādhi.’ | T: ‘The mind should be steadied in this way. The mind should be made to settle down in this way. The mind should be unified in this way. The mind should be concentrated in this way.’
+an4.94:3.8 | S: After some time they have both discernment and serenity. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:4.1 | S: As for the individual who has neither serenity nor discernment: they should approach someone who has serenity and discernment and ask: | T: “As for the individual who has attained neither internal tranquility of awareness nor insight into phenomena through heightened discernment, he should approach an individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment… and ask him:
+an4.94:4.2 | S: ‘Reverend, how should the mind be stilled? | T: ‘How should the mind be steadied?
+an4.94:4.3 | S: How should it be settled? | T: How should it be made to settle down?
+an4.94:4.4 | S: How should it be unified? | T: How should it be unified?
+an4.94:4.5 | S: How should it be immersed in samādhi?’ | T: How should it be concentrated?
+an4.94:4.6 | S: How should conditions be seen? | T: How should fabrications be regarded?
+an4.94:4.7 | S: How should they be comprehended? | T: How should they be investigated?
+an4.94:4.8 | S: How should they be discerned?’ | T: How should they be seen with insight?’
+an4.94:4.9 | S: They would answer as they’ve seen and known: | T: The other will answer in line with what he has seen & experienced:
+an4.94:4.10 | S: ‘Reverend, this is how the mind should be stilled, settled, unified, and immersed in samādhi. And this is how conditions should be seen, comprehended, and discerned.’ | T: ‘The mind should be steadied in this way. The mind should be made to settle down in this way. The mind should be unified in this way. The mind should be concentrated in this way. Fabrications should be regarded in this way. Fabrications should be investigated in this way. Fabrications should be seen in this way with insight.’
+an4.94:4.11 | S: After some time they have both serenity and discernment. | T: Then eventually he [the first] will become one who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment.
+an4.94:5.1 | S: As for the individual who has both serenity and discernment: grounded on those skillful qualities, they should practice meditation further to end the defilements. | T: “As for the individual who has attained both internal tranquility of awareness & insight into phenomena through heightened discernment, his duty is to make an effort in establishing [‘tuning’] those very same skillful qualities to a higher degree for the ending of the effluents.
+an4.94:5.2 | S: These are the four individuals found in the world.” | T: “These are four types of individuals to be found existing in world.”
+an4.94:5.3 | P: Catutthaṁ. | T: (none)
+
+## snp1.1
+snp1.1:1.1 | S: When anger surges, they drive it out, | T: The monk who subdues his arisen anger
+snp1.1:1.2 | S: as with medicine a cobra’s spreading venom. | T: as, with herbs, snake-venom once it has spread,
+snp1.1:1.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:1.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:2.1 | S: They’ve cut off greed entirely, | T: The monk who has cut off passion without leaving a trace,
+snp1.1:2.2 | S: like a lotus plucked flower and stalk. | T: as he would, plunging into a lake, a lotus,
+snp1.1:2.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:2.4 | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+snp1.1:3.1 | S: They’ve cut off craving entirely, | T: The monk who has cut off craving without leaving a trace,
+snp1.1:3.2 | S: drying up that swift-flowing stream. | T: drying up the swift-flowing flood,
+snp1.1:3.3 | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-030.findings.tmp <<'EOF'
+an3.51:2.4 starts: With the world thus swept away by aging,
+an4.183:3.2 starts: Nor do I say that everything that has
+an4.183:3.3 starts: I do not say that everything that has
+an4.183:3.5 starts: everything that has been sensed… everything that has
+an4.183:3.7 starts: everything that has been cognized should be spoken
+an4.183:3.8 starts: Nor do I say that everything that has
+an4.183:4.2 starts: But when, for one who speaks of what
+an4.183:5.1 starts: “When, for one who speaks of what has
+an4.183:6.1 starts: what has been sensed… what has been cognized,
+an4.183:7.1 starts: what has been cognized, unskillful qualities increase and
+an4.183:7.2 starts: But when, for one who speaks of what
+an4.94:2.3 starts: How should they be investigated?
+an4.94:2.4 starts: How should they be seen with insight?’
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 13 lines.
+tokens used
+32,684
+Reported 13 lines.

@@ -1,0 +1,4911 @@
+{
+  "status": "all initial passing groups reviewed; repaired or retained by saved hand decisions; data validated",
+  "authority": "original Pali; English wording and source order preserved",
+  "baseCommit": "8ab727a26dc9e121596e09ff3f31238e266b2c2e",
+  "initialPassingGroups": 211,
+  "initialVerdicts": {
+    "better": 189,
+    "worse": 19,
+    "same": 3
+  },
+  "groups": [
+    {
+      "id": 1,
+      "text": "an5.265-271",
+      "findingKeys": [
+        "an5.265-271:2.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "Arahantship completes the first ascending attainments list at 2.1; the repeated closing realization line is abbreviated away.",
+      "originalFindingKeys": [
+        "an5.265-271:2.4"
+      ],
+      "reviewedPaliSpan": [
+        "an5.265-271:2.1",
+        "an5.265-271:2.6"
+      ]
+    },
+    {
+      "id": 2,
+      "text": "an10.118",
+      "findingKeys": [
+        "an10.118:4.3",
+        "an10.118:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "Te janā pāramessanti is the crossing-over predicate; Death's realm belongs to 4.4.",
+      "originalFindingKeys": [
+        "an10.118:4.3",
+        "an10.118:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "an10.118:4.1",
+        "an10.118:5.1"
+      ]
+    },
+    {
+      "id": 3,
+      "text": "an10.118",
+      "findingKeys": [
+        "an10.118:7.3",
+        "an10.118:7.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "Translation reverses relinquishing grasping/non-clinging, requiring the smallest two-line group at 7.3.",
+      "originalFindingKeys": [
+        "an10.118:7.3",
+        "an10.118:7.4"
+      ],
+      "reviewedPaliSpan": [
+        "an10.118:7.2",
+        "an10.118:7.5"
+      ]
+    },
+    {
+      "id": 4,
+      "text": "an10.24",
+      "findingKeys": [
+        "an10.24:6.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.24:6.2"
+      ],
+      "reviewedPaliSpan": [
+        "an10.24:6.1",
+        "an10.24:6.3"
+      ]
+    },
+    {
+      "id": 5,
+      "text": "an10.24",
+      "findingKeys": [
+        "an10.24:9.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.24:9.2"
+      ],
+      "reviewedPaliSpan": [
+        "an10.24:9.1",
+        "an10.24:9.3"
+      ]
+    },
+    {
+      "id": 6,
+      "text": "an10.24",
+      "findingKeys": [
+        "an10.24:11.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.24:11.2"
+      ],
+      "reviewedPaliSpan": [
+        "an10.24:11.1",
+        "an10.24:11.3"
+      ]
+    },
+    {
+      "id": 7,
+      "text": "an10.70",
+      "findingKeys": [
+        "an10.70:1.3"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The Pali at 1.2 already contains engagement in bestial conversation and seyyathidaṃ. Moving that introduction to 1.3 follows Sujato's shifted English and worsens the direct Pali match.",
+      "contextNote": "The Pali layout abbreviates the opening topic list and does not explicitly show every narrative sentence expanded in this English source; source abbreviation/variant must remain distinguished from exact line translation.",
+      "originalFindingKeys": [
+        "an10.70:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "an10.70:1.2",
+        "an10.70:2.1"
+      ]
+    },
+    {
+      "id": 8,
+      "text": "an10.70",
+      "findingKeys": [
+        "an10.70:11.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.70:11.2"
+      ],
+      "reviewedPaliSpan": [
+        "an10.70:11.1",
+        "an10.70:12.1"
+      ]
+    },
+    {
+      "id": 9,
+      "text": "an10.72",
+      "findingKeys": [
+        "an10.72:7.2",
+        "an10.72:7.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.72:7.2",
+        "an10.72:7.3"
+      ],
+      "reviewedPaliSpan": [
+        "an10.72:7.1",
+        "an10.72:7.4"
+      ]
+    },
+    {
+      "id": 10,
+      "text": "an10.93",
+      "findingKeys": [
+        "an10.93:16.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.93:16.2"
+      ],
+      "reviewedPaliSpan": [
+        "an10.93:16.1",
+        "an10.93:17.1"
+      ]
+    },
+    {
+      "id": 11,
+      "text": "an10.94",
+      "findingKeys": [
+        "an10.94:11.1"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.94:11.1"
+      ],
+      "reviewedPaliSpan": [
+        "an10.94:10.1",
+        "an10.94:12.1"
+      ]
+    },
+    {
+      "id": 12,
+      "text": "an10.95",
+      "findingKeys": [
+        "an10.95:5.1",
+        "an10.95:6.1",
+        "an10.95:6.2",
+        "an10.95:6.3",
+        "an10.95:6.4",
+        "an10.95:6.5",
+        "an10.95:6.6",
+        "an10.95:6.7",
+        "an10.95:6.8",
+        "an10.95:6.9",
+        "an10.95:6.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The expanded view list is correctly distributed, but the first eternal-world response still straddles 4.1–4.2. Hand boundary at the response quotation completes this otherwise useful repair.",
+      "originalFindingKeys": [
+        "an10.95:5.1",
+        "an10.95:6.1",
+        "an10.95:6.2",
+        "an10.95:6.3",
+        "an10.95:6.4",
+        "an10.95:6.5",
+        "an10.95:6.6",
+        "an10.95:6.7",
+        "an10.95:6.8",
+        "an10.95:6.9",
+        "an10.95:6.10"
+      ],
+      "reviewedPaliSpan": [
+        "an10.95:4.1",
+        "an10.95:6.11"
+      ]
+    },
+    {
+      "id": 13,
+      "text": "an10.99",
+      "findingKeys": [
+        "an10.99:4.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.99:4.5"
+      ],
+      "reviewedPaliSpan": [
+        "an10.99:4.4",
+        "an10.99:4.6"
+      ]
+    },
+    {
+      "id": 14,
+      "text": "an10.99",
+      "findingKeys": [
+        "an10.99:9.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an10.99:9.3"
+      ],
+      "reviewedPaliSpan": [
+        "an10.99:9.2",
+        "an10.99:9.4"
+      ]
+    },
+    {
+      "id": 15,
+      "text": "an3.109",
+      "findingKeys": [
+        "an3.109:6.2",
+        "an3.109:6.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.109:6.2",
+        "an3.109:6.3"
+      ],
+      "reviewedPaliSpan": [
+        "an3.109:6.1",
+        "an3.109:6.4"
+      ]
+    },
+    {
+      "id": 16,
+      "text": "an3.111",
+      "findingKeys": [
+        "an3.111:1.5",
+        "an3.111:1.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.111:1.5",
+        "an3.111:1.6"
+      ],
+      "reviewedPaliSpan": [
+        "an3.111:1.4",
+        "an3.111:1.7"
+      ]
+    },
+    {
+      "id": 17,
+      "text": "an3.111",
+      "findingKeys": [
+        "an3.111:2.5",
+        "an3.111:2.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.111:2.5",
+        "an3.111:2.6"
+      ],
+      "reviewedPaliSpan": [
+        "an3.111:2.4",
+        "an3.111:2.7"
+      ]
+    },
+    {
+      "id": 18,
+      "text": "an3.51",
+      "findingKeys": [
+        "an3.51:2.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.51:2.4"
+      ],
+      "reviewedPaliSpan": [
+        "an3.51:2.3",
+        "an3.51:3.1"
+      ]
+    },
+    {
+      "id": 19,
+      "text": "an3.61",
+      "findingKeys": [
+        "an3.61:2.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Separating the repeated question improves placement, but the quoted past-action view remains on 2.3 rather than 2.4; a further meaningful split is required.",
+      "originalFindingKeys": [
+        "an3.61:2.3"
+      ],
+      "reviewedPaliSpan": [
+        "an3.61:2.2",
+        "an3.61:2.5"
+      ]
+    },
+    {
+      "id": 20,
+      "text": "an3.61",
+      "findingKeys": [
+        "an3.61:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Separating the repeated question improves placement, but the quoted creation view remains on 4.3 rather than 4.4; a further meaningful split is required.",
+      "originalFindingKeys": [
+        "an3.61:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "an3.61:4.2",
+        "an3.61:4.5"
+      ]
+    },
+    {
+      "id": 21,
+      "text": "an3.63",
+      "findingKeys": [
+        "an3.63:4.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.63:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "an3.63:4.1",
+        "an3.63:4.3"
+      ]
+    },
+    {
+      "id": 22,
+      "text": "an3.67",
+      "findingKeys": [
+        "an3.67:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.67:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "an3.67:6.3",
+        "an3.67:6.5"
+      ]
+    },
+    {
+      "id": 23,
+      "text": "an3.71",
+      "findingKeys": [
+        "an3.71:4.10",
+        "an3.71:4.11"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.71:4.10",
+        "an3.71:4.11"
+      ],
+      "reviewedPaliSpan": [
+        "an3.71:4.9",
+        "an3.71:5.1"
+      ]
+    },
+    {
+      "id": 24,
+      "text": "an3.99",
+      "findingKeys": [
+        "an3.99:1.2",
+        "an3.99:1.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an3.99:1.2",
+        "an3.99:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "an3.99:1.1",
+        "an3.99:1.4"
+      ]
+    },
+    {
+      "id": 25,
+      "text": "an4.102",
+      "findingKeys": [
+        "an4.102:4.6",
+        "an4.102:4.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The reordered comparative sentence spans 4.6–4.7 and properly begins on the first line covered.",
+      "originalFindingKeys": [
+        "an4.102:4.6",
+        "an4.102:4.7"
+      ],
+      "reviewedPaliSpan": [
+        "an4.102:4.5",
+        "an4.102:5.1"
+      ]
+    },
+    {
+      "id": 26,
+      "text": "an4.102",
+      "findingKeys": [
+        "an4.102:5.6",
+        "an4.102:5.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The reordered comparative sentence spans 5.6–5.7 and properly begins on the first line covered.",
+      "originalFindingKeys": [
+        "an4.102:5.6",
+        "an4.102:5.7"
+      ],
+      "reviewedPaliSpan": [
+        "an4.102:5.5",
+        "an4.102:5.8"
+      ]
+    },
+    {
+      "id": 27,
+      "text": "an4.162",
+      "findingKeys": [
+        "an4.162:2.3",
+        "an4.162:2.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.162:2.3",
+        "an4.162:2.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.162:2.2",
+        "an4.162:2.5"
+      ]
+    },
+    {
+      "id": 28,
+      "text": "an4.162",
+      "findingKeys": [
+        "an4.162:3.3",
+        "an4.162:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.162:3.3",
+        "an4.162:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.162:3.2",
+        "an4.162:3.5"
+      ]
+    },
+    {
+      "id": 29,
+      "text": "an4.162",
+      "findingKeys": [
+        "an4.162:4.3",
+        "an4.162:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.162:4.3",
+        "an4.162:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.162:4.2",
+        "an4.162:4.5"
+      ]
+    },
+    {
+      "id": 30,
+      "text": "an4.162",
+      "findingKeys": [
+        "an4.162:5.3",
+        "an4.162:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.162:5.3",
+        "an4.162:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.162:5.2",
+        "an4.162:5.5"
+      ]
+    },
+    {
+      "id": 31,
+      "text": "an4.183",
+      "findingKeys": [
+        "an4.183:3.2",
+        "an4.183:3.3",
+        "an4.183:3.5",
+        "an4.183:3.7",
+        "an4.183:3.8",
+        "an4.183:4.2",
+        "an4.183:5.1",
+        "an4.183:6.1",
+        "an4.183:7.1",
+        "an4.183:7.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.183:3.2",
+        "an4.183:3.3",
+        "an4.183:3.5",
+        "an4.183:3.7",
+        "an4.183:3.8",
+        "an4.183:4.2",
+        "an4.183:5.1",
+        "an4.183:6.1",
+        "an4.183:7.1",
+        "an4.183:7.2"
+      ],
+      "reviewedPaliSpan": [
+        "an4.183:3.1",
+        "an4.183:8.1"
+      ]
+    },
+    {
+      "id": 32,
+      "text": "an4.33",
+      "findingKeys": [
+        "an4.33:2.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.33:2.5"
+      ],
+      "reviewedPaliSpan": [
+        "an4.33:2.4",
+        "an4.33:2.6"
+      ]
+    },
+    {
+      "id": 33,
+      "text": "an4.50",
+      "findingKeys": [
+        "an4.50:9.1",
+        "an4.50:9.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Grouping at the first covered Pali line repairs the upward offset, but the parenthetical subjects can stand separately on 9.2 without reordering.",
+      "originalFindingKeys": [
+        "an4.50:9.1",
+        "an4.50:9.2"
+      ],
+      "reviewedPaliSpan": [
+        "an4.50:8.3",
+        "an4.50:9.3"
+      ]
+    },
+    {
+      "id": 34,
+      "text": "an4.79",
+      "findingKeys": [
+        "an4.79:1.3",
+        "an4.79:1.4",
+        "an4.79:1.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.79:1.3",
+        "an4.79:1.4",
+        "an4.79:1.5"
+      ],
+      "reviewedPaliSpan": [
+        "an4.79:1.2",
+        "an4.79:2.1"
+      ]
+    },
+    {
+      "id": 35,
+      "text": "an4.79",
+      "findingKeys": [
+        "an4.79:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The final question is repaired, but the not-as-intended and as-intended clauses still sit on 6.1; give them their own corresponding lines 6.2–6.3.",
+      "originalFindingKeys": [
+        "an4.79:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.79:6.1",
+        "an4.79:6.5"
+      ]
+    },
+    {
+      "id": 36,
+      "text": "an4.94",
+      "findingKeys": [
+        "an4.94:2.3",
+        "an4.94:2.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an4.94:2.3",
+        "an4.94:2.4"
+      ],
+      "reviewedPaliSpan": [
+        "an4.94:2.2",
+        "an4.94:2.5"
+      ]
+    },
+    {
+      "id": 37,
+      "text": "an5.167",
+      "findingKeys": [
+        "an5.167:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an5.167:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.167:4.2",
+        "an5.167:4.4"
+      ]
+    },
+    {
+      "id": 38,
+      "text": "an5.167",
+      "findingKeys": [
+        "an5.167:5.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an5.167:5.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.167:5.2",
+        "an5.167:5.4"
+      ]
+    },
+    {
+      "id": 39,
+      "text": "an5.167",
+      "findingKeys": [
+        "an5.167:7.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an5.167:7.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.167:7.2",
+        "an5.167:7.4"
+      ]
+    },
+    {
+      "id": 40,
+      "text": "an5.167",
+      "findingKeys": [
+        "an5.167:8.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an5.167:8.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.167:8.2",
+        "an5.167:8.4"
+      ]
+    },
+    {
+      "id": 41,
+      "text": "an5.196",
+      "findingKeys": [
+        "an5.196:6.2",
+        "an5.196:6.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "Awakening and the first dream are translated in reversed clause order, so the smallest coherent group begins 6.2.",
+      "originalFindingKeys": [
+        "an5.196:6.2",
+        "an5.196:6.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.196:6.1",
+        "an5.196:7.1"
+      ]
+    },
+    {
+      "id": 42,
+      "text": "an5.56",
+      "findingKeys": [
+        "an5.56:2.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The bracketed summary combines the reporting verb at 2.1 and compressed speech at 2.2–2.3. Splitting off '[told...]' leaves an artificial fragment and moves the reporting verb off its own Pali. Keep the smallest coherent reporting-summary group on 2.1.",
+      "originalFindingKeys": [
+        "an5.56:2.2"
+      ],
+      "reviewedPaliSpan": [
+        "an5.56:2.1",
+        "an5.56:3.1"
+      ]
+    },
+    {
+      "id": 43,
+      "text": "an5.56",
+      "findingKeys": [
+        "an5.56:5.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The bracketed summary combines the reporting verb at 5.3 and compressed speech at 5.4–5.5. Splitting off '[told...]' leaves an artificial fragment and moves the reporting verb off its own Pali. Keep the smallest coherent reporting-summary group on 5.3.",
+      "originalFindingKeys": [
+        "an5.56:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "an5.56:5.3",
+        "an5.56:6.1"
+      ]
+    },
+    {
+      "id": 44,
+      "text": "an5.80",
+      "findingKeys": [
+        "an5.80:5.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an5.80:5.3"
+      ],
+      "reviewedPaliSpan": [
+        "an5.80:5.2",
+        "an5.80:5.4"
+      ]
+    },
+    {
+      "id": 45,
+      "text": "an6.55",
+      "findingKeys": [
+        "an6.55:17.11"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The northward clause is recovered at 17.11, but the southward clause still sits there; split it at 17.12 before its repeated mountain predicate.",
+      "originalFindingKeys": [
+        "an6.55:17.11"
+      ],
+      "reviewedPaliSpan": [
+        "an6.55:17.10",
+        "an6.55:17.12"
+      ]
+    },
+    {
+      "id": 46,
+      "text": "an6.55",
+      "findingKeys": [
+        "an6.55:17.16",
+        "an6.55:17.17",
+        "an6.55:17.18"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an6.55:17.16",
+        "an6.55:17.17",
+        "an6.55:17.18"
+      ],
+      "reviewedPaliSpan": [
+        "an6.55:17.15",
+        "an6.55:17.19"
+      ]
+    },
+    {
+      "id": 47,
+      "text": "an7.12",
+      "findingKeys": [
+        "an7.12:2.2",
+        "an7.12:2.3",
+        "an7.12:2.4",
+        "an7.12:2.5",
+        "an7.12:2.6",
+        "an7.12:2.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.12:2.2",
+        "an7.12:2.3",
+        "an7.12:2.4",
+        "an7.12:2.5",
+        "an7.12:2.6",
+        "an7.12:2.7"
+      ],
+      "reviewedPaliSpan": [
+        "an7.12:2.1",
+        "an7.12:2.8"
+      ]
+    },
+    {
+      "id": 48,
+      "text": "an7.15",
+      "findingKeys": [
+        "an7.15:4.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Conviction separates correctly; the remaining four qualities also occur as distinct Pali lines and admit meaning-preserving splits.",
+      "originalFindingKeys": [
+        "an7.15:4.7"
+      ],
+      "reviewedPaliSpan": [
+        "an7.15:4.6",
+        "an7.15:4.11"
+      ]
+    },
+    {
+      "id": 49,
+      "text": "an7.36",
+      "findingKeys": [
+        "an7.36:4.1",
+        "an7.36:4.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "'A person in whom' correctly moves to 4.1, but 'is a friend to be cultivated' remains incorrectly on 4.2 instead of the following comparative clause. Group the reordered final predicate at 4.3.",
+      "originalFindingKeys": [
+        "an7.36:4.1",
+        "an7.36:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.36:3.4",
+        "an7.36:4.3"
+      ]
+    },
+    {
+      "id": 50,
+      "text": "an7.52",
+      "findingKeys": [
+        "an7.52:8.1",
+        "an7.52:8.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.52:8.1",
+        "an7.52:8.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.52:7.2",
+        "an7.52:9.1"
+      ]
+    },
+    {
+      "id": 51,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:8.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:8.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:8.1",
+        "an7.53:8.3"
+      ]
+    },
+    {
+      "id": 52,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:9.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:9.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:9.1",
+        "an7.53:9.3"
+      ]
+    },
+    {
+      "id": 53,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:10.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:10.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:10.1",
+        "an7.53:10.3"
+      ]
+    },
+    {
+      "id": 54,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:11.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:11.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:11.1",
+        "an7.53:11.3"
+      ]
+    },
+    {
+      "id": 55,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:12.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:12.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:12.1",
+        "an7.53:12.3"
+      ]
+    },
+    {
+      "id": 56,
+      "text": "an7.53",
+      "findingKeys": [
+        "an7.53:13.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.53:13.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.53:13.1",
+        "an7.53:13.3"
+      ]
+    },
+    {
+      "id": 57,
+      "text": "an7.61",
+      "findingKeys": [
+        "an7.61:10.5"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The translation reorders the trunk-lifted condition relative to Pali 10.4–10.5. The proposed split moves that condition off 10.4; preserve the smallest two-line coherent group starting at 10.4.",
+      "originalFindingKeys": [
+        "an7.61:10.5"
+      ],
+      "reviewedPaliSpan": [
+        "an7.61:10.4",
+        "an7.61:10.6"
+      ]
+    },
+    {
+      "id": 58,
+      "text": "an7.64",
+      "findingKeys": [
+        "an7.64:11.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.64:11.4"
+      ],
+      "reviewedPaliSpan": [
+        "an7.64:11.3",
+        "an7.64:12.1"
+      ]
+    },
+    {
+      "id": 59,
+      "text": "an7.64",
+      "findingKeys": [
+        "an7.64:22.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an7.64:22.2"
+      ],
+      "reviewedPaliSpan": [
+        "an7.64:22.1",
+        "an7.64:22.3"
+      ]
+    },
+    {
+      "id": 60,
+      "text": "an8.24",
+      "findingKeys": [
+        "an8.24:1.17"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an8.24:1.17"
+      ],
+      "reviewedPaliSpan": [
+        "an8.24:1.16",
+        "an8.24:1.18"
+      ]
+    },
+    {
+      "id": 61,
+      "text": "an8.30",
+      "findingKeys": [
+        "an8.30:12.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The contented-abiding modifier reaches 12.2 correctly, but the translation places that line's urine-medicine simile before 12.1's tonic list. A coherent reordered group must begin 12.1 and cover 12.2.",
+      "originalFindingKeys": [
+        "an8.30:12.2"
+      ],
+      "reviewedPaliSpan": [
+        "an8.30:12.1",
+        "an8.30:12.3"
+      ]
+    },
+    {
+      "id": 62,
+      "text": "an8.30",
+      "findingKeys": [
+        "an8.30:13.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an8.30:13.3"
+      ],
+      "reviewedPaliSpan": [
+        "an8.30:13.2",
+        "an8.30:13.4"
+      ]
+    },
+    {
+      "id": 63,
+      "text": "an8.39",
+      "findingKeys": [
+        "an8.39:4.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The second-gift refrain belongs to the expanded pe abbreviation at 4.2, not the abstaining-from-theft clause at 4.1. Split the entire repeated expansion at 'In doing so' on 4.2.",
+      "originalFindingKeys": [
+        "an8.39:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "an8.39:4.1",
+        "an8.39:5.1"
+      ]
+    },
+    {
+      "id": 64,
+      "text": "an8.7",
+      "findingKeys": [
+        "an8.7:2.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an8.7:2.10"
+      ],
+      "reviewedPaliSpan": [
+        "an8.7:2.9",
+        "an8.7:3.1"
+      ]
+    },
+    {
+      "id": 65,
+      "text": "an8.8",
+      "findingKeys": [
+        "an8.8:6.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "an8.8:6.3"
+      ],
+      "reviewedPaliSpan": [
+        "an8.8:6.2",
+        "an8.8:6.4"
+      ]
+    },
+    {
+      "id": 66,
+      "text": "iti91",
+      "findingKeys": [
+        "iti91:5.1",
+        "iti91:5.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "Better eating an iron ball translates 5.1, not 5.2; the glowing qualifier directly matches 5.2 and was already correctly separate. The remaining reordered contrast begins 5.3, not 5.4.",
+      "originalFindingKeys": [
+        "iti91:5.1",
+        "iti91:5.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti91:3.4",
+        "iti91:5.4"
+      ]
+    },
+    {
+      "id": 67,
+      "text": "iti93",
+      "findingKeys": [
+        "iti93:7.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_external_hand_completion",
+      "rationale": "Discernment and leading-to-penetration separate correctly at 7.3–7.4. The following stanza still misplaces extinguishing at 8.3 and reverses stress/unbinding; the exceptions reviewer supplies two adjacent coherent groups at 8.1 and 8.3.",
+      "originalFindingKeys": [
+        "iti93:7.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti93:7.3",
+        "iti93:8.1"
+      ]
+    },
+    {
+      "id": 68,
+      "text": "iti102",
+      "findingKeys": [
+        "iti102:5.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Lazy and fool separate correctly, but 'uncomprehending' also renders avijānatā on 5.2 and must leave the Unbinding predicate at 5.3.",
+      "originalFindingKeys": [
+        "iti102:5.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti102:5.1",
+        "iti102:5.3"
+      ]
+    },
+    {
+      "id": 69,
+      "text": "iti103",
+      "findingKeys": [
+        "iti103:4.3",
+        "iti103:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The contrast begins on 4.3, but 'stops, without trace' directly renders 4.4 and permits a meaningful finer cut.",
+      "originalFindingKeys": [
+        "iti103:4.3",
+        "iti103:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti103:4.2",
+        "iti103:4.5"
+      ]
+    },
+    {
+      "id": 70,
+      "text": "iti103",
+      "findingKeys": [
+        "iti103:6.3",
+        "iti103:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The contrast begins on 6.3, but 'stops, without trace' directly renders 6.4 and permits a meaningful finer cut.",
+      "originalFindingKeys": [
+        "iti103:6.3",
+        "iti103:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti103:6.2",
+        "iti103:6.5"
+      ]
+    },
+    {
+      "id": 71,
+      "text": "iti104",
+      "findingKeys": [
+        "iti104:3.3",
+        "iti104:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti104:3.3",
+        "iti104:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti104:3.2",
+        "iti104:4.1"
+      ]
+    },
+    {
+      "id": 72,
+      "text": "iti22",
+      "findingKeys": [
+        "iti22:5.3",
+        "iti22:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti22:5.3",
+        "iti22:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti22:5.2",
+        "iti22:6.1"
+      ]
+    },
+    {
+      "id": 73,
+      "text": "iti23",
+      "findingKeys": [
+        "iti23:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti23:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti23:4.3",
+        "iti23:5.2"
+      ]
+    },
+    {
+      "id": 74,
+      "text": "iti29",
+      "findingKeys": [
+        "iti29:3.3",
+        "iti29:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The translation reorders the doors and monk relative to Pali 3.3–3.4. Moving only 'when a monk has these' still leaves doors on the wrong line; keep the smallest coherent group at 3.3.",
+      "originalFindingKeys": [
+        "iti29:3.3",
+        "iti29:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti29:3.2",
+        "iti29:4.1"
+      ]
+    },
+    {
+      "id": 75,
+      "text": "iti29",
+      "findingKeys": [
+        "iti29:4.3",
+        "iti29:4.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The proposed split reverses the Pali: ease in body/mind is 4.3, experiencing it is 4.4. English reverses those clauses, so group their complete sentence at the first line 4.3.",
+      "originalFindingKeys": [
+        "iti29:4.3",
+        "iti29:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti29:4.2",
+        "iti29:5.1"
+      ]
+    },
+    {
+      "id": 76,
+      "text": "iti31",
+      "findingKeys": [
+        "iti31:3.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_no_change",
+      "rationale": "Bodily misconduct on 3.1 and verbal misconduct on 3.2 directly matched Pali before the change. Combining them reduces accurate granularity without a reordering reason.",
+      "originalFindingKeys": [
+        "iti31:3.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti31:3.1",
+        "iti31:3.3"
+      ]
+    },
+    {
+      "id": 77,
+      "text": "iti31",
+      "findingKeys": [
+        "iti31:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti31:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti31:4.3",
+        "iti31:5.2"
+      ]
+    },
+    {
+      "id": 78,
+      "text": "iti35",
+      "findingKeys": [
+        "iti35:3.2",
+        "iti35:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti35:3.2",
+        "iti35:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti35:3.1",
+        "iti35:4.1"
+      ]
+    },
+    {
+      "id": 79,
+      "text": "iti36",
+      "findingKeys": [
+        "iti36:3.2",
+        "iti36:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti36:3.2",
+        "iti36:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti36:3.1",
+        "iti36:4.1"
+      ]
+    },
+    {
+      "id": 80,
+      "text": "iti39",
+      "findingKeys": [
+        "iti39:3.4"
+      ],
+      "verdict": "same",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "Both before and candidate follow reordered English proxy lines rather than the Pali: Tathāgata/awakened is 3.1, sympathy 3.2, statements/exposition 3.3–3.4. English reverses those pairs, so preserve all four as the smallest coherent group starting 3.1.",
+      "originalFindingKeys": [
+        "iti39:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti39:3.3",
+        "iti39:4.1"
+      ]
+    },
+    {
+      "id": 81,
+      "text": "iti41",
+      "findingKeys": [
+        "iti41:5.3",
+        "iti41:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti41:5.3",
+        "iti41:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti41:5.2",
+        "iti41:6.2"
+      ]
+    },
+    {
+      "id": 82,
+      "text": "iti45",
+      "findingKeys": [
+        "iti45:2.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti45:2.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti45:2.1",
+        "iti45:2.3"
+      ]
+    },
+    {
+      "id": 83,
+      "text": "iti46",
+      "findingKeys": [
+        "iti46:2.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti46:2.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti46:2.1",
+        "iti46:2.3"
+      ]
+    },
+    {
+      "id": 84,
+      "text": "iti51",
+      "findingKeys": [
+        "iti51:4.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti51:4.6"
+      ],
+      "reviewedPaliSpan": [
+        "iti51:4.5",
+        "iti51:5.2"
+      ]
+    },
+    {
+      "id": 85,
+      "text": "iti65",
+      "findingKeys": [
+        "iti65:4.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti65:4.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti65:4.3",
+        "iti65:5.2"
+      ]
+    },
+    {
+      "id": 86,
+      "text": "iti72",
+      "findingKeys": [
+        "iti72:3.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "Touching and ardent-always render 3.4, while stilling all fabrications renders 3.3. The candidate separates them in the reverse placement. Translation order requires the complete minimal two-line group at 3.3.",
+      "originalFindingKeys": [
+        "iti72:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti72:3.3",
+        "iti72:4.1"
+      ]
+    },
+    {
+      "id": 87,
+      "text": "iti74",
+      "findingKeys": [
+        "iti74:3.2",
+        "iti74:3.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti74:3.2",
+        "iti74:3.3"
+      ],
+      "reviewedPaliSpan": [
+        "iti74:3.1",
+        "iti74:3.4"
+      ]
+    },
+    {
+      "id": 88,
+      "text": "iti74",
+      "findingKeys": [
+        "iti74:3.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti74:3.6"
+      ],
+      "reviewedPaliSpan": [
+        "iti74:3.5",
+        "iti74:3.7"
+      ]
+    },
+    {
+      "id": 89,
+      "text": "iti74",
+      "findingKeys": [
+        "iti74:4.2",
+        "iti74:4.3",
+        "iti74:4.5",
+        "iti74:4.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti74:4.2",
+        "iti74:4.3",
+        "iti74:4.5",
+        "iti74:4.6"
+      ],
+      "reviewedPaliSpan": [
+        "iti74:4.1",
+        "iti74:4.7"
+      ]
+    },
+    {
+      "id": 90,
+      "text": "iti74",
+      "findingKeys": [
+        "iti74:5.2",
+        "iti74:5.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti74:5.2",
+        "iti74:5.3"
+      ],
+      "reviewedPaliSpan": [
+        "iti74:5.1",
+        "iti74:5.4"
+      ]
+    },
+    {
+      "id": 91,
+      "text": "iti74",
+      "findingKeys": [
+        "iti74:5.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti74:5.6"
+      ],
+      "reviewedPaliSpan": [
+        "iti74:5.5",
+        "iti74:5.7"
+      ]
+    },
+    {
+      "id": 92,
+      "text": "iti75",
+      "findingKeys": [
+        "iti75:6.4",
+        "iti75:6.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The lowest-person refrain reaches 6.5 correctly, but the preceding recipient, sharing and food clauses occur in matching order and can be split accurately across 6.1–6.4.",
+      "originalFindingKeys": [
+        "iti75:6.4",
+        "iti75:6.5"
+      ],
+      "reviewedPaliSpan": [
+        "iti75:6.1",
+        "iti75:7.1"
+      ]
+    },
+    {
+      "id": 93,
+      "text": "iti75",
+      "findingKeys": [
+        "iti75:10.3"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_no_change",
+      "rationale": "'Having rightly amassed' directly renders dhammena saṃharitvāna at 10.3. Moving it to 10.1 incorrectly joins it to the simile conclusion.",
+      "originalFindingKeys": [
+        "iti75:10.3"
+      ],
+      "reviewedPaliSpan": [
+        "iti75:10.1",
+        "iti75:10.4"
+      ]
+    },
+    {
+      "id": 94,
+      "text": "iti78",
+      "findingKeys": [
+        "iti78:7.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti78:7.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti78:7.3",
+        "iti78:8.1"
+      ]
+    },
+    {
+      "id": 95,
+      "text": "iti83",
+      "findingKeys": [
+        "iti83:12.1",
+        "iti83:12.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti83:12.1",
+        "iti83:12.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti83:10.2",
+        "iti83:12.3"
+      ]
+    },
+    {
+      "id": 96,
+      "text": "iti83",
+      "findingKeys": [
+        "iti83:15.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_no_change",
+      "rationale": "Bodily misconduct on 15.1 and verbal misconduct on 15.2 already match their Pali. Merging them sacrifices accurate existing granularity.",
+      "originalFindingKeys": [
+        "iti83:15.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti83:15.1",
+        "iti83:15.3"
+      ]
+    },
+    {
+      "id": 97,
+      "text": "iti83",
+      "findingKeys": [
+        "iti83:16.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Moving 'with a heart' to manasā at 16.3 improves placement, but the unchanged preceding speech clause on that line actually belongs to 16.2; move it back by beginning 16.3 at 'having done'.",
+      "originalFindingKeys": [
+        "iti83:16.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti83:16.3",
+        "iti83:17.1"
+      ]
+    },
+    {
+      "id": 98,
+      "text": "iti83",
+      "findingKeys": [
+        "iti83:18.3",
+        "iti83:18.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti83:18.3",
+        "iti83:18.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti83:18.2",
+        "iti83:19.2"
+      ]
+    },
+    {
+      "id": 99,
+      "text": "iti86",
+      "findingKeys": [
+        "iti86:2.2",
+        "iti86:3.2",
+        "iti86:3.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti86:2.2",
+        "iti86:3.2",
+        "iti86:3.3"
+      ],
+      "reviewedPaliSpan": [
+        "iti86:2.1",
+        "iti86:3.4"
+      ]
+    },
+    {
+      "id": 100,
+      "text": "iti88",
+      "findingKeys": [
+        "iti88:3.3",
+        "iti88:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti88:3.3",
+        "iti88:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti88:3.2",
+        "iti88:4.1"
+      ]
+    },
+    {
+      "id": 101,
+      "text": "iti88",
+      "findingKeys": [
+        "iti88:6.3",
+        "iti88:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti88:6.3",
+        "iti88:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti88:6.2",
+        "iti88:7.1"
+      ]
+    },
+    {
+      "id": 102,
+      "text": "iti88",
+      "findingKeys": [
+        "iti88:9.3",
+        "iti88:9.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti88:9.3",
+        "iti88:9.4"
+      ],
+      "reviewedPaliSpan": [
+        "iti88:9.2",
+        "iti88:10.1"
+      ]
+    },
+    {
+      "id": 103,
+      "text": "iti89",
+      "findingKeys": [
+        "iti89:3.1",
+        "iti89:3.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The prohibition starts at 3.1, but the following rebirth-and-evil-desire predicate can match its own line 3.2.",
+      "originalFindingKeys": [
+        "iti89:3.1",
+        "iti89:3.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti89:2.6",
+        "iti89:3.3"
+      ]
+    },
+    {
+      "id": 104,
+      "text": "iti89",
+      "findingKeys": [
+        "iti89:6.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "iti89:6.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti89:6.1",
+        "iti89:6.3"
+      ]
+    },
+    {
+      "id": 105,
+      "text": "iti89",
+      "findingKeys": [
+        "iti89:7.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The candidate puts the thinking/polluting predicate (7.2) on 7.1 and the ocean/poison object (7.1) on 7.2. English reverses their order, so the complete two-line group must begin at 7.1.",
+      "originalFindingKeys": [
+        "iti89:7.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti89:7.1",
+        "iti89:7.3"
+      ]
+    },
+    {
+      "id": 106,
+      "text": "iti89",
+      "findingKeys": [
+        "iti89:8.2"
+      ],
+      "verdict": "same",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "Both versions distribute the attacks-and-Tathāgata sentence opposite to Pali 8.1–8.2. English puts the attacking predicate before its Tathāgata object, so use the whole minimal two-line group at 8.1.",
+      "originalFindingKeys": [
+        "iti89:8.2"
+      ],
+      "reviewedPaliSpan": [
+        "iti89:8.1",
+        "iti89:8.3"
+      ]
+    },
+    {
+      "id": 107,
+      "text": "snp3.5",
+      "findingKeys": [
+        "snp3.5:1.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "snp3.5:1.5"
+      ],
+      "reviewedPaliSpan": [
+        "snp3.5:1.4",
+        "snp3.5:2.1"
+      ]
+    },
+    {
+      "id": 108,
+      "text": "snp3.5",
+      "findingKeys": [
+        "snp3.5:7.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "'At the right time' directly renders kālena on 7.3, not 7.4. Keep the complete offering instruction at 7.3 and begin the brahman's sacrifice clause at 7.4.",
+      "originalFindingKeys": [
+        "snp3.5:7.4"
+      ],
+      "reviewedPaliSpan": [
+        "snp3.5:7.3",
+        "snp3.5:8.1"
+      ]
+    },
+    {
+      "id": 109,
+      "text": "snp3.5",
+      "findingKeys": [
+        "snp3.5:8.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "'At the right time' directly renders kālena on 8.3, not 8.4. Keep the complete offering instruction at 8.3 and begin the brahman's sacrifice clause at 8.4.",
+      "originalFindingKeys": [
+        "snp3.5:8.4"
+      ],
+      "reviewedPaliSpan": [
+        "snp3.5:8.3",
+        "snp3.5:9.1"
+      ]
+    },
+    {
+      "id": 110,
+      "text": "snp3.5",
+      "findingKeys": [
+        "snp3.5:21.4"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "'At the right time' directly renders kālena on 21.3, not 21.4. Keep the complete offering instruction at 21.3 and begin the brahman's sacrifice clause at 21.4.",
+      "originalFindingKeys": [
+        "snp3.5:21.4"
+      ],
+      "reviewedPaliSpan": [
+        "snp3.5:21.3",
+        "snp3.5:22.1"
+      ]
+    },
+    {
+      "id": 111,
+      "text": "snp3.8",
+      "findingKeys": [
+        "snp3.8:16.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_no_change",
+      "rationale": "A century renders vassasataṃ at 16.1 and was already correctly there. Moving it to 16.2, which adds 'or more', worsens the direct match.",
+      "originalFindingKeys": [
+        "snp3.8:16.2"
+      ],
+      "reviewedPaliSpan": [
+        "snp3.8:16.1",
+        "snp3.8:16.3"
+      ]
+    },
+    {
+      "id": 112,
+      "text": "snp5.6",
+      "findingKeys": [
+        "snp5.6:4.1",
+        "snp5.6:4.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "snp5.6:4.1",
+        "snp5.6:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "snp5.6:3.4",
+        "snp5.6:4.3"
+      ]
+    },
+    {
+      "id": 113,
+      "text": "thag1.114",
+      "findingKeys": [
+        "thag1.114:1.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Bodily offenses reach 1.1 correctly; the remaining pleasure-and-wasting-life clause reverses Pali 1.2–1.3 and needs its coherent group to start at 1.2.",
+      "originalFindingKeys": [
+        "thag1.114:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "thag1.114:1.1",
+        "thag1.114:1.4"
+      ]
+    },
+    {
+      "id": 114,
+      "text": "thag1.23",
+      "findingKeys": [
+        "thag1.23:1.4",
+        "thag1.23:1.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "thag1.23:1.4",
+        "thag1.23:1.5"
+      ],
+      "reviewedPaliSpan": [
+        "thag1.23:1.3",
+        "thag1.23:1.6"
+      ]
+    },
+    {
+      "id": 115,
+      "text": "thag1.86",
+      "findingKeys": [
+        "thag1.86:1.1",
+        "thag1.86:1.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "thag1.86:1.1",
+        "thag1.86:1.2"
+      ],
+      "reviewedPaliSpan": [
+        "thag1.86:1.1",
+        "thag1.86:1.3"
+      ]
+    },
+    {
+      "id": 116,
+      "text": "thag2.36",
+      "findingKeys": [
+        "thag2.36:1.5",
+        "thag2.36:1.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The developed-mind condition correctly starts 1.5, but the separate rhetorical question directly matches 1.6 and admits a fine split.",
+      "originalFindingKeys": [
+        "thag2.36:1.5",
+        "thag2.36:1.6"
+      ],
+      "reviewedPaliSpan": [
+        "thag2.36:1.4",
+        "thag2.36:2.1"
+      ]
+    },
+    {
+      "id": 117,
+      "text": "thag3.15",
+      "findingKeys": [
+        "thag3.15:2.3",
+        "thag3.15:2.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The speaking-without-acting condition correctly starts 2.3; the wise recognizing it is a distinct predicate matching 2.4.",
+      "originalFindingKeys": [
+        "thag3.15:2.3",
+        "thag3.15:2.4"
+      ],
+      "reviewedPaliSpan": [
+        "thag3.15:2.2",
+        "thag3.15:3.1"
+      ]
+    },
+    {
+      "id": 118,
+      "text": "thag6.3",
+      "findingKeys": [
+        "thag6.3:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "thag6.3:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "thag6.3:4.1",
+        "thag6.3:4.4"
+      ]
+    },
+    {
+      "id": 119,
+      "text": "thag6.3",
+      "findingKeys": [
+        "thag6.3:6.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "thag6.3:6.3"
+      ],
+      "reviewedPaliSpan": [
+        "thag6.3:6.1",
+        "thag6.3:6.4"
+      ]
+    },
+    {
+      "id": 120,
+      "text": "thag6.6",
+      "findingKeys": [
+        "thag6.6:3.3",
+        "thag6.6:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Renouncing training correctly starts 3.3, and the ensuing death question can stand on 3.4.",
+      "originalFindingKeys": [
+        "thag6.6:3.3",
+        "thag6.6:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "thag6.6:3.2",
+        "thag6.6:4.1"
+      ]
+    },
+    {
+      "id": 121,
+      "text": "ud2.3",
+      "findingKeys": [
+        "ud2.3:3.3",
+        "ud2.3:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The selfish-motive and postmortem-result lines are recovered, but the reordered hit/beings clause belongs as a coherent two-line group beginning 3.1; the parallel no-hit group begins 4.1.",
+      "originalFindingKeys": [
+        "ud2.3:3.3",
+        "ud2.3:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "ud2.3:3.2",
+        "ud2.3:4.2"
+      ]
+    },
+    {
+      "id": 122,
+      "text": "ud3.7",
+      "findingKeys": [
+        "ud3.7:3.15"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "ud3.7:3.15"
+      ],
+      "reviewedPaliSpan": [
+        "ud3.7:3.14",
+        "ud3.7:4.1"
+      ]
+    },
+    {
+      "id": 123,
+      "text": "ud4.9",
+      "findingKeys": [
+        "ud4.9:4.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Craving for becoming reaches its clause 4.1, but the monk-of-peaceful-mind apposition directly matches 4.2 and can remain separately revealable.",
+      "originalFindingKeys": [
+        "ud4.9:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "ud4.9:4.1",
+        "ud4.9:4.3"
+      ]
+    },
+    {
+      "id": 124,
+      "text": "ud5.6",
+      "findingKeys": [
+        "ud5.6:2.3",
+        "ud5.6:3.1",
+        "ud5.6:3.2",
+        "ud5.6:4.1",
+        "ud5.6:4.2",
+        "ud5.6:4.3",
+        "ud5.6:4.4",
+        "ud5.6:5.1",
+        "ud5.6:5.2",
+        "ud5.6:5.3",
+        "ud5.6:6.1",
+        "ud5.6:6.2",
+        "ud5.6:6.3",
+        "ud5.6:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The formerly collapsed narrative is substantially restored, but the first subsiding of the going-forth intention still sits on 5.3 rather than 5.4.",
+      "originalFindingKeys": [
+        "ud5.6:2.3",
+        "ud5.6:3.1",
+        "ud5.6:3.2",
+        "ud5.6:4.1",
+        "ud5.6:4.2",
+        "ud5.6:4.3",
+        "ud5.6:4.4",
+        "ud5.6:5.1",
+        "ud5.6:5.2",
+        "ud5.6:5.3",
+        "ud5.6:6.1",
+        "ud5.6:6.2",
+        "ud5.6:6.3",
+        "ud5.6:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "ud5.6:2.2",
+        "ud5.6:6.5"
+      ]
+    },
+    {
+      "id": 125,
+      "text": "ud5.6",
+      "findingKeys": [
+        "ud5.6:10.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "ud5.6:10.3"
+      ],
+      "reviewedPaliSpan": [
+        "ud5.6:10.2",
+        "ud5.6:10.4"
+      ]
+    },
+    {
+      "id": 126,
+      "text": "ud5.6",
+      "findingKeys": [
+        "ud5.6:12.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "ud5.6:12.3"
+      ],
+      "reviewedPaliSpan": [
+        "ud5.6:12.2",
+        "ud5.6:12.4"
+      ]
+    },
+    {
+      "id": 127,
+      "text": "ud6.5",
+      "findingKeys": [
+        "ud6.5:24.1",
+        "ud6.5:24.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Attachment properly begins 24.1; the contemplatives/brahmans subject can stand on its own Pali line 24.2.",
+      "originalFindingKeys": [
+        "ud6.5:24.1",
+        "ud6.5:24.2"
+      ],
+      "reviewedPaliSpan": [
+        "ud6.5:23.1",
+        "ud6.5:24.3"
+      ]
+    },
+    {
+      "id": 128,
+      "text": "ud8.5",
+      "findingKeys": [
+        "ud8.5:17.1"
+      ],
+      "verdict": "same",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "'Went down' renders otari at 16.3, not 16.4 or 17.1. The translation places that predicate after the Tathāgata subject of 16.4, requiring a coherent group starting 16.3.",
+      "originalFindingKeys": [
+        "ud8.5:17.1"
+      ],
+      "reviewedPaliSpan": [
+        "ud8.5:16.4",
+        "ud8.5:17.2"
+      ]
+    },
+    {
+      "id": 129,
+      "text": "ud8.6",
+      "findingKeys": [
+        "ud8.6:1.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "ud8.6:1.2"
+      ],
+      "reviewedPaliSpan": [
+        "ud8.6:1.1",
+        "ud8.6:1.3"
+      ]
+    },
+    {
+      "id": 130,
+      "text": "sn1.17",
+      "findingKeys": [
+        "sn1.17:3.1",
+        "sn1.17:3.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The tortoise simile begins at 3.1, but the explicit monk/thoughts comparison can stand separately on 3.2.",
+      "originalFindingKeys": [
+        "sn1.17:3.1",
+        "sn1.17:3.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn1.17:2.4",
+        "sn1.17:3.3"
+      ]
+    },
+    {
+      "id": 131,
+      "text": "sn10.12",
+      "findingKeys": [
+        "sn10.12:6.5",
+        "sn10.12:6.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The world-transition condition belongs to 6.5, and the distinct not-grieving question can stand on 6.6.",
+      "originalFindingKeys": [
+        "sn10.12:6.5",
+        "sn10.12:6.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn10.12:6.4",
+        "sn10.12:7.1"
+      ]
+    },
+    {
+      "id": 132,
+      "text": "sn10.12",
+      "findingKeys": [
+        "sn10.12:9.1",
+        "sn10.12:9.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Starting the four-qualities group at 9.1 repairs the opening, but English reverses the list (9.3) and householder (9.2); group those three lines, then put the separate not-grieving result on 9.4.",
+      "originalFindingKeys": [
+        "sn10.12:9.1",
+        "sn10.12:9.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn10.12:8.4",
+        "sn10.12:9.3"
+      ]
+    },
+    {
+      "id": 133,
+      "text": "sn10.12",
+      "findingKeys": [
+        "sn10.12:13.1",
+        "sn10.12:13.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn10.12:13.1",
+        "sn10.12:13.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn10.12:12.4",
+        "sn10.12:13.3"
+      ]
+    },
+    {
+      "id": 134,
+      "text": "sn12.12",
+      "findingKeys": [
+        "sn12.12:2.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.12:2.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.12:2.7",
+        "sn12.12:2.9"
+      ]
+    },
+    {
+      "id": 135,
+      "text": "sn12.12",
+      "findingKeys": [
+        "sn12.12:4.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.12:4.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.12:4.6",
+        "sn12.12:4.8"
+      ]
+    },
+    {
+      "id": 136,
+      "text": "sn12.12",
+      "findingKeys": [
+        "sn12.12:5.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.12:5.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.12:5.6",
+        "sn12.12:5.8"
+      ]
+    },
+    {
+      "id": 137,
+      "text": "sn12.12",
+      "findingKeys": [
+        "sn12.12:6.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.12:6.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.12:6.6",
+        "sn12.12:6.8"
+      ]
+    },
+    {
+      "id": 138,
+      "text": "sn12.25",
+      "findingKeys": [
+        "sn12.25:11.3",
+        "sn12.25:11.4",
+        "sn12.25:12.1"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Alertness and the verbal/intellectual summary move correctly, but self/others and alert/unalert are four separate full clauses in matching English order and deserve their own 11.1–11.4 lines.",
+      "contextNote": "The bracketed verbal/intellectual-fabrications summary compresses eight Pali clauses. Keeping it at their first covered line does not establish full translation of those clauses; later coverage must mark abbreviated detail.",
+      "originalFindingKeys": [
+        "sn12.25:11.3",
+        "sn12.25:11.4",
+        "sn12.25:12.1"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.25:11.1",
+        "sn12.25:14.1"
+      ]
+    },
+    {
+      "id": 139,
+      "text": "sn12.48",
+      "findingKeys": [
+        "sn12.48:1.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.48:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.48:1.2",
+        "sn12.48:2.1"
+      ]
+    },
+    {
+      "id": 140,
+      "text": "sn12.55",
+      "findingKeys": [
+        "sn12.55:4.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.55:4.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.55:4.4",
+        "sn12.55:4.6"
+      ]
+    },
+    {
+      "id": 141,
+      "text": "sn12.65",
+      "findingKeys": [
+        "sn12.65:2.9",
+        "sn12.65:2.10",
+        "sn12.65:2.11",
+        "sn12.65:2.12"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn12.65:2.9",
+        "sn12.65:2.10",
+        "sn12.65:2.11",
+        "sn12.65:2.12"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.65:2.2",
+        "sn12.65:2.13"
+      ]
+    },
+    {
+      "id": 142,
+      "text": "sn12.65",
+      "findingKeys": [
+        "sn12.65:4.8"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "The name-and-form question corresponds to 4.15, not the preceding cessation-of-birth result at 4.6. Both baseline 4.8 and candidate 4.6 are wrong; move that explicit question to its actual Pali line.",
+      "originalFindingKeys": [
+        "sn12.65:4.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn12.65:4.6",
+        "sn12.65:4.16"
+      ]
+    },
+    {
+      "id": 143,
+      "text": "sn16.11",
+      "findingKeys": [
+        "sn16.11:5.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn16.11:5.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn16.11:5.4",
+        "sn16.11:5.6"
+      ]
+    },
+    {
+      "id": 144,
+      "text": "sn16.5",
+      "findingKeys": [
+        "sn16.5:3.8",
+        "sn16.5:4.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn16.5:3.8",
+        "sn16.5:4.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn16.5:3.1",
+        "sn16.5:5.1"
+      ]
+    },
+    {
+      "id": 145,
+      "text": "sn2.26",
+      "findingKeys": [
+        "sn2.26:5.1"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The translation repeats the Buddha's earlier no-travel statement in his reply although this Pali layout goes directly to the no-end-of-stress qualification. Moving the added response to 5.1 preserves its speaker and dialogue scope; record this source-variant/addition rather than pretending an exact additional Pali match.",
+      "originalFindingKeys": [
+        "sn2.26:5.1"
+      ],
+      "reviewedPaliSpan": [
+        "sn2.26:4.3",
+        "sn2.26:5.2"
+      ]
+    },
+    {
+      "id": 146,
+      "text": "sn22.101",
+      "findingKeys": [
+        "sn22.101:6.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.101:6.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.101:6.1",
+        "sn22.101:6.3"
+      ]
+    },
+    {
+      "id": 147,
+      "text": "sn22.142",
+      "findingKeys": [
+        "sn22.142:1.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.142:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.142:1.2",
+        "sn22.142:1.4"
+      ]
+    },
+    {
+      "id": 148,
+      "text": "sn22.145",
+      "findingKeys": [
+        "sn22.145:1.3",
+        "sn22.145:1.4",
+        "sn22.145:1.5",
+        "sn22.145:1.6",
+        "sn22.145:1.7",
+        "sn22.145:1.8",
+        "sn22.145:1.9"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.145:1.3",
+        "sn22.145:1.4",
+        "sn22.145:1.5",
+        "sn22.145:1.6",
+        "sn22.145:1.7",
+        "sn22.145:1.8",
+        "sn22.145:1.9"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.145:1.2",
+        "sn22.145:1.10"
+      ]
+    },
+    {
+      "id": 149,
+      "text": "sn22.5",
+      "findingKeys": [
+        "sn22.5:3.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.5:3.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.5:3.2",
+        "sn22.5:3.4"
+      ]
+    },
+    {
+      "id": 150,
+      "text": "sn22.5",
+      "findingKeys": [
+        "sn22.5:8.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.5:8.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.5:8.2",
+        "sn22.5:8.4"
+      ]
+    },
+    {
+      "id": 151,
+      "text": "sn22.57",
+      "findingKeys": [
+        "sn22.57:3.2",
+        "sn22.57:3.4",
+        "sn22.57:3.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.57:3.2",
+        "sn22.57:3.4",
+        "sn22.57:3.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.57:3.1",
+        "sn22.57:4.1"
+      ]
+    },
+    {
+      "id": 152,
+      "text": "sn22.57",
+      "findingKeys": [
+        "sn22.57:7.2",
+        "sn22.57:7.4",
+        "sn22.57:7.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.57:7.2",
+        "sn22.57:7.4",
+        "sn22.57:7.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.57:7.1",
+        "sn22.57:10.1"
+      ]
+    },
+    {
+      "id": 153,
+      "text": "sn22.57",
+      "findingKeys": [
+        "sn22.57:10.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.57:10.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.57:10.7",
+        "sn22.57:11.1"
+      ]
+    },
+    {
+      "id": 154,
+      "text": "sn22.57",
+      "findingKeys": [
+        "sn22.57:15.2",
+        "sn22.57:15.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "Allure and drawback are properly split; the unchanged escape-from-consciousness label at 15.5 still belongs separately on 15.6.",
+      "originalFindingKeys": [
+        "sn22.57:15.2",
+        "sn22.57:15.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.57:15.1",
+        "sn22.57:15.5"
+      ]
+    },
+    {
+      "id": 155,
+      "text": "sn22.58",
+      "findingKeys": [
+        "sn22.58:2.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.58:2.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.58:2.1",
+        "sn22.58:3.3"
+      ]
+    },
+    {
+      "id": 156,
+      "text": "sn22.80",
+      "findingKeys": [
+        "sn22.80:3.6",
+        "sn22.80:3.7",
+        "sn22.80:3.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "New monks and their vulnerability separate correctly, but the second seedlings simile remains on the calf line 3.7 rather than its own 3.9.",
+      "originalFindingKeys": [
+        "sn22.80:3.6",
+        "sn22.80:3.7",
+        "sn22.80:3.10"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.80:3.5",
+        "sn22.80:3.11"
+      ]
+    },
+    {
+      "id": 157,
+      "text": "sn22.80",
+      "findingKeys": [
+        "sn22.80:6.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.80:6.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.80:6.3",
+        "sn22.80:6.5"
+      ]
+    },
+    {
+      "id": 158,
+      "text": "sn22.80",
+      "findingKeys": [
+        "sn22.80:10.9",
+        "sn22.80:10.10",
+        "sn22.80:10.11",
+        "sn22.80:10.12"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The aggregate questions are substantially recovered, but the first 'No, lord' belongs to 10.8 and the 'Thus, monks' expanded concluding survey begins 10.13 rather than remaining on the consciousness question 10.12.",
+      "originalFindingKeys": [
+        "sn22.80:10.9",
+        "sn22.80:10.10",
+        "sn22.80:10.11",
+        "sn22.80:10.12"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.80:10.7",
+        "sn22.80:10.13"
+      ]
+    },
+    {
+      "id": 159,
+      "text": "sn22.84",
+      "findingKeys": [
+        "sn22.84:9.4",
+        "sn22.84:9.5",
+        "sn22.84:9.6",
+        "sn22.84:9.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The speaker and walking instruction separate correctly, but seeing the fork is part of 9.7, not 9.6. The parallel forest and marsh directions need the same fine division.",
+      "originalFindingKeys": [
+        "sn22.84:9.4",
+        "sn22.84:9.5",
+        "sn22.84:9.6",
+        "sn22.84:9.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.84:9.3",
+        "sn22.84:9.8"
+      ]
+    },
+    {
+      "id": 160,
+      "text": "sn22.90",
+      "findingKeys": [
+        "sn22.90:3.3",
+        "sn22.90:3.4",
+        "sn22.90:3.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn22.90:3.3",
+        "sn22.90:3.4",
+        "sn22.90:3.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn22.90:3.2",
+        "sn22.90:3.6"
+      ]
+    },
+    {
+      "id": 161,
+      "text": "sn27.4",
+      "findingKeys": [
+        "sn27.4:1.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The abandonment-and-malleability passage moves off the sense-contact label correctly; its final direct-knowing/realization qualifier explicitly renders 1.9 and can be split there.",
+      "originalFindingKeys": [
+        "sn27.4:1.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn27.4:1.7",
+        "sn27.4:1.10"
+      ]
+    },
+    {
+      "id": 162,
+      "text": "sn27.5",
+      "findingKeys": [
+        "sn27.5:1.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The abandonment-and-malleability passage moves off the sense-contact label correctly; its final direct-knowing/realization qualifier explicitly renders 1.9 and can be split there.",
+      "originalFindingKeys": [
+        "sn27.5:1.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn27.5:1.7",
+        "sn27.5:1.10"
+      ]
+    },
+    {
+      "id": 163,
+      "text": "sn27.6",
+      "findingKeys": [
+        "sn27.6:1.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The abandonment-and-malleability passage moves off the sense-contact label correctly; its final direct-knowing/realization qualifier explicitly renders 1.9 and can be split there.",
+      "originalFindingKeys": [
+        "sn27.6:1.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn27.6:1.7",
+        "sn27.6:1.10"
+      ]
+    },
+    {
+      "id": 164,
+      "text": "sn27.7",
+      "findingKeys": [
+        "sn27.7:1.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The abandonment-and-malleability passage moves off the sense-contact label correctly; its final direct-knowing/realization qualifier explicitly renders 1.9 and can be split there.",
+      "originalFindingKeys": [
+        "sn27.7:1.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn27.7:1.7",
+        "sn27.7:1.10"
+      ]
+    },
+    {
+      "id": 165,
+      "text": "sn27.8",
+      "findingKeys": [
+        "sn27.8:1.8"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The abandonment-and-malleability passage moves off the sense-contact label correctly; its final direct-knowing/realization qualifier explicitly renders 1.9 and can be split there.",
+      "originalFindingKeys": [
+        "sn27.8:1.8"
+      ],
+      "reviewedPaliSpan": [
+        "sn27.8:1.7",
+        "sn27.8:1.10"
+      ]
+    },
+    {
+      "id": 166,
+      "text": "sn3.9",
+      "findingKeys": [
+        "sn3.9:5.1",
+        "sn3.9:5.3",
+        "sn3.9:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The animal-sacrifice verse now begins correctly, but its animal/killing clauses can separate into 5.1–5.2; the reordered nonattendance predicate is a coherent group at 5.3. The following nonviolent-sacrifice verse should also begin 6.1, not 6.2.",
+      "originalFindingKeys": [
+        "sn3.9:5.1",
+        "sn3.9:5.3",
+        "sn3.9:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn3.9:4.4",
+        "sn3.9:6.2"
+      ]
+    },
+    {
+      "id": 167,
+      "text": "sn35.116",
+      "findingKeys": [
+        "sn35.116:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.116:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.116:5.3",
+        "sn35.116:5.5"
+      ]
+    },
+    {
+      "id": 168,
+      "text": "sn35.116",
+      "findingKeys": [
+        "sn35.116:6.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.116:6.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.116:6.1",
+        "sn35.116:6.3"
+      ]
+    },
+    {
+      "id": 169,
+      "text": "sn35.117",
+      "findingKeys": [
+        "sn35.117:8.6",
+        "sn35.117:8.7",
+        "sn35.117:8.8",
+        "sn35.117:8.9",
+        "sn35.117:8.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.117:8.6",
+        "sn35.117:8.7",
+        "sn35.117:8.8",
+        "sn35.117:8.9",
+        "sn35.117:8.10"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.117:8.5",
+        "sn35.117:8.11"
+      ]
+    },
+    {
+      "id": 170,
+      "text": "sn35.118",
+      "findingKeys": [
+        "sn35.118:2.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.118:2.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.118:2.2",
+        "sn35.118:2.4"
+      ]
+    },
+    {
+      "id": 171,
+      "text": "sn35.118",
+      "findingKeys": [
+        "sn35.118:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.118:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.118:3.3",
+        "sn35.118:3.5"
+      ]
+    },
+    {
+      "id": 172,
+      "text": "sn35.118",
+      "findingKeys": [
+        "sn35.118:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.118:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.118:4.2",
+        "sn35.118:4.4"
+      ]
+    },
+    {
+      "id": 173,
+      "text": "sn35.118",
+      "findingKeys": [
+        "sn35.118:5.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.118:5.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.118:5.3",
+        "sn35.118:5.5"
+      ]
+    },
+    {
+      "id": 174,
+      "text": "sn35.134",
+      "findingKeys": [
+        "sn35.134:1.13"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.134:1.13"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.134:1.12",
+        "sn35.134:1.14"
+      ]
+    },
+    {
+      "id": 175,
+      "text": "sn35.18",
+      "findingKeys": [
+        "sn35.18:1.2",
+        "sn35.18:1.3",
+        "sn35.18:1.4",
+        "sn35.18:1.5",
+        "sn35.18:1.6",
+        "sn35.18:1.7",
+        "sn35.18:1.8",
+        "sn35.18:1.9",
+        "sn35.18:1.10",
+        "sn35.18:1.11",
+        "sn35.18:1.12",
+        "sn35.18:1.13",
+        "sn35.18:1.14",
+        "sn35.18:1.15",
+        "sn35.18:1.16"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.18:1.2",
+        "sn35.18:1.3",
+        "sn35.18:1.4",
+        "sn35.18:1.5",
+        "sn35.18:1.6",
+        "sn35.18:1.7",
+        "sn35.18:1.8",
+        "sn35.18:1.9",
+        "sn35.18:1.10",
+        "sn35.18:1.11",
+        "sn35.18:1.12",
+        "sn35.18:1.13",
+        "sn35.18:1.14",
+        "sn35.18:1.15",
+        "sn35.18:1.16"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.18:1.1",
+        "sn35.18:2.1"
+      ]
+    },
+    {
+      "id": 176,
+      "text": "sn35.24",
+      "findingKeys": [
+        "sn35.24:1.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The dialogue acknowledgment and 'I will speak' are expanded in the translator's source but not explicit in this Pali layout's taṃ suṇātha. Retain their local discourse position; do not label the added words a separate exact Pali correspondence.",
+      "originalFindingKeys": [
+        "sn35.24:1.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.24:1.2",
+        "sn35.24:1.4"
+      ]
+    },
+    {
+      "id": 177,
+      "text": "sn35.74",
+      "findingKeys": [
+        "sn35.74:14.1"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_corrected_by_hand",
+      "rationale": "Pali 13.1 is only 'Inconstant, sir'; all further questions and replies are the pe expansion at 14.1. Moving that continuation onto 13.1 increases misplacement.",
+      "originalFindingKeys": [
+        "sn35.74:14.1"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.74:13.1",
+        "sn35.74:14.2"
+      ]
+    },
+    {
+      "id": 178,
+      "text": "sn35.88",
+      "findingKeys": [
+        "sn35.88:5.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.88:5.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.88:5.1",
+        "sn35.88:5.3"
+      ]
+    },
+    {
+      "id": 179,
+      "text": "sn35.95",
+      "findingKeys": [
+        "sn35.95:1.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn35.95:1.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.95:1.1",
+        "sn35.95:2.1"
+      ]
+    },
+    {
+      "id": 180,
+      "text": "sn35.95",
+      "findingKeys": [
+        "sn35.95:36.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The doubled approval correctly stays on 36.2, but the bracketed summary that the Buddha repeats the verses describes 37–40 and should begin on the first verse line 37.1.",
+      "originalFindingKeys": [
+        "sn35.95:36.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn35.95:36.2",
+        "sn35.95:41.1"
+      ]
+    },
+    {
+      "id": 181,
+      "text": "sn36.19",
+      "findingKeys": [
+        "sn36.19:3.5",
+        "sn36.19:3.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The closing three-feelings sentence reaches 3.5, but the list itself belongs on 3.4. The compressed second/third repetitions should stay together with the repeating exchange at 3.6, not trail the preceding conclusion.",
+      "originalFindingKeys": [
+        "sn36.19:3.5",
+        "sn36.19:3.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.19:3.3",
+        "sn36.19:3.7"
+      ]
+    },
+    {
+      "id": 182,
+      "text": "sn36.19",
+      "findingKeys": [
+        "sn36.19:4.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The seated reporting clause reaches 4.2 correctly; the unchanged two reciprocal genuine-exposition clauses at 5.1 admit a direct split at 5.2.",
+      "originalFindingKeys": [
+        "sn36.19:4.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.19:4.1",
+        "sn36.19:5.1"
+      ]
+    },
+    {
+      "id": 183,
+      "text": "sn36.19",
+      "findingKeys": [
+        "sn36.19:5.4",
+        "sn36.19:5.5",
+        "sn36.19:5.6",
+        "sn36.19:5.7",
+        "sn36.19:5.8",
+        "sn36.19:5.9"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.19:5.4",
+        "sn36.19:5.5",
+        "sn36.19:5.6",
+        "sn36.19:5.7",
+        "sn36.19:5.8",
+        "sn36.19:5.9"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.19:5.3",
+        "sn36.19:5.10"
+      ]
+    },
+    {
+      "id": 184,
+      "text": "sn36.21",
+      "findingKeys": [
+        "sn36.21:2.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.21:2.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.21:2.4",
+        "sn36.21:2.6"
+      ]
+    },
+    {
+      "id": 185,
+      "text": "sn36.21",
+      "findingKeys": [
+        "sn36.21:3.13"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.21:3.13"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.21:3.12",
+        "sn36.21:3.14"
+      ]
+    },
+    {
+      "id": 186,
+      "text": "sn36.21",
+      "findingKeys": [
+        "sn36.21:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.21:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.21:4.2",
+        "sn36.21:5.1"
+      ]
+    },
+    {
+      "id": 187,
+      "text": "sn36.21",
+      "findingKeys": [
+        "sn36.21:5.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.21:5.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.21:5.2",
+        "sn36.21:5.4"
+      ]
+    },
+    {
+      "id": 188,
+      "text": "sn36.22",
+      "findingKeys": [
+        "sn36.22:1.5",
+        "sn36.22:1.6",
+        "sn36.22:1.7",
+        "sn36.22:1.8",
+        "sn36.22:1.9",
+        "sn36.22:1.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn36.22:1.5",
+        "sn36.22:1.6",
+        "sn36.22:1.7",
+        "sn36.22:1.8",
+        "sn36.22:1.9",
+        "sn36.22:1.10"
+      ],
+      "reviewedPaliSpan": [
+        "sn36.22:1.4",
+        "sn36.22:2.1"
+      ]
+    },
+    {
+      "id": 189,
+      "text": "sn4.13",
+      "findingKeys": [
+        "sn4.13:4.2",
+        "sn4.13:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn4.13:4.2",
+        "sn4.13:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn4.13:4.1",
+        "sn4.13:4.4"
+      ]
+    },
+    {
+      "id": 190,
+      "text": "sn4.25",
+      "findingKeys": [
+        "sn4.25:8.2",
+        "sn4.25:8.4",
+        "sn4.25:8.7",
+        "sn4.25:8.9"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The two-children and middle-aged proposals reach their actual proposal lines. The unchanged one-child proposal likewise belongs on 7.2 rather than the following enacted-assumption line 7.4.",
+      "originalFindingKeys": [
+        "sn4.25:8.2",
+        "sn4.25:8.4",
+        "sn4.25:8.7",
+        "sn4.25:8.9"
+      ],
+      "reviewedPaliSpan": [
+        "sn4.25:7.4",
+        "sn4.25:9.2"
+      ]
+    },
+    {
+      "id": 191,
+      "text": "sn42.8",
+      "findingKeys": [
+        "sn42.8:6.9",
+        "sn42.8:6.10",
+        "sn42.8:6.11",
+        "sn42.8:6.13",
+        "sn42.8:6.14",
+        "sn42.8:6.15",
+        "sn42.8:6.19"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn42.8:6.9",
+        "sn42.8:6.10",
+        "sn42.8:6.11",
+        "sn42.8:6.13",
+        "sn42.8:6.14",
+        "sn42.8:6.15",
+        "sn42.8:6.19"
+      ],
+      "reviewedPaliSpan": [
+        "sn42.8:6.8",
+        "sn42.8:6.20"
+      ]
+    },
+    {
+      "id": 192,
+      "text": "sn42.9",
+      "findingKeys": [
+        "sn42.9:5.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn42.9:5.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn42.9:5.2",
+        "sn42.9:5.4"
+      ]
+    },
+    {
+      "id": 193,
+      "text": "sn44.1",
+      "findingKeys": [
+        "sn44.1:5.4",
+        "sn44.1:5.10"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The later view questions separate from the first response, but the both/neither questions and response quotations also have directly corresponding individual Pali lines and can be split further.",
+      "originalFindingKeys": [
+        "sn44.1:5.4",
+        "sn44.1:5.10"
+      ],
+      "reviewedPaliSpan": [
+        "sn44.1:5.2",
+        "sn44.1:5.13"
+      ]
+    },
+    {
+      "id": 194,
+      "text": "sn44.11",
+      "findingKeys": [
+        "sn44.11:3.2",
+        "sn44.11:3.3",
+        "sn44.11:3.4",
+        "sn44.11:3.5",
+        "sn44.11:3.6",
+        "sn44.11:3.7",
+        "sn44.11:3.8",
+        "sn44.11:3.9",
+        "sn44.11:3.10",
+        "sn44.11:3.11"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn44.11:3.2",
+        "sn44.11:3.3",
+        "sn44.11:3.4",
+        "sn44.11:3.5",
+        "sn44.11:3.6",
+        "sn44.11:3.7",
+        "sn44.11:3.8",
+        "sn44.11:3.9",
+        "sn44.11:3.10",
+        "sn44.11:3.11"
+      ],
+      "reviewedPaliSpan": [
+        "sn44.11:3.1",
+        "sn44.11:3.12"
+      ]
+    },
+    {
+      "id": 195,
+      "text": "sn44.5",
+      "findingKeys": [
+        "sn44.5:1.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn44.5:1.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn44.5:1.1",
+        "sn44.5:1.3"
+      ]
+    },
+    {
+      "id": 196,
+      "text": "sn46.54",
+      "findingKeys": [
+        "sn46.54:4.5",
+        "sn46.54:4.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn46.54:4.5",
+        "sn46.54:4.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn46.54:4.4",
+        "sn46.54:4.7"
+      ]
+    },
+    {
+      "id": 197,
+      "text": "sn47.13",
+      "findingKeys": [
+        "sn47.13:5.3",
+        "sn47.13:5.4",
+        "sn47.13:5.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn47.13:5.3",
+        "sn47.13:5.4",
+        "sn47.13:5.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn47.13:5.2",
+        "sn47.13:5.6"
+      ]
+    },
+    {
+      "id": 198,
+      "text": "sn47.25",
+      "findingKeys": [
+        "sn47.25:4.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn47.25:4.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn47.25:4.2",
+        "sn47.25:4.4"
+      ]
+    },
+    {
+      "id": 199,
+      "text": "sn48.10",
+      "findingKeys": [
+        "sn48.10:3.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn48.10:3.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn48.10:3.4",
+        "sn48.10:3.6"
+      ]
+    },
+    {
+      "id": 200,
+      "text": "sn51.15",
+      "findingKeys": [
+        "sn51.15:3.3",
+        "sn51.15:3.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn51.15:3.3",
+        "sn51.15:3.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn51.15:3.2",
+        "sn51.15:3.5"
+      ]
+    },
+    {
+      "id": 201,
+      "text": "sn51.20",
+      "findingKeys": [
+        "sn51.20:2.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn51.20:2.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn51.20:2.4",
+        "sn51.20:2.6"
+      ]
+    },
+    {
+      "id": 202,
+      "text": "sn51.20",
+      "findingKeys": [
+        "sn51.20:2.14"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn51.20:2.14"
+      ],
+      "reviewedPaliSpan": [
+        "sn51.20:2.13",
+        "sn51.20:2.15"
+      ]
+    },
+    {
+      "id": 203,
+      "text": "sn51.20",
+      "findingKeys": [
+        "sn51.20:7.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn51.20:7.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn51.20:7.4",
+        "sn51.20:8.1"
+      ]
+    },
+    {
+      "id": 204,
+      "text": "sn52.10",
+      "findingKeys": [
+        "sn52.10:2.5"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The feelings passage moves off the body line correctly, but the mind item has its own Pali line 2.6 and should be split there.",
+      "originalFindingKeys": [
+        "sn52.10:2.5"
+      ],
+      "reviewedPaliSpan": [
+        "sn52.10:2.4",
+        "sn52.10:2.7"
+      ]
+    },
+    {
+      "id": 205,
+      "text": "sn52.9",
+      "findingKeys": [
+        "sn52.9:2.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn52.9:2.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn52.9:2.6",
+        "sn52.9:2.8"
+      ]
+    },
+    {
+      "id": 206,
+      "text": "sn54.12",
+      "findingKeys": [
+        "sn54.12:11.6"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn54.12:11.6"
+      ],
+      "reviewedPaliSpan": [
+        "sn54.12:11.5",
+        "sn54.12:11.7"
+      ]
+    },
+    {
+      "id": 207,
+      "text": "sn54.9",
+      "findingKeys": [
+        "sn54.9:6.2"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn54.9:6.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn54.9:6.1",
+        "sn54.9:6.3"
+      ]
+    },
+    {
+      "id": 208,
+      "text": "sn54.9",
+      "findingKeys": [
+        "sn54.9:8.3"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn54.9:8.3"
+      ],
+      "reviewedPaliSpan": [
+        "sn54.9:8.2",
+        "sn54.9:8.4"
+      ]
+    },
+    {
+      "id": 209,
+      "text": "sn55.23",
+      "findingKeys": [
+        "sn55.23:3.6",
+        "sn55.23:3.7"
+      ],
+      "verdict": "better",
+      "disposition": "accepted",
+      "rationale": "The changed clause or list-item boundaries restore the English to the corresponding original Pali meanings in this group.",
+      "originalFindingKeys": [
+        "sn55.23:3.6",
+        "sn55.23:3.7"
+      ],
+      "reviewedPaliSpan": [
+        "sn55.23:3.4",
+        "sn55.23:3.8"
+      ]
+    },
+    {
+      "id": 210,
+      "text": "sn6.14",
+      "findingKeys": [
+        "sn6.14:8.2"
+      ],
+      "verdict": "worse",
+      "disposition": "rejected_archive_no_change",
+      "rationale": "Sikhī, the Buddha's titles, and Abhibhū are explicitly in Pali 8.1 and already correctly there. Moving those subjects to the simile/vanishing line 8.2 follows Sujato's English division and worsens alignment.",
+      "originalFindingKeys": [
+        "sn6.14:8.2"
+      ],
+      "reviewedPaliSpan": [
+        "sn6.14:8.1",
+        "sn6.14:8.3"
+      ]
+    },
+    {
+      "id": 211,
+      "text": "sn7.2",
+      "findingKeys": [
+        "sn7.2:7.1",
+        "sn7.2:7.2",
+        "sn7.2:7.3",
+        "sn7.2:7.4"
+      ],
+      "verdict": "better",
+      "disposition": "accepted_with_hand_completion",
+      "rationale": "The cure begins correctly at 7.1, but the own/other apposition, people calling one a fool, and ignorance of Dhamma all occur in English order on their own Pali lines and can be split accurately.",
+      "originalFindingKeys": [
+        "sn7.2:7.1",
+        "sn7.2:7.2",
+        "sn7.2:7.3",
+        "sn7.2:7.4"
+      ],
+      "reviewedPaliSpan": [
+        "sn7.2:6.4",
+        "sn7.2:8.1"
+      ]
+    }
+  ],
+  "exceptions": {
+    "translator": "thanissaro",
+    "source": "codex-read import",
+    "method": "Original Pali checked with full surrounding saved English; original translator wording/order preserved. Semantically indivisible or reordered passages keep smallest coherent groups. List items and explicit speaker/refrain introductions split independently. This file proposes corrections for an isolated trial and does not claim primary data changed.",
+    "incomingDistinctKeys": 499,
+    "incomingExceptionKeys": 96,
+    "handFindingLines": 143,
+    "decisions": [
+      {
+        "reportedKeys": [
+          "an4.102:3.6",
+          "an4.102:3.7"
+        ],
+        "status": "grouped",
+        "rationale": "The Pali puts the cloud comparison before the person, while English puts the person before the cloud. Keep their indivisible comparison on the first of the two Pali lines.",
+        "resolvedStarts": {
+          "an4.102:3.6": "This type of person, I tell you, is",
+          "an4.102:3.7": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "an4.116:1.6"
+        ],
+        "status": "corrected",
+        "rationale": "The repeated heedfulness sentence renders tattha ca ma pamadattha, not the following mental-conduct instruction.",
+        "resolvedStarts": {
+          "an4.116:1.6": "Don’t be heedless there."
+        }
+      },
+      {
+        "reportedKeys": [
+          "an4.50:11.1",
+          "an4.50:11.2"
+        ],
+        "status": "corrected",
+        "rationale": "Obscurations were spoken of belongs to ete upakkilesa vutta; the Buddha attribution belongs to buddhena adiccabandhuna.",
+        "resolvedStarts": {
+          "an4.50:11.1": "These are said to be obscurations",
+          "an4.50:11.2": "by the Awakened One, kinsman of the Sun."
+        }
+      },
+      {
+        "reportedKeys": [
+          "an5.57:12.1",
+          "an5.57:12.2"
+        ],
+        "status": "corrected",
+        "rationale": "The first Pali line includes aging, the second death. Use the exact short death phrase rather than a quote that crosses the following ordinary-people clause.",
+        "resolvedStarts": {
+          "an5.57:12.1": "“‘Subject to birth, subject to aging,",
+          "an5.57:12.2": "subject to death,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an7.52:7.1",
+          "an7.52:7.2"
+        ],
+        "status": "corrected",
+        "rationale": "Restore the separate rejected motivation and positive gift motivation to their respective Pali lines.",
+        "resolvedStarts": {
+          "an7.52:7.1": "“Or, instead of thinking, ‘Giving is good,’",
+          "an7.52:7.2": "he gives a gift with the thought,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an8.8:11.2",
+          "an8.8:11.7"
+        ],
+        "status": "corrected",
+        "rationale": "Each separately enumerated worldly condition belongs on its own original Pali line; the common bracketed introduction stays with the first item.",
+        "resolvedStarts": {
+          "an8.8:11.2": "[Similarly with any arisen lack of material gain,",
+          "an8.8:11.3": "any arisen status,",
+          "an8.8:11.4": "any arisen lack of status,",
+          "an8.8:11.5": "any arisen offerings,",
+          "an8.8:11.6": "any arisen lack of offerings,",
+          "an8.8:11.7": "any arisen evil ambition,",
+          "an8.8:11.8": "& any arisen evil friendship.]"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti102:5.3"
+        ],
+        "status": "corrected",
+        "rationale": "Uncomprehending and fool render bala avijanata on5.2; attained Unbinding renders nibbanam adhigantabbam on5.3.",
+        "resolvedStarts": {
+          "iti102:5.2": "fool uncomprehending,",
+          "iti102:5.3": "is there attained Unbinding,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti106:5.2"
+        ],
+        "status": "corrected",
+        "rationale": "Homage renders namasseyya on5.1; honor renders sakkareyya on5.2. Food and drink remain5.3; do not quote across that boundary.",
+        "resolvedStarts": {
+          "iti106:5.2": "honor,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti108:4.2"
+        ],
+        "status": "corrected",
+        "rationale": "Pliant renders atthaddha; well-centered renders susamahita on4.2. Growing in Dhamma remains4.3.",
+        "resolvedStarts": {
+          "iti108:4.2": "pliant, well-centered:"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti24:3.2"
+        ],
+        "status": "grouped",
+        "rationale": "Sujato reorders the verse. The Pali first line gives one individual and one eon, its second gives the accumulation of bones. English places the eon after the bones, so keep the smallest coherent first-two-line phrase together, and preserve the mountain statement on3.3.",
+        "resolvedStarts": {
+          "iti24:3.2": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti31:3.3"
+        ],
+        "status": "rejected",
+        "rationale": "The current separate bodily, verbal and mental misconduct phrases match original Pali3.1/3.2/3.3. Incoming finding follows a reordered Sujato verse and would corrupt the match.",
+        "resolvedStarts": {
+          "iti31:3.3": "misconduct of mind,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti37:3.1",
+          "iti37:3.2"
+        ],
+        "status": "grouped",
+        "rationale": "The urgency target and the wise subject are one English clause; keep their smallest coherent group on the first Pali line. The separate ardent monk and investigation phrases remain3.3/3.4.",
+        "resolvedStarts": {
+          "iti37:3.1": "Feeling urgency right here toward what should",
+          "iti37:3.2": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti37:4.3"
+        ],
+        "status": "corrected",
+        "rationale": "At peace renders santavutti on4.2; awareness-tranquility renders cetosamatham on4.3.",
+        "resolvedStarts": {
+          "iti37:4.3": "committed to awareness-tranquility,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti51:4.2"
+        ],
+        "status": "corrected",
+        "rationale": "The full free-from-acquisitions phrase belongs with nirupadhim. The following realization clause keeps its original separate boundary.",
+        "resolvedStarts": {
+          "iti51:4.2": "free from acquisitions,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti60:3.3",
+          "iti60:3.4"
+        ],
+        "status": "corrected",
+        "rationale": "Separate generosity and conduct from the mind of goodwill; each is independently rendered in the Pali verse.",
+        "resolvedStarts": {
+          "iti60:3.3": "develop generosity, a life in tune,",
+          "iti60:3.4": "a mind of good will."
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti65:3.2",
+          "iti65:3.3",
+          "iti65:4.1",
+          "iti65:4.2"
+        ],
+        "status": "corrected",
+        "rationale": "Reject the Sujato-derived misconduct merge: original Pali has separate verbal and mental misconduct lines. Separately place the not-skillful and skillful clauses on4.1/4.2.",
+        "resolvedStarts": {
+          "iti65:3.2": "acts of verbal misconduct,",
+          "iti65:3.3": "misconduct of mind,",
+          "iti65:4.1": "not having done what’s not skillful,",
+          "iti65:4.2": "having done much that is,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti70:3.2",
+          "iti70:4.1"
+        ],
+        "status": "corrected",
+        "rationale": "The repeated I-have-seen-beings statement belongs with dittha maya satta, not the prior claim of firsthand knowledge. Quote only its own opening; the previous finding ran past the line opening into the next unchanged boundary.",
+        "resolvedStarts": {
+          "iti70:3.2": "I have seen beings who–",
+          "iti70:4.1": "I have seen beings who–"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti75:10.2",
+          "iti75:10.4"
+        ],
+        "status": "rejected",
+        "rationale": "The original Pali places having rightly amassed on10.3 and wealth attained through initiative on10.4. The person-like-this phrase covers10.1/10.2; Sujato moves the accumulation into10.2. Existing cuts follow Pali.",
+        "resolvedStarts": {
+          "iti75:10.2": null,
+          "iti75:10.4": "wealth attained through initiative,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti83:15.3"
+        ],
+        "status": "rejected",
+        "rationale": "The current separate verbal and mental misconduct phrases match original Pali15.2/15.3; Sujato combines/reorders these subjects.",
+        "resolvedStarts": {
+          "iti83:15.3": "mental misconduct,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "snp2.4:8.2"
+        ],
+        "status": "corrected",
+        "rationale": "Refraining from intoxicants renders majjapana ca samyamo. The heedfulness phrase belongs to the following Pali line.",
+        "resolvedStarts": {
+          "snp2.4:8.2": "refraining from intoxicants,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "snp5.11:4.2"
+        ],
+        "status": "corrected",
+        "rationale": "Fully unbound belongs with ditthadhamma abhinibbuta; do not include words from the next Mara clause.",
+        "resolvedStarts": {
+          "snp5.11:4.2": "fully unbound in the here-&-now,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "thag6.3:1.3"
+        ],
+        "status": "corrected",
+        "rationale": "Is (not) found completes the preceding respect clause; the doctrinal consequence starts on the third original Pali line.",
+        "resolvedStarts": {
+          "thag6.3:1.3": "wastes away from the True Dhamma"
+        }
+      },
+      {
+        "reportedKeys": [
+          "thag6.3:2.3"
+        ],
+        "status": "corrected",
+        "rationale": "Is (not) found completes the preceding respect clause; the doctrinal consequence starts on the third original Pali line.",
+        "resolvedStarts": {
+          "thag6.3:2.3": "doesn’t grow in the True Dhamma,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "thag6.3:3.3"
+        ],
+        "status": "corrected",
+        "rationale": "Is (not) found completes the preceding respect clause; the doctrinal consequence starts on the third original Pali line.",
+        "resolvedStarts": {
+          "thag6.3:3.3": "is far away from unbinding"
+        }
+      },
+      {
+        "reportedKeys": [
+          "thag6.3:5.3"
+        ],
+        "status": "corrected",
+        "rationale": "Is (not) found completes the preceding respect clause; the doctrinal consequence starts on the third original Pali line.",
+        "resolvedStarts": {
+          "thag6.3:5.3": "grows in the True Dhamma,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "thig5.11:2.5"
+        ],
+        "status": "grouped",
+        "rationale": "The translator moves tranquility and Buddha bidding before washing feet and sitting. Preserve source order by grouping exactly2.3–2.6 on2.3, rather than forcing tranquility onto an earlier regret statement.",
+        "resolvedStarts": {
+          "thig5.11:2.3": "Intent on tranquility of awareness,",
+          "thig5.11:2.4": null,
+          "thig5.11:2.5": null,
+          "thig5.11:2.6": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn22.84:7.7",
+          "sn22.84:8.3"
+        ],
+        "status": "corrected",
+        "rationale": "The fabrications question and its contracted answer/acknowledgment remain within7.6. The consciousness question must start7.7, its answer7.8 and acknowledgment8.1/8.2; the consciousness affirmation starts8.3. This overrides a previous by-hand start that left the whole consciousness exchange on8.3.",
+        "resolvedStarts": {
+          "sn22.84:7.7": "“What do you think, Tissa? In one",
+          "sn22.84:7.8": "“No, lord.”",
+          "sn22.84:8.1": "“Good, Tissa, good.",
+          "sn22.84:8.2": "That’s how it is",
+          "sn22.84:8.3": "for one who is without passion for consciousness."
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn22.84:5.3"
+        ],
+        "status": "rejected",
+        "rationale": "The original Pali5.3 combines the fabrications affirmation and consciousness question on one line. The existing dictionary hand finding retains both correctly; incoming start would drag the affirmation onto5.2.",
+        "resolvedStarts": {
+          "sn22.84:5.3": "for one who is not without passion for fabrications."
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn3.19:4.5",
+          "sn3.19:4.6"
+        ],
+        "status": "corrected",
+        "rationale": "The theft/fire/flood recital is abbreviated out. His wealth (not) properly put to use introduces the waste/use conclusion on the sixth line, not the fifth omitted recital.",
+        "resolvedStarts": {
+          "sn3.19:4.5": null,
+          "sn3.19:4.6": "his wealth, not properly put to use,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn3.19:6.5",
+          "sn3.19:6.6"
+        ],
+        "status": "corrected",
+        "rationale": "The theft/fire/flood recital is abbreviated out. His wealth (not) properly put to use introduces the waste/use conclusion on the sixth line, not the fifth omitted recital.",
+        "resolvedStarts": {
+          "sn3.19:6.5": null,
+          "sn3.19:6.6": "his wealth, properly put to use,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn3.21:14.1"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali first gives contemplatives/brahmans, second other mendicants, third standing and bowing; Sujato moves the bowing first. Restore all three independently meaningful clauses to original Pali.",
+        "resolvedStarts": {
+          "sn3.21:14.1": "contemplatives, brahmans,",
+          "sn3.21:14.2": "& other mendicants,",
+          "sn3.21:14.3": "Standing up, he bows down"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn3.21:20.1"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali first gives contemplatives/brahmans, second other mendicants, third standing and bowing; Sujato moves the bowing first. Restore all three independently meaningful clauses to original Pali.",
+        "resolvedStarts": {
+          "sn3.21:20.1": "contemplatives, brahmans,",
+          "sn3.21:20.2": "& other mendicants,",
+          "sn3.21:20.3": "Standing up, he bows down"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn3.9:6.2",
+          "sn3.9:6.3"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali gives nonviolent sacrifices, family custom, animals, non-killing, then sages attending. Sujato reorders the whole stanza. Correct both adjacent stanzas directly against Pali; retain the smallest inseparable sages/attending groups.",
+        "resolvedStarts": {
+          "sn3.9:5.1": "Where goats, rams, & cattle",
+          "sn3.9:5.2": "of various kinds are killed:",
+          "sn3.9:5.3": "Those of right conduct, great seers,",
+          "sn3.9:5.4": null,
+          "sn3.9:6.1": "But sacrifices free from violence,",
+          "sn3.9:6.2": "offered always in line with family custom,",
+          "sn3.9:6.3": "where goats, rams, & cattle",
+          "sn3.9:6.4": "of various kinds are not killed:",
+          "sn3.9:6.5": "Those of right conduct, great seers,",
+          "sn3.9:6.6": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn35.245:7.3",
+          "sn35.245:7.4"
+        ],
+        "status": "corrected",
+        "rationale": "The short speaker introduction separately renders so evam vadeyya; it must remain on its own Pali line before the quotation.",
+        "resolvedStarts": {
+          "sn35.245:7.3": "“The other would say,",
+          "sn35.245:7.4": "‘A riddle tree is red, my good"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn35.245:7.8",
+          "sn35.245:7.9"
+        ],
+        "status": "corrected",
+        "rationale": "The short speaker introduction separately renders so evam vadeyya; it must remain on its own Pali line before the quotation.",
+        "resolvedStarts": {
+          "sn35.245:7.8": "“The other would say,",
+          "sn35.245:7.9": "‘A riddle tree is stripped of its"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn35.245:7.13",
+          "sn35.245:7.14"
+        ],
+        "status": "corrected",
+        "rationale": "The short speaker introduction separately renders so evam vadeyya; it must remain on its own Pali line before the quotation.",
+        "resolvedStarts": {
+          "sn35.245:7.13": "“The other would say,",
+          "sn35.245:7.14": "‘A riddle tree has thick foliage, my"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn35.95:2.2"
+        ],
+        "status": "corrected",
+        "rationale": "When you introduces the aged monk on the second Pali line; restore its own short opening, without quoting across the line end.",
+        "resolvedStarts": {
+          "sn35.95:2.2": "when you— aged, old, elderly,"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn36.19:2.6"
+        ],
+        "status": "rejected",
+        "rationale": "The translator abbreviates both second utterances as one A second time ellipsis, already on their first line2.1. Moving it to the second speaker2.6 would falsely imply the first repetition was untranslated.",
+        "resolvedStarts": {
+          "sn36.19:2.6": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn4.25:7.2",
+          "sn4.25:7.4"
+        ],
+        "status": "corrected",
+        "rationale": "The proposal Why do we assume belongs to yannuna abhinimmineyyama on7.2; the actual manifestation on7.4 is abbreviated out.",
+        "resolvedStarts": {
+          "sn4.25:7.2": "Why don’t we each assume the form",
+          "sn4.25:7.4": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn5.7:5.1",
+          "sn5.7:5.2",
+          "sn5.7:5.3"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali gives unshaken/unburning, ordinary people not partaking, Mara not going, then heart delighting. Sujato reorders the verse; restore all four clauses to the Pali order.",
+        "resolvedStarts": {
+          "sn5.7:5.1": "The unshaken, untrembling —",
+          "sn5.7:5.2": "of which people run-of-the-mill don’t partake,",
+          "sn5.7:5.3": "where Māra’s never been—",
+          "sn5.7:5.4": "that’s where my heart truly delights.”"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn52.10:2.6"
+        ],
+        "status": "corrected",
+        "rationale": "Split the contracted feelings and mind list onto their separate original Pali lines; the mental-qualities clause stays2.7.",
+        "resolvedStarts": {
+          "sn52.10:2.5": "I remain focused on feelings in &",
+          "sn52.10:2.6": "mind in & of itself…"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn55.54:2.4",
+          "sn55.54:2.5"
+        ],
+        "status": "corrected",
+        "rationale": "Be reassured friend separately renders assasatayasma; it belongs on2.4 before the Dhamma confidence statement.",
+        "resolvedStarts": {
+          "sn55.54:2.4": "“‘Be reassured, friend,",
+          "sn55.54:2.5": "that you have verified confidence in the Dhamma:"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti91:5.3"
+        ],
+        "status": "corrected",
+        "rationale": "The glowing phrase already belongs to tatto aggisikhupamo on5.2. Start the contrasting immoral alms-eater clause on5.3 and keep its smallest inseparable3/4 group there.",
+        "resolvedStarts": {
+          "iti91:5.3": "than that, unprincipled & unrestrained,",
+          "iti91:5.4": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "an9.38:4.13"
+        ],
+        "status": "corrected",
+        "rationale": "I tell you is the declaration vadami on4.13, not part of the preceding why question.",
+        "resolvedStarts": {
+          "an9.38:4.13": "I tell you, it isn’t through that sort"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti60:4.4"
+        ],
+        "status": "grouped",
+        "rationale": "Original Pali puts the happy untroubled world before the wise rebirth subject. English puts the wise subject first and world afterward; group exactly the final two verse lines on their first line.",
+        "resolvedStarts": {
+          "iti60:4.4": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti22:6.4"
+        ],
+        "status": "grouped",
+        "rationale": "Original Pali puts the happy untroubled world before the wise rebirth subject. English puts the wise subject first and world afterward; group exactly the final two verse lines on their first line.",
+        "resolvedStarts": {
+          "iti22:6.4": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn51.20:7.2"
+        ],
+        "status": "corrected",
+        "rationale": "Both front-behind equivalence clauses render the second Pali line, not only its latter half.",
+        "resolvedStarts": {
+          "sn51.20:7.2": "so that what is in front is"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti111:10.6"
+        ],
+        "status": "grouped",
+        "rationale": "The English attribution is said to be precedes continually resolute, whereas original Pali puts the quotation first and attribution second. Group these final two lines on10.5.",
+        "resolvedStarts": {
+          "iti111:10.6": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn12.35:1.3"
+        ],
+        "status": "corrected",
+        "rationale": "The explicitly translated birth-to-death tail belongs to the contracted dependency chain on1.3, rather than the ignorance-to-fabrications statement on1.2.",
+        "resolvedStarts": {
+          "sn12.35:1.3": "From birth as a requisite condition, then"
+        }
+      },
+      {
+        "reportedKeys": [
+          "iti61:3.4"
+        ],
+        "status": "corrected",
+        "rationale": "Were taught renders akkhasi and belongs with the Superlative Person on the fourth line.",
+        "resolvedStarts": {
+          "iti61:3.4": "were taught by the Superlative Person."
+        }
+      },
+      {
+        "reportedKeys": [
+          "snp5.6:2.3"
+        ],
+        "status": "rejected",
+        "rationale": "Nipako sato explicitly renders astute and mindful together on2.3. The incoming ampersand-only opening would move astute away from its original Pali line.",
+        "resolvedStarts": {
+          "snp5.6:2.3": "astute & mindful right here."
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn12.65:4.15"
+        ],
+        "status": "corrected",
+        "rationale": "Name-and-form is explicitly rendered on the final named link4.15; the preceding birth-through-six-senses links are abbreviated out.",
+        "resolvedStarts": {
+          "sn12.65:4.8": null,
+          "sn12.65:4.15": "‘Name-&-form doesn’t exist when what doesn’t exist?"
+        }
+      },
+      {
+        "reportedKeys": [
+          "snp5.16:3.2"
+        ],
+        "status": "rejected",
+        "rationale": "English I have come with a question explicitly renders atthi panhena agamam on the second original Pali line. Sujato reorders these two lines.",
+        "resolvedStarts": {
+          "snp5.16:3.2": "I’ve come with a desire for a question:"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn22.58:3.1",
+          "sn22.58:3.2"
+        ],
+        "status": "grouped",
+        "rationale": "Perception and fabrication are contracted inside each complete Buddha/monk refrain, not free-standing clauses. Keep their incomplete shared-predicate fragments grouped, but split the complete second refrain onto its own original Pali line2.2.",
+        "resolvedStarts": {
+          "sn22.58:2.2": "And a discernment-released monk—who from disenchantment",
+          "sn22.58:3.1": null,
+          "sn22.58:3.2": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "ud6.1:11.2",
+          "ud6.1:12.2"
+        ],
+        "status": "corrected",
+        "rationale": "The contracted nun, male-lay and female-lay disciple list can be split at its explicit category boundaries. Each belongs to its own Pali quotation; preserve omitted intervening repetition lines.",
+        "resolvedStarts": {
+          "ud6.1:11.2": "my male lay-follower disciples…",
+          "ud6.1:12.2": "my female lay-follower disciples are not yet"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn22.80:3.9"
+        ],
+        "status": "corrected",
+        "rationale": "Split the initial novices, consequence, calf simile, seedlings simile, and final repeated novices comparison. The calf comparison recurrence3.8 is omitted; the final recurrence translates3.10.",
+        "resolvedStarts": {
+          "sn22.80:3.6": "If they do not see the Blessed One,",
+          "sn22.80:3.7": "Just as when a young calf does",
+          "sn22.80:3.8": null,
+          "sn22.80:3.9": "Just as when young seedlings don’t get",
+          "sn22.80:3.10": "in the same way, there are monks"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn22.80:10.8",
+          "sn22.80:10.13"
+        ],
+        "status": "corrected",
+        "rationale": "Restore the first No response and each aggregate question; the entire form-through-consciousness conclusion belongs under tasmatiha10.13, not under the earlier aggregate questions.",
+        "resolvedStarts": {
+          "sn22.80:10.8": "“No, lord.”",
+          "sn22.80:10.9": "“… Is feeling constant or inconstant?”",
+          "sn22.80:10.10": "“… Is perception constant or inconstant?”",
+          "sn22.80:10.11": "“… Are fabrications constant or inconstant?”",
+          "sn22.80:10.12": "“What do you think, monks? Is consciousness",
+          "sn22.80:10.13": "“Thus, monks, any form whatsoever that is"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an8.39:5.2",
+          "an8.39:6.2"
+        ],
+        "status": "rejected",
+        "rationale": "The original Pali line is an ellipsis repeating the entire gift-and-merit conclusion. Keeping the complete third/fourth gift and sixth/seventh merit conclusion together correctly renders that contraction.",
+        "resolvedStarts": {
+          "an8.39:5.2": "This is the third gift, the third great",
+          "an8.39:6.2": "This is the fourth gift, the fourth great"
+        }
+      },
+      {
+        "reportedKeys": [
+          "ud5.6:5.4"
+        ],
+        "status": "rejected",
+        "rationale": "The available subsiding statement explicitly says a second time and correctly renders6.5. The first subsiding statement5.4 is omitted, so do not steal the second occurrence.",
+        "resolvedStarts": {
+          "ud5.6:5.4": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "snp3.3:1.2"
+        ],
+        "status": "corrected",
+        "rationale": "On one occasion renders eka samayam and belongs with the Buddha location statement1.2.",
+        "resolvedStarts": {
+          "snp3.3:1.2": "on one occasion the Blessed One was"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an10.99:3.5"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali second line repeats the completed ear/back washing before bathing and leaving. And then having playfully squirted begins that second line.",
+        "resolvedStarts": {
+          "an10.99:3.5": "and then—having playfully squirted water into my"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an10.99:3.7"
+        ],
+        "status": "corrected",
+        "rationale": "Original Pali second line repeats the completed ear/back washing before bathing and leaving. And then having playfully squirted begins that second line.",
+        "resolvedStarts": {
+          "an10.99:3.7": "and then—having playfully squirted water into his"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn55.54:7.4"
+        ],
+        "status": "corrected",
+        "rationale": "The Friend vocative introduces the Contented Devas quotation and belongs with that contracted quoted instruction.",
+        "resolvedStarts": {
+          "sn55.54:7.4": "‘Friend, the Contented Devas are more splendid"
+        }
+      },
+      {
+        "reportedKeys": [
+          "an3.63:6.13"
+        ],
+        "status": "rejected",
+        "rationale": "This on that occasion is my bed explicitly renders tasmin samaye uccasayana on the preceding Pali line12. The separate concluding nikamalabhi claim on13 is omitted; merge the English predicate back into12.",
+        "resolvedStarts": {
+          "an3.63:6.13": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "an3.63:8.13"
+        ],
+        "status": "rejected",
+        "rationale": "This on that occasion is my bed explicitly renders tasmin samaye uccasayana on the preceding Pali line12. The separate concluding nikamalabhi claim on13 is omitted; merge the English predicate back into12.",
+        "resolvedStarts": {
+          "an3.63:8.13": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "an3.63:10.13"
+        ],
+        "status": "rejected",
+        "rationale": "This on that occasion is my bed explicitly renders tasmin samaye uccasayana on the preceding Pali line12. The separate concluding nikamalabhi claim on13 is omitted; merge the English predicate back into12.",
+        "resolvedStarts": {
+          "an3.63:10.13": null
+        }
+      },
+      {
+        "reportedKeys": [
+          "an3.82:1.2"
+        ],
+        "status": "retained",
+        "rationale": "Saying is a supplied introduction to the direct quotation, with no independently rendered Pali reporting clause; retain the coherent quotation introduction.",
+        "resolvedStarts": {
+          "an3.82:1.2": "saying, ‘I too am a cow! I too"
+        }
+      },
+      {
+        "reportedKeys": [
+          "ud5.10:4.6"
+        ],
+        "status": "corrected",
+        "rationale": "After another completes the preceding successive-distinction phrase. The death-king clause starts at he goes.",
+        "resolvedStarts": {
+          "ud5.10:4.6": "he goes where the King of Death can’t"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn44.1:2.3"
+        ],
+        "status": "corrected",
+        "rationale": "On seeing her explicitly renders disvana at the beginning of the third original Pali line.",
+        "resolvedStarts": {
+          "sn44.1:2.3": "On seeing her, he went to King"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn44.1:5.7"
+        ],
+        "status": "corrected",
+        "rationale": "Split the explicit list of death hypotheses at each original Pali question, and split the declared/not-declared quote portions on5.2/3 and5.11/12; intervening repeated answers are omitted.",
+        "resolvedStarts": {
+          "sn44.1:5.3": "“The Tathāgata exists after death.”’",
+          "sn44.1:5.4": "When asked if the Tathāgata does not",
+          "sn44.1:5.7": "both exists and does not exist after death…",
+          "sn44.1:5.10": "neither exists nor does not exist after death,",
+          "sn44.1:5.11": "‘That too has not been declared by",
+          "sn44.1:5.12": "“The Tathāgata neither exists nor does not"
+        }
+      },
+      {
+        "reportedKeys": [
+          "sn56.104:1.1"
+        ],
+        "status": "unresolved-source-correspondence",
+        "rationale": "The original Pali describes beings passing from humans to humans/ghosts. The saved English explicitly says passing from the deva realm and includes hell/animal/ghost alternatives. Both proposed starts fail semantic certification; requires source/text identification review, outside a monotonic boundary correction. No new hand override is supplied."
+      },
+      {
+        "reportedKeys": [
+          "iti93:8.1",
+          "iti93:8.2",
+          "iti93:8.3",
+          "iti93:8.4"
+        ],
+        "status": "grouped",
+        "rationale": "Adjacent to incoming7.4, original Pali8.1 has extinguishing the fires, while saved English incorrectly puts that on8.3. English places the night/day phrase before extinguishing, and overcoming stress before unbinding. Preserve order with exactly two smallest groups:8.1/8.2 and8.3/8.4.",
+        "resolvedStarts": {
+          "iti93:8.2": null,
+          "iti93:8.3": "having, without remainder, comprehended stress,",
+          "iti93:8.4": null,
+          "iti93:8.1": "They, the masterful,"
+        }
+      }
+    ],
+    "outsideImportExceptions": [
+      {
+        "key": "an1.37:1.1",
+        "kind": "not found"
+      },
+      {
+        "key": "an1.39:1.1",
+        "kind": "not found"
+      },
+      {
+        "key": "an4.19:2.1",
+        "kind": "not found"
+      },
+      {
+        "key": "an4.19:2.4",
+        "kind": "not found"
+      },
+      {
+        "key": "an4.19:4.1",
+        "kind": "not found"
+      },
+      {
+        "key": "dn22:11.2",
+        "kind": "not found"
+      },
+      {
+        "key": "dn33:2.2.59",
+        "kind": "not found"
+      },
+      {
+        "key": "dn33:3.1.140",
+        "kind": "not found"
+      },
+      {
+        "key": "dn33:3.1.141",
+        "kind": "not found"
+      },
+      {
+        "key": "dn33:3.3.26",
+        "kind": "not found"
+      },
+      {
+        "key": "iti84:7.3",
+        "kind": "not found"
+      },
+      {
+        "key": "mn102:12.9",
+        "kind": "not found"
+      },
+      {
+        "key": "mn102:12.10",
+        "kind": "not found"
+      },
+      {
+        "key": "an1.33:1.1",
+        "kind": "takes no effect"
+      },
+      {
+        "key": "an1.33:1.2",
+        "kind": "takes no effect"
+      },
+      {
+        "key": "an1.35:1.1",
+        "kind": "takes no effect"
+      },
+      {
+        "key": "an1.35:1.2",
+        "kind": "takes no effect"
+      },
+      {
+        "key": "an1.76:1.1",
+        "kind": "takes no effect"
+      },
+      {
+        "key": "iti84:7.4",
+        "kind": "takes no effect"
+      }
+    ],
+    "hiddenHandConflicts": {
+      "sn22.84:5.3": {
+        "incoming": [
+          [
+            "“What do you think, Tissa? In one",
+            "batch-025.findings"
+          ]
+        ],
+        "hand": [
+          [
+            "for one who is not without passion for fabrications.",
+            "dictionary.findings"
+          ]
+        ]
+      },
+      "sn22.84:8.3": {
+        "incoming": [
+          [
+            "for one who is without passion for",
+            "batch-025.findings"
+          ]
+        ],
+        "hand": [
+          [
+            "“What do you think, Tissa? In one who is",
+            "disputed-002.findings"
+          ]
+        ]
+      }
+    },
+    "countsByDecision": {
+      "grouped": 9,
+      "corrected": 49,
+      "rejected": 12,
+      "retained": 1,
+      "unresolved-source-correspondence": 1
+    }
+  },
+  "exceptionStatusNote": "Exception rationales describe the proposal stage. Applicable hand repairs are integrated and validated; source/correspondence limitations remain explicitly deferred in the consolidated review record."
+}

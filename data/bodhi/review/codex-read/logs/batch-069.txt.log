@@ -1,0 +1,419 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd8b-9601-7aa1-ac49-2e0f20efe3a2
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear boundary misplacements, and write the findings to the specified file.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.3
+sn12.3:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.3:1.2 | S: “Mendicants, I will teach you the wrong practice and the right practice. | T: “Bhikkhus, I will teach you the wrong way and the right way.
+sn12.3:1.3 | S: Listen and apply your mind well, I will speak.” | T: Listen to that and attend closely, I will speak.”
+sn12.3:1.4 | S: “Yes, sir,” they replied. | T: “Yes, venerable sir,” those bhikkhus replied.
+sn12.3:1.5 | S: The Buddha said this: | T: The Blessed One said this:
+sn12.3:2.1 | S: “And what’s the wrong practice? | T: “And what, bhikkhus, is the wrong way?
+sn12.3:2.2 | S: Ignorance is a requirement for choices. | T: With ignorance as condition, volitional formations come to be;
+sn12.3:2.3 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.3:2.4 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.3:2.5 | S: This is called the wrong practice. | T: This, bhikkhus, is called the wrong way.
+sn12.3:3.1 | S: And what’s the right practice? | T: “And what, bhikkhus, is the right way?
+sn12.3:3.2 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: With the remainderless fading away and cessation of ignorance comes cessation of volitional formations;
+sn12.3:3.3 | S: When choices cease, consciousness ceases. … | T: with the cessation of volitional formations, cessation of consciousness….
+sn12.3:3.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.3:3.5 | S: This is called the right practice.” | T: This, bhikkhus, is called the right way.”
+sn12.3:3.6 | P: Tatiyaṁ. | T: (none)
+
+## sn12.41
+sn12.41:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.41:1.2 | S: Then the householder Anāthapiṇḍika went up to the Buddha, bowed, and sat down to one side. Seated to one side, the Buddha said to the householder Anāthapiṇḍika: | T: Then the householder Anathapiṇḍika approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+sn12.41:2.1 | S: “Householder, when a noble disciple has quelled five fears and enmities, possesses the four factors of stream-entry, and has clearly seen and penetrated the noble system with wisdom, they may, if they wish, declare of themselves: | T: “Householder, when five fearful animosities have subsided in a noble disciple, and he possesses the four factors of stream-entry, and he has clearly seen and thoroughly penetrated with wisdom the noble method, if he wishes he could by himself declare of himself:
+sn12.41:2.2 | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’ | T: ‘I am one finished with hell, finished with the animal realm, finished with the domain of ghosts, finished with the plane of misery, the bad destinations, the nether world. I am a stream-enterer, no longer bound to the nether world, fixed in destiny, with enlightenment as my destination.’
+sn12.41:3.1 | S: What are the five fears and enmities they have quelled? | T: “What are the five fearful animosities that have subsided?
+sn12.41:3.2 | S: Anyone who kills living creatures brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. That fear and enmity is quelled for anyone who refrains from killing living creatures. | T: Householder, one who destroys life engenders, on account of such behaviour, fearful animosity pertaining to the present life and fearful animosity pertaining to the future life, and he experiences mental pain and displeasure. Thus for one who abstains from destroying life, this fearful animosity has subsided.
+sn12.41:4.1 | S: Anyone who steals brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. That fear and enmity is quelled for anyone who refrains from stealing. | T: “One who takes what is not given … …
+sn12.41:5.1 | S: Anyone who commits sexual misconduct brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. That fear and enmity is quelled for anyone who refrains from sexual misconduct. | T: who engages in sexual misconduct …
+sn12.41:6.1 | S: Anyone who lies brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. That fear and enmity is quelled for anyone who refrains from lying. | T: who speaks falsely …
+sn12.41:7.1 | S: Anyone who consumes beer, wine, and liquor intoxicants brims with fear and enmity both in this life and in lives to come, and experiences mental pain and sadness. That fear and enmity is quelled for anyone who refrains from beer, wine, and liquor intoxicants. | T: who indulges in wine, liquor, and intoxicants that are a basis for negligence engenders, on account of such behaviour, fearful animosity pertaining to the present life and fearful animosity pertaining to the future life, and he experiences mental pain and displeasure. Thus for one who abstains from wine, liquor, and intoxicants that are a basis for negligence, this fearful animosity has subsided.
+sn12.41:7.2 | S: These are the five fears and enmities they have quelled. | T: “These are the five fearful animosities that have subsided.
+sn12.41:8.1 | S: What are the four factors of stream-entry that they possess? | T: “What are the four factors of stream-entry that he possesses?
+sn12.41:8.2 | S: It’s when a noble disciple has experiential confidence in the Buddha: | T: Here, householder, the noble disciple possesses confirmed confidence in the Buddha thus:
+sn12.41:8.3 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘The Blessed One is an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed leader of persons to be tamed, teacher of devas and humans, the Enlightened One, the Blessed One.’
+sn12.41:9.1 | S: They have experiential confidence in the teaching: | T: “He possesses confirmed confidence in the Dhamma thus:
+sn12.41:9.2 | S: ‘The teaching is well explained by the Buddha—apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.’ | T: ‘The Dhamma is well expounded by the Blessed One, directly visible, immediate, inviting one to come and see, applicable, to be personally experienced by the wise.’
+sn12.41:10.1 | S: They have experiential confidence in the Saṅgha: | T: “He possesses confirmed confidence in the Saṅgha thus:
+sn12.41:10.2 | S: ‘The Saṅgha of the Buddha’s disciples is practicing the way that’s good, direct, systematic, and proper. It consists of the four pairs, the eight individual persons. This is the Saṅgha of the Buddha’s disciples that is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of greeting with cupped palms, and is the supreme field of merit for the world.’ | T: ‘The Saṅgha of the Blessed One’s disciples is practising the good way, practising the straight way, practising the true way, practising the proper way; that is, the four pairs of persons, the eight types of individuals—this Saṅgha of the Blessed One’s disciples is worthy of gifts, worthy of hospitality, worthy of offerings, worthy of reverential salutation, the unsurpassed field of merit for the world.’
+sn12.41:11.1 | S: And a noble disciple’s ethical conduct is loved by the noble ones, unbroken, impeccable, spotless, and unmarred, liberating, praised by sensible people, not mistaken, and leading to immersion. | T: “He possesses the virtues dear to the noble ones—unbroken, untorn, unblemished, unmottled, freeing, praised by the wise, ungrasped, leading to concentration.
+sn12.41:11.2 | S: These are the four factors of stream-entry that they possess. | T: “These are the four factors of stream-entry that he possesses.
+sn12.41:12.1 | S: And what is the noble system that they have clearly seen and penetrated with wisdom? | T: “And what is the noble method that he has clearly seen and thoroughly penetrated with wisdom?
+sn12.41:12.2 | S: A noble disciple carefully and rationally applies the mind to dependent origination itself: | T: Here, householder, the noble disciple attends closely and carefully to dependent origination itself thus: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.41:12.3 | S: ‘So, when this exists, that comes to be; when this doesn’t exist, that is not. | T: When this does not exist, that does not come to be;
+sn12.41:12.4 | S: Due to the arising of this, that arises; due to the cessation of this, that ceases. | T: with the cessation of this, that ceases.
+sn12.41:12.5 | S: Ignorance is a requirement for choices. | T: That is, with ignorance as condition, volitional formations come to be;
+sn12.41:12.6 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.41:12.7 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.41:12.8 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations;
+sn12.41:12.9 | S: When choices cease, consciousness ceases. … | T: with the cessation of volitional formations, cessation of consciousness….
+sn12.41:12.10 | S: That is how this entire mass of suffering ceases.’ | T: Such is the cessation of this whole mass of suffering.’
+sn12.41:12.11 | S: This is the noble system that they have clearly seen and penetrated with wisdom. | T: “This is the noble method that he has clearly seen and thoroughly penetrated with wisdom.
+sn12.41:13.1 | S: When a noble disciple has quelled five fears and enmities, possesses the four factors of stream-entry, and has clearly seen and penetrated the noble system with wisdom, they may, if they wish, declare of themselves: | T: “When, householder, these five fearful animosities have subsided in a noble disciple, and he possesses these four factors of stream-entry, and he has clearly seen and thoroughly penetrated with wisdom this noble method, if he wishes he could by himself declare of himself:
+sn12.41:13.2 | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’” | T: ‘I am one finished with hell, finished with the animal realm, finished with the domain of ghosts, finished with the plane of misery, the bad destinations, the nether world. I am a stream-enterer, no longer bound to the nether world, fixed in destiny, with enlightenment as my destination.’”
+sn12.41:13.3 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.46
+sn12.46:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.46:1.2 | S: Then a certain brahmin went up to the Buddha, and exchanged greetings with him. | T: Then a certain brahmin approached the Blessed One and exchanged greetings with him.
+sn12.46:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.46:2.1 | S: “Worthy Gotama, are he who does the deed and he who experiences the result one and the same?” | T: “How is it, Master Gotama: is the one who acts the same as the one who experiences the result?”
+sn12.46:2.2 | S: “‘He who does the deed and he who experiences the result are one and the same’: this is one extreme, brahmin.” | T: “‘The one who acts is the same as the one who experiences the result’: this, brahmin, is one extreme.”
+sn12.46:3.1 | S: “Then is he who does the deed one and he who experiences the result another?” | T: “Then, Master Gotama, is the one who acts one, and the one who experiences the result another?”
+sn12.46:3.2 | S: “‘He who does the deed is one and he who experiences the result is another’: this is the second extreme. | T: “‘The one who acts is one, and the one who experiences the result is another’: this, brahmin, is the second extreme.
+sn12.46:3.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.46:3.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.46:3.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.46:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.46:3.7 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.46:3.8 | S: When choices cease … | T: cessation of consciousness….
+sn12.46:3.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.46:4.1 | S: When he said this, the brahmin said to the Buddha, | T: When this was said, that brahmin said to the Blessed One:
+sn12.46:4.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama!…
+sn12.46:4.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: I go for refuge to Master Gotama, and to the Dhamma, and to the Bhikkhu Saṅgha. From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn12.46:4.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn12.61
+sn12.61:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.61:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. … | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park….
+sn12.61:1.3 | S: “Mendicants, an unlearned ordinary person might become disillusioned, dispassionate, and freed from this body made up of the four principal states. | T: “Bhikkhus, the uninstructed worldling might experience revulsion towards this body composed of the four great elements; he might become dispassionate towards it and be liberated from it.
+sn12.61:1.4 | S: Why is that? | T: For what reason?
+sn12.61:1.5 | S: This body made up of the four principal states is seen to accumulate and disperse, to be taken up and laid to rest. | T: Because growth and decline is seen in this body composed of the four great elements, it is seen being taken up and laid aside.
+sn12.61:1.6 | S: That’s why an unlearned ordinary person might become disillusioned, dispassionate, and freed from it. | T: Therefore the uninstructed worldling might experience revulsion towards this body composed of the four great elements; he might become dispassionate towards it and be liberated from it.
+sn12.61:2.1 | S: But an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’. | T: “But, bhikkhus, as to that which is called ‘mind’ and ‘mentality’ and ‘consciousness’ —the uninstructed worldling is unable to experience revulsion towards it, unable to become dispassionate towards it and be liberated from it.
+sn12.61:2.2 | S: Why is that? | T: For what reason?
+sn12.61:2.3 | S: Because for a long time they’ve been attached to it, thought of it as their own, and mistaken it: | T: Because for a long time this has been held to by him, appropriated, and grasped thus:
+sn12.61:2.4 | S: ‘This is mine, I am this, this is my self.’ | T: ‘This is mine, this I am, this is my self.’
+sn12.61:2.5 | S: That’s why an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from it. | T: Therefore the uninstructed worldling is unable to experience revulsion towards it, unable to become dispassionate towards it and be liberated from it.
+sn12.61:3.1 | S: But an unlearned ordinary person would be better off taking this body made up of the four principal states to be their self, rather than the mind. | T: “It would be better, bhikkhus, for the uninstructed worldling to take as self this body composed of the four great elements rather than the mind.
+sn12.61:3.2 | S: Why is that? | T: For what reason?
+sn12.61:3.3 | S: This body made up of the four principal states is seen to last for a year, or for two, three, four, five, ten, twenty, thirty, forty, fifty, or a hundred years, or even longer. | T: Because this body composed of the four great elements is seen standing for one year, for two years, for three, four, five, or ten years, for twenty, thirty, forty, or fifty years, for a hundred years, or even longer.
+sn12.61:4.1 | S: But that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’ arises as one thing and ceases as another all day and all night. | T: But that which is called ‘mind’ and ‘mentality’ and ‘consciousness’ arises as one thing and ceases as another by day and by night.
+sn12.61:4.2 | S: It’s like a monkey moving through the forest. It grabs hold of one branch, lets it go, and grabs another; then it lets that go and grabs yet another. | T: Just as a monkey roaming through a forest grabs hold of one branch, lets that go and grabs another, then lets that go and grabs still another,
+sn12.61:4.3 | S: In the same way, that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’ arises as one thing and ceases as another all day and all night. | T: so too that which is called ‘mind’ and ‘mentality’ and ‘consciousness’ arises as one thing and ceases as another by day and by night.
+sn12.61:5.1 | S: In this case, a learned noble disciple carefully and rationally applies the mind to dependent origination itself: | T: “Therein, bhikkhus, the instructed noble disciple attends closely and carefully to dependent origination itself thus:
+sn12.61:5.2 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.61:5.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: When this does not exist, that does not come to be; with the cessation of this, that ceases. That is,
+sn12.61:5.4 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, volitional formations come to be;
+sn12.61:5.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.61:5.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.61:5.7 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.61:5.8 | S: When choices cease, consciousness ceases. … | T: cessation of consciousness….
+sn12.61:5.9 | S: That is how this entire mass of suffering ceases.’ | T: Such is the cessation of this whole mass of suffering.
+sn12.61:6.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards form, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn12.61:6.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn12.61:6.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn12.61:6.4 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.69
+sn12.69:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.69:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn12.69:1.3 | P: Tatra kho …pe… | T: There the Blessed One said:
+sn12.69:1.4 | S: “Mendicants, when the ocean surges it makes the rivers surge. When the rivers surge they make the streams surge. When the streams surge they make the lakes surge. When the lakes surge they make the ponds surge. | T: “Bhikkhus, the ocean surging causes the rivers to surge; the rivers surging cause the streams to surge; the streams surging cause the lakes to surge; the lakes surging cause the pools to surge.
+sn12.69:1.5 | S: In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes feeling surge. When feeling surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. | T: So too, ignorance surging causes volitional formations to surge; volitional formations surging cause consciousness to surge; consciousness surging causes name-and-form to surge; name-and-form surging causes the six sense bases to surge; the six sense bases surging cause contact to surge; contact surging causes feeling to surge; feeling surging causes craving to surge; craving surging causes clinging to surge; clinging surging causes existence to surge; existence surging causes birth to surge; birth surging causes aging-and-death to surge.
+sn12.69:2.1 | S: When the ocean recedes it makes the rivers recede. When the rivers recede they make the streams recede. When the streams recede they make the lakes recede. When the lakes recede they make the ponds recede. | T: “Bhikkhus, the ocean receding causes the rivers to recede; the rivers receding cause the streams to recede; the streams receding cause the lakes to recede; the lakes receding cause the pools to recede.
+sn12.69:2.2 | S: In the same way, when ignorance recedes it makes choices recede. When choices recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes feeling recede. When feeling recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” | T: So too, ignorance receding causes volitional formations to recede; volitional formations receding cause consciousness to recede … birth receding causes aging-and-death to recede.”
+sn12.69:2.3 | P: Navamaṁ. | T: (none)
+
+## sn12.71
+sn12.71:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.71:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn12.71:1.3 | P: Tatra kho bhagavā …pe… | T: There the Blessed One said:
+sn12.71:1.4 | S: “Mendicants, there are ascetics and brahmins who don’t understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “Bhikkhus, those ascetics or brahmins who do not understand aging-and-death, its origin, its cessation, and the way leading to its cessation:
+sn12.71:1.5 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: these I do not consider to be ascetics among ascetics or brahmins among brahmins, and these venerable ones do not, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism or the goal of brahminhood.
+sn12.71:2.1 | S: There are ascetics and brahmins who do understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “But, bhikkhus, those ascetics and brahmins who understand aging-and-death, its origin, its cessation, and the way leading to its cessation:
+sn12.71:2.2 | S: I deem them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: these I consider to be ascetics among ascetics and brahmins among brahmins, and these venerable ones, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism and the goal of brahminhood.”
+sn12.71:2.3 | P: (Suttanto eko.) | T: (none)
+sn12.71:2.4 | P: Paṭhamaṁ. | T: (none)
+
+## sn16.12
+sn16.12:1.1 | S: At one time Venerable Mahākassapa and Venerable Sāriputta were staying near Varanasi in the deer park at Isipatana. | T: On one occasion the Venerable Mahakassapa and the Venerable Sāriputta were dwelling at Baraṇasī in the Deer Park at Isipatana.
+sn16.12:1.2 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākassapa, and exchanged greetings with him. | T: Then, in the evening, the Venerable Sāriputta emerged from seclusion and approached the Venerable Mahakassapa. He exchanged greetings with the Venerable Mahakassapa and,
+sn16.12:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākassapa: | T: when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn16.12:1.4 | S: “Reverend Kassapa, does a realized one still exist after death?” | T: “How is it, friend Kassapa, does the Tathagata exist after death?”
+sn16.12:1.5 | S: “Reverend, this has not been declared by the Buddha.” | T: “The Blessed One, friend, has not declared this: ‘The Tathagata exists after death.’”
+sn16.12:1.6 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn16.12:1.7 | S: “Well then, does a realized one no longer exist after death?” | T: “Then, friend, does the Tathagata not exist after death?”
+sn16.12:1.8 | S: “This too has not been declared by the Buddha.” | T: “The Blessed One, friend, has not declared this either: ‘The Tathagata does not exist after death.’”
+sn16.12:1.9 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn16.12:1.10 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: “How is it then, friend, does the Tathagata both exist and not exist after death?”
+sn16.12:1.11 | S: “This too has not been declared by the Buddha.” | T: “The Blessed One, friend, has not declared this: ‘The Tathagata both exists and does not exist after death.’”
+sn16.12:1.12 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn16.12:1.13 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: “Then, friend, does the Tathagata neither exist nor not exist after death?”
+sn16.12:1.14 | S: “This too has not been declared by the Buddha.” | T: “The Blessed One, friend, has not declared this either:
+sn16.12:1.15 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: ‘The Tathagata neither exists nor does not exist after death.’”
+sn16.12:1.16 | S: “And why has this not been declared by the Buddha?” | T: “Why hasn’t the Blessed One declared this, friend?”
+sn16.12:1.17 | S: “Because it’s not beneficial or relevant to the fundamentals of the spiritual life. It doesn’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: “Because this is unbeneficial, irrelevant to the fundamentals of the holy life, and does not lead to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn16.12:1.18 | S: That’s why it has not been declared by the Buddha.” | T: Therefore the Blessed One has not declared this.”
+sn16.12:2.1 | S: “So what now has been declared by the Buddha?” | T: “And what, friend, has the Blessed One declared?”
+sn16.12:2.2 | S: “‘This is suffering’ has been declared by the Buddha. | T: “The Blessed One, friend, has declared: ‘This is suffering,’ and
+sn16.12:2.3 | S: ‘This is the origin of suffering’ … | T: ‘This is the origin of suffering,’ and
+sn16.12:2.4 | S: ‘This is the cessation of suffering’ … | T: ‘This is the cessation of suffering, ’ and
+sn16.12:2.5 | S: ‘This is the practice that leads to the cessation of suffering’ has been declared by the Buddha.” | T: ‘This is the way leading to the cessation of suffering.’”
+sn16.12:2.6 | S: “And why has this been declared by the Buddha?” | T: “And why, friend, has the Blessed One declared this?”
+sn16.12:2.7 | S: “Because it’s beneficial and relevant to the fundamentals of the spiritual life. It leads to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: “Because, friend, this is beneficial, relevant to the fundamentals of the holy life, and leads to revulsion, to dispassion, to cessation, to peace, to direct knowledge, to enlightenment, to Nibbāna.
+sn16.12:2.8 | S: That’s why it has been declared by the Buddha.” | T: Therefore the Blessed One has declared this.”
+sn16.12:2.9 | P: Dvādasamaṁ. | T: (none)
+
+## sn16.2
+sn16.2:1.1 | S: So I have heard. | T: Thus have I heard.
+sn16.2:1.2 | S: At one time Venerable Mahākassapa and Venerable Sāriputta were staying near Varanasi in the deer park at Isipatana. | T: On one occasion the Venerable Mahakassapa and the Venerable Sāriputta were dwelling at Baraṇasī in the Deer Park at Isipatana.
+sn16.2:1.3 | S: Then in the late afternoon, Venerable Sāriputta came out of retreat, went to Venerable Mahākassapa, and exchanged greetings with him. | T: Then, in the evening, the Venerable Sāriputta emerged from seclusion and approached the Venerable Mahakassapa. He exchanged greetings with the Venerable Mahakassapa and,
+sn16.2:1.4 | S: When the greetings and polite conversation were over, he sat down to one side and said to Mahākassapa: | T: when they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn16.2:1.5 | S: “Reverend Kassapa, it’s said that without being keen and prudent you can’t achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: “Friend, it is said that one who is not ardent and who is unafraid of wrongdoing is incapable of enlightenment, incapable of Nibbāna, incapable of achieving the unsurpassed security from bondage;
+sn16.2:1.6 | S: But if you are keen and prudent you can achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: but one who is ardent and afraid of wrongdoing is capable of enlightenment, capable of Nibbāna, capable of achieving the unsurpassed security from bondage.
+sn16.2:2.1 | S: To what extent is this the case?” | T: In what way is this so,
+sn16.2:2.2 | P: kittāvatā ca panāvuso, ātāpī hoti ottappī bhabbo sambodhāya bhabbo nibbānāya bhabbo anuttarassa yogakkhemassa adhigamāyā”ti? | T: friend?”
+sn16.2:2.3 | S: “Reverend, take a mendicant who doesn’t foster keenness by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: “Here, friend, a bhikkhu does not arouse ardour by thinking: ‘If unarisen evil unwholesome states arise in me, this may lead to my harm’; nor by thinking: ‘If evil unwholesome states that have arisen in me are not abandoned, this may lead to my harm’; nor by thinking: ‘If unarisen wholesome states do not arise in me, this may lead to my harm’; nor by thinking: ‘If wholesome states that have arisen in me cease, this may lead to my harm.’
+sn16.2:2.4 | S: That’s how you’re not keen. | T: Thus he is not ardent.
+sn16.2:3.1 | S: And how are you not prudent? | T: “And how, friend, is he unafraid of wrongdoing?
+sn16.2:3.2 | S: Take a mendicant who doesn’t foster prudence by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: Here, friend, a bhikkhu does not become afraid at the thought: ‘If unarisen evil unwholesome states arise in me, this may lead to my harm’ … nor at the thought: ‘If wholesome states that have arisen in me cease, this may lead to my harm.’
+sn16.2:3.3 | S: That’s how you’re not prudent. | T: Thus he is unafraid of wrongdoing.
+sn16.2:3.4 | S: That’s how without being keen and prudent you can’t achieve awakening, extinguishment, and the supreme sanctuary from the yoke. | T: “It is in this way, friend, that one who is not ardent and who is unafraid of wrongdoing is incapable of enlightenment, incapable of Nibbāna, incapable of achieving the unsurpassed security from bondage.
+sn16.2:4.1 | S: And how are you keen? | T: “And how, friend, is one ardent?
+sn16.2:4.2 | S: Take a mendicant who fosters keenness by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: Here, friend, a bhikkhu arouses ardour by thinking: ‘If unarisen evil unwholesome states arise in me, this may lead to my harm’ … and by thinking: ‘If wholesome states that have arisen in me cease, this may lead to my harm.’
+sn16.2:4.3 | S: That’s how you’re keen. | T: Thus he is ardent.
+sn16.2:5.1 | S: And how are you prudent? | T: “And how, friend, is he afraid of wrongdoing?
+sn16.2:5.2 | S: Take a mendicant who fosters prudence by thinking: ‘If unarisen unskillful qualities arise in me, they’ll lead to harm.’ ‘If I don’t give up arisen unskillful qualities, they’ll lead to harm.’ ‘If I don’t give rise to unarisen skillful qualities, they’ll lead to harm.’ ‘If arisen skillful qualities cease in me, they’ll lead to harm.’ | T: Here, friend, a bhikkhu becomes afraid at the thought: ‘If unarisen evil unwholesome states arise in me, this may lead to my harm’; … and at the thought: ‘If wholesome states that have arisen in me cease, this may lead to my harm.’
+sn16.2:5.3 | S: That’s how you’re prudent. | T: Thus he is afraid of wrongdoing.
+sn16.2:5.4 | S: That’s how if you’re keen and prudent you can achieve awakening, extinguishment, and the supreme sanctuary from the yoke.” | T: “It is in this way, friend, that one who is ardent and afraid of wrongdoing is capable of enlightenment, capable of Nibbāna, capable of achieving the unsurpassed security from bondage.”
+sn16.2:5.5 | P: Dutiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn16.5
+sn16.5:1.1 | S: So I have heard. | T: Thus have I heard.
+sn16.5:1.2 | S: Near Rājagaha, in the Bamboo Grove. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn16.5:1.3 | S: Then Venerable Mahākassapa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Mahakassapa approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+sn16.5:1.4 | S: “You’re old now, Kassapa. Those worn-out hempen rag robes must be a burden for you. | T: “You are old now, Kassapa, and those worn-out hempen rag-robes must be burdensome for you.
+sn16.5:1.5 | S: So Kassapa, you should wear clothes given by householders, accept invitations for the meal, and stay in my presence.” | T: Therefore you should wear robes offered by householders, Kassapa, accept meals given on invitation, and dwell close to me.”
+sn16.5:2.1 | S: “For a long time, sir, I’ve lived in the wilderness, eaten only almsfood, worn rag robes, and owned just three robes; and I’ve praised these things. I’ve been one of few wishes, content, secluded, aloof, and energetic; and I’ve praised these things.” | T: “For a long time, venerable sir, I have been a forest dweller and have spoken in praise of forest dwelling; I have been an almsfood eater and have spoken in praise of eating almsfood; I have been a rag-robe wearer and have spoken in praise of wearing rag-robes; I have been a triple-robe user and have spoken in praise of using the triple robe; I have been of few wishes and have spoken in praise of fewness of wishes; I have been content and have spoken in praise of contentment; I have been secluded and have spoken in praise of solitude; I have been aloof from society and have spoken in praise of aloofness from society; I have been energetic and have spoken in praise of arousing energy.”
+sn16.5:3.1 | S: “But seeing what benefit, Kassapa, have you long practiced these things?” | T: “Considering what benefit, Kassapa, have you long been a forest dweller …
+sn16.5:3.2 | P: paṁsukūliko ceva … | T: (none)
+sn16.5:3.3 | P: tecīvariko ceva … | T: (none)
+sn16.5:3.4 | P: appiccho ceva … | T: (none)
+sn16.5:3.5 | P: santuṭṭho ceva … | T: (none)
+sn16.5:3.6 | P: pavivitto ceva … | T: (none)
+sn16.5:3.7 | P: asaṁsaṭṭho ceva … | T: (none)
+sn16.5:3.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti? | T: and spoken in praise of arousing energy?”
+sn16.5:4.1 | S: “Sir, seeing two benefits I have long practiced these things. | T: “Considering two benefits, venerable sir.
+sn16.5:4.2 | P: paṁsukūliko ceva … | T: (none)
+sn16.5:4.3 | P: tecīvariko ceva … | T: (none)
+sn16.5:4.4 | P: appiccho ceva … | T: (none)
+sn16.5:4.5 | P: santuṭṭho ceva … | T: (none)
+sn16.5:4.6 | P: pavivitto ceva … | T: (none)
+sn16.5:4.7 | P: asaṁsaṭṭho ceva … | T: (none)
+sn16.5:4.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī. | T: (none)
+sn16.5:5.1 | S: I see happiness for myself in this life. And I have sympathy for future generations, thinking: | T: For myself I see a pleasant dwelling in this very life, and I have compassion for later generations, thinking,
+sn16.5:5.2 | S: ‘Hopefully those who come after might follow my example.’ | T: ‘May those of later generations follow my example!’
+sn16.5:5.3 | S: For they may think: ‘It seems that the disciples awakened after the Buddha for a long time lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; and they praised these things. They were of few wishes, content, secluded, aloof, and energetic; and they praised these things.’ | T: For when they hear, ‘The enlightened disciples of the Buddha were for a long time forest dwellers and spoke in praise of forest dwelling … were energetic and spoke in praise of arousing energy,’
+sn16.5:5.4 | P: piṇḍapātikā ceva ahesuṁ …pe… | T: (none)
+sn16.5:5.5 | P: paṁsukūlikā ceva ahesuṁ … | T: (none)
+sn16.5:5.6 | P: tecīvarikā ceva ahesuṁ … | T: (none)
+sn16.5:5.7 | P: appicchā ceva ahesuṁ … | T: (none)
+sn16.5:5.8 | P: santuṭṭhā ceva ahesuṁ … | T: (none)
+sn16.5:5.9 | P: pavivittā ceva ahesuṁ … | T: (none)
+sn16.5:5.10 | P: asaṁsaṭṭhā ceva ahesuṁ … | T: (none)
+sn16.5:5.11 | P: āraddhavīriyā ceva ahesuṁ vīriyārambhassa ca vaṇṇavādino’ti. | T: (none)
+sn16.5:5.12 | S: They’ll practice accordingly, which will be for their lasting welfare and happiness. | T: then they will practise accordingly, and that will lead to their welfare and happiness for a long time.
+sn16.5:6.1 | S: Seeing these two benefits I have long practiced these things.” | T: Considering these two benefits, venerable sir, I have long been a forest dweller …
+sn16.5:6.2 | P: paṁsukūliko ceva … | T: (none)
+sn16.5:6.3 | P: tecīvariko ceva … | T: (none)
+sn16.5:6.4 | P: appiccho ceva … | T: (none)
+sn16.5:6.5 | P: santuṭṭho ceva … | T: (none)
+sn16.5:6.6 | P: pavivitto ceva … | T: (none)
+sn16.5:6.7 | P: asaṁsaṭṭho ceva … | T: (none)
+sn16.5:6.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti. | T: and have spoken in praise of arousing energy.”
+sn16.5:7.1 | S: “Good, good, Kassapa! | T: “Good, good, Kassapa!
+sn16.5:7.2 | S: You’re acting for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: You are practising for the welfare and happiness of the multitude, out of compassion for the world, for the good, welfare, and happiness of devas and humans.
+sn16.5:7.3 | S: So Kassapa, wear worn-out hempen rag robes, walk for alms, and stay in the wilderness.” | T: Therefore, Kassapa, wear worn-out hempen rag-robes, walk for alms, and dwell in the forest.”
+sn16.5:7.4 | P: Pañcamaṁ. | T: (none)
+
+## sn16.6
+sn16.6:1.1 | S: Near Rājagaha, in the Bamboo Grove. | T: At Rajagaha in the Bamboo Grove.
+sn16.6:1.2 | S: Then Venerable Mahākassapa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Mahakassapa approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+sn16.6:1.3 | S: “Kassapa, advise the mendicants! | T: “Exhort the bhikkhus, Kassapa,
+sn16.6:1.4 | S: Give them a Dhamma talk! | T: give them a Dhamma talk.
+sn16.6:1.5 | S: Either you or I should advise the mendicants | T: Either I should exhort the bhikkhus, Kassapa, or you should.
+sn16.6:1.6 | S: and give them a Dhamma talk.” | T: Either I should give them a Dhamma talk or you should.”
+sn16.6:2.1 | S: “Sir, the mendicants these days are hard to admonish, having qualities that make them hard to admonish. They’re impatient, and don’t take instruction respectfully. | T: “Venerable sir, the bhikkhus are difficult to admonish now, and they have qualities which make them difficult to admonish. They are impatient and do not accept instruction respectfully.
+sn16.6:2.2 | S: Take the monk named Bhaṇḍa, Ānanda’s protégé. He’s been competing in studies with the monk named Abhiñjika, Anuruddha’s protégé. They say: | T: Here, venerable sir, I saw a bhikkhu named Bhaṇḍa, a pupil of Ānanda, and a bhikkhu named Abhiñjika, a pupil of Anuruddha, competing with each other in regard to their learning, saying:
+sn16.6:2.3 | S: ‘Come on, monk, who can speak more? Who can speak better? Who can speak longer?’” | T: ‘Come, bhikkhu, who can speak more? Who can speak better? Who can speak longer?’”
+sn16.6:3.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One addressed a certain bhikkhu thus:
+sn16.6:3.2 | S: “Please, monk, in my name tell the monk named Bhaṇḍa, Ānanda’s protégé, and the monk named Abhiñjika, Anuruddha’s protégé that | T: “Come, bhikkhu, tell the bhikkhu Bhaṇḍa and the bhikkhu Abhiñjika in my name that
+sn16.6:3.3 | S: the Teacher summons them.” | T: the Teacher calls them.”
+sn16.6:3.4 | S: “Yes, sir,” that monk replied. He went to those monks and said, | T: “Yes, venerable sir,” that bhikkhu replied, and he went to those bhikkhus and told them:
+sn16.6:3.5 | S: “Venerables, the Teacher summons you.” | T: “The Teacher calls the venerable ones.”
+sn16.6:4.1 | S: “Yes, reverend,” those monks replied. They went to the Buddha, bowed, and sat down to one side. The Buddha said to them: | T: “Yes, friend,” those bhikkhus replied, and they approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to them:
+sn16.6:4.2 | S: “Is it really true, monks, that you’ve been competing in studies, saying: | T: “Is it true, bhikkhus, that you have been competing with each other in regard to your learning,
+sn16.6:4.3 | S: ‘Come on, monk, who can speak more? Who can speak better? Who can speak longer?’” | T: as to who can speak more, who can speak better, who can speak longer?”
+sn16.6:4.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn16.6:4.5 | S: “Have you ever known me to teach the Dhamma like this: | T: “Have you ever known me to teach the Dhamma thus:
+sn16.6:4.6 | S: ‘Please mendicants, compete in studies to | T: ‘Come, bhikkhus, compete with each other in regard to your learning,
+sn16.6:4.7 | S: see who can recite more and better and longer’?” | T: and see who can speak more, who can speak better, who can speak longer’?”
+sn16.6:4.8 | S: “No, sir.” | T: “No, venerable sir.”
+sn16.6:4.9 | S: “If you’ve never known me to teach the Dhamma like this, what then do you know and see, you futile men, that after going forth in such a well explained teaching and training you’d compete in studies to | T: “Then if you have never known me to teach the Dhamma thus, what do you senseless men know and see that, having gone forth in such a well-expounded Dhamma and Discipline, you compete with each other in regard to your learning,
+sn16.6:4.10 | S: see who can speak more and better and longer?” | T: as to who can speak more, who can speak better, who can speak longer?”
+sn16.6:5.1 | S: Then those monks bowed with their heads to the Buddha’s feet and said, | T: Then those bhikkhus prostrated themselves with their heads at the Blessed One’s feet and said:
+sn16.6:5.2 | S: “We made a mistake, sir. It was foolish, stupid, and unskillful of us in that after going forth in such a well explained teaching and training we competed in studies to | T: “Venerable sir, we have committed a transgression—so foolish, so confused, so inept were we—in that, having gone forth in such a well-expounded Dhamma and Discipline, we competed with each other in regard to our learning,
+sn16.6:5.3 | S: see who can speak more and better and longer. | T: as to who can speak more, who can speak better, who can speak longer.
+sn16.6:5.4 | S: Please, sir, accept our mistake for what it is, so we will restrain ourselves in future.” | T: Venerable sir, may the Blessed One pardon us for our transgression seen as a transgression for the sake of future restraint.”
+sn16.6:6.1 | S: “Indeed, monks, you made a mistake. It was foolish, stupid, and unskillful of you to act in that way. | T: “Surely, bhikkhus, you have committed a transgression—so foolish, so confused, so inept were you—in that, having gone forth in such a well-expounded Dhamma and Discipline, you competed with each other in regard to your learning….
+sn16.6:6.2 | P: ‘ehi, bhikkhu, ko bahutaraṁ bhāsissati, ko sundarataraṁ bhāsissati, ko cirataraṁ bhāsissatī’ti. | T: (none)
+sn16.6:6.3 | S: But since you have recognized your mistake for what it is, and have dealt with it properly, I accept it. | T: But since you see your transgression as a transgression and make amends for it in accordance with the Dhamma, we pardon you for it.
+sn16.6:6.4 | S: For it is growth in the training of the Noble One to recognize a mistake for what it is, deal with it properly, and commit to restraint in the future.” | T: For it is growth in the Noble One’s Discipline when one sees one’s transgression as a transgression, makes amends for it in accordance with the Dhamma, and undertakes future restraint.”
+sn16.6:6.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn16.8
+sn16.8:1.1 | S: Near Rājagaha, in the squirrels’ feeding ground. | T: At Rajagaha in the Bamboo Grove.
+sn16.8:1.2 | S: Then Venerable Mahākassapa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Mahakassapa approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+sn16.8:1.3 | S: “Kassapa, advise the mendicants! | T: “Exhort the bhikkhus, Kassapa,
+sn16.8:1.4 | S: Give them a Dhamma talk! | T: give them a Dhamma talk.
+sn16.8:1.5 | S: Either you or I should advise the mendicants | T: Either I should exhort the bhikkhus, Kassapa, or you should.
+sn16.8:1.6 | S: and give them a Dhamma talk.” | T: Either I should give them a Dhamma talk or you should.”
+sn16.8:2.1 | S: “Sir, the mendicants these days are hard to admonish, having qualities that make them hard to admonish. They’re impatient, and don’t take instruction respectfully.” | T: “Venerable sir, the bhikkhus are difficult to admonish now, and they have qualities which make them difficult to admonish. They are impatient and do not accept instruction respectfully.”
+sn16.8:2.2 | S: “Kassapa, that’s because formerly the senior mendicants lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; and they praised these things. They were of few wishes, content, secluded, aloof, and energetic; and they praised these things. | T: “Just so, Kassapa, in the past the elder bhikkhus were forest dwellers and spoke in praise of forest dwelling; they were almsfood eaters and spoke in praise of eating almsfood; they were rag-robe wearers and spoke in praise of wearing rag-robes; they were triple-robe users and spoke in praise of using the triple robe; they were of few wishes and spoke in praise of fewness of wishes; they were content and spoke in praise of contentment; they were secluded and spoke in praise of solitude; they were aloof from society and spoke in praise of aloofness from society; they were energetic and spoke in praise of arousing energy.
+sn16.8:3.1 | S: The senior mendicants invite such a mendicant to a seat, saying: | T: “Then, when a bhikkhu was a forest dweller and spoke in praise of forest dwelling … … when he was energetic and spoke in praise of arousing energy, the elder bhikkhus would invite him to a seat, saying:
+sn16.8:3.2 | S: ‘Welcome, mendicant! What is this mendicant’s name? This mendicant is good-natured; he’s really eager to train. Please, mendicant, here, take a seat.’ | T: ‘Come, bhikkhu. What is this bhikkhu’s name? This is an excellent bhikkhu. This bhikkhu is keen on training. Come, bhikkhu, here’s a seat, sit down.’
+sn16.8:4.1 | S: Then the junior mendicants think: | T: Then it would occur to the newly ordained bhikkhus:
+sn16.8:4.2 | S: ‘It seems that when a mendicant lives in the wilderness … and is energetic, and praises these things, senior mendicants invite them to a seat …’ | T: ‘It seems that when a bhikkhu is a forest dweller and speaks in praise of forest dwelling … when he is energetic and speaks in praise of arousing energy, the elder bhikkhus invite him to a seat….’
+sn16.8:4.3 | P: ehi, bhikkhu, ko nāmāyaṁ bhikkhu, bhaddako vatāyaṁ bhikkhu, sikkhākāmo vatāyaṁ bhikkhu; ehi, bhikkhu, idaṁ āsanaṁ nisīdāhī’ti. | T: (none)
+sn16.8:4.4 | S: They practice accordingly. | T: They would practise accordingly,
+sn16.8:4.5 | S: That is for their lasting welfare and happiness. | T: and that would lead to their welfare and happiness for a long time.
+sn16.8:5.1 | S: But these days, Kassapa, the senior mendicants don’t live in the wilderness … and aren’t energetic; and they don’t praise these things. | T: “But now, Kassapa, the elder bhikkhus are no longer forest dwellers and do not speak in praise of forest dwelling … … they are no longer energetic and do not speak in praise of arousing energy.
+sn16.8:6.1 | S: When a mendicant is well-known and famous, a recipient of robes, almsfood, lodgings, and medicines and supplies for the sick, senior mendicants invite them to a seat: | T: Now it is the bhikkhu who is well known and famous, one who gains robes, almsfood, lodgings, and medicinal requisites, that the elder bhikkhus invite to a seat, saying:
+sn16.8:6.2 | S: ‘Welcome, mendicant! What is this mendicant’s name? This mendicant is good-natured; he’s fond of his fellow monks. Please, mendicant, here, take a seat.’ | T: ‘Come, bhikkhu. What is this bhikkhu’s name? This is an excellent bhikkhu. This bhikkhu is keen on the company of his brothers in the holy life. Come, bhikkhu, here’s a seat, sit down.’
+sn16.8:7.1 | S: Then the junior mendicants think: | T: Then it occurs to the newly ordained bhikkhus:
+sn16.8:7.2 | S: ‘It seems that when a mendicant is well-known and famous, a recipient of robes, almsfood, lodgings, and medicines and supplies for the sick, senior mendicants invite them to a seat …’ | T: ‘It seems that when a bhikkhu is well known and famous, one who gains robes, almsfood, lodgings, and medicinal requisites, the elder bhikkhus invite him to a seat….’
+sn16.8:7.3 | P: ehi, bhikkhu, ko nāmāyaṁ bhikkhu, bhaddako vatāyaṁ bhikkhu, sabrahmacārikāmo vatāyaṁ bhikkhu; ehi, bhikkhu, idaṁ āsanaṁ nisīdāhī’ti. | T: (none)
+sn16.8:7.4 | S: They practice accordingly. | T: They practise accordingly,
+sn16.8:7.5 | S: That is for their lasting harm and suffering. | T: and that leads to their harm and suffering for a long time.
+sn16.8:7.6 | S: And if it could ever be rightly said that | T: “If, Kassapa, one speaking rightly could say:
+sn16.8:7.7 | S: spiritual practitioners have been imperiled by the peril of a spiritual practitioner, and vanquished by the vanquishing of a spiritual practitioner, it is these days that this could be rightly said.” | T: ‘Those leading the holy life have been ruined by the ruination of those who lead the holy life; those leading the holy life have been vanquished by the vanquishing of those who lead the holy life,’ it is just thus that one could rightly say this.”
+sn16.8:7.8 | P: Aṭṭhamaṁ. | T: (none)
+
+
+codex
+I found a few clear sentence-boundary shifts and an ellipsis-separated list item on the wrong line. I’m checking the exact starting words before writing the findings.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '40,78p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn12.41:12.1 | S: And what is the noble system that they have clearly seen and penetrated with wisdom? | T: “And what is the noble method that he has clearly seen and thoroughly penetrated with wisdom?
+sn12.41:12.2 | S: A noble disciple carefully and rationally applies the mind to dependent origination itself: | T: Here, householder, the noble disciple attends closely and carefully to dependent origination itself thus: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.41:12.3 | S: ‘So, when this exists, that comes to be; when this doesn’t exist, that is not. | T: When this does not exist, that does not come to be;
+sn12.41:12.4 | S: Due to the arising of this, that arises; due to the cessation of this, that ceases. | T: with the cessation of this, that ceases.
+sn12.41:12.5 | S: Ignorance is a requirement for choices. | T: That is, with ignorance as condition, volitional formations come to be;
+sn12.41:12.6 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.41:12.7 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.41:12.8 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations;
+sn12.41:12.9 | S: When choices cease, consciousness ceases. … | T: with the cessation of volitional formations, cessation of consciousness….
+sn12.41:12.10 | S: That is how this entire mass of suffering ceases.’ | T: Such is the cessation of this whole mass of suffering.’
+sn12.41:12.11 | S: This is the noble system that they have clearly seen and penetrated with wisdom. | T: “This is the noble method that he has clearly seen and thoroughly penetrated with wisdom.
+sn12.41:13.1 | S: When a noble disciple has quelled five fears and enmities, possesses the four factors of stream-entry, and has clearly seen and penetrated the noble system with wisdom, they may, if they wish, declare of themselves: | T: “When, householder, these five fearful animosities have subsided in a noble disciple, and he possesses these four factors of stream-entry, and he has clearly seen and thoroughly penetrated with wisdom this noble method, if he wishes he could by himself declare of himself:
+sn12.41:13.2 | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’” | T: ‘I am one finished with hell, finished with the animal realm, finished with the domain of ghosts, finished with the plane of misery, the bad destinations, the nether world. I am a stream-enterer, no longer bound to the nether world, fixed in destiny, with enlightenment as my destination.’”
+sn12.41:13.3 | P: Paṭhamaṁ. | T: (none)
+
+## sn12.46
+sn12.46:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.46:1.2 | S: Then a certain brahmin went up to the Buddha, and exchanged greetings with him. | T: Then a certain brahmin approached the Blessed One and exchanged greetings with him.
+sn12.46:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn12.46:2.1 | S: “Worthy Gotama, are he who does the deed and he who experiences the result one and the same?” | T: “How is it, Master Gotama: is the one who acts the same as the one who experiences the result?”
+sn12.46:2.2 | S: “‘He who does the deed and he who experiences the result are one and the same’: this is one extreme, brahmin.” | T: “‘The one who acts is the same as the one who experiences the result’: this, brahmin, is one extreme.”
+sn12.46:3.1 | S: “Then is he who does the deed one and he who experiences the result another?” | T: “Then, Master Gotama, is the one who acts one, and the one who experiences the result another?”
+sn12.46:3.2 | S: “‘He who does the deed is one and he who experiences the result is another’: this is the second extreme. | T: “‘The one who acts is one, and the one who experiences the result is another’: this, brahmin, is the second extreme.
+sn12.46:3.3 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Without veering towards either of these extremes, the Tathagata teaches the Dhamma by the middle:
+sn12.46:3.4 | S: ‘Ignorance is a requirement for choices. | T: ‘With ignorance as condition, volitional formations come to be;
+sn12.46:3.5 | S: Choices are a requirement for consciousness. … | T: with volitional formations as condition, consciousness….
+sn12.46:3.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.46:3.7 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: But with the remainderless fading away and cessation of ignorance comes cessation of volitional formations; with the cessation of volitional formations,
+sn12.46:3.8 | S: When choices cease … | T: cessation of consciousness….
+sn12.46:3.9 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this whole mass of suffering.’”
+sn12.46:4.1 | S: When he said this, the brahmin said to the Buddha, | T: When this was said, that brahmin said to the Blessed One:
+sn12.46:4.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama!…
+sn12.46:4.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: I go for refuge to Master Gotama, and to the Dhamma, and to the Bhikkhu Saṅgha. From today let Master Gotama remember me as a lay follower who has gone for refuge for life.”
+sn12.46:4.4 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn12.61
+sn12.61:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.61:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. … | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park….
+sn12.61:1.3 | S: “Mendicants, an unlearned ordinary person might become disillusioned, dispassionate, and freed from this body made up of the four principal states. | T: “Bhikkhus, the uninstructed worldling might experience revulsion towards this body composed of the four great elements; he might become dispassionate towards it and be liberated from it.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-069.findings.tmp <<'EOF'
+sn12.41:12.3 starts: ‘When this exists, that comes to be;
+sn12.46:3.8 starts: with the cessation of volitional formations, cessation
+sn12.46:4.3 starts: From today let Master Gotama remember me
+sn12.61:5.8 starts: with the cessation of volitional formations, cessation
+sn16.2:2.2 none
+sn16.5:5.11 starts: were energetic and spoke in praise of arousing
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 6 lines.
+tokens used
+25,158
+Reported 6 lines.

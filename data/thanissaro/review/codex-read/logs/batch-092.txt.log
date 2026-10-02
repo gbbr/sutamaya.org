@@ -1,0 +1,375 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9d-54ff-71c2-b1ce-a8aadc7aac98
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear line-boundary errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.69
+sn12.69:1.1 | S: So I have heard. | T: I have heard that
+sn12.69:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn12.69:1.3 | P: Tatra kho …pe… | T: There he addressed the monks,
+sn12.69:1.4 | S: “Mendicants, when the ocean surges it makes the rivers surge. When the rivers surge they make the streams surge. When the streams surge they make the lakes surge. When the lakes surge they make the ponds surge. | T: “Monks, the great ocean rising causes the large rivers to rise. The large rivers rising cause the little rivers to rise. The little rivers rising cause the large lakes to rise. The large lakes rising cause the little lakes to rise.
+sn12.69:1.5 | S: In the same way, when ignorance surges it makes choices surge. When choices surge they make consciousness surge. When consciousness surges it makes name and form surge. When name and form surge they make the six sense fields surge. When the six sense fields surge they make contact surge. When contact surges it makes feeling surge. When feeling surges it makes craving surge. When craving surges it makes grasping surge. When grasping surges it makes continued existence surge. When continued existence surges it makes rebirth surge. When rebirth surges it makes old age and death surge. | T: “In the same way, ignorance rising causes fabrications to rise. Fabrications rising cause consciousness to rise. Consciousness rising causes name-&-form to rise. Name-&-form rising causes the six sense media to rise. The six sense media rising cause contact to rise. Contact rising causes feeling to rise. Feeling rising causes craving to rise. Craving rising causes clinging to rise. Clinging rising causes becoming to rise. Becoming rising causes birth to rise. Birth rising causes aging-&-death to rise.
+sn12.69:2.1 | S: When the ocean recedes it makes the rivers recede. When the rivers recede they make the streams recede. When the streams recede they make the lakes recede. When the lakes recede they make the ponds recede. | T: “Monks, the great ocean ebbing causes the large rivers to ebb. The large rivers ebbing cause the little rivers to ebb. The little rivers ebbing cause the large lakes to ebb. The large lakes ebbing cause the little lakes to ebb.
+sn12.69:2.2 | S: In the same way, when ignorance recedes it makes choices recede. When choices recede they make consciousness recede. When consciousness recedes it makes name and form recede. When name and form recede they make the six sense fields recede. When the six sense fields recede they make contact recede. When contact recedes it makes feeling recede. When feeling recedes it makes craving recede. When craving recedes it makes grasping recede. When grasping recedes it makes continued existence recede. When continued existence recedes it makes rebirth recede. When rebirth recedes it makes old age and death recede.” | T: “In the same way, ignorance ebbing causes fabrications to ebb. Fabrications ebbing cause consciousness to ebb. Consciousness ebbing causes name-&-form to ebb. Name-&-form ebbing causes the six sense media to ebb. The six sense media ebbing cause contact to ebb. Contact ebbing causes feeling to ebb. Feeling ebbing causes craving to ebb. Craving ebbing causes clinging to ebb. Clinging ebbing causes becoming to ebb. Becoming ebbing causes birth to ebb. Birth ebbing causes aging-&-death to ebb.”
+sn12.69:2.3 | P: Navamaṁ. | T: (none)
+
+## sn13.1
+sn13.1:1.1 | S: So I have heard. | T: I have heard that
+sn13.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn13.1:1.3 | S: Then the Buddha, picking up a little bit of dirt on his fingernail, addressed the mendicants: | T: Then the Blessed One, picking up a little bit of dust with the tip of his fingernail, said to the monks,
+sn13.1:1.4 | S: “What do you think, mendicants? | T: “What do you think, monks?
+sn13.1:1.5 | S: Which is more: the little bit of dirt on my fingernail, or this great earth?” | T: Which is greater: the little bit of dust I have picked up with the tip of my fingernail, or the great earth?”
+sn13.1:2.1 | S: “Sir, the great earth is far more. | T: “The great earth is far greater, lord.
+sn13.1:2.2 | S: The little bit of dirt on your fingernail is tiny. | T: The little bit of dust the Blessed One has picked up with the tip of his fingernail is next to nothing.
+sn13.1:2.3 | S: Compared to the great earth, it’s not nearly a hundredth, a thousandth, or a hundred thousandth part.” | T: It’s not a hundredth, a thousandth, a one hundred-thousandth—this little bit of dust the Blessed One has picked up with the tip of his fingernail—when compared with the great earth.”
+sn13.1:2.4 | S: “In the same way, for a noble disciple accomplished in view, an individual with comprehension, the suffering that’s over and done with is more, | T: “In the same way, monks, for a disciple of the noble ones who is consummate in view, an individual who has broken through (to stream-entry), the suffering & stress totally ended & extinguished is far greater.
+sn13.1:2.5 | S: what’s left is tiny. | T: That which remains in the state of having at most seven remaining lifetimes is next to nothing:
+sn13.1:2.6 | S: Compared to the mass of suffering in the past that’s over and done with, it’s not nearly a hundredth, a thousandth, or a hundred thousandth part, since there are at most seven more lives. | T: It’s not a hundredth, a thousandth, a one hundred-thousandth, when compared with the previous mass of suffering.
+sn13.1:2.7 | S: That’s how very beneficial it is to comprehend the teaching | T: That’s how great the benefit is of breaking through to the Dhamma, monks.
+sn13.1:2.8 | S: and gain the vision of the teaching.” | T: That’s how great the benefit is of obtaining the Dhamma eye.”
+sn13.1:2.9 | P: Paṭhamaṁ. | T: (none)
+
+## sn13.2
+sn13.2:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn13.2:1.2 | S: “Mendicants, suppose there was a lotus pond that was fifty leagues long, fifty leagues wide, and fifty leagues deep, full to the brim so a crow could drink from it. | T: “Suppose, monks, that there were a pond fifty leagues wide, fifty leagues long, & fifty leagues deep, filled to overflowing with water so that a crow could drink from it,
+sn13.2:1.3 | S: Then a person would pick up some water on the tip of a blade of grass. | T: and a man would draw some water out of it with the tip of a blade of grass.
+sn13.2:1.4 | S: What do you think, mendicants? | T: What do you think?
+sn13.2:1.5 | S: Which is more: the water on the tip of the blade of grass, or the water in the lotus pond?” | T: Which would be greater: the water drawn out with the tip of the blade of grass or the water in the pond?”
+sn13.2:2.1 | S: “Sir, the water in the lotus pond is certainly more. | T: “The water in the pond would be far greater, lord.
+sn13.2:2.2 | S: The water on the tip of a blade of grass is tiny. | T: The water drawn out with the tip of the blade of grass would be next to nothing.
+sn13.2:2.3 | S: Compared to the water in the lotus pond, it’s not nearly a hundredth, a thousandth, or a hundred thousandth part.” | T: It wouldn’t be a hundredth, a thousandth, a one hundred-thousandth—the water drawn out with the tip of the blade of grass—when compared with the water in the pond.”
+sn13.2:3.1 | S: “In the same way, for an individual with comprehension, a noble disciple accomplished in view, the suffering that’s over and done with is more, what’s left is tiny. | T: “In the same way, monks, for a disciple of the noble ones who is consummate in view, an individual who has broken through (to stream-entry), the suffering & stress totally ended & extinguished is far greater. That which remains in the state of having at most seven remaining lifetimes is next to nothing:
+sn13.2:3.2 | S: Compared to the mass of suffering in the past that’s over and done with, it’s not nearly a hundredth, a thousandth, or a hundred thousandth part, since there are at most seven more lives. | T: It’s not a hundredth, a thousandth, a one hundred-thousandth, when compared with the previous mass of suffering.
+sn13.2:3.3 | S: That’s how very beneficial it is to comprehend the teaching and gain the vision of the teaching.” | T: That’s how great the benefit is of breaking through to the Dhamma, monks. That’s how great the benefit is of obtaining the Dhamma eye.”
+sn13.2:3.4 | P: Dutiyaṁ. | T: (none)
+
+## sn13.8
+sn13.8:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn13.8:1.2 | S: “Mendicants, suppose the water in the ocean dried up and evaporated except two or three drops. | T: “Suppose, monks, that the great ocean were to go to extinction, to its total end, except for two or three drops of water.
+sn13.8:1.3 | S: What do you think, mendicants? | T: What do you think?
+sn13.8:1.4 | S: Which is more: the water in the ocean that has dried up and evaporated, or the two or three drops left?” | T: Which would be greater: the water in the great ocean that had gone to extinction, to its total end, or the two or three remaining drops of water?”
+sn13.8:2.1 | S: “Sir, the water in the ocean that has dried up and evaporated is certainly more. | T: “Lord, the water in the great ocean that had gone to extinction, to its total end, would be far greater.
+sn13.8:2.2 | S: The two or three drops left are tiny. | T: The two or three remaining drops of water would be next to nothing.
+sn13.8:2.3 | S: Compared to the water in the ocean that has dried up and evaporated, it’s not nearly a hundredth, a thousandth, or a hundred thousandth part.” | T: They wouldn’t be a hundredth, a thousandth, a one hundred-thousandth—the two or three remaining drops of water—when compared with the water in the great ocean that had gone to extinction, to its total end.”
+sn13.8:2.4 | S: “In the same way, for a noble disciple, the suffering that’s over and done with is more …” | T: “In the same way, monks, for a disciple of the noble ones who is consummate in view, an individual who has broken through (to stream-entry), the suffering & stress totally ended & extinguished is far greater. That which remains in the state of having at most seven remaining lifetimes is next to nothing: It’s not a hundredth, a thousandth, a one hundred-thousandth, when compared with the previous mass of suffering. That’s how great the benefit is of breaking through to the Dhamma, monks.
+sn13.8:2.5 | P: dhammacakkhupaṭilābho”ti. | T: That’s how great the benefit is of obtaining the Dhamma eye.”
+sn13.8:2.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn14.11
+sn14.11:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn14.11:1.2 | S: “Mendicants, there are these seven elements. | T: “Monks, there are these seven properties.
+sn14.11:1.3 | S: What seven? | T: Which seven?
+sn14.11:1.4 | S: The element of luminosity, the element of beauty, the element of the dimension of infinite space, the element of the dimension of infinite consciousness, the element of the dimension of nothingness, the element of the dimension of neither perception nor non-perception, and the element of the cessation of perception and feeling. | T: The property of light, the property of beauty, the property of the dimension of the infinitude of space, the property of the dimension of the infinitude of consciousness, the property of the dimension of nothingness, the property of the dimension of neither perception nor non-perception, the property of the cessation of feeling & perception.
+sn14.11:1.5 | S: These are the seven elements.” | T: These are the seven properties.”
+sn14.11:2.1 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk addressed the Blessed One:
+sn14.11:2.2 | S: “Sir, due to what does each of these elements appear?” | T: “Lord, with regard to the property of light… the property of the cessation of feeling & perception: In dependence on what are these properties discerned?”
+sn14.11:3.1 | S: “Mendicant, the element of luminosity appears due to the element of darkness. | T: “Monk, the property of light is discerned in dependence on darkness.
+sn14.11:3.2 | S: The element of beauty appears due to the element of ugliness. | T: The property of beauty is discerned in dependence on the unattractive.
+sn14.11:3.3 | S: The element of the dimension of infinite space appears due to the element of form. | T: The property of the dimension of the infinitude of space is discerned in dependence on form.
+sn14.11:3.4 | S: The element of the dimension of infinite consciousness appears due to the element of the dimension of infinite space. | T: The property of the dimension of the infinitude of consciousness is discerned in dependence on the dimension of the infinitude of space.
+sn14.11:3.5 | S: The element of the dimension of nothingness appears due to the element of the dimension of infinite consciousness. | T: The property of the dimension of nothingness is discerned in dependence on the dimension of the infinitude of consciousness.
+sn14.11:3.6 | S: The element of the dimension of neither perception nor non-perception appears due to the element of the dimension of nothingness. | T: The property of the dimension of neither perception nor non-perception is discerned in dependence on the dimension of nothingness.
+sn14.11:3.7 | S: The element of the cessation of perception and feeling appears due to the element of cessation.” | T: The property of the cessation of feeling & perception is discerned in dependence on cessation.”
+sn14.11:4.1 | S: “Sir, how is each of these elements to be attained?” | T: “But, lord, with regard to the property of light... the property of the cessation of feeling & perception: How is the attainment of these properties to be reached?”
+sn14.11:5.1 | S: “The elements of light, beauty, the dimension of infinite space, the dimension of infinite consciousness, and the dimension of nothingness are attainments with perception. | T: “Monk, the property of light, the property of beauty, the property of the dimension of the infinitude of space, the property of the dimension of the infinitude of consciousness, the property of the dimension of nothingness: These properties are to be reached as perception attainments.
+sn14.11:5.2 | S: The element of the dimension of neither perception nor non-perception is an attainment with residual conditioned phenomena. | T: The property of the dimension of neither perception nor non-perception is to be reached as a remnant-of-fabrications attainment.
+sn14.11:5.3 | S: The element of the cessation of perception and feeling is an attainment of cessation.” | T: The property of the cessation of feeling & perception is to be reached as a cessation attainment.”
+sn14.11:5.4 | P: Paṭhamaṁ. | T: (none)
+
+## sn15.11
+sn15.11:1.1 | S: At one time the Buddha was staying near Sāvatthī. | T: Near Sāvatthī.
+sn15.11:1.2 | P: Tatra kho …pe… | T: There the Blessed One said:
+sn15.11:1.3 | S: “Mendicants, this transmigration has no known beginning. | T: “From an inconceivable beginning comes the wandering-on.
+sn15.11:1.4 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.11:1.5 | S: When you see someone in a sorry state, in distress, you should conclude: | T: When you see someone who has fallen on hard times, overwhelmed with hard times, you should conclude:
+sn15.11:1.6 | S: ‘In all this long time, we too have undergone the same thing.’ | T: ‘We, too, have experienced just this sort of thing in the course of that long, long time.’
+sn15.11:1.7 | S: Why is that? This transmigration has no known beginning. … | T: “Why is that? From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.11:1.8 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabricated things, enough to become dispassionate, enough to be released.”
+sn15.11:1.9 | P: Paṭhamaṁ. | T: (none)
+
+## sn15.12
+sn15.12:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn15.12:1.2 | S: “Mendicants, this transmigration has no known beginning. … | T: There the Blessed One said: “From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.12:1.3 | S: When you see someone in a good way, in a happy state, you should conclude: | T: When you see someone who is happy & well-provided in life, you should conclude:
+sn15.12:1.4 | S: ‘In all this long time, we too have undergone the same thing.’ | T: ‘We, too, have experienced just this sort of thing in the course of that long, long time.’
+sn15.12:1.5 | S: Why is that? | T: “Why is that?
+sn15.12:1.6 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on.
+sn15.12:1.7 | P: Pubbā koṭi na paññāyati …pe… | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.12:1.8 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabricated things, enough to become dispassionate, enough to be released.”
+sn15.12:1.9 | P: Dutiyaṁ. | T: (none)
+
+## sn15.13
+sn15.13:1.1 | S: Near Rājagaha, in the Bamboo Grove. | T: Now on that occasion the Blessed One was staying near Rājagaha, in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn15.13:1.2 | S: Then thirty mendicants from Pāvā went to the Buddha. All of them lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; yet they all still had fetters. They bowed to the Buddha and sat down to one side. | T: Then thirty monks from Pāva—all wilderness dwellers, all alms-goers, all cast-off rag wearers, all triple-robe wearers, all still with fetters, went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+sn15.13:1.3 | S: Then it occurred to the Buddha, | T: Then the thought occurred to the Blessed One,
+sn15.13:1.4 | S: “These thirty mendicants from Pāvā live in the wilderness, eat only almsfood, wear rag robes, and own just three robes; yet they all still have fetters. | T: “These thirty monks from Pāva… are all still with fetters.
+sn15.13:1.5 | S: Why don’t I teach them the Dhamma in such a way that their minds are freed from defilements by not grasping while sitting in this very seat?” | T: What if I were to teach them the Dhamma in such a way that in this very sitting their minds, through lack of clinging, would be released from effluents?”
+sn15.13:1.6 | S: Then the Buddha said to the mendicants, | T: So he addressed the monks:
+sn15.13:1.7 | S: “Mendicants!” | T: “Monks.”
+sn15.13:1.8 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded.
+sn15.13:1.9 | S: The Buddha said this: | T: The Blessed One said,
+sn15.13:2.1 | S: “Mendicants, this transmigration has no known beginning. | T: “From an inconceivable beginning comes the wandering-on.
+sn15.13:2.2 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.13:2.3 | S: What do you think? Which is more: the flow of blood you’ve shed when your head was chopped off while roaming and transmigrating for such a very long time, or the water in the four oceans?” | T: What do you think, monks? Which is greater, the blood you have shed from having your heads cut off while transmigrating & wandering this long, long time, or the water in the four great oceans?”
+sn15.13:2.4 | S: “As we understand the Buddha’s teaching, the flow of blood we’ve shed when our head was chopped off while roaming and transmigrating is more than the water in the four oceans.” | T: “As we understand the Dhamma taught to us by the Blessed One, this is the greater: the blood we have shed from having our heads cut off while transmigrating & wandering this long, long time, not the water in the four great oceans.”
+sn15.13:3.1 | S: “Good, good, mendicants! It’s good that you understand my teaching like this. | T: “Excellent, monks. Excellent. It is excellent that you thus understand the Dhamma taught by me.
+sn15.13:3.2 | S: The flow of blood you’ve shed when your head was chopped off while roaming and transmigrating is indeed more than the water in the four oceans. | T: “This is the greater: the blood you have shed from having your heads cut off while transmigrating & wandering this long, long time, not the water in the four great oceans.
+sn15.13:3.3 | S: For a long time you’ve been cows, and the flow of blood you’ve shed when your head was chopped off as a cow is more than the water in the four oceans. | T: “The blood you have shed when, being cows, you had your cow-heads cut off: Long has this been greater than the water in the four great oceans.
+sn15.13:3.4 | S: For a long time you’ve been buffalo … | T: “The blood you have shed when, being water buffaloes, you had your water buffalo-heads cut off…
+sn15.13:3.5 | S: sheep … | T: when, being rams, you had your ram-heads cut off…
+sn15.13:3.6 | S: goats … | T: when, being goats, you had your goat-heads cut off…
+sn15.13:3.7 | S: deer … | T: when, being deer, you had your deer-heads cut off…
+sn15.13:3.8 | S: chickens … | T: when, being chickens, you had your chicken-heads cut off…
+sn15.13:3.9 | S: pigs … | T: when, being pigs, you had your pig-heads cut off: Long has this been greater than the water in the four great oceans.
+sn15.13:3.10 | S: For a long time you’ve been bandits, arrested for raiding villages, | T: “The blood you have shed when, arrested as thieves plundering villages, you had your heads cut off…
+sn15.13:3.11 | S: highway robbery, | T: when, arrested as highway thieves, you had your heads cut off…
+sn15.13:3.12 | S: or adultery. And the flow of blood you’ve shed when your head was chopped off as a bandit is more than the water in the four oceans. | T: when, arrested as adulterers, you had your heads cut off: Long has this been greater than the water in the four great oceans.
+sn15.13:3.13 | S: Why is that? | T: “Why is that?
+sn15.13:3.14 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.13:3.15 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn15.13:4.1 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+sn15.13:4.2 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+sn15.13:4.3 | S: And while this discourse was being spoken, the minds of the thirty mendicants from Pāvā were freed from defilements by not grasping. | T: And while this explanation was being given, the minds of the thirty monks from Pāva—through lack of clinging—were released from effluents.
+sn15.13:4.4 | P: Tatiyaṁ. | T: (none)
+
+## sn15.3
+sn15.3:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn15.3:1.2 | S: “Mendicants, this transmigration has no known beginning. | T: There the Blessed One said: “From an inconceivable beginning comes the wandering-on.
+sn15.3:1.3 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.3:1.4 | S: What do you think? Which is more: the flow of tears you’ve shed while roaming and transmigrating for such a very long time—weeping and wailing from being coupled with the unloved and separated from the loved—or the water in the four oceans?” | T: What do you think, monks? Which is greater, the tears you have shed while transmigrating & wandering this long, long time—crying & weeping from being joined with what is displeasing, being separated from what is pleasing—or the water in the four great oceans?”
+sn15.3:1.5 | S: “As we understand the Buddha’s teaching, the flow of tears we’ve shed while roaming and transmigrating is more than the water in the four oceans.” | T: “As we understand the Dhamma taught to us by the Blessed One, this is the greater: the tears we have shed while transmigrating & wandering this long, long time—crying & weeping from being joined with what is displeasing, being separated from what is pleasing—not the water in the four great oceans.”
+sn15.3:2.1 | S: “Good, good, mendicants! It’s good that you understand my teaching like this. | T: “Excellent, monks. Excellent. It is excellent that you thus understand the Dhamma taught by me.
+sn15.3:2.2 | S: The flow of tears you’ve shed while roaming and transmigrating is indeed more than the water in the four oceans. | T: “This is the greater: the tears you have shed while transmigrating & wandering this long, long time—crying & weeping from being joined with what is displeasing, being separated from what is pleasing—not the water in the four great oceans.
+sn15.3:2.3 | S: For a long time you’ve undergone the death of a mother … | T: “Long have you (repeatedly) experienced the death of a mother.
+sn15.3:2.4 | P: tesaṁ vo mātumaraṇaṁ paccanubhontānaṁ amanāpasampayogā manāpavippayogā kandantānaṁ rodantānaṁ assu passannaṁ paggharitaṁ, na tveva catūsu mahāsamuddesu udakaṁ. | T: The tears you have shed over the death of a mother while transmigrating & wandering this long, long time—crying & weeping from being joined with what is displeasing, being separated from what is pleasing—are greater than the water in the four great oceans.
+sn15.3:2.5 | S: father … | T: “Long have you (repeatedly) experienced the death of a father…
+sn15.3:2.6 | S: brother … | T: the death of a brother…
+sn15.3:2.7 | S: sister … | T: the death of a sister…
+sn15.3:2.8 | S: son … | T: the death of a son…
+sn15.3:2.9 | S: daughter … | T: the death of a daughter…
+sn15.3:2.10 | S: loss of relatives … | T: loss with regard to relatives…
+sn15.3:2.11 | S: loss of wealth … | T: loss with regard to wealth…
+sn15.3:2.12 | S: or loss through illness. From being coupled with the unloved and separated from the loved, the flow of tears you’ve shed while roaming and transmigrating is indeed more than the water in the four oceans. | T: loss with regard to disease. The tears you have shed over loss with regard to disease while transmigrating & wandering this long, long time—crying & weeping from being joined with what is displeasing, being separated from what is pleasing—are greater than the water in the four great oceans.
+sn15.3:2.13 | S: Why is that? | T: “Why is that?
+sn15.3:2.14 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes transmigration. A beginning point is not evident, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.3:2.15 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabricated things, enough to become dispassionate, enough to be released.”
+sn15.3:2.16 | P: Tatiyaṁ. | T: (none)
+
+## sn15.5
+sn15.5:1.1 | S: At Sāvatthī. | T: Dwelling near Sāvatthī.
+sn15.5:1.2 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the monk said to the Blessed One,
+sn15.5:1.3 | S: “Sir, how long is an eon?” | T: “How long, lord, is an eon?”
+sn15.5:1.4 | S: “Mendicant, an eon is long. | T: “Long, monk, is an eon.
+sn15.5:1.5 | S: It’s not easy to calculate how many years, how many hundreds or thousands or hundreds of thousands of years it lasts.” | T: It’s not easy to count as ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’”
+sn15.5:2.1 | S: “But sir, is it possible to give a simile?” | T: “But is it possible to give an analogy, lord?”
+sn15.5:2.2 | S: “It’s possible,” said the Buddha. | T: “It is, monk,” said the Blessed One.
+sn15.5:2.3 | S: “Suppose there was a big rocky mountain, a league long, a league wide, and a league high, with no cracks or holes, one solid mass. | T: “Suppose there were a great mountain of rock—a league long, a league wide, a league high, uncracked, uncavitied, a single mass—
+sn15.5:2.4 | S: And as each century passed someone would stroke it once with a fine cloth from Kāsi. | T: and a man would come along once every hundred years and rub it once with a Kāsi cloth.
+sn15.5:2.5 | S: By this means the big rocky mountain would be worn away before the eon comes to an end. | T: More quickly would that great mountain of rock waste away and be consumed by that effort, but not the eon.
+sn15.5:2.6 | S: That’s how long an eon is. | T: That’s how long, monk, an eon is.
+sn15.5:2.7 | S: And we’ve transmigrated through many such eons, many hundreds, many thousands, many hundreds of thousands. | T: And of eons of such length, not just one eon has been wandered-through, not just one hundred eons have been wandered-through, not just one thousand eons have been wandered-through, not just one hundred-thousand eons have been wandered-through.
+sn15.5:2.8 | S: Why is that? | T: “Why is that?
+sn15.5:2.9 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on.
+sn15.5:2.10 | P: Pubbā koṭi …pe… | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.5:2.11 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn15.5:2.12 | P: Pañcamaṁ. | T: (none)
+
+## sn15.6
+sn15.6:1.1 | S: At Sāvatthī. | T: Dwelling near Sāvatthī.
+sn15.6:1.2 | S: Then a mendicant went up to the Buddha … and asked him, | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, the monk said to the Blessed One,
+sn15.6:1.3 | S: “Sir, how long is an eon?” | T: “How long, lord, is an eon?”
+sn15.6:1.4 | S: “Mendicant, an eon is long. | T: “Long, monk, is an eon.
+sn15.6:1.5 | S: It’s not easy to calculate how many years, how many hundreds or thousands or hundreds of thousands of years it lasts.” | T: It’s not easy to count as ‘so many years’ or ‘so many hundreds of years’ or ‘so many thousands of years’ or ‘so many hundreds of thousands of years.’”
+sn15.6:2.1 | S: “But sir, is it possible to give a simile?” | T: “But is it possible to give an analogy, lord?”
+sn15.6:2.2 | S: “It’s possible,” said the Buddha. | T: “It is, monk,” said the Blessed One.
+sn15.6:2.3 | S: “Suppose there was an iron citadel, a league long, a league wide, and a league high, full of mustard seeds pressed into balls. | T: “Suppose there were an iron fortress—a league long, a league wide, a league high—full of mustard seeds packed tight,
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn15.6:2.4 | S: And as each century passed someone would remove a single mustard seed. | T: and a man would come along once every hundred years and take from it a single mustard seed.
+sn15.6:2.5 | S: By this means the big heap of mustard seeds would be used up before the eon comes to an end. | T: More quickly would that great heap of mustard seed waste away and be consumed by that effort, but not the eon.
+sn15.6:2.6 | S: That’s how long an eon is. | T: That’s how long, monk, an eon is.
+sn15.6:2.7 | S: And we’ve transmigrated through many such eons, many hundreds, many thousands, many hundreds of thousands. | T: And of eons of such length, not just one eon has been wandered-through, not just one hundred eons have been wandered-through, not just one thousand eons have been wandered-through, not just one hundred-thousand eons have been wandered-through.
+sn15.6:2.8 | S: Why is that? | T: “Why is that?
+sn15.6:2.9 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.6:2.10 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn15.6:2.11 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn15.8
+sn15.8:1.1 | S: Near Rājagaha, in the Bamboo Grove. | T: On one occasion the Blessed One was staying near Rājagaha, in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn15.8:1.2 | S: Then a certain brahmin went up to the Buddha, and exchanged greetings with him. | T: Then a certain brahman went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn15.8:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and asked the Buddha, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One,
+sn15.8:1.4 | S: “Worthy Gotama, how many eons have passed?” | T: “How many eons, Master Gotama, have passed and gone by?”
+sn15.8:1.5 | S: “Brahmin, many eons have passed. | T: “Many eons, brahman, have passed and gone by.
+sn15.8:1.6 | S: It’s not easy to calculate | T: They are not easy to count:
+sn15.8:1.7 | S: how many eons have passed, how many hundreds or thousands or hundreds of thousands of eons.” | T: ‘So many eons have passed and gone by’ or ‘So many hundreds of eons have passed and gone by’ or ‘So many thousands of eons have passed and gone by’ or ‘So many hundreds of thousands of eons have passed and gone by.’”
+sn15.8:2.1 | S: “But worthy Gotama, can you give a simile?” | T: “But is it possible to give an analogy, Master Gotama?”
+sn15.8:2.2 | S: “I can,” said the Buddha. | T: “It is, brahman,” the Blessed One said.
+sn15.8:2.3 | S: “Consider the Ganges River from where it originates to where it meets the ocean. Between these places it’s not easy to calculate | T: “Just as, from where the River Ganges begins to where it goes to the ocean, the grains of sand in between are not easy to count as
+sn15.8:2.4 | S: how many grains of sand there are, how many hundreds or thousands or hundreds of thousands of grains of sand. | T: ‘so many grains of sand’ or ‘so many hundreds of grains of sand’ or ‘so many thousands of grains of sand’ or ‘so many hundreds of thousands of grains of sand.’
+sn15.8:2.5 | S: The eons that have passed are more than this. | T: Even more than that are the eons that have passed and gone.
+sn15.8:2.6 | S: It’s not easy to calculate | T: They are not easy to count:
+sn15.8:2.7 | S: how many eons have passed, how many hundreds or thousands or hundreds of thousands of eons. | T: ‘So many eons have passed and gone by’ or ‘So many hundreds of eons have passed and gone by’ or ‘So many thousands of eons have passed and gone by’ or ‘So many hundreds of thousands of eons have passed and gone by.’
+sn15.8:2.8 | S: Why is that? | T: “Why is that?
+sn15.8:2.9 | S: This transmigration has no known beginning. | T: From an inconceivable beginning comes the wandering-on, brahman.
+sn15.8:2.10 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.8:2.11 | S: For such a long time you have undergone suffering, agony, and disaster, swelling the cemeteries. | T: Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.8:2.12 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn15.8:3.1 | S: When he said this, the brahmin said to the Buddha, | T: When this was said, the brahman said to the Blessed One,
+sn15.8:3.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn15.8:3.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone for refuge from this day forward, for life.”
+sn15.8:3.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn15.9
+sn15.9:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn15.9:1.2 | S: “Mendicants, this transmigration has no known beginning. | T: There the Blessed One said: “From an inconceivable beginning comes the wandering-on.
+sn15.9:1.3 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn15.9:1.4 | S: Suppose a stick was tossed up in the air. Sometimes it’d fall on its bottom, sometimes the middle, and sometimes the end. | T: Just as a stick thrown up in the air lands sometimes on its base, sometimes on its side, sometimes on its tip;
+sn15.9:1.5 | S: It’s the same for sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. Sometimes they go from this world to the other world, and sometimes they come from the other world to this world. | T: in the same way, beings hindered by ignorance and fettered by craving, transmigrating & wandering on, sometimes go from this world to another world, sometimes come from another world to this.
+sn15.9:1.6 | S: Why is that? | T: “Why is that?
+sn15.9:1.7 | S: This transmigration has no known beginning. … | T: From an inconceivable beginning comes the wandering-on. A beginning point is not discernible, though beings hindered by ignorance and fettered by craving are transmigrating & wandering on. Long have you thus experienced stress, experienced pain, experienced loss, swelling the cemeteries—
+sn15.9:1.8 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabricated things, enough to become dispassionate, enough to be released.”
+sn15.9:1.9 | P: Navamaṁ. | T: (none)
+
+## sn17.3
+sn17.3:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī.
+sn17.3:1.2 | S: “Possessions, honor, and popularity are grim … | T: “Monks, gains, offerings, & fame are a cruel thing, a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage.
+sn17.3:1.3 | S: Once upon a time, in a certain lake there was a large family of turtles that had lived there for a long time. | T: “Once, monks, a large family of turtles had lived for a long time in a certain freshwater lake.
+sn17.3:1.4 | S: Then one of the turtles said to another, | T: Then one turtle said to another,
+sn17.3:1.5 | S: ‘My dear turtle, don’t you go to that place.’ | T: ‘My dear turtle, don’t go to that area.’
+sn17.3:1.6 | S: But that turtle did go to that place, | T: But the turtle went to that area,
+sn17.3:1.7 | S: and a hunter pierced her with a harpoon. | T: and because of that a hunter lanced him with a harpoon.
+sn17.3:1.8 | S: Then that turtle went back to the other turtle. | T: So he went back to the first turtle.
+sn17.3:1.9 | S: When the other turtle saw her coming off in the distance, | T: The first turtle saw him coming from afar,
+sn17.3:1.10 | S: he said, | T: and on seeing him said to him,
+sn17.3:1.11 | S: ‘My dear turtle, I hope you didn’t go to that place!’ | T: ‘I hope, dear turtle, that you didn’t go to area.’
+sn17.3:1.12 | S: ‘I did.’ | T: “‘I went to that area, dear turtle.’
+sn17.3:1.13 | S: ‘But my dear turtle, I hope you’re not hurt or injured!’ | T: “‘Then I hope you haven’t been wounded or hurt.’
+sn17.3:1.14 | S: ‘I’m not hurt or injured. But this cord keeps dragging behind me.’ | T: “‘I haven’t been wounded or hurt, but there’s this cord that keeps dragging behind me.’
+sn17.3:1.15 | S: ‘Indeed, my dear turtle, you’re hurt and injured! | T: “‘Yes, dear turtle, you’re wounded, you’re hurt.
+sn17.3:1.16 | S: Your father and grandfather met with tragedy and disaster because of such a cord. | T: It was because of that cord that your father & grandfather fell into misfortune & disaster.
+sn17.3:1.17 | S: Go now, you are no longer one of us.’ | T: Now go, dear turtle. You are no longer one of us.’
+sn17.3:2.1 | S: ‘Hunter’ is a term for Māra the Wicked. | T: “The hunter, monks, stands for Māra, the Evil One.
+sn17.3:2.2 | S: ‘Harpoon’ is a term for possessions, honor, and popularity. | T: The harpoon stands for gains, offerings, & fame.
+sn17.3:2.3 | S: ‘Cord’ is a term for greed and relishing. | T: The cord stands for delight & passion.
+sn17.3:2.4 | S: Whoever enjoys and likes arisen possessions, honor, and popularity is called a mendicant who has been pierced with a harpoon. They’ve met with tragedy and disaster, and the Wicked One can do with them what he wants. | T: Any monk who relishes & revels in gains, offerings, & fame that have arisen is called a monk lanced by the harpoon, who has fallen into misfortune & disaster. The Evil One can do with him as he will.
+sn17.3:2.5 | P: ayaṁ vuccati, bhikkhave, bhikkhu giddho papatāya anayaṁ āpanno byasanaṁ āpanno yathākāmakaraṇīyo pāpimato. | T: (none)
+sn17.3:2.6 | S: So grim are possessions, honor, and popularity. …” | T: That’s how cruel gains, offerings, & fame are: a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage. “So you should train yourselves: ‘We will put aside any gains, offerings, & fame that have arisen; and we will not let any gains, offerings, & fame that have arisen keep our minds consumed.’
+sn17.3:2.7 | P: evañhi vo, bhikkhave, sikkhitabban”ti. | T: That’s how you should train yourselves.”
+sn17.3:2.8 | P: Tatiyaṁ. | T: (none)
+
+## sn17.5
+sn17.5:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī.
+sn17.5:1.2 | S: “Possessions, honor, and popularity are grim … | T: “Monks, gains, offerings, & fame are a cruel thing, a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage.
+sn17.5:1.3 | S: Suppose there was a dung-eating beetle full of dung, stuffed with dung, and before her was a big pile of dung. | T: Suppose there were a beetle, a dung-eater, full of dung, gorged with dung, with a huge pile of dung in front of him.
+sn17.5:1.4 | S: She’d look down on other beetles, thinking: | T: He, because of that, would look down on other beetles:
+sn17.5:1.5 | S: ‘For I am a dung-eating beetle full of dung, stuffed with dung, and before me is a big pile of dung.’ | T: ‘Yes, sirree! I am a dung-eater, full of dung, gorged with dung, with a huge pile of dung in front of me!’
+sn17.5:1.6 | S: In the same way, take a certain mendicant whose mind is overcome and overwhelmed by possessions, honor, and popularity. They robe up in the morning and, taking their bowl and robe, enter the village or town for alms. | T: In the same way, there is the case where a certain monk—conquered by gains, offerings, & fame, his mind consumed—adjusts his lower robe and, taking his bowl & outer robe, goes into a village or town for alms.
+sn17.5:1.7 | S: There they eat as much as they like, get invited back tomorrow, and have plenty of almsfood. | T: Having eaten there as much as he likes—full of almsfood & invited again for the next day—
+sn17.5:1.8 | S: When they get back to the monastery, they boast in the middle of a group of mendicants: | T: he goes to the monastery and, in the midst of a group of monks, boasts,
+sn17.5:1.9 | S: ‘I ate as much as I liked, got invited back tomorrow, and had plenty of almsfood. I get robes, almsfood, lodgings, and medicines and supplies for the sick. But these other mendicants have little merit or significance, so they don’t get these things.’ | T: ‘I have eaten as much as I like, I am full of almsfood & have been invited again for tomorrow. I am a recipient of robes, almsfood, lodgings, & medicinal requisites for curing illness. These other monks, though, have next to no merit, next to no influence. They aren’t recipients of robes, almsfood, lodgings, & medicinal requisites for curing illness.’
+sn17.5:1.10 | S: With a mind overcome and overwhelmed by possessions, honor, and popularity, they look down on other good-hearted mendicants. | T: Conquered by gains, offerings, & fame, his mind consumed, he looks down on other well-behaved monks.
+sn17.5:1.11 | S: This will be for their lasting harm and suffering. | T: That will be for this worthless man’s long-term suffering & harm.
+sn17.5:1.12 | S: So grim are possessions, honor, and popularity. …” | T: That’s how cruel gains, offerings, & fame are: a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage. “So you should train yourselves: ‘We will put aside any gains, offerings, & fame that have arisen; and we will not let any gains, offerings, & fame that have arisen keep our minds consumed.’
+sn17.5:1.13 | P: evañhi vo bhikkhave, sikkhitabban”ti. | T: That’s how you should train yourselves.”
+sn17.5:1.14 | P: Pañcamaṁ. | T: (none)
+
+## sn17.8
+sn17.8:1.1 | S: At Sāvatthī. | T: Staying near Sāvatthī.
+sn17.8:1.2 | S: “Possessions, honor, and popularity are grim … | T: “Monks, gains, offerings, & fame are a cruel thing, a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage.
+sn17.8:1.3 | S: Mendicants, did you hear an old jackal howling at the crack of dawn?” | T: “Have you heard the old jackal howling in the last hours of the night?”
+sn17.8:1.4 | S: “Yes, sir.” | T: “Yes, lord.”
+sn17.8:1.5 | S: “That old jackal has the disease called mange. He’s not happy in his den, or at the root of a tree, or out in the open. | T: “That old jackal is suffering from mange. He finds no pleasure whether he goes to a den, to the foot of a tree, or to the open air.
+sn17.8:1.6 | S: Wherever he goes, stands, sits, or lies down he meets with tragedy and disaster. | T: Wherever he goes, wherever he stands, wherever he sits, wherever he lies down, he is sunk in misery.
+sn17.8:1.7 | S: In the same way, take a certain mendicant whose mind is overcome and overwhelmed by possessions, honor, and popularity. They’re not happy in an empty hut, at the root of a tree, or out in the open. | T: “In the same way there is the case where a certain monk is conquered by gains, offerings, & fame, his mind consumed. He finds no pleasure whether he goes to an empty dwelling, to the foot of a tree, or to the open air.
+sn17.8:1.8 | S: Wherever they go, stand, sit, or lie down they meet with tragedy and disaster. | T: Wherever he goes, wherever he stands, wherever he sits, wherever he lies down, he is sunk in misery.
+sn17.8:1.9 | S: So grim are possessions, honor, and popularity. …” | T: That’s how cruel gains, offerings, & fame are: a harsh, bitter obstacle to the attainment of the unexcelled rest from bondage. “Thus you should train yourselves: ‘We will put aside any gains, offerings, & fame that have arisen; and we will not let any gains, offerings, & fame that have arisen keep our minds consumed.’
+sn17.8:1.10 | P: evañhi vo, bhikkhave, sikkhitabban”ti. | T: That’s how you should train yourselves.”
+sn17.8:1.11 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn2.19
+sn2.19:1.1 | S: At Rājagaha. | T: Near Rājagaha.
+sn2.19:1.2 | S: Standing to one side, the godling Uttara spoke this verse in the Buddha’s presence: | T: As he was standing to one side, Uttara the deva’s son recited this verse in the Blessed One’s presence:
+sn2.19:2.1 | S: “This life, so very short, is led onward. | T: “Life is swept along, next-to-nothing its span.
+sn2.19:2.2 | S: One led on to old age has no shelter. | T: For one swept on by aging no shelters exist.
+sn2.19:2.3 | S: Seeing this peril in death, | T: Perceiving this danger in death,
+sn2.19:2.4 | S: do good deeds that bring you joy.” | T: one should do deeds of merit that bring about bliss.”
+sn2.19:3.1 | S: “This life, so very short, is led onward. | T: The Buddha: “Life is swept along, next-to-nothing its span.
+sn2.19:3.2 | S: One led on to old age has no shelter. | T: For one swept to old age no shelters exist.
+sn2.19:3.3 | S: Seeing this peril in death, | T: Perceiving this danger in death,
+sn2.19:3.4 | S: a seeker of peace would drop the world’s bait.” | T: one should drop the world’s bait and look for peace.”
+
+## sn2.2
+sn2.2:1.1 | S: At Sāvatthī. | T: Near Sāvatthi in the monastery…
+sn2.2:1.2 | S: Standing to one side, the godling Kassapa spoke this verse in the Buddha’s presence: | T: Standing to one side, Kassapa the deva’s son recited this verse in the Blessed One’s presence:
+sn2.2:2.1 | S: “If a mendicant is a meditator, freed in mind, | T: “A monk should have jhāna, be released in mind,
+sn2.2:2.2 | S: and if they desire the heart’s fulfillment— | T: if he wants the heart’s attainment:
+sn2.2:2.3 | S: having known the arising and passing of the world, | T: knowing the arising & passing away of the world,
+sn2.2:2.4 | S: good-hearted, independent, that is their reward.” | T: good in his awareness, independent, aimed at that reward.”
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-092.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+22,735
+0 lines reported.

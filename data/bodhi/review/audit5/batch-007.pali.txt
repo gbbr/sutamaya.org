@@ -1,0 +1,427 @@
+## sn1.71
+sn1.71:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn1.71:1.2 | S: Standing to one side, that deity addressed the Buddha in verse: | T: Standing to one side, that devatā addressed the Blessed One in verse: | Pali: Ekamantaṁ ṭhitā kho sā devatā bhagavantaṁ gāthāya ajjhabhāsi: 
+sn1.71:2.1 | S: “When what is slain do you sleep at ease? | T: “Having slain what does one sleep soundly? | Pali: “Kiṁsu chetvā sukhaṁ seti, 
+sn1.71:2.2 | S: When what is slain is there no sorrow? | T: Having slain what does one not sorrow? | Pali: kiṁsu chetvā na socati; 
+sn1.71:2.3 | S: What is the one thing, Gotama, | T: What is the one thing, O Gotama, | Pali: Kissassu ekadhammassa, 
+sn1.71:2.4 | S: whose killing you approve?” | T: Whose killing you approve?” | Pali: vadhaṁ rocesi gotamā”ti. 
+sn1.71:3.1 | S: “When anger’s slain you sleep at ease. | T: The Blessed One: “Having slain anger, one sleeps soundly; | Pali: “Kodhaṁ chetvā sukhaṁ seti, 
+sn1.71:3.2 | S: When anger’s slain there is no sorrow. | T: Having slain anger, one does not sorrow; | Pali: kodhaṁ chetvā na socati; 
+sn1.71:3.3 | S: Anger has a poisonous root | T: The killing of anger, O devatā, | Pali: Kodhassa visamūlassa, 
+sn1.71:3.4 | S: and a sweet tip, O deity. | T: With its poisoned root and honeyed tip: | Pali: madhuraggassa devate; 
+sn1.71:3.5 | S: The noble ones praise its killing, | T: This is the killing the noble ones praise, | Pali: Vadhaṁ ariyā pasaṁsanti, 
+sn1.71:3.6 | S: for when it’s slain there is no sorrow.” | T: For having slain that, one does not sorrow.” | Pali: tañhi chetvā na socatī”ti. 
+
+## sn1.75
+sn1.75:1.1 | S: “Why are so many people here afraid, | T: “Why are so many people here afraid | Pali: “Kiṁsūdha bhītā janatā anekā, 
+sn1.75:1.2 | S: when the path has been taught <j>with so many dimensions? | T: When the path has been taught with many bases? | Pali: Maggo canekāyatanappavutto; 
+sn1.75:1.3 | S: I ask you, Gotama, whose wisdom is vast: | T: I ask you, O Gotama, broad of wisdom: | Pali: Pucchāmi taṁ gotama bhūripañña, 
+sn1.75:1.4 | S: Standing on what need one not fear the next world?” | T: On what should one take a stand To have no fear of the other world?” | Pali: Kismiṁ ṭhito paralokaṁ na bhāye”ti. 
+sn1.75:2.1 | S: “When speech and mind are directed right, | T: “Having directed speech and mind rightly, | Pali: “Vācaṁ manañca paṇidhāya sammā, 
+sn1.75:2.2 | S: and you don’t do anything bad with the body | T: Doing no evil deeds with the body, | Pali: Kāyena pāpāni akubbamāno; 
+sn1.75:2.3 | S: while dwelling at home with plenty of food and drink. | T: Dwelling at home with ample food and drink, | Pali: Bahvannapānaṁ gharamāvasanto, 
+sn1.75:2.4 | S: Faithful, gentle, charitable, and bountiful: | T: Faithful, gentle, generous, amiable: | Pali: Saddho mudū saṁvibhāgī vadaññū; 
+sn1.75:2.5 | S: one who stands on these four principles, | T: When one stands on these four things, | Pali: Etesu dhammesu ṭhito catūsu, 
+sn1.75:2.6 | S: who stands on the teaching <j>need not fear the next world.” | T: Standing firmly on the Dhamma, One need not fear the other world.” | Pali: Dhamme ṭhito paralokaṁ na bhāye”ti. 
+
+## sn11.15
+sn11.15:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove. | Pali: Sāvatthiyaṁ jetavane. 
+sn11.15:1.2 | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Sakka, lord of the devas, approached the Blessed One, paid homage to him, stood to one side, and said to him: | Pali: Atha kho sakko devānamindo yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. Ekamantaṁ ṭhito kho sakko devānamindo bhagavantaṁ etadavoca: 
+sn11.15:1.3 | S: “Sir, what is a delightful place?” | T: “Venerable sir, what is a delightful place?” | Pali: “kiṁ nu kho, bhante, bhūmirāmaṇeyyakan”ti? 
+sn11.15:2.1 | S: “Shrines in parks and forests, | T: The Blessed One: “Shrines in parks and woodland shrines, | Pali: “Ārāmacetyā vanacetyā, 
+sn11.15:2.2 | S: well-made lotus ponds, | T: Well-constructed lotus ponds: | Pali: pokkharañño sunimmitā; 
+sn11.15:2.3 | S: are not worth a sixteenth part | T: These are not worth a sixteenth part | Pali: Manussarāmaṇeyyassa, 
+sn11.15:2.4 | S: of a delightful human being. | T: Of a delightful human being. | Pali: kalaṁ nāgghanti soḷasiṁ. 
+sn11.15:3.1 | S: Whether in village or wilderness, | T: “Whether in a village or forest, | Pali: Gāme vā yadi vāraññe, 
+sn11.15:3.2 | S: in a valley or the uplands, | T: In a valley or on the plain— | Pali: Ninne vā yadi vā thale; 
+sn11.15:3.3 | S: wherever the perfected ones live | T: Wherever the arahants dwell | Pali: Yattha arahanto viharanti, 
+sn11.15:3.4 | S: is a delightful place.” | T: Is truly a delightful place.” | Pali: Taṁ bhūmirāmaṇeyyakan”ti. 
+
+## sn12.71
+sn12.71:1.1 | S: So I have heard. | T: Thus have I heard. | Pali: Evaṁ me sutaṁ—
+sn12.71:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park. | Pali: ekaṁ samayaṁ bhagavā sāvatthiyaṁ viharati jetavane anāthapiṇḍikassa ārāme. 
+sn12.71:1.3 | P: Tatra kho bhagavā …pe… | T: There the Blessed One said: | Pali: Tatra kho bhagavā …pe… 
+sn12.71:1.4 | S: “Mendicants, there are ascetics and brahmins who don’t understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “Bhikkhus, those ascetics or brahmins who do not understand aging-and-death, its origin, its cessation, and the way leading to its cessation: | Pali: “ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā jarāmaraṇaṁ nappajānanti, jarāmaraṇasamudayaṁ nappajānanti, jarāmaraṇanirodhaṁ nappajānanti, jarāmaraṇanirodhagāminiṁ paṭipadaṁ nappajānanti, 
+sn12.71:1.5 | S: I don’t deem them as true ascetics and brahmins. Those venerables don’t realize the goal of life as an ascetic or brahmin, and don’t live having realized it with their own insight in this very life. | T: these I do not consider to be ascetics among ascetics or brahmins among brahmins, and these venerable ones do not, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism or the goal of brahminhood. | Pali: na me te, bhikkhave, samaṇā vā brāhmaṇā vā samaṇesu vā samaṇasammatā brāhmaṇesu vā brāhmaṇasammatā, na ca pana te āyasmanto sāmaññatthaṁ vā brahmaññatthaṁ vā diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharanti. 
+sn12.71:2.1 | S: There are ascetics and brahmins who do understand old age and death, their origin, their cessation, and the practice that leads to their cessation. | T: “But, bhikkhus, those ascetics and brahmins who understand aging-and-death, its origin, its cessation, and the way leading to its cessation: | Pali: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā jarāmaraṇaṁ pajānanti …pe… paṭipadaṁ pajānanti, 
+sn12.71:2.2 | S: I deem them as true ascetics and brahmins. Those venerables realize the goal of life as an ascetic or brahmin, and live having realized it with their own insight.” | T: these I consider to be ascetics among ascetics and brahmins among brahmins, and these venerable ones, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism and the goal of brahminhood.” | Pali: te kho me, bhikkhave, samaṇā vā brāhmaṇā vā samaṇesu ceva samaṇasammatā brāhmaṇesu ca brāhmaṇasammatā, te ca panāyasmanto sāmaññatthañca brahmaññatthañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharantī”ti. 
+sn12.71:2.3 | P: (Suttanto eko.) | T: (none) | Pali: (Suttanto eko.) 
+sn12.71:2.4 | P: Paṭhamaṁ. | T: (none) | Pali: Paṭhamaṁ. 
+
+## sn21.1
+sn21.1:1.1 | S: So I have heard. | T: Thus have I heard. | Pali: Evaṁ me sutaṁ—
+sn21.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park. | Pali: ekaṁ samayaṁ bhagavā sāvatthiyaṁ viharati jetavane anāthapiṇḍikassa ārāme. 
+sn21.1:1.3 | S: There Venerable Mahāmoggallāna addressed the mendicants: | T: There the Venerable Mahamoggallana addressed the bhikkhus thus: | Pali: Tatra kho āyasmā mahāmoggallāno bhikkhū āmantesi: 
+sn21.1:1.4 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus!” | Pali: “āvuso bhikkhave”ti. 
+sn21.1:1.5 | S: “Reverend,” they replied. | T: “Friend!” those bhikkhus replied. | Pali: “Āvuso”ti kho te bhikkhū āyasmato mahāmoggallānassa paccassosuṁ. 
+sn21.1:2.1 | S: Venerable Mahāmoggallāna said this: | T: The Venerable Mahamoggallana said this: | Pali: Āyasmā mahāmoggallāno etadavoca: 
+sn21.1:2.2 | S: “Just now, reverends, as I was in private retreat this thought came to mind: | T: “Here, friends, while I was alone in seclusion, a reflection arose in my mind thus: | Pali: “idha mayhaṁ, āvuso, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: 
+sn21.1:2.3 | S: ‘They speak of this thing called “noble silence”. | T: ‘It is said, “noble silence, noble silence.” | Pali: ‘ariyo tuṇhībhāvo, ariyo tuṇhībhāvoti vuccati. 
+sn21.1:2.4 | S: What then is this noble silence?’ | T: What now is noble silence?’ | Pali: Katamo nu kho ariyo tuṇhībhāvo’ti? 
+sn21.1:2.5 | S: It occurred to me: | T: “Then, friends, it occurred to me: | Pali: Tassa mayhaṁ āvuso, etadahosi: 
+sn21.1:2.6 | S: ‘As the placing of the mind and keeping it connected are stilled, a mendicant enters and remains in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: ‘Here, with the subsiding of thought and examination, a bhikkhu enters and dwells in the second jhana, which has internal confidence and unification of mind, is without thought and examination, and has rapture and happiness born of concentration. | Pali: ‘idha bhikkhu vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ upasampajja viharati. 
+sn21.1:2.7 | S: This is called noble silence.’ | T: This is called noble silence.’ | Pali: Ayaṁ vuccati ariyo tuṇhībhāvo’ti. 
+sn21.1:2.8 | S: And so, as the placing of the mind and keeping it connected were stilled, I was entering and remaining in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected. | T: “Then, friends, with the subsiding of thought and examination, I entered and dwelt in the second jhana, which … has rapture and happiness born of concentration. | Pali: So khvāhaṁ, āvuso, vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ upasampajja vihariṁ. 
+sn21.1:2.9 | S: While I was in that meditation, perception and focus accompanied by placing the mind beset me. | T: While I dwelt therein, perception and attention accompanied by thought assailed me. | Pali: Tassa mayhaṁ, āvuso, iminā vihārena viharato vitakkasahagatā saññāmanasikārā samudācaranti. 
+sn21.1:3.1 | S: Then the Buddha came up to me with his psychic power and said, | T: “Then, friends, the Blessed One came to me by means of spiritual power and said this: | Pali: Atha kho maṁ, āvuso, bhagavā iddhiyā upasaṅkamitvā etadavoca: 
+sn21.1:3.2 | S: ‘Moggallāna, Moggallāna! Don’t neglect noble silence, brahmin! Settle your mind in noble silence; unify your mind and bring it to immersion in noble silence.’ | T: ‘Moggallana, Moggallana, do not be negligent regarding noble silence, brahmin. Steady your mind in noble silence, unify your mind in noble silence, concentrate your mind on noble silence.’ | Pali: ‘moggallāna moggallāna, mā, brāhmaṇa, ariyaṁ tuṇhībhāvaṁ pamādo, ariye tuṇhībhāve cittaṁ saṇṭhapehi, ariye tuṇhībhāve cittaṁ ekodibhāvaṁ karohi, ariye tuṇhībhāve cittaṁ samādahā’ti. 
+sn21.1:3.3 | S: And so, after some time, as the placing of the mind and keeping it connected were stilled, I entered and remained in the second absorption … | T: Then, friends, on a later occasion, with the subsiding of thought and examination, I entered and dwelt in the second jhana, which has internal confidence and unification of mind, is without thought and examination, and has rapture and happiness born of concentration. | Pali: So khvāhaṁ, āvuso, aparena samayena vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ upasampajja viharāmi. 
+sn21.1:3.4 | S: So if anyone should be rightly called | T: “If, friends, one speaking rightly could say of anyone: | Pali: Yañhi taṁ, āvuso, sammā vadamāno vadeyya: 
+sn21.1:3.5 | S: a disciple who attained to great direct knowledge with help from the Teacher, it’s me.” | T: ‘He is a disciple who attained to greatness of direct knowledge with the assistance of the Teacher,’ it is of me that one could rightly say this.” | Pali: ‘satthārā anuggahito sāvako mahābhiññataṁ patto’ti, mamaṁ taṁ sammā vadamāno vadeyya: 
+sn21.1:3.6 | P: ‘satthārā anuggahito sāvako mahābhiññataṁ patto’”ti. | T: (none) | Pali: ‘satthārā anuggahito sāvako mahābhiññataṁ patto’”ti. 
+sn21.1:3.7 | P: Paṭhamaṁ. | T: (none) | Pali: Paṭhamaṁ. 
+
+## sn22.10
+sn22.10:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn22.10:1.2 | S: “Mendicants, form of the past and future is suffering, | T: “Bhikkhus, form is suffering, both of the past and the future, | Pali: “Rūpaṁ, bhikkhave, dukkhaṁ atītānāgataṁ; 
+sn22.10:1.3 | S: let alone the present. | T: not to speak of the present. | Pali: ko pana vādo paccuppannassa. 
+sn22.10:1.4 | S: Seeing this, a learned noble disciple is not concerned with past form, | T: Seeing thus, bhikkhus, the instructed noble disciple is indifferent towards form of the past; | Pali: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako atītasmiṁ rūpasmiṁ anapekkho hoti; 
+sn22.10:1.5 | S: doesn’t look forward to enjoying future form, | T: he does not seek delight in form of the future; | Pali: anāgataṁ rūpaṁ nābhinandati; 
+sn22.10:1.6 | S: and they practice for disillusionment, dispassion, and cessation regarding present form. | T: and he is practising for revulsion towards form of the present, for its fading away and cessation. | Pali: paccuppannassa rūpassa nibbidāya virāgāya nirodhāya paṭipanno hoti. 
+sn22.10:1.7 | S: Feeling … | T: “Feeling is suffering … | Pali: Vedanā dukkhā … 
+sn22.10:1.8 | S: Perception … | T: Perception is suffering … | Pali: saññā dukkhā … 
+sn22.10:1.9 | S: Choices … | T: Volitional formations are suffering … | Pali: saṅkhārā dukkhā … 
+sn22.10:1.10 | S: Consciousness of the past and future is suffering, | T: Consciousness is suffering, both of the past and the future, | Pali: viññāṇaṁ dukkhaṁ atītānāgataṁ; 
+sn22.10:1.11 | S: let alone the present. | T: not to speak of the present. | Pali: ko pana vādo paccuppannassa. 
+sn22.10:1.12 | S: Seeing this, a learned noble disciple is not concerned with past consciousness, | T: Seeing thus, bhikkhus, the instructed noble disciple is indifferent towards consciousness of the past; | Pali: Evaṁ passaṁ, bhikkhave, sutavā ariyasāvako atītasmiṁ viññāṇasmiṁ anapekkho hoti; 
+sn22.10:1.13 | S: doesn’t look forward to enjoying future consciousness, | T: he does not seek delight in consciousness of the future; | Pali: anāgataṁ viññāṇaṁ nābhinandati; 
+sn22.10:1.14 | S: and they practice for disillusionment, dispassion, and cessation regarding present consciousness.” | T: and he is practising for revulsion towards consciousness of the present, for its fading away and cessation.” | Pali: paccuppannassa viññāṇassa nibbidāya virāgāya nirodhāya paṭipanno hotī”ti. 
+sn22.10:1.15 | P: Dasamaṁ. | T: (none) | Pali: Dasamaṁ. 
+
+## sn22.25
+sn22.25:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn22.25:1.2 | S: “Mendicants, give up desire and greed for form. | T: “Bhikkhus, abandon desire and lust for form. | Pali: “Yo, bhikkhave, rūpasmiṁ chandarāgo taṁ pajahatha. 
+sn22.25:1.3 | S: Thus that form will be given up, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that form will be abandoned, cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising. | Pali: Evaṁ taṁ rūpaṁ pahīnaṁ bhavissati ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. 
+sn22.25:1.4 | S: Give up desire and greed for feeling … | T: “Abandon desire and lust for feeling … | Pali: Yo vedanāya chandarāgo taṁ pajahatha. 
+sn22.25:1.5 | P: Evaṁ sā vedanā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none) | Pali: Evaṁ sā vedanā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+sn22.25:1.6 | S: perception … | T: for perception … | Pali: Yo saññāya chandarāgo taṁ pajahatha. 
+sn22.25:1.7 | P: Evaṁ sā saññā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none) | Pali: Evaṁ sā saññā pahīnā bhavissati ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+sn22.25:1.8 | S: choices … | T: for volitional formations … | Pali: Yo saṅkhāresu chandarāgo taṁ pajahatha. 
+sn22.25:1.9 | P: Evaṁ te saṅkhārā pahīnā bhavissanti ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. | T: (none) | Pali: Evaṁ te saṅkhārā pahīnā bhavissanti ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+sn22.25:1.10 | S: consciousness. | T: for consciousness. | Pali: Yo viññāṇasmiṁ chandarāgo taṁ pajahatha. 
+sn22.25:1.11 | S: Thus that consciousness will be given up, cut off at the root, made like a palm stump, obliterated, and unable to arise in the future.” | T: Thus that consciousness will be abandoned, cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.” | Pali: Evaṁ taṁ viññāṇaṁ pahīnaṁ bhavissati ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhamman”ti. 
+sn22.25:1.12 | P: Catutthaṁ. | T: (none) | Pali: Catutthaṁ. 
+
+## sn22.32
+sn22.32:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn22.32:1.2 | S: “Mendicants, I will teach you what is brittle and what is not brittle. | T: “Bhikkhus, I will teach you the fragile and the unfragile. | Pali: “Pabhaṅguñca, bhikkhave, desessāmi appabhaṅguñca. 
+sn22.32:1.3 | S: Listen … | T: Listen to that…. | Pali: Taṁ suṇātha. 
+sn22.32:1.4 | S: And what is brittle? What is not brittle? | T: “And what, bhikkhus, is the fragile, and what the unfragile? | Pali: Kiñca, bhikkhave, pabhaṅgu, kiṁ appabhaṅgu? 
+sn22.32:1.5 | S: Form is brittle, | T: Form is the fragile; | Pali: Rūpaṁ, bhikkhave, pabhaṅgu. 
+sn22.32:1.6 | S: but its cessation, settling, and disappearance is not brittle. | T: its cessation, subsiding, passing away is the unfragile. | Pali: Yo tassa nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. 
+sn22.32:1.7 | S: Feeling … | T: Feeling is the fragile … | Pali: Vedanā pabhaṅgu. 
+sn22.32:1.8 | P: Yo tassā nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. | T: (none) | Pali: Yo tassā nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. 
+sn22.32:1.9 | S: perception … | T: Perception is the fragile … | Pali: Saññā pabhaṅgu … 
+sn22.32:1.10 | S: choices … | T: Volitional formations are the fragile … | Pali: saṅkhārā pabhaṅgu. 
+sn22.32:1.11 | P: Yo tesaṁ nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. | T: (none) | Pali: Yo tesaṁ nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgu. 
+sn22.32:1.12 | S: consciousness is brittle, | T: Consciousness is the fragile; | Pali: Viññāṇaṁ pabhaṅgu. 
+sn22.32:1.13 | S: but its cessation, settling, and disappearance is not brittle.” | T: its cessation, subsiding, passing away is the unfragile.” | Pali: Yo tassa nirodho vūpasamo atthaṅgamo, idaṁ appabhaṅgū”ti. 
+sn22.32:1.14 | P: Ekādasamaṁ. | T: (none) | Pali: Ekādasamaṁ. 
+sn22.32:1.15 | P: Bhāravaggo tatiyo. | T: (none) | Pali: Bhāravaggo tatiyo. 
+sn22.32:2.0 | P: Tassuddānaṁ | T: (none) | Pali: Tassuddānaṁ 
+sn22.32:2.1 | P: Bhāraṁ pariññaṁ abhijānaṁ, | T: (none) | Pali: Bhāraṁ pariññaṁ abhijānaṁ, 
+sn22.32:2.2 | P: chandarāgaṁ catutthakaṁ; | T: (none) | Pali: chandarāgaṁ catutthakaṁ; 
+sn22.32:2.3 | P: Assādā ca tayo vuttā, | T: (none) | Pali: Assādā ca tayo vuttā, 
+sn22.32:2.4 | P: abhinandanamaṭṭhamaṁ; | T: (none) | Pali: abhinandanamaṭṭhamaṁ; 
+sn22.32:2.5 | P: Uppādaṁ aghamūlañca, | T: (none) | Pali: Uppādaṁ aghamūlañca, 
+sn22.32:2.6 | P: ekādasamo pabhaṅgūti. | T: (none) | Pali: ekādasamo pabhaṅgūti. 
+
+## sn35.135
+sn35.135:1.1 | S: “You’re fortunate, mendicants, so very fortunate, | T: “Bhikkhus, it is a gain for you, it is well gained by you, | Pali: “Lābhā vo, bhikkhave, suladdhaṁ vo, bhikkhave, 
+sn35.135:1.2 | S: to have the opportunity to lead the spiritual life. | T: that you have obtained the opportunity for living the holy life. | Pali: khaṇo vo paṭiladdho brahmacariyavāsāya. 
+sn35.135:1.3 | S: I’ve seen the hell named ‘Related to the Six Fields of Contact’. | T: I have seen, bhikkhus, the hell named ‘Contact’s Sixfold Base.’ | Pali: Diṭṭhā mayā, bhikkhave, chaphassāyatanikā nāma nirayā. 
+sn35.135:1.4 | S: There, whatever sight you see with your eye is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: There whatever form one sees with the eye is undesirable, never desirable; unlovely, never lovely; disagreeable, never agreeable. | Pali: Tattha yaṁ kiñci cakkhunā rūpaṁ passati aniṭṭharūpaṁyeva passati, no iṭṭharūpaṁ; akantarūpaṁyeva passati, no kantarūpaṁ; amanāparūpaṁyeva passati, no manāparūpaṁ. 
+sn35.135:1.5 | S: Whatever sound you hear … | T: Whatever sound one hears with the ear … | Pali: Yaṁ kiñci sotena saddaṁ suṇāti …pe… 
+sn35.135:1.6 | S: Whatever odor you smell … | T: Whatever odour one smells with the nose … | Pali: yaṁ kiñci ghānena gandhaṁ ghāyati …pe… 
+sn35.135:1.7 | S: Whatever flavor you taste … | T: Whatever taste one savours with the tongue … | Pali: yaṁ kiñci jivhāya rasaṁ sāyati …pe… 
+sn35.135:1.8 | S: Whatever touch you feel … | T: Whatever tactile object one feels with the body … | Pali: yaṁ kiñci kāyena phoṭṭhabbaṁ phusati …pe… 
+sn35.135:1.9 | S: Whatever idea you know with your mind is unlikable, not likable; undesirable, not desirable; unpleasant, not pleasant. | T: Whatever mental phenomenon one cognizes with the mind is undesirable, never desirable; unlovely, never lovely; disagreeable, never agreeable. | Pali: yaṁ kiñci manasā dhammaṁ vijānāti aniṭṭharūpaṁyeva vijānāti, no iṭṭharūpaṁ; akantarūpaṁyeva vijānāti, no kantarūpaṁ; amanāparūpaṁyeva vijānāti, no manāparūpaṁ. 
+sn35.135:1.10 | S: You’re fortunate, mendicants, so very fortunate, | T: “It is a gain for you, bhikkhus, it is well gained by you, | Pali: Lābhā vo, bhikkhave, suladdhaṁ vo, bhikkhave, 
+sn35.135:1.11 | S: to have the opportunity to lead the spiritual life. | T: that you have obtained the opportunity for living the holy life. | Pali: khaṇo vo paṭiladdho brahmacariyavāsāya. 
+sn35.135:1.12 | S: I’ve seen the heaven called ‘Related to the Six Fields of Contact’. | T: I have seen, bhikkhus, the heaven named ‘Contact’s Sixfold Base.’ | Pali: Diṭṭhā mayā, bhikkhave, chaphassāyatanikā nāma saggā. 
+sn35.135:1.13 | S: There, whatever sight you see with your eye is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: There whatever form one sees with the eye is desirable, never undesirable; lovely, never unlovely; agreeable, never disagreeable. | Pali: Tattha yaṁ kiñci cakkhunā rūpaṁ passati iṭṭharūpaṁyeva passati, no aniṭṭharūpaṁ; kantarūpaṁyeva passati, no akantarūpaṁ; manāparūpaṁyeva passati, no amanāparūpaṁ …pe… 
+sn35.135:1.14 | S: Whatever sound … odor … flavor … touch … | T: Whatever sound one hears with the ear … Whatever odour one smells with the nose … Whatever taste one savours with the tongue … Whatever tactile object one feels with the body … | Pali: yaṁ kiñci jivhāya rasaṁ sāyati …pe… 
+sn35.135:1.15 | S: Whatever idea you know with your mind is likable, not unlikable; desirable, not undesirable; pleasant, not unpleasant. | T: Whatever mental phenomenon one cognizes with the mind is desirable, never undesirable; lovely, never unlovely; agreeable, never disagreeable. | Pali: yaṁ kiñci manasā dhammaṁ vijānāti iṭṭharūpaṁyeva vijānāti, no aniṭṭharūpaṁ; kantarūpaṁyeva vijānāti, no akantarūpaṁ; manāparūpaṁyeva vijānāti, no amanāparūpaṁ. 
+sn35.135:1.16 | S: You’re fortunate, mendicants, so very fortunate, | T: “It is a gain for you, bhikkhus, it is well gained by you, | Pali: Lābhā vo, bhikkhave, suladdhaṁ vo, bhikkhave, 
+sn35.135:1.17 | S: to have the opportunity to lead the spiritual life.” | T: that you have obtained the opportunity for living the holy life.” | Pali: khaṇo vo paṭiladdho brahmacariyavāsāyā”ti. 
+sn35.135:1.18 | P: Dutiyaṁ. | T: (none) | Pali: Dutiyaṁ. 
+
+## sn35.31
+sn35.31:1.1 | S: “Mendicants, I will teach you the practice that’s conducive to uprooting all conceiving. | T: “Bhikkhus, I will teach you the way that is suitable for uprooting all conceivings. | Pali: “Sabbamaññitasamugghātasappāyaṁ vo, bhikkhave, paṭipadaṁ desessāmi. 
+sn35.31:1.2 | S: Listen … | T: Listen to that…. | Pali: Taṁ suṇātha. 
+sn35.31:1.3 | S: And what is the practice that’s conducive to uprooting all conceiving? | T: “And what, bhikkhus, is the way that is suitable for uprooting all conceivings? | Pali: Katamā ca sā, bhikkhave, sabbamaññitasamugghātasappāyā paṭipadā? 
+sn35.31:1.4 | S: It’s when a mendicant does not conceive anything to be the eye, does not conceive it in the eye, does not conceive it as the eye, and does not conceive that ‘the eye is mine.’ | T: Here, bhikkhus, a bhikkhu does not conceive the eye, does not conceive in the eye, does not conceive from the eye, does not conceive, ‘The eye is mine.’ | Pali: Idha, bhikkhave, bhikkhu cakkhuṁ na maññati, cakkhusmiṁ na maññati, cakkhuto na maññati, cakkhuṁ meti na maññati. 
+sn35.31:1.5 | S: They don’t conceive anything to be sights … | T: He does not conceive forms … | Pali: Rūpe na maññati …pe… 
+sn35.31:1.6 | S: eye consciousness … eye contact. And they don’t conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on eye contact. They don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: eye-consciousness … eye-contact … and as to whatever feeling arises with eye-contact as condition—whether pleasant or painful or neither-painful-nor-pleasant—he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’ | Pali: cakkhuviññāṇaṁ na maññati, cakkhusamphassaṁ na maññati, yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. 
+sn35.31:1.7 | S: For whatever you conceive it to be, whatever you conceive it in, whatever you conceive it as, and whatever you conceive to be ‘mine’: that becomes something else. | T: For, bhikkhus, whatever one conceives, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise. | Pali: Yañhi, bhikkhave, maññati, yasmiṁ maññati, yato maññati, yaṁ meti maññati, tato taṁ hoti aññathā. 
+sn35.31:1.8 | S: The world is attached to being, taking pleasure only in being, yet it becomes something else. | T: The world, becoming otherwise, attached to becoming, seeks delight only in becoming. | Pali: Aññathābhāvī bhavasatto loko bhavamevābhinandati …pe… 
+sn35.31:1.9 | S: They don’t conceive anything to be the ear … nose … tongue … | T: “He does not conceive the ear … | Pali: jivhaṁ na maññati, jivhāya na maññati, jivhāto na maññati, jivhā meti na maññati. 
+sn35.31:1.10 | P: Rase na maññati …pe… | T: (none) | Pali: Rase na maññati …pe… 
+sn35.31:1.11 | P: jivhāviññāṇaṁ na maññati, jivhāsamphassaṁ na maññati. | T: (none) | Pali: jivhāviññāṇaṁ na maññati, jivhāsamphassaṁ na maññati. 
+sn35.31:1.12 | P: Yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. | T: (none) | Pali: Yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. 
+sn35.31:1.13 | P: Yañhi, bhikkhave, maññati, yasmiṁ maññati, yato maññati, yaṁ meti maññati, tato taṁ hoti aññathā. | T: (none) | Pali: Yañhi, bhikkhave, maññati, yasmiṁ maññati, yato maññati, yaṁ meti maññati, tato taṁ hoti aññathā. 
+sn35.31:1.14 | S: body … | T: … | Pali: Aññathābhāvī bhavasatto loko bhavamevābhinandati …pe… 
+sn35.31:1.15 | S: mind … | T: He does not conceive the mind … | Pali: manaṁ na maññati, manasmiṁ na maññati, manato na maññati, mano meti na maññati. 
+sn35.31:1.16 | P: Dhamme na maññati …pe… | T: (none) | Pali: Dhamme na maññati …pe… 
+sn35.31:1.17 | P: manoviññāṇaṁ na maññati, manosamphassaṁ na maññati. | T: (none) | Pali: manoviññāṇaṁ na maññati, manosamphassaṁ na maññati. 
+sn35.31:1.18 | S: They don’t conceive anything to be the pleasant, painful, or neutral feeling that arises dependent on mind contact. They don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: and as to whatever feeling arises with mind-contact as condition … he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’ | Pali: Yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. 
+sn35.31:1.19 | S: For whatever you conceive it to be, whatever you conceive it in, whatever you conceive it as, and whatever you conceive to be ‘mine’: that becomes something else. | T: For, bhikkhus, whatever one conceives, whatever one conceives in, whatever one conceives from, whatever one conceives as ‘mine’—that is otherwise. | Pali: Yañhi, bhikkhave, maññati, yasmiṁ maññati, yato maññati, yaṁ meti maññati, tato taṁ hoti aññathā. 
+sn35.31:1.20 | S: The world is attached to being, taking pleasure only in being, yet it becomes something else. | T: The world, becoming otherwise, attached to becoming, seeks delight only in becoming. | Pali: Aññathābhāvī bhavasatto loko bhavamevābhinandati. 
+sn35.31:1.21 | S: As far as the aggregates, elements, and sense fields extend, they don’t conceive anything to be that, they don’t conceive it in that, they don’t conceive it as that, and they don’t conceive that ‘that is mine.’ | T: “Whatever, bhikkhus, is the extent of the aggregates, the elements, and the sense bases, he does not conceive that, does not conceive in that, does not conceive from that, does not conceive, ‘That is mine.’ | Pali: Yāvatā, bhikkhave, khandhadhātuāyatanaṁ tampi na maññati, tasmimpi na maññati, tatopi na maññati, taṁ meti na maññati. 
+sn35.31:1.22 | S: Not conceiving, they don’t grasp at anything in the world. | T: “Since he does not conceive anything thus, he does not cling to anything in the world. | Pali: So evaṁ amaññamāno na ca kiñci loke upādiyati. 
+sn35.31:1.23 | S: Not grasping, they’re not anxious. Not being anxious, they personally become extinguished. | T: Not clinging, he is not agitated. Being unagitated, he personally attains Nibbāna. | Pali: Anupādiyaṁ na paritassati. Aparitassaṁ paccattaññeva parinibbāyati. 
+sn35.31:1.24 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’ | Pali: ‘Khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāti. 
+sn35.31:1.25 | S: This is the practice that’s conducive to uprooting all conceiving.” | T: “This, bhikkhus, is the way that is suitable for uprooting all conceivings.” | Pali: Ayaṁ kho sā, bhikkhave, sabbamaññitasamugghātasappāyā paṭipadā”ti. 
+sn35.31:1.26 | P: Navamaṁ. | T: (none) | Pali: Navamaṁ. 
+
+## sn35.84
+sn35.84:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn35.84:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then the Venerable Ānanda approached the Blessed One … and said to him: | Pali: Atha kho āyasmā ānando yena bhagavā tenupasaṅkami …pe… ekamantaṁ nisinno kho āyasmā ānando bhagavantaṁ etadavoca: 
+sn35.84:2.1 | S: “Sir, they speak of this thing called ‘the world’. | T: “Venerable sir, it is said, ‘the world, the world.’ | Pali: “‘Loko, loko’ti, bhante, vuccati. 
+sn35.84:2.2 | S: How is the world defined?” | T: In what way, venerable sir, is it said ‘the world’?” | Pali: Kittāvatā nu kho, bhante, lokoti vuccatī”ti? 
+sn35.84:2.3 | S: “Ānanda, that which is liable to wear out is called the world in the training of the Noble One. | T: “Whatever is subject to disintegration, Ānanda, is called the world in the Noble One’s Discipline. | Pali: “Yaṁ kho, ānanda, palokadhammaṁ, ayaṁ vuccati ariyassa vinaye loko. 
+sn35.84:2.4 | S: And what is liable to wear out? | T: And what is subject to disintegration? | Pali: Kiñca, ānanda, palokadhammaṁ? 
+sn35.84:2.5 | S: The eye is liable to wear out. Sights … eye consciousness … eye contact is liable to wear out. The painful, pleasant, or neutral feeling that arises dependent on eye contact is also liable to wear out. | T: The eye, Ānanda, is subject to disintegration, forms … eye-consciousness … eye-contact … whatever feeling arises with eye-contact as condition … that too is subject to disintegration. | Pali: Cakkhu kho, ānanda, palokadhammaṁ, rūpā palokadhammā, cakkhuviññāṇaṁ palokadhammaṁ, cakkhusamphasso palokadhammo, yampidaṁ cakkhusamphassapaccayā …pe… tampi palokadhammaṁ …pe… 
+sn35.84:2.6 | S: The ear … nose … tongue … body …. | T: The ear is subject to disintegration … | Pali: jivhā palokadhammā, rasā palokadhammā, jivhāviññāṇaṁ palokadhammaṁ, jivhāsamphasso palokadhammo, yampidaṁ jivhāsamphassapaccayā …pe… tampi palokadhammaṁ …pe… 
+sn35.84:2.7 | S: The mind … ideas … mind consciousness … mind contact is liable to wear out. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also liable to wear out. | T: The mind is subject to disintegration … Whatever feeling arises with mind-contact as condition … that too is subject to disintegration. | Pali: mano palokadhammo, dhammā palokadhammā, manoviññāṇaṁ palokadhammaṁ, manosamphasso palokadhammo, yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi palokadhammaṁ. 
+sn35.84:2.8 | S: That which is liable to wear out is called the world in the training of the Noble One.” | T: Whatever is subject to disintegration, Ānanda, is called the world in the Noble One’s Discipline.” | Pali: Yaṁ kho, ānanda, palokadhammaṁ, ayaṁ vuccati ariyassa vinaye loko”ti. 
+sn35.84:2.9 | P: Paṭhamaṁ. | T: (none) | Pali: Paṭhamaṁ. 
+
+## sn43.10
+sn43.10:1.1 | S: “And what is the path that leads to the unconditioned? | T: … “And what, bhikkhus, is the path leading to the unconditioned? | Pali: “Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+sn43.10:1.2 | S: The seven awakening factors. …” | T: The seven factors of enlightenment….” | Pali: Satta bojjhaṅgā. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+sn43.10:1.3 | P: Dasamaṁ. | T: (none) | Pali: Dasamaṁ. 
+
+## sn43.27
+sn43.27:1.1 | S: “the state of grace …” | T: the auspicious … | Pali: Sivañca vo, bhikkhave, desessāmi sivagāmiñca maggaṁ. 
+sn43.27:1.2 | P: Taṁ suṇātha. Katamañca, bhikkhave, sivaṁ …pe…. | T: … | Pali: Taṁ suṇātha. Katamañca, bhikkhave, sivaṁ …pe…. 
+
+## sn43.35
+sn43.35:1.1 | S: “the unafflicted …” | T: the unafflicted … | Pali: Abyābajjhañca vo, bhikkhave, desessāmi abyābajjhagāmiñca maggaṁ. 
+sn43.35:1.2 | P: Taṁ suṇātha. Katamañca, bhikkhave, abyābajjhaṁ …pe…. | T: (none) | Pali: Taṁ suṇātha. Katamañca, bhikkhave, abyābajjhaṁ …pe…. 
+
+## sn43.5
+sn43.5:1.1 | S: “And what is the path that leads to the unconditioned? | T: … “And what, bhikkhus, is the path leading to the unconditioned? | Pali: “Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+sn43.5:1.2 | S: The four kinds of mindfulness meditation. …” | T: The four establishments of mindfulness….” | Pali: Cattāro satipaṭṭhānā. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+sn43.5:1.3 | P: Pañcamaṁ. | T: (none) | Pali: Pañcamaṁ. 
+
+## sn43.8
+sn43.8:1.1 | S: “And what is the path that leads to the unconditioned? | T: … “And what, bhikkhus, is the path leading to the unconditioned? | Pali: “Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+sn43.8:1.2 | S: The five faculties. …” | T: The five spiritual faculties….” | Pali: Pañcindriyāni. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+sn43.8:1.3 | P: Aṭṭhamaṁ. | T: (none) | Pali: Aṭṭhamaṁ. 
+
+## sn45.143
+sn45.143:3.1 | S: “Of all kinds of fragrant heartwood, red sandalwood is said to be the best. …” | T: Heartwood “Bhikkhus, just as, of all fragrant heartwoods, red sandalwood is declared to be their chief, so too …” | Pali: “Seyyathāpi, bhikkhave, ye keci sāragandhā, lohitacandanaṁ tesaṁ aggamakkhāyati; 
+sn45.143:3.2 | P: evameva kho, bhikkhave …pe… | T: (none) | Pali: evameva kho, bhikkhave …pe… 
+sn45.143:3.3 | P: pañcamaṁ. | T: (none) | Pali: pañcamaṁ. 
+
+## sn45.157
+sn45.157:1.1 | S: “Mendicants, when a large storm has blown up, a strong wind disperses and settles it as it proceeds. | T: “Bhikkhus, just as, when a great rain cloud has arisen, a strong wind intercedes to disperse and quell it; | Pali: “Seyyathāpi, bhikkhave, uppannaṁ mahāmeghaṁ, tamenaṁ mahāvāto antarāyeva antaradhāpeti vūpasameti; 
+sn45.157:1.2 | S: In the same way, a mendicant who develops and cultivates the noble eightfold path disperses and stills bad, unskillful qualities as they proceed. | T: so too, when a bhikkhu develops and cultivates the Noble Eightfold Path, whenever evil unwholesome states have arisen, he intercedes to disperse and quell them. | Pali: evameva kho, bhikkhave, bhikkhu ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvento ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaronto uppannuppanne pāpake akusale dhamme antarāyeva antaradhāpeti vūpasameti. 
+sn45.157:1.3 | S: And how does a mendicant who develops the noble eightfold path disperse and still bad, unskillful qualities as they proceed? | T: “And how is this so? | Pali: Kathañca, bhikkhave, bhikkhu ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvento ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaronto uppannuppanne pāpake akusale dhamme antarāyeva antaradhāpeti vūpasameti? 
+sn45.157:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view … right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release. | Pali: Idha, bhikkhave, bhikkhu sammādiṭṭhiṁ bhāveti …pe… sammāsamādhiṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ … 
+sn45.157:1.5 | S: That’s how a mendicant who develops and cultivates the noble eightfold path disperses and stills bad, unskillful qualities as they proceed.” | T: It is in this way, bhikkhus, that a bhikkhu develops and cultivates the Noble Eightfold Path so that whenever evil unwholesome states have arisen, he intercedes to disperse and quell them.” | Pali: evaṁ kho, bhikkhave, bhikkhu ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvento ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaronto uppannuppanne pāpake akusale dhamme antarāyeva antaradhāpeti vūpasametī”ti. 
+sn45.157:1.6 | P: Navamaṁ. | T: (none) | Pali: Navamaṁ. 
+
+## sn45.164
+sn45.164:1.1 | S: “There are these three states of existence. | T: “Bhikkhus, there are these three kinds of existence. | Pali: “Tayome, bhikkhave, bhavā. 
+sn45.164:1.2 | S: What three? | T: What three? | Pali: Katame tayo? 
+sn45.164:1.3 | S: Existence in the sensual realm, the realm of luminous form, and the formless realm. | T: Sense-sphere existence, form-sphere existence, formless-sphere existence. | Pali: Kāmabhavo, rūpabhavo, arūpabhavo—
+sn45.164:1.4 | S: These are the three states of existence. | T: These are the three kinds of existence. | Pali: ime kho, bhikkhave, tayo bhavā. 
+sn45.164:1.5 | S: The noble eightfold path should be developed for the direct knowledge, complete understanding, finishing, and giving up of these three states of existence.” | T: The Noble Eightfold Path is to be developed for direct knowledge of these three kinds of existence, for the full understanding of them, for their utter destruction, for their abandoning.” | Pali: Imesaṁ kho, bhikkhave, tiṇṇannaṁ bhavānaṁ abhiññāya pariññāya parikkhayāya pahānāya …pe… ayaṁ ariyo aṭṭhaṅgiko maggo bhāvetabbo”ti. 
+sn45.164:1.6 | P: Catutthaṁ. | T: (none) | Pali: Catutthaṁ. 
+
+## sn45.172
+sn45.172:1.1 | S: “Mendicants, there are these four yokes. | T: “Bhikkhus, there are these four bonds. | Pali: “Cattārome, bhikkhave, yogā. 
+sn45.172:1.2 | S: What four? | T: What four? | Pali: Katame cattāro? 
+sn45.172:1.3 | S: The yokes of sensual pleasures, future lives, views, and ignorance. | T: The bond of sensuality, the bond of existence, the bond of views, the bond of ignorance. | Pali: Kāmayogo, bhavayogo, diṭṭhiyogo avijjāyogo—
+sn45.172:1.4 | S: These are the four yokes. | T: These are the four bonds. | Pali: ime kho, bhikkhave, cattāro yogā. 
+sn45.172:1.5 | S: The noble eightfold path should be developed for the direct knowledge, complete understanding, finishing, and giving up of these four yokes.” | T: This Noble Eightfold Path is to be developed for direct knowledge of these four bonds, for the full understanding of them, for their utter destruction, for their abandoning.” | Pali: Imesaṁ kho, bhikkhave, catunnaṁ yogānaṁ abhiññāya pariññāya parikkhayāya pahānāya …pe… ayaṁ ariyo aṭṭhaṅgiko maggo bhāvetabbo”ti. 
+sn45.172:1.6 | P: Dutiyaṁ. | T: (none) | Pali: Dutiyaṁ. 
+
+## sn45.28
+sn45.28:1.1 | S: At Sāvatthī. | T: At Savatthī. | Pali: Sāvatthinidānaṁ. 
+sn45.28:1.2 | S: “Mendicants, I will teach you noble right immersion with its vital conditions and its prerequisites. | T: “Bhikkhus, I will teach you noble right concentration with its supports and its accessories. | Pali: “Ariyaṁ vo, bhikkhave, sammāsamādhiṁ desessāmi saupanisaṁ saparikkhāraṁ. 
+sn45.28:1.3 | S: Listen … | T: Listen to that…. | Pali: Taṁ suṇātha. 
+sn45.28:1.4 | S: And what is noble right immersion with its vital conditions and its prerequisites? | T: “And what, bhikkhus, is noble right concentration with its supports and its accessories? | Pali: Katamo ca, bhikkhave, ariyo sammāsamādhi saupaniso saparikkhāro? 
+sn45.28:1.5 | S: There are right view, right purpose, right speech, right action, right livelihood, right effort, and right mindfulness. | T: There are: right view … right mindfulness. | Pali: Seyyathidaṁ—sammādiṭṭhi …pe… sammāsati. 
+sn45.28:1.6 | S: Unification of mind with these seven factors as prerequisites | T: The one-pointedness of mind equipped with these seven factors | Pali: Yā kho, bhikkhave, imehi sattahaṅgehi cittassa ekaggatā saparikkhāratā—
+sn45.28:1.7 | S: is called noble right immersion ‘with its vital conditions’ and also ‘with its prerequisites’.” | T: is called noble right concentration ‘with its supports,’ and also ‘with its accessories.’” | Pali: ayaṁ vuccati, bhikkhave, ariyo sammāsamādhi saupaniso itipi saparikkhāro itipī”ti. 
+sn45.28:1.8 | P: Aṭṭhamaṁ. | T: (none) | Pali: Aṭṭhamaṁ. 
+
+## sn45.31
+sn45.31:1.1 | S: At Sāvatthī. | T: At Savatthī. | Pali: Sāvatthinidānaṁ. 
+sn45.31:1.2 | S: “Mendicants, I will teach you the wrong practice and the right practice. | T: “Bhikkhus, I will teach you wrong practice and right practice. | Pali: “Micchāpaṭipattiñca vo, bhikkhave, desessāmi, sammāpaṭipattiñca. 
+sn45.31:1.3 | S: Listen … | T: Listen to that…. | Pali: Taṁ suṇātha. 
+sn45.31:1.4 | S: And what’s the wrong practice? | T: “And what, bhikkhus, is wrong practice? | Pali: Katamā ca, bhikkhave, micchāpaṭipatti? 
+sn45.31:1.5 | S: It is wrong view, wrong purpose, wrong speech, wrong action, wrong livelihood, wrong effort, wrong mindfulness, and wrong immersion. | T: It is: wrong view …. wrong concentration. | Pali: Seyyathidaṁ—micchādiṭṭhi …pe… micchāsamādhi. 
+sn45.31:1.6 | S: This is called the wrong practice. | T: This is called wrong practice. | Pali: Ayaṁ vuccati, bhikkhave, micchāpaṭipatti. 
+sn45.31:1.7 | S: And what’s the right practice? | T: “And what, bhikkhus, is right practice? | Pali: Katamā ca, bhikkhave, sammāpaṭipatti? 
+sn45.31:1.8 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: It is: right view … right concentration. | Pali: Seyyathidaṁ—sammādiṭṭhi …pe… sammāsamādhi. 
+sn45.31:1.9 | S: This is called the right practice.” | T: This is called right practice.” | Pali: Ayaṁ vuccati, bhikkhave, sammāpaṭipattī”ti. 
+sn45.31:1.10 | P: Paṭhamaṁ. | T: (none) | Pali: Paṭhamaṁ. 
+
+## sn45.33
+sn45.33:1.1 | S: At Sāvatthī. | T: At Savatthī. | Pali: Sāvatthinidānaṁ. 
+sn45.33:1.2 | S: “Mendicants, whoever has missed out on the noble eightfold path has missed out on the noble path to the complete ending of suffering. | T: “Bhikkhus, those who have neglected the Noble Eightfold Path have neglected the noble path leading to the complete destruction of suffering. | Pali: “Yesaṁ kesañci, bhikkhave, ariyo aṭṭhaṅgiko maggo viraddho, viraddho tesaṁ ariyo aṭṭhaṅgiko maggo sammā dukkhakkhayagāmī. 
+sn45.33:1.3 | S: Whoever has undertaken the noble eightfold path has undertaken the noble path to the complete ending of suffering. | T: Those who have undertaken the Noble Eightfold Path have undertaken the noble path leading to the complete destruction of suffering. | Pali: Yesaṁ kesañci, bhikkhave, ariyo aṭṭhaṅgiko maggo āraddho, āraddho tesaṁ ariyo aṭṭhaṅgiko maggo sammā dukkhakkhayagāmī. 
+sn45.33:1.4 | S: And what is the noble eightfold path? | T: “And what, bhikkhus, is the Noble Eightfold Path? | Pali: Katamo ca, bhikkhave, ariyo aṭṭhaṅgiko maggo? 
+sn45.33:1.5 | S: It is right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: It is: right view … right concentration. | Pali: Seyyathidaṁ—sammādiṭṭhi …pe… sammāsamādhi. 
+sn45.33:1.6 | S: Whoever has missed out on the noble eightfold path has missed out on the noble path to the complete ending of suffering. | T: Those who have neglected this Noble Eightfold Path … | Pali: Yesaṁ kesañci, bhikkhave, ayaṁ ariyo aṭṭhaṅgiko maggo viraddho, viraddho tesaṁ ariyo aṭṭhaṅgiko maggo sammā dukkhakkhayagāmī. 
+sn45.33:1.7 | S: Whoever has undertaken the noble eightfold path has undertaken the noble path to the complete ending of suffering.” | T: Those who have undertaken this Noble Eightfold Path have undertaken the noble path leading to the complete destruction of suffering.” | Pali: Yesaṁ kesañci, bhikkhave, ayaṁ ariyo aṭṭhaṅgiko maggo āraddho, āraddho tesaṁ ariyo aṭṭhaṅgiko maggo sammā dukkhakkhayagāmī”ti. 
+sn45.33:1.8 | P: Tatiyaṁ. | T: (none) | Pali: Tatiyaṁ. 
+
+## sn45.40
+sn45.40:1.1 | S: At Sāvatthī. | T: At Savatthī. | Pali: Sāvatthinidānaṁ. 
+sn45.40:1.2 | S: “Mendicants, I will teach you the spiritual path and the goal of the spiritual path. | T: “Bhikkhus, I will teach you the holy life and the goal of the holy life. | Pali: “Brahmacariyañca vo, bhikkhave, desessāmi, brahmacariyatthañca. 
+sn45.40:1.3 | S: Listen … | T: Listen to that…. | Pali: Taṁ suṇātha. 
+sn45.40:1.4 | S: And what is the spiritual path? | T: “And what, bhikkhus, is the holy life? | Pali: Katamañca, bhikkhave, brahmacariyaṁ? 
+sn45.40:1.5 | S: It is simply this noble eightfold path, that is: | T: It is this Noble Eightfold Path; that is, | Pali: Ayameva ariyo aṭṭhaṅgiko maggo, seyyathidaṁ—
+sn45.40:1.6 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view … right concentration. | Pali: sammādiṭṭhi …pe… sammāsamādhi. 
+sn45.40:1.7 | S: This is called the spiritual path. | T: This is called the holy life. | Pali: Idaṁ vuccati, bhikkhave, brahmacariyaṁ. 
+sn45.40:1.8 | S: And what is the goal of the spiritual path? | T: “And what, bhikkhus, is the goal of the holy life? | Pali: Katamo ca, bhikkhave, brahmacariyattho? 
+sn45.40:1.9 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion. | Pali: Yo kho, bhikkhave, rāgakkhayo dosakkhayo mohakkhayo—
+sn45.40:1.10 | S: This is called the goal of the spiritual path.” | T: This is called the goal of the holy life.” | Pali: ayaṁ vuccati, bhikkhave, brahmacariyattho”ti. 
+sn45.40:1.11 | P: Dasamaṁ. | T: (none) | Pali: Dasamaṁ. 
+sn45.40:1.12 | P: Paṭipattivaggo catuttho. | T: (none) | Pali: Paṭipattivaggo catuttho. 
+sn45.40:2.0 | P: Tassuddānaṁ | T: (none) | Pali: Tassuddānaṁ 
+sn45.40:2.1 | P: Paṭipatti paṭipanno ca, | T: (none) | Pali: Paṭipatti paṭipanno ca, 
+sn45.40:2.2 | P: viraddhañca pāraṅgamā; | T: (none) | Pali: viraddhañca pāraṅgamā; 
+sn45.40:2.3 | P: Sāmaññena ca dve vuttā, | T: (none) | Pali: Sāmaññena ca dve vuttā, 
+sn45.40:2.4 | P: brahmaññā apare duve; | T: (none) | Pali: brahmaññā apare duve; 
+sn45.40:2.5 | P: Brahmacariyena dve vuttā, | T: (none) | Pali: Brahmacariyena dve vuttā, 
+sn45.40:2.6 | P: vaggo tena pavuccatīti. | T: (none) | Pali: vaggo tena pavuccatīti. 
+
+## sn45.62
+sn45.62:1.1 | S: “… accomplishment in rational application of mind. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn. So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, accomplishment in virtue … … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … accomplishment in careful attention. | Pali: “Yadidaṁ—yonisomanasikārasampadā. 
+sn45.62:1.2 | S: A mendicant accomplished in rational application of mind can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu is accomplished in careful attention, it is to be expected that he will develop and cultivate this Noble Eightfold Path. | Pali: Yonisomanasikārasampannassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+sn45.62:1.3 | S: And how does a mendicant accomplished in rational application of mind develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who is accomplished in careful attention develop and cultivate the Noble Eightfold Path? | Pali: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+sn45.62:1.4 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion. | Pali: Idha, bhikkhave, bhikkhu sammādiṭṭhiṁ bhāveti rāgavinayapariyosānaṁ dosavinayapariyosānaṁ mohavinayapariyosānaṁ …pe… sammāsamādhiṁ bhāveti rāgavinayapariyosānaṁ dosavinayapariyosānaṁ mohavinayapariyosānaṁ. 
+sn45.62:1.5 | S: That’s how a mendicant accomplished in rational application of mind develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.” | Pali: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+sn45.62:1.6 | P: Sattamaṁ. | T: (none) | Pali: Sattamaṁ. 
+sn45.62:1.7 | P: Sūriyapeyyālaṁ. | T: (none) | Pali: Sūriyapeyyālaṁ. 
+sn45.62:2.0 | P: Tassuddānaṁ | T: (none) | Pali: Tassuddānaṁ 
+sn45.62:2.1 | P: Kalyāṇamittaṁ sīlañca, | T: (none) | Pali: Kalyāṇamittaṁ sīlañca, 
+sn45.62:2.2 | P: chando ca attasampadā; | T: (none) | Pali: chando ca attasampadā; 
+sn45.62:2.3 | P: Diṭṭhi ca appamādo ca, | T: (none) | Pali: Diṭṭhi ca appamādo ca, 
+sn45.62:2.4 | P: yoniso bhavati sattamaṁ. | T: (none) | Pali: yoniso bhavati sattamaṁ. 
+
+## sn45.70
+sn45.70:1.1 | S: At Sāvatthī. | T: At Savatthī. | Pali: Sāvatthinidānaṁ. 
+sn45.70:1.2 | S: “Mendicants, one thing helps give rise to the noble eightfold path. | T: “Bhikkhus, one thing is very helpful for the arising of the Noble Eightfold Path. | Pali: “Ekadhammo, bhikkhave, bahūpakāro ariyassa aṭṭhaṅgikassa maggassa uppādāya. 
+sn45.70:1.3 | S: What one thing? | T: What one thing? | Pali: Katamo ekadhammo? 
+sn45.70:1.4 | S: It’s good friendship. | T: Good friendship. | Pali: Yadidaṁ—kalyāṇamittatā. 
+sn45.70:1.5 | S: A mendicant with good friends can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu has a good friend, it is to be expected that he will develop and cultivate the Noble Eightfold Path. | Pali: Kalyāṇamittassetaṁ, bhikkhave, bhikkhuno pāṭikaṅkhaṁ—ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāvessati, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarissati. 
+sn45.70:1.6 | S: And how does a mendicant with good friends develop and cultivate the noble eightfold path? | T: “And how does a bhikkhu who has a good friend develop and cultivate the Noble Eightfold Path? | Pali: Kathañca, bhikkhave, bhikkhu kalyāṇamitto ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkaroti? 
+sn45.70:1.7 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: Here, bhikkhus, a bhikkhu develops right view, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion…. He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion. | Pali: Idha, bhikkhave, bhikkhu sammādiṭṭhiṁ bhāveti rāgavinayapariyosānaṁ dosavinayapariyosānaṁ mohavinayapariyosānaṁ …pe… sammāsamādhiṁ bhāveti rāgavinayapariyosānaṁ dosavinayapariyosānaṁ mohavinayapariyosānaṁ. 
+sn45.70:1.8 | S: That’s how a mendicant with good friends develops and cultivates the noble eightfold path.” | T: It is in this way, bhikkhus, that a bhikkhu who has a good friend develops and cultivates the Noble Eightfold Path.” | Pali: Evaṁ kho, bhikkhave, bhikkhu kalyāṇamitto ariyaṁ aṭṭhaṅgikaṁ maggaṁ bhāveti, ariyaṁ aṭṭhaṅgikaṁ maggaṁ bahulīkarotī”ti. 
+sn45.70:1.9 | P: Paṭhamaṁ. | T: (none) | Pali: Paṭhamaṁ. 
+
+## sn46.33
+sn46.33:1.1 | S: “Mendicants, there are these five corruptions of native gold. When native gold is corrupted by these it’s not pliable, workable, or radiant, but is brittle and not completely ready for working. | T: “Bhikkhus, there are these five corruptions of gold, corrupted by which gold is neither malleable nor wieldy nor radiant but brittle and not properly fit for work. | Pali: “Pañcime, bhikkhave, jātarūpassa upakkilesā, yehi upakkilesehi upakkiliṭṭhaṁ jātarūpaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā upeti kammāya. 
+sn46.33:1.2 | S: What five? | T: What five? | Pali: Katame pañca? 
+sn46.33:1.3 | S: Iron, | T: Iron is a corruption of gold, corrupted by which gold is neither malleable nor wieldy nor radiant but brittle and not properly fit for work. | Pali: Ayo, bhikkhave, jātarūpassa upakkileso, yena upakkilesena upakkiliṭṭhaṁ jātarūpaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā upeti kammāya. 
+sn46.33:1.4 | S: copper, | T: Copper is a corruption of gold … | Pali: Lohaṁ, bhikkhave, jātarūpassa upakkileso, yena upakkilesena upakkiliṭṭhaṁ jātarūpaṁ …pe… 
+sn46.33:1.5 | S: tin, | T: Tin is a corruption of gold … | Pali: tipu, bhikkhave, jātarūpassa upakkileso …pe… 
+sn46.33:1.6 | S: lead, | T: Lead is a corruption of gold … | Pali: sīsaṁ, bhikkhave, jātarūpassa upakkileso …pe… 
+sn46.33:1.7 | S: and silver. | T: Silver is a corruption of gold.… | Pali: sajjhu, bhikkhave, jātarūpassa upakkileso, yena upakkilesena upakkiliṭṭhaṁ jātarūpaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā upeti kammāya. 
+sn46.33:1.8 | S: When native gold is corrupted by these five corruptions it’s not pliable, workable, or radiant, but is brittle and not completely ready for working. | T: These are the five corruptions of gold, corrupted by which gold is neither malleable nor wieldy nor radiant but brittle and not properly fit for work. | Pali: Ime kho, bhikkhave, pañca jātarūpassa upakkilesā, yehi upakkilesehi upakkiliṭṭhaṁ jātarūpaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā upeti kammāya. 
+sn46.33:2.1 | S: In the same way, there are these five corruptions of the mind. When the mind is corrupted by these it’s not pliable, workable, or radiant. It’s brittle, and not rightly immersed in samādhi for the ending of defilements. | T: “So too, bhikkhus, there are these five corruptions of the mind, corrupted by which the mind is neither malleable nor wieldy nor radiant but brittle and not rightly concentrated for the destruction of the taints. | Pali: Evameva kho, bhikkhave, pañcime cittassa upakkilesā, yehi upakkilesehi upakkiliṭṭhaṁ cittaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā samādhiyati āsavānaṁ khayāya. 
+sn46.33:2.2 | S: What five? | T: What five? | Pali: Katame pañca? 
+sn46.33:2.3 | S: Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: Sensual desire is a corruption of the mind, corrupted by which the mind is neither malleable nor wieldy nor radiant but brittle and not rightly concentrated for the destruction of the taints. Ill will is a corruption of the mind … Sloth and torpor are a corruption of the mind … Restlessness and remorse are a corruption of the mind … Doubt is a corruption of the mind…. | Pali: Kāmacchando, bhikkhave, cittassa upakkileso, yena upakkilesena upakkiliṭṭhaṁ cittaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā samādhiyati āsavānaṁ khayāya …pe… 
+sn46.33:2.4 | S: These are the five corruptions of the mind. When the mind is corrupted by these it’s not pliable, workable, or radiant. It’s brittle, and not rightly immersed in samādhi for the ending of defilements.” | T: These are the five corruptions of the mind, corrupted by which the mind is neither malleable nor wieldy nor radiant but brittle and not rightly concentrated for the destruction of the taints.” | Pali: ime kho, bhikkhave, pañca cittassa upakkilesā, yehi upakkilesehi upakkiliṭṭhaṁ cittaṁ na ceva mudu hoti na ca kammaniyaṁ, na ca pabhassaraṁ pabhaṅgu ca, na ca sammā samādhiyati āsavānaṁ khayāyā”ti. 
+sn46.33:2.5 | P: Tatiyaṁ. | T: (none) | Pali: Tatiyaṁ. 
+
+## sn46.43
+sn46.43:1.1 | S: “Mendicants, I will teach you a path for crushing Māra’s army. | T: “Bhikkhus, I will teach you the path crushing the army of Mara. | Pali: “Mārasenappamaddanaṁ vo, bhikkhave, maggaṁ desessāmi; 
+sn46.43:1.2 | S: Listen … | T: Listen to that…. | Pali: taṁ suṇātha. 
+sn46.43:1.3 | S: And what is that path? | T: “And what, bhikkhus, is the path crushing the army of Mara? | Pali: Katamo ca, bhikkhave, mārasenappamaddano maggo? 
+sn46.43:1.4 | P: Yadidaṁ— | T: (none) | Pali: Yadidaṁ—
+sn46.43:1.5 | S: It is the seven awakening factors. | T: It is the seven factors of enlightenment. | Pali: satta bojjhaṅgā. 
+sn46.43:1.6 | S: What seven? | T: What seven? | Pali: Katame satta? 
+sn46.43:1.7 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness … the enlightenment factor of equanimity. | Pali: Satisambojjhaṅgo …pe… upekkhāsambojjhaṅgo—
+sn46.43:1.8 | S: This is the path for crushing Māra’s army.” | T: This is the path crushing the army of Mara.” | Pali: ayaṁ kho, bhikkhave, mārasenappamaddano maggo”ti. 
+sn46.43:1.9 | P: Tatiyaṁ. | T: (none) | Pali: Tatiyaṁ. 
+
+## sn47.17
+sn47.17:1.1 | S: “Mendicants, when these four kinds of mindfulness meditation are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering. | T: “Bhikkhus, these four establishments of mindfulness, when developed and cultivated, are noble and emancipating; they lead the one who acts upon them out to the complete destruction of suffering. | Pali: “Cattārome, bhikkhave, satipaṭṭhānā bhāvitā bahulīkatā ariyā niyyānikā niyyanti takkarassa sammā dukkhakkhayāya. 
+sn47.17:1.2 | S: What four? | T: What four? | Pali: Katame cattāro? 
+sn47.17:1.3 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world. | Pali: Idha, bhikkhave, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+sn47.17:1.4 | S: They meditate observing an aspect of feelings … | T: He dwells contemplating feelings in feelings … | Pali: vedanāsu …pe… 
+sn47.17:1.5 | S: mind … | T: mind in mind … | Pali: citte …pe… 
+sn47.17:1.6 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world. | Pali: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+sn47.17:1.7 | S: When these four kinds of mindfulness meditation are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering.” | T: “These four establishments of mindfulness, bhikkhus, when developed and cultivated, are noble and emancipating; they lead the one who acts upon them out to the complete destruction of suffering.” | Pali: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā ariyā niyyānikā niyyanti takkarassa sammā dukkhakkhayāyā”ti. 
+sn47.17:1.8 | P: Sattamaṁ. | T: (none) | Pali: Sattamaṁ. 
+
+## sn47.24
+sn47.24:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn47.24:1.2 | S: “Mendicants, there are these four kinds of mindfulness meditation. | T: “Bhikkhus, there are these four establishments of mindfulness. | Pali: “Cattārome, bhikkhave, satipaṭṭhānā. 
+sn47.24:1.3 | S: What four? | T: What four? | Pali: Katame cattāro? 
+sn47.24:1.4 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world. | Pali: Idha, bhikkhave, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+sn47.24:1.5 | S: They meditate observing an aspect of feelings … | T: He dwells contemplating feelings in feelings … | Pali: vedanāsu …pe… 
+sn47.24:1.6 | S: mind … | T: mind in mind … | Pali: citte …pe… 
+sn47.24:1.7 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world. | Pali: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+sn47.24:1.8 | S: These are the four kinds of mindfulness meditation.” | T: These are the four establishments of mindfulness.” | Pali: Ime kho, bhikkhave, cattāro satipaṭṭhānā”ti. 
+sn47.24:1.9 | P: Catutthaṁ. | T: (none) | Pali: Catutthaṁ. 
+
+## sn47.47
+sn47.47:1.1 | S: Then a mendicant went up to the Buddha … and said: | T: Then a certain bhikkhu approached the Blessed One, paid homage to him, sat down to one side, and said to him: | Pali: Atha kho aññataro bhikkhu yena bhagavā tenupasaṅkami …pe… 
+sn47.47:1.2 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.” | Pali: “sādhu me, bhante, bhagavā saṅkhittena dhammaṁ desetu, yamahaṁ bhagavato dhammaṁ sutvā eko vūpakaṭṭho appamatto ātāpī pahitatto vihareyyan”ti. 
+sn47.47:1.3 | S: “Well then, mendicant, you should purify the starting point of skillful qualities. | T: “In that case, bhikkhu, purify the very beginning of wholesome states. | Pali: “Tasmātiha tvaṁ, bhikkhu, ādimeva visodhehi kusalesu dhammesu. 
+sn47.47:1.4 | S: What is the beginning of skillful qualities? | T: And what is the beginning of wholesome states? | Pali: Ko cādi kusalānaṁ dhammānaṁ? 
+sn47.47:1.5 | S: Give up bad conduct by way of body, speech, and mind and develop good conduct by way of body, speech, and mind. | T: Here, bhikkhu, having abandoned bodily misconduct, you should develop good bodily conduct. | Pali: Idha tvaṁ, bhikkhu, kāyaduccaritaṁ pahāya kāyasucaritaṁ bhāvessasi. 
+sn47.47:1.6 | P: Vacīduccaritaṁ pahāya vacīsucaritaṁ bhāvessasi. | T: Having abandoned verbal misconduct, you should develop good verbal conduct. | Pali: Vacīduccaritaṁ pahāya vacīsucaritaṁ bhāvessasi. 
+sn47.47:1.7 | P: Manoduccaritaṁ pahāya manosucaritaṁ bhāvessasi. | T: Having abandoned mental misconduct, you should develop good mental conduct. | Pali: Manoduccaritaṁ pahāya manosucaritaṁ bhāvessasi. 
+sn47.47:1.8 | S: When you’ve done this, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. | T: When, bhikkhu, having abandoned bodily misconduct … you have developed good mental conduct, then, based upon virtue, established upon virtue, you should develop the four establishments of mindfulness. | Pali: Yato kho tvaṁ, bhikkhu, kāyaduccaritaṁ pahāya kāyasucaritaṁ bhāvessasi, vacīduccaritaṁ pahāya vacīsucaritaṁ bhāvessasi, manoduccaritaṁ pahāya manosucaritaṁ bhāvessasi, tato tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya cattāro satipaṭṭhāne bhāveyyāsi. 
+sn47.47:2.1 | S: What four? | T: “What four? | Pali: Katame cattāro? 
+sn47.47:2.2 | S: Meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, bhikkhu, a bhikkhu dwells contemplating the body in the body … | Pali: Idha tvaṁ, bhikkhu, kāye kāyānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+sn47.47:2.3 | S: Meditate observing an aspect of feelings … | T: feelings in feelings … | Pali: vedanāsu …pe… 
+sn47.47:2.4 | S: mind … | T: mind in mind … | Pali: citte …pe… 
+sn47.47:2.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world. | Pali: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+sn47.47:2.6 | S: When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” … | T: “When, bhikkhu, based upon virtue, established upon virtue, you develop these four establishments of mindfulness in such a way, then, whether night or day comes, you may expect only growth in wholesome states, not decline.” | Pali: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti …pe… 
+sn47.47:2.7 | S: And that mendicant became one of the perfected. | T: Then that bhikkhu … became one of the arahants. | Pali: aññataro ca pana so bhikkhu arahataṁ ahosīti. 
+sn47.47:2.8 | P: Sattamaṁ. | T: (none) | Pali: Sattamaṁ. 
+
+## sn5.6
+sn5.6:1.1 | S: At Sāvatthī. | T: At Savatthi. | Pali: Sāvatthinidānaṁ. 
+sn5.6:1.2 | S: Then the nun Cālā robed up in the morning … | T: Then, in the morning, the bhikkhuni Cala dressed … | Pali: Atha kho cālā bhikkhunī pubbaṇhasamayaṁ nivāsetvā …pe… 
+sn5.6:1.3 | S: and sat at the root of a tree for the day’s meditation. | T: she sat down at the foot of a tree for the day’s abiding. | Pali: aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. 
+sn5.6:1.4 | S: Then Māra the Wicked went up to Cālā and said to her, | T: Then Mara the Evil One approached the bhikkhuni Cala and said to her: | Pali: Atha kho māro pāpimā yena cālā bhikkhunī tenupasaṅkami; upasaṅkamitvā cālaṁ bhikkhuniṁ etadavoca: 
+sn5.6:1.5 | S: “Nun, what don’t you approve of?” | T: “What don’t you approve of, bhikkhuni?” | Pali: “kiṁ nu tvaṁ, bhikkhuni, na rocesī”ti? 
+sn5.6:1.6 | S: “I don’t approve of rebirth, sir.” | T: “I don’t approve of birth, friend.” | Pali: “Jātiṁ khvāhaṁ, āvuso, na rocemī”ti. 
+sn5.6:2.1 | S: “Why don’t you approve of rebirth? | T: “Why don’t you approve of birth? | Pali: “Kiṁ nu jātiṁ na rocesi, 
+sn5.6:2.2 | S: When you’re born, you get to enjoy sensual pleasures. | T: Once born, one enjoys sensual pleasures. | Pali: jāto kāmāni bhuñjati; 
+sn5.6:2.3 | S: Who put this idea in your head: | T: Who now has persuaded you of this: | Pali: Ko nu taṁ idamādapayi, 
+sn5.6:2.4 | S: ‘Nun, don’t approve of rebirth’?” | T: ‘Bhikkhuni, don’t approve of birth’?” | Pali: jātiṁ mā roca bhikkhunī”ti. 
+sn5.6:3.1 | S: “Death comes to those who are born, | T: The bhikkhuni Cala: “For one who is born there is death; | Pali: “Jātassa maraṇaṁ hoti, 
+sn5.6:3.2 | S: when you’re born you undergo sufferings— | T: Once born, one encounters sufferings— | Pali: jāto dukkhāni phussati; 
+sn5.6:3.3 | S: killing, caging, misery— | T: Bondage, murder, affliction— | Pali: Bandhaṁ vadhaṁ pariklesaṁ, 
+sn5.6:3.4 | S: that’s why you shouldn’t approve of rebirth. | T: Hence one shouldn’t approve of birth. | Pali: tasmā jātiṁ na rocaye. 
+sn5.6:4.1 | S: The Buddha taught me the Dhamma | T: “The Buddha has taught the Dhamma, | Pali: Buddho dhammamadesesi, 
+sn5.6:4.2 | S: for transcending rebirth, | T: The transcendence of birth; | Pali: jātiyā samatikkamaṁ; 
+sn5.6:4.3 | S: for giving up all suffering; | T: For the abandoning of all suffering | Pali: Sabbadukkhappahānāya, 
+sn5.6:4.4 | S: he settled me in the truth. | T: He has settled me in the truth. | Pali: so maṁ sacce nivesayi. 
+sn5.6:5.1 | S: There are beings in the realm of luminous form, | T: “As to those beings who fare amidst form, | Pali: Ye ca rūpūpagā sattā, 
+sn5.6:5.2 | S: and others stuck in the formless. | T: And those who abide in the formless— | Pali: ye ca arūpaṭṭhāyino; 
+sn5.6:5.3 | S: Not understanding cessation, | T: Not having understood cessation, | Pali: Nirodhaṁ appajānantā, 
+sn5.6:5.4 | S: they return in future lives.” | T: They come again to renewed existence.” | Pali: āgantāro punabbhavan”ti. 
+sn5.6:6.1 | S: Then Māra the Wicked, thinking, “The nun Cālā knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One, realizing, “The bhikkhuni Cala knows me,” sad and disappointed, disappeared right there. | Pali: Atha kho māro pāpimā “jānāti maṁ cālā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. 
+
+## sn56.38
+sn56.38:1.1 | S: “Mendicants, as long as the moon and the sun don’t arise in the world, no great light or great radiance appears. | T: “Bhikkhus, so long as the sun and moon have not arisen in the world, for just so long there is no manifestation of great light and radiance, | Pali: “Yāvakīvañca, bhikkhave, candimasūriyā loke nuppajjanti, neva tāva mahato ālokassa pātubhāvo hoti mahato obhāsassa. 
+sn56.38:1.2 | S: Darkness prevails then, utter darkness. | T: but then blinding darkness prevails, a dense mass of darkness; | Pali: Andhatamaṁ tadā hoti andhakāratimisā. 
+sn56.38:1.3 | S: Day and night aren’t found, nor months and fortnights, nor seasons and years. | T: for just so long day and night are not discerned, the month and fortnight are not discerned, the seasons and the year are not discerned. | Pali: Neva tāva rattindivā paññāyanti, na māsaddhamāsā paññāyanti, na utusaṁvaccharā paññāyanti. 
+sn56.38:2.1 | S: But when the moon and the sun arise in the world, a great light, a great radiance appears. | T: “But, bhikkhus, when the sun and moon arise in the world, then there is the manifestation of great light and radiance; | Pali: Yato ca kho, bhikkhave, candimasūriyā loke uppajjanti, atha mahato ālokassa pātubhāvo hoti mahato obhāsassa. 
+sn56.38:2.2 | S: Darkness no longer prevails. | T: then there is no blinding darkness, no dense mass of darkness; | Pali: Neva andhakāratamaṁ tadā hoti na andhakāratimisā. 
+sn56.38:2.3 | S: Day and night are found, and months and fortnights, and seasons and years. | T: then day and night are discerned, the month and fortnight are discerned, the seasons and year are discerned. | Pali: Atha rattindivā paññāyanti, māsaddhamāsā paññāyanti, utusaṁvaccharā paññāyanti. 
+sn56.38:2.4 | S: In the same way, as long as the Realized One doesn’t arise in the world, no great light or great radiance appears. | T: “So too, bhikkhus, so long as a Tathagata has not arisen in the world, an Arahant, a Perfectly Enlightened One, for just so long there is no manifestation of great light and radiance, | Pali: Evameva kho, bhikkhave, yāvakīvañca tathāgato loke nuppajjati arahaṁ sammāsambuddho, neva tāva mahato ālokassa pātubhāvo hoti mahato obhāsassa. 
+sn56.38:2.5 | S: Darkness prevails then, utter darkness. | T: but then blinding darkness prevails, a dense mass of darkness; | Pali: Andhatamaṁ tadā hoti andhakāratimisā. 
+sn56.38:2.6 | S: There’s no explanation of the four noble truths, no teaching, advocating, establishing, clarifying, analyzing, and revealing of them. | T: for just so long there is no explaining, teaching, proclaiming, establishing, disclosing, analysing, or elucidating of the Four Noble Truths. | Pali: Neva tāva catunnaṁ ariyasaccānaṁ ācikkhaṇā hoti desanā paññāpanā paṭṭhapanā vivaraṇā vibhajanā uttānīkammaṁ. 
+sn56.38:3.1 | S: But when the Realized One arises in the world, a great light, a great radiance appears. | T: “But, bhikkhus, when a Tathagata arises in the world, an Arahant, a Perfectly Enlightened One, then there is the manifestation of great light and radiance; | Pali: Yato ca kho, bhikkhave, tathāgato loke uppajjati arahaṁ sammāsambuddho, atha mahato ālokassa pātubhāvo hoti mahato obhāsassa. 
+sn56.38:3.2 | S: Darkness no longer prevails. | T: then no blinding darkness prevails, no dense mass of darkness; | Pali: Neva andhatamaṁ tadā hoti na andhakāratimisā. 
+sn56.38:3.3 | S: Then there’s the explanation of the four noble truths, the teaching, advocating, establishing, clarifying, analyzing, and revealing of them. | T: then there is the explaining, teaching, proclaiming, establishing, disclosing, analysing, and elucidating of the Four Noble Truths. | Pali: Atha kho catunnaṁ ariyasaccānaṁ ācikkhaṇā hoti desanā paññāpanā paṭṭhapanā vivaraṇā vibhajanā uttānīkammaṁ. 
+sn56.38:3.4 | S: What four? | T: What four? | Pali: Katamesaṁ catunnaṁ? 
+sn56.38:3.5 | S: The noble truths of suffering, its origin, its cessation, and the path. | T: The noble truth of suffering … the noble truth of the way leading to the cessation of suffering. | Pali: Dukkhassa ariyasaccassa …pe… dukkhanirodhagāminiyā paṭipadāya ariyasaccassa. 
+sn56.38:4.1 | S: That’s why you should practice meditation …” | T: “Therefore, bhikkhus, an exertion should be made to understand: ‘This is suffering.’… An exertion should be made to understand: ‘This is the way leading to the cessation of suffering.’” | Pali: Tasmātiha, bhikkhave, ‘idaṁ dukkhan’ti yogo karaṇīyo …pe… ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yogo karaṇīyo”ti. 
+sn56.38:4.2 | P: Aṭṭhamaṁ. | T: (none) | Pali: Aṭṭhamaṁ. 
+

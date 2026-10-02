@@ -1,0 +1,441 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd96-7582-7ee0-a428-3231c8baee4d
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,200p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.48
+sn12.48:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn12.48:1.2 | S: Then a brahmin cosmologist went up to the Buddha … | T: Then a brahman cosmologist went to the Blessed One and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies,
+sn12.48:1.3 | S: Seated to one side he said to the Buddha: | T: he sat to one side. As he was sitting there, he said to the Blessed One,
+sn12.48:2.1 | S: “Worthy Gotama, does all exist?” | T: “Now, then, Master Gotama, does everything exist?”
+sn12.48:2.2 | S: “‘All exists’: this is the oldest cosmology, brahmin.” | T: “‘Everything exists’ is the senior form of cosmology, brahman.”
+sn12.48:3.1 | S: “Then does all not exist?” | T: “Then, Master Gotama, does everything not exist?”
+sn12.48:3.2 | S: “‘All does not exist’: this is the second cosmology.” | T: “‘Everything does not exist’ is the second form of cosmology, brahman.”
+sn12.48:4.1 | S: “Well, is all oneness?” | T: “Then is everything a Oneness?”
+sn12.48:4.2 | S: “‘All is oneness’: this is the third cosmology.” | T: “‘Everything is a Oneness’ is the third form of cosmology, brahman.”
+sn12.48:5.1 | S: “Then is all expansiveness?” | T: “Then is everything a plurality?”
+sn12.48:5.2 | S: “‘All is expansiveness’: this is the fourth cosmology. | T: “‘Everything is a plurality is the fourth form of cosmology, brahman.
+sn12.48:6.1 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn12.48:6.2 | S: ‘Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+sn12.48:6.3 | S: Choices are a requirement for consciousness. … | T: From fabrications as a requisite condition comes consciousness. From consciousness as a requisite condition comes name-&-form. From name-&-form as a requisite condition come the six sense media. From the six sense media as a requisite condition comes contact. From contact as a requisite condition comes feeling. From feeling as a requisite condition comes craving. From craving as a requisite condition comes clinging/sustenance. From clinging/sustenance as a requisite condition comes becoming. From becoming as a requisite condition comes birth. From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, & despair come into play.
+sn12.48:6.4 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn12.48:6.5 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: “Now from the remainderless fading & cessation of that very ignorance comes the cessation of fabrications.
+sn12.48:6.6 | S: When choices cease, consciousness ceases. … | T: From the cessation of fabrications comes the cessation of consciousness. From the cessation of consciousness comes the cessation of name-&-form. From the cessation of name-&-form comes the cessation of the six sense media. From the cessation of the six sense media comes the cessation of contact. From the cessation of contact comes the cessation of feeling. From the cessation of feeling comes the cessation of craving. From the cessation of craving comes the cessation of clinging/sustenance. From the cessation of clinging/sustenance comes the cessation of becoming. From the cessation of becoming comes the cessation of birth. From the cessation of birth, then aging-&-death, sorrow, lamentation, pain, distress, & despair all cease.
+sn12.48:6.7 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this entire mass of stress & suffering.”
+sn12.48:7.1 | S: When he said this, the brahmin cosmologist said to the Buddha, | T: (none)
+sn12.48:7.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks.
+sn12.48:7.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+sn12.48:7.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn41.3
+sn41.3:1.1 | S: At one time several senior mendicants were staying near Macchikāsaṇḍa in the Wild Mango Grove. | T: On one occasion a large number of senior monks were staying near Macchikāsaṇḍa in the Wild Mango Grove.
+sn41.3:1.2 | S: Then Citta the householder went up to them, bowed, sat down to one side, and said to them, | T: Then Citta the householder went to them and, on arrival, having bowed down to them, sat to one side. As he was sitting there he said to them:
+sn41.3:1.3 | S: “Sirs, would the senior monks please accept tomorrow’s meal from me?” | T: “Venerable sirs, may the senior monks acquiesce to tomorrow’s meal from me.”
+sn41.3:1.4 | S: They consented with silence. | T: The senior monks acquiesced by silence.
+sn41.3:1.5 | S: Then, knowing that the senior mendicants had consented, Citta rose from his seat, bowed, and respectfully circled them, keeping them on his right, before leaving. | T: Then Citta the householder, sensing the senior monks’ acquiescence, got up from his seat and, having bowed down to them, circumambulated them—keeping them to his right—and left.
+sn41.3:1.6 | S: Then when the night had passed, the senior mendicants robed up in the morning and, taking their bowls and robes, went to Citta’s home, and sat down on the seats spread out. | T: When the night had passed, the senior monks adjusted their lower robes in the early morning and, taking their bowls & outer robes, went to Citta’s residence. There they sat down on the appointed seats.
+sn41.3:2.1 | S: So he went up to them, bowed, sat down to one side, and said to the senior venerable: | T: Citta the householder went to them and, having bowed down to them, sat to one side. As he was sitting there, he said to the most senior monk:
+sn41.3:2.2 | S: “Honorable Senior, there are many different views that arise in the world. For example: | T: “Venerable sir, concerning the various views that arise in the world—
+sn41.3:2.3 | S: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: ‘The cosmos is eternal’ or ‘The cosmos isn’t eternal’; ‘The cosmos is finite’ or ‘The cosmos is infinite’; ‘The soul and the body are the same’ or ‘The soul is one thing, the body another’; ‘A Tathāgata exists after death’ or ‘A Tathāgata doesn’t exist after death’ or ‘A Tathāgata both exists & doesn’t exist after death’ or ‘A Tathāgata neither exists nor doesn’t exist after death’;
+sn41.3:2.4 | S: And also the sixty-two misconceptions spoken of in ‘The Divine Net’. | T: these along with the sixty-two views mentioned in the Brahmajāla [DN1]—
+sn41.3:2.5 | S: When what exists do these views come to be? When what doesn’t exist do these views not come to be?” | T: when what is present do these views come into being, and when what is absent do they not come into being?”
+sn41.3:3.1 | S: When he said this, the senior venerable kept silent. | T: When this was said, the senior monk was silent.
+sn41.3:3.2 | S: For a second time … | T: A second time…
+sn41.3:3.3 | S: And for a third time, Citta said to him: | T: A third time Citta the householder asked,
+sn41.3:3.4 | S: “Honorable Senior, there are many different views that arise in the world. … | T: “Concerning the various views that arise in the world…
+sn41.3:3.5 | P: sassato lokoti vā, asassato lokoti vā, antavā lokoti vā, anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā. | T: (none)
+sn41.3:3.6 | P: Yāni cimāni dvāsaṭṭhi diṭṭhigatāni brahmajāle bhaṇitāni; | T: (none)
+sn41.3:3.7 | S: When what exists do these views come to be? When what doesn’t exist do these views not come to be?” | T: when what is present do they come into being, and what is absent do they not come into being?”
+sn41.3:3.8 | S: And a second time and a third time the senior venerable kept silent. | T: A third time the senior monk was silent.
+sn41.3:4.1 | S: Now at that time Venerable Isidatta was the most junior mendicant in that Saṅgha. | T: Now on that occasion Ven. Isidatta was the most junior of all the monks in that Saṅgha.
+sn41.3:4.2 | S: He said to the senior venerable, | T: Then he said to the senior monk:
+sn41.3:4.3 | S: “Honorable Senior, may I answer Citta’s question?” | T: “Allow me, venerable sir, to answer Citta the householder’s question.”
+sn41.3:4.4 | S: “Answer it, Reverend Isidatta.” | T: “Go ahead & answer it, friend Isidatta.”
+sn41.3:4.5 | S: “Householder, is this your question: | T: “Now, householder, are you asking this:
+sn41.3:4.6 | S: ‘There are many different views that arise in the world … | T: ‘Concerning the various views that arise in the world…
+sn41.3:4.7 | P: sassato lokoti vā …pe…; | T: (none)
+sn41.3:4.8 | S: When what exists do these views come to be? When what doesn’t exist do these views not come to be?’” | T: when what is present do they come into being, and what is absent do they not come into being?’?”
+sn41.3:4.9 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn41.3:4.10 | S: “Householder, there are many different views that arise in the world. For example: | T: “Concerning the various views that arise in the world, householder…
+sn41.3:4.11 | S: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: (none)
+sn41.3:4.12 | S: And also the sixty-two misconceptions spoken of in ‘The Divine Net’. | T: (none)
+sn41.3:4.13 | S: These views come to be when substantialist view exists. When substantialist view does not exist they do not come to be.” | T: when self-identity view is present, these views come into being; when self-identity view is absent, they don’t come into being.”
+sn41.3:5.1 | S: “But sir, how does substantialist view come about?” | T: “But, venerable sir, how does self-identity view come into being?”
+sn41.3:5.2 | S: “It’s when an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “There is the case, householder, where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn41.3:5.3 | S: They regard form as self, self as having form, form in self, or self in form. | T: assumes form (the body) to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn41.3:5.4 | S: They regard feeling … | T: He assumes feeling to be the self, or the self as possessing feeling, or feeling as in the self, or the self as in feeling.
+sn41.3:5.5 | S: perception … | T: He assumes perception to be the self, or the self as possessing perception, or perception as in the self, or the self as in perception.
+sn41.3:5.6 | S: choices … | T: He assumes fabrications to be the self, or the self as possessing fabrications, or fabrications as in the self, or the self as in fabrications.
+sn41.3:5.7 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: He assumes consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn41.3:5.8 | S: That’s how substantialist view comes about.” | T: This is how self-identity view comes into being.”
+sn41.3:6.1 | S: “But sir, how does substantialist view not come about?” | T: “And, venerable sir, how does self-identity view not come into being?”
+sn41.3:6.2 | S: “It’s when a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “There is the case, householder, where a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma—
+sn41.3:6.3 | S: They don’t regard form as self, self as having form, form in self, or self in form. | T: doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn41.3:6.4 | S: They don’t regard feeling … | T: He doesn’t assume feeling to be the self…
+sn41.3:6.5 | S: perception … | T: He doesn’t assume perception to be the self…
+sn41.3:6.6 | S: choices … | T: He doesn’t assume fabrications to be the self…
+sn41.3:6.7 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn41.3:6.8 | S: That’s how substantialist view does not come about.” | T: This is how self-identity view does not come into being.”
+sn41.3:7.1 | S: “Sir, where has Master Isidatta come from?” | T: “Venerable sir, where does Master Isidatta come from?”
+sn41.3:7.2 | S: “I come from Avanti, householder.” | T: “I come from Avanti, householder.”
+sn41.3:7.3 | S: “Sir, there’s a friend of mine named Isidatta who I’ve never met. He’s gone forth from a good family in Avanti. | T: “There is, venerable sir, a clansman from Avanti named Isidatta, an unseen friend of mine, who has gone forth.
+sn41.3:7.4 | S: Have you met him?” | T: Have you ever seen him?”
+sn41.3:7.5 | S: “Yes, householder.” | T: “Yes, householder.”
+sn41.3:7.6 | S: “Sir, where is that venerable now staying?” | T: “Where is he living now, venerable sir?”
+sn41.3:7.7 | S: When he said this, Isidatta kept silent. | T: When this was said, the Venerable Isidatta was silent.
+sn41.3:7.8 | S: “Sir, are you that Isidatta?” | T: “Are you my Isidatta?”
+sn41.3:7.9 | S: “Yes, householder.” | T: “Yes, householder.”
+sn41.3:7.10 | S: “Sir, I hope Master Isidatta is happy here in Macchikāsaṇḍa, | T: “Then may Master Isidatta delight in the charming Wild Mango Grove at Macchikāsaṇḍa.
+sn41.3:7.11 | S: for the Wild Mango Grove is lovely. | T: (none)
+sn41.3:7.12 | S: I’ll make sure that Master Isidatta is provided with robes, almsfood, lodgings, and medicines and supplies for the sick.” | T: I will be responsible for your robes, almsfood, lodgings, & medicinal requisites.”
+sn41.3:7.13 | S: “That’s nice of you to say, householder.” | T: “That is admirably said, householder.”
+sn41.3:8.1 | S: Then Citta, having approved and agreed with what Isidatta said, served and satisfied the senior mendicants with his own hands with delicious fresh and cooked foods. | T: Then Citta the householder—having delighted & rejoiced in the Venerable Isidatta’s words—with his own hand served & satisfied the senior monks with choice staple & non-staple foods.
+sn41.3:8.2 | S: When the senior mendicants had eaten and washed their hands and bowls, they rose from their seats and left. | T: When the senior monks had finished eating and had rinsed their bowls & hands, they got up from their seats and left.
+sn41.3:8.3 | S: Then the senior venerable said to Venerable Isidatta, | T: Then the most senior monk said to the Venerable Isidatta:
+sn41.3:8.4 | S: “Isidatta, it’s good that you felt inspired to answer that question, because I didn’t. | T: “It was excellent, friend Isidatta, the way that question inspired you to answer.
+sn41.3:8.5 | P: Neso pañho maṁ paṭibhāsi. | T: It didn’t inspire an answer in me at all.
+sn41.3:8.6 | S: So when a similar question comes up, you should also answer it as you feel inspired.” | T: Whenever a similar question comes up again, may it inspire you to answer as you did just now.”
+sn41.3:8.7 | S: But Isidatta set his lodgings in order and, taking his bowl and robe, left Macchikāsaṇḍa, | T: Then Ven. Isidatta—having set his lodging in order and taking his bowl & robes—left Macchikāsaṇḍa.
+sn41.3:8.8 | S: never to return. | T: And in leaving Macchikāsaṇḍa, he was gone for good and never returned.
+sn41.3:8.9 | P: Tatiyaṁ. | T: (none)
+
+## thig12.1
+thig12.1:1.1 | S: “I used to be a water-carrier. Even when it was cold, | T: Puṇṇikā: I’m a water-carrier, cold,
+thig12.1:1.2 | S: I would always plunge into the water, | T: always going down to the water
+thig12.1:1.3 | S: afraid of my masters’ beatings, | T: from fear of my mistresses’ beatings,
+thig12.1:1.4 | S: harassed by fear of abuse and anger. | T: harassed by their anger & words.
+thig12.1:2.1 | S: Brahmin, what are you afraid of, | T: But you, brahman, what do you fear
+thig12.1:2.2 | S: that you always plunge into the water, | T: that you’re always going down to the water
+thig12.1:2.3 | S: your limbs trembling | T: with shivering limbs,
+thig12.1:2.4 | S: in the freezing cold?” | T: feeling great cold?
+thig12.1:3.1 | S: “Oh, but you already know, | T: The Brahman: Puṇṇikā, surely you know.
+thig12.1:3.2 | S: Madam Puṇṇikā, when you ask me: | T: You’re asking one doing skillful kamma
+thig12.1:3.3 | S: I am doing good deeds, | T: (none)
+thig12.1:3.4 | S: to ward off the wickedness I have done. | T: & warding off evil.
+thig12.1:4.1 | S: Whosoever young or old | T: Whoever, young or old,
+thig12.1:4.2 | S: performs a wicked deed, | T: does evil kamma
+thig12.1:4.3 | S: by ablution in water they are | T: is, through water ablution,
+thig12.1:4.4 | S: released from their wicked deed.” | T: from evil kamma set free.
+thig12.1:5.1 | S: “Who on earth told you this, | T: Puṇṇikā: Who taught you this
+thig12.1:5.2 | S: one ignoramus to another: | T: —the ignorant to the ignorant—
+thig12.1:5.3 | S: ‘Actually, by ablution in water one is | T: ‘One, through water ablution,
+thig12.1:5.4 | S: released from a wicked deed.’ | T: is from evil kamma set free’?
+thig12.1:6.1 | S: Would not they all go to heaven, then: | T: In that case, they’d all go to heaven:
+thig12.1:6.2 | S: all the frogs and the turtles, | T: all the frogs, turtles,
+thig12.1:6.3 | S: dragons, dolphins, | T: serpents, crocodiles,
+thig12.1:6.4 | S: and other water-dwellers too? | T: & anything else that lives in the water.
+thig12.1:7.1 | S: Butchers of sheep and pigs, | T: Sheep-butchers, pork-butchers,
+thig12.1:7.2 | S: fishermen, animal trappers, | T: fishermen, trappers,
+thig12.1:7.3 | S: bandits, executioners, | T: thieves, executioners,
+thig12.1:7.4 | S: and others of evil deeds: | T: & any other evil doers,
+thig12.1:7.5 | S: by ablution in water they too would be | T: would, through water ablution,
+thig12.1:7.6 | S: released from their wicked deeds. | T: be from evil kamma set free.
+thig12.1:8.1 | S: If these rivers had carried away | T: If these rivers could carry off
+thig12.1:8.2 | S: your bad deeds in the past, | T: the evil kamma you’ve done in the past,
+thig12.1:8.3 | S: they would also carry away your good deeds, | T: they’d carry off your merit as well,
+thig12.1:8.4 | S: from which you’d be prevented. | T: and then you’d be completely deprived.
+thig12.1:9.1 | S: Brahmin, the thing that you are afraid of, | T: Whatever it is that you fear,
+thig12.1:9.2 | S: when you always plunge into the water, | T: that you’re always going down to the water,
+thig12.1:9.3 | S: do not do that very thing, | T: don’t do it.
+thig12.1:9.4 | S: don’t let the cold harm your skin.” | T: Don’t let the cold hurt your skin.”
+thig12.1:10.1 | S: “I have been on the wrong path, | T: The Brahman: I’ve been following the miserable path, good lady,
+thig12.1:10.2 | S: and you’ve guided me to the noble path. | T: and now you’ve brought me back to the noble.
+thig12.1:10.3 | S: Madam, I give to you | T: I give you this robe for water-ablution.
+thig12.1:10.4 | S: this ablution cloth.” | T: (none)
+thig12.1:11.1 | S: “Keep the cloth for yourself, | T: Puṇṇikā: Let the robe be yours.
+thig12.1:11.2 | S: I do not want it. | T: I don’t need it.
+thig12.1:11.3 | S: If you fear suffering, | T: If you’re afraid of pain,
+thig12.1:11.4 | S: if you don’t like suffering, | T: if you dislike pain,
+thig12.1:12.1 | S: then don’t do bad deeds | T: then don’t do any evil kamma,
+thig12.1:12.2 | S: either openly or in secret. | T: in open, in secret.
+thig12.1:12.3 | S: If you should do a bad deed, | T: But if you do or will do any evil kamma,
+thig12.1:12.4 | S: or you’re doing one now, | T: (none)
+thig12.1:13.1 | S: you won’t be freed from suffering, | T: you’ll gain no freedom from pain,
+thig12.1:13.2 | S: though you fly away and flee. | T: even if you fly up & hurry away.
+thig12.1:13.3 | S: If you fear suffering, | T: If you’re afraid of pain,
+thig12.1:13.4 | S: if you don’t like suffering, | T: if you dislike pain,
+thig12.1:14.1 | S: go for refuge to the Buddha, the unaffected, | T: go to the Awakened One for refuge,
+thig12.1:14.2 | S: to his teaching and to the Saṅgha. | T: go to the Dhamma & Saṅgha.
+thig12.1:14.3 | S: Undertake the precepts, | T: Take on the precepts:
+thig12.1:14.4 | S: that will be good for you.” | T: That will lead to your liberation.
+thig12.1:15.1 | S: “I go for refuge to the Buddha, the unaffected, | T: The Brahman: I go to the Awakened One for refuge;
+thig12.1:15.2 | S: to his teaching and to the Saṅgha. | T: I go to the Dhamma & Saṅgha.
+thig12.1:15.3 | S: I undertake the precepts, | T: I take on the precepts:
+thig12.1:15.4 | S: that will be good for me. | T: That will lead to my liberation.
+thig12.1:16.1 | S: I used to be brahmin only by kin, | T: Before, I was a kinsman to Brahmā;
+thig12.1:16.2 | S: today I truly am a brahmin! | T: now, truly a brahman.
+thig12.1:16.3 | S: Master of the three knowledges, <j>accomplished in wisdom, | T: I’m a three-knowledge man & safe, consummate in knowledge,
+thig12.1:16.4 | S: I’m a scholar, a bathed initiate.” | T: washed clean.
+thig12.1:17.1 | P: … Puṇṇā therī …. | T: (none)
+thig12.1:18.1 | P: Soḷasakanipāto niṭṭhito. | T: (none)
+
+## sn20.10
+sn20.10:1.1 | S: At Sāvatthī. | T: Dwelling at Sāvatthī.
+sn20.10:1.2 | S: Now at that time a certain mendicant had relations with families too often. | T: And on that occasion a certain newly-ordained monk was spending too much time visiting lay families.
+sn20.10:1.3 | S: The mendicants said to him, | T: The monks said to him,
+sn20.10:1.4 | S: “Venerable, don’t have relations with families too often.” | T: “Friend, don’t spend so much time visiting lay families.”
+sn20.10:1.5 | S: But that mendicant, when spoken to by the mendicants, did not stop. | T: He, admonished by the monks, didn’t desist.
+sn20.10:1.6 | S: And then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. The Buddha said: | T: Then many monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there, they said to him,
+sn20.10:1.7 | P: “idha, bhante, aññataro bhikkhu ativelaṁ kulesu cārittaṁ āpajjati. | T: “Lord, there is a certain newly-ordained monk who is spending too much time visiting lay families.
+sn20.10:1.8 | P: Tamenaṁ bhikkhū evamāhaṁsu: | T: The monks have said to him,
+sn20.10:1.9 | P: ‘māyasmā ativelaṁ kulesu cārittaṁ āpajjī’ti. | T: ‘Friend, don’t spend so much time visiting lay families.’
+sn20.10:1.10 | P: So bhikkhu bhikkhūhi vuccamāno na viramatī”ti. | T: He, admonished by the monks, hasn’t desisted.”
+sn20.10:2.1 | S: “Once upon a time, mendicants, a cat was standing by an alley or a drain or a dustbin hunting a little mouse, thinking, | T: [The Blessed One said:] “Once, monks, a cat was standing by an alley-drain-rubbish bin to ambush a mouse, (thinking,)
+sn20.10:2.2 | S: ‘When that little mouse comes out to feed, I’ll catch it right there and eat it!’ | T: ‘When a mouse comes out to forage, I’ll grab it right there and eat it.’
+sn20.10:2.3 | S: And then that little mouse came out to feed. | T: Then a mouse came out to forage.
+sn20.10:2.4 | S: The cat caught it and hastily swallowed it without chewing. | T: The cat, catching it right away, swallowed it without chewing it.
+sn20.10:2.5 | S: But that little mouse ate its intestines and mesentery, | T: The mouse chewed on its small & large intestines,
+sn20.10:2.6 | S: resulting in death and deadly pain. | T: and from that cause there came [for the cat] death & death-like pain.
+sn20.10:3.1 | S: In the same way, take a certain monk who robes up in the morning and, taking his bowl and robe, enters the village or town for alms without guarding body, speech, and mind, without establishing mindfulness, and without restraining the sense faculties. | T: “In the same way, there is the case where a monk, early in the morning, having adjusted his lower robe and, carrying his bowl & outer robe, enters a village or town for alms—with his bodily actions unprotected, his speech unprotected, his mind unprotected, with mindfulness unestablished, with his sense faculties unguarded.
+sn20.10:3.2 | S: There he sees a lady scantily clad, with revealing clothes. | T: There he sees a woman improperly dressed or half-naked.
+sn20.10:3.3 | S: Lust infects his mind, | T: As he sees her improperly dressed or half-naked, lust ravages his mind.
+sn20.10:3.4 | S: resulting in death or deadly pain. | T: When his mind is ravaged by lust, death comes to him or death-like pain.
+sn20.10:3.5 | S: For it is death in the training of the Noble One to resign the training and return to a lesser life. | T: Monks, ‘death’ in this discipline of a noble one is when one renounces the training and returns to the lower life.
+sn20.10:3.6 | S: And it is deadly pain to commit one of the corrupt offenses | T: ‘Death-like pain’ is when one falls into a certain defiled offense that requires rehabilitation.
+sn20.10:3.7 | S: for which rehabilitation is possible. | T: (none)
+sn20.10:3.8 | S: So you should train like this: | T: “Therefore, monks, you should train yourselves:
+sn20.10:3.9 | S: ‘We will enter the village or town for alms guarding body, speech, and mind, establishing mindfulness, and restraining the sense faculties.’ | T: ‘We will enter a village or town for alms with our bodily actions protected, our speech protected, our mind protected, with mindfulness established, with our sense faculties guarded.’
+sn20.10:3.10 | S: That’s how you should train.” | T: That’s how you should train yourselves.”
+sn20.10:3.11 | P: Dasamaṁ. | T: (none)
+
+## sn3.20
+sn3.20:1.1 | S: Then King Pasenadi of Kosala went up to the Buddha in the middle of the day … The Buddha said to him, | T: Near Sāvatthī. Then King Pasenadi Kosala went to the Blessed One in the middle of the day and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there the Blessed One said to him,
+sn3.20:1.2 | S: “So, Great King, where are you coming from in the middle of the day?” | T: “Well now, great king, where are you coming from in the middle of the day?”
+sn3.20:2.1 | S: “Sir, here in Sāvatthī a financier householder has passed away. | T: “Just now, lord, a money-lending householder died in Sāvatthī.
+sn3.20:2.2 | S: Since he died childless, I have come after transferring his fortune to the royal compound. | T: I have come from conveying his heirless fortune to the royal palace:
+
+exec
+/bin/bash -lc "sed -n '201,400p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn3.20:2.3 | S: There was ten million in gold coin, not to mention the silver coin. | T: ten million in silver, to say nothing of the gold.
+sn3.20:2.4 | S: And yet that financier ate meals of | T: But even though he was a money-lending householder, his enjoyment of food was like this: He ate broken rice & pickle brine.
+sn3.20:2.5 | S: sour gruel with false black pepper. | T: (none)
+sn3.20:2.6 | S: He wore clothes consisting of | T: His enjoyment of clothing was like this: He wore three lengths of hempen cloth.
+sn3.20:2.7 | S: three patches of sunn hemp. | T: (none)
+sn3.20:2.8 | S: He traveled around in a vehicle that was | T: His enjoyment of a vehicle was like this:
+sn3.20:2.9 | S: a dilapidated little cart, holding a leaf as parasol.” | T: He rode in a dilapidated little cart with an awning of leaves.”
+sn3.20:3.1 | S: “That’s so true, Great King! That’s so true! | T: “That’s the way it is, great king. That’s the way it is.
+sn3.20:3.2 | S: Once upon a time, great king, that financier householder provided almsfood on behalf of an independent Buddha named Tagarasikhī. | T: Once in the past that money-lending householder provided alms for the Private Buddha named Tagarasikhi.
+sn3.20:3.3 | S: He instructed: ‘Give alms to that ascetic,’ before getting up from his seat and leaving. | T: Saying (to his servant), ‘Give alms to the contemplative,’ he got up from his seat and left.
+sn3.20:3.4 | S: But after giving he regretted it: | T: After giving, though, he felt regret:
+sn3.20:3.5 | S: ‘It would have been better to feed the bondservants or workers with that almsfood.’ | T: ‘It would have been better if my slaves or servants had eaten those alms.’
+sn3.20:3.6 | S: What’s more, he murdered his brother’s only child for the sake of his fortune. | T: And he also murdered his brother’s only heir for the sake of his fortune.
+sn3.20:4.1 | S: Because that financier provided Tagarasikhī with almsfood, as a result of that deed he was reborn seven times in a good place, a heavenly realm. | T: Now, the result of his action in having provided alms for the Private Buddha named Tagarasikhi was that he appeared seven times in a good destination, a heavenly world.
+sn3.20:4.2 | S: And as a residual result of that same deed he held the position of financier seven times right here in Sāvatthī. | T: And through the remaining result of that action he acted as moneylender seven times in this very same Sāvatthī.
+sn3.20:4.3 | S: But because that financier regretted giving alms, | T: But the result of his action in feeling regret after giving (those) alms—‘It would have been better if my slaves or servants had eaten those alms’—
+sn3.20:4.4 | S: as a result of that deed his mind didn’t tend to enjoy nice food, clothes, vehicles, or the five refined kinds of sensual stimulation. | T: was that his mind didn’t lend itself to the lavish enjoyment of food, didn’t lend itself to the lavish enjoyment of clothing, didn’t lend itself to the lavish enjoyment of a vehicle, didn’t lend itself to the lavish enjoyment of the five strings of sensuality.
+sn3.20:4.5 | S: And because that financier murdered his brother’s only child for the sake of his fortune, as a result of that deed he burned in hell for many years, for many hundreds, many thousands, many hundreds of thousands of years. | T: The result of his action in having murdered his brother’s only heir for the sake of his fortune was that he boiled in hell for many years, many hundreds of years, many thousands of years, many hundred-thousands of years.
+sn3.20:4.6 | S: And as a residual result of that same deed, he is childless for the seventh time, his fortune ending up in the royal treasury. | T: And through the remaining result of that action he has left this seventh heirless fortune to the royal treasury.
+sn3.20:4.7 | S: Now the old merit of that financier has been used up, and he hasn’t accumulated new merit. | T: “Now, because of the wasting away of that money-lending householder’s old merit and his non-accumulation of new merit,
+sn3.20:4.8 | S: Today, Great King, that financier burns in the Great Hell of Screams.” | T: he is today boiling in the Great Roruva hell.”
+sn3.20:4.9 | S: “Really, sir, that financier has been reborn in the Great Hell of Screams?” | T: “So he has reappeared in the Great Roruva hell, lord?”
+sn3.20:4.10 | S: “Yes he has, Great King.” | T: “Yes, great king. He has reappeared in the Great Roruva hell.”
+sn3.20:4.11 | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.20:5.1 | S: “Grain, money, silver, and gold, | T: “Grain, wealth, silver, gold,
+sn3.20:5.2 | S: or whatever other possessions there are; | T: or whatever other belongings you have;
+sn3.20:5.3 | S: bondservants, workers, servants, | T: slaves, servants, errand-runners,
+sn3.20:5.4 | S: and those dependent for their livelihood: | T: & any dependents:
+sn3.20:6.1 | S: you must go on without taking these; | T: You must go without taking any of them;
+sn3.20:6.2 | S: all of them are left behind. | T: you must leave all of them behind.
+sn3.20:6.3 | S: But the deeds you do | T: What you do
+sn3.20:6.4 | S: by body, speech, and mind— | T: with body, speech, or mind:
+sn3.20:7.1 | S: that’s what you can call your own. | T: that is yours;
+sn3.20:7.2 | S: That’s what you take when you go. | T: taking that you go;
+sn3.20:7.3 | S: That’s what goes with you, | T: that’s your follower,
+sn3.20:7.4 | S: like a shadow that never leaves. | T: like a shadow that never leaves.
+sn3.20:8.1 | S: That’s why you should do good, | T: Thus you should do what is fine
+sn3.20:8.2 | S: investing in the future life. | T: as a stash for the next life.
+sn3.20:8.3 | S: The good deeds of sentient beings | T: Acts of merit
+sn3.20:8.4 | S: support them in the next world.” | T: are the support for beings in their after-death world.”
+sn3.20:8.5 | P: Dutiyo vaggo. | T: (none)
+sn3.20:9.0 | P: Tassuddānaṁ | T: (none)
+sn3.20:9.1 | P: Jaṭilā pañca rājāno, | T: (none)
+sn3.20:9.2 | P: Doṇapākakurena ca; | T: (none)
+sn3.20:9.3 | P: Saṅgāmena dve vuttāni, | T: (none)
+sn3.20:9.4 | P: Mallikā dve appamādena ca; | T: (none)
+sn3.20:9.5 | P: Aputtakena dve vuttā, | T: (none)
+sn3.20:9.6 | P: Vaggo tena pavuccatīti. | T: (none)
+
+## an5.79
+an5.79:1.1 | S: “Mendicants, these five future perils have not currently arisen, but they will arise in the future. | T: “Monks, these five future dangers, unarisen at present, will arise in the future.
+an5.79:1.2 | S: You should look out for them | T: Be alert to them and,
+an5.79:1.3 | S: and try to give them up. | T: being alert, work to get rid of them.
+an5.79:2.1 | S: What five? | T: Which five?
+an5.79:2.2 | S: In a future time there will be mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: “There will be, in the course of the future, monks undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment.
+an5.79:2.3 | S: They will ordain others, | T: They—being undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment—will give full ordination to others
+an5.79:2.4 | S: but be unable to guide them in the higher ethics, mind, and wisdom. | T: and will not be able to discipline them in heightened virtue, heightened mind, heightened discernment.
+an5.79:2.5 | S: They too will not develop their physical endurance, ethics, mind, and wisdom. | T: These too will then be undeveloped in body… virtue… mind… discernment.
+an5.79:2.6 | S: They too will ordain others, | T: They—being undeveloped in body… virtue… mind… discernment—will give full ordination to still others and will not be able to discipline them in heightened virtue, heightened mind, heightened discernment.
+an5.79:2.7 | S: but be unable to guide them in the higher ethics, mind, and wisdom. | T: (none)
+an5.79:2.8 | S: They too will not develop their physical endurance, ethics, mind, and wisdom. | T: These too will then be undeveloped in body… virtue… mind… discernment.
+an5.79:2.9 | S: And that is how corrupt training comes from corrupt teachings, | T: Thus from corrupt Dhamma comes corrupt Vinaya;
+an5.79:2.10 | S: and corrupt teachings come from corrupt training. | T: from corrupt Vinaya, corrupt Dhamma.
+an5.79:2.11 | S: This is the first future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the first future danger, unarisen at present, that will arise in the future.
+an5.79:2.12 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.79:2.13 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.79:3.1 | S: Furthermore, in a future time there will be mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: “And further, there will be in the course of the future monks undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment.
+an5.79:3.2 | S: They will give dependence to others, | T: They—being undeveloped in body, undeveloped in virtue, undeveloped in mind, undeveloped in discernment—will take on others as students
+an5.79:3.3 | S: but be unable to guide them in the higher ethics, mind, and wisdom. | T: and won’t be able to discipline them in heightened virtue, heightened mind, heightened discernment.
+an5.79:3.4 | S: They too will not develop their physical endurance, ethics, mind, and wisdom. | T: These too will then be undeveloped in body… virtue… mind… discernment.
+an5.79:3.5 | S: They too will give dependence to others, | T: They—being undeveloped in body… virtue… mind… discernment—will take on still others as students and won’t be able to discipline them in heightened virtue, heightened mind, heightened discernment.
+an5.79:3.6 | S: but be unable to guide them in the higher ethics, mind, and wisdom. | T: (none)
+an5.79:3.7 | S: They too will not develop their physical endurance, ethics, mind, and wisdom. | T: These too will then be undeveloped in body… virtue… mind… discernment.
+an5.79:3.8 | S: And that is how corrupt training comes from corrupt teachings, | T: Thus from corrupt Dhamma comes corrupt Vinaya;
+an5.79:3.9 | S: and corrupt teachings come from corrupt training. | T: from corrupt Vinaya, corrupt Dhamma.
+an5.79:3.10 | S: This is the second future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the second future danger, unarisen at present, that will arise in the future.
+an5.79:3.11 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.79:3.12 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.79:4.1 | S: Furthermore, in a future time there will be mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: “And further, there will be in the course of the future monks undeveloped in body… virtue… mind… discernment.
+an5.79:4.2 | S: In discussion about the teachings and elaborations they’ll fall into dark ideas without realizing it. | T: They—being undeveloped in body… virtue… mind… discernment—when giving a talk on higher Dhamma or a talk composed of questions & answers, will alight on a dark mental quality without realizing it.
+an5.79:4.3 | S: And that is how corrupt training comes from corrupt teachings, | T: Thus from corrupt Dhamma comes corrupt Vinaya;
+an5.79:4.4 | S: and corrupt teachings come from corrupt training. | T: from corrupt Vinaya, corrupt Dhamma.
+an5.79:4.5 | S: This is the third future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the third future danger, unarisen at present, that will arise in the future.
+an5.79:4.6 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.79:4.7 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.79:5.1 | S: Furthermore, in a future time there will be mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: “And further, there will be in the course of the future monks undeveloped in body… virtue… mind… discernment.
+an5.79:5.2 | S: When discourses spoken by the Realized One—deep, profound, transcendent, dealing with emptiness—are being recited they won’t want to listen. They won’t actively listen or try to understand, nor will they think those teachings are worth learning and memorizing. | T: They—being undeveloped in body… virtue.… mind… discernment—will not listen when discourses that are words of the Tathāgata—deep, deep in their meaning, transcendent, connected with emptiness—are being recited. They will not lend ear, will not set their hearts on knowing them, will not regard these teachings as worth grasping or mastering.
+an5.79:5.3 | S: But when discourses composed by poets—poetry, with fancy words and phrases, composed by outsiders or spoken by disciples—are being recited they will want to listen. They’ll actively listen and try to understand, and they’ll think those teachings are worth learning and memorizing. | T: But they will listen when discourses that are literary works—the works of poets, artful in sound, artful in rhetoric, the work of outsiders, words of disciples—are recited. They will lend ear and set their hearts on knowing them. They will regard these teachings as worth grasping & mastering.
+an5.79:5.4 | S: And that is how corrupt training comes from corrupt teachings, | T: Thus from corrupt Dhamma comes corrupt Vinaya;
+an5.79:5.5 | S: and corrupt teachings come from corrupt training. | T: from corrupt Vinaya, corrupt Dhamma.
+an5.79:5.6 | S: This is the fourth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fourth future danger, unarisen at present, that will arise in the future.
+an5.79:5.7 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.79:5.8 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.79:6.1 | S: Furthermore, in a future time there will be mendicants who have not developed their physical endurance, ethics, mind, and wisdom. | T: “And further, there will be in the course of the future monks undeveloped in body… virtue… mind… discernment.
+an5.79:6.2 | S: The senior mendicants will be indulgent and slack, leaders in backsliding, neglecting seclusion, not rousing energy for attaining the unattained, achieving the unachieved, and realizing the unrealized. | T: They—being undeveloped in body… virtue… mind… discernment—will become elders living in luxury, lethargic, foremost in falling back, shirking the duties of solitude. They will not make an effort for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+an5.79:6.3 | S: Those who come after them will follow their example. | T: They will become an example for later generations,
+an5.79:6.4 | S: They too will become indulgent and slack, leaders in backsliding, neglecting seclusion, not rousing energy for attaining the unattained, achieving the unachieved, and realizing the unrealized. | T: who will become luxurious in their living, lethargic, foremost in falling back, shirking the duties of solitude, and who will not make an effort for the attaining of the as-yet-unattained, the reaching of the as-yet-unreached, the realization of the as-yet-unrealized.
+an5.79:6.5 | S: And that is how corrupt training comes from corrupt teachings, | T: Thus from corrupt Dhamma comes corrupt Vinaya;
+an5.79:6.6 | S: and corrupt teachings come from corrupt training. | T: from corrupt Vinaya, corrupt Dhamma.
+an5.79:6.7 | S: This is the fifth future peril that has not currently arisen, but will arise in the future … | T: “This, monks, is the fifth future danger, unarisen at present, that will arise in the future.
+an5.79:6.8 | P: Taṁ vo paṭibujjhitabbaṁ; | T: Be alert to it and,
+an5.79:6.9 | P: paṭibujjhitvā ca tassa pahānāya vāyamitabbaṁ. | T: being alert, work to get rid of it.
+an5.79:7.1 | S: These are the five future perils that have not currently arisen, but will arise in the future. | T: “These, monks, are the five future dangers, unarisen at present, that will arise in the future.
+an5.79:7.2 | S: You should look out for them, | T: Be alert to them and,
+an5.79:7.3 | S: and try to give them up.” | T: being alert, work to get rid of them.”
+an5.79:7.4 | P: Navamaṁ. | T: (none)
+
+## an3.132
+an3.132:1.1 | S: “Mendicants, these three individuals are found in the world. | T: “Monks, there are these three types of individuals to be found existing in the world.
+an3.132:1.2 | S: What three? | T: Which three?
+an3.132:1.3 | S: An individual like a line drawn in stone, an individual like a line drawn in sand, and an individual like a line drawn in water. | T: An individual like an inscription in rock, an individual like an inscription in soil, and an individual like an inscription in water.
+an3.132:1.4 | S: And who is the individual like a line drawn in stone? | T: “And how is an individual like an inscription in rock?
+an3.132:1.5 | S: It’s an individual who is often angry, | T: There is the case where a certain individual is often angered and his anger stays with him a long time.
+an3.132:1.6 | S: and their anger lingers for a long time. | T: (none)
+an3.132:1.7 | S: It’s like a line drawn in stone, which isn’t quickly worn away by wind and water, but lasts for a long time. | T: Just as an inscription in rock is not quickly effaced by wind or water and lasts a long time,
+an3.132:1.8 | S: In the same way, an individual is often angry, | T: in the same way a certain individual is often angered,
+an3.132:1.9 | S: and their anger lingers for a long time. | T: and his anger stays with him a long time.
+an3.132:1.10 | S: This is called an individual like a line drawn in stone. | T: This is called an individual like an inscription in rock.
+an3.132:2.1 | S: And who is the individual like a line drawn in sand? | T: “And how is an individual like an inscription in soil?
+an3.132:2.2 | S: It’s an individual who is often angry, | T: There is the case where a certain individual is often angered,
+an3.132:2.3 | S: but their anger doesn’t linger long. | T: but his anger doesn’t stay with him a long time.
+an3.132:2.4 | S: It’s like a line drawn in sand, which is quickly worn away by wind and water, and doesn’t last long. | T: Just as an inscription in soil is quickly effaced by wind or water and doesn’t last a long time,
+an3.132:2.5 | S: In the same way, an individual is often angry, | T: in the same way a certain individual is often angered,
+an3.132:2.6 | S: but their anger doesn’t linger long. | T: but his anger doesn’t stay with him a long time.
+an3.132:2.7 | S: This is called an individual like a line drawn in sand. | T: This is called an individual like an inscription in soil.
+an3.132:3.1 | S: And who is the individual like a line drawn in water? | T: “And how is an individual like an inscription in water?
+an3.132:3.2 | S: It’s an individual who, though spoken to by someone in a rough, harsh, and disagreeable manner, still stays in touch, interacts with, and greets them. | T: There is the case where a certain individual—when spoken to roughly, spoken to harshly, spoken to in an unpleasing way—is nevertheless congenial, companionable, & courteous.
+an3.132:3.3 | S: It’s like a line drawn in water, which vanishes right away, and doesn’t last long. | T: Just as an inscription in water immediately disappears and doesn’t last a long time,
+an3.132:3.4 | S: In the same way, an individual, though spoken to by someone in a rough, harsh, and disagreeable manner, still stays in touch, interacts with, and greets them. | T: in the same way a certain individual—when spoken to roughly, spoken to harshly, spoken to in an unpleasing way—is nevertheless congenial, companionable, & courteous.
+an3.132:3.5 | S: This is called an individual like a line drawn in water. | T: This is called an individual like an inscription in water.
+an3.132:3.6 | S: These are the three individuals found in the world.” | T: “These are the three types of individuals to be found existing in the world.”
+an3.132:3.7 | P: Dasamaṁ. | T: (none)
+an3.132:3.8 | P: Kusināravaggo tatiyo. | T: (none)
+an3.132:4.0 | P: Tassuddānaṁ | T: (none)
+an3.132:4.1 | P: Kusinārabhaṇḍanā ceva, | T: (none)
+an3.132:4.2 | P: Gotamabharaṇḍuhatthako; | T: (none)
+an3.132:4.3 | P: Kaṭuviyaṁ dve anuruddhā, | T: (none)
+an3.132:4.4 | P: Paṭicchannaṁ lekhena te dasāti. | T: (none)
+
+## an4.42
+an4.42:1.1 | S: “Mendicants, there are these four ways of answering questions. | T: “There are these four ways of answering questions.
+an4.42:1.2 | S: What four? | T: Which four?
+an4.42:1.3 | S: There is a question that should be answered categorically. | T: There are questions that should be answered categorically [straightforwardly yes, no, this, that].
+an4.42:1.4 | S: There is a question that should be answered analytically. | T: There are questions that should be answered with an analytical answer [defining or redefining the terms].
+an4.42:1.5 | S: There is a question that should be answered with a counter-question. | T: There are questions that should be answered with a counter-question.
+an4.42:1.6 | S: There is a question that should be set aside. | T: There are questions that should be put aside.
+an4.42:1.7 | S: These are the four ways of answering questions. | T: These are the four ways of answering questions.”
+an4.42:2.1 | S: One is stated categorically, | T: First the categorical statement,
+an4.42:2.2 | S: another analytically, | T: then the analytical statement,
+an4.42:2.3 | S: a third with a counter-question, | T: third, the type to be counter-questioned,
+an4.42:2.4 | S: while a fourth is set aside. | T: & fourth, the one to be put aside.
+an4.42:3.1 | S: That sort of mendicant, <j>who knows each of these, | T: Any monk who knows which is which,
+an4.42:3.2 | S: in line with good principles, | T: in line with the Dhamma,
+an4.42:3.3 | S: is said to be skilled | T: is said to be skilled
+an4.42:3.4 | S: in the four kinds of questions. | T: in the four types of questions:
+an4.42:4.1 | S: They’re intimidating, hard to defeat, | T: hard to overcome, hard to beat,
+an4.42:4.2 | S: deep, and hard to crush. | T: profound, hard to defeat.
+an4.42:4.3 | S: They’re expert in both | T: He knows what’s worthwhile & what’s not, proficient in (recognizing) both,
+an4.42:4.4 | S: what the meaning is and what it isn’t. | T: (none)
+an4.42:5.1 | S: Shunning what is not the meaning, | T: he rejects the worthless,
+an4.42:5.2 | S: an astute person grasps the meaning. | T: grasps the worthwhile.
+an4.42:5.3 | S: An attentive one, comprehending the meaning, | T: He’s called one who has broken through to what’s worthwhile, enlightened,
+an4.42:5.4 | S: is said to be astute.” | T: wise.
+an4.42:5.5 | P: Dutiyaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '401,600p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-037.findings.tmp <<'EOF'
+sn12.48:1.3 starts: As he was sitting there, he said
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+1 line reported.
+tokens used
+24,214
+1 line reported.

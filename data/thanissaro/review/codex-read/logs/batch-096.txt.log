@@ -1,0 +1,448 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9d-d4c1-7242-9a29-a59894c127a9
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.79, continued
+sn22.79:12.7 | S: They get rid of feeling … | T: He tears down feeling…
+sn22.79:12.8 | S: perception … | T: perception…
+sn22.79:12.9 | S: choices … | T: fabrications…
+sn22.79:12.10 | S: consciousness and don’t accumulate it. | T: consciousness and does not build it up.
+sn22.79:12.11 | S: And what things do they give up and not grasp? | T: “And what does he abandon and not cling to?
+sn22.79:12.12 | S: They give up form and don’t grasp it. | T: He abandons form and does not cling to it.
+sn22.79:12.13 | S: They give up feeling … | T: He abandons feeling…
+sn22.79:12.14 | S: perception … | T: perception…
+sn22.79:12.15 | S: choices … | T: fabrications…
+sn22.79:12.16 | S: consciousness and don’t grasp it. | T: consciousness and does not cling to it.
+sn22.79:12.17 | S: And what things do they unmesh and not enmesh? | T: “And what does he discard and not pull in?
+sn22.79:12.18 | S: They unmesh form and don’t enmesh it. | T: He discards form and does not pull it in.
+sn22.79:12.19 | S: They unmesh feeling … | T: He discards feeling…
+sn22.79:12.20 | S: perception … | T: perception…
+sn22.79:12.21 | S: choices … | T: fabrications…
+sn22.79:12.22 | S: consciousness and don’t enmesh it. | T: consciousness and does not pull it in.
+sn22.79:12.23 | S: And what things do they dissipate and not get clouded by? | T: “And what does he scatter and not pile up?
+sn22.79:12.24 | S: They dissipate form and don’t get clouded by it. | T: He scatters form and does not pile it up.
+sn22.79:12.25 | S: They dissipate feeling … | T: He scatters feeling…
+sn22.79:12.26 | S: perception … | T: perception…
+sn22.79:12.27 | S: choices … | T: fabrications…
+sn22.79:12.28 | S: consciousness and don’t get clouded by it. | T: consciousness and does not pile it up.
+sn22.79:13.1 | S: Seeing this, a learned noble disciple grows disillusioned with form, feeling, perception, choices, and consciousness. | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness.
+sn22.79:13.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.79:13.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+sn22.79:14.1 | S: This is called a mendicant who neither gets rid of nor accumulates, but remains after getting rid. They neither give up nor grasp, but remain after giving up. They neither unmesh nor enmesh, but remain after unmeshing. They neither dissipate nor get clouded, but remain after dissipating. | T: “This, monks, is called a disciple of the noble ones who neither builds up nor tears down, but who stands having torn down; who neither clings nor abandons, but who stands having abandoned; who neither pulls in nor discards, but who stands having discarded; who neither piles up nor scatters, but who stands having scattered.
+sn22.79:14.2 | S: And what things do they neither get rid of nor accumulate, but remain after getting rid of them? | T: “And what is it that he neither builds up nor tears down, but stands having torn it down?
+sn22.79:14.3 | S: They neither get rid of nor accumulate form, but remain after getting rid of it. | T: He neither builds up nor tears down form, but stands having torn it down.
+sn22.79:14.4 | S: They neither get rid of nor accumulate feeling … | T: He neither builds up nor tears down feeling…
+sn22.79:14.5 | S: perception … | T: perception…
+sn22.79:14.6 | S: choices … | T: fabrications…
+sn22.79:14.7 | S: consciousness, but remain after getting rid of it. | T: consciousness, but stands having torn it down.
+sn22.79:14.8 | S: And what things do they neither give up nor grasp, but remain after giving them up? | T: “And what is it that he neither clings to nor abandons, but stands having abandoned it?
+sn22.79:14.9 | S: They neither give up nor grasp form, but remain after giving it up. | T: He neither clings to nor abandons form, but stands having abandoned it.
+sn22.79:14.10 | S: They neither give up nor grasp feeling … | T: He neither clings to nor abandons feeling…
+sn22.79:14.11 | S: perception … | T: perception…
+sn22.79:14.12 | S: choices … | T: fabrications…
+sn22.79:14.13 | S: consciousness, but remain after giving it up. | T: consciousness, but stands having abandoned it.
+sn22.79:14.14 | S: And what things do they neither discard nor amass, but remain after discarding them? | T: “And what is it that he neither pulls in nor discards, but stands having discarded it?
+sn22.79:14.15 | S: They neither unmesh nor enmesh form, but remain after unmeshing it. | T: He neither pulls in nor discards form, but stands having discarded it.
+sn22.79:14.16 | S: They neither unmesh nor enmesh feeling … | T: He neither pulls in nor discards feeling…
+sn22.79:14.17 | S: perception … | T: perception…
+sn22.79:14.18 | S: choices … | T: fabrications…
+sn22.79:14.19 | S: consciousness, but remain after unmeshing it. | T: consciousness, but stands having discarded it.
+sn22.79:14.20 | S: And what things do they neither dissipate nor get clouded by, but remain after dissipating them? | T: “And what is it that he neither piles up nor scatters, but stands having scattered it?
+sn22.79:14.21 | S: They neither dissipate nor get clouded by form, but remain after dissipating it. | T: He neither piles up nor scatters form, but stands having scattered it.
+sn22.79:14.22 | S: They neither dissipate nor get clouded by feeling … | T: He neither piles up nor scatters feeling…
+sn22.79:14.23 | S: perception … | T: perception…
+sn22.79:14.24 | S: choices … | T: fabrications…
+sn22.79:14.25 | S: consciousness, but remain after dissipating it. | T: consciousness, but stands having scattered it.
+sn22.79:14.26 | S: When a mendicant’s mind is freed like this, the gods together with Indra, the Divinity, and the Progenitor worship them from afar: | T: “And to the monk whose mind is thus released, the devas, together with Indra, the Brahmās, & Pajāpatis, pay homage even from afar:
+sn22.79:15.1 | S: ‘Homage to you, O thoroughbred! | T: ‘Homage to you, O thoroughbred man.
+sn22.79:15.2 | S: Homage to you, supreme among men! | T: Homage to you, O superlative man—
+sn22.79:15.3 | S: We don’t understand | T: you of whom we don’t know even what
+sn22.79:15.4 | S: the basis of your absorption.’” | T: dependent on which you’re absorbed.’”
+sn22.79:15.5 | P: Sattamaṁ. | T: (none)
+
+## sn22.83
+sn22.83:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.83:1.2 | S: There Ānanda addressed the mendicants: | T: There Ven. Ānanda addressed the monks,
+sn22.83:1.3 | S: “Reverends, mendicants!” | T: “Friend monks!”
+sn22.83:1.4 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+sn22.83:1.5 | S: Ānanda said this: | T: Ven. Ānanda said,
+sn22.83:2.1 | S: “Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, Ven. Puṇṇa Mantāṇiputta was very helpful to us when we were newly ordained.
+sn22.83:2.2 | S: He gave me this advice: | T: He exhorted us with this exhortation:
+sn22.83:2.3 | S: ‘Reverend Ānanda, the thought “I am” occurs because of grasping, not without grasping. | T: “‘It’s with possessiveness, friend Ānanda, that there is “I am,” not without possessiveness.
+sn22.83:2.4 | S: Grasping what? | T: And through possessiveness of what is there “I am,” not without possessiveness?
+sn22.83:2.5 | S: The thought “I am” occurs because of grasping form, | T: Through possessiveness of form there is “I am,” not without possessiveness.
+sn22.83:2.6 | S: feeling, | T: Through possessiveness of feeling…
+sn22.83:2.7 | S: perception, | T: perception…
+sn22.83:2.8 | S: choices, | T: fabrications…
+sn22.83:2.9 | S: and consciousness, not without grasping. | T: Through possessiveness of consciousness there is “I am,” not without possessiveness.
+sn22.83:3.1 | S: Suppose there was a woman or man who was young, youthful, and fond of adornments, and they check their own reflection in a clean bright mirror or a clear bowl of water. They’d look because of grasping, not without grasping. | T: “‘Just as if a young woman—or a man—youthful, fond of adornment, contemplating the image of her face in a mirror, pure & bright, or in a bowl of clear water, would look with possessiveness, not without possessiveness.
+sn22.83:3.2 | S: In the same way, the thought “I am” occurs because of grasping form, | T: In the same way, through possessiveness of form there is “I am,” not without possessiveness.
+sn22.83:3.3 | S: feeling, | T: Through possessiveness of feeling…
+sn22.83:3.4 | S: perception, | T: perception…
+sn22.83:3.5 | S: choices, | T: fabrications…
+sn22.83:3.6 | S: and consciousness, not without grasping. | T: Through possessiveness of consciousness there is “I am,” not without possessiveness.
+sn22.83:4.1 | S: What do you think, Reverend Ānanda? | T: “‘What do you think, friend Ānanda?
+sn22.83:4.2 | S: Is form permanent or impermanent?’ | T: Is form constant or inconstant?’
+sn22.83:4.3 | S: ‘Impermanent, reverend.’ | T: “‘Inconstant, friend.’ “‘And is that which is inconstant easeful or stressful?’ “‘Stressful, friend.’ “‘And is it fitting to regard what is inconstant, stressful, subject to change as: “This is mine. This is my self. This is what I am”?‘ “‘No, friend.’
+sn22.83:4.4 | S: ‘Is feeling … | T: “‘… Is feeling constant or inconstant?’—‘Inconstant, friend.’ …
+sn22.83:4.5 | S: perception … | T: “‘… Is perception constant or inconstant?’—‘Inconstant, friend.’ …
+sn22.83:4.6 | S: choices … | T: “‘… Are fabrications constant or inconstant?’—‘Inconstant, friend.’ …
+sn22.83:4.7 | S: consciousness permanent or impermanent?’ | T: “‘What do you think, friend Ānanda? Is consciousness constant or inconstant?’
+sn22.83:4.8 | S: ‘Impermanent, reverend.’ … | T: “‘Inconstant, friend.’ “‘And is that which is inconstant easeful or stressful?’ “‘Stressful, friend.’ “‘And is it fitting to regard what is inconstant, stressful, subject to change as: “This is mine. This is my self. This is what I am”?’ “‘No, friend.’
+sn22.83:4.9 | S: ‘So you should truly see … | T: “‘Thus, friend Ānanda, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: “This is not mine. This is not my self. This is not what I am.” “‘Any feeling whatsoever.… “‘Any perception whatsoever.… “‘Any fabrications whatsoever.… “‘Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment as: “This is not mine. This is not my self. This is not what I am.”
+sn22.83:4.10 | S: Seeing this … | T: “‘Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, “Released.”
+sn22.83:4.11 | S: They understand: “… there is nothing further for this place.”’ | T: He discerns that “Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.”’
+sn22.83:4.12 | S: Reverends, the venerable named Puṇṇa son of Mantāṇī was very helpful to me when I was just ordained. | T: “Friends, Ven. Puṇṇa Maṇtāniputta was very helpful to us when we were newly ordained.
+sn22.83:4.13 | S: He gave me this advice. | T: He exhorted us with this exhortation.
+sn22.83:4.14 | S: And when I heard this teaching from Venerable Puṇṇa son of Mantāṇī, I comprehended the teaching.” | T: And when I had heard this Dhamma-explanation from Ven. Puṇṇa Maṇtāniputta, I broke through to the Dhamma.”
+sn22.83:4.15 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.90
+sn22.90:1.1 | S: At one time several senior mendicants were staying near Varanasi in the deer park at Isipatana. | T: On one occasion many elder monks were staying near Vārāṇasī in the Deer Park at Isipatana.
+sn22.90:1.2 | S: Then in the late afternoon, Venerable Channa came out of retreat. Taking a latchkey, he went from dwelling to dwelling, going up to the senior mendicants and saying, | T: Then in the evening Ven. Channa left his seclusion and, taking his key, went from dwelling to dwelling, saying to the elder monks,
+sn22.90:1.3 | S: “May the venerable senior mendicants advise me and instruct me! May they give me a Dhamma talk so that I can see the teaching!” | T: “May the venerable elders exhort me, may the venerable elders teach me, may the venerable elders give me a Dhamma talk so that I might see the Dhamma.”
+sn22.90:2.1 | S: When he said this, the senior mendicants said to Venerable Channa: | T: When this was said, the elder monks said to Ven. Channa,
+sn22.90:2.2 | S: “Reverend Channa, form, | T: “Form, friend Channa, is inconstant.
+sn22.90:2.3 | S: feeling, | T: Feeling is inconstant.
+sn22.90:2.4 | S: perception, | T: Perception is inconstant.
+sn22.90:2.5 | S: choices, | T: Fabrications are inconstant.
+sn22.90:2.6 | S: and consciousness are impermanent. | T: Consciousness is inconstant.
+sn22.90:2.7 | S: Form, | T: Form is not-self.
+sn22.90:2.8 | S: feeling, | T: Feeling is not-self.
+sn22.90:2.9 | S: perception, | T: Perception is not-self.
+sn22.90:2.10 | S: choices, | T: Fabrications are not-self.
+sn22.90:2.11 | S: and consciousness are not-self. | T: Consciousness is not-self.
+sn22.90:2.12 | S: All conditions are impermanent. | T: All fabrications are inconstant.
+sn22.90:2.13 | S: All things are not-self.” | T: All phenomena are not-self.”
+sn22.90:3.1 | S: Then Venerable Channa thought, | T: Then the thought occurred to Ven. Channa,
+sn22.90:3.2 | S: “I too think in this way. … | T: “I, too, think that form is inconstant, feeling is inconstant, perception is inconstant, fabrications are inconstant,
+sn22.90:3.3 | P: ‘rūpaṁ aniccaṁ, vedanā … | T: (none)
+sn22.90:3.4 | P: saññā … | T: (none)
+sn22.90:3.5 | P: saṅkhārā … | T: (none)
+sn22.90:3.6 | P: viññāṇaṁ aniccaṁ; | T: consciousness is inconstant;
+sn22.90:3.7 | P: rūpaṁ anattā, vedanā … | T: form is not-self, feeling is not-self,
+sn22.90:3.8 | P: saññā … | T: perception is not-self,
+sn22.90:3.9 | P: saṅkhārā … | T: fabrications are not-self,
+sn22.90:3.10 | P: viññāṇaṁ anattā. | T: consciousness is not-self;
+sn22.90:3.11 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: all fabrications are inconstant; all phenomena are not-self.
+sn22.90:3.12 | S: And yet my mind does not leap forth, gain confidence, settle down, and become decided about the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: But still my mind does not leap up, grow confident, steadfast, & released [alternate reading: firm] in the pacification of all fabrications, the relinquishing of all acquisitions, the ending of craving, dispassion, cessation, unbinding.
+sn22.90:3.13 | S: Because of anxiety, grasping arises | T: Instead, agitation & clinging arise,
+sn22.90:3.14 | S: and keeps turning back to the thought: | T: and my intellect pulls back, thinking,
+sn22.90:3.15 | S: ‘So who then is my self?’ | T: ‘But who, then, is my self?’
+sn22.90:3.16 | S: But that doesn’t happen for someone who sees the teaching. | T: But this thought doesn’t occur to one who sees the Dhamma.
+sn22.90:3.17 | S: Who can teach me the Dhamma so that I can see the teaching?” | T: So who might teach me the Dhamma so that I might see the Dhamma?”
+sn22.90:4.1 | S: Then Venerable Channa thought, | T: Then the thought occurred to Ven. Channa,
+sn22.90:4.2 | S: “Venerable Ānanda is staying near Kosambī in Ghosita’s monastery. He’s praised by the Buddha and esteemed by his sensible spiritual companions. He’s quite capable of teaching me the Dhamma so that I can see the teaching. | T: “This Ven. Ānanda is staying near Kosambī at Ghosita’s monastery. He has been praised by the Teacher and is esteemed by his observant companions in the holy life. He is capable of teaching me the Dhamma so that I might see the Dhamma,
+sn22.90:4.3 | S: Since I have so much trust in Venerable Ānanda, | T: and I have sudden trust in him.
+sn22.90:4.4 | S: why don’t I go to see him?” | T: Why don’t I go to Ven. Ānanda?”
+sn22.90:4.5 | S: Then Channa set his lodgings in order and, taking his bowl and robe, set out for Kosambī. He went to see Ānanda in Ghosita’s monastery, exchanged greetings with him, and told him what had happened. Then he said, | T: So, setting his lodgings in order and taking his robes & bowl, Ven. Channa went to Kosambī to where Ven. Ānanda was staying at Ghosita’s monastery. On arrival, he exchanged courteous greetings with Ven. Ānanda. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (told Ven. Ānanda what had happened and added),
+sn22.90:5.1 | P: “Ekamidāhaṁ, āvuso ānanda, samayaṁ bārāṇasiyaṁ viharāmi isipatane migadāye. | T: (none)
+sn22.90:5.2 | P: Atha khvāhaṁ, āvuso, sāyanhasamayaṁ paṭisallānā vuṭṭhito avāpuraṇaṁ ādāya vihārena vihāraṁ upasaṅkamiṁ; | T: (none)
+sn22.90:5.3 | P: upasaṅkamitvā there bhikkhū etadavocaṁ: | T: (none)
+sn22.90:5.4 | P: ‘ovadantu maṁ āyasmanto therā, anusāsantu maṁ āyasmanto therā, karontu me āyasmanto therā dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan’ti. | T: (none)
+sn22.90:5.5 | P: Evaṁ vutte, maṁ, āvuso, therā bhikkhū etadavocuṁ: | T: (none)
+sn22.90:5.6 | P: ‘rūpaṁ kho, āvuso channa, aniccaṁ; | T: (none)
+sn22.90:5.7 | P: vedanā … | T: (none)
+sn22.90:5.8 | P: saññā … | T: (none)
+sn22.90:5.9 | P: saṅkhārā … | T: (none)
+sn22.90:5.10 | P: viññāṇaṁ aniccaṁ; | T: (none)
+sn22.90:5.11 | P: rūpaṁ anattā …pe… | T: (none)
+sn22.90:5.12 | P: viññāṇaṁ anattā. | T: (none)
+sn22.90:5.13 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: (none)
+sn22.90:6.1 | P: Tassa mayhaṁ, āvuso, etadahosi: | T: (none)
+sn22.90:6.2 | P: ‘mayhampi kho etaṁ evaṁ hoti— | T: (none)
+sn22.90:6.3 | P: rūpaṁ aniccaṁ …pe… | T: (none)
+sn22.90:6.4 | P: viññāṇaṁ aniccaṁ, rūpaṁ anattā, vedanā … | T: (none)
+sn22.90:6.5 | P: saññā … | T: (none)
+sn22.90:6.6 | P: saṅkhārā … | T: (none)
+sn22.90:6.7 | P: viññāṇaṁ anattā. | T: (none)
+sn22.90:6.8 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: (none)
+sn22.90:6.9 | P: Atha ca pana me sabbasaṅkhārasamathe sabbūpadhipaṭinissagge taṇhākkhaye virāge nirodhe nibbāne cittaṁ na pakkhandati nappasīdati na santiṭṭhati nādhimuccati. | T: (none)
+sn22.90:6.10 | P: Paritassanā upādānaṁ uppajjati; | T: (none)
+sn22.90:6.11 | P: paccudāvattati mānasaṁ: | T: (none)
+sn22.90:6.12 | P: ‘atha ko carahi me attā’ti? | T: (none)
+sn22.90:6.13 | P: Na kho panevaṁ dhammaṁ passato hoti. | T: (none)
+sn22.90:6.14 | P: Ko nu kho me tathā dhammaṁ deseyya yathāhaṁ dhammaṁ passeyyanti. | T: (none)
+sn22.90:7.1 | P: Tassa mayhaṁ, āvuso, etadahosi: | T: (none)
+sn22.90:7.2 | P: ‘ayaṁ kho āyasmā ānando kosambiyaṁ viharati ghositārāme satthu ceva saṁvaṇṇito sambhāvito ca viññūnaṁ sabrahmacārīnaṁ, pahoti ca me āyasmā ānando tathā dhammaṁ desetuṁ yathāhaṁ dhammaṁ passeyyaṁ. | T: (none)
+sn22.90:7.3 | P: Atthi ca me āyasmante ānande tāvatikā vissaṭṭhi. | T: (none)
+sn22.90:7.4 | P: Yannūnāhaṁ yenāyasmā ānando tenupasaṅkameyyan’ti. | T: (none)
+sn22.90:7.5 | S: “May Venerable Ānanda advise me and instruct me! May he give me a Dhamma talk so that I can see the teaching!” | T: “May Ven. Ānanda exhort me, may Ven. Ānanda teach me, may Ven. Ānanda give me a Dhamma talk so that I might see the Dhamma.”
+sn22.90:7.6 | P: anusāsatu maṁ, āyasmā ānando; | T: (none)
+sn22.90:7.7 | P: karotu me, āyasmā ānando dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan”ti. | T: (none)
+sn22.90:8.1 | S: “I’m already delighted with Venerable Channa. Hopefully you’ve opened yourself up and severed your hard-heartedness. | T: “Even this much makes me feel gratified & satisfied with Ven. Channa, that he opens up & breaks down his stubbornness.
+sn22.90:8.2 | S: Listen well, Channa. | T: So lend ear, friend Channa.
+sn22.90:8.3 | S: You are capable of understanding the teaching.” | T: You are capable of understanding the Dhamma.”
+sn22.90:8.4 | S: Then right away Channa was filled with lofty rapture and joy, | T: Then a sudden great rapture & joy welled up in Ven. Channa at the thought,
+sn22.90:8.5 | S: “It seems I’m capable of understanding the teaching!” | T: “So I am capable of understanding the Dhamma!”
+sn22.90:9.1 | S: “Reverend Channa, I heard and learned in the presence of the Buddha his advice to the mendicant Kaccānagotta: | T: “Face-to-face with the Blessed One have I heard this, friend Channa. Face-to-face with him have I learned the exhortation he gave to the monk Kaccāna Gotta [SN12.15]:
+sn22.90:9.2 | S: ‘Kaccāna, this world mostly relies on the duality of existence and non-existence. | T: ‘By & large, Kaccāna, this world is supported by [takes as its object] a polarity, that of existence & non-existence.
+sn22.90:9.3 | S: But for one who truly sees the origin of the world with right understanding, the concept of non-existence regarding the world does not occur. | T: But when one sees the origination of the world as it has come to be with right discernment, “non-existence” with reference to the world does not occur to one.
+sn22.90:9.4 | S: And for one who truly sees the cessation of the world with right understanding, the concept of existence regarding the world does not occur. | T: When one sees the cessation of the world as it has come to be with right discernment, “existence” with reference to the world does not occur to one.
+sn22.90:9.5 | S: This world is for the most part shackled by getting involved, grasping, and insisting. | T: “‘By & large, Kaccāna, this world is in bondage to attachments, clingings (sustenances), & biases.
+sn22.90:9.6 | S: But if—for all that getting involved and grasping, mental fixation, and insistence and underlying tendency—they do not get attracted, grasp, and fixate on the thought, ‘my self’, | T: But one such as this does not get involved with or cling to these attachments, clingings, fixations of awareness, biases, or obsessions; nor is he resolved on “my self.”
+sn22.90:9.7 | S: they’ll have no doubt or uncertainty that what arises is just suffering arising, and what ceases is just suffering ceasing. | T: He has no uncertainty or doubt that, when there is arising, only stress is arising; and that when there is passing away, only stress is passing away.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.90:9.8 | S: Their knowledge of this is independent of others. | T: In this, one’s knowledge is independent of others.
+sn22.90:9.9 | S: This is how right view is defined. | T: It is to this extent, Kaccāna, that there is right view.
+sn22.90:9.10 | S: “All exists”: this is one extreme. | T: “‘“Everything exists”: That is one extreme.
+sn22.90:9.11 | S: “All does not exist”: this is the second extreme. | T: “Everything doesn’t exist”: That is a second extreme.
+sn22.90:9.12 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn22.90:9.13 | S: “Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+sn22.90:9.14 | S: Choices are a requirement for consciousness. … | T: From fabrications as a requisite condition comes consciousness. From consciousness as a requisite condition comes name-&-form. From name-&-form as a requisite condition come the six sense media. From the six sense media as a requisite condition comes contact. From contact as a requisite condition comes feeling. From feeling as a requisite condition comes craving. From craving as a requisite condition comes clinging/sustenance. From clinging/sustenance as a requisite condition comes becoming. From becoming as a requisite condition comes birth. From birth as a requisite condition, then aging & death, sorrow, lamentation, pain, distress, & despair come into play.
+sn22.90:9.15 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn22.90:9.16 | S: When ignorance fades away and ceases with no residue left behind, choices cease. … | T: “‘Now from the remainderless fading & cessation of that very ignorance comes the cessation of fabrications. From the cessation of fabrications comes the cessation of consciousness. From the cessation of consciousness comes the cessation of name-&-form. From the cessation of name-&-form comes the cessation of the six sense media. From the cessation of the six sense media comes the cessation of contact. From the cessation of contact comes the cessation of feeling. From the cessation of feeling comes the cessation of craving. From the cessation of craving comes the cessation of clinging/ sustenance. From the cessation of clinging/sustenance comes the cessation of becoming. From the cessation of becoming comes the cessation of birth. From the cessation of birth, then aging & death, sorrow, lamentation, pain, distress, & despair all cease.
+sn22.90:9.17 | S: That is how this entire mass of suffering ceases.”’” | T: Such is the cessation of this entire mass of stress & suffering.’’’
+sn22.90:10.1 | S: “Reverend Ānanda, this is how it is when you have such venerables as spiritual companions to advise and instruct you out of kindness and sympathy. | T: “That’s how it is, friend Ānanda, for those who have companions in the holy life like Ven. Ānanda—sympathetic, helpful, exhorting, & teaching.
+sn22.90:10.2 | S: And now that I’ve heard this teaching from Venerable Ānanda, I’ve comprehended the teaching.” | T: Just now, for me, listening to Ven. Ānanda’s Dhamma-teaching, has the Dhamma been penetrated.”
+sn22.90:10.3 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.93
+sn22.93:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.93:1.2 | S: “Suppose, mendicants, there was a mountain river that flowed swiftly, going far, carrying all before it. If wild sugarcane, kusa grass, reeds, vetiver, or trees grew on either bank, they’d overhang the river. And if a person who was being swept along by the current grabbed the wild sugarcane, kusa grass, reeds, vetiver, or trees, it’d fall apart, and they’d come to ruin because of that. | T: There the Blessed One said, “Monks, suppose there were a river, flowing down from the mountains, going far, its current swift, carrying everything with it, and—holding on to both banks—kāsa grasses, kusa grasses, reeds, vīraṇā grasses, & trees were growing. Then a man swept away by the current would grab hold of the kāsa grasses, but they would tear away, and so from that cause he would come to disaster. He would grab hold of the kusa grasses… the reeds… the vīraṇā grasses… the trees, but they would tear away, and so from that cause he would come to disaster.
+sn22.93:1.3 | S: In the same way, an unlearned ordinary person has not seen the noble ones, and is neither skilled nor trained in the teaching of the noble ones. They’ve not seen true persons, and are neither skilled nor trained in the teaching of the true persons. | T: “In the same way, there is the case where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.93:1.4 | S: They regard form as self, self as having form, form in self, or self in form. | T: assumes form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.93:1.5 | S: But their form falls apart, | T: That form tears away from him,
+sn22.93:1.6 | S: and they come to ruin because of that. | T: and so from that cause he would come to disaster.
+sn22.93:1.7 | S: They regard feeling … | T: “He assumes feeling to be the self, or the self as possessing feeling, or feeling as in the self, or the self as in feeling. That feeling tears away from him, and so from that cause he would come to disaster.
+sn22.93:1.8 | S: perception … | T: “He assumes perception to be the self, or the self as possessing perception, or perception as in the self, or the self as in perception. That perception tears away from him, and so from that cause he would come to disaster.
+sn22.93:1.9 | S: choices … | T: “He assumes fabrications to be the self, or the self as possessing fabrications, or fabrications as in the self, or the self as in fabrications. Those fabrications tear away from him, and so from that cause he would come to disaster.
+sn22.93:1.10 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He assumes consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.93:1.11 | S: But their consciousness falls apart, | T: That consciousness tears away from him,
+sn22.93:1.12 | S: and they come to ruin because of that. | T: and so from that cause he would come to disaster.
+sn22.93:1.13 | S: What do you think, mendicants? | T: “Now, what do you think, monks?
+sn22.93:1.14 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.93:1.15 | S: “Impermanent, sir.” … | T: “Inconstant, lord.” …
+sn22.93:1.16 | P: …pe… | T: (none)
+sn22.93:1.17 | S: “Is feeling … | T: “Is feeling constant or inconstant?” “Inconstant, lord.” …
+sn22.93:1.18 | S: perception … | T: “Is perception constant or inconstant?” “Inconstant, lord.” …
+sn22.93:1.19 | S: choices … | T: “Are fabrications constant or inconstant?” “Inconstant, lord.” …
+sn22.93:1.20 | S: consciousness permanent or impermanent?” | T: “Is consciousness constant or inconstant?”
+sn22.93:1.21 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.93:1.22 | S: “So you should truly see … | T: … “Thus, monks, any form whatsoever that is past, future, or present; internal or external; blatant or subtle, common or sublime; far or near: Every form is to be seen as it has come to be with right discernment: ‘This is not mine. This is not my self. This is not what I am.’ “Any feeling whatsoever.… Any perception whatsoever.… Any fabrications whatsoever.… “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle, common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.93:1.23 | S: Seeing this … | T: “Seeing thus, the well-instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.93:1.24 | S: They understand: ‘… there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.93:1.25 | P: Paṭhamaṁ. | T: (none)
+
+## sn22.96
+sn22.96:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.96:1.2 | S: Seated to one side, that mendicant said to the Buddha: | T: Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One,
+sn22.96:1.3 | S: “Sir, is there any form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever? | T: “Lord, is there any form that is constant, permanent, eternal, not subject to change, that will stay just as it is for eternity?
+sn22.96:1.4 | S: Is there any feeling … | T: Is there any feeling…
+sn22.96:1.5 | S: perception … | T: any perception…
+sn22.96:1.6 | S: choices … | T: Are there any fabrications…
+sn22.96:1.7 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever?” | T: Is there any consciousness that is constant, permanent, eternal, not subject to change, that will stay just as it is for eternity?”
+sn22.96:1.8 | S: “Mendicant, there is no form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “No, monk, there is no form…
+sn22.96:1.9 | S: There’s no feeling … | T: no feeling…
+sn22.96:1.10 | S: perception … | T: no perception…
+sn22.96:1.11 | S: choices … | T: there are no fabrications…
+sn22.96:1.12 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever.” | T: there is no consciousness that is constant, permanent, eternal, not subject to change, that will stay just as it is for eternity.”
+sn22.96:2.1 | S: Then the Buddha, picking up a lump of cow dung, said to the mendicant: | T: Then the Blessed One, picking up a tiny bit of cow dung, said to the monk,
+sn22.96:2.2 | S: “There’s not even this much of any incarnation that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “There isn’t even this much gaining of a self-state [attabhāva-paṭilābho] that is constant, permanent, eternal, not subject to change, that will stay just as it is for eternity.
+sn22.96:2.3 | S: If there were, this living of the spiritual life for the complete ending of suffering would not be found. | T: If there were even this much gaining of a self-state that was constant, permanent, eternal, not subject to change, that would stay just as it is for eternity, then this living of the holy life for the right ending of suffering & stress would not be discerned.
+sn22.96:2.4 | S: But since there isn’t, this living of the spiritual life for the complete ending of suffering is found. | T: But because there isn’t even this much gaining of a self-state that is constant, permanent, eternal, not subject to change, that will stay just as it is for eternity, this living of the holy life for the right ending of suffering & stress is discerned.
+sn22.96:3.1 | S: Once upon a time I was an anointed aristocratic king. | T: “Once, monk, I was a head-anointed noble warrior king.
+sn22.96:3.2 | S: I had 84,000 cities, with the capital Kusāvatī the foremost. | T: When I was a head-anointed noble warrior king, I had 84,000 cities, the chief of which was the capital city, Kusāvati.
+sn22.96:3.3 | S: I had 84,000 palaces, with the Palace of Principle the foremost. | T: I had 84,000 palaces, the chief of which was the Dhamma Palace.
+sn22.96:3.4 | S: I had 84,000 chambers, with the Chamber of the Grand Tower the foremost. | T: I had 84,000 peak-roofed halls, the chief of which was the Great Array Peak-roofed Hall.
+sn22.96:3.5 | S: I had 84,000 couches made of ivory or heartwood or gold or silver, spread with woolen covers—shag-piled or embroidered with flowers—and spread with a fine deer hide, with a canopy above and red pillows at both ends. | T: I had 84,000 thrones made of ivory, made of heartwood, made of gold, made of silver, each spread with a long-fleeced coverlet, a white wool coverlet, an embroidered coverlet, a rug of kadali-deer hide, with a canopy above, & red cushions on either side.
+sn22.96:3.6 | S: I had 84,000 bull elephants with gold adornments and banners, covered with snow gold netting, with the royal bull elephant named Sabbath the foremost. | T: “I had 84,000 bull elephants with golden ornaments, golden banners, covered with nets of golden thread, the chief of which was the royal bull elephant Uposatha.
+sn22.96:3.7 | S: I had 84,000 horses with gold adornments and banners, covered with snow gold netting, with the royal steed named Thundercloud the foremost. | T: I had 84,000 thoroughbred steeds with golden ornaments, golden banners, covered with nets of golden thread, the chief of which was the royal thoroughbred steed Valāhaka.
+sn22.96:3.8 | S: I had 84,000 chariots with gold adornments and banners, covered with snow gold netting, with the chariot named Triumph the foremost. | T: I had 84,000 chariots with golden ornaments, golden banners, covered with nets of golden thread, the chief of which was the chariot Vejayanta.
+sn22.96:3.9 | S: I had 84,000 jewels, with the jewel-treasure the foremost. | T: “I had 84,000 gems, the chief of which was the treasure gem.
+sn22.96:3.10 | S: I had 84,000 women, with Queen Subhaddā the foremost. | T: I had 84,000 women, the chief of which was Queen Bhaddā.
+sn22.96:3.11 | S: I had 84,000 aristocrat vassals, with the commander-treasure the foremost. | T: I had 84,000 noble-warrior vassals, the chief of which was the commander gem.
+sn22.96:3.12 | S: I had 84,000 milk cows with muslin halter and bronze pails. | T: I had 84,000 cows with tethers of fine jute & milk pails of bronze.
+sn22.96:3.13 | S: I had 8,400,000,000 cloths of delicate linen, cotton, silk, and wool. | T: I had 84,000 koṭis [ten-millions] of garments made of fine linen, fine silk, fine wool, or fine cotton.
+sn22.96:3.14 | S: I had 84,000 servings of food, which were presented to me as offerings at daybreak and dusk. | T: I had 84,000 serving dishes on which meals were served in the morning & in the evening.
+sn22.96:4.1 | S: Of those 84,000 cities, I only stayed in one, the capital Kusāvatī. | T: “Of those 84,000 cities, there was only one that I resided in at any one time: Kusāvati, the capital.
+sn22.96:4.2 | S: Of those 84,000 palaces, I only dwelt in one, the Palace of Principle. | T: Of those 84,000 palaces, there was only one that I resided in at any one time: the Dhamma Palace.
+sn22.96:4.3 | S: Of those 84,000 chambers, I only dwelt in one, the  Chamber of the Grand Tower. | T: Of those 84,000 peak-roofed halls, there was only one that I resided in at any one time: the Great Array Peak-roofed Hall.
+sn22.96:4.4 | S: Of those 84,000 couches, I only used one, made of ivory or heartwood or gold or silver. | T: Of those 84,000 thrones, there was only one that I used at any one time: one made of ivory, one made of heartwood, one made of gold, or one made of silver.
+sn22.96:4.5 | S: Of those 84,000 bull elephants, I only rode one, the royal bull elephant named Sabbath. | T: “Of those 84,000 bull elephants, there was only one that I rode at any one time: the royal bull elephant Uposatha.
+sn22.96:4.6 | S: Of those 84,000 horses, I only rode one, the royal horse named Thundercloud. | T: Of those 84,000 thoroughbred steeds, there was only one that I rode at any one time: the royal thoroughbred steed Valāhaka.
+sn22.96:4.7 | S: Of those 84,000 chariots, I only rode one, the chariot named Triumph. | T: Of those 84,000 chariots, there was only one that I rode at any one time: the chariot Vejayanta.
+sn22.96:4.8 | S: Of those 84,000 women, I was only served by one, an aristocrat maiden or a coquette. | T: “Of those 84,000 women, there was only one that attended to me at any one time: a noble-warrior one or a half-brahman, half-noble-warrior one.
+sn22.96:4.9 | S: Of those 8,400,000,000 cloths, I only wore one pair, made of delicate linen, cotton, silk, and wool. | T: Of those 84,000 koṭis of garments, there was only one that I wore at any one time: one made of fine linen, one made of fine silk, one made of fine wool, or one made of fine cotton.
+sn22.96:4.10 | S: Of those 84,000 servings of food, I only had one, eating at most a cup of rice with suitable sauce. | T: Of those 84,000 serving dishes, there was only one from which I ate at any one time a measure of rice & a suitable amount of curry.
+sn22.96:4.11 | S: And so all those conditioned phenomena have passed, ceased, and perished. | T: “But now, monk, all those fabrications are past. Ceased. Changed.
+sn22.96:4.12 | S: So impermanent are conditions, | T: That’s how inconstant fabrications are, monk.
+sn22.96:4.13 | S: so unstable are conditions, | T: That’s how impermanent fabrications are, monk.
+sn22.96:4.14 | S: so unreliable are conditions. | T: That’s how unreliable all fabrications are, monk:
+sn22.96:4.15 | S: This is quite enough for you to become disillusioned, dispassionate, and freed regarding all conditions.” | T: enough to become disenchanted with all fabrications, enough to become dispassionate, enough to be released.”
+sn22.96:4.16 | P: Catutthaṁ. | T: (none)
+
+## sn22.97
+sn22.97:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.97:1.2 | S: Seated to one side, that mendicant said to the Buddha: | T: Sitting to one side, a monk said to the Blessed One,
+sn22.97:1.3 | S: “Sir, is there any form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever? | T: “Lord, is there any form that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity?
+sn22.97:1.4 | S: Is there any feeling … | T: Is there any feeling…
+sn22.97:1.5 | S: perception … | T: any perception…
+sn22.97:1.6 | S: choices … | T: Are there any fabrications…
+sn22.97:1.7 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever?” | T: Is there any consciousness that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity?”
+sn22.97:1.8 | S: “Mendicant, there is no form at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “No, monk, there is no form…
+sn22.97:1.9 | S: There’s no feeling … | T: no feeling…
+sn22.97:1.10 | S: perception … | T: no perception…
+sn22.97:1.11 | S: choices … | T: there are no fabrications…
+sn22.97:1.12 | S: consciousness at all that’s permanent, everlasting, eternal, imperishable, and will last forever and ever.” | T: there is no consciousness that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity.”
+sn22.97:2.1 | S: Then the Buddha, picking up a little bit of dirt on his fingernail, said to that mendicant: | T: Then the Blessed One, picking up a tiny bit of dust with the tip of his fingernail, said to the monk,
+sn22.97:2.2 | S: “There’s not even this much of any form that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “There isn’t even this much form that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity.
+sn22.97:2.3 | S: If there were, this living of the spiritual life for the complete ending of suffering would not be found. | T: If there were even this much form that was constant, lasting, eternal, not subject to change, that would stay just as it is for eternity, then this living of the holy life for the right ending of suffering & stress would not be discerned.
+sn22.97:2.4 | S: But since there isn’t, this living of the spiritual life for the complete ending of suffering is found. | T: But because there isn’t even this much form that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity, this living of the holy life for the right ending of suffering & stress is discerned.
+sn22.97:3.1 | S: There’s not even this much of any feeling … | T: “There isn’t even this much feeling.…
+sn22.97:3.2 | P: Ettakā cepi, bhikkhu, vedanā abhavissa niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. | T: (none)
+sn22.97:3.3 | P: Yasmā ca kho, bhikkhu, ettakāpi vedanā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. | T: (none)
+sn22.97:4.1 | S: perception … | T: “There isn’t even this much perception.…
+sn22.97:4.2 | S: choices … | T: “There aren’t even this many fabrications.…
+sn22.97:4.3 | P: Ettakā cepi, bhikkhu, saṅkhārā abhavissaṁsu niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. | T: (none)
+sn22.97:4.4 | P: Yasmā ca kho, bhikkhu, ettakāpi saṅkhārā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. | T: (none)
+sn22.97:5.1 | S: consciousness that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. | T: “There isn’t even this much consciousness that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity.
+sn22.97:5.2 | S: If there were, this living of the spiritual life for the complete ending of suffering would not be found. | T: If there were even this much consciousness that was constant, lasting, eternal, not subject to change, that would stay just as it is for eternity, then this living of the holy life for the right ending of suffering & stress would not be discerned.
+sn22.97:5.3 | S: But since there isn’t, this living of the spiritual life for the complete ending of suffering is found. | T: But because there isn’t even this much consciousness that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity, this living of the holy life for the right ending of suffering & stress is discerned.
+sn22.97:6.1 | S: What do you think, mendicant? | T: “What do you think, monk?
+sn22.97:6.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.97:6.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.”
+sn22.97:6.4 | S: “Is feeling … | T: “… Is feeling constant or inconstant?”—“Inconstant, lord.” …
+sn22.97:6.5 | S: perception … | T: “… Is perception constant or inconstant?”—“Inconstant, lord.” …
+sn22.97:6.6 | S: choices … | T: “… Are fabrications constant or inconstant?”—“Inconstant, lord.” …
+sn22.97:6.7 | S: consciousness permanent or impermanent?” | T: “What do you think, monk? Is consciousness constant or inconstant?”
+sn22.97:6.8 | S: “Impermanent, sir.” … | T: “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.”
+sn22.97:6.9 | S: “So you should truly see … | T: “Thus, monk, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’ “Any feeling whatsoever.… “Any perception whatsoever.… “Any fabrications whatsoever.… “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.97:6.10 | S: Seeing this … | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+sn22.97:6.11 | S: They understand: ‘… there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.97:6.12 | P: Pañcamaṁ. | T: (none)
+
+## sn22.99
+sn22.99:1.1 | S: At Sāvatthī. | T: Near Sāvatthī. There the Blessed One said:
+sn22.99:1.2 | S: “Mendicants, this transmigration has no known beginning. | T: “Monks, from an inconceivable beginning comes transmigration.
+sn22.99:1.3 | S: No first point is found of sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving. | T: A beginning point is not evident, although beings hindered by ignorance and fettered by craving are transmigrating & wandering on.
+sn22.99:1.4 | S: There comes a time when the ocean dries up and evaporates and is no more. | T: “There comes a time when the great ocean evaporates, dries up, & does not exist.
+sn22.99:1.5 | S: But in any case, there is no making an end of suffering for sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving, I say. | T: But for beings—as long as they are hindered by ignorance, fettered by craving, transmigrating & wandering on—I don’t say that there is an end of suffering & stress.
+sn22.99:1.6 | S: There comes a time when Sineru the king of mountains is burned up and destroyed, and is no more. | T: “There comes a time when Sineru, king of mountains, is consumed with flame, is destroyed, & does not exist.
+sn22.99:1.7 | S: But in any case, there is no making an end of suffering for sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving, I say. | T: But for beings—as long as they are hindered by ignorance, fettered by craving, transmigrating & wandering on—I don’t say that there is an end of suffering & stress.
+sn22.99:1.8 | S: There comes a time when the great earth is burned up and destroyed, and is no more. | T: “There comes a time when the great earth is consumed with flame, is destroyed, & does not exist.
+sn22.99:1.9 | S: But in any case, there is no making an end of suffering for sentient beings roaming and transmigrating, shrouded by ignorance and fettered by craving, I say. | T: But for beings—as long as they are hindered by ignorance, fettered by craving, transmigrating & wandering on—I don’t say that there is an end of suffering & stress.
+sn22.99:2.1 | S: Suppose a hound on a leash was tethered to a strong post or pillar. It would just keep running and circling around that post or pillar. | T: “Just as a dog, tied by a leash to a post or stake, keeps running around and circling around that very post or stake;
+sn22.99:2.2 | S: In the same way, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in their teaching. They’ve not seen true persons, and are neither skilled nor trained in their teaching. | T: in the same way, an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.99:2.3 | S: They regard form … | T: assumes form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.99:2.4 | S: feeling … | T: “He assumes feeling to be the self.…
+sn22.99:2.5 | S: perception … | T: “He assumes perception to be the self.…
+sn22.99:2.6 | S: choices … | T: “He assumes fabrications to be the self.…
+sn22.99:2.7 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He assumes consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.99:2.8 | S: They just keep running and circling around form, feeling, perception, choices, and consciousness. | T: “He keeps running around and circling around that very form… that very feeling… that very perception… those very fabrications… that very consciousness.
+sn22.99:2.9 | S: Doing so, they’re not freed from form, feeling, perception, choices, and consciousness. They’re not freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: Running and circling around form… feeling… perception… fabrications… consciousness, he is not set loose from form, not set loose from feeling… from perception… from fabrications… not set loose from consciousness. He is not set loose from birth, aging, & death; from sorrows, lamentations, pains, distresses, & despairs.
+sn22.99:2.10 | S: They’re not freed from suffering, I say. | T: He is not set loose, I tell you, from suffering & stress.
+sn22.99:3.1 | S: A learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “But a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma—
+sn22.99:3.2 | S: They don’t regard form … | T: doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.99:3.3 | S: feeling … | T: “He doesn’t assume feeling to be the self.…
+sn22.99:3.4 | S: perception … | T: “He doesn’t assume perception to be the self.…
+sn22.99:3.5 | S: choices … | T: “He doesn’t assume fabrications to be the self.…
+sn22.99:3.6 | S: or consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.99:3.7 | S: They don’t keep running and circling around form, feeling, perception, choices, and consciousness. | T: “He doesn’t run around or circle around that very form… that very feeling… that very perception… those very fabrications… that very consciousness.
+sn22.99:3.8 | S: By not doing so, they’re freed from form, feeling, perception, choices, and consciousness. They’re freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. | T: He is set loose from form, set loose from feeling… from perception… from fabrications… set loose from consciousness. He is set loose from birth, aging, & death; from sorrows, lamentations, pains, distresses, & despairs.
+sn22.99:3.9 | S: They’re freed from suffering, I say.” | T: He is set loose, I tell you, from suffering & stress.”
+sn22.99:3.10 | P: Sattamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "sed -n '121,146p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.90:3.9 | P: saṅkhārā … | T: fabrications are not-self,
+sn22.90:3.10 | P: viññāṇaṁ anattā. | T: consciousness is not-self;
+sn22.90:3.11 | P: Sabbe saṅkhārā aniccā, sabbe dhammā anattā’ti. | T: all fabrications are inconstant; all phenomena are not-self.
+sn22.90:3.12 | S: And yet my mind does not leap forth, gain confidence, settle down, and become decided about the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: But still my mind does not leap up, grow confident, steadfast, & released [alternate reading: firm] in the pacification of all fabrications, the relinquishing of all acquisitions, the ending of craving, dispassion, cessation, unbinding.
+sn22.90:3.13 | S: Because of anxiety, grasping arises | T: Instead, agitation & clinging arise,
+sn22.90:3.14 | S: and keeps turning back to the thought: | T: and my intellect pulls back, thinking,
+sn22.90:3.15 | S: ‘So who then is my self?’ | T: ‘But who, then, is my self?’
+sn22.90:3.16 | S: But that doesn’t happen for someone who sees the teaching. | T: But this thought doesn’t occur to one who sees the Dhamma.
+sn22.90:3.17 | S: Who can teach me the Dhamma so that I can see the teaching?” | T: So who might teach me the Dhamma so that I might see the Dhamma?”
+sn22.90:4.1 | S: Then Venerable Channa thought, | T: Then the thought occurred to Ven. Channa,
+sn22.90:4.2 | S: “Venerable Ānanda is staying near Kosambī in Ghosita’s monastery. He’s praised by the Buddha and esteemed by his sensible spiritual companions. He’s quite capable of teaching me the Dhamma so that I can see the teaching. | T: “This Ven. Ānanda is staying near Kosambī at Ghosita’s monastery. He has been praised by the Teacher and is esteemed by his observant companions in the holy life. He is capable of teaching me the Dhamma so that I might see the Dhamma,
+sn22.90:4.3 | S: Since I have so much trust in Venerable Ānanda, | T: and I have sudden trust in him.
+sn22.90:4.4 | S: why don’t I go to see him?” | T: Why don’t I go to Ven. Ānanda?”
+sn22.90:4.5 | S: Then Channa set his lodgings in order and, taking his bowl and robe, set out for Kosambī. He went to see Ānanda in Ghosita’s monastery, exchanged greetings with him, and told him what had happened. Then he said, | T: So, setting his lodgings in order and taking his robes & bowl, Ven. Channa went to Kosambī to where Ven. Ānanda was staying at Ghosita’s monastery. On arrival, he exchanged courteous greetings with Ven. Ānanda. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (told Ven. Ānanda what had happened and added),
+sn22.90:5.1 | P: “Ekamidāhaṁ, āvuso ānanda, samayaṁ bārāṇasiyaṁ viharāmi isipatane migadāye. | T: (none)
+sn22.90:5.2 | P: Atha khvāhaṁ, āvuso, sāyanhasamayaṁ paṭisallānā vuṭṭhito avāpuraṇaṁ ādāya vihārena vihāraṁ upasaṅkamiṁ; | T: (none)
+sn22.90:5.3 | P: upasaṅkamitvā there bhikkhū etadavocaṁ: | T: (none)
+sn22.90:5.4 | P: ‘ovadantu maṁ āyasmanto therā, anusāsantu maṁ āyasmanto therā, karontu me āyasmanto therā dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan’ti. | T: (none)
+sn22.90:5.5 | P: Evaṁ vutte, maṁ, āvuso, therā bhikkhū etadavocuṁ: | T: (none)
+sn22.90:5.6 | P: ‘rūpaṁ kho, āvuso channa, aniccaṁ; | T: (none)
+sn22.90:5.7 | P: vedanā … | T: (none)
+sn22.90:5.8 | P: saññā … | T: (none)
+sn22.90:5.9 | P: saṅkhārā … | T: (none)
+sn22.90:5.10 | P: viññāṇaṁ aniccaṁ; | T: (none)
+sn22.90:5.11 | P: rūpaṁ anattā …pe… | T: (none)
+sn22.90:5.12 | P: viññāṇaṁ anattā. | T: (none)
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-096.findings.tmp <<'EOF'
+sn22.90:3.3 starts: form is inconstant, feeling is inconstant,
+sn22.90:3.4 starts: perception is inconstant, fabrications are inconstant,
+sn22.90:3.5 starts: fabrications are inconstant, consciousness is inconstant;
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+3 lines reported.
+tokens used
+26,864
+3 lines reported.

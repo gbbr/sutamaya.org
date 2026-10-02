@@ -1,0 +1,1022 @@
+{
+  "sourceArchive": "/Users/azzalos/Desktop/findings.zip",
+  "archiveSha256": "bbe46234d083857054680d09303154bc36d7626b5395a9fb4edc03dada2511b2",
+  "baseCommit": "8ab727a2",
+  "batches": [
+    {
+      "translator": "thanissaro",
+      "batch": "batch-001.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a85841e332abf5b7da823c4ee7c2447ee228f58cbdcab5bbc404bb6fee14127d",
+      "findingsSha256": "a687b1c4ed3179dc71a8d75e61198e92f58df13e8670222f04f173e3dcb61593",
+      "logSha256": "47c25563cd7d1e92991916bf2e74b561b2f14d58a61d4723c25b9c1c07532c67"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-002.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e6f51018621700b75d76b7d8ed9ba5ec9c06bccf1b8398428d324540c8ec04c3",
+      "findingsSha256": "3cf0da00c3612071eef238c16e2c389df3afeecab66337a44b67d526e088ad59",
+      "logSha256": "d4f6e43bbb57a7641dc24027be7d8901e64b4d298d9b4c6ea1aeaf288d3e6a80"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-003.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "f8709832b652a5ee70c6cb3ccc50db19c6fca6fb2defa00ee7e52d76edab9549",
+      "findingsSha256": "7e2fa4839a97ed418ecfc617f6a81b8ab29bcdb51cd86177449c4991391d29b0",
+      "logSha256": "bc0a488300c7ec16820588a9be7a286bf932e1bec91980e97f41ce296f9c5b6f"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-004.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "863d9fc07b0e89aadb9634625a11d796f2cea288dfb93a34d17c28c0ce97f962",
+      "findingsSha256": "d80f57c1e79134fa6b9a526f0ca82c692c825e682b37b4163f49e73d1289cf29",
+      "logSha256": "d9aa00049f0eafcb06156fb3eff703e2cad1fa18acd24bcecf0292710590a9f2"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-005.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e115271e6bf457f3712680462f4e11b7da332991cf890b48ad05ff1dbded8487",
+      "findingsSha256": "8f3d61b18da55f426ca5c7cb4f1777e13f258b01b87f94e0e70e4227932f6a63",
+      "logSha256": "4aa86e7b9a6c94e4a225040efacde4ad15bc410d3298c1b58cc709e78d22f60c"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-006.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a72b4cdeced50d3b03f053ef11ce7a0b5de39aa82a7d12951aa1d410a034c2e2",
+      "findingsSha256": "e8ad86b45fe45d8e2e9edb594eaa5c62d20fe4f005fdc19945349b5f328a9be3",
+      "logSha256": "9f07482647480be7c63688df9794bef68406c175d48e387ab810001a6611c7e0"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-007.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7b6baa987a7474d8cf51ae27378acde5fd246554499295c0c104c2e6c3eb8af7",
+      "findingsSha256": "b46e8fc16200d66957e9a09f0c1b886e4890d6665be26db6fc40f5b098d7a099",
+      "logSha256": "7c56e7a080883501759b05abbe4cb00aca4218064dafa25ed8b52db32040e987"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-008.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "af276b0ef05b9ccb003d97b727d1b9516d9711ed10c404bd48dfd28974bcbad0",
+      "findingsSha256": "db48b1f24baba6f7970b04d743207f54f84d3f6a3180198b8308d79a9f48746f",
+      "logSha256": "f555050c0626c235c47b30324a7861229c37d471d61d79dc3367ce18ff84f2eb"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-009.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b86e5e08e8b7d7fe8c6e3ce3e5fd6a3b2bbaa3a719a546bdf3cf226bd0a98164",
+      "findingsSha256": "ff037089396bd800dd25f53b4bf75541fb0844cf87e1fbcca8b8a9a420272ca8",
+      "logSha256": "252b51628ca6ca063e7974b2326a7ff540c3fc785587ead8b08732de5747b24b"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-010.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "0fe5e17f51486eb2f3f34eebd6060d93b2c502f60e9654e87b6bab2f113eb806",
+      "findingsSha256": "db9394291bbefffa2cb2b675d136b0f75d8f7ff8ffd0bf1df7bf596c36590555",
+      "logSha256": "050272980430f8ab692a7323010ab554aee045a4bc85d1669293b56dfb55b19b"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-011.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6fe980733d5ee37eeca14f9748a971e2c80cc70183176c479d45d26033d8eed3",
+      "findingsSha256": "c24d62e43308776301d92f2ca6c8737c6f1ead2ed346aba534f88ed5ec696da9",
+      "logSha256": "224ff9a4aec7cd1e8cc83b1cacbcdba45035c66885276a7d6a34d47ef74683e2"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-012.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "fc2cb3d1111e7e5db80458d9a640a5a24d9e65fd61c54d6c0484bba93ce77074",
+      "findingsSha256": "dddfc363d97d0593ca911f4b9405b51953afada7d950f50d0cc7bae4cf1ded79",
+      "logSha256": "78bb8a4fb73283dafb6f7031688d1c8d0bdbb73f6eca873895314d016b3c720e"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-013.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3b8ca13a615985164636189a8d7b47b58f262f8fc950ef9356b7c281325300a4",
+      "findingsSha256": "142e39f43503e2bb782e4440f7a2ba8735f63c87ca8f4e8b078de6f2e8e10300",
+      "logSha256": "9877570fd1c3cafa6c0af9ae24a944d8a13b822829ef93193683822f06fbe3c5"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-014.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "8b237184164dc5023302e0bbe89fe7cc0656b47f00428ab35438490dabb175ca",
+      "findingsSha256": "03f2a5b3dda84855def009837a7449dfeba1c3f1bcb49d63d78e30597dd0779e",
+      "logSha256": "e611e321f236a006a287a9d4fc817f1be3eb25d7342279adc839ecd942f88202"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-015.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4b60b7f64a438d1236ebe80efa104ad9b9e95a0491f6c6a06ddbb02eefdcbc5f",
+      "findingsSha256": "e6edff635d930527f721b6a5264202a68feed09a99ed425f6e7bfd1e907530b0",
+      "logSha256": "19abda9fb2d0546152b7a7dd5c23901d2d8a8b66f58a5c0a216db18620b8f55a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-016.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "609dce107f6dcce43e9e9aa960dd3be708d949a6277bd25baaa10ba84d710dfd",
+      "findingsSha256": "8aa0276a8629571b5d7fb69f39b408f747850cb8c9c0974a0faf73d3411ac0e4",
+      "logSha256": "9283b19022bd195aadfe7a7e45319d9b2ab9b89495b0f4bafa015c22321e6e7d"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-017.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b1f7ab219fb8a9173d775673aed590e2768aa6a5e262577e776e15b8e43bea56",
+      "findingsSha256": "e78e761408f431976f03cf77f9445ca07a46d5b4b040ff5651df5cc1897ff9b6",
+      "logSha256": "b0a3b035255882a9cbab7698b0a1a3ecb09e1b6cf8fd585a2026ec16de69d907"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-018.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "9050968947314004059a5bafdba88b2b035b484870cb21db947a7325bafe9861",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "e261c4f39742507a2125945bd2dbe5be7e716c57aa1400c4e876379e289c347a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-019.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4b5561bfad4ee85edfe938ca71b01e3e19ba41e71e7b0a89f1556edd7b16eb1b",
+      "findingsSha256": "33a74418ea05e302ff1cb7b1c75f442570fa916c319bc16ccc5c1b73e2f2eac4",
+      "logSha256": "289db17296c3b33bb308ab2e4511f6d614c767dfcef02998059074be948ed754"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-020.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "41cb0f9630df6b954f52f60e1b5eb31c0571fbdb203663d573cb1cb5556e019c",
+      "findingsSha256": "7bbe8a5fcdad31177204d2cb7762c8f8141bd78c8779f48514a8c0ac100e84fe",
+      "logSha256": "99e95fef1464d62dfd2bd99911758897343e56c976cc0924fdbfe7689df9930c"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-021.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1d7f928f2aa21bd6e7384becc0deea9af5c97a1294792741bfe0ec9008663ead",
+      "findingsSha256": "e313ca6b72ba5d1701c6b62168676a04b21bc1d796f1c5d9193d85fc68b933f4",
+      "logSha256": "4c7a2db5e5645df0d20b0ca0bdf4fd0aa69992274ad3e2f3a1cf58cd35b8ee10"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-022.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "56bffa72e6fd1db2b22ee8a9f7f33fc1951bcd2a01a27b0bdc9bf9abf3d24f50",
+      "findingsSha256": "a7d72e46940c55b183a3a5df176fd3dd9ffc5840639620ae75a04074dcf0a18d",
+      "logSha256": "66d42385ee7022dc273949748addc688d7a06dfc67371533117366bb28659e6f"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-023.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5d751db187057921530163c8e936f4064740dd557e63cc17683b53091ab500b1",
+      "findingsSha256": "9b8e3b8fad87c086a9777d3167742f00b043d97e7ddcf338c7a0b397eae25a58",
+      "logSha256": "ce918ff1ef1474e6a6c93336146becbb24ca40f90efbefebd92f3c5642f1acd4"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-024.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "72b90429d1925a0fb74dcf53406fea973aa6aec9f3ddf9a396b1fcc261dddae1",
+      "findingsSha256": "a72e63f4077f587011be56a52bb8d1337a4a72ac936a3082b94fbfa5214e94d6",
+      "logSha256": "5e210269a4cffcf7eddef681a5950f295424c470de9620b8bebcae414c4acd85"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-025.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6ce0c6468e3b12a533d48037e2da5e8fe0d35c5a9f7ed26de6611f170850a7d3",
+      "findingsSha256": "7adf16d22c776cd73bf942174ee8d91f013a8c4353fad41a0b89b8c9816d4a7d",
+      "logSha256": "fdc8ecc737cd57f0e7744a7d14baaed5a139d490054dd3fd6955bb18ad6ad270"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-026.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e49114f9bc73928909f7295e4c6cfb0877ef7df86a17ff84b0436fd311243b72",
+      "findingsSha256": "5ec02091e4f7bd33a3f9e566312595dbe26ec5a789fb7c26890de9124f653c39",
+      "logSha256": "a45f6cedccaa7067ee980bc45afb5c990d4af65e39f0283ec03e9080e755f825"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-027.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "d18ceb497c988f338130d816390a0c15019fed3437d4b23235539fa582a9d256",
+      "findingsSha256": "0ec4055aafc6e17f8e024f4339ff52b3a260003acdc6a32846c9430691db41bf",
+      "logSha256": "a38308a0142e59cc6076d27b021d406e6bda4f8c38f962bef30f322cc07210f0"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-028.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "cdf9ada5fec9341557ae70a1c580113a7c7811e3ef11f7c1b2bac07cb131c616",
+      "findingsSha256": "674792b7246efde9ff797e6614a5b98f4c2097f8bf8700f08b7282dda49fa813",
+      "logSha256": "41ad1f2574efc7d91d8db23c33b0be4e3e252c83113cdc4aad75a1678649ad4b"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-029.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "bc815548fc0e07861232ec8b83d84388c5dc3f60d95c92be7b3407361e91cf89",
+      "findingsSha256": "5526a723e0fd0108ca9f2578b5a309ffdffd4e0ea4b98de53745c1c60dbd5b47",
+      "logSha256": "cbd1d0b68ec07fda5a3b41fc0c38d080d5b515cc6ee6a2a6a3fd09ddf7d321fe"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-030.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "60fc9bb93e6de0c56d5b845c7f75ee974cbf4a72c94b642ee1c9a29faaff1c9d",
+      "findingsSha256": "be00385378138873a0b17b492ddbc132a192df719baca4a6634e1522b1448a09",
+      "logSha256": "cf7ff2d4f5acf488e1b454392442760e1ef24d1e393da77510186294c6173034"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-031.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "272d13a42d951f30fe44ee15b1fe3ebe171a535d5281d2f31791bf3640a8e455",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "35876ef9e537bb7af2c2592d199948fd9d65acd49c895f19a364494ce16361c3"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-032.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5d500b29be1530a801f2642a1163d688f204b3acb3916c156d6cbf88f19a9c6d",
+      "findingsSha256": "996319dec0f441e3405cabeb0976a07e7cdfa64ac6a4fc5ac1ad61bcbff9938b",
+      "logSha256": "64d61ee039dcf8a875b90cf1da886ed2ff2a063deb6879ff8449c70b1d9dd5a0"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-033.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "270d4b52848a58aa24cd75a151685eb8642352c24534dfba7ecb7814e77d1521",
+      "findingsSha256": "cf68f456029fb3afc1978e15eb1510b91531f1836f31f7d588a3b5d9c5e4baab",
+      "logSha256": "d2eaf4731f93f5e3debd27786616f1da22db88ac245164cb3d900c90b75e8c97"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-034.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3348bba95937a8ce352f5d8672377a176d1f3b5e5cc22042b294121394cb9414",
+      "findingsSha256": "bb289ba0290c6223ddbcab46548fa5dface0dfbd8c73252184ca17031d18ee4a",
+      "logSha256": "d687399b0d590feca113d7f1ca530f21434a4beafc5c3904005d5a176c4d7860"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-035.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ada1b5317dc0daa7b7d561b930548e668c0dad0b8bfe2723837b222f6258e12a",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "189c1c9cc372b5acc3146f130717a141fa35bdbd877c5bac4040ffa6eea3be81"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-036.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ae33643f007710387d467edbbf9630e3b28891e2984201453f8aab4b6675f6f7",
+      "findingsSha256": "4a30aa93bdbe45bba5e145679a759f1cbabfe82dc4a9c0d77a41f2800e3d9ed8",
+      "logSha256": "b09561445c9ac7fe01771013fba83014785a9a9bf0aaad8be90ae8456ac0d5df"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-037.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2f4e9a0d01b0d4b2df100fa19ebf96278288191245de70e820a2045e0ac1f4f9",
+      "findingsSha256": "b56919f8920e90dbc13f53b8d9c4aec5679fda0efafd2ec34774e958a81504f3",
+      "logSha256": "9104832f27f7dd56aef2c484d919aeb7c5dd16806f2c759c9df1dfaafd6b1457"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-038.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "c77f3210fb66a74733e806f8fd5ec4c8960f783bfa401f14770f506720d14a8f",
+      "findingsSha256": "66f6146910a5b9f77475ef43ea6750aad83f59bc0eb4724038f94523fe901b3c",
+      "logSha256": "1d4fcd978cdd525c75a3eb56b28629a828c50ea833b6a4239dc1140f2b0195e6"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-039.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "63bb12bf75f27681cde0216dde981aaa28a7ed765e3435269d3cba123b321d31",
+      "findingsSha256": "9a28f4e04b1232abccb392f851687b032872b7b0e915e8e50388c4a9b902c3a8",
+      "logSha256": "e4456082633fb172a072a637c6bdcaa4ae05d43f2685ce9d60f965bf6e045643"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-040.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "819f388039e00d600e700665e76fe6b7dc56a3bb69566c79c3481df994b9e051",
+      "findingsSha256": "5e0062665d2ae4300743d892fad31b9a1c2303e27cdaf3068956fc1d01876fce",
+      "logSha256": "9c214ec248a193a9156376d6db7f766bea83821d3cd3b321b9f16b0ca4758e4a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-041.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "938992d17eeb83f837bef19fada1191899797311dfaa3299cad410ef52ae6dd8",
+      "findingsSha256": "c0a152ca2a871cb8b7b948400db3899d83a031acec81e68496e3e4e834a12c48",
+      "logSha256": "222bb6363b0d13452f07e8b0dfef6d1accfb3e7d26c37f6da45d50aa1bc7d211"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-042.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "af475932ce726b822b6ad672da64a7e5d039073993f9938bfb956bbb57fb5355",
+      "findingsSha256": "f264662b29ac0a9ffae1b1d71d46cc29b26fb4f0d440afe82ace44504a11541d",
+      "logSha256": "5ea0c988d9a550108f1f524adf98339660f03d480366959fa17b83cf51c7dddd"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-043.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "bce8f6485ca87a847df056b4641fdc2d70563ede9601d7fe27719b0d7cacf51a",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "eac1dba0c7843e03c0f34195009e81e1fbc558a956f446c1cb41f1f54de29d10"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-044.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "daec755182fa121b50133a8755946e4da6de321a3a9295e3425ea0f9bf8a2eab",
+      "findingsSha256": "a12f43ab8f5f460b700af6c64dbf50a0d65753eedd1e4dc98cabf5dacb73ac8e",
+      "logSha256": "d87d7c4e25da59c77297b49e3180db4fc3faf9cc8f8a777910fdb52f80a954f1"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-045.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "0927883b3d08e88f4fe4d1e35ff259197d90dce1a1b0ea2db9df9d83fcbc8aa2",
+      "findingsSha256": "3e07cbc4188d4410c13936d627599711cd865149b27692ecbae83d3899121b6b",
+      "logSha256": "7478b79b2fe08f11d3d91eabedd2c7391e01dff18af1d16235c7631224853e81"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-046.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "35d4781470f7dd00ffe5ae19d5d048b1ca6764b4a2d3b3489fb03e3b22d77890",
+      "findingsSha256": "05f786716f9a97074d16430fd151e1932dbbbf403e46f2d16345ceaa036114d4",
+      "logSha256": "5657c7ca23925d4f2e301f29b84926d41d1a82a00d3482315d43fcf663c01b9d"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-047.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "fe68fdc5fcf6b3a5ba61c0f1ee5b9deeeca78ae926d54ba6f869526e4afbcf18",
+      "findingsSha256": "dcb4d3510caf93e3bd28ae12b85187744f78ae84a88e350a06b1dca8765df539",
+      "logSha256": "d20123a237f2cfefc88a122bafc06f1dec42f278bc27043b6d9b8501b306a1b5"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-048.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e86e180d01961bf9c1f153802c9c6bdf673abe4781c0492c6810ba98474b2a14",
+      "findingsSha256": "1d1a11972cca5dde12fd32c7210442cd248df3849ab876146ae4512945b82725",
+      "logSha256": "a58674c1795e7d7a798e1628294551aa760658f26d05d973bb3ea657fc7d2e69"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-049.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3dbcf1bb103e13a2dcdfd5c34107c06e75422586c7ad993e84945be500507020",
+      "findingsSha256": "a9040f10b260b1d4c79b1194997522aaccda187866a8f8dfb1f7a5b39357f7f8",
+      "logSha256": "fe91092e72b1b18055182bbf209802ad7cbc29eba700481802ca0b0ced937b67"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-050.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "59915bfa264d3fdc5b30e3ab11c03d3a63d09c560b8451e34404bb07ec70d79b",
+      "findingsSha256": "45475e99ea4a099a9219441cbeea2d6d75072a537463b5c7910cfedc840d48de",
+      "logSha256": "873c20e7bdd4fd64950f84756544fccae1a42e95ff931e1024f9ac4990f9a7cd"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-051.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7735ff5471168b968761ed07d08eb31630bfba3411b326e91a759e0631807afe",
+      "findingsSha256": "5fcfdbee46731a4ef7f1b0b056844b0af06df5e73f094abd46e13551971bb63d",
+      "logSha256": "14fde6d9231be203a20e2114b3d98f1a9da84e1f18b05018742417318fc56002"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-052.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5c6c357b0a1736a9c5377bfc8321fc33c91ae95f863b24ef7afae6d14dd133fd",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "25084a1425b4542e0aaf1d0c2712b5a9d991307d603e29fbc6d49a6451c15f6e"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-053.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "70df83469c0f6cbfca8310f973df9ce71d40ca32a61c29ad9007159da19019b6",
+      "findingsSha256": "a567d96f2c801be3bafd56a8bc3aee55f009456c7a5e40b87d2a6cf368eb0c48",
+      "logSha256": "9231d4b5f5b88cff4373b87c2bf641b5fd554f90f30857b7e6b55567029ac75a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-054.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "d78fb0a0db494acc61a7f4269291f5451ce54ea7dba2198e170ecc3b773bff11",
+      "findingsSha256": "b3ee1602096a991aa3918b951e24e9fe481127e393bcb7207bd055afe3805c49",
+      "logSha256": "2d98bb434e19bb45b9c4be87a662dd6156449ac6509c386a26869087161fb8a8"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-055.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4f9d506bc1ee5345542455f03ff1424c64a79d61f632802bc6995cff49212efe",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "11e558896bb07909aab94a0efbfb0dab8424f272c352eb94ecf52069151c75a0"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-056.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "3d0d81e931c5dd072556ca477568df3aab142ffb6441904b72bc6454ddc387b8",
+      "findingsSha256": "e8246431aa62fafb1979084d7d778da6a6d4fa16b66c838d04c5bcb1abed8e78",
+      "logSha256": "9bcec0434aec13e8cca3e9ad5832cf843cff352403faeac4c2117d46719dccd4"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-057.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "a5cb8a45d23f2a67e46e9afff663d109bdf6f2135539ed7b4c4811681c85b640",
+      "findingsSha256": "0d97add1349c4ade0d6a04a2ab461f5cca8048a9a06cc9804366a522587d524b",
+      "logSha256": "84a7105b2d7e86ed917140894f29038b33732bcf1c22b2c2a8c5b77297c99c65"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-058.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6ec34a90c7ee9eb9da148a542d74106c87df2e0cb8d70a85b3482d30d2671c5d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "5e2268e6e9feacf35b697b424888e2d6fe7aa3c887409864c0a1dc1db19557f5"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-059.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "08dd1cea516484ac7d98f628dfb001acddc048505c1a9f466a4355239d8560ec",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "b0fc106bee62b5d91919e9d94a57702ba8ef5c6bbea44400eb85c3d2fb779cc2"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-060.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "f588ad3266efb6491f429be31e72e94423eb24e80184f014fcb66f5921a87178",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "6ee263490bafc0e3a35ae882702d617fd003f191fb7f1b157723fdf2d0c1b4c4"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-061.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2d170d22da982e2f0e2241b7bd1f04a017c967d463f12b7fa66aafe352518cca",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "09b4e91c4d818b87ca9fa21f7f03f3c1c6631743d42bbba09a68c324346838ef"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-062.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6d9fe38429bc214710f1dd1791263cf5146c48fb5b2c8be8f0f0717788db03a0",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "3e05400d40c9bcadf5aacb5739be01029daa72417e89f5ccd99c64f945f3e885"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-063.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "1325c430f9419044d8cc78395b071ecfdccdee2e03143b22b08317683b8e4de2",
+      "findingsSha256": "fbb5494bba3d92473427543d287429bef94871f85d0a48c2a2d7e68c33013a64",
+      "logSha256": "ff8c75b33a6cd616024a51b43bebd3d9c5353de6d2fb05f2a9666daf6f0dac77"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-064.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "47ebd9b62440f11cfd1a0d69b1d9fbdf62233ae5ce538d3e532db1cacd0ad43d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "fd33e987ed9ab8ee4f266c0dd4af332f29d94f914caed6c1a19796d81edac62e"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-065.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b76a8ebf19950c4729b116b5ec591fb02d6b95765b4531601d678a13547f182c",
+      "findingsSha256": "e0e0e2a962d39d5b317631fc1a0285d03222325b7c433ff019196911cd526b98",
+      "logSha256": "ee38171cdcd778b13764cff1a7fa3a399a047335583cd67fb4516dff84c6b3e7"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-066.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "9bedfbefee835ff6a187c9aab4e1c3783564f117e069b360f65ce0764a1b6b53",
+      "findingsSha256": "9dc2fa29f77171dcfcd552b72929c5bd3045034b5d0bed73cda6f67f277edaea",
+      "logSha256": "0b748d2f2356c9850bd5fd5e7071a38373b00c32960a6e4d1c555f8320a5cad4"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-067.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "8dc5a2e9611a5defa15bc080078aef73feadad2b978c79f711594dc40955a5ab",
+      "findingsSha256": "9e559776a4f41d570300352732a00d802291a70f52d69edb9e4a24c40eeaa358",
+      "logSha256": "4bd884ae68e7e7b4a55903b3279d5cb725e9c3a288e59a6dae82e32c69b23ee7"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-068.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2af2e0c15415986761f675698edfee9fc4fc733001a8e311424bca09b35d988a",
+      "findingsSha256": "e5669453aebfb13f54abb8f5043dbe7a8317cd9a6fdb86e25f78a0a237276ff3",
+      "logSha256": "d67dfb207e2f2b0f6ee135d04b583701b70d05521412112f7650aac786cd2c29"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-069.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "06a796137a0991b81cd55e79929ba173a2f3d51ea26da7ffac7be78b77e3d1a7",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "62421c73e056ed8fa9dceb17e00f9f4ef8ebf0eda61d81398b7169cdf1656004"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-070.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "01121ca5dcd72f91cd86ca0c8a733a8a6c1e2a944c8d93d164b40c38992dd638",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "ed5168cfb02f1b845fa297a4386e734e88802082ab2873e1dd2af76ad218b29e"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-071.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "04182a021612229c5ca1b175e5c04556012fe88f671a269b447566ddab8cabd2",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "e8df686d23c794da36b3238bb08c0d83b4a4db262aa6d2e005963a8473aeb073"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-072.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7b19e8584db833147617e89d60f3df5eab0dd7d3435d30fe52726e9c9885160d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "17512e42919fe99091bc97b2bae2ac8a564081787c8d73b1f55762edacd0ea0b"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-073.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "7932ca8937e99ec8d3e938e1d0a528e0ebe9d209fd68bdab4d604d46ccd84d02",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "77b63c9e27107b11826d92299f8cb03a5068fa2a0f0d721595a9072c95812d8a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-074.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "134c4a607470487b82b1c3c2a27111c9a10abee0bded2f334576512a52cfc2ca",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "cf2b9c28956ee7aac394406cd5f4f3838fb428f2b05d42cb125cc5b010326a1a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-075.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e3a5659962042ed322dab28d8184325e8690323e75a4cf86217d38e3c173a8ab",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "da7fba8e5829ddbc847a66d1ca3c6586558012e635b691a3af4b051d229426aa"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-076.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "f839ff130e5e72d6635f5a63b3c7c9d3affceca9997c90f8c6974e15986f6f4d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "8e8904536afe7af520607edbdcab0c7485852ead511e1fab42f9642973ec4024"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-077.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "84e063f15b125acd303d17f94cad9189d010485689c0210972c23e4974f37fb3",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "d2c710a514ebcb0095a13ea220c57e5454013a2145477229cd5b69a4e931b0ae"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-078.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ee1dfc42354c08442620b294ab1019eceb60a1ddd03d7d0088eb63e04de1b40a",
+      "findingsSha256": "910d096dcf9c4711fdad21846daee0b38cbf934ed9a903080b9e62f4ea3eaa60",
+      "logSha256": "74e52b72ae5402a4e273a5878a9c5a7bd026f124b12cb962282289f203c43fb9"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-079.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "60576591d58b7213e25fa3207f08aa146e2161d963d4eaac7a7d1c8aeb88f83d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "f5656d568ee9c0eca6c8fa5ba53d1b394f2d0c3ec0c206ef328bc40190670cc9"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-080.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e229a73f5e0581d7beaa8328d69c22df290183a4d4d645e327e928201aab0e07",
+      "findingsSha256": "eb6fecd80e780724fb1e750611deb2a0f3966dc8b1a9bae2885d773962be24cc",
+      "logSha256": "add31b52ba28074d2bbda2ec8c976f714c09c428fe47f6a2b5f70d6b4909068d"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-081.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "85c712af03316dfd317de919a0c69129479bfb5d9ce8125671e7912855271e9c",
+      "findingsSha256": "26c33d702b7f209949d45ef3f9c0a001e60723794a92e6c61e0420d0ba0281f9",
+      "logSha256": "3561b35fc87b5a9dc66646d27a0d8a42a40e5eb3873f463bea66b7aa48224fb9"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-082.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6490d151a34e63e2797521e79e72a74c93fe43112308a8bdac24ff6da3d4e97d",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "f8f2ec6235bab4f347dd964f66f15bf6873c5ba66de5f75962d2dc76568f302b"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-083.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "4ad99795a4833410f4542a9c9c2a585f3080897b08fbe6fcbfa76affe1dd22bd",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "6e2c9fcdb563e047da554aea968fd8819d07f765a1b7207a58dd453024c2c770"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-084.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "9971d5ada76f59f2bec1255e90ed075f42b42c1a98ae4b98cb17647adce93611",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "95bd3627e3027fc4f079c0c6884627d0461c2416b32010dfdacee14d7f435fbf"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-085.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "08b8ee0666b26b4c4e626f1fb3a68cea3f598ff6cd687d3999a00cbf742144ff",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "e3202b31949202a0e1850628905eb90099ca1081a19cf8e2bbeea3928e8f821e"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-086.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "2dfc9b71744825819cc1ecb0e15846aca1eedbfd401c15606708dd4c48e760f5",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "34fee297f9239b56457aa72b6e658056d91d68ef15b63d2f4f262fe1434ab3ba"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-087.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "bdf83717562ee934fabf98532ed3c933905a5e76e29f27022759b97c4cf69065",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "30b57ea0d33daf6356e23831ea73f5eb3538cb1571259cee73c7637af782c865"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-088.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "069bc88083ddba3fa5c39032dced41d48e8ded8ae0e272791ca0d4d88ac39e9f",
+      "findingsSha256": "dc741ac21b2523b36005ed74fab083069d73fc9cddab599af6ccd4ca63edc6cd",
+      "logSha256": "9df00fdac9ec274a8b9ae3e40aaa0f8dfac60d7e2a6e465096b7a56c25f04607"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-089.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "062d9ef39c9c6778129c5a3245111e6d6d512bd57b7c6d09d4ac62ef1b8866b8",
+      "findingsSha256": "6331d5867df21a74af4c043a728b730770d922ea5e0daed8a33b9efc49c213e5",
+      "logSha256": "29f06b49f292b760b0cd5b1deaa783a8ab4841bf770f7cc339deb573ea9c6b4a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-090.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ae91f087bf06e842d4f8c380440d367d8edc21914a851eb5b083f960764bdb29",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "80291810587df8589ab93bc5b1eee330780734c9b297c22f5f32678f13966da0"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-091.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "716e49c16c2bd1a2f3c3ca16f35ff4f90a29a402a1334f536e90a176d2f5c7bf",
+      "findingsSha256": "3d3771508ad6604df45007466450f14da3cafe5aecce3fbbbab976ee8cb7e8d9",
+      "logSha256": "5238b2a9f7fe94a646178692ad1cd8bf20b74a89e0fd5eb873fd43d2facc5e16"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-092.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "468212e2c4a23162874a02170107cb4284a1c0b231a85b1b57497ad75eeb72f9",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "719bdf8334b08fa710be78902d062622790bcd8a21e833f25a8aac744315c112"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-093.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ca3e5dbe39769455e4f3b68a1fcc3aea0ca3e4ae1f988e32e4748ecaacfb9783",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "91d9c31fcfed1d5fc3910c2dc2bc2e0ca1dec7b235a56fd10eb2ebc63ba6f4e8"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-094.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "16128c394719542fae35e829220b05a62a6d74f13e5ff8e482273eecb2236634",
+      "findingsSha256": "74ea20df2751fe84a4dc9d264bbb76800c9e91f250a26ab2721a73c10ac9ea49",
+      "logSha256": "b03213f6f709387af2062335a2e69dc9a8824747788626f8edc5ce073655aafa"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-095.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "93fd810e9639810bb694adedc075c8037f8ddca813c791370764519a9d83b39c",
+      "findingsSha256": "d6968fcaec513af1bec0e7c84c7f81daa98edfb39197c238f49af21650891bd9",
+      "logSha256": "877abcd05663227b8fc547190b09cb117c8b966f70d6a34ed58796109e325884"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-096.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "b578c77bca5194f23e6b2f7721fdd0371fefd983da1937b0837381bf0ebe68b0",
+      "findingsSha256": "9e29b00baeff975a1c8a81a924059c5ca28e0bc6dede757a17eab98ea1d19289",
+      "logSha256": "350c699f9914531fdfe667896232c78e22b04b316774af13d1fcbf7110b0a65f"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-097.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "d19930dfee9eb15a5402823d9eba4f0de5055e63ed4a2bd38981901ddbe8387e",
+      "findingsSha256": "69507b24609acf7abfa3462ca257579262fe06f393c3bc5520624415dc02589c",
+      "logSha256": "edbbd4259ee48075f71e66cf4bd14bfd6e8024506e10aa6f32d3332cc009d510"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-098.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ab4eaad3ceeae51093dac61f64442540c9206da905df4653562f882561b50301",
+      "findingsSha256": "245bd947e1804ce5b2af95d30d29f347b0748fb0b1c4c37089434d5f128ebbf2",
+      "logSha256": "a0fa7fbdd2f0a9ead6de0b4db48f9ff4bfbcf56d479eb4248d3447c120268c78"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-099.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "d3ddde6a81612189a7de8ced6ac87999e2c41eadf70440cc32ab8572d237d166",
+      "findingsSha256": "7aa596d9c65cb88b6626a935cd8ce14c80ac05e761335df51840ede9cef833c5",
+      "logSha256": "3fd67a9c469c37ed6d86ed68d7a6afd64c42f521ba38741e5f2d8ca3403aaf22"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-100.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e775d4fbe7172e2b99ed34f759064e9762007e0101979021eacd86f9ca579232",
+      "findingsSha256": "82ff48867ca601f40e5d90510bc093ef991b85ae41e9245dc104fe6012a20632",
+      "logSha256": "310f2df7d2f515d9d1d9ceaa814a4c35cf829ee82468c62d562d2cb49aa5d516"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-101.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "6e7ff3a4dce3947eda81edfaddfbf9420c063f4c5e0cabaea0ec124f24319a11",
+      "findingsSha256": "5bfe7d160976f79d4583cd39cd7ac8a48470bd7dc51966245de7d6e0b286d879",
+      "logSha256": "4f1fe158492b1bbd60cc8aab16f7e59a50400fe2d27f3eaec56387cbb8f0bf05"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-102.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "36243785231001ed468d12dc1362a9414fcaea1335bd5dc26a7cb24baffbad19",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "23de5c42ba99a3669ab91a5ddbac581c8039d250754f18352bbd3513fde21088"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-103.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "f58e935d265ac4cee74c4af8c47390ceb1a846f3d95979c667cb4e9b12c06fdb",
+      "findingsSha256": "d8e3f9177e55e98db6f7a05aaf7221a80558f65684f71a5ddded7bd36ea1cf39",
+      "logSha256": "67fdf6d49c60c3090bb64ad6e87a5ede9b69f60a820d5e0c77cbdf8993e07966"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-104.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ce942a14c172e50516d4bc24a115ee480455ed0e7bb53fb01b981a0f35146de2",
+      "findingsSha256": "e6cbc5673993100c43150e916be7fa59a3f3445818cc51407fb361c5b4d1f696",
+      "logSha256": "6d8bbddba8a6d636e7ad9c28718583fb6fb1c4b673dfcf45b05c111e13eea971"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-105.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "e670a9bbf2057d52669e86c28a9fe61ebb4922a6244315650c065c17e094ccde",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "ed939ef7ce4e36f5bb1c35a6b75eb099741779024a405694328cc4867f2ec109"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-106.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "75befa9a2bf04e6954ad9df41c08de0c146c9258239e47187c92397a493efceb",
+      "findingsSha256": "49f55f4d8c70e4cf18a2f3394a08921fcc2900eb13d9bcfe26ade7c65d5f8df0",
+      "logSha256": "d8482efc1020ed2af2bd7cc987de0533f9341500e37d73cbcfb54f6cddd04414"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-107.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "76e56d9b340dc6905cdeb966bd91df76ea1e7e6510ac6800ffc9757789f46a4a",
+      "findingsSha256": "f35d244fb82579bdf13b063a3d47c24e0bbb7199b432e5e120c9a0a0f91ea97e",
+      "logSha256": "475d311e6325737d4aafe38d5f87eaba524b8947cf46dd411305f59bc14e9c2d"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-108.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5a1feb5d999760809dda931ddf0142f24f61a0d97ec89aec91a6d14e2ed0b883",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "84662548f55c952cd4dffdfe76a73363607f93e55a63d4d42f980a10e7129324"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-109.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "78b827c5f0408d65dcf99c4bdabde5ee9ad475ecbffdfd2e351316512a23780f",
+      "findingsSha256": "fd6744a86a20c8700ad5502e9083fa2c207ed386d2b7d773086bd5d7244415fc",
+      "logSha256": "e1a10ef4fa3c013d85286c4e74b40b72984a29f55aa99b97807ed59c5102cf5a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-110.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "5554e57fd19377600a0db300a66cc8a0d8745f19e6a3660462cb7703dde5a973",
+      "findingsSha256": "278e70cc422045aa506107385e99affdbd6f95394c38d893476dcf4b753349cb",
+      "logSha256": "68568da2fe041b45f8e593c9a2f24039d0f3eed813ee8d3d1216320e2e0be77a"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-111.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "97c89df466d0f116143690a9a476c7c505e9f7b509cd81a39c0cab83e198f665",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "3ddf25e078774d3e3582dafa7ae7bfcd17948c063c5697391ee755d38e8f92eb"
+    },
+    {
+      "translator": "thanissaro",
+      "batch": "batch-112.txt",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "inputSha256": "ec9843aea64244fb91bd9c22e9b1de193d2c4f080c63d4d4af04919547c66ee0",
+      "findingsSha256": "fcf33dfbe13c2354bf0e1b063f9fb422747a46cee00b7420bceff2b81457b345",
+      "logSha256": "8446b45c95b40d1acab6fa1fdb4c9c7dc30eaefb88895c847a58af1edef0c623"
+    }
+  ],
+  "scope": [
+    "sn",
+    "an",
+    "kn"
+  ],
+  "appChanges": false,
+  "commitAuthorizedAtImport": false
+}

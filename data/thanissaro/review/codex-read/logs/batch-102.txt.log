@@ -1,0 +1,410 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9e-69ec-7fb0-9d04-8b048450591e
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the whole file and record only clear line-placement errors.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn38.10
+sn38.10:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘craving’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Craving, craving,’ it is said, my friend Sāriputta.
+sn38.10:1.2 | S: What is craving?” | T: Which craving (are they referring to)?”
+sn38.10:1.3 | S: “Reverend, there are these three cravings. | T: “There are these three cravings:
+sn38.10:1.4 | S: Craving for sensual pleasures, craving for continued existence, and craving for nonexistence. | T: craving for sensuality, craving for becoming, craving for non-becoming.
+sn38.10:1.5 | S: These are the three cravings.” | T: These are the three cravings.”
+sn38.10:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these cravings?” | T: “But is there a path, is there a practice for the abandoning of these cravings?”
+sn38.10:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the abandoning of these cravings.”
+sn38.10:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā, etāsaṁ taṇhānaṁ pahānāyā”ti? | T: “Then what is the path, what is the practice for the abandoning of these cravings?”
+sn38.10:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etāsaṁ taṇhānaṁ pahānāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.10:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.10:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etāsaṁ taṇhānaṁ pahānāyā”ti. | T: This is the path, this is the practice for the abandoning of these cravings.”
+sn38.10:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etāsaṁ taṇhānaṁ pahānāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of these cravings—
+sn38.10:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.10:1.14 | P: Dasamaṁ. | T: (none)
+
+## sn38.11
+sn38.11:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘a flood’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Flood, flood,’ it is said, my friend Sāriputta.
+sn38.11:1.2 | S: What is a flood?” | T: Which flood (are they referring to)?”
+sn38.11:1.3 | S: “Reverend, there are these four floods. | T: “There are these four floods, my friend:
+sn38.11:1.4 | S: The floods of sensuality, desire to be reborn, views, and ignorance. | T: the flood of sensuality, the flood of becoming, the flood of views, & the flood of ignorance.
+sn38.11:1.5 | S: These are the four floods.” | T: These are the four floods.”
+sn38.11:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these floods?” | T: “But is there a path, is there a practice for the abandoning of these floods?”
+sn38.11:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the abandoning of these floods.”
+sn38.11:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā, etesaṁ oghānaṁ pahānāyā”ti? | T: “Then what is the path, what is the practice for the abandoning of these floods?”
+sn38.11:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etesaṁ oghānaṁ pahānāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.11:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.11:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etesaṁ oghānaṁ pahānāyā”ti. | T: This is the path, this is the practice for the abandoning of these floods.”
+sn38.11:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etesaṁ oghānaṁ pahānāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of these floods—
+sn38.11:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.11:1.14 | P: Ekādasamaṁ. | T: (none)
+
+## sn38.12
+sn38.12:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘grasping’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Clinging, clinging,’ it is said, my friend Sāriputta.
+sn38.12:1.2 | S: What is grasping?” | T: Which clinging (are they referring to)?”
+sn38.12:1.3 | S: “Reverend, there are these four kinds of grasping. | T: “There are these four clingings:
+sn38.12:1.4 | S: Grasping at sensual pleasures, views, precepts and observances, and theories of a self. | T: clinging to sensuality, clinging to views, clinging to habits & practices, and clinging to doctrines of the self.
+sn38.12:1.5 | S: These are the four kinds of grasping.” | T: These are the four clingings.”
+sn38.12:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these four kinds of grasping?” | T: “But is there a path, is there a practice for the abandoning of these clingings?”
+sn38.12:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the abandoning of these clingings.”
+sn38.12:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā, etesaṁ upādānānaṁ pahānāyā”ti? | T: “Then what is the path, what is the practice for the abandoning of these clingings?”
+sn38.12:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etesaṁ upādānānaṁ pahānāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.12:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.12:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etesaṁ upādānānaṁ pahānāyā”ti. | T: This is the path, this is the practice for the abandoning of these clingings.”
+sn38.12:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etesaṁ upādānānaṁ pahānāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of these clingings—
+sn38.12:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.12:1.14 | P: Dvādasamaṁ. | T: (none)
+
+## sn38.13
+sn38.13:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘continued existence’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Becoming, becoming,’ it is said, my friend Sāriputta.
+sn38.13:1.2 | S: What is continued existence?” | T: Which becoming (are they referring to)?”
+sn38.13:1.3 | S: “Reverend, there are these three states of continued existence. | T: “There are these three becomings:
+sn38.13:1.4 | S: Existence in the sensual realm, the realm of luminous form, and the formless realm. | T: sensuality becoming, form becoming, formless becoming.
+sn38.13:1.5 | S: These are the three states of continued existence.” | T: These are the three becomings.”
+sn38.13:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these three states of existence?” | T: “But is there a path, is there a practice for the full comprehension of these becomings?”
+sn38.13:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the full comprehension of these becomings.”
+sn38.13:1.8 | P: “Katamo, panāvuso, maggo katamā paṭipadā, etesaṁ bhavānaṁ pariññāyā”ti? | T: “Then what is the path, what is the practice for the full comprehension of these becomings?”
+sn38.13:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etesaṁ bhavānaṁ pariññāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.13:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.13:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etesaṁ bhavānaṁ pariññāyā”ti. | T: This is the path, this is the practice for the full comprehension of these becomings.”
+sn38.13:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etesaṁ bhavānaṁ pariññāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the full comprehension of these becomings—
+sn38.13:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.13:1.14 | P: Terasamaṁ. | T: (none)
+
+## sn38.14
+sn38.14:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘suffering’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Stress, stress,’ it is said, my friend Sāriputta.
+sn38.14:1.2 | S: What is suffering?” | T: Which type of stress (are they referring to)?”
+sn38.14:1.3 | S: “Reverend, there are these three forms of suffering. | T: “There are these three forms of stressfulness, my friend:
+sn38.14:1.4 | S: The suffering inherent in painful feeling; the suffering inherent in conditions; and the suffering inherent in perishing. | T: the stressfulness of pain, the stressfulness of fabrication, the stressfulness of change.
+sn38.14:1.5 | S: These are the three forms of suffering.” | T: These are the three forms of stressfulness.”
+sn38.14:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these forms of suffering?” | T: “But is there a path, is there a practice for the full comprehension of these forms of stressfulness?”
+sn38.14:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the full comprehension of these forms of stressfulness.”
+sn38.14:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā, etāsaṁ dukkhatānaṁ pariññāyā”ti? | T: “Then what is the path, what is the practice for the full comprehension of these forms of stressfulness?”
+sn38.14:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etāsaṁ dukkhatānaṁ pariññāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.14:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.14:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etāsaṁ dukkhatānaṁ pariññāyā”ti. | T: This is the path, this is the practice for the full comprehension of these forms of stressfulness.”
+sn38.14:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etāsaṁ dukkhatānaṁ pariññāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the full comprehension of these forms of stressfulness—
+sn38.14:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.14:1.14 | P: Cuddasamaṁ. | T: (none)
+
+## sn38.15
+sn38.15:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘substantial reality’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Self-identification, self-identification,’ it is said, my friend Sāriputta.
+sn38.15:1.2 | S: What is substantial reality?” | T: Which self-identification (are they referring to)?”
+sn38.15:1.3 | S: “Reverend, the Buddha said that these five grasping aggregates are substantial reality. That is, | T: “These five clinging-aggregates—
+sn38.15:1.4 | S: form, feeling, perception, choices, and consciousness. | T: form as a clinging-aggregate, feeling as a clinging-aggregate, perception as a clinging-aggregate, fabrications as a clinging-aggregate, & consciousness as a clinging-aggregate—
+sn38.15:1.5 | S: The Buddha said that these five grasping aggregates are substantial reality.” | T: are called ‘self-identification’ by the Blessed One.”
+sn38.15:1.6 | S: “But, reverend, is there a path and a practice for completely understanding this substantial reality?” | T: “But is there a path, is there a practice for the full comprehension of this self-identification?”
+sn38.15:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the full comprehension of this self-identification.”
+sn38.15:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā, etassa sakkāyassa pariññāyā”ti? | T: “Then what is the path, what is the practice for the full comprehension of this self-identification?”
+sn38.15:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etassa sakkāyassa pariññāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.15:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.15:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etassa sakkāyassa pariññāyā”ti. | T: This is the path, this is the practice for the full comprehension of this self-identification.”
+sn38.15:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etassa sakkāyassa pariññāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the full comprehension of this self-identification—
+sn38.15:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.15:1.14 | P: Pannarasamaṁ. | T: (none)
+
+## sn38.1
+sn38.1:1.1 | S: At one time Venerable Sāriputta was staying in the land of the Magadhans near the little village of Nālaka. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village.
+sn38.1:1.2 | S: Then the wanderer Jambukhādaka went up to Venerable Sāriputta and exchanged greetings with him. | T: Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him.
+sn38.1:1.3 | S: When the greetings and polite conversation were over, he sat down to one side and said to Sāriputta: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta:
+sn38.1:2.1 | S: “Reverend Sāriputta, they speak of this thing called ‘extinguishment’. | T: “‘Unbinding, unbinding,’ it is said, my friend Sāriputta.
+sn38.1:2.2 | S: What is extinguishment?” | T: Which unbinding (are they referring to)?”
+sn38.1:2.3 | S: “Reverend, the ending of greed, hate, and delusion | T: “The ending of passion, the ending of aversion, the ending of delusion:
+sn38.1:2.4 | S: is called extinguishment.” | T: This is called unbinding.”
+sn38.1:2.5 | S: “But, reverend, is there a path and a practice for realizing this extinguishment?” | T: “But is there a path, is there a practice for the realization of this unbinding?”
+sn38.1:2.6 | S: “There is, reverend.” | T: “Yes, there is a path, there is a practice for the realization of this unbinding.”
+sn38.1:2.7 | S: “Well, what is it?” | T: “Then what is the path, what is the practice for the realization of this unbinding?”
+sn38.1:2.8 | S: “It is simply this noble eightfold path, that is: | T: “Precisely this noble eightfold path, my friend:
+sn38.1:2.9 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.1:2.10 | S: This is the path, the practice, for realizing this extinguishment.” | T: This is the path, this is the practice for the realization of this unbinding.”
+sn38.1:2.11 | S: “Reverend, this is a fine path, a fine practice, for realizing this extinguishment. | T: “It’s an auspicious path, my friend, an auspicious practice for the realization of this unbinding—
+sn38.1:2.12 | S: Just this much is enough for diligence.” | T: enough for the sake of heedfulness.”
+sn38.1:2.13 | P: Paṭhamaṁ. | T: (none)
+
+## sn38.2
+sn38.2:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘perfection’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Arahantship, arahantship,’ it is said, my friend Sāriputta.
+sn38.2:1.2 | S: What is perfection?” | T: Which arahantship (are they referring to)?”
+sn38.2:1.3 | S: “Reverend, the ending of greed, hate, and delusion | T: “The ending of passion, the ending of aversion, the ending of delusion:
+sn38.2:1.4 | S: is called perfection.” | T: This is called arahantship.”
+sn38.2:1.5 | S: “But, reverend, is there a path and a practice for realizing this perfection?” | T: “But is there a path, is there a practice for the realization of this arahantship?”
+sn38.2:1.6 | S: “There is, reverend.” | T: “Yes, there is a path, there is a practice for the realization of this arahantship.”
+sn38.2:1.7 | S: “Well, what is it?” | T: “Then what is the path, what is the practice for the realization of this arahantship?”
+sn38.2:1.8 | S: “It is simply this noble eightfold path, that is: | T: “Precisely this noble eightfold path, my friend:
+sn38.2:1.9 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.2:1.10 | S: This is the path, the practice, for realizing this perfection.” | T: This is the path, this is the practice for the realization of this arahantship.”
+sn38.2:1.11 | S: “Reverend, this is a fine path, a fine practice, for realizing this perfection. | T: “It’s an auspicious path, my friend, an auspicious practice for the realization of this arahantship—
+sn38.2:1.12 | S: Just this much is enough for diligence.” | T: enough for the sake of heedfulness.”
+sn38.2:1.13 | P: Dutiyaṁ. | T: (none)
+
+## sn38.3
+sn38.3:1.1 | S: “Reverend Sāriputta, who in the world have principled speech? Who in the world practice well? Who are the holy ones in the world?” | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “Friend Sāriputta, who in the world are speakers of Dhamma? Who in the world are those who practice rightly? Who in the world are well-gone?”
+sn38.3:1.2 | S: “Reverend, those who teach principles for giving up greed, hate, and delusion have principled speech in the world. | T: “Friend, those who teach the Dhamma for the abandoning of passion, for the abandoning of aversion, for the abandoning of delusion: They are speakers of Dhamma in the world.
+sn38.3:1.3 | S: Those who practice for giving up greed, hate, and delusion are practicing well in the world. | T: Those who practice the Dhamma for the abandoning of passion, for the abandoning of aversion, for the abandoning of delusion: They are those who practice rightly in the world.
+sn38.3:1.4 | S: Those who have given up greed, hate, and delusion—so they’re cut off at the root, made like a palm stump, obliterated, and unable to arise in the future—are holy ones in the world.” | T: Those whose passion has been abandoned—its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising; whose aversion has been abandoned… whose delusion has been abandoned—its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising: They in the world are well-gone.”
+sn38.3:2.1 | S: “But, reverend, is there a path and a practice for giving up that greed, hate, and delusion?” | T: “But is there a path, is there a practice for the abandoning of this passion, aversion, & delusion?”
+sn38.3:2.2 | S: “There is, reverend.” | T: “Yes, there is a path, there is a practice for the abandoning of this passion, aversion, & delusion.”
+sn38.3:2.3 | S: “Well, what is it?” | T: “Then what is the path, what is the practice for the abandoning of this passion, aversion, & delusion?”
+sn38.3:2.4 | S: “It is simply this noble eightfold path, that is: | T: “Precisely this noble eightfold path, my friend:
+sn38.3:2.5 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.3:2.6 | S: This is the path, this is the practice for giving up that greed, hate, and delusion.” | T: This is the path, this is the practice for the abandoning of this passion, aversion, & delusion.”
+sn38.3:2.7 | S: “This is a fine path, a fine practice, for giving up greed, hate, and delusion. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of this passion, aversion, & delusion—
+sn38.3:2.8 | S: Just this much is enough for diligence.” | T: enough for the sake of heedfulness.”
+sn38.3:2.9 | P: Tatiyaṁ. | T: (none)
+
+## sn38.4
+sn38.4:1.1 | S: “Reverend Sāriputta, what’s the goal of leading the spiritual life under the ascetic Gotama?” | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “Friend Sāriputta, with what purpose is the holy life lived under Gotama the contemplative?”
+sn38.4:1.2 | S: “The goal of leading the spiritual life under the Buddha is to completely understand suffering.” | T: “The holy life is lived under the Blessed One with the purpose of the full comprehension of stress & suffering.”
+sn38.4:1.3 | S: “But, reverend, is there a path and a practice for completely understanding this suffering?” | T: “But is there a path, is there a practice for the full comprehension of this stress & suffering?”
+sn38.4:1.4 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the full comprehension of this stress & suffering.”
+sn38.4:1.5 | P: “Katamo panāvuso, maggo katamā paṭipadā, etassa dukkhassa pariññāyā”ti? | T: “Then what is the path, what is the practice for the full comprehension of this stress & suffering?”
+sn38.4:2.1 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etassa dukkhassa pariññāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.4:2.2 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.4:2.3 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā etassa dukkhassa pariññāyā”ti. | T: This is the path, this is the practice for the full comprehension of this stress & suffering.”
+sn38.4:2.4 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etassa dukkhassa pariññāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the full comprehension of this stress & suffering—
+sn38.4:2.5 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.4:2.6 | P: Catutthaṁ. | T: (none)
+
+## sn38.5
+sn38.5:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘gaining solace’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘A person who has attained assurance, a person who has attained assurance,’ it is said, my friend Sāriputta.
+sn38.5:1.2 | S: At what point do you gain solace?” | T: To what extent is one a person who has attained assurance?”
+sn38.5:1.3 | S: “When a mendicant truly understands the six fields of contact’s origin, disappearance, gratification, drawback, and escape, at that point they’ve gained solace.” | T: “Friend, when a monk discerns, as it has come to be, the origination, passing away, allure, drawbacks of—and escape from—the six media of (sensory) contact: It’s to this extent that he is a person who has attained assurance.”
+sn38.5:1.4 | S: “But, reverend, is there a path and a practice for realizing this solace?” | T: “But is there a path, is there a practice for the realization of this assurance?”
+sn38.5:1.5 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the realization of this assurance.”
+sn38.5:1.6 | P: “Katamo panāvuso, maggo katamā paṭipadā, etassa assāsassa sacchikiriyāyā”ti? | T: “Then what is the path, what is the practice for the realization of this assurance?”
+sn38.5:1.7 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo etassa assāsassa sacchikiriyāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.5:1.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.5:1.9 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etassa assāsassa sacchikiriyāyā”ti. | T: This is the path, this is the practice for the realization of this assurance.”
+sn38.5:1.10 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etassa assāsassa sacchikiriyāya. | T: “It’s an auspicious path, my friend, an auspicious practice for realization of this assurance—
+sn38.5:1.11 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.5:1.12 | P: Pañcamaṁ. | T: (none)
+
+## sn38.6
+sn38.6:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘gaining ultimate solace’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘A person who has attained foremost assurance, a person who has attained foremost assurance,’ it is said, my friend Sāriputta.
+sn38.6:1.2 | S: At what point do you gain ultimate solace?” | T: To what extent is one a person who has attained foremost assurance?”
+sn38.6:1.3 | S: “When a mendicant is freed by not grasping after truly understanding the six fields of contact’s origin, disappearance, gratification, drawback, and escape, at that point they’ve gained ultimate solace.” | T: “Friend, when a monk—having known, as it has come to be, the origination, passing away, allure, drawbacks of, and escape from, the six media of (sensory) contact—is released through no clinging: It’s to this extent that he is a person who has attained foremost assurance.”
+sn38.6:1.4 | S: “But, reverend, is there a path and a practice for realizing this ultimate solace?” | T: “But is there a path, is there a practice for the realization of this foremost assurance?”
+sn38.6:1.5 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the realization of this foremost assurance.”
+sn38.6:1.6 | P: “Katamo pana, āvuso, maggo katamā paṭipadā, etassa paramassāsassa sacchikiriyāyā”ti? | T: “Then what is the path, what is the practice for the realization of this foremost assurance?”
+sn38.6:1.7 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo etassa paramassāsassa sacchikiriyāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.6:1.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn38.6:1.9 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etassa paramassāsassa sacchikiriyāyā”ti. | T: This is the path, this is the practice for the realization of this foremost assurance.”
+sn38.6:1.10 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etassa paramassāsassa sacchikiriyāya. | T: “It’s an auspicious path, my friend, an auspicious practice for realization of this foremost assurance—
+sn38.6:1.11 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.6:1.12 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn38.8
+sn38.8:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘defilement’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Effluent, effluent,’ it is said, my friend Sāriputta.
+sn38.8:1.2 | S: What is defilement?” | T: Which effluent (are they referring to)?”
+sn38.8:1.3 | S: “Reverend, there are three defilements. | T: “There are these three effluents:
+sn38.8:1.4 | S: The defilements of sensuality, desire to be reborn, and ignorance. | T: the effluent of sensuality, the effluent of becoming, the effluent of ignorance.
+sn38.8:1.5 | S: These are the three defilements.” | T: These are the three effluents.”
+sn38.8:1.6 | S: “But, reverend, is there a path and a practice for completely understanding these three defilements?” | T: “But is there a path, is there a practice for the abandoning of these effluents?”
+sn38.8:1.7 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the abandoning of these effluents.”
+sn38.8:1.8 | P: “Katamo panāvuso, maggo katamā paṭipadā etesaṁ āsavānaṁ pahānāyā”ti? | T: “Then what is the path, what is the practice for the abandoning of these effluents?”
+sn38.8:1.9 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo etesaṁ āsavānaṁ pahānāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.8:1.10 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.8:1.11 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etesaṁ āsavānaṁ pahānāyā”ti. | T: This is the path, this is the practice for the abandoning of these effluents.”
+sn38.8:1.12 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etesaṁ āsavānaṁ pahānāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of these effluents—
+sn38.8:1.13 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.8:1.14 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn38.9
+sn38.9:1.1 | S: “Reverend Sāriputta, they speak of this thing called ‘ignorance’. | T: On one occasion Ven. Sāriputta was staying in Magadha near Nāla Village. Then Jambukhādaka the wanderer went to Ven. Sāriputta and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to Ven. Sāriputta: “‘Ignorance, ignorance,’ it is said, my friend Sāriputta.
+sn38.9:1.2 | S: What is ignorance?” | T: Which ignorance (are they referring to)?”
+sn38.9:1.3 | S: “Not knowing about suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: “Not knowing in terms of stress, not knowing in terms of the origination of stress, not knowing in terms of the cessation of stress, not knowing in terms of the path of practice for the cessation of stress:
+sn38.9:1.4 | S: This is called ignorance.” | T: This is called ignorance.”
+sn38.9:1.5 | S: “But, reverend, is there a path and a practice for giving up that ignorance?” | T: “But is there a path, is there a practice for the abandoning of this ignorance?”
+sn38.9:1.6 | S: “There is.” … | T: “Yes, there is a path, there is a practice for the abandoning of this ignorance.”
+sn38.9:1.7 | P: “Katamo panāvuso, maggo katamā paṭipadā, etissā avijjāya pahānāyā”ti? | T: “Then what is the path, what is the practice for the abandoning of this ignorance?”
+sn38.9:1.8 | P: “Ayameva kho, āvuso, ariyo aṭṭhaṅgiko maggo, etissā avijjāya pahānāya, seyyathidaṁ— | T: “Precisely this noble eightfold path, my friend:
+sn38.9:1.9 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn38.9:1.10 | P: Ayaṁ kho, āvuso, maggo ayaṁ paṭipadā, etissā avijjāya pahānāyā”ti. | T: This is the path, this is the practice for the abandoning of this ignorance.”
+sn38.9:1.11 | P: “Bhaddako, āvuso, maggo bhaddikā paṭipadā, etissā avijjāya pahānāya. | T: “It’s an auspicious path, my friend, an auspicious practice for the abandoning of these this ignorance—
+sn38.9:1.12 | P: Alañca panāvuso sāriputta, appamādāyā”ti. | T: enough for the sake of heedfulness.”
+sn38.9:1.13 | P: Navamaṁ. | T: (none)
+
+## sn4.19
+sn4.19:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn4.19:1.2 | S: Now at that time the Buddha was educating, encouraging, firing up, and inspiring the mendicants with a Dhamma talk about extinguishment. | T: Now at that time the Blessed One was instructing, urging, rousing, & encouraging the monks with a Dhamma talk concerning unbinding.
+sn4.19:1.3 | S: And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. | T: The monks—attentive, interested, lending ear, focusing their entire awareness—were listening to the Dhamma.
+sn4.19:2.1 | S: Then Māra thought, | T: Then the thought occurred to Māra, the Evil One:
+sn4.19:2.2 | S: “The ascetic Gotama is giving a Dhamma talk about extinguishment … and the mendicants are listening well. | T: “Gotama the contemplative is instructing, urging, rousing, & encouraging the monks with a Dhamma talk concerning unbinding. The monks—attentive, interested, lending ear, focusing their entire awareness—are listening to the Dhamma.
+sn4.19:2.3 | S: Why don’t I go and pull the wool over their eyes?” | T: What if I were to go to Gotama the contemplative to obscure his vision?”
+sn4.19:2.4 | S: Then Māra the Wicked manifested in the form of a farmer carrying a large plough on his shoulder. He held a long goad, his hair was messy, he was clad in sunn hemp, and his feet were muddy. He went up to the Buddha and said to him, | T: Then Māra the Evil One, taking on the form of a farmer with a large plowshare over his shoulder, carrying a long goad stick—his hair disheveled, his clothes made of coarse hemp, his feet splattered with mud—went to the Blessed One and, on arrival, said,
+sn4.19:2.5 | S: “So, ascetic, did you happen to see any oxen?” | T: “Hey, contemplative. Have you seen my oxen?”
+sn4.19:2.6 | S: “But what have you to do with oxen, Wicked One?” | T: “And what are your oxen, Evil One?”
+sn4.19:2.7 | S: “Mine alone, ascetic, is the eye, mine are sights, mine is the field of eye contact consciousness. | T: “Mine alone is the eye, contemplative. Mine are forms, mine is the dimension of consciousness & contact at the eye.
+sn4.19:2.8 | S: Where can you escape me, ascetic? | T: Where can you go to escape me?
+sn4.19:2.9 | S: Mine alone is the ear … | T: Mine alone is the ear…
+sn4.19:2.10 | S: nose … | T: the nose…
+sn4.19:2.11 | S: tongue … | T: the tongue…
+sn4.19:2.12 | S: body … | T: the body…
+sn4.19:2.13 | S: mind, mine are ideas, mine is the field of mind contact consciousness. | T: Mine alone is the intellect, contemplative. Mine are ideas, mine is the dimension of consciousness & contact at the intellect.
+sn4.19:2.14 | S: Where can you escape me, ascetic?” | T: Where can you go to escape me?”
+sn4.19:3.1 | S: “Yours alone, Wicked One, is the eye, yours are sights, yours is the field of eye contact consciousness. | T: “Yours alone is the eye, Evil One. Yours are forms, yours is the sphere of consciousness & contact at the eye.
+sn4.19:3.2 | S: Where there is no eye, no sights, no eye contact consciousness—you have no place there, Wicked One! | T: Where no eye exists, no forms exist, no dimension of consciousness & contact at the eye exists: There, Evil One, you cannot go.
+sn4.19:3.3 | S: Yours alone is the ear … | T: Yours alone is the ear…
+sn4.19:3.4 | P: Yattha ca kho, pāpima, natthi sotaṁ, natthi saddā, natthi sotasamphassaviññāṇāyatanaṁ, agati tava tattha, pāpima. | T: (none)
+sn4.19:3.5 | S: nose … | T: the nose…
+sn4.19:3.6 | P: Yattha ca kho, pāpima, natthi ghānaṁ, natthi gandhā, natthi ghānasamphassaviññāṇāyatanaṁ, agati tava tattha, pāpima. | T: (none)
+sn4.19:3.7 | S: tongue … | T: the tongue…
+sn4.19:3.8 | S: body … | T: the body…
+sn4.19:3.9 | S: mind, yours are ideas, yours is the field of mind contact consciousness. | T: Yours alone is the intellect, Evil One. Yours are ideas, yours is the dimension of consciousness & contact at the intellect.
+sn4.19:3.10 | S: Where there is no mind, no ideas, no mind contact consciousness—you have no place there, Wicked One!” | T: Where no intellect exists, no ideas exist, no dimension of consciousness & contact at the intellect exists: There, Evil One, you cannot go.”
+sn4.19:4.1 | S: “The things they call ‘mine’, | T: Māra: “Of what they say, ‘This is mine’;
+sn4.19:4.2 | S: and those who say ‘it’s mine’: | T: and those who say, ‘Mine’:
+sn4.19:4.3 | S: if your mind remains there, | T: If your intellect’s here,
+sn4.19:4.4 | S: you won’t escape me, ascetic!” | T: contemplative, you can’t escape from me.”
+sn4.19:5.1 | S: “The things they speak of aren’t mine; | T: The Buddha: “What they speak of isn’t mine,
+sn4.19:5.2 | S: I’m not someone who speaks like that. | T: and I’m not one of those who speak it.
+sn4.19:5.3 | S: So know this, Wicked One: | T: Know this, Evil One:
+sn4.19:5.4 | S: you won’t even see the path I take.” | T: You won’t even see my tracks.”
+sn4.19:6.1 | S: Then Māra … vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+
+## sn4.1
+sn4.1:1.1 | S: So I have heard. | T: I have heard that
+sn4.1:1.2 | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: on one occasion, when the Blessed One was newly self-awakened, he was dwelling near Uruvelā on the bank of the Nerañjarā River, at the root of the Goatherd's Banyan Tree.
+sn4.1:1.3 | S: Then as he was in private retreat this thought came to his mind, | T: Then, when the Blessed One was alone in seclusion, this train of thought arose in his awareness,
+sn4.1:1.4 | S: “I am truly freed from that grueling work! | T: “Released am I from that practice of extreme austerities!
+sn4.1:1.5 | S: Thank goodness I’m freed from that pointless grueling work. | T: How good that I’m released from that useless practice of extreme austerities!
+sn4.1:1.6 | S: Thank goodness I’m freed and have attained awakening.” | T: How good that I’m released, that I have attained awakening!”
+sn4.1:2.1 | S: And then Māra the Wicked, knowing the Buddha’s train of thought, went up to him and addressed him in verse: | T: Then Māra the Evil One, having known with his awareness the train of thought in the Blessed One's awareness, went to the Blessed One and addressed him in verse:
+sn4.1:3.1 | S: “You’ve left the practice of mortification | T: “Straying from the ascetic actions
+sn4.1:3.2 | S: by which sons of men purify themselves. | T: by which young brahmans are purified,
+sn4.1:3.3 | S: You’re impure, but think yourself pure; | T: impure, you suppose you’re pure.
+sn4.1:3.4 | S: you’ve strayed from the path of purity.” | T: You’ve missed the path to purity.”
+sn4.1:4.1 | S: Then the Buddha, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Mara the Evil One,” the Blessed One replied to him in verses:
+sn4.1:5.1 | S: “I realized that it’s pointless; | T: “Having known it to be useless,
+sn4.1:5.2 | S: all that endless mortification | T: any further austerity,
+sn4.1:5.3 | S: is as futile | T: each bringing nothing,
+sn4.1:5.4 | S: as oars and rudder on dry land. | T: like oars & rudder on dry land:
+sn4.1:6.1 | S: Ethics, immersion, and wisdom: | T: Developing virtue, concentration, & discernment,
+sn4.1:6.2 | S: by developing this path to awakening | T: the path to awakening,
+sn4.1:6.3 | S: I attained ultimate purity. | T: I’ve attained the foremost purity.
+sn4.1:6.4 | S: You’re beaten, terminator!” | T: But you, End-maker, are struck down.”
+sn4.1:7.1 | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One—sad & dejected at realizing, “The Blessed One knows me, the One Well-Gone knows me”—vanished right there.
+
+## sn4.20
+sn4.20:1.1 | S: At one time the Buddha was staying in the land of the Kosalans, in a wilderness hut on the slopes of the Himalayas. | T: I have heard that on one occasion the Blessed One was staying among the Kosalans in a wilderness hut in a Himalayan district.
+sn4.20:1.2 | S: Then as he was in private retreat this thought came to his mind, | T: Then, as he was alone in seclusion, this train of thought arose in his awareness:
+sn4.20:1.3 | S: “I wonder if it’s possible to rule legitimately, without killing or having someone kill for you; without conquering or having someone conquer for you; without sorrowing or causing sorrow?” | T: “Is it possible to exercise rulership without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously?”
+sn4.20:2.1 | S: And then Māra the Wicked, knowing the Buddha’s train of thought, went up to him and said, | T: Then Māra, the Evil One, knowing with his awareness the train of thought in the Blessed One’s awareness, went to him and on arrival said to him:
+sn4.20:2.2 | S: “Rule, Blessed One! Rule, Holy One! Rule legitimately, without killing or having someone kill for you; without conquering or having someone conquer for you; without sorrowing or causing sorrow!” | T: “Exercise rulership, Blessed One! Exercise rulership, O One Well-Gone!—without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously!”
+sn4.20:2.3 | S: “But what do you see, Wicked One, that you say this to me?” | T: “But what do you see in me, Evil One, that you say to me,
+sn4.20:2.4 | P: ‘kāretu, bhante, bhagavā rajjaṁ, kāretu sugato, rajjaṁ ahanaṁ aghātayaṁ ajinaṁ ajāpayaṁ asocaṁ asocāpayaṁ dhammenā’”ti? | T: ‘Exercise rulership, Blessed One! Exercise rulership, O One Well-Gone!—without killing or causing others to kill, without dispossessing or causing others to dispossess, without sorrowing or causing others sorrow—righteously!’?”
+sn4.20:2.5 | S: “The Blessed One, sir, has developed and cultivated the four bases for psychic power, made them a vehicle and a basis, kept them up, consolidated them, and properly implemented them. | T: “Lord, the Blessed One has developed the four bases of power, pursued them, given them a means of transport, given them a grounding, steadied them, consolidated them, and undertaken them well.
+sn4.20:2.6 | S: If he wished, the Blessed One need only determine that the Himalaya, king of mountains, was gold, and it would turn into gold.” | T: If he wanted to, he could resolve on the Himalayas, king of mountains, as gold, and it would become a mountain of gold.”
+sn4.20:3.1 | S: “Take a golden mountain, | T: The Buddha: “The entirety of a mountain of gold,
+sn4.20:3.2 | S: entirely of native gold, and double it— | T: of solid bullion: Even twice that
+sn4.20:3.3 | S: it’s still not enough for one! | T: wouldn’t suffice for one person.
+sn4.20:3.4 | S: Knowing this, live a moral life. | T: Knowing this, live evenly, in tune with the contemplative life.
+sn4.20:4.1 | S: When a personage has seen where suffering comes from | T: When you see stress, and from where it comes,
+sn4.20:4.2 | S: how could they incline toward sensual pleasures? | T: how can you incline to sensuality?
+sn4.20:4.3 | S: Realizing that attachment is a chain in the world, | T: Knowing acquisition to be a bond in the world,
+sn4.20:4.4 | S: a personage would train to remove it.” | T: train for its subduing.”
+sn4.20:5.1 | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+sn4.20:5.2 | P: Dutiyo vaggo. | T: (none)
+sn4.20:6.0 | P: Tassuddānaṁ | T: (none)
+sn4.20:6.1 | P: Pāsāṇo sīho sakalikaṁ, | T: (none)
+sn4.20:6.2 | P: Patirūpañca mānasaṁ; | T: (none)
+sn4.20:6.3 | P: Pattaṁ āyatanaṁ piṇḍaṁ, | T: (none)
+sn4.20:6.4 | P: Kassakaṁ rajjena te dasāti. | T: (none)
+
+## sn4.21
+sn4.21:1.1 | S: So I have heard. | T: I have heard that
+sn4.21:1.2 | S: At one time the Buddha was staying in the land of the Sakyans near Silāvatī. | T: on one occasion the Blessed One was staying among the Sakyans at Silāvatī.
+sn4.21:1.3 | S: Now at that time several mendicants were meditating not far from the Buddha, diligent, keen, and resolute. | T: And on that occasion a large number of monks were staying not far from the Blessed One: heedful, ardent, & resolute.
+sn4.21:1.4 | S: Then Māra the Wicked manifested in the form of a brahmin with a large matted dreadlock, wearing an antelope hide. He was old, bent double, wheezing, and held a staff made of cluster fig tree wood. He went up to those mendicants and said, | T: Then Māra the Evil One, assuming the appearance of a brahman—with a large coiled top-knot, clad in an antelope hide, aged, crooked like a roof support, wheezing, holding a staff of fig wood—went to the monks and, on arrival, said to them,
+sn4.21:1.5 | S: “You’ve gone forth while young, reverends.  With pristine black hair, you’re blessed with youth, in the prime of life, and you’ve never flirted with sensual pleasures. | T: “You have gone forth while young, masters—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality.
+sn4.21:1.6 | S: Enjoy human sensual pleasures. | T: Enjoy human sensuality, monks.
+sn4.21:1.7 | S: Don’t give up what is apparent in the present to chase after what takes effect over time.” | T: Don’t drop what is visible here-&-now in pursuit of what’s subject to time.”
+sn4.21:1.8 | S: “Brahmin, that’s not what we’re doing. | T: “Brahman, we’re not dropping what’s visible here-&-now in pursuit of what’s subject to time.
+sn4.21:1.9 | S: We’re giving up what takes effect over time to chase after what is apparent in the present. | T: We’re dropping what’s subject to time in pursuit of what’s visible here-&-now.
+sn4.21:1.10 | S: For the Buddha says that sensual pleasures take effect over time; they give much suffering and distress, and they are all the more full of drawbacks. | T: For the Blessed One has said that sensuality is subject to time, of much stress, much despair, & greater drawbacks;
+sn4.21:1.11 | S: But this teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves.” | T: whereas this Dhamma is visible here-&-now, not subject to time, inviting all to come & see, pertinent, to be known by the observant for themselves.”
+sn4.21:1.12 | S: When they had spoken, Māra the Wicked shook his head, waggled his tongue, raised his eyebrows until his brow puckered in three furrows, and left leaning on his staff. | T: When this was said, Māra the Evil One—shaking his head, wagging his tongue, raising his eyebrows so that his forehead was wrinkled in three furrows—left, leaning on his stick.
+sn4.21:2.1 | S: Then those mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. The Buddha said, | T: So the monks went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As they were sitting there they [told him what had happened].
+sn4.21:2.2 | P: “idha mayaṁ, bhante, bhagavato avidūre appamattā ātāpino pahitattā viharāma. | T: (none)
+sn4.21:2.3 | P: Atha kho, bhante, aññataro brāhmaṇo mahantena jaṭaṇḍuvena ajinakkhipanivattho jiṇṇo gopānasivaṅko ghurughurupassāsī udumbaradaṇḍaṁ gahetvā yena mayaṁ tenupasaṅkami; upasaṅkamitvā amhe etadavoca: | T: (none)
+sn4.21:2.4 | P: ‘daharā bhavanto pabbajitā susū kāḷakesā bhadrena yobbanena samannāgatā paṭhamena vayasā anikkīḷitāvino kāmesu. | T: (none)
+sn4.21:2.5 | P: Bhuñjantu bhavanto mānusake kāme. | T: (none)
+sn4.21:2.6 | P: Mā sandiṭṭhikaṁ hitvā kālikaṁ anudhāvitthā’ti. | T: (none)
+sn4.21:2.7 | P: Evaṁ vutte, mayaṁ, bhante, taṁ brāhmaṇaṁ etadavocumha: | T: (none)
+sn4.21:2.8 | P: ‘na kho mayaṁ, brāhmaṇa, sandiṭṭhikaṁ hitvā kālikaṁ anudhāvāma. | T: (none)
+sn4.21:2.9 | P: Kālikañca kho mayaṁ, brāhmaṇa, hitvā sandiṭṭhikaṁ anudhāvāma. | T: (none)
+sn4.21:2.10 | P: Kālikā hi, brāhmaṇa, kāmā vuttā bhagavatā bahudukkhā bahupāyāsā, ādīnavo ettha bhiyyo. | T: (none)
+sn4.21:2.11 | P: Sandiṭṭhiko ayaṁ dhammo akāliko ehipassiko opaneyyiko paccattaṁ veditabbo viññūhī’ti. | T: (none)
+sn4.21:2.12 | P: Evaṁ vutte, bhante, so brāhmaṇo sīsaṁ okampetvā jivhaṁ nillāletvā tivisākhaṁ nalāṭe nalāṭikaṁ vuṭṭhāpetvā daṇḍamolubbha pakkanto”ti. | T: (none)
+sn4.21:3.1 | S: “Mendicants, that was no brahmin. | T: “That wasn’t a brahman, monks.
+sn4.21:3.2 | S: That was Māra the Wicked who came to pull the wool over your eyes!” | T: That was Māra the Evil One, come to blind you.”
+sn4.21:3.3 | S: Then, understanding this matter, on that occasion the Buddha spoke this verse: | T: Then, on realizing the significance of that, the Blessed One on that occasion spoke these verses:
+sn4.21:4.1 | S: “When a personage has seen where suffering comes from | T: One who has seen the cause from which suffering comes:
+sn4.21:4.2 | S: how could they incline toward sensual pleasures? | T: How could that person incline to sensuality?
+sn4.21:4.3 | S: Realizing that attachment is a chain in the world, | T: Having realized that acquisition is a tie in the world,
+sn4.21:4.4 | S: a personage would train to remove it.” | T: a person should train to subdue just that.
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-102.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+21,160
+0 lines reported.

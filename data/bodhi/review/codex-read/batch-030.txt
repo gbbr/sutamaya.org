@@ -1,0 +1,398 @@
+## sn12.52
+sn12.52:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.52:1.2 | S: “There are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: “Bhikkhus, when one dwells contemplating gratification in things that can be clung to, craving increases.
+sn12.52:1.3 | S: Craving is a requirement for grasping. | T: With craving as condition, clinging comes to be;
+sn12.52:1.4 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, existence;
+sn12.52:1.5 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn12.52:1.6 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn12.52:1.7 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.52:2.1 | S: Suppose a great mass of fire was burning with ten, twenty, thirty, or forty loads of wood. | T: “Suppose, bhikkhus, a great bonfire was burning, consuming ten, twenty, thirty, or forty loads of wood,
+sn12.52:2.2 | S: And from time to time someone would toss in dry grass, cow dung, or wood. | T: and a man would cast dry grass, dry cowdung, and dry wood into it from time to time.
+sn12.52:2.3 | S: Fed and fuelled by that, the great mass of fire would burn for a long time. | T: Thus, sustained by that material, fuelled by it, that great bonfire would burn for a very long time.
+sn12.52:2.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one lives contemplating gratification in things that can be clung to, craving increases….
+sn12.52:2.5 | S: Craving is a requirement for grasping. … | T: (none)
+sn12.52:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.52:3.1 | S: There are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: “Bhikkhus, when one dwells contemplating danger in things that can be clung to, craving ceases.
+sn12.52:3.2 | S: When craving ceases, grasping ceases. | T: With the cessation of craving comes cessation of clinging;
+sn12.52:3.3 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of existence …
+sn12.52:3.4 | S: When continued existence ceases, rebirth ceases. | T: cessation of birth …
+sn12.52:3.5 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: aging-and-death, sorrow, lamentation, pain, displeasure, and despair cease.
+sn12.52:3.6 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.52:4.1 | S: Suppose a great mass of fire was burning with ten, twenty, thirty, or forty loads of wood. | T: “Suppose, bhikkhus, a great bonfire was burning, consuming ten, twenty, thirty, or forty loads of wood,
+sn12.52:4.2 | S: And no one would toss in dry grass, cow dung, or wood from time to time. | T: and a man would not cast dry grass, dry cowdung, or dry wood into it from time to time.
+sn12.52:4.3 | S: As the original fuel is used up and no more is added, the great mass of fire would be extinguished due to not being fed. | T: Thus, when the former supply of fuel is exhausted, that great bonfire, not being fed with any more fuel, lacking sustenance, would be extinguished.
+sn12.52:4.4 | S: In the same way, there are things that fuel grasping. When you concentrate on the drawbacks of these things, your craving ceases. | T: So too, when one lives contemplating danger in things that can be clung to, craving ceases….
+sn12.52:4.5 | S: When craving ceases, grasping ceases. … | T: (none)
+sn12.52:4.6 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.52:4.7 | P: Dutiyaṁ. | T: (none)
+
+## sn12.45
+sn12.45:1.1 | S: So I have heard. | T: Thus have I heard.
+sn12.45:1.2 | S: At one time the Buddha was staying at Ñātika in the brick house. | T: On one occasion the Blessed One was dwelling at Ñatika in the Brick Hall.
+sn12.45:1.3 | S: Then while the Buddha was in private retreat he spoke this exposition of the teaching: | T: Then, while the Blessed One was alone in seclusion, he uttered this Dhamma exposition:
+sn12.45:2.1 | S: “Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: “In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.45:2.2 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.45:2.3 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+sn12.45:2.4 | S: Craving is a requirement for grasping. … | T: with craving as condition, clinging….
+sn12.45:2.5 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.45:3.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds …
+sn12.45:3.2 | S: Nose consciousness arises dependent on the nose and smells. … | T: (none)
+sn12.45:3.3 | S: Tongue consciousness arises dependent on the tongue and tastes. … | T: (none)
+sn12.45:3.4 | S: Body consciousness arises dependent on the body and touches. … | T: (none)
+sn12.45:3.5 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.45:3.6 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.45:3.7 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+sn12.45:3.8 | S: Craving is a requirement for grasping. … | T: with craving as condition, clinging….
+sn12.45:3.9 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.45:4.1 | S: Eye consciousness arises dependent on the eye and sights. The meeting of the three is contact. | T: “In dependence on the eye and forms, eye-consciousness arises. The meeting of the three is contact.
+sn12.45:4.2 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.45:4.3 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.45:4.4 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging;
+sn12.45:4.5 | S: When grasping ceases, continued existence ceases. … | T: with the cessation of clinging, cessation of existence….
+sn12.45:4.6 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.45:5.1 | S: Ear consciousness arises dependent on the ear and sounds. … | T: “In dependence on the ear and sounds …
+sn12.45:5.2 | S: Mind consciousness arises dependent on the mind and ideas. The meeting of the three is contact. | T: In dependence on the mind and mental phenomena, mind-consciousness arises. The meeting of the three is contact.
+sn12.45:5.3 | S: Contact is a requirement for feeling. | T: With contact as condition, feeling comes to be;
+sn12.45:5.4 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving.
+sn12.45:5.5 | S: When that craving fades away and ceases with no residue left behind, grasping ceases. | T: But with the remainderless fading away and cessation of that same craving comes cessation of clinging;
+sn12.45:5.6 | S: When grasping ceases, continued existence ceases. … | T: with the cessation of clinging, cessation of existence….
+sn12.45:5.7 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.45:6.1 | S: Now at that time a certain monk was standing listening in on the Buddha. | T: Now on that occasion a certain bhikkhu was standing listening in on the Blessed One.
+sn12.45:6.2 | S: The Buddha saw him | T: The Blessed One saw him standing there listening in
+sn12.45:6.3 | S: and said, | T: and said to him:
+sn12.45:6.4 | S: “Monk, did you hear that exposition of the teaching?” | T: “Did you hear that Dhamma exposition, bhikkhu?”
+sn12.45:6.5 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn12.45:6.6 | S: “Learn that exposition of the teaching, | T: “Learn that Dhamma exposition, bhikkhu,
+sn12.45:6.7 | S: memorize it, | T: master it
+sn12.45:6.8 | S: and remember it. | T: and remember it.
+sn12.45:6.9 | S: That exposition of the teaching is beneficial and relevant to the fundamentals of the spiritual life.” | T: That Dhamma exposition is beneficial and relevant to the fundamentals of the holy life.”
+sn12.45:6.10 | P: Pañcamaṁ. | T: (none)
+
+## sn43.44
+sn43.44:1.1 | S: “Mendicants, I will teach you the final haven and the path that leads to the final haven. | T: “Bhikkhus, I will teach you the destination and the path leading to the destination.
+sn43.44:1.2 | S: Listen … | T: Listen to that….
+sn43.44:1.3 | S: And what is the final haven? | T: “And what, bhikkhus, is the destination?
+sn43.44:1.4 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion:
+sn43.44:1.5 | S: This is called the final haven. | T: this is called the destination.
+sn43.44:1.6 | S: And what is the path that leads to the final haven? | T: “And what, bhikkhus, is the path leading to the destination?
+sn43.44:1.7 | S: Mindfulness of the body. | T: Mindfulness directed to the body:
+sn43.44:1.8 | S: This is called the path that leads to the final haven. | T: this is called the path leading to the destination.
+sn43.44:1.9 | S: So, mendicants, I’ve taught you the final haven and the path that leads to the final haven. | T: “Thus, bhikkhus, I have taught you the destination and the path leading to the destination.
+sn43.44:1.10 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever should be done, bhikkhus, by a compassionate teacher out of compassion for his disciples, desiring their welfare, that I have done for you.
+sn43.44:1.11 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: These are the feet of trees, bhikkhus, these are empty huts. Meditate, bhikkhus, do not be negligent, lest you regret it later. This is our instruction to you.”
+sn43.44:1.12 | S: (Tell in full as in the unconditioned.) | T: Each to be elaborated in fullas in §§1–12.
+sn43.44:1.13 | P: Tettiṁsatimaṁ. | T: (none)
+sn43.44:1.14 | P: Dutiyo vaggo. | T: (none)
+sn43.44:2.0 | P: Tassuddānaṁ | T: (none)
+sn43.44:2.1 | P: Asaṅkhataṁ anataṁ anāsavaṁ, | T: (none)
+sn43.44:2.2 | P: Saccañca pāraṁ nipuṇaṁ sududdasaṁ; | T: (none)
+sn43.44:2.3 | P: Ajajjaraṁ dhuvaṁ apalokitaṁ, | T: (none)
+sn43.44:2.4 | P: Anidassanaṁ nippapañca santaṁ. | T: (none)
+sn43.44:3.1 | P: Amataṁ paṇītañca sivañca khemaṁ, | T: (none)
+sn43.44:3.2 | P: Taṇhākkhayo acchariyañca abbhutaṁ; | T: (none)
+sn43.44:3.3 | P: Anītikaṁ anītikadhammaṁ, | T: (none)
+sn43.44:3.4 | P: Nibbānametaṁ sugatena desitaṁ. | T: (none)
+sn43.44:4.1 | P: Abyābajjho virāgo ca, | T: (none)
+sn43.44:4.2 | P: suddhi mutti anālayo; | T: (none)
+sn43.44:4.3 | P: Dīpo leṇañca tāṇañca, | T: (none)
+sn43.44:4.4 | P: saraṇañca parāyananti. | T: (none)
+sn43.44:4.5 | S: The Linked Discourses on the unconditioned are complete. | T: (none)
+
+## sn22.84
+sn22.84:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn22.84:1.2 | S: Now at that time Venerable Tissa—the Buddha’s cousin on his father’s side—informed several mendicants: | T: Now on that occasion the Venerable Tissa, the Blessed One’s paternal cousin, informed a number of bhikkhus:
+sn22.84:1.3 | S: “Reverends, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.” | T: “Friends, my body seems as if it has been drugged, I have become disoriented, the teachings are no longer clear to me. Sloth and torpor persist obsessing my mind. I am leading the holy life dissatisfied, and I have doubt about the teachings.”
+sn22.84:2.1 | S: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then a number of bhikkhus approached the Blessed One, paid homage to him, sat down to one side, and reported this matter to him.
+sn22.84:2.2 | P: “āyasmā, bhante, tisso bhagavato pitucchāputto sambahulānaṁ bhikkhūnaṁ evamāroceti: | T: (none)
+sn22.84:2.3 | P: ‘api me, āvuso, madhurakajāto viya kāyo; disāpi me na pakkhāyanti; dhammāpi maṁ na paṭibhanti; thinamiddhañca me cittaṁ pariyādāya tiṭṭhati; anabhirato ca brahmacariyaṁ carāmi; hoti ca me dhammesu vicikicchā’”ti. | T: (none)
+sn22.84:3.1 | S: So the Buddha addressed one of the monks, | T: The Blessed One then addressed a certain bhikkhu thus:
+sn22.84:3.2 | S: “Please, monk, in my name tell the mendicant Tissa that the Teacher summons him.” | T: “Come, bhikkhu, tell the bhikkhu Tissa in my name that the Teacher calls him.”
+sn22.84:3.3 | S: “Yes, sir,” that monk replied. He went to Tissa and said to him, | T: “Yes, venerable sir,” that bhikkhu replied, and he went to the Venerable Tissa and told him:
+sn22.84:3.4 | S: “Reverend Tissa, the Teacher summons you.” | T: “The Teacher calls you, friend Tissa.”
+sn22.84:3.5 | S: “Yes, reverend,” Tissa replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: “Yes, friend,” the Venerable Tissa replied, and he approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+sn22.84:3.6 | S: “Is it really true, Tissa, that you informed several mendicants that | T: “Is it true, Tissa, that you informed a number of bhikkhus thus:
+sn22.84:3.7 | S: your body feels like it’s drugged … and you have doubts about the teachings?” | T: ‘Friends, my body seems as if it were drugged … and I have doubt about the teachings’?”
+sn22.84:3.8 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn22.84:3.9 | S: “What do you think, Tissa? | T: “What do you think, Tissa,
+sn22.84:3.10 | S: If you’re not rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” | T: if one is not devoid of lust for form, not devoid of desire, affection, thirst, passion, and craving for it, then with the change and alteration of that form, do sorrow, lamentation, pain, displeasure, and despair arise within?”
+sn22.84:3.11 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn22.84:4.1 | S: “Good, good, Tissa! | T: “Good, good, Tissa!
+sn22.84:4.2 | S: That’s how it is, Tissa, | T: So it is, Tissa,
+sn22.84:4.3 | S: when you’re not rid of greed for form. | T: with one who is not devoid of lust for form.
+sn22.84:4.4 | S: If you’re not rid of greed for feeling … | T: If one is not devoid of lust for feeling …
+sn22.84:4.5 | S: perception … | T: for perception …
+sn22.84:4.6 | S: choices … | T: for volitional formations …
+sn22.84:4.7 | P: tesaṁ saṅkhārānaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? | T: (none)
+sn22.84:4.8 | P: “Evaṁ, bhante”. | T: (none)
+sn22.84:5.1 | P: “Sādhu sādhu, tissa. | T: (none)
+sn22.84:5.2 | P: Evañhetaṁ, tissa, hoti. | T: (none)
+sn22.84:5.3 | S: consciousness, when that consciousness decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” | T: for consciousness, not devoid of desire, affection, thirst, passion, and craving for it, then with the change and alteration of that consciousness, do sorrow, lamentation, pain, displeasure, and despair arise within?”
+sn22.84:5.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn22.84:6.1 | S: “Good, good, Tissa! | T: “Good, good, Tissa!
+sn22.84:6.2 | S: That’s how it is, Tissa, | T: So it is, Tissa,
+sn22.84:6.3 | S: when you’re not rid of greed for consciousness. | T: with one who is not devoid of lust for consciousness.
+sn22.84:6.4 | S: What do you think, Tissa? | T: (none)
+sn22.84:6.5 | S: If you are rid of greed, desire, fondness, thirst, passion, and craving for form, when that form decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” | T: If one is devoid of lust for form, devoid of desire, affection, thirst, passion, and craving for it, then with the change and alteration of that form, do sorrow, lamentation, pain, displeasure, and despair arise within?”
+sn22.84:6.6 | S: “No, sir.” | T: “No, venerable sir.”
+sn22.84:7.1 | S: “Good, good, Tissa! | T: “Good, good, Tissa!
+sn22.84:7.2 | S: That’s how it is, Tissa, | T: So it is, Tissa,
+sn22.84:7.3 | S: when you are rid of greed for form … | T: with one who is devoid of lust for form.
+sn22.84:7.4 | S: feeling … | T: If one is devoid of lust for feeling …
+sn22.84:7.5 | S: perception … | T: for perception …
+sn22.84:7.6 | S: choices … | T: for volitional formations …
+sn22.84:7.7 | P: viññāṇe vigatarāgassa vigatacchandassa vigatapemassa vigatapipāsassa vigatapariḷāhassa vigatataṇhassa tassa viññāṇassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? | T: for consciousness, devoid of desire, affection, thirst, passion, and craving for it, then with the change and alteration of that consciousness, do sorrow, lamentation, pain, displeasure, and despair arise within?”
+sn22.84:7.8 | P: “No hetaṁ, bhante”. | T: “No, venerable sir.”
+sn22.84:8.1 | P: “Sādhu sādhu, tissa. | T: “Good, good, Tissa!
+sn22.84:8.2 | P: Evañhetaṁ, tissa, hoti. | T: So it is, Tissa,
+sn22.84:8.3 | S: consciousness. | T: with one who is devoid of lust for consciousness.
+sn22.84:8.4 | S: What do you think, Tissa? | T: What do you think, Tissa,
+sn22.84:8.5 | S: Is form permanent or impermanent?” | T: is form permanent or impermanent?”—
+sn22.84:8.6 | S: “Impermanent, sir.” | T: “Impermanent, venerable sir.”…—
+sn22.84:8.7 | S: “Is feeling … | T: (none)
+sn22.84:8.8 | S: perception … | T: (none)
+sn22.84:8.9 | S: choices … | T: (none)
+sn22.84:8.10 | S: consciousness permanent or impermanent?” | T: (none)
+sn22.84:8.11 | S: “Impermanent, sir.” | T: (none)
+sn22.84:8.12 | S: “So you should truly see … | T: “Therefore …
+sn22.84:8.13 | S: Seeing this … | T: Seeing thus …
+sn22.84:8.14 | S: They understand: ‘… there is nothing further for this place.’ | T: He understands: ‘… there is no more for this state of being.’
+sn22.84:9.1 | S: Suppose, Tissa, there were two individuals. | T: “Suppose, Tissa, there were two men:
+sn22.84:9.2 | S: One was not skilled in the path, the other was. | T: one unskilled in the path, the other skilled in the path.
+sn22.84:9.3 | S: The one not skilled in the path would question the one skilled in the path, | T: The man unskilled in the path would ask the skilled man a question about the path,
+sn22.84:9.4 | S: who would reply: | T: and the latter would say:
+sn22.84:9.5 | S: ‘Come, my man, this is the path. | T: ‘Come, good man, this is the path.
+sn22.84:9.6 | S: Go down it an hour, | T: Go along it a little way
+sn22.84:9.7 | S: and you’ll see a fork in the road. Ignore the left, and take the right-hand path. | T: and you will see a fork in the road. Avoid the left-hand branch and take the right-hand branch.
+sn22.84:9.8 | S: Go an hour more, | T: Go a little further
+sn22.84:9.9 | S: and you’ll see a dense forest grove. | T: and you will see a dense thicket.
+sn22.84:9.10 | S: Go an hour more, | T: Go a little further
+sn22.84:9.11 | S: and you’ll see an expanse of low-lying marshes. | T: and you will see a vast marshy swamp.
+sn22.84:9.12 | S: Go an hour more, | T: Go a little further
+sn22.84:9.13 | S: and you’ll see a large, steep cliff. | T: and you will see a steep precipice.
+sn22.84:9.14 | S: Go an hour more, | T: Go a little further
+sn22.84:9.15 | S: and you’ll see level, cleared parkland.’ | T: and you will see a delightful expanse of level ground.’
+sn22.84:10.1 | S: I’ve made up this simile to make a point. | T: “I have made up this simile, Tissa, in order to convey a meaning.
+sn22.84:10.2 | S: And this is what it means. | T: This here is the meaning:
+sn22.84:10.3 | S: ‘A person who is not skilled in the path’ is a term for an ordinary unlearned person. | T: ‘The man unskilled in the path’: this is a designation for the worldling.
+sn22.84:10.4 | S: ‘A person who is skilled in the path’ is a term for the Realized One, the perfected one, the fully awakened Buddha. | T: ‘The man skilled in the path’: this is a designation for the Tathagata, the Arahant, the Perfectly Enlightened One.
+sn22.84:10.5 | S: ‘A fork in the road’ is a term for doubt. | T: ‘The forked road’: this is a designation for doubt.
+sn22.84:10.6 | S: ‘The left-hand path’ is a term for the wrong eightfold path, that is, | T: ‘The left-hand branch’: this is a designation for the wrong eightfold path; that is,
+sn22.84:10.7 | S: wrong view … wrong immersion. | T: wrong view … wrong concentration.
+sn22.84:10.8 | S: ‘The right-hand path’ is a term for the noble eightfold path, that is, | T: ‘The right-hand branch’: this is a designation for the Noble Eightfold Path; that is,
+sn22.84:10.9 | S: right view … right immersion. | T: right view … right concentration.
+sn22.84:10.10 | S: ‘A dense forest grove’ is a term for ignorance. | T: ‘The dense thicket’: this is a designation for ignorance.
+sn22.84:10.11 | S: ‘An expanse of low-lying marshes’ is a term for sensual pleasures. | T: ‘The vast marshy swamp’: this is a designation for sensual pleasures.
+sn22.84:10.12 | S: ‘A large, steep cliff’ is a term for anger and distress. | T: ‘The steep precipice’: this is a designation for despair due to anger.
+sn22.84:10.13 | S: ‘Level, cleared parkland’ is a term for extinguishment. | T: ‘The delightful expanse of level ground’: this is a designation for Nibbāna.
+sn22.84:10.14 | S: Rejoice, Tissa, rejoice! | T: “Rejoice, Tissa! Rejoice, Tissa!
+sn22.84:10.15 | S: I am here with advice, with support, with instruction.” | T: I am here to exhort, I am here to assist, I am here to instruct!”
+sn22.84:11.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn22.84:11.2 | S: Satisfied, Venerable Tissa approved what the Buddha said. | T: Elated, the Venerable Tissa delighted in the Blessed One’s statement.
+sn22.84:11.3 | P: Dutiyaṁ. | T: (none)
+
+## sn16.10
+sn16.10:1.1 | S: So I have heard. | T: Thus have I heard.
+sn16.10:1.2 | S: At one time Venerable Mahākassapa was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Venerable Mahakassapa was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn16.10:1.3 | S: Then Venerable Ānanda robed up in the morning and, taking his bowl and robe, went to Mahākassapa and said, | T: Then, in the morning, the Venerable Ānanda dressed and, taking bowl and robe, he approached the Venerable Mahakassapa and said:
+sn16.10:1.4 | S: “Come, Honorable Kassapa. Let’s go to one of the nuns’ quarters.” | T: “Come, Venerable Kassapa, let us go to the bhikkhunīs’ quarters.”
+sn16.10:1.5 | S: “You go, Reverend Ānanda. You’re the one with many duties and responsibilities.” | T: “You go, friend Ānanda, you’re the busy one with many duties.”
+sn16.10:1.6 | S: And a second time … | T: A second time the Venerable Ānanda said to the Venerable Mahakassapa:
+sn16.10:1.7 | P: “āyāma, bhante kassapa, yena aññataro bhikkhunupassayo tenupasaṅkamissāmā”ti. | T: “Come, Venerable Kassapa, let us go to the bhikkhunīs’ quarters.”
+sn16.10:1.8 | P: “Gaccha tvaṁ, āvuso ānanda, bahukicco tvaṁ bahukaraṇīyo”ti. | T: “You go, friend Ānanda, you’re the busy one with many duties.”
+sn16.10:1.9 | S: And a third time, Ānanda said, | T: A third time the Venerable Ānanda said to the Venerable Mahakassapa:
+sn16.10:1.10 | S: “Come, Honorable Kassapa. Let’s go to one of the nuns’ quarters.” | T: “Come, Venerable Kassapa, let us go to the bhikkhunīs’ quarters.”
+sn16.10:2.1 | S: Then Venerable Mahākassapa robed up in the morning and, taking his bowl and robe, went with Venerable Ānanda as his second monk to one of the nuns’ quarters, where he sat down on the seat spread out. | T: Then, in the morning, the Venerable Mahakassapa dressed and, taking bowl and robe, went to the bhikkhunīs’ quarters with the Venerable Ānanda as his companion. When he arrived he sat down on the appointed seat.
+sn16.10:2.2 | S: And then several nuns went up to Mahākassapa, bowed, and sat down to one side. | T: Then a number of bhikkhunīs approached the Venerable Mahakassapa, paid homage to him, and sat down to one side.
+sn16.10:2.3 | S: Mahākassapa educated, encouraged, fired up, and inspired those nuns with a Dhamma talk, | T: As they were sitting there, the Venerable Mahakassapa instructed, exhorted, inspired, and gladdened those bhikkhunīs with a Dhamma talk,
+sn16.10:2.4 | S: after which he rose from his seat and left. | T: after which he rose from his seat and departed.
+sn16.10:3.1 | S: But the nun Thullatissā was upset and blurted out, | T: Then the bhikkhunī Thullatissa, being displeased, expressed her displeasure thus:
+sn16.10:3.2 | S: “What is the venerable Mahākassapa thinking, that he’d teach Dhamma in front of the venerable Ānanda, the Videhan sage? | T: “How can Master Mahakassapa think of speaking on the Dhamma in the presence of Master Ānanda, the Videhan sage? For Master Mahakassapa to think of speaking on the Dhamma in the presence of Master Ānanda, the Videhan sage—
+sn16.10:3.3 | S: He’s like a needle peddler who thinks they can sell a needle to a needle maker!” | T: this is just as if a needle-peddler would think he could sell a needle to a needle-maker!”
+sn16.10:3.4 | P: evameva ayyo mahākassapo ayyassa ānandassa vedehamunino sammukhā dhammaṁ bhāsitabbaṁ maññatī”ti. | T: (none)
+sn16.10:4.1 | S: Mahākassapa heard Thullatissā say these words, | T: The Venerable Mahakassapa overheard the bhikkhunī Thullatissa making this statement
+sn16.10:4.2 | S: and he said to Ānanda, | T: and said to the Venerable Ānanda:
+sn16.10:4.3 | S: “Is that right, Reverend Ānanda? Am I the needle peddler and you the needle maker? | T: “How is it, friend Ānanda, am I the needle-peddler and you the needle-maker,
+sn16.10:4.4 | S: Or am I the needle maker and you the needle peddler?” | T: or am I the needle-maker and you the needle-peddler?”
+sn16.10:4.5 | S: “Forgive her, sir. The lady’s a fool.” | T: “Be patient, Venerable Kassapa, women are foolish.”
+sn16.10:4.6 | S: “Hold on, Reverend Ānanda! Don’t make the Saṅgha investigate you further! | T: “Hold it, friend Ānanda! Don’t give the Saṅgha occasion to investigate you further.
+sn16.10:5.1 | S: What do you think, Reverend Ānanda? | T: What do you think, friend Ānanda,
+sn16.10:5.2 | S: Was it you who the Buddha brought up before the Saṅgha of mendicants, saying: | T: was it you that the Blessed One brought forward in the presence of the Bhikkhu Saṅgha, saying:
+sn16.10:5.3 | S: ‘Mendicants, whenever I want, quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: ‘Bhikkhus, to whatever extent I wish, secluded from sensual pleasures, secluded from unwholesome states, I enter and dwell in the first jhana, which is accompanied by thought and examination, with rapture and happiness born of seclusion.
+sn16.10:5.4 | S: And so does Ānanda’?” | T: Ānanda too, to whatever extent he wishes, secluded from sensual pleasures, secluded from unwholesome states, enters and dwells in the first jhana’?”
+sn16.10:5.5 | S: “No, sir.” | T: “No, venerable sir.”
+sn16.10:6.1 | S: “I was the one the Buddha brought up before the Saṅgha of mendicants, saying: | T: “I was the one, friend, that the Blessed One brought forward in the presence of the Bhikkhu Saṅgha, saying:
+sn16.10:6.2 | S: ‘Mendicants, whenever I want, quite secluded from sensual pleasures, secluded from unskillful qualities, I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected. | T: ‘Bhikkhus, to whatever extent I wish, … I enter and dwell in the first jhana….
+sn16.10:6.3 | S: And so does Kassapa. …’ | T: Kassapa too, to whatever extent he wishes, enters and dwells in the first jhana.’
+sn16.10:6.4 | S: (The nine progressive meditations and the five insights should be told in full.) | T: The same exchange is repeated for the remaining meditative attainments and the six direct knowledges, all as in the preceding sutta.
+sn16.10:7.1 | S: What do you think, Reverend Ānanda? | T: “I was the one, friend,
+sn16.10:7.2 | S: Was it you who the Buddha brought up before the Saṅgha of mendicants, saying: | T: that the Blessed One brought forward in the presence of the Bhikkhu Saṅgha, saying:
+sn16.10:7.3 | S: ‘I have realized the undefiled freedom of heart and freedom by wisdom. And I live having realized it with my own insight in this very life due to the ending of defilements. | T: ‘Bhikkhus, by the destruction of the taints, in this very life I enter and dwell in the taintless liberation of mind, liberation by wisdom, realizing it for myself with direct knowledge.
+sn16.10:7.4 | S: And so does Ānanda’?” | T: Kassapa too,
+sn16.10:7.5 | S: “No, sir.” | T: (none)
+sn16.10:8.1 | S: “I was the one the Buddha brought up before the Saṅgha of mendicants, saying: | T: (none)
+sn16.10:8.2 | S: ‘I have realized the undefiled freedom of heart and freedom by wisdom. And I live having realized it with my own insight in this very life due to the ending of defilements. | T: by the destruction of the taints, in this very life enters and dwells in the taintless liberation of mind, liberation by wisdom, realizing it for himself with direct knowledge.’
+sn16.10:8.3 | S: And so does Kassapa.’ | T: (none)
+sn16.10:9.1 | S: Reverend, you might as well think to hide a bull elephant that’s three or three and a half meters tall behind a palm leaf as to hide my six insights.” | T: “Friend, one might just as well think that a bull elephant seven or seven and a half cubits high could be concealed by a palm leaf as think that my six direct knowledges could be concealed.”
+sn16.10:10.1 | S: But the nun Thullatissā fell from the spiritual life. | T: But the bhikkhunī Thullatissa fell away from the holy life.
+sn16.10:10.2 | P: Dasamaṁ. | T: (none)
+
+## sn43.12
+sn43.12:1.1 | S: “Mendicants, I will teach you the unconditioned and the path that leads to the unconditioned. | T: i. Serenity “Bhikkhus, I will teach you the unconditioned and the path leading to the unconditioned.
+sn43.12:1.2 | S: Listen … | T: Listen to that….
+sn43.12:1.3 | S: And what is the unconditioned? | T: “And what, bhikkhus, is the unconditioned?
+sn43.12:1.4 | S: The ending of greed, hate, and delusion. | T: The destruction of lust, the destruction of hatred, the destruction of delusion:
+sn43.12:1.5 | S: This is called the unconditioned. | T: this is called the unconditioned.
+sn43.12:1.6 | S: And what is the path that leads to the unconditioned? | T: “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:1.7 | S: Serenity. | T: Serenity:
+sn43.12:1.8 | S: This is called the path that leads to the unconditioned. | T: this is called the path leading to the unconditioned….
+sn43.12:1.9 | S: So, mendicants, I’ve taught you the unconditioned and the path that leads to the unconditioned. | T: “Thus, bhikkhus, I have taught you the unconditioned and the path leading to the unconditioned….
+sn43.12:1.10 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: (none)
+sn43.12:1.11 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: This is our instruction to you.”
+sn43.12:2.1 | S: “Mendicants, I will teach you the unconditioned and the path that leads to the unconditioned. | T: ii. Insight …
+sn43.12:2.2 | S: Listen … | T: (none)
+sn43.12:2.3 | S: And what is the unconditioned? | T: (none)
+sn43.12:2.4 | S: The ending of greed, hate, and delusion. | T: (none)
+sn43.12:2.5 | S: This is called the unconditioned. | T: (none)
+sn43.12:2.6 | S: And what is the path that leads to the unconditioned? | T: “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:2.7 | S: Discernment. | T: Insight:
+sn43.12:2.8 | S: This is called the path that leads to the unconditioned. …” | T: this is called the path leading to the unconditioned….”
+sn43.12:2.9 | P: Iti kho, bhikkhave, desitaṁ vo mayā asaṅkhataṁ …pe… | T: (none)
+sn43.12:2.10 | P: ayaṁ vo amhākaṁ anusāsanīti. | T: (none)
+sn43.12:3.1 | S: “And what is the path that leads to the unconditioned? | T: iii–viii. Concentration iii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:3.2 | S: Immersion with placing the mind and keeping it connected. … | T: Concentration with thought and examination:
+sn43.12:3.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:3.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: iv … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:3.5 | S: Immersion without placing the mind, merely keeping it connected. … | T: Concentration without thought, with examination only….”
+sn43.12:3.6 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:3.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: v … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:3.8 | S: Immersion without placing the mind or keeping it connected. … | T: Concentration without thought and examination….”
+sn43.12:4.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: vi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:4.2 | S: Emptiness immersion. … | T: Emptiness concentration….”
+sn43.12:4.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:4.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: vii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:4.5 | S: Signless immersion. … | T: Signless concentration….”
+sn43.12:4.6 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:4.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: viii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:4.8 | S: Undirected immersion. … | T: Undirected concentration: this is called the path leading to the unconditioned….”
+sn43.12:5.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: ix–xii. The four establishments of mindfulness ix … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:5.2 | S: A mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. … | T: Here, bhikkhus, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world:
+sn43.12:5.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:5.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: x … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:5.5 | S: A mendicant meditates by observing an aspect of feelings … | T: Here, bhikkhus, a bhikkhu dwells contemplating feelings in feelings, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world….”
+sn43.12:5.6 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:5.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:5.8 | S: A mendicant meditates by observing an aspect of the mind … | T: Here, bhikkhus, a bhikkhu dwells contemplating mind in mind, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world….”
+sn43.12:5.9 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:5.10 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xii … “And what, bhikkhus is the path leading to the unconditioned?
+sn43.12:5.11 | S: A mendicant meditates by observing an aspect of principles … | T: Here, bhikkhus, a bhikkhu dwells contemplating phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world: this is called the path leading to the unconditioned….”
+sn43.12:6.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xiii–xvi. The four right strivings xiii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:6.2 | S: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. … | T: Here, bhikkhus, a bhikkhu generates desire for the nonarising of unarisen evil unwholesome states; he makes an effort, arouses energy, applies his mind, and strives:
+sn43.12:6.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:6.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xiv … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:6.5 | S: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities are given up. … | T: Here, bhikkhus, a bhikkhu generates desire for the abandoning of arisen evil unwholesome states; he makes an effort, arouses energy, applies his mind, and strives….”
+sn43.12:6.6 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:6.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xv … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:6.8 | S: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that skillful qualities arise. … | T: Here, bhikkhus, a bhikkhu generates desire for the arising of unarisen wholesome states; he makes an effort, arouses energy, applies his mind, and strives….”
+sn43.12:6.9 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:6.10 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xvi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:6.11 | S: A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. … | T: Here, bhikkhus, a bhikkhu generates desire for the continuance of arisen wholesome states, for their nondecay, increase, expansion, and fulfilment by development; he makes an effort, arouses energy, applies his mind, and strives: this is called the path leading to the unconditioned….”
+sn43.12:7.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xvii–xx. The four bases for spiritual power xvii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:7.2 | S: A mendicant develops the basis of psychic power that has immersion due to enthusiasm, and active effort. … | T: Here, bhikkhus, a bhikkhu develops the basis for spiritual power that possesses concentration due to desire and volitional formations of striving:
+sn43.12:7.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:7.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xviii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:7.5 | S: A mendicant develops the basis of psychic power that has immersion due to energy … | T: Here, bhikkhus, a bhikkhu develops the basis for spiritual power that possesses concentration due to energy and volitional formations of striving….”
+sn43.12:7.6 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:7.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xix … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:7.8 | S: immersion due to mental development … | T: Here, bhikkhus, a bhikkhu develops the basis for spiritual power that possesses concentration due to mind and volitional formations of striving….”
+sn43.12:7.9 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:7.10 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xx … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:7.11 | S: immersion due to inquiry, and active effort. … | T: Here, bhikkhus, a bhikkhu develops the basis for spiritual power that possesses concentration due to investigation and volitional formations of striving: this is called the path leading to the unconditioned….”
+sn43.12:8.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxi–xxv. The five spiritual faculties xxi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:8.2 | S: A mendicant develops the faculty of faith, which relies on seclusion, fading away, and cessation, and ripens as letting go. … | T: Here, bhikkhus, a bhikkhu develops the faculty of faith, which is based upon seclusion, dispassion, and cessation, maturing in release:
+sn43.12:8.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:8.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxii–xxv … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:8.5 | S: A mendicant develops the faculty of energy … | T: Here, bhikkhus, a bhikkhu develops the faculty of energy …
+sn43.12:8.6 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:8.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:8.8 | S: mindfulness … | T: the faculty of mindfulness …
+sn43.12:8.9 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:8.10 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:8.11 | S: immersion … | T: the faculty of concentration …
+sn43.12:8.12 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:8.13 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:8.14 | S: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … | T: the faculty of wisdom, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….”
+sn43.12:9.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxvi–xxx. The five powers xxvi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:9.2 | S: A mendicant develops the power of faith … | T: Here, bhikkhus, a bhikkhu develops the power of faith, which is based upon seclusion, dispassion, and cessation, maturing in release:
+sn43.12:9.3 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:9.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxvii–xxx … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:9.5 | S: energy … | T: Here, bhikkhus, a bhikkhu develops the power of energy …
+sn43.12:9.6 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:9.7 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:9.8 | S: mindfulness … | T: the power of mindfulness …
+sn43.12:9.9 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:9.10 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: …
+sn43.12:9.11 | S: immersion … | T: the power of concentration …
+sn43.12:9.12 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: (none)
+sn43.12:9.13 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:9.14 | S: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … | T: the power of wisdom, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….”
+sn43.12:10.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxxi–xxxvii. The seven factors of enlightenment xxxi … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:10.2 | S: A mendicant develops the awakening factor of mindfulness … | T: Here, bhikkhus, a bhikkhu develops the enlightenment factor of mindfulness, which is based upon seclusion, dispassion, and cessation, maturing in release:
+sn43.12:10.3 | P: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:10.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxxii–xxxvii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:10.5 | S: investigation of principles … | T: Here, bhikkhus, a bhikkhu develops the enlightenment factor of discrimination of states …
+sn43.12:10.6 | S: energy … | T: the enlightenment factor of energy …
+sn43.12:10.7 | S: rapture … | T: the enlightenment factor of rapture …
+sn43.12:10.8 | S: tranquility … | T: the enlightenment factor of tranquillity …
+sn43.12:10.9 | S: immersion … | T: the enlightenment factor of concentration …
+sn43.12:10.10 | S: equanimity, which relies on seclusion, fading away, and cessation, and ripens as letting go. … | T: the enlightenment factor of equanimity, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….”
+sn43.12:11.1 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxxviii–xlv. The Noble Eightfold Path xxxviii … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:11.2 | S: A mendicant develops right view … | T: Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release:
+sn43.12:11.3 | P: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… | T: this is called the path leading to the unconditioned….”
+sn43.12:11.4 | P: katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: xxxix–xlv … “And what, bhikkhus, is the path leading to the unconditioned?
+sn43.12:11.5 | S: right purpose … | T: Here, bhikkhus, a bhikkhu develops right intention …
+sn43.12:11.6 | S: right speech … | T: right speech …
+sn43.12:11.7 | S: right action … | T: right action …
+sn43.12:11.8 | S: right livelihood … | T: right livelihood …
+sn43.12:11.9 | S: right effort … | T: right effort …
+sn43.12:11.10 | S: right mindfulness … | T: right mindfulness …
+sn43.12:11.11 | P: asaṅkhatañca vo, bhikkhave, desessāmi asaṅkhatagāmiñca maggaṁ. | T: (none)
+sn43.12:11.12 | P: Taṁ suṇātha. | T: (none)
+sn43.12:11.13 | P: Katamañca, bhikkhave, asaṅkhataṁ …pe…? | T: (none)
+sn43.12:11.14 | P: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? | T: (none)
+sn43.12:11.15 | S: right immersion, which relies on seclusion, fading away, and cessation, and ripens as letting go. | T: right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release:
+sn43.12:11.16 | S: This is called the path that leads to the unconditioned. | T: this is called the path leading to the unconditioned.
+sn43.12:11.17 | S: So, mendicants, I’ve taught you the unconditioned and the path that leads to the unconditioned. | T: “Thus, bhikkhus, I have taught you the unconditioned and the path leading to the unconditioned.
+sn43.12:11.18 | S: Out of sympathy, I’ve done what a teacher should do who wants what’s best for their disciples. | T: Whatever should be done, bhikkhus, by a compassionate teacher out of compassion for his disciples, desiring their welfare, that I have done for you.
+sn43.12:11.19 | S: Here are these roots of trees, and here are these empty huts. Practice absorption, mendicants! Don’t be negligent! Don’t regret it later! This is my instruction to you.” | T: These are the feet of trees, bhikkhus, these are empty huts. Meditate, bhikkhus, do not be negligent, lest you regret it later. This is our instruction to you.”
+sn43.12:11.20 | P: Paṭhamaṁ. | T: (none)
+
+## sn46.4
+sn46.4:1.1 | S: At one time Venerable Sāriputta was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Venerable Sāriputta was dwelling at Savatthī in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn46.4:1.2 | S: There Sāriputta addressed the mendicants: | T: There the Venerable Sāriputta addressed the bhikkhus thus:
+sn46.4:1.3 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus!”
+sn46.4:1.4 | S: “Reverend,” they replied. | T: “Friend,” they replied.
+sn46.4:1.5 | S: Sāriputta said this: | T: The Venerable Sāriputta said this:
+sn46.4:2.1 | S: “There are these seven awakening factors. | T: “Friends, there are these seven factors of enlightenment.
+sn46.4:2.2 | S: What seven? | T: What seven?
+sn46.4:2.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: The enlightenment factor of mindfulness, the enlightenment factor of discrimination of states, the enlightenment factor of energy, the enlightenment factor of rapture, the enlightenment factor of tranquillity, the enlightenment factor of concentration, the enlightenment factor of equanimity.
+sn46.4:2.4 | S: These are the seven awakening factors. | T: These are the seven factors of enlightenment.
+sn46.4:2.5 | S: In the morning, I meditate on whichever of these seven awakening factors I want. | T: “Whichever of these seven factors of enlightenment I want to dwell in during the morning, I dwell in that factor of enlightenment during the morning.
+sn46.4:2.6 | S: At midday, | T: Whichever I want to dwell in during the middle of the day, I dwell in that factor of enlightenment during the middle of the day.
+sn46.4:2.7 | S: and in the evening, I meditate on whichever of these seven awakening factors I want. | T: Whichever I want to dwell in during the evening, I dwell in that factor of enlightenment during the evening.
+sn46.4:2.8 | S: If it’s the awakening factor of mindfulness, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: “If, friends, it occurs to me, ‘Let it be the enlightenment factor of mindfulness,’ it occurs to me, ‘It’s measureless’; it occurs to me, ‘It’s fully perfected.’ While it persists, I understand, ‘It persists. ’
+sn46.4:2.9 | S: And if it subsides in me I understand the specific reason it subsides. … | T: If it abates in me, I understand, ‘It has abated in me for a particular reason.’ …
+sn46.4:2.10 | S: If it’s the awakening factor of equanimity, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: “If, friends, it occurs to me, ‘Let it be the enlightenment factor of equanimity,’ it occurs to me, ‘It’s measureless’; it occurs to me, ‘It’s fully perfected.’ While it persists, I understand, ‘It persists.’
+sn46.4:2.11 | S: And if it subsides I understand the specific reason it subsides. | T: But if it abates in me, I understand, ‘It has abated in me for a particular reason.’
+sn46.4:3.1 | S: Suppose that a ruler or their chief minister had a chest full of garments of different colors. | T: “Suppose, friends, a king or a royal minister had a wardrobe full of differently coloured clothes.
+sn46.4:3.2 | S: In the morning, they’d don whatever pair of garments they wanted. | T: Whatever suit he might want to wear in the morning he would wear in the morning.
+sn46.4:3.3 | S: At midday, | T: Whatever suit he might want to wear during the middle of the day he would wear during the middle of the day.
+sn46.4:3.4 | S: and in the evening, they’d don whatever pair of garments they wanted. | T: Whatever suit he might want to wear in the evening he would wear in the evening.
+sn46.4:3.5 | S: In the same way, in the morning, | T: So too, friends, whichever of these seven factors of enlightenment I want to dwell in during the morning …
+sn46.4:3.6 | S: at midday, | T: during the middle of the day …
+sn46.4:3.7 | S: and in the evening, I meditate on whichever of these seven awakening factors I want. | T: during the evening, I dwell in that factor of enlightenment during the evening.
+sn46.4:3.8 | S: If it’s the awakening factor of mindfulness, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: “If, friends, it occurs to me, ‘Let it be the enlightenment factor of mindfulness’ … all as above …
+sn46.4:3.9 | S: And if it subsides I understand the specific reason it subsides. … | T: (none)
+sn46.4:3.10 | S: If it’s the awakening factor of equanimity, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. | T: (none)
+sn46.4:3.11 | S: And if it subsides I understand the specific reason it subsides.” | T: I understand, ‘It has abated in me for a particular reason.’”
+sn46.4:3.12 | P: Catutthaṁ. | T: (none)
+

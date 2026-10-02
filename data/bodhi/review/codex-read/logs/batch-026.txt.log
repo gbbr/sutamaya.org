@@ -1,0 +1,527 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd83-a833-7c90-b1ca-e0912dc19792
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and write only the clearly misplaced line starts to the findings file.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn1.30
+sn1.30:1.1 | S: “O hero so lean, with antelope calves, | T: “Having approached you, we ask a question Of the slender hero with antelope calves,
+sn1.30:1.2 | S: not greedy, eating little, | T: Greedless, subsisting on little food,
+sn1.30:1.3 | S: a giant, wandering alone like a lion, | T: Wandering alone like a lion or naga,
+sn1.30:1.4 | S: you’re not concerned for sensual pleasures. | T: Without concern for sensual pleasures:
+sn1.30:1.5 | S: We’ve come to ask a question: | T: (none)
+sn1.30:1.6 | S: How is one released from all suffering?” | T: How is one released from suffering?”
+sn1.30:2.1 | S: “The world has five kinds of sensual stimulation, | T: “Five cords of sensual pleasure in the world,
+sn1.30:2.2 | S: and the mind is said to be the sixth. | T: With mind declared to be the sixth:
+sn1.30:2.3 | S: When you’ve discarded desire for these, | T: Having expunged desire here,
+sn1.30:2.4 | S: you’re released from all suffering.” | T: One is thus released from suffering.”
+sn1.30:2.5 | P: Sattivaggo tatiyo. | T: (none)
+sn1.30:3.0 | P: Tassuddānaṁ | T: (none)
+sn1.30:3.1 | P: Sattiyā phusati ceva, | T: (none)
+sn1.30:3.2 | P: jaṭā manonivāraṇā; | T: (none)
+sn1.30:3.3 | P: Arahantena pajjoto, | T: (none)
+sn1.30:3.4 | P: sarā mahaddhanena ca; | T: (none)
+sn1.30:3.5 | P: Catucakkena navamaṁ, | T: (none)
+sn1.30:3.6 | P: eṇijaṅghena te dasāti. | T: (none)
+
+## sn12.57
+sn12.57:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.57:1.2 | S: “There are things that tighten the fetters. When you concentrate on the gratification provided by these things, your craving grows. | T: “Bhikkhus, when one dwells contemplating gratification in things that can fetter, craving increases.
+sn12.57:1.3 | S: Craving is a requirement for grasping. … | T: With craving as condition, clinging comes to be….
+sn12.57:1.4 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.57:2.1 | S: Suppose there was a sapling. | T: “Suppose, bhikkhus, there was a sapling,
+sn12.57:2.2 | S: And from time to time someone would clear around the roots, supply soil, and water it. | T: and from time to time a man would clear the area around the roots, from time to time provide it with good soil, from time to time water it.
+sn12.57:2.3 | S: Fed and fuelled by that, the sapling would grow, increase, and mature. | T: Sustained by that care, nourished by it, that sapling would attain to growth, increase, and expansion.
+sn12.57:2.4 | S: In the same way, there are things that tighten the fetters. When you concentrate on the gratification provided by these things, your craving grows. | T: So too, when one dwells contemplating gratification in things that can fetter, craving increases….
+sn12.57:2.5 | S: Craving is a requirement for grasping. … | T: (none)
+sn12.57:2.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn12.57:3.1 | S: There are things that tighten the fetters. When you concentrate on the drawbacks of these things, your craving ceases. | T: “When, bhikkhus, one dwells contemplating danger in things that can fetter, craving ceases.
+sn12.57:3.2 | S: When craving ceases, grasping ceases. … | T: With the cessation of craving comes cessation of clinging….
+sn12.57:3.3 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn12.57:4.1 | S: Suppose there was a sapling. | T: “Suppose, bhikkhus, there was a sapling.
+sn12.57:4.2 | S: Then a person comes along with a spade and basket. … | T: Then a man would come along bringing a shovel and a basket.
+sn12.57:4.3 | S: They’d cut the sapling apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or glide them down a swift stream. | T: He would cut down the sapling at its foot … as in §55 … he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.
+sn12.57:4.4 | S: In this way the sapling is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. | T: Thus that sapling would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.
+sn12.57:4.5 | S: In the same way, there are things that tighten the fetters. When you concentrate on the drawbacks of these things, your craving ceases. | T: “So too, bhikkhus, when one dwells contemplating danger in things that can fetter, craving ceases….
+sn12.57:4.6 | S: When craving ceases, grasping ceases. … | T: (none)
+sn12.57:4.7 | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this whole mass of suffering.”
+sn12.57:4.8 | P: Sattamaṁ. | T: (none)
+
+## sn22.5
+sn22.5:1.1 | S: So I have heard. | T: Thus have I heard.
+sn22.5:1.2 | S: At Sāvatthī. | T: At Savatthi….
+sn22.5:1.3 | P: tatra kho …pe… etadavoca: | T: There the Blessed One said this:
+sn22.5:1.4 | S: “Mendicants, develop immersion. | T: “Bhikkhus, develop concentration.
+sn22.5:1.5 | S: A mendicant who has immersion truly understands. | T: A bhikkhu who is concentrated understands things as they really are.
+sn22.5:1.6 | S: What do they truly understand? | T: “And what does he understand as it really is?
+sn22.5:1.7 | S: The origin and ending of form, feeling, perception, choices, and consciousness. | T: The origin and passing away of form; the origin and passing away of feeling; the origin and passing away of perception; the origin and passing away of volitional formations; the origin and passing away of consciousness.
+sn22.5:2.1 | S: And what is the origin of form, feeling, perception, choices, and consciousness? | T: “And what, bhikkhus, is the origin of form? What is the origin of feeling? What is the origin of perception? What is the origin of volitional formations? What is the origin of consciousness?
+sn22.5:2.2 | S: It’s when a mendicant approves, welcomes, and keeps clinging. | T: “Here, bhikkhus, one seeks delight, one welcomes, one remains holding.
+sn22.5:3.1 | S: What do they approve, welcome, and keep clinging to? | T: And what is it that one seeks delight in, what does one welcome, to what does one remain holding?
+sn22.5:3.2 | S: They approve, welcome, and keep clinging to form. | T: One seeks delight in form, welcomes it, and remains holding to it.
+sn22.5:3.3 | S: This gives rise to relishing. | T: As a consequence of this, delight arises.
+sn22.5:3.4 | S: Relishing forms is grasping. | T: Delight in form is clinging.
+sn22.5:3.5 | S: Their grasping is a requirement for continued existence. | T: With one’s clinging as condition, existence comes to be;
+sn22.5:3.6 | S: Continued existence is a requirement for rebirth. | T: with existence as condition, birth;
+sn22.5:3.7 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, aging-and-death, sorrow, lamentation, pain, displeasure, and despair come to be.
+sn22.5:3.8 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn22.5:4.1 | S: They approve, welcome, and keep clinging to feeling … | T: “One seeks delight in feeling …
+sn22.5:4.2 | S: perception … | T: in perception …
+sn22.5:4.3 | S: choices … | T: in volitional formations …
+sn22.5:4.4 | S: consciousness. | T: in consciousness, welcomes it, and remains holding to it.
+sn22.5:4.5 | S: This gives rise to relishing. | T: As a consequence of this, delight arises….
+sn22.5:4.6 | S: Relishing consciousness is grasping. | T: (none)
+sn22.5:4.7 | S: Their grasping is a requirement for continued existence. | T: (none)
+sn22.5:4.8 | S: Continued existence is a requirement for rebirth. | T: (none)
+sn22.5:4.9 | S: Rebirth is a condition that gives rise to old age and death, sorrow, lamentation, pain, sadness, and distress. | T: (none)
+sn22.5:4.10 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+sn22.5:5.1 | S: This is the origin of form, | T: “This, bhikkhus, is the origin of form;
+sn22.5:5.2 | S: feeling, | T: this is the origin of feeling;
+sn22.5:5.3 | S: perception, | T: this is the origin of perception;
+sn22.5:5.4 | S: choices, | T: this is the origin of volitional formations;
+sn22.5:5.5 | S: and consciousness. | T: this is the origin of consciousness.
+sn22.5:6.1 | S: And what is the ending of form, feeling, | T: “And what, bhikkhus, is the passing away of form? What is the passing away of feeling?
+sn22.5:6.2 | S: perception, | T: What is the passing away of perception?
+sn22.5:6.3 | S: choices, | T: What is the passing away of volitional formations?
+sn22.5:6.4 | S: and consciousness? | T: What is the passing away of consciousness?
+sn22.5:7.1 | S: It’s when a mendicant doesn’t approve, welcome, or keep clinging. | T: “Here, bhikkhus, one does not seek delight, one does not welcome, one does not remain holding.
+sn22.5:8.1 | S: What don’t they approve, welcome, or keep clinging to? | T: And what is it that one does not seek delight in? What doesn’t one welcome? To what doesn’t one remain holding?
+sn22.5:8.2 | S: They don’t approve, welcome, or keep clinging to form. | T: One does not seek delight in form, does not welcome it, does not remain holding to it.
+sn22.5:8.3 | S: As a result, relishing of form ceases. | T: As a consequence of this, delight in form ceases.
+sn22.5:8.4 | S: When that relishing ceases, grasping ceases. | T: With the cessation of delight comes cessation of clinging;
+sn22.5:8.5 | S: When grasping ceases, continued existence ceases. … | T: with cessation of clinging, cessation of existence….
+sn22.5:8.6 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn22.5:9.1 | S: They don’t approve, welcome, or keep clinging to feeling … | T: “One does not seek delight in feeling …
+sn22.5:9.2 | P: Tassa vedanaṁ anabhinandato anabhivadato anajjhosāya tiṭṭhato yā vedanāya nandī sā nirujjhati. | T: (none)
+sn22.5:9.3 | P: Tassa nandīnirodhā upādānanirodho; | T: (none)
+sn22.5:9.4 | P: upādānanirodhā bhavanirodho …pe… | T: …
+sn22.5:9.5 | P: evametassa kevalassa dukkhakkhandhassa nirodho hoti. | T: (none)
+sn22.5:10.1 | S: perception … | T: in perception …
+sn22.5:10.2 | S: choices … | T: in volitional formations …
+sn22.5:10.3 | P: Tassa saṅkhāre anabhinandato anabhivadato anajjhosāya tiṭṭhato yā saṅkhāresu nandī sā nirujjhati. | T: (none)
+sn22.5:10.4 | P: Tassa nandīnirodhā upādānanirodho; | T: (none)
+sn22.5:10.5 | P: upādānanirodhā bhavanirodho …pe… | T: (none)
+sn22.5:10.6 | P: evametassa kevalassa dukkhakkhandhassa nirodho hoti. | T: (none)
+sn22.5:11.1 | S: consciousness. | T: in consciousness, does not welcome it, does not remain holding to it.
+sn22.5:11.2 | S: As a result, relishing of consciousness ceases. | T: As a consequence of this, delight in consciousness ceases….
+sn22.5:11.3 | S: When that relishing ceases, grasping ceases. … | T: (none)
+sn22.5:11.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+sn22.5:12.1 | S: This is the ending of form, feeling, perception, choices, and consciousness.” | T: “This, bhikkhus, is the passing away of form; this is the passing away of feeling; this is the passing away of perception; this is the passing away of volitional formations; this is the passing away of consciousness.”
+sn22.5:12.2 | P: Pañcamaṁ. | T: (none)
+
+## sn47.28
+sn47.28:1.1 | S: The same setting. | T: The same setting.
+sn47.28:1.2 | P: Ekamantaṁ nisinno kho āyasmā sāriputto āyasmantaṁ anuruddhaṁ etadavoca: | T: Sitting to one side, the Venerable Sāriputta said to the Venerable Anuruddha:
+sn47.28:1.3 | S: “Reverend Anuruddha, what things have you developed and cultivated to attain great direct knowledge?” | T: “By having developed and cultivated what things has the Venerable Anuruddha attained to greatness of direct knowledge?”
+sn47.28:1.4 | S: “Reverend, I attained great direct knowledge by developing and cultivating the four kinds of mindfulness meditation. | T: “It is, friend, because I have developed and cultivated the four establishments of mindfulness that I have attained to greatness of direct knowledge.
+sn47.28:2.1 | S: What four? | T: What four?
+sn47.28:2.2 | S: It’s when I meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, friend, I dwell contemplating the body in the body …
+sn47.28:2.3 | S: I meditate observing an aspect of feelings … | T: feelings in feelings …
+sn47.28:2.4 | S: mind … | T: mind in mind …
+sn47.28:2.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.28:2.6 | S: I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. | T: (none)
+sn47.28:2.7 | S: And it’s because of developing and cultivating these four kinds of mindfulness meditation that I directly know the thousandfold galaxy.” | T: It is, friend, because I have developed and cultivated these four establishments of mindfulness that I directly know this thousandfold world.”
+sn47.28:2.8 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.48
+an5.48:1.1 | S: “Mendicants, there are five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “Bhikkhus, there are these five situations that are unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.
+an5.48:1.2 | S: What five? | T: What five?
+an5.48:1.3 | S: That someone liable to old age should not grow old. | T: (1) ‘May what is subject to old age not grow old!’: this is a situation that is unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.
+an5.48:1.4 | S: That someone liable to sickness should not get sick. … That someone liable to death should not die. … That someone liable to ending should not end. … That someone liable to perishing should not perish. … | T: (2) ‘May what is subject to illness not fall ill!’: this is a situation that is unobtainable by an ascetic … or by anyone in the world. (3) ‘May what is subject to death not die!’: this is a situation that is unobtainable by an ascetic … or by anyone in the world. (4) ‘May what is subject to destruction not be destroyed!’: this is a situation that is unobtainable by an ascetic … or by anyone in the world. (5) ‘May what is subject to loss not be lost!’: this is a situation that is unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.
+an5.48:2.1 | S: An unlearned ordinary person has someone liable to old age who grows old. | T: (1) “Bhikkhus, for the uninstructed worldling, what is subject to old age grows old.
+an5.48:2.2 | S: But they don’t reflect on old age: | T: When this happens, he does not reflect thus:
+an5.48:2.3 | S: ‘It’s not just me who has someone liable to old age who grows old. For as long as sentient beings come and go, pass away and are reborn, they all have someone liable to old age who grows old. | T: ‘I am not the only one for whom what is subject to old age grows old. For all beings that come and go, that pass away and undergo rebirth, what is subject to old age grows old.
+an5.48:2.4 | S: If I were to sorrow and wail and lament, beating my breast and falling into confusion, just because someone liable to old age grows old, I’d lose my appetite and my physical appearance would deteriorate. My work wouldn’t get done, my enemies would be encouraged, and my friends would be dispirited.’ | T: If I were to sorrow, languish, lament, weep beating my breast, and become confused when what is subject to old age grows old, I would lose my appetite and my features would become ugly. I would not be able to do my work, my enemies would be elated, and my friends would become saddened.’
+an5.48:2.5 | S: And so, when someone liable to old age grows old, they sorrow and wail and lament, beating their breast and falling into confusion. | T: Thus, when what is subject to old age grows old, he sorrows, languishes, laments, weeps beating his breast, and becomes confused.
+an5.48:2.6 | S: This is called | T: This is called an uninstructed worldling pierced by the poisonous dart of sorrow who only torments himself.
+an5.48:2.7 | S: an unlearned ordinary person struck by sorrow’s poisoned arrow, who only mortifies themselves. | T: (none)
+an5.48:3.1 | S: Furthermore, an unlearned ordinary person has someone liable to sickness … death … ending … perishing. | T: (2) “Again, for the uninstructed worldling, what is subject to illness falls ill … (3) … what is subject to death dies … (4) … what is subject to destruction is destroyed … (5) … what is subject to loss is lost.
+an5.48:3.2 | S: But they don’t reflect on perishing: | T: When this happens, he does not reflect thus:
+an5.48:3.3 | S: ‘It’s not just me who has someone liable to perishing who perishes. For as long as sentient beings come and go, pass away and are reborn, they all have someone liable to perishing who perishes. | T: ‘I am not the only one for whom what is subject to loss is lost. For all beings who come and go, who pass away and undergo rebirth, what is subject to loss is lost.
+an5.48:3.4 | S: If I were to sorrow and wail and lament, beating my breast and falling into confusion, just because someone liable to perishing perishes, I’d lose my appetite and my physical appearance would deteriorate. My work wouldn’t get done, my enemies would be encouraged, and my friends would be dispirited.’ | T: If I were to sorrow, languish, lament, weep beating my breast, and become confused when what is subject to loss is lost, I would lose my appetite and my features would become ugly. I would not be able to do my work, my enemies would be elated, and my friends would become saddened.’
+an5.48:3.5 | S: And so, when someone liable to perishing perishes, they sorrow and wail and lament, beating their breast and falling into confusion. | T: Thus, when what is subject to loss is lost, he sorrows, languishes, laments, weeps beating his breast, and becomes confused.
+an5.48:3.6 | S: This is called | T: This is called an uninstructed worldling pierced by the poisonous dart of sorrow who only torments himself.
+an5.48:3.7 | S: an unlearned ordinary person struck by sorrow’s poisoned arrow, who only mortifies themselves. | T: (none)
+an5.48:4.1 | S: A learned noble disciple has someone liable to old age who grows old. | T: (1) “Bhikkhus, for the instructed noble disciple, what is subject to old age grows old.
+an5.48:4.2 | S: So they reflect on old age: | T: When this happens, he reflects thus:
+an5.48:4.3 | S: ‘It’s not just me who has someone liable to old age who grows old. For as long as sentient beings come and go, pass away and are reborn, they all have someone liable to old age who grows old. | T: ‘I am not the only one for whom what is subject to old age grows old. For all beings that come and go, that pass away and undergo rebirth, what is subject to old age grows old.
+an5.48:4.4 | S: If I were to sorrow and wail and lament, beating my breast and falling into confusion, just because someone liable to old age grows old, I’d lose my appetite and my physical appearance would deteriorate. My work wouldn’t get done, my enemies would be encouraged, and my friends would be dispirited.’ | T: If I were to sorrow, languish, lament, weep beating my breast, and become confused when what is subject to old age grows old, I would lose my appetite and my features would become ugly. I would not be able to do my work, my enemies would be elated, and my friends would become saddened.’
+an5.48:4.5 | S: And so, when someone liable to old age grows old, they don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: Thus, when what is subject to old age grows old, he does not sorrow, languish, lament, weep beating his breast, and become confused.
+an5.48:4.6 | S: This is called | T: This is called an instructed noble disciple who has drawn out the poisonous dart of sorrow pierced by which the uninstructed worldling only torments himself.
+an5.48:4.7 | S: a learned noble disciple who has drawn out sorrow’s poisoned arrow, struck by which unlearned ordinary people only mortify themselves. | T: (none)
+an5.48:4.8 | S: Sorrowless, free of thorns, that noble disciple only extinguishes themselves. | T: Sorrowless, without darts, the noble disciple realizes nibbāna.
+an5.48:5.1 | S: Furthermore, a learned noble disciple has someone liable to sickness … death … ending … perishing. | T: (2) “Again, for the instructed noble disciple, what is subject to illness falls ill … (3) … what is subject to death dies … (4) … what is subject to destruction is destroyed … (5) … what is subject to loss is lost.
+an5.48:5.2 | S: So they reflect on perishing: | T: When this happens, he reflects thus:
+an5.48:5.3 | S: ‘It’s not just me who has someone liable to perishing who perishes. For as long as sentient beings come and go, pass away and are reborn, they all have someone liable to perishing who perishes. | T: ‘I am not the only one for whom what is subject to loss is lost. For all beings that come and go, that pass away and undergo rebirth, what is subject to loss is lost.
+an5.48:5.4 | S: If I were to sorrow and wail and lament, beating my breast and falling into confusion, just because someone liable to perishing perishes, I’d lose my appetite and my physical appearance would deteriorate. My work wouldn’t get done, my enemies would be encouraged, and my friends would be dispirited.’ | T: If I were to sorrow, languish, lament, weep beating my breast, and become confused when what is subject to loss is lost, I would lose my appetite and my features would become ugly. I would not be able to do my work, my enemies would be elated, and my friends would become saddened.’
+an5.48:5.5 | S: And so, when someone liable to perishing perishes, they don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: Thus, when what is subject to loss is lost, he does not sorrow, languish, lament, weep beating his breast, and become confused.
+an5.48:5.6 | S: This is called | T: This is called an instructed noble disciple who has drawn out the poisonous dart of sorrow pierced by which the uninstructed worldling only torments himself.
+an5.48:5.7 | S: a learned noble disciple who has drawn out sorrow’s poisoned arrow, struck by which unlearned ordinary people only mortify themselves. | T: (none)
+an5.48:5.8 | S: Sorrowless, free of thorns, that noble disciple only extinguishes themselves. | T: Sorrowless, without darts, the noble disciple realizes nibbāna.
+an5.48:6.1 | S: These are the five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “These, bhikkhus, are the five situations that are unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.
+an5.48:7.1 | S: Sorrowing and lamenting | T: “It is not by sorrowing and lamenting
+an5.48:7.2 | S: doesn’t do even a little bit of good. | T: that even the least good here can be gained.
+an5.48:7.3 | S: When they know that you’re sad, | T: Knowing that one is sorrowful and sad,
+an5.48:7.4 | S: your enemies are encouraged. | T: one’s enemies are elated.
+an5.48:8.1 | S: When an astute person doesn’t waver <j>in the face of adversity, | T: “When the wise person does not shake in adversities,
+an5.48:8.2 | S: as they’re able to evaluate what’s beneficial, | T: knowing how to determine what is good,
+an5.48:8.3 | S: their enemies suffer, | T: his enemies are saddened,
+an5.48:8.4 | S: seeing that their normal expression doesn’t change. | T: having seen that his former facial expression does not change.
+an5.48:9.1 | S: Prayers, recitations, fine sayings, | T: “Wherever one might gain one’s good, in whatever way—by chanting, mantras,
+an5.48:9.2 | S: or charity of woven rugs: | T: maxims, gifts, or tradition—there
+an5.48:9.3 | S: if by means of any such things you benefit, | T: one should exert oneself in just that way.
+an5.48:9.4 | S: then by all means keep doing them. | T: (none)
+an5.48:10.1 | S: But if you understand that ‘this good thing | T: “But if one should understand: ‘This good
+an5.48:10.2 | S: can’t be had by me or by anyone else’, | T: cannot be obtained by me or anyone else,’
+an5.48:10.3 | S: you should accept it without sorrowing, thinking: | T: one should accept the situation without sorrowing, thinking:
+an5.48:10.4 | S: ‘The deed is powerful. What can I do now?’” | T: ‘The kamma is strong; what can I do now?’”
+an5.48:10.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.27
+an3.27:1.1 | S: “These three individuals are found in the world. | T: “Bhikkhus, there are these three kinds of persons found existing in the world.
+an3.27:1.2 | S: What three? | T: What three?
+an3.27:1.3 | S: There is an individual you should be disgusted by, and you shouldn’t associate with, accompany, or attend them. | T: (1) There is a person who is to be looked upon with disgust, not to be associated with, followed, and served;
+an3.27:1.4 | S: There is an individual you should regard with equanimity, and you shouldn’t associate with, accompany, or attend them. | T: (2) a person who is to be looked upon with equanimity, not to be associated with, followed, and served;
+an3.27:1.5 | S: There is an individual you should associate with, accompany, and attend. | T: and (3) a person who is to be associated with, followed, and served.
+an3.27:1.6 | S: Who is the individual you should be disgusted by, and not associate with, accompany, or attend? | T: (1) “And what kind of person, bhikkhus, is to be looked upon with disgust, not to be associated with, followed, and served?
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.27:1.7 | S: It’s an individual who is unethical, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved. | T: Here, some person is immoral, of bad character, impure, of suspect behavior, secretive in his actions, not an ascetic though claiming to be one, not a celibate though claiming to be one, inwardly rotten, corrupt, depraved.
+an3.27:1.8 | S: You should be disgusted by such an individual, and you shouldn’t associate with, accompany, or attend them. | T: Such a person is to be looked upon with disgust, not to be associated with, followed, and served.
+an3.27:1.9 | S: Why is that? | T: For what reason?
+an3.27:1.10 | S: Even if you don’t follow the example of such an individual, you still get a bad reputation: | T: Even though one does not follow the example of such a person, a bad report still circulates about oneself:
+an3.27:1.11 | S: ‘That individual has bad friends, companions, and associates.’ | T: ‘He has bad friends, bad companions, bad comrades.’
+an3.27:1.12 | S: They’re like a snake that’s been living in a pile of dung. Even if it doesn’t bite, it’ll still rub off on you. | T: Just as a snake that has passed through feces, though it does not bite one, would smear one,
+an3.27:1.13 | S: In the same way, even if you don’t follow the example of such an individual, you still get a bad reputation: | T: so too, though one does not follow the example of such a person, a bad report still circulates about oneself:
+an3.27:1.14 | S: ‘That individual has bad friends, companions, and associates.’ | T: ‘He has bad friends, bad companions, bad comrades.’
+an3.27:1.15 | S: That’s why you should be disgusted by such an individual, and you shouldn’t associate with, accompany, or attend them. | T: Therefore such a person is to be looked upon with disgust, not to be associated with, followed, and served.
+an3.27:2.1 | S: Who is the individual you should regard with equanimity, and not associate with, accompany, or attend? | T: (2) “And what kind of person is to be looked upon with equanimity, not to be associated with, followed, and served?
+an3.27:2.2 | S: It’s an individual who is irritable and bad-tempered. | T: Here, some person is prone to anger and easily exasperated.
+an3.27:2.3 | S: Even when lightly criticized they lose their temper, becoming annoyed, hostile, and hard-hearted, and they display annoyance, hate, and bitterness. | T: Even if he is criticized slightly he loses his temper and becomes irritated, hostile, and stubborn; he displays irritation, hatred, and bitterness.
+an3.27:2.4 | S: They’re like a festering sore, which, when you hit it with a stick or a stone, discharges even more. | T: Just as a festering sore, if struck by a stick or a shard, will discharge even more matter,
+an3.27:2.5 | S: In the same way, someone is irritable and bad-tempered. | T: so too …
+an3.27:2.6 | S: They’re like a firebrand of pale-moon ebony, which, when you hit it with a stick or a stone, sizzles and crackles even more. | T: Just as a firebrand of the tinduka tree, if struck by a stick or shard, will sizzle and crackle even more,
+an3.27:2.7 | S: In the same way, someone is irritable and bad-tempered. | T: so too …
+an3.27:2.8 | S: They’re like a sewer, which, when you stir it with a stick or a stone, stinks even more. | T: Just as a pit of feces, if struck by a stick or a shard, becomes even more foul-smelling,
+an3.27:2.9 | S: In the same way, an individual is irritable and bad-tempered. | T: so too some person here is prone to anger and … displays irritation, hatred, and bitterness.
+an3.27:2.10 | S: Even when lightly criticized they lose their temper, becoming annoyed, hostile, and hard-hearted, and they display annoyance, hate, and bitterness. | T: (none)
+an3.27:2.11 | S: You should regard such an individual with equanimity, and you shouldn’t associate with, accompany, or attend them. | T: Such a person is to be looked upon with equanimity, not to be associated with, followed, and served.
+an3.27:2.12 | S: Why is that? | T: For what reason?
+an3.27:2.13 | S: Thinking, ‘They might abuse or insult me, or do me harm.’ | T: With the thought: ‘He might insult me, revile me, and do me harm.’
+an3.27:2.14 | S: That’s why you should regard such an individual with equanimity, and you shouldn’t associate with, accompany, or attend them. | T: Therefore such a person is to be looked upon with equanimity, not to be associated with, followed, and served.
+an3.27:3.1 | S: Who is the individual you should associate with, accompany, and attend? | T: (3) “And what kind of person is to be associated with, followed, and served?
+an3.27:3.2 | S: It’s an individual who is ethical, of good character. | T: Here, some person is virtuous and of good character.
+an3.27:3.3 | S: You should associate with, accompany, and attend such an individual. | T: Such a person is to be associated with, followed, and served.
+an3.27:3.4 | S: Why is that? | T: For what reason?
+an3.27:3.5 | S: Even if you don’t follow the example of such an individual, you still get a good reputation: | T: Even though one does not follow the example of such a person, a good report still circulates about oneself:
+an3.27:3.6 | S: ‘That individual has good friends, companions, and associates.’ | T: ‘He has good friends, good companions, good comrades.’
+an3.27:3.7 | S: That’s why you should associate with, accompany, and attend such an individual. | T: Therefore such a person is to be associated with, followed, and served.
+an3.27:3.8 | S: These are the three individuals found in the world. | T: “These, bhikkhus, are the three kinds of persons found existing in the world.”
+an3.27:4.1 | S: A man who associates with an inferior goes downhill, | T: (none)
+an3.27:4.2 | S: but associating with an equal, you’ll never decline; | T: A verse is attached identical with that in AN3.26.
+an3.27:4.3 | S: following the best, you’ll quickly rise up, | T: (none)
+an3.27:4.4 | S: so you should keep company <j>with people better than you.” | T: (none)
+an3.27:4.5 | P: Sattamaṁ. | T: (none)
+
+## sn1.31
+sn1.31:1.1 | S: So I have heard. | T: Thus have I heard.
+sn1.31:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was dwelling at Savatthi in Jeta’s Grove, Anathapiṇḍika’s Park.
+sn1.31:1.3 | S: Then, late at night, several glorious deities of the host of a hundred felicities, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then, when the night had advanced, a number of devatās belonging to the Satullapa host, of stunning beauty, illuminating the entire Jeta’s Grove, approached the Blessed One. Having approached, they paid homage to the Blessed One and stood to one side.
+sn1.31:1.4 | S: Standing to one side, one deity spoke this verse in the Buddha’s presence: | T: Then one devatā, standing to one side, recited this verse in the presence of the Blessed One:
+sn1.31:2.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:2.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:2.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:2.4 | S: things get better, not worse.” | T: One becomes better, never worse.”
+sn1.31:3.1 | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then five other devatās in turn recited their verses in the presence of the Blessed One:
+sn1.31:4.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:4.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:4.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:4.4 | S: wisdom is gained—but not from anyone else.” | T: Wisdom is gained, but not from another.”
+sn1.31:5.1 | S: Then another deity spoke this verse in the Buddha’s presence: | T: (none)
+sn1.31:6.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:6.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:6.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:6.4 | S: you grieve not among the grieving.” | T: One does not sorrow in the midst of sorrow.”
+sn1.31:7.1 | S: Then another deity spoke this verse in the Buddha’s presence: | T: (none)
+sn1.31:8.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:8.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:8.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:8.4 | S: you dazzle among your relatives.” | T: One shines amidst one’s relations.”
+sn1.31:9.1 | S: Then another deity spoke this verse in the Buddha’s presence: | T: (none)
+sn1.31:10.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:10.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:10.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:10.4 | S: sentient beings go to a good place.” | T: Beings fare on to a good destination.”
+sn1.31:11.1 | S: Then another deity spoke this verse in the Buddha’s presence: | T: (none)
+sn1.31:12.1 | S: “Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:12.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:12.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:12.4 | S: sentient beings live happily.” | T: Beings abide comfortably.”
+sn1.31:13.1 | S: Then another deity said to the Buddha, | T: Then another devatā said to the Blessed One:
+sn1.31:13.2 | S: “Sir, who has spoken well?” | T: “Which one, Blessed One, has spoken well?”
+sn1.31:14.1 | S: “You’ve all spoken well in your own way. However, listen to me also: | T: “You have all spoken well in a way. But listen to me too:
+sn1.31:15.1 | S: Associate only with the virtuous! | T: “One should associate only with the good;
+sn1.31:15.2 | S: Try to get close to the virtuous! | T: With the good one should foster intimacy.
+sn1.31:15.3 | S: Understanding the true teaching of the good, | T: Having learnt the true Dhamma of the good,
+sn1.31:15.4 | S: you’re released from all suffering.” | T: One is released from all suffering.”
+sn1.31:16.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn1.31:16.2 | S: Delighted, those deities bowed and respectfully circled the Buddha, keeping him on their right, before vanishing right there. | T: Elated, those devatās paid homage to the Blessed One and, keeping him on the right, they disappeared right there.
+
+## sn21.12
+sn21.12:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn21.12:1.2 | S: Then two mendicants who were companions, protégés of Venerable Mahākappina, went to the Buddha. | T: Then two bhikkhus who were companions, pupils of the Venerable Mahakappina, approached the Blessed One.
+sn21.12:1.3 | S: The Buddha saw them coming off in the distance, | T: The Blessed One saw them coming in the distance and addressed the bhikkhus thus:
+sn21.12:1.4 | S: and addressed the mendicants: | T: (none)
+sn21.12:1.5 | S: “Mendicants, do you see those monks coming who are companions, protégés of Venerable Mahākappina?” | T: “Bhikkhus, do you see those two bhikkhus who are companions coming, pupils of Kappina?”
+sn21.12:1.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+sn21.12:1.7 | S: “Those mendicants are very mighty and powerful. | T: “Those bhikkhus are of great spiritual power and might.
+sn21.12:1.8 | S: It’s not easy to find an attainment that they have not already attained. | T: It is not easy to find an attainment that those bhikkhus have not already attained.
+sn21.12:1.9 | S: And they’ve realized the supreme culmination of the spiritual path in this very life. They live having achieved with their own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.” | T: And they are ones who, by realizing it for themselves with direct knowledge, in this very life enter and dwell in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.”
+sn21.12:2.1 | S: That is what the Buddha said. | T: This is what the Blessed One said.
+sn21.12:2.2 | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the Fortunate One, the Teacher, further said this:
+sn21.12:3.1 | S: “These companion mendicants | T: “These two companion bhikkhus
+sn21.12:3.2 | S: have been together for a long time. | T: Have been united for a very long time.
+sn21.12:3.3 | S: The true teaching has brought them together, | T: The true Dhamma has united them
+sn21.12:3.4 | S: the teaching proclaimed by the Buddha. | T: In the Dhamma proclaimed by the Buddha.
+sn21.12:4.1 | S: They’ve been well trained by Kappina | T: “They have been disciplined well by Kappina
+sn21.12:4.2 | S: in the teaching proclaimed by the Noble One. | T: In the Dhamma proclaimed by the Noble One.
+sn21.12:4.3 | S: They bear their final body, | T: They carry about their final bodies,
+sn21.12:4.4 | S: having vanquished Māra with his legions.” | T: Having conquered Mara and his mount.”
+sn21.12:4.5 | P: Dvādasamaṁ. | T: (none)
+sn21.12:4.6 | P: Bhikkhuvaggo paṭhamo. | T: (none)
+sn21.12:5.0 | P: Tassuddānaṁ | T: (none)
+sn21.12:5.1 | P: Kolito upatisso ca, | T: (none)
+sn21.12:5.2 | P: ghaṭo cāpi pavuccati; | T: (none)
+sn21.12:5.3 | P: Navo sujāto bhaddi ca, | T: (none)
+sn21.12:5.4 | P: visākho nando tisso ca; | T: (none)
+sn21.12:5.5 | P: Theranāmo ca kappino, | T: (none)
+sn21.12:5.6 | P: sahāyena ca dvādasāti. | T: (none)
+sn21.12:5.7 | S: The Linked Discourses on monks are complete. | T: (none)
+sn21.12:5.8 | P: Nidānavaggo dutiyo. | T: (none)
+sn21.12:6.0 | P: Tassuddānaṁ | T: (none)
+sn21.12:6.1 | P: Nidānābhisamayadhātu, | T: (none)
+sn21.12:6.2 | P: anamataggena kassapaṁ; | T: (none)
+sn21.12:6.3 | P: Sakkārarāhulalakkhaṇo, | T: (none)
+sn21.12:6.4 | P: opammabhikkhunā vaggo. | T: (none)
+sn21.12:6.5 | P: Dutiyo tena pavuccatīti. | T: (none)
+sn21.12:6.6 | S: The Book of Causality is finished. | T: The Book of Causation is finished.
+
+## sn47.9
+sn47.9:1.1 | S: So I have heard. | T: Thus have I heard.
+sn47.9:1.2 | S: At one time the Buddha was staying near Vesālī, at the little village of Beluva. | T: On one occasion the Blessed One was dwelling at Vesali in Beluvagamaka.
+sn47.9:1.3 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus thus:
+sn47.9:1.4 | S: “Mendicants, please enter the rainy season residence with whatever friends or acquaintances you have around Vesālī. | T: “Come, bhikkhus, enter upon the rains wherever you have friends, acquaintances, and intimates in the vicinity of Vesali.
+sn47.9:1.5 | S: I’ll commence the rainy season residence right here in the little village of Beluva.” | T: I myself will enter upon the rains right here in Beluvagamaka.”
+sn47.9:1.6 | S: “Yes, sir,” those mendicants replied. They did as the Buddha said, | T: “Yes, venerable sir,” those bhikkhus replied, and they entered upon the rains wherever they had friends, acquaintances, and intimates in the vicinity of Vesali,
+sn47.9:1.7 | S: while the Buddha commenced the rainy season residence right there in the little village of Beluva. | T: while the Blessed One entered upon the rains right there in Beluvagamaka.
+sn47.9:2.1 | S: After the Buddha had commenced the rainy season residence, he fell severely ill, struck by dreadful pains, close to death. | T: Then, when the Blessed One had entered upon the rains, a severe illness arose in him and terrible pains bordering on death assailed him.
+sn47.9:2.2 | S: But he endured unbothered, with mindfulness and situational awareness. | T: But the Blessed One endured them, mindful and clearly comprehending, without becoming distressed.
+sn47.9:2.3 | S: Then it occurred to the Buddha: | T: Then the thought occurred to the Blessed One:
+sn47.9:2.4 | S: “It would not be appropriate for me to be fully extinguished before informing my supporters and taking leave of the mendicant Saṅgha. | T: “It is not proper for me to attain final Nibbāna without having addressed my attendants and taken leave of the Bhikkhu Saṅgha.
+sn47.9:2.5 | S: Why don’t I forcefully suppress this illness, stabilize the life force, and live on?” | T: Let me then suppress this illness by means of energy and live on, having resolved upon the life formation.”
+sn47.9:2.6 | S: So that is what he did. | T: Then the Blessed One suppressed that illness by means of energy and lived on, having resolved upon the life formation.
+sn47.9:2.7 | S: Then the Buddha’s illness died down. | T: (none)
+sn47.9:3.1 | S: Soon after the Buddha had recovered from that sickness, he left his dwelling and sat in the shade of the porch on the seat spread out. | T: The Blessed One then recovered from that illness. Soon after he had recovered, he came out from his dwelling and sat down in the seat that had been prepared in the shade behind the dwelling.
+sn47.9:3.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, sat down to one side, and said to him: | T: The Venerable Ānanda then approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn47.9:3.3 | S: “Sir, it’s fantastic that the Buddha is comfortable, | T: “It’s splendid, venerable sir, that the Blessed One is bearing up, splendid that he has recovered!
+sn47.9:3.4 | S: that he’s keeping well, | T: (none)
+sn47.9:3.5 | S: and that he’s getting by. | T: (none)
+sn47.9:3.6 | S: Because when the Buddha was sick, my body felt like it was drugged. I was disorientated, and the teachings didn’t spring to mind. | T: But, venerable sir, when the Blessed One was ill my body seemed as if it were drugged, I had become disoriented, the teachings were not clear to me.
+sn47.9:3.7 | S: Still, at least I was consoled by the thought that | T: Nevertheless, I had this much consolation:
+sn47.9:3.8 | S: the Buddha won’t be fully extinguished without bringing something up regarding the Saṅgha of mendicants.” | T: that the Blessed One would not attain final Nibbāna without having made some pronouncement concerning the Bhikkhu Saṅgha.”
+sn47.9:4.1 | S: “But what could the mendicant Saṅgha expect from me now, Ānanda? | T: “What does the Bhikkhu Saṅgha now expect from me, Ānanda?
+sn47.9:4.2 | S: I’ve taught the Dhamma without making any distinction between secret and public teachings. | T: I have taught the Dhamma, Ānanda, without making a distinction between inside and outside.
+sn47.9:4.3 | S: The Realized One doesn’t have the closed fist of a tutor when it comes to the teachings. | T: The Tathagata has no closed fist of a teacher in regard to the teachings.
+sn47.9:4.4 | S: If there’s anyone who thinks: | T: If, Ānanda, anyone thinks,
+sn47.9:4.5 | S: ‘I shall lead the mendicant Saṅgha,’ or ‘the Saṅgha of mendicants is meant for me,’ let them bring something up regarding the Saṅgha. | T: ‘I will take charge of the Bhikkhu Saṅgha,’ or ‘The Bhikkhu Saṅgha is under my direction,’ it is he who should make some pronouncement concerning the Bhikkhu Saṅgha.
+sn47.9:4.6 | S: But the Realized One doesn’t think like this, | T: But, Ānanda, it does not occur to the Tathagata,
+sn47.9:4.7 | P: ‘ahaṁ bhikkhusaṅghaṁ pariharissāmī’ti vā, ‘mamuddesiko bhikkhusaṅgho’ti vā. | T: ‘I will take charge of the Bhikkhu Saṅgha,’ or ‘The Bhikkhu Saṅgha is under my direction, ’
+sn47.9:4.8 | S: so why should he bring something up regarding the Saṅgha? | T: so why should the Tathagata make some pronouncement concerning the Bhikkhu Saṅgha?
+sn47.9:4.9 | S: Now I am old, elderly and senior. I’m advanced in years and have reached the final stage of life. | T: Now I am old, Ānanda, aged, burdened with years, advanced in life, come to the last stage.
+sn47.9:4.10 | S: I’m currently eighty years old. | T: My age is now turning eighty.
+sn47.9:4.11 | S: Just as a decrepit old cart is kept going by a rope, | T: Just as an old cart keeps going by a combination of straps,
+sn47.9:4.12 | S: in the same way, the Realized One’s body is kept going as if by a rope. | T: so it seems the body of the Tathagata keeps going by a combination of straps.
+sn47.9:5.1 | S: Sometimes the Realized One, not focusing on any signs, and with the cessation of certain feelings, enters and remains in the signless immersion of the heart. Only then does the Realized One’s body become more comfortable. | T: “Whenever, Ānanda, by nonattention to all signs and by the cessation of certain feelings, the Tathagata enters and dwells in the signless concentration of mind, on that occasion, Ānanda, the body of the Tathagata is more comfortable.
+sn47.9:5.2 | S: So Ānanda, live as your own island, your own refuge, with no other refuge. Let the teaching be your island and your refuge, with no other refuge. | T: Therefore, Ānanda, dwell with yourselves as your own island, with yourselves as your own refuge, with no other refuge; dwell with the Dhamma as your island, with the Dhamma as your refuge, with no other refuge.
+sn47.9:6.1 | S: And how does a mendicant do this? | T: And how, Ānanda, does a bhikkhu dwell with himself as his own island, with himself as his own refuge, with no other refuge; with the Dhamma as his island, with the Dhamma as his refuge, with no other refuge?
+sn47.9:6.2 | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: Here, Ānanda, a bhikkhu dwells contemplating the body in the body, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.9:6.3 | S: They meditate observing an aspect of feelings … | T: He dwells contemplating feelings in feelings …
+sn47.9:6.4 | S: mind … | T: mind in mind …
+sn47.9:6.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: phenomena in phenomena, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.
+sn47.9:6.6 | S: That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. | T: (none)
+sn47.9:6.7 | S: Whether now or after I have passed, any who shall live as their own island, their own refuge, with no other refuge; with the teaching as their island and their refuge, with no other refuge—those mendicants of mine eager to train shall be among the best of the best.” | T: “Those bhikkhus, Ānanda, either now or after I am gone, who dwell with themselves as their own island, with themselves as their own refuge, with no other refuge; with the Dhamma as their island, with the Dhamma as their refuge, with no other refuge—it is these bhikkhus, Ānanda, who will be for me topmost of those keen on the training.”
+sn47.9:6.8 | P: Navamaṁ. | T: (none)
+
+## an3.60
+an3.60:1.1 | S: Then Saṅgārava the brahmin went up to the Buddha, and exchanged greetings with him. | T: Then the brahmin Saṅgārava approached the Blessed One and exchanged greetings with him….
+an3.60:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: Then, sitting to one side, the brahmin Saṅgārava said this to the Blessed One:
+an3.60:1.3 | S: “Worthy Gotama, we who are called brahmins | T: “Master Gotama, we brahmins sacrifice and enjoin others to offer sacrifices.
+an3.60:1.4 | S: make sacrifices and encourage others to make sacrifices. | T: (none)
+an3.60:1.5 | S: Now, worthy Gotama, both of these people—the one who sacrifices and the one who encourages others to sacrifice—are doing good for many people on account of that sacrifice. | T: Now both one who himself sacrifices and one who enjoins others to offer sacrifices engage in a meritorious practice that extends to many people, that is, one based on sacrifice.
+an3.60:1.6 | S: But, worthy Gotama, when someone has gone forth from the lay life to homelessness, they tame, calm, and extinguish themselves alone. That being so, they are doing good for just one person on account of that going forth.” | T: But one who leaves his family and goes forth from the household life into homelessness tames only himself, calms only himself, and leads to nibbāna only himself. In such a case, he engages in a meritorious practice that extends to only one person, that is, one based on going forth.”
+an3.60:2.1 | S: “Well then, brahmin, I’ll ask you about this in return, and you can answer as you like. | T: “Well then, brahmin, I will question you about this matter. You should answer as you see fit.
+an3.60:2.2 | S: What do you think, brahmin? | T: What do you think, brahmin?
+an3.60:2.3 | S: A Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: Here, a Tathāgata arises in the world, an arahant, perfectly enlightened, accomplished in true knowledge and conduct, fortunate, knower of the world, unsurpassed trainer of persons to be tamed, teacher of devas and humans, an Enlightened One, a Blessed One.
+an3.60:2.4 | S: He says, | T: He says thus:
+an3.60:2.5 | S: ‘Come, this is the path, this is the practice. Practicing like this, I realized the supreme objective of the spiritual life with my own insight, and I make it known. | T: ‘Come, this is the path, this is the way. Practicing in accordance with it, I have realized for myself with direct knowledge the unsurpassed culmination of the spiritual life and make it known to others.
+an3.60:2.6 | S: Please, all of you, practice like this, and you too will realize the supreme objective of the spiritual life, and will live having realized it with your own insight.’ | T: Come, you too practice thus. Practicing in accordance with it, you too will realize for yourselves with direct knowledge the unsurpassed culmination of the spiritual life and dwell in it.’
+an3.60:2.7 | S: So the Teacher teaches Dhamma, and others practice accordingly, in their hundreds and thousands, and hundreds of thousands. | T: Thus the teacher teaches this Dhamma and others practice accordingly. There are many hundreds, many thousands, many hundreds of thousands who do so.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an3.60:3.1 | S: What do you think, brahmin? | T: What do you think?
+an3.60:3.2 | S: This being so, are they doing good for just one person or for many people on account of going forth?” | T: When this is the case, is that act of going forth a meritorious practice that extends to one person or to many people?”
+an3.60:3.3 | S: “This being so, worthy Gotama, they are doing good for many people on account of going forth.” | T: “When that is the case, Master Gotama, this is a meritorious practice that extends to many people, that is, one based on going forth.”
+an3.60:4.1 | S: When he said this, Venerable Ānanda said to Saṅgārava, | T: When this was said, the Venerable Ānanda said to the brahmin Saṅgārava:
+an3.60:4.2 | S: “Brahmin, which of these two practices do you believe has fewer obligations and undertakings, yet is more fruitful and beneficial?” | T: “Of these two practices, brahmin, which appeals to you more as being simpler and less harmful, and as being more fruitful and beneficial?”
+an3.60:4.3 | S: Saṅgārava said to Ānanda, | T: Thereupon the brahmin Saṅgārava said to the Venerable Ānanda:
+an3.60:4.4 | S: “Those such as the worthies Gotama and Ānanda | T: “I consider Master Gotama and Master Ānanda worthy of veneration and praise.”
+an3.60:4.5 | S: are honored and praised by me!” | T: (none)
+an3.60:5.1 | S: For a second time, Ānanda said to Saṅgārava, | T: A second time the Venerable Ānanda said to the brahmin:
+an3.60:5.2 | S: “Brahmin, I didn’t ask you | T: “Brahmin, I am not asking you whom you consider worthy of veneration and praise.
+an3.60:5.3 | S: who you honor and praise. | T: (none)
+an3.60:5.4 | S: I asked you | T: (none)
+an3.60:5.5 | S: which of these two practices do you believe has fewer obligations and undertakings, yet is more fruitful and beneficial?” | T: I am asking you which of those two practices appeals to you as being simpler and less harmful, and also as more fruitful and beneficial?”
+an3.60:5.6 | S: For a second time Saṅgārava said to Ānanda, | T: But a second time the brahmin Saṅgārava replied:
+an3.60:5.7 | S: “Those such as the worthies Gotama and Ānanda | T: “I consider Master Gotama and Master Ānanda worthy of veneration and praise.”
+an3.60:5.8 | S: are honored and praised by me!” | T: (none)
+an3.60:6.1 | S: For a third time, Ānanda said to Saṅgārava, | T: A third time the Venerable Ānanda said to the brahmin:
+an3.60:6.2 | S: “Brahmin, I didn’t ask you | T: “Brahmin, I am not asking you whom you consider worthy of veneration and praise.
+an3.60:6.3 | S: who you honor and praise. | T: (none)
+an3.60:6.4 | S: I asked you | T: (none)
+an3.60:6.5 | S: which of these two practices do you believe has fewer obligations and undertakings, yet is more fruitful and beneficial?” | T: I am asking you which of those two practices appeals to you as being simpler and less harmful, and also as more fruitful and beneficial?”
+an3.60:6.6 | S: For a third time Saṅgārava said to Ānanda, | T: But a third time the brahmin Saṅgārava replied:
+an3.60:6.7 | S: “Those such as the worthies Gotama and Ānanda | T: “I consider Master Gotama and Master Ānanda worthy of veneration and praise.”
+an3.60:6.8 | S: are honored and praised by me!” | T: (none)
+an3.60:7.1 | S: Then it occurred to the Buddha, | T: Then the Blessed One thought:
+an3.60:7.2 | S: “Though Ānanda asked him a sensible question three times, Saṅgārava falters without answering. | T: “Even for a third time the brahmin Saṅgārava, on being asked a legitimate question by Ānanda, falters and does not answer.
+an3.60:7.3 | S: Why don’t I give him a way out?” | T: Let me release him.”
+an3.60:7.4 | S: So the Buddha said to Saṅgārava, | T: Then the Blessed One said to the brahmin Saṅgārava:
+an3.60:7.5 | S: “Brahmin, what came up in the conversation among the king’s retinue today, sitting together in the royal compound?” | T: “What conversation, brahmin, arose today among the king’s retinue when they assembled and were sitting in the royal palace?”
+an3.60:7.6 | S: “Worthy Gotama, this came up: | T: “The conversation was this, Master Gotama:
+an3.60:7.7 | S: ‘Formerly, it seems, there were fewer mendicants, but more of them displayed superhuman demonstrations of psychic power; | T: ‘Formerly there were fewer bhikkhus, but more who displayed superhuman wonders of psychic potency.
+an3.60:7.8 | S: while these days, there are more mendicants, but fewer display superhuman demonstrations of psychic power.’ | T: But now there are more bhikkhus, but fewer who display superhuman wonders of psychic potency.’
+an3.60:7.9 | S: This is what came up in the conversation among the king’s retinue today, while sitting together in the royal compound.” | T: This was the conversation that arose today among the king’s retinue.”
+an3.60:8.1 | S: “Brahmin, there are three kinds of demonstration. | T: “There are, brahmin, these three kinds of wonders.
+an3.60:8.2 | S: What three? | T: What three?
+an3.60:8.3 | S: A demonstration of psychic power, a demonstration of revealing, and a demonstration of instruction. | T: The wonder of psychic potency, the wonder of mind-reading, and the wonder of instruction.
+an3.60:8.4 | S: And what is the demonstration of psychic power? | T: (1) “And what, brahmin, is the wonder of psychic potency?
+an3.60:8.5 | S: It’s when someone wields the many kinds of psychic power: multiplying themselves and becoming one again; materializing and dematerializing; going unobstructed through a wall, a rampart, or a mountain as if through space; diving in and out of the earth as if it were water; walking on water as if it were earth; flying cross-legged through the sky like a bird; touching and stroking with the hand the sun and moon, so mighty and powerful. They control the body as far as the realm of divinity. | T: Here, a bhikkhu wields the various kinds of psychic potency: having been one, he becomes many; having been many, he becomes one; he appears and vanishes; he goes unhindered through a wall, through a rampart, through a mountain as though through space; he dives in and out of the earth as though it were water; he walks on water without sinking as though it were earth; seated cross-legged, he travels in space like a bird; with his hand he touches and strokes the moon and sun so powerful and mighty; he exercises mastery with the body as far as the brahmā world.
+an3.60:8.6 | S: This is called the demonstration of psychic power. | T: This is called the wonder of psychic potency.
+an3.60:9.1 | S: And what is the demonstration of revealing? | T: (2) “And what, brahmin, is the wonder of mind-reading?
+an3.60:9.2 | S: In one case, someone reveals by means of a sign: | T: There is one who, by means of some clue, declares:
+an3.60:9.3 | S: ‘This is what you’re thinking, such is your thought, and thus is your state of mind.’ | T: ‘Your thought is thus, such is what you are thinking, your mind is in such and such a state.’
+an3.60:9.4 | S: And even if they reveal this many times, it turns out exactly so, not otherwise. | T: And even if he makes many declarations, they are exactly so and not otherwise.
+an3.60:10.1 | S: In another case, someone reveals after hearing it from humans or non-humans or deities: | T: “Again, someone does not declare the state of mind on the basis of a clue, but he hears the sound of people, spirits, or deities speaking and then declares:
+an3.60:10.2 | S: ‘This is what you’re thinking, such is your thought, and thus is your state of mind.’ | T: ‘Your thought is thus, such is what you are thinking, your mind is in such and such a state.’
+an3.60:10.3 | S: And even if they reveal this many times, it turns out exactly so, not otherwise. | T: And even if he makes many declarations, they are exactly so and not otherwise.
+an3.60:11.1 | S: In another case, someone reveals by hearing the sound of thought spreading as someone thinks and considers: | T: “Again, someone does not declare the state of mind on the basis of a mark, or by hearing the sound of people, spirits, or deities speaking, but he hears the sound of the diffusion of thought as one is thinking and examining some matter and then declares:
+
+codex
+I found a recovery sentence on the following line and two question openings on the line below where they belong. I’m checking the verse passages before writing the findings.
+
+exec
+/bin/bash -lc "sed -n '148,174p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.48:5.2 | S: So they reflect on perishing: | T: When this happens, he reflects thus:
+an5.48:5.3 | S: ‘It’s not just me who has someone liable to perishing who perishes. For as long as sentient beings come and go, pass away and are reborn, they all have someone liable to perishing who perishes. | T: ‘I am not the only one for whom what is subject to loss is lost. For all beings that come and go, that pass away and undergo rebirth, what is subject to loss is lost.
+an5.48:5.4 | S: If I were to sorrow and wail and lament, beating my breast and falling into confusion, just because someone liable to perishing perishes, I’d lose my appetite and my physical appearance would deteriorate. My work wouldn’t get done, my enemies would be encouraged, and my friends would be dispirited.’ | T: If I were to sorrow, languish, lament, weep beating my breast, and become confused when what is subject to loss is lost, I would lose my appetite and my features would become ugly. I would not be able to do my work, my enemies would be elated, and my friends would become saddened.’
+an5.48:5.5 | S: And so, when someone liable to perishing perishes, they don’t sorrow and wail and lament, beating their breast and falling into confusion. | T: Thus, when what is subject to loss is lost, he does not sorrow, languish, lament, weep beating his breast, and become confused.
+an5.48:5.6 | S: This is called | T: This is called an instructed noble disciple who has drawn out the poisonous dart of sorrow pierced by which the uninstructed worldling only torments himself.
+an5.48:5.7 | S: a learned noble disciple who has drawn out sorrow’s poisoned arrow, struck by which unlearned ordinary people only mortify themselves. | T: (none)
+an5.48:5.8 | S: Sorrowless, free of thorns, that noble disciple only extinguishes themselves. | T: Sorrowless, without darts, the noble disciple realizes nibbāna.
+an5.48:6.1 | S: These are the five things that cannot be had by any ascetic or brahmin or god or Māra or divinity or by anyone in the world. | T: “These, bhikkhus, are the five situations that are unobtainable by an ascetic or a brahmin, by a deva, Māra, or Brahmā, or by anyone in the world.
+an5.48:7.1 | S: Sorrowing and lamenting | T: “It is not by sorrowing and lamenting
+an5.48:7.2 | S: doesn’t do even a little bit of good. | T: that even the least good here can be gained.
+an5.48:7.3 | S: When they know that you’re sad, | T: Knowing that one is sorrowful and sad,
+an5.48:7.4 | S: your enemies are encouraged. | T: one’s enemies are elated.
+an5.48:8.1 | S: When an astute person doesn’t waver <j>in the face of adversity, | T: “When the wise person does not shake in adversities,
+an5.48:8.2 | S: as they’re able to evaluate what’s beneficial, | T: knowing how to determine what is good,
+an5.48:8.3 | S: their enemies suffer, | T: his enemies are saddened,
+an5.48:8.4 | S: seeing that their normal expression doesn’t change. | T: having seen that his former facial expression does not change.
+an5.48:9.1 | S: Prayers, recitations, fine sayings, | T: “Wherever one might gain one’s good, in whatever way—by chanting, mantras,
+an5.48:9.2 | S: or charity of woven rugs: | T: maxims, gifts, or tradition—there
+an5.48:9.3 | S: if by means of any such things you benefit, | T: one should exert oneself in just that way.
+an5.48:9.4 | S: then by all means keep doing them. | T: (none)
+an5.48:10.1 | S: But if you understand that ‘this good thing | T: “But if one should understand: ‘This good
+an5.48:10.2 | S: can’t be had by me or by anyone else’, | T: cannot be obtained by me or anyone else,’
+an5.48:10.3 | S: you should accept it without sorrowing, thinking: | T: one should accept the situation without sorrowing, thinking:
+an5.48:10.4 | S: ‘The deed is powerful. What can I do now?’” | T: ‘The kamma is strong; what can I do now?’”
+an5.48:10.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## an3.27
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-026.findings.tmp <<'EOF'
+an5.48:9.2 starts: gifts, or tradition—there one should exert oneself
+an5.48:9.3 none
+an5.48:9.4 starts: there one should exert oneself in just
+sn47.9:2.7 starts: The Blessed One then recovered from that
+sn47.9:3.1 starts: Soon after he had recovered, he came
+an3.60:5.4 starts: I am asking you which of those
+an3.60:5.5 starts: which of those two practices appeals to
+an3.60:6.4 starts: I am asking you which of those
+an3.60:6.5 starts: which of those two practices appeals to
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+Reported 9 lines.
+tokens used
+32,346
+Reported 9 lines.

@@ -1,0 +1,576 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd7f-a76b-7c91-879e-d8c7ea75877f
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-boundary errors, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn12.28
+sn12.28:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.28:1.2 | P: “Tatra kho …pe… | T: (none)
+sn12.28:1.3 | S: “A mendicant understands old age and death, their origin, their cessation, and the practice that leads to their cessation. They understand rebirth … | T: “Herein, bhikkhus, a bhikkhu understands aging-and-death, its origin, its cessation, and the way leading to its cessation. He understands birth …
+sn12.28:1.4 | S: continued existence … | T: existence …
+sn12.28:1.5 | S: grasping … | T: clinging …
+sn12.28:1.6 | S: craving … | T: craving …
+sn12.28:1.7 | S: feeling … | T: feeling …
+sn12.28:1.8 | S: contact … | T: contact …
+sn12.28:1.9 | S: the six sense fields … | T: the six sense bases …
+sn12.28:1.10 | S: name and form … | T: name-and-form …
+sn12.28:1.11 | S: consciousness … | T: consciousness …
+sn12.28:1.12 | S: They understand choices, their origin, their cessation, and the practice that leads to their cessation. | T: volitional formations, their origin, their cessation, and the way leading to their cessation.
+sn12.28:2.1 | S: And what is old age and death? | T: “And what, bhikkhus, is aging-and-death?…
+sn12.28:2.2 | S: The old age, decrepitude, broken teeth, grey hair, wrinkly skin, diminished vitality, and failing faculties of the various sentient beings in the various orders of sentient beings. | T: (none)
+sn12.28:2.3 | S: This is called old age. | T: (none)
+sn12.28:2.4 | S: The passing away, passing on, disintegration, demise, mortality, death, decease, breaking up of the aggregates, and laying to rest of the corpse of the various sentient beings in the various orders of sentient beings. | T: (none)
+sn12.28:2.5 | S: This is called death. | T: (none)
+sn12.28:2.6 | S: Such is old age, and such is death. | T: (none)
+sn12.28:2.7 | S: This is called old age and death. | T: (none)
+sn12.28:2.8 | S: Rebirth is the origin of old age and death. | T: (none)
+sn12.28:2.9 | S: When rebirth ceases, old age and death cease. | T: (none)
+sn12.28:2.10 | S: The practice that leads to the cessation of old age and death is simply this noble eightfold path, | T: as in preceding sutta …
+sn12.28:2.11 | S: that is: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: (none)
+sn12.28:3.1 | S: And what is rebirth? … | T: (none)
+sn12.28:3.2 | S: And what is continued existence? … | T: (none)
+sn12.28:3.3 | S: And what is grasping? … | T: (none)
+sn12.28:3.4 | S: And what is craving? … | T: (none)
+sn12.28:3.5 | S: feeling … | T: (none)
+sn12.28:3.6 | S: contact … | T: (none)
+sn12.28:3.7 | S: the six sense fields … | T: (none)
+sn12.28:3.8 | S: name and form … | T: (none)
+sn12.28:3.9 | S: consciousness … | T: (none)
+sn12.28:4.1 | S: And what are choices? | T: (none)
+sn12.28:4.2 | S: There are three kinds of choices. | T: (none)
+sn12.28:4.3 | S: Choices by way of body, speech, and mind. | T: (none)
+sn12.28:4.4 | S: These are called choices. | T: (none)
+sn12.28:4.5 | S: Ignorance is the origin of choices. | T: (none)
+sn12.28:4.6 | S: When ignorance ceases, choices cease. | T: (none)
+sn12.28:4.7 | S: The practice that leads to the cessation of choices is simply this noble eightfold path, | T: Just this Noble Eightfold Path is the way leading to the cessation of volitional formations;
+sn12.28:4.8 | S: that is: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: that is, right view … right concentration.
+sn12.28:5.1 | S: A mendicant understands old age and death, their origin, their cessation, and the practice that leads to their cessation. They understand rebirth … | T: “When, bhikkhus, a bhikkhu thus understands aging-and-death, its origin, its cessation, and the way leading to its cessation; when he thus understands birth …
+sn12.28:5.2 | S: continued existence … | T: existence …
+sn12.28:5.3 | S: grasping … | T: clinging …
+sn12.28:5.4 | S: craving … | T: craving …
+sn12.28:5.5 | S: feeling … | T: feeling …
+sn12.28:5.6 | S: contact … | T: contact …
+sn12.28:5.7 | S: the six sense fields … | T: the six sense bases …
+sn12.28:5.8 | S: name and form … | T: name-and-form …
+sn12.28:5.9 | S: consciousness … | T: consciousness …
+sn12.28:5.10 | S: They understand choices, | T: volitional formations,
+sn12.28:5.11 | S: their origin, | T: their origin,
+sn12.28:5.12 | S: their cessation, | T: their cessation,
+sn12.28:5.13 | S: and the practice that leads to their cessation. | T: and the way leading to their cessation,
+sn12.28:5.14 | S: This mendicant is called: ‘one accomplished in view’, ‘one accomplished in vision’, ‘one who has come to the true teaching’, ‘one who sees this true teaching’, ‘one endowed with a trainee’s insight’, ‘one endowed with a trainee’s knowledge’, ‘one who has entered the stream of the teaching’, ‘a noble one with penetrative wisdom’, and also ‘one who stands pressing against the door to freedom from death’.” | T: he is then called a bhikkhu who is accomplished in view, accomplished in vision, who has arrived at this true Dhamma, who sees this true Dhamma, who possesses a trainee’s knowledge, a trainee’s true knowledge, who has entered the stream of the Dhamma, a noble one with penetrative wisdom, one who stands squarely before the door to the Deathless.”
+sn12.28:5.15 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn12.16
+sn12.16:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn12.16:1.2 | S: Then a mendicant went up to the Buddha, bowed, sat down to one side, and said to him: | T: Then a certain bhikkhu approached the Blessed One, paid homage to him, sat down to one side, and said to him:
+sn12.16:1.3 | S: “Sir, they speak of a ‘Dhamma speaker’. | T: “Venerable sir, it is said, ‘a speaker on the Dhamma, a speaker on the Dhamma.’
+sn12.16:1.4 | S: How is a Dhamma speaker defined?” | T: In what way, venerable sir, is one a speaker on the Dhamma?”
+sn12.16:2.1 | S: “If a mendicant teaches Dhamma for disillusionment, dispassion, and cessation regarding old age and death, they’re qualified to be called ‘a mendicant who speaks on Dhamma’. | T: “Bhikkhu, if one teaches the Dhamma for the purpose of revulsion towards aging-and-death, for its fading away and cessation, one is fit to be called a bhikkhu who is a speaker on the Dhamma.
+sn12.16:2.2 | S: If they practice for disillusionment, dispassion, and cessation regarding old age and death, they’re qualified to be called ‘a mendicant who practices in line with the teaching’. | T: If one is practising for the purpose of revulsion towards aging-and-death, for its fading away and cessation, one is fit to be called a bhikkhu who is practising in accordance with the Dhamma.
+sn12.16:2.3 | S: If they’re freed by not grasping, by disillusionment, dispassion, and cessation regarding old age and death, they’re qualified to be called ‘a mendicant who has attained extinguishment in this very life’. | T: If, through revulsion towards aging-and-death, through its fading away and cessation, one is liberated by nonclinging, one is fit to be called a bhikkhu who has attained Nibbāna in this very life.
+sn12.16:3.1 | S: If a mendicant teaches Dhamma for disillusionment regarding rebirth … | T: “Bhikkhu, if one teaches the Dhamma for the purpose of revulsion towards birth …
+sn12.16:3.2 | S: continued existence … | T: (none)
+sn12.16:3.3 | S: grasping … | T: (none)
+sn12.16:3.4 | S: craving … | T: (none)
+sn12.16:3.5 | S: feeling … | T: (none)
+sn12.16:3.6 | S: contact … | T: (none)
+sn12.16:3.7 | S: the six sense fields … | T: (none)
+sn12.16:3.8 | S: name and form … | T: (none)
+sn12.16:3.9 | S: consciousness … | T: (none)
+sn12.16:3.10 | S: choices … | T: (none)
+sn12.16:3.11 | S: If a mendicant teaches Dhamma for disillusionment, dispassion, and cessation regarding ignorance, they’re qualified to be called ‘a mendicant who speaks on Dhamma’. | T: for the purpose of revulsion towards ignorance, for its fading away and cessation, one is fit to be called a bhikkhu who is a speaker on the Dhamma.
+sn12.16:3.12 | S: If they practice for disillusionment, dispassion, and cessation regarding ignorance, they’re qualified to be called ‘a mendicant who practices in line with the teaching’. | T: If one is practising for the purpose of revulsion towards ignorance, for its fading away and cessation, one is fit to be called a bhikkhu who is practising in accordance with the Dhamma.
+sn12.16:3.13 | S: If they’re freed by not grasping, by disillusionment, dispassion, and cessation regarding ignorance, they’re qualified to be called ‘a mendicant who has attained extinguishment in this very life’.” | T: If, through revulsion towards ignorance, through its fading away and cessation, one is liberated by nonclinging, one is fit to be called a bhikkhu who has attained Nibbāna in this very life.”
+sn12.16:3.14 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn44.11
+sn44.11:1.1 | S: At one time Venerable Sabhiya Kaccāna was staying at Ñātika in the brick house. | T: On one occasion the Venerable Sabhiya Kaccana was dwelling at Ñatika in the Brick Hall.
+sn44.11:1.2 | S: Then the wanderer Vacchagotta went up to him, and exchanged greetings with him. | T: Then the wanderer Vacchagotta approached the Venerable Sabhiya Kaccana and exchanged greetings with him.
+sn44.11:1.3 | S: When the greetings and polite conversation were over, he sat down to one side, and said to Sabhiya Kaccāna: | T: When they had concluded their greetings and cordial talk, he sat down to one side and said to him:
+sn44.11:1.4 | S: “Worthy Kaccāna, does a realized one still exist after death?” | T: “How is it, Master Kaccana, does the Tathagata exist after death?”
+sn44.11:1.5 | S: “Vaccha, this has not been declared by the Buddha.” | T: (none)
+sn44.11:1.6 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:1.7 | S: “Well then, does a realized one no longer exist after death?” | T: (none)
+sn44.11:1.8 | S: “This too has not been declared by the Buddha.” | T: (none)
+sn44.11:1.9 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | T: All as in §1 down to:
+sn44.11:2.1 | S: “Well then, does a realized one both still exist and no longer exist after death?” | T: (none)
+sn44.11:2.2 | S: “This has not been declared by the Buddha.” | T: (none)
+sn44.11:2.3 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:2.4 | S: “Well then, does a realized one neither still exist nor no longer exist after death?” | T: (none)
+sn44.11:2.5 | S: “This too has not been declared by the Buddha.” | T: (none)
+sn44.11:2.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | T: (none)
+sn44.11:3.1 | S: “Worthy Kaccāna, when asked these questions, you say that this has not been declared by the Buddha. | T: (none)
+sn44.11:3.2 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.3 | P: hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.4 | P: ‘Kiṁ pana, bho kaccāna, na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.5 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.6 | P: na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.7 | P: ‘Kiṁ nu kho, bho kaccāna, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.8 | P: ‘abyākataṁ kho etaṁ, vaccha, bhagavatā— | T: (none)
+sn44.11:3.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.10 | P: ‘Kiṁ pana, bho kaccāna, neva hoti na na hoti tathāgato paraṁ maraṇā’ti, iti puṭṭho samāno: | T: (none)
+sn44.11:3.11 | P: ‘etampi kho, vaccha, abyākataṁ bhagavatā— | T: (none)
+sn44.11:3.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. | T: (none)
+sn44.11:3.13 | S: What’s the cause, what’s the reason why this has not been declared by the Buddha?” | T: “What then, Master Kaccana, is the cause and reason why this has not been declared by the Blessed One?”
+sn44.11:3.14 | S: “In order to describe him as ‘formed’ or ‘formless’ or ‘percipient’ or ‘non-percipient’ or ‘neither percipient nor non-percipient’, there must be some cause or reason for doing so. But if that cause and reason were to totally and utterly cease without remainder, | T: “Vaccha, as to the cause and condition for describing him as ‘consisting of form’ or as ‘formless’ or as ‘percipient’ or as ‘nonpercipient’ or as ‘neither percipient nor nonpercipient’: if that cause and condition were to cease completely and totally without remainder,
+sn44.11:3.15 | S: how could you describe him in any such terms?” | T: in what way could one describe him as ‘consisting of form’ or as ‘formless’ or as ‘percipient’ or as ‘nonpercipient’ or as ‘neither percipient nor nonpercipient’?”
+sn44.11:3.16 | S: “Worthy Kaccāna, how long has it been since you went forth?” | T: “How long has it been since you went forth, Master Kaccana?”
+sn44.11:3.17 | S: “Not long, reverend: three years.” | T: “Not long, friend. Three years.”
+sn44.11:3.18 | S: “One who has learned this much in this time, reverend, has learned a lot, who can say what lies ahead!” | T: “One, friend, who has gotten so much in such a time has indeed gotten much, not to speak of one who has surpassed this!”
+sn44.11:3.19 | P: Ekādasamaṁ. | T: (none)
+sn44.11:3.20 | P: Abyākatavaggo paṭhamo. | T: (none)
+sn44.11:4.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:4.1 | P: Khemātherī anurādho, | T: (none)
+sn44.11:4.2 | P: sāriputtoti koṭṭhiko; | T: (none)
+sn44.11:4.3 | P: Moggallāno ca vaccho ca, | T: (none)
+sn44.11:4.4 | P: kutūhalasālānando; | T: (none)
+sn44.11:4.5 | P: Sabhiyo ekādasamanti. | T: (none)
+sn44.11:4.6 | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+sn44.11:5.0 | P: Tassuddānaṁ | T: (none)
+sn44.11:5.1 | P: Saḷāyatanavedanā, | T: (none)
+sn44.11:5.2 | P: mātugāmo jambukhādako; | T: (none)
+sn44.11:5.3 | P: Sāmaṇḍako moggallāno, | T: (none)
+sn44.11:5.4 | P: citto gāmaṇi saṅkhataṁ; | T: (none)
+sn44.11:5.5 | P: Abyākatanti dasadhāti. | T: (none)
+sn44.11:5.6 | P: Saḷāyatanavaggo catuttho. | T: (none)
+sn44.11:5.7 | S: The Book of the Six Sense Fields is finished. | T: The Book of the Six Sense Bases is finished.
+
+## an10.24
+an10.24:1.1 | S: At one time Venerable Mahācunda was staying in the land of the Cetīs at Sahajāti. | T: On one occasion the Venerable Mahācunda was dwelling among the Cetis at Sahajāti.
+an10.24:1.2 | S: There he addressed the mendicants: | T: There the Venerable Mahācunda addressed the bhikkhus:
+an10.24:1.3 | S: “Reverends, mendicants!” | T: “Friends, bhikkhus!”
+an10.24:1.4 | S: “Reverend,” they replied. | T: “Friend!” those bhikkhus replied.
+an10.24:1.5 | S: Venerable Mahācunda said this: | T: The Venerable Mahācunda said this:
+an10.24:2.1 | S: “Reverends, a mendicant who makes a declaration of knowledge says: | T: “Friends, making a declaration of knowledge, a bhikkhu says:
+an10.24:2.2 | S: ‘I know this teaching, I see this teaching.’ | T: ‘I know this Dhamma, I see this Dhamma.’
+an10.24:2.3 | S: Suppose that greed masters that mendicant and keeps going. | T: If, however, greed overcomes that bhikkhu and persists;
+an10.24:2.4 | S: Or that hate … | T: if hatred …
+an10.24:2.5 | S: delusion … | T: delusion …
+an10.24:2.6 | S: anger … | T: anger …
+an10.24:2.7 | S: acrimony … | T: hostility …
+an10.24:2.8 | S: disdain … | T: denigration …
+an10.24:2.9 | S: contempt … | T: insolence …
+an10.24:2.10 | S: stinginess … | T: miserliness …
+an10.24:2.11 | S: nasty jealousy … | T: evil envy …
+an10.24:2.12 | S: or corrupt wishes master that mendicant and keep going. You should know of them: | T: evil desire overcomes that bhikkhu and persists, he should be understood thus:
+an10.24:2.13 | S: ‘This venerable does not have the understanding that would eliminate greed, so greed masters them and keeps going. | T: ‘This venerable one does not understand in such a way that he would have no greed; thus greed overcomes him and persists.
+an10.24:2.14 | S: They don’t have the understanding that would eliminate hate … | T: This venerable one does not understand in such a way that he would have no hatred …
+an10.24:2.15 | S: delusion … | T: no delusion …
+an10.24:2.16 | S: anger … | T: no anger …
+an10.24:2.17 | S: acrimony … | T: no hostility …
+an10.24:2.18 | S: disdain … | T: no denigration …
+an10.24:2.19 | S: contempt … | T: no insolence …
+an10.24:2.20 | S: stinginess … | T: no miserliness …
+an10.24:2.21 | S: nasty jealousy … | T: no evil envy …
+an10.24:2.22 | S: or corrupt wishes, so corrupt wishes master them and keep going.’ | T: no evil desire; thus evil desire overcomes him and persists.’
+an10.24:3.1 | S: A mendicant who makes a declaration of development says: | T: “Friends, making a declaration of development, a bhikkhu says:
+an10.24:3.2 | S: ‘I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:3.3 | S: Suppose that greed masters that mendicant and keeps going. | T: If, however, greed overcomes that bhikkhu and persists;
+an10.24:3.4 | S: Or that hate … | T: if hatred …
+an10.24:3.5 | S: delusion … | T: (none)
+an10.24:3.6 | S: anger … | T: (none)
+an10.24:3.7 | S: acrimony … | T: (none)
+an10.24:3.8 | S: disdain … | T: (none)
+an10.24:3.9 | S: contempt … | T: (none)
+an10.24:3.10 | S: stinginess … | T: (none)
+an10.24:3.11 | S: nasty jealousy … | T: (none)
+an10.24:3.12 | S: or corrupt wishes master that mendicant and keep going. You should know of them: | T: evil desire overcomes that bhikkhu and persists, he should be understood thus:
+an10.24:3.13 | S: ‘This venerable does not have the understanding that would eliminate greed, so greed masters them and keeps going. | T: ‘This venerable one does not understand in such a way that he would have no greed; thus greed overcomes him and persists.
+an10.24:3.14 | S: They don’t have the understanding that would eliminate hate … | T: This venerable one does not understand in such a way that he would have no hatred …
+an10.24:3.15 | S: delusion … | T: (none)
+an10.24:3.16 | S: anger … | T: (none)
+an10.24:3.17 | S: acrimony … | T: (none)
+an10.24:3.18 | S: disdain … | T: (none)
+an10.24:3.19 | S: contempt … | T: (none)
+an10.24:3.20 | S: stinginess … | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.24:3.21 | S: nasty jealousy … | T: (none)
+an10.24:3.22 | S: or corrupt wishes, so corrupt wishes master them and keep going.’ | T: no evil desire; thus evil desire overcomes him and persists.’
+an10.24:4.1 | S: A mendicant who makes a declaration of both knowledge and development says: | T: “Friends, making a declaration of knowledge and development, a bhikkhu says:
+an10.24:4.2 | S: ‘I know this teaching, I see this teaching. And I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I know this Dhamma, I see this Dhamma. I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:4.3 | S: Suppose that greed masters that mendicant and keeps going. | T: If, however, greed overcomes that bhikkhu and persists;
+an10.24:4.4 | S: Or that hate … | T: if hatred …
+an10.24:4.5 | S: delusion … | T: (none)
+an10.24:4.6 | S: anger … | T: (none)
+an10.24:4.7 | S: acrimony … | T: (none)
+an10.24:4.8 | S: disdain … | T: (none)
+an10.24:4.9 | S: contempt … | T: (none)
+an10.24:4.10 | S: stinginess … | T: (none)
+an10.24:4.11 | S: nasty jealousy … | T: (none)
+an10.24:4.12 | S: or corrupt wishes master that mendicant and keep going. You should know of them: | T: evil desire overcomes that bhikkhu and persists, he should be understood thus:
+an10.24:4.13 | S: ‘This venerable does not have the understanding that would eliminate greed, so greed masters them and keeps going. | T: ‘This venerable one does not understand in such a way that he would have no greed; thus greed overcomes him and persists.
+an10.24:4.14 | S: They don’t have the understanding that would eliminate hate … | T: This venerable one does not understand in such a way that he would have no hatred …
+an10.24:4.15 | S: delusion … | T: (none)
+an10.24:4.16 | S: anger … | T: (none)
+an10.24:4.17 | S: acrimony … | T: (none)
+an10.24:4.18 | S: disdain … | T: (none)
+an10.24:4.19 | S: contempt … | T: (none)
+an10.24:4.20 | S: stinginess … | T: (none)
+an10.24:4.21 | S: nasty jealousy … | T: (none)
+an10.24:4.22 | S: or corrupt wishes, so corrupt wishes master them and keep going.’ | T: no evil desire; thus evil desire overcomes him and persists.’
+an10.24:5.1 | S: Suppose a poor, needy, and penniless person was to declare themselves to be rich, affluent, and wealthy. | T: “Suppose a poor, destitute, and needy person claims to be rich, affluent, and wealthy.
+an10.24:5.2 | S: But when it came time to make a payment they weren’t able to come up with any money, grain, silver, or gold. | T: If, when he wants to buy something, he cannot pay with money, grain, silver, or gold,
+an10.24:5.3 | S: They would know of them: | T: (none)
+an10.24:5.4 | S: ‘This person declares themselves to be rich, affluent, and wealthy, but they are in fact poor, penniless, and needy.’ | T: they would know him as a poor, destitute, and needy person claiming to be rich, affluent, and wealthy.
+an10.24:5.5 | S: Why is that? | T: For what reason?
+an10.24:5.6 | S: Because when it came time to make a payment they weren’t able to come up with any money, grain, silver, or gold. | T: Because when he wants to buy something, he cannot pay with money, grain, silver, or gold.
+an10.24:6.1 | S: In the same way, a mendicant who makes a declaration of knowledge and development says: | T: “So too, friends, making a declaration of knowledge and development, a bhikkhu says:
+an10.24:6.2 | S: ‘I know this teaching, I see this teaching. And I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I know this Dhamma, I see this Dhamma. I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:6.3 | S: Suppose that greed masters that mendicant and keeps going. | T: If, however, greed overcomes that bhikkhu and persists …
+an10.24:6.4 | S: Or that hate … | T: (none)
+an10.24:6.5 | S: delusion … | T: (none)
+an10.24:6.6 | S: anger … | T: (none)
+an10.24:6.7 | S: acrimony … | T: (none)
+an10.24:6.8 | S: disdain … | T: (none)
+an10.24:6.9 | S: contempt … | T: (none)
+an10.24:6.10 | S: stinginess … | T: (none)
+an10.24:6.11 | S: nasty jealousy … | T: (none)
+an10.24:6.12 | S: or corrupt wishes master that mendicant and keep going. You should know of them: | T: evil desire overcomes that bhikkhu and persists, he should be understood thus:
+an10.24:6.13 | S: ‘This venerable does not have the understanding that would eliminate greed, so greed masters them and keeps going. | T: ‘This venerable one does not understand in such a way that he would have no greed; thus greed overcomes him and persists.
+an10.24:6.14 | S: They don’t have the understanding that would eliminate hate … | T: This venerable one does not understand in such a way that he would have no hatred …
+an10.24:6.15 | S: delusion … | T: (none)
+an10.24:6.16 | S: anger … | T: …
+an10.24:6.17 | S: acrimony … | T: (none)
+an10.24:6.18 | S: disdain … | T: (none)
+an10.24:6.19 | S: contempt … | T: (none)
+an10.24:6.20 | S: stinginess … | T: (none)
+an10.24:6.21 | S: nasty jealousy … | T: (none)
+an10.24:6.22 | S: or corrupt wishes, so corrupt wishes master them and keep going.’ | T: no evil desire; thus evil desire overcomes him and persists.’
+an10.24:7.1 | S: A mendicant who makes a declaration of knowledge says: | T: “Friends, making a declaration of knowledge, a bhikkhu says:
+an10.24:7.2 | S: ‘I know this teaching, I see this teaching.’ | T: ‘I know this Dhamma, I see this Dhamma.’
+an10.24:7.3 | S: Suppose that greed does not master that mendicant and keep going. | T: If greed does not overcome that bhikkhu and persist;
+an10.24:7.4 | S: Or that hate … | T: if hatred …
+an10.24:7.5 | S: delusion … | T: delusion …
+an10.24:7.6 | S: anger … | T: anger …
+an10.24:7.7 | S: acrimony … | T: hostility …
+an10.24:7.8 | S: disdain … | T: denigration …
+an10.24:7.9 | S: contempt … | T: insolence …
+an10.24:7.10 | S: stinginess … | T: miserliness …
+an10.24:7.11 | S: nasty jealousy … | T: evil envy …
+an10.24:7.12 | S: or corrupt wishes don’t master that mendicant and keep going. You should know of them: | T: evil desire does not overcome that bhikkhu and persist, he should be understood thus:
+an10.24:7.13 | S: ‘This venerable has the understanding that eliminates greed, so greed doesn’t master them and keep going. | T: ‘This venerable one understands in such a way that he has no greed; thus greed does not overcome him and persist.
+an10.24:7.14 | S: They have the understanding that eliminates hate … | T: This venerable one understands in such a way that he has no hatred …
+an10.24:7.15 | S: delusion … | T: (none)
+an10.24:7.16 | S: anger … | T: (none)
+an10.24:7.17 | S: acrimony … | T: (none)
+an10.24:7.18 | S: disdain … | T: (none)
+an10.24:7.19 | S: contempt … | T: (none)
+an10.24:7.20 | S: stinginess … | T: (none)
+an10.24:7.21 | S: nasty jealousy … | T: (none)
+an10.24:7.22 | S: and corrupt wishes, so corrupt wishes don’t master them and keep going.’ | T: no evil desire; thus evil desire does not overcome him and persist.’
+an10.24:8.1 | S: A mendicant who makes a declaration of development says: | T: “Friends, making a declaration of development, a bhikkhu says:
+an10.24:8.2 | S: ‘I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:8.3 | S: Suppose that greed does not master that mendicant and keep going. | T: If greed does not overcome that bhikkhu and persist;
+an10.24:8.4 | S: Or that hate … | T: if hatred …
+an10.24:8.5 | S: delusion … | T: (none)
+an10.24:8.6 | S: anger … | T: (none)
+an10.24:8.7 | S: acrimony … | T: (none)
+an10.24:8.8 | S: disdain … | T: (none)
+an10.24:8.9 | S: contempt … | T: (none)
+an10.24:8.10 | S: stinginess … | T: (none)
+an10.24:8.11 | S: nasty jealousy … | T: (none)
+an10.24:8.12 | S: or corrupt wishes don’t master that mendicant and keep going. You should know of them: | T: evil desire does not overcome that bhikkhu and persist, he should be understood thus:
+an10.24:8.13 | S: ‘This venerable has the understanding that eliminates greed, so greed doesn’t master them and keep going. | T: ‘This venerable one understands in such a way that he has no greed; thus greed does not overcome him and persist.
+an10.24:8.14 | S: They have the understanding that eliminates hate … | T: This venerable one understands in such a way that he has no hatred …
+an10.24:8.15 | S: delusion … | T: (none)
+an10.24:8.16 | S: anger … | T: (none)
+an10.24:8.17 | S: acrimony … | T: (none)
+an10.24:8.18 | S: disdain … | T: (none)
+an10.24:8.19 | S: contempt … | T: (none)
+an10.24:8.20 | S: stinginess … | T: (none)
+an10.24:8.21 | S: nasty jealousy … | T: (none)
+an10.24:8.22 | S: and corrupt wishes, so corrupt wishes don’t master them and keep going.’ | T: no evil desire; thus evil desire does not overcome him and persist.’
+an10.24:9.1 | S: A mendicant who makes a declaration of both knowledge and development says: | T: “Friends, making a declaration of knowledge and development, a bhikkhu says:
+an10.24:9.2 | S: ‘I know this teaching, I see this teaching. And I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I know this Dhamma, I see this Dhamma. I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:9.3 | S: Suppose that greed does not master that mendicant and keep going. | T: If greed does not overcome that bhikkhu and persist;
+an10.24:9.4 | S: Or that hate … | T: if hatred …
+an10.24:9.5 | S: delusion … | T: (none)
+an10.24:9.6 | S: anger … | T: (none)
+an10.24:9.7 | S: acrimony … | T: (none)
+an10.24:9.8 | S: disdain … | T: (none)
+an10.24:9.9 | S: contempt … | T: (none)
+an10.24:9.10 | S: stinginess … | T: (none)
+an10.24:9.11 | S: nasty jealousy … | T: (none)
+an10.24:9.12 | S: or corrupt wishes don’t master that mendicant and keep going. You should know of them: | T: evil desire does not overcome that bhikkhu and persist, he should be understood thus:
+an10.24:9.13 | S: ‘This venerable has the understanding that eliminates greed, so greed doesn’t master them and keep going. | T: ‘This venerable one understands in such a way that he has no greed; thus greed does not overcome him and persist.
+an10.24:9.14 | S: They have the understanding that eliminates hate … | T: This venerable one understands in such a way that he has no hatred …
+an10.24:9.15 | S: delusion … | T: (none)
+an10.24:9.16 | S: anger … | T: (none)
+an10.24:9.17 | S: acrimony … | T: (none)
+an10.24:9.18 | S: disdain … | T: (none)
+an10.24:9.19 | S: contempt … | T: (none)
+an10.24:9.20 | S: stinginess … | T: (none)
+an10.24:9.21 | S: nasty jealousy … | T: (none)
+an10.24:9.22 | S: and corrupt wishes, so corrupt wishes don’t master them and keep going.’ | T: no evil desire; thus evil desire does not overcome him and persist.’
+an10.24:10.1 | S: Suppose a rich, affluent, and wealthy person was to declare themselves to be rich, affluent, and wealthy. | T: “Suppose a rich, affluent, and wealthy person claims to be rich, affluent, and wealthy.
+an10.24:10.2 | S: And whenever it came time to make a payment they were able to come up with the money, grain, silver, or gold. | T: If, when he wants to buy something, he can pay with money, grain, silver, or gold,
+an10.24:10.3 | S: They would know of them: | T: (none)
+an10.24:10.4 | S: ‘This person declares themselves to be rich, affluent, and wealthy, and they are in fact rich, affluent, and wealthy.’ | T: they would know him as a rich, affluent, and wealthy person who claims to be rich, affluent, and wealthy.
+an10.24:10.5 | S: Why is that? | T: For what reason?
+an10.24:10.6 | S: Because when it came time to make a payment they were able to come up with the money, grain, silver, or gold. | T: Because when he wants to buy something, he can pay with money, grain, silver, or gold.
+an10.24:11.1 | S: In the same way, a mendicant who makes a declaration of knowledge and development says: | T: “So too, friends, making a declaration of knowledge and development, a bhikkhu says:
+an10.24:11.2 | S: ‘I know this teaching, I see this teaching. And I am developed in physical endurance, ethics, mind, and wisdom.’ | T: ‘I know this Dhamma, I see this Dhamma. I am developed in body, virtuous behavior, mind, and wisdom.’
+an10.24:11.3 | S: Suppose that greed does not master that mendicant and keep going. | T: If greed does not overcome that bhikkhu and persist;
+an10.24:11.4 | S: Or that hate … | T: if hatred …
+an10.24:11.5 | S: delusion … | T: delusion …
+an10.24:11.6 | S: anger … | T: anger …
+an10.24:11.7 | S: acrimony … | T: hostility …
+an10.24:11.8 | S: disdain … | T: denigration …
+an10.24:11.9 | S: contempt … | T: insolence …
+an10.24:11.10 | S: stinginess … | T: miserliness …
+an10.24:11.11 | S: nasty jealousy … | T: evil envy …
+an10.24:11.12 | S: or corrupt wishes don’t master that mendicant and keep going. You should know of them: | T: evil desire does not overcome that bhikkhu and persist, he should be understood thus:
+an10.24:11.13 | S: ‘This venerable has the understanding that eliminates greed, so greed doesn’t master them and keep going. | T: ‘This venerable one understands in such a way that he has no greed; thus greed does not overcome him and persist.
+an10.24:11.14 | S: They have the understanding that eliminates hate … | T: This venerable one understands in such a way that he has no hatred …
+an10.24:11.15 | S: delusion … | T: (none)
+an10.24:11.16 | S: anger … | T: (none)
+an10.24:11.17 | S: acrimony … | T: (none)
+an10.24:11.18 | S: disdain … | T: (none)
+an10.24:11.19 | S: contempt … | T: (none)
+an10.24:11.20 | S: stinginess … | T: (none)
+an10.24:11.21 | S: nasty jealousy … | T: (none)
+an10.24:11.22 | S: and corrupt wishes, so corrupt wishes don’t master them and keep going.’” | T: no evil desire; thus evil desire does not overcome him and persist.’”
+an10.24:11.23 | P: Catutthaṁ. | T: (none)
+
+## sn45.139
+sn45.139:1.1 | S: At Sāvatthī. | T: At Savatthī.
+sn45.139:1.2 | S: “Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: “Bhikkhus, whatever beings there are—whether those without feet or those with two feet or those with four feet or those with many feet, whether consisting of form or formless, whether percipient, nonpercipient, or neither percipient nor nonpercipient—the Tathagata, the Arahant, the Perfectly Enlightened One, is declared to be the chief among them.
+sn45.139:1.3 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, | T: So too, whatever wholesome states there are, they are all rooted in diligence, converge upon diligence,
+sn45.139:1.4 | S: and diligence is said to be the best of them. | T: and diligence is declared to be the chief among them.
+sn45.139:1.5 | S: A mendicant who is diligent can expect to develop and cultivate the noble eightfold path. | T: When a bhikkhu is diligent, it is to be expected that he will develop and cultivate the Noble Eightfold Path.
+sn45.139:1.6 | S: And how does a mendicant who is diligent develop and cultivate the noble eightfold path? | T: “And how, bhikkhus, does a bhikkhu who is diligent develop and cultivate the Noble Eightfold Path?
+sn45.139:1.7 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which rely on seclusion, fading away, and cessation, and ripen as letting go. | T: Here, bhikkhus, a bhikkhu develops right view … right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release.
+sn45.139:1.8 | S: That’s how a mendicant who is diligent develops and cultivates the noble eightfold path. | T: It is in this way, bhikkhus, that a bhikkhu who is diligent develops and cultivates the Noble Eightfold Path.”
+sn45.139:2.1 | S: Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: (none)
+sn45.139:2.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: (none)
+sn45.139:2.3 | S: A mendicant who is diligent can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.139:2.4 | S: And how does a mendicant who is diligent develop and cultivate the noble eightfold path? | T: …
+sn45.139:2.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which culminate in the removal of greed, hate, and delusion. | T: “Here, bhikkhus, a bhikkhu develops right view … right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion….”
+sn45.139:2.6 | S: That’s how a mendicant who is diligent develops and cultivates the noble eightfold path. | T: …
+sn45.139:3.1 | S: Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: (none)
+sn45.139:3.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, and diligence is said to be the best of them. | T: (none)
+sn45.139:3.3 | S: A mendicant who is diligent can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.139:3.4 | S: And how does a mendicant who is diligent develop and cultivate the noble eightfold path? | T: (none)
+sn45.139:3.5 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, whose objective, destination, and culmination is freedom from death. | T: “Here, bhikkhus, a bhikkhu develops right view … right concentration, which has the Deathless as its ground, the Deathless as its destination, the Deathless as its final goal….”
+sn45.139:3.6 | S: That’s how a mendicant who is diligent develops and cultivates the noble eightfold path. | T: (none)
+sn45.139:4.1 | S: Mendicants, the Realized One, the perfected one, the fully awakened Buddha, is said to be the best of all sentient beings—be they footless, with two feet, four feet, or many feet; with form or formless; with perception or without perception or with neither perception nor non-perception. | T: (none)
+sn45.139:4.2 | S: In the same way, all skillful qualities are rooted in diligence and meet at diligence, | T: (none)
+sn45.139:4.3 | S: and diligence is said to be the best of them. | T: …
+sn45.139:4.4 | S: A mendicant who is diligent can expect to develop and cultivate the noble eightfold path. | T: (none)
+sn45.139:4.5 | S: And how does a mendicant who is diligent develop and cultivate the noble eightfold path? | T: (none)
+sn45.139:4.6 | S: It’s when a mendicant develops right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion, which slants, slopes, and inclines to extinguishment. | T: “Here, bhikkhus, a bhikkhu develops right view … right concentration, which slants, slopes, and inclines towards Nibbāna….”
+sn45.139:4.7 | S: That’s how a mendicant who is diligent develops and cultivates the noble eightfold path.” | T: Each of the following suttas, §§140–148, is to be elaborated in accordance with the fourfold method of §139.
+sn45.139:4.8 | P: Paṭhamaṁ. | T: (none)
+
+## sn47.43
+sn47.43:1.1 | S: At Sāvatthī. | T: At Savatthi.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn47.43:1.2 | S: There the Buddha addressed the mendicants: | T: There the Blessed One addressed the bhikkhus thus:
+sn47.43:1.3 | S: “Mendicants, this one time, when I was first awakened, I was staying in Uruvelā at the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: “Bhikkhus, on one occasion I was dwelling at Uruvela on the bank of the river Nerañjara under the Goatherd’s Banyan Tree just after I became fully enlightened.
+sn47.43:1.4 | S: As I was in private retreat this thought came to mind: | T: Then, while I was alone in seclusion, a reflection arose in my mind thus:
+sn47.43:1.5 | S: ‘The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. | T: ‘This is the one-way path for the purification of beings, for the overcoming of sorrow and lamentation … as in §18 … that is, the four establishments of mindfulness.’
+sn47.43:2.1 | S: What four? | T: (none)
+sn47.43:2.2 | S: A mendicant would meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.43:2.3 | S: Or they’d meditate observing an aspect of feelings … | T: (none)
+sn47.43:2.4 | S: or mind … | T: (none)
+sn47.43:2.5 | S: or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.43:2.6 | S: The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ | T: (none)
+sn47.43:3.1 | S: And then the divinity Sahampati, knowing my train of thought, as easily as a strong person would extend or contract their arm, vanished from the realm of divinity and reappeared in front of me. | T: “Then, bhikkhus, Brahma Sahampati, having known with his own mind the reflection in my mind, just as quickly as a strong man might extend his drawn-in arm or draw in his extended arm, disappeared from the brahma world and reappeared before me.
+sn47.43:3.2 | S: He arranged his robe over one shoulder, raised his joined palms toward me, and said: | T: He arranged his upper robe over one shoulder, extended his joined hands towards me in reverential salutation, and said to me:
+sn47.43:3.3 | S: ‘That’s so true, Blessed One! That’s so true, Holy One! | T: ‘So it is, Blessed One! So it is, Fortunate One!
+sn47.43:3.4 | S: Sir, the four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. | T: Venerable sir, this is the one-way path for the purification of beings … … that is, the four establishments of mindfulness.’
+sn47.43:4.1 | S: What four? | T: (none)
+sn47.43:4.2 | S: A mendicant would meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.43:4.3 | S: Or they’d meditate observing an aspect of feelings … | T: (none)
+sn47.43:4.4 | S: or mind … | T: (none)
+sn47.43:4.5 | S: or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.43:4.6 | S: The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ | T: (none)
+sn47.43:5.1 | S: That is what the divinity Sahampati said. | T: “This, bhikkhus, is what Brahma Sahampati said.
+sn47.43:5.2 | S: Then he went on to say: | T: Having said this, he further said this:
+sn47.43:6.1 | S: ‘The compassionate one, <j>who sees the ending of rebirth, | T: “‘The seer of the destruction of birth, Compassionate,
+sn47.43:6.2 | S: understands the path to convergence. | T: knows the one-way path
+sn47.43:6.3 | S: By this path people crossed over before, | T: By which in the past they crossed the flood,
+sn47.43:6.4 | S: will cross over, and are crossing over.’” | T: By which they will cross and cross over now.’”
+sn47.43:6.5 | P: Tatiyaṁ. | T: (none)
+
+## sn12.62
+sn12.62:1.1 | S: At Sāvatthī. | T: This sutta is identical with the preceding one from the opening down to the monkey simile. It then omits the monkey simile and continues as follows:
+sn12.62:1.2 | S: “Mendicants, an unlearned ordinary person might become disillusioned, dispassionate, and freed from this body made up of the four principal states. | T: (none)
+sn12.62:1.3 | S: Why is that? | T: (none)
+sn12.62:1.4 | S: This body made up of the four principal states is seen to accumulate and disperse, to be taken up and laid to rest. | T: (none)
+sn12.62:1.5 | S: That’s why an unlearned ordinary person might become disillusioned, dispassionate, and freed from it. | T: (none)
+sn12.62:1.6 | S: But an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’. | T: (none)
+sn12.62:1.7 | S: Why is that? | T: (none)
+sn12.62:1.8 | S: Because for a long time they’ve been attached to it, thought of it as their own, and mistaken it: | T: (none)
+sn12.62:1.9 | S: ‘This is mine, I am this, this is my self.’ | T: (none)
+sn12.62:1.10 | S: That’s why an unlearned ordinary person is unable to become disillusioned, dispassionate, or freed from it. | T: (none)
+sn12.62:2.1 | S: But an unlearned ordinary person would be better off taking this body made up of the four principal states to be their self, rather than the mind. | T: (none)
+sn12.62:2.2 | S: Why is that? | T: (none)
+sn12.62:2.3 | S: This body made up of the four principal states is seen to last for a year, or for two, three, four, five, ten, twenty, thirty, forty, fifty, or a hundred years, or even longer. | T: (none)
+sn12.62:2.4 | S: But that which is called ‘mind’ and also ‘sentience’ and also ‘consciousness’ arises as one thing and ceases as another all day and all night. | T: (none)
+sn12.62:3.1 | S: In this case, a learned noble disciple carefully and rationally applies the mind to dependent origination itself: | T: “Therein, bhikkhus, the instructed noble disciple attends closely and carefully to dependent origination itself thus:
+sn12.62:3.2 | S: ‘So, when this exists, this comes to be; due to the arising of this, this arises. | T: ‘When this exists, that comes to be; with the arising of this, that arises.
+sn12.62:3.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases.’ | T: When this does not exist, that does not come to be; with the cessation of this, that ceases.’
+sn12.62:3.4 | S: Pleasant feeling arises dependent on a contact to be experienced as pleasant. | T: Bhikkhus, in dependence on a contact to be experienced as pleasant, a pleasant feeling arises.
+sn12.62:3.5 | S: With the cessation of that contact to be experienced as pleasant, the corresponding pleasant feeling ceases and stops. | T: With the cessation of that contact to be experienced as pleasant, the corresponding feeling—the pleasant feeling that arose in dependence on that contact to be experienced as pleasant—ceases and subsides.
+sn12.62:3.6 | S: Painful feeling arises dependent on a contact to be experienced as painful. | T: In dependence on a contact to be experienced as painful, a painful feeling arises.
+sn12.62:3.7 | S: With the cessation of that contact to be experienced as painful, the corresponding painful feeling ceases and stops. | T: With the cessation of that contact to be experienced as painful, the corresponding feeling—the painful feeling that arose in dependence on that contact to be experienced as painful—ceases and subsides.
+sn12.62:3.8 | S: Neutral feeling arises dependent on a contact to be experienced as neutral. | T: In dependence on a contact to be experienced as neither-painful-nor-pleasant, a neither-painful-nor-pleasant feeling arises.
+sn12.62:3.9 | S: With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops. | T: With the cessation of that contact to be experienced as neither-painful-nor-pleasant, the corresponding feeling—the neither-painful-nor-pleasant feeling that arose in dependence on that contact to be experienced as neither-painful-nor-pleasant—ceases and subsides.
+sn12.62:4.1 | S: When you rub two sticks together, heat is generated and fire is produced. But when you part the sticks and lay them aside, any corresponding heat ceases and stops. | T: “Bhikkhus, just as heat is generated and fire is produced from the conjunction and friction of two fire-sticks, but with the separation and laying aside of the sticks the resultant heat ceases and subsides;
+sn12.62:4.2 | S: In the same way, pleasant feeling arises dependent on a contact to be experienced as pleasant. | T: so too, in dependence on a contact to be experienced as pleasant…
+sn12.62:4.3 | S: With the cessation of that contact to be experienced as pleasant, the corresponding pleasant feeling ceases and stops. | T: (none)
+sn12.62:4.4 | S: Painful feeling … | T: acontact to be experienced as painful…
+sn12.62:4.5 | S: Neutral feeling arises dependent on a contact to be experienced as neutral. | T: a contact to be experienced as neither-painful-nor-pleasant, a neither-painful-nor-pleasant feeling arises….
+sn12.62:4.6 | S: With the cessation of that contact to be experienced as neutral, the corresponding neutral feeling ceases and stops. | T: With the cessation of that contact to be experienced as neither-painful-nor-pleasant, the corresponding feeling … ceases and subsides.
+sn12.62:5.1 | S: Seeing this, a learned noble disciple grows disillusioned with contact, feeling, perception, choices, and consciousness. | T: “Seeing thus, bhikkhus, the instructed noble disciple experiences revulsion towards contact, revulsion towards feeling, revulsion towards perception, revulsion towards volitional formations, revulsion towards consciousness.
+sn12.62:5.2 | S: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. | T: Experiencing revulsion, he becomes dispassionate. Through dispassion his mind is liberated. When it is liberated there comes the knowledge: ‘It’s liberated.’
+sn12.62:5.3 | S: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’” | T: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.’”
+sn12.62:5.4 | P: Dutiyaṁ. | T: (none)
+
+## sn22.38
+sn22.38:1.1 | S: At Sāvatthī. | T: At Savatthi….
+sn22.38:1.2 | S: Sitting to one side, the Buddha said to Ānanda: | T: The Blessed One then said to the Venerable Ānanda as he was sitting to one side:
+sn22.38:2.1 | S: “Ānanda, suppose they were to ask you: | T: “If, Ānanda, they were to ask you:
+sn22.38:2.2 | S: ‘Reverend Ānanda, what are the things for which arising, vanishing, and change while persisting were evident? | T: ‘Friend Ānanda, what are the things of which an arising was discerned, a vanishing was discerned, an alteration of that which stands was discerned?
+sn22.38:2.3 | S: What are the things for which arising, vanishing, and change while persisting will be evident? | T: What are the things of which an arising will be discerned, a vanishing will be discerned, an alteration of that which stands will be discerned?
+sn22.38:2.4 | S: What are the things for which arising, vanishing, and change while persisting are evident?’ | T: What are the things of which an arising is discerned, a vanishing is discerned, an alteration of that which stands is discerned?’—
+sn22.38:2.5 | S: How would you answer?” | T: being asked thus, Ānanda, how would you answer?”
+sn22.38:2.6 | S: “Sir, suppose they were to ask me: | T: “Venerable sir, if they were to ask me this,
+sn22.38:2.7 | S: ‘Reverend Ānanda, what are the things for which arising, vanishing, and change while persisting were evident? | T: (none)
+sn22.38:2.8 | S: What are the things for which arising, vanishing, and change while persisting will be evident? | T: (none)
+sn22.38:2.9 | S: What are the things for which arising, vanishing, and change while persisting are evident?’ | T: (none)
+sn22.38:2.10 | S: I’d answer like this: | T: I would answer thus:
+sn22.38:2.11 | S: ‘Whatever form has passed, ceased, and perished, | T: ‘Friends, with form that has passed, ceased, changed,
+sn22.38:2.12 | S: its arising, vanishing, and change while persisting were evident. | T: an arising was discerned, a vanishing was discerned, an alteration of that which stands was discerned.
+sn22.38:2.13 | S: Whatever feeling … | T: With feeling …
+sn22.38:2.14 | P: tassā uppādo paññāyittha, vayo paññāyittha, ṭhitāya aññathattaṁ paññāyittha. | T: (none)
+sn22.38:2.15 | S: perception … | T: perception …
+sn22.38:2.16 | S: choices … | T: volitional formations …
+sn22.38:2.17 | P: tesaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. | T: (none)
+sn22.38:2.18 | S: consciousness has passed, ceased, and perished, | T: consciousness that has passed, ceased, changed,
+sn22.38:2.19 | S: its arising, vanishing, and change while persisting were evident. | T: an arising was discerned, a vanishing was discerned, an alteration of that which stands was discerned.
+sn22.38:2.20 | S: These are the things for which arising, vanishing, and change while persisting were evident. | T: It is of these things, friends, that an arising was discerned, that a vanishing was discerned, that an alteration of that which stands was discerned.
+sn22.38:3.1 | S: Whatever form is not yet born, and has not yet appeared, | T: “‘Friends, with form that has not been born, not become manifest,
+sn22.38:3.2 | S: its arising, vanishing, and change while persisting will be evident. | T: an arising will be discerned, a vanishing will be discerned, an alteration of that which stands will be discerned.
+sn22.38:3.3 | S: Whatever feeling … | T: With feeling …
+sn22.38:3.4 | P: tassā uppādo paññāyissati, vayo paññāyissati, ṭhitāya aññathattaṁ paññāyissati. | T: (none)
+sn22.38:3.5 | S: perception … | T: perception …
+sn22.38:3.6 | S: choices … | T: volitional formations …
+sn22.38:3.7 | P: tesaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati. | T: (none)
+sn22.38:3.8 | S: consciousness is not yet born, and has not yet appeared, | T: consciousness that has not been born, not become manifest,
+sn22.38:3.9 | S: its arising, vanishing, and change while persisting will be evident. | T: an arising will be discerned, a vanishing will be discerned, an alteration of that which stands will be discerned.
+sn22.38:3.10 | S: These are the things for which arising, vanishing, and change while persisting will be evident. | T: It is of these things, friends, that an arising will be discerned, that a vanishing will be discerned, that an alteration of that which stands will be discerned.
+sn22.38:4.1 | S: Whatever form has been born, and has appeared, | T: “‘Friends, with form that has been born, that has become manifest,
+sn22.38:4.2 | S: its arising, vanishing, and change while persisting is evident. | T: an arising is discerned, a vanishing is discerned, an alteration of that which stands is discerned.
+sn22.38:4.3 | S: Whatever feeling … | T: With feeling …
+sn22.38:4.4 | S: perception … | T: perception …
+sn22.38:4.5 | S: choices … | T: volitional formations …
+sn22.38:4.6 | P: tesaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyati. | T: (none)
+sn22.38:4.7 | S: consciousness has been born, and has appeared, its arising, vanishing, and change while persisting are evident. | T: consciousness that has been born, that has become manifest, an arising is discerned, a vanishing is discerned, an alteration of that which stands is discerned.
+sn22.38:4.8 | S: These are the things for which arising is evident, vanishing is evident, and change while persisting is evident.’ | T: It is of these things, friends, that an arising is discerned, that a vanishing is discerned, that an alteration of that which stands is discerned.’
+sn22.38:4.9 | S: That’s how I’d answer such a question.” | T: “Being asked thus, venerable sir, I would answer in such a way.”
+sn22.38:5.1 | S: “Good, good, Ānanda. | T: “Good, good, Ānanda!”
+sn22.38:5.2 | S: Whatever form has passed, ceased, and perished, | T: (none)
+sn22.38:5.3 | S: its arising, vanishing, and change while persisting were evident. | T: (none)
+sn22.38:5.4 | S: Whatever feeling … | T: (none)
+sn22.38:5.5 | S: perception … | T: (none)
+sn22.38:5.6 | S: choices … | T: (none)
+sn22.38:5.7 | S: consciousness has passed, ceased, and perished, | T: (none)
+sn22.38:5.8 | S: its arising, vanishing, and change while persisting were evident. | T: (none)
+sn22.38:5.9 | S: These are the things for which arising, vanishing, and change while persisting were evident. | T: (none)
+sn22.38:6.1 | S: Whatever form is not yet born, and has not yet appeared, | T: (none)
+sn22.38:6.2 | S: its arising, vanishing, and change while persisting will be evident. | T: (none)
+sn22.38:6.3 | S: Whatever feeling … | T: (none)
+sn22.38:6.4 | S: perception … | T: (none)
+sn22.38:6.5 | S: choices … | T: (none)
+sn22.38:6.6 | S: consciousness is not yet born, and has not yet appeared, | T: (none)
+sn22.38:6.7 | S: its arising, vanishing, and change while persisting will be evident. | T: (none)
+sn22.38:6.8 | S: These are the things for which arising, vanishing, and change while persisting will be evident. | T: (none)
+sn22.38:7.1 | S: Whatever form has been born, and has appeared, | T: (none)
+sn22.38:7.2 | S: its arising, vanishing, and change while persisting are evident. | T: (none)
+sn22.38:7.3 | S: Whatever feeling … | T: (none)
+sn22.38:7.4 | S: perception … | T: (none)
+sn22.38:7.5 | S: choices … | T: (none)
+sn22.38:7.6 | S: consciousness has been born, and has appeared, | T: (none)
+sn22.38:7.7 | S: its arising, vanishing, and change while persisting are evident. | T: (none)
+sn22.38:7.8 | S: These are the things for which arising is evident, vanishing is evident, and change while persisting is evident. | T: (none)
+sn22.38:7.9 | S: That’s how you should answer such a question.” | T: The Buddha here repeats the entire answer of the Venerable Ānanda, concluding: “Being asked thus, Ānanda, you should answer in such a way.”
+sn22.38:7.10 | P: Chaṭṭhaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '541,720p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-006.findings.tmp <<'EOF'
+an10.24:5.3 starts: they would know him as a poor,
+an10.24:5.4 starts: a poor, destitute, and needy person claiming
+an10.24:10.3 starts: they would know him as a rich,
+an10.24:10.4 starts: a rich, affluent, and wealthy person who
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+4 lines reported.
+tokens used
+24,421
+4 lines reported.

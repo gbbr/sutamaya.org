@@ -1,0 +1,352 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9b-5b60-72a2-9db6-70a249fee7fb
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch, check for clear line-boundary shifts, and write the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an5.114
+an5.114:1.1 | S: At one time the Buddha was staying in the land of the Magadhans at Andhakavinda. | T: On one occasion the Blessed One was staying among the Magadhans at Andhakavinda.
+an5.114:1.2 | S: Then Venerable Ānanda went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Ven. Ānanda went to him and, having bowed down to him, sat to one side. As he was sitting there, the Blessed One said to him,
+an5.114:2.1 | S: “Ānanda, those mendicants who are junior, recently gone forth, newly come to this teaching and training should be encouraged, supported, and established in five things. | T: “Ānanda, the new monks—those who have not long gone forth, who are newcomers in this Dhamma & Vinaya—should be encouraged, exhorted, and established in these five things.
+an5.114:2.2 | S: What five? | T: Which five?
+an5.114:2.3 | S: They should be encouraged, supported, and established in restraint in the monastic code: ‘Reverends, please be ethical. Live restrained in the monastic code, conducting yourselves well and resorting for alms in suitable places. Seeing danger in the slightest fault, keep the rules you’ve undertaken.’ | T: “‘Come, friends, be virtuous. Dwell restrained in accordance with the Pāṭimokkha, consummate in your behavior & sphere of activity. Train yourselves, having undertaken the training rules, seeing danger in the slightest faults.’ Thus they should be encouraged, exhorted, & established in restraint in accordance with the Pāṭimokkha.
+an5.114:3.1 | S: They should be encouraged, supported, and established in sense restraint: ‘Reverends, please live with sense doors guarded, mindfully alert and on guard, with protected mind, having a heart protected by mindfulness.’ | T: “‘Come, friends, dwell with your sense faculties guarded, with mindfulness as your protector, with mindfulness as your chief, with your intellect self-protected, endowed with an awareness protected by mindfulness.’ Thus they should be encouraged, exhorted, & established in restraint of the senses.
+an5.114:4.1 | S: They should be encouraged, supported, and established in limiting their speech: ‘Reverends, please speak little. Put a limit on your speech.’ | T: “‘Come, friends, speak only a little, place limits on your conversation.’ Thus they should be encouraged, exhorted, & established in limited conversation.
+an5.114:5.1 | S: They should be encouraged, supported, and established in retreat: ‘Reverends, please live in the wilderness. Frequent remote lodgings in the wilderness and the forest.’ | T: “‘Come, friends, dwell in the wilderness. Resort to remote wilderness & forest dwellings.’ Thus they should be encouraged, exhorted, & established in physical seclusion.
+an5.114:6.1 | S: They should be encouraged, supported, and established in right perspective: ‘Reverends, please hold right view and have right perspective.’ | T: “Come, friends, develop right view. Be endowed with right vision.’ Thus they should be encouraged, exhorted, & established in right vision.
+an5.114:6.2 | S: Those mendicants who are junior, recently gone forth, newly come to this teaching and training should be encouraged, supported, and established by you in these five things.” | T: “New monks—those who have not long gone forth, who are newcomers in this Dhamma & Vinaya—should be encouraged, exhorted, and established in these five things.”
+an5.114:6.3 | P: Catutthaṁ. | T: (none)
+
+## an5.121
+an5.121:1.1 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: I have heard that on one occasion the Blessed One was staying near Vesālī in the Gabled Hall at the Great Forest.
+an5.121:1.2 | S: Then in the late afternoon, the Buddha came out of retreat and went to the infirmary, where | T: Then, on emerging from his seclusion in the late afternoon, he went to the sick ward,
+an5.121:1.3 | S: he saw a certain mendicant who was weak and sick. | T: where he saw a monk who was weak & sickly.
+an5.121:1.4 | S: He sat down on the seat spread out, | T: Seeing him, he sat down on a prepared seat.
+an5.121:1.5 | S: and addressed the mendicants: | T: Having sat down there, he addressed the monks:
+an5.121:2.1 | S: “Mendicants, if a weak and sick mendicant does not neglect five things, it can be expected that | T: “When these five things don’t leave a monk who is weak & sickly, it can be expected of him that,
+an5.121:2.2 | S: they will soon realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements. | T: before long—with the ending of the effluents—he will enter & remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.
+an5.121:3.1 | S: What five? | T: Which five?
+an5.121:3.2 | S: It’s when a mendicant meditates observing the ugliness of the body, perceives the repulsiveness of food, perceives dissatisfaction with the whole world, observes the impermanence of all conditions, and has well established the perception of their own death. | T: “There is the case where a monk [1] remains focused on unattractiveness with regard to the body, [2] is percipient of loathsomeness in food, [3] is percipient of distaste with regard to every world, [4] remains focused on inconstancy with regard to all fabrications. [5] The perception of death is well established within him.
+an5.121:3.3 | S: If a weak and sick mendicant does not neglect these five things, it can be expected that | T: “When these five things don’t leave a monk who is weak & sickly, it can be expected of him that,
+an5.121:3.4 | S: they will soon realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements.” | T: before long—with the ending of the effluents—he will enter & remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.”
+an5.121:3.5 | P: Paṭhamaṁ. | T: (none)
+
+## an5.129
+an5.129:1.1 | S: “Mendicants, these five fatal wounds lead to a place of loss, to hell. | T: “There are these five inhabitants of the states of deprivation, inhabitants of hell, who are in agony & incurable.
+an5.129:1.2 | S: What five? | T: Which five?
+an5.129:1.3 | S: Murdering your mother or father or a perfected one; maliciously shedding the blood of a Realized One; and causing a schism in the Saṅgha. | T: One who has killed his/her mother, one who has killed his/her father, one who has killed an arahant, one who—with a corrupted mind—has caused the blood of a Tathāgata to flow, and one who has caused a split in the Saṅgha.
+an5.129:1.4 | S: These five fatal wounds lead to a place of loss, to hell.” | T: These are the five inhabitants of the states of deprivation, inhabitants of hell, who are in agony & incurable.”
+an5.129:1.5 | P: Navamaṁ. | T: (none)
+
+## an5.130
+an5.130:1.1 | S: “Mendicants, there are these five losses. | T: “Monks, there are these five kinds of loss.
+an5.130:1.2 | S: What five? | T: Which five?
+an5.130:1.3 | S: Loss of relatives, wealth, health, ethics, and view. | T: Loss of relatives, loss of wealth, loss through disease, loss in terms of virtue, loss in terms of views.
+an5.130:1.4 | S: It is not because of loss of relatives, wealth, or health that sentient beings, when their body breaks up, after death, are reborn in a place of loss, a bad place, the underworld, hell. | T: It’s not by reason of loss of relatives, loss of wealth, or loss through disease that beings—with the break-up of the body, after death—reappear in a plane of deprivation, a bad destination, a lower realm, hell.
+an5.130:1.5 | S: It is because of loss of ethics or view that sentient beings, when their body breaks up, after death, are reborn in a place of loss, a bad place, the underworld, hell. | T: It’s by reason of loss in terms of virtue and loss in terms of views that beings—with the break-up of the body, after death—reappear in a plane of deprivation, a bad destination, a lower realm, hell.
+an5.130:1.6 | S: These are the five losses. | T: These are the five kinds of loss.
+an5.130:2.1 | S: There are these five endowments. | T: “There are these five ways of being consummate.
+an5.130:2.2 | S: What five? | T: Which five?
+an5.130:2.3 | S: Endowment with relatives, wealth, health, ethics, and view. | T: Being consummate in terms of relatives, being consummate in terms of wealth, being consummate in terms of freedom from disease, being consummate in terms of virtue, being consummate in terms of views.
+an5.130:2.4 | S: It is not because of endowment with relatives, wealth, or health that sentient beings, when their body breaks up, after death, are reborn in a good place, a heavenly realm. | T: It’s not by reason of being consummate in terms of relatives, being consummate in terms of wealth, or being consummate in terms of freedom from disease that beings—with the break-up of the body, after death—reappear in a good destination, a heavenly world.
+an5.130:2.5 | S: It is because of endowment with ethics or view that sentient beings, when their body breaks up, after death, are reborn in a good place, a heavenly realm. | T: It’s by reason of being consummate in virtue and being consummate in terms of views that beings—with the break-up of the body, after death—reappear in a good destination, a heavenly world.
+an5.130:2.6 | S: These are the five endowments.” | T: These are the five ways of being consummate.”
+an5.130:2.7 | P: Dasamaṁ. | T: (none)
+an5.130:2.8 | P: Gilānavaggo tatiyo. | T: (none)
+an5.130:3.0 | P: Tassuddānaṁ | T: (none)
+an5.130:3.1 | P: Gilāno satisūpaṭṭhi, | T: (none)
+an5.130:3.2 | P: Dve upaṭṭhākā duvāyusā; | T: (none)
+an5.130:3.3 | P: Vapakāsasamaṇasukhā, | T: (none)
+an5.130:3.4 | P: Parikuppaṁ byasanena cāti. | T: (none)
+
+## an5.137
+an5.137:1.1 | S: “Mendicants, these five sleep little at night, staying mostly awake. | T: “Monks, these five get little sleep at night, and are mostly awake.
+an5.137:1.2 | S: What five? | T: Which five?
+an5.137:1.3 | S: A woman longing for a man. | T: A woman intent on a man gets little sleep at night, and is mostly awake.
+an5.137:1.4 | S: A man longing for a woman. | T: A man intent on a woman gets little sleep at night, and is mostly awake.
+an5.137:1.5 | S: A thief longing for their loot. | T: A thief intent on theft gets little sleep at night, and is mostly awake.
+an5.137:1.6 | S: A king busy with his duties. | T: A king fettered by royal duties gets little sleep at night, and is mostly awake.
+an5.137:1.7 | S: A mendicant longing for freedom from the yoke. | T: A monk intent on becoming unfettered gets little sleep at night, and is mostly awake.
+an5.137:1.8 | S: These five sleep little at night, staying mostly awake.” | T: “These five, monks, get little sleep at night, and are mostly awake.”
+an5.137:1.9 | P: Sattamaṁ. | T: (none)
+
+## an5.139
+an5.139:1.1 | S: “Mendicants, a royal bull elephant with five factors is not worthy of a king, not fit to serve a king, and is not reckoned a factor of kingship. | T: “Endowed with five qualities, monks, a king’s elephant is not worthy of a king, is not a king’s asset, does not count as a very limb of his king.
+an5.139:1.2 | S: What five? | T: Which five?
+an5.139:1.3 | S: It’s when a royal bull elephant can’t endure sights, sounds, smells, tastes, and touches. | T: There is the case where a king’s elephant is not resilient to sights, not resilient to sounds, not resilient to aromas, not resilient to flavors, not resilient to tactile sensations.
+an5.139:2.1 | S: And how is it that a royal bull elephant can’t endure sights? | T: “And how is a king’s elephant not resilient to sights?
+an5.139:2.2 | S: It’s when a royal bull elephant gone to battle falters and founders at the sight of a division of elephants, of cavalry, of chariots, or of infantry. It doesn’t stay firm, and fails to plunge into battle. | T: There is the case where a king’s elephant, having gone into battle, sees a troop of elephants, a troop of cavalry, a troop of chariots, a troop of foot soldiers, and so he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.139:2.3 | S: That’s how a royal bull elephant can’t endure sights. | T: This is how a king’s elephant is not resilient to sights.
+an5.139:3.1 | S: And how is it that a royal bull elephant can’t endure sounds? | T: “And how is a king’s elephant not resilient to sounds?
+an5.139:3.2 | S: It’s when a royal bull elephant gone to battle falters and founders at the sound of a division of elephants, of cavalry, of chariots, or of infantry, or the thunder of the drums, kettledrums, horns, and cymbals. It doesn’t stay firm, and fails to plunge into battle. | T: There is the case where a king’s elephant, having gone into battle, hears the sound of elephants, the sound of cavalry, the sound of chariots, the sound of foot soldiers, the resounding din of drums, cymbals, conchs, & tom-toms, and so he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.139:3.3 | S: That’s how a royal bull elephant can’t endure sounds. | T: This is how a king’s elephant is not resilient to sounds.
+an5.139:4.1 | S: And how is it that a royal bull elephant can’t endure smells? | T: “And how is a king’s elephant not resilient to aromas?
+an5.139:4.2 | S: It’s when a royal bull elephant gone to battle falters and founders when it smells the odor of the feces and urine of battle-hardened, pedigree royal bull elephants. It doesn’t stay firm, and fails to plunge into battle. | T: There is the case where a king’s elephant, having gone into battle, smells the stench of the urine & feces of those pedigreed royal elephants who are at home in the battlefield, and so he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.139:4.3 | S: That’s how a royal bull elephant can’t endure smells. | T: This is how a king’s elephant is not resilient to aromas.
+an5.139:5.1 | S: And how is it that a royal bull elephant can’t endure tastes? | T: “And how is a king’s elephant not resilient to flavors?
+an5.139:5.2 | S: It’s when a royal bull elephant gone to battle falters and founders when it misses a meal of grass and water, or it misses two, three, four, or five meals. It doesn’t stay firm, and fails to plunge into battle. | T: There is the case where a king’s elephant, having gone into battle, goes without his ration of grass & water for one day, two days, three days, four days, five, and so he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.139:5.3 | S: That’s how a royal bull elephant can’t endure tastes. | T: This is how a king’s elephant is not resilient to flavors.
+an5.139:6.1 | S: And how is it that a royal bull elephant can’t endure touches? | T: “And how is a king’s elephant not resilient to tactile sensations?
+an5.139:6.2 | S: It’s when a royal bull elephant gone to battle falters and founders when struck by a swift arrow, or by two, three, four, or five swift arrows. It doesn’t stay firm, and fails to plunge into battle. | T: There is the case where a king’s elephant, having gone into battle, is pierced by a flight of arrows, two flights, three flights, four flights, five flights of arrows, and so he falters, faints, doesn’t steel himself, can’t engage in the battle.
+an5.139:6.3 | S: That’s how a royal bull elephant can’t endure touches. | T: This is how a king’s elephant is not resilient to tactile sensations.
+an5.139:7.1 | S: A royal bull elephant with these five factors is not worthy of a king, not fit to serve a king, and is not reckoned a factor of kingship. | T: “Endowed with these five qualities, monks, a king’s elephant is not worthy of a king, is not a king’s asset, does not count as a very limb of his king.
+an5.139:8.1 | S: In the same way, a mendicant with five qualities is not worthy of offerings dedicated to the gods, not worthy of hospitality, not worthy of a religious donation, not worthy of veneration with cupped palms, and is not the supreme field of merit for the world. | T: “In the same way, a monk endowed with five qualities is not deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, nor is he an unexcelled field of merit for the world.
+an5.139:8.2 | S: What five? | T: Which five?
+an5.139:8.3 | S: It’s when a mendicant can’t endure sights, sounds, smells, tastes, and touches. | T: There is the case where a monk is not resilient to sights, not resilient to sounds, not resilient to aromas, not resilient to flavors, not resilient to tactile sensations.
+an5.139:9.1 | S: And how is it that a mendicant can’t endure sights? | T: “And how is a monk not resilient to sights?
+an5.139:9.2 | S: It’s when a mendicant, seeing a sight with their eyes, is aroused by a desirable sight, so is not able to still the mind. | T: There is the case where a monk, on seeing a sight with the eye, feels passion for a sight that incites passion and cannot center his mind.
+an5.139:9.3 | S: That’s how a mendicant can’t endure sights. | T: This is how a monk is not resilient to sights.
+an5.139:10.1 | S: And how is it that a mendicant can’t endure sounds? | T: “And how is a monk not resilient to sounds?
+an5.139:10.2 | S: It’s when a mendicant, hearing a sound with their ears, is aroused by a desirable sound, so is not able to still the mind. | T: There is the case where a monk, on hearing a sound with the ear, feels passion for a sound that incites passion and cannot center his mind.
+an5.139:10.3 | S: That’s how a mendicant can’t endure sounds. | T: This is how a monk is not resilient to sounds.
+an5.139:11.1 | S: And how is it that a mendicant can’t endure smells? | T: “And how is a monk not resilient to aromas?
+an5.139:11.2 | S: It’s when a mendicant, smelling an odor with their nose, is aroused by a desirable smell, so is not able to still the mind. | T: There is the case where a monk, on smelling an aroma with the nose, feels passion for an aroma that incites passion and cannot center his mind.
+an5.139:11.3 | S: That’s how a mendicant can’t endure smells. | T: This is how a monk is not resilient to aromas.
+an5.139:12.1 | S: And how is it that a mendicant can’t endure tastes? | T: “And how is a monk not resilient to flavors?
+an5.139:12.2 | S: It’s when a mendicant, tasting a flavor with their tongue, is aroused by desirable tastes, so is not able to still the mind. | T: There is the case where a monk, on tasting a flavor with the tongue, feels passion for a flavor that incites passion and cannot center his mind.
+an5.139:12.3 | S: That’s how a mendicant can’t endure tastes. | T: This is how a monk is not resilient to flavors.
+an5.139:13.1 | S: And how is it that a mendicant can’t endure touches? | T: “And how is a monk not resilient to tactile sensations?
+an5.139:13.2 | S: It’s when a mendicant, encountering a touch with their body, is aroused by a desirable touch, so is not able to still the mind. | T: There is the case where a monk, on touching a tactile sensation with the body, feels passion for a tactile sensation that incites passion and cannot center his mind.
+an5.139:13.3 | S: That’s how a mendicant can’t endure touches. | T: This is how a monk is not resilient to tactile sensations.
+an5.139:14.1 | S: A mendicant with these five qualities is not worthy of offerings dedicated to the gods, not worthy of hospitality, not worthy of a religious donation, not worthy of veneration with cupped palms, and is not the supreme field of merit for the world. | T: “Endowed with these five qualities, a monk is not deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, nor is he an unexcelled field of merit for the world.
+an5.139:15.1 | S: A royal bull elephant with five factors is worthy of a king, fit to serve a king, and is reckoned a factor of kingship. | T: “Now, a king’s elephant endowed with five qualities is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an5.139:15.2 | S: What five? | T: Which five?
+an5.139:15.3 | S: It’s when a royal bull elephant can endure sights, sounds, smells, tastes, and touches. | T: There is the case where a king’s elephant is resilient to sights, resilient to sounds, resilient to aromas, resilient to flavors, resilient to tactile sensations.
+an5.139:16.1 | S: And how is it that a royal bull elephant can endure sights? | T: “And how is a king’s elephant resilient to sights?
+an5.139:16.2 | S: It’s when a royal bull elephant gone to battle does not falter or founder at the sight of a division of elephants, of cavalry, of chariots, or of infantry. It stays firm, and plunges into battle. | T: There is the case where a king’s elephant, having gone into battle, sees a troop of elephants, a troop of cavalry, a troop of chariots, a troop of foot soldiers, but he doesn’t falter or faint, he steels himself and engages in the battle.
+an5.139:16.3 | S: That’s how a royal bull elephant can endure sights. | T: This is how a king’s elephant is resilient to sights.
+an5.139:17.1 | S: And how is it that a royal bull elephant can endure sounds? | T: “And how is a king’s elephant resilient to sounds?
+an5.139:17.2 | S: It’s when a royal bull elephant does not falter or founder at the sound of a division of elephants, of cavalry, of chariots, or of infantry, or the thunder of the drums, kettledrums, horns, and cymbals. It stays firm, and plunges into battle. | T: There is the case where a king’s elephant, having gone into battle, hears the sound of elephants, the sound of cavalry, the sound of chariots, the sound of foot soldiers, the resounding din of drums, cymbals, conchs, & tom-toms, but he doesn’t falter or faint, he steels himself and engages in the battle.
+an5.139:17.3 | S: That’s how a royal bull elephant can endure sounds. | T: This is how a king’s elephant is resilient to sounds.
+an5.139:18.1 | S: And how is it that a royal bull elephant can endure smells? | T: “And how is a king’s elephant resilient to aromas?
+an5.139:18.2 | S: It’s when a royal bull elephant gone to battle does not falter or founder when it smells the odor of the feces and urine of battle-hardened, pedigree royal bull elephants. It stays firm, and plunges into battle. | T: There is the case where a king’s elephant, having gone into battle, smells the stench of the urine & feces of those pedigreed royal elephants who are at home in the battlefield, but he doesn’t falter or faint, he steels himself and engages in the battle.
+an5.139:18.3 | S: That’s how a royal bull elephant can endure smells. | T: This is how a king’s elephant is resilient to aromas.
+an5.139:19.1 | S: And how is it that a royal bull elephant can endure tastes? | T: “And how is a king’s elephant resilient to flavors?
+an5.139:19.2 | S: It’s when a royal bull elephant gone to battle does not falter or founder when it misses a meal of grass and water, or it misses two, three, four, or five meals. It stays firm, and plunges into battle. | T: There is the case where a king’s elephant, having gone into battle, goes without his ration of grass & water for one day, two days, three days, four days, five, but he doesn’t falter or faint, he steels himself and engages in the battle.
+an5.139:19.3 | S: That’s how a royal bull elephant can endure tastes. | T: This is how a king’s elephant is resilient to flavors.
+an5.139:20.1 | S: And how is it that a royal bull elephant can endure touches? | T: “And how is a king’s elephant resilient to tactile sensations?
+an5.139:20.2 | S: It’s when a royal bull elephant gone to battle does not falter or founder when struck by a swift arrow, or by two, three, four, or five swift arrows. It stays firm, and plunges into battle. | T: There is the case where a king’s elephant, having gone into battle, is pierced by a flight of arrows, two flights, three flights, four flights, five flights of arrows, but he doesn’t falter or faint, he steels himself and engages in the battle.
+an5.139:20.3 | S: That’s how a royal bull elephant can endure touches. | T: This is how a king’s elephant is resilient to tactile sensations.
+an5.139:21.1 | S: A royal bull elephant with these five factors is worthy of a king, fit to serve a king, and is reckoned a factor of kingship. | T: “Endowed with these five qualities, monks, a king’s elephant is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an5.139:22.1 | S: In the same way, a mendicant with five qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with five qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.
+an5.139:22.2 | S: What five? | T: Which five?
+an5.139:22.3 | S: It’s when a mendicant can endure sights, sounds, smells, tastes, and touches. | T: There is the case where a monk is resilient to sights, resilient to sounds, resilient to aromas, resilient to flavors, resilient to tactile sensations.
+an5.139:23.1 | S: And how is it that a mendicant can endure sights? | T: “And how is a monk resilient to sights?
+an5.139:23.2 | S: It’s when a mendicant, seeing a sight with their eyes, is not aroused by a desirable sight, so is able to still the mind. | T: There is the case where a monk, on seeing a sight with the eye, feels no passion for a sight that incites passion and can center his mind.
+an5.139:23.3 | S: That’s how a mendicant can endure sights. | T: This is how a monk is resilient to sights.
+an5.139:24.1 | S: And how is it that a mendicant can endure sounds? | T: “And how is a monk resilient to sounds?
+an5.139:24.2 | S: It’s when a mendicant, hearing a sound with their ears, is not aroused by desirable sounds, so is able to still the mind. | T: There is the case where a monk, on hearing a sound with the ear, feels no passion for a sound that incites passion and can center his mind.
+an5.139:24.3 | S: That’s how a mendicant can endure sounds. | T: This is how a monk is resilient to sounds.
+an5.139:25.1 | S: And how is it that a mendicant can endure smells? | T: “And how is a monk resilient to aromas?
+an5.139:25.2 | S: It’s when a mendicant, smelling an odor with their nose, is not aroused by a desirable smell, so is able to still the mind. | T: There is the case where a monk, on smelling an aroma with the nose, feels no passion for an aroma that incites passion and can center his mind.
+an5.139:25.3 | S: That’s how a mendicant can endure smells. | T: This is how a monk is resilient to aromas.
+an5.139:26.1 | S: And how is it that a mendicant can endure tastes? | T: “And how is a monk resilient to flavors?
+an5.139:26.2 | S: It’s when a mendicant, tasting a flavor with their tongue, is not aroused by desirable tastes, so is able to still the mind. | T: There is the case where a monk, on tasting a flavor with the tongue, feels no passion for a flavor that incites passion and can center his mind.
+an5.139:26.3 | S: That’s how a mendicant can endure tastes. | T: This is how a monk is resilient to flavors.
+an5.139:27.1 | S: And how is it that a mendicant can endure touches? | T: “And how is a monk resilient to tactile sensations?
+an5.139:27.2 | S: It’s when a mendicant, encountering a touch with their body, is not aroused by a desirable touch, so is able to still the mind. | T: There is the case where a monk, on touching a tactile sensation with the body, feels no passion for a tactile sensation that incites passion and can center his mind.
+an5.139:27.3 | S: That’s how a mendicant can endure touches. | T: This is how a monk is resilient to tactile sensations.
+an5.139:28.1 | S: A mendicant with these five qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world.” | T: “Endowed with these five qualities, a monk is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.”
+an5.139:28.2 | P: Navamaṁ. | T: (none)
+
+## an5.140
+an5.140:1.1 | S: “Mendicants, a royal bull elephant with five factors is worthy of a king, fit to serve a king, and is reckoned a factor of kingship. | T: “Endowed with five qualities, a king’s elephant is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an5.140:1.2 | S: What five? | T: Which five?
+an5.140:1.3 | S: A royal bull elephant listens, destroys, protects, endures, and goes fast. | T: There is the case where a king’s elephant is a listener, a destroyer, a protector, an endurer, and a goer.
+an5.140:2.1 | S: And how does a royal bull elephant listen? | T: “And how is a king’s elephant a listener?
+an5.140:2.2 | S: It’s when a royal bull elephant pays attention, applies the mind, concentrates wholeheartedly, and actively listens to whatever task the elephant trainer has it do, | T: There is the case where, whenever the tamer of tamable elephants gives him a task, then—
+an5.140:2.3 | S: whether or not it has done it before. | T: regardless of whether he has or hasn’t done it before—
+an5.140:2.4 | P: taṁ aṭṭhiṁ katvā manasi katvā sabbaṁ cetasā samannāharitvā ohitasoto suṇāti. | T: he pays attention, applies his whole mind, and lends ear.
+an5.140:2.5 | S: That’s how a royal bull elephant listens. | T: This is how a king’s elephant is a listener.
+an5.140:3.1 | S: And how does a royal bull elephant destroy? | T: “And how is a king’s elephant a destroyer?
+an5.140:3.2 | S: It’s when a royal bull elephant in battle destroys elephants with their riders, horses with their riders, chariots and charioteers, and foot soldiers. | T: There is the case where a king’s elephant, having gone into battle, destroys an elephant together with its rider, destroys a horse together with its rider, destroys a chariot together with its driver, destroys a foot soldier.
+an5.140:3.3 | S: That’s how a royal bull elephant destroys. | T: This is how a king’s elephant is a destroyer.
+an5.140:4.1 | S: And how does a royal bull elephant protect? | T: “And how is a king’s elephant a protector?
+an5.140:4.2 | S: It’s when a royal bull elephant in battle protects its fore-quarters and hind-quarters, its fore-feet and hind-feet, and its head, ears, tusks, trunk, tail, and rider. | T: There is the case where a king’s elephant, having gone into battle, protects his forequarters, protects his hindquarters, protects his forefeet, protects his hindfeet, protects his head, protects his ears, protects his tusks, protects his trunk, protects his tail, protects his rider.
+an5.140:4.3 | S: That’s how a royal bull elephant protects. | T: This is how a king’s elephant is a protector.
+an5.140:5.1 | S: And how does a royal bull elephant endure? | T: “And how is a king’s elephant an endurer?
+an5.140:5.2 | S: It’s when a royal bull elephant in battle endures being struck by spears, swords, arrows, and axes; it endures the thunder of the drums, kettledrums, horns, and cymbals. | T: There is the case where a king’s elephant, having gone into battle, endures blows from spears, swords, arrows, & axes; he endures the resounding din of drums, cymbals, conchs, & tom-toms.
+an5.140:5.3 | S: That’s how a royal bull elephant endures. | T: This is how a king’s elephant is an endurer.
+an5.140:6.1 | S: And how does a royal bull elephant go fast? | T: “And how is a king’s elephant a goer?
+an5.140:6.2 | S: It’s when a royal bull elephant swiftly goes in whatever direction the elephant trainer sends it, | T: There is the case where—in whichever direction the tamer of tamable elephants sends him,
+an5.140:6.3 | S: whether or not it has been there before. | T: regardless of whether he has or hasn’t gone there before—
+an5.140:6.4 | P: taṁ khippameva gantā hoti. | T: a king’s elephant goes there right away.
+an5.140:6.5 | S: That’s how a royal bull elephant goes fast. | T: This is how a king’s elephant is a goer.
+an5.140:7.1 | S: A royal bull elephant with these five factors is worthy of a king, fit to serve a king, and is reckoned a factor of kingship. | T: “Endowed with these five qualities, a king’s elephant is worthy of a king, is a king’s asset, counts as a very limb of his king.
+an5.140:8.1 | S: In the same way, a mendicant with five qualities is worthy of offerings dedicated to the gods, worthy of hospitality, worthy of a religious donation, worthy of veneration with cupped palms, and is the supreme field of merit for the world. | T: “In the same way, a monk endowed with five qualities is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.
+an5.140:8.2 | S: What five? | T: Which five?
+an5.140:8.3 | S: A mendicant listens, destroys, protects, endures, and goes fast. | T: There is the case where a monk is a listener, a destroyer, a protector, an endurer, and a goer.
+an5.140:9.1 | S: And how does a mendicant listen? | T: “And how is a monk a listener?
+an5.140:9.2 | S: It’s when a mendicant pays attention, applies the mind, concentrates wholeheartedly, and actively listens when the teaching and training proclaimed by a Realized One is being taught. | T: There is the case where, when the Dhamma & Vinaya declared by the Tathāgata is being taught, a monk pays attention, applies his whole mind, and lends ear to the Dhamma.
+an5.140:9.3 | S: That’s how a mendicant listens. | T: This is how a monk is a listener.
+an5.140:10.1 | S: And how does a mendicant destroy? | T: “And how is a monk a destroyer?
+an5.140:10.2 | S: It’s when a mendicant doesn’t tolerate a sensual, malicious, or cruel thought. They don’t tolerate any bad, unskillful qualities that have arisen, but give them up, dispel them, calm them, eliminate them, and obliterate them. | T: There is the case where a monk does not tolerate an arisen thought of sensuality. He abandons it, destroys it, dispels it, & wipes it out of existence. He does not tolerate an arisen thought of ill will… an arisen thought of harmfulness… He does not tolerate arisen evil, unskillful qualities. He abandons them, destroys them, dispels them, & wipes them out of existence.
+an5.140:10.3 | S: That’s how a mendicant destroys. | T: This is how a monk is a destroyer.
+an5.140:11.1 | S: And how does a mendicant protect? | T: “And how is a monk a protector?
+an5.140:11.2 | S: When a mendicant sees a sight with the eyes, they don’t get caught up in the features and details. | T: There is the case where a monk, on seeing a form with the eye, does not grasp at any theme or particulars by which—
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an5.140:11.3 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the eye—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the eye. He achieves restraint with regard to the faculty of the eye.
+an5.140:11.4 | S: Hearing a sound with their ears … | T: “On hearing a sound with the ear.…
+an5.140:11.5 | S: Smelling an odor with their nose … | T: “On smelling an aroma with the nose.…
+an5.140:11.6 | S: Tasting a flavor with their tongue … | T: “On tasting a flavor with the tongue.…
+an5.140:11.7 | S: Encountering a touch with their body … | T: “On touching a tactile sensation with the body.…
+an5.140:11.8 | S: Knowing an idea with their mind, they don’t get caught up in the features and details. | T: “On cognizing an idea with the intellect, he does not grasp at any theme or particulars by which—
+an5.140:11.9 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: if he were to dwell without restraint over the faculty of the intellect—evil, unskillful qualities such as greed or distress might assail him. He practices with restraint. He guards the faculty of the intellect. He achieves restraint with regard to the faculty of the intellect.
+an5.140:11.10 | S: That’s how a mendicant protects. | T: “This is how a monk is a protector.
+an5.140:12.1 | S: And how does a mendicant endure? | T: “And how is a monk an endurer?
+an5.140:12.2 | S: It’s when a mendicant endures cold, heat, hunger, and thirst; the touch of flies, mosquitoes, wind, sun, and reptiles; rude and unwelcome criticism; and puts up with physical pain—sharp, severe, acute, unpleasant, disagreeable, and life-threatening. | T: There is the case where a monk is resilient to cold, heat, hunger, & thirst; the touch of flies, mosquitoes, wind, sun, & reptiles; ill-spoken, unwelcome words & bodily feelings that, when they arise, are painful, racking, sharp, piercing, disagreeable, displeasing, & menacing to life.
+an5.140:12.3 | S: That’s how a mendicant endures. | T: This is how a monk is an endurer.
+an5.140:13.1 | S: And how does a mendicant go fast? | T: “And how is a monk a goer?
+an5.140:13.2 | S: It’s when a mendicant swiftly goes in the direction they’ve never gone before in all this long time; that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: There is the case where a monk goes right away to that direction to which he has never been before in the course of this long stretch of time—in other words, to the pacification of all fabrications, the relinquishing of all acquisitions, the ending of craving, dispassion, cessation, unbinding.
+an5.140:13.3 | S: That’s how a mendicant goes fast. | T: This is how a monk is a goer.
+an5.140:14.1 | S: A mendicant with these five qualities … is the supreme field of merit for the world.” | T: “Endowed with these five qualities a monk is deserving of gifts, deserving of hospitality, deserving of offerings, deserving of respect, an unexcelled field of merit for the world.”
+an5.140:14.2 | P: Dasamaṁ. | T: (none)
+an5.140:14.3 | P: Rājavaggo catuttho. | T: (none)
+an5.140:15.0 | P: Tassuddānaṁ | T: (none)
+an5.140:15.1 | P: Cakkānuvattanā rājā, | T: (none)
+an5.140:15.2 | P: Yassaṁdisaṁ dve ceva patthanā; | T: (none)
+an5.140:15.3 | P: Appaṁsupati bhattādo, | T: (none)
+an5.140:15.4 | P: Akkhamo ca sotena cāti. | T: (none)
+
+## an5.148
+an5.148:1.1 | S: “There are these five gifts of a true person. | T: “These five are a person of integrity’s gifts.
+an5.148:1.2 | S: What five? | T: Which five?
+an5.148:1.3 | S: They give a gift out of faith. They give a gift carefully. They give a gift at the right time. They give a gift with no strings attached. They give a gift without damaging themselves or others. | T: A person of integrity gives a gift with a sense of conviction. A person of integrity gives a gift attentively. A person of integrity gives a gift in season. A person of integrity gives a gift with an empathetic heart. A person of integrity gives a gift without adversely affecting himself or others.
+an5.148:2.1 | S: Having given a gift out of faith, in whatever place the result of that gift manifests they become rich, affluent, and wealthy. And they’re attractive, good-looking, lovely, of surpassing beauty. | T: “Having given a gift with a sense of conviction, he—wherever the result of that gift ripens—is rich, with much wealth, with many possessions. And he is well-built, handsome, extremely inspiring, endowed with a lotus-like complexion.
+an5.148:3.1 | S: Having given a gift carefully, in whatever place the result of that gift manifests they become rich, affluent, and wealthy. | T: “Having given a gift attentively, he—wherever the result of that gift ripens—is rich, with much wealth, with many possessions.
+an5.148:3.2 | S: And their children, wives, bondservants, servants, and workers want to listen. They actively listen and try to understand. | T: And his children, wives, slaves, servants, and workers listen carefully to him, lend him their ears, and serve him with understanding hearts.
+an5.148:4.1 | S: Having given a gift at the right time, in whatever place the result of that gift manifests they become rich, affluent, and wealthy. | T: “Having given a gift in season, he—wherever the result of that gift ripens—is rich, with much wealth, with many possessions.
+an5.148:4.2 | S: And when the time is right, their needs are amply satisfied. | T: And his goals are fulfilled in season.
+an5.148:5.1 | S: Having given a gift with no strings attached, in whatever place the result of that gift manifests they become rich, affluent, and wealthy. | T: “Having given a gift with an empathetic heart, he—wherever the result of that gift ripens—is rich, with much wealth, with many possessions.
+an5.148:5.2 | S: And their mind tends to enjoy the five refined kinds of sensual stimulation. | T: And his mind inclines to the enjoyment of the five strings of lavish sensuality.
+an5.148:6.1 | S: Having given a gift without damaging themselves or others, in whatever place the result of that gift manifests they become rich, affluent, and wealthy. | T: “Having given a gift without adversely affecting himself or others, he—wherever the result of that gift ripens—is rich, with much wealth, with many possessions.
+an5.148:6.2 | S: And no damage comes to their property from anywhere, whether fire, flood, rulers, bandits, or unloved heirs. | T: And not from anywhere does destruction come to his property—whether from fire, from water, from kings, from thieves, or from hateful heirs.
+an5.148:6.3 | S: These are the five gifts of a true person.” | T: “These five are a person of integrity’s gifts.”
+an5.148:6.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## an5.151
+an5.151:1.1 | S: “Mendicants, someone with five qualities is unable to step into the sure path with regard to skillful qualities even when listening to the true teaching. | T: “Monks, endowed with five qualities, even though listening to the True Dhamma, one is incapable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.151:1.2 | S: What five? | T: Which five?
+an5.151:1.3 | S: They disparage the talk, the speaker, or themselves. They listen with scattered and disunified mind. They apply the mind irrationally. | T: ”One holds the talk in contempt. “One holds the speaker in contempt. “One holds oneself in contempt. “One listens to the Dhamma with a scattered mind, a mind not gathered into one [anek’agga-citto]. “One attends inappropriately.”
+an5.151:1.4 | S: Someone with these five qualities is unable to step into the sure path with regard to skillful qualities, even when listening to the true teaching. | T: “Endowed with these five qualities, even though listening to the True Dhamma, one is incapable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.151:2.1 | S: Someone with five qualities is able to step into the sure path with regard to skillful qualities when listening to the true teaching. | T: “Endowed with (the) five (opposite) qualities when listening to the True Dhamma, one is capable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.151:2.2 | S: What five? | T: Which five?
+an5.151:2.3 | S: They don’t disparage the talk, the speaker, or themselves. They listen with unscattered and unified mind. They apply the mind rationally. | T: “One doesn’t hold the talk in contempt. “One doesn’t hold the speaker in contempt. “One doesn’t hold oneself in contempt. “One listens to the Dhamma with an unscattered mind, a mind gathered into one [ek’agga-citto]. “One attends appropriately.”
+an5.151:2.4 | S: Someone with these five qualities is able to step into the sure path with regard to skillful qualities when listening to the true teaching.” | T: “Endowed with these five qualities when listening to the True Dhamma, one is capable of alighting on the orderliness, on the rightness of skillful qualities.”
+an5.151:2.5 | P: Paṭhamaṁ. | T: (none)
+
+## an5.152
+an5.152:1.1 | S: “Mendicants, someone with five qualities is unable to step into the sure path with regard to skillful qualities even when listening to the true teaching. | T: “Monks, endowed with five qualities, even though listening to the True Dhamma, one is incapable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.152:1.2 | S: What five? | T: Which five?
+an5.152:1.3 | S: They disparage the talk, the speaker, or themselves. They’re witless, dull, and idiotic. They think they know what they don’t know. | T: ”One holds the talk in contempt. “One holds the speaker in contempt. “One holds oneself in contempt. “One is undiscerning, dim-witted, a drooling idiot. “Not understanding, one assumes one understands.
+an5.152:1.4 | S: Someone with these five qualities is unable to step into the sure path with regard to skillful qualities, even when listening to the true teaching. | T: “Endowed with these five qualities, even though listening to the True Dhamma, one is incapable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.152:2.1 | S: Someone with five qualities is able to step into the sure path with regard to skillful qualities when listening to the true teaching. | T: “Endowed with (the) five (opposite) qualities when listening to the True Dhamma, one is capable of alighting on the orderliness, on the rightness of skillful qualities.
+an5.152:2.2 | S: What five? | T: Which five?
+an5.152:2.3 | S: They don’t disparage the talk, the speaker, or themselves. They’re wise, bright, and clever. They don’t think they know what they don’t know. | T: “One doesn’t hold the talk in contempt. “One doesn’t hold the speaker in contempt. “One doesn’t hold oneself in contempt. “One is discerning, neither dim-witted nor a drooling idiot. “Not understanding, one doesn’t assume one understands.
+an5.152:2.4 | S: Someone with these five qualities is able to step into the sure path with regard to skillful qualities when listening to the true teaching.” | T: “Endowed with these five qualities when listening to the True Dhamma, one is capable of alighting on the orderliness, on the rightness of skillful qualities.”
+an5.152:2.5 | P: Dutiyaṁ. | T: (none)
+
+## an5.159
+an5.159:1.1 | S: So I have heard. | T: I have heard that
+an5.159:1.2 | S: At one time the Buddha was staying near Kosambī in Ghosita’s monastery. | T: on one occasion the Blessed One was staying near Kosambī at Ghosita’s monastery.
+an5.159:1.3 | S: Now, at that time Venerable Udāyī was sitting teaching Dhamma, surrounded by a large assembly of laypeople. | T: Now at that time Ven. Udāyin was sitting surrounded by a large assembly of householders, teaching the Dhamma.
+an5.159:1.4 | S: Seeing this, Venerable Ānanda | T: Ven. Ānanda saw Ven. Udāyin sitting surrounded by a large assembly of householders, teaching the Dhamma,
+an5.159:1.5 | S: went up to the Buddha, bowed, sat down to one side, and said to him: | T: and on seeing him went to the Blessed One. On arrival, he bowed down to the Blessed One and sat to one side. As he was sitting there he said to the Blessed One:
+an5.159:1.6 | S: “Sir, Venerable Udāyī is teaching Dhamma, surrounded by a large assembly of laypeople.” | T: “Ven. Udāyin, lord, is sitting surrounded by a large assembly of householders, teaching the Dhamma.”
+an5.159:2.1 | S: “Ānanda, it’s not easy to teach Dhamma to others. | T: “It’s not easy to teach the Dhamma to others, Ānanda.
+an5.159:2.2 | S: You should establish five things in yourself before teaching Dhamma to others. | T: The Dhamma should be taught to others only when five qualities are established within the person teaching.
+an5.159:2.3 | S: What five? | T: Which five?
+an5.159:2.4 | S: You should teach Dhamma to others thinking: ‘I will teach step by step.’ … | T: “The Dhamma should be taught with the thought, ‘I will speak step-by-step.’
+an5.159:2.5 | S: ‘I will teach showing my method.’ … | T: “The Dhamma should be taught with the thought, ‘I will speak explaining the sequence (of cause & effect).’
+an5.159:2.6 | S: ‘I will teach out of kindness.’ … | T: “The Dhamma should be taught with the thought, ‘I will speak out of compassion.’
+an5.159:2.7 | S: ‘I will not teach while secretly hoping to profit.’ … | T: “The Dhamma should be taught with the thought, ‘I will speak not for the purpose of material reward.’
+an5.159:2.8 | S: ‘I will teach without damaging myself or others.’ | T: “The Dhamma should be taught with the thought, ‘I will speak without hurting myself or others.’
+an5.159:2.9 | S: It’s not easy to teach Dhamma to others. | T: “It’s not easy to teach the Dhamma to others, Ānanda.
+an5.159:2.10 | S: You should establish these five things in yourself before teaching Dhamma to others.” | T: The Dhamma should be taught to others only when these five qualities are established within the person teaching.”
+an5.159:2.11 | P: Navamaṁ. | T: (none)
+
+## an5.161
+an5.161:1.1 | S: “Mendicants, a mendicant should use these five ways to completely get rid of resentment when it has arisen toward anyone. | T: “There are these five ways of subduing hatred by which, when hatred arises in a monk, he should wipe it out completely.
+an5.161:1.2 | S: What five? | T: Which five?
+an5.161:1.3 | S: You should develop love for an individual you resent. | T: “When you give birth to hatred for an individual, you should develop goodwill for that individual.
+an5.161:1.4 | S: That’s how to get rid of resentment for that individual. | T: Thus the hatred for that individual should be subdued.
+an5.161:1.5 | S: You should develop compassion for an individual you resent. … | T: “When you give birth to hatred for an individual, you should develop compassion for that individual.
+an5.161:1.6 | P: evaṁ tasmiṁ puggale āghāto paṭivinetabbo. | T: Thus the hatred for that individual should be subdued.
+an5.161:1.7 | S: You should develop equanimity for an individual you resent. … | T: “When you give birth to hatred for an individual, you should develop equanimity toward that individual.
+an5.161:1.8 | P: evaṁ tasmiṁ puggale āghāto paṭivinetabbo. | T: Thus the hatred for that individual should be subdued.
+an5.161:1.9 | S: You should disregard an individual you resent, paying no attention to them. … | T: “When you give birth to hatred for an individual, you should pay him no mind & pay him no attention.
+an5.161:1.10 | P: evaṁ tasmiṁ puggale āghāto paṭivinetabbo. | T: Thus the hatred for that individual should be subdued.
+an5.161:1.11 | S: You should focus on the ownership of deeds regarding that individual: | T: “When you give birth to hatred for an individual, you should direct your thoughts to the fact of his being the product of his actions:
+an5.161:1.12 | S: ‘This venerable is the owner of their deeds and heir to their deeds. Deeds are their womb, their relative, and their refuge. | T: ‘This venerable one is the doer of his actions, heir of his actions, born of his actions, related by his actions, and has his actions as his arbitrator.
+an5.161:1.13 | S: They shall be the heir of whatever deeds they do, whether good or bad.’ | T: Whatever action he does, for good or for evil, to that will he fall heir.’
+an5.161:1.14 | S: That’s how to get rid of resentment for that individual. | T: Thus the hatred for that individual should be subdued.
+an5.161:1.15 | S: A mendicant should use these five ways to completely get rid of resentment when it has arisen toward anyone.” | T: “These are five ways of subduing hatred by which, when hatred arises in a monk, he should wipe it out completely.”
+an5.161:1.16 | P: Paṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+exec
+/bin/bash -lc "printf 'none\\n' > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-072.findings.tmp" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+0 lines reported.
+tokens used
+18,980
+0 lines reported.

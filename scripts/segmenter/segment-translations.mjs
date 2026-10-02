@@ -129,7 +129,14 @@ function uidsOf(name) {
     const [from, to = from] = span.split('-');
     for (let n = +from; n <= +to; n++) uids.push(range[1] + n);
   }
-  return uids;
+  const covered = new Set(uids);
+  return [...new Set(uids.map((uid) => {
+    const doc = uidDoc.get(uid);
+    const grouped = /^(.*?)(\d+)-(\d+)$/.exec(doc ?? '');
+    if (!grouped || !Object.keys(loadDoc(doc).pali).every((key) => key.startsWith(`${doc}:`))) return uid;
+    for (let n = +grouped[2]; n <= +grouped[3]; n++) if (!covered.has(grouped[1] + n)) return uid;
+    return doc;
+  }))];
 }
 
 // Returns the Pali lines of the uids `uids`, in order, each with what the alignment reads from it.

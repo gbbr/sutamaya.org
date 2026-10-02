@@ -1,0 +1,540 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd7f-a744-7a72-827c-c2b3904ebc32
+--------
+user
+You are checking a Buddhist sutta translation (by Bhikkhu Bodhi) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full batch and record only clear line-placement errors in the findings file.
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## an10.35
+an10.35:1.1 | S: “Sir, how many qualities should a mendicant have to give dependence?” | T: “Bhante, how many qualities should a bhikkhu possess to give dependence?”
+an10.35:1.2 | S: “Upāli, a mendicant should have ten qualities to give dependence. | T: “A bhikkhu who possesses ten qualities, Upāli, may give dependence.
+an10.35:1.3 | S: What ten? | T: What ten?”
+an10.35:1.4 | S: It’s when a mendicant is ethical … | T: (none)
+an10.35:1.5 | S: They’re learned … | T: (none)
+an10.35:1.6 | S: Both monastic codes have been passed down to them in detail, well analyzed, well mastered, well evaluated in both the rules and accompanying material. | T: (none)
+an10.35:1.7 | S: They’re able to care for the sick or get someone else to do so. | T: (none)
+an10.35:1.8 | S: They’re able to settle dissatisfaction or get someone else to do so. | T: (none)
+an10.35:1.9 | S: They’re able to dispel remorse when it has come up. | T: (none)
+an10.35:1.10 | S: They’re able to rationally dissuade someone from misconceptions that come up. | T: (none)
+an10.35:1.11 | S: They’re able to encourage someone in the higher ethics, | T: (none)
+an10.35:1.12 | S: the higher mind, | T: …
+an10.35:1.13 | S: and the higher wisdom. | T: (none)
+an10.35:1.14 | S: A mendicant should possess these ten qualities to give dependence.” | T: The same ten qualities as in the preceding sutta. “A bhikkhu who possesses these ten qualities may give dependence.”
+an10.35:1.15 | P: Pañcamaṁ. | T: (none)
+
+## an10.36
+an10.36:1.1 | S: “Sir, how many qualities should a mendicant have to be attended on by a novice?” | T: “Bhante, how many qualities should a bhikkhu possess to be attended upon by a novice?”
+an10.36:1.2 | S: “Upāli, a mendicant should have ten qualities to be attended on by a novice. | T: “A bhikkhu who possesses ten qualities, Upāli, may be attended upon by a novice.
+an10.36:1.3 | S: What ten? | T: What ten?”
+an10.36:1.4 | S: It’s when a mendicant is ethical … | T: (none)
+an10.36:1.5 | S: They’re learned … | T: (none)
+an10.36:1.6 | S: Both monastic codes have been passed down to them in detail, well analyzed, well mastered, well evaluated in both the rules and accompanying material. | T: (none)
+an10.36:1.7 | S: They’re able to care for the sick or get someone else to do so. | T: (none)
+an10.36:1.8 | S: They’re able to settle dissatisfaction or get someone else to do so. | T: (none)
+an10.36:1.9 | S: They’re able to dispel remorse when it has come up. | T: (none)
+an10.36:1.10 | S: They’re able to rationally dissuade someone from misconceptions that come up. | T: (none)
+an10.36:1.11 | S: They’re able to encourage someone in the higher ethics, | T: (none)
+an10.36:1.12 | S: the higher mind, | T: …
+an10.36:1.13 | S: and the higher wisdom. | T: (none)
+an10.36:1.14 | S: A mendicant should possess these ten qualities to be attended on by a novice.” | T: The same ten qualities as in AN10.34. “A bhikkhu who possesses these ten qualities may be attended upon by a novice.”
+an10.36:1.15 | P: Chaṭṭhaṁ. | T: (none)
+
+## an10.22
+an10.22:1.1 | S: Then Venerable Ānanda went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then the Venerable Ānanda approached the Blessed One, paid homage to him, and sat down to one side. The Blessed One then said to him:
+an10.22:2.1 | S: “Ānanda, I claim to be self-assured regarding the teachings that lead to realizing by insight the various different hypotheses. | T: “Ānanda, I claim to be confident about the things that lead to the realization by direct knowledge of the various doctrinal principles,
+an10.22:2.2 | S: So I am able to teach the Dhamma in appropriate ways to different people. Practicing accordingly, when something exists they’ll know it exists. When it doesn’t exist they’ll know it doesn’t exist. When something is inferior they’ll know it’s inferior. When it’s superior they’ll know it’s superior. When something is not supreme they’ll know it’s not supreme. When it is supreme they’ll know it’s supreme. | T: and I am thus able to teach the Dhamma to various people in various ways such that one who practices accordingly will know of what exists that it exists and of what does not exist that it does not exist; such that one will know of the inferior that it is inferior and of the sublime that it is sublime; such that one will know of what is surpassable that it is surpassable and of what is unsurpassable that it is unsurpassable;
+an10.22:2.3 | S: And they will know or see or realize it in whatever way it should be known or seen or realized. This is possible. | T: such that it is possible that one will know, see, and realize this just as it is to be known, seen, and realized.
+an10.22:2.4 | S: But this is the unsurpassable knowledge, that is: truly knowing each and every case. | T: “But among knowledges, Ānanda, this one is unsurpassed, namely, the knowledge of these things and those things as they really are.
+an10.22:2.5 | S: And Ānanda, I say that there is no other knowledge better or finer than this. | T: And, I say, there is no other knowledge higher or more excellent than this.
+an10.22:3.1 | S: The Realized One possesses ten powers of a Realized One. With these he claims the bull’s place, roars his lion’s roar in the assemblies, and turns the divine wheel. | T: “There are, Ānanda, these ten Tathāgata’s powers that the Tathāgata has, possessing which he claims the place of the chief bull, roars his lion’s roar in the assemblies, and sets in motion the brahma wheel.
+an10.22:3.2 | S: What ten? | T: What ten?
+an10.22:3.3 | S: Firstly, the Realized One truly understands the possible as possible, and the impossible as impossible. | T: (none)
+an10.22:3.4 | S: Since he truly understands this, this is a power of the Realized One. Relying on this he claims the bull’s place, roars his lion’s roar in the assemblies, and turns the divine wheel. | T: (none)
+an10.22:4.1 | S: Furthermore, the Realized One truly understands the result of deeds undertaken in the past, future, and present in terms of grounds and causes. | T: (none)
+an10.22:4.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:5.1 | S: Furthermore, the Realized One truly understands where all paths of practice lead. | T: (none)
+an10.22:5.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:6.1 | S: Furthermore, the Realized One truly understands the world with its many and diverse elements. | T: (none)
+an10.22:6.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:7.1 | S: Furthermore, the Realized One truly understands the diverse convictions of sentient beings. | T: (none)
+an10.22:7.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: …
+an10.22:8.1 | S: Furthermore, the Realized One truly understands the faculties of other sentient beings and other individuals after encompassing them with his mind. | T: (none)
+an10.22:8.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: As in AN10.21 …
+an10.22:9.1 | S: Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, immersions, and attainments. | T: (none)
+an10.22:9.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:10.1 | S: Furthermore, the Realized One recollects many kinds of past lives, with features and details. | T: (none)
+an10.22:10.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:11.1 | S: Furthermore, with clairvoyance that is purified and superhuman, the Realized One sees sentient beings passing away and being reborn—inferior and superior, beautiful and ugly, in a good place or a bad place. He understands how sentient beings pass on according to their deeds. | T: (none)
+an10.22:11.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:12.1 | S: Furthermore, the Realized One has realized the undefiled freedom of heart and freedom by wisdom, and lives having realized it with his own insight in this very life due to the ending of defilements. | T: (none)
+an10.22:12.2 | S: Since he truly understands this, this is a power of the Realized One. … | T: (none)
+an10.22:13.1 | S: These are the ten powers of a Realized One that the Realized One possesses. With these he claims the bull’s place, roars his lion’s roar in the assemblies, and turns the divine wheel.” | T: “These, Ānanda, are the ten Tathāgata’s powers that the Tathāgata has, possessing which he claims the place of the chief bull, roars his lion’s roar in the assemblies, and sets in motion the brahma wheel.”
+an10.22:13.2 | P: Dutiyaṁ. | T: (none)
+
+## sn35.125
+sn35.125:1.1 | S: At one time the Buddha was staying in the land of the Vajjis at Elephant Village. | T: On one occasion the Blessed One was dwelling among the Vajjians at Hatthigama.
+sn35.125:1.2 | S: Then the householder Uggata of Elephant Village went up to the Buddha, sat down to one side, and said to him: | T: Then the householder Ugga of Hatthigama approached the Blessed One … and said to him…. As in §118.
+sn35.125:1.3 | S: “What is the cause, sir, what is the reason why some sentient beings are not fully extinguished in this very life? | T: (none)
+sn35.125:1.4 | S: What is the cause, sir, what is the reason why some sentient beings are fully extinguished in this very life?” … | T: (none)
+sn35.125:1.5 | S: (Tell in full as in the previous discourse.) | T: (none)
+sn35.125:1.6 | P: “Ayaṁ kho, gahapati, hetu ayaṁ paccayo yena m’idhekacce sattā diṭṭheva dhamme parinibbāyantī”ti. | T: (none)
+sn35.125:1.7 | P: Dutiyaṁ. | T: (none)
+
+## sn35.126
+sn35.126:1.1 | S: At one time the Buddha was staying near Nāḷandā in Pāvārika’s Mango Grove. | T: On one occasion the Blessed One was dwelling at Nalanda in Pavarika’s Mango Grove.
+sn35.126:1.2 | S: Then the householder Upāli went up to the Buddha … and asked him, | T: Then the householder Upali approached the Blessed One … and said to him…. As in §118.
+sn35.126:1.3 | S: “What is the cause, sir, what is the reason why some sentient beings are not fully extinguished in this very life? | T: (none)
+sn35.126:1.4 | S: What is the cause, sir, what is the reason why some sentient beings are fully extinguished in this very life?” … | T: (none)
+sn35.126:1.5 | S: (Tell in full as in SN 35.124.) | T: (none)
+sn35.126:1.6 | P: “Ayaṁ kho, gahapati, hetu ayaṁ paccayo yena m’idhekacce sattā diṭṭheva dhamme parinibbāyantī”ti. | T: (none)
+sn35.126:1.7 | P: Tatiyaṁ. | T: (none)
+
+## sn36.28
+sn36.28:1.1 | S: “Mendicants, there are these three feelings. | T: (none)
+sn36.28:1.2 | S: What three? | T: (none)
+sn36.28:1.3 | S: Pleasant, painful, and neutral feeling. | T: (none)
+sn36.28:1.4 | S: There are ascetics and brahmins who don’t truly understand these three feelings’ origin, disappearance, gratification, drawback, and escape. … | T: “Those ascetics or brahmins, bhikkhus, who do not understand as they really are the origination and the passing away, the gratification, the danger, and the escape in the case of these three feelings: these I do not consider to be ascetics among ascetics or brahmins among brahmins, and these venerable ones do not, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism or the goal of brahminhood.
+sn36.28:1.5 | S: There are ascetics and brahmins who do truly understand …” | T: “But, bhikkhus, those ascetics and brahmins who understand these things as they really are: these I consider to be ascetics among ascetics and brahmins among brahmins, and these venerable ones, by realizing it for themselves with direct knowledge, in this very life enter and dwell in the goal of asceticism and the goal of brahminhood.”
+sn36.28:1.6 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn47.16
+sn47.16:1.1 | S: At Sāvatthī. | T: At Savatthi.
+sn47.16:1.2 | S: Then Venerable Uttiya went up to the Buddha … and asked him, | T: Then the Venerable Uttiya approached the Blessed One …
+sn47.16:1.3 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: all as in preceding sutta down to: …
+sn47.16:1.4 | S: “Well then, Uttiya, you should purify the starting point of skillful qualities. | T: (none)
+sn47.16:1.5 | S: What is the starting point of skillful qualities? | T: (none)
+sn47.16:1.6 | S: Well purified ethics and correct view. | T: (none)
+sn47.16:1.7 | S: When your ethics are well purified and your view is correct, you should develop the four kinds of mindfulness meditation, depending on and grounded on ethics. | T: (none)
+sn47.16:2.1 | S: What four? | T: (none)
+sn47.16:2.2 | S: Meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.16:2.3 | S: Meditate observing an aspect of feelings … | T: (none)
+sn47.16:2.4 | S: mind … | T: (none)
+sn47.16:2.5 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: (none)
+sn47.16:2.6 | S: When you develop these four kinds of mindfulness meditation, depending on and grounded on ethics, you’ll cross beyond Death’s dominion.” | T: “When, Uttiya, based upon virtue, established upon virtue, you develop these four establishments of mindfulness in such a way, you will go beyond the realm of Death.”
+sn47.16:3.1 | S: And then Venerable Uttiya approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the Venerable Uttiya, having delighted and rejoiced in the Blessed One’s words, rose from his seat …
+sn47.16:3.2 | S: Then Uttiya, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: (none)
+sn47.16:3.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: as in preceding sutta …
+sn47.16:3.4 | S: And Venerable Uttiya became one of the perfected. | T: And the Venerable Uttiya became one of the arahants.
+sn47.16:3.5 | P: Chaṭṭhaṁ. | T: (none)
+
+## an10.62
+an10.62:1.1 | S: “Mendicants, it is said that no prior point of craving for continued existence is found, before which there was no craving for continued existence, and afterwards it came to be. | T: “Bhikkhus, it is said: ‘A first point of craving for existence, bhikkhus, is not seen such that before this there was no craving for existence and afterward it came into being.’
+an10.62:1.2 | S: And yet it is evident that there is a specific condition for craving for continued existence. | T: Still, craving for existence is seen to have a specific condition.
+an10.62:2.1 | S: I say that craving for continued existence is fueled by something, it’s not unfueled. | T: “I say, bhikkhus, that craving for existence has a nutriment; it is not without nutriment.
+an10.62:2.2 | S: And what is the fuel for craving for continued existence? | T: And what is the nutriment for craving for existence?
+an10.62:2.3 | S: You should say: ‘Ignorance.’ | T: It should be said: ignorance.
+an10.62:2.4 | S: I say that ignorance is fueled by something, it’s not unfueled. | T: Ignorance, too, I say, has a nutriment; it is not without nutriment.
+an10.62:2.5 | S: And what is the fuel for ignorance? | T: And what is the nutriment for ignorance?
+an10.62:2.6 | S: You should say: ‘The five hindrances.’ | T: It should be said: the five hindrances …
+an10.62:2.7 | S: I say that the five hindrances are fueled by something, they’re not unfueled. | T: (none)
+an10.62:2.8 | S: And what is the fuel for the five hindrances? | T: (none)
+an10.62:2.9 | S: You should say: ‘The three kinds of misconduct.’ | T: (none)
+an10.62:2.10 | S: I say that the three kinds of misconduct are fueled by something, they’re not unfueled. | T: (none)
+an10.62:2.11 | S: And what is the fuel for the three kinds of misconduct? | T: (none)
+an10.62:2.12 | S: You should say: ‘Lack of sense restraint.’ | T: (none)
+an10.62:2.13 | S: I say that lack of sense restraint is fueled by something, it’s not unfueled. | T: (none)
+an10.62:2.14 | S: And what is the fuel for lack of sense restraint? | T: (none)
+an10.62:2.15 | S: You should say: ‘Lack of mindfulness and situational awareness.’ | T: (none)
+an10.62:2.16 | S: I say that lack of mindfulness and situational awareness is fueled by something, it’s not unfueled. | T: (none)
+an10.62:2.17 | S: And what is the fuel for lack of mindfulness and situational awareness? | T: (none)
+an10.62:2.18 | S: You should say: ‘Irrational application of mind.’ | T: (none)
+an10.62:2.19 | S: I say that irrational application of mind is fueled by something, it’s not unfueled. | T: (none)
+an10.62:2.20 | S: And what is the fuel for irrational application of mind? | T: (none)
+an10.62:2.21 | S: You should say: ‘Lack of faith.’ | T: as in AN10.61 …
+an10.62:2.22 | S: I say that lack of faith is fueled by something, it’s not unfueled. | T: (none)
+an10.62:2.23 | S: And what is the fuel for lack of faith? | T: (none)
+an10.62:2.24 | S: You should say: ‘Listening to an untrue teaching.’ | T: (none)
+an10.62:2.25 | S: I say that listening to an untrue teaching is fueled by something, it’s not unfueled. | T: (none)
+an10.62:2.26 | S: And what is the fuel for listening to an untrue teaching? | T: And what is the nutriment for not hearing the good Dhamma?
+an10.62:2.27 | S: You should say: ‘Associating with untrue persons.’ | T: It should be said: not associating with good persons.
+an10.62:3.1 | S: In this way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of mindfulness and situational awareness … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. | T: “Thus not associating with good persons, becoming full, fills up not hearing the good Dhamma…. The five hindrances, becoming full, fill up ignorance. Ignorance, becoming full, fills up craving for existence.
+an10.62:3.2 | S: That’s the fuel for craving for continued existence, and that’s how it’s fulfilled. | T: Thus there is nutriment for craving for existence, and in this way it becomes full.
+an10.62:4.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as, when it is raining and the rain pours down in thick droplets on a mountaintop, the water flows down along the slope … … and the rivers, becoming full, fill up the great ocean;
+an10.62:4.2 | S: That’s the fuel for the ocean, and that’s how it’s filled up. | T: thus there is nutriment for the great ocean, and in this way it becomes full.
+an10.62:5.1 | S: In the same way, when the factor of associating with untrue persons is fulfilled, it fulfills the factor of listening to an untrue teaching. When the factor of listening to an untrue teaching is fulfilled, it fulfills the factor of lack of faith … irrational application of mind … lack of mindfulness and situational awareness … lack of sense restraint … the three kinds of misconduct … the five hindrances … ignorance. When ignorance is fulfilled, it fulfills craving for continued existence. | T: So too, not associating with good persons, becoming full, fills up not hearing the good Dhamma … and ignorance, becoming full, fills up craving for existence.
+an10.62:5.2 | S: That’s the fuel for craving for continued existence, and that’s how it’s fulfilled. | T: Thus there is nutriment for craving for existence, and in this way it becomes full.
+an10.62:6.1 | S: I say that knowledge and freedom are fueled by something, they’re not unfueled. | T: “I say, bhikkhus, that (1) true knowledge and liberation have a nutriment; they are not without nutriment.
+an10.62:6.2 | S: And what is the fuel for knowledge and freedom? | T: And what is the nutriment for true knowledge and liberation?
+an10.62:6.3 | S: You should say: ‘The seven awakening factors.’ | T: It should be said: (2) the seven factors of enlightenment….
+an10.62:6.4 | S: I say that the seven awakening factors are fueled by something, they’re not unfueled. | T: (none)
+an10.62:6.5 | S: And what is the fuel for the seven awakening factors? | T: (none)
+an10.62:6.6 | S: You should say: ‘The four kinds of mindfulness meditation.’ | T: (none)
+an10.62:6.7 | S: I say that the four kinds of mindfulness meditation are fueled by something, they’re not unfueled. | T: (none)
+an10.62:6.8 | S: And what is the fuel for the four kinds of mindfulness meditation? | T: (none)
+an10.62:6.9 | S: You should say: ‘The three kinds of good conduct.’ | T: (none)
+an10.62:6.10 | S: I say that the three kinds of good conduct are fueled by something, they’re not unfueled. | T: (none)
+an10.62:6.11 | S: And what is the fuel for the three kinds of good conduct? | T: (none)
+an10.62:6.12 | S: You should say: ‘Sense restraint.’ | T: (none)
+an10.62:6.13 | S: I say that sense restraint is fueled by something, it’s not unfueled. | T: (none)
+an10.62:6.14 | S: And what is the fuel for sense restraint? | T: (none)
+an10.62:6.15 | S: You should say: ‘Mindfulness and situational awareness.’ | T: (none)
+an10.62:6.16 | S: I say that mindfulness and situational awareness is fueled by something, it’s not unfueled. | T: (none)
+an10.62:6.17 | S: And what is the fuel for mindfulness and situational awareness? | T: (none)
+an10.62:6.18 | S: You should say: ‘Rational application of mind.’ | T: (none)
+an10.62:6.19 | S: I say that rational application of mind is fueled by something, it’s not unfueled. | T: (none)
+an10.62:6.20 | S: And what is the fuel for rational application of mind? | T: (none)
+an10.62:6.21 | S: You should say: ‘Faith.’ | T: (none)
+an10.62:6.22 | S: I say that faith is fueled by something, it’s not unfueled. | T: (none)
+an10.62:6.23 | S: And what is the fuel for faith? | T: (none)
+an10.62:6.24 | S: You should say: ‘Listening to the true teaching.’ | T: (none)
+an10.62:6.25 | S: I say that listening to the true teaching is fueled by something, it’s not unfueled. | T: Hearing the good Dhamma, too, I say, has a nutriment; it is not without nutriment.
+an10.62:6.26 | S: And what is the fuel for listening to the true teaching? | T: And what is the nutriment for hearing the good Dhamma?
+an10.62:6.27 | S: You should say: ‘Associating with true persons.’ | T: It should be said: (10) associating with good persons.
+an10.62:7.1 | S: In this way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … mindfulness and situational awareness … sense restraint … the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. | T: “Thus associating with good persons, becoming full, fills up hearing the good Dhamma…. The seven factors of enlightenment, becoming full, fill up true knowledge and liberation.
+an10.62:7.2 | S: That’s the fuel for knowledge and freedom, and that’s how it’s fulfilled. | T: Thus there is nutriment for true knowledge and liberation, and in this way they become full.
+an10.62:8.1 | S: It’s like when the heavens rain heavily on a mountain top, and the water flows downhill to fill the hollows, crevices, and creeks. As they become full, they fill up the pools. The pools fill up the lakes, the lakes fill up the streams, and the streams fill up the rivers. And as the rivers become full, they fill up the ocean. | T: “Just as, when it is raining and the rain pours down in thick droplets on a mountain top, the water flows down along the slope … and the rivers, becoming full, fill up the great ocean;
+an10.62:8.2 | S: That’s the fuel for the ocean, and that’s how it’s filled up. | T: thus there is nutriment for the great ocean, and in this way it becomes full.
+an10.62:8.3 | S: In the same way, when the factor of associating with true persons is fulfilled, it fulfills the factor of listening to the true teaching. When the factor of listening to the true teaching is fulfilled, it fulfills the factor of faith … rational application of mind … mindfulness and situational awareness … sense restraint …the three kinds of good conduct … the four kinds of mindfulness meditation … the seven awakening factors. When the seven awakening factors are fulfilled, they fulfill knowledge and freedom. | T: So too, associating with good persons, becoming full, fills up hearing the good Dhamma…. The seven factors of enlightenment, becoming full, fill up true knowledge and liberation.
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+an10.62:8.4 | S: That’s the fuel for knowledge and freedom, and that’s how it’s fulfilled.” | T: Thus there is nutriment for true knowledge and liberation, and in this way they become full.”
+an10.62:8.5 | P: Dutiyaṁ. | T: (none)
+
+## sn35.237
+sn35.237:1.1 | S: “Mendicants, when there are hands, there’s picking up and putting down. | T: “Bhikkhus, when there are hands, there is picking up and putting down….
+sn35.237:1.2 | S: When there are feet, there’s coming and going. | T: (none)
+sn35.237:1.3 | S: When there are joints, there’s contracting and extending. | T: (none)
+sn35.237:1.4 | S: When there’s a belly, there’s hunger and thirst. | T: (none)
+sn35.237:1.5 | S: In the same way, when there’s an eye, pleasure and pain arise internally conditioned by eye contact. | T: “So too, bhikkhus, when there is the eye, pleasure and pain arise internally with eye-contact as condition….
+sn35.237:1.6 | S: When there’s an ear … nose … tongue … body … | T: (none)
+sn35.237:1.7 | S: mind, pleasure and pain arise internally conditioned by mind contact. | T: When there is the mind, pleasure and pain arise internally with mind-contact as condition.
+sn35.237:2.1 | S: When there are no hands, there’s no picking up and putting down. | T: “When, bhikkhus, there are no hands, there is no picking up and putting down….
+sn35.237:2.2 | S: When there are no feet, there’s no coming and going. | T: (none)
+sn35.237:2.3 | S: When there are no joints, there’s no contracting and extending. | T: (none)
+sn35.237:2.4 | S: When there’s no belly, there’s no hunger and thirst. | T: (none)
+sn35.237:2.5 | S: In the same way, when there’s no eye, pleasure and pain don’t arise internally conditioned by eye contact. | T: “So too, bhikkhus, when there is no eye …
+sn35.237:2.6 | S: When there’s no ear … nose … tongue … body … | T: (none)
+sn35.237:2.7 | S: mind, pleasure and pain don’t arise internally conditioned by mind contact.” | T: no mind, no pleasure and pain arise internally with mind-contact as condition.”
+sn35.237:2.8 | P: Dasamaṁ. | T: (none)
+sn35.237:2.9 | P: Samuddavaggo tatiyo. | T: (none)
+sn35.237:3.0 | P: Tassuddānaṁ | T: (none)
+sn35.237:3.1 | P: Dve samuddā bāḷisiko, | T: (none)
+sn35.237:3.2 | P: khīrarukkhena koṭṭhiko; | T: (none)
+sn35.237:3.3 | P: Kāmabhū udāyī ceva, | T: (none)
+sn35.237:3.4 | P: ādittena ca aṭṭhamaṁ; | T: (none)
+sn35.237:3.5 | P: Hatthapādūpamā dveti, | T: (none)
+sn35.237:3.6 | P: vaggo tena pavuccatīti. | T: (none)
+
+## sn45.50-54
+sn45.50-54:1.1 | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise. | T: “Bhikkhus, this is the forerunner and precursor of the rising of the sun, that is, the dawn.
+sn45.50-54:1.2 | S: In the same way accomplishment in ethics is the forerunner and harbinger of the arising of the noble eightfold path for a mendicant. | T: So too, bhikkhus, for a bhikkhu this is the forerunner and precursor for the arising of the Noble Eightfold Path, that is, accomplishment in virtue … accomplishment in desire … accomplishment in self … accomplishment in view … accomplishment in diligence … … accomplishment in careful attention.
+sn45.50-54:1.3 | S: A mendicant accomplished in ethics can expect to develop and cultivate the noble eightfold path. …” … | T: When a bhikkhu is accomplished in careful attention, it is to be expected that he will develop and cultivate this Noble Eightfold Path. “And how does a bhikkhu who is accomplished in careful attention develop and cultivate the Noble Eightfold Path? Here, bhikkhus, a bhikkhu develops right view, which is based upon seclusion, dispassion, and cessation, maturing in release…. He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release. It is in this way, bhikkhus, that a bhikkhu who is accomplished in careful attention develops and cultivates the Noble Eightfold Path.”
+sn45.50-54:1.4 | S: “… accomplishment in enthusiasm …” | T: (none)
+sn45.50-54:1.5 | S: “… accomplishment in self-development …” | T: (none)
+sn45.50-54:1.6 | S: “… accomplishment in view …” | T: (none)
+sn45.50-54:1.7 | S: “… accomplishment in diligence …” | T: (none)
+sn45.50-54:1.8 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn46.15
+sn46.15:1.1 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: On one occasion the Blessed One was dwelling at Rajagaha in the Bamboo Grove, the Squirrel Sanctuary.
+sn46.15:1.2 | S: Now at that time Venerable Mahāmoggallāna was staying on the Vulture’s Peak Mountain, and he was sick, suffering, gravely ill. | T: Now on that occasion the Venerable Mahamoggallana was dwelling on Mount Vulture Peak—sick, afflicted, gravely ill.
+sn46.15:1.3 | S: Then in the late afternoon, the Buddha came out of retreat, went to Venerable Moggallāna, sat down on the seat spread out, and said to him: | T: Then, in the evening, the Blessed One emerged from seclusion and approached the Venerable Mahamoggallana …
+sn46.15:2.1 | S: “I hope you’re keeping well, Moggallāna, I hope you’re all right. I hope your pain is fading, not growing; that its fading is evident, not its growing.” | T: (none)
+sn46.15:2.2 | S: “Sir, I’m not keeping well, I’m not getting by. My pain is terrible and growing, not fading; its growing is evident, not its fading.” | T: (none)
+sn46.15:3.1 | S: “Moggallāna, I’ve rightly explained these seven awakening factors. When developed and cultivated, they lead to direct knowledge, to awakening, and to extinguishment. | T: (none)
+sn46.15:3.2 | S: What seven? | T: all as above,
+sn46.15:3.3 | S: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. | T: with the change of names being the only difference …
+sn46.15:3.4 | S: These are the seven awakening factors that I’ve rightly explained. When developed and cultivated, they lead to direct knowledge, to awakening, and to extinguishment.” | T: (none)
+sn46.15:3.5 | S: “Indeed, Blessed One, these are awakening factors! | T: (none)
+sn46.15:3.6 | S: Indeed, Holy One, these are awakening factors!” | T: (none)
+sn46.15:4.1 | S: That is what the Buddha said. | T: (none)
+sn46.15:4.2 | S: Satisfied, Venerable Mahāmoggallāna approved what the Buddha said. | T: (none)
+sn46.15:4.3 | S: And that’s how he recovered from that illness. | T: In such a way the Venerable Mahamoggallana was cured of his illness.
+sn46.15:4.4 | P: Tathāpahīno cāyasmato mahāmoggallānassa so ābādho ahosīti. | T: (none)
+sn46.15:4.5 | P: Pañcamaṁ. | T: (none)
+
+## sn11.12
+sn11.12:1.1 | S: Near Sāvatthī in Jeta’s Grove. | T: At Savatthī in Jeta’s Grove.
+sn11.12:1.2 | S: There the Buddha said to the mendicants: | T: There the Blessed One said to the bhikkhus:
+sn11.12:1.3 | S: “Mendicants, in a former life, when Sakka was a human being, he was a student named Magha. That’s why he’s called Maghavā, the Bounteous. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he was a brahmin youth named Magha; therefore he is called Maghava.
+sn11.12:2.1 | S: In a former life, when Sakka was a human being, he was first to give gifts. That’s why he’s called Purindada, the Firstgiver. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he gave gifts in city after city; therefore he is called Purindada, the Urban Giver.
+sn11.12:3.1 | S: In a former life, when Sakka was a human being, he gave gifts ably. That’s why he’s called Sakka, the Able. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he gave gifts considerately; therefore he is called Sakka.
+sn11.12:4.1 | S: In a former life, when Sakka was a human being, he gave the gift of a guest house. That’s why he’s called Vāsava, the Houser. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he gave a rest house; therefore he is called Vasava.
+sn11.12:5.1 | S: Sakka thinks of a thousand needs in an hour. That’s why he’s called Sahassakkha, the Thousand-Eyed. | T: “Bhikkhus, Sakka, lord of the devas, thinks of a thousand matters in a moment; therefore he is called Sahassakkha, Thousand-eyed.
+sn11.12:6.1 | S: Sakka’s wife is the titan maiden named Sujā. That’s why he’s called Sujampati, Sujā’s Husband. | T: “Bhikkhus, Sakka’s wife is the asura maiden named Suja; therefore he is called Sujampati, Suja’s husband.
+sn11.12:7.1 | S: Sakka rules as sovereign lord over the gods of the thirty-three. That’s why he’s called Devānaminda, the Lord of Gods. | T: “Bhikkhus, Sakka, lord of the devas, exercises supreme sovereignty and rulership over the Tavatiṁsa devas; therefore he is called lord of the devas.
+sn11.12:8.1 | S: In a former life, when Sakka was a human being, he undertook seven vows. And it was because of undertaking these that he achieved the status of Sakka. | T: (none)
+sn11.12:8.2 | S: What seven? | T: (none)
+sn11.12:8.3 | S: As long as I live, may I support my parents. | T: (none)
+sn11.12:8.4 | S: As long as I live, may I honor the elders in the family. | T: (none)
+sn11.12:8.5 | S: As long as I live, may I speak gently. | T: (none)
+sn11.12:8.6 | S: As long as I live, may I not backbite. | T: (none)
+sn11.12:8.7 | S: As long as I live, may I live at home with heart rid of the stain of stinginess, freely generous, open-handed, loving to let go, committed to charity, loving to give and to share. | T: (none)
+sn11.12:8.8 | S: As long as I live, may I speak the truth. | T: (none)
+sn11.12:8.9 | S: As long as I live, may I be free of anger, or should anger arise, may I quickly get rid of it. | T: (none)
+sn11.12:8.10 | S: In a former life, when Sakka was a human being, he undertook seven vows. And it was because of undertaking these that he achieved the status of Sakka. | T: “Bhikkhus, in the past, when Sakka, lord of the devas, was a human being, he adopted and undertook seven vows by the undertaking of which he achieved the status of Sakka….”
+sn11.12:9.1 | S: A child who respects their parents, | T: The remainder of this sutta is identical with the preceding one.
+sn11.12:9.2 | S: and honors the elders in the family, | T: (none)
+sn11.12:9.3 | S: whose speech is gentle and courteous, | T: (none)
+sn11.12:9.4 | S: and has given up backbiting; | T: (none)
+sn11.12:10.1 | S: who’s committed to getting rid of stinginess, | T: (none)
+sn11.12:10.2 | S: is truthful, and has mastered anger: | T: (none)
+sn11.12:10.3 | S: the gods of the thirty-three declare | T: (none)
+sn11.12:10.4 | S: them to be a true person.” | T: Verses 906–7 = 904–5.
+
+## sn35.95
+sn35.95:1.1 | S: Then Venerable Māluṅkyaputta went up to the Buddha … and asked him, | T: Then the Venerable Maluṅkyaputta approached the Blessed One … and said to him:
+sn35.95:1.2 | S: “Sir, may the Buddha please teach me Dhamma in brief. When I’ve heard it, I’ll live alone, withdrawn, diligent, keen, and resolute.” | T: “Venerable sir, it would be good if the Blessed One would teach me the Dhamma in brief, so that, having heard the Dhamma from the Blessed One, I might dwell alone, withdrawn, diligent, ardent, and resolute.”
+sn35.95:2.1 | S: “Well now, Māluṅkyaputta, what are we to say to the young monks, | T: “Here now, Maluṅkyaputta, what should I say to the young bhikkhus when a bhikkhu like you—
+sn35.95:2.2 | S: when even an old man like you, elderly and senior, advanced in years, having reached the final stage of life, asks for brief advice?” | T: old, aged, burdened with years, advanced in life, come to the last stage—asks me for an exhortation in brief?”
+sn35.95:3.1 | S: “Sir, even though I’m an old man, elderly and senior, | T: “Although, venerable sir, I am old, aged, burdened with years, advanced in life, come to the last stage,
+sn35.95:3.2 | S: may the Buddha please teach me Dhamma in brief! May the Holy One please teach me in brief! Hopefully I can understand the meaning of what the Buddha says. Hopefully I can be an heir of the Buddha’s teaching!” | T: let the Blessed One teach me the Dhamma in brief, let the Fortunate One teach me the Dhamma in brief. Perhaps I may understand the meaning of the Blessed One’s statement, perhaps I may become an heir to the Blessed One’s statement.”
+sn35.95:4.1 | S: “What do you think, Māluṅkyaputta? | T: “What do you think, Maluṅkyaputta,
+sn35.95:4.2 | S: Do you have any desire or greed or fondness for sights known by the eye that are unseen, unseen before, and which you neither see nor think might be seen?” | T: do you have any desire, lust, or affection for those forms cognizable by the eye that you have not seen and never saw before, that you do not see and would not think might be seen?”
+sn35.95:4.3 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.95:5.1 | S: “Do you have any desire or greed or affection for sounds known by the ear … | T: “Do you have any desire, lust, or affection for those sounds cognizable by the ear …
+sn35.95:5.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:6.1 | S: smells known by the nose … | T: for those odours cognizable by the nose …
+sn35.95:6.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:7.1 | S: tastes known by the tongue … | T: for those tastes cognizable by the tongue …
+sn35.95:7.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:8.1 | S: touches known by the body … | T: for those tactile objects cognizable by the body …
+sn35.95:8.2 | P: “No hetaṁ, bhante”. | T: (none)
+sn35.95:9.1 | S: ideas known by the mind that are unknown, unknown before, and which you neither know nor think might be known?” | T: for those mental phenomena cognizable by the mind that you have not cognized and never cognized before, that you do not cognize and would not think might be cognized?”
+sn35.95:9.2 | S: “No, sir.” | T: “No, venerable sir.”
+sn35.95:10.1 | S: “In that case, when it comes to things that ought be seen, heard, thought, and known: in the seen will be merely the seen; in the heard will be merely the heard; in the thought will be merely the thought; in the known will be merely the known. | T: “Here, Maluṅkyaputta, regarding things seen, heard, sensed, and cognized by you: in the seen there will be merely the seen; in the heard there will be merely the heard; in the sensed there will be merely the sensed; in the cognized there will be merely the cognized.
+sn35.95:10.2 | S: When this is the case, | T: “When, Maluṅkyaputta, regarding things seen, heard, sensed, and cognized by you, in the seen there will be merely the seen, in the heard there will be merely the heard, in the sensed there will be merely the sensed, in the cognized there will be merely the cognized,
+sn35.95:10.3 | S: you won’t be ‘by that’. | T: then, Maluṅkyaputta, you will not be ‘by that.’
+sn35.95:10.4 | S: When you’re not ‘by that’, | T: When, Maluṅkyaputta, you are not ‘by that,’
+sn35.95:10.5 | S: you won’t be ‘in that’. | T: then you will not be ‘therein. ’
+sn35.95:10.6 | S: When you’re not ‘in that’, | T: When, Maluṅkyaputta, you are not ‘therein,’
+sn35.95:10.7 | S: you won’t be in this life or the next or in between the two. | T: then you will be neither here nor beyond nor in between the two.
+sn35.95:10.8 | S: Just this is the end of suffering.” | T: This itself is the end of suffering.”
+sn35.95:11.1 | S: “This is how I understand the detailed meaning of the Buddha’s brief statement: | T: “I understand in detail, venerable sir, the meaning of what was stated by the Blessed One in brief:
+sn35.95:12.1 | S: ‘When you see a sight, mindfulness is lost | T: “Having seen a form with mindfulness muddled,
+sn35.95:12.2 | S: as you focus on a pleasant feature. | T: Attending to the pleasing sign,
+sn35.95:12.3 | S: Experiencing it with a mind full of desire, | T: One experiences it with infatuated mind
+sn35.95:12.4 | S: you keep clinging to it. | T: And remains tightly holding to it.
+sn35.95:13.1 | S: Many feelings grow | T: “Many feelings flourish within,
+sn35.95:13.2 | S: arising from sights. | T: Originating from the visible form,
+sn35.95:13.3 | S: The mind is damaged | T: Covetousness and annoyance as well
+sn35.95:13.4 | S: by covetousness and cruelty. | T: By which one’s mind becomes disturbed.
+sn35.95:13.5 | S: Heaping up suffering like this, | T: For one who accumulates suffering thus
+sn35.95:13.6 | S: you’re said to be far from extinguishment. | T: Nibbāna is said to be far away.
+sn35.95:14.1 | S: When you hear a sound, mindfulness is lost | T: “Having heard a sound with mindfulness muddled …
+sn35.95:14.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:14.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:14.4 | S: you keep clinging to it. | T: (none)
+sn35.95:15.1 | S: Many feelings grow | T: (none)
+sn35.95:15.2 | S: arising from sounds. | T: (none)
+sn35.95:15.3 | S: The mind is damaged | T: (none)
+sn35.95:15.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:15.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:15.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:16.1 | S: When you smell an odor, mindfulness is lost | T: “Having smelt an odour with mindfulness muddled …
+sn35.95:16.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:16.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:16.4 | S: you keep clinging to it. | T: (none)
+sn35.95:17.1 | S: Many feelings grow | T: (none)
+sn35.95:17.2 | S: arising from smells. | T: (none)
+sn35.95:17.3 | S: The mind is damaged | T: (none)
+sn35.95:17.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:17.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:17.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:18.1 | S: When you enjoy a taste, mindfulness is lost | T: “Having enjoyed a taste with mindfulness muddled …
+sn35.95:18.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:18.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:18.4 | S: you keep clinging to it. | T: (none)
+sn35.95:19.1 | S: Many feelings grow | T: (none)
+sn35.95:19.2 | S: arising from tastes. | T: (none)
+sn35.95:19.3 | S: The mind is damaged | T: (none)
+sn35.95:19.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:19.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:19.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:20.1 | S: When you sense a touch, mindfulness is lost | T: “Having felt a contact with mindfulness muddled …
+sn35.95:20.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:20.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:20.4 | S: you keep clinging to it. | T: (none)
+sn35.95:21.1 | S: Many feelings grow | T: (none)
+sn35.95:21.2 | S: arising from touches. | T: (none)
+sn35.95:21.3 | S: The mind is damaged | T: (none)
+sn35.95:21.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:21.5 | S: Heaping up suffering like this, | T: (none)
+sn35.95:21.6 | S: you’re said to be far from extinguishment. | T: (none)
+sn35.95:22.1 | S: When you know an idea, mindfulness is lost | T: “Having known an object with mindfulness muddled …
+sn35.95:22.2 | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:22.3 | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:22.4 | S: you keep clinging to it. | T: (none)
+sn35.95:23.1 | S: Many feelings grow | T: (none)
+sn35.95:23.2 | S: arising from ideas. | T: (none)
+sn35.95:23.3 | S: The mind is damaged | T: (none)
+sn35.95:23.4 | S: by covetousness and cruelty. | T: (none)
+sn35.95:23.5 | S: Heaping up suffering like this, | T: For one who accumulates suffering thus
+sn35.95:23.6 | S: you’re said to be far from extinguishment. | T: Nibbāna is said to be far away.
+sn35.95:24.1 | S: There’s no desire for sights | T: “When, firmly mindful, one sees a form, One is not inflamed by lust for forms;
+sn35.95:24.2 | S: when you see a sight with mindfulness. | T: (none)
+sn35.95:24.3 | S: Experiencing it with a mind free of desire, | T: One experiences it with dispassionate mind
+sn35.95:24.4 | S: you don’t keep clinging to it. | T: And does not remain holding it tightly.
+sn35.95:25.1 | S: Even as you see a sight | T: “One fares mindfully in such a way That even as one sees the form,
+sn35.95:25.2 | S: and get familiar with how it feels, | T: And while one undergoes a feeling,
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn35.95:25.3 | S: you wear away, you don’t heap up: | T: Suffering is exhausted, not built up.
+sn35.95:25.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:25.5 | S: Eroding suffering like this, | T: For one dismantling suffering thus,
+sn35.95:25.6 | S: you’re said to be in the presence of extinguishment. | T: Nibbāna is said to be close by.
+sn35.95:26.1 | S: There’s no desire for sounds | T: (none)
+sn35.95:26.2 | S: when you hear a sound with mindfulness. | T: “When, firmly mindful, one hears a sound, One is not inflamed by lust for sounds;
+sn35.95:26.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:26.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:27.1 | S: Even as you hear a sound | T: (none)
+sn35.95:27.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:27.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:27.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:27.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:27.6 | S: you’re said to be in the presence of extinguishment. | T: …
+sn35.95:28.1 | S: There’s no desire for odors | T: (none)
+sn35.95:28.2 | S: when you smell an odor with mindfulness. | T: “When, firmly mindful, one smells an odour, One is not inflamed by lust for odours;
+sn35.95:28.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:28.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:29.1 | S: Even as you smell an odor | T: (none)
+sn35.95:29.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:29.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:29.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:29.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:29.6 | S: you’re said to be in the presence of extinguishment. | T: …
+sn35.95:30.1 | S: There’s no desire for tastes | T: (none)
+sn35.95:30.2 | S: when you enjoy a taste with mindfulness. | T: “When, firmly mindful, one enjoys a taste, One is not inflamed by lust for tastes;
+sn35.95:30.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:30.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:31.1 | S: Even as you savor a taste | T: (none)
+sn35.95:31.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:31.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:31.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:31.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:31.6 | S: you’re said to be in the presence of extinguishment. | T: …
+sn35.95:32.1 | S: There’s no desire for touches | T: (none)
+sn35.95:32.2 | S: when you sense a touch with mindfulness. | T: “When, firmly mindful, one feels a contact, One is not inflamed by lust for contacts;
+sn35.95:32.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:32.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:33.1 | S: Even as you sense a touch | T: (none)
+sn35.95:33.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:33.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:33.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:33.5 | S: Eroding suffering like this, | T: (none)
+sn35.95:33.6 | S: you’re said to be in the presence of extinguishment. | T: …
+sn35.95:34.1 | S: There’s no desire for ideas | T: (none)
+sn35.95:34.2 | S: when you know an idea with mindfulness. | T: “When, firmly mindful, one knows an object, One is not inflamed by lust for objects;
+sn35.95:34.3 | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:34.4 | S: you don’t keep clinging to it. | T: (none)
+sn35.95:35.1 | S: Even as you know an idea | T: …
+sn35.95:35.2 | S: and get familiar with how it feels, | T: (none)
+sn35.95:35.3 | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:35.4 | S: that’s how to live mindfully. | T: (none)
+sn35.95:35.5 | S: Eroding suffering like this, | T: For one diminishing suffering thus
+sn35.95:35.6 | S: you’re said to be in the presence of extinguishment.’ | T: Nibbāna is said to be close by.
+sn35.95:36.1 | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It is in such a way, venerable sir, that I understand in detail the meaning of what was stated by the Blessed One in brief.”
+sn35.95:36.2 | S: “Good, good, Māluṅkyaputta! | T: “Good, good, Maluṅkyaputta!
+sn35.95:36.3 | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this.” And he repeated the verses in full. | T: It is good that you understand in detail the meaning of what was stated by me in brief. The Buddha here repeats the above verses in full.
+sn35.95:37.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | T: (none)
+sn35.95:37.2 | P: Piyaṁ nimittaṁ manasi karoto; | T: (none)
+sn35.95:37.3 | P: Sārattacitto vedeti, | T: (none)
+sn35.95:37.4 | P: Tañca ajjhosa tiṭṭhati. | T: (none)
+sn35.95:38.1 | P: Tassa vaḍḍhanti vedanā, | T: (none)
+sn35.95:38.2 | P: anekā rūpasambhavā; | T: (none)
+sn35.95:38.3 | P: Abhijjhā ca vihesā ca, | T: (none)
+sn35.95:38.4 | P: cittamassūpahaññati; | T: (none)
+sn35.95:38.5 | P: Evaṁ ācinato dukkhaṁ, | T: (none)
+sn35.95:38.6 | P: ārā nibbāna vuccati. | T: (none)
+sn35.95:38.7 | P: …pe… | T: (none)
+sn35.95:39.1 | P: Na so rajjati dhammesu, | T: (none)
+sn35.95:39.2 | P: dhammaṁ ñatvā paṭissato; | T: (none)
+sn35.95:39.3 | P: Virattacitto vedeti, | T: (none)
+sn35.95:39.4 | P: tañca nājjhosa tiṭṭhati. | T: (none)
+sn35.95:40.1 | P: Yathāssa vijānato dhammaṁ, | T: (none)
+sn35.95:40.2 | P: Sevato cāpi vedanaṁ; | T: (none)
+sn35.95:40.3 | P: Khīyati nopacīyati, | T: (none)
+sn35.95:40.4 | P: Evaṁ so caratī sato; | T: (none)
+sn35.95:40.5 | P: Evaṁ apacinato dukkhaṁ, | T: (none)
+sn35.95:40.6 | P: Santike nibbāna vuccatī’ti. | T: (none)
+sn35.95:41.1 | S: “This is how to see the detailed meaning of what I said in brief.” | T: “It is in such a way, Maluṅkyaputta, that the meaning of what was stated by me in brief should be understood in detail.”
+sn35.95:42.1 | S: And then Venerable Māluṅkyaputta approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then the Venerable Maluṅkyaputta, having delighted and rejoiced in the Blessed One’s words, rose from his seat, and, after paying homage to the Blessed One, keeping him on his right, he departed.
+sn35.95:42.2 | S: Then Māluṅkyaputta, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. | T: Then, dwelling alone, withdrawn, diligent, ardent, and resolute, the Venerable Maluṅkyaputta, by realizing it for himself with direct knowledge, in this very life entered and dwelt in that unsurpassed goal of the holy life for the sake of which clansmen rightly go forth from the household life into homelessness.
+sn35.95:42.3 | S: He understood: “Rebirth is ended; the spiritual journey has been completed; what had to be done has been done; there is nothing further for this place.” | T: He directly knew: “Destroyed is birth, the holy life has been lived, what had to be done has been done, there is no more for this state of being.”
+sn35.95:42.4 | S: And Venerable Māluṅkyaputta became one of the perfected. | T: And the Venerable Maluṅkyaputta became one of the arahants.
+sn35.95:42.5 | P: Dutiyaṁ. | T: (none)
+
+
+codex
+I’ve read the full batch. I’m checking the repeated verse openings and the ellipsis-separated list for clear boundary errors before writing the findings.
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/bodhi/batch-004.findings.tmp <<'EOF'
+sn45.50-54:1.4 starts: accomplishment in desire … accomplishment in self …
+sn45.50-54:1.5 starts: accomplishment in self … accomplishment in view …
+sn45.50-54:1.6 starts: accomplishment in view … accomplishment in diligence …
+sn45.50-54:1.7 starts: accomplishment in diligence … … accomplishment in careful
+sn11.12:8.1 starts: “Bhikkhus, in the past, when Sakka, lord of
+sn11.12:8.10 none
+sn35.95:2.2 starts: when a bhikkhu like you— old, aged,
+sn35.95:26.1 starts: “When, firmly mindful, one hears a sound, One
+sn35.95:26.2 none
+sn35.95:28.1 starts: “When, firmly mindful, one smells an odour, One
+sn35.95:28.2 none
+sn35.95:30.1 starts: “When, firmly mindful, one enjoys a taste, One
+sn35.95:30.2 none
+sn35.95:32.1 starts: “When, firmly mindful, one feels a contact, One
+sn35.95:32.2 none
+sn35.95:34.1 starts: “When, firmly mindful, one knows an object, One
+sn35.95:34.2 none
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+17 lines reported.
+tokens used
+29,544
+17 lines reported.

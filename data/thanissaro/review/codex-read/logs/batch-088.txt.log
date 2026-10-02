@@ -1,0 +1,374 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9c-cfbe-7e12-b679-01c6d94d7fcb
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear boundary errors, and write only the findings to the specified file.
+exec
+/bin/bash -lc "sed -n '1,220p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## ud3.8
+ud3.8:1.1 | S: So I have heard. | T: I have heard that
+ud3.8:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud3.8:1.3 | S: Now at that time, after the meal, on return from almsround, several mendicants sat together in the pavilion by the kareri tree and this discussion came up among them: | T: And on that occasion a large number of monks, after the meal, on returning from their alms round, were sitting gathered together at the kareri-tree pavilion when this discussion arose:
+ud3.8:2.1 | S: “Reverends, when a mendicant who eats only almsfood is wandering for alms, from time to time they get to see pleasing sights, hear pleasing sounds, smell pleasing odors, taste pleasing flavors, and encounter pleasing touches. | T: “Friends, an alms-collecting monk, while going for alms, periodically sees agreeable sights via the eye. He periodically hears agreeable sounds via the ear… smells agreeable aromas via the nose… tastes agreeable flavors via the tongue… touches agreeable tactile sensations via the body.
+ud3.8:2.2 | S: They wander for alms being honored, respected, revered, venerated, and esteemed. | T: An alms-collecting monk, while going for alms, is honored, respected, revered, venerated, and given homage.
+ud3.8:2.3 | S: Come, we too should eat only almsfood. | T: “So, friends, let’s become alms-collecting monks.
+ud3.8:2.4 | S: From time to time we too will get to see pleasing sights, hear pleasing sounds, smell pleasing odors, taste pleasing flavors, and encounter pleasing touches. | T: Then we, too, while going for alms, will periodically get to see agreeable sights via the eye… to hear agreeable sounds via the ear… to smell agreeable aromas via the nose… to taste agreeable flavors via the tongue… to touch agreeable tactile sensations via the body.
+ud3.8:2.5 | S: We too shall wander for alms being honored, respected, revered, venerated, and esteemed.” | T: We, too, while going for alms, will be honored, respected, revered, venerated, and given homage.”
+ud3.8:2.6 | S: At that point the conversation among those mendicants was left unfinished. | T: And this discussion came to no conclusion.
+ud3.8:3.1 | S: Then in the late afternoon, the Buddha came out of retreat and went to the pavilion by the kareri tree, where he sat down on the seat spread out | T: Then the Blessed One, emerging from his seclusion in the late afternoon, went to the kareri-tree pavilion and, on arrival, sat down on a seat laid out.
+ud3.8:3.2 | S: and addressed the mendicants: | T: Seated, he addressed the monks:
+ud3.8:3.3 | S: “Mendicants, what were you sitting talking about just now? What conversation was left unfinished?” | T: “For what topic are you sitting together here? And what was the discussion that came to no conclusion?”
+ud3.8:4.1 | S: So the mendicants told him what they had been talking about. The Buddha said, | T: “Just now, lord, after the meal, on returning from our alms round, we were sitting gathered together here at the kareri-tree pavilion when this discussion arose: [They repeat what had been said.]”
+ud3.8:5.1 | P: ‘Piṇḍapātiko, āvuso, bhikkhu piṇḍāya caranto labhati kālena kālaṁ manāpike cakkhunā rūpe passituṁ, labhati kālena kālaṁ manāpike sotena sadde sotuṁ, labhati kālena kālaṁ manāpike ghānena gandhe ghāyituṁ, labhati kālena kālaṁ manāpike jivhāya rase sāyituṁ, labhati kālena kālaṁ manāpike kāyena phoṭṭhabbe phusituṁ. | T: (none)
+ud3.8:5.2 | P: Piṇḍapātiko, āvuso, bhikkhu sakkato garukato mānito pūjito apacito piṇḍāya carati. | T: (none)
+ud3.8:5.3 | P: Handāvuso, mayampi piṇḍapātikā homa. | T: (none)
+ud3.8:5.4 | P: Mayampi lacchāma kālena kālaṁ manāpike cakkhunā rūpe passituṁ …pe… | T: (none)
+ud3.8:5.5 | P: kāyena phoṭṭhabbe phusituṁ. | T: (none)
+ud3.8:5.6 | P: Mayampi sakkatā garukatā mānitā pūjitā apacitā piṇḍāya carissāmā’ti. | T: (none)
+ud3.8:5.7 | P: Ayaṁ kho no, bhante, antarākathā vippakatā, atha bhagavā anuppatto”ti. | T: (none)
+ud3.8:6.1 | S: “Mendicants, it is not appropriate for you gentlemen who have gone forth out of faith from the lay life to homelessness to talk about such things. | T: “It isn’t proper, monks, that sons of good families, on having gone forth out of faith from home to the homeless life, should talk on such a topic.
+ud3.8:6.2 | S: When you’re sitting together you should do one of two things: | T: When you have gathered you have two duties:
+ud3.8:6.3 | S: discuss the teachings or keep noble silence.” | T: either Dhamma-talk or noble silence.”
+ud3.8:7.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud3.8:8.1 | S: “A mendicant who relies on alms, | T: The monk going for alms,
+ud3.8:8.2 | S: self-supported, providing for no other; | T: supporting himself and no other:
+ud3.8:8.3 | S: the unaffected one is envied by even the gods, | T: The devas adore one who is Such
+ud3.8:8.4 | S: but not if they’re after popularity and reputation.” | T: if he’s not intent on fame & praise.
+ud3.8:8.5 | P: Aṭṭhamaṁ. | T: (none)
+
+## ud4.2
+ud4.2:1.1 | S: So I have heard. | T: I have heard that
+ud4.2:1.2 | S: At one time the Buddha was staying in the sal forest of the Mallas at Upavattana near Kusinārā. | T: on one occasion the Blessed One was staying in Upavattana, the Mallan sal grove near Kusinarā.
+ud4.2:1.3 | S: Now at that time several mendicants were staying not far from the Buddha in a wilderness hut. They were haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: And on that occasion, not far from the Blessed One, many monks were staying in wilderness huts: high-strung, rowdy, unruly, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+ud4.2:2.1 | S: The Buddha saw those mendicants staying nearby. | T: The Blessed One saw those many monks staying in wilderness huts: high-strung, rowdy, unruly, talkative, of loose words & muddled mindfulness, unalert, unconcentrated, their minds scattered, their faculties left wide open.
+ud4.2:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.2:4.1 | S: “Unguarded in body, | T: By leaving your body unprotected,
+ud4.2:4.2 | S: ruined by wrong view, | T: being immersed in wrong view,
+ud4.2:4.3 | S: overcome with dullness and drowsiness, | T: conquered by sloth & torpor,
+ud4.2:4.4 | S: you fall under Māra’s sway. | T: you go under Māra’s sway.
+ud4.2:5.1 | S: That’s why you should guard the mind, | T: Therefore, with protected mind,
+ud4.2:5.2 | S: with right thoughts your habitat, | T: ranging in right resolve,
+ud4.2:5.3 | S: and right view at the fore. | T: honoring right view,
+ud4.2:5.4 | S: Having understood rise and fall, | T: knowing rise-&-fall,
+ud4.2:5.5 | S: a mendicant who has overcome <j>dullness and drowsiness | T: conquering sloth & torpor, a monk
+ud4.2:5.6 | S: would abandon all bad destinies.” | T: leaves all bad destinations behind.
+ud4.2:5.7 | P: Dutiyaṁ. | T: (none)
+
+## ud4.6
+ud4.6:1.1 | S: So I have heard. | T: I have heard that
+ud4.6:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud4.6:1.3 | S: Now at that time Venerable Bhāradvāja the Alms-Gatherer was sitting not far from the Buddha, cross-legged, with his body straight. He was one who lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes. He was of few wishes, content, secluded, aloof, and energetic, an advocate of austerities, dedicated to the higher mind. | T: And on that occasion Ven. Piṇḍola Bhāradvāja was sitting not far from the Blessed One, his legs crossed, his body held erect–a wilderness dweller, an alms-goer, a rag-robe wearer, an owner of only one set of three robes, modest, content, solitary, unentangled, his persistence aroused, an advocate of the ascetic practices, devoted to the heightened mind.
+ud4.6:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Piṇḍola Bhāradvāja sitting not far away, his legs crossed, his body held erect–a wilderness dweller, an alms-goer, a rag-robe wearer, an owner of only one set of three robes, modest, content, solitary, unentangled, his persistence aroused, an advocate of the ascetic practices, devoted to the heightened mind.
+ud4.6:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.6:4.1 | S: “Not speaking ill nor doing harm; | T: Not disparaging, not injuring,
+ud4.6:4.2 | S: restraint in the monastic code; | T: restraint in line with the Pāṭimokkha,
+ud4.6:4.3 | S: moderation in eating; | T: moderation in food,
+ud4.6:4.4 | S: staying in remote lodgings; | T: dwelling in seclusion,
+ud4.6:4.5 | S: commitment to the higher mind— | T: commitment to the heightened mind:
+ud4.6:4.6 | S: this is the instruction of the Buddhas.” | T: this is the teaching of the Awakened.
+ud4.6:4.7 | P: Chaṭṭhaṁ. | T: (none)
+
+## ud4.7
+ud4.7:1.1 | S: So I have heard. | T: I have heard that
+ud4.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud4.7:1.3 | S: Now at that time Venerable Sāriputta was sitting not far from the Buddha, cross-legged, with his body straight. He was of few wishes, content, secluded, aloof, energetic, dedicated to the higher mind. | T: And on that occasion Ven. Sāriputta was sitting not far from the Blessed One–his legs crossed, his body held erect–modest, content, solitary, unentangled, his persistence aroused, devoted to the heightened mind.
+ud4.7:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Sāriputta sitting not far away–his legs crossed, his body held erect–modest, content, solitary, unentangled, his persistence aroused, devoted to the heightened mind.
+ud4.7:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud4.7:4.1 | S: “A sage of higher consciousness, diligent, | T: Of heightened awareness & heedful,
+ud4.7:4.2 | S: training in the ways of sagacity: | T: the sage trained in sagacity’s way:
+ud4.7:4.3 | S: there are no sorrows for the unaffected, | T: He has no sorrows, one who is Such,
+ud4.7:4.4 | S: calm and ever mindful.” | T: calmed & ever mindful.
+ud4.7:4.5 | P: Sattamaṁ. | T: (none)
+
+## ud4.9
+ud4.9:1.1 | S: So I have heard. | T: I have heard that
+ud4.9:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ Sanctuary.
+ud4.9:1.3 | S: Then as Venerable Upasena son of Vaṅgantā was in private retreat this thought came to his mind: | T: And on that occasion, when Ven. Upasena Vaṅgantaputta was alone in seclusion, this line of thinking appeared to his awareness:
+ud4.9:1.4 | S: “I’m so fortunate, so very fortunate! | T: “What a gain, what a true gain it is for me
+ud4.9:1.5 | S: My Teacher is the Blessed One, perfected, a fully awakened Buddha. | T: that my teacher is the Blessed One, worthy and fully self-awakened;
+ud4.9:1.6 | S: Well explained is the teaching and training in which I have gone forth from the lay life to homelessness. | T: that I have gone forth from home to the homeless life in a well-taught Dhamma & Vinaya;
+ud4.9:1.7 | S: My spiritual companions are ethical and of good character. | T: that my companions in the holy life are virtuous and endowed with admirable qualities;
+ud4.9:1.8 | S: I have fulfilled the precepts. | T: that I have achieved culmination in terms of the precepts;
+ud4.9:1.9 | S: My mind is unified and serene. | T: that my mind is unified and well-concentrated;
+ud4.9:1.10 | S: I am a perfected one who has ended the defilements. | T: that I am an arahant, with effluents ended;
+ud4.9:1.11 | S: I am of great might and power. | T: that I have great power & great might.
+ud4.9:1.12 | S: My life has been good, and my death will be good.” | T: Fortunate has been my life; fortunate will be my death.”
+ud4.9:2.1 | S: Then, knowing that Venerable Upasena’s train of thought, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then the Blessed One, comprehending with his awareness the line of thinking that had appeared to Ven. Upasena Vaṅgantaputta’s awareness, on that occasion exclaimed:
+ud4.9:3.1 | S: “One who has no guilt in life, | T: He doesn’t regret what life has been,
+ud4.9:3.2 | S: nor grief at facing death: | T: doesn’t grieve at death,
+ud4.9:3.3 | S: that attentive one who has seen the truth, | T: if–enlightened– he has seen that state.
+ud4.9:3.4 | S: grieves not among the grieving. | T: He doesn’t grieve in the midst of grief.
+ud4.9:4.1 | S: For the mendicant with peaceful mind, | T: For one who has crushed
+ud4.9:4.2 | S: who has cut off craving for continued existence, | T: craving for becoming– the monk of peaceful mind–
+ud4.9:4.3 | S: transmigration through births is finished, | T: birth & the wandering on are totally ended.
+ud4.9:4.4 | S: there’ll be no more future lives for them.” | T: He has no further becoming.
+ud4.9:4.5 | P: Navamaṁ. | T: (none)
+
+## ud5.10
+ud5.10:1.1 | S: So I have heard. | T: I have heard that
+ud5.10:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.10:1.3 | S: Now at that time Venerable Cūḷapanthaka was sitting not far from the Buddha, cross-legged, his body set straight, and mindfulness brought to the present. | T: And on that occasion Ven. Cūḷa Panthaka was sitting not far from the Blessed One, his legs crossed, his body held erect, with mindfulness established to the fore.
+ud5.10:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Cūḷa Panthaka sitting not far away, his legs crossed, his body held erect, with mindfulness established to the fore.
+ud5.10:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.10:4.1 | S: “Steady in body, steady in mind, | T: With steady body, steady awareness,
+ud5.10:4.2 | S: standing, sitting or lying down: | T: –whether standing, sitting, or lying down–
+ud5.10:4.3 | S: a mendicant focusing on this mindfulness | T: a monk determined on mindfulness
+ud5.10:4.4 | S: gains an ever higher distinction. | T: gains one distinction after another.
+ud5.10:4.5 | S: And when they have done so, | T: Having gained one distinction
+ud5.10:4.6 | S: they vanish from the King of Death.” | T: after another, he goes where the King of Death can’t see.
+ud5.10:4.7 | P: Dasamaṁ. | T: (none)
+ud5.10:4.8 | P: Soṇavaggo pañcamo. | T: (none)
+ud5.10:5.0 | P: Tassuddānaṁ | T: (none)
+ud5.10:5.1 | P: Piyo appāyukā kuṭṭhī, | T: (none)
+ud5.10:5.2 | P: kumārakā uposatho; | T: (none)
+ud5.10:5.3 | P: Soṇo ca revato bhedo, | T: (none)
+ud5.10:5.4 | P: sadhāya panthakena cāti. | T: (none)
+
+## ud5.1
+ud5.1:1.1 | S: So I have heard. | T: I have heard that
+ud5.1:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.1:1.3 | S: Now at that time King Pasenadi of Kosala was upstairs in the royal longhouse together with Queen Mallikā. | T: And on that occasion King Pasenadi Kosala had gone with Queen Mallikā to the upper palace.
+ud5.1:1.4 | S: Then King Pasenadi addressed Queen Mallikā, | T: Then he said to her,
+ud5.1:1.5 | S: “Mallikā, is there anyone more dear to you than yourself?” | T: “Mallikā, is there anyone dearer to you than yourself?”
+ud5.1:2.1 | S: “No, Great King, there isn’t. | T: “No, great king. There is no one dearer to me than myself.
+ud5.1:2.2 | S: But is there anyone more dear to you than yourself?” | T: And what about you, great king? Is there anyone dearer to you than yourself?”
+ud5.1:2.3 | S: “For me also, Mallikā, there’s no one.” | T: “No, Mallikā. There is no one dearer to me than myself.”
+ud5.1:3.1 | S: Then King Pasenadi of Kosala came downstairs from the stilt longhouse, went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Then the king, descending from the palace, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One,
+ud5.1:4.1 | P: “Idhāhaṁ, bhante, mallikāya deviyā saddhiṁ uparipāsādavaragato mallikaṁ deviṁ etadavocaṁ: | T: “Just now, lord, when I had gone with Queen Mallikā to the upper palace, I said to her,
+ud5.1:4.2 | P: ‘atthi nu kho te, mallike, kocañño attanā piyataro’ti? | T: ‘Mallikā, is there anyone dearer to you than yourself?’
+ud5.1:4.3 | P: Evaṁ vutte, mallikā devī maṁ etadavoca: | T: “When this was said, she said to me,
+ud5.1:4.4 | P: ‘natthi kho me, mahārāja, kocañño attanā piyataro. | T: ‘No, great king. There is no one dearer to me than myself.
+ud5.1:4.5 | P: Tuyhaṁ pana, mahārāja, atthañño koci attanā piyataro’ti? | T: And what about you, great king? Is there anyone dearer to you than yourself?’
+ud5.1:4.6 | P: Evaṁ vutte, ahaṁ, bhante, mallikaṁ deviṁ etadavocaṁ: | T: “When this was said, I said to her,
+ud5.1:4.7 | P: ‘mayhampi kho, mallike, natthañño koci attanā piyataro’”ti. | T: ‘No, Mallikā. There is no one dearer to me than myself.’”
+ud5.1:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.1:6.1 | S: “Having explored every quarter with the mind, | T: Searching all directions with your awareness,
+ud5.1:6.2 | S: one finds no one dearer than oneself. | T: you find no one dearer than yourself.
+ud5.1:6.3 | S: Likewise for others, each holds themselves dear; | T: In the same way, others are thickly dear to themselves.
+ud5.1:6.4 | S: so one who desires self-knowledge <j>would harm no other.” | T: So you shouldn’t hurt others if you love yourself.
+ud5.1:6.5 | P: Paṭhamaṁ. | T: (none)
+
+## ud5.2
+ud5.2:1.1 | S: So I have heard. | T: I have heard that
+ud5.2:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.2:1.3 | S: Then in the late afternoon, Venerable Ānanda came out of retreat and went to the Buddha. He bowed, sat down to one side, and said to him: | T: Then Ven. Ānanda, emerging from his seclusion in the late afternoon, went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+ud5.2:1.4 | S: “It’s incredible, sir, it’s amazing! | T: “It’s amazing, sir. It’s astounding–
+ud5.2:1.5 | S: How short-lived was the Blessed One’s mother! For seven days after the Blessed One was born, his mother passed away and was reborn in the host of joyful gods.” | T: how short-lived the Blessed One’s mother was. Seven days after the Blessed One’s birth she died and reappeared among the Contented [Tusita] (deva-) group.”
+ud5.2:2.1 | S: “That’s so true, Ānanda! For the mothers of beings intent of awakening are short-lived. | T: “That’s the way it is, Ānanda. That’s the way it is, for the mothers of bodhisattas are short-lived.
+ud5.2:2.2 | S: Seven days after the beings intent on awakening are born, their mothers pass away and are reborn in the host of joyful gods.” | T: Seven days after the bodhisattas’ birth, the bodhisattas’ mothers pass away and reappear among the Contented (deva-) group.”
+ud5.2:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.2:4.1 | S: “Whether born or to be born, | T: Those who have come to be, those who will be:
+ud5.2:4.2 | S: all depart, leaving the body behind. | T: All will go, leaving the body behind.
+ud5.2:4.3 | S: The skillful, understanding that all is lost, | T: The skillful person, realizing the loss of all,
+ud5.2:4.4 | S: would keenly practice the spiritual life.” | T: should live the holy life ardently.
+ud5.2:4.5 | P: Dutiyaṁ. | T: (none)
+
+## ud5.5
+ud5.5:1.1 | S: So I have heard. | T: I have heard that
+ud5.5:1.2 | S: At one time the Buddha was staying near Sāvatthī in the stilt longhouse of Migāra’s mother in the Eastern Monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at the Eastern Monastery, the palace of Migāra’s mother.
+ud5.5:1.3 | S: Now, at that time it was the sabbath, and the Buddha was sitting surrounded by the Saṅgha of monks. | T: And on that occasion, the Blessed One–it being the observance day–was sitting surrounded by the community of monks.
+ud5.5:2.1 | S: And then, as the night was getting late, in the first watch of the night, Venerable Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then Ven. Ānanda–when the night was far advanced, at the end of the first watch–got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage with his hands placed palm-to-palm over his heart, and said to him,
+ud5.5:2.2 | S: “Sir, the night is getting late. It is the first watch of the night, and the Saṅgha of monks has been sitting long. | T: “Lord, the night is far advanced. The first watch has ended. The community of monks has been sitting here long.
+ud5.5:2.3 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: May the Blessed One recite the Pāṭimokkha to them.”
+ud5.5:2.4 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One remained silent.
+ud5.5:3.1 | S: For a second time, as the night was getting late, in the middle watch of the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then a second time, when the night was far advanced, at the end of the middle watch, Ven. Ānanda got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage with his hands placed palm-to-palm over his heart, and said to him,
+ud5.5:3.2 | S: “Sir, the night is getting late. It is the middle watch of the night, and the Saṅgha of monks has been sitting long. | T: “Lord, the night is far advanced. The second watch has ended. The community of monks has been sitting here long.
+ud5.5:3.3 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: May the Blessed One recite the Pāṭimokkha to them.”
+ud5.5:3.4 | S: But for a second time the Buddha kept silent. | T: When this was said, the Blessed One remained silent.
+ud5.5:4.1 | S: For a third time, as the night was getting late, in the last watch of the night, as dawn stirred, bringing joy to the night, Ānanda rose from his seat, arranged his robe over one shoulder, raised his cupped palms toward the Buddha and said, | T: Then a third time, when the night was far advanced, at the end of the last watch, as dawn was approaching and the face of the night was beaming, Ven. Ānanda got up from his seat, arranged his robe over one shoulder, stood facing the Blessed One, paying homage with his hands placed palm-to-palm over his heart, and said to him,
+ud5.5:4.2 | S: “Sir, the night is getting late. It is the last watch of the night and dawn stirs, bringing joy to the night. | T: “Lord, the night is far advanced. The last watch has ended. Dawn is approaching and the face of the night is beaming. The community of monks has been sitting here long.
+ud5.5:4.3 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: May the Blessed One recite the Pāṭimokkha to the community of monks.”
+ud5.5:4.4 | S: “Ānanda, the assembly is not pure.” | T: “Ānanda, the gathering isn’t pure.”
+ud5.5:5.1 | S: Then Venerable Mahāmoggallāna thought, | T: Then the thought occurred to Ven. Mahā Moggallāna:
+ud5.5:5.2 | S: “Who is the Buddha talking about?” | T: “In reference to which individual did the Blessed One just now say,
+ud5.5:5.3 | P: ‘aparisuddhā, ānanda, parisā’”ti? | T: ‘Ānanda, the gathering isn’t pure’?”
+ud5.5:5.4 | S: Then he focused on encompassing the minds of everyone in the Saṅgha. | T: So he directed his mind, encompassing with his awareness the awareness of the entire community of monks.
+ud5.5:5.5 | S: He saw that unethical individual, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved, sitting in the middle of the Saṅgha. | T: He saw that individual–unprincipled, evil, unclean and suspect in his undertakings, hidden in his actions, not a contemplative though claiming to be one, not leading the holy life though claiming to do so, inwardly rotten, oozing with desire, filthy by nature–sitting in the midst of the community of monks.
+ud5.5:5.6 | S: When he saw him he rose from his seat, went up to him and said, | T: On seeing him, he got up, went over to that individual, and on reaching him said,
+ud5.5:5.7 | S: “Get up, reverend. The Buddha has seen you. | T: “Get up, friend. You have been seen by the Blessed One.
+ud5.5:5.8 | S: You can’t live in communion with the monks.” | T: You have no affiliation with the community of monks.”
+ud5.5:5.9 | S: But when he said this, that individual kept silent. | T: Then the individual remained silent.
+ud5.5:6.1 | S: For a second time and a third time, | T: A second time…. A third time, Ven. Mahā Moggallāna said,
+ud5.5:6.2 | S: he asked that monk to leave. | T: “Get up, friend. You have been seen by the Blessed One.
+ud5.5:6.3 | P: natthi te bhikkhūhi saddhiṁ saṁvāso”ti. | T: You have no affiliation with the community of monks.”
+ud5.5:6.4 | P: Dutiyampi kho …pe… | T: (none)
+ud5.5:6.5 | S: But for a third time that individual kept silent. | T: And for a third time the individual remained silent.
+ud5.5:7.1 | S: Then Venerable Mahāmoggallāna took that individual by the arm, ejected him out the gate, and bolted the door. Then he went up to the Buddha, and said to him, | T: Then Ven. Mahā Moggallāna, grabbing that individual by the arm, having expelled him through the outside door of the porch and locking the bolt, approached the Blessed One and on arrival said,
+ud5.5:7.2 | S: “I have ejected that individual. | T: “I have expelled that individual, lord.
+ud5.5:7.3 | S: The assembly is pure. | T: The gathering is now pure.
+ud5.5:7.4 | S: Please, sir, may the Buddha recite the monastic code to the monks.” | T: Let the Blessed One recite the Pāṭimokkha to the community of monks.”
+ud5.5:7.5 | S: “It’s incredible, Moggallāna, it’s amazing, | T: “Isn’t it amazing, Moggallāna. Isn’t it astounding,
+ud5.5:7.6 | S: how that futile man waited to be taken by the arm!” | T: how that worthless man waited until he was grabbed by the arm.”
+ud5.5:8.1 | S: Then the Buddha said to the monks, | T: Then the Blessed One addressed the monks:
+ud5.5:8.2 | S: “From this day forth, monks, I will not perform the sabbath or recite the monastic code. | T: “From now on I will no longer perform the observance or recite the Pāṭimokkha.
+ud5.5:8.3 | S: Now you should perform the sabbath and recite the monastic code. | T: From now on, you alone, monks, will perform the observance and recite the Pāṭimokkha.
+ud5.5:8.4 | S: It’s impossible, monks, it can’t happen that a Realized One could recite the monastic code in an impure assembly. | T: It is impossible, it cannot happen, that a Tathāgata would perform the observance or recite the Pāṭimokkha with an impure gathering.
+ud5.5:9.1 | S: Seeing these eight incredible and amazing things the titans love the ocean. | T: “Monks, there are these eight amazing & astounding qualities of the ocean because of which, as they see them again & again, the asuras take great joy in the ocean.
+ud5.5:9.2 | S: What eight? | T: Which eight?
+ud5.5:10.1 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: “[1] The ocean has a gradual shelf, a gradual slope, a gradual inclination, with a sudden drop-off only after a long stretch.
+ud5.5:10.2 | P: Yampi, bhikkhave, mahāsamuddo anupubbaninno anupubbapoṇo anupubbapabbhāro na āyatakeneva papāto; | T: The fact that the ocean has a gradual shelf, a gradual slope, a gradual inclination, with a sudden drop-off only after a long stretch:
+ud5.5:10.3 | S: This is the first thing the titans love about the ocean. | T: This is the first amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:11.1 | S: Furthermore, the ocean is consistent and doesn’t overflow its boundaries. | T: [2] And furthermore, the ocean is stable and does not overstep its tideline….
+ud5.5:11.2 | P: Yampi, bhikkhave, mahāsamuddo ṭhitadhammo velaṁ nātivattati; | T: (none)
+ud5.5:11.3 | S: This is the second thing the titans love about the ocean. | T: This is the second amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:12.1 | S: Furthermore, the ocean doesn’t accommodate a carcass, but quickly carries it to the shore and strands it on the beach. | T: [3] And furthermore, the ocean does not tolerate a dead body. Any dead body in the ocean gets quickly washed to the shore and thrown up on dry land….
+ud5.5:12.2 | P: Yampi, bhikkhave, mahāsamuddo na matena kuṇapena saṁvasati, yaṁ hoti mahāsamudde mataṁ kuṇapaṁ taṁ khippameva tīraṁ vāheti thalaṁ ussāreti; | T: (none)
+ud5.5:12.3 | S: This is the third thing the titans love about the ocean. | T: This is the third amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:13.1 | S: Furthermore, when they reach the ocean, all the great rivers—that is, the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—lose their names and clans and are simply reckoned as ‘the ocean’. | T: [4] And furthermore, whatever great rivers there are–such as the Ganges, the Yamunā, the Aciravatī, the Sarabhū, the Mahī–on reaching the ocean, give up their former names and are classed simply as ‘ocean’….
+ud5.5:13.2 | P: Yampi, bhikkhave, yā kāci mahānadiyo, seyyathidaṁ—gaṅgā yamunā aciravatī sarabhū mahī tā mahāsamuddaṁ patvā jahanti purimāni nāmagottāni, ‘mahāsamuddo’tveva saṅkhaṁ gacchanti; | T: (none)
+ud5.5:13.3 | S: This is the fourth thing the titans love about the ocean. | T: This is the fourth amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:14.1 | S: Furthermore, for all the world’s streams that reach it, and the showers that fall from the sky, the ocean never empties or fills up. | T: [5] And furthermore, though the rivers of the world pour into the ocean, and rains fall from the sky, no swelling or diminishing in the ocean for that reason can be discerned….
+ud5.5:14.2 | P: Yampi, bhikkhave, yā ca loke savantiyo mahāsamuddaṁ appenti, yā ca antalikkhā dhārā papatanti, na tena mahāsamuddassa ūnattaṁ vā pūrattaṁ vā paññāyati; | T: (none)
+ud5.5:14.3 | S: This is the fifth thing the titans love about the ocean. | T: This is the fifth amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:15.1 | S: Furthermore, the ocean has just one taste, the taste of salt. | T: [6] And furthermore, the ocean has a single taste: that of salt….
+ud5.5:15.2 | P: Yampi, bhikkhave, mahāsamuddo ekaraso loṇaraso; | T: (none)
+ud5.5:15.3 | S: This is the sixth thing the titans love about the ocean. | T: This is the sixth amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:16.1 | S: Furthermore, the ocean is full of many kinds of treasures, such as pearls, gems, beryl, conch, quartz, coral, silver, native gold, rubies, and emeralds. | T: [7] And furthermore, the ocean has these many treasures of various kinds: pearls, sapphires, lapis lazuli, shells, quartz, coral, silver, gold, rubies, & cat’s eyes….
+ud5.5:16.2 | P: Yampi, bhikkhave, mahāsamuddo bahuratano anekaratano, tatrimāni ratanāni, seyyathidaṁ—muttā maṇi veḷuriyo saṅkho silā pavāḷaṁ rajataṁ jātarūpaṁ lohitaṅgo masāragallaṁ; | T: (none)
+
+exec
+/bin/bash -lc "sed -n '221,440p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+ud5.5:16.3 | S: This is the seventh thing the titans love about the ocean. | T: This is the seventh amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:17.1 | S: Furthermore, many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: [8] And furthermore, the ocean is the abode of such mighty beings as these: whales, whale-eaters, & whale-eater-eaters; asuras, nāgas, & gandhabbas. There are in the ocean beings one hundred leagues long, two hundred… three hundred… four hundred… five hundred leagues long.
+ud5.5:17.2 | P: Yampi, bhikkhave, mahāsamuddo mahataṁ bhūtānaṁ āvāso, tatrime bhūtā—timi timiṅgalo timitimiṅgalo asurā nāgā gandhabbā, santi mahāsamudde yojanasatikāpi attabhāvā dviyojanasatikāpi attabhāvā …pe… pañcayojanasatikāpi attabhāvā; | T: The fact that the ocean is the abode of such mighty beings as these: whales, whale-eaters, & whale-eater-eaters; asuras, nāgas, & gandhabbas; and there are in the ocean beings one hundred leagues long, two hundred… three hundred… four hundred… five hundred leagues long:
+ud5.5:17.3 | S: This is the eighth thing the titans love about the ocean. | T: This is the eighth amazing & astounding quality of the ocean because of which, as they see it again & again, the asuras take great joy in the ocean.
+ud5.5:17.4 | S: Seeing these eight incredible and amazing things the titans love the ocean. | T: “These are the eight amazing & astounding qualities of the ocean because of which, as they see them again & again, the asuras take great joy in the ocean.
+ud5.5:18.1 | S: In the same way, seeing eight incredible and amazing things, monks, the mendicants love this teaching and training. | T: “In the same way, monks, there are eight amazing & astounding qualities of this Dhamma & Vinaya because of which, as they see them again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:18.2 | S: What eight? | T: Which eight?
+ud5.5:19.1 | S: The ocean gradually slants, slopes, and inclines, with no abrupt precipice. | T: [1] Just as the ocean has a gradual shelf, a gradual slope, a gradual inclination, with a sudden drop-off only after a long stretch;
+ud5.5:19.2 | S: In the same way in this teaching and training the penetration to enlightenment comes from gradual training, progress, and practice, not abruptly. | T: in the same way, this Dhamma & Vinaya has a gradual training, a gradual performance, a gradual practice, with a penetration to gnosis only after a long stretch.
+ud5.5:19.3 | P: Yampi, bhikkhave, imasmiṁ dhammavinaye anupubbasikkhā anupubbakiriyā anupubbapaṭipadā, na āyatakeneva aññāpaṭivedho; | T: The fact that this Dhamma & Vinaya has a gradual training, a gradual performance, a gradual practice, with a penetration to gnosis only after a long stretch:
+ud5.5:19.4 | S: This is the first thing the mendicants love about this teaching and training. | T: This is the first amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:20.1 | S: The ocean is consistent and doesn’t overflow its boundaries. | T: [2] And furthermore, just as the ocean is stable and does not overstep its tideline;
+ud5.5:20.2 | S: In the same way, when a training rule is laid down for my disciples they wouldn’t break it even for the sake of their own life. | T: in the same way, my disciples do not–even for the sake of their lives–overstep the training rules I have formulated for them….
+ud5.5:20.3 | P: Yampi, bhikkhave, mayā sāvakānaṁ sikkhāpadaṁ paññattaṁ taṁ mama sāvakā jīvitahetupi nātikkamanti; | T: (none)
+ud5.5:20.4 | S: This is the second thing the mendicants love about this teaching and training. | T: This is the second amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:21.1 | S: The ocean doesn’t accommodate a carcass, but quickly carries it to the shore and strands it on the beach. | T: [3] And furthermore, just as the ocean does not tolerate a dead body–any dead body in the ocean getting quickly washed to the shore and thrown up on dry land–
+ud5.5:21.2 | S: In the same way, the Saṅgha doesn’t accommodate an individual who is unethical, of bad qualities, filthy, with suspicious behavior, underhand, no true ascetic or spiritual practitioner—though claiming to be one—rotten inside, festering, and depraved. But they quickly gather and expel them. Even if such an individual is sitting in the middle of the Saṅgha, they’re far from the Saṅgha, and the Saṅgha is far from them. | T: in the same way, if an individual is unprincipled, evil, unclean & suspect in his undertakings, hidden in his actions–not a contemplative though claiming to be one, not leading the holy life though claiming to do so, inwardly rotten, oozing with desire, filthy by nature–the community has no affiliation with him. Having quickly gathered together, they suspend him from the community. Even though he may be sitting in the midst of the community of monks, he is far from the community, and the community far from him….
+ud5.5:21.3 | P: Yampi, bhikkhave, yo so puggalo dussīlo pāpadhammo asuci saṅkassarasamācāro paṭicchannakammanto assamaṇo samaṇapaṭiñño abrahmacārī brahmacāripaṭiñño antopūti avassuto kasambujāto, na tena saṅgho saṁvasati; khippameva naṁ sannipatitvā ukkhipati. Kiñcāpi so hoti majjhe bhikkhusaṅghassa nisinno, atha kho so ārakāva saṅghamhā, saṅgho ca tena; | T: (none)
+ud5.5:21.4 | S: This is the third thing the mendicants love about this teaching and training. | T: This is the third amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:22.1 | S: Furthermore, when they reach the ocean, all the great rivers—that is, the Ganges, Yamunā, Aciravatī, Sarabhū, and Mahī—lose their names and clans and are simply reckoned as ‘the ocean’. | T: [4] And furthermore, just as whatever great rivers there are–such as the Ganges, the Yamunā, the Aciravatī, the Sarabhū, the Mahī–on reaching the ocean, give up their former names and are classed simply as ‘ocean’;
+ud5.5:22.2 | S: In the same way, when they go forth from the lay life to homelessness, all four classes—aristocrats, brahmins, peasants, and menials—lose their former names and clans and are simply reckoned as ‘ascetics who follow the Sakyan’. | T: in the same way, when members of the four castes–noble warriors, brahmans, merchants, & workers–go forth from home to the homeless life in this Dhamma & Vinaya declared by the Tathāgata, they give up their former names and clans and are classed simply as ‘contemplatives, sons of the Sakyan’….
+ud5.5:22.3 | P: Yampi, bhikkhave, cattāro vaṇṇā—khattiyā, brāhmaṇā, vessā, suddā te tathāgatappavedite dhammavinaye agārasmā anagāriyaṁ pabbajitvā jahanti purimāni nāmagottāni, ‘samaṇā sakyaputtiyā’tveva saṅkhaṁ gacchanti; | T: (none)
+ud5.5:22.4 | S: This is the fourth thing the mendicants love about this teaching and training. | T: This is the fourth amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:23.1 | S: For all the world’s streams that reach it, and the showers that fall from the sky, the ocean never empties or fills up. | T: [5] And furthermore, just as the rivers of the world pour into the ocean, and rains fall from the sky, but no swelling or diminishing in the ocean for that reason can be discerned;
+ud5.5:23.2 | S: In the same way, though several mendicants become fully extinguished in the element of extinguishment with no residue, the element of extinguishment never empties or fills up. | T: in the same way, although many monks are totally unbound into the property of unbinding with no fuel remaining, no swelling or diminishing in the property of unbinding for that reason can be discerned….
+ud5.5:23.3 | P: Yampi, bhikkhave, bahū cepi bhikkhū anupādisesāya nibbānadhātuyā parinibbāyanti, na tena nibbānadhātuyā ūnattaṁ vā pūrattaṁ vā paññāyati; | T: (none)
+ud5.5:23.4 | S: This is the fifth thing the mendicants love about this teaching and training. | T: This is the fifth amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:24.1 | S: The ocean has just one taste, the taste of salt. | T: [6] And furthermore, just as the ocean has a single taste–that of salt–
+ud5.5:24.2 | S: In the same way, this teaching and training has one taste, the taste of freedom. | T: in the same way, this Dhamma & Vinaya has a single taste: that of release….
+ud5.5:24.3 | P: Yampi, bhikkhave, ayaṁ dhammavinayo ekaraso vimuttiraso; | T: (none)
+ud5.5:24.4 | S: This is the sixth thing the mendicants love about this teaching and training. | T: This is the sixth amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:25.1 | S: The ocean is full of many kinds of treasures, such as pearls, gems, beryl, conch, quartz, coral, silver, native gold, rubies, and emeralds. | T: [7] And furthermore, just as the ocean has these many treasures of various kinds–pearls, sapphires, lapis lazuli, shells, quartz, coral, silver, gold, rubies, & cat’s eyes–
+ud5.5:25.2 | S: In the same way, this teaching and training is full of many kinds of treasures, such as the four kinds of mindfulness meditation, the four right efforts, the four bases of psychic power, the five faculties, the five powers, the seven awakening factors, and the noble eightfold path. | T: in the same way, this Dhamma & Vinaya has these many treasures of various kinds: the four establishings of mindfulness, the four right exertions, the four bases of power, the five faculties, the five strengths, the seven factors for awakening, the noble eightfold path….
+ud5.5:25.3 | P: Yampi, bhikkhave, ayaṁ dhammavinayo bahuratano anekaratano, tatrimāni ratanāni, seyyathidaṁ—cattāro satipaṭṭhānā, cattāro sammappadhānā, cattāro iddhipādā, pañcindriyāni, pañca balāni, satta bojjhaṅgā, ariyo aṭṭhaṅgiko maggo; | T: (none)
+ud5.5:25.4 | S: This is the seventh thing the mendicants love about this teaching and training. | T: This is the seventh amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:26.1 | S: Many great beings live in the ocean, such as leviathans, leviathan-gulpers, leviathan-gulper-gulpers, titans, dragons, and centaurs. In the ocean there are life-forms a hundred leagues long, or even two hundred, three hundred, four hundred, or five hundred leagues long. | T: [8] And furthermore, just as the ocean is the abode of such mighty beings as these: whales, whale-eaters, & whale-eater-eaters; asuras, nāgas, & gandhabbas, and there are in the ocean beings one hundred leagues long, two hundred… three hundred… four hundred… five hundred leagues long;
+ud5.5:26.2 | S: In the same way, great beings live in this teaching and training, and these are those beings. The stream-enterer and the one practicing to realize the fruit of stream-entry. The once-returner and the one practicing to realize the fruit of once-return. The non-returner and the one practicing to realize the fruit of non-return. The perfected one, and the one practicing for perfection. | T: in the same way, this Dhamma & Vinaya is the abode of such mighty beings as these: stream-winners & those practicing to realize the fruit of stream-entry; once-returners & those practicing to realize the fruit of once-returning; non-returners & those practicing to realize the fruit of non-returning; arahants & those practicing for arahantship.
+ud5.5:26.3 | P: Yampi, bhikkhave, ayaṁ dhammavinayo mahataṁ bhūtānaṁ āvāso, tatrime bhūtā—sotāpanno, sotāpattiphalasacchikiriyāya paṭipanno, sakadāgāmī, sakadāgāmiphalasacchikiriyāya paṭipanno, anāgāmī, anāgāmiphalasacchikiriyāya paṭipanno, arahā, arahattāya paṭipanno; | T: The fact that this Dhamma & Vinaya is the abode of such mighty beings as these–stream-winners & those practicing to realize the fruit of stream-entry; once-returners & those practicing to realize the fruit of once-returning; non-returners & those practicing to realize the fruit of non-returning; arahants & those practicing for arahantship:
+ud5.5:26.4 | S: This is the eighth thing the mendicants love about this teaching and training. | T: This is the eighth amazing & astounding quality of this Dhamma & Vinaya because of which, as they see it again & again, the monks take great joy in this Dhamma & Vinaya.
+ud5.5:26.5 | S: Seeing these eight incredible and amazing things, the mendicants love this teaching and training.” | T: “These are the eight amazing & astounding qualities of this Dhamma & Vinaya because of which, as they see them again & again, the monks take great joy in this Dhamma & Vinaya.”
+ud5.5:27.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.5:28.1 | S: “The rain saturates things that are covered up; | T: Rain soddens what’s covered
+ud5.5:28.2 | S: it doesn’t saturate things that are open. | T: & doesn’t sodden what’s open.
+ud5.5:28.3 | S: Therefore you should open up a covered thing, | T: So open up what’s covered up,
+ud5.5:28.4 | S: so the rain will not saturate it.” | T: so that it won’t get soddened by the rain.
+ud5.5:28.5 | P: Pañcamaṁ. | T: (none)
+
+## ud5.7
+ud5.7:1.1 | S: So I have heard. | T: I have heard that
+ud5.7:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud5.7:1.3 | S: Now at that time Venerable Revata the Doubter was sitting not far from the Buddha, cross-legged, with his body straight, reviewing his own purification by traversing doubt. | T: And on that occasion Ven. Revata the Doubter was sitting not far from the Blessed One, his legs crossed, his body held erect, reflecting on [his] purification through the overcoming of doubt.
+ud5.7:2.1 | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Revata the Doubter sitting not far away, his legs crossed, his body held erect, reflecting on [his] purification through the overcoming of doubt.
+ud5.7:3.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.7:4.1 | S: “Any doubts about this life or the next, | T: Any doubts, about here or the world beyond,
+ud5.7:4.2 | S: about one’s own experiences or those of another: | T: about what is experienced by/because of others, by/because of oneself,
+ud5.7:4.3 | S: those who meditate give them all up, | T: are abandoned–all– by the person in jhāna,
+ud5.7:4.4 | S: keenly practicing the spiritual life.” | T: ardent, living the holy life.
+ud5.7:4.5 | P: Sattamaṁ. | T: (none)
+
+## ud5.8
+ud5.8:1.1 | S: So I have heard. | T: I have heard that
+ud5.8:1.2 | S: At one time the Buddha was staying near Rājagaha in the Bamboo Grove, the squirrels’ feeding ground. | T: on one occasion the Blessed One was staying near Rājagaha at the Bamboo Forest, the Squirrels’ refuge.
+ud5.8:1.3 | S: Now at that time Venerable Ānanda robed up in the morning and, taking his bowl and robe, entered Rājagaha for alms. | T: And on that occasion, early in the morning of the uposatha, Ven. Ānanda adjusted his under robe and–carrying his bowl & robes–went into Rājagaha for alms.
+ud5.8:2.1 | S: Devadatta saw him wandering for alms, | T: Devadatta saw Ven. Ānanda going for alms in Rājagaha and,
+ud5.8:2.2 | S: so he went up to him and said, | T: on seeing him, went to him. On arrival, he said to him,
+ud5.8:2.3 | S: “From this day forth, Reverend Ānanda, I shall perform the sabbath and legal proceedings of the Saṅgha apart from the Buddha and the Saṅgha of mendicants.” | T: “From this day forward, friend Ānanda, I will conduct the uposatha & community transactions apart from the Blessed One, apart from the community of monks.”
+ud5.8:3.1 | S: Then Ānanda wandered for alms in Rājagaha. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, | T: Then Ven. Ānanda–having gone for alms in Rājagaha, after the meal, returning from his alms round–went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud5.8:3.2 | S: and told him what had just happened, adding: | T: As he was sitting there he said to the Blessed One,
+ud5.8:4.1 | P: “Idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya rājagahaṁ piṇḍāya pāvisiṁ. | T: “Just now, lord, after adjusting my under robe early in the morning and carrying my bowl & robes, I went into Rājagaha for alms.
+ud5.8:4.2 | P: Addasā kho maṁ, bhante, devadatto rājagahe piṇḍāya carantaṁ. | T: Devadatta saw me going for alms in Rājagaha and,
+ud5.8:4.3 | P: Disvāna yenāhaṁ tenupasaṅkami; upasaṅkamitvā maṁ etadavoca: | T: on seeing me, went up to me. On arrival, he said to me,
+ud5.8:4.4 | P: ‘ajjatagge dānāhaṁ, āvuso ānanda, aññatreva bhagavatā aññatra bhikkhusaṅghā uposathaṁ karissāmi saṅghakammāni cā’ti. | T: ‘From this day forward, friend Ānanda, I will conduct the uposatha & community transactions apart from the Blessed One, apart from the community of monks.’
+ud5.8:4.5 | S: “Today, sir, Devadatta will split the Saṅgha. He will perform the sabbath and legal proceedings of the Saṅgha.” | T: Lord, today Devadatta will split the community. He will conduct the uposatha & community transactions [apart from the community].”
+ud5.8:5.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.8:6.1 | S: “It’s easy for the good to do good, | T: The good, for the good, is easy to do.
+ud5.8:6.2 | S: but for the bad, doing good is hard. | T: The good, for the evil, is hard to do.
+ud5.8:6.3 | S: For the bad, it’s easy to do bad, | T: Evil, for the evil, is easy to do.
+ud5.8:6.4 | S: but for the noble ones, doing bad is hard.” | T: Evil, for the noble ones, is hard to do.
+ud5.8:6.5 | P: Aṭṭhamaṁ. | T: (none)
+
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-088.findings.tmp <<'EOF'
+ud4.9:4.2 none
+ud5.10:4.6 starts: he goes where the King of Death can’t
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+2 lines reported.
+tokens used
+23,183
+2 lines reported.

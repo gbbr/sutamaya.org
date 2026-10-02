@@ -1,0 +1,473 @@
+Reading additional input from stdin...
+OpenAI Codex v0.159.2
+--------
+workdir: /home/kjn/CodeBase/gabriel/codex-handoff
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: high
+reasoning summaries: none
+session id: 01a0fd9d-bdb7-7c60-89fa-cd7475154cbf
+--------
+user
+You are checking a Buddhist sutta translation (by Ṭhānissaro Bhikkhu) that has been cut into lines to match
+the lines of the Pali original. Find the lines whose text is in the wrong place.
+
+The file lists each text line by line:
+
+    <key> | S: Bhikkhu Sujato's English for the line (or P: its Pali) | T: the other translation's
+    text on that line, or (none)
+
+A line's T should say what its S says. Report only what is clearly misplaced:
+- T holds words that belong to the line above or below: a sentence's opening or ending, or a whole
+  sentence or more.
+- T is (none) though its meaning sits on the line above or below and could stand as a line.
+- A run of lines whose texts are all a line or two too high or too low.
+
+These are not errors, so leave them out: different wording, or a different order of words within
+a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
+sentence that sits on the first of them, with (none) on the others; a heading or a number the
+translator adds at the start of a line. But a list whose items are parted by ellipses is not one
+sentence: each item that renders its own Pali line belongs on it. Words that render a Pali line
+stay on it, however short: a refrain such as "Or he might say:" is never moved onto the quotation
+beside it.
+
+A line's text runs from its first words to the first words of the next line that has text, so
+every fix says where a line should start. Write one line for each line to change:
+
+    <key> starts: <the first six to eight words it should start with, copied exactly from T>
+    <key> none        it should hold no text
+
+Words that belong on the line below: report that line, starting at those words. Words that belong
+on the line above: report the line they leave, starting at the words that stay. A line that should
+be emptied into the line below: report it as none, and the line below as starting at its words.
+Quote words exactly as they stand in T, punctuation and curly quotes included. Report only when
+you are sure.
+
+Your share: the file /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.txt. Read all of it (in parts, with sed -n or similar), then write your
+findings to /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.findings.tmp, one per line and nothing else, or the single word "none" if nothing is
+misplaced. Open no other file, change no other file, and run no command except to read /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.txt and
+write /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.findings.tmp.
+
+When done, reply with one line: how many lines you reported.
+codex
+I’ll read the full file, check for clear line-boundary errors, and write only those findings.
+
+exec
+/bin/bash -lc "sed -n '1,180p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+## sn22.48
+sn22.48:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.48:1.2 | S: “Mendicants, I will teach you the five aggregates and the five grasping aggregates. | T: There the Blessed One said, “Monks, I will teach you the five aggregates & the five clinging-aggregates.
+sn22.48:1.3 | S: Listen … | T: Listen & pay close attention. I will speak.” “As you say, lord,” the monks responded to him.
+sn22.48:1.4 | S: And what are the five aggregates? | T: The Blessed One said, “Now what, monks, are the five aggregates?
+sn22.48:1.5 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of form. | T: “Any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the form aggregate.
+sn22.48:1.6 | S: Any kind of feeling at all … | T: “Any feeling whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the feeling aggregate.
+sn22.48:1.7 | S: Any kind of perception at all … | T: “Any perception whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the perception aggregate.
+sn22.48:1.8 | S: Any kind of choices at all … | T: “Any fabrications whatsoever that are past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Those are called the fabrication aggregate.
+sn22.48:1.9 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: this is called the aggregate of consciousness. | T: “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: That is called the consciousness aggregate.
+sn22.48:1.10 | S: These are called the five aggregates. | T: “These are called the five aggregates.
+sn22.48:2.1 | S: And what are the five grasping aggregates? | T: “And what are the five clinging-aggregates?
+sn22.48:2.2 | S: Any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of form. | T: “Any form whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the form clinging-aggregate.
+sn22.48:2.3 | S: Any kind of feeling at all … | T: “Any feeling whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the feeling clinging-aggregate.
+sn22.48:2.4 | S: Any kind of perception at all … | T: “Any perception whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the perception clinging-aggregate.
+sn22.48:2.5 | S: Any kind of choices at all … | T: “Any fabrications whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that are clingable, offer sustenance, and are accompanied with effluents: Those are called the fabrication clinging-aggregate.
+sn22.48:2.6 | S: Any kind of consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near, which is accompanied by defilements and fuels grasping: this is called the grasping aggregate of consciousness. | T: “Any consciousness whatsoever—past, future, or present; internal or external; blatant or subtle; common or sublime; far or near—that is clingable, offers sustenance, and is accompanied with effluents: That is called the consciousness clinging-aggregate.
+sn22.48:2.7 | S: These are called the five grasping aggregates.” | T: “These are called the five clinging-aggregates.”
+sn22.48:2.8 | P: Chaṭṭhaṁ. | T: (none)
+
+## sn22.55
+sn22.55:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.55:1.2 | S: There the Buddha expressed this heartfelt sentiment: | T: There the Blessed One exclaimed this exclamation:
+sn22.55:1.3 | S: “‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: “‘It should not be, it should not occur to me [should not be mine]; it will not be, it will not occur to me [will not be mine]’:
+sn22.55:1.4 | S: A mendicant who makes such a resolution can cut off the lower fetters.” | T: A monk set on this would break the (five) lower fetters.”
+sn22.55:1.5 | S: When he said this, one of the mendicants said to the Buddha, | T: When this was said, a certain monk said to the Blessed One,
+sn22.55:1.6 | S: “But sir, how | T: “In what way
+sn22.55:1.7 | S: can a mendicant who makes such a resolution cut off the lower fetters?” | T: would a monk set on this—‘It should not be, it should not occur to me; it will not be, it will not occur to me’—break the (five) lower fetters?”
+sn22.55:2.1 | S: “Mendicant, take an unlearned ordinary person who has not seen the noble ones, and is neither skilled nor trained in their teaching. They’ve not seen true persons, and are neither skilled nor trained in their teaching. | T: “There is the case, monk, where an uninstructed, run-of-the-mill person—who has no regard for noble ones, is not well-versed or disciplined in their Dhamma; who has no regard for people of integrity, is not well-versed or disciplined in their Dhamma—
+sn22.55:2.2 | S: They regard form as self, self as having form, form in self, or self in form. | T: assumes form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.55:2.3 | S: They regard feeling … | T: “He assumes feeling to be the self, or the self as possessing feeling, or feeling as in the self, or the self as in feeling.
+sn22.55:2.4 | S: perception … | T: He assumes perception to be the self, or the self as possessing perception, or perception as in the self, or the self as in perception.
+sn22.55:2.5 | S: choices … | T: He assumes fabrications to be the self, or the self as possessing fabrications, or fabrications as in the self, or the self as in fabrications.
+sn22.55:2.6 | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: He assumes consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.55:3.1 | S: They don’t truly understand form—which is impermanent—as impermanent. | T: “He doesn’t discern, as it has come to be, inconstant form as ‘inconstant form.’
+sn22.55:3.2 | S: They don’t truly understand feeling … | T: He doesn’t discern, as it has come to be, inconstant feeling as ‘inconstant feeling’ …
+sn22.55:3.3 | S: perception … | T: inconstant perception as ‘inconstant perception’ …
+sn22.55:3.4 | S: choices … | T: inconstant fabrications as ‘inconstant fabrications’ …
+sn22.55:3.5 | S: consciousness—which is impermanent—as impermanent. | T: inconstant consciousness as ‘inconstant consciousness.’
+sn22.55:4.1 | S: They don’t truly understand form—which is suffering—as suffering. | T: “He doesn’t discern, as it has come to be, stressful form as ‘stressful form’ …
+sn22.55:4.2 | S: They don’t truly understand feeling … | T: stressful feeling as ‘stressful feeling’ …
+sn22.55:4.3 | S: perception … | T: stressful perception as ‘stressful perception’ …
+sn22.55:4.4 | S: choices … | T: stressful fabrications as ‘stressful fabrications’ …
+sn22.55:4.5 | S: consciousness—which is suffering—as suffering. | T: stressful consciousness as ‘stressful consciousness.’
+sn22.55:5.1 | S: They don’t truly understand form—which is not-self—as not-self. | T: “He doesn’t discern, as it has come to be, not-self form as ‘not-self form’ …
+sn22.55:5.2 | S: They don’t truly understand feeling … | T: not-self feeling as ‘not-self feeling’ …
+sn22.55:5.3 | S: perception … | T: not-self perception as ‘not-self perception’ …
+sn22.55:5.4 | S: choices … | T: not-self fabrications as ‘not-self fabrications’ …
+sn22.55:5.5 | S: consciousness—which is not-self—as not-self. | T: not-self consciousness as ‘not-self consciousness.’
+sn22.55:6.1 | S: They don’t truly understand form—which is conditioned—as conditioned. | T: “He doesn’t discern, as it has come to be, fabricated form as ‘fabricated form’ …
+sn22.55:6.2 | S: They don’t truly understand feeling … | T: fabricated feeling as ‘fabricated feeling’ …
+sn22.55:6.3 | S: perception … | T: fabricated perception as ‘fabricated perception’ …
+sn22.55:6.4 | S: choices … | T: fabricated fabrications as ‘fabricated fabrications’ …
+sn22.55:6.5 | S: consciousness—which is conditioned—as conditioned. | T: fabricated consciousness as ‘fabricated consciousness.’
+sn22.55:6.6 | S: They don’t truly understand that form will vanish. | T: “He doesn’t discern, as it has come to be, that ‘form will not become’ …
+sn22.55:6.7 | S: They don’t truly understand that feeling … | T: ‘feeling will not become’ …
+sn22.55:6.8 | S: perception … | T: ‘perception will not become’ …
+sn22.55:6.9 | S: choices … | T: ‘fabrications will not become’ …
+sn22.55:6.10 | S: consciousness will vanish. | T: ‘consciousness will not become.’
+sn22.55:7.1 | S: But a learned noble disciple has seen the noble ones, and is skilled and trained in the teaching of the noble ones. They’ve seen true persons, and are skilled and trained in the teaching of the true persons. | T: “Now, a well-instructed disciple of the noble ones—who has regard for noble ones, is well-versed & disciplined in their Dhamma; who has regard for people of integrity, is well-versed & disciplined in their Dhamma—
+sn22.55:7.2 | S: They don’t regard form as self … | T: doesn’t assume form to be the self, or the self as possessing form, or form as in the self, or the self as in form.
+sn22.55:7.3 | S: They don’t regard feeling … | T: He doesn’t assume feeling to be the self.…
+sn22.55:7.4 | S: perception … | T: doesn’t assume perception to be the self.…
+sn22.55:7.5 | S: choices … | T: doesn’t assume fabrications to be the self.…
+sn22.55:7.6 | S: consciousness as self. | T: He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness.
+sn22.55:8.1 | S: They truly understand form—which is impermanent—as impermanent. | T: “He discerns, as it has come to be, inconstant form as ‘inconstant form’ …
+sn22.55:8.2 | S: They truly understand feeling … | T: inconstant feeling as ‘inconstant feeling’ …
+sn22.55:8.3 | S: perception … | T: inconstant perception as ‘inconstant perception’ …
+sn22.55:8.4 | S: choices … | T: inconstant fabrications as ‘inconstant fabrications’ …
+sn22.55:8.5 | S: consciousness—which is impermanent—as impermanent. | T: inconstant consciousness as ‘inconstant consciousness.’
+sn22.55:8.6 | S: They truly understand form … feeling … perception … choices … consciousness—which is suffering—as suffering. | T: “He discerns, as it has come to be, stressful form as ‘stressful form’ … stressful feeling as ‘stressful feeling’ … stressful perception as ‘stressful perception’ … stressful fabrications as ‘stressful fabrications’ … stressful consciousness as ‘stressful consciousness.’
+sn22.55:8.7 | S: They truly understand form … feeling … perception … choices … consciousness—which is not-self—as not-self. | T: “He discerns, as it has come to be, not-self form as ‘not-self form’ … not-self feeling as ‘not-self feeling’ … not-self perception as ‘not-self perception’ … not-self fabrications as ‘not-self fabrications’ … not-self consciousness as ‘not-self consciousness.’
+sn22.55:8.8 | S: They truly understand form … feeling … perception … choices … consciousness—which is conditioned—as conditioned. | T: “He discerns, as it has come to be, fabricated form as ‘fabricated form’ … fabricated feeling as ‘fabricated feeling’ … fabricated perception as ‘fabricated perception’ … fabricated fabrications as ‘fabricated fabrications’ … fabricated consciousness as ‘fabricated consciousness.’
+sn22.55:8.9 | S: They truly understand that form will vanish. | T: “He discerns, as it has come to be, that ‘form will not become’ …
+sn22.55:8.10 | S: They truly understand that feeling … | T: ‘feeling will not become’ …
+sn22.55:8.11 | S: perception … | T: ‘perception will not become’ …
+sn22.55:8.12 | S: choices … | T: ‘fabrications will not become’ …
+sn22.55:8.13 | S: consciousness will vanish. | T: ‘consciousness will not become.’
+sn22.55:9.1 | S: It’s because of the vanishing of form, feeling, perception, choices, and consciousness that a mendicant who makes such a resolution— | T: “From the non-becoming of form, from the non-becoming of feeling… of perception… of fabrications… of consciousness, a monk set on this—
+sn22.55:9.2 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine’— | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me’—
+sn22.55:9.3 | S: can cut off the lower fetters.” | T: would break the (five) lower fetters.”
+sn22.55:9.4 | S: “Sir, you say that a mendicant who makes such a resolution can cut off the lower fetters. | T: “Lord, a monk set on this would break the (five) lower fetters.
+sn22.55:10.1 | S: But how are they to know and see in order to end the defilements without delay?” | T: But for one knowing in what way, seeing in what way, is there the immediate ending of effluents?”
+sn22.55:10.2 | S: “Mendicant, an unlearned ordinary person worries about things that aren’t a worry. | T: “There is the case where an uninstructed run-of-the-mill person… falls into fear over what is not grounds for fear.
+sn22.55:10.3 | S: For an unlearned ordinary person worries: | T: There is fear for an uninstructed run-of-the-mill person (who thinks),
+sn22.55:10.4 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me.’
+sn22.55:11.1 | S: A learned noble disciple doesn’t worry about things that aren’t a worry. | T: But an instructed disciple of the noble ones does not fall into fear over what is not grounds for fear.
+sn22.55:11.2 | S: For a learned noble disciple doesn’t worry: | T: There is no fear for an instructed disciple of the noble ones (who thinks),
+sn22.55:11.3 | S: ‘It might not be, and it might not be mine. It will not be, and it will not be mine.’ | T: ‘It should not be, it should not occur to me; it will not be, it will not occur to me.’
+sn22.55:11.4 | S: Should consciousness involved with form, supported by form, established on form continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Should consciousness, when standing, stand attached to form, supported by form (as its object), landing on form, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.55:11.5 | S: Or should consciousness involved with feeling remain … | T: “Should consciousness, when standing, stand attached to feeling, supported by feeling (as its object), landing on feeling, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.55:11.6 | S: Or should consciousness involved with perception remain … | T: “Should consciousness, when standing, stand attached to perception, supported by perception (as its object), landing on perception, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.55:11.7 | S: Or should consciousness involved with choices, supported by choices, established on choices continue to remain, with a sprinkling of relishing it would grow, increase, and mature. | T: “Should consciousness, when standing, stand attached to fabrications, supported by fabrications (as its object), landing on fabrications, watered with delight, it would exhibit growth, increase, & proliferation.
+sn22.55:12.1 | S: Suppose, mendicant, you were to say: | T: “Were someone to say,
+sn22.55:12.2 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ That is not possible. | T: ‘I will describe a coming, a going, a passing away, an arising, a growth, an increase, or a proliferation of consciousness apart from form, from feeling, from perception, from fabrications,’ that would be impossible.
+sn22.55:13.1 | S: If a mendicant has given up greed for the form element, the support is cut off, and there is no establishment of consciousness. | T: “If a monk abandons passion for the property of form.…
+sn22.55:13.2 | S: If a mendicant has given up greed for the feeling element … | T: “If a monk abandons passion for the property of feeling.…
+sn22.55:13.3 | S: perception element … | T: “If a monk abandons passion for the property of perception.…
+sn22.55:13.4 | S: choices element … | T: “If a monk abandons passion for the property of fabrications.…
+sn22.55:13.5 | S: consciousness element, the support is cut off, and there is no establishment of consciousness. | T: “If a monk abandons passion for the property of consciousness, then owing to the abandonment of passion, the support is cut off, and there is no landing of consciousness.
+sn22.55:13.6 | S: Since that consciousness does not become established and does not grow, not making choices, it is freed. | T: Consciousness, thus not having landed, not increasing, not concocting, is released.
+sn22.55:13.7 | S: Being free, it’s stable. Being stable, it’s content. Being content, they’re not anxious. Not being anxious, they personally become extinguished. | T: Owing to release, it is steady. Owing to steadiness, it is contented. Owing to contentment, it is not agitated. Not agitated, he (the monk) is totally unbound right within.
+sn22.55:13.8 | S: They understand: ‘Rebirth is ended … there is nothing further for this place.’ | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’
+sn22.55:13.9 | S: The ending of the defilements without delay is for one who knows and sees this.” | T: “For one knowing in this way, seeing in this way, monk, there is the immediate ending of effluents.”
+sn22.55:13.10 | P: Tatiyaṁ. | T: (none)
+
+## sn22.56
+sn22.56:1.1 | S: At Sāvatthī. | T: Near Sāvatthī. There the Blessed One said,
+sn22.56:1.2 | S: “Mendicants, there are these five grasping aggregates. | T: “Monks, there are these five clinging-aggregates.
+sn22.56:1.3 | S: What five? | T: Which five?
+sn22.56:1.4 | S: The grasping aggregates of form, feeling, perception, choices, and consciousness. | T: The form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrications clinging-aggregate, the consciousness clinging-aggregate.
+sn22.56:1.5 | S: As long as I didn’t truly understand these five grasping aggregates in four rounds, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: “Now, as long as I did not have direct knowledge of the fourfold round with regard to these five clinging-aggregates as they have come to be, I did not claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common folk.
+sn22.56:1.6 | S: But when I did truly understand these five grasping aggregates in four rounds, I announced my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. | T: But when I did have direct knowledge of the fourfold round with regard to these five clinging-aggregates as they have come to be, then I did claim to have directly awakened to the unexcelled right self-awakening in this cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common folk.
+sn22.56:1.7 | P: sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddhoti paccaññāsiṁ. | T: (none)
+sn22.56:2.1 | S: And how are there four rounds? | T: “The fourfold round in what way?
+sn22.56:2.2 | S: I directly knew form, its origin, its cessation, and the practice that leads to its cessation. | T: I had direct knowledge of form… of the origination of form… of the cessation of form… of the path of practice leading to the cessation of form.
+sn22.56:2.3 | S: I directly knew feeling … | T: “I had direct knowledge of feeling.…
+sn22.56:2.4 | S: perception … | T: “I had direct knowledge of perception.…
+sn22.56:2.5 | S: choices … | T: “I had direct knowledge of fabrications.…
+sn22.56:2.6 | S: consciousness, its origin, its cessation, and the practice that leads to its cessation. | T: “I had direct knowledge of consciousness… of the origination of consciousness… of the cessation of consciousness… of the path of practice leading to the cessation of consciousness.
+sn22.56:3.1 | S: And what is form? | T: “And what is form?
+sn22.56:3.2 | S: The four principal states, and form derived from the four principal states. | T: The four great existents [the earth property, the liquid property, the fire property, & the wind property] and the form derived from them:
+sn22.56:3.3 | S: This is called form. | T: This is called form.
+sn22.56:3.4 | S: Form originates from fuel. | T: From the origination of nutriment comes the origination of form.
+sn22.56:3.5 | S: When fuel ceases, form ceases. | T: From the cessation of nutriment comes the cessation of form.
+sn22.56:3.6 | S: The practice that leads to the cessation of form is simply this noble eightfold path, that is: | T: And just this noble eightfold path is the path of practice leading to the cessation of form, i.e.,
+sn22.56:3.7 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn22.56:4.1 | S: Whatever ascetics and brahmins have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation—and are practicing for disillusionment, dispassion, and cessation regarding form: they are practicing well. | T: “For any contemplatives or brahmans who by directly knowing form in this way, directly knowing the origination of form in this way, directly knowing the cessation of form in this way, directly knowing the path of practice leading to the cessation of form in this way, are practicing for disenchantment—dispassion—cessation with regard to form, they are practicing rightly.
+sn22.56:4.2 | S: Those who practice well have a footing in this teaching and training. | T: Those who are practicing rightly are firmly based in this Dhamma & Vinaya.
+sn22.56:5.1 | S: Those ascetics and brahmins who have directly known form in this way—and its origin, its cessation, and the practice that leads to its cessation—and due to disillusionment, dispassion, and cessation regarding form, are freed by not grasping: they are well freed. | T: And any contemplatives or brahmans who by directly knowing form in this way, directly knowing the origination of form in this way, directly knowing the cessation of form in this way, directly knowing the path of practice leading to the cessation of form in this way, are—from disenchantment, dispassion, cessation, lack of clinging/sustenance with regard to form—released, they are well released.
+sn22.56:5.2 | S: Those who are well freed are consummate ones. | T: Those who are well released are fully accomplished.
+sn22.56:5.3 | S: For consummate ones, there is no cycle of rebirths to be found. | T: And with those who are fully accomplished, there is no cycle for the sake of describing them.
+sn22.56:6.1 | S: And what is feeling? | T: “And what is feeling?
+sn22.56:6.2 | S: There are these six classes of feeling: | T: These six bodies of feeling—
+sn22.56:6.3 | S: feeling born of contact through the eye, ear, nose, tongue, body, and mind. | T: feeling born of eye-contact, feeling born of ear-contact, feeling born of nose-contact, feeling born of tongue-contact, feeling born of body-contact, feeling born of intellect-contact:
+sn22.56:6.4 | S: This is called feeling. | T: This is called feeling.
+sn22.56:6.5 | S: Feeling originates from contact. | T: From the origination of contact comes the origination of feeling.
+sn22.56:6.6 | S: When contact ceases, feeling ceases. | T: From the cessation of contact comes the cessation of feeling.
+sn22.56:6.7 | S: The practice that leads to the cessation of feelings is simply this noble eightfold path … | T: And just this noble eightfold path is the path of practice leading to the cessation of feeling.…
+sn22.56:6.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: (none)
+sn22.56:7.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya, evaṁ vedanāsamudayaṁ abhiññāya, evaṁ vedanānirodhaṁ abhiññāya, evaṁ vedanānirodhagāminiṁ paṭipadaṁ abhiññāya vedanāya nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: (none)
+sn22.56:7.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: (none)
+sn22.56:8.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ vedanaṁ abhiññāya …pe… evaṁ vedanānirodhagāminiṁ paṭipadaṁ abhiññāya …pe… | T: (none)
+sn22.56:8.2 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: (none)
+sn22.56:9.1 | S: And what is perception? | T: “And what is perception?
+sn22.56:9.2 | S: There are these six classes of perception: | T: These six bodies of perception—
+sn22.56:9.3 | S: perceptions of sights, sounds, smells, tastes, touches, and ideas. | T: perception of form, perception of sound, perception of smell, perception of taste, perception of tactile sensation, perception of ideas:
+sn22.56:9.4 | S: This is called perception. | T: This is called perception.
+sn22.56:9.5 | S: Perception originates from contact. | T: From the origination of contact comes the origination of perception.
+sn22.56:9.6 | S: When contact ceases, perception ceases. | T: From the cessation of contact comes the cessation of perception.
+sn22.56:9.7 | S: The practice that leads to the cessation of perceptions is simply this noble eightfold path … | T: And just this noble eightfold path is the path of practice leading to the cessation of perception.…
+sn22.56:9.8 | P: sammādiṭṭhi …pe… sammāsamādhi …pe… | T: (none)
+sn22.56:9.9 | P: vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: (none)
+sn22.56:10.1 | S: And what are choices? | T: “And what are fabrications?
+sn22.56:10.2 | S: There are these six classes of intention: | T: These six bodies of intention—
+sn22.56:10.3 | S: intention regarding sights, sounds, smells, tastes, touches, and ideas. | T: intention with regard to form, intention with regard to sound, intention with regard to smell, intention with regard to taste, intention with regard to tactile sensation, intention with regard to ideas:
+sn22.56:10.4 | S: These are called choices. | T: These are called fabrications.
+sn22.56:10.5 | S: Choices originate from contact. | T: From the origination of contact comes the origination of fabrications.
+sn22.56:10.6 | S: When contact ceases, choices cease. | T: From the cessation of contact comes the cessation of fabrications.
+sn22.56:10.7 | S: The practice that leads to the cessation of choices is simply this noble eightfold path … | T: And just this noble eightfold path is the path of practice leading to the cessation of fabrications.…
+sn22.56:10.8 | P: sammādiṭṭhi …pe… sammāsamādhi. | T: (none)
+sn22.56:11.1 | P: Ye hi keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipannā, te suppaṭipannā. | T: (none)
+sn22.56:11.2 | P: Ye suppaṭipannā, te imasmiṁ dhammavinaye gādhanti. | T: (none)
+sn22.56:12.1 | P: Ye ca kho keci, bhikkhave, samaṇā vā brāhmaṇā vā evaṁ saṅkhāre abhiññāya, evaṁ saṅkhārasamudayaṁ abhiññāya, evaṁ saṅkhāranirodhaṁ abhiññāya, evaṁ saṅkhāranirodhagāminiṁ paṭipadaṁ abhiññāya saṅkhārānaṁ nibbidā virāgā nirodhā anupādā vimuttā, te suvimuttā. | T: (none)
+sn22.56:12.2 | P: Ye suvimuttā, te kevalino. | T: (none)
+sn22.56:12.3 | P: Ye kevalino vaṭṭaṁ tesaṁ natthi paññāpanāya. | T: (none)
+sn22.56:13.1 | S: And what is consciousness? | T: “And what is consciousness?
+sn22.56:13.2 | S: There are these six classes of consciousness: | T: These six bodies of consciousness—
+sn22.56:13.3 | S: eye, ear, nose, tongue, body, and mind consciousness. | T: eye-consciousness, ear-consciousness, nose-consciousness, tongue-consciousness, body-consciousness, intellect-consciousness:
+sn22.56:13.4 | S: This is called consciousness. | T: This is called consciousness.
+sn22.56:13.5 | S: Consciousness originates from name and form. | T: From the origination of name-&-form comes the origination of consciousness.
+sn22.56:13.6 | S: When name and form cease, consciousness ceases. | T: From the cessation of name-&-form comes the cessation of consciousness.
+sn22.56:13.7 | S: The practice that leads to the cessation of consciousness is simply this noble eightfold path, that is: | T: And just this noble eightfold path is the path of practice leading to the cessation of consciousness, i.e.,
+sn22.56:13.8 | S: right view, right purpose, right speech, right action, right livelihood, right effort, right mindfulness, and right immersion. | T: right view, right resolve, right speech, right action, right livelihood, right effort, right mindfulness, right concentration.
+sn22.56:14.1 | S: Whatever ascetics and brahmins have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation—and are practicing for disillusionment, dispassion, and cessation regarding consciousness: they are practicing well. | T: “For any contemplatives or brahmans who by directly knowing consciousness in this way, directly knowing the origination of consciousness in this way, directly knowing the cessation of consciousness in this way, directly knowing the path of practice leading to the cessation of consciousness in this way, are practicing for disenchantment—dispassion—cessation with regard to consciousness, they are practicing rightly.
+sn22.56:14.2 | S: Those who practice well have a footing in this teaching and training. | T: Those who are practicing rightly are firmly based in this Dhamma & Vinaya.
+sn22.56:15.1 | S: Those ascetics and brahmins who have directly known consciousness in this way—and its origin, its cessation, and the practice that leads to its cessation—and due to disillusionment, dispassion, and cessation regarding consciousness, are freed by not grasping: they are well freed. | T: And any contemplatives or brahmans who by directly knowing consciousness in this way, directly knowing the origination of consciousness in this way, directly knowing the cessation of consciousness in this way, directly knowing the path of practice leading to the cessation of consciousness in this way, are—from disenchantment, dispassion, cessation, lack of clinging/sustenance with regard to consciousness—released, they are well released.
+sn22.56:15.2 | S: Those who are well freed are consummate ones. | T: Those who are well released are fully accomplished.
+sn22.56:15.3 | S: For consummate ones, there is no cycle of rebirths to be found.” | T: And with those who are fully accomplished, there is no cycle for the sake of describing them.”
+sn22.56:15.4 | P: Catutthaṁ. | T: (none)
+
+exec
+/bin/bash -lc "sed -n '181,360p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+
+## sn22.5
+sn22.5:1.1 | S: So I have heard. | T: I have heard that
+sn22.5:1.2 | S: At Sāvatthī. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+sn22.5:1.3 | P: tatra kho …pe… etadavoca: | T: There he addressed the monks: “Monks!” “Yes, lord,” the monks responded to him. The Blessed One said:
+sn22.5:1.4 | S: “Mendicants, develop immersion. | T: “Develop concentration, monks.
+sn22.5:1.5 | S: A mendicant who has immersion truly understands. | T: A concentrated monk discerns in line with what has come into being.
+sn22.5:1.6 | S: What do they truly understand? | T: And what does he discern in line with what has come into being?
+sn22.5:1.7 | S: The origin and ending of form, feeling, perception, choices, and consciousness. | T: The origination & disappearance of form. The origination & disappearance of feeling… perception… fabrications. The origination & disappearance of consciousness.
+sn22.5:2.1 | S: And what is the origin of form, feeling, perception, choices, and consciousness? | T: “And what is the origination of form… feeling… perception… fabrications? What is the origination of consciousness?
+sn22.5:2.2 | S: It’s when a mendicant approves, welcomes, and keeps clinging. | T: “There is the case where one enjoys, welcomes, & remains fastened.
+sn22.5:3.1 | S: What do they approve, welcome, and keep clinging to? | T: And what does one enjoy & welcome, to what does one remain fastened?
+sn22.5:3.2 | S: They approve, welcome, and keep clinging to form. | T: One enjoys, welcomes, & remains fastened to form. As one enjoys, welcomes, & remains fastened to form,
+sn22.5:3.3 | S: This gives rise to relishing. | T: there arises delight.
+sn22.5:3.4 | S: Relishing forms is grasping. | T: Any delight in form is clinging.
+sn22.5:3.5 | S: Their grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+sn22.5:3.6 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+sn22.5:3.7 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: From birth as a requisite condition, then aging & death, sorrow, lamentation, pain, distress, & despair come into play.
+sn22.5:3.8 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn22.5:4.1 | S: They approve, welcome, and keep clinging to feeling … | T: “One enjoys, welcomes, & remains fastened to feeling…
+sn22.5:4.2 | S: perception … | T: perception…
+sn22.5:4.3 | S: choices … | T: fabrications…
+sn22.5:4.4 | S: consciousness. | T: “One enjoys, welcomes, & remains fastened to consciousness.
+sn22.5:4.5 | S: This gives rise to relishing. | T: As one enjoys, welcomes, & remains fastened to consciousness, there arises delight.
+sn22.5:4.6 | S: Relishing consciousness is grasping. | T: Any delight in consciousness is clinging.
+sn22.5:4.7 | S: Their grasping is a requirement for continued existence. | T: From clinging/sustenance as a requisite condition comes becoming.
+sn22.5:4.8 | S: Continued existence is a requirement for rebirth. | T: From becoming as a requisite condition comes birth.
+sn22.5:4.9 | S: Rebirth is a condition that gives rise to old age and death, sorrow, lamentation, pain, sadness, and distress. | T: From birth as a requisite condition, then aging & death, sorrow, lamentation, pain, distress, & despair come into play.
+sn22.5:4.10 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn22.5:5.1 | S: This is the origin of form, | T: “This, monks, is the origination of form.
+sn22.5:5.2 | S: feeling, | T: This, the origination of feeling…
+sn22.5:5.3 | S: perception, | T: perception…
+sn22.5:5.4 | S: choices, | T: fabrications.
+sn22.5:5.5 | S: and consciousness. | T: This, the origination of consciousness.”
+sn22.5:6.1 | S: And what is the ending of form, feeling, | T: “And what is the disappearance of form… feeling…
+sn22.5:6.2 | S: perception, | T: perception…
+sn22.5:6.3 | S: choices, | T: fabrications?
+sn22.5:6.4 | S: and consciousness? | T: What is the disappearance of consciousness?
+sn22.5:7.1 | S: It’s when a mendicant doesn’t approve, welcome, or keep clinging. | T: “There is the case where one doesn’t enjoy, welcome, or remain fastened.
+sn22.5:8.1 | S: What don’t they approve, welcome, or keep clinging to? | T: And what does one not enjoy or welcome, to what does one not remain fastened?
+sn22.5:8.2 | S: They don’t approve, welcome, or keep clinging to form. | T: One doesn’t enjoy, welcome, or remain fastened to form. As one doesn’t enjoy, welcome, or remain fastened to form,
+sn22.5:8.3 | S: As a result, relishing of form ceases. | T: any delight in form ceases.
+sn22.5:8.4 | S: When that relishing ceases, grasping ceases. | T: From the cessation of delight comes the cessation of clinging.
+sn22.5:8.5 | S: When grasping ceases, continued existence ceases. … | T: From the cessation of clinging/sustenance, the cessation of becoming. From the cessation of becoming, the cessation of birth. From the cessation of birth, then aging & death, sorrow, lamentation, pain, distress, & despair all cease.
+sn22.5:8.6 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this entire mass of stress & suffering.
+sn22.5:9.1 | S: They don’t approve, welcome, or keep clinging to feeling … | T: “One doesn’t enjoy, welcome, or remain fastened to feeling…
+sn22.5:9.2 | P: Tassa vedanaṁ anabhinandato anabhivadato anajjhosāya tiṭṭhato yā vedanāya nandī sā nirujjhati. | T: (none)
+sn22.5:9.3 | P: Tassa nandīnirodhā upādānanirodho; | T: (none)
+sn22.5:9.4 | P: upādānanirodhā bhavanirodho …pe… | T: (none)
+sn22.5:9.5 | P: evametassa kevalassa dukkhakkhandhassa nirodho hoti. | T: (none)
+sn22.5:10.1 | S: perception … | T: perception…
+sn22.5:10.2 | S: choices … | T: fabrications…
+sn22.5:10.3 | P: Tassa saṅkhāre anabhinandato anabhivadato anajjhosāya tiṭṭhato yā saṅkhāresu nandī sā nirujjhati. | T: (none)
+sn22.5:10.4 | P: Tassa nandīnirodhā upādānanirodho; | T: (none)
+sn22.5:10.5 | P: upādānanirodhā bhavanirodho …pe… | T: (none)
+sn22.5:10.6 | P: evametassa kevalassa dukkhakkhandhassa nirodho hoti. | T: (none)
+sn22.5:11.1 | S: consciousness. | T: “One doesn’t enjoy, welcome, or remain fastened to consciousness.
+sn22.5:11.2 | S: As a result, relishing of consciousness ceases. | T: As one doesn’t enjoy, welcome, or remain fastened to consciousness, any delight in consciousness ceases.
+sn22.5:11.3 | S: When that relishing ceases, grasping ceases. … | T: From the cessation of delight comes the cessation of clinging. From the cessation of clinging/sustenance, the cessation of becoming. From the cessation of becoming, the cessation of birth. From the cessation of birth, then aging & death, sorrow, lamentation, pain, distress, & despair all cease.
+sn22.5:11.4 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this entire mass of stress & suffering.
+sn22.5:12.1 | S: This is the ending of form, feeling, perception, choices, and consciousness.” | T: “This, monks, is the disappearance of form. This, the disappearance of feeling… perception… fabrications. This, the disappearance of consciousness.”
+sn22.5:12.2 | P: Pañcamaṁ. | T: (none)
+
+## sn22.60
+sn22.60:1.1 | S: So I have heard. | T: I have heard that
+sn22.60:1.2 | S: At one time the Buddha was staying near Vesālī, at the Great Wood, in the hall with the peaked roof. | T: on one occasion the Blessed One was staying near Vesāli at the Gabled Hall in the Great Forest.
+sn22.60:1.3 | S: Then Mahāli the Licchavi went up to the Buddha … and said to him: | T: Then Mahāli the Licchavi went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+sn22.60:2.1 | S: “Sir, Pūraṇa Kassapa says this: | T: “Pūraṇa Kassapa says this:
+sn22.60:2.2 | S: ‘There is no cause or reason for the corruption of sentient beings. | T: ‘There is no cause, no requisite condition, for the defilement of beings.
+sn22.60:2.3 | S: Sentient beings are corrupted without cause or reason. | T: Beings are defiled without cause, without requisite condition.
+sn22.60:2.4 | S: There’s no cause or reason for the purification of sentient beings. | T: There is no cause, no requisite condition, for the purification of beings.
+sn22.60:2.5 | S: Sentient beings are purified without cause or reason.’ | T: Beings are purified without cause, without requisite condition.’
+sn22.60:2.6 | S: What does the Buddha say about this?” | T: What does the Blessed One say about this?”
+sn22.60:3.1 | S: “Mahāli, there is a cause and reason for the corruption of sentient beings. | T: “Mahāli, there is cause, there is requisite condition, for the defilement of beings.
+sn22.60:3.2 | S: Sentient beings are corrupted with cause and reason. | T: Beings are defiled with cause, with requisite condition.
+sn22.60:3.3 | S: There is a cause and reason for the purification of sentient beings. | T: There is cause, there is requisite condition, for the purification of beings.
+sn22.60:3.4 | S: Sentient beings are purified with cause and reason.” | T: Beings are purified with cause, with requisite condition.”
+sn22.60:4.1 | S: “But sir, what is the cause and reason for the corruption of sentient beings? | T: “And what, lord, is the cause, what the requisite condition, for the defilement of beings?
+sn22.60:4.2 | S: How are sentient beings corrupted with cause and reason?” | T: How are beings defiled with cause, with requisite condition?”
+sn22.60:5.1 | S: “Mahāli, if form were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. | T: “Mahāli, if form were exclusively stressful—followed by stress, infused with stress and not infused with pleasure—beings would not be infatuated with form.
+sn22.60:5.2 | S: But because form is pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings are aroused by it. | T: But because form is also pleasurable—followed by pleasure, infused with pleasure and not infused with stress—beings are infatuated with form.
+sn22.60:5.3 | S: Since they are aroused by it, they’re caught up in it, and so they become corrupted. | T: Through infatuation, they are captivated. Through captivation, they are defiled.
+sn22.60:5.4 | S: This is a cause and reason for the corruption of sentient beings. | T: This is the cause, this the requisite condition, for the defilement of beings.
+sn22.60:5.5 | S: This is how sentient beings are corrupted with cause and reason. | T: And this is how beings are defiled with cause, with requisite condition.
+sn22.60:6.1 | S: If feeling … | T: “If feeling were exclusively stressful.…
+sn22.60:6.2 | P: Yasmā ca kho, mahāli, vedanā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā vedanāya sārajjanti; | T: (none)
+sn22.60:6.3 | P: sārāgā saṁyujjanti; | T: (none)
+sn22.60:6.4 | P: saṁyogā saṅkilissanti. | T: (none)
+sn22.60:6.5 | P: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. | T: (none)
+sn22.60:6.6 | P: Evampi sahetū sappaccayā sattā saṅkilissanti. | T: (none)
+sn22.60:7.1 | S: perception … | T: “If perception were exclusively stressful.…
+sn22.60:7.2 | S: choices … | T: “If fabrications were exclusively stressful.…
+sn22.60:7.3 | P: Yasmā ca kho, mahāli, saṅkhārā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā saṅkhāresu sārajjanti; | T: (none)
+sn22.60:7.4 | P: sārāgā saṁyujjanti; | T: (none)
+sn22.60:7.5 | P: saṁyogā saṅkilissanti. | T: (none)
+sn22.60:7.6 | P: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. | T: (none)
+sn22.60:7.7 | P: Evampi sahetū sappaccayā sattā saṅkilissanti. | T: (none)
+sn22.60:8.1 | S: consciousness were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. | T: “If consciousness were exclusively stressful—followed by stress, infused with stress and not infused with pleasure—beings would not be infatuated with consciousness.
+sn22.60:8.2 | S: But because consciousness is pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings are aroused by it. | T: But because consciousness is also pleasurable—followed by pleasure, infused with pleasure and not infused with stress—beings are infatuated with consciousness.
+sn22.60:8.3 | S: Since they are aroused by it, they’re caught up in it, and so they become corrupted. | T: Through infatuation, they are captivated. Through captivation, they are defiled.
+sn22.60:8.4 | S: This is a cause and reason for the corruption of sentient beings. | T: This is the cause, this the requisite condition, for the defilement of beings.
+sn22.60:8.5 | S: This is how sentient beings are corrupted with cause and reason.” | T: And this is how beings are defiled with cause, with requisite condition.”
+sn22.60:9.1 | S: “But sir, what is the cause and reason for the purification of sentient beings? | T: “And what, lord, is the cause, what the requisite condition, for the purification of beings?
+sn22.60:9.2 | S: How are sentient beings purified with cause and reason?” | T: How are beings purified with cause, with requisite condition?”
+sn22.60:9.3 | S: “Mahāli, if form was absolutely pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings wouldn’t grow disillusioned with it. | T: “Mahāli, if form were exclusively pleasurable—followed by pleasure, infused with pleasure and not infused with stress—beings would not be disenchanted with form.
+sn22.60:9.4 | S: But because form is painful—soaked and steeped in pain and not steeped in pleasure—sentient beings do grow disillusioned with it. | T: But because form is also stressful—followed by stress, infused with stress and not infused with pleasure—beings are disenchanted with form.
+sn22.60:9.5 | S: Being disillusioned, desire fades away. When desire fades away they are purified. | T: Disenchanted, they become dispassionate. Through dispassion, they are purified.
+sn22.60:9.6 | S: This is a cause and reason for the purification of sentient beings. | T: This is the cause, this the requisite condition, for the purification of beings.
+sn22.60:9.7 | S: This is how sentient beings are purified with cause and reason. | T: And this is how beings are purified with cause, with requisite condition.
+sn22.60:10.1 | S: If feeling … | T: “If feeling were exclusively pleasurable.…
+sn22.60:10.2 | S: perception … | T: “If perception were exclusively pleasurable.…
+sn22.60:10.3 | S: choices … | T: “If fabrications were exclusively pleasurable.…
+sn22.60:10.4 | S: consciousness was absolutely pleasurable—soaked and steeped in pleasure and not steeped in pain—sentient beings wouldn’t grow disillusioned with it. | T: “If consciousness were exclusively pleasurable—followed by pleasure, infused with pleasure and not infused with stress—beings would not be disenchanted with consciousness.
+sn22.60:10.5 | S: But because consciousness is painful—soaked and steeped in pain and not steeped in pleasure—sentient beings do grow disillusioned with it. | T: But because consciousness is also stressful—followed by stress, infused with stress and not infused with pleasure—beings are disenchanted with consciousness.
+sn22.60:10.6 | S: Being disillusioned, desire fades away. When desire fades away they are purified. | T: Disenchanted, they become dispassionate. Through dispassion, they are purified.
+sn22.60:10.7 | S: This is a cause and reason for the purification of sentient beings. | T: This is the cause, this the requisite condition, for the purification of beings.
+sn22.60:10.8 | S: This is how sentient beings are purified with cause and reason.” | T: And this is how beings are purified with cause, with requisite condition.”
+sn22.60:10.9 | P: Aṭṭhamaṁ. | T: (none)
+
+## sn22.79
+sn22.79:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn22.79:1.2 | S: “Mendicants, whatever ascetics and brahmins recollect many kinds of past lives, all recollect the five grasping aggregates, or one of them. | T: “Monks, any contemplatives or brahmans who recollect their manifold past lives all recollect the five clinging-aggregates, or one among them.
+sn22.79:1.3 | S: What five? | T: Which five?
+sn22.79:1.4 | S: ‘I had such form in the past.’ | T: When recollecting, ‘I was one with such a form in the past,’
+sn22.79:1.5 | S: Recollecting thus, it’s only form that they recollect. | T: one is recollecting just form.
+sn22.79:1.6 | S: ‘I had such feeling … | T: Or when recollecting, ‘I was one with such a feeling in the past,’
+sn22.79:1.7 | P: iti vā hi, bhikkhave, anussaramāno vedanaṁyeva anussarati. | T: one is recollecting just feeling.
+sn22.79:1.8 | S: perception … | T: Or when recollecting, ‘I was one with such a perception in the past,’ one is recollecting just perception.
+sn22.79:1.9 | S: choices … | T: Or when recollecting, ‘I was one with such fabrications in the past,’ one is recollecting just fabrications.
+sn22.79:1.10 | S: consciousness in the past.’ | T: Or when recollecting, ‘I was one with such a consciousness in the past,’
+sn22.79:1.11 | S: Recollecting thus, it’s only consciousness that they recollect. | T: one is recollecting just consciousness.
+sn22.79:2.1 | S: And why do you call it form? | T: “And why do you call it ‘form’ [rūpa]?
+sn22.79:2.2 | S: It’s deformed; that’s why it’s called ‘form’. | T: ‘It is afflicted [ruppati],’ thus it is called ‘form.’
+sn22.79:2.3 | S: Deformed by what? | T: Afflicted with what?
+sn22.79:2.4 | S: Deformed by cold, heat, hunger, and thirst, and deformed by the touch of flies, mosquitoes, wind, sun, and reptiles. | T: With cold & heat & hunger & thirst, with the touch of flies, mosquitoes, wind, sun, & reptiles.
+sn22.79:2.5 | S: It’s deformed; that’s why it’s called ‘form’. | T: ‘It is afflicted,’ thus it is called ‘form.’
+sn22.79:3.1 | S: And why do you call it feeling? | T: “And why do you call it ‘feeling’?
+sn22.79:3.2 | S: It feels; that’s why it’s called ‘feeling’. | T: ‘It feels,’ thus it is called ‘feeling.’
+sn22.79:3.3 | S: And what does it feel? | T: What does it feel?
+sn22.79:3.4 | S: It feels pleasure, pain, and neutral. | T: It feels pleasure, it feels pain, it feels neither-pleasure-nor-pain.
+sn22.79:3.5 | S: It feels; that’s why it’s called ‘feeling’. | T: ‘It feels,’ thus it is called ‘feeling.’
+sn22.79:4.1 | S: And why do you call it perception? | T: “And why do you call it ‘perception’?
+sn22.79:4.2 | S: It perceives; that’s why it’s called ‘perception’. | T: ‘It perceives,’ thus it is called ‘perception.’
+sn22.79:4.3 | S: And what does it perceive? | T: What does it perceive?
+sn22.79:4.4 | S: It perceives blue, yellow, red, and white. | T: It perceives blue, it perceives yellow, it perceives red, & it perceives white.
+sn22.79:4.5 | S: It perceives; that’s why it’s called ‘perception’. | T: ‘It perceives,’ thus it is called ‘perception.’
+sn22.79:5.1 | S: And why do you call them choices? | T: “And why do you call them ‘fabrications’?
+sn22.79:5.2 | S: Choices produce conditioned phenomena; that’s why they’re called ‘choices’. | T: ‘They fabricate the fabricated,’ thus they are called ‘fabrications.’
+sn22.79:5.3 | S: And what are the conditioned phenomena that they produce? | T: And what is the fabricated that they fabricate?
+sn22.79:5.4 | S: Form is a conditioned phenomenon; choices are what make it into form. Feeling is a conditioned phenomenon; choices are what make it into feeling. Perception is a conditioned phenomenon; choices are what make it into perception. Choices are conditioned phenomena; choices are what make them into choices. Consciousness is a conditioned phenomenon; choices are what make it into consciousness. | T: For the sake of form-ness, they fabricate fabricated form. For the sake of feeling-ness, they fabricate fabricated feeling. For the sake of perception-hood… For the sake of fabrication-hood… For the sake of consciousness-hood, they fabricate fabricated consciousness.
+sn22.79:5.5 | S: Choices produce conditioned phenomena; that’s why they’re called ‘choices’. | T: ‘They fabricate the fabricated,’ thus they are called ‘fabrications.’
+sn22.79:6.1 | S: And why do you call it consciousness? | T: “And why do you call it ‘consciousness’?
+sn22.79:6.2 | S: It cognizes; that’s why it’s called ‘consciousness’. | T: ‘It cognizes,’ thus it is called ‘consciousness.’
+sn22.79:6.3 | S: And what does it cognize? | T: What does it cognize?
+sn22.79:6.4 | S: It cognizes sour, bitter, pungent, sweet, hot, mild, salty, and bland. | T: It cognizes sour, it cognizes bitter, it cognizes pungent, it cognizes sweet, it cognizes alkaline, it cognizes non-alkaline, it cognizes salty, & it cognizes unsalty.
+sn22.79:6.5 | S: It cognizes; that’s why it’s called ‘consciousness’. | T: ‘It cognizes,’ thus it is called ‘consciousness.’
+sn22.79:7.1 | S: A learned noble disciple reflects on this: | T: “Thus an instructed disciple of the noble ones reflects in this way:
+sn22.79:7.2 | S: ‘Currently I’m bitten by form. | T: ‘I am now being chewed up by form.
+sn22.79:7.3 | S: In the past I was also bitten by form just like now. | T: But in the past I was also chewed up by form in the same way I am now being chewed up by present form.
+sn22.79:7.4 | S: If I were to look forward to enjoying form in the future, I’d be bitten by form in the future just as I am today.’ | T: And if I delight in future form, then in the future I will be chewed up by form in the same way I am now being chewed up by present form.’
+sn22.79:7.5 | S: Reflecting like this they are not concerned with past form, | T: Having reflected in this way, he becomes indifferent to past form,
+sn22.79:7.6 | S: they don’t look forward to enjoying future form, | T: does not delight in future form,
+sn22.79:7.7 | S: and they practice for disillusionment, dispassion, and cessation regarding present form. | T: and is practicing for the sake of disenchantment, dispassion, and cessation with regard to present form.
+sn22.79:8.1 | S: ‘Currently I’m bitten by feeling … | T: “(He reflects:) ‘I am now being chewed up by feeling…
+sn22.79:8.2 | P: Atītampāhaṁ addhānaṁ evameva vedanāya khajjiṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmi. | T: (none)
+sn22.79:8.3 | P: Ahañceva kho pana anāgataṁ vedanaṁ abhinandeyyaṁ; | T: (none)
+sn22.79:8.4 | P: anāgatampāhaṁ addhānaṁ evameva vedanāya khajjeyyaṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmī’ti. | T: (none)
+sn22.79:8.5 | P: So iti paṭisaṅkhāya atītāya vedanāya anapekkho hoti; | T: (none)
+sn22.79:8.6 | P: anāgataṁ vedanaṁ nābhinandati; | T: (none)
+sn22.79:8.7 | P: paccuppannāya vedanāya nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn22.79:9.1 | S: perception … | T: perception…
+sn22.79:9.2 | S: choices … | T: fabrications…
+sn22.79:9.3 | P: Atītampāhaṁ addhānaṁ evameva saṅkhārehi khajjiṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmīti. | T: (none)
+sn22.79:9.4 | P: Ahañceva kho pana anāgate saṅkhāre abhinandeyyaṁ; | T: (none)
+sn22.79:9.5 | P: anāgatampāhaṁ addhānaṁ evameva saṅkhārehi khajjeyyaṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmī’ti. | T: (none)
+sn22.79:9.6 | P: So iti paṭisaṅkhāya atītesu saṅkhāresu anapekkho hoti; | T: (none)
+sn22.79:9.7 | P: anāgate saṅkhāre nābhinandati; | T: (none)
+sn22.79:9.8 | P: paccuppannānaṁ saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipanno hoti. | T: (none)
+sn22.79:10.1 | S: consciousness. | T: consciousness.
+sn22.79:10.2 | S: In the past I was also bitten by consciousness just like now. | T: But in the past I was also chewed up by consciousness in the same way I am now being chewed up by present consciousness.
+
+exec
+/bin/bash -lc "sed -n '361,540p' /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.txt" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+sn22.79:10.3 | S: If I were to look forward to enjoying consciousness in the future, I’d be bitten by consciousness in the future just as I am today.’ | T: And if I delight in future consciousness, then in the future I will be chewed up by consciousness in the same way I am now being chewed up by present consciousness.’
+sn22.79:10.4 | P: anāgatampāhaṁ addhānaṁ evameva viññāṇena khajjeyyaṁ, seyyathāpi etarahi paccuppannena viññāṇena khajjāmī’ti. | T: (none)
+sn22.79:10.5 | S: Reflecting like this they are not concerned with past consciousness, | T: Having reflected in this way, he becomes indifferent to past consciousness,
+sn22.79:10.6 | S: they don’t look forward to enjoying future consciousness, | T: does not delight in future consciousness,
+sn22.79:10.7 | S: and they practice for disillusionment, dispassion, and cessation regarding present consciousness. | T: and is practicing for the sake of disenchantment, dispassion, and cessation with regard to present consciousness.
+sn22.79:11.1 | S: What do you think, mendicants? | T: “What do you think, monks?
+sn22.79:11.2 | S: Is form permanent or impermanent?” | T: Is form constant or inconstant?”
+sn22.79:11.3 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.79:11.4 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+sn22.79:11.5 | S: “Suffering, sir.” | T: “Stressful, lord.”
+sn22.79:11.6 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn22.79:11.7 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn22.79:11.8 | S: “No, sir.” | T: “No, lord.”
+sn22.79:11.9 | S: “Is feeling … | T: “… Is feeling constant or inconstant?”—“Inconstant, lord.” …
+sn22.79:11.10 | S: perception … | T: “… Is perception constant or inconstant?”—“Inconstant, lord.” …
+sn22.79:11.11 | S: choices … | T: “… Are fabrications constant or inconstant?”—“Inconstant, lord.” …
+sn22.79:11.12 | S: consciousness permanent or impermanent?” | T: “What do you think, monks? Is consciousness constant or inconstant?”
+sn22.79:11.13 | S: “Impermanent, sir.” | T: “Inconstant, lord.”
+sn22.79:11.14 | S: “But if it’s impermanent, is it suffering or happiness?” | T: “And is that which is inconstant easeful or stressful?”
+sn22.79:11.15 | S: “Suffering, sir.” | T: “Stressful, lord.”
+sn22.79:11.16 | S: “But if it’s impermanent, suffering, and perishable, is it fit to be regarded thus: | T: “And is it fitting to regard what is inconstant, stressful, subject to change as:
+sn22.79:11.17 | S: ‘This is mine, I am this, this is my self’?” | T: ‘This is mine. This is my self. This is what I am’?”
+sn22.79:11.18 | S: “No, sir.” | T: “No, lord.”
+sn22.79:11.19 | S: “So you should truly see any kind of form at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> form—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Thus, monks, any form whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every form is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.79:11.20 | S: You should truly see any kind of feeling … | T: “Any feeling whatsoever.…
+sn22.79:11.21 | S: perception … | T: “Any perception whatsoever.…
+sn22.79:11.22 | S: choices … | T: “Any fabrications whatsoever.…
+sn22.79:11.23 | S: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ | T: “Any consciousness whatsoever that is past, future, or present; internal or external; blatant or subtle; common or sublime; far or near: Every consciousness is to be seen as it has come to be with right discernment as: ‘This is not mine. This is not my self. This is not what I am.’
+sn22.79:12.1 | S: This is called a noble disciple who gets rid of and doesn’t accumulate; | T: “This, monks, is called a disciple of the noble ones who tears down and does not build up;
+sn22.79:12.2 | S: who gives up and doesn’t grasp; | T: who abandons and does not cling;
+sn22.79:12.3 | S: who unmeshes and doesn’t enmesh; | T: who discards and does not pull in;
+sn22.79:12.4 | S: who dissipates and doesn’t get clouded. | T: who scatters and does not pile up.
+sn22.79:12.5 | S: And what things do they get rid of and not accumulate? | T: “And what does he tear down and not build up?
+sn22.79:12.6 | S: They get rid of form and don’t accumulate it. | T: He tears down form and does not build it up.
+
+exec
+/bin/bash -lc "cat > /home/kjn/CodeBase/gabriel/codex-handoff/thanissaro/batch-095.findings.tmp <<'EOF'
+sn22.5:3.3 starts: As one enjoys, welcomes, & remains fastened to
+sn22.5:8.3 starts: As one doesn’t enjoy, welcome, or remain fastened
+EOF" in /home/kjn/CodeBase/gabriel/codex-handoff
+ succeeded in 0ms:
+codex
+2 lines reported.
+tokens used
+43,313
+2 lines reported.
