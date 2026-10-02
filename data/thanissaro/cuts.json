@@ -1152,7 +1152,10 @@
  "mn49:3.4": "ahmā saw me coming in the distance and,",
  "mn49:3.7": "od sir, since you arranged to come here—",
  "mn49:5.2": "other, higher escape.”’\n“Then Māra, the Evil One, taking possession of an attendant of the Brahmā assembly, said to me,",
- "mn49:9.7": "s,\nthe state of what becomes otherwise,",
+ "mn49:9.7": {
+  "after": "below,\nthose with lust & those without,",
+  "placed": true
+ },
  "mn5:11.3": ", and not in the middle of the Saṅgha.’",
  "mn5:25.1": " to another monk, and not to that monk…",
  "mn5:25.3": {
@@ -2129,8 +2132,13 @@
  "mn62:29.2": "l breathe out focusing on inconstancy.’",
  "mn63:3.11": "s to me that “The cosmos is eternal,” …",
  "mn63:3.15": "y life under him. If he does not disclose to me that “The cosmos is eternal,” …",
- "mn63:3.22": "to me that ‘The cosmos is not eternal.’",
- "mn63:3.46": "ath a Tathāgata exists… does not exist…",
+ "mn63:3.22": {
+  "after": "eternal.’ But if he doesn’t know or see",
+  "placed": true
+ },
+ "mn63:3.46": {
+  "empty": "up"
+ },
  "mn63:5.4": "\n“Māluṅkyaputta, if anyone were to say, ‘I won’t live the holy life under the Blessed One as long as he does not disclose to me that “The cosmos is eternal,” …",
  "mn63:5.29": {
   "after": ", a langur, or a monkey.’ He would say,",
@@ -14842,7 +14850,8 @@
   "placed": true
  },
  "mn63:6.4": {
-  "empty": "down"
+  "after": "iew, ‘The cosmos is not eternal,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress",
+  "placed": true
  },
  "mn63:6.5": {
   "after": " is not eternal,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress whose destruction I make known right in the here & now.",
@@ -48160,6 +48169,81 @@
  },
  "mn86:17.5": {
   "after": "he Blessed One saw him coming from afar",
+  "placed": true,
+  "own": true
+ },
+ "dn9:31.5": {
+  "after": " is, O One Well-Gone.’ But we don’t understand the contemplative Gotama as having taught any categorical teaching as to",
+  "placed": true
+ },
+ "dn9:31.8": {
+  "after": "ed to the wanderers, “I, too, don’t understand the contemplative Gotama as having taught any categorical teaching as to",
+  "placed": true,
+  "own": true
+ },
+ "dn9:33.22": {
+  "after": "that) ‘This is stress’ I have taught and declared to be a categorical teaching.",
+  "placed": true,
+  "own": true
+ },
+ "dn9:33.23": {
+  "after": ") ‘This is the origination of stress’ …",
+  "placed": true,
+  "own": true
+ },
+ "dn9:33.24": {
+  "after": "that) ‘This is the origination of stress’ … ‘This is the cessation of stress’ …",
+  "placed": true,
+  "own": true
+ },
+ "mn49:9.8": {
+  "after": "s,\nthe state of what becomes otherwise,",
+  "placed": true,
+  "own": true
+ },
+ "mn63:2.8": {
+  "after": "t’—I don’t approve, I don’t accept that the Blessed One has not disclosed them to me. I’ll go ask the Blessed One about this matter. If he discloses to me that",
+  "placed": true,
+  "own": true
+ },
+ "mn63:2.9": {
+  "after": "a does not exist,’ that ‘After death a Tathāgata both exists & does not exist,’",
+  "placed": true,
+  "own": true
+ },
+ "mn63:2.12": {
+  "after": ",’ then I will live the holy life under him. If he does not disclose to me that",
+  "placed": true,
+  "own": true
+ },
+ "mn63:2.13": {
+  "after": "e to me that ‘The cosmos is eternal,’ …",
+  "placed": true,
+  "own": true
+ },
+ "mn63:3.21": {
+  "after": "to me that ‘The cosmos is not eternal.’",
+  "placed": true,
+  "own": true
+ },
+ "mn63:3.39": {
+  "empty": "up"
+ },
+ "mn63:3.41": {
+  "empty": "up"
+ },
+ "mn63:3.49": {
+  "after": "o admit, ‘I don’t know. I don’t see.’ …",
+  "placed": true,
+  "own": true
+ },
+ "mn63:6.20": {
+  "after": "ither exists nor does not exist,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress",
+  "placed": true,
+  "own": true
+ },
+ "mn63:7.2": {
+  "after": "e & now.\n“So, Māluṅkyaputta, remember what is undisclosed by me as undisclosed,",
   "placed": true,
   "own": true
  }

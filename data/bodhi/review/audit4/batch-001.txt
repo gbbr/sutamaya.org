@@ -1,0 +1,415 @@
+## mn38
+mn38:1.1 | S: So I have heard. | T: Setting Thus have I heard.
+mn38:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was living at Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s Park.
+mn38:2.1 | S: Now at that time a mendicant named Sāti, the fisherman’s son, had the following harmful misconception: | T: Now on that occasion a pernicious view had arisen in a bhikkhu named Sāti, son of a fisherman, thus:
+mn38:2.2 | S: “As I understand the Buddha’s teaching, it is this very same consciousness that roams and transmigrates, not another.” | T: “As I understand the Dhamma taught by the Blessed One, it is this same consciousness that runs and wanders through the round of rebirths, not another.”
+mn38:3.1 | S: Several mendicants heard this rumour. | T: Several bhikkhus, having heard about this,
+mn38:3.2 | P: “sātissa kira nāma bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn38:3.3 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’”ti. | T: (none)
+mn38:3.4 | S: They went up to Sāti and said to him, | T: went to the bhikkhu Sāti and asked him:
+mn38:3.5 | S: “Is it really true, Reverend Sāti, that you have such a harmful misconception: | T: “Friend Sāti, is it true that such a pernicious view has arisen in you?”
+mn38:3.6 | S: ‘As I understand the Buddha’s teaching, it is this very same consciousness that roams and transmigrates, not another’?” | T: (none)
+mn38:3.7 | S: “Indeed, reverends. As I understand the Buddha’s teaching, it is this very same consciousness that roams and transmigrates, not another.” | T: “Exactly so, friends. As I understand the Dhamma taught by the Blessed One, it is this same consciousness that runs and wanders through the round of rebirths, not another.”
+mn38:3.8 | S: Then, wishing to dissuade Sāti from his view, the mendicants pursued, pressed, and grilled him, | T: Then those bhikkhus, desiring to detach him from that pernicious view, pressed and questioned and cross-questioned him thus:
+mn38:3.9 | S: “Don’t say that, Sāti! Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that. | T: “Friend Sāti, do not say so. Do not misrepresent the Blessed One; it is not good to misrepresent the Blessed One. The Blessed One would not speak thus.
+mn38:3.10 | S: In many ways the Buddha has said that consciousness is dependently originated, that without a cause, consciousness does not come to be.” | T: For in many ways the Blessed One has stated consciousness to be dependently arisen, since without a condition there is no origination of consciousness.”
+mn38:3.11 | S: But even though the mendicants pressed him in this way, Sāti obstinately stuck to his misconception and insisted on it. | T: Yet although pressed and questioned and cross-questioned by those bhikkhus in this way, the bhikkhu Sāti, son of a fisherman, still obstinately adhered to that pernicious view and continued to insist upon it.
+mn38:3.12 | P: “evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati anaññan”ti. | T: (none)
+mn38:4.1 | S: When they weren’t able to dissuade Sāti from his view, the mendicants went to the Buddha, bowed, sat down to one side, and told him what had happened. | T: Since the bhikkhus were unable to detach him from that pernicious view, they went to the Blessed One, and after paying homage to him, they sat down at one side and told him all that had occurred, adding:
+mn38:4.2 | P: “sātissa nāma, bhante, bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn38:4.3 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. | T: (none)
+mn38:4.4 | P: Assumha kho mayaṁ, bhante, sātissa kira nāma bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn38:4.5 | P: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. | T: (none)
+mn38:4.6 | P: Atha kho mayaṁ, bhante, yena sāti bhikkhu kevaṭṭaputto tenupasaṅkamimha; upasaṅkamitvā sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etadavocumha: | T: (none)
+mn38:4.7 | P: ‘saccaṁ kira te, āvuso sāti, evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: | T: (none)
+mn38:4.8 | P: “tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan”’ti? | T: (none)
+mn38:4.9 | P: Evaṁ vutte, bhante, sāti bhikkhu kevaṭṭaputto amhe etadavoca: | T: (none)
+mn38:4.10 | P: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. | T: (none)
+mn38:4.11 | P: Atha kho mayaṁ, bhante, sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etasmā pāpakā diṭṭhigatā vivecetukāmā samanuyuñjimha samanugāhimha samanubhāsimha: | T: (none)
+mn38:4.12 | P: ‘mā evaṁ, āvuso sāti, avaca, mā bhagavantaṁ abbhācikkhi, na hi sādhu bhagavato abbhakkhānaṁ, na hi bhagavā evaṁ vadeyya. | T: (none)
+mn38:4.13 | P: Anekapariyāyenāvuso sāti, paṭiccasamuppannaṁ viññāṇaṁ vuttaṁ bhagavatā, aññatra paccayā natthi viññāṇassa sambhavo’ti. | T: (none)
+mn38:4.14 | P: Evampi kho, bhante, sāti bhikkhu kevaṭṭaputto amhehi samanuyuñjiyamāno samanugāhiyamāno samanubhāsiyamāno tadeva pāpakaṁ diṭṭhigataṁ thāmasā parāmasā abhinivissa voharati: | T: (none)
+mn38:4.15 | P: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. | T: (none)
+mn38:4.16 | P: Yato kho mayaṁ, bhante, nāsakkhimha sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha mayaṁ etamatthaṁ bhagavato ārocemā”ti. | T: “Venerable sir, since we could not detach the bhikkhu Sāti, son of a fisherman, from this pernicious view, we have reported this matter to the Blessed One.”
+mn38:5.1 | S: So the Buddha addressed one of the monks, | T: Then the Blessed One addressed a certain bhikkhu thus:
+mn38:5.2 | S: “Please, monk, in my name tell the mendicant Sāti that | T: “Come, bhikkhu, tell the bhikkhu Sāti, son of a fisherman,
+mn38:5.3 | S: the Teacher summons him.” | T: in my name that the Teacher calls him.”—
+mn38:5.4 | S: “Yes, sir,” that monk replied. He went to Sāti and said to him, | T: “Yes, venerable sir,” he replied, and he went to the bhikkhu Sāti and told him:
+mn38:5.5 | S: “Reverend Sāti, the Teacher summons you.” | T: “The Teacher calls you, friend Sāti.”
+mn38:5.6 | S: “Yes, reverend,” Sāti replied. He went to the Buddha, bowed, and sat down to one side. The Buddha said to him, | T: “Yes, friend,” he replied, and he went to the Blessed One, and after paying homage to him, sat down at one side. The Blessed One then asked him:
+mn38:5.7 | S: “Is it really true, Sāti, that you have such a harmful misconception: | T: “Sāti, is it true that the following pernicious view has arisen in you:
+mn38:5.8 | S: ‘As I understand the Buddha’s teaching, it is this very same consciousness that roams and transmigrates, not another’?” | T: ‘As I understand the Dhamma taught by the Blessed One, it is this same consciousness that runs and wanders through the round of rebirths, not another’?”
+mn38:5.9 | S: “Indeed, sir. As I understand the Buddha’s teaching, it is this very same consciousness that roams and transmigrates, not another.” | T: “Exactly so, venerable sir. As I understand the Dhamma taught by the Blessed One, it is this same consciousness that runs and wanders through the round of rebirths, not another.”
+mn38:5.10 | S: “Sāti, what is that consciousness?” | T: “What is that consciousness, Sāti?”
+mn38:5.11 | S: “Sir, he is the one who speaks, the one who knows, who experiences the results of good and bad deeds in all the different realms.” | T: “Venerable sir, it is that which speaks and feels and experiences here and there the result of good and bad actions.”
+mn38:5.12 | S: “Futile man, who on earth have you ever known me to teach in that way? | T: “Misguided man, to whom have you ever known me to teach the Dhamma in that way?
+mn38:5.13 | S: Haven’t I said in many ways that consciousness is dependently originated, that without a cause, consciousness does not come to be? | T: Misguided man, have I not stated in many ways consciousness to be dependently arisen, since without a condition there is no origination of consciousness?
+mn38:5.14 | S: But still you misrepresent me by your wrong grasp, harm yourself, and brim with much wickedness. | T: But you, misguided man, have misrepresented us by your wrong grasp and injured yourself and stored up much demerit;
+mn38:5.15 | S: This will be for your lasting harm and suffering.” | T: for this will lead to your harm and suffering for a long time.”
+mn38:6.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+mn38:6.2 | S: “What do you think, mendicants? | T: “Bhikkhus, what do you think?
+mn38:6.3 | S: Has this mendicant Sāti kindled even a spark of ardor in this teaching and training?” | T: Has this bhikkhu Sāti, son of a fisherman, kindled even a spark of wisdom in this Dhamma and Discipline?”
+mn38:6.4 | S: “How could that be, sir? | T: “How could he, venerable sir?
+mn38:6.5 | S: No, sir.” | T: No, venerable sir.”
+mn38:6.6 | S: When this was said, Sāti sat silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say. | T: When this was said, the bhikkhu Sāti, son of a fisherman, sat silent, dismayed, with shoulders drooping and head down, glum, and without response.
+mn38:6.7 | S: Knowing this, the Buddha said, | T: Then, knowing this, the Blessed One told him:
+mn38:6.8 | S: “Futile man, you will be known by your own harmful misconception. | T: “Misguided man, you will be recognised by your own pernicious view.
+mn38:6.9 | S: I’ll question the mendicants about this.” | T: I shall question the bhikkhus on this matter.”
+mn38:7.1 | S: Then the Buddha said to the mendicants, | T: Then the Blessed One addressed the bhikkhus thus:
+mn38:7.2 | S: “Mendicants, do you understand my teachings as Sāti does, when he misrepresents me by his wrong grasp, harms himself, and brims with much wickedness?” | T: “Bhikkhus, do you understand the Dhamma taught by me as this bhikkhu Sāti, son of a fisherman, does when he misrepresents us by his wrong grasp and injures himself and stores up much demerit?”
+mn38:7.3 | S: “No, sir. | T: “No, venerable sir.
+mn38:7.4 | S: For in many ways the Buddha has told us that consciousness is dependently originated, that without a cause, consciousness does not come to be.” | T: For in many discourses the Blessed One has stated consciousness to be dependently arisen, since without a condition there is no origination of consciousness.”
+mn38:7.5 | S: “Good, good, mendicants! | T: “Good, bhikkhus.
+mn38:7.6 | S: It’s good that you understand my teaching like this. | T: It is good that you understand the Dhamma taught by me thus.
+mn38:7.7 | S: For in many ways I have told you that consciousness is dependently originated, that without a cause, consciousness does not come to be. | T: For in many ways I have stated consciousness to be dependently arisen, since without a condition there is no origination of consciousness.
+mn38:7.8 | S: But still this Sāti misrepresents me by his wrong grasp, harms himself, and brims with much wickedness. | T: But this bhikkhu Sāti, son of a fisherman, misrepresents us by his wrong grasp and injures himself and stores up much demerit;
+mn38:7.9 | S: This will be for his lasting harm and suffering. | T: for this will lead to the harm and suffering of this misguided man for a long time.
+mn38:8.1 | S: Consciousness is reckoned according to the very same condition dependent upon which it arises. | T: Conditionality of Consciousness “Bhikkhus, consciousness is reckoned by the particular condition dependent upon which it arises.
+mn38:8.2 | S: Consciousness that arises dependent on the eye and sights is reckoned as eye consciousness. | T: When consciousness arises dependent on the eye and forms, it is reckoned as eye-consciousness;
+mn38:8.3 | S: Consciousness that arises dependent on the ear and sounds is reckoned as ear consciousness. | T: when consciousness arises dependent on the ear and sounds, it is reckoned as ear-consciousness;
+mn38:8.4 | S: Consciousness that arises dependent on the nose and smells is reckoned as nose consciousness. | T: when consciousness arises dependent on the nose and odours, it is reckoned as nose-consciousness;
+mn38:8.5 | S: Consciousness that arises dependent on the tongue and tastes is reckoned as tongue consciousness. | T: when consciousness arises dependent on the tongue and flavours, it is reckoned as tongue-consciousness;
+mn38:8.6 | S: Consciousness that arises dependent on the body and touches is reckoned as body consciousness. | T: when consciousness arises dependent on the body and tangibles, it is reckoned as body-consciousness;
+mn38:8.7 | S: Consciousness that arises dependent on the mind and ideas is reckoned as mind consciousness. | T: when consciousness arises dependent on the mind and mind-objects, it is reckoned as mind-consciousness.
+mn38:8.8 | S: It’s like fire, which is reckoned according to the very same condition dependent upon which it burns. | T: Just as fire is reckoned by the particular condition dependent on which it burns—
+mn38:8.9 | S: A fire that burns dependent on logs is reckoned as a log fire. | T: when fire burns dependent on logs, it is reckoned as a log fire;
+mn38:8.10 | S: A fire that burns dependent on twigs is reckoned as a twig fire. | T: when fire burns dependent on faggots, it is reckoned as a faggot fire;
+mn38:8.11 | S: A fire that burns dependent on grass is reckoned as a grass fire. | T: when fire burns dependent on grass, it is reckoned as a grass fire;
+mn38:8.12 | S: A fire that burns dependent on cow-dung is reckoned as a cow-dung fire. | T: when fire burns dependent on cowdung, it is reckoned as a cowdung fire;
+mn38:8.13 | S: A fire that burns dependent on husks is reckoned as a husk fire. | T: when fire burns dependent on chaff, it is reckoned as a chaff fire;
+mn38:8.14 | S: A fire that burns dependent on rubbish is reckoned as a rubbish fire. | T: when fire burns dependent on rubbish, it is reckoned as a rubbish fire—
+mn38:8.15 | S: In the same way, consciousness is reckoned according to the very same condition dependent upon which it arises. … | T: so too, consciousness is reckoned by the particular condition dependent on which it arises.
+mn38:8.16 | P: Cakkhuñca paṭicca rūpe ca uppajjati viññāṇaṁ, cakkhuviññāṇantveva saṅkhyaṁ gacchati; | T: When consciousness arises dependent on the eye and forms, it is reckoned as eye-consciousness…
+mn38:8.17 | P: sotañca paṭicca sadde ca uppajjati viññāṇaṁ, sotaviññāṇantveva saṅkhyaṁ gacchati, | T: (none)
+mn38:8.18 | P: ghānañca paṭicca gandhe ca uppajjati viññāṇaṁ, ghānaviññāṇantveva saṅkhyaṁ gacchati, | T: (none)
+mn38:8.19 | P: jivhañca paṭicca rase ca uppajjati viññāṇaṁ, jivhāviññāṇantveva saṅkhyaṁ gacchati. | T: (none)
+mn38:8.20 | P: Kāyañca paṭicca phoṭṭhabbe ca uppajjati viññāṇaṁ, kāyaviññāṇantveva saṅkhyaṁ gacchati. | T: (none)
+mn38:8.21 | P: Manañca paṭicca dhamme ca uppajjati viññāṇaṁ, manoviññāṇantveva saṅkhyaṁ gacchati. | T: when consciousness arises dependent on the mind and mind-objects, it is reckoned as mind-consciousness.
+mn38:9.1 | S: Mendicants, do you see that this has come to be?” | T: General Questionnaire on Being “Bhikkhus, do you see: ‘This has come to be’?”—
+mn38:9.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:9.3 | S: “Do you see that it came to be with that as fuel?” | T: “Bhikkhus, do you see: ‘Its origination occurs with that as nutriment’?”—
+mn38:9.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:9.5 | S: “Do you see that when that fuel ceases, what has come to be is liable to cease?” | T: “Bhikkhus, do you see: ‘With the cessation of that nutriment, what has come to be is subject to cessation’?”—
+mn38:9.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:10.1 | S: “Does doubt arise when you’re uncertain whether or not this has come to be?” | T: “Bhikkhus, does doubt arise when one is uncertain thus: ‘Has this come to be’?”—
+mn38:10.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:10.3 | S: “Does doubt arise when you’re uncertain whether or not this has come to be with that as fuel?” | T: “Bhikkhus, does doubt arise when one is uncertain thus: ‘Does its origination occur with that as nutriment’?”—
+mn38:10.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:10.5 | S: “Does doubt arise when you’re uncertain whether or not when that fuel ceases, what has come to be is liable to cease?” | T: “Bhikkhus, does doubt arise when one is uncertain thus: ‘With the cessation of that nutriment, is what has come to be subject to cessation’?”—
+mn38:10.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:11.1 | S: “Is doubt given up in someone who truly sees with right understanding that this has come to be?” | T: “Bhikkhus, is doubt abandoned in one who sees as it actually is with proper wisdom thus: ‘This has come to be’?”—
+mn38:11.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:11.3 | S: “Is doubt given up in someone who truly sees with right understanding that this has come to be with that as fuel?” | T: “Bhikkhus, is doubt abandoned in one who sees as it actually is with proper wisdom thus: ‘Its origination occurs with that as nutriment’?”—
+mn38:11.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:11.5 | S: “Is doubt given up in someone who truly sees with right understanding that when that fuel ceases, what has come to be is liable to cease?” | T: “Bhikkhus, is doubt abandoned in one who sees as it actually is with proper wisdom thus: ‘With the cessation of that nutriment, what has come to be is subject to cessation’?”—
+mn38:11.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:12.1 | S: “Are you free of doubt as to whether this has come to be?” | T: “Bhikkhus, are you thus free from doubt here: ‘This has come to be’?”—
+mn38:12.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:12.3 | S: “Are you free of doubt as to whether this has come to be with that as fuel?” | T: “Bhikkhus, are you thus free from doubt here: ‘Its origination occurs with that as nutriment’?” —
+mn38:12.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:12.5 | S: “Are you free of doubt as to whether when that fuel ceases, what has come to be is liable to cease?” | T: “Bhikkhus, are you thus free from doubt here: ‘With the cessation of that nutriment, what has come to be is subject to cessation’?”—
+mn38:12.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:13.1 | S: “Have you truly seen clearly with right understanding that this has come to be?” | T: “Bhikkhus, has it been seen well by you as it actually is with proper wisdom thus: ‘This has come to be’?”—
+mn38:13.2 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:13.3 | S: “Have you truly seen clearly with right understanding that this has come to be with that as fuel?” | T: “Bhikkhus, has it been seen well by you as it actually is with proper wisdom thus: ‘Its origination occurs with that as nutriment’?”—
+mn38:13.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”—
+mn38:13.5 | S: “Have you truly seen clearly with right understanding that when that fuel ceases, what has come to be is liable to cease?” | T: “Bhikkhus, has it been seen well by you as it actually is with proper wisdom thus: ‘With the cessation of that nutriment, what has come to be is subject to cessation’?”—
+mn38:13.6 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:14.1 | S: “Pure and bright as this view is, mendicants, if you cling to it, dally with it, treasure it, and treat it as your own, would you be understanding my simile of the teaching as a raft: for crossing over, not for holding on?” | T: “Bhikkhus, purified and bright as this view is, if you adhere to it, cherish it, treasure it, and treat it as a possession, would you then understand that the Dhamma has been taught as similar to a raft, being for the purpose of crossing over, not for the purpose of grasping?”—
+mn38:14.2 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:14.3 | S: “Pure and bright as this view is, mendicants, if you don’t cling to it, dally with it, treasure it, and treat it as your own, would you be understanding my simile of the teaching as a raft: for crossing over, not for holding on?” | T: “Bhikkhus, purified and bright as this view is, if you do not adhere to it, cherish it, treasure it, and treat it as a possession, would you then understand that the Dhamma has been taught as similar to a raft, being for the purpose of crossing over, not for the purpose of grasping?”—
+mn38:14.4 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:15.1 | S: “Mendicants, these four fuels maintain sentient beings that have been born and help those about to be born. | T: Nutriment and Dependent Origination “Bhikkhus, there are these four kinds of nutriment for the maintenance of beings that already have come to be and for the support of those about to come to be.
+mn38:15.2 | S: What four? | T: What four?
+mn38:15.3 | S: Edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: They are: physical food as nutriment, gross or subtle; contact as the second; mental volition as the third; and consciousness as the fourth.
+mn38:16.1 | S: What is the source, origin, birthplace, and inception of these four fuels? | T: “Now, bhikkhus, these four kinds of nutriment have what as their source, what as their origin, from what are they born and produced?
+mn38:16.2 | S: Craving. | T: These four kinds of nutriment have craving as their source, craving as their origin; they are born and produced from craving.
+mn38:16.3 | S: And what is the source of craving? | T: And this craving has what as its source…?
+mn38:16.4 | S: Feeling. | T: Craving has feeling as its source…And this feeling has what as its source…?
+mn38:16.5 | S: And what is the source of feeling? | T: (none)
+mn38:16.6 | S: Contact. | T: Feeling has contact as its source…And this contact has what as its source…?
+mn38:16.7 | S: And what is the source of contact? | T: (none)
+mn38:16.8 | S: The six sense fields. | T: Contact has the sixfold base as its source…And this sixfold base has what as its source…?
+mn38:16.9 | S: And what is the source of the six sense fields? | T: (none)
+mn38:16.10 | S: Name and form. | T: The sixfold base has mentality-materiality as its source…And this mentality-materiality has what as its source…?
+mn38:16.11 | S: And what is the source of name and form? | T: (none)
+mn38:16.12 | S: Consciousness. | T: Mentality-materiality has consciousness as its source…And this consciousness has what as its source…?
+mn38:16.13 | S: And what is the source of consciousness? | T: (none)
+mn38:16.14 | S: Choices. | T: Consciousness has formations as its source…
+mn38:16.15 | S: And what is the source of choices? | T: And these formations have what as their source, what as their origin, from what are they born and produced?
+mn38:16.16 | S: Ignorance. | T: Formations have ignorance as their source, ignorance as their origin; they are born and produced from ignorance.
+mn38:17.1 | S: So, ignorance is a requirement for choices. | T: Forward Exposition on Arising “So, bhikkhus, with ignorance as condition, formations come to be;
+mn38:17.2 | S: Choices are a requirement for consciousness. | T: with formations as condition, consciousness;
+mn38:17.3 | S: Consciousness is a requirement for name and form. | T: with consciousness as condition, mentality-materiality;
+mn38:17.4 | S: Name and form are requirements for the six sense fields. | T: with mentality-materiality as condition, the sixfold base;
+mn38:17.5 | S: The six sense fields are requirements for contact. | T: with the sixfold base as condition, contact;
+mn38:17.6 | S: Contact is a requirement for feeling. | T: with contact as condition, feeling;
+mn38:17.7 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+mn38:17.8 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+mn38:17.9 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, being;
+mn38:17.10 | S: Continued existence is a requirement for rebirth. | T: with being as condition, birth;
+mn38:17.11 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:17.12 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:18.1 | S: ‘Rebirth is a requirement for old age and death.’ That’s what I said. | T: Reverse Order Questionnaire on Arising “‘With birth as condition, ageing and death’: so it was said.
+mn38:18.2 | S: Is that how you see this or not?” | T: Now, bhikkhus, do ageing and death have birth as condition or not, or how do you take it in this case?”
+mn38:18.3 | P: “Jātipaccayā, bhante, jarāmaraṇaṁ; | T: “Ageing and death have birth as condition, venerable sir.
+mn38:18.4 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:18.5 | P: jātipaccayā jarāmaraṇan”ti. | T: ‘With birth as condition, ageing and death.’”
+mn38:18.6 | S: “‘Continued existence is a requirement for rebirth.’ … | T: “‘With being as condition, birth’: so it was said.
+mn38:18.7 | P: bhavapaccayā nu kho, bhikkhave, jāti, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does birth have being as condition or not, or how do you take it in this case?”
+mn38:18.8 | P: “Bhavapaccayā, bhante, jāti; | T: “Birth has being as condition, venerable sir.
+mn38:18.9 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.10 | P: bhavapaccayā jātī”ti. | T: ‘With being as condition, birth.’”
+mn38:18.11 | P: “Upādānapaccayā bhavoti iti kho panetaṁ vuttaṁ; | T: “‘With clinging as condition, being’: so it was said.
+mn38:18.12 | P: upādānapaccayā nu kho, bhikkhave, bhavo, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does being have clinging as condition or not, or how do you take it in this case?”
+mn38:18.13 | P: “Upādānapaccayā, bhante, bhavo; | T: “Being has clinging as condition, venerable sir.
+mn38:18.14 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.15 | P: upādānapaccayā bhavo”ti. | T: ‘With clinging as condition, being.’”
+mn38:18.16 | P: “Taṇhāpaccayā upādānanti iti kho panetaṁ vuttaṁ, taṇhāpaccayā nu kho, bhikkhave, upādānaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: “‘With craving as condition, clinging’: so it was said. Now, bhikkhus, does clinging have craving as condition or not, or how do you take it in this case?”
+mn38:18.17 | P: “Taṇhāpaccayā, bhante, upādānaṁ; | T: “Clinging has craving as condition, venerable sir.
+mn38:18.18 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.19 | P: taṇhāpaccayā upādānan”ti. | T: ‘With craving as condition, clinging.’”
+mn38:18.20 | P: “Vedanāpaccayā taṇhāti iti kho panetaṁ vuttaṁ; | T: “‘With feeling as condition, craving’: so it was said.
+mn38:18.21 | P: vedanāpaccayā nu kho, bhikkhave, taṇhā, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does craving have feeling as condition or not, or how do you take it in this case?”
+mn38:18.22 | P: “Vedanāpaccayā, bhante, taṇhā; | T: “Craving has feeling as condition, venerable sir.
+mn38:18.23 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.24 | P: vedanāpaccayā taṇhā”ti. | T: ‘With feeling as condition, craving.’”
+mn38:18.25 | P: “Phassapaccayā vedanāti iti kho panetaṁ vuttaṁ; | T: “‘With contact as condition, feeling’: so it was said.
+mn38:18.26 | P: phassapaccayā nu kho, bhikkhave, vedanā, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does feeling have contact as condition or not, or how do you take it in this case?”
+mn38:18.27 | P: “Phassapaccayā, bhante, vedanā; | T: “Feeling has contact as condition, venerable sir.
+mn38:18.28 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.29 | P: phassapaccayā vedanā”ti. | T: ‘With contact as condition, feeling.’”
+mn38:18.30 | P: “Saḷāyatanapaccayā phassoti iti kho panetaṁ vuttaṁ; | T: “‘With the sixfold base as condition, contact’: so it was said.
+mn38:18.31 | P: saḷāyatanapaccayā nu kho, bhikkhave, phasso, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does contact have the sixfold base as condition or not, or how do you take it in this case?”
+mn38:18.32 | P: “Saḷāyatanapaccayā, bhante, phasso; | T: “Contact has the sixfold base as condition, venerable sir.
+mn38:18.33 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.34 | P: saḷāyatanapaccayā phasso”ti. | T: ‘With the sixfold base as condition, contact.’”
+mn38:18.35 | P: “Nāmarūpapaccayā saḷāyatananti iti kho panetaṁ vuttaṁ; | T: “‘With mentality-materiality as condition, the sixfold base’: so it was said.
+mn38:18.36 | P: nāmarūpapaccayā nu kho, bhikkhave, saḷāyatanaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does the sixfold base have mentality-materiality as condition or not, or how do you take it in this case?”
+mn38:18.37 | P: “Nāmarūpapaccayā, bhante, saḷāyatanaṁ; | T: “The sixfold base has mentality-materiality as condition, venerable sir.
+mn38:18.38 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.39 | P: nāmarūpapaccayā saḷāyatanan”ti. | T: ‘With mentality-materiality as condition, the sixfold base.’”
+mn38:18.40 | P: “Viññāṇapaccayā nāmarūpanti iti kho panetaṁ vuttaṁ; | T: “‘With consciousness as condition, mentality-materiality’: so it was said.
+mn38:18.41 | P: viññāṇapaccayā nu kho, bhikkhave, nāmarūpaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does mentality-materiality have consciousness as condition or not, or how do you take it in this case?”
+mn38:18.42 | P: “Viññāṇapaccayā, bhante, nāmarūpaṁ; | T: “Mentality-materiality has consciousness as condition, venerable sir.
+mn38:18.43 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.44 | P: viññāṇapaccayā nāmarūpan”ti. | T: ‘With consciousness as condition, mentality-materiality.’”
+mn38:18.45 | P: “Saṅkhārapaccayā viññāṇanti iti kho panetaṁ vuttaṁ; | T: “‘With formations as condition, consciousness’: so it was said.
+mn38:18.46 | P: saṅkhārapaccayā nu kho, bhikkhave, viññāṇaṁ, no vā, kathaṁ vā ettha hotī”ti? | T: Now, bhikkhus, does consciousness have formations as condition or not, or how do you take it in this case?”
+mn38:18.47 | P: “Saṅkhārapaccayā, bhante, viññāṇaṁ; | T: “Consciousness has formations as condition, venerable sir.
+mn38:18.48 | P: evaṁ no ettha hoti— | T: Thus we take it in this case:
+mn38:18.49 | P: saṅkhārapaccayā viññāṇan”ti. | T: ‘With formations as condition, consciousness.’”
+mn38:18.50 | S: ‘Ignorance is a requirement for choices.’ That’s what I said. | T: “‘With ignorance as condition, formations’: so it was said.
+mn38:18.51 | S: Is that how you see this or not?” | T: Now, bhikkhus, do formations have ignorance as condition or not, or how do you take it in this case?”
+mn38:18.52 | P: “Avijjāpaccayā, bhante, saṅkhārā; | T: “Formations have ignorance as condition, venerable sir.
+mn38:18.53 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:18.54 | P: avijjāpaccayā saṅkhārā”ti. | T: ‘With ignorance as condition, formations. ’”
+mn38:19.1 | S: “Good, mendicants! | T: Recapitulation on Arising “Good, bhikkhus.
+mn38:19.2 | S: So both you and I say this. | T: So you say thus, and I also say thus:
+mn38:19.3 | S: When this exists, this comes to be; due to the arising of this, this arises. That is: | T: ‘When this exists, that comes to be; with the arising of this, that arises.’ That is,
+mn38:19.4 | S: Ignorance is a requirement for choices. | T: with ignorance as condition, formations come to be;
+mn38:19.5 | S: Choices are a requirement for consciousness. | T: with formations as condition, consciousness;
+mn38:19.6 | S: Consciousness is a requirement for name and form. | T: with consciousness as condition, mentality-materiality;
+mn38:19.7 | S: Name and form are requirements for the six sense fields. | T: with mentality-materiality as condition, the sixfold base;
+mn38:19.8 | S: The six sense fields are requirements for contact. | T: with the sixfold base as condition, contact;
+mn38:19.9 | S: Contact is a requirement for feeling. | T: with contact as condition, feeling;
+mn38:19.10 | S: Feeling is a requirement for craving. | T: with feeling as condition, craving;
+mn38:19.11 | S: Craving is a requirement for grasping. | T: with craving as condition, clinging;
+mn38:19.12 | S: Grasping is a requirement for continued existence. | T: with clinging as condition, being;
+mn38:19.13 | S: Continued existence is a requirement for rebirth. | T: with being as condition, birth;
+mn38:19.14 | S: Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:19.15 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:20.1 | S: When ignorance fades away and ceases with no residue left behind, choices cease. | T: Forward Exposition on Cessation “But with the remainderless fading away and cessation of ignorance comes cessation of formations;
+mn38:20.2 | S: When choices cease, consciousness ceases. | T: with the cessation of formations, cessation of consciousness;
+mn38:20.3 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of mentality-materiality;
+mn38:20.4 | S: When name and form cease, the six sense fields cease. | T: with the cessation of mentality-materiality, cessation of the sixfold base;
+mn38:20.5 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the sixfold base, cessation of contact;
+mn38:20.6 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+mn38:20.7 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+mn38:20.8 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+mn38:20.9 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of being;
+mn38:20.10 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of being, cessation of birth;
+mn38:20.11 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:20.12 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:21.1 | S: ‘When rebirth ceases, old age and death cease.’ That’s what I said. | T: Reverse Order Questionnaire on Cessation “‘With the cessation of birth, cessation of ageing and death’: so it was said.
+mn38:21.2 | S: Is that how you see this or not?” | T: Now, bhikkhus, do ageing and death cease with the cessation of birth or not, or how do you take it in this case?”
+mn38:21.3 | P: “Jātinirodhā, bhante, jarāmaraṇanirodho; | T: “Ageing and death cease with the cessation of birth, venerable sir.
+mn38:21.4 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:21.5 | P: jātinirodhā jarāmaraṇanirodho”ti. | T: ‘With the cessation of birth, cessation of ageing and death.’”
+mn38:21.6 | S: “‘When continued existence ceases, rebirth ceases.’ … | T: “‘With the cessation of being, cessation of birth’…
+mn38:21.7 | P: bhavanirodhā nu kho, bhikkhave, jātinirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.8 | P: “Bhavanirodhā, bhante, jātinirodho; | T: (none)
+mn38:21.9 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.10 | P: bhavanirodhā jātinirodho”ti. | T: (none)
+mn38:21.11 | P: “Upādānanirodhā bhavanirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of clinging, cessation of being’…
+mn38:21.12 | P: upādānanirodhā nu kho, bhikkhave, bhavanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.13 | P: “Upādānanirodhā, bhante, bhavanirodho; | T: (none)
+mn38:21.14 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.15 | P: upādānanirodhā bhavanirodho”ti. | T: (none)
+mn38:21.16 | P: “Taṇhānirodhā upādānanirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of craving, cessation of clinging’…
+mn38:21.17 | P: taṇhānirodhā nu kho, bhikkhave, upādānanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.18 | P: “Taṇhānirodhā, bhante, upādānanirodho; | T: (none)
+mn38:21.19 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.20 | P: taṇhānirodhā upādānanirodho”ti. | T: (none)
+mn38:21.21 | P: “Vedanānirodhā taṇhānirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of feeling, cessation of craving’…
+mn38:21.22 | P: vedanānirodhā nu kho, bhikkhave, taṇhānirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.23 | P: “Vedanānirodhā, bhante, taṇhānirodho; | T: (none)
+mn38:21.24 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.25 | P: vedanānirodhā taṇhānirodho”ti. | T: (none)
+mn38:21.26 | P: “Phassanirodhā vedanānirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of contact, cessation of feeling’ …
+mn38:21.27 | P: phassanirodhā nu kho, bhikkhave, vedanānirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.28 | P: “Phassanirodhā, bhante, vedanānirodho; | T: (none)
+mn38:21.29 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.30 | P: phassanirodhā vedanānirodho”ti. | T: (none)
+mn38:21.31 | P: “Saḷāyatananirodhā phassanirodhoti iti kho panetaṁ vuttaṁ; | T: ’With the cessation of the sixfold base, cessation of contact’…
+mn38:21.32 | P: saḷāyatananirodhā nu kho, bhikkhave, phassanirodho, no vā, kathaṁ vā ettha hotīti? | T: (none)
+mn38:21.33 | P: Saḷāyatananirodhā, bhante, phassanirodho; | T: (none)
+mn38:21.34 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.35 | P: saḷāyatananirodhā phassanirodho”ti. | T: (none)
+mn38:21.36 | P: “Nāmarūpanirodhā saḷāyatananirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of mentality-materiality, cessation of the sixfold base’…
+mn38:21.37 | P: nāmarūpanirodhā nu kho, bhikkhave, saḷāyatananirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.38 | P: “Nāmarūpanirodhā, bhante, saḷāyatananirodho; | T: (none)
+mn38:21.39 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.40 | P: nāmarūpanirodhā saḷāyatananirodho”ti. | T: (none)
+mn38:21.41 | P: “Viññāṇanirodhā nāmarūpanirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of consciousness, cessation of mentality-materiality’…
+mn38:21.42 | P: viññāṇanirodhā nu kho, bhikkhave, nāmarūpanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.43 | P: “Viññāṇanirodhā, bhante, nāmarūpanirodho; | T: (none)
+mn38:21.44 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.45 | P: viññāṇanirodhā nāmarūpanirodho”ti. | T: (none)
+mn38:21.46 | P: “Saṅkhāranirodhā viññāṇanirodhoti iti kho panetaṁ vuttaṁ; | T: ‘With the cessation of formations, cessation of consciousness’…
+mn38:21.47 | P: saṅkhāranirodhā nu kho, bhikkhave, viññāṇanirodho, no vā, kathaṁ vā ettha hotī”ti? | T: (none)
+mn38:21.48 | P: “Saṅkhāranirodhā, bhante, viññāṇanirodho; | T: (none)
+mn38:21.49 | P: evaṁ no ettha hoti— | T: (none)
+mn38:21.50 | P: saṅkhāranirodhā viññāṇanirodho”ti. | T: (none)
+mn38:21.51 | S: ‘When ignorance ceases, choices cease.’ That’s what I said. | T: ‘With the cessation of ignorance, cessation of formations’: so it was said.
+mn38:21.52 | S: Is that how you see this or not?” | T: Now, bhikkhus, do formations cease with the cessation of ignorance or not, or how do you take it in this case?”
+mn38:21.53 | P: “Avijjānirodhā, bhante, saṅkhāranirodho; | T: “Formations cease with the cessation of ignorance, venerable sir.
+mn38:21.54 | S: “That’s how we see it.” | T: Thus we take it in this case:
+mn38:21.55 | P: avijjānirodhā saṅkhāranirodho”ti. | T: ‘With the cessation of ignorance, cessation of formations.’”
+mn38:22.1 | S: “Good, mendicants! | T: Recapitulation on Cessation “Good, bhikkhus.
+mn38:22.2 | S: So both you and I say this. | T: So you say thus, and I also say thus:
+mn38:22.3 | S: When this doesn’t exist, this doesn’t come to be; due to the cessation of this, this ceases. That is: | T: ‘When this does not exist, that does not come to be; with the cessation of this, that ceases.’ That is,
+mn38:22.4 | S: When ignorance ceases, choices cease. | T: with the cessation of ignorance comes cessation of formations;
+mn38:22.5 | S: When choices cease, consciousness ceases. | T: with the cessation of formations, cessation of consciousness;
+mn38:22.6 | S: When consciousness ceases, name and form cease. | T: with the cessation of consciousness, cessation of mentality-materiality;
+mn38:22.7 | S: When name and form cease, the six sense fields cease. | T: with the cessation of mentality-materiality, cessation of the sixfold base;
+mn38:22.8 | S: When the six sense fields cease, contact ceases. | T: with the cessation of the sixfold base, cessation of contact;
+mn38:22.9 | S: When contact ceases, feeling ceases. | T: with the cessation of contact, cessation of feeling;
+mn38:22.10 | S: When feeling ceases, craving ceases. | T: with the cessation of feeling, cessation of craving;
+mn38:22.11 | S: When craving ceases, grasping ceases. | T: with the cessation of craving, cessation of clinging;
+mn38:22.12 | S: When grasping ceases, continued existence ceases. | T: with the cessation of clinging, cessation of being;
+mn38:22.13 | S: When continued existence ceases, rebirth ceases. | T: with the cessation of being, cessation of birth;
+mn38:22.14 | S: When rebirth ceases, old age and death, sorrow, lamentation, pain, sadness, and distress cease. | T: with the cessation of birth, ageing and death, sorrow, lamentation, pain, grief, and despair cease.
+mn38:22.15 | S: That is how this entire mass of suffering ceases. | T: Such is the cessation of this whole mass of suffering.
+mn38:23.1 | S: Knowing and seeing in this way, mendicants, would you turn back to the first beginning, thinking, | T: Personal Knowledge “Bhikkhus, knowing and seeing in this way, would you run back to the past thus:
+mn38:23.2 | S: ‘Did we exist in the past? Did we not exist in the past? What were we in the past? How were we in the past? After being what, what did we become in the past?’?” | T: ‘Were we in the past? Were we not in the past? What were we in the past? How were we in the past? Having been what, what did we become in the past?’?”—
+mn38:23.3 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:23.4 | S: “Knowing and seeing in this way, mendicants, would you turn forward to the final end, thinking, | T: “Knowing and seeing in this way, would you run forward to the future thus:
+mn38:23.5 | S: ‘Will we exist in the future? Will we not exist in the future? What will we be in the future? How will we be in the future? After being what, what will we become in the future?’?” | T: ‘Shall we be in the future? Shall we not be in the future? What shall we be in the future? How shall we be in the future? Having been what, what shall we become in the future?’?”—
+mn38:23.6 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.1 | S: “Knowing and seeing in this way, mendicants, would you be undecided about the present, thinking, | T: “Knowing and seeing in this way, would you now be inwardly perplexed about the present thus:
+mn38:24.2 | S: ‘Am I? Am I not? What am I? How am I? This sentient being—where did it come from? And where will it go?’?” | T: ‘Am I? Am I not? What am I? How am I? Where has this being come from? Where will it go?’?”—
+mn38:24.3 | S: “No, sir.” | T: “No, venerable sir.”
+mn38:24.4 | S: “Knowing and seeing in this way, would you say, | T: “Bhikkhus, knowing and seeing in this way, would you speak thus:
+mn38:24.5 | S: ‘Our teacher is respected. We speak like this out of esteem for our teacher’?” | T: ‘The Teacher is respected by us. We speak as we do out of respect for the Teacher’?”—
+mn38:24.6 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.7 | S: “Knowing and seeing in this way, would you say, | T: “Knowing and seeing in this way, would you speak thus:
+mn38:24.8 | S: ‘Our ascetic says this. We speak like this because it is what he says’?” | T: ‘The Recluse says this, and we speak thus at the bidding of the Recluse’?”—
+mn38:24.9 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.10 | S: “Knowing and seeing in this way, would you dedicate yourself to another teacher?” | T: “Knowing and seeing in this way, would you acknowledge another teacher?”—
+mn38:24.11 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.12 | S: “Knowing and seeing in this way, would you believe that the observances and boisterous, superstitious rites of the various ascetics and brahmins are essential?” | T: “Knowing and seeing in this way, would you return to the observances, tumultuous debates, and auspicious signs of ordinary recluses and brahmins, taking them as the core of the holy life?”—
+mn38:24.13 | S: “No, sir.” | T: “No, venerable sir.”—
+mn38:24.14 | S: “Aren’t you speaking only of what you have known and seen and realized for yourselves?” | T: “Do you speak only of what you have known, seen, and understood for yourselves?” —
+mn38:24.15 | S: “Yes, sir.” | T: “Yes, venerable sir.”
+mn38:25.1 | S: “Good, mendicants! You have been guided by me with this teaching that’s apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. | T: “Good, bhikkhus. So you have been guided by me with this Dhamma, which is visible here and now, immediately effective, inviting inspection, onward leading, to be experienced by the wise for themselves.
+mn38:25.2 | S: For when I said that this teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves, | T: For it was with reference to this that it has been said: ‘Bhikkhus, this Dhamma is visible here and now, immediately effective, inviting inspection, onward leading, to be experienced by the wise for themselves.’
+mn38:25.3 | S: this is what I was referring to. | T: (none)
+mn38:26.1 | S: Mendicants, when three things come together an embryo is conceived. | T: The Round of Existence: Conception to Maturity “Bhikkhus, the descent of the embryo takes place through the union of three things.
+mn38:26.2 | S: In a case where the mother and father come together, but the mother is not in the fertile phase of her menstrual cycle, and the virile spirit is not ready, the embryo is not conceived. | T: Here, there is the union of the mother and father, but the mother is not in season, and the gandhabba is not present—in this case no descent of an embryo takes place.
+mn38:26.3 | S: In a case where the mother and father come together, the mother is in the fertile phase of her menstrual cycle, but the virile spirit is not ready, the embryo is not conceived. | T: Here, there is the union of the mother and father, and the mother is in season, but the gandhabba is not present—in this case too no descent of the embryo takes place.
+mn38:26.4 | S: But when these three things come together—the mother and father come together, the mother is in the fertile phase of her menstrual cycle, and the virile spirit is ready—an embryo is conceived. | T: But when there is the union of the mother and father, and the mother is in season, and the gandhabba is present, through the union of these three things the descent of the embryo takes place.
+mn38:27.1 | S: The mother nurtures the embryo in her womb for nine or ten months at great risk to her heavy burden. | T: “The mother then carries the embryo in her womb for nine or ten months with much anxiety, as a heavy burden.
+mn38:27.2 | S: When nine or ten months have passed, the mother gives birth at great risk to her heavy burden. | T: Then, at the end of nine or ten months, the mother gives birth with much anxiety, as a heavy burden.
+mn38:27.3 | S: When the infant is born she nourishes it with her own blood. | T: Then, when the child is born, she nourishes it with her own blood;
+mn38:27.4 | S: For mother’s milk is regarded as blood in the training of the Noble One. | T: for the mother’s breast-milk is called blood in the Noble One’s Discipline.
+mn38:28.1 | S: That boy grows up and his faculties mature. | T: “When he grows up and his faculties mature,
+mn38:28.2 | S: He accordingly plays childish games such as toy plows, tipcat, somersaults, pinwheels, toy measures, toy carts, and toy bows. | T: the child plays at such games as toy ploughs, tipcat, somersaults, toy windmills, toy measures, toy carts, and a toy bow and arrow.
+mn38:29.1 | S: That boy grows up and his faculties mature further. | T: “When he grows up and his faculties mature still further,
+mn38:29.2 | S: He accordingly amuses himself, supplied and provided with the five kinds of sensual stimulation. | T: the youth enjoys himself provided and endowed with the five cords of sensual pleasure,
+mn38:29.3 | S: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: with forms cognizable by the eye…
+mn38:29.4 | S: Sounds known by the ear … | T: sounds cognizable by the ear…
+mn38:29.5 | S: Smells known by the nose … | T: odours cognizable by the nose…
+mn38:29.6 | S: Tastes known by the tongue … | T: flavours cognizable by the tongue…
+mn38:29.7 | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tangibles cognizable by the body that are wished for, desired, agreeable and likeable, connected with sensual desire, and provocative of lust.
+mn38:30.1 | S: When they see a sight with their eyes, if it’s pleasant they desire it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: The Continuation of the Round “On seeing a form with the eye, he lusts after it if it is pleasing; he dislikes it if it is unpleasing. He abides with mindfulness of the body unestablished, with a limited mind,
+mn38:30.2 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: and he does not understand as it actually is the deliverance of mind and deliverance by wisdom wherein those evil unwholesome states cease without remainder.
+mn38:30.3 | S: Being so full of favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they approve, welcome, and keep clinging to it. | T: Engaged as he is in favouring and opposing, whatever feeling he feels—whether pleasant or painful or neither-painful-nor-pleasant—he delights in that feeling, welcomes it, and remains holding to it.
+mn38:30.4 | S: This gives rise to relishing. | T: As he does so, delight arises in him.
+mn38:30.5 | S: Relishing feelings is grasping. Their grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: Now delight in feelings is clinging. With his clinging as condition, being comes to be; with being as condition, birth; with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:30.6 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:30.7 | S: When they hear a sound with their ears … | T: “On hearing a sound with the ear…
+mn38:30.8 | S: When they smell an odor with their nose … | T: On smelling an odour with the nose…
+mn38:30.9 | S: When they taste a flavor with their tongue … | T: On tasting a flavour with the tongue…
+mn38:30.10 | S: When they feel a touch with their body … | T: On touching a tangible with the body…
+mn38:30.11 | S: When they know an idea with their mind, if it’s pleasant they desire it, but if it’s unpleasant they dislike it. They live with mindfulness of the body unestablished and their heart stunted. | T: On cognizing a mind-object with the mind, he lusts after it if it is pleasing; he dislikes it if it is unpleasing…
+mn38:30.12 | S: And they don’t truly understand the freedom of heart and freedom by wisdom where those arisen bad, unskillful qualities cease without remainder. | T: (none)
+mn38:30.13 | S: Being so full of favoring and opposing, when they experience any kind of feeling—pleasant, unpleasant, or neutral—they approve, welcome, and keep clinging to it. | T: (none)
+mn38:30.14 | S: This gives rise to relishing. | T: (none)
+mn38:30.15 | S: Relishing feelings is grasping. Their grasping is a requirement for continued existence. Continued existence is a requirement for rebirth. Rebirth is a requirement for old age and death, sorrow, lamentation, pain, sadness, and distress to come to be. | T: Now delight in feelings is clinging. With his clinging as condition, being comes to be; with being as condition, birth; with birth as condition, ageing and death, sorrow, lamentation, pain, grief, and despair come to be.
+mn38:30.16 | S: That is how this entire mass of suffering originates. | T: Such is the origin of this whole mass of suffering.
+mn38:31.1 | S: But consider when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. | T: The Ending of the Round: The Gradual Training “Here, bhikkhus, a Tathāgata appears in the world, accomplished, fully enlightened…as MN27,
+mn38:31.2 | S: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. | T: (none)
+mn38:31.3 | S: He proclaims a teaching that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. | T: (none)
+mn38:31.4 | S: He reveals an entirely full and pure spiritual life. | T: (none)
+mn38:32.1 | S: A householder hears that teaching, or a householder’s child, or someone reborn in a good family. | T: (none)
+mn38:32.2 | S: They gain faith in the Realized One | T: (none)
+mn38:32.3 | S: and reflect: | T: (none)
+mn38:32.4 | S: ‘Life at home is cramped and dirty, life gone forth is wide open. | T: (none)
+mn38:32.5 | S: It’s not easy for someone living at home to lead the spiritual life utterly full and pure, like a polished shell. | T: (none)
+mn38:32.6 | S: Why don’t I shave off my hair and beard, dress in ocher robes, and go forth from lay life to homelessness?’ | T: (none)
+mn38:32.7 | S: After some time they give up a large or small fortune, and a large or small family circle. They shave off hair and beard, dress in ocher robes, and go forth from the lay life to homelessness. | T: (none)
+mn38:33.1 | S: Once they’ve gone forth, they take up the training and livelihood of the mendicants. They give up killing living creatures, renouncing the rod and the sword. They’re scrupulous and kind, living full of sympathy for all living beings. | T: (none)
+mn38:33.2 | S: They give up stealing. They take only what’s given, and expect only what’s given. They keep themselves clean by not thieving. | T: (none)
+mn38:33.3 | S: They give up unchastity. They are chaste, set apart, refraining from the vulgar act of sex. | T: (none)
+mn38:33.4 | S: They give up lying. They speak the truth and stick to the truth. They’re honest and dependable, and don’t trick the world with their words. | T: (none)
+mn38:33.5 | S: They give up backbiting. They don’t repeat in one place what they heard in another so as to divide people against each other. Instead, they reconcile those who are divided and support those who are united, delighting in harmony, loving harmony, speaking words that promote harmony. | T: (none)
+mn38:33.6 | S: They give up harsh speech. They speak in a way that’s mellow, pleasing to the ear, endearing, going to the heart, polite, and likable and agreeable to the people. | T: (none)
+mn38:33.7 | S: They give up talking nonsense. Their words are timely, true, and meaningful, in line with the teaching and training. They say things at the right time which are valuable, reasonable, succinct, and beneficial. | T: (none)
+mn38:33.8 | S: They refrain from injuring plants and seeds. | T: (none)
+mn38:33.9 | S: They eat in one part of the day, abstaining from eating at night and food at the wrong time. | T: (none)
+mn38:33.10 | S: They refrain from seeing shows of dancing, singing, and music. | T: (none)
+mn38:33.11 | S: They refrain from attiring and adorning themselves with garlands, fragrance, and makeup. | T: (none)
+mn38:33.12 | S: They refrain from high and luxurious beds. | T: (none)
+mn38:33.13 | S: They refrain from receiving gold and currency, | T: (none)
+mn38:33.14 | S: raw grains, | T: (none)
+mn38:33.15 | S: raw meat, | T: (none)
+mn38:33.16 | S: women and girls, | T: (none)
+mn38:33.17 | S: male and female bondservants, | T: (none)
+mn38:33.18 | S: goats and sheep, | T: (none)
+mn38:33.19 | S: chickens and pigs, | T: (none)
+mn38:33.20 | S: elephants, cows, horses, and mares, | T: (none)
+mn38:33.21 | S: and fields and land. | T: (none)
+mn38:33.22 | S: They refrain from running errands and messages; | T: (none)
+mn38:33.23 | S: buying and selling; | T: (none)
+mn38:33.24 | S: falsifying weights, metals, or measures; | T: (none)
+mn38:33.25 | S: bribery, fraud, cheating, and duplicity; | T: (none)
+mn38:33.26 | S: mutilation, murder, abduction, banditry, plunder, and violence. | T: (none)
+mn38:34.1 | S: They’re content with robes to look after the body and almsfood to look after the belly. Wherever they go, they set out taking only these things. | T: (none)
+mn38:34.2 | S: They’re like a bird: wherever it flies, wings are its only burden. | T: (none)
+mn38:34.3 | S: In the same way, a mendicant is content with robes to look after the body and almsfood to look after the belly. Wherever they go, they set out taking only these things. | T: (none)
+mn38:34.4 | S: When they have this spectrum of noble ethics, they experience a blameless happiness inside themselves. | T: (none)
+mn38:35.1 | S: When they see a sight with their eyes, they don’t get caught up in the features and details. | T: (none)
+mn38:35.2 | S: If the faculty of sight were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of sight, and achieving its restraint. | T: (none)
+mn38:35.3 | S: When they hear a sound with their ears … | T: (none)
+mn38:35.4 | S: When they smell an odor with their nose … | T: (none)
+mn38:35.5 | S: When they taste a flavor with their tongue … | T: (none)
+mn38:35.6 | S: When they feel a touch with their body … | T: (none)
+mn38:35.7 | S: When they know an idea with their mind, they don’t get caught up in the features and details. | T: (none)
+mn38:35.8 | S: If the faculty of mind were left unrestrained, bad unskillful qualities of covetousness and displeasure would become overwhelming. For this reason, they practice restraint, protecting the faculty of mind, and achieving its restraint. | T: (none)
+mn38:35.9 | S: When they have this noble sense restraint, they experience an unsullied bliss inside themselves. | T: (none)
+mn38:36.1 | S: They act with situational awareness when going out and coming back; when looking ahead and aside; when bending and extending the limbs; when bearing the outer robe, bowl and robes; when eating, drinking, chewing, and tasting; when urinating and defecating; when walking, standing, sitting, sleeping, waking, speaking, and keeping silent. | T: (none)
+mn38:37.1 | S: When they have this spectrum of noble ethics, this noble contentment, this noble sense restraint, and this noble mindfulness and situational awareness, | T: (none)
+mn38:37.2 | S: they frequent a secluded lodging—a wilderness, the root of a tree, a hill, a ravine, a mountain cave, a charnel ground, a forest, the open air, a heap of straw. | T: (none)
+mn38:38.1 | S: After the meal, they return from almsround, sit down cross-legged, set their body straight, and bring mindfulness to the present. | T: (none)
+mn38:38.2 | S: Giving up covetousness for the world, they meditate with a heart rid of covetousness, cleansing the mind of covetousness. | T: (none)

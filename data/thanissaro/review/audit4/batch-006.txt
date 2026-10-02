@@ -1,0 +1,338 @@
+## dn34
+dn34:1.1.1 | S: So I have heard. | T: I have heard that
+dn34:1.1.2 | S: At one time the Buddha was staying near Campā on the banks of the Gaggarā Lotus Pond together with a large Saṅgha of five hundred mendicants. | T: on one occasion the Blessed One was staying near Campā on the banks of the Gaggarā Lake with a large community of monks, approximately 500 monks in all.
+dn34:1.1.3 | S: There Sāriputta addressed the mendicants: | T: There, Ven. Sāriputta addressed the monks,
+dn34:1.1.4 | S: “Reverends, mendicants!” | T: “Friend monks!”
+dn34:1.1.5 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+dn34:1.1.6 | S: Sāriputta said this: | T: Ven. Sāriputta said,
+dn34:1.1.7 | S: “I will relate the teachings | T: “I will teach the Dhamma
+dn34:1.1.8 | S: up to ten for attaining extinguishment, | T: progressing by tens, for attaining unbinding,
+dn34:1.1.9 | S: for making an end of suffering, | T: for putting an end to suffering & stress,
+dn34:1.1.10 | S: the release from all ties. | T: for releasing from all ties.
+dn34:1.2.0 | S: 1. Groups of One | T: Ones
+dn34:1.2.1 | S: Reverends, one thing is helpful, one thing should be developed, one thing should be completely understood, one thing should be given up, one thing makes things worse, one thing leads to distinction, one thing is hard to comprehend, one thing should be produced, one thing should be directly known, one thing should be realized. | T: “One dhamma, friends, is very helpful. One dhamma should be developed. One dhamma should be comprehended. One dhamma should be abandoned. One dhamma is on the side of decline. One dhamma is on the side of distinction. One dhamma is hard to penetrate. One dhamma should be made to arise. One dhamma should be directly known. One dhamma should be realized.
+dn34:1.2.2 | S: <b>What one thing is helpful?</b> | T: • “Which one dhamma is very helpful?
+dn34:1.2.3 | S: Diligence in skillful qualities. | T: Heedfulness with regard to skillful qualities:
+dn34:1.2.4 | P: Ayaṁ eko dhammo bahukāro. | T: This one dhamma is very helpful.
+dn34:1.2.5 | S: <b>What one thing should be developed?</b> | T: • “Which one dhamma should be developed?
+dn34:1.2.6 | S: Mindfulness of the body that is full of pleasure. | T: Mindfulness immersed in the body connected with joy:
+dn34:1.2.7 | P: Ayaṁ eko dhammo bhāvetabbo. | T: This one dhamma should be developed.
+dn34:1.2.8 | S: <b>What one thing should be completely understood?</b> | T: • “Which one dhamma should be comprehended?
+dn34:1.2.9 | S: Contact, which is accompanied by defilements and fuels grasping. | T: Contact accompanied by effluents & subject to clinging:
+dn34:1.2.10 | P: Ayaṁ eko dhammo pariññeyyo. | T: This one dhamma should be comprehended.
+dn34:1.2.11 | S: <b>What one thing should be given up?</b> | T: • “Which one dhamma should be abandoned?
+dn34:1.2.12 | S: The conceit ‘I am’. | T: The conceit ‘I am’:
+dn34:1.2.13 | P: Ayaṁ eko dhammo pahātabbo. | T: This one dhamma should be abandoned.
+dn34:1.2.14 | S: <b>What one thing makes things worse?</b> | T: • “Which one dhamma is on the side of decline?
+dn34:1.2.15 | S: Irrational application of mind. | T: Inappropriate attention:
+dn34:1.2.16 | P: Ayaṁ eko dhammo hānabhāgiyo. | T: This one dhamma is on the side of decline.
+dn34:1.2.17 | S: <b>What one thing leads to distinction?</b> | T: • “Which one dhamma is on the side of distinction?
+dn34:1.2.18 | S: Rational application of mind. | T: Appropriate attention:
+dn34:1.2.19 | P: Ayaṁ eko dhammo visesabhāgiyo. | T: This one dhamma is on the side of distinction.
+dn34:1.2.20 | S: <b>What one thing is hard to comprehend?</b> | T: • “Which one dhamma is hard to penetrate?
+dn34:1.2.21 | S: The heart’s immersion of immediate result. | T: Unmediated concentration of awareness:
+dn34:1.2.22 | P: Ayaṁ eko dhammo duppaṭivijjho. | T: This one dhamma is hard to penetrate.
+dn34:1.2.23 | S: <b>What one thing should be produced?</b> | T: • “Which one dhamma should be made to arise?
+dn34:1.2.24 | S: Unshakable knowledge. | T: Knowledge of the unprovoked [or: unprovoked knowledge]:
+dn34:1.2.25 | P: Ayaṁ eko dhammo uppādetabbo. | T: This one dhamma should be made to arise.
+dn34:1.2.26 | S: <b>What one thing should be directly known?</b> | T: • “Which one dhamma should be directly known?
+dn34:1.2.27 | S: All sentient beings are sustained by food. | T: All beings are maintained by nutriment:
+dn34:1.2.28 | P: Ayaṁ eko dhammo abhiññeyyo. | T: This one dhamma should be directly known.
+dn34:1.2.29 | S: <b>What one thing should be realized?</b> | T: • “Which one dhamma should be realized?
+dn34:1.2.30 | S: The unshakable release of the heart. | T: Unprovoked release of awareness:
+dn34:1.2.31 | P: Ayaṁ eko dhammo sacchikātabbo. | T: This one dhamma should be realized.
+dn34:1.2.32 | S: So these ten things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These ten dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.3.0 | S: 2. Groups of Two | T: Twos
+dn34:1.3.1 | S: Two things are helpful, two things should be developed, two things should be completely understood, two things should be given up, two things make things worse, two things lead to distinction, two things are hard to comprehend, two things should be produced, two things should be directly known, two things should be realized. | T: “Two dhammas, friends, are very helpful. Two dhammas should be developed. Two dhammas should be comprehended. Two dhammas should be abandoned. Two dhammas are on the side of decline. Two dhammas are on the side of distinction. Two dhammas are hard to penetrate. Two dhammas should be made to arise. Two dhammas should be directly known. Two dhammas should be realized.
+dn34:1.3.2 | S: <b>What two things are helpful?</b> | T: • “Which two dhammas are very helpful?
+dn34:1.3.3 | S: Mindfulness and situational awareness. | T: Mindfulness & alertness:
+dn34:1.3.4 | P: Ime dve dhammā bahukārā. | T: These two dhammas are very helpful.
+dn34:1.3.5 | S: <b>What two things should be developed?</b> | T: • “Which two dhammas should be developed?
+dn34:1.3.6 | S: Serenity and discernment. | T: Tranquility & insight:
+dn34:1.3.7 | P: Ime dve dhammā bhāvetabbā. | T: These two dhammas should be developed.
+dn34:1.3.8 | S: <b>What two things should be completely understood?</b> | T: • “Which two dhammas should be comprehended?
+dn34:1.3.9 | S: Name and form. | T: Name & form:
+dn34:1.3.10 | P: Ime dve dhammā pariññeyyā. | T: These two dhammas should be comprehended.
+dn34:1.3.11 | S: <b>What two things should be given up?</b> | T: • “Which two dhammas should be abandoned?
+dn34:1.3.12 | S: Ignorance and craving for continued existence. | T: Ignorance & craving for becoming:
+dn34:1.3.13 | P: Ime dve dhammā pahātabbā. | T: These two dhammas should be abandoned.
+dn34:1.3.14 | S: <b>What two things make things worse?</b> | T: • “Which two dhammas are on the side of decline?
+dn34:1.3.15 | S: Being hard to admonish and having bad friends. | T: Being hard to instruct & evil friendship:
+dn34:1.3.16 | P: Ime dve dhammā hānabhāgiyā. | T: These two dhammas are on the side of decline.
+dn34:1.3.17 | S: <b>What two things lead to distinction?</b> | T: • “Which two dhammas are on the side of distinction?
+dn34:1.3.18 | S: Being easy to admonish and having good friends. | T: Being easy to instruct & admirable friendship:
+dn34:1.3.19 | P: Ime dve dhammā visesabhāgiyā. | T: These two dhammas are on the side of distinction.
+dn34:1.3.20 | S: <b>What two things are hard to comprehend?</b> | T: • “Which two dhammas are hard to penetrate?
+dn34:1.3.21 | S: The causes and reasons for the corruption of sentient beings, and the causes and reasons for the purification of sentient beings. | T: The cause & condition for the defilement of beings and the cause & condition for the purification of beings:
+dn34:1.3.22 | P: Ime dve dhammā duppaṭivijjhā. | T: These two dhammas are hard to penetrate.
+dn34:1.3.23 | S: <b>What two things should be produced?</b> | T: • “Which two dhammas should be made to arise?
+dn34:1.3.24 | S: Two knowledges: | T: Two knowledges:
+dn34:1.3.25 | S: knowledge of ending, and knowledge of non-arising. | T: knowledge of the ending (of the effluents) & knowledge of (their) non-recurrence.
+dn34:1.3.26 | P: Ime dve dhammā uppādetabbā. | T: These two dhammas should be made to arise.
+dn34:1.3.27 | S: <b>What two things should be directly known?</b> | T: • “Which two dhammas should be directly known?
+dn34:1.3.28 | S: Two elements: | T: Two properties:
+dn34:1.3.29 | S: the conditioned element and the unconditioned element. | T: the fabricated property & the unfabricated property.
+dn34:1.3.30 | P: Ime dve dhammā abhiññeyyā. | T: These two dhammas should be directly known.
+dn34:1.3.31 | S: <b>What two things should be realized?</b> | T: • “Which two dhammas should be realized?
+dn34:1.3.32 | S: Knowledge and freedom. | T: Clear knowing & release:
+dn34:1.3.33 | P: Ime dve dhammā sacchikātabbā. | T: These two dhammas should be realized.
+dn34:1.3.34 | S: So these twenty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These twenty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.4.0 | S: 3. Groups of Three | T: Threes
+dn34:1.4.1 | S: Three things are helpful, etc. | T: “Three dhammas, friends, are very helpful. Three dhammas should be developed. Three dhammas should be comprehended. Three dhammas should be abandoned. Three dhammas are on the side of decline. Three dhammas are on the side of distinction. Three dhammas are hard to penetrate. Three dhammas should be made to arise. Three dhammas should be directly known. Three dhammas should be realized.
+dn34:1.4.2 | S: <b>What three things are helpful?</b> | T: • “Which three dhammas are very helpful?
+dn34:1.4.3 | S: Associating with true persons, listening to the true teaching, and practicing in line with the teaching. | T: Associating with people of integrity, listening to the True Dhamma, practicing the Dhamma in accordance with the Dhamma:
+dn34:1.4.4 | P: Ime tayo dhammā bahukārā. | T: These three dhammas are very helpful.
+dn34:1.4.5 | S: <b>What three things should be developed?</b> | T: • “Which three dhammas should be developed?
+dn34:1.4.6 | S: Three kinds of immersion. | T: Three concentrations:
+dn34:1.4.7 | S: Immersion with placing the mind and keeping it connected. Immersion without placing the mind, merely keeping it connected. Immersion without placing the mind or keeping it connected. | T: concentration with directed thought & evaluation, concentration without directed thought & with a modicum of evaluation, concentration without directed thought & evaluation.
+dn34:1.4.8 | P: Ime tayo dhammā bhāvetabbā. | T: These three dhammas should be developed.
+dn34:1.4.9 | S: <b>What three things should be completely understood?</b> | T: • “Which three dhammas should be comprehended?
+dn34:1.4.10 | S: Three feelings: | T: Three feelings:
+dn34:1.4.11 | S: pleasant, painful, and neutral. | T: a feeling of pleasure, a feeling of pain, a feeling of neither pleasure nor pain.
+dn34:1.4.12 | P: Ime tayo dhammā pariññeyyā. | T: These three dhammas should be comprehended.
+dn34:1.4.13 | S: <b>What three things should be given up?</b> | T: • “Which three dhammas should be abandoned?
+dn34:1.4.14 | S: Three cravings: | T: Three cravings:
+dn34:1.4.15 | S: craving for sensual pleasures, craving for continued existence, and craving for nonexistence. | T: craving for sensuality, craving for becoming, craving for non-becoming.
+dn34:1.4.16 | P: Ime tayo dhammā pahātabbā. | T: These three dhammas should be abandoned.
+dn34:1.4.17 | S: <b>What three things make things worse?</b> | T: • “Which three dhammas are on the side of decline?
+dn34:1.4.18 | S: Three unskillful roots: | T: Three roots of what is unskillful:
+dn34:1.4.19 | S: greed, hate, and delusion. | T: greed as a root of what is unskillful, aversion as a root of what is unskillful, delusion as a root of what is unskillful.
+dn34:1.4.20 | P: Ime tayo dhammā hānabhāgiyā. | T: These three dhammas are on the side of decline.
+dn34:1.4.21 | S: <b>What three things lead to distinction?</b> | T: • “Which three dhammas are on the side of distinction?
+dn34:1.4.22 | S: Three skillful roots: | T: Three roots of what is skillful:
+dn34:1.4.23 | S: contentment, love, and understanding. | T: lack of greed as a root of what is skillful, lack of aversion as a root of what is skillful, lack of delusion as a root of what is skillful.
+dn34:1.4.24 | P: Ime tayo dhammā visesabhāgiyā. | T: These three dhammas are on the side of distinction.
+dn34:1.4.25 | S: <b>What three things are hard to comprehend?</b> | T: • “Which three dhammas are hard to penetrate?
+dn34:1.4.26 | S: Three elements of escape. | T: Three properties for escape:
+dn34:1.4.27 | S: Renunciation is the escape from sensual pleasures. The formless is the escape from form. Cessation is the escape from whatever is created, conditioned, and dependently originated. | T: This is the escape from sensuality: renunciation. This is the escape from form: the formless. As for whatever has come into being, is fabricated, & is dependently co-arisen, the escape from that is cessation.
+dn34:1.4.28 | P: Ime tayo dhammā duppaṭivijjhā. | T: These three dhammas are hard to penetrate.
+dn34:1.4.29 | S: <b>What three things should be produced?</b> | T: • “Which three dhammas should be made to arise?
+dn34:1.4.30 | S: Three knowledges: | T: Three knowledges:
+dn34:1.4.31 | S: knowledge regarding the past portion, the future portion, and the present portion. | T: knowledge of the past, knowledge of the future, & knowledge of the present.
+dn34:1.4.32 | P: Ime tayo dhammā uppādetabbā. | T: These three dhammas should be made to arise.
+dn34:1.4.33 | S: <b>What three things should be directly known?</b> | T: • “Which three dhammas should be directly known?
+dn34:1.4.34 | S: Three elements: | T: Three properties:
+dn34:1.4.35 | S: the sensual realm, the realm of luminous form, and the formless realm. | T: the property of sensuality, the property of form, the property of the formless.
+dn34:1.4.36 | P: Ime tayo dhammā abhiññeyyā. | T: These three dhammas should be directly known.
+dn34:1.4.37 | S: <b>What three things should be realized?</b> | T: • “Which three dhammas should be realized?
+dn34:1.4.38 | S: Three knowledges: | T: Three forms of clear knowing:
+dn34:1.4.39 | S: recollection of past lives, knowledge of the death and rebirth of sentient beings, and knowledge of the ending of defilements. | T: the clear knowing of the knowledge of previous lifetimes, the clear knowing of the knowledge of the passing away & arising of beings, the clear knowing of the knowledge of the ending of the effluents.
+dn34:1.4.40 | P: Ime tayo dhammā sacchikātabbā. | T: These three dhammas should be realized.
+dn34:1.4.41 | S: So these thirty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These thirty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.5.0 | S: 4. Groups of Four | T: Fours
+dn34:1.5.1 | S: Four things are helpful, etc. | T: “Four dhammas, friends, are very helpful. Four dhammas should be developed. Four dhammas should be comprehended. Four dhammas should be abandoned. Four dhammas are on the side of decline. Four dhammas are on the side of distinction. Four dhammas are hard to penetrate. Four dhammas should be made to arise. Four dhammas should be directly known. Four dhammas should be realized.
+dn34:1.5.2 | S: <b>What four things are helpful?</b> | T: • “Which four dhammas are very helpful?
+dn34:1.5.3 | S: Four situations: | T: Four wheels:
+dn34:1.5.4 | S: living in a suitable region, relying on true persons, being rightly resolved in oneself, and past merit. | T: living in a civilized land, associating with people of integrity, directing oneself rightly, & having done merit in the past.
+dn34:1.5.5 | P: Ime cattāro dhammā bahukārā. | T: These four dhammas are very helpful.
+dn34:1.5.6 | S: <b>What four things should be developed?</b> | T: • “Which four dhammas should be developed?
+dn34:1.5.7 | S: The four kinds of mindfulness meditation. | T: Four establishings of mindfulness:
+dn34:1.5.8 | S: A mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: There is the case, friends, where a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+dn34:1.5.9 | S: They meditate observing an aspect of feelings … | T: He remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+dn34:1.5.10 | S: mind … | T: He remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+dn34:1.5.11 | S: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: He remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+dn34:1.5.12 | P: Ime cattāro dhammā bhāvetabbā. | T: These four dhammas should be developed.
+dn34:1.5.13 | S: <b>What four things should be completely understood?</b> | T: • “Which four dhammas should be comprehended?
+dn34:1.5.14 | S: Four foods: | T: Four nutriments:
+dn34:1.5.15 | S: edible food, whether solid or subtle; contact is the second, mental intention the third, and consciousness the fourth. | T: physical food, gross or refined; contact as the second; intellectual intention the third; and consciousness the fourth.
+dn34:1.5.16 | P: Ime cattāro dhammā pariññeyyā. | T: These four dhammas should be comprehended.
+dn34:1.5.17 | S: <b>What four things should be given up?</b> | T: • “Which four dhammas should be abandoned?
+dn34:1.5.18 | S: Four floods: | T: Four floods:
+dn34:1.5.19 | S: sensuality, desire for rebirth, views, and ignorance. | T: the flood of sensuality, the flood of becoming, the flood of views, the flood of ignorance.
+dn34:1.5.20 | P: Ime cattāro dhammā pahātabbā. | T: These four dhammas should be abandoned.
+dn34:1.5.21 | S: <b>What four things make things worse?</b> | T: • “Which four dhammas are on the side of decline?
+dn34:1.5.22 | S: Four yokes: | T: Four yokes:
+dn34:1.5.23 | S: the yokes of sensuality, desire for rebirth, views, and ignorance. | T: the yoke of sensuality, the yoke of becoming, the yoke of views, the yoke of ignorance.
+dn34:1.5.24 | P: Ime cattāro dhammā hānabhāgiyā. | T: These four dhammas are on the side of decline.
+dn34:1.5.25 | S: <b>What four things lead to distinction?</b> | T: • “Which four dhammas are on the side of distinction?
+dn34:1.5.26 | S: Four kinds of unyoking: | T: Four unyokings:
+dn34:1.5.27 | S: unyoking from the yokes of sensuality, desire for rebirth, views, and ignorance. | T: the unyoking of the yoke of sensuality, the unyoking of the yoke of becoming, the unyoking of the yoke of views, the unyoking of the yoke of ignorance.
+dn34:1.5.28 | P: Ime cattāro dhammā visesabhāgiyā. | T: These four dhammas are on the side of distinction.
+dn34:1.5.29 | S: <b>What four things are hard to comprehend?</b> | T: • “Which four dhammas are hard to penetrate?
+dn34:1.5.30 | S: Four kinds of immersion: | T: Four concentrations:
+dn34:1.5.31 | S: immersion liable to decline, stable immersion, immersion that leads to distinction, and immersion that leads to penetration. | T: concentration that has a share in decline, concentration that has a share in stability, concentration that has a share in distinction, concentration that has a share in penetration.
+dn34:1.5.32 | P: Ime cattāro dhammā duppaṭivijjhā. | T: These four dhammas are hard to penetrate.
+dn34:1.5.33 | S: <b>What four things should be produced?</b> | T: • “Which four dhammas should be made to arise?
+dn34:1.5.34 | S: Four knowledges: | T: Four knowledges:
+dn34:1.5.35 | S: knowledge of the teaching, inferential knowledge, knowledge of encompassing, and conventional knowledge. | T: knowledge with regard to the Dhamma, knowledge with regard to inference, knowledge with regard to encompassing (the minds of others), knowledge of conventions.
+dn34:1.5.36 | P: Ime cattāro dhammā uppādetabbā. | T: These four dhammas should be made to arise.
+dn34:1.5.37 | S: <b>What four things should be directly known?</b> | T: • “Which four dhammas should be directly known?
+dn34:1.5.38 | S: The four noble truths: | T: Four noble truths:
+dn34:1.5.39 | S: suffering, the origin of suffering, the cessation of suffering, and the practice that leads to the cessation of suffering. | T: the noble truth of stress, the noble truth of the origination of stress, the noble truth of the cessation of stress, the noble truth of the path of practice leading to the cessation of stress.
+dn34:1.5.40 | P: Ime cattāro dhammā abhiññeyyā. | T: These four dhammas should be directly known.
+dn34:1.5.41 | S: <b>What four things should be realized?</b> | T: • “Which four dhammas should be realized?
+dn34:1.5.42 | S: Four fruits of the ascetic life: | T: Four fruits of the contemplative life:
+dn34:1.5.43 | S: stream-entry, once-return, non-return, and perfection. | T: the fruit of stream-entry, the fruit of once-returning, the fruit of non-returning, the fruit of arahantship.
+dn34:1.5.44 | P: Ime cattāro dhammā sacchikātabbā. | T: These four dhammas should be realized.
+dn34:1.5.45 | S: So these forty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These forty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.6.0 | S: 5. Groups of Five | T: Fives
+dn34:1.6.1 | S: Five things are helpful, etc. | T: “Five dhammas, friends, are very helpful. Five dhammas should be developed. Five dhammas should be comprehended. Five dhammas should be abandoned. Five dhammas are on the side of decline. Five dhammas are on the side of distinction. Five dhammas are hard to penetrate. Five dhammas should be made to arise. Five dhammas should be directly known. Five dhammas should be realized.
+dn34:1.6.2 | S: <b>What five things are helpful?</b> | T: • “Which five dhammas are very helpful?
+dn34:1.6.3 | S: Five factors that support meditation. | T: Five factors for exertion:
+dn34:1.6.4 | S: A mendicant has faith in the Realized One’s awakening: | T: There is the case, friends, where a monk has conviction, is convinced of the Tathāgata’s awakening:
+dn34:1.6.5 | S: ‘That Blessed One is perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed.’ | T: ‘Indeed, the Blessed One is worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed.’
+dn34:1.6.6 | S: They are rarely ill or unwell. Their stomach digests well, being neither too hot nor too cold, but just right, and fit for meditation. | T: “He is free from illness & discomfort, endowed with good digestion—not too cold, not too hot, of moderate strength—fit for exertion.
+dn34:1.6.7 | S: They’re not devious or deceitful. They reveal themselves honestly to the Teacher or sensible spiritual companions. | T: “He is neither fraudulent nor deceitful. He declares himself to the Teacher or to his observant companions in the holy life in line with what he actually is.
+dn34:1.6.8 | S: They live with energy roused up for giving up unskillful qualities and embracing skillful qualities. They’re strong, staunchly vigorous, not slacking off when it comes to developing skillful qualities. | T: “He keeps his persistence aroused for abandoning unskillful qualities & taking on skillful qualities. He is steadfast, solid in his effort, not shirking his duties with regard to skillful qualities.
+dn34:1.6.9 | S: They’re wise. They have the wisdom of arising and passing away which is noble, penetrative, and leads to the complete ending of suffering. | T: “He is discerning, endowed with discernment leading to the arising of the goal—noble, penetrating, leading to the right ending of stress.
+dn34:1.6.10 | P: Ime pañca dhammā bahukārā. | T: “These five dhammas are very helpful.
+dn34:1.6.11 | S: <b>What five things should be developed?</b> | T: • “Which five dhammas should be developed?
+dn34:1.6.12 | S: Right immersion with five factors: | T: Five-factored right concentration:
+dn34:1.6.13 | S: pervasion with rapture, pervasion with pleasure, pervasion with mind, pervasion with light, and the basis for reviewing. | T: suffusion with rapture, suffusion with pleasure, suffusion with awareness, suffusion with light, the theme of reflection.
+dn34:1.6.14 | P: Ime pañca dhammā bhāvetabbā. | T: These five dhammas should be developed.
+dn34:1.6.15 | S: <b>What five things should be completely understood?</b> | T: • “Which five dhammas should be comprehended?
+dn34:1.6.16 | S: Five grasping aggregates: | T: Five clinging-aggregates:
+dn34:1.6.17 | S: form, feeling, perception, choices, and consciousness. | T: the form clinging-aggregate, the feeling clinging-aggregate, the perception clinging-aggregate, the fabrication clinging-aggregate, the consciousness clinging-aggregate.
+dn34:1.6.18 | P: Ime pañca dhammā pariññeyyā. | T: These five dhammas should be comprehended.
+dn34:1.6.19 | S: <b>What five things should be given up?</b> | T: • “Which five dhammas should be abandoned?
+dn34:1.6.20 | S: Five hindrances: | T: Five hindrances:
+dn34:1.6.21 | S: sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt. | T: the hindrance of sensual desire, the hindrance of ill will, the hindrance of sloth & drowsiness, the hindrance of restlessness & anxiety, the hindrance of uncertainty.
+dn34:1.6.22 | P: Ime pañca dhammā pahātabbā. | T: These five dhammas should be abandoned.
+dn34:1.6.23 | S: <b>What five things make things worse?</b> | T: • “Which five dhammas are on the side of decline?
+dn34:1.6.24 | S: Five kinds of hard-heartedness. | T: Five mental blockages:
+dn34:1.6.25 | S: Firstly, a mendicant has doubts about the Teacher. They’re uncertain, undecided, and lacking confidence. | T: There is the case, friends, where a monk is doubtful, uncertain, indecisive about the Teacher and is not confident in him.
+dn34:1.6.26 | S: This being so, their mind doesn’t incline toward keenness, commitment, persistence, and striving. | T: When a monk is doubtful, uncertain, indecisive about the Teacher and is not confident in him, then his mind doesn’t tend toward ardency, commitment, perseverance, or exertion.
+dn34:1.6.27 | P: Yassa cittaṁ na namati ātappāya anuyogāya sātaccāya padhānāya. | T: When one’s mind doesn’t tend toward ardency, commitment, perseverance, or exertion,
+dn34:1.6.28 | S: This is the first kind of hard-heartedness. | T: that is the first mental blockage.
+dn34:1.6.29 | S: Furthermore, a mendicant has doubts about the teaching … | T: “There is the case where a monk is doubtful, uncertain, indecisive about the Dhamma…
+dn34:1.6.30 | S: the Saṅgha … | T: about the Saṅgha…
+dn34:1.6.31 | S: the training … | T: about the training…
+dn34:1.6.32 | S: A mendicant is angry and upset with their spiritual companions, resentful and closed off. | T: “There is the case where a monk is angered & unhappy with his fellows in the holy life, his mind rigid & hostile.
+dn34:1.6.33 | S: This being so, their mind doesn’t incline toward keenness, commitment, persistence, and striving. | T: When a monk is angered & unhappy with his fellows in the holy life, his mind rigid & hostile, then his mind doesn’t tend toward ardency, commitment, perseverance, or exertion. When one’s mind doesn’t tend toward ardency, commitment, perseverance, or exertion,
+dn34:1.6.34 | S: This is the fifth kind of hard-heartedness. | T: that is the fifth mental blockage.
+dn34:1.6.35 | P: Ime pañca dhammā hānabhāgiyā. | T: “These five dhammas are on the side of decline.
+dn34:1.6.36 | S: <b>What five things lead to distinction?</b> | T: • “Which five dhammas are on the side of distinction?
+dn34:1.6.37 | S: Five faculties: | T: Five faculties:
+dn34:1.6.38 | S: faith, energy, mindfulness, immersion, and wisdom. | T: the faculty of conviction, the faculty of persistence, the faculty of mindfulness, the faculty of concentration, the faculty of discernment.
+dn34:1.6.39 | P: Ime pañca dhammā visesabhāgiyā. | T: These five dhammas are on the side of distinction.
+dn34:1.6.40 | S: <b>What five things are hard to comprehend?</b> | T: • “Which five dhammas are hard to penetrate?
+dn34:1.6.41 | S: Five elements of escape. | T: Five properties leading to escape:
+dn34:1.6.42 | S: A mendicant focuses on sensual pleasures, but on that their mind does not leap forth, gain confidence, settle down, and become decided. | T: There is the case, friends, where the mind of a monk, when attending to sensuality, doesn’t leap up at sensuality, doesn’t grow confident, steadfast, or released in sensuality.
+dn34:1.6.43 | S: But when they focus on renunciation, on that their mind leaps forth, gains confidence, settles down, and becomes decided. | T: But when attending to renunciation, his mind leaps up at renunciation, grows confident, steadfast, & released in renunciation.
+dn34:1.6.44 | S: Their mind is in a good state, well developed, well risen, well freed, and well detached from sensual pleasures. | T: When his mind is rightly-gone, rightly developed, has rightly risen above, gained release, & become disjoined from sensuality,
+dn34:1.6.45 | S: They’re freed from the distressing and feverish defilements that arise because of sensual pleasures, so they don’t experience that kind of feeling. | T: then whatever effluents, torments, & fevers there are that arise in dependence on sensuality, he is released from them. He doesn’t experience that feeling.
+dn34:1.6.46 | S: This is how the escape from sensual pleasures is explained. | T: This is expounded as the escape from sensuality.
+dn34:1.6.47 | S: Take another case where a mendicant focuses on ill will, but their mind does not leap forth … | T: “And further, there is the case where the mind of a monk, when attending to ill will, doesn’t leap up at ill will, doesn’t grow confident, steadfast, or released in ill will.
+dn34:1.6.48 | S: But when they focus on good will, their mind leaps forth … | T: But when attending to non-ill will, his mind leaps up at non-ill will, grows confident, steadfast, & released in non-ill will.
+dn34:1.6.49 | S: Their mind is in a good state … well detached from ill will. | T: When his mind is rightly-gone, rightly developed, has rightly risen above, gained release, & become disjoined from ill will,
+dn34:1.6.50 | S: They’re freed from the distressing and feverish defilements that arise because of ill will, so they don’t experience that kind of feeling. | T: then whatever effluents, torments, & fevers there are that arise in dependence on ill will, he is released from them. He doesn’t experience that feeling.
+dn34:1.6.51 | S: This is how the escape from ill will is explained. | T: This is expounded as the escape from ill will.
+dn34:1.6.52 | S: Take another case where a mendicant focuses on harming, but their mind does not leap forth … | T: “And further, there is the case where the mind of a monk, when attending to harmfulness, doesn’t leap up at harmfulness, doesn’t grow confident, steadfast, or released in harmfulness.
+dn34:1.6.53 | S: But when they focus on compassion, their mind leaps forth … | T: But when attending to harmlessness, his mind leaps up at harmlessness, grows confident, steadfast, & released in harmlessness.
+dn34:1.6.54 | S: Their mind is in a good state … well detached from harming. | T: When his mind is rightly-gone, rightly developed, has rightly risen above, gained release, & become disjoined from harmfulness,
+dn34:1.6.55 | S: They’re freed from the distressing and feverish defilements that arise because of harming, so they don’t experience that kind of feeling. | T: then whatever effluents, torments, & fevers there are that arise in dependence on harmfulness, he is released from them. He doesn’t experience that feeling.
+dn34:1.6.56 | S: This is how the escape from harming is explained. | T: This is expounded as the escape from harmfulness.
+dn34:1.6.57 | S: Take another case where a mendicant focuses on form, but their mind does not leap forth … | T: “And further, there is the case where the mind of a monk, when attending to forms, doesn’t leap up at forms, doesn’t grow confident, steadfast, or released in forms.
+dn34:1.6.58 | S: But when they focus on the formless, their mind leaps forth … | T: But when attending to the formless, his mind leaps up at the formless, grows confident, steadfast, & released in the formless.
+dn34:1.6.59 | S: Their mind is in a good state … well detached from forms. | T: When his mind is rightly-gone, rightly developed, has rightly risen above, gained release, & become disjoined from forms,
+dn34:1.6.60 | S: They’re freed from the distressing and feverish defilements that arise because of form, so they don’t experience that kind of feeling. | T: then whatever effluents, torments, & fevers there are that arise in dependence on forms, he is released from them. He doesn’t experience that feeling.
+dn34:1.6.61 | S: This is how the escape from forms is explained. | T: This is expounded as the escape from forms.
+dn34:1.6.62 | S: Take a case where a mendicant focuses on substantial reality, but their mind does not leap forth, gain confidence, settle down, and become decided. | T: “And further, there is the case where the mind of a monk, when attending to self-identification, doesn’t leap up at self-identification, doesn’t grow confident, steadfast, or released in self-identification.
+dn34:1.6.63 | S: But when they focus on the cessation of substantial reality, their mind leaps forth, gains confidence, settles down, and becomes decided. | T: But when attending to the cessation of self-identification, his mind leaps up at the cessation of self-identification, grows confident, steadfast, & released in the cessation of self-identification.
+dn34:1.6.64 | S: Their mind is in a good state, well developed, well risen, well freed, and well detached from substantial reality. | T: When his mind is rightly-gone, rightly developed, has rightly risen above, gained release, & become disjoined from self-identification,
+dn34:1.6.65 | S: They’re freed from the distressing and feverish defilements that arise because of substantial reality, so they don’t experience that kind of feeling. | T: then whatever effluents, torments, & fevers there are that arise in dependence on self-identification, he is released from them. He doesn’t experience that feeling.
+dn34:1.6.66 | S: This is how the escape from substantial reality is explained. | T: This is expounded as the escape from self-identification.
+dn34:1.6.67 | P: Ime pañca dhammā duppaṭivijjhā. | T: “These five dhammas are hard to penetrate.
+dn34:1.6.68 | S: <b>What five things should be produced?</b> | T: • “Which five dhammas should be made to arise?
+dn34:1.6.69 | S: Right immersion with five knowledges. | T: Right concentration with knowledges:
+dn34:1.6.70 | S: The following knowledges arise for you personally: ‘This immersion is blissful now, and results in bliss in the future.’ | T: The knowledge arises right within oneself that ‘This concentration is blissful in the present & will result in bliss in the future.’
+dn34:1.6.71 | S: ‘This immersion is noble and not of the flesh.’ | T: “The knowledge arises right within oneself that ‘This concentration is noble & not connected with the baits of the flesh.’
+dn34:1.6.72 | S: ‘This immersion is not cultivated by reprobates.’ | T: “The knowledge arises right within oneself that ‘This concentration is not obtained by base people.’
+dn34:1.6.73 | S: ‘This immersion is peaceful and sublime and tranquil and unified, not held in place by forceful suppression.’ | T: “The knowledge arises right within oneself that ‘This concentration is peaceful, exquisite, the acquiring of calm, the attainment of unification, not kept in place by the fabrications of forceful restraint.’
+dn34:1.6.74 | S: ‘I mindfully enter into and emerge from this immersion.’ | T: “The knowledge arises right within oneself that ‘I enter into this concentration mindfully, & mindfully I emerge from it.’
+dn34:1.6.75 | P: Ime pañca dhammā uppādetabbā. | T: “These five dhammas should be made to arise.
+dn34:1.6.76 | S: <b>What five things should be directly known?</b> | T: • “Which five dhammas should be directly known?
+dn34:1.6.77 | S: Five opportunities for freedom. | T: Five openings to release:
+dn34:1.6.78 | S: Firstly, the Teacher or a respected spiritual companion teaches Dhamma to a mendicant. | T: “There is the case, friends, where the Teacher or a fellow person leading the holy life teaches the Dhamma to a monk.
+dn34:1.6.79 | S: That mendicant feels inspired by the meaning and the teaching in that Dhamma, no matter how the Teacher or a respected spiritual companion teaches it. | T: And in whatever way the Teacher or a fellow person leading the holy life teaches the Dhamma to the monk, in just that way the monk, with regard to that Dhamma, is sensitive to the meaning, is sensitive to the Dhamma.
+dn34:1.6.80 | S: Feeling inspired, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, one feels bliss. And when blissful, the mind becomes immersed. | T: In him—sensitive to the meaning, sensitive to the Dhamma—joy is born. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+dn34:1.6.81 | S: This is the first opportunity for freedom. | T: This is the first opening to release.
+dn34:1.6.82 | S: Furthermore, it may be that neither the Teacher nor a respected spiritual companion teaches Dhamma to a mendicant. But the mendicant teaches Dhamma in detail to others as they learned and memorized it. | T: “And further, it’s not that the Teacher or a fellow person leading the holy life teaches the Dhamma to the monk. But the monk teaches the Dhamma to others in detail, as he has heard it, as he has learned it.
+dn34:1.6.83 | S: That mendicant feels inspired by the meaning and the teaching in that Dhamma, no matter how they teach it in detail to others as they learned and memorized it. | T: And in whatever way he teaches the Dhamma to others in detail, as he has heard it, as he has learned it, in just that way the monk, with regard to that Dhamma, is sensitive to the meaning, is sensitive to the Dhamma.
+dn34:1.6.84 | S: Feeling inspired, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, one feels bliss. And when blissful, the mind becomes immersed. | T: In him—sensitive to the meaning, sensitive to the Dhamma—joy is born. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+dn34:1.6.85 | S: This is the second opportunity for freedom. | T: This is the second opening to release.
+dn34:1.6.86 | S: Furthermore, it may be that neither the Teacher nor … the mendicant teaches Dhamma. But the mendicant rehearses the teaching in detail as they learned and memorized it. | T: “And further, it’s not that the Teacher or a fellow person leading the holy life teaches the Dhamma to the monk, nor does the monk teach the Dhamma to others in detail, as he has heard it, as he has learned it. But he recites the Dhamma in detail, as he has heard it, as he has learned it.
+dn34:1.6.87 | S: That mendicant feels inspired by the meaning and the teaching in that Dhamma, no matter how they rehearse it in detail as they learned and memorized it. | T: In whatever way he recites the Dhamma in detail, as he has heard it, as he has learned it, in just that way the monk, with regard to that Dhamma, is sensitive to the meaning, is sensitive to the Dhamma.
+dn34:1.6.88 | S: Feeling inspired, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, one feels bliss. And when blissful, the mind becomes immersed. | T: In him—sensitive to the meaning, sensitive to the Dhamma—joy is born. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+dn34:1.6.89 | S: This is the third opportunity for freedom. | T: This is the third opening to release.
+dn34:1.6.90 | S: Furthermore, it may be that neither the Teacher nor … the mendicant teaches Dhamma … nor does the mendicant rehearse the teaching. | T: “And further, it’s not that the Teacher or a fellow person leading the holy life teaches the Dhamma to the monk; nor does the monk teach the Dhamma to others in detail, as he has heard it, as he has learned it; nor does he recite the Dhamma in detail, as he has heard it, as he has learned it.
+dn34:1.6.91 | S: But the mendicant thinks about and considers the teaching in their heart, examining it with the mind as they learned and memorized it. | T: But in his awareness he directs his thoughts to the Dhamma in detail, as he has heard it, as he has learned it; he evaluates it, & mentally examines it.
+dn34:1.6.92 | S: That mendicant feels inspired by the meaning and the teaching in that Dhamma, no matter how they think about and consider it in their heart, examining it with the mind as they learned and memorized it. | T: In whatever way he, in his awareness, directs his thoughts to the Dhamma in detail, as he has heard it, as he has learned it, evaluates it, & mentally examines it, in just that way the monk, with regard to that Dhamma, is sensitive to the meaning, is sensitive to the Dhamma.
+dn34:1.6.93 | S: Feeling inspired, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, one feels bliss. And when blissful, the mind becomes immersed. | T: In him—sensitive to the meaning, sensitive to the Dhamma—joy is born. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+dn34:1.6.94 | S: This is the fourth opportunity for freedom. | T: This is the fourth opening to release.
+dn34:1.6.95 | S: Furthermore, it may be that neither the Teacher nor … the mendicant teaches Dhamma … nor does the mendicant rehearse the teaching … or think about it. | T: “And further, it’s not that the Teacher or a fellow person leading the holy life teaches the Dhamma to the monk; nor does the monk teach the Dhamma to others in detail, as he has heard it, as he has learned it; nor does he recite the Dhamma in detail, as he has heard it, as he has learned it; nor does he, in his awareness, direct his thoughts to the Dhamma in detail, as he has heard it, as he has learned it, evaluate it, or mentally examine it.
+dn34:1.6.96 | S: But a meditation subject as a basis of immersion is properly grasped, focused on, borne in mind, and penetrated with wisdom. | T: But he has well grasped a certain theme of concentration, has attended to it well, sustained it well, has penetrated it well with discernment.
+dn34:1.6.97 | S: That mendicant feels inspired by the meaning and the teaching in that Dhamma, no matter how a meditation subject as a basis of immersion is properly grasped, focused on, borne in mind, and penetrated with wisdom. | T: In whatever way he has well grasped a certain theme of concentration, has attended to it well, sustained it well, has penetrated it well with discernment, in just that way the monk, with regard to that Dhamma, is sensitive to the meaning, is sensitive to the Dhamma.
+dn34:1.6.98 | S: Feeling inspired, joy springs up. Being joyful, rapture springs up. When the mind is full of rapture, the body becomes tranquil. When the body is tranquil, one feels bliss. And when blissful, the mind becomes immersed. | T: In him—sensitive to the meaning, sensitive to the Dhamma—joy is born. When he is joyful, rapture is born. In one who is enraptured at heart, the body grows calm. When the body is calm, one feels pleasure. Feeling pleasure, the mind becomes concentrated.
+dn34:1.6.99 | S: This is the fifth opportunity for freedom. | T: This is the fifth opening to release.
+dn34:1.6.100 | P: Ime pañca dhammā abhiññeyyā. | T: “These five dhammas should be directly known.
+dn34:1.6.101 | S: <b>What five things should be realized?</b> | T: • “Which five dhammas should be realized?
+dn34:1.6.102 | S: Five spectrums of the teaching: | T: Five dhamma aggregates:
+dn34:1.6.103 | S: ethics, immersion, wisdom, freedom, and knowledge and vision of freedom. | T: the aggregate of virtue, the aggregate of concentration, the aggregate of discernment, the aggregate of release, the aggregate of knowledge & vision of release.
+dn34:1.6.104 | P: Ime pañca dhammā sacchikātabbā. | T: These five dhammas should be realized.
+dn34:1.6.105 | S: So these fifty things that are true, real, and accurate, not unreal, not otherwise were rightly understood by the Realized One. | T: “These fifty dhammas—true, genuine, real, not unreal, not otherwise—have been rightly awakened to by the Tathāgata.
+dn34:1.7.0 | S: 6. Groups of Six | T: Sixes
+dn34:1.7.1 | S: Six things are helpful, etc. | T: “Six dhammas, friends, are very helpful. Six dhammas should be developed. Six dhammas should be comprehended. Six dhammas should be abandoned. Six dhammas are on the side of decline. Six dhammas are on the side of distinction. Six dhammas are hard to penetrate. Six dhammas should be made to arise. Six dhammas should be directly known. Six dhammas should be realized.
+dn34:1.7.2 | S: <b>What six things are helpful?</b> | T: • “Which six dhammas are very helpful?
+dn34:1.7.3 | S: Six warm-hearted qualities. | T: Six conditions conducive to amiability:
+dn34:1.7.4 | S: Firstly, a mendicant consistently treats their spiritual companions with bodily kindness, both in public and in private. | T: There is the case, friends, where a monk is set on bodily acts of goodwill with regard to his companions in the holy life, to their faces & behind their backs.
+dn34:1.7.5 | S: This warm-hearted quality makes for fondness and respect, conducing to inclusion, harmony, and unity, without quarreling. | T: This is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.6 | S: Furthermore, a mendicant consistently treats their spiritual companions with verbal kindness. | T: “And further, the monk is set on verbal acts of goodwill with regard to his companions in the holy life, to their faces & behind their backs. This, too, is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.7 | S: Furthermore, a mendicant consistently treats their spiritual companions with mental kindness. | T: “And further, the monk is set on mental acts of goodwill with regard to his companions in the holy life, to their faces & behind their backs. This, too, is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.8 | S: Furthermore, a mendicant shares without reservation any material things they have gained by legitimate means, even the food placed in the alms-bowl, using them in common with their ethical spiritual companions. | T: “And further, whatever righteous gains the monk may obtain in a righteous way—even if only the alms in his bowl—he does not consume them alone. He consumes them after sharing them in common with his virtuous companions in the holy life. This, too, is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.9 | S: Furthermore, a mendicant lives according to the precepts shared with their spiritual companions, both in public and in private. Those precepts are intact, impeccable, spotless, and unmarred, liberating, praised by sensible people, not mistaken, and leading to immersion. | T: “And further—with reference to the virtues that are untorn, unbroken, unspotted, unsplattered, liberating, praised by the observant, ungrasped at, leading to concentration—the monk dwells with his virtue in tune with that of his companions in the holy life, to their faces & behind their backs. This, too, is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.10 | S: Furthermore, a mendicant lives according to the view shared with their spiritual companions, both in public and in private. That view is noble and emancipating, and delivers one who applies it to the complete ending of suffering. | T: “And further—with reference to the view that is noble, leading outward, that leads those who act in accordance with it to the right ending of suffering & stress—the monk dwells with his view in tune with that of his companions in the holy life, to their faces & behind their backs.
+dn34:1.7.11 | S: This warm-hearted quality makes for fondness and respect, conducing to inclusion, harmony, and unity, without quarreling. | T: This, too, is a condition that is conducive to amiability, that engenders feelings of endearment, engenders feelings of respect, leading to a sense of fellowship, a lack of disputes, harmony, & a state of unity.
+dn34:1.7.12 | P: Ime cha dhammā bahukārā. | T: “These six dhammas are very helpful.
+dn34:1.7.13 | S: <b>What six things should be developed?</b> | T: • “Which six dhammas should be developed?
+dn34:1.7.14 | S: Six topics for recollection: | T: Six objects of recollection:
+dn34:1.7.15 | S: the recollection of the Buddha, the teaching, the Saṅgha, ethics, generosity, and the deities. | T: recollection of the Buddha, recollection of the Dhamma, recollection of the Saṅgha, recollection of virtue, recollection of generosity, recollection of the devas.
+dn34:1.7.16 | P: Ime cha dhammā bhāvetabbā. | T: These six dhammas should be developed.
+dn34:1.7.17 | S: <b>What six things should be completely understood?</b> | T: • “Which six dhammas should be comprehended?
+dn34:1.7.18 | S: Six interior sense fields: | T: Six internal sense media:
+dn34:1.7.19 | S: eye, ear, nose, tongue, body, and mind. | T: the eye as a sense medium, the ear as a sense medium, the nose as a sense medium, the tongue as a sense medium, the body as a sense medium, the intellect as a sense medium.
+dn34:1.7.20 | P: Ime cha dhammā pariññeyyā. | T: These six dhammas should be comprehended.
+dn34:1.7.21 | S: <b>What six things should be given up?</b> | T: • “Which six dhammas should be abandoned?
+dn34:1.7.22 | S: Six classes of craving: | T: Six classes of craving:
+dn34:1.7.23 | S: craving for sights, sounds, smells, tastes, touches, and ideas. | T: craving for forms, craving for sounds, craving for aromas, craving for flavors, craving for tactile sensations, craving for ideas.
+dn34:1.7.24 | P: Ime cha dhammā pahātabbā. | T: These six dhammas should be abandoned.
+dn34:1.7.25 | S: <b>What six things make things worse?</b> | T: • “Which six dhammas are on the side of decline?
+dn34:1.7.26 | S: Six kinds of disrespect. | T: Six types of disrespect:
+dn34:1.7.27 | S: A mendicant lacks respect and reverence for the Teacher, the teaching, and the Saṅgha, the training, diligence, and hospitality. | T: There is the case, friends, where a monk dwells without respect or deference for the Teacher… for the Dhamma… for the Saṅgha… for the training… for heedfulness… for welcoming manners.
+dn34:1.7.28 | P: Ime cha dhammā hānabhāgiyā. | T: These six dhammas are on the side of decline.
+dn34:1.7.29 | S: <b>What six things lead to distinction?</b> | T: • “Which six dhammas are on the side of distinction?
+dn34:1.7.30 | S: Six kinds of respect. | T: Six types of respect:
+dn34:1.7.31 | S: A mendicant has respect and reverence for the Teacher, the teaching, and the Saṅgha, the training, diligence, and hospitality. | T: There is the case, friends, where a monk dwells with respect & deference for the Teacher… for the Dhamma… for the Saṅgha… for the training… for heedfulness… for welcoming manners.
+dn34:1.7.32 | P: Ime cha dhammā visesabhāgiyā. | T: These six dhammas are on the side of distinction.
+dn34:1.7.33 | S: <b>What six things are hard to comprehend?</b> | T: • “Which six dhammas are hard to penetrate?
+dn34:1.7.34 | S: Six elements of escape. | T: Six properties that are means of escape:
+dn34:1.7.35 | S: Take a mendicant who says: | T: There is the case, friends, where a monk might say,
+dn34:1.7.36 | S: ‘I’ve developed the heart’s release by love. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although goodwill has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken by me as my awareness-release,
+dn34:1.7.37 | S: Yet somehow ill will still occupies my mind.’ | T: still ill will keeps overpowering my mind.’
+dn34:1.7.38 | S: They should be told, ‘Not so, venerable! Don’t say that. Don’t misrepresent the Buddha, for misrepresentation of the Buddha is not good. And the Buddha would not say that. | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that.
+dn34:1.7.39 | S: It’s impossible, reverend, it cannot happen that the heart’s release by love has been developed and properly implemented, | T: It’s impossible, there is no way that—when goodwill has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken as an awareness-release—
+dn34:1.7.40 | S: yet somehow ill will still occupies the mind. | T: ill will would still keep overpowering the mind. That possibility doesn’t exist,
+dn34:1.7.41 | S: For it is the heart’s release by love that is the escape from ill will.’ | T: for this is the escape from ill will: goodwill as an awareness-release.’
+dn34:1.7.42 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+dn34:1.7.43 | S: ‘I’ve developed the heart’s release by compassion. I’ve cultivated it, made it my vehicle and my basis, kept it up, consolidated it, and properly implemented it. | T: ‘Although compassion has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken by me as my awareness-release,
+dn34:1.7.44 | S: Yet somehow the thought of harming still occupies my mind.’ | T: still harmfulness keeps overpowering my mind.’
+dn34:1.7.45 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that. It’s impossible, there is no way that—when compassion has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken as an awareness-release—harmfulness would still keep overpowering the mind. That possibility doesn’t exist,
+dn34:1.7.46 | S: For it is the heart’s release by compassion that is the escape from thoughts of harming.’ | T: for this is the escape from harmfulness: compassion as an awareness-release.’
+dn34:1.7.47 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+dn34:1.7.48 | S: ‘I’ve developed the heart’s release by rejoicing. … | T: ‘Although empathetic joy has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken by me as my awareness-release,
+dn34:1.7.49 | S: Yet somehow discontent still occupies my mind.’ | T: still resentment keeps overpowering my mind.’
+dn34:1.7.50 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that. It’s impossible, there is no way that—when empathetic joy has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken as an awareness-release—resentment would still keep overpowering the mind. That possibility doesn’t exist,
+dn34:1.7.51 | S: For it is the heart’s release by rejoicing that is the escape from discontent.’ | T: for this is the escape from resentment: empathetic joy as an awareness-release.’
+dn34:1.7.52 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+dn34:1.7.53 | S: ‘I’ve developed the heart’s release by equanimity. … | T: ‘Although equanimity has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken by me as my awareness-release,
+dn34:1.7.54 | S: Yet somehow desire still occupies my mind.’ | T: still passion keeps overpowering my mind.’
+dn34:1.7.55 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that. It’s impossible, there is no way that—when equanimity has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken as an awareness-release—passion would still keep overpowering the mind. That possibility doesn’t exist,
+dn34:1.7.56 | S: For it is the heart’s release by equanimity that is the escape from desire.’ | T: for this is the escape from passion: equanimity as an awareness-release.’
+dn34:1.7.57 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+dn34:1.7.58 | S: ‘I’ve developed the signless release of the heart. … | T: ‘Although the signless has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken by me as my awareness-release,
+dn34:1.7.59 | S: Yet somehow my consciousness still follows after signs.’ | T: still my consciousness follows the drift of signs.’
+dn34:1.7.60 | S: They should be told, ‘Not so, venerable! … | T: He should be told, ‘Don’t say that. You shouldn’t speak in that way. Don’t misrepresent the Blessed One, for it’s not right to misrepresent the Blessed One, and the Blessed One wouldn’t say that. It’s impossible, there is no way that—when the signless has been developed, pursued, handed the reins, taken as a basis, steadied, consolidated, & well undertaken as an awareness-release—consciousness would follow the drift of signs. That possibility doesn’t exist,
+dn34:1.7.61 | S: For it is the signless release of the heart that is the escape from all signs.’ | T: for this is the escape from all signs: the signless as an awareness-release.’
+dn34:1.7.62 | S: Take another mendicant who says: | T: “And further, there is the case where a monk might say,
+dn34:1.7.63 | S: ‘I’m rid of the conceit “I am”. And I don’t regard anything as “I am this”. | T: ‘Although “I am” is gone, and I do not assume that “I am this,”
+dn34:1.7.64 | S: Yet somehow the dart of doubt and indecision still occupies my mind.’ | T: still the arrow of uncertainty & perplexity keeps overpowering my mind.’
