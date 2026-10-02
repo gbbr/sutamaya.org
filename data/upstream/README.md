@@ -113,7 +113,7 @@ in `data/sujato/`'s layout:
 
 | Path | Holds |
 |---|---|
-| `sutta/`, `notes/` | each Pali line's English, and the translator's notes; a sutta's title line also holds his introduction and "See also", or its first line where it has no title line |
+| `sutta/`, `notes/` | each Pali line's English, and the translator's notes; the note on a sutta's title line (or its first line, where it has none) holds his introduction and "See also" |
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
@@ -121,6 +121,12 @@ in `data/sujato/`'s layout:
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
   and not written.
+- **One file per app text, every line kept**: each file has the name and the line keys of the app's
+  file for the same text, so the app matches a translation by its own sutta ID. A line the
+  translator leaves empty stays in, as `""`. So does a sutta he doesn't translate at all, where the
+  app's file covers more than his page does (`an1.142-149` in `an1.140-149`) or his text sits on the
+  first sutta of a shared page (SN 15.15–18 under 15.14). Lines Sujato leaves empty can hold the
+  translator's text.
 - **Markup**: a line's English carries a newline where a verse line of the translator's starts
   inside it, `<span class="heading">` round a heading of his that no Pali heading line holds, or
   round a sutta's title that no title line holds, at the start of its text, and `<a href>` round a
@@ -190,6 +196,29 @@ so that DN and MN are always read, every line, the left-out ones too, as `read <
 <text ID>…` writes them. `review/audit3/draw.py` is the draw to copy, with a new seed, leaving out
 the texts earlier audits drew. Each translator's audits are in `review/audit*/`, each with its draw
 and its rate.
+
+## Building them into the app
+
+Once segmenting is done, the app's build takes these translations in. What it must do:
+
+- Serve a translation only for the suttas where it has text beyond the title lines, checked sutta
+  by sutta rather than file by file (see "Segmenting").
+- Credit each text's source and keep its terms (see "Licences"): Bodhi's Wisdom texts are shown
+  unchanged, and none of these is sold. The editorial rules over Sujato's English never apply.
+- Lines pair with the Pali, not one to one with Sujato's: a sentence spanning several Pali lines
+  sits on the first and leaves the rest empty, and a line Sujato leaves empty can hold text.
+- The markup to render:
+  - **text** (`sutta/`): a newline inside a line where one of the translator's verse lines starts,
+    as throughout the Dhammapada (Sujato's lines never have one, so the Reader doesn't yet break
+    on it), `<span class="heading">` round a
+    heading or title of the translator's, and `<a href>` to suttacentral.net for a reference to
+    another sutta;
+  - **notes** (`notes/`): `<p>`, `<i>`, and `<a href='…'>` to suttacentral.net for references.
+  The links should open the sutta in the app instead.
+- The note on a sutta's title line, or on its first line where it has none, holds the translator's
+  introduction and "See also". Bodhi has notes only for DN 1.
+- Only `sutta/` and `notes/` ship. `review/`, `cuts.json`, `learned.json` and `report.json` are
+  working files.
 
 ## Where to look
 
