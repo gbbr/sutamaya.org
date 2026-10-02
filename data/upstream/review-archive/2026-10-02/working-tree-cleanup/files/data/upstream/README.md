@@ -6,12 +6,6 @@ Bhikkhu's. This folder keeps them as their sources publish them. The segmenter,
 `data/sujato/`'s layout, and writes them to `data/bodhi/` and `data/thanissaro/`, where reviews
 settle the cuts it is unsure of.
 
-## Work paused
-
-Start with [the alignment handoff](HANDOFF.md) when resuming. It records completed work,
-remaining tasks, repository archives and the planned incoming-sutta process. The first task
-on return is the usage pilot; the existing process and app notes below are unchanged.
-
 ## What's here
 
 | Path | Contents |
@@ -185,6 +179,15 @@ names them, as their files here are named.
    - **Lists**: `lists` puts up each line holding a list parted by ellipses ("the skeleton… the
      piece of meat…") followed by lines the translator leaves empty where Sujato gives the items one
      a line; Opus splits the items onto their lines where each renders one.
+   - **Verses against the Pali** (being tried on the Khuddaka Nikāya; settled, with its prompts in
+     [review-rounds.md](review-rounds.md), once that round's check is in): the rounds above read
+     each line through Sujato's English, and in verse he often orders his lines differently from
+     the Pali, so a translation's lines can follow his order onto the wrong Pali lines. `verse-stanzas.mjs <translator> put <folder> <text>…`
+     puts up every stanza of the texts in hand with its Pali, and Opus cuts each by the Pali into
+     `review/hand/<folder>-NNN.findings`, the words kept in their order: lines the translation
+     renders in an order of its own sit together on the first of them, and a stanza's text starts
+     on its first line unless the translator leaves that line out. The fixes are tried as the
+     readers' are, and judged against the Pali (`verse-stanzas.mjs <translator> check <path>`).
 
    A fix can open new suspects for `cross` and `lists`, so both run again after every round, in a
    new folder (`cross2`, `lists2`…), until they put up nothing: each leaves out the lines its
@@ -261,6 +264,7 @@ Once segmenting is done, the app's build takes these translations in. What it mu
 | Putting rounds up and keeping their answers | `scripts/segmenter/review-rounds.py` |
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
+| Putting up the verse round and its check | `scripts/segmenter/verse-stanzas.mjs` |
 | The audits | `data/<translator>/review/audit*/` |
 | The SN/AN/KN import, judgments and remaining correspondence work | [codex-sn-an-kn-review.json](codex-sn-an-kn-review.json) |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |

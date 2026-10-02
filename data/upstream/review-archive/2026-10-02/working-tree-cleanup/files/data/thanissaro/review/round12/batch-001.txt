@@ -1,0 +1,343 @@
+## mn102
+mn102:1.1 | S: So I have heard. | T: I have heard that
+mn102:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn102:1.3 | S: There the Buddha addressed the mendicants, | T: There he addressed the monks,
+mn102:1.4 | S: “Mendicants!” | T: “Monks!”
+mn102:1.5 | S: “Venerable sir,” they replied. | T: “Yes, lord,” the monks responded to him.
+mn102:1.6 | S: The Buddha said this: | T: The Blessed One said:
+mn102:2.1 | S: “Mendicants, there are some ascetics and brahmins who speculate and theorize about the final end, and propose various hypotheses concerning the final end. | T: “Monks, there are some contemplatives & brahmans who theorize about the future state, who speculate about the future state. They assert many various beliefs concerning the future state.
+mn102:2.2 | S: Some propose this: ‘The self is percipient and healthy after death.’ | T: Some assert that ‘The self is percipient & free from disease after death.’
+mn102:2.3 | P: ittheke abhivadanti; | T: (none)
+mn102:2.4 | S: Some propose this: ‘The self is non-percipient and healthy after death.’ | T: Some assert that ‘The self is non-percipient & free from disease after death.’
+mn102:2.5 | P: ittheke abhivadanti; | T: (none)
+mn102:2.6 | S: Some propose this: ‘The self is neither percipient nor non-percipient and healthy after death.’ | T: Some assert that ‘The self is neither percipient nor non-percipient & free from disease after death.’
+mn102:2.7 | P: ittheke abhivadanti; | T: (none)
+mn102:2.8 | S: But some assert the annihilation, eradication, and nonexistence of an existing being, while others propose extinguishment in this life. | T: Or they describe the destruction, annihilation, & non-becoming of the existing being after death. Or some assert unbinding in the here & now.
+mn102:2.9 | S: Thus they assert an existent self that is healthy after death; or they assert the annihilation of an existing being; while some propose extinguishment in this life. | T: (none)
+mn102:2.10 | S: In this way five become three, and three become five. | T: “Thus, being five, these become three. Being three, they become five.
+mn102:2.11 | S: This is the summary recital of the five and three. | T: This is the summary of the five-&-three.
+mn102:3.1 | S: Now, the ascetics and brahmins who propose a self that is percipient and healthy after death describe it as formed, or formless, or both formed and formless, or neither formed nor formless. Or they propose a self of unified perception, or of diverse perception, or of limited perception, or of limitless perception. Or some among those who go beyond this propose universal consciousness, limitless and imperturbable. | T: “Now, monks, as for those contemplatives & brahmans who describe the self as percipient & free from disease after death, they describe the self that is percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless… as percipient of singleness… as percipient of multiplicity… as percipient of what is limited… or as percipient of what is immeasurable. Or some, among the few who go beyond this, assert the consciousness-totality: immeasurable & imperturbable.
+mn102:4.1 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:4.2 | S: There are ascetics and brahmins who assert a self that is percipient and healthy after death, describing it as formed, or formless, or both formed and formless, or neither formed nor formless. Or they describe it as of unified perception, or of diverse perception, or of limited perception, or of limitless perception. | T: ‘Those venerable contemplative & brahmans who describe the self as percipient & free from disease after death, describe the self that is percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless… as percipient of singleness… as percipient of multiplicity… as percipient of what is limited… or as percipient of what is immeasurable.
+mn102:4.3 | P: yadi rūpasaññānaṁ yadi arūpasaññānaṁ yadi ekattasaññānaṁ yadi nānattasaññānaṁ. | T: (none)
+mn102:4.4 | S: Or some, aware that ‘there is nothing at all’, propose the dimension of nothingness, limitless and imperturbable. They declare that this is the purest, highest, best, and supreme of all those perceptions, whether of form or of formlessness or of unity or of diversity. | T: Or some assert the dimension of nothingness, “There is nothing”—which is declared the purest, foremost, highest, most unexcelled of (all) perceptions, whether perceptions of form, perceptions of formlessness, perceptions of singleness, or perceptions of multiplicity—as immeasurable & imperturbable.
+mn102:4.5 | S: ‘That much is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:4.6 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:5.1 | S: Now, the ascetics and brahmins who assert a self that is non-percipient and healthy after death describe it as formed, or formless, or both formed and formless, or neither formed nor formless. | T: “Now, as for those contemplatives & brahmans who describe the self as non-percipient & free from disease after death, they describe the self that is non-percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless.
+mn102:6.1 | S: So they reject those who assert a self that is percipient and healthy after death. | T: They criticize those contemplatives & brahmans who describe the self as percipient & free from disease after death.
+mn102:6.2 | S: Why is that? | T: For what reason?
+mn102:6.3 | S: Because they believe that perception is a disease, a boil, a dart, and that the state of non-perception is peaceful and sublime. | T: (They say,) ‘Perception is a disease, perception is a tumor, perception is an arrow. This is peaceful, this is exquisite: non-perception.’
+mn102:7.1 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:7.2 | S: There are ascetics and brahmins who assert a self that is non-percipient and healthy after death, describing it as formed, or formless, or both formed and formless, or neither formed nor formless. | T: ‘Those venerable contemplative & brahmans who describe the self as non-percipient & free from disease after death, describe the self that is non-percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless.
+mn102:7.3 | S: But if any ascetic or brahmin should say this: | T: But if any contemplative or brahman were to say,
+mn102:7.4 | S: ‘Apart from form, feeling, perception, and choices, I will describe the coming and going of consciousness, its passing away and reappearing, its growth, increase, and maturity.’ | T: “I will describe a coming, a going, a passing away, an arising, a growth, an increase, or a proliferation of consciousness apart from form, apart from feeling, apart from perception, apart from fabrications,”
+mn102:7.5 | S: That is not possible. | T: that would be impossible.
+mn102:7.6 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:7.7 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:8.1 | S: Now, the ascetics and brahmins who assert a self that is neither percipient nor non-percipient and healthy after death describe it as formed, or formless, or both formed and formless, or neither formed nor formless. | T: “Now, as for those contemplatives & brahmans who describe the self as neither percipient nor non-percipient & free from disease after death, they describe the self that is neither percipient nor non-percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless.
+mn102:9.1 | S: So they reject those who assert a self that is percipient and healthy after death, as well as those who assert a self that is non-percipient and healthy after death. | T: They criticize those contemplatives & brahmans who describe the self as percipient & free from disease after death and they criticize those contemplatives & brahmans who describe the self as non-percipient & free from disease after death.
+mn102:9.2 | S: Why is that? | T: For what reason?
+mn102:9.3 | S: Because they believe that perception is a disease, a boil, a dart; that non-perception is a stupor; and that the state of neither perception nor non-perception is peaceful and sublime. | T: (They say,) ‘Perception is a disease, perception is a tumor, perception is an arrow. Non-perception is dullness. This is peaceful, this is exquisite: neither perception nor non-perception.’
+mn102:9.4 | P: ‘nevasaññānāsaññan’ti. | T: (none)
+mn102:10.1 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:10.2 | S: There are ascetics and brahmins who assert a self that is neither percipient nor non-percipient and healthy after death, describing it as formed, or formless, or both formed and formless, or neither formed nor formless. | T: ‘Those venerable contemplative & brahmans who describe the self as neither percipient nor non-percipient & free from disease after death, describe the self that is neither percipient nor non-percipient & free from disease after death as possessed of form… as formless… as both possessed of form & formless… as neither possessed of form nor formless.
+mn102:10.3 | S: Some ascetics or brahmins assert the embracing of that dimension merely through the conditioned phenomena of what ought be seen, heard, thought, and known. But that is said to be a disastrous approach. | T: But if any contemplative or brahman were to describe the entry into that dimension as based on a modicum of fabrication with regard to what is seen, heard, sensed, or cognized, that, monks, is declared to be a disaster for the entry into that dimension.
+mn102:10.4 | S: For that dimension is said to be not attainable by means of conditioned phenomena, | T: For that dimension is said not to be attained as a fabrication-attainment.
+mn102:10.5 | S: but only with a residue of conditioned phenomena. | T: It is to be attained as a remnant-of-fabrication-attainment.
+mn102:10.6 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:10.7 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:11.1 | S: Now, the ascetics and brahmins who assert the annihilation, eradication, and nonexistence of an existing being reject those who assert a self that is healthy after death, whether percipient or non-percipient or neither percipient nor non-percipient. | T: “Now, as for those contemplatives & brahmans who describe the destruction, annihilation, & non-becoming of the existing being after death, they criticize the contemplatives & brahmans who describe the self as percipient & free from disease after death and they criticize the contemplatives & brahmans who describe the self as non-percipient & free from disease after death and they criticize the contemplatives & brahmans who describe the self as neither percipient nor non-percipient & free from disease after death.
+mn102:11.2 | S: Why is that? | T: For what reason?
+mn102:11.3 | S: Because they think: ‘All of those ascetics and brahmins only propose their attachment to heading upstream: | T: (They say,) ‘These venerable contemplatives & brahmans, rushing ahead, assert nothing but their attachment:
+mn102:11.4 | S: “After death we shall be like this! After death we shall be like that!” | T: “I will be this after death. I will be this after death.”
+mn102:12.1 | S: Suppose a trader was going to market, thinking: | T: Just as when a merchant going to market thinks,
+mn102:12.2 | S: “With this, that shall be mine! This way, I shall get that!” | T: “From this, that will be mine. By means of this I will get that”;
+mn102:12.3 | S: In the same way, those ascetics and brahmins seem to be like traders when they say: | T: in the same way, these venerable contemplatives & brahmans act like merchants, as it were:
+mn102:12.4 | S: “After death we shall be like this! After death we shall be like that!”’ | T: “I will be this after death. I will be this after death.”’
+mn102:12.5 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:12.6 | S: The ascetics and brahmins who assert the annihilation, eradication, and nonexistence of an existing being; from fear and disgust with substantial reality, they just keep running and circling around substantial reality. | T: ‘Those venerable contemplative & brahmans who describe the destruction, annihilation, & non-becoming of the existing being after death, they—through fear of self-identity, through disgust for self-identity—(nevertheless) keep running & circling around self-identity.
+mn102:12.7 | S: Suppose a mutt on a leash was tethered to a strong post or pillar. It would just keeping running and circling around that post or pillar. | T: Just as a dog, tied by a leash to a post or stake, keeps running around and circling around that very post or stake;
+mn102:12.8 | S: In the same way, those ascetics and brahmins, from fear and disgust with substantial reality, just keep running and circling around substantial reality. | T: in the same way, these venerable contemplative & brahmans—through fear of self-identity, through disgust for self-identity—(nevertheless) keep running & circling around self-identity.
+mn102:12.9 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: (none)
+mn102:12.10 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: (none)
+mn102:13.1 | S: Whatever ascetics and brahmins speculate and theorize about the final end, and propose various hypotheses concerning the final end, all of them propose one or other of these five topics. | T: (none)
+mn102:14.1 | S: There are some ascetics and brahmins who speculate and theorize about the first beginning, and propose various hypotheses concerning the first beginning. They propose the following, each insisting that theirs is the only truth and that everything else is wrong. | T: (none)
+mn102:14.2 | S: ‘The self and the cosmos are eternal.’ | T: (none)
+mn102:14.3 | S: ‘The self and the cosmos are not eternal.’ | T: (none)
+mn102:14.4 | S: ‘The self and the cosmos are both eternal and not eternal.’ | T: (none)
+mn102:14.5 | S: ‘The self and the cosmos are neither eternal nor not eternal.’ | T: (none)
+mn102:14.6 | S: ‘The self and the cosmos are finite.’ | T: (none)
+mn102:14.7 | S: ‘The self and the cosmos are infinite.’ | T: (none)
+mn102:14.8 | S: ‘The self and the cosmos are both finite and infinite.’ | T: (none)
+mn102:14.9 | S: ‘The self and the cosmos are neither finite nor infinite.’ | T: (none)
+mn102:14.10 | S: ‘The self and the cosmos are unified in perception.’ | T: (none)
+mn102:14.11 | S: ‘The self and the cosmos are diverse in perception.’ | T: (none)
+mn102:14.12 | S: ‘The self and the cosmos have limited perception.’ | T: (none)
+mn102:14.13 | S: ‘The self and the cosmos have limitless perception.’ | T: (none)
+mn102:14.14 | S: ‘The self and the cosmos experience nothing but happiness.’ | T: (none)
+mn102:14.15 | S: ‘The self and the cosmos experience absolute suffering.’ | T: (none)
+mn102:14.16 | S: ‘The self and the cosmos experience both happiness and suffering.’ | T: (none)
+mn102:14.17 | S: ‘The self and the cosmos experience neither happiness nor suffering.’ | T: (none)
+mn102:14.18 | P: ittheke abhivadanti. | T: (none)
+mn102:15.1 | S: Now, consider the ascetics and brahmins whose view is as follows. | T: (none)
+mn102:15.2 | S: ‘The self and the cosmos are eternal. This is the only truth, anything else is futile.’ It’s simply not possible for them to have personal knowledge of this that is pure and bright, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation. | T: (none)
+mn102:15.3 | S: But in the absence of personal knowledge that is pure and bright, even the portion of knowledge they illuminate is said to be grasping on their part. | T: (none)
+mn102:15.4 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:15.5 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it. …
+mn102:16.1 | S: Now, consider the ascetics and brahmins whose view is as follows. | T: (none)
+mn102:16.2 | S: The self and the cosmos are not eternal, | T: (none)
+mn102:16.3 | S: or both eternal and not eternal, | T: (none)
+mn102:16.4 | S: or neither eternal nor not-eternal, | T: (none)
+mn102:16.5 | S: or finite, | T: (none)
+mn102:16.6 | S: or infinite, | T: (none)
+mn102:16.7 | S: or both finite and infinite, | T: (none)
+mn102:16.8 | S: or neither finite nor infinite, | T: (none)
+mn102:16.9 | S: or of unified perception, | T: (none)
+mn102:16.10 | S: or of diverse perception, | T: (none)
+mn102:16.11 | S: or of limited perception, | T: (none)
+mn102:16.12 | S: or of limitless perception, | T: (none)
+mn102:16.13 | S: or experience nothing but happiness, | T: (none)
+mn102:16.14 | S: or experience absolute suffering, | T: (none)
+mn102:16.15 | S: or experience both happiness and suffering, | T: (none)
+mn102:16.16 | S: or experience neither happiness nor suffering. It’s simply not possible for them to have personal knowledge of this that is pure and bright, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation. | T: (none)
+mn102:16.17 | S: But in the absence of personal knowledge that is pure and bright, even the portion of knowledge they illuminate is said to be grasping on their part. | T: (none)
+mn102:16.18 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: (none)
+mn102:16.19 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: (none)
+mn102:17.1 | S: Now, some ascetics and brahmins, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, enter and remain in the rapture of seclusion: | T: “There is the case, monks, where a certain contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, enters & remains in the rapture of seclusion [the first jhāna].
+mn102:17.2 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in the rapture of seclusion.’ | T: (He thinks,) ‘This is peaceful, this is exquisite, that I enter & remain in the rapture of seclusion.’
+mn102:17.3 | S: But that rapture of seclusion of theirs ceases. | T: His rapture of seclusion ceases.
+mn102:17.4 | S: When the rapture of seclusion ceases, sadness arises; and when sadness ceases, the rapture of seclusion arises. | T: With the cessation of the rapture of seclusion, sadness arises; with the cessation of sadness, the rapture of seclusion arises.
+mn102:18.1 | S: It’s like how the sunlight fills the space when the shadow leaves, or the shadow fills the space when the sunshine leaves. | T: Just as what the shade leaves the sunlight pervades, and what the sunlight leaves the shade pervades;
+mn102:18.2 | S: In the same way, when the rapture of seclusion ceases, sadness arises; and when sadness ceases, the rapture of seclusion arises. | T: in the same way, with the cessation of the rapture of seclusion, sadness arises; with the cessation of sadness, the rapture of seclusion arises.
+mn102:18.3 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:18.4 | S: This good ascetic or brahmin, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, enters and remains in the rapture of seclusion: | T: ‘This venerable contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, enters & remains in the rapture of seclusion.
+mn102:18.5 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in the rapture of seclusion.’ | T: (He thinks,) “This is peaceful, this is exquisite, that I enter & remain in the rapture of seclusion.”
+mn102:18.6 | S: But that rapture of seclusion of theirs ceases. | T: His rapture of seclusion ceases.
+mn102:18.7 | S: When the rapture of seclusion ceases, sadness arises; and when sadness ceases, the rapture of seclusion arises. | T: With the cessation of the rapture of seclusion, sadness arises; with the cessation of sadness, the rapture of seclusion arises.
+mn102:18.8 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:18.9 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:19.1 | S: Now, some ascetics and brahmins, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, going beyond the rapture of seclusion, enter and remain in pleasure not of the flesh. | T: “There is the case, monks, where a certain contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, and surmounting the rapture of seclusion, enters & remains in pleasure not-of-the-flesh [the third jhāna].
+mn102:19.2 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in pleasure not of the flesh.’ | T: (He thinks,) ‘This is peaceful, this is exquisite, that I enter & remain in pleasure not-of-the-flesh.’
+mn102:19.3 | S: But that pleasure not of the flesh of theirs ceases. | T: His pleasure not-of-the-flesh ceases.
+mn102:19.4 | S: When pleasure not of the flesh ceases, the rapture of seclusion arises; and when the rapture of seclusion ceases, pleasure not of the flesh arises. | T: With the cessation of pleasure not-of-the-flesh, the rapture of seclusion arises; with the cessation of the rapture of seclusion, pleasure not-of-the-flesh arises.
+mn102:20.1 | S: It’s like how the sunlight fills the space when the shadow leaves, or the shadow fills the space when the sunshine leaves. … | T: Just as what the shade leaves the sunlight pervades, and what the sunlight leaves the shade pervades;
+mn102:20.2 | P: evameva kho, bhikkhave, nirāmisassa sukhassa nirodhā uppajjati pavivekā pīti, pavivekāya pītiyā nirodhā uppajjati nirāmisaṁ sukhaṁ. | T: in the same way, with the cessation of pleasure not-of-the-flesh, the rapture of seclusion arises; with the cessation of the rapture of seclusion, pleasure not-of-the-flesh arises.
+mn102:20.3 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:20.4 | S: This good ascetic or brahmin, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, going beyond the rapture of seclusion, enters and remains in pleasure not of the flesh. | T: ‘This venerable contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, and surmounting the rapture of seclusion, enters & remains in pleasure not-of-the-flesh.
+mn102:20.5 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in pleasure not of the flesh.’ | T: (He thinks,) “This is peaceful, this is exquisite, that I enter & remain in pleasure not-of-the-flesh.”
+mn102:20.6 | S: But that pleasure not of the flesh of theirs ceases. | T: His pleasure not-of-the-flesh ceases.
+mn102:20.7 | S: When pleasure not of the flesh ceases, the rapture of seclusion arises; and when the rapture of seclusion ceases, pleasure not of the flesh arises. | T: With the cessation of pleasure not-of-the-flesh, the rapture of seclusion arises; with the cessation of the rapture of seclusion, pleasure not-of-the-flesh arises.
+mn102:20.8 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:20.9 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:21.1 | S: Now, some ascetics and brahmins, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, going beyond the rapture of seclusion and pleasure not of the flesh, enter and remain in neutral feeling. | T: “There is the case, monks, where a certain contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, surmounting the rapture of seclusion, surmounting pleasure not-of-the flesh, enters & remains in a feeling of neither pleasure nor pain [the fourth jhāna].
+mn102:21.2 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in neutral feeling.’ | T: (He thinks,) ‘This is peaceful, this is exquisite, that I enter & remain in a feeling of neither pleasure nor pain.’
+mn102:21.3 | S: Then that neutral feeling ceases. | T: His feeling of neither pleasure nor pain ceases.
+mn102:21.4 | S: When neutral feeling ceases, pleasure not of the flesh arises; and when pleasure not of the flesh ceases, neutral feeling arises. | T: With the cessation of the feeling of neither pleasure nor pain, the pleasure not-of-the flesh arises; with the cessation of pleasure not-of-the flesh, the feeling of neither pleasure nor pain arises.
+mn102:22.1 | S: It’s like how the sunlight fills the space when the shadow leaves, or the shadow fills the space when the sunshine leaves. … | T: Just as what the shade leaves the sunlight pervades, and what the sunlight leaves the shade pervades;
+mn102:22.2 | P: evameva kho, bhikkhave, adukkhamasukhāya vedanāya nirodhā uppajjati nirāmisaṁ sukhaṁ, nirāmisassa sukhassa nirodhā uppajjati adukkhamasukhā vedanā. | T: in the same way, with the cessation of the feeling of neither pleasure nor pain, the pleasure not-of-the flesh arises; with the cessation of pleasure not-of-the flesh, the feeling of neither pleasure nor pain arises.
+mn102:22.3 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:22.4 | S: This good ascetic or brahmin, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, going beyond the rapture of seclusion and pleasure not of the flesh, enters and remains in neutral feeling. | T: ‘This venerable contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, surmounting the rapture of seclusion, surmounting pleasure not-of-the flesh, enters & remains in a feeling of neither pleasure nor pain.
+mn102:22.5 | S: ‘This is peaceful, this is sublime, that is, entering and remaining in neutral feeling.’ | T: (He thinks,) “This is peaceful, this is exquisite, that I enter & remain in a feeling of neither pleasure nor pain.”
+mn102:22.6 | S: Then that neutral feeling ceases. | T: His feeling of neither pleasure nor pain ceases.
+mn102:22.7 | S: When neutral feeling ceases, pleasure not of the flesh arises; and when pleasure not of the flesh ceases, neutral feeling arises. | T: With the cessation of the feeling of neither pleasure nor pain, the pleasure not-of-the flesh arises; with the cessation of pleasure not-of-the flesh, the feeling of neither pleasure nor pain arises.
+mn102:22.8 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:22.9 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:23.1 | S: Now, some ascetics and brahmins, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, go beyond the rapture of seclusion, pleasure not of the flesh, and neutral feeling. | T: “There is the case, monks, where a certain contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, surmounting the rapture of seclusion, surmounting pleasure not-of-the-flesh, and surmounting the feeling of neither pleasure nor pain,
+mn102:23.2 | S: They regard themselves like this: ‘I am at peace; I am quenched; I am free of grasping.’ | T: envisions that ‘I am at peace, I am unbound, I am without clinging/sustenance!’
+mn102:24.1 | S: The Realized One understands this as follows. | T: “With regard to this, the Tathāgata discerns that
+mn102:24.2 | S: This good ascetic or brahmin, letting go of theories about the first beginning and the final end, not fixating on the fetters of sensuality, goes beyond the rapture of seclusion, pleasure not of the flesh, and neutral feeling. | T: ‘This venerable contemplative or brahman, with the relinquishing of speculations about the past and the relinquishing of speculations about the future, from being totally not determined on the fetters of sensuality, surmounting the rapture of seclusion, surmounting pleasure not-of-the-flesh, and surmounting the feeling of neither pleasure nor pain,
+mn102:24.3 | S: They regard themselves like this: ‘I am at peace; I am quenched; I am free of grasping.’ | T: envisions that “I am at peace, I am unbound, I am without clinging/sustenance!”
+mn102:24.4 | S: Clearly this venerable speaks of a practice that’s conducive to extinguishment. | T: Yes, he affirms a practice conducive to unbinding.
+mn102:24.5 | S: Nevertheless, they still grasp at theories about the first beginning or the final end, or the fetters of sensuality, or the rapture of seclusion, or pleasure not of the flesh, or neutral feeling. | T: But still he clings, clinging to a speculation about the past; or he clings, clinging to a speculation about the future; or he clings, clinging to a fetter of sensuality; or he clings, clinging to the rapture of seclusion; or he clings, clinging to pleasure not-of-the-flesh; or he clings, clinging to a feeling of neither pleasure nor pain.
+mn102:24.6 | S: And when they regard themselves like this: | T: And the fact that he envisions that
+mn102:24.7 | S: ‘I am at peace; I am quenched; I am free of grasping,’ that’s also said to be grasping on their part. | T: “I am at peace, I am unbound, I am without clinging/sustenance!”—that in itself points to his clinging.
+mn102:24.8 | S: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ | T: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’
+mn102:24.9 | S: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. | T: Knowing that, seeing the escape from it, the Tathāgata has gone beyond it.
+mn102:25.1 | S: But the Realized One has awakened to the supreme state of sublime peace, that is, | T: “Thus, monks, the Tathāgata has awakened to the unexcelled state of foremost peace:
+mn102:25.2 | S: liberation by not grasping after truly understanding the six fields of contact’s origin, disappearance, gratification, drawback, and escape.” | T: liberation through lack of clinging/sustenance, having known, as they have come to be, the origination, passing away, allure, drawbacks of—and escape from—the six media of contact.”
+mn102:25.3 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn102:25.4 | S: Satisfied, the mendicants approved what the Buddha said. | T: Gratified, the monks delighted in the Blessed One’s words.
+mn102:25.5 | P: Pañcattayasuttaṁ niṭṭhitaṁ dutiyaṁ. | T: (none)
+
+## mn63
+mn63:1.1 | S: So I have heard. | T: I have heard that
+mn63:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+mn63:2.1 | S: Then as Venerable Māluṅkyaputta was in private retreat this thought came to his mind: | T: Then, as Ven. Māluṅkyaputta was alone in seclusion, this line of thinking arose in his awareness:
+mn63:2.2 | S: “There are several convictions that the Buddha has left undeclared; he has set them aside and turned them down. | T: “These positions that are undisclosed, set aside, discarded by the Blessed One—
+mn63:2.3 | S: For example: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. | T: ‘The cosmos is eternal,’ ‘The cosmos is not eternal,’ ‘The cosmos is finite,’ ‘The cosmos is infinite,’ ‘The soul & the body are the same,’ ‘The soul is one thing and the body another,’ ‘After death a Tathāgata exists,’ ‘After death a Tathāgata does not exist,’ ‘After death a Tathāgata both exists & does not exist,’ ‘After death a Tathāgata neither exists nor does not exist’—
+mn63:2.4 | S: The Buddha does not explain these points to me. | T: (none)
+mn63:2.5 | S: I don’t endorse that, and do not accept it. | T: I don’t approve, I don’t accept that the Blessed One has not disclosed them to me.
+mn63:2.6 | S: I’ll go to him and ask him about this. | T: I’ll go ask the Blessed One about this matter.
+mn63:2.7 | S: If he gives me a straight answer on any of these points, | T: If he discloses to me that
+mn63:2.8 | P: ‘sassato loko’ti vā ‘asassato loko’ti vā …pe… | T: ‘The cosmos is eternal,’ that ‘The cosmos is not eternal,’ that ‘The cosmos is finite,’ that ‘The cosmos is infinite,’ that ‘The soul & the body are the same,’ that ‘The soul is one thing and the body another,’ that ‘After death a Tathāgata exists,’ that ‘After death a Tathāgata does not exist,’ that ‘After death a Tathāgata both exists & does not exist,’
+mn63:2.9 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā— | T: or that ‘After death a Tathāgata neither exists nor does not exist,’
+mn63:2.10 | S: I will lead the spiritual life under him. | T: then I will live the holy life under him.
+mn63:2.11 | S: If he does not explain these points to me, | T: If he does not disclose to me that
+mn63:2.12 | P: ‘sassato loko’ti vā ‘asassato loko’ti vā …pe… | T: ‘The cosmos is eternal,’ …
+mn63:2.13 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā— | T: or that ‘After death a Tathāgata neither exists nor does not exist,’
+mn63:2.14 | S: I shall resign the training and return to a lesser life.” | T: then I will renounce the training and return to the lower life.”
+mn63:3.1 | S: Then in the late afternoon, Māluṅkyaputta came out of retreat and went to the Buddha. He bowed, sat down to one side, and told the Buddha of his thoughts. He then continued: | T: Then, emerging from his seclusion in the evening, Ven. Māluṅkyaputta went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to the Blessed One,
+mn63:3.2 | P: “Idha mayhaṁ, bhante, rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi— | T: “Lord, just now, as I was alone in seclusion, this line of thinking arose in my awareness:
+mn63:3.3 | P: yānimāni diṭṭhigatāni bhagavatā abyākatāni ṭhapitāni paṭikkhittāni: | T: ‘These positions that are undisclosed, set aside, discarded by the Blessed One…
+mn63:3.4 | P: ‘sassato loko’tipi, ‘asassato loko’tipi …pe… | T: (none)
+mn63:3.5 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi— | T: (none)
+mn63:3.6 | P: tāni me bhagavā na byākaroti. | T: (none)
+mn63:3.7 | P: Yāni me bhagavā na byākaroti taṁ me na ruccati, taṁ me nakkhamati. | T: I don’t approve, I don’t accept that the Blessed One has not disclosed them to me.
+mn63:3.8 | P: Sohaṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ pucchissāmi. | T: I’ll go ask the Blessed One about this matter.
+mn63:3.9 | P: Sace me bhagavā byākarissati: | T: If he discloses to me that
+mn63:3.10 | P: ‘sassato loko’ti vā, ‘asassato loko’ti vā …pe… | T: “The cosmos is eternal,” …
+mn63:3.11 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā— | T: or that “After death a Tathāgata neither exists nor does not exist,”
+mn63:3.12 | P: evāhaṁ bhagavati, brahmacariyaṁ carissāmi. | T: then I will live the holy life under him.
+mn63:3.13 | P: No ce me bhagavā byākarissati: | T: If he does not disclose to me that
+mn63:3.14 | P: ‘sassato loko’ti vā, ‘asassato loko’ti vā …pe… | T: “The cosmos is eternal,” …
+mn63:3.15 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā— | T: or that “After death a Tathāgata neither exists nor does not exist,”
+mn63:3.16 | P: evāhaṁ sikkhaṁ paccakkhāya hīnāyāvattissāmīti. | T: then I will renounce the training and return to the lower life.’
+mn63:3.17 | S: “If the Buddha knows | T: “Lord, if the Blessed One knows that
+mn63:3.18 | S: that the cosmos is eternal, please tell me. | T: ‘The cosmos is eternal,’ then may he disclose to me that ‘The cosmos is eternal.’
+mn63:3.19 | S: If you know | T: If he knows that
+mn63:3.20 | S: that the cosmos is not eternal, tell me. | T: ‘The cosmos is not eternal,’ then may he disclose to me that ‘The cosmos is not eternal.’
+mn63:3.21 | S: If you don’t know | T: But if he doesn’t know or see
+mn63:3.22 | S: whether the cosmos is eternal or not, then it is straightforward to simply say: | T: whether the cosmos is eternal or not eternal, then, in one who is unknowing & unseeing, the straightforward thing is to admit,
+mn63:3.23 | S: ‘I neither know nor see.’ | T: ‘I don’t know. I don’t see.’
+mn63:3.24 | S: If you know | T: …
+mn63:3.25 | S: that the cosmos is finite, | T: (none)
+mn63:3.26 | P: sace bhagavā jānāti: | T: (none)
+mn63:3.27 | S: or infinite; | T: (none)
+mn63:3.28 | P: No ce bhagavā jānāti: | T: (none)
+mn63:3.29 | P: ‘antavā loko’ti vā, ‘anantavā loko’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: | T: (none)
+mn63:3.30 | P: ‘na jānāmi, na passāmī’ti. | T: (none)
+mn63:3.31 | P: Sace bhagavā jānāti: | T: (none)
+mn63:3.32 | S: that the soul and the body are one and the same, | T: (none)
+mn63:3.33 | P: sace bhagavā jānāti: | T: (none)
+mn63:3.34 | S: or is the soul one thing, the body another; | T: (none)
+mn63:3.35 | P: No ce bhagavā jānāti: | T: (none)
+mn63:3.36 | P: ‘taṁ jīvaṁ taṁ sarīran’ti vā, ‘aññaṁ jīvaṁ aññaṁ sarīran’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: | T: (none)
+mn63:3.37 | P: ‘na jānāmi, na passāmī’ti. | T: (none)
+mn63:3.38 | P: Sace bhagavā jānāti: | T: (none)
+mn63:3.39 | S: that after death, a realized one still exists, | T: (none)
+mn63:3.40 | P: sace bhagavā jānāti: | T: (none)
+mn63:3.41 | S: or no longer exists, | T: (none)
+mn63:3.42 | P: No ce bhagavā jānāti: | T: (none)
+mn63:3.43 | P: ‘hoti tathāgato paraṁ maraṇā’ti vā, ‘na hoti tathāgato paraṁ maraṇā’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: | T: (none)
+mn63:3.44 | P: ‘na jānāmi na passāmī’ti. | T: (none)
+mn63:3.45 | P: Sace bhagavā jānāti: | T: (none)
+mn63:3.46 | S: or both still exists and no longer exists, or neither still exists nor no longer exists, please tell me. | T: (none)
+mn63:3.47 | P: sace bhagavā jānāti: | T: (none)
+mn63:3.48 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu. | T: (none)
+mn63:3.49 | S: If you don’t know | T: If he doesn’t know or see whether after death a Tathāgata exists… does not exist… both exists & does not exist… neither exists nor does not exist,’
+mn63:3.50 | S: any of these things, then it is straightforward to simply say: | T: then, in one who is unknowing & unseeing, the straightforward thing is to admit,
+mn63:3.51 | S: ‘I neither know nor see.’” | T: ‘I don’t know. I don’t see.’”
+mn63:4.1 | S: “What, Māluṅkyaputta, did I ever say to you: | T: “Māluṅkyaputta, did I ever say to you,
+mn63:4.2 | S: ‘Come, Māluṅkyaputta, lead the spiritual life under me, and I will declare these things to you’?” | T: ‘Come, Māluṅkyaputta, live the holy life under me, and I will disclose to you that
+mn63:4.3 | P: “sassato loko”ti vā, “asassato loko”ti vā, “antavā loko”ti vā, “anantavā loko”ti vā, “taṁ jīvaṁ taṁ sarīran”ti vā, “aññaṁ jīvaṁ aññaṁ sarīran”ti vā, “hoti tathāgato paraṁ maraṇā”ti vā, “na hoti tathāgato paraṁ maraṇā”ti vā, “hoti ca na ca hoti tathāgato paraṁ maraṇā”ti vā, “neva hoti na na hoti tathāgato paraṁ maraṇā”ti vā’”ti? | T: ‘The cosmos is eternal,’ or ‘The cosmos is not eternal,’ or ‘The cosmos is finite,’ or ‘The cosmos is infinite,’ or ‘The soul & the body are the same,’ or ‘The soul is one thing and the body another,’ or ‘After death a Tathāgata exists,’ or ‘After death a Tathāgata does not exist,’ or ‘After death a Tathāgata both exists & does not exist,’ or ‘After death a Tathāgata neither exists nor does not exist’?”
+mn63:4.4 | S: “No, sir.” | T: “No, lord.”
+mn63:4.5 | S: “Or did you ever say to me: | T: “And did you ever say to me,
+mn63:4.6 | S: ‘Sir, I will lead the spiritual life under the Buddha, and the Buddha will declare these things to me’?” | T: ‘Lord, I will live the holy life under the Blessed One and (in return) he will disclose to me that
+mn63:4.7 | P: “sassato loko”ti vā, “asassato loko”ti vā, “antavā loko”ti vā, “anantavā loko”ti vā, “taṁ jīvaṁ taṁ sarīran”ti vā, “aññaṁ jīvaṁ aññaṁ sarīran”ti vā, “hoti tathāgato paraṁ maraṇā”ti vā, “na hoti tathāgato paraṁ maraṇā”ti vā, “hoti ca na ca hoti tathāgato paraṁ maraṇā”ti vā, “neva hoti na na hoti tathāgato paraṁ maraṇā”ti vā’”ti? | T: ‘The cosmos is eternal,’ or ‘The cosmos is not eternal,’ or ‘The cosmos is finite,’ or ‘The cosmos is infinite,’ or ‘The soul & the body are the same,’ or ‘The soul is one thing and the body another,’ or ‘After death a Tathāgata exists,’ or ‘After death a Tathāgata does not exist,’ or ‘After death a Tathāgata both exists & does not exist,’ or ‘After death a Tathāgata neither exists nor does not exist’?”
+mn63:4.8 | S: “No, sir.” | T: “No, lord.”
+mn63:4.9 | S: “So it seems that I did not say to you: | T: (none)
+mn63:4.10 | S: ‘Come, Māluṅkyaputta, lead the spiritual life under me, and I will declare these things to you.’ | T: (none)
+mn63:4.11 | P: “sassato loko”ti vā, “asassato loko”ti vā …pe… | T: (none)
+mn63:4.12 | P: “neva hoti na na hoti tathāgato paraṁ maraṇāti vā”’ti; | T: (none)
+mn63:4.13 | S: And you never said to me: | T: (none)
+mn63:4.14 | S: ‘Sir, I will lead the spiritual life under the Buddha, and the Buddha will declare these things to me.’ | T: (none)
+mn63:4.15 | P: “sassato loko”ti vā “asassato loko”ti vā …pe… | T: (none)
+mn63:4.16 | P: “neva hoti na na hoti tathāgato paraṁ maraṇā”ti vā’ti. | T: (none)
+mn63:4.17 | S: In that case, you futile man, who are you and what do you disavow? | T: “Then that being the case, foolish man, who are you to be claiming grievances/making demands of anyone?
+mn63:5.1 | S: Suppose someone were to say this: | T: “Māluṅkyaputta, if anyone were to say,
+mn63:5.2 | S: ‘I will not lead the spiritual life under the Buddha until the Buddha declares to me | T: ‘I won’t live the holy life under the Blessed One as long as he does not disclose to me that
+mn63:5.3 | S: that the cosmos is eternal, or that the cosmos is not eternal … | T: “The cosmos is eternal,” …
+mn63:5.4 | S: or that after death a realized one neither still exists nor no longer exists.’ | T: or that “After death a Tathāgata neither exists nor does not exist,”’
+mn63:5.5 | S: That would still remain undeclared by the Realized One, and meanwhile that individual would die. | T: the man would die and those things would still remain undisclosed by the Tathāgata.
+mn63:5.6 | S: Suppose a man was struck by an arrow thickly smeared with poison. | T: “It’s just as if a man were wounded with an arrow thickly smeared with poison.
+mn63:5.7 | S: His friends and colleagues, relatives and kin would get a surgeon to treat him. | T: His friends & companions, kinsmen & relatives would provide him with a surgeon,
+mn63:5.8 | S: But the man would say: | T: and the man would say,
+mn63:5.9 | S: ‘I won’t extract this arrow as long as I don’t know whether the man who wounded me was an aristocrat, a brahmin, a peasant, or a menial.’ | T: ‘I won’t have this arrow removed until I know whether the man who wounded me was a noble warrior, a brahman, a merchant, or a worker.’
+mn63:5.10 | S: He’d say: | T: He would say,
+mn63:5.11 | S: ‘I won’t extract this arrow as long as I don’t know the following things about the man who wounded me: his name and clan; | T: ‘I won’t have this arrow removed until I know the given name & clan name of the man who wounded me…
+mn63:5.12 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.13 | S: whether he’s tall, short, or medium; | T: until I know whether he was tall, medium, or short…
+mn63:5.14 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.15 | S: whether his skin is black, brown, or dingy; | T: until I know whether he was dark, ruddy-brown, or golden-colored…
+mn63:5.16 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.17 | S: and whether he comes from such-and-such village, town, or city. | T: until I know his home village, town, or city…
+mn63:5.18 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.19 | S: I won’t extract this arrow as long as I don’t know whether the bow that wounded me was straight or recurved; | T: until I know whether the bow with which I was wounded was a long bow or a crossbow…
+mn63:5.20 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.21 | S: whether the bow-string is made of swallow-wort fibre, sunn hemp fibre, sinew, sanseveria fibre, or spurge fibre; | T: until I know whether the bowstring with which I was wounded was fiber, bamboo threads, sinew, hemp, or bark…
+mn63:5.22 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.23 | S: whether the shaft is made from a bush or a plantation tree; | T: until I know whether the shaft with which I was wounded was wild or cultivated…
+mn63:5.24 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.25 | S: whether the shaft was fitted with feathers from a vulture, a heron, a hawk, a peacock, or a stork; | T: until I know whether the feathers of the shaft with which I was wounded were those of a vulture, a stork, a hawk, a peacock, or another bird…
+mn63:5.26 | P: so evaṁ vadeyya: | T: (none)
+mn63:5.27 | S: whether the shaft was bound with sinews of a cow, a buffalo, a black lion, or an ape; | T: until I know whether the shaft with which I was wounded was bound with the sinew of an ox, a water buffalo, a langur, or a monkey.’
+mn63:5.28 | P: so evaṁ vadeyya: | T: He would say,
+mn63:5.29 | S: and whether the arrowhead was spiked, razor-tipped, barbed, made of iron or a calf’s tooth, or lancet-shaped.’ | T: ‘I won’t have this arrow removed until I know whether the shaft with which I was wounded was that of a common arrow, a curved arrow, a barbed, a calf-toothed, or an oleander arrow.’
+mn63:5.30 | S: That man would still not have learned these things, and meanwhile they’d die. | T: The man would die and those things would still remain unknown to him.
+mn63:5.31 | S: In the same way, suppose someone was to say: | T: “In the same way, if anyone were to say,
+mn63:5.32 | S: ‘I will not lead the spiritual life under the Buddha until the Buddha declares to me | T: ‘I won’t live the holy life under the Blessed One as long as he does not disclose to me that
+mn63:5.33 | S: that the cosmos is eternal, or that the cosmos is not eternal … | T: “The cosmos is eternal,” …
+mn63:5.34 | S: or that after death a realized one neither still exists nor no longer exists.’ | T: or that “After death a Tathāgata neither exists nor does not exist,”’
+mn63:5.35 | S: That would still remain undeclared by the Realized One, and meanwhile that individual would die. | T: the man would die and those things would still remain undisclosed by the Tathāgata.
+mn63:6.1 | S: It’s not true that if there were the view ‘the cosmos is eternal’ there would be the living of the spiritual life. | T: “Māluṅkyaputta, it’s not the case that when there is the view, ‘The cosmos is eternal,’ there is the living of the holy life.
+mn63:6.2 | S: It’s not true that if there were the view ‘the cosmos is not eternal’ there would be the living of the spiritual life. | T: And it’s not the case that when there is the view, ‘The cosmos is not eternal,’ there is the living of the holy life.
+mn63:6.3 | S: When there is the view that the cosmos is eternal or that the cosmos is not eternal, there is rebirth, there is old age, there is death, and there is sorrow, lamentation, pain, sadness, and distress. | T: When there is the view, ‘The cosmos is eternal,’ and when there is the view, ‘The cosmos is not eternal,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress
+mn63:6.4 | S: And it is the defeat of these things in this very life that I advocate. | T: whose destruction I make known right in the here & now.
+mn63:6.5 | S: It’s not true that if there were the view ‘the cosmos is finite’ … | T: “It’s not the case that when there is the view, ‘The cosmos is finite,’ there is the living of the holy life.
+mn63:6.6 | S: ‘the cosmos is infinite’ … | T: And it’s not the case that when there is the view, ‘The cosmos is infinite,’ there is the living of the holy life.
+mn63:6.7 | P: ‘Antavā loko’ti vā, mālukyaputta, diṭṭhiyā sati, ‘anantavā loko’ti vā diṭṭhiyā sati attheva jāti, atthi jarā, atthi maraṇaṁ, santi sokaparidevadukkhadomanassupāyāsā; | T: When there is the view, ‘The cosmos is finite,’ and when there is the view, ‘The cosmos is infinite,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress
+mn63:6.8 | P: yesāhaṁ diṭṭheva dhamme nighātaṁ paññapemi. | T: whose destruction I make known right in the here & now.
+mn63:6.9 | S: ‘the soul and the body are one and the same’ … | T: “It’s not the case that when there is the view, ‘The soul & the body are the same,’ there is the living of the holy life.
+mn63:6.10 | S: ‘the soul is one thing, the body another’ … | T: And it’s not the case that when there is the view, ‘The soul is one thing and the body another,’ there is the living of the holy life.
+mn63:6.11 | P: ‘Taṁ jīvaṁ taṁ sarīran’ti vā, mālukyaputta, diṭṭhiyā sati, ‘aññaṁ jīvaṁ aññaṁ sarīran’ti vā diṭṭhiyā sati attheva jāti …pe… | T: When there is the view, ‘The soul & the body are the same,’ and when there is the view, ‘The soul is one thing and the body another,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress
+mn63:6.12 | P: nighātaṁ paññapemi. | T: whose destruction I make known right in the here & now.
+mn63:6.13 | S: ‘a realized one still exists after death’ … | T: “It’s not the case that when there is the view, ‘After death a Tathāgata exists,’ there is the living of the holy life.
+mn63:6.14 | S: ‘a realized one no longer exists after death’ … | T: And it’s not the case that when there is the view, ‘After death a Tathāgata does not exist,’ there is the living of the holy life.
+mn63:6.15 | P: ‘Hoti tathāgato paraṁ maraṇā’ti vā, mālukyaputta, diṭṭhiyā sati, ‘na hoti tathāgato paraṁ maraṇā’ti vā diṭṭhiyā sati attheva jāti …pe… | T: (none)
+mn63:6.16 | P: yesāhaṁ diṭṭheva dhamme nighātaṁ paññapemi. | T: (none)
+mn63:6.17 | S: ‘a realized one both still exists and no longer exists after death’ … | T: And it’s not the case that when there is the view, ‘After death a Tathāgata both exists & does not exist,’ there is the living of the holy life.
+mn63:6.18 | S: ‘a realized one neither still exists nor no longer exists after death’ there would be the living of the spiritual life. | T: And it’s not the case that when there is the view, ‘After death a Tathāgata neither exists nor does not exist’ there is the living of the holy life.
+mn63:6.19 | S: When there are any of these views there is rebirth, there is old age, there is death, and there is sorrow, lamentation, pain, sadness, and distress. | T: When there is the view, ‘After death a Tathāgata exists’ … ‘After death a Tathāgata does not exist’ … ‘After death a Tathāgata both exists & does not exist’ … ‘After death a Tathāgata neither exists nor does not exist,’ there is still the birth, there is the aging, there is the death, there is the sorrow, lamentation, pain, despair, & distress
+mn63:6.20 | S: And it is the defeat of these things in this very life that I advocate. | T: whose destruction I make known right in the here & now.
+mn63:7.1 | S: So, Māluṅkyaputta, you should remember what I have not declared as undeclared, | T: “So, Māluṅkyaputta, remember what is undisclosed by me as undisclosed,
+mn63:7.2 | S: and what I have declared as declared. | T: and what is disclosed by me as disclosed.
+mn63:7.3 | S: And what have I not declared? | T: And what is undisclosed by me?
+mn63:7.4 | S: I have not declared the following: ‘the cosmos is eternal,’ | T: ‘The cosmos is eternal,’ is undisclosed by me.
+mn63:7.5 | S: ‘the cosmos is not eternal,’ | T: ‘The cosmos is not eternal,’
+mn63:7.6 | P: mayā abyākataṁ; | T: is undisclosed by me.
+mn63:7.7 | S: ‘the cosmos is finite,’ | T: ‘The cosmos is finite’ …
+mn63:7.8 | P: mayā abyākataṁ; | T: (none)
+mn63:7.9 | S: ‘the world is infinite,’ | T: ‘The cosmos is infinite’ …
+mn63:7.10 | P: mayā abyākataṁ; | T: (none)
+mn63:7.11 | S: ‘the soul and the body are one and the same,’ | T: ‘The soul & the body are the same’ …
+mn63:7.12 | P: mayā abyākataṁ; | T: (none)
+mn63:7.13 | S: ‘the soul is one thing, the body another,’ | T: ‘The soul is one thing and the body another’ …
+mn63:7.14 | P: mayā abyākataṁ; | T: (none)
+mn63:7.15 | S: ‘a realized one still exists after death,’ | T: ‘After death a Tathāgata exists’ …
+mn63:7.16 | P: mayā abyākataṁ; | T: (none)
+mn63:7.17 | S: ‘a realized one no longer exists after death,’ | T: ‘After death a Tathāgata does not exist’ …
+mn63:7.18 | P: mayā abyākataṁ; | T: (none)
+mn63:7.19 | S: ‘a realized one both still exists and no longer exists after death,’ | T: ‘After death a Tathāgata both exists & does not exist’ …
+mn63:7.20 | P: mayā abyākataṁ; | T: (none)
+mn63:7.21 | S: ‘a realized one neither still exists nor no longer exists after death.’ | T: ‘After death a Tathāgata neither exists nor does not exist,’
+mn63:7.22 | P: mayā abyākataṁ. | T: is undisclosed by me.
+mn63:8.1 | S: And why haven’t I declared these things? | T: “And why are they undisclosed by me?
+mn63:8.2 | S: Because they aren’t beneficial or relevant to the fundamentals of the spiritual life. They don’t lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because they are not connected with the goal, are not fundamental to the holy life. They do not lead to disenchantment, dispassion, cessation, calming, direct knowledge, self-awakening, unbinding.
+mn63:8.3 | S: That’s why I haven’t declared them. | T: That’s why they are undisclosed by me.
+mn63:9.1 | S: And what have I declared? | T: “And what is disclosed by me?
+mn63:9.2 | S: I have declared the following: ‘this is suffering,’ | T: ‘This is stress,’ is disclosed by me.
+mn63:9.3 | S: ‘this is the origin of suffering,’ | T: ‘This is the origination of stress,’
+mn63:9.4 | P: mayā byākataṁ; | T: is disclosed by me.
+mn63:9.5 | S: ‘this is the cessation of suffering,’ | T: ‘This is the cessation of stress,’
+mn63:9.6 | P: mayā byākataṁ; | T: is disclosed by me.
+mn63:9.7 | S: ‘this is the practice that leads to the cessation of suffering.’ | T: ‘This is the path of practice leading to the cessation of stress,’
+mn63:9.8 | P: mayā byākataṁ. | T: is disclosed by me.
+mn63:10.1 | S: And why have I declared these things? | T: And why are they disclosed by me?
+mn63:10.2 | S: Because they are beneficial and relevant to the fundamentals of the spiritual life. They lead to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment. | T: Because they are connected with the goal, are fundamental to the holy life. They lead to disenchantment, dispassion, cessation, calming, direct knowledge, self-awakening, unbinding.
+mn63:10.3 | S: That’s why I have declared them. | T: That’s why they are disclosed by me.
+mn63:10.4 | S: So, Māluṅkyaputta, you should remember what I have not declared as undeclared, | T: “So, Māluṅkyaputta, remember what is undisclosed by me as undisclosed,
+mn63:10.5 | S: and what I have declared as declared.” | T: and what is disclosed by me as disclosed.”
+mn63:10.6 | S: That is what the Buddha said. | T: That is what the Blessed One said.
+mn63:10.7 | S: Satisfied, Venerable Māluṅkyaputta approved what the Buddha said. | T: Gratified, Ven. Māluṅkyaputta delighted in the Blessed One’s words.
+mn63:10.8 | P: Cūḷamālukyasuttaṁ niṭṭhitaṁ tatiyaṁ. | T: (none)
+

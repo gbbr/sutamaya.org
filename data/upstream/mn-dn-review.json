@@ -31,15 +31,18 @@
     "supersededFindings": "Earlier conflicting findings remain in their files, commented with '# superseded:'."
   },
   "nextPass": {
-    "status": "not authorized to resume",
-    "preparedFolder": "data/thanissaro/review/round12/",
+    "status": "parked; zero findings; no resumed reads",
+    "preparedFolder": "data/upstream/review-archive/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/",
     "preparedBatches": 11,
     "savedFindings": 0,
-    "resumeNote": "The user is considering a Pali-based alignment and verification process before authorizing further reads."
+    "resumeNote": "The first task on return is the usage pilot in data/upstream/HANDOFF.md. Round12 has no unique findings; regenerate current Pali-inclusive inputs only if a targeted MN/DN read is justified.",
+    "originalPreparedFolder": "data/thanissaro/review/round12/"
   },
   "validation": {
     "upstreamWordDifferences": {"bodhi": 0, "thanissaro": 0},
     "integrityProblems": {"bodhi": 0, "thanissaro": 0}
   },
-  "integrationNote": "The completed MN/DN corrections are in cuts.json and the segmented texts. The separate verse review, SN/AN/KN Codex handoff, and app reveal behavior remain outside this integration."
+  "integrationNote": "The completed MN/DN corrections are in cuts.json and the segmented texts. The separate verse review, SN/AN/KN Codex handoff, and app reveal behavior remain outside this integration.",
+  "handoffPlan": "data/upstream/HANDOFF.md",
+  "completedCommit": "8ab727a26dc9e121596e09ff3f31238e266b2c2e"
 }

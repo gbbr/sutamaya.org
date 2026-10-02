@@ -2865,13 +2865,23 @@
     "proposedGroups": 74,
     "previouslySavedGroups": 11,
     "remainingAtRecovery": 63,
-    "recoveryEvidence": ".claude/recovery/2026-10-02/manifest.json"
+    "recoveryEvidence": "data/upstream/review-archive/2026-10-02/manifest.json",
+    "originalLocalRecoveryEvidence": ".claude/recovery/2026-10-02/manifest.json",
+    "pendingFindings": {
+      "bodhi": "data/upstream/review-archive/2026-10-02/source/bodhi/hand/",
+      "thanissaro": "data/upstream/review-archive/2026-10-02/source/thanissaro/hand/",
+      "bodhiNamedFindings": 2,
+      "thanissaroNamedFindings": 401,
+      "scopeValidation": "data/upstream/review-archive/2026-10-02/recovery-evaluation/scope-validation.json",
+      "note": "Recovery counts are historical. Rebase and judge against current alignment before applying; they are not a current unchecked-backlog count."
+    }
   },
   "preparedMnDnNextRound": {
-    "folder": "data/thanissaro/review/round12",
+    "folder": "data/upstream/review-archive/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12",
     "batches": 11,
     "savedFindings": 0,
-    "status": "preserved; no resumed reads"
+    "status": "archived in repository; zero findings; no resumed reads",
+    "originalFolder": "data/thanissaro/review/round12"
   },
   "finishLineProposal": [
     "Complete direct-Pali review of remaining SN/AN/KN verse and reconcile the recovered verse decisions against current cuts",
@@ -2886,21 +2896,23 @@
     "reads": "Two independent strong full-text reads of every line: initial direct-Pali alignment, then verification of the revised alignment. Opus or an equivalent strong Codex reader; model diversity where available. Sujato is secondary context.",
     "furtherReads": "Only unresolved or affected passages after those reads; retain source/Pali/input hashes and decisions to avoid rereading unchanged texts.",
     "audits": "Approximately 2500 lines per translator, stratified by collection, with line-weighted text selection and whole-text context; report inclusion rules and unsampled collections.",
-    "acceptance": "Use approximately 0.5% as a review benchmark; investigate error patterns across the corpus before a fresh audit."
+    "acceptance": "Use approximately 0.5% as a review benchmark; investigate error patterns across the corpus before a fresh audit.",
+    "writtenPlan": "data/upstream/HANDOFF.md",
+    "activeProcessChanged": false
   },
   "appNotes": "data/upstream/README.md#building-them-into-the-app",
   "appCodeChanged": false,
   "preservedUnrelatedWork": [
-    "data/thanissaro/review/round12/",
-    "scripts/segmenter/verse-stanzas.mjs",
-    "Uncommitted verse-workflow paragraphs in data/upstream/README.md"
+    "data/upstream/review-archive/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/",
+    "data/upstream/review-archive/2026-10-02/working-tree-cleanup/files/scripts/segmenter/verse-stanzas.mjs",
+    "data/upstream/review-archive/2026-10-02/working-tree-cleanup/verse-workflow.patch"
   ],
   "handoff": "Raw findings are immutable; corrected hand anchors are named codex-* and incompatible prior hand proposals are commented rather than silently removed. Existing other-account sessions are untouched.",
   "commitPreparation": {
-    "status": "User authorized one commit of the finished integration; unfinished work excluded",
-    "readmeScope": "Only app requirements and the consolidated-review pointer belong to this proposed commit. Pre-existing verse-workflow additions remain in the worktree and are excluded from the prepared README patch.",
-    "readmePatch": ".claude/recovery/2026-10-02/codex-findings/commit-readme.patch",
-    "scopeManifest": ".claude/recovery/2026-10-02/codex-findings/commit-scope.json",
+    "status": "Historical authorization fulfilled by commit 2b97d04c; no authorization for a later commit",
+    "readmeScope": "Historical integration included app requirements and the consolidated-review pointer only. Unfinished verse workflow is preserved in the repository archive.",
+    "readmePatch": "data/upstream/review-archive/2026-10-02/integration-provenance/commit-readme.patch",
+    "scopeManifest": "data/upstream/review-archive/2026-10-02/integration-provenance/commit-scope.json",
     "excluded": [
       "data/thanissaro/review/round12/",
       "scripts/segmenter/verse-stanzas.mjs",
@@ -2912,5 +2924,22 @@
     },
     "authorization": "Let’s commit everything that’s finished and wrapped up, with all findings integrated and applied and resolved into the repository.",
     "authorizationScope": "Finished Codex SN/AN/KN integration, audit5 repairs, validation, review evidence, source-range fix and app requirements notes; excludes unfinished verse work and MN/DN round12."
+  },
+  "completedCommit": "2b97d04cfb745c0a88a7ae4fd61caba5fc7b4dad",
+  "parking": {
+    "date": "2026-10-02",
+    "status": "handoff and repository archive complete; alignment work paused",
+    "plan": "data/upstream/HANDOFF.md",
+    "archive": "data/upstream/review-archive/2026-10-02/README.md",
+    "archiveManifest": "data/upstream/review-archive/2026-10-02/manifest.json",
+    "firstTaskOnReturn": "Representative direct-Pali usage pilot before scheduling larger reviews",
+    "packetTool": "scripts/segmenter/review-pali.py",
+    "appFilesChanged": false,
+    "translationDataChanged": false,
+    "activeReviewProcessChanged": false,
+    "originalLocalRecoveryUnchanged": true,
+    "commitPermissionForParkingWork": true,
+    "commitAuthorization": "commit it",
+    "commitAuthorizationScope": "One commit of the finished handoff plan, repository recovery archive, upstream README pause link, corrected status pointers and Pali review packet helper; no root documentation, app or corpus changes."
   }
 }

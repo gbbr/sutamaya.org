@@ -1,0 +1,1173 @@
+{
+  "date": "2026-10-02",
+  "baselineCommit": "2b97d04cfb745c0a88a7ae4fd61caba5fc7b4dad",
+  "status": "repository archive prepared; no pending findings applied",
+  "originalRecoveryUnchanged": true,
+  "files": [
+    {
+      "path": "source/bodhi/hand/verse-001.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/hand/verse-001.findings",
+      "bytes": 79,
+      "sha256": "0630640d8f767fb3363be319c6e9321050bb95ea9de24174b4795ac5e2400d36",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-001.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-001.txt",
+      "bytes": 4426,
+      "sha256": "cbf6a08675a32f3d91d584ac1e579694d04db81261ab184f41e70af62f5bde1a",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-201.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-201.txt",
+      "bytes": 41900,
+      "sha256": "86da5d51d6d991bc988e8fab1105d7f8099128d650054de7076a1d1385a7f922",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-202.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-202.txt",
+      "bytes": 37406,
+      "sha256": "a7ea871678736bc5d961fac57066eef9c50a691b2000c4494715c3a4e58b3365",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-203.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-203.txt",
+      "bytes": 41695,
+      "sha256": "582eb57db0d7dda0b4dfaaf99f32726cf25015635cdc660d769a3925965012d0",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-204.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-204.txt",
+      "bytes": 41890,
+      "sha256": "4d5523870ef3b54d3e89add5e0d67f1b0392179b63aa31b05787b4a553db66bb",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-205.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-205.txt",
+      "bytes": 21612,
+      "sha256": "94c8496f67ed72a9b2a95d092a03f6658d31ce56811ce1a1ae83f0db62979afe",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-301.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-301.txt",
+      "bytes": 41585,
+      "sha256": "31e42e40598aa853fbedaee29331c31c5252fb0edc0db571e6c3bf0bd40d02b3",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-302.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-302.txt",
+      "bytes": 43103,
+      "sha256": "cd2e93b6962568645a9337f4ae9b53c354997fadf15364a878af4b85f1d51ebe",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-303.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-303.txt",
+      "bytes": 37144,
+      "sha256": "20703000ff2382e302894904553510157e6c3e5025cfdf55147b17c45ccbac77",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/bodhi/verse/batch-304.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/bodhi/verse/batch-304.txt",
+      "bytes": 13969,
+      "sha256": "ac3633ba87a859ee660562c2d353a1572e4de968d5451ab4495f8ec581e33340",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-001.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-001.findings",
+      "bytes": 2437,
+      "sha256": "d6286c8054165bbfd0c1e3a1b8c76041e13f8e11d82e395067288dd5a0d4f623",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-002.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-002.findings",
+      "bytes": 1771,
+      "sha256": "d009dd39f445bdbc2087b7e5ae5798219dbfebbd0cb603575a27a7d55ef98a1f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-003.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-003.findings",
+      "bytes": 2034,
+      "sha256": "7b18d4eeed1575336b8f21c8424d05f8f9e604fbe554084731d16bc703b12c1d",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-004.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-004.findings",
+      "bytes": 2010,
+      "sha256": "07a7db1817a39d111435a222ad56e8cbef25319e455d3311298ca49fd1d65ba7",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-005.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-005.findings",
+      "bytes": 2618,
+      "sha256": "4f38b5386dfbafad5227cdd63674d61911374149721af16f378244c4211172e6",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-006.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-006.findings",
+      "bytes": 2229,
+      "sha256": "a2968e07de67d38dabd0c9cb0b69b3710d1cdbf95e7fcb00c5be47648c5648b2",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-007.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-007.findings",
+      "bytes": 2021,
+      "sha256": "ce802b6b3fbeeb1cc02e155009c078264104e5ed399311575b49981cae8812f9",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-101.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-101.findings",
+      "bytes": 373,
+      "sha256": "3acfc72bce96aa144a903b7f6e997a5426e8a12a6a7340655dbbf7d04c7a08be",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-102.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-102.findings",
+      "bytes": 175,
+      "sha256": "95853c1f9aeef16d91bef371a3a223da09067c662963db07abee9e14e78dc259",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/hand/verse-103.findings",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/hand/verse-103.findings",
+      "bytes": 286,
+      "sha256": "8cefb2a67b47c9f3a528895673b7ce831ba5115ebe4c24c4fbc8b2cbeca808fd",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-001.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-001.txt",
+      "bytes": 32260,
+      "sha256": "66b8d11fd2bad0a41e7d86d82e651b812722e038ff8270c80be32ec9631f2aed",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-002.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-002.txt",
+      "bytes": 32277,
+      "sha256": "d1089ec4f124c7afbcf8505d0781abd2c771594bf5c1814775a521d579c8e478",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-003.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-003.txt",
+      "bytes": 31244,
+      "sha256": "a0f86ca9b4d512cd0742ff0bc1def30e37fdee002b869a639be9367cc7383ecf",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-004.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-004.txt",
+      "bytes": 33611,
+      "sha256": "c52a103bd82fb0e7412c0955862474a361ab1cc7592a9e0f485f952a6fb7a6e5",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-005.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-005.txt",
+      "bytes": 37476,
+      "sha256": "4d309fad0088b4084029a6afb06abd5cf5525cb24f61601ff288df5a3134dee0",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-006.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-006.txt",
+      "bytes": 35423,
+      "sha256": "66b96a3ab75401b50c1cdd807b8c84af9c6d57f3231950c67ba46079a662ed6f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-007.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-007.txt",
+      "bytes": 32695,
+      "sha256": "01e7898c76acc3cc6d2ac94dd0aa0de1d3fafd45ba3fc00680992b62d03258aa",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-008.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-008.txt",
+      "bytes": 37310,
+      "sha256": "c32a1fdba3832ce2d48052475813ec24bb8f7c84668f8c0a937424f9082fc70c",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-009.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-009.txt",
+      "bytes": 39275,
+      "sha256": "9d619f24870059dfcc6a2c8ee9a9a4bbfae24dfcdab32e40702a041a0f707ff8",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-010.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-010.txt",
+      "bytes": 35614,
+      "sha256": "0b835805fea05e1c478172a9951fa8303d0ec64afc3af4647d3ecd3e48818628",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-011.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-011.txt",
+      "bytes": 36532,
+      "sha256": "be6d1dfcb0ea30e0901dc19705634efdbd56277f3356d2def5e7985e57c915ba",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-012.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-012.txt",
+      "bytes": 37735,
+      "sha256": "228582ef16dc2bf2d6aa5864ea4059eb350ade5ddf0edafeed7e878bbffed77f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-013.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-013.txt",
+      "bytes": 33041,
+      "sha256": "65ebb542e5c30732259adb520169f29dbef18ddc7358920607aef0f26c1771f2",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-014.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-014.txt",
+      "bytes": 37247,
+      "sha256": "e06203895c097c0856c84fcc6a50114d40fa1f6f32ea74a05b9cfc03b3bb6557",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-015.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-015.txt",
+      "bytes": 39745,
+      "sha256": "fe350bcdf2b0ea9e5edf8ec34230bcaa78decd2fa4753e829c9315b80f46d185",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-016.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-016.txt",
+      "bytes": 41059,
+      "sha256": "04193c3f50447ab571ee7a7363de27f90775c379959ebdca1e25468da90ccc48",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-017.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-017.txt",
+      "bytes": 36750,
+      "sha256": "956942d8481569e240477a14d35abbe4f35c067771438aa217b38ddd51d0f80c",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-018.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-018.txt",
+      "bytes": 33938,
+      "sha256": "8e8b15ef475c5a39d099e1e98afbe2b5db65c3ea0020efd406d0a17aa18213fe",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-019.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-019.txt",
+      "bytes": 33166,
+      "sha256": "28ded44c6ceda05cd050d0fce2482cb38c3bb5e9f4db70ed7d613fd42d21deba",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-020.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-020.txt",
+      "bytes": 32397,
+      "sha256": "7f30bbba314bd80353da8a7387841404e2e1d4478355cb88789e5e2ae817229d",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-021.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-021.txt",
+      "bytes": 34635,
+      "sha256": "c39687bddc9da1f49bdc9855a860a6582e5574c4b0da24ff6fe85542cd74f834",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-022.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-022.txt",
+      "bytes": 35160,
+      "sha256": "45ad3b73c3177015111ab6bea852a9a5db5e2eae0b49fee765c4472c6fcbb906",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-023.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-023.txt",
+      "bytes": 36790,
+      "sha256": "99e17e40c64789a08450276b2c34c5fb1b56d212cdf6837d9e72c06b02d4893f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-024.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-024.txt",
+      "bytes": 11147,
+      "sha256": "a9a27d927c2ef2811c95b1a2445b33ba5a0ce8a1880462efb53f796adbc10356",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-101.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-101.txt",
+      "bytes": 39835,
+      "sha256": "b346afbb65150df3b61135fa1e56fba721989c91b19f0b3bda3bcb024a072f45",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-102.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-102.txt",
+      "bytes": 42025,
+      "sha256": "ba6284abc2e64af3c72a225f87f2d4a2a26bd53202889fa5db85dda85c9b4bb8",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-103.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-103.txt",
+      "bytes": 40978,
+      "sha256": "be0f2de56ca54e6f93a461ce7d5dd8b8bd93acd8f49c733e86dd8ffbed45c1a4",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-201.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-201.txt",
+      "bytes": 40141,
+      "sha256": "4d51f5c9a27cc49913e90d5d03158be1c87a22a1873c789ce3b8d4e86bc7a279",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-202.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-202.txt",
+      "bytes": 36335,
+      "sha256": "a8274d13cb40729fc339b3fb928df153a1e8949a87153509bc33b232d3a3ab65",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-203.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-203.txt",
+      "bytes": 41813,
+      "sha256": "3de887f5cbfda5e766cf45dca3746ab44259aaf71c82c6b945fb8e763d50dd75",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-204.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-204.txt",
+      "bytes": 41405,
+      "sha256": "853d7e483de29267362759571580071a8c6fd846693b4379733bea2db667f2d0",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-301.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-301.txt",
+      "bytes": 37709,
+      "sha256": "91d73c4c0b0c8507b8d947806d050b4682366da2cc7bd9ee2eb42ab9795fdd4f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-302.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-302.txt",
+      "bytes": 33222,
+      "sha256": "0faebd87daf3b4af6cbcadb794a5c460736ebe497b5576302f7e88145ea5c1d9",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-303.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-303.txt",
+      "bytes": 20135,
+      "sha256": "bd85d84f80b4c1e54faea13c4d1144d829a5349609f0c150cc9bd84c3d15ff1b",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-501.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-501.txt",
+      "bytes": 32561,
+      "sha256": "fb3f356774b0f2ba0defdb3703ba777a58263ed29bd53d97bcd9d76893ee9d9d",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-502.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-502.txt",
+      "bytes": 31927,
+      "sha256": "39437f472055ea92e57d79aea33305739edc66a2d0d1be91c95c768e506e9343",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-503.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-503.txt",
+      "bytes": 33392,
+      "sha256": "da2d76de9f55cf4c9046d33d988af5ec4db3aeb9e32a1156a9a07d089339a27f",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-504.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-504.txt",
+      "bytes": 31615,
+      "sha256": "92ae3c7a1201c7ff7b112288d22b85c66b61483a82ec6bcecc96a27a4c7fb0ee",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-505.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-505.txt",
+      "bytes": 35982,
+      "sha256": "ba138812657040ef3094c53287e2beb2fa67aeb21e6e968d86a1929d24ab5ec3",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-506.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-506.txt",
+      "bytes": 38012,
+      "sha256": "20cbe8a8e4f1f2e95648b83e6e28910e8b456df69ee59b46147396ced05a45a6",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-507.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-507.txt",
+      "bytes": 33031,
+      "sha256": "cd27222acd4ef18ed0da84f8a20048214b41160a4ae62f1947d7bde2d9e2aec9",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-508.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-508.txt",
+      "bytes": 34055,
+      "sha256": "b1455291f1370e3eb3df5182af9180bbfbcd4f1193976962f5a5cbbf1c436e6a",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-509.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-509.txt",
+      "bytes": 33772,
+      "sha256": "3afc640ae0f277b345e6e5af7cdc4e2ada94686236685dc5670b00fe451129f5",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-510.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-510.txt",
+      "bytes": 39163,
+      "sha256": "ea8b7a5cb77a91e000ea53a9f8b9aa02377021279673c261c5a13e0760c30ea1",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-511.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-511.txt",
+      "bytes": 32329,
+      "sha256": "a8703f335bd3245ca11d16c8eacd75bb381b7c531bcfb7d62064e79133ddef83",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-512.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-512.txt",
+      "bytes": 38042,
+      "sha256": "7701635ffb967e1c7fbf3246da8b7099bfee023f78bab381162143f9ab5863ee",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-513.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-513.txt",
+      "bytes": 36852,
+      "sha256": "4d46cd03e10e54a3221f2cf9263d9dedb7e976fee5688a68fffefa85ad0589ec",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-514.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-514.txt",
+      "bytes": 35013,
+      "sha256": "d04b5f7a0285c8444052611f2259257d213db506cd4e5c0e0aafa9db0b1af7ee",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-515.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-515.txt",
+      "bytes": 36163,
+      "sha256": "30021e1bbd0cd9fc872a03c01cf8794157108152d3aa30fe5a3011e00261dbdd",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-516.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-516.txt",
+      "bytes": 37174,
+      "sha256": "341ac31004bdba2cf37b51a7c8e0e4709c19cea26206283555c3933bdf393f9b",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-517.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-517.txt",
+      "bytes": 37900,
+      "sha256": "38d42bc118222752a6f8b260232a0fbf4537f557f7ff318d578713540fe0b624",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-518.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-518.txt",
+      "bytes": 34691,
+      "sha256": "3b79b7e0ca11f745127bb3a0180b8663872446b5f2b1ffa803dd0cef5f1df480",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-519.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-519.txt",
+      "bytes": 36691,
+      "sha256": "4d4cf2ae15093f8f6baeed84b66300218e0b04322bc8fa726a6e697305e0e971",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-520.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-520.txt",
+      "bytes": 31113,
+      "sha256": "b5eb127bc58ed52724d6c45ab8b0d178cdf31ecb985c226429372afb0fdfd3da",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-521.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-521.txt",
+      "bytes": 30145,
+      "sha256": "84e6c1f3b3c7693e6cba20da80937b88a45d5c2c25d017c0aaf07ef595c876a0",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-522.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-522.txt",
+      "bytes": 32045,
+      "sha256": "9a10e13a2df328761228532812828459471ee4f0156da029183725cdf28b4afa",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-523.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-523.txt",
+      "bytes": 30633,
+      "sha256": "0beee82595ee055f52529d5f5f8352a685f370f6cb00393a56ceffcc3c2157e6",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-524.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-524.txt",
+      "bytes": 35035,
+      "sha256": "76967a36497f7d0f55302e9717edd09a49ae8b77eee53a1512f64bc965464351",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-525.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-525.txt",
+      "bytes": 31913,
+      "sha256": "8396dead365fba92c2db69134b68445296aa936e7f1088d484a4dbb331895ac9",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-526.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-526.txt",
+      "bytes": 29903,
+      "sha256": "2ae2828515bcc0f697ba25eee1bd466dbfefda735dbf1e955f4a487f87679ae7",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-527.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-527.txt",
+      "bytes": 42704,
+      "sha256": "1b75aa6951ba1c6428c4a051fbb5c9d6a06cfe86cdd50fd39f66af6ce26c9222",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/thanissaro/verse/batch-528.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/thanissaro/verse/batch-528.txt",
+      "bytes": 14260,
+      "sha256": "ecbe3ce0ad68722bc91d3dd2a558f82f9e2d51a8698822341e0c996f843b4a41",
+      "status": "pending verse evidence; rebase and judge before use"
+    },
+    {
+      "path": "source/mn-dn/baseline-bodhi.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/mn-dn/baseline-bodhi.json",
+      "bytes": 415581,
+      "sha256": "a51f255449c3e9a48e2a05189d3cdf7a8ee2135d626c527d9b8faf0f834f6e0c",
+      "status": "historical MN/DN recovery evidence; completed integration is already committed"
+    },
+    {
+      "path": "source/mn-dn/baseline-thanissaro.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/mn-dn/baseline-thanissaro.json",
+      "bytes": 1008459,
+      "sha256": "5532b69d88346438f139613895848c06ea387dd364662b8f946a7925e5d986da",
+      "status": "historical MN/DN recovery evidence; completed integration is already committed"
+    },
+    {
+      "path": "source/mn-dn/counts.py",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/mn-dn/counts.py",
+      "bytes": 1616,
+      "sha256": "950fd8ccae0c70de9c56a100f371af607298ea2c19cd1cb0c35e28c40a40f8d4",
+      "status": "historical MN/DN recovery evidence; completed integration is already committed"
+    },
+    {
+      "path": "source/mn-dn/log.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/mn-dn/log.txt",
+      "bytes": 1600,
+      "sha256": "1ac9f31678111dd1513b75fe0dad2cf6166c1510e75b3b6d8c69f580bb8b6b0c",
+      "status": "historical MN/DN recovery evidence; completed integration is already committed"
+    },
+    {
+      "path": "scratch.zip",
+      "originalLocalPath": ".claude/recovery/2026-10-02/source/scratch/",
+      "bytes": 6876921,
+      "sha256": "5a72f4961f602cbd43f6e74aa48f300773c3ad3a357be4848e3a2c60b5ae5272",
+      "status": "compressed historical snapshots, prompts and exploratory helpers; no accepted alignment decisions",
+      "members": [
+        {
+          "path": "source/scratch/blank-examples.json",
+          "bytes": 494248,
+          "sha256": "f781734968e154d46693a751a646b3c47307ac914b07474f7b3b6b08fcda0de2",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/blank-examples.json"
+        },
+        {
+          "path": "source/scratch/blank-lines.mjs",
+          "bytes": 6211,
+          "sha256": "cf47adc6f8b5877f145a655e83814813ca375dae32fe31c345a83daf1bc83dd4",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/blank-lines.mjs"
+        },
+        {
+          "path": "source/scratch/check-bodhi.txt",
+          "bytes": 1174,
+          "sha256": "21ee498e718389113a4f2e70d1e027eb0f4fe1d5091f77b0f6aa73865fcf08d1",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/check-bodhi.txt"
+        },
+        {
+          "path": "source/scratch/check-bodhi.txt.groups.json",
+          "bytes": 33,
+          "sha256": "aa72b7b71f73b3196cda109b08aafacb99715d28750da964617e3c44c89784dc",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/check-bodhi.txt.groups.json"
+        },
+        {
+          "path": "source/scratch/check-test.txt",
+          "bytes": 39328,
+          "sha256": "0321832fdbb02e7e7733f977d32535bb4be35a9cfbaff937071d610b4bde5ca1",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/check-test.txt"
+        },
+        {
+          "path": "source/scratch/check-thanissaro-12.txt",
+          "bytes": 39328,
+          "sha256": "8eb46e07d4b1b58c1836c2f423fbd083dd661ccccc1623120b185cf09a654edf",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/check-thanissaro-12.txt"
+        },
+        {
+          "path": "source/scratch/check-thanissaro-12.txt.groups.json",
+          "bytes": 1284,
+          "sha256": "fbde79bce4e5a03cb9b64b15a4dd0d47fa70db0a851b61cbd0188fe24e44c1eb",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/check-thanissaro-12.txt.groups.json"
+        },
+        {
+          "path": "source/scratch/findings-base-thanissaro.json",
+          "bytes": 1008459,
+          "sha256": "5532b69d88346438f139613895848c06ea387dd364662b8f946a7925e5d986da",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/findings-base-thanissaro.json"
+        },
+        {
+          "path": "source/scratch/followups.txt",
+          "bytes": 89,
+          "sha256": "7a928daa38760836263acc012f1de2604283e0d43f394f0bc5c1cbf2db72a7ea",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/followups.txt"
+        },
+        {
+          "path": "source/scratch/gaps-bodhi.json",
+          "bytes": 568490,
+          "sha256": "31f043712f7d29b02200025070c7e0c526b096875b5a3fbf18c9c9bef17db7ab",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/gaps-bodhi.json"
+        },
+        {
+          "path": "source/scratch/gaps-thanissaro.json",
+          "bytes": 886489,
+          "sha256": "a31337e77a6221fe2d62cb215a66f7cfc40434a7c336137fb090f33427065e33",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/gaps-thanissaro.json"
+        },
+        {
+          "path": "source/scratch/judge-thanissaro-1.txt",
+          "bytes": 40353,
+          "sha256": "3771d5c9f98bbafc7d21638bb21bcedf0174e462a2359d6caf247e6fe3da964f",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/judge-thanissaro-1.txt"
+        },
+        {
+          "path": "source/scratch/measure-body.mjs",
+          "bytes": 4101,
+          "sha256": "7a6449cff6732145c3e00985d075b395c59741b7b0cf107785cb5ea9e508aab5",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/measure-body.mjs"
+        },
+        {
+          "path": "source/scratch/measure-verse.mjs",
+          "bytes": 7801,
+          "sha256": "109bee5a0db9d8a7664a74a3fcebd8b7d93942e2c22dc0a50f17e63104b5ee4e",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/measure-verse.mjs"
+        },
+        {
+          "path": "source/scratch/measure-worse-thanissaro.json",
+          "bytes": 1534,
+          "sha256": "35c0fbb7e1a059d70eff6f7381cea48b72f8f787f1d514810ccf3075a91fe0a3",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/measure-worse-thanissaro.json"
+        },
+        {
+          "path": "source/scratch/norm-block.mjs",
+          "bytes": 3657,
+          "sha256": "b55b59d55020833efe9a8656d81e796eb04039d085fe75b44689eacb5bd77e73",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/norm-block.mjs"
+        },
+        {
+          "path": "source/scratch/pali-gaps.mjs",
+          "bytes": 6471,
+          "sha256": "22f8936387364e00198fe344455159f559b971f82d9d3b074e7ac22a7c108bd9",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/pali-gaps.mjs"
+        },
+        {
+          "path": "source/scratch/prose-bodhi-an.json",
+          "bytes": 3630417,
+          "sha256": "7826b5778fd716fea3a07ac3255e3f882be4988e9b123fc7647cfabd63a787f5",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-bodhi-an.json"
+        },
+        {
+          "path": "source/scratch/prose-bodhi-mn.json",
+          "bytes": 4081396,
+          "sha256": "1c627558da6ea45961f5cdffc42960b1f88b80a0114aa8477f54e389fb070806",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-bodhi-mn.json"
+        },
+        {
+          "path": "source/scratch/prose-bodhi-sn.json",
+          "bytes": 6349566,
+          "sha256": "7746d794d546660fa526191b422161a171e8ca7d710187af57bfdb4648bc93d3",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-bodhi-sn.json"
+        },
+        {
+          "path": "source/scratch/prose-flag.mjs",
+          "bytes": 9903,
+          "sha256": "beb1cc8ab0f9a30224053b2ae57a7712bb4d4f7f267074e3d6bb4bad7ab468d5",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-flag.mjs"
+        },
+        {
+          "path": "source/scratch/prose-prompt.txt",
+          "bytes": 3073,
+          "sha256": "827245a2a5f02e0b8b5ce32aff5295867287064c08339e4dd815debbee4e766f",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-prompt.txt"
+        },
+        {
+          "path": "source/scratch/prose-sample-bodhi.json",
+          "bytes": 44140,
+          "sha256": "c31738266ae057a6b17e9324501ceb4c08584564857924ca78e4e8310d710a4d",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-sample-bodhi.json"
+        },
+        {
+          "path": "source/scratch/prose-sample-thanissaro.json",
+          "bytes": 50949,
+          "sha256": "b43ffc26b5e741c109a8e31263ffd9bd23970862f7cf6405949723795d116ad5",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-sample-thanissaro.json"
+        },
+        {
+          "path": "source/scratch/prose-thanissaro-an.json",
+          "bytes": 6473514,
+          "sha256": "159cde5506c6a6d80eb2f4ea5e298c453317823eadd1225994b6469de7369eff",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-thanissaro-an.json"
+        },
+        {
+          "path": "source/scratch/prose-thanissaro-mn.json",
+          "bytes": 8517966,
+          "sha256": "0b25256c79012485b65afdab5e4ef23401e7788aa7936411a329350940d06267",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-thanissaro-mn.json"
+        },
+        {
+          "path": "source/scratch/prose-thanissaro-sn.json",
+          "bytes": 5521863,
+          "sha256": "f2ba8c3c2f9b2f666bcc093f0b03de411e2ad84fb1ac084a80cd47496464931b",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/prose-thanissaro-sn.json"
+        },
+        {
+          "path": "source/scratch/recovered.json",
+          "bytes": 2034547,
+          "sha256": "fd056c046f775b9dd53bf679edfefcca1ba16e7ca3ac52f4cf77618896456a78",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/recovered.json"
+        },
+        {
+          "path": "source/scratch/recovered.mjs",
+          "bytes": 3547,
+          "sha256": "9f97536e52b990af916254848c8f0864f7c610c048d1c8c5112e1bc918a8718e",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/recovered.mjs"
+        },
+        {
+          "path": "source/scratch/seg-baseline-thanissaro.log",
+          "bytes": 184,
+          "sha256": "940817007f6776fb44bd792d6c0c48c5bdbc304cbfb6921c325c63fb94ddc6a7",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/seg-baseline-thanissaro.log"
+        },
+        {
+          "path": "source/scratch/seg-findings-base.log",
+          "bytes": 236,
+          "sha256": "3e49dcaf2b85d3080e4863657aa3642b5c34ac1b384a29d0d2b2bfdf3574420c",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/seg-findings-base.log"
+        },
+        {
+          "path": "source/scratch/seg-findings-bodhi.log",
+          "bytes": 221,
+          "sha256": "ad1c5d9010a51d92f0c030be942abc9e6accd86383a07a0118b575cf34301d0f",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/seg-findings-bodhi.log"
+        },
+        {
+          "path": "source/scratch/seg-findings-t12.log",
+          "bytes": 262,
+          "sha256": "02a121b62674c74460fd4fe3154910b2b67f1fe2364aa432f581295163aa6d8e",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/seg-findings-t12.log"
+        },
+        {
+          "path": "source/scratch/seg-findings-view.log",
+          "bytes": 263,
+          "sha256": "4051f731fc6694ae475588ae4b688e75baf1d281bb5df7c05760304b3cb21b30",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/seg-findings-view.log"
+        },
+        {
+          "path": "source/scratch/try-verse.mjs",
+          "bytes": 2969,
+          "sha256": "3396fe60d50c7d228682c3c6f11fa4be31c6e2ca2f44a109dd63b4b1012b5f73",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/try-verse.mjs"
+        },
+        {
+          "path": "source/scratch/verse-batches.mjs",
+          "bytes": 2189,
+          "sha256": "8e20fc9d7bc7fc33e06f2fe02c6f7558966d66207c693cea4a28152bc34f8255",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-batches.mjs"
+        },
+        {
+          "path": "source/scratch/verse-bodhi-an.json",
+          "bytes": 339879,
+          "sha256": "05424975302e1438f64d2be6145e4cbb693ba4a40f8dc35b6b9bde89f702129d",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-bodhi-an.json"
+        },
+        {
+          "path": "source/scratch/verse-bodhi-kn-blank.json",
+          "bytes": 2,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-bodhi-kn-blank.json"
+        },
+        {
+          "path": "source/scratch/verse-bodhi-kn.json",
+          "bytes": 8981,
+          "sha256": "b23fb134c396c145bf03ed87d2db0c684d3aef533d6332cd9547a2c1bcc43fd8",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-bodhi-kn.json"
+        },
+        {
+          "path": "source/scratch/verse-bodhi-sn.json",
+          "bytes": 566920,
+          "sha256": "cc9d507d7a561acbf5e505390f566dd5317b8cdb194a9a0838e9153349671f03",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-bodhi-sn.json"
+        },
+        {
+          "path": "source/scratch/verse-bodhi.json",
+          "bytes": 519,
+          "sha256": "65a3fdc9d959879cf7e4555e11c2e0fca75ac67bcddc678252da268daea8a59e",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-bodhi.json"
+        },
+        {
+          "path": "source/scratch/verse-changes-bodhi.txt",
+          "bytes": 1174,
+          "sha256": "21ee498e718389113a4f2e70d1e027eb0f4fe1d5091f77b0f6aa73865fcf08d1",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-changes-bodhi.txt"
+        },
+        {
+          "path": "source/scratch/verse-changes-thanissaro.txt",
+          "bytes": 114420,
+          "sha256": "d51aaa08739bf61d64d67e1465eabaf0b0167790d3cbfe077c83c11e34ea376b",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-changes-thanissaro.txt"
+        },
+        {
+          "path": "source/scratch/verse-changes-thanissaro.txt.groups.json",
+          "bytes": 3527,
+          "sha256": "ab5c51ef54847f3ff662fa8773db3560221facb5b0b9141fff84db6cecc6dceb",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-changes-thanissaro.txt.groups.json"
+        },
+        {
+          "path": "source/scratch/verse-check-prompt.txt",
+          "bytes": 1825,
+          "sha256": "446e8dcb0c55aea3600d8eccada9355cdabd721c6646d3bb4c443c2162a64b82",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-check-prompt.txt"
+        },
+        {
+          "path": "source/scratch/verse-flag-body.mjs",
+          "bytes": 6221,
+          "sha256": "a8bc29d1269140238b2ec3760eeef63dbae63ea4355b867ed867c7c0a030bf97",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-flag-body.mjs"
+        },
+        {
+          "path": "source/scratch/verse-flag.mjs",
+          "bytes": 9895,
+          "sha256": "cc8d5c843e256d65416b04e28f623cfa103c5f872d1c4516a8e3b2f86383deb8",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-flag.mjs"
+        },
+        {
+          "path": "source/scratch/verse-prompt.txt",
+          "bytes": 3558,
+          "sha256": "29e79a83ad5ad90cfcfdd384ba888c0da942b41852d792ab362814d3533f6a66",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-prompt.txt"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro-an.json",
+          "bytes": 258785,
+          "sha256": "fffd6a86403195080be506fab6c0d732df1408d2ab7dd0bcdb32dcc0cf4cd1b3",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro-an.json"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro-kn-blank.json",
+          "bytes": 12494,
+          "sha256": "1ac1b501cf55cd2d7c206e5a144778d72a91620b59535fbb883a95348092e3ed",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro-kn-blank.json"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro-kn-rest.json",
+          "bytes": 1244237,
+          "sha256": "12ab158bd5361de66d8383bd00d35b396d700536e6d315569b4776bacadac145",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro-kn-rest.json"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro-kn.json",
+          "bytes": 3016432,
+          "sha256": "4b17d5e7bfdffed64f44e708d4b0f3d6c41417bb31e97b46fab7951d797b1a9d",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro-kn.json"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro-sn.json",
+          "bytes": 452254,
+          "sha256": "6eacd97914e2895fd10ca215ee9f7a36b232d79816f02b28f5a2fa161861d73a",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro-sn.json"
+        },
+        {
+          "path": "source/scratch/verse-thanissaro.json",
+          "bytes": 1077,
+          "sha256": "f325c8c69d4b04c12d4ab5c9248e1411a6c9c711c98b9be0b0b39ba0a091001c",
+          "originalSource": "/private/tmp/claude-501/-Users-azzalos-g-code-gbbr-sutamaya-org/fd18b2d7-9add-417a-9b2f-8c399c6bcac8/scratchpad/verse-thanissaro.json"
+        }
+      ]
+    },
+    {
+      "path": "original-recovery-manifest.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/manifest.json",
+      "bytes": 961985,
+      "sha256": "0656c009b9d2cd95c514c3155b409fbd76e307f219f9873b59ac91d8826a6235",
+      "status": "original provenance, including historical absolute paths and baseline hashes"
+    },
+    {
+      "path": "recovery-evaluation/scope-validation.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/scope-validation.json",
+      "bytes": 3919,
+      "sha256": "c727bac9569668c546c695c28f53f550ebade0122082b75286f5a994e74b16a4",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/bodhi-groups.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/bodhi-groups.json",
+      "bytes": 1649,
+      "sha256": "7324a2c8c2c0d3b2dd345a65b438452a438e649eea0ec42b2406dac9c5d8cbdc",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/thanissaro-groups.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/thanissaro-groups.json",
+      "bytes": 252722,
+      "sha256": "390d5941723dec95f2b2640c49cc3bf398a09323486f3ec29a6acab10ba17974",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/dictionary-worse-bodhi.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/dictionary-worse-bodhi.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/dictionary-worse-thanissaro.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/dictionary-worse-thanissaro.json",
+      "bytes": 2057,
+      "sha256": "17f41e94c2e9c74c59f6210ec77c9862e5efdeab5877ec57aa4c2e9a043b4ad2",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/measure-verse.mjs",
+      "originalLocalPath": ".claude/recovery/2026-10-02/measure-verse.mjs",
+      "bytes": 7831,
+      "sha256": "9f74298635834fbd00f397db14355b0b2dc853ce02051ffb19c06e36bf4926bd",
+      "status": "historical recovery evaluation; mechanical applicability is not semantic approval"
+    },
+    {
+      "path": "recovery-evaluation/logs/dictionary-bodhi.log",
+      "originalLocalPath": ".claude/recovery/2026-10-02/logs/dictionary-bodhi.log",
+      "bytes": 156,
+      "sha256": "27c7fc0430f4eb02dfccf45ff8135e78efee75bbdc32e9ad2b21f1c2f5ace470",
+      "status": "historical recovery trial log"
+    },
+    {
+      "path": "recovery-evaluation/logs/dictionary-thanissaro.log",
+      "originalLocalPath": ".claude/recovery/2026-10-02/logs/dictionary-thanissaro.log",
+      "bytes": 173,
+      "sha256": "7fce1e6be971dba288d02b4901fb9cbc8f22eb9610d28838f7e3aef2996782a6",
+      "status": "historical recovery trial log"
+    },
+    {
+      "path": "recovery-evaluation/logs/trial-bodhi.log",
+      "originalLocalPath": ".claude/recovery/2026-10-02/logs/trial-bodhi.log",
+      "bytes": 207,
+      "sha256": "810e2390e97c7bd0084d08c42408577eaf648810b3854e914db7ed6fd37cb322",
+      "status": "historical recovery trial log"
+    },
+    {
+      "path": "recovery-evaluation/logs/trial-thanissaro.log",
+      "originalLocalPath": ".claude/recovery/2026-10-02/logs/trial-thanissaro.log",
+      "bytes": 274,
+      "sha256": "2e720d354020cbe7902965c126a567db0906f5b372449c32f7e8162e091d309f",
+      "status": "historical recovery trial log"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-001.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-001.txt",
+      "bytes": 61342,
+      "sha256": "285ab177e5242195331a022d75052323d137b4b7e427d55576edb6c32bbc7c7d",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-002.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-002.txt",
+      "bytes": 62108,
+      "sha256": "5b5adae8a815ec7cc10fc6587fb4630380e97567a3311c7e4f10865d7413966d",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-003.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-003.txt",
+      "bytes": 62778,
+      "sha256": "a04696efa8b4c18621098d0eb7a7c909ec92310055c624d1d96857709775efcf",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-004.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-004.txt",
+      "bytes": 62674,
+      "sha256": "dd07724baa309ba0e80bb76bb980fff73f4155da484c556843f90fd346d4b1ec",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-005.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-005.txt",
+      "bytes": 55402,
+      "sha256": "69218654e85419c48e785a827abb2e656e374f582a0bb5a666e55ebe5b3cf05e",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-006.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-006.txt",
+      "bytes": 63179,
+      "sha256": "9696986c1bcac5686cf3fecf090dea1cf06ac08c9630ba21af00aaae9acdaaa8",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-007.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-007.txt",
+      "bytes": 62013,
+      "sha256": "7a547f205ee57ce2cdd52cb32535a12944f2bbe2b3b19b920875fcb7c917d5d9",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-008.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-008.txt",
+      "bytes": 58772,
+      "sha256": "aee6fb17d0355b448eab3c8a46c1e127245a1819e56cfe1911c74551df97be01",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-009.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-009.txt",
+      "bytes": 63294,
+      "sha256": "d88a639cb2eb23f56871812930df37eb35b246afb1ea021c66f6f28eb9f31cba",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-010.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-010.txt",
+      "bytes": 63087,
+      "sha256": "c4bd4a117c4b592487d55ce7147280e86b680071d4b2aec939988c1735c35cc0",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/thanissaro/review/round12/batch-011.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/thanissaro/review/round12/batch-011.txt",
+      "bytes": 347,
+      "sha256": "2da03c055a4dc159b31b29b90fe9498cfd645c61121ffdc864634b88c5bcf17b",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/data/upstream/README.md",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/data/upstream/README.md",
+      "bytes": 18685,
+      "sha256": "7bd451923683eb2e58e203fe62fba217aa1d9762fd6a88b684327a662629cf85",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/files/scripts/segmenter/verse-stanzas.mjs",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/files/scripts/segmenter/verse-stanzas.mjs",
+      "bytes": 6797,
+      "sha256": "7c41164105aa8bba5c71c2d3425f2ba7aeb32d40b3baa253de9a61a70fdd7fc7",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/manifest.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/manifest.json",
+      "bytes": 4439,
+      "sha256": "70b71d7c2fd713b7267a5040cc2c51aea77bea9d210692d31e84c159dbd86d80",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "working-tree-cleanup/verse-workflow.patch",
+      "originalLocalPath": ".claude/recovery/2026-10-02/working-tree-cleanup/verse-workflow.patch",
+      "bytes": 2368,
+      "sha256": "3ae30ac02a30a4d5669bc56855429aaad0709692cbcf7573167a214ef9a793ca",
+      "status": "parked unfinished work; do not restore wholesale over current files"
+    },
+    {
+      "path": "integration-provenance/instructions.md",
+      "originalLocalPath": ".claude/recovery/2026-10-02/codex-findings/instructions.md",
+      "bytes": 2487,
+      "sha256": "bad8e34f375124ec6a960b00312e64f7e29f392374eda6aa94018bd8491b3db7",
+      "status": "historical scope/instructions for finished commit 2b97d04c; not current authorization"
+    },
+    {
+      "path": "integration-provenance/commit-message.txt",
+      "originalLocalPath": ".claude/recovery/2026-10-02/codex-findings/commit-message.txt",
+      "bytes": 4570,
+      "sha256": "0f2642140f281863891eda60c16dc14458c0228b625eb36f3b306b59e1219b29",
+      "status": "historical scope/instructions for finished commit 2b97d04c; not current authorization"
+    },
+    {
+      "path": "integration-provenance/commit-result.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/codex-findings/commit-result.json",
+      "bytes": 220,
+      "sha256": "6a00d9f0130fff2c4e3521d2071e4a32c27d9cd538f194cbf2ff47ab4e29ea2b",
+      "status": "historical scope/instructions for finished commit 2b97d04c; not current authorization"
+    },
+    {
+      "path": "integration-provenance/commit-scope.json",
+      "originalLocalPath": ".claude/recovery/2026-10-02/codex-findings/commit-scope.json",
+      "bytes": 147005,
+      "sha256": "979f062a63be0433e5937c82d85efac6be62c1d868d1c0ec59b475aba16600d7",
+      "status": "historical scope/instructions for finished commit 2b97d04c; not current authorization"
+    },
+    {
+      "path": "integration-provenance/commit-readme.patch",
+      "originalLocalPath": ".claude/recovery/2026-10-02/codex-findings/commit-readme.patch",
+      "bytes": 3680,
+      "sha256": "cdd86c6e46943f4fd82fc4dd2d396c156fa87b97c80de6edafab0bc384444f20",
+      "status": "historical scope/instructions for finished commit 2b97d04c; not current authorization"
+    }
+  ],
+  "excluded": [
+    "validation-repo and codex-findings/trial: disposable rebuild trees, not unique review evidence",
+    "before snapshots and duplicate codex-findings intermediates: accepted evidence is already committed under data/<translator>/review/codex-read and audit5",
+    "account conversation logs, credentials and account memories: remain outside the repository"
+  ],
+  "restorePolicy": "Extract scratch.zip into a separate temporary directory if needed. Rebase pending verse findings against current data and judge directly against Pali before any application. Round12 has no findings. The verse prototype and README patch remain inactive."
+}

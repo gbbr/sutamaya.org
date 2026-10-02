@@ -1,0 +1,11 @@
+round01 | T: mn93 mn25 mn72 mn61 mn24 mn2 mn5 mn90 mn102 mn10 mn122 mn51 mn58 mn4 mn74 mn41 mn11; B: mn63 | 2899 lines | moved T 5, B 8 (superseded hand flagged-003 mn63 x8; read/batch-044 mn10:1.2)
+round02 | T: mn148 mn33 mn82 mn77 mn86 mn101 mn138 mn78 mn105 mn39 mn110 mn70 mn107 mn147 mn141 | 3046 | moved T 2 (kept with round03's first 4)
+round03 | T: mn19 mn128 mn125 mn31 mn136 mn43 mn27 mn21 mn35 mn60 mn146 mn38 mn1 | 3109 | moved T 4
+round04 | T: mn106 mn108 mn109 mn111 mn113 mn117 mn118 mn119 mn12 mn121 mn123 mn126 mn13 mn130 mn131 mn133 mn135 mn137 mn14 | 3079 | moved T 6
+round05 | T: mn140 mn143 mn149 mn151 mn152 mn17 mn18 mn20 mn22 mn28 mn29 mn30 mn36 mn37 mn40 mn44 mn48 mn52 mn53 mn54 | 3108 | moved T 5
+round06 | T: mn55 mn56 mn57 mn59 mn6 mn62 mn64 mn66 mn69 mn7 mn75 mn85 mn87 mn9 mn91 mn97 | 3144 | moved T 7 (superseded read/batch-136 mn57:1.2)
+round07 | T: mn93 mn95; B: mn41 mn46 mn4 mn22 mn11 mn31 mn52 mn7 mn12 mn108 mn147 mn146 mn32 | 3017 | moved T 6, B 21 (superseded 19 hand lines in bodhi flagged-001/002)
+round08 | B: mn70 mn117 mn148 mn104 mn135 mn9 mn60 mn57 mn8 mn140 mn64 mn118 mn77 mn149 mn2 mn29 | 2982 | moved B 31 (16 hand superseded flagged-001..004; 9 earlier readers superseded)
+round09 | T: dn12 dn11 dn1; B: mn36 mn27 mn1 mn13 mn19 mn20 mn28 mn47 mn54 mn65 | 2951 | moved T 0, B 14 (2 hand superseded)
+round10 | T: dn33 dn15 dn2 dn26 dn20; B: dn15 | 3051 | moved T 4, B 3 (T dn33:3.3.22-28 can't apply: translator's order, hand fix stands; own lines superseded)
+round11 | T: dn16 dn22 dn21; B: dn1 | 3287 | moved T 1, B 2 (hand/round11 dn1 refrain x2)

@@ -1,0 +1,44 @@
+--- a/data/upstream/README.md
++++ b/data/upstream/README.md
+@@ -207,7 +207,33 @@
+ - Credit each text's source and keep its terms (see "Licences"): Bodhi's Wisdom texts are shown
+   unchanged, and none of these is sold. The editorial rules over Sujato's English never apply.
+ - Lines pair with the Pali, not one to one with Sujato's: a sentence spanning several Pali lines
+-  sits on the first and leaves the rest empty, and a line Sujato leaves empty can hold text.
++  sits on the first and leaves the rest empty, so a stanza's text starts on its first line even
++  where the translator orders its lines his own way, and a line Sujato leaves empty can hold text.
++- Discuss with Gabriel, an open question for the app rather than the segmenting: which Pali shows
++  under a line whose English covers the empty lines below it. The rule for Sujato's lines
++  ([docs/corpus.md](../../docs/corpus.md)'s "A segment") joins only a lone empty line to the line
++  above and hides a longer run's Pali, for all three translations alike. Most such runs are
++  passages the translator abbreviates with "…", whose Pali would stand under a line that doesn't
++  translate it; some are a sentence or list given whole on its first line, Sujato's condensed
++  lists among them, whose Pali the rule hides though the line translates it. Empty English and
++  ellipses alone cannot distinguish these cases. The app needs the reviewed correspondence:
++  which Pali lines a translated group covers, and which passages are abbreviated or omitted.
++  Whatever the rule, the paragraphs and stanzas it joins within come from the Pali's markup
++  (`data/html`): the line keys make each of the Dhammapada's verse lines a paragraph of its own.
++
++  The current omission rule also hides what the translator leaves out: the rest of a sutta he gives in
++  excerpt (Ṭhānissaro's DN 21, DN 26, MN 54 and MN 91), framing lines such as the Itivuttaka's,
++  and Sujato's section headings.
++- Planned reveal work also accounts for passages a translator renders earlier in a compressed
++  exchange, and lists whose source text differs from this Pali edition. These need explicit
++  correspondence or a recorded source difference; joining every intervening empty line would
++  imply that the English translates unrelated Pali. Omitted Pali needs a distinct way to be
++  revealed if the reader wants it. Translation switching, links and highlights need to preserve
++  the underlying Pali location when a translated group covers several line keys. These are app
++  requirements recorded during alignment review; the app's behavior is unchanged.
++  The data preparation needs coverage records for the smallest coherent translated groups,
++  shared source passages and edition differences, with omissions distinguished from English
++  rendered elsewhere. The unresolved cases are in [the SN/AN/KN review record](codex-sn-an-kn-review.json).
+ - The markup to render:
+   - **text** (`sutta/`): a newline inside a line where one of the translator's verse lines starts,
+     as throughout the Dhammapada (Sujato's lines never have one, so the Reader doesn't yet break
+@@ -230,5 +256,6 @@
+ | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
+ | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
+ | The audits | `data/<translator>/review/audit*/` |
++| The SN/AN/KN import, judgments and remaining correspondence work | [codex-sn-an-kn-review.json](codex-sn-an-kn-review.json) |
+ | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
+ | The reader a read-through runs | `.claude/agents/line-reader.md` |

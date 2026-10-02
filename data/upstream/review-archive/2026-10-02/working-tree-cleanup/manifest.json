@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-02",
+  "action": "archive unfinished work outside the visible working tree; no commit",
+  "head": "2b97d04cfb745c0a88a7ae4fd61caba5fc7b4dad",
+  "files": {
+    "scripts/segmenter/verse-stanzas.mjs": {
+      "sha256": "7c41164105aa8bba5c71c2d3425f2ba7aeb32d40b3baa253de9a61a70fdd7fc7",
+      "bytes": 6797,
+      "archive": "files/scripts/segmenter/verse-stanzas.mjs"
+    },
+    "data/thanissaro/review/round12/batch-001.txt": {
+      "sha256": "285ab177e5242195331a022d75052323d137b4b7e427d55576edb6c32bbc7c7d",
+      "bytes": 61342,
+      "archive": "files/data/thanissaro/review/round12/batch-001.txt"
+    },
+    "data/thanissaro/review/round12/batch-002.txt": {
+      "sha256": "5b5adae8a815ec7cc10fc6587fb4630380e97567a3311c7e4f10865d7413966d",
+      "bytes": 62108,
+      "archive": "files/data/thanissaro/review/round12/batch-002.txt"
+    },
+    "data/thanissaro/review/round12/batch-003.txt": {
+      "sha256": "a04696efa8b4c18621098d0eb7a7c909ec92310055c624d1d96857709775efcf",
+      "bytes": 62778,
+      "archive": "files/data/thanissaro/review/round12/batch-003.txt"
+    },
+    "data/thanissaro/review/round12/batch-004.txt": {
+      "sha256": "dd07724baa309ba0e80bb76bb980fff73f4155da484c556843f90fd346d4b1ec",
+      "bytes": 62674,
+      "archive": "files/data/thanissaro/review/round12/batch-004.txt"
+    },
+    "data/thanissaro/review/round12/batch-005.txt": {
+      "sha256": "69218654e85419c48e785a827abb2e656e374f582a0bb5a666e55ebe5b3cf05e",
+      "bytes": 55402,
+      "archive": "files/data/thanissaro/review/round12/batch-005.txt"
+    },
+    "data/thanissaro/review/round12/batch-006.txt": {
+      "sha256": "9696986c1bcac5686cf3fecf090dea1cf06ac08c9630ba21af00aaae9acdaaa8",
+      "bytes": 63179,
+      "archive": "files/data/thanissaro/review/round12/batch-006.txt"
+    },
+    "data/thanissaro/review/round12/batch-007.txt": {
+      "sha256": "7a547f205ee57ce2cdd52cb32535a12944f2bbe2b3b19b920875fcb7c917d5d9",
+      "bytes": 62013,
+      "archive": "files/data/thanissaro/review/round12/batch-007.txt"
+    },
+    "data/thanissaro/review/round12/batch-008.txt": {
+      "sha256": "aee6fb17d0355b448eab3c8a46c1e127245a1819e56cfe1911c74551df97be01",
+      "bytes": 58772,
+      "archive": "files/data/thanissaro/review/round12/batch-008.txt"
+    },
+    "data/thanissaro/review/round12/batch-009.txt": {
+      "sha256": "d88a639cb2eb23f56871812930df37eb35b246afb1ea021c66f6f28eb9f31cba",
+      "bytes": 63294,
+      "archive": "files/data/thanissaro/review/round12/batch-009.txt"
+    },
+    "data/thanissaro/review/round12/batch-010.txt": {
+      "sha256": "c4bd4a117c4b592487d55ce7147280e86b680071d4b2aec939988c1735c35cc0",
+      "bytes": 63087,
+      "archive": "files/data/thanissaro/review/round12/batch-010.txt"
+    },
+    "data/thanissaro/review/round12/batch-011.txt": {
+      "sha256": "2da03c055a4dc159b31b29b90fe9498cfd645c61121ffdc864634b88c5bcf17b",
+      "bytes": 347,
+      "archive": "files/data/thanissaro/review/round12/batch-011.txt"
+    },
+    "data/upstream/README.md": {
+      "sha256": "7bd451923683eb2e58e203fe62fba217aa1d9762fd6a88b684327a662629cf85",
+      "bytes": 18685,
+      "archive": "files/data/upstream/README.md"
+    }
+  },
+  "dispositions": {
+    "scripts/segmenter/verse-stanzas.mjs": "Keep as an unfinished prototype for future direct-Pali verse review; validate coverage before adopting.",
+    "data/thanissaro/review/round12/": "Unreviewed generated MN batches; zero saved findings. Recreate from current data with Pali included if another read is needed.",
+    "data/upstream/README.md": "Preserve the full working copy and its uncommitted verse-workflow patch, then restore the committed README including the integrated app notes."
+  },
+  "readmePatchSHA256": "3ae30ac02a30a4d5669bc56855429aaad0709692cbcf7573167a214ef9a793ca",
+  "status": "completed; all archived file hashes verified; README restored to committed version",
+  "restoration": {
+    "script": "files/scripts/segmenter/verse-stanzas.mjs",
+    "unreviewedBatches": "files/data/thanissaro/review/round12/",
+    "verseWorkflowPatch": "verse-workflow.patch",
+    "note": "Review current repository state before restoring the prototype or regenerating review batches. The full pre-cleanup README is preserved; the patch contains only the unfinished verse workflow."
+  },
+  "preservedEarlierRecovery": ".claude/recovery/2026-10-02/manifest.json and its recovered verse findings remain untouched."
+}
